@@ -1,3 +1,9 @@
 [Desktop Entry]
 Name=Move to directory
+Name[nl]=Naar map verplaatsen
+Name[pt]=Mover para a pasta
+Name[pt_BR]=Mover para a pasta
+Name[sv]=Flytta till katalog
+Name[uk]=Пересунути до каталогу
+Name[x-test]=xxMove to directoryxx
 FileName=template.txt
