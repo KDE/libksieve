@@ -1,9 +1,15 @@
 [Desktop Entry]
 Name=Move to directory
+Name[ca]=Mou al directori
+Name[fi]=Siirrä kansioon
+Name[gl]=Mover ao cartafol
+Name[nb]=Flytt til mappe
 Name[nl]=Naar map verplaatsen
 Name[pt]=Mover para a pasta
 Name[pt_BR]=Mover para a pasta
+Name[sk]=Presunúť do adresára
 Name[sv]=Flytta till katalog
 Name[uk]=Пересунути до каталогу
 Name[x-test]=xxMove to directoryxx
+Name[zh_CN]=移动到目录
 FileName=template.txt
