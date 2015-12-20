@@ -1,7 +1,3 @@
-include_directories(${CMAKE_SOURCE_DIR}/libksieve/src
-	${CMAKE_BUILD_DIR}/libksieve/src/ksiveui
-        )
-
 set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
 
 macro( add_vacation_test _source )
