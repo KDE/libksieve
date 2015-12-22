@@ -80,11 +80,12 @@ install(FILES
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5} COMPONENT Devel
 )
 
-feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
-
 
 add_subdirectory(src)
 if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
 install( FILES libksieve.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
+
+feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
+
