@@ -49,7 +49,6 @@ ecm_generate_pri_file(BASE_NAME KSieve
 
 
 install(TARGETS KF5KSieve EXPORT KF5KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} ${LIBRARY_NAMELINK})
-if(${CMAKE_SOURCE_DIR} STREQUAL ${libksieve_SOURCE_DIR})
 install(FILES
     ${ksieve_CamelCase_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KSieve
@@ -66,4 +65,3 @@ install(FILES
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
 )
 
-endif()
