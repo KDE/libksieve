@@ -29,7 +29,7 @@ set_target_properties(KF5KManageSieve PROPERTIES
   EXPORT_NAME KManageSieve
 )
 
-target_include_directories(KF5KManageSieve INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KManageSieve/;${KDE_INSTALL_INCLUDEDIR_KF5}/kmanagesieve>")
+target_include_directories(KF5KManageSieve INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KManageSieve/;${KDE_INSTALL_INCLUDEDIR_KF5}/kmanagesieve;${KDE_INSTALL_INCLUDEDIR_KF5}>")
 target_include_directories(KF5KManageSieve PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/kmanagesieve;${libksieve_BINARY_DIR}/src/kmanagesieve>")
 
 
