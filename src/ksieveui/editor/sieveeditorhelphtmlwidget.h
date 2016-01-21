@@ -20,10 +20,15 @@
 
 #include <QWidget>
 #include <QUrl>
+#include <config-libksieve.h>
 
 namespace KSieveUi
 {
+#ifdef QTWEBENGINE_EXPERIMENTAL_OPTION
+class SieveEditorWebEngineView;
+#else
 class SieveEditorWebView;
+#endif
 class SieveEditorLoadProgressIndicator;
 class SieveEditorHelpHtmlWidget : public QWidget
 {
@@ -54,7 +59,11 @@ private Q_SLOTS:
     void slotLoadFinished(bool success);
 private:
     QString mTitle;
+#ifdef QTWEBENGINE_EXPERIMENTAL_OPTION
+    SieveEditorWebEngineView *mWebView;
+#else
     SieveEditorWebView *mWebView;
+#endif
     SieveEditorLoadProgressIndicator *mProgressIndicator;
     qreal mZoomFactor;
 };

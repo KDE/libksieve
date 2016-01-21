@@ -16,6 +16,7 @@
 */
 
 #include "sieveeditorwebengineview.h"
+#include <QContextMenuEvent>
 #include <QMenu>
 
 using namespace KSieveUi;

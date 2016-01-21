@@ -39,10 +39,17 @@ set(ksieveui_vacation_LIB_SRCS
     vacation/legacy/vacationutils.cpp
     vacation/legacy/vacationscriptextractor.cpp
     )
-
-set(ksieveui_webpageeditor_LIB_SRCS
-    editor/sieveeditorwebview.cpp
-    )
+if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+    set(ksieveui_webpageeditor_LIB_SRCS
+        editor/sieveeditorwebengineview.cpp
+        )
+    set(ksieveui_web_LIB Qt5::WebEngineWidgets)
+else()
+    set(ksieveui_webpageeditor_LIB_SRCS
+        editor/sieveeditorwebview.cpp
+        )
+    set(ksieveui_web_LIB Qt5::WebKitWidgets)
+endif()
 
 set(ksieveui_editor_LIB_SRCS
     ${ksieveui_webpageeditor_LIB_SRCS}
@@ -215,7 +222,7 @@ target_link_libraries(KF5KSieveUi
     KF5::KIOWidgets
     KF5::NewStuff
     KF5::WindowSystem
-    Qt5::WebKitWidgets
+    ${ksieveui_web_LIB}
     KF5::PimTextEdit
     )
 
