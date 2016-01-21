@@ -27,7 +27,8 @@
 #include <QVBoxLayout>
 
 using namespace KSieveUi;
-namespace {
+namespace
+{
 qreal zoomBy()
 {
     return 20;
