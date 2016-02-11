@@ -53,6 +53,7 @@ VacationPageWidget::VacationPageWidget(QWidget *parent)
     //Main Page
     QWidget *mainPage = new QWidget;
     QVBoxLayout *vbox = new QVBoxLayout;
+    vbox->setMargin(0);
     mainPage->setLayout(vbox);
     mVacationWarningWidget = new VacationWarningWidget;
     vbox->addWidget(mVacationWarningWidget);
