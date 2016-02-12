@@ -173,6 +173,6 @@ QString AutoCreateScriptUtil::createFullWhatsThis(const QString &help, const QSt
     if (href.isEmpty()) {
         return help;
     }
-    const QString fullWhatsThis = QLatin1String("<qt>") + help + QStringLiteral("<br><a href=\'%1\'>%2</a></qt>").arg(href).arg(i18n("More information"));
+    const QString fullWhatsThis = QLatin1String("<qt>") + help + QStringLiteral("<br><a href=\'%1\'>%2</a></qt>").arg(href, i18n("More information"));
     return fullWhatsThis;
 }

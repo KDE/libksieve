@@ -25,6 +25,7 @@ namespace KSieveUi
 class SieveTextEdit;
 class SieveSyntaxSpellCheckingHighlighter : public KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter
 {
+    Q_OBJECT
 public:
     explicit SieveSyntaxSpellCheckingHighlighter(SieveTextEdit *plainText, const QColor &misspelledColor = Qt::red);
     ~SieveSyntaxSpellCheckingHighlighter();
