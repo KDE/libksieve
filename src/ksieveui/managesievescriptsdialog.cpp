@@ -48,6 +48,10 @@ class KSieveUi::ManageSieveScriptsDialogPrivate
 public:
     ManageSieveScriptsDialogPrivate()
         : mSieveEditor(Q_NULLPTR),
+          mNewScript(Q_NULLPTR),
+          mEditScript(Q_NULLPTR),
+          mDeleteScript(Q_NULLPTR),
+          mDeactivateScript(Q_NULLPTR),
           mIsNewScript(false),
           mWasActive(false)
     {
