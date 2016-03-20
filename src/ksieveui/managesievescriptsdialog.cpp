@@ -260,7 +260,9 @@ void ManageSieveScriptsDialog::slotPutResult(KManageSieve::SieveJob *, bool succ
         d->mSieveEditor = Q_NULLPTR;
         d->mCurrentURL = QUrl();
     } else {
-        d->mSieveEditor->show();
+        if (d->mSieveEditor) {
+            d->mSieveEditor->show();
+        }
     }
 }
 
