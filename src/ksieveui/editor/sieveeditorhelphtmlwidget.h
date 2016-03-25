@@ -24,7 +24,7 @@
 
 namespace KSieveUi
 {
-#ifdef QTWEBENGINE_EXPERIMENTAL_OPTION
+#ifdef QTWEBENGINE_SUPPORT_OPTION
 class SieveEditorWebEngineView;
 #else
 class SieveEditorWebView;
@@ -59,7 +59,7 @@ private Q_SLOTS:
     void slotLoadFinished(bool success);
 private:
     QString mTitle;
-#ifdef QTWEBENGINE_EXPERIMENTAL_OPTION
+#ifdef QTWEBENGINE_SUPPORT_OPTION
     SieveEditorWebEngineView *mWebView;
 #else
     SieveEditorWebView *mWebView;

@@ -39,7 +39,7 @@ set(ksieveui_vacation_LIB_SRCS
     vacation/legacy/vacationutils.cpp
     vacation/legacy/vacationscriptextractor.cpp
     )
-if (QTWEBENGINE_EXPERIMENTAL_OPTION)
+if (QTWEBENGINE_SUPPORT_OPTION)
     set(ksieveui_webpageeditor_LIB_SRCS
         editor/sieveeditorwebengineview.cpp
         )
