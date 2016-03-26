@@ -32,7 +32,7 @@ set(PIMCOMMON_LIB_VERSION "5.2.40")
 set(AKONADI_VERSION "5.2.40")
 
 find_package(KF5Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)
-find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Test UiTools Xml WebKitWidgets)
+find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Test UiTools Xml)
 find_package(KF5I18n ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5IconThemes ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5PimCommon ${PIMCOMMON_LIB_VERSION} CONFIG REQUIRED)
@@ -50,6 +50,8 @@ option(QTWEBENGINE_SUPPORT_OPTION "Enable support for QtWebEngine. False by defa
 if (QTWEBENGINE_SUPPORT_OPTION)
     set(QT_REQUIRED_MINIMUM_WEBENGINE_VERSION "5.6")
     find_package(Qt5 ${QT_REQUIRED_MINIMUM_WEBENGINE_VERSION} CONFIG REQUIRED WebEngine WebEngineWidgets)
+else()
+    find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED WebKitWidgets)
 endif()
 
 ecm_setup_version(${LIBKSIEVE_LIB_VERSION} VARIABLE_PREFIX LIBKSIEVE
