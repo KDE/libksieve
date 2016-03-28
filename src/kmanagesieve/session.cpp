@@ -156,11 +156,11 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
             m_implementation = QString::fromLatin1(response.value());
             qCDebug(KMANAGERSIEVE_LOG) << "Connected to Sieve server: " << response.value();
         } else if (response.key() == "SASL") {
-            m_saslMethods = QString::fromLatin1(response.value()).split(' ', QString::SkipEmptyParts);
+            m_saslMethods = QString::fromLatin1(response.value()).split(QLatin1Char(' '), QString::SkipEmptyParts);
             qCDebug(KMANAGERSIEVE_LOG) << "Server SASL authentication methods: " << m_saslMethods;
         } else if (response.key() == "SIEVE") {
             // Save script capabilities
-            m_sieveExtensions = QString::fromLatin1(response.value()).split(' ', QString::SkipEmptyParts);
+            m_sieveExtensions = QString::fromLatin1(response.value()).split(QLatin1Char(' '), QString::SkipEmptyParts);
             qCDebug(KMANAGERSIEVE_LOG) << "Server script capabilities: " << m_sieveExtensions;
         } else if (response.key() == "STARTTLS") {
             qCDebug(KMANAGERSIEVE_LOG) << "Server supports TLS";

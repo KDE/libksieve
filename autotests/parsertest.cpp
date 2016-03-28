@@ -459,7 +459,7 @@ public:
         write(multiLine ? "string type=\"multiline\"" : "string type=\"quoted\"", string);
     }
     void numberArgument(unsigned long number, char quantifier) Q_DECL_OVERRIDE {
-        const QString txt = "number" + (quantifier ? QStringLiteral(" quantifier=\"%1\"").arg(quantifier) : QString());
+        const QString txt = QStringLiteral("number") + (quantifier ? QStringLiteral(" quantifier=\"%1\"").arg(quantifier) : QString());
         write(txt.toLatin1(), QString::number(number));
     }
     void commandStart(const QString &identifier, int lineNumber) Q_DECL_OVERRIDE {
@@ -524,7 +524,7 @@ public:
 
     void error(const KSieve::Error &error) Q_DECL_OVERRIDE {
         indent = 0;
-        write(("Error: " + error.asString()).toLatin1());
+        write((QStringLiteral("Error: ") + error.asString()).toLatin1());
     }
     void finished() Q_DECL_OVERRIDE {
         --indent;
@@ -584,7 +584,7 @@ public:
     }
     void numberArgument(unsigned long number, char quantifier) Q_DECL_OVERRIDE {
         checkIs(NumberArgument);
-        checkEquals(QString::number(number) + (quantifier ? quantifier : ' '));
+        checkEquals(QString::number(number) + QLatin1Char(quantifier ? quantifier : ' '));
         ++mNextResponse;
     }
     void commandStart(const QString &identifier, int lineNumber) Q_DECL_OVERRIDE {
@@ -654,7 +654,7 @@ public:
     }
     void error(const KSieve::Error &error) Q_DECL_OVERRIDE {
         checkIs(Error);
-        checkEquals(QString(KSieve::Error::typeToString(error.type())));
+        checkEquals(QString::fromLatin1(KSieve::Error::typeToString(error.type())));
         ++mNextResponse;
     }
     void finished() Q_DECL_OVERRIDE {

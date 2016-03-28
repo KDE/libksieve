@@ -62,10 +62,8 @@ ecm_setup_version(${LIBKSIEVE_LIB_VERSION} VARIABLE_PREFIX LIBKSIEVE
 
 ########### Targets ###########
 
-#add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
+add_definitions("-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_TO_ASCII")
 remove_definitions( -DQT_NO_CAST_FROM_BYTEARRAY )
-remove_definitions( -DQT_NO_CAST_FROM_ASCII )
-remove_definitions( -DQT_NO_CAST_TO_ASCII )
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5LibKSieve")
 

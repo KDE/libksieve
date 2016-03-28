@@ -173,7 +173,7 @@ static inline bool is8Bit(signed char ch)
 static QString removeCRLF(const QString &s)
 {
     const bool CRLF = s.endsWith(QStringLiteral("\r\n"));
-    const bool LF = !CRLF && s.endsWith('\n');
+    const bool LF = !CRLF && s.endsWith(QLatin1Char('\n'));
 
     const int e = CRLF ? 2 : LF ? 1 : 0;  // what to chop off at the end
 
@@ -274,7 +274,7 @@ Lexer::Token Lexer::Impl::nextToken(QString &result)
     case ')':
     case ';':
     case ',': // Special
-        result = *mState.cursor++;
+        result = QLatin1Char(*mState.cursor++);
         return Special;
     case '0':
     case '1':
@@ -430,7 +430,7 @@ bool Lexer::Impl::parseBracketComment(QString &result, bool reallySave)
         }
         if (reallySave) {
             QString tmp = QString::fromUtf8(commentStart, commentLength);
-            result += tmp.remove('\r');   // get rid of CR in CRLF pairs
+            result += tmp.remove(QLatin1Char('\r'));   // get rid of CR in CRLF pairs
         }
     }
 
@@ -541,7 +541,7 @@ bool Lexer::Impl::parseNumber(QString &result)
     assert(isdigit(*mState.cursor));
 
     while (!atEnd() && isdigit(*mState.cursor)) {
-        result += *mState.cursor++;
+        result += QLatin1Char(*mState.cursor++);
     }
 
     if (atEnd() || isDelim(*mState.cursor)) {
@@ -555,7 +555,7 @@ bool Lexer::Impl::parseNumber(QString &result)
     case 'm':
     case 'K':
     case 'k':
-        result += *mState.cursor++;
+        result += QLatin1Char(*mState.cursor++);
         break;
     default:
         makeIllegalCharError();
@@ -676,7 +676,7 @@ bool Lexer::Impl::parseQuotedString(QString &result)
             if (!eatCRLF()) {
                 return false;
             }
-            result += '\n';
+            result += QLatin1Char('\n');
             break;
         case '\\':
             ++mState.cursor;
@@ -686,7 +686,7 @@ bool Lexer::Impl::parseQuotedString(QString &result)
         // else fall through:
         default:
             if (!is8Bit(*mState.cursor)) {
-                result += *mState.cursor++;
+                result += QLatin1Char(*mState.cursor++);
             } else { // probably UTF-8
                 const char *const eightBitBegin = mState.cursor;
                 skipTo8BitEnd();
