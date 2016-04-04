@@ -20,6 +20,7 @@ macro( add_vacation_test _source )
     Qt5::Test
     KF5::IdentityManagement
     KF5::Mime
+    KF5::I18n
     )
 endmacro()
 

@@ -20,7 +20,7 @@
 #include <KLocalizedString>
 
 #include <QHBoxLayout>
-#include <KTextEdit>
+#include <QTextEdit>
 
 using namespace KSieveUi;
 SieveInfoWidget::SieveInfoWidget(QWidget *parent)

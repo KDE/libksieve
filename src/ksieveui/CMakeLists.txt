@@ -224,6 +224,8 @@ target_link_libraries(KF5KSieveUi
     KF5::WindowSystem
     ${ksieveui_web_LIB}
     KF5::PimTextEdit
+    KF5::I18n
+    KF5::SonnetUi
     )
 
 set_target_properties(KF5KSieveUi PROPERTIES

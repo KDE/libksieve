@@ -9,5 +9,5 @@ set(xmlsieveparsing_SRCS
 )
 
 add_executable(xmlsieveparsing ${xmlsieveparsing_SRCS} )
-target_link_libraries(xmlsieveparsing   KF5::KSieveUi KF5::KSieve)
+target_link_libraries(xmlsieveparsing   KF5::KSieveUi KF5::KSieve KF5::I18n)
 

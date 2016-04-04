@@ -8,6 +8,7 @@ add_executable(autocreatescripts_gui ${autocreatescripts_gui_SRCS})
 target_link_libraries(autocreatescripts_gui
   KF5::KSieveUi
   KF5::PimCommon
+  KF5::I18n
 )
 
 set(parsingscript_gui_SRCS parsingscript_gui.cpp)
@@ -17,6 +18,7 @@ target_link_libraries(parsingscript_gui
   KF5::KSieveUi
   KF5::KSieve
   KF5::PimCommon
+  KF5::I18n
 )
 
 
