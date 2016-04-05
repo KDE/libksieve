@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8.12)
 project(libksieve)
 
 find_package(ECM 5.19.0 CONFIG REQUIRED)
-set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+set(CMAKE_MODULE_PATH ${libksieve_SOURCE_DIR}/cmake ${ECM_MODULE_PATH})
 set(LIBRARY_NAMELINK)
 include(GenerateExportHeader)
 include(ECMSetupVersion)
@@ -44,6 +44,14 @@ find_package(KF5Mime ${KMIME_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5IdentityManagement ${IDENTITYMANAGEMENT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5MailTransport ${KMAILTRANSPORT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5PimTextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
+
+find_package(Sasl2)
+set_package_properties(Sasl2 PROPERTIES
+                             DESCRIPTION "The Cyrus-sasl library"
+                             URL "http://www.cyrussasl.org"
+                             TYPE OPTIONAL
+)
+
 
 option(QTWEBENGINE_SUPPORT_OPTION "Enable support for QtWebEngine. False by default." FALSE)
 
@@ -89,6 +97,7 @@ install(FILES
 
 
 add_subdirectory(src)
+add_subdirectory(kioslave)
 if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
