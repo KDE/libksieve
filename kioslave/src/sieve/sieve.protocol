@@ -16,6 +16,7 @@ Description=An ioslave for the Sieve mail filtering protocol
 Description[ca]=Un «ioslave» pel protocol de filtratge de correu «Sieve»
 Description[ca@valencia]=Un «ioslave» pel protocol de filtratge de correu «Sieve»
 Description[es]=Un esclavo de E/S para el protocolo de filtrado de correo Sieve
+Description[it]=Un IOSlave per il protocollo di filtraggio della posta Sieve
 Description[nl]=Een KIO-slave voor het Sieve-mail filterprotocol
 Description[pt]=Um 'ioslave' para o protocolo de filtragem de e-mail Sieve
 Description[pt_BR]=Um ioslave para o protocolo de filtragem de e-mail Sieve
