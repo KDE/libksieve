@@ -93,7 +93,7 @@ void SieveDebugDialog::slotShutDownJob()
     disconnect(mSieveJob, &KManageSieve::SieveJob::gotList, this, &SieveDebugDialog::slotGetScriptList);
     mSieveJob->kill();
     mSieveJob = Q_NULLPTR;
-    mEdit->editor()->appendPlainText(i18n("Unable to info\n\n"));
+    mEdit->editor()->appendPlainText(i18n("Unable to get the info\n\n"));
     mResourceIdentifier.pop_front();
     QTimer::singleShot(0, this, &SieveDebugDialog::slotDiagNextAccount);
 }

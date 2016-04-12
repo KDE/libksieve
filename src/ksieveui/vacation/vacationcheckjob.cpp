@@ -138,7 +138,7 @@ void VacationCheckJob::slotGotList(KManageSieve::SieveJob *job, bool success, co
     Q_ASSERT(job == mSieveJob);
     mSieveJob = Q_NULLPTR;
     if (!success) {
-        emitError(i18n("SieveJob list failed."));
+        emitError(i18n("Failed to get SieveJob list."));
         return;
     }
 
