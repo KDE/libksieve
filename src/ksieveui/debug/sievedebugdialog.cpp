@@ -58,7 +58,7 @@ SieveDebugDialog::SieveDebugDialog(QWidget *parent)
         mEdit->editor()->setPlainText(i18n("Collecting diagnostic information about Sieve support...\n\n"));
         QTimer::singleShot(0, this, &SieveDebugDialog::slotDiagNextAccount);
     } else {
-        mEdit->editor()->setPlainText(i18n("No Imap Resource found."));
+        mEdit->editor()->setPlainText(i18n("No IMAP resource found."));
     }
     readConfig();
 }
