@@ -19,6 +19,7 @@ Description[de]=Ein Ein-/Ausgabemodul für das Mailfilter-Protokoll Sieve
 Description[es]=Un esclavo de E/S para el protocolo de filtrado de correo Sieve
 Description[fi]=I/O-asiakas Sieve-postinsuodatusyhteyskäytännölle
 Description[it]=Un IOSlave per il protocollo di filtraggio della posta Sieve
+Description[nb]=En ioslave for Sieve e-postfiltrering
 Description[nl]=Een KIO-slave voor het Sieve-mail filterprotocol
 Description[pl]=Moduł ioslave dla protokołu filtrowania poczty Sieve
 Description[pt]=Um 'ioslave' para o protocolo de filtragem de e-mail Sieve
