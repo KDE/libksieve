@@ -39,17 +39,10 @@ set(ksieveui_vacation_LIB_SRCS
     vacation/legacy/vacationutils.cpp
     vacation/legacy/vacationscriptextractor.cpp
     )
-if (QTWEBENGINE_SUPPORT_OPTION)
-    set(ksieveui_webpageeditor_LIB_SRCS
-        editor/sieveeditorwebengineview.cpp
-        )
-    set(ksieveui_web_LIB Qt5::WebEngineWidgets)
-else()
-    set(ksieveui_webpageeditor_LIB_SRCS
-        editor/sieveeditorwebview.cpp
-        )
-    set(ksieveui_web_LIB Qt5::WebKitWidgets)
-endif()
+set(ksieveui_webpageeditor_LIB_SRCS
+    editor/sieveeditorwebengineview.cpp
+    )
+set(ksieveui_web_LIB Qt5::WebEngineWidgets)
 
 set(ksieveui_editor_LIB_SRCS
     ${ksieveui_webpageeditor_LIB_SRCS}

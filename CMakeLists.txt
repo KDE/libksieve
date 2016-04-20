@@ -22,7 +22,7 @@ include(ECMAddTests)
 set(KF5_VERSION "5.19.0")
 set(LIBKSIEVE_LIB_VERSION "5.2.40")
 set(KDEPIMLIBS_LIB_VERSION "5.2.40")
-set(QT_REQUIRED_VERSION "5.4.0")
+set(QT_REQUIRED_VERSION "5.6.0")
 set(KMIME_LIB_VERSION "5.2.40")
 set(IDENTITYMANAGEMENT_LIB_VERSION "5.2.40")
 set(KMAILTRANSPORT_LIB_VERSION "5.2.40")
@@ -53,14 +53,7 @@ set_package_properties(Sasl2 PROPERTIES
 )
 
 
-option(QTWEBENGINE_SUPPORT_OPTION "Enable support for QtWebEngine. False by default." FALSE)
-
-if (QTWEBENGINE_SUPPORT_OPTION)
-    set(QT_REQUIRED_MINIMUM_WEBENGINE_VERSION "5.6")
-    find_package(Qt5 ${QT_REQUIRED_MINIMUM_WEBENGINE_VERSION} CONFIG REQUIRED WebEngine WebEngineWidgets)
-else()
-    find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED WebKitWidgets)
-endif()
+find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED WebEngine WebEngineWidgets)
 
 ecm_setup_version(${LIBKSIEVE_LIB_VERSION} VARIABLE_PREFIX LIBKSIEVE
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h"
