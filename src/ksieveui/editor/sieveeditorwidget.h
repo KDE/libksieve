@@ -67,7 +67,6 @@ public:
     bool hasSelection() const;
 
     void checkSpelling();
-    void share();
     void import();
     void lowerCase();
     void upperCase();
@@ -93,7 +92,7 @@ public Q_SLOTS:
     void goToLine();
     void slotSaveAs();
     void slotImport();
-    void slotUploadScripts();
+    void slotShareScript();
     void slotAutoGenerateScripts();
     void slotCheckSyntax();
     void comment();
@@ -129,7 +128,7 @@ private:
     QAction *mSwitchMode;
     QAction *mAutoGenerateScript;
     QAction *mSaveAs;
-    QAction *mUpload;
+    QAction *mShareScript;
 #if !defined(NDEBUG)
     QAction *mGenerateXml;
 #endif

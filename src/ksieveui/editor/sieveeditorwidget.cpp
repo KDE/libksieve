@@ -87,12 +87,11 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
 
     QStringList overlays;
     overlays << QStringLiteral("list-add");
-    mUpload = new QAction(QIcon(new KIconEngine(QStringLiteral("get-hot-new-stuff"), KIconLoader::global(), overlays)), i18n("Share..."), this);
-    connect(mUpload, &QAction::triggered, this, &SieveEditorWidget::slotUploadScripts);
-    connect(mUpload, &QAction::triggered, this, &SieveEditorWidget::slotUploadScripts);
+    mShareScript = new QAction(QIcon(new KIconEngine(QStringLiteral("get-hot-new-stuff"), KIconLoader::global(), overlays)), i18n("Share..."), this);
+    connect(mShareScript, &QAction::triggered, this, &SieveEditorWidget::slotShareScript);
     //Add action to toolBar
 
-    toolbar->addAction(mUpload);
+    toolbar->addAction(mShareScript);
 
     if (useMenuBar) {
         SieveEditorMenuBar *menuBar = new SieveEditorMenuBar;
@@ -119,7 +118,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
         connect(this, &SieveEditorWidget::undoAvailable, menuBar, &SieveEditorMenuBar::slotUndoAvailable);
         menuBar->fileMenu()->addAction(mSaveAs);
         menuBar->fileMenu()->addSeparator();
-        menuBar->fileMenu()->addAction(mUpload);
+        menuBar->fileMenu()->addAction(mShareScript);
         menuBar->toolsMenu()->addSeparator();
         menuBar->toolsMenu()->addAction(mAutoGenerateScript);
         menuBar->toolsMenu()->addAction(mCheckSyntax);
@@ -333,7 +332,7 @@ void SieveEditorWidget::setModified(bool b)
     }
 }
 
-void SieveEditorWidget::slotUploadScripts()
+void SieveEditorWidget::slotShareScript()
 {
     QTemporaryDir tmp;
     QTemporaryFile tmpFile;
