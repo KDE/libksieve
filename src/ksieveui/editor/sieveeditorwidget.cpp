@@ -239,6 +239,11 @@ bool SieveEditorWidget::isWordWrap() const
     return false;
 }
 
+void SieveEditorWidget::updateOriginalScript()
+{
+    mOriginalScript = script();
+}
+
 void SieveEditorWidget::wordWrap(bool state)
 {
     if (mMode == TextMode) {
