@@ -89,7 +89,6 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     overlays << QStringLiteral("list-add");
     mUpload = new QAction(QIcon(new KIconEngine(QStringLiteral("get-hot-new-stuff"), KIconLoader::global(), overlays)), i18n("Share..."), this);
     connect(mUpload, &QAction::triggered, this, &SieveEditorWidget::slotUploadScripts);
-    connect(mUpload, &QAction::triggered, this, &SieveEditorWidget::slotUploadScripts);
     //Add action to toolBar
 
     toolbar->addAction(mUpload);
