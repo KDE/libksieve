@@ -210,7 +210,7 @@ void ManageSieveScriptsDialog::slotSieveEditorCheckSyntaxClicked()
     }
     KManageSieve::SieveJob *job = KManageSieve::SieveJob::put(d->mCurrentURL, script, d->mWasActive, d->mWasActive);
     job->setInteractive(false);
-    connect(job, &KManageSieve::SieveJob::errorMessage, this, &ManageSieveScriptsDialog::slotPutResultDebug);
+    connect(job, &KManageSieve::SieveJob::errorMessage, this, &ManageSieveScriptsDialog::slotPutCheckSyntaxResultDebug);
 }
 
 void ManageSieveScriptsDialog::slotSieveEditorOkClicked()
@@ -234,7 +234,7 @@ void ManageSieveScriptsDialog::slotSieveEditorCancelClicked()
     }
 }
 
-void ManageSieveScriptsDialog::slotPutResultDebug(KManageSieve::SieveJob *, bool success, const QString &errorMsg)
+void ManageSieveScriptsDialog::slotPutCheckSyntaxResultDebug(KManageSieve::SieveJob *, bool success, const QString &errorMsg)
 {
     if (success) {
         d->mSieveEditor->addOkMessage(i18n("No errors found."));
