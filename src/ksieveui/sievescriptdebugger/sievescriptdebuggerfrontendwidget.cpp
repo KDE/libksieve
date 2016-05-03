@@ -76,9 +76,9 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
 
     formLayout->addRow(extensionLab, mExtension);
 
-    QSplitter *splitter = new QSplitter(Qt::Vertical);
-    splitter->setObjectName(QStringLiteral("splitter"));
-    mainLayout->addWidget(splitter);
+    mSplitter = new QSplitter(Qt::Vertical);
+    mSplitter->setObjectName(QStringLiteral("splitter"));
+    mainLayout->addWidget(mSplitter);
 
     QWidget *sieveEditorWidget = new QWidget(this);
     QVBoxLayout *vboxSieveEditorLayout = new QVBoxLayout;
@@ -94,13 +94,13 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     vboxSieveEditorLayout->addWidget(mSieveTextEditWidget);
     connect(mSieveTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::say);
 
-    splitter->addWidget(sieveEditorWidget);
-    splitter->setChildrenCollapsible(false);
+    mSplitter->addWidget(sieveEditorWidget);
+    mSplitter->setChildrenCollapsible(false);
 
     mSieveTestResult = new KPIMTextEdit::PlainTextEditorWidget(new KSieveUi::SieveScriptDebuggerResultEditor(this), this);
     mSieveTestResult->setObjectName(QStringLiteral("sievetextresult"));
     mSieveTestResult->setReadOnly(true);
-    splitter->addWidget(mSieveTestResult);
+    mSplitter->addWidget(mSieveTestResult);
 
     mSieveScriptDebuggerWarning = new KSieveUi::SieveScriptDebuggerWarning(this);
     mSieveScriptDebuggerWarning->setObjectName(QStringLiteral("sievescriptdebuggerwarning"));
@@ -120,6 +120,17 @@ SieveScriptDebuggerFrontEndWidget::~SieveScriptDebuggerFrontEndWidget()
 {
 
 }
+
+void SieveScriptDebuggerFrontEndWidget::setSplitterSizes(const QList<int> &sizes)
+{
+    mSplitter->setSizes(sizes);
+}
+
+QList<int> SieveScriptDebuggerFrontEndWidget::splitterSizes() const
+{
+    return mSplitter->sizes();
+}
+
 
 void SieveScriptDebuggerFrontEndWidget::slotEmailChanged(const QString &text)
 {

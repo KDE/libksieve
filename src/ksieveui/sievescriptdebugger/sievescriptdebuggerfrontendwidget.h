@@ -29,6 +29,7 @@ class KUrlRequester;
 class QPushButton;
 class QProcess;
 class KLineEdit;
+class QSplitter;
 namespace KSieveUi
 {
 class SieveTextEditWidget;
@@ -43,6 +44,9 @@ public:
     QString script() const;
     void setScript(const QString &script);
     bool canAccept() const;
+
+    QList<int> splitterSizes() const;
+    void setSplitterSizes(const QList<int> &sizes);
 
 private Q_SLOTS:
     void slotDebugScript();
@@ -59,6 +63,7 @@ private:
     QPushButton *mDebugScript;
     QProcess *mProcess;
     KLineEdit *mExtension;
+    QSplitter *mSplitter;
 };
 }
 #endif // SIEVESCRIPTDEBUGGERFONTENDWIDGET_H

@@ -37,6 +37,8 @@ public:
 
     bool canAccept() const;
 
+    QList<int> splitterSizes() const;
+    void setSplitterSizes(const QList<int> &sizes);
 private:
     void checkSieveTestApplication();
     QStackedWidget *mStackedWidget;

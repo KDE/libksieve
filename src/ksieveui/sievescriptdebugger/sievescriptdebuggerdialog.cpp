@@ -77,6 +77,7 @@ void SieveScriptDebuggerDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openConfig(), "SieveScriptDebuggerDialog");
     group.writeEntry("Size", size());
+    group.writeEntry("Splitter", mSieveScriptDebuggerWidget->splitterSizes());
 }
 
 void SieveScriptDebuggerDialog::readConfig()
@@ -86,4 +87,6 @@ void SieveScriptDebuggerDialog::readConfig()
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
     }
+    QList<int> size{ 100 , 400};
+    mSieveScriptDebuggerWidget->setSplitterSizes(group.readEntry("Splitter", size));
 }
