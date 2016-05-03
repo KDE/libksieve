@@ -28,9 +28,7 @@
 #include <QVBoxLayout>
 #include <QMimeData>
 
-namespace KSieveUi
-{
-
+using namespace KSieveUi;
 SieveTemplateListWidget::SieveTemplateListWidget(const QString &configName, QWidget *parent)
     : PimCommon::TemplateListWidget(configName, parent),
       mTemplateManager(Q_NULLPTR)
@@ -121,6 +119,4 @@ SieveTemplateWidget::~SieveTemplateWidget()
 void SieveTemplateWidget::setSieveCapabilities(const QStringList &capabilities)
 {
     mListTemplate->setSieveCapabilities(capabilities);
-}
-
 }
