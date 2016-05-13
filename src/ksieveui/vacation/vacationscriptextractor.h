@@ -681,42 +681,42 @@ public:
     }
 
 private:
-    void commandStart(const QString &identifier, int lineNumber);
+    void commandStart(const QString &identifier, int lineNumber) Q_DECL_OVERRIDE;
 
-    void commandEnd(int lineNumber);
+    void commandEnd(int lineNumber) Q_DECL_OVERRIDE;
 
-    void testStart(const QString &) {}
-    void testEnd() {}
-    void testListStart() {}
-    void testListEnd() {}
-    void blockStart(int lineNumber)
+    void testStart(const QString &) Q_DECL_OVERRIDE {}
+    void testEnd() Q_DECL_OVERRIDE {}
+    void testListStart() Q_DECL_OVERRIDE {}
+    void testListEnd() Q_DECL_OVERRIDE {}
+    void blockStart(int lineNumber) Q_DECL_OVERRIDE
     {
         Q_UNUSED(lineNumber)
     }
-    void blockEnd(int lineNumber)
+    void blockEnd(int lineNumber) Q_DECL_OVERRIDE
     {
         Q_UNUSED(lineNumber)
     }
-    void hashComment(const QString &) {}
-    void bracketComment(const QString &) {}
-    void lineFeed() {}
-    void error(const KSieve::Error &e);
-    void finished();
+    void hashComment(const QString &) Q_DECL_OVERRIDE {}
+    void bracketComment(const QString &) Q_DECL_OVERRIDE {}
+    void lineFeed() Q_DECL_OVERRIDE {}
+    void error(const KSieve::Error &e) Q_DECL_OVERRIDE;
+    void finished() Q_DECL_OVERRIDE;
 
-    void taggedArgument(const QString &tag)
+    void taggedArgument(const QString &tag) Q_DECL_OVERRIDE
     {
         Q_UNUSED(tag)
     }
-    void numberArgument(unsigned long number, char)
+    void numberArgument(unsigned long number, char) Q_DECL_OVERRIDE
     {
         Q_UNUSED(number)
     }
 
-    void stringArgument(const QString &string, bool, const QString &);
+    void stringArgument(const QString &string, bool, const QString &) Q_DECL_OVERRIDE;
 
-    void stringListArgumentStart() {}
-    void stringListEntry(const QString &string, bool, const QString &);
-    void stringListArgumentEnd() {}
+    void stringListArgumentStart() Q_DECL_OVERRIDE {}
+    void stringListEntry(const QString &string, bool, const QString &) Q_DECL_OVERRIDE;
+    void stringListArgumentEnd() Q_DECL_OVERRIDE {}
 
 private:
     Context mContext;
