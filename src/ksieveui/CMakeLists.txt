@@ -219,6 +219,7 @@ target_link_libraries(KF5KSieveUi
     KF5::PimTextEdit
     KF5::I18n
     KF5::SonnetUi
+    Qt5::PrintSupport
     )
 
 set_target_properties(KF5KSieveUi PROPERTIES

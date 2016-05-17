@@ -51,6 +51,9 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QDebug>
+#include <QPrinter>
+#include <QPrintDialog>
+#include <PimCommon/KPimPrintPreviewDialog>
 
 #include <errno.h>
 
@@ -321,12 +324,22 @@ bool SieveEditorTextModeWidget::isWordWrap() const
 
 void SieveEditorTextModeWidget::print()
 {
-    //TODO
+    QPrinter printer;
+
+    QScopedPointer<QPrintDialog> dlg(new QPrintDialog(&printer));
+
+    if (dlg && dlg->exec() == QDialog::Accepted) {
+        mTextEdit->print(&printer);
+    }
 }
 
 void SieveEditorTextModeWidget::printPreview()
 {
-    //TODO
+    PimCommon::KPimPrintPreviewDialog previewdlg(this);
+    connect(&previewdlg, &QPrintPreviewDialog::paintRequested, this, [this](QPrinter * printer) {
+        mTextEdit->print(printer);
+    });
+    previewdlg.exec();
 }
 
 void SieveEditorTextModeWidget::wordWrap(bool state)
