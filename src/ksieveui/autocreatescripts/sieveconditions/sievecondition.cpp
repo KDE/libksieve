@@ -54,11 +54,13 @@ QWidget *SieveCondition::createParamWidget(QWidget *parent) const
 
 QString SieveCondition::code(QWidget *parent) const
 {
+    Q_UNUSED(parent);
     return QString();
 }
 
 QStringList SieveCondition::needRequires(QWidget *parent) const
 {
+    Q_UNUSED(parent);
     return QStringList();
 }
 
