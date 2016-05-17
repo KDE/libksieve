@@ -319,6 +319,16 @@ bool SieveEditorTextModeWidget::isWordWrap() const
     return mTextEdit->isWordWrap();
 }
 
+void SieveEditorTextModeWidget::print()
+{
+    //TODO
+}
+
+void SieveEditorTextModeWidget::printPreview()
+{
+    //TODO
+}
+
 void SieveEditorTextModeWidget::wordWrap(bool state)
 {
     mTextEdit->wordWrap(state);

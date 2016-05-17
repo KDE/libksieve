@@ -244,6 +244,35 @@ void SieveEditorWidget::updateOriginalScript()
     mOriginalScript = script();
 }
 
+void SieveEditorWidget::print()
+{
+    switch (mMode) {
+    case TextMode:
+        mTextModeWidget->print();
+        break;
+    case GraphicMode:
+        break;
+    case Unknown:
+        qCDebug(LIBKSIEVE_LOG) << " Unknown mode";
+        break;
+    }
+
+}
+
+void SieveEditorWidget::printPreview()
+{
+    switch (mMode) {
+    case TextMode:
+        mTextModeWidget->printPreview();
+        break;
+    case GraphicMode:
+        break;
+    case Unknown:
+        qCDebug(LIBKSIEVE_LOG) << " Unknown mode";
+        break;
+    }
+}
+
 void SieveEditorWidget::wordWrap(bool state)
 {
     if (mMode == TextMode) {

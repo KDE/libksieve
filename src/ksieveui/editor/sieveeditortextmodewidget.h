@@ -96,6 +96,8 @@ public:
     void zoomReset();
     void wordWrap(bool state);
     bool isWordWrap() const;
+    void print();
+    void printPreview();
 Q_SIGNALS:
     void enableButtonOk(bool);
     void switchToGraphicalMode();

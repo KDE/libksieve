@@ -82,6 +82,8 @@ public:
     bool isWordWrap() const;
 
     void updateOriginalScript();
+    void print();
+    void printPreview();
 
 public Q_SLOTS:
     void find();
