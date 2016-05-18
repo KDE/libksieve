@@ -98,6 +98,7 @@ public:
     bool isWordWrap() const;
     void print();
     void printPreview();
+    bool printSupportEnabled() const;
 Q_SIGNALS:
     void enableButtonOk(bool);
     void switchToGraphicalMode();

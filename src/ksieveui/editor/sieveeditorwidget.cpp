@@ -687,3 +687,11 @@ QUrl SieveEditorWidget::currentHelpUrl() const
     }
     return QUrl();
 }
+
+bool SieveEditorWidget::printSupportEnabled() const
+{
+    if (mMode == TextMode) {
+        return mTextModeWidget->printSupportEnabled();
+    }
+    return false;
+}

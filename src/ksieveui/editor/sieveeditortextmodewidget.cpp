@@ -324,22 +324,29 @@ bool SieveEditorTextModeWidget::isWordWrap() const
 
 void SieveEditorTextModeWidget::print()
 {
-    QPrinter printer;
+    QWidget *w = mTabWidget->currentWidget();
+    if (w == mTextEdit) {
+        QPrinter printer;
 
-    QScopedPointer<QPrintDialog> dlg(new QPrintDialog(&printer));
+        QScopedPointer<QPrintDialog> dlg(new QPrintDialog(&printer));
 
-    if (dlg && dlg->exec() == QDialog::Accepted) {
-        mTextEdit->print(&printer);
+        if (dlg && dlg->exec() == QDialog::Accepted) {
+            mTextEdit->print(&printer);
+        }
     }
 }
 
 void SieveEditorTextModeWidget::printPreview()
 {
-    PimCommon::KPimPrintPreviewDialog previewdlg(this);
-    connect(&previewdlg, &QPrintPreviewDialog::paintRequested, this, [this](QPrinter * printer) {
-        mTextEdit->print(printer);
-    });
-    previewdlg.exec();
+    QWidget *w = mTabWidget->currentWidget();
+    if (w == mTextEdit) {
+
+        PimCommon::KPimPrintPreviewDialog previewdlg(this);
+        connect(&previewdlg, &QPrintPreviewDialog::paintRequested, this, [this](QPrinter * printer) {
+            mTextEdit->print(printer);
+        });
+        previewdlg.exec();
+    }
 }
 
 void SieveEditorTextModeWidget::wordWrap(bool state)
@@ -503,4 +510,10 @@ void SieveEditorTextModeWidget::debugSieveScript()
         mTextEdit->setPlainText(script);
     }
     delete dlg;
+}
+
+bool SieveEditorTextModeWidget::printSupportEnabled() const
+{
+    QWidget *w = mTabWidget->currentWidget();
+    return (w == mTextEdit);
 }

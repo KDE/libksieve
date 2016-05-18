@@ -85,6 +85,7 @@ public:
     void print();
     void printPreview();
 
+    bool printSupportEnabled() const;
 public Q_SLOTS:
     void find();
     void replace();
