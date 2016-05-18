@@ -285,12 +285,20 @@ void SieveEditorTextModeWidget::selectAll()
 
 bool SieveEditorTextModeWidget::isUndoAvailable() const
 {
-    return mTextEdit->document()->isUndoAvailable();
+    QWidget *w = mTabWidget->currentWidget();
+    if (w == mTextEdit) {
+        return mTextEdit->document()->isUndoAvailable();
+    }
+    return false;
 }
 
 bool SieveEditorTextModeWidget::isRedoAvailable() const
 {
-    return mTextEdit->document()->isRedoAvailable();
+    QWidget *w = mTabWidget->currentWidget();
+    if (w == mTextEdit) {
+        return mTextEdit->document()->isRedoAvailable();
+    }
+    return false;
 }
 
 bool SieveEditorTextModeWidget::hasSelection() const
