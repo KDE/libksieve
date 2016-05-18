@@ -106,6 +106,7 @@ Q_SIGNALS:
     void undoAvailable(bool);
     void redoAvailable(bool);
     void copyAvailable(bool);
+    void sieveEditorTabCurrentChanged();
 
 public Q_SLOTS:
     void slotShowGoToLine();
