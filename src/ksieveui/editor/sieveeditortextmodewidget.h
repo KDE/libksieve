@@ -99,6 +99,7 @@ public:
     void print();
     void printPreview();
     bool printSupportEnabled() const;
+    bool isTextEditor() const;
 Q_SIGNALS:
     void enableButtonOk(bool);
     void switchToGraphicalMode();

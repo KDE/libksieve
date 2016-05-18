@@ -521,8 +521,13 @@ void SieveEditorTextModeWidget::debugSieveScript()
     delete dlg;
 }
 
-bool SieveEditorTextModeWidget::printSupportEnabled() const
+bool SieveEditorTextModeWidget::isTextEditor() const
 {
     QWidget *w = mTabWidget->currentWidget();
     return (w == mTextEdit);
+}
+
+bool SieveEditorTextModeWidget::printSupportEnabled() const
+{
+    return isTextEditor();
 }

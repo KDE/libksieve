@@ -86,6 +86,7 @@ public:
     void printPreview();
 
     bool printSupportEnabled() const;
+    bool isTextEditor() const;
 public Q_SLOTS:
     void find();
     void replace();
