@@ -57,6 +57,10 @@ public:
 
     QAction *zoomResetAction() const;
     QAction *wordWrapAction() const;
+    QAction *printPreviewAction() const;
+
+    QAction *printAction() const;
+
 public Q_SLOTS:
     void setEditorMode(bool editorMode);
     void slotUndoAvailable(bool b);
@@ -79,6 +83,8 @@ Q_SIGNALS:
     void debugSieveScript();
     void zoomReset();
     void wordWrap(bool state);
+    void print();
+    void printPreview();
 
 private:
     void initActions();
@@ -99,6 +105,9 @@ private:
     QAction *mZoomResetAction;
     QAction *mDebugSieveAction;
     QAction *mWordWrapAction;
+    QAction *mPrintAction;
+    QAction *mPrintPreviewAction;
+
     QMenu *mEditorMenu;
     QMenu *mToolsMenu;
     QMenu *mFileMenu;

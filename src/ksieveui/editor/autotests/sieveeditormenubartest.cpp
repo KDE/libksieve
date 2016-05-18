@@ -56,6 +56,8 @@ void SieveEditorMenuBarTest::shouldDisableActions()
     QVERIFY(!bar.cutAction()->isEnabled());
     QVERIFY(bar.selectAllAction()->isEnabled());
     QVERIFY(bar.wordWrapAction()->isEnabled());
+    QVERIFY(bar.printAction()->isEnabled());
+    QVERIFY(bar.printPreviewAction()->isEnabled());
 
     bar.setEditorMode(false);
     QVERIFY(!bar.goToLineAction()->isEnabled());
@@ -79,6 +81,9 @@ void SieveEditorMenuBarTest::shouldDisableActions()
     QVERIFY(!bar.cutAction()->isEnabled());
     QVERIFY(!bar.selectAllAction()->isEnabled());
     QVERIFY(!bar.wordWrapAction()->isEnabled());
+    QVERIFY(!bar.printAction()->isEnabled());
+    QVERIFY(!bar.printPreviewAction()->isEnabled());
+
 
     bar.setEditorMode(true);
     QVERIFY(bar.goToLineAction()->isEnabled());
@@ -102,6 +107,9 @@ void SieveEditorMenuBarTest::shouldDisableActions()
     QVERIFY(bar.cutAction()->isEnabled());
     QVERIFY(bar.selectAllAction()->isEnabled());
     QVERIFY(bar.wordWrapAction()->isEnabled());
+    QVERIFY(bar.printAction()->isEnabled());
+    QVERIFY(bar.printPreviewAction()->isEnabled());
+
 }
 
 void SieveEditorMenuBarTest::shouldHaveDefaultValue()
@@ -126,9 +134,11 @@ void SieveEditorMenuBarTest::shouldHaveDefaultValue()
     QVERIFY(bar.uncommentCodeAction());
     QVERIFY(bar.debugSieveScriptAction());
     QVERIFY(bar.wordWrapAction());
+    QVERIFY(bar.printAction());
+    QVERIFY(bar.printPreviewAction());
     QCOMPARE(bar.actions().count(), 3);
     QCOMPARE(bar.editorMenu()->actions().count(), 19);
-    QCOMPARE(bar.fileMenu()->actions().count(), 0);
+    QCOMPARE(bar.fileMenu()->actions().count(), 2);
     QCOMPARE(bar.toolsMenu()->actions().count(), 4);
 
     QVERIFY(bar.findAction()->isEnabled());
@@ -192,6 +202,13 @@ void SieveEditorMenuBarTest::shouldEmitSignals()
     QSignalSpy spyWordWrapScript(&bar, SIGNAL(wordWrap(bool)));
     bar.wordWrapAction()->trigger();
 
+    QSignalSpy spyPrint(&bar, SIGNAL(print()));
+    bar.printAction()->trigger();
+
+    QSignalSpy spyPrintPreview(&bar, SIGNAL(printPreview()));
+    bar.printPreviewAction()->trigger();
+
+
     QCOMPARE(spyZoomOut.count(), 1);
     QCOMPARE(spyZoomIn.count(), 1);
     QCOMPARE(spyUnComment.count(), 1);
@@ -208,6 +225,8 @@ void SieveEditorMenuBarTest::shouldEmitSignals()
     QCOMPARE(spyZoomReset.count(), 1);
     QCOMPARE(spyDebugScript.count(), 1);
     QCOMPARE(spyWordWrapScript.count(), 1);
+    QCOMPARE(spyPrint.count(), 1);
+    QCOMPARE(spyPrintPreview.count(), 1);
 }
 
 QTEST_MAIN(SieveEditorMenuBarTest)

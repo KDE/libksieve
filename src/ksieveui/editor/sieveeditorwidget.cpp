@@ -112,6 +112,8 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
         connect(menuBar, &SieveEditorMenuBar::zoomReset, this, &SieveEditorWidget::zoomReset);
         connect(menuBar, &SieveEditorMenuBar::debugSieveScript, this, &SieveEditorWidget::debugSieveScript);
         connect(menuBar, &SieveEditorMenuBar::wordWrap, this, &SieveEditorWidget::wordWrap);
+        connect(menuBar, &SieveEditorMenuBar::print, this, &SieveEditorWidget::print);
+        connect(menuBar, &SieveEditorMenuBar::printPreview, this, &SieveEditorWidget::printPreview);
 
         connect(this, &SieveEditorWidget::copyAvailable, menuBar, &SieveEditorMenuBar::slotCopyAvailable);
         connect(this, &SieveEditorWidget::redoAvailable, menuBar, &SieveEditorMenuBar::slotRedoAvailable);

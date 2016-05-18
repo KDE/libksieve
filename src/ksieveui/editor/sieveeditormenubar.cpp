@@ -53,6 +53,9 @@ void SieveEditorMenuBar::setEditorMode(bool editorMode)
     mZoomResetAction->setEnabled(editorMode);
     mDebugSieveAction->setEnabled(editorMode);
     mWordWrapAction->setEnabled(editorMode);
+    mPrintAction->setEnabled(editorMode);
+    mPrintPreviewAction->setEnabled(editorMode);
+
 }
 
 void SieveEditorMenuBar::initActions()
@@ -84,6 +87,9 @@ void SieveEditorMenuBar::initActions()
     mSelectAllAction = KStandardAction::selectAll(this, SIGNAL(selectAll()), this);
     mZoomInAction = KStandardAction::zoomIn(this, SIGNAL(zoomIn()), this);
     mZoomOutAction = KStandardAction::zoomOut(this, SIGNAL(zoomOut()), this);
+    mPrintAction = KStandardAction::print(this, SIGNAL(print()), this);
+    mPrintPreviewAction = KStandardAction::printPreview(this, SIGNAL(printPreview()), this);
+
 
     mZoomResetAction = new QAction(i18nc("Reset the zoom", "Reset"), this);
     mZoomResetAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_0));
@@ -107,6 +113,8 @@ QMenu *SieveEditorMenuBar::editorMenu() const
 void SieveEditorMenuBar::initMenus()
 {
     mFileMenu = addMenu(i18nc("@title:menu", "File"));
+    mFileMenu->addAction(mPrintAction);
+    mFileMenu->addAction(mPrintPreviewAction);
     mEditorMenu = addMenu(i18nc("@title:menu", "Edit"));
     mToolsMenu = addMenu(i18nc("@title:menu", "Tools"));
     mEditorMenu->addAction(mUndoAction);
@@ -133,6 +141,16 @@ void SieveEditorMenuBar::initMenus()
     mToolsMenu->addAction(mUncommentCodeAction);
     mToolsMenu->addSeparator();
     mToolsMenu->addAction(mDebugSieveAction);
+}
+
+QAction *SieveEditorMenuBar::printAction() const
+{
+    return mPrintAction;
+}
+
+QAction *SieveEditorMenuBar::printPreviewAction() const
+{
+    return mPrintPreviewAction;
 }
 
 QAction *SieveEditorMenuBar::uncommentCodeAction() const
