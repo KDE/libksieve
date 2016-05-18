@@ -154,6 +154,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     connect(mTextModeWidget, &SieveEditorTextModeWidget::undoAvailable, this, &SieveEditorWidget::undoAvailable);
     connect(mTextModeWidget, &SieveEditorTextModeWidget::redoAvailable, this, &SieveEditorWidget::redoAvailable);
     connect(mTextModeWidget, &SieveEditorTextModeWidget::copyAvailable, this, &SieveEditorWidget::copyAvailable);
+    connect(mTextModeWidget, &SieveEditorTextModeWidget::sieveEditorTabCurrentChanged, this, &SieveEditorWidget::sieveEditorTabCurrentChanged);
     if (KSieveUi::EditorSettings::useGraphicEditorByDefault()) {
         changeMode(GraphicMode);
     } else {

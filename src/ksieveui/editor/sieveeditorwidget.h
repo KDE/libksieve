@@ -121,6 +121,7 @@ Q_SIGNALS:
     void redoAvailable(bool);
     void copyAvailable(bool);
     void changeModeEditor(bool);
+    void sieveEditorTabCurrentChanged();
 private:
     void changeSwitchButtonText();
     void changeMode(EditorMode mode);
