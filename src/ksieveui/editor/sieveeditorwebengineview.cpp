@@ -16,8 +16,10 @@
 */
 
 #include "sieveeditorwebengineview.h"
+#include <KLocalizedString>
 #include <QContextMenuEvent>
 #include <QMenu>
+#include <QFileDialog>
 #include <QWebEngineDownloadItem>
 #include <QWebEngineProfile>
 
@@ -27,7 +29,10 @@ SieveEditorWebEngineView::SieveEditorWebEngineView(QWidget *parent)
     : QWebEngineView(parent)
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
-    connect(page()->profile(), &QWebEngineProfile::downloadRequested, this, &SieveEditorWebEngineView::downloadRequested);
+    QWebEngineProfile *profile = new QWebEngineProfile(this);
+    QWebEnginePage *page = new QWebEnginePage(profile, this);
+    setPage(page);
+    connect(profile, &QWebEngineProfile::downloadRequested, this, &SieveEditorWebEngineView::downloadRequested);
 #endif
 }
 
@@ -39,19 +44,14 @@ SieveEditorWebEngineView::~SieveEditorWebEngineView()
 void SieveEditorWebEngineView::downloadRequested(QWebEngineDownloadItem *download)
 {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
-    //TODO save as
-#if 0
-    if (download->savePageFormat() != QWebEngineDownloadItem::UnknownSaveFormat) {
-        SavePageDialog dlg(this, download->savePageFormat(), download->path());
-        if (dlg.exec() != SavePageDialog::Accepted)
-            return;
-        download->setSavePageFormat(dlg.pageFormat());
-        download->setPath(dlg.filePath());
+    const QString filename = QFileDialog::getSaveFileName(this, i18n("Save Web Page"));
+    if (!filename.isEmpty()) {
+        download->setSavePageFormat(QWebEngineDownloadItem::SingleHtmlSaveFormat);
+        download->setPath(filename);
+        download->accept();
+    } else {
+        download->cancel();
     }
-
-    BrowserApplication::downloadManager()->download(download);
-    download->accept();
-#endif
 #else
     Q_UNUSED(download);
 #endif
@@ -103,6 +103,9 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     act = pageAction(QWebEnginePage::SavePage);
     if (act->isEnabled()) {
+        QAction *separator = new QAction(&menu);
+        separator->setSeparator(true);
+        menu.addAction(separator);
         menu.addAction(act);
     }
 #endif
