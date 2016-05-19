@@ -41,6 +41,7 @@ public:
     void resetZoom();
     void zoomOut();
     void zoomIn();
+    void copy();
 
 Q_SIGNALS:
     void titleChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QString &title);

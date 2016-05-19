@@ -275,7 +275,12 @@ void SieveEditorTextModeWidget::cut()
 
 void SieveEditorTextModeWidget::copy()
 {
-    mTextEdit->copy();
+    QWidget *w = mTabWidget->currentWidget();
+    if (w == mTextEdit) {
+        mTextEdit->copy();
+    } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
+        page->copy();
+    }
 }
 
 void SieveEditorTextModeWidget::selectAll()

@@ -106,6 +106,11 @@ void SieveEditorHelpHtmlWidget::zoomIn()
     mWebView->setZoomFactor(mZoomFactor / 100.0);
 }
 
+void SieveEditorHelpHtmlWidget::copy()
+{
+    mWebView->triggerPageAction(QWebEnginePage::Copy);
+}
+
 void SieveEditorHelpHtmlWidget::zoomOut()
 {
     if (mZoomFactor <= 10) {
