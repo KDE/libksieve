@@ -256,22 +256,34 @@ void SieveEditorTextModeWidget::replace()
 
 void SieveEditorTextModeWidget::undo()
 {
-    mTextEdit->undo();
+    QWidget *w = mTabWidget->currentWidget();
+    if (w == mTextEdit) {
+        mTextEdit->undo();
+    }
 }
 
 void SieveEditorTextModeWidget::redo()
 {
-    mTextEdit->redo();
+    QWidget *w = mTabWidget->currentWidget();
+    if (w == mTextEdit) {
+        mTextEdit->redo();
+    }
 }
 
 void SieveEditorTextModeWidget::paste()
 {
-    mTextEdit->paste();
+    QWidget *w = mTabWidget->currentWidget();
+    if (w == mTextEdit) {
+        mTextEdit->paste();
+    }
 }
 
 void SieveEditorTextModeWidget::cut()
 {
-    mTextEdit->cut();
+    QWidget *w = mTabWidget->currentWidget();
+    if (w == mTextEdit) {
+        mTextEdit->cut();
+    }
 }
 
 void SieveEditorTextModeWidget::copy()
