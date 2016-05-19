@@ -43,6 +43,8 @@ public:
     void zoomIn();
     void copy();
 
+    bool hasSelection() const;
+
 Q_SIGNALS:
     void titleChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QString &title);
     void progressIndicatorPixmapChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QPixmap &);

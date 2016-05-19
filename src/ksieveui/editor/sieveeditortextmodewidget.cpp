@@ -308,7 +308,13 @@ bool SieveEditorTextModeWidget::isRedoAvailable() const
 
 bool SieveEditorTextModeWidget::hasSelection() const
 {
-    return mTextEdit->textCursor().hasSelection();
+    QWidget *w = mTabWidget->currentWidget();
+    if (w == mTextEdit) {
+        return mTextEdit->textCursor().hasSelection();
+    } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
+        return page->hasSelection();
+    }
+    return false;
 }
 
 void SieveEditorTextModeWidget::zoomIn()
