@@ -117,6 +117,11 @@ bool SieveEditorHelpHtmlWidget::hasSelection() const
     return mWebView->hasSelection();
 }
 
+void SieveEditorHelpHtmlWidget::selectAll()
+{
+    mWebView->triggerPageAction(QWebEnginePage::SelectAll);
+}
+
 void SieveEditorHelpHtmlWidget::zoomOut()
 {
     if (mZoomFactor <= 10) {

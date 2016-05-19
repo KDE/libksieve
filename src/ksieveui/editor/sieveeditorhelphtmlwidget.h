@@ -44,6 +44,7 @@ public:
     void copy();
 
     bool hasSelection() const;
+    void selectAll();
 
 Q_SIGNALS:
     void titleChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QString &title);

@@ -298,7 +298,12 @@ void SieveEditorTextModeWidget::copy()
 
 void SieveEditorTextModeWidget::selectAll()
 {
-    mTextEdit->selectAll();
+    QWidget *w = mTabWidget->currentWidget();
+    if (w == mTextEdit) {
+        mTextEdit->selectAll();
+    } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
+        page->selectAll();
+    }
 }
 
 bool SieveEditorTextModeWidget::isUndoAvailable() const
