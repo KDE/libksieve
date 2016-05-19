@@ -18,18 +18,43 @@
 #include "sieveeditorwebengineview.h"
 #include <QContextMenuEvent>
 #include <QMenu>
+#include <QWebEngineDownloadItem>
+#include <QWebEngineProfile>
 
 using namespace KSieveUi;
 
 SieveEditorWebEngineView::SieveEditorWebEngineView(QWidget *parent)
     : QWebEngineView(parent)
 {
-
+#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+    connect(page()->profile(), &QWebEngineProfile::downloadRequested, this, &SieveEditorWebEngineView::downloadRequested);
+#endif
 }
 
 SieveEditorWebEngineView::~SieveEditorWebEngineView()
 {
 
+}
+
+void SieveEditorWebEngineView::downloadRequested(QWebEngineDownloadItem *download)
+{
+#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+    //TODO save as
+#if 0
+    if (download->savePageFormat() != QWebEngineDownloadItem::UnknownSaveFormat) {
+        SavePageDialog dlg(this, download->savePageFormat(), download->path());
+        if (dlg.exec() != SavePageDialog::Accepted)
+            return;
+        download->setSavePageFormat(dlg.pageFormat());
+        download->setPath(dlg.filePath());
+    }
+
+    BrowserApplication::downloadManager()->download(download);
+    download->accept();
+#endif
+#else
+    Q_UNUSED(download);
+#endif
 }
 
 void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
@@ -71,6 +96,12 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
     }
 #if 0
     act = pageAction(QWebEnginePage::CopyLinkToClipboard);
+    if (act->isEnabled()) {
+        menu.addAction(act);
+    }
+#endif
+#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+    act = pageAction(QWebEnginePage::SavePage);
     if (act->isEnabled()) {
         menu.addAction(act);
     }
