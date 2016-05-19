@@ -90,6 +90,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
 
     mTabWidget = new SieveEditorTabWidget;
     connect(mTabWidget, &SieveEditorTabWidget::currentChanged, this, &SieveEditorTextModeWidget::sieveEditorTabCurrentChanged);
+    connect(mTabWidget, &SieveEditorTabWidget::copyAvailable, this, &SieveEditorTextModeWidget::copyAvailable);
     mTextToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
     textEditLayout->addWidget(mTextToSpeechWidget);
 

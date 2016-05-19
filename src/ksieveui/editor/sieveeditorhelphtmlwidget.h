@@ -49,6 +49,7 @@ Q_SIGNALS:
     void titleChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QString &title);
     void progressIndicatorPixmapChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QPixmap &);
     void loadFinished(KSieveUi::SieveEditorHelpHtmlWidget *widget, bool success);
+    void copyAvailable(bool);
 
 private Q_SLOTS:
     void slotTitleChanged(const QString &title);
@@ -56,6 +57,7 @@ private Q_SLOTS:
     void slotLoadStarted();
     void slotPixmapChanged(const QPixmap &pixmap);
     void slotLoadFinished(bool success);
+    void slotSelectionChanged();
 private:
     QString mTitle;
     SieveEditorWebEngineView *mWebView;

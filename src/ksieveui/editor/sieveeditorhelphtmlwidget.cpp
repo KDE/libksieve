@@ -41,6 +41,7 @@ SieveEditorHelpHtmlWidget::SieveEditorHelpHtmlWidget(QWidget *parent)
     connect(mWebView, &SieveEditorWebEngineView::titleChanged, this, &SieveEditorHelpHtmlWidget::slotTitleChanged);
     connect(mWebView, &SieveEditorWebEngineView::loadStarted, this, &SieveEditorHelpHtmlWidget::slotLoadStarted);
     connect(mWebView, &SieveEditorWebEngineView::loadFinished, this, &SieveEditorHelpHtmlWidget::slotFinished);
+    connect(mWebView, &SieveEditorWebEngineView::selectionChanged, this, &SieveEditorHelpHtmlWidget::slotSelectionChanged);
     QVBoxLayout *lay = new QVBoxLayout;
     lay->addWidget(mWebView);
     setLayout(lay);
@@ -132,4 +133,9 @@ void SieveEditorHelpHtmlWidget::resetZoom()
 {
     mZoomFactor = 100;
     mWebView->setZoomFactor(1.0);
+}
+
+void SieveEditorHelpHtmlWidget::slotSelectionChanged()
+{
+    Q_EMIT copyAvailable(mWebView->hasSelection());
 }
