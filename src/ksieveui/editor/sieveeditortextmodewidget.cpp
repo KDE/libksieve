@@ -88,15 +88,21 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     QVBoxLayout *textEditLayout = new QVBoxLayout;
     textEditLayout->setMargin(0);
 
+    QWidget *editorWidget = new QWidget;
+    QVBoxLayout *editorWidgetLayout = new QVBoxLayout;
+    editorWidgetLayout->setMargin(0);
+    editorWidget->setLayout(editorWidgetLayout);
+
     mTabWidget = new SieveEditorTabWidget;
     connect(mTabWidget, &SieveEditorTabWidget::currentChanged, this, &SieveEditorTextModeWidget::sieveEditorTabCurrentChanged);
     connect(mTabWidget, &SieveEditorTabWidget::copyAvailable, this, &SieveEditorTextModeWidget::copyAvailable);
     mTextToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
-    textEditLayout->addWidget(mTextToSpeechWidget);
+    editorWidgetLayout->addWidget(mTextToSpeechWidget);
 
     mTextEdit = new SieveTextEdit;
+    editorWidgetLayout->addWidget(mTextEdit);
     connect(mTextEdit, &SieveTextEdit::textChanged, this, &SieveEditorTextModeWidget::valueChanged);
-    mTabWidget->addTab(mTextEdit, i18n("Editor"));
+    mTabWidget->addTab(editorWidget, i18n("Editor"));
     mTabWidget->tabBar()->hide();
     textEditLayout->addWidget(mTabWidget);
     connect(mTextEdit, &SieveTextEdit::openHelp, mTabWidget, &SieveEditorTabWidget::slotAddHelpPage);
@@ -106,7 +112,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     mGoToLine = new KPIMTextEdit::TextGoToLineWidget;
     mGoToLine->hide();
     mGotoLineSliderContainer->setContent(mGoToLine);
-    textEditLayout->addWidget(mGotoLineSliderContainer);
+    editorWidgetLayout->addWidget(mGotoLineSliderContainer);
     connect(mGoToLine, &KPIMTextEdit::TextGoToLineWidget::hideGotoLine, mGotoLineSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
 
     connect(mGoToLine, &KPIMTextEdit::TextGoToLineWidget::moveToLine, this, &SieveEditorTextModeWidget::slotGoToLine);
@@ -117,14 +123,14 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     connect(mFindBar, &KPIMTextEdit::TextEditFindBarBase::hideFindBar, mSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
     connect(mFindBar, &KPIMTextEdit::TextEditFindBarBase::displayMessageIndicator, mTextEdit, &KPIMTextEdit::PlainTextEditor::slotDisplayMessageIndicator);
     mSliderContainer->setContent(mFindBar);
-    textEditLayout->addWidget(mSliderContainer);
+    editorWidgetLayout->addWidget(mSliderContainer);
 
     mSieveEditorWarning = new SieveEditorWarning;
-    textEditLayout->addWidget(mSieveEditorWarning);
+    editorWidgetLayout->addWidget(mSieveEditorWarning);
 
     mSieveParsingWarning = new SieveEditorParsingMissingFeatureWarning(SieveEditorParsingMissingFeatureWarning::TextEditor);
     connect(mSieveParsingWarning, &SieveEditorParsingMissingFeatureWarning::switchToGraphicalMode, this, &SieveEditorTextModeWidget::switchToGraphicalMode);
-    textEditLayout->addWidget(mSieveParsingWarning);
+    editorWidgetLayout->addWidget(mSieveParsingWarning);
 
     textEditWidget->setLayout(textEditLayout);
 
