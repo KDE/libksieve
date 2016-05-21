@@ -137,6 +137,7 @@ private:
     KPIMTextEdit::SlideContainer *mGotoLineSliderContainer;
     KPIMTextEdit::SlideContainer *mSliderContainer;
     SieveTemplateWidget *mSieveTemplateWidget;
+    QWidget *mEditorWidget;
 };
 
 }

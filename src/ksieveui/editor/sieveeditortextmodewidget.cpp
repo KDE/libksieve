@@ -88,10 +88,10 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     QVBoxLayout *textEditLayout = new QVBoxLayout;
     textEditLayout->setMargin(0);
 
-    QWidget *editorWidget = new QWidget;
+    mEditorWidget = new QWidget;
     QVBoxLayout *editorWidgetLayout = new QVBoxLayout;
     editorWidgetLayout->setMargin(0);
-    editorWidget->setLayout(editorWidgetLayout);
+    mEditorWidget->setLayout(editorWidgetLayout);
 
     mTabWidget = new SieveEditorTabWidget;
     connect(mTabWidget, &SieveEditorTabWidget::currentChanged, this, &SieveEditorTextModeWidget::sieveEditorTabCurrentChanged);
@@ -102,7 +102,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     mTextEdit = new SieveTextEdit;
     editorWidgetLayout->addWidget(mTextEdit);
     connect(mTextEdit, &SieveTextEdit::textChanged, this, &SieveEditorTextModeWidget::valueChanged);
-    mTabWidget->addTab(editorWidget, i18n("Editor"));
+    mTabWidget->addTab(mEditorWidget, i18n("Editor"));
     mTabWidget->tabBar()->hide();
     textEditLayout->addWidget(mTabWidget);
     connect(mTextEdit, &SieveTextEdit::openHelp, mTabWidget, &SieveEditorTabWidget::slotAddHelpPage);
@@ -263,7 +263,7 @@ void SieveEditorTextModeWidget::replace()
 void SieveEditorTextModeWidget::undo()
 {
     const QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    if (w == mEditorWidget) {
         mTextEdit->undo();
     }
 }
@@ -271,7 +271,7 @@ void SieveEditorTextModeWidget::undo()
 void SieveEditorTextModeWidget::redo()
 {
     const QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    if (w == mEditorWidget) {
         mTextEdit->redo();
     }
 }
@@ -279,7 +279,7 @@ void SieveEditorTextModeWidget::redo()
 void SieveEditorTextModeWidget::paste()
 {
     const QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    if (w == mEditorWidget) {
         mTextEdit->paste();
     }
 }
@@ -287,7 +287,7 @@ void SieveEditorTextModeWidget::paste()
 void SieveEditorTextModeWidget::cut()
 {
     const QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    if (w == mEditorWidget) {
         mTextEdit->cut();
     }
 }
@@ -295,7 +295,7 @@ void SieveEditorTextModeWidget::cut()
 void SieveEditorTextModeWidget::copy()
 {
     QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    if (w == mEditorWidget) {
         mTextEdit->copy();
     } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
         page->copy();
@@ -305,7 +305,7 @@ void SieveEditorTextModeWidget::copy()
 void SieveEditorTextModeWidget::selectAll()
 {
     QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    if (w == mEditorWidget) {
         mTextEdit->selectAll();
     } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
         page->selectAll();
@@ -315,7 +315,7 @@ void SieveEditorTextModeWidget::selectAll()
 bool SieveEditorTextModeWidget::isUndoAvailable() const
 {
     const QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    if (w == mEditorWidget) {
         return mTextEdit->document()->isUndoAvailable();
     }
     return false;
@@ -324,7 +324,7 @@ bool SieveEditorTextModeWidget::isUndoAvailable() const
 bool SieveEditorTextModeWidget::isRedoAvailable() const
 {
     const QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    if (w == mEditorWidget) {
         return mTextEdit->document()->isRedoAvailable();
     }
     return false;
@@ -333,7 +333,7 @@ bool SieveEditorTextModeWidget::isRedoAvailable() const
 bool SieveEditorTextModeWidget::hasSelection() const
 {
     QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    if (w == mEditorWidget) {
         return mTextEdit->textCursor().hasSelection();
     } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
         return page->hasSelection();
@@ -344,7 +344,7 @@ bool SieveEditorTextModeWidget::hasSelection() const
 void SieveEditorTextModeWidget::zoomIn()
 {
    QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    if (w == mEditorWidget) {
         mTextEdit->zoomIn();
     } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
         page->zoomIn();
@@ -354,7 +354,7 @@ void SieveEditorTextModeWidget::zoomIn()
 void SieveEditorTextModeWidget::zoomOut()
 {
     QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    if (w == mEditorWidget) {
         mTextEdit->zoomOut();
     } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
         page->zoomOut();
@@ -369,7 +369,7 @@ bool SieveEditorTextModeWidget::isWordWrap() const
 void SieveEditorTextModeWidget::print()
 {
     const QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    if (w == mEditorWidget) {
         QPrinter printer;
 
         QScopedPointer<QPrintDialog> dlg(new QPrintDialog(&printer));
@@ -383,7 +383,7 @@ void SieveEditorTextModeWidget::print()
 void SieveEditorTextModeWidget::printPreview()
 {
     const QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    if (w == mEditorWidget) {
 
         PimCommon::KPimPrintPreviewDialog previewdlg(this);
         connect(&previewdlg, &QPrintPreviewDialog::paintRequested, this, [this](QPrinter * printer) {
@@ -401,7 +401,7 @@ void SieveEditorTextModeWidget::wordWrap(bool state)
 void SieveEditorTextModeWidget::zoomReset()
 {
     QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    if (w == mEditorWidget) {
         mTextEdit->slotZoomReset();
     } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
         page->resetZoom();
@@ -558,8 +558,8 @@ void SieveEditorTextModeWidget::debugSieveScript()
 
 bool SieveEditorTextModeWidget::isTextEditor() const
 {
-    QWidget *w = mTabWidget->currentWidget();
-    return (w == mTextEdit);
+    const QWidget *w = mTabWidget->currentWidget();
+    return (w == mEditorWidget);
 }
 
 bool SieveEditorTextModeWidget::printSupportEnabled() const
