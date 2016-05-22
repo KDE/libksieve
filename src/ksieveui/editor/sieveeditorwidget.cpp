@@ -691,6 +691,14 @@ QUrl SieveEditorWidget::currentHelpUrl() const
     return QUrl();
 }
 
+bool SieveEditorWidget::isTextEditor() const
+{
+    if (mMode == TextMode) {
+        return mTextModeWidget->isTextEditor();
+    }
+    return false;
+}
+
 bool SieveEditorWidget::printSupportEnabled() const
 {
     if (mMode == TextMode) {

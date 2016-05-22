@@ -76,6 +76,7 @@ void SieveEditorTabWidget::slotAddHelpPage(const QUrl &url)
     connect(htmlPage, &SieveEditorHelpHtmlWidget::titleChanged, this, &SieveEditorTabWidget::slotTitleChanged);
     connect(htmlPage, &SieveEditorHelpHtmlWidget::progressIndicatorPixmapChanged, this, &SieveEditorTabWidget::slotProgressIndicatorPixmapChanged);
     connect(htmlPage, &SieveEditorHelpHtmlWidget::loadFinished, this, &SieveEditorTabWidget::slotLoadFinished);
+    connect(htmlPage, &SieveEditorHelpHtmlWidget::copyAvailable, this, &SieveEditorTabWidget::copyAvailable);
     htmlPage->openUrl(url);
     const int index = addTab(htmlPage, i18n("Help"));
     setCurrentIndex(index);

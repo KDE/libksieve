@@ -39,6 +39,9 @@ protected:
     void tabRemoved(int index) Q_DECL_OVERRIDE;
     void tabInserted(int index) Q_DECL_OVERRIDE;
 
+Q_SIGNALS:
+    void copyAvailable(bool);
+
 private Q_SLOTS:
     void slotTitleChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QString &title);
     void slotTabCloseRequested(int index);

@@ -19,7 +19,7 @@
 #define SIEVEEDITORWEBENGINEVIEW_H
 
 #include <QWebEngineView>
-
+class QWebEngineDownloadItem;
 namespace KSieveUi
 {
 class SieveEditorWebEngineView : public QWebEngineView
@@ -29,6 +29,8 @@ public:
     explicit SieveEditorWebEngineView(QWidget *parent = Q_NULLPTR);
     ~SieveEditorWebEngineView();
 
+private Q_SLOTS:
+    void downloadRequested(QWebEngineDownloadItem*);
 protected:
     void contextMenuEvent(QContextMenuEvent *ev) Q_DECL_OVERRIDE;
 };

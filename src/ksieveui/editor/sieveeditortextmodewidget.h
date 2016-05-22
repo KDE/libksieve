@@ -99,6 +99,7 @@ public:
     void print();
     void printPreview();
     bool printSupportEnabled() const;
+    bool isTextEditor() const;
 Q_SIGNALS:
     void enableButtonOk(bool);
     void switchToGraphicalMode();
@@ -136,6 +137,7 @@ private:
     KPIMTextEdit::SlideContainer *mGotoLineSliderContainer;
     KPIMTextEdit::SlideContainer *mSliderContainer;
     SieveTemplateWidget *mSieveTemplateWidget;
+    QWidget *mEditorWidget;
 };
 
 }

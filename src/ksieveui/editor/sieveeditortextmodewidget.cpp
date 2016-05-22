@@ -88,14 +88,21 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     QVBoxLayout *textEditLayout = new QVBoxLayout;
     textEditLayout->setMargin(0);
 
+    mEditorWidget = new QWidget;
+    QVBoxLayout *editorWidgetLayout = new QVBoxLayout;
+    editorWidgetLayout->setMargin(0);
+    mEditorWidget->setLayout(editorWidgetLayout);
+
     mTabWidget = new SieveEditorTabWidget;
     connect(mTabWidget, &SieveEditorTabWidget::currentChanged, this, &SieveEditorTextModeWidget::sieveEditorTabCurrentChanged);
+    connect(mTabWidget, &SieveEditorTabWidget::copyAvailable, this, &SieveEditorTextModeWidget::copyAvailable);
     mTextToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
-    textEditLayout->addWidget(mTextToSpeechWidget);
+    editorWidgetLayout->addWidget(mTextToSpeechWidget);
 
     mTextEdit = new SieveTextEdit;
+    editorWidgetLayout->addWidget(mTextEdit);
     connect(mTextEdit, &SieveTextEdit::textChanged, this, &SieveEditorTextModeWidget::valueChanged);
-    mTabWidget->addTab(mTextEdit, i18n("Editor"));
+    mTabWidget->addTab(mEditorWidget, i18n("Editor"));
     mTabWidget->tabBar()->hide();
     textEditLayout->addWidget(mTabWidget);
     connect(mTextEdit, &SieveTextEdit::openHelp, mTabWidget, &SieveEditorTabWidget::slotAddHelpPage);
@@ -105,7 +112,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     mGoToLine = new KPIMTextEdit::TextGoToLineWidget;
     mGoToLine->hide();
     mGotoLineSliderContainer->setContent(mGoToLine);
-    textEditLayout->addWidget(mGotoLineSliderContainer);
+    editorWidgetLayout->addWidget(mGotoLineSliderContainer);
     connect(mGoToLine, &KPIMTextEdit::TextGoToLineWidget::hideGotoLine, mGotoLineSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
 
     connect(mGoToLine, &KPIMTextEdit::TextGoToLineWidget::moveToLine, this, &SieveEditorTextModeWidget::slotGoToLine);
@@ -116,14 +123,14 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     connect(mFindBar, &KPIMTextEdit::TextEditFindBarBase::hideFindBar, mSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
     connect(mFindBar, &KPIMTextEdit::TextEditFindBarBase::displayMessageIndicator, mTextEdit, &KPIMTextEdit::PlainTextEditor::slotDisplayMessageIndicator);
     mSliderContainer->setContent(mFindBar);
-    textEditLayout->addWidget(mSliderContainer);
+    editorWidgetLayout->addWidget(mSliderContainer);
 
     mSieveEditorWarning = new SieveEditorWarning;
-    textEditLayout->addWidget(mSieveEditorWarning);
+    editorWidgetLayout->addWidget(mSieveEditorWarning);
 
     mSieveParsingWarning = new SieveEditorParsingMissingFeatureWarning(SieveEditorParsingMissingFeatureWarning::TextEditor);
     connect(mSieveParsingWarning, &SieveEditorParsingMissingFeatureWarning::switchToGraphicalMode, this, &SieveEditorTextModeWidget::switchToGraphicalMode);
-    textEditLayout->addWidget(mSieveParsingWarning);
+    editorWidgetLayout->addWidget(mSieveParsingWarning);
 
     textEditWidget->setLayout(textEditLayout);
 
@@ -255,38 +262,60 @@ void SieveEditorTextModeWidget::replace()
 
 void SieveEditorTextModeWidget::undo()
 {
-    mTextEdit->undo();
+    const QWidget *w = mTabWidget->currentWidget();
+    if (w == mEditorWidget) {
+        mTextEdit->undo();
+    }
 }
 
 void SieveEditorTextModeWidget::redo()
 {
-    mTextEdit->redo();
+    const QWidget *w = mTabWidget->currentWidget();
+    if (w == mEditorWidget) {
+        mTextEdit->redo();
+    }
 }
 
 void SieveEditorTextModeWidget::paste()
 {
-    mTextEdit->paste();
+    const QWidget *w = mTabWidget->currentWidget();
+    if (w == mEditorWidget) {
+        mTextEdit->paste();
+    }
 }
 
 void SieveEditorTextModeWidget::cut()
 {
-    mTextEdit->cut();
+    const QWidget *w = mTabWidget->currentWidget();
+    if (w == mEditorWidget) {
+        mTextEdit->cut();
+    }
 }
 
 void SieveEditorTextModeWidget::copy()
 {
-    mTextEdit->copy();
+    QWidget *w = mTabWidget->currentWidget();
+    if (w == mEditorWidget) {
+        mTextEdit->copy();
+    } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
+        page->copy();
+    }
 }
 
 void SieveEditorTextModeWidget::selectAll()
 {
-    mTextEdit->selectAll();
+    QWidget *w = mTabWidget->currentWidget();
+    if (w == mEditorWidget) {
+        mTextEdit->selectAll();
+    } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
+        page->selectAll();
+    }
 }
 
 bool SieveEditorTextModeWidget::isUndoAvailable() const
 {
-    QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    const QWidget *w = mTabWidget->currentWidget();
+    if (w == mEditorWidget) {
         return mTextEdit->document()->isUndoAvailable();
     }
     return false;
@@ -294,8 +323,8 @@ bool SieveEditorTextModeWidget::isUndoAvailable() const
 
 bool SieveEditorTextModeWidget::isRedoAvailable() const
 {
-    QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    const QWidget *w = mTabWidget->currentWidget();
+    if (w == mEditorWidget) {
         return mTextEdit->document()->isRedoAvailable();
     }
     return false;
@@ -303,13 +332,19 @@ bool SieveEditorTextModeWidget::isRedoAvailable() const
 
 bool SieveEditorTextModeWidget::hasSelection() const
 {
-    return mTextEdit->textCursor().hasSelection();
+    QWidget *w = mTabWidget->currentWidget();
+    if (w == mEditorWidget) {
+        return mTextEdit->textCursor().hasSelection();
+    } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
+        return page->hasSelection();
+    }
+    return false;
 }
 
 void SieveEditorTextModeWidget::zoomIn()
 {
-    QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+   QWidget *w = mTabWidget->currentWidget();
+    if (w == mEditorWidget) {
         mTextEdit->zoomIn();
     } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
         page->zoomIn();
@@ -319,7 +354,7 @@ void SieveEditorTextModeWidget::zoomIn()
 void SieveEditorTextModeWidget::zoomOut()
 {
     QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    if (w == mEditorWidget) {
         mTextEdit->zoomOut();
     } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
         page->zoomOut();
@@ -333,8 +368,8 @@ bool SieveEditorTextModeWidget::isWordWrap() const
 
 void SieveEditorTextModeWidget::print()
 {
-    QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    const QWidget *w = mTabWidget->currentWidget();
+    if (w == mEditorWidget) {
         QPrinter printer;
 
         QScopedPointer<QPrintDialog> dlg(new QPrintDialog(&printer));
@@ -347,8 +382,8 @@ void SieveEditorTextModeWidget::print()
 
 void SieveEditorTextModeWidget::printPreview()
 {
-    QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    const QWidget *w = mTabWidget->currentWidget();
+    if (w == mEditorWidget) {
 
         PimCommon::KPimPrintPreviewDialog previewdlg(this);
         connect(&previewdlg, &QPrintPreviewDialog::paintRequested, this, [this](QPrinter * printer) {
@@ -366,7 +401,7 @@ void SieveEditorTextModeWidget::wordWrap(bool state)
 void SieveEditorTextModeWidget::zoomReset()
 {
     QWidget *w = mTabWidget->currentWidget();
-    if (w == mTextEdit) {
+    if (w == mEditorWidget) {
         mTextEdit->slotZoomReset();
     } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
         page->resetZoom();
@@ -521,8 +556,13 @@ void SieveEditorTextModeWidget::debugSieveScript()
     delete dlg;
 }
 
+bool SieveEditorTextModeWidget::isTextEditor() const
+{
+    const QWidget *w = mTabWidget->currentWidget();
+    return (w == mEditorWidget);
+}
+
 bool SieveEditorTextModeWidget::printSupportEnabled() const
 {
-    QWidget *w = mTabWidget->currentWidget();
-    return (w == mTextEdit);
+    return isTextEditor();
 }
