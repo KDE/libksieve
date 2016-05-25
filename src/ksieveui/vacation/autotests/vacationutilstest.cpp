@@ -28,7 +28,7 @@
 
 using namespace KSieveUi;
 
-QTEST_MAIN(VacationUtilsTest)
+QTEST_APPLESS_MAIN(VacationUtilsTest)
 
 void testAliases(const KMime::Types::AddrSpecList &l1, const KMime::Types::AddrSpecList &l2)
 {
