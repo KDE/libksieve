@@ -47,6 +47,13 @@ private Q_SLOTS:
     void slotTabCloseRequested(int index);
     void slotProgressIndicatorPixmapChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QPixmap &pixmap);
     void slotLoadFinished(KSieveUi::SieveEditorHelpHtmlWidget *widget, bool success);
+    void slotTabContextMenuRequest(const QPoint &pos);
+
+    void slotCloseAllTabExcept(int index);
+    void slotCloseAllTab();
+    void slotCloseRequest(int index);
+private:
+    void closeAllTabExcept(int index = -1);
 };
 }
 

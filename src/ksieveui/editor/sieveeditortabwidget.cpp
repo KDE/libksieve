@@ -21,6 +21,7 @@
 #include <KLocalizedString>
 #include <KStringHandler>
 
+#include <QMenu>
 #include <QTabBar>
 #include <QUrl>
 
@@ -30,11 +31,79 @@ SieveEditorTabWidget::SieveEditorTabWidget(QWidget *parent)
 {
     setTabsClosable(true);
     connect(this, &SieveEditorTabWidget::tabCloseRequested, this, &SieveEditorTabWidget::slotTabCloseRequested);
+    setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(this, &SieveEditorTabWidget::customContextMenuRequested, this, &SieveEditorTabWidget::slotTabContextMenuRequest);
 }
 
 SieveEditorTabWidget::~SieveEditorTabWidget()
 {
 
+}
+
+void SieveEditorTabWidget::slotTabContextMenuRequest(const QPoint &pos)
+{
+    QTabBar *bar = tabBar();
+    if (count() <= 1) {
+        return;
+    }
+
+    const int indexBar = bar->tabAt(bar->mapFrom(this, pos));
+    if (indexBar == -1) {
+        return;
+    }
+    QMenu menu(this);
+
+    const int countTab = (count() > 1);
+
+    QAction *closeTab = menu.addAction(i18nc("@action:inmenu", "Close Tab"));
+    closeTab->setEnabled((indexBar != 0) && countTab);
+    closeTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
+
+    QAction *allOther = menu.addAction(i18nc("@action:inmenu", "Close All Other Tabs"));
+    allOther->setEnabled(countTab);
+    allOther->setIcon(QIcon::fromTheme(QStringLiteral("tab-close-other")));
+
+    QAction *allTab = menu.addAction(i18nc("@action:inmenu", "Close All Tabs"));
+    allTab->setEnabled(countTab);
+    allTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
+
+    QAction *action = menu.exec(mapToGlobal(pos));
+
+    if (action == allOther) {   // Close all other tabs
+        slotCloseAllTabExcept(indexBar);
+    } else if (action == closeTab) {
+        slotCloseRequest(indexBar);
+    } else if (action == allTab) {
+        slotCloseAllTab();
+    }
+}
+
+void SieveEditorTabWidget::slotCloseRequest(int index)
+{
+    if (index != 0) {
+        removeTab(index);
+    }
+}
+
+void SieveEditorTabWidget::closeAllTabExcept(int index)
+{
+    //Don't close first tab
+    for (int i = count() - 1; i > 0; --i) {
+        if (i == index) {
+            continue;
+        }
+        removeTab(i);
+    }
+}
+
+void SieveEditorTabWidget::slotCloseAllTabExcept(int index)
+{
+    closeAllTabExcept(index);
+}
+
+void SieveEditorTabWidget::slotCloseAllTab()
+{
+    closeAllTabExcept();
 }
 
 void SieveEditorTabWidget::slotTabCloseRequested(int index)
