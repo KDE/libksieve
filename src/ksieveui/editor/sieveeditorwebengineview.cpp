@@ -94,12 +94,10 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
     if (act->isEnabled()) {
         menu.addAction(act);
     }
-#if 0
     act = pageAction(QWebEnginePage::CopyLinkToClipboard);
     if (act->isEnabled()) {
         menu.addAction(act);
     }
-#endif
 #if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     act = pageAction(QWebEnginePage::SavePage);
     if (act->isEnabled()) {
