@@ -131,14 +131,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     connect(mSieveTemplateWidget, &SieveTemplateWidget::insertTemplate, mTextEdit, &SieveTextEdit::insertPlainText);
 
     //
-    QShortcut *shortcut = new QShortcut(this);
-    shortcut->setKey(Qt::Key_F + Qt::CTRL);
-    connect(shortcut, &QShortcut::activated, this, &SieveEditorTextModeWidget::slotFind);
     connect(mTextEdit, &SieveTextEdit::findText, this, &SieveEditorTextModeWidget::slotFind);
-
-    shortcut = new QShortcut(this);
-    shortcut->setKey(Qt::Key_R + Qt::CTRL);
-    connect(shortcut, &QShortcut::activated, this, &SieveEditorTextModeWidget::slotReplace);
     connect(mTextEdit, &SieveTextEdit::replaceText, this, &SieveEditorTextModeWidget::slotReplace);
 
     mDebugTextEdit = new KPIMTextEdit::PlainTextEditorWidget;
