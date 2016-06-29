@@ -79,7 +79,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     glay->addWidget(mSubject, row, 1);
     ++row;
 
-    QHBoxLayout *timeLayout = new QHBoxLayout(this);
+    QHBoxLayout *timeLayout = new QHBoxLayout;
     // Start date
     mStartDate = new KDateComboBox(this);
     mStartDate->setObjectName(QStringLiteral("mStartDate"));
@@ -105,7 +105,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
 
     ++row;
     // End date
-    timeLayout = new QHBoxLayout(this);
+    timeLayout = new QHBoxLayout;
 
     mEndDate = new KDateComboBox(this);
     mEndDate->setObjectName(QStringLiteral("mEndDate"));
@@ -172,7 +172,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mMailActionRecipient->setClearButtonEnabled(true);
     mMailActionRecipient->setEnabled(false);
 
-    QHBoxLayout *hLayout = new QHBoxLayout(this);
+    QHBoxLayout *hLayout = new QHBoxLayout;
 
     hLayout->addWidget(mMailAction);
     hLayout->addWidget(mMailActionRecipient);
