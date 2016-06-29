@@ -59,7 +59,7 @@ namespace Util
 /**
  * Returns the sieve url for the account with the given @p identifier.
  */
-QUrl findSieveUrlForAccount(const QString &identifier);
+QUrl findSieveUrlForAccount(const QString &identifier, bool withVacationFileName = true);
 
 /**
  * Returns the list of configured IMAP agent instances.

@@ -53,7 +53,7 @@ bool CustomManageSieveWidget::refreshList()
         last = new SieveTreeWidgetItem(treeView(), last);
         last->setIcon(0, QIcon::fromTheme(QStringLiteral("network-server")));
 
-        const QUrl u = KSieveUi::Util::findSieveUrlForAccount(type.identifier());
+        const QUrl u = KSieveUi::Util::findSieveUrlForAccount(type.identifier(), false);
         if (u.isEmpty()) {
             QTreeWidgetItem *item = new QTreeWidgetItem(last);
             item->setText(0, i18n("No Sieve URL configured"));

@@ -48,8 +48,9 @@
 
 using namespace KSieveUi;
 
-QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier)
+QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier, bool withVacationFileName)
 {
+    qDebug()<<" QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier)"<<identifier << "withVacationFileName" << withVacationFileName;
     QScopedPointer<OrgKdeAkonadiImapSettingsInterface> interface(PimCommon::Util::createImapSettingsInterface(identifier));
 
     if (!interface) {
@@ -115,7 +116,10 @@ QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier)
             u.addQueryItem(QStringLiteral("x-allow-unencrypted"), QStringLiteral("true"));
         }
         u = u.adjusted(QUrl::RemoveFilename);
-        u.setPath(u.path() + QLatin1Char('/') + QString(interface->sieveVacationFilename()));
+        if (withVacationFileName) {
+            u.setPath(u.path() + QLatin1Char('/') + QString(interface->sieveVacationFilename()));
+        }
+        qDebug()<<" real QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier) url "<< u;
         return u;
     } else {
         QUrl u;
@@ -174,7 +178,10 @@ QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier)
             u.setUserName(interface->sieveCustomUsername());
         }
         u = u.adjusted(QUrl::RemoveFilename);
-        u.setPath(u.path() + QLatin1Char('/') + QString(interface->sieveVacationFilename()));
+        if (withVacationFileName) {
+            u.setPath(u.path() + QLatin1Char('/') + QString(interface->sieveVacationFilename()));
+        }
+        qDebug()<<" QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier) url "<< u;
         return u;
     }
 }
