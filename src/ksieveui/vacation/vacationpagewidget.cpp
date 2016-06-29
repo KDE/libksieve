@@ -123,7 +123,7 @@ void VacationPageWidget::slotGetResult(const QString &serverName, const QStringL
     mUrl.setPath(mUrl.path() + scriptName);
 
     // Whether the server supports the "date" extension
-    const bool supportsSieveDate = mUrl.scheme() == QStringLiteral("sieve") && sieveCapabilities.contains(QStringLiteral("date"));
+    mHasDateSupport = mUrl.scheme() == QStringLiteral("sieve") && sieveCapabilities.contains(QStringLiteral("date"));
 
     KSieveUi::VacationUtils::Vacation vacation = KSieveUi::VacationUtils::parseScript(script);
 
@@ -143,8 +143,9 @@ void VacationPageWidget::slotGetResult(const QString &serverName, const QStringL
     mVacationEditWidget->setDomainName(vacation.excludeDomain);
     mVacationEditWidget->enableDomainAndSendForSpam(!VacationSettings::allowOutOfOfficeUploadButNoSettings());
 
-    mVacationEditWidget->enableDates(supportsSieveDate);
-    if (supportsSieveDate) {
+    mVacationEditWidget->enableDates(mHasDateSupport);
+    qDebug()<<" supportsSieveDate *****************"<<mHasDateSupport;
+    if (mHasDateSupport) {
         mVacationEditWidget->setStartDate(vacation.startDate);
         mVacationEditWidget->setStartTime(vacation.startTime);
         mVacationEditWidget->setEndDate(vacation.endDate);
@@ -170,10 +171,17 @@ KSieveUi::VacationCreateScriptJob *VacationPageWidget::writeScript()
         vacation.aliases = mVacationEditWidget->mailAliases();
         vacation.sendForSpam = mVacationEditWidget->sendForSpam();
         vacation.excludeDomain =  mVacationEditWidget->domainName();
-        vacation.startDate = mVacationEditWidget->startDate();
-        vacation.startTime = mVacationEditWidget->startTime();
-        vacation.endDate = mVacationEditWidget->endDate();
-        vacation.endTime = mVacationEditWidget->endTime();
+        if (mHasDateSupport) {
+            vacation.startDate = mVacationEditWidget->startDate();
+            vacation.startTime = mVacationEditWidget->startTime();
+            vacation.endDate = mVacationEditWidget->endDate();
+            vacation.endTime = mVacationEditWidget->endTime();
+        } else {
+            vacation.startDate = QDate();
+            vacation.startTime = QTime();
+            vacation.endDate = QDate();
+            vacation.endTime = QTime();
+        }
         const QString script = VacationUtils::composeScript(vacation);
         createJob->setStatus(active, mWasActive);
         createJob->setScript(script);
