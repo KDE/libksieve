@@ -1,0 +1,9 @@
+require ["vacation"];
+
+if false # allof(not header :contains "X-Spam-Flag" "YES", address :domain :contains "from" "kde.org")
+{
+	vacation :addresses [ "foo@kde.org", "bla@kde.org" ] :days 7 :subject "out of office" text:
+I am not here
+.
+;
+}
