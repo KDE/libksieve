@@ -50,7 +50,6 @@
 #include <QPointer>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QDebug>
 #include <QPrinter>
 #include <QPrintDialog>
 #include <PimCommon/KPimPrintPreviewDialog>

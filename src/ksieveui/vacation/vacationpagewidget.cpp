@@ -144,7 +144,6 @@ void VacationPageWidget::slotGetResult(const QString &serverName, const QStringL
     mVacationEditWidget->enableDomainAndSendForSpam(!VacationSettings::allowOutOfOfficeUploadButNoSettings());
 
     mVacationEditWidget->enableDates(mHasDateSupport);
-    qDebug()<<" supportsSieveDate *****************"<<mHasDateSupport;
     if (mHasDateSupport) {
         mVacationEditWidget->setStartDate(vacation.startDate);
         mVacationEditWidget->setStartTime(vacation.startTime);

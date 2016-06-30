@@ -35,7 +35,6 @@
 #include <KUrlRequester>
 #include <KLineEdit>
 #include <KLocalizedString>
-#include <QDebug>
 #include <QDate>
 
 using namespace KSieveUi;

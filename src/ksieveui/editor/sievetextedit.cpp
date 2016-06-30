@@ -35,7 +35,6 @@
 #include <QScrollBar>
 #include <QMenu>
 #include <QFontDatabase>
-#include <QDebug>
 
 #include <KPIMTextEdit/SyntaxHighlighterBase>
 #include <KPIMTextEdit/TextEditorCompleter>

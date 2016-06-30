@@ -50,7 +50,6 @@ using namespace KSieveUi;
 
 QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier, bool withVacationFileName)
 {
-    qDebug()<<" QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier)"<<identifier << "withVacationFileName" << withVacationFileName;
     QScopedPointer<OrgKdeAkonadiImapSettingsInterface> interface(PimCommon::Util::createImapSettingsInterface(identifier));
 
     if (!interface) {
@@ -119,7 +118,6 @@ QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier, bool with
         if (withVacationFileName) {
             u.setPath(u.path() + QLatin1Char('/') + QString(interface->sieveVacationFilename()));
         }
-        qDebug()<<" real QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier) url "<< u;
         return u;
     } else {
         QUrl u;
@@ -181,7 +179,6 @@ QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier, bool with
         if (withVacationFileName) {
             u.setPath(u.path() + QLatin1Char('/') + QString(interface->sieveVacationFilename()));
         }
-        qDebug()<<" QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier) url "<< u;
         return u;
     }
 }

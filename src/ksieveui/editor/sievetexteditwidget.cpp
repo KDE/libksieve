@@ -21,7 +21,6 @@
 
 #include "kpimtextedit/plaintexteditfindbar.h"
 #include "kpimtextedit/slidecontainer.h"
-#include <QDebug>
 using namespace KSieveUi;
 
 class KSieveUi::SieveTextEditWidgetPrivate
