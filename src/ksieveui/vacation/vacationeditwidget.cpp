@@ -52,13 +52,15 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
 
     // explanation label:
     ++row;
-    glay->addWidget(new QLabel(i18n("Configure vacation "
-                                    "notifications to be sent:"),
-                               this), row, 0, 1, 2);
+    QLabel *configureVacationLabel = new QLabel(i18n("Configure vacation "
+                                                     "notifications to be sent:"), this);
+    configureVacationLabel->setObjectName(QStringLiteral("configureVacationLabel"));
+    glay->addWidget(configureVacationLabel, row, 0, 1, 2);
 
     // Activate checkbox:
     ++row;
     mActiveCheck = new QCheckBox(i18n("&Activate vacation notifications"), this);
+    mActiveCheck->setObjectName(QStringLiteral("mActiveCheck"));
     glay->addWidget(mActiveCheck, row, 0, 1, 2);
 
     // Message text edit:
@@ -73,9 +75,10 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mSubject = new QLineEdit(this);
     mSubject->setObjectName(QStringLiteral("mSubject"));
     mSubject->setClearButtonEnabled(true);
-    QLabel *tmpLabel = new QLabel(i18n("&Subject of the vacation mail:"), this);
-    tmpLabel->setBuddy(mSubject);
-    glay->addWidget(tmpLabel, row, 0);
+    QLabel *subjectOfVacationLabel = new QLabel(i18n("&Subject of the vacation mail:"), this);
+    subjectOfVacationLabel->setObjectName(QStringLiteral("subjectOfVacationLabel"));
+    subjectOfVacationLabel->setBuddy(mSubject);
+    glay->addWidget(subjectOfVacationLabel, row, 0);
     glay->addWidget(mSubject, row, 1);
     ++row;
 
@@ -91,6 +94,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mStartTime->setEnabled(false); // Disable by default - we need an extension to support this
 
     mStartTimeActive = new QCheckBox(this);
+    mStartTimeActive->setObjectName(QStringLiteral("mStartTimeActive"));
     connect(mStartTimeActive, &QCheckBox::toggled, mStartTime, &KTimeComboBox::setEnabled);
 
     timeLayout->addWidget(mStartDate);
@@ -117,6 +121,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mEndTime->setEnabled(false); // Disable by default - we need an extension to support this
 
     mEndTimeActive = new QCheckBox(this);
+    mEndTimeActive->setObjectName(QStringLiteral("mEndTimeActive"));
     connect(mEndTimeActive, &QCheckBox::toggled, mEndTime, &KTimeComboBox::setEnabled);
 
     timeLayout->addWidget(mEndDate);
@@ -144,9 +149,10 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mIntervalSpin->setObjectName(QStringLiteral("mIntervalSpin"));
     mIntervalSpin->setSuffix(i18np(" day", " days", defDayInterval));
     connect(mIntervalSpin, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &VacationEditWidget::slotIntervalSpinChanged);
-    QLabel *label = new QLabel(i18n("&Resend notification only after:"), this);
-    label->setBuddy(mIntervalSpin);
-    glay->addWidget(label, row, 0);
+    QLabel *resendNotificationLabel = new QLabel(i18n("&Resend notification only after:"), this);
+    resendNotificationLabel->setObjectName(QStringLiteral("resendNotificationLabel"));
+    resendNotificationLabel->setBuddy(mIntervalSpin);
+    glay->addWidget(resendNotificationLabel, row, 0);
     glay->addWidget(mIntervalSpin, row, 1);
 
     // "Send responses for these addresses" lineedit and label:
@@ -154,9 +160,10 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mMailAliasesEdit = new QLineEdit(this);
     mMailAliasesEdit->setObjectName(QStringLiteral("mMailAliasesEdit"));
     mMailAliasesEdit->setClearButtonEnabled(true);
-    tmpLabel = new QLabel(i18n("&Send responses for these addresses:"), this);
-    tmpLabel->setBuddy(mMailAliasesEdit);
-    glay->addWidget(tmpLabel, row, 0);
+    QLabel *sendResponseLabel = new QLabel(i18n("&Send responses for these addresses:"), this);
+    sendResponseLabel->setObjectName(QStringLiteral("sendResponseLabel"));
+    sendResponseLabel->setBuddy(mMailAliasesEdit);
+    glay->addWidget(sendResponseLabel, row, 0);
     glay->addWidget(mMailAliasesEdit, row, 1);
 
     // Action for incoming mails
@@ -178,9 +185,10 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     hLayout->addWidget(mMailActionRecipient);
 
     ++row;
-    tmpLabel = new QLabel(i18n("&Action for incoming mails:"), this);
-    tmpLabel->setBuddy(mMailAction);
-    glay->addWidget(tmpLabel, row, 0);
+    QLabel *actionIncomingMailsLabel = new QLabel(i18n("&Action for incoming mails:"), this);
+    actionIncomingMailsLabel->setBuddy(mMailAction);
+    actionIncomingMailsLabel->setObjectName(QStringLiteral("actionIncomingMailsLabel"));
+    glay->addWidget(actionIncomingMailsLabel, row, 0);
     glay->addLayout(hLayout, row, 1);
 
     // "Send responses also to SPAM mail" checkbox:
