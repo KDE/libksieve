@@ -39,8 +39,7 @@ class VacationDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit VacationDialog(const QString &caption, QWidget *parent = Q_NULLPTR,
-                            bool modal = true);
+    explicit VacationDialog(const QString &caption, QWidget *parent = Q_NULLPTR);
     ~VacationDialog();
 
     void enableDomainAndSendForSpam(bool enable = true);

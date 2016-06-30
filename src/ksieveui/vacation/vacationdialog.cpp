@@ -31,8 +31,7 @@ using KMime::Types::AddrSpecList;
 
 using namespace KSieveUi;
 
-VacationDialog::VacationDialog(const QString &caption, QWidget *parent,
-                               bool modal)
+VacationDialog::VacationDialog(const QString &caption, QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(caption);
@@ -47,7 +46,6 @@ VacationDialog::VacationDialog(const QString &caption, QWidget *parent,
     connect(buttonBox, &QDialogButtonBox::accepted, this, &VacationDialog::slotAccepted);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &VacationDialog::slotRejected);
     okButton->setDefault(true);
-    setModal(modal);
 
     mVacationEditWidget = new VacationEditWidget(this);
     mVacationEditWidget->setObjectName(QStringLiteral("vacationeditwidget"));

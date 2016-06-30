@@ -116,7 +116,8 @@ void Vacation::slotGetResult(KManageSieve::SieveJob *job, bool success,
     const bool supportsDate = job->sieveCapabilities().contains(QStringLiteral("date"));
 
     if (!mDialog && !mCheckOnly) {
-        mDialog = new VacationDialog(i18n("Configure \"Out of Office\" Replies"), Q_NULLPTR, false);
+        mDialog = new VacationDialog(i18n("Configure \"Out of Office\" Replies"), Q_NULLPTR);
+        mDialog->setModal(false);
     }
 
     if (!success) {
