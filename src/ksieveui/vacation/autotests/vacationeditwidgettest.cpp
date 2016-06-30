@@ -42,7 +42,6 @@ VacationEditWidgetTest::~VacationEditWidgetTest()
 
 void VacationEditWidgetTest::shouldHaveDefaultValue()
 {
-
     KSieveUi::VacationEditWidget w;
     QLabel *configureVacationLabel = w.findChild<QLabel *>(QStringLiteral("configureVacationLabel"));
     QVERIFY(configureVacationLabel);
@@ -139,6 +138,90 @@ void VacationEditWidgetTest::shouldHaveDefaultValue()
     QVERIFY(mDomainEdit->text().isEmpty());
     QVERIFY(!mDomainEdit->isEnabled());
     QVERIFY(mDomainEdit->isClearButtonEnabled());
+}
+
+void VacationEditWidgetTest::shouldGetValues()
+{
+    KSieveUi::VacationEditWidget w;
+    QCheckBox *mActiveCheck = w.findChild<QCheckBox *>(QStringLiteral("mActiveCheck"));
+
+    KPIMTextEdit::PlainTextEditorWidget *mTextEdit = w.findChild<KPIMTextEdit::PlainTextEditorWidget *>(QStringLiteral("mTextEdit"));
+    QLineEdit *mSubject = w.findChild<QLineEdit *>(QStringLiteral("mSubject"));
+
+    KDateComboBox *mStartDate = w.findChild<KDateComboBox *>(QStringLiteral("mStartDate"));
+
+    QCheckBox *mStartTimeActive = w.findChild<QCheckBox *>(QStringLiteral("mStartTimeActive"));
+
+    KDateComboBox *mEndDate = w.findChild<KDateComboBox *>(QStringLiteral("mEndDate"));
+
+    KTimeComboBox *mEndTime = w.findChild<KTimeComboBox *>(QStringLiteral("mEndTime"));
+
+    QCheckBox *mEndTimeActive = w.findChild<QCheckBox *>(QStringLiteral("mEndTimeActive"));
+
+
+    QSpinBox *mIntervalSpin = w.findChild<QSpinBox *>(QStringLiteral("mIntervalSpin"));
+
+    QLineEdit *mMailAliasesEdit = w.findChild<QLineEdit *>(QStringLiteral("mMailAliasesEdit"));
+
+    QComboBox *mMailAction = w.findChild<QComboBox *>(QStringLiteral("mMailAction"));
+    QLineEdit *mMailActionRecipient = w.findChild<QLineEdit *>(QStringLiteral("mMailActionRecipient"));
+
+    QCheckBox *mSpamCheck = w.findChild<QCheckBox *>(QStringLiteral("mSpamCheck"));
+    QCheckBox *mDomainCheck = w.findChild<QCheckBox *>(QStringLiteral("mDomainCheck"));
+
+
+    QLineEdit *mDomainEdit = w.findChild<QLineEdit *>(QStringLiteral("mDomainEdit"));
+
+    bool activateVacation = true;
+    w.setActivateVacation(activateVacation);
+    QCOMPARE(w.activateVacation(), activateVacation);
+
+    bool domainChecked = true;
+    w.setDomainCheck(domainChecked);
+    QCOMPARE(w.domainCheck(), domainChecked);
+
+    const QString message = QStringLiteral("foo bla");
+    w.setMessageText(message);
+    QCOMPARE(w.messageText(), message);
+
+    const QString subject = QStringLiteral("dd");
+    w.setSubject(subject);
+    QCOMPARE(w.subject(), subject);
+
+    const QString domain = QStringLiteral("ss");
+    w.setDomainName(domain);
+    QCOMPARE(w.domainName(), domain);
+
+    const int notify = 8;
+    w.setNotificationInterval(notify);
+    QCOMPARE(w.notificationInterval(), notify);
+
+#if 0
+    KMime::Types::AddrSpecList mailAliases() const;
+    void setMailAliases(const KMime::Types::AddrSpecList &aliases);
+    void setMailAliases(const QString &aliases);
+
+
+    bool sendForSpam() const;
+    void setSendForSpam(bool enable);
+
+    QDate startDate() const;
+    void setStartDate(const QDate &startDate);
+
+    QTime startTime() const;
+    void setStartTime(const QTime &startTime);
+
+    QDate endDate() const;
+    void setEndDate(const QDate &endDate);
+
+    QTime endTime() const;
+    void setEndTime(const QTime &endTime);
+
+    VacationUtils::MailAction mailAction() const;
+    QString mailActionRecipient() const;
+    void setMailAction(VacationUtils::MailAction action, const QString &recipient);
+#endif
+
 }
 
 QTEST_MAIN(VacationEditWidgetTest)

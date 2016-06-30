@@ -31,6 +31,7 @@ public:
     ~VacationEditWidgetTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldGetValues();
 };
 
 #endif // VACATIONEDITWIDGETTEST_H
