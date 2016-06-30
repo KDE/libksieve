@@ -7,6 +7,7 @@ macro( add_vacation_test _source )
     ../legacy/vacationscriptextractor.cpp
     ../vacationscriptextractor.cpp
     ../vacationutils.cpp
+    ../vacationeditwidget.cpp
     )
   configure_file(../../settings/sieve-editor.kcfg.cmake ${CMAKE_CURRENT_BINARY_DIR}/sieve-editor.kcfg)
   kconfig_add_kcfg_files(_test ../../settings/sieve-vacation.kcfgc ../../settings/sieve-editor.kcfgc)
@@ -22,8 +23,11 @@ macro( add_vacation_test _source )
     KF5::IdentityManagement
     KF5::Mime
     KF5::I18n
+    KF5::IconThemes
+    KF5::WindowSystem
     )
 endmacro()
 
 add_vacation_test(vacationutils)
 add_vacation_test(vacationeditwidget)
+add_vacation_test(vacationdialog)
