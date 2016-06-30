@@ -36,9 +36,11 @@ VacationDialog::VacationDialog(const QString &caption, QWidget *parent,
     : QDialog(parent)
 {
     setWindowTitle(caption);
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults);
     QVBoxLayout *mainLayout = new QVBoxLayout;
     setLayout(mainLayout);
+
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults, this);
+    buttonBox->setObjectName(QStringLiteral("buttonbox"));
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
@@ -46,18 +48,13 @@ VacationDialog::VacationDialog(const QString &caption, QWidget *parent,
     connect(buttonBox, &QDialogButtonBox::rejected, this, &VacationDialog::slotRejected);
     okButton->setDefault(true);
     setModal(modal);
-    QWidget *w = new QWidget;
-    QVBoxLayout *vbox = new QVBoxLayout;
-    vbox->setMargin(0);
-    w->setLayout(vbox);
-    vbox->addWidget(mVacationEditWidget);
 
-    mVacationEditWidget = new VacationEditWidget;
-
+    mVacationEditWidget = new VacationEditWidget(this);
+    mVacationEditWidget->setObjectName(QStringLiteral("vacationeditwidget"));
+    mainLayout->addWidget(mVacationEditWidget);
     KSeparator *separator = new KSeparator;
-    vbox->addWidget(separator);
-
-    mainLayout->addWidget(w);
+    separator->setObjectName(QStringLiteral("separator"));
+    mainLayout->addWidget(separator);
     mainLayout->addWidget(buttonBox);
 
     KWindowSystem::setIcons(winId(), qApp->windowIcon().pixmap(IconSize(KIconLoader::Desktop), IconSize(KIconLoader::Desktop)), qApp->windowIcon().pixmap(IconSize(KIconLoader::Small), IconSize(KIconLoader::Small)));
