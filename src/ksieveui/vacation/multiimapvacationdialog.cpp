@@ -79,7 +79,8 @@ MultiImapVacationDialog::~MultiImapVacationDialog()
 
 void MultiImapVacationDialog::switchToServerNamePage(const QString &serverName)
 {
-    for (int i = 0; i < d->mTabWidget->count(); ++i) {
+    const int nbTab(d->mTabWidget->count());
+    for (int i = 0; i < nbTab; ++i) {
         if (d->mTabWidget->tabText(i) == serverName) {
             d->mTabWidget->setCurrentIndex(i);
             break;
