@@ -17,7 +17,11 @@
    Boston, MA 02110-1301, USA.
 */
 #include "vacationdialogtest.h"
+#include "../vacationdialog.h"
+#include <KSeparator>
+#include <QDialogButtonBox>
 #include <QTest>
+#include <vacation/vacationeditwidget.h>
 
 VacationDialogTest::VacationDialogTest(QObject *parent)
     : QObject(parent)
@@ -27,6 +31,23 @@ VacationDialogTest::VacationDialogTest(QObject *parent)
 
 VacationDialogTest::~VacationDialogTest()
 {
+
+}
+
+void VacationDialogTest::shouldHaveDefaultValue()
+{
+    const QString title = QStringLiteral("title");
+    KSieveUi::VacationDialog w(title);
+    QCOMPARE(w.windowTitle(), title);
+
+    QDialogButtonBox *buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
+    QVERIFY(buttonBox);
+
+    KSieveUi::VacationEditWidget *mVacationEditWidget = w.findChild<KSieveUi::VacationEditWidget *>(QStringLiteral("vacationeditwidget"));
+    QVERIFY(mVacationEditWidget);
+
+    KSeparator *separator = w.findChild<KSeparator *>(QStringLiteral("separator"));
+    QVERIFY(separator);
 
 }
 
