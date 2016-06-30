@@ -29,7 +29,8 @@ class VacationEditWidgetTest : public QObject
 public:
     explicit VacationEditWidgetTest(QObject *parent = Q_NULLPTR);
     ~VacationEditWidgetTest();
-
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // VACATIONEDITWIDGETTEST_H
