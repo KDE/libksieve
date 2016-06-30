@@ -140,7 +140,7 @@ void VacationPageWidget::slotGetResult(const QString &serverName, const QStringL
     mVacationEditWidget->setNotificationInterval(vacation.notificationInterval);
     mVacationEditWidget->setMailAliases(vacation.aliases);
     mVacationEditWidget->setSendForSpam(vacation.sendForSpam);
-    mVacationEditWidget->setDomainName(vacation.excludeDomain);
+    mVacationEditWidget->setDomainName(vacation.reactOndomainName);
     mVacationEditWidget->enableDomainAndSendForSpam(!VacationSettings::allowOutOfOfficeUploadButNoSettings());
 
     mVacationEditWidget->enableDates(mHasDateSupport);
@@ -169,7 +169,7 @@ KSieveUi::VacationCreateScriptJob *VacationPageWidget::writeScript()
         vacation.notificationInterval = mVacationEditWidget->notificationInterval();
         vacation.aliases = mVacationEditWidget->mailAliases();
         vacation.sendForSpam = mVacationEditWidget->sendForSpam();
-        vacation.excludeDomain =  mVacationEditWidget->domainName();
+        vacation.reactOndomainName =  mVacationEditWidget->domainName();
         if (mHasDateSupport) {
             vacation.startDate = mVacationEditWidget->startDate();
             vacation.startTime = mVacationEditWidget->startTime();

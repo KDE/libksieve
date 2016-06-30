@@ -140,7 +140,7 @@ VacationUtils::Vacation parseScriptLegacy(const QString &script)
     vacation.valid =  Legacy::VacationUtils::parseScript(script, vacation.messageText,
                       vacation.subject,
                       vacation.notificationInterval, vacation.aliases,
-                      vacation.sendForSpam, vacation.excludeDomain,
+                      vacation.sendForSpam, vacation.reactOndomainName,
                       vacation.startDate, vacation.endDate);
     return vacation;
 }
@@ -157,7 +157,7 @@ VacationUtils::Vacation VacationUtils::parseScript(const QString &script)
         vacation.notificationInterval = VacationUtils::defaultNotificationInterval();
         vacation.aliases = VacationUtils::defaultMailAliases();
         vacation.sendForSpam = VacationUtils::defaultSendForSpam();
-        vacation.excludeDomain = VacationUtils::defaultDomainName();
+        vacation.reactOndomainName = VacationUtils::defaultDomainName();
         return vacation;
     }
 
@@ -212,17 +212,17 @@ VacationUtils::Vacation VacationUtils::parseScript(const QString &script)
     }
 
     vacation.sendForSpam = !sdx.found();
-    vacation.excludeDomain = drdx.domainName();
+    vacation.reactOndomainName = drdx.domainName();
     vacation.startDate = dx.startDate();
     vacation.startTime = dx.startTime();
     vacation.endDate = dx.endDate();
     vacation.endTime = dx.endTime();
 
-    if (vacation.sendForSpam && vacation.excludeDomain.isEmpty() && !vacation.startDate.isValid() && !vacation.endDate.isValid()) {
+    if (vacation.sendForSpam && vacation.reactOndomainName.isEmpty() && !vacation.startDate.isValid() && !vacation.endDate.isValid()) {
         const auto vac = parseScriptLegacy(script);
         if (vac.isValid()) {
             vacation.sendForSpam = vac.sendForSpam;
-            vacation.excludeDomain = vac.excludeDomain;
+            vacation.reactOndomainName = vac.reactOndomainName;
             vacation.startDate = vac.startDate;
             vacation.startTime = vac.startTime;
             vacation.endDate = vac.endDate;
@@ -271,8 +271,8 @@ QString KSieveUi::VacationUtils::composeScript(const Vacation &vacation)
         condition.append(QStringLiteral("not header :contains \"X-Spam-Flag\" \"YES\""));
     }
 
-    if (!vacation.excludeDomain.isEmpty()) {
-        condition.append(QStringLiteral("address :domain :contains \"from\" \"%1\"").arg(vacation.excludeDomain));
+    if (!vacation.reactOndomainName.isEmpty()) {
+        condition.append(QStringLiteral("address :domain :contains \"from\" \"%1\"").arg(vacation.reactOndomainName));
     }
 
     QString addressesArgument;

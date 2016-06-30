@@ -64,7 +64,7 @@ struct Vacation {
     QString messageText;
     QString subject;
     KMime::Types::AddrSpecList aliases;
-    QString excludeDomain;
+    QString reactOndomainName;
     QDate startDate;
     QTime startTime;
     QDate endDate;

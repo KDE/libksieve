@@ -122,7 +122,7 @@ void VacationUtilsTest::testParseScript()
     QCOMPARE(vacationD.notificationInterval, vacationA.notificationInterval);
     testAliases(vacationD.aliases, vacationA.aliases);
     QCOMPARE(vacationD.sendForSpam, vacationA.sendForSpam);
-    QCOMPARE(vacationD.excludeDomain, vacationA.excludeDomain);
+    QCOMPARE(vacationD.reactOndomainName, vacationA.reactOndomainName);
     QCOMPARE(vacationD.startDate, vacationA.startDate);
     QCOMPARE(vacationD.endDate, vacationA.endDate);
     QCOMPARE(vacationD.startTime, QTime());
@@ -174,7 +174,7 @@ void VacationUtilsTest::testParseScriptComplex()
     QCOMPARE(vacation.notificationInterval, 7);
     testAliases(vacation.aliases, QStringList() << QStringLiteral("test@test.de"));
     QCOMPARE(vacation.sendForSpam, false);
-    QCOMPARE(vacation.excludeDomain, QString());
+    QCOMPARE(vacation.reactOndomainName, QString());
     QCOMPARE(vacation.startDate, QDate(2015, 01, 02));
     QCOMPARE(vacation.endDate, QDate(2015, 03, 04));
     QCOMPARE(vacation.startTime, QTime());
@@ -194,7 +194,7 @@ void VacationUtilsTest::testParseScriptComplexTime()
     QCOMPARE(vacation.notificationInterval, 7);
     testAliases(vacation.aliases, QStringList() << QStringLiteral("test@test.de"));
     QCOMPARE(vacation.sendForSpam, false);
-    QCOMPARE(vacation.excludeDomain, QString());
+    QCOMPARE(vacation.reactOndomainName, QString());
     QCOMPARE(vacation.startDate, QDate(2015, 01, 02));
     QCOMPARE(vacation.endDate, QDate(2015, 03, 04));
     QCOMPARE(vacation.startTime, QTime(2, 0));
@@ -216,7 +216,7 @@ void VacationUtilsTest::testWriteScript()
     vacation.subject = QStringLiteral("XXX");
     vacation.notificationInterval = 7;
     vacation.sendForSpam = false;
-    vacation.excludeDomain = QStringLiteral("example.org");
+    vacation.reactOndomainName = QStringLiteral("example.org");
     vacation.startDate = QDate(2015, 01, 02);
     vacation.endDate = QDate(2015, 03, 04);
     vacation.active = true;
@@ -236,7 +236,7 @@ void VacationUtilsTest::testWriteScript()
     QCOMPARE(vacationA.notificationInterval, vacation.notificationInterval);
     testAliases(vacationA.aliases, vacation.aliases);
     QCOMPARE(vacationA.sendForSpam, vacation.sendForSpam);
-    QCOMPARE(vacationA.excludeDomain, vacation.excludeDomain);
+    QCOMPARE(vacationA.reactOndomainName, vacation.reactOndomainName);
     QCOMPARE(vacationA.startDate, vacation.startDate);
     QCOMPARE(vacationA.endDate, vacation.endDate);
     QCOMPARE(vacationA.startTime, QTime());
@@ -252,7 +252,7 @@ void VacationUtilsTest::testWriteScript()
     QCOMPARE(vacationA.notificationInterval, vacation.notificationInterval);
     testAliases(vacationA.aliases, vacation.aliases);
     QCOMPARE(vacationA.sendForSpam, vacation.sendForSpam);
-    QCOMPARE(vacationA.excludeDomain, vacation.excludeDomain);
+    QCOMPARE(vacationA.reactOndomainName, vacation.reactOndomainName);
     QCOMPARE(vacationA.startDate, vacation.startDate);
     QCOMPARE(vacationA.endDate, vacation.endDate);
     QCOMPARE(vacationA.startTime, QTime());
@@ -342,4 +342,20 @@ void VacationUtilsTest::testMergeRequireLine()
     QCOMPARE(VacationUtils::mergeRequireLine(sOne, sList2), sList2);
     QCOMPARE(VacationUtils::mergeRequireLine(sOne, sList3), QStringLiteral("require [\"test\", \"test3\", \"test4\"];"));
     QCOMPARE(VacationUtils::mergeRequireLine(sList3, sOne), QStringLiteral("require [\"test\", \"test3\", \"test4\"];\ntestcmd;"));
+}
+
+void VacationUtilsTest::testDisableGeneratedScript()
+{
+    QFile file(QStringLiteral(VACATIONTESTDATADIR "vacation-disable.siv"));
+    QVERIFY(file.open(QIODevice::ReadOnly));
+    QString script = QString::fromUtf8(file.readAll());
+
+    VacationUtils::Vacation vacation = VacationUtils::parseScript(script);
+    QCOMPARE(vacation.active, false);
+    QCOMPARE(vacation.messageText, QStringLiteral("I am not here"));
+    QCOMPARE(vacation.subject, QStringLiteral("out of office"));
+    QCOMPARE(vacation.notificationInterval, 7);
+    testAliases(vacation.aliases, QStringList() << QStringLiteral("foo@kde.org") << QStringLiteral("bla@kde.org"));
+    QCOMPARE(vacation.sendForSpam, false);
+    QCOMPARE(vacation.reactOndomainName, QStringLiteral("kde.org"));
 }

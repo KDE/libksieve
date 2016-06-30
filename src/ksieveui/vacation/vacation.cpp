@@ -141,7 +141,7 @@ void Vacation::slotGetResult(KManageSieve::SieveJob *job, bool success,
         mDialog->setNotificationInterval(vacation.notificationInterval);
         mDialog->setMailAliases(vacation.aliases);
         mDialog->setSendForSpam(vacation.sendForSpam);
-        mDialog->setDomainName(vacation.excludeDomain);
+        mDialog->setDomainName(vacation.reactOndomainName);
         mDialog->enableDomainAndSendForSpam(!VacationSettings::allowOutOfOfficeUploadButNoSettings());
         mDialog->enableDates(supportsDate);
 
@@ -184,7 +184,7 @@ void Vacation::slotDialogOk()
     vacation.notificationInterval = mDialog->notificationInterval();
     vacation.aliases = mDialog->mailAliases();
     vacation.sendForSpam = mDialog->sendForSpam();
-    vacation.excludeDomain =  mDialog->domainName();
+    vacation.reactOndomainName =  mDialog->domainName();
     vacation.startDate = mDialog->startDate();
     vacation.startTime = mDialog->startTime();
     vacation.endDate = mDialog->endDate();

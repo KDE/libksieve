@@ -261,7 +261,8 @@ AddrSpecList VacationEditWidget::mailAliases() const
     AddressList::const_iterator end(al.constEnd());
     for (AddressList::const_iterator it = al.constBegin(); it != end; ++it) {
         const MailboxList &mbl = (*it).mailboxList;
-        for (MailboxList::const_iterator jt = mbl.constBegin(); jt != mbl.constEnd(); ++jt) {
+        MailboxList::const_iterator endJt = mbl.constEnd();
+        for (MailboxList::const_iterator jt = mbl.constBegin(); jt != endJt; ++jt) {
             asl.push_back((*jt).addrSpec());
         }
     }
