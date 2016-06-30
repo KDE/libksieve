@@ -16,7 +16,7 @@
 */
 
 #include "multilineedit.h"
-#include <QStyleOptionFrameV2>
+#include <QStyleOptionFrame>
 #include <QApplication>
 
 using namespace KSieveUi;
@@ -40,7 +40,7 @@ QSize MultiLineEdit::sizeHint() const
 
     const int h = qMax(document()->size().toSize().height() - fm.descent() + 2 * frameWidth(), 50);
 
-    QStyleOptionFrameV2 opt;
+    QStyleOptionFrame opt;
     opt.initFrom(this);
     opt.rect = QRect(0, 0, 100, h);
     opt.lineWidth = lineWidth();
