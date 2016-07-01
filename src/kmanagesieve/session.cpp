@@ -227,6 +227,11 @@ void Session::executeNextJob()
     m_currentJob->d->run(this);
 }
 
+bool Session::connected() const
+{
+    return m_connected;
+}
+
 QStringList Session::sieveExtensions() const
 {
     return m_sieveExtensions;

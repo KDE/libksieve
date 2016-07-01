@@ -35,6 +35,10 @@ Session *SieveJob::Private::sessionForUrl(const QUrl &url)
         sessionPtr = QPointer<Session>(new Session());
         m_sessionPool.insert(hostUrl, sessionPtr);
         sessionPtr->connectToHost(hostUrl);
+    } else {
+        if (!sessionPtr->connected()) {
+            sessionPtr->connectToHost(hostUrl);
+        }
     }
     return sessionPtr.data();
 }

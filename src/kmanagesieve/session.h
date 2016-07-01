@@ -66,6 +66,8 @@ public:
 
     QStringList sieveExtensions() const;
 
+    bool connected() const;
+
 private:
     bool requestCapabilitiesAfterStartTls() const;
 
