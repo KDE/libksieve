@@ -32,6 +32,7 @@ public:
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldGetValues();
+    void shouldHideDateTime();
 };
 
 #endif // VACATIONEDITWIDGETTEST_H

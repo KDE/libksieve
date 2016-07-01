@@ -402,6 +402,11 @@ void VacationEditWidget::enableDates(bool enable)
     mStartDateLabel->setVisible(enable);
     mEndDate->setVisible(enable);
     mEndDateLabel->setVisible(enable);
+    mStartTime->setVisible(enable);
+    mStartTimeActive->setVisible(enable);
+    mEndTime->setVisible(enable);
+    mEndTimeActive->setVisible(enable);
+
 }
 
 void VacationEditWidget::mailActionChanged(int action)

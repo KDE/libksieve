@@ -67,6 +67,10 @@ void VacationEditWidgetTest::shouldHaveDefaultValue()
     QVERIFY(mStartDate);
     QVERIFY(mStartDate->isEnabled());
 
+    KTimeComboBox *mStartTime = w.findChild<KTimeComboBox *>(QStringLiteral("mStartTime"));
+    QVERIFY(mStartTime);
+
+
     QCheckBox *mStartTimeActive = w.findChild<QCheckBox *>(QStringLiteral("mStartTimeActive"));
     QVERIFY(mStartTimeActive);
     QVERIFY(!mStartTimeActive->isChecked());
@@ -222,6 +226,33 @@ void VacationEditWidgetTest::shouldGetValues()
     void setMailAction(VacationUtils::MailAction action, const QString &recipient);
 #endif
 
+}
+
+void VacationEditWidgetTest::shouldHideDateTime()
+{
+    KSieveUi::VacationEditWidget w;
+    w.show();
+    KDateComboBox *mStartDate = w.findChild<KDateComboBox *>(QStringLiteral("mStartDate"));
+    QCheckBox *mStartTimeActive = w.findChild<QCheckBox *>(QStringLiteral("mStartTimeActive"));
+    KDateComboBox *mEndDate = w.findChild<KDateComboBox *>(QStringLiteral("mEndDate"));
+    KTimeComboBox *mEndTime = w.findChild<KTimeComboBox *>(QStringLiteral("mEndTime"));
+    QCheckBox *mEndTimeActive = w.findChild<QCheckBox *>(QStringLiteral("mEndTimeActive"));
+    KTimeComboBox *mStartTime = w.findChild<KTimeComboBox *>(QStringLiteral("mStartTime"));
+    w.enableDates(true);
+    QVERIFY(mStartDate->isVisible());
+    QVERIFY(mStartTimeActive->isVisible());
+    QVERIFY(mEndDate->isVisible());
+    QVERIFY(mEndTime->isVisible());
+    QVERIFY(mEndTimeActive->isVisible());
+    QVERIFY(mStartTime->isVisible());
+
+    w.enableDates(false);
+    QVERIFY(!mStartDate->isVisible());
+    QVERIFY(!mStartTimeActive->isVisible());
+    QVERIFY(!mEndDate->isVisible());
+    QVERIFY(!mEndTime->isVisible());
+    QVERIFY(!mEndTimeActive->isVisible());
+    QVERIFY(!mStartTime->isVisible());
 }
 
 QTEST_MAIN(VacationEditWidgetTest)
