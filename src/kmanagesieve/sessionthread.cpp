@@ -206,7 +206,6 @@ void SessionThread::slotDataReceived()
         }
         Q_EMIT responseReceived(r, QByteArray());
     }
-    m_pendingQuantity = 0;
 }
 
 // Called in secondary thread
