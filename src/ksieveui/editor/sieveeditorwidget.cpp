@@ -66,7 +66,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     mCheckSyntax = new QAction(i18n("Check Syntax"), this);
     connect(mCheckSyntax, &QAction::triggered, this, &SieveEditorWidget::slotCheckSyntax);
     toolbar->addAction(mCheckSyntax);
-    mSaveAs = KStandardAction::saveAs(this, SLOT(slotSaveAs()), this);
+    mSaveAs = KStandardAction::saveAs(this, &SieveEditorWidget::slotSaveAs, this);
     toolbar->addAction(mSaveAs);
     toolbar->addAction(i18n("Import..."), this, SLOT(slotImport()));
 
