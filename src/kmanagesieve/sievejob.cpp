@@ -194,7 +194,6 @@ bool SieveJob::Private::handleResponse(const Response &response, const QByteArra
         } else {
             Q_EMIT q->gotScript(q, false, mScript, (mUrl.fileName() == mActiveScriptName));
         }
-
         q->deleteLater();
         return true;
     }
