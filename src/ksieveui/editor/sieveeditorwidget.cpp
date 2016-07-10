@@ -70,9 +70,9 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     toolbar->addAction(mSaveAs);
     toolbar->addAction(i18n("Import..."), this, SLOT(slotImport()));
 
-    mAutoGenerateScript = new QAction(i18n("Autogenerate Script..."), this);
-    connect(mAutoGenerateScript, &QAction::triggered, this, &SieveEditorWidget::slotAutoGenerateScripts);
-    toolbar->addAction(mAutoGenerateScript);
+    mCreateRulesGraphically = new QAction(i18n("Create Rules Graphically..."), this);
+    connect(mCreateRulesGraphically, &QAction::triggered, this, &SieveEditorWidget::slotCreateRulesGraphically);
+    toolbar->addAction(mCreateRulesGraphically);
     mSwitchMode = new QAction(this);
     toolbar->addAction(mSwitchMode);
     connect(mSwitchMode, &QAction::triggered, this, &SieveEditorWidget::slotSwitchMode);
@@ -122,7 +122,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
         menuBar->fileMenu()->addSeparator();
         menuBar->fileMenu()->addAction(mShareScript);
         menuBar->toolsMenu()->addSeparator();
-        menuBar->toolsMenu()->addAction(mAutoGenerateScript);
+        menuBar->toolsMenu()->addAction(mCreateRulesGraphically);
         menuBar->toolsMenu()->addAction(mCheckSyntax);
         lay->addWidget(menuBar);
     }
@@ -404,7 +404,7 @@ void SieveEditorWidget::changeMode(EditorMode mode)
         mMode = mode;
         mStackedWidget->setCurrentIndex(static_cast<int>(mode));
         const bool isTextMode = (mMode == TextMode);
-        mAutoGenerateScript->setEnabled(isTextMode);
+        mCreateRulesGraphically->setEnabled(isTextMode);
 #if !defined(NDEBUG)
         if (mGenerateXml) {
             mGenerateXml->setEnabled(isTextMode);
@@ -506,11 +506,11 @@ void SieveEditorWidget::setSieveCapabilities(const QStringList &capabilities)
     mGraphicalModeWidget->setSieveCapabilities(capabilities);
 }
 
-void SieveEditorWidget::slotAutoGenerateScripts()
+void SieveEditorWidget::slotCreateRulesGraphically()
 {
     switch (mMode) {
     case TextMode:
-        mTextModeWidget->autoGenerateScripts();
+        mTextModeWidget->createRulesGraphically();
         break;
     case GraphicMode:
     case Unknown:

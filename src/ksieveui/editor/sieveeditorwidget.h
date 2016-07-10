@@ -100,7 +100,7 @@ public Q_SLOTS:
     void slotSaveAs();
     void slotImport();
     void slotShareScript();
-    void slotAutoGenerateScripts();
+    void slotCreateRulesGraphically();
     void slotCheckSyntax();
     void comment();
     void uncomment();
@@ -134,7 +134,7 @@ private:
     QLineEdit *mScriptName;
     QAction *mCheckSyntax;
     QAction *mSwitchMode;
-    QAction *mAutoGenerateScript;
+    QAction *mCreateRulesGraphically;
     QAction *mSaveAs;
     QAction *mShareScript;
 #if !defined(NDEBUG)

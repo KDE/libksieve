@@ -58,7 +58,7 @@ public:
     QString currentscript() Q_DECL_OVERRIDE;
     void setImportScript(const QString &script) Q_DECL_OVERRIDE;
 
-    void autoGenerateScripts();
+    void createRulesGraphically();
     void generateXml();
 
     void showEditorWarning();

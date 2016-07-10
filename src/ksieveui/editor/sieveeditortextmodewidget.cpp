@@ -226,7 +226,7 @@ void SieveEditorTextModeWidget::generateXml()
 #endif
 }
 
-void SieveEditorTextModeWidget::autoGenerateScripts()
+void SieveEditorTextModeWidget::createRulesGraphically()
 {
     QPointer<AutoCreateScriptDialog> dlg = new AutoCreateScriptDialog(this);
     dlg->setSieveCapabilities(mSieveCapabilities);
