@@ -229,6 +229,7 @@ void SelectHeaderTypeComboBox::slotSelectItem(const QString &str)
 
 void SelectHeaderTypeComboBox::headerMap(bool onlyEnvelopType)
 {
+    mHeaderMap.insert(QString(), QString());
     mHeaderMap.insert(QStringLiteral("from"), i18n("From"));
     mHeaderMap.insert(QStringLiteral("to"), i18n("To"));
     mHeaderMap.insert(QStringLiteral("Reply-To"), i18n("Reply To"));

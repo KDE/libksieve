@@ -38,6 +38,11 @@ void SelectHeaderTypeComboBoxTest::shouldHaveDefaultValue()
     KSieveUi::SelectHeaderTypeComboBox combox;
     QVERIFY(combox.isEditable());
     QVERIFY(combox.count() > 0);
+
+    KSieveUi::SelectHeaderTypeComboBox combox1(true); /*onlyEnvelopType*/
+    QVERIFY(combox1.isEditable());
+    QVERIFY(combox1.count() > 0);
+
 }
 
 QTEST_MAIN(SelectHeaderTypeComboBoxTest)
