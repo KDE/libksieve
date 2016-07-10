@@ -298,7 +298,11 @@ void SelectHeaderTypeComboBox::setCode(const QString &code)
     }
     //If not found select last combobox item
     if (!foundHeaders) {
-        setCurrentIndex(count() - 1);
+        if (code.startsWith(QLatin1Char('['))) {
+            setCurrentIndex(count() - 1);
+        } else {
+            setCurrentIndex(0);
+        }
         lineEdit()->setText(code);
     }
     mCode = code;
