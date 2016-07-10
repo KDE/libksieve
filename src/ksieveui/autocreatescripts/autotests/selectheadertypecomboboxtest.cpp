@@ -65,4 +65,27 @@ void SelectHeaderTypeComboBoxTest::shouldHaveDefaultValue()
     }
 }
 
+void SelectHeaderTypeComboBoxTest::shouldSetCode_data()
+{
+    QTest::addColumn<QString>("code");
+    QTest::addColumn<int>("index");
+    QTest::addColumn<QString>("currentText");
+    QTest::addColumn<bool>("onlyEnvelopType");
+    QTest::newRow("empty") << QString() << 0 << QString() << false;
+    QTest::newRow("empty only header") << QString() << 0 << QString() << false;
+
+}
+
+void SelectHeaderTypeComboBoxTest::shouldSetCode()
+{
+    QFETCH(QString, code);
+    QFETCH(int, index);
+    QFETCH(QString, currentText);
+    QFETCH(bool, onlyEnvelopType);
+    KSieveUi::SelectHeaderTypeComboBox combox(onlyEnvelopType);
+    combox.setCode(code);
+    QCOMPARE(combox.currentText(), currentText);
+    QCOMPARE(combox.currentIndex(), index);
+}
+
 QTEST_MAIN(SelectHeaderTypeComboBoxTest)

@@ -30,6 +30,8 @@ public:
     ~SelectHeaderTypeComboBoxTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldSetCode_data();
+    void shouldSetCode();
 
 };
 
