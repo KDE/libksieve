@@ -18,6 +18,7 @@
 */
 
 #include "selectheadertypecomboboxtest.h"
+#include "../sieveconditions/widgets/selectheadertypecombobox.h"
 
 #include <QTest>
 
@@ -34,7 +35,9 @@ SelectHeaderTypeComboBoxTest::~SelectHeaderTypeComboBoxTest()
 
 void SelectHeaderTypeComboBoxTest::shouldHaveDefaultValue()
 {
-    //TODO
+    KSieveUi::SelectHeaderTypeComboBox combox;
+    QVERIFY(combox.isEditable());
+    QVERIFY(combox.count() > 0);
 }
 
 QTEST_MAIN(SelectHeaderTypeComboBoxTest)
