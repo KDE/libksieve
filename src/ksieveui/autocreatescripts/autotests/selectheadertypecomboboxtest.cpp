@@ -38,11 +38,31 @@ void SelectHeaderTypeComboBoxTest::shouldHaveDefaultValue()
     KSieveUi::SelectHeaderTypeComboBox combox;
     QVERIFY(combox.isEditable());
     QVERIFY(combox.count() > 0);
+    QCOMPARE(combox.currentText(), QString());
+    QCOMPARE(combox.currentData().toString(), QString());
+    QCOMPARE(combox.currentIndex(), 0);
+    QVERIFY(!combox.itemText(combox.count() - 1).isEmpty());
+    QCOMPARE(combox.itemData(combox.count() - 1).toString(), QString());
+    //Don't verify first element and last as we already did
+    for(int i = 1; i < combox.count()-1; ++i) {
+        QVERIFY(!combox.itemData(i).toString().isEmpty());
+        QVERIFY(!combox.itemText(i).isEmpty());
+    }
 
     KSieveUi::SelectHeaderTypeComboBox combox1(true); /*onlyEnvelopType*/
     QVERIFY(combox1.isEditable());
     QVERIFY(combox1.count() > 0);
+    QCOMPARE(combox1.currentText(), QString());
+    QCOMPARE(combox1.currentData().toString(), QString());
+    QCOMPARE(combox1.currentIndex(), 0);
+    QVERIFY(!combox1.itemText(combox1.count() - 1).isEmpty());
+    QCOMPARE(combox1.itemData(combox1.count() - 1).toString(), QString());
 
+    //Don't verify first element and last as we already did
+    for(int i = 1; i < combox1.count() - 1; ++i) {
+        QVERIFY(!combox1.itemData(i).toString().isEmpty());
+        QVERIFY(!combox1.itemText(i).isEmpty());
+    }
 }
 
 QTEST_MAIN(SelectHeaderTypeComboBoxTest)
