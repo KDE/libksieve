@@ -18,7 +18,7 @@
 #ifndef SELECTHEADERTYPECOMBOBOX_H
 #define SELECTHEADERTYPECOMBOBOX_H
 
-#include <KComboBox>
+#include <QComboBox>
 #include <QDialog>
 
 #include <QListWidget>
@@ -68,7 +68,7 @@ private:
     QPushButton *mAddNewHeader;
 };
 
-class SelectHeaderTypeComboBox : public KComboBox
+class SelectHeaderTypeComboBox : public QComboBox
 {
     Q_OBJECT
 public:
@@ -86,6 +86,7 @@ private Q_SLOTS:
 
 private:
     void initialize(bool onlyEnvelopType);
+    void changeReadOnlyStatus();
     void headerMap(bool onlyEnvelopType);
     QMap<QString, QString> mHeaderMap;
     QString mCode;

@@ -156,12 +156,14 @@ void SelectHeadersWidget::setListHeaders(const QMap<QString, QString> &lst, cons
     QMapIterator<QString, QString> i(lst);
     while (i.hasNext()) {
         i.next();
-        QListWidgetItem *item = new QListWidgetItem(i.value(), this);
-        item->setData(HeaderId, i.key());
-        if (selectedHeaders.contains(i.key())) {
-            item->setCheckState(Qt::Checked);
-        } else {
-            item->setCheckState(Qt::Unchecked);
+        if (!i.value().isEmpty()) {
+            QListWidgetItem *item = new QListWidgetItem(i.value(), this);
+            item->setData(HeaderId, i.key());
+            if (selectedHeaders.contains(i.key())) {
+                item->setCheckState(Qt::Checked);
+            } else {
+                item->setCheckState(Qt::Unchecked);
+            }
         }
     }
     Q_FOREACH (const QString &header, selectedHeaders) {
@@ -195,9 +197,10 @@ QString SelectHeadersWidget::headers() const
 }
 
 SelectHeaderTypeComboBox::SelectHeaderTypeComboBox(bool onlyEnvelopType, QWidget *parent)
-    : KComboBox(parent)
+    : QComboBox(parent)
 {
     setEditable(true);
+    lineEdit()->setClearButtonEnabled(true);
     //TODO add completion
     initialize(onlyEnvelopType);
     connect(this, static_cast<void (SelectHeaderTypeComboBox::*)(const QString &)>(&SelectHeaderTypeComboBox::activated), this, &SelectHeaderTypeComboBox::slotSelectItem);
@@ -209,9 +212,17 @@ SelectHeaderTypeComboBox::~SelectHeaderTypeComboBox()
 {
 }
 
+
+void SelectHeaderTypeComboBox::changeReadOnlyStatus()
+{
+    const bool readOnly = (currentIndex() > 0);
+    lineEdit()->setReadOnly(readOnly);
+    lineEdit()->setClearButtonEnabled(!readOnly);
+}
+
 void SelectHeaderTypeComboBox::slotSelectItem(const QString &str)
 {
-    lineEdit()->setReadOnly(currentIndex() > 0);
+    changeReadOnlyStatus();
     if (str == i18n(selectMultipleHeaders)) {
         QPointer<SelectHeadersDialog> dlg = new SelectHeadersDialog(this);
         dlg->setListHeaders(mHeaderMap, AutoCreateScriptUtil::createListFromString(mCode));
@@ -290,7 +301,7 @@ void SelectHeaderTypeComboBox::setCode(const QString &code)
         setCurrentIndex(count() - 1);
         lineEdit()->setText(code);
     }
-    lineEdit()->setReadOnly(currentIndex() > 0);
     mCode = code;
+    changeReadOnlyStatus();
 }
 
