@@ -20,6 +20,7 @@ if(BUILD_TESTING)
     add_subdirectory(vacation/tests)
     add_subdirectory(sievescriptdebugger/autotests)
     add_subdirectory(sievescriptdebugger/tests)
+    add_subdirectory(autocreatescripts/autotests/)
 endif()
 
 set(ksieveui_vacation_LIB_SRCS
