@@ -211,6 +211,7 @@ SelectHeaderTypeComboBox::~SelectHeaderTypeComboBox()
 
 void SelectHeaderTypeComboBox::slotSelectItem(const QString &str)
 {
+    lineEdit()->setReadOnly(currentIndex() > 0);
     if (str == i18n(selectMultipleHeaders)) {
         QPointer<SelectHeadersDialog> dlg = new SelectHeadersDialog(this);
         dlg->setListHeaders(mHeaderMap, AutoCreateScriptUtil::createListFromString(mCode));
