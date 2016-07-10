@@ -290,6 +290,7 @@ void SelectHeaderTypeComboBox::setCode(const QString &code)
         setCurrentIndex(count() - 1);
         lineEdit()->setText(code);
     }
+    lineEdit()->setReadOnly(currentIndex() > 0);
     mCode = code;
 }
 

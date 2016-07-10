@@ -21,6 +21,7 @@
 #include "../sieveconditions/widgets/selectheadertypecombobox.h"
 
 #include <QTest>
+#include <QLineEdit>
 
 SelectHeaderTypeComboBoxTest::SelectHeaderTypeComboBoxTest(QObject *parent)
     : QObject(parent)
@@ -71,9 +72,10 @@ void SelectHeaderTypeComboBoxTest::shouldSetCode_data()
     QTest::addColumn<int>("index");
     QTest::addColumn<QString>("currentText");
     QTest::addColumn<bool>("onlyEnvelopType");
-    QTest::newRow("empty") << QString() << 0 << QString() << false;
-    QTest::newRow("empty only header") << QString() << 0 << QString() << false;
-
+    QTest::addColumn<bool>("readOnly");
+    QTest::newRow("empty") << QString() << 0 << QString() << false << false;
+    QTest::newRow("empty only header") << QString() << 0 << QString() << false << false;
+    QTest::newRow("from") << QStringLiteral("from") << 8 << QStringLiteral("From") << false << true;
 }
 
 void SelectHeaderTypeComboBoxTest::shouldSetCode()
@@ -82,10 +84,12 @@ void SelectHeaderTypeComboBoxTest::shouldSetCode()
     QFETCH(int, index);
     QFETCH(QString, currentText);
     QFETCH(bool, onlyEnvelopType);
+    QFETCH(bool, readOnly);
     KSieveUi::SelectHeaderTypeComboBox combox(onlyEnvelopType);
     combox.setCode(code);
     QCOMPARE(combox.currentText(), currentText);
     QCOMPARE(combox.currentIndex(), index);
+    QCOMPARE(combox.lineEdit()->isReadOnly(), readOnly);
 }
 
 QTEST_MAIN(SelectHeaderTypeComboBoxTest)
