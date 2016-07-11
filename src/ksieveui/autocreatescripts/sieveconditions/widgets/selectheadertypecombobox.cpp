@@ -39,6 +39,7 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(i18n("Headers"));
+
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     QVBoxLayout *mainLayout = new QVBoxLayout;
     setLayout(mainLayout);
@@ -48,9 +49,11 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     connect(buttonBox, &QDialogButtonBox::accepted, this, &SelectHeadersDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &SelectHeadersDialog::reject);
     okButton->setFocus();
-    QWidget *w = new QWidget;
+
+
     QVBoxLayout *lay = new QVBoxLayout;
-    w->setLayout(lay);
+    lay->setMargin(0);
+    mainLayout->addLayout(lay);
     mListWidget = new SelectHeadersWidget;
     lay->addWidget(mListWidget);
 
@@ -76,7 +79,6 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
 
     lay->addLayout(hbox);
 
-    mainLayout->addWidget(w);
     mainLayout->addWidget(buttonBox);
 
     readConfig();
