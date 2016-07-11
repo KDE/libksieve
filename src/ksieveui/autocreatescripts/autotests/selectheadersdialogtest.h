@@ -28,6 +28,8 @@ class SelectHeadersDialogTest : public QObject
 public:
     explicit SelectHeadersDialogTest(QObject *parent = Q_NULLPTR);
     ~SelectHeadersDialogTest();
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // SELECTHEADERSDIALOGTEST_H

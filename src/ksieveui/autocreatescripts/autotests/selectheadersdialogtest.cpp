@@ -18,18 +18,57 @@
 */
 
 #include "selectheadersdialogtest.h"
+#include "../sieveconditions/widgets/selectheadertypecombobox.h"
 
 #include <QTest>
+#include <QStandardPaths>
+#include <QDialogButtonBox>
+#include <QVBoxLayout>
+#include <QLabel>
+#include <KLineEdit>
+#include <QPushButton>
 
 SelectHeadersDialogTest::SelectHeadersDialogTest(QObject *parent)
     : QObject(parent)
 {
-
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 SelectHeadersDialogTest::~SelectHeadersDialogTest()
 {
 
+}
+
+void SelectHeadersDialogTest::shouldHaveDefaultValue()
+{
+    KSieveUi::SelectHeadersDialog dlg;
+    QVERIFY(!dlg.windowTitle().isEmpty());
+
+    QDialogButtonBox *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
+    QVERIFY(buttonBox);
+
+    QVBoxLayout *lay = dlg.findChild<QVBoxLayout *>(QStringLiteral("widgetlayout"));
+    QVERIFY(lay);
+    QCOMPARE(lay->margin(), 0);
+
+
+    KSieveUi::SelectHeadersWidget *mListWidget = dlg.findChild<KSieveUi::SelectHeadersWidget *>(QStringLiteral("listwidget"));
+    QVERIFY(mListWidget);
+
+    QLabel *lab = dlg.findChild<QLabel *>(QStringLiteral("label"));
+    QVERIFY(lab);
+    QVERIFY(!lab->text().isEmpty());
+
+    KLineEdit *mNewHeader = dlg.findChild<KLineEdit *>(QStringLiteral("newheader"));
+    QVERIFY(mNewHeader);
+    QVERIFY(mNewHeader->isClearButtonEnabled());
+    QVERIFY(mNewHeader->trapReturnKey());
+
+
+
+    QPushButton *mAddNewHeader = dlg.findChild<QPushButton *>(QStringLiteral("addnewheader"));
+    QVERIFY(mAddNewHeader);
+    QVERIFY(!mAddNewHeader->isEnabled());
 }
 
 QTEST_MAIN(SelectHeadersDialogTest)

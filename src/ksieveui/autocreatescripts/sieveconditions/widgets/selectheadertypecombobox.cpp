@@ -40,9 +40,9 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
 {
     setWindowTitle(i18n("Headers"));
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    buttonBox->setObjectName(QStringLiteral("buttonbox"));
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
@@ -52,23 +52,28 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
 
 
     QVBoxLayout *lay = new QVBoxLayout;
+    lay->setObjectName(QStringLiteral("widgetlayout"));
     lay->setMargin(0);
     mainLayout->addLayout(lay);
-    mListWidget = new SelectHeadersWidget;
+    mListWidget = new SelectHeadersWidget(this);
+    mListWidget->setObjectName(QStringLiteral("listwidget"));
     lay->addWidget(mListWidget);
 
-    QLabel *lab = new QLabel(i18n("Add new header:"));
+    QLabel *lab = new QLabel(i18n("Add new header:"), this);
+    lab->setObjectName(QStringLiteral("label"));
     lay->addWidget(lab);
 
     QHBoxLayout *hbox = new QHBoxLayout;
 
-    mNewHeader = new KLineEdit;
+    mNewHeader = new KLineEdit(this);
+    mNewHeader->setObjectName(QStringLiteral("newheader"));
     mNewHeader->setClearButtonEnabled(true);
     mNewHeader->setTrapReturnKey(true);
     connect(mNewHeader, &KLineEdit::returnPressed, this, &SelectHeadersDialog::slotAddNewHeader);
     mNewHeader->setClearButtonEnabled(true);
 
-    mAddNewHeader = new QPushButton;
+    mAddNewHeader = new QPushButton(this);
+    mAddNewHeader->setObjectName(QStringLiteral("addnewheader"));
     mAddNewHeader->setEnabled(false);
     mAddNewHeader->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
     mAddNewHeader->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
