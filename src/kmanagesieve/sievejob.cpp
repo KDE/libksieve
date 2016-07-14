@@ -36,7 +36,7 @@ Session *SieveJob::Private::sessionForUrl(const QUrl &url)
         m_sessionPool.insert(hostUrl, sessionPtr);
         sessionPtr->connectToHost(hostUrl);
     } else {
-        if (!sessionPtr->connected()) {
+        if (sessionPtr->disconnected()) {
             sessionPtr->connectToHost(hostUrl);
         }
     }

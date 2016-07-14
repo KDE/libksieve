@@ -66,7 +66,10 @@ public:
 
     QStringList sieveExtensions() const;
 
-    bool connected() const;
+    /**
+     * @return true if we are not connected nor currently connecting, i.e. it's ok to call connectToHost()
+     */
+    bool disconnected() const;
 
 private:
     bool requestCapabilitiesAfterStartTls() const;
@@ -102,6 +105,7 @@ private:
     State m_state;
     bool m_supportsStartTls;
     bool m_connected;
+    bool m_disconnected;
 
     friend class SessionThread;
 };

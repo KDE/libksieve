@@ -48,7 +48,8 @@ Session::Session(QObject *parent) :
     m_currentJob(Q_NULLPTR),
     m_state(None),
     m_supportsStartTls(false),
-    m_connected(false)
+    m_connected(false),
+    m_disconnected(true)
 {
     qRegisterMetaType<KManageSieve::AuthDetails>();
     qRegisterMetaType<KManageSieve::Response>();
@@ -71,6 +72,7 @@ Session::Session(QObject *parent) :
     connect(m_thread, &SessionThread::socketDisconnected,
     [ = ]() {
         m_connected = false;
+        m_disconnected = true;
     });
 }
 
@@ -84,6 +86,7 @@ void Session::connectToHost(const QUrl &url)
 {
     qCDebug(KMANAGERSIEVE_LOG) << "connect to host url: " << url;
     m_url = url;
+    m_disconnected = false;
     m_thread->connectToHost(url);
     m_state = PreTlsCapabilities;
 }
@@ -227,9 +230,9 @@ void Session::executeNextJob()
     m_currentJob->d->run(this);
 }
 
-bool Session::connected() const
+bool Session::disconnected() const
 {
-    return m_connected;
+    return m_disconnected;
 }
 
 QStringList Session::sieveExtensions() const
