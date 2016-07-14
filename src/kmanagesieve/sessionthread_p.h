@@ -54,7 +54,6 @@ public:
     void continueAuthentication(const Response &response, const QByteArray &data);
 
     void startSsl();
-    void handleSslErrorResponse(bool response);
 
 Q_SIGNALS:
     void responseReceived(const KManageSieve::Response &response, const QByteArray &data);
@@ -76,7 +75,6 @@ private Q_SLOTS:
     void doStartAuthentication();
     void doContinueAuthentication(const KManageSieve::Response &response, const QByteArray &data);
     void doStartSsl();
-    void doHandleSslErrorResponse(bool response);
 
     void slotDataReceived();
     void slotSocketError();

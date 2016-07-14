@@ -495,24 +495,3 @@ void SessionThread::sslResult(bool encrypted)
         Q_EMIT sslDone();
     }
 }
-
-// Called in main thread
-void SessionThread::handleSslErrorResponse(bool response)
-{
-    QMetaObject::invokeMethod(this, "doHandleSslErrorResponse",
-                              Qt::QueuedConnection,
-                              Q_ARG(bool, response));
-}
-
-// Called in secondary thread
-void SessionThread::doHandleSslErrorResponse(bool response)
-{
-    Q_ASSERT(QThread::currentThread() == thread());
-
-    if (!response) {
-        doDisconnectFromHost(true);
-        return;
-    }
-
-    Q_EMIT sslDone();
-}

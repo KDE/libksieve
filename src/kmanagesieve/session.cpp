@@ -315,7 +315,11 @@ void Session::authenticationDone()
 void Session::sslError(const KSslErrorUiData &data)
 {
     const bool ignore = KIO::SslUi::askIgnoreSslErrors(data);
-    m_thread->handleSslErrorResponse(ignore);
+    if (ignore) {
+        sslDone();
+    } else {
+        m_thread->disconnectFromHost(true);
+    }
 }
 
 void Session::sslDone()
