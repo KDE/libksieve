@@ -175,6 +175,8 @@ void SessionThread::slotDataReceived()
         if (m_pendingQuantity <= 0) {
             qCDebug(KMANAGERSIEVE_LOG) << "S: " << m_data.trimmed();
             Q_EMIT responseReceived(m_lastResponse, m_data);
+        } else {
+            return; // waiting for more data
         }
     }
 
