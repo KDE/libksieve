@@ -226,8 +226,10 @@ void ManageSieveScriptsDialog::slotSieveEditorOkClicked()
 void ManageSieveScriptsDialog::slotSieveEditorCancelClicked()
 {
     disableManagerScriptsDialog(false);
-    d->mSieveEditor->deleteLater();
-    d->mSieveEditor = Q_NULLPTR;
+    if (d->mSieveEditor) {
+        d->mSieveEditor->deleteLater();
+        d->mSieveEditor = Q_NULLPTR;
+    }
     d->mCurrentURL = QUrl();
     if (d->mIsNewScript) {
         d->mTreeView->slotRefresh();
