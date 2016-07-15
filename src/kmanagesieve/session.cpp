@@ -55,6 +55,9 @@ Session::Session(QObject *parent) :
     qRegisterMetaType<KManageSieve::Response>();
     qRegisterMetaType<KSslErrorUiData>();
 
+    static int counter = 0;
+    setObjectName(QStringLiteral("session") + QString::number(++counter));
+
     connect(m_thread, &SessionThread::responseReceived,
             this, &Session::processResponse);
     connect(m_thread, &SessionThread::error,
@@ -74,13 +77,13 @@ Session::Session(QObject *parent) :
 
 Session::~Session()
 {
-    qCDebug(KMANAGERSIEVE_LOG) << Q_FUNC_INFO;
+    qCDebug(KMANAGERSIEVE_LOG) << objectName() << Q_FUNC_INFO;
     delete m_thread;
 }
 
 void Session::connectToHost(const QUrl &url)
 {
-    qCDebug(KMANAGERSIEVE_LOG) << "connect to host url: " << url;
+    qCDebug(KMANAGERSIEVE_LOG) << objectName() << "connect to host url: " << url;
     m_url = url;
     m_disconnected = false;
     m_thread->connectToHost(url);
@@ -89,6 +92,7 @@ void Session::connectToHost(const QUrl &url)
 
 void Session::disconnectFromHost(bool sendLogout)
 {
+    qCDebug(KMANAGERSIEVE_LOG) << objectName() << "sendLogout=" << sendLogout;
     m_thread->disconnectFromHost(sendLogout);
     if (m_currentJob) {
         killJob(m_currentJob);
@@ -104,10 +108,12 @@ void Session::feedBack(const QByteArray &data)
     Response response;
     if (!response.parseResponse(data)) {
         m_errorMsg = KIO::buildErrorString(KIO::ERR_UNKNOWN, i18n("Syntax error."));
+        qDebug() << objectName() << m_errorMsg << "and disconnect";
         disconnectFromHost();
         return;
     }
 
+    qCDebug(KMANAGERSIEVE_LOG) << objectName() << "feeding back" << QString::fromLatin1(data);
     m_thread->feedBack(data);
 }
 
@@ -119,7 +125,7 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
     case PostTlsCapabilities:
         if (response.type() == Response::Action) {
             if (response.operationSuccessful()) {
-                qCDebug(KMANAGERSIEVE_LOG) << "Sieve server ready & awaiting authentication.";
+                qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Sieve server ready & awaiting authentication.";
                 if (m_state == PreTlsCapabilities) {
                     if (!allowUnencrypted() && !QSslSocket::supportsSsl()) {
                         m_errorMsg = KIO::buildErrorString(KIO::ERR_SLAVE_DEFINED, i18n("Cannot use TLS since the underlying Qt library does not support it."));
@@ -149,23 +155,23 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
                     m_thread->startAuthentication();
                 }
             } else {
-                qCDebug(KMANAGERSIEVE_LOG) << "Unknown action " << response.action() << ".";
+                qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Unknown action " << response.action() << ".";
             }
         } else if (response.key() == "IMPLEMENTATION") {
             m_implementation = QString::fromLatin1(response.value());
-            qCDebug(KMANAGERSIEVE_LOG) << "Connected to Sieve server: " << response.value();
+            qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Connected to Sieve server: " << response.value();
         } else if (response.key() == "SASL") {
             m_saslMethods = QString::fromLatin1(response.value()).split(QLatin1Char(' '), QString::SkipEmptyParts);
-            qCDebug(KMANAGERSIEVE_LOG) << "Server SASL authentication methods: " << m_saslMethods;
+            qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Server SASL authentication methods: " << m_saslMethods;
         } else if (response.key() == "SIEVE") {
             // Save script capabilities
             m_sieveExtensions = QString::fromLatin1(response.value()).split(QLatin1Char(' '), QString::SkipEmptyParts);
-            qCDebug(KMANAGERSIEVE_LOG) << "Server script capabilities: " << m_sieveExtensions;
+            qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Server script capabilities: " << m_sieveExtensions;
         } else if (response.key() == "STARTTLS") {
-            qCDebug(KMANAGERSIEVE_LOG) << "Server supports TLS";
+            qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Server supports TLS";
             m_supportsStartTls = true;
         } else {
-            qCDebug(KMANAGERSIEVE_LOG) << "Unrecognised key " << response.key();
+            qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Unrecognised key " << response.key();
         }
         break;
     case StartTls:
@@ -194,20 +200,20 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
                 return;
             }
         }
-        qCDebug(KMANAGERSIEVE_LOG) << "Unhandled response!";
+        qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Unhandled response! state=" << m_state << "response=" << response.key() << response.value() << response.extra() << data;
     }
 }
 
 void Session::scheduleJob(SieveJob *job)
 {
-    qCDebug(KMANAGERSIEVE_LOG) << Q_FUNC_INFO << job;
+    qCDebug(KMANAGERSIEVE_LOG) << objectName() << Q_FUNC_INFO << job;
     m_jobs.enqueue(job);
     QMetaObject::invokeMethod(this, "executeNextJob", Qt::QueuedConnection);
 }
 
 void Session::killJob(SieveJob *job)
 {
-    qCDebug(KMANAGERSIEVE_LOG) << Q_FUNC_INFO << job;
+    qCDebug(KMANAGERSIEVE_LOG) << objectName() << Q_FUNC_INFO << job;
     if (m_currentJob == job) {
         m_currentJob->d->killed();
         m_currentJob = Q_NULLPTR;
@@ -223,6 +229,7 @@ void Session::executeNextJob()
         return;
     }
     m_currentJob = m_jobs.dequeue();
+    qCDebug(KMANAGERSIEVE_LOG) << objectName() << Q_FUNC_INFO << "running job" << m_currentJob;
     m_currentJob->d->run(this);
 }
 
@@ -249,7 +256,7 @@ bool Session::requestCapabilitiesAfterStartTls() const
         const int patch = matchExpression.captured(3).toInt();
         const QString vendor = matchExpression.captured(4);
         if (major < 2 || (major == 2 && (minor < 3 || (minor == 3 && patch < 11))) || (vendor == QLatin1String("-kolab-nocaps"))) {
-            qCDebug(KMANAGERSIEVE_LOG) << "Enabling compat mode for Cyrus < 2.3.11 or Cyrus marked as \"kolab-nocaps\"";
+            qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Enabling compat mode for Cyrus < 2.3.11 or Cyrus marked as \"kolab-nocaps\"";
             return true;
         }
     }
@@ -309,6 +316,7 @@ void Session::authenticationDone()
 {
     m_state = None;
     m_connected = true;
+    qCDebug(KMANAGERSIEVE_LOG) << objectName() << "authentication done, ready to execute jobs";
     QMetaObject::invokeMethod(this, "executeNextJob", Qt::QueuedConnection);
 }
 
@@ -324,11 +332,12 @@ void Session::sslError(const KSslErrorUiData &data)
 
 void Session::sslDone()
 {
-    qCDebug(KMANAGERSIEVE_LOG) << "TLS negotiation done.";
+    qCDebug(KMANAGERSIEVE_LOG) << objectName() << "TLS negotiation done.";
     if (requestCapabilitiesAfterStartTls()) {
         sendData("CAPABILITY");
     }
     m_state = PostTlsCapabilities;
+    qCDebug(KMANAGERSIEVE_LOG) << objectName() << "TLS negotiation done, m_state=" << m_state;
 }
 
 QString Session::errorMessage() const
