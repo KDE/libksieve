@@ -65,10 +65,6 @@ Session::Session(QObject *parent) :
             this, &Session::sslError);
     connect(m_thread, &SessionThread::sslDone,
             this, &Session::sslDone);
-    connect(m_thread, &SessionThread::socketConnected,
-    [ = ]() {
-        m_connected = true;
-    });
     connect(m_thread, &SessionThread::socketDisconnected,
     [ = ]() {
         m_connected = false;
@@ -312,6 +308,7 @@ KManageSieve::AuthDetails Session::requestAuthDetails(const QUrl &url)
 void Session::authenticationDone()
 {
     m_state = None;
+    m_connected = true;
     QMetaObject::invokeMethod(this, "executeNextJob", Qt::QueuedConnection);
 }
 
