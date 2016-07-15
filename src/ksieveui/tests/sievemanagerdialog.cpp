@@ -24,11 +24,10 @@
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
-    app.setQuitOnLastWindowClosed(false);
     QApplication::setApplicationName(QStringLiteral("managersievescriptsdialogtest"));
     QApplication::setApplicationVersion(QStringLiteral("1.0"));
 
     KSieveUi::ManageSieveScriptsDialog *dlg = new KSieveUi::ManageSieveScriptsDialog;
-    dlg->exec();
-    return 0;
+    dlg->show();
+    return app.exec();
 }
