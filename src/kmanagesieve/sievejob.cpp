@@ -18,7 +18,6 @@
 
 #include "kmanagersieve_debug.h"
 #include <QUrl>
-#include <KMessageBox>
 #include <KLocalizedString>
 #include <QPointer>
 
@@ -108,8 +107,6 @@ bool SieveJob::Private::handleResponse(const Response &response, const QByteArra
     }
     const Command lastCmd = mCommands.top();
 
-    Session *session = sessionForUrl(mUrl);
-
     QString errMsg;
     // handle non-action responses
     if (response.type() != Response::Action) {
@@ -137,16 +134,16 @@ bool SieveJob::Private::handleResponse(const Response &response, const QByteArra
         case Put:
             if (response.type() == Response::KeyValuePair) {
                 errMsg = QString::fromUtf8(response.key());
-                session->setErrorMessage(i18n("The script did not upload successfully.\n"
-                                              "This is probably due to errors in the script.\n"
-                                              "The server responded:\n%1", errMsg));
+                mErrorMessage = i18n("The script did not upload successfully.\n"
+                                     "This is probably due to errors in the script.\n"
+                                     "The server responded:\n%1", errMsg);
             } else if (response.type() == Response::Quantity) {
                 errMsg = QString::fromUtf8(data);
-                session->setErrorMessage(i18n("The script did not upload successfully.\n"
-                                              "This is probably due to errors in the script.\n"
-                                              "The server responded:\n%1", errMsg));
+                mErrorMessage = i18n("The script did not upload successfully.\n"
+                                     "This is probably due to errors in the script.\n"
+                                     "The server responded:\n%1", errMsg);
             } else {
-                session->setErrorMessage(i18n("The script did not upload successfully.\nThe script may contain errors."));
+                mErrorMessage = i18n("The script did not upload successfully.\nThe script may contain errors.");
             }
             break;
         default:
@@ -164,29 +161,19 @@ bool SieveJob::Private::handleResponse(const Response &response, const QByteArra
         mFileExists = No;
     }
 
-    // PUTSCRIPT reports the error message in an literal after the final response sometimes
-    if (lastCmd == Put && response.operationResult() == Response::No) {
-        if (response.action().size() > 3) {
-            const QByteArray extra = response.action().right(response.action().size() - 3);
-            sessionForUrl(mUrl)->feedBack(extra);
-            return false;
-        }
-    }
-
     // prepare for next round:
     mCommands.pop();
     // check for errors:
     if (!response.operationSuccessful()) {
-        if (mInteractive) {
-            const QString msg = session->errorMessage();
-            if (msg.isEmpty())
-                KMessageBox::error(Q_NULLPTR, i18n("Sieve operation failed.\n"
-                                                   "The server responded:\n%1", QString::fromUtf8(response.key())), i18n("Sieve Error"));
-            else {
-                KMessageBox::error(Q_NULLPTR, msg, i18n("Sieve Error"));
+        if (mErrorMessage.isEmpty()) {
+            if (!data.isEmpty()) {
+                // the error message can be in multiple lines after NO {123}, then it's in 'data'.
+                mErrorMessage = QString::fromUtf8(data);
+            } else {
+                // or the error message is on the line of the NO
+                mErrorMessage = QString::fromUtf8(response.key());
             }
         }
-        Q_EMIT q->errorMessage(q, false, errMsg);
         Q_EMIT q->result(q, false, mScript, (mUrl.fileName() == mActiveScriptName));
 
         if (lastCmd == List) {
@@ -208,7 +195,6 @@ bool SieveJob::Private::handleResponse(const Response &response, const QByteArra
     }
 
     if (mCommands.empty()) {
-        Q_EMIT q->errorMessage(q, true, QString());
         // was last command; report success and delete this object:
         Q_EMIT q->result(q, true, mScript, (mUrl.fileName() == mActiveScriptName));
         if (lastCmd == List) {
@@ -252,16 +238,10 @@ SieveJob::~SieveJob()
 
 void SieveJob::kill(KJob::KillVerbosity verbosity)
 {
-    Q_UNUSED(verbosity);
     if (d->mCommands.isEmpty()) {
         return;    // done already
     }
-    Private::sessionForUrl(d->mUrl)->killJob(this);
-}
-
-void SieveJob::setInteractive(bool interactive)
-{
-    d->mInteractive = interactive;
+    Private::sessionForUrl(d->mUrl)->killJob(this, verbosity);
 }
 
 QStringList SieveJob::sieveCapabilities() const
@@ -276,6 +256,16 @@ QStringList SieveJob::sieveCapabilities() const
 bool SieveJob::fileExists() const
 {
     return d->mFileExists;
+}
+
+QString SieveJob::errorString() const
+{
+    return d->mErrorMessage;
+}
+
+void SieveJob::setErrorMessage(const QString &str)
+{
+    d->mErrorMessage = str;
 }
 
 SieveJob *SieveJob::put(const QUrl &destination, const QString &script,

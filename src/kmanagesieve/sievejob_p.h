@@ -28,7 +28,7 @@ class SieveJob::Private
 {
 public:
     Private(SieveJob *qq)
-        : q(qq), mFileExists(DontKnow), mInteractive(true)
+        : q(qq), mFileExists(DontKnow)
     {
     }
 
@@ -58,13 +58,13 @@ public:
     QUrl mUrl;
     QString mScript;
     QString mActiveScriptName;
+    QString mErrorMessage;
     QStack<Command> mCommands;
 
     // List of Sieve scripts on the server, used by @ref list()
     QStringList mAvailableScripts;
 
     Existence mFileExists;
-    bool mInteractive;
 
     static QHash<QUrl, QPointer<Session> > m_sessionPool;
 };

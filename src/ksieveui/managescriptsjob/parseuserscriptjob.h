@@ -49,7 +49,7 @@ public:
     void kill();
 
 private Q_SLOTS:
-    void slotGetResult(KManageSieve::SieveJob *, bool, const QString &, bool);
+    void slotGetResult(KManageSieve::SieveJob *job, bool, const QString &, bool);
 
 Q_SIGNALS:
     void finished(ParseUserScriptJob *job);

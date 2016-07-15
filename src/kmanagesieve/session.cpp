@@ -95,26 +95,12 @@ void Session::disconnectFromHost(bool sendLogout)
     qCDebug(KMANAGERSIEVE_LOG) << objectName() << "sendLogout=" << sendLogout;
     m_thread->disconnectFromHost(sendLogout);
     if (m_currentJob) {
-        killJob(m_currentJob);
+        killJob(m_currentJob, KJob::EmitResult);
     }
     Q_FOREACH (SieveJob *job, m_jobs) {
-        killJob(job);
+        killJob(job, KJob::EmitResult);
     }
     deleteLater();
-}
-
-void Session::feedBack(const QByteArray &data)
-{
-    Response response;
-    if (!response.parseResponse(data)) {
-        m_errorMsg = KIO::buildErrorString(KIO::ERR_UNKNOWN, i18n("Syntax error."));
-        qDebug() << objectName() << m_errorMsg << "and disconnect";
-        disconnectFromHost();
-        return;
-    }
-
-    qCDebug(KMANAGERSIEVE_LOG) << objectName() << "feeding back" << QString::fromLatin1(data);
-    m_thread->feedBack(data);
 }
 
 void Session::processResponse(const KManageSieve::Response &response, const QByteArray &data)
@@ -128,7 +114,7 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
                 qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Sieve server ready & awaiting authentication.";
                 if (m_state == PreTlsCapabilities) {
                     if (!allowUnencrypted() && !QSslSocket::supportsSsl()) {
-                        m_errorMsg = KIO::buildErrorString(KIO::ERR_SLAVE_DEFINED, i18n("Cannot use TLS since the underlying Qt library does not support it."));
+                        setErrorMessage(KIO::buildErrorString(KIO::ERR_SLAVE_DEFINED, i18n("Cannot use TLS since the underlying Qt library does not support it.")));
                         disconnectFromHost();
                         return;
                     }
@@ -138,7 +124,7 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
                                          "You can choose to try to initiate TLS negotiations nonetheless, or cancel the operation."),
                                     i18n("Server Does Not Advertise TLS"), KGuiItem(i18n("&Start TLS nonetheless")), KStandardGuiItem::cancel(),
                                     QStringLiteral("ask_starttls_%1").arg(m_url.host())) != KMessageBox::Continue) {
-                        m_errorMsg = KIO::buildErrorString(KIO::ERR_USER_CANCELED, i18n("TLS encryption requested, but not supported by server."));
+                        setErrorMessage(KIO::buildErrorString(KIO::ERR_USER_CANCELED, i18n("TLS encryption requested, but not supported by server.")));
                         disconnectFromHost();
                         return;
                     }
@@ -179,7 +165,7 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
             m_thread->startSsl();
             m_state = None;
         } else {
-            m_errorMsg = KIO::buildErrorString(KIO::ERR_SLAVE_DEFINED, i18n("The server does not seem to support TLS. Disable TLS if you want to connect without encryption."));
+            setErrorMessage(KIO::buildErrorString(KIO::ERR_SLAVE_DEFINED, i18n("The server does not seem to support TLS. Disable TLS if you want to connect without encryption.")));
             disconnectFromHost();
         }
         break;
@@ -211,15 +197,19 @@ void Session::scheduleJob(SieveJob *job)
     QMetaObject::invokeMethod(this, "executeNextJob", Qt::QueuedConnection);
 }
 
-void Session::killJob(SieveJob *job)
+void Session::killJob(SieveJob *job, KJob::KillVerbosity verbosity)
 {
     qCDebug(KMANAGERSIEVE_LOG) << objectName() << Q_FUNC_INFO << job;
     if (m_currentJob == job) {
-        m_currentJob->d->killed();
+        if (verbosity == KJob::EmitResult) {
+            m_currentJob->d->killed();
+        }
         m_currentJob = Q_NULLPTR;
     } else {
         m_jobs.removeAll(job);
-        job->d->killed();
+        if (verbosity == KJob::EmitResult) {
+            job->d->killed();
+        }
     }
 }
 
@@ -340,14 +330,13 @@ void Session::sslDone()
     qCDebug(KMANAGERSIEVE_LOG) << objectName() << "TLS negotiation done, m_state=" << m_state;
 }
 
-QString Session::errorMessage() const
-{
-    return m_errorMsg;
-}
-
 void Session::setErrorMessage(const QString &msg)
 {
-    m_errorMsg = msg;
+    if (m_currentJob) {
+        m_currentJob->setErrorMessage(msg);
+    } else {
+        qCWarning(KMANAGERSIEVE_LOG) << objectName() << "No job for reporting this error message!" << msg;
+    }
 }
 
 bool Session::allowUnencrypted() const

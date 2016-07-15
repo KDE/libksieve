@@ -44,7 +44,7 @@ Q_SIGNALS:
     void error(const QString &msgError);
 
 private Q_SLOTS:
-    void slotPutMasterResult(KManageSieve::SieveJob *, bool success);
+    void slotPutMasterResult(KManageSieve::SieveJob *job, bool success);
     void slotPutUserResult(KManageSieve::SieveJob *, bool success);
 
 private:

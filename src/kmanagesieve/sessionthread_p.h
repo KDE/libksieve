@@ -48,7 +48,6 @@ public:
     void disconnectFromHost(bool sendLogout);
 
     void sendData(const QByteArray &data);
-    void feedBack(const QByteArray &data);
 
     void startAuthentication();
     void continueAuthentication(const Response &response, const QByteArray &data);
@@ -71,7 +70,6 @@ private Q_SLOTS:
     void doConnectToHost(const QUrl &url);
     void doDisconnectFromHost(bool sendLogout);
     void doSendData(const QByteArray &data);
-    void doFeedBack(const QByteArray &data);
     void doStartAuthentication();
     void doContinueAuthentication(const KManageSieve::Response &response, const QByteArray &data);
     void doStartSsl();

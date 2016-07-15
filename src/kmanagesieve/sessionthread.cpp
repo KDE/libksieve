@@ -197,7 +197,7 @@ void SessionThread::slotDataReceived()
         qCDebug(KMANAGERSIEVE_LOG) << r.type() << r.key() << r.value() << r.extra() << r.quantity();
 
         m_lastResponse = r;
-        if (r.type() == Response::Quantity) {
+        if (r.quantity() > 0) {
             m_data.clear();
             m_pendingQuantity = r.quantity();
             slotDataReceived(); // in case the data block is already completely in the buffer
@@ -215,35 +215,8 @@ void SessionThread::slotSocketError()
 {
     Q_ASSERT(QThread::currentThread() == thread());
 
-    qCDebug(KMANAGERSIEVE_LOG) << Q_FUNC_INFO << m_socket->errorString();
+    qCWarning(KMANAGERSIEVE_LOG) << Q_FUNC_INFO << m_socket->errorString();
     doDisconnectFromHost(false);
-}
-
-// Called in main thread
-void SessionThread::feedBack(const QByteArray &data)
-{
-    QMetaObject::invokeMethod(this, "doFeedBack",
-                              Qt::QueuedConnection,
-                              Q_ARG(QByteArray, data));
-}
-
-// Called in secondary thread
-void SessionThread::doFeedBack(const QByteArray &data)
-{
-    Q_ASSERT(QThread::currentThread() == thread());
-
-    Response response;
-    response.parseResponse(data);
-    m_lastResponse = response;
-
-    if (response.type() == Response::Quantity) {
-        m_data.clear();
-        m_pendingQuantity = response.quantity();
-        slotDataReceived();
-        return;
-    } else {
-        Q_EMIT responseReceived(response, QByteArray());
-    }
 }
 
 // Called in main thread
