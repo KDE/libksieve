@@ -207,6 +207,7 @@ void ManageSieveScriptsDialog::slotSieveEditorCheckSyntaxClicked()
     if (script.isEmpty()) {
         return;
     }
+    d->mSieveEditor->addNormalMessage(i18n("Uploading script to server for checking it, please wait..."));
     KManageSieve::SieveJob *job = KManageSieve::SieveJob::put(d->mCurrentURL, script, d->mWasActive, d->mWasActive);
     job->setInteractive(false);
     connect(job, &KManageSieve::SieveJob::errorMessage, this, &ManageSieveScriptsDialog::slotPutCheckSyntaxResultDebug);

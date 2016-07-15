@@ -166,3 +166,8 @@ void SieveEditor::addOkMessage(const QString &msg)
     d->mSieveEditorWidget->addOkMessage(msg);
 }
 
+void SieveEditor::addNormalMessage(const QString &msg)
+{
+    d->mSieveEditorWidget->addNormalMessage(msg);
+}
+

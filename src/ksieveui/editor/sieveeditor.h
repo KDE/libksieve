@@ -38,6 +38,7 @@ public:
     void setDebugScript(const QString &debug);
     void addFailedMessage(const QString &err);
     void addOkMessage(const QString &msg);
+    void addNormalMessage(const QString &msg);
     void setScriptName(const QString &name);
 
     void resultDone();

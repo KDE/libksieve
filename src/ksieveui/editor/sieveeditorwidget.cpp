@@ -475,6 +475,11 @@ void SieveEditorWidget::addOkMessage(const QString &msg)
     addMessageEntry(msg, QColor(Qt::darkGreen));
 }
 
+void SieveEditorWidget::addNormalMessage(const QString &msg)
+{
+    addMessageEntry(msg, palette().color(QPalette::WindowText));
+}
+
 void SieveEditorWidget::addMessageEntry(const QString &errorMsg, const QColor &color)
 {
     QString msg = errorMsg;
