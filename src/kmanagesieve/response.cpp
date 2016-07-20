@@ -60,40 +60,48 @@ KManageSieve::Response::Type KManageSieve::Response::type() const
     return m_type;
 }
 
+static uint parseQuantity(const QByteArray &line, int start, bool *ok = Q_NULLPTR)
+{
+    // expecting {quantity} at start
+    int end = line.indexOf("+}", start + 1);
+    // some older versions of Cyrus enclose the literal size just in { } instead of { +}
+    if (end == -1) {
+        end = line.indexOf('}', start + 1);
+    }
+
+    return line.mid(start + 1, end - start - 1).toUInt(ok);
+}
+
 bool KManageSieve::Response::parseResponse(const QByteArray &line)
 {
     clear();
 
     switch (line.at(0)) {
     case '{': {
-        // expecting {quantity}
-        int start = 0;
-        int end = line.indexOf("+}", start + 1);
-        // some older versions of Cyrus enclose the literal size just in { } instead of { +}
-        if (end == -1) {
-            end = line.indexOf('}', start + 1);
-        }
-
-        bool ok = false;
         m_type = Quantity;
-        m_quantity = line.mid(start + 1, end - start - 1).toUInt(&ok);
-        if (!ok) {
-            //         disconnect();
-            //         error(ERR_INTERNAL_SERVER, i18n("A protocol error occurred."));
-            return false;
-        }
-
-        return true;
+        bool ok = false;
+        m_quantity = parseQuantity(line, 0, &ok);
+        return ok;
     }
     case '"':
         // expecting "key" "value" pairs
         m_type = KeyValuePair;
         break;
-    default:
+    default: {
         // expecting single string
         m_type = Action;
         m_key = line;
+
+        // Sometimes NO is followed by a quantity (multiline error message). Ex:
+        // S:  "NO {62}"
+        // S:  "script errors:"
+        // S:  line 17: syntax error, unexpected $undefined
+        const int bracePos = line.indexOf('{');
+        if (bracePos > 0) {
+            m_quantity = parseQuantity(line, bracePos);
+        }
         return true;
+    }
     }
 
     int start = 0;

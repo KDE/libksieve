@@ -91,11 +91,6 @@ public:
     void kill(KJob::KillVerbosity verbosity = KJob::Quietly);
 
     /**
-     * Sets whether the sieve job shall be interactive.
-     */
-    void setInteractive(bool interactive);
-
-    /**
      * Returns the sieve capabilities of the IMAP server.
      */
     QStringList sieveCapabilities() const;
@@ -105,6 +100,11 @@ public:
      * the IMAP server.
      */
     bool fileExists() const;
+
+    /**
+     * A human-readable error message.
+     */
+    QString errorString() const;
 
 Q_SIGNALS:
     /**
@@ -142,8 +142,6 @@ Q_SIGNALS:
     void result(KManageSieve::SieveJob *job, bool success,
                 const QString &script, bool active);
 
-    void errorMessage(KManageSieve::SieveJob *job, bool success,
-                      const QString &errMsg);
     /**
      * This signal is emitted for each result entry of a list job.
      *
@@ -154,6 +152,8 @@ Q_SIGNALS:
     void item(KManageSieve::SieveJob *job, const QString &filename, bool active);
 
 private:
+    void setErrorMessage(const QString &str);
+
     //@cond PRIVATE
     SieveJob(QObject *parent = Q_NULLPTR);
     ~SieveJob();

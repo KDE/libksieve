@@ -48,9 +48,6 @@ Vacation::Vacation(QObject *parent, bool checkOnly, const QUrl &url)
         return;
     }
     mSieveJob = KManageSieve::SieveJob::get(mUrl);
-    if (checkOnly) {
-        mSieveJob->setInteractive(false);
-    }
     connect(mSieveJob, &KManageSieve::SieveJob::gotScript, this, &Vacation::slotGetResult);
 }
 

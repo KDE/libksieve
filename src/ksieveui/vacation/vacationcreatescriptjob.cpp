@@ -107,7 +107,6 @@ void VacationCreateScriptJob::start()
     mUserJobRunning = false;
     mScriptJobRunning = true;
     mSieveJob = KManageSieve::SieveJob::get(mUrl);
-    mSieveJob->setInteractive(false);
     connect(mSieveJob, &KManageSieve::SieveJob::gotScript, this, &VacationCreateScriptJob::slotGetScript);
 
     if (mKep14Support && mActivate && !mScriptActive) {

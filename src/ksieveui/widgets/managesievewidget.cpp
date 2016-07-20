@@ -390,8 +390,17 @@ void ManageSieveWidget::slotDeleteScript()
         return;
     }
     KManageSieve::SieveJob *job = KManageSieve::SieveJob::del(u);
-    connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveWidget::slotRefresh);
+    connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveWidget::slotDeleteResult);
     Q_EMIT scriptDeleted(u);
+}
+
+void ManageSieveWidget::slotDeleteResult(KManageSieve::SieveJob *job, bool success)
+{
+    if (!success) {
+        KMessageBox::error(this, i18n("Deleting the script failed.\n"
+                                      "The server responded:\n%1", job->errorString()), i18n("Sieve Error"));
+    }
+    slotRefresh();
 }
 
 void ManageSieveWidget::slotRefresh()

@@ -95,10 +95,11 @@ void GenerateGlobalScriptJob::writeMasterScript()
     connect(mMasterJob, &KManageSieve::SieveJob::result, this, &GenerateGlobalScriptJob::slotPutMasterResult);
 }
 
-void GenerateGlobalScriptJob::slotPutMasterResult(KManageSieve::SieveJob *, bool success)
+void GenerateGlobalScriptJob::slotPutMasterResult(KManageSieve::SieveJob *job, bool success)
 {
     if (!success) {
-        Q_EMIT error(i18n("Error when we wrote \"MASTER\" script on server."));
+        Q_EMIT error(i18n("Error writing \"MASTER\" script on server.\n"
+                          "The server responded:\n%1", job->errorString()));
         return;
     }
     mMasterJob = Q_NULLPTR;
@@ -128,11 +129,12 @@ void GenerateGlobalScriptJob::writeUserScript()
     connect(mUserJob, &KManageSieve::SieveJob::result, this, &GenerateGlobalScriptJob::slotPutUserResult);
 }
 
-void GenerateGlobalScriptJob::slotPutUserResult(KManageSieve::SieveJob *, bool success)
+void GenerateGlobalScriptJob::slotPutUserResult(KManageSieve::SieveJob *job, bool success)
 {
     mUserJob = Q_NULLPTR;
     if (!success) {
-        Q_EMIT error(i18n("Error when we wrote \"User\" script on server."));
+        Q_EMIT error(i18n("Error writing \"User\" script on server.\n"
+                          "The server responded:\n%1", job->errorString()));
         return;
     }
     disableAllOtherScripts();

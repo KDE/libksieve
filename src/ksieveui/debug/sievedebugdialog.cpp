@@ -18,7 +18,6 @@
 #include <agentinstance.h>
 #include "libksieve_debug.h"
 #include <KLocalizedString>
-#include <kmessagebox.h>
 #include <kmanagesieve/sievejob.h>
 #include <ksieveui/util.h>
 
@@ -159,7 +158,7 @@ void SieveDebugDialog::slotDiagNextScript()
     connect(mSieveJob, &KManageSieve::SieveJob::gotScript, this, &SieveDebugDialog::slotGetScript);
 }
 
-void SieveDebugDialog::slotGetScript(KManageSieve::SieveJob * /* job */, bool success,
+void SieveDebugDialog::slotGetScript(KManageSieve::SieveJob *job, bool success,
                                      const QString &script, bool active)
 {
     qCDebug(LIBKSIEVE_LOG) << "( ??," << success
@@ -168,7 +167,10 @@ void SieveDebugDialog::slotGetScript(KManageSieve::SieveJob * /* job */, bool su
                            << script;
     mSieveJob = Q_NULLPTR; // job deletes itself after returning from this slot!
 
-    if (script.isEmpty()) {
+    if (!success) {
+        mEdit->editor()->appendPlainText(i18n("Retrieving the script failed.\n"
+                                              "The server responded:\n%1", job->errorString()));
+    } else if (script.isEmpty()) {
         mEdit->editor()->appendPlainText(i18n("(This script is empty.)\n\n"));
     } else {
         mEdit->editor()->appendPlainText(i18n(

@@ -76,7 +76,6 @@ void VacationCheckJob::start()
         connect(mSieveJob, &KManageSieve::SieveJob::gotList, this, &VacationCheckJob::slotGotList);
     } else {
         mSieveJob = KManageSieve::SieveJob::get(mUrl);
-        mSieveJob->setInteractive(false);
         connect(mSieveJob, &KManageSieve::SieveJob::gotScript, this, &VacationCheckJob::slotGetResult);
     }
 }
@@ -138,7 +137,8 @@ void VacationCheckJob::slotGotList(KManageSieve::SieveJob *job, bool success, co
     Q_ASSERT(job == mSieveJob);
     mSieveJob = Q_NULLPTR;
     if (!success) {
-        emitError(i18n("Failed to get SieveJob list."));
+        emitError(i18n("Failed to get the list of Sieve scripts.\n"
+                       "The server responded:\n%1", job->errorString()));
         return;
     }
 
@@ -187,7 +187,6 @@ void VacationCheckJob::getNextScript()
         getNextScript();
     }
     mSieveJob = KManageSieve::SieveJob::get(url);
-    mSieveJob->setInteractive(false);
     connect(mSieveJob, &KManageSieve::SieveJob::gotScript, this, &VacationCheckJob::slotGetResult);
 }
 

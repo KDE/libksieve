@@ -48,8 +48,8 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void slotGetResult(KManageSieve::SieveJob *, bool, const QString &, bool);
-    void slotPutResult(KManageSieve::SieveJob *, bool);
-    void slotPutCheckSyntaxResultDebug(KManageSieve::SieveJob *, bool success, const QString &errorMsg);
+    void slotPutResult(KManageSieve::SieveJob *job, bool);
+    void slotPutCheckSyntaxResultDebug(KManageSieve::SieveJob *job, bool success);
 
     void slotSieveEditorOkClicked();
     void slotSieveEditorCancelClicked();

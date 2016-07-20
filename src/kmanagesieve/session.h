@@ -23,6 +23,7 @@
 
 #include "response.h"
 
+#include <KJob>
 #include <QUrl>
 #include <QObject>
 #include <QQueue>
@@ -57,12 +58,8 @@ public:
     void disconnectFromHost(bool sendLogout = true);
 
     void scheduleJob(SieveJob *job);
-    void killJob(SieveJob *job);
+    void killJob(SieveJob *job, KJob::KillVerbosity verbosity);
     void sendData(const QByteArray &data);
-    void feedBack(const QByteArray &data);
-
-    QString errorMessage() const;
-    void setErrorMessage(const QString &msg);
 
     QStringList sieveExtensions() const;
 
@@ -78,6 +75,7 @@ private:
     bool allowUnencrypted() const;
 
 private Q_SLOTS:
+    void setErrorMessage(const QString &msg);
     void processResponse(const KManageSieve::Response &response, const QByteArray &data);
     KManageSieve::AuthDetails requestAuthDetails(const QUrl &url);
     void authenticationDone();
@@ -101,7 +99,6 @@ private:
         StartTls,
         Authenticating
     };
-    QString m_errorMsg;
     State m_state;
     bool m_supportsStartTls;
     bool m_connected;

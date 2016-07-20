@@ -77,6 +77,7 @@ public Q_SLOTS:
     void slotEditScript();
     void slotDeleteScript();
     void slotDeactivateScript();
+    void slotDeleteResult(KManageSieve::SieveJob *job, bool success);
     void slotRefresh();
 
 protected:

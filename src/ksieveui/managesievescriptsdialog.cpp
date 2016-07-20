@@ -30,6 +30,7 @@
 #include <KConfigGroup>
 
 #include <kmanagesieve/sievejob.h>
+#include "libksieve_debug.h"
 
 #include <QApplication>
 #include <QTreeWidget>
@@ -176,9 +177,11 @@ void ManageSieveScriptsDialog::slotNewScript(const QUrl &url, const QStringList 
     slotGetResult(Q_NULLPTR, true, QString(), false);
 }
 
-void ManageSieveScriptsDialog::slotGetResult(KManageSieve::SieveJob *, bool success, const QString &script, bool isActive)
+void ManageSieveScriptsDialog::slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool isActive)
 {
     if (!success) {
+        KMessageBox::error(this, i18n("Retrieving the script failed.\n"
+                                      "The server responded:\n%1", job->errorString()), i18n("Sieve Error"));
         return;
     }
 
@@ -209,8 +212,7 @@ void ManageSieveScriptsDialog::slotSieveEditorCheckSyntaxClicked()
     }
     d->mSieveEditor->addNormalMessage(i18n("Uploading script to server for checking it, please wait..."));
     KManageSieve::SieveJob *job = KManageSieve::SieveJob::put(d->mCurrentURL, script, d->mWasActive, d->mWasActive);
-    job->setInteractive(false);
-    connect(job, &KManageSieve::SieveJob::errorMessage, this, &ManageSieveScriptsDialog::slotPutCheckSyntaxResultDebug);
+    connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveScriptsDialog::slotPutCheckSyntaxResultDebug);
 }
 
 void ManageSieveScriptsDialog::slotSieveEditorOkClicked()
@@ -236,11 +238,12 @@ void ManageSieveScriptsDialog::slotSieveEditorCancelClicked()
     }
 }
 
-void ManageSieveScriptsDialog::slotPutCheckSyntaxResultDebug(KManageSieve::SieveJob *, bool success, const QString &errorMsg)
+void ManageSieveScriptsDialog::slotPutCheckSyntaxResultDebug(KManageSieve::SieveJob *job, bool success)
 {
     if (success) {
         d->mSieveEditor->addOkMessage(i18n("No errors found."));
     } else {
+        const QString errorMsg = job->errorString();
         if (errorMsg.isEmpty()) {
             d->mSieveEditor->addFailedMessage(i18n("An unknown error was encountered."));
         } else {
@@ -248,12 +251,11 @@ void ManageSieveScriptsDialog::slotPutCheckSyntaxResultDebug(KManageSieve::Sieve
         }
     }
     //Put original script after check otherwise we will put a script even if we don't click on ok
-    KManageSieve::SieveJob *job = KManageSieve::SieveJob::put(d->mCurrentURL, d->mSieveEditor->originalScript(), d->mWasActive, d->mWasActive);
-    job->setInteractive(false);
+    KManageSieve::SieveJob *restoreJob = KManageSieve::SieveJob::put(d->mCurrentURL, d->mSieveEditor->originalScript(), d->mWasActive, d->mWasActive);
     d->mSieveEditor->resultDone();
 }
 
-void ManageSieveScriptsDialog::slotPutResult(KManageSieve::SieveJob *, bool success)
+void ManageSieveScriptsDialog::slotPutResult(KManageSieve::SieveJob *job, bool success)
 {
     if (success) {
         KMessageBox::information(this, i18n("The Sieve script was successfully uploaded."),
@@ -262,6 +264,8 @@ void ManageSieveScriptsDialog::slotPutResult(KManageSieve::SieveJob *, bool succ
         d->mSieveEditor = Q_NULLPTR;
         d->mCurrentURL = QUrl();
     } else {
+        KMessageBox::error(this, i18n("Uploading the Sieve script failed.\n"
+                                      "The server responded:\n%1", job->errorString()), i18n("Sieve Error"));
         if (d->mSieveEditor) {
             d->mSieveEditor->show();
         }

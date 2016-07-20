@@ -62,9 +62,14 @@ void ParseUserScriptJob::start()
     connect(mSieveJob, &KManageSieve::SieveJob::result, this, &ParseUserScriptJob::slotGetResult);
 }
 
-void ParseUserScriptJob::slotGetResult(KManageSieve::SieveJob *, bool, const QString &script, bool)
+void ParseUserScriptJob::slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool)
 {
     mSieveJob = Q_NULLPTR;
+    if (!success) {
+        emitError(i18n("Retrieving the script failed.\n"
+                       "The server responded:\n%1", job->errorString()));
+        return;
+    }
     if (script.isEmpty()) {
         emitError(i18n("Script is empty."));
         return;
