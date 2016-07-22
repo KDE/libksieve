@@ -34,7 +34,7 @@
 #include "kpimtextedit/texttospeechwidget.h"
 #include "kpimtextedit/textgotolinewidget.h"
 #include "KSplitterCollapserButton"
-#include "sieveeditorhelphtmlwidget.h"
+#include "webengine/sieveeditorhelphtmlwidget.h"
 #include "kpimtextedit/slidecontainer.h"
 
 #include <ksieve/parser.h>

@@ -23,10 +23,16 @@
 #include <QUrl>
 #include <config-libksieve.h>
 
+namespace KPIMTextEdit
+{
+class SlideContainer;
+}
+
 namespace KSieveUi
 {
 class SieveEditorWebEngineView;
 class SieveEditorLoadProgressIndicator;
+class FindBarWebEngineView;
 class SieveEditorHelpHtmlWidget : public QWidget
 {
     Q_OBJECT
@@ -47,6 +53,7 @@ public:
     bool hasSelection() const;
     void selectAll();
 
+    void find();
 Q_SIGNALS:
     void titleChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QString &title);
     void progressIndicatorPixmapChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QPixmap &);
@@ -64,6 +71,8 @@ private:
     QString mTitle;
     SieveEditorWebEngineView *mWebView;
     SieveEditorLoadProgressIndicator *mProgressIndicator;
+    KPIMTextEdit::SlideContainer *mSliderContainer;
+    KSieveUi::FindBarWebEngineView *mFindBar;
     qreal mZoomFactor;
 };
 }
