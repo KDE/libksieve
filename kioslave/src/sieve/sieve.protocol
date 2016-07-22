@@ -15,6 +15,7 @@ X-DocPath=kioslave5/sieve/index.html
 Description=An ioslave for the Sieve mail filtering protocol
 Description[ca]=Un «ioslave» pel protocol de filtratge de correu «Sieve»
 Description[ca@valencia]=Un «ioslave» pel protocol de filtratge de correu «Sieve»
+Description[cs]=Protokol pro filtrování pošty Sieve
 Description[de]=Ein Ein-/Ausgabemodul für das Mailfilter-Protokoll Sieve
 Description[en_GB]=An ioslave for the Sieve mail filtering protocol
 Description[es]=Un esclavo de E/S para el protocolo de filtrado de correo Sieve
