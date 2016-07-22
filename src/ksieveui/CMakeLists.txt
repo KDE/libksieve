@@ -41,7 +41,9 @@ set(ksieveui_vacation_LIB_SRCS
     vacation/legacy/vacationscriptextractor.cpp
     )
 set(ksieveui_webpageeditor_LIB_SRCS
-    editor/sieveeditorwebengineview.cpp
+    editor/webengine/sieveeditorwebengineview.cpp
+    editor/webengine/sieveeditorhelphtmlwidget.cpp
+    editor/webengine/sieveeditorloadprogressindicator.cpp
     )
 set(ksieveui_web_LIB Qt5::WebEngineWidgets)
 
@@ -56,11 +58,8 @@ set(ksieveui_editor_LIB_SRCS
     editor/sieveeditorabstractwidget.cpp
     editor/warningwidget/sieveeditorwarning.cpp
     editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp
-    editor/sieveeditorhelphtmlwidget.cpp
     editor/sieveeditortabwidget.cpp
     editor/sieveeditorutil.cpp
-    editor/sieveeditorloadprogressindicator.cpp
-
     editor/sieveeditormenubar.cpp
     editor/sievetexteditorspellcheckdecorator.cpp
     editor/sievesyntaxspellcheckinghighlighter.cpp
