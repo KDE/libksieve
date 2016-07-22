@@ -21,7 +21,6 @@
 
 #include <QWidget>
 #include <QUrl>
-#include <config-libksieve.h>
 
 namespace KPIMTextEdit
 {

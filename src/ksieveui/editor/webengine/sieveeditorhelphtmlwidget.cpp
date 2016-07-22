@@ -39,25 +39,27 @@ SieveEditorHelpHtmlWidget::SieveEditorHelpHtmlWidget(QWidget *parent)
     : QWidget(parent),
       mZoomFactor(100)
 {
+    QVBoxLayout *lay = new QVBoxLayout(this);
+    lay->setMargin(0);
     mProgressIndicator = new SieveEditorLoadProgressIndicator(this);
+    mProgressIndicator->setObjectName(QStringLiteral("progressindicator"));
     connect(mProgressIndicator, &SieveEditorLoadProgressIndicator::pixmapChanged, this, &SieveEditorHelpHtmlWidget::slotPixmapChanged);
     connect(mProgressIndicator, &SieveEditorLoadProgressIndicator::loadFinished, this, &SieveEditorHelpHtmlWidget::slotLoadFinished);
     mWebView = new SieveEditorWebEngineView;
+    mWebView->setObjectName(QStringLiteral("webview"));
     connect(mWebView, &SieveEditorWebEngineView::titleChanged, this, &SieveEditorHelpHtmlWidget::slotTitleChanged);
     connect(mWebView, &SieveEditorWebEngineView::loadStarted, this, &SieveEditorHelpHtmlWidget::slotLoadStarted);
     connect(mWebView, &SieveEditorWebEngineView::loadFinished, this, &SieveEditorHelpHtmlWidget::slotFinished);
     connect(mWebView, &SieveEditorWebEngineView::selectionChanged, this, &SieveEditorHelpHtmlWidget::slotSelectionChanged);
-    QVBoxLayout *lay = new QVBoxLayout;
     lay->addWidget(mWebView);
 
     mSliderContainer = new KPIMTextEdit::SlideContainer(this);
     mSliderContainer->setObjectName(QStringLiteral("slidercontainer"));
     lay->addWidget(mSliderContainer);
     mFindBar = new KSieveUi::FindBarWebEngineView(mWebView, this);
+    mFindBar->setObjectName(QStringLiteral("findbar"));
     connect(mFindBar, &KSieveUi::FindBarWebEngineView::hideFindBar, mSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
     mSliderContainer->setContent(mFindBar);
-
-    setLayout(lay);
 }
 
 SieveEditorHelpHtmlWidget::~SieveEditorHelpHtmlWidget()
