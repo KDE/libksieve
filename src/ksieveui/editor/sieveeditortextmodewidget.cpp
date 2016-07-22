@@ -402,13 +402,18 @@ void SieveEditorTextModeWidget::zoomReset()
 
 void SieveEditorTextModeWidget::slotFind()
 {
-    if (mTextEdit->textCursor().hasSelection()) {
-        mFindBar->setText(mTextEdit->textCursor().selectedText());
+    QWidget *w = mTabWidget->currentWidget();
+    if (w == mEditorWidget) {
+        if (mTextEdit->textCursor().hasSelection()) {
+            mFindBar->setText(mTextEdit->textCursor().selectedText());
+        }
+        mTextEdit->moveCursor(QTextCursor::Start);
+        mFindBar->showFind();
+        mSliderContainer->slideIn();
+        mFindBar->focusAndSetCursor();
+    } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
+        page->find();
     }
-    mTextEdit->moveCursor(QTextCursor::Start);
-    mFindBar->showFind();
-    mSliderContainer->slideIn();
-    mFindBar->focusAndSetCursor();
 }
 
 void SieveEditorTextModeWidget::slotReplace()
