@@ -23,6 +23,10 @@
 
 #include <QVBoxLayout>
 
+#include <kpimtextedit/slidecontainer.h>
+
+#include "findbar/findbarwebengineview.h"
+
 using namespace KSieveUi;
 namespace
 {
@@ -45,6 +49,14 @@ SieveEditorHelpHtmlWidget::SieveEditorHelpHtmlWidget(QWidget *parent)
     connect(mWebView, &SieveEditorWebEngineView::selectionChanged, this, &SieveEditorHelpHtmlWidget::slotSelectionChanged);
     QVBoxLayout *lay = new QVBoxLayout;
     lay->addWidget(mWebView);
+
+    mSliderContainer = new KPIMTextEdit::SlideContainer(this);
+    mSliderContainer->setObjectName(QStringLiteral("slidercontainer"));
+    lay->addWidget(mSliderContainer);
+    mFindBar = new KSieveUi::FindBarWebEngineView(mWebView, this);
+    connect(mFindBar, &KSieveUi::FindBarWebEngineView::hideFindBar, mSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
+    mSliderContainer->setContent(mFindBar);
+
     setLayout(lay);
 }
 
@@ -144,4 +156,13 @@ void SieveEditorHelpHtmlWidget::resetZoom()
 void SieveEditorHelpHtmlWidget::slotSelectionChanged()
 {
     Q_EMIT copyAvailable(mWebView->hasSelection());
+}
+
+void SieveEditorHelpHtmlWidget::find()
+{
+    if (mWebView->hasSelection()) {
+        mFindBar->setText(mWebView->selectedText());
+    }
+    mSliderContainer->slideIn();
+    mFindBar->focusAndSetCursor();
 }
