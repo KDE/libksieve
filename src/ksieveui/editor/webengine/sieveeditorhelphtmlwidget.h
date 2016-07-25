@@ -19,6 +19,7 @@
 #ifndef SIEVEEDITORHELPHTMLWIDGET_H
 #define SIEVEEDITORHELPHTMLWIDGET_H
 
+#include "ksieveui_export.h"
 #include <QWidget>
 #include <QUrl>
 
@@ -32,7 +33,7 @@ namespace KSieveUi
 class SieveEditorWebEngineView;
 class SieveEditorLoadProgressIndicator;
 class FindBarWebEngineView;
-class SieveEditorHelpHtmlWidget : public QWidget
+class KSIEVEUI_EXPORT SieveEditorHelpHtmlWidget : public QWidget
 {
     Q_OBJECT
 public:

@@ -175,6 +175,11 @@ void SieveEditorTextModeWidget::writeConfig()
     group.writeEntry("templateSplitter", mTemplateSplitter->sizes());
 }
 
+SieveEditorTabWidget *SieveEditorTextModeWidget::tabWidget() const
+{
+    return mTabWidget;
+}
+
 void SieveEditorTextModeWidget::readConfig()
 {
     KConfigGroup group(KSharedConfig::openConfig(), "SieveEditor");

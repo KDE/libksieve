@@ -115,6 +115,12 @@ void SieveEditorTabWidget::slotTabCloseRequested(int index)
     }
 }
 
+bool SieveEditorTabWidget::currentPageIsHtmlPage() const
+{
+    SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(currentWidget());
+    return page ? true : false;
+}
+
 QUrl SieveEditorTabWidget::currentHelpUrl() const
 {
     SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(currentWidget());

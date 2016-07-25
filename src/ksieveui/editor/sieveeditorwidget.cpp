@@ -92,9 +92,9 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     //Add action to toolBar
 
     toolbar->addAction(mShareScript);
-
+    SieveEditorMenuBar *menuBar = Q_NULLPTR;
     if (useMenuBar) {
-        SieveEditorMenuBar *menuBar = new SieveEditorMenuBar;
+        menuBar = new SieveEditorMenuBar;
         connect(this, &SieveEditorWidget::changeModeEditor, menuBar, &SieveEditorMenuBar::setEditorMode);
         connect(menuBar, &SieveEditorMenuBar::copy, this, &SieveEditorWidget::copy);
         connect(menuBar, &SieveEditorMenuBar::find, this, &SieveEditorWidget::find);
@@ -143,6 +143,9 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
 
     mTextModeWidget = new SieveEditorTextModeWidget;
     connect(mTextModeWidget, &SieveEditorTextModeWidget::valueChanged, this, &SieveEditorWidget::slotModified);
+    if (useMenuBar) {
+        menuBar->setTextModeWidget(mTextModeWidget);
+    }
     mStackedWidget->addWidget(mTextModeWidget);
     mGraphicalModeWidget = new SieveEditorGraphicalModeWidget;
     connect(mGraphicalModeWidget, &SieveEditorGraphicalModeWidget::valueChanged, this, &SieveEditorWidget::slotModified);
