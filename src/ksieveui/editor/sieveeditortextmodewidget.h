@@ -20,7 +20,7 @@
 #define SIEVEEDITORTEXTMODEWIDGET_H
 
 #include "sieveeditorabstractwidget.h"
-
+#include "ksieveui_export.h"
 class QSplitter;
 namespace KPIMTextEdit
 {
@@ -40,7 +40,7 @@ class SieveEditorWarning;
 class SieveEditorParsingMissingFeatureWarning;
 class SieveEditorTabWidget;
 class SieveTemplateWidget;
-class SieveEditorTextModeWidget : public SieveEditorAbstractWidget
+class KSIEVEUI_EXPORT SieveEditorTextModeWidget : public SieveEditorAbstractWidget
 {
     Q_OBJECT
 public:
@@ -100,6 +100,8 @@ public:
     void printPreview();
     bool printSupportEnabled() const;
     bool isTextEditor() const;
+    SieveEditorTabWidget *tabWidget() const;
+
 Q_SIGNALS:
     void enableButtonOk(bool);
     void switchToGraphicalMode();

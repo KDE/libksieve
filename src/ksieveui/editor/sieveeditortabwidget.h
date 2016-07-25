@@ -20,11 +20,12 @@
 #define SIEVEEDITORTABWIDGET_H
 
 #include <QTabWidget>
+#include "ksieveui_export.h"
 
 namespace KSieveUi
 {
 class SieveEditorHelpHtmlWidget;
-class SieveEditorTabWidget : public QTabWidget
+class KSIEVEUI_EXPORT SieveEditorTabWidget : public QTabWidget
 {
     Q_OBJECT
 public:
@@ -33,6 +34,8 @@ public:
 
     QUrl currentHelpUrl() const;
     QString currentHelpTitle() const;
+    bool currentPageIsHtmlPage() const;
+
 public Q_SLOTS:
     void slotAddHelpPage(const QUrl &url);
 

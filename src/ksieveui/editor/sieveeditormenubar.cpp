@@ -17,6 +17,7 @@
 
 #include "sieveeditormenubar.h"
 #include "sieveeditortextmodewidget.h"
+#include "sieveeditortabwidget.h"
 #include <KStandardAction>
 #include <KLocalizedString>
 #include <QAction>
@@ -24,7 +25,8 @@
 using namespace KSieveUi;
 
 SieveEditorMenuBar::SieveEditorMenuBar(QWidget *parent)
-    : QMenuBar(parent)
+    : QMenuBar(parent),
+      mTextModeWidget(Q_NULLPTR)
 {
     initActions();
     initMenus();
@@ -55,7 +57,6 @@ void SieveEditorMenuBar::setEditorMode(bool editorMode)
     mWordWrapAction->setEnabled(editorMode);
     mPrintAction->setEnabled(editorMode);
     mPrintPreviewAction->setEnabled(editorMode);
-
 }
 
 void SieveEditorMenuBar::initActions()
@@ -146,6 +147,39 @@ void SieveEditorMenuBar::initMenus()
 QAction *SieveEditorMenuBar::printAction() const
 {
     return mPrintAction;
+}
+
+void SieveEditorMenuBar::slotUpdateActions()
+{
+    const bool hasActionInHtmlModeToo = mTextModeWidget->tabWidget()->currentPageIsHtmlPage();
+
+    mGoToLine->setEnabled(!hasActionInHtmlModeToo);
+    mFindAction->setEnabled(true);
+    mReplaceAction->setEnabled(!hasActionInHtmlModeToo);
+    mUndoAction->setEnabled(!hasActionInHtmlModeToo);
+    mRedoAction->setEnabled(!hasActionInHtmlModeToo);
+    mCopyAction->setEnabled(true);
+    mPasteAction->setEnabled(!hasActionInHtmlModeToo);
+    mCutAction->setEnabled(!hasActionInHtmlModeToo);
+    mSelectAllAction->setEnabled(true);
+    mCommentCodeAction->setEnabled(!hasActionInHtmlModeToo);
+    mUncommentCodeAction->setEnabled(!hasActionInHtmlModeToo);
+    mZoomInAction->setEnabled(true);
+    mZoomOutAction->setEnabled(true);
+    mZoomResetAction->setEnabled(true);
+    mDebugSieveAction->setEnabled(!hasActionInHtmlModeToo);
+    mWordWrapAction->setEnabled(!hasActionInHtmlModeToo);
+    //TODO ?
+    mPrintAction->setEnabled(!hasActionInHtmlModeToo);
+    mPrintPreviewAction->setEnabled(!hasActionInHtmlModeToo);
+}
+
+void SieveEditorMenuBar::setTextModeWidget(SieveEditorTextModeWidget *textModeWidget)
+{
+    if (!mTextModeWidget) {
+        mTextModeWidget = textModeWidget;
+        connect(mTextModeWidget->tabWidget(), &QTabWidget::currentChanged, this, &SieveEditorMenuBar::slotUpdateActions);
+    }
 }
 
 QAction *SieveEditorMenuBar::printPreviewAction() const

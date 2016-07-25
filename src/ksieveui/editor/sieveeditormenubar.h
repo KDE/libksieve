@@ -24,6 +24,7 @@ class QAction;
 class QMenu;
 namespace KSieveUi
 {
+class SieveEditorTextModeWidget;
 class SieveEditorMenuBar : public QMenuBar
 {
     Q_OBJECT
@@ -61,6 +62,8 @@ public:
 
     QAction *printAction() const;
 
+    void setTextModeWidget(KSieveUi::SieveEditorTextModeWidget *textModeWidget);
+
 public Q_SLOTS:
     void setEditorMode(bool editorMode);
     void slotUndoAvailable(bool b);
@@ -89,6 +92,7 @@ Q_SIGNALS:
 private:
     void initActions();
     void initMenus();
+    void slotUpdateActions();
     QAction *mGoToLine;
     QAction *mFindAction;
     QAction *mReplaceAction;
@@ -111,6 +115,7 @@ private:
     QMenu *mEditorMenu;
     QMenu *mToolsMenu;
     QMenu *mFileMenu;
+    KSieveUi::SieveEditorTextModeWidget *mTextModeWidget;
 };
 }
 
