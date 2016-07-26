@@ -60,6 +60,12 @@ QUrl KSieveUi::SieveEditorUtil::helpUrl(KSieveUi::SieveEditorUtil::HelpVariableN
         return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3685#page-3"));
     case TrueCondition:
         return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-26"));
+    case NotCondition:
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-26"));
+    case AnyOf:
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-24"));
+    case Allof:
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-23"));
     case VirustestCondition:
         return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3685#page-4"));
     case AbstracteditheaderAction:
@@ -164,6 +170,12 @@ KSieveUi::SieveEditorUtil::HelpVariableName KSieveUi::SieveEditorUtil::strToVari
         return SpamtestCondition;
     } else if (str == QLatin1String("true")) {
         return TrueCondition;
+    } else if (str == QLatin1String("not")) {
+        return NotCondition;
+    } else if (str == QLatin1String("anyof")) {
+        return AnyOf;
+    } else if (str == QLatin1String("allof")) {
+        return Allof;
     } else if (str == QLatin1String("virustest")) {
         return VirustestCondition;
     } else if (str == QLatin1String("break")) {
