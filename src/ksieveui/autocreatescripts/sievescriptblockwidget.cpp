@@ -41,6 +41,7 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(QWidget *parent)
       mMatchCondition(AndCondition)
 {
     QVBoxLayout *topLayout = new QVBoxLayout;
+    topLayout->setMargin(0);
 
     mConditions = new QGroupBox(i18n("Conditions"));
     QVBoxLayout *vbox = new QVBoxLayout;

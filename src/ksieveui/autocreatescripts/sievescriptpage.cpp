@@ -42,6 +42,7 @@ SieveScriptPage::SieveScriptPage(QWidget *parent)
       mBlockIfWidget(Q_NULLPTR)
 {
     QVBoxLayout *topLayout = new QVBoxLayout;
+    topLayout->setMargin(0);
     mTabWidget = new SieveScriptTabWidget;
     connect(mTabWidget, &SieveScriptTabWidget::tabCloseRequested, this, &SieveScriptPage::slotCloseTab);
 
