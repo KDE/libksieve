@@ -58,11 +58,6 @@ public:
     void reverseCase();
     void wordWrap(bool state);
     bool isWordWrap() const;
-private Q_SLOTS:
-    void slotUpdateLineNumberAreaWidth(int newBlockCount);
-    void slotUpdateLineNumberArea(const QRect &, int);
-    void slotHelp();
-
 protected:
     void initCompleter();
     void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
@@ -78,6 +73,9 @@ Q_SIGNALS:
     void openHelp(const QUrl &url);
 
 private:
+    void slotUpdateLineNumberAreaWidth(int newBlockCount);
+    void slotUpdateLineNumberArea(const QRect &, int);
+    void slotHelp();
     bool openVariableHelp();
     bool overrideShortcut(QKeyEvent *event);
     QStringList completerList() const;

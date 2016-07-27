@@ -107,13 +107,6 @@ public Q_SLOTS:
     void uncomment();
     void wordWrap(bool state);
 
-private Q_SLOTS:
-    void slotEnableButtonOk(bool b);
-    void slotGenerateXml();
-    void slotSwitchMode();
-    void slotSwitchTextMode(const QString &script);
-    void slotSwitchToGraphicalMode();
-    void slotModified();
 Q_SIGNALS:
     void checkSyntax();
     void enableButtonOk(bool b);
@@ -125,6 +118,12 @@ Q_SIGNALS:
     void changeModeEditor(bool);
     void sieveEditorTabCurrentChanged();
 private:
+    void slotEnableButtonOk(bool b);
+    void slotGenerateXml();
+    void slotSwitchMode();
+    void slotSwitchTextMode(const QString &script);
+    void slotSwitchToGraphicalMode();
+    void slotModified();
     void changeSwitchButtonText();
     void changeMode(EditorMode mode);
     void addMessageEntry(const QString &errorMsg, const QColor &color);

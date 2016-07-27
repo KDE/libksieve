@@ -46,7 +46,7 @@ protected:
 Q_SIGNALS:
     void copyAvailable(bool);
 
-private Q_SLOTS:
+private:
     void slotTitleChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QString &title);
     void slotTabCloseRequested(int index);
     void slotProgressIndicatorPixmapChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QPixmap &pixmap);
@@ -56,7 +56,6 @@ private Q_SLOTS:
     void slotCloseAllTabExcept(int index);
     void slotCloseAllTab();
     void slotCloseRequest(int index);
-private:
     void closeAllTabExcept(int index = -1);
 };
 }

@@ -37,10 +37,8 @@ Q_SIGNALS:
 protected:
     void focusOutEvent(QFocusEvent *ev) Q_DECL_OVERRIDE;
 
-private Q_SLOTS:
-    void slotTextChanged();
-
 private:
+    void slotTextChanged();
     void verifyAddress();
     QString mNegativeBackground;
     bool mIncorrectEmail;

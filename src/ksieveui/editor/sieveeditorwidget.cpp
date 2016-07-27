@@ -68,7 +68,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     toolbar->addAction(mCheckSyntax);
     mSaveAs = KStandardAction::saveAs(this, &SieveEditorWidget::slotSaveAs, this);
     toolbar->addAction(mSaveAs);
-    toolbar->addAction(i18n("Import..."), this, SLOT(slotImport()));
+    toolbar->addAction(i18n("Import..."), this, &SieveEditorWidget::slotImport);
 
     mCreateRulesGraphically = new QAction(i18n("Create Rules Graphically..."), this);
     connect(mCreateRulesGraphically, &QAction::triggered, this, &SieveEditorWidget::slotCreateRulesGraphically);

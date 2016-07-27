@@ -113,12 +113,11 @@ Q_SIGNALS:
 
 public Q_SLOTS:
     void slotShowGoToLine();
-private Q_SLOTS:
+private:
     void slotTextChanged();
     void slotFind();
     void slotReplace();
     void slotGoToLine(int line);
-private:
     void readConfig();
     void writeConfig();
     bool loadFromFile(const QString &filename);

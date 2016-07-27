@@ -70,10 +70,8 @@ public:
 Q_SIGNALS:
     void valueChanged();
 
-private Q_SLOTS:
-    void slotSelectFlags();
-
 private:
+    void slotSelectFlags();
     QLineEdit *mEdit;
 };
 }
