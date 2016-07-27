@@ -44,12 +44,10 @@ Q_SIGNALS:
     void okClicked();
     void cancelClicked();
 
-private Q_SLOTS:
+private:
     void slotOkClicked();
     void slotDefaultClicked();
     void slotCanceled();
-
-private:
     void createPage(const QString &serverName, const QUrl &url);
     void init();
     void readConfig();

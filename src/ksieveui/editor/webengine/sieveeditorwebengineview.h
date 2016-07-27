@@ -29,10 +29,10 @@ public:
     explicit SieveEditorWebEngineView(QWidget *parent = Q_NULLPTR);
     ~SieveEditorWebEngineView();
 
-private Q_SLOTS:
-    void downloadRequested(QWebEngineDownloadItem*);
 protected:
     void contextMenuEvent(QContextMenuEvent *ev) Q_DECL_OVERRIDE;
+private:
+    void downloadRequested(QWebEngineDownloadItem*);
 };
 }
 

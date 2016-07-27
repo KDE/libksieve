@@ -42,13 +42,11 @@ Q_SIGNALS:
     void switchToGraphicalMode();
     void switchToTextMode();
 
-private Q_SLOTS:
+private:
     void slotSwitchInGraphicalMode();
     void slotSwitchInTextMode();
     void slotInActualMode();
     void slotShowDetails(const QString &content);
-
-private:
     QString mErrors;
     QString mScript;
 };

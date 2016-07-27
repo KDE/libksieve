@@ -34,10 +34,8 @@ public:
     void setScript(const QString &script);
     QString script() const;
 
-private Q_SLOTS:
-    void slotAccepted();
-
 private:
+    void slotAccepted();
     void writeConfig();
     void readConfig();
     SieveScriptDebuggerWidget *mSieveScriptDebuggerWidget;

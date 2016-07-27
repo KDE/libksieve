@@ -38,10 +38,8 @@ Q_SIGNALS:
     void pixmapChanged(const QPixmap &);
     void loadFinished(bool success);
 
-private Q_SLOTS:
-    void slotTimerDone();
-
 private:
+    void slotTimerDone();
     int mProgressCount;
     KPixmapSequence mProgressPix;
     QTimer *mProgressTimer;

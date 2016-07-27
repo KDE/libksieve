@@ -90,12 +90,11 @@ Q_SIGNALS:
     void okClicked();
     void cancelClicked();
 
-private Q_SLOTS:
+private:
     void slotDialogDefaults();
 
     void slotAccepted();
     void slotRejected();
-private:
     void writeConfig();
     void readConfig();
 

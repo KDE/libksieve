@@ -60,14 +60,13 @@ Q_SIGNALS:
     void loadFinished(KSieveUi::SieveEditorHelpHtmlWidget *widget, bool success);
     void copyAvailable(bool);
 
-private Q_SLOTS:
+private:
     void slotTitleChanged(const QString &title);
     void slotFinished(bool b);
     void slotLoadStarted();
     void slotPixmapChanged(const QPixmap &pixmap);
     void slotLoadFinished(bool success);
     void slotSelectionChanged();
-private:
     QString mTitle;
     SieveEditorWebEngineView *mWebView;
     SieveEditorLoadProgressIndicator *mProgressIndicator;

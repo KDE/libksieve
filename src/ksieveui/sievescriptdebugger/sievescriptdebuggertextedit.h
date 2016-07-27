@@ -32,7 +32,7 @@ public:
 protected:
     void addExtraMenuEntry(QMenu *menu, QPoint pos) Q_DECL_OVERRIDE;
 
-private Q_SLOTS:
+private:
     void slotAddDebug();
 };
 }

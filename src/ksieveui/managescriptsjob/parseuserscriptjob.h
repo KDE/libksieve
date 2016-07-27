@@ -48,13 +48,11 @@ public:
     QString error() const;
     void kill();
 
-private Q_SLOTS:
-    void slotGetResult(KManageSieve::SieveJob *job, bool, const QString &, bool);
-
 Q_SIGNALS:
     void finished(ParseUserScriptJob *job);
 
 private:
+    void slotGetResult(KManageSieve::SieveJob *job, bool, const QString &, bool);
     void emitSuccess(const QStringList &activeScriptList);
     void emitError(const QString &msgError);
     static QString loadInclude(const QDomElement &element);

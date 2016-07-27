@@ -56,10 +56,8 @@ public:
     void startAnimation();
     void stopAnimation();
 
-private Q_SLOTS:
-    void slotTimerDone();
-
 private:
+    void slotTimerDone();
     int mProgressCount;
     KPixmapSequence mProgressPix;
     QTimer *mProgressTimer;
