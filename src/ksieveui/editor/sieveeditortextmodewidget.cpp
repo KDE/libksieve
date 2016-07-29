@@ -242,7 +242,9 @@ void SieveEditorTextModeWidget::createRulesGraphically()
         if (!requires.isEmpty()) {
             newPlainText.prepend(requires + QLatin1Char('\n'));
         }
-        mTextEdit->setPlainText(newPlainText);
+        mTextEdit->selectAll();
+
+        mTextEdit->insertPlainText(newPlainText);
     }
     delete dlg;
 }
@@ -438,7 +440,8 @@ QString SieveEditorTextModeWidget::currentscript()
 
 void SieveEditorTextModeWidget::setImportScript(const QString &script)
 {
-    mTextEdit->setPlainText(script);
+    mTextEdit->selectAll();
+    mTextEdit->insertPlainText(script);
 }
 
 void SieveEditorTextModeWidget::slotTextChanged()
@@ -454,7 +457,8 @@ QString SieveEditorTextModeWidget::script() const
 
 void SieveEditorTextModeWidget::setScript(const QString &script)
 {
-    mTextEdit->setPlainText(script);
+    mTextEdit->selectAll();
+    mTextEdit->insertPlainText(script);
 }
 
 void SieveEditorTextModeWidget::setDebugScript(const QString &debug)
@@ -553,7 +557,8 @@ void SieveEditorTextModeWidget::debugSieveScript()
     dlg->setScript(mTextEdit->toPlainText());
     if (dlg->exec()) {
         const QString script = dlg->script();
-        mTextEdit->setPlainText(script);
+        mTextEdit->selectAll();
+        mTextEdit->insertPlainText(script);
     }
     delete dlg;
 }
