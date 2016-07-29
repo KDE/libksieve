@@ -440,7 +440,8 @@ QString SieveEditorTextModeWidget::currentscript()
 
 void SieveEditorTextModeWidget::setImportScript(const QString &script)
 {
-    mTextEdit->setPlainText(script);
+    mTextEdit->selectAll();
+    mTextEdit->insertPlainText(script);
 }
 
 void SieveEditorTextModeWidget::slotTextChanged()
@@ -456,7 +457,8 @@ QString SieveEditorTextModeWidget::script() const
 
 void SieveEditorTextModeWidget::setScript(const QString &script)
 {
-    mTextEdit->setPlainText(script);
+    mTextEdit->selectAll();
+    mTextEdit->insertPlainText(script);
 }
 
 void SieveEditorTextModeWidget::setDebugScript(const QString &debug)
@@ -556,7 +558,6 @@ void SieveEditorTextModeWidget::debugSieveScript()
     if (dlg->exec()) {
         const QString script = dlg->script();
         mTextEdit->selectAll();
-
         mTextEdit->insertPlainText(script);
     }
     delete dlg;
