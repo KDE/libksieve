@@ -242,7 +242,9 @@ void SieveEditorTextModeWidget::createRulesGraphically()
         if (!requires.isEmpty()) {
             newPlainText.prepend(requires + QLatin1Char('\n'));
         }
-        mTextEdit->setPlainText(newPlainText);
+        mTextEdit->selectAll();
+
+        mTextEdit->insertPlainText(newPlainText);
     }
     delete dlg;
 }
