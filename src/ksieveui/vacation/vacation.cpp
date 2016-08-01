@@ -26,9 +26,6 @@
 #include <KLocalizedString>
 #include <kmessagebox.h>
 
-#include <KIdentityManagement/kidentitymanagement/identity.h>
-#include <KIdentityManagement/kidentitymanagement/identitymanager.h>
-
 using namespace KSieveUi;
 
 Vacation::Vacation(QObject *parent, bool checkOnly, const QUrl &url)
