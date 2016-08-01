@@ -96,9 +96,9 @@ int VacationUtils::defaultNotificationInterval()
 KMime::Types::AddrSpecList VacationUtils::defaultMailAliases()
 {
     KMime::Types::AddrSpecList sl;
-    KIdentityManagement::IdentityManager manager(true);
-    KIdentityManagement::IdentityManager::ConstIterator end(manager.end());
-    for (KIdentityManagement::IdentityManager::ConstIterator it = manager.begin(); it != end; ++it) {
+    KIdentityManagement::IdentityManager *manager = KIdentityManagement::IdentityManager::self();
+    KIdentityManagement::IdentityManager::ConstIterator end(manager->end());
+    for (KIdentityManagement::IdentityManager::ConstIterator it = manager->begin(); it != end; ++it) {
         if (!(*it).primaryEmailAddress().isEmpty()) {
             KMime::Types::Mailbox a;
             a.fromUnicodeString((*it).primaryEmailAddress());
