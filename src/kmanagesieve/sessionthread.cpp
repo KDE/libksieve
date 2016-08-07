@@ -216,6 +216,7 @@ void SessionThread::slotSocketError()
     Q_ASSERT(QThread::currentThread() == thread());
 
     qCWarning(KMANAGERSIEVE_LOG) << Q_FUNC_INFO << m_socket->errorString();
+    Q_EMIT error(KIO::buildErrorString(KIO::ERR_COULD_NOT_CONNECT, m_socket->errorString()));
     doDisconnectFromHost(false);
 }
 
