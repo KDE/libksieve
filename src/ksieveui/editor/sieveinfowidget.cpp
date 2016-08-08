@@ -26,12 +26,12 @@ using namespace KSieveUi;
 SieveInfoWidget::SieveInfoWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *lay = new QHBoxLayout;
-    mInfo = new QTextEdit;
+    QHBoxLayout *lay = new QHBoxLayout(this);
+    lay->setMargin(0);
+    mInfo = new QTextEdit(this);
     mInfo->setReadOnly(true);
     mInfo->setAcceptRichText(true);
     lay->addWidget(mInfo);
-    setLayout(lay);
 }
 
 SieveInfoWidget::~SieveInfoWidget()

@@ -104,14 +104,14 @@ bool SieveTemplateListWidget::modifyTemplate(QString &templateName, QString &tem
 SieveTemplateWidget::SieveTemplateWidget(const QString &title, QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *lay = new QVBoxLayout;
-    QLabel *lab = new QLabel(title);
+    QVBoxLayout *lay = new QVBoxLayout(this);
+    lay->setMargin(0);
+    QLabel *lab = new QLabel(title, this);
     lay->addWidget(lab);
-    mListTemplate = new SieveTemplateListWidget(QStringLiteral("sievetemplaterc"));
+    mListTemplate = new SieveTemplateListWidget(QStringLiteral("sievetemplaterc"), this);
     mListTemplate->setWhatsThis(i18n("You can drag and drop element on editor to import template"));
     connect(mListTemplate, &SieveTemplateListWidget::insertTemplate, this, &SieveTemplateWidget::insertTemplate);
     lay->addWidget(mListTemplate);
-    setLayout(lay);
 }
 
 SieveTemplateWidget::~SieveTemplateWidget()
