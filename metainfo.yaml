@@ -8,9 +8,24 @@ portingAid: false
 deprecated: false
 release: false
 libraries:
- - qmake: SieveUi
-   cmake: "KF5::SieveUi"
+    - qmake: SieveUi
+      cmake: KF5::SieveUi
+      cmakename: KF5SieveUi
+    - qmake: KManageSieve
+      cmake: KF5::KManageSieve
+      cmakename: KF5KManageSieve
+    - qmake: KF5KSieve
+      cmake: KF5::Sieve
+      cmakename: KF5Sieve
+
+
 cmakename: KF5SieveUi
 
 public_lib: true
 group: kdepim
+group_info:
+    fancyname: KDE PIM
+    maintainer: mlaurent
+    irc: kontact
+    mailinglist: kde-pim
+
