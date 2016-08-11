@@ -37,10 +37,10 @@ using KSieve::Parser;
 
 int main(int argc, char **argv)
 {
+    QApplication app(argc, argv);
     KAboutData aboutData(QStringLiteral("scriptsieveparsing"), i18n("ScriptSieveParsingTest_Gui"), QStringLiteral("1.0"));
     aboutData.setShortDescription(i18n("Test for script sieve parsing"));
     QStandardPaths::setTestModeEnabled(true);
-    QApplication app(argc, argv);
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
