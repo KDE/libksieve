@@ -41,6 +41,10 @@ public:
 
     QList<int> splitterSizes() const;
     void setSplitterSizes(const QList<int> &sizes);
+
+Q_SIGNALS:
+    void scriptTextChanged();
+
 private:
     void checkSieveTestApplication();
     QStackedWidget *mStackedWidget;

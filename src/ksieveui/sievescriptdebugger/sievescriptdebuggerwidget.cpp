@@ -31,8 +31,7 @@ using namespace KSieveUi;
 SieveScriptDebuggerWidget::SieveScriptDebuggerWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *mainLayout = new QHBoxLayout;
-    setLayout(mainLayout);
+    QHBoxLayout *mainLayout = new QHBoxLayout(this);
     mainLayout->setMargin(0);
     mStackedWidget = new QStackedWidget(this);
     mStackedWidget->setObjectName(QStringLiteral("stackedwidget"));
@@ -41,6 +40,7 @@ SieveScriptDebuggerWidget::SieveScriptDebuggerWidget(QWidget *parent)
     mSieveScriptFrontEnd = new SieveScriptDebuggerFrontEndWidget;
     mSieveScriptFrontEnd->setObjectName(QStringLiteral("sievescriptfrontend"));
     mStackedWidget->addWidget(mSieveScriptFrontEnd);
+    connect(mSieveScriptFrontEnd, &SieveScriptDebuggerFrontEndWidget::scriptTextChanged, this, &SieveScriptDebuggerWidget::scriptTextChanged);
 
     mSieveNoExistingFrontEnd = new QLabel(i18n("\"sieve-test\" was not found on system. Please install it. (See in Dovecot package)"));
     mSieveNoExistingFrontEnd->setAlignment(Qt::AlignHCenter);

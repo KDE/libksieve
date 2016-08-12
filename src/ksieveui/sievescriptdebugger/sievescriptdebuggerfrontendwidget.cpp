@@ -45,9 +45,8 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     : QWidget(parent),
       mProcess(Q_NULLPTR)
 {
-    QVBoxLayout *mainLayout = new QVBoxLayout;
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setMargin(0);
-    setLayout(mainLayout);
 
     QFormLayout *formLayout = new QFormLayout;
     mainLayout->addLayout(formLayout);
@@ -90,7 +89,9 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     textToSpeechWidget->setObjectName(QStringLiteral("texttospeechwidget"));
     vboxSieveEditorLayout->addWidget(textToSpeechWidget);
 
-    mSieveTextEditWidget = new KSieveUi::SieveTextEditWidget(new KSieveUi::SieveScriptDebuggerTextEdit(this), this);
+    KSieveUi::SieveScriptDebuggerTextEdit *textEdit = new KSieveUi::SieveScriptDebuggerTextEdit(this);
+    connect(textEdit, &KSieveUi::SieveScriptDebuggerTextEdit::textChanged, this, &SieveScriptDebuggerFrontEndWidget::scriptTextChanged);
+    mSieveTextEditWidget = new KSieveUi::SieveTextEditWidget(textEdit, this);
     mSieveTextEditWidget->setObjectName(QStringLiteral("sievetexteditwidget"));
     vboxSieveEditorLayout->addWidget(mSieveTextEditWidget);
     connect(mSieveTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::say);

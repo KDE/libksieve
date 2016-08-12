@@ -21,6 +21,7 @@
 #include "../sievescriptdebuggerdialog.h"
 #include "../sievescriptdebuggerwidget.h"
 #include <QDialogButtonBox>
+#include <QPushButton>
 #include <QTest>
 
 SieveScriptDebuggerDialogTest::SieveScriptDebuggerDialogTest(QObject *parent)
@@ -44,6 +45,10 @@ void SieveScriptDebuggerDialogTest::shouldHaveDefaultValue()
     QVERIFY(widget);
 
     QVERIFY(dlg.script().isEmpty());
+
+    QPushButton *mOkButton = dlg.findChild<QPushButton *>(QStringLiteral("okbutton"));
+    QVERIFY(mOkButton);
+    QVERIFY(!mOkButton->isEnabled());
 }
 
 QTEST_MAIN(SieveScriptDebuggerDialogTest)

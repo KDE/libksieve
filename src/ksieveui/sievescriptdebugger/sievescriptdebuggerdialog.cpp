@@ -33,29 +33,37 @@ using namespace KSieveUi;
 SieveScriptDebuggerDialog::SieveScriptDebuggerDialog(QWidget *parent)
     : QDialog(parent)
 {
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     setWindowTitle(i18n("Debug Sieve Script"));
 
     mSieveScriptDebuggerWidget = new SieveScriptDebuggerWidget(this);
     mSieveScriptDebuggerWidget->setObjectName(QStringLiteral("sievescriptdebuggerwidget"));
     mainLayout->addWidget(mSieveScriptDebuggerWidget);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     mainLayout->addWidget(buttonBox);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
-    QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
-    okButton->setDefault(true);
-    okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
+    mOkButton = buttonBox->button(QDialogButtonBox::Ok);
+    mOkButton->setObjectName(QStringLiteral("okbutton"));
+    mOkButton->setText(i18n("Apply Changes"));
+    mOkButton->setDefault(true);
+    mOkButton->setShortcut(Qt::CTRL | Qt::Key_Return);
+    mOkButton->setEnabled(false);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &SieveScriptDebuggerDialog::slotAccepted);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &SieveScriptDebuggerDialog::reject);
-
+    connect(mSieveScriptDebuggerWidget, &SieveScriptDebuggerWidget::scriptTextChanged, this, &SieveScriptDebuggerDialog::slotScriptTextChanged);
     readConfig();
 }
 
 SieveScriptDebuggerDialog::~SieveScriptDebuggerDialog()
 {
+    disconnect(mSieveScriptDebuggerWidget, &SieveScriptDebuggerWidget::scriptTextChanged, this, &SieveScriptDebuggerDialog::slotScriptTextChanged);
     writeConfig();
+}
+
+void SieveScriptDebuggerDialog::slotScriptTextChanged()
+{
+    mOkButton->setEnabled(mOriginScript != mSieveScriptDebuggerWidget->script());
 }
 
 void SieveScriptDebuggerDialog::slotAccepted()
@@ -67,7 +75,9 @@ void SieveScriptDebuggerDialog::slotAccepted()
 
 void SieveScriptDebuggerDialog::setScript(const QString &script)
 {
+    mOriginScript = script;
     mSieveScriptDebuggerWidget->setScript(script);
+    mOkButton->setEnabled(false);
 }
 
 QString SieveScriptDebuggerDialog::script() const

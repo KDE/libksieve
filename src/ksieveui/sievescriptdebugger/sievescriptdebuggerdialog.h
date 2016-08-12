@@ -23,6 +23,7 @@
 #include <QDialog>
 #include "ksieveui_export.h"
 
+class QPushButton;
 namespace KSieveUi
 {
 class SieveScriptDebuggerWidget;
@@ -37,10 +38,13 @@ public:
     QString script() const;
 
 private:
+    void slotScriptTextChanged();
     void slotAccepted();
     void writeConfig();
     void readConfig();
+    QString mOriginScript;
     SieveScriptDebuggerWidget *mSieveScriptDebuggerWidget;
+    QPushButton *mOkButton;
 };
 }
 

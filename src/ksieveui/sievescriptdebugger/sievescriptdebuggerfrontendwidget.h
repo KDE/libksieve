@@ -50,6 +50,9 @@ public:
     QList<int> splitterSizes() const;
     void setSplitterSizes(const QList<int> &sizes);
 
+Q_SIGNALS:
+    void scriptTextChanged();
+
 private Q_SLOTS:
     void slotDebugScript();
     void slotEmailChanged(const QString &text);
