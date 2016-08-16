@@ -23,9 +23,4 @@ cmakename: KF5SieveUi
 
 public_lib: true
 group: kdepim
-group_info:
-    fancyname: KDE PIM
-    maintainer: mlaurent
-    irc: kontact
-    mailinglist: kde-pim
 
