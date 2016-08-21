@@ -45,6 +45,7 @@
 #include <kimap/loginjob.h>
 #include <kmime/kmime_message.h>
 #include <MailTransport/mailtransport/transport.h>
+#include <QUrlQuery>
 
 using namespace KSieveUi;
 
@@ -109,11 +110,13 @@ QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier, bool with
             authStr = QStringLiteral("PLAIN");
             break;
         }
-        u.addQueryItem(QStringLiteral("x-mech"), authStr);
+        QUrlQuery query;
+        query.addQueryItem(QStringLiteral("x-mech"), authStr);
         const QString resultSafety = interface->safety();
         if (resultSafety == QLatin1String("None")) {
-            u.addQueryItem(QStringLiteral("x-allow-unencrypted"), QStringLiteral("true"));
+            query.addQueryItem(QStringLiteral("x-allow-unencrypted"), QStringLiteral("true"));
         }
+        u.setQuery(query);
         u = u.adjusted(QUrl::RemoveFilename);
         if (withVacationFileName) {
             u.setPath(u.path() + QLatin1Char('/') + QString(interface->sieveVacationFilename()));
@@ -150,10 +153,12 @@ QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier, bool with
             authStr = QStringLiteral("PLAIN");
             break;
         }
-        u.addQueryItem(QStringLiteral("x-mech"), authStr);
+        QUrlQuery query;
+        query.addQueryItem(QStringLiteral("x-mech"), authStr);
         if (resultSafety == QLatin1String("None")) {
-            u.addQueryItem(QStringLiteral("x-allow-unencrypted"), QStringLiteral("true"));
+            query.addQueryItem(QStringLiteral("x-allow-unencrypted"), QStringLiteral("true"));
         }
+        u.setQuery(query);
 
         const QString resultCustomAuthentication = interface->sieveCustomAuthentification();
         if (resultCustomAuthentication == QLatin1String("ImapUserPassword")) {
