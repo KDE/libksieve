@@ -30,7 +30,7 @@ set(PIMCOMMON_LIB_VERSION "5.3.40")
 set(AKONADI_VERSION "5.3.40")
 
 find_package(KF5Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)
-find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Test Xml PrintSupport)
+find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Test Xml PrintSupport WebEngine WebEngineWidgets)
 find_package(KF5I18n ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5DocTools ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5KIO ${KF5_VERSION} CONFIG REQUIRED)
@@ -52,8 +52,6 @@ set_package_properties(Sasl2 PROPERTIES
                              TYPE OPTIONAL
 )
 
-
-find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED WebEngine WebEngineWidgets)
 
 ecm_setup_version(${LIBKSIEVE_LIB_VERSION} VARIABLE_PREFIX LIBKSIEVE
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h"
