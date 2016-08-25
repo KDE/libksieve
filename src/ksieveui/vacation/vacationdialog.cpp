@@ -35,13 +35,11 @@ VacationDialog::VacationDialog(const QString &caption, QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(caption);
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults, this);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
-    okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &VacationDialog::slotAccepted);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &VacationDialog::slotRejected);
@@ -50,7 +48,7 @@ VacationDialog::VacationDialog(const QString &caption, QWidget *parent)
     mVacationEditWidget = new VacationEditWidget(this);
     mVacationEditWidget->setObjectName(QStringLiteral("vacationeditwidget"));
     mainLayout->addWidget(mVacationEditWidget);
-    KSeparator *separator = new KSeparator;
+    KSeparator *separator = new KSeparator(this);
     separator->setObjectName(QStringLiteral("separator"));
     mainLayout->addWidget(separator);
     mainLayout->addWidget(buttonBox);

@@ -98,8 +98,7 @@ QList<VacationCreateScriptJob *> MultiImapVacationDialog::listCreateJob() const
 void MultiImapVacationDialog::init()
 {
     d->mStackedWidget = new QStackedWidget;
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(d->mStackedWidget);
     d->mTabWidget = new QTabWidget;
     d->mStackedWidget->addWidget(d->mTabWidget);
@@ -128,17 +127,16 @@ void MultiImapVacationDialog::init()
         foundOneImap = true;
     }
     if (foundOneImap) {
-        buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults);
+        buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults, this);
         QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
         okButton->setDefault(true);
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
         connect(buttonBox, &QDialogButtonBox::accepted, this, &MultiImapVacationDialog::slotOkClicked);
         connect(buttonBox, &QDialogButtonBox::rejected, this, &MultiImapVacationDialog::slotCanceled);
         connect(buttonBox->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &MultiImapVacationDialog::slotDefaultClicked);
-        okButton->setDefault(true);
     } else {
         d->mStackedWidget->setCurrentIndex(1);
-        buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
+        buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
         connect(buttonBox, &QDialogButtonBox::accepted, this, &MultiImapVacationDialog::slotOkClicked);
         connect(buttonBox, &QDialogButtonBox::rejected, this, &MultiImapVacationDialog::slotCanceled);
     }

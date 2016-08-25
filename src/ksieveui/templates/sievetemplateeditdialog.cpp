@@ -45,16 +45,14 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     : QDialog(parent), mOkButton(Q_NULLPTR)
 {
     setWindowTitle(defaultTemplate ? i18n("Default template") : i18n("Template"));
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     QDialogButtonBox *buttonBox = Q_NULLPTR;
     if (defaultTemplate) {
-        buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
+        buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
         connect(buttonBox, &QDialogButtonBox::rejected, this, &SieveTemplateEditDialog::reject);
     } else {
-        buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
+        buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
         mOkButton = buttonBox->button(QDialogButtonBox::Ok);
-        mOkButton->setDefault(true);
         mOkButton->setShortcut(Qt::CTRL | Qt::Key_Return);
         connect(buttonBox, &QDialogButtonBox::accepted, this, &SieveTemplateEditDialog::accept);
         connect(buttonBox, &QDialogButtonBox::rejected, this, &SieveTemplateEditDialog::reject);
