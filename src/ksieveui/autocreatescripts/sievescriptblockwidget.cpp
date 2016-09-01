@@ -40,7 +40,7 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(QWidget *parent)
     : SieveWidgetPageAbstract(parent),
       mMatchCondition(AndCondition)
 {
-    QVBoxLayout *topLayout = new QVBoxLayout;
+    QVBoxLayout *topLayout = new QVBoxLayout(this);
     topLayout->setMargin(0);
 
     mConditions = new QGroupBox(i18n("Conditions"));
@@ -94,8 +94,6 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(QWidget *parent)
     connect(mAddBlockType, &QPushButton::clicked, this, &SieveScriptBlockWidget::slotAddBlock);
 
     topLayout->addLayout(newBlockLayout);
-
-    setLayout(topLayout);
 }
 
 SieveScriptBlockWidget::~SieveScriptBlockWidget()

@@ -42,7 +42,7 @@ QStringList SieveEditorGraphicalModeWidget::sCapabilities = QStringList();
 SieveEditorGraphicalModeWidget::SieveEditorGraphicalModeWidget(QWidget *parent)
     : SieveEditorAbstractWidget(parent)
 {
-    QVBoxLayout *vlay = new QVBoxLayout;
+    QVBoxLayout *vlay = new QVBoxLayout(this);
     vlay->setMargin(0);
 
     mSplitter = new QSplitter;
@@ -63,7 +63,6 @@ SieveEditorGraphicalModeWidget::SieveEditorGraphicalModeWidget(QWidget *parent)
     connect(mSieveParsingWarning, &SieveEditorParsingMissingFeatureWarning::switchToTextMode, this, &SieveEditorGraphicalModeWidget::slotSwitchToTextMode);
     vlay->addWidget(mSieveParsingWarning);
 
-    setLayout(vlay);
     readConfig();
 }
 

@@ -96,8 +96,8 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     : QGroupBox(title, parent),
       mScriptNumber(0)
 {
-    QVBoxLayout *layout = new QVBoxLayout();
-    mSieveListScript = new QListWidget;
+    QVBoxLayout *layout = new QVBoxLayout(this);
+    mSieveListScript = new QListWidget(this);
     layout->addWidget(mSieveListScript);
 
     //----------- the first row of buttons
@@ -166,7 +166,6 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     hbHBoxLayout->addWidget(mBtnDescription);
 
     layout->addWidget(hb);
-    setLayout(layout);
 
     connect(mBtnNew, &QPushButton::clicked, this, &SieveScriptListBox::slotNew);
     connect(mBtnDelete, &QPushButton::clicked, this, &SieveScriptListBox::slotDelete);

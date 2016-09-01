@@ -36,10 +36,7 @@ SieveDebugDialog::SieveDebugDialog(QWidget *parent)
       mShutDownJob(Q_NULLPTR)
 {
     setWindowTitle(i18n("Sieve Diagnostics"));
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close);
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
-    connect(buttonBox, &QDialogButtonBox::rejected, this, &SieveDebugDialog::reject);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     // Collect all accounts
     const Akonadi::AgentInstance::List lst = KSieveUi::Util::imapAgentInstances();
@@ -50,6 +47,9 @@ SieveDebugDialog::SieveDebugDialog(QWidget *parent)
 
     mEdit = new KPIMTextEdit::PlainTextEditorWidget(this);
     mEdit->setReadOnly(true);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    connect(buttonBox, &QDialogButtonBox::rejected, this, &SieveDebugDialog::reject);
+
     mainLayout->addWidget(mEdit);
     mainLayout->addWidget(buttonBox);
 

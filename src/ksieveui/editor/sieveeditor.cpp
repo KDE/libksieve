@@ -48,9 +48,9 @@ SieveEditor::SieveEditor(QWidget *parent)
       d(new KSieveUi::SieveEditorPrivate)
 {
     setWindowTitle(i18n("Edit Sieve Script"));
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
     d->mOkButton = buttonBox->button(QDialogButtonBox::Ok);
     d->mOkButton->setDefault(true);
     d->mOkButton->setShortcut(Qt::CTRL | Qt::Key_Return);

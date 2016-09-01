@@ -39,7 +39,7 @@ namespace KSieveUi
 SieveForEveryPartWidget::SieveForEveryPartWidget(QWidget *parent)
     : SieveWidgetPageAbstract(parent)
 {
-    QVBoxLayout *topLayout = new QVBoxLayout;
+    QVBoxLayout *topLayout = new QVBoxLayout(this);
 
     QWidget *w = new QWidget;
     QHBoxLayout *lay = new QHBoxLayout;
@@ -66,7 +66,6 @@ SieveForEveryPartWidget::SieveForEveryPartWidget(QWidget *parent)
 
     connect(mForLoop, &QCheckBox::clicked, mName, &QLineEdit::setEnabled);
     setPageType(KSieveUi::SieveScriptBlockWidget::ForEveryPart);
-    setLayout(topLayout);
 }
 
 SieveForEveryPartWidget::~SieveForEveryPartWidget()

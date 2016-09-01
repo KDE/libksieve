@@ -158,16 +158,15 @@ void SieveGlobalVariableActionWidget::updateAddRemoveButton(bool addButtonEnable
 SieveGlobalVariableWidget::SieveGlobalVariableWidget(QWidget *parent)
     : SieveWidgetPageAbstract(parent)
 {
-    QVBoxLayout *lay = new QVBoxLayout;
-    mHelpButton = new SieveHelpButton;
+    QVBoxLayout *lay = new QVBoxLayout(this);
+    mHelpButton = new SieveHelpButton(this);
     lay->addWidget(mHelpButton);
     connect(mHelpButton, &SieveHelpButton::clicked, this, &SieveGlobalVariableWidget::slotHelp);
 
-    mIncludeLister = new SieveGlobalVariableLister;
+    mIncludeLister = new SieveGlobalVariableLister(this);
     connect(mIncludeLister, &SieveGlobalVariableLister::valueChanged, this, &SieveGlobalVariableWidget::valueChanged);
     lay->addWidget(mIncludeLister, 0, Qt::AlignTop);
     setPageType(KSieveUi::SieveScriptBlockWidget::GlobalVariable);
-    setLayout(lay);
 }
 
 SieveGlobalVariableWidget::~SieveGlobalVariableWidget()

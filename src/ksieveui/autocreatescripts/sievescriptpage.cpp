@@ -41,23 +41,23 @@ SieveScriptPage::SieveScriptPage(QWidget *parent)
       mGlobalVariableWidget(Q_NULLPTR),
       mBlockIfWidget(Q_NULLPTR)
 {
-    QVBoxLayout *topLayout = new QVBoxLayout;
+    QVBoxLayout *topLayout = new QVBoxLayout(this);
     topLayout->setMargin(0);
-    mTabWidget = new SieveScriptTabWidget;
+    mTabWidget = new SieveScriptTabWidget(this);
     connect(mTabWidget, &SieveScriptTabWidget::tabCloseRequested, this, &SieveScriptPage::slotCloseTab);
 
     if (SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("include"))) {
-        mIncludeWidget = new SieveIncludeWidget;
+        mIncludeWidget = new SieveIncludeWidget(this);
         connect(mIncludeWidget, &SieveIncludeWidget::valueChanged, this, &SieveScriptPage::valueChanged);
         mTabWidget->addTab(mIncludeWidget, i18n("Includes"));
 
-        mGlobalVariableWidget = new SieveGlobalVariableWidget;
+        mGlobalVariableWidget = new SieveGlobalVariableWidget(this);
         connect(mGlobalVariableWidget, &SieveGlobalVariableWidget::valueChanged, this, &SieveScriptPage::valueChanged);
         mTabWidget->addTab(mGlobalVariableWidget, i18n("Global Variable"));
     }
 
     if (SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("foreverypart"))) {
-        mForEveryPartWidget = new SieveForEveryPartWidget;
+        mForEveryPartWidget = new SieveForEveryPartWidget(this);
         connect(mForEveryPartWidget, &SieveForEveryPartWidget::valueChanged, this, &SieveScriptPage::valueChanged);
         mTabWidget->addTab(mForEveryPartWidget, i18n("ForEveryPart"));
     }
@@ -66,7 +66,6 @@ SieveScriptPage::SieveScriptPage(QWidget *parent)
     mTabWidget->addTab(mBlockIfWidget, blockName(KSieveUi::SieveScriptBlockWidget::BlockIf));
     topLayout->addWidget(mTabWidget);
     mTabWidget->setCurrentWidget(mBlockIfWidget);
-    setLayout(topLayout);
 }
 
 SieveScriptPage::~SieveScriptPage()

@@ -34,10 +34,9 @@ SelectFlagsListDialog::SelectFlagsListDialog(QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(i18n("Flags"));
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    setLayout(mainLayout);
-    mListWidget = new SelectFlagsListWidget;
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    mListWidget = new SelectFlagsListWidget(this);
     mainLayout->addWidget(mListWidget);
 
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
