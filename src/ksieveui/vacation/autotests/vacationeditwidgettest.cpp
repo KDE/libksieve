@@ -147,11 +147,11 @@ void VacationEditWidgetTest::shouldHaveDefaultValue()
 void VacationEditWidgetTest::shouldGetValues()
 {
     KSieveUi::VacationEditWidget w;
-    QCheckBox *mActiveCheck = w.findChild<QCheckBox *>(QStringLiteral("mActiveCheck"));
+    //QCheckBox *mActiveCheck = w.findChild<QCheckBox *>(QStringLiteral("mActiveCheck"));
 
-    KPIMTextEdit::PlainTextEditorWidget *mTextEdit = w.findChild<KPIMTextEdit::PlainTextEditorWidget *>(QStringLiteral("mTextEdit"));
-    QLineEdit *mSubject = w.findChild<QLineEdit *>(QStringLiteral("mSubject"));
-
+    //KPIMTextEdit::PlainTextEditorWidget *mTextEdit = w.findChild<KPIMTextEdit::PlainTextEditorWidget *>(QStringLiteral("mTextEdit"));
+    //QLineEdit *mSubject = w.findChild<QLineEdit *>(QStringLiteral("mSubject"));
+#if 0
     KDateComboBox *mStartDate = w.findChild<KDateComboBox *>(QStringLiteral("mStartDate"));
 
     QCheckBox *mStartTimeActive = w.findChild<QCheckBox *>(QStringLiteral("mStartTimeActive"));
@@ -166,15 +166,16 @@ void VacationEditWidgetTest::shouldGetValues()
     QSpinBox *mIntervalSpin = w.findChild<QSpinBox *>(QStringLiteral("mIntervalSpin"));
 
     QLineEdit *mMailAliasesEdit = w.findChild<QLineEdit *>(QStringLiteral("mMailAliasesEdit"));
+#endif
 
-    QComboBox *mMailAction = w.findChild<QComboBox *>(QStringLiteral("mMailAction"));
-    QLineEdit *mMailActionRecipient = w.findChild<QLineEdit *>(QStringLiteral("mMailActionRecipient"));
+    //QComboBox *mMailAction = w.findChild<QComboBox *>(QStringLiteral("mMailAction"));
+    //QLineEdit *mMailActionRecipient = w.findChild<QLineEdit *>(QStringLiteral("mMailActionRecipient"));
 
-    QCheckBox *mSpamCheck = w.findChild<QCheckBox *>(QStringLiteral("mSpamCheck"));
-    QCheckBox *mDomainCheck = w.findChild<QCheckBox *>(QStringLiteral("mDomainCheck"));
+    //QCheckBox *mSpamCheck = w.findChild<QCheckBox *>(QStringLiteral("mSpamCheck"));
+    //QCheckBox *mDomainCheck = w.findChild<QCheckBox *>(QStringLiteral("mDomainCheck"));
 
 
-    QLineEdit *mDomainEdit = w.findChild<QLineEdit *>(QStringLiteral("mDomainEdit"));
+    //QLineEdit *mDomainEdit = w.findChild<QLineEdit *>(QStringLiteral("mDomainEdit"));
 
     bool activateVacation = true;
     w.setActivateVacation(activateVacation);
