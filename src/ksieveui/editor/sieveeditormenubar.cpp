@@ -78,18 +78,18 @@ void SieveEditorMenuBar::initActions()
     mDebugSieveAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_D));
     connect(mDebugSieveAction, &QAction::triggered, this, &SieveEditorMenuBar::debugSieveScript);
 
-    mFindAction = KStandardAction::find(this, SIGNAL(find()), this);
-    mReplaceAction = KStandardAction::replace(this, SIGNAL(replace()), this);
-    mUndoAction = KStandardAction::undo(this, SIGNAL(undo()), this);
-    mRedoAction = KStandardAction::redo(this, SIGNAL(redo()), this);
-    mCopyAction = KStandardAction::copy(this, SIGNAL(copy()), this);
-    mPasteAction = KStandardAction::paste(this, SIGNAL(paste()), this);
-    mCutAction = KStandardAction::cut(this, SIGNAL(cut()), this);
-    mSelectAllAction = KStandardAction::selectAll(this, SIGNAL(selectAll()), this);
-    mZoomInAction = KStandardAction::zoomIn(this, SIGNAL(zoomIn()), this);
-    mZoomOutAction = KStandardAction::zoomOut(this, SIGNAL(zoomOut()), this);
-    mPrintAction = KStandardAction::print(this, SIGNAL(print()), this);
-    mPrintPreviewAction = KStandardAction::printPreview(this, SIGNAL(printPreview()), this);
+    mFindAction = KStandardAction::find(this, &SieveEditorMenuBar::find, this);
+    mReplaceAction = KStandardAction::replace(this, &SieveEditorMenuBar::replace, this);
+    mUndoAction = KStandardAction::undo(this, &SieveEditorMenuBar::undo, this);
+    mRedoAction = KStandardAction::redo(this, &SieveEditorMenuBar::redo, this);
+    mCopyAction = KStandardAction::copy(this, &SieveEditorMenuBar::copy, this);
+    mPasteAction = KStandardAction::paste(this, &SieveEditorMenuBar::paste, this);
+    mCutAction = KStandardAction::cut(this, &SieveEditorMenuBar::cut, this);
+    mSelectAllAction = KStandardAction::selectAll(this, &SieveEditorMenuBar::selectAll, this);
+    mZoomInAction = KStandardAction::zoomIn(this, &SieveEditorMenuBar::zoomIn, this);
+    mZoomOutAction = KStandardAction::zoomOut(this, &SieveEditorMenuBar::zoomOut, this);
+    mPrintAction = KStandardAction::print(this, &SieveEditorMenuBar::print, this);
+    mPrintPreviewAction = KStandardAction::printPreview(this, &SieveEditorMenuBar::printPreview, this);
 
 
     mZoomResetAction = new QAction(i18nc("Reset the zoom", "Reset"), this);
