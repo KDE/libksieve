@@ -1,3 +1,3 @@
-log_libksieve kdepim (libksieve)
-log_kmanagersieve kdepim (libksieve manager)
-log_sieve kioslave (sieve)
+org.kde.pim.libksieve kdepim (libksieve)
+org.kde.pim.kmanagersieve kdepim (libksieve manager)
+org.kde.pim.sieve kioslave (sieve)

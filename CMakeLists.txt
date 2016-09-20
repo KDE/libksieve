@@ -95,7 +95,7 @@ add_subdirectory(kioslave)
 if(BUILD_TESTING)
     add_subdirectory(autotests)
 endif()
-install( FILES libksieve.categories DESTINATION ${KDE_INSTALL_CONFDIR} )
+install( FILES libksieve.categories libksieve.renamecategories DESTINATION ${KDE_INSTALL_CONFDIR} )
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 

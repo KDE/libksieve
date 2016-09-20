@@ -9,7 +9,7 @@ set(kmanagesieve_LIB_SRCS
   sessionthread.cpp
   sievejob.cpp
 )
-ecm_qt_declare_logging_category(kmanagesieve_LIB_SRCS HEADER kmanagersieve_debug.h IDENTIFIER KMANAGERSIEVE_LOG CATEGORY_NAME log_kmanagersieve)
+ecm_qt_declare_logging_category(kmanagesieve_LIB_SRCS HEADER kmanagersieve_debug.h IDENTIFIER KMANAGERSIEVE_LOG CATEGORY_NAME org.kde.pim.kmanagersieve)
 
 add_library(KF5KManageSieve ${kmanagesieve_LIB_SRCS})
 generate_export_header(KF5KManageSieve BASE_NAME kmanagesieve)

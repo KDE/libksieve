@@ -1,0 +1,3 @@
+log_libksieve org.kde.pim.libksieve
+log_kmanagersieve org.kde.pim.kmanagersieve
+log_sieve org.kde.pim.sieve
