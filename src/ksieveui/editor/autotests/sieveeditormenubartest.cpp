@@ -84,7 +84,6 @@ void SieveEditorMenuBarTest::shouldDisableActions()
     QVERIFY(!bar.printAction()->isEnabled());
     QVERIFY(!bar.printPreviewAction()->isEnabled());
 
-
     bar.setEditorMode(true);
     QVERIFY(bar.goToLineAction()->isEnabled());
     QVERIFY(bar.findAction()->isEnabled());
@@ -207,7 +206,6 @@ void SieveEditorMenuBarTest::shouldEmitSignals()
 
     QSignalSpy spyPrintPreview(&bar, SIGNAL(printPreview()));
     bar.printPreviewAction()->trigger();
-
 
     QCOMPARE(spyZoomOut.count(), 1);
     QCOMPARE(spyZoomIn.count(), 1);

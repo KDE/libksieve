@@ -70,7 +70,6 @@ void VacationEditWidgetTest::shouldHaveDefaultValue()
     KTimeComboBox *mStartTime = w.findChild<KTimeComboBox *>(QStringLiteral("mStartTime"));
     QVERIFY(mStartTime);
 
-
     QCheckBox *mStartTimeActive = w.findChild<QCheckBox *>(QStringLiteral("mStartTimeActive"));
     QVERIFY(mStartTimeActive);
     QVERIFY(!mStartTimeActive->isChecked());
@@ -93,7 +92,6 @@ void VacationEditWidgetTest::shouldHaveDefaultValue()
     QLabel *mEndDateLabel = w.findChild<QLabel *>(QStringLiteral("mEndDateLabel"));
     QVERIFY(mEndDateLabel);
     QVERIFY(!mEndDateLabel->text().isEmpty());
-
 
     QSpinBox *mIntervalSpin = w.findChild<QSpinBox *>(QStringLiteral("mIntervalSpin"));
     QVERIFY(mIntervalSpin);
@@ -136,7 +134,6 @@ void VacationEditWidgetTest::shouldHaveDefaultValue()
     QVERIFY(!mDomainCheck->text().isEmpty());
     QVERIFY(!mDomainCheck->isChecked());
 
-
     QLineEdit *mDomainEdit = w.findChild<QLineEdit *>(QStringLiteral("mDomainEdit"));
     QVERIFY(mDomainEdit);
     QVERIFY(mDomainEdit->text().isEmpty());
@@ -162,7 +159,6 @@ void VacationEditWidgetTest::shouldGetValues()
 
     QCheckBox *mEndTimeActive = w.findChild<QCheckBox *>(QStringLiteral("mEndTimeActive"));
 
-
     QSpinBox *mIntervalSpin = w.findChild<QSpinBox *>(QStringLiteral("mIntervalSpin"));
 
     QLineEdit *mMailAliasesEdit = w.findChild<QLineEdit *>(QStringLiteral("mMailAliasesEdit"));
@@ -173,7 +169,6 @@ void VacationEditWidgetTest::shouldGetValues()
 
     //QCheckBox *mSpamCheck = w.findChild<QCheckBox *>(QStringLiteral("mSpamCheck"));
     //QCheckBox *mDomainCheck = w.findChild<QCheckBox *>(QStringLiteral("mDomainCheck"));
-
 
     //QLineEdit *mDomainEdit = w.findChild<QLineEdit *>(QStringLiteral("mDomainEdit"));
 
@@ -203,28 +198,27 @@ void VacationEditWidgetTest::shouldGetValues()
 
 #if 0
     KMime::Types::AddrSpecList mailAliases() const;
-    void setMailAliases(const KMime::Types::AddrSpecList &aliases);
-    void setMailAliases(const QString &aliases);
-
+    void setMailAliases(const KMime::Types::AddrSpecList & aliases);
+    void setMailAliases(const QString & aliases);
 
     bool sendForSpam() const;
     void setSendForSpam(bool enable);
 
     QDate startDate() const;
-    void setStartDate(const QDate &startDate);
+    void setStartDate(const QDate & startDate);
 
     QTime startTime() const;
-    void setStartTime(const QTime &startTime);
+    void setStartTime(const QTime & startTime);
 
     QDate endDate() const;
-    void setEndDate(const QDate &endDate);
+    void setEndDate(const QDate & endDate);
 
     QTime endTime() const;
-    void setEndTime(const QTime &endTime);
+    void setEndTime(const QTime & endTime);
 
     VacationUtils::MailAction mailAction() const;
     QString mailActionRecipient() const;
-    void setMailAction(VacationUtils::MailAction action, const QString &recipient);
+    void setMailAction(VacationUtils::MailAction action, const QString & recipient);
 #endif
 
 }

@@ -53,7 +53,7 @@ void SelectHeaderTypeComboBoxTest::shouldHaveDefaultValue()
     QVERIFY(!combox.itemText(combox.count() - 1).isEmpty());
     QCOMPARE(combox.itemData(combox.count() - 1).toString(), QString());
     //Don't verify first element and last as we already did
-    for(int i = 1; i < combox.count()-1; ++i) {
+    for (int i = 1; i < combox.count() - 1; ++i) {
         QVERIFY(!combox.itemData(i).toString().isEmpty());
         QVERIFY(!combox.itemText(i).isEmpty());
     }
@@ -68,7 +68,7 @@ void SelectHeaderTypeComboBoxTest::shouldHaveDefaultValue()
     QCOMPARE(combox1.itemData(combox1.count() - 1).toString(), QString());
 
     //Don't verify first element and last as we already did
-    for(int i = 1; i < combox1.count() - 1; ++i) {
+    for (int i = 1; i < combox1.count() - 1; ++i) {
         QVERIFY(!combox1.itemData(i).toString().isEmpty());
         QVERIFY(!combox1.itemText(i).isEmpty());
     }

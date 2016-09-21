@@ -50,7 +50,6 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     connect(buttonBox, &QDialogButtonBox::rejected, this, &SelectHeadersDialog::reject);
     okButton->setFocus();
 
-
     QVBoxLayout *lay = new QVBoxLayout;
     lay->setObjectName(QStringLiteral("widgetlayout"));
     lay->setMargin(0);
@@ -219,7 +218,6 @@ SelectHeaderTypeComboBox::SelectHeaderTypeComboBox(bool onlyEnvelopType, QWidget
 SelectHeaderTypeComboBox::~SelectHeaderTypeComboBox()
 {
 }
-
 
 void SelectHeaderTypeComboBox::changeReadOnlyStatus()
 {

@@ -342,7 +342,7 @@ bool SieveEditorTextModeWidget::hasSelection() const
 
 void SieveEditorTextModeWidget::zoomIn()
 {
-   QWidget *w = mTabWidget->currentWidget();
+    QWidget *w = mTabWidget->currentWidget();
     if (w == mEditorWidget) {
         mTextEdit->zoomIn();
     } else if (SieveEditorHelpHtmlWidget *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {

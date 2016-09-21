@@ -68,7 +68,6 @@ void SieveScriptDebuggerWidget::setSplitterSizes(const QList<int> &sizes)
     mSieveScriptFrontEnd->setSplitterSizes(sizes);
 }
 
-
 bool SieveScriptDebuggerWidget::canAccept() const
 {
     return mSieveScriptFrontEnd->canAccept();

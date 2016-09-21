@@ -55,7 +55,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     // explanation label:
     ++row;
     QLabel *configureVacationLabel = new QLabel(i18n("Configure vacation "
-                                                     "notifications to be sent:"), this);
+            "notifications to be sent:"), this);
     configureVacationLabel->setObjectName(QStringLiteral("configureVacationLabel"));
     glay->addWidget(configureVacationLabel, row, 0, 1, 2);
 

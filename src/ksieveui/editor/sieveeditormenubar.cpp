@@ -91,7 +91,6 @@ void SieveEditorMenuBar::initActions()
     mPrintAction = KStandardAction::print(this, &SieveEditorMenuBar::print, this);
     mPrintPreviewAction = KStandardAction::printPreview(this, &SieveEditorMenuBar::printPreview, this);
 
-
     mZoomResetAction = new QAction(i18nc("Reset the zoom", "Reset"), this);
     mZoomResetAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_0));
     connect(mZoomResetAction, &QAction::triggered, this, &SieveEditorMenuBar::zoomReset);

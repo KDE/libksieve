@@ -51,7 +51,6 @@ void SelectHeadersDialogTest::shouldHaveDefaultValue()
     QVERIFY(lay);
     QCOMPARE(lay->margin(), 0);
 
-
     KSieveUi::SelectHeadersWidget *mListWidget = dlg.findChild<KSieveUi::SelectHeadersWidget *>(QStringLiteral("listwidget"));
     QVERIFY(mListWidget);
 
@@ -63,8 +62,6 @@ void SelectHeadersDialogTest::shouldHaveDefaultValue()
     QVERIFY(mNewHeader);
     QVERIFY(mNewHeader->isClearButtonEnabled());
     QVERIFY(mNewHeader->trapReturnKey());
-
-
 
     QPushButton *mAddNewHeader = dlg.findChild<QPushButton *>(QStringLiteral("addnewheader"));
     QVERIFY(mAddNewHeader);

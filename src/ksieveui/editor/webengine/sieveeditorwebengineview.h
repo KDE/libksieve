@@ -32,7 +32,7 @@ public:
 protected:
     void contextMenuEvent(QContextMenuEvent *ev) Q_DECL_OVERRIDE;
 private:
-    void downloadRequested(QWebEngineDownloadItem*);
+    void downloadRequested(QWebEngineDownloadItem *);
 };
 }
 

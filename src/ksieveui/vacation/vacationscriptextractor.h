@@ -691,12 +691,10 @@ private:
     void testEnd() Q_DECL_OVERRIDE {}
     void testListStart() Q_DECL_OVERRIDE {}
     void testListEnd() Q_DECL_OVERRIDE {}
-    void blockStart(int lineNumber) Q_DECL_OVERRIDE
-    {
+    void blockStart(int lineNumber) Q_DECL_OVERRIDE {
         Q_UNUSED(lineNumber)
     }
-    void blockEnd(int lineNumber) Q_DECL_OVERRIDE
-    {
+    void blockEnd(int lineNumber) Q_DECL_OVERRIDE {
         Q_UNUSED(lineNumber)
     }
     void hashComment(const QString &) Q_DECL_OVERRIDE {}
@@ -705,12 +703,10 @@ private:
     void error(const KSieve::Error &e) Q_DECL_OVERRIDE;
     void finished() Q_DECL_OVERRIDE;
 
-    void taggedArgument(const QString &tag) Q_DECL_OVERRIDE
-    {
+    void taggedArgument(const QString &tag) Q_DECL_OVERRIDE {
         Q_UNUSED(tag)
     }
-    void numberArgument(unsigned long number, char) Q_DECL_OVERRIDE
-    {
+    void numberArgument(unsigned long number, char) Q_DECL_OVERRIDE {
         Q_UNUSED(number)
     }
 
