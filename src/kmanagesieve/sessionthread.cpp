@@ -427,7 +427,7 @@ void SessionThread::doStartSsl()
         m_sslCheck->setInterval(60 * 1000);
         connect(m_sslCheck, &QTimer::timeout, this, &SessionThread::slotSslTimeout);
     }
-    m_socket->setAdvertisedSslVersion(KTcpSocket::TlsV1);
+    m_socket->setAdvertisedSslVersion(KTcpSocket::SecureProtocols);
     m_socket->ignoreSslErrors();
     connect(m_socket, &KTcpSocket::encrypted, this, &SessionThread::slotEncryptedDone);
     m_sslCheck->start();
