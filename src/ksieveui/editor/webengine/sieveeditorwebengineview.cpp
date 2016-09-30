@@ -22,6 +22,7 @@
 #include <QFileDialog>
 #include <QWebEngineDownloadItem>
 #include <QWebEngineProfile>
+#include <QWebEngineSettings>
 
 using namespace KSieveUi;
 
@@ -31,6 +32,17 @@ SieveEditorWebEngineView::SieveEditorWebEngineView(QWidget *parent)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     QWebEngineProfile *profile = new QWebEngineProfile(this);
     QWebEnginePage *page = new QWebEnginePage(profile, this);
+    page->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, false);
+    page->settings()->setAttribute(QWebEngineSettings::PluginsEnabled, false);
+    page->settings()->setAttribute(QWebEngineSettings::AutoLoadImages, false);
+    page->settings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, false);
+    page->settings()->setAttribute(QWebEngineSettings::JavascriptCanAccessClipboard, false);
+    page->settings()->setAttribute(QWebEngineSettings::LocalStorageEnabled, false);
+    page->settings()->setAttribute(QWebEngineSettings::XSSAuditingEnabled, false);
+    page->settings()->setAttribute(QWebEngineSettings::ErrorPageEnabled, false);
+    page->settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, false);
+    page->settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, false);
+
     setPage(page);
     connect(profile, &QWebEngineProfile::downloadRequested, this, &SieveEditorWebEngineView::downloadRequested);
 #endif
