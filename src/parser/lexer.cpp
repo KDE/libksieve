@@ -385,6 +385,10 @@ bool Lexer::Impl::parseHashComment(QString &result, bool reallySave)
             }
             if (reallySave) {
                 result += QString::fromUtf8(commentStart, commentLength);
+                // In comment < or > breaks parsing => convert them to double quote
+                // See src/ksieveui/scriptsparsing/tests/failed/script1.siv
+                result.replace(QLatin1Char('<'), QLatin1Char('"'));
+                result.replace(QLatin1Char('>'), QLatin1Char('"'));
             }
         }
         return true;
