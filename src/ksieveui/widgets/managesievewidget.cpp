@@ -164,6 +164,7 @@ void ManageSieveWidget::slotContextMenuRequested(const QPoint &p)
         // script items:
         menu.addAction(i18n("Edit Script..."), this, &ManageSieveWidget::slotEditScript);
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete Script"), this, &ManageSieveWidget::slotDeleteScript);
+        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18n("Rename Script"), this, &ManageSieveWidget::slotRenameScript);
         if (itemIsActived(item)) {
             menu.addSeparator();
             menu.addAction(i18n("Deactivate Script"), this, &ManageSieveWidget::slotDeactivateScript);
@@ -357,6 +358,28 @@ void ManageSieveWidget::clear()
     d->mSelectedItems.clear();
     mUrls.clear();
     d->mTreeView->clear();
+}
+
+void ManageSieveWidget::slotRenameScript()
+{
+    QTreeWidgetItem *currentItem =  d->mTreeView->currentItem();
+    if (!isFileNameItem(currentItem)) {
+        return;
+    }
+    QTreeWidgetItem *parent = currentItem->parent();
+    if (!parent) {
+        return;
+    }
+
+    if (!mUrls.count(parent)) {
+        return;
+    }
+
+    QUrl u = mUrls[parent];
+    if (u.isEmpty()) {
+        return;
+    }
+    //TODO
 }
 
 void ManageSieveWidget::slotDeleteScript()
