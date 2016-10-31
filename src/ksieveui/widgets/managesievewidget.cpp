@@ -164,8 +164,9 @@ void ManageSieveWidget::slotContextMenuRequested(const QPoint &p)
     if (isFileNameItem(item)) {
         // script items:
         menu.addAction(i18n("Edit Script..."), this, &ManageSieveWidget::slotEditScript);
+        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18n("Rename Script..."), this, &ManageSieveWidget::slotRenameScript);
+        menu.addSeparator();
         menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete Script"), this, &ManageSieveWidget::slotDeleteScript);
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18n("Rename Script"), this, &ManageSieveWidget::slotRenameScript);
         if (itemIsActived(item)) {
             menu.addSeparator();
             menu.addAction(i18n("Deactivate Script"), this, &ManageSieveWidget::slotDeactivateScript);
