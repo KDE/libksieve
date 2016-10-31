@@ -162,18 +162,18 @@ void ManageSieveWidget::slotContextMenuRequested(const QPoint &p)
     QMenu menu;
     if (isFileNameItem(item)) {
         // script items:
-        menu.addAction(i18n("Edit Script..."), this, SLOT(slotEditScript()));
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete Script"), this, SLOT(slotDeleteScript()));
+        menu.addAction(i18n("Edit Script..."), this, &ManageSieveWidget::slotEditScript);
+        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete Script"), this, &ManageSieveWidget::slotDeleteScript);
         if (itemIsActived(item)) {
             menu.addSeparator();
-            menu.addAction(i18n("Deactivate Script"), this, SLOT(slotDeactivateScript()));
+            menu.addAction(i18n("Deactivate Script"), this, &ManageSieveWidget::slotDeactivateScript);
         }
     } else if (!item->parent()) {
         // top-levels:
         if (!serverHasError(item) && mJobs.keys(item).isEmpty()) {
-            menu.addAction(QIcon::fromTheme(QStringLiteral("document-new")), i18n("New Script..."), this, SLOT(slotNewScript()));
+            menu.addAction(QIcon::fromTheme(QStringLiteral("document-new")), i18n("New Script..."), this, &ManageSieveWidget::slotNewScript);
         } else if (!mJobs.keys(item).isEmpty()) { //In Progress
-            menu.addAction(KStandardGuiItem::cancel().icon(), KStandardGuiItem::cancel().text(), this, SLOT(slotCancelFetch()));
+            menu.addAction(KStandardGuiItem::cancel().icon(), KStandardGuiItem::cancel().text(), this, &ManageSieveWidget::slotCancelFetch);
         }
     }
     if (!menu.actions().isEmpty()) {
