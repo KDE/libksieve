@@ -167,7 +167,6 @@ void SessionThread::doSendData(const QByteArray &data)
 void SessionThread::slotDataReceived()
 {
     Q_ASSERT(QThread::currentThread() == thread());
-
     if (m_pendingQuantity > 0) {
         const QByteArray buffer = m_socket->read(qMin(m_pendingQuantity, m_socket->bytesAvailable()));
         m_data += buffer;

@@ -87,8 +87,15 @@ public:
 
     /**
      * Rename the script with the given sieve @p url and new name @p newName.
+     * Not supported by all sieve server
      */
     static SieveJob *rename(const QUrl &url, const QString &newName);
+
+    /**
+     * Check the script with the given sieve @p url.
+     * Not supported by all sieve server
+     */
+    static SieveJob *check(const QUrl &url, const QString &script);
 
     /**
      * Kills the sieve job.

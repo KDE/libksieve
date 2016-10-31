@@ -102,7 +102,11 @@ void SieveJob::Private::run(Session *session)
         break;
     }
     case Check: {
-        //TODO
+        const QString filename = mUrl.fileName(/*QUrl::ObeyTrailingSlash*/);
+        QByteArray encodedData;
+        append_lf2crlf(encodedData, mScript.toUtf8());
+        session->sendData("RENAMESCRIPT {" + QByteArray::number(encodedData.size()) + "+}");
+        session->sendData(encodedData);
         break;
     }
 
@@ -362,6 +366,20 @@ SieveJob *SieveJob::rename(const QUrl &url, const QString &newName)
     SieveJob *job = new SieveJob;
     job->d->mUrl = url;
     job->d->mNewName = newName;
+    job->d->mCommands = commands;
+
+    Private::sessionForUrl(url)->scheduleJob(job);
+    return job;
+}
+
+SieveJob *SieveJob::check(const QUrl &url, const QString &script)
+{
+    QStack<Private::Command> commands;
+    commands.push(Private::Check);
+
+    SieveJob *job = new SieveJob;
+    job->d->mUrl = url;
+    job->d->mScript = script;
     job->d->mCommands = commands;
 
     Private::sessionForUrl(url)->scheduleJob(job);
