@@ -18,6 +18,7 @@
 #include "managesievewidget.h"
 #include "managesievetreeview.h"
 #include "widgets/sievetreewidgetitem.h"
+#include "managescriptsjob/renamescriptjob.h"
 
 #include <kmanagesieve/sievejob.h>
 #include <managescriptsjob/parseuserscriptjob.h>
@@ -385,9 +386,9 @@ void ManageSieveWidget::slotRenameScript()
         return;
     }
 
+
     u = u.adjusted(QUrl::RemoveFilename);
     u.setPath(u.path() +  QLatin1Char('/') + currentItem->text(0));
-
 #ifdef USE_RENAME_SIEVE_METHOD
     qDebug()<<" u " << u;
     KManageSieve::SieveJob *job = KManageSieve::SieveJob::rename(u, newName);
@@ -395,8 +396,19 @@ void ManageSieveWidget::slotRenameScript()
     //TODO ? Q_EMIT scriptRenamed(u);
     slotRefresh();
 #else
-    //TODO
+    KSieveUi::RenameScriptJob *job = new KSieveUi::RenameScriptJob(this);
+    job->setOldUrl(u);
+    job->setIsActive(itemIsActived(currentItem));
+    job->setNewName(newName);
+    connect(job, &RenameScriptJob::finished, this, &ManageSieveWidget::slotRenameFinished);
+    job->start();
 #endif
+}
+
+void ManageSieveWidget::slotRenameFinished(bool success)
+{
+    qDebug()<<" void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)"<<success;
+    slotRefresh();
 }
 
 void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)
