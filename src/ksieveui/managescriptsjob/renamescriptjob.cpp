@@ -17,8 +17,9 @@
 
 
 #include "renamescriptjob.h"
-
 #include <kmanagesieve/sievejob.h>
+
+#include <KLocalizedString>
 
 using namespace KSieveUi;
 
@@ -72,7 +73,7 @@ void RenameScriptJob::start()
         KManageSieve::SieveJob *job = KManageSieve::SieveJob::get(d->mOldUrl);
         connect(job, &KManageSieve::SieveJob::result, this, &RenameScriptJob::slotGetResult);
     } else {
-        Q_EMIT finished(false);
+        Q_EMIT finished(i18n("Impossible to start job"), false);
         deleteLater();
     }
 }
@@ -82,7 +83,7 @@ void RenameScriptJob::slotGetResult(KManageSieve::SieveJob *job, bool success, c
     Q_UNUSED(job);
     Q_UNUSED(isActive);
     if (!success) {
-        Q_EMIT finished(false);
+        Q_EMIT finished(i18n("An error occurred during loading the sieve script."), false);
         deleteLater();
         return;
     }
@@ -98,7 +99,7 @@ void RenameScriptJob::slotPutScript(KManageSieve::SieveJob *job, bool success)
 {
     Q_UNUSED(job);
     if (!success) {
-        Q_EMIT finished(false);
+        Q_EMIT finished(i18n("An error occurred during saving the sieve script."), false);
         deleteLater();
         return;
     }
@@ -109,6 +110,6 @@ void RenameScriptJob::slotPutScript(KManageSieve::SieveJob *job, bool success)
 void RenameScriptJob::slotDeleteResult(KManageSieve::SieveJob *job, bool success)
 {
     Q_UNUSED(job);
-    Q_EMIT finished(success);
+    Q_EMIT finished(success ? QString() : i18n("An error occurred during deleting the sieve script."), success);
     deleteLater();
 }

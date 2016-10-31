@@ -403,8 +403,11 @@ void ManageSieveWidget::slotRenameScript()
 #endif
 }
 
-void ManageSieveWidget::slotRenameFinished(bool success)
+void ManageSieveWidget::slotRenameFinished(const QString &errorStr, bool success)
 {
+    if (!success) {
+        KMessageBox::error(this, errorStr, i18n("Rename Script"));
+    }
     qCDebug(LIBKSIEVE_LOG) << " void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)"<<success;
     slotRefresh();
 }

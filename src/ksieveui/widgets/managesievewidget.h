@@ -72,7 +72,7 @@ private Q_SLOTS:
 
     void slotCancelFetch();
     void slotRenameResult(KManageSieve::SieveJob *job, bool success);
-    void slotRenameFinished(bool success);
+    void slotRenameFinished(const QString &errorStr, bool success);
 
 public Q_SLOTS:
     void slotRenameScript();

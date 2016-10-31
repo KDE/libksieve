@@ -45,7 +45,7 @@ public:
     void start();
 
 Q_SIGNALS:
-    void finished(bool success);
+    void finished(const QString &error, bool success);
 
 private Q_SLOTS:
     void slotDeleteResult(KManageSieve::SieveJob *job, bool success);
