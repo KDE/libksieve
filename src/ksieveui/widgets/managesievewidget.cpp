@@ -403,15 +403,16 @@ void ManageSieveWidget::slotDeleteScript()
         return;
     }
 
-    u = u.adjusted(QUrl::RemoveFilename);
-    u.setPath(u.path() +  QLatin1Char('/') + currentItem->text(0));
-
-    if (KMessageBox::warningContinueCancel(this, i18n("Really delete script \"%1\" from the server?", u.fileName()),
+    if (KMessageBox::warningContinueCancel(this, i18n("Really delete script \"%1\" from the server?", currentItem->text(0)),
                                            i18n("Delete Sieve Script Confirmation"),
                                            KStandardGuiItem::del())
             != KMessageBox::Continue) {
         return;
     }
+
+    u = u.adjusted(QUrl::RemoveFilename);
+    u.setPath(u.path() +  QLatin1Char('/') + currentItem->text(0));
+
     KManageSieve::SieveJob *job = KManageSieve::SieveJob::del(u);
     connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveWidget::slotDeleteResult);
     Q_EMIT scriptDeleted(u);
