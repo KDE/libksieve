@@ -40,7 +40,8 @@ public:
         SearchActive,
         List,
         Delete,
-        Rename
+        Rename,
+        Check
     };
 
     enum Existence {

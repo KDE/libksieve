@@ -101,6 +101,10 @@ void SieveJob::Private::run(Session *session)
         session->sendData(ba);
         break;
     }
+    case Check: {
+        //TODO
+        break;
+    }
 
     default:
         Q_ASSERT(false);
