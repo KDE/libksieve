@@ -184,6 +184,7 @@ set(ksieveui_LIB_SRCS
     managescriptsjob/checkkolabkep14supportjob.cpp
     managescriptsjob/generateglobalscriptjob.cpp
     managescriptsjob/parseuserscriptjob.cpp
+    managescriptsjob/renamescriptjob.cpp
     templates/sievetemplatewidget.cpp
     templates/sievedefaulttemplate.cpp
     templates/sievetemplateeditdialog.cpp
@@ -248,7 +249,14 @@ ecm_generate_headers(ksieveui_Camelcaseutil_HEADERS
     REQUIRED_HEADERS ksieveui_util_HEADERS
     PREFIX KSieveUi
     RELATIVE util
+    )
 
+ecm_generate_headers(ksieveui_Camelmanagescriptsjob_HEADERS
+    HEADER_NAMES
+    RenameScriptJob
+    REQUIRED_HEADERS ksieveui_managescriptsjob_HEADERS
+    PREFIX KSieveUi
+    RELATIVE managescriptsjob
     )
 
 ecm_generate_headers(ksieveui_Camelcaseeditor_HEADERS

@@ -11,6 +11,6 @@ endmacro()
 
 
 add_managesievejob_test( parseuserjobtest.cpp )
-
+add_managesievejob_test( renamescriptjobtest.cpp )
 
 
