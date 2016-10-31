@@ -258,7 +258,6 @@ ecm_generate_headers(ksieveui_Camelcaseeditor_HEADERS
     REQUIRED_HEADERS ksieveui_editor_HEADERS
     PREFIX KSieveUi
     RELATIVE editor
-
     )
 
 ecm_generate_headers(ksieveui_Camelcasevacation_HEADERS
@@ -267,7 +266,6 @@ ecm_generate_headers(ksieveui_Camelcasevacation_HEADERS
     REQUIRED_HEADERS ksieveui_vacation_HEADERS
     PREFIX KSieveUi
     RELATIVE vacation
-
     )
 
 ecm_generate_headers(ksieveui_Camelcasedebug_HEADERS
@@ -276,7 +274,6 @@ ecm_generate_headers(ksieveui_Camelcasedebug_HEADERS
     REQUIRED_HEADERS ksieveui_debug_HEADERS
     PREFIX KSieveUi
     RELATIVE debug
-
     )
 
 ecm_generate_headers(ksieveui_Camelcasewidgets_HEADERS
@@ -297,37 +294,35 @@ ecm_generate_pri_file(BASE_NAME KSieveUi
 
 
 install(TARGETS KF5KSieveUi EXPORT KF5KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-if(${CMAKE_SOURCE_DIR} STREQUAL ${libksieve_SOURCE_DIR})
+install(FILES
+    ${ksieveui_Camelcasewidgets_HEADERS}
+    ${ksieveui_Camelcasedebug_HEADERS}
+    ${ksieveui_Camelcasevacation_HEADERS}
+    ${ksieveui_CamelCase_HEADERS}
+    ${ksieveui_Camelcaseeditor_HEADERS}
+    ${ksieveui_Camelcaseutil_HEADERS}
+    ${ksieveui_Camelmanagescriptsjob_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KSieveUi
+    COMPONENT Devel
+    )
 
+install(FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/ksieveui_export.h
+    ${ksieveui_widgets_HEADERS}
+    ${ksieveui_debug_HEADERS}
+    ${ksieveui_vacation_HEADERS}
+    ${ksieveui_HEADERS}
+    ${ksieveui_editor_HEADERS}
+    ${ksieveui_util_HEADERS}
+    ${ksieveui_managescriptsjob_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/ksieveui
+    COMPONENT Devel
+    )
+install(FILES
+    ${PRI_FILENAME}
+    DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
+    )
 
-    install(FILES
-        ${ksieveui_Camelcasewidgets_HEADERS}
-        ${ksieveui_Camelcasedebug_HEADERS}
-        ${ksieveui_Camelcasevacation_HEADERS}
-        ${ksieveui_CamelCase_HEADERS}
-        ${ksieveui_Camelcaseeditor_HEADERS}
-        ${ksieveui_Camelcaseutil_HEADERS}
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KSieveUi
-        COMPONENT Devel
-        )
-
-    install(FILES
-        ${CMAKE_CURRENT_BINARY_DIR}/ksieveui_export.h
-        ${ksieveui_widgets_HEADERS}
-        ${ksieveui_debug_HEADERS}
-        ${ksieveui_vacation_HEADERS}
-        ${ksieveui_HEADERS}
-        ${ksieveui_editor_HEADERS}
-        ${ksieveui_util_HEADERS}
-        DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/ksieveui
-        COMPONENT Devel
-        )
-    install(FILES
-        ${PRI_FILENAME}
-        DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
-        )
-
-endif()
 
 install(FILES data/ksieve_script.knsrc DESTINATION ${KDE_INSTALL_CONFDIR} )
 install(DIRECTORY data/scripts/ DESTINATION ${KDE_INSTALL_DATADIR}/sieve/scripts/ )
