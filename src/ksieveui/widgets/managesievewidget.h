@@ -71,6 +71,7 @@ private Q_SLOTS:
     void setActiveScripts(ParseUserScriptJob *job);
 
     void slotCancelFetch();
+    void slotRenameResult(KManageSieve::SieveJob *job, bool success);
 public Q_SLOTS:
     void slotRenameScript();
     void slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &listScript, const QString &activeScript);

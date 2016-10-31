@@ -379,7 +379,25 @@ void ManageSieveWidget::slotRenameScript()
     if (u.isEmpty()) {
         return;
     }
-    //TODO
+
+    const QString newName = QInputDialog::getText(this, i18n("New Script Name"), i18n("Script Name:"), QLineEdit::Normal, u.fileName());
+    if (newName.isEmpty()) {
+        return;
+    }
+
+    u = u.adjusted(QUrl::RemoveFilename);
+    u.setPath(u.path() +  QLatin1Char('/') + currentItem->text(0));
+
+    qDebug()<<" u " << u;
+    KManageSieve::SieveJob *job = KManageSieve::SieveJob::rename(u, newName);
+    connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveWidget::slotRenameResult);
+    //TODO ? Q_EMIT scriptRenamed(u);
+    slotRefresh();
+}
+
+void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)
+{
+    qDebug()<<" void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)"<<success;
 }
 
 void ManageSieveWidget::slotDeleteScript()

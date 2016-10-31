@@ -97,7 +97,8 @@ void SieveJob::Private::run(Session *session)
     }
     case Rename: {
         const QString filename = mUrl.fileName(/*QUrl::ObeyTrailingSlash*/);
-        session->sendData("RENAMESCRIPT \"" + filename.toUtf8() + "\" \"" + mNewName.toUtf8() + "\"");
+        const QByteArray ba = QByteArray("RENAMESCRIPT \"" + filename.toUtf8() + "\" \"" + mNewName.toUtf8() + "\"");
+        session->sendData(ba);
         break;
     }
 
@@ -341,7 +342,6 @@ SieveJob *SieveJob::deactivate(const QUrl &url)
 {
     QStack<Private::Command> commands;
     commands.push(Private::Deactivate);
-
     SieveJob *job = new SieveJob;
     job->d->mUrl = url;
     job->d->mCommands = commands;
