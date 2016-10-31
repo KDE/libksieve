@@ -86,6 +86,11 @@ public:
     static SieveJob *deactivate(const QUrl &url);
 
     /**
+     * Rename the script with the given sieve @p url and new name @p newName.
+     */
+    static SieveJob *rename(const QUrl &url, const QString &newName);
+
+    /**
      * Kills the sieve job.
      */
     void kill(KJob::KillVerbosity verbosity = KJob::Quietly);

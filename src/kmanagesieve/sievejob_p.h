@@ -39,7 +39,8 @@ public:
         Deactivate,
         SearchActive,
         List,
-        Delete
+        Delete,
+        Rename
     };
 
     enum Existence {
@@ -59,6 +60,7 @@ public:
     QString mScript;
     QString mActiveScriptName;
     QString mErrorMessage;
+    QString mNewName;
     QStack<Command> mCommands;
 
     // List of Sieve scripts on the server, used by @ref list()
