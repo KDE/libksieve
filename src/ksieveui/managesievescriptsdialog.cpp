@@ -42,6 +42,7 @@
 #include <KStandardGuiItem>
 
 using namespace KSieveUi;
+//#define USE_CHECK_SIEVE_METHOD 0
 
 class KSieveUi::ManageSieveScriptsDialogPrivate
 {
@@ -211,8 +212,13 @@ void ManageSieveScriptsDialog::slotSieveEditorCheckSyntaxClicked()
         return;
     }
     d->mSieveEditor->addNormalMessage(i18n("Uploading script to server for checking it, please wait..."));
+#ifdef USE_CHECK_SIEVE_METHOD
+    KManageSieve::SieveJob *job = KManageSieve::SieveJob::check(d->mCurrentURL, script);
+    connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveScriptsDialog::slotPutCheckSyntaxResultDebug);
+#else
     KManageSieve::SieveJob *job = KManageSieve::SieveJob::put(d->mCurrentURL, script, d->mWasActive, d->mWasActive);
     connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveScriptsDialog::slotPutCheckSyntaxResultDebug);
+#endif
 }
 
 void ManageSieveScriptsDialog::slotSieveEditorOkClicked()
@@ -250,8 +256,10 @@ void ManageSieveScriptsDialog::slotPutCheckSyntaxResultDebug(KManageSieve::Sieve
             d->mSieveEditor->addFailedMessage(errorMsg);
         }
     }
+#ifndef USE_CHECK_SIEVE_METHOD
     //Put original script after check otherwise we will put a script even if we don't click on ok
     KManageSieve::SieveJob *restoreJob = KManageSieve::SieveJob::put(d->mCurrentURL, d->mSieveEditor->originalScript(), d->mWasActive, d->mWasActive);
+#endif
     d->mSieveEditor->resultDone();
 }
 
