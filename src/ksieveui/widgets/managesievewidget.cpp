@@ -383,7 +383,7 @@ void ManageSieveWidget::slotRenameScript()
     }
 
     const QString newName = QInputDialog::getText(this, i18n("New Script Name"), i18n("Script Name:"), QLineEdit::Normal, u.fileName());
-    if (newName.isEmpty()) {
+    if (newName.trimmed().isEmpty()) {
         return;
     }
 
