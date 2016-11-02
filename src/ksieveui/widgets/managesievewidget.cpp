@@ -19,6 +19,8 @@
 #include "managesievetreeview.h"
 #include "widgets/sievetreewidgetitem.h"
 #include "managescriptsjob/renamescriptjob.h"
+#include "libksieve_debug.h"
+#include "sievenetworkmanager.h"
 
 #include <kmanagesieve/sievejob.h>
 #include <managescriptsjob/parseuserscriptjob.h>
@@ -33,9 +35,8 @@
 #include <QHBoxLayout>
 #include <QMenu>
 #include <QTimer>
-#include "libksieve_debug.h"
-#include <QNetworkConfigurationManager>
 #include <QMetaType>
+#include <QNetworkConfigurationManager>
 //#define USE_RENAME_SIEVE_METHOD 1
 using namespace KSieveUi;
 Q_DECLARE_METATYPE(QTreeWidgetItem *)
@@ -45,7 +46,6 @@ class KSieveUi::ManageSieveWidgetPrivate
 public:
     ManageSieveWidgetPrivate()
         : mTreeView(Q_NULLPTR),
-          mNetworkConfigurationManager(Q_NULLPTR),
           mClearAll(false),
           mBlockSignal(false)
 
@@ -54,13 +54,11 @@ public:
     }
     ~ManageSieveWidgetPrivate()
     {
-        delete mNetworkConfigurationManager;
     }
 
     // Maps top-level items to their child which has the radio button selection
     QMap<QTreeWidgetItem *, QTreeWidgetItem *> mSelectedItems;
     ManageSieveTreeView *mTreeView;
-    QNetworkConfigurationManager *mNetworkConfigurationManager;
     bool mClearAll : 1;
     bool mBlockSignal : 1;
 };
@@ -80,8 +78,7 @@ ManageSieveWidget::ManageSieveWidget(QWidget *parent)
     connect(d->mTreeView, &ManageSieveTreeView::itemSelectionChanged, this, &ManageSieveWidget::slotUpdateButtons);
     connect(d->mTreeView, &ManageSieveTreeView::itemChanged, this, &ManageSieveWidget::slotItemChanged);
 
-    d->mNetworkConfigurationManager = new QNetworkConfigurationManager();
-    connect(d->mNetworkConfigurationManager, &QNetworkConfigurationManager::onlineStateChanged, this, &ManageSieveWidget::slotSystemNetworkOnlineStateChanged);
+    connect(KSieveUi::SieveNetworkManager::self()->networkConfigureManager(), &QNetworkConfigurationManager::onlineStateChanged, this, &ManageSieveWidget::slotSystemNetworkOnlineStateChanged);
 
     lay->addWidget(d->mTreeView);
     setLayout(lay);
@@ -96,7 +93,7 @@ ManageSieveWidget::~ManageSieveWidget()
 
 void ManageSieveWidget::slotCheckNetworkStatus()
 {
-    slotSystemNetworkOnlineStateChanged(d->mNetworkConfigurationManager->isOnline());
+    slotSystemNetworkOnlineStateChanged(KSieveUi::SieveNetworkManager::self()->networkConfigureManager()->isOnline());
 }
 
 void ManageSieveWidget::slotSystemNetworkOnlineStateChanged(bool state)
@@ -415,6 +412,7 @@ void ManageSieveWidget::slotRenameFinished(const QUrl &oldUrl, const QUrl &newUr
 
 void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)
 {
+    Q_UNUSED(job);
     qCDebug(LIBKSIEVE_LOG) << " void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)" << success;
     slotRefresh();
 }

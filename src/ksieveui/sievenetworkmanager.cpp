@@ -16,17 +16,28 @@
 */
 
 #include "sievenetworkmanager.h"
+#include <QNetworkConfigurationManager>
+using namespace KSieveUi;
 
 Q_GLOBAL_STATIC(SieveNetworkManager, s_pSieveNetworkManagerSelf)
 
 SieveNetworkManager::SieveNetworkManager(QObject *parent)
     : QObject(parent)
 {
-
+    mNetworkConfigureManager = new QNetworkConfigurationManager();
 }
 
+SieveNetworkManager::~SieveNetworkManager()
+{
+    delete mNetworkConfigureManager;
+}
 
 SieveNetworkManager *SieveNetworkManager::self()
 {
     return s_pSieveNetworkManagerSelf();
+}
+
+QNetworkConfigurationManager *SieveNetworkManager::networkConfigureManager() const
+{
+    return mNetworkConfigureManager;
 }

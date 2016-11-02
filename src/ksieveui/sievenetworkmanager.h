@@ -19,13 +19,23 @@
 #define SIEVENETWORKMANAGER_H
 
 #include <QObject>
-
-class SieveNetworkManager : public QObject
+#include "ksieveui_export.h"
+class QNetworkConfigurationManager;
+namespace KSieveUi
+{
+class KSIEVEUI_EXPORT SieveNetworkManager : public QObject
 {
     Q_OBJECT
 public:
-    SieveNetworkManager(QObject *parent = Q_NULLPTR);
+    explicit SieveNetworkManager(QObject *parent = Q_NULLPTR);
+    ~SieveNetworkManager();
     static SieveNetworkManager *self();
+
+    QNetworkConfigurationManager *networkConfigureManager() const;
+
+private:
+    QNetworkConfigurationManager *mNetworkConfigureManager;
 };
+}
 
 #endif // SIEVENETWORKMANAGER_H

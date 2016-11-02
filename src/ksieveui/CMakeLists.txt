@@ -245,6 +245,7 @@ target_include_directories(KF5KSieveUi PUBLIC "$<BUILD_INTERFACE:${libksieve_SOU
 ecm_generate_headers(ksieveui_CamelCase_HEADERS
     HEADER_NAMES
     ManageSieveScriptsDialog
+    SieveNetworkManager
     REQUIRED_HEADERS ksieveui_HEADERS
     PREFIX KSieveUi
     )
