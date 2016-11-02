@@ -49,15 +49,14 @@ Q_SIGNALS:
 private Q_SLOTS:
     void slotGetResult(KManageSieve::SieveJob *, bool, const QString &, bool);
     void slotPutResult(KManageSieve::SieveJob *job, bool);
-    void slotPutCheckSyntaxResultDebug(KManageSieve::SieveJob *job, bool success);
 
     void slotSieveEditorOkClicked();
     void slotSieveEditorCancelClicked();
     void slotSieveEditorCheckSyntaxClicked();
     void slotUpdateButtons(QTreeWidgetItem *item);
     void slotEditScript(const QUrl &u, const QStringList &capabilities);
-    void slotNewScript(const QUrl &u, const QStringList &capabilities);
-
+    void slotNewScript(const QUrl &u, const QStringList &capabilities);    
+    void slotCheckScriptFinished(const QString &errorMsg, bool success);
 protected:
     void hideEvent(QHideEvent *) Q_DECL_OVERRIDE;
 
