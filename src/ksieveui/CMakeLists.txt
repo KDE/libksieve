@@ -183,6 +183,7 @@ set(ksieveui_managescriptjob_LIB_SRCS
 
 set(ksieveui_LIB_SRCS
     managesievescriptsdialog.cpp
+    sievenetworkmanager.cpp
     widgets/custommanagesievewidget.cpp
     widgets/sievetreewidgetitem.cpp
     widgets/managesievetreeview.cpp
