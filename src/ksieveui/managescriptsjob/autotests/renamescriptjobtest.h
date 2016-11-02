@@ -30,6 +30,8 @@ public:
 
 private Q_SLOTS:
     void canNotStartByDefault();
+    void shouldBeStart_data();
+    void shouldBeStart();
 };
 
 #endif // RENAMESCRIPTJOBTEST_H

@@ -21,6 +21,8 @@
 
 #include <KLocalizedString>
 
+#include <QDebug>
+
 using namespace KSieveUi;
 
 class KSieveUi::RenameScriptJobPrivate
@@ -64,7 +66,7 @@ void RenameScriptJob::setNewName(const QString &newName)
 
 bool RenameScriptJob::canStart() const
 {
-    return !d->mNewName.isEmpty() && !d->mOldUrl.isEmpty();
+    return !d->mNewName.trimmed().isEmpty() && d->mOldUrl.isValid();
 }
 
 void RenameScriptJob::start()
