@@ -404,11 +404,12 @@ void ManageSieveWidget::slotRenameScript()
 
 void ManageSieveWidget::slotRenameFinished(const QUrl &oldUrl, const QUrl &newUrl, const QString &errorStr, bool success)
 {
+    qCDebug(LIBKSIEVE_LOG) << " void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)" << success;
     if (!success) {
         KMessageBox::error(this, errorStr, i18n("Rename Script"));
+    } else {
+        Q_EMIT scriptRenamed(oldUrl, newUrl);
     }
-    qCDebug(LIBKSIEVE_LOG) << " void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)" << success;
-    Q_EMIT scriptRenamed(oldUrl, newUrl);
     slotRefresh();
 }
 
