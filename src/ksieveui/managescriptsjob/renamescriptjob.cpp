@@ -33,6 +33,7 @@ public:
     }
     QString mNewName;
     QUrl mOldUrl;
+    QUrl mNewUrl;
     bool mIsActive;
 };
 
@@ -74,7 +75,7 @@ void RenameScriptJob::start()
         KManageSieve::SieveJob *job = KManageSieve::SieveJob::get(d->mOldUrl);
         connect(job, &KManageSieve::SieveJob::result, this, &RenameScriptJob::slotGetResult);
     } else {
-        Q_EMIT finished(i18n("Impossible to start job"), false);
+        Q_EMIT finished(d->mOldUrl, d->mNewUrl, i18n("Impossible to start job"), false);
         deleteLater();
     }
 }
@@ -84,15 +85,15 @@ void RenameScriptJob::slotGetResult(KManageSieve::SieveJob *job, bool success, c
     Q_UNUSED(job);
     Q_UNUSED(isActive);
     if (!success) {
-        Q_EMIT finished(i18n("An error occurred during loading the sieve script."), false);
+        Q_EMIT finished(d->mOldUrl, d->mNewUrl, i18n("An error occurred during loading the sieve script."), false);
         deleteLater();
         return;
     }
     QUrl u = d->mOldUrl;
     u = u.adjusted(QUrl::RemoveFilename);
     u.setPath(u.path() +  QLatin1Char('/') + d->mNewName);
-
-    KManageSieve::SieveJob *putJob = KManageSieve::SieveJob::put(u, script, d->mIsActive, d->mIsActive);
+    d->mNewUrl = u;
+    KManageSieve::SieveJob *putJob = KManageSieve::SieveJob::put(d->mNewUrl, script, d->mIsActive, d->mIsActive);
     connect(putJob, &KManageSieve::SieveJob::result, this, &RenameScriptJob::slotPutScript);
 }
 
@@ -100,7 +101,7 @@ void RenameScriptJob::slotPutScript(KManageSieve::SieveJob *job, bool success)
 {
     Q_UNUSED(job);
     if (!success) {
-        Q_EMIT finished(i18n("An error occurred during saving the sieve script."), false);
+        Q_EMIT finished(d->mOldUrl, d->mNewUrl, i18n("An error occurred during saving the sieve script."), false);
         deleteLater();
         return;
     }
@@ -111,6 +112,6 @@ void RenameScriptJob::slotPutScript(KManageSieve::SieveJob *job, bool success)
 void RenameScriptJob::slotDeleteResult(KManageSieve::SieveJob *job, bool success)
 {
     Q_UNUSED(job);
-    Q_EMIT finished(success ? QString() : i18n("An error occurred during deleting the sieve script."), success);
+    Q_EMIT finished(d->mOldUrl, d->mNewUrl, success ? QString() : i18n("An error occurred during deleting the sieve script."), success);
     deleteLater();
 }

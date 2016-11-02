@@ -45,7 +45,7 @@ public:
     void start();
 
 Q_SIGNALS:
-    void finished(const QString &error, bool success);
+    void finished(const QUrl &oldUrl, const QUrl &newUrl, const QString &error, bool success);
 
 private Q_SLOTS:
     void slotDeleteResult(KManageSieve::SieveJob *job, bool success);

@@ -402,12 +402,13 @@ void ManageSieveWidget::slotRenameScript()
 #endif
 }
 
-void ManageSieveWidget::slotRenameFinished(const QString &errorStr, bool success)
+void ManageSieveWidget::slotRenameFinished(const QUrl &oldUrl, const QUrl &newUrl, const QString &errorStr, bool success)
 {
     if (!success) {
         KMessageBox::error(this, errorStr, i18n("Rename Script"));
     }
     qCDebug(LIBKSIEVE_LOG) << " void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)" << success;
+    Q_EMIT scriptRenamed(oldUrl, newUrl);
     slotRefresh();
 }
 

@@ -57,6 +57,7 @@ Q_SIGNALS:
     void editScript(const QUrl &url, const QStringList &currentCapabilities);
     void scriptDeleted(const QUrl &u);
     void serverSieveFound(bool imapFound);
+    void scriptRenamed(const QUrl &oldUrl, const QUrl &newUrl);
 
 protected:
     virtual bool refreshList() = 0;
@@ -72,7 +73,7 @@ private Q_SLOTS:
 
     void slotCancelFetch();
     void slotRenameResult(KManageSieve::SieveJob *job, bool success);
-    void slotRenameFinished(const QString &errorStr, bool success);
+    void slotRenameFinished(const QUrl &oldUrl, const QUrl &newUrl, const QString &errorStr, bool success);
 
 public Q_SLOTS:
     void slotRenameScript();
