@@ -173,6 +173,14 @@ set(ksieveui_sievescriptdebugger_LIB_SRCS
     sievescriptdebugger/sievescriptdebuggerresulteditor.cpp
     )
 
+set(ksieveui_managescriptjob_LIB_SRCS
+    managescriptsjob/checkkolabkep14supportjob.cpp
+    managescriptsjob/generateglobalscriptjob.cpp
+    managescriptsjob/parseuserscriptjob.cpp
+    managescriptsjob/renamescriptjob.cpp
+    managescriptsjob/checkscriptjob.cpp
+    )
+
 set(ksieveui_LIB_SRCS
     managesievescriptsdialog.cpp
     widgets/custommanagesievewidget.cpp
@@ -181,10 +189,6 @@ set(ksieveui_LIB_SRCS
     widgets/managesievewidget.cpp
     debug/sievedebugdialog.cpp
     util/util.cpp
-    managescriptsjob/checkkolabkep14supportjob.cpp
-    managescriptsjob/generateglobalscriptjob.cpp
-    managescriptsjob/parseuserscriptjob.cpp
-    managescriptsjob/renamescriptjob.cpp
     templates/sievetemplatewidget.cpp
     templates/sievedefaulttemplate.cpp
     templates/sievetemplateeditdialog.cpp
@@ -193,6 +197,7 @@ set(ksieveui_LIB_SRCS
     ${ksieveui_editor_LIB_SRCS}
     ${ksieveui_autocreatescripts_LIB_SRCS}
     ${ksieveui_sievescriptdebugger_LIB_SRCS}
+    ${ksieveui_managescriptjob_LIB_SRCS}
     )
 
 ecm_qt_declare_logging_category(ksieveui_LIB_SRCS HEADER libksieve_debug.h IDENTIFIER LIBKSIEVE_LOG CATEGORY_NAME org.kde.pim.libksieve)
@@ -254,6 +259,7 @@ ecm_generate_headers(ksieveui_Camelcaseutil_HEADERS
 ecm_generate_headers(ksieveui_Camelmanagescriptsjob_HEADERS
     HEADER_NAMES
     RenameScriptJob
+    CheckScriptJob
     REQUIRED_HEADERS ksieveui_managescriptsjob_HEADERS
     PREFIX KSieveUi
     RELATIVE managescriptsjob
