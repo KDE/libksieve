@@ -15,11 +15,9 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #include "renamescriptjobtest.h"
 #include "../renamescriptjob.h"
 #include <QTest>
-
 
 RenameScriptJobTest::RenameScriptJobTest(QObject *parent)
     : QObject(parent)
@@ -61,6 +59,5 @@ void RenameScriptJobTest::shouldBeStart()
     job.setOldUrl(url);
     QCOMPARE(job.canStart(), canStart);
 }
-
 
 QTEST_MAIN(RenameScriptJobTest)

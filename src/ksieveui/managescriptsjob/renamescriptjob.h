@@ -15,14 +15,14 @@
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #ifndef RENAMESCRIPTJOB_H
 #define RENAMESCRIPTJOB_H
 
 #include <QObject>
 #include <QUrl>
 #include "ksieveui_export.h"
-namespace KManageSieve {
+namespace KManageSieve
+{
 class SieveJob;
 }
 

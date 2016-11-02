@@ -387,7 +387,6 @@ void ManageSieveWidget::slotRenameScript()
         return;
     }
 
-
     u = u.adjusted(QUrl::RemoveFilename);
     u.setPath(u.path() +  QLatin1Char('/') + currentItem->text(0));
 #ifdef USE_RENAME_SIEVE_METHOD
@@ -408,13 +407,13 @@ void ManageSieveWidget::slotRenameFinished(const QString &errorStr, bool success
     if (!success) {
         KMessageBox::error(this, errorStr, i18n("Rename Script"));
     }
-    qCDebug(LIBKSIEVE_LOG) << " void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)"<<success;
+    qCDebug(LIBKSIEVE_LOG) << " void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)" << success;
     slotRefresh();
 }
 
 void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)
 {
-    qCDebug(LIBKSIEVE_LOG) << " void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)"<<success;
+    qCDebug(LIBKSIEVE_LOG) << " void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)" << success;
     slotRefresh();
 }
 
