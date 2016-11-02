@@ -81,10 +81,10 @@ QWidget *SieveConditionEnvironment::createParamWidget(QWidget *parent) const
 
 QString SieveConditionEnvironment::code(QWidget *w) const
 {
-    const QLineEdit *item =  w->findChild<QLineEdit *>(QStringLiteral("item"));
+    const QLineEdit *item = w->findChild<QLineEdit *>(QStringLiteral("item"));
     const QString itemStr = item->text();
 
-    const QLineEdit *value =  w->findChild<QLineEdit *>(QStringLiteral("value"));
+    const QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
     const QString valueStr = value->text();
 
     return QStringLiteral("environment \"%1\" \"%2\"").arg(itemStr, valueStr);
@@ -120,10 +120,10 @@ bool SieveConditionEnvironment::setParamWidgetValue(const QDomElement &element, 
             const QString tagName = e.tagName();
             if (tagName == QLatin1String("str")) {
                 if (index == 0) {
-                    QLineEdit *item =  w->findChild<QLineEdit *>(QStringLiteral("item"));
+                    QLineEdit *item = w->findChild<QLineEdit *>(QStringLiteral("item"));
                     item->setText(AutoCreateScriptUtil::quoteStr(e.text()));
                 } else if (index == 1) {
-                    QLineEdit *value =  w->findChild<QLineEdit *>(QStringLiteral("value"));
+                    QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
                     value->setText(AutoCreateScriptUtil::quoteStr(e.text()));
                 } else {
                     tooManyArgument(tagName, index, 2, error);

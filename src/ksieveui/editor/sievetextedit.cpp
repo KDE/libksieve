@@ -229,7 +229,7 @@ bool SieveTextEdit::openVariableHelp()
 {
     if (!textCursor().hasSelection()) {
         const QString word = selectedWord();
-        const KSieveUi::SieveEditorUtil::HelpVariableName type =  KSieveUi::SieveEditorUtil::strToVariableName(word);
+        const KSieveUi::SieveEditorUtil::HelpVariableName type = KSieveUi::SieveEditorUtil::strToVariableName(word);
         if (type != KSieveUi::SieveEditorUtil::UnknownHelp) {
             const QUrl url = KSieveUi::SieveEditorUtil::helpUrl(type);
             if (!url.isEmpty()) {
@@ -260,7 +260,7 @@ void SieveTextEdit::keyPressEvent(QKeyEvent *e)
     QPlainTextEdit::keyPressEvent(e);
     if (e->key() == Qt::Key_F1 && !textCursor().hasSelection()) {
         const QString word = selectedWord();
-        const KSieveUi::SieveEditorUtil::HelpVariableName type =  KSieveUi::SieveEditorUtil::strToVariableName(word);
+        const KSieveUi::SieveEditorUtil::HelpVariableName type = KSieveUi::SieveEditorUtil::strToVariableName(word);
         if (type != KSieveUi::SieveEditorUtil::UnknownHelp) {
             const QUrl url = KSieveUi::SieveEditorUtil::helpUrl(type);
             if (!url.isEmpty()) {
@@ -296,7 +296,7 @@ void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
 
     if (!textCursor().hasSelection()) {
         const QString word = selectedWord(pos);
-        const KSieveUi::SieveEditorUtil::HelpVariableName type =  KSieveUi::SieveEditorUtil::strToVariableName(word);
+        const KSieveUi::SieveEditorUtil::HelpVariableName type = KSieveUi::SieveEditorUtil::strToVariableName(word);
         if (type != KSieveUi::SieveEditorUtil::UnknownHelp) {
             QAction *separator = new QAction(menu);
             separator->setSeparator(true);
@@ -326,7 +326,7 @@ void SieveTextEdit::slotHelp()
     QAction *act = qobject_cast<QAction *>(sender());
     if (act) {
         const QString word = act->data().toString();
-        const KSieveUi::SieveEditorUtil::HelpVariableName type =  KSieveUi::SieveEditorUtil::strToVariableName(word);
+        const KSieveUi::SieveEditorUtil::HelpVariableName type = KSieveUi::SieveEditorUtil::strToVariableName(word);
         const QUrl url = KSieveUi::SieveEditorUtil::helpUrl(type);
         if (!url.isEmpty()) {
             Q_EMIT openHelp(url);

@@ -364,7 +364,7 @@ void ManageSieveWidget::clear()
 
 void ManageSieveWidget::slotRenameScript()
 {
-    QTreeWidgetItem *currentItem =  d->mTreeView->currentItem();
+    QTreeWidgetItem *currentItem = d->mTreeView->currentItem();
     if (!isFileNameItem(currentItem)) {
         return;
     }
@@ -421,7 +421,7 @@ void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool succe
 
 void ManageSieveWidget::slotDeleteScript()
 {
-    QTreeWidgetItem *currentItem =  d->mTreeView->currentItem();
+    QTreeWidgetItem *currentItem = d->mTreeView->currentItem();
     if (!isFileNameItem(currentItem)) {
         return;
     }
@@ -606,7 +606,7 @@ void ManageSieveWidget::enableDisableActions(bool &newScriptAction, bool &editSc
         desactivateScriptAction = false;
     } else {
         if (serverHasError(item) || !mJobs.keys(item).isEmpty()) {
-            newScriptAction =  false;
+            newScriptAction = false;
         } else {
             newScriptAction = mUrls.count(item);
         }

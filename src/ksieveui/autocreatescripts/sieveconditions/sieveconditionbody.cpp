@@ -68,7 +68,7 @@ QWidget *SieveConditionBody::createParamWidget(QWidget *parent) const
 
 QString SieveConditionBody::code(QWidget *w) const
 {
-    const SelectBodyTypeWidget *bodyType =  w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
+    const SelectBodyTypeWidget *bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
     const QString bodyValue = bodyType->code();
     const SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
     bool isNegative = false;
@@ -138,14 +138,14 @@ bool SieveConditionBody::setParamWidgetValue(const QDomElement &element, QWidget
     }
 
     if (strValue.count() == 1) {
-        SelectBodyTypeWidget *bodyType =  w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
+        SelectBodyTypeWidget *bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
         bodyType->setCode(tagValueList.at(0), QString(), name(), error);
         SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
         matchType->setCode(tagValueList.at(1), name(), error);
         QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
         edit->setText(AutoCreateScriptUtil::quoteStr(strValue.at(0)));
     } else if (strValue.count() == 2) {
-        SelectBodyTypeWidget *bodyType =  w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
+        SelectBodyTypeWidget *bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
         bodyType->setCode(tagValueList.at(0), indexStr == 2 ? strValue.at(0) : QString(), name(), error);
         SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
         matchType->setCode(tagValueList.at(1), name(), error);

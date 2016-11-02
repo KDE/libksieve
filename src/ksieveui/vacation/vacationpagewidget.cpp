@@ -169,7 +169,7 @@ KSieveUi::VacationCreateScriptJob *VacationPageWidget::writeScript()
         vacation.notificationInterval = mVacationEditWidget->notificationInterval();
         vacation.aliases = mVacationEditWidget->mailAliases();
         vacation.sendForSpam = mVacationEditWidget->sendForSpam();
-        vacation.reactOndomainName =  mVacationEditWidget->domainName();
+        vacation.reactOndomainName = mVacationEditWidget->domainName();
         if (mHasDateSupport) {
             vacation.startDate = mVacationEditWidget->startDate();
             vacation.startTime = mVacationEditWidget->startTime();

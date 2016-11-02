@@ -179,7 +179,7 @@ void Vacation::slotDialogOk()
     vacation.notificationInterval = mDialog->notificationInterval();
     vacation.aliases = mDialog->mailAliases();
     vacation.sendForSpam = mDialog->sendForSpam();
-    vacation.reactOndomainName =  mDialog->domainName();
+    vacation.reactOndomainName = mDialog->domainName();
     vacation.startDate = mDialog->startDate();
     vacation.startTime = mDialog->startTime();
     vacation.endDate = mDialog->endDate();
