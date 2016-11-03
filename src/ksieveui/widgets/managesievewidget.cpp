@@ -20,11 +20,11 @@
 #include "widgets/sievetreewidgetitem.h"
 #include "managescriptsjob/renamescriptjob.h"
 #include "libksieve_debug.h"
-#include "sievenetworkmanager.h"
 
 #include <kmanagesieve/sievejob.h>
 #include <managescriptsjob/parseuserscriptjob.h>
 #include <managescriptsjob/generateglobalscriptjob.h>
+#include <PimCommon/NetworkManager>
 #include <util/util.h>
 
 #include <QInputDialog>
@@ -78,7 +78,7 @@ ManageSieveWidget::ManageSieveWidget(QWidget *parent)
     connect(d->mTreeView, &ManageSieveTreeView::itemSelectionChanged, this, &ManageSieveWidget::slotUpdateButtons);
     connect(d->mTreeView, &ManageSieveTreeView::itemChanged, this, &ManageSieveWidget::slotItemChanged);
 
-    connect(KSieveUi::SieveNetworkManager::self()->networkConfigureManager(), &QNetworkConfigurationManager::onlineStateChanged, this, &ManageSieveWidget::slotSystemNetworkOnlineStateChanged);
+    connect(PimCommon::NetworkManager::self()->networkConfigureManager(), &QNetworkConfigurationManager::onlineStateChanged, this, &ManageSieveWidget::slotSystemNetworkOnlineStateChanged);
 
     lay->addWidget(d->mTreeView);
     setLayout(lay);
@@ -93,7 +93,7 @@ ManageSieveWidget::~ManageSieveWidget()
 
 void ManageSieveWidget::slotCheckNetworkStatus()
 {
-    slotSystemNetworkOnlineStateChanged(KSieveUi::SieveNetworkManager::self()->networkConfigureManager()->isOnline());
+    slotSystemNetworkOnlineStateChanged(PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline());
 }
 
 void ManageSieveWidget::slotSystemNetworkOnlineStateChanged(bool state)

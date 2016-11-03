@@ -183,7 +183,6 @@ set(ksieveui_managescriptjob_LIB_SRCS
 
 set(ksieveui_LIB_SRCS
     managesievescriptsdialog.cpp
-    sievenetworkmanager.cpp
     widgets/custommanagesievewidget.cpp
     widgets/sievetreewidgetitem.cpp
     widgets/managesievetreeview.cpp
@@ -245,7 +244,6 @@ target_include_directories(KF5KSieveUi PUBLIC "$<BUILD_INTERFACE:${libksieve_SOU
 ecm_generate_headers(ksieveui_CamelCase_HEADERS
     HEADER_NAMES
     ManageSieveScriptsDialog
-    SieveNetworkManager
     REQUIRED_HEADERS ksieveui_HEADERS
     PREFIX KSieveUi
     )
