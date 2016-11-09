@@ -79,7 +79,8 @@ enum HelpVariableName {
     MBoxMetaDataExtension,
     SubAddressExtension,
     ERejectAction,
-    ImapFlagsExtension
+    ImapFlagsExtension,
+    EditHeaderExtension
 };
 KSieveUi::SieveEditorUtil::HelpVariableName strToVariableName(const QString &str);
 

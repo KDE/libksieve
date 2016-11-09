@@ -73,13 +73,13 @@ QUrl KSieveUi::SieveEditorUtil::helpUrl(KSieveUi::SieveEditorUtil::HelpVariableN
     case AddflagsAction:
         return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5232#page-5"));
     case AddheaderAction:
+    case DeleteheaderAction:
+    case EditHeaderExtension:
         return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5293"));
     case BreakAction:
         return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5703#page-3"));
     case ConvertAction:
         return QUrl(); //TODO
-    case DeleteheaderAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5293"));
     case DiscardAction:
         return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-22"));
     case EncloseAction:
@@ -226,6 +226,8 @@ KSieveUi::SieveEditorUtil::HelpVariableName KSieveUi::SieveEditorUtil::strToVari
         return SubAddressExtension;
     } else if (str == QLatin1String("imapflags")) {
         return ImapFlagsExtension;
+    } else if (str == QLatin1String("editheader")) {
+        return EditHeaderExtension;
     }
 
     //TODO
