@@ -124,6 +124,8 @@ QUrl KSieveUi::SieveEditorUtil::helpUrl(KSieveUi::SieveEditorUtil::HelpVariableN
         return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5490#page-2"));
     case SubAddressExtension:
         return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5233"));
+    case ImapFlagsExtension:
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5232"));
     case UnknownHelp:
         break;
     }
@@ -222,6 +224,8 @@ KSieveUi::SieveEditorUtil::HelpVariableName KSieveUi::SieveEditorUtil::strToVari
         return MBoxMetaDataExtension;
     } else if (str == QLatin1String("subaddress")) {
         return SubAddressExtension;
+    } else if (str == QLatin1String("imapflags")) {
+        return ImapFlagsExtension;
     }
 
     //TODO
