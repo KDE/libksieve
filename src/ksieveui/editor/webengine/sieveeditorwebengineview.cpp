@@ -122,3 +122,12 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
     menu.exec(ev->globalPos());
 }
 
+QWebEngineView *SieveEditorWebEngineView::createWindow(QWebEnginePage::WebWindowType type)
+{
+    Q_UNUSED(type);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 8, 0)
+    return this;
+#else
+    return Q_NULLPTR;
+#endif
+}

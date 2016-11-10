@@ -31,6 +31,7 @@ public:
 
 protected:
     void contextMenuEvent(QContextMenuEvent *ev) Q_DECL_OVERRIDE;
+    QWebEngineView *createWindow(QWebEnginePage::WebWindowType type) Q_DECL_OVERRIDE;
 private:
     void downloadRequested(QWebEngineDownloadItem *);
 };
