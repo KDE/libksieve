@@ -52,7 +52,7 @@ void SieveScriptTabWidget::slotTabContextMenuRequest(const QPoint &pos)
         return;
     }
 
-    SieveWidgetPageAbstract *page = dynamic_cast<SieveWidgetPageAbstract *>(w);
+    SieveWidgetPageAbstract *page = qobject_cast<SieveWidgetPageAbstract *>(w);
     if (!page) {
         return;
     }
