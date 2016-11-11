@@ -29,7 +29,6 @@ using namespace KSieveUi;
 SieveEditorWebEngineView::SieveEditorWebEngineView(QWidget *parent)
     : QWebEngineView(parent)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     QWebEngineProfile *profile = new QWebEngineProfile(this);
     QWebEnginePage *page = new QWebEnginePage(profile, this);
     page->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, false);
@@ -39,13 +38,16 @@ SieveEditorWebEngineView::SieveEditorWebEngineView(QWidget *parent)
     page->settings()->setAttribute(QWebEngineSettings::JavascriptCanAccessClipboard, false);
     page->settings()->setAttribute(QWebEngineSettings::LocalStorageEnabled, false);
     page->settings()->setAttribute(QWebEngineSettings::XSSAuditingEnabled, false);
-    page->settings()->setAttribute(QWebEngineSettings::ErrorPageEnabled, false);
     page->settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, false);
+    page->settings()->setAttribute(QWebEngineSettings::ErrorPageEnabled, false);
     page->settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, false);
-
-    setPage(page);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
+    page->settings()->setAttribute(QWebEngineSettings::ScreenCaptureEnabled, false);
+    page->settings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, false);
+    page->settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
     connect(profile, &QWebEngineProfile::downloadRequested, this, &SieveEditorWebEngineView::downloadRequested);
 #endif
+    setPage(page);
 }
 
 SieveEditorWebEngineView::~SieveEditorWebEngineView()
