@@ -45,7 +45,7 @@ public:
     const QByteArray &getVal() const;
     const QByteArray &getExtra() const;
 
-    void setQuantity(const uint &quantity);
+    void setQuantity(uint quantity);
     void setAction(const QByteArray &newAction);
     void setKey(const QByteArray &newKey);
     void setVal(const QByteArray &newVal);

@@ -102,7 +102,6 @@ void SieveJob::Private::run(Session *session)
         break;
     }
     case Check: {
-        const QString filename = mUrl.fileName(/*QUrl::ObeyTrailingSlash*/);
         QByteArray encodedData;
         append_lf2crlf(encodedData, mScript.toUtf8());
         session->sendData("RENAMESCRIPT {" + QByteArray::number(encodedData.size()) + "+}");

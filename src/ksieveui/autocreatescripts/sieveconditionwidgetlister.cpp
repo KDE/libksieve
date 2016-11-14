@@ -313,7 +313,7 @@ void SieveConditionWidgetLister::loadTest(const QDomElement &element, bool notCo
     }
     if (testElement.hasAttribute(QStringLiteral("name"))) {
         const QString conditionName = testElement.attribute(QStringLiteral("name"));
-        SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(widgets().last());
+        SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
         w->setCondition(conditionName, testElement, notCondition, error);
     }
 }
@@ -348,9 +348,9 @@ void SieveConditionWidgetLister::loadScript(const QDomElement &e, bool uniqTest,
                                     if (firstCondition) {
                                         firstCondition = false;
                                     } else {
-                                        addWidgetAfterThisWidget(widgets().last());
+                                        addWidgetAfterThisWidget(widgets().constLast());
                                     }
-                                    SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(widgets().last());
+                                    SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
                                     if (conditionName == QLatin1String("not")) {
                                         notCondition = true;
                                         QDomNode notNode = testElement.firstChild();

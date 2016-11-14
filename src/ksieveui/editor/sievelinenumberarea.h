@@ -28,6 +28,7 @@ class SieveTextEdit;
 
 class SieveLineNumberArea : public QWidget
 {
+    Q_OBJECT
 public:
     explicit SieveLineNumberArea(SieveTextEdit *editor);
 

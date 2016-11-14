@@ -419,7 +419,6 @@ QString KSieveUi::VacationUtils::updateVacationBlock(const QString &oldScript, c
 
     QStringList lines = oldScript.split(QLatin1Char('\n'));
 
-    QString script;
     if (parserOld.parse() && vdxOld.commandFound()) {
         startOld = vdxOld.lineStart();
         const int endOld(vdxOld.lineEnd());

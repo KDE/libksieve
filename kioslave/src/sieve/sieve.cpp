@@ -132,7 +132,7 @@ const QByteArray &kio_sieveResponse::getExtra() const
 }
 
 /* ---------------------------------------------------------------------------------- */
-void kio_sieveResponse::setQuantity(const uint &newQty)
+void kio_sieveResponse::setQuantity(uint newQty)
 {
     rType = QUANTITY;
     quantity = newQty;

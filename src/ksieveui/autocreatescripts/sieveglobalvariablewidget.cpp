@@ -285,10 +285,10 @@ QWidget *SieveGlobalVariableLister::createWidget(QWidget *parent)
 
 void SieveGlobalVariableLister::loadScript(const QDomElement &element, QString &error)
 {
-    SieveGlobalVariableActionWidget *w = static_cast<SieveGlobalVariableActionWidget *>(widgets().last());
+    SieveGlobalVariableActionWidget *w = static_cast<SieveGlobalVariableActionWidget *>(widgets().constLast());
     if (w->isInitialized()) {
-        addWidgetAfterThisWidget(widgets().last());
-        w = static_cast<SieveGlobalVariableActionWidget *>(widgets().last());
+        addWidgetAfterThisWidget(widgets().constLast());
+        w = static_cast<SieveGlobalVariableActionWidget *>(widgets().constLast());
     }
     w->loadScript(element, error);
 }

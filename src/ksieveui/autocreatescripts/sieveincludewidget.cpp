@@ -323,10 +323,10 @@ void SieveIncludeWidgetLister::loadScript(const QDomElement &element, QString &e
         error += QLatin1Char('\n') + i18n("We can not add more includes elements.") + QLatin1Char('\n');
         return;
     }
-    SieveIncludeActionWidget *w = static_cast<SieveIncludeActionWidget *>(widgets().last());
+    SieveIncludeActionWidget *w = static_cast<SieveIncludeActionWidget *>(widgets().constLast());
     if (w->isInitialized()) {
-        addWidgetAfterThisWidget(widgets().last());
-        w = static_cast<SieveIncludeActionWidget *>(widgets().last());
+        addWidgetAfterThisWidget(widgets().constLast());
+        w = static_cast<SieveIncludeActionWidget *>(widgets().constLast());
     }
     w->loadScript(element, error);
 }

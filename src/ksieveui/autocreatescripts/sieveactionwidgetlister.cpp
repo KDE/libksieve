@@ -353,10 +353,10 @@ void SieveActionWidgetLister::loadScript(const QDomElement &element, bool onlyAc
             if (tagName == QLatin1String("action")) {
                 if (element.hasAttribute(QStringLiteral("name"))) {
                     const QString actionName = element.attribute(QStringLiteral("name"));
-                    SieveActionWidget *w = qobject_cast<SieveActionWidget *>(widgets().last());
+                    SieveActionWidget *w = qobject_cast<SieveActionWidget *>(widgets().constLast());
                     if (w->isConfigurated()) {
-                        addWidgetAfterThisWidget(widgets().last());
-                        w = qobject_cast<SieveActionWidget *>(widgets().last());
+                        addWidgetAfterThisWidget(widgets().constLast());
+                        w = qobject_cast<SieveActionWidget *>(widgets().constLast());
                     }
                     w->setAction(actionName, element, comment, error);
                     //comment.clear();
@@ -384,9 +384,9 @@ void SieveActionWidgetLister::loadScript(const QDomElement &element, bool onlyAc
                         if (firstAction) {
                             firstAction = false;
                         } else {
-                            addWidgetAfterThisWidget(widgets().last());
+                            addWidgetAfterThisWidget(widgets().constLast());
                         }
-                        SieveActionWidget *w = qobject_cast<SieveActionWidget *>(widgets().last());
+                        SieveActionWidget *w = qobject_cast<SieveActionWidget *>(widgets().constLast());
                         w->setAction(actionName, e, comment, error);
                         comment.clear();
                     } else {

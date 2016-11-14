@@ -305,11 +305,13 @@ void VacationUtilsTest::testUpdateVacationBlock()
 
     QStringList linesA = scriptA.split(QLatin1Char('\n'));
     QStringList header;
+    header.reserve(5);
     for (int i = 0; i < 5; ++i) {
         header.append(linesA.at(i));
     }
 
     QStringList vacation;
+    vacation.reserve(linesA.count()-5);
     for (int i = 5; i < linesA.count(); ++i) {
         vacation.append(linesA.at(i));
     }
