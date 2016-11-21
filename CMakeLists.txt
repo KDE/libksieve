@@ -19,7 +19,6 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMAddTests)
 include(ECMCoverageOption)
 
-
 set(PIM_VERSION "5.4.40")
 set(LIBKSIEVE_LIB_VERSION ${PIM_VERSION})
 set(QT_REQUIRED_VERSION "5.6.0")
