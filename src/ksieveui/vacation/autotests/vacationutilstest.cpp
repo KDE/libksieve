@@ -311,7 +311,7 @@ void VacationUtilsTest::testUpdateVacationBlock()
     }
 
     QStringList vacation;
-    vacation.reserve(linesA.count()-5);
+    vacation.reserve(linesA.count() - 5);
     for (int i = 5; i < linesA.count(); ++i) {
         vacation.append(linesA.at(i));
     }

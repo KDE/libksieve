@@ -140,10 +140,10 @@ VacationUtils::Vacation parseScriptLegacy(const QString &script)
     KSieveUi::VacationUtils::Vacation vacation;
     vacation.active = true;
     vacation.valid = Legacy::VacationUtils::parseScript(script, vacation.messageText,
-                      vacation.subject,
-                      vacation.notificationInterval, vacation.aliases,
-                      vacation.sendForSpam, vacation.reactOndomainName,
-                      vacation.startDate, vacation.endDate);
+                     vacation.subject,
+                     vacation.notificationInterval, vacation.aliases,
+                     vacation.sendForSpam, vacation.reactOndomainName,
+                     vacation.startDate, vacation.endDate);
     return vacation;
 }
 

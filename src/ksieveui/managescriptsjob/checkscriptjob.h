@@ -21,7 +21,8 @@
 #include <QObject>
 #include <QUrl>
 #include "ksieveui_export.h"
-namespace KManageSieve {
+namespace KManageSieve
+{
 class SieveJob;
 }
 namespace KSieveUi
@@ -41,7 +42,6 @@ public:
 
     bool canStart() const;
     void start();
-
 
 Q_SIGNALS:
     void finished(const QString &msg, bool success);
