@@ -55,6 +55,7 @@
 #include <PimCommon/KPimPrintPreviewDialog>
 
 #include <errno.h>
+#include <memory>
 
 using namespace KSieveUi;
 
@@ -371,7 +372,7 @@ void SieveEditorTextModeWidget::print()
     if (w == mEditorWidget) {
         QPrinter printer;
 
-        QScopedPointer<QPrintDialog> dlg(new QPrintDialog(&printer));
+        std::unique_ptr<QPrintDialog> dlg(new QPrintDialog(&printer));
 
         if (dlg && dlg->exec() == QDialog::Accepted) {
             mTextEdit->print(&printer);
