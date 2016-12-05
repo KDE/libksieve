@@ -25,7 +25,7 @@
 #include <KComboBox>
 
 class QPushButton;
-class QLineEdit;
+class KLineEdit;
 class QGridLayout;
 class QCheckBox;
 class QDomElement;
@@ -78,7 +78,7 @@ private:
     QCheckBox *mOptional;
     QCheckBox *mOnce;
     SieveIncludeLocation *mLocation;
-    QLineEdit *mIncludeName;
+    KLineEdit *mIncludeName;
 };
 
 class SieveIncludeWidgetLister : public KPIM::KWidgetLister
