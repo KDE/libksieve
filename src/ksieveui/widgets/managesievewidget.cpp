@@ -170,9 +170,10 @@ void ManageSieveWidget::slotContextMenuRequested(const QPoint &p)
         }
     } else if (!item->parent()) {
         // top-levels:
-        if (!serverHasError(item) && mJobs.keys(item).isEmpty()) {
+        const bool jobsListIsEmpty = mJobs.keys(item).isEmpty();
+        if (!serverHasError(item) && jobsListIsEmpty) {
             menu.addAction(QIcon::fromTheme(QStringLiteral("document-new")), i18n("New Script..."), this, &ManageSieveWidget::slotNewScript);
-        } else if (!mJobs.keys(item).isEmpty()) { //In Progress
+        } else if (!jobsListIsEmpty) { //In Progress
             menu.addAction(KStandardGuiItem::cancel().icon(), KStandardGuiItem::cancel().text(), this, &ManageSieveWidget::slotCancelFetch);
         }
     }
@@ -185,7 +186,7 @@ void ManageSieveWidget::slotCancelFetch()
 {
     QTreeWidgetItem *item = d->mTreeView->currentItem();
     if (item) {
-        const QList<KManageSieve::SieveJob *>jobs = mJobs.keys(item);
+        const QList<KManageSieve::SieveJob *> jobs = mJobs.keys(item);
         Q_FOREACH (KManageSieve::SieveJob *job, jobs) {
             job->kill();
         }
@@ -215,10 +216,11 @@ void ManageSieveWidget::slotNewScript()
     }
 
     bool ok = false;
-    const QString name = QInputDialog::getText(this, i18n("New Sieve Script"),
+    QString name = QInputDialog::getText(this, i18n("New Sieve Script"),
                          i18n("Please enter a name for the new Sieve script:"), QLineEdit::Normal,
                          i18n("unnamed"), &ok);
-    if (!ok || name.trimmed().isEmpty()) {
+    name = name.trimmed();
+    if (!ok || name.isEmpty()) {
         return;
     }
 
