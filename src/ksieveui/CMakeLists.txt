@@ -23,6 +23,7 @@ if(BUILD_TESTING)
     add_subdirectory(autocreatescripts/autotests/)
     add_subdirectory(editor/webengine/findbar/autotests/)
     add_subdirectory(editor/webengine/autotests/)
+    add_subdirectory(util/autotests/)
 endif()
 
 set(ksieveui_vacation_LIB_SRCS
@@ -189,6 +190,7 @@ set(ksieveui_LIB_SRCS
     widgets/managesievewidget.cpp
     debug/sievedebugdialog.cpp
     util/util.cpp
+    util/sieveaccount.cpp
     templates/sievetemplatewidget.cpp
     templates/sievedefaulttemplate.cpp
     templates/sievetemplateeditdialog.cpp
@@ -251,6 +253,7 @@ ecm_generate_headers(ksieveui_CamelCase_HEADERS
 ecm_generate_headers(ksieveui_Camelcaseutil_HEADERS
     HEADER_NAMES
     Util
+    SieveAccount
     REQUIRED_HEADERS ksieveui_util_HEADERS
     PREFIX KSieveUi
     RELATIVE util
