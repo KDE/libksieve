@@ -44,7 +44,7 @@ SieveAction *SieveActionFileInto::newAction()
 QString SieveActionFileInto::code(QWidget *w) const
 {
     QString result = QStringLiteral("fileinto ");
-    const KSieveUi::MoveImapFolderWidget *edit = w->findChild<KSieveUi::MoveImapFolderWidget *>(QStringLiteral("fileintolineedit"));
+    const KSieveUi::AbstractMoveImapFolderWidget *edit = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("fileintolineedit"));
     const QString text = edit->text();
     if (mHasCopySupport) {
         const QCheckBox *copy = w->findChild<QCheckBox *>(QStringLiteral("copy"));
@@ -89,7 +89,7 @@ bool SieveActionFileInto::setParamWidgetValue(const QDomElement &element, QWidge
                 }
             } else if (tagName == QLatin1String("str")) {
                 const QString tagValue = e.text();
-                KSieveUi::MoveImapFolderWidget *edit = w->findChild<KSieveUi::MoveImapFolderWidget *>(QStringLiteral("fileintolineedit"));
+                KSieveUi::AbstractMoveImapFolderWidget *edit = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("fileintolineedit"));
                 edit->setText(tagValue);
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
@@ -125,8 +125,9 @@ QWidget *SieveActionFileInto::createParamWidget(QWidget *parent) const
         lay->addWidget(create);
     }
 
+    //TODO use plugin or not
     KSieveUi::MoveImapFolderWidget *edit = new KSieveUi::MoveImapFolderWidget;
-    connect(edit, &KSieveUi::MoveImapFolderWidget::textChanged, this, &SieveActionFileInto::valueChanged);
+    connect(edit, &KSieveUi::AbstractMoveImapFolderWidget::textChanged, this, &SieveActionFileInto::valueChanged);
     lay->addWidget(edit);
     edit->setObjectName(QStringLiteral("fileintolineedit"));
     return w;
