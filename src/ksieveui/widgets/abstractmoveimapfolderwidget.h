@@ -24,6 +24,7 @@
 #include "ksieveui_export.h"
 namespace KSieveUi
 {
+class SieveAccount;
 class KSIEVEUI_EXPORT AbstractMoveImapFolderWidget : public QWidget
 {
     Q_OBJECT
@@ -33,6 +34,7 @@ public:
 
     virtual void setText(const QString &str) = 0;
     virtual QString text() const = 0;
+    virtual void setSieveAccount(const KSieveUi::SieveAccount &account) = 0;
 Q_SIGNALS:
     void textChanged(const QString &);
 };

@@ -49,3 +49,8 @@ QString MoveImapFolderWidget::text() const
     return mLineEdit->text();
 }
 
+void MoveImapFolderWidget::setSieveAccount(const KSieveUi::SieveAccount &account)
+{
+    Q_UNUSED(account);
+}
+
