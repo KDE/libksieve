@@ -123,7 +123,7 @@ set(ksieveui_autocreatescripts_LIB_SRCS
     autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp
     autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp
     autocreatescripts/commonwidgets/selectmimetypecombobox.cpp
-    autocreatescripts/commonwidgets/sievehelpbutton.cpp
+    autocreatescripts/commonwidgets/sievehelpbutton.cpp    
     autocreatescripts/sieveconditions/sievecondition.cpp
     autocreatescripts/sieveconditions/sieveconditionheader.cpp
     autocreatescripts/sieveconditions/sieveconditionlist.cpp
@@ -188,6 +188,7 @@ set(ksieveui_LIB_SRCS
     widgets/sievetreewidgetitem.cpp
     widgets/managesievetreeview.cpp
     widgets/managesievewidget.cpp
+    widgets/abstractmoveimapfolderwidget.cpp
     debug/sievedebugdialog.cpp
     util/util.cpp
     util/sieveaccount.cpp
@@ -298,6 +299,7 @@ ecm_generate_headers(ksieveui_Camelcasewidgets_HEADERS
     ManageSieveWidget
     SieveTreeWidgetItem
     ManageSieveTreeView
+    AbstractMoveImapFolderWidget
     REQUIRED_HEADERS ksieveui_widgets_HEADERS
     PREFIX KSieveUi
     RELATIVE widgets

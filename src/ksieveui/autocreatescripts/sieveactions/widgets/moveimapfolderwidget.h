@@ -21,20 +21,20 @@
 #define MOVEIMAPFOLDERWIDGET_H
 
 #include <QWidget>
+#include <KSieveUi/AbstractMoveImapFolderWidget>
 class QLineEdit;
 namespace KSieveUi
 {
-class MoveImapFolderWidget : public QWidget
+class MoveImapFolderWidget : public KSieveUi::AbstractMoveImapFolderWidget
 {
     Q_OBJECT
 public:
     explicit MoveImapFolderWidget(QWidget *parent = Q_NULLPTR);
     ~MoveImapFolderWidget();
 
-    void setText(const QString &str);
-    QString text() const;
-Q_SIGNALS:
-    void textChanged(const QString &);
+    void setText(const QString &str) Q_DECL_OVERRIDE;
+    QString text() const Q_DECL_OVERRIDE;
+
 private:
     QLineEdit *mLineEdit;
 };
