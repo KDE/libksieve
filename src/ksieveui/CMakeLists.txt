@@ -124,6 +124,7 @@ set(ksieveui_autocreatescripts_LIB_SRCS
     autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp
     autocreatescripts/commonwidgets/selectmimetypecombobox.cpp
     autocreatescripts/commonwidgets/sievehelpbutton.cpp
+    autocreatescripts/commonwidgets/moveimapfolderwidget.cpp
     autocreatescripts/sieveconditions/sievecondition.cpp
     autocreatescripts/sieveconditions/sieveconditionheader.cpp
     autocreatescripts/sieveconditions/sieveconditionlist.cpp
