@@ -37,7 +37,7 @@ void SieveAccountTest::shouldHaveDefaultValue()
 {
     KSieveUi::SieveAccount account;
     QVERIFY(account.password().isEmpty());
-    QVERIFY(account.server().isEmpty());
+    QVERIFY(account.serverName().isEmpty());
     QVERIFY(account.userName().isEmpty());
     QCOMPARE(account.port(), -1);
     QCOMPARE(account.authenticationType(), MailTransport::Transport::EnumAuthenticationType::PLAIN);
@@ -52,12 +52,12 @@ void SieveAccountTest::shouldAssignValue()
     int port = 42;
     MailTransport::Transport::EnumAuthenticationType::type type = MailTransport::Transport::EnumAuthenticationType::CRAM_MD5;
     account.setPassword(pwd);
-    account.setServer(server);
+    account.setServerName(server);
     account.setUserName(user);
     account.setPort(port);
     account.setAuthenticationType(type);
     QCOMPARE(account.password(), pwd);
-    QCOMPARE(account.server(), server);
+    QCOMPARE(account.serverName(), server);
     QCOMPARE(account.userName(), user);
     QCOMPARE(account.port(), port);
     QCOMPARE(account.authenticationType(), type);
@@ -72,7 +72,7 @@ void SieveAccountTest::shouldBeEqual()
     int port = 42;
     MailTransport::Transport::EnumAuthenticationType::type type = MailTransport::Transport::EnumAuthenticationType::CRAM_MD5;
     account.setPassword(pwd);
-    account.setServer(server);
+    account.setServerName(server);
     account.setUserName(user);
     account.setPort(port);
     account.setAuthenticationType(type);

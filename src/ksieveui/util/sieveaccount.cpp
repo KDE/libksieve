@@ -32,14 +32,14 @@ SieveAccount::~SieveAccount()
 {
 }
 
-void SieveAccount::setServer(const QString &server)
+void SieveAccount::setServerName(const QString &server)
 {
-    mServer = server;
+    mServerName = server;
 }
 
-QString SieveAccount::server() const
+QString SieveAccount::serverName() const
 {
-    return mServer;
+    return mServerName;
 }
 
 void SieveAccount::setPort(int port)
@@ -84,9 +84,14 @@ MailTransport::TransportBase::EnumAuthenticationType::type SieveAccount::authent
 
 bool SieveAccount::operator==(const SieveAccount &other) const
 {
-    return (mServer == other.server()) &&
+    return (mServerName == other.serverName()) &&
             (mPassword == other.password()) &&
             (mPort == other.port()) &&
             (mUserName == other.userName()) &&
             (mAuthenticationType == other.authenticationType());
+}
+
+bool SieveAccount::isValid() const
+{
+    return !mServerName.isEmpty() && !mPassword.isEmpty() && (mPort != -1) && (!mUserName.isEmpty());
 }

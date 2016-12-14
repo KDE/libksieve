@@ -32,8 +32,8 @@ public:
     SieveAccount();
     ~SieveAccount();
 
-    void setServer(const QString &server);
-    QString server() const;
+    void setServerName(const QString &serverName);
+    QString serverName() const;
 
     void setPort(int port);
     int port() const;
@@ -48,8 +48,11 @@ public:
     void setAuthenticationType(MailTransport::Transport::EnumAuthenticationType::type type);
     MailTransport::Transport::EnumAuthenticationType::type authenticationType() const;
     bool operator==(const SieveAccount &other) const;
+
+    bool isValid() const;
+
 private:
-    QString mServer;
+    QString mServerName;
     QString mUserName;
     QString mPassword;
     MailTransport::Transport::EnumAuthenticationType::type mAuthenticationType;
