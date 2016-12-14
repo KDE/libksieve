@@ -113,7 +113,6 @@ set(ksieveui_autocreatescripts_LIB_SRCS
     autocreatescripts/sieveactions/sieveactionreturn.cpp
     autocreatescripts/sieveactions/sieveactionereject.cpp
     autocreatescripts/sieveactions/widgets/selectflagswidget.cpp
-    autocreatescripts/sieveactions/widgets/selectfileintowidget.cpp
     autocreatescripts/sieveactions/widgets/addresslineedit.cpp
     autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp
     autocreatescripts/sieveactions/widgets/selectimportancecombobox.cpp
