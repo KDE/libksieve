@@ -33,6 +33,8 @@ public:
 
     void setText(const QString &str);
     QString text() const;
+Q_SIGNALS:
+    void textChanged(const QString &);
 private:
     QLineEdit *mLineEdit;
 };
