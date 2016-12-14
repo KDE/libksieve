@@ -30,6 +30,7 @@ public:
     ~MoveImapFolderWidgetTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldAssignValue();
 
 };
 
