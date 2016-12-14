@@ -14,6 +14,6 @@ endmacro()
 
 add_sieveeditor_autocreatescripts(selectheadertypecomboboxtest.cpp "../sieveconditions/widgets/selectheadertypecombobox.cpp;../autocreatescriptutil.cpp")
 add_sieveeditor_autocreatescripts(selectheadersdialogtest.cpp "../sieveconditions/widgets/selectheadertypecombobox.cpp;../autocreatescriptutil.cpp")
-add_sieveeditor_autocreatescripts(moveimapfolderwidgettest.cpp "../commonwidgets/moveimapfolderwidget.cpp")
+add_sieveeditor_autocreatescripts(moveimapfolderwidgettest.cpp "../sieveactions/widgets/moveimapfolderwidget.cpp")
 
 
