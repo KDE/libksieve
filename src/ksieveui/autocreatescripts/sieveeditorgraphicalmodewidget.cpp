@@ -37,8 +37,6 @@
 
 using namespace KSieveUi;
 
-QStringList SieveEditorGraphicalModeWidget::sCapabilities = QStringList();
-
 SieveEditorGraphicalModeWidget::SieveEditorGraphicalModeWidget(QWidget *parent)
     : SieveEditorAbstractWidget(parent)
 {
@@ -96,12 +94,22 @@ void SieveEditorGraphicalModeWidget::writeConfig()
 
 void SieveEditorGraphicalModeWidget::setSieveCapabilities(const QStringList &capabilities)
 {
-    sCapabilities = capabilities;
+    mCapabilities = capabilities;
 }
 
 QStringList SieveEditorGraphicalModeWidget::sieveCapabilities()
 {
-    return sCapabilities;
+    return mCapabilities;
+}
+
+void SieveEditorGraphicalModeWidget::setSieveAccount(const SieveAccount &sieveAccount)
+{
+    mSieveAccount = sieveAccount;
+}
+
+SieveAccount SieveEditorGraphicalModeWidget::sieveAccount() const
+{
+    return mSieveAccount;
 }
 
 QString SieveEditorGraphicalModeWidget::script(QString &requires) const
