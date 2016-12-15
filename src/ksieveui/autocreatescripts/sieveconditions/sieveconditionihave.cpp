@@ -29,14 +29,9 @@
 #include <QDomNode>
 
 using namespace KSieveUi;
-SieveConditionIhave::SieveConditionIhave(QObject *parent)
-    : SieveCondition(QStringLiteral("ihave"), i18n("IHave"), parent)
+SieveConditionIhave::SieveConditionIhave(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("ihave"), i18n("IHave"), parent)
 {
-}
-
-SieveCondition *SieveConditionIhave::newAction()
-{
-    return new SieveConditionIhave;
 }
 
 QWidget *SieveConditionIhave::createParamWidget(QWidget *parent) const

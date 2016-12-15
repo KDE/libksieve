@@ -26,14 +26,9 @@
 
 using namespace KSieveUi;
 
-SieveConditionFalse::SieveConditionFalse(QObject *parent)
-    : SieveCondition(QStringLiteral("false"), i18n("False"), parent)
+SieveConditionFalse::SieveConditionFalse(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("false"), i18n("False"), parent)
 {
-}
-
-SieveCondition *SieveConditionFalse::newAction()
-{
-    return new SieveConditionFalse;
 }
 
 QWidget *SieveConditionFalse::createParamWidget(QWidget *parent) const

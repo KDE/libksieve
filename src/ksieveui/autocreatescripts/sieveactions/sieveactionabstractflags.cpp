@@ -26,8 +26,8 @@
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
-SieveActionAbstractFlags::SieveActionAbstractFlags(const QString &name, const QString &label, QObject *parent)
-    : SieveAction(name, label, parent)
+SieveActionAbstractFlags::SieveActionAbstractFlags(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent)
+    : SieveAction(sieveGraphicalModeWidget, name, label, parent)
 {
 }
 

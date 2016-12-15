@@ -31,14 +31,9 @@
 
 using namespace KSieveUi;
 
-SieveConditionExists::SieveConditionExists(QObject *parent)
-    : SieveCondition(QStringLiteral("exists"), i18n("Exists"), parent)
+SieveConditionExists::SieveConditionExists(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("exists"), i18n("Exists"), parent)
 {
-}
-
-SieveCondition *SieveConditionExists::newAction()
-{
-    return new SieveConditionExists;
 }
 
 QWidget *SieveConditionExists::createParamWidget(QWidget *parent) const

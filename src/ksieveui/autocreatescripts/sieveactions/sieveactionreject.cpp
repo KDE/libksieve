@@ -29,14 +29,9 @@
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
-SieveActionReject::SieveActionReject(QObject *parent)
-    : SieveAction(QStringLiteral("reject"), i18n("Reject"), parent)
+SieveActionReject::SieveActionReject(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("reject"), i18n("Reject"), parent)
 {
-}
-
-SieveAction *SieveActionReject::newAction()
-{
-    return new SieveActionReject;
 }
 
 QWidget *SieveActionReject::createParamWidget(QWidget *parent) const

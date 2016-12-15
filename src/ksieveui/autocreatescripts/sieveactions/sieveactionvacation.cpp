@@ -34,15 +34,10 @@
 
 using namespace KSieveUi;
 
-SieveActionVacation::SieveActionVacation(QObject *parent)
-    : SieveAction(QStringLiteral("vacation"), i18n("Vacation"), parent)
+SieveActionVacation::SieveActionVacation(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("vacation"), i18n("Vacation"), parent)
 {
     mHasVacationSecondsSupport = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("vacation-seconds"));
-}
-
-SieveAction *SieveActionVacation::newAction()
-{
-    return new SieveActionVacation;
 }
 
 QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const

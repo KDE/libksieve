@@ -18,6 +18,7 @@
 */
 
 #include "sievecondition.h"
+#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 
 #include <KLocalizedString>
 
@@ -25,13 +26,24 @@
 
 using namespace KSieveUi;
 
-SieveCondition::SieveCondition(const QString &name, const QString &label, QObject *parent)
-    : QObject(parent), mName(name), mLabel(label)
+SieveCondition::SieveCondition(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent)
+    : QObject(parent),
+      mSieveGraphicalModeWidget(sieveGraphicalModeWidget),
+      mName(name),
+      mLabel(label)
 {
 }
 
 SieveCondition::~SieveCondition()
 {
+}
+
+QStringList SieveCondition::sieveCapabilities() const
+{
+    if (mSieveGraphicalModeWidget) {
+        return mSieveGraphicalModeWidget->sieveCapabilities();
+    }
+    return {};
 }
 
 QString SieveCondition::name() const

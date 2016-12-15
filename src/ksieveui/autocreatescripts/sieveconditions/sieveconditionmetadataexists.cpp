@@ -28,14 +28,9 @@
 #include <QGridLayout>
 
 using namespace KSieveUi;
-SieveConditionMetaDataExists::SieveConditionMetaDataExists(QObject *parent)
-    : SieveCondition(QStringLiteral("metadataexists"), i18n("Metadata exists"), parent)
+SieveConditionMetaDataExists::SieveConditionMetaDataExists(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("metadataexists"), i18n("Metadata exists"), parent)
 {
-}
-
-SieveCondition *SieveConditionMetaDataExists::newAction()
-{
-    return new SieveConditionMetaDataExists;
 }
 
 QWidget *SieveConditionMetaDataExists::createParamWidget(QWidget *parent) const

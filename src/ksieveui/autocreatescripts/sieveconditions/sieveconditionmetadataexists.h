@@ -27,9 +27,7 @@ class SieveConditionMetaDataExists : public SieveCondition
 {
     Q_OBJECT
 public:
-    explicit SieveConditionMetaDataExists(QObject *parent = Q_NULLPTR);
-
-    static SieveCondition *newAction();
+    explicit SieveConditionMetaDataExists(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
 
     QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
 

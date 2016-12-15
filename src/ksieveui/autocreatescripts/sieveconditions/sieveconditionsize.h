@@ -27,9 +27,7 @@ class SieveConditionSize : public SieveCondition
 {
     Q_OBJECT
 public:
-    explicit SieveConditionSize(QObject *parent = Q_NULLPTR);
-
-    static SieveCondition *newAction();
+    explicit SieveConditionSize(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
 
     QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
 

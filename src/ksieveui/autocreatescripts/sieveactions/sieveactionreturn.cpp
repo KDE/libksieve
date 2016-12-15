@@ -22,14 +22,9 @@
 #include <KLocalizedString>
 
 using namespace KSieveUi;
-SieveActionReturn::SieveActionReturn(QObject *parent)
-    : SieveAction(QStringLiteral("return"), i18n("Return"), parent)
+SieveActionReturn::SieveActionReturn(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("return"), i18n("Return"), parent)
 {
-}
-
-SieveAction *SieveActionReturn::newAction()
-{
-    return new SieveActionReturn;
 }
 
 QString SieveActionReturn::code(QWidget *) const

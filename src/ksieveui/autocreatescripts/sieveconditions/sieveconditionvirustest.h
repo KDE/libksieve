@@ -27,9 +27,7 @@ class SieveConditionVirusTest : public SieveCondition
 {
     Q_OBJECT
 public:
-    explicit SieveConditionVirusTest(QObject *parent = Q_NULLPTR);
-
-    static SieveCondition *newAction();
+    explicit SieveConditionVirusTest(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
 
     QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
 

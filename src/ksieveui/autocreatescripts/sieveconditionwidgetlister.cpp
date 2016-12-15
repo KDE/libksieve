@@ -41,8 +41,9 @@ using namespace KSieveUi;
 static const int MINIMUMCONDITION = 1;
 static const int MAXIMUMCONDITION = 8;
 
-SieveConditionWidget::SieveConditionWidget(QWidget *parent)
-    : QWidget(parent)
+SieveConditionWidget::SieveConditionWidget(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent)
+    : QWidget(parent),
+      mSieveGraphicalModeWidget(sieveGraphicalModeWidget)
 {
     initWidget();
 }
@@ -90,13 +91,13 @@ void SieveConditionWidget::initWidget()
     mComboBox = new PimCommon::MinimumComboBox;
     mComboBox->setEditable(false);
 
-    const QList<KSieveUi::SieveCondition *> list = KSieveUi::SieveConditionList::conditionList();
+    const QList<KSieveUi::SieveCondition *> list = KSieveUi::SieveConditionList::conditionList(mSieveGraphicalModeWidget);
     QList<KSieveUi::SieveCondition *>::const_iterator it;
     QList<KSieveUi::SieveCondition *>::const_iterator end(list.constEnd());
     int index = 0;
     for (index = 0, it = list.constBegin(); it != end; ++it, ++index) {
         if ((*it)->needCheckIfServerHasCapability()) {
-            if (SieveEditorGraphicalModeWidget::sieveCapabilities().contains((*it)->serverNeedsCapability())) {
+            if (mSieveGraphicalModeWidget->sieveCapabilities().contains((*it)->serverNeedsCapability())) {
                 // append to the list of actions:
                 mConditionList.append(*it);
                 connect(*it, &SieveCondition::valueChanged, this, &SieveConditionWidget::valueChanged);
@@ -207,8 +208,9 @@ void SieveConditionWidget::setCondition(const QString &conditionName, const QDom
     }
 }
 
-SieveConditionWidgetLister::SieveConditionWidgetLister(QWidget *parent)
-    : KPIM::KWidgetLister(false, MINIMUMCONDITION, MAXIMUMCONDITION, parent)
+SieveConditionWidgetLister::SieveConditionWidgetLister(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent)
+    : KPIM::KWidgetLister(false, MINIMUMCONDITION, MAXIMUMCONDITION, parent),
+      mSieveGraphicalModeWidget(sieveGraphicalModeWidget)
 {
     slotClear();
     updateAddRemoveButton();
@@ -271,7 +273,7 @@ void SieveConditionWidgetLister::clearWidget(QWidget *aWidget)
 
 QWidget *SieveConditionWidgetLister::createWidget(QWidget *parent)
 {
-    SieveConditionWidget *w = new SieveConditionWidget(parent);
+    SieveConditionWidget *w = new SieveConditionWidget(mSieveGraphicalModeWidget, parent);
     reconnectWidget(w);
     return w;
 }

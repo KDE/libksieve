@@ -28,9 +28,8 @@ class SieveConditionCurrentDate : public SieveCondition
 {
     Q_OBJECT
 public:
-    explicit SieveConditionCurrentDate(QObject *parent = Q_NULLPTR);
+    explicit SieveConditionCurrentDate(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
 
-    static SieveCondition *newAction();
 
     QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
 

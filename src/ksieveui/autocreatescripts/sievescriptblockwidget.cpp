@@ -36,9 +36,10 @@
 
 namespace KSieveUi
 {
-SieveScriptBlockWidget::SieveScriptBlockWidget(QWidget *parent)
+SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent)
     : SieveWidgetPageAbstract(parent),
-      mMatchCondition(AndCondition)
+      mMatchCondition(AndCondition),
+      mSieveGraphicalModeWidget(graphicalModeWidget)
 {
     QVBoxLayout *topLayout = new QVBoxLayout(this);
     topLayout->setMargin(0);
@@ -65,7 +66,7 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(QWidget *parent)
     connect(bg, static_cast<void (QButtonGroup::*)(QAbstractButton *)>(&QButtonGroup::buttonClicked), this, &SieveScriptBlockWidget::slotRadioClicked);
     mConditions->setLayout(vbox);
 
-    mScriptConditionLister = new SieveConditionWidgetLister;
+    mScriptConditionLister = new SieveConditionWidgetLister(mSieveGraphicalModeWidget, this);
     connect(mScriptConditionLister, &SieveConditionWidgetLister::valueChanged, this, &SieveScriptBlockWidget::valueChanged);
     vbox->addWidget(mScriptConditionLister);
 
@@ -74,7 +75,7 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(QWidget *parent)
     QGroupBox *actions = new QGroupBox(i18n("Actions"));
     vbox = new QVBoxLayout;
     actions->setLayout(vbox);
-    mScriptActionLister = new SieveActionWidgetLister;
+    mScriptActionLister = new SieveActionWidgetLister(mSieveGraphicalModeWidget, this);
     connect(mScriptActionLister, &SieveActionWidgetLister::valueChanged, this, &SieveScriptBlockWidget::valueChanged);
     vbox->addWidget(mScriptActionLister, 0, Qt::AlignTop);
     topLayout->addWidget(actions);

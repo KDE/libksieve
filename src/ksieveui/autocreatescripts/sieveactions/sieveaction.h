@@ -24,20 +24,17 @@
 class QDomElement;
 namespace KSieveUi
 {
+class SieveEditorGraphicalModeWidget;
 class SieveAction : public QObject
 {
     Q_OBJECT
 public:
-    SieveAction(const QString &name, const QString &label, QObject *parent = Q_NULLPTR);
+    SieveAction(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent = Q_NULLPTR);
     virtual ~SieveAction();
 
     QString name() const;
     QString label() const;
 
-    /**
-     * Static function that creates a filter action of this type.
-     */
-    static SieveAction *newAction();
 
     virtual QWidget *createParamWidget(QWidget *parent) const;
 
@@ -62,6 +59,10 @@ public:
     void unknowTagValue(const QString &tagValue, QString &error);
     void tooManyArgument(const QString &tagName, int index, int maxValue, QString &error);
     void serverDoesNotSupportFeatures(const QString &feature, QString &error);
+
+protected:
+    QStringList sieveCapabilities() const;
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
 
 Q_SIGNALS:
     void valueChanged();

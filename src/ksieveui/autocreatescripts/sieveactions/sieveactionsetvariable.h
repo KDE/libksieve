@@ -26,8 +26,7 @@ class SieveActionSetVariable : public SieveAction
 {
     Q_OBJECT
 public:
-    explicit SieveActionSetVariable(QObject *parent = Q_NULLPTR);
-    static SieveAction *newAction();
+    explicit SieveActionSetVariable(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
     QString code(QWidget *) const Q_DECL_OVERRIDE;
     QString help() const Q_DECL_OVERRIDE;
     QStringList needRequires(QWidget *parent) const Q_DECL_OVERRIDE;

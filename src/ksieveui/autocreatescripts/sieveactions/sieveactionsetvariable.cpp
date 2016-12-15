@@ -32,15 +32,10 @@
 #include <QGridLayout>
 
 using namespace KSieveUi;
-SieveActionSetVariable::SieveActionSetVariable(QObject *parent)
-    : SieveAction(QStringLiteral("set"), i18n("Variable"), parent)
+SieveActionSetVariable::SieveActionSetVariable(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("set"), i18n("Variable"), parent)
 {
     mHasRegexCapability = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("regex"));
-}
-
-SieveAction *SieveActionSetVariable::newAction()
-{
-    return new SieveActionSetVariable;
 }
 
 QWidget *SieveActionSetVariable::createParamWidget(QWidget *parent) const

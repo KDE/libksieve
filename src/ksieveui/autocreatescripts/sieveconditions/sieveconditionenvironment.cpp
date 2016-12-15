@@ -31,14 +31,9 @@
 #include <QGridLayout>
 
 using namespace KSieveUi;
-SieveConditionEnvironment::SieveConditionEnvironment(QObject *parent)
-    : SieveCondition(QStringLiteral("environment"), i18n("Environment"), parent)
+SieveConditionEnvironment::SieveConditionEnvironment(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("environment"), i18n("Environment"), parent)
 {
-}
-
-SieveCondition *SieveConditionEnvironment::newAction()
-{
-    return new SieveConditionEnvironment;
 }
 
 QWidget *SieveConditionEnvironment::createParamWidget(QWidget *parent) const

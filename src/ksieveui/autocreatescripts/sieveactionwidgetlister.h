@@ -37,11 +37,12 @@ namespace KSieveUi
 {
 class SieveAction;
 class SieveHelpButton;
+class SieveEditorGraphicalModeWidget;
 class SieveActionWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SieveActionWidget(QWidget *parent);
+    explicit SieveActionWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent);
     ~SieveActionWidget();
 
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
@@ -72,13 +73,14 @@ private:
     QGridLayout *mLayout;
     SieveHelpButton *mHelpButton;
     QToolButton *mCommentButton;
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
 };
 
 class SieveActionWidgetLister : public KPIM::KWidgetLister
 {
     Q_OBJECT
 public:
-    explicit SieveActionWidgetLister(QWidget *parent = Q_NULLPTR);
+    explicit SieveActionWidgetLister(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent = Q_NULLPTR);
     ~SieveActionWidgetLister();
 
     void generatedScript(QString &script, QStringList &requires, bool onlyActions);
@@ -99,6 +101,8 @@ protected:
 private:
     void reconnectWidget(SieveActionWidget *w);
     void updateAddRemoveButton();
+
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
 };
 }
 

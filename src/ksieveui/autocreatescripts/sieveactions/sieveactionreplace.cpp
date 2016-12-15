@@ -30,14 +30,9 @@
 #include <QGridLayout>
 
 using namespace KSieveUi;
-SieveActionReplace::SieveActionReplace(QObject *parent)
-    : SieveAction(QStringLiteral("replace"), i18n("Replace"), parent)
+SieveActionReplace::SieveActionReplace(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("replace"), i18n("Replace"), parent)
 {
-}
-
-SieveAction *SieveActionReplace::newAction()
-{
-    return new SieveActionReplace;
 }
 
 QWidget *SieveActionReplace::createParamWidget(QWidget *parent) const

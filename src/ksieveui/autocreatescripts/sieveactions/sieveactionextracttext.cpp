@@ -29,14 +29,9 @@
 #include <QGridLayout>
 
 using namespace KSieveUi;
-SieveActionExtractText::SieveActionExtractText(QObject *parent)
-    : SieveAction(QStringLiteral("extracttext"), i18n("Extract Text"), parent)
+SieveActionExtractText::SieveActionExtractText(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("extracttext"), i18n("Extract Text"), parent)
 {
-}
-
-SieveAction *SieveActionExtractText::newAction()
-{
-    return new SieveActionExtractText;
 }
 
 QWidget *SieveActionExtractText::createParamWidget(QWidget *parent) const

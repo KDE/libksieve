@@ -29,16 +29,11 @@
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
-SieveActionKeep::SieveActionKeep(QObject *parent)
-    : SieveAction(QStringLiteral("keep"), i18n("Keep"), parent)
+SieveActionKeep::SieveActionKeep(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("keep"), i18n("Keep"), parent)
 {
     mHasImapFlag4Support = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("imap4flags"));
     mHasFlagSupport = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("imapflags")) || mHasImapFlag4Support;
-}
-
-SieveAction *SieveActionKeep::newAction()
-{
-    return new SieveActionKeep;
 }
 
 QString SieveActionKeep::code(QWidget *w) const

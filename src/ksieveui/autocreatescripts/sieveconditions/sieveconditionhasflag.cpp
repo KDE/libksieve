@@ -32,15 +32,10 @@
 #include <QLabel>
 
 using namespace KSieveUi;
-SieveConditionHasFlag::SieveConditionHasFlag(QObject *parent)
-    : SieveCondition(QStringLiteral("hasflag"), i18n("Has Flag"), parent)
+SieveConditionHasFlag::SieveConditionHasFlag(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("hasflag"), i18n("Has Flag"), parent)
 {
     hasVariableSupport = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("variables"));
-}
-
-SieveCondition *SieveConditionHasFlag::newAction()
-{
-    return new SieveConditionHasFlag;
 }
 
 QWidget *SieveConditionHasFlag::createParamWidget(QWidget *parent) const

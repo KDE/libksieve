@@ -27,10 +27,7 @@ class SieveConditionExists : public SieveCondition
 {
     Q_OBJECT
 public:
-    explicit SieveConditionExists(QObject *parent = Q_NULLPTR);
-
-    static SieveCondition *newAction();
-
+    explicit SieveConditionExists(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
     QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
 
     QString code(QWidget *parent) const Q_DECL_OVERRIDE;

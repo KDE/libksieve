@@ -29,14 +29,9 @@
 
 using namespace KSieveUi;
 
-SieveConditionSize::SieveConditionSize(QObject *parent)
-    : SieveCondition(QStringLiteral("size"), i18n("Size"), parent)
+SieveConditionSize::SieveConditionSize(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("size"), i18n("Size"), parent)
 {
-}
-
-SieveCondition *SieveConditionSize::newAction()
-{
-    return new SieveConditionSize;
 }
 
 QWidget *SieveConditionSize::createParamWidget(QWidget *parent) const

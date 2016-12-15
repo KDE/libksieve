@@ -31,14 +31,9 @@
 
 using namespace KSieveUi;
 
-SieveActionAddHeader::SieveActionAddHeader(QObject *parent)
-    : SieveActionAbstractEditHeader(QStringLiteral("addheader"), i18n("Add header"), parent)
+SieveActionAddHeader::SieveActionAddHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveActionAbstractEditHeader(sieveGraphicalModeWidget, QStringLiteral("addheader"), i18n("Add header"), parent)
 {
-}
-
-SieveAction *SieveActionAddHeader::newAction()
-{
-    return new SieveActionAddHeader;
 }
 
 QWidget *SieveActionAddHeader::createParamWidget(QWidget *parent) const

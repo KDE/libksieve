@@ -34,14 +34,9 @@
 
 using namespace KSieveUi;
 
-SieveConditionEnvelope::SieveConditionEnvelope(QObject *parent)
-    : SieveCondition(QStringLiteral("envelope"), i18n("Envelope"), parent)
+SieveConditionEnvelope::SieveConditionEnvelope(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("envelope"), i18n("Envelope"), parent)
 {
-}
-
-SieveCondition *SieveConditionEnvelope::newAction()
-{
-    return new SieveConditionEnvelope;
 }
 
 QWidget *SieveConditionEnvelope::createParamWidget(QWidget *parent) const

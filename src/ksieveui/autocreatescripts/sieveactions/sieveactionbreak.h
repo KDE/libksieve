@@ -26,8 +26,7 @@ class SieveActionBreak : public SieveAction
 {
     Q_OBJECT
 public:
-    explicit SieveActionBreak(QObject *parent = Q_NULLPTR);
-    static SieveAction *newAction();
+    explicit SieveActionBreak(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
     QString code(QWidget *) const Q_DECL_OVERRIDE;
     QString help() const Q_DECL_OVERRIDE;
     QStringList needRequires(QWidget *parent) const Q_DECL_OVERRIDE;

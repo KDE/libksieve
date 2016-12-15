@@ -25,11 +25,12 @@
 class QDomElement;
 namespace KSieveUi
 {
+class SieveEditorGraphicalModeWidget;
 class SieveCondition : public QObject
 {
     Q_OBJECT
 public:
-    SieveCondition(const QString &name, const QString &label, QObject *parent = Q_NULLPTR);
+    SieveCondition(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent = Q_NULLPTR);
     virtual ~SieveCondition();
 
     QString name() const;
@@ -59,6 +60,10 @@ public:
     void unknowTagValue(const QString &tagValue, QString &error);
     void tooManyArgument(const QString &tagName, int index, int maxValue, QString &error);
     void serverDoesNotSupportFeatures(const QString &feature, QString &error);
+
+protected:
+    QStringList sieveCapabilities() const;
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
 
 Q_SIGNALS:
     void valueChanged();

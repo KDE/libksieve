@@ -29,14 +29,9 @@
 #include <QGridLayout>
 
 using namespace KSieveUi;
-SieveConditionConvert::SieveConditionConvert(QObject *parent)
-    : SieveCondition(QStringLiteral("convert"), i18n("Convert"), parent)
+SieveConditionConvert::SieveConditionConvert(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("convert"), i18n("Convert"), parent)
 {
-}
-
-SieveCondition *SieveConditionConvert::newAction()
-{
-    return new SieveConditionConvert;
 }
 
 QWidget *SieveConditionConvert::createParamWidget(QWidget *parent) const

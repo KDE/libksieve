@@ -30,14 +30,9 @@
 
 using namespace KSieveUi;
 
-SieveConditionCurrentDate::SieveConditionCurrentDate(QObject *parent)
-    : SieveCondition(QStringLiteral("currentdate"), i18n("Currentdate"), parent)
+SieveConditionCurrentDate::SieveConditionCurrentDate(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("currentdate"), i18n("Currentdate"), parent)
 {
-}
-
-SieveCondition *SieveConditionCurrentDate::newAction()
-{
-    return new SieveConditionCurrentDate;
 }
 
 QWidget *SieveConditionCurrentDate::createParamWidget(QWidget *parent) const

@@ -27,9 +27,7 @@ class SieveConditionEnvironment : public SieveCondition
 {
     Q_OBJECT
 public:
-    explicit SieveConditionEnvironment(QObject *parent = Q_NULLPTR);
-
-    static SieveCondition *newAction();
+    explicit SieveConditionEnvironment(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
 
     QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
 

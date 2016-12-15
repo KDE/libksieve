@@ -31,14 +31,9 @@
 
 using namespace KSieveUi;
 
-SieveConditionDate::SieveConditionDate(QObject *parent)
-    : SieveCondition(QStringLiteral("date"), i18n("Date"), parent)
+SieveConditionDate::SieveConditionDate(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("date"), i18n("Date"), parent)
 {
-}
-
-SieveCondition *SieveConditionDate::newAction()
-{
-    return new SieveConditionDate;
 }
 
 QWidget *SieveConditionDate::createParamWidget(QWidget *parent) const

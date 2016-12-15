@@ -33,14 +33,9 @@
 
 using namespace KSieveUi;
 
-SieveConditionAddress::SieveConditionAddress(QObject *parent)
-    : SieveCondition(QStringLiteral("address"), i18n("Address"), parent)
+SieveConditionAddress::SieveConditionAddress(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("address"), i18n("Address"), parent)
 {
-}
-
-SieveCondition *SieveConditionAddress::newAction()
-{
-    return new SieveConditionAddress;
 }
 
 QWidget *SieveConditionAddress::createParamWidget(QWidget *parent) const

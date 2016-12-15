@@ -51,8 +51,9 @@ inline const QString indentation()
 }
 }
 
-SieveActionWidget::SieveActionWidget(QWidget *parent)
-    : QWidget(parent)
+SieveActionWidget::SieveActionWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent)
+    : QWidget(parent),
+      mSieveGraphicalModeWidget(graphicalModeWidget)
 {
     initWidget();
 }
@@ -108,11 +109,11 @@ void SieveActionWidget::initWidget()
 
     mComboBox = new PimCommon::MinimumComboBox;
     mComboBox->setEditable(false);
-    const QList<KSieveUi::SieveAction *> list = KSieveUi::SieveActionList::actionList();
+    const QList<KSieveUi::SieveAction *> list = KSieveUi::SieveActionList::actionList(mSieveGraphicalModeWidget);
     QList<KSieveUi::SieveAction *>::const_iterator it;
     QList<KSieveUi::SieveAction *>::const_iterator end(list.constEnd());
     int index = 0;
-    QStringList listCapabilities = SieveEditorGraphicalModeWidget::sieveCapabilities();
+    QStringList listCapabilities = mSieveGraphicalModeWidget->sieveCapabilities();
     //imapflags was old name of imap4flags but still used.
     if (listCapabilities.contains(QStringLiteral("imap4flags"))) {
         listCapabilities.append(QStringLiteral("imapflags"));
@@ -259,8 +260,9 @@ bool SieveActionWidget::setAction(const QString &actionName, const QDomElement &
     return result;
 }
 
-SieveActionWidgetLister::SieveActionWidgetLister(QWidget *parent)
-    : KPIM::KWidgetLister(false, MINIMUMACTION, MAXIMUMACTION, parent)
+SieveActionWidgetLister::SieveActionWidgetLister(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent)
+    : KPIM::KWidgetLister(false, MINIMUMACTION, MAXIMUMACTION, parent),
+      mSieveGraphicalModeWidget(graphicalModeWidget)
 {
     slotClear();
     updateAddRemoveButton();
@@ -334,7 +336,7 @@ void SieveActionWidgetLister::clearWidget(QWidget *aWidget)
 
 QWidget *SieveActionWidgetLister::createWidget(QWidget *parent)
 {
-    SieveActionWidget *w = new SieveActionWidget(parent);
+    SieveActionWidget *w = new SieveActionWidget(mSieveGraphicalModeWidget, parent);
     reconnectWidget(w);
     return w;
 }

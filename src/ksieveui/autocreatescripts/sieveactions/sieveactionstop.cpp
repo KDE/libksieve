@@ -23,14 +23,9 @@
 
 using namespace KSieveUi;
 
-SieveActionStop::SieveActionStop(QObject *parent)
-    : SieveAction(QStringLiteral("stop"), i18n("Stop"), parent)
+SieveActionStop::SieveActionStop(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("stop"), i18n("Stop"), parent)
 {
-}
-
-SieveAction *SieveActionStop::newAction()
-{
-    return new SieveActionStop;
 }
 
 QString SieveActionStop::code(QWidget *) const

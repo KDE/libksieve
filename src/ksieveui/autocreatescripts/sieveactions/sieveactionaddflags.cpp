@@ -22,14 +22,9 @@
 #include <KLocalizedString>
 
 using namespace KSieveUi;
-SieveActionAddFlags::SieveActionAddFlags(QObject *parent)
-    : SieveActionAbstractFlags(QStringLiteral("addflag"), i18n("Add Flags"), parent)
+SieveActionAddFlags::SieveActionAddFlags(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveActionAbstractFlags(sieveGraphicalModeWidget, QStringLiteral("addflag"), i18n("Add Flags"), parent)
 {
-}
-
-SieveAction *SieveActionAddFlags::newAction()
-{
-    return new SieveActionAddFlags;
 }
 
 QString SieveActionAddFlags::flagsCode() const

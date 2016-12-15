@@ -31,14 +31,9 @@
 
 using namespace KSieveUi;
 
-SieveConditionVirusTest::SieveConditionVirusTest(QObject *parent)
-    : SieveCondition(QStringLiteral("virustest"), i18n("Virus Test"), parent)
+SieveConditionVirusTest::SieveConditionVirusTest(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("virustest"), i18n("Virus Test"), parent)
 {
-}
-
-SieveCondition *SieveConditionVirusTest::newAction()
-{
-    return new SieveConditionVirusTest;
 }
 
 QWidget *SieveConditionVirusTest::createParamWidget(QWidget *parent) const

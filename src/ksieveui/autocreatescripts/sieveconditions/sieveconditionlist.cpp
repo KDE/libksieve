@@ -45,30 +45,30 @@
 #include "sieveconditionservermetadata.h"
 #include "sieveconditionservermetadataexists.h"
 
-QList<KSieveUi::SieveCondition *> KSieveUi::SieveConditionList::conditionList()
+QList<KSieveUi::SieveCondition *> KSieveUi::SieveConditionList::conditionList(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget)
 {
     QList<KSieveUi::SieveCondition *> list;
-    list.append(new KSieveUi::SieveConditionHeader);
-    list.append(new KSieveUi::SieveConditionAddress);
-    list.append(new KSieveUi::SieveConditionSize);
-    list.append(new KSieveUi::SieveConditionEnvelope);
-    list.append(new KSieveUi::SieveConditionExists);
-    list.append(new KSieveUi::SieveConditionTrue);
-    list.append(new KSieveUi::SieveConditionFalse);
-    list.append(new KSieveUi::SieveConditionBody);
-    list.append(new KSieveUi::SieveConditionDate);
-    list.append(new KSieveUi::SieveConditionCurrentDate);
-    list.append(new KSieveUi::SieveConditionMailboxExists);
-    list.append(new KSieveUi::SieveConditionSpamTest);
-    list.append(new KSieveUi::SieveConditionVirusTest);
-    list.append(new KSieveUi::SieveConditionIhave);
-    list.append(new KSieveUi::SieveConditionEnvironment);
-    list.append(new KSieveUi::SieveConditionHasFlag);
-    list.append(new KSieveUi::SieveConditionMetaData);
-    list.append(new KSieveUi::SieveConditionConvert);
-    list.append(new KSieveUi::SieveConditionMetaDataExists);
-    list.append(new KSieveUi::SieveConditionServerMetaData);
-    list.append(new KSieveUi::SieveConditionServerMetaDataExists);
+    list.append(new KSieveUi::SieveConditionHeader(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionAddress(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionSize(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionEnvelope(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionExists(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionTrue(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionFalse(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionBody(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionDate(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionCurrentDate(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionMailboxExists(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionSpamTest(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionVirusTest(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionIhave(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionEnvironment(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionHasFlag(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionMetaData(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionConvert(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionMetaDataExists(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionServerMetaData(sieveGraphicalModeWidget));
+    list.append(new KSieveUi::SieveConditionServerMetaDataExists(sieveGraphicalModeWidget));
     return list;
 }
 

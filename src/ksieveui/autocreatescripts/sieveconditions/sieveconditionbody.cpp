@@ -30,14 +30,9 @@
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
-SieveConditionBody::SieveConditionBody(QObject *parent)
-    : SieveCondition(QStringLiteral("body"), i18n("Body"), parent)
+SieveConditionBody::SieveConditionBody(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("body"), i18n("Body"), parent)
 {
-}
-
-SieveCondition *SieveConditionBody::newAction()
-{
-    return new SieveConditionBody;
 }
 
 QWidget *SieveConditionBody::createParamWidget(QWidget *parent) const

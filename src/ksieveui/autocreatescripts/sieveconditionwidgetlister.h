@@ -35,11 +35,12 @@ namespace KSieveUi
 {
 class SieveCondition;
 class SieveHelpButton;
+class SieveEditorGraphicalModeWidget;
 class SieveConditionWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SieveConditionWidget(QWidget *parent);
+    explicit SieveConditionWidget(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent);
     ~SieveConditionWidget();
 
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
@@ -67,13 +68,14 @@ private:
     PimCommon::MinimumComboBox *mComboBox;
     QGridLayout *mLayout;
     SieveHelpButton *mHelpButton;
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
 };
 
 class SieveConditionWidgetLister : public KPIM::KWidgetLister
 {
     Q_OBJECT
 public:
-    explicit SieveConditionWidgetLister(QWidget *parent = Q_NULLPTR);
+    explicit SieveConditionWidgetLister(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent = Q_NULLPTR);
     ~SieveConditionWidgetLister();
 
     void generatedScript(QString &script, int &numberOfCondition, QStringList &requires);
@@ -95,6 +97,7 @@ private:
     void loadTest(const QDomElement &e, bool notCondition, QString &error);
     void reconnectWidget(SieveConditionWidget *w);
     void updateAddRemoveButton();
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
 };
 }
 

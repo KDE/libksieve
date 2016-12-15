@@ -29,14 +29,9 @@
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
-SieveActionBreak::SieveActionBreak(QObject *parent)
-    : SieveAction(QStringLiteral("break"), i18n("Break"), parent)
+SieveActionBreak::SieveActionBreak(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("break"), i18n("Break"), parent)
 {
-}
-
-SieveAction *SieveActionBreak::newAction()
-{
-    return new SieveActionBreak;
 }
 
 QWidget *SieveActionBreak::createParamWidget(QWidget *parent) const

@@ -23,15 +23,28 @@
 
 #include <QWidget>
 
+#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
+
 using namespace KSieveUi;
 
-SieveAction::SieveAction(const QString &name, const QString &label, QObject *parent)
-    : QObject(parent), mName(name), mLabel(label)
+SieveAction::SieveAction(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent)
+    : QObject(parent),
+      mSieveGraphicalModeWidget(sieveGraphicalModeWidget),
+      mName(name),
+      mLabel(label)
 {
 }
 
 SieveAction::~SieveAction()
 {
+}
+
+QStringList SieveAction::sieveCapabilities() const
+{
+    if (mSieveGraphicalModeWidget) {
+        return mSieveGraphicalModeWidget->sieveCapabilities();
+    }
+    return {};
 }
 
 QString SieveAction::name() const
@@ -42,11 +55,6 @@ QString SieveAction::name() const
 QString SieveAction::label() const
 {
     return mLabel;
-}
-
-SieveAction *SieveAction::newAction()
-{
-    return Q_NULLPTR;
 }
 
 QWidget *SieveAction::createParamWidget(QWidget *parent) const

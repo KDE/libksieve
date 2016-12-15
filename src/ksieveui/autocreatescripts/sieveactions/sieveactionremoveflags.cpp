@@ -23,14 +23,9 @@
 #include <KLocalizedString>
 
 using namespace KSieveUi;
-SieveActionRemoveFlags::SieveActionRemoveFlags(QObject *parent)
-    : SieveActionAbstractFlags(QStringLiteral("removeflag"), i18n("Remove Flags"), parent)
+SieveActionRemoveFlags::SieveActionRemoveFlags(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveActionAbstractFlags(sieveGraphicalModeWidget, QStringLiteral("removeflag"), i18n("Remove Flags"), parent)
 {
-}
-
-SieveAction *SieveActionRemoveFlags::newAction()
-{
-    return new SieveActionRemoveFlags;
 }
 
 QString SieveActionRemoveFlags::flagsCode() const

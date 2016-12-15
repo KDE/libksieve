@@ -31,16 +31,11 @@
 #include <QDomNode>
 //Add support for adding flags
 using namespace KSieveUi;
-SieveActionFileInto::SieveActionFileInto(QObject *parent)
-    : SieveAction(QStringLiteral("fileinto"), i18n("File Into"), parent)
+SieveActionFileInto::SieveActionFileInto(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("fileinto"), i18n("File Into"), parent)
 {
     mHasCopySupport = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("copy"));
     mHasMailBoxSupport = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("mailbox"));
-}
-
-SieveAction *SieveActionFileInto::newAction()
-{
-    return new SieveActionFileInto;
 }
 
 QString SieveActionFileInto::code(QWidget *w) const

@@ -27,14 +27,9 @@
 #include <QDomNode>
 
 using namespace KSieveUi;
-SieveConditionServerMetaDataExists::SieveConditionServerMetaDataExists(QObject *parent)
-    : SieveCondition(QStringLiteral("servermetadataexists"), i18n("Server Meta Data Exists"), parent)
+SieveConditionServerMetaDataExists::SieveConditionServerMetaDataExists(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("servermetadataexists"), i18n("Server Meta Data Exists"), parent)
 {
-}
-
-SieveCondition *SieveConditionServerMetaDataExists::newAction()
-{
-    return new SieveConditionServerMetaDataExists;
 }
 
 QWidget *SieveConditionServerMetaDataExists::createParamWidget(QWidget *parent) const

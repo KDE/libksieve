@@ -32,14 +32,9 @@
 
 using namespace KSieveUi;
 
-SieveActionDeleteHeader::SieveActionDeleteHeader(QObject *parent)
-    : SieveActionAbstractEditHeader(QStringLiteral("deleteheader"), i18n("Delete header"), parent)
+SieveActionDeleteHeader::SieveActionDeleteHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveActionAbstractEditHeader(sieveGraphicalModeWidget, QStringLiteral("deleteheader"), i18n("Delete header"), parent)
 {
-}
-
-SieveAction *SieveActionDeleteHeader::newAction()
-{
-    return new SieveActionDeleteHeader;
 }
 
 QWidget *SieveActionDeleteHeader::createParamWidget(QWidget *parent) const

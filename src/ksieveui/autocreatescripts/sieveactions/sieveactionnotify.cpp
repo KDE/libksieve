@@ -31,14 +31,9 @@
 
 using namespace KSieveUi;
 
-SieveActionNotify::SieveActionNotify(QObject *parent)
-    : SieveAction(QStringLiteral("notify"), i18n("Notify"), parent)
+SieveActionNotify::SieveActionNotify(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("notify"), i18n("Notify"), parent)
 {
-}
-
-SieveAction *SieveActionNotify::newAction()
-{
-    return new SieveActionNotify;
 }
 
 QWidget *SieveActionNotify::createParamWidget(QWidget *parent) const

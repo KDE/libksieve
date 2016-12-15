@@ -83,7 +83,7 @@ SieveScriptBlockWidget *SieveScriptPage::addScriptBlock(KSieveUi::SieveWidgetPag
 
 SieveScriptBlockWidget *SieveScriptPage::createScriptBlock(KSieveUi::SieveWidgetPageAbstract::PageType type)
 {
-    SieveScriptBlockWidget *blockWidget = new SieveScriptBlockWidget;
+    SieveScriptBlockWidget *blockWidget = new SieveScriptBlockWidget(mSieveGraphicalModeWidget);
     connect(blockWidget, &SieveScriptBlockWidget::addNewBlock, this, &SieveScriptPage::slotAddNewBlock);
     connect(blockWidget, &SieveScriptBlockWidget::valueChanged, this, &SieveScriptPage::valueChanged);
     blockWidget->setPageType(type);

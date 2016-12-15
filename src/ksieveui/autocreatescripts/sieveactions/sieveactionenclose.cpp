@@ -30,14 +30,9 @@
 #include <QGridLayout>
 
 using namespace KSieveUi;
-SieveActionEnclose::SieveActionEnclose(QObject *parent)
-    : SieveAction(QStringLiteral("enclose"), i18n("Enclose"), parent)
+SieveActionEnclose::SieveActionEnclose(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("enclose"), i18n("Enclose"), parent)
 {
-}
-
-SieveAction *SieveActionEnclose::newAction()
-{
-    return new SieveActionEnclose;
 }
 
 QWidget *SieveActionEnclose::createParamWidget(QWidget *parent) const

@@ -28,14 +28,9 @@
 #include <QDomNode>
 
 using namespace KSieveUi;
-SieveConditionMailboxExists::SieveConditionMailboxExists(QObject *parent)
-    : SieveCondition(QStringLiteral("mailboxexists"), i18n("Mailbox exists"), parent)
+SieveConditionMailboxExists::SieveConditionMailboxExists(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("mailboxexists"), i18n("Mailbox exists"), parent)
 {
-}
-
-SieveCondition *SieveConditionMailboxExists::newAction()
-{
-    return new SieveConditionMailboxExists;
 }
 
 QWidget *SieveConditionMailboxExists::createParamWidget(QWidget *parent) const

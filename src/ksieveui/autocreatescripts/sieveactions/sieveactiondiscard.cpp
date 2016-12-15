@@ -21,14 +21,9 @@
 #include <KLocalizedString>
 
 using namespace KSieveUi;
-SieveActionDiscard::SieveActionDiscard(QObject *parent)
-    : SieveAction(QStringLiteral("discard"), i18n("Discard"), parent)
+SieveActionDiscard::SieveActionDiscard(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("discard"), i18n("Discard"), parent)
 {
-}
-
-SieveAction *SieveActionDiscard::newAction()
-{
-    return new SieveActionDiscard;
 }
 
 QString SieveActionDiscard::code(QWidget *) const

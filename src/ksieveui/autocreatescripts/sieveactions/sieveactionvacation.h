@@ -26,8 +26,7 @@ class SieveActionVacation : public SieveAction
 {
     Q_OBJECT
 public:
-    explicit SieveActionVacation(QObject *parent = Q_NULLPTR);
-    static SieveAction *newAction();
+    explicit SieveActionVacation(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
 
     QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
     QString code(QWidget *) const Q_DECL_OVERRIDE;

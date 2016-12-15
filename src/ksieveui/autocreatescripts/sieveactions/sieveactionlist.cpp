@@ -40,29 +40,29 @@
 #include "sieveactionsetvariable.h"
 #include "sieveactionreturn.h"
 
-QList<KSieveUi::SieveAction *> KSieveUi::SieveActionList::actionList()
+QList<KSieveUi::SieveAction *> KSieveUi::SieveActionList::actionList(SieveEditorGraphicalModeWidget *graphicalModeWidget)
 {
     QList<KSieveUi::SieveAction *> list;
-    list.append(new KSieveUi::SieveActionDiscard);
-    list.append(new KSieveUi::SieveActionStop);
-    list.append(new KSieveUi::SieveActionSetFlags);
-    list.append(new KSieveUi::SieveActionAddFlags);
-    list.append(new KSieveUi::SieveActionRemoveFlags);
-    list.append(new KSieveUi::SieveActionFileInto);
-    list.append(new KSieveUi::SieveActionReject);
-    list.append(new KSieveUi::SieveActionEReject);
-    list.append(new KSieveUi::SieveActionKeep);
-    list.append(new KSieveUi::SieveActionRedirect);
-    list.append(new KSieveUi::SieveActionNotify);
-    list.append(new KSieveUi::SieveActionDeleteHeader);
-    list.append(new KSieveUi::SieveActionAddHeader);
-    list.append(new KSieveUi::SieveActionVacation);
-    list.append(new KSieveUi::SieveActionEnclose);
-    list.append(new KSieveUi::SieveActionReplace);
-    list.append(new KSieveUi::SieveActionExtractText);
-    list.append(new KSieveUi::SieveActionBreak);
-    list.append(new KSieveUi::SieveActionConvert);
-    list.append(new KSieveUi::SieveActionSetVariable);
-    list.append(new KSieveUi::SieveActionReturn);
+    list.append(new KSieveUi::SieveActionDiscard(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionStop(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionSetFlags(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionAddFlags(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionRemoveFlags(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionFileInto(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionReject(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionEReject(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionKeep(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionRedirect(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionNotify(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionDeleteHeader(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionAddHeader(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionVacation(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionEnclose(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionReplace(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionExtractText(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionBreak(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionConvert(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionSetVariable(graphicalModeWidget));
+    list.append(new KSieveUi::SieveActionReturn(graphicalModeWidget));
     return list;
 }

@@ -27,9 +27,7 @@ class SieveConditionMailboxExists : public SieveCondition
 {
     Q_OBJECT
 public:
-    explicit SieveConditionMailboxExists(QObject *parent = Q_NULLPTR);
-
-    static SieveCondition *newAction();
+    explicit SieveConditionMailboxExists(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
 
     QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
 

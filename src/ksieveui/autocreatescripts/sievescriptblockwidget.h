@@ -33,6 +33,7 @@ namespace KSieveUi
 {
 class SieveConditionWidgetLister;
 class SieveActionWidgetLister;
+class SieveEditorGraphicalModeWidget;
 
 class SieveScriptBlockWidget : public SieveWidgetPageAbstract
 {
@@ -44,7 +45,7 @@ public:
         AllCondition
     };
 
-    explicit SieveScriptBlockWidget(QWidget *parent = Q_NULLPTR);
+    explicit SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent = Q_NULLPTR);
     ~SieveScriptBlockWidget();
 
     void setPageType(PageType type) Q_DECL_OVERRIDE;
@@ -67,6 +68,7 @@ private:
     void updateCondition();
     MatchCondition mMatchCondition;
     QGroupBox *mConditions;
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
     SieveConditionWidgetLister *mScriptConditionLister;
     SieveActionWidgetLister *mScriptActionLister;
     QRadioButton *mMatchAll;

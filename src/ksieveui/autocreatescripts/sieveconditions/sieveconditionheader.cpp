@@ -31,14 +31,9 @@
 
 using namespace KSieveUi;
 
-SieveConditionHeader::SieveConditionHeader(QObject *parent)
-    : SieveCondition(QStringLiteral("header"), i18n("Header"), parent)
+SieveConditionHeader::SieveConditionHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("header"), i18n("Header"), parent)
 {
-}
-
-SieveCondition *SieveConditionHeader::newAction()
-{
-    return new SieveConditionHeader;
 }
 
 QWidget *SieveConditionHeader::createParamWidget(QWidget *parent) const

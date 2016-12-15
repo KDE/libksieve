@@ -20,8 +20,8 @@
 
 using namespace KSieveUi;
 
-SieveActionAbstractEditHeader::SieveActionAbstractEditHeader(const QString &name, const QString &label, QObject *parent)
-    : SieveAction(name, label, parent)
+SieveActionAbstractEditHeader::SieveActionAbstractEditHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent)
+    : SieveAction(sieveGraphicalModeWidget, name, label, parent)
 {
 }
 

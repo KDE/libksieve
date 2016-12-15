@@ -33,15 +33,10 @@
 
 using namespace KSieveUi;
 
-SieveConditionSpamTest::SieveConditionSpamTest(QObject *parent)
-    : SieveCondition(QStringLiteral("spamtest"), i18n("Spam Test"), parent)
+SieveConditionSpamTest::SieveConditionSpamTest(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("spamtest"), i18n("Spam Test"), parent)
 {
     mHasSpamTestPlusSupport = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("spamtestplus"));
-}
-
-SieveCondition *SieveConditionSpamTest::newAction()
-{
-    return new SieveConditionSpamTest;
 }
 
 QWidget *SieveConditionSpamTest::createParamWidget(QWidget *parent) const

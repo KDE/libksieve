@@ -31,14 +31,9 @@
 #include <QDomNode>
 
 using namespace KSieveUi;
-SieveConditionServerMetaData::SieveConditionServerMetaData(QObject *parent)
-    : SieveCondition(QStringLiteral("servermetadata"), i18n("Server Meta Data"), parent)
+SieveConditionServerMetaData::SieveConditionServerMetaData(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
+    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("servermetadata"), i18n("Server Meta Data"), parent)
 {
-}
-
-SieveCondition *SieveConditionServerMetaData::newAction()
-{
-    return new SieveConditionServerMetaData;
 }
 
 QWidget *SieveConditionServerMetaData::createParamWidget(QWidget *parent) const
