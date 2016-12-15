@@ -34,8 +34,9 @@
 
 namespace KSieveUi
 {
-SieveScriptPage::SieveScriptPage(QWidget *parent)
+SieveScriptPage::SieveScriptPage(SieveEditorGraphicalModeWidget *sieveEditorGraphicalWidget, QWidget *parent)
     : QWidget(parent),
+      mSieveGraphicalModeWidget(sieveEditorGraphicalWidget),
       mIncludeWidget(Q_NULLPTR),
       mForEveryPartWidget(Q_NULLPTR),
       mGlobalVariableWidget(Q_NULLPTR),
@@ -46,7 +47,7 @@ SieveScriptPage::SieveScriptPage(QWidget *parent)
     mTabWidget = new SieveScriptTabWidget(this);
     connect(mTabWidget, &SieveScriptTabWidget::tabCloseRequested, this, &SieveScriptPage::slotCloseTab);
 
-    if (SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("include"))) {
+    if (mSieveGraphicalModeWidget->sieveCapabilities().contains(QStringLiteral("include"))) {
         mIncludeWidget = new SieveIncludeWidget(this);
         connect(mIncludeWidget, &SieveIncludeWidget::valueChanged, this, &SieveScriptPage::valueChanged);
         mTabWidget->addTab(mIncludeWidget, i18n("Includes"));
@@ -56,7 +57,7 @@ SieveScriptPage::SieveScriptPage(QWidget *parent)
         mTabWidget->addTab(mGlobalVariableWidget, i18n("Global Variable"));
     }
 
-    if (SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("foreverypart"))) {
+    if (mSieveGraphicalModeWidget->sieveCapabilities().contains(QStringLiteral("foreverypart"))) {
         mForEveryPartWidget = new SieveForEveryPartWidget(this);
         connect(mForEveryPartWidget, &SieveForEveryPartWidget::valueChanged, this, &SieveScriptPage::valueChanged);
         mTabWidget->addTab(mForEveryPartWidget, i18n("ForEveryPart"));

@@ -94,6 +94,7 @@ QString SieveScriptListItem::generatedScript(QStringList &requires) const
 
 SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     : QGroupBox(title, parent),
+      mSieveGraphicalModeWidget(Q_NULLPTR),
       mScriptNumber(0)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
@@ -187,6 +188,11 @@ SieveScriptListBox::~SieveScriptListBox()
 {
 }
 
+void SieveScriptListBox::setSieveEditorGraphicalModeWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget)
+{
+    mSieveGraphicalModeWidget = graphicalModeWidget;
+}
+
 void SieveScriptListBox::slotItemActived(QListWidgetItem *item)
 {
     if (item) {
@@ -216,7 +222,7 @@ SieveScriptPage *SieveScriptListBox::createNewScript(const QString &newName, con
 {
     SieveScriptListItem *item = new SieveScriptListItem(newName, mSieveListScript);
     item->setDescription(description);
-    SieveScriptPage *page = new SieveScriptPage;
+    SieveScriptPage *page = new SieveScriptPage(mSieveGraphicalModeWidget);
     item->setScriptPage(page);
     Q_EMIT addNewPage(page);
     Q_EMIT enableButtonOk(true);

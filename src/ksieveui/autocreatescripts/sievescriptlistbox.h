@@ -29,6 +29,7 @@ class QPushButton;
 
 namespace KSieveUi
 {
+class SieveEditorGraphicalModeWidget;
 class SieveScriptPage;
 class SieveScriptListItem : public QListWidgetItem
 {
@@ -56,6 +57,7 @@ public:
     explicit SieveScriptListBox(const QString &title, QWidget *parent = Q_NULLPTR);
     ~SieveScriptListBox();
 
+    void setSieveEditorGraphicalModeWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget);
     QString generatedScript(QString &requires) const;
     void loadScript(const QDomDocument &doc, QString &error);
 
@@ -94,6 +96,7 @@ private:
     void clear();
     SieveScriptPage *createNewScript(const QString &newName, const QString &description = QString());
     QString createUniqName();
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
     QListWidget *mSieveListScript;
     QPushButton *mBtnNew;
     QPushButton *mBtnDelete;

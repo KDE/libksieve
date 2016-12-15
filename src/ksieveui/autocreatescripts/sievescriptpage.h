@@ -30,12 +30,12 @@ class SieveScriptTabWidget;
 class SieveIncludeWidget;
 class SieveForEveryPartWidget;
 class SieveGlobalVariableWidget;
-
+class SieveEditorGraphicalModeWidget;
 class SieveScriptPage : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SieveScriptPage(QWidget *parent = Q_NULLPTR);
+    explicit SieveScriptPage(SieveEditorGraphicalModeWidget *sieveEditorGraphicalWidget, QWidget *parent = Q_NULLPTR);
     ~SieveScriptPage();
 
     void generatedScript(QString &script, QStringList &requires);
@@ -58,6 +58,7 @@ private:
     bool hasAnElseBlock() const;
     QString blockName(SieveWidgetPageAbstract::PageType type) const;
 
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
     SieveScriptTabWidget *mTabWidget;
     SieveIncludeWidget *mIncludeWidget;
     SieveForEveryPartWidget *mForEveryPartWidget;
