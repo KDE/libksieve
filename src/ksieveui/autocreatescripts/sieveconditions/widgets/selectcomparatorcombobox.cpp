@@ -21,24 +21,24 @@
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
 using namespace KSieveUi;
-SelectComparatorComboBox::SelectComparatorComboBox(QWidget *parent)
+SelectComparatorComboBox::SelectComparatorComboBox(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent)
     : QComboBox(parent)
 {
     connect(this, static_cast<void (SelectComparatorComboBox::*)(int)>(&SelectComparatorComboBox::activated), this, &SelectComparatorComboBox::valueChanged);
-    initialize();
+    initialize(sieveGraphicalModeWidget->sieveCapabilities());
 }
 
 SelectComparatorComboBox::~SelectComparatorComboBox()
 {
 }
 
-void SelectComparatorComboBox::initialize()
+void SelectComparatorComboBox::initialize(const QStringList &sieveCapabilities)
 {
     //Default in spec
     addItem(QStringLiteral("i;octet"), QStringLiteral("comparator-i;octet"));
     addItem(QStringLiteral("i;ascii-casemap"), QStringLiteral("comparator-i;ascii-casemap"));
 
-    Q_FOREACH (const QString &capability, KSieveUi::SieveEditorGraphicalModeWidget::sieveCapabilities()) {
+    Q_FOREACH (const QString &capability, sieveCapabilities) {
         if (capability.startsWith(QStringLiteral("comparator-"))) {
             QString str(capability);
             str.remove(QStringLiteral("comparator-"));

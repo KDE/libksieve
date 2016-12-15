@@ -23,11 +23,12 @@
 #include <QComboBox>
 namespace KSieveUi
 {
+class SieveEditorGraphicalModeWidget;
 class SelectComparatorComboBox : public QComboBox
 {
     Q_OBJECT
 public:
-    explicit SelectComparatorComboBox(QWidget *parent = Q_NULLPTR);
+    explicit SelectComparatorComboBox(KSieveUi::SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent = Q_NULLPTR);
     ~SelectComparatorComboBox();
 
     QString code() const;
@@ -38,7 +39,7 @@ public:
 Q_SIGNALS:
     void valueChanged();
 private:
-    void initialize();
+    void initialize(const QStringList &sieveCapabilities);
 };
 }
 #endif // SELECTCOMPARATORCOMBOBOX_H

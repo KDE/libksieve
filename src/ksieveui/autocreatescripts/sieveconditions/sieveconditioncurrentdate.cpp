@@ -42,7 +42,7 @@ QWidget *SieveConditionCurrentDate::createParamWidget(QWidget *parent) const
     lay->setMargin(0);
     w->setLayout(lay);
 
-    SelectMatchTypeComboBox *matchTypeCombo = new SelectMatchTypeComboBox;
+    SelectMatchTypeComboBox *matchTypeCombo = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
     matchTypeCombo->setObjectName(QStringLiteral("matchtype"));
     lay->addWidget(matchTypeCombo);
     connect(matchTypeCombo, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionCurrentDate::valueChanged);

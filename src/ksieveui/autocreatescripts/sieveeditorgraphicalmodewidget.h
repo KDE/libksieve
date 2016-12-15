@@ -40,8 +40,8 @@ public:
 
     QString script(QString &requires) const;
 
-    static void setSieveCapabilities(const QStringList &capabilities);
-    static QStringList sieveCapabilities();
+    void setSieveCapabilities(const QStringList &capabilities);
+    QStringList sieveCapabilities();
 
     void loadScript(const QDomDocument &doc, QString &error);
 

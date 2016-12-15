@@ -48,7 +48,7 @@ QWidget *SieveConditionVirusTest::createParamWidget(QWidget *parent) const
     relation->setObjectName(QStringLiteral("relation"));
     lay->addWidget(relation);
 
-    SelectComparatorComboBox *comparator = new SelectComparatorComboBox;
+    SelectComparatorComboBox *comparator = new SelectComparatorComboBox(mSieveGraphicalModeWidget);
     connect(comparator, &SelectComparatorComboBox::valueChanged, this, &SieveConditionVirusTest::valueChanged);
     comparator->setObjectName(QStringLiteral("comparator"));
     lay->addWidget(comparator);

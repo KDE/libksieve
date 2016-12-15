@@ -24,10 +24,10 @@
 
 using namespace KSieveUi;
 
-SelectMatchTypeComboBox::SelectMatchTypeComboBox(QWidget *parent)
+SelectMatchTypeComboBox::SelectMatchTypeComboBox(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent)
     : KComboBox(parent)
 {
-    mHasRegexCapability = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("regex"));
+    mHasRegexCapability = sieveGraphicalModeWidget->sieveCapabilities().contains(QStringLiteral("regex"));
     initialize();
     connect(this, static_cast<void (SelectMatchTypeComboBox::*)(int)>(&SelectMatchTypeComboBox::activated), this, &SelectMatchTypeComboBox::valueChanged);
 }

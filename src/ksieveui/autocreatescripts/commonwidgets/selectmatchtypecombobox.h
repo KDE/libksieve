@@ -23,11 +23,12 @@
 
 namespace KSieveUi
 {
+class SieveEditorGraphicalModeWidget;
 class SelectMatchTypeComboBox : public KComboBox
 {
     Q_OBJECT
 public:
-    explicit SelectMatchTypeComboBox(QWidget *parent = Q_NULLPTR);
+    explicit SelectMatchTypeComboBox(KSieveUi::SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent = Q_NULLPTR);
     ~SelectMatchTypeComboBox();
 
     QString code(bool &negative) const;

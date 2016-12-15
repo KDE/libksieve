@@ -44,7 +44,7 @@ QWidget *SieveActionDeleteHeader::createParamWidget(QWidget *parent) const
     grid->setMargin(0);
     w->setLayout(grid);
 
-    SelectMatchTypeComboBox *matchType = new SelectMatchTypeComboBox;
+    SelectMatchTypeComboBox *matchType = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
     matchType->setObjectName(QStringLiteral("matchtype"));
     connect(matchType, &SelectMatchTypeComboBox::valueChanged, this, &SieveActionDeleteHeader::valueChanged);
     grid->addWidget(matchType, 0, 0);

@@ -24,10 +24,10 @@
 
 using namespace KSieveUi;
 
-SelectAddressPartComboBox::SelectAddressPartComboBox(QWidget *parent)
+SelectAddressPartComboBox::SelectAddressPartComboBox(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent)
     : QComboBox(parent)
 {
-    mHasSubaddressCapability = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("subaddress"));
+    mHasSubaddressCapability = sieveGraphicalModeWidget->sieveCapabilities().contains(QStringLiteral("subaddress"));
     initialize();
     connect(this, static_cast<void (SelectAddressPartComboBox::*)(int)>(&SelectAddressPartComboBox::activated), this, &SelectAddressPartComboBox::valueChanged);
 }

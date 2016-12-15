@@ -46,7 +46,7 @@ QWidget *SieveConditionEnvelope::createParamWidget(QWidget *parent) const
     lay->setMargin(0);
     w->setLayout(lay);
 
-    SelectAddressPartComboBox *selectAddressPart = new SelectAddressPartComboBox;
+    SelectAddressPartComboBox *selectAddressPart = new SelectAddressPartComboBox(mSieveGraphicalModeWidget);
     connect(selectAddressPart, &SelectAddressPartComboBox::valueChanged, this, &SieveConditionEnvelope::valueChanged);
     selectAddressPart->setObjectName(QStringLiteral("addresspartcombobox"));
     lay->addWidget(selectAddressPart);
@@ -55,7 +55,7 @@ QWidget *SieveConditionEnvelope::createParamWidget(QWidget *parent) const
     grid->setMargin(0);
     lay->addLayout(grid);
 
-    SelectMatchTypeComboBox *selectMatchCombobox = new SelectMatchTypeComboBox;
+    SelectMatchTypeComboBox *selectMatchCombobox = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
     selectMatchCombobox->setObjectName(QStringLiteral("matchtypecombobox"));
     connect(selectMatchCombobox, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionEnvelope::valueChanged);
     grid->addWidget(selectMatchCombobox, 0, 0);
