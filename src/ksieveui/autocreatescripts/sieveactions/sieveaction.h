@@ -35,7 +35,6 @@ public:
     QString name() const;
     QString label() const;
 
-
     virtual QWidget *createParamWidget(QWidget *parent) const;
 
     virtual bool setParamWidgetValue(const QDomElement &element, QWidget *parent, QString &error);

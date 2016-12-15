@@ -124,7 +124,7 @@ QWidget *SieveActionFileInto::createParamWidget(QWidget *parent) const
 
     KSieveUi::AbstractMoveImapFolderWidget *edit = Q_NULLPTR;
     KPluginLoader loader(QStringLiteral("libksieve/imapfoldercompletionplugin"));
-    KPluginFactory* factory = loader.factory();
+    KPluginFactory *factory = loader.factory();
     if (!factory) {
         edit = new KSieveUi::MoveImapFolderWidget;
     } else {

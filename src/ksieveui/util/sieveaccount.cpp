@@ -85,10 +85,10 @@ MailTransport::TransportBase::EnumAuthenticationType::type SieveAccount::authent
 bool SieveAccount::operator==(const SieveAccount &other) const
 {
     return (mServerName == other.serverName()) &&
-            (mPassword == other.password()) &&
-            (mPort == other.port()) &&
-            (mUserName == other.userName()) &&
-            (mAuthenticationType == other.authenticationType());
+           (mPassword == other.password()) &&
+           (mPort == other.port()) &&
+           (mUserName == other.userName()) &&
+           (mAuthenticationType == other.authenticationType());
 }
 
 bool SieveAccount::isValid() const

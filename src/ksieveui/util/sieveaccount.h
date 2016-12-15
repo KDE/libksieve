@@ -44,7 +44,6 @@ public:
     void setPassword(const QString &password);
     QString password() const;
 
-
     void setAuthenticationType(MailTransport::Transport::EnumAuthenticationType::type type);
     MailTransport::Transport::EnumAuthenticationType::type authenticationType() const;
     bool operator==(const SieveAccount &other) const;

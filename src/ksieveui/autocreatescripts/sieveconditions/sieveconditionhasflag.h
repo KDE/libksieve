@@ -29,7 +29,6 @@ class SieveConditionHasFlag : public SieveCondition
 public:
     explicit SieveConditionHasFlag(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
 
-
     QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
 
     QString code(QWidget *parent) const Q_DECL_OVERRIDE;
