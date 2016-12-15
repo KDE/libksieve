@@ -49,7 +49,7 @@ QString MoveImapFolderWidget::text() const
     return mLineEdit->text();
 }
 
-void MoveImapFolderWidget::setSieveAccount(const KSieveUi::SieveAccount &account)
+void MoveImapFolderWidget::setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account)
 {
     Q_UNUSED(account);
 }

@@ -25,7 +25,7 @@
 class QLineEdit;
 namespace KSieveUi
 {
-class SieveAccount;
+class SieveImapAccountSettings;
 class MoveImapFolderWidget : public KSieveUi::AbstractMoveImapFolderWidget
 {
     Q_OBJECT
@@ -36,7 +36,7 @@ public:
     void setText(const QString &str) Q_DECL_OVERRIDE;
     QString text() const Q_DECL_OVERRIDE;
 
-    void setSieveAccount(const KSieveUi::SieveAccount &account) Q_DECL_OVERRIDE;
+    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account) Q_DECL_OVERRIDE;
 private:
     QLineEdit *mLineEdit;
 };

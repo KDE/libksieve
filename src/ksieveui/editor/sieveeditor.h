@@ -25,6 +25,7 @@
 namespace KSieveUi
 {
 class SieveEditorPrivate;
+class SieveImapAccountSettings;
 class KSIEVEUI_EXPORT SieveEditor : public QDialog
 {
     Q_OBJECT
@@ -43,7 +44,8 @@ public:
 
     void resultDone();
 
-    void setSieveCapabilities(const QStringList &capabilities);
+    void setSieveCapabilities(const QStringList &capabilities);    
+    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);
 
 private Q_SLOTS:
     void slotEnableButtonOk(bool b);

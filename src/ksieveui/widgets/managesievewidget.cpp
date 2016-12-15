@@ -26,6 +26,7 @@
 #include <managescriptsjob/generateglobalscriptjob.h>
 #include <PimCommon/NetworkManager>
 #include <util/util.h>
+#include <KSieveUi/SieveImapAccountSettings>
 
 #include <QInputDialog>
 #include <KStandardGuiItem>
@@ -247,6 +248,7 @@ void ManageSieveWidget::slotNewScript()
     }
 
     const QStringList currentCapabilities = currentItem->data(0, SIEVE_SERVER_CAPABILITIES).toStringList();
+    const KSieveUi::SieveImapAccountSettings sieveimapaccountsettings = currentItem->data(0, SIEVE_SERVER_IMAP_SETTINGS).value<KSieveUi::SieveImapAccountSettings>();
 
     d->mBlockSignal = true;
     QTreeWidgetItem *newItem = new QTreeWidgetItem(currentItem);
@@ -254,7 +256,7 @@ void ManageSieveWidget::slotNewScript()
     newItem->setText(0, name);
     newItem->setCheckState(0, Qt::Unchecked);
     d->mBlockSignal = false;
-    Q_EMIT newScript(u, currentCapabilities);
+    Q_EMIT newScript(u, currentCapabilities, sieveimapaccountsettings);
 }
 
 void ManageSieveWidget::slotEditScript()
@@ -273,8 +275,9 @@ void ManageSieveWidget::slotEditScript()
     }
     url = url.adjusted(QUrl::RemoveFilename);
     url.setPath(url.path() +  QLatin1Char('/') + currentItem->text(0));
+    const KSieveUi::SieveImapAccountSettings sieveimapaccountsettings = parent->data(0, SIEVE_SERVER_IMAP_SETTINGS).value<KSieveUi::SieveImapAccountSettings>();
     const QStringList currentCapabilities = parent->data(0, SIEVE_SERVER_CAPABILITIES).toStringList();
-    Q_EMIT editScript(url, currentCapabilities);
+    Q_EMIT editScript(url, currentCapabilities, sieveimapaccountsettings);
 }
 
 void ManageSieveWidget::slotDeactivateScript()
@@ -541,6 +544,7 @@ void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, c
     parent->setData(0, SIEVE_SERVER_CAPABILITIES, job->sieveCapabilities());
     parent->setData(0, SIEVE_SERVER_ERROR, false);
     parent->setData(0, SIEVE_SERVER_MODE, hasKep14EditorMode ? Kep14EditorMode : NormalEditorMode);
+    parent->setData(0, SIEVE_SERVER_IMAP_SETTINGS, QVariant::fromValue(job->property("sieveaccount").value<KSieveUi::SieveImapAccountSettings>()));
     d->mTreeView->expandItem(parent);
 }
 

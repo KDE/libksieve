@@ -23,6 +23,8 @@
 #include "widgets/sievetreewidgetitem.h"
 #include "managescriptsjob/checkscriptjob.h"
 
+#include "util/sieveimapaccountsettings.h"
+
 #include <KLocalizedString>
 #include <kiconloader.h>
 #include <kwindowsystem.h>
@@ -64,6 +66,7 @@ public:
 
     QUrl mCurrentURL;
     QStringList mCurrentCapabilities;
+    KSieveUi::SieveImapAccountSettings mSieveImapAccountSettings;
 
     QPushButton *mNewScript;
     QPushButton *mEditScript;
@@ -161,18 +164,20 @@ void ManageSieveScriptsDialog::slotUpdateButtons(QTreeWidgetItem *item)
     d->mDeactivateScript->setEnabled(desactivateScriptAction);
 }
 
-void ManageSieveScriptsDialog::slotEditScript(const QUrl &url, const QStringList &capabilities)
+void ManageSieveScriptsDialog::slotEditScript(const QUrl &url, const QStringList &capabilities, const KSieveUi::SieveImapAccountSettings &sieveAccount)
 {
     d->mCurrentURL = url;
     d->mCurrentCapabilities = capabilities;
     d->mIsNewScript = false;
+    d->mSieveImapAccountSettings = sieveAccount;
     KManageSieve::SieveJob *job = KManageSieve::SieveJob::get(url);
     connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveScriptsDialog::slotGetResult);
 }
 
-void ManageSieveScriptsDialog::slotNewScript(const QUrl &url, const QStringList &capabilities)
+void ManageSieveScriptsDialog::slotNewScript(const QUrl &url, const QStringList &capabilities, const SieveImapAccountSettings &sieveAccount)
 {
     d->mCurrentCapabilities = capabilities;
+    d->mSieveImapAccountSettings = sieveAccount;
     d->mCurrentURL = url;
     d->mIsNewScript = true;
     slotGetResult(Q_NULLPTR, true, QString(), false);
@@ -195,6 +200,8 @@ void ManageSieveScriptsDialog::slotGetResult(KManageSieve::SieveJob *job, bool s
     d->mSieveEditor->setScriptName(d->mCurrentURL.fileName());
     d->mSieveEditor->setSieveCapabilities(d->mCurrentCapabilities);
     d->mSieveEditor->setScript(script);
+    d->mSieveEditor->setSieveImapAccountSettings(d->mSieveImapAccountSettings);
+
     connect(d->mSieveEditor, &SieveEditor::okClicked, this, &ManageSieveScriptsDialog::slotSieveEditorOkClicked);
     connect(d->mSieveEditor, &SieveEditor::cancelClicked, this, &ManageSieveScriptsDialog::slotSieveEditorCancelClicked);
     connect(d->mSieveEditor, &SieveEditor::checkSyntax, this, &ManageSieveScriptsDialog::slotSieveEditorCheckSyntaxClicked);

@@ -17,72 +17,72 @@
    Boston, MA 02110-1301, USA.
 */
 
-#include "sieveaccount.h"
+#include "sieveimapaccountsettings.h"
 
 using namespace KSieveUi;
 
-SieveAccount::SieveAccount()
+SieveImapAccountSettings::SieveImapAccountSettings()
     : mAuthenticationType(MailTransport::Transport::EnumAuthenticationType::PLAIN),
       mPort(-1)
 {
 
 }
 
-SieveAccount::~SieveAccount()
+SieveImapAccountSettings::~SieveImapAccountSettings()
 {
 }
 
-void SieveAccount::setServerName(const QString &server)
+void SieveImapAccountSettings::setServerName(const QString &server)
 {
     mServerName = server;
 }
 
-QString SieveAccount::serverName() const
+QString SieveImapAccountSettings::serverName() const
 {
     return mServerName;
 }
 
-void SieveAccount::setPort(int port)
+void SieveImapAccountSettings::setPort(int port)
 {
     mPort = port;
 }
 
-int SieveAccount::port() const
+int SieveImapAccountSettings::port() const
 {
     return mPort;
 }
 
-void SieveAccount::setUserName(const QString &userName)
+void SieveImapAccountSettings::setUserName(const QString &userName)
 {
     mUserName = userName;
 }
 
-QString SieveAccount::userName() const
+QString SieveImapAccountSettings::userName() const
 {
     return mUserName;
 }
 
-void SieveAccount::setPassword(const QString &password)
+void SieveImapAccountSettings::setPassword(const QString &password)
 {
     mPassword = password;
 }
 
-QString SieveAccount::password() const
+QString SieveImapAccountSettings::password() const
 {
     return mPassword;
 }
 
-void SieveAccount::setAuthenticationType(MailTransport::TransportBase::EnumAuthenticationType::type type)
+void SieveImapAccountSettings::setAuthenticationType(MailTransport::TransportBase::EnumAuthenticationType::type type)
 {
     mAuthenticationType = type;
 }
 
-MailTransport::TransportBase::EnumAuthenticationType::type SieveAccount::authenticationType() const
+MailTransport::TransportBase::EnumAuthenticationType::type SieveImapAccountSettings::authenticationType() const
 {
     return mAuthenticationType;
 }
 
-bool SieveAccount::operator==(const SieveAccount &other) const
+bool SieveImapAccountSettings::operator==(const SieveImapAccountSettings &other) const
 {
     return (mServerName == other.serverName()) &&
            (mPassword == other.password()) &&
@@ -91,7 +91,7 @@ bool SieveAccount::operator==(const SieveAccount &other) const
            (mAuthenticationType == other.authenticationType());
 }
 
-bool SieveAccount::isValid() const
+bool SieveImapAccountSettings::isValid() const
 {
     return !mServerName.isEmpty() && !mPassword.isEmpty() && (mPort != -1) && (!mUserName.isEmpty());
 }

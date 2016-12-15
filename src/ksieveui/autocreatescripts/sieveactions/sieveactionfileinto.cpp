@@ -127,7 +127,7 @@ QWidget *SieveActionFileInto::createParamWidget(QWidget *parent) const
     KPluginFactory *factory = loader.factory();
     if (factory) {
         edit = factory->create<KSieveUi::AbstractMoveImapFolderWidget>();
-        edit->setSieveAccount(sieveAccount());
+        edit->setSieveImapAccountSettings(sieveAccount());
     } else {
         edit = new KSieveUi::MoveImapFolderWidget;
     }

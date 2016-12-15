@@ -102,14 +102,14 @@ QStringList SieveEditorGraphicalModeWidget::sieveCapabilities()
     return mCapabilities;
 }
 
-void SieveEditorGraphicalModeWidget::setSieveAccount(const SieveAccount &sieveAccount)
+void SieveEditorGraphicalModeWidget::setSieveImapAccountSettings(const SieveImapAccountSettings &sieveAccount)
 {
-    mSieveAccount = sieveAccount;
+    mSieveImapAccountSettings = sieveAccount;
 }
 
-SieveAccount SieveEditorGraphicalModeWidget::sieveAccount() const
+SieveImapAccountSettings SieveEditorGraphicalModeWidget::sieveAccount() const
 {
-    return mSieveAccount;
+    return mSieveImapAccountSettings;
 }
 
 QString SieveEditorGraphicalModeWidget::script(QString &requires) const

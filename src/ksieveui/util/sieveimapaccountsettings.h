@@ -23,14 +23,13 @@
 #include "ksieveui_export.h"
 #include <MailTransport/mailtransport/transport.h>
 #include <QString>
-#include <QSharedDataPointer>
 namespace KSieveUi
 {
-class KSIEVEUI_EXPORT SieveAccount
+class KSIEVEUI_EXPORT SieveImapAccountSettings
 {
 public:
-    SieveAccount();
-    ~SieveAccount();
+    SieveImapAccountSettings();
+    ~SieveImapAccountSettings();
 
     void setServerName(const QString &serverName);
     QString serverName() const;
@@ -46,7 +45,7 @@ public:
 
     void setAuthenticationType(MailTransport::Transport::EnumAuthenticationType::type type);
     MailTransport::Transport::EnumAuthenticationType::type authenticationType() const;
-    bool operator==(const SieveAccount &other) const;
+    bool operator==(const SieveImapAccountSettings &other) const;
 
     bool isValid() const;
 
@@ -58,5 +57,6 @@ private:
     int mPort;
 };
 }
+Q_DECLARE_METATYPE(KSieveUi::SieveImapAccountSettings)
 
 #endif // SIEVEACCOUNT_H

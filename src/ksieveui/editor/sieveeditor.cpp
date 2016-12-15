@@ -151,6 +151,11 @@ void SieveEditor::resultDone()
     d->mSieveEditorWidget->resultDone();
 }
 
+void SieveEditor::setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account)
+{
+    d->mSieveEditorWidget->setSieveImapAccountSettings(account);
+}
+
 void SieveEditor::setSieveCapabilities(const QStringList &capabilities)
 {
     d->mSieveEditorWidget->setSieveCapabilities(capabilities);

@@ -21,7 +21,7 @@
 #define SIEVEEDITORGRAPHICALMODEWIDGET_H
 
 #include "editor/sieveeditorabstractwidget.h"
-#include "util/sieveaccount.h"
+#include "util/sieveimapaccountsettings.h"
 class QSplitter;
 class QStackedWidget;
 class QDomDocument;
@@ -43,8 +43,8 @@ public:
     void setSieveCapabilities(const QStringList &capabilities);
     QStringList sieveCapabilities();
 
-    void setSieveAccount(const KSieveUi::SieveAccount &sieveAccount);
-    KSieveUi::SieveAccount sieveAccount() const;
+    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &sieveAccount);
+    KSieveUi::SieveImapAccountSettings sieveAccount() const;
 
     void loadScript(const QDomDocument &doc, QString &error);
 
@@ -67,7 +67,7 @@ private Q_SLOTS:
     void slotActivateScriptPage(QWidget *page);
 
 private:
-    KSieveUi::SieveAccount mSieveAccount;
+    KSieveUi::SieveImapAccountSettings mSieveImapAccountSettings;
     QStringList mCapabilities;
     SieveScriptListBox *mSieveScript;
     QStackedWidget *mStackWidget;

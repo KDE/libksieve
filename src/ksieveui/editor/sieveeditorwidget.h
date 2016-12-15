@@ -29,7 +29,7 @@ class QLineEdit;
 class QAction;
 namespace KSieveUi
 {
-class SieveAccount;
+class SieveImapAccountSettings;
 class SieveEditorTextModeWidget;
 class SieveEditorGraphicalModeWidget;
 class KSIEVEUI_EXPORT SieveEditorWidget : public QWidget
@@ -54,7 +54,7 @@ public:
     void resultDone();
 
     void setSieveCapabilities(const QStringList &capabilities);
-    void setSieveAccount(const SieveAccount &sieveAccount);
+    void setSieveImapAccountSettings(const SieveImapAccountSettings &sieveAccount);
 
     void addFailedMessage(const QString &err);
     void addOkMessage(const QString &msg);

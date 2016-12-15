@@ -24,7 +24,7 @@
 class QDomElement;
 namespace KSieveUi
 {
-class SieveAccount;
+class SieveImapAccountSettings;
 class SieveEditorGraphicalModeWidget;
 class SieveAction : public QObject
 {
@@ -61,7 +61,7 @@ public:
     void serverDoesNotSupportFeatures(const QString &feature, QString &error);
 
 protected:
-    SieveAccount sieveAccount() const;
+    SieveImapAccountSettings sieveAccount() const;
     QStringList sieveCapabilities() const;
     SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
 

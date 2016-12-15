@@ -18,7 +18,7 @@
 */
 
 #include "sieveaccounttest.h"
-#include "../sieveaccount.h"
+#include "../sieveimapaccountsettings.h"
 
 #include <QTest>
 
@@ -35,7 +35,7 @@ SieveAccountTest::~SieveAccountTest()
 
 void SieveAccountTest::shouldHaveDefaultValue()
 {
-    KSieveUi::SieveAccount account;
+    KSieveUi::SieveImapAccountSettings account;
     QVERIFY(account.password().isEmpty());
     QVERIFY(account.serverName().isEmpty());
     QVERIFY(account.userName().isEmpty());
@@ -45,7 +45,7 @@ void SieveAccountTest::shouldHaveDefaultValue()
 
 void SieveAccountTest::shouldAssignValue()
 {
-    KSieveUi::SieveAccount account;
+    KSieveUi::SieveImapAccountSettings account;
     QString pwd = QStringLiteral("foo");
     QString server = QStringLiteral("kde");
     QString user = QStringLiteral("bla");
@@ -65,7 +65,7 @@ void SieveAccountTest::shouldAssignValue()
 
 void SieveAccountTest::shouldBeEqual()
 {
-    KSieveUi::SieveAccount account;
+    KSieveUi::SieveImapAccountSettings account;
     QString pwd = QStringLiteral("foo");
     QString server = QStringLiteral("kde");
     QString user = QStringLiteral("bla");
@@ -77,7 +77,7 @@ void SieveAccountTest::shouldBeEqual()
     account.setPort(port);
     account.setAuthenticationType(type);
 
-    KSieveUi::SieveAccount accountB;
+    KSieveUi::SieveImapAccountSettings accountB;
     accountB = account;
     QCOMPARE(account, accountB);
 }

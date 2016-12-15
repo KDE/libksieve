@@ -40,7 +40,7 @@ SieveAction::~SieveAction()
 {
 }
 
-KSieveUi::SieveAccount SieveAction::sieveAccount() const
+KSieveUi::SieveImapAccountSettings SieveAction::sieveAccount() const
 {
     if (mSieveGraphicalModeWidget) {
         return mSieveGraphicalModeWidget->sieveAccount();

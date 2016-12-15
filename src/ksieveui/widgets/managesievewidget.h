@@ -33,6 +33,7 @@ class SieveJob;
 
 namespace KSieveUi
 {
+class SieveImapAccountSettings;
 class ManageSieveTreeView;
 class ManageSieveWidgetPrivate;
 class ParseUserScriptJob;
@@ -53,8 +54,8 @@ public:
 
 Q_SIGNALS:
     void updateButtons(QTreeWidgetItem *item);
-    void newScript(const QUrl &u, const QStringList &currentCapabilities);
-    void editScript(const QUrl &url, const QStringList &currentCapabilities);
+    void newScript(const QUrl &u, const QStringList &currentCapabilities, const KSieveUi::SieveImapAccountSettings &sieveAccount);
+    void editScript(const QUrl &url, const QStringList &currentCapabilities, const KSieveUi::SieveImapAccountSettings &sieveAccount);
     void scriptDeleted(const QUrl &u);
     void serverSieveFound(bool imapFound);
     void scriptRenamed(const QUrl &oldUrl, const QUrl &newUrl);
@@ -93,7 +94,8 @@ private:
     enum sieveServerStatus {
         SIEVE_SERVER_ERROR = Qt::UserRole + 1,
         SIEVE_SERVER_CAPABILITIES = Qt::UserRole + 2,
-        SIEVE_SERVER_MODE = Qt::UserRole + 3
+        SIEVE_SERVER_MODE = Qt::UserRole + 3,
+        SIEVE_SERVER_IMAP_SETTINGS = Qt::UserRole + 4
     };
     bool serverHasError(QTreeWidgetItem *item) const;
     void killAllJobs();
