@@ -18,6 +18,7 @@
 */
 
 #include "sieveaction.h"
+#include "libksieve_debug.h"
 
 #include <KLocalizedString>
 
@@ -39,11 +40,21 @@ SieveAction::~SieveAction()
 {
 }
 
+KSieveUi::SieveAccount SieveAction::sieveAccount() const
+{
+    if (mSieveGraphicalModeWidget) {
+        return mSieveGraphicalModeWidget->sieveAccount();
+    }
+    qCWarning(LIBKSIEVE_LOG) << "SieveAction::sieveAccount Problem during initialize mSieveGraphicalModeWidget ";
+    return {};
+}
+
 QStringList SieveAction::sieveCapabilities() const
 {
     if (mSieveGraphicalModeWidget) {
         return mSieveGraphicalModeWidget->sieveCapabilities();
     }
+    qCWarning(LIBKSIEVE_LOG) << "SieveAction::sieveCapabilities Problem during initialize mSieveGraphicalModeWidget ";
     return {};
 }
 
