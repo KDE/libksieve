@@ -514,6 +514,11 @@ void SieveEditorWidget::setSieveCapabilities(const QStringList &capabilities)
     mGraphicalModeWidget->setSieveCapabilities(capabilities);
 }
 
+void SieveEditorWidget::setSieveAccount(const SieveAccount &sieveAccount)
+{
+    mGraphicalModeWidget->setSieveAccount(sieveAccount);
+}
+
 void SieveEditorWidget::slotCreateRulesGraphically()
 {
     switch (mMode) {
