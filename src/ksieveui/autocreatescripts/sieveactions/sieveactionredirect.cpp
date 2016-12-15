@@ -35,8 +35,8 @@ using namespace KSieveUi;
 SieveActionRedirect::SieveActionRedirect(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
     : SieveAction(sieveGraphicalModeWidget, QStringLiteral("redirect"), i18n("Redirect"), parent)
 {
-    mHasCopySupport = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("copy"));
-    mHasListSupport = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("extlists"));
+    mHasCopySupport = sieveCapabilities().contains(QStringLiteral("copy"));
+    mHasListSupport = sieveCapabilities().contains(QStringLiteral("extlists"));
 }
 
 QWidget *SieveActionRedirect::createParamWidget(QWidget *parent) const

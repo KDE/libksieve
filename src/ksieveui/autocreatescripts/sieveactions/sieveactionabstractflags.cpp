@@ -81,7 +81,7 @@ QString SieveActionAbstractFlags::code(QWidget *w) const
 
 QStringList SieveActionAbstractFlags::needRequires(QWidget *) const
 {
-    if (SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("imap4flags"))) {
+    if (sieveCapabilities().contains(QStringLiteral("imap4flags"))) {
         return QStringList() << QStringLiteral("imap4flags");
     } else {
         return QStringList() << QStringLiteral("imapflags");
@@ -95,7 +95,7 @@ bool SieveActionAbstractFlags::needCheckIfServerHasCapability() const
 
 QString SieveActionAbstractFlags::serverNeedsCapability() const
 {
-    if (SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("imap4flags"))) {
+    if (sieveCapabilities().contains(QStringLiteral("imap4flags"))) {
         return QStringLiteral("imap4flags");
     } else {
         return QStringLiteral("imapflags");

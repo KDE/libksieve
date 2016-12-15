@@ -35,7 +35,7 @@ using namespace KSieveUi;
 SieveConditionHasFlag::SieveConditionHasFlag(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
     : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("hasflag"), i18n("Has Flag"), parent)
 {
-    hasVariableSupport = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("variables"));
+    hasVariableSupport = sieveCapabilities().contains(QStringLiteral("variables"));
 }
 
 QWidget *SieveConditionHasFlag::createParamWidget(QWidget *parent) const
@@ -100,7 +100,7 @@ QString SieveConditionHasFlag::code(QWidget *w) const
 QStringList SieveConditionHasFlag::needRequires(QWidget *) const
 {
     QStringList lst;
-    if (SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("imap4flags"))) {
+    if (sieveCapabilities().contains(QStringLiteral("imap4flags"))) {
         lst << QStringLiteral("imap4flags");
     } else {
         lst << QStringLiteral("imapflags");
@@ -118,7 +118,7 @@ bool SieveConditionHasFlag::needCheckIfServerHasCapability() const
 
 QString SieveConditionHasFlag::serverNeedsCapability() const
 {
-    if (SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("imap4flags"))) {
+    if (sieveCapabilities().contains(QStringLiteral("imap4flags"))) {
         return QStringLiteral("imap4flags");
     } else {
         return QStringLiteral("imapflags");

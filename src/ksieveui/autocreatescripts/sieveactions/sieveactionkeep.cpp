@@ -32,8 +32,8 @@ using namespace KSieveUi;
 SieveActionKeep::SieveActionKeep(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
     : SieveAction(sieveGraphicalModeWidget, QStringLiteral("keep"), i18n("Keep"), parent)
 {
-    mHasImapFlag4Support = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("imap4flags"));
-    mHasFlagSupport = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("imapflags")) || mHasImapFlag4Support;
+    mHasImapFlag4Support = sieveCapabilities().contains(QStringLiteral("imap4flags"));
+    mHasFlagSupport = sieveCapabilities().contains(QStringLiteral("imapflags")) || mHasImapFlag4Support;
 }
 
 QString SieveActionKeep::code(QWidget *w) const

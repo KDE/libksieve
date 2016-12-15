@@ -34,8 +34,8 @@ using namespace KSieveUi;
 SieveActionFileInto::SieveActionFileInto(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
     : SieveAction(sieveGraphicalModeWidget, QStringLiteral("fileinto"), i18n("File Into"), parent)
 {
-    mHasCopySupport = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("copy"));
-    mHasMailBoxSupport = SieveEditorGraphicalModeWidget::sieveCapabilities().contains(QStringLiteral("mailbox"));
+    mHasCopySupport = sieveCapabilities().contains(QStringLiteral("copy"));
+    mHasMailBoxSupport = sieveCapabilities().contains(QStringLiteral("mailbox"));
 }
 
 QString SieveActionFileInto::code(QWidget *w) const
