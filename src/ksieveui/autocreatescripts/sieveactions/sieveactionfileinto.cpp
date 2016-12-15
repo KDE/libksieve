@@ -23,9 +23,11 @@
 #include <KLocalizedString>
 #include <QLineEdit>
 
+#include <KPluginLoader>
 #include <QCheckBox>
 #include <QHBoxLayout>
 #include "libksieve_debug.h"
+#include <KPluginFactory>
 #include <QDomNode>
 //Add support for adding flags
 using namespace KSieveUi;
@@ -125,8 +127,14 @@ QWidget *SieveActionFileInto::createParamWidget(QWidget *parent) const
         lay->addWidget(create);
     }
 
-    //TODO use plugin or not
-    KSieveUi::MoveImapFolderWidget *edit = new KSieveUi::MoveImapFolderWidget;
+    KSieveUi::AbstractMoveImapFolderWidget *edit = Q_NULLPTR;
+    KPluginLoader loader(QStringLiteral("libksieve/imapfoldercompletionplugin"));
+    KPluginFactory* factory = loader.factory();
+    if (!factory) {
+        edit = new KSieveUi::MoveImapFolderWidget;
+    } else {
+        edit = factory->create<KSieveUi::AbstractMoveImapFolderWidget>();
+    }
     connect(edit, &KSieveUi::AbstractMoveImapFolderWidget::textChanged, this, &SieveActionFileInto::valueChanged);
     lay->addWidget(edit);
     edit->setObjectName(QStringLiteral("fileintolineedit"));
