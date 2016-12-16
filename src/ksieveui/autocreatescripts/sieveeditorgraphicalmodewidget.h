@@ -43,8 +43,8 @@ public:
     void setSieveCapabilities(const QStringList &capabilities);
     QStringList sieveCapabilities();
 
-    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &sieveAccount);
-    KSieveUi::SieveImapAccountSettings sieveAccount() const;
+    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &sieveImapAccountSettings);
+    KSieveUi::SieveImapAccountSettings sieveImapAccountSettings() const;
 
     void loadScript(const QDomDocument &doc, QString &error);
 

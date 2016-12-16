@@ -61,7 +61,7 @@ public:
     void serverDoesNotSupportFeatures(const QString &feature, QString &error);
 
 protected:
-    SieveImapAccountSettings sieveAccount() const;
+    SieveImapAccountSettings sieveImapAccountSettings() const;
     QStringList sieveCapabilities() const;
     SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
 

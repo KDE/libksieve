@@ -54,8 +54,8 @@ public:
 
 Q_SIGNALS:
     void updateButtons(QTreeWidgetItem *item);
-    void newScript(const QUrl &u, const QStringList &currentCapabilities, const KSieveUi::SieveImapAccountSettings &sieveAccount);
-    void editScript(const QUrl &url, const QStringList &currentCapabilities, const KSieveUi::SieveImapAccountSettings &sieveAccount);
+    void newScript(const QUrl &u, const QStringList &currentCapabilities, const KSieveUi::SieveImapAccountSettings &sieveImapAccountSettings);
+    void editScript(const QUrl &url, const QStringList &currentCapabilities, const KSieveUi::SieveImapAccountSettings &sieveImapAccountSettings);
     void scriptDeleted(const QUrl &u);
     void serverSieveFound(bool imapFound);
     void scriptRenamed(const QUrl &oldUrl, const QUrl &newUrl);

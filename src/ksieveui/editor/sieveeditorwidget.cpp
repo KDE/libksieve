@@ -514,9 +514,9 @@ void SieveEditorWidget::setSieveCapabilities(const QStringList &capabilities)
     mGraphicalModeWidget->setSieveCapabilities(capabilities);
 }
 
-void SieveEditorWidget::setSieveImapAccountSettings(const SieveImapAccountSettings &sieveAccount)
+void SieveEditorWidget::setSieveImapAccountSettings(const SieveImapAccountSettings &sieveImapAccountSettings)
 {
-    mGraphicalModeWidget->setSieveImapAccountSettings(sieveAccount);
+    mGraphicalModeWidget->setSieveImapAccountSettings(sieveImapAccountSettings);
 }
 
 void SieveEditorWidget::slotCreateRulesGraphically()

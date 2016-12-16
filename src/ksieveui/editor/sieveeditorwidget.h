@@ -54,7 +54,7 @@ public:
     void resultDone();
 
     void setSieveCapabilities(const QStringList &capabilities);
-    void setSieveImapAccountSettings(const SieveImapAccountSettings &sieveAccount);
+    void setSieveImapAccountSettings(const SieveImapAccountSettings &sieveImapAccountSettings);
 
     void addFailedMessage(const QString &err);
     void addOkMessage(const QString &msg);

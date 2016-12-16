@@ -40,12 +40,12 @@ SieveAction::~SieveAction()
 {
 }
 
-KSieveUi::SieveImapAccountSettings SieveAction::sieveAccount() const
+KSieveUi::SieveImapAccountSettings SieveAction::sieveImapAccountSettings() const
 {
     if (mSieveGraphicalModeWidget) {
-        return mSieveGraphicalModeWidget->sieveAccount();
+        return mSieveGraphicalModeWidget->sieveImapAccountSettings();
     }
-    qCWarning(LIBKSIEVE_LOG) << "SieveAction::sieveAccount Problem during initialize mSieveGraphicalModeWidget ";
+    qCWarning(LIBKSIEVE_LOG) << "SieveAction::sieveImapAccountSettings Problem during initialize mSieveGraphicalModeWidget ";
     return {};
 }
 

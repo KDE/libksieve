@@ -544,7 +544,7 @@ void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, c
     parent->setData(0, SIEVE_SERVER_CAPABILITIES, job->sieveCapabilities());
     parent->setData(0, SIEVE_SERVER_ERROR, false);
     parent->setData(0, SIEVE_SERVER_MODE, hasKep14EditorMode ? Kep14EditorMode : NormalEditorMode);
-    parent->setData(0, SIEVE_SERVER_IMAP_SETTINGS, QVariant::fromValue(job->property("sieveaccount").value<KSieveUi::SieveImapAccountSettings>()));
+    parent->setData(0, SIEVE_SERVER_IMAP_SETTINGS, QVariant::fromValue(job->property("sieveimapaccountsettings").value<KSieveUi::SieveImapAccountSettings>()));
     d->mTreeView->expandItem(parent);
 }
 
