@@ -28,6 +28,27 @@ namespace KSieveUi
 class KSIEVEUI_EXPORT SieveImapAccountSettings
 {
 public:
+    //Keep sync with KIMAP settings.
+    enum EncryptionMode {
+        Unencrypted = 0,
+        TlsV1,
+        SslV2,
+        SslV3,
+        SslV3_1,
+        AnySslVersion
+    };
+
+    enum AuthenticationMode {
+        ClearText = 0,
+        Login,
+        Plain,
+        CramMD5,
+        DigestMD5,
+        NTLM,
+        GSSAPI,
+        Anonymous,
+        XOAuth2
+    };
     SieveImapAccountSettings();
     ~SieveImapAccountSettings();
 
@@ -43,17 +64,21 @@ public:
     void setPassword(const QString &password);
     QString password() const;
 
-    void setAuthenticationType(MailTransport::Transport::EnumAuthenticationType::type type);
-    MailTransport::Transport::EnumAuthenticationType::type authenticationType() const;
+    void setAuthenticationType(KSieveUi::SieveImapAccountSettings::AuthenticationMode type);
+    AuthenticationMode authenticationType() const;
     bool operator==(const SieveImapAccountSettings &other) const;
 
     bool isValid() const;
+
+    SieveImapAccountSettings::EncryptionMode encryptionMode() const;
+    void setEncryptionMode(const SieveImapAccountSettings::EncryptionMode &encryptionMode);
 
 private:
     QString mServerName;
     QString mUserName;
     QString mPassword;
-    MailTransport::Transport::EnumAuthenticationType::type mAuthenticationType;
+    SieveImapAccountSettings::AuthenticationMode mAuthenticationType;
+    SieveImapAccountSettings::EncryptionMode mEncryptionMode;
     int mPort;
 };
 }

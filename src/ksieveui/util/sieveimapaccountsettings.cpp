@@ -22,7 +22,8 @@
 using namespace KSieveUi;
 
 SieveImapAccountSettings::SieveImapAccountSettings()
-    : mAuthenticationType(MailTransport::Transport::EnumAuthenticationType::PLAIN),
+    : mAuthenticationType(Plain),
+      mEncryptionMode(Unencrypted),
       mPort(-1)
 {
 
@@ -72,12 +73,12 @@ QString SieveImapAccountSettings::password() const
     return mPassword;
 }
 
-void SieveImapAccountSettings::setAuthenticationType(MailTransport::TransportBase::EnumAuthenticationType::type type)
+void SieveImapAccountSettings::setAuthenticationType(AuthenticationMode type)
 {
     mAuthenticationType = type;
 }
 
-MailTransport::TransportBase::EnumAuthenticationType::type SieveImapAccountSettings::authenticationType() const
+KSieveUi::SieveImapAccountSettings::AuthenticationMode SieveImapAccountSettings::authenticationType() const
 {
     return mAuthenticationType;
 }
@@ -88,10 +89,21 @@ bool SieveImapAccountSettings::operator==(const SieveImapAccountSettings &other)
            (mPassword == other.password()) &&
            (mPort == other.port()) &&
            (mUserName == other.userName()) &&
-           (mAuthenticationType == other.authenticationType());
+           (mAuthenticationType == other.authenticationType()) &&
+           (mEncryptionMode == other.encryptionMode());
 }
 
 bool SieveImapAccountSettings::isValid() const
 {
     return !mServerName.isEmpty() && !mPassword.isEmpty() && (mPort != -1) && (!mUserName.isEmpty());
+}
+
+SieveImapAccountSettings::EncryptionMode SieveImapAccountSettings::encryptionMode() const
+{
+    return mEncryptionMode;
+}
+
+void SieveImapAccountSettings::setEncryptionMode(const SieveImapAccountSettings::EncryptionMode &encryptionMode)
+{
+    mEncryptionMode = encryptionMode;
 }

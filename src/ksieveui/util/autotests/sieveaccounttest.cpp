@@ -40,7 +40,8 @@ void SieveAccountTest::shouldHaveDefaultValue()
     QVERIFY(account.serverName().isEmpty());
     QVERIFY(account.userName().isEmpty());
     QCOMPARE(account.port(), -1);
-    QCOMPARE(account.authenticationType(), MailTransport::Transport::EnumAuthenticationType::PLAIN);
+    QCOMPARE(account.authenticationType(), KSieveUi::SieveImapAccountSettings::Plain);
+    QCOMPARE(account.encryptionMode(), KSieveUi::SieveImapAccountSettings::Unencrypted);
 }
 
 void SieveAccountTest::shouldAssignValue()
@@ -50,17 +51,20 @@ void SieveAccountTest::shouldAssignValue()
     QString server = QStringLiteral("kde");
     QString user = QStringLiteral("bla");
     int port = 42;
-    MailTransport::Transport::EnumAuthenticationType::type type = MailTransport::Transport::EnumAuthenticationType::CRAM_MD5;
+    KSieveUi::SieveImapAccountSettings::AuthenticationMode type = KSieveUi::SieveImapAccountSettings::DigestMD5;
+    KSieveUi::SieveImapAccountSettings::EncryptionMode mode = KSieveUi::SieveImapAccountSettings::SslV3_1;
     account.setPassword(pwd);
     account.setServerName(server);
     account.setUserName(user);
     account.setPort(port);
     account.setAuthenticationType(type);
+    account.setEncryptionMode(mode);
     QCOMPARE(account.password(), pwd);
     QCOMPARE(account.serverName(), server);
     QCOMPARE(account.userName(), user);
     QCOMPARE(account.port(), port);
     QCOMPARE(account.authenticationType(), type);
+    QCOMPARE(account.encryptionMode(), mode);
 }
 
 void SieveAccountTest::shouldBeEqual()
@@ -70,12 +74,14 @@ void SieveAccountTest::shouldBeEqual()
     QString server = QStringLiteral("kde");
     QString user = QStringLiteral("bla");
     int port = 42;
-    MailTransport::Transport::EnumAuthenticationType::type type = MailTransport::Transport::EnumAuthenticationType::CRAM_MD5;
+    KSieveUi::SieveImapAccountSettings::AuthenticationMode type = KSieveUi::SieveImapAccountSettings::DigestMD5;
+    KSieveUi::SieveImapAccountSettings::EncryptionMode mode = KSieveUi::SieveImapAccountSettings::SslV3_1;
     account.setPassword(pwd);
     account.setServerName(server);
     account.setUserName(user);
     account.setPort(port);
     account.setAuthenticationType(type);
+    account.setEncryptionMode(mode);
 
     KSieveUi::SieveImapAccountSettings accountB;
     accountB = account;
