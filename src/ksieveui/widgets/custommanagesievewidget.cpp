@@ -43,8 +43,8 @@ bool CustomManageSieveWidget::refreshList()
 {
     bool noImapFound = true;
     SieveTreeWidgetItem *last = Q_NULLPTR;
-    Akonadi::AgentInstance::List lst = KSieveUi::Util::imapAgentInstances();
-    Q_FOREACH (const Akonadi::AgentInstance &type, lst) {
+    const Akonadi::AgentInstance::List lst = KSieveUi::Util::imapAgentInstances();
+    for (const Akonadi::AgentInstance &type : lst) {
         if (type.status() == Akonadi::AgentInstance::Broken) {
             continue;
         }

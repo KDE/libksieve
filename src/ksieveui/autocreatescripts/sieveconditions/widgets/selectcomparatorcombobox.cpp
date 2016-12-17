@@ -38,7 +38,7 @@ void SelectComparatorComboBox::initialize(const QStringList &sieveCapabilities)
     addItem(QStringLiteral("i;octet"), QStringLiteral("comparator-i;octet"));
     addItem(QStringLiteral("i;ascii-casemap"), QStringLiteral("comparator-i;ascii-casemap"));
 
-    Q_FOREACH (const QString &capability, sieveCapabilities) {
+    for (const QString &capability : sieveCapabilities) {
         if (capability.startsWith(QStringLiteral("comparator-"))) {
             QString str(capability);
             str.remove(QStringLiteral("comparator-"));

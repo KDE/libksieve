@@ -173,7 +173,7 @@ void SelectHeadersWidget::setListHeaders(const QMap<QString, QString> &lst, cons
             }
         }
     }
-    Q_FOREACH (const QString &header, selectedHeaders) {
+    for (const QString &header : selectedHeaders) {
         if (!lst.contains(header)) {
             QListWidgetItem *item = new QListWidgetItem(header, this);
             item->setData(HeaderId, header);

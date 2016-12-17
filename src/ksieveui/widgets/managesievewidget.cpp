@@ -188,7 +188,7 @@ void ManageSieveWidget::slotCancelFetch()
     QTreeWidgetItem *item = d->mTreeView->currentItem();
     if (item) {
         const QList<KManageSieve::SieveJob *> jobs = mJobs.keys(item);
-        Q_FOREACH (KManageSieve::SieveJob *job, jobs) {
+        for (KManageSieve::SieveJob *job : jobs) {
             job->kill();
         }
     }

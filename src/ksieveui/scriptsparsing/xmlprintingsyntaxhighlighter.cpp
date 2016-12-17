@@ -36,10 +36,9 @@ void XMLPrintingSyntaxHighLighter::init()
     QTextCharFormat testFormat;
     testFormat.setForeground(Qt::gray);
     testFormat.setFontWeight(QFont::Bold);
-    QStringList testType;
-    testType << QStringLiteral("require");
+    const QStringList testType = { QStringLiteral("require") };
 
-    Q_FOREACH (const QString &s, testType) {
+    for (const QString &s : testType) {
         const QRegularExpression regex(s, QRegularExpression::CaseInsensitiveOption);
         m_rules.append(KPIMTextEdit::Rule(regex, testFormat));
     }

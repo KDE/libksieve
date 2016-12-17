@@ -72,7 +72,7 @@ QString Vacation::serverName() const
 QUrl Vacation::findURL(QString &serverName) const
 {
     const Akonadi::AgentInstance::List instances = Util::imapAgentInstances();
-    foreach (const Akonadi::AgentInstance &instance, instances) {
+    for (const Akonadi::AgentInstance &instance : instances) {
         if (instance.status() == Akonadi::AgentInstance::Broken) {
             continue;
         }

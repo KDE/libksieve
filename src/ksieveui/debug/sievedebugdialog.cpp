@@ -41,7 +41,7 @@ SieveDebugDialog::SieveDebugDialog(QWidget *parent)
     // Collect all accounts
     const Akonadi::AgentInstance::List lst = KSieveUi::Util::imapAgentInstances();
     mResourceIdentifier.reserve(lst.count());
-    foreach (const Akonadi::AgentInstance &type, lst) {
+    for (const Akonadi::AgentInstance &type : lst) {
         mResourceIdentifier << type.identifier();
     }
 

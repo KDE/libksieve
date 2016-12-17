@@ -89,7 +89,7 @@ void SieveActionWidget::generatedScript(QString &script, QStringList &requires, 
         KSieveUi::SieveAction *widgetAction = mActionList.at(mComboBox->currentIndex());
         QWidget *currentWidget = mLayout->itemAtPosition(1, 3)->widget();
         const QStringList lstRequires = widgetAction->needRequires(currentWidget);
-        Q_FOREACH (const QString &r, lstRequires) {
+        for (const QString &r : lstRequires) {
             if (!requires.contains(r)) {
                 requires.append(r);
             }

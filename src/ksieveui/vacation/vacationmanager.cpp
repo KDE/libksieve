@@ -110,8 +110,8 @@ void VacationManager::slotDialogCanceled()
 
 void VacationManager::slotDialogOk()
 {
-    QList<KSieveUi::VacationCreateScriptJob *> listJob = d->mMultiImapVacationDialog->listCreateJob();
-    Q_FOREACH (KSieveUi::VacationCreateScriptJob *job, listJob) {
+    const QList<KSieveUi::VacationCreateScriptJob *> listJob = d->mMultiImapVacationDialog->listCreateJob();
+    for (KSieveUi::VacationCreateScriptJob *job : listJob) {
         connect(job, &VacationCreateScriptJob::scriptActive, this, &VacationManager::updateVacationScriptStatus);
         job->setKep14Support(d->mCheckVacation->kep14Support(job->serverName()));
         job->start();
