@@ -46,6 +46,7 @@ public:
 
 Q_SIGNALS:
     void scriptActive(VacationCheckJob *job, const QString &sscriptName, bool active);
+    void error(const QString &errorStr);
 
 private Q_SLOTS:
     void slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool active);

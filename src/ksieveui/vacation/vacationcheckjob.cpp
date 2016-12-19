@@ -152,7 +152,7 @@ void VacationCheckJob::slotGotList(KManageSieve::SieveJob *job, bool success, co
 void VacationCheckJob::emitError(const QString &errorMessage)
 {
     qCWarning(LIBKSIEVE_LOG) << errorMessage;
-    //TODO: Q_EMIT error
+    Q_EMIT error(errorMessage);
 }
 
 void VacationCheckJob::searchVacationScript()
