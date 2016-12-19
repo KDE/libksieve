@@ -69,7 +69,7 @@ void VacationCheckJob::start()
         QUrl url = mUrl;
         url = url.adjusted(QUrl::RemoveFilename);
         url.setPath(url.path() + QLatin1String("USER"));
-        mParseJob = new ParseUserScriptJob(url);
+        mParseJob = new ParseUserScriptJob(url, this);
         connect(mParseJob, &ParseUserScriptJob::finished, this, &VacationCheckJob::slotGotActiveScripts);
         mParseJob->start();
         mSieveJob = KManageSieve::SieveJob::list(url);
