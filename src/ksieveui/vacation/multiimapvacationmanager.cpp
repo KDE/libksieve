@@ -101,11 +101,11 @@ void MultiImapVacationManager::slotScriptActive(VacationCheckJob *job, const QSt
     job->deleteLater();
 
     if (job->noScriptFound()) {
-        emit scriptActive(false, job->serverName());
+        Q_EMIT scriptActive(false, job->serverName());
         return;
     }
-    emit scriptActive(active, job->serverName());
-    emit scriptAvailable(job->serverName(), job->sieveCapabilities(), scriptName, job->script(), active);
+    Q_EMIT scriptActive(active, job->serverName());
+    Q_EMIT scriptAvailable(job->serverName(), job->sieveCapabilities(), scriptName, job->script(), active);
 }
 
 void MultiImapVacationManager::slotCheckKep14Ended(CheckKolabKep14SupportJob *job, bool success)
