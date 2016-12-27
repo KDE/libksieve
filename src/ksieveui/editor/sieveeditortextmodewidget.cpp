@@ -236,6 +236,7 @@ void SieveEditorTextModeWidget::createRulesGraphically()
 {
     QPointer<AutoCreateScriptDialog> dlg = new AutoCreateScriptDialog(this);
     dlg->setSieveCapabilities(mSieveCapabilities);
+    dlg->setSieveImapAccountSettings(mSieveImapAccountSettings);
     if (dlg->exec()) {
         QString requires;
         const QString script = dlg->script(requires);

@@ -43,9 +43,6 @@ public:
     void setSieveCapabilities(const QStringList &capabilities);
     QStringList sieveCapabilities();
 
-    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &sieveImapAccountSettings);
-    KSieveUi::SieveImapAccountSettings sieveImapAccountSettings() const;
-
     void loadScript(const QDomDocument &doc, QString &error);
 
     QString currentscript() Q_DECL_OVERRIDE;
@@ -67,7 +64,6 @@ private Q_SLOTS:
     void slotActivateScriptPage(QWidget *page);
 
 private:
-    KSieveUi::SieveImapAccountSettings mSieveImapAccountSettings;
     QStringList mCapabilities;
     SieveScriptListBox *mSieveScript;
     QStackedWidget *mStackWidget;

@@ -61,6 +61,11 @@ void AutoCreateScriptDialog::loadScript(const QDomDocument &doc, QString &error)
     mEditor->loadScript(doc, error);
 }
 
+void AutoCreateScriptDialog::setSieveImapAccountSettings(const SieveImapAccountSettings &sieveImapAccountSettings)
+{
+    mEditor->setSieveImapAccountSettings(sieveImapAccountSettings);
+}
+
 void AutoCreateScriptDialog::setSieveCapabilities(const QStringList &capabilities)
 {
     mEditor->setSieveCapabilities(capabilities);

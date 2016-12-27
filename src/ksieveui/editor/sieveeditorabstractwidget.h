@@ -20,9 +20,11 @@
 #define SIEVEEDITORABSTRACTWIDGET_H
 
 #include <QWidget>
+#include "../util/sieveimapaccountsettings.h"
 
 namespace KSieveUi
 {
+class SieveImapAccountSettings;
 class SieveEditorAbstractWidget : public QWidget
 {
     Q_OBJECT
@@ -34,8 +36,15 @@ public:
     virtual void setImportScript(const QString &);
     void saveAs(const QString &defaultName);
 
+    KSieveUi::SieveImapAccountSettings sieveImapAccountSettings() const;
+
+    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings & sieveImapAccountSettings);
+
 public Q_SLOTS:
     void slotImport();
+
+protected:
+    KSieveUi::SieveImapAccountSettings mSieveImapAccountSettings;
 
 private:
     bool loadFromFile(const QString &filename);

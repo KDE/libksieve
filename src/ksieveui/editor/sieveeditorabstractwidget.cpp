@@ -46,6 +46,16 @@ void SieveEditorAbstractWidget::saveAs(const QString &defaultName)
                                 i18nc("@title:window", "Save Script"));
 }
 
+KSieveUi::SieveImapAccountSettings SieveEditorAbstractWidget::sieveImapAccountSettings() const
+{
+    return mSieveImapAccountSettings;
+}
+
+void SieveEditorAbstractWidget::setSieveImapAccountSettings(const SieveImapAccountSettings &sieveImapAccountSettings)
+{
+    mSieveImapAccountSettings = sieveImapAccountSettings;
+}
+
 QString SieveEditorAbstractWidget::currentscript()
 {
     return QString();

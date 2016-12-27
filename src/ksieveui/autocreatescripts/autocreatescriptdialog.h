@@ -28,6 +28,7 @@ class QDomDocument;
 
 namespace KSieveUi
 {
+class SieveImapAccountSettings;
 class SieveEditorGraphicalModeWidget;
 class KSIEVEUI_EXPORT AutoCreateScriptDialog : public QDialog
 {
@@ -41,6 +42,7 @@ public:
 
     void loadScript(const QDomDocument &doc, QString &error);
 
+    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &sieveImapAccountSettings);
 protected:
     bool event(QEvent *e) Q_DECL_OVERRIDE;
 

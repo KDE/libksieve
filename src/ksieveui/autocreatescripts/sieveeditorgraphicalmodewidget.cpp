@@ -102,16 +102,6 @@ QStringList SieveEditorGraphicalModeWidget::sieveCapabilities()
     return mCapabilities;
 }
 
-void SieveEditorGraphicalModeWidget::setSieveImapAccountSettings(const SieveImapAccountSettings &sieveImapAccountSettings)
-{
-    mSieveImapAccountSettings = sieveImapAccountSettings;
-}
-
-SieveImapAccountSettings SieveEditorGraphicalModeWidget::sieveImapAccountSettings() const
-{
-    return mSieveImapAccountSettings;
-}
-
 QString SieveEditorGraphicalModeWidget::script(QString &requires) const
 {
     return mSieveScript->generatedScript(requires);
