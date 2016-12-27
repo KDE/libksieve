@@ -33,6 +33,11 @@ SieveImapAccountSettings::~SieveImapAccountSettings()
 {
 }
 
+QString SieveImapAccountSettings::identifier() const
+{
+    return mUserName + QLatin1Char('_') + mServerName;
+}
+
 void SieveImapAccountSettings::setServerName(const QString &server)
 {
     mServerName = server;

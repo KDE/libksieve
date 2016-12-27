@@ -34,6 +34,9 @@ private Q_SLOTS:
     void shouldAssignValue();
     void shouldBeEqual();
 
+    void shouldCreateIdentifier();
+    void shouldCreateIdentifier_data();
+
 };
 
 #endif // SIEVEACCOUNTTEST_H

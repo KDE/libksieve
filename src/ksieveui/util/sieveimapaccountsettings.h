@@ -52,6 +52,8 @@ public:
     SieveImapAccountSettings();
     ~SieveImapAccountSettings();
 
+    QString identifier() const;
+
     void setServerName(const QString &serverName);
     QString serverName() const;
 

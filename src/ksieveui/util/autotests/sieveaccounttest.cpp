@@ -88,4 +88,33 @@ void SieveAccountTest::shouldBeEqual()
     QCOMPARE(account, accountB);
 }
 
+void SieveAccountTest::shouldCreateIdentifier_data()
+{
+    QTest::addColumn<QString>("username");
+    QTest::addColumn<QString>("servername");
+    QTest::addColumn<QString>("output");
+
+    QTest::newRow("empty") << QString() << QString() << QStringLiteral("_");
+    QTest::newRow("test1") << QStringLiteral("foo") << QStringLiteral("bla") << QStringLiteral("foo_bla");
+}
+
+void SieveAccountTest::shouldCreateIdentifier()
+{
+    QFETCH(QString, username);
+    QFETCH(QString, servername);
+    QFETCH(QString, output);
+    KSieveUi::SieveImapAccountSettings account;
+    account.setServerName(servername);
+    account.setUserName(username);
+
+    //Identifier doesn't depend against theses settings
+    KSieveUi::SieveImapAccountSettings::AuthenticationMode type = KSieveUi::SieveImapAccountSettings::DigestMD5;
+    KSieveUi::SieveImapAccountSettings::EncryptionMode mode = KSieveUi::SieveImapAccountSettings::SslV3_1;
+    account.setPort(42);
+    account.setAuthenticationType(type);
+    account.setEncryptionMode(mode);
+
+    QCOMPARE(account.identifier(), output);
+}
+
 QTEST_MAIN(SieveAccountTest)
