@@ -1038,7 +1038,7 @@ bool kio_sieveProtocol::authenticate()
     }
 
     do {
-        result = sasl_client_start(conn, strList.join(QStringLiteral(" ")).toLatin1(),
+        result = sasl_client_start(conn, strList.join(QLatin1Char(' ')).toLatin1(),
                                    &client_interact, &out, &outlen, &mechusing);
 
         if (result == SASL_INTERACT) {
