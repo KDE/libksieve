@@ -46,9 +46,8 @@ void XMLPrintingSyntaxHighLighter::init()
     QTextCharFormat quoteFormat;
     quoteFormat.setForeground(Qt::blue);
     quoteFormat.setFontWeight(QFont::Bold);
-    QStringList quoteType;
-    quoteType << QStringLiteral("quoted") << QStringLiteral("hash") << QStringLiteral("bracket") << QStringLiteral("multiline");
-    Q_FOREACH (const QString &s, quoteType) {
+    const QStringList quoteType = { QStringLiteral("quoted"), QStringLiteral("hash"), QStringLiteral("bracket"), QStringLiteral("multiline")};
+    for (const QString &s : quoteType) {
         const QRegularExpression regex(s, QRegularExpression::CaseInsensitiveOption);
         m_rules.append(KPIMTextEdit::Rule(regex, quoteFormat));
     }

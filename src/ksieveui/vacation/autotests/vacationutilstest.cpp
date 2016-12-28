@@ -209,7 +209,7 @@ void VacationUtilsTest::testParseScriptComplexTime()
 void VacationUtilsTest::testWriteScript()
 {
     VacationUtils::Vacation vacation, vacationA;
-    QStringList aliases = QStringList() << QStringLiteral("test@test.de");
+    const QStringList aliases = QStringList() << QStringLiteral("test@test.de");
     vacation.valid = true;
 
     vacation.messageText = QStringLiteral("dsfgsdfgsdfg");
@@ -221,7 +221,7 @@ void VacationUtilsTest::testWriteScript()
     vacation.endDate = QDate(2015, 03, 04);
     vacation.active = true;
 
-    foreach (const QString &alias, aliases) {
+    for (const QString &alias : aliases) {
         KMime::Types::Mailbox a;
         a.fromUnicodeString(alias);
         vacation.aliases.append(a.addrSpec());

@@ -511,7 +511,7 @@ void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, c
     }
 
     d->mBlockSignal = true; // don't trigger slotItemChanged
-    Q_FOREACH (const QString &script, listScript) {
+    for (const QString &script : listScript) {
         //Hide protected name.
         if (Util::isKep14ProtectedName(script)) {
             continue;

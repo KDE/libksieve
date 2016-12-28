@@ -230,7 +230,7 @@ bool Util::hasKep14Support(const QStringList &sieveCapabilities, const QStringLi
     }
 
     bool hasUserScript = false;
-    foreach (const QString &script, availableScripts) {
+    for (const QString &script : availableScripts) {
         if (script.isEmpty()) {
             continue;
         }
