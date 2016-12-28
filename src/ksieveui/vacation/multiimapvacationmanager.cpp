@@ -84,10 +84,10 @@ void MultiImapVacationManager::checkVacation()
     mNumberOfJobs = 0;
     mCheckInProgress = true;
 
-    QMap <QString, QUrl> list = serverList();
-    foreach (const QString &serverName, list.keys()) {
-        const QUrl url = list.value(serverName);
-        checkVacation(serverName, url);
+    QMapIterator<QString, QUrl> i(serverList());
+    while (i.hasNext()) {
+        i.next();
+        checkVacation(i.key(), i.value());
     }
 }
 
