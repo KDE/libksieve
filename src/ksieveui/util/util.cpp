@@ -199,7 +199,8 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
 Akonadi::AgentInstance::List KSieveUi::Util::imapAgentInstances()
 {
     Akonadi::AgentInstance::List relevantInstances;
-    foreach (const Akonadi::AgentInstance &instance, Akonadi::AgentManager::self()->instances()) {
+    const Akonadi::AgentInstance::List allInstances = Akonadi::AgentManager::self()->instances();
+    for (const Akonadi::AgentInstance &instance : allInstances) {
         if (instance.type().mimeTypes().contains(KMime::Message::mimeType()) &&
                 instance.type().capabilities().contains(QStringLiteral("Resource")) &&
                 !instance.type().capabilities().contains(QStringLiteral("Virtual"))) {
