@@ -184,7 +184,7 @@ void SieveScriptDebuggerFrontEndWidget::slotDebugScript()
     mSieveTestResult->editor()->appendPlainText(QStringLiteral("\n"));
     if (!mProcess->waitForStarted()) {
         delete mProcess;
-        mProcess = 0;
+        mProcess = Q_NULLPTR;
         mDebugScript->setEnabled(true);
     }
 }
@@ -204,7 +204,7 @@ void SieveScriptDebuggerFrontEndWidget::slotReadErrorOutput()
 void SieveScriptDebuggerFrontEndWidget::slotDebugFinished()
 {
     delete mProcess;
-    mProcess = 0;
+    mProcess = Q_NULLPTR;
     mDebugScript->setEnabled(true);
 }
 

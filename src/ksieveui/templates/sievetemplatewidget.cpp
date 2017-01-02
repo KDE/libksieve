@@ -48,7 +48,7 @@ void SieveTemplateListWidget::setSieveCapabilities(const QStringList &capabiliti
 QMimeData *SieveTemplateListWidget::mimeData(const QList<QListWidgetItem *> items) const
 {
     if (items.isEmpty()) {
-        return 0;
+        return Q_NULLPTR;
     }
     QMimeData *mimeData = new QMimeData();
     QListWidgetItem *item = items.first();

@@ -57,7 +57,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
 {
     QVBoxLayout *lay = new QVBoxLayout;
 #if !defined(NDEBUG)
-    mGenerateXml = 0;
+    mGenerateXml = Q_NULLPTR;
 #endif
 
     QToolBar *toolbar = new QToolBar;
