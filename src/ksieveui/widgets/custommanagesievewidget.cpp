@@ -62,6 +62,7 @@ bool CustomManageSieveWidget::refreshList()
         } else {
             serverName += QStringLiteral(" (%1)").arg(u.userName());
             KManageSieve::SieveJob *job = KManageSieve::SieveJob::list(u);
+            //TODO job->setProperty("sieveimapaccountsettings", QVariant::fromValue(conf.sieveImapAccountSettings));
             connect(job, &KManageSieve::SieveJob::gotList, this, &CustomManageSieveWidget::slotGotList);
             mJobs.insert(job, last);
             mUrls.insert(last, u);
