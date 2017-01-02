@@ -50,14 +50,21 @@ using namespace KSieveUi;
 
 QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier, bool withVacationFileName)
 {
+    KSieveUi::Util::AccountInfo accountInfo = KSieveUi::Util::findAccountInfo(identifier, withVacationFileName);
+    return accountInfo.sieveUrl;
+}
+
+KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &identifier, bool withVacationFileName)
+{
     std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> interface(PimCommon::Util::createImapSettingsInterface(identifier));
 
+    KSieveUi::Util::AccountInfo accountInfo;
     if (!interface) {
-        return QUrl();
+        return accountInfo;
     }
 
     if (!interface->sieveSupport()) {
-        return QUrl();
+        return accountInfo;
     }
 
     if (interface->sieveReuseConfig()) {
@@ -70,7 +77,7 @@ QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier, bool with
             server = reply;
             server = server.section(QLatin1Char(':'), 0, 0);
         } else {
-            return QUrl();
+            return accountInfo;
         }
         u.setHost(server);
         u.setUserName(interface->userName());
@@ -120,7 +127,8 @@ QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier, bool with
         if (withVacationFileName) {
             u.setPath(u.path() + QLatin1Char('/') + QString(interface->sieveVacationFilename()));
         }
-        return u;
+        accountInfo.sieveUrl = u;
+        return accountInfo;
     } else {
         QUrl u;
         u.setHost(interface->sieveAlternateUrl());
@@ -183,7 +191,8 @@ QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier, bool with
         if (withVacationFileName) {
             u.setPath(u.path() + QLatin1Char('/') + QString(interface->sieveVacationFilename()));
         }
-        return u;
+        accountInfo.sieveUrl = u;
+        return accountInfo;
     }
 }
 

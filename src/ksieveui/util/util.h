@@ -40,6 +40,7 @@
 #define KSIEVE_KSIEVEUI_UTIL_H
 
 #include "ksieveui_export.h"
+#include <KSieveUi/SieveImapAccountSettings>
 
 #include <agentinstance.h>
 
@@ -55,6 +56,12 @@ namespace KSieveUi
  */
 namespace Util
 {
+
+struct AccountInfo
+{
+    KSieveUi::SieveImapAccountSettings sieveImapAccountSettings;
+    QUrl sieveUrl;
+};
 
 /**
  * Returns the sieve url for the account with the given @p identifier.
@@ -88,6 +95,9 @@ bool hasKep14Support(const QStringList &sieveCapabilities, const QStringList &av
  * it tests against MASTER, USER and MANAGEMENT script
  */
 bool isKep14ProtectedName(const QString &scriptName);
+
+
+KSIEVEUI_EXPORT KSieveUi::Util::AccountInfo findAccountInfo(const QString &identifier, bool withVacationFileName);
 }
 
 }
