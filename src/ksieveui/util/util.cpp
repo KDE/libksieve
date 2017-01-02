@@ -79,6 +79,8 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         } else {
             return accountInfo;
         }
+        accountInfo.sieveImapAccountSettings.setServerName(server);
+        accountInfo.sieveImapAccountSettings.setUserName(interface->userName());
         u.setHost(server);
         u.setUserName(interface->userName());
 
@@ -90,6 +92,7 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
             pwd = replyPass;
         }
         u.setPassword(pwd);
+        accountInfo.sieveImapAccountSettings.setPassword(pwd);
         u.setPort(interface->sievePort());
         QString authStr;
         switch (interface->authentication()) {
