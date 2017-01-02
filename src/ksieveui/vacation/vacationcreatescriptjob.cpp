@@ -35,9 +35,9 @@ VacationCreateScriptJob::VacationCreateScriptJob(QObject *parent)
     , mUserJobRunning(false)
     , mScriptJobRunning(false)
     , mSuccess(true)
-    , mSieveJob(Q_NULLPTR)
-    , mParseUserJob(Q_NULLPTR)
-    , mCreateJob(Q_NULLPTR)
+    , mSieveJob(nullptr)
+    , mParseUserJob(nullptr)
+    , mCreateJob(nullptr)
 {
 
 }
@@ -52,17 +52,17 @@ void VacationCreateScriptJob::kill()
     if (mSieveJob) {
         mSieveJob->kill();
     }
-    mSieveJob = Q_NULLPTR;
+    mSieveJob = nullptr;
 
     if (mParseUserJob) {
         mParseUserJob->kill();
     }
-    mParseUserJob = Q_NULLPTR;
+    mParseUserJob = nullptr;
 
     if (mCreateJob) {
         mCreateJob->kill();
     }
-    mParseUserJob = Q_NULLPTR;
+    mParseUserJob = nullptr;
 }
 
 void VacationCreateScriptJob::setStatus(bool activate, bool wasActive)
@@ -124,7 +124,7 @@ void VacationCreateScriptJob::slotGetScript(KManageSieve::SieveJob *job, bool su
 {
     Q_UNUSED(active)
     Q_ASSERT(job == mSieveJob);
-    mSieveJob = Q_NULLPTR;
+    mSieveJob = nullptr;
     QString script = mScript;
     if (success || !oldScript.trimmed().isEmpty()) {
         script = VacationUtils::mergeRequireLine(oldScript, mScript);
@@ -141,7 +141,7 @@ void VacationCreateScriptJob::slotGetScript(KManageSieve::SieveJob *job, bool su
 void VacationCreateScriptJob::slotPutResult(KManageSieve::SieveJob *job, bool success)
 {
     Q_ASSERT(job == mSieveJob);
-    mSieveJob = Q_NULLPTR;
+    mSieveJob = nullptr;
     mScriptJobRunning = false;
     if (!success) {
         mSuccess = false;
@@ -156,14 +156,14 @@ void VacationCreateScriptJob::handleResult()
     }
 
     if (mSuccess)
-        KMessageBox::information(Q_NULLPTR,  mActivate
+        KMessageBox::information(nullptr,  mActivate
                                  ? i18n("Sieve script installed successfully on the server \'%1\'.\n"
                                         "Out of Office reply is now active.", mServerName)
                                  : i18n("Sieve script installed successfully on the server \'%1\'.\n"
                                         "Out of Office reply has been deactivated.", mServerName));
 
     qCDebug(LIBKSIEVE_LOG) << "( ???," << mSuccess << ", ? )";
-    mSieveJob = Q_NULLPTR; // job deletes itself after returning from this slot!
+    mSieveJob = nullptr; // job deletes itself after returning from this slot!
     Q_EMIT result(mSuccess);
     Q_EMIT scriptActive(mActivate, mServerName);
     deleteLater();
@@ -172,7 +172,7 @@ void VacationCreateScriptJob::handleResult()
 void VacationCreateScriptJob::slotGotActiveScripts(ParseUserScriptJob *job)
 {
     Q_ASSERT(job == mParseUserJob);
-    mParseUserJob = Q_NULLPTR;
+    mParseUserJob = nullptr;
     if (!job->error().isEmpty()) {
         slotGenerateDone(job->error());
         return;
@@ -194,7 +194,7 @@ void VacationCreateScriptJob::slotGotActiveScripts(ParseUserScriptJob *job)
 
 void VacationCreateScriptJob::slotGenerateDone(const QString &error)
 {
-    mCreateJob = Q_NULLPTR;
+    mCreateJob = nullptr;
     mUserJobRunning = false;
     if (!error.isEmpty()) {
         qCWarning(LIBKSIEVE_LOG) << error;

@@ -25,8 +25,8 @@ using namespace KSieveUi;
 GenerateGlobalScriptJob::GenerateGlobalScriptJob(const QUrl &url, QObject *parent)
     : QObject(parent),
       mCurrentUrl(url),
-      mMasterJob(Q_NULLPTR),
-      mUserJob(Q_NULLPTR)
+      mMasterJob(nullptr),
+      mUserJob(nullptr)
 {
 }
 
@@ -40,13 +40,13 @@ void GenerateGlobalScriptJob::kill()
     if (mMasterJob) {
         mMasterJob->kill();
     }
-    mMasterJob = Q_NULLPTR;
+    mMasterJob = nullptr;
 
     if (mUserJob) {
         mUserJob->kill();
-        mUserJob = Q_NULLPTR;
+        mUserJob = nullptr;
     }
-    mUserJob = Q_NULLPTR;
+    mUserJob = nullptr;
 }
 
 void GenerateGlobalScriptJob::addUserActiveScripts(const QStringList &lstScript)
@@ -102,7 +102,7 @@ void GenerateGlobalScriptJob::slotPutMasterResult(KManageSieve::SieveJob *job, b
                           "The server responded:\n%1", job->errorString()));
         return;
     }
-    mMasterJob = Q_NULLPTR;
+    mMasterJob = nullptr;
     writeUserScript();
 }
 
@@ -131,7 +131,7 @@ void GenerateGlobalScriptJob::writeUserScript()
 
 void GenerateGlobalScriptJob::slotPutUserResult(KManageSieve::SieveJob *job, bool success)
 {
-    mUserJob = Q_NULLPTR;
+    mUserJob = nullptr;
     if (!success) {
         Q_EMIT error(i18n("Error writing \"User\" script on server.\n"
                           "The server responded:\n%1", job->errorString()));

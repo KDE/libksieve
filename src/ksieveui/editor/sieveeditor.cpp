@@ -34,8 +34,8 @@ class KSieveUi::SieveEditorPrivate
 {
 public:
     SieveEditorPrivate()
-        : mSieveEditorWidget(Q_NULLPTR),
-          mOkButton(Q_NULLPTR)
+        : mSieveEditorWidget(nullptr),
+          mOkButton(nullptr)
     {
 
     }

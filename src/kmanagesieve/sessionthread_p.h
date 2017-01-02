@@ -41,7 +41,7 @@ class SessionThread : public QObject
     Q_OBJECT
 
 public:
-    explicit SessionThread(Session *session, QObject *parent = Q_NULLPTR);
+    explicit SessionThread(Session *session, QObject *parent = nullptr);
     ~SessionThread();
 
     void connectToHost(const QUrl &url);

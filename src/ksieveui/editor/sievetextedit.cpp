@@ -45,8 +45,8 @@ class KSieveUi::SieveTextEditPrivate
 {
 public:
     SieveTextEditPrivate()
-        : m_sieveLineNumberArea(Q_NULLPTR),
-          mTextEditorCompleter(Q_NULLPTR),
+        : m_sieveLineNumberArea(nullptr),
+          mTextEditorCompleter(nullptr),
           mShowHelpMenu(true)
     {
 

@@ -72,7 +72,7 @@ QWidget *SieveActionKeep::createParamWidget(QWidget *parent) const
         lay->addWidget(flagsWidget);
         return w;
     } else {
-        return Q_NULLPTR;
+        return nullptr;
     }
 }
 

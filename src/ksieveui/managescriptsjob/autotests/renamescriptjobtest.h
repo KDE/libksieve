@@ -24,7 +24,7 @@ class RenameScriptJobTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit RenameScriptJobTest(QObject *parent = Q_NULLPTR);
+    explicit RenameScriptJobTest(QObject *parent = nullptr);
     ~RenameScriptJobTest();
 
 private Q_SLOTS:

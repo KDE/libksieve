@@ -27,9 +27,9 @@ class KSieveUi::SieveTextEditWidgetPrivate
 {
 public:
     SieveTextEditWidgetPrivate()
-        : mTextEdit(Q_NULLPTR),
-          mSliderContainer(Q_NULLPTR),
-          mFindBar(Q_NULLPTR)
+        : mTextEdit(nullptr),
+          mSliderContainer(nullptr),
+          mFindBar(nullptr)
     {
 
     }

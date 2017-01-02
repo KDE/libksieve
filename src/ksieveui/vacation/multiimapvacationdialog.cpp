@@ -46,9 +46,9 @@ class KSieveUi::MultiImapVacationDialogPrivate
 {
 public:
     MultiImapVacationDialogPrivate()
-        : mTabWidget(Q_NULLPTR)
-        , mStackedWidget(Q_NULLPTR)
-        , mVacationManager(Q_NULLPTR)
+        : mTabWidget(nullptr)
+        , mStackedWidget(nullptr)
+        , mVacationManager(nullptr)
     {
 
     }
@@ -118,7 +118,7 @@ void MultiImapVacationDialog::init()
     d->mStackedWidget->addWidget(w);
     d->mStackedWidget->setCurrentIndex(0);
     bool foundOneImap = false;
-    QDialogButtonBox *buttonBox = Q_NULLPTR;
+    QDialogButtonBox *buttonBox = nullptr;
 
     const QMap <QString, QUrl> list = d->mVacationManager->serverList();
     QMapIterator<QString, QUrl> i(list);

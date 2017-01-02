@@ -60,7 +60,7 @@ KManageSieve::Response::Type KManageSieve::Response::type() const
     return m_type;
 }
 
-static uint parseQuantity(const QByteArray &line, int start, bool *ok = Q_NULLPTR)
+static uint parseQuantity(const QByteArray &line, int start, bool *ok = nullptr)
 {
     // expecting {quantity} at start
     int end = line.indexOf("+}", start + 1);

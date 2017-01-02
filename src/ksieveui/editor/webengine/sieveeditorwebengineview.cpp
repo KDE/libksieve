@@ -130,6 +130,6 @@ QWebEngineView *SieveEditorWebEngineView::createWindow(QWebEnginePage::WebWindow
 #if QT_VERSION >= QT_VERSION_CHECK(5, 8, 0)
     return this;
 #else
-    return Q_NULLPTR;
+    return nullptr;
 #endif
 }

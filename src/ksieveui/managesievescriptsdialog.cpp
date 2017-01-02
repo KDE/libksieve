@@ -50,11 +50,11 @@ class KSieveUi::ManageSieveScriptsDialogPrivate
 {
 public:
     ManageSieveScriptsDialogPrivate()
-        : mSieveEditor(Q_NULLPTR),
-          mNewScript(Q_NULLPTR),
-          mEditScript(Q_NULLPTR),
-          mDeleteScript(Q_NULLPTR),
-          mDeactivateScript(Q_NULLPTR),
+        : mSieveEditor(nullptr),
+          mNewScript(nullptr),
+          mEditScript(nullptr),
+          mDeleteScript(nullptr),
+          mDeactivateScript(nullptr),
           mIsNewScript(false),
           mWasActive(false)
     {
@@ -180,7 +180,7 @@ void ManageSieveScriptsDialog::slotNewScript(const QUrl &url, const QStringList 
     d->mSieveImapAccountSettings = sieveImapAccountSettings;
     d->mCurrentURL = url;
     d->mIsNewScript = true;
-    slotGetResult(Q_NULLPTR, true, QString(), false);
+    slotGetResult(nullptr, true, QString(), false);
 }
 
 void ManageSieveScriptsDialog::slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool isActive)
@@ -243,7 +243,7 @@ void ManageSieveScriptsDialog::slotSieveEditorCancelClicked()
     disableManagerScriptsDialog(false);
     if (d->mSieveEditor) {
         d->mSieveEditor->deleteLater();
-        d->mSieveEditor = Q_NULLPTR;
+        d->mSieveEditor = nullptr;
     }
     d->mCurrentURL = QUrl();
     if (d->mIsNewScript) {
@@ -267,7 +267,7 @@ void ManageSieveScriptsDialog::slotPutResult(KManageSieve::SieveJob *job, bool s
         KMessageBox::information(this, i18n("The Sieve script was successfully uploaded."),
                                  i18n("Sieve Script Upload"));
         d->mSieveEditor->deleteLater();
-        d->mSieveEditor = Q_NULLPTR;
+        d->mSieveEditor = nullptr;
         d->mCurrentURL = QUrl();
     } else {
         KMessageBox::error(this, i18n("Uploading the Sieve script failed.\n"

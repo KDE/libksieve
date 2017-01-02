@@ -26,7 +26,7 @@ class SelectHeadersDialogTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit SelectHeadersDialogTest(QObject *parent = Q_NULLPTR);
+    explicit SelectHeadersDialogTest(QObject *parent = nullptr);
     ~SelectHeadersDialogTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

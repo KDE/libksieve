@@ -48,14 +48,14 @@ extern "C" {
 #define SIEVE_DEFAULT_PORT 2000
 
 static const sasl_callback_t callbacks[] = {
-    { SASL_CB_ECHOPROMPT, Q_NULLPTR, Q_NULLPTR },
-    { SASL_CB_NOECHOPROMPT, Q_NULLPTR, Q_NULLPTR },
-    { SASL_CB_GETREALM, Q_NULLPTR, Q_NULLPTR },
-    { SASL_CB_USER, Q_NULLPTR, Q_NULLPTR },
-    { SASL_CB_AUTHNAME, Q_NULLPTR, Q_NULLPTR },
-    { SASL_CB_PASS, Q_NULLPTR, Q_NULLPTR },
-    { SASL_CB_CANON_USER, Q_NULLPTR, Q_NULLPTR },
-    { SASL_CB_LIST_END, Q_NULLPTR, Q_NULLPTR }
+    { SASL_CB_ECHOPROMPT, nullptr, nullptr },
+    { SASL_CB_NOECHOPROMPT, nullptr, nullptr },
+    { SASL_CB_GETREALM, nullptr, nullptr },
+    { SASL_CB_USER, nullptr, nullptr },
+    { SASL_CB_AUTHNAME, nullptr, nullptr },
+    { SASL_CB_PASS, nullptr, nullptr },
+    { SASL_CB_CANON_USER, nullptr, nullptr },
+    { SASL_CB_LIST_END, nullptr, nullptr }
 };
 
 static const unsigned int SIEVE_DEFAULT_RECIEVE_BUFFER = 512;
@@ -984,7 +984,7 @@ bool kio_sieveProtocol::saslInteract(void *in, AuthInfo &ai)
             interact->len = strlen((const char *) interact->result);
             break;
         default:
-            interact->result = Q_NULLPTR;
+            interact->result = nullptr;
             interact->len = 0;
             break;
         }
@@ -999,11 +999,11 @@ bool kio_sieveProtocol::saslInteract(void *in, AuthInfo &ai)
 bool kio_sieveProtocol::authenticate()
 {
     int result;
-    sasl_conn_t *conn = Q_NULLPTR;
-    sasl_interact_t *client_interact = Q_NULLPTR;
-    const char *out = Q_NULLPTR;
+    sasl_conn_t *conn = nullptr;
+    sasl_interact_t *client_interact = nullptr;
+    const char *out = nullptr;
     uint outlen;
-    const char *mechusing = Q_NULLPTR;
+    const char *mechusing = nullptr;
     QByteArray challenge;
 
     /* Retrieve authentication details from user.
@@ -1021,7 +1021,7 @@ bool kio_sieveProtocol::authenticate()
     ai.comment = i18n("Please enter your authentication details for your sieve account "
                       "(usually the same as your email password):");
 
-    result = sasl_client_new("sieve", m_sServer.toLatin1(), Q_NULLPTR, Q_NULLPTR, callbacks, 0, &conn);
+    result = sasl_client_new("sieve", m_sServer.toLatin1(), nullptr, nullptr, callbacks, 0, &conn);
     if (result != SASL_OK) {
         ksDebug << "sasl_client_new failed with: " << result << endl;
         SASLERROR
@@ -1099,7 +1099,7 @@ bool kio_sieveProtocol::authenticate()
 //        ksDebug << "S:  [" << r.getAction() << "]." << endl;
 
         do {
-            result = sasl_client_step(conn, challenge.isEmpty() ? Q_NULLPTR : challenge.data(),
+            result = sasl_client_step(conn, challenge.isEmpty() ? nullptr : challenge.data(),
                                       challenge.size(), &client_interact, &out, &outlen);
 
             if (result == SASL_INTERACT) {

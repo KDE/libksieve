@@ -38,24 +38,24 @@
 using namespace KManageSieve;
 
 static const sasl_callback_t callbacks[] = {
-    { SASL_CB_ECHOPROMPT, Q_NULLPTR, Q_NULLPTR },
-    { SASL_CB_NOECHOPROMPT, Q_NULLPTR, Q_NULLPTR },
-    { SASL_CB_GETREALM, Q_NULLPTR, Q_NULLPTR },
-    { SASL_CB_USER, Q_NULLPTR, Q_NULLPTR },
-    { SASL_CB_AUTHNAME, Q_NULLPTR, Q_NULLPTR },
-    { SASL_CB_PASS, Q_NULLPTR, Q_NULLPTR },
-    { SASL_CB_CANON_USER, Q_NULLPTR, Q_NULLPTR },
-    { SASL_CB_LIST_END, Q_NULLPTR, Q_NULLPTR }
+    { SASL_CB_ECHOPROMPT, nullptr, nullptr },
+    { SASL_CB_NOECHOPROMPT, nullptr, nullptr },
+    { SASL_CB_GETREALM, nullptr, nullptr },
+    { SASL_CB_USER, nullptr, nullptr },
+    { SASL_CB_AUTHNAME, nullptr, nullptr },
+    { SASL_CB_PASS, nullptr, nullptr },
+    { SASL_CB_CANON_USER, nullptr, nullptr },
+    { SASL_CB_LIST_END, nullptr, nullptr }
 };
 
 SessionThread::SessionThread(Session *session, QObject *parent)
     : QObject(parent)
     , m_session(session)
-    , m_socket(Q_NULLPTR)
-    , m_sasl_conn(Q_NULLPTR)
-    , m_sasl_client_interact(Q_NULLPTR)
+    , m_socket(nullptr)
+    , m_sasl_conn(nullptr)
+    , m_sasl_client_interact(nullptr)
     , m_pendingQuantity(-1)
-    , m_sslCheck(Q_NULLPTR)
+    , m_sslCheck(nullptr)
 {
     static bool saslInitialized = false;
     if (!saslInitialized) {
@@ -232,13 +232,13 @@ void SessionThread::doStartAuthentication()
     Q_ASSERT(QThread::currentThread() == thread());
 
     int result;
-    m_sasl_conn = Q_NULLPTR;
-    m_sasl_client_interact = Q_NULLPTR;
-    const char *out = Q_NULLPTR;
+    m_sasl_conn = nullptr;
+    m_sasl_client_interact = nullptr;
+    const char *out = nullptr;
     uint outlen;
-    const char *mechusing = Q_NULLPTR;
+    const char *mechusing = nullptr;
 
-    result = sasl_client_new("sieve", m_url.host().toLatin1(), Q_NULLPTR, Q_NULLPTR, callbacks, 0, &m_sasl_conn);
+    result = sasl_client_new("sieve", m_url.host().toLatin1(), nullptr, nullptr, callbacks, 0, &m_sasl_conn);
     if (result != SASL_OK) {
         Q_EMIT error(KIO::buildErrorString(KIO::ERR_COULD_NOT_AUTHENTICATE, QString::fromUtf8(sasl_errdetail(m_sasl_conn))));
         doDisconnectFromHost(true);
@@ -365,7 +365,7 @@ bool SessionThread::saslInteract(void *in)
             }
             break;
         default:
-            interact->result = Q_NULLPTR;
+            interact->result = nullptr;
             interact->len = 0;
             break;
         }
@@ -378,14 +378,14 @@ bool SessionThread::saslInteract(void *in)
 bool SessionThread::saslClientStep(const QByteArray &challenge)
 {
     int result;
-    const char *out = Q_NULLPTR;
+    const char *out = nullptr;
     uint outlen;
 
     const QByteArray challenge_decoded = QByteArray::fromBase64(challenge);
     do {
         result =
             sasl_client_step(m_sasl_conn,
-                             challenge_decoded.isEmpty() ? Q_NULLPTR : challenge_decoded.data(),
+                             challenge_decoded.isEmpty() ? nullptr : challenge_decoded.data(),
                              challenge_decoded.size(),
                              &m_sasl_client_interact,
                              &out, &outlen);

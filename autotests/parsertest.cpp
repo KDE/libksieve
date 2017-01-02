@@ -86,27 +86,27 @@ struct TestCase {
 
     {
         "Null script",
-        Q_NULLPTR,
-        { { Finished, Q_NULLPTR, false } }
+        nullptr,
+        { { Finished, nullptr, false } }
     },
 
     {
         "Empty script",
         "",
-        { { Finished, Q_NULLPTR, false } }
+        { { Finished, nullptr, false } }
     },
 
     {
         "WS-only script",
         " \t\n\r\n",
-        { { Finished, Q_NULLPTR, false } }
+        { { Finished, nullptr, false } }
     },
 
     {
         "Bare hash comment",
         "#comment",
         {   { HashComment, "comment", false },
-            { Finished, Q_NULLPTR, false }
+            { Finished, nullptr, false }
         }
     },
 
@@ -114,7 +114,7 @@ struct TestCase {
         "Bare bracket comment",
         "/*comment*/",
         {   { BracketComment, "comment", false },
-            { Finished, Q_NULLPTR, false }
+            { Finished, nullptr, false }
         }
     },
 
@@ -122,8 +122,8 @@ struct TestCase {
         "Bare command",
         "command;",
         {   { CommandStart, "command", false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -141,9 +141,9 @@ struct TestCase {
         {   { BracketComment, "comment", false },
             { CommandStart, "command", false },
             { BracketComment, "comment", false },
-            { CommandEnd, Q_NULLPTR, false },
+            { CommandEnd, nullptr, false },
             { BracketComment, "comment", false },
-            { Finished, Q_NULLPTR, false }
+            { Finished, nullptr, false }
         }
     },
 
@@ -153,9 +153,9 @@ struct TestCase {
         {   { HashComment, "comment", false },
             { CommandStart, "command", false },
             { HashComment, "comment", false },
-            { CommandEnd, Q_NULLPTR, false },
+            { CommandEnd, nullptr, false },
             { HashComment, "comment", false },
-            { Finished, Q_NULLPTR, false }
+            { Finished, nullptr, false }
         }
     },
 
@@ -164,8 +164,8 @@ struct TestCase {
         "command :tag;",
         {   { CommandStart, "command", false },
             { TaggedArgument, "tag", false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -183,8 +183,8 @@ struct TestCase {
         "command \"string\";",
         {   { CommandStart, "command", false },
             { StringArgument, "string", false /*quoted*/ },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -193,8 +193,8 @@ struct TestCase {
         "command text:\nstring\n.\n;",
         {   { CommandStart, "command", false },
             { StringArgument, "string", true /*multiline*/ },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -203,8 +203,8 @@ struct TestCase {
         "command 100;",
         {   { CommandStart, "command", false },
             { NumberArgument, "100 ", false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -213,8 +213,8 @@ struct TestCase {
         "command 100k;",
         {   { CommandStart, "command", false },
             { NumberArgument, "102400k", false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -223,8 +223,8 @@ struct TestCase {
         "command 100M;",
         {   { CommandStart, "command", false },
             { NumberArgument, "104857600M", false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -233,8 +233,8 @@ struct TestCase {
         "command 2G;",
         {   { CommandStart, "command", false },
             { NumberArgument, "2147483648G", false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -261,8 +261,8 @@ struct TestCase {
         "command " ULONG_MAX_STRING ";",
         {   { CommandStart, "command", false },
             { NumberArgument, ULONG_MAX_STRING " ", false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -270,11 +270,11 @@ struct TestCase {
         "single one-element string list argument - quoted string",
         "command [\"string\"];",
         {   { CommandStart, "command", false },
-            { StringListArgumentStart, Q_NULLPTR, false },
+            { StringListArgumentStart, nullptr, false },
             { StringListEntry, "string", false /*quoted*/ },
-            { StringListArgumentEnd, Q_NULLPTR, false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { StringListArgumentEnd, nullptr, false },
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -282,11 +282,11 @@ struct TestCase {
         "single one-element string list argument - multi-line string",
         "command [text:\nstring\n.\n];",
         {   { CommandStart, "command", false },
-            { StringListArgumentStart, Q_NULLPTR, false },
+            { StringListArgumentStart, nullptr, false },
             { StringListEntry, "string", true /*multiline*/ },
-            { StringListArgumentEnd, Q_NULLPTR, false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { StringListArgumentEnd, nullptr, false },
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -294,12 +294,12 @@ struct TestCase {
         "single two-element string list argument - quoted strings",
         "command [\"string\",\"string\"];",
         {   { CommandStart, "command", false },
-            { StringListArgumentStart, Q_NULLPTR, false },
+            { StringListArgumentStart, nullptr, false },
             { StringListEntry, "string", false /*quoted*/ },
             { StringListEntry, "string", false /*quoted*/ },
-            { StringListArgumentEnd, Q_NULLPTR, false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { StringListArgumentEnd, nullptr, false },
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -307,12 +307,12 @@ struct TestCase {
         "single two-element string list argument - multi-line strings",
         "command [text:\nstring\n.\n,text:\nstring\n.\n];",
         {   { CommandStart, "command", false },
-            { StringListArgumentStart, Q_NULLPTR, false },
+            { StringListArgumentStart, nullptr, false },
             { StringListEntry, "string", true /*multiline*/ },
             { StringListEntry, "string", true /*multiline*/ },
-            { StringListArgumentEnd, Q_NULLPTR, false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { StringListArgumentEnd, nullptr, false },
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -320,12 +320,12 @@ struct TestCase {
         "single two-element string list argument - quoted + multi-line strings",
         "command [\"string\",text:\nstring\n.\n];",
         {   { CommandStart, "command", false },
-            { StringListArgumentStart, Q_NULLPTR, false },
+            { StringListArgumentStart, nullptr, false },
             { StringListEntry, "string", false /*quoted*/ },
             { StringListEntry, "string", true /*multiline*/ },
-            { StringListArgumentEnd, Q_NULLPTR, false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { StringListArgumentEnd, nullptr, false },
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -333,12 +333,12 @@ struct TestCase {
         "single two-element string list argument - multi-line + quoted strings",
         "command [text:\nstring\n.\n,\"string\"];",
         {   { CommandStart, "command", false },
-            { StringListArgumentStart, Q_NULLPTR, false },
+            { StringListArgumentStart, nullptr, false },
             { StringListEntry, "string", true /*multiline*/ },
             { StringListEntry, "string", false /*quoted*/ },
-            { StringListArgumentEnd, Q_NULLPTR, false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { StringListArgumentEnd, nullptr, false },
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -347,9 +347,9 @@ struct TestCase {
         "command test;",
         {   { CommandStart, "command", false },
             { TestStart, "test", false },
-            { TestEnd, Q_NULLPTR, false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { TestEnd, nullptr, false },
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -357,12 +357,12 @@ struct TestCase {
         "one-element test list argument",
         "command(test);",
         {   { CommandStart, "command", false },
-            { TestListStart, Q_NULLPTR, false },
+            { TestListStart, nullptr, false },
             { TestStart, "test", false },
-            { TestEnd, Q_NULLPTR, false },
-            { TestListEnd, Q_NULLPTR, false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { TestEnd, nullptr, false },
+            { TestListEnd, nullptr, false },
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -370,14 +370,14 @@ struct TestCase {
         "two-element test list argument",
         "command(test,test);",
         {   { CommandStart, "command", false },
-            { TestListStart, Q_NULLPTR, false },
+            { TestListStart, nullptr, false },
             { TestStart, "test", false },
-            { TestEnd, Q_NULLPTR, false },
+            { TestEnd, nullptr, false },
             { TestStart, "test", false },
-            { TestEnd, Q_NULLPTR, false },
-            { TestListEnd, Q_NULLPTR, false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { TestEnd, nullptr, false },
+            { TestListEnd, nullptr, false },
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -385,10 +385,10 @@ struct TestCase {
         "zero-element block",
         "command{}",
         {   { CommandStart, "command", false },
-            { BlockStart, Q_NULLPTR, false },
-            { BlockEnd, Q_NULLPTR, false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { BlockStart, nullptr, false },
+            { BlockEnd, nullptr, false },
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -396,12 +396,12 @@ struct TestCase {
         "one-element block",
         "command{command;}",
         {   { CommandStart, "command", false },
-            { BlockStart, Q_NULLPTR, false },
+            { BlockStart, nullptr, false },
             { CommandStart, "command", false },
-            { CommandEnd, Q_NULLPTR, false },
-            { BlockEnd, Q_NULLPTR, false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { CommandEnd, nullptr, false },
+            { BlockEnd, nullptr, false },
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -409,14 +409,14 @@ struct TestCase {
         "two-element block",
         "command{command;command;}",
         {   { CommandStart, "command", false },
-            { BlockStart, Q_NULLPTR, false },
+            { BlockStart, nullptr, false },
             { CommandStart, "command", false },
-            { CommandEnd, Q_NULLPTR, false },
+            { CommandEnd, nullptr, false },
             { CommandStart, "command", false },
-            { CommandEnd, Q_NULLPTR, false },
-            { BlockEnd, Q_NULLPTR, false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { CommandEnd, nullptr, false },
+            { BlockEnd, nullptr, false },
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 
@@ -427,11 +427,11 @@ struct TestCase {
             { TestStart, "test", false },
             { TestStart, "test", false },
             { TestStart, "test", false },
-            { TestEnd, Q_NULLPTR, false },
-            { TestEnd, Q_NULLPTR, false },
-            { TestEnd, Q_NULLPTR, false },
-            { CommandEnd, Q_NULLPTR, false },
-            { Finished, Q_NULLPTR, false }
+            { TestEnd, nullptr, false },
+            { TestEnd, nullptr, false },
+            { TestEnd, nullptr, false },
+            { CommandEnd, nullptr, false },
+            { Finished, nullptr, false }
         }
     },
 

@@ -40,7 +40,7 @@
 using namespace KSieveUi;
 VacationPageWidget::VacationPageWidget(QWidget *parent)
     : QWidget(parent),
-      mVacationManager(Q_NULLPTR),
+      mVacationManager(nullptr),
       mPageScript(Script),
       mWasActive(false),
       mHasDateSupport(false)
@@ -186,7 +186,7 @@ KSieveUi::VacationCreateScriptJob *VacationPageWidget::writeScript()
         createJob->setScript(script);
         return createJob;
     }
-    return Q_NULLPTR;
+    return nullptr;
 }
 
 void VacationPageWidget::setDefault()

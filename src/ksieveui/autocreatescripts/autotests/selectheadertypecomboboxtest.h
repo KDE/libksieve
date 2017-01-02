@@ -26,7 +26,7 @@ class SelectHeaderTypeComboBoxTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit SelectHeaderTypeComboBoxTest(QObject *parent = Q_NULLPTR);
+    explicit SelectHeaderTypeComboBoxTest(QObject *parent = nullptr);
     ~SelectHeaderTypeComboBoxTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

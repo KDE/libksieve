@@ -42,11 +42,11 @@
 using namespace KSieveUi;
 
 SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTemplate)
-    : QDialog(parent), mOkButton(Q_NULLPTR)
+    : QDialog(parent), mOkButton(nullptr)
 {
     setWindowTitle(defaultTemplate ? i18n("Default template") : i18n("Template"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    QDialogButtonBox *buttonBox = Q_NULLPTR;
+    QDialogButtonBox *buttonBox = nullptr;
     if (defaultTemplate) {
         buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
         connect(buttonBox, &QDialogButtonBox::rejected, this, &SieveTemplateEditDialog::reject);

@@ -57,7 +57,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
 {
     QVBoxLayout *lay = new QVBoxLayout;
 #if !defined(NDEBUG)
-    mGenerateXml = Q_NULLPTR;
+    mGenerateXml = nullptr;
 #endif
 
     QToolBar *toolbar = new QToolBar;
@@ -92,7 +92,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     //Add action to toolBar
 
     toolbar->addAction(mShareScript);
-    SieveEditorMenuBar *menuBar = Q_NULLPTR;
+    SieveEditorMenuBar *menuBar = nullptr;
     if (useMenuBar) {
         menuBar = new SieveEditorMenuBar;
         connect(this, &SieveEditorWidget::changeModeEditor, menuBar, &SieveEditorMenuBar::setEditorMode);

@@ -46,7 +46,7 @@ Q_DECLARE_METATYPE(KSslErrorUiData)
 Session::Session(QObject *parent) :
     QObject(parent),
     m_thread(new SessionThread(this)),
-    m_currentJob(Q_NULLPTR),
+    m_currentJob(nullptr),
     m_state(None),
     m_supportsStartTls(false),
     m_connected(false),
@@ -120,7 +120,7 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
                         return;
                     }
                     if (!allowUnencrypted() && QSslSocket::supportsSsl() && !m_supportsStartTls &&
-                            KMessageBox::warningContinueCancel(Q_NULLPTR,
+                            KMessageBox::warningContinueCancel(nullptr,
                                     i18n("TLS encryption was requested, but your Sieve server does not advertise TLS in its capabilities.\n"
                                          "You can choose to try to initiate TLS negotiations nonetheless, or cancel the operation."),
                                     i18n("Server Does Not Advertise TLS"), KGuiItem(i18n("&Start TLS nonetheless")), KStandardGuiItem::cancel(),
@@ -176,7 +176,7 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
     default:
         if (m_currentJob) {
             if (m_currentJob->d->handleResponse(response, data)) {
-                m_currentJob = Q_NULLPTR;
+                m_currentJob = nullptr;
                 QMetaObject::invokeMethod(this, "executeNextJob", Qt::QueuedConnection);
             }
             break;
@@ -205,7 +205,7 @@ void Session::killJob(SieveJob *job, KJob::KillVerbosity verbosity)
         if (verbosity == KJob::EmitResult) {
             m_currentJob->d->killed();
         }
-        m_currentJob = Q_NULLPTR;
+        m_currentJob = nullptr;
     } else {
         m_jobs.removeAll(job);
         if (verbosity == KJob::EmitResult) {
@@ -281,7 +281,7 @@ KManageSieve::AuthDetails Session::requestAuthDetails(const QUrl &url)
 
     QPointer<KPasswordDialog> dlg =
         new KPasswordDialog(
-        Q_NULLPTR,
+        nullptr,
         KPasswordDialog::ShowUsernameLine | KPasswordDialog::ShowKeepPassword
     );
     dlg->setUsername(ai.username);

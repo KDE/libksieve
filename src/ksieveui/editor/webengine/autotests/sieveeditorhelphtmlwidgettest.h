@@ -26,7 +26,7 @@ class SieveEditorHelpHtmlWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit SieveEditorHelpHtmlWidgetTest(QObject *parent = Q_NULLPTR);
+    explicit SieveEditorHelpHtmlWidgetTest(QObject *parent = nullptr);
     ~SieveEditorHelpHtmlWidgetTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

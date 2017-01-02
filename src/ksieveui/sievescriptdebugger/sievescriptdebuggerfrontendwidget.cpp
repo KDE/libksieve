@@ -43,7 +43,7 @@ using namespace KSieveUi;
 
 SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *parent)
     : QWidget(parent),
-      mProcess(Q_NULLPTR)
+      mProcess(nullptr)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setMargin(0);
@@ -184,7 +184,7 @@ void SieveScriptDebuggerFrontEndWidget::slotDebugScript()
     mSieveTestResult->editor()->appendPlainText(QStringLiteral("\n"));
     if (!mProcess->waitForStarted()) {
         delete mProcess;
-        mProcess = Q_NULLPTR;
+        mProcess = nullptr;
         mDebugScript->setEnabled(true);
     }
 }
@@ -204,7 +204,7 @@ void SieveScriptDebuggerFrontEndWidget::slotReadErrorOutput()
 void SieveScriptDebuggerFrontEndWidget::slotDebugFinished()
 {
     delete mProcess;
-    mProcess = Q_NULLPTR;
+    mProcess = nullptr;
     mDebugScript->setEnabled(true);
 }
 

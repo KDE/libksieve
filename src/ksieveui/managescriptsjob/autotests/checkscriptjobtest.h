@@ -24,7 +24,7 @@ class CheckScriptJobTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit CheckScriptJobTest(QObject *parent = Q_NULLPTR);
+    explicit CheckScriptJobTest(QObject *parent = nullptr);
     ~CheckScriptJobTest();
 
 private Q_SLOTS:

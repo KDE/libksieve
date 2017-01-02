@@ -33,7 +33,7 @@
 using namespace KSieveUi;
 SieveTemplateListWidget::SieveTemplateListWidget(const QString &configName, QWidget *parent)
     : PimCommon::TemplateListWidget(configName, parent),
-      mTemplateManager(Q_NULLPTR)
+      mTemplateManager(nullptr)
 {
     setKNewStuffConfigFile(QStringLiteral("ksieve_script.knsrc"));
     loadTemplates();
@@ -48,7 +48,7 @@ void SieveTemplateListWidget::setSieveCapabilities(const QStringList &capabiliti
 QMimeData *SieveTemplateListWidget::mimeData(const QList<QListWidgetItem *> items) const
 {
     if (items.isEmpty()) {
-        return Q_NULLPTR;
+        return nullptr;
     }
     QMimeData *mimeData = new QMimeData();
     QListWidgetItem *item = items.first();

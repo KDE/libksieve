@@ -47,7 +47,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
     grid->setMargin(0);
     w->setLayout(grid);
 
-    QLabel *lab = Q_NULLPTR;
+    QLabel *lab = nullptr;
     if (mHasVacationSecondsSupport) {
         SelectVacationComboBox *vacation = new SelectVacationComboBox;
         vacation->setObjectName(QStringLiteral("vacationcombobox"));

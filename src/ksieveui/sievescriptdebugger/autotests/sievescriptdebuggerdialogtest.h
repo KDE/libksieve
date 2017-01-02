@@ -26,7 +26,7 @@ class SieveScriptDebuggerDialogTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit SieveScriptDebuggerDialogTest(QObject *parent = Q_NULLPTR);
+    explicit SieveScriptDebuggerDialogTest(QObject *parent = nullptr);
     ~SieveScriptDebuggerDialogTest();
 
 private Q_SLOTS:

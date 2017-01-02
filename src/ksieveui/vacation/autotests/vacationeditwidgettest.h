@@ -26,7 +26,7 @@ class VacationEditWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit VacationEditWidgetTest(QObject *parent = Q_NULLPTR);
+    explicit VacationEditWidgetTest(QObject *parent = nullptr);
     ~VacationEditWidgetTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

@@ -26,7 +26,7 @@ class SieveAccountTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit SieveAccountTest(QObject *parent = Q_NULLPTR);
+    explicit SieveAccountTest(QObject *parent = nullptr);
     ~SieveAccountTest();
 
 private Q_SLOTS:

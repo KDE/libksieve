@@ -25,7 +25,7 @@ using namespace KSieveUi;
 ParseUserScriptJob::ParseUserScriptJob(const QUrl &url, QObject *parent)
     : QObject(parent)
     , mCurrentUrl(url)
-    , mSieveJob(Q_NULLPTR)
+    , mSieveJob(nullptr)
 {
 }
 
@@ -39,7 +39,7 @@ void ParseUserScriptJob::kill()
     if (mSieveJob) {
         mSieveJob->kill();
     }
-    mSieveJob = Q_NULLPTR;
+    mSieveJob = nullptr;
 }
 
 QUrl ParseUserScriptJob::scriptUrl() const
@@ -64,7 +64,7 @@ void ParseUserScriptJob::start()
 
 void ParseUserScriptJob::slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool)
 {
-    mSieveJob = Q_NULLPTR;
+    mSieveJob = nullptr;
     if (!success) {
         emitError(i18n("Retrieving the script failed.\n"
                        "The server responded:\n%1", job->errorString()));

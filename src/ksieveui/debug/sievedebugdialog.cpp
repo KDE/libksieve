@@ -32,8 +32,8 @@ using namespace KSieveUi;
 
 SieveDebugDialog::SieveDebugDialog(QWidget *parent)
     : QDialog(parent),
-      mSieveJob(Q_NULLPTR),
-      mShutDownJob(Q_NULLPTR)
+      mSieveJob(nullptr),
+      mShutDownJob(nullptr)
 {
     setWindowTitle(i18n("Sieve Diagnostics"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
@@ -66,7 +66,7 @@ SieveDebugDialog::~SieveDebugDialog()
 {
     if (mSieveJob) {
         mSieveJob->kill();
-        mSieveJob = Q_NULLPTR;
+        mSieveJob = nullptr;
     }
     qCDebug(LIBKSIEVE_LOG);
     writeConfig();
@@ -91,7 +91,7 @@ void SieveDebugDialog::slotShutDownJob()
 {
     disconnect(mSieveJob, &KManageSieve::SieveJob::gotList, this, &SieveDebugDialog::slotGetScriptList);
     mSieveJob->kill();
-    mSieveJob = Q_NULLPTR;
+    mSieveJob = nullptr;
     mEdit->editor()->appendPlainText(i18n("Unable to get the info\n\n"));
     mResourceIdentifier.pop_front();
     QTimer::singleShot(0, this, &SieveDebugDialog::slotDiagNextAccount);
@@ -165,7 +165,7 @@ void SieveDebugDialog::slotGetScript(KManageSieve::SieveJob *job, bool success,
                            << ", ?," << active << ")" << endl
                            << "script:" << endl
                            << script;
-    mSieveJob = Q_NULLPTR; // job deletes itself after returning from this slot!
+    mSieveJob = nullptr; // job deletes itself after returning from this slot!
 
     if (!success) {
         mEdit->editor()->appendPlainText(i18n("Retrieving the script failed.\n"
@@ -191,7 +191,7 @@ void SieveDebugDialog::slotGetScriptList(KManageSieve::SieveJob *job, bool succe
     }
     qCDebug(LIBKSIEVE_LOG) << "Success:" << success << ", List:" << scriptList.join(QStringLiteral(",")) <<
                            ", active:" << activeScript;
-    mSieveJob = Q_NULLPTR; // job deletes itself after returning from this slot!
+    mSieveJob = nullptr; // job deletes itself after returning from this slot!
 
     mEdit->editor()->appendPlainText(i18n("Sieve capabilities:\n"));
     const QStringList caps = job->sieveCapabilities();

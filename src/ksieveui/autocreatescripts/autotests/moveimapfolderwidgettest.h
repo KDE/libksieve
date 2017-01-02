@@ -26,7 +26,7 @@ class MoveImapFolderWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit MoveImapFolderWidgetTest(QObject *parent = Q_NULLPTR);
+    explicit MoveImapFolderWidgetTest(QObject *parent = nullptr);
     ~MoveImapFolderWidgetTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

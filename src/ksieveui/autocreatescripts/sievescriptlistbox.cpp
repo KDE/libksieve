@@ -50,7 +50,7 @@ using namespace KSieveUi;
 
 SieveScriptListItem::SieveScriptListItem(const QString &text, QListWidget *parent)
     : QListWidgetItem(text, parent),
-      mScriptPage(Q_NULLPTR)
+      mScriptPage(nullptr)
 {
 }
 
@@ -94,7 +94,7 @@ QString SieveScriptListItem::generatedScript(QStringList &requires) const
 
 SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     : QGroupBox(title, parent),
-      mSieveGraphicalModeWidget(Q_NULLPTR),
+      mSieveGraphicalModeWidget(nullptr),
       mScriptNumber(0)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
@@ -378,7 +378,7 @@ void SieveScriptListBox::loadScript(const QDomDocument &doc, QString &error)
     clear();
     QDomElement docElem = doc.documentElement();
     QDomNode n = docElem.firstChild();
-    SieveScriptPage *currentPage = Q_NULLPTR;
+    SieveScriptPage *currentPage = nullptr;
     ParseSieveScriptTypeBlock typeBlock = TypeUnknown;
     loadBlock(n, currentPage, typeBlock, error);
 }
@@ -396,7 +396,7 @@ void SieveScriptListBox::loadBlock(QDomNode &n, SieveScriptPage *currentPage, Pa
             if (tagName == QLatin1String("control")) {
                 //Create a new page when before it was "onlyactions"
                 if (typeBlock == TypeBlockAction) {
-                    currentPage = Q_NULLPTR;
+                    currentPage = nullptr;
                 }
                 if (e.hasAttribute(QStringLiteral("name"))) {
                     const QString controlType = e.attribute(QStringLiteral("name"));
@@ -430,7 +430,7 @@ void SieveScriptListBox::loadBlock(QDomNode &n, SieveScriptPage *currentPage, Pa
                             blockWidget->loadScript(e, false, error);
                         }
                         //We are sure that we can't have another elsif
-                        currentPage = Q_NULLPTR;
+                        currentPage = nullptr;
                     } else if (controlType == QLatin1String("foreverypart")) {
                         typeBlock = TypeBlockForeachBlock;
                         if (!currentPage) {

@@ -27,7 +27,7 @@ class KSieveUi::FindBarWebEngineViewPrivate
 {
 public:
     FindBarWebEngineViewPrivate()
-        : mView(Q_NULLPTR)
+        : mView(nullptr)
     {
 
     }

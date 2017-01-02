@@ -24,7 +24,7 @@ class SieveTextEditTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit SieveTextEditTest(QObject *parent = Q_NULLPTR);
+    explicit SieveTextEditTest(QObject *parent = nullptr);
     ~SieveTextEditTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

@@ -32,8 +32,8 @@ VacationCheckJob::VacationCheckJob(const QUrl &url, const QString &serverName, Q
     : QObject(parent),
       mServerName(serverName),
       mUrl(url)
-    , mSieveJob(Q_NULLPTR)
-    , mParseJob(Q_NULLPTR)
+    , mSieveJob(nullptr)
+    , mParseJob(nullptr)
     , mScriptPos(-1)
     , mKep14Support(false)
     , mNoScriptFound(false)
@@ -50,12 +50,12 @@ void VacationCheckJob::kill()
     if (mSieveJob) {
         mSieveJob->kill();
     }
-    mSieveJob = Q_NULLPTR;
+    mSieveJob = nullptr;
 
     if (mParseJob) {
         mParseJob->kill();
     }
-    mParseJob = Q_NULLPTR;
+    mParseJob = nullptr;
 }
 
 void VacationCheckJob::setKep14Support(bool kep14Support)
@@ -85,7 +85,7 @@ void VacationCheckJob::slotGetResult(KManageSieve::SieveJob *job, bool success, 
     Q_ASSERT(job == mSieveJob);
     mScript = script;
     mSieveCapabilities = mSieveJob->sieveCapabilities();
-    mSieveJob = Q_NULLPTR;
+    mSieveJob = nullptr;
 
     if (mKep14Support) {
         VacationUtils::Vacation vacation = VacationUtils::parseScript(script);
@@ -119,7 +119,7 @@ void VacationCheckJob::slotGetResult(KManageSieve::SieveJob *job, bool success, 
 void VacationCheckJob::slotGotActiveScripts(ParseUserScriptJob *job)
 {
     Q_ASSERT(job == mParseJob);
-    mParseJob = Q_NULLPTR;
+    mParseJob = nullptr;
     if (!job->error().isEmpty()) {
         emitError(i18n("ParseUserScriptJob failed: %1", job->error()));
         return;
@@ -135,7 +135,7 @@ void VacationCheckJob::slotGotList(KManageSieve::SieveJob *job, bool success, co
 {
     Q_UNUSED(activeScript)
     Q_ASSERT(job == mSieveJob);
-    mSieveJob = Q_NULLPTR;
+    mSieveJob = nullptr;
     if (!success) {
         emitError(i18n("Failed to get the list of Sieve scripts.\n"
                        "The server responded:\n%1", job->errorString()));

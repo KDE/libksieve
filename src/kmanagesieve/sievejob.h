@@ -167,7 +167,7 @@ private:
     void setErrorMessage(const QString &str);
 
     //@cond PRIVATE
-    SieveJob(QObject *parent = Q_NULLPTR);
+    SieveJob(QObject *parent = nullptr);
     ~SieveJob();
 
     class Private;

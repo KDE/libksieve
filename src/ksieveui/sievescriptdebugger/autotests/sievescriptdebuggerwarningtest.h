@@ -26,7 +26,7 @@ class SieveScriptDebuggerWarningTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit SieveScriptDebuggerWarningTest(QObject *parent = Q_NULLPTR);
+    explicit SieveScriptDebuggerWarningTest(QObject *parent = nullptr);
     ~SieveScriptDebuggerWarningTest();
 
 private Q_SLOTS:

@@ -37,7 +37,7 @@ class KSIEVEUI_EXPORT SieveEditorHelpHtmlWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SieveEditorHelpHtmlWidget(QWidget *parent = Q_NULLPTR);
+    explicit SieveEditorHelpHtmlWidget(QWidget *parent = nullptr);
     ~SieveEditorHelpHtmlWidget();
 
     void openUrl(const QUrl &currentUrl);

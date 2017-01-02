@@ -32,7 +32,7 @@ class KSieveUi::CheckKolabKep14SupportJobPrivate
 {
 public:
     CheckKolabKep14SupportJobPrivate()
-        : mSieveJob(Q_NULLPTR)
+        : mSieveJob(nullptr)
         , mKolabKep14Support(false)
     {
     }

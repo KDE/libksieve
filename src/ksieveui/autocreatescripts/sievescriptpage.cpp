@@ -37,10 +37,10 @@ namespace KSieveUi
 SieveScriptPage::SieveScriptPage(SieveEditorGraphicalModeWidget *sieveEditorGraphicalWidget, QWidget *parent)
     : QWidget(parent),
       mSieveGraphicalModeWidget(sieveEditorGraphicalWidget),
-      mIncludeWidget(Q_NULLPTR),
-      mForEveryPartWidget(Q_NULLPTR),
-      mGlobalVariableWidget(Q_NULLPTR),
-      mBlockIfWidget(Q_NULLPTR)
+      mIncludeWidget(nullptr),
+      mForEveryPartWidget(nullptr),
+      mGlobalVariableWidget(nullptr),
+      mBlockIfWidget(nullptr)
 {
     QVBoxLayout *topLayout = new QVBoxLayout(this);
     topLayout->setMargin(0);

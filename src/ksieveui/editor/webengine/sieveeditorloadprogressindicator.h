@@ -28,7 +28,7 @@ class SieveEditorLoadProgressIndicator : public QObject
 {
     Q_OBJECT
 public:
-    explicit SieveEditorLoadProgressIndicator(QObject *parent = Q_NULLPTR);
+    explicit SieveEditorLoadProgressIndicator(QObject *parent = nullptr);
     ~SieveEditorLoadProgressIndicator();
 
     void startAnimation();

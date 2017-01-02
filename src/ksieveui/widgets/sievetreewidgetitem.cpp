@@ -66,7 +66,7 @@ class KSieveUi::SieveTreeWidgetItemPrivate
 {
 public:
     SieveTreeWidgetItemPrivate()
-        : mProgress(Q_NULLPTR)
+        : mProgress(nullptr)
     {
 
     }

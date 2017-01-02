@@ -31,7 +31,7 @@ class KSIEVEUI_EXPORT ParsingResultDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit ParsingResultDialog(QWidget *parent = Q_NULLPTR);
+    explicit ParsingResultDialog(QWidget *parent = nullptr);
     ~ParsingResultDialog();
 
     void setResultParsing(const QString &result);

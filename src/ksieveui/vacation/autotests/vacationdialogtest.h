@@ -25,7 +25,7 @@ class VacationDialogTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit VacationDialogTest(QObject *parent = Q_NULLPTR);
+    explicit VacationDialogTest(QObject *parent = nullptr);
     ~VacationDialogTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

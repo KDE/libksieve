@@ -24,7 +24,7 @@ class SieveEditorMenuBarTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit SieveEditorMenuBarTest(QObject *parent = Q_NULLPTR);
+    explicit SieveEditorMenuBarTest(QObject *parent = nullptr);
     ~SieveEditorMenuBarTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();

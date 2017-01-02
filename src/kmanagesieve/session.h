@@ -51,7 +51,7 @@ class Session : public QObject
     Q_OBJECT
 
 public:
-    explicit Session(QObject *parent = Q_NULLPTR);
+    explicit Session(QObject *parent = nullptr);
     ~Session();
 
     void connectToHost(const QUrl &url);

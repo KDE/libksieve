@@ -58,7 +58,7 @@ QString SieveCondition::label() const
 
 SieveCondition *SieveCondition::newAction()
 {
-    return Q_NULLPTR;
+    return nullptr;
 }
 
 QWidget *SieveCondition::createParamWidget(QWidget *parent) const

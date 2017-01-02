@@ -26,7 +26,7 @@ class SieveScriptDebuggerFrontEndWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit SieveScriptDebuggerFrontEndWidgetTest(QObject *parent = Q_NULLPTR);
+    explicit SieveScriptDebuggerFrontEndWidgetTest(QObject *parent = nullptr);
     ~SieveScriptDebuggerFrontEndWidgetTest();
 private Q_SLOTS:
     void shouldHaveDefaultValue();
