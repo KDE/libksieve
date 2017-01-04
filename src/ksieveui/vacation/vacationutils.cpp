@@ -390,7 +390,7 @@ QString KSieveUi::VacationUtils::mergeRequireLine(const QString &script, const Q
         lines.insert(insert, QStringLiteral("require \"%1\";").arg(requirements.toList().at(0)));
     }
 
-    return lines.join(QStringLiteral("\n"));
+    return lines.join(QLatin1Char('\n'));
 }
 
 QString KSieveUi::VacationUtils::updateVacationBlock(const QString &oldScript, const QString &newScript)
@@ -442,5 +442,5 @@ QString KSieveUi::VacationUtils::updateVacationBlock(const QString &oldScript, c
         }
     }
 
-    return lines.join(QStringLiteral("\n"));
+    return lines.join(QLatin1Char('\n'));
 }

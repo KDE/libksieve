@@ -322,12 +322,12 @@ void VacationUtilsTest::testUpdateVacationBlock()
     QCOMPARE(VacationUtils::updateVacationBlock(scriptB, scriptA), scriptA);
     QCOMPARE(VacationUtils::updateVacationBlock(scriptAattend, scriptB), scriptBattend);
     QCOMPARE(VacationUtils::updateVacationBlock(scriptBattend, scriptA), scriptAattend);
-    QCOMPARE(VacationUtils::updateVacationBlock(scriptA, attend), header.join(QStringLiteral("\n")));
+    QCOMPARE(VacationUtils::updateVacationBlock(scriptA, attend), header.join(QLatin1Char('\n')));
     QStringList output = vacation;
     output << attend;
-    QCOMPARE(VacationUtils::updateVacationBlock(attend, scriptA), output.join(QStringLiteral("\n")));
+    QCOMPARE(VacationUtils::updateVacationBlock(attend, scriptA), output.join(QLatin1Char('\n')));
     output.insert(0, require);
-    QCOMPARE(VacationUtils::updateVacationBlock(require + QStringLiteral("\n") + attend, scriptA), output.join(QStringLiteral("\n")));
+    QCOMPARE(VacationUtils::updateVacationBlock(require + QStringLiteral("\n") + attend, scriptA), output.join(QLatin1Char('\n')));
 }
 
 void VacationUtilsTest::testMergeRequireLine()

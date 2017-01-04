@@ -189,7 +189,7 @@ void SieveDebugDialog::slotGetScriptList(KManageSieve::SieveJob *job, bool succe
     if (mShutDownJob->isActive()) {
         mShutDownJob->stop();
     }
-    qCDebug(LIBKSIEVE_LOG) << "Success:" << success << ", List:" << scriptList.join(QStringLiteral(",")) <<
+    qCDebug(LIBKSIEVE_LOG) << "Success:" << success << ", List:" << scriptList.join(QLatin1Char(',')) <<
                            ", active:" << activeScript;
     mSieveJob = nullptr; // job deletes itself after returning from this slot!
 

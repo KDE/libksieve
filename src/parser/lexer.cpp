@@ -651,7 +651,7 @@ MultiLineStart:
 
     assert(!lines.empty());
     lines.erase(--lines.end());   // don't include the lone dot.
-    result = lines.join(QStringLiteral("\n"));
+    result = lines.join(QLatin1Char('\n'));
     return true;
 }
 
