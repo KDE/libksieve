@@ -86,7 +86,7 @@ QStringList AutoCreateScriptUtil::createListFromString(QString str)
     lst = str.split(QStringLiteral(", "));
     QStringList resultLst;
     Q_FOREACH (QString s, lst) {
-        s.remove(QStringLiteral("\""));
+        s.remove(QLatin1Char('"'));
         resultLst << s.trimmed();
     }
     lst = resultLst;
