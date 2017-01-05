@@ -121,12 +121,12 @@ QString SieveActionNotify::code(QWidget *w) const
     const QLineEdit *message = w->findChild<QLineEdit *>(QStringLiteral("message"));
     const QString messageStr = message->text();
     if (!messageStr.isEmpty()) {
-        result += QStringLiteral(" :message \"%2\"").arg(messageStr);
+        result += QStringLiteral(" :message \"%1\"").arg(messageStr);
     }
 
     const QLineEdit *method = w->findChild<QLineEdit *>(QStringLiteral("method"));
     const QString methodStr = method->text();
-    result += QStringLiteral(" \"%3\";").arg(methodStr);
+    result += QStringLiteral(" \"%1\";").arg(methodStr);
 
     return result;
 }
