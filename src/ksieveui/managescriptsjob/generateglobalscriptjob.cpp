@@ -18,6 +18,7 @@
 #include "generateglobalscriptjob.h"
 
 #include "kmanagesieve/sievejob.h"
+#include "util/util.h"
 
 #include <KLocalizedString>
 
@@ -118,7 +119,7 @@ void GenerateGlobalScriptJob::writeUserScript()
                                         "\n"
                                         "require [\"include\"];\n");
 
-    Q_FOREACH (const QString &activeScript, mListUserActiveScripts) {
+    for (const QString &activeScript : qAsConst(mListUserActiveScripts)) {
         userScript += QStringLiteral("\ninclude :personal \"%1\"").arg(activeScript);
     }
 

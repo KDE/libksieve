@@ -18,6 +18,7 @@
 */
 
 #include "autocreatescriptutil_p.h"
+#include "util/util.h"
 
 #include <KLocalizedString>
 
@@ -85,7 +86,7 @@ QStringList AutoCreateScriptUtil::createListFromString(QString str)
     }
     lst = str.split(QStringLiteral(", "));
     QStringList resultLst;
-    Q_FOREACH (QString s, lst) {
+    for (QString s : qAsConst(lst)) {
         s.remove(QLatin1Char('"'));
         resultLst << s.trimmed();
     }

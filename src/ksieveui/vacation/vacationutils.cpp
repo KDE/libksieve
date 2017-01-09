@@ -104,7 +104,8 @@ KMime::Types::AddrSpecList VacationUtils::defaultMailAliases()
             a.fromUnicodeString((*it).primaryEmailAddress());
             sl.push_back(a.addrSpec());
         }
-        foreach (const QString &email, (*it).emailAliases()) {
+        const QStringList lstEmails = (*it).emailAliases();
+        for (const QString &email : lstEmails) {
             KMime::Types::Mailbox a;
             a.fromUnicodeString(email);
             sl.push_back(a.addrSpec());
@@ -195,7 +196,8 @@ VacationUtils::Vacation VacationUtils::parseScript(const QString &script)
     }
     vacation.notificationInterval = vdx.notificationInterval();
     vacation.aliases = KMime::Types::AddrSpecList();
-    foreach (const QString &alias, vdx.aliases()) {
+    const QStringList lstAliases = vdx.aliases();
+    for (const QString &alias : lstAliases) {
         KMime::Types::Mailbox a;
         a.fromUnicodeString(alias);
         vacation.aliases.append(a.addrSpec());

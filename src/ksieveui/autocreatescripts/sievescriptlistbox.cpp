@@ -23,6 +23,7 @@
 #include "sieveforeverypartwidget.h"
 #include "sievescriptpage.h"
 #include "sieveincludewidget.h"
+#include "util/util.h"
 
 #include <QHBoxLayout>
 #include <KMessageBox>
@@ -354,7 +355,7 @@ QString SieveScriptListBox::generatedScript(QString &requires) const
     }
 
     QStringList endRequires;
-    Q_FOREACH (const QString &r, lstRequires) {
+    for (const QString &r : qAsConst(lstRequires)) {
         if (!endRequires.contains(r)) {
             endRequires.append(r);
             requires += QStringLiteral("require \"%1\";\n").arg(r);

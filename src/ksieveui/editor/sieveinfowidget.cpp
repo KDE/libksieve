@@ -16,6 +16,7 @@
 */
 
 #include "sieveinfowidget.h"
+#include "util/util.h"
 
 #include <KLocalizedString>
 
@@ -43,7 +44,7 @@ void SieveInfoWidget::setServerInfo(QStringList serverInfos)
 {
     serverInfos.sort();
     QString result = QLatin1String("<qt><b>") + i18n("Sieve server supports:") + QLatin1String("</b><ul>");
-    Q_FOREACH (const QString &info, serverInfos) {
+    for (const QString &info : qAsConst(serverInfos)) {
         result += QLatin1String("<li>") + info;
     }
     result += QLatin1String("</ul></qt>");

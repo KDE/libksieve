@@ -160,7 +160,7 @@ void VacationCheckJob::searchVacationScript()
     QStringList scriptList = mActiveScripts;
 
     // Reorder script list
-    foreach (const QString &script, mAvailableScripts) {
+    for (const QString &script : qAsConst(mAvailableScripts)) {
         if (!scriptList.contains(script)) {
             scriptList.append(script);
         }

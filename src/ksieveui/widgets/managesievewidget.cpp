@@ -577,7 +577,7 @@ void ManageSieveWidget::setActiveScripts(ParseUserScriptJob *job)
         }
     }
 
-    foreach (const QString &scriptName, scriptOrder) {
+    for (const QString &scriptName : qAsConst(scriptOrder)) {
         parent->addChild(scriptMap[scriptName]);
     }
 

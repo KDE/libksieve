@@ -55,10 +55,10 @@ void XMLPrintingSyntaxHighLighter::init()
     QTextCharFormat misc;
     misc.setForeground(Qt::red);
     misc.setFontWeight(QFont::Bold);
-    QStringList miscType;
-    miscType << QStringLiteral("control") << QStringLiteral("block") << QStringLiteral("script") << QStringLiteral("action") << QStringLiteral("comment");
-    miscType << QStringLiteral("num") << QStringLiteral("tag") << QStringLiteral("list") << QStringLiteral("str") << QStringLiteral("test") << QStringLiteral("crlf/");
-    Q_FOREACH (const QString &s, miscType) {
+    const QStringList miscType = QStringList()
+            << QStringLiteral("control") << QStringLiteral("block") << QStringLiteral("script") << QStringLiteral("action") << QStringLiteral("comment")
+            << QStringLiteral("num") << QStringLiteral("tag") << QStringLiteral("list") << QStringLiteral("str") << QStringLiteral("test") << QStringLiteral("crlf/");
+    for (const QString &s : miscType) {
         const QRegularExpression regex(s, QRegularExpression::CaseInsensitiveOption);
         m_rules.append(KPIMTextEdit::Rule(regex, misc));
     }

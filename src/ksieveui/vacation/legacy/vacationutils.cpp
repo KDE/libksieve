@@ -88,7 +88,8 @@ bool Legacy::VacationUtils::parseScript(const QString &script, QString &messageT
     }
     notificationInterval = vdx.notificationInterval();
     aliases.clear();
-    foreach (const QString &alias, vdx.aliases()) {
+    const QStringList lstAliases = vdx.aliases();
+    for (const QString &alias : lstAliases) {
         KMime::Types::Mailbox a;
         a.fromUnicodeString(alias);
         aliases.append(a.addrSpec());
