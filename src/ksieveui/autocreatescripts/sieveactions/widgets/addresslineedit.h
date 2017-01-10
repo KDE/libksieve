@@ -28,7 +28,7 @@ class AddressLineEdit : public QLineEdit
 {
     Q_OBJECT
 public:
-    explicit AddressLineEdit(QWidget *parent = Q_NULLPTR);
+    explicit AddressLineEdit(QWidget *parent = nullptr);
     ~AddressLineEdit();
 
 Q_SIGNALS:

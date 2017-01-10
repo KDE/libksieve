@@ -40,7 +40,7 @@ class KSIEVEUI_EXPORT SieveScriptDebuggerFrontEndWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SieveScriptDebuggerFrontEndWidget(QWidget *parent = Q_NULLPTR);
+    explicit SieveScriptDebuggerFrontEndWidget(QWidget *parent = nullptr);
     ~SieveScriptDebuggerFrontEndWidget();
 
     QString script() const;

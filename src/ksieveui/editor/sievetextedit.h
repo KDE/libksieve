@@ -40,7 +40,7 @@ class KSIEVEUI_EXPORT SieveTextEdit : public KPIMTextEdit::PlainTextEditor
     Q_OBJECT
 
 public:
-    explicit SieveTextEdit(QWidget *parent = Q_NULLPTR);
+    explicit SieveTextEdit(QWidget *parent = nullptr);
     ~SieveTextEdit();
 
     void lineNumberAreaPaintEvent(QPaintEvent *event);

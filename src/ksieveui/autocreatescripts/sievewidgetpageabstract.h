@@ -37,7 +37,7 @@ public:
         GlobalVariable = 5
     };
 
-    explicit SieveWidgetPageAbstract(QWidget *parent = Q_NULLPTR);
+    explicit SieveWidgetPageAbstract(QWidget *parent = nullptr);
     ~SieveWidgetPageAbstract();
 
     virtual void generatedScript(QString &script, QStringList &requires) = 0;

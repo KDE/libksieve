@@ -30,7 +30,7 @@ class SelectSizeWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SelectSizeWidget(QWidget *parent = Q_NULLPTR);
+    explicit SelectSizeWidget(QWidget *parent = nullptr);
     ~SelectSizeWidget();
 
     QString code() const;

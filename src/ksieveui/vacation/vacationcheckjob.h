@@ -34,7 +34,7 @@ class VacationCheckJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit VacationCheckJob(const QUrl &url, const QString &serverName, QObject *parent = Q_NULLPTR);
+    explicit VacationCheckJob(const QUrl &url, const QString &serverName, QObject *parent = nullptr);
     ~VacationCheckJob();
     void setKep14Support(bool kep14Support);
     void start();

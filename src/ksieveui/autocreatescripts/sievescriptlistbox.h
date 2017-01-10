@@ -54,7 +54,7 @@ class SieveScriptListBox : public QGroupBox
 {
     Q_OBJECT
 public:
-    explicit SieveScriptListBox(const QString &title, QWidget *parent = Q_NULLPTR);
+    explicit SieveScriptListBox(const QString &title, QWidget *parent = nullptr);
     ~SieveScriptListBox();
 
     void setSieveEditorGraphicalModeWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget);

@@ -26,7 +26,7 @@ class SelectVacationComboBox : public KComboBox
 {
     Q_OBJECT
 public:
-    explicit SelectVacationComboBox(QWidget *parent = Q_NULLPTR);
+    explicit SelectVacationComboBox(QWidget *parent = nullptr);
     ~SelectVacationComboBox();
 
     QString code() const;

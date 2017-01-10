@@ -25,7 +25,7 @@ class SieveActionKeep : public SieveAction
 {
     Q_OBJECT
 public:
-    explicit SieveActionKeep(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
+    explicit SieveActionKeep(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
 
     QString code(QWidget *) const Q_DECL_OVERRIDE;
     QString help() const Q_DECL_OVERRIDE;

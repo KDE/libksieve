@@ -30,7 +30,7 @@ class MoveImapFolderWidget : public KSieveUi::AbstractMoveImapFolderWidget
 {
     Q_OBJECT
 public:
-    explicit MoveImapFolderWidget(QWidget *parent = Q_NULLPTR);
+    explicit MoveImapFolderWidget(QWidget *parent = nullptr);
     ~MoveImapFolderWidget();
 
     void setText(const QString &str) Q_DECL_OVERRIDE;

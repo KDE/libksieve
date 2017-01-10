@@ -28,7 +28,7 @@ class SieveScriptDebuggerTextEdit : public KSieveUi::SieveTextEdit
 {
     Q_OBJECT
 public:
-    explicit SieveScriptDebuggerTextEdit(QWidget *parent = Q_NULLPTR);
+    explicit SieveScriptDebuggerTextEdit(QWidget *parent = nullptr);
     ~SieveScriptDebuggerTextEdit();
 
 protected:

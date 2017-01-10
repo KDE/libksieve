@@ -32,7 +32,7 @@ class SieveForEveryPartWidget : public SieveWidgetPageAbstract
 {
     Q_OBJECT
 public:
-    explicit SieveForEveryPartWidget(QWidget *parent = Q_NULLPTR);
+    explicit SieveForEveryPartWidget(QWidget *parent = nullptr);
     ~SieveForEveryPartWidget();
 
     void generatedScript(QString &script, QStringList &requires) Q_DECL_OVERRIDE;

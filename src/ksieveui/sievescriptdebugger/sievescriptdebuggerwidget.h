@@ -31,7 +31,7 @@ class KSIEVEUI_EXPORT SieveScriptDebuggerWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SieveScriptDebuggerWidget(QWidget *parent = Q_NULLPTR);
+    explicit SieveScriptDebuggerWidget(QWidget *parent = nullptr);
     ~SieveScriptDebuggerWidget();
 
     void setScript(const QString &script);

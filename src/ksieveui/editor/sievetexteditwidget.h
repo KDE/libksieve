@@ -34,7 +34,7 @@ class KSIEVEUI_EXPORT SieveTextEditWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SieveTextEditWidget(QWidget *parent = Q_NULLPTR);
+    explicit SieveTextEditWidget(QWidget *parent = nullptr);
     SieveTextEditWidget(KSieveUi::SieveTextEdit *customTextEdit, QWidget *parent);
     ~SieveTextEditWidget();
     void setReadOnly(bool readOnly);
@@ -46,7 +46,7 @@ public Q_SLOTS:
     void slotFind();
 
 private:
-    void initialize(KSieveUi::SieveTextEdit *custom = Q_NULLPTR);
+    void initialize(KSieveUi::SieveTextEdit *custom = nullptr);
     SieveTextEditWidgetPrivate *const d;
     KSieveUi::SieveTextEdit *mTextEdit;
     KPIMTextEdit::SlideContainer *mSliderContainer;

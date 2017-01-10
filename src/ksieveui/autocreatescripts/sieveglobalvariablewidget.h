@@ -38,7 +38,7 @@ class SieveGlobalVariableActionWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SieveGlobalVariableActionWidget(QWidget *parent = Q_NULLPTR);
+    explicit SieveGlobalVariableActionWidget(QWidget *parent = nullptr);
     ~SieveGlobalVariableActionWidget();
 
     void generatedScript(QString &script);
@@ -71,7 +71,7 @@ class SieveGlobalVariableLister : public KPIM::KWidgetLister
 {
     Q_OBJECT
 public:
-    explicit SieveGlobalVariableLister(QWidget *parent = Q_NULLPTR);
+    explicit SieveGlobalVariableLister(QWidget *parent = nullptr);
     ~SieveGlobalVariableLister();
 
     void generatedScript(QString &script, QStringList &requires);
@@ -97,7 +97,7 @@ class SieveGlobalVariableWidget : public SieveWidgetPageAbstract
 {
     Q_OBJECT
 public:
-    explicit SieveGlobalVariableWidget(QWidget *parent = Q_NULLPTR);
+    explicit SieveGlobalVariableWidget(QWidget *parent = nullptr);
     ~SieveGlobalVariableWidget();
 
     void generatedScript(QString &script, QStringList &requires) Q_DECL_OVERRIDE;

@@ -28,7 +28,7 @@ class VacationWarningWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
-    explicit VacationWarningWidget(QWidget *parent = Q_NULLPTR);
+    explicit VacationWarningWidget(QWidget *parent = nullptr);
     ~VacationWarningWidget();
 };
 }

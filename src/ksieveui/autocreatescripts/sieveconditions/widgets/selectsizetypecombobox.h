@@ -27,7 +27,7 @@ class SelectSizeTypeComboBox : public QComboBox
 {
     Q_OBJECT
 public:
-    explicit SelectSizeTypeComboBox(QWidget *parent = Q_NULLPTR);
+    explicit SelectSizeTypeComboBox(QWidget *parent = nullptr);
     ~SelectSizeTypeComboBox();
 
     QString code() const;

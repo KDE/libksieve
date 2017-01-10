@@ -28,7 +28,7 @@ class SelectMatchTypeComboBox : public KComboBox
 {
     Q_OBJECT
 public:
-    explicit SelectMatchTypeComboBox(KSieveUi::SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent = Q_NULLPTR);
+    explicit SelectMatchTypeComboBox(KSieveUi::SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent = nullptr);
     ~SelectMatchTypeComboBox();
 
     QString code(bool &negative) const;

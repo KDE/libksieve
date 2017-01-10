@@ -28,7 +28,7 @@ class SelectRelationalMatchType : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SelectRelationalMatchType(QWidget *parent = Q_NULLPTR);
+    explicit SelectRelationalMatchType(QWidget *parent = nullptr);
     ~SelectRelationalMatchType();
 
     QString code() const;

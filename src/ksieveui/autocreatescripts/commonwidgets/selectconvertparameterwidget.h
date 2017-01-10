@@ -27,7 +27,7 @@ class SelectConvertParameterWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SelectConvertParameterWidget(QWidget *parent = Q_NULLPTR);
+    explicit SelectConvertParameterWidget(QWidget *parent = nullptr);
     ~SelectConvertParameterWidget();
 
     QString code() const;

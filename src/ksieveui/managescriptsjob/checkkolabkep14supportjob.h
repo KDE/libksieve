@@ -62,7 +62,7 @@ class KSIEVEUI_EXPORT CheckKolabKep14SupportJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit CheckKolabKep14SupportJob(QObject *parent = Q_NULLPTR);
+    explicit CheckKolabKep14SupportJob(QObject *parent = nullptr);
     ~CheckKolabKep14SupportJob();
 
     void start();

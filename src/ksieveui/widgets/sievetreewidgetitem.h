@@ -50,7 +50,7 @@ class SieveTreeWidgetProgress : public QObject
 {
     Q_OBJECT
 public:
-    explicit SieveTreeWidgetProgress(SieveTreeWidgetItem *item, QObject *parent = Q_NULLPTR);
+    explicit SieveTreeWidgetProgress(SieveTreeWidgetItem *item, QObject *parent = nullptr);
     ~SieveTreeWidgetProgress();
 
     void startAnimation();

@@ -28,7 +28,7 @@ class SieveScriptTabWidget : public QTabWidget
 {
     Q_OBJECT
 public:
-    explicit SieveScriptTabWidget(QWidget *parent = Q_NULLPTR);
+    explicit SieveScriptTabWidget(QWidget *parent = nullptr);
     ~SieveScriptTabWidget();
 
 private Q_SLOTS:

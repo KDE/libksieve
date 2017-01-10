@@ -28,7 +28,7 @@ class SelectAddressPartComboBox : public QComboBox
 {
     Q_OBJECT
 public:
-    explicit SelectAddressPartComboBox(KSieveUi::SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent = Q_NULLPTR);
+    explicit SelectAddressPartComboBox(KSieveUi::SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent = nullptr);
     ~SelectAddressPartComboBox();
 
     QString code() const;

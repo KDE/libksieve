@@ -35,7 +35,7 @@ class VacationCreateScriptJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit VacationCreateScriptJob(QObject *parent = Q_NULLPTR);
+    explicit VacationCreateScriptJob(QObject *parent = nullptr);
     ~VacationCreateScriptJob();
 
     void start();

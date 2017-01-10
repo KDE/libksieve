@@ -44,7 +44,7 @@ class KSIEVEUI_EXPORT SieveEditorTextModeWidget : public SieveEditorAbstractWidg
 {
     Q_OBJECT
 public:
-    explicit SieveEditorTextModeWidget(QWidget *parent = Q_NULLPTR);
+    explicit SieveEditorTextModeWidget(QWidget *parent = nullptr);
     ~SieveEditorTextModeWidget();
 
     void setSieveCapabilities(const QStringList &capabilities);

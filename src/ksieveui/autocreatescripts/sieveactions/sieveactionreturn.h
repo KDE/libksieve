@@ -26,7 +26,7 @@ class SieveActionReturn : public SieveAction
 {
     Q_OBJECT
 public:
-    explicit SieveActionReturn(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
+    explicit SieveActionReturn(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
     QString help() const Q_DECL_OVERRIDE;
     QStringList needRequires(QWidget *parent) const Q_DECL_OVERRIDE;
     bool needCheckIfServerHasCapability() const Q_DECL_OVERRIDE;

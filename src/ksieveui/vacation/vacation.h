@@ -35,7 +35,7 @@ class Vacation : public QObject
     Q_OBJECT
 
 public:
-    explicit Vacation(QObject *parent = Q_NULLPTR, bool checkonly = false, const QUrl &url = QUrl());
+    explicit Vacation(QObject *parent = nullptr, bool checkonly = false, const QUrl &url = QUrl());
     virtual ~Vacation();
 
     bool isUsable() const;

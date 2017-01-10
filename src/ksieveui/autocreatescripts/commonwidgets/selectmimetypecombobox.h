@@ -27,7 +27,7 @@ class SelectMimeTypeComboBox : public KComboBox
 {
     Q_OBJECT
 public:
-    explicit SelectMimeTypeComboBox(QWidget *parent = Q_NULLPTR);
+    explicit SelectMimeTypeComboBox(QWidget *parent = nullptr);
     ~SelectMimeTypeComboBox();
 
     QString code() const;

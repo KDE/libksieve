@@ -30,7 +30,7 @@ class SelectFlagsListWidget : public QListWidget
 {
     Q_OBJECT
 public:
-    explicit SelectFlagsListWidget(QWidget *parent = Q_NULLPTR);
+    explicit SelectFlagsListWidget(QWidget *parent = nullptr);
     ~SelectFlagsListWidget();
 
     void setFlags(const QStringList &list);
@@ -47,7 +47,7 @@ class SelectFlagsListDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit SelectFlagsListDialog(QWidget *parent = Q_NULLPTR);
+    explicit SelectFlagsListDialog(QWidget *parent = nullptr);
     ~SelectFlagsListDialog();
 
     void setFlags(const QStringList &list);
@@ -61,7 +61,7 @@ class SelectFlagsWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SelectFlagsWidget(QWidget *parent = Q_NULLPTR);
+    explicit SelectFlagsWidget(QWidget *parent = nullptr);
     ~SelectFlagsWidget();
 
     QString code() const;

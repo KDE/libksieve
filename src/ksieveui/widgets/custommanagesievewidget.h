@@ -26,7 +26,7 @@ class CustomManageSieveWidget : public KSieveUi::ManageSieveWidget
 {
     Q_OBJECT
 public:
-    explicit CustomManageSieveWidget(QWidget *parent = Q_NULLPTR);
+    explicit CustomManageSieveWidget(QWidget *parent = nullptr);
     virtual ~CustomManageSieveWidget();
 
 protected:

@@ -31,7 +31,7 @@ class KSIEVEUI_EXPORT SieveScriptParsingErrorDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit SieveScriptParsingErrorDialog(QWidget *parent = Q_NULLPTR);
+    explicit SieveScriptParsingErrorDialog(QWidget *parent = nullptr);
     ~SieveScriptParsingErrorDialog();
 
     void setError(QString script, QString);

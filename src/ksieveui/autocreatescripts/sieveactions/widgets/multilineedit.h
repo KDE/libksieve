@@ -27,7 +27,7 @@ class MultiLineEdit : public KPIMTextEdit::PlainTextEditor
 {
     Q_OBJECT
 public:
-    explicit MultiLineEdit(QWidget *parent = Q_NULLPTR);
+    explicit MultiLineEdit(QWidget *parent = nullptr);
     ~MultiLineEdit();
 
 Q_SIGNALS:

@@ -26,7 +26,7 @@ class SelectMimeComboBox : public QComboBox
 {
     Q_OBJECT
 public:
-    explicit SelectMimeComboBox(QWidget *parent = Q_NULLPTR);
+    explicit SelectMimeComboBox(QWidget *parent = nullptr);
     ~SelectMimeComboBox();
 
     QString code() const;

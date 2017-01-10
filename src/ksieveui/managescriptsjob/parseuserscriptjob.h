@@ -37,7 +37,7 @@ class KSIEVEUI_EXPORT ParseUserScriptJob : public QObject
 
     friend class ParseUserTest;
 public:
-    explicit ParseUserScriptJob(const QUrl &url, QObject *parent = Q_NULLPTR);
+    explicit ParseUserScriptJob(const QUrl &url, QObject *parent = nullptr);
     ~ParseUserScriptJob();
 
     void start();

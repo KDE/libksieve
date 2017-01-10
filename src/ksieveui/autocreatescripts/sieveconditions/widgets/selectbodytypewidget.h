@@ -30,7 +30,7 @@ class SelectBodyTypeWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SelectBodyTypeWidget(QWidget *parent = Q_NULLPTR);
+    explicit SelectBodyTypeWidget(QWidget *parent = nullptr);
     ~SelectBodyTypeWidget();
 
     QString code() const;

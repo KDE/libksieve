@@ -33,7 +33,7 @@ class SieveTemplateListWidget : public PimCommon::TemplateListWidget
 {
     Q_OBJECT
 public:
-    explicit SieveTemplateListWidget(const QString &configName, QWidget *parent = Q_NULLPTR);
+    explicit SieveTemplateListWidget(const QString &configName, QWidget *parent = nullptr);
     ~SieveTemplateListWidget();
 
     QVector<PimCommon::defaultTemplate> defaultTemplates() Q_DECL_OVERRIDE;
@@ -51,7 +51,7 @@ class SieveTemplateWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SieveTemplateWidget(const QString &title, QWidget *parent = Q_NULLPTR);
+    explicit SieveTemplateWidget(const QString &title, QWidget *parent = nullptr);
     ~SieveTemplateWidget();
 
     void setSieveCapabilities(const QStringList &capabilities);

@@ -29,7 +29,7 @@ class SieveEditorAbstractWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit SieveEditorAbstractWidget(QWidget *parent = Q_NULLPTR);
+    explicit SieveEditorAbstractWidget(QWidget *parent = nullptr);
     ~SieveEditorAbstractWidget();
 
     virtual QString currentscript();

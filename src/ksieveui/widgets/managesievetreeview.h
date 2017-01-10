@@ -27,7 +27,7 @@ class KSIEVEUI_EXPORT ManageSieveTreeView : public PimCommon::CustomTreeView
 {
     Q_OBJECT
 public:
-    explicit ManageSieveTreeView(QWidget *parent = Q_NULLPTR);
+    explicit ManageSieveTreeView(QWidget *parent = nullptr);
     ~ManageSieveTreeView();
 
     void setNoImapFound(bool found);

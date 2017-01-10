@@ -27,7 +27,7 @@ class SieveConditionServerMetaData : public SieveCondition
 {
     Q_OBJECT
 public:
-    explicit SieveConditionServerMetaData(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
+    explicit SieveConditionServerMetaData(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
 
     QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
 

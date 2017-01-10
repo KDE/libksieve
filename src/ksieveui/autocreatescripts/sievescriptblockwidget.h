@@ -45,7 +45,7 @@ public:
         AllCondition
     };
 
-    explicit SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent = Q_NULLPTR);
+    explicit SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent = nullptr);
     ~SieveScriptBlockWidget();
 
     void setPageType(PageType type) Q_DECL_OVERRIDE;

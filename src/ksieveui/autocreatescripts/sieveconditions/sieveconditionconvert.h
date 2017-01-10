@@ -27,7 +27,7 @@ class SieveConditionConvert : public SieveCondition
 {
     Q_OBJECT
 public:
-    explicit SieveConditionConvert(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
+    explicit SieveConditionConvert(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
     QString code(QWidget *) const Q_DECL_OVERRIDE;
     QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
     QStringList needRequires(QWidget *) const Q_DECL_OVERRIDE;

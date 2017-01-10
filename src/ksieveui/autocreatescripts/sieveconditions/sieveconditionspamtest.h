@@ -27,7 +27,7 @@ class SieveConditionSpamTest : public SieveCondition
 {
     Q_OBJECT
 public:
-    explicit SieveConditionSpamTest(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
+    explicit SieveConditionSpamTest(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
 
     QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
 

@@ -27,7 +27,7 @@ class SieveConditionFalse : public SieveCondition
 {
     Q_OBJECT
 public:
-    explicit SieveConditionFalse(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
+    explicit SieveConditionFalse(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
     QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
 
     QString code(QWidget *w) const Q_DECL_OVERRIDE;

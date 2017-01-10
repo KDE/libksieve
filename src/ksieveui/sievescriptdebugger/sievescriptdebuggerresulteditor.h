@@ -28,7 +28,7 @@ class SieveScriptDebuggerResultEditor : public KPIMTextEdit::PlainTextEditor
 {
     Q_OBJECT
 public:
-    explicit SieveScriptDebuggerResultEditor(QWidget *parent = Q_NULLPTR);
+    explicit SieveScriptDebuggerResultEditor(QWidget *parent = nullptr);
     ~SieveScriptDebuggerResultEditor();
 
 protected:

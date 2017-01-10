@@ -27,7 +27,7 @@ class SelectVariableModifierComboBox : public KComboBox
 {
     Q_OBJECT
 public:
-    explicit SelectVariableModifierComboBox(QWidget *parent = Q_NULLPTR);
+    explicit SelectVariableModifierComboBox(QWidget *parent = nullptr);
     ~SelectVariableModifierComboBox();
 
     QString code() const;

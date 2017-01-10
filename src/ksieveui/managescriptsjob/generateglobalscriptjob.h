@@ -31,7 +31,7 @@ class GenerateGlobalScriptJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit GenerateGlobalScriptJob(const QUrl &url, QObject *parent = Q_NULLPTR);
+    explicit GenerateGlobalScriptJob(const QUrl &url, QObject *parent = nullptr);
     ~GenerateGlobalScriptJob();
 
     void start();

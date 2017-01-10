@@ -26,7 +26,7 @@ class SieveActionNotify : public SieveAction
 {
     Q_OBJECT
 public:
-    explicit SieveActionNotify(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
+    explicit SieveActionNotify(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
 
     QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
     QString code(QWidget *) const Q_DECL_OVERRIDE;

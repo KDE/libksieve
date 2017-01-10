@@ -32,7 +32,7 @@ class KSIEVEUI_EXPORT CheckScriptJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit CheckScriptJob(QObject *parent = Q_NULLPTR);
+    explicit CheckScriptJob(QObject *parent = nullptr);
     ~CheckScriptJob();
 
     void setOriginalScript(const QString &script);

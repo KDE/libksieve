@@ -33,7 +33,7 @@ class SelectHeadersWidget : public QListWidget
 {
     Q_OBJECT
 public:
-    explicit SelectHeadersWidget(QWidget *parent = Q_NULLPTR);
+    explicit SelectHeadersWidget(QWidget *parent = nullptr);
     ~SelectHeadersWidget();
 
     QString headers() const;
@@ -51,7 +51,7 @@ class SelectHeadersDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit SelectHeadersDialog(QWidget *parent = Q_NULLPTR);
+    explicit SelectHeadersDialog(QWidget *parent = nullptr);
     ~SelectHeadersDialog();
 
     QString headers() const;
@@ -73,7 +73,7 @@ class SelectHeaderTypeComboBox : public QComboBox
 {
     Q_OBJECT
 public:
-    explicit SelectHeaderTypeComboBox(bool onlyEnvelopType = false, QWidget *parent = Q_NULLPTR);
+    explicit SelectHeaderTypeComboBox(bool onlyEnvelopType = false, QWidget *parent = nullptr);
     ~SelectHeaderTypeComboBox();
 
     QString code() const;

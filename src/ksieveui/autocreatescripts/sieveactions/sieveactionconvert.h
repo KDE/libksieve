@@ -27,7 +27,7 @@ class SieveActionConvert : public SieveAction
 {
     Q_OBJECT
 public:
-    explicit SieveActionConvert(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = Q_NULLPTR);
+    explicit SieveActionConvert(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
     QString code(QWidget *) const Q_DECL_OVERRIDE;
     QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
     QStringList needRequires(QWidget *parent) const Q_DECL_OVERRIDE;

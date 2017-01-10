@@ -48,7 +48,7 @@ public:
         Zone,
         Weekday
     };
-    explicit SelectDateWidget(QWidget *parent = Q_NULLPTR);
+    explicit SelectDateWidget(QWidget *parent = nullptr);
     ~SelectDateWidget();
 
     QString code() const;

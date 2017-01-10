@@ -30,7 +30,7 @@ class SieveCondition : public QObject
 {
     Q_OBJECT
 public:
-    SieveCondition(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent = Q_NULLPTR);
+    SieveCondition(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent = nullptr);
     virtual ~SieveCondition();
 
     QString name() const;

@@ -46,7 +46,7 @@ public:
         NormalEditorMode = 0,
         Kep14EditorMode
     };
-    explicit ManageSieveWidget(QWidget *parent = Q_NULLPTR);
+    explicit ManageSieveWidget(QWidget *parent = nullptr);
     ~ManageSieveWidget();
 
     ManageSieveTreeView *treeView() const;
