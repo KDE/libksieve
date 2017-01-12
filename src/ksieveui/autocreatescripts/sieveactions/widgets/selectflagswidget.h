@@ -54,6 +54,8 @@ public:
     QStringList flags() const;
 
 private:
+    void readConfig();
+    void writeConfig();
     SelectFlagsListWidget *mListWidget;
 };
 

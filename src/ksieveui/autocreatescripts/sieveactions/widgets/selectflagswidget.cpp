@@ -21,6 +21,8 @@
 
 #include <QLineEdit>
 #include <KLocalizedString>
+#include <KConfigGroup>
+#include <KSharedConfig>
 
 #include <QPushButton>
 #include <QHBoxLayout>
@@ -46,10 +48,27 @@ SelectFlagsListDialog::SelectFlagsListDialog(QWidget *parent)
     connect(buttonBox, &QDialogButtonBox::rejected, this, &SelectFlagsListDialog::reject);
     mainLayout->addWidget(buttonBox);
     okButton->setFocus();
+    readConfig();
 }
 
 SelectFlagsListDialog::~SelectFlagsListDialog()
 {
+    writeConfig();
+}
+
+void SelectFlagsListDialog::readConfig()
+{
+    KConfigGroup group(KSharedConfig::openConfig(), "SelectFlagsListDialog");
+    const QSize sizeDialog = group.readEntry("Size", QSize(300, 200));
+    if (sizeDialog.isValid()) {
+        resize(sizeDialog);
+    }
+}
+
+void SelectFlagsListDialog::writeConfig()
+{
+    KConfigGroup group(KSharedConfig::openConfig(), "SelectFlagsListDialog");
+    group.writeEntry("Size", size());
 }
 
 void SelectFlagsListDialog::setFlags(const QStringList &list)
