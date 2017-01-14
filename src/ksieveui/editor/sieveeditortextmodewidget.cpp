@@ -116,6 +116,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     connect(mGoToLine, &KPIMTextEdit::TextGoToLineWidget::hideGotoLine, mGotoLineSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
 
     connect(mGoToLine, &KPIMTextEdit::TextGoToLineWidget::moveToLine, this, &SieveEditorTextModeWidget::slotGoToLine);
+    connect(mTextEdit, &SieveTextEdit::blockCountChanged, mGoToLine, &KPIMTextEdit::TextGoToLineWidget::slotBlockCountChanged);
 
     mSliderContainer = new KPIMTextEdit::SlideContainer(this);
     mFindBar = new KPIMTextEdit::PlainTextEditFindBar(mTextEdit, textEditWidget);
