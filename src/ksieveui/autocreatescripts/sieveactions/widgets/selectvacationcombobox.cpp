@@ -22,8 +22,7 @@
 
 #include <KLocalizedString>
 
-namespace KSieveUi
-{
+using namespace KSieveUi;
 SelectVacationComboBox::SelectVacationComboBox(QWidget *parent)
     : KComboBox(parent)
 {
@@ -55,7 +54,5 @@ void SelectVacationComboBox::setCode(const QString &code, const QString &name, Q
         AutoCreateScriptUtil::comboboxItemNotFound(code, name, error);
         setCurrentIndex(0);
     }
-}
-
 }
 

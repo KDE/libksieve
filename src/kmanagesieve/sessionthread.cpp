@@ -17,8 +17,6 @@
     02110-1301, USA.
 */
 
-//krazy:excludeall=null since used by SASL (C library)
-
 #include "sessionthread_p.h"
 #include "session.h"
 #include "response.h"
@@ -457,13 +455,14 @@ void SessionThread::sslResult(bool encrypted)
     Q_ASSERT(QThread::currentThread() == thread());
 
     const KSslCipher cipher = m_socket->sessionCipher();
-    if (!encrypted || m_socket->sslErrors().count() > 0 || m_socket->encryptionMode() != KTcpSocket::SslClientMode
+    const int numberOfSslError = m_socket->sslErrors().count();
+    if (!encrypted || numberOfSslError > 0 || m_socket->encryptionMode() != KTcpSocket::SslClientMode
             || cipher.isNull() || cipher.usedBits() == 0) {
         qCDebug(KMANAGERSIEVE_LOG) << "Initial SSL handshake failed. cipher.isNull() is" << cipher.isNull()
                                    << ", cipher.usedBits() is" << cipher.usedBits()
                                    << ", the socket says:" <<  m_socket->errorString()
                                    << "and the list of SSL errors contains"
-                                   << m_socket->sslErrors().count() << "items.";
+                                   << numberOfSslError << "items.";
 
         Q_EMIT sslError(KSslErrorUiData(m_socket));
     } else {

@@ -67,7 +67,8 @@ Lexer::Lexer(const char *scursor, const char *send, int options)
 
 Lexer::~Lexer()
 {
-    delete i; i = nullptr;
+    delete i;
+    i = nullptr;
 }
 
 bool Lexer::ignoreComments() const

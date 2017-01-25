@@ -59,7 +59,8 @@ Parser::Parser(const char *scursor, const char *const send, int options)
 
 Parser::~Parser()
 {
-    delete i; i = nullptr;
+    delete i;
+    i = nullptr;
 }
 
 void Parser::setScriptBuilder(ScriptBuilder *builder)

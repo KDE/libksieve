@@ -139,16 +139,15 @@ QStringList SelectFlagsListWidget::flags() const
 SelectFlagsWidget::SelectFlagsWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *lay = new QHBoxLayout;
+    QHBoxLayout *lay = new QHBoxLayout(this);
     lay->setMargin(0);
-    mEdit = new QLineEdit;
+    mEdit = new QLineEdit(this);
     mEdit->setReadOnly(true);
     connect(mEdit, &QLineEdit::textChanged, this, &SelectFlagsWidget::valueChanged);
     lay->addWidget(mEdit);
-    QPushButton *selectFlags = new QPushButton(i18n("..."));
+    QPushButton *selectFlags = new QPushButton(i18n("..."), this);
     connect(selectFlags, &QPushButton::clicked, this, &SelectFlagsWidget::slotSelectFlags);
     lay->addWidget(selectFlags);
-    setLayout(lay);
 }
 
 SelectFlagsWidget::~SelectFlagsWidget()
