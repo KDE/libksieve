@@ -34,8 +34,8 @@
 #include <QLabel>
 #include "libksieve_debug.h"
 
-namespace KSieveUi
-{
+using namespace KSieveUi;
+
 SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent)
     : SieveWidgetPageAbstract(parent),
       mMatchCondition(AndCondition),
@@ -284,7 +284,5 @@ void SieveScriptBlockWidget::loadScript(const QDomElement &element, bool onlyAct
             node = node.nextSibling();
         }
     }
-}
-
 }
 

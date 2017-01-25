@@ -35,8 +35,7 @@
 #include "libksieve_debug.h"
 #include <QDomNode>
 
-namespace KSieveUi
-{
+using namespace KSieveUi;
 static const int MINIMUMGLOBALVARIABLEACTION = 1;
 static const int MAXIMUMGLOBALVARIABLEACTION = 15;
 
@@ -326,7 +325,5 @@ void SieveGlobalVariableLister::loadSetVariable(const QDomElement &element, QStr
             w->setVariableValue(variableValue);
         }
     }
-}
-
 }
 

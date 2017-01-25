@@ -36,8 +36,8 @@
 #include <QDomNode>
 #include "libksieve_debug.h"
 
-namespace KSieveUi
-{
+using namespace KSieveUi;
+
 static const int MINIMUMINCLUDEACTION = 1;
 static const int MAXIMUMINCLUDEACTION = 20;
 
@@ -330,7 +330,5 @@ void SieveIncludeWidgetLister::loadScript(const QDomElement &element, QString &e
         w = static_cast<SieveIncludeActionWidget *>(widgets().constLast());
     }
     w->loadScript(element, error);
-}
-
 }
 

@@ -19,8 +19,8 @@
 
 #include "sievewidgetpageabstract.h"
 
-namespace KSieveUi
-{
+using namespace KSieveUi;
+
 SieveWidgetPageAbstract::SieveWidgetPageAbstract(QWidget *parent)
     : QWidget(parent),
       mType(BlockIf)
@@ -40,6 +40,3 @@ SieveWidgetPageAbstract::PageType SieveWidgetPageAbstract::pageType() const
 {
     return mType;
 }
-
-}
-

@@ -26,8 +26,7 @@
 
 #include <QTabBar>
 
-namespace KSieveUi
-{
+using namespace KSieveUi;
 
 SieveScriptTabWidget::SieveScriptTabWidget(QWidget *parent)
     : QTabWidget(parent)
@@ -68,6 +67,3 @@ void SieveScriptTabWidget::slotTabContextMenuRequest(const QPoint &pos)
         }
     }
 }
-
-}
-

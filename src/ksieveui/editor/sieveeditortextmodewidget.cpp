@@ -62,9 +62,8 @@ using namespace KSieveUi;
 SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     : SieveEditorAbstractWidget(parent)
 {
-    QVBoxLayout *lay = new QVBoxLayout;
+    QVBoxLayout *lay = new QVBoxLayout(this);
     lay->setMargin(0);
-    setLayout(lay);
 
     mMainSplitter = new QSplitter;
     mMainSplitter->setOrientation(Qt::Vertical);
@@ -185,8 +184,7 @@ SieveEditorTabWidget *SieveEditorTextModeWidget::tabWidget() const
 void SieveEditorTextModeWidget::readConfig()
 {
     KConfigGroup group(KSharedConfig::openConfig(), "SieveEditor");
-    QList<int> size;
-    size << 400 << 100;
+    const QList<int> size = {400, 100};
 
     mMainSplitter->setSizes(group.readEntry("mainSplitter", size));
     mExtraSplitter->setSizes(group.readEntry("extraSplitter", size));

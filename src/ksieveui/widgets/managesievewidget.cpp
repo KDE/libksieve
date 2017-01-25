@@ -528,7 +528,6 @@ void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, c
     }
     d->mBlockSignal = false;
 
-    qCDebug(LIBKSIEVE_LOG) << " LOAD";
     const bool hasKep14EditorMode = Util::hasKep14Support(job->sieveCapabilities(), listScript, activeScript);
     if (hasKep14EditorMode) {
         QUrl u = mUrls[parent];

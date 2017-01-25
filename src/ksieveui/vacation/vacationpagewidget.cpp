@@ -45,7 +45,7 @@ VacationPageWidget::VacationPageWidget(QWidget *parent)
       mWasActive(false),
       mHasDateSupport(false)
 {
-    QVBoxLayout *lay = new QVBoxLayout;
+    QVBoxLayout *lay = new QVBoxLayout(this);
     lay->setMargin(0);
     mStackWidget = new QStackedWidget;
     lay->addWidget(mStackWidget);
@@ -80,7 +80,6 @@ VacationPageWidget::VacationPageWidget(QWidget *parent)
     mStackWidget->addWidget(w);
 
     mStackWidget->setCurrentIndex(Script);
-    setLayout(lay);
 }
 
 VacationPageWidget::~VacationPageWidget()

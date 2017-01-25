@@ -51,7 +51,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     QFormLayout *formLayout = new QFormLayout;
     mainLayout->addLayout(formLayout);
 
-    QLabel *emailLab = new QLabel(i18n("Email path:"));
+    QLabel *emailLab = new QLabel(i18n("Email path:"), this);
     emailLab->setObjectName(QStringLiteral("emaillab"));
 
     mEmailPath = new KUrlRequester(this);

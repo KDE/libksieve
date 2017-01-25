@@ -32,8 +32,8 @@
 
 #include <QVBoxLayout>
 
-namespace KSieveUi
-{
+using namespace KSieveUi;
+
 SieveScriptPage::SieveScriptPage(SieveEditorGraphicalModeWidget *sieveEditorGraphicalWidget, QWidget *parent)
     : QWidget(parent),
       mSieveGraphicalModeWidget(sieveEditorGraphicalWidget),
@@ -179,6 +179,3 @@ SieveScriptBlockWidget *SieveScriptPage::blockIfWidget() const
 {
     return mBlockIfWidget;
 }
-
-}
-

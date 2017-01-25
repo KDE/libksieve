@@ -94,7 +94,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     connect(mSearch, &KLineEdit::textChanged, this, &FindBarBase::autoSearch);
     connect(mSearch, &KLineEdit::clearButtonClicked, this, &FindBarBase::slotClearSearch);
 
-    mStatus = new QLabel;
+    mStatus = new QLabel(this);
     mStatus->setObjectName(QStringLiteral("status"));
     QFontMetrics fm(mStatus->font());
     mNotFoundString = i18n("Phrase not found");

@@ -34,8 +34,8 @@
 #include <QDomNode>
 #include "libksieve_debug.h"
 
-namespace KSieveUi
-{
+using namespace KSieveUi;
+
 SieveForEveryPartWidget::SieveForEveryPartWidget(QWidget *parent)
     : SieveWidgetPageAbstract(parent)
 {
@@ -114,6 +114,5 @@ void SieveForEveryPartWidget::loadScript(const QDomElement &element, QString &er
             qCDebug(LIBKSIEVE_LOG) << " SieveForEveryPartWidget::loadScript unknown tagName " << tagName;
         }
     }
-}
 }
 

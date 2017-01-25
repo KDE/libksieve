@@ -168,7 +168,6 @@ void SieveEditorMenuBar::slotUpdateActions()
     mZoomResetAction->setEnabled(true);
     mDebugSieveAction->setEnabled(!hasActionInHtmlModeToo);
     mWordWrapAction->setEnabled(!hasActionInHtmlModeToo);
-    //TODO ?
     mPrintAction->setEnabled(!hasActionInHtmlModeToo);
     mPrintPreviewAction->setEnabled(!hasActionInHtmlModeToo);
 }

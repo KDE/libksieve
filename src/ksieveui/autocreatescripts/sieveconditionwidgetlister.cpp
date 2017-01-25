@@ -115,7 +115,7 @@ void SieveConditionWidget::initWidget()
         }
     }
 
-    mHelpButton = new SieveHelpButton;
+    mHelpButton = new SieveHelpButton(this);
     mHelpButton->setEnabled(false);
     mLayout->addWidget(mHelpButton, 1, 0);
     connect(mHelpButton, &SieveHelpButton::clicked, this, &SieveConditionWidget::slotHelp);

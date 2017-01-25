@@ -138,12 +138,12 @@ void SieveActionWidget::initWidget()
         }
     }
 
-    mHelpButton = new SieveHelpButton;
+    mHelpButton = new SieveHelpButton(this);
     mHelpButton->setEnabled(false);
     connect(mHelpButton, &SieveHelpButton::clicked, this, &SieveActionWidget::slotHelp);
     mLayout->addWidget(mHelpButton, 1, 0);
 
-    mCommentButton = new QToolButton;
+    mCommentButton = new QToolButton(this);
     mCommentButton->setToolTip(i18n("Add comment"));
     mCommentButton->setEnabled(false);
     mLayout->addWidget(mCommentButton, 1, 1);
