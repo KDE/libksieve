@@ -95,6 +95,7 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         accountInfo.sieveImapAccountSettings.setPassword(pwd);
         u.setPort(interface->sievePort());
         QString authStr;
+        accountInfo.sieveImapAccountSettings.setAuthenticationType(static_cast<SieveImapAccountSettings::AuthenticationMode>((int)interface->authentication()));
         switch (interface->authentication()) {
         case MailTransport::Transport::EnumAuthenticationType::CLEAR:
         case MailTransport::Transport::EnumAuthenticationType::PLAIN:
