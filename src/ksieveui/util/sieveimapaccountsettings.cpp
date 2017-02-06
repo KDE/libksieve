@@ -120,5 +120,6 @@ QDebug operator <<(QDebug d, const SieveImapAccountSettings &settings)
     d << "password "<< settings.password();
     d << "authenticationType " << settings.authenticationType();
     d << "port " << settings.port();
+    d << "encryptionMode : " << settings.encryptionMode();
     return d;
 }
