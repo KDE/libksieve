@@ -85,5 +85,5 @@ private:
 };
 }
 Q_DECLARE_METATYPE(KSieveUi::SieveImapAccountSettings)
-
+KSIEVEUI_EXPORT QDebug operator <<(QDebug d, const KSieveUi::SieveImapAccountSettings &settings);
 #endif // SIEVEACCOUNT_H

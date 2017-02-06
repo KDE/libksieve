@@ -112,3 +112,13 @@ void SieveImapAccountSettings::setEncryptionMode(const SieveImapAccountSettings:
 {
     mEncryptionMode = encryptionMode;
 }
+
+QDebug operator <<(QDebug d, const SieveImapAccountSettings &settings)
+{
+    d << "serverName " << settings.serverName();
+    d << "userName " << settings.userName();
+    d << "password "<< settings.password();
+    d << "authenticationType " << settings.authenticationType();
+    d << "port " << settings.port();
+    return d;
+}
