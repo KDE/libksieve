@@ -18,6 +18,7 @@
 #include "generateglobalscriptjob.h"
 
 #include "kmanagesieve/sievejob.h"
+#include "util/helper_p.h"
 #include "util/util.h"
 
 #include <KLocalizedString>

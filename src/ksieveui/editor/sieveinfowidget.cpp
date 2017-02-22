@@ -16,7 +16,7 @@
 */
 
 #include "sieveinfowidget.h"
-#include "util/util.h"
+#include "util/helper_p.h"
 
 #include <KLocalizedString>
 

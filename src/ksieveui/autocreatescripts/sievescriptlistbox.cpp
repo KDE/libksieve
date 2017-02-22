@@ -23,7 +23,7 @@
 #include "sieveforeverypartwidget.h"
 #include "sievescriptpage.h"
 #include "sieveincludewidget.h"
-#include "util/util.h"
+#include "util/helper_p.h"
 
 #include <QHBoxLayout>
 #include <KMessageBox>

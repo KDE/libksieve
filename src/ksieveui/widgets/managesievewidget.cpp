@@ -26,6 +26,8 @@
 #include <managescriptsjob/generateglobalscriptjob.h>
 #include <PimCommon/NetworkManager>
 #include <util/util.h>
+#include "util/helper_p.h"
+
 #include <KSieveUi/SieveImapAccountSettings>
 
 #include <QInputDialog>
