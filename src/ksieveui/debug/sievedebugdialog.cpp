@@ -20,6 +20,10 @@
 #include <KLocalizedString>
 #include <kmanagesieve/sievejob.h>
 #include <ksieveui/util.h>
+#include <KSyntaxHighlighting/SyntaxHighlighter>
+#include <KSyntaxHighlighting/Definition>
+#include <KSyntaxHighlighting/Theme>
+
 
 #include <QTimer>
 #include <KSharedConfig>
@@ -47,6 +51,15 @@ SieveDebugDialog::SieveDebugDialog(QWidget *parent)
 
     mEdit = new KPIMTextEdit::PlainTextEditorWidget(this);
     mEdit->setReadOnly(true);
+    KSyntaxHighlighting::Definition def;
+    def = mRepo.definitionForName(QStringLiteral("Sieve"));
+
+    KSyntaxHighlighting::SyntaxHighlighter *hl = new KSyntaxHighlighting::SyntaxHighlighter(mEdit->editor()->document());
+    hl->setTheme((palette().color(QPalette::Base).lightness() < 128)
+                 ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+                 : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
+    hl->setDefinition(def);
+
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &SieveDebugDialog::reject);
 

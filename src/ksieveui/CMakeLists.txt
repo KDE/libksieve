@@ -233,6 +233,7 @@ target_link_libraries(KF5KSieveUi
     KF5::I18n
     KF5::SonnetUi
     Qt5::PrintSupport
+    KF5::SyntaxHighlighting
     )
 
 set_target_properties(KF5KSieveUi PROPERTIES

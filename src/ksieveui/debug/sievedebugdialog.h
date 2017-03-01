@@ -18,6 +18,7 @@
 
 #include <QDialog>
 #include <QUrl>
+#include <KSyntaxHighlighting/Repository>
 
 class QStringList;
 
@@ -59,6 +60,7 @@ private:
     void readConfig();
     KManageSieve::SieveJob *mSieveJob;
     QUrl mUrl;
+    KSyntaxHighlighting::Repository mRepo;
 
     KPIMTextEdit::PlainTextEditorWidget *mEdit;
     QStringList mResourceIdentifier;
