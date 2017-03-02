@@ -35,8 +35,6 @@ public:
     explicit VacationManager(QWidget *parent);
     ~VacationManager();
 
-    void setSieveImapInterface(SieveImapInstanceInterface *interface);
-
     void checkVacation();
 
 public Q_SLOTS:

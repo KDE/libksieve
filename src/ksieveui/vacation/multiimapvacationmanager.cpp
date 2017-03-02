@@ -33,27 +33,20 @@ using namespace KSieveUi;
 MultiImapVacationManager::MultiImapVacationManager(QObject *parent)
     : QObject(parent),
       mNumberOfJobs(0),
-      mCheckInProgress(false),
-      mSieveImapInstanceInterface(nullptr)
+      mCheckInProgress(false)
 {
 }
 
 MultiImapVacationManager::~MultiImapVacationManager()
 {
-    delete mSieveImapInstanceInterface;
-}
-
-void MultiImapVacationManager::setSieveImapInterface(SieveImapInstanceInterface *interface)
-{
-    mSieveImapInstanceInterface = interface;
 }
 
 QMap <QString, QUrl> MultiImapVacationManager::serverList() const
 {
     QMap <QString, QUrl> list;
-    const Akonadi::AgentInstance::List instances = KSieveUi::Util::imapAgentInstances();
-    for (const Akonadi::AgentInstance &instance : instances) {
-        if (instance.status() == Akonadi::AgentInstance::Broken) {
+    const QVector<KSieveUi::SieveImapInstance> instances = KSieveUi::Util::sieveImapInstances();
+    for (const KSieveUi::SieveImapInstance &instance : instances) {
+        if (instance.status() == KSieveUi::SieveImapInstance::Broken) {
             continue;
         }
 

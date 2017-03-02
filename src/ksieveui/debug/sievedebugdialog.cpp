@@ -42,7 +42,7 @@ SieveDebugDialog::SieveDebugDialog(QWidget *parent)
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     // Collect all accounts
-    mResourceIdentifier = KSieveUi::Util::imapAgentInstancesResouceName();
+    mResourceIdentifier = KSieveUi::Util::sieveImapResourceNames();
 
     mEdit = new KPIMTextEdit::PlainTextEditorWidget(this);
     mEdit->setReadOnly(true);

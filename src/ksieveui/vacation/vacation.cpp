@@ -71,9 +71,9 @@ QString Vacation::serverName() const
 
 QUrl Vacation::findURL(QString &serverName) const
 {
-    const Akonadi::AgentInstance::List instances = Util::imapAgentInstances();
-    for (const Akonadi::AgentInstance &instance : instances) {
-        if (instance.status() == Akonadi::AgentInstance::Broken) {
+    const QVector<KSieveUi::SieveImapInstance> instances = Util::sieveImapInstances();
+    for (const KSieveUi::SieveImapInstance &instance : instances) {
+        if (instance.status() == KSieveUi::SieveImapInstance::Broken) {
             continue;
         }
 

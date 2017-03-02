@@ -184,6 +184,7 @@ set(ksieveui_managescriptjob_LIB_SRCS
 set(ksieveui_sieveimapinstance_LIB_SRCS
     sieveimapinstance/sieveimapinstance.cpp
     sieveimapinstance/sieveimapinstanceinterface.cpp
+    sieveimapinstance/sieveimapinstanceinterfacemanager.cpp
     )
     
 set(ksieveui_LIB_SRCS
@@ -225,7 +226,6 @@ target_link_libraries(KF5KSieveUi
     PRIVATE
     KF5::Libkdepim
     KF5::Archive
-    KF5::AkonadiCore
     KF5::Mime
     KF5::IconThemes
     KF5::IdentityManagement
@@ -270,7 +270,8 @@ ecm_generate_headers(ksieveui_Camelcaseimapinstance_HEADERS
     HEADER_NAMES
     SieveImapInstance
     SieveImapInstanceInterface
-    REQUIRED_HEADERS ksieveui_util_HEADERS
+    SieveImapInstanceInterfaceManager
+    REQUIRED_HEADERS ksieveui_imapinstance_HEADERS
     PREFIX KSieveUi
     RELATIVE sieveimapinstance
     )

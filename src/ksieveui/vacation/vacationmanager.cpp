@@ -59,11 +59,6 @@ VacationManager::~VacationManager()
     delete d;
 }
 
-void VacationManager::setSieveImapInterface(SieveImapInstanceInterface *interface)
-{
-    d->mCheckVacation->setSieveImapInterface(interface);
-}
-
 void VacationManager::checkVacation()
 {
     d->mCheckVacation->checkVacation();

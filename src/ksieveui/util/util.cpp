@@ -40,6 +40,8 @@
 #include "PimCommon/PimUtil"
 #include "imapresourcesettings.h"
 #include "sieve-vacation.h"
+#include "sieveimapinstance/sieveimapinstanceinterfacemanager.h"
+#include "sieveimapinstance/sieveimapinstance.h"
 
 #include <agentmanager.h>
 #include <kmime/kmime_message.h>
@@ -200,25 +202,25 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
     }
 }
 
-QStringList KSieveUi::Util::imapAgentInstancesResouceName()
+QStringList KSieveUi::Util::sieveImapResourceNames()
 {
-    const Akonadi::AgentInstance::List lst = KSieveUi::Util::imapAgentInstances();
+    const QVector<KSieveUi::SieveImapInstance> lst = KSieveUi::Util::sieveImapInstances();
     QStringList resourceNames;
     resourceNames.reserve(lst.count());
-    for (const Akonadi::AgentInstance &type : lst) {
+    for (const KSieveUi::SieveImapInstance &type : lst) {
         resourceNames << type.identifier();
     }
     return resourceNames;
 }
 
-Akonadi::AgentInstance::List KSieveUi::Util::imapAgentInstances()
+QVector<KSieveUi::SieveImapInstance> KSieveUi::Util::sieveImapInstances()
 {
-    Akonadi::AgentInstance::List relevantInstances;
-    const Akonadi::AgentInstance::List allInstances = Akonadi::AgentManager::self()->instances();
-    for (const Akonadi::AgentInstance &instance : allInstances) {
-        if (instance.type().mimeTypes().contains(KMime::Message::mimeType()) &&
-                instance.type().capabilities().contains(QStringLiteral("Resource")) &&
-                !instance.type().capabilities().contains(QStringLiteral("Virtual"))) {
+    const QVector<KSieveUi::SieveImapInstance> allInstances = KSieveUi::SieveImapInstanceInterfaceManager::self()->sieveImapInstanceList();
+    QVector<KSieveUi::SieveImapInstance> relevantInstances;
+    for (const KSieveUi::SieveImapInstance &instance : allInstances) {
+        if (instance.mimeTypes().contains(KMime::Message::mimeType()) &&
+                instance.capabilities().contains(QStringLiteral("Resource")) &&
+                !instance.capabilities().contains(QStringLiteral("Virtual"))) {
 
             if (PimCommon::Util::isImapResource(instance.identifier())) {
                 relevantInstances << instance;

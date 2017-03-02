@@ -41,6 +41,7 @@
 
 #include "ksieveui_export.h"
 #include <KSieveUi/SieveImapAccountSettings>
+#include <KSieveUi/SieveImapInstance>
 
 #include <agentinstance.h>
 
@@ -71,8 +72,8 @@ QUrl findSieveUrlForAccount(const QString &identifier, bool withVacationFileName
 /**
  * Returns the list of configured IMAP agent instances.
  */
-Akonadi::AgentInstance::List imapAgentInstances();
-QStringList imapAgentInstancesResouceName();
+QVector<KSieveUi::SieveImapInstance> sieveImapInstances();
+QStringList sieveImapResourceNames();
 
 /**
  * Returns whether the availability of a vacation sieve script shall
@@ -99,6 +100,7 @@ bool isKep14ProtectedName(const QString &scriptName);
 
 
 KSIEVEUI_EXPORT KSieveUi::Util::AccountInfo findAccountInfo(const QString &identifier, bool withVacationFileName);
+
 }
 
 }

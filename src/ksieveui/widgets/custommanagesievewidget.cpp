@@ -19,7 +19,6 @@
 #include "widgets/managesievetreeview.h"
 #include <ksieveui/util.h>
 
-#include <AkonadiCore/AgentInstance>
 #include <KLocalizedString>
 #include <QIcon>
 #include <QTreeWidgetItem>
@@ -43,9 +42,9 @@ bool CustomManageSieveWidget::refreshList()
 {
     bool noImapFound = true;
     SieveTreeWidgetItem *last = nullptr;
-    const Akonadi::AgentInstance::List lst = KSieveUi::Util::imapAgentInstances();
-    for (const Akonadi::AgentInstance &type : lst) {
-        if (type.status() == Akonadi::AgentInstance::Broken) {
+    const QVector<KSieveUi::SieveImapInstance> lst = KSieveUi::Util::sieveImapInstances();
+    for (const KSieveUi::SieveImapInstance &type : lst) {
+        if (type.status() == KSieveUi::SieveImapInstance::Broken) {
             continue;
         }
 

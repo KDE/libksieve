@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-set(PIM_VERSION "5.4.52")
+set(PIM_VERSION "5.4.53")
 
 project(libksieve VERSION ${PIM_VERSION})
 
@@ -28,12 +28,10 @@ set(KMAILTRANSPORT_LIB_VERSION "5.4.40")
 set(KPIMTEXTEDIT_LIB_VERSION "5.4.42")
 set(LIBKDEPIM_LIB_VERSION "5.4.40")
 set(PIMCOMMON_LIB_VERSION "5.4.40")
-set(AKONADI_VERSION "5.4.40")
 
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
 
 
-find_package(KF5Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Test Xml PrintSupport WebEngine WebEngineWidgets)
 find_package(KF5I18n ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5DocTools ${KF5_VERSION} CONFIG REQUIRED)
