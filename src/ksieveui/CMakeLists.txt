@@ -183,6 +183,7 @@ set(ksieveui_managescriptjob_LIB_SRCS
     )
 set(ksieveui_sieveimapinstance_LIB_SRCS
     sieveimapinstance/sieveimapinstance.cpp
+    sieveimapinstance/sieveimapinstanceinterface.cpp
     )
     
 set(ksieveui_LIB_SRCS
@@ -268,6 +269,7 @@ ecm_generate_headers(ksieveui_Camelcaseutil_HEADERS
 ecm_generate_headers(ksieveui_Camelcaseimapinstance_HEADERS
     HEADER_NAMES
     SieveImapInstance
+    SieveImapInstanceInterface
     REQUIRED_HEADERS ksieveui_util_HEADERS
     PREFIX KSieveUi
     RELATIVE sieveimapinstance
