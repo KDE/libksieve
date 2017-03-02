@@ -200,6 +200,17 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
     }
 }
 
+QStringList KSieveUi::Util::imapAgentInstancesResouceName()
+{
+    const Akonadi::AgentInstance::List lst = KSieveUi::Util::imapAgentInstances();
+    QStringList resourceNames;
+    resourceNames.reserve(lst.count());
+    for (const Akonadi::AgentInstance &type : lst) {
+        resourceNames << type.identifier();
+    }
+    return resourceNames;
+}
+
 Akonadi::AgentInstance::List KSieveUi::Util::imapAgentInstances()
 {
     Akonadi::AgentInstance::List relevantInstances;

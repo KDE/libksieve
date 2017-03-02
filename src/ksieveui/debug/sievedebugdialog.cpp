@@ -15,7 +15,6 @@
 #include "kpimtextedit/plaintexteditorwidget.h"
 #include "kpimtextedit/plaintexteditor.h"
 
-#include <agentinstance.h>
 #include "libksieve_debug.h"
 #include <KLocalizedString>
 #include <kmanagesieve/sievejob.h>
@@ -43,11 +42,7 @@ SieveDebugDialog::SieveDebugDialog(QWidget *parent)
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     // Collect all accounts
-    const Akonadi::AgentInstance::List lst = KSieveUi::Util::imapAgentInstances();
-    mResourceIdentifier.reserve(lst.count());
-    for (const Akonadi::AgentInstance &type : lst) {
-        mResourceIdentifier << type.identifier();
-    }
+    mResourceIdentifier = KSieveUi::Util::imapAgentInstancesResouceName();
 
     mEdit = new KPIMTextEdit::PlainTextEditorWidget(this);
     mEdit->setReadOnly(true);

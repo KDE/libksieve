@@ -72,6 +72,7 @@ QUrl findSieveUrlForAccount(const QString &identifier, bool withVacationFileName
  * Returns the list of configured IMAP agent instances.
  */
 Akonadi::AgentInstance::List imapAgentInstances();
+QStringList imapAgentInstancesResouceName();
 
 /**
  * Returns whether the availability of a vacation sieve script shall
