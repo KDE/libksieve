@@ -19,6 +19,7 @@
 
 #include "multiimapvacationmanager.h"
 #include "vacationcheckjob.h"
+#include "sieveimapinstance/sieveimapinstanceinterface.h"
 #include "util/util.h"
 #include <managescriptsjob/checkkolabkep14supportjob.h>
 #include <managescriptsjob/parseuserscriptjob.h>
@@ -32,13 +33,19 @@ using namespace KSieveUi;
 MultiImapVacationManager::MultiImapVacationManager(QObject *parent)
     : QObject(parent),
       mNumberOfJobs(0),
-      mCheckInProgress(false)
+      mCheckInProgress(false),
+      mSieveImapInstanceInterface(nullptr)
 {
 }
 
 MultiImapVacationManager::~MultiImapVacationManager()
 {
+    delete mSieveImapInstanceInterface;
+}
 
+void MultiImapVacationManager::setSieveImapInterface(SieveImapInstanceInterface *interface)
+{
+    mSieveImapInstanceInterface = interface;
 }
 
 QMap <QString, QUrl> MultiImapVacationManager::serverList() const

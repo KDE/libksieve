@@ -31,6 +31,7 @@ namespace KSieveUi
 {
 class CheckKolabKep14SupportJob;
 class VacationCheckJob;
+class SieveImapInstanceInterface;
 class KSIEVEUI_EXPORT MultiImapVacationManager : public QObject
 {
     Q_OBJECT
@@ -44,6 +45,7 @@ public:
 
     bool kep14Support(const QString &serverName) const;
 
+    void setSieveImapInterface(SieveImapInstanceInterface *interface);
 Q_SIGNALS:
     void scriptActive(bool active, const QString &serverName);
     void scriptAvailable(const QString &serverName, const QStringList &sieveCapabilities, const QString &scriptName, const QString &script, bool active);
@@ -57,6 +59,7 @@ private:
     bool mCheckInProgress;
 
     QMap<QString, bool> mKep14Support;      //if the server has KEP:14 support
+    SieveImapInstanceInterface *mSieveImapInstanceInterface;
 };
 }
 #endif // MULTIIMAPVACATIONMANAGER_H
