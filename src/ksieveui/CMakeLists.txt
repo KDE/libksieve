@@ -191,6 +191,7 @@ set(ksieveui_LIB_SRCS
     widgets/abstractmoveimapfolderwidget.cpp
     debug/sievedebugdialog.cpp
     util/util.cpp
+    util/sieveimapinstance.cpp
     util/sieveimapaccountsettings.cpp
     templates/sievetemplatewidget.cpp
     templates/sievedefaulttemplate.cpp
@@ -256,6 +257,7 @@ ecm_generate_headers(ksieveui_Camelcaseutil_HEADERS
     HEADER_NAMES
     Util
     SieveImapAccountSettings
+    SieveImapInstance
     REQUIRED_HEADERS ksieveui_util_HEADERS
     PREFIX KSieveUi
     RELATIVE util

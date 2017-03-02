@@ -8,3 +8,4 @@ macro(add_sieveutil_test _source)
 endmacro()
 
 add_sieveutil_test(sieveaccounttest.cpp)
+add_sieveutil_test(sieveimapinstancetest.cpp)
