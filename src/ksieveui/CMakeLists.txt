@@ -181,7 +181,10 @@ set(ksieveui_managescriptjob_LIB_SRCS
     managescriptsjob/renamescriptjob.cpp
     managescriptsjob/checkscriptjob.cpp
     )
-
+set(ksieveui_sieveimapinstance_LIB_SRCS
+    sieveimapinstance/sieveimapinstance.cpp
+    )
+    
 set(ksieveui_LIB_SRCS
     managesievescriptsdialog.cpp
     widgets/custommanagesievewidget.cpp
@@ -191,11 +194,11 @@ set(ksieveui_LIB_SRCS
     widgets/abstractmoveimapfolderwidget.cpp
     debug/sievedebugdialog.cpp
     util/util.cpp
-    util/sieveimapinstance.cpp
     util/sieveimapaccountsettings.cpp
     templates/sievetemplatewidget.cpp
     templates/sievedefaulttemplate.cpp
     templates/sievetemplateeditdialog.cpp
+    ${ksieveui_sieveimapinstance_LIB_SRCS}
     ${ksieveui_scriptsparsing_LIB_SRCS}
     ${ksieveui_vacation_LIB_SRCS}
     ${ksieveui_editor_LIB_SRCS}
@@ -257,10 +260,17 @@ ecm_generate_headers(ksieveui_Camelcaseutil_HEADERS
     HEADER_NAMES
     Util
     SieveImapAccountSettings
-    SieveImapInstance
     REQUIRED_HEADERS ksieveui_util_HEADERS
     PREFIX KSieveUi
     RELATIVE util
+    )
+
+ecm_generate_headers(ksieveui_Camelcaseimapinstance_HEADERS
+    HEADER_NAMES
+    SieveImapInstance
+    REQUIRED_HEADERS ksieveui_util_HEADERS
+    PREFIX KSieveUi
+    RELATIVE sieveimapinstance
     )
 
 ecm_generate_headers(ksieveui_Camelmanagescriptsjob_HEADERS
@@ -317,6 +327,7 @@ ecm_generate_pri_file(BASE_NAME KSieveUi
 
 install(TARGETS KF5KSieveUi EXPORT KF5KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
+    ${ksieveui_Camelcaseimapinstance_HEADERS}
     ${ksieveui_Camelcasewidgets_HEADERS}
     ${ksieveui_Camelcasedebug_HEADERS}
     ${ksieveui_Camelcasevacation_HEADERS}
@@ -330,6 +341,7 @@ install(FILES
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/ksieveui_export.h
+    ${ksieveui_imapinstance_HEADERS}
     ${ksieveui_widgets_HEADERS}
     ${ksieveui_debug_HEADERS}
     ${ksieveui_vacation_HEADERS}
