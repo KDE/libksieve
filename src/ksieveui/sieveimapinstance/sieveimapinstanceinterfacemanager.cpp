@@ -47,7 +47,7 @@ SieveImapInstanceInterfaceManager::SieveImapInstanceInterfaceManager(QObject *pa
 
 SieveImapInstanceInterfaceManager::~SieveImapInstanceInterfaceManager()
 {
-
+    delete mInterface;
 }
 
 SieveImapInstanceInterfaceManager *SieveImapInstanceInterfaceManager::self()
