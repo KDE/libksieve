@@ -20,7 +20,7 @@
 #ifndef SIEVETEMPLATEWIDGET_H
 #define SIEVETEMPLATEWIDGET_H
 
-#include "PimCommon/TemplateListWidget"
+#include <PimCommon/TemplateListWidget>
 
 namespace PimCommon
 {

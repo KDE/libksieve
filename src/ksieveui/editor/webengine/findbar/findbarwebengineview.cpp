@@ -17,7 +17,7 @@
  */
 
 #include "findbarwebengineview.h"
-#include "PimCommon/LineEditWithCompleter"
+#include <PimCommon/LineEditWithCompleter>
 #include <QWebEngineView>
 #include <QAction>
 

@@ -18,7 +18,7 @@
 */
 
 #include "sievescriptdebuggerresulteditor.h"
-#include "PimCommon/PimUtil"
+#include <PimCommon/PimUtil>
 #include <KLocalizedString>
 #include <KStandardAction>
 #include <QAction>

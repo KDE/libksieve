@@ -18,7 +18,7 @@
 #include "editorsieve_gui.h"
 #include <QDebug>
 #include "ksieveui/editor/sieveeditor.h"
-#include "PimCommon/SieveSyntaxHighlighterUtil"
+#include <PimCommon/SieveSyntaxHighlighterUtil>
 
 #include <qapplication.h>
 #include <QCommandLineParser>

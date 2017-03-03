@@ -18,7 +18,7 @@
 */
 
 #include "sievescriptparsingerrordialog.h"
-#include "PimCommon/PimUtil"
+#include <PimCommon/PimUtil>
 #include "kpimtextedit/richtexteditorwidget.h"
 
 #include <KLocalizedString>

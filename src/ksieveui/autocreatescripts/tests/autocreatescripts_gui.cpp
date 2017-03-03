@@ -23,7 +23,7 @@
 #include <QCommandLineParser>
 
 #include "../autocreatescriptdialog.h"
-#include "PimCommon/SieveSyntaxHighlighterUtil"
+#include <PimCommon/SieveSyntaxHighlighterUtil>
 
 int main(int argc, char **argv)
 {

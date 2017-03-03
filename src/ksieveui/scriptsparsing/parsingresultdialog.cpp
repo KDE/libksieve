@@ -19,7 +19,7 @@
 
 #include "parsingresultdialog.h"
 #include "xmlprintingsyntaxhighlighter.h"
-#include "PimCommon/PimUtil"
+#include <PimCommon/PimUtil>
 #include "kpimtextedit/plaintexteditorwidget.h"
 #include "kpimtextedit/plaintexteditor.h"
 

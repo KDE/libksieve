@@ -20,7 +20,7 @@
 #include "sievetemplatewidget.h"
 #include "sievetemplateeditdialog.h"
 #include "sievedefaulttemplate.h"
-#include "PimCommon/TemplateManager"
+#include <PimCommon/TemplateManager>
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 
 #include <KLocalizedString>

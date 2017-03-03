@@ -25,7 +25,7 @@
 #include "sieveactions/sieveactionlist.h"
 #include "commonwidgets/sievehelpbutton.h"
 #include "autocreatescriptutil_p.h"
-#include "PimCommon/MinimumComboBox"
+#include <PimCommon/MinimumComboBox>
 
 #include <QPushButton>
 #include <KLocalizedString>

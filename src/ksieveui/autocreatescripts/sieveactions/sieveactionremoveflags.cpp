@@ -18,7 +18,7 @@
 */
 #include "sieveactionremoveflags.h"
 #include "editor/sieveeditorutil.h"
-#include "PimCommon/MinimumComboBox"
+#include <PimCommon/MinimumComboBox>
 
 #include <KLocalizedString>
 

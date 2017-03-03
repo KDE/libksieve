@@ -23,7 +23,7 @@
 
 #include "kpimtextedit/plaintexteditor.h"
 
-#include "PimCommon/SieveSyntaxHighlighterRules"
+#include <PimCommon/SieveSyntaxHighlighterRules>
 
 class QMenu;
 namespace PimCommon
