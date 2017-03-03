@@ -27,7 +27,7 @@ set(IDENTITYMANAGEMENT_LIB_VERSION "5.4.40")
 set(KMAILTRANSPORT_LIB_VERSION "5.4.40")
 set(KPIMTEXTEDIT_LIB_VERSION "5.4.42")
 set(LIBKDEPIM_LIB_VERSION "5.4.40")
-set(PIMCOMMON_LIB_VERSION "5.4.40")
+set(PIMCOMMON_LIB_VERSION "5.4.44")
 
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
 
