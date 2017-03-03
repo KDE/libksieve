@@ -295,6 +295,8 @@ ecm_generate_headers(ksieveui_Camelcaseeditor_HEADERS
 ecm_generate_headers(ksieveui_Camelcasevacation_HEADERS
     HEADER_NAMES
     VacationManager
+    MultiImapVacationManager
+    MultiImapVacationDialog
     REQUIRED_HEADERS ksieveui_vacation_HEADERS
     PREFIX KSieveUi
     RELATIVE vacation
