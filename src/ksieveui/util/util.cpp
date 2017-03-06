@@ -43,9 +43,8 @@
 #include "sieveimapinstance/sieveimapinstanceinterfacemanager.h"
 #include "sieveimapinstance/sieveimapinstance.h"
 
-#include <agentmanager.h>
 #include <kmime/kmime_message.h>
-#include <MailTransport/mailtransport/transport.h>
+#include <mailtransport/transport.h>
 #include <QUrlQuery>
 #include <memory>
 using namespace KSieveUi;

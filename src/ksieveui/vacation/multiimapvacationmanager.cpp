@@ -25,8 +25,6 @@
 #include <managescriptsjob/parseuserscriptjob.h>
 #include <kmanagesieve/sievejob.h>
 
-#include <AgentInstance>
-
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;

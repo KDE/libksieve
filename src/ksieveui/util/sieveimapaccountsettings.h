@@ -21,7 +21,7 @@
 #define SIEVEACCOUNT_H
 
 #include "ksieveui_export.h"
-#include <MailTransport/mailtransport/transport.h>
+#include <mailtransport/transport.h>
 #include <QString>
 namespace KSieveUi
 {

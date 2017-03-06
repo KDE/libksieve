@@ -21,7 +21,6 @@
 #include "vacationdialog.h"
 #include <kmanagesieve/sievejob.h>
 
-#include <agentinstance.h>
 #include "libksieve_debug.h"
 #include <KLocalizedString>
 #include <kmessagebox.h>

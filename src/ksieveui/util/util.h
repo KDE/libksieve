@@ -43,7 +43,6 @@
 #include <KSieveUi/SieveImapAccountSettings>
 #include <KSieveUi/SieveImapInstance>
 
-#include <agentinstance.h>
 
 class QUrl;
 class QString;

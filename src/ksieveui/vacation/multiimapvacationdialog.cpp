@@ -22,7 +22,6 @@
 #include "multiimapvacationmanager.h"
 #include "ksieveui/util.h"
 
-#include <AgentInstance>
 
 #include <KLocalizedString>
 #include <KSharedConfig>
