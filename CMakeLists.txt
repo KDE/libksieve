@@ -27,7 +27,8 @@ set(IDENTITYMANAGEMENT_LIB_VERSION "5.4.40")
 set(KMAILTRANSPORT_LIB_VERSION "5.4.46")
 set(KPIMTEXTEDIT_LIB_VERSION "5.4.42")
 set(LIBKDEPIM_LIB_VERSION "5.4.40")
-set(PIMCOMMON_LIB_VERSION "5.4.44")
+set(PIMCOMMON_LIB_VERSION "5.4.48")
+set(KIMAP_LIB_VERSION "5.4.40")
 
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
 
@@ -47,6 +48,7 @@ find_package(KF5Mime ${KMIME_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5IdentityManagement ${IDENTITYMANAGEMENT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5MailTransport ${KMAILTRANSPORT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5PimTextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
+find_package(KF5IMAP ${KIMAP_LIB_VERSION} CONFIG REQUIRED)
 
 find_package(Sasl2)
 set_package_properties(Sasl2 PROPERTIES
