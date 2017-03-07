@@ -48,7 +48,6 @@ set(ksieveui_webpageeditor_LIB_SRCS
     editor/webengine/findbar/findbarbase.cpp
     editor/webengine/findbar/findbarwebengineview.cpp
     )
-set(ksieveui_web_LIB Qt5::WebEngineWidgets)
 
 set(ksieveui_editor_LIB_SRCS
     ${ksieveui_webpageeditor_LIB_SRCS}
@@ -231,7 +230,7 @@ target_link_libraries(KF5KSieveUi
     KF5::KIOWidgets
     KF5::NewStuff
     KF5::WindowSystem
-    ${ksieveui_web_LIB}
+    Qt5::WebEngineWidgets
     KF5::PimTextEdit
     KF5::I18n
     KF5::SonnetUi
