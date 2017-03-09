@@ -46,18 +46,18 @@
 #include <kmime/kmime_message.h>
 #include <mailtransport/transport.h>
 #include <QUrlQuery>
-#include <memory>
+
 using namespace KSieveUi;
 
 QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier, bool withVacationFileName)
 {
-    KSieveUi::Util::AccountInfo accountInfo = KSieveUi::Util::findAccountInfo(identifier, withVacationFileName);
+    std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> interface(PimCommon::Util::createImapSettingsInterface(identifier));
+    KSieveUi::Util::AccountInfo accountInfo = KSieveUi::Util::findAccountInfo(identifier, withVacationFileName, interface);
     return accountInfo.sieveUrl;
 }
 
-KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &identifier, bool withVacationFileName)
+KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &identifier, bool withVacationFileName, std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> &interface)
 {
-    std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> interface(PimCommon::Util::createImapSettingsInterface(identifier));
 
     KSieveUi::Util::AccountInfo accountInfo;
     if (!interface) {

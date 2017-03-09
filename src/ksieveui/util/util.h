@@ -42,12 +42,13 @@
 #include "ksieveui_export.h"
 #include <KSieveUi/SieveImapAccountSettings>
 #include <KSieveUi/SieveImapInstance>
-
+#include <memory>
 
 class QUrl;
 class QString;
 class QStringList;
 
+class OrgKdeAkonadiImapSettingsInterface;
 namespace KSieveUi
 {
 /**
@@ -98,7 +99,7 @@ bool hasKep14Support(const QStringList &sieveCapabilities, const QStringList &av
 bool isKep14ProtectedName(const QString &scriptName);
 
 
-KSIEVEUI_EXPORT KSieveUi::Util::AccountInfo findAccountInfo(const QString &identifier, bool withVacationFileName);
+KSIEVEUI_EXPORT KSieveUi::Util::AccountInfo findAccountInfo(const QString &identifier, bool withVacationFileName, std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> &interface);
 
 }
 
