@@ -20,6 +20,7 @@
 
 #include "sieveimapinstanceinterface.h"
 #include "sieveimapinstance.h"
+#include "libksieve_debug.h"
 
 using namespace KSieveUi;
 SieveImapInstanceInterface::SieveImapInstanceInterface()
@@ -34,5 +35,6 @@ SieveImapInstanceInterface::~SieveImapInstanceInterface()
 
 QVector<KSieveUi::SieveImapInstance> SieveImapInstanceInterface::sieveImapInstances()
 {
+    qCWarning(LIBKSIEVE_LOG) << "Need to reimplement in subclass";
     return {};
 }
