@@ -55,7 +55,7 @@ QString AutoCreateScriptUtil::quoteStr(QString str)
 QString AutoCreateScriptUtil::createList(const QStringList &lst, bool addSemiColon, bool protectSlash)
 {
     QString result;
-    result = QStringLiteral("[");
+    result = QLatin1Char('[');
     bool wasFirst = true;
     for (QString str : lst) {
         if (protectSlash) {
