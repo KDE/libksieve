@@ -18,6 +18,7 @@
 */
 
 #include "sieveimapinstancetest.h"
+
 #include <QTest>
 
 SieveImapInstanceTest::SieveImapInstanceTest(QObject *parent)
