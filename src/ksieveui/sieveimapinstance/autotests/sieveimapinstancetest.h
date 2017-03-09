@@ -30,6 +30,7 @@ public:
     ~SieveImapInstanceTest() = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldAssignValues();
 };
 
 #endif // SIEVEIMAPINSTANCETEST_H
