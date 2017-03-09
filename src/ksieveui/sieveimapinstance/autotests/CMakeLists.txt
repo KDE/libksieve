@@ -10,4 +10,5 @@ macro( add_sieveimapinstance_test _source )
 endmacro()
 
 
-add_sieveimapinstance_test( sieveimapinstancetest.cpp )
+add_sieveimapinstance_test(sieveimapinstancetest.cpp)
+add_sieveimapinstance_test(sieveimapinstanceinterfacemanagertest.cpp)
