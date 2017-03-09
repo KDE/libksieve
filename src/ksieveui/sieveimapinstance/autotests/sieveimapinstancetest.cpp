@@ -59,4 +59,22 @@ void SieveImapInstanceTest::shouldAssignValues()
     QCOMPARE(instance.status(), mStatus);
 }
 
+void SieveImapInstanceTest::shouldEqualSieveImapInstance()
+{
+    KSieveUi::SieveImapInstance instance;
+    const QStringList mMimeTypes = {QStringLiteral("ff"), QStringLiteral("ff2")};
+    const QStringList mCapabilities = {QStringLiteral("bb"), QStringLiteral("bb2")};
+    const QString mName = {QStringLiteral("cc")};
+    const QString mIdentifier = {QStringLiteral("ee")};
+    const KSieveUi::SieveImapInstance::Status mStatus = KSieveUi::SieveImapInstance::Broken;
+    instance.setName(mName);
+    instance.setIdentifier(mIdentifier);
+    instance.setStatus(mStatus);
+    instance.setMimeTypes(mMimeTypes);
+    instance.setCapabilities(mCapabilities);
+
+    KSieveUi::SieveImapInstance instance2 = instance;
+    QCOMPARE(instance, instance2);
+}
+
 QTEST_MAIN(SieveImapInstanceTest)

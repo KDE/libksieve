@@ -31,6 +31,7 @@ public:
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldAssignValues();
+    void shouldEqualSieveImapInstance();
 };
 
 #endif // SIEVEIMAPINSTANCETEST_H

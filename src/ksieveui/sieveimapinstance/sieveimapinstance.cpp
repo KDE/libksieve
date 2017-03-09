@@ -74,3 +74,12 @@ void SieveImapInstance::setCapabilities(const QStringList &capabilities)
 {
     mCapabilities = capabilities;
 }
+
+bool SieveImapInstance::operator==(const SieveImapInstance &other) const
+{
+    return (name() == other.name()) &&
+            (identifier() == other.identifier()) &&
+            (status() == other.status()) &&
+            (mimeTypes() == other.mimeTypes()) &&
+            (capabilities() == other.capabilities());
+}

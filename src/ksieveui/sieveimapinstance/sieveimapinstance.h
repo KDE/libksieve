@@ -54,6 +54,7 @@ public:
     QStringList capabilities() const;
     void setCapabilities(const QStringList &capabilities);
 
+    bool operator==(const SieveImapInstance &other) const;
 private:
     QStringList mMimeTypes;
     QStringList mCapabilities;
