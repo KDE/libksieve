@@ -18,6 +18,7 @@
 */
 
 #include "sieveimapinstancetest.h"
+#include <KSieveUi/SieveImapInstance>
 
 #include <QTest>
 
@@ -25,6 +26,16 @@ SieveImapInstanceTest::SieveImapInstanceTest(QObject *parent)
     : QObject(parent)
 {
 
+}
+
+void SieveImapInstanceTest::shouldHaveDefaultValue()
+{
+    KSieveUi::SieveImapInstance instance;
+    QVERIFY(instance.name().isEmpty());
+    QVERIFY(instance.identifier().isEmpty());
+    QVERIFY(instance.mimeTypes().isEmpty());
+    QVERIFY(instance.capabilities().isEmpty());
+    QCOMPARE(instance.status(), KSieveUi::SieveImapInstance::Idle);
 }
 
 QTEST_MAIN(SieveImapInstanceTest)

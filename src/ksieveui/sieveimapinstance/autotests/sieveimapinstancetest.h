@@ -28,6 +28,8 @@ class SieveImapInstanceTest : public QObject
 public:
     explicit SieveImapInstanceTest(QObject *parent = nullptr);
     ~SieveImapInstanceTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // SIEVEIMAPINSTANCETEST_H
