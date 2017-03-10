@@ -82,6 +82,7 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         }
         accountInfo.sieveImapAccountSettings.setServerName(server);
         accountInfo.sieveImapAccountSettings.setUserName(interface->userName());
+
         u.setHost(server);
         u.setUserName(interface->userName());
 
@@ -127,6 +128,10 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         const QString resultSafety = interface->safety();
         if (resultSafety == QLatin1String("None")) {
             query.addQueryItem(QStringLiteral("x-allow-unencrypted"), QStringLiteral("true"));
+            accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
+        } else {
+            //Verify it.
+            accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::AnySslVersion);
         }
         u.setQuery(query);
         u = u.adjusted(QUrl::RemoveFilename);
