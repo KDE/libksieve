@@ -22,14 +22,25 @@
 #define ABSTRACTAKONADIIMAPSETTINGINTERFACE_H
 
 #include "ksieveui_private_export.h"
-
+#include <QString>
 namespace KSieveUi
 {
 class KSIEVEUI_TESTS_EXPORT AbstractAkonadiImapSettingInterface
 {
 public:
     AbstractAkonadiImapSettingInterface();
-    ~AbstractAkonadiImapSettingInterface();
+    virtual ~AbstractAkonadiImapSettingInterface();
+    virtual bool sieveSupport() const;
+    virtual bool sieveReuseConfig() const;
+    virtual QString imapServer() const;
+    virtual QString userName() const;
+    virtual int sievePort() const;
+    virtual QString sieveCustomUsername() const;
+    virtual QString sieveCustomAuthentification() const;
+    virtual QString sieveVacationFilename() const;
+    virtual QString safety() const;
+    virtual int alternateAuthentication() const;
+    virtual int authentication() const;
 };
 }
 

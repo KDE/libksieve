@@ -29,3 +29,58 @@ AkonadiImapSettingInterface::~AkonadiImapSettingInterface()
 {
 
 }
+
+bool AkonadiImapSettingInterface::sieveSupport() const
+{
+    return false;
+}
+
+bool AkonadiImapSettingInterface::sieveReuseConfig() const
+{
+    return false;
+}
+
+QString AkonadiImapSettingInterface::imapServer() const
+{
+    return {};
+}
+
+QString AkonadiImapSettingInterface::userName() const
+{
+    return {};
+}
+
+int AkonadiImapSettingInterface::sievePort() const
+{
+    return -1;
+}
+
+QString AkonadiImapSettingInterface::sieveCustomUsername() const
+{
+    return {};
+}
+
+QString AkonadiImapSettingInterface::sieveCustomAuthentification() const
+{
+    return {};
+}
+
+QString AkonadiImapSettingInterface::sieveVacationFilename() const
+{
+    return {};
+}
+
+QString AkonadiImapSettingInterface::safety() const
+{
+    return {};
+}
+
+int AkonadiImapSettingInterface::alternateAuthentication() const
+{
+    return -1;
+}
+
+int AkonadiImapSettingInterface::authentication() const
+{
+    return -1;
+}

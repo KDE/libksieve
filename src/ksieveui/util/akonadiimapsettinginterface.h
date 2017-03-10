@@ -21,12 +21,26 @@
 #define AKONADIIMAPSETTINGINTERFACE_H
 
 #include "abstractakonadiimapsettinginterface.h"
-
+#include <QObject>
 class AkonadiImapSettingInterface : public KSieveUi::AbstractAkonadiImapSettingInterface
 {
 public:
     AkonadiImapSettingInterface();
     ~AkonadiImapSettingInterface();
+
+    // AbstractAkonadiImapSettingInterface interface
+public:
+    bool sieveSupport() const Q_DECL_OVERRIDE;
+    bool sieveReuseConfig() const Q_DECL_OVERRIDE;
+    QString imapServer() const Q_DECL_OVERRIDE;
+    QString userName() const Q_DECL_OVERRIDE;
+    int sievePort() const Q_DECL_OVERRIDE;
+    QString sieveCustomUsername() const Q_DECL_OVERRIDE;
+    QString sieveCustomAuthentification() const Q_DECL_OVERRIDE;
+    QString sieveVacationFilename() const Q_DECL_OVERRIDE;
+    QString safety() const Q_DECL_OVERRIDE;
+    int alternateAuthentication() const Q_DECL_OVERRIDE;
+    int authentication() const Q_DECL_OVERRIDE;
 };
 
 #endif // AKONADIIMAPSETTINGINTERFACE_H

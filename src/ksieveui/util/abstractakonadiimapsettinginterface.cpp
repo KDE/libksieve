@@ -30,3 +30,58 @@ AbstractAkonadiImapSettingInterface::~AbstractAkonadiImapSettingInterface()
 {
 
 }
+
+bool AbstractAkonadiImapSettingInterface::sieveSupport() const
+{
+    return false;
+}
+
+bool AbstractAkonadiImapSettingInterface::sieveReuseConfig() const
+{
+    return false;
+}
+
+QString AbstractAkonadiImapSettingInterface::imapServer() const
+{
+    return {};
+}
+
+QString AbstractAkonadiImapSettingInterface::userName() const
+{
+    return {};
+}
+
+int AbstractAkonadiImapSettingInterface::sievePort() const
+{
+    return -1;
+}
+
+QString AbstractAkonadiImapSettingInterface::sieveCustomUsername() const
+{
+    return {};
+}
+
+QString AbstractAkonadiImapSettingInterface::sieveCustomAuthentification() const
+{
+    return {};
+}
+
+QString AbstractAkonadiImapSettingInterface::sieveVacationFilename() const
+{
+    return {};
+}
+
+QString AbstractAkonadiImapSettingInterface::safety() const
+{
+    return {};
+}
+
+int AbstractAkonadiImapSettingInterface::authentication() const
+{
+    return -1;
+}
+
+int AbstractAkonadiImapSettingInterface::alternateAuthentication() const
+{
+    return -1;
+}
