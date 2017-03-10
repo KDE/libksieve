@@ -18,7 +18,6 @@
  */
 
 #include "checkkolabkep14supportjob.h"
-#include <util/util.h>
 #include "util/util_p.h"
 #include <kmanagesieve/sievejob.h>
 

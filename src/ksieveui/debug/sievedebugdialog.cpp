@@ -19,7 +19,6 @@
 #include "libksieve_debug.h"
 #include <KLocalizedString>
 #include <kmanagesieve/sievejob.h>
-#include <ksieveui/util.h>
 #include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Theme>

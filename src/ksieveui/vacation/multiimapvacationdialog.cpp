@@ -20,7 +20,6 @@
 #include "multiimapvacationdialog.h"
 #include "vacationpagewidget.h"
 #include "multiimapvacationmanager.h"
-#include "ksieveui/util.h"
 
 
 #include <KLocalizedString>

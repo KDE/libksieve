@@ -18,7 +18,6 @@
 #include "vacationcheckjob.h"
 #include "vacationutils.h"
 #include "managescriptsjob/parseuserscriptjob.h"
-#include "util/util.h"
 #include "util/helper_p.h"
 #include "util/util_p.h"
 

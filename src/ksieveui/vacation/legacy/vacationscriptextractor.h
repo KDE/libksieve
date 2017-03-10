@@ -20,7 +20,6 @@
 
 #include "sieve-vacation.h"
 #include "../vacationscriptextractor.h"
-#include "util/util.h"
 
 #include <kmime/kmime_header_parsing.h>
 #include <ksieve/error.h>

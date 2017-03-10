@@ -17,7 +17,6 @@
 #include "vacationscriptextractor.h"
 
 #include "sieve-vacation.h"
-#include "util/util.h"
 #include "util/util_p.h"
 #include "vacationdialog.h"
 #include <kmanagesieve/sievejob.h>
