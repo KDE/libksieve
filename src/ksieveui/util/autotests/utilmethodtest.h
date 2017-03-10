@@ -28,6 +28,8 @@ class UtilMethodTest : public QObject
 public:
     explicit UtilMethodTest(QObject *parent = nullptr);
     ~UtilMethodTest() = default;
+private Q_SLOTS:
+    void shouldReturnEmptyInfo();
 };
 
 #endif // UTILMETHODTEST_H

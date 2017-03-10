@@ -18,12 +18,22 @@
 */
 
 #include "utilmethodtest.h"
+#include "../util.h"
+#include "imapresourcesettings.h"
+#include <KSieveUi/SieveImapAccountSettings>
 #include <QTest>
 
 UtilMethodTest::UtilMethodTest(QObject *parent)
     : QObject(parent)
 {
 
+}
+
+void UtilMethodTest::shouldReturnEmptyInfo()
+{
+    std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> interface;
+    KSieveUi::Util::AccountInfo info = KSieveUi::Util::findAccountInfo(QStringLiteral("foo"), false, interface);
+    QVERIFY(!info.sieveImapAccountSettings.isValid());
 }
 
 QTEST_MAIN(UtilMethodTest)
