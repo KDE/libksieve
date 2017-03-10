@@ -18,6 +18,7 @@
 #include "custommanagesievewidget.h"
 #include "widgets/managesievetreeview.h"
 #include <ksieveui/util.h>
+#include "util/util_p.h"
 
 #include <KLocalizedString>
 #include <QIcon>

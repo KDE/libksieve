@@ -14,6 +14,7 @@
 #include "sievedebugdialog.h"
 #include "kpimtextedit/plaintexteditorwidget.h"
 #include "kpimtextedit/plaintexteditor.h"
+#include "util/util_p.h"
 
 #include "libksieve_debug.h"
 #include <KLocalizedString>

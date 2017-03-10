@@ -27,6 +27,7 @@
 #include <PimCommon/NetworkManager>
 #include <util/util.h>
 #include "util/helper_p.h"
+#include "util/util_p.h"
 
 #include <KSieveUi/SieveImapAccountSettings>
 

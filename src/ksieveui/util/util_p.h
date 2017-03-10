@@ -36,8 +36,8 @@
 **
 *******************************************************************************/
 
-#ifndef KSIEVE_KSIEVEUI_UTIL_H
-#define KSIEVE_KSIEVEUI_UTIL_H
+#ifndef KSIEVE_KSIEVEUI_UTIL_P_H
+#define KSIEVE_KSIEVEUI_UTIL_P_H
 
 #include "ksieveui_export.h"
 #include <KSieveUi/SieveImapAccountSettings>
@@ -57,17 +57,37 @@ namespace KSieveUi
  */
 namespace Util
 {
-/**
- * Returns whether the availability of a vacation sieve script shall
- * be checked at the start up of an application.
- */
-KSIEVEUI_EXPORT bool checkOutOfOfficeOnStartup();
+
+struct AccountInfo
+{
+    KSieveUi::SieveImapAccountSettings sieveImapAccountSettings;
+    QUrl sieveUrl;
+};
+KSIEVEUI_EXPORT QDebug operator <<(QDebug d, const Util::AccountInfo &info);
 
 /**
- * Returns whether the functionality of vacation sieve script editing shall
- * be available at all.
+ * Returns the list of configured IMAP agent instances.
  */
-KSIEVEUI_EXPORT bool allowOutOfOfficeSettings();
+QVector<KSieveUi::SieveImapInstance> sieveImapInstances();
+QStringList sieveImapResourceNames();
+
+/**
+ * Checks if a server has KEP:14 support
+ */
+bool hasKep14Support(const QStringList &sieveCapabilities, const QStringList &availableScripts, const QString &activeScript);
+
+/**
+ * Is the given scriptName a protected KEP:14 name, that a normal user should not touch directly.
+ * it tests against MASTER, USER and MANAGEMENT script
+ */
+bool isKep14ProtectedName(const QString &scriptName);
+
+
+KSIEVEUI_EXPORT KSieveUi::Util::AccountInfo findAccountInfo(const QString &identifier, bool withVacationFileName, std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> &interface);
+/**
+ * Returns all sieve account info with the given @p identifier.
+ */
+KSIEVEUI_EXPORT KSieveUi::Util::AccountInfo fullAccountInfo(const QString &identifier, bool withVacationFileName = true);
 }
 
 }

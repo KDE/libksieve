@@ -19,6 +19,7 @@
 
 #include "utilmethodtest.h"
 #include "../util.h"
+#include "../util_p.h"
 #include "imapresourcesettings.h"
 #include <KSieveUi/SieveImapAccountSettings>
 #include <QTest>
