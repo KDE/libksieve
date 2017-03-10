@@ -48,7 +48,8 @@ QMap <QString, QUrl> MultiImapVacationManager::serverList() const
             continue;
         }
 
-        const QUrl url = KSieveUi::Util::findSieveUrlForAccount(instance.identifier());
+        const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(instance.identifier());
+        const QUrl url  = info.sieveUrl;
         if (!url.isEmpty()) {
             list.insert(instance.name(), url);
         }

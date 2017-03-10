@@ -65,11 +65,6 @@ struct AccountInfo
 };
 
 /**
- * Returns the sieve url for the account with the given @p identifier.
- */
-QUrl findSieveUrlForAccount(const QString &identifier, bool withVacationFileName = true);
-
-/**
  * Returns the list of configured IMAP agent instances.
  */
 QVector<KSieveUi::SieveImapInstance> sieveImapInstances();
@@ -100,7 +95,10 @@ bool isKep14ProtectedName(const QString &scriptName);
 
 
 KSIEVEUI_EXPORT KSieveUi::Util::AccountInfo findAccountInfo(const QString &identifier, bool withVacationFileName, std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> &interface);
-KSIEVEUI_EXPORT KSieveUi::Util::AccountInfo fullAccountInfo(const QString &identifier, bool withVacationFileName);
+/**
+ * Returns all sieve account info with the given @p identifier.
+ */
+KSIEVEUI_EXPORT KSieveUi::Util::AccountInfo fullAccountInfo(const QString &identifier, bool withVacationFileName = true);
 }
 
 }

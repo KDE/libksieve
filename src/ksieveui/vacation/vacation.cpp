@@ -76,7 +76,8 @@ QUrl Vacation::findURL(QString &serverName) const
             continue;
         }
 
-        const QUrl url = Util::findSieveUrlForAccount(instance.identifier());
+        const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(instance.identifier());
+        const QUrl url  = info.sieveUrl;
         if (!url.isEmpty()) {
             serverName = instance.name();
             return url;
