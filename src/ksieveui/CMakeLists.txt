@@ -188,6 +188,7 @@ set(ksieveui_sieveimapinstance_LIB_SRCS
 set(ksieveui_sieveutil_LIB_SRCS
     util/util.cpp
     util/abstractakonadiimapsettinginterface.cpp
+    util/akonadiimapsettinginterface.cpp
     util/sieveimapaccountsettings.cpp
     )	
 set(ksieveui_LIB_SRCS
