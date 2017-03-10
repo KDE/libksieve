@@ -40,15 +40,7 @@
 #define KSIEVE_KSIEVEUI_UTIL_H
 
 #include "ksieveui_export.h"
-#include <KSieveUi/SieveImapAccountSettings>
-#include <KSieveUi/SieveImapInstance>
-#include <memory>
 
-class QUrl;
-class QString;
-class QStringList;
-
-class OrgKdeAkonadiImapSettingsInterface;
 namespace KSieveUi
 {
 /**
