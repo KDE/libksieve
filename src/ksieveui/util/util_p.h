@@ -39,7 +39,7 @@
 #ifndef KSIEVE_KSIEVEUI_UTIL_P_H
 #define KSIEVE_KSIEVEUI_UTIL_P_H
 
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 #include <KSieveUi/SieveImapAccountSettings>
 #include <KSieveUi/SieveImapInstance>
 #include <memory>
@@ -63,7 +63,7 @@ struct AccountInfo
     KSieveUi::SieveImapAccountSettings sieveImapAccountSettings;
     QUrl sieveUrl;
 };
-KSIEVEUI_EXPORT QDebug operator <<(QDebug d, const Util::AccountInfo &info);
+KSIEVEUI_TESTS_EXPORT QDebug operator <<(QDebug d, const Util::AccountInfo &info);
 
 /**
  * Returns the list of configured IMAP agent instances.
@@ -83,11 +83,11 @@ bool hasKep14Support(const QStringList &sieveCapabilities, const QStringList &av
 bool isKep14ProtectedName(const QString &scriptName);
 
 
-KSIEVEUI_EXPORT KSieveUi::Util::AccountInfo findAccountInfo(const QString &identifier, bool withVacationFileName, std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> &interface);
+KSIEVEUI_TESTS_EXPORT KSieveUi::Util::AccountInfo findAccountInfo(const QString &identifier, bool withVacationFileName, std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> &interface);
 /**
  * Returns all sieve account info with the given @p identifier.
  */
-KSIEVEUI_EXPORT KSieveUi::Util::AccountInfo fullAccountInfo(const QString &identifier, bool withVacationFileName = true);
+KSIEVEUI_TESTS_EXPORT KSieveUi::Util::AccountInfo fullAccountInfo(const QString &identifier, bool withVacationFileName = true);
 }
 
 }
