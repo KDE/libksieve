@@ -41,6 +41,7 @@ public:
     virtual QString safety() const;
     virtual int alternateAuthentication() const;
     virtual int authentication() const;
+    virtual QString sieveAlternateUrl() const;
 };
 }
 

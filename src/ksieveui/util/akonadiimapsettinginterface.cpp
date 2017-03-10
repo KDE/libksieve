@@ -35,55 +35,65 @@ AkonadiImapSettingInterface::~AkonadiImapSettingInterface()
 
 bool AkonadiImapSettingInterface::sieveSupport() const
 {
-    return false;
+    return mInterface->sieveSupport();
 }
 
 bool AkonadiImapSettingInterface::sieveReuseConfig() const
 {
-    return false;
+    return mInterface->sieveReuseConfig();
 }
 
 QString AkonadiImapSettingInterface::imapServer() const
 {
+    QDBusReply<QString> reply = mInterface->imapServer();
+    if (reply.isValid()) {
+        return reply;
+    }
     return {};
 }
 
 QString AkonadiImapSettingInterface::userName() const
 {
-    return {};
+    return mInterface->userName();
 }
 
 int AkonadiImapSettingInterface::sievePort() const
 {
-    return -1;
+    return mInterface->sievePort();
 }
 
 QString AkonadiImapSettingInterface::sieveCustomUsername() const
 {
-    return {};
+    return mInterface->sieveCustomUsername();
 }
 
 QString AkonadiImapSettingInterface::sieveCustomAuthentification() const
 {
-    return {};
+    return mInterface->sieveCustomAuthentification();
 }
 
 QString AkonadiImapSettingInterface::sieveVacationFilename() const
 {
-    return {};
+    return mInterface->sieveVacationFilename();
 }
 
 QString AkonadiImapSettingInterface::safety() const
 {
-    return {};
+    return mInterface->safety();
 }
 
 int AkonadiImapSettingInterface::alternateAuthentication() const
 {
-    return -1;
+    return mInterface->alternateAuthentication();
 }
 
 int AkonadiImapSettingInterface::authentication() const
 {
-    return -1;
+    return mInterface->authentication();
+}
+
+
+QString KSieveUi::AkonadiImapSettingInterface::sieveAlternateUrl() const
+{
+    return mInterface->sieveAlternateUrl();
 }

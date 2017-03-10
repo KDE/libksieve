@@ -18,9 +18,9 @@
 */
 
 #include "utilmethodtest.h"
-#include "../util.h"
 #include "../util_p.h"
 #include "imapresourcesettings.h"
+#include "../abstractakonadiimapsettinginterface.h"
 #include <KSieveUi/SieveImapAccountSettings>
 #include <QTest>
 
@@ -32,7 +32,7 @@ UtilMethodTest::UtilMethodTest(QObject *parent)
 
 void UtilMethodTest::shouldReturnEmptyInfo()
 {
-    std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> interface;
+    std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> interface(new KSieveUi::AbstractAkonadiImapSettingInterface);
     KSieveUi::Util::AccountInfo info = KSieveUi::Util::findAccountInfo(QStringLiteral("foo"), false, interface);
     QVERIFY(!info.sieveImapAccountSettings.isValid());
 }

@@ -32,8 +32,6 @@ public:
     AkonadiImapSettingInterface(std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> &interface);
     ~AkonadiImapSettingInterface();
 
-    // AbstractAkonadiImapSettingInterface interface
-public:
     bool sieveSupport() const Q_DECL_OVERRIDE;
     bool sieveReuseConfig() const Q_DECL_OVERRIDE;
     QString imapServer() const Q_DECL_OVERRIDE;
@@ -45,6 +43,7 @@ public:
     QString safety() const Q_DECL_OVERRIDE;
     int alternateAuthentication() const Q_DECL_OVERRIDE;
     int authentication() const Q_DECL_OVERRIDE;
+    QString sieveAlternateUrl() const Q_DECL_OVERRIDE;
 private:
     std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> mInterface;
 };

@@ -48,9 +48,9 @@ class QUrl;
 class QString;
 class QStringList;
 
-class OrgKdeAkonadiImapSettingsInterface;
 namespace KSieveUi
 {
+class AbstractAkonadiImapSettingInterface;
 /**
  * The Util namespace contains a collection of helper functions use in
  * various places.
@@ -83,7 +83,7 @@ bool hasKep14Support(const QStringList &sieveCapabilities, const QStringList &av
 bool isKep14ProtectedName(const QString &scriptName);
 
 
-KSIEVEUI_TESTS_EXPORT KSieveUi::Util::AccountInfo findAccountInfo(const QString &identifier, bool withVacationFileName, std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> &interface);
+KSIEVEUI_TESTS_EXPORT KSieveUi::Util::AccountInfo findAccountInfo(const QString &identifier, bool withVacationFileName, std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface>& interface);
 /**
  * Returns all sieve account info with the given @p identifier.
  */

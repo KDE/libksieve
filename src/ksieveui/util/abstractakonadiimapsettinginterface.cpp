@@ -81,6 +81,11 @@ int AbstractAkonadiImapSettingInterface::authentication() const
     return -1;
 }
 
+QString AbstractAkonadiImapSettingInterface::sieveAlternateUrl() const
+{
+    return {};
+}
+
 int AbstractAkonadiImapSettingInterface::alternateAuthentication() const
 {
     return -1;

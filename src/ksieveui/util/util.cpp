@@ -43,6 +43,7 @@
 #include "sieve-vacation.h"
 #include "sieveimapinstance/sieveimapinstanceinterfacemanager.h"
 #include "sieveimapinstance/sieveimapinstance.h"
+#include "akonadiimapsettinginterface.h"
 
 #include <kmime/kmime_message.h>
 #include <mailtransport/transport.h>
@@ -52,12 +53,13 @@ using namespace KSieveUi;
 
 KSieveUi::Util::AccountInfo KSieveUi::Util::fullAccountInfo(const QString &identifier, bool withVacationFileName)
 {
-    std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> interface(PimCommon::Util::createImapSettingsInterface(identifier));
+    std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> interfaceImap(PimCommon::Util::createImapSettingsInterface(identifier));
+    std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> interface(new KSieveUi::AkonadiImapSettingInterface(interfaceImap));
     KSieveUi::Util::AccountInfo accountInfo = KSieveUi::Util::findAccountInfo(identifier, withVacationFileName, interface);
     return accountInfo;
 }
 
-KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &identifier, bool withVacationFileName, std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> &interface)
+KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &identifier, bool withVacationFileName, std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> &interface)
 {
 
     KSieveUi::Util::AccountInfo accountInfo;
@@ -74,8 +76,8 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         QUrl u;
         u.setScheme(QStringLiteral("sieve"));
         QString server;
-        QDBusReply<QString> reply = interface->imapServer();
-        if (reply.isValid()) {
+        QString reply = interface->imapServer();
+        if (!reply.isEmpty()) {
             server = reply;
             server = server.section(QLatin1Char(':'), 0, 0);
         } else {
