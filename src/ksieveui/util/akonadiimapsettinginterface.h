@@ -22,10 +22,14 @@
 
 #include "abstractakonadiimapsettinginterface.h"
 #include <QObject>
+#include <memory>
+class OrgKdeAkonadiImapSettingsInterface;
+namespace KSieveUi
+{
 class AkonadiImapSettingInterface : public KSieveUi::AbstractAkonadiImapSettingInterface
 {
 public:
-    AkonadiImapSettingInterface();
+    AkonadiImapSettingInterface(std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> &interface);
     ~AkonadiImapSettingInterface();
 
     // AbstractAkonadiImapSettingInterface interface
@@ -41,6 +45,8 @@ public:
     QString safety() const Q_DECL_OVERRIDE;
     int alternateAuthentication() const Q_DECL_OVERRIDE;
     int authentication() const Q_DECL_OVERRIDE;
+private:
+    std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> mInterface;
 };
-
+}
 #endif // AKONADIIMAPSETTINGINTERFACE_H

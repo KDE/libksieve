@@ -18,11 +18,14 @@
 */
 
 #include "akonadiimapsettinginterface.h"
+#include "imapresourcesettings.h"
 
-AkonadiImapSettingInterface::AkonadiImapSettingInterface()
-    : KSieveUi::AbstractAkonadiImapSettingInterface()
+using namespace KSieveUi;
+
+AkonadiImapSettingInterface::AkonadiImapSettingInterface(std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> &interface)
+    : KSieveUi::AbstractAkonadiImapSettingInterface(),
+      mInterface(interface.release())
 {
-
 }
 
 AkonadiImapSettingInterface::~AkonadiImapSettingInterface()
