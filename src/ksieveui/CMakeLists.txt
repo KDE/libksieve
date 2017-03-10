@@ -185,6 +185,11 @@ set(ksieveui_sieveimapinstance_LIB_SRCS
     sieveimapinstance/sieveimapinstanceinterfacemanager.cpp
     )
     
+set(ksieveui_sieveutil_LIB_SRCS
+    util/util.cpp
+    util/abstractakonadiimapsettinginterface.cpp
+    util/sieveimapaccountsettings.cpp
+    )	
 set(ksieveui_LIB_SRCS
     managesievescriptsdialog.cpp
     widgets/custommanagesievewidget.cpp
@@ -193,11 +198,10 @@ set(ksieveui_LIB_SRCS
     widgets/managesievewidget.cpp
     widgets/abstractmoveimapfolderwidget.cpp
     debug/sievedebugdialog.cpp
-    util/util.cpp
-    util/sieveimapaccountsettings.cpp
     templates/sievetemplatewidget.cpp
     templates/sievedefaulttemplate.cpp
     templates/sievetemplateeditdialog.cpp
+    ${ksieveui_sieveutil_LIB_SRCS}
     ${ksieveui_sieveimapinstance_LIB_SRCS}
     ${ksieveui_scriptsparsing_LIB_SRCS}
     ${ksieveui_vacation_LIB_SRCS}
