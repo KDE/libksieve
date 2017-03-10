@@ -131,6 +131,8 @@ void SieveDebugDialog::slotDiagNextAccount()
 
         mSieveJob = KManageSieve::SieveJob::list(mUrl);
 
+        //Laurent: not necessary as it's a readonly dialog
+        //mSieveJob->setProperty("sieveimapaccountsettings", QVariant::fromValue(info.sieveImapAccountSettings));
         connect(mSieveJob, &KManageSieve::SieveJob::gotList, this, &SieveDebugDialog::slotGetScriptList);
 
         // Bypass the singleShot timer -- it's fired when we get our data

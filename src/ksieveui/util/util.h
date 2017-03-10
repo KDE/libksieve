@@ -63,6 +63,7 @@ struct AccountInfo
     KSieveUi::SieveImapAccountSettings sieveImapAccountSettings;
     QUrl sieveUrl;
 };
+KSIEVEUI_EXPORT QDebug operator <<(QDebug d, const Util::AccountInfo &info);
 
 /**
  * Returns the list of configured IMAP agent instances.
