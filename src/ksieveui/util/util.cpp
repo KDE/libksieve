@@ -56,6 +56,13 @@ QUrl KSieveUi::Util::findSieveUrlForAccount(const QString &identifier, bool with
     return accountInfo.sieveUrl;
 }
 
+KSieveUi::Util::AccountInfo KSieveUi::Util::fullAccountInfo(const QString &identifier, bool withVacationFileName)
+{
+    std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> interface(PimCommon::Util::createImapSettingsInterface(identifier));
+    KSieveUi::Util::AccountInfo accountInfo = KSieveUi::Util::findAccountInfo(identifier, withVacationFileName, interface);
+    return accountInfo;
+}
+
 KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &identifier, bool withVacationFileName, std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> &interface)
 {
 

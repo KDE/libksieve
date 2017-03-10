@@ -100,7 +100,7 @@ bool isKep14ProtectedName(const QString &scriptName);
 
 
 KSIEVEUI_EXPORT KSieveUi::Util::AccountInfo findAccountInfo(const QString &identifier, bool withVacationFileName, std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> &interface);
-
+KSIEVEUI_EXPORT KSieveUi::Util::AccountInfo fullAccountInfo(const QString &identifier, bool withVacationFileName);
 }
 
 }
