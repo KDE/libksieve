@@ -11,4 +11,4 @@ endmacro()
 
 
 add_sieveimapinstance_test(sieveimapinstancetest.cpp "")
-add_sieveimapinstance_test(sieveimapinstanceinterfacemanagertest.cpp "akonadiimapsettinginterfacetest.cpp")
+add_sieveimapinstance_test(sieveimapinstanceinterfacemanagertest.cpp "")

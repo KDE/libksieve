@@ -18,7 +18,6 @@
 */
 
 #include "sieveimapinstanceinterfacemanagertest.h"
-#include "akonadiimapsettinginterfacetest.h"
 #include <KSieveUi/SieveImapInstanceInterfaceManager>
 #include <KSieveUi/SieveImapInstance>
 #include <QTest>
