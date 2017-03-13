@@ -92,4 +92,5 @@ KSIEVEUI_TESTS_EXPORT KSieveUi::Util::AccountInfo fullAccountInfo(const QString 
 
 }
 
+Q_DECLARE_METATYPE(KSieveUi::Util::AccountInfo)
 #endif

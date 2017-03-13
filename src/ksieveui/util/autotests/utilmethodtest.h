@@ -30,6 +30,7 @@ public:
     ~UtilMethodTest() = default;
 private Q_SLOTS:
     void shouldReturnEmptyInfo();
+    void shouldAssignValue_data();
     void shouldAssignValue();
 };
 #endif // UTILMETHODTEST_H

@@ -64,4 +64,5 @@ private:
     AkonadiImapSettingInterfaceDataTest mData;
 };
 
+Q_DECLARE_METATYPE(AkonadiImapSettingInterfaceDataTest)
 #endif // AKONADIIMAPSETTINGINTERFACETEST_H
