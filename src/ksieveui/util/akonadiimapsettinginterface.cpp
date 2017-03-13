@@ -97,3 +97,26 @@ QString KSieveUi::AkonadiImapSettingInterface::sieveAlternateUrl() const
 {
     return mInterface->sieveAlternateUrl();
 }
+
+QString AkonadiImapSettingInterface::sieveCustomPassword(const QString &identifier) const
+{
+    QString pwd;
+    QDBusInterface resourceSettings(QLatin1String("org.freedesktop.Akonadi.Resource.") + identifier, QStringLiteral("/Settings"), QStringLiteral("org.kde.Akonadi.Imap.Wallet"));
+    QDBusReply<QString> replyPass = resourceSettings.call(QStringLiteral("sieveCustomPassword"));
+    if (replyPass.isValid()) {
+        pwd = replyPass;
+    }
+    return pwd;
+}
+
+QString AkonadiImapSettingInterface::password(const QString &identifier) const
+{
+    QDBusInterface resourceSettings(QLatin1String("org.freedesktop.Akonadi.Resource.") + identifier, QStringLiteral("/Settings"), QStringLiteral("org.kde.Akonadi.Imap.Wallet"));
+
+    QString pwd;
+    QDBusReply<QString> replyPass = resourceSettings.call(QStringLiteral("password"));
+    if (replyPass.isValid()) {
+        pwd = replyPass;
+    }
+    return  pwd;
+}

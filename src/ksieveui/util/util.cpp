@@ -89,13 +89,7 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         u.setHost(server);
         u.setUserName(interface->userName());
 
-        QDBusInterface resourceSettings(QLatin1String("org.freedesktop.Akonadi.Resource.") + identifier, QStringLiteral("/Settings"), QStringLiteral("org.kde.Akonadi.Imap.Wallet"));
-
-        QString pwd;
-        QDBusReply<QString> replyPass = resourceSettings.call(QStringLiteral("password"));
-        if (replyPass.isValid()) {
-            pwd = replyPass;
-        }
+        const QString pwd = interface->password(identifier);
         u.setPassword(pwd);
         accountInfo.sieveImapAccountSettings.setPassword(pwd);
         accountInfo.sieveImapAccountSettings.setPort(interface->sievePort());
@@ -184,20 +178,10 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         const QString resultCustomAuthentication = interface->sieveCustomAuthentification();
         if (resultCustomAuthentication == QLatin1String("ImapUserPassword")) {
             u.setUserName(interface->userName());
-            QDBusInterface resourceSettings(QLatin1String("org.freedesktop.Akonadi.Resource.") + identifier, QStringLiteral("/Settings"), QStringLiteral("org.kde.Akonadi.Imap.Wallet"));
-            QString pwd;
-            QDBusReply<QString> replyPass = resourceSettings.call(QStringLiteral("password"));
-            if (replyPass.isValid()) {
-                pwd = replyPass;
-            }
+            const QString pwd = interface->password(identifier);
             u.setPassword(pwd);
         } else if (resultCustomAuthentication == QLatin1String("CustomUserPassword")) {
-            QDBusInterface resourceSettings(QLatin1String("org.freedesktop.Akonadi.Resource.") + identifier, QStringLiteral("/Settings"), QStringLiteral("org.kde.Akonadi.Imap.Wallet"));
-            QString pwd;
-            QDBusReply<QString> replyPass = resourceSettings.call(QStringLiteral("sieveCustomPassword"));
-            if (replyPass.isValid()) {
-                pwd = replyPass;
-            }
+            const QString pwd = interface->sieveCustomPassword(identifier);
             u.setPassword(pwd);
             u.setUserName(interface->sieveCustomUsername());
         }
