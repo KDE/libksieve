@@ -19,7 +19,7 @@
 #define SIEVETEXTEDITWIDGET_H
 
 #include <QWidget>
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 namespace KPIMTextEdit
 {
 class SlideContainer;
@@ -30,7 +30,7 @@ namespace KSieveUi
 {
 class SieveTextEdit;
 class SieveTextEditWidgetPrivate;
-class KSIEVEUI_EXPORT SieveTextEditWidget : public QWidget
+class KSIEVEUI_TESTS_EXPORT SieveTextEditWidget : public QWidget
 {
     Q_OBJECT
 public:
