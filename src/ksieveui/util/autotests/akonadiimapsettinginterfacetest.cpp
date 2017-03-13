@@ -19,8 +19,9 @@
 
 #include "akonadiimapsettinginterfacetest.h"
 
-AkonadiImapSettingInterfaceTest::AkonadiImapSettingInterfaceTest()
-    : KSieveUi::AbstractAkonadiImapSettingInterface()
+AkonadiImapSettingInterfaceTest::AkonadiImapSettingInterfaceTest(const AkonadiImapSettingInterfaceDataTest &data)
+    : KSieveUi::AbstractAkonadiImapSettingInterface(),
+      mData(data)
 {
 
 }
@@ -33,74 +34,72 @@ AkonadiImapSettingInterfaceTest::~AkonadiImapSettingInterfaceTest()
 
 bool AkonadiImapSettingInterfaceTest::sieveSupport() const
 {
-    return false;
+    return mData.sieveSupport;
 }
 
 bool AkonadiImapSettingInterfaceTest::sieveReuseConfig() const
 {
-    return false;
+    return mData.sieveReuseConfig;
 }
 
 QString AkonadiImapSettingInterfaceTest::imapServer() const
 {
-    return {};
+    return mData.imapServer;
 }
 
 QString AkonadiImapSettingInterfaceTest::userName() const
 {
-    return {};
+    return mData.userName;
 }
 
 int AkonadiImapSettingInterfaceTest::sievePort() const
 {
-    return -1;
+    return mData.sievePort;
 }
 
 QString AkonadiImapSettingInterfaceTest::sieveCustomUsername() const
 {
-    return {};
+    return mData.sieveCustomUsername;
 }
 
 QString AkonadiImapSettingInterfaceTest::sieveCustomAuthentification() const
 {
-    return {};
+    return mData.sieveCustomAuthentification;
 }
 
 QString AkonadiImapSettingInterfaceTest::sieveVacationFilename() const
 {
-    return {};
+    return mData.sieveVacationFilename;
 }
 
 QString AkonadiImapSettingInterfaceTest::safety() const
 {
-    return {};
+    return mData.safety;
 }
 
 int AkonadiImapSettingInterfaceTest::authentication() const
 {
-    return -1;
+    return mData.authentication;
 }
 
 QString AkonadiImapSettingInterfaceTest::sieveAlternateUrl() const
 {
-    return {};
+    return mData.sieveAlternateUrl;
 }
 
 int AkonadiImapSettingInterfaceTest::alternateAuthentication() const
 {
-    return -1;
+    return mData.alternateAuthentication;
 }
-
-
 
 QString AkonadiImapSettingInterfaceTest::password(const QString &identifier) const
 {
-    //TODO
-    return {};
+    Q_UNUSED(identifier);
+    return mData.password;
 }
 
 QString AkonadiImapSettingInterfaceTest::sieveCustomPassword(const QString &identifier) const
 {
-    //TODO
-    return {};
+    Q_UNUSED(identifier);
+    return mData.sieveCustomPassword;
 }

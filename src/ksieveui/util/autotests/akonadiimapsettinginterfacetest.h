@@ -22,10 +22,28 @@
 
 #include <util/abstractakonadiimapsettinginterface.h>
 #include <QObject>
+struct AkonadiImapSettingInterfaceDataTest
+{
+    bool sieveSupport = true;
+    bool sieveReuseConfig = true;
+    QString imapServer;
+    QString userName;
+    int sievePort = -1;
+    QString sieveCustomUsername;
+    QString sieveCustomAuthentification;
+    QString sieveVacationFilename;
+    QString safety;
+    int alternateAuthentication = -1;
+    int authentication = -1;
+    QString sieveAlternateUrl;
+    QString password;
+    QString sieveCustomPassword;
+};
+
 class AkonadiImapSettingInterfaceTest : public KSieveUi::AbstractAkonadiImapSettingInterface
 {
 public:
-    AkonadiImapSettingInterfaceTest();
+    AkonadiImapSettingInterfaceTest(const AkonadiImapSettingInterfaceDataTest &data);
     ~AkonadiImapSettingInterfaceTest();
 
     bool sieveSupport() const Q_DECL_OVERRIDE;
@@ -42,6 +60,8 @@ public:
     QString sieveAlternateUrl() const Q_DECL_OVERRIDE;
     QString password(const QString &identifier) const Q_DECL_OVERRIDE;
     QString sieveCustomPassword(const QString &identifier) const Q_DECL_OVERRIDE;
+private:
+    AkonadiImapSettingInterfaceDataTest mData;
 };
 
 #endif // AKONADIIMAPSETTINGINTERFACETEST_H
