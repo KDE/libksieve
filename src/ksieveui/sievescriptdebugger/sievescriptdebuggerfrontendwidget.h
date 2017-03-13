@@ -21,7 +21,7 @@
 #define SIEVESCRIPTDEBUGGERFRONTENDWIDGET_H
 
 #include <QWidget>
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 
 namespace KPIMTextEdit
 {
@@ -36,7 +36,7 @@ namespace KSieveUi
 {
 class SieveTextEditWidget;
 class SieveScriptDebuggerWarning;
-class KSIEVEUI_EXPORT SieveScriptDebuggerFrontEndWidget : public QWidget
+class KSIEVEUI_TESTS_EXPORT SieveScriptDebuggerFrontEndWidget : public QWidget
 {
     Q_OBJECT
 public:

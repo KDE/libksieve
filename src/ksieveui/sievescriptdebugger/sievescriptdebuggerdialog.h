@@ -21,13 +21,13 @@
 #define SIEVESCRIPTDEBUGGERDIALOG_H
 
 #include <QDialog>
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 
 class QPushButton;
 namespace KSieveUi
 {
 class SieveScriptDebuggerWidget;
-class KSIEVEUI_EXPORT SieveScriptDebuggerDialog : public QDialog
+class KSIEVEUI_TESTS_EXPORT SieveScriptDebuggerDialog : public QDialog
 {
     Q_OBJECT
 public:

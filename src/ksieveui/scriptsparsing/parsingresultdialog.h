@@ -18,7 +18,7 @@
 */
 #ifndef PARSINGRESULTDIALOG_H
 #define PARSINGRESULTDIALOG_H
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 #include <QDialog>
 
 namespace KPIMTextEdit
@@ -27,7 +27,7 @@ class PlainTextEditorWidget;
 }
 namespace KSieveUi
 {
-class KSIEVEUI_EXPORT ParsingResultDialog : public QDialog
+class KSIEVEUI_TESTS_EXPORT ParsingResultDialog : public QDialog
 {
     Q_OBJECT
 public:

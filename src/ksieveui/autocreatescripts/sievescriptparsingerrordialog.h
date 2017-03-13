@@ -19,7 +19,7 @@
 
 #ifndef SIEVESCRIPTPARSINGERRORDIALOG_H
 #define SIEVESCRIPTPARSINGERRORDIALOG_H
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 #include <QDialog>
 namespace KPIMTextEdit
 {
@@ -27,7 +27,7 @@ class RichTextEditorWidget;
 }
 namespace KSieveUi
 {
-class KSIEVEUI_EXPORT SieveScriptParsingErrorDialog : public QDialog
+class KSIEVEUI_TESTS_EXPORT SieveScriptParsingErrorDialog : public QDialog
 {
     Q_OBJECT
 public:

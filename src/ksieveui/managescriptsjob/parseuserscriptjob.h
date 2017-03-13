@@ -21,7 +21,7 @@
 #include <QObject>
 #include <QUrl>
 #include <QStringList>
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 class QDomDocument;
 class QDomElement;
 namespace KManageSieve
@@ -31,7 +31,7 @@ class SieveJob;
 
 namespace KSieveUi
 {
-class KSIEVEUI_EXPORT ParseUserScriptJob : public QObject
+class KSIEVEUI_TESTS_EXPORT ParseUserScriptJob : public QObject
 {
     Q_OBJECT
 

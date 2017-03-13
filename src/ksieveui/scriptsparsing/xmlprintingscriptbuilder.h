@@ -20,14 +20,14 @@
 #ifndef KSIEVE_KSIEVEUI_XMLPRINTINGSCRIPTBUILDER_H
 #define KSIEVE_KSIEVEUI_XMLPRINTINGSCRIPTBUILDER_H
 
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 #include <ksieve/scriptbuilder.h>
 
 #include <QDomDocument>
 
 namespace KSieveUi
 {
-class KSIEVEUI_EXPORT XMLPrintingScriptBuilder : public KSieve::ScriptBuilder
+class KSIEVEUI_TESTS_EXPORT XMLPrintingScriptBuilder : public KSieve::ScriptBuilder
 {
 public:
     explicit XMLPrintingScriptBuilder();
