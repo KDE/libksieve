@@ -91,3 +91,16 @@ int AkonadiImapSettingInterfaceTest::alternateAuthentication() const
     return -1;
 }
 
+
+
+QString AkonadiImapSettingInterfaceTest::password(const QString &identifier) const
+{
+    //TODO
+    return {};
+}
+
+QString AkonadiImapSettingInterfaceTest::sieveCustomPassword(const QString &identifier) const
+{
+    //TODO
+    return {};
+}

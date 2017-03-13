@@ -40,6 +40,8 @@ public:
     int alternateAuthentication() const Q_DECL_OVERRIDE;
     int authentication() const Q_DECL_OVERRIDE;
     QString sieveAlternateUrl() const Q_DECL_OVERRIDE;
+    QString password(const QString &identifier) const Q_DECL_OVERRIDE;
+    QString sieveCustomPassword(const QString &identifier) const Q_DECL_OVERRIDE;
 };
 
 #endif // AKONADIIMAPSETTINGINTERFACETEST_H
