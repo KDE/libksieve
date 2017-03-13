@@ -62,6 +62,7 @@ struct AccountInfo
 {
     KSieveUi::SieveImapAccountSettings sieveImapAccountSettings;
     QUrl sieveUrl;
+    KSIEVEUI_TESTS_EXPORT bool operator==(const AccountInfo &other) const;
 };
 KSIEVEUI_TESTS_EXPORT QDebug operator <<(QDebug d, const Util::AccountInfo &info);
 

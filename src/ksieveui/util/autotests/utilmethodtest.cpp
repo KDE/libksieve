@@ -42,18 +42,21 @@ void UtilMethodTest::shouldAssignValue_data()
 {
     QTest::addColumn<AkonadiImapSettingInterfaceDataTest>("data");
     QTest::addColumn<KSieveUi::Util::AccountInfo>("accountInfo");
-    QTest::newRow("default") << AkonadiImapSettingInterfaceDataTest() << KSieveUi::Util::AccountInfo();
+    QTest::addColumn<bool>("sieveImapAccountValid");
+    QTest::newRow("default") << AkonadiImapSettingInterfaceDataTest() << KSieveUi::Util::AccountInfo() << false;
 }
 
 void UtilMethodTest::shouldAssignValue()
 {
     QFETCH(AkonadiImapSettingInterfaceDataTest, data);
     QFETCH(KSieveUi::Util::AccountInfo, accountInfo);
+    QFETCH(bool, sieveImapAccountValid);
 
     std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> interface(new AkonadiImapSettingInterfaceTest(data));
-    KSieveUi::Util::AccountInfo info = KSieveUi::Util::findAccountInfo(QStringLiteral("foo"), false, interface);
+    const KSieveUi::Util::AccountInfo info = KSieveUi::Util::findAccountInfo(QStringLiteral("foo"), false, interface);
     //TODO
-    QVERIFY(!info.sieveImapAccountSettings.isValid());
+    QCOMPARE(info.sieveImapAccountSettings.isValid(), sieveImapAccountValid);
+    QCOMPARE(info, accountInfo);
 }
 
 QTEST_MAIN(UtilMethodTest)

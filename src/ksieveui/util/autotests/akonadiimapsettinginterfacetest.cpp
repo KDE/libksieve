@@ -30,8 +30,6 @@ AkonadiImapSettingInterfaceTest::~AkonadiImapSettingInterfaceTest()
 {
 
 }
-
-
 bool AkonadiImapSettingInterfaceTest::sieveSupport() const
 {
     return mData.sieveSupport;

@@ -281,3 +281,9 @@ QDebug Util::operator <<(QDebug d, const Util::AccountInfo &info)
     d << "url " << info.sieveUrl;
     return d;
 }
+
+bool Util::AccountInfo::operator==(const Util::AccountInfo &other) const
+{
+    return (other.sieveImapAccountSettings == sieveImapAccountSettings)
+            && (other.sieveUrl == sieveUrl);
+}
