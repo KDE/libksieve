@@ -39,13 +39,14 @@ public:
     };
 
     enum AuthenticationMode {
-        ClearText = 0,
-        Login,
+        Login = 0,
         Plain,
         CramMD5,
         DigestMD5,
-        NTLM,
         GSSAPI,
+        NTLM,
+        APOP,
+        ClearText,
         Anonymous,
         XOAuth2
     };

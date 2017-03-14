@@ -44,6 +44,8 @@ void UtilMethodTest::shouldAssignValue_data()
     QTest::addColumn<KSieveUi::Util::AccountInfo>("accountInfo");
     QTest::addColumn<bool>("sieveImapAccountValid");
     QTest::newRow("default") << AkonadiImapSettingInterfaceDataTest() << KSieveUi::Util::AccountInfo() << false;
+
+
     AkonadiImapSettingInterfaceDataTest data1;
     data1.sieveSupport = true;
     data1.sieveReuseConfig = true;
@@ -55,6 +57,7 @@ void UtilMethodTest::shouldAssignValue_data()
     data1.sieveVacationFilename = QLatin1String("vacation.siv");
     data1.safety = QLatin1String("SAFETY");
     data1.alternateAuthentication = -1;
+    //MailTransport::Transport::EnumAuthenticationType::CRAM_MD5 = 2
     data1.authentication = 2;
     data1.sieveAlternateUrl = QString();
     data1.password = QLatin1String("password1");
@@ -74,7 +77,7 @@ void UtilMethodTest::shouldAssignValue_data()
     info1.sieveImapAccountSettings.setUserName(userName);
     info1.sieveImapAccountSettings.setPassword(password);
 
-    info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::Plain);
+    info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::CramMD5);
     //TODO fix encryptionmode
     info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::AnySslVersion);
 
