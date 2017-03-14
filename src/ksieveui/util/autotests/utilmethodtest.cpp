@@ -45,7 +45,6 @@ void UtilMethodTest::shouldAssignValue_data()
     QTest::addColumn<bool>("sieveImapAccountValid");
     QTest::newRow("default") << AkonadiImapSettingInterfaceDataTest() << KSieveUi::Util::AccountInfo() << false;
     AkonadiImapSettingInterfaceDataTest data1;
-
     data1.sieveSupport = true;
     data1.sieveReuseConfig = true;
     data1.imapServer = QLatin1String("foo.bla.com");
@@ -65,6 +64,7 @@ void UtilMethodTest::shouldAssignValue_data()
     const QString password = QStringLiteral("password1");
     const QString userName = QStringLiteral("kde");
     const int port = 543;
+    //TODO cram-md5 ??
     info1.sieveUrl = QUrl::fromUserInput(QStringLiteral("sieve://foo.bla.com?x-mech=CRAM-MD5"));
     info1.sieveUrl.setPassword(password);
     info1.sieveUrl.setUserName(userName);
