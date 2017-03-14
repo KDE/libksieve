@@ -38,6 +38,7 @@
 
 #include "util.h"
 #include "util_p.h"
+#include "libksieve_debug.h"
 #include <PimCommon/PimUtil>
 #include "imapresourcesettings.h"
 #include "sieve-vacation.h"
@@ -284,6 +285,10 @@ QDebug Util::operator <<(QDebug d, const Util::AccountInfo &info)
 
 bool Util::AccountInfo::operator==(const Util::AccountInfo &other) const
 {
-    return (other.sieveImapAccountSettings == sieveImapAccountSettings)
+    const bool result = (other.sieveImapAccountSettings == sieveImapAccountSettings)
             && (other.sieveUrl == sieveUrl);
+    if (!result) {
+        qCDebug(LIBKSIEVE_LOG) << "actual :" << *this << "\n other :" << other;
+    }
+    return result;
 }

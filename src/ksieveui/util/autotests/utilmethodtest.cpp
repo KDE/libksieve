@@ -44,6 +44,26 @@ void UtilMethodTest::shouldAssignValue_data()
     QTest::addColumn<KSieveUi::Util::AccountInfo>("accountInfo");
     QTest::addColumn<bool>("sieveImapAccountValid");
     QTest::newRow("default") << AkonadiImapSettingInterfaceDataTest() << KSieveUi::Util::AccountInfo() << false;
+    AkonadiImapSettingInterfaceDataTest data1;
+
+    data1.sieveSupport = true;
+    data1.sieveReuseConfig = true;
+    data1.imapServer = QLatin1String("foo.bla.com");
+    data1.userName = QLatin1String("kde");
+    data1.sievePort = 543;
+    data1.sieveCustomUsername = QString();
+    data1.sieveCustomAuthentification = QString();
+    data1.sieveVacationFilename = QLatin1String("vacation.siv");
+    data1.safety = QLatin1String("SAFETY");
+    data1.alternateAuthentication = -1;
+    data1.authentication = 2;
+    data1.sieveAlternateUrl = QString();
+    data1.password = QLatin1String("password1");
+    data1.sieveCustomPassword = QString();
+
+    KSieveUi::Util::AccountInfo info1;
+
+    QTest::newRow("test1") << data1 << info1 << true;
 }
 
 void UtilMethodTest::shouldAssignValue()
