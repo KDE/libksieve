@@ -279,7 +279,7 @@ bool Util::isKep14ProtectedName(const QString &name)
 QDebug Util::operator <<(QDebug d, const Util::AccountInfo &info)
 {
     d << "sieveImapAccountSettings " << info.sieveImapAccountSettings;
-    d << "url " << info.sieveUrl;
+    d << "url " << info.sieveUrl.toString();
     return d;
 }
 
