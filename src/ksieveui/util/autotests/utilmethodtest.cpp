@@ -67,7 +67,6 @@ void UtilMethodTest::shouldAssignValue_data()
     const QString password = QStringLiteral("password1");
     const QString userName = QStringLiteral("kde");
     const int port = 543;
-    //TODO cram-md5 ??
     info1.sieveUrl = QUrl::fromUserInput(QStringLiteral("sieve://foo.bla.com?x-mech=CRAM-MD5"));
     info1.sieveUrl.setPassword(password);
     info1.sieveUrl.setUserName(userName);
@@ -93,7 +92,6 @@ void UtilMethodTest::shouldAssignValue()
 
     std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> interface(new AkonadiImapSettingInterfaceTest(data));
     const KSieveUi::Util::AccountInfo info = KSieveUi::Util::findAccountInfo(QStringLiteral("foo"), false, interface);
-    //TODO
     QCOMPARE(info.sieveImapAccountSettings.isValid(), sieveImapAccountValid);
     QCOMPARE(info, accountInfo);
 }
