@@ -62,6 +62,15 @@ void UtilMethodTest::shouldAssignValue_data()
     data1.sieveCustomPassword = QString();
 
     KSieveUi::Util::AccountInfo info1;
+    info1.sieveUrl = QUrl(QStringLiteral("sieve://kde@foo.bla.com:543?x-mech=CRAM-MD5"));
+    info1.sieveImapAccountSettings.setServerName(QLatin1String("foo.bla.com"));
+    info1.sieveImapAccountSettings.setPort(543);
+    info1.sieveImapAccountSettings.setUserName(QLatin1String("kde"));
+    info1.sieveImapAccountSettings.setPassword(QLatin1String("password1"));
+    info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::Plain);
+    //TODO fix encryptionmode
+    info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::AnySslVersion);
+
 
     QTest::newRow("test1") << data1 << info1 << true;
 }
