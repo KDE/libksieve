@@ -82,7 +82,7 @@ void UtilMethodTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::AnySslVersion);
 
 
-        QTest::newRow("test1") << data1 << info1 << true << false;
+        QTest::newRow("sievereuseconfig1") << data1 << info1 << true << false;
     }
 
     {
@@ -121,7 +121,36 @@ void UtilMethodTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::AnySslVersion);
 
 
-        QTest::newRow("test2") << data1 << info1 << true << true;
+        QTest::newRow("sievereuseconfig2") << data1 << info1 << true << true;
+    }
+
+    {
+        AkonadiImapSettingInterfaceDataTest data1;
+        data1.sieveSupport = false;
+        data1.sieveReuseConfig = true;
+        data1.imapServer = QLatin1String("foo.bla.com");
+        data1.userName = QLatin1String("kde");
+        data1.sievePort = 3;
+        data1.sieveCustomUsername = QString();
+        data1.sieveCustomAuthentification = QString();
+        data1.sieveVacationFilename = QLatin1String("vacation.siv");
+        data1.safety = QLatin1String("SAFETY");
+        data1.alternateAuthentication = -1;
+        //MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
+        data1.authentication = 0;
+        data1.sieveAlternateUrl = QString();
+        data1.password = QLatin1String("password2");
+        data1.sieveCustomPassword = QString();
+
+        KSieveUi::Util::AccountInfo info1;
+        const int port = -1;
+        info1.sieveUrl.setPort(port);
+        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::Plain);
+        //TODO fix encryptionmode
+        info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::Unencrypted);
+
+
+        QTest::newRow("dontusesieve") << data1 << info1 << false << true;
     }
 }
 
