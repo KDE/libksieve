@@ -203,6 +203,8 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
             const QString pwd = interface->sieveCustomPassword(identifier);
             u.setPassword(pwd);
             u.setUserName(interface->sieveCustomUsername());
+        } else {
+            qCWarning(LIBKSIEVE_LOG) << "resultCustomAuthentication undefined " << resultCustomAuthentication;
         }
         u = u.adjusted(QUrl::RemoveFilename);
         if (withVacationFileName) {

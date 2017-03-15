@@ -172,7 +172,7 @@ void UtilMethodTest::shouldAssignValue_data()
         data1.sievePort = sievePort;
         data1.imapPort = imapPort;
         data1.sieveCustomUsername = sieveUser;
-        data1.sieveCustomAuthentification = QLatin1String("SAFETY");
+        data1.sieveCustomAuthentification = QLatin1String("CustomUserPassword");
         data1.sieveVacationFilename = QLatin1String("vacation.siv");
         data1.safety = QLatin1String("SAFETY");
         data1.alternateAuthentication = 4;
@@ -183,7 +183,7 @@ void UtilMethodTest::shouldAssignValue_data()
         data1.sieveCustomPassword = sievePasswd;
 
         KSieveUi::Util::AccountInfo info1;
-        info1.sieveUrl = QUrl::fromUserInput(QStringLiteral("sieve://foo.bla.com/vacation.siv?x-mech=LOGIN"));
+        info1.sieveUrl = QUrl::fromUserInput(QStringLiteral("sieve://foo.bla.com/vacation.siv?x-mech=GSSAPI"));
         info1.sieveUrl.setPassword(sievePasswd);
         info1.sieveUrl.setUserName(sieveUser);
         info1.sieveUrl.setPort(sievePort);
@@ -192,9 +192,9 @@ void UtilMethodTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setUserName(imapUser);
         info1.sieveImapAccountSettings.setPassword(imapPasswd);
 
-        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::Login);
-        //TODO fix encryptionmode
-        info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::AnySslVersion);
+        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::DigestMD5);
+
+        info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::Unencrypted);
 
 
         QTest::newRow("sievereusecustomconfig1") << data1 << info1 << true << true;
