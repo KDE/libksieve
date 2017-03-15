@@ -155,7 +155,7 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         accountInfo.sieveImapAccountSettings.setAuthenticationType(static_cast<SieveImapAccountSettings::AuthenticationMode>((int)interface->authentication()));
         const QString pwd = interface->password(identifier);
         accountInfo.sieveImapAccountSettings.setPassword(pwd);
-        accountInfo.sieveImapAccountSettings.setPort(interface->sievePort());
+        accountInfo.sieveImapAccountSettings.setPort(interface->imapPort());
 
         QUrl u;
         u.setHost(interface->sieveAlternateUrl());
