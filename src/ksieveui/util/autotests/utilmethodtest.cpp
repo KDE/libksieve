@@ -47,12 +47,14 @@ void UtilMethodTest::shouldAssignValue_data()
     QTest::newRow("default") << AkonadiImapSettingInterfaceDataTest() << KSieveUi::Util::AccountInfo() << false << false;
 
     {
+        const int imapPort = 53;
         AkonadiImapSettingInterfaceDataTest data1;
         data1.sieveSupport = true;
         data1.sieveReuseConfig = true;
         data1.imapServer = QLatin1String("foo.bla.com");
         data1.userName = QLatin1String("kde");
         data1.sievePort = 543;
+        data1.imapPort = imapPort;
         data1.sieveCustomUsername = QString();
         data1.sieveCustomAuthentification = QString();
         data1.sieveVacationFilename = QLatin1String("vacation.siv");
@@ -73,7 +75,7 @@ void UtilMethodTest::shouldAssignValue_data()
         info1.sieveUrl.setUserName(userName);
         info1.sieveUrl.setPort(port);
         info1.sieveImapAccountSettings.setServerName(QLatin1String("foo.bla.com"));
-        info1.sieveImapAccountSettings.setPort(port);
+        info1.sieveImapAccountSettings.setPort(imapPort);
         info1.sieveImapAccountSettings.setUserName(userName);
         info1.sieveImapAccountSettings.setPassword(password);
 
@@ -86,12 +88,14 @@ void UtilMethodTest::shouldAssignValue_data()
     }
 
     {
+        const int imapPort = 53;
         AkonadiImapSettingInterfaceDataTest data1;
         data1.sieveSupport = true;
         data1.sieveReuseConfig = true;
         data1.imapServer = QLatin1String("foo.bla.com");
         data1.userName = QLatin1String("kde");
         data1.sievePort = 3;
+        data1.imapPort = imapPort;
         data1.sieveCustomUsername = QString();
         data1.sieveCustomAuthentification = QString();
         data1.sieveVacationFilename = QLatin1String("vacation.siv");
@@ -112,7 +116,7 @@ void UtilMethodTest::shouldAssignValue_data()
         info1.sieveUrl.setUserName(userName);
         info1.sieveUrl.setPort(port);
         info1.sieveImapAccountSettings.setServerName(QLatin1String("foo.bla.com"));
-        info1.sieveImapAccountSettings.setPort(port);
+        info1.sieveImapAccountSettings.setPort(imapPort);
         info1.sieveImapAccountSettings.setUserName(userName);
         info1.sieveImapAccountSettings.setPassword(password);
 
@@ -125,12 +129,14 @@ void UtilMethodTest::shouldAssignValue_data()
     }
 
     {
+        const int imapPort = 53;
         AkonadiImapSettingInterfaceDataTest data1;
         data1.sieveSupport = false;
         data1.sieveReuseConfig = true;
         data1.imapServer = QLatin1String("foo.bla.com");
         data1.userName = QLatin1String("kde");
         data1.sievePort = 3;
+        data1.imapPort = imapPort;
         data1.sieveCustomUsername = QString();
         data1.sieveCustomAuthentification = QString();
         data1.sieveVacationFilename = QLatin1String("vacation.siv");
@@ -143,8 +149,6 @@ void UtilMethodTest::shouldAssignValue_data()
         data1.sieveCustomPassword = QString();
 
         KSieveUi::Util::AccountInfo info1;
-        const int port = -1;
-        info1.sieveUrl.setPort(port);
         info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::Plain);
         info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::Unencrypted);
 
@@ -160,6 +164,7 @@ void UtilMethodTest::shouldAssignValue_data()
         data1.imapServer = QLatin1String("foo.bla.com");
         data1.userName = QLatin1String("kde");
         data1.sievePort = 3;
+        data1.imapPort = 53;
         data1.sieveCustomUsername = QLatin1String("foo1");
         data1.sieveCustomAuthentification = QLatin1String("SAFETY");
         data1.sieveVacationFilename = QLatin1String("vacation.siv");

@@ -84,16 +84,17 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         } else {
             return accountInfo;
         }
+        const QString userName = interface->userName();
         accountInfo.sieveImapAccountSettings.setServerName(server);
-        accountInfo.sieveImapAccountSettings.setUserName(interface->userName());
+        accountInfo.sieveImapAccountSettings.setUserName(userName);
 
         u.setHost(server);
-        u.setUserName(interface->userName());
+        u.setUserName(userName);
 
         const QString pwd = interface->password(identifier);
         u.setPassword(pwd);
         accountInfo.sieveImapAccountSettings.setPassword(pwd);
-        accountInfo.sieveImapAccountSettings.setPort(interface->sievePort());
+        accountInfo.sieveImapAccountSettings.setPort(interface->imapPort());
         u.setPort(interface->sievePort());
         QString authStr;
         accountInfo.sieveImapAccountSettings.setAuthenticationType(static_cast<SieveImapAccountSettings::AuthenticationMode>((int)interface->authentication()));
@@ -139,6 +140,23 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         accountInfo.sieveUrl = u;
         return accountInfo;
     } else {
+        QString server;
+        QString reply = interface->imapServer();
+        if (!reply.isEmpty()) {
+            server = reply;
+            server = server.section(QLatin1Char(':'), 0, 0);
+        } else {
+            return accountInfo;
+        }
+
+        const QString userName = interface->userName();
+        accountInfo.sieveImapAccountSettings.setServerName(server);
+        accountInfo.sieveImapAccountSettings.setUserName(userName);
+        accountInfo.sieveImapAccountSettings.setAuthenticationType(static_cast<SieveImapAccountSettings::AuthenticationMode>((int)interface->authentication()));
+        const QString pwd = interface->password(identifier);
+        accountInfo.sieveImapAccountSettings.setPassword(pwd);
+        accountInfo.sieveImapAccountSettings.setPort(interface->sievePort());
+
         QUrl u;
         u.setHost(interface->sieveAlternateUrl());
         u.setScheme(QStringLiteral("sieve"));

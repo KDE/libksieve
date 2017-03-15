@@ -46,6 +46,7 @@ public:
     QString sieveAlternateUrl() const Q_DECL_OVERRIDE;
     QString password(const QString &identifier) const Q_DECL_OVERRIDE;
     QString sieveCustomPassword(const QString &identifier) const Q_DECL_OVERRIDE;
+    int imapPort() const Q_DECL_OVERRIDE;
 
 private:
     std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> mInterface;

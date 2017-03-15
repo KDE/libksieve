@@ -98,6 +98,11 @@ QString AbstractAkonadiImapSettingInterface::sieveCustomPassword(const QString &
     return {};
 }
 
+int AbstractAkonadiImapSettingInterface::imapPort() const
+{
+    return -1;
+}
+
 int AbstractAkonadiImapSettingInterface::alternateAuthentication() const
 {
     return -1;

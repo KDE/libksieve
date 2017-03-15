@@ -120,3 +120,9 @@ QString AkonadiImapSettingInterface::password(const QString &identifier) const
     }
     return  pwd;
 }
+
+
+int KSieveUi::AkonadiImapSettingInterface::imapPort() const
+{
+    return mInterface->imapPort();
+}
