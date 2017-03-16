@@ -102,7 +102,6 @@ QString AkonadiImapSettingInterfaceTest::sieveCustomPassword(const QString &iden
     return mData.sieveCustomPassword;
 }
 
-
 int AkonadiImapSettingInterfaceTest::imapPort() const
 {
     return mData.imapPort;

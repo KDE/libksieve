@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "sieveimapinstanceinterfacemanager.h"
 #include "libksieve_debug.h"
 #include <KSieveUi/SieveImapInstance>

@@ -117,7 +117,7 @@ QDebug operator <<(QDebug d, const SieveImapAccountSettings &settings)
 {
     d << "serverName " << settings.serverName();
     d << "userName " << settings.userName();
-    d << "password "<< settings.password();
+    d << "password " << settings.password();
     d << "authenticationType " << settings.authenticationType();
     d << "port " << settings.port();
     d << "encryptionMode : " << settings.encryptionMode();

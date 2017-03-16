@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "sieveimapinstanceinterface.h"
 #include "sieveimapinstance.h"
 #include "libksieve_debug.h"

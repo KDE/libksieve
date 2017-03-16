@@ -22,8 +22,7 @@
 
 #include <util/abstractakonadiimapsettinginterface.h>
 #include <QObject>
-struct AkonadiImapSettingInterfaceDataTest
-{
+struct AkonadiImapSettingInterfaceDataTest {
     bool sieveSupport = true;
     bool sieveReuseConfig = true;
     QString imapServer;

@@ -23,7 +23,6 @@
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/Theme>
 
-
 #include <QTimer>
 #include <KSharedConfig>
 #include <QDialogButtonBox>

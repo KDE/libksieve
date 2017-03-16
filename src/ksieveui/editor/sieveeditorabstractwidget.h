@@ -38,7 +38,7 @@ public:
 
     KSieveUi::SieveImapAccountSettings sieveImapAccountSettings() const;
 
-    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings & sieveImapAccountSettings);
+    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &sieveImapAccountSettings);
 
 public Q_SLOTS:
     void slotImport();

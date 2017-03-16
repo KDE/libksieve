@@ -307,7 +307,6 @@ bool Util::isKep14ProtectedName(const QString &name)
     return false;
 }
 
-
 QDebug Util::operator <<(QDebug d, const Util::AccountInfo &info)
 {
     d << "sieveImapAccountSettings " << info.sieveImapAccountSettings;
@@ -318,7 +317,7 @@ QDebug Util::operator <<(QDebug d, const Util::AccountInfo &info)
 bool Util::AccountInfo::operator==(const Util::AccountInfo &other) const
 {
     const bool result = (other.sieveImapAccountSettings == sieveImapAccountSettings)
-            && (other.sieveUrl == sieveUrl);
+                        && (other.sieveUrl == sieveUrl);
     if (!result) {
         qCDebug(LIBKSIEVE_LOG) << "actual :" << *this << "\n other :" << other;
     }

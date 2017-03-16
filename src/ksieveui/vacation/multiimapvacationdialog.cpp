@@ -21,7 +21,6 @@
 #include "vacationpagewidget.h"
 #include "multiimapvacationmanager.h"
 
-
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <kwindowsystem.h>

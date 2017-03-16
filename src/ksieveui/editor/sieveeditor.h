@@ -44,7 +44,7 @@ public:
 
     void resultDone();
 
-    void setSieveCapabilities(const QStringList &capabilities);    
+    void setSieveCapabilities(const QStringList &capabilities);
     void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);
 
 private Q_SLOTS:

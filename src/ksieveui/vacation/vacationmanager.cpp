@@ -70,7 +70,7 @@ void VacationManager::slotUpdateVacationScriptStatus(bool active, const QString 
         if (!d->mQuestionAsked) {
             d->mQuestionAsked = true;
             if (KMessageBox::questionYesNo(nullptr, i18n("There is still an active out-of-office reply configured.\n"
-                                                   "Do you want to edit it?"), i18n("Out-of-office reply still active"),
+                                           "Do you want to edit it?"), i18n("Out-of-office reply still active"),
                                            KGuiItem(i18n("Edit"), QStringLiteral("document-properties")),
                                            KGuiItem(i18n("Ignore"), QStringLiteral("dialog-cancel")))
                     == KMessageBox::Yes) {

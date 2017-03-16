@@ -92,7 +92,6 @@ int AkonadiImapSettingInterface::authentication() const
     return mInterface->authentication();
 }
 
-
 QString KSieveUi::AkonadiImapSettingInterface::sieveAlternateUrl() const
 {
     return mInterface->sieveAlternateUrl();
@@ -120,7 +119,6 @@ QString AkonadiImapSettingInterface::password(const QString &identifier) const
     }
     return  pwd;
 }
-
 
 int KSieveUi::AkonadiImapSettingInterface::imapPort() const
 {

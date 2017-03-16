@@ -18,7 +18,6 @@
     02110-1301, USA.
 */
 
-
 #include "session.h"
 #include "response.h"
 #include "sievejob_p.h"
@@ -51,7 +50,6 @@ Q_DECL_CONSTEXPR typename QtPrivate::QAddConst<T>::Type &qAsConst(T &t) Q_DECL_N
 template <typename T>
 void qAsConst(const T &&) Q_DECL_EQ_DELETE;
 #endif
-
 
 using namespace KManageSieve;
 

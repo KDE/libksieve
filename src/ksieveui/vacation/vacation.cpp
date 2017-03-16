@@ -99,10 +99,10 @@ void Vacation::slotGetResult(KManageSieve::SieveJob *job, bool success,
     if (!mCheckOnly && mUrl.scheme() == QLatin1String("sieve") &&
             !job->sieveCapabilities().contains(QStringLiteral("vacation"))) {
         KMessageBox::sorry(nullptr, i18n("Your server did not list \"vacation\" in "
-                                           "its list of supported Sieve extensions;\n"
-                                           "without it, KMail cannot install out-of-"
-                                           "office replies for you.\n"
-                                           "Please contact your system administrator."));
+                                         "its list of supported Sieve extensions;\n"
+                                         "without it, KMail cannot install out-of-"
+                                         "office replies for you.\n"
+                                         "Please contact your system administrator."));
         Q_EMIT result(false);
         return;
     }
@@ -122,10 +122,10 @@ void Vacation::slotGetResult(KManageSieve::SieveJob *job, bool success,
 
     if (!mCheckOnly && (!success || (!vacation.isValid()  && !script.trimmed().isEmpty()))) {
         KMessageBox::information(nullptr, i18n("Someone (probably you) changed the "
-                                 "vacation script on the server.\n"
-                                 "KMail is no longer able to determine "
-                                 "the parameters for the autoreplies.\n"
-                                 "Default values will be used."));
+                                               "vacation script on the server.\n"
+                                               "KMail is no longer able to determine "
+                                               "the parameters for the autoreplies.\n"
+                                               "Default values will be used."));
     }
     mWasActive = active;
     if (mDialog) {
