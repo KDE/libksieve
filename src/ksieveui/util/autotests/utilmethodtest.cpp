@@ -178,12 +178,12 @@ void UtilMethodTest::shouldAssignValue_data()
         data1.alternateAuthentication = 4;
         //MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
         data1.authentication = 3;
-        data1.sieveAlternateUrl = QLatin1String("sieve://bla.bla.com/");
+        data1.sieveAlternateUrl = QLatin1String("bla.bla.com");
         data1.password = imapPasswd;
         data1.sieveCustomPassword = sievePasswd;
 
         KSieveUi::Util::AccountInfo info1;
-        info1.sieveUrl = QUrl::fromUserInput(QStringLiteral("sieve://foo.bla.com/vacation.siv?x-mech=GSSAPI"));
+        info1.sieveUrl = QUrl::fromUserInput(QStringLiteral("sieve://bla.bla.com/vacation.siv?x-mech=GSSAPI"));
         info1.sieveUrl.setPassword(sievePasswd);
         info1.sieveUrl.setUserName(sieveUser);
         info1.sieveUrl.setPort(sievePort);
