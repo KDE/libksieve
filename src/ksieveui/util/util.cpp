@@ -126,11 +126,14 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         query.addQueryItem(QStringLiteral("x-mech"), authStr);
         const QString resultSafety = interface->safety();
         if (resultSafety == QLatin1String("None")) {
-            query.addQueryItem(QStringLiteral("x-allow-unencrypted"), QStringLiteral("true"));
             accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
-        } else {
-            //Verify it.
+            query.addQueryItem(QStringLiteral("x-allow-unencrypted"), QStringLiteral("true"));
+        } else if (resultSafety == QLatin1String("SSL")) {
             accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::AnySslVersion);
+        } else if (resultSafety == QLatin1String("STARTTLS")) {
+            accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::TlsV1);
+        } else {
+            accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
         }
         u.setQuery(query);
         u = u.adjusted(QUrl::RemoveFilename);
@@ -189,9 +192,18 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         }
         QUrlQuery query;
         query.addQueryItem(QStringLiteral("x-mech"), authStr);
+
         if (resultSafety == QLatin1String("None")) {
+            accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
             query.addQueryItem(QStringLiteral("x-allow-unencrypted"), QStringLiteral("true"));
+        } else if (resultSafety == QLatin1String("SSL")) {
+            accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::AnySslVersion);
+        } else if (resultSafety == QLatin1String("STARTTLS")) {
+            accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::TlsV1);
+        } else {
+            accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
         }
+
         u.setQuery(query);
 
         const QString resultCustomAuthentication = interface->sieveCustomAuthentification();
