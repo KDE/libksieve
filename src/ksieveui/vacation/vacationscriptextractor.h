@@ -23,7 +23,6 @@
 #include "sieve-vacation.h"
 #include "vacationutils.h"
 
-#include <kmime/kmime_header_parsing.h>
 #include <ksieve/error.h>
 #include <ksieve/parser.h>
 #include <ksieve/scriptbuilder.h>
