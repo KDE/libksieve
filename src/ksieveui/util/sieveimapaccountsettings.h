@@ -21,8 +21,8 @@
 #define SIEVEACCOUNT_H
 
 #include "ksieveui_export.h"
-#include <mailtransport/transport.h>
-#include <QString>
+#include <QUrl>
+#include <QDebug>
 namespace KSieveUi
 {
 class KSIEVEUI_EXPORT SieveImapAccountSettings
