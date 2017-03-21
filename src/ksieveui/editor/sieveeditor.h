@@ -1,4 +1,4 @@
-/* Copyright (c) 2011-2015 Laurent Montel <montel@kde.org>
+/* Copyright (c) 2011-2017 Laurent Montel <montel@kde.org>
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Library General Public
@@ -35,7 +35,7 @@ public:
 
     QString script() const;
     QString originalScript() const;
-    void setScript(const QString &script);
+    void setScript(const QString &script, bool clearUndoRedo = false);
     void setDebugScript(const QString &debug);
     void addFailedMessage(const QString &err);
     void addOkMessage(const QString &msg);

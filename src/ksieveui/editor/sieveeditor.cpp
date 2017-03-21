@@ -131,9 +131,9 @@ QString SieveEditor::originalScript() const
     return d->mSieveEditorWidget->originalScript();
 }
 
-void SieveEditor::setScript(const QString &script)
+void SieveEditor::setScript(const QString &script, bool clearUndoRedo)
 {
-    d->mSieveEditorWidget->setScript(script);
+    d->mSieveEditorWidget->setScript(script, clearUndoRedo);
 }
 
 void SieveEditor::setDebugScript(const QString &debug)

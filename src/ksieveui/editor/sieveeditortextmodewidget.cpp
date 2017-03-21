@@ -456,10 +456,14 @@ QString SieveEditorTextModeWidget::script() const
     return mTextEdit->toPlainText();
 }
 
-void SieveEditorTextModeWidget::setScript(const QString &script)
+void SieveEditorTextModeWidget::setScript(const QString &script, bool clearUndoRedo)
 {
-    mTextEdit->selectAll();
-    mTextEdit->insertPlainText(script);
+    if (clearUndoRedo) {
+        mTextEdit->setPlainText(script);
+    } else {
+        mTextEdit->selectAll();
+        mTextEdit->insertPlainText(script);
+    }
 }
 
 void SieveEditorTextModeWidget::setDebugScript(const QString &debug)

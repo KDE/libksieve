@@ -199,7 +199,7 @@ void ManageSieveScriptsDialog::slotGetResult(KManageSieve::SieveJob *job, bool s
     d->mSieveEditor = new SieveEditor;
     d->mSieveEditor->setScriptName(d->mCurrentURL.fileName());
     d->mSieveEditor->setSieveCapabilities(d->mCurrentCapabilities);
-    d->mSieveEditor->setScript(script);
+    d->mSieveEditor->setScript(script, true); /*clear undo/redo*/
     d->mSieveEditor->setSieveImapAccountSettings(d->mSieveImapAccountSettings);
 
     connect(d->mSieveEditor, &SieveEditor::okClicked, this, &ManageSieveScriptsDialog::slotSieveEditorOkClicked);

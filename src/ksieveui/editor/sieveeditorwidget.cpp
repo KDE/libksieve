@@ -462,9 +462,9 @@ QString SieveEditorWidget::originalScript() const
     return mOriginalScript;
 }
 
-void SieveEditorWidget::setScript(const QString &script)
+void SieveEditorWidget::setScript(const QString &script, bool clearUndoRedo)
 {
-    mTextModeWidget->setScript(script);
+    mTextModeWidget->setScript(script, clearUndoRedo);
     mOriginalScript = script;
 }
 

@@ -1,5 +1,3 @@
-configure_file (sieve-config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/sieve-config.h )
-########### next target ###############
 
 set(kio_sieve_PART_SRCS sieve.cpp )
 
