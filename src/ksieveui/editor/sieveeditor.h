@@ -35,7 +35,7 @@ public:
 
     QString script() const;
     QString originalScript() const;
-    void setScript(const QString &script);
+    void setScript(const QString &script, bool clearUndoRedo = false);
     void setDebugScript(const QString &debug);
     void addFailedMessage(const QString &err);
     void addOkMessage(const QString &msg);
