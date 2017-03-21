@@ -16,8 +16,6 @@
 #ifndef __sieve_h__
 #define __sieve_h__
 
-#include "sieve-config.h"
-
 #include <kio/tcpslavebase.h>
 #include <kio/authinfo.h>
 
