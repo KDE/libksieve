@@ -20,6 +20,7 @@
 #include "sieveimapinstanceinterfacemanagertest.h"
 #include <KSieveUi/SieveImapInstanceInterfaceManager>
 #include <KSieveUi/SieveImapInstance>
+#include <KSieveUi/SieveImapInstanceInterface>
 #include <QTest>
 
 SieveImapInstanceInterfaceManagerTest::SieveImapInstanceInterfaceManagerTest(QObject *parent)
@@ -35,6 +36,15 @@ void SieveImapInstanceInterfaceManagerTest::shouldHaveDefaultValue()
 
     QVERIFY(!KSieveUi::SieveImapInstanceInterfaceManager::self()->sieveImapInstanceInterface());
     QVERIFY(KSieveUi::SieveImapInstanceInterfaceManager::self()->sieveImapInstanceList().isEmpty());
+}
+
+void SieveImapInstanceInterfaceManagerTest::shouldAssignSieveImapInstanceInterface()
+{
+    KSieveUi::SieveImapInstanceInterfaceManager manager;
+    KSieveUi::SieveImapInstanceInterface *instance = new KSieveUi::SieveImapInstanceInterface();
+    manager.setSieveImapInstanceInterface(instance);
+    QVERIFY(manager.sieveImapInstanceInterface());
+    QCOMPARE(manager.sieveImapInstanceInterface(), instance);
 }
 
 QTEST_MAIN(SieveImapInstanceInterfaceManagerTest)

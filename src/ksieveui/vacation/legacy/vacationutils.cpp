@@ -24,8 +24,6 @@ See README for further information.
 #include "vacationutils.h"
 #include "vacationscriptextractor.h"
 #include "sieve-vacation.h"
-#include <KIdentityManagement/IdentityManager>
-#include <KIdentityManagement/Identity>
 
 #include <KLocalizedString>
 #include <QDate>

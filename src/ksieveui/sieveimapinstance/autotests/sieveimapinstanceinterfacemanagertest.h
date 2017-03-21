@@ -30,6 +30,7 @@ public:
     ~SieveImapInstanceInterfaceManagerTest() = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldAssignSieveImapInstanceInterface();
 };
 
 #endif // SIEVEIMAPINSTANCEINTERFACEMANAGERTEST_H
