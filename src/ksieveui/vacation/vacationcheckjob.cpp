@@ -179,6 +179,7 @@ void VacationCheckJob::getNextScript()
         mNoScriptFound = true;
         Q_EMIT scriptActive(this, QString(), false);
         qCDebug(LIBKSIEVE_LOG) << "no vacation script found :(";
+        return;
     }
     QUrl url = mUrl;
     url = url.adjusted(QUrl::RemoveFilename);
