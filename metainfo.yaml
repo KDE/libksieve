@@ -18,9 +18,6 @@ libraries:
       cmake: KF5::Sieve
       cmakename: KF5Sieve
 
-
-cmakename: KF5SieveUi
-
 public_lib: true
 group: kdepim
 
