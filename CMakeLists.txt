@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-set(PIM_VERSION "5.4.81")
+set(PIM_VERSION "5.4.90")
 
 project(libksieve VERSION ${PIM_VERSION})
 
@@ -22,13 +22,13 @@ include(ECMCoverageOption)
 
 set(LIBKSIEVE_LIB_VERSION ${PIM_VERSION})
 set(QT_REQUIRED_VERSION "5.6.0")
-set(KMIME_LIB_VERSION "5.4.80")
-set(IDENTITYMANAGEMENT_LIB_VERSION "5.4.80")
-set(KMAILTRANSPORT_LIB_VERSION "5.4.80")
-set(KPIMTEXTEDIT_LIB_VERSION "5.4.80")
-set(LIBKDEPIM_LIB_VERSION "5.4.80")
-set(PIMCOMMON_LIB_VERSION "5.4.80")
-set(KIMAP_LIB_VERSION "5.4.80")
+set(KMIME_LIB_VERSION "5.4.90")
+set(IDENTITYMANAGEMENT_LIB_VERSION "5.4.90")
+set(KMAILTRANSPORT_LIB_VERSION "5.4.90")
+set(KPIMTEXTEDIT_LIB_VERSION "5.4.90")
+set(LIBKDEPIM_LIB_VERSION "5.4.90")
+set(PIMCOMMON_LIB_VERSION "5.4.90")
+set(KIMAP_LIB_VERSION "5.4.90")
 
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
 
