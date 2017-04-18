@@ -41,12 +41,10 @@ SieveEditorWebEngineView::SieveEditorWebEngineView(QWidget *parent)
     page->settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessRemoteUrls, false);
     page->settings()->setAttribute(QWebEngineSettings::ErrorPageEnabled, false);
     page->settings()->setAttribute(QWebEngineSettings::LocalContentCanAccessFileUrls, false);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     page->settings()->setAttribute(QWebEngineSettings::ScreenCaptureEnabled, false);
     page->settings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, false);
     page->settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
     connect(profile, &QWebEngineProfile::downloadRequested, this, &SieveEditorWebEngineView::downloadRequested);
-#endif
     setPage(page);
 }
 
@@ -57,7 +55,6 @@ SieveEditorWebEngineView::~SieveEditorWebEngineView()
 
 void SieveEditorWebEngineView::downloadRequested(QWebEngineDownloadItem *download)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     const QString filename = QFileDialog::getSaveFileName(this, i18n("Save Web Page"));
     if (!filename.isEmpty()) {
         download->setSavePageFormat(QWebEngineDownloadItem::SingleHtmlSaveFormat);
@@ -66,9 +63,6 @@ void SieveEditorWebEngineView::downloadRequested(QWebEngineDownloadItem *downloa
     } else {
         download->cancel();
     }
-#else
-    Q_UNUSED(download);
-#endif
 }
 
 void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
@@ -112,7 +106,6 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
     if (act->isEnabled()) {
         menu.addAction(act);
     }
-#if QT_VERSION >= QT_VERSION_CHECK(5, 7, 0)
     act = pageAction(QWebEnginePage::SavePage);
     if (act->isEnabled()) {
         QAction *separator = new QAction(&menu);
@@ -120,7 +113,6 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
         menu.addAction(separator);
         menu.addAction(act);
     }
-#endif
     menu.exec(ev->globalPos());
 }
 
