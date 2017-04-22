@@ -39,7 +39,6 @@ VacationCreateScriptJob::VacationCreateScriptJob(QObject *parent)
     , mParseUserJob(nullptr)
     , mCreateJob(nullptr)
 {
-
 }
 
 VacationCreateScriptJob::~VacationCreateScriptJob()
@@ -156,12 +155,13 @@ void VacationCreateScriptJob::handleResult()
         return;
     }
 
-    if (mSuccess)
-        KMessageBox::information(nullptr,  mActivate
+    if (mSuccess) {
+        KMessageBox::information(nullptr, mActivate
                                  ? i18n("Sieve script installed successfully on the server \'%1\'.\n"
                                         "Out of Office reply is now active.", mServerName)
                                  : i18n("Sieve script installed successfully on the server \'%1\'.\n"
                                         "Out of Office reply has been deactivated.", mServerName));
+    }
 
     qCDebug(LIBKSIEVE_LOG) << "( ???," << mSuccess << ", ? )";
     mSieveJob = nullptr; // job deletes itself after returning from this slot!
@@ -185,7 +185,7 @@ void VacationCreateScriptJob::slotGotActiveScripts(ParseUserScriptJob *job)
         list.prepend(mUrl.fileName());
         mCreateJob = new GenerateGlobalScriptJob(mUrl, this);
         mCreateJob->addUserActiveScripts(list);
-        connect(mCreateJob, &GenerateGlobalScriptJob::success, [ = ]() {
+        connect(mCreateJob, &GenerateGlobalScriptJob::success, [=]() {
             this->slotGenerateDone();
         });
         connect(mCreateJob, &GenerateGlobalScriptJob::error, this, &VacationCreateScriptJob::slotGenerateDone);

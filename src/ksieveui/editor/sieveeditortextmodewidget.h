@@ -22,8 +22,7 @@
 #include "sieveeditorabstractwidget.h"
 #include "ksieveui_export.h"
 class QSplitter;
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class SlideContainer;
 class TextGoToLineWidget;
 class PlainTextEditFindBar;
@@ -32,8 +31,7 @@ class PlainTextEditorWidget;
 class TextToSpeechWidget;
 }
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveInfoWidget;
 class SieveTextEdit;
 class SieveEditorWarning;
@@ -140,7 +138,6 @@ private:
     SieveTemplateWidget *mSieveTemplateWidget;
     QWidget *mEditorWidget;
 };
-
 }
 
 #endif // SIEVEEDITORTEXTMODEWIDGET_H

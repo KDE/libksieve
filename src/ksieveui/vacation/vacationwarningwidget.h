@@ -22,8 +22,7 @@
 
 #include <KMessageWidget>
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class VacationWarningWidget : public KMessageWidget
 {
     Q_OBJECT

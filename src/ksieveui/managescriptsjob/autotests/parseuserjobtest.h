@@ -19,8 +19,7 @@
 #define PARSEUSERJOBTEST_H
 
 #include <QObject>
-namespace KSieveUi
-{
+namespace KSieveUi {
 class ParseUserTest : public QObject
 {
     Q_OBJECT

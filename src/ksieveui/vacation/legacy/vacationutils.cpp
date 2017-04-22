@@ -54,10 +54,7 @@ This file only contains legacy code, that can be removed if the lagacy code is n
 See README for further information.
 
 */
-bool Legacy::VacationUtils::parseScript(const QString &script, QString &messageText,
-                                        QString &subject,
-                                        int &notificationInterval, AddrSpecList &aliases,
-                                        bool &sendForSpam, QString &domainName,
+bool Legacy::VacationUtils::parseScript(const QString &script, QString &messageText, QString &subject, int &notificationInterval, AddrSpecList &aliases, bool &sendForSpam, QString &domainName,
                                         QDate &startDate, QDate &endDate)
 {
     if (script.trimmed().isEmpty()) {
@@ -107,12 +104,8 @@ This file only contains legacy code, that can be removed if the lagacy code is n
 See README for further information.
 
 */
-QString Legacy::VacationUtils::composeScript(const QString &messageText,
-        const QString &subject,
-        int notificationInterval,
-        const AddrSpecList &addrSpecs,
-        bool sendForSpam, const QString &domain,
-        const QDate &startDate, const QDate &endDate)
+QString Legacy::VacationUtils::composeScript(const QString &messageText, const QString &subject, int notificationInterval, const AddrSpecList &addrSpecs, bool sendForSpam, const QString &domain,
+                                             const QDate &startDate, const QDate &endDate)
 {
     QString addressesArgument;
     QStringList aliases;
@@ -135,10 +128,10 @@ QString Legacy::VacationUtils::composeScript(const QString &messageText,
         script += QStringLiteral("\n");
     }
 
-    if (!sendForSpam)
+    if (!sendForSpam) {
         script += QStringLiteral("if header :contains \"X-Spam-Flag\" \"YES\""
                                  " { keep; stop; }\n");  // FIXME?
-
+    }
     if (!domain.isEmpty()) { // FIXME
         script += QStringLiteral("if not address :domain :contains \"from\" \"%1\" { keep; stop; }\n").arg(domain);
     }
@@ -147,7 +140,7 @@ QString Legacy::VacationUtils::composeScript(const QString &messageText,
         script += QStringLiteral("if not allof(currentdate :value \"ge\" \"date\" \"%1\","
                                  " currentdate :value \"le\" \"date\" \"%2\")"
                                  " { keep; stop; }\n").arg(startDate.toString(Qt::ISODate),
-                                         endDate.toString(Qt::ISODate));
+                                                           endDate.toString(Qt::ISODate));
     }
 
     script += QLatin1String("vacation ");
@@ -165,4 +158,3 @@ QString Legacy::VacationUtils::composeScript(const QString &messageText,
     script += QStringLiteral("\n.\n;\n");
     return script;
 }
-

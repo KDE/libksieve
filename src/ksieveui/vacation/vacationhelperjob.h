@@ -21,13 +21,11 @@
 #include <QUrl>
 
 #include <QObject>
-namespace KManageSieve
-{
+namespace KManageSieve {
 class SieveJob;
 }
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class VacationHelperJob : public QObject
 {
     Q_OBJECT

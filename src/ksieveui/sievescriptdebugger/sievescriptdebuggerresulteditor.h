@@ -22,8 +22,7 @@
 
 #include <kpimtextedit/plaintexteditor.h>
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveScriptDebuggerResultEditor : public KPIMTextEdit::PlainTextEditor
 {
     Q_OBJECT

@@ -30,12 +30,10 @@ using namespace KSieveUi;
 CustomManageSieveWidget::CustomManageSieveWidget(QWidget *parent)
     : KSieveUi::ManageSieveWidget(parent)
 {
-
 }
 
 CustomManageSieveWidget::~CustomManageSieveWidget()
 {
-
 }
 
 bool CustomManageSieveWidget::refreshList()
@@ -53,7 +51,7 @@ bool CustomManageSieveWidget::refreshList()
         last->setIcon(0, QIcon::fromTheme(QStringLiteral("network-server")));
 
         const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(type.identifier(), false);
-        const QUrl u  = info.sieveUrl;
+        const QUrl u = info.sieveUrl;
         if (u.isEmpty()) {
             QTreeWidgetItem *item = new QTreeWidgetItem(last);
             item->setText(0, i18n("No Sieve URL configured"));

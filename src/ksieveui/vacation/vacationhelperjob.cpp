@@ -21,9 +21,9 @@
 using namespace KSieveUi;
 
 VacationHelperJob::VacationHelperJob(const QUrl &url, QObject *parent)
-    : QObject(parent),
-      mUrl(url),
-      mSieveJob(nullptr)
+    : QObject(parent)
+    , mUrl(url)
+    , mSieveJob(nullptr)
 {
 }
 
@@ -63,4 +63,3 @@ void VacationHelperJob::slotGetScriptList(KManageSieve::SieveJob *job, bool succ
         Q_EMIT canNotGetScriptList();
     }
 }
-

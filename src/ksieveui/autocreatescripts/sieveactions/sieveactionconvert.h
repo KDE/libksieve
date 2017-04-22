@@ -21,8 +21,7 @@
 
 #include "sieveaction.h"
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveActionConvert : public SieveAction
 {
     Q_OBJECT

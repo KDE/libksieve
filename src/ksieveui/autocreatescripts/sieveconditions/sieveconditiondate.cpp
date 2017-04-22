@@ -115,7 +115,7 @@ bool SieveConditionDate::setParamWidgetValue(const QDomElement &element, QWidget
             const QString tagName = e.tagName();
             if (tagName == QLatin1String("str")) {
                 if (index == 0) {
-                    headerStr   = e.text();
+                    headerStr = e.text();
                 } else if (index == 1) {
                     type = e.text();
                 } else if (index == 2) {
@@ -150,4 +150,3 @@ QUrl SieveConditionDate::href() const
 {
     return SieveEditorUtil::helpUrl(SieveEditorUtil::strToVariableName(name()));
 }
-

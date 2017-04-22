@@ -79,7 +79,6 @@ struct TestCase {
         bool boolean;
     } responses[MAX_RESPONSES];
 } testCases[] = {
-
     //
     // single commands:
     //
@@ -106,16 +105,14 @@ struct TestCase {
         "Bare hash comment",
         "#comment",
         {   { HashComment, "comment", false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
         "Bare bracket comment",
         "/*comment*/",
         {   { BracketComment, "comment", false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -123,16 +120,14 @@ struct TestCase {
         "command;",
         {   { CommandStart, "command", false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
         "Bare command - missing semicolon",
         "command",
         {   { CommandStart, "command", false },
-            { Error, "MissingSemicolonOrBlock", false }
-        }
+            { Error, "MissingSemicolonOrBlock", false }}
     },
 
     {
@@ -143,8 +138,7 @@ struct TestCase {
             { BracketComment, "comment", false },
             { CommandEnd, nullptr, false },
             { BracketComment, "comment", false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -155,8 +149,7 @@ struct TestCase {
             { HashComment, "comment", false },
             { CommandEnd, nullptr, false },
             { HashComment, "comment", false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -165,8 +158,7 @@ struct TestCase {
         {   { CommandStart, "command", false },
             { TaggedArgument, "tag", false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -174,8 +166,7 @@ struct TestCase {
         "command :tag",
         {   { CommandStart, "command", false },
             { TaggedArgument, "tag", false },
-            { Error, "MissingSemicolonOrBlock", false }
-        }
+            { Error, "MissingSemicolonOrBlock", false }}
     },
 
     {
@@ -184,8 +175,7 @@ struct TestCase {
         {   { CommandStart, "command", false },
             { StringArgument, "string", false /*quoted*/ },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -194,8 +184,7 @@ struct TestCase {
         {   { CommandStart, "command", false },
             { StringArgument, "string", true /*multiline*/ },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -204,8 +193,7 @@ struct TestCase {
         {   { CommandStart, "command", false },
             { NumberArgument, "100 ", false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -214,8 +202,7 @@ struct TestCase {
         {   { CommandStart, "command", false },
             { NumberArgument, "102400k", false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -224,8 +211,7 @@ struct TestCase {
         {   { CommandStart, "command", false },
             { NumberArgument, "104857600M", false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -234,8 +220,7 @@ struct TestCase {
         {   { CommandStart, "command", false },
             { NumberArgument, "2147483648G", false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
 #if SIZEOF_UNSIGNED_LONG == 8
@@ -252,8 +237,7 @@ struct TestCase {
         "single number argument - ULONG_MAX + 1",
         "command " ULONG_MAXP1_STRING ";",
         {   { CommandStart, "command", false },
-            { Error, "NumberOutOfRange", false }
-        }
+            { Error, "NumberOutOfRange", false }}
     },
 
     {
@@ -262,8 +246,7 @@ struct TestCase {
         {   { CommandStart, "command", false },
             { NumberArgument, ULONG_MAX_STRING " ", false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -274,8 +257,7 @@ struct TestCase {
             { StringListEntry, "string", false /*quoted*/ },
             { StringListArgumentEnd, nullptr, false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -286,8 +268,7 @@ struct TestCase {
             { StringListEntry, "string", true /*multiline*/ },
             { StringListArgumentEnd, nullptr, false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -299,8 +280,7 @@ struct TestCase {
             { StringListEntry, "string", false /*quoted*/ },
             { StringListArgumentEnd, nullptr, false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -312,8 +292,7 @@ struct TestCase {
             { StringListEntry, "string", true /*multiline*/ },
             { StringListArgumentEnd, nullptr, false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -325,8 +304,7 @@ struct TestCase {
             { StringListEntry, "string", true /*multiline*/ },
             { StringListArgumentEnd, nullptr, false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -338,8 +316,7 @@ struct TestCase {
             { StringListEntry, "string", false /*quoted*/ },
             { StringListArgumentEnd, nullptr, false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -349,8 +326,7 @@ struct TestCase {
             { TestStart, "test", false },
             { TestEnd, nullptr, false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -362,8 +338,7 @@ struct TestCase {
             { TestEnd, nullptr, false },
             { TestListEnd, nullptr, false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -377,8 +352,7 @@ struct TestCase {
             { TestEnd, nullptr, false },
             { TestListEnd, nullptr, false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -388,8 +362,7 @@ struct TestCase {
             { BlockStart, nullptr, false },
             { BlockEnd, nullptr, false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -401,8 +374,7 @@ struct TestCase {
             { CommandEnd, nullptr, false },
             { BlockEnd, nullptr, false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -416,8 +388,7 @@ struct TestCase {
             { CommandEnd, nullptr, false },
             { BlockEnd, nullptr, false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
 
     {
@@ -431,13 +402,11 @@ struct TestCase {
             { TestEnd, nullptr, false },
             { TestEnd, nullptr, false },
             { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }
-        }
+            { Finished, nullptr, false }}
     },
-
 };
 
-static const int numTestCases = sizeof testCases / sizeof * testCases;
+static const int numTestCases = sizeof testCases / sizeof *testCases;
 
 // Prints out the parse tree in XML-like format. For visual inspection
 // (manual tests).
@@ -445,91 +414,131 @@ class PrintingScriptBuilder : public KSieve::ScriptBuilder
 {
 public:
     PrintingScriptBuilder()
-        : KSieve::ScriptBuilder(), indent(0)
+        : KSieve::ScriptBuilder()
+        , indent(0)
     {
         write("<script type=\"application/sieve\">");
         ++indent;
     }
-    virtual ~PrintingScriptBuilder() {}
 
-    void taggedArgument(const QString &tag) Q_DECL_OVERRIDE {
+    virtual ~PrintingScriptBuilder()
+    {
+    }
+
+    void taggedArgument(const QString &tag) Q_DECL_OVERRIDE
+    {
         write("tag", tag);
     }
-    void stringArgument(const QString &string, bool multiLine, const QString & /*fixme*/) Q_DECL_OVERRIDE {
+
+    void stringArgument(const QString &string, bool multiLine, const QString & /*fixme*/) Q_DECL_OVERRIDE
+    {
         write(multiLine ? "string type=\"multiline\"" : "string type=\"quoted\"", string);
     }
-    void numberArgument(unsigned long number, char quantifier) Q_DECL_OVERRIDE {
+
+    void numberArgument(unsigned long number, char quantifier) Q_DECL_OVERRIDE
+    {
         const QString txt = QStringLiteral("number") + (quantifier ? QStringLiteral(" quantifier=\"%1\"").arg(quantifier) : QString());
         write(txt.toLatin1(), QString::number(number));
     }
-    void commandStart(const QString &identifier, int lineNumber) Q_DECL_OVERRIDE {
+
+    void commandStart(const QString &identifier, int lineNumber) Q_DECL_OVERRIDE
+    {
         Q_UNUSED(lineNumber);
         write("<command>");
         ++indent;
         write("identifier", identifier);
     }
-    void commandEnd(int lineNumber) Q_DECL_OVERRIDE {
+
+    void commandEnd(int lineNumber) Q_DECL_OVERRIDE
+    {
         Q_UNUSED(lineNumber);
         --indent;
         write("</command>");
     }
-    void testStart(const QString &identifier) Q_DECL_OVERRIDE {
+
+    void testStart(const QString &identifier) Q_DECL_OVERRIDE
+    {
         write("<test>");
         ++indent;
         write("identifier", identifier);
     }
-    void testEnd() Q_DECL_OVERRIDE {
+
+    void testEnd() Q_DECL_OVERRIDE
+    {
         --indent;
         write("</test>");
     }
-    void testListStart() Q_DECL_OVERRIDE {
+
+    void testListStart() Q_DECL_OVERRIDE
+    {
         write("<testlist>");
         ++indent;
     }
-    void testListEnd() Q_DECL_OVERRIDE {
+
+    void testListEnd() Q_DECL_OVERRIDE
+    {
         --indent;
         write("</testlist>");
     }
-    void blockStart(int lineNumber) Q_DECL_OVERRIDE {
+
+    void blockStart(int lineNumber) Q_DECL_OVERRIDE
+    {
         Q_UNUSED(lineNumber);
         write("<block>");
         ++indent;
     }
-    void blockEnd(int lineNumber) Q_DECL_OVERRIDE {
+
+    void blockEnd(int lineNumber) Q_DECL_OVERRIDE
+    {
         Q_UNUSED(lineNumber);
         --indent;
         write("</block>");
     }
-    void stringListArgumentStart() Q_DECL_OVERRIDE {
+
+    void stringListArgumentStart() Q_DECL_OVERRIDE
+    {
         write("<stringlist>");
         ++indent;
     }
-    void stringListArgumentEnd() Q_DECL_OVERRIDE {
+
+    void stringListArgumentEnd() Q_DECL_OVERRIDE
+    {
         --indent;
         write("</stringlist>");
     }
-    void stringListEntry(const QString &string, bool multiline, const QString &hashComment) Q_DECL_OVERRIDE {
+
+    void stringListEntry(const QString &string, bool multiline, const QString &hashComment) Q_DECL_OVERRIDE
+    {
         stringArgument(string, multiline, hashComment);
     }
-    void hashComment(const QString &comment) Q_DECL_OVERRIDE {
+
+    void hashComment(const QString &comment) Q_DECL_OVERRIDE
+    {
         write("comment type=\"hash\"", comment);
     }
-    void bracketComment(const QString &comment) Q_DECL_OVERRIDE {
+
+    void bracketComment(const QString &comment) Q_DECL_OVERRIDE
+    {
         write("comment type=\"bracket\"", comment);
     }
 
-    void lineFeed() Q_DECL_OVERRIDE {
+    void lineFeed() Q_DECL_OVERRIDE
+    {
         write("<crlf/>");
     }
 
-    void error(const KSieve::Error &error) Q_DECL_OVERRIDE {
+    void error(const KSieve::Error &error) Q_DECL_OVERRIDE
+    {
         indent = 0;
         write((QStringLiteral("Error: ") + error.asString()).toLatin1());
     }
-    void finished() Q_DECL_OVERRIDE {
+
+    void finished() Q_DECL_OVERRIDE
+    {
         --indent;
         write("</script>");
     }
+
 private:
     int indent;
     void write(const char *msg)
@@ -539,6 +548,7 @@ private:
         }
         cout << msg << endl;
     }
+
     void write(const QByteArray &key, const QString &value)
     {
         if (value.isEmpty()) {
@@ -560,104 +570,146 @@ class VerifyingScriptBuilder : public KSieve::ScriptBuilder
 {
 public:
     VerifyingScriptBuilder(const TestCase &testCase)
-        : KSieve::ScriptBuilder(),
-          mNextResponse(0), mTestCase(testCase), mOk(true)
+        : KSieve::ScriptBuilder()
+        , mNextResponse(0)
+        , mTestCase(testCase)
+        , mOk(true)
     {
     }
-    virtual ~VerifyingScriptBuilder() {}
+
+    virtual ~VerifyingScriptBuilder()
+    {
+    }
 
     bool ok() const
     {
         return mOk;
     }
 
-    void taggedArgument(const QString &tag) Q_DECL_OVERRIDE {
+    void taggedArgument(const QString &tag) Q_DECL_OVERRIDE
+    {
         checkIs(TaggedArgument);
         checkEquals(tag);
         ++mNextResponse;
     }
-    void stringArgument(const QString &string, bool multiline, const QString & /*fixme*/) Q_DECL_OVERRIDE {
+
+    void stringArgument(const QString &string, bool multiline, const QString & /*fixme*/) Q_DECL_OVERRIDE
+    {
         checkIs(StringArgument);
         checkEquals(string);
         checkEquals(multiline);
         ++mNextResponse;
     }
-    void numberArgument(unsigned long number, char quantifier) Q_DECL_OVERRIDE {
+
+    void numberArgument(unsigned long number, char quantifier) Q_DECL_OVERRIDE
+    {
         checkIs(NumberArgument);
         checkEquals(QString::number(number) + QLatin1Char(quantifier ? quantifier : ' '));
         ++mNextResponse;
     }
-    void commandStart(const QString &identifier, int lineNumber) Q_DECL_OVERRIDE {
+
+    void commandStart(const QString &identifier, int lineNumber) Q_DECL_OVERRIDE
+    {
         Q_UNUSED(lineNumber);
         checkIs(CommandStart);
         checkEquals(identifier);
         ++mNextResponse;
     }
-    void commandEnd(int lineNumber) Q_DECL_OVERRIDE {
+
+    void commandEnd(int lineNumber) Q_DECL_OVERRIDE
+    {
         Q_UNUSED(lineNumber);
         checkIs(CommandEnd);
         ++mNextResponse;
     }
-    void testStart(const QString &identifier) Q_DECL_OVERRIDE {
+
+    void testStart(const QString &identifier) Q_DECL_OVERRIDE
+    {
         checkIs(TestStart);
         checkEquals(identifier);
         ++mNextResponse;
     }
-    void testEnd() Q_DECL_OVERRIDE {
+
+    void testEnd() Q_DECL_OVERRIDE
+    {
         checkIs(TestEnd);
         ++mNextResponse;
     }
-    void testListStart() Q_DECL_OVERRIDE {
+
+    void testListStart() Q_DECL_OVERRIDE
+    {
         checkIs(TestListStart);
         ++mNextResponse;
     }
-    void testListEnd() Q_DECL_OVERRIDE {
+
+    void testListEnd() Q_DECL_OVERRIDE
+    {
         checkIs(TestListEnd);
         ++mNextResponse;
     }
-    void blockStart(int lineNumber) Q_DECL_OVERRIDE {
+
+    void blockStart(int lineNumber) Q_DECL_OVERRIDE
+    {
         Q_UNUSED(lineNumber);
         checkIs(BlockStart);
         ++mNextResponse;
     }
-    void blockEnd(int lineNumber) Q_DECL_OVERRIDE {
+
+    void blockEnd(int lineNumber) Q_DECL_OVERRIDE
+    {
         Q_UNUSED(lineNumber);
         checkIs(BlockEnd);
         ++mNextResponse;
     }
-    void stringListArgumentStart() Q_DECL_OVERRIDE {
+
+    void stringListArgumentStart() Q_DECL_OVERRIDE
+    {
         checkIs(StringListArgumentStart);
         ++mNextResponse;
     }
-    void stringListEntry(const QString &string, bool multiLine, const QString & /*fixme*/) Q_DECL_OVERRIDE {
+
+    void stringListEntry(const QString &string, bool multiLine, const QString & /*fixme*/) Q_DECL_OVERRIDE
+    {
         checkIs(StringListEntry);
         checkEquals(string);
         checkEquals(multiLine);
         ++mNextResponse;
     }
-    void stringListArgumentEnd() Q_DECL_OVERRIDE {
+
+    void stringListArgumentEnd() Q_DECL_OVERRIDE
+    {
         checkIs(StringListArgumentEnd);
         ++mNextResponse;
     }
-    void hashComment(const QString &comment) Q_DECL_OVERRIDE {
+
+    void hashComment(const QString &comment) Q_DECL_OVERRIDE
+    {
         checkIs(HashComment);
         checkEquals(comment);
         ++mNextResponse;
     }
-    void bracketComment(const QString &comment) Q_DECL_OVERRIDE {
+
+    void bracketComment(const QString &comment) Q_DECL_OVERRIDE
+    {
         checkIs(BracketComment);
         checkEquals(comment);
         ++mNextResponse;
     }
-    void lineFeed() Q_DECL_OVERRIDE {
+
+    void lineFeed() Q_DECL_OVERRIDE
+    {
         // FIXME
     }
-    void error(const KSieve::Error &error) Q_DECL_OVERRIDE {
+
+    void error(const KSieve::Error &error) Q_DECL_OVERRIDE
+    {
         checkIs(Error);
         checkEquals(QString::fromLatin1(KSieve::Error::typeToString(error.type())));
         ++mNextResponse;
     }
-    void finished() Q_DECL_OVERRIDE {
+
+    void finished() Q_DECL_OVERRIDE
+    {
         checkIs(Finished);
         //++mNextResponse (no!)
     }
@@ -687,6 +739,7 @@ private:
             mOk = false;
         }
     }
+
     void checkEquals(bool b)
     {
         if (b != currentResponse().boolean) {
@@ -703,9 +756,7 @@ private:
 
 int main(int argc, char *argv[])
 {
-
     if (argc == 2) {   // manual test
-
         const char *scursor = argv[1];
         const char *const send = argv[1] + qstrlen(argv[1]);
 
@@ -717,7 +768,6 @@ int main(int argc, char *argv[])
         } else {
             cout << "bad" << endl;
         }
-
     } else if (argc == 1) {   // automated test
         bool success = true;
         for (int i = 0; i < numTestCases; ++i) {
@@ -727,13 +777,13 @@ int main(int argc, char *argv[])
             Parser p(t.script, t.script + qstrlen(t.script));
             p.setScriptBuilder(&v);
             const bool ok = p.parse();
-            if (v.ok())
+            if (v.ok()) {
                 if (ok) {
                     cerr << " ok";
                 } else {
                     cerr << " xfail";
                 }
-            else {
+            } else {
                 success = false;
             }
             cerr << endl;
@@ -741,7 +791,6 @@ int main(int argc, char *argv[])
         if (!success) {
             exit(1);
         }
-
     } else { // usage error
         cerr << "usage: parsertest [ <string> ]" << endl;
         exit(1);

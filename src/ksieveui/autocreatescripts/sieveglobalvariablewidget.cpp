@@ -47,7 +47,6 @@ SieveGlobalVariableActionWidget::SieveGlobalVariableActionWidget(QWidget *parent
 
 SieveGlobalVariableActionWidget::~SieveGlobalVariableActionWidget()
 {
-
 }
 
 void SieveGlobalVariableActionWidget::generatedScript(QString &script)
@@ -174,7 +173,8 @@ SieveGlobalVariableWidget::~SieveGlobalVariableWidget()
 
 void SieveGlobalVariableWidget::slotHelp()
 {
-    const QString help = i18n("A variable has global scope in all scripts that have declared it with the \"global\" command.  If a script uses that variable name without declaring it global, the name specifies a separate, non-global variable within that script.");
+    const QString help = i18n(
+        "A variable has global scope in all scripts that have declared it with the \"global\" command.  If a script uses that variable name without declaring it global, the name specifies a separate, non-global variable within that script.");
     const QUrl href = KSieveUi::SieveEditorUtil::helpUrl(KSieveUi::SieveEditorUtil::GlobalVariable);
     const QString fullWhatsThis = AutoCreateScriptUtil::createFullWhatsThis(help, href.toString());
     QWhatsThis::showText(QCursor::pos(), fullWhatsThis, mHelpButton);
@@ -210,7 +210,6 @@ SieveGlobalVariableLister::SieveGlobalVariableLister(QWidget *parent)
 
 SieveGlobalVariableLister::~SieveGlobalVariableLister()
 {
-
 }
 
 void SieveGlobalVariableLister::slotAddWidget(QWidget *w)
@@ -292,7 +291,7 @@ void SieveGlobalVariableLister::loadScript(const QDomElement &element, QString &
     w->loadScript(element, error);
 }
 
-void SieveGlobalVariableLister::loadSetVariable(const QDomElement &element, QString &/*error*/)
+void SieveGlobalVariableLister::loadSetVariable(const QDomElement &element, QString & /*error*/)
 {
     QString variableName;
     QString variableValue;
@@ -326,4 +325,3 @@ void SieveGlobalVariableLister::loadSetVariable(const QDomElement &element, QStr
         }
     }
 }
-

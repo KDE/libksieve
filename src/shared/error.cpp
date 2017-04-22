@@ -36,13 +36,12 @@
 
 #include <climits> // UINT_MAX
 
-namespace KSieve
-{
-
+namespace KSieve {
 const char *Error::typeToString(Type t)
 {
     switch (t) {
-#define CASE(x) case x: return #x
+#define CASE(x) case x: \
+    return #x
         CASE(None);
         CASE(Custom);
 
@@ -100,7 +99,6 @@ const char *Error::typeToString(Type t)
 
 QString Error::asString() const
 {
-
     QString err;
     switch (type()) {
     case None:
@@ -242,6 +240,4 @@ QString Error::asString() const
 
     return err;
 }
-
 } // namespace KSieve
-

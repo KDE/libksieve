@@ -27,13 +27,11 @@
 
 #include <QUrl>
 
-namespace KManageSieve
-{
+namespace KManageSieve {
 class SieveJob;
 }
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class CheckKolabKep14SupportJobPrivate;
 
 /**

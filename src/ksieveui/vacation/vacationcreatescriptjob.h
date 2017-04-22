@@ -22,13 +22,11 @@
 
 #include <QUrl>
 
-namespace KManageSieve
-{
+namespace KManageSieve {
 class SieveJob;
 }
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class ParseUserScriptJob;
 class GenerateGlobalScriptJob;
 class VacationCreateScriptJob : public QObject

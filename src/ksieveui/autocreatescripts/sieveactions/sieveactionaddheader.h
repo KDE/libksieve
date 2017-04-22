@@ -20,8 +20,7 @@
 #define SIEVEACTIONADDHEADER_H
 
 #include "sieveactionabstracteditheader.h"
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveActionAddHeader : public SieveActionAbstractEditHeader
 {
     Q_OBJECT

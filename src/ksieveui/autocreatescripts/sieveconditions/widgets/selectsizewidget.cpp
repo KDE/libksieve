@@ -46,7 +46,6 @@ SelectSizeWidget::SelectSizeWidget(QWidget *parent)
 
 SelectSizeWidget::~SelectSizeWidget()
 {
-
 }
 
 QString SelectSizeWidget::code() const
@@ -67,4 +66,3 @@ void SelectSizeWidget::setCode(qlonglong value, const QString &identifier, const
     mSelectSizeType->setCode(identifier, name, error);
     mSpinBoxSize->setValue(value);
 }
-

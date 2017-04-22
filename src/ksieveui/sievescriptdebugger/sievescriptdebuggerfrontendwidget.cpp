@@ -42,8 +42,8 @@
 using namespace KSieveUi;
 
 SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *parent)
-    : QWidget(parent),
-      mProcess(nullptr)
+    : QWidget(parent)
+    , mProcess(nullptr)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->setMargin(0);
@@ -120,7 +120,6 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
 
 SieveScriptDebuggerFrontEndWidget::~SieveScriptDebuggerFrontEndWidget()
 {
-
 }
 
 void SieveScriptDebuggerFrontEndWidget::setSplitterSizes(const QList<int> &sizes)
@@ -229,4 +228,3 @@ bool SieveScriptDebuggerFrontEndWidget::canAccept() const
     mSieveScriptDebuggerWarning->hide();
     return true;
 }
-

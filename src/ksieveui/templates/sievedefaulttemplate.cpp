@@ -92,4 +92,3 @@ QVector<PimCommon::defaultTemplate> KSieveUi::SieveDefaultTemplate::defaultTempl
 
     return lst;
 }
-

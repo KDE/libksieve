@@ -47,7 +47,8 @@ using std::endl;
 static const char *token2string(Lexer::Token t)
 {
     switch (t) {
-#define CASE(x) case Lexer::x: return #x
+#define CASE(x) case Lexer::x: \
+    return #x
         CASE(None);
         CASE(HashComment);
         CASE(BracketComment);
@@ -269,8 +270,7 @@ static const TestCase testcases[] = {
         {   { Lexer::Special, "{" }, { Lexer::Special, "}" },
             { Lexer::Special, "[" }, { Lexer::Special, "]" },
             { Lexer::Special, "(" }, { Lexer::Special, ")" },
-            { Lexer::Special, ";" }, { Lexer::Special, "," }, { Lexer::None, nullptr }
-        },
+            { Lexer::Special, ";" }, { Lexer::Special, "," }, { Lexer::None, nullptr }},
         Error::None, 0, 0
     },
     //
@@ -438,24 +438,20 @@ static const TestCase testcases[] = {
             { Lexer::LineFeeds, "1" },
             { Lexer::Identifier, "bar" },
             { Lexer::LineFeeds, "1" },
-            { Lexer::None, nullptr }
-        },
+            { Lexer::None, nullptr }},
         Error::None, 0, 0
     },
 
     //
     // Whitespace / token separation: invalid
     //
-
 };
 
-static const int numTestCases = sizeof testcases / sizeof * testcases;
+static const int numTestCases = sizeof testcases / sizeof *testcases;
 
 int main(int argc, char *argv[])
 {
-
     if (argc == 2) {   // manual test
-
         const char *scursor = argv[1];
         const char *const send = argv[1] + qstrlen(argv[1]);
 
@@ -471,13 +467,13 @@ int main(int argc, char *argv[])
                      << lexer.error().line() << "," << lexer.error().column()
                      << ")" << endl;
                 break;
-            } else
+            } else {
                 cout << "Got " << token2string(token) << ": \""
                      << result.toUtf8().data() << "\" at ("
                      << lexer.line() << "," << lexer.column() << ")" << endl;
+            }
         }
         cout << "End" << endl;
-
     } else if (argc == 1) {   // automated test
         bool success = true;
         for (int i = 0; i < numTestCases; ++i) {
@@ -521,8 +517,8 @@ int main(int argc, char *argv[])
                 if (error) {
                     goto ErrorOut;
                 }
-                if (t.expected[j].token == Lexer::None &&
-                        t.expected[j].result == nullptr) {
+                if (t.expected[j].token == Lexer::None
+                    && t.expected[j].result == nullptr) {
                     break;
                 }
             }
@@ -530,7 +526,7 @@ int main(int argc, char *argv[])
                 ok = false;
                 cerr << " premature end of expected token list";
             }
-        ErrorOut:
+ErrorOut:
             if (ok) {
                 cerr << " ok";
             }

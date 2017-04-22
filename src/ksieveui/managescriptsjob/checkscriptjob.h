@@ -21,12 +21,10 @@
 #include <QObject>
 #include <QUrl>
 #include "ksieveui_export.h"
-namespace KManageSieve
-{
+namespace KManageSieve {
 class SieveJob;
 }
-namespace KSieveUi
-{
+namespace KSieveUi {
 class CheckScriptJobPrivate;
 class KSIEVEUI_EXPORT CheckScriptJob : public QObject
 {

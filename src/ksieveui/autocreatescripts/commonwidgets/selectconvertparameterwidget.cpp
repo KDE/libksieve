@@ -25,8 +25,7 @@
 #include <QSpinBox>
 #include "libksieve_debug.h"
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 SelectConvertParameterWidget::SelectConvertParameterWidget(QWidget *parent)
     : QWidget(parent)
 {
@@ -92,6 +91,4 @@ void SelectConvertParameterWidget::initialize()
     connect(mHeight, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &SelectConvertParameterWidget::valueChanged);
     setLayout(hbox);
 }
-
 }
-

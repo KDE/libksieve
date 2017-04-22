@@ -42,9 +42,7 @@
 #include <limits.h> // ULONG_MAX
 #include <ctype.h> // isdigit
 
-namespace KSieve
-{
-
+namespace KSieve {
 //
 //
 // Parser Bridge implementation
@@ -86,7 +84,6 @@ bool Parser::parse()
     assert(i);
     return i->parse();
 }
-
 }
 
 static inline unsigned long factorForQuantifier(char ch)
@@ -113,9 +110,7 @@ static inline bool willOverflowULong(unsigned long result, unsigned long add)
     return result > maxULongByTen || ULONG_MAX - 10 * result < add;
 }
 
-namespace KSieve
-{
-
+namespace KSieve {
 //
 //
 // Parser Implementation
@@ -123,25 +118,24 @@ namespace KSieve
 //
 
 Parser::Impl::Impl(const char *scursor, const char *const send, int options)
-    : mToken(Lexer::None),
-      lexer(scursor, send, options),
-      mBuilder(nullptr)
+    : mToken(Lexer::None)
+    , lexer(scursor, send, options)
+    , mBuilder(nullptr)
 {
-
 }
 
 bool Parser::Impl::isStringToken() const
 {
-    return token() == Lexer::QuotedString ||
-           token() == Lexer::MultiLineString;
+    return token() == Lexer::QuotedString
+           || token() == Lexer::MultiLineString;
 }
 
 bool Parser::Impl::isArgumentToken() const
 {
-    return isStringToken() ||
-           token() == Lexer::Number ||
-           token() == Lexer::Tag ||
-           (token() == Lexer::Special && mTokenValue == QLatin1String("["));
+    return isStringToken()
+           || token() == Lexer::Number
+           || token() == Lexer::Tag
+           || (token() == Lexer::Special && mTokenValue == QLatin1String("["));
 }
 
 bool Parser::Impl::obtainToken()
@@ -167,16 +161,17 @@ bool Parser::Impl::obtainToken()
             consumeToken();
             break;
         case Lexer::LineFeeds:
-            for (unsigned int i = 0, end = tokenValue().toUInt(); i < end; ++i)
-                if (scriptBuilder())   // better check every iteration, b/c
+            for (unsigned int i = 0, end = tokenValue().toUInt(); i < end; ++i) {
+                if (scriptBuilder()) { // better check every iteration, b/c
                     // we call out to ScriptBuilder,
                     // where nasty things might happen!
-                {
                     scriptBuilder()->lineFeed();
                 }
+            }
             consumeToken();
             break;
-        default:; // make compiler happy
+        default:
+            ;     // make compiler happy
         }
     }
     if (lexer.error() && scriptBuilder()) {
@@ -691,7 +686,8 @@ bool Parser::Impl::parseNumber()
             makeError(Error::NumberOutOfRange);
             return false;
         } else {
-            result *= 10; result += digitValue;
+            result *= 10;
+            result += digitValue;
         }
     }
 
@@ -714,5 +710,4 @@ bool Parser::Impl::parseNumber()
     consumeToken();
     return true;
 }
-
 } // namespace KSieve

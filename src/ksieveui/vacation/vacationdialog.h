@@ -18,21 +18,18 @@
 
 #include <QDialog>
 
-template <typename T> class QList;
+template<typename T> class QList;
 class QDate;
 class QTime;
 
-namespace KMime
-{
-namespace Types
-{
+namespace KMime {
+namespace Types {
 struct AddrSpec;
 typedef QVector<AddrSpec> AddrSpecList;
 }
 }
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class VacationEditWidget;
 class VacationDialog : public QDialog
 {
@@ -100,7 +97,6 @@ private:
 
     VacationEditWidget *mVacationEditWidget;
 };
-
 }
 
 #endif

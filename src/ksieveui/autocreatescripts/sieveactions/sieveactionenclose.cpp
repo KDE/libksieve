@@ -161,4 +161,3 @@ QUrl SieveActionEnclose::href() const
 {
     return SieveEditorUtil::helpUrl(SieveEditorUtil::strToVariableName(name()));
 }
-

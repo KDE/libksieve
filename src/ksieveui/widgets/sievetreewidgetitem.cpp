@@ -23,9 +23,9 @@
 
 using namespace KSieveUi;
 SieveTreeWidgetProgress::SieveTreeWidgetProgress(SieveTreeWidgetItem *item, QObject *parent)
-    : QObject(parent),
-      mProgressCount(0),
-      mItem(item)
+    : QObject(parent)
+    , mProgressCount(0)
+    , mItem(item)
 {
     KIconLoader loader;
     mProgressPix = loader.loadPixmapSequence(QStringLiteral("process-working"), KIconLoader::SizeSmallMedium);
@@ -68,8 +68,8 @@ public:
     SieveTreeWidgetItemPrivate()
         : mProgress(nullptr)
     {
-
     }
+
     ~SieveTreeWidgetItemPrivate()
     {
         delete mProgress;
@@ -79,8 +79,8 @@ public:
 };
 
 SieveTreeWidgetItem::SieveTreeWidgetItem(QTreeWidget *treeWidget, QTreeWidgetItem *item)
-    : QTreeWidgetItem(treeWidget, item),
-      d(new KSieveUi::SieveTreeWidgetItemPrivate)
+    : QTreeWidgetItem(treeWidget, item)
+    , d(new KSieveUi::SieveTreeWidgetItemPrivate)
 {
     d->mProgress = new SieveTreeWidgetProgress(this);
 }
@@ -109,4 +109,3 @@ void SieveTreeWidgetItem::setDefaultIcon()
 {
     setIcon(0, QIcon::fromTheme(QStringLiteral("network-server")));
 }
-

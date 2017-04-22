@@ -24,8 +24,7 @@
 #include <QList>
 
 class QTextDocument;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class XMLPrintingSyntaxHighLighter : public KPIMTextEdit::SyntaxHighlighterBase
 {
     Q_OBJECT

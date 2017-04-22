@@ -155,12 +155,13 @@ bool SieveConditionHasFlag::setParamWidgetValue(const QDomElement &element, QWid
         node = node.nextSibling();
     }
     switch (strList.count()) {
-    case 1: {
+    case 1:
+    {
         QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
         value->setText(strList.at(0));
         break;
     }
-    case 2: {
+    case 2:
         if (hasVariableSupport) {
             QLineEdit *variableName = w->findChild<QLineEdit *>(QStringLiteral("variablename"));
             variableName->setText(strList.at(0));
@@ -170,7 +171,6 @@ bool SieveConditionHasFlag::setParamWidgetValue(const QDomElement &element, QWid
             qCDebug(LIBKSIEVE_LOG) << " SieveConditionHasFlag has not variable support";
         }
         break;
-    }
     default:
         qCDebug(LIBKSIEVE_LOG) << " SieveConditionHasFlag::setParamWidgetValue str list count not correct :" << strList.count();
         break;
@@ -182,4 +182,3 @@ QUrl SieveConditionHasFlag::href() const
 {
     return SieveEditorUtil::helpUrl(SieveEditorUtil::strToVariableName(name()));
 }
-

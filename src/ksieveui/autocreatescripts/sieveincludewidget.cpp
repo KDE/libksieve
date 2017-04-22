@@ -93,8 +93,8 @@ void SieveIncludeActionWidget::loadScript(const QDomElement &element, QString &e
             const QString tagName = e.tagName();
             if (tagName == QLatin1String("tag")) {
                 const QString tagValue = e.text();
-                if (tagValue == QLatin1String("personal") ||
-                        tagValue == QLatin1String("global")) {
+                if (tagValue == QLatin1String("personal")
+                    || tagValue == QLatin1String("global")) {
                     mLocation->setCode(AutoCreateScriptUtil::tagValue(tagValue), error);
                 } else if (tagValue == QLatin1String("optional")) {
                     mOptional->setChecked(true);
@@ -215,7 +215,8 @@ SieveIncludeWidget::~SieveIncludeWidget()
 
 void SieveIncludeWidget::slotHelp()
 {
-    const QString help = i18n("The \"include\" command takes an optional \"location\" parameter, an optional \":once\" parameter, an optional \":optional\" parameter, and a single string argument representing the name of the script to include for processing at that point.");
+    const QString help = i18n(
+        "The \"include\" command takes an optional \"location\" parameter, an optional \":once\" parameter, an optional \":optional\" parameter, and a single string argument representing the name of the script to include for processing at that point.");
     const QString href = QStringLiteral("http://tools.ietf.org/html/rfc6609#page-4");
     const QString fullWhatsThis = AutoCreateScriptUtil::createFullWhatsThis(help, href);
     QWhatsThis::showText(QCursor::pos(), fullWhatsThis, mHelpButton);
@@ -246,7 +247,6 @@ SieveIncludeWidgetLister::SieveIncludeWidgetLister(QWidget *parent)
 
 SieveIncludeWidgetLister::~SieveIncludeWidgetLister()
 {
-
 }
 
 void SieveIncludeWidgetLister::slotAddWidget(QWidget *w)
@@ -331,4 +331,3 @@ void SieveIncludeWidgetLister::loadScript(const QDomElement &element, QString &e
     }
     w->loadScript(element, error);
 }
-

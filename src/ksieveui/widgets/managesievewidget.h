@@ -26,13 +26,11 @@
 
 class QTreeWidgetItem;
 
-namespace KManageSieve
-{
+namespace KManageSieve {
 class SieveJob;
 }
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveImapAccountSettings;
 class ManageSieveTreeView;
 class ManageSieveWidgetPrivate;

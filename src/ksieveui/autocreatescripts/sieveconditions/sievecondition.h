@@ -23,8 +23,7 @@
 #include <QObject>
 #include <QUrl>
 class QDomElement;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveEditorGraphicalModeWidget;
 class SieveCondition : public QObject
 {

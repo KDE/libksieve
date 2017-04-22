@@ -17,7 +17,6 @@
 
 #include "sieveinfowidget.h"
 
-
 #include <KLocalizedString>
 
 #include <QHBoxLayout>
@@ -37,7 +36,6 @@ SieveInfoWidget::SieveInfoWidget(QWidget *parent)
 
 SieveInfoWidget::~SieveInfoWidget()
 {
-
 }
 
 void SieveInfoWidget::setServerInfo(QStringList serverInfos)
@@ -50,4 +48,3 @@ void SieveInfoWidget::setServerInfo(QStringList serverInfos)
     result += QLatin1String("</ul></qt>");
     mInfo->setHtml(result);
 }
-

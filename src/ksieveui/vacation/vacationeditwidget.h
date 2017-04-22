@@ -36,24 +36,20 @@ class KDateComboBox;
 
 class QDate;
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class PlainTextEditorWidget;
 }
 
 class QCheckBox;
 
-namespace KMime
-{
-namespace Types
-{
+namespace KMime {
+namespace Types {
 struct AddrSpec;
 typedef QVector<AddrSpec> AddrSpecList;
 }
 }
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class VacationEditWidget : public QWidget
 {
     Q_OBJECT

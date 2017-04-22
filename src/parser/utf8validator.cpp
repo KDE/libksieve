@@ -56,7 +56,7 @@ static inline bool isUtf8TripleIndicator(unsigned char ch)
 
 static inline bool isUtf8OverlongTriple(unsigned char ch1, unsigned char ch2)
 {
-    return (ch1 & 0xFF) == 0xE0  && (ch2 & 0xE0) == 0x80;
+    return (ch1 & 0xFF) == 0xE0 && (ch2 & 0xE0) == 0x80;
 }
 
 static inline bool isUtf8QuartetIndicator(unsigned char ch)
@@ -66,7 +66,7 @@ static inline bool isUtf8QuartetIndicator(unsigned char ch)
 
 static inline bool isUtf8OverlongQuartet(unsigned char ch1, unsigned char ch2)
 {
-    return (ch1 & 0xFF) == 0xF0  && (ch2 & 0xF0) == 0x80;
+    return (ch1 & 0xFF) == 0xF0 && (ch2 & 0xF0) == 0x80;
 }
 
 static inline bool isUtf8QuintetIndicator(unsigned char ch)
@@ -76,7 +76,7 @@ static inline bool isUtf8QuintetIndicator(unsigned char ch)
 
 static inline bool isUtf8OverlongQuintet(unsigned char ch1, unsigned char ch2)
 {
-    return (ch1 & 0xFF) == 0xF8  && (ch2 & 0xF8) == 0x80;
+    return (ch1 & 0xFF) == 0xF8 && (ch2 & 0xF8) == 0x80;
 }
 
 static inline bool isUtf8SextetIndicator(unsigned char ch)
@@ -86,7 +86,7 @@ static inline bool isUtf8SextetIndicator(unsigned char ch)
 
 static inline bool isUtf8OverlongSextet(unsigned char ch1, unsigned char ch2)
 {
-    return (ch1 & 0xFF) == 0xFC  && (ch2 & 0xFC) == 0x80;
+    return (ch1 & 0xFF) == 0xFC && (ch2 & 0xFC) == 0x80;
 }
 
 static inline bool isUtf8Continuation(unsigned char ch)
@@ -130,8 +130,8 @@ bool KSieve::isValidUtf8(const char *s, unsigned int len)
             if (isUtf8OverlongQuartet(ch, s[i + 1])) { // not minimally encoded
                 return false;
             }
-            if (!isUtf8Continuation(s[i + 2]) ||
-                    !isUtf8Continuation(s[i + 3])) { // not followed by 2x 10xx xxxx
+            if (!isUtf8Continuation(s[i + 2])
+                || !isUtf8Continuation(s[i + 3])) {  // not followed by 2x 10xx xxxx
                 return false;
             }
             i += 3;
@@ -142,9 +142,9 @@ bool KSieve::isValidUtf8(const char *s, unsigned int len)
             if (isUtf8OverlongQuintet(ch, s[i + 1])) { // not minimally encoded
                 return false;
             }
-            if (!isUtf8Continuation(s[i + 2]) ||
-                    !isUtf8Continuation(s[i + 3]) ||
-                    !isUtf8Continuation(s[i + 4])) { // not followed by 3x 10xx xxxx
+            if (!isUtf8Continuation(s[i + 2])
+                || !isUtf8Continuation(s[i + 3])
+                || !isUtf8Continuation(s[i + 4])) {  // not followed by 3x 10xx xxxx
                 return false;
             }
             i += 4;
@@ -155,10 +155,10 @@ bool KSieve::isValidUtf8(const char *s, unsigned int len)
             if (isUtf8OverlongSextet(ch, s[i + 1])) { // not minimally encoded
                 return false;
             }
-            if (!isUtf8Continuation(s[i + 2]) ||
-                    !isUtf8Continuation(s[i + 3]) ||
-                    !isUtf8Continuation(s[i + 4]) ||
-                    !isUtf8Continuation(s[i + 5])) { // not followed by 4x 10xx xxxx
+            if (!isUtf8Continuation(s[i + 2])
+                || !isUtf8Continuation(s[i + 3])
+                || !isUtf8Continuation(s[i + 4])
+                || !isUtf8Continuation(s[i + 5])) {  // not followed by 4x 10xx xxxx
                 return false;
             }
             i += 5;

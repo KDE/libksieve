@@ -20,8 +20,7 @@
 #define SIEVEACTIONSETFLAGS_H
 
 #include "sieveactionabstractflags.h"
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveActionSetFlags : public SieveActionAbstractFlags
 {
     Q_OBJECT

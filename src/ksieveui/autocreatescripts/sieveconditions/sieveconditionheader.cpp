@@ -137,4 +137,3 @@ bool SieveConditionHeader::setParamWidgetValue(const QDomElement &element, QWidg
     }
     return true;
 }
-

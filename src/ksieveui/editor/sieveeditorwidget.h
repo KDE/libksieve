@@ -27,8 +27,7 @@
 class QStackedWidget;
 class QLineEdit;
 class QAction;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveImapAccountSettings;
 class SieveEditorTextModeWidget;
 class SieveEditorGraphicalModeWidget;
@@ -145,7 +144,6 @@ private:
     EditorMode mMode;
     bool mModified;
 };
-
 }
 
 #endif // SIEVEEDITORWIDGET_H

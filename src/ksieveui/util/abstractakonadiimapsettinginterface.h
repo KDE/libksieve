@@ -22,8 +22,7 @@
 
 #include "ksieveui_private_export.h"
 #include <QString>
-namespace KSieveUi
-{
+namespace KSieveUi {
 class KSIEVEUI_TESTS_EXPORT AbstractAkonadiImapSettingInterface
 {
 public:

@@ -24,8 +24,7 @@
 #include <QObject>
 #include <memory>
 class OrgKdeAkonadiImapSettingsInterface;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class AkonadiImapSettingInterface : public KSieveUi::AbstractAkonadiImapSettingInterface
 {
 public:

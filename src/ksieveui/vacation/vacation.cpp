@@ -28,11 +28,11 @@
 using namespace KSieveUi;
 
 Vacation::Vacation(QObject *parent, bool checkOnly, const QUrl &url)
-    : QObject(parent),
-      mSieveJob(nullptr),
-      mDialog(nullptr),
-      mWasActive(false),
-      mCheckOnly(checkOnly)
+    : QObject(parent)
+    , mSieveJob(nullptr)
+    , mDialog(nullptr)
+    , mWasActive(false)
+    , mCheckOnly(checkOnly)
 {
     if (url.isEmpty()) {
         mUrl = findURL(mServerName);
@@ -77,7 +77,7 @@ QUrl Vacation::findURL(QString &serverName) const
         }
 
         const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(instance.identifier());
-        const QUrl url  = info.sieveUrl;
+        const QUrl url = info.sieveUrl;
         if (!url.isEmpty()) {
             serverName = instance.name();
             return url;
@@ -87,8 +87,7 @@ QUrl Vacation::findURL(QString &serverName) const
     return QUrl();
 }
 
-void Vacation::slotGetResult(KManageSieve::SieveJob *job, bool success,
-                             const QString &script, bool active)
+void Vacation::slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool active)
 {
     qCDebug(LIBKSIEVE_LOG) << success
                            << ", ?," << active << ")" << endl
@@ -96,8 +95,8 @@ void Vacation::slotGetResult(KManageSieve::SieveJob *job, bool success,
                            << script;
     mSieveJob = nullptr; // job deletes itself after returning from this slot!
 
-    if (!mCheckOnly && mUrl.scheme() == QLatin1String("sieve") &&
-            !job->sieveCapabilities().contains(QStringLiteral("vacation"))) {
+    if (!mCheckOnly && mUrl.scheme() == QLatin1String("sieve")
+        && !job->sieveCapabilities().contains(QStringLiteral("vacation"))) {
         KMessageBox::sorry(nullptr, i18n("Your server did not list \"vacation\" in "
                                          "its list of supported Sieve extensions;\n"
                                          "without it, KMail cannot install out-of-"
@@ -120,7 +119,7 @@ void Vacation::slotGetResult(KManageSieve::SieveJob *job, bool success,
 
     KSieveUi::VacationUtils::Vacation vacation = KSieveUi::VacationUtils::parseScript(script);
 
-    if (!mCheckOnly && (!success || (!vacation.isValid()  && !script.trimmed().isEmpty()))) {
+    if (!mCheckOnly && (!success || (!vacation.isValid() && !script.trimmed().isEmpty()))) {
         KMessageBox::information(nullptr, i18n("Someone (probably you) changed the "
                                                "vacation script on the server.\n"
                                                "KMail is no longer able to determine "
@@ -155,10 +154,10 @@ void Vacation::slotGetResult(KManageSieve::SieveJob *job, bool success,
     Q_EMIT scriptActive(mWasActive, mServerName);
     if (mCheckOnly && mWasActive) {
         if (KMessageBox::questionYesNo(nullptr, i18n("There is still an active out-of-office reply configured.\n"
-                                       "Do you want to edit it?"), i18n("Out-of-office reply still active"),
+                                                     "Do you want to edit it?"), i18n("Out-of-office reply still active"),
                                        KGuiItem(i18n("Edit"), QStringLiteral("document-properties")),
                                        KGuiItem(i18n("Ignore"), QStringLiteral("dialog-cancel")))
-                == KMessageBox::Yes) {
+            == KMessageBox::Yes) {
             Q_EMIT requestEditVacation();
         }
     }
@@ -225,12 +224,13 @@ void Vacation::slotPutInactiveResult(KManageSieve::SieveJob *job, bool success)
 
 void Vacation::handlePutResult(KManageSieve::SieveJob *, bool success, bool activated)
 {
-    if (success)
+    if (success) {
         KMessageBox::information(nullptr, activated
                                  ? i18n("Sieve script installed successfully on the server.\n"
                                         "Out of Office reply is now active.")
                                  : i18n("Sieve script installed successfully on the server.\n"
                                         "Out of Office reply has been deactivated."));
+    }
 
     qCDebug(LIBKSIEVE_LOG) << "( ???," << success << ", ? )";
     mSieveJob = nullptr; // job deletes itself after returning from this slot!
@@ -246,4 +246,3 @@ void Vacation::showVacationDialog()
         mDialog->activateWindow();
     }
 }
-

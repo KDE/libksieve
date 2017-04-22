@@ -20,8 +20,7 @@
 
 #include <kpimtextedit/plaintextsyntaxspellcheckinghighlighter.h>
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveTextEdit;
 class SieveSyntaxSpellCheckingHighlighter : public KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter
 {

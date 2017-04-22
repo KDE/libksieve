@@ -52,4 +52,3 @@ void ManageSieveTreeView::setNetworkDown(bool state)
     }
     update();
 }
-

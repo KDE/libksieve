@@ -120,7 +120,7 @@ bool SieveActionVacation::setParamWidgetValue(const QDomElement &element, QWidge
                     unknowTagValue(tagValue, error);
                     qCDebug(LIBKSIEVE_LOG) << "SieveActionVacation::setParamWidgetValue unknown tagValue :" << tagValue;
                 }
-            } else if (tagName == QLatin1String("num"))  {
+            } else if (tagName == QLatin1String("num")) {
                 QSpinBox *day = w->findChild<QSpinBox *>(QStringLiteral("day"));
                 day->setValue(e.text().toInt());
             } else if (tagName == QLatin1String("str")) {
@@ -141,7 +141,6 @@ bool SieveActionVacation::setParamWidgetValue(const QDomElement &element, QWidge
         node = node.nextSibling();
     }
     return true;
-
 }
 
 QString SieveActionVacation::code(QWidget *w) const
@@ -202,9 +201,11 @@ QStringList SieveActionVacation::needRequires(QWidget *) const
 
 QString SieveActionVacation::help() const
 {
-    QString helpStr = i18n("The \"vacation\" action implements a vacation autoresponder similar to the vacation command available under many versions of Unix. Its purpose is to provide correspondents with notification that the user is away for an extended period of time and that they should not expect quick responses.");
+    QString helpStr = i18n(
+        "The \"vacation\" action implements a vacation autoresponder similar to the vacation command available under many versions of Unix. Its purpose is to provide correspondents with notification that the user is away for an extended period of time and that they should not expect quick responses.");
     if (mHasVacationSecondsSupport) {
-        helpStr = QLatin1Char('\n') + i18n("Through the \":days\" parameter, it limits the number of auto-replies to the same sender to one per [n] days, for a specified number of days. But there are cases when one needs more granularity, if one would like to generate \"vacation\" replies more frequently.");
+        helpStr = QLatin1Char('\n') + i18n(
+            "Through the \":days\" parameter, it limits the number of auto-replies to the same sender to one per [n] days, for a specified number of days. But there are cases when one needs more granularity, if one would like to generate \"vacation\" replies more frequently.");
         helpStr += QLatin1Char('\n') + i18n("This extension defines a \":seconds\" parameter to provide more granularity for such situations.");
     }
     return helpStr;

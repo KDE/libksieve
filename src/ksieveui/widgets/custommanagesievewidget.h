@@ -20,8 +20,7 @@
 
 #include <widgets/managesievewidget.h>
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class CustomManageSieveWidget : public KSieveUi::ManageSieveWidget
 {
     Q_OBJECT

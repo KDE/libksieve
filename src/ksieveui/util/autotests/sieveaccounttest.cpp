@@ -25,12 +25,10 @@
 SieveAccountTest::SieveAccountTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 SieveAccountTest::~SieveAccountTest()
 {
-
 }
 
 void SieveAccountTest::shouldHaveDefaultValue()

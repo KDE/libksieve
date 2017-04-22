@@ -65,12 +65,14 @@ static void append_lf2crlf(QByteArray &out, const QByteArray &in)
 void SieveJob::Private::run(Session *session)
 {
     switch (mCommands.top()) {
-    case Get: {
+    case Get:
+    {
         const QString filename = mUrl.fileName(/*QUrl::ObeyTrailingSlash*/);
         session->sendData("GETSCRIPT \"" + filename.toUtf8() + "\"");
         break;
     }
-    case Put: {
+    case Put:
+    {
         const QString filename = mUrl.fileName(/*QUrl::ObeyTrailingSlash*/);
         QByteArray encodedData;
         append_lf2crlf(encodedData, mScript.toUtf8());
@@ -78,7 +80,8 @@ void SieveJob::Private::run(Session *session)
         session->sendData(encodedData);
         break;
     }
-    case Activate: {
+    case Activate:
+    {
         const QString filename = mUrl.fileName(/*QUrl::ObeyTrailingSlash*/);
         session->sendData("SETACTIVE \"" + filename.toUtf8() + "\"");
         break;
@@ -90,18 +93,21 @@ void SieveJob::Private::run(Session *session)
     case SearchActive:
         session->sendData("LISTSCRIPTS");
         break;
-    case Delete: {
+    case Delete:
+    {
         const QString filename = mUrl.fileName(/*QUrl::ObeyTrailingSlash*/);
         session->sendData("DELETESCRIPT \"" + filename.toUtf8() + "\"");
         break;
     }
-    case Rename: {
+    case Rename:
+    {
         const QString filename = mUrl.fileName(/*QUrl::ObeyTrailingSlash*/);
         const QByteArray ba = QByteArray("RENAMESCRIPT \"" + filename.toUtf8() + "\" \"" + mNewName.toUtf8() + "\"");
         session->sendData(ba);
         break;
     }
-    case Check: {
+    case Check:
+    {
         QByteArray encodedData;
         append_lf2crlf(encodedData, mScript.toUtf8());
         session->sendData("RENAMESCRIPT {" + QByteArray::number(encodedData.size()) + "+}");
@@ -129,7 +135,8 @@ bool SieveJob::Private::handleResponse(const Response &response, const QByteArra
             mScript = QString::fromUtf8(data);
             break;
         case List:
-        case SearchActive: {
+        case SearchActive:
+        {
             const QString filename = QString::fromUtf8(response.key());
             mAvailableScripts.append(filename);
             const bool isActive = response.extra() == "ACTIVE";
@@ -239,7 +246,8 @@ void SieveJob::Private::killed()
 }
 
 SieveJob::SieveJob(QObject *parent)
-    : QObject(parent), d(new Private(this))
+    : QObject(parent)
+    , d(new Private(this))
 {
 }
 
@@ -282,8 +290,7 @@ void SieveJob::setErrorMessage(const QString &str)
     d->mErrorMessage = str;
 }
 
-SieveJob *SieveJob::put(const QUrl &destination, const QString &script,
-                        bool makeActive, bool wasActive)
+SieveJob *SieveJob::put(const QUrl &destination, const QString &script, bool makeActive, bool wasActive)
 {
     QStack<Private::Command> commands;
     if (makeActive) {
@@ -397,4 +404,3 @@ SieveJob *SieveJob::activate(const QUrl &url)
     Private::sessionForUrl(url)->scheduleJob(job);
     return job;
 }
-

@@ -20,8 +20,7 @@
 #define SIEVEACTIONFILEINTO_H
 #include "sieveaction.h"
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveActionFileInto : public SieveAction
 {
     Q_OBJECT

@@ -170,10 +170,12 @@ QString SieveActionFileInto::help() const
 {
     QString helpStr = i18n("The \"fileinto\" action delivers the message into the specified mailbox.");
     if (mHasMailBoxSupport) {
-        helpStr += QLatin1Char('\n') + i18n("If the optional \":create\" argument is specified, it instructs the Sieve interpreter to create the specified mailbox, if needed, before attempting to deliver the message into the specified mailbox.");
+        helpStr += QLatin1Char('\n') + i18n(
+            "If the optional \":create\" argument is specified, it instructs the Sieve interpreter to create the specified mailbox, if needed, before attempting to deliver the message into the specified mailbox.");
     }
     if (mHasCopySupport) {
-        helpStr += QLatin1Char('\n') + i18n("If the optional \":copy\" keyword is specified, the tagged command does not cancel the implicit \"keep\". Instead, it merely files or redirects a copy in addition to whatever else is happening to the message.");
+        helpStr += QLatin1Char('\n') + i18n(
+            "If the optional \":copy\" keyword is specified, the tagged command does not cancel the implicit \"keep\". Instead, it merely files or redirects a copy in addition to whatever else is happening to the message.");
     }
     return helpStr;
 }

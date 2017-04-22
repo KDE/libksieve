@@ -22,12 +22,10 @@
 RenameScriptJobTest::RenameScriptJobTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 RenameScriptJobTest::~RenameScriptJobTest()
 {
-
 }
 
 void RenameScriptJobTest::canNotStartByDefault()

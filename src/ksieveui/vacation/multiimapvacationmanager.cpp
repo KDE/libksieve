@@ -29,9 +29,9 @@
 
 using namespace KSieveUi;
 MultiImapVacationManager::MultiImapVacationManager(QObject *parent)
-    : QObject(parent),
-      mNumberOfJobs(0),
-      mCheckInProgress(false)
+    : QObject(parent)
+    , mNumberOfJobs(0)
+    , mCheckInProgress(false)
 {
 }
 
@@ -49,7 +49,7 @@ QMap <QString, QUrl> MultiImapVacationManager::serverList() const
         }
 
         const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(instance.identifier());
-        const QUrl url  = info.sieveUrl;
+        const QUrl url = info.sieveUrl;
         if (!url.isEmpty()) {
             list.insert(instance.name(), url);
         }
@@ -130,5 +130,5 @@ bool MultiImapVacationManager::kep14Support(const QString &serverName) const
     } else {
         qCWarning(LIBKSIEVE_LOG) << "We don't know the KEP:14 support for this server." << serverName;
     }
-    return  false;
+    return false;
 }

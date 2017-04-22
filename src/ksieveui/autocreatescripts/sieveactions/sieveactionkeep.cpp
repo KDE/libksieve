@@ -53,7 +53,8 @@ QString SieveActionKeep::code(QWidget *w) const
 
 QString SieveActionKeep::help() const
 {
-    return i18n("The \"keep\" action is whatever action is taken in lieu of all other actions, if no filtering happens at all; generally, this simply means to file the message into the user's main mailbox.");
+    return i18n(
+        "The \"keep\" action is whatever action is taken in lieu of all other actions, if no filtering happens at all; generally, this simply means to file the message into the user's main mailbox.");
 }
 
 QWidget *SieveActionKeep::createParamWidget(QWidget *parent) const
@@ -124,4 +125,3 @@ QUrl SieveActionKeep::href() const
 {
     return SieveEditorUtil::helpUrl(SieveEditorUtil::strToVariableName(name()));
 }
-

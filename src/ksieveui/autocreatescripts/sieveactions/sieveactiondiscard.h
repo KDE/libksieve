@@ -20,8 +20,7 @@
 #define SIEVEACTIONDISCARD_H
 
 #include "sieveaction.h"
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveActionDiscard : public SieveAction
 {
     Q_OBJECT

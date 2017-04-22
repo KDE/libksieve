@@ -21,8 +21,7 @@
 #define SELECTCOMPARATORCOMBOBOX_H
 
 #include <QComboBox>
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveEditorGraphicalModeWidget;
 class SelectComparatorComboBox : public QComboBox
 {

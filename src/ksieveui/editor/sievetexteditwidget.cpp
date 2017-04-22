@@ -27,27 +27,27 @@ class KSieveUi::SieveTextEditWidgetPrivate
 {
 public:
     SieveTextEditWidgetPrivate()
-        : mTextEdit(nullptr),
-          mSliderContainer(nullptr),
-          mFindBar(nullptr)
+        : mTextEdit(nullptr)
+        , mSliderContainer(nullptr)
+        , mFindBar(nullptr)
     {
-
     }
+
     KSieveUi::SieveTextEdit *mTextEdit;
     KPIMTextEdit::SlideContainer *mSliderContainer;
     KPIMTextEdit::PlainTextEditFindBar *mFindBar;
 };
 
 SieveTextEditWidget::SieveTextEditWidget(KSieveUi::SieveTextEdit *customTextEdit, QWidget *parent)
-    : QWidget(parent),
-      d(new KSieveUi::SieveTextEditWidgetPrivate)
+    : QWidget(parent)
+    , d(new KSieveUi::SieveTextEditWidgetPrivate)
 {
     initialize(customTextEdit);
 }
 
 SieveTextEditWidget::SieveTextEditWidget(QWidget *parent)
-    : QWidget(parent),
-      d(new KSieveUi::SieveTextEditWidgetPrivate)
+    : QWidget(parent)
+    , d(new KSieveUi::SieveTextEditWidgetPrivate)
 {
     initialize();
 }
@@ -80,7 +80,6 @@ void SieveTextEditWidget::initialize(KSieveUi::SieveTextEdit *custom)
     mainLayout->addWidget(d->mSliderContainer);
     connect(d->mTextEdit, &SieveTextEdit::findText, this, &SieveTextEditWidget::slotFind);
     connect(d->mTextEdit, &SieveTextEdit::replaceText, this, &SieveTextEditWidget::slotReplace);
-
 }
 
 void SieveTextEditWidget::setReadOnly(bool readOnly)

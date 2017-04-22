@@ -33,9 +33,9 @@
 using namespace KSieveUi;
 
 SieveDebugDialog::SieveDebugDialog(QWidget *parent)
-    : QDialog(parent),
-      mSieveJob(nullptr),
-      mShutDownJob(nullptr)
+    : QDialog(parent)
+    , mSieveJob(nullptr)
+    , mShutDownJob(nullptr)
 {
     setWindowTitle(i18n("Sieve Diagnostics"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
@@ -122,7 +122,7 @@ void SieveDebugDialog::slotDiagNextAccount()
 
     // Detect URL for this IMAP account
     const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(ident);
-    const QUrl url  = info.sieveUrl;
+    const QUrl url = info.sieveUrl;
     if (!url.isValid()) {
         mEdit->editor()->appendPlainText(i18n("(Account does not support Sieve)\n\n"));
     } else {
@@ -159,7 +159,7 @@ void SieveDebugDialog::slotDiagNextScript()
     mEdit->editor()->appendPlainText(i18n("Contents of script '%1':\n", scriptFile));
 
     const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(mResourceIdentifier.first());
-    mUrl  = info.sieveUrl;
+    mUrl = info.sieveUrl;
 
     mUrl = mUrl.adjusted(QUrl::RemoveFilename);
     mUrl.setPath(mUrl.path() + scriptFile);
@@ -169,8 +169,7 @@ void SieveDebugDialog::slotDiagNextScript()
     connect(mSieveJob, &KManageSieve::SieveJob::gotScript, this, &SieveDebugDialog::slotGetScript);
 }
 
-void SieveDebugDialog::slotGetScript(KManageSieve::SieveJob *job, bool success,
-                                     const QString &script, bool active)
+void SieveDebugDialog::slotGetScript(KManageSieve::SieveJob *job, bool success, const QString &script, bool active)
 {
     qCDebug(LIBKSIEVE_LOG) << "( ??," << success
                            << ", ?," << active << ")" << endl
@@ -194,14 +193,13 @@ void SieveDebugDialog::slotGetScript(KManageSieve::SieveJob *job, bool success,
     QTimer::singleShot(0, this, &SieveDebugDialog::slotDiagNextScript);
 }
 
-void SieveDebugDialog::slotGetScriptList(KManageSieve::SieveJob *job, bool success,
-        const QStringList &scriptList, const QString &activeScript)
+void SieveDebugDialog::slotGetScriptList(KManageSieve::SieveJob *job, bool success, const QStringList &scriptList, const QString &activeScript)
 {
     if (mShutDownJob->isActive()) {
         mShutDownJob->stop();
     }
-    qCDebug(LIBKSIEVE_LOG) << "Success:" << success << ", List:" << scriptList.join(QLatin1Char(',')) <<
-                           ", active:" << activeScript;
+    qCDebug(LIBKSIEVE_LOG) << "Success:" << success << ", List:" << scriptList.join(QLatin1Char(','))
+                           <<", active:" << activeScript;
     mSieveJob = nullptr; // job deletes itself after returning from this slot!
 
     mEdit->editor()->appendPlainText(i18n("Sieve capabilities:\n"));
@@ -233,4 +231,3 @@ void SieveDebugDialog::slotGetScriptList(KManageSieve::SieveJob *job, bool succe
     // Handle next job: dump scripts for this server
     QTimer::singleShot(0, this, &SieveDebugDialog::slotDiagNextScript);
 }
-

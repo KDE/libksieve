@@ -31,7 +31,6 @@ public:
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldAssignValue();
-
 };
 
 #endif // MOVEIMAPFOLDERWIDGETTEST_H

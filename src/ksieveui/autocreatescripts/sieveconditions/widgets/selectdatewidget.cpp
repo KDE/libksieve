@@ -42,7 +42,6 @@ SelectDateWidget::SelectDateWidget(QWidget *parent)
 
 SelectDateWidget::~SelectDateWidget()
 {
-
 }
 
 void SelectDateWidget::initialize()
@@ -329,6 +328,4 @@ void SelectDateWidget::setCode(const QString &type, const QString &value)
         mDateLineEdit->setText(value);
         break;
     }
-
 }
-

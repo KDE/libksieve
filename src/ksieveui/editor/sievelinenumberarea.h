@@ -21,9 +21,7 @@
 
 #include <QWidget>
 
-namespace KSieveUi
-{
-
+namespace KSieveUi {
 class SieveTextEdit;
 
 class SieveLineNumberArea : public QWidget
@@ -40,7 +38,6 @@ protected:
 private:
     SieveTextEdit *m_sieveTextEdit;
 };
-
 }
 
 #endif

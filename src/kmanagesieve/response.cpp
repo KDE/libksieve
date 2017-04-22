@@ -77,7 +77,8 @@ bool KManageSieve::Response::parseResponse(const QByteArray &line)
     clear();
 
     switch (line.at(0)) {
-    case '{': {
+    case '{':
+    {
         m_type = Quantity;
         bool ok = false;
         m_quantity = parseQuantity(line, 0, &ok);
@@ -87,7 +88,8 @@ bool KManageSieve::Response::parseResponse(const QByteArray &line)
         // expecting "key" "value" pairs
         m_type = KeyValuePair;
         break;
-    default: {
+    default:
+    {
         // expecting single string
         m_type = Action;
         m_key = line;
@@ -115,9 +117,8 @@ bool KManageSieve::Response::parseResponse(const QByteArray &line)
 
     start = line.indexOf('"', end + 1);
     if (start == -1) {
-        if (line.length() > end)
+        if (line.length() > end) {
             // skip " and space
-        {
             m_extra = line.right(line.length() - end - 2);
         }
         return true;
@@ -142,7 +143,7 @@ KManageSieve::Response::Result KManageSieve::Response::operationResult() const
             return Ok;
         } else if (response == "NO") {
             return No;
-        } else if (response == "BY"/*E*/) {
+        } else if (response == "BY" /*E*/) {
             return Bye;
         }
     }

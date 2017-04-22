@@ -19,8 +19,7 @@
 #ifndef SIEVEACTIONKEEP_H
 #define SIEVEACTIONKEEP_H
 #include "sieveaction.h"
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveActionKeep : public SieveAction
 {
     Q_OBJECT

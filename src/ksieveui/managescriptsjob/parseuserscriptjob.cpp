@@ -160,4 +160,3 @@ QString ParseUserScriptJob::loadInclude(const QDomElement &element)
     }
     return scriptName;
 }
-

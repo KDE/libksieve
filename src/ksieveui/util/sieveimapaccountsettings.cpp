@@ -22,11 +22,10 @@
 using namespace KSieveUi;
 
 SieveImapAccountSettings::SieveImapAccountSettings()
-    : mAuthenticationType(Plain),
-      mEncryptionMode(Unencrypted),
-      mPort(-1)
+    : mAuthenticationType(Plain)
+    , mEncryptionMode(Unencrypted)
+    , mPort(-1)
 {
-
 }
 
 SieveImapAccountSettings::~SieveImapAccountSettings()
@@ -90,12 +89,12 @@ KSieveUi::SieveImapAccountSettings::AuthenticationMode SieveImapAccountSettings:
 
 bool SieveImapAccountSettings::operator==(const SieveImapAccountSettings &other) const
 {
-    return (mServerName == other.serverName()) &&
-           (mPassword == other.password()) &&
-           (mPort == other.port()) &&
-           (mUserName == other.userName()) &&
-           (mAuthenticationType == other.authenticationType()) &&
-           (mEncryptionMode == other.encryptionMode());
+    return (mServerName == other.serverName())
+           && (mPassword == other.password())
+           && (mPort == other.port())
+           && (mUserName == other.userName())
+           && (mAuthenticationType == other.authenticationType())
+           && (mEncryptionMode == other.encryptionMode());
 }
 
 bool SieveImapAccountSettings::isValid() const

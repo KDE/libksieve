@@ -20,8 +20,7 @@
 #define SIEVEACTIONSETVARIABLE_H
 
 #include "sieveaction.h"
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveActionSetVariable : public SieveAction
 {
     Q_OBJECT

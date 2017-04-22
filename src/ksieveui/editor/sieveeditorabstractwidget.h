@@ -22,8 +22,7 @@
 #include <QWidget>
 #include "../util/sieveimapaccountsettings.h"
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveImapAccountSettings;
 class SieveEditorAbstractWidget : public QWidget
 {

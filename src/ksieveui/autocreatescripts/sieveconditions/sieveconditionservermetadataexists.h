@@ -21,8 +21,7 @@
 
 #include "sievecondition.h"
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveConditionServerMetaDataExists : public SieveCondition
 {
     Q_OBJECT

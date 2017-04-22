@@ -23,8 +23,7 @@
 #include <QWidget>
 
 class QSpinBox;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SelectSizeTypeComboBox;
 class SelectSizeWidget : public QWidget
 {

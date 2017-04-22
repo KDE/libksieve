@@ -91,7 +91,8 @@ QString SieveConditionBody::serverNeedsCapability() const
 
 QString SieveConditionBody::help() const
 {
-    return i18n("The body test matches content in the body of an email message, that is, anything following the first empty line after the header.  (The empty line itself, if present, is not considered to be part of the body.)");
+    return i18n(
+        "The body test matches content in the body of an email message, that is, anything following the first empty line after the header.  (The empty line itself, if present, is not considered to be part of the body.)");
 }
 
 bool SieveConditionBody::setParamWidgetValue(const QDomElement &element, QWidget *w, bool notCondition, QString &error)
@@ -154,4 +155,3 @@ QUrl SieveConditionBody::href() const
 {
     return SieveEditorUtil::helpUrl(SieveEditorUtil::strToVariableName(name()));
 }
-

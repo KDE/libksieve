@@ -28,7 +28,6 @@
 UtilMethodTest::UtilMethodTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void UtilMethodTest::shouldReturnEmptyInfo()
@@ -482,7 +481,6 @@ void UtilMethodTest::shouldAssignValue_data()
         QTest::newRow("sievereusecustomconfig1withoutvacationfileStarttls3") << data1 << info1 << true << false;
     }
 
-
     {
         const QString sievePasswd = QLatin1String("password3");
         const QString imapPasswd = QLatin1String("password2");
@@ -513,7 +511,6 @@ void UtilMethodTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::Unencrypted);
         QTest::newRow("sievereusecustomconfig1withoutvacationfileStarttlsNoSieveSupport") << data1 << info1 << false << false;
     }
-
 }
 
 void UtilMethodTest::shouldAssignValue()

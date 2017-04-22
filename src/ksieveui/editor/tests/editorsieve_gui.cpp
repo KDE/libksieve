@@ -63,11 +63,9 @@ SieveEditorTestWidget::SieveEditorTestWidget(QWidget *parent)
 
 SieveEditorTestWidget::~SieveEditorTestWidget()
 {
-
 }
 
 void SieveEditorTestWidget::slotValueChanged(bool changed)
 {
     qDebug() << " value changed :" << changed;
 }
-

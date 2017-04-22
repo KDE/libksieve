@@ -28,13 +28,11 @@ class QGridLayout;
 class QToolButton;
 class QDomElement;
 
-namespace PimCommon
-{
+namespace PimCommon {
 class MinimumComboBox;
 }
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveAction;
 class SieveHelpButton;
 class SieveEditorGraphicalModeWidget;

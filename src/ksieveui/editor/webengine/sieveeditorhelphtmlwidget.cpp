@@ -28,16 +28,15 @@
 #include "findbar/findbarwebengineview.h"
 
 using namespace KSieveUi;
-namespace
-{
+namespace {
 qreal zoomBy()
 {
     return 20;
 }
 }
 SieveEditorHelpHtmlWidget::SieveEditorHelpHtmlWidget(QWidget *parent)
-    : QWidget(parent),
-      mZoomFactor(100)
+    : QWidget(parent)
+    , mZoomFactor(100)
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
     lay->setMargin(0);
@@ -64,7 +63,6 @@ SieveEditorHelpHtmlWidget::SieveEditorHelpHtmlWidget(QWidget *parent)
 
 SieveEditorHelpHtmlWidget::~SieveEditorHelpHtmlWidget()
 {
-
 }
 
 QString SieveEditorHelpHtmlWidget::title() const

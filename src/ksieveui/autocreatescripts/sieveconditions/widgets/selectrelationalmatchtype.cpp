@@ -34,7 +34,6 @@ SelectRelationalMatchType::SelectRelationalMatchType(QWidget *parent)
 
 SelectRelationalMatchType::~SelectRelationalMatchType()
 {
-
 }
 
 void SelectRelationalMatchType::setCode(const QString &type, const QString &comparatorStr, const QString &name, QString &error)
@@ -83,4 +82,3 @@ void SelectRelationalMatchType::initialize()
     connect(mMatch, static_cast<void (KComboBox::*)(int)>(&KComboBox::activated), this, &SelectRelationalMatchType::valueChanged);
     lay->addWidget(mMatch);
 }
-

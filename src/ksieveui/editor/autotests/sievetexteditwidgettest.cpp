@@ -25,12 +25,10 @@
 SieveTextEditWidgetTest::SieveTextEditWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 SieveTextEditWidgetTest::~SieveTextEditWidgetTest()
 {
-
 }
 
 void SieveTextEditWidgetTest::shouldHaveDefaultValue()

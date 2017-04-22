@@ -26,9 +26,7 @@
 
 class KLineEdit;
 class QPushButton;
-namespace KSieveUi
-{
-
+namespace KSieveUi {
 class SelectHeadersWidget : public QListWidget
 {
     Q_OBJECT
@@ -92,7 +90,6 @@ private:
     QMap<QString, QString> mHeaderMap;
     QString mCode;
 };
-
 }
 
 #endif // SELECTHEADERTYPECOMBOBOX_H

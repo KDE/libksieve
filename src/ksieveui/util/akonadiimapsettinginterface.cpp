@@ -23,14 +23,13 @@
 using namespace KSieveUi;
 
 AkonadiImapSettingInterface::AkonadiImapSettingInterface(std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> &interface)
-    : KSieveUi::AbstractAkonadiImapSettingInterface(),
-      mInterface(interface.release())
+    : KSieveUi::AbstractAkonadiImapSettingInterface()
+    , mInterface(interface.release())
 {
 }
 
 AkonadiImapSettingInterface::~AkonadiImapSettingInterface()
 {
-
 }
 
 bool AkonadiImapSettingInterface::sieveSupport() const
@@ -117,7 +116,7 @@ QString AkonadiImapSettingInterface::password(const QString &identifier) const
     if (replyPass.isValid()) {
         pwd = replyPass;
     }
-    return  pwd;
+    return pwd;
 }
 
 int KSieveUi::AkonadiImapSettingInterface::imapPort() const

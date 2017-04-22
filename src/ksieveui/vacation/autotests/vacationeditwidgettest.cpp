@@ -1,4 +1,3 @@
-
 /*
    Copyright (C) 2016-2017 Laurent Montel <montel@kde.org>
 
@@ -32,12 +31,10 @@
 VacationEditWidgetTest::VacationEditWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 VacationEditWidgetTest::~VacationEditWidgetTest()
 {
-
 }
 
 void VacationEditWidgetTest::shouldHaveDefaultValue()
@@ -199,28 +196,27 @@ void VacationEditWidgetTest::shouldGetValues()
 #if 0
     KMime::Types::AddrSpecList mailAliases() const;
     void setMailAliases(const KMime::Types::AddrSpecList & aliases);
-    void setMailAliases(const QString & aliases);
+    void setMailAliases(const QString &aliases);
 
     bool sendForSpam() const;
     void setSendForSpam(bool enable);
 
     QDate startDate() const;
-    void setStartDate(const QDate & startDate);
+    void setStartDate(const QDate &startDate);
 
     QTime startTime() const;
-    void setStartTime(const QTime & startTime);
+    void setStartTime(const QTime &startTime);
 
     QDate endDate() const;
-    void setEndDate(const QDate & endDate);
+    void setEndDate(const QDate &endDate);
 
     QTime endTime() const;
-    void setEndTime(const QTime & endTime);
+    void setEndTime(const QTime &endTime);
 
     VacationUtils::MailAction mailAction() const;
     QString mailActionRecipient() const;
-    void setMailAction(VacationUtils::MailAction action, const QString & recipient);
+    void setMailAction(VacationUtils::MailAction action, const QString &recipient);
 #endif
-
 }
 
 void VacationEditWidgetTest::shouldHideDateTime()

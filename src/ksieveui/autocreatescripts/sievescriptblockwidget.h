@@ -29,8 +29,7 @@ class KComboBox;
 class QPushButton;
 class QDomElement;
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveConditionWidgetLister;
 class SieveActionWidgetLister;
 class SieveEditorGraphicalModeWidget;

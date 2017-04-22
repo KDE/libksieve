@@ -20,8 +20,8 @@
 using namespace KSieveUi;
 
 SieveTextEditorSpellCheckDecorator::SieveTextEditorSpellCheckDecorator(SieveTextEdit *plainTextEdit)
-    : Sonnet::SpellCheckDecorator(plainTextEdit),
-      mPlainTextEdit(plainTextEdit)
+    : Sonnet::SpellCheckDecorator(plainTextEdit)
+    , mPlainTextEdit(plainTextEdit)
 {
 }
 

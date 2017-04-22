@@ -20,14 +20,12 @@
 
 #include <QWidget>
 #include "ksieveui_private_export.h"
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class SlideContainer;
 class PlainTextEditFindBar;
 }
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveTextEdit;
 class SieveTextEditWidgetPrivate;
 class KSIEVEUI_TESTS_EXPORT SieveTextEditWidget : public QWidget

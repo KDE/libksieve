@@ -36,7 +36,6 @@ SieveEditorAbstractWidget::SieveEditorAbstractWidget(QWidget *parent)
 
 SieveEditorAbstractWidget::~SieveEditorAbstractWidget()
 {
-
 }
 
 void SieveEditorAbstractWidget::saveAs(const QString &defaultName)
@@ -63,7 +62,6 @@ QString SieveEditorAbstractWidget::currentscript()
 
 void SieveEditorAbstractWidget::setImportScript(const QString &)
 {
-
 }
 
 void SieveEditorAbstractWidget::slotImport()
@@ -111,4 +109,3 @@ bool SieveEditorAbstractWidget::loadFromFile(const QString &filename)
     setImportScript(scriptText);
     return true;
 }
-

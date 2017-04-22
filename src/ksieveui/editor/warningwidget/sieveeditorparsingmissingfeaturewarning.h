@@ -21,8 +21,7 @@
 
 #include <KMessageWidget>
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveEditorParsingMissingFeatureWarning : public KMessageWidget
 {
     Q_OBJECT

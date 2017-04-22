@@ -22,8 +22,7 @@
 #include <QObject>
 #include <KPixmapSequence>
 class QTimer;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveEditorLoadProgressIndicator : public QObject
 {
     Q_OBJECT

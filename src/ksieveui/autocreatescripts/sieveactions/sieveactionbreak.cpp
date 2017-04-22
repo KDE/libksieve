@@ -117,4 +117,3 @@ QString SieveActionBreak::serverNeedsCapability() const
 {
     return QStringLiteral("foreverypart");
 }
-

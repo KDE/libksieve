@@ -21,12 +21,10 @@
 
 #include <QList>
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveCondition;
 class SieveEditorGraphicalModeWidget;
-namespace SieveConditionList
-{
+namespace SieveConditionList {
 QList<KSieveUi::SieveCondition *> conditionList(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget);
 }
 }

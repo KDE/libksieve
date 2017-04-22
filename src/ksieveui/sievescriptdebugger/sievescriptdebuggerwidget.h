@@ -24,8 +24,7 @@
 #include "ksieveui_export.h"
 class QStackedWidget;
 class QLabel;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveScriptDebuggerFrontEndWidget;
 class KSIEVEUI_EXPORT SieveScriptDebuggerWidget : public QWidget
 {

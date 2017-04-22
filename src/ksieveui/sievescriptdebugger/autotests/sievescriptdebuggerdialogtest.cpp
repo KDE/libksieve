@@ -27,12 +27,10 @@
 SieveScriptDebuggerDialogTest::SieveScriptDebuggerDialogTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 SieveScriptDebuggerDialogTest::~SieveScriptDebuggerDialogTest()
 {
-
 }
 
 void SieveScriptDebuggerDialogTest::shouldHaveDefaultValue()

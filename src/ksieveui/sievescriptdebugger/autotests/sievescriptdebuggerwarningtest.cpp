@@ -24,12 +24,10 @@
 SieveScriptDebuggerWarningTest::SieveScriptDebuggerWarningTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 SieveScriptDebuggerWarningTest::~SieveScriptDebuggerWarningTest()
 {
-
 }
 
 void SieveScriptDebuggerWarningTest::shouldHaveDefaultValue()

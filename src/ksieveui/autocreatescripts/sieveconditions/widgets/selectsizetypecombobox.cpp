@@ -57,4 +57,3 @@ void SelectSizeTypeComboBox::setCode(const QString &code, const QString &name, Q
         setCurrentIndex(0);
     }
 }
-

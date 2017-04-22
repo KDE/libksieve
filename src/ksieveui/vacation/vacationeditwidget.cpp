@@ -55,7 +55,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     // explanation label:
     ++row;
     QLabel *configureVacationLabel = new QLabel(i18n("Configure vacation "
-            "notifications to be sent:"), this);
+                                                     "notifications to be sent:"), this);
     configureVacationLabel->setObjectName(QStringLiteral("configureVacationLabel"));
     glay->addWidget(configureVacationLabel, row, 0, 1, 2);
 
@@ -171,7 +171,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     // Action for incoming mails
     mMailAction = new QComboBox(this);
     for (int i = 0; i < 4; ++i) {
-        mMailAction->addItem(VacationUtils::mailAction((VacationUtils::MailAction) i));
+        mMailAction->addItem(VacationUtils::mailAction((VacationUtils::MailAction)i));
     }
     mMailAction->setObjectName(QStringLiteral("mMailAction"));
     connect(mMailAction, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &VacationEditWidget::mailActionChanged);
@@ -217,7 +217,6 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
 
 VacationEditWidget::~VacationEditWidget()
 {
-
 }
 
 bool VacationEditWidget::activateVacation() const
@@ -408,7 +407,6 @@ void VacationEditWidget::enableDates(bool enable)
     mStartTimeActive->setVisible(enable);
     mEndTime->setVisible(enable);
     mEndTimeActive->setVisible(enable);
-
 }
 
 void VacationEditWidget::mailActionChanged(int action)

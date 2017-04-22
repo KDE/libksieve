@@ -26,7 +26,6 @@
 SieveImapInstanceInterfaceManagerTest::SieveImapInstanceInterfaceManagerTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void SieveImapInstanceInterfaceManagerTest::shouldHaveDefaultValue()

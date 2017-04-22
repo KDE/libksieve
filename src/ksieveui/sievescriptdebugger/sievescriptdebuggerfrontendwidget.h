@@ -23,8 +23,7 @@
 #include <QWidget>
 #include "ksieveui_private_export.h"
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class PlainTextEditorWidget;
 }
 class KUrlRequester;
@@ -32,8 +31,7 @@ class QPushButton;
 class QProcess;
 class KLineEdit;
 class QSplitter;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveTextEditWidget;
 class SieveScriptDebuggerWarning;
 class KSIEVEUI_TESTS_EXPORT SieveScriptDebuggerFrontEndWidget : public QWidget

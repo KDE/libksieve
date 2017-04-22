@@ -20,8 +20,7 @@
 #define SIEVEACTIONRETURN_H
 
 #include "sieveaction.h"
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveActionReturn : public SieveAction
 {
     Q_OBJECT

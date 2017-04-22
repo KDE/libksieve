@@ -31,9 +31,7 @@
 
 class QTimer;
 
-namespace KManageSieve
-{
-
+namespace KManageSieve {
 class Session;
 
 class SessionThread : public QObject
@@ -99,7 +97,6 @@ private:
 
     QTimer *m_sslCheck;
 };
-
 } // namespace KManageSieve
 
 #endif // KMANAGESIEVE_SESSIONTHREAD_H

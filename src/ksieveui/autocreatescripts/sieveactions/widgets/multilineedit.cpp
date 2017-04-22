@@ -32,7 +32,6 @@ MultiLineEdit::MultiLineEdit(QWidget *parent)
 
 MultiLineEdit::~MultiLineEdit()
 {
-
 }
 
 QSize MultiLineEdit::sizeHint() const
@@ -57,4 +56,3 @@ QSize MultiLineEdit::minimumSizeHint() const
 {
     return sizeHint();
 }
-

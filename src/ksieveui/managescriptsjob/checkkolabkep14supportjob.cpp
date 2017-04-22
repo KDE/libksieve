@@ -48,7 +48,6 @@ CheckKolabKep14SupportJob::CheckKolabKep14SupportJob(QObject *parent)
     : QObject(parent)
     , d(new CheckKolabKep14SupportJobPrivate)
 {
-
 }
 
 CheckKolabKep14SupportJob::~CheckKolabKep14SupportJob()

@@ -35,12 +35,12 @@
 using namespace KSieveUi;
 
 SieveScriptPage::SieveScriptPage(SieveEditorGraphicalModeWidget *sieveEditorGraphicalWidget, QWidget *parent)
-    : QWidget(parent),
-      mSieveGraphicalModeWidget(sieveEditorGraphicalWidget),
-      mIncludeWidget(nullptr),
-      mForEveryPartWidget(nullptr),
-      mGlobalVariableWidget(nullptr),
-      mBlockIfWidget(nullptr)
+    : QWidget(parent)
+    , mSieveGraphicalModeWidget(sieveEditorGraphicalWidget)
+    , mIncludeWidget(nullptr)
+    , mForEveryPartWidget(nullptr)
+    , mGlobalVariableWidget(nullptr)
+    , mBlockIfWidget(nullptr)
 {
     QVBoxLayout *topLayout = new QVBoxLayout(this);
     topLayout->setMargin(0);

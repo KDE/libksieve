@@ -27,8 +27,7 @@
 
 class QUrl;
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class CheckKolabKep14SupportJob;
 class VacationCheckJob;
 class KSIEVEUI_EXPORT MultiImapVacationManager : public QObject

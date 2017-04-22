@@ -25,12 +25,10 @@
 SieveScriptDebuggerWidgetTest::SieveScriptDebuggerWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 SieveScriptDebuggerWidgetTest::~SieveScriptDebuggerWidgetTest()
 {
-
 }
 
 void SieveScriptDebuggerWidgetTest::shouldHaveDefaultValue()

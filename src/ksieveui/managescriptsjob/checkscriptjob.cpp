@@ -29,8 +29,8 @@ public:
     CheckScriptJobPrivate()
         : mIsActive(false)
     {
-
     }
+
     bool mIsActive;
     QString mOriginalScript;
     QString mCurrentScript;
@@ -38,10 +38,9 @@ public:
 };
 
 CheckScriptJob::CheckScriptJob(QObject *parent)
-    : QObject(parent),
-      d(new CheckScriptJobPrivate)
+    : QObject(parent)
+    , d(new CheckScriptJobPrivate)
 {
-
 }
 
 CheckScriptJob::~CheckScriptJob()

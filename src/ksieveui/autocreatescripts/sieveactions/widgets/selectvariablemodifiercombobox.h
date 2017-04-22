@@ -21,8 +21,7 @@
 
 #include <KComboBox>
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SelectVariableModifierComboBox : public KComboBox
 {
     Q_OBJECT

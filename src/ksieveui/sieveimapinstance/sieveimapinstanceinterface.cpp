@@ -24,12 +24,10 @@
 using namespace KSieveUi;
 SieveImapInstanceInterface::SieveImapInstanceInterface()
 {
-
 }
 
 SieveImapInstanceInterface::~SieveImapInstanceInterface()
 {
-
 }
 
 QVector<KSieveUi::SieveImapInstance> SieveImapInstanceInterface::sieveImapInstances()

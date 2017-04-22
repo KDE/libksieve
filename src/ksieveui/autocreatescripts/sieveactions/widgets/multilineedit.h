@@ -21,8 +21,7 @@
 
 #include "kpimtextedit/plaintexteditor.h"
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class MultiLineEdit : public KPIMTextEdit::PlainTextEditor
 {
     Q_OBJECT

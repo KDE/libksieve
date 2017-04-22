@@ -39,4 +39,3 @@ QString SieveActionAbstractEditHeader::serverNeedsCapability() const
 {
     return QStringLiteral("editheader");
 }
-

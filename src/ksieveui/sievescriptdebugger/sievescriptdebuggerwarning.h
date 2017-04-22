@@ -22,8 +22,7 @@
 
 #include <KMessageWidget>
 #include "ksieveui_private_export.h"
-namespace KSieveUi
-{
+namespace KSieveUi {
 class KSIEVEUI_TESTS_EXPORT SieveScriptDebuggerWarning : public KMessageWidget
 {
     Q_OBJECT

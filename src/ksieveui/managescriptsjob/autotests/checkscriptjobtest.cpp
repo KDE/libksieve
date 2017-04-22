@@ -22,12 +22,10 @@
 CheckScriptJobTest::CheckScriptJobTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 CheckScriptJobTest::~CheckScriptJobTest()
 {
-
 }
 
 void CheckScriptJobTest::canBeStarted()

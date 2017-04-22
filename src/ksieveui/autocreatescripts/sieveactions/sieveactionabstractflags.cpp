@@ -101,4 +101,3 @@ QString SieveActionAbstractFlags::serverNeedsCapability() const
         return QStringLiteral("imapflags");
     }
 }
-

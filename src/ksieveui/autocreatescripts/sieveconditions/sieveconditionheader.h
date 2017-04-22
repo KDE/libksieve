@@ -21,9 +21,7 @@
 
 #include "sievecondition.h"
 
-namespace KSieveUi
-{
-
+namespace KSieveUi {
 class SieveConditionHeader : public SieveCondition
 {
     Q_OBJECT

@@ -29,10 +29,10 @@
 using namespace KSieveUi;
 
 SieveAction::SieveAction(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent)
-    : QObject(parent),
-      mSieveGraphicalModeWidget(sieveGraphicalModeWidget),
-      mName(name),
-      mLabel(label)
+    : QObject(parent)
+    , mSieveGraphicalModeWidget(sieveGraphicalModeWidget)
+    , mName(name)
+    , mLabel(label)
 {
 }
 

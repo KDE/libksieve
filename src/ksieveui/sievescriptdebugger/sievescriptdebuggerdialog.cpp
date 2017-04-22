@@ -99,6 +99,8 @@ void SieveScriptDebuggerDialog::readConfig()
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
     }
-    const QList<int> size{ 100, 400};
+    const QList<int> size {
+        100, 400
+    };
     mSieveScriptDebuggerWidget->setSplitterSizes(group.readEntry("Splitter", size));
 }

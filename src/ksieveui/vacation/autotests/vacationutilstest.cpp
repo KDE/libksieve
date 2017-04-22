@@ -68,13 +68,13 @@ void VacationUtilsTest::testParseActivate_data()
     QTest::addColumn<bool>("found");
     QTest::addColumn<bool>("active");
 
-    QTest::newRow("notfound")     << QStringLiteral("vacation-notfound.siv") << false << false;
-    QTest::newRow("simple")     << QStringLiteral("vacation-simple.siv") << true << true;
-    QTest::newRow("multile if")     << QStringLiteral("vacation-multiple.siv") << true << true;
-    QTest::newRow("deactivate")     << QStringLiteral("vacation-deactivate.siv") << true << false;
-    QTest::newRow("deactivate-multiple if")     << QStringLiteral("vacation-deactivate-multiple.siv") << true << false;
-    QTest::newRow("deactivate-complex")     << QStringLiteral("vacation-deactivate-complex.siv") << true << false;
-    QTest::newRow("old")     << QStringLiteral("vacation-old.siv") << true << true;
+    QTest::newRow("notfound") << QStringLiteral("vacation-notfound.siv") << false << false;
+    QTest::newRow("simple") << QStringLiteral("vacation-simple.siv") << true << true;
+    QTest::newRow("multile if") << QStringLiteral("vacation-multiple.siv") << true << true;
+    QTest::newRow("deactivate") << QStringLiteral("vacation-deactivate.siv") << true << false;
+    QTest::newRow("deactivate-multiple if") << QStringLiteral("vacation-deactivate-multiple.siv") << true << false;
+    QTest::newRow("deactivate-complex") << QStringLiteral("vacation-deactivate-complex.siv") << true << false;
+    QTest::newRow("old") << QStringLiteral("vacation-old.siv") << true << true;
 }
 
 void VacationUtilsTest::testParseActivate()
@@ -97,9 +97,9 @@ void VacationUtilsTest::testParseScript_data()
     QTest::addColumn<QString>("activate");
     QTest::addColumn<QString>("deactivate");
 
-    QTest::newRow("simple")     << QStringLiteral("vacation-simple.siv") << QStringLiteral("vacation-deactivate.siv");
-    QTest::newRow("complex")     << QStringLiteral("vacation-complex.siv") << QStringLiteral("vacation-deactivate-complex.siv");
-    QTest::newRow("old")     << QStringLiteral("vacation-old.siv") << QStringLiteral("vacation-deactivate-complex-old.siv");
+    QTest::newRow("simple") << QStringLiteral("vacation-simple.siv") << QStringLiteral("vacation-deactivate.siv");
+    QTest::newRow("complex") << QStringLiteral("vacation-complex.siv") << QStringLiteral("vacation-deactivate-complex.siv");
+    QTest::newRow("old") << QStringLiteral("vacation-old.siv") << QStringLiteral("vacation-deactivate-complex-old.siv");
 }
 
 void VacationUtilsTest::testParseScript()
@@ -135,10 +135,10 @@ void VacationUtilsTest::testMailAction_data()
     QTest::addColumn<int>("action");
     QTest::addColumn<QString>("recipient");
 
-    QTest::newRow("keep")    << QStringLiteral("vacation-complex.siv")        << (int)VacationUtils::Keep << QString();
+    QTest::newRow("keep") << QStringLiteral("vacation-complex.siv")        << (int)VacationUtils::Keep << QString();
     QTest::newRow("discard") << QStringLiteral("vacation-active-discard.siv") << (int)VacationUtils::Discard << QString();
-    QTest::newRow("send")    << QStringLiteral("vacation-deactive-send.siv")  << (int)VacationUtils::Sendto << QStringLiteral("redirect@example.org");
-    QTest::newRow("copy")    << QStringLiteral("vacation-deactive-copy.siv")  << (int)VacationUtils::CopyTo << QStringLiteral("copy@example.org");
+    QTest::newRow("send") << QStringLiteral("vacation-deactive-send.siv")  << (int)VacationUtils::Sendto << QStringLiteral("redirect@example.org");
+    QTest::newRow("copy") << QStringLiteral("vacation-deactive-copy.siv")  << (int)VacationUtils::CopyTo << QStringLiteral("copy@example.org");
 }
 
 void VacationUtilsTest::testMailAction()
@@ -285,7 +285,6 @@ void VacationUtilsTest::testWriteSimpleScript()
     QCOMPARE(vacationA.messageText, vacation.messageText);
     QCOMPARE(vacationA.subject, vacation.subject);
     QCOMPARE(vacationA.notificationInterval, vacation.notificationInterval);
-
 }
 
 void VacationUtilsTest::testUpdateVacationBlock()

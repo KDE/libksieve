@@ -24,8 +24,7 @@
 #include "ksieveui_private_export.h"
 
 class QPushButton;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveScriptDebuggerWidget;
 class KSIEVEUI_TESTS_EXPORT SieveScriptDebuggerDialog : public QDialog
 {

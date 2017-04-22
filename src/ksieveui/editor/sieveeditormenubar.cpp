@@ -25,8 +25,8 @@
 using namespace KSieveUi;
 
 SieveEditorMenuBar::SieveEditorMenuBar(QWidget *parent)
-    : QMenuBar(parent),
-      mTextModeWidget(nullptr)
+    : QMenuBar(parent)
+    , mTextModeWidget(nullptr)
 {
     initActions();
     initMenus();
@@ -34,7 +34,6 @@ SieveEditorMenuBar::SieveEditorMenuBar(QWidget *parent)
 
 SieveEditorMenuBar::~SieveEditorMenuBar()
 {
-
 }
 
 void SieveEditorMenuBar::setEditorMode(bool editorMode)
@@ -229,6 +228,7 @@ QMenu *SieveEditorMenuBar::toolsMenu() const
 {
     return mToolsMenu;
 }
+
 QAction *SieveEditorMenuBar::selectAllAction() const
 {
     return mSelectAllAction;
@@ -289,4 +289,3 @@ void SieveEditorMenuBar::slotCopyAvailable(bool b)
     mCutAction->setEnabled(b);
     mCopyAction->setEnabled(b);
 }
-

@@ -35,9 +35,7 @@
 
 #include "ksieve_export.h"
 
-namespace KSieve
-{
-
+namespace KSieve {
 class ScriptBuilder;
 class Error;
 
@@ -66,7 +64,6 @@ private:
     const Parser &operator=(const Parser &);
     Parser(const Parser &);
 };
-
 } // namespace KSieve
 
 #endif // LIBKSIEVE_KSIEVE_PARSER_H

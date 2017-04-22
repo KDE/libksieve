@@ -22,8 +22,7 @@
 
 class QTextEdit;
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveInfoWidget : public QWidget
 {
     Q_OBJECT

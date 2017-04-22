@@ -22,13 +22,11 @@
 
 #include <PimCommon/TemplateListWidget>
 
-namespace PimCommon
-{
+namespace PimCommon {
 class TemplateManager;
 }
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveTemplateListWidget : public PimCommon::TemplateListWidget
 {
     Q_OBJECT

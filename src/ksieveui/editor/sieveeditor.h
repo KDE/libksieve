@@ -22,8 +22,7 @@
 #include "ksieveui_export.h"
 
 #include <QDialog>
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveEditorPrivate;
 class SieveImapAccountSettings;
 class KSIEVEUI_EXPORT SieveEditor : public QDialog
@@ -66,8 +65,6 @@ private:
     void readConfig();
     SieveEditorPrivate *const d;
 };
-
 }
 
 #endif
-

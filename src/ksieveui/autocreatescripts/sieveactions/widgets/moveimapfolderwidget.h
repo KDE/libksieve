@@ -23,8 +23,7 @@
 #include <QWidget>
 #include <KSieveUi/AbstractMoveImapFolderWidget>
 class QLineEdit;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveImapAccountSettings;
 class MoveImapFolderWidget : public KSieveUi::AbstractMoveImapFolderWidget
 {

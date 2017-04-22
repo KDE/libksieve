@@ -55,7 +55,6 @@ SieveScriptDebuggerWidget::SieveScriptDebuggerWidget(QWidget *parent)
 
 SieveScriptDebuggerWidget::~SieveScriptDebuggerWidget()
 {
-
 }
 
 QList<int> SieveScriptDebuggerWidget::splitterSizes() const

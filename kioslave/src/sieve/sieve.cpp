@@ -43,7 +43,7 @@ extern "C" {
 #include <sys/stat.h>
 #include <cassert>
 
-#define ksDebug qCDebug( SIEVE_LOG )
+#define ksDebug qCDebug(SIEVE_LOG)
 
 #define SIEVE_DEFAULT_PORT 2000
 
@@ -63,30 +63,30 @@ static const unsigned int SIEVE_DEFAULT_RECIEVE_BUFFER = 512;
 using namespace KIO;
 extern "C"
 {
-    Q_DECL_EXPORT int kdemain(int argc, char **argv)
-    {
-        QApplication app(argc, argv);
-        app.setApplicationName(QStringLiteral("kio_sieve"));
+Q_DECL_EXPORT int kdemain(int argc, char **argv)
+{
+    QApplication app(argc, argv);
+    app.setApplicationName(QStringLiteral("kio_sieve"));
 
-        ksDebug << "*** Starting kio_sieve " << endl;
+    ksDebug << "*** Starting kio_sieve " << endl;
 
-        if (argc != 4) {
-            ksDebug << "Usage: kio_sieve protocol domain-socket1 domain-socket2" << endl;
-            return -1;
-        }
-
-        if (!initSASL()) {
-            ::exit(-1);
-        }
-
-        kio_sieveProtocol slave(argv[2], argv[3]);
-        slave.dispatchLoop();
-
-        sasl_done();
-
-        ksDebug << "*** kio_sieve Done" << endl;
-        return 0;
+    if (argc != 4) {
+        ksDebug << "Usage: kio_sieve protocol domain-socket1 domain-socket2" << endl;
+        return -1;
     }
+
+    if (!initSASL()) {
+        ::exit(-1);
+    }
+
+    kio_sieveProtocol slave(argv[2], argv[3]);
+    slave.dispatchLoop();
+
+    sasl_done();
+
+    ksDebug << "*** kio_sieve Done" << endl;
+    return 0;
+}
 }
 
 /* ---------------------------------------------------------------------------------- */
@@ -194,11 +194,11 @@ kio_sieveProtocol::~kio_sieveProtocol()
 /* ---------------------------------------------------------------------------------- */
 void kio_sieveProtocol::setHost(const QString &host, quint16 port, const QString &user, const QString &pass)
 {
-    if (isConnected() &&
-            (m_sServer != host ||
-             m_port != port ||
-             m_sUser != user ||
-             m_sPass != pass)) {
+    if (isConnected()
+        && (m_sServer != host
+            || m_port != port
+            || m_sUser != user
+            || m_sPass != pass)) {
         disconnect();
     }
     m_sServer = host;
@@ -215,7 +215,7 @@ void kio_sieveProtocol::openConnection()
     connect();
 }
 
-bool kio_sieveProtocol::parseCapabilities(bool requestCapabilities/* = false*/)
+bool kio_sieveProtocol::parseCapabilities(bool requestCapabilities /* = false*/)
 {
     ksDebug << endl;
 
@@ -236,32 +236,27 @@ bool kio_sieveProtocol::parseCapabilities(bool requestCapabilities/* = false*/)
             } else {
                 ksDebug << "Unknown action " << r.getAction() << "." << endl;
             }
-
         } else if (r.getKey() == "IMPLEMENTATION") {
             ksDebug << "Connected to Sieve server: " << r.getVal() << endl;
             ret = true;
             setMetaData(QStringLiteral("implementation"), QLatin1String(r.getVal()));
             m_implementation = QLatin1String(r.getVal());
-
         } else if (r.getKey() == "SASL") {
             // Save list of available SASL methods
             const QString val = QLatin1String(r.getVal());
             m_sasl_caps = val.split(QLatin1Char(' '));
             ksDebug << "Server SASL authentication methods: " << m_sasl_caps.join(QStringLiteral(", ")) << endl;
             setMetaData(QStringLiteral("saslMethods"), QLatin1String(r.getVal()));
-
         } else if (r.getKey() == "SIEVE") {
             // Save script capabilities; report back as meta data:
             const QString val = QLatin1String(r.getVal());
             ksDebug << "Server script capabilities: " << val.split(QLatin1Char(' ')).join(QStringLiteral(", ")) << endl;
             setMetaData(QStringLiteral("sieveExtensions"), QLatin1String(r.getVal()));
-
         } else if (r.getKey() == "STARTTLS") {
             // The server supports TLS
             ksDebug << "Server supports TLS" << endl;
             m_supportsTLS = true;
             setMetaData(QStringLiteral("tlsSupported"), QStringLiteral("true"));
-
         } else {
             ksDebug << "Unrecognised key " << r.getKey() << endl;
         }
@@ -359,11 +354,11 @@ bool kio_sieveProtocol::connect(bool useTLSIfAvailable)
         return false;
     }
 
-    if (!m_allowUnencrypted && useTLSIfAvailable && QSslSocket::supportsSsl() && !m_supportsTLS &&
-            messageBox(WarningContinueCancel,
-                       i18n("TLS encryption was requested, but your Sieve server does not advertise TLS in its capabilities.\n"
-                            "You can choose to try to initiate TLS negotiations nonetheless, or cancel the operation."),
-                       i18n("Server Does Not Advertise TLS"), i18n("&Start TLS nonetheless"), i18n("&Cancel")) != KMessageBox::Continue) {
+    if (!m_allowUnencrypted && useTLSIfAvailable && QSslSocket::supportsSsl() && !m_supportsTLS
+        && messageBox(WarningContinueCancel,
+                      i18n("TLS encryption was requested, but your Sieve server does not advertise TLS in its capabilities.\n"
+                           "You can choose to try to initiate TLS negotiations nonetheless, or cancel the operation."),
+                      i18n("Server Does Not Advertise TLS"), i18n("&Start TLS nonetheless"), i18n("&Cancel")) != KMessageBox::Continue) {
         error(ERR_USER_CANCELED, i18n("TLS encryption requested, but not supported by server."));
         disconnect();
         return false;
@@ -855,7 +850,6 @@ void kio_sieveProtocol::urlStat(const QUrl &url)
         entry.insert(KIO::UDSEntry::UDS_ACCESS, 0700);
 
         statEntry(entry);
-
     } else {
         if (!sendData("LISTSCRIPTS")) {
             return;
@@ -867,7 +861,6 @@ void kio_sieveProtocol::urlStat(const QUrl &url)
                     // Script list completed
                     break;
                 }
-
             } else {
                 if (filename == QString::fromUtf8(r.getKey())) {
                     entry.clear();
@@ -916,7 +909,6 @@ void kio_sieveProtocol::listDir(const QUrl &url)
                 // Script list completed.
                 break;
             }
-
         } else {
             entry.clear();
             entry.insert(KIO::UDSEntry::UDS_NAME, QString::fromUtf8(r.getKey()));
@@ -945,14 +937,13 @@ void kio_sieveProtocol::listDir(const QUrl &url)
 bool kio_sieveProtocol::saslInteract(void *in, AuthInfo &ai)
 {
     ksDebug << "sasl_interact" << endl;
-    sasl_interact_t *interact = (sasl_interact_t *) in;
+    sasl_interact_t *interact = (sasl_interact_t *)in;
 
     //some mechanisms do not require username && pass, so it doesn't need a popup
     //window for getting this info
     for (; interact->id != SASL_CB_LIST_END; interact++) {
-        if (interact->id == SASL_CB_AUTHNAME ||
-                interact->id == SASL_CB_PASS) {
-
+        if (interact->id == SASL_CB_AUTHNAME
+            || interact->id == SASL_CB_PASS) {
             if (m_sUser.isEmpty() || m_sPass.isEmpty()) {
                 if (!openPasswordDialog(ai)) {
                     // calling error() below is wrong for two reasons:
@@ -968,7 +959,7 @@ bool kio_sieveProtocol::saslInteract(void *in, AuthInfo &ai)
         }
     }
 
-    interact = (sasl_interact_t *) in;
+    interact = (sasl_interact_t *)in;
     while (interact->id != SASL_CB_LIST_END) {
         ksDebug << "SASL_INTERACT id: " << interact->id << endl;
         switch (interact->id) {
@@ -976,12 +967,12 @@ bool kio_sieveProtocol::saslInteract(void *in, AuthInfo &ai)
         case SASL_CB_AUTHNAME:
             ksDebug << "SASL_CB_[AUTHNAME|USER]: '" << m_sUser << "'" << endl;
             interact->result = strdup(m_sUser.toUtf8());
-            interact->len = strlen((const char *) interact->result);
+            interact->len = strlen((const char *)interact->result);
             break;
         case SASL_CB_PASS:
             ksDebug << "SASL_CB_PASS: [hidden] " << endl;
             interact->result = strdup(m_sPass.toUtf8());
-            interact->len = strlen((const char *) interact->result);
+            interact->len = strlen((const char *)interact->result);
             break;
         default:
             interact->result = nullptr;
@@ -994,7 +985,7 @@ bool kio_sieveProtocol::saslInteract(void *in, AuthInfo &ai)
 }
 
 #define SASLERROR  error(ERR_COULD_NOT_AUTHENTICATE, i18n("An error occurred during authentication: %1", \
-                         QString::fromUtf8( sasl_errdetail( conn ) )));
+                                                          QString::fromUtf8(sasl_errdetail(conn))));
 
 bool kio_sieveProtocol::authenticate()
 {
@@ -1045,14 +1036,14 @@ bool kio_sieveProtocol::authenticate()
             if (!saslInteract(client_interact, ai)) {
                 sasl_dispose(&conn);
                 return false;
-            };
+            }
         }
     } while (result == SASL_INTERACT);
 
     if (result != SASL_CONTINUE && result != SASL_OK) {
         ksDebug << "sasl_client_start failed with: " << result << endl;
         SASLERROR
-        sasl_dispose(&conn);
+            sasl_dispose(&conn);
         return false;
     }
 
@@ -1106,7 +1097,7 @@ bool kio_sieveProtocol::authenticate()
                 if (!saslInteract(client_interact, ai)) {
                     sasl_dispose(&conn);
                     return false;
-                };
+                }
             }
         } while (result == SASL_INTERACT);
 
@@ -1114,7 +1105,7 @@ bool kio_sieveProtocol::authenticate()
         if (result != SASL_CONTINUE && result != SASL_OK) {
             ksDebug << "sasl_client_step failed with: " << result << endl;
             SASLERROR
-            sasl_dispose(&conn);
+                sasl_dispose(&conn);
             return false;
         }
 
@@ -1192,7 +1183,6 @@ bool kio_sieveProtocol::receiveData(bool waitForData, const QByteArray &reparse)
 
         // strip LF/CR
         interpret = QByteArray(buffer, qstrlen(buffer) - 2);
-
     } else {
         interpret = reparse;
     }
@@ -1202,7 +1192,8 @@ bool kio_sieveProtocol::receiveData(bool waitForData, const QByteArray &reparse)
     //ksDebug << "S: " << interpret << endl;
 
     switch (interpret[0]) {
-    case '{': {
+    case '{':
+    {
         // expecting {quantity}
         start = 0;
         end = interpret.indexOf("+}", start + 1);
@@ -1285,7 +1276,7 @@ int kio_sieveProtocol::operationResult()
             return OK;
         } else if (response == "NO") {
             return NO;
-        } else if (response == "BY"/*E*/) {
+        } else if (response == "BY" /*E*/) {
             return BYE;
         }
     }

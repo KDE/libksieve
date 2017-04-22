@@ -22,8 +22,7 @@
 
 #include <QWidget>
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveWidgetPageAbstract : public QWidget
 {
     Q_OBJECT

@@ -41,9 +41,7 @@
 #  undef None
 #endif
 
-namespace KSieve
-{
-
+namespace KSieve {
 class KSIEVE_EXPORT Error
 {
 public:
@@ -108,13 +106,21 @@ public:
 
     static const char *typeToString(Type type);
 
-    Error(Type type = None,
-          const QString &s1 = QString(), const QString &s2 = QString(),
-          int line = -1, int col = -1)
-        : mType(type), mLine(line), mCol(col),
-          mStringOne(s1), mStringTwo(s2) {}
+    Error(Type type = None, const QString &s1 = QString(), const QString &s2 = QString(), int line = -1, int col = -1)
+        : mType(type)
+        , mLine(line)
+        , mCol(col)
+        , mStringOne(s1)
+        , mStringTwo(s2)
+    {
+    }
+
     Error(Type type, int line, int col)
-        : mType(type), mLine(line), mCol(col) {}
+        : mType(type)
+        , mLine(line)
+        , mCol(col)
+    {
+    }
 
     QString asString() const;
 
@@ -128,18 +134,22 @@ public:
     {
         return mType;
     }
+
     int line() const
     {
         return mLine;
     }
+
     int column() const
     {
         return mCol;
     }
+
     QString firstString() const
     {
         return mStringOne;
     }
+
     QString secondString() const
     {
         return mStringTwo;
@@ -151,7 +161,6 @@ protected:
     int mCol;
     QString mStringOne, mStringTwo;
 };
-
 } // namespace KSieve
 
 #endif

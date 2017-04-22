@@ -62,7 +62,6 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::fullAccountInfo(const QString &ident
 
 KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &identifier, bool withVacationFileName, std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> &interface)
 {
-
     KSieveUi::Util::AccountInfo accountInfo;
     if (!interface) {
         return accountInfo;
@@ -243,10 +242,9 @@ QVector<KSieveUi::SieveImapInstance> KSieveUi::Util::sieveImapInstances()
     const QVector<KSieveUi::SieveImapInstance> allInstances = KSieveUi::SieveImapInstanceInterfaceManager::self()->sieveImapInstanceList();
     QVector<KSieveUi::SieveImapInstance> relevantInstances;
     for (const KSieveUi::SieveImapInstance &instance : allInstances) {
-        if (instance.mimeTypes().contains(KMime::Message::mimeType()) &&
-                instance.capabilities().contains(QStringLiteral("Resource")) &&
-                !instance.capabilities().contains(QStringLiteral("Virtual"))) {
-
+        if (instance.mimeTypes().contains(KMime::Message::mimeType())
+            && instance.capabilities().contains(QStringLiteral("Resource"))
+            && !instance.capabilities().contains(QStringLiteral("Virtual"))) {
             if (PimCommon::Util::isImapResource(instance.identifier())) {
                 relevantInstances << instance;
             }
@@ -299,9 +297,9 @@ bool Util::hasKep14Support(const QStringList &sieveCapabilities, const QStringLi
 bool Util::isKep14ProtectedName(const QString &name)
 {
     const QString n = name.split(QLatin1Char('.')).first().toLower();
-    if (n == QStringLiteral("master") ||
-            n == QStringLiteral("user") ||
-            n == QStringLiteral("management")) {
+    if (n == QStringLiteral("master")
+        || n == QStringLiteral("user")
+        || n == QStringLiteral("management")) {
         return true;
     }
     return false;

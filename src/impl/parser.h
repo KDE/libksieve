@@ -43,9 +43,7 @@
 
 #include <ksieve/scriptbuilder.h>
 
-namespace KSieve
-{
-
+namespace KSieve {
 class Parser::Impl
 {
     friend class Parser;
@@ -56,6 +54,7 @@ private:
     {
         mBuilder = builder;
     }
+
     ScriptBuilder *scriptBuilder() const
     {
         return mBuilder;
@@ -90,6 +89,7 @@ private:
     {
         return mToken;
     }
+
     QString tokenValue() const
     {
         return mTokenValue;
@@ -99,12 +99,14 @@ private:
     {
         return !mToken && lexer.atEnd();
     }
+
     bool obtainToken();
     void consumeToken()
     {
         mToken = Lexer::None;
         mTokenValue.clear();
     }
+
     void makeError(Error::Type e, int line, int col)
     {
         mError = Error(e, line, col);
@@ -112,14 +114,17 @@ private:
             scriptBuilder()->error(mError);
         }
     }
+
     void makeError(Error::Type e)
     {
         makeError(e, lexer.line(), lexer.column());
     }
+
     void makeUnexpectedTokenError(Error::Type e)
     {
         makeError(e);   // ### save wrong token...
     }
+
     bool isArgumentToken() const;
     bool isStringToken() const;
 
@@ -129,7 +134,6 @@ private:
     Lexer::Impl lexer;
     ScriptBuilder *mBuilder;
 };
-
 }
 
 #endif

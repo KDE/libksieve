@@ -40,7 +40,6 @@ VacationDataExtractor::VacationDataExtractor()
 
 VacationDataExtractor::~VacationDataExtractor()
 {
-
 }
 
 void VacationDataExtractor::commandStart(const QString &identifier, int lineNumber)
@@ -77,7 +76,7 @@ void VacationDataExtractor::commandStart(const QString &identifier, int lineNumb
 void VacationDataExtractor::commandEnd(int lineNumber)
 {
     qCDebug(LIBKSIEVE_LOG);
-    if (mContext != None && mContext != IfBlock  && mContext != VacationEnd) {
+    if (mContext != None && mContext != IfBlock && mContext != VacationEnd) {
         mContext = VacationEnd;
         mLineEnd = lineNumber;
     }
@@ -91,13 +90,12 @@ void VacationDataExtractor::error(const KSieve::Error &e)
 
 void VacationDataExtractor::finished()
 {
-
 }
 
 void VacationDataExtractor::testStart(const QString &test)
 {
     if (mContext == IfBlock) {
-        if (test ==  QStringLiteral("true") || test ==  QStringLiteral("false")) {
+        if (test == QStringLiteral("true") || test == QStringLiteral("false")) {
             mActive = (test == QStringLiteral("true"));
             mIfComment = QString();
         }
@@ -183,8 +181,8 @@ void VacationDataExtractor::numberArgument(unsigned long number, char)
 
 void VacationDataExtractor::stringListArgumentStart()
 {
-
 }
+
 void VacationDataExtractor::stringListEntry(const QString &string, bool, const QString &)
 {
     qCDebug(LIBKSIEVE_LOG) << "(\"" << string << "\")";
@@ -220,12 +218,10 @@ RequireExtractor::RequireExtractor()
     , mLineStart(0)
     , mLineEnd(0)
 {
-
 }
 
 RequireExtractor::~RequireExtractor()
 {
-
 }
 
 void RequireExtractor::commandStart(const QString &identifier, int lineNumber)
@@ -251,7 +247,6 @@ void RequireExtractor::error(const KSieve::Error &e)
 
 void RequireExtractor::finished()
 {
-
 }
 
 void RequireExtractor::stringArgument(const QString &string, bool, const QString &)

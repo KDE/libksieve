@@ -30,12 +30,10 @@
 FindBarBaseTest::FindBarBaseTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 FindBarBaseTest::~FindBarBaseTest()
 {
-
 }
 
 void FindBarBaseTest::shouldHaveDefaultValue()
@@ -95,7 +93,6 @@ void FindBarBaseTest::shouldEnableDisableNextPreviousButton()
     bar.autoSearch(QString());
     QVERIFY(!next->isEnabled());
     QVERIFY(!previous->isEnabled());
-
 }
 
 void FindBarBaseTest::shouldClearAllWhenShowBar()

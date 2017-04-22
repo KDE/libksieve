@@ -28,33 +28,24 @@ See README for further information.
 
 class QDate;
 
-namespace KMime
-{
-namespace Types
-{
+namespace KMime {
+namespace Types {
 struct AddrSpec;
 typedef QVector<AddrSpec> AddrSpecList;
 }
 }
 
-namespace KSieveUi
-{
-namespace Legacy
-{
-namespace VacationUtils
-{
+namespace KSieveUi {
+namespace Legacy {
+namespace VacationUtils {
 /*
 
 This file only contains legacy code, that can be removed if the lagacy code is not needed anymore.
 See README for further information.
 
 */
-QString __attribute__((__deprecated__)) composeScript(const QString &messageText,
-        const QString &subject,
-        int notificationInterval,
-        const KMime::Types::AddrSpecList &aliases,
-        bool sendForSpam, const QString &excludeDomain,
-        const QDate &startDate, const QDate &endDate);
+QString __attribute__((__deprecated__)) composeScript(const QString &messageText, const QString &subject, int notificationInterval, const KMime::Types::AddrSpecList &aliases, bool sendForSpam,
+                                                      const QString &excludeDomain, const QDate &startDate, const QDate &endDate);
 
 /*
 
@@ -62,12 +53,8 @@ This file only contains legacy code, that can be removed if the lagacy code is n
 See README for further information.
 
 */
-bool __attribute__((__deprecated__)) parseScript(const QString &script, QString &messageText,
-        QString &subject,
-        int &notificationInterval, KMime::Types::AddrSpecList &aliases,
-        bool &sendForSpam, QString &domainName,
-        QDate &startDate, QDate &endDate);
-
+bool __attribute__((__deprecated__)) parseScript(const QString &script, QString &messageText, QString &subject, int &notificationInterval, KMime::Types::AddrSpecList &aliases, bool &sendForSpam,
+                                                 QString &domainName, QDate &startDate, QDate &endDate);
 }
 }
 }

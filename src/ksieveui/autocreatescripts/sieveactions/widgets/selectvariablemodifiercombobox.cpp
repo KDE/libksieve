@@ -60,4 +60,3 @@ void SelectVariableModifierComboBox::setCode(const QString &code, const QString 
         setCurrentIndex(0);
     }
 }
-

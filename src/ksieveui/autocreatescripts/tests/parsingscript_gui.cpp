@@ -103,4 +103,3 @@ int main(int argc, char **argv)
     delete dialog;
     return 0;
 }
-

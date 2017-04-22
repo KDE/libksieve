@@ -24,7 +24,6 @@
 #include "sievescriptpage.h"
 #include "sieveincludewidget.h"
 
-
 #include <QHBoxLayout>
 #include <KMessageBox>
 #include <KLocalizedString>
@@ -39,8 +38,7 @@
 #include <QDomElement>
 #include "libksieve_debug.h"
 
-namespace
-{
+namespace {
 inline const QString defaultScriptName()
 {
     return QStringLiteral("SCRIPTNAME: ");
@@ -50,8 +48,8 @@ inline const QString defaultScriptName()
 using namespace KSieveUi;
 
 SieveScriptListItem::SieveScriptListItem(const QString &text, QListWidget *parent)
-    : QListWidgetItem(text, parent),
-      mScriptPage(nullptr)
+    : QListWidgetItem(text, parent)
+    , mScriptPage(nullptr)
 {
 }
 
@@ -94,9 +92,9 @@ QString SieveScriptListItem::generatedScript(QStringList &requires) const
 }
 
 SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
-    : QGroupBox(title, parent),
-      mSieveGraphicalModeWidget(nullptr),
-      mScriptNumber(0)
+    : QGroupBox(title, parent)
+    , mSieveGraphicalModeWidget(nullptr)
+    , mScriptNumber(0)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
     mSieveListScript = new QListWidget(this);
@@ -519,4 +517,3 @@ QString SieveScriptListBox::createUniqName()
     ++mScriptNumber;
     return pattern;
 }
-

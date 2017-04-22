@@ -50,9 +50,7 @@
 #endif
 #define STR_DIM(x) (sizeof(x) - 1)
 
-namespace KSieve
-{
-
+namespace KSieve {
 //
 //
 // Lexer Bridge implementation
@@ -118,7 +116,6 @@ Lexer::Token Lexer::nextToken(QString &result)
     assert(i);
     return i->nextToken(result);
 }
-
 } // namespace KSieve
 
 // none except a-zA-Z0-9_
@@ -149,7 +146,7 @@ static const unsigned char illegalMap[16] = {
 static inline bool isOfSet(const unsigned char map[16], unsigned char ch)
 {
     assert(ch < 128);
-    return (map[ ch / 8 ] & 0x80 >> ch % 8);
+    return map[ ch / 8 ] & 0x80 >> ch % 8;
 }
 
 static inline bool isIText(unsigned char ch)
@@ -171,6 +168,7 @@ static inline bool is8Bit(signed char ch)
 {
     return ch < 0;
 }
+
 static QString removeCRLF(const QString &s)
 {
     const bool CRLF = s.endsWith(QStringLiteral("\r\n"));
@@ -186,9 +184,7 @@ static QString removeDotStuff(const QString &s)
     return s.startsWith(QStringLiteral("..")) ? s.mid(1) : s;
 }
 
-namespace KSieve
-{
-
+namespace KSieve {
 //
 //
 // Lexer Implementation
@@ -196,10 +192,10 @@ namespace KSieve
 //
 
 Lexer::Impl::Impl(const char *scursor, const char *send, int options)
-    : mState(scursor ? scursor : send),
-      mEnd(send ? send : scursor),
-      mIgnoreComments(options & IgnoreComments),
-      mIgnoreLF(options & IgnoreLineFeeds)
+    : mState(scursor ? scursor : send)
+    , mEnd(send ? send : scursor)
+    , mIgnoreComments(options & IgnoreComments)
+    , mIgnoreLF(options & IgnoreLineFeeds)
 {
     if (!scursor || !send) {
         assert(atEnd());
@@ -311,7 +307,7 @@ Lexer::Token Lexer::Impl::nextToken(QString &result)
 
 bool Lexer::Impl::eatWS()
 {
-    while (!atEnd())
+    while (!atEnd()) {
         switch (*mState.cursor) {
         case '\r':
         case '\n':
@@ -326,6 +322,7 @@ bool Lexer::Impl::eatWS()
         default:
             return true;
         }
+    }
 
     // at end:
     return true;
@@ -473,7 +470,7 @@ bool Lexer::Impl::eatCWS()
         case ' ':
         case '\t': // SP / HTAB
             ++mState.cursor;
-            break;;
+            break;
         case '\n':
         case '\r': // CRLF
             if (!eatCRLF()) {
@@ -481,13 +478,14 @@ bool Lexer::Impl::eatCWS()
             }
             break;
         case '#':
-        case '/': { // comments
+        case '/':
+        {           // comments
             QString dummy;
             if (!parseComment(dummy)) {
                 return false;
             }
+            break;
         }
-        break;
         default:
             return true;
         }
@@ -510,7 +508,8 @@ bool Lexer::Impl::parseIdentifier(QString &result)
     }
 
     // rest of identifier chars ( now digits are allowed ):
-    for (++mState.cursor; !atEnd() && isIText(*mState.cursor); ++mState.cursor);
+    for (++mState.cursor; !atEnd() && isIText(*mState.cursor); ++mState.cursor) {
+    }
 
     const int identifierLength = mState.cursor - identifierStart;
 
@@ -596,7 +595,8 @@ bool Lexer::Impl::parseMultiLine(QString &result)
         case '\t':
             ++mState.cursor;
             break;
-        case '#': {
+        case '#':
+        {
             ++mState.cursor;
             QString dummy;
             if (!parseHashComment(dummy)) {
@@ -671,7 +671,7 @@ bool Lexer::Impl::parseQuotedString(QString &result)
     const std::unique_ptr<QTextDecoder> dec(codec->makeDecoder());
     assert(dec.get());
 
-    while (!atEnd())
+    while (!atEnd()) {
         switch (*mState.cursor) {
         case '"':
             ++mState.cursor;
@@ -706,6 +706,7 @@ bool Lexer::Impl::parseQuotedString(QString &result)
                 }
             }
         }
+    }
 
     makeError(Error::PrematureEndOfQuotedString, qsBeginLine, qsBeginCol);
     return false;
@@ -715,5 +716,4 @@ void Lexer::Impl::makeIllegalCharError(char ch)
 {
     makeError(isIllegal(ch) ? Error::IllegalCharacter : Error::UnexpectedCharacter);
 }
-
 } // namespace KSieve

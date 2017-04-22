@@ -26,14 +26,10 @@
 #include <PimCommon/SieveSyntaxHighlighterRules>
 
 class QMenu;
-namespace PimCommon
-{
+namespace PimCommon {
 class SieveSyntaxHighlighterRules;
-
 }
-namespace KSieveUi
-{
-
+namespace KSieveUi {
 class SieveTextEditPrivate;
 class KSIEVEUI_EXPORT SieveTextEdit : public KPIMTextEdit::PlainTextEditor
 {
@@ -84,7 +80,5 @@ private:
 
     SieveTextEditPrivate *const d;
 };
-
 }
 #endif
-

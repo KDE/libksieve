@@ -30,12 +30,10 @@
 SieveEditorHelpHtmlWidgetTest::SieveEditorHelpHtmlWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 SieveEditorHelpHtmlWidgetTest::~SieveEditorHelpHtmlWidgetTest()
 {
-
 }
 
 void SieveEditorHelpHtmlWidgetTest::shouldHaveDefaultValue()

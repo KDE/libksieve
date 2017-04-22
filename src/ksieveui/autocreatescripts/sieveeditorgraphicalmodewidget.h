@@ -26,8 +26,7 @@ class QSplitter;
 class QStackedWidget;
 class QDomDocument;
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveScriptPage;
 class SieveScriptListBox;
 class SieveEditorParsingMissingFeatureWarning;

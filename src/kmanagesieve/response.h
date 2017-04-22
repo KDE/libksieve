@@ -23,9 +23,7 @@
 
 #include <QByteArray>
 
-namespace KManageSieve
-{
-
+namespace KManageSieve {
 /** A response from a managesieve server.
  * @internal
  */
@@ -40,10 +38,11 @@ public:
     };
 
     Response()
-        : m_type(None),
-          m_quantity(0)
+        : m_type(None)
+        , m_quantity(0)
     {
     }
+
     Type type() const;
     QByteArray action() const;
     uint quantity() const;
@@ -71,7 +70,6 @@ private:
     QByteArray m_value;
     QByteArray m_extra;
 };
-
 }
 
 #endif

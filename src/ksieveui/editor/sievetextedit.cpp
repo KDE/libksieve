@@ -45,12 +45,12 @@ class KSieveUi::SieveTextEditPrivate
 {
 public:
     SieveTextEditPrivate()
-        : m_sieveLineNumberArea(nullptr),
-          mTextEditorCompleter(nullptr),
-          mShowHelpMenu(true)
+        : m_sieveLineNumberArea(nullptr)
+        , mTextEditorCompleter(nullptr)
+        , mShowHelpMenu(true)
     {
-
     }
+
     PimCommon::SieveSyntaxHighlighterRules mSieveHighliterRules;
     SieveLineNumberArea *m_sieveLineNumberArea;
     KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter;
@@ -58,8 +58,8 @@ public:
 };
 
 SieveTextEdit::SieveTextEdit(QWidget *parent)
-    : KPIMTextEdit::PlainTextEditor(parent),
-      d(new KSieveUi::SieveTextEditPrivate)
+    : KPIMTextEdit::PlainTextEditor(parent)
+    , d(new KSieveUi::SieveTextEditPrivate)
 {
     setSpellCheckingConfigFileName(QStringLiteral("sieveeditorrc"));
     setWordWrapMode(QTextOption::NoWrap);
@@ -134,8 +134,8 @@ void SieveTextEdit::lineNumberAreaPaintEvent(QPaintEvent *event)
 
     QTextBlock block = firstVisibleBlock();
     int blockNumber = block.blockNumber();
-    int top = (int) blockBoundingGeometry(block).translated(contentOffset()).top();
-    int bottom = top + (int) blockBoundingRect(block).height();
+    int top = (int)blockBoundingGeometry(block).translated(contentOffset()).top();
+    int bottom = top + (int)blockBoundingRect(block).height();
     while (block.isValid() && top <= event->rect().bottom()) {
         if (block.isVisible() && bottom >= event->rect().top()) {
             const QString number = QString::number(blockNumber + 1);
@@ -146,7 +146,7 @@ void SieveTextEdit::lineNumberAreaPaintEvent(QPaintEvent *event)
 
         block = block.next();
         top = bottom;
-        bottom = top + (int) blockBoundingRect(block).height();
+        bottom = top + (int)blockBoundingRect(block).height();
         ++blockNumber;
     }
 }
@@ -174,10 +174,12 @@ QStringList SieveTextEdit::completerList() const
     QStringList listWord;
 
     listWord << QStringLiteral("require") << QStringLiteral("stop");
-    listWord << QStringLiteral(":contains") << QStringLiteral(":matches") << QStringLiteral(":is") << QStringLiteral(":over") << QStringLiteral(":under") << QStringLiteral(":all") << QStringLiteral(":domain") << QStringLiteral(":localpart");
+    listWord << QStringLiteral(":contains") << QStringLiteral(":matches") << QStringLiteral(":is") << QStringLiteral(":over") << QStringLiteral(":under") << QStringLiteral(":all") << QStringLiteral(
+        ":domain") << QStringLiteral(":localpart");
     listWord << QStringLiteral("if") << QStringLiteral("elsif") << QStringLiteral("else");
     listWord << QStringLiteral("keep") << QStringLiteral("reject") << QStringLiteral("discard") << QStringLiteral("redirect")  << QStringLiteral("addflag") << QStringLiteral("setflag");
-    listWord << QStringLiteral("address") << QStringLiteral("allof") << QStringLiteral("anyof") << QStringLiteral("exists") << QStringLiteral("false") << QStringLiteral("header") << QStringLiteral("not") << QStringLiteral("size") << QStringLiteral("true");
+    listWord << QStringLiteral("address") << QStringLiteral("allof") << QStringLiteral("anyof") << QStringLiteral("exists") << QStringLiteral("false") << QStringLiteral("header") << QStringLiteral(
+        "not") << QStringLiteral("size") << QStringLiteral("true");
     listWord << QStringLiteral(":days") << QStringLiteral(":seconds") << QStringLiteral(":subject") << QStringLiteral(":addresses") << QStringLiteral(":text");
     listWord << QStringLiteral(":name") << QStringLiteral(":headers") << QStringLiteral(":first") << QStringLiteral(":importance");
     listWord << QStringLiteral(":message") << QStringLiteral(":from");
@@ -420,11 +422,10 @@ void SieveTextEdit::uncomment()
 
 bool SieveTextEdit::isWordWrap() const
 {
-    return (wordWrapMode() == QTextOption::WordWrap);
+    return wordWrapMode() == QTextOption::WordWrap;
 }
 
 void SieveTextEdit::wordWrap(bool state)
 {
     setWordWrapMode(state ? QTextOption::WordWrap : QTextOption::NoWrap);
 }
-

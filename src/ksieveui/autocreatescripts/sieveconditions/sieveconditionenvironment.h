@@ -21,8 +21,7 @@
 
 #include "sievecondition.h"
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveConditionEnvironment : public SieveCondition
 {
     Q_OBJECT
@@ -44,7 +43,6 @@ public:
     bool setParamWidgetValue(const QDomElement &element, QWidget *parent, bool notCondition, QString &error) Q_DECL_OVERRIDE;
 
     QUrl href() const Q_DECL_OVERRIDE;
-
 };
 }
 

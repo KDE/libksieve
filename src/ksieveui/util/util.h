@@ -41,14 +41,12 @@
 
 #include "ksieveui_export.h"
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 /**
  * The Util namespace contains a collection of helper functions use in
  * various places.
  */
-namespace Util
-{
+namespace Util {
 /**
  * Returns whether the availability of a vacation sieve script shall
  * be checked at the start up of an application.
@@ -61,7 +59,6 @@ KSIEVEUI_EXPORT bool checkOutOfOfficeOnStartup();
  */
 KSIEVEUI_EXPORT bool allowOutOfOfficeSettings();
 }
-
 }
 
 #endif

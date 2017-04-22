@@ -24,8 +24,7 @@
 #include <QPointer>
 
 class QWidget;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class VacationManagerPrivate;
 class SieveImapInstanceInterface;
 class KSIEVEUI_EXPORT VacationManager : public QObject

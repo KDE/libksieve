@@ -36,7 +36,8 @@ SieveEditorParsingMissingFeatureWarning::SieveEditorParsingMissingFeatureWarning
     connect(this, &SieveEditorParsingMissingFeatureWarning::linkActivated, this, &SieveEditorParsingMissingFeatureWarning::slotShowDetails);
 
     switch (type) {
-    case TextEditor: {
+    case TextEditor:
+    {
         QAction *action = new QAction(i18n("Switch in graphical mode"), this);
         connect(action, &QAction::triggered, this, &SieveEditorParsingMissingFeatureWarning::slotSwitchInGraphicalMode);
         addAction(action);
@@ -46,7 +47,8 @@ SieveEditorParsingMissingFeatureWarning::SieveEditorParsingMissingFeatureWarning
         addAction(action);
         break;
     }
-    case GraphicEditor: {
+    case GraphicEditor:
+    {
         QAction *action = new QAction(i18n("Switch in text mode"), this);
         connect(action, &QAction::triggered, this, &SieveEditorParsingMissingFeatureWarning::slotSwitchInTextMode);
         addAction(action);
@@ -102,4 +104,3 @@ void SieveEditorParsingMissingFeatureWarning::slotInActualMode()
 {
     setVisible(false);
 }
-

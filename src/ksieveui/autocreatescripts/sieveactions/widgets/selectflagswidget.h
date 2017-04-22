@@ -23,9 +23,7 @@
 #include <QListWidget>
 class QLineEdit;
 
-namespace KSieveUi
-{
-
+namespace KSieveUi {
 class SelectFlagsListWidget : public QListWidget
 {
     Q_OBJECT

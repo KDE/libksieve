@@ -42,8 +42,8 @@ static const int MINIMUMCONDITION = 1;
 static const int MAXIMUMCONDITION = 8;
 
 SieveConditionWidget::SieveConditionWidget(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent)
-    : QWidget(parent),
-      mSieveGraphicalModeWidget(sieveGraphicalModeWidget)
+    : QWidget(parent)
+    , mSieveGraphicalModeWidget(sieveGraphicalModeWidget)
 {
     initWidget();
 }
@@ -209,8 +209,8 @@ void SieveConditionWidget::setCondition(const QString &conditionName, const QDom
 }
 
 SieveConditionWidgetLister::SieveConditionWidgetLister(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent)
-    : KPIM::KWidgetLister(false, MINIMUMCONDITION, MAXIMUMCONDITION, parent),
-      mSieveGraphicalModeWidget(sieveGraphicalModeWidget)
+    : KPIM::KWidgetLister(false, MINIMUMCONDITION, MAXIMUMCONDITION, parent)
+    , mSieveGraphicalModeWidget(sieveGraphicalModeWidget)
 {
     slotClear();
     updateAddRemoveButton();
@@ -218,7 +218,6 @@ SieveConditionWidgetLister::SieveConditionWidgetLister(SieveEditorGraphicalModeW
 
 SieveConditionWidgetLister::~SieveConditionWidgetLister()
 {
-
 }
 
 void SieveConditionWidgetLister::slotAddWidget(QWidget *w)
@@ -380,4 +379,3 @@ void SieveConditionWidgetLister::loadScript(const QDomElement &e, bool uniqTest,
         }
     }
 }
-

@@ -121,7 +121,8 @@ QString SieveConditionServerMetaData::serverNeedsCapability() const
 
 QString SieveConditionServerMetaData::help() const
 {
-    return i18n("This test retrieves the value of the server annotation \"annotation-name\".  The retrieved value is compared to the \"key-list\". The test returns true if the annotation exists and its value matches any of the keys.");
+    return i18n(
+        "This test retrieves the value of the server annotation \"annotation-name\".  The retrieved value is compared to the \"key-list\". The test returns true if the annotation exists and its value matches any of the keys.");
 }
 
 bool SieveConditionServerMetaData::setParamWidgetValue(const QDomElement &element, QWidget *w, bool notCondition, QString &error)
@@ -135,26 +136,28 @@ bool SieveConditionServerMetaData::setParamWidgetValue(const QDomElement &elemen
             if (tagName == QLatin1String("str")) {
                 const QString tagValue = e.text();
                 switch (index) {
-                case 0: {
+                case 0:
+                {
                     QLineEdit *mailbox = w->findChild<QLineEdit *>(QStringLiteral("mailbox"));
                     mailbox->setText(tagValue);
                     break;
                 }
-                case 1: {
+                case 1:
+                {
                     QLineEdit *annotation = w->findChild<QLineEdit *>(QStringLiteral("annotation"));
                     annotation->setText(tagValue);
                     break;
                 }
-                case 2: {
+                case 2:
+                {
                     QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
                     value->setText(tagValue);
                     break;
                 }
-                default: {
+                default:
                     tooManyArgument(tagName, index, 3, error);
                     qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaData::setParamWidgetValue too many argument " << index;
                     break;
-                }
                 }
                 ++index;
             } else if (tagName == QLatin1String("tag")) {

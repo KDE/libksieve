@@ -26,12 +26,10 @@ class QAction;
 class QPushButton;
 class QMenu;
 class QLabel;
-namespace PimCommon
-{
+namespace PimCommon {
 class LineEditWithCompleter;
 }
-namespace KSieveUi
-{
+namespace KSieveUi {
 class KSIEVEUI_EXPORT FindBarBase : public QWidget
 {
     Q_OBJECT
@@ -82,8 +80,6 @@ protected:
     QLabel *mStatus;
     void addToCompletion(const QString &text);
 };
-
 }
 
 #endif /* FINDBARBASE_H */
-

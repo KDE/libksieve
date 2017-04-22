@@ -34,18 +34,18 @@ class KSieveUi::SieveEditorPrivate
 {
 public:
     SieveEditorPrivate()
-        : mSieveEditorWidget(nullptr),
-          mOkButton(nullptr)
+        : mSieveEditorWidget(nullptr)
+        , mOkButton(nullptr)
     {
-
     }
+
     SieveEditorWidget *mSieveEditorWidget;
     QPushButton *mOkButton;
 };
 
 SieveEditor::SieveEditor(QWidget *parent)
-    : QDialog(parent),
-      d(new KSieveUi::SieveEditorPrivate)
+    : QDialog(parent)
+    , d(new KSieveUi::SieveEditorPrivate)
 {
     setWindowTitle(i18n("Edit Sieve Script"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
@@ -175,4 +175,3 @@ void SieveEditor::addNormalMessage(const QString &msg)
 {
     d->mSieveEditorWidget->addNormalMessage(msg);
 }
-

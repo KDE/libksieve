@@ -86,4 +86,3 @@ void SieveScriptParsingErrorDialog::slotSaveAs()
     PimCommon::Util::saveTextAs(mTextEdit->toPlainText(), filter, this, QUrl(),
                                 i18nc("@title:window", "Save Log To File"));
 }
-

@@ -21,13 +21,11 @@
 #include <QWidget>
 #include <QUrl>
 class QStackedWidget;
-namespace KManageSieve
-{
+namespace KManageSieve {
 class SieveJob;
 }
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class VacationEditWidget;
 class VacationWarningWidget;
 class VacationCreateScriptJob;

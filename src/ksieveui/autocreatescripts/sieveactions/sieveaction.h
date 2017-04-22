@@ -22,8 +22,7 @@
 #include <QObject>
 #include <QUrl>
 class QDomElement;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveImapAccountSettings;
 class SieveEditorGraphicalModeWidget;
 class SieveAction : public QObject

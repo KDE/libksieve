@@ -43,8 +43,7 @@ using namespace KSieveUi;
 static int MINIMUMACTION = 1;
 static int MAXIMUMACTION = 8;
 
-namespace
-{
+namespace {
 inline const QString indentation()
 {
     return QStringLiteral("    ");
@@ -52,8 +51,8 @@ inline const QString indentation()
 }
 
 SieveActionWidget::SieveActionWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent)
-    : QWidget(parent),
-      mSieveGraphicalModeWidget(graphicalModeWidget)
+    : QWidget(parent)
+    , mSieveGraphicalModeWidget(graphicalModeWidget)
 {
     initWidget();
 }
@@ -66,7 +65,7 @@ SieveActionWidget::~SieveActionWidget()
 
 bool SieveActionWidget::isConfigurated() const
 {
-    return (mComboBox->currentIndex() != (mComboBox->count() - 1));
+    return mComboBox->currentIndex() != (mComboBox->count() - 1);
 }
 
 void SieveActionWidget::setFilterAction(QWidget *widget)
@@ -261,8 +260,8 @@ bool SieveActionWidget::setAction(const QString &actionName, const QDomElement &
 }
 
 SieveActionWidgetLister::SieveActionWidgetLister(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent)
-    : KPIM::KWidgetLister(false, MINIMUMACTION, MAXIMUMACTION, parent),
-      mSieveGraphicalModeWidget(graphicalModeWidget)
+    : KPIM::KWidgetLister(false, MINIMUMACTION, MAXIMUMACTION, parent)
+    , mSieveGraphicalModeWidget(graphicalModeWidget)
 {
     slotClear();
     updateAddRemoveButton();
@@ -270,7 +269,6 @@ SieveActionWidgetLister::SieveActionWidgetLister(SieveEditorGraphicalModeWidget 
 
 SieveActionWidgetLister::~SieveActionWidgetLister()
 {
-
 }
 
 void SieveActionWidgetLister::slotAddWidget(QWidget *w)
@@ -376,7 +374,7 @@ void SieveActionWidgetLister::loadScript(const QDomElement &element, bool onlyAc
             QDomElement e = node.toElement();
             if (!e.isNull()) {
                 const QString tagName = e.tagName();
-                if (tagName == QLatin1String("action") || tagName == QLatin1String("control")/*for break action*/) {
+                if (tagName == QLatin1String("action") || tagName == QLatin1String("control") /*for break action*/) {
                     if (e.hasAttribute(QStringLiteral("name"))) {
                         const QString actionName = e.attribute(QStringLiteral("name"));
                         if (tagName == QLatin1String("control") && actionName == QLatin1String("if")) {
@@ -409,4 +407,3 @@ void SieveActionWidgetLister::loadScript(const QDomElement &element, bool onlyAc
         }
     }
 }
-

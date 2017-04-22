@@ -23,10 +23,8 @@
 #include <QString>
 #include <QStringList>
 #include <QDomNode>
-namespace KSieveUi
-{
-namespace AutoCreateScriptUtil
-{
+namespace KSieveUi {
+namespace AutoCreateScriptUtil {
 QString createMultiLine(const QString &str);
 QString createList(const QString &str, QChar separator, bool addEndSemiColon = true);
 QString createList(const QStringList &lst, bool addSemiColon = true, bool protectSlash = false);

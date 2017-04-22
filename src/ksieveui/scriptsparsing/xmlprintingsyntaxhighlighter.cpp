@@ -68,4 +68,3 @@ void XMLPrintingSyntaxHighLighter::init()
     header.setFontWeight(QFont::Bold);
     m_rules.append(KPIMTextEdit::Rule(QRegularExpression(QStringLiteral("<\\?xml.*"), QRegularExpression::CaseInsensitiveOption), header));
 }
-

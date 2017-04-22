@@ -41,14 +41,14 @@ Q_DECLARE_METATYPE(KManageSieve::AuthDetails)
 Q_DECLARE_METATYPE(KManageSieve::Response)
 Q_DECLARE_METATYPE(KSslErrorUiData)
 
-Session::Session(QObject *parent) :
-    QObject(parent),
-    m_thread(new SessionThread(this)),
-    m_currentJob(nullptr),
-    m_state(None),
-    m_supportsStartTls(false),
-    m_connected(false),
-    m_disconnected(true)
+Session::Session(QObject *parent)
+    : QObject(parent)
+    , m_thread(new SessionThread(this))
+    , m_currentJob(nullptr)
+    , m_state(None)
+    , m_supportsStartTls(false)
+    , m_connected(false)
+    , m_disconnected(true)
 {
     qRegisterMetaType<KManageSieve::AuthDetails>();
     qRegisterMetaType<KManageSieve::Response>();
@@ -68,7 +68,7 @@ Session::Session(QObject *parent) :
     connect(m_thread, &SessionThread::sslDone,
             this, &Session::sslDone);
     connect(m_thread, &SessionThread::socketDisconnected,
-    [ = ]() {
+            [=]() {
         m_connected = false;
         m_disconnected = true;
     });
@@ -117,12 +117,12 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
                         disconnectFromHost();
                         return;
                     }
-                    if (!allowUnencrypted() && QSslSocket::supportsSsl() && !m_supportsStartTls &&
-                            KMessageBox::warningContinueCancel(nullptr,
-                                    i18n("TLS encryption was requested, but your Sieve server does not advertise TLS in its capabilities.\n"
-                                         "You can choose to try to initiate TLS negotiations nonetheless, or cancel the operation."),
-                                    i18n("Server Does Not Advertise TLS"), KGuiItem(i18n("&Start TLS nonetheless")), KStandardGuiItem::cancel(),
-                                    QStringLiteral("ask_starttls_%1").arg(m_url.host())) != KMessageBox::Continue) {
+                    if (!allowUnencrypted() && QSslSocket::supportsSsl() && !m_supportsStartTls
+                        && KMessageBox::warningContinueCancel(nullptr,
+                                                              i18n("TLS encryption was requested, but your Sieve server does not advertise TLS in its capabilities.\n"
+                                                                   "You can choose to try to initiate TLS negotiations nonetheless, or cancel the operation."),
+                                                              i18n("Server Does Not Advertise TLS"), KGuiItem(i18n("&Start TLS nonetheless")), KStandardGuiItem::cancel(),
+                                                              QStringLiteral("ask_starttls_%1").arg(m_url.host())) != KMessageBox::Continue) {
                         setErrorMessage(KIO::buildErrorString(KIO::ERR_USER_CANCELED, i18n("TLS encryption requested, but not supported by server.")));
                         disconnectFromHost();
                         return;
@@ -277,11 +277,11 @@ KManageSieve::AuthDetails Session::requestAuthDetails(const QUrl &url)
     ai.comment = i18n("Please enter your authentication details for your sieve account "
                       "(usually the same as your email password):");
 
-    QPointer<KPasswordDialog> dlg =
-        new KPasswordDialog(
+    QPointer<KPasswordDialog> dlg
+        = new KPasswordDialog(
         nullptr,
         KPasswordDialog::ShowUsernameLine | KPasswordDialog::ShowKeepPassword
-    );
+        );
     dlg->setUsername(ai.username);
     dlg->setPassword(ai.password);
     dlg->setKeepPassword(ai.keepPassword);

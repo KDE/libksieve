@@ -25,12 +25,10 @@
 SieveEditorMenuBarTest::SieveEditorMenuBarTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 SieveEditorMenuBarTest::~SieveEditorMenuBarTest()
 {
-
 }
 
 void SieveEditorMenuBarTest::shouldDisableActions()
@@ -108,7 +106,6 @@ void SieveEditorMenuBarTest::shouldDisableActions()
     QVERIFY(bar.wordWrapAction()->isEnabled());
     QVERIFY(bar.printAction()->isEnabled());
     QVERIFY(bar.printPreviewAction()->isEnabled());
-
 }
 
 void SieveEditorMenuBarTest::shouldHaveDefaultValue()

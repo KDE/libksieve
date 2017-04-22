@@ -22,12 +22,10 @@ using namespace KSieveUi;
 SieveSyntaxSpellCheckingHighlighter::SieveSyntaxSpellCheckingHighlighter(SieveTextEdit *plainText, const QColor &misspelledColor)
     : KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter(plainText, misspelledColor)
 {
-
 }
 
 SieveSyntaxSpellCheckingHighlighter::~SieveSyntaxSpellCheckingHighlighter()
 {
-
 }
 
 bool SieveSyntaxSpellCheckingHighlighter::spellCheckBlock(const QString &text)

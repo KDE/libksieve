@@ -142,4 +142,3 @@ bool SieveConditionConvert::setParamWidgetValue(const QDomElement &element, QWid
     }
     return true;
 }
-

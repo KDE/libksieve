@@ -21,10 +21,8 @@
 #define PARSINGUTIL_H
 
 #include <QDomDocument>
-namespace KSieveUi
-{
-namespace ParsingUtil
-{
+namespace KSieveUi {
+namespace ParsingUtil {
 QDomDocument parseScript(const QString &script, bool &result);
 }
 }

@@ -21,12 +21,10 @@
 
 #include <QList>
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveAction;
 class SieveEditorGraphicalModeWidget;
-namespace SieveActionList
-{
+namespace SieveActionList {
 QList<KSieveUi::SieveAction *> actionList(KSieveUi::SieveEditorGraphicalModeWidget *graphicalModeWidget);
 }
 }

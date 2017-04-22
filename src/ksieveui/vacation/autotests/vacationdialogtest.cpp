@@ -26,12 +26,10 @@
 VacationDialogTest::VacationDialogTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 VacationDialogTest::~VacationDialogTest()
 {
-
 }
 
 void VacationDialogTest::shouldHaveDefaultValue()
@@ -48,7 +46,6 @@ void VacationDialogTest::shouldHaveDefaultValue()
 
     KSeparator *separator = w.findChild<KSeparator *>(QStringLiteral("separator"));
     QVERIFY(separator);
-
 }
 
 QTEST_MAIN(VacationDialogTest)

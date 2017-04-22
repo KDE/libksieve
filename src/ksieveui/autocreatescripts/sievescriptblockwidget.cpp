@@ -37,9 +37,9 @@
 using namespace KSieveUi;
 
 SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent)
-    : SieveWidgetPageAbstract(parent),
-      mMatchCondition(AndCondition),
-      mSieveGraphicalModeWidget(graphicalModeWidget)
+    : SieveWidgetPageAbstract(parent)
+    , mMatchCondition(AndCondition)
+    , mSieveGraphicalModeWidget(graphicalModeWidget)
 {
     QVBoxLayout *topLayout = new QVBoxLayout(this);
     topLayout->setMargin(0);
@@ -119,7 +119,6 @@ void SieveScriptBlockWidget::slotAddBlock()
 
 void SieveScriptBlockWidget::setPageType(PageType type)
 {
-
     if (pageType() != type) {
         SieveWidgetPageAbstract::setPageType(type);
         switch (type) {
@@ -285,4 +284,3 @@ void SieveScriptBlockWidget::loadScript(const QDomElement &element, bool onlyAct
         }
     }
 }
-

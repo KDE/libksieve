@@ -23,8 +23,8 @@
 using namespace KSieveUi;
 
 AddressLineEdit::AddressLineEdit(QWidget *parent)
-    : QLineEdit(parent),
-      mIncorrectEmail(false)
+    : QLineEdit(parent)
+    , mIncorrectEmail(false)
 {
     setClearButtonEnabled(true);
     connect(this, &AddressLineEdit::textChanged, this, &AddressLineEdit::slotTextChanged);
@@ -32,7 +32,6 @@ AddressLineEdit::AddressLineEdit(QWidget *parent)
 
 AddressLineEdit::~AddressLineEdit()
 {
-
 }
 
 void AddressLineEdit::slotTextChanged()
@@ -67,4 +66,3 @@ void AddressLineEdit::focusOutEvent(QFocusEvent *ev)
     verifyAddress();
     QLineEdit::focusOutEvent(ev);
 }
-

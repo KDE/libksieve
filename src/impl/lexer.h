@@ -40,9 +40,7 @@
 
 #include <QStack>
 
-namespace KSieve
-{
-
+namespace KSieve {
 class Lexer::Impl
 {
 public:
@@ -128,7 +126,13 @@ private:
 
     struct State {
         State(const char *s = nullptr)
-            : cursor(s), line(0), beginOfLine(s), error() {}
+            : cursor(s)
+            , line(0)
+            , beginOfLine(s)
+            , error()
+        {
+        }
+
         const char *cursor;
         int line;
         const char *beginOfLine;
@@ -137,10 +141,10 @@ private:
 
     const char *const mEnd;
     const bool mIgnoreComments : 1;
-        const bool mIgnoreLF : 1;
-        QStack<State> mStateStack;
+    const bool mIgnoreLF : 1;
+    QStack<State> mStateStack;
 
-        const char *beginOfLine() const
+    const char *beginOfLine() const
     {
         return mState.beginOfLine;
     }
@@ -159,19 +163,23 @@ private:
     {
         return mEnd - mState.cursor < 0 ? 0 : mEnd - mState.cursor;
     }
+
     void makeError(Error::Type e)
     {
         makeError(e, line(), column());
     }
+
     void makeError(Error::Type e, int errorLine, int errorCol)
     {
         mState.error = Error(e, errorLine, errorCol);
     }
+
     void makeIllegalCharError(char ch);
     void makeIllegalCharError()
     {
         makeIllegalCharError(*mState.cursor);
     }
+
     /** Defines the current char to end a line.
         Warning: increases @p mCursor!
     **/
@@ -180,6 +188,7 @@ private:
         ++mState.line;
         mState.beginOfLine = ++mState.cursor;
     }
+
     bool skipTo(char c, bool acceptEnd = false)
     {
         while (!atEnd()) {
@@ -195,23 +204,26 @@ private:
         }
         return acceptEnd;
     }
+
     bool skipToCRLF(bool acceptEnd = true)
     {
-        for (; !atEnd(); ++mState.cursor)
+        for (; !atEnd(); ++mState.cursor) {
             if (*mState.cursor == '\n' || *mState.cursor == '\r') {
                 return eatCRLF();
             }
+        }
         return acceptEnd;
     }
+
     void skipTo8BitEnd()
     {
         while (!atEnd() && (signed char)*mState.cursor < 0) {
             ++mState.cursor;
         }
     }
+
     void skipToDelim();
 };
-
 }
 
 #endif

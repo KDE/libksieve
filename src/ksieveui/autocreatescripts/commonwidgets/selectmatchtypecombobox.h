@@ -21,8 +21,7 @@
 
 #include <KComboBox>
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveEditorGraphicalModeWidget;
 class SelectMatchTypeComboBox : public KComboBox
 {

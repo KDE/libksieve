@@ -35,5 +35,4 @@ VacationWarningWidget::VacationWarningWidget(QWidget *parent)
 
 VacationWarningWidget::~VacationWarningWidget()
 {
-
 }

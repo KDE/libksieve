@@ -149,4 +149,3 @@ QUrl SieveActionConvert::href() const
 {
     return QUrl(QStringLiteral("http://tools.ietf.org/html/draft-ietf-sieve-convert-06"));
 }
-

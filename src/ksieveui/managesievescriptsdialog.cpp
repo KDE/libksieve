@@ -50,15 +50,14 @@ class KSieveUi::ManageSieveScriptsDialogPrivate
 {
 public:
     ManageSieveScriptsDialogPrivate()
-        : mSieveEditor(nullptr),
-          mNewScript(nullptr),
-          mEditScript(nullptr),
-          mDeleteScript(nullptr),
-          mDeactivateScript(nullptr),
-          mIsNewScript(false),
-          mWasActive(false)
+        : mSieveEditor(nullptr)
+        , mNewScript(nullptr)
+        , mEditScript(nullptr)
+        , mDeleteScript(nullptr)
+        , mDeactivateScript(nullptr)
+        , mIsNewScript(false)
+        , mWasActive(false)
     {
-
     }
 
     CustomManageSieveWidget *mTreeView;
@@ -78,14 +77,15 @@ public:
 };
 
 ManageSieveScriptsDialog::ManageSieveScriptsDialog(QWidget *parent)
-    : QDialog(parent),
-      d(new KSieveUi::ManageSieveScriptsDialogPrivate)
+    : QDialog(parent)
+    , d(new KSieveUi::ManageSieveScriptsDialogPrivate)
 {
     setWindowTitle(i18n("Manage Sieve Scripts"));
     setModal(false);
     setAttribute(Qt::WA_GroupLeader);
     setAttribute(Qt::WA_DeleteOnClose);
-    KWindowSystem::setIcons(winId(), qApp->windowIcon().pixmap(IconSize(KIconLoader::Desktop), IconSize(KIconLoader::Desktop)), qApp->windowIcon().pixmap(IconSize(KIconLoader::Small), IconSize(KIconLoader::Small)));
+    KWindowSystem::setIcons(winId(), qApp->windowIcon().pixmap(IconSize(KIconLoader::Desktop), IconSize(KIconLoader::Desktop)),
+                            qApp->windowIcon().pixmap(IconSize(KIconLoader::Small), IconSize(KIconLoader::Small)));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     QFrame *frame = new QFrame;
     mainLayout->addWidget(frame);
@@ -282,4 +282,3 @@ void ManageSieveScriptsDialog::disableManagerScriptsDialog(bool disable)
 {
     setDisabled(disable);
 }
-

@@ -36,7 +36,6 @@ public:
         , mCheckVacation(nullptr)
         , mQuestionAsked(false)
     {
-
     }
 
     QWidget *mWidget;
@@ -46,8 +45,8 @@ public:
 };
 
 VacationManager::VacationManager(QWidget *parent)
-    : QObject(parent),
-      d(new KSieveUi::VacationManagerPrivate(parent))
+    : QObject(parent)
+    , d(new KSieveUi::VacationManagerPrivate(parent))
 {
     d->mCheckVacation = new KSieveUi::MultiImapVacationManager(this);
     connect(d->mCheckVacation.data(), &KSieveUi::MultiImapVacationManager::scriptActive, this, &VacationManager::updateVacationScriptStatus);
@@ -70,10 +69,10 @@ void VacationManager::slotUpdateVacationScriptStatus(bool active, const QString 
         if (!d->mQuestionAsked) {
             d->mQuestionAsked = true;
             if (KMessageBox::questionYesNo(nullptr, i18n("There is still an active out-of-office reply configured.\n"
-                                           "Do you want to edit it?"), i18n("Out-of-office reply still active"),
+                                                         "Do you want to edit it?"), i18n("Out-of-office reply still active"),
                                            KGuiItem(i18n("Edit"), QStringLiteral("document-properties")),
                                            KGuiItem(i18n("Ignore"), QStringLiteral("dialog-cancel")))
-                    == KMessageBox::Yes) {
+                == KMessageBox::Yes) {
                 slotEditVacation(serverName);
             }
         }
@@ -95,7 +94,6 @@ void VacationManager::slotEditVacation(const QString &serverName)
     if (!serverName.isEmpty()) {
         d->mMultiImapVacationDialog->switchToServerNamePage(serverName);
     }
-
 }
 
 void VacationManager::slotDialogCanceled()

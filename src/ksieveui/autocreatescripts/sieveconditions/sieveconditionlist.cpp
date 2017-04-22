@@ -71,4 +71,3 @@ QList<KSieveUi::SieveCondition *> KSieveUi::SieveConditionList::conditionList(Si
     list.append(new KSieveUi::SieveConditionServerMetaDataExists(sieveGraphicalModeWidget));
     return list;
 }
-

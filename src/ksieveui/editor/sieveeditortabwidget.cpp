@@ -38,7 +38,6 @@ SieveEditorTabWidget::SieveEditorTabWidget(QWidget *parent)
 
 SieveEditorTabWidget::~SieveEditorTabWidget()
 {
-
 }
 
 void SieveEditorTabWidget::slotTabContextMenuRequest(const QPoint &pos)
@@ -203,4 +202,3 @@ void SieveEditorTabWidget::tabInserted(int index)
     QTabWidget::tabInserted(index);
     tabBar()->tabButton(0, QTabBar::RightSide)->setEnabled(false);
 }
-

@@ -29,12 +29,10 @@ using namespace KSieveUi;
 SieveScriptDebuggerResultEditor::SieveScriptDebuggerResultEditor(QWidget *parent)
     : KPIMTextEdit::PlainTextEditor(parent)
 {
-
 }
 
 SieveScriptDebuggerResultEditor::~SieveScriptDebuggerResultEditor()
 {
-
 }
 
 void SieveScriptDebuggerResultEditor::addExtraMenuEntry(QMenu *menu, QPoint pos)

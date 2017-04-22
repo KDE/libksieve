@@ -36,7 +36,6 @@ private Q_SLOTS:
 
     void shouldCreateIdentifier();
     void shouldCreateIdentifier_data();
-
 };
 
 #endif // SIEVEACCOUNTTEST_H

@@ -23,8 +23,7 @@
 #include <QWidget>
 #include "sievescriptblockwidget.h"
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveScriptBlockWidget;
 class SieveScriptTabWidget;
 class SieveIncludeWidget;

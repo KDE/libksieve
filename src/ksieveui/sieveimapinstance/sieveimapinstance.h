@@ -23,8 +23,7 @@
 #include "ksieveui_export.h"
 #include <QObject>
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class KSIEVEUI_EXPORT SieveImapInstance
 {
 public:

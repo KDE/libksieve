@@ -182,4 +182,3 @@ QUrl SieveConditionSpamTest::href() const
 {
     return SieveEditorUtil::helpUrl(SieveEditorUtil::strToVariableName(name()));
 }
-

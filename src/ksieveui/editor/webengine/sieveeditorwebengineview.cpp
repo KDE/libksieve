@@ -50,7 +50,6 @@ SieveEditorWebEngineView::SieveEditorWebEngineView(QWidget *parent)
 
 SieveEditorWebEngineView::~SieveEditorWebEngineView()
 {
-
 }
 
 void SieveEditorWebEngineView::downloadRequested(QWebEngineDownloadItem *download)

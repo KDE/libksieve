@@ -52,8 +52,8 @@ public:
     void clear();
 
 protected:
-    uint       rType;
-    uint       quantity;
+    uint rType;
+    uint quantity;
     QByteArray key;
     QByteArray val;
     QByteArray extra;
@@ -61,7 +61,6 @@ protected:
 
 class kio_sieveProtocol : public KIO::TCPSlaveBase
 {
-
 public:
     enum connectionModes {
         NORMAL,
@@ -116,23 +115,23 @@ protected:
     bool saslInteract(void *in, KIO::AuthInfo &ai);
 
     // IOSlave global data
-    uint              m_connMode;
+    uint m_connMode;
 
     // Host-specific data
-    QStringList       m_sasl_caps;
-    bool              m_supportsTLS;
+    QStringList m_sasl_caps;
+    bool m_supportsTLS;
 
     // Global server respose class
     kio_sieveResponse r;
 
     // connection details
-    QString           m_sServer;
-    QString           m_sUser;
-    QString           m_sPass;
-    QString           m_sAuth;
-    bool              m_shouldBeConnected;
-    bool              m_allowUnencrypted;
-    quint16           m_port;
+    QString m_sServer;
+    QString m_sUser;
+    QString m_sPass;
+    QString m_sAuth;
+    bool m_shouldBeConnected;
+    bool m_allowUnencrypted;
+    quint16 m_port;
 
 private:
     bool requestCapabilitiesAfterStartTLS() const;

@@ -56,4 +56,3 @@ QString SieveActionReturn::serverNeedsCapability() const
 {
     return QStringLiteral("include");
 }
-

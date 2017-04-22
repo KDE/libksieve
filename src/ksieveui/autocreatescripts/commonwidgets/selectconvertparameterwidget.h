@@ -21,8 +21,7 @@
 
 #include <QWidget>
 class QSpinBox;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SelectConvertParameterWidget : public QWidget
 {
     Q_OBJECT

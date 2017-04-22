@@ -20,8 +20,7 @@
 
 #include <sonnet/spellcheckdecorator.h>
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveTextEdit;
 class SieveTextEditorSpellCheckDecorator : public Sonnet::SpellCheckDecorator
 {

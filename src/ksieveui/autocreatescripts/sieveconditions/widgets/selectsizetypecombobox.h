@@ -21,8 +21,7 @@
 
 #include <QComboBox>
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SelectSizeTypeComboBox : public QComboBox
 {
     Q_OBJECT

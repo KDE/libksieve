@@ -22,17 +22,13 @@
 
 class QStringList;
 
-namespace KManageSieve
-{
+namespace KManageSieve {
 class SieveJob;
 }
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class PlainTextEditorWidget;
 }
-namespace KSieveUi
-{
-
+namespace KSieveUi {
 /**
  * Diagnostic info for Sieve. Only compiled when debug is enabled, it is
  * not useful enough for non-developers to have this in releases.
@@ -67,7 +63,6 @@ private:
     QStringList mScriptList;
     QTimer *mShutDownJob;
 };
-
 }
 
 #endif

@@ -23,8 +23,7 @@
 #include "ksieveui_export.h"
 #include <QVector>
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveImapInstance;
 class KSIEVEUI_EXPORT SieveImapInstanceInterface
 {

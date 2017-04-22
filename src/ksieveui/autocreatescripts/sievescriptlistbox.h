@@ -27,8 +27,7 @@ class QDomDocument;
 class QDomNode;
 class QPushButton;
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveEditorGraphicalModeWidget;
 class SieveScriptPage;
 class SieveScriptListItem : public QListWidgetItem

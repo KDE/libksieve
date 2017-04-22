@@ -20,14 +20,11 @@
 
 class QString;
 
-namespace KManageSieve
-{
+namespace KManageSieve {
 class SieveJob;
 }
 
-namespace KSieveUi
-{
-
+namespace KSieveUi {
 class VacationDialog;
 
 class Vacation : public QObject
@@ -54,8 +51,7 @@ Q_SIGNALS:
     void requestEditVacation();
 
 protected Q_SLOTS:
-    void slotGetResult(KManageSieve::SieveJob *job, bool success,
-                       const QString &script, bool active);
+    void slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool active);
     void slotDialogOk();
     void slotDialogCancel();
     void slotPutActiveResult(KManageSieve::SieveJob *, bool);
@@ -70,7 +66,6 @@ protected:
     bool mWasActive;
     bool mCheckOnly;
 };
-
 }
 
 #endif

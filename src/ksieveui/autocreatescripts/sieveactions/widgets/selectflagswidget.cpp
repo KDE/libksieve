@@ -165,7 +165,6 @@ void SelectFlagsWidget::slotSelectFlags()
             flags = AutoCreateScriptUtil::createList(lstFlags);
         }
         mEdit->setText(flags);
-
     }
     delete dialog;
 }
@@ -179,4 +178,3 @@ QString SelectFlagsWidget::code() const
 {
     return mEdit->text();
 }
-

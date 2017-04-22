@@ -26,13 +26,11 @@
 
 class QTreeWidgetItem;
 
-namespace KManageSieve
-{
+namespace KManageSieve {
 class SieveJob;
 }
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveEditor;
 class ManageSieveScriptsDialogPrivate;
 class KSIEVEUI_EXPORT ManageSieveScriptsDialog : public QDialog
@@ -69,7 +67,6 @@ private:
 private:
     ManageSieveScriptsDialogPrivate *const d;
 };
-
 }
 
 #endif

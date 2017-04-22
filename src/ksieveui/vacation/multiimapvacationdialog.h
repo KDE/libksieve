@@ -24,8 +24,7 @@
 #include <QUrl>
 #include "ksieveui_export.h"
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class VacationCreateScriptJob;
 class MultiImapVacationManager;
 class MultiImapVacationDialogPrivate;

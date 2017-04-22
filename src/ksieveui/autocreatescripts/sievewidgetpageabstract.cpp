@@ -22,8 +22,8 @@
 using namespace KSieveUi;
 
 SieveWidgetPageAbstract::SieveWidgetPageAbstract(QWidget *parent)
-    : QWidget(parent),
-      mType(BlockIf)
+    : QWidget(parent)
+    , mType(BlockIf)
 {
 }
 

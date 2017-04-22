@@ -158,4 +158,3 @@ void SieveEditorGraphicalModeWidget::slotSwitchToTextMode()
 {
     switchTextMode(mSieveParsingWarning->initialScript());
 }
-

@@ -153,4 +153,3 @@ QUrl SieveConditionVirusTest::href() const
 {
     return SieveEditorUtil::helpUrl(SieveEditorUtil::strToVariableName(name()));
 }
-

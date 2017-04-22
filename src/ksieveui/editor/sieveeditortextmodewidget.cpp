@@ -384,9 +384,8 @@ void SieveEditorTextModeWidget::printPreview()
 {
     const QWidget *w = mTabWidget->currentWidget();
     if (w == mEditorWidget) {
-
         PimCommon::KPimPrintPreviewDialog previewdlg(this);
-        connect(&previewdlg, &QPrintPreviewDialog::paintRequested, this, [this](QPrinter * printer) {
+        connect(&previewdlg, &QPrintPreviewDialog::paintRequested, this, [this](QPrinter *printer) {
             mTextEdit->print(printer);
         });
         previewdlg.exec();
@@ -571,7 +570,7 @@ void SieveEditorTextModeWidget::debugSieveScript()
 bool SieveEditorTextModeWidget::isTextEditor() const
 {
     const QWidget *w = mTabWidget->currentWidget();
-    return (w == mEditorWidget);
+    return w == mEditorWidget;
 }
 
 bool SieveEditorTextModeWidget::printSupportEnabled() const

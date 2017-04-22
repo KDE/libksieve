@@ -110,4 +110,3 @@ QUrl SieveConditionExists::href() const
 {
     return SieveEditorUtil::helpUrl(SieveEditorUtil::strToVariableName(name()));
 }
-

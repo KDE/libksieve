@@ -27,10 +27,10 @@
 using namespace KSieveUi;
 
 SieveCondition::SieveCondition(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent)
-    : QObject(parent),
-      mSieveGraphicalModeWidget(sieveGraphicalModeWidget),
-      mName(name),
-      mLabel(label)
+    : QObject(parent)
+    , mSieveGraphicalModeWidget(sieveGraphicalModeWidget)
+    , mName(name)
+    , mLabel(label)
 {
 }
 
@@ -93,7 +93,7 @@ QString SieveCondition::help() const
     return QString();
 }
 
-bool SieveCondition::setParamWidgetValue(const QDomElement &/*element*/, QWidget */*parent*/, bool /*notCondition*/, QString &/*error*/)
+bool SieveCondition::setParamWidgetValue(const QDomElement & /*element*/, QWidget */*parent*/, bool /*notCondition*/, QString & /*error*/)
 {
     return true;
 }

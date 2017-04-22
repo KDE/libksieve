@@ -27,8 +27,7 @@ class QStackedWidget;
 class QSpinBox;
 class KDateComboBox;
 class KTimeComboBox;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SelectDateWidget : public QWidget
 {
     Q_OBJECT

@@ -53,7 +53,8 @@ VacationDialog::VacationDialog(const QString &caption, QWidget *parent)
     mainLayout->addWidget(separator);
     mainLayout->addWidget(buttonBox);
 
-    KWindowSystem::setIcons(winId(), qApp->windowIcon().pixmap(IconSize(KIconLoader::Desktop), IconSize(KIconLoader::Desktop)), qApp->windowIcon().pixmap(IconSize(KIconLoader::Small), IconSize(KIconLoader::Small)));
+    KWindowSystem::setIcons(winId(), qApp->windowIcon().pixmap(IconSize(KIconLoader::Desktop), IconSize(KIconLoader::Desktop)),
+                            qApp->windowIcon().pixmap(IconSize(KIconLoader::Small), IconSize(KIconLoader::Small)));
     readConfig();
     connect(buttonBox->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &VacationDialog::slotDialogDefaults);
 }

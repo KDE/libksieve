@@ -48,13 +48,12 @@ class KSieveUi::ManageSieveWidgetPrivate
 {
 public:
     ManageSieveWidgetPrivate()
-        : mTreeView(nullptr),
-          mClearAll(false),
-          mBlockSignal(false)
-
+        : mTreeView(nullptr)
+        , mClearAll(false)
+        , mBlockSignal(false)
     {
-
     }
+
     ~ManageSieveWidgetPrivate()
     {
     }
@@ -67,8 +66,8 @@ public:
 };
 
 ManageSieveWidget::ManageSieveWidget(QWidget *parent)
-    : QWidget(parent),
-      d(new KSieveUi::ManageSieveWidgetPrivate)
+    : QWidget(parent)
+    , d(new KSieveUi::ManageSieveWidgetPrivate)
 {
     QHBoxLayout *lay = new QHBoxLayout;
     lay->setMargin(0);
@@ -347,7 +346,7 @@ void ManageSieveWidget::changeActiveScript(QTreeWidgetItem *item, bool activate)
 bool ManageSieveWidget::itemIsActived(QTreeWidgetItem *item) const
 {
     Q_ASSERT(item && item->parent());
-    return (item->checkState(0) == Qt::Checked);
+    return item->checkState(0) == Qt::Checked;
 }
 
 bool ManageSieveWidget::isFileNameItem(QTreeWidgetItem *item) const
@@ -355,7 +354,7 @@ bool ManageSieveWidget::isFileNameItem(QTreeWidgetItem *item) const
     if (!item || !item->parent()) {
         return false;
     }
-    return (item->flags() & Qt::ItemIsEnabled);
+    return item->flags() & Qt::ItemIsEnabled;
 }
 
 void ManageSieveWidget::clear()
@@ -448,7 +447,7 @@ void ManageSieveWidget::slotDeleteScript()
     if (KMessageBox::warningContinueCancel(this, i18n("Really delete script \"%1\" from the server?", currentItem->text(0)),
                                            i18n("Delete Sieve Script Confirmation"),
                                            KStandardGuiItem::del())
-            != KMessageBox::Continue) {
+        != KMessageBox::Continue) {
         return;
     }
 
@@ -489,7 +488,8 @@ void ManageSieveWidget::slotUpdateButtons()
 
 void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &listScript, const QString &activeScript)
 {
-    qCDebug(LIBKSIEVE_LOG) << "void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &listScript, const QString &activeScript) success: " << success << " listScript" << listScript;
+    qCDebug(LIBKSIEVE_LOG) << "void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &listScript, const QString &activeScript) success: " << success
+                           << " listScript" << listScript;
     if (d->mClearAll) {
         return;
     }

@@ -34,4 +34,3 @@ SieveEditorWarning::SieveEditorWarning(QWidget *parent)
 SieveEditorWarning::~SieveEditorWarning()
 {
 }
-

@@ -30,9 +30,9 @@
 
 using namespace KSieveUi;
 VacationCheckJob::VacationCheckJob(const QUrl &url, const QString &serverName, QObject *parent)
-    : QObject(parent),
-      mServerName(serverName),
-      mUrl(url)
+    : QObject(parent)
+    , mServerName(serverName)
+    , mUrl(url)
     , mSieveJob(nullptr)
     , mParseJob(nullptr)
     , mScriptPos(-1)
@@ -216,4 +216,3 @@ QStringList VacationCheckJob::sieveCapabilities() const
 {
     return mSieveCapabilities;
 }
-

@@ -21,14 +21,13 @@
 #include <QUrl>
 #include <QtCore/QPointer>
 
-namespace KManageSieve
-{
-
+namespace KManageSieve {
 class SieveJob::Private
 {
 public:
     Private(SieveJob *qq)
-        : q(qq), mFileExists(DontKnow)
+        : q(qq)
+        , mFileExists(DontKnow)
     {
     }
 
@@ -71,7 +70,6 @@ public:
 
     static QHash<QUrl, QPointer<Session> > m_sessionPool;
 };
-
 }
 
 #endif

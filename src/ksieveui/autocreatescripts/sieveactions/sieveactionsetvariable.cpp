@@ -181,4 +181,3 @@ QString SieveActionSetVariable::help() const
     }
     return helpStr;
 }
-

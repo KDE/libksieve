@@ -51,9 +51,9 @@
 using namespace KSieveUi;
 
 SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
-    : QWidget(parent),
-      mMode(TextMode),
-      mModified(false)
+    : QWidget(parent)
+    , mMode(TextMode)
+    , mModified(false)
 {
     QVBoxLayout *lay = new QVBoxLayout;
 #if !defined(NDEBUG)
@@ -262,7 +262,6 @@ void SieveEditorWidget::print()
         qCDebug(LIBKSIEVE_LOG) << " Unknown mode";
         break;
     }
-
 }
 
 void SieveEditorWidget::printPreview()
@@ -426,7 +425,7 @@ void SieveEditorWidget::changeMode(EditorMode mode)
 
 void SieveEditorWidget::changeSwitchButtonText()
 {
-    mSwitchMode->setText((mMode == TextMode) ?  i18n("Simple Mode") : i18n("Advanced Mode"));
+    mSwitchMode->setText((mMode == TextMode) ? i18n("Simple Mode") : i18n("Advanced Mode"));
 }
 
 void SieveEditorWidget::slotEnableButtonOk(bool b)
@@ -610,7 +609,8 @@ void SieveEditorWidget::slotSwitchToGraphicalMode()
 void SieveEditorWidget::slotSwitchMode()
 {
     switch (mMode) {
-    case TextMode: {
+    case TextMode:
+    {
         bool result = false;
         const QDomDocument doc = ParsingUtil::parseScript(mTextModeWidget->currentscript(), result);
         if (result) {
@@ -629,7 +629,8 @@ void SieveEditorWidget::slotSwitchMode()
         }
         break;
     }
-    case GraphicMode: {
+    case GraphicMode:
+    {
         const QString script = mGraphicalModeWidget->currentscript();
         changeMode(TextMode);
         mTextModeWidget->setScript(script);

@@ -20,8 +20,7 @@
 #define SIEVEACTIONREJECT_H
 
 #include "sieveaction.h"
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveActionReject : public SieveAction
 {
     Q_OBJECT

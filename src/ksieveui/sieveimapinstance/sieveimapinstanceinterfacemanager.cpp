@@ -30,18 +30,17 @@ public:
     SieveImapInstanceInterfaceManagerPrivate()
         : manager(new SieveImapInstanceInterfaceManager)
     {
-
     }
+
     SieveImapInstanceInterfaceManager *manager;
 };
 
 Q_GLOBAL_STATIC(SieveImapInstanceInterfaceManagerPrivate, sInstance)
 
 SieveImapInstanceInterfaceManager::SieveImapInstanceInterfaceManager(QObject *parent)
-    : QObject(parent),
-      mInterface(nullptr)
+    : QObject(parent)
+    , mInterface(nullptr)
 {
-
 }
 
 SieveImapInstanceInterfaceManager::~SieveImapInstanceInterfaceManager()

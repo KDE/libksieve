@@ -31,7 +31,6 @@ public:
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();
-
 };
 
 #endif // SIEVESCRIPTDEBUGGERWIDGETTEST_H

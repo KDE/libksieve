@@ -31,6 +31,7 @@ public:
         : mIsActive(false)
     {
     }
+
     QString mNewName;
     QUrl mOldUrl;
     QUrl mNewUrl;
@@ -38,10 +39,9 @@ public:
 };
 
 RenameScriptJob::RenameScriptJob(QObject *parent)
-    : QObject(parent),
-      d(new RenameScriptJobPrivate)
+    : QObject(parent)
+    , d(new RenameScriptJobPrivate)
 {
-
 }
 
 RenameScriptJob::~RenameScriptJob()

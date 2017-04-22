@@ -20,8 +20,7 @@
 #define SIEVEACTIONEXTRACTTEXT_H
 
 #include "sieveaction.h"
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveActionExtractText : public SieveAction
 {
     Q_OBJECT

@@ -22,12 +22,10 @@
 
 #include <QDialog>
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class PlainTextEditorWidget;
 }
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveScriptDescriptionDialog : public QDialog
 {
     Q_OBJECT

@@ -31,7 +31,6 @@ SieveScriptDebuggerWarning::SieveScriptDebuggerWarning(QWidget *parent)
 
 SieveScriptDebuggerWarning::~SieveScriptDebuggerWarning()
 {
-
 }
 
 void SieveScriptDebuggerWarning::setErrorMessage(const QString &msg)

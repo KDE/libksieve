@@ -22,8 +22,7 @@
 
 #include <QWidget>
 #include "ksieveui_export.h"
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveImapAccountSettings;
 class KSIEVEUI_EXPORT AbstractMoveImapFolderWidget : public QWidget
 {

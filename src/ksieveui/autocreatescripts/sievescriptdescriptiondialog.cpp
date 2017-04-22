@@ -79,4 +79,3 @@ void SieveScriptDescriptionDialog::writeConfig()
     KConfigGroup group(KSharedConfig::openConfig(), "SieveScriptDescriptionDialog");
     group.writeEntry("Size", size());
 }
-

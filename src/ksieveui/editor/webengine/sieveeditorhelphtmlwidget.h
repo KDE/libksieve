@@ -23,13 +23,11 @@
 #include <QWidget>
 #include <QUrl>
 
-namespace KPIMTextEdit
-{
+namespace KPIMTextEdit {
 class SlideContainer;
 }
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveEditorWebEngineView;
 class SieveEditorLoadProgressIndicator;
 class FindBarWebEngineView;

@@ -48,16 +48,13 @@ class QUrl;
 class QString;
 class QStringList;
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class AbstractAkonadiImapSettingInterface;
 /**
  * The Util namespace contains a collection of helper functions use in
  * various places.
  */
-namespace Util
-{
-
+namespace Util {
 struct AccountInfo {
     KSieveUi::SieveImapAccountSettings sieveImapAccountSettings;
     QUrl sieveUrl;
@@ -88,7 +85,6 @@ KSIEVEUI_TESTS_EXPORT KSieveUi::Util::AccountInfo findAccountInfo(const QString 
  */
 KSIEVEUI_TESTS_EXPORT KSieveUi::Util::AccountInfo fullAccountInfo(const QString &identifier, bool withVacationFileName = true);
 }
-
 }
 
 Q_DECLARE_METATYPE(KSieveUi::Util::AccountInfo)

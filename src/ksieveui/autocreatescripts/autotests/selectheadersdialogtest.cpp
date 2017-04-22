@@ -36,7 +36,6 @@ SelectHeadersDialogTest::SelectHeadersDialogTest(QObject *parent)
 
 SelectHeadersDialogTest::~SelectHeadersDialogTest()
 {
-
 }
 
 void SelectHeadersDialogTest::shouldHaveDefaultValue()

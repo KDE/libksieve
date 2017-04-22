@@ -19,16 +19,15 @@
 
 using namespace KSieveUi::Legacy;
 KSieveUi::Legacy::VacationDataExtractor::VacationDataExtractor()
-    : KSieve::ScriptBuilder(),
-      mContext(None),
-      mNotificationInterval(0)
+    : KSieve::ScriptBuilder()
+    , mContext(None)
+    , mNotificationInterval(0)
 {
     qCDebug(LIBKSIEVE_LOG);
 }
 
 KSieveUi::Legacy::VacationDataExtractor::~VacationDataExtractor()
 {
-
 }
 
 void KSieveUi::Legacy::VacationDataExtractor::commandStart(const QString &identifier, int lineNumber)
@@ -60,7 +59,6 @@ void KSieveUi::Legacy::VacationDataExtractor::error(const KSieve::Error &e)
 
 void KSieveUi::Legacy::VacationDataExtractor::finished()
 {
-
 }
 
 void KSieveUi::Legacy::VacationDataExtractor::taggedArgument(const QString &tag)
@@ -109,8 +107,8 @@ void KSieveUi::Legacy::VacationDataExtractor::numberArgument(unsigned long numbe
 
 void KSieveUi::Legacy::VacationDataExtractor::stringListArgumentStart()
 {
-
 }
+
 void KSieveUi::Legacy::VacationDataExtractor::stringListEntry(const QString &string, bool, const QString &)
 {
     qCDebug(LIBKSIEVE_LOG) << "( \"" << string << "\" )";

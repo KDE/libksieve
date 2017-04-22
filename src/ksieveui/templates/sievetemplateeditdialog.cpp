@@ -42,7 +42,8 @@
 using namespace KSieveUi;
 
 SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTemplate)
-    : QDialog(parent), mOkButton(nullptr)
+    : QDialog(parent)
+    , mOkButton(nullptr)
 {
     setWindowTitle(defaultTemplate ? i18n("Default template") : i18n("Template"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
@@ -112,7 +113,6 @@ SieveTemplateEditDialog::~SieveTemplateEditDialog()
     writeConfig();
     disconnect(mTemplateNameEdit, &QLineEdit::textChanged, this, &SieveTemplateEditDialog::slotTemplateChanged);
     disconnect(mTextEditWidget->textEdit(), &SieveTextEdit::textChanged, this, &SieveTemplateEditDialog::slotTemplateChanged);
-
 }
 
 void SieveTemplateEditDialog::writeConfig()
@@ -159,4 +159,3 @@ QString SieveTemplateEditDialog::templateName() const
 {
     return mTemplateNameEdit->text();
 }
-

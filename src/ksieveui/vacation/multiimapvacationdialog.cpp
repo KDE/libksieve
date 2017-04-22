@@ -47,7 +47,6 @@ public:
         , mStackedWidget(nullptr)
         , mVacationManager(nullptr)
     {
-
     }
 
     QList<VacationCreateScriptJob *> mListCreateJob;
@@ -57,14 +56,15 @@ public:
 };
 
 MultiImapVacationDialog::MultiImapVacationDialog(MultiImapVacationManager *manager, QWidget *parent)
-    : QDialog(parent),
-      d(new KSieveUi::MultiImapVacationDialogPrivate)
+    : QDialog(parent)
+    , d(new KSieveUi::MultiImapVacationDialogPrivate)
 {
     d->mVacationManager = manager;
 
     setWindowTitle(i18n("Configure \"Out of Office\" Replies"));
 
-    KWindowSystem::setIcons(winId(), qApp->windowIcon().pixmap(IconSize(KIconLoader::Desktop), IconSize(KIconLoader::Desktop)), qApp->windowIcon().pixmap(IconSize(KIconLoader::Small), IconSize(KIconLoader::Small)));
+    KWindowSystem::setIcons(winId(), qApp->windowIcon().pixmap(IconSize(KIconLoader::Desktop), IconSize(KIconLoader::Desktop)),
+                            qApp->windowIcon().pixmap(IconSize(KIconLoader::Small), IconSize(KIconLoader::Small)));
 
     init();
     readConfig();
@@ -199,4 +199,3 @@ void MultiImapVacationDialog::slotDefaultClicked()
         }
     }
 }
-

@@ -84,4 +84,3 @@ void ParsingResultDialog::slotSaveAs()
     const QString filter = i18n("XML Files (*.xml);;All Files (*)");
     PimCommon::Util::saveTextAs(mTextEdit->toPlainText(), filter, this);
 }
-

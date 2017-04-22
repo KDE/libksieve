@@ -31,9 +31,7 @@
 
 class KSslErrorUiData;
 
-namespace KManageSieve
-{
-
+namespace KManageSieve {
 class SieveJob;
 class SessionThread;
 
@@ -106,7 +104,6 @@ private:
 
     friend class SessionThread;
 };
-
 }
 
 #endif

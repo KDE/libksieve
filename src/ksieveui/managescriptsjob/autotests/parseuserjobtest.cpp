@@ -102,4 +102,3 @@ void ParseUserTest::testParseUserErrorScriptJob()
     QCOMPARE(lst.count(), 0);
     QCOMPARE(result, false);
 }
-

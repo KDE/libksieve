@@ -24,16 +24,13 @@
 #include <kio/global.h>
 #include <kio/udsentry.h>
 
-namespace KIO
-{
+namespace KIO {
 class Job;
 }
 
 class KJob;
 
-namespace KManageSieve
-{
-
+namespace KManageSieve {
 class Session;
 
 /**
@@ -55,8 +52,7 @@ public:
      * @param makeActive If @c true, the script will be marked as active.
      * @param wasActive If @c true, the script will be marked as inactive.
      */
-    static SieveJob *put(const QUrl &destination, const QString &script,
-                         bool makeActive, bool wasActive);
+    static SieveJob *put(const QUrl &destination, const QString &script, bool makeActive, bool wasActive);
 
     /**
      * Gets a sieve script from an IMAP server.
@@ -127,8 +123,7 @@ Q_SIGNALS:
      * @param script The downloaded sieve script.
      * @param active Whether the script is active on the server.
      */
-    void gotScript(KManageSieve::SieveJob *job, bool success,
-                   const QString &script, bool active);
+    void gotScript(KManageSieve::SieveJob *job, bool success, const QString &script, bool active);
 
     /**
      * This signal is emitted when a list job has finished.
@@ -139,8 +134,7 @@ Q_SIGNALS:
      * @param activeScript The filename of the active script, or an
      *                     empty string if no script is active.
      */
-    void gotList(KManageSieve::SieveJob *job, bool success,
-                 const QStringList &scriptList, const QString &activeScript);
+    void gotList(KManageSieve::SieveJob *job, bool success, const QStringList &scriptList, const QString &activeScript);
 
     /**
      * This signal is emitted for all kind of jobs when they have finished.
@@ -151,8 +145,7 @@ Q_SIGNALS:
      * @param active The filename of the active script, or an
      * @param active Whether the script is active on the server.
      */
-    void result(KManageSieve::SieveJob *job, bool success,
-                const QString &script, bool active);
+    void result(KManageSieve::SieveJob *job, bool success, const QString &script, bool active);
 
     /**
      * This signal is emitted for each result entry of a list job.
@@ -175,7 +168,6 @@ private:
     friend class Session;
     //@endcond
 };
-
 }
 
 #endif

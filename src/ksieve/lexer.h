@@ -37,9 +37,7 @@
 
 class QString;
 
-namespace KSieve
-{
-
+namespace KSieve {
 class Error;
 
 class KSIEVE_EXPORT Lexer
@@ -106,7 +104,6 @@ private:
     const Lexer &operator=(const Lexer &);
     Lexer(const Lexer &);
 };
-
 } // namespace KSieve
 
 #endif

@@ -25,11 +25,8 @@
 
 class QDate;
 
-namespace KSieveUi
-{
-namespace VacationUtils
-{
-
+namespace KSieveUi {
+namespace VacationUtils {
 enum MailAction {
     Keep,
     Discard,
@@ -87,7 +84,6 @@ QString mergeRequireLine(const QString &script, const QString &scriptUpdate);
 QString updateVacationBlock(const QString &oldScript, const QString &newScript);
 
 QString mailAction(MailAction action);
-
 }
 }
 

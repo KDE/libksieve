@@ -20,8 +20,7 @@
 
 #include <QWebEngineView>
 class QWebEngineDownloadItem;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveEditorWebEngineView : public QWebEngineView
 {
     Q_OBJECT

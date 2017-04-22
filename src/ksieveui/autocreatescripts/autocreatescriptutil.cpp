@@ -19,7 +19,6 @@
 
 #include "autocreatescriptutil_p.h"
 
-
 #include <KLocalizedString>
 
 #include <QStringList>
@@ -40,7 +39,8 @@ QString AutoCreateScriptUtil::createList(const QString &str, QChar separator, bo
         return QString();
     case 1:
         return QLatin1String("\"") + list.first() + QLatin1String("\"");
-    default: {
+    default:
+    {
         const QString result = createList(list, addEndSemiColon);
         return result;
     }
@@ -104,7 +104,7 @@ QString AutoCreateScriptUtil::createAddressList(const QString &str, bool addSemi
 
 QString AutoCreateScriptUtil::negativeString(bool isNegative)
 {
-    return (isNegative ? QStringLiteral("not ") : QString());
+    return isNegative ? QStringLiteral("not ") : QString();
 }
 
 QString AutoCreateScriptUtil::tagValueWithCondition(const QString &tag, bool notCondition)

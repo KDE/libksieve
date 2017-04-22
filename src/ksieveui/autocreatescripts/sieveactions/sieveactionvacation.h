@@ -20,8 +20,7 @@
 #define SIEVEACTIONVACATION_H
 
 #include "sieveaction.h"
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveActionVacation : public SieveAction
 {
     Q_OBJECT

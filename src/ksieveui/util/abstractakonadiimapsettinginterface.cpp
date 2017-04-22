@@ -23,12 +23,10 @@ using namespace KSieveUi;
 
 AbstractAkonadiImapSettingInterface::AbstractAkonadiImapSettingInterface()
 {
-
 }
 
 AbstractAkonadiImapSettingInterface::~AbstractAkonadiImapSettingInterface()
 {
-
 }
 
 bool AbstractAkonadiImapSettingInterface::sieveSupport() const

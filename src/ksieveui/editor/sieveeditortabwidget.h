@@ -22,8 +22,7 @@
 #include <QTabWidget>
 #include "ksieveui_export.h"
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveEditorHelpHtmlWidget;
 class KSIEVEUI_EXPORT SieveEditorTabWidget : public QTabWidget
 {

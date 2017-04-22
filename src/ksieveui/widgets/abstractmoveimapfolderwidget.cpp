@@ -23,10 +23,8 @@ using namespace KSieveUi;
 AbstractMoveImapFolderWidget::AbstractMoveImapFolderWidget(QWidget *parent)
     : QWidget(parent)
 {
-
 }
 
 AbstractMoveImapFolderWidget::~AbstractMoveImapFolderWidget()
 {
-
 }

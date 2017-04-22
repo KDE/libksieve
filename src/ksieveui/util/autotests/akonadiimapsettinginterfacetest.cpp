@@ -20,16 +20,15 @@
 #include "akonadiimapsettinginterfacetest.h"
 
 AkonadiImapSettingInterfaceTest::AkonadiImapSettingInterfaceTest(const AkonadiImapSettingInterfaceDataTest &data)
-    : KSieveUi::AbstractAkonadiImapSettingInterface(),
-      mData(data)
+    : KSieveUi::AbstractAkonadiImapSettingInterface()
+    , mData(data)
 {
-
 }
 
 AkonadiImapSettingInterfaceTest::~AkonadiImapSettingInterfaceTest()
 {
-
 }
+
 bool AkonadiImapSettingInterfaceTest::sieveSupport() const
 {
     return mData.sieveSupport;

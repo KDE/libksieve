@@ -22,13 +22,11 @@
 #include <QStringList>
 #include <QUrl>
 
-namespace KManageSieve
-{
+namespace KManageSieve {
 class SieveJob;
 }
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class ParseUserScriptJob;
 class VacationCheckJob : public QObject
 {

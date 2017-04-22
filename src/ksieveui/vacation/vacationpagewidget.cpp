@@ -37,11 +37,11 @@
 
 using namespace KSieveUi;
 VacationPageWidget::VacationPageWidget(QWidget *parent)
-    : QWidget(parent),
-      mVacationManager(nullptr),
-      mPageScript(Script),
-      mWasActive(false),
-      mHasDateSupport(false)
+    : QWidget(parent)
+    , mVacationManager(nullptr)
+    , mPageScript(Script)
+    , mWasActive(false)
+    , mHasDateSupport(false)
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
     lay->setMargin(0);
@@ -110,8 +110,8 @@ void VacationPageWidget::slotGetResult(const QString &serverName, const QStringL
     qCDebug(LIBKSIEVE_LOG) << serverName << sieveCapabilities << endl
                            << scriptName << "(" << active << ")" << endl;
 
-    if (mUrl.scheme() == QStringLiteral("sieve") &&
-            !sieveCapabilities.contains(QStringLiteral("vacation"))) {
+    if (mUrl.scheme() == QStringLiteral("sieve")
+        && !sieveCapabilities.contains(QStringLiteral("vacation"))) {
         mStackWidget->setCurrentIndex(ScriptNotSupported);
         return;
     }

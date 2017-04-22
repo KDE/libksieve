@@ -27,8 +27,7 @@ class QTimer;
 class QTreeWidget;
 class QTreeWidgetItem;
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveTreeWidgetProgress;
 class SieveTreeWidgetItemPrivate;
 class KSIEVEUI_EXPORT SieveTreeWidgetItem : public QTreeWidgetItem

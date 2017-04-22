@@ -25,8 +25,7 @@
 class KLineEdit;
 class QPushButton;
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveTextEditWidget;
 class SieveTemplateEditDialog : public QDialog
 {

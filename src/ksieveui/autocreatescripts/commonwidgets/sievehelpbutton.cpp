@@ -34,7 +34,6 @@ SieveHelpButton::SieveHelpButton(QWidget *parent)
 
 SieveHelpButton::~SieveHelpButton()
 {
-
 }
 
 bool SieveHelpButton::event(QEvent *event)

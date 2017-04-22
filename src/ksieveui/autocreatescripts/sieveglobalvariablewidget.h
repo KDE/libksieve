@@ -29,8 +29,7 @@ class QGridLayout;
 class QCheckBox;
 class QDomElement;
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class SieveHelpButton;
 class SieveGlobalVariableWidget;
 

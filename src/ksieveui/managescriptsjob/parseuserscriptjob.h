@@ -24,13 +24,11 @@
 #include "ksieveui_private_export.h"
 class QDomDocument;
 class QDomElement;
-namespace KManageSieve
-{
+namespace KManageSieve {
 class SieveJob;
 }
 
-namespace KSieveUi
-{
+namespace KSieveUi {
 class KSIEVEUI_TESTS_EXPORT ParseUserScriptJob : public QObject
 {
     Q_OBJECT

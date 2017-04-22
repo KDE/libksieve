@@ -34,7 +34,6 @@ SieveScriptDebuggerTextEdit::SieveScriptDebuggerTextEdit(QWidget *parent)
 
 SieveScriptDebuggerTextEdit::~SieveScriptDebuggerTextEdit()
 {
-
 }
 
 void SieveScriptDebuggerTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)

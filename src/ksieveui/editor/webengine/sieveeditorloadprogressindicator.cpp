@@ -24,8 +24,8 @@
 #include <QPixmap>
 using namespace KSieveUi;
 SieveEditorLoadProgressIndicator::SieveEditorLoadProgressIndicator(QObject *parent)
-    : QObject(parent),
-      mProgressCount(0)
+    : QObject(parent)
+    , mProgressCount(0)
 {
     mProgressPix = KIconLoader::global()->loadPixmapSequence(QStringLiteral("process-working"), KIconLoader::SizeSmallMedium);
     mProgressTimer = new QTimer(this);
@@ -40,7 +40,6 @@ void SieveEditorLoadProgressIndicator::startAnimation()
 {
     mProgressCount = 0;
     mProgressTimer->start(300);
-
 }
 
 void SieveEditorLoadProgressIndicator::stopAnimation(bool success)
@@ -61,4 +60,3 @@ void SieveEditorLoadProgressIndicator::slotTimerDone()
 
     mProgressTimer->start(300);
 }
-

@@ -19,15 +19,14 @@
 
 #include "kmanagesieve/sievejob.h"
 
-
 #include <KLocalizedString>
 
 using namespace KSieveUi;
 GenerateGlobalScriptJob::GenerateGlobalScriptJob(const QUrl &url, QObject *parent)
-    : QObject(parent),
-      mCurrentUrl(url),
-      mMasterJob(nullptr),
-      mUserJob(nullptr)
+    : QObject(parent)
+    , mCurrentUrl(url)
+    , mMasterJob(nullptr)
+    , mUserJob(nullptr)
 {
 }
 
@@ -67,27 +66,27 @@ void GenerateGlobalScriptJob::start()
 void GenerateGlobalScriptJob::writeMasterScript()
 {
     const QString masterScript = QStringLiteral("# MASTER\n"
-                                 "#\n"
-                                 "# This file is authoritative for your system and MUST BE KEPT ACTIVE.\n"
-                                 "#\n"
-                                 "# Altering it is likely to render your account dysfunctional and may\n"
-                                 "# be violating your organizational or corporate policies.\n"
-                                 "# \n"
-                                 "# For more information on the mechanism and the conventions behind\n"
-                                 "# this script, see http://wiki.kolab.org/KEP:14\n"
-                                 "#\n"
-                                 "\n"
-                                 "require [\"include\"];\n"
-                                 "\n"
-                                 "# OPTIONAL: Includes for all or a group of users\n"
-                                 "# include :global \"all-users\";\n"
-                                 "# include :global \"this-group-of-users\";\n"
-                                 "\n"
-                                 "# The script maintained by the general management system\n"
-                                 "include :personal :optional \"MANAGEMENT\";\n"
-                                 "\n"
-                                 "# The script(s) maintained by one or more editors available to the user\n"
-                                 "include :personal :optional \"USER\";\n");
+                                                "#\n"
+                                                "# This file is authoritative for your system and MUST BE KEPT ACTIVE.\n"
+                                                "#\n"
+                                                "# Altering it is likely to render your account dysfunctional and may\n"
+                                                "# be violating your organizational or corporate policies.\n"
+                                                "# \n"
+                                                "# For more information on the mechanism and the conventions behind\n"
+                                                "# this script, see http://wiki.kolab.org/KEP:14\n"
+                                                "#\n"
+                                                "\n"
+                                                "require [\"include\"];\n"
+                                                "\n"
+                                                "# OPTIONAL: Includes for all or a group of users\n"
+                                                "# include :global \"all-users\";\n"
+                                                "# include :global \"this-group-of-users\";\n"
+                                                "\n"
+                                                "# The script maintained by the general management system\n"
+                                                "include :personal :optional \"MANAGEMENT\";\n"
+                                                "\n"
+                                                "# The script(s) maintained by one or more editors available to the user\n"
+                                                "include :personal :optional \"USER\";\n");
 
     QUrl url(mCurrentUrl);
     url = url.adjusted(QUrl::RemoveFilename);
@@ -146,4 +145,3 @@ void GenerateGlobalScriptJob::disableAllOtherScripts()
     //TODO
     Q_EMIT success();
 }
-
