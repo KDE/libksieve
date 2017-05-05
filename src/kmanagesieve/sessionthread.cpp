@@ -236,7 +236,7 @@ void SessionThread::doStartAuthentication()
     uint outlen;
     const char *mechusing = nullptr;
 
-    result = sasl_client_new("sieve", m_url.host().toLatin1(), nullptr, nullptr, callbacks, 0, &m_sasl_conn);
+    result = sasl_client_new("sieve", m_url.host().toLatin1().constData(), nullptr, nullptr, callbacks, 0, &m_sasl_conn);
     if (result != SASL_OK) {
         Q_EMIT error(KIO::buildErrorString(KIO::ERR_COULD_NOT_AUTHENTICATE, QString::fromUtf8(sasl_errdetail(m_sasl_conn))));
         doDisconnectFromHost(true);
@@ -244,7 +244,7 @@ void SessionThread::doStartAuthentication()
     }
 
     do {
-        result = sasl_client_start(m_sasl_conn, m_session->requestedSaslMethod().join(QLatin1Char(' ')).toLatin1(), &m_sasl_client_interact, &out, &outlen, &mechusing);
+        result = sasl_client_start(m_sasl_conn, m_session->requestedSaslMethod().join(QLatin1Char(' ')).toLatin1().constData(), &m_sasl_client_interact, &out, &outlen, &mechusing);
         if (result == SASL_INTERACT) {
             if (!saslInteract(m_sasl_client_interact)) {
                 Q_EMIT error(KIO::buildErrorString(KIO::ERR_COULD_NOT_AUTHENTICATE, QString::fromUtf8(sasl_errdetail(m_sasl_conn))));
@@ -344,7 +344,7 @@ bool SessionThread::saslInteract(void *in)
         case SASL_CB_USER:
         case SASL_CB_AUTHNAME:
             qCDebug(KMANAGERSIEVE_LOG) << "SASL_CB_[AUTHNAME|USER]: '" << m_url.userName() << "'";
-            interact->result = strdup(m_url.userName().toUtf8());
+            interact->result = strdup(m_url.userName().toUtf8().constData());
             if (interact->result) {
                 interact->len = strlen((const char *)interact->result);
             } else {
@@ -353,7 +353,7 @@ bool SessionThread::saslInteract(void *in)
             break;
         case SASL_CB_PASS:
             qCDebug(KMANAGERSIEVE_LOG) << "SASL_CB_PASS: [hidden] ";
-            interact->result = strdup(m_url.password().toUtf8());
+            interact->result = strdup(m_url.password().toUtf8().constData());
             if (interact->result) {
                 interact->len = strlen((const char *)interact->result);
             } else {

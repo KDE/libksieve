@@ -530,7 +530,7 @@ public:
     void error(const KSieve::Error &error) Q_DECL_OVERRIDE
     {
         indent = 0;
-        write((QStringLiteral("Error: ") + error.asString()).toLatin1());
+        write((QStringLiteral("Error: ") + error.asString()).toLatin1().constData());
     }
 
     void finished() Q_DECL_OVERRIDE
@@ -552,14 +552,14 @@ private:
     void write(const QByteArray &key, const QString &value)
     {
         if (value.isEmpty()) {
-            write(QByteArray(QByteArray("<") + key + QByteArray("/>")));
+            write(QByteArray(QByteArray("<") + key + QByteArray("/>")).constData());
             return;
         }
-        write(QByteArray(QByteArray("<") + key + QByteArray(">")));
+        write(QByteArray(QByteArray("<") + key + QByteArray(">")).constData());
         ++indent;
         write(value.toUtf8().data());
         --indent;
-        write(QByteArray(QByteArray("</") + key + QByteArray(">")));
+        write(QByteArray(QByteArray("</") + key + QByteArray(">")).constData());
     }
 };
 

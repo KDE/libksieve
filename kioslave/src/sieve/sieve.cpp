@@ -617,7 +617,7 @@ void kio_sieveProtocol::put(const QUrl &url, int /*permissions*/, KIO::JobFlags)
     }*/
 
     // upload data to the server
-    if (write(data, bufLen) != bufLen) {
+    if (write(data.constData(), bufLen) != bufLen) {
         error(ERR_COULD_NOT_WRITE, i18n("Network error."));
         disconnect(true);
         return;
@@ -966,12 +966,12 @@ bool kio_sieveProtocol::saslInteract(void *in, AuthInfo &ai)
         case SASL_CB_USER:
         case SASL_CB_AUTHNAME:
             ksDebug << "SASL_CB_[AUTHNAME|USER]: '" << m_sUser << "'" << endl;
-            interact->result = strdup(m_sUser.toUtf8());
+            interact->result = strdup(m_sUser.toUtf8().constData());
             interact->len = strlen((const char *)interact->result);
             break;
         case SASL_CB_PASS:
             ksDebug << "SASL_CB_PASS: [hidden] " << endl;
-            interact->result = strdup(m_sPass.toUtf8());
+            interact->result = strdup(m_sPass.toUtf8().constData());
             interact->len = strlen((const char *)interact->result);
             break;
         default:
@@ -1012,7 +1012,7 @@ bool kio_sieveProtocol::authenticate()
     ai.comment = i18n("Please enter your authentication details for your sieve account "
                       "(usually the same as your email password):");
 
-    result = sasl_client_new("sieve", m_sServer.toLatin1(), nullptr, nullptr, callbacks, 0, &conn);
+    result = sasl_client_new("sieve", m_sServer.toLatin1().constData(), nullptr, nullptr, callbacks, 0, &conn);
     if (result != SASL_OK) {
         ksDebug << "sasl_client_new failed with: " << result << endl;
         SASLERROR
@@ -1029,7 +1029,7 @@ bool kio_sieveProtocol::authenticate()
     }
 
     do {
-        result = sasl_client_start(conn, strList.join(QLatin1Char(' ')).toLatin1(),
+        result = sasl_client_start(conn, strList.join(QLatin1Char(' ')).toLatin1().constData(),
                                    &client_interact, &out, &outlen, &mechusing);
 
         if (result == SASL_INTERACT) {
