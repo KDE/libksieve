@@ -69,7 +69,7 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     hbox->addWidget(label);
 
     mTemplateNameEdit = new KLineEdit;
-    mTemplateNameEdit->setEnabled(!defaultTemplate);
+    mTemplateNameEdit->setReadOnly(defaultTemplate);
     mTemplateNameEdit->setTrapReturnKey(true);
     mTemplateNameEdit->setClearButtonEnabled(!defaultTemplate);
     hbox->addWidget(mTemplateNameEdit);
