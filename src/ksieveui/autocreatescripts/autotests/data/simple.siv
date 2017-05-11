@@ -1,0 +1,4 @@
+require "imapflags";
+if address "From" "someone@example.org" { 
+    setflag "\\Seen";
+}

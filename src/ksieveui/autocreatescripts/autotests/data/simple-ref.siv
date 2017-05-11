@@ -1,0 +1,6 @@
+require "";
+
+#SCRIPTNAME: Partie du script 0
+if address :all :is "From" "someone@example.org"
+{
+} 

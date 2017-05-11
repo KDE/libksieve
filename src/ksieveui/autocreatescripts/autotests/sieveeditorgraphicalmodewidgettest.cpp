@@ -66,8 +66,8 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         f.write(generatedScript.toUtf8());
         f.close();
 
-        qDebug() << " generatedScript" << generatedScript;
-        //TODO compare script.
+        //qDebug() << " generatedScript" << generatedScript;
+
         // compare to reference file
         QStringList args = QStringList()
                << QStringLiteral("-u")
@@ -88,6 +88,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::addColumn<bool>("hasError");
     QTest::addColumn<bool>("success");
 
+    QTest::newRow("emptyscript") << QStringLiteral("empty") << false << true;
     QTest::newRow("simplescript") << QStringLiteral("simple") << false << true;
 }
 
