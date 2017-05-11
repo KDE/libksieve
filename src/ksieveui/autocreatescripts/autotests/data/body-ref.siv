@@ -1,0 +1,8 @@
+#SCRIPTNAME: Partie du script 0
+# rule:[Gerrit CI Success]
+if allof (exists "X-Gerrit-Commit"
+, header :contains "from" "Continuous Integration (Code Review)"
+)
+{
+    stop;
+} 

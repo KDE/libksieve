@@ -90,6 +90,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
 
     QTest::newRow("emptyscript") << QStringLiteral("empty") << false << true;
     QTest::newRow("simplescript") << QStringLiteral("simple") << false << true;
+    QTest::newRow("bodywithlist") << QStringLiteral("body") << false << true;
 }
 
 
