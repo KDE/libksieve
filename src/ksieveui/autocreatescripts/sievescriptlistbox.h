@@ -22,6 +22,7 @@
 
 #include <QGroupBox>
 #include <QListWidgetItem>
+#include "ksieveui_private_export.h"
 class QListWidget;
 class QDomDocument;
 class QDomNode;
@@ -49,7 +50,7 @@ private:
     SieveScriptPage *mScriptPage;
 };
 
-class SieveScriptListBox : public QGroupBox
+class KSIEVEUI_TESTS_EXPORT SieveScriptListBox : public QGroupBox
 {
     Q_OBJECT
 public:

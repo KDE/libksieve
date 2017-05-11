@@ -20,9 +20,9 @@
 #define SIEVEEDITORPARSINGMISSINGFEATUREWARNING_H
 
 #include <KMessageWidget>
-
+#include "ksieveui_private_export.h"
 namespace KSieveUi {
-class SieveEditorParsingMissingFeatureWarning : public KMessageWidget
+class KSIEVEUI_TESTS_EXPORT SieveEditorParsingMissingFeatureWarning : public KMessageWidget
 {
     Q_OBJECT
 public:

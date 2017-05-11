@@ -22,6 +22,7 @@
 
 #include <QWidget>
 #include "sievescriptblockwidget.h"
+#include "ksieveui_private_export.h"
 
 namespace KSieveUi {
 class SieveScriptBlockWidget;
@@ -30,7 +31,7 @@ class SieveIncludeWidget;
 class SieveForEveryPartWidget;
 class SieveGlobalVariableWidget;
 class SieveEditorGraphicalModeWidget;
-class SieveScriptPage : public QWidget
+class KSIEVEUI_TESTS_EXPORT SieveScriptPage : public QWidget
 {
     Q_OBJECT
 public:

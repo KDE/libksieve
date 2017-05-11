@@ -21,10 +21,10 @@
 
 #include <QWidget>
 #include "../util/sieveimapaccountsettings.h"
-
+#include "ksieveui_private_export.h"
 namespace KSieveUi {
 class SieveImapAccountSettings;
-class SieveEditorAbstractWidget : public QWidget
+class KSIEVEUI_TESTS_EXPORT SieveEditorAbstractWidget : public QWidget
 {
     Q_OBJECT
 public:

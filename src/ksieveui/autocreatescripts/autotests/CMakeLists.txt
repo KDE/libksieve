@@ -2,6 +2,9 @@ include_directories(${libksieve_SOURCE_DIR}
         ${libksieve_SOURCE_DIR}/src/ksieveui/
         )
 
+ecm_qt_declare_logging_category(ksieveui_sieveeditor_autocreatescripts_LIB_SRCS HEADER
+    libksieve_debug.h IDENTIFIER LIBKSIEVE_LOG CATEGORY_NAME org.kde.pim.libksieve)
+
 macro(add_sieveeditor_autocreatescripts _source _extrasource)
     set(_test ${_source} ${_extrasource})
     get_filename_component(_name ${_source} NAME_WE)
@@ -12,8 +15,10 @@ macro(add_sieveeditor_autocreatescripts _source _extrasource)
         )
 endmacro()
 
+
+
 add_sieveeditor_autocreatescripts(selectheadertypecomboboxtest.cpp "../sieveconditions/widgets/selectheadertypecombobox.cpp;../autocreatescriptutil.cpp")
 add_sieveeditor_autocreatescripts(selectheadersdialogtest.cpp "../sieveconditions/widgets/selectheadertypecombobox.cpp;../autocreatescriptutil.cpp")
 add_sieveeditor_autocreatescripts(moveimapfolderwidgettest.cpp "../sieveactions/widgets/moveimapfolderwidget.cpp")
-
+add_sieveeditor_autocreatescripts(sieveeditorgraphicalmodewidgettest.cpp "../sieveeditorgraphicalmodewidget.cpp;${ksieveui_sieveeditor_autocreatescripts_LIB_SRCS}")
 

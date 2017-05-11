@@ -1,5 +1,5 @@
 /*
-   Copyright (C) 2013-2017 Laurent Montel <montel@kde.org>
+   Copyright (C) 2017 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
    modify it under the terms of the GNU Library General Public
@@ -17,14 +17,14 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef PARSINGUTIL_H
-#define PARSINGUTIL_H
 
-#include <QDomDocument>
-#include "ksieveui_private_export.h"
-namespace KSieveUi {
-namespace ParsingUtil {
-KSIEVEUI_TESTS_EXPORT QDomDocument parseScript(const QString &script, bool &result);
+#include "sieveeditorgraphicalmodewidgettest.h"
+#include <QTest>
+
+SieveEditorGraphicalModeWidgetTest::SieveEditorGraphicalModeWidgetTest(QObject *parent)
+    : QObject(parent)
+{
+
 }
-}
-#endif // PARSINGUTIL_H
+
+QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)
