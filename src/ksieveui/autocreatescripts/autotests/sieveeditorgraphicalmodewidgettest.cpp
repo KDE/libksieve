@@ -106,7 +106,10 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("bodywithlist") << QStringLiteral("body") << false << true;
     QTest::newRow("add-flags") << QStringLiteral("add-flags") << false << true;
     QTest::newRow("test-virus") << QStringLiteral("test-virus") << false << true;
-
+    QTest::newRow("replace") << QStringLiteral("replace") << false << true;
+    QTest::newRow("test-envelop") << QStringLiteral("test-envelop") << false << true;
+    QTest::newRow("test-servermetadataexists") << QStringLiteral("test-servermetadataexists") << false << true;
+    QTest::newRow("test-foreach") << QStringLiteral("test-foreach") << false << true;
 }
 
 

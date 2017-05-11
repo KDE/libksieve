@@ -1,0 +1,12 @@
+require "replace";
+
+#SCRIPTNAME: Script part 0
+#Script name: replace
+if true
+{
+    replace :subject "subject" :from "montel@kde.org" text:
+ replace text
+.
+;
+
+} 
