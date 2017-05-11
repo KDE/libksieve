@@ -95,7 +95,7 @@ QString SieveConditionAddress::code(QWidget *w) const
 QStringList SieveConditionAddress::needRequires(QWidget *w) const
 {
     const SelectAddressPartComboBox *selectAddressPart = w->findChild<SelectAddressPartComboBox *>(QStringLiteral("addresspartcombobox"));
-    return QStringList() << selectAddressPart->extraRequire();
+    return selectAddressPart->extraRequire();
 }
 
 QString SieveConditionAddress::help() const
