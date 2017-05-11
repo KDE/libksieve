@@ -124,6 +124,9 @@ bool SieveConditionBody::setParamWidgetValue(const QDomElement &element, QWidget
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
                 //implement in the future ?
+            } else if (tagName == QLatin1String("list")) {
+                strValue << AutoCreateScriptUtil::listValueToStr(e);
+                ++indexStr;
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionBody::setParamWidgetValue unknown tagName " << tagName;
