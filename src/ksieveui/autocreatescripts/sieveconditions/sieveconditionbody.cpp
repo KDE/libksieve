@@ -102,6 +102,7 @@ bool SieveConditionBody::setParamWidgetValue(const QDomElement &element, QWidget
     QStringList tagValueList;
     QStringList strValue;
 
+    bool wasListElement = false;
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
         QDomElement e = node.toElement();
@@ -127,6 +128,7 @@ bool SieveConditionBody::setParamWidgetValue(const QDomElement &element, QWidget
                 //implement in the future ?
             } else if (tagName == QLatin1String("list")) {
                 strValue << AutoCreateScriptUtil::listValueToStr(e);
+                wasListElement = true;
                 ++indexStr;
             } else {
                 unknownTag(tagName, error);
@@ -142,7 +144,7 @@ bool SieveConditionBody::setParamWidgetValue(const QDomElement &element, QWidget
         SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
         matchType->setCode(tagValueList.at(1), name(), error);
         QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
-        edit->setText(AutoCreateScriptUtil::quoteStr(strValue.at(0)));
+        edit->setText(wasListElement ? strValue.at(0) : AutoCreateScriptUtil::quoteStr(strValue.at(0)));
     } else if (strValue.count() == 2) {
         SelectBodyTypeWidget *bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
         bodyType->setCode(tagValueList.at(0), indexStr == 2 ? strValue.at(0) : QString(), name(), error);
