@@ -1,0 +1,7 @@
+require "fileinto";
+
+if header :is [ "X-DSPAM-Result", "X-DSPAM-Reclassified" ] [ "Spam", "Virus" ] {
+	fileinto "INBOX.spam";
+	stop;
+}
+redirect "user@domain.com";

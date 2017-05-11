@@ -1,0 +1,21 @@
+require "fileinto";
+require "vacation-seconds";
+require "vacation";
+
+#SCRIPTNAME: Script part 0
+# Move spam to spam folder
+if header :contains "X-Spam-Flag" "YES"
+{
+    fileinto "spam";
+    # Stop here so that we do not reply on spams
+    stop;
+} 
+
+#SCRIPTNAME: Script part 1
+vacation :days 1 :subject "Out of office reply" :addresses [ "j.doe@company.dom", "john.doe@company.dom" ] text:
+I'm out of office, please contact Joan Doe instead.
+Best regards
+John Doe
+.
+;
+

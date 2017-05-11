@@ -110,6 +110,9 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-envelop") << QStringLiteral("test-envelop") << false << true;
     QTest::newRow("test-servermetadataexists") << QStringLiteral("test-servermetadataexists") << false << true;
     QTest::newRow("test-foreach") << QStringLiteral("test-foreach") << false << true;
+    QTest::newRow("test-vacation") << QStringLiteral("test-vacation") << false << true;
+    QTest::newRow("test-forwarding") << QStringLiteral("test-forwarding") << false << true;
+    QTest::newRow("test-elseif") << QStringLiteral("test-elseif") << false << true;
 }
 
 

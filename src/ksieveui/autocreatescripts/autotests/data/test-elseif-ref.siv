@@ -1,0 +1,22 @@
+require "subaddress";
+require "fileinto";
+require "imap4flags";
+
+#SCRIPTNAME: Script part 0
+if address :all :is "X-Delivered-To" "alias1@fastmail.fm"
+{
+    fileinto "INBOX.alias1";
+    stop;
+} elsif address :all :is "X-Delivered-To" "alias2@sent.com"
+{
+    setflag [ "\\Seen" ];
+    fileinto "INBOX.alias2";
+    stop;
+} elsif address :all :is "X-Delivered-To" "alias3@eml.cc"
+{
+    fileinto "INBOX.alias3";
+    stop;
+} 
+
+#SCRIPTNAME: Script part 1
+redirect "another@account.net";
