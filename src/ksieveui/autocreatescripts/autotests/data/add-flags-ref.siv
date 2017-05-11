@@ -1,6 +1,6 @@
 require "imap4flags";
 
-#SCRIPTNAME: Partie du script 0
+#SCRIPTNAME: Script part 0
 #Script name: add flags                                                                                                                                                                                                                                                      
 if size :under 1
 {
