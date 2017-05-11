@@ -397,6 +397,8 @@ void SieveEditorWidget::slotShareScript()
             }
         }
         delete zip;
+    } else {
+        qCWarning(LIBKSIEVE_LOG) << "Impossible to open temp file";
     }
 }
 
