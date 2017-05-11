@@ -29,6 +29,9 @@ class SieveEditorGraphicalModeWidgetTest : public QObject
 public:
     explicit SieveEditorGraphicalModeWidgetTest(QObject *parent = nullptr);
     ~SieveEditorGraphicalModeWidgetTest() = default;
+private Q_SLOTS:
+    void shouldLoadScripts();
+    void shouldLoadScripts_data();
 };
 
 #endif // SIEVEEDITORGRAPHICALMODEWIDGETTEST_H

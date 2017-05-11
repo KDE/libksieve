@@ -1,6 +1,7 @@
 include_directories(${libksieve_SOURCE_DIR}
         ${libksieve_SOURCE_DIR}/src/ksieveui/
         )
+add_definitions( -DKSIEVEUI_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 
 ecm_qt_declare_logging_category(ksieveui_sieveeditor_autocreatescripts_LIB_SRCS HEADER
     libksieve_debug.h IDENTIFIER LIBKSIEVE_LOG CATEGORY_NAME org.kde.pim.libksieve)
