@@ -1,8 +1,15 @@
+require "body";
+require "imap4flags";
+require "fileinto";
+
 #SCRIPTNAME: Partie du script 0
 # rule:[Gerrit CI Success]
 if allof (exists "X-Gerrit-Commit"
+, not body :text :contains [ "WARNINGS", "FAILURE" ]
 , header :contains "from" "Continuous Integration (Code Review)"
 )
 {
+    setflag [ "\\Seen" ];
+    fileinto "INBOX/Trash";
     stop;
 } 

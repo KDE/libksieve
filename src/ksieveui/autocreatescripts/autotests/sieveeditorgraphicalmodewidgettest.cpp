@@ -21,9 +21,18 @@
 #include "sieveeditorgraphicalmodewidgettest.h"
 #include "../sieveeditorgraphicalmodewidget.h"
 #include "scriptsparsing/parsingutil.h"
+#include <PimCommon/SieveSyntaxHighlighterUtil>
 #include <QTest>
 #include <QStandardPaths>
 #include <QProcess>
+
+#ifndef Q_OS_WIN
+void initLocale()
+{
+    setenv("LC_ALL", "en_US.utf-8", 1);
+}
+Q_CONSTRUCTOR_FUNCTION(initLocale)
+#endif
 
 SieveEditorGraphicalModeWidgetTest::SieveEditorGraphicalModeWidgetTest(QObject *parent)
     : QObject(parent)
@@ -47,6 +56,10 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
     QFETCH(bool, success);
 
     KSieveUi::SieveEditorGraphicalModeWidget w;
+    PimCommon::SieveSyntaxHighlighterUtil sieveHighlighterutil;
+    const QStringList capabilities = sieveHighlighterutil.fullCapabilities();
+
+    w.setSieveCapabilities(capabilities);
     const QString originalFile = QLatin1String(KSIEVEUI_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral(".siv");
     const QString refFile = QLatin1String(KSIEVEUI_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral("-ref.siv");
     const QString generatedFile = QLatin1String(KSIEVEUI_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral("-generated.siv");
@@ -91,6 +104,9 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("emptyscript") << QStringLiteral("empty") << false << true;
     QTest::newRow("simplescript") << QStringLiteral("simple") << false << true;
     QTest::newRow("bodywithlist") << QStringLiteral("body") << false << true;
+    QTest::newRow("add-flags") << QStringLiteral("add-flags") << false << true;
+    QTest::newRow("test-virus") << QStringLiteral("test-virus") << false << true;
+
 }
 
 

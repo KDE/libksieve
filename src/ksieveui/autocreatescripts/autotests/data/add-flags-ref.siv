@@ -1,0 +1,8 @@
+require "imap4flags";
+
+#SCRIPTNAME: Partie du script 0
+#Script name: add flags                                                                                                                                                                                                                                                      
+if size :under 1
+{
+    addflag [ "\\Deleted", "\\Answered", "\\Flagged" ];
+} 

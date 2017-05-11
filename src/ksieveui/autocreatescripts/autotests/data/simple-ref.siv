@@ -1,6 +1,8 @@
-require "";
+require "subaddress";
+require "imap4flags";
 
 #SCRIPTNAME: Partie du script 0
 if address :all :is "From" "someone@example.org"
 {
+    setflag [ "\\Seen" ];
 } 
