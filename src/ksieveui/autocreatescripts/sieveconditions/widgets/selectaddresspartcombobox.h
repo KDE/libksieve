@@ -34,7 +34,7 @@ public:
     QString code() const;
     void setCode(const QString &code, const QString &name, QString &error);
 
-    QString extraRequire() const;
+    QStringList extraRequire() const;
 
 Q_SIGNALS:
     void valueChanged();

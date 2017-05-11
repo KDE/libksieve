@@ -52,12 +52,13 @@ QString SelectAddressPartComboBox::code() const
     return itemData(currentIndex()).toString();
 }
 
-QString SelectAddressPartComboBox::extraRequire() const
+QStringList SelectAddressPartComboBox::extraRequire() const
 {
+    QStringList lst;
     if (mHasSubaddressCapability) {
-        return QStringLiteral("subaddress");
+        lst = QStringList() << QStringLiteral("subaddress");
     }
-    return QString();
+    return lst;
 }
 
 void SelectAddressPartComboBox::setCode(const QString &code, const QString &name, QString &error)
