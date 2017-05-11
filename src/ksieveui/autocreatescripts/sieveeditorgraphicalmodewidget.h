@@ -22,6 +22,7 @@
 
 #include "editor/sieveeditorabstractwidget.h"
 #include "util/sieveimapaccountsettings.h"
+#include "ksieveui_private_export.h"
 class QSplitter;
 class QStackedWidget;
 class QDomDocument;
@@ -30,7 +31,7 @@ namespace KSieveUi {
 class SieveScriptPage;
 class SieveScriptListBox;
 class SieveEditorParsingMissingFeatureWarning;
-class SieveEditorGraphicalModeWidget : public SieveEditorAbstractWidget
+class KSIEVEUI_TESTS_EXPORT SieveEditorGraphicalModeWidget : public SieveEditorAbstractWidget
 {
     Q_OBJECT
 public:
