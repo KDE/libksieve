@@ -56,7 +56,7 @@ QStringList SelectAddressPartComboBox::extraRequire() const
 {
     QStringList lst;
     if (mHasSubaddressCapability) {
-        lst = QStringList() << QStringLiteral("subaddress");
+        lst << QStringLiteral("subaddress");
     }
     return lst;
 }
