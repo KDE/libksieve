@@ -105,7 +105,9 @@ bool SieveConditionHeader::setParamWidgetValue(const QDomElement &element, QWidg
                     headerType->setCode(e.text());
                 } else if (index == 1) {
                     QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
-                    value->setText(e.text().replace(QStringLiteral("\""), QStringLiteral("\\\"")));
+                    QString st = AutoCreateScriptUtil::quoteStr(e.text());
+                    st = AutoCreateScriptUtil::quoteStr(st);
+                    value->setText(st);
                 } else {
                     tooManyArgument(tagName, index, 2, error);
                     qCDebug(LIBKSIEVE_LOG) << " SieveConditionHeader::setParamWidgetValue too many argument " << index;

@@ -40,6 +40,7 @@ QString fixListValue(QString valueStr);
 QString quoteStr(QString str);
 void comboboxItemNotFound(const QString &searchItem, const QString &name, QString &error);
 QString createFullWhatsThis(const QString &help, const QString &href);
+QString protectSlash(QString str);
 }
 }
 #endif // AUTOCREATESCRIPTUTIL_H

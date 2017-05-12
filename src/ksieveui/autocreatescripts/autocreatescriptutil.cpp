@@ -52,6 +52,11 @@ QString AutoCreateScriptUtil::quoteStr(QString str)
     return str.replace(QLatin1String("\""), QStringLiteral("\\\""));
 }
 
+QString AutoCreateScriptUtil::protectSlash(QString str)
+{
+    return str.replace(QLatin1Char('\\'), QStringLiteral("\\\\"));
+}
+
 QString AutoCreateScriptUtil::createList(const QStringList &lst, bool addSemiColon, bool protectSlash)
 {
     QString result;
@@ -59,7 +64,7 @@ QString AutoCreateScriptUtil::createList(const QStringList &lst, bool addSemiCol
     bool wasFirst = true;
     for (QString str : lst) {
         if (protectSlash) {
-            str = str.replace(QLatin1Char('\\'), QStringLiteral("\\\\"));
+            str = AutoCreateScriptUtil::protectSlash(str);
         }
         result += (wasFirst ? QString() : QStringLiteral(",")) + QStringLiteral(" \"%1\"").arg(quoteStr(str));
         wasFirst = false;
