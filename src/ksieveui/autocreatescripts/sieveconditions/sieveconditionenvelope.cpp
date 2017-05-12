@@ -128,8 +128,14 @@ bool SieveConditionEnvelope::setParamWidgetValue(const QDomElement &element, QWi
             if (tagName == QLatin1String("tag")) {
                 const QString tagValue = e.text();
                 if (indexTag == 0) {
+                    QString err;
                     SelectAddressPartComboBox *selectAddressPart = w->findChild<SelectAddressPartComboBox *>(QStringLiteral("addresspartcombobox"));
-                    selectAddressPart->setCode(AutoCreateScriptUtil::tagValue(tagValue), name(), error);
+                    selectAddressPart->setCode(AutoCreateScriptUtil::tagValue(tagValue), name(), err);
+                    //all: is default sometime we don't add it.
+                    if (!err.isEmpty()) {
+                        SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
+                        selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(tagValue, notCondition), name(), error);
+                    }
                 } else if (indexTag == 1) {
                     SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
                     selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(tagValue, notCondition), name(), error);

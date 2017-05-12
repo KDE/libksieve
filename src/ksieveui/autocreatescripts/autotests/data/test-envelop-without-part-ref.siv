@@ -1,0 +1,9 @@
+require "envelope";
+require "subaddress";
+
+#SCRIPTNAME: Script part 0
+if envelope :all :matches "from" "*jim-???@*"
+{
+    discard;
+    stop;
+} 
