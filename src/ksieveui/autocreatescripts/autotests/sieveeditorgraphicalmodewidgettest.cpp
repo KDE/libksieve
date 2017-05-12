@@ -113,6 +113,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-vacation") << QStringLiteral("test-vacation") << false << true;
     QTest::newRow("test-forwarding") << QStringLiteral("test-forwarding") << false << true;
     QTest::newRow("test-elseif") << QStringLiteral("test-elseif") << false << true;
+    QTest::newRow("test-address-order") << QStringLiteral("test-address-order") << false << true;
 }
 
 

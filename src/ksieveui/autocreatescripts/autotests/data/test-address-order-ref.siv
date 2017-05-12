@@ -1,0 +1,8 @@
+require "subaddress";
+require "variables";
+
+#SCRIPTNAME: Script part 0
+if address :detail :matches "to" "*"
+{
+    set "extension_name" "${1}";
+} 
