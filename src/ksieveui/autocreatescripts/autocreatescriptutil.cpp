@@ -47,9 +47,13 @@ QString AutoCreateScriptUtil::createList(const QString &str, QChar separator, bo
     }
 }
 
-QString AutoCreateScriptUtil::quoteStr(QString str)
+QString AutoCreateScriptUtil::quoteStr(QString str, bool protectSlash)
 {
-    return str.replace(QLatin1String("\""), QStringLiteral("\\\""));
+    QString st = str;
+    if (protectSlash) {
+        st = AutoCreateScriptUtil::protectSlash(str);
+    }
+    return st.replace(QLatin1String("\""), QStringLiteral("\\\""));
 }
 
 QString AutoCreateScriptUtil::protectSlash(QString str)

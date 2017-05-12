@@ -37,7 +37,7 @@ QString strValue(QDomNode &node);
 QStringList listValue(const QDomElement &element);
 QString listValueToStr(const QDomElement &element);
 QString fixListValue(QString valueStr);
-QString quoteStr(QString str);
+QString quoteStr(QString str, bool protectSlash = false);
 void comboboxItemNotFound(const QString &searchItem, const QString &name, QString &error);
 QString createFullWhatsThis(const QString &help, const QString &href);
 QString protectSlash(QString str);
