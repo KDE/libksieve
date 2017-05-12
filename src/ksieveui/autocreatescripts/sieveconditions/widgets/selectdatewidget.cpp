@@ -168,11 +168,11 @@ QString SelectDateWidget::dateValue(SelectDateWidget::DateType type) const
         str = QStringLiteral("%1").arg(mDateValue->value(), 2, 10, QLatin1Char('0'));
         break;
     case Date:
-        str = mDateEdit->date().toString();
+        str = QLocale::c().toString(mDateEdit->date());
         break;
     case Julian:
         //TODO
-        str = mDateEdit->date().toString();
+        str = QLocale::c().toString(mDateEdit->date());
         break;
     case Hour:
         str = QStringLiteral("%1").arg(mDateValue->value(), 2, 10, QLatin1Char('0'));
@@ -184,16 +184,16 @@ QString SelectDateWidget::dateValue(SelectDateWidget::DateType type) const
         str = QStringLiteral("%1").arg(mDateValue->value(), 2, 10, QLatin1Char('0'));
         break;
     case Time:
-        str = mTimeEdit->time().toString();
+        str = QLocale::c().toString(mTimeEdit->time());
         break;
     case Iso8601:
-        str = mDateEdit->date().toString();
+        str = QLocale::c().toString(mDateEdit->date());
         break;
     case Std11:
-        str = mDateEdit->date().toString();
+        str = QLocale::c().toString(mDateEdit->date());
         break;
     case Zone:
-        str = mDateEdit->date().toString();
+        str = QLocale::c().toString(mDateEdit->date());
         break;
     case Weekday:
         str = QStringLiteral("%1").arg(mDateValue->value());
@@ -311,7 +311,7 @@ void SelectDateWidget::setCode(const QString &type, const QString &value)
         break;
     case Date:
         mStackWidget->setCurrentWidget(mDateEdit);
-        mDateEdit->setDate(QDate::fromString(value));
+        mDateEdit->setDate(QLocale::c().toDate(value));
         break;
     case Julian:
         mStackWidget->setCurrentWidget(mDateLineEdit);
@@ -319,7 +319,7 @@ void SelectDateWidget::setCode(const QString &type, const QString &value)
         break;
     case Time:
         mStackWidget->setCurrentWidget(mTimeEdit);
-        mTimeEdit->setTime(QTime::fromString(value));
+        mTimeEdit->setTime(QLocale::c().toTime(value));
         break;
     case Iso8601:
     case Std11:
