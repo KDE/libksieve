@@ -116,6 +116,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-address-order") << QStringLiteral("test-address-order") << false << true;
     QTest::newRow("test-regexp") << QStringLiteral("test-regexp") << false << true;
     QTest::newRow("test-envelop-without-part") << QStringLiteral("test-envelop-without-part") << false << true;
+    QTest::newRow("test-anti-slash") << QStringLiteral("test-anti-slash") << false << true;
 }
 
 

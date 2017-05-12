@@ -17,6 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 #include "sieveactionfileinto.h"
+#include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 #include "widgets/moveimapfolderwidget.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
@@ -87,7 +88,7 @@ bool SieveActionFileInto::setParamWidgetValue(const QDomElement &element, QWidge
             } else if (tagName == QLatin1String("str")) {
                 const QString tagValue = e.text();
                 KSieveUi::AbstractMoveImapFolderWidget *edit = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("fileintolineedit"));
-                edit->setText(tagValue);
+                edit->setText(AutoCreateScriptUtil::protectSlash(tagValue));
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {

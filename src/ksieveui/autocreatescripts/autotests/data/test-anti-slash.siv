@@ -1,0 +1,4 @@
+if envelope :contains ["from","to"] "pedophile@yourdomain.com" { 
+   fileinto "c:\\spyfolder";
+   keep; 
+} 
