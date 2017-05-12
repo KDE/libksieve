@@ -44,12 +44,12 @@ void SelectConvertParameterWidget::setCode(const QStringList &code, QString &err
     }
 
     if (code.count() < 2) {
-        error += i18n("Not enough arguments for SelectConvertParameterWidget. Expected 2 arguments.");
+        error += i18n("Not enough arguments for SelectConvertParameterWidget. Expected 2 arguments.") + QLatin1Char('\n');
         qCDebug(LIBKSIEVE_LOG) << " SelectConvertParameterWidget::setCode parsing error ?";
         return;
     }
     if (code.count() > 2) {
-        error += i18n("Too many arguments for SelectConvertParameterWidget, \"%1\"", code.count());
+        error += i18n("Too many arguments for SelectConvertParameterWidget, \"%1\"", code.count()) + QLatin1Char('\n');
         qCDebug(LIBKSIEVE_LOG) << " too many argument " << code.count();
     }
 

@@ -165,7 +165,7 @@ QString AutoCreateScriptUtil::fixListValue(QString valueStr)
 
 void AutoCreateScriptUtil::comboboxItemNotFound(const QString &searchItem, const QString &name, QString &error)
 {
-    error += i18n("Cannot find item \"%1\" in widget \"%2\"", searchItem, name);
+    error += i18n("Cannot find item \"%1\" in widget \"%2\"", searchItem, name) + QLatin1Char('\n');
 }
 
 QString AutoCreateScriptUtil::createFullWhatsThis(const QString &help, const QString &href)

@@ -69,7 +69,7 @@ void SieveIncludeLocation::setCode(const QString &code, QString &error)
     if (index != -1) {
         setCurrentIndex(index);
     } else {
-        error += i18n("Unknown location type \"%1\" during parsing includes", code);
+        error += i18n("Unknown location type \"%1\" during parsing includes", code) + QLatin1Char('\n');
         setCurrentIndex(0);
     }
 }
