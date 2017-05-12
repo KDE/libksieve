@@ -70,7 +70,7 @@ QString AutoCreateScriptUtil::createList(const QStringList &lst, bool addSemiCol
         if (protectSlash) {
             str = AutoCreateScriptUtil::protectSlash(str);
         }
-        result += (wasFirst ? QString() : QStringLiteral(",")) + QStringLiteral(" \"%1\"").arg(quoteStr(str));
+        result += (wasFirst ? QString() : QStringLiteral(",")) + QStringLiteral(" \"%1\"").arg(quoteStr(str, false));
         wasFirst = false;
     }
     result += QLatin1String(" ]");
