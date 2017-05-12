@@ -1,0 +1,9 @@
+require "fileinto";
+require "mailbox";
+
+#SCRIPTNAME: Script part 0
+if header :regex "subject" ".* \| Nouveau ticket - .*"
+{
+    fileinto :create "GLPI/Nouveaux tickets";
+    stop;
+} 
