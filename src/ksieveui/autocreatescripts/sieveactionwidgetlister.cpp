@@ -379,7 +379,7 @@ void SieveActionWidgetLister::loadScript(const QDomElement &element, bool onlyAc
                         const QString actionName = e.attribute(QStringLiteral("name"));
                         if (tagName == QLatin1String("control") && actionName == QLatin1String("if")) {
                             qCDebug(LIBKSIEVE_LOG) << "We found an loop if in a loop if. Not supported";
-                            error += QLatin1Char('\n') + i18n("We detected a loop if in a loop if. It's not supported") + QLatin1Char('\n');
+                            error += i18n("We detected a loop if in a loop if. It's not supported") + QLatin1Char('\n');
                         }
                         if (firstAction) {
                             firstAction = false;

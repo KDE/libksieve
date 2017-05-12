@@ -110,7 +110,7 @@ bool SieveActionSetVariable::setParamWidgetValue(const QDomElement &element, QWi
                         QCheckBox *protectAgainstUseRegexp = w->findChild<QCheckBox *>(QStringLiteral("regexprotect"));
                         protectAgainstUseRegexp->setChecked(true);
                     } else {
-                        error += QLatin1Char('\n') + i18n("Script needs regex support, but server does not have it.");
+                        error += i18n("Script needs regex support, but server does not have it.") + QLatin1Char('\n');
                     }
                 } else {
                     SelectVariableModifierComboBox *modifier = w->findChild<SelectVariableModifierComboBox *>(QStringLiteral("modifier"));
