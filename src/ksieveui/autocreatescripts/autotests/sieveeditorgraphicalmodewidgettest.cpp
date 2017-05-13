@@ -92,7 +92,6 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         QVERIFY(proc.waitForFinished());
 
         QEXPECT_FAIL("test-current-date" , "Expected failure on delete-headers file", Continue);
-        QEXPECT_FAIL("delete-headers" , "Expected failure on delete-headers file", Continue);
         QCOMPARE(proc.exitCode(), 0);
     }
 }

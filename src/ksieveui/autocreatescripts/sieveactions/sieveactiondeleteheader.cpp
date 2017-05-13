@@ -67,7 +67,7 @@ QWidget *SieveActionDeleteHeader::createParamWidget(QWidget *parent) const
     return w;
 }
 
-bool SieveActionDeleteHeader::setParamWidgetValue(const QDomElement &element, QWidget *w, QString &error)
+bool SieveActionDeleteHeader::parseValue(const QDomElement &element, QWidget *w, QString &error, bool isNegative)
 {
     int index = 0;
     QDomNode node = element.firstChild();
@@ -76,11 +76,13 @@ bool SieveActionDeleteHeader::setParamWidgetValue(const QDomElement &element, QW
         if (!e.isNull()) {
             const QString tagName = e.tagName();
             if (tagName == QLatin1String("test")) {
-                QDomNode testNode = e.toElement();
-                return setParamWidgetValue(testNode.toElement(), w, error);
+                const QDomNode testNode = e.toElement();
+                const QString nameValue = e.attribute(QStringLiteral("name"), QString());
+                const bool isNegative = (nameValue == QLatin1String("not"));
+                return parseValue(testNode.toElement(), w, error, isNegative);
             } else if (tagName == QLatin1String("tag")) {
                 SelectMatchTypeComboBox *combo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
-                combo->setCode(AutoCreateScriptUtil::tagValue(e.text()), name(), error);
+                combo->setCode(AutoCreateScriptUtil::tagValueWithCondition(e.text(), isNegative), name(), error);
             } else if (tagName == QLatin1String("str")) {
                 if (index == 0) {
                     QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("headeredit"));
@@ -105,6 +107,11 @@ bool SieveActionDeleteHeader::setParamWidgetValue(const QDomElement &element, QW
         node = node.nextSibling();
     }
     return true;
+}
+
+bool SieveActionDeleteHeader::setParamWidgetValue(const QDomElement &element, QWidget *w, QString &error)
+{
+    return parseValue(element, w, error, false);
 }
 
 QString SieveActionDeleteHeader::code(QWidget *w) const

@@ -31,6 +31,8 @@ public:
     bool setParamWidgetValue(const QDomElement &element, QWidget *parent, QString &error) Q_DECL_OVERRIDE;
     QString help() const Q_DECL_OVERRIDE;
     QUrl href() const Q_DECL_OVERRIDE;
+private:
+    bool parseValue(const QDomElement &element, QWidget *w, QString &error, bool isNegative);
 };
 }
 

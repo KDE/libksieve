@@ -1,9 +1,10 @@
 require "editheader";
- 
-#Script name: delete headers
 
-if true {
+#SCRIPTNAME: Script part 0
+#Script name: delete headers
+if true
+{
     deleteheader :matches "header-str" "header-value";
     deleteheader not :is "header-str" "header-value";
     deleteheader not :matches "" "";
-}
+} 
