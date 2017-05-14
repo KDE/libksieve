@@ -81,13 +81,13 @@ bool SieveActionEnclose::setParamWidgetValue(const QDomElement &element, QWidget
                 if (tagValue == QLatin1String("headers")) {
                     const QString strValue = AutoCreateScriptUtil::strValue(node);
                     if (!strValue.isEmpty()) {
-                        QLineEdit *subject = w->findChild<QLineEdit *>(QStringLiteral("subject"));
+                        QLineEdit *subject = w->findChild<QLineEdit *>(QStringLiteral("headers"));
                         subject->setText(strValue);
                     }
                 } else if (tagValue == QLatin1String("subject")) {
                     const QString strValue = AutoCreateScriptUtil::strValue(node);
                     if (!strValue.isEmpty()) {
-                        QLineEdit *headers = w->findChild<QLineEdit *>(QStringLiteral("headers"));
+                        QLineEdit *headers = w->findChild<QLineEdit *>(QStringLiteral("subject"));
                         headers->setText(strValue);
                     }
                 } else {

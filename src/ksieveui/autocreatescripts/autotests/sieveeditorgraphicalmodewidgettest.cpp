@@ -123,6 +123,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("delete-headers") << QStringLiteral("delete-headers") << false << true;
     QTest::newRow("mailboxexist") << QStringLiteral("mailboxexist") << false << true;
     QTest::newRow("extract-text") << QStringLiteral("extract-text") << false << true;
+    QTest::newRow("eenclose") << QStringLiteral("enclose") << false << true;
 }
 
 
