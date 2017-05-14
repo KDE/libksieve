@@ -1,0 +1,9 @@
+require "convert";
+require "enotify";
+
+#SCRIPTNAME: Script part 0
+#Script name: notify
+if convert "image/jpeg" "image/jpeg" ["pix-x=300","pix-y=200"]
+{
+    notify :importance "2" :message "message !!!" "";
+} 

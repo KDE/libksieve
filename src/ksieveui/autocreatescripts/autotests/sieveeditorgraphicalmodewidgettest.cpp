@@ -130,6 +130,13 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     //Need to fix : "set" variable
     QTest::newRow("include") << QStringLiteral("include") << false << true;
     QTest::newRow("variable-lower") << QStringLiteral("variable-lower") << false << true;
+    QTest::newRow("test-environnement") << QStringLiteral("test-environnement") << false << true;
+    QTest::newRow("test-has-flags") << QStringLiteral("test-has-flags") << false << true;
+    QTest::newRow("test-spam-plus") << QStringLiteral("test-spam-plus") << false << true;
+    QTest::newRow("remove-flags") << QStringLiteral("remove-flags") << false << true;
+    QTest::newRow("variable") << QStringLiteral("variable") << false << true;
+    QTest::newRow("break") << QStringLiteral("break") << false << true;
+    QTest::newRow("notify") << QStringLiteral("notify") << false << true;
 }
 
 

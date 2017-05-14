@@ -1,0 +1,9 @@
+require "environment";
+require "imap4flags";
+
+#SCRIPTNAME: Script part 0
+#Script name: test environnement
+if environment "PATH" "local folder"
+{
+    keep;
+} 
