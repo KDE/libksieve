@@ -120,8 +120,9 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-anti-slash") << QStringLiteral("test-anti-slash") << false << true;
     QTest::newRow("test-current-date") << QStringLiteral("test-current-date") << false << true;
     QTest::newRow("not-condition") << QStringLiteral("not-condition") << false << true;
-    //Need to fix it.
     QTest::newRow("delete-headers") << QStringLiteral("delete-headers") << false << true;
+    QTest::newRow("mailboxexist") << QStringLiteral("mailboxexist") << false << true;
+    QTest::newRow("extract-text") << QStringLiteral("extract-text") << false << true;
 }
 
 
