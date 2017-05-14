@@ -147,6 +147,9 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("not-condition2") << QStringLiteral("not-condition2") << false << true;
     QTest::newRow("address-with-default-is-parameter") << QStringLiteral("address-with-default-is-parameter") << false << true;
     QTest::newRow("test-spam") << QStringLiteral("test-spam") << false << true;
+    QTest::newRow("reject") << QStringLiteral("reject") << false << true;
+    QTest::newRow("keep") << QStringLiteral("keep") << false << true;
+    QTest::newRow("test-headers") << QStringLiteral("test-headers") << false << true;
 }
 
 
