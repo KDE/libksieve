@@ -367,6 +367,9 @@ void SieveConditionWidgetLister::loadScript(const QDomElement &e, bool uniqTest,
                                 }
                             } else if (testTagName == QLatin1String("crlf")) {
                                 //nothing
+                            } else if (testTagName == QLatin1String("comment")) {
+                                //nothing
+                                //implement in the future ?
                             } else {
                                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionWidgetLister::loadScript unknown condition tag: " << testTagName;
                             }

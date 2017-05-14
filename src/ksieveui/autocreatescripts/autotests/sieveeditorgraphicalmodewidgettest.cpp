@@ -91,6 +91,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         proc.start(QStringLiteral("diff"), args);
         QVERIFY(proc.waitForFinished());
 
+        QEXPECT_FAIL("regexp" , "Expected failure on regexp file. Problem with header + comparator", Continue);
         QEXPECT_FAIL("test-current-date" , "Expected failure on delete-headers file", Continue);
         QCOMPARE(proc.exitCode(), 0);
     }
@@ -152,6 +153,8 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("vacation-active-discard") << QStringLiteral("vacation-active-discard") << false << true;
     QTest::newRow("vacation-multiple") << QStringLiteral("vacation-multiple") << false << true;
     QTest::newRow("full-example1") << QStringLiteral("full-example1") << false << true;
+    //We need to fix it.
+    QTest::newRow("regexp") << QStringLiteral("regexp") << true << true;
 }
 
 
