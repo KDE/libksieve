@@ -143,6 +143,9 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-date") << QStringLiteral("test-date") << false << true;
     QTest::newRow("redirect") << QStringLiteral("redirect") << false << true;
     QTest::newRow("convert-action") << QStringLiteral("convert-action") << false << true;
+    QTest::newRow("address-with-default-all-parameter") << QStringLiteral("address-with-default-all-parameter") << false << true;
+    QTest::newRow("not-condition2") << QStringLiteral("not-condition2") << false << true;
+    QTest::newRow("address-with-default-is-parameter") << QStringLiteral("address-with-default-is-parameter") << false << true;
 }
 
 

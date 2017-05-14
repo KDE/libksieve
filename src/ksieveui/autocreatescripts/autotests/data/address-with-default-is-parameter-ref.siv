@@ -1,0 +1,9 @@
+require "subaddress";
+require "fileinto";
+
+#SCRIPTNAME: Script part 0
+if address :detail :is "to" "shopping"
+{
+    fileinto "shoppingMania";
+    stop;
+} 
