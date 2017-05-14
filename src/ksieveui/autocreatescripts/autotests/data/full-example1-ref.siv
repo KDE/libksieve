@@ -1,0 +1,28 @@
+require "include";
+require "copy";
+require "imap4flags";
+require "subaddress";
+require "reject";
+
+#SCRIPTNAME: test
+include :personal :optional :once "sdqd";
+include :global :optional "qsdqd";
+global "globalvar";
+set "globalvar" "415";
+redirect :copy "folder";
+
+
+#SCRIPTNAME: test2
+if false
+{
+    removeflag [ "\\Flagged", "\\Seen", "\\Draft" ];
+} elsif address :all :is "Reply-To" "foo@kde.org"
+{
+    reject text:
+rejected 
+.
+;
+
+} else {
+    keep :flags [ "\\Answered" ];
+} 
