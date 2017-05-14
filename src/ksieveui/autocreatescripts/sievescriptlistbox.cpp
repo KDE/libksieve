@@ -487,7 +487,15 @@ void SieveScriptListBox::loadBlock(QDomNode &n, SieveScriptPage *currentPage, Pa
                         }
                     } else if (actionName == QLatin1String("set") && (typeBlock == TypeBlockGlobal)) {
                         if (currentPage->globalVariableWidget()) {
-                            currentPage->globalVariableWidget()->loadSetVariable(e, error);
+                            if (!currentPage->globalVariableWidget()->loadSetVariable(e, error)) {
+                                qCDebug(LIBKSIEVE_LOG) << "It's not a global variable";
+                                if (!currentPage || (typeBlock == TypeBlockIf) || (typeBlock == TypeBlockElse) || (typeBlock == TypeBlockElsif)) {
+                                    currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
+                                }
+                                typeBlock = TypeBlockAction;
+                                comment.clear();
+                                currentPage->blockIfWidget()->loadScript(e, true, error);
+                            }
                         } else {
                             qCDebug(LIBKSIEVE_LOG) << " set not supported";
                         }
@@ -498,7 +506,6 @@ void SieveScriptListBox::loadBlock(QDomNode &n, SieveScriptPage *currentPage, Pa
                         typeBlock = TypeBlockAction;
                         comment.clear();
                         currentPage->blockIfWidget()->loadScript(e, true, error);
-                        //qCDebug(LIBKSIEVE_LOG)<<" unknown action name: "<<actionName;
                     }
                 }
             } else if (tagName == QLatin1String("crlf")) {

@@ -75,7 +75,7 @@ public:
 
     void generatedScript(QString &script, QStringList &requires);
     void loadScript(const QDomElement &element, QString &error);
-    void loadSetVariable(const QDomElement &element, QString &error);
+    bool loadSetVariable(const QDomElement &element, QString &error);
 
 Q_SIGNALS:
     void valueChanged();
@@ -102,7 +102,7 @@ public:
     void generatedScript(QString &script, QStringList &requires) Q_DECL_OVERRIDE;
 
     void loadScript(const QDomElement &element, QString &error);
-    void loadSetVariable(const QDomElement &element, QString &error);
+    bool loadSetVariable(const QDomElement &element, QString &error);
 
 private Q_SLOTS:
     void slotHelp();

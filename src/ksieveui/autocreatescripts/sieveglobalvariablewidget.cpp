@@ -196,9 +196,9 @@ void SieveGlobalVariableWidget::loadScript(const QDomElement &element, QString &
     mIncludeLister->loadScript(element, error);
 }
 
-void SieveGlobalVariableWidget::loadSetVariable(const QDomElement &element, QString &error)
+bool SieveGlobalVariableWidget::loadSetVariable(const QDomElement &element, QString &error)
 {
-    mIncludeLister->loadSetVariable(element, error);
+    return mIncludeLister->loadSetVariable(element, error);
 }
 
 SieveGlobalVariableLister::SieveGlobalVariableLister(QWidget *parent)
@@ -291,7 +291,7 @@ void SieveGlobalVariableLister::loadScript(const QDomElement &element, QString &
     w->loadScript(element, error);
 }
 
-void SieveGlobalVariableLister::loadSetVariable(const QDomElement &element, QString & /*error*/)
+bool SieveGlobalVariableLister::loadSetVariable(const QDomElement &element, QString & /*error*/)
 {
     QString variableName;
     QString variableValue;
@@ -326,7 +326,5 @@ void SieveGlobalVariableLister::loadSetVariable(const QDomElement &element, QStr
             globalVariableFound = true;
         }
     }
-    if (!globalVariableFound) {
-        //TODO
-    }
+    return globalVariableFound;
 }
