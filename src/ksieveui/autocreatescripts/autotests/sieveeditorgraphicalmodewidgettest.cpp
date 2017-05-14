@@ -149,6 +149,8 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("reject") << QStringLiteral("reject") << false << true;
     QTest::newRow("keep") << QStringLiteral("keep") << false << true;
     QTest::newRow("test-headers") << QStringLiteral("test-headers") << false << true;
+    QTest::newRow("vacation-active-discard") << QStringLiteral("vacation-active-discard") << false << true;
+    QTest::newRow("vacation-multiple") << QStringLiteral("vacation-multiple") << false << true;
 }
 
 
