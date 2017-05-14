@@ -137,6 +137,12 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("variable") << QStringLiteral("variable") << false << true;
     QTest::newRow("break") << QStringLiteral("break") << false << true;
     QTest::newRow("notify") << QStringLiteral("notify") << false << true;
+    QTest::newRow("test-exists") << QStringLiteral("test-exists") << false << true;
+    QTest::newRow("vacation") << QStringLiteral("vacation") << false << true;
+    QTest::newRow("test-metadataexists") << QStringLiteral("test-metadataexists") << false << true;
+    QTest::newRow("test-date") << QStringLiteral("test-date") << false << true;
+    QTest::newRow("redirect") << QStringLiteral("redirect") << false << true;
+    QTest::newRow("convert-action") << QStringLiteral("convert-action") << false << true;
 }
 
 

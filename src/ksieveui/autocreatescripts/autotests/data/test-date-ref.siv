@@ -1,0 +1,12 @@
+require "date";
+require "imap4flags";
+
+#SCRIPTNAME: test-date
+#Script name: test-date
+if allof (date :is "header" "iso8601" "Sunday, 14 May 2017"
+, not date :matches "header" "hour" "08"
+, not date :contains "header" "julian" "Sunday, 14 May 2017"
+)
+{
+    keep;
+} 
