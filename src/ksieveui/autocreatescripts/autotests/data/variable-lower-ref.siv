@@ -1,0 +1,8 @@
+require "variables";
+
+#SCRIPTNAME: Script part 0
+#Script name: set variable example
+if true
+{
+    set :lowerfirst "25" "variable-lower";
+} 

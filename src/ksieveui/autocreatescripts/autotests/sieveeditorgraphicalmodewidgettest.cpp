@@ -129,6 +129,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("fileinfo") << QStringLiteral("fileinfo") << false << true;
     //Need to fix : "set" variable
     QTest::newRow("include") << QStringLiteral("include") << false << true;
+    QTest::newRow("variable-lower") << QStringLiteral("variable-lower") << false << true;
 }
 
 
