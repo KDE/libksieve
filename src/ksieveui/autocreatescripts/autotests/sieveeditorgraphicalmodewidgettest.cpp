@@ -92,6 +92,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         QVERIFY(proc.waitForFinished());
 
         QEXPECT_FAIL("test-current-date" , "Expected failure on delete-headers file", Continue);
+        QEXPECT_FAIL("include" , "Expected failure on \"include\" file. Pb with \"set\" variable ", Continue);
         QCOMPARE(proc.exitCode(), 0);
     }
 }
@@ -123,7 +124,11 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("delete-headers") << QStringLiteral("delete-headers") << false << true;
     QTest::newRow("mailboxexist") << QStringLiteral("mailboxexist") << false << true;
     QTest::newRow("extract-text") << QStringLiteral("extract-text") << false << true;
-    QTest::newRow("eenclose") << QStringLiteral("enclose") << false << true;
+    QTest::newRow("enclose") << QStringLiteral("enclose") << false << true;
+    QTest::newRow("add-single-flag") << QStringLiteral("add-single-flag") << false << true;
+    QTest::newRow("fileinfo") << QStringLiteral("fileinfo") << false << true;
+    //Need to fix : "set" variable
+    QTest::newRow("include") << QStringLiteral("include") << false << true;
 }
 
 
