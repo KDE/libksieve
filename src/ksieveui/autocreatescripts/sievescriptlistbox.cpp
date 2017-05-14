@@ -489,7 +489,7 @@ void SieveScriptListBox::loadBlock(QDomNode &n, SieveScriptPage *currentPage, Pa
                         if (currentPage->globalVariableWidget()) {
                             currentPage->globalVariableWidget()->loadSetVariable(e, error);
                         } else {
-                            qCDebug(LIBKSIEVE_LOG) << " globalVariable not supported";
+                            qCDebug(LIBKSIEVE_LOG) << " set not supported";
                         }
                     } else {
                         if (!currentPage || (typeBlock == TypeBlockIf) || (typeBlock == TypeBlockElse) || (typeBlock == TypeBlockElsif)) {
