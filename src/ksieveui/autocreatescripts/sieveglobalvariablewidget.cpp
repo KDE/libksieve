@@ -318,10 +318,15 @@ void SieveGlobalVariableLister::loadSetVariable(const QDomElement &element, QStr
     }
 
     const QList<QWidget *> lstWidget = widgets();
+    bool globalVariableFound = false;
     for (QWidget *widget : lstWidget) {
         SieveGlobalVariableActionWidget *w = static_cast<SieveGlobalVariableActionWidget *>(widget);
         if (w->variableName() == variableName) {
             w->setVariableValue(variableValue);
+            globalVariableFound = true;
         }
+    }
+    if (!globalVariableFound) {
+        //TODO
     }
 }
