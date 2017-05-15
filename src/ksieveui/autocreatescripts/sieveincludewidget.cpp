@@ -116,7 +116,7 @@ void SieveIncludeActionWidget::loadScript(const QDomElement &element, QString &e
 void SieveIncludeActionWidget::generatedScript(QString &script)
 {
     const QString includeName = mIncludeName->text();
-    if (includeName.isEmpty()) {
+    if (includeName.trimmed().isEmpty()) {
         return;
     }
     script += QLatin1String("include ");
