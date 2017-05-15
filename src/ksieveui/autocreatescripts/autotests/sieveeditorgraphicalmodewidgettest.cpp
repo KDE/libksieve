@@ -154,6 +154,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("full-example1") << QStringLiteral("full-example1") << false << true;
     //We need to fix it.
     QTest::newRow("regexp") << QStringLiteral("regexp") << true << true;
+    QTest::newRow("comparator") << QStringLiteral("comparator") << false << true;
 }
 
 
