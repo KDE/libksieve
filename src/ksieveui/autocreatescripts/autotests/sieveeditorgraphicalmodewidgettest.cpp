@@ -156,6 +156,8 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("regexp") << QStringLiteral("regexp") << true << true;
     QTest::newRow("comparator") << QStringLiteral("comparator") << false << true;
     QTest::newRow("test-comment") << QStringLiteral("test-comment") << false << true;
+    QTest::newRow("hasflag") << QStringLiteral("hasflag") << false << true;
+    QTest::newRow("setflag") << QStringLiteral("setflag") << false << true;
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)
