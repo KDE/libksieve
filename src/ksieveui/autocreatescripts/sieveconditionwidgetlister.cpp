@@ -20,6 +20,7 @@
 #include "sieveconditionwidgetlister.h"
 #include "autocreatescriptdialog.h"
 #include "autocreatescriptutil_p.h"
+#include "libksieve_debug.h"
 #include "commonwidgets/sievehelpbutton.h"
 #include "sieveeditorgraphicalmodewidget.h"
 #include "sieveconditions/sieveconditionlist.h"
@@ -205,6 +206,9 @@ void SieveConditionWidget::setCondition(const QString &conditionName, const QDom
         slotConditionChanged(index);
         KSieveUi::SieveCondition *condition = mConditionList.at(index);
         condition->setParamWidgetValue(element, this, notCondition, error);
+    } else {
+        error += i18n("Script contains unsupported feature \"%1\"", conditionName);
+        qCDebug(LIBKSIEVE_LOG) << "Condition " << conditionName << " not supported";
     }
 }
 

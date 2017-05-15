@@ -81,9 +81,12 @@ bool SieveActionFileInto::setParamWidgetValue(const QDomElement &element, QWidge
                         QCheckBox *create = w->findChild<QCheckBox *>(QStringLiteral("create"));
                         create->setChecked(true);
                     } else {
-                        serverDoesNotSupportFeatures(QStringLiteral("fileinto"), error);
+                        serverDoesNotSupportFeatures(QStringLiteral("create"), error);
                         qCDebug(LIBKSIEVE_LOG) << "SieveActionFileInto::setParamWidgetValue server has not create support ";
                     }
+                } else {
+                    serverDoesNotSupportFeatures(tagValue, error);
+                    qCDebug(LIBKSIEVE_LOG) << "SieveActionFileInto::setParamWidgetValue server has not flags support ";
                 }
             } else if (tagName == QLatin1String("str")) {
                 const QString tagValue = e.text();
