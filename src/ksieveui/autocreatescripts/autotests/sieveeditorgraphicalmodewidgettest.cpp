@@ -127,7 +127,6 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("enclose") << QStringLiteral("enclose") << false << true;
     QTest::newRow("add-single-flag") << QStringLiteral("add-single-flag") << false << true;
     QTest::newRow("fileinfo") << QStringLiteral("fileinfo") << false << true;
-    //Need to fix : "set" variable
     QTest::newRow("include") << QStringLiteral("include") << false << true;
     QTest::newRow("variable-lower") << QStringLiteral("variable-lower") << false << true;
     QTest::newRow("test-environnement") << QStringLiteral("test-environnement") << false << true;
