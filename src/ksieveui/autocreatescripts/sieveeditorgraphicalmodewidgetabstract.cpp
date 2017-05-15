@@ -17,17 +17,14 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "sieveeditorgraphicalmodewidgetabstract.h"
 
 using namespace KSieveUi;
 SieveEditorGraphicalModeWidgetAbstract::SieveEditorGraphicalModeWidgetAbstract(QWidget *parent)
     : KSieveUi::SieveEditorAbstractWidget(parent)
 {
-
 }
 
 SieveEditorGraphicalModeWidgetAbstract::~SieveEditorGraphicalModeWidgetAbstract()
 {
-
 }

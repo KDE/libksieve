@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "sieveeditorgraphicalmodewidgettest.h"
 #include "../sieveeditorgraphicalmodewidget.h"
 #include "scriptsparsing/parsingutil.h"
@@ -31,6 +30,7 @@ void initLocale()
 {
     setenv("LC_ALL", "en_US.utf-8", 1);
 }
+
 Q_CONSTRUCTOR_FUNCTION(initLocale)
 #endif
 
@@ -83,16 +83,16 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
 
         // compare to reference file
         QStringList args = QStringList()
-               << QStringLiteral("-u")
-               << refFile
-               << generatedFile;
+                           << QStringLiteral("-u")
+                           << refFile
+                           << generatedFile;
         QProcess proc;
         proc.setProcessChannelMode(QProcess::ForwardedChannels);
         proc.start(QStringLiteral("diff"), args);
         QVERIFY(proc.waitForFinished());
 
-        QEXPECT_FAIL("regexp" , "Expected failure on regexp file. Problem with header + comparator", Continue);
-        QEXPECT_FAIL("test-current-date" , "Expected failure on delete-headers file", Continue);
+        QEXPECT_FAIL("regexp", "Expected failure on regexp file. Problem with header + comparator", Continue);
+        QEXPECT_FAIL("test-current-date", "Expected failure on delete-headers file", Continue);
         QCOMPARE(proc.exitCode(), 0);
     }
 }
@@ -156,6 +156,5 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("regexp") << QStringLiteral("regexp") << true << true;
     QTest::newRow("comparator") << QStringLiteral("comparator") << false << true;
 }
-
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)

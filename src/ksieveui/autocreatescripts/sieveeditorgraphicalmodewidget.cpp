@@ -81,7 +81,9 @@ void SieveEditorGraphicalModeWidget::loadScript(const QDomDocument &doc, QString
 void SieveEditorGraphicalModeWidget::readConfig()
 {
     KConfigGroup group(KSharedConfig::openConfig(), "AutoCreateScriptDialog");
-    const QList<int> size{100, 400};
+    const QList<int> size {
+        100, 400
+    };
     mSplitter->setSizes(group.readEntry("mainSplitter", size));
 }
 

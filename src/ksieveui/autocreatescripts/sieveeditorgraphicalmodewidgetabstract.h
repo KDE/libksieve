@@ -23,8 +23,7 @@
 #include <editor/sieveeditorabstractwidget.h>
 #include "ksieveui_private_export.h"
 class QDomDocument;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class KSIEVEUI_TESTS_EXPORT SieveEditorGraphicalModeWidgetAbstract : public KSieveUi::SieveEditorAbstractWidget
 {
     Q_OBJECT
