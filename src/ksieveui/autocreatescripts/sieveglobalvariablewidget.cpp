@@ -52,7 +52,7 @@ SieveGlobalVariableActionWidget::~SieveGlobalVariableActionWidget()
 void SieveGlobalVariableActionWidget::generatedScript(QString &script)
 {
     const QString variableName = mVariableName->text();
-    if (variableName.isEmpty()) {
+    if (variableName.trimmed().isEmpty()) {
         return;
     }
     script += QLatin1String("global ");
@@ -107,7 +107,11 @@ bool SieveGlobalVariableActionWidget::isInitialized() const
 
 QString SieveGlobalVariableActionWidget::variableName() const
 {
-    return mVariableName->text();
+    const QString varName = mVariableName->text();
+    if (varName.trimmed().isEmpty()) {
+        return {};
+    }
+    return varName;
 }
 
 void SieveGlobalVariableActionWidget::setVariableValue(const QString &name)
