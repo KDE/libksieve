@@ -157,12 +157,19 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     mBtnDelete->setToolTip(i18n("Delete Script"));
     mBtnDelete->setMinimumSize(mBtnDelete->sizeHint() * 1.2);
 
-    mBtnRename = new QPushButton(i18n("Rename..."), hb);
+    mBtnRename = new QPushButton(hb);
     mBtnRename->setToolTip(i18n("Rename Script"));
+    mBtnRename->setIcon(QIcon::fromTheme(QStringLiteral("edit-rename")));
+    mBtnRename->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
+    mBtnRename->setMinimumSize(mBtnRename->sizeHint() * 1.2);
     hbHBoxLayout->addWidget(mBtnRename);
 
-    mBtnDescription = new QPushButton(i18n("Edit description..."), hb);
+    mBtnDescription = new QPushButton(hb);
     mBtnDescription->setToolTip(i18n("Edit Script Description"));
+    mBtnDescription->setIcon(QIcon::fromTheme(QStringLiteral("edit-comment")));
+    mBtnDescription->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
+    mBtnDescription->setMinimumSize(mBtnDescription->sizeHint() * 1.2);
+
     hbHBoxLayout->addWidget(mBtnDescription);
 
     layout->addWidget(hb);
