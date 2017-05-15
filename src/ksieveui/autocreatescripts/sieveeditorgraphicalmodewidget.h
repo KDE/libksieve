@@ -20,7 +20,7 @@
 #ifndef SIEVEEDITORGRAPHICALMODEWIDGET_H
 #define SIEVEEDITORGRAPHICALMODEWIDGET_H
 
-#include "editor/sieveeditorabstractwidget.h"
+#include "sieveeditorgraphicalmodewidgetabstract.h"
 #include "util/sieveimapaccountsettings.h"
 #include "ksieveui_private_export.h"
 class QSplitter;
@@ -31,19 +31,19 @@ namespace KSieveUi {
 class SieveScriptPage;
 class SieveScriptListBox;
 class SieveEditorParsingMissingFeatureWarning;
-class KSIEVEUI_TESTS_EXPORT SieveEditorGraphicalModeWidget : public SieveEditorAbstractWidget
+class KSIEVEUI_TESTS_EXPORT SieveEditorGraphicalModeWidget : public SieveEditorGraphicalModeWidgetAbstract::SieveEditorGraphicalModeWidgetAbstract
 {
     Q_OBJECT
 public:
     explicit SieveEditorGraphicalModeWidget(QWidget *parent = nullptr);
     ~SieveEditorGraphicalModeWidget();
 
-    QString script(QString &requires) const;
+    QString script(QString &requires) const Q_DECL_OVERRIDE;
 
-    void setSieveCapabilities(const QStringList &capabilities);
-    QStringList sieveCapabilities();
+    void setSieveCapabilities(const QStringList &capabilities) Q_DECL_OVERRIDE;
+    QStringList sieveCapabilities() Q_DECL_OVERRIDE;
 
-    void loadScript(const QDomDocument &doc, QString &error);
+    void loadScript(const QDomDocument &doc, QString &error) Q_DECL_OVERRIDE;
 
     QString currentscript() Q_DECL_OVERRIDE;
     void setImportScript(const QString &) Q_DECL_OVERRIDE;

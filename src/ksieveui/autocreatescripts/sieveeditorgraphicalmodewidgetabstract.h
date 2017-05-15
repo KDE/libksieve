@@ -21,11 +21,11 @@
 #define SIEVEEDITORGRAPHICALMODEWIDGETABSTRACT_H
 
 #include <editor/sieveeditorabstractwidget.h>
-
+#include "ksieveui_private_export.h"
 class QDomDocument;
 namespace KSieveUi
 {
-class SieveEditorGraphicalModeWidgetAbstract : public KSieveUi::SieveEditorAbstractWidget
+class KSIEVEUI_TESTS_EXPORT SieveEditorGraphicalModeWidgetAbstract : public KSieveUi::SieveEditorAbstractWidget
 {
     Q_OBJECT
 public:

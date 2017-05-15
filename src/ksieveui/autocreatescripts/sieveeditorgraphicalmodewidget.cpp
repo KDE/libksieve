@@ -38,7 +38,7 @@
 using namespace KSieveUi;
 
 SieveEditorGraphicalModeWidget::SieveEditorGraphicalModeWidget(QWidget *parent)
-    : SieveEditorAbstractWidget(parent)
+    : SieveEditorGraphicalModeWidgetAbstract::SieveEditorGraphicalModeWidgetAbstract(parent)
 {
     QVBoxLayout *vlay = new QVBoxLayout(this);
     vlay->setMargin(0);
