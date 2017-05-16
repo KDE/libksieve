@@ -110,6 +110,11 @@ void SieveForEveryPartWidget::loadScript(const QDomElement &element, QString &er
             }
             mForLoop->setChecked(true);
             mName->setEnabled(true);
+        } else if (tagName == QLatin1String("block")) {
+            //Nothing
+            //It's when name is empty
+        } else if (tagName == QLatin1String("crlf")) {
+            //Nothing
         } else {
             error += i18n("Unknown tag \"%1\" during loading loop \"for\"", tagName) + QLatin1Char('\n');
             qCDebug(LIBKSIEVE_LOG) << " SieveForEveryPartWidget::loadScript unknown tagName " << tagName;
