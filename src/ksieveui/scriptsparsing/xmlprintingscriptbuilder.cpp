@@ -181,7 +181,10 @@ void XMLPrintingScriptBuilder::write(const QString &key, const QString &attribut
     } else {
         write(QStringLiteral("<%1 %2>").arg(key, attribute));
     }
-    write(value);
+    QString tmpValue = value;
+    tmpValue.replace(QLatin1Char('<'), QLatin1String("&lt;"));
+    tmpValue.replace(QLatin1Char('>'), QLatin1String("&gt;"));
+    write(tmpValue);
     write(QStringLiteral("</%1>").arg(key));
 }
 
