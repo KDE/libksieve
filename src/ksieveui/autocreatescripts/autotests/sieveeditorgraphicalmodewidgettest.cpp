@@ -160,6 +160,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-comment") << QStringLiteral("test-comment") << false << true;
     QTest::newRow("hasflag") << QStringLiteral("hasflag") << false << true;
     QTest::newRow("setflag") << QStringLiteral("setflag") << false << true;
+    QTest::newRow("add-header") << QStringLiteral("add-header") << false << true;
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)
