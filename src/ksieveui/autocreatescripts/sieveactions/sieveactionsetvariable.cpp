@@ -99,7 +99,7 @@ bool SieveActionSetVariable::setParamWidgetValue(const QDomElement &element, QWi
                     const QString variableTagName = variableElement.tagName();
                     if (variableTagName == QLatin1String("str")) {
                         QLineEdit *variable = w->findChild<QLineEdit *>(QStringLiteral("variable"));
-                        variable->setText(variableElement.text());
+                        variable->setText(AutoCreateScriptUtil::protectSlash(variableElement.text()));
                     }
                 } else {
                     return false;

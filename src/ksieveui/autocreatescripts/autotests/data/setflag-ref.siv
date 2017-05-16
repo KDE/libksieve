@@ -1,7 +1,10 @@
+require "variables";
+require "imap4flags";
+
+#SCRIPTNAME: Script part 0
 if header :is "Sender" "owner-ietf-mta-filters@example.org"
 {
-   set "MyFlags" "\\Flagged $Work";
-   # Message will have both "\Flagged" and $Work flags
-   keep :flags "${MyFlags}";
-}
-
+    set "MyFlags" "\\Flagged $Work";
+    # Message will have both "\Flagged" and $Work flags
+    keep :flags [ "${MyFlags}" ];
+} 
