@@ -168,6 +168,8 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
 
     //We need to implement index support
     QTest::newRow("delete-headers-with-index") << QStringLiteral("delete-headers-with-index") << true << true;
+
+    QTest::newRow("notify-2") << QStringLiteral("notify-2") << false << true;
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)
