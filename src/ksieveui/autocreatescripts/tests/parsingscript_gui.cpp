@@ -81,7 +81,7 @@ int main(int argc, char **argv)
         qDebug() << "bad";
     }
     KSieveUi::ParsingResultDialog dlg;
-    dlg.setResultParsing(psb.toDom().toString());
+    dlg.setResultParsing(psb.toDom().toString(2));
     dlg.show();
 
     KSieveUi::AutoCreateScriptDialog *dialog = new KSieveUi::AutoCreateScriptDialog;

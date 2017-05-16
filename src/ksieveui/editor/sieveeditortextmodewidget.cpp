@@ -222,7 +222,7 @@ void SieveEditorTextModeWidget::generateXml()
     const bool result = parser.parse();
     QPointer<ParsingResultDialog> dlg = new ParsingResultDialog(this);
     if (result) {
-        dlg->setResultParsing(psb.toDom().toString());
+        dlg->setResultParsing(psb.toDom().toString(2));
     } else {
         dlg->setResultParsing(i18n("Error during parsing"));
     }
