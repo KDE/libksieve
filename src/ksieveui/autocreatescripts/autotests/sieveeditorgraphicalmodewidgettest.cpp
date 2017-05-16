@@ -92,7 +92,8 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         QVERIFY(proc.waitForFinished());
 
         QEXPECT_FAIL("regexp", "Expected failure on regexp file. Problem with header + comparator", Continue);
-        QEXPECT_FAIL("test-current-date", "Expected failure on delete-headers file", Continue);
+        QEXPECT_FAIL("test-current-date", "Expected failure on current-date file. We depend against current date", Continue);
+        QEXPECT_FAIL("test-date", "Expected failure on date file. We depend against current date", Continue);
         QCOMPARE(proc.exitCode(), 0);
     }
 }
