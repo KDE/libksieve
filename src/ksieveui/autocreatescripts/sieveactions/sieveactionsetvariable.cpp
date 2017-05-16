@@ -83,7 +83,6 @@ QUrl SieveActionSetVariable::href() const
 
 bool SieveActionSetVariable::setParamWidgetValue(const QDomElement &element, QWidget *w, QString &error)
 {
-    qDebug() << " bool SieveActionSetVariable::setParamWidgetValue(const QDomElement &element, QWidget *w, QString &error)";
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
         QDomElement e = node.toElement();
