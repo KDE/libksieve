@@ -95,6 +95,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         QEXPECT_FAIL("test-current-date", "Expected failure on current-date file. We depend against current date", Continue);
         QEXPECT_FAIL("test-date", "Expected failure on date file. We depend against current date", Continue);
         QEXPECT_FAIL("problem-with-inferior-char", "Expected failure on problem-with-inferior-char file. \"<\" is start of tag... => it will create problem", Continue);
+        QEXPECT_FAIL("delete-headers-with-index", "Expected failure on delete-headers-with-index file. We depend against \"index\" feature", Continue);
         QCOMPARE(proc.exitCode(), 0);
     }
 }
@@ -162,7 +163,11 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("hasflag") << QStringLiteral("hasflag") << false << true;
     QTest::newRow("setflag") << QStringLiteral("setflag") << false << true;
     QTest::newRow("add-header") << QStringLiteral("add-header") << false << true;
+    //We need to fix it
     QTest::newRow("problem-with-inferior-char") << QStringLiteral("problem-with-inferior-char") << false << true;
+
+    //We need to implement index support
+    QTest::newRow("delete-headers-with-index") << QStringLiteral("delete-headers-with-index") << true << true;
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)
