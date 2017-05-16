@@ -2,7 +2,7 @@ require ["vacation"];
 
 if false
 {
-      keep;
+      testcommand;
 }
 
 # EDITOR Roundcube (Managesieve)
@@ -12,5 +12,5 @@ vacation :subject "XXX" "dsfgsdfgsdfg";
 
 if false
 {
-      keep;
+      testcommand;
 }

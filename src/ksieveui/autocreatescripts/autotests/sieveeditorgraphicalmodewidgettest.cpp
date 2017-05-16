@@ -152,6 +152,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-headers") << QStringLiteral("test-headers") << false << true;
     QTest::newRow("vacation-active-discard") << QStringLiteral("vacation-active-discard") << false << true;
     QTest::newRow("vacation-multiple") << QStringLiteral("vacation-multiple") << false << true;
+    QTest::newRow("vacation-multiple-with-undefined-command") << QStringLiteral("vacation-multiple-with-undefined-command") << true << true;
     QTest::newRow("full-example1") << QStringLiteral("full-example1") << false << true;
     //We need to fix it.
     QTest::newRow("regexp") << QStringLiteral("regexp") << true << true;

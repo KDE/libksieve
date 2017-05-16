@@ -1,11 +1,9 @@
-require "imap4flags";
 require "vacation-seconds";
 require "vacation";
 
 #SCRIPTNAME: Script part 0
 if false
 {
-    keep;
 } 
 
 #SCRIPTNAME: Script part 1
@@ -22,5 +20,4 @@ dsfgsdfgsdfg
 #SCRIPTNAME: Script part 2
 if false
 {
-    keep;
 } 
