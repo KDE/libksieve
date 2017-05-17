@@ -627,7 +627,7 @@ void SieveEditorWidget::slotSwitchMode()
             }
         } else {
             mTextModeWidget->showEditorWarning();
-            qCDebug(LIBKSIEVE_LOG) << "cannot parse file";
+            qCDebug(LIBKSIEVE_LOG) << "Impossible to parse file";
         }
         break;
     }
