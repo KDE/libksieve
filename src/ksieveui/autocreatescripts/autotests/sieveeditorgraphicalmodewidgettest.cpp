@@ -95,6 +95,8 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         QEXPECT_FAIL("test-current-date", "Expected failure on current-date file. We depend against current date", Continue);
         QEXPECT_FAIL("delete-headers-with-index", "Expected failure on delete-headers-with-index file. We depend against \"index\" feature", Continue);
         QEXPECT_FAIL("foreverypart", "Expected failure on foreverypart file. A lot of parsing errors.", Continue);
+        QEXPECT_FAIL("test-current-date-custom", "Expected failure on test-current-date-custom file. CurrentDate + variable not implemented.", Continue);
+
         QCOMPARE(proc.exitCode(), 0);
     }
 }
@@ -174,6 +176,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
 
     QTest::newRow("test-foreverypart-complex") << QStringLiteral("test-foreverypart-complex") << false << true;
     QTest::newRow("test-envelop-subadress") << QStringLiteral("test-envelop-subadress") << false << true;
+    QTest::newRow("test-current-date-custom") << QStringLiteral("test-current-date-custom") << false << true;
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)
