@@ -87,12 +87,18 @@ void SieveActionWidget::generatedScript(QString &script, QStringList &requires, 
             }
         }
         QString comment = widgetAction->comment();
+        QString indent;
+        if (!onlyActions) {
+            indent += AutoCreateScriptUtil::indentation();
+        }
+        if (inForEveryPartLoop) {
+            indent += AutoCreateScriptUtil::indentation();
+        }
         if (!comment.trimmed().isEmpty()) {
-            const QString indent = (onlyActions ? QString() : AutoCreateScriptUtil::indentation());
             script += indent;
             script += QLatin1Char('#') + comment.replace(QLatin1Char('\n'), QStringLiteral("\n%1#").arg(indent)) + QLatin1Char('\n');
         }
-        script += (onlyActions ? QString() : AutoCreateScriptUtil::indentation()) + widgetAction->code(currentWidget) + QLatin1Char('\n');
+        script += indent + widgetAction->code(currentWidget) + QLatin1Char('\n');
     }
 }
 

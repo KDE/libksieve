@@ -6,6 +6,6 @@ require "ihave";
 foreverypart :name "foreach1" {
     if ihave "value"
     {
-    stop;
+        stop;
     } 
 }

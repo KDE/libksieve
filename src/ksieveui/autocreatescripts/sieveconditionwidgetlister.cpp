@@ -80,6 +80,9 @@ void SieveConditionWidget::generatedScript(QString &script, QStringList &require
                 requires.append(r);
             }
         }
+        if (inForEveryPartLoop) {
+            //FIXME script += AutoCreateScriptUtil::indentation();
+        }
         script += mConditionList.at(mComboBox->currentIndex())->code(currentWidget) + QLatin1Char('\n');
     }
 }

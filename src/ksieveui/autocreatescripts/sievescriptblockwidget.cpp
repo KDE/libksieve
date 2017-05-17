@@ -216,12 +216,12 @@ void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requi
         if (conditionStr.isEmpty()) {
             return;
         } else {
-            script += indentation +filterStr + conditionStr;
+            script += indentation + filterStr + conditionStr;
         }
         if (hasUniqCondition) {
             script += indentation + QLatin1String("{\n");
         } else {
-            script += indentation +QLatin1String(")\n{\n");
+            script += indentation + QStringLiteral(")\n%1{\n").arg(indentation);
         }
     }
     mScriptActionLister->generatedScript(script, requires, onlyActions, inForEveryPartLoop);
