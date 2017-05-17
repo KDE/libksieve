@@ -39,7 +39,7 @@ public:
     explicit SieveWidgetPageAbstract(QWidget *parent = nullptr);
     ~SieveWidgetPageAbstract();
 
-    virtual void generatedScript(QString &script, QStringList &requires) = 0;
+    virtual void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) = 0;
 
     virtual void setPageType(PageType type);
     PageType pageType() const;

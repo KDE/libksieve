@@ -135,9 +135,11 @@ void SieveScriptPage::generatedScript(QString &script, QStringList &requires)
 {
     QString foreverypartStr;
     QStringList foreverypartRequires;
+    bool inForEveryPartLoop = false;
     if (mForEveryPartWidget) {
-        mForEveryPartWidget->generatedScript(foreverypartStr, foreverypartRequires);
-        if (!foreverypartStr.isEmpty()) {
+        mForEveryPartWidget->generatedScript(foreverypartStr, foreverypartRequires, false);
+        inForEveryPartLoop = !foreverypartStr.isEmpty();
+        if (inForEveryPartLoop) {
             requires << foreverypartRequires;
             script += foreverypartStr + QLatin1Char('\n');
         }
@@ -146,10 +148,10 @@ void SieveScriptPage::generatedScript(QString &script, QStringList &requires)
     for (int i = 0; i < numberOfTab; ++i) {
         SieveWidgetPageAbstract *page = static_cast<SieveWidgetPageAbstract *>(mTabWidget->widget(i));
         if (page->pageType() != KSieveUi::SieveScriptBlockWidget::ForEveryPart) {
-            page->generatedScript(script, requires);
+            page->generatedScript(script, requires, inForEveryPartLoop);
         }
     }
-    if (!foreverypartStr.isEmpty()) {
+    if (inForEveryPartLoop) {
         script += QStringLiteral("\n}\n");
     }
 }

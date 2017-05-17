@@ -112,7 +112,7 @@ public:
     explicit SieveIncludeWidget(QWidget *parent = nullptr);
     ~SieveIncludeWidget();
 
-    void generatedScript(QString &script, QStringList &requires) Q_DECL_OVERRIDE;
+    void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) Q_DECL_OVERRIDE;
 
     void loadScript(const QDomElement &element, QString &error);
 

@@ -49,7 +49,7 @@ public:
 
     void setPageType(PageType type) Q_DECL_OVERRIDE;
 
-    void generatedScript(QString &script, QStringList &requires) Q_DECL_OVERRIDE;
+    void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) Q_DECL_OVERRIDE;
 
     MatchCondition matchCondition() const;
 

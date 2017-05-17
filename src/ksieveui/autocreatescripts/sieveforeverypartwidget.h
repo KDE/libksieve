@@ -34,7 +34,7 @@ public:
     explicit SieveForEveryPartWidget(QWidget *parent = nullptr);
     ~SieveForEveryPartWidget();
 
-    void generatedScript(QString &script, QStringList &requires) Q_DECL_OVERRIDE;
+    void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) Q_DECL_OVERRIDE;
     void loadScript(const QDomElement &element, QString &error);
 
 private Q_SLOTS:

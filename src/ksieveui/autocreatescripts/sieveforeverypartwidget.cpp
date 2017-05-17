@@ -81,13 +81,14 @@ void SieveForEveryPartWidget::slotHelp()
     QWhatsThis::showText(QCursor::pos(), fullWhatsThis, mHelpButton);
 }
 
-void SieveForEveryPartWidget::generatedScript(QString &script, QStringList &requires)
+void SieveForEveryPartWidget::generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop)
 {
+    Q_UNUSED(inForEveryPartLoop);
     if (mForLoop->isChecked()) {
         requires << QStringLiteral("foreverypart");
         const QString loopName = mName->text();
         if (loopName.isEmpty()) {
-            script += QLatin1String("foreverypart {");
+            script += QStringLiteral("foreverypart {");
         } else {
             script += QStringLiteral("foreverypart :name \"%1\" {").arg(loopName);
         }

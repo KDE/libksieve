@@ -99,7 +99,7 @@ public:
     explicit SieveGlobalVariableWidget(QWidget *parent = nullptr);
     ~SieveGlobalVariableWidget();
 
-    void generatedScript(QString &script, QStringList &requires) Q_DECL_OVERRIDE;
+    void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) Q_DECL_OVERRIDE;
 
     void loadScript(const QDomElement &element, QString &error);
     bool loadSetVariable(const QDomElement &element, QString &error);

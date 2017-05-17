@@ -171,7 +171,7 @@ void SieveScriptBlockWidget::updateWidget()
     mAddBlockType->setEnabled(mMatchCondition != AllCondition);
 }
 
-void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requires)
+void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop)
 {
     bool onlyActions = false;
     if (mMatchCondition == AllCondition) {
