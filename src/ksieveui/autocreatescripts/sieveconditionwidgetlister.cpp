@@ -208,7 +208,7 @@ void SieveConditionWidget::setCondition(const QString &conditionName, const QDom
         KSieveUi::SieveCondition *condition = mConditionList.at(index);
         condition->setParamWidgetValue(element, this, notCondition, error);
     } else {
-        error += i18n("Script contains unsupported feature \"%1\"", conditionName);
+        error += i18n("Script contains unsupported feature \"%1\"", conditionName) + QLatin1Char('\n');
         qCDebug(LIBKSIEVE_LOG) << "Condition " << conditionName << " not supported";
     }
 }
