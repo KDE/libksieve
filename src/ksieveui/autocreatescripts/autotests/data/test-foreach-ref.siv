@@ -4,8 +4,8 @@ require "ihave";
 #SCRIPTNAME: Script part 0
 #Script name: test-foreach
 foreverypart :name "foreach1" {
-if ihave "value"
-{
+    if ihave "value"
+    {
     stop;
-} 
+    } 
 }

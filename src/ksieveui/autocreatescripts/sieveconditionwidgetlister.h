@@ -42,7 +42,7 @@ public:
     ~SieveConditionWidget();
 
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
-    void generatedScript(QString &script, QStringList &requires);
+    void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop);
     void setCondition(const QString &conditionName, const QDomElement &element, bool notCondition, QString &error);
 
 private Q_SLOTS:
@@ -76,7 +76,7 @@ public:
     explicit SieveConditionWidgetLister(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent = nullptr);
     ~SieveConditionWidgetLister();
 
-    void generatedScript(QString &script, int &numberOfCondition, QStringList &requires);
+    void generatedScript(QString &script, int &numberOfCondition, QStringList &requires, bool inForEveryPartLoop);
     int conditionNumber() const;
     void loadScript(const QDomElement &element, bool uniqTest, bool notCondition, QString &error);
 

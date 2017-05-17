@@ -44,7 +44,7 @@ public:
     ~SieveActionWidget();
 
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
-    void generatedScript(QString &script, QStringList &requires, bool onlyActions);
+    void generatedScript(QString &script, QStringList &requires, bool onlyActions, bool inForEveryPartLoop);
     bool setAction(const QString &actionName, const QDomElement &element, const QString &comment, QString &error);
     bool isConfigurated() const;
 
@@ -81,7 +81,7 @@ public:
     explicit SieveActionWidgetLister(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent = nullptr);
     ~SieveActionWidgetLister();
 
-    void generatedScript(QString &script, QStringList &requires, bool onlyActions);
+    void generatedScript(QString &script, QStringList &requires, bool onlyActions, bool inForEveryPartLoop);
     void loadScript(const QDomElement &element, bool onlyActions, QString &error);
 
     int actionNumber() const;

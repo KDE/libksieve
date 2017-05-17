@@ -20,6 +20,7 @@
 #include "sievescriptblockwidget.h"
 #include "sieveactionwidgetlister.h"
 #include "sieveconditionwidgetlister.h"
+#include "autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
 #include <KComboBox>
@@ -173,16 +174,20 @@ void SieveScriptBlockWidget::updateWidget()
 
 void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop)
 {
+    QString indentation;
+    if (inForEveryPartLoop) {
+        indentation = AutoCreateScriptUtil::indentation();
+    }
     bool onlyActions = false;
     if (mMatchCondition == AllCondition) {
         onlyActions = true;
         //Just actions type
     } else if (pageType() == BlockElse) {
-        script += QLatin1String("else {\n");
+        script += indentation + QLatin1String("else {\n");
     } else {
         QString conditionStr;
         int numberOfCondition = 0;
-        mScriptConditionLister->generatedScript(conditionStr, numberOfCondition, requires);
+        mScriptConditionLister->generatedScript(conditionStr, numberOfCondition, requires, inForEveryPartLoop);
         const bool hasUniqCondition = (numberOfCondition == 1);
         QString filterStr;
         QString blockStr;
@@ -211,17 +216,17 @@ void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requi
         if (conditionStr.isEmpty()) {
             return;
         } else {
-            script += filterStr + conditionStr;
+            script += indentation +filterStr + conditionStr;
         }
         if (hasUniqCondition) {
-            script += QLatin1String("{\n");
+            script += indentation + QLatin1String("{\n");
         } else {
-            script += QLatin1String(")\n{\n");
+            script += indentation +QLatin1String(")\n{\n");
         }
     }
-    mScriptActionLister->generatedScript(script, requires, onlyActions);
+    mScriptActionLister->generatedScript(script, requires, onlyActions, inForEveryPartLoop);
     if (!onlyActions) {
-        script += QLatin1String("} ");
+        script += indentation + QLatin1String("} ");
     }
 }
 

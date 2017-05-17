@@ -68,7 +68,7 @@ void SieveConditionWidget::setFilterCondition(QWidget *widget)
     }
 }
 
-void SieveConditionWidget::generatedScript(QString &script, QStringList &requires)
+void SieveConditionWidget::generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop)
 {
     const int index = mComboBox->currentIndex();
     if (index != mComboBox->count() - 1) {
@@ -281,7 +281,7 @@ QWidget *SieveConditionWidgetLister::createWidget(QWidget *parent)
     return w;
 }
 
-void SieveConditionWidgetLister::generatedScript(QString &script, int &numberOfCondition, QStringList &requires)
+void SieveConditionWidgetLister::generatedScript(QString &script, int &numberOfCondition, QStringList &requires, bool inForEveryPartLoop)
 {
     const QList<QWidget *> widgetList = widgets();
     QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
@@ -290,7 +290,7 @@ void SieveConditionWidgetLister::generatedScript(QString &script, int &numberOfC
     for (; wIt != wEnd; ++wIt) {
         QString condition;
         SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(*wIt);
-        w->generatedScript(condition, requires);
+        w->generatedScript(condition, requires, inForEveryPartLoop);
         if (!condition.isEmpty()) {
             if (!wasFirst) {
                 script += QLatin1String(", ");
