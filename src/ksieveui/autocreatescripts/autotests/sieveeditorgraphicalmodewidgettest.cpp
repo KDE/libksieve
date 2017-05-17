@@ -97,6 +97,8 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         QEXPECT_FAIL("foreverypart", "Expected failure on foreverypart file. A lot of parsing errors.", Continue);
         QEXPECT_FAIL("test-current-date-custom", "Expected failure on test-current-date-custom file. CurrentDate + variable not implemented.", Continue);
 
+        QEXPECT_FAIL("failed-1", "Expected failure on failed-1 file. anyof + allof.", Continue);
+
         QCOMPARE(proc.exitCode(), 0);
     }
 }
@@ -177,6 +179,10 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-foreverypart-complex") << QStringLiteral("test-foreverypart-complex") << false << true;
     QTest::newRow("test-envelop-subadress") << QStringLiteral("test-envelop-subadress") << false << true;
     QTest::newRow("test-current-date-custom") << QStringLiteral("test-current-date-custom") << false << true;
+
+    //Failed
+    QTest::newRow("failed-1") << QStringLiteral("failed-1") << true << true;
+
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)
