@@ -41,6 +41,7 @@ QString quoteStr(QString str, bool protectSlash = true);
 void comboboxItemNotFound(const QString &searchItem, const QString &name, QString &error);
 QString createFullWhatsThis(const QString &help, const QString &href);
 QString protectSlash(QString str);
+QString indentation();
 }
 }
 #endif // AUTOCREATESCRIPTUTIL_H

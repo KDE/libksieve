@@ -185,3 +185,8 @@ QString AutoCreateScriptUtil::createFullWhatsThis(const QString &help, const QSt
     const QString fullWhatsThis = QLatin1String("<qt>") + help + QStringLiteral("<br><a href=\'%1\'>%2</a></qt>").arg(href, i18n("More information"));
     return fullWhatsThis;
 }
+
+QString AutoCreateScriptUtil::indentation()
+{
+    return QStringLiteral("    ");
+}
