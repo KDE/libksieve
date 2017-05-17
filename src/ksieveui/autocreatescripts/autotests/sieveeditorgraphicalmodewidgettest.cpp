@@ -93,7 +93,6 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
 
         QEXPECT_FAIL("regexp", "Expected failure on regexp file. Problem with header + comparator", Continue);
         QEXPECT_FAIL("test-current-date", "Expected failure on current-date file. We depend against current date", Continue);
-        QEXPECT_FAIL("test-date", "Expected failure on date file. We depend against current date", Continue);
         QEXPECT_FAIL("delete-headers-with-index", "Expected failure on delete-headers-with-index file. We depend against \"index\" feature", Continue);
         QEXPECT_FAIL("foreverypart", "Expected failure on foreverypart file. A lot of parsing errors.", Continue);
         QCOMPARE(proc.exitCode(), 0);
@@ -174,6 +173,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("foreverypart") << QStringLiteral("foreverypart") << true << true;
 
     QTest::newRow("test-foreverypart-complex") << QStringLiteral("test-foreverypart-complex") << false << true;
+    QTest::newRow("test-envelop-subadress") << QStringLiteral("test-envelop-subadress") << false << true;
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)
