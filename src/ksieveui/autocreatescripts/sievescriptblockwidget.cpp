@@ -183,7 +183,7 @@ void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requi
         onlyActions = true;
         //Just actions type
     } else if (pageType() == BlockElse) {
-        script += indentation + QLatin1String("else {\n");
+        script += QLatin1String("else {\n");
     } else {
         QString conditionStr;
         int numberOfCondition = 0;
@@ -193,7 +193,7 @@ void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requi
         QString blockStr;
         switch (pageType()) {
         case BlockIf:
-            blockStr = QStringLiteral("if ");
+            blockStr = indentation + QStringLiteral("if ");
             break;
         case BlockElsIf:
             blockStr = QStringLiteral("elsif ");
@@ -216,7 +216,7 @@ void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requi
         if (conditionStr.isEmpty()) {
             return;
         } else {
-            script += indentation + filterStr + conditionStr;
+            script += filterStr + conditionStr;
         }
         if (hasUniqCondition) {
             script += indentation + QLatin1String("{\n");

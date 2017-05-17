@@ -170,7 +170,10 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
 
     QTest::newRow("notify-2") << QStringLiteral("notify-2") << false << true;
 
+    //Need to fix it
     QTest::newRow("foreverypart") << QStringLiteral("foreverypart") << true << true;
+
+    QTest::newRow("test-foreverypart-complex") << QStringLiteral("test-foreverypart-complex") << false << true;
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)

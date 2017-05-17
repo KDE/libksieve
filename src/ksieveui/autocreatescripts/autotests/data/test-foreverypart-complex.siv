@@ -1,0 +1,34 @@
+require "reject";
+require "subaddress";
+require "fileinto";
+require "imap4flags";
+
+#SCRIPTNAME: Script part 0
+# Sieve filter
+# Declare the extensions used by this script.
+#
+# Messages bigger than 100K will be rejected with an error message
+#
+foreverypart :name "foo" {
+if size :over 100K
+{
+    reject text:
+I'm sorry, I do not accept mail over 100kb in size. 
+Please upload larger files to a server and send me a link.
+Thanks.
+.
+;
+
+} elsif address :all :is [ "From", "To" ] "mailinglist@blafasel.invalid"
+{
+    fileinto "INBOX.mailinglist";
+} elsif anyof (not address :all :contains [ "To", "Cc", "Bcc" ] "me@blafasel.invalid"
+, header :matches "Subject" [ "*money*", "*Viagra*" ]
+)
+{
+    fileinto "INBOX.spam";
+    break;
+} else {
+    keep;
+} 
+}
