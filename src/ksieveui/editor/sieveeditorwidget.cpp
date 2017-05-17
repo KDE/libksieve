@@ -420,7 +420,7 @@ void SieveEditorWidget::changeMode(EditorMode mode)
             mCheckSyntax->setEnabled(false);
         }
         Q_EMIT modeEditorChanged(mode);
-        changeModeEditor(isTextMode);
+        Q_EMIT changeModeEditor(isTextMode);
         changeSwitchButtonText();
     }
 }
