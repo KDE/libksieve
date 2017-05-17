@@ -618,11 +618,11 @@ void SieveEditorWidget::slotSwitchMode()
         if (result) {
             QString error;
             mGraphicalModeWidget->loadScript(doc, error);
-            mTextModeWidget->hideEditorWarning();
             if (!error.isEmpty()) {
                 mTextModeWidget->setParsingEditorWarningError(mTextModeWidget->currentscript(), error);
                 mTextModeWidget->showParsingEditorWarning();
             } else {
+                mTextModeWidget->hideEditorWarning();
                 changeMode(GraphicMode);
             }
         } else {
