@@ -3,9 +3,9 @@ require "imap4flags";
 
 #SCRIPTNAME: test-date
 #Script name: test-date
-if allof (date :is "header" "iso8601" "Monday, 15 May 2017"
+if allof (date :is "header" "day" "20"
 , not date :matches "header" "hour" "08"
-, not date :contains "header" "julian" "Monday, 15 May 2017"
+, not date :contains "header" "month" "08"
 )
 {
     keep;
