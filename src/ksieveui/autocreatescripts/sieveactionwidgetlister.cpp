@@ -257,7 +257,7 @@ bool SieveActionWidget::setAction(const QString &actionName, const QDomElement &
         result = action->setParamWidgetValue(element, this, error);
         action->setComment(comment);
     } else {
-        error += i18n("Script contains unsupported feature \"%1\"", actionName);
+        error += i18n("Script contains unsupported feature \"%1\"", actionName) + QLatin1Char('\n');
         qCDebug(LIBKSIEVE_LOG) << "Condition " << actionName << " not supported";
     }
     return result;
