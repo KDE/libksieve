@@ -70,6 +70,7 @@ void SieveConditionWidget::setFilterCondition(QWidget *widget)
 
 void SieveConditionWidget::generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop)
 {
+    Q_UNUSED(inForEveryPartLoop);
     const int index = mComboBox->currentIndex();
     if (index != mComboBox->count() - 1) {
         KSieveUi::SieveCondition *widgetCondition = mConditionList.at(mComboBox->currentIndex());
@@ -79,9 +80,6 @@ void SieveConditionWidget::generatedScript(QString &script, QStringList &require
             if (!requires.contains(r)) {
                 requires.append(r);
             }
-        }
-        if (inForEveryPartLoop) {
-            //FIXME script += AutoCreateScriptUtil::indentation();
         }
         script += mConditionList.at(mComboBox->currentIndex())->code(currentWidget) + QLatin1Char('\n');
     }
@@ -296,6 +294,9 @@ void SieveConditionWidgetLister::generatedScript(QString &script, int &numberOfC
         w->generatedScript(condition, requires, inForEveryPartLoop);
         if (!condition.isEmpty()) {
             if (!wasFirst) {
+                if (inForEveryPartLoop) {
+                    script += AutoCreateScriptUtil::indentation();
+                }
                 script += QLatin1String(", ");
             }
             script += condition;
