@@ -6,6 +6,7 @@ require "date";
 if allof (date :is "header" "day" "20"
 , not date :matches "header" "hour" "08"
 , not date :contains "header" "month" "8"
+, not date :contains "header" "weekday" "5"
 )
 {
     keep;

@@ -270,6 +270,7 @@ void SelectDateWidget::setCode(const QString &type, const QString &value)
     case Weekday:
     case Year:
         mStackWidget->setCurrentWidget(mDateValue);
+        mDateValue->setType(dateType);
         mDateValue->setCode(value);
         break;
     case Date:

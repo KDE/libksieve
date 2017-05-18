@@ -6,6 +6,7 @@ require "imap4flags";
 if allof (date :is "header" "day" "20"
 , not date :matches "header" "hour" "08"
 , not date :contains "header" "month" "08"
+, not date :contains "header" "weekday" "5"
 )
 {
     keep;
