@@ -30,7 +30,7 @@ class QSpinBox;
 class KDateComboBox;
 class KTimeComboBox;
 namespace KSieveUi {
-
+class SieveDateSpinBox;
 class KSIEVEUI_TESTS_EXPORT SelectDateWidget : public QWidget
 {
     Q_OBJECT
@@ -69,7 +69,7 @@ private:
     QString dateValue(DateType type) const;
     KComboBox *mDateType;
     QLineEdit *mDateLineEdit;
-    QSpinBox *mDateValue;
+    SieveDateSpinBox *mDateValue;
     KDateComboBox *mDateEdit;
     KTimeComboBox *mTimeEdit;
     QStackedWidget *mStackWidget;

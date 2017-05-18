@@ -17,6 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 #include "selectdatewidget.h"
+#include "sievedatespinbox.h"
 
 #include <KLocalizedString>
 #include <KComboBox>
@@ -75,8 +76,7 @@ void SelectDateWidget::initialize()
     mStackWidget->addWidget(mDateLineEdit);
     connect(mDateLineEdit, &QLineEdit::textChanged, this, &SelectDateWidget::valueChanged);
 
-    mDateValue = new QSpinBox;
-    mDateValue->setSpecialValueText(QStringLiteral("*"));
+    mDateValue = new SieveDateSpinBox;
     mStackWidget->addWidget(mDateValue);
     connect(mDateValue, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &SelectDateWidget::valueChanged);
 
@@ -98,38 +98,13 @@ void SelectDateWidget::slotDateTypeActivated(int index)
     const DateType type = mDateType->itemData(index).value<KSieveUi::SelectDateWidget::DateType>();
     switch (type) {
     case Year:
-        mStackWidget->setCurrentWidget(mDateValue);
-        mDateValue->setMinimum(-1);
-        mDateValue->setMaximum(9999);
-        break;
     case Month:
-        mStackWidget->setCurrentWidget(mDateValue);
-        mDateValue->setMinimum(0);
-        mDateValue->setMaximum(12);
-        break;
     case Day:
-        mStackWidget->setCurrentWidget(mDateValue);
-        mDateValue->setMinimum(0);
-        mDateValue->setMaximum(31);
-        break;
     case Hour:
-        mStackWidget->setCurrentWidget(mDateValue);
-        mDateValue->setMinimum(-1);
-        mDateValue->setMaximum(23);
-        break;
     case Minute:
-        mDateValue->setMinimum(-1);
-        mDateValue->setMaximum(59);
-        mStackWidget->setCurrentWidget(mDateValue);
-        break;
     case Second:
-        mDateValue->setMinimum(-1);
-        mDateValue->setMaximum(59);
-        mStackWidget->setCurrentWidget(mDateValue);
-        break;
     case Weekday:
-        mDateValue->setMinimum(-1);
-        mDateValue->setMaximum(6);
+        mDateValue->setType(type);
         mStackWidget->setCurrentWidget(mDateValue);
         break;
     case Date:
@@ -159,25 +134,13 @@ QString SelectDateWidget::dateValue(SelectDateWidget::DateType type) const
     QString str;
     switch (type) {
     case Year:
-        str = QStringLiteral("%1").arg(mDateValue->value(), 4, 10, QLatin1Char('0'));
-        break;
     case Month:
-        str = QStringLiteral("%1").arg(mDateValue->value(), 2, 10, QLatin1Char('0'));
-        break;
     case Day:
-        str = QStringLiteral("%1").arg(mDateValue->value(), 2, 10, QLatin1Char('0'));
-        break;
     case Hour:
-        str = QStringLiteral("%1").arg(mDateValue->value(), 2, 10, QLatin1Char('0'));
-        break;
     case Minute:
-        str = QStringLiteral("%1").arg(mDateValue->value(), 2, 10, QLatin1Char('0'));
-        break;
     case Second:
-        str = QStringLiteral("%1").arg(mDateValue->value(), 2, 10, QLatin1Char('0'));
-        break;
     case Weekday:
-        str = QStringLiteral("%1").arg(mDateValue->value());
+        str = mDateValue->code();
         break;
     case Date:
         str = QLocale::c().toString(mDateEdit->date());
@@ -307,7 +270,7 @@ void SelectDateWidget::setCode(const QString &type, const QString &value)
     case Weekday:
     case Year:
         mStackWidget->setCurrentWidget(mDateValue);
-        mDateValue->setValue(value.toInt());
+        mDateValue->setCode(value);
         break;
     case Date:
         mStackWidget->setCurrentWidget(mDateEdit);
