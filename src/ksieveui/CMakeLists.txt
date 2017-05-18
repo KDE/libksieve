@@ -200,6 +200,7 @@ set(ksieveui_LIB_SRCS
     widgets/managesievetreeview.cpp
     widgets/managesievewidget.cpp
     widgets/abstractmoveimapfolderwidget.cpp
+    widgets/abstractregexpeditorlineedit.cpp
     debug/sievedebugdialog.cpp
     templates/sievetemplatewidget.cpp
     templates/sievedefaulttemplate.cpp
@@ -323,6 +324,7 @@ ecm_generate_headers(ksieveui_Camelcasewidgets_HEADERS
     SieveTreeWidgetItem
     ManageSieveTreeView
     AbstractMoveImapFolderWidget
+    AbstractRegexpEditorLineEdit
     REQUIRED_HEADERS ksieveui_widgets_HEADERS
     PREFIX KSieveUi
     RELATIVE widgets
