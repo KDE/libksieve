@@ -77,6 +77,7 @@ void SelectDateWidget::initialize()
     connect(mDateLineEdit, &QLineEdit::textChanged, this, &SelectDateWidget::valueChanged);
 
     mDateValue = new QSpinBox;
+    mDateValue->setSpecialValueText(QStringLiteral("*"));
     mStackWidget->addWidget(mDateValue);
     connect(mDateValue, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &SelectDateWidget::valueChanged);
 
@@ -99,36 +100,36 @@ void SelectDateWidget::slotDateTypeActivated(int index)
     switch (type) {
     case Year:
         mStackWidget->setCurrentWidget(mDateValue);
-        mDateValue->setMinimum(0);
+        mDateValue->setMinimum(-1);
         mDateValue->setMaximum(9999);
         break;
     case Month:
         mStackWidget->setCurrentWidget(mDateValue);
-        mDateValue->setMinimum(1);
+        mDateValue->setMinimum(0);
         mDateValue->setMaximum(12);
         break;
     case Day:
         mStackWidget->setCurrentWidget(mDateValue);
-        mDateValue->setMinimum(1);
+        mDateValue->setMinimum(0);
         mDateValue->setMaximum(31);
         break;
     case Hour:
         mStackWidget->setCurrentWidget(mDateValue);
-        mDateValue->setMinimum(0);
+        mDateValue->setMinimum(-1);
         mDateValue->setMaximum(23);
         break;
     case Minute:
-        mDateValue->setMinimum(0);
+        mDateValue->setMinimum(-1);
         mDateValue->setMaximum(59);
         mStackWidget->setCurrentWidget(mDateValue);
         break;
     case Second:
-        mDateValue->setMinimum(0);
-        mDateValue->setMaximum(60);
+        mDateValue->setMinimum(-1);
+        mDateValue->setMaximum(59);
         mStackWidget->setCurrentWidget(mDateValue);
         break;
     case Weekday:
-        mDateValue->setMinimum(0);
+        mDateValue->setMinimum(-1);
         mDateValue->setMaximum(6);
         mStackWidget->setCurrentWidget(mDateValue);
         break;
