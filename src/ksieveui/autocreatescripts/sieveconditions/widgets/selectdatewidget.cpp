@@ -168,13 +168,6 @@ QString SelectDateWidget::dateValue(SelectDateWidget::DateType type) const
     case Day:
         str = QStringLiteral("%1").arg(mDateValue->value(), 2, 10, QLatin1Char('0'));
         break;
-    case Date:
-        str = QLocale::c().toString(mDateEdit->date());
-        break;
-    case Julian:
-        //TODO
-        str = QLocale::c().toString(mDateEdit->date());
-        break;
     case Hour:
         str = QStringLiteral("%1").arg(mDateValue->value(), 2, 10, QLatin1Char('0'));
         break;
@@ -183,6 +176,16 @@ QString SelectDateWidget::dateValue(SelectDateWidget::DateType type) const
         break;
     case Second:
         str = QStringLiteral("%1").arg(mDateValue->value(), 2, 10, QLatin1Char('0'));
+        break;
+    case Weekday:
+        str = QStringLiteral("%1").arg(mDateValue->value());
+        break;
+    case Date:
+        str = QLocale::c().toString(mDateEdit->date());
+        break;
+    case Julian:
+        //TODO
+        str = QLocale::c().toString(mDateEdit->date());
         break;
     case Time:
         str = QLocale::c().toString(mTimeEdit->time());
@@ -195,9 +198,6 @@ QString SelectDateWidget::dateValue(SelectDateWidget::DateType type) const
         break;
     case Zone:
         str = QLocale::c().toString(mDateEdit->date());
-        break;
-    case Weekday:
-        str = QStringLiteral("%1").arg(mDateValue->value());
         break;
     }
     return str;
@@ -308,7 +308,6 @@ void SelectDateWidget::setCode(const QString &type, const QString &value)
     case Weekday:
     case Year:
         mStackWidget->setCurrentWidget(mDateValue);
-        qDebug() << "value "<<value;
         mDateValue->setValue(value.toInt());
         break;
     case Date:

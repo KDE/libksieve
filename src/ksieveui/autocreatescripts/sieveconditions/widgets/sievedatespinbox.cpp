@@ -33,6 +33,13 @@ SieveDateSpinBox::~SieveDateSpinBox()
 
 }
 
+void SieveDateSpinBox::setRange(int minValue, int maxValue)
+{
+    //We need to define specialValueText => we set minimum to minimum - 1
+    setMaximum(maxValue);
+    setMinimum(minValue - 1);
+}
+
 void SieveDateSpinBox::setType(KSieveUi::SelectDateWidget::DateType type)
 {
     mType = type;

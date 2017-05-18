@@ -33,6 +33,8 @@ public:
     ~SieveDateSpinBox();
     void setType(KSieveUi::SelectDateWidget::DateType type);
 
+    void setRange(int minValue, int maxValue);
+
     void setCode(const QString &value);
     QString code() const;
 
