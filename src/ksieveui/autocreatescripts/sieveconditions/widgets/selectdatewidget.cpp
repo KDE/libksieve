@@ -331,21 +331,3 @@ void SelectDateWidget::setCode(const QString &type, const QString &value)
         break;
     }
 }
-
-SieveDateSpinBox::SieveDateSpinBox(QWidget *parent)
-    : QSpinBox(parent),
-      mType(SelectDateWidget::Year)
-{
-    setSpecialValueText(QStringLiteral("*"));
-}
-
-SieveDateSpinBox::~SieveDateSpinBox()
-{
-
-}
-
-void SieveDateSpinBox::setType(SelectDateWidget::DateType type)
-{
-    mType = type;
-    //TODO update it ?
-}
