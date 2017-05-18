@@ -20,6 +20,7 @@
 #define SELECTDATEWIDGET_H
 
 #include <QWidget>
+#include <QSpinBox>
 
 class KComboBox;
 class QLineEdit;
@@ -28,6 +29,7 @@ class QSpinBox;
 class KDateComboBox;
 class KTimeComboBox;
 namespace KSieveUi {
+
 class SelectDateWidget : public QWidget
 {
     Q_OBJECT
@@ -71,6 +73,18 @@ private:
     KTimeComboBox *mTimeEdit;
     QStackedWidget *mStackWidget;
 };
+
+class SieveDateSpinBox : public QSpinBox
+{
+    Q_OBJECT
+public:
+    explicit SieveDateSpinBox(QWidget *parent = nullptr);
+    ~SieveDateSpinBox();
+    void setType(SelectDateWidget::DateType type);
+private:
+    SelectDateWidget::DateType mType;
+};
+
 }
 
 #endif // SELECTDATEWIDGET_H

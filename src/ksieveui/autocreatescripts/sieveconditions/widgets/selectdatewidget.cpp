@@ -308,6 +308,7 @@ void SelectDateWidget::setCode(const QString &type, const QString &value)
     case Weekday:
     case Year:
         mStackWidget->setCurrentWidget(mDateValue);
+        qDebug() << "value "<<value;
         mDateValue->setValue(value.toInt());
         break;
     case Date:
@@ -329,4 +330,22 @@ void SelectDateWidget::setCode(const QString &type, const QString &value)
         mDateLineEdit->setText(value);
         break;
     }
+}
+
+SieveDateSpinBox::SieveDateSpinBox(QWidget *parent)
+    : QSpinBox(parent),
+      mType(SelectDateWidget::Year)
+{
+    setSpecialValueText(QStringLiteral("*"));
+}
+
+SieveDateSpinBox::~SieveDateSpinBox()
+{
+
+}
+
+void SieveDateSpinBox::setType(SelectDateWidget::DateType type)
+{
+    mType = type;
+    //TODO update it ?
 }
