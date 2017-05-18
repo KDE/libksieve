@@ -31,7 +31,6 @@
 #include "libksieve_debug.h"
 #include <QDate>
 
-Q_DECLARE_METATYPE(KSieveUi::SelectDateWidget::DateType)
 
 using namespace KSieveUi;
 SelectDateWidget::SelectDateWidget(QWidget *parent)

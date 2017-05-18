@@ -75,5 +75,6 @@ private:
     QStackedWidget *mStackWidget;
 };
 }
+Q_DECLARE_METATYPE(KSieveUi::SelectDateWidget::DateType)
 
 #endif // SELECTDATEWIDGET_H

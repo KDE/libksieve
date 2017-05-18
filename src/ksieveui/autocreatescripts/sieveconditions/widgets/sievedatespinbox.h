@@ -39,6 +39,7 @@ public:
     QString code() const;
 
 private:
+    QString convertValue() const;
     SelectDateWidget::DateType mType;
 };
 }
