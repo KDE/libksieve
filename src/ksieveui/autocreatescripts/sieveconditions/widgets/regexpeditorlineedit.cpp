@@ -25,7 +25,11 @@ using namespace KSieveUi;
 RegexpEditorLineEdit::RegexpEditorLineEdit(QWidget *parent)
     : KSieveUi::AbstractRegexpEditorLineEdit(parent)
 {
-
+    QHBoxLayout *mainLayout = new QHBoxLayout(this);
+    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mLineEdit = new QLineEdit(this);
+    mLineEdit->setObjectName(QStringLiteral("lineedit"));
+    mainLayout->addWidget(mLineEdit);
 }
 
 RegexpEditorLineEdit::~RegexpEditorLineEdit()
@@ -37,4 +41,15 @@ RegexpEditorLineEdit::~RegexpEditorLineEdit()
 void RegexpEditorLineEdit::switchToRegexpEditorLineEdit()
 {
     //TODO
+}
+
+void KSieveUi::RegexpEditorLineEdit::setCode(const QString &str)
+{
+    //TODO
+}
+
+QString KSieveUi::RegexpEditorLineEdit::code() const
+{
+    //TODO
+    return {};
 }

@@ -32,8 +32,12 @@ public:
     ~RegexpEditorLineEdit();
 
     void switchToRegexpEditorLineEdit() Q_DECL_OVERRIDE;
+    void setCode(const QString &str) Q_DECL_OVERRIDE;
+    QString code() const Q_DECL_OVERRIDE;
+
 private:
     QLineEdit *mLineEdit;
+
 };
 }
 

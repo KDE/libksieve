@@ -32,6 +32,8 @@ public:
     ~AbstractRegexpEditorLineEdit();
 
     virtual void switchToRegexpEditorLineEdit() = 0;
+    virtual void setCode(const QString &str) = 0;
+    virtual QString code() const = 0;
 };
 }
 
