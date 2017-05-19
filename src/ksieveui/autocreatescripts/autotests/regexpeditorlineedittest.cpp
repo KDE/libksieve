@@ -20,6 +20,8 @@
 #include "regexpeditorlineedittest.h"
 #include "autocreatescripts/sieveconditions/widgets/regexpeditorlineedit.h"
 #include <QTest>
+#include <QLineEdit>
+#include <QHBoxLayout>
 
 RegexpEditorLineEditTest::RegexpEditorLineEditTest(QObject *parent)
     : QObject(parent)
@@ -30,6 +32,12 @@ RegexpEditorLineEditTest::RegexpEditorLineEditTest(QObject *parent)
 void RegexpEditorLineEditTest::shouldHaveDefaultValue()
 {
     KSieveUi::RegexpEditorLineEdit w;
+    QLineEdit *mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
+    QVERIFY(mLineEdit);
+
+    QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->margin(), 0);
 }
 
 QTEST_MAIN(RegexpEditorLineEditTest)
