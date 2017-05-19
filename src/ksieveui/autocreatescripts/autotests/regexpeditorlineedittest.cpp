@@ -18,12 +18,18 @@
 */
 
 #include "regexpeditorlineedittest.h"
+#include "autocreatescripts/sieveconditions/widgets/regexpeditorlineedit.h"
 #include <QTest>
 
 RegexpEditorLineEditTest::RegexpEditorLineEditTest(QObject *parent)
     : QObject(parent)
 {
 
+}
+
+void RegexpEditorLineEditTest::shouldHaveDefaultValue()
+{
+    KSieveUi::RegexpEditorLineEdit w;
 }
 
 QTEST_MAIN(RegexpEditorLineEditTest)
