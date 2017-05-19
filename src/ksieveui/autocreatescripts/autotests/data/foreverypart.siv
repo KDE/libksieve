@@ -4,7 +4,7 @@ foreverypart :name "dd"
          header :mime :param "filename" :contains
             "Content-Disposition" "important",
          header :mime :subtype "Content-Type" "pdf",
-         size :over "100K")
+         size :over 100K)
        {
            fileinto "INBOX.important";
            break;
