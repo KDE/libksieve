@@ -156,6 +156,7 @@ set(ksieveui_autocreatescripts_LIB_SRCS
     autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp
     autocreatescripts/sieveconditions/widgets/selectsizewidget.cpp
     autocreatescripts/sieveconditions/widgets/sievedatespinbox.cpp
+    autocreatescripts/sieveconditions/widgets/regexpeditorlineedit.cpp
     )
 
 set(ksieveui_scriptsparsing_LIB_SRCS
