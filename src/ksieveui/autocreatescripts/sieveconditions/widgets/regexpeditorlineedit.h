@@ -24,8 +24,7 @@
 #include "ksieveui_private_export.h"
 
 class QLineEdit;
-namespace KSieveUi
-{
+namespace KSieveUi {
 class KSIEVEUI_TESTS_EXPORT RegexpEditorLineEdit : public KSieveUi::AbstractRegexpEditorLineEdit
 {
     Q_OBJECT
@@ -39,7 +38,6 @@ public:
 
 private:
     QLineEdit *mLineEdit;
-
 };
 }
 

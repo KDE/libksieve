@@ -181,7 +181,6 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
 
     //Failed
     QTest::newRow("failed-1") << QStringLiteral("failed-1") << true << true;
-
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)

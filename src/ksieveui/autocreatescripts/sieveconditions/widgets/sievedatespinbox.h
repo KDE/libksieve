@@ -23,8 +23,7 @@
 #include <QSpinBox>
 #include "selectdatewidget.h"
 #include "ksieveui_private_export.h"
-namespace KSieveUi
-{
+namespace KSieveUi {
 class KSIEVEUI_TESTS_EXPORT SieveDateSpinBox : public QSpinBox
 {
     Q_OBJECT

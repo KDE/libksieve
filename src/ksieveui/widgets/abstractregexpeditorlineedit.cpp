@@ -24,10 +24,8 @@ using namespace KSieveUi;
 AbstractRegexpEditorLineEdit::AbstractRegexpEditorLineEdit(QWidget *parent)
     : QWidget(parent)
 {
-
 }
 
 AbstractRegexpEditorLineEdit::~AbstractRegexpEditorLineEdit()
 {
-
 }

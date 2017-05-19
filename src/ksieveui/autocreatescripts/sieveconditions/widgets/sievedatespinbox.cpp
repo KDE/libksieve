@@ -23,15 +23,14 @@
 using namespace KSieveUi;
 
 SieveDateSpinBox::SieveDateSpinBox(QWidget *parent)
-    : QSpinBox(parent),
-      mType(SelectDateWidget::Year)
+    : QSpinBox(parent)
+    , mType(SelectDateWidget::Year)
 {
     setSpecialValueText(QStringLiteral("*"));
 }
 
 SieveDateSpinBox::~SieveDateSpinBox()
 {
-
 }
 
 void SieveDateSpinBox::setRange(int minValue, int maxValue)

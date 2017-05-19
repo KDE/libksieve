@@ -26,7 +26,6 @@
 RegexpEditorLineEditTest::RegexpEditorLineEditTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void RegexpEditorLineEditTest::shouldHaveDefaultValue()
@@ -54,6 +53,5 @@ void RegexpEditorLineEditTest::shouldChangeValue()
     w.setCode(input);
     QCOMPARE(w.code(), input);
 }
-
 
 QTEST_MAIN(RegexpEditorLineEditTest)

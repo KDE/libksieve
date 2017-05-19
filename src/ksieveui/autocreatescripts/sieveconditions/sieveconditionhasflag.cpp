@@ -121,7 +121,6 @@ QString SieveConditionHasFlag::serverNeedsCapability() const
     return QStringLiteral("variables");
 #if 0
     if (sieveCapabilities().contains(QStringLiteral("variables"))) {
-
     }
     if (sieveCapabilities().contains(QStringLiteral("imap4flags"))) {
         return QStringLiteral("imap4flags");

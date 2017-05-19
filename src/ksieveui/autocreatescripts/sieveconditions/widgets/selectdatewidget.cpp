@@ -32,7 +32,6 @@
 #include "libksieve_debug.h"
 #include <QDate>
 
-
 using namespace KSieveUi;
 SelectDateWidget::SelectDateWidget(QWidget *parent)
     : QWidget(parent)

@@ -25,7 +25,6 @@
 SieveDateSpinBoxTest::SieveDateSpinBoxTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void SieveDateSpinBoxTest::shouldHaveDefaultValue()
@@ -54,7 +53,6 @@ void SieveDateSpinBoxTest::shouldAssignValue_data()
     QTest::newRow("second-1") << QStringLiteral("1") << QStringLiteral("01") << KSieveUi::SelectDateWidget::Second;
     QTest::newRow("second-*") << QStringLiteral("*") << QStringLiteral("*") << KSieveUi::SelectDateWidget::Second;
     QTest::newRow("second-500") << QStringLiteral("500") << QStringLiteral("59") << KSieveUi::SelectDateWidget::Second;
-
 }
 
 void SieveDateSpinBoxTest::shouldAssignValue()

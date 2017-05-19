@@ -35,9 +35,7 @@ RegexpEditorLineEdit::RegexpEditorLineEdit(QWidget *parent)
 
 RegexpEditorLineEdit::~RegexpEditorLineEdit()
 {
-
 }
-
 
 void RegexpEditorLineEdit::switchToRegexpEditorLineEdit()
 {
