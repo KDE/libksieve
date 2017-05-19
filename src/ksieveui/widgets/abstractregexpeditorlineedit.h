@@ -30,6 +30,8 @@ class KSIEVEUI_EXPORT AbstractRegexpEditorLineEdit : public QWidget
 public:
     explicit AbstractRegexpEditorLineEdit(QWidget *parent = nullptr);
     ~AbstractRegexpEditorLineEdit();
+
+    virtual void switchToRegexpEditorLineEdit() = 0;
 };
 }
 
