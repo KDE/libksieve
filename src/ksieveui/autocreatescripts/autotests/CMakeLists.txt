@@ -23,3 +23,4 @@ add_sieveeditor_autocreatescripts(selectheadersdialogtest.cpp "../sievecondition
 add_sieveeditor_autocreatescripts(moveimapfolderwidgettest.cpp "../sieveactions/widgets/moveimapfolderwidget.cpp")
 add_sieveeditor_autocreatescripts(sieveeditorgraphicalmodewidgettest.cpp "../sieveeditorgraphicalmodewidget.cpp;${ksieveui_sieveeditor_autocreatescripts_LIB_SRCS}")
 add_sieveeditor_autocreatescripts(sievedatespinboxtest.cpp "")
+add_sieveeditor_autocreatescripts(regexpeditorlineedittest.cpp "")
