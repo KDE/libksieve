@@ -40,4 +40,20 @@ void RegexpEditorLineEditTest::shouldHaveDefaultValue()
     QCOMPARE(mainLayout->margin(), 0);
 }
 
+void RegexpEditorLineEditTest::shouldChangeValue_data()
+{
+    QTest::addColumn<QString>("input");
+    QTest::newRow("empty") << QString();
+    QTest::newRow("test1") << QStringLiteral("foo");
+}
+
+void RegexpEditorLineEditTest::shouldChangeValue()
+{
+    QFETCH(QString, input);
+    KSieveUi::RegexpEditorLineEdit w;
+    w.setCode(input);
+    QCOMPARE(w.code(), input);
+}
+
+
 QTEST_MAIN(RegexpEditorLineEditTest)

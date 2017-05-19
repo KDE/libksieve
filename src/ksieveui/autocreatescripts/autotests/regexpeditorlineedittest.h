@@ -30,6 +30,8 @@ public:
     ~RegexpEditorLineEditTest() = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldChangeValue();
+    void shouldChangeValue_data();
 };
 
 #endif // REGEXPEDITORLINEEDITTEST_H

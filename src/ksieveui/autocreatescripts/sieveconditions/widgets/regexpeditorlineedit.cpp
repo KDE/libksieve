@@ -41,16 +41,15 @@ RegexpEditorLineEdit::~RegexpEditorLineEdit()
 
 void RegexpEditorLineEdit::switchToRegexpEditorLineEdit()
 {
-    //TODO
+    //Nothing here
 }
 
 void KSieveUi::RegexpEditorLineEdit::setCode(const QString &str)
 {
-    //TODO
+    mLineEdit->setText(str);
 }
 
 QString KSieveUi::RegexpEditorLineEdit::code() const
 {
-    //TODO
-    return {};
+    return mLineEdit->text();
 }
