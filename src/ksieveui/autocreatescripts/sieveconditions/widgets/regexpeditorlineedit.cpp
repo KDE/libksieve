@@ -37,8 +37,9 @@ RegexpEditorLineEdit::~RegexpEditorLineEdit()
 {
 }
 
-void RegexpEditorLineEdit::switchToRegexpEditorLineEdit()
+void RegexpEditorLineEdit::switchToRegexpEditorLineEdit(bool regexpEditor)
 {
+    Q_UNUSED(regexpEditor);
     //Nothing here
 }
 

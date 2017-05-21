@@ -32,7 +32,7 @@ public:
     explicit RegexpEditorLineEdit(QWidget *parent = nullptr);
     ~RegexpEditorLineEdit();
 
-    void switchToRegexpEditorLineEdit() Q_DECL_OVERRIDE;
+    void switchToRegexpEditorLineEdit(bool regexpEditor) Q_DECL_OVERRIDE;
     void setCode(const QString &str) Q_DECL_OVERRIDE;
     QString code() const Q_DECL_OVERRIDE;
 
