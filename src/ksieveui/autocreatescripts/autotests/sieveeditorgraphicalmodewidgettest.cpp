@@ -187,6 +187,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("failed-if-in-if") << QStringLiteral("failed-if-in-if") << true << true;
 
     QTest::newRow("test-comment2") << QStringLiteral("test-comment2") << false << true;
+    QTest::newRow("test-comment3") << QStringLiteral("test-comment3") << false << true;
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)

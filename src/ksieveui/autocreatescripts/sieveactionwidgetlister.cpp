@@ -95,8 +95,8 @@ void SieveActionWidget::generatedScript(QString &script, QStringList &requires, 
             indent += AutoCreateScriptUtil::indentation();
         }
         if (!comment.trimmed().isEmpty()) {
-            //script += indent;
             const QStringList commentList = comment.split(QLatin1Char('\n'));
+
             for (const QString &str : commentList) {
                 if (str.isEmpty()) {
                     script += QLatin1Char('\n');
@@ -104,8 +104,6 @@ void SieveActionWidget::generatedScript(QString &script, QStringList &requires, 
                     script += indent + QLatin1Char('#') + str + QLatin1Char('\n');
                 }
             }
-
-            //script += QLatin1Char('#') + comment.replace(QLatin1Char('\n'), QStringLiteral("\n%1#").arg(indent)) + QLatin1Char('\n');
         }
         script += indent + widgetAction->code(currentWidget) + QLatin1Char('\n');
     }
@@ -383,6 +381,7 @@ void SieveActionWidgetLister::loadScript(const QDomElement &element, bool onlyAc
     } else {
         bool firstAction = true;
         QDomNode node = element.firstChild();
+        bool previousActionWasAComment = false;
         while (!node.isNull()) {
             QDomElement e = node.toElement();
             if (!e.isNull()) {
@@ -405,13 +404,18 @@ void SieveActionWidgetLister::loadScript(const QDomElement &element, bool onlyAc
                     } else {
                         qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript don't have name attribute " << tagName;
                     }
+                    previousActionWasAComment = false;
                 } else if (tagName == QLatin1String("comment")) {
                     if (!comment.isEmpty()) {
                         comment += QLatin1Char('\n');
                     }
+                    previousActionWasAComment = true;
                     comment += e.text();
                 } else if (tagName == QLatin1String("crlf")) {
-                    //nothing
+                    //Add new line if previous action was a comment
+                    if (previousActionWasAComment) {
+                        comment += QLatin1Char('\n');
+                    }
                 } else {
                     qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript unknown tagName " << tagName;
                 }
