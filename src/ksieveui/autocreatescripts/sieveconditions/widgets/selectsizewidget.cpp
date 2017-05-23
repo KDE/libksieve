@@ -33,7 +33,7 @@ SelectSizeWidget::SelectSizeWidget(QWidget *parent)
 
     mSpinBoxSize = new QSpinBox;
     mSpinBoxSize->setMinimum(1);
-    mSpinBoxSize->setMaximum(9999);
+    mSpinBoxSize->setMaximum(99999);
     hbox->addWidget(mSpinBoxSize);
     connect(mSpinBoxSize, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &SelectSizeWidget::valueChanged);
 
