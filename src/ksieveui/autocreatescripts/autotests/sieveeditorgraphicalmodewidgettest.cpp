@@ -97,7 +97,8 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         QEXPECT_FAIL("foreverypart", "Expected failure on foreverypart file. A lot of parsing errors.", Continue);
 
         QEXPECT_FAIL("failed-1", "Expected failure on failed-1 file. anyof + allof.", Continue);
-
+        QEXPECT_FAIL("failed-2", "Expected failure on failed-2 file. Problem with body + text.", Continue);
+        QEXPECT_FAIL("failed-if-in-if", "Expected failure on failed-if-in-if file. Problem with if in another if.", Continue);
         QCOMPARE(proc.exitCode(), 0);
     }
 }
@@ -182,6 +183,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     //Failed
     QTest::newRow("failed-1") << QStringLiteral("failed-1") << true << true;
     QTest::newRow("failed-2") << QStringLiteral("failed-2") << true << true;
+    QTest::newRow("failed-if-in-if") << QStringLiteral("failed-if-in-if") << true << true;
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)
