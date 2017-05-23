@@ -2,6 +2,7 @@ require "mboxmetadata";
 
 #SCRIPTNAME: Script part 0
 #Script name: test-metadata-exist
+
 if metadataexists "INBOX" "ANNOTATION"
 {
     stop;

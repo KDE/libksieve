@@ -3,6 +3,7 @@ require "vacation";
 
 #SCRIPTNAME: Script part 0
 #Script name: vacation
+
 if true
 {
     vacation :seconds 4 :subject "message" :addresses "foo@example.com" text:

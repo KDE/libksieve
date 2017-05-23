@@ -4,6 +4,7 @@ require "mailbox";
 
 #SCRIPTNAME: Script part 0
 #Script name: scriptname
+
 if header :is "Content-Type" "png"
 {
     fileinto :copy :create "INBOX";

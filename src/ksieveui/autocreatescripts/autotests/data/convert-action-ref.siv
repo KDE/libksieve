@@ -2,6 +2,7 @@ require "convert";
 
 #SCRIPTNAME: Script part 0
 #Script name: convert action                                                                                                                                                                                                                                                 
+
 if true
 {
     convert "image/png" "image/bmp" ["pix-x=250","pix-y=600"];

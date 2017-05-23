@@ -2,6 +2,7 @@ require "imap4flags";
 
 #SCRIPTNAME: Script part 0
 #Script name: add flags                                                                                                                                                                                                                                                      
+
 if size :under 1
 {
     addflag [ "\\Deleted", "\\Answered", "\\Flagged" ];

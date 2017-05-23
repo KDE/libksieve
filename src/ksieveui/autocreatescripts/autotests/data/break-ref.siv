@@ -2,6 +2,7 @@ require "foreverypart";
 
 #SCRIPTNAME: Script part 0
 #Script name: break
+
 if true
 {
     break :name "optional name";

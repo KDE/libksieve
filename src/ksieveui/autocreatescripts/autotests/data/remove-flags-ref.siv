@@ -3,6 +3,7 @@ require "imap4flags";
 
 #SCRIPTNAME: Script part 0
 #Script name: remove flags
+
 if ihave "reject"
 {
     removeflag [ "\\Answered", "\\Flagged", "\\Seen" ];

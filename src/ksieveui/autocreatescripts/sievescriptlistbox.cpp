@@ -80,10 +80,16 @@ void SieveScriptListItem::setScriptPage(SieveScriptPage *page)
 QString SieveScriptListItem::generatedScript(QStringList &requires) const
 {
     QString script;
-    if (!mDescription.isEmpty()) {
-        script = QLatin1Char('#') + mDescription;
-        script.replace(QLatin1Char('\n'), QStringLiteral("\n#"));
-        script += QLatin1Char('\n');
+    if (!mDescription.trimmed().isEmpty()) {
+
+        const QStringList commentList = mDescription.split(QLatin1Char('\n'));
+        for (const QString &str : commentList) {
+            if (str.isEmpty()) {
+                script += QLatin1Char('\n');
+            } else {
+                script += QLatin1Char('#') + str + QLatin1Char('\n');
+            }
+        }
     }
     if (mScriptPage) {
         mScriptPage->generatedScript(script, requires);
@@ -394,12 +400,14 @@ void SieveScriptListBox::loadBlock(QDomNode &n, SieveScriptPage *currentPage, Pa
     QString scriptName;
     QString comment;
     bool hasCreatedAIfBlock = false;
+    bool previousElementWasAComment = false;
     while (!n.isNull()) {
         QDomElement e = n.toElement();
         if (!e.isNull()) {
             const QString tagName = e.tagName();
             //qCDebug(LIBKSIEVE_LOG)<<" tagName "<<tagName;
             if (tagName == QLatin1String("control")) {
+                previousElementWasAComment = false;
                 //Create a new page when before it was "onlyactions"
                 if (typeBlock == TypeBlockAction) {
                     currentPage = nullptr;
@@ -458,6 +466,12 @@ void SieveScriptListBox::loadBlock(QDomNode &n, SieveScriptPage *currentPage, Pa
                     }
                 }
             } else if (tagName == QLatin1String("comment")) {
+                previousElementWasAComment = true;
+                if (e.hasAttribute(QStringLiteral("hash"))) {
+                    //TODO
+                } else if (e.hasAttribute(QStringLiteral("bracket"))) {
+                    //TODO
+                }
                 QString str(e.text());
                 if (str.contains(defaultScriptName())) {
                     scriptName = str.remove(defaultScriptName());
@@ -468,6 +482,7 @@ void SieveScriptListBox::loadBlock(QDomNode &n, SieveScriptPage *currentPage, Pa
                     comment += e.text();
                 }
             } else if (tagName == QLatin1String("action")) {
+                previousElementWasAComment = false;
                 if (e.hasAttribute(QStringLiteral("name"))) {
                     const QString actionName = e.attribute(QStringLiteral("name"));
                     if (actionName == QLatin1String("include")) {
@@ -516,7 +531,10 @@ void SieveScriptListBox::loadBlock(QDomNode &n, SieveScriptPage *currentPage, Pa
                     }
                 }
             } else if (tagName == QLatin1String("crlf")) {
-                //nothing
+                //If it was a comment previously you will create a \n
+                if (previousElementWasAComment) {
+                    comment += QLatin1Char('\n');
+                }
             } else {
                 qCDebug(LIBKSIEVE_LOG) << " unknown tagname" << tagName;
             }

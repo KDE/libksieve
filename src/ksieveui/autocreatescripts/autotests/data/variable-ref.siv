@@ -2,6 +2,7 @@ require "variables";
 
 #SCRIPTNAME: Script part 0
 #Script name: variables
+
 if size :under 5
 {
     set "testvariable" "25";

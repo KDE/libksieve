@@ -7,9 +7,9 @@ require "imap4flags";
 #SCRIPTNAME: Script part 0
 # Sieve filter
 # Declare the extensions used by this script.
-#
+
 # Messages bigger than 100K will be rejected with an error message
-#
+
 foreverypart :name "foo" {
     if size :over 100K
     {

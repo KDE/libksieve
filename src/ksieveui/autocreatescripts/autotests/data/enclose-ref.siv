@@ -3,6 +3,7 @@ require "enclose";
 
 #SCRIPTNAME: Script part 0
 #Script name: enclose
+
 if ihave "enclosz"
 {
     enclose :subject "subject" :headers "headers" text:

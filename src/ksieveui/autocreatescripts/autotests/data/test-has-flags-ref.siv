@@ -3,6 +3,7 @@ require "variables";
 
 #SCRIPTNAME: Script part 0
 #Script name: has flags
+
 if allof (hasflag :is "test"
 , not hasflag :is "variable" "test2"
 , hasflag :contains "variable" "test3"

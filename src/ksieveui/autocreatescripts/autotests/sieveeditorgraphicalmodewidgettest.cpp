@@ -99,6 +99,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         QEXPECT_FAIL("failed-1", "Expected failure on failed-1 file. anyof + allof.", Continue);
         QEXPECT_FAIL("failed-2", "Expected failure on failed-2 file. Problem with body + text.", Continue);
         QEXPECT_FAIL("failed-if-in-if", "Expected failure on failed-if-in-if file. Problem with if in another if.", Continue);
+        QEXPECT_FAIL("test-comment2", "Expected failure on test-comment2 file. Problem with # and /* .", Continue);
         QCOMPARE(proc.exitCode(), 0);
     }
 }
@@ -184,6 +185,8 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("failed-1") << QStringLiteral("failed-1") << true << true;
     QTest::newRow("failed-2") << QStringLiteral("failed-2") << true << true;
     QTest::newRow("failed-if-in-if") << QStringLiteral("failed-if-in-if") << true << true;
+
+    QTest::newRow("test-comment2") << QStringLiteral("test-comment2") << false << true;
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)

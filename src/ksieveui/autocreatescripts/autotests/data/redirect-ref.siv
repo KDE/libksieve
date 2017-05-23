@@ -3,6 +3,7 @@ require "copy";
 
 #SCRIPTNAME: Script part 0
 #Script name: redirect
+
 if ihave "redirect"
 {
     redirect :copy "montel@kde.org";

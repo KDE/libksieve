@@ -95,8 +95,17 @@ void SieveActionWidget::generatedScript(QString &script, QStringList &requires, 
             indent += AutoCreateScriptUtil::indentation();
         }
         if (!comment.trimmed().isEmpty()) {
-            script += indent;
-            script += QLatin1Char('#') + comment.replace(QLatin1Char('\n'), QStringLiteral("\n%1#").arg(indent)) + QLatin1Char('\n');
+            //script += indent;
+            const QStringList commentList = comment.split(QLatin1Char('\n'));
+            for (const QString &str : commentList) {
+                if (str.isEmpty()) {
+                    script += QLatin1Char('\n');
+                } else {
+                    script += indent + QLatin1Char('#') + str + QLatin1Char('\n');
+                }
+            }
+
+            //script += QLatin1Char('#') + comment.replace(QLatin1Char('\n'), QStringLiteral("\n%1#").arg(indent)) + QLatin1Char('\n');
         }
         script += indent + widgetAction->code(currentWidget) + QLatin1Char('\n');
     }

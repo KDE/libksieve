@@ -3,6 +3,7 @@ require "include";
 
 #SCRIPTNAME: Script part 0
 #Script name: maiboxexist
+
 if mailboxexists "INBOX2"
 {
     return;

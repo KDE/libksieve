@@ -2,6 +2,7 @@ require "extracttext";
 
 #SCRIPTNAME: Script part 0
 #Script name: extract-text
+
 if true
 {
     extracttext :first 11 "voiture";

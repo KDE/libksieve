@@ -1,5 +1,6 @@
 #SCRIPTNAME: Script part 0
 #Script name: test-exists
+
 if allof (exists "Date"
 , not exists "Reply-To"
 )
