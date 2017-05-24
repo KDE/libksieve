@@ -29,11 +29,20 @@ SelectMatchTypeComboBox::SelectMatchTypeComboBox(SieveEditorGraphicalModeWidget 
 {
     mHasRegexCapability = sieveGraphicalModeWidget->sieveCapabilities().contains(QStringLiteral("regex"));
     initialize();
-    connect(this, static_cast<void (SelectMatchTypeComboBox::*)(int)>(&SelectMatchTypeComboBox::activated), this, &SelectMatchTypeComboBox::valueChanged);
+    connect(this, static_cast<void (SelectMatchTypeComboBox::*)(int)>(&SelectMatchTypeComboBox::activated), this, &SelectMatchTypeComboBox::slotValueChanged);
 }
 
 SelectMatchTypeComboBox::~SelectMatchTypeComboBox()
 {
+}
+
+void SelectMatchTypeComboBox::slotValueChanged(int val)
+{
+    if (mHasRegexCapability) {
+        const QString value = itemData(val).toString();
+        Q_EMIT switchToRegexp(value.contains(QStringLiteral("regex")));
+    }
+    Q_EMIT valueChanged();
 }
 
 void SelectMatchTypeComboBox::initialize()

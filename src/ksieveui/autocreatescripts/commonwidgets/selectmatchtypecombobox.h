@@ -36,8 +36,10 @@ public:
 
 Q_SIGNALS:
     void valueChanged();
+    void switchToRegexp(bool useReg);
 
 private:
+    void slotValueChanged(int val);
     void initialize();
     bool mHasRegexCapability;
 };
