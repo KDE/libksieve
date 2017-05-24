@@ -34,6 +34,9 @@ public:
     virtual void switchToRegexpEditorLineEdit(bool regexpEditor) = 0;
     virtual void setCode(const QString &str) = 0;
     virtual QString code() const = 0;
+
+Q_SIGNALS:
+    void textChanged(const QString &);
 };
 }
 
