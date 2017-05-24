@@ -132,3 +132,8 @@ void SieveCondition::setComment(const QString &comment)
 {
     mComment = comment;
 }
+
+QString SieveCondition::generateComment() const
+{
+    return {};
+}

@@ -64,6 +64,8 @@ public:
 
     void setComment(const QString &comment);
 
+    QString generateComment() const;
+
 protected:
     QStringList sieveCapabilities() const;
     SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
