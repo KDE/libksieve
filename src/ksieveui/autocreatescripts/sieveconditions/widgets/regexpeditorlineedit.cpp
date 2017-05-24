@@ -30,6 +30,7 @@ RegexpEditorLineEdit::RegexpEditorLineEdit(QWidget *parent)
     mainLayout->setMargin(0);
     mLineEdit = new QLineEdit(this);
     mLineEdit->setObjectName(QStringLiteral("lineedit"));
+    connect(mLineEdit, &QLineEdit::textChanged, this, &RegexpEditorLineEdit::textChanged);
     mainLayout->addWidget(mLineEdit);
 }
 
