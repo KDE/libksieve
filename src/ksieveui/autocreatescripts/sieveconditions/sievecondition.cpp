@@ -118,7 +118,17 @@ void SieveCondition::serverDoesNotSupportFeatures(const QString &feature, QStrin
     error += i18n("A feature \"%1\" in condition \"%2\" is not supported by server", feature, name()) + QLatin1Char('\n');
 }
 
-QUrl KSieveUi::SieveCondition::href() const
+QUrl SieveCondition::href() const
 {
     return QUrl();
+}
+
+QString SieveCondition::comment() const
+{
+    return mComment;
+}
+
+void SieveCondition::setComment(const QString &comment)
+{
+    mComment = comment;
 }

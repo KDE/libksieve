@@ -60,6 +60,10 @@ public:
     void tooManyArgument(const QString &tagName, int index, int maxValue, QString &error);
     void serverDoesNotSupportFeatures(const QString &feature, QString &error);
 
+    QString comment() const;
+
+    void setComment(const QString &comment);
+
 protected:
     QStringList sieveCapabilities() const;
     SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
@@ -70,6 +74,7 @@ Q_SIGNALS:
 private:
     QString mName;
     QString mLabel;
+    QString mComment;
 };
 }
 
