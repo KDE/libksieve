@@ -23,6 +23,7 @@
 #include <QString>
 #include <QStringList>
 #include <QDomNode>
+#include <KSieveUi/AbstractRegexpEditorLineEdit>
 namespace KSieveUi {
 namespace AutoCreateScriptUtil {
 QString createMultiLine(const QString &str);
@@ -42,6 +43,7 @@ void comboboxItemNotFound(const QString &searchItem, const QString &name, QStrin
 QString createFullWhatsThis(const QString &help, const QString &href);
 QString protectSlash(QString str);
 QString indentation();
+AbstractRegexpEditorLineEdit *createRegexpEditorLineEdit(QWidget *parent = nullptr);
 }
 }
 #endif // AUTOCREATESCRIPTUTIL_H

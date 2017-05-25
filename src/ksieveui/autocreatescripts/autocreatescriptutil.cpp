@@ -21,7 +21,12 @@
 
 #include <KLocalizedString>
 
+#include <KPluginLoader>
+#include <KPluginFactory>
 #include <QStringList>
+#include <QRegularExpression>
+
+#include "autocreatescripts/sieveconditions/widgets/regexpeditorlineedit.h"
 using namespace KSieveUi;
 
 QString AutoCreateScriptUtil::createMultiLine(const QString &str)
@@ -189,4 +194,17 @@ QString AutoCreateScriptUtil::createFullWhatsThis(const QString &help, const QSt
 QString AutoCreateScriptUtil::indentation()
 {
     return QStringLiteral("    ");
+}
+
+AbstractRegexpEditorLineEdit *AutoCreateScriptUtil::createRegexpEditorLineEdit(QWidget *parent)
+{
+    KSieveUi::AbstractRegexpEditorLineEdit *edit = nullptr;
+    KPluginLoader loader(QStringLiteral("libksieve/regexpeditorlineeditplugin"));
+    KPluginFactory *factory = loader.factory();
+    if (factory) {
+        edit = factory->create<KSieveUi::AbstractRegexpEditorLineEdit>(parent);
+    } else {
+        edit = new KSieveUi::RegexpEditorLineEdit(parent);
+    }
+    return edit;
 }
