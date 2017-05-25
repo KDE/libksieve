@@ -172,6 +172,10 @@ QString AutoCreateScriptUtil::fixListValue(QString valueStr)
 {
     if (!(valueStr.startsWith(QLatin1Char('[')) && valueStr.endsWith(QLatin1Char(']')))) {
         valueStr = QStringLiteral("\"%1\"").arg(valueStr);
+    } else if (valueStr.contains(QRegularExpression(QStringLiteral("^\\[\\s*\".*\"\\s*]$")))) {
+        ;
+    } else {
+        valueStr = QStringLiteral("\"%1\"").arg(valueStr);
     }
 
     return valueStr;

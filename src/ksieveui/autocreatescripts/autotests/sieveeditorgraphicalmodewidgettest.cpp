@@ -101,6 +101,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         QEXPECT_FAIL("failed-if-in-if", "Expected failure on failed-if-in-if file. Problem with if in another if.", Continue);
         QEXPECT_FAIL("test-comment2", "Expected failure on test-comment2 file. Problem with # and /* .", Continue);
         QEXPECT_FAIL("test-comment4", "Expected failure on test-comment4 file. Problem with comment after a condition .", Continue);
+        QEXPECT_FAIL("test-value-as-list-quoted", "Expected failure on test-value-as-list-quoted file. Problem with value with [] and \" .", Continue);
         QCOMPARE(proc.exitCode(), 0);
     }
 }
@@ -190,6 +191,8 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-comment2") << QStringLiteral("test-comment2") << false << true;
     QTest::newRow("test-comment3") << QStringLiteral("test-comment3") << false << true;
     QTest::newRow("test-comment4") << QStringLiteral("test-comment4") << false << true;
+
+    QTest::newRow("test-value-as-list-quoted") << QStringLiteral("test-value-as-list-quoted") << false << true;
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)
