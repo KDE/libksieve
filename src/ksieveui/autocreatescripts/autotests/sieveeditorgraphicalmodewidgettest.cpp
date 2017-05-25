@@ -203,6 +203,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-comment4") << QStringLiteral("test-comment4") << false << true;
 
     QTest::newRow("test-value-as-list-quoted") << QStringLiteral("test-value-as-list-quoted") << false << true;
+    QTest::newRow("test-header-value") << QStringLiteral("test-header-value") << false << true;
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)
