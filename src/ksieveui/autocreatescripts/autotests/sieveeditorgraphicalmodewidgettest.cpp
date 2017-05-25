@@ -112,7 +112,6 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         QEXPECT_FAIL("failed-if-in-if", "Expected failure on failed-if-in-if file. Problem with if in another if.", Continue);
         QEXPECT_FAIL("test-comment2", "Expected failure on test-comment2 file. Problem with # and /* .", Continue);
         QEXPECT_FAIL("test-comment4", "Expected failure on test-comment4 file. Problem with comment after a condition .", Continue);
-        QEXPECT_FAIL("test-value-as-list-quoted", "Expected failure on test-value-as-list-quoted file. Problem with value with [] and \" .", Continue);
         QCOMPARE(proc.exitCode(), 0);
     }
 }
