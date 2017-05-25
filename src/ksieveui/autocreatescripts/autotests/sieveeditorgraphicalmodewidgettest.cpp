@@ -64,14 +64,25 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
     const QString refFile = QLatin1String(KSIEVEUI_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral("-ref.siv");
     const QString generatedFile = QLatin1String(KSIEVEUI_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral("-generated.siv");
     QString script = readSieveFile(originalFile);
+    //First parsing
     bool result = false;
-    const QDomDocument doc = KSieveUi::ParsingUtil::parseScript(script, result);
+    QDomDocument doc = KSieveUi::ParsingUtil::parseScript(script, result);
     QCOMPARE(success, result);
     if (success) {
         QString error;
         w.loadScript(doc, error);
         QCOMPARE(hasError, !error.isEmpty());
-        const QString generatedScript = w.currentscript();
+
+        QString generatedScript = w.currentscript();
+
+        doc = KSieveUi::ParsingUtil::parseScript(generatedScript, result);
+        QCOMPARE(success, result);
+
+        //second parsing
+        w.loadScript(doc, error);
+        QCOMPARE(hasError, !error.isEmpty());
+        generatedScript = w.currentscript();
+
 
         //Create generated file
         QFile f(generatedFile);
