@@ -25,6 +25,7 @@
 class QPushButton;
 class QGridLayout;
 class QDomElement;
+class QToolButton;
 
 namespace PimCommon {
 class MinimumComboBox;
@@ -50,7 +51,8 @@ private Q_SLOTS:
     void slotAddWidget();
     void slotRemoveWidget();
     void slotConditionChanged(int index);
-    void slotHelp();
+    void slotHelp();    
+    void slotAddComment();
 
 Q_SIGNALS:
     void addWidget(QWidget *w);
@@ -66,6 +68,7 @@ private:
     PimCommon::MinimumComboBox *mComboBox;
     QGridLayout *mLayout;
     SieveHelpButton *mHelpButton;
+    QToolButton *mCommentButton;
     SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
 };
 

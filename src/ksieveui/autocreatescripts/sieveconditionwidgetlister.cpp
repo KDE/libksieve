@@ -35,6 +35,7 @@
 #include <QLabel>
 #include <QWhatsThis>
 #include "libksieve_debug.h"
+#include "sievescriptdescriptiondialog.h"
 #include <QDomElement>
 
 using namespace KSieveUi;
@@ -57,14 +58,14 @@ SieveConditionWidget::~SieveConditionWidget()
 
 void SieveConditionWidget::setFilterCondition(QWidget *widget)
 {
-    if (mLayout->itemAtPosition(1, 2)) {
-        delete mLayout->itemAtPosition(1, 2)->widget();
+    if (mLayout->itemAtPosition(1, 3)) {
+        delete mLayout->itemAtPosition(1, 3)->widget();
     }
 
     if (widget) {
-        mLayout->addWidget(widget, 1, 2);
+        mLayout->addWidget(widget, 1, 3);
     } else {
-        mLayout->addWidget(new QLabel(i18n("Please select an condition."), this), 1, 2);
+        mLayout->addWidget(new QLabel(i18n("Please select an condition."), this), 1, 3);
     }
 }
 
@@ -74,7 +75,7 @@ void SieveConditionWidget::generatedScript(QString &script, QStringList &require
     const int index = mComboBox->currentIndex();
     if (index != mComboBox->count() - 1) {
         KSieveUi::SieveCondition *widgetCondition = mConditionList.at(mComboBox->currentIndex());
-        QWidget *currentWidget = mLayout->itemAtPosition(1, 2)->widget();
+        QWidget *currentWidget = mLayout->itemAtPosition(1, 3)->widget();
         const QStringList lstRequires = widgetCondition->needRequires(currentWidget);
         for (const QString &r : lstRequires) {
             if (!requires.contains(r)) {
@@ -118,13 +119,18 @@ void SieveConditionWidget::initWidget()
     }
 
     mHelpButton = new SieveHelpButton(this);
-    mHelpButton->setEnabled(false);
     mLayout->addWidget(mHelpButton, 1, 0);
     connect(mHelpButton, &SieveHelpButton::clicked, this, &SieveConditionWidget::slotHelp);
 
+    mCommentButton = new QToolButton(this);
+    mCommentButton->setToolTip(i18n("Add comment"));
+    mLayout->addWidget(mCommentButton, 1, 1);
+    mCommentButton->setIcon(QIcon::fromTheme(QStringLiteral("view-pim-notes")));
+    connect(mCommentButton, &QToolButton::clicked, this, &SieveConditionWidget::slotAddComment);
+
+
     mComboBox->addItem(QLatin1String(""));
-    mComboBox->setCurrentIndex(mComboBox->count() - 1);
-    mLayout->addWidget(mComboBox, 1, 1);
+    mLayout->addWidget(mComboBox, 1, 2);
     connect(mComboBox, static_cast<void (PimCommon::MinimumComboBox::*)(int)>(&PimCommon::MinimumComboBox::activated), this, &SieveConditionWidget::slotConditionChanged);
 
     mComboBox->setMaxCount(mComboBox->count());
@@ -140,15 +146,32 @@ void SieveConditionWidget::initWidget()
     mRemove->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
     mRemove->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
 
-    mLayout->addWidget(mAdd, 1, 3);
-    mLayout->addWidget(mRemove, 1, 4);
+    mLayout->addWidget(mAdd, 1, 4);
+    mLayout->addWidget(mRemove, 1, 5);
 
     // redirect focus to the filter action combo box
     setFocusProxy(mComboBox);
 
     connect(mAdd, &QPushButton::clicked, this, &SieveConditionWidget::slotAddWidget);
     connect(mRemove, &QPushButton::clicked, this, &SieveConditionWidget::slotRemoveWidget);
-    setFilterCondition(nullptr);
+
+    clear();
+}
+
+void SieveConditionWidget::slotAddComment()
+{
+    const int index = mComboBox->currentIndex();
+    if (index < mConditionList.count()) {
+        KSieveUi::SieveCondition *condition = mConditionList.at(index);
+        const QString comment = condition->comment();
+        QPointer<SieveScriptDescriptionDialog> dlg = new SieveScriptDescriptionDialog;
+        dlg->setDescription(comment);
+        if (dlg->exec()) {
+            condition->setComment(dlg->description());
+            Q_EMIT valueChanged();
+        }
+        delete dlg;
+    }
 }
 
 void SieveConditionWidget::slotHelp()
@@ -169,9 +192,11 @@ void SieveConditionWidget::slotConditionChanged(int index)
         KSieveUi::SieveCondition *condition = mConditionList.at(index);
         mHelpButton->setEnabled(!condition->help().isEmpty());
         setFilterCondition(condition->createParamWidget(this));
+        mCommentButton->setEnabled(true);
     } else {
         setFilterCondition(nullptr);
         mHelpButton->setEnabled(false);
+        mCommentButton->setEnabled(false);
     }
     Q_EMIT valueChanged();
 }
@@ -193,6 +218,7 @@ void SieveConditionWidget::clear()
     mComboBox->setCurrentIndex(mComboBox->count() - 1);
     setFilterCondition(nullptr);
     mHelpButton->setEnabled(false);
+    mCommentButton->setEnabled(false);
 }
 
 void SieveConditionWidget::updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled)
