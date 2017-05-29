@@ -60,8 +60,6 @@ SieveForEveryPartWidget::SieveForEveryPartWidget(QWidget *parent)
     mName->setEnabled(false);
     lay->addWidget(mName);
 
-    //topLayout->addWidget(w, 0, Qt::AlignTop);
-
     connect(mForLoop, &QCheckBox::clicked, mName, &QLineEdit::setEnabled);
     setPageType(KSieveUi::SieveScriptBlockWidget::ForEveryPart);
 }
