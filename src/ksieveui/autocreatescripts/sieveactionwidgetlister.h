@@ -47,6 +47,7 @@ public:
     void generatedScript(QString &script, QStringList &requires, bool onlyActions, bool inForEveryPartLoop);
     bool setAction(const QString &actionName, const QDomElement &element, const QString &comment, QString &error);
     bool isConfigurated() const;
+    void clear();
 
 private Q_SLOTS:
     void slotAddWidget();

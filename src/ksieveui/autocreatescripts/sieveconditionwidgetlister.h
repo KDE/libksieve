@@ -44,6 +44,7 @@ public:
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
     void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop);
     void setCondition(const QString &conditionName, const QDomElement &element, bool notCondition, QString &error);
+    void clear();
 
 private Q_SLOTS:
     void slotAddWidget();
@@ -59,7 +60,6 @@ Q_SIGNALS:
 private:
     void initWidget();
     void setFilterCondition(QWidget *widget);
-    void reset();
     QList<KSieveUi::SieveCondition *> mConditionList;
     QPushButton *mAdd;
     QPushButton *mRemove;

@@ -188,9 +188,11 @@ void SieveConditionWidget::slotRemoveWidget()
     Q_EMIT valueChanged();
 }
 
-void SieveConditionWidget::reset()
+void SieveConditionWidget::clear()
 {
-    //TODO
+    mComboBox->setCurrentIndex(mComboBox->count() - 1);
+    setFilterCondition(nullptr);
+    mHelpButton->setEnabled(false);
 }
 
 void SieveConditionWidget::updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled)
@@ -270,8 +272,10 @@ void SieveConditionWidgetLister::reconnectWidget(SieveConditionWidget *w)
 
 void SieveConditionWidgetLister::clearWidget(QWidget *aWidget)
 {
-    //TODO
-    Q_UNUSED(aWidget);
+    if (aWidget) {
+        SieveConditionWidget *widget = static_cast<SieveConditionWidget *>(aWidget);
+        widget->clear();
+    }
     Q_EMIT valueChanged();
 }
 

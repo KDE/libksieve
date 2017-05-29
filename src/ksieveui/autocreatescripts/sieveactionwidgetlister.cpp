@@ -200,6 +200,14 @@ void SieveActionWidget::slotHelp()
     }
 }
 
+void SieveActionWidget::clear()
+{
+    mComboBox->setCurrentIndex(mComboBox->count() - 1);
+    setFilterAction(nullptr);
+    mCommentButton->setEnabled(false);
+    mHelpButton->setEnabled(false);
+}
+
 void SieveActionWidget::slotAddComment()
 {
     const int index = mComboBox->currentIndex();
@@ -338,9 +346,11 @@ void SieveActionWidgetLister::reconnectWidget(SieveActionWidget *w)
 
 void SieveActionWidgetLister::clearWidget(QWidget *aWidget)
 {
-    Q_UNUSED(aWidget);
+    if (aWidget) {
+        SieveActionWidget *widget = static_cast<SieveActionWidget *>(aWidget);
+        widget->clear();
+    }
     Q_EMIT valueChanged();
-    //TODO
 }
 
 QWidget *SieveActionWidgetLister::createWidget(QWidget *parent)
