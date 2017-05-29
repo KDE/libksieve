@@ -39,20 +39,18 @@ using namespace KSieveUi;
 SieveForEveryPartWidget::SieveForEveryPartWidget(QWidget *parent)
     : SieveWidgetPageAbstract(parent)
 {
-    QVBoxLayout *topLayout = new QVBoxLayout(this);
-
-    QWidget *w = new QWidget;
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     QHBoxLayout *lay = new QHBoxLayout;
-    lay->setMargin(0);
-    w->setLayout(lay);
+    mainLayout->addLayout(lay);
+    mainLayout->addStretch(1);
 
     mHelpButton = new SieveHelpButton;
-    topLayout->addWidget(mHelpButton);
+    lay->addWidget(mHelpButton);
     connect(mHelpButton, &SieveHelpButton::clicked, this, &SieveForEveryPartWidget::slotHelp);
 
     mForLoop = new QCheckBox(i18n("Add ForEveryPart loop"));
     connect(mForLoop, &QCheckBox::toggled, this, &SieveForEveryPartWidget::valueChanged);
-    topLayout->addWidget(mForLoop);
+    lay->addWidget(mForLoop);
 
     QLabel *lab = new QLabel(i18n("Name (optional):"));
     lay->addWidget(lab);
@@ -62,7 +60,7 @@ SieveForEveryPartWidget::SieveForEveryPartWidget(QWidget *parent)
     mName->setEnabled(false);
     lay->addWidget(mName);
 
-    topLayout->addWidget(w, 0, Qt::AlignTop);
+    //topLayout->addWidget(w, 0, Qt::AlignTop);
 
     connect(mForLoop, &QCheckBox::clicked, mName, &QLineEdit::setEnabled);
     setPageType(KSieveUi::SieveScriptBlockWidget::ForEveryPart);
