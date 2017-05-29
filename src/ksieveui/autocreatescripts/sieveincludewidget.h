@@ -59,6 +59,7 @@ public:
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
     void loadScript(const QDomElement &element, QString &error);
     bool isInitialized() const;
+    void clear();
 
 private Q_SLOTS:
     void slotAddWidget();

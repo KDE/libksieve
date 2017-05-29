@@ -84,6 +84,14 @@ SieveIncludeActionWidget::~SieveIncludeActionWidget()
 {
 }
 
+void SieveIncludeActionWidget::clear()
+{
+    mOptional->setChecked(false);
+    mOnce->setChecked(false);
+    mLocation->setCurrentIndex(0);
+    mIncludeName->setText(QString());
+}
+
 void SieveIncludeActionWidget::loadScript(const QDomElement &element, QString &error)
 {
     QDomNode node = element.firstChild();
@@ -307,8 +315,10 @@ void SieveIncludeWidgetLister::reconnectWidget(SieveIncludeActionWidget *w)
 
 void SieveIncludeWidgetLister::clearWidget(QWidget *aWidget)
 {
-    //TODO
-    Q_UNUSED(aWidget);
+    if (aWidget) {
+        SieveIncludeActionWidget *widget = static_cast<SieveIncludeActionWidget *>(aWidget);
+        widget->clear();
+    }
     Q_EMIT valueChanged();
 }
 
