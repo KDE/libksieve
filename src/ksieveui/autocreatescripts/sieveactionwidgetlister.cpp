@@ -146,19 +146,16 @@ void SieveActionWidget::initWidget()
     }
 
     mHelpButton = new SieveHelpButton(this);
-    mHelpButton->setEnabled(false);
     connect(mHelpButton, &SieveHelpButton::clicked, this, &SieveActionWidget::slotHelp);
     mLayout->addWidget(mHelpButton, 1, 0);
 
     mCommentButton = new QToolButton(this);
     mCommentButton->setToolTip(i18n("Add comment"));
-    mCommentButton->setEnabled(false);
     mLayout->addWidget(mCommentButton, 1, 1);
     mCommentButton->setIcon(QIcon::fromTheme(QStringLiteral("view-pim-notes")));
     connect(mCommentButton, &QToolButton::clicked, this, &SieveActionWidget::slotAddComment);
 
     mComboBox->addItem(QLatin1String(""));
-    mComboBox->setCurrentIndex(mComboBox->count() - 1);
 
     mComboBox->setMaxCount(mComboBox->count());
     mComboBox->setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
@@ -185,7 +182,8 @@ void SieveActionWidget::initWidget()
 
     connect(mAdd, &QPushButton::clicked, this, &SieveActionWidget::slotAddWidget);
     connect(mRemove, &QPushButton::clicked, this, &SieveActionWidget::slotRemoveWidget);
-    setFilterAction(nullptr);
+
+    clear();
 }
 
 void SieveActionWidget::slotHelp()
