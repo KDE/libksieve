@@ -47,6 +47,7 @@ public:
     void setVariableValue(const QString &name);
     QString variableName() const;
 
+    void clear();
 private Q_SLOTS:
     void slotAddWidget();
     void slotRemoveWidget();

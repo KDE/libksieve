@@ -100,6 +100,13 @@ void SieveGlobalVariableActionWidget::initWidget()
     connect(mRemove, &QPushButton::clicked, this, &SieveGlobalVariableActionWidget::slotRemoveWidget);
 }
 
+void SieveGlobalVariableActionWidget::clear()
+{
+    mVariableName->clear();
+    mSetValueTo->setChecked(false);
+    mVariableValue->clear();
+}
+
 bool SieveGlobalVariableActionWidget::isInitialized() const
 {
     return !mVariableName->text().isEmpty();
@@ -274,8 +281,10 @@ void SieveGlobalVariableLister::reconnectWidget(SieveGlobalVariableActionWidget 
 
 void SieveGlobalVariableLister::clearWidget(QWidget *aWidget)
 {
-    Q_UNUSED(aWidget);
-    //TODO
+    if (aWidget) {
+        SieveGlobalVariableActionWidget *widget = static_cast<SieveGlobalVariableActionWidget *>(aWidget);
+        widget->clear();
+    }
     Q_EMIT valueChanged();
 }
 
