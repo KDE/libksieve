@@ -384,6 +384,8 @@ void SieveActionWidgetLister::loadScript(const QDomElement &element, bool onlyAc
                 } else {
                     qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript don't have name attribute " << tagName;
                 }
+            } else {
+                qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript Unknow tag name " << tagName;
             }
         }
     } else {
