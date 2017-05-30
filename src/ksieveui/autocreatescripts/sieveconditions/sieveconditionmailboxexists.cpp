@@ -53,7 +53,7 @@ QString SieveConditionMailboxExists::code(QWidget *w) const
 {
     const QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
     const QString editValue = edit->text();
-    return QStringLiteral("mailboxexists \"%1\"").arg(editValue);
+    return QStringLiteral("mailboxexists \"%1\"").arg(editValue) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionMailboxExists::needRequires(QWidget *) const
@@ -91,7 +91,7 @@ bool SieveConditionMailboxExists::setParamWidgetValue(const QDomElement &element
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
+                setComment(e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionMailboxExists::setParamWidgetValue unknown tagName " << tagName;

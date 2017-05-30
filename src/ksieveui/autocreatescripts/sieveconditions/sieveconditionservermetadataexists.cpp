@@ -18,6 +18,7 @@
 */
 #include "sieveconditionservermetadataexists.h"
 #include "editor/sieveeditorutil.h"
+#include "autocreatescripts/autocreatescriptutil_p.h"
 #include <KLocalizedString>
 #include <QLineEdit>
 
@@ -54,7 +55,7 @@ QString SieveConditionServerMetaDataExists::code(QWidget *w) const
 {
     const QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
     const QString valueStr = value->text();
-    return QStringLiteral("servermetadataexists \"%1\"").arg(valueStr);
+    return QStringLiteral("servermetadataexists \"%1\"").arg(valueStr) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionServerMetaDataExists::needRequires(QWidget *) const
@@ -91,7 +92,7 @@ bool SieveConditionServerMetaDataExists::setParamWidgetValue(const QDomElement &
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
+                setComment(e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaDataExists::setParamWidgetValue unknown tagName " << tagName;

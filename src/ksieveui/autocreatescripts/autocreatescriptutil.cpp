@@ -212,3 +212,12 @@ AbstractRegexpEditorLineEdit *AutoCreateScriptUtil::createRegexpEditorLineEdit(Q
     }
     return edit;
 }
+
+QString AutoCreateScriptUtil::generateConditionComment(const QString &comment)
+{
+    QString strComment;
+    if (!comment.trimmed().isEmpty()) {
+        strComment = QStringLiteral(" #") + comment;
+    }
+    return strComment;
+}

@@ -89,7 +89,12 @@ QString SieveConditionAddress::code(QWidget *w) const
 
     const QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("editaddress"));
     const QString addressStr = AutoCreateScriptUtil::createAddressList(edit->text().trimmed(), false);
-    return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("address %1 %2 %3 %4").arg(selectAddressPartStr, matchTypeStr, selectHeaderTypeStr, addressStr);
+    QString strComment;
+    if (!comment().trimmed().isEmpty()) {
+        strComment = QLatin1Char('#') + comment();
+    }
+    return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("address %1 %2 %3 %4").arg(selectAddressPartStr, matchTypeStr, selectHeaderTypeStr, addressStr)
+            + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionAddress::needRequires(QWidget *w) const
@@ -144,7 +149,7 @@ bool SieveConditionAddress::setParamWidgetValue(const QDomElement &element, QWid
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
+                setComment(e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionAddress::setParamWidgetValue unknown tagName " << tagName;

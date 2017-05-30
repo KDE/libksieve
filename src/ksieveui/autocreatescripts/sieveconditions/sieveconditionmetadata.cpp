@@ -100,7 +100,7 @@ QString SieveConditionMetaData::code(QWidget *w) const
     const QString valueStr = value->text();
 
     result += QStringLiteral("\"%1\"").arg(valueStr);
-    return result;
+    return result + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionMetaData::needRequires(QWidget *) const
@@ -165,7 +165,7 @@ bool SieveConditionMetaData::setParamWidgetValue(const QDomElement &element, QWi
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
+                setComment(e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionMetaData::setParamWidgetValue unknown tagName " << tagName;

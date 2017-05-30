@@ -406,6 +406,7 @@ void SieveConditionWidgetLister::loadScript(const QDomElement &e, bool uniqTest,
                             } else if (testTagName == QLatin1String("crlf")) {
                                 //nothing
                             } else if (testTagName == QLatin1String("comment")) {
+                                qDebug() << "Need to implement comment here ";
                                 //nothing
                                 //implement in the future ?
                             } else {

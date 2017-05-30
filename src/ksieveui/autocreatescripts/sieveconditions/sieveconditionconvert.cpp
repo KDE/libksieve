@@ -83,7 +83,7 @@ QString SieveConditionConvert::code(QWidget *w) const
     if (!paramsStr.isEmpty()) {
         result += QStringLiteral("%1").arg(paramsStr);
     }
-    return result;
+    return result + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionConvert::needRequires(QWidget *) const
@@ -132,7 +132,7 @@ bool SieveConditionConvert::setParamWidgetValue(const QDomElement &element, QWid
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
+                setComment(e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << "SieveActionConvert::setParamWidgetValue unknown tag " << tagName;

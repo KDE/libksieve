@@ -55,7 +55,8 @@ QString SieveConditionIhave::code(QWidget *w) const
 {
     const QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
     const QString editValue = edit->text();
-    return QStringLiteral("ihave %1").arg(AutoCreateScriptUtil::createList(editValue, QLatin1Char(',')));
+    return QStringLiteral("ihave %1").arg(AutoCreateScriptUtil::createList(editValue, QLatin1Char(',')))
+            + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionIhave::needRequires(QWidget *) const
@@ -92,7 +93,7 @@ bool SieveConditionIhave::setParamWidgetValue(const QDomElement &element, QWidge
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
+                setComment(e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionIhave::setParamWidgetValue unknown tagName " << tagName;

@@ -79,7 +79,8 @@ QString SieveConditionDate::code(QWidget *w) const
     const SelectDateWidget *dateWidget = w->findChild<SelectDateWidget *>(QStringLiteral("datewidget"));
     const QString dateWidgetStr = dateWidget->code();
 
-    return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("date %1 \"%2\" %3").arg(matchTypeStr, headerStr, dateWidgetStr);
+    return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("date %1 \"%2\" %3").arg(matchTypeStr, headerStr, dateWidgetStr)
+            + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 bool SieveConditionDate::needCheckIfServerHasCapability() const
@@ -131,7 +132,7 @@ bool SieveConditionDate::setParamWidgetValue(const QDomElement &element, QWidget
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
+                setComment(e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << "SieveConditionDate::setParamWidgetValue unknown tag " << tagName;

@@ -79,7 +79,8 @@ QString SieveConditionHeader::code(QWidget *w) const
     QString valueStr = value->text();
 
     valueStr = AutoCreateScriptUtil::fixListValue(valueStr);
-    return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("header %1 %2 %3").arg(matchString, headerStr, valueStr);
+    return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("header %1 %2 %3").arg(matchString, headerStr, valueStr)
+            + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QString SieveConditionHeader::help() const
@@ -128,8 +129,7 @@ bool SieveConditionHeader::setParamWidgetValue(const QDomElement &element, QWidg
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                qDebug() << " Need to implement ";
-                //implement in the future ?
+                setComment(e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionHeader::setParamWidgetValue unknown tagName " << tagName;

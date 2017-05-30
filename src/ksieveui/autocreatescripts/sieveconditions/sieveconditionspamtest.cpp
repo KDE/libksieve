@@ -89,7 +89,7 @@ QString SieveConditionSpamTest::code(QWidget *w) const
     const QSpinBox *spinbox = w->findChild<QSpinBox *>(QStringLiteral("value"));
     const QString value = QString::number(spinbox->value());
 
-    return QStringLiteral("spamtest %1 %2 %3 \"%4\"").arg(percentStr, relationStr, comparatorStr, value);
+    return QStringLiteral("spamtest %1 %2 %3 \"%4\"").arg(percentStr, relationStr, comparatorStr, value) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 bool SieveConditionSpamTest::needCheckIfServerHasCapability() const
@@ -171,7 +171,7 @@ bool SieveConditionSpamTest::setParamWidgetValue(const QDomElement &element, QWi
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
+                setComment(e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveSpamTest::setParamWidgetValue unknown tagName " << tagName;

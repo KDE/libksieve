@@ -64,7 +64,8 @@ QString SieveConditionCurrentDate::code(QWidget *w) const
     const SelectDateWidget *dateWidget = w->findChild<SelectDateWidget *>(QStringLiteral("datewidget"));
     const QString dateWidgetStr = dateWidget->code();
 
-    return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("currentdate %1 %2").arg(matchTypeStr, dateWidgetStr);
+    return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("currentdate %1 %2").arg(matchTypeStr, dateWidgetStr)
+            + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 bool SieveConditionCurrentDate::needCheckIfServerHasCapability() const
@@ -113,7 +114,7 @@ bool SieveConditionCurrentDate::setParamWidgetValue(const QDomElement &element, 
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
+                setComment(e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << "SieveConditionCurrentDate::setParamWidgetValue unknown tag " << tagName;

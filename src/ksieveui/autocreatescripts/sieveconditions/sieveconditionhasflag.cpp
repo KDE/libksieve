@@ -94,7 +94,7 @@ QString SieveConditionHasFlag::code(QWidget *w) const
         const QString valueStr = value->text();
         result += QLatin1String(" \"") + valueStr + QLatin1Char('"');
     }
-    return result;
+    return result + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionHasFlag::needRequires(QWidget *) const
@@ -151,7 +151,7 @@ bool SieveConditionHasFlag::setParamWidgetValue(const QDomElement &element, QWid
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
+                setComment(e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionExists::setParamWidgetValue unknown tagName " << tagName;

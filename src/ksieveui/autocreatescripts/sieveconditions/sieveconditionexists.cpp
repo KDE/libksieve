@@ -67,7 +67,7 @@ QString SieveConditionExists::code(QWidget *w) const
     const QString comparaison = combo->itemData(combo->currentIndex()).toString();
 
     const SelectHeaderTypeComboBox *value = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headervalue"));
-    return QStringLiteral("%1 %2").arg(comparaison, value->code());
+    return QStringLiteral("%1 %2").arg(comparaison, value->code()) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QString SieveConditionExists::help() const
@@ -95,7 +95,7 @@ bool SieveConditionExists::setParamWidgetValue(const QDomElement &element, QWidg
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
+                setComment(e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionExists::setParamWidgetValue unknown tagName " << tagName;

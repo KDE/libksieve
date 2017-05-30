@@ -92,7 +92,8 @@ QString SieveConditionEnvelope::code(QWidget *w) const
 
     const QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("editaddress"));
     const QString addressStr = AutoCreateScriptUtil::createAddressList(edit->text().trimmed(), false);
-    return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("envelope %1 %2 %3 %4").arg(selectAddressPartStr, matchTypeStr, selectHeaderTypeStr, addressStr);
+    return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("envelope %1 %2 %3 %4").arg(selectAddressPartStr, matchTypeStr, selectHeaderTypeStr, addressStr)
+            + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionEnvelope::needRequires(QWidget *w) const
@@ -168,7 +169,7 @@ bool SieveConditionEnvelope::setParamWidgetValue(const QDomElement &element, QWi
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
+                setComment(e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionEnvelope::setParamWidgetValue unknown tagName " << tagName;

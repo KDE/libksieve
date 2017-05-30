@@ -66,7 +66,7 @@ QString SieveConditionMetaDataExists::code(QWidget *w) const
 
     const QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
     const QString valueStr = value->text();
-    return QStringLiteral("metadataexists \"%1\" \"%2\"").arg(mailboxStr, valueStr);
+    return QStringLiteral("metadataexists \"%1\" \"%2\"").arg(mailboxStr, valueStr) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionMetaDataExists::needRequires(QWidget *) const
@@ -113,7 +113,7 @@ bool SieveConditionMetaDataExists::setParamWidgetValue(const QDomElement &elemen
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
+                setComment(e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaDataExists::setParamWidgetValue unknown tagName " << tagName;

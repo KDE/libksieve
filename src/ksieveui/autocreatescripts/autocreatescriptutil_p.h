@@ -44,6 +44,7 @@ QString createFullWhatsThis(const QString &help, const QString &href);
 QString protectSlash(QString str);
 QString indentation();
 AbstractRegexpEditorLineEdit *createRegexpEditorLineEdit(QWidget *parent = nullptr);
+QString generateConditionComment(const QString &comment);
 }
 }
 #endif // AUTOCREATESCRIPTUTIL_H

@@ -111,7 +111,6 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         QEXPECT_FAIL("failed-2", "Expected failure on failed-2 file. Problem with body + text.", Continue);
         QEXPECT_FAIL("failed-if-in-if", "Expected failure on failed-if-in-if file. Problem with if in another if.", Continue);
         QEXPECT_FAIL("test-comment2", "Expected failure on test-comment2 file. Problem with # and /* .", Continue);
-        QEXPECT_FAIL("test-comment4", "Expected failure on test-comment4 file. Problem with comment after a condition .", Continue);
         QCOMPARE(proc.exitCode(), 0);
     }
 }

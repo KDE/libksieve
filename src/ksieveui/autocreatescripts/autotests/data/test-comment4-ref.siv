@@ -1,11 +1,7 @@
-require "imapflags";
+require "imap4flags";
 require "fileinto";
 
 #SCRIPTNAME: test1
-
-
-
-
 if header :is  "" #test header
 {
     keep :flags [ "\\Answered", "\\Flagged" ];

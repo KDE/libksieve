@@ -61,7 +61,7 @@ QString SieveConditionSize::code(QWidget *w) const
     const QComboBox *combo = w->findChild<QComboBox *>(QStringLiteral("combosize"));
     const QString comparaison = combo->itemData(combo->currentIndex()).toString();
     const SelectSizeWidget *sizeWidget = w->findChild<SelectSizeWidget *>(QStringLiteral("sizewidget"));
-    return QStringLiteral("size %1 %2").arg(comparaison, sizeWidget->code());
+    return QStringLiteral("size %1 %2").arg(comparaison, sizeWidget->code()) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QString SieveConditionSize::help() const
@@ -94,7 +94,7 @@ bool SieveConditionSize::setParamWidgetValue(const QDomElement &element, QWidget
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
+                setComment(e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionSize::setParamWidgetValue unknown tagName " << tagName;

@@ -82,7 +82,7 @@ QString SieveConditionEnvironment::code(QWidget *w) const
     const QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
     const QString valueStr = value->text();
 
-    return QStringLiteral("environment \"%1\" \"%2\"").arg(itemStr, valueStr);
+    return QStringLiteral("environment \"%1\" \"%2\"").arg(itemStr, valueStr) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionEnvironment::needRequires(QWidget *) const
@@ -128,7 +128,7 @@ bool SieveConditionEnvironment::setParamWidgetValue(const QDomElement &element, 
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
+                setComment(e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionSetVariable::setParamWidgetValue unknown tagName " << tagName;
