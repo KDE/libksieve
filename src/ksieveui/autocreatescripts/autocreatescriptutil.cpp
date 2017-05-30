@@ -217,7 +217,15 @@ QString AutoCreateScriptUtil::generateConditionComment(const QString &comment)
 {
     QString strComment;
     if (!comment.trimmed().isEmpty()) {
-        strComment = QStringLiteral(" #") + comment;
+        const QStringList commentList = comment.split(QLatin1Char('\n'));
+
+        for (const QString &str : commentList) {
+            if (str.isEmpty()) {
+                strComment += QLatin1Char('\n');
+            } else {
+                strComment += QLatin1Char('#') + str + QLatin1Char('\n');
+            }
+        }
     }
     return strComment;
 }
