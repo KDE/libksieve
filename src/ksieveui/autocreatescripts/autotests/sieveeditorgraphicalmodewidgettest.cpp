@@ -83,7 +83,6 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         QCOMPARE(hasError, !error.isEmpty());
         generatedScript = w.currentscript();
 
-
         //Create generated file
         QFile f(generatedFile);
         QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));

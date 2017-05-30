@@ -90,7 +90,7 @@ QString SieveConditionAddress::code(QWidget *w) const
     const QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("editaddress"));
     const QString addressStr = AutoCreateScriptUtil::createAddressList(edit->text().trimmed(), false);
     return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("address %1 %2 %3 %4").arg(selectAddressPartStr, matchTypeStr, selectHeaderTypeStr, addressStr)
-            + AutoCreateScriptUtil::generateConditionComment(comment());
+           + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionAddress::needRequires(QWidget *w) const

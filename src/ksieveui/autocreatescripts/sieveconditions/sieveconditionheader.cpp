@@ -80,7 +80,7 @@ QString SieveConditionHeader::code(QWidget *w) const
 
     valueStr = AutoCreateScriptUtil::fixListValue(valueStr);
     return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("header %1 %2 %3").arg(matchString, headerStr, valueStr)
-            + AutoCreateScriptUtil::generateConditionComment(comment());
+           + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QString SieveConditionHeader::help() const

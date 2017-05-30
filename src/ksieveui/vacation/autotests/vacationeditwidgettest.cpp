@@ -195,7 +195,7 @@ void VacationEditWidgetTest::shouldGetValues()
 
 #if 0
     KMime::Types::AddrSpecList mailAliases() const;
-    void setMailAliases(const KMime::Types::AddrSpecList & aliases);
+    void setMailAliases(const KMime::Types::AddrSpecList &aliases);
     void setMailAliases(const QString &aliases);
 
     bool sendForSpam() const;

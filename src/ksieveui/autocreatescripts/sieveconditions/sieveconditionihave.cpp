@@ -56,7 +56,7 @@ QString SieveConditionIhave::code(QWidget *w) const
     const QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
     const QString editValue = edit->text();
     return QStringLiteral("ihave %1").arg(AutoCreateScriptUtil::createList(editValue, QLatin1Char(',')))
-            + AutoCreateScriptUtil::generateConditionComment(comment());
+           + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionIhave::needRequires(QWidget *) const

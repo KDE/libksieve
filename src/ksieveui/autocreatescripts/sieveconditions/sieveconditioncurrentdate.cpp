@@ -65,7 +65,7 @@ QString SieveConditionCurrentDate::code(QWidget *w) const
     const QString dateWidgetStr = dateWidget->code();
 
     return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("currentdate %1 %2").arg(matchTypeStr, dateWidgetStr)
-            + AutoCreateScriptUtil::generateConditionComment(comment());
+           + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 bool SieveConditionCurrentDate::needCheckIfServerHasCapability() const

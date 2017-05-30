@@ -72,7 +72,7 @@ QString SieveConditionBody::code(QWidget *w) const
     QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
     const QString editValue = AutoCreateScriptUtil::createAddressList(edit->text().trimmed(), false);
     return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("body %1 %2 %3").arg(bodyValue, matchValue, editValue)
-            + AutoCreateScriptUtil::generateConditionComment(comment());
+           + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionBody::needRequires(QWidget *) const

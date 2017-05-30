@@ -51,7 +51,7 @@ private Q_SLOTS:
     void slotAddWidget();
     void slotRemoveWidget();
     void slotConditionChanged(int index);
-    void slotHelp();    
+    void slotHelp();
     void slotAddComment();
 
 Q_SIGNALS:

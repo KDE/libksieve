@@ -128,7 +128,6 @@ void SieveConditionWidget::initWidget()
     mCommentButton->setIcon(QIcon::fromTheme(QStringLiteral("view-pim-notes")));
     connect(mCommentButton, &QToolButton::clicked, this, &SieveConditionWidget::slotAddComment);
 
-
     mComboBox->addItem(QLatin1String(""));
     mLayout->addWidget(mComboBox, 1, 2);
     connect(mComboBox, static_cast<void (PimCommon::MinimumComboBox::*)(int)>(&PimCommon::MinimumComboBox::activated), this, &SieveConditionWidget::slotConditionChanged);
