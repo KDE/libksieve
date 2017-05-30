@@ -72,7 +72,7 @@ QString SieveConditionBody::code(QWidget *w) const
     QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
     const QString editValue = AutoCreateScriptUtil::createAddressList(edit->text().trimmed(), false);
     return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("body %1 %2 %3").arg(bodyValue, matchValue, editValue)
-            + AutoCreateScriptUtil::generateConditionComment(comment());;
+            + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionBody::needRequires(QWidget *) const
@@ -105,6 +105,7 @@ bool SieveConditionBody::setParamWidgetValue(const QDomElement &element, QWidget
 
     bool wasListElement = false;
     QDomNode node = element.firstChild();
+    QString commentStr;
     while (!node.isNull()) {
         QDomElement e = node.toElement();
         if (!e.isNull()) {
@@ -126,7 +127,7 @@ bool SieveConditionBody::setParamWidgetValue(const QDomElement &element, QWidget
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                setComment(e.text());
+                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
             } else if (tagName == QLatin1String("list")) {
                 strValue << AutoCreateScriptUtil::listValueToStr(e);
                 wasListElement = true;
@@ -137,6 +138,9 @@ bool SieveConditionBody::setParamWidgetValue(const QDomElement &element, QWidget
             }
         }
         node = node.nextSibling();
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
     }
 
     if (strValue.count() == 1) {

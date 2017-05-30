@@ -80,6 +80,7 @@ QString SieveConditionMailboxExists::help() const
 bool SieveConditionMailboxExists::setParamWidgetValue(const QDomElement &element, QWidget *w, bool /*notCondition*/, QString &error)
 {
     QDomNode node = element.firstChild();
+    QString commentStr;
     while (!node.isNull()) {
         QDomElement e = node.toElement();
         if (!e.isNull()) {
@@ -91,13 +92,16 @@ bool SieveConditionMailboxExists::setParamWidgetValue(const QDomElement &element
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                setComment(e.text());
+                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionMailboxExists::setParamWidgetValue unknown tagName " << tagName;
             }
         }
         node = node.nextSibling();
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
     }
     return true;
 }

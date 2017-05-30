@@ -45,6 +45,7 @@ QString protectSlash(QString str);
 QString indentation();
 AbstractRegexpEditorLineEdit *createRegexpEditorLineEdit(QWidget *parent = nullptr);
 QString generateConditionComment(const QString &comment);
+QString loadConditionComment(QString originalComment, const QString &comment);
 }
 }
 #endif // AUTOCREATESCRIPTUTIL_H

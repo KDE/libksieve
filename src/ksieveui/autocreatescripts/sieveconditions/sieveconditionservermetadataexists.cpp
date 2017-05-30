@@ -81,6 +81,7 @@ QString SieveConditionServerMetaDataExists::help() const
 bool SieveConditionServerMetaDataExists::setParamWidgetValue(const QDomElement &element, QWidget *w, bool /*notCondition*/, QString &error)
 {
     QDomNode node = element.firstChild();
+    QString commentStr;
     while (!node.isNull()) {
         QDomElement e = node.toElement();
         if (!e.isNull()) {
@@ -92,7 +93,7 @@ bool SieveConditionServerMetaDataExists::setParamWidgetValue(const QDomElement &
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                setComment(e.text());
+                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaDataExists::setParamWidgetValue unknown tagName " << tagName;
@@ -100,6 +101,10 @@ bool SieveConditionServerMetaDataExists::setParamWidgetValue(const QDomElement &
         }
         node = node.nextSibling();
     }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+
     return true;
 }
 

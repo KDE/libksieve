@@ -82,6 +82,7 @@ QString SieveConditionIhave::help() const
 bool SieveConditionIhave::setParamWidgetValue(const QDomElement &element, QWidget *w, bool, QString &error)
 {
     QDomNode node = element.firstChild();
+    QString commentStr;
     while (!node.isNull()) {
         QDomElement e = node.toElement();
         if (!e.isNull()) {
@@ -93,13 +94,16 @@ bool SieveConditionIhave::setParamWidgetValue(const QDomElement &element, QWidge
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                setComment(e.text());
+                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionIhave::setParamWidgetValue unknown tagName " << tagName;
             }
         }
         node = node.nextSibling();
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
     }
     return true;
 }

@@ -94,6 +94,7 @@ bool SieveConditionCurrentDate::setParamWidgetValue(const QDomElement &element, 
     QString type;
     QString value;
     QDomNode node = element.firstChild();
+    QString commentStr;
     while (!node.isNull()) {
         QDomElement e = node.toElement();
         if (!e.isNull()) {
@@ -114,7 +115,7 @@ bool SieveConditionCurrentDate::setParamWidgetValue(const QDomElement &element, 
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                setComment(e.text());
+                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << "SieveConditionCurrentDate::setParamWidgetValue unknown tag " << tagName;
@@ -122,6 +123,10 @@ bool SieveConditionCurrentDate::setParamWidgetValue(const QDomElement &element, 
         }
         node = node.nextSibling();
     }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+
     SelectDateWidget *dateWidget = w->findChild<SelectDateWidget *>(QStringLiteral("datewidget"));
     dateWidget->setCode(type, value);
     return true;

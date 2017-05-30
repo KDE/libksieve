@@ -1,3 +1,14 @@
+require "spamtest";
+require "relational";
+require "environment";
+require "envelope";
+require "subaddress";
+require "imap4flags";
+require "variables";
+require "mboxmetadata";
+require "ihave";
+
+#SCRIPTNAME: Script part 0
 if allof (virustest :value "gt" :comparator "i;octet" "0" #condition1
 , environment "" "" #condition2
 , envelope :all :is  "" # condition3
@@ -5,10 +16,10 @@ if allof (virustest :value "gt" :comparator "i;octet" "0" #condition1
 , false
 , metadataexists "" "" # condition5
 , ihave ""
-, environment "" "" /* condition6
- continue condition6
- again
- */
+, environment "" "" # condition6
+ # continue condition6
+ # again
+
 )
 {
 } 

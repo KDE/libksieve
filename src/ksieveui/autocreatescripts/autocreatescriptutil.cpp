@@ -223,9 +223,22 @@ QString AutoCreateScriptUtil::generateConditionComment(const QString &comment)
             if (str.isEmpty()) {
                 strComment += QLatin1Char('\n');
             } else {
-                strComment += QLatin1Char('#') + str + QLatin1Char('\n');
+                if (!strComment.isEmpty()) {
+                    strComment += QLatin1Char('\n');
+                }
+                strComment += QStringLiteral(" #") + str;
             }
         }
     }
     return strComment;
+}
+
+QString AutoCreateScriptUtil::loadConditionComment(QString originalComment, const QString &comment)
+{
+    if (originalComment.isEmpty()) {
+        originalComment = comment;
+    } else {
+        originalComment += QLatin1Char('\n') + comment;
+    }
+    return originalComment;
 }

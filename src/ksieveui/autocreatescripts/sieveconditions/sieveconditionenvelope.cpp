@@ -122,6 +122,7 @@ bool SieveConditionEnvelope::setParamWidgetValue(const QDomElement &element, QWi
     int indexTag = 0;
     int indexStr = 0;
     QDomNode node = element.firstChild();
+    QString commentStr;
     while (!node.isNull()) {
         QDomElement e = node.toElement();
         if (!e.isNull()) {
@@ -169,7 +170,7 @@ bool SieveConditionEnvelope::setParamWidgetValue(const QDomElement &element, QWi
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                setComment(e.text());
+                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionEnvelope::setParamWidgetValue unknown tagName " << tagName;
@@ -177,6 +178,10 @@ bool SieveConditionEnvelope::setParamWidgetValue(const QDomElement &element, QWi
         }
         node = node.nextSibling();
     }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+
     return true;
 }
 

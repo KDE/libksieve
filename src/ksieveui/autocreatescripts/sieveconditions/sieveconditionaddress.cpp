@@ -89,10 +89,6 @@ QString SieveConditionAddress::code(QWidget *w) const
 
     const QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("editaddress"));
     const QString addressStr = AutoCreateScriptUtil::createAddressList(edit->text().trimmed(), false);
-    QString strComment;
-    if (!comment().trimmed().isEmpty()) {
-        strComment = QLatin1Char('#') + comment();
-    }
     return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("address %1 %2 %3 %4").arg(selectAddressPartStr, matchTypeStr, selectHeaderTypeStr, addressStr)
             + AutoCreateScriptUtil::generateConditionComment(comment());
 }
@@ -115,6 +111,7 @@ bool SieveConditionAddress::setParamWidgetValue(const QDomElement &element, QWid
     int indexStr = 0;
     QDomNode node = element.firstChild();
     QStringList lstTagValue;
+    QString commentStr;
     while (!node.isNull()) {
         QDomElement e = node.toElement();
         if (!e.isNull()) {
@@ -149,13 +146,16 @@ bool SieveConditionAddress::setParamWidgetValue(const QDomElement &element, QWid
             } else if (tagName == QLatin1String("crlf")) {
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
-                setComment(e.text());
+                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionAddress::setParamWidgetValue unknown tagName " << tagName;
             }
         }
         node = node.nextSibling();
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
     }
     if (lstTagValue.count() == 1) {
         QString specificError;
