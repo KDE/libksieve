@@ -111,6 +111,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         QEXPECT_FAIL("failed-if-in-if", "Expected failure on failed-if-in-if file. Problem with if in another if.", Continue);
         QEXPECT_FAIL("test-comment2", "Expected failure on test-comment2 file. Problem with # and /* .", Continue);
         QEXPECT_FAIL("test-comment7", "Expected failure on test-comment7 file. Problem comment after an action .", Continue);
+        QEXPECT_FAIL("test-comment8", "Expected failure on test-comment8 file. Problem with comment with 1 char .", Continue);
         QCOMPARE(proc.exitCode(), 0);
     }
 }
@@ -207,6 +208,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-comment5") << QStringLiteral("test-comment5") << false << true;
     QTest::newRow("test-comment6") << QStringLiteral("test-comment6") << false << true;
     QTest::newRow("test-comment7") << QStringLiteral("test-comment7") << false << true;
+    QTest::newRow("test-comment8") << QStringLiteral("test-comment8") << false << true;
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)
