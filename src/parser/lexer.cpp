@@ -39,6 +39,7 @@
 #include <QString>
 #include <QStringList>
 #include <QTextCodec>
+#include <QDebug>
 
 #include <memory> // std::unique_ptr
 
@@ -367,12 +368,12 @@ bool Lexer::Impl::parseHashComment(QString &result, bool reallySave)
         }
         ++mState.cursor;
     }
-
     const char *const commentEnd = mState.cursor - 1;
 
-    if (commentEnd == commentStart) {
-        return true;    // # was last char in script...
-    }
+    //Laurent it creates a problem when we have just "#F" => it doesn't see it as a comment
+//    if (commentEnd == commentStart) {
+//        return true;    // # was last char in script...
+//    }
 
     if (atEnd() || eatCRLF()) {
         const int commentLength = commentEnd - commentStart + 1;
