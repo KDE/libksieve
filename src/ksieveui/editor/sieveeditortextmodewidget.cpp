@@ -374,9 +374,12 @@ void SieveEditorTextModeWidget::print()
 
         std::unique_ptr<QPrintDialog> dlg(new QPrintDialog(&printer));
 
+        bool restoreSpellCheck = mTextEdit->checkSpellingEnabled();
+        mTextEdit->setCheckSpellingEnabled(false);
         if (dlg && dlg->exec() == QDialog::Accepted) {
             mTextEdit->print(&printer);
         }
+        mTextEdit->setCheckSpellingEnabled(restoreSpellCheck);
     }
 }
 
@@ -384,11 +387,14 @@ void SieveEditorTextModeWidget::printPreview()
 {
     const QWidget *w = mTabWidget->currentWidget();
     if (w == mEditorWidget) {
+        bool restoreSpellCheck = mTextEdit->checkSpellingEnabled();
+        mTextEdit->setCheckSpellingEnabled(false);
         PimCommon::KPimPrintPreviewDialog previewdlg(this);
         connect(&previewdlg, &QPrintPreviewDialog::paintRequested, this, [this](QPrinter *printer) {
             mTextEdit->print(printer);
         });
         previewdlg.exec();
+        mTextEdit->setCheckSpellingEnabled(restoreSpellCheck);
     }
 }
 
