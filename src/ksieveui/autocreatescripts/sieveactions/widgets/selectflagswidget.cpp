@@ -29,6 +29,7 @@
 #include <QPointer>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
+#include <QToolButton>
 
 using namespace KSieveUi;
 
@@ -37,10 +38,10 @@ SelectFlagsListDialog::SelectFlagsListDialog(QWidget *parent)
 {
     setWindowTitle(i18n("Flags"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     mListWidget = new SelectFlagsListWidget(this);
     mainLayout->addWidget(mListWidget);
 
+    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
@@ -145,7 +146,8 @@ SelectFlagsWidget::SelectFlagsWidget(QWidget *parent)
     mEdit->setReadOnly(true);
     connect(mEdit, &QLineEdit::textChanged, this, &SelectFlagsWidget::valueChanged);
     lay->addWidget(mEdit);
-    QPushButton *selectFlags = new QPushButton(i18n("..."), this);
+    QToolButton *selectFlags = new QToolButton(this);
+    selectFlags->setText(i18n("..."));
     connect(selectFlags, &QPushButton::clicked, this, &SelectFlagsWidget::slotSelectFlags);
     lay->addWidget(selectFlags);
 }
