@@ -208,6 +208,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-comment6") << QStringLiteral("test-comment6") << false << true;
     QTest::newRow("test-comment7") << QStringLiteral("test-comment7") << false << true;
     QTest::newRow("test-comment8") << QStringLiteral("test-comment8") << false << true;
+    QTest::newRow("test-comment9") << QStringLiteral("test-comment9") << false << true;
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)

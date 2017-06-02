@@ -18,8 +18,12 @@
 */
 #include "sieveconditiontrue.h"
 #include "editor/sieveeditorutil.h"
+#include "libksieve_debug.h"
+#include "autocreatescripts/autocreatescriptutil_p.h"
+
 #include <KLocalizedString>
 
+#include <QDomNode>
 #include <QHBoxLayout>
 #include <QLabel>
 
@@ -44,7 +48,7 @@ QWidget *SieveConditionTrue::createParamWidget(QWidget *parent) const
 
 QString SieveConditionTrue::code(QWidget *) const
 {
-    return QStringLiteral("true");
+    return QStringLiteral("true") + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QString SieveConditionTrue::help() const
@@ -52,9 +56,29 @@ QString SieveConditionTrue::help() const
     return i18n("The \"true\" test always evaluates to true.");
 }
 
-bool SieveConditionTrue::setParamWidgetValue(const QDomElement &, QWidget *, bool, QString &)
+bool SieveConditionTrue::setParamWidgetValue(const QDomElement &element, QWidget *, bool, QString &error)
 {
-    //Nothing
+    QDomNode node = element.firstChild();
+    QString commentStr;
+    while (!node.isNull()) {
+        QDomElement e = node.toElement();
+        if (!e.isNull()) {
+            const QString tagName = e.tagName();
+            if (tagName == QLatin1String("comment")) {
+                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
+            } else if (tagName == QLatin1String("crlf")) {
+                //nothing
+            } else {
+                unknownTag(tagName, error);
+                qCDebug(LIBKSIEVE_LOG) << " SieveConditionTrue::setParamWidgetValue unknown tagName " << tagName;
+            }
+        }
+        node = node.nextSibling();
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+
     return true;
 }
 
