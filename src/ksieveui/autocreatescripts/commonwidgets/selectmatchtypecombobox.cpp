@@ -79,3 +79,9 @@ void SelectMatchTypeComboBox::setCode(const QString &code, const QString &name, 
         setCurrentIndex(0);
     }
 }
+
+QStringList SelectMatchTypeComboBox::needRequires() const
+{
+    //TODO
+    return {};
+}

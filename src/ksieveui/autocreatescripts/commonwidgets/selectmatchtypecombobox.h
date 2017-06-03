@@ -34,6 +34,7 @@ public:
     bool isNegative() const;
     void setCode(const QString &code, const QString &name, QString &error);
 
+    QStringList needRequires() const;
 Q_SIGNALS:
     void valueChanged();
     void switchToRegexp(bool useReg);
