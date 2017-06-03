@@ -1,5 +1,6 @@
 require "fileinto";
 require "mailbox";
+require "regex";
 
 #SCRIPTNAME: Script part 0
 if header :regex "subject" ".* \\| Nouveau ticket - .*"
