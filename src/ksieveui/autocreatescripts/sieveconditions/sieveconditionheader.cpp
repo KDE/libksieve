@@ -144,3 +144,10 @@ bool SieveConditionHeader::setParamWidgetValue(const QDomElement &element, QWidg
 
     return true;
 }
+
+
+QStringList KSieveUi::SieveConditionHeader::needRequires(QWidget *w) const
+{
+    const SelectMatchTypeComboBox *matchTypeCombo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
+    return matchTypeCombo->needRequires();
+}
