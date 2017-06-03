@@ -99,7 +99,8 @@ QString SieveConditionEnvelope::code(QWidget *w) const
 QStringList SieveConditionEnvelope::needRequires(QWidget *w) const
 {
     const SelectAddressPartComboBox *selectAddressPart = w->findChild<SelectAddressPartComboBox *>(QStringLiteral("addresspartcombobox"));
-    return QStringList() << QStringLiteral("envelope") << selectAddressPart->extraRequire();
+    const SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
+    return QStringList() << QStringLiteral("envelope") << selectAddressPart->extraRequire() << selectMatchCombobox->needRequires();
 }
 
 bool SieveConditionEnvelope::needCheckIfServerHasCapability() const

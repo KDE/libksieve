@@ -103,9 +103,10 @@ QString SieveConditionMetaData::code(QWidget *w) const
     return result + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
-QStringList SieveConditionMetaData::needRequires(QWidget *) const
+QStringList SieveConditionMetaData::needRequires(QWidget *w) const
 {
-    return QStringList() << QStringLiteral("mboxmetadata");
+    const SelectMatchTypeComboBox *selectType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("selecttype"));
+    return QStringList() << QStringLiteral("mboxmetadata") << selectType->needRequires();
 }
 
 bool SieveConditionMetaData::needCheckIfServerHasCapability() const

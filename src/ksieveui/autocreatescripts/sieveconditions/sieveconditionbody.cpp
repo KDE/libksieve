@@ -75,9 +75,11 @@ QString SieveConditionBody::code(QWidget *w) const
            + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
-QStringList SieveConditionBody::needRequires(QWidget *) const
+QStringList SieveConditionBody::needRequires(QWidget *w) const
 {
-    return QStringList() << QStringLiteral("body");
+    const SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+
+    return QStringList() << QStringLiteral("body") << matchType->needRequires();
 }
 
 bool SieveConditionBody::needCheckIfServerHasCapability() const

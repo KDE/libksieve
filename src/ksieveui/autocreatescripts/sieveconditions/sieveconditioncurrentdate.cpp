@@ -78,9 +78,11 @@ QString SieveConditionCurrentDate::serverNeedsCapability() const
     return QStringLiteral("date");
 }
 
-QStringList SieveConditionCurrentDate::needRequires(QWidget *) const
+QStringList SieveConditionCurrentDate::needRequires(QWidget *w) const
 {
-    return QStringList() << QStringLiteral("date");
+    const SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+
+    return QStringList() << QStringLiteral("date") << selectMatchCombobox->needRequires();
 }
 
 QString SieveConditionCurrentDate::help() const

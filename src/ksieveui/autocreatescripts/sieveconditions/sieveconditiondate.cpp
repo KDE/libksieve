@@ -93,9 +93,10 @@ QString SieveConditionDate::serverNeedsCapability() const
     return QStringLiteral("date");
 }
 
-QStringList SieveConditionDate::needRequires(QWidget *) const
+QStringList SieveConditionDate::needRequires(QWidget *w) const
 {
-    return QStringList() << QStringLiteral("date");
+    const SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+    return QStringList() << QStringLiteral("date") << selectMatchCombobox->needRequires();
 }
 
 QString SieveConditionDate::help() const

@@ -97,7 +97,7 @@ QString SieveConditionHasFlag::code(QWidget *w) const
     return result + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
-QStringList SieveConditionHasFlag::needRequires(QWidget *) const
+QStringList SieveConditionHasFlag::needRequires(QWidget *w) const
 {
     QStringList lst;
     if (sieveCapabilities().contains(QStringLiteral("imap4flags"))) {
@@ -108,6 +108,8 @@ QStringList SieveConditionHasFlag::needRequires(QWidget *) const
     if (hasVariableSupport) {
         lst << QStringLiteral("variables");
     }
+    const SelectMatchTypeComboBox *matchTypeCombo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+    lst << matchTypeCombo->needRequires();
     return lst;
 }
 

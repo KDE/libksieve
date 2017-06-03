@@ -1,4 +1,5 @@
 require "subaddress";
+require "regex";
 require "spamtest";
 require "relational";
 require "spamtestplus";
