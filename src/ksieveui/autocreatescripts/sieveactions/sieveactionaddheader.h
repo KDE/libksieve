@@ -26,11 +26,11 @@ class SieveActionAddHeader : public SieveActionAbstractEditHeader
     Q_OBJECT
 public:
     explicit SieveActionAddHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
-    QString code(QWidget *w) const Q_DECL_OVERRIDE;
-    QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
-    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, QString &error) Q_DECL_OVERRIDE;
-    QString help() const Q_DECL_OVERRIDE;
-    QUrl href() const Q_DECL_OVERRIDE;
+    QString code(QWidget *w) const override;
+    QWidget *createParamWidget(QWidget *parent) const override;
+    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, QString &error) override;
+    QString help() const override;
+    QUrl href() const override;
 };
 }
 

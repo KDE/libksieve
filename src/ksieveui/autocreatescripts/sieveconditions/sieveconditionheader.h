@@ -28,14 +28,14 @@ class SieveConditionHeader : public SieveCondition
 public:
     explicit SieveConditionHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
 
-    QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
+    QWidget *createParamWidget(QWidget *parent) const override;
 
-    QString code(QWidget *parent) const Q_DECL_OVERRIDE;
+    QString code(QWidget *parent) const override;
 
-    QString help() const Q_DECL_OVERRIDE;
-    QStringList needRequires(QWidget *parent) const Q_DECL_OVERRIDE;
+    QString help() const override;
+    QStringList needRequires(QWidget *parent) const override;
 
-    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, bool notCondition, QString &error) Q_DECL_OVERRIDE;
+    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, bool notCondition, QString &error) override;
 };
 }
 

@@ -56,15 +56,15 @@ public:
     bool isWordWrap() const;
 protected:
     void initCompleter();
-    void keyPressEvent(QKeyEvent *e) Q_DECL_OVERRIDE;
-    void resizeEvent(QResizeEvent *event) Q_DECL_OVERRIDE;
-    void addExtraMenuEntry(QMenu *menu, QPoint pos) Q_DECL_OVERRIDE;
-    bool event(QEvent *ev) Q_DECL_OVERRIDE;
-    Sonnet::SpellCheckDecorator *createSpellCheckDecorator() Q_DECL_OVERRIDE;
+    void keyPressEvent(QKeyEvent *e) override;
+    void resizeEvent(QResizeEvent *event) override;
+    void addExtraMenuEntry(QMenu *menu, QPoint pos) override;
+    bool event(QEvent *ev) override;
+    Sonnet::SpellCheckDecorator *createSpellCheckDecorator() override;
 
-    void updateHighLighter() Q_DECL_OVERRIDE;
-    void clearDecorator() Q_DECL_OVERRIDE;
-    void createHighlighter() Q_DECL_OVERRIDE;
+    void updateHighLighter() override;
+    void clearDecorator() override;
+    void createHighlighter() override;
 Q_SIGNALS:
     void openHelp(const QUrl &url);
 

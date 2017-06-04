@@ -34,12 +34,12 @@ public:
     explicit SieveTemplateListWidget(const QString &configName, QWidget *parent = nullptr);
     ~SieveTemplateListWidget();
 
-    QVector<PimCommon::defaultTemplate> defaultTemplates() Q_DECL_OVERRIDE;
-    bool addNewTemplate(QString &templateName, QString &templateScript) Q_DECL_OVERRIDE;
-    bool modifyTemplate(QString &templateName, QString &templateScript, bool defaultTemplate) Q_DECL_OVERRIDE;
+    QVector<PimCommon::defaultTemplate> defaultTemplates() override;
+    bool addNewTemplate(QString &templateName, QString &templateScript) override;
+    bool modifyTemplate(QString &templateName, QString &templateScript, bool defaultTemplate) override;
     void setSieveCapabilities(const QStringList &capabilities);
 protected:
-    QMimeData *mimeData(const QList<QListWidgetItem *> items) const Q_DECL_OVERRIDE;
+    QMimeData *mimeData(const QList<QListWidgetItem *> items) const override;
 private:
     QStringList mCapabilities;
     PimCommon::TemplateManager *mTemplateManager;

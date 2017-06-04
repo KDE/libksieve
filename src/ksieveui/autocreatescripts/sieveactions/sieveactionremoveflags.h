@@ -27,9 +27,9 @@ class SieveActionRemoveFlags : public SieveActionAbstractFlags
     Q_OBJECT
 public:
     explicit SieveActionRemoveFlags(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
-    QString flagsCode() const Q_DECL_OVERRIDE;
-    QString help() const Q_DECL_OVERRIDE;
-    QUrl href() const Q_DECL_OVERRIDE;
+    QString flagsCode() const override;
+    QString help() const override;
+    QUrl href() const override;
 };
 }
 #endif // SIEVEACTIONREMOVEFLAGS_H

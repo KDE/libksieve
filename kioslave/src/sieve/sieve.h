@@ -76,18 +76,18 @@ public:
     kio_sieveProtocol(const QByteArray &pool_socket, const QByteArray &app_socket);
     virtual ~kio_sieveProtocol();
 
-    void mimetype(const QUrl &url) Q_DECL_OVERRIDE;
-    void get(const QUrl &url) Q_DECL_OVERRIDE;
-    void put(const QUrl &url, int permissions, KIO::JobFlags flags) Q_DECL_OVERRIDE;
-    void del(const QUrl &url, bool isfile) Q_DECL_OVERRIDE;
+    void mimetype(const QUrl &url) override;
+    void get(const QUrl &url) override;
+    void put(const QUrl &url, int permissions, KIO::JobFlags flags) override;
+    void del(const QUrl &url, bool isfile) override;
 
-    void listDir(const QUrl &url) Q_DECL_OVERRIDE;
-    void chmod(const QUrl &url, int permissions) Q_DECL_OVERRIDE;
+    void listDir(const QUrl &url) override;
+    void chmod(const QUrl &url, int permissions) override;
     virtual void urlStat(const QUrl &url);
 
-    void setHost(const QString &host, quint16 port, const QString &user, const QString &pass) Q_DECL_OVERRIDE;
-    void openConnection() Q_DECL_OVERRIDE;
-    void closeConnection() Q_DECL_OVERRIDE;
+    void setHost(const QString &host, quint16 port, const QString &user, const QString &pass) override;
+    void openConnection() override;
+    void closeConnection() override;
     //virtual void slave_status();
 
     /**
@@ -96,7 +96,7 @@ public:
      * 2 - deactivate (all - only one active at any one time) scripts
      * 3 - request capabilities, returned as metadata
      */
-    void special(const QByteArray &data) Q_DECL_OVERRIDE;
+    void special(const QByteArray &data) override;
     bool activate(const QUrl &url);
     bool deactivate();
 

@@ -27,12 +27,12 @@ class SieveConditionExists : public SieveCondition
     Q_OBJECT
 public:
     explicit SieveConditionExists(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
-    QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
+    QWidget *createParamWidget(QWidget *parent) const override;
 
-    QString code(QWidget *parent) const Q_DECL_OVERRIDE;
-    QString help() const Q_DECL_OVERRIDE;
-    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, bool notCondition, QString &error) Q_DECL_OVERRIDE;
-    QUrl href() const Q_DECL_OVERRIDE;
+    QString code(QWidget *parent) const override;
+    QString help() const override;
+    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, bool notCondition, QString &error) override;
+    QUrl href() const override;
 };
 }
 

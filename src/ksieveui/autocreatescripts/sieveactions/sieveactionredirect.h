@@ -27,13 +27,13 @@ class SieveActionRedirect : public SieveAction
     Q_OBJECT
 public:
     explicit SieveActionRedirect(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
-    QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
-    QString code(QWidget *) const Q_DECL_OVERRIDE;
-    QStringList needRequires(QWidget *parent) const Q_DECL_OVERRIDE;
-    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, QString &error) Q_DECL_OVERRIDE;
-    QString help() const Q_DECL_OVERRIDE;
+    QWidget *createParamWidget(QWidget *parent) const override;
+    QString code(QWidget *) const override;
+    QStringList needRequires(QWidget *parent) const override;
+    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, QString &error) override;
+    QString help() const override;
 
-    QUrl href() const Q_DECL_OVERRIDE;
+    QUrl href() const override;
 private:
     bool mHasCopySupport;
     bool mHasListSupport;

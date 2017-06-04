@@ -278,60 +278,60 @@ public:
     }
 
 private:
-    void commandStart(const QString &identifier, int lineNumber) Q_DECL_OVERRIDE;
+    void commandStart(const QString &identifier, int lineNumber) override;
 
-    void commandEnd(int lineNumber) Q_DECL_OVERRIDE;
+    void commandEnd(int lineNumber) override;
 
-    void testStart(const QString &) Q_DECL_OVERRIDE
+    void testStart(const QString &) override
     {
     }
 
-    void testEnd() Q_DECL_OVERRIDE
+    void testEnd() override
     {
     }
 
-    void testListStart() Q_DECL_OVERRIDE
+    void testListStart() override
     {
     }
 
-    void testListEnd() Q_DECL_OVERRIDE
+    void testListEnd() override
     {
     }
 
-    void blockStart(int lineNumber) Q_DECL_OVERRIDE
-    {
-        Q_UNUSED(lineNumber)
-    }
-
-    void blockEnd(int lineNumber) Q_DECL_OVERRIDE
+    void blockStart(int lineNumber) override
     {
         Q_UNUSED(lineNumber)
     }
 
-    void hashComment(const QString &) Q_DECL_OVERRIDE
+    void blockEnd(int lineNumber) override
+    {
+        Q_UNUSED(lineNumber)
+    }
+
+    void hashComment(const QString &) override
     {
     }
 
-    void bracketComment(const QString &) Q_DECL_OVERRIDE
+    void bracketComment(const QString &) override
     {
     }
 
-    void lineFeed() Q_DECL_OVERRIDE
+    void lineFeed() override
     {
     }
 
-    void error(const KSieve::Error &e) Q_DECL_OVERRIDE;
-    void finished() Q_DECL_OVERRIDE;
+    void error(const KSieve::Error &e) override;
+    void finished() override;
 
-    void taggedArgument(const QString &tag) Q_DECL_OVERRIDE;
+    void taggedArgument(const QString &tag) override;
 
-    void stringArgument(const QString &string, bool, const QString &) Q_DECL_OVERRIDE;
+    void stringArgument(const QString &string, bool, const QString &) override;
 
-    void numberArgument(unsigned long number, char) Q_DECL_OVERRIDE;
+    void numberArgument(unsigned long number, char) override;
 
-    void stringListArgumentStart() Q_DECL_OVERRIDE;
-    void stringListEntry(const QString &string, bool, const QString &) Q_DECL_OVERRIDE;
-    void stringListArgumentEnd() Q_DECL_OVERRIDE;
+    void stringListArgumentStart() override;
+    void stringListEntry(const QString &string, bool, const QString &) override;
+    void stringListArgumentEnd() override;
 
 private:
     Context mContext;

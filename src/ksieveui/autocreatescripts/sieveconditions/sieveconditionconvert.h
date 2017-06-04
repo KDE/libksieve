@@ -27,13 +27,13 @@ class SieveConditionConvert : public SieveCondition
     Q_OBJECT
 public:
     explicit SieveConditionConvert(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
-    QString code(QWidget *) const Q_DECL_OVERRIDE;
-    QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
-    QStringList needRequires(QWidget *) const Q_DECL_OVERRIDE;
-    bool needCheckIfServerHasCapability() const Q_DECL_OVERRIDE;
-    QString serverNeedsCapability() const Q_DECL_OVERRIDE;
-    QString help() const Q_DECL_OVERRIDE;
-    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, bool notCondition, QString &error) Q_DECL_OVERRIDE;
+    QString code(QWidget *) const override;
+    QWidget *createParamWidget(QWidget *parent) const override;
+    QStringList needRequires(QWidget *) const override;
+    bool needCheckIfServerHasCapability() const override;
+    QString serverNeedsCapability() const override;
+    QString help() const override;
+    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, bool notCondition, QString &error) override;
 };
 }
 

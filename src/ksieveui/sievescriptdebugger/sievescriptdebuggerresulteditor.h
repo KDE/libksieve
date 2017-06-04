@@ -31,7 +31,7 @@ public:
     ~SieveScriptDebuggerResultEditor();
 
 protected:
-    void addExtraMenuEntry(QMenu *menu, QPoint pos) Q_DECL_OVERRIDE;
+    void addExtraMenuEntry(QMenu *menu, QPoint pos) override;
 
 private:
     void slotClear();

@@ -29,7 +29,7 @@ public:
     virtual ~CustomManageSieveWidget();
 
 protected:
-    bool refreshList() Q_DECL_OVERRIDE;
+    bool refreshList() override;
 };
 }
 

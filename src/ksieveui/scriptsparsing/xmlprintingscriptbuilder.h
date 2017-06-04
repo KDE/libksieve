@@ -33,26 +33,26 @@ public:
     explicit XMLPrintingScriptBuilder();
     ~XMLPrintingScriptBuilder();
 
-    void taggedArgument(const QString &tag) Q_DECL_OVERRIDE;
-    void stringArgument(const QString &string, bool multiLine, const QString & /*fixme*/) Q_DECL_OVERRIDE;
-    void numberArgument(unsigned long number, char quantifier) Q_DECL_OVERRIDE;
-    void commandStart(const QString &identifier, int lineNumber) Q_DECL_OVERRIDE;
-    void commandEnd(int lineNumber) Q_DECL_OVERRIDE;
-    void testStart(const QString &identifier) Q_DECL_OVERRIDE;
-    void testEnd() Q_DECL_OVERRIDE;
-    void testListStart() Q_DECL_OVERRIDE;
-    void testListEnd() Q_DECL_OVERRIDE;
-    void blockStart(int lineNumber) Q_DECL_OVERRIDE;
-    void blockEnd(int lineNumber) Q_DECL_OVERRIDE;
-    void stringListArgumentStart() Q_DECL_OVERRIDE;
-    void stringListArgumentEnd() Q_DECL_OVERRIDE;
-    void stringListEntry(const QString &string, bool multiline, const QString &hashComment) Q_DECL_OVERRIDE;
-    void hashComment(const QString &comment) Q_DECL_OVERRIDE;
-    void bracketComment(const QString &comment) Q_DECL_OVERRIDE;
+    void taggedArgument(const QString &tag) override;
+    void stringArgument(const QString &string, bool multiLine, const QString & /*fixme*/) override;
+    void numberArgument(unsigned long number, char quantifier) override;
+    void commandStart(const QString &identifier, int lineNumber) override;
+    void commandEnd(int lineNumber) override;
+    void testStart(const QString &identifier) override;
+    void testEnd() override;
+    void testListStart() override;
+    void testListEnd() override;
+    void blockStart(int lineNumber) override;
+    void blockEnd(int lineNumber) override;
+    void stringListArgumentStart() override;
+    void stringListArgumentEnd() override;
+    void stringListEntry(const QString &string, bool multiline, const QString &hashComment) override;
+    void hashComment(const QString &comment) override;
+    void bracketComment(const QString &comment) override;
 
-    void lineFeed() Q_DECL_OVERRIDE;
-    void error(const KSieve::Error &error) Q_DECL_OVERRIDE;
-    void finished() Q_DECL_OVERRIDE;
+    void lineFeed() override;
+    void error(const KSieve::Error &error) override;
+    void finished() override;
 
     QString result() const;
     QString error() const;

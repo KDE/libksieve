@@ -30,10 +30,10 @@ class SieveLineNumberArea : public QWidget
 public:
     explicit SieveLineNumberArea(SieveTextEdit *editor);
 
-    QSize sizeHint() const Q_DECL_OVERRIDE;
+    QSize sizeHint() const override;
 
 protected:
-    void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
+    void paintEvent(QPaintEvent *event) override;
 
 private:
     SieveTextEdit *m_sieveTextEdit;

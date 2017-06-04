@@ -56,7 +56,7 @@ private Q_SLOTS:
     void slotNewScript(const QUrl &u, const QStringList &capabilities, const SieveImapAccountSettings &sieveImapAccountSettings);
     void slotCheckScriptFinished(const QString &errorMsg, bool success);
 protected:
-    void hideEvent(QHideEvent *) Q_DECL_OVERRIDE;
+    void hideEvent(QHideEvent *) override;
 
 private:
     void changeActiveScript(QTreeWidgetItem *, bool activate = true);

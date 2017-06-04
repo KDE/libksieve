@@ -26,9 +26,9 @@ class SieveActionDiscard : public SieveAction
     Q_OBJECT
 public:
     explicit SieveActionDiscard(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
-    QString code(QWidget *) const Q_DECL_OVERRIDE;
-    QString help() const Q_DECL_OVERRIDE;
-    QUrl href() const Q_DECL_OVERRIDE;
+    QString code(QWidget *) const override;
+    QString help() const override;
+    QUrl href() const override;
 };
 }
 

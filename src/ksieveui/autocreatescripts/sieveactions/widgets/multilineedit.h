@@ -33,8 +33,8 @@ Q_SIGNALS:
     void valueChanged();
 
 protected:
-    QSize sizeHint() const Q_DECL_OVERRIDE;
-    QSize minimumSizeHint() const Q_DECL_OVERRIDE;
+    QSize sizeHint() const override;
+    QSize minimumSizeHint() const override;
 };
 }
 

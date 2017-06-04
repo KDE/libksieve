@@ -39,8 +39,8 @@ public Q_SLOTS:
     void slotAddHelpPage(const QUrl &url);
 
 protected:
-    void tabRemoved(int index) Q_DECL_OVERRIDE;
-    void tabInserted(int index) Q_DECL_OVERRIDE;
+    void tabRemoved(int index) override;
+    void tabInserted(int index) override;
 
 Q_SIGNALS:
     void copyAvailable(bool);

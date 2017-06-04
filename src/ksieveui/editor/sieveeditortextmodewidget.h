@@ -53,8 +53,8 @@ public:
 
     void setDebugScript(const QString &debug);
 
-    QString currentscript() Q_DECL_OVERRIDE;
-    void setImportScript(const QString &script) Q_DECL_OVERRIDE;
+    QString currentscript() override;
+    void setImportScript(const QString &script) override;
 
     void createRulesGraphically();
     void generateXml();

@@ -86,8 +86,8 @@ public Q_SLOTS:
     void slotRemoveWidget(QWidget *w);
 
 protected:
-    void clearWidget(QWidget *aWidget) Q_DECL_OVERRIDE;
-    QWidget *createWidget(QWidget *parent) Q_DECL_OVERRIDE;
+    void clearWidget(QWidget *aWidget) override;
+    QWidget *createWidget(QWidget *parent) override;
 private:
     void reconnectWidget(SieveGlobalVariableActionWidget *w);
     void updateAddRemoveButton();
@@ -100,7 +100,7 @@ public:
     explicit SieveGlobalVariableWidget(QWidget *parent = nullptr);
     ~SieveGlobalVariableWidget();
 
-    void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) Q_DECL_OVERRIDE;
+    void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) override;
 
     void loadScript(const QDomElement &element, QString &error);
     bool loadSetVariable(const QDomElement &element, QString &error);

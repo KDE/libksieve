@@ -27,7 +27,7 @@ class SieveTextEditorSpellCheckDecorator : public Sonnet::SpellCheckDecorator
     Q_OBJECT
 public:
     explicit SieveTextEditorSpellCheckDecorator(SieveTextEdit *plainTextEdit);
-    bool isSpellCheckingEnabledForBlock(const QString &textBlock) const Q_DECL_OVERRIDE;
+    bool isSpellCheckingEnabledForBlock(const QString &textBlock) const override;
 private:
     SieveTextEdit *mPlainTextEdit;
 };

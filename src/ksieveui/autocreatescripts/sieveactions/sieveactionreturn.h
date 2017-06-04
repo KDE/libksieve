@@ -26,12 +26,12 @@ class SieveActionReturn : public SieveAction
     Q_OBJECT
 public:
     explicit SieveActionReturn(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
-    QString help() const Q_DECL_OVERRIDE;
-    QStringList needRequires(QWidget *parent) const Q_DECL_OVERRIDE;
-    bool needCheckIfServerHasCapability() const Q_DECL_OVERRIDE;
-    QString serverNeedsCapability() const Q_DECL_OVERRIDE;
-    QString code(QWidget *) const Q_DECL_OVERRIDE;
-    QUrl href() const Q_DECL_OVERRIDE;
+    QString help() const override;
+    QStringList needRequires(QWidget *parent) const override;
+    bool needCheckIfServerHasCapability() const override;
+    QString serverNeedsCapability() const override;
+    QString code(QWidget *) const override;
+    QUrl href() const override;
 };
 }
 

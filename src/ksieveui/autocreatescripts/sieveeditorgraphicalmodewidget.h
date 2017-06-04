@@ -38,15 +38,15 @@ public:
     explicit SieveEditorGraphicalModeWidget(QWidget *parent = nullptr);
     ~SieveEditorGraphicalModeWidget();
 
-    QString script(QString &requires) const Q_DECL_OVERRIDE;
+    QString script(QString &requires) const override;
 
-    void setSieveCapabilities(const QStringList &capabilities) Q_DECL_OVERRIDE;
-    QStringList sieveCapabilities() Q_DECL_OVERRIDE;
+    void setSieveCapabilities(const QStringList &capabilities) override;
+    QStringList sieveCapabilities() override;
 
-    void loadScript(const QDomDocument &doc, QString &error) Q_DECL_OVERRIDE;
+    void loadScript(const QDomDocument &doc, QString &error) override;
 
-    QString currentscript() Q_DECL_OVERRIDE;
-    void setImportScript(const QString &) Q_DECL_OVERRIDE;
+    QString currentscript() override;
+    void setImportScript(const QString &) override;
 
 Q_SIGNALS:
     void enableButtonOk(bool);

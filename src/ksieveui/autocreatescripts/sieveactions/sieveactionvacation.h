@@ -27,14 +27,14 @@ class SieveActionVacation : public SieveAction
 public:
     explicit SieveActionVacation(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
 
-    QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
-    QString code(QWidget *) const Q_DECL_OVERRIDE;
-    QString serverNeedsCapability() const Q_DECL_OVERRIDE;
-    bool needCheckIfServerHasCapability() const Q_DECL_OVERRIDE;
-    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, QString &error) Q_DECL_OVERRIDE;
-    QStringList needRequires(QWidget *parent) const Q_DECL_OVERRIDE;
-    QString help() const Q_DECL_OVERRIDE;
-    QUrl href() const Q_DECL_OVERRIDE;
+    QWidget *createParamWidget(QWidget *parent) const override;
+    QString code(QWidget *) const override;
+    QString serverNeedsCapability() const override;
+    bool needCheckIfServerHasCapability() const override;
+    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, QString &error) override;
+    QStringList needRequires(QWidget *parent) const override;
+    QString help() const override;
+    QUrl href() const override;
 private:
     bool mHasVacationSecondsSupport;
 };

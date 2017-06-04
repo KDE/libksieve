@@ -29,8 +29,8 @@ public:
     ~SieveEditorWebEngineView();
 
 protected:
-    void contextMenuEvent(QContextMenuEvent *ev) Q_DECL_OVERRIDE;
-    QWebEngineView *createWindow(QWebEnginePage::WebWindowType type) Q_DECL_OVERRIDE;
+    void contextMenuEvent(QContextMenuEvent *ev) override;
+    QWebEngineView *createWindow(QWebEnginePage::WebWindowType type) override;
 private:
     void downloadRequested(QWebEngineDownloadItem *);
 };

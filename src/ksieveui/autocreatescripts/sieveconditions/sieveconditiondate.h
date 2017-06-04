@@ -28,21 +28,21 @@ class SieveConditionDate : public SieveCondition
 public:
     explicit SieveConditionDate(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
 
-    QWidget *createParamWidget(QWidget *parent) const Q_DECL_OVERRIDE;
+    QWidget *createParamWidget(QWidget *parent) const override;
 
-    QString code(QWidget *w) const Q_DECL_OVERRIDE;
+    QString code(QWidget *w) const override;
 
-    bool needCheckIfServerHasCapability() const Q_DECL_OVERRIDE;
+    bool needCheckIfServerHasCapability() const override;
 
-    QString serverNeedsCapability() const Q_DECL_OVERRIDE;
+    QString serverNeedsCapability() const override;
 
-    QStringList needRequires(QWidget *parent) const Q_DECL_OVERRIDE;
+    QStringList needRequires(QWidget *parent) const override;
 
-    QString help() const Q_DECL_OVERRIDE;
+    QString help() const override;
 
-    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, bool notCondition, QString &error) Q_DECL_OVERRIDE;
+    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, bool notCondition, QString &error) override;
 
-    QUrl href() const Q_DECL_OVERRIDE;
+    QUrl href() const override;
 };
 }
 

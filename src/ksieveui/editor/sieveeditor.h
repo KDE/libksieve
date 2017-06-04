@@ -58,7 +58,7 @@ Q_SIGNALS:
     void cancelClicked();
 
 protected:
-    bool event(QEvent *e) Q_DECL_OVERRIDE;
+    bool event(QEvent *e) override;
 
 private:
     void writeConfig();

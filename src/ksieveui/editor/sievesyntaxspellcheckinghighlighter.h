@@ -30,7 +30,7 @@ public:
     ~SieveSyntaxSpellCheckingHighlighter();
 
 protected:
-    bool spellCheckBlock(const QString &text) Q_DECL_OVERRIDE;
+    bool spellCheckBlock(const QString &text) override;
 };
 }
 #endif // SIEVESYNTAXSPELLCHECKINGHIGHLIGHTER_H
