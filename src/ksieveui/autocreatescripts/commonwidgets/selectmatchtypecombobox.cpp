@@ -74,9 +74,11 @@ void SelectMatchTypeComboBox::setCode(const QString &code, const QString &name, 
     const int index = findData(code);
     if (index != -1) {
         setCurrentIndex(index);
-        //TODO optimize
-        const QString value = itemData(index).toString();
-        Q_EMIT switchToRegexp(value.contains(QStringLiteral("regex")));
+        if (mHasRegexCapability) {
+            //TODO optimize
+            const QString value = itemData(index).toString();
+            Q_EMIT switchToRegexp(value.contains(QStringLiteral("regex")));
+        }
     } else {
         AutoCreateScriptUtil::comboboxItemNotFound(code, name, error);
         setCurrentIndex(0);
