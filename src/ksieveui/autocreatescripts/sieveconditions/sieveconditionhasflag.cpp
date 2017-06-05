@@ -67,8 +67,9 @@ QWidget *SieveConditionHasFlag::createParamWidget(QWidget *parent) const
     QLabel *lab = new QLabel(i18n("Value:"));
     grid->addWidget(lab, row, 0);
 
-    QLineEdit *value = new QLineEdit;
-    connect(value, &QLineEdit::textChanged, this, &SieveConditionHasFlag::valueChanged);
+    AbstractRegexpEditorLineEdit *value = AutoCreateScriptUtil::createRegexpEditorLineEdit();
+    connect(value, &AbstractRegexpEditorLineEdit::textChanged, this, &SieveConditionHasFlag::valueChanged);
+    connect(selecttype, &SelectMatchTypeComboBox::switchToRegexp, value, &AbstractRegexpEditorLineEdit::switchToRegexpEditorLineEdit);
     value->setObjectName(QStringLiteral("value"));
     grid->addWidget(value, row, 1);
 
@@ -90,8 +91,8 @@ QString SieveConditionHasFlag::code(QWidget *w) const
             result += QLatin1String(" \"") + variableNameStr + QLatin1Char('"');
         }
 
-        const QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
-        const QString valueStr = value->text();
+        const AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+        const QString valueStr = value->code();
         result += QLatin1String(" \"") + valueStr + QLatin1Char('"');
     }
     return result + AutoCreateScriptUtil::generateConditionComment(comment());
@@ -169,16 +170,16 @@ bool SieveConditionHasFlag::setParamWidgetValue(const QDomElement &element, QWid
     switch (strList.count()) {
     case 1:
     {
-        QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
-        value->setText(strList.at(0));
+        AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+        value->setCode(strList.at(0));
         break;
     }
     case 2:
         if (hasVariableSupport) {
             QLineEdit *variableName = w->findChild<QLineEdit *>(QStringLiteral("variablename"));
             variableName->setText(strList.at(0));
-            QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
-            value->setText(strList.at(1));
+            AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+            value->setCode(strList.at(1));
         } else {
             qCDebug(LIBKSIEVE_LOG) << " SieveConditionHasFlag has not variable support";
         }
