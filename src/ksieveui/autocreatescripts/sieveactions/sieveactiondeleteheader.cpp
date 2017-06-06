@@ -139,7 +139,6 @@ QUrl SieveActionDeleteHeader::href() const
     return SieveEditorUtil::helpUrl(SieveEditorUtil::strToVariableName(name()));
 }
 
-
 QStringList SieveActionDeleteHeader::needRequires(QWidget *w) const
 {
     const SelectMatchTypeComboBox *combo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));

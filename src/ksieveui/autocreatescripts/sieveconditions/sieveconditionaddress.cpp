@@ -66,7 +66,6 @@ QWidget *SieveConditionAddress::createParamWidget(QWidget *parent) const
     QLabel *lab = new QLabel(i18n("address:"));
     grid->addWidget(lab, 1, 0);
 
-
     AbstractRegexpEditorLineEdit *edit = AutoCreateScriptUtil::createRegexpEditorLineEdit();
     connect(edit, &AbstractRegexpEditorLineEdit::textChanged, this, &SieveConditionAddress::valueChanged);
     connect(selectMatchCombobox, &SelectMatchTypeComboBox::switchToRegexp, edit, &AbstractRegexpEditorLineEdit::switchToRegexpEditorLineEdit);
