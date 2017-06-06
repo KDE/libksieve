@@ -19,7 +19,7 @@
 #include "session.h"
 
 #include <QUrl>
-#include <QtCore/QPointer>
+#include <QPointer>
 
 namespace KManageSieve {
 class SieveJob::Private

@@ -20,8 +20,8 @@
 #ifndef KMANAGESIEVE_SESSIONTHREAD_H
 #define KMANAGESIEVE_SESSIONTHREAD_H
 
-#include <QtCore/QObject>
-#include <QtCore/QUrl>
+#include <QObject>
+#include <QUrl>
 
 #include <KIO/Global>
 #include <KTcpSocket>

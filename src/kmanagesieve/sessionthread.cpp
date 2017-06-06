@@ -22,9 +22,9 @@
 #include "response.h"
 #include "kmanagersieve_debug.h"
 
-#include <QtCore/QThread>
-#include <QtCore/QUrlQuery>
-#include <QtCore/QTimer>
+#include <QThread>
+#include <QUrlQuery>
+#include <QTimer>
 
 #include <KLocalizedString>
 
