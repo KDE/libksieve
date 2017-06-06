@@ -35,6 +35,8 @@ public:
     void switchToRegexpEditorLineEdit(bool regexpEditor) override;
     void setCode(const QString &str) override;
     QString code() const override;
+    void setClearButtonEnabled(bool b) override;
+    void setPlaceholderText(const QString &str) override;
 
 private:
     QLineEdit *mLineEdit;

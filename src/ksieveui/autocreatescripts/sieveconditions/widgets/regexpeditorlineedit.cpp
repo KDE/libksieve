@@ -53,3 +53,14 @@ QString KSieveUi::RegexpEditorLineEdit::code() const
 {
     return mLineEdit->text();
 }
+
+
+void KSieveUi::RegexpEditorLineEdit::setClearButtonEnabled(bool b)
+{
+    mLineEdit->setClearButtonEnabled(b);
+}
+
+void KSieveUi::RegexpEditorLineEdit::setPlaceholderText(const QString &str)
+{
+    mLineEdit->setPlaceholderText(str);
+}
