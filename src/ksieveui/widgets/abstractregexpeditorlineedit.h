@@ -38,7 +38,6 @@ public:
     virtual void setClearButtonEnabled(bool b) = 0;
     virtual void setPlaceholderText(const QString &str) = 0;
 
-
 Q_SIGNALS:
     void textChanged(const QString &);
 };

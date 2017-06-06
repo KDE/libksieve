@@ -20,6 +20,7 @@
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "widgets/selectheadertypecombobox.h"
+#include "editor/sieveeditorutil.h"
 
 #include <KLocalizedString>
 #include <QLineEdit>
@@ -59,8 +60,9 @@ QWidget *SieveConditionHeader::createParamWidget(QWidget *parent) const
     QLabel *lab = new QLabel(i18n("With value:"));
     grid->addWidget(lab, 1, 0);
 
-    QLineEdit *value = new QLineEdit;
-    connect(value, &QLineEdit::textChanged, this, &SieveConditionHeader::valueChanged);
+    AbstractRegexpEditorLineEdit *value = AutoCreateScriptUtil::createRegexpEditorLineEdit();
+    connect(value, &AbstractRegexpEditorLineEdit::textChanged, this, &SieveConditionHeader::valueChanged);
+    connect(matchTypeCombo, &SelectMatchTypeComboBox::switchToRegexp, value, &AbstractRegexpEditorLineEdit::switchToRegexpEditorLineEdit);
     value->setObjectName(QStringLiteral("value"));
     grid->addWidget(value, 1, 1);
     return w;
@@ -75,8 +77,8 @@ QString SieveConditionHeader::code(QWidget *w) const
     const SelectHeaderTypeComboBox *headerType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertype"));
     const QString headerStr = headerType->code();
 
-    const QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
-    QString valueStr = value->text();
+    const AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+    QString valueStr = edit->code();
 
     valueStr = AutoCreateScriptUtil::fixListValue(valueStr);
     return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("header %1 %2 %3").arg(matchString, headerStr, valueStr)
@@ -106,9 +108,9 @@ bool SieveConditionHeader::setParamWidgetValue(const QDomElement &element, QWidg
                     SelectHeaderTypeComboBox *headerType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertype"));
                     headerType->setCode(e.text());
                 } else if (index == 1) {
-                    QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+                    AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
                     QString st = AutoCreateScriptUtil::quoteStr(e.text(), true);
-                    value->setText(st);
+                    value->setCode(st);
                 } else {
                     tooManyArgument(tagName, index, 2, error);
                     qCDebug(LIBKSIEVE_LOG) << " SieveConditionHeader::setParamWidgetValue too many argument " << index;
@@ -120,8 +122,8 @@ bool SieveConditionHeader::setParamWidgetValue(const QDomElement &element, QWidg
                     SelectHeaderTypeComboBox *headerType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertype"));
                     headerType->setCode(AutoCreateScriptUtil::listValueToStr(e));
                 } else if (index == 1) {
-                    QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
-                    value->setText(AutoCreateScriptUtil::listValueToStr(e));
+                    AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+                    value->setCode(AutoCreateScriptUtil::listValueToStr(e));
                 } else {
                     tooManyArgument(tagName, index, 2, error);
                     qCDebug(LIBKSIEVE_LOG) << " SieveConditionHeader::setParamWidgetValue too many argument " << index;
@@ -144,7 +146,6 @@ bool SieveConditionHeader::setParamWidgetValue(const QDomElement &element, QWidg
 
     return true;
 }
-
 
 QStringList KSieveUi::SieveConditionHeader::needRequires(QWidget *w) const
 {

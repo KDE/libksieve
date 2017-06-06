@@ -52,8 +52,9 @@ QWidget *SieveConditionBody::createParamWidget(QWidget *parent) const
     matchType->setObjectName(QStringLiteral("matchtype"));
     connect(matchType, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionBody::valueChanged);
 
-    QLineEdit *edit = new QLineEdit;
-    connect(edit, &QLineEdit::textChanged, this, &SieveConditionBody::valueChanged);
+    AbstractRegexpEditorLineEdit *edit = AutoCreateScriptUtil::createRegexpEditorLineEdit();
+    connect(edit, &AbstractRegexpEditorLineEdit::textChanged, this, &SieveConditionBody::valueChanged);
+    connect(matchType, &SelectMatchTypeComboBox::switchToRegexp, edit, &AbstractRegexpEditorLineEdit::switchToRegexpEditorLineEdit);
     edit->setClearButtonEnabled(true);
     lay->addWidget(edit);
     edit->setObjectName(QStringLiteral("edit"));
@@ -69,8 +70,8 @@ QString SieveConditionBody::code(QWidget *w) const
     bool isNegative = false;
     const QString matchValue = matchType->code(isNegative);
 
-    QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
-    const QString editValue = AutoCreateScriptUtil::createAddressList(edit->text().trimmed(), false);
+    const AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
+    const QString editValue = AutoCreateScriptUtil::createAddressList(edit->code().trimmed(), false);
     return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("body %1 %2 %3").arg(bodyValue, matchValue, editValue)
            + AutoCreateScriptUtil::generateConditionComment(comment());
 }
@@ -150,15 +151,15 @@ bool SieveConditionBody::setParamWidgetValue(const QDomElement &element, QWidget
         bodyType->setCode(tagValueList.at(0), QString(), name(), error);
         SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
         matchType->setCode(tagValueList.at(1), name(), error);
-        QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
-        edit->setText(wasListElement ? strValue.at(0) : AutoCreateScriptUtil::quoteStr(strValue.at(0)));
+        AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
+        edit->setCode(wasListElement ? strValue.at(0) : AutoCreateScriptUtil::quoteStr(strValue.at(0)));
     } else if (strValue.count() == 2) {
         SelectBodyTypeWidget *bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
         bodyType->setCode(tagValueList.at(0), indexStr == 2 ? strValue.at(0) : QString(), name(), error);
         SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
         matchType->setCode(tagValueList.at(1), name(), error);
-        QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
-        edit->setText(indexStr == 1 ? AutoCreateScriptUtil::quoteStr(strValue.at(0)) : AutoCreateScriptUtil::quoteStr(strValue.at(1)));
+        AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
+        edit->setCode(indexStr == 1 ? AutoCreateScriptUtil::quoteStr(strValue.at(0)) : AutoCreateScriptUtil::quoteStr(strValue.at(1)));
     }
     return true;
 }

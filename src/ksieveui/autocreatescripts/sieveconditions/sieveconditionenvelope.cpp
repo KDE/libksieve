@@ -68,8 +68,9 @@ QWidget *SieveConditionEnvelope::createParamWidget(QWidget *parent) const
     QLabel *lab = new QLabel(i18n("address:"));
     grid->addWidget(lab, 1, 0);
 
-    QLineEdit *edit = new QLineEdit;
-    connect(edit, &QLineEdit::textChanged, this, &SieveConditionEnvelope::valueChanged);
+    AbstractRegexpEditorLineEdit *edit = AutoCreateScriptUtil::createRegexpEditorLineEdit();
+    connect(edit, &AbstractRegexpEditorLineEdit::textChanged, this, &SieveConditionEnvelope::valueChanged);
+    connect(selectMatchCombobox, &SelectMatchTypeComboBox::switchToRegexp, edit, &AbstractRegexpEditorLineEdit::switchToRegexpEditorLineEdit);
     edit->setClearButtonEnabled(true);
     edit->setPlaceholderText(i18n("Use ; to separate emails"));
     grid->addWidget(edit, 1, 1);
@@ -90,8 +91,8 @@ QString SieveConditionEnvelope::code(QWidget *w) const
     const SelectHeaderTypeComboBox *selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
     const QString selectHeaderTypeStr = selectHeaderType->code();
 
-    const QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("editaddress"));
-    const QString addressStr = AutoCreateScriptUtil::createAddressList(edit->text().trimmed(), false);
+    const AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
+    const QString addressStr = AutoCreateScriptUtil::createAddressList(edit->code().trimmed(), false);
     return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("envelope %1 %2 %3 %4").arg(selectAddressPartStr, matchTypeStr, selectHeaderTypeStr, addressStr)
            + AutoCreateScriptUtil::generateConditionComment(comment());
 }
@@ -152,8 +153,8 @@ bool SieveConditionEnvelope::setParamWidgetValue(const QDomElement &element, QWi
                     SelectHeaderTypeComboBox *selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
                     selectHeaderType->setCode(e.text());
                 } else if (indexStr == 1) {
-                    QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("editaddress"));
-                    edit->setText(AutoCreateScriptUtil::quoteStr(e.text()));
+                    AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
+                    edit->setCode(AutoCreateScriptUtil::quoteStr(e.text()));
                 } else {
                     tooManyArgument(tagName, indexStr, 2, error);
                     qCDebug(LIBKSIEVE_LOG) << "SieveConditionEnvelope::setParamWidgetValue too many argument indexStr " << indexStr;
@@ -164,8 +165,8 @@ bool SieveConditionEnvelope::setParamWidgetValue(const QDomElement &element, QWi
                     SelectHeaderTypeComboBox *selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
                     selectHeaderType->setCode(AutoCreateScriptUtil::listValueToStr(e));
                 } else if (indexStr == 1) {
-                    QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("editaddress"));
-                    edit->setText(AutoCreateScriptUtil::listValueToStr(e));
+                    AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
+                    edit->setCode(AutoCreateScriptUtil::listValueToStr(e));
                 }
                 ++indexStr;
             } else if (tagName == QLatin1String("crlf")) {

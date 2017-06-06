@@ -71,8 +71,9 @@ QWidget *SieveConditionServerMetaData::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("Value:"));
     grid->addWidget(lab, 2, 0);
 
-    QLineEdit *value = new QLineEdit;
-    connect(value, &QLineEdit::textChanged, this, &SieveConditionServerMetaData::valueChanged);
+    AbstractRegexpEditorLineEdit *value = AutoCreateScriptUtil::createRegexpEditorLineEdit();
+    connect(value, &AbstractRegexpEditorLineEdit::textChanged, this, &SieveConditionServerMetaData::valueChanged);
+    connect(selectType, &SelectMatchTypeComboBox::switchToRegexp, value, &AbstractRegexpEditorLineEdit::switchToRegexpEditorLineEdit);
     value->setObjectName(QStringLiteral("value"));
     grid->addWidget(value, 2, 1);
 
@@ -97,8 +98,8 @@ QString SieveConditionServerMetaData::code(QWidget *w) const
 
     result += QStringLiteral("\"%1\" ").arg(annotationStr);
 
-    const QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
-    const QString valueStr = value->text();
+    const AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+    const QString valueStr = value->code();
 
     result += QStringLiteral("\"%1\"").arg(valueStr);
     return result + AutoCreateScriptUtil::generateConditionComment(comment());
@@ -152,8 +153,8 @@ bool SieveConditionServerMetaData::setParamWidgetValue(const QDomElement &elemen
                 }
                 case 2:
                 {
-                    QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
-                    value->setText(tagValue);
+                    AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+                    value->setCode(tagValue);
                     break;
                 }
                 default:
