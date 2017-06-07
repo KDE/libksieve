@@ -146,18 +146,30 @@ bool SieveConditionBody::setParamWidgetValue(const QDomElement &element, QWidget
         setComment(commentStr);
     }
 
+    QString errorStr;
     if (strValue.count() == 1) {
         SelectBodyTypeWidget *bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
-        bodyType->setCode(tagValueList.at(0), QString(), name(), error);
-        SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
-        matchType->setCode(tagValueList.at(1), name(), error);
+        bodyType->setCode(tagValueList.at(0), QString(), name(), errorStr);
+        if (errorStr.isEmpty()) {
+            SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+            matchType->setCode(tagValueList.at(1), name(), error);
+        } else {
+            SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+            matchType->setCode(tagValueList.at(0), name(), error);
+            bodyType->setCode(tagValueList.at(1), QString(), name(), errorStr);
+        }
         AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
         edit->setCode(wasListElement ? strValue.at(0) : AutoCreateScriptUtil::quoteStr(strValue.at(0)));
     } else if (strValue.count() == 2) {
         SelectBodyTypeWidget *bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
-        bodyType->setCode(tagValueList.at(0), indexStr == 2 ? strValue.at(0) : QString(), name(), error);
+        bodyType->setCode(tagValueList.at(0), indexStr == 2 ? strValue.at(0) : QString(), name(), errorStr);
         SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
-        matchType->setCode(tagValueList.at(1), name(), error);
+        if (!errorStr.isEmpty()) {
+            matchType->setCode(tagValueList.at(0), name(), error);
+            bodyType->setCode(tagValueList.at(1), indexStr == 2 ? strValue.at(0) : QString(), name(), error);
+        } else {
+            matchType->setCode(tagValueList.at(1), name(), error);
+        }
         AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
         edit->setCode(indexStr == 1 ? AutoCreateScriptUtil::quoteStr(strValue.at(0)) : AutoCreateScriptUtil::quoteStr(strValue.at(1)));
     }

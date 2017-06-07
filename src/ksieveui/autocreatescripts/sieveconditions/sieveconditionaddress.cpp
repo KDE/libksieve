@@ -178,7 +178,6 @@ bool SieveConditionAddress::setParamWidgetValue(const QDomElement &element, QWid
         } else { //Problem with order
             SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
             selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(lstTagValue.at(0), notCondition), name(), error);
-            SelectAddressPartComboBox *selectAddressPart = w->findChild<SelectAddressPartComboBox *>(QStringLiteral("addresspartcombobox"));
             selectAddressPart->setCode(AutoCreateScriptUtil::tagValue(lstTagValue.at(1)), name(), error);
         }
     } else if (lstTagValue.count() > 2) {
