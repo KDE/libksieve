@@ -25,6 +25,7 @@
 #include <KTimeComboBox>
 #include <QSpinBox>
 #include <QLineEdit>
+#include <QRegularExpressionValidator>
 
 #include <kpimtextedit/plaintexteditorwidget.h>
 #include "libksieve_debug.h"
@@ -209,7 +210,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mDomainEdit->setObjectName(QStringLiteral("mDomainEdit"));
     mDomainEdit->setClearButtonEnabled(true);
     mDomainEdit->setEnabled(false);
-    mDomainEdit->setValidator(new QRegExpValidator(QRegExp(QLatin1String("[a-zA-Z0-9+-]+(?:\\.[a-zA-Z0-9+-]+)*")), mDomainEdit));
+    mDomainEdit->setValidator(new QRegularExpressionValidator(QRegularExpression(QStringLiteral("[a-zA-Z0-9+-]+(?:\\.[a-zA-Z0-9+-]+)*")), mDomainEdit));
     glay->addWidget(mDomainCheck, row, 0);
     glay->addWidget(mDomainEdit, row, 1);
     connect(mDomainCheck, &QCheckBox::toggled, mDomainEdit, &QLineEdit::setEnabled);
