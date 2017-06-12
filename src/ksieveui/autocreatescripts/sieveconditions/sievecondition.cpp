@@ -110,7 +110,7 @@ void SieveCondition::unknowTagValue(const QString &tagValue, QString &error)
 
 void SieveCondition::tooManyArgument(const QString &tagName, int index, int maxValue, QString &error)
 {
-    error += i18n("Too many argument found for \"%1\", max value is %2, number of value found %3 for %4", name(), maxValue, index, tagName) + QLatin1Char('\n');
+    error += i18n("Too many argument found for \"%1\", max value is %2, number of value found %3 for %4", name(), maxValue, (index + 1), tagName) + QLatin1Char('\n');
 }
 
 void SieveCondition::serverDoesNotSupportFeatures(const QString &feature, QString &error)
