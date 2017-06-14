@@ -223,6 +223,9 @@ void ManageSieveWidget::slotNewScript()
                                          i18n("unnamed"), &ok);
     name = name.trimmed();
     if (!ok || name.isEmpty()) {
+        if (ok && name.isEmpty()) {
+            KMessageBox::error(this, i18n("Empty name is not a valid name"), i18n("New Script"));
+        }
         return;
     }
 
