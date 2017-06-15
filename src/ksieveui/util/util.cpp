@@ -61,7 +61,8 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::fullAccountInfo(const QString &ident
     return accountInfo;
 }
 
-KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &identifier, SieveImapPasswordProvider *provider, bool withVacationFileName, std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> &interface)
+KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &identifier, SieveImapPasswordProvider *provider, bool withVacationFileName,
+                                                            std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> &interface)
 {
     KSieveUi::Util::AccountInfo accountInfo;
     if (!interface) {

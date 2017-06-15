@@ -30,16 +30,16 @@ class DataImapPasswordProvider : public KSieveUi::SieveImapPasswordProvider
 {
 public:
     DataImapPasswordProvider(AkonadiImapSettingInterfaceDataTest *data)
-     : mData(data)
+        : mData(data)
     {
     }
 
-    QString password(const QString &/*identifier*/) override
+    QString password(const QString & /*identifier*/) override
     {
         return mData->password;
     }
 
-    QString sieveCustomPassword(const QString &/*identifier*/) override
+    QString sieveCustomPassword(const QString & /*identifier*/) override
     {
         return mData->sieveCustomPassword;
     }

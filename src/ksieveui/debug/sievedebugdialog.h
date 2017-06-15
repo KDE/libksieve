@@ -29,7 +29,6 @@ namespace KPIMTextEdit {
 class PlainTextEditorWidget;
 }
 namespace KSieveUi {
-
 class SieveImapPasswordProvider;
 
 /**
@@ -40,7 +39,7 @@ class KSIEVEUI_EXPORT SieveDebugDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit SieveDebugDialog(SieveImapPasswordProvider* passwordProvider, QWidget *parent = nullptr);
+    explicit SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, QWidget *parent = nullptr);
     ~SieveDebugDialog();
 
 Q_SIGNALS:
@@ -61,7 +60,7 @@ private:
     QUrl mUrl;
     KSyntaxHighlighting::Repository mRepo;
 
-    SieveImapPasswordProvider* mPasswordProvider;
+    SieveImapPasswordProvider *mPasswordProvider;
     KPIMTextEdit::PlainTextEditorWidget *mEdit;
     QStringList mResourceIdentifier;
     QStringList mScriptList;

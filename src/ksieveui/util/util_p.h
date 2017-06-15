@@ -80,7 +80,8 @@ bool hasKep14Support(const QStringList &sieveCapabilities, const QStringList &av
  */
 bool isKep14ProtectedName(const QString &scriptName);
 
-KSIEVEUI_TESTS_EXPORT KSieveUi::Util::AccountInfo findAccountInfo(const QString &identifier, SieveImapPasswordProvider *provider, bool withVacationFileName, std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> &interface);
+KSIEVEUI_TESTS_EXPORT KSieveUi::Util::AccountInfo findAccountInfo(const QString &identifier, SieveImapPasswordProvider *provider, bool withVacationFileName,
+                                                                  std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> &interface);
 /**
  * Returns all sieve account info with the given @p identifier.
  */

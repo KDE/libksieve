@@ -44,7 +44,7 @@ public:
     bool mQuestionAsked;
 };
 
-VacationManager::VacationManager(SieveImapPasswordProvider* passwordProvider, QWidget *parent)
+VacationManager::VacationManager(SieveImapPasswordProvider *passwordProvider, QWidget *parent)
     : QObject(parent)
     , d(new KSieveUi::VacationManagerPrivate(parent))
 {

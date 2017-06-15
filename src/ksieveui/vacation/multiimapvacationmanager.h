@@ -35,7 +35,7 @@ class KSIEVEUI_EXPORT MultiImapVacationManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit MultiImapVacationManager(SieveImapPasswordProvider* passwordProvider, QObject *parent = nullptr);
+    explicit MultiImapVacationManager(SieveImapPasswordProvider *passwordProvider, QObject *parent = nullptr);
     ~MultiImapVacationManager();
 
     void checkVacation();
@@ -52,7 +52,7 @@ private Q_SLOTS:
     void slotCheckKep14Ended(KSieveUi::CheckKolabKep14SupportJob *job, bool success);
 
 private:
-    SieveImapPasswordProvider* mPasswordProvider;
+    SieveImapPasswordProvider *mPasswordProvider;
     int mNumberOfJobs;
     bool mCheckInProgress;
 

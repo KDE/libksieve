@@ -32,7 +32,7 @@
 
 using namespace KSieveUi;
 
-SieveDebugDialog::SieveDebugDialog(SieveImapPasswordProvider* passwordProvider, QWidget *parent)
+SieveDebugDialog::SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, QWidget *parent)
     : QDialog(parent)
     , mSieveJob(nullptr)
     , mPasswordProvider(passwordProvider)

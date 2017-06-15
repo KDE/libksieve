@@ -27,7 +27,7 @@
 
 using namespace KSieveUi;
 
-Vacation::Vacation(SieveImapPasswordProvider* passwordProvider, QObject *parent, bool checkOnly, const QUrl &url)
+Vacation::Vacation(SieveImapPasswordProvider *passwordProvider, QObject *parent, bool checkOnly, const QUrl &url)
     : QObject(parent)
     , mPasswordProvider(passwordProvider)
     , mSieveJob(nullptr)

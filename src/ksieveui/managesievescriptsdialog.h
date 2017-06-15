@@ -39,7 +39,7 @@ class KSIEVEUI_EXPORT ManageSieveScriptsDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit ManageSieveScriptsDialog(SieveImapPasswordProvider* passwordProvider, QWidget *parent = nullptr);
+    explicit ManageSieveScriptsDialog(SieveImapPasswordProvider *passwordProvider, QWidget *parent = nullptr);
     ~ManageSieveScriptsDialog();
 
 Q_SIGNALS:

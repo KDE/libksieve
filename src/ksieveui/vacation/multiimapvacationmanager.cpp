@@ -28,7 +28,7 @@
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
-MultiImapVacationManager::MultiImapVacationManager(SieveImapPasswordProvider* passwordProvider, QObject *parent)
+MultiImapVacationManager::MultiImapVacationManager(SieveImapPasswordProvider *passwordProvider, QObject *parent)
     : QObject(parent)
     , mPasswordProvider(passwordProvider)
     , mNumberOfJobs(0)

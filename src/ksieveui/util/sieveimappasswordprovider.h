@@ -24,9 +24,7 @@
 
 class QString;
 
-namespace KSieveUi
-{
-
+namespace KSieveUi {
 class KSIEVEUI_EXPORT SieveImapPasswordProvider
 {
 public:
@@ -34,6 +32,5 @@ public:
     virtual QString password(const QString &identifier) = 0;
     virtual QString sieveCustomPassword(const QString &identifier) = 0;
 };
-
 }
 #endif

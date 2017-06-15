@@ -27,7 +27,7 @@
 
 using namespace KSieveUi;
 
-CustomManageSieveWidget::CustomManageSieveWidget(SieveImapPasswordProvider* passwordProvider, QWidget *parent)
+CustomManageSieveWidget::CustomManageSieveWidget(SieveImapPasswordProvider *passwordProvider, QWidget *parent)
     : KSieveUi::ManageSieveWidget(parent)
     , mPasswordProvider(passwordProvider)
 {
