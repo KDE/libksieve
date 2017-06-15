@@ -89,18 +89,6 @@ int AkonadiImapSettingInterfaceTest::alternateAuthentication() const
     return mData.alternateAuthentication;
 }
 
-QString AkonadiImapSettingInterfaceTest::password(const QString &identifier) const
-{
-    Q_UNUSED(identifier);
-    return mData.password;
-}
-
-QString AkonadiImapSettingInterfaceTest::sieveCustomPassword(const QString &identifier) const
-{
-    Q_UNUSED(identifier);
-    return mData.sieveCustomPassword;
-}
-
 int AkonadiImapSettingInterfaceTest::imapPort() const
 {
     return mData.imapPort;

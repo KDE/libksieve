@@ -28,8 +28,9 @@
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
-MultiImapVacationManager::MultiImapVacationManager(QObject *parent)
+MultiImapVacationManager::MultiImapVacationManager(SieveImapPasswordProvider* passwordProvider, QObject *parent)
     : QObject(parent)
+    , mPasswordProvider(passwordProvider)
     , mNumberOfJobs(0)
     , mCheckInProgress(false)
 {
@@ -48,7 +49,7 @@ QMap <QString, QUrl> MultiImapVacationManager::serverList() const
             continue;
         }
 
-        const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(instance.identifier());
+        const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(instance.identifier(), mPasswordProvider);
         const QUrl url = info.sieveUrl;
         if (!url.isEmpty()) {
             list.insert(instance.name(), url);

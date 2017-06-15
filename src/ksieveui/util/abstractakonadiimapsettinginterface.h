@@ -40,8 +40,6 @@ public:
     virtual int alternateAuthentication() const;
     virtual int authentication() const;
     virtual QString sieveAlternateUrl() const;
-    virtual QString password(const QString &identifier) const;
-    virtual QString sieveCustomPassword(const QString &identifier) const;
     virtual int imapPort() const;
 };
 }

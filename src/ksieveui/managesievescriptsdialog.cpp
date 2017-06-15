@@ -76,7 +76,7 @@ public:
     bool mWasActive : 1;
 };
 
-ManageSieveScriptsDialog::ManageSieveScriptsDialog(QWidget *parent)
+ManageSieveScriptsDialog::ManageSieveScriptsDialog(SieveImapPasswordProvider *passwordProvider, QWidget *parent)
     : QDialog(parent)
     , d(new KSieveUi::ManageSieveScriptsDialogPrivate)
 {
@@ -93,7 +93,7 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(QWidget *parent)
     vlay->setSpacing(0);
     vlay->setMargin(0);
 
-    d->mTreeView = new CustomManageSieveWidget(frame);
+    d->mTreeView = new CustomManageSieveWidget(passwordProvider, frame);
     connect(d->mTreeView, &CustomManageSieveWidget::editScript, this, &ManageSieveScriptsDialog::slotEditScript);
     connect(d->mTreeView, &CustomManageSieveWidget::newScript, this, &ManageSieveScriptsDialog::slotNewScript);
     connect(d->mTreeView, &CustomManageSieveWidget::updateButtons, this, &ManageSieveScriptsDialog::slotUpdateButtons);

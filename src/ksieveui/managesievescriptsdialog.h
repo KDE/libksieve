@@ -33,12 +33,13 @@ class SieveJob;
 namespace KSieveUi {
 class SieveEditor;
 class ManageSieveScriptsDialogPrivate;
+class SieveImapPasswordProvider;
 class KSIEVEUI_EXPORT ManageSieveScriptsDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit ManageSieveScriptsDialog(QWidget *parent = nullptr);
+    explicit ManageSieveScriptsDialog(SieveImapPasswordProvider* passwordProvider, QWidget *parent = nullptr);
     ~ManageSieveScriptsDialog();
 
 Q_SIGNALS:

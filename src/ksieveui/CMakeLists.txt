@@ -268,6 +268,7 @@ ecm_generate_headers(ksieveui_Camelcaseutil_HEADERS
     HEADER_NAMES
     Util
     SieveImapAccountSettings
+    SieveImapPasswordProvider
     REQUIRED_HEADERS ksieveui_util_HEADERS
     PREFIX KSieveUi
     RELATIVE util

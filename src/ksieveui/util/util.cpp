@@ -41,6 +41,7 @@
 #include "libksieve_debug.h"
 #include <PimCommon/PimUtil>
 #include "imapresourcesettings.h"
+#include "sieveimappasswordprovider.h"
 #include "sieve-vacation.h"
 #include "sieveimapinstance/sieveimapinstanceinterfacemanager.h"
 #include "sieveimapinstance/sieveimapinstance.h"
@@ -52,15 +53,15 @@
 
 using namespace KSieveUi;
 
-KSieveUi::Util::AccountInfo KSieveUi::Util::fullAccountInfo(const QString &identifier, bool withVacationFileName)
+KSieveUi::Util::AccountInfo KSieveUi::Util::fullAccountInfo(const QString &identifier, SieveImapPasswordProvider *provider, bool withVacationFileName)
 {
     std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> interfaceImap(PimCommon::Util::createImapSettingsInterface(identifier));
     std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> interface(new KSieveUi::AkonadiImapSettingInterface(interfaceImap));
-    KSieveUi::Util::AccountInfo accountInfo = KSieveUi::Util::findAccountInfo(identifier, withVacationFileName, interface);
+    KSieveUi::Util::AccountInfo accountInfo = KSieveUi::Util::findAccountInfo(identifier, provider, withVacationFileName, interface);
     return accountInfo;
 }
 
-KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &identifier, bool withVacationFileName, std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> &interface)
+KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &identifier, SieveImapPasswordProvider *provider, bool withVacationFileName, std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> &interface)
 {
     KSieveUi::Util::AccountInfo accountInfo;
     if (!interface) {
@@ -90,7 +91,7 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         u.setHost(server);
         u.setUserName(userName);
 
-        const QString pwd = interface->password(identifier);
+        const QString pwd = provider->password(identifier);
         u.setPassword(pwd);
         accountInfo.sieveImapAccountSettings.setPassword(pwd);
         accountInfo.sieveImapAccountSettings.setPort(interface->imapPort());
@@ -155,7 +156,7 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         accountInfo.sieveImapAccountSettings.setServerName(server);
         accountInfo.sieveImapAccountSettings.setUserName(userName);
         accountInfo.sieveImapAccountSettings.setAuthenticationType(static_cast<SieveImapAccountSettings::AuthenticationMode>((int)interface->authentication()));
-        const QString pwd = interface->password(identifier);
+        const QString pwd = provider->password(identifier);
         accountInfo.sieveImapAccountSettings.setPassword(pwd);
         accountInfo.sieveImapAccountSettings.setPort(interface->imapPort());
 
@@ -208,10 +209,10 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         const QString resultCustomAuthentication = interface->sieveCustomAuthentification();
         if (resultCustomAuthentication == QLatin1String("ImapUserPassword")) {
             u.setUserName(interface->userName());
-            const QString pwd = interface->password(identifier);
+            const QString pwd = provider->password(identifier);
             u.setPassword(pwd);
         } else if (resultCustomAuthentication == QLatin1String("CustomUserPassword")) {
-            const QString pwd = interface->sieveCustomPassword(identifier);
+            const QString pwd = provider->sieveCustomPassword(identifier);
             u.setPassword(pwd);
             u.setUserName(interface->sieveCustomUsername());
         } else {

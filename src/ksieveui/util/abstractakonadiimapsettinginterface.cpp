@@ -84,18 +84,6 @@ QString AbstractAkonadiImapSettingInterface::sieveAlternateUrl() const
     return {};
 }
 
-QString AbstractAkonadiImapSettingInterface::password(const QString &identifier) const
-{
-    Q_UNUSED(identifier);
-    return {};
-}
-
-QString AbstractAkonadiImapSettingInterface::sieveCustomPassword(const QString &identifier) const
-{
-    Q_UNUSED(identifier);
-    return {};
-}
-
 int AbstractAkonadiImapSettingInterface::imapPort() const
 {
     return -1;

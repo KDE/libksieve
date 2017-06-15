@@ -44,11 +44,11 @@ public:
     bool mQuestionAsked;
 };
 
-VacationManager::VacationManager(QWidget *parent)
+VacationManager::VacationManager(SieveImapPasswordProvider* passwordProvider, QWidget *parent)
     : QObject(parent)
     , d(new KSieveUi::VacationManagerPrivate(parent))
 {
-    d->mCheckVacation = new KSieveUi::MultiImapVacationManager(this);
+    d->mCheckVacation = new KSieveUi::MultiImapVacationManager(passwordProvider, this);
     connect(d->mCheckVacation.data(), &KSieveUi::MultiImapVacationManager::scriptActive, this, &VacationManager::updateVacationScriptStatus);
     connect(d->mCheckVacation.data(), &KSieveUi::MultiImapVacationManager::scriptActive, this, &VacationManager::slotUpdateVacationScriptStatus);
 }

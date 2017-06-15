@@ -22,8 +22,30 @@
 #include "imapresourcesettings.h"
 #include "akonadiimapsettinginterfacetest.h"
 #include "../abstractakonadiimapsettinginterface.h"
+#include "../sieveimappasswordprovider.h"
 #include <KSieveUi/SieveImapAccountSettings>
 #include <QTest>
+
+class DataImapPasswordProvider : public KSieveUi::SieveImapPasswordProvider
+{
+public:
+    DataImapPasswordProvider(AkonadiImapSettingInterfaceDataTest *data)
+     : mData(data)
+    {
+    }
+
+    QString password(const QString &/*identifier*/) override
+    {
+        return mData->password;
+    }
+
+    QString sieveCustomPassword(const QString &/*identifier*/) override
+    {
+        return mData->sieveCustomPassword;
+    }
+
+    AkonadiImapSettingInterfaceDataTest *mData;
+};
 
 UtilMethodTest::UtilMethodTest(QObject *parent)
     : QObject(parent)
@@ -33,7 +55,7 @@ UtilMethodTest::UtilMethodTest(QObject *parent)
 void UtilMethodTest::shouldReturnEmptyInfo()
 {
     std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> interface(new KSieveUi::AbstractAkonadiImapSettingInterface);
-    KSieveUi::Util::AccountInfo info = KSieveUi::Util::findAccountInfo(QStringLiteral("foo"), false, interface);
+    KSieveUi::Util::AccountInfo info = KSieveUi::Util::findAccountInfo(QStringLiteral("dummy"), {}, false, interface);
     QVERIFY(!info.sieveImapAccountSettings.isValid());
 }
 
@@ -521,7 +543,8 @@ void UtilMethodTest::shouldAssignValue()
     QFETCH(bool, useVacationFile);
 
     std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> interface(new AkonadiImapSettingInterfaceTest(data));
-    const KSieveUi::Util::AccountInfo info = KSieveUi::Util::findAccountInfo(QStringLiteral("foo"), useVacationFile, interface);
+    std::unique_ptr<DataImapPasswordProvider> provider(new DataImapPasswordProvider(&data));
+    const KSieveUi::Util::AccountInfo info = KSieveUi::Util::findAccountInfo(QStringLiteral("foo"), provider.get(), useVacationFile, interface);
     QCOMPARE(info.sieveImapAccountSettings.isValid(), sieveImapAccountValid);
     QCOMPARE(info, accountInfo);
 }

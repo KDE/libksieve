@@ -27,8 +27,9 @@
 
 using namespace KSieveUi;
 
-Vacation::Vacation(QObject *parent, bool checkOnly, const QUrl &url)
+Vacation::Vacation(SieveImapPasswordProvider* passwordProvider, QObject *parent, bool checkOnly, const QUrl &url)
     : QObject(parent)
+    , mPasswordProvider(passwordProvider)
     , mSieveJob(nullptr)
     , mDialog(nullptr)
     , mWasActive(false)
@@ -76,7 +77,7 @@ QUrl Vacation::findURL(QString &serverName) const
             continue;
         }
 
-        const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(instance.identifier());
+        const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(instance.identifier(), mPasswordProvider);
         const QUrl url = info.sieveUrl;
         if (!url.isEmpty()) {
             serverName = instance.name();

@@ -32,9 +32,10 @@
 
 using namespace KSieveUi;
 
-SieveDebugDialog::SieveDebugDialog(QWidget *parent)
+SieveDebugDialog::SieveDebugDialog(SieveImapPasswordProvider* passwordProvider, QWidget *parent)
     : QDialog(parent)
     , mSieveJob(nullptr)
+    , mPasswordProvider(passwordProvider)
     , mShutDownJob(nullptr)
 {
     setWindowTitle(i18n("Sieve Diagnostics"));
@@ -121,7 +122,7 @@ void SieveDebugDialog::slotDiagNextAccount()
     mEdit->editor()->appendPlainText(i18n("------------------------------------------------------------\n"));
 
     // Detect URL for this IMAP account
-    const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(ident);
+    const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(ident, mPasswordProvider);
     const QUrl url = info.sieveUrl;
     if (!url.isValid()) {
         mEdit->editor()->appendPlainText(i18n("(Account does not support Sieve)\n\n"));
@@ -158,7 +159,7 @@ void SieveDebugDialog::slotDiagNextScript()
 
     mEdit->editor()->appendPlainText(i18n("Contents of script '%1':\n", scriptFile));
 
-    const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(mResourceIdentifier.first());
+    const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(mResourceIdentifier.first(), mPasswordProvider);
     mUrl = info.sieveUrl;
 
     mUrl = mUrl.adjusted(QUrl::RemoveFilename);

@@ -21,15 +21,19 @@
 #include <widgets/managesievewidget.h>
 
 namespace KSieveUi {
+class SieveImapPasswordProvider;
 class CustomManageSieveWidget : public KSieveUi::ManageSieveWidget
 {
     Q_OBJECT
 public:
-    explicit CustomManageSieveWidget(QWidget *parent = nullptr);
+    explicit CustomManageSieveWidget(SieveImapPasswordProvider* passwordProvider, QWidget *parent = nullptr);
     virtual ~CustomManageSieveWidget();
 
 protected:
     bool refreshList() override;
+
+private:
+    SieveImapPasswordProvider* mPasswordProvider;
 };
 }
 

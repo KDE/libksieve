@@ -58,8 +58,6 @@ public:
     int alternateAuthentication() const override;
     int authentication() const override;
     QString sieveAlternateUrl() const override;
-    QString password(const QString &identifier) const override;
-    QString sieveCustomPassword(const QString &identifier) const override;
     int imapPort() const override;
 private:
     AkonadiImapSettingInterfaceDataTest mData;

@@ -27,11 +27,12 @@ class QWidget;
 namespace KSieveUi {
 class VacationManagerPrivate;
 class SieveImapInstanceInterface;
+class SieveImapPasswordProvider;
 class KSIEVEUI_EXPORT VacationManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit VacationManager(QWidget *parent);
+    explicit VacationManager(SieveImapPasswordProvider* passwordProvider, QWidget *parent);
     ~VacationManager();
 
     void checkVacation();

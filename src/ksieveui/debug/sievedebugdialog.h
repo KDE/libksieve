@@ -29,6 +29,9 @@ namespace KPIMTextEdit {
 class PlainTextEditorWidget;
 }
 namespace KSieveUi {
+
+class SieveImapPasswordProvider;
+
 /**
  * Diagnostic info for Sieve. Only compiled when debug is enabled, it is
  * not useful enough for non-developers to have this in releases.
@@ -37,7 +40,7 @@ class KSIEVEUI_EXPORT SieveDebugDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit SieveDebugDialog(QWidget *parent = nullptr);
+    explicit SieveDebugDialog(SieveImapPasswordProvider* passwordProvider, QWidget *parent = nullptr);
     ~SieveDebugDialog();
 
 Q_SIGNALS:
@@ -58,6 +61,7 @@ private:
     QUrl mUrl;
     KSyntaxHighlighting::Repository mRepo;
 
+    SieveImapPasswordProvider* mPasswordProvider;
     KPIMTextEdit::PlainTextEditorWidget *mEdit;
     QStringList mResourceIdentifier;
     QStringList mScriptList;

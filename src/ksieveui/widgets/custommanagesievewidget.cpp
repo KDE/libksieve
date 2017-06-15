@@ -27,8 +27,9 @@
 
 using namespace KSieveUi;
 
-CustomManageSieveWidget::CustomManageSieveWidget(QWidget *parent)
+CustomManageSieveWidget::CustomManageSieveWidget(SieveImapPasswordProvider* passwordProvider, QWidget *parent)
     : KSieveUi::ManageSieveWidget(parent)
+    , mPasswordProvider(passwordProvider)
 {
 }
 
@@ -50,7 +51,7 @@ bool CustomManageSieveWidget::refreshList()
         last = new SieveTreeWidgetItem(treeView(), last);
         last->setIcon(0, QIcon::fromTheme(QStringLiteral("network-server")));
 
-        const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(type.identifier(), false);
+        const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(type.identifier(), mPasswordProvider, false);
         const QUrl u = info.sieveUrl;
         if (u.isEmpty()) {
             QTreeWidgetItem *item = new QTreeWidgetItem(last);

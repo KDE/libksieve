@@ -26,13 +26,14 @@ class SieveJob;
 
 namespace KSieveUi {
 class VacationDialog;
+class SieveImapPasswordProvider;
 
 class Vacation : public QObject
 {
     Q_OBJECT
 
 public:
-    explicit Vacation(QObject *parent = nullptr, bool checkonly = false, const QUrl &url = QUrl());
+    explicit Vacation(SieveImapPasswordProvider* passwordProvider, QObject *parent = nullptr, bool checkonly = false, const QUrl &url = QUrl());
     virtual ~Vacation();
 
     bool isUsable() const;
@@ -58,6 +59,7 @@ protected Q_SLOTS:
     void slotPutInactiveResult(KManageSieve::SieveJob *, bool);
 protected:
     // IO:
+    SieveImapPasswordProvider* mPasswordProvider;
     KManageSieve::SieveJob *mSieveJob;
     QUrl mUrl;
     QString mServerName;
