@@ -17,8 +17,8 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef SIEVEACCOUNT_H
-#define SIEVEACCOUNT_H
+#ifndef SIEVEIMAPACCOUNTSETTINGS_H
+#define SIEVEIMAPACCOUNTSETTINGS_H
 
 #include "ksieveui_export.h"
 #include <QUrl>
@@ -86,4 +86,4 @@ private:
 }
 Q_DECLARE_METATYPE(KSieveUi::SieveImapAccountSettings)
 KSIEVEUI_EXPORT QDebug operator <<(QDebug d, const KSieveUi::SieveImapAccountSettings &settings);
-#endif // SIEVEACCOUNT_H
+#endif // SIEVEIMAPACCOUNTSETTINGS_H
