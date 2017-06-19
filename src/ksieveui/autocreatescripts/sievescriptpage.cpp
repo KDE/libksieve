@@ -153,6 +153,8 @@ void SieveScriptPage::generatedScript(QString &script, QStringList &requires)
     }
     if (inForEveryPartLoop) {
         script += QStringLiteral("\n}\n");
+    } else {
+        script += QLatin1Char('\n');
     }
 }
 
