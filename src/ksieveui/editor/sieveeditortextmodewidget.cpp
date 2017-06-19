@@ -148,6 +148,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     mDebugTextEdit = new KPIMTextEdit::PlainTextEditorWidget;
     mDebugTextEdit->editor()->setSearchSupport(false);
     mDebugTextEdit->editor()->setReadOnly(true);
+    mDebugTextEdit->editor()->setPlaceholderText(i18n("Show result from \"check syntax\""));
     mMainSplitter->addWidget(mTemplateSplitter);
     mMainSplitter->addWidget(mDebugTextEdit);
     mMainSplitter->setChildrenCollapsible(false);
