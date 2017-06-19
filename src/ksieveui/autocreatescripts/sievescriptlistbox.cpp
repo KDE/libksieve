@@ -363,6 +363,7 @@ QString SieveScriptListBox::generatedScript(QString &requires) const
         resultScript += QLatin1Char('#') + defaultScriptName() + item->text() + QLatin1Char('\n');
         resultScript += item->generatedScript(lstRequires);
     }
+    resultScript += QLatin1Char('\n');
 
     QStringList endRequires;
     for (const QString &r : qAsConst(lstRequires)) {

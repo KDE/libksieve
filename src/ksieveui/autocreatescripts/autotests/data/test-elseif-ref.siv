@@ -20,3 +20,4 @@ if address :all :is "X-Delivered-To" "alias1@fastmail.fm"
 
 #SCRIPTNAME: Script part 1
 redirect "another@account.net";
+

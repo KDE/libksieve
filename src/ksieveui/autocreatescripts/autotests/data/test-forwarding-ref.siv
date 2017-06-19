@@ -9,3 +9,4 @@ if header :is [ "X-DSPAM-Result", "X-DSPAM-Reclassified" ] [ "Spam", "Virus" ]
 
 #SCRIPTNAME: Script part 1
 redirect "user@domain.com";
+

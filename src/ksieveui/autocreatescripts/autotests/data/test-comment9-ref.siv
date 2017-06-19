@@ -3,7 +3,6 @@ if false # allof(not header :contains "X-Spam-Flag" "YES")
 {
 } 
 
-
 #SCRIPTNAME: Script part 1
 if true # allof(not header :contains "X-Spam-Flag" "YES")
 {
