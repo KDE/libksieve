@@ -453,4 +453,5 @@ void VacationEditWidget::setDefault()
     mStartTimeActive->setChecked(false);
     mEndTimeActive->setChecked(false);
     setDomainCheck(false);
+    mDomainEdit->clear();
 }
