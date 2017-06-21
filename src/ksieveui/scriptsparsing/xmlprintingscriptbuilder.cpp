@@ -25,7 +25,7 @@ using KSieve::Parser;
 #include "libksieve_debug.h"
 #include <QXmlStreamWriter>
 
-#define USE_QXMLSTREAMWRITER 1
+//#define USE_QXMLSTREAMWRITER 1
 using namespace KSieveUi;
 XMLPrintingScriptBuilder::XMLPrintingScriptBuilder()
     : KSieve::ScriptBuilder(),
@@ -55,12 +55,20 @@ void XMLPrintingScriptBuilder::taggedArgument(const QString &tag)
 
 void XMLPrintingScriptBuilder::stringArgument(const QString &string, bool multiLine, const QString & /*fixme*/)
 {
-    write(QStringLiteral("str"), multiLine ? QStringLiteral("type=\"multiline\"") : QStringLiteral("type=\"quoted\""), string);
+    if (multiLine) {
+        write(QStringLiteral("str"), QStringLiteral("type"), QStringLiteral("multiline"), string);
+    } else {
+        write(QStringLiteral("str"), QStringLiteral("type"), QStringLiteral("quoted"), string);
+    }
 }
 
 void XMLPrintingScriptBuilder::numberArgument(unsigned long number, char quantifier)
 {
-    write(QStringLiteral("num"), (quantifier ? QStringLiteral("quantifier=\"%1\"").arg(quantifier) : QString()), QString::number(number));
+    if (quantifier) {
+        write(QStringLiteral("num"), QStringLiteral("quantifier"), QStringLiteral("%1").arg(quantifier), QString::number(number));
+    } else {
+        write(QStringLiteral("num"), QString(), QString(), QString::number(number));
+    }
 }
 
 void XMLPrintingScriptBuilder::commandStart(const QString &identifier, int lineNumber)
@@ -187,12 +195,12 @@ void XMLPrintingScriptBuilder::stringListEntry(const QString &string, bool multi
 
 void XMLPrintingScriptBuilder::hashComment(const QString &comment)
 {
-    write(QStringLiteral("comment"), QStringLiteral("type=\"hash\""), comment);
+    write(QStringLiteral("comment"), QStringLiteral("type"), QStringLiteral("hash"), comment);
 }
 
 void XMLPrintingScriptBuilder::bracketComment(const QString &comment)
 {
-    write(QStringLiteral("comment"), QStringLiteral("type=\"bracket\""), comment);
+    write(QStringLiteral("comment"), QStringLiteral("type"), QStringLiteral("bracket"), comment);
 }
 
 void XMLPrintingScriptBuilder::lineFeed()
@@ -245,7 +253,7 @@ void XMLPrintingScriptBuilder::write(const QString &key, const QString &value)
 #endif
 }
 
-void XMLPrintingScriptBuilder::write(const QString &key, const QString &attribute, const QString &value)
+void XMLPrintingScriptBuilder::write(const QString &key, const QString &qualifiedName, const QString &attribute, const QString &value)
 {
     if (value.isEmpty()) {
 #ifdef USE_QXMLSTREAMWRITER
@@ -267,7 +275,7 @@ void XMLPrintingScriptBuilder::write(const QString &key, const QString &attribut
     if (attribute.isEmpty()) {
         write(QStringLiteral("<%1>").arg(key));
     } else {
-        write(QStringLiteral("<%1 %2>").arg(key, attribute));
+        write(QStringLiteral("<%1 %2=\"%3\">").arg(key, qualifiedName, attribute));
     }
     QString tmpValue = value;
     tmpValue.replace(QLatin1Char('<'), QLatin1String("&lt;"));

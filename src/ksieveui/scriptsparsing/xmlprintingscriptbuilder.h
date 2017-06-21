@@ -64,7 +64,7 @@ public:
 private:
     void write(const QString &msg);
     void write(const QString &key, const QString &value);
-    void write(const QString &key, const QString &attribute, const QString &value);
+    void write(const QString &key, const QString &qualifiedName, const QString &attribute, const QString &value);
 
     QXmlStreamWriter *mStream;
     QString mResult;
