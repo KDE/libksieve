@@ -25,7 +25,7 @@ using KSieve::Parser;
 #include "libksieve_debug.h"
 #include <QXmlStreamWriter>
 
-//#define USE_QXMLSTREAMWRITER 1
+#define USE_QXMLSTREAMWRITER 1
 using namespace KSieveUi;
 XMLPrintingScriptBuilder::XMLPrintingScriptBuilder()
     : KSieve::ScriptBuilder(),
@@ -72,10 +72,20 @@ void XMLPrintingScriptBuilder::commandStart(const QString &identifier, int lineN
             identifier == QLatin1String("foreverypart") ||
             identifier == QLatin1String("if") ||
             identifier == QLatin1String("elsif")) {
+#ifdef USE_QXMLSTREAMWRITER
+        mStream->writeStartElement(QStringLiteral("control"));
+        mStream->writeAttribute(QStringLiteral("name"), identifier);
+#else
         write(QStringLiteral("<control name=\"%1\">").arg(identifier));
+#endif
         mIsAction = false;
     } else {
+#ifdef USE_QXMLSTREAMWRITER
+        mStream->writeStartElement(QStringLiteral("action"));
+        mStream->writeAttribute(QStringLiteral("name"), identifier);
+#else
         write(QStringLiteral("<action name=\"%1\">").arg(identifier));
+#endif
         mIsAction = true;
     }
 }
@@ -97,7 +107,12 @@ void XMLPrintingScriptBuilder::commandEnd(int lineNumber)
 
 void XMLPrintingScriptBuilder::testStart(const QString &identifier)
 {
+#ifdef USE_QXMLSTREAMWRITER
+    mStream->writeStartElement(QStringLiteral("test"));
+    mStream->writeAttribute(QStringLiteral("name"), identifier);
+#else
     write(QStringLiteral("<test name=\"%1\">").arg(identifier));
+#endif
 }
 
 void XMLPrintingScriptBuilder::testEnd()
@@ -233,10 +248,22 @@ void XMLPrintingScriptBuilder::write(const QString &key, const QString &value)
 void XMLPrintingScriptBuilder::write(const QString &key, const QString &attribute, const QString &value)
 {
     if (value.isEmpty()) {
+#ifdef USE_QXMLSTREAMWRITER
+        mStream->writeEmptyElement(key);
+#else
         write(QStringLiteral("<%1/>").arg(key));
+#endif
         return;
     }
-
+#ifdef USE_QXMLSTREAMWRITER
+    if (attribute.isEmpty()) {
+        mStream->writeStartElement(key);
+    } else {
+        mStream->writeStartElement(key);
+        //TODO mStream->writeAttribute();
+    }
+    mStream->writeCharacters(value);
+#else
     if (attribute.isEmpty()) {
         write(QStringLiteral("<%1>").arg(key));
     } else {
@@ -247,6 +274,7 @@ void XMLPrintingScriptBuilder::write(const QString &key, const QString &attribut
     tmpValue.replace(QLatin1Char('>'), QLatin1String("&gt;"));
     write(tmpValue);
     write(QStringLiteral("</%1>").arg(key));
+#endif
 }
 
 QString XMLPrintingScriptBuilder::result() const
