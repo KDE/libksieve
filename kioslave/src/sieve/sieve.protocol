@@ -22,6 +22,7 @@ Description[en_GB]=An ioslave for the Sieve mail filtering protocol
 Description[es]=Un esclavo de E/S para el protocolo de filtrado de correo Sieve
 Description[et]=Sieve kirjade filtreerimise protokolli IO-moodul
 Description[fi]=I/O-asiakas Sieve-postinsuodatusyhteyskäytännölle
+Description[fr]=Un module d'entrées / sorties pour le protocole de filtrage de courriel Sieve
 Description[gl]=Un ioslave para o protocolo de filtrado de correo Sieve.
 Description[ia]=Un ioslave (sclavo de i/e) per le protocollo per filtrar posta Sieve
 Description[it]=Un IOSlave per il protocollo di filtraggio della posta Sieve
