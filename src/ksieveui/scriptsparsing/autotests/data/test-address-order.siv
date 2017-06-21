@@ -1,0 +1,4 @@
+
+if address :matches :detail "to" "*" {
+    set "extension_name" "${1}";
+}

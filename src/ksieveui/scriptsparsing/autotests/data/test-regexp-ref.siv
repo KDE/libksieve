@@ -1,0 +1,1 @@
+<?xml version='1.0'?><script><control name="if"><test name="header"><tag>regex</tag><str type="quoted">subject</str><str type="quoted">.* \| Nouveau ticket - .*</str></test><block><crlf/><action name="fileinto"><tag>create</tag><str type="quoted">GLPI/Nouveaux tickets</str></action><crlf/><action name="stop"></action><crlf/></block></control><crlf/></script>

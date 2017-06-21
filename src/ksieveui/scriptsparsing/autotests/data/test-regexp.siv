@@ -1,0 +1,4 @@
+if header :regex "subject" ".* \\| Nouveau ticket - .*" {
+    fileinto :create "GLPI/Nouveaux tickets";
+    stop;
+}

@@ -1,0 +1,1 @@
+<?xml version='1.0'?><script><control name="require"><str type="quoted">servermetadata</str></control><crlf/><crlf/><comment type="hash">Script name: test-metadataexists</comment><crlf/><control name="if"><test name="servermetadataexists"><str type="quoted">ANNOTATION</str><crlf/></test><block><crlf/><action name="keep"></action><crlf/></block></control><crlf/></script>

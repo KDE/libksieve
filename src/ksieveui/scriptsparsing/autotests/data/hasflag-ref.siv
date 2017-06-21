@@ -1,0 +1,1 @@
+<?xml version='1.0'?><script><control name="require"><str type="quoted">imapflags</str></control><crlf/><crlf/><comment type="hash">SCRIPTNAME: test1</comment><control name="if"><test name="hasflag"><tag>is</tag><str type="quoted">foo</str><crlf/></test><block><crlf/></block></control><crlf/><crlf/></script>

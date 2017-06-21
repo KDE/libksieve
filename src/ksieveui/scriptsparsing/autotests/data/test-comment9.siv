@@ -1,0 +1,8 @@
+if false # allof(not header :contains "X-Spam-Flag" "YES")
+{
+}
+
+if true # allof(not header :contains "X-Spam-Flag" "YES")
+{
+}
+
