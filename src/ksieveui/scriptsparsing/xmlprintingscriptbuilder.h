@@ -22,9 +22,8 @@
 
 #include "ksieveui_private_export.h"
 #include <ksieve/scriptbuilder.h>
-
 #include <QDomDocument>
-
+class QXmlStreamWriter;
 namespace KSieveUi
 {
 class KSIEVEUI_TESTS_EXPORT XMLPrintingScriptBuilder : public KSieve::ScriptBuilder
@@ -67,6 +66,7 @@ private:
     void write(const QString &key, const QString &value);
     void write(const QString &key, const QString &attribute, const QString &value);
 
+    QXmlStreamWriter *mStream;
     QString mResult;
     QString mError;
     bool mIsAction;

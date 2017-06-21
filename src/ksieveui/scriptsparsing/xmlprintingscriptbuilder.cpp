@@ -23,18 +23,29 @@ using KSieve::Parser;
 
 #include <ksieve/error.h>
 #include "libksieve_debug.h"
+#include <QXmlStreamWriter>
 
+//#define USE_QXMLSTREAMWRITER 1
 using namespace KSieveUi;
 XMLPrintingScriptBuilder::XMLPrintingScriptBuilder()
     : KSieve::ScriptBuilder(),
+      mStream(nullptr),
       mIsAction(false)
 {
+#ifdef USE_QXMLSTREAMWRITER
+    mStream = new QXmlStreamWriter(&mResult);
+    mStream->setAutoFormatting(false);
+    mStream->writeStartDocument();
+    mStream->writeStartElement(QStringLiteral("script"));
+#else
     write(QStringLiteral("<?xml version='1.0'?>"));
     write(QStringLiteral("<script>"));
+#endif
 }
 
 XMLPrintingScriptBuilder::~XMLPrintingScriptBuilder()
 {
+    delete mStream;
 }
 
 void XMLPrintingScriptBuilder::taggedArgument(const QString &tag)
@@ -72,11 +83,15 @@ void XMLPrintingScriptBuilder::commandStart(const QString &identifier, int lineN
 void XMLPrintingScriptBuilder::commandEnd(int lineNumber)
 {
     Q_UNUSED(lineNumber);
+#ifdef USE_QXMLSTREAMWRITER
+    mStream->writeEndElement();
+#else
     if (mIsAction) {
         write(QStringLiteral("</action>"));
     } else {
         write(QStringLiteral("</control>"));
     }
+#endif
     mIsAction = false;
 }
 
@@ -87,39 +102,67 @@ void XMLPrintingScriptBuilder::testStart(const QString &identifier)
 
 void XMLPrintingScriptBuilder::testEnd()
 {
+#ifdef USE_QXMLSTREAMWRITER
+    mStream->writeEndElement();
+#else
     write(QStringLiteral("</test>"));
+#endif
 }
 
 void XMLPrintingScriptBuilder::testListStart()
 {
+#ifdef USE_QXMLSTREAMWRITER
+    mStream->writeStartElement(QStringLiteral("testlist"));
+#else
     write(QStringLiteral("<testlist>"));
+#endif
 }
 
 void XMLPrintingScriptBuilder::testListEnd()
 {
+#ifdef USE_QXMLSTREAMWRITER
+    mStream->writeEndElement();
+#else
     write(QStringLiteral("</testlist>"));
+#endif
 }
 
 void XMLPrintingScriptBuilder::blockStart(int lineNumber)
 {
     Q_UNUSED(lineNumber);
+#ifdef USE_QXMLSTREAMWRITER
+    mStream->writeStartElement(QStringLiteral("block"));
+#else
     write(QStringLiteral("<block>"));
+#endif
 }
 
 void XMLPrintingScriptBuilder::blockEnd(int lineNumber)
 {
     Q_UNUSED(lineNumber);
+#ifdef USE_QXMLSTREAMWRITER
+    mStream->writeEndElement();
+#else
     write(QStringLiteral("</block>"));
+#endif
 }
 
 void XMLPrintingScriptBuilder::stringListArgumentStart()
 {
+#ifdef USE_QXMLSTREAMWRITER
+    mStream->writeStartElement(QStringLiteral("list"));
+#else
     write(QStringLiteral("<list>"));
+#endif
 }
 
 void XMLPrintingScriptBuilder::stringListArgumentEnd()
 {
+#ifdef USE_QXMLSTREAMWRITER
+    mStream->writeEndElement();
+#else
     write(QStringLiteral("</list>"));
+#endif
 }
 
 void XMLPrintingScriptBuilder::stringListEntry(const QString &string, bool multiline, const QString &hashComment)
@@ -139,7 +182,11 @@ void XMLPrintingScriptBuilder::bracketComment(const QString &comment)
 
 void XMLPrintingScriptBuilder::lineFeed()
 {
+#ifdef USE_QXMLSTREAMWRITER
+    mStream->writeEmptyElement(QStringLiteral("crlf"));
+#else
     write(QStringLiteral("<crlf/>"));
+#endif
 }
 
 void XMLPrintingScriptBuilder::error(const KSieve::Error &error)
@@ -150,7 +197,11 @@ void XMLPrintingScriptBuilder::error(const KSieve::Error &error)
 
 void XMLPrintingScriptBuilder::finished()
 {
+#ifdef USE_QXMLSTREAMWRITER
+    mStream->writeEndElement();
+#else
     write(QStringLiteral("</script>"));
+#endif
 }
 
 void XMLPrintingScriptBuilder::write(const QString &msg)
@@ -161,12 +212,22 @@ void XMLPrintingScriptBuilder::write(const QString &msg)
 void XMLPrintingScriptBuilder::write(const QString &key, const QString &value)
 {
     if (value.isEmpty()) {
+#ifdef  USE_QXMLSTREAMWRITER
+        mStream->writeEmptyElement(key);
+#else
         write(QStringLiteral("<%1>").arg(key));
+#endif
         return;
     }
+#ifdef USE_QXMLSTREAMWRITER
+    mStream->writeStartElement(key);
+    //mStream->writeAttribute(value);
+    mStream->writeEndElement();
+#else
     write(QStringLiteral("<%1>").arg(key));
     write(value);
     write(QStringLiteral("</%1>").arg(key));
+#endif
 }
 
 void XMLPrintingScriptBuilder::write(const QString &key, const QString &attribute, const QString &value)
