@@ -25,7 +25,7 @@ using KSieve::Parser;
 #include "libksieve_debug.h"
 #include <QXmlStreamWriter>
 
-//#define USE_QXMLSTREAMWRITER 1
+#define USE_QXMLSTREAMWRITER 1
 using namespace KSieveUi;
 XMLPrintingScriptBuilder::XMLPrintingScriptBuilder()
     : KSieve::ScriptBuilder(),
@@ -244,7 +244,7 @@ void XMLPrintingScriptBuilder::write(const QString &key, const QString &value)
     }
 #ifdef USE_QXMLSTREAMWRITER
     mStream->writeStartElement(key);
-    //mStream->writeAttribute(value);
+    mStream->writeCharacters(value);
     mStream->writeEndElement();
 #else
     write(QStringLiteral("<%1>").arg(key));
@@ -268,9 +268,10 @@ void XMLPrintingScriptBuilder::write(const QString &key, const QString &qualifie
         mStream->writeStartElement(key);
     } else {
         mStream->writeStartElement(key);
-        //TODO mStream->writeAttribute();
+        mStream->writeAttribute(qualifiedName, attribute);
     }
     mStream->writeCharacters(value);
+    mStream->writeEndElement();
 #else
     if (attribute.isEmpty()) {
         write(QStringLiteral("<%1>").arg(key));
