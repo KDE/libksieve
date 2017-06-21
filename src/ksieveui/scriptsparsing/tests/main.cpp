@@ -71,7 +71,7 @@ int main(int argc, char **argv)
 
     KSieve::Parser sieveParser(script.begin(),
                                script.begin() + script.length());
-    KSieveUi::XMLPrintingScriptBuilder psb;
+    KSieveUi::XMLPrintingScriptBuilder psb(1);
     sieveParser.setScriptBuilder(&psb);
     if (sieveParser.parse()) {
         qDebug() << "ok";
@@ -79,7 +79,7 @@ int main(int argc, char **argv)
         qDebug() << "bad";
     }
     KSieveUi::ParsingResultDialog dlg;
-    dlg.setResultParsing(psb.toDom().toString());
+    dlg.setResultParsing(psb.result());
 
     dlg.show();
     app.exec();

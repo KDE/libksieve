@@ -29,7 +29,8 @@ namespace KSieveUi
 class KSIEVEUI_TESTS_EXPORT XMLPrintingScriptBuilder : public KSieve::ScriptBuilder
 {
 public:
-    explicit XMLPrintingScriptBuilder();
+    XMLPrintingScriptBuilder();
+    XMLPrintingScriptBuilder(int indent);
     ~XMLPrintingScriptBuilder();
 
     void taggedArgument(const QString &tag) override;
@@ -62,12 +63,13 @@ public:
     QDomDocument toDom() const;
 
 private:
+    void initialize(int indent = 0);
     void write(const QString &key, const QString &value);
     void write(const QString &key, const QString &qualifiedName, const QString &attribute, const QString &value);
 
     QXmlStreamWriter *mStream;
     QString mResult;
     QString mError;
- };
+};
 }
 #endif

@@ -24,14 +24,32 @@ using KSieve::Parser;
 #include <ksieve/error.h>
 #include "libksieve_debug.h"
 #include <QXmlStreamWriter>
+#include <QDebug>
 
 using namespace KSieveUi;
+XMLPrintingScriptBuilder::XMLPrintingScriptBuilder(int indent)
+    : KSieve::ScriptBuilder(),
+      mStream(nullptr)
+{
+    initialize(indent);
+}
+
 XMLPrintingScriptBuilder::XMLPrintingScriptBuilder()
     : KSieve::ScriptBuilder(),
       mStream(nullptr)
 {
+    initialize();
+}
+
+void XMLPrintingScriptBuilder::initialize(int indent)
+{
     mStream = new QXmlStreamWriter(&mResult);
-    mStream->setAutoFormatting(false);
+    if (indent == 0) {
+        mStream->setAutoFormatting(false);
+    } else {
+        mStream->setAutoFormatting(true);
+        mStream->setAutoFormattingIndent(indent);
+    }
     mStream->writeStartDocument();
     mStream->writeStartElement(QStringLiteral("script"));
 }

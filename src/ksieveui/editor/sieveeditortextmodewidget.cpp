@@ -218,12 +218,12 @@ void SieveEditorTextModeWidget::generateXml()
     const QByteArray script = mTextEdit->toPlainText().toUtf8();
     KSieve::Parser parser(script.begin(),
                           script.begin() + script.length());
-    KSieveUi::XMLPrintingScriptBuilder psb;
+    KSieveUi::XMLPrintingScriptBuilder psb(2);
     parser.setScriptBuilder(&psb);
     const bool result = parser.parse();
     QPointer<ParsingResultDialog> dlg = new ParsingResultDialog(this);
     if (result) {
-        dlg->setResultParsing(psb.toDom().toString(2));
+        dlg->setResultParsing(psb.result());
     } else {
         dlg->setResultParsing(i18n("Error during parsing"));
     }
