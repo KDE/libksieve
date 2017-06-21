@@ -491,14 +491,14 @@ void ManageSieveWidget::slotUpdateButtons()
 
 void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &listScript, const QString &activeScript)
 {
-    qCDebug(LIBKSIEVE_LOG) << "void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &listScript, const QString &activeScript) success: " << success
-                           << " listScript" << listScript;
+    //qCDebug(LIBKSIEVE_LOG) << "void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &listScript, const QString &activeScript) success: " << success
+    //                       << " listScript" << listScript;
     if (d->mClearAll) {
         return;
     }
-    qCDebug(LIBKSIEVE_LOG) << " After mClear All";
+    //qCDebug(LIBKSIEVE_LOG) << " After mClear All";
     QTreeWidgetItem *parent = mJobs[job];
-    qCDebug(LIBKSIEVE_LOG) << " parent " << parent;
+    //qCDebug(LIBKSIEVE_LOG) << " parent " << parent;
     if (!parent) {
         return;
     }
