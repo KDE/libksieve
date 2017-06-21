@@ -1,1 +1,1 @@
-<?xml version="1.0"?><script><control name="if"><test name="envelope"><tag>matches</tag><str type="quoted">from</str><str type="quoted">*jim-???@*</str></test><block><action name="discard"></action><action name="stop"></action></block></control><crlf/></script>
+<?xml version="1.0"?><script><control name="if"><test name="envelope"><tag>matches</tag><str type="quoted">from</str><str type="quoted">*jim-???@*</str></test><block><action name="discard"/><action name="stop"/></block></control><crlf/></script>
