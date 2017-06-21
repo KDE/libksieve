@@ -25,7 +25,7 @@ using KSieve::Parser;
 #include "libksieve_debug.h"
 #include <QXmlStreamWriter>
 
-#define USE_QXMLSTREAMWRITER 1
+//#define USE_QXMLSTREAMWRITER 1
 using namespace KSieveUi;
 XMLPrintingScriptBuilder::XMLPrintingScriptBuilder()
     : KSieve::ScriptBuilder(),
@@ -38,7 +38,7 @@ XMLPrintingScriptBuilder::XMLPrintingScriptBuilder()
     mStream->writeStartDocument();
     mStream->writeStartElement(QStringLiteral("script"));
 #else
-    write(QStringLiteral("<?xml version='1.0'?>"));
+    write(QStringLiteral("<?xml version=\"1.0\"?>"));
     write(QStringLiteral("<script>"));
 #endif
 }

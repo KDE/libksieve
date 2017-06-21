@@ -1,1 +1,1 @@
-<?xml version='1.0'?><script><comment type="hash"> " create a problem during parsing</comment><action name="addheader"><str type="quoted">X-Sieve-Filtered</str><str type="quoted">&lt;kim@job.example.com&gt;</str></action><crlf/></script>
+<?xml version="1.0"?><script><comment type="hash"> " create a problem during parsing</comment><action name="addheader"><str type="quoted">X-Sieve-Filtered</str><str type="quoted">&lt;kim@job.example.com&gt;</str></action><crlf/></script>
