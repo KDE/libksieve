@@ -130,6 +130,15 @@ void SieveGlobalVariableActionWidget::setVariableValue(const QString &name)
 
 void SieveGlobalVariableActionWidget::loadScript(QXmlStreamReader &element, QString &error)
 {
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("str")) {
+            mVariableName->setText(element.readElementText());
+        } else {
+            error += i18n("Unknown tag \"%1\" during loading of variables.") + QLatin1Char('\n');
+            qCDebug(LIBKSIEVE_LOG) << " SieveGlobalVariableActionWidget::loadScript unknown tagName " << tagName;
+        }
+    }
 #ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
