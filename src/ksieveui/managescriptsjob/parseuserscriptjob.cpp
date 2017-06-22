@@ -171,6 +171,12 @@ QStringList ParseUserScriptJob::extractActiveScript(const QString &doc)
 QString ParseUserScriptJob::loadInclude()
 {
     QString scriptName;
+    while (mStreamReader->readNextStartElement()) {
+        if (mStreamReader->name() == QLatin1String("str")) {
+            scriptName = reader.readElementText();
+        }
+    }
+#if 0
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
         QDomElement e = node.toElement();
@@ -182,5 +188,6 @@ QString ParseUserScriptJob::loadInclude()
         }
         node = node.nextSibling();
     }
+#endif
     return scriptName;
 }
