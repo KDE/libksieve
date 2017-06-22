@@ -22,12 +22,10 @@
 #include <QUrl>
 #include <QStringList>
 #include "ksieveui_private_export.h"
-class QDomDocument;
-class QDomElement;
 namespace KManageSieve {
 class SieveJob;
 }
-
+class QXmlStreamReader;
 namespace KSieveUi {
 class KSIEVEUI_TESTS_EXPORT ParseUserScriptJob : public QObject
 {
@@ -53,13 +51,14 @@ private:
     void slotGetResult(KManageSieve::SieveJob *job, bool, const QString &, bool);
     void emitSuccess(const QStringList &activeScriptList);
     void emitError(const QString &msgError);
-    static QString loadInclude(const QDomElement &element);
-    static QStringList extractActiveScript(const QDomDocument &doc);
-    static QStringList parsescript(const QString &script, bool &result);
+    QString loadInclude();
+    QStringList extractActiveScript(const QString &doc);
+    QStringList parsescript(const QString &script, bool &result);
     QUrl mCurrentUrl;
     KManageSieve::SieveJob *mSieveJob;
     QStringList mActiveScripts;
     QString mError;
+    QXmlStreamReader *mStreamReader;
 };
 }
 

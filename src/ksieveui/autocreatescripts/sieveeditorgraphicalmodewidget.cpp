@@ -138,7 +138,7 @@ QString SieveEditorGraphicalModeWidget::currentscript()
 void SieveEditorGraphicalModeWidget::setImportScript(const QString &script)
 {
     bool result = false;
-    const QDomDocument doc = ParsingUtil::parseScript(script, result);
+    const QString doc = ParsingUtil::parseScript(script, result);
     mSieveParsingWarning->animatedHide();
     if (result) {
         QString error;

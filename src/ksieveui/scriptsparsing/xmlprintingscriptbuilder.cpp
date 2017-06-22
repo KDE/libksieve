@@ -226,18 +226,3 @@ void XMLPrintingScriptBuilder::clear()
     mResult.clear();
     mError.clear();
 }
-
-QDomDocument XMLPrintingScriptBuilder::toDom() const
-{
-    QString errorMsg;
-    int errorRow;
-    int errorCol;
-    QDomDocument doc;
-    if (!doc.setContent(mResult, &errorMsg, &errorRow, &errorCol)) {
-        qCDebug(LIBKSIEVE_LOG) << "Unable to load document.Parse error in line " << errorRow
-                               << ", col " << errorCol << ": " << errorMsg;
-        qCDebug(LIBKSIEVE_LOG) << " mResult" << mResult;
-
-    }
-    return doc;
-}

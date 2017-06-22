@@ -20,11 +20,11 @@
 #ifndef PARSINGUTIL_H
 #define PARSINGUTIL_H
 
-#include <QDomDocument>
+#include <QString>
 #include "ksieveui_private_export.h"
 namespace KSieveUi {
 namespace ParsingUtil {
-KSIEVEUI_TESTS_EXPORT QDomDocument parseScript(const QString &script, bool &result);
+KSIEVEUI_TESTS_EXPORT QString parseScript(const QString &script, bool &result);
 }
 }
 #endif // PARSINGUTIL_H

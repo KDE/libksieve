@@ -22,7 +22,6 @@
 
 #include "ksieveui_private_export.h"
 #include <ksieve/scriptbuilder.h>
-#include <QDomDocument>
 class QXmlStreamWriter;
 namespace KSieveUi
 {
@@ -59,8 +58,6 @@ public:
     bool hasError() const;
 
     void clear();
-
-    QDomDocument toDom() const;
 
 private:
     void initialize(int indent = 0);

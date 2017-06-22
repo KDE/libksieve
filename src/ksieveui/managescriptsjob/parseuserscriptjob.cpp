@@ -20,18 +20,21 @@
 #include <kmanagesieve/sievejob.h>
 
 #include <KLocalizedString>
+#include <QXmlStreamWriter>
 
 using namespace KSieveUi;
 ParseUserScriptJob::ParseUserScriptJob(const QUrl &url, QObject *parent)
     : QObject(parent)
     , mCurrentUrl(url)
     , mSieveJob(nullptr)
+    , mStreamReader(nullptr)
 {
 }
 
 ParseUserScriptJob::~ParseUserScriptJob()
 {
     kill();
+    delete mStreamReader;
 }
 
 void ParseUserScriptJob::kill()
@@ -98,7 +101,7 @@ void ParseUserScriptJob::emitSuccess(const QStringList &activeScriptList)
 QStringList ParseUserScriptJob::parsescript(const QString &script, bool &result)
 {
     QStringList lst;
-    const QDomDocument doc = ParsingUtil::parseScript(script, result);
+    const QString doc = ParsingUtil::parseScript(script, result);
     if (result) {
         lst = extractActiveScript(doc);
     }
@@ -115,9 +118,29 @@ QString ParseUserScriptJob::error() const
     return mError;
 }
 
-QStringList ParseUserScriptJob::extractActiveScript(const QDomDocument &doc)
+QStringList ParseUserScriptJob::extractActiveScript(const QString &doc)
 {
+    mStreamReader = new QXmlStreamReader(doc);
     QStringList lstScript;
+    if (mStreamReader->readNextStartElement()) {
+        while (mStreamReader->readNextStartElement()) {
+            if (mStreamReader->name() == QLatin1String("action")) {
+                if (mStreamReader->attributes().hasAttribute(QStringLiteral("name"))) {
+                    const QString actionName = mStreamReader->attributes().value(QStringLiteral("name")).toString();
+                    if (actionName == QLatin1String("include")) {
+                        //Load includes
+                        const QString str = loadInclude();
+                        if (!str.isEmpty()) {
+                            if (!lstScript.contains(str)) {
+                                lstScript.append(str);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+#if 0
     QDomElement docElem = doc.documentElement();
     QDomNode n = docElem.firstChild();
     while (!n.isNull()) {
@@ -129,7 +152,7 @@ QStringList ParseUserScriptJob::extractActiveScript(const QDomDocument &doc)
                     const QString actionName = e.attribute(QStringLiteral("name"));
                     if (actionName == QLatin1String("include")) {
                         //Load includes
-                        const QString str = loadInclude(e);
+                        const QString str = loadInclude();
                         if (!str.isEmpty()) {
                             if (!lstScript.contains(str)) {
                                 lstScript.append(str);
@@ -141,10 +164,11 @@ QStringList ParseUserScriptJob::extractActiveScript(const QDomDocument &doc)
         }
         n = n.nextSibling();
     }
+#endif
     return lstScript;
 }
 
-QString ParseUserScriptJob::loadInclude(const QDomElement &element)
+QString ParseUserScriptJob::loadInclude()
 {
     QString scriptName;
     QDomNode node = element.firstChild();

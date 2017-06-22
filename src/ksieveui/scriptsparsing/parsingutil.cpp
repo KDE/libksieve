@@ -29,7 +29,7 @@ using KSieve::Parser;
 
 using namespace KSieveUi;
 
-QDomDocument ParsingUtil::parseScript(const QString &scriptStr, bool &result)
+QString ParsingUtil::parseScript(const QString &scriptStr, bool &result)
 {
     const QByteArray script = scriptStr.toUtf8();
 
@@ -38,10 +38,10 @@ QDomDocument ParsingUtil::parseScript(const QString &scriptStr, bool &result)
     parser.setScriptBuilder(&psb);
     if (parser.parse()) {
         result = true;
-        return psb.toDom();
+        return psb.result();
     } else {
         qCDebug(LIBKSIEVE_LOG) << "Impossible to parse file";
         result = false;
     }
-    return QDomDocument();
+    return {};
 }

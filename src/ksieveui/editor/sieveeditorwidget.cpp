@@ -615,7 +615,7 @@ void SieveEditorWidget::slotSwitchMode()
     {
         bool result = false;
         //Remove QDomDocument here
-        const QDomDocument doc = ParsingUtil::parseScript(mTextModeWidget->currentscript(), result);
+        const QString doc = ParsingUtil::parseScript(mTextModeWidget->currentscript(), result);
         if (result) {
             QString error;
             mGraphicalModeWidget->loadScript(doc, error);
