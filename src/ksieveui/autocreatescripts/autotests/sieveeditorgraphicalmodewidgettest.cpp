@@ -66,7 +66,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
     QString script = readSieveFile(originalFile);
     //First parsing
     bool result = false;
-    QDomDocument doc = KSieveUi::ParsingUtil::parseScript(script, result);
+    QString doc = KSieveUi::ParsingUtil::parseScript(script, result);
     QCOMPARE(success, result);
     if (success) {
         QString error;

@@ -59,7 +59,7 @@ public:
 
     void setSieveEditorGraphicalModeWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget);
     QString generatedScript(QString &requires) const;
-    void loadScript(const QDomDocument &doc, QString &error);
+    void loadScript(const QString &doc, QString &error);
 
 Q_SIGNALS:
     void addNewPage(KSieveUi::SieveScriptPage *);

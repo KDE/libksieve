@@ -43,7 +43,7 @@ public:
     void setSieveCapabilities(const QStringList &capabilities) override;
     QStringList sieveCapabilities() override;
 
-    void loadScript(const QDomDocument &doc, QString &error) override;
+    void loadScript(const QString &doc, QString &error) override;
 
     QString currentscript() override;
     void setImportScript(const QString &) override;

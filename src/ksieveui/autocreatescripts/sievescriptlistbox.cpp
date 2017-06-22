@@ -387,7 +387,7 @@ void SieveScriptListBox::clear()
     updateButtons();
 }
 
-void SieveScriptListBox::loadScript(const QDomDocument &doc, QString &error)
+void SieveScriptListBox::loadScript(const QString &doc, QString &error)
 {
     clear();
     QDomElement docElem = doc.documentElement();
