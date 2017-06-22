@@ -140,7 +140,7 @@ QStringList ParseUserScriptJob::extractActiveScript(const QString &doc)
             }
         }
     }
-#if 0
+#ifdef REMOVE_QDOMELEMENT
     QDomElement docElem = doc.documentElement();
     QDomNode n = docElem.firstChild();
     while (!n.isNull()) {
@@ -176,7 +176,7 @@ QString ParseUserScriptJob::loadInclude()
             scriptName = reader.readElementText();
         }
     }
-#if 0
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
         QDomElement e = node.toElement();
