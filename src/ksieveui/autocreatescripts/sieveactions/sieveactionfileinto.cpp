@@ -29,7 +29,7 @@
 #include <QHBoxLayout>
 #include "libksieve_debug.h"
 #include <KPluginFactory>
-#include <QDomNode>
+#include <QXmlStreamReader>
 //Add support for adding flags
 using namespace KSieveUi;
 SieveActionFileInto::SieveActionFileInto(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -59,8 +59,9 @@ QString SieveActionFileInto::code(QWidget *w) const
     return result + QStringLiteral("\"%1\";").arg(text);
 }
 
-bool SieveActionFileInto::setParamWidgetValue(const QDomElement &element, QWidget *w, QString &error)
+bool SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
         QDomElement e = node.toElement();
@@ -103,6 +104,7 @@ bool SieveActionFileInto::setParamWidgetValue(const QDomElement &element, QWidge
         }
         node = node.nextSibling();
     }
+#endif
     return true;
 }
 

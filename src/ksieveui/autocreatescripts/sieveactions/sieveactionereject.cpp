@@ -25,7 +25,7 @@
 
 #include <QLabel>
 #include <QHBoxLayout>
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
@@ -50,8 +50,9 @@ QWidget *SieveActionEReject::createParamWidget(QWidget *parent) const
     return w;
 }
 
-bool SieveActionEReject::setParamWidgetValue(const QDomElement &element, QWidget *w, QString &error)
+bool SieveActionEReject::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
+    #ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
         QDomElement e = node.toElement();
@@ -72,6 +73,7 @@ bool SieveActionEReject::setParamWidgetValue(const QDomElement &element, QWidget
         }
         node = node.nextSibling();
     }
+#endif
     return true;
 }
 

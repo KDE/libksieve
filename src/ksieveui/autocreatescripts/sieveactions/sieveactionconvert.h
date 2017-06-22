@@ -32,7 +32,7 @@ public:
     QStringList needRequires(QWidget *parent) const override;
     bool needCheckIfServerHasCapability() const override;
     QString serverNeedsCapability() const override;
-    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, QString &error) override;
+    bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, QString &error) override;
     QString help() const override;
     QUrl href() const override;
 };

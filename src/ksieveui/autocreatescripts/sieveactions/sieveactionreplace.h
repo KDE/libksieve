@@ -29,7 +29,7 @@ public:
     explicit SieveActionReplace(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
     QString code(QWidget *) const override;
     QWidget *createParamWidget(QWidget *parent) const override;
-    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, QString &error) override;
+    bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, QString &error) override;
     QStringList needRequires(QWidget *parent) const override;
     bool needCheckIfServerHasCapability() const override;
     QString serverNeedsCapability() const override;

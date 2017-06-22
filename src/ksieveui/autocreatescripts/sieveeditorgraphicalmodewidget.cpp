@@ -32,7 +32,6 @@
 #include <QVBoxLayout>
 #include <QSplitter>
 #include <QStackedWidget>
-#include <QDomDocument>
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;

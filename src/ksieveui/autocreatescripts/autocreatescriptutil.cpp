@@ -131,8 +131,9 @@ QString AutoCreateScriptUtil::tagValue(const QString &tag)
     return QLatin1Char(':') + tag;
 }
 
-QString AutoCreateScriptUtil::strValue(QDomNode &node)
+QString AutoCreateScriptUtil::strValue(QXmlStreamReader &node)
 {
+#ifdef REMOVE_QDOMELEMENT
     node = node.nextSibling();
     QDomElement textElement = node.toElement();
     if (!textElement.isNull()) {
@@ -141,18 +142,20 @@ QString AutoCreateScriptUtil::strValue(QDomNode &node)
             return textElement.text();
         }
     }
+#endif
     return QString();
 }
 
-QString AutoCreateScriptUtil::listValueToStr(const QDomElement &element)
+QString AutoCreateScriptUtil::listValueToStr(QXmlStreamReader &element)
 {
     const QStringList lst = AutoCreateScriptUtil::listValue(element);
     //Don't add semicolon
     return createList(lst, false);
 }
 
-QStringList AutoCreateScriptUtil::listValue(const QDomElement &element)
+QStringList AutoCreateScriptUtil::listValue(QXmlStreamReader &element)
 {
+    #ifdef REMOVE_QDOMELEMENT
     QStringList lst;
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
@@ -166,6 +169,8 @@ QStringList AutoCreateScriptUtil::listValue(const QDomElement &element)
         node = node.nextSibling();
     }
     return lst;
+#endif
+    return {};
 }
 
 QString AutoCreateScriptUtil::fixListValue(QString valueStr)

@@ -35,7 +35,7 @@ public:
     QStringList needRequires(QWidget *parent) const override;
 
     QString help() const override;
-    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, bool notCondition, QString &error) override;
+    bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error) override;
     QUrl href() const override;
 };
 }

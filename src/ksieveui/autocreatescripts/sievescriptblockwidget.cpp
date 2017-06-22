@@ -27,7 +27,7 @@
 #include <QPushButton>
 #include <QIcon>
 
-#include <QDomElement>
+#include <QXmlStreamReader>
 #include <QVBoxLayout>
 #include <QGroupBox>
 #include <QButtonGroup>
@@ -246,8 +246,9 @@ void SieveScriptBlockWidget::updateCondition()
     updateWidget();
 }
 
-void SieveScriptBlockWidget::loadScript(const QDomElement &element, bool onlyActions, QString &error)
+void SieveScriptBlockWidget::loadScript(QXmlStreamReader &element, bool onlyActions, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     if (onlyActions) {
         mScriptActionLister->loadScript(element, true, error);
         mMatchCondition = AllCondition;
@@ -288,4 +289,5 @@ void SieveScriptBlockWidget::loadScript(const QDomElement &element, bool onlyAct
             node = node.nextSibling();
         }
     }
+#endif
 }

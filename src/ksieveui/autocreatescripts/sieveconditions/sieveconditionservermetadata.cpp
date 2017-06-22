@@ -28,7 +28,7 @@
 #include <QHBoxLayout>
 #include "libksieve_debug.h"
 #include <QLabel>
-#include <QDomNode>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 SieveConditionServerMetaData::SieveConditionServerMetaData(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -124,11 +124,59 @@ QString SieveConditionServerMetaData::serverNeedsCapability() const
 QString SieveConditionServerMetaData::help() const
 {
     return i18n(
-        "This test retrieves the value of the server annotation \"annotation-name\".  The retrieved value is compared to the \"key-list\". The test returns true if the annotation exists and its value matches any of the keys.");
+                "This test retrieves the value of the server annotation \"annotation-name\".  The retrieved value is compared to the \"key-list\". The test returns true if the annotation exists and its value matches any of the keys.");
 }
 
-bool SieveConditionServerMetaData::setParamWidgetValue(const QDomElement &element, QWidget *w, bool notCondition, QString &error)
+bool SieveConditionServerMetaData::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
+    int index = 0;
+    QString commentStr;
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("str")) {
+            const QString tagValue = element.readElementText();
+            switch (index) {
+            case 0:
+            {
+                QLineEdit *mailbox = w->findChild<QLineEdit *>(QStringLiteral("mailbox"));
+                mailbox->setText(tagValue);
+                break;
+            }
+            case 1:
+            {
+                QLineEdit *annotation = w->findChild<QLineEdit *>(QStringLiteral("annotation"));
+                annotation->setText(tagValue);
+                break;
+            }
+            case 2:
+            {
+                AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+                value->setCode(tagValue);
+                break;
+            }
+            default:
+                tooManyArgument(tagName, index, 3, error);
+                qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaData::setParamWidgetValue too many argument " << index;
+                break;
+            }
+            ++index;
+        } else if (tagName == QLatin1String("tag")) {
+            SelectMatchTypeComboBox *selectType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("selecttype"));
+            selectType->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaData::setParamWidgetValue unknown tagName " << tagName;
+        }
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+
+#ifdef REMOVE_QDOMELEMENT
     int index = 0;
     QDomNode node = element.firstChild();
     QString commentStr;
@@ -180,7 +228,7 @@ bool SieveConditionServerMetaData::setParamWidgetValue(const QDomElement &elemen
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
+#endif
     return true;
 }
 

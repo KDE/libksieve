@@ -27,7 +27,7 @@
 
 #include <QHBoxLayout>
 #include <QCheckBox>
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
@@ -64,8 +64,9 @@ QWidget *SieveActionRedirect::createParamWidget(QWidget *parent) const
     return w;
 }
 
-bool SieveActionRedirect::setParamWidgetValue(const QDomElement &element, QWidget *w, QString &error)
+bool SieveActionRedirect::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
         QDomElement e = node.toElement();
@@ -107,6 +108,7 @@ bool SieveActionRedirect::setParamWidgetValue(const QDomElement &element, QWidge
         }
         node = node.nextSibling();
     }
+#endif
     return true;
 }
 

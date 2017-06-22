@@ -25,7 +25,6 @@
 #include "ksieveui_private_export.h"
 class QSplitter;
 class QStackedWidget;
-class QDomDocument;
 
 namespace KSieveUi {
 class SieveScriptPage;

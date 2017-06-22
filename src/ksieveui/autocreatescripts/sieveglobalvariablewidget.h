@@ -27,7 +27,7 @@ class QPushButton;
 class QLineEdit;
 class QGridLayout;
 class QCheckBox;
-class QDomElement;
+class QXmlStreamReader;
 
 namespace KSieveUi {
 class SieveHelpButton;
@@ -43,7 +43,7 @@ public:
     void generatedScript(QString &script);
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
     bool isInitialized() const;
-    void loadScript(const QDomElement &element, QString &error);
+    void loadScript(QXmlStreamReader &element, QString &error);
     void setVariableValue(const QString &name);
     QString variableName() const;
 
@@ -75,8 +75,8 @@ public:
     ~SieveGlobalVariableLister();
 
     void generatedScript(QString &script, QStringList &requires);
-    void loadScript(const QDomElement &element, QString &error);
-    bool loadSetVariable(const QDomElement &element, QString &error);
+    void loadScript(QXmlStreamReader &element, QString &error);
+    bool loadSetVariable(QXmlStreamReader &element, QString &error);
 
 Q_SIGNALS:
     void valueChanged();
@@ -102,8 +102,8 @@ public:
 
     void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) override;
 
-    void loadScript(const QDomElement &element, QString &error);
-    bool loadSetVariable(const QDomElement &element, QString &error);
+    void loadScript(QXmlStreamReader &element, QString &error);
+    bool loadSetVariable(QXmlStreamReader &element, QString &error);
 
 private Q_SLOTS:
     void slotHelp();

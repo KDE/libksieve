@@ -29,7 +29,7 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include "libksieve_debug.h"
-#include <QDomNode>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 
@@ -108,8 +108,9 @@ QString SieveConditionAddress::help() const
         "The \"address\" test matches Internet addresses in structured headers that contain addresses.  It returns true if any header contains any key in the specified part of the address, as modified by the comparator and the match keyword.");
 }
 
-bool SieveConditionAddress::setParamWidgetValue(const QDomElement &element, QWidget *w, bool notCondition, QString &error)
+bool SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     int index = 0;
     int indexStr = 0;
     QDomNode node = element.firstChild();
@@ -184,6 +185,7 @@ bool SieveConditionAddress::setParamWidgetValue(const QDomElement &element, QWid
         tooManyArgument(QStringLiteral("tag"), lstTagValue.count(), 2, error);
         qCDebug(LIBKSIEVE_LOG) << "SieveConditionAddress::setParamWidgetValue too many argument :" << lstTagValue.count();
     }
+#endif
     return true;
 }
 

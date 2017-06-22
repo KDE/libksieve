@@ -33,7 +33,7 @@
 #include <QLabel>
 #include <QWhatsThis>
 #include "libksieve_debug.h"
-#include <QDomNode>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 static const int MINIMUMGLOBALVARIABLEACTION = 1;
@@ -128,8 +128,9 @@ void SieveGlobalVariableActionWidget::setVariableValue(const QString &name)
     mVariableValue->setEnabled(true);
 }
 
-void SieveGlobalVariableActionWidget::loadScript(const QDomElement &element, QString &error)
+void SieveGlobalVariableActionWidget::loadScript(QXmlStreamReader &element, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
         QDomElement e = node.toElement();
@@ -144,6 +145,7 @@ void SieveGlobalVariableActionWidget::loadScript(const QDomElement &element, QSt
         }
         node = node.nextSibling();
     }
+#endif
 }
 
 void SieveGlobalVariableActionWidget::slotAddWidget()
@@ -203,12 +205,12 @@ void SieveGlobalVariableWidget::generatedScript(QString &script, QStringList &re
     }
 }
 
-void SieveGlobalVariableWidget::loadScript(const QDomElement &element, QString &error)
+void SieveGlobalVariableWidget::loadScript(QXmlStreamReader &element, QString &error)
 {
     mIncludeLister->loadScript(element, error);
 }
 
-bool SieveGlobalVariableWidget::loadSetVariable(const QDomElement &element, QString &error)
+bool SieveGlobalVariableWidget::loadSetVariable(QXmlStreamReader &element, QString &error)
 {
     return mIncludeLister->loadSetVariable(element, error);
 }
@@ -295,7 +297,7 @@ QWidget *SieveGlobalVariableLister::createWidget(QWidget *parent)
     return w;
 }
 
-void SieveGlobalVariableLister::loadScript(const QDomElement &element, QString &error)
+void SieveGlobalVariableLister::loadScript(QXmlStreamReader &element, QString &error)
 {
     SieveGlobalVariableActionWidget *w = static_cast<SieveGlobalVariableActionWidget *>(widgets().constLast());
     if (w->isInitialized()) {
@@ -305,8 +307,9 @@ void SieveGlobalVariableLister::loadScript(const QDomElement &element, QString &
     w->loadScript(element, error);
 }
 
-bool SieveGlobalVariableLister::loadSetVariable(const QDomElement &element, QString & /*error*/)
+bool SieveGlobalVariableLister::loadSetVariable(QXmlStreamReader &element, QString & /*error*/)
 {
+#ifdef REMOVE_QDOMELEMENT
     QString variableName;
     QString variableValue;
     int index = 0;
@@ -341,4 +344,8 @@ bool SieveGlobalVariableLister::loadSetVariable(const QDomElement &element, QStr
         }
     }
     return globalVariableFound;
+#else
+    bool globalVariableFound = false;
+    return globalVariableFound;
+#endif
 }

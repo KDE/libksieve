@@ -28,7 +28,7 @@ public:
     SieveActionAbstractFlags(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent = nullptr);
 
     QWidget *createParamWidget(QWidget *parent) const override;
-    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, QString &error) override;
+    bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, QString &error) override;
     QString code(QWidget *) const override;
     QStringList needRequires(QWidget *parent) const override;
 

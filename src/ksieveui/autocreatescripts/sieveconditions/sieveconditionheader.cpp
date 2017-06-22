@@ -27,7 +27,7 @@
 
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
@@ -90,8 +90,9 @@ QString SieveConditionHeader::help() const
     return i18n("The \"header\" test evaluates to true if the value of any of the named headers, ignoring leading and trailing whitespace, matches any key.");
 }
 
-bool SieveConditionHeader::setParamWidgetValue(const QDomElement &element, QWidget *w, bool notCondition, QString &error)
+bool SieveConditionHeader::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     int index = 0;
     QDomNode node = element.firstChild();
     QString commentStr;
@@ -147,7 +148,7 @@ bool SieveConditionHeader::setParamWidgetValue(const QDomElement &element, QWidg
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
+#endif
     return true;
 }
 

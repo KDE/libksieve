@@ -27,7 +27,7 @@
 
 #include <QSpinBox>
 #include "libksieve_debug.h"
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include <QCheckBox>
 #include <QVBoxLayout>
 
@@ -122,8 +122,9 @@ QString SieveConditionSpamTest::help() const
     return i18n("Sieve implementations that implement the \"spamtest\" test use an identifier of either \"spamtest\" or \"spamtestplus\" for use with the capability mechanism.");
 }
 
-bool SieveConditionSpamTest::setParamWidgetValue(const QDomElement &element, QWidget *w, bool /*notCondition*/, QString &error)
+bool SieveConditionSpamTest::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     QString commentStr;
     while (!node.isNull()) {
@@ -183,7 +184,7 @@ bool SieveConditionSpamTest::setParamWidgetValue(const QDomElement &element, QWi
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
+#endif
     return true;
 }
 

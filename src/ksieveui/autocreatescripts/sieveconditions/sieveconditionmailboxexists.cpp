@@ -25,7 +25,7 @@
 #include <QWidget>
 #include <QHBoxLayout>
 #include "libksieve_debug.h"
-#include <QDomNode>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 SieveConditionMailboxExists::SieveConditionMailboxExists(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -77,8 +77,29 @@ QString SieveConditionMailboxExists::help() const
         "The \"mailboxexists\" test is true if all mailboxes listed in the \"mailbox-names\" argument exist in the mailstore, and each allows the user in whose context the Sieve script runs to \"deliver\" messages into it.");
 }
 
-bool SieveConditionMailboxExists::setParamWidgetValue(const QDomElement &element, QWidget *w, bool /*notCondition*/, QString &error)
+bool SieveConditionMailboxExists::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
 {
+    QString commentStr;
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("str")) {
+            const QString tagValue = element.readElementText();
+            QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
+            edit->setText(AutoCreateScriptUtil::quoteStr(tagValue));
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveConditionMailboxExists::setParamWidgetValue unknown tagName " << tagName;
+        }
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     QString commentStr;
     while (!node.isNull()) {
@@ -103,6 +124,7 @@ bool SieveConditionMailboxExists::setParamWidgetValue(const QDomElement &element
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
+#endif
     return true;
 }
 

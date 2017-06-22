@@ -23,7 +23,7 @@
 
 #include <KLocalizedString>
 
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include <QHBoxLayout>
 #include <QLabel>
 
@@ -56,8 +56,25 @@ QString SieveConditionTrue::help() const
     return i18n("The \"true\" test always evaluates to true.");
 }
 
-bool SieveConditionTrue::setParamWidgetValue(const QDomElement &element, QWidget *, bool, QString &error)
+bool SieveConditionTrue::setParamWidgetValue(QXmlStreamReader &element, QWidget *, bool, QString &error)
 {
+    QString commentStr;
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("comment")) {
+            commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveConditionTrue::setParamWidgetValue unknown tagName " << tagName;
+        }
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     QString commentStr;
     while (!node.isNull()) {
@@ -78,7 +95,7 @@ bool SieveConditionTrue::setParamWidgetValue(const QDomElement &element, QWidget
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
+#endif
     return true;
 }
 

@@ -25,7 +25,7 @@
 #include <QHBoxLayout>
 #include "libksieve_debug.h"
 #include <QLabel>
-#include <QDomNode>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 SieveConditionServerMetaDataExists::SieveConditionServerMetaDataExists(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -78,8 +78,28 @@ QString SieveConditionServerMetaDataExists::help() const
     return i18n("The \"servermetadataexists\" test is true if all of the server annotations listed in the \"annotation-names\" argument exist.");
 }
 
-bool SieveConditionServerMetaDataExists::setParamWidgetValue(const QDomElement &element, QWidget *w, bool /*notCondition*/, QString &error)
+bool SieveConditionServerMetaDataExists::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
 {
+    QString commentStr;
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+            if (tagName == QLatin1String("str")) {
+                const QString tagValue = element.readElementText();
+                QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+                value->setText(tagValue);
+            } else if (tagName == QLatin1String("crlf")) {
+                //nothing
+            } else if (tagName == QLatin1String("comment")) {
+                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
+            } else {
+                unknownTag(tagName, error);
+                qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaDataExists::setParamWidgetValue unknown tagName " << tagName;
+            }
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     QString commentStr;
     while (!node.isNull()) {
@@ -104,7 +124,7 @@ bool SieveConditionServerMetaDataExists::setParamWidgetValue(const QDomElement &
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
+#endif
     return true;
 }
 

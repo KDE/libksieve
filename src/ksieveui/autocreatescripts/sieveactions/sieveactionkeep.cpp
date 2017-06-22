@@ -25,7 +25,7 @@
 #include <KLocalizedString>
 #include <QLabel>
 #include <QHBoxLayout>
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
@@ -77,8 +77,9 @@ QWidget *SieveActionKeep::createParamWidget(QWidget *parent) const
     }
 }
 
-bool SieveActionKeep::setParamWidgetValue(const QDomElement &element, QWidget *w, QString &error)
+bool SieveActionKeep::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     if (mHasFlagSupport) {
         QDomNode node = element.firstChild();
         while (!node.isNull()) {
@@ -107,6 +108,7 @@ bool SieveActionKeep::setParamWidgetValue(const QDomElement &element, QWidget *w
     } else {
         qCDebug(LIBKSIEVE_LOG) << " Server doesn't support imapflags";
     }
+#endif
     return true;
 }
 

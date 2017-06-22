@@ -33,7 +33,7 @@ public:
     bool needCheckIfServerHasCapability() const override;
     QString serverNeedsCapability() const override;
     QString help() const override;
-    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, bool notCondition, QString &error) override;
+    bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error) override;
 };
 }
 

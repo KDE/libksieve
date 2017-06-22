@@ -403,6 +403,7 @@ void SieveScriptListBox::loadScript(const QString &doc, QString &error)
 
 void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *currentPage, ParseSieveScriptTypeBlock typeBlock, QString &error)
 {
+#if 0
     QString scriptName;
     QString comment;
     bool hasCreatedAIfBlock = false;
@@ -547,6 +548,7 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
         }
         n = n.nextSibling();
     }
+#endif
 #ifdef REMOVE_QDOMELEMENT
     QString scriptName;
     QString comment;

@@ -26,7 +26,7 @@
 #include <QWidget>
 #include <QHBoxLayout>
 #include "libksieve_debug.h"
-#include <QDomNode>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 SieveConditionIhave::SieveConditionIhave(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -79,8 +79,29 @@ QString SieveConditionIhave::help() const
     return i18n("The \"ihave\" test provides a means for Sieve scripts to test for the existence of a given extension prior to actually using it.");
 }
 
-bool SieveConditionIhave::setParamWidgetValue(const QDomElement &element, QWidget *w, bool, QString &error)
+bool SieveConditionIhave::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool, QString &error)
 {
+    QString commentStr;
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("str")) {
+            const QString tagValue = element.readElementText();
+            QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
+            edit->setText(tagValue);
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveConditionIhave::setParamWidgetValue unknown tagName " << tagName;
+        }
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     QString commentStr;
     while (!node.isNull()) {
@@ -105,6 +126,7 @@ bool SieveConditionIhave::setParamWidgetValue(const QDomElement &element, QWidge
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
+#endif
     return true;
 }
 

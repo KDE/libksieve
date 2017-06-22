@@ -26,7 +26,7 @@
 
 #include <QSpinBox>
 #include "libksieve_debug.h"
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include <QVBoxLayout>
 
 using namespace KSieveUi;
@@ -103,8 +103,9 @@ QString SieveConditionVirusTest::help() const
     return i18n("Sieve implementations that implement the \"virustest\" test have an identifier of \"virustest\" for use with the capability mechanism.");
 }
 
-bool SieveConditionVirusTest::setParamWidgetValue(const QDomElement &element, QWidget *w, bool /*notCondition*/, QString &error)
+bool SieveConditionVirusTest::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     QString commentStr;
     while (!node.isNull()) {
@@ -156,7 +157,7 @@ bool SieveConditionVirusTest::setParamWidgetValue(const QDomElement &element, QW
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
+#endif
     return true;
 }
 

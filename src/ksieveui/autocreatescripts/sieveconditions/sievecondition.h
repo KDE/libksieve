@@ -22,7 +22,7 @@
 
 #include <QObject>
 #include <QUrl>
-class QDomElement;
+class QXmlStreamReader;
 namespace KSieveUi {
 class SieveEditorGraphicalModeWidget;
 class SieveCondition : public QObject
@@ -53,11 +53,11 @@ public:
     virtual QString help() const;
     virtual QUrl href() const;
 
-    virtual bool setParamWidgetValue(const QDomElement &element, QWidget *parent, bool notCondition, QString &error);
+    virtual bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error);
 
-    void unknownTag(const QString &tag, QString &error);
+    void unknownTag(const QStringRef &tag, QString &error);
     void unknowTagValue(const QString &tagValue, QString &error);
-    void tooManyArgument(const QString &tagName, int index, int maxValue, QString &error);
+    void tooManyArgument(const QStringRef &tagName, int index, int maxValue, QString &error);
     void serverDoesNotSupportFeatures(const QString &feature, QString &error);
 
     QString comment() const;

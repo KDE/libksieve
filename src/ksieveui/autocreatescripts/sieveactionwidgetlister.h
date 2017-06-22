@@ -26,7 +26,7 @@ class QPushButton;
 
 class QGridLayout;
 class QToolButton;
-class QDomElement;
+class QXmlStreamReader;
 
 namespace PimCommon {
 class MinimumComboBox;
@@ -45,7 +45,7 @@ public:
 
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
     void generatedScript(QString &script, QStringList &requires, bool onlyActions, bool inForEveryPartLoop);
-    bool setAction(const QString &actionName, const QDomElement &element, const QString &comment, QString &error);
+    bool setAction(const QString &actionName, QXmlStreamReader &element, const QString &comment, QString &error);
     bool isConfigurated() const;
     void clear();
 
@@ -83,7 +83,7 @@ public:
     ~SieveActionWidgetLister();
 
     void generatedScript(QString &script, QStringList &requires, bool onlyActions, bool inForEveryPartLoop);
-    void loadScript(const QDomElement &element, bool onlyActions, QString &error);
+    void loadScript(QXmlStreamReader &element, bool onlyActions, QString &error);
 
     int actionNumber() const;
 

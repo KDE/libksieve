@@ -21,7 +21,7 @@
 
 #include <QObject>
 #include <QUrl>
-class QDomElement;
+class QXmlStreamReader;
 namespace KSieveUi {
 class SieveImapAccountSettings;
 class SieveEditorGraphicalModeWidget;
@@ -37,7 +37,7 @@ public:
 
     virtual QWidget *createParamWidget(QWidget *parent) const;
 
-    virtual bool setParamWidgetValue(const QDomElement &element, QWidget *parent, QString &error);
+    virtual bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, QString &error);
 
     virtual QString code(QWidget *) const;
 
@@ -54,7 +54,7 @@ public:
 
     void setComment(const QString &comment);
 
-    void unknownTag(const QString &tag, QString &error);
+    void unknownTag(const QStringRef &tag, QString &error);
     void unknowTagValue(const QString &tagValue, QString &error);
     void tooManyArgument(const QString &tagName, int index, int maxValue, QString &error);
     void serverDoesNotSupportFeatures(const QString &feature, QString &error);

@@ -26,7 +26,7 @@
 #include <QHBoxLayout>
 #include <QComboBox>
 #include <QLabel>
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
@@ -75,8 +75,34 @@ QString SieveConditionExists::help() const
     return i18n("The \"exists\" test is true if the headers listed in the header-names argument exist within the message.  All of the headers must exist or the test is false.");
 }
 
-bool SieveConditionExists::setParamWidgetValue(const QDomElement &element, QWidget *w, bool notCondition, QString &error)
+bool SieveConditionExists::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
+    QString commentStr;
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (notCondition) {
+            QComboBox *combo = w->findChild<QComboBox *>(QStringLiteral("existscheck"));
+            combo->setCurrentIndex(1);
+        }
+        if (tagName == QLatin1String("str")) {
+            SelectHeaderTypeComboBox *value = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headervalue"));
+            value->setCode(element.readElementText());
+        } else if (tagName == QLatin1String("list")) {
+            SelectHeaderTypeComboBox *selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headervalue"));
+            selectHeaderType->setCode(AutoCreateScriptUtil::listValueToStr(element));
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveConditionExists::setParamWidgetValue unknown tagName " << tagName;
+        }
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     QString commentStr;
     while (!node.isNull()) {
@@ -107,7 +133,7 @@ bool SieveConditionExists::setParamWidgetValue(const QDomElement &element, QWidg
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
+#endif
     return true;
 }
 

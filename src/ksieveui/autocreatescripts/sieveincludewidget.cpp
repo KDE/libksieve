@@ -33,7 +33,7 @@
 #include <QCheckBox>
 #include <QLabel>
 #include <QWhatsThis>
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
@@ -92,8 +92,9 @@ void SieveIncludeActionWidget::clear()
     mIncludeName->setText(QString());
 }
 
-void SieveIncludeActionWidget::loadScript(const QDomElement &element, QString &error)
+void SieveIncludeActionWidget::loadScript(QXmlStreamReader &element, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
         QDomElement e = node.toElement();
@@ -119,6 +120,7 @@ void SieveIncludeActionWidget::loadScript(const QDomElement &element, QString &e
         }
         node = node.nextSibling();
     }
+#endif
 }
 
 void SieveIncludeActionWidget::generatedScript(QString &script)
@@ -242,9 +244,13 @@ void SieveIncludeWidget::generatedScript(QString &script, QStringList &requires,
     }
 }
 
-void SieveIncludeWidget::loadScript(const QDomElement &element, QString &error)
+void SieveIncludeWidget::loadScript(QXmlStreamReader &element, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     mIncludeLister->loadScript(element, error);
+#else
+    mIncludeLister->loadScript(element, error);
+#endif
 }
 
 SieveIncludeWidgetLister::SieveIncludeWidgetLister(QWidget *parent)
@@ -329,7 +335,7 @@ QWidget *SieveIncludeWidgetLister::createWidget(QWidget *parent)
     return w;
 }
 
-void SieveIncludeWidgetLister::loadScript(const QDomElement &element, QString &error)
+void SieveIncludeWidgetLister::loadScript(QXmlStreamReader &element, QString &error)
 {
     if (widgets().count() == MAXIMUMINCLUDEACTION) {
         error += QLatin1Char('\n') + i18n("We can not add more includes elements.") + QLatin1Char('\n');

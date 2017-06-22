@@ -23,7 +23,7 @@
 #include "sievewidgetpageabstract.h"
 class QCheckBox;
 class QLineEdit;
-class QDomElement;
+class QXmlStreamReader;
 
 namespace KSieveUi {
 class SieveHelpButton;
@@ -35,7 +35,7 @@ public:
     ~SieveForEveryPartWidget();
 
     void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) override;
-    void loadScript(const QDomElement &element, QString &error);
+    void loadScript(QXmlStreamReader &element, QString &error);
 
 private Q_SLOTS:
     void slotHelp();

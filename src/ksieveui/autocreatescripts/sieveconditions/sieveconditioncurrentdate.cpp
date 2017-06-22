@@ -25,7 +25,7 @@
 #include <KLocalizedString>
 
 #include <QHBoxLayout>
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
@@ -90,8 +90,44 @@ QString SieveConditionCurrentDate::help() const
     return i18n("The currentdate test is similar to the date test, except that it operates on the current date/time rather than a value extracted from the message header.");
 }
 
-bool SieveConditionCurrentDate::setParamWidgetValue(const QDomElement &element, QWidget *w, bool notCondition, QString &error)
+bool SieveConditionCurrentDate::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
+    int index = 0;
+    QString type;
+    QString value;
+    QString commentStr;
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("str")) {
+            if (index == 0) {
+                type = element.readElementText();
+            } else if (index == 1) {
+                value = element.readElementText();
+            } else {
+                tooManyArgument(tagName, index, 2, error);
+                qCDebug(LIBKSIEVE_LOG) << " SieveConditionCurrentDate::setParamWidgetValue too many argument :" << index;
+            }
+            ++index;
+        } else if (tagName == QLatin1String("tag")) {
+            SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+            selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << "SieveConditionCurrentDate::setParamWidgetValue unknown tag " << tagName;
+        }
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+
+    SelectDateWidget *dateWidget = w->findChild<SelectDateWidget *>(QStringLiteral("datewidget"));
+    dateWidget->setCode(type, value);
+
+#ifdef REMOVE_QDOMELEMENT
     int index = 0;
     QString type;
     QString value;
@@ -131,6 +167,7 @@ bool SieveConditionCurrentDate::setParamWidgetValue(const QDomElement &element, 
 
     SelectDateWidget *dateWidget = w->findChild<SelectDateWidget *>(QStringLiteral("datewidget"));
     dateWidget->setCode(type, value);
+#endif
     return true;
 }
 

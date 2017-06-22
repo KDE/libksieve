@@ -25,7 +25,7 @@
 
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QDomNode>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 
@@ -56,8 +56,24 @@ QString SieveConditionFalse::help() const
     return i18n("The \"false\" test always evaluates to false.");
 }
 
-bool SieveConditionFalse::setParamWidgetValue(const QDomElement &element, QWidget *, bool, QString &error)
+bool SieveConditionFalse::setParamWidgetValue(QXmlStreamReader &element, QWidget *, bool, QString &error)
 {
+    QString commentStr;
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("comment")) {
+            commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveConditionFalse::setParamWidgetValue unknown tagName " << tagName;
+        }
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     QString commentStr;
     while (!node.isNull()) {
@@ -78,7 +94,7 @@ bool SieveConditionFalse::setParamWidgetValue(const QDomElement &element, QWidge
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
+#endif
     return true;
 }
 

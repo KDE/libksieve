@@ -28,7 +28,7 @@ class QPushButton;
 class KLineEdit;
 class QGridLayout;
 class QCheckBox;
-class QDomElement;
+class QXmlStreamReader;
 namespace KSieveUi {
 class SieveHelpButton;
 class SieveIncludeLocation : public KComboBox
@@ -57,7 +57,7 @@ public:
 
     void generatedScript(QString &script);
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
-    void loadScript(const QDomElement &element, QString &error);
+    void loadScript(QXmlStreamReader &element, QString &error);
     bool isInitialized() const;
     void clear();
 
@@ -89,7 +89,7 @@ public:
     ~SieveIncludeWidgetLister();
 
     void generatedScript(QString &script, QStringList &requires);
-    void loadScript(const QDomElement &element, QString &error);
+    void loadScript(QXmlStreamReader &element, QString &error);
 
 Q_SIGNALS:
     void valueChanged();
@@ -115,7 +115,7 @@ public:
 
     void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) override;
 
-    void loadScript(const QDomElement &element, QString &error);
+    void loadScript(QXmlStreamReader &element, QString &error);
 
 private Q_SLOTS:
     void slotHelp();

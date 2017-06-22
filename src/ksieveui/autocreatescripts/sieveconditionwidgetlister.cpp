@@ -226,7 +226,7 @@ void SieveConditionWidget::updateAddRemoveButton(bool addButtonEnabled, bool rem
     mRemove->setEnabled(removeButtonEnabled);
 }
 
-void SieveConditionWidget::setCondition(const QString &conditionName, const QDomElement &element, bool notCondition, QString &error)
+void SieveConditionWidget::setCondition(const QString &conditionName, QXmlStreamReader &element, bool notCondition, QString &error)
 {
     const int index = mComboBox->findData(conditionName);
     if (index != -1) {
@@ -340,8 +340,9 @@ int SieveConditionWidgetLister::conditionNumber() const
     return widgets().count();
 }
 
-void SieveConditionWidgetLister::loadTest(const QDomElement &element, bool notCondition, QString &error)
+void SieveConditionWidgetLister::loadTest(QXmlStreamReader &element, bool notCondition, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     QDomElement testElement = element;
     if (notCondition) {
         QDomNode node = element.firstChild();
@@ -354,10 +355,12 @@ void SieveConditionWidgetLister::loadTest(const QDomElement &element, bool notCo
         SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
         w->setCondition(conditionName, testElement, notCondition, error);
     }
+#endif
 }
 
-void SieveConditionWidgetLister::loadScript(const QDomElement &e, bool uniqTest, bool notCondition, QString &error)
+void SieveConditionWidgetLister::loadScript(QXmlStreamReader &e, bool uniqTest, bool notCondition, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     if (uniqTest) {
         loadTest(e, notCondition, error);
     } else {
@@ -419,4 +422,5 @@ void SieveConditionWidgetLister::loadScript(const QDomElement &e, bool uniqTest,
             node = node.nextSibling();
         }
     }
+#endif
 }

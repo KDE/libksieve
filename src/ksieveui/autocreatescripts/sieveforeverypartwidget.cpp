@@ -31,7 +31,7 @@
 #include <QLabel>
 #include <QCheckBox>
 #include <QWhatsThis>
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
@@ -91,8 +91,9 @@ void SieveForEveryPartWidget::generatedScript(QString &script, QStringList &requ
     }
 }
 
-void SieveForEveryPartWidget::loadScript(const QDomElement &element, QString &error)
+void SieveForEveryPartWidget::loadScript(QXmlStreamReader &element, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     QDomElement e = node.toElement();
     if (!e.isNull()) {
@@ -117,4 +118,5 @@ void SieveForEveryPartWidget::loadScript(const QDomElement &element, QString &er
             qCDebug(LIBKSIEVE_LOG) << " SieveForEveryPartWidget::loadScript unknown tagName " << tagName;
         }
     }
+#endif
 }

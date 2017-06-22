@@ -24,8 +24,6 @@
 
 #include <QDialog>
 
-class QDomDocument;
-
 namespace KSieveUi {
 class SieveImapAccountSettings;
 class SieveEditorGraphicalModeWidget;

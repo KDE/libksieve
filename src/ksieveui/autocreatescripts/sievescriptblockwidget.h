@@ -27,7 +27,7 @@ class QGroupBox;
 class QAbstractButton;
 class KComboBox;
 class QPushButton;
-class QDomElement;
+class QXmlStreamReader;
 
 namespace KSieveUi {
 class SieveConditionWidgetLister;
@@ -53,7 +53,7 @@ public:
 
     MatchCondition matchCondition() const;
 
-    void loadScript(const QDomElement &element, bool onlyActions, QString &error);
+    void loadScript(QXmlStreamReader &element, bool onlyActions, QString &error);
 
 Q_SIGNALS:
     void addNewBlock(QWidget *widget, KSieveUi::SieveWidgetPageAbstract::PageType type);

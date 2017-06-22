@@ -30,7 +30,7 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include "libksieve_debug.h"
-#include <QDomNode>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 
@@ -119,8 +119,9 @@ QString SieveConditionEnvelope::help() const
     return i18n("The \"envelope\" test is true if the specified part of the [SMTP] (or equivalent) envelope matches the specified key.");
 }
 
-bool SieveConditionEnvelope::setParamWidgetValue(const QDomElement &element, QWidget *w, bool notCondition, QString &error)
+bool SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     int indexTag = 0;
     int indexStr = 0;
     QDomNode node = element.firstChild();
@@ -183,7 +184,7 @@ bool SieveConditionEnvelope::setParamWidgetValue(const QDomElement &element, QWi
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
+#endif
     return true;
 }
 

@@ -24,7 +24,7 @@
 
 #include <QLabel>
 #include <QSpinBox>
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include "libksieve_debug.h"
 #include <QGridLayout>
 
@@ -62,8 +62,9 @@ QWidget *SieveActionExtractText::createParamWidget(QWidget *parent) const
     return w;
 }
 
-bool SieveActionExtractText::setParamWidgetValue(const QDomElement &element, QWidget *w, QString &error)
+bool SieveActionExtractText::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
         QDomElement e = node.toElement();
@@ -88,6 +89,7 @@ bool SieveActionExtractText::setParamWidgetValue(const QDomElement &element, QWi
         }
         node = node.nextSibling();
     }
+#endif
     return true;
 }
 

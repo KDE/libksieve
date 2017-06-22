@@ -28,7 +28,7 @@
 #include <QWidget>
 #include <QHBoxLayout>
 #include "libksieve_debug.h"
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include <QLabel>
 
 using namespace KSieveUi;
@@ -138,8 +138,9 @@ QString SieveConditionHasFlag::help() const
     return i18n("The hasflag test evaluates to true if any of the variables matches any flag name.");
 }
 
-bool SieveConditionHasFlag::setParamWidgetValue(const QDomElement &element, QWidget *w, bool notCondition, QString &error)
+bool SieveConditionHasFlag::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     QStringList strList;
     QDomNode node = element.firstChild();
     QString commentStr;
@@ -188,6 +189,7 @@ bool SieveConditionHasFlag::setParamWidgetValue(const QDomElement &element, QWid
         qCDebug(LIBKSIEVE_LOG) << " SieveConditionHasFlag::setParamWidgetValue str list count not correct :" << strList.count();
         break;
     }
+#endif
     return true;
 }
 

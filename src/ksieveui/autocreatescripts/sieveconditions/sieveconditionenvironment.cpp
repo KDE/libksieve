@@ -27,7 +27,7 @@
 #include <QLabel>
 #include <QCompleter>
 #include "libksieve_debug.h"
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include <QGridLayout>
 
 using namespace KSieveUi;
@@ -105,8 +105,38 @@ QString SieveConditionEnvironment::help() const
     return i18n("The environment test retrieves the item of environment information specified by the name string and matches it to the values specified in the key-list argument.");
 }
 
-bool SieveConditionEnvironment::setParamWidgetValue(const QDomElement &element, QWidget *w, bool /*notCondition*/, QString &error)
+bool SieveConditionEnvironment::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
 {
+    int index = 0;
+    QString commentStr;
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("str")) {
+            if (index == 0) {
+                QLineEdit *item = w->findChild<QLineEdit *>(QStringLiteral("item"));
+                item->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
+            } else if (index == 1) {
+                QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+                value->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
+            } else {
+                tooManyArgument(tagName, index, 2, error);
+                qCDebug(LIBKSIEVE_LOG) << " SieveConditionEnvironment::setParamWidgetValue to many argument " << index;
+            }
+            ++index;
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveActionSetVariable::setParamWidgetValue unknown tagName " << tagName;
+        }
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     int index = 0;
     QString commentStr;
@@ -140,7 +170,7 @@ bool SieveConditionEnvironment::setParamWidgetValue(const QDomElement &element, 
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
+#endif
     return true;
 }
 

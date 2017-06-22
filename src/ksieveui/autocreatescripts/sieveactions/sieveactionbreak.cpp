@@ -25,7 +25,7 @@
 
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
@@ -51,8 +51,32 @@ QWidget *SieveActionBreak::createParamWidget(QWidget *parent) const
     return w;
 }
 
-bool SieveActionBreak::setParamWidgetValue(const QDomElement &element, QWidget *w, QString &error)
+bool SieveActionBreak::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("tag")) {
+            const QString tagValue = element.readElementText();
+            if (tagValue == QLatin1String("name")) {
+                QLineEdit *name = w->findChild<QLineEdit *>(QStringLiteral("name"));
+                name->setText(AutoCreateScriptUtil::strValue(element));
+            } else {
+                unknowTagValue(tagValue, error);
+                qCDebug(LIBKSIEVE_LOG) << " SieveActionBreak::setParamWidgetValue unknown tagValue " << tagValue;
+            }
+        } else if (tagName == QLatin1String("str")) {
+            //Nothing
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            //implement in the future ?
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << "SieveActionBreak::setParamWidgetValue unknown tag " << tagName;
+        }
+    }
+
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
         QDomElement e = node.toElement();
@@ -80,6 +104,7 @@ bool SieveActionBreak::setParamWidgetValue(const QDomElement &element, QWidget *
         }
         node = node.nextSibling();
     }
+#endif
     return true;
 }
 

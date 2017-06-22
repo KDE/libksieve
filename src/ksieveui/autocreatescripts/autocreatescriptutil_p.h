@@ -22,7 +22,7 @@
 
 #include <QString>
 #include <QStringList>
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include <KSieveUi/AbstractRegexpEditorLineEdit>
 namespace KSieveUi {
 namespace AutoCreateScriptUtil {
@@ -34,9 +34,9 @@ QString createAddressList(const QString &str, bool addSemiColon = true);
 QString negativeString(bool isNegative);
 QString tagValueWithCondition(const QString &tag, bool notCondition);
 QString tagValue(const QString &tag);
-QString strValue(QDomNode &node);
-QStringList listValue(const QDomElement &element);
-QString listValueToStr(const QDomElement &element);
+QString strValue(QXmlStreamReader &node);
+QStringList listValue(QXmlStreamReader &element);
+QString listValueToStr(QXmlStreamReader &element);
 QString fixListValue(QString valueStr);
 QString quoteStr(QString str, bool protectSlash = true);
 void comboboxItemNotFound(const QString &searchItem, const QString &name, QString &error);

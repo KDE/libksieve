@@ -104,8 +104,9 @@ QString SieveConditionDate::help() const
     return i18n("The date test matches date/time information derived from headers containing date-time values.");
 }
 
-bool SieveConditionDate::setParamWidgetValue(const QDomElement &element, QWidget *w, bool notCondition, QString &error)
+bool SieveConditionDate::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     int index = 0;
     QString type;
     QString value;
@@ -150,6 +151,7 @@ bool SieveConditionDate::setParamWidgetValue(const QDomElement &element, QWidget
     dateWidget->setCode(type, value);
     QLineEdit *header = w->findChild<QLineEdit *>(QStringLiteral("header"));
     header->setText(headerStr);
+#endif
     return true;
 }
 

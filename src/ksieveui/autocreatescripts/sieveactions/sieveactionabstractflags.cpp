@@ -22,7 +22,7 @@
 #include "widgets/selectflagswidget.h"
 
 #include <QHBoxLayout>
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
@@ -44,8 +44,26 @@ QWidget *SieveActionAbstractFlags::createParamWidget(QWidget *parent) const
     return w;
 }
 
-bool SieveActionAbstractFlags::setParamWidgetValue(const QDomElement &element, QWidget *w, QString &error)
+bool SieveActionAbstractFlags::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("list")) {
+            SelectFlagsWidget *flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
+            flagsWidget->setFlags(AutoCreateScriptUtil::listValue(element));
+        } else if (tagName == QLatin1String("str")) {
+            SelectFlagsWidget *flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
+            flagsWidget->setFlags(QStringList() << element.readElementText());
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            //implement in the future ?
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveActionAbstractFlags::setParamWidgetValue unknown tag :" << tagName;
+        }
+    }
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
         QDomElement e = node.toElement();
@@ -68,6 +86,7 @@ bool SieveActionAbstractFlags::setParamWidgetValue(const QDomElement &element, Q
         }
         node = node.nextSibling();
     }
+#endif
     return true;
 }
 

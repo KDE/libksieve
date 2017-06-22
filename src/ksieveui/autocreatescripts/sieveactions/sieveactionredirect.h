@@ -30,7 +30,7 @@ public:
     QWidget *createParamWidget(QWidget *parent) const override;
     QString code(QWidget *) const override;
     QStringList needRequires(QWidget *parent) const override;
-    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, QString &error) override;
+    bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, QString &error) override;
     QString help() const override;
 
     QUrl href() const override;

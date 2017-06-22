@@ -24,7 +24,7 @@
 
 class QPushButton;
 class QGridLayout;
-class QDomElement;
+class QXmlStreamReader;
 class QToolButton;
 
 namespace PimCommon {
@@ -44,7 +44,7 @@ public:
 
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
     void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop);
-    void setCondition(const QString &conditionName, const QDomElement &element, bool notCondition, QString &error);
+    void setCondition(const QString &conditionName, QXmlStreamReader &element, bool notCondition, QString &error);
     void clear();
 
 private Q_SLOTS:
@@ -81,7 +81,7 @@ public:
 
     void generatedScript(QString &script, int &numberOfCondition, QStringList &requires, bool inForEveryPartLoop);
     int conditionNumber() const;
-    void loadScript(const QDomElement &element, bool uniqTest, bool notCondition, QString &error);
+    void loadScript(QXmlStreamReader &element, bool uniqTest, bool notCondition, QString &error);
 
 Q_SIGNALS:
     void valueChanged();
@@ -95,7 +95,7 @@ protected:
     QWidget *createWidget(QWidget *parent) override;
 
 private:
-    void loadTest(const QDomElement &e, bool notCondition, QString &error);
+    void loadTest(QXmlStreamReader &e, bool notCondition, QString &error);
     void reconnectWidget(SieveConditionWidget *w);
     void updateAddRemoveButton();
     SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;

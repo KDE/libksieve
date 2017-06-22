@@ -99,8 +99,9 @@ QString SieveConditionBody::help() const
         "The body test matches content in the body of an email message, that is, anything following the first empty line after the header.  (The empty line itself, if present, is not considered to be part of the body.)");
 }
 
-bool SieveConditionBody::setParamWidgetValue(const QDomElement &element, QWidget *w, bool notCondition, QString &error)
+bool SieveConditionBody::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     int index = 0;
     int indexStr = 0;
     QStringList tagValueList;
@@ -173,6 +174,7 @@ bool SieveConditionBody::setParamWidgetValue(const QDomElement &element, QWidget
         AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
         edit->setCode(indexStr == 1 ? AutoCreateScriptUtil::quoteStr(strValue.at(0)) : AutoCreateScriptUtil::quoteStr(strValue.at(1)));
     }
+#endif
     return true;
 }
 

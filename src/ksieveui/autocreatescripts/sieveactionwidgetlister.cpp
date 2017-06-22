@@ -259,7 +259,7 @@ void SieveActionWidget::updateAddRemoveButton(bool addButtonEnabled, bool remove
     mRemove->setEnabled(removeButtonEnabled);
 }
 
-bool SieveActionWidget::setAction(const QString &actionName, const QDomElement &element, const QString &comment, QString &error)
+bool SieveActionWidget::setAction(const QString &actionName, QXmlStreamReader &element, const QString &comment, QString &error)
 {
     const int index = mComboBox->findData(actionName);
     bool result = false;
@@ -363,8 +363,9 @@ int SieveActionWidgetLister::actionNumber() const
     return widgets().count();
 }
 
-void SieveActionWidgetLister::loadScript(const QDomElement &element, bool onlyActions, QString &error)
+void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyActions, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     QString comment;
     if (onlyActions) {
         if (!element.isNull()) {
@@ -433,4 +434,5 @@ void SieveActionWidgetLister::loadScript(const QDomElement &element, bool onlyAc
             node = node.nextSibling();
         }
     }
+#endif
 }

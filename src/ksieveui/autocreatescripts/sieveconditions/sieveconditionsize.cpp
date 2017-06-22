@@ -24,7 +24,7 @@
 
 #include <QHBoxLayout>
 #include <QComboBox>
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include "libksieve_debug.h"
 
 using namespace KSieveUi;
@@ -69,8 +69,40 @@ QString SieveConditionSize::help() const
     return i18n("The \"size\" test deals with the size of a message.  It takes either a tagged argument of \":over\" or \":under\", followed by a number representing the size of the message.");
 }
 
-bool SieveConditionSize::setParamWidgetValue(const QDomElement &element, QWidget *w, bool /*notCondition*/, QString &error)
+bool SieveConditionSize::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
 {
+    QString commentStr;
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("tag")) {
+            const QString tagValue = element.readElementText();
+            QComboBox *combo = w->findChild<QComboBox *>(QStringLiteral("combosize"));
+            const int index = combo->findData(AutoCreateScriptUtil::tagValue(tagValue));
+            if (index != -1) {
+                combo->setCurrentIndex(index);
+            }
+        } else if (tagName == QLatin1String("num")) {
+            const qlonglong tagValue = element.readElementText().toLongLong();
+            QString numIdentifier;
+            if (element.attributes().hasAttribute(QStringLiteral("quantifier"))) {
+                numIdentifier = element.attributes().value(QStringLiteral("quantifier")).toString();
+            }
+            SelectSizeWidget *sizeWidget = w->findChild<SelectSizeWidget *>(QStringLiteral("sizewidget"));
+            sizeWidget->setCode(tagValue, numIdentifier, name(), error);
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveConditionSize::setParamWidgetValue unknown tagName " << tagName;
+        }
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     QString commentStr;
     while (!node.isNull()) {
@@ -106,7 +138,7 @@ bool SieveConditionSize::setParamWidgetValue(const QDomElement &element, QWidget
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
+#endif
     return true;
 }
 

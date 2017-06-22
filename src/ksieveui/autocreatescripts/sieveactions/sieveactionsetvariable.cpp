@@ -27,7 +27,7 @@
 
 #include <QCheckBox>
 #include <QLabel>
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include "libksieve_debug.h"
 #include <QGridLayout>
 
@@ -81,8 +81,9 @@ QUrl SieveActionSetVariable::href() const
     return SieveEditorUtil::helpUrl(SieveEditorUtil::strToVariableName(name()));
 }
 
-bool SieveActionSetVariable::setParamWidgetValue(const QDomElement &element, QWidget *w, QString &error)
+bool SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
+#ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
         QDomElement e = node.toElement();
@@ -127,6 +128,7 @@ bool SieveActionSetVariable::setParamWidgetValue(const QDomElement &element, QWi
         }
         node = node.nextSibling();
     }
+#endif
     return true;
 }
 

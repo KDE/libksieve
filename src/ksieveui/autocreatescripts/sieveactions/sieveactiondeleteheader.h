@@ -28,12 +28,12 @@ public:
     explicit SieveActionDeleteHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
     QString code(QWidget *w) const override;
     QWidget *createParamWidget(QWidget *parent) const override;
-    bool setParamWidgetValue(const QDomElement &element, QWidget *parent, QString &error) override;
+    bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, QString &error) override;
     QString help() const override;
     QUrl href() const override;
     QStringList needRequires(QWidget *parent) const override;
 private:
-    bool parseValue(const QDomElement &element, QWidget *w, QString &error, bool isNegative);
+    bool parseValue(QXmlStreamReader &element, QWidget *w, QString &error, bool isNegative);
 };
 }
 

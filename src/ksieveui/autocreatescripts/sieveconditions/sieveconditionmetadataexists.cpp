@@ -24,7 +24,7 @@
 
 #include <QLabel>
 #include "libksieve_debug.h"
-#include <QDomNode>
+#include <QXmlStreamReader>
 #include <QGridLayout>
 
 using namespace KSieveUi;
@@ -89,8 +89,39 @@ QString SieveConditionMetaDataExists::help() const
     return i18n("The \"metadataexists\" test is true if all of the annotations listed in the \"annotation-names\" argument exist for the specified mailbox.");
 }
 
-bool SieveConditionMetaDataExists::setParamWidgetValue(const QDomElement &element, QWidget *w, bool /*notCondition*/, QString &error)
+bool SieveConditionMetaDataExists::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
 {
+    int index = 0;
+    QString commentStr;
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("str")) {
+            const QString tagValue = element.readElementText();
+            if (index == 0) {
+                QLineEdit *mailbox = w->findChild<QLineEdit *>(QStringLiteral("mailbox"));
+                mailbox->setText(tagValue);
+            } else if (index == 1) {
+                QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+                value->setText(AutoCreateScriptUtil::quoteStr(tagValue));
+            } else {
+                tooManyArgument(tagName, index, 2, error);
+                qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaDataExists::setParamWidgetValue to many attribute " << index;
+            }
+            ++index;
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaDataExists::setParamWidgetValue unknown tagName " << tagName;
+        }
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+
+#ifdef REMOVE_QDOMELEMENT
     int index = 0;
     QDomNode node = element.firstChild();
     QString commentStr;
@@ -125,7 +156,7 @@ bool SieveConditionMetaDataExists::setParamWidgetValue(const QDomElement &elemen
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
+#endif
     return true;
 }
 

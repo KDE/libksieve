@@ -99,7 +99,7 @@ QString SieveAction::help() const
     return QString();
 }
 
-bool SieveAction::setParamWidgetValue(const QDomElement &, QWidget *, QString &)
+bool SieveAction::setParamWidgetValue(QXmlStreamReader &, QWidget *, QString &)
 {
     return true;
 }
@@ -114,9 +114,9 @@ void SieveAction::setComment(const QString &comment)
     mComment = comment;
 }
 
-void SieveAction::unknownTag(const QString &tag, QString &error)
+void SieveAction::unknownTag(const QStringRef &tag, QString &error)
 {
-    error += i18n("An unknown tag \"%1\" was found during parsing action \"%2\".", tag, name()) + QLatin1Char('\n');
+    error += i18n("An unknown tag \"%1\" was found during parsing action \"%2\".", *tag.string(), name()) + QLatin1Char('\n');
 }
 
 void SieveAction::unknowTagValue(const QString &tagValue, QString &error)
