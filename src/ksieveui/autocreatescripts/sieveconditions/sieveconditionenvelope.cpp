@@ -121,6 +121,65 @@ QString SieveConditionEnvelope::help() const
 
 bool SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
+    int indexTag = 0;
+    int indexStr = 0;
+    QString commentStr;
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+
+        if (tagName == QLatin1String("tag")) {
+            const QString tagValue = element.readElementText();
+            if (indexTag == 0) {
+                QString err;
+                SelectAddressPartComboBox *selectAddressPart = w->findChild<SelectAddressPartComboBox *>(QStringLiteral("addresspartcombobox"));
+                selectAddressPart->setCode(AutoCreateScriptUtil::tagValue(tagValue), name(), err);
+                //all: is default sometime we don't add it.
+                if (!err.isEmpty()) {
+                    SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
+                    selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(tagValue, notCondition), name(), error);
+                }
+            } else if (indexTag == 1) {
+                SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
+                selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(tagValue, notCondition), name(), error);
+            } else {
+                tooManyArgument(tagName, indexTag, 2, error);
+                qCDebug(LIBKSIEVE_LOG) << "SieveConditionEnvelope::setParamWidgetValue too many argument :" << indexTag;
+            }
+            ++indexTag;
+        } else if (tagName == QLatin1String("str")) {
+            if (indexStr == 0) {
+                SelectHeaderTypeComboBox *selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
+                selectHeaderType->setCode(element.readElementText());
+            } else if (indexStr == 1) {
+                AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
+                edit->setCode(AutoCreateScriptUtil::quoteStr(element.readElementText()));
+            } else {
+                tooManyArgument(tagName, indexStr, 2, error);
+                qCDebug(LIBKSIEVE_LOG) << "SieveConditionEnvelope::setParamWidgetValue too many argument indexStr " << indexStr;
+            }
+            ++indexStr;
+        } else if (tagName == QLatin1String("list")) {
+            if (indexStr == 0) {
+                SelectHeaderTypeComboBox *selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
+                selectHeaderType->setCode(AutoCreateScriptUtil::listValueToStr(element));
+            } else if (indexStr == 1) {
+                AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
+                edit->setCode(AutoCreateScriptUtil::listValueToStr(element));
+            }
+            ++indexStr;
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveConditionEnvelope::setParamWidgetValue unknown tagName " << tagName;
+        }
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+
 #ifdef REMOVE_QDOMELEMENT
     int indexTag = 0;
     int indexStr = 0;

@@ -96,11 +96,79 @@ QString SieveConditionBody::serverNeedsCapability() const
 QString SieveConditionBody::help() const
 {
     return i18n(
-        "The body test matches content in the body of an email message, that is, anything following the first empty line after the header.  (The empty line itself, if present, is not considered to be part of the body.)");
+                "The body test matches content in the body of an email message, that is, anything following the first empty line after the header.  (The empty line itself, if present, is not considered to be part of the body.)");
 }
 
 bool SieveConditionBody::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
+    int index = 0;
+    int indexStr = 0;
+    QStringList tagValueList;
+    QStringList strValue;
+
+    bool wasListElement = false;
+    QString commentStr;
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("tag")) {
+            const QString tagValue = element.readElementText();
+            if (index == 0) {
+                tagValueList << AutoCreateScriptUtil::tagValue(tagValue);
+            } else if (index == 1) {
+                tagValueList << AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition);
+            } else {
+                tooManyArgument(tagName, index, 2, error);
+                qCDebug(LIBKSIEVE_LOG) << " SieveConditionBody::setParamWidgetValue too many argument " << index;
+            }
+            ++index;
+        } else if (tagName == QLatin1String("str")) {
+            strValue << element.readElementText();
+            ++indexStr;
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
+        } else if (tagName == QLatin1String("list")) {
+            strValue << AutoCreateScriptUtil::listValueToStr(element);
+            wasListElement = true;
+            ++indexStr;
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveConditionBody::setParamWidgetValue unknown tagName " << tagName;
+        }
+    }
+    if (!commentStr.isEmpty()) {
+        setComment(commentStr);
+    }
+
+    QString errorStr;
+    if (strValue.count() == 1) {
+        SelectBodyTypeWidget *bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
+        bodyType->setCode(tagValueList.at(0), QString(), name(), errorStr);
+        if (errorStr.isEmpty()) {
+            SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+            matchType->setCode(tagValueList.at(1), name(), error);
+        } else {
+            SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+            matchType->setCode(tagValueList.at(0), name(), error);
+            bodyType->setCode(tagValueList.at(1), QString(), name(), errorStr);
+        }
+        AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
+        edit->setCode(wasListElement ? strValue.at(0) : AutoCreateScriptUtil::quoteStr(strValue.at(0)));
+    } else if (strValue.count() == 2) {
+        SelectBodyTypeWidget *bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
+        bodyType->setCode(tagValueList.at(0), indexStr == 2 ? strValue.at(0) : QString(), name(), errorStr);
+        SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+        if (!errorStr.isEmpty()) {
+            matchType->setCode(tagValueList.at(0), name(), error);
+            bodyType->setCode(tagValueList.at(1), indexStr == 2 ? strValue.at(0) : QString(), name(), error);
+        } else {
+            matchType->setCode(tagValueList.at(1), name(), error);
+        }
+        AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
+        edit->setCode(indexStr == 1 ? AutoCreateScriptUtil::quoteStr(strValue.at(0)) : AutoCreateScriptUtil::quoteStr(strValue.at(1)));
+    }
+
 #ifdef REMOVE_QDOMELEMENT
     int index = 0;
     int indexStr = 0;

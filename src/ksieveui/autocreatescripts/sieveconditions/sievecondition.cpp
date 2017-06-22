@@ -108,9 +108,14 @@ void SieveCondition::unknowTagValue(const QString &tagValue, QString &error)
     error += i18n("An unknown tag value \"%1\" was found during parsing condition \"%2\".", tagValue, name()) + QLatin1Char('\n');
 }
 
+void SieveCondition::tooManyArgument(const QString &tagName, int index, int maxValue, QString &error)
+{
+    error += i18n("Too many argument found for \"%1\", max value is %2, number of value found %3 for %4", name(), maxValue, (index + 1), tagName) + QLatin1Char('\n');
+}
+
 void SieveCondition::tooManyArgument(const QStringRef &tagName, int index, int maxValue, QString &error)
 {
-    error += i18n("Too many argument found for \"%1\", max value is %2, number of value found %3 for %4", name(), maxValue, (index + 1), *tagName.string()) + QLatin1Char('\n');
+    tooManyArgument(tagName.toString(), index, maxValue, error);
 }
 
 void SieveCondition::serverDoesNotSupportFeatures(const QString &feature, QString &error)

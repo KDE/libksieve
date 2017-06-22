@@ -133,6 +133,13 @@ QString AutoCreateScriptUtil::tagValue(const QString &tag)
 
 QString AutoCreateScriptUtil::strValue(QXmlStreamReader &node)
 {
+    if (node.readNextStartElement()) {
+        const QStringRef textElementTagName = node.name();
+        if (textElementTagName == QLatin1String("str")) {
+            return node.readElementText();
+        }
+    }
+
 #ifdef REMOVE_QDOMELEMENT
     node = node.nextSibling();
     QDomElement textElement = node.toElement();
@@ -155,7 +162,15 @@ QString AutoCreateScriptUtil::listValueToStr(QXmlStreamReader &element)
 
 QStringList AutoCreateScriptUtil::listValue(QXmlStreamReader &element)
 {
-    #ifdef REMOVE_QDOMELEMENT
+    QStringList lst;
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("str")) {
+            lst << element.readElementText();
+        }
+    }
+    return lst;
+#ifdef REMOVE_QDOMELEMENT
     QStringList lst;
     QDomNode node = element.firstChild();
     while (!node.isNull()) {

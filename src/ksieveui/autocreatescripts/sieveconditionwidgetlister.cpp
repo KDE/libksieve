@@ -342,6 +342,14 @@ int SieveConditionWidgetLister::conditionNumber() const
 
 void SieveConditionWidgetLister::loadTest(QXmlStreamReader &element, bool notCondition, QString &error)
 {
+    if (notCondition) {
+        element.readNextStartElement();
+    }
+    if (element.attributes().hasAttribute(QStringLiteral("name"))) {
+        const QString conditionName = element.attributes().value(QStringLiteral("name")).toString();
+        SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
+        w->setCondition(conditionName, element, notCondition, error);
+    }
 #ifdef REMOVE_QDOMELEMENT
     QDomElement testElement = element;
     if (notCondition) {
@@ -358,8 +366,58 @@ void SieveConditionWidgetLister::loadTest(QXmlStreamReader &element, bool notCon
 #endif
 }
 
-void SieveConditionWidgetLister::loadScript(QXmlStreamReader &e, bool uniqTest, bool notCondition, QString &error)
+void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniqTest, bool notCondition, QString &error)
 {
+    if (uniqTest) {
+        loadTest(element, notCondition, error);
+    } else {
+        bool firstCondition = true;
+        if (notCondition) {
+            element.readNextStartElement();
+        }
+        while (element.readNextStartElement()) {
+            const QStringRef tagName = element.name();
+            if (tagName == QLatin1String("testlist")) {
+                while (element.readNextStartElement()) {
+                    const QStringRef testTagName = element.name();
+                    if (testTagName == QLatin1String("test")) {
+                        if (element.attributes().hasAttribute(QStringLiteral("name"))) {
+                            QString conditionName = element.attributes().value(QStringLiteral("name")).toString();
+                            if (firstCondition) {
+                                firstCondition = false;
+                            } else {
+                                addWidgetAfterThisWidget(widgets().constLast());
+                            }
+                            SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
+                            if (conditionName == QLatin1String("not")) {
+#ifdef QDOMELEMENT_FIXME
+                                notCondition = true;
+                                QDomNode notNode = testElement.firstChild();
+                                QDomElement notElement = notNode.toElement();
+                                if (notElement.hasAttribute(QStringLiteral("name"))) {
+                                    conditionName = notElement.attribute(QStringLiteral("name"));
+                                }
+                                w->setCondition(conditionName, notElement, notCondition, error);
+#endif
+                            } else {
+                                notCondition = false;
+                                w->setCondition(conditionName, element, notCondition, error);
+                            }
+                        }
+                    } else if (testTagName == QLatin1String("crlf")) {
+                        //nothing
+                    } else if (testTagName == QLatin1String("comment")) {
+                        qDebug() << "Need to implement comment here ";
+                        //nothing
+                        //implement in the future ?
+                    } else {
+                        qCDebug(LIBKSIEVE_LOG) << " SieveConditionWidgetLister::loadScript unknown condition tag: " << testTagName;
+                    }
+                }
+            }
+        }
+    }
+
 #ifdef REMOVE_QDOMELEMENT
     if (uniqTest) {
         loadTest(e, notCondition, error);
