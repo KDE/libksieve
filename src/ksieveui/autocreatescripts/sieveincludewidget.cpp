@@ -267,11 +267,7 @@ void SieveIncludeWidget::generatedScript(QString &script, QStringList &requires,
 
 void SieveIncludeWidget::loadScript(QXmlStreamReader &element, QString &error)
 {
-#ifdef REMOVE_QDOMELEMENT
     mIncludeLister->loadScript(element, error);
-#else
-    mIncludeLister->loadScript(element, error);
-#endif
 }
 
 SieveIncludeWidgetLister::SieveIncludeWidgetLister(QWidget *parent)

@@ -318,6 +318,36 @@ void SieveGlobalVariableLister::loadScript(QXmlStreamReader &element, QString &e
 
 bool SieveGlobalVariableLister::loadSetVariable(QXmlStreamReader &element, QString & /*error*/)
 {
+    QString variableName;
+    QString variableValue;
+    int index = 0;
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+            if (tagName == QLatin1String("str")) {
+                if (index == 0) {
+                    variableName = element.readElementText();
+                } else if (index == 1) {
+                    variableValue = element.readElementText();
+                } else {
+                    qCDebug(LIBKSIEVE_LOG) << " SieveGlobalVariableLister::loadSetVariable too many argument:" << index;
+                }
+                ++index;
+            } else {
+                qCDebug(LIBKSIEVE_LOG) << " SieveGlobalVariableLister::loadSetVariable unknown tagName " << tagName;
+            }
+    }
+
+    const QList<QWidget *> lstWidget = widgets();
+    bool globalVariableFound = false;
+    for (QWidget *widget : lstWidget) {
+        SieveGlobalVariableActionWidget *w = static_cast<SieveGlobalVariableActionWidget *>(widget);
+        if (w->variableName() == variableName) {
+            w->setVariableValue(variableValue);
+            globalVariableFound = true;
+        }
+    }
+    return globalVariableFound;
+
 #ifdef REMOVE_QDOMELEMENT
     QString variableName;
     QString variableValue;
@@ -352,9 +382,6 @@ bool SieveGlobalVariableLister::loadSetVariable(QXmlStreamReader &element, QStri
             globalVariableFound = true;
         }
     }
-    return globalVariableFound;
-#else
-    bool globalVariableFound = false;
     return globalVariableFound;
 #endif
 }
