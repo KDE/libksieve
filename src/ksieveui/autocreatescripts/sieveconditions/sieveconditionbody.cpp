@@ -125,6 +125,7 @@ bool SieveConditionBody::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             strValue << element.readElementText();
             ++indexStr;
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());

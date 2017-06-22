@@ -53,22 +53,29 @@ QWidget *SieveActionBreak::createParamWidget(QWidget *parent) const
 
 bool SieveActionBreak::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
+    qDebug() << " bool SieveActionBreak::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)";
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
+        qDebug() << " tagName " << tagName;
         if (tagName == QLatin1String("tag")) {
             const QString tagValue = element.readElementText();
+            qDebug() << " bool SieveActionBreak::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)"<<tagValue;
             if (tagValue == QLatin1String("name")) {
                 QLineEdit *name = w->findChild<QLineEdit *>(QStringLiteral("name"));
                 name->setText(AutoCreateScriptUtil::strValue(element));
+                qDebug() << " NAME !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"<<name->text();
             } else {
                 unknowTagValue(tagValue, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionBreak::setParamWidgetValue unknown tagValue " << tagValue;
             }
         } else if (tagName == QLatin1String("str")) {
+            element.skipCurrentElement();
             //Nothing
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
+            element.skipCurrentElement();
             //implement in the future ?
         } else {
             unknownTag(tagName, error);

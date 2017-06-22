@@ -55,8 +55,10 @@ bool SieveActionAbstractFlags::setParamWidgetValue(QXmlStreamReader &element, QW
             SelectFlagsWidget *flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
             flagsWidget->setFlags(QStringList() << element.readElementText());
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
+            element.skipCurrentElement();
             //implement in the future ?
         } else {
             unknownTag(tagName, error);

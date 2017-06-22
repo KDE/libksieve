@@ -91,6 +91,7 @@ bool SieveActionKeep::setParamWidgetValue(QXmlStreamReader &element, QWidget *w,
             } else if (tagName == QLatin1String("tag") && element.readElementText() == QLatin1String("flags")) {
                 //nothing :)
             } else if (tagName == QLatin1String("crlf")) {
+                element.skipCurrentElement();
                 //nothing
             } else if (tagName == QLatin1String("comment")) {
                 //implement in the future ?

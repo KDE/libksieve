@@ -88,8 +88,10 @@ bool SieveActionAddHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
             }
             ++index;
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
+            element.skipCurrentElement();
             //implement in the future ?
         } else {
             unknownTag(tagName, error);

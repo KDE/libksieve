@@ -164,6 +164,7 @@ bool SieveConditionServerMetaData::setParamWidgetValue(QXmlStreamReader &element
             SelectMatchTypeComboBox *selectType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("selecttype"));
             selectType->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());

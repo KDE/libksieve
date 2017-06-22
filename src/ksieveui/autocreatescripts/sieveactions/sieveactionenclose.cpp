@@ -95,8 +95,10 @@ bool SieveActionEnclose::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             MultiLineEdit *edit = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
             edit->setPlainText(element.readElementText());
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
+            element.skipCurrentElement();
             //implement in the future ?
         } else {
             unknownTag(tagName, error);

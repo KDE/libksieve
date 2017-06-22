@@ -127,6 +127,7 @@ bool SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
             QLineEdit *addresses = w->findChild<QLineEdit *>(QStringLiteral("addresses"));
             addresses->setText(AutoCreateScriptUtil::listValueToStr(element));
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
             //implement in the future ?

@@ -89,6 +89,7 @@ bool SieveConditionIhave::setParamWidgetValue(QXmlStreamReader &element, QWidget
             QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
             edit->setText(tagValue);
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());

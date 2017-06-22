@@ -68,6 +68,7 @@ bool SieveActionExtractText::setParamWidgetValue(QXmlStreamReader &element, QWid
         const QStringRef tagName = element.name();
 
         if (tagName == QLatin1String("tag")) {
+            element.skipCurrentElement();
             //TODO ?
         } else if (tagName == QLatin1String("num")) {
             QSpinBox *numberOfCharacters = w->findChild<QSpinBox *>(QStringLiteral("numberOfCharacters"));
@@ -76,6 +77,7 @@ bool SieveActionExtractText::setParamWidgetValue(QXmlStreamReader &element, QWid
             QLineEdit *variableName = w->findChild<QLineEdit *>(QStringLiteral("variablename"));
             variableName->setText(element.readElementText());
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
             //implement in the future ?

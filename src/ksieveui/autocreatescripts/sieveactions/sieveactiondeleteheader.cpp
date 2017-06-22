@@ -73,12 +73,14 @@ bool SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, 
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("test")) {
-#ifdef FIXME_QDOMELEMENT
-            const QDomNode testNode = e.toElement();
-            const QString nameValue = e.attribute(QStringLiteral("name"), QString());
+            QString nameValue;
+            if (element.attributes().hasAttribute(QStringLiteral("name"))) {
+                nameValue = element.attributes().value(QStringLiteral("name")).toString();
+            }
             const bool isNegative = (nameValue == QLatin1String("not"));
-            return parseValue(element, w, error, isNegative);
-#endif
+            bool result = parseValue(element, w, error, isNegative);
+            element.skipCurrentElement();
+            return result;
         } else if (tagName == QLatin1String("tag")) {
             SelectMatchTypeComboBox *combo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
             combo->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), isNegative), name(), error);
@@ -95,8 +97,10 @@ bool SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, 
             }
             ++index;
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
+            element.skipCurrentElement();
             //implement in the future ?
         } else {
             unknownTag(tagName, error);

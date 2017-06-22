@@ -112,6 +112,7 @@ bool SieveConditionCurrentDate::setParamWidgetValue(QXmlStreamReader &element, Q
             SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
             selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());

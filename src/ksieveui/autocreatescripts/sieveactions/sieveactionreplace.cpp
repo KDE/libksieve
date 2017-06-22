@@ -95,6 +95,7 @@ bool SieveActionReplace::setParamWidgetValue(QXmlStreamReader &element, QWidget 
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionReplace::setParamWidgetValue unknown tagValue " << tagValue;
             }
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
             //implement in the future ?

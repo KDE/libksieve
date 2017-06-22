@@ -261,6 +261,7 @@ void SieveActionWidget::updateAddRemoveButton(bool addButtonEnabled, bool remove
 
 bool SieveActionWidget::setAction(const QString &actionName, QXmlStreamReader &element, const QString &comment, QString &error)
 {
+    qDebug() << "bool SieveActionWidget::setAction(const QString &actionName, QXmlStreamReader &element, const QString &comment, QString &error)" << actionName;
     const int index = mComboBox->findData(actionName);
     bool result = false;
     if (index != -1) {
@@ -365,6 +366,7 @@ int SieveActionWidgetLister::actionNumber() const
 
 void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyActions, QString &error)
 {
+    qDebug() <<" void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyActions, QString &error) onlyaction" << onlyActions;
     QString comment;
     if (onlyActions) {
         const QStringRef tagName = element.name();
@@ -379,6 +381,7 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                 w->setAction(actionName, element, comment, error);
                 //comment.clear();
             } else if (tagName == QLatin1String("crlf")) {
+                element.skipCurrentElement();
                 //nothing
             } else {
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript don't have name attribute " << tagName;
@@ -391,9 +394,11 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
         bool previousActionWasAComment = false;
         while (element.readNextStartElement()) {
             const QStringRef tagName = element.name();
+            qDebug() << "ieveActionWidgetLister::loadScript SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs" << tagName;
             if (tagName == QLatin1String("action") || tagName == QLatin1String("control") /*for break action*/) {
                 if (element.attributes().hasAttribute(QStringLiteral("name"))) {
                     const QString actionName = element.attributes().value(QStringLiteral("name")).toString();
+                    qDebug() << "************************************* actionName"<<actionName;
                     if (tagName == QLatin1String("control") && actionName == QLatin1String("if")) {
                         qCDebug(LIBKSIEVE_LOG) << "We found an loop if in a loop if. Not supported";
                         error += i18n("We detected a loop if in a loop if. It's not supported") + QLatin1Char('\n');
@@ -421,6 +426,7 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                 if (previousActionWasAComment) {
                     comment += QLatin1Char('\n');
                 }
+                element.skipCurrentElement();
             } else {
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript unknown tagName " << tagName;
             }

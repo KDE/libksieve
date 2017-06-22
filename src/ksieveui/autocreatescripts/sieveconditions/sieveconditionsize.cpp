@@ -82,14 +82,15 @@ bool SieveConditionSize::setParamWidgetValue(QXmlStreamReader &element, QWidget 
                 combo->setCurrentIndex(index);
             }
         } else if (tagName == QLatin1String("num")) {
-            const qlonglong tagValue = element.readElementText().toLongLong();
             QString numIdentifier;
             if (element.attributes().hasAttribute(QStringLiteral("quantifier"))) {
                 numIdentifier = element.attributes().value(QStringLiteral("quantifier")).toString();
             }
+            const qlonglong tagValue = element.readElementText().toLongLong();
             SelectSizeWidget *sizeWidget = w->findChild<SelectSizeWidget *>(QStringLiteral("sizewidget"));
             sizeWidget->setCode(tagValue, numIdentifier, name(), error);
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());

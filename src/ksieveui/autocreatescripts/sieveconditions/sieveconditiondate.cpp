@@ -106,6 +106,7 @@ QString SieveConditionDate::help() const
 
 bool SieveConditionDate::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
+    qDebug() << " bool SieveConditionDate::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)";
     int index = 0;
     QString type;
     QString value;
@@ -113,29 +114,31 @@ bool SieveConditionDate::setParamWidgetValue(QXmlStreamReader &element, QWidget 
     QString commentStr;
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
-            if (tagName == QLatin1String("str")) {
-                if (index == 0) {
-                    headerStr = element.readElementText();
-                } else if (index == 1) {
-                    type = element.readElementText();
-                } else if (index == 2) {
-                    value = element.readElementText();
-                } else {
-                    tooManyArgument(tagName, index, 3, error);
-                    qCDebug(LIBKSIEVE_LOG) << " SieveConditionDate::setParamWidgetValue too many argument :" << index;
-                }
-                ++index;
-            } else if (tagName == QLatin1String("tag")) {
-                SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
-                selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
+        qDebug() << " tagName "<< tagName;
+        if (tagName == QLatin1String("str")) {
+            if (index == 0) {
+                headerStr = element.readElementText();
+            } else if (index == 1) {
+                type = element.readElementText();
+            } else if (index == 2) {
+                value = element.readElementText();
             } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << "SieveConditionDate::setParamWidgetValue unknown tag " << tagName;
+                tooManyArgument(tagName, index, 3, error);
+                qCDebug(LIBKSIEVE_LOG) << " SieveConditionDate::setParamWidgetValue too many argument :" << index;
             }
+            ++index;
+        } else if (tagName == QLatin1String("tag")) {
+            SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+            selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
+        } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << "SieveConditionDate::setParamWidgetValue unknown tag " << tagName;
+        }
     }
     if (!commentStr.isEmpty()) {
         setComment(commentStr);

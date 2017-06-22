@@ -90,6 +90,7 @@ bool SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
             KSieveUi::AbstractMoveImapFolderWidget *edit = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("fileintolineedit"));
             edit->setText(AutoCreateScriptUtil::protectSlash(tagValue));
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
             //implement in the future ?

@@ -91,6 +91,7 @@ bool SieveConditionExists::setParamWidgetValue(QXmlStreamReader &element, QWidge
             SelectHeaderTypeComboBox *selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headervalue"));
             selectHeaderType->setCode(AutoCreateScriptUtil::listValueToStr(element));
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());

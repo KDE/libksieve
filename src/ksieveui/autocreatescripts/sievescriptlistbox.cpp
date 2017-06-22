@@ -408,144 +408,149 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
     bool hasCreatedAIfBlock = false;
     bool previousElementWasAComment = false;
     while (n.readNextStartElement()) {
-            const QStringRef tagName = n.name();
-            //qCDebug(LIBKSIEVE_LOG)<<" tagName "<<tagName;
-            if (tagName == QLatin1String("control")) {
-                previousElementWasAComment = false;
-                //Create a new page when before it was "onlyactions"
-                if (typeBlock == TypeBlockAction) {
+        const QStringRef tagName = n.name();
+        qDebug()<<" tagName "<<tagName;
+        if (tagName == QLatin1String("control")) {
+            previousElementWasAComment = false;
+            //Create a new page when before it was "onlyactions"
+            if (typeBlock == TypeBlockAction) {
+                currentPage = nullptr;
+            }
+            if (n.attributes().hasAttribute(QStringLiteral("name"))) {
+                const QString controlType =n.attributes().value(QStringLiteral("name")).toString();
+                qDebug() <<" SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSs"<< controlType;
+                //qCDebug(LIBKSIEVE_LOG)<<" controlType"<<controlType;
+                if (controlType == QLatin1String("if")) {
+                    typeBlock = TypeBlockIf;
+                    if (!currentPage || hasCreatedAIfBlock) {
+                        currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
+                    }
+                    hasCreatedAIfBlock = true;
+                    comment.clear();
+                    qDebug() << " IF BLOCK";
+                    currentPage->blockIfWidget()->loadScript(n, false, error);
+                } else if (controlType == QLatin1String("elsif")) {
+                    typeBlock = TypeBlockElsif;
+                    if (!currentPage) {
+                        qCDebug(LIBKSIEVE_LOG) << " script is not correct missing if block";
+                        currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
+                    }
+                    SieveScriptBlockWidget *blockWidget = currentPage->addScriptBlock(KSieveUi::SieveWidgetPageAbstract::BlockElsIf);
+                    if (blockWidget) {
+                        blockWidget->loadScript(n, false, error);
+                    }
+                } else if (controlType == QLatin1String("else")) {
+                    typeBlock = TypeBlockElse;
+                    if (!currentPage) {
+                        currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
+                        qCDebug(LIBKSIEVE_LOG) << " script is not correct missing if block";
+                    }
+                    SieveScriptBlockWidget *blockWidget = currentPage->addScriptBlock(KSieveUi::SieveWidgetPageAbstract::BlockElse);
+                    if (blockWidget) {
+                        blockWidget->loadScript(n, false, error);
+                    }
+                    //We are sure that we can't have another elsif
                     currentPage = nullptr;
-                }
-                if (n.attributes().hasAttribute(QStringLiteral("name"))) {
-                    const QString controlType =n.attributes().value(QStringLiteral("name")).toString();
-                    //qCDebug(LIBKSIEVE_LOG)<<" controlType"<<controlType;
-                    if (controlType == QLatin1String("if")) {
-                        typeBlock = TypeBlockIf;
-                        if (!currentPage || hasCreatedAIfBlock) {
-                            currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
-                        }
-                        hasCreatedAIfBlock = true;
+                } else if (controlType == QLatin1String("foreverypart")) {
+                    typeBlock = TypeBlockForeachBlock;
+                    if (!currentPage) {
+                        currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
                         comment.clear();
-                        currentPage->blockIfWidget()->loadScript(n, false, error);
-                    } else if (controlType == QLatin1String("elsif")) {
-                        typeBlock = TypeBlockElsif;
-                        if (!currentPage) {
-                            qCDebug(LIBKSIEVE_LOG) << " script is not correct missing if block";
-                            currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
-                        }
-                        SieveScriptBlockWidget *blockWidget = currentPage->addScriptBlock(KSieveUi::SieveWidgetPageAbstract::BlockElsIf);
-                        if (blockWidget) {
-                            blockWidget->loadScript(n, false, error);
-                        }
-                    } else if (controlType == QLatin1String("else")) {
-                        typeBlock = TypeBlockElse;
-                        if (!currentPage) {
-                            currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
-                            qCDebug(LIBKSIEVE_LOG) << " script is not correct missing if block";
-                        }
-                        SieveScriptBlockWidget *blockWidget = currentPage->addScriptBlock(KSieveUi::SieveWidgetPageAbstract::BlockElse);
-                        if (blockWidget) {
-                            blockWidget->loadScript(n, false, error);
-                        }
-                        //We are sure that we can't have another elsif
-                        currentPage = nullptr;
-                    } else if (controlType == QLatin1String("foreverypart")) {
-                        typeBlock = TypeBlockForeachBlock;
-                        if (!currentPage) {
-                            currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
-                            comment.clear();
-                        }
-                        if (currentPage->forEveryPartWidget()) {
-                            currentPage->forEveryPartWidget()->loadScript(n, error);
-                        } else {
-                            error += i18n("forEveryPart is not supported by your server") + QLatin1Char('\n');
-                        }
-                        //TODO verify it.
+                    }
+                    if (currentPage->forEveryPartWidget()) {
+                        currentPage->forEveryPartWidget()->loadScript(n, error);
+                    } else {
+                        error += i18n("forEveryPart is not supported by your server") + QLatin1Char('\n');
+                    }
+                    //TODO verify it.
 #ifdef QDOMELEMENT_FIXME
-                        QDomNode block = e.firstChildElement(QStringLiteral("block")).firstChild();
-                        loadBlock(block, currentPage, typeBlock, error);
+                    QDomNode block = e.firstChildElement(QStringLiteral("block")).firstChild();
+                    loadBlock(block, currentPage, typeBlock, error);
 #endif
-                    } else if (controlType == QLatin1String("require")) {
-                        //Nothing. autogenerated
-                    } else {
-                        qCDebug(LIBKSIEVE_LOG) << " unknown controlType :" << controlType;
-                    }
-                }
-            } else if (tagName == QLatin1String("comment")) {
-                previousElementWasAComment = true;
-                #ifdef QDOMELEMENT_FIXME
-                if (e.hasAttribute(QStringLiteral("hash"))) {
-                    //TODO
-                } else if (e.hasAttribute(QStringLiteral("bracket"))) {
-                    //TODO
-                }
-#endif
-                QString str(n.readElementText());
-                if (str.contains(defaultScriptName())) {
-                    scriptName = str.remove(defaultScriptName());
+                } else if (controlType == QLatin1String("require")) {
+                    qDebug() << " REQUIRES";
+                    n.skipCurrentElement();
+                    //Nothing. autogenerated
                 } else {
-                    if (!comment.isEmpty()) {
-                        comment += QLatin1Char('\n');
-                    }
-                    comment += n.readElementText();
+                    qCDebug(LIBKSIEVE_LOG) << " unknown controlType :" << controlType;
                 }
-            } else if (tagName == QLatin1String("action")) {
-                previousElementWasAComment = false;
-                if (n.attributes().hasAttribute(QStringLiteral("name"))) {
-                    const QString actionName = n.attributes().value(QStringLiteral("name")).toString();
-                    if (actionName == QLatin1String("include")) {
-                        if (!currentPage || (typeBlock == TypeBlockIf) || (typeBlock == TypeBlockElse) || (typeBlock == TypeBlockElsif)) {
-                            currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
-                            comment.clear();
-                        }
-                        typeBlock = TypeBlockInclude;
-                        if (currentPage->includeWidget()) {
-                            currentPage->includeWidget()->loadScript(n, error);
-                        } else {
-                            qCDebug(LIBKSIEVE_LOG) << " include not supported";
-                        }
-                    } else if (actionName == QLatin1String("global")) {
-                        if (!currentPage || (typeBlock == TypeBlockIf) || (typeBlock == TypeBlockElse) || (typeBlock == TypeBlockElsif)) {
-                            currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
-                            comment.clear();
-                        }
-                        typeBlock = TypeBlockGlobal;
-                        if (currentPage->globalVariableWidget()) {
-                            currentPage->globalVariableWidget()->loadScript(n, error);
-                        } else {
-                            qCDebug(LIBKSIEVE_LOG) << " globalVariable not supported";
-                        }
-                    } else if (actionName == QLatin1String("set") && (typeBlock == TypeBlockGlobal)) {
-                        if (currentPage->globalVariableWidget()) {
-                            if (!currentPage->globalVariableWidget()->loadSetVariable(n, error)) {
-                                qCDebug(LIBKSIEVE_LOG) << "It's not a global variable";
-                                if (!currentPage || (typeBlock == TypeBlockIf) || (typeBlock == TypeBlockElse) || (typeBlock == TypeBlockElsif)) {
-                                    currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
-                                }
-                                typeBlock = TypeBlockAction;
-                                comment.clear();
-                                currentPage->blockIfWidget()->loadScript(n, true, error);
-                            }
-                        } else {
-                            qCDebug(LIBKSIEVE_LOG) << " set not supported";
-                        }
-                    } else {
-                        if (!currentPage || (typeBlock == TypeBlockIf) || (typeBlock == TypeBlockElse) || (typeBlock == TypeBlockElsif)) {
-                            currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
-                        }
-                        typeBlock = TypeBlockAction;
-                        comment.clear();
-                        currentPage->blockIfWidget()->loadScript(n, true, error);
-                    }
-                }
-            } else if (tagName == QLatin1String("crlf")) {
-                //If it was a comment previously you will create a \n
-                if (previousElementWasAComment) {
+            }
+        } else if (tagName == QLatin1String("comment")) {
+            previousElementWasAComment = true;
+#ifdef QDOMELEMENT_FIXME
+            if (e.hasAttribute(QStringLiteral("hash"))) {
+                //TODO
+            } else if (e.hasAttribute(QStringLiteral("bracket"))) {
+                //TODO
+            }
+#endif
+            QString str(n.readElementText());
+            if (str.contains(defaultScriptName())) {
+                scriptName = str.remove(defaultScriptName());
+            } else {
+                if (!comment.isEmpty()) {
                     comment += QLatin1Char('\n');
                 }
-            } else {
-                qCDebug(LIBKSIEVE_LOG) << " unknown tagname" << tagName;
+                comment += str;
             }
+        } else if (tagName == QLatin1String("action")) {
+            previousElementWasAComment = false;
+            if (n.attributes().hasAttribute(QStringLiteral("name"))) {
+                const QString actionName = n.attributes().value(QStringLiteral("name")).toString();
+                if (actionName == QLatin1String("include")) {
+                    if (!currentPage || (typeBlock == TypeBlockIf) || (typeBlock == TypeBlockElse) || (typeBlock == TypeBlockElsif)) {
+                        currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
+                        comment.clear();
+                    }
+                    typeBlock = TypeBlockInclude;
+                    if (currentPage->includeWidget()) {
+                        currentPage->includeWidget()->loadScript(n, error);
+                    } else {
+                        qCDebug(LIBKSIEVE_LOG) << " include not supported";
+                    }
+                } else if (actionName == QLatin1String("global")) {
+                    if (!currentPage || (typeBlock == TypeBlockIf) || (typeBlock == TypeBlockElse) || (typeBlock == TypeBlockElsif)) {
+                        currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
+                        comment.clear();
+                    }
+                    typeBlock = TypeBlockGlobal;
+                    if (currentPage->globalVariableWidget()) {
+                        currentPage->globalVariableWidget()->loadScript(n, error);
+                    } else {
+                        qCDebug(LIBKSIEVE_LOG) << " globalVariable not supported";
+                    }
+                } else if (actionName == QLatin1String("set") && (typeBlock == TypeBlockGlobal)) {
+                    if (currentPage->globalVariableWidget()) {
+                        if (!currentPage->globalVariableWidget()->loadSetVariable(n, error)) {
+                            qCDebug(LIBKSIEVE_LOG) << "It's not a global variable";
+                            if (!currentPage || (typeBlock == TypeBlockIf) || (typeBlock == TypeBlockElse) || (typeBlock == TypeBlockElsif)) {
+                                currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
+                            }
+                            typeBlock = TypeBlockAction;
+                            comment.clear();
+                            currentPage->blockIfWidget()->loadScript(n, true, error);
+                        }
+                    } else {
+                        qCDebug(LIBKSIEVE_LOG) << " set not supported";
+                    }
+                } else {
+                    if (!currentPage || (typeBlock == TypeBlockIf) || (typeBlock == TypeBlockElse) || (typeBlock == TypeBlockElsif)) {
+                        currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
+                    }
+                    typeBlock = TypeBlockAction;
+                    comment.clear();
+                    currentPage->blockIfWidget()->loadScript(n, true, error);
+                }
+            }
+        } else if (tagName == QLatin1String("crlf")) {
+            //If it was a comment previously you will create a \n
+            if (previousElementWasAComment) {
+                comment += QLatin1Char('\n');
+            }
+            n.skipCurrentElement();
+        } else {
+            qCDebug(LIBKSIEVE_LOG) << " unknown tagname" << tagName;
+        }
     }
 #ifdef REMOVE_QDOMELEMENT
     QString scriptName;

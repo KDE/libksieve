@@ -378,11 +378,14 @@ void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniq
         while (element.readNextStartElement()) {
             const QStringRef tagName = element.name();
             if (tagName == QLatin1String("testlist")) {
+                qDebug() << " test list !!!!!!!!!!!!!!";
                 while (element.readNextStartElement()) {
                     const QStringRef testTagName = element.name();
                     if (testTagName == QLatin1String("test")) {
+                        qDebug() << "test :!!!!!!!!!!!!!!!!!!!!!!!!!!";
                         if (element.attributes().hasAttribute(QStringLiteral("name"))) {
                             QString conditionName = element.attributes().value(QStringLiteral("name")).toString();
+                            qDebug() << " conditionName"<<conditionName;
                             if (firstCondition) {
                                 firstCondition = false;
                             } else {
@@ -390,24 +393,26 @@ void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniq
                             }
                             SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
                             if (conditionName == QLatin1String("not")) {
-#ifdef QDOMELEMENT_FIXME
+                                qDebug() << " NOT!!!!!!!!!!!!!!!!!!!";
                                 notCondition = true;
-                                QDomNode notNode = testElement.firstChild();
-                                QDomElement notElement = notNode.toElement();
-                                if (notElement.hasAttribute(QStringLiteral("name"))) {
-                                    conditionName = notElement.attribute(QStringLiteral("name"));
+                                element.readNextStartElement();
+                                if (element.attributes().hasAttribute(QStringLiteral("name"))) {
+                                    conditionName = element.attributes().value(QStringLiteral("name")).toString();
+                                    qDebug() << "conditionNameNOY !  "<<conditionName;
                                 }
-                                w->setCondition(conditionName, notElement, notCondition, error);
-#endif
+                                w->setCondition(conditionName, element, notCondition, error);
+                                element.skipCurrentElement();
                             } else {
                                 notCondition = false;
                                 w->setCondition(conditionName, element, notCondition, error);
                             }
                         }
                     } else if (testTagName == QLatin1String("crlf")) {
+                        element.skipCurrentElement();
                         //nothing
                     } else if (testTagName == QLatin1String("comment")) {
                         qDebug() << "Need to implement comment here ";
+                        element.skipCurrentElement();
                         //nothing
                         //implement in the future ?
                     } else {

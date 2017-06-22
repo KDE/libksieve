@@ -89,19 +89,15 @@ bool SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWid
             const QString tagValue = element.readElementText();
             QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
             value->setText(tagValue);
-#ifdef QDOMELEMENT_FIXME
-            node = node.nextSibling();
-            QDomElement variableElement = node.toElement();
-            if (!variableElement.isNull()) {
-                const QString variableTagName = variableElement.tagName();
+            if (element.readNextStartElement()) {
+                const QStringRef variableTagName = element.name();
                 if (variableTagName == QLatin1String("str")) {
                     QLineEdit *variable = w->findChild<QLineEdit *>(QStringLiteral("variable"));
-                    variable->setText(AutoCreateScriptUtil::protectSlash(variableElement.text()));
+                    variable->setText(AutoCreateScriptUtil::protectSlash(element.readElementText()));
                 }
             } else {
                 return false;
             }
-#endif
         } else if (tagName == QLatin1String("tag")) {
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1String("quoteregex")) {
@@ -116,6 +112,7 @@ bool SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWid
                 modifier->setCode(AutoCreateScriptUtil::tagValue(tagValue), name(), error);
             }
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
             //implement in the future ?

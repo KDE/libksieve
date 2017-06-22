@@ -128,6 +128,7 @@ bool SieveConditionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidg
             SelectConvertParameterWidget *params = w->findChild<SelectConvertParameterWidget *>(QStringLiteral("params"));
             params->setCode(AutoCreateScriptUtil::listValue(element), error);
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());

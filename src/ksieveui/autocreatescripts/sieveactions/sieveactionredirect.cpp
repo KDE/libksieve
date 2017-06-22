@@ -93,6 +93,7 @@ bool SieveActionRedirect::setParamWidgetValue(QXmlStreamReader &element, QWidget
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionRedirect::setParamWidgetValue tagValue unknown" << tagValue;
             }
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
             setComment(element.readElementText());

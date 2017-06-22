@@ -89,8 +89,10 @@ bool SieveActionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             SelectConvertParameterWidget *params = w->findChild<SelectConvertParameterWidget *>(QStringLiteral("params"));
             params->setCode(AutoCreateScriptUtil::listValue(element), error);
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
+            element.skipCurrentElement();
             //implement in the future ?
         } else {
             unknownTag(tagName, error);

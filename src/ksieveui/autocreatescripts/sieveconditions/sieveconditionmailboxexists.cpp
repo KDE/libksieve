@@ -87,6 +87,7 @@ bool SieveConditionMailboxExists::setParamWidgetValue(QXmlStreamReader &element,
             QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
             edit->setText(AutoCreateScriptUtil::quoteStr(tagValue));
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());

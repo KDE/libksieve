@@ -59,6 +59,7 @@ bool SieveActionEReject::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             MultiLineEdit *edit = w->findChild<MultiLineEdit *>(QStringLiteral("rejectmessage"));
             edit->setPlainText(AutoCreateScriptUtil::quoteStr(tagValue));
         } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
             //implement in the future ?
