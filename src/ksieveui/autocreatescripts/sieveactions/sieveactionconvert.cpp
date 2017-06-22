@@ -70,6 +70,34 @@ QWidget *SieveActionConvert::createParamWidget(QWidget *parent) const
 
 bool SieveActionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
+    int index = 0;
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("str")) {
+            if (index == 0) {
+                SelectMimeTypeComboBox *fromMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("from"));
+                fromMimeType->setCode(element.readElementText(), name(), error);
+            } else if (index == 1) {
+                SelectMimeTypeComboBox *toMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("to"));
+                toMimeType->setCode(element.readElementText(), name(), error);
+            } else {
+                tooManyArgument(tagName, index, 2, error);
+                qCDebug(LIBKSIEVE_LOG) << " SieveActionConvert::setParamWidgetValue too many argument :" << index;
+            }
+            ++index;
+        } else if (tagName == QLatin1String("list")) {
+            SelectConvertParameterWidget *params = w->findChild<SelectConvertParameterWidget *>(QStringLiteral("params"));
+            params->setCode(AutoCreateScriptUtil::listValue(element), error);
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            //implement in the future ?
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << "SieveActionConvert::setParamWidgetValue unknown tag " << tagName;
+        }
+    }
+
 #ifdef REMOVE_QDOMELEMENT
     int index = 0;
     QDomNode node = element.firstChild();

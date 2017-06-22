@@ -56,7 +56,7 @@ public:
 
     void unknownTag(const QStringRef &tag, QString &error);
     void unknowTagValue(const QString &tagValue, QString &error);
-    void tooManyArgument(const QString &tagName, int index, int maxValue, QString &error);
+    void tooManyArgument(const QStringRef &tagName, int index, int maxValue, QString &error);
     void serverDoesNotSupportFeatures(const QString &feature, QString &error);
 
 protected:

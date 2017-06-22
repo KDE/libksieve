@@ -52,6 +52,22 @@ QWidget *SieveActionEReject::createParamWidget(QWidget *parent) const
 
 bool SieveActionEReject::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("str")) {
+            const QString tagValue = element.readElementText();
+            MultiLineEdit *edit = w->findChild<MultiLineEdit *>(QStringLiteral("rejectmessage"));
+            edit->setPlainText(AutoCreateScriptUtil::quoteStr(tagValue));
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            //implement in the future ?
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveActionEReject::setParamWidgetValue unknown tagName " << tagName;
+        }
+    }
+
     #ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
