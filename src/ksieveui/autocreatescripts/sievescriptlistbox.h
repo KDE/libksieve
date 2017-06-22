@@ -24,8 +24,6 @@
 #include <QListWidgetItem>
 #include "ksieveui_private_export.h"
 class QListWidget;
-class QDomDocument;
-class QDomNode;
 class QPushButton;
 class QXmlStreamReader;
 
