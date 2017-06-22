@@ -83,6 +83,48 @@ QUrl SieveActionSetVariable::href() const
 
 bool SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("str")) {
+            const QString tagValue = element.readElementText();
+            QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+            value->setText(tagValue);
+#ifdef QDOMELEMENT_FIXME
+            node = node.nextSibling();
+            QDomElement variableElement = node.toElement();
+            if (!variableElement.isNull()) {
+                const QString variableTagName = variableElement.tagName();
+                if (variableTagName == QLatin1String("str")) {
+                    QLineEdit *variable = w->findChild<QLineEdit *>(QStringLiteral("variable"));
+                    variable->setText(AutoCreateScriptUtil::protectSlash(variableElement.text()));
+                }
+            } else {
+                return false;
+            }
+#endif
+        } else if (tagName == QLatin1String("tag")) {
+            const QString tagValue = element.readElementText();
+            if (tagValue == QLatin1String("quoteregex")) {
+                if (mHasRegexCapability) {
+                    QCheckBox *protectAgainstUseRegexp = w->findChild<QCheckBox *>(QStringLiteral("regexprotect"));
+                    protectAgainstUseRegexp->setChecked(true);
+                } else {
+                    error += i18n("Script needs regex support, but server does not have it.") + QLatin1Char('\n');
+                }
+            } else {
+                SelectVariableModifierComboBox *modifier = w->findChild<SelectVariableModifierComboBox *>(QStringLiteral("modifier"));
+                modifier->setCode(AutoCreateScriptUtil::tagValue(tagValue), name(), error);
+            }
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            //implement in the future ?
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveActionSetVariable::setParamWidgetValue unknown tagName " << tagName;
+        }
+    }
+
 #ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     while (!node.isNull()) {

@@ -69,6 +69,39 @@ QWidget *SieveActionNotify::createParamWidget(QWidget *parent) const
 
 bool SieveActionNotify::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("tag")) {
+            const QString tagValue = element.readElementText();
+            if (tagValue == QLatin1String("message")) {
+                const QString strValue = AutoCreateScriptUtil::strValue(element);
+                if (!strValue.isEmpty()) {
+                    QLineEdit *message = w->findChild<QLineEdit *>(QStringLiteral("message"));
+                    message->setText(AutoCreateScriptUtil::quoteStr(strValue));
+                }
+            } else if (tagValue == QLatin1String("importance")) {
+                const QString strValue = AutoCreateScriptUtil::strValue(element);
+                if (!strValue.isEmpty()) {
+                    SelectImportanceCombobox *importance = w->findChild<SelectImportanceCombobox *>(QStringLiteral("importancecombo"));
+                    importance->setCode(strValue, name(), error);
+                }
+            } else {
+                unknowTagValue(tagValue, error);
+                qCDebug(LIBKSIEVE_LOG) << " SieveActionNotify::setParamWidgetValue unknown tagValue" << tagValue;
+            }
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            //implement in the future ?
+        } else if (tagName == QLatin1String("str")) {
+            QLineEdit *method = w->findChild<QLineEdit *>(QStringLiteral("method"));
+            method->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveActionNotify::setParamWidgetValue unknown tagName " << tagName;
+        }
+    }
+
 #ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     while (!node.isNull()) {

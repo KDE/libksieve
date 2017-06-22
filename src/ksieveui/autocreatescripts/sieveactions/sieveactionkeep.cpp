@@ -79,6 +79,30 @@ QWidget *SieveActionKeep::createParamWidget(QWidget *parent) const
 
 bool SieveActionKeep::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
+    if (mHasFlagSupport) {
+        while (element.readNextStartElement()) {
+            const QStringRef tagName = element.name();
+            if (tagName == QLatin1String("list")) {
+                SelectFlagsWidget *flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
+                flagsWidget->setFlags(AutoCreateScriptUtil::listValue(element));
+            } else if (tagName == QLatin1String("str")) {
+                SelectFlagsWidget *flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
+                flagsWidget->setFlags(QStringList() << element.readElementText());
+            } else if (tagName == QLatin1String("tag") && element.readElementText() == QLatin1String("flags")) {
+                //nothing :)
+            } else if (tagName == QLatin1String("crlf")) {
+                //nothing
+            } else if (tagName == QLatin1String("comment")) {
+                //implement in the future ?
+            } else {
+                unknownTag(tagName, error);
+                qCDebug(LIBKSIEVE_LOG) << " SieveActionAbstractFlags::setParamWidgetValue unknown tag :" << tagName;
+            }
+        }
+    } else {
+        qCDebug(LIBKSIEVE_LOG) << " Server doesn't support imapflags";
+    }
+
 #ifdef REMOVE_QDOMELEMENT
     if (mHasFlagSupport) {
         QDomNode node = element.firstChild();

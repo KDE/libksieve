@@ -71,6 +71,39 @@ QWidget *SieveActionReplace::createParamWidget(QWidget *parent) const
 
 bool SieveActionReplace::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
+    while (element.readNextStartElement()) {
+        const QStringRef tagName = element.name();
+        if (tagName == QLatin1String("str")) {
+            MultiLineEdit *edit = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
+            edit->setPlainText(element.readElementText());
+        } else if (tagName == QLatin1String("tag")) {
+            const QString tagValue = element.readElementText();
+            if (tagValue == QLatin1String("subject")) {
+                const QString strValue = AutoCreateScriptUtil::strValue(element);
+                if (!strValue.isEmpty()) {
+                    QLineEdit *subject = w->findChild<QLineEdit *>(QStringLiteral("subject"));
+                    subject->setText(strValue);
+                }
+            } else if (tagValue == QLatin1String("from")) {
+                const QString strValue = AutoCreateScriptUtil::strValue(element);
+                if (!strValue.isEmpty()) {
+                    QLineEdit *headers = w->findChild<QLineEdit *>(QStringLiteral("from"));
+                    headers->setText(strValue);
+                }
+            } else {
+                unknowTagValue(tagValue, error);
+                qCDebug(LIBKSIEVE_LOG) << " SieveActionReplace::setParamWidgetValue unknown tagValue " << tagValue;
+            }
+        } else if (tagName == QLatin1String("crlf")) {
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            //implement in the future ?
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveActionReplace::setParamWidgetValue unknown tagName " << tagName;
+        }
+    }
+
 #ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     while (!node.isNull()) {
