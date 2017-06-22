@@ -173,7 +173,7 @@ QString ParseUserScriptJob::loadInclude()
     QString scriptName;
     while (mStreamReader->readNextStartElement()) {
         if (mStreamReader->name() == QLatin1String("str")) {
-            scriptName = reader.readElementText();
+            scriptName = mStreamReader->readElementText();
         }
     }
 #ifdef REMOVE_QDOMELEMENT

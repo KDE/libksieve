@@ -27,6 +27,7 @@ class QListWidget;
 class QDomDocument;
 class QDomNode;
 class QPushButton;
+class QXmlStreamReader;
 
 namespace KSieveUi {
 class SieveEditorGraphicalModeWidget;
@@ -92,7 +93,7 @@ private:
         TypeBlockForeachBlock
     };
 
-    void loadBlock(QDomNode &n, SieveScriptPage *currentPage, ParseSieveScriptTypeBlock typeBlock, QString &error);
+    void loadBlock(QXmlStreamReader &n, SieveScriptPage *currentPage, ParseSieveScriptTypeBlock typeBlock, QString &error);
     void clear();
     SieveScriptPage *createNewScript(const QString &newName, const QString &description = QString());
     QString createUniqName();

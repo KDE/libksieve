@@ -43,6 +43,7 @@ public:
     QStringList activeScriptList() const;
     QString error() const;
     void kill();
+    QStringList parsescript(const QString &script, bool &result);
 
 Q_SIGNALS:
     void finished(ParseUserScriptJob *job);
@@ -53,7 +54,6 @@ private:
     void emitError(const QString &msgError);
     QString loadInclude();
     QStringList extractActiveScript(const QString &doc);
-    QStringList parsescript(const QString &script, bool &result);
     QUrl mCurrentUrl;
     KManageSieve::SieveJob *mSieveJob;
     QStringList mActiveScripts;

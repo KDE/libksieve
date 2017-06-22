@@ -22,6 +22,7 @@
 
 #include "ksieveui_private_export.h"
 #include <ksieve/scriptbuilder.h>
+#include <QString>
 class QXmlStreamWriter;
 namespace KSieveUi
 {

@@ -31,6 +31,7 @@
 #include <QPushButton>
 #include <KIconLoader>
 #include <QIcon>
+#include <QXmlStreamWriter>
 
 #include <QVBoxLayout>
 #include <QListWidget>
@@ -390,15 +391,22 @@ void SieveScriptListBox::clear()
 void SieveScriptListBox::loadScript(const QString &doc, QString &error)
 {
     clear();
-    QDomElement docElem = doc.documentElement();
-    QDomNode n = docElem.firstChild();
-    SieveScriptPage *currentPage = nullptr;
-    ParseSieveScriptTypeBlock typeBlock = TypeUnknown;
-    loadBlock(n, currentPage, typeBlock, error);
+    QXmlStreamReader streamReader(doc);
+    if (streamReader.readNextStartElement()) {
+        if (streamReader.name() == QLatin1String("script")) {
+            SieveScriptPage *currentPage = nullptr;
+            ParseSieveScriptTypeBlock typeBlock = TypeUnknown;
+            loadBlock(streamReader, currentPage, typeBlock, error);
+        }
+    }
 }
 
-void SieveScriptListBox::loadBlock(QDomNode &n, SieveScriptPage *currentPage, ParseSieveScriptTypeBlock typeBlock, QString &error)
+void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *currentPage, ParseSieveScriptTypeBlock typeBlock, QString &error)
 {
+    while (n.readNextStartElement()) {
+
+    }
+#ifdef REMOVE_QDOMELEMENT
     QString scriptName;
     QString comment;
     bool hasCreatedAIfBlock = false;
@@ -543,6 +551,7 @@ void SieveScriptListBox::loadBlock(QDomNode &n, SieveScriptPage *currentPage, Pa
         }
         n = n.nextSibling();
     }
+#endif
 }
 
 QString SieveScriptListBox::createUniqName()

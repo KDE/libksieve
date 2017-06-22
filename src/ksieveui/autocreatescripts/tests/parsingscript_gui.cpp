@@ -90,7 +90,7 @@ int main(int argc, char **argv)
     //Add all capabilities for testing
     dialog->setSieveCapabilities(capabilities);
     QString error;
-    dialog->loadScript(psb.toDom(), error);
+    dialog->loadScript(psb.result(), error);
     if (!error.isEmpty()) {
         QPointer<KSieveUi::SieveScriptParsingErrorDialog> dlg = new KSieveUi::SieveScriptParsingErrorDialog;
         dlg->setError(QString::fromLatin1(script), error);

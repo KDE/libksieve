@@ -37,7 +37,7 @@ public:
 
     virtual QStringList sieveCapabilities() = 0;
 
-    virtual void loadScript(const QDomDocument &doc, QString &error) = 0;
+    virtual void loadScript(const QString &doc, QString &error) = 0;
 };
 }
 

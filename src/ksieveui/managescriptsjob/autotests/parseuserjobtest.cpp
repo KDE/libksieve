@@ -26,7 +26,8 @@ void ParseUserTest::testParseEmptyUserJob()
 {
     const QString script;
     bool result;
-    const QStringList lst = KSieveUi::ParseUserScriptJob::parsescript(script, result);
+    ParseUserScriptJob job({});
+    const QStringList lst = job.parsescript(script, result);
     QCOMPARE(lst.count(), 0);
     QCOMPARE(result, true);
 }
@@ -45,7 +46,8 @@ void ParseUserTest::testParseUserTwoActiveScriptJob()
                                           "include :personal \"file1\";\n"
                                           "include :personal \"file2\";\n");
     bool result;
-    const QStringList lst = KSieveUi::ParseUserScriptJob::parsescript(script, result);
+    ParseUserScriptJob job({});
+    const QStringList lst = job.parsescript(script, result);
     QCOMPARE(lst.count(), 2);
     QCOMPARE(result, true);
 }
@@ -62,7 +64,8 @@ void ParseUserTest::testParseUserNoActiveScriptJob()
                                           "\n"
                                           "require [\"include\"];\n");
     bool result;
-    const QStringList lst = KSieveUi::ParseUserScriptJob::parsescript(script, result);
+    ParseUserScriptJob job({});
+    const QStringList lst = job.parsescript(script, result);
     QCOMPARE(lst.count(), 0);
     QCOMPARE(result, true);
 }
@@ -81,7 +84,8 @@ void ParseUserTest::testParseUserDuplicateActiveScriptJob()
                                           "include :personal \"file1\";\n"
                                           "include :personal \"file1\";\n");
     bool result;
-    const QStringList lst = KSieveUi::ParseUserScriptJob::parsescript(script, result);
+    ParseUserScriptJob job({});
+    const QStringList lst = job.parsescript(script, result);
     QCOMPARE(lst.count(), 1);
     QCOMPARE(result, true);
 }
@@ -98,7 +102,8 @@ void ParseUserTest::testParseUserErrorScriptJob()
                                           "\n"
                                           "errorscript\n");
     bool result;
-    const QStringList lst = KSieveUi::ParseUserScriptJob::parsescript(script, result);
+    ParseUserScriptJob job({});
+    const QStringList lst = job.parsescript(script, result);
     QCOMPARE(lst.count(), 0);
     QCOMPARE(result, false);
 }

@@ -56,7 +56,7 @@ AutoCreateScriptDialog::~AutoCreateScriptDialog()
     writeConfig();
 }
 
-void AutoCreateScriptDialog::loadScript(const QDomDocument &doc, QString &error)
+void AutoCreateScriptDialog::loadScript(const QString &doc, QString &error)
 {
     mEditor->loadScript(doc, error);
 }

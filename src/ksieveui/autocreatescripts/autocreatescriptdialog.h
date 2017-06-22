@@ -39,7 +39,7 @@ public:
     QString script(QString &requires) const;
     void setSieveCapabilities(const QStringList &capabilities);
 
-    void loadScript(const QDomDocument &doc, QString &error);
+    void loadScript(const QString &doc, QString &error);
 
     void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &sieveImapAccountSettings);
 protected:
