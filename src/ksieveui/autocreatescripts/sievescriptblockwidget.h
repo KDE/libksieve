@@ -21,6 +21,7 @@
 #define SIEVESCRIPTBLOCKWIDGET_H
 
 #include "sievewidgetpageabstract.h"
+#include "sieveglobalvariablewidget.h"
 
 class QRadioButton;
 class QGroupBox;
@@ -55,6 +56,7 @@ public:
 
     void loadScript(QXmlStreamReader &element, bool onlyActions, QString &error);
 
+    void loadLocalVariable(const SieveGlobalVariableActionWidget::VariableElement &var);
 Q_SIGNALS:
     void addNewBlock(QWidget *widget, KSieveUi::SieveWidgetPageAbstract::PageType type);
 

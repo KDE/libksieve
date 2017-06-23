@@ -38,6 +38,8 @@
 #include <QWhatsThis>
 #include <QDomElement>
 
+#include <autocreatescripts/sieveactions/sieveactionsetvariable.h>
+
 using namespace KSieveUi;
 
 static int MINIMUMACTION = 1;
@@ -259,6 +261,23 @@ void SieveActionWidget::updateAddRemoveButton(bool addButtonEnabled, bool remove
     mRemove->setEnabled(removeButtonEnabled);
 }
 
+void SieveActionWidget::setLocaleVariable(const SieveGlobalVariableActionWidget::VariableElement &var)
+{
+    const int index = mComboBox->findData(QStringLiteral("set"));
+    if (index != -1) {
+        mComboBox->setCurrentIndex(index);
+        slotActionChanged(index);
+        KSieveUi::SieveActionSetVariable *localVar = dynamic_cast<KSieveUi::SieveActionSetVariable *>(mActionList.at(index));
+        if (localVar) {
+            localVar->setLocalVariable(this, var);
+        }
+    } else {
+        //error += i18n("Script contains unsupported feature \"%1\"", actionName) + QLatin1Char('\n');
+        //qCDebug(LIBKSIEVE_LOG) << "Condition " << actionName << " not supported";
+    }
+
+}
+
 bool SieveActionWidget::setAction(const QString &actionName, QXmlStreamReader &element, const QString &comment, QString &error)
 {
     const int index = mComboBox->findData(actionName);
@@ -361,6 +380,17 @@ QWidget *SieveActionWidgetLister::createWidget(QWidget *parent)
 int SieveActionWidgetLister::actionNumber() const
 {
     return widgets().count();
+}
+
+void SieveActionWidgetLister::loadLocalVariable(const SieveGlobalVariableActionWidget::VariableElement &var)
+{
+    SieveActionWidget *w = qobject_cast<SieveActionWidget *>(widgets().constLast());
+    if (w->isConfigurated()) {
+        addWidgetAfterThisWidget(widgets().constLast());
+        w = qobject_cast<SieveActionWidget *>(widgets().constLast());
+    }
+    w->setLocaleVariable(var);
+
 }
 
 void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyActions, QString &error)

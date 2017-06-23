@@ -246,6 +246,13 @@ void SieveScriptBlockWidget::updateCondition()
     updateWidget();
 }
 
+void SieveScriptBlockWidget::loadLocalVariable(const SieveGlobalVariableActionWidget::VariableElement &var)
+{
+    mScriptActionLister->loadLocalVariable(var);
+    mMatchCondition = AllCondition;
+    updateCondition();
+}
+
 void SieveScriptBlockWidget::loadScript(QXmlStreamReader &element, bool onlyActions, QString &error)
 {
     if (onlyActions) {

@@ -81,6 +81,14 @@ QUrl SieveActionSetVariable::href() const
     return SieveEditorUtil::helpUrl(SieveEditorUtil::strToVariableName(name()));
 }
 
+void SieveActionSetVariable::setLocalVariable(QWidget *w, const SieveGlobalVariableActionWidget::VariableElement &var)
+{
+    QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+    value->setText(var.variableValue);
+    QLineEdit *variable = w->findChild<QLineEdit *>(QStringLiteral("variable"));
+    variable->setText(AutoCreateScriptUtil::protectSlash(var.variableName));
+}
+
 bool SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
     while (element.readNextStartElement()) {

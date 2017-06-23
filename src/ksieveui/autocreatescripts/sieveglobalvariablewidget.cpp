@@ -203,7 +203,7 @@ void SieveGlobalVariableWidget::loadScript(QXmlStreamReader &element, QString &e
     mIncludeLister->loadScript(element, error);
 }
 
-bool SieveGlobalVariableWidget::loadSetVariable(QXmlStreamReader &element, QString &error)
+SieveGlobalVariableActionWidget::VariableElement SieveGlobalVariableWidget::loadSetVariable(QXmlStreamReader &element, QString &error)
 {
     return mIncludeLister->loadSetVariable(element, error);
 }
@@ -300,8 +300,9 @@ void SieveGlobalVariableLister::loadScript(QXmlStreamReader &element, QString &e
     w->loadScript(element, error);
 }
 
-bool SieveGlobalVariableLister::loadSetVariable(QXmlStreamReader &element, QString & /*error*/)
+SieveGlobalVariableActionWidget::VariableElement SieveGlobalVariableLister::loadSetVariable(QXmlStreamReader &element, QString & /*error*/)
 {
+    SieveGlobalVariableActionWidget::VariableElement var;
     QString variableName;
     QString variableValue;
     int index = 0;
@@ -330,5 +331,9 @@ bool SieveGlobalVariableLister::loadSetVariable(QXmlStreamReader &element, QStri
             globalVariableFound = true;
         }
     }
-    return globalVariableFound;
+    if (!globalVariableFound) {
+        var.variableName = variableName;
+        var.variableValue = variableValue;
+    }
+    return var;
 }

@@ -20,6 +20,7 @@
 #define SIEVEACTIONSETVARIABLE_H
 
 #include "sieveaction.h"
+#include <autocreatescripts/sieveglobalvariablewidget.h>
 namespace KSieveUi {
 class SieveActionSetVariable : public SieveAction
 {
@@ -34,6 +35,7 @@ public:
     QString serverNeedsCapability() const override;
     QWidget *createParamWidget(QWidget *parent) const override;
     QUrl href() const override;
+    void setLocalVariable(QWidget *w, const SieveGlobalVariableActionWidget::VariableElement &var);
 private:
     bool mHasRegexCapability;
 };

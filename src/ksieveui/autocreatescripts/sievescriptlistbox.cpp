@@ -409,6 +409,7 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
     bool previousElementWasAComment = false;
     while (n.readNextStartElement()) {
         const QStringRef tagName = n.name();
+        //qDebug() <<"SieveScriptListBox::loadBlock tagName " << tagName;
         if (tagName == QLatin1String("control")) {
             previousElementWasAComment = false;
             //Create a new page when before it was "onlyactions"
@@ -489,6 +490,7 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
                 }
                 comment += str;
             }
+            //qDebug() << " COMMENT " << comment;
         } else if (tagName == QLatin1String("action")) {
             previousElementWasAComment = false;
             if (n.attributes().hasAttribute(QStringLiteral("name"))) {
@@ -516,15 +518,17 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
                         qCDebug(LIBKSIEVE_LOG) << " globalVariable not supported";
                     }
                 } else if (actionName == QLatin1String("set") && (typeBlock == TypeBlockGlobal)) {
+                    //FIXME global not global variable.
                     if (currentPage->globalVariableWidget()) {
-                        if (!currentPage->globalVariableWidget()->loadSetVariable(n, error)) {
+                        const SieveGlobalVariableActionWidget::VariableElement var = currentPage->globalVariableWidget()->loadSetVariable(n, error);
+                        if (var.isValid()) {
                             qCDebug(LIBKSIEVE_LOG) << "It's not a global variable";
                             if (!currentPage || (typeBlock == TypeBlockIf) || (typeBlock == TypeBlockElse) || (typeBlock == TypeBlockElsif)) {
                                 currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
                             }
                             typeBlock = TypeBlockAction;
                             comment.clear();
-                            currentPage->blockIfWidget()->loadScript(n, true, error);
+                            currentPage->blockIfWidget()->loadLocalVariable(var);
                         }
                     } else {
                         qCDebug(LIBKSIEVE_LOG) << " set not supported";

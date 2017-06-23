@@ -21,7 +21,7 @@
 #define SIEVEACTIONWIDGETLISTER_H
 
 #include <Libkdepim/KWidgetLister>
-
+#include "sieveglobalvariablewidget.h"
 class QPushButton;
 
 class QGridLayout;
@@ -48,6 +48,8 @@ public:
     bool setAction(const QString &actionName, QXmlStreamReader &element, const QString &comment, QString &error);
     bool isConfigurated() const;
     void clear();
+
+    void setLocaleVariable(const SieveGlobalVariableActionWidget::VariableElement &var);
 
 private Q_SLOTS:
     void slotAddWidget();
@@ -87,6 +89,7 @@ public:
 
     int actionNumber() const;
 
+    void loadLocalVariable(const SieveGlobalVariableActionWidget::VariableElement &var);
 public Q_SLOTS:
     void slotAddWidget(QWidget *w);
     void slotRemoveWidget(QWidget *w);

@@ -37,6 +37,14 @@ class SieveGlobalVariableActionWidget : public QWidget
 {
     Q_OBJECT
 public:
+    struct VariableElement {
+        QString variableName;
+        QString variableValue;
+        bool isValid() const {
+            return !variableName.isEmpty();
+        }
+    };
+
     explicit SieveGlobalVariableActionWidget(QWidget *parent = nullptr);
     ~SieveGlobalVariableActionWidget();
 
@@ -76,7 +84,7 @@ public:
 
     void generatedScript(QString &script, QStringList &requires);
     void loadScript(QXmlStreamReader &element, QString &error);
-    bool loadSetVariable(QXmlStreamReader &element, QString &error);
+    SieveGlobalVariableActionWidget::VariableElement loadSetVariable(QXmlStreamReader &element, QString &error);
 
 Q_SIGNALS:
     void valueChanged();
@@ -103,7 +111,7 @@ public:
     void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) override;
 
     void loadScript(QXmlStreamReader &element, QString &error);
-    bool loadSetVariable(QXmlStreamReader &element, QString &error);
+    SieveGlobalVariableActionWidget::VariableElement loadSetVariable(QXmlStreamReader &element, QString &error);
 
 private Q_SLOTS:
     void slotHelp();
