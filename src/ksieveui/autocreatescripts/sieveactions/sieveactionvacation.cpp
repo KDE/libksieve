@@ -109,7 +109,14 @@ bool SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
                 //Nothing wait num tag for it.
             } else if (tagValue == QLatin1String("addresses")) {
                 QLineEdit *addresses = w->findChild<QLineEdit *>(QStringLiteral("addresses"));
-                addresses->setText(AutoCreateScriptUtil::strValue(element));
+                if (element.readNextStartElement()) {
+                    const QStringRef textElementTagName = element.name();
+                    if (textElementTagName == QLatin1String("str")) {
+                        addresses->setText(element.readElementText());
+                    } else if (textElementTagName == QLatin1String("list")) {
+                        addresses->setText(AutoCreateScriptUtil::listValueToStr(element));
+                    }
+                }
             } else if (tagValue == QLatin1String("subject")) {
                 QLineEdit *subject = w->findChild<QLineEdit *>(QStringLiteral("subject"));
                 subject->setText(AutoCreateScriptUtil::strValue(element));
@@ -123,9 +130,6 @@ bool SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
         } else if (tagName == QLatin1String("str")) {
             MultiLineEdit *text = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
             text->setPlainText(element.readElementText());
-        } else if (tagName == QLatin1String("list")) {
-            QLineEdit *addresses = w->findChild<QLineEdit *>(QStringLiteral("addresses"));
-            addresses->setText(AutoCreateScriptUtil::listValueToStr(element));
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
             //nothing

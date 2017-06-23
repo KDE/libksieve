@@ -138,9 +138,10 @@ QString AutoCreateScriptUtil::strValue(QXmlStreamReader &node)
         const QStringRef textElementTagName = node.name();
         if (textElementTagName == QLatin1String("str")) {
             return node.readElementText();
+        } else {
+            node.skipCurrentElement();
         }
     }
-
     return QString();
 }
 
