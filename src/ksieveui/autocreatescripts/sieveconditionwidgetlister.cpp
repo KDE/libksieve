@@ -350,7 +350,9 @@ void SieveConditionWidgetLister::loadTest(QXmlStreamReader &element, bool notCon
         SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
         w->setCondition(conditionName, element, notCondition, error);
     }
-    element.skipCurrentElement();
+    if (notCondition) {
+        element.skipCurrentElement();
+    }
 #ifdef REMOVE_QDOMELEMENT
     QDomElement testElement = element;
     if (notCondition) {
