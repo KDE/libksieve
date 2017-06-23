@@ -249,21 +249,17 @@ void SieveScriptBlockWidget::updateCondition()
 void SieveScriptBlockWidget::loadScript(QXmlStreamReader &element, bool onlyActions, QString &error)
 {
     if (onlyActions) {
-        qDebug() << "void SieveScriptBlockWidget::loadScript(QXmlStreamReader &element, bool onlyActions, QString &error) ";
         mScriptActionLister->loadScript(element, true, error);
         mMatchCondition = AllCondition;
         updateCondition();
     } else {
-        qDebug() << "void SieveScriptBlockWidget::loadScript(QXmlStreamReader &element, bool onlyActions, QString &error) 222";
         bool uniqueTest = false;
         while (element.readNextStartElement()) {
             const QStringRef tagName = element.name();
-            qDebug() << " void SieveScriptBlockWidget::loadScript(QXmlStreamReader &element, bool onlyActions, QString &error) check"<<tagName;
             if (tagName == QLatin1String("test")) {
                 bool notCondition = false;
                 if (element.attributes().hasAttribute(QStringLiteral("name"))) {
                     const QString typeCondition = element.attributes().value(QStringLiteral("name")).toString();
-                    qDebug() << "loadScript(QXmlStreamReader &element, bool onlyActions, QString &error)typeCondition: "<<typeCondition;
                     if (typeCondition == QLatin1String("anyof")) {
                         mMatchCondition = OrCondition;
                     } else if (typeCondition == QLatin1String("allof")) {

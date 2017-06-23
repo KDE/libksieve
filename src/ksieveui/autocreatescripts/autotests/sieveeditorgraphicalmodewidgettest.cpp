@@ -77,7 +77,6 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
 
         doc = KSieveUi::ParsingUtil::parseScript(generatedScript, result);
         QCOMPARE(success, result);
-        qDebug() << " doc "<< doc;
 
         //second parsing
         w.loadScript(doc, error);
@@ -121,9 +120,11 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::addColumn<QString>("input");
     QTest::addColumn<bool>("hasError");
     QTest::addColumn<bool>("success");
-    QTest::newRow("not-condition") << QStringLiteral("not-condition") << false << true;
+    QTest::newRow("test-vacation") << QStringLiteral("test-vacation") << false << true;
 
-#if 0
+#if 1
+    QTest::newRow("test-foreach") << QStringLiteral("test-foreach") << false << true;
+QTest::newRow("not-condition") << QStringLiteral("not-condition") << false << true;
     QTest::newRow("test-envelop-without-part") << QStringLiteral("test-envelop-without-part") << false << true;
     QTest::newRow("include") << QStringLiteral("include") << false << true;
     QTest::newRow("notify") << QStringLiteral("notify") << false << true;
@@ -132,13 +133,10 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-metadataexists") << QStringLiteral("test-metadataexists") << false << true;
     QTest::newRow("test-date") << QStringLiteral("test-date") << false << true;
     QTest::newRow("redirect") << QStringLiteral("redirect") << false << true;
-    QTest::newRow("test-vacation") << QStringLiteral("test-vacation") << false << true;
     QTest::newRow("test-forwarding") << QStringLiteral("test-forwarding") << false << true;
     QTest::newRow("test-elseif") << QStringLiteral("test-elseif") << false << true;
     QTest::newRow("test-address-order") << QStringLiteral("test-address-order") << false << true;
     QTest::newRow("test-regexp") << QStringLiteral("test-regexp") << false << true;
-#endif
-#if 0
     QTest::newRow("emptyscript") << QStringLiteral("empty") << false << true;
     QTest::newRow("simplescript") << QStringLiteral("simple") << false << true;
     QTest::newRow("bodywithlist") << QStringLiteral("body") << false << true;
@@ -147,7 +145,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("replace") << QStringLiteral("replace") << false << true;
     QTest::newRow("test-envelop") << QStringLiteral("test-envelop") << false << true;
     QTest::newRow("test-servermetadataexists") << QStringLiteral("test-servermetadataexists") << false << true;
-    QTest::newRow("test-foreach") << QStringLiteral("test-foreach") << false << true;
+
     QTest::newRow("test-vacation") << QStringLiteral("test-vacation") << false << true;
     QTest::newRow("test-forwarding") << QStringLiteral("test-forwarding") << false << true;
     QTest::newRow("test-elseif") << QStringLiteral("test-elseif") << false << true;

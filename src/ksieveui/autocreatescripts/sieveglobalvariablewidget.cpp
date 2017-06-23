@@ -130,13 +130,10 @@ void SieveGlobalVariableActionWidget::setVariableValue(const QString &name)
 
 void SieveGlobalVariableActionWidget::loadScript(QXmlStreamReader &element, QString &error)
 {
-    qDebug() << " void SieveGlobalVariableActionWidget::loadScript(QXmlStreamReader &element, QString &error)";
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
-        qDebug() <<" void SieveGlobalVariableActionWidget::loadScript(QXmlStreamReader &element, QString &error)"<<tagName;
         if (tagName == QLatin1String("str")) {
             mVariableName->setText(element.readElementText());
-            qDebug() << "mVariableName->text" << mVariableName->text();
         } else {
             error += i18n("Unknown tag \"%1\" during loading of variables.") + QLatin1Char('\n');
             qCDebug(LIBKSIEVE_LOG) << " SieveGlobalVariableActionWidget::loadScript unknown tagName " << tagName;

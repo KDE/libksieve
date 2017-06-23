@@ -106,7 +106,6 @@ QString SieveConditionDate::help() const
 
 bool SieveConditionDate::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
-    qDebug() << " bool SieveConditionDate::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)";
     int index = 0;
     QString type;
     QString value;
@@ -114,7 +113,6 @@ bool SieveConditionDate::setParamWidgetValue(QXmlStreamReader &element, QWidget 
     QString commentStr;
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
-        qDebug() << " tagName "<< tagName;
         if (tagName == QLatin1String("str")) {
             if (index == 0) {
                 headerStr = element.readElementText();

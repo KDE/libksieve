@@ -93,7 +93,6 @@ void SieveForEveryPartWidget::generatedScript(QString &script, QStringList &requ
 
 void SieveForEveryPartWidget::loadScript(QXmlStreamReader &element, QString &error)
 {
-    qDebug() << " void SieveForEveryPartWidget::loadScript(QXmlStreamReader &element, QString &error)";
     element.readNextStartElement();
     const QStringRef tagName = element.name();
     if (tagName == QLatin1String("tag")) {

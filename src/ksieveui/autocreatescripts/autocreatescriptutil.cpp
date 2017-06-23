@@ -134,10 +134,8 @@ QString AutoCreateScriptUtil::tagValue(const QString &tag)
 
 QString AutoCreateScriptUtil::strValue(QXmlStreamReader &node)
 {
-    qDebug() << " QString AutoCreateScriptUtil::strValue(QXmlStreamReader &node)66666666666666666666666";
     if (node.readNextStartElement()) {
         const QStringRef textElementTagName = node.name();
-        qDebug() << "SSSSSSSSSSSSSSSSSSSSSSSSSSSSS QString AutoCreateScriptUtil::strValue(QXmlStreamReader &node)"<<textElementTagName;
         if (textElementTagName == QLatin1String("str")) {
             return node.readElementText();
         }
