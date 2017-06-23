@@ -371,6 +371,7 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
     if (onlyActions) {
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("action")) {
+            qDebug() << " tagname !!!!!!!!!!!!!!!!!!!!!!!!" << tagName;
             if (element.attributes().hasAttribute(QStringLiteral("name"))) {
                 const QString actionName = element.attributes().value(QStringLiteral("name")).toString();
                 SieveActionWidget *w = qobject_cast<SieveActionWidget *>(widgets().constLast());
@@ -385,6 +386,7 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                 //nothing
             } else {
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript don't have name attribute " << tagName;
+
             }
         } else {
             qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript Unknow tag name " << tagName;
@@ -421,6 +423,7 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                 }
                 previousActionWasAComment = true;
                 comment += element.readElementText();
+                qDebug() << "ieveActionWidgetLister::loadScript comment " << comment;
             } else if (tagName == QLatin1String("crlf")) {
                 //Add new line if previous action was a comment
                 if (previousActionWasAComment) {

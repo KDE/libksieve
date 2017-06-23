@@ -56,7 +56,7 @@ bool SieveActionBreak::setParamWidgetValue(QXmlStreamReader &element, QWidget *w
     qDebug() << " bool SieveActionBreak::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)";
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
-        qDebug() << " tagName " << tagName;
+        qDebug() << "break tagName " << tagName;
         if (tagName == QLatin1String("tag")) {
             const QString tagValue = element.readElementText();
             qDebug() << " bool SieveActionBreak::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)"<<tagValue;

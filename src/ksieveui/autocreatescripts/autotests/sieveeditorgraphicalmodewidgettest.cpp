@@ -77,6 +77,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
 
         doc = KSieveUi::ParsingUtil::parseScript(generatedScript, result);
         QCOMPARE(success, result);
+        qDebug() << " doc "<< doc;
 
         //second parsing
         w.loadScript(doc, error);
@@ -121,6 +122,8 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::addColumn<bool>("hasError");
     QTest::addColumn<bool>("success");
 
+    QTest::newRow("include") << QStringLiteral("include") << false << true;
+#if 0
     QTest::newRow("emptyscript") << QStringLiteral("empty") << false << true;
     QTest::newRow("simplescript") << QStringLiteral("simple") << false << true;
     QTest::newRow("bodywithlist") << QStringLiteral("body") << false << true;
@@ -145,7 +148,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("enclose") << QStringLiteral("enclose") << false << true;
     QTest::newRow("add-single-flag") << QStringLiteral("add-single-flag") << false << true;
     QTest::newRow("fileinfo") << QStringLiteral("fileinfo") << false << true;
-    QTest::newRow("include") << QStringLiteral("include") << false << true;
+
     QTest::newRow("variable-lower") << QStringLiteral("variable-lower") << false << true;
     QTest::newRow("test-environnement") << QStringLiteral("test-environnement") << false << true;
     QTest::newRow("test-has-flags") << QStringLiteral("test-has-flags") << false << true;
@@ -211,6 +214,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-comment9") << QStringLiteral("test-comment9") << false << true;
 
     QTest::newRow("test-date1") << QStringLiteral("test-date1") << false << true;
+#endif
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)

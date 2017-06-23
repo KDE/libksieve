@@ -409,7 +409,7 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
     bool previousElementWasAComment = false;
     while (n.readNextStartElement()) {
         const QStringRef tagName = n.name();
-        qDebug()<<" tagName "<<tagName;
+        qDebug()<<"SieveScriptListBox::loadBlock*********** tagName "<<tagName;
         if (tagName == QLatin1String("control")) {
             previousElementWasAComment = false;
             //Create a new page when before it was "onlyactions"
@@ -476,6 +476,7 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
                 }
             }
         } else if (tagName == QLatin1String("comment")) {
+            qDebug() << "SieveScriptListBox::loadBlock( COMMZE?T ";
             previousElementWasAComment = true;
 #ifdef QDOMELEMENT_FIXME
             if (e.hasAttribute(QStringLiteral("hash"))) {
@@ -494,9 +495,11 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
                 comment += str;
             }
         } else if (tagName == QLatin1String("action")) {
+            qDebug() << "SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *currentPage, ParseSieveScriptTypeBlock typeBlock, QString &error) ACTYION";
             previousElementWasAComment = false;
             if (n.attributes().hasAttribute(QStringLiteral("name"))) {
                 const QString actionName = n.attributes().value(QStringLiteral("name")).toString();
+                qDebug() << "===================================actionName "<<actionName;
                 if (actionName == QLatin1String("include")) {
                     if (!currentPage || (typeBlock == TypeBlockIf) || (typeBlock == TypeBlockElse) || (typeBlock == TypeBlockElsif)) {
                         currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
@@ -543,11 +546,13 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
                 }
             }
         } else if (tagName == QLatin1String("crlf")) {
+            qDebug() << "SieveScriptListBox::loadBlock********************************************** " << tagName;
             //If it was a comment previously you will create a \n
             if (previousElementWasAComment) {
                 comment += QLatin1Char('\n');
             }
             n.skipCurrentElement();
+            qDebug() << "SieveScriptListBox::loadBlock comment "<<comment;
         } else {
             qCDebug(LIBKSIEVE_LOG) << " unknown tagname" << tagName;
         }
