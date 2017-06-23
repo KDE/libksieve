@@ -122,7 +122,6 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::addColumn<bool>("success");
     QTest::newRow("test-vacation") << QStringLiteral("test-vacation") << false << true;
 
-#if 1
     QTest::newRow("test-foreach") << QStringLiteral("test-foreach") << false << true;
     QTest::newRow("not-condition") << QStringLiteral("not-condition") << false << true;
     QTest::newRow("test-envelop-without-part") << QStringLiteral("test-envelop-without-part") << false << true;
@@ -227,7 +226,6 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-comment9") << QStringLiteral("test-comment9") << false << true;
 
     QTest::newRow("test-date1") << QStringLiteral("test-date1") << false << true;
-#endif
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)
