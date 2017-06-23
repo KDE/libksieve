@@ -350,6 +350,7 @@ void SieveConditionWidgetLister::loadTest(QXmlStreamReader &element, bool notCon
         SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
         w->setCondition(conditionName, element, notCondition, error);
     }
+    element.skipCurrentElement();
 #ifdef REMOVE_QDOMELEMENT
     QDomElement testElement = element;
     if (notCondition) {
@@ -369,10 +370,12 @@ void SieveConditionWidgetLister::loadTest(QXmlStreamReader &element, bool notCon
 void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniqTest, bool notCondition, QString &error)
 {
     if (uniqTest) {
+        qDebug() << " void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniqTest, bool notCondition, QString &error)"<<uniqTest;
         loadTest(element, notCondition, error);
     } else {
         bool firstCondition = true;
         if (notCondition) {
+            qDebug() << " notCondition******************";
             element.readNextStartElement();
         }
         while (element.readNextStartElement()) {

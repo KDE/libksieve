@@ -430,6 +430,7 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                     comment += QLatin1Char('\n');
                 }
                 element.skipCurrentElement();
+                qDebug()<<"SieveActionWidgetLister::loadScript CRLF";
             } else {
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript unknown tagName " << tagName;
             }

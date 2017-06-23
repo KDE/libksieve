@@ -121,8 +121,23 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::addColumn<QString>("input");
     QTest::addColumn<bool>("hasError");
     QTest::addColumn<bool>("success");
+    QTest::newRow("not-condition") << QStringLiteral("not-condition") << false << true;
 
+#if 0
+    QTest::newRow("test-envelop-without-part") << QStringLiteral("test-envelop-without-part") << false << true;
     QTest::newRow("include") << QStringLiteral("include") << false << true;
+    QTest::newRow("notify") << QStringLiteral("notify") << false << true;
+    QTest::newRow("test-exists") << QStringLiteral("test-exists") << false << true;
+    QTest::newRow("vacation") << QStringLiteral("vacation") << false << true;
+    QTest::newRow("test-metadataexists") << QStringLiteral("test-metadataexists") << false << true;
+    QTest::newRow("test-date") << QStringLiteral("test-date") << false << true;
+    QTest::newRow("redirect") << QStringLiteral("redirect") << false << true;
+    QTest::newRow("test-vacation") << QStringLiteral("test-vacation") << false << true;
+    QTest::newRow("test-forwarding") << QStringLiteral("test-forwarding") << false << true;
+    QTest::newRow("test-elseif") << QStringLiteral("test-elseif") << false << true;
+    QTest::newRow("test-address-order") << QStringLiteral("test-address-order") << false << true;
+    QTest::newRow("test-regexp") << QStringLiteral("test-regexp") << false << true;
+#endif
 #if 0
     QTest::newRow("emptyscript") << QStringLiteral("empty") << false << true;
     QTest::newRow("simplescript") << QStringLiteral("simple") << false << true;
@@ -141,7 +156,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-envelop-without-part") << QStringLiteral("test-envelop-without-part") << false << true;
     QTest::newRow("test-anti-slash") << QStringLiteral("test-anti-slash") << false << true;
     QTest::newRow("test-current-date") << QStringLiteral("test-current-date") << false << true;
-    QTest::newRow("not-condition") << QStringLiteral("not-condition") << false << true;
+
     QTest::newRow("delete-headers") << QStringLiteral("delete-headers") << false << true;
     QTest::newRow("mailboxexist") << QStringLiteral("mailboxexist") << false << true;
     QTest::newRow("extract-text") << QStringLiteral("extract-text") << false << true;
@@ -156,7 +171,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("remove-flags") << QStringLiteral("remove-flags") << false << true;
     QTest::newRow("variable") << QStringLiteral("variable") << false << true;
     QTest::newRow("break") << QStringLiteral("break") << false << true;
-    QTest::newRow("notify") << QStringLiteral("notify") << false << true;
+
     QTest::newRow("test-exists") << QStringLiteral("test-exists") << false << true;
     QTest::newRow("vacation") << QStringLiteral("vacation") << false << true;
     QTest::newRow("test-metadataexists") << QStringLiteral("test-metadataexists") << false << true;

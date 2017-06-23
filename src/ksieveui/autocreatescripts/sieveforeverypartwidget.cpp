@@ -93,6 +93,7 @@ void SieveForEveryPartWidget::generatedScript(QString &script, QStringList &requ
 
 void SieveForEveryPartWidget::loadScript(QXmlStreamReader &element, QString &error)
 {
+    qDebug() << " void SieveForEveryPartWidget::loadScript(QXmlStreamReader &element, QString &error)";
 #ifdef REMOVE_QDOMELEMENT
     QDomNode node = element.firstChild();
     QDomElement e = node.toElement();
