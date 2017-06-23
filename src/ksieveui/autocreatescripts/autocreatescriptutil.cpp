@@ -141,16 +141,6 @@ QString AutoCreateScriptUtil::strValue(QXmlStreamReader &node)
         }
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    node = node.nextSibling();
-    QDomElement textElement = node.toElement();
-    if (!textElement.isNull()) {
-        const QString textElementTagName = textElement.tagName();
-        if (textElementTagName == QLatin1String("str")) {
-            return textElement.text();
-        }
-    }
-#endif
     return QString();
 }
 
@@ -171,22 +161,6 @@ QStringList AutoCreateScriptUtil::listValue(QXmlStreamReader &element)
         }
     }
     return lst;
-#ifdef REMOVE_QDOMELEMENT
-    QStringList lst;
-    QDomNode node = element.firstChild();
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("str")) {
-                lst << e.text();
-            }
-        }
-        node = node.nextSibling();
-    }
-    return lst;
-#endif
-    return {};
 }
 
 QString AutoCreateScriptUtil::fixListValue(QString valueStr)

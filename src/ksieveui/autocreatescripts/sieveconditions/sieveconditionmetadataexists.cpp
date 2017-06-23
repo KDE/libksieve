@@ -122,42 +122,6 @@ bool SieveConditionMetaDataExists::setParamWidgetValue(QXmlStreamReader &element
         setComment(commentStr);
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    int index = 0;
-    QDomNode node = element.firstChild();
-    QString commentStr;
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("str")) {
-                const QString tagValue = e.text();
-                if (index == 0) {
-                    QLineEdit *mailbox = w->findChild<QLineEdit *>(QStringLiteral("mailbox"));
-                    mailbox->setText(tagValue);
-                } else if (index == 1) {
-                    QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
-                    value->setText(AutoCreateScriptUtil::quoteStr(tagValue));
-                } else {
-                    tooManyArgument(tagName, index, 2, error);
-                    qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaDataExists::setParamWidgetValue to many attribute " << index;
-                }
-                ++index;
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaDataExists::setParamWidgetValue unknown tagName " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-    if (!commentStr.isEmpty()) {
-        setComment(commentStr);
-    }
-#endif
     return true;
 }
 

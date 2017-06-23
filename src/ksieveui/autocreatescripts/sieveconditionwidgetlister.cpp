@@ -353,20 +353,6 @@ void SieveConditionWidgetLister::loadTest(QXmlStreamReader &element, bool notCon
     if (notCondition) {
         element.skipCurrentElement();
     }
-#ifdef REMOVE_QDOMELEMENT
-    QDomElement testElement = element;
-    if (notCondition) {
-        QDomNode node = element.firstChild();
-        if (!node.isNull()) {
-            testElement = node.toElement();
-        }
-    }
-    if (testElement.hasAttribute(QStringLiteral("name"))) {
-        const QString conditionName = testElement.attribute(QStringLiteral("name"));
-        SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
-        w->setCondition(conditionName, testElement, notCondition, error);
-    }
-#endif
 }
 
 void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniqTest, bool notCondition, QString &error)
@@ -421,67 +407,4 @@ void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniq
         }
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    if (uniqTest) {
-        loadTest(e, notCondition, error);
-    } else {
-        bool firstCondition = true;
-        QDomElement element = e;
-        if (notCondition) {
-            QDomNode node = e.firstChild();
-            if (!node.isNull()) {
-                element = node.toElement();
-            }
-        }
-        QDomNode node = element.firstChild();
-        while (!node.isNull()) {
-            QDomElement e = node.toElement();
-            if (!e.isNull()) {
-                const QString tagName = e.tagName();
-                if (tagName == QLatin1String("testlist")) {
-                    QDomNode testNode = e.firstChild();
-                    while (!testNode.isNull()) {
-                        QDomElement testElement = testNode.toElement();
-                        if (!testElement.isNull()) {
-                            const QString testTagName = testElement.tagName();
-                            if (testTagName == QLatin1String("test")) {
-                                if (testElement.hasAttribute(QStringLiteral("name"))) {
-                                    QString conditionName = testElement.attribute(QStringLiteral("name"));
-                                    if (firstCondition) {
-                                        firstCondition = false;
-                                    } else {
-                                        addWidgetAfterThisWidget(widgets().constLast());
-                                    }
-                                    SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
-                                    if (conditionName == QLatin1String("not")) {
-                                        notCondition = true;
-                                        QDomNode notNode = testElement.firstChild();
-                                        QDomElement notElement = notNode.toElement();
-                                        if (notElement.hasAttribute(QStringLiteral("name"))) {
-                                            conditionName = notElement.attribute(QStringLiteral("name"));
-                                        }
-                                        w->setCondition(conditionName, notElement, notCondition, error);
-                                    } else {
-                                        notCondition = false;
-                                        w->setCondition(conditionName, testElement, notCondition, error);
-                                    }
-                                }
-                            } else if (testTagName == QLatin1String("crlf")) {
-                                //nothing
-                            } else if (testTagName == QLatin1String("comment")) {
-                                qDebug() << "Need to implement comment here ";
-                                //nothing
-                                //implement in the future ?
-                            } else {
-                                qCDebug(LIBKSIEVE_LOG) << " SieveConditionWidgetLister::loadScript unknown condition tag: " << testTagName;
-                            }
-                        }
-                        testNode = testNode.nextSibling();
-                    }
-                }
-            }
-            node = node.nextSibling();
-        }
-    }
-#endif
 }

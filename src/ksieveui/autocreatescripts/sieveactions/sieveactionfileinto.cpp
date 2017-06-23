@@ -100,50 +100,6 @@ bool SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
         }
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    QDomNode node = element.firstChild();
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("tag")) {
-                const QString tagValue = e.text();
-                if (tagValue == QLatin1String("copy")) {
-                    if (mHasCopySupport) {
-                        QCheckBox *copy = w->findChild<QCheckBox *>(QStringLiteral("copy"));
-                        copy->setChecked(true);
-                    } else {
-                        error += i18n("Action \"fileinto\" has \"copy\" argument but current server does not support it") + QLatin1Char('\n');
-                        qCDebug(LIBKSIEVE_LOG) << "SieveActionFileInto::setParamWidgetValue has not copy support ";
-                    }
-                } else if (tagValue == QLatin1String("create")) {
-                    if (mHasMailBoxSupport) {
-                        QCheckBox *create = w->findChild<QCheckBox *>(QStringLiteral("create"));
-                        create->setChecked(true);
-                    } else {
-                        serverDoesNotSupportFeatures(QStringLiteral("create"), error);
-                        qCDebug(LIBKSIEVE_LOG) << "SieveActionFileInto::setParamWidgetValue server has not create support ";
-                    }
-                } else {
-                    serverDoesNotSupportFeatures(tagValue, error);
-                    qCDebug(LIBKSIEVE_LOG) << "SieveActionFileInto::setParamWidgetValue server has not flags support ";
-                }
-            } else if (tagName == QLatin1String("str")) {
-                const QString tagValue = e.text();
-                KSieveUi::AbstractMoveImapFolderWidget *edit = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("fileintolineedit"));
-                edit->setText(AutoCreateScriptUtil::protectSlash(tagValue));
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveActionFileInto::setParamWidgetValue unknown tagName " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-#endif
     return true;
 }
 

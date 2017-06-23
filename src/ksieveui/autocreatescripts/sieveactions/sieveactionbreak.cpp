@@ -79,35 +79,6 @@ bool SieveActionBreak::setParamWidgetValue(QXmlStreamReader &element, QWidget *w
         }
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    QDomNode node = element.firstChild();
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("tag")) {
-                const QString tagValue = e.text();
-                if (tagValue == QLatin1String("name")) {
-                    QLineEdit *name = w->findChild<QLineEdit *>(QStringLiteral("name"));
-                    name->setText(AutoCreateScriptUtil::strValue(e));
-                } else {
-                    unknowTagValue(tagValue, error);
-                    qCDebug(LIBKSIEVE_LOG) << " SieveActionBreak::setParamWidgetValue unknown tagValue " << tagValue;
-                }
-            } else if (tagName == QLatin1String("str")) {
-                //Nothing
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << "SieveActionBreak::setParamWidgetValue unknown tag " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-#endif
     return true;
 }
 

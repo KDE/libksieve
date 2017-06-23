@@ -145,63 +145,6 @@ bool SieveConditionHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
         setComment(commentStr);
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    int index = 0;
-    QDomNode node = element.firstChild();
-    QString commentStr;
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("tag")) {
-                const QString tagValue = e.text();
-                if (tagValue == QLatin1String("comparator")) {
-                    qCWarning(LIBKSIEVE_LOG) << " comparator support not implemented yet!";
-                } else {
-                    SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
-                    selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(tagValue, notCondition), name(), error);
-                }
-            } else if (tagName == QLatin1String("str")) {
-                if (index == 0) {
-                    SelectHeaderTypeComboBox *headerType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertype"));
-                    headerType->setCode(e.text());
-                } else if (index == 1) {
-                    AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
-                    QString st = AutoCreateScriptUtil::quoteStr(e.text(), true);
-                    value->setCode(st);
-                } else {
-                    tooManyArgument(tagName, index, 2, error);
-                    qCDebug(LIBKSIEVE_LOG) << " SieveConditionHeader::setParamWidgetValue too many argument " << index;
-                }
-                ++index;
-            } else if (tagName == QLatin1String("list")) {
-                //Header list
-                if (index == 0) {
-                    SelectHeaderTypeComboBox *headerType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertype"));
-                    headerType->setCode(AutoCreateScriptUtil::listValueToStr(e));
-                } else if (index == 1) {
-                    AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
-                    value->setCode(AutoCreateScriptUtil::listValueToStr(e));
-                } else {
-                    tooManyArgument(tagName, index, 2, error);
-                    qCDebug(LIBKSIEVE_LOG) << " SieveConditionHeader::setParamWidgetValue too many argument " << index;
-                }
-                ++index;
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionHeader::setParamWidgetValue unknown tagName " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-    if (!commentStr.isEmpty()) {
-        setComment(commentStr);
-    }
-#endif
     return true;
 }
 

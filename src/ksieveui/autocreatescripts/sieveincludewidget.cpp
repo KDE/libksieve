@@ -115,33 +115,6 @@ void SieveIncludeActionWidget::loadScript(QXmlStreamReader &element, QString &er
         }
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    QDomNode node = element.firstChild();
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("tag")) {
-                const QString tagValue = e.text();
-                if (tagValue == QLatin1String("personal")
-                    || tagValue == QLatin1String("global")) {
-                    mLocation->setCode(AutoCreateScriptUtil::tagValue(tagValue), error);
-                } else if (tagValue == QLatin1String("optional")) {
-                    mOptional->setChecked(true);
-                } else if (tagValue == QLatin1String("once")) {
-                    mOnce->setChecked(true);
-                } else {
-                    qCDebug(LIBKSIEVE_LOG) << " SieveIncludeActionWidget::loadScript unknown tagValue " << tagValue;
-                }
-            } else if (tagName == QLatin1String("str")) {
-                mIncludeName->setText(e.text());
-            } else {
-                qCDebug(LIBKSIEVE_LOG) << " SieveIncludeActionWidget::loadScript unknown tagName " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-#endif
 }
 
 void SieveIncludeActionWidget::generatedScript(QString &script)

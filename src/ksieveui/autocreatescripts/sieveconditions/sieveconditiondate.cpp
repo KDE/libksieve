@@ -147,52 +147,6 @@ bool SieveConditionDate::setParamWidgetValue(QXmlStreamReader &element, QWidget 
     QLineEdit *header = w->findChild<QLineEdit *>(QStringLiteral("header"));
     header->setText(headerStr);
 
-#ifdef REMOVE_QDOMELEMENT
-    int index = 0;
-    QString type;
-    QString value;
-    QString headerStr;
-    QDomNode node = element.firstChild();
-    QString commentStr;
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("str")) {
-                if (index == 0) {
-                    headerStr = e.text();
-                } else if (index == 1) {
-                    type = e.text();
-                } else if (index == 2) {
-                    value = e.text();
-                } else {
-                    tooManyArgument(tagName, index, 3, error);
-                    qCDebug(LIBKSIEVE_LOG) << " SieveConditionDate::setParamWidgetValue too many argument :" << index;
-                }
-                ++index;
-            } else if (tagName == QLatin1String("tag")) {
-                SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
-                selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(e.text(), notCondition), name(), error);
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << "SieveConditionDate::setParamWidgetValue unknown tag " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-    if (!commentStr.isEmpty()) {
-        setComment(commentStr);
-    }
-
-    SelectDateWidget *dateWidget = w->findChild<SelectDateWidget *>(QStringLiteral("datewidget"));
-    dateWidget->setCode(type, value);
-    QLineEdit *header = w->findChild<QLineEdit *>(QStringLiteral("header"));
-    header->setText(headerStr);
-#endif
     return true;
 }
 

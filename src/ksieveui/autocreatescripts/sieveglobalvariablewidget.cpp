@@ -139,22 +139,6 @@ void SieveGlobalVariableActionWidget::loadScript(QXmlStreamReader &element, QStr
             qCDebug(LIBKSIEVE_LOG) << " SieveGlobalVariableActionWidget::loadScript unknown tagName " << tagName;
         }
     }
-#ifdef REMOVE_QDOMELEMENT
-    QDomNode node = element.firstChild();
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("str")) {
-                mVariableName->setText(e.text());
-            } else {
-                error += i18n("Unknown tag \"%1\" during loading of variables.") + QLatin1Char('\n');
-                qCDebug(LIBKSIEVE_LOG) << " SieveGlobalVariableActionWidget::loadScript unknown tagName " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-#endif
 }
 
 void SieveGlobalVariableActionWidget::slotAddWidget()
@@ -348,40 +332,4 @@ bool SieveGlobalVariableLister::loadSetVariable(QXmlStreamReader &element, QStri
     }
     return globalVariableFound;
 
-#ifdef REMOVE_QDOMELEMENT
-    QString variableName;
-    QString variableValue;
-    int index = 0;
-    QDomNode node = element.firstChild();
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("str")) {
-                if (index == 0) {
-                    variableName = e.text();
-                } else if (index == 1) {
-                    variableValue = e.text();
-                } else {
-                    qCDebug(LIBKSIEVE_LOG) << " SieveGlobalVariableLister::loadSetVariable too many argument:" << index;
-                }
-                ++index;
-            } else {
-                qCDebug(LIBKSIEVE_LOG) << " SieveGlobalVariableLister::loadSetVariable unknown tagName " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-
-    const QList<QWidget *> lstWidget = widgets();
-    bool globalVariableFound = false;
-    for (QWidget *widget : lstWidget) {
-        SieveGlobalVariableActionWidget *w = static_cast<SieveGlobalVariableActionWidget *>(widget);
-        if (w->variableName() == variableName) {
-            w->setVariableValue(variableValue);
-            globalVariableFound = true;
-        }
-    }
-    return globalVariableFound;
-#endif
 }

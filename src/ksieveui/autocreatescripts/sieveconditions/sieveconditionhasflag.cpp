@@ -185,56 +185,6 @@ bool SieveConditionHasFlag::setParamWidgetValue(QXmlStreamReader &element, QWidg
         break;
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    QStringList strList;
-    QDomNode node = element.firstChild();
-    QString commentStr;
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("tag")) {
-                SelectMatchTypeComboBox *matchTypeCombo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
-                matchTypeCombo->setCode(AutoCreateScriptUtil::tagValueWithCondition(e.text(), notCondition), name(), error);
-            } else if (tagName == QLatin1String("str")) {
-                strList << e.text();
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionExists::setParamWidgetValue unknown tagName " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-    if (!commentStr.isEmpty()) {
-        setComment(commentStr);
-    }
-
-    switch (strList.count()) {
-    case 1:
-    {
-        AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
-        value->setCode(strList.at(0));
-        break;
-    }
-    case 2:
-        if (hasVariableSupport) {
-            QLineEdit *variableName = w->findChild<QLineEdit *>(QStringLiteral("variablename"));
-            variableName->setText(strList.at(0));
-            AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
-            value->setCode(strList.at(1));
-        } else {
-            qCDebug(LIBKSIEVE_LOG) << " SieveConditionHasFlag has not variable support";
-        }
-        break;
-    default:
-        qCDebug(LIBKSIEVE_LOG) << " SieveConditionHasFlag::setParamWidgetValue str list count not correct :" << strList.count();
-        break;
-    }
-#endif
     return true;
 }
 

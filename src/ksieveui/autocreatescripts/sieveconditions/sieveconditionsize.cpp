@@ -103,43 +103,6 @@ bool SieveConditionSize::setParamWidgetValue(QXmlStreamReader &element, QWidget 
         setComment(commentStr);
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    QDomNode node = element.firstChild();
-    QString commentStr;
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("tag")) {
-                const QString tagValue = e.text();
-                QComboBox *combo = w->findChild<QComboBox *>(QStringLiteral("combosize"));
-                const int index = combo->findData(AutoCreateScriptUtil::tagValue(tagValue));
-                if (index != -1) {
-                    combo->setCurrentIndex(index);
-                }
-            } else if (tagName == QLatin1String("num")) {
-                const qlonglong tagValue = e.text().toLongLong();
-                QString numIdentifier;
-                if (e.hasAttribute(QStringLiteral("quantifier"))) {
-                    numIdentifier = e.attribute(QStringLiteral("quantifier"));
-                }
-                SelectSizeWidget *sizeWidget = w->findChild<SelectSizeWidget *>(QStringLiteral("sizewidget"));
-                sizeWidget->setCode(tagValue, numIdentifier, name(), error);
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionSize::setParamWidgetValue unknown tagName " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-    if (!commentStr.isEmpty()) {
-        setComment(commentStr);
-    }
-#endif
     return true;
 }
 

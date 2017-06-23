@@ -114,30 +114,4 @@ void SieveForEveryPartWidget::loadScript(QXmlStreamReader &element, QString &err
         error += i18n("Unknown tag \"%1\" during loading loop \"for\"", tagName.toString()) + QLatin1Char('\n');
         qCDebug(LIBKSIEVE_LOG) << " SieveForEveryPartWidget::loadScript unknown tagName " << tagName;
     }
-#ifdef REMOVE_QDOMELEMENT
-    QDomNode node = element.firstChild();
-    QDomElement e = node.toElement();
-    if (!e.isNull()) {
-        const QString tagName = e.tagName();
-        if (tagName == QLatin1String("tag")) {
-            const QString tagValue = e.text();
-            if (tagValue == QLatin1String("name")) {
-                mName->setText(AutoCreateScriptUtil::strValue(e));
-            } else {
-                error += i18n("Unknown tagValue \"%1\" during loading loop \"for\"", tagValue) + QLatin1Char('\n');
-                qCDebug(LIBKSIEVE_LOG) << " SieveForEveryPartWidget::loadScript unknown tagValue " << tagValue;
-            }
-            mForLoop->setChecked(true);
-            mName->setEnabled(true);
-        } else if (tagName == QLatin1String("block")) {
-            //Nothing
-            //It's when name is empty
-        } else if (tagName == QLatin1String("crlf")) {
-            //Nothing
-        } else {
-            error += i18n("Unknown tag \"%1\" during loading loop \"for\"", tagName) + QLatin1Char('\n');
-            qCDebug(LIBKSIEVE_LOG) << " SieveForEveryPartWidget::loadScript unknown tagName " << tagName;
-        }
-    }
-#endif
 }

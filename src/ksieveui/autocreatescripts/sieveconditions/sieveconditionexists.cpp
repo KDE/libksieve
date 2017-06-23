@@ -103,38 +103,6 @@ bool SieveConditionExists::setParamWidgetValue(QXmlStreamReader &element, QWidge
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-#ifdef REMOVE_QDOMELEMENT
-    QDomNode node = element.firstChild();
-    QString commentStr;
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (notCondition) {
-                QComboBox *combo = w->findChild<QComboBox *>(QStringLiteral("existscheck"));
-                combo->setCurrentIndex(1);
-            }
-            if (tagName == QLatin1String("str")) {
-                SelectHeaderTypeComboBox *value = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headervalue"));
-                value->setCode(e.text());
-            } else if (tagName == QLatin1String("list")) {
-                SelectHeaderTypeComboBox *selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headervalue"));
-                selectHeaderType->setCode(AutoCreateScriptUtil::listValueToStr(e));
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionExists::setParamWidgetValue unknown tagName " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-    if (!commentStr.isEmpty()) {
-        setComment(commentStr);
-    }
-#endif
     return true;
 }
 

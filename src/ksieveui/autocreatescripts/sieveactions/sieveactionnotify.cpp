@@ -103,45 +103,6 @@ bool SieveActionNotify::setParamWidgetValue(QXmlStreamReader &element, QWidget *
         }
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    QDomNode node = element.firstChild();
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("tag")) {
-                const QString tagValue = e.text();
-                if (tagValue == QLatin1String("message")) {
-                    const QString strValue = AutoCreateScriptUtil::strValue(node);
-                    if (!strValue.isEmpty()) {
-                        QLineEdit *message = w->findChild<QLineEdit *>(QStringLiteral("message"));
-                        message->setText(AutoCreateScriptUtil::quoteStr(strValue));
-                    }
-                } else if (tagValue == QLatin1String("importance")) {
-                    const QString strValue = AutoCreateScriptUtil::strValue(node);
-                    if (!strValue.isEmpty()) {
-                        SelectImportanceCombobox *importance = w->findChild<SelectImportanceCombobox *>(QStringLiteral("importancecombo"));
-                        importance->setCode(strValue, name(), error);
-                    }
-                } else {
-                    unknowTagValue(tagValue, error);
-                    qCDebug(LIBKSIEVE_LOG) << " SieveActionNotify::setParamWidgetValue unknown tagValue" << tagValue;
-                }
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
-            } else if (tagName == QLatin1String("str")) {
-                QLineEdit *method = w->findChild<QLineEdit *>(QStringLiteral("method"));
-                method->setText(AutoCreateScriptUtil::quoteStr(e.text()));
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveActionNotify::setParamWidgetValue unknown tagName " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-#endif
     return true;
 }
 

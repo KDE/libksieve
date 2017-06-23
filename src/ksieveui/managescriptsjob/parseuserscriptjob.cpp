@@ -140,31 +140,6 @@ QStringList ParseUserScriptJob::extractActiveScript(const QString &doc)
             }
         }
     }
-#ifdef REMOVE_QDOMELEMENT
-    QDomElement docElem = doc.documentElement();
-    QDomNode n = docElem.firstChild();
-    while (!n.isNull()) {
-        QDomElement e = n.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("action")) {
-                if (e.hasAttribute(QStringLiteral("name"))) {
-                    const QString actionName = e.attribute(QStringLiteral("name"));
-                    if (actionName == QLatin1String("include")) {
-                        //Load includes
-                        const QString str = loadInclude();
-                        if (!str.isEmpty()) {
-                            if (!lstScript.contains(str)) {
-                                lstScript.append(str);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        n = n.nextSibling();
-    }
-#endif
     return lstScript;
 }
 
@@ -176,18 +151,5 @@ QString ParseUserScriptJob::loadInclude()
             scriptName = mStreamReader->readElementText();
         }
     }
-#ifdef REMOVE_QDOMELEMENT
-    QDomNode node = element.firstChild();
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("str")) {
-                scriptName = e.text();
-            }
-        }
-        node = node.nextSibling();
-    }
-#endif
     return scriptName;
 }

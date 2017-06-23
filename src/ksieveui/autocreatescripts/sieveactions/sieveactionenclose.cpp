@@ -106,45 +106,6 @@ bool SieveActionEnclose::setParamWidgetValue(QXmlStreamReader &element, QWidget 
         }
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    QDomNode node = element.firstChild();
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("tag")) {
-                const QString tagValue = e.text();
-                if (tagValue == QLatin1String("headers")) {
-                    const QString strValue = AutoCreateScriptUtil::strValue(node);
-                    if (!strValue.isEmpty()) {
-                        QLineEdit *subject = w->findChild<QLineEdit *>(QStringLiteral("headers"));
-                        subject->setText(strValue);
-                    }
-                } else if (tagValue == QLatin1String("subject")) {
-                    const QString strValue = AutoCreateScriptUtil::strValue(node);
-                    if (!strValue.isEmpty()) {
-                        QLineEdit *headers = w->findChild<QLineEdit *>(QStringLiteral("subject"));
-                        headers->setText(strValue);
-                    }
-                } else {
-                    unknowTagValue(tagValue, error);
-                    qCDebug(LIBKSIEVE_LOG) << " SieveActionEnclose::setParamWidgetValue unknown tag value:" << tagValue;
-                }
-            } else if (tagName == QLatin1String("str")) {
-                MultiLineEdit *edit = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
-                edit->setPlainText(e.text());
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveActionEnclose::setParamWidgetValue unknown tagName " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-#endif
     return true;
 }
 

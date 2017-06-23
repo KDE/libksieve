@@ -286,46 +286,4 @@ void SieveScriptBlockWidget::loadScript(QXmlStreamReader &element, bool onlyActi
         }
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    if (onlyActions) {
-        mScriptActionLister->loadScript(element, true, error);
-        mMatchCondition = AllCondition;
-        updateCondition();
-    } else {
-        bool uniqueTest = false;
-        QDomNode node = element.firstChild();
-        while (!node.isNull()) {
-            QDomElement e = node.toElement();
-            if (!e.isNull()) {
-                const QString tagName = e.tagName();
-                if (tagName == QLatin1String("test")) {
-                    bool notCondition = false;
-                    if (e.hasAttribute(QStringLiteral("name"))) {
-                        const QString typeCondition = e.attribute(QStringLiteral("name"));
-                        if (typeCondition == QLatin1String("anyof")) {
-                            mMatchCondition = OrCondition;
-                        } else if (typeCondition == QLatin1String("allof")) {
-                            mMatchAll->setChecked(true);
-                        } else {
-                            if (typeCondition == QLatin1String("not")) {
-                                notCondition = true;
-                            }
-                            uniqueTest = true;
-                            mMatchCondition = OrCondition;
-                        }
-                        updateCondition();
-                    }
-                    mScriptConditionLister->loadScript(e, uniqueTest, notCondition, error);
-                } else if (tagName == QLatin1String("block")) {
-                    mScriptActionLister->loadScript(e, false, error);
-                } else {
-                    if (tagName != QLatin1String("crlf")) {
-                        qCDebug(LIBKSIEVE_LOG) << " e.tag" << tagName;
-                    }
-                }
-            }
-            node = node.nextSibling();
-        }
-    }
-#endif
 }

@@ -146,59 +146,6 @@ bool SieveConditionVirusTest::setParamWidgetValue(QXmlStreamReader &element, QWi
         setComment(commentStr);
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    QDomNode node = element.firstChild();
-    QString commentStr;
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("tag")) {
-                const QString tagValue = e.text();
-                if (tagValue == QLatin1String("count") || tagValue == QLatin1String("value")) {
-                    node = node.nextSibling();
-                    if (!node.isNull()) {
-                        QDomElement relationalElement = node.toElement();
-                        if (!relationalElement.isNull()) {
-                            if (relationalElement.tagName() == QLatin1String("str")) {
-                                SelectRelationalMatchType *relation = w->findChild<SelectRelationalMatchType *>(QStringLiteral("relation"));
-                                relation->setCode(AutoCreateScriptUtil::tagValue(tagValue), relationalElement.text(), name(), error);
-                            }
-                        }
-                    }
-                } else if (tagValue == QLatin1String("comparator")) {
-                    node = node.nextSibling();
-                    if (!node.isNull()) {
-                        QDomElement comparatorElement = node.toElement();
-                        if (!comparatorElement.isNull()) {
-                            if (comparatorElement.tagName() == QLatin1String("str")) {
-                                SelectComparatorComboBox *comparator = w->findChild<SelectComparatorComboBox *>(QStringLiteral("comparator"));
-                                comparator->setCode(comparatorElement.text(), name(), error);
-                            }
-                        }
-                    }
-                } else {
-                    unknowTagValue(tagValue, error);
-                    qCDebug(LIBKSIEVE_LOG) << " SieveConditionVirusTest::setParamWidgetValue unknown tagValue " << tagValue;
-                }
-            } else if (tagName == QLatin1String("str")) {
-                QSpinBox *spinbox = w->findChild<QSpinBox *>(QStringLiteral("value"));
-                spinbox->setValue(e.text().toInt());
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionVirusTest::setParamWidgetValue unknown tagName " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-    if (!commentStr.isEmpty()) {
-        setComment(commentStr);
-    }
-#endif
     return true;
 }
 

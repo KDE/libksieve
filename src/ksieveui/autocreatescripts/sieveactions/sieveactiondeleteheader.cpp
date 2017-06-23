@@ -108,45 +108,6 @@ bool SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, 
         }
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    int index = 0;
-    QDomNode node = element.firstChild();
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("test")) {
-                const QDomNode testNode = e.toElement();
-                const QString nameValue = e.attribute(QStringLiteral("name"), QString());
-                const bool isNegative = (nameValue == QLatin1String("not"));
-                return parseValue(testNode.toElement(), w, error, isNegative);
-            } else if (tagName == QLatin1String("tag")) {
-                SelectMatchTypeComboBox *combo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
-                combo->setCode(AutoCreateScriptUtil::tagValueWithCondition(e.text(), isNegative), name(), error);
-            } else if (tagName == QLatin1String("str")) {
-                if (index == 0) {
-                    QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("headeredit"));
-                    edit->setText(e.text());
-                } else if (index == 1) {
-                    QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("valueedit"));
-                    value->setText(e.text());
-                } else {
-                    tooManyArgument(tagName, index, 2, error);
-                    qCDebug(LIBKSIEVE_LOG) << " SieveActionAddHeader::setParamWidgetValue too many argument :" << index;
-                }
-                ++index;
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << "SieveActionAddHeader::setParamWidgetValue unknown tag " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-#endif
     return true;
 }
 

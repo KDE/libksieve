@@ -104,49 +104,6 @@ bool SieveActionRedirect::setParamWidgetValue(QXmlStreamReader &element, QWidget
         }
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    QDomNode node = element.firstChild();
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("str")) {
-                QLineEdit *edit = w->findChild<AddressLineEdit *>(QStringLiteral("RedirectEdit"));
-                const QString tagValue = e.text();
-                edit->setText(AutoCreateScriptUtil::quoteStr(tagValue));
-            } else if (tagName == QLatin1String("tag")) {
-                const QString tagValue = e.text();
-                if (tagValue == QLatin1String("copy")) {
-                    if (mHasCopySupport) {
-                        QCheckBox *copy = w->findChild<QCheckBox *>(QStringLiteral("copy"));
-                        copy->setChecked(true);
-                    } else {
-                        serverDoesNotSupportFeatures(QStringLiteral("copy"), error);
-                    }
-                } else if (tagValue == QLatin1String("list")) {
-                    if (mHasListSupport) {
-                        QCheckBox *list = w->findChild<QCheckBox *>(QStringLiteral("list"));
-                        list->setChecked(true);
-                    } else {
-                        serverDoesNotSupportFeatures(QStringLiteral("list"), error);
-                    }
-                } else {
-                    unknowTagValue(tagValue, error);
-                    qCDebug(LIBKSIEVE_LOG) << " SieveActionRedirect::setParamWidgetValue tagValue unknown" << tagValue;
-                }
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                setComment(e.text());
-                //implement in the future ?
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveActionRedirect::setParamWidgetValue unknown tagName " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-#endif
     return true;
 }
 

@@ -140,43 +140,5 @@ bool SieveConditionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidg
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-#ifdef REMOVE_QDOMELEMENT
-    int index = 0;
-    QDomNode node = element.firstChild();
-    QString commentStr;
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("str")) {
-                if (index == 0) {
-                    SelectMimeTypeComboBox *fromMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("from"));
-                    fromMimeType->setCode(e.text(), name(), error);
-                } else if (index == 1) {
-                    SelectMimeTypeComboBox *toMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("to"));
-                    toMimeType->setCode(e.text(), name(), error);
-                } else {
-                    tooManyArgument(tagName, index, 2, error);
-                    qCDebug(LIBKSIEVE_LOG) << " SieveActionConvert::setParamWidgetValue too many argument :" << index;
-                }
-                ++index;
-            } else if (tagName == QLatin1String("list")) {
-                SelectConvertParameterWidget *params = w->findChild<SelectConvertParameterWidget *>(QStringLiteral("params"));
-                params->setCode(AutoCreateScriptUtil::listValue(e), error);
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << "SieveActionConvert::setParamWidgetValue unknown tag " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-    if (!commentStr.isEmpty()) {
-        setComment(commentStr);
-    }
-#endif
     return true;
 }

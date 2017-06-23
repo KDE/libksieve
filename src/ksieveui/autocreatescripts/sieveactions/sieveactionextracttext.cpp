@@ -87,32 +87,6 @@ bool SieveActionExtractText::setParamWidgetValue(QXmlStreamReader &element, QWid
         }
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    QDomNode node = element.firstChild();
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("tag")) {
-                //TODO ?
-            } else if (tagName == QLatin1String("num")) {
-                QSpinBox *numberOfCharacters = w->findChild<QSpinBox *>(QStringLiteral("numberOfCharacters"));
-                numberOfCharacters->setValue(e.text().toInt());
-            } else if (tagName == QLatin1String("str")) {
-                QLineEdit *variableName = w->findChild<QLineEdit *>(QStringLiteral("variablename"));
-                variableName->setText(e.text());
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                //implement in the future ?
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveActionExtractText::setParamWidgetValue unknown tagName " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-#endif
     return true;
 }
 

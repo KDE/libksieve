@@ -176,59 +176,6 @@ bool SieveConditionMetaData::setParamWidgetValue(QXmlStreamReader &element, QWid
         setComment(commentStr);
     }
 
-#ifdef REMOVE_QDOMELEMENT
-    int index = 0;
-    QDomNode node = element.firstChild();
-    QString commentStr;
-    while (!node.isNull()) {
-        QDomElement e = node.toElement();
-        if (!e.isNull()) {
-            const QString tagName = e.tagName();
-            if (tagName == QLatin1String("str")) {
-                const QString tagValue = e.text();
-                switch (index) {
-                case 0:
-                {
-                    QLineEdit *mailbox = w->findChild<QLineEdit *>(QStringLiteral("mailbox"));
-                    mailbox->setText(tagValue);
-                    break;
-                }
-                case 1:
-                {
-                    QLineEdit *annotation = w->findChild<QLineEdit *>(QStringLiteral("annotation"));
-                    annotation->setText(AutoCreateScriptUtil::quoteStr(tagValue));
-                    break;
-                }
-                case 2:
-                {
-                    AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
-                    value->setCode(AutoCreateScriptUtil::quoteStr(tagValue));
-                    break;
-                }
-                default:
-                    tooManyArgument(tagName, index, 3, error);
-                    qCDebug(LIBKSIEVE_LOG) << " SieveConditionMetaData::setParamWidgetValue too many argument " << index;
-                    break;
-                }
-                ++index;
-            } else if (tagName == QLatin1String("tag")) {
-                SelectMatchTypeComboBox *selectType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("selecttype"));
-                selectType->setCode(AutoCreateScriptUtil::tagValueWithCondition(e.text(), notCondition), name(), error);
-            } else if (tagName == QLatin1String("crlf")) {
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, e.text());
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionMetaData::setParamWidgetValue unknown tagName " << tagName;
-            }
-        }
-        node = node.nextSibling();
-    }
-    if (!commentStr.isEmpty()) {
-        setComment(commentStr);
-    }
-#endif
     return true;
 }
 
