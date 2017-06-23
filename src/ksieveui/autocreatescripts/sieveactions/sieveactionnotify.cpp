@@ -93,6 +93,7 @@ bool SieveActionNotify::setParamWidgetValue(QXmlStreamReader &element, QWidget *
             element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
+            element.skipCurrentElement();
             //implement in the future ?
         } else if (tagName == QLatin1String("str")) {
             QLineEdit *method = w->findChild<QLineEdit *>(QStringLiteral("method"));

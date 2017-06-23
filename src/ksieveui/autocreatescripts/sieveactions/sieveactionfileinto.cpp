@@ -93,6 +93,7 @@ bool SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
             element.skipCurrentElement();
             //nothing
         } else if (tagName == QLatin1String("comment")) {
+            element.skipCurrentElement();
             //implement in the future ?
         } else {
             unknownTag(tagName, error);
