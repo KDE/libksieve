@@ -23,6 +23,7 @@
 #include <KLocalizedString>
 
 #include <QWidget>
+#include <QXmlStreamWriter>
 
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 
@@ -99,8 +100,9 @@ QString SieveAction::help() const
     return QString();
 }
 
-bool SieveAction::setParamWidgetValue(QXmlStreamReader &, QWidget *, QString &)
+bool SieveAction::setParamWidgetValue(QXmlStreamReader &n, QWidget *, QString &)
 {
+    n.skipCurrentElement();
     return true;
 }
 
