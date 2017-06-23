@@ -237,6 +237,7 @@ void SieveConditionWidget::setCondition(const QString &conditionName, QXmlStream
     } else {
         error += i18n("Script contains unsupported feature \"%1\"", conditionName) + QLatin1Char('\n');
         qCDebug(LIBKSIEVE_LOG) << "Condition " << conditionName << " not supported";
+        element.skipCurrentElement();
     }
 }
 

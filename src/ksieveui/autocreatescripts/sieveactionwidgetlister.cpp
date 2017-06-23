@@ -273,7 +273,7 @@ void SieveActionWidget::setLocaleVariable(const SieveGlobalVariableActionWidget:
         }
     } else {
         //error += i18n("Script contains unsupported feature \"%1\"", actionName) + QLatin1Char('\n');
-        //qCDebug(LIBKSIEVE_LOG) << "Condition " << actionName << " not supported";
+        //qCDebug(LIBKSIEVE_LOG) << "Action " << actionName << " not supported";
     }
 
 }
@@ -290,7 +290,8 @@ bool SieveActionWidget::setAction(const QString &actionName, QXmlStreamReader &e
         action->setComment(comment);
     } else {
         error += i18n("Script contains unsupported feature \"%1\"", actionName) + QLatin1Char('\n');
-        qCDebug(LIBKSIEVE_LOG) << "Condition " << actionName << " not supported";
+        qCDebug(LIBKSIEVE_LOG) << "Action " << actionName << " not supported";
+        element.skipCurrentElement();
     }
     return result;
 }

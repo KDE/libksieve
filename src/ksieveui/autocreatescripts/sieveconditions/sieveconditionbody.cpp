@@ -115,7 +115,7 @@ bool SieveConditionBody::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             if (index == 0) {
                 tagValueList << AutoCreateScriptUtil::tagValue(tagValue);
             } else if (index == 1) {
-                tagValueList << AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition);
+                tagValueList << AutoCreateScriptUtil::tagValueWithCondition(tagValue, notCondition);
             } else {
                 tooManyArgument(tagName, index, 2, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionBody::setParamWidgetValue too many argument " << index;
@@ -141,7 +141,6 @@ bool SieveConditionBody::setParamWidgetValue(QXmlStreamReader &element, QWidget 
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
     QString errorStr;
     if (strValue.count() == 1) {
         SelectBodyTypeWidget *bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
