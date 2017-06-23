@@ -406,5 +406,4 @@ void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniq
             }
         }
     }
-
 }

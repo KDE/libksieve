@@ -99,7 +99,7 @@ void SieveIncludeActionWidget::loadScript(QXmlStreamReader &element, QString &er
         if (tagName == QLatin1String("tag")) {
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1String("personal")
-                    || tagValue == QLatin1String("global")) {
+                || tagValue == QLatin1String("global")) {
                 mLocation->setCode(AutoCreateScriptUtil::tagValue(tagValue), error);
             } else if (tagValue == QLatin1String("optional")) {
                 mOptional->setChecked(true);
@@ -114,7 +114,6 @@ void SieveIncludeActionWidget::loadScript(QXmlStreamReader &element, QString &er
             qCDebug(LIBKSIEVE_LOG) << " SieveIncludeActionWidget::loadScript unknown tagName " << tagName;
         }
     }
-
 }
 
 void SieveIncludeActionWidget::generatedScript(QString &script)

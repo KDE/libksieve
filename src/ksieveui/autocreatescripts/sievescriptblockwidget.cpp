@@ -285,5 +285,4 @@ void SieveScriptBlockWidget::loadScript(QXmlStreamReader &element, bool onlyActi
             }
         }
     }
-
 }

@@ -124,7 +124,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
 
 #if 1
     QTest::newRow("test-foreach") << QStringLiteral("test-foreach") << false << true;
-QTest::newRow("not-condition") << QStringLiteral("not-condition") << false << true;
+    QTest::newRow("not-condition") << QStringLiteral("not-condition") << false << true;
     QTest::newRow("test-envelop-without-part") << QStringLiteral("test-envelop-without-part") << false << true;
     QTest::newRow("include") << QStringLiteral("include") << false << true;
     QTest::newRow("notify") << QStringLiteral("notify") << false << true;

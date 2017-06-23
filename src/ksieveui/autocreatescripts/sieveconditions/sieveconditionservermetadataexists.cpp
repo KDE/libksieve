@@ -83,19 +83,19 @@ bool SieveConditionServerMetaDataExists::setParamWidgetValue(QXmlStreamReader &e
     QString commentStr;
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
-            if (tagName == QLatin1String("str")) {
-                const QString tagValue = element.readElementText();
-                QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
-                value->setText(tagValue);
-            } else if (tagName == QLatin1String("crlf")) {
-                element.skipCurrentElement();
-                //nothing
-            } else if (tagName == QLatin1String("comment")) {
-                commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
-            } else {
-                unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaDataExists::setParamWidgetValue unknown tagName " << tagName;
-            }
+        if (tagName == QLatin1String("str")) {
+            const QString tagValue = element.readElementText();
+            QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+            value->setText(tagValue);
+        } else if (tagName == QLatin1String("crlf")) {
+            element.skipCurrentElement();
+            //nothing
+        } else if (tagName == QLatin1String("comment")) {
+            commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
+        } else {
+            unknownTag(tagName, error);
+            qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaDataExists::setParamWidgetValue unknown tagName " << tagName;
+        }
     }
     if (!commentStr.isEmpty()) {
         setComment(commentStr);

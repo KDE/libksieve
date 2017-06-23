@@ -416,7 +416,7 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
                 currentPage = nullptr;
             }
             if (n.attributes().hasAttribute(QStringLiteral("name"))) {
-                const QString controlType =n.attributes().value(QStringLiteral("name")).toString();
+                const QString controlType = n.attributes().value(QStringLiteral("name")).toString();
                 //qCDebug(LIBKSIEVE_LOG)<<" controlType"<<controlType;
                 if (controlType == QLatin1String("if")) {
                     typeBlock = TypeBlockIf;
