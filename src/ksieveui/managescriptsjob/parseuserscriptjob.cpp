@@ -21,6 +21,7 @@
 
 #include <KLocalizedString>
 #include <QXmlStreamWriter>
+#include <QDebug>
 
 using namespace KSieveUi;
 ParseUserScriptJob::ParseUserScriptJob(const QUrl &url, QObject *parent)
@@ -124,7 +125,8 @@ QStringList ParseUserScriptJob::extractActiveScript(const QString &doc)
     QStringList lstScript;
     if (mStreamReader->readNextStartElement()) {
         while (mStreamReader->readNextStartElement()) {
-            if (mStreamReader->name() == QLatin1String("action")) {
+            const QStringRef tagname = mStreamReader->name();
+            if (tagname == QLatin1String("action")) {
                 if (mStreamReader->attributes().hasAttribute(QStringLiteral("name"))) {
                     const QString actionName = mStreamReader->attributes().value(QStringLiteral("name")).toString();
                     if (actionName == QLatin1String("include")) {
@@ -135,8 +137,12 @@ QStringList ParseUserScriptJob::extractActiveScript(const QString &doc)
                                 lstScript.append(str);
                             }
                         }
+                    } else {
+                        mStreamReader->skipCurrentElement();
                     }
                 }
+            } else {
+                mStreamReader->skipCurrentElement();
             }
         }
     }
@@ -149,6 +155,8 @@ QString ParseUserScriptJob::loadInclude()
     while (mStreamReader->readNextStartElement()) {
         if (mStreamReader->name() == QLatin1String("str")) {
             scriptName = mStreamReader->readElementText();
+        } else {
+            mStreamReader->skipCurrentElement();
         }
     }
     return scriptName;
