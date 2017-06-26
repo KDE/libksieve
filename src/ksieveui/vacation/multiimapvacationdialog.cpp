@@ -109,8 +109,12 @@ void MultiImapVacationDialog::init()
                                   "You can do this on the \"Filtering\" tab of the IMAP "
                                   "account configuration."));
     lab->setWordWrap(true);
+    lab->setAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+    QFont font = lab->font();
+    font.setBold(true);
+    font.setPointSize(font.pointSize() + 2);
+    lab->setFont(font);
     vbox->addWidget(lab);
-    vbox->addStretch();
     lab->setWordWrap(true);
     d->mStackedWidget->addWidget(w);
     d->mStackedWidget->setCurrentIndex(0);
