@@ -34,7 +34,7 @@ QString createAddressList(const QString &str, bool addSemiColon = true);
 QString negativeString(bool isNegative);
 QString tagValueWithCondition(const QString &tag, bool notCondition);
 QString tagValue(const QString &tag);
-QString strValue(QXmlStreamReader &node);
+QString strValue(QXmlStreamReader &element);
 QStringList listValue(QXmlStreamReader &element);
 QString listValueToStr(QXmlStreamReader &element);
 QString fixListValue(QString valueStr);

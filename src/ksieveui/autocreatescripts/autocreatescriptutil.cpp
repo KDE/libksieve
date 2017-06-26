@@ -132,14 +132,14 @@ QString AutoCreateScriptUtil::tagValue(const QString &tag)
     return QLatin1Char(':') + tag;
 }
 
-QString AutoCreateScriptUtil::strValue(QXmlStreamReader &node)
+QString AutoCreateScriptUtil::strValue(QXmlStreamReader &element)
 {
-    if (node.readNextStartElement()) {
-        const QStringRef textElementTagName = node.name();
+    if (element.readNextStartElement()) {
+        const QStringRef textElementTagName = element.name();
         if (textElementTagName == QLatin1String("str")) {
-            return node.readElementText();
+            return element.readElementText();
         } else {
-            node.skipCurrentElement();
+            element.skipCurrentElement();
         }
     }
     return QString();
