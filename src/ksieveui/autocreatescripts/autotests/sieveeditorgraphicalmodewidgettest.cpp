@@ -228,6 +228,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("test-date1") << QStringLiteral("test-date1") << false << true;
 
     QTest::newRow("test-header-multilist") << QStringLiteral("test-header-multilist") << false << true;
+    QTest::newRow("test-header-multilist-comment") << QStringLiteral("test-header-multilist-comment") << false << true;
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)

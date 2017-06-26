@@ -1,0 +1,6 @@
+#SCRIPTNAME: Script part 0
+if header :contains [ "from"/*goo1*/, "cc" /*goo*/ ] [ "from-foo@example.net"/*foo1*/, "pub@foo.com"/*foo2*/ ]
+{
+    discard;
+    stop;
+} 

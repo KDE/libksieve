@@ -1,0 +1,6 @@
+#SCRIPTNAME: Script part 0
+if header :contains [ "from", "cc" ] [ "from-foo@example.net", "pub@foo.com" ]
+{
+    discard;
+    stop;
+} 
