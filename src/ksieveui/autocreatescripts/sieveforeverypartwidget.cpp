@@ -110,6 +110,7 @@ void SieveForEveryPartWidget::loadScript(QXmlStreamReader &element, QString &err
         //It's when name is empty
     } else if (tagName == QLatin1String("crlf")) {
         //Nothing
+        element.skipCurrentElement();
     } else {
         error += i18n("Unknown tag \"%1\" during loading loop \"for\"", tagName.toString()) + QLatin1Char('\n');
         qCDebug(LIBKSIEVE_LOG) << " SieveForEveryPartWidget::loadScript unknown tagName " << tagName;
