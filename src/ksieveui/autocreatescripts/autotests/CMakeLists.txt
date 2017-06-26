@@ -12,7 +12,7 @@ macro(add_sieveeditor_autocreatescripts _source _extrasource)
     ecm_add_test(${_test}
         TEST_NAME ${_name}
         NAME_PREFIX "sieveeditor-autocreatescripts-"
-        LINK_LIBRARIES Qt5::Test Qt5::Widgets Qt5::Xml KF5::I18n KF5::Completion KF5::ConfigCore KF5::KSieveUi KF5::MailTransport
+        LINK_LIBRARIES Qt5::Test Qt5::Widgets KF5::I18n KF5::Completion KF5::ConfigCore KF5::KSieveUi KF5::MailTransport
         )
 endmacro()
 

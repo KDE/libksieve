@@ -230,7 +230,6 @@ target_link_libraries(KF5KSieveUi
     KF5::KManageSieve
     KF5::KSieve
     KF5::PimCommon
-    Qt5::Xml
     PRIVATE
     KF5::Libkdepim
     KF5::Archive
@@ -336,7 +335,7 @@ ecm_generate_headers(ksieveui_Camelcasewidgets_HEADERS
 
 ecm_generate_pri_file(BASE_NAME KSieveUi
     LIB_NAME KF5KSieveUi
-    DEPS "KManageSieve KSieve PimCommon Xml" FILENAME_VAR PRI_FILENAME
+    DEPS "KManageSieve KSieve PimCommon" FILENAME_VAR PRI_FILENAME
     )
 
 
