@@ -159,6 +159,8 @@ QStringList AutoCreateScriptUtil::listValue(QXmlStreamReader &element)
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("str")) {
             lst << element.readElementText();
+        } else {
+            element.skipCurrentElement();
         }
     }
     return lst;
