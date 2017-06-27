@@ -1,0 +1,9 @@
+# Declare any optional features or extension used by the script.
+require ["fileinto", "reject"]
+
+if header :contains "subject" ["order", "buy"] {
+        # Forward mails with "order" or "buy" in their subject to another address.
+        redirect "order@example.com";
+        stop;
+}
+
