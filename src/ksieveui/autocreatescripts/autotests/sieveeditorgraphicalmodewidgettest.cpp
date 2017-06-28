@@ -111,6 +111,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         QEXPECT_FAIL("test-comment2", "Expected failure on test-comment2 file. Problem with # and /* .", Continue);
         QEXPECT_FAIL("test-comment7", "Expected failure on test-comment7 file. Problem comment after an action .", Continue);
         QEXPECT_FAIL("test-date1", "Expected failure on test-date1 file. Problem with * in date.", Continue);
+        QEXPECT_FAIL("wierd-script", "Missing ';' at the end of requires => invalid script", Continue);
         QCOMPARE(proc.exitCode(), 0);
     }
 }
