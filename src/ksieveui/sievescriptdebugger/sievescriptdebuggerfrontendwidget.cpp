@@ -101,6 +101,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
 
     mSieveTestResult = new KPIMTextEdit::PlainTextEditorWidget(new KSieveUi::SieveScriptDebuggerResultEditor(this), this);
     mSieveTestResult->setObjectName(QStringLiteral("sievetextresult"));
+    mSieveTestResult->editor()->setPlaceholderText(i18n("Display check script result..."));
     mSieveTestResult->setReadOnly(true);
     mSplitter->addWidget(mSieveTestResult);
 
