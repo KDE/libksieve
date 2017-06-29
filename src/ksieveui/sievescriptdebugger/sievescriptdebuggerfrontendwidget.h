@@ -57,8 +57,10 @@ private Q_SLOTS:
     void slotReadStandardOutput();
     void slotReadErrorOutput();
     void slotDebugFinished();
+    void slotScriptTextChanged();
 
 private:
+    void updateDebugButton();
     KSieveUi::SieveTextEditWidget *mSieveTextEditWidget;
     KSieveUi::SieveScriptDebuggerWarning *mSieveScriptDebuggerWarning;
     KPIMTextEdit::PlainTextEditorWidget *mSieveTestResult;

@@ -90,7 +90,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     vboxSieveEditorLayout->addWidget(textToSpeechWidget);
 
     KSieveUi::SieveScriptDebuggerTextEdit *textEdit = new KSieveUi::SieveScriptDebuggerTextEdit(this);
-    connect(textEdit, &KSieveUi::SieveScriptDebuggerTextEdit::textChanged, this, &SieveScriptDebuggerFrontEndWidget::scriptTextChanged);
+    connect(textEdit, &KSieveUi::SieveScriptDebuggerTextEdit::textChanged, this, &SieveScriptDebuggerFrontEndWidget::slotScriptTextChanged);
     mSieveTextEditWidget = new KSieveUi::SieveTextEditWidget(textEdit, this);
     mSieveTextEditWidget->setObjectName(QStringLiteral("sievetexteditwidget"));
     vboxSieveEditorLayout->addWidget(mSieveTextEditWidget);
@@ -123,6 +123,18 @@ SieveScriptDebuggerFrontEndWidget::~SieveScriptDebuggerFrontEndWidget()
 {
 }
 
+
+void SieveScriptDebuggerFrontEndWidget::updateDebugButton()
+{
+    mDebugScript->setEnabled(!mSieveTextEditWidget->textEdit()->document()->isEmpty() && !mEmailPath->lineEdit()->text().trimmed().isEmpty());
+}
+
+void SieveScriptDebuggerFrontEndWidget::slotScriptTextChanged()
+{
+    updateDebugButton();
+    Q_EMIT scriptTextChanged();
+}
+
 void SieveScriptDebuggerFrontEndWidget::setSplitterSizes(const QList<int> &sizes)
 {
     mSplitter->setSizes(sizes);
@@ -135,7 +147,8 @@ QList<int> SieveScriptDebuggerFrontEndWidget::splitterSizes() const
 
 void SieveScriptDebuggerFrontEndWidget::slotEmailChanged(const QString &text)
 {
-    mDebugScript->setEnabled(!text.trimmed().isEmpty());
+    Q_UNUSED(text);
+    updateDebugButton();
 }
 
 void SieveScriptDebuggerFrontEndWidget::slotDebugScript()
