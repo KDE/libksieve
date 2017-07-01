@@ -15,13 +15,20 @@ add_library(KF5KManageSieve ${kmanagesieve_LIB_SRCS})
 generate_export_header(KF5KManageSieve BASE_NAME kmanagesieve)
 add_library(KF5::KManageSieve ALIAS KF5KManageSieve)
 
+if (WIN32)
+    set(extra_LIBS ws2_32)
+endif()
+
+
 target_link_libraries(KF5KManageSieve
 PRIVATE
   KF5::I18n 
   KF5::KIOCore
   KF5::KIOWidgets
   ${Sasl2_LIBRARIES}
+  ${extra_LIBS}
 )
+
 
 set_target_properties(KF5KManageSieve PROPERTIES
   VERSION ${LIBKSIEVE_VERSION_STRING}
