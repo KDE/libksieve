@@ -1,4 +1,4 @@
-set( libksieveui_sieveeditormenubartest_source sieveeditormenubartest.cpp ../sieveeditormenubar.cpp ../sieveeditortabwidget.cpp
+set( libksieveui_sieveeditormenubartest_source sieveeditormenubartest.cpp ../sieveeditormenubar.cpp
     )
 add_executable( sieveeditormenubartest ${libksieveui_sieveeditormenubartest_source})
 add_test(sieveeditormenubartest sieveeditormenubartest)
