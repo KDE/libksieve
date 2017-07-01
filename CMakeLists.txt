@@ -57,6 +57,7 @@ set_package_properties(Sasl2 PROPERTIES
                              TYPE OPTIONAL
 )
 
+include_directories(${Sasl2_INCLUDE_DIRS})
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVE
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h"
