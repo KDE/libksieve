@@ -20,6 +20,7 @@
 
 #include "sieve-vacation.h"
 #include "../vacationscriptextractor.h"
+#include "ksieveui_export.h"
 
 #include <ksieve/error.h>
 #include <ksieve/parser.h>
@@ -79,7 +80,7 @@ This file only contains legacy code, that can be removed if the lagacy code is n
 See README for further information.
 
 */
-class __attribute__((__deprecated__)) SpamDataExtractor: public GenericInformationExtractor
+class KSIEVEUI_DEPRECATED SpamDataExtractor: public GenericInformationExtractor
 {
 public:
     SpamDataExtractor() : GenericInformationExtractor(std::vector<StateNode>(spamNodes, spamNodes + numSpamNodes))
@@ -141,7 +142,7 @@ This file only contains legacy code, that can be removed if the lagacy code is n
 See README for further information.
 
 */
-class __attribute__((__deprecated__)) DomainRestrictionDataExtractor: public GenericInformationExtractor
+class KSIEVEUI_DEPRECATED DomainRestrictionDataExtractor: public GenericInformationExtractor
 {
 public:
     DomainRestrictionDataExtractor() : GenericInformationExtractor(std::vector<StateNode>(domainNodes, domainNodes + numDomainNodes))
@@ -205,7 +206,7 @@ This file only contains legacy code, that can be removed if the lagacy code is n
 See README for further information.
 
 */
-class __attribute__((__deprecated__)) DateExtractor: public GenericInformationExtractor
+class KSIEVEUI_DEPRECATED DateExtractor: public GenericInformationExtractor
 {
 public:
     DateExtractor() : GenericInformationExtractor(std::vector<StateNode>(datesNodes, datesNodes + numDatesNodes))
@@ -239,7 +240,7 @@ This file only contains legacy code, that can be removed if the lagacy code is n
 See README for further information.
 
 */
-class __attribute__((__deprecated__)) VacationDataExtractor: public KSieve::ScriptBuilder
+class KSIEVEUI_DEPRECATED VacationDataExtractor: public KSieve::ScriptBuilder
 {
     enum Context {
         None = 0,
