@@ -27,7 +27,7 @@
 #include <QDir>
 
 #ifdef Q_OS_WIN
-#include <kstandarddirs.h>
+#include <QCoreApplication>
 #endif
 
 extern "C" {
@@ -36,8 +36,19 @@ extern "C" {
 
 inline bool initSASL()
 {
-#ifdef Q_OS_WIN
-    QByteArray libInstallPath(QFile::encodeName(QDir::toNativeSeparators(KGlobal::dirs()->installPath("lib") + QLatin1String("sasl2"))));
+#ifdef Q_OS_WIN  //krazy:exclude=cpp
+    for (const auto &path : QCoreApplication::libraryPaths()) {
+        QDir dir(path);
+        if (dir.exists(QStringLiteral("sasl2"))) {
+            auto libInstallPath = QFile::encodeName(dir.absoluteFilePath(QStringLiteral("sasl2")));
+            if (sasl_set_path(SASL_PATH_TYPE_PLUGIN, libInstallPath.data()) != SASL_OK) {
+                fprintf(stderr, "SASL path initialization failed!\n");
+                return false;
+            }
+            break;
+        }
+    }
+#else
     QByteArray configPath(QFile::encodeName(QDir::toNativeSeparators(KGlobal::dirs()->installPath("config") + QLatin1String("sasl2"))));
     if (sasl_set_path(SASL_PATH_TYPE_PLUGIN, libInstallPath.data()) != SASL_OK
         || sasl_set_path(SASL_PATH_TYPE_CONFIG, configPath.data()) != SASL_OK) {
