@@ -93,7 +93,7 @@ QString SieveCondition::help() const
     return QString();
 }
 
-bool SieveCondition::setParamWidgetValue(QXmlStreamReader & /*element*/, QWidget */*parent*/, bool /*notCondition*/, QString & /*error*/)
+bool SieveCondition::setParamWidgetValue(QXmlStreamReader & /*element*/, QWidget * /*parent*/, bool /*notCondition*/, QString & /*error*/)
 {
     return true;
 }
