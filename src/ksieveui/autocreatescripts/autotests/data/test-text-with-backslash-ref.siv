@@ -1,0 +1,9 @@
+require "reject";
+
+#SCRIPTNAME: test
+reject text:
+test \"too\"
+.
+;
+
+

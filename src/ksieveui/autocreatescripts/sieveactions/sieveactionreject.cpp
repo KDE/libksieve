@@ -57,7 +57,7 @@ bool SieveActionReject::setParamWidgetValue(QXmlStreamReader &element, QWidget *
         if (tagName == QLatin1String("str")) {
             const QString tagValue = element.readElementText();
             MultiLineEdit *edit = w->findChild<MultiLineEdit *>(QStringLiteral("rejectmessage"));
-            edit->setPlainText(AutoCreateScriptUtil::quoteStr(tagValue));
+            edit->setPlainText(tagValue);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
             //nothing

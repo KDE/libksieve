@@ -128,7 +128,6 @@ void XMLPrintingScriptBuilderTest::shouldCreateXml_data()
     QTest::newRow("test-comment8") << QStringLiteral("test-comment8")<< true;
     QTest::newRow("test-comment9") << QStringLiteral("test-comment9")<< true;
     QTest::newRow("test-date1") << QStringLiteral("test-date1")<< true;
-
 }
 
 void XMLPrintingScriptBuilderTest::shouldCreateXml()
