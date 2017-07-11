@@ -121,6 +121,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
 
 SieveScriptDebuggerFrontEndWidget::~SieveScriptDebuggerFrontEndWidget()
 {
+    disconnect(mSieveTextEditWidget->textEdit(), &KSieveUi::SieveScriptDebuggerTextEdit::textChanged, this, &SieveScriptDebuggerFrontEndWidget::slotScriptTextChanged);
 }
 
 
