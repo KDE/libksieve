@@ -24,6 +24,7 @@ if(BUILD_TESTING)
     add_subdirectory(editor/webengine/autotests/)
     add_subdirectory(util/autotests/)
     add_subdirectory(sieveimapinstance/autotests)
+    add_subdirectory(widgets/autotests)
 endif()
 
 set(ksieveui_vacation_LIB_SRCS
