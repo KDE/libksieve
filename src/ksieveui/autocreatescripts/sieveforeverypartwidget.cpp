@@ -26,6 +26,7 @@
 
 #include <KLocalizedString>
 #include <QLineEdit>
+#include "widgets/lineeditvalidator.h"
 
 #include <QHBoxLayout>
 #include <QLabel>
@@ -55,7 +56,7 @@ SieveForEveryPartWidget::SieveForEveryPartWidget(QWidget *parent)
     QLabel *lab = new QLabel(i18n("Name (optional):"));
     lay->addWidget(lab);
 
-    mName = new QLineEdit;
+    mName = new LineEditValidator;
     connect(mName, &QLineEdit::textChanged, this, &SieveForEveryPartWidget::valueChanged);
     mName->setEnabled(false);
     lay->addWidget(mName);
