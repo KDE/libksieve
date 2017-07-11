@@ -17,25 +17,22 @@
    Boston, MA 02110-1301, USA.
 */
 
-#ifndef LINEEDITVALIDATOR_H
-#define LINEEDITVALIDATOR_H
+#ifndef LINEEDITVALIDATORTEST_H
+#define LINEEDITVALIDATORTEST_H
 
-#include <QLineEdit>
-#include "ksieveui_private_export.h"
-class QRegularExpressionValidator;
-namespace KSieveUi {
-class KSIEVEUI_TESTS_EXPORT LineEditValidator : public QLineEdit
+#include <QObject>
+
+class LineEditValidatorTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit LineEditValidator(QWidget *parent = nullptr);
-    ~LineEditValidator();
+    explicit LineEditValidatorTest(QObject *parent = nullptr);
+    ~LineEditValidatorTest();
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 
-    bool setRegularExpressionPattern(const QString &pattern);
-
-private:
-    void initialize();
-    QRegularExpressionValidator *mValidator = nullptr;
+    void shouldAssignRegularExpression_data();
+    void shouldAssignRegularExpression();
 };
-}
-#endif // LINEEDITVALIDATOR_H
+
+#endif // LINEEDITVALIDATORTEST_H
