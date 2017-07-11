@@ -78,7 +78,7 @@ private:
     QCheckBox *mOptional;
     QCheckBox *mOnce;
     SieveIncludeLocation *mLocation;
-    KLineEdit *mIncludeName;
+    QLineEdit *mIncludeName;
 };
 
 class SieveIncludeWidgetLister : public KPIM::KWidgetLister

@@ -23,6 +23,7 @@
 #include "commonwidgets/sievehelpbutton.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
+#include "widgets/lineeditvalidator.h"
 
 #include <QPushButton>
 #include <KLocalizedString>
@@ -147,7 +148,7 @@ void SieveIncludeActionWidget::initWidget()
     lab = new QLabel(i18n("Name:"));
     mLayout->addWidget(lab, 1, 2);
 
-    mIncludeName = new KLineEdit(this);
+    mIncludeName = new LineEditValidator(this);
     mIncludeName->setClearButtonEnabled(true);
     connect(mIncludeName, &QLineEdit::textChanged, this, &SieveIncludeActionWidget::valueChanged);
     mLayout->addWidget(mIncludeName, 1, 3);
