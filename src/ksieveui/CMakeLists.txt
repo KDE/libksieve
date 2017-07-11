@@ -195,18 +195,24 @@ set(ksieveui_sieveutil_LIB_SRCS
     util/akonadiimapsettinginterface.cpp
     util/sieveimapaccountsettings.cpp
     )	
-set(ksieveui_LIB_SRCS
-    managesievescriptsdialog.cpp
+
+set(ksieveui_widgets_SRCS
     widgets/custommanagesievewidget.cpp
     widgets/sievetreewidgetitem.cpp
     widgets/managesievetreeview.cpp
     widgets/managesievewidget.cpp
     widgets/abstractmoveimapfolderwidget.cpp
     widgets/abstractregexpeditorlineedit.cpp
+    widgets/lineeditvalidator.cpp
+    )
+
+set(ksieveui_LIB_SRCS
+    managesievescriptsdialog.cpp
     debug/sievedebugdialog.cpp
     templates/sievetemplatewidget.cpp
     templates/sievedefaulttemplate.cpp
     templates/sievetemplateeditdialog.cpp
+    ${ksieveui_widgets_SRCS}
     ${ksieveui_sieveutil_LIB_SRCS}
     ${ksieveui_sieveimapinstance_LIB_SRCS}
     ${ksieveui_scriptsparsing_LIB_SRCS}
