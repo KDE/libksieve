@@ -33,6 +33,9 @@ private Q_SLOTS:
 
     void shouldAssignRegularExpression_data();
     void shouldAssignRegularExpression();
+
+    void shouldValidateText_data();
+    void shouldValidateText();
 };
 
 #endif // LINEEDITVALIDATORTEST_H

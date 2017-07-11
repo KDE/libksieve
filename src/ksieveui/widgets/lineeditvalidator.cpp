@@ -27,7 +27,7 @@ using namespace KSieveUi;
 LineEditValidator::LineEditValidator(QWidget *parent)
     : QLineEdit(parent)
 {
-
+    initialize();
 }
 
 LineEditValidator::~LineEditValidator()
@@ -37,7 +37,7 @@ LineEditValidator::~LineEditValidator()
 
 void LineEditValidator::initialize()
 {
-    QRegularExpression rx(QStringLiteral("^[\"]"));
+    QRegularExpression rx(QStringLiteral("^[^\"]*$"));
     mValidator = new QRegularExpressionValidator(rx, this);
     setValidator(mValidator);
 }
