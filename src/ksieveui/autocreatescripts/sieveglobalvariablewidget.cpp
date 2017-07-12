@@ -22,6 +22,7 @@
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
 #include "editor/sieveeditorutil.h"
+#include "widgets/lineeditvalidator.h"
 
 #include <QPushButton>
 #include <KLocalizedString>
@@ -70,7 +71,7 @@ void SieveGlobalVariableActionWidget::initWidget()
     QLabel *lab = new QLabel(i18n("Variable name:"));
     mLayout->addWidget(lab, 1, 0);
 
-    mVariableName = new QLineEdit;
+    mVariableName = new LineEditValidator;
     connect(mVariableName, &QLineEdit::textChanged, this, &SieveGlobalVariableActionWidget::valueChanged);
     mLayout->addWidget(mVariableName, 1, 1);
 
