@@ -135,7 +135,6 @@ QDate VacationUtils::defaultEndDate()
     return defaultStartDate().addDays(7);
 }
 
-//TODO: delete this function after 06.2016 until than all vacation scripts should be updated
 VacationUtils::Vacation parseScriptLegacy(const QString &script)
 {
     KSieveUi::VacationUtils::Vacation vacation;
