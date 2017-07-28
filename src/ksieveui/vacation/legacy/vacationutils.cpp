@@ -28,6 +28,7 @@ See README for further information.
 #include <KLocalizedString>
 #include <QDate>
 #include <QLocale>
+#include <QRegularExpression>
 
 using KMime::Types::AddrSpecList;
 using namespace KSieveUi::Legacy::VacationUtils;
@@ -44,7 +45,7 @@ static inline QString dotstuff(QString s)     // krazy:exclude=passbyvalue
 
 static inline QString stringReplace(QString s)
 {
-    s = s.replace(QRegExp(QLatin1String("[\n\t]+")), QStringLiteral(" "));
+    s = s.replace(QRegularExpression(QStringLiteral("[\n\t]+")), QStringLiteral(" "));
     return s.replace(QLatin1Char('\"'), QStringLiteral("\\\""));
 }
 
