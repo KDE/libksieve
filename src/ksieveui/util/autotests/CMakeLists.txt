@@ -9,3 +9,4 @@ endmacro()
 
 add_sieveutil_test(sieveaccounttest.cpp "")
 add_sieveutil_test(utilmethodtest.cpp "akonadiimapsettinginterfacetest.cpp")
+add_sieveutil_test(regexpconvertertest.cpp "")
