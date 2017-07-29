@@ -205,6 +205,7 @@ set(ksieveui_widgets_SRCS
     widgets/abstractmoveimapfolderwidget.cpp
     widgets/abstractregexpeditorlineedit.cpp
     widgets/lineeditvalidator.cpp
+    widgets/includefilelineedit.cpp
     )
 
 set(ksieveui_LIB_SRCS
