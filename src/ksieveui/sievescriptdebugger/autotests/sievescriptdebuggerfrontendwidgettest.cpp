@@ -80,6 +80,9 @@ void SieveScriptDebuggerFrontEndWidgetTest::shouldChangeButtonEnabledState()
     emailPath->setUrl(QUrl::fromLocalFile(QStringLiteral("/")));
     QPushButton *debugScriptButton = w.findChild<QPushButton *>(QStringLiteral("debugbutton"));
 
+    QVERIFY(!debugScriptButton->isEnabled());
+
+    w.setScript(QStringLiteral("foo"));
     QVERIFY(debugScriptButton->isEnabled());
 
     emailPath->setUrl(QUrl::fromLocalFile(QStringLiteral("    ")));
