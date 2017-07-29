@@ -50,6 +50,7 @@ void RegExpConverterTest::convertRegExp_data()
     QTest::newRow("newline") << QStringLiteral("\n   foo foo foo  ") << QStringLiteral("    foo foo foo  ");
     QTest::newRow("newline2") << QStringLiteral("\nfoo\n foo") << QStringLiteral(" foo  foo");
     QTest::newRow("newline3") << QStringLiteral("\n\t\tfoo\n") << QStringLiteral(" foo ");
+    QTest::newRow("quote") << QStringLiteral("\n\t\tfoo\"\n") << QStringLiteral(" foo\\\" ");
 }
 
 void RegExpConverterTest::convertRegExp()
