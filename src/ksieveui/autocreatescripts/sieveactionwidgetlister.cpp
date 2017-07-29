@@ -97,9 +97,8 @@ void SieveActionWidget::generatedScript(QString &script, QStringList &requires, 
             indent += AutoCreateScriptUtil::indentation();
         }
         if (!comment.trimmed().isEmpty()) {
-            const QStringList commentList = comment.split(QLatin1Char('\n'));
-
-            for (const QString &str : commentList) {
+            const QVector<QStringRef> commentList = comment.splitRef(QLatin1Char('\n'));
+            for (const QStringRef &str : commentList) {
                 if (str.isEmpty()) {
                     script += QLatin1Char('\n');
                 } else {
