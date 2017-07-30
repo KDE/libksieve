@@ -22,7 +22,7 @@
 
 #include <QLineEdit>
 #include "ksieveui_private_export.h"
-
+class QCompleter;
 namespace KSieveUi {
 class KSIEVEUI_TESTS_EXPORT IncludeFileLineEdit : public QLineEdit
 {
@@ -30,6 +30,12 @@ class KSIEVEUI_TESTS_EXPORT IncludeFileLineEdit : public QLineEdit
 public:
     explicit IncludeFileLineEdit(QWidget *parent = nullptr);
     ~IncludeFileLineEdit();
+
+    void setStringList(const QStringList &lst);
+
+private:
+    void initialize();
+    QCompleter *mCompleter;
 };
 }
 #endif // INCLUDEFILELINEEDIT_H

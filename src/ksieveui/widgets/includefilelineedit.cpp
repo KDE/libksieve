@@ -23,11 +23,16 @@ using namespace KSieveUi;
 
 IncludeFileLineEdit::IncludeFileLineEdit(QWidget *parent)
     : QLineEdit(parent)
+    , mCompleter(nullptr)
 {
-
 }
 
 IncludeFileLineEdit::~IncludeFileLineEdit()
 {
 
+}
+
+void IncludeFileLineEdit::setStringList(const QStringList &lst)
+{
+    //TODO
 }
