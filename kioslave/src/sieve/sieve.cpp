@@ -288,9 +288,8 @@ void kio_sieveProtocol::changeCheck(const QUrl &url)
             query.remove(0, 1);
         }
         QStringList q = query.split(QLatin1Char(','));
-        QStringList::iterator it;
 
-        for (it = q.begin(); it != q.end(); ++it) {
+        for (QStringList::iterator it = q.begin(), end(q.end()); it != end; ++it) {
             if (((*it).section(QLatin1Char('='), 0, 0)).toLower() == QLatin1String("x-mech")) {
                 auth = ((*it).section(QLatin1Char('='), 1)).toUpper();
                 break;
