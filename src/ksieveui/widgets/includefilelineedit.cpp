@@ -27,6 +27,8 @@ IncludeFileLineEdit::IncludeFileLineEdit(QWidget *parent)
     : QLineEdit(parent)
 {
     mCompleter = new QCompleter(this);
+    mCompleter->setObjectName(QStringLiteral("completer"));
+
 }
 
 IncludeFileLineEdit::~IncludeFileLineEdit()

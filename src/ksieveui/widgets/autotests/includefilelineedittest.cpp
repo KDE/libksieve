@@ -18,12 +18,21 @@
 */
 
 #include "includefilelineedittest.h"
+#include "../includefilelineedit.h"
+#include <QCompleter>
 #include <QTest>
 
 IncludeFileLineEditTest::IncludeFileLineEditTest(QObject *parent)
     : QObject(parent)
 {
 
+}
+
+void IncludeFileLineEditTest::shouldHaveDefaultValue()
+{
+   KSieveUi::IncludeFileLineEdit w;
+   QCompleter *completer = w.findChild<QCompleter *>(QStringLiteral("completer"));
+   QVERIFY(completer);
 }
 
 QTEST_MAIN(IncludeFileLineEditTest)

@@ -28,6 +28,8 @@ class IncludeFileLineEditTest : public QObject
 public:
     explicit IncludeFileLineEditTest(QObject *parent = nullptr);
     ~IncludeFileLineEditTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // INCLUDEFILELINEEDITTEST_H
