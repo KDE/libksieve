@@ -18,6 +18,7 @@
 */
 
 #include "includefilelineedit.h"
+#include <QStringListModel>
 
 #include <QCompleter>
 
@@ -28,7 +29,7 @@ IncludeFileLineEdit::IncludeFileLineEdit(QWidget *parent)
 {
     mCompleter = new QCompleter(this);
     mCompleter->setObjectName(QStringLiteral("completer"));
-
+    mCompleter->setCaseSensitivity(Qt::CaseInsensitive);
 }
 
 IncludeFileLineEdit::~IncludeFileLineEdit()
@@ -38,5 +39,5 @@ IncludeFileLineEdit::~IncludeFileLineEdit()
 
 void IncludeFileLineEdit::setStringList(const QStringList &lst)
 {
-    //TODO
+    mCompleter->setModel(new QStringListModel(lst));
 }
