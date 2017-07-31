@@ -31,7 +31,7 @@ public:
     explicit IncludeFileLineEdit(QWidget *parent = nullptr);
     ~IncludeFileLineEdit();
 
-    void setStringList(const QStringList &lst);
+    void setListOfIncludeFile(const QStringList &lst);
 
 private:
     void initialize();

@@ -93,6 +93,11 @@ void SieveIncludeActionWidget::clear()
     mIncludeName->setText(QString());
 }
 
+void SieveIncludeActionWidget::setListOfIncludeFile(const QStringList &listOfIncludeFile)
+{
+    mIncludeName->setListOfIncludeFile(listOfIncludeFile);
+}
+
 void SieveIncludeActionWidget::loadScript(QXmlStreamReader &element, QString &error)
 {
     while (element.readNextStartElement()) {
@@ -207,6 +212,7 @@ SieveIncludeWidget::SieveIncludeWidget(QWidget *parent)
     connect(mHelpButton, &SieveHelpButton::clicked, this, &SieveIncludeWidget::slotHelp);
 
     mIncludeLister = new SieveIncludeWidgetLister;
+    //mIncludeLister->setListOfIncludeFile();
     connect(mIncludeLister, &SieveIncludeWidgetLister::valueChanged, this, &SieveIncludeWidget::valueChanged);
     lay->addWidget(mIncludeLister, 0, Qt::AlignTop);
     setPageType(KSieveUi::SieveScriptBlockWidget::Include);
@@ -290,6 +296,11 @@ void SieveIncludeWidgetLister::updateAddRemoveButton()
     }
 }
 
+void SieveIncludeWidgetLister::setListOfIncludeFile(const QStringList &listOfIncludeFile)
+{
+    mListOfIncludeFile = listOfIncludeFile;
+}
+
 void SieveIncludeWidgetLister::generatedScript(QString &script, QStringList &requires)
 {
     requires << QStringLiteral("include");
@@ -321,6 +332,7 @@ void SieveIncludeWidgetLister::clearWidget(QWidget *aWidget)
 QWidget *SieveIncludeWidgetLister::createWidget(QWidget *parent)
 {
     SieveIncludeActionWidget *w = new SieveIncludeActionWidget(parent);
+    w->setListOfIncludeFile(mListOfIncludeFile);
     reconnectWidget(w);
     return w;
 }

@@ -37,7 +37,7 @@ IncludeFileLineEdit::~IncludeFileLineEdit()
 
 }
 
-void IncludeFileLineEdit::setStringList(const QStringList &lst)
+void IncludeFileLineEdit::setListOfIncludeFile(const QStringList &lst)
 {
     mCompleter->setModel(new QStringListModel(lst));
 }

@@ -31,6 +31,7 @@ class QCheckBox;
 class QXmlStreamReader;
 namespace KSieveUi {
 class SieveHelpButton;
+class IncludeFileLineEdit;
 class SieveIncludeLocation : public KComboBox
 {
     Q_OBJECT
@@ -60,6 +61,7 @@ public:
     void loadScript(QXmlStreamReader &element, QString &error);
     bool isInitialized() const;
     void clear();
+    void setListOfIncludeFile(const QStringList &listOfIncludeFile);
 
 private Q_SLOTS:
     void slotAddWidget();
@@ -78,7 +80,7 @@ private:
     QCheckBox *mOptional;
     QCheckBox *mOnce;
     SieveIncludeLocation *mLocation;
-    QLineEdit *mIncludeName;
+    IncludeFileLineEdit *mIncludeName;
 };
 
 class SieveIncludeWidgetLister : public KPIM::KWidgetLister
@@ -90,6 +92,8 @@ public:
 
     void generatedScript(QString &script, QStringList &requires);
     void loadScript(QXmlStreamReader &element, QString &error);
+
+    void setListOfIncludeFile(const QStringList &listOfIncludeFile);
 
 Q_SIGNALS:
     void valueChanged();
@@ -104,6 +108,7 @@ protected:
 private:
     void reconnectWidget(SieveIncludeActionWidget *w);
     void updateAddRemoveButton();
+    QStringList mListOfIncludeFile;
 };
 
 class SieveIncludeWidget : public SieveWidgetPageAbstract
