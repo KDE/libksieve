@@ -19,12 +19,14 @@
 
 #include "includefilelineedit.h"
 
+#include <QCompleter>
+
 using namespace KSieveUi;
 
 IncludeFileLineEdit::IncludeFileLineEdit(QWidget *parent)
     : QLineEdit(parent)
-    , mCompleter(nullptr)
 {
+    mCompleter = new QCompleter(this);
 }
 
 IncludeFileLineEdit::~IncludeFileLineEdit()
