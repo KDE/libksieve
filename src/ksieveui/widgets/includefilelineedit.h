@@ -20,11 +20,11 @@
 #ifndef INCLUDEFILELINEEDIT_H
 #define INCLUDEFILELINEEDIT_H
 
-#include <QLineEdit>
+#include "lineeditvalidator.h"
 #include "ksieveui_private_export.h"
 class QCompleter;
 namespace KSieveUi {
-class KSIEVEUI_TESTS_EXPORT IncludeFileLineEdit : public QLineEdit
+class KSIEVEUI_TESTS_EXPORT IncludeFileLineEdit : public LineEditValidator
 {
     Q_OBJECT
 public:

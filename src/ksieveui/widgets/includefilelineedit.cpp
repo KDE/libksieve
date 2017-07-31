@@ -25,7 +25,7 @@
 using namespace KSieveUi;
 
 IncludeFileLineEdit::IncludeFileLineEdit(QWidget *parent)
-    : QLineEdit(parent)
+    : LineEditValidator(parent)
 {
     mCompleter = new QCompleter(this);
     mCompleter->setObjectName(QStringLiteral("completer"));
