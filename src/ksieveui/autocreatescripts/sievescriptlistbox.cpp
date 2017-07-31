@@ -474,7 +474,7 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
             }
         } else if (tagName == QLatin1String("comment")) {
             previousElementWasAComment = true;
-#ifdef QDOMELEMENT_FIXME
+#ifdef FIXME_COMMENT
             if (e.hasAttribute(QStringLiteral("hash"))) {
                 //TODO
             } else if (e.hasAttribute(QStringLiteral("bracket"))) {
