@@ -90,7 +90,7 @@ void SieveIncludeActionWidget::clear()
     mOptional->setChecked(false);
     mOnce->setChecked(false);
     mLocation->setCurrentIndex(0);
-    mIncludeFileName->setText(QString());
+    mIncludeFileName->clear();
 }
 
 void SieveIncludeActionWidget::setListOfIncludeFile(const QStringList &listOfIncludeFile)
