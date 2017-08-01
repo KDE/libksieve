@@ -80,7 +80,7 @@ private:
     QCheckBox *mOptional;
     QCheckBox *mOnce;
     SieveIncludeLocation *mLocation;
-    IncludeFileLineEdit *mIncludeName;
+    IncludeFileLineEdit *mIncludeFileName;
 };
 
 class SieveIncludeWidgetLister : public KPIM::KWidgetLister

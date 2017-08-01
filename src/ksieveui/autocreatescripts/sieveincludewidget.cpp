@@ -90,12 +90,12 @@ void SieveIncludeActionWidget::clear()
     mOptional->setChecked(false);
     mOnce->setChecked(false);
     mLocation->setCurrentIndex(0);
-    mIncludeName->setText(QString());
+    mIncludeFileName->setText(QString());
 }
 
 void SieveIncludeActionWidget::setListOfIncludeFile(const QStringList &listOfIncludeFile)
 {
-    mIncludeName->setListOfIncludeFile(listOfIncludeFile);
+    mIncludeFileName->setListOfIncludeFile(listOfIncludeFile);
 }
 
 void SieveIncludeActionWidget::loadScript(QXmlStreamReader &element, QString &error)
@@ -115,7 +115,7 @@ void SieveIncludeActionWidget::loadScript(QXmlStreamReader &element, QString &er
                 qCDebug(LIBKSIEVE_LOG) << " SieveIncludeActionWidget::loadScript unknown tagValue " << tagValue;
             }
         } else if (tagName == QLatin1String("str")) {
-            mIncludeName->setText(element.readElementText());
+            mIncludeFileName->setText(element.readElementText());
         } else {
             qCDebug(LIBKSIEVE_LOG) << " SieveIncludeActionWidget::loadScript unknown tagName " << tagName;
         }
@@ -124,7 +124,7 @@ void SieveIncludeActionWidget::loadScript(QXmlStreamReader &element, QString &er
 
 void SieveIncludeActionWidget::generatedScript(QString &script)
 {
-    const QString includeName = mIncludeName->text();
+    const QString includeName = mIncludeFileName->text();
     if (includeName.trimmed().isEmpty()) {
         return;
     }
@@ -153,10 +153,10 @@ void SieveIncludeActionWidget::initWidget()
     lab = new QLabel(i18n("Name:"));
     mLayout->addWidget(lab, 1, 2);
 
-    mIncludeName = new IncludeFileLineEdit(this);
-    mIncludeName->setClearButtonEnabled(true);
-    connect(mIncludeName, &QLineEdit::textChanged, this, &SieveIncludeActionWidget::valueChanged);
-    mLayout->addWidget(mIncludeName, 1, 3);
+    mIncludeFileName = new IncludeFileLineEdit(this);
+    mIncludeFileName->setClearButtonEnabled(true);
+    connect(mIncludeFileName, &QLineEdit::textChanged, this, &SieveIncludeActionWidget::valueChanged);
+    mLayout->addWidget(mIncludeFileName, 1, 3);
 
     mOptional = new QCheckBox(i18n("Optional"));
     connect(mOptional, &QCheckBox::toggled, this, &SieveIncludeActionWidget::valueChanged);
@@ -194,7 +194,7 @@ void SieveIncludeActionWidget::slotRemoveWidget()
 
 bool SieveIncludeActionWidget::isInitialized() const
 {
-    return !mIncludeName->text().isEmpty();
+    return !mIncludeFileName->text().isEmpty();
 }
 
 void SieveIncludeActionWidget::updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled)
