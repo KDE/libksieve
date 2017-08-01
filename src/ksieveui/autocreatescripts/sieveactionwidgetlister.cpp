@@ -274,7 +274,6 @@ void SieveActionWidget::setLocaleVariable(const SieveGlobalVariableActionWidget:
         //error += i18n("Script contains unsupported feature \"%1\"", actionName) + QLatin1Char('\n');
         //qCDebug(LIBKSIEVE_LOG) << "Action " << actionName << " not supported";
     }
-
 }
 
 bool SieveActionWidget::setAction(const QString &actionName, QXmlStreamReader &element, const QString &comment, QString &error)
@@ -390,7 +389,6 @@ void SieveActionWidgetLister::loadLocalVariable(const SieveGlobalVariableActionW
         w = qobject_cast<SieveActionWidget *>(widgets().constLast());
     }
     w->setLocaleVariable(var);
-
 }
 
 void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyActions, QString &error)

@@ -124,7 +124,6 @@ SieveScriptDebuggerFrontEndWidget::~SieveScriptDebuggerFrontEndWidget()
     disconnect(mSieveTextEditWidget->textEdit(), &KSieveUi::SieveScriptDebuggerTextEdit::textChanged, this, &SieveScriptDebuggerFrontEndWidget::slotScriptTextChanged);
 }
 
-
 void SieveScriptDebuggerFrontEndWidget::updateDebugButton()
 {
     mDebugScript->setEnabled(!mSieveTextEditWidget->textEdit()->document()->isEmpty() && !mEmailPath->lineEdit()->text().trimmed().isEmpty());

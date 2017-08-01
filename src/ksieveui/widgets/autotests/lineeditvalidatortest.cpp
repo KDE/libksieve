@@ -26,12 +26,10 @@ QTEST_MAIN(LineEditValidatorTest)
 LineEditValidatorTest::LineEditValidatorTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 LineEditValidatorTest::~LineEditValidatorTest()
 {
-
 }
 
 void LineEditValidatorTest::shouldHaveDefaultValue()
@@ -52,7 +50,6 @@ void LineEditValidatorTest::shouldAssignRegularExpression()
 {
     QFETCH(QString, regularExpression);
     QFETCH(bool, success);
-
 
     KSieveUi::LineEditValidator lineedit;
     QCOMPARE(lineedit.setRegularExpressionPattern(regularExpression), success);

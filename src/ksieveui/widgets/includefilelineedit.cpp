@@ -34,7 +34,6 @@ IncludeFileLineEdit::IncludeFileLineEdit(QWidget *parent)
 
 IncludeFileLineEdit::~IncludeFileLineEdit()
 {
-
 }
 
 void IncludeFileLineEdit::setListOfIncludeFile(const QStringList &lst)

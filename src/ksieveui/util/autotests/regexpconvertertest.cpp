@@ -24,9 +24,7 @@
 RegExpConverterTest::RegExpConverterTest(QObject *parent)
     : QObject(parent)
 {
-
 }
-
 
 static inline QString stringReplaceRegExp(QString s)
 {

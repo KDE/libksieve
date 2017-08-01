@@ -40,7 +40,8 @@ public:
     struct VariableElement {
         QString variableName;
         QString variableValue;
-        bool isValid() const {
+        bool isValid() const
+        {
             return !variableName.isEmpty();
         }
     };

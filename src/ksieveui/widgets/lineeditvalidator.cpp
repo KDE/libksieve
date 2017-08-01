@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "lineeditvalidator.h"
 #include <QRegularExpression>
 #include <QRegularExpressionValidator>
@@ -32,7 +31,6 @@ LineEditValidator::LineEditValidator(QWidget *parent)
 
 LineEditValidator::~LineEditValidator()
 {
-
 }
 
 void LineEditValidator::initialize()

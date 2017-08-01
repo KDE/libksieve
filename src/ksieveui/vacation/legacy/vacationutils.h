@@ -46,7 +46,7 @@ See README for further information.
 
 */
 QString KSIEVEUI_DEPRECATED composeScript(const QString &messageText, const QString &subject, int notificationInterval, const KMime::Types::AddrSpecList &aliases, bool sendForSpam,
-                                                      const QString &excludeDomain, const QDate &startDate, const QDate &endDate);
+                                          const QString &excludeDomain, const QDate &startDate, const QDate &endDate);
 
 /*
 
@@ -55,7 +55,7 @@ See README for further information.
 
 */
 bool KSIEVEUI_DEPRECATED parseScript(const QString &script, QString &messageText, QString &subject, int &notificationInterval, KMime::Types::AddrSpecList &aliases, bool &sendForSpam,
-                                                 QString &domainName, QDate &startDate, QDate &endDate);
+                                     QString &domainName, QDate &startDate, QDate &endDate);
 }
 }
 }
