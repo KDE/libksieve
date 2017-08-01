@@ -223,6 +223,11 @@ SieveIncludeWidget::~SieveIncludeWidget()
 {
 }
 
+void SieveIncludeWidget::setListOfIncludeFile(const QStringList &lst)
+{
+    mIncludeLister->setListOfIncludeFile(lst);
+}
+
 void SieveIncludeWidget::slotHelp()
 {
     const QString help = i18n(

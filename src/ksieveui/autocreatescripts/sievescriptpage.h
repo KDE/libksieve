@@ -46,6 +46,8 @@ public:
     SieveScriptBlockWidget *blockIfWidget() const;
     SieveScriptBlockWidget *addScriptBlock(KSieveUi::SieveWidgetPageAbstract::PageType type);
 
+    void setListOfIncludeFile(const QStringList &lst);
+
 Q_SIGNALS:
     void valueChanged();
 

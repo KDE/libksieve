@@ -122,6 +122,7 @@ public:
 
     void loadScript(QXmlStreamReader &element, QString &error);
 
+    void setListOfIncludeFile(const QStringList &lst);
 private Q_SLOTS:
     void slotHelp();
 

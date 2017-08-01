@@ -73,6 +73,13 @@ SieveScriptPage::~SieveScriptPage()
 {
 }
 
+void SieveScriptPage::setListOfIncludeFile(const QStringList &lst)
+{
+    if (mIncludeWidget) {
+        mIncludeWidget->setListOfIncludeFile(lst);
+    }
+}
+
 SieveScriptBlockWidget *SieveScriptPage::addScriptBlock(KSieveUi::SieveWidgetPageAbstract::PageType type)
 {
     SieveScriptBlockWidget *blockWidget = createScriptBlock(type);
