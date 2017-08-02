@@ -23,6 +23,7 @@
 #include "lineeditvalidator.h"
 #include "ksieveui_private_export.h"
 class QCompleter;
+class QStringListModel;
 namespace KSieveUi {
 class KSIEVEUI_TESTS_EXPORT IncludeFileLineEdit : public LineEditValidator
 {
@@ -36,6 +37,7 @@ public:
 private:
     void initialize();
     QCompleter *mCompleter;
+    QStringListModel *mStringListModel;
 };
 }
 #endif // INCLUDEFILELINEEDIT_H
