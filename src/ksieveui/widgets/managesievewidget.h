@@ -20,7 +20,7 @@
 #include "ksieveui_export.h"
 
 #include <QUrl>
-
+#include <KSieveUi/SieveImapAccountSettings>
 #include <QWidget>
 #include <QMap>
 
@@ -31,7 +31,6 @@ class SieveJob;
 }
 
 namespace KSieveUi {
-class SieveImapAccountSettings;
 class ManageSieveTreeView;
 class ManageSieveWidgetPrivate;
 class ParseUserScriptJob;
@@ -44,6 +43,15 @@ public:
         NormalEditorMode = 0,
         Kep14EditorMode
     };
+
+    struct ScriptInfo
+    {
+        QUrl currentUrl;
+        QStringList currentCapabilities;
+        KSieveUi::SieveImapAccountSettings sieveImapAccountSettings;
+        QStringList scriptList;
+    };
+
     explicit ManageSieveWidget(QWidget *parent = nullptr);
     ~ManageSieveWidget();
 
@@ -52,8 +60,8 @@ public:
 
 Q_SIGNALS:
     void updateButtons(QTreeWidgetItem *item);
-    void newScript(const QUrl &u, const QStringList &currentCapabilities, const KSieveUi::SieveImapAccountSettings &sieveImapAccountSettings);
-    void editScript(const QUrl &url, const QStringList &currentCapabilities, const KSieveUi::SieveImapAccountSettings &sieveImapAccountSettings);
+    void newScript(const ScriptInfo &info);
+    void editScript(const ScriptInfo &info);
     void scriptDeleted(const QUrl &u);
     void serverSieveFound(bool imapFound);
     void scriptRenamed(const QUrl &oldUrl, const QUrl &newUrl);
@@ -93,7 +101,8 @@ private:
         SIEVE_SERVER_ERROR = Qt::UserRole + 1,
         SIEVE_SERVER_CAPABILITIES = Qt::UserRole + 2,
         SIEVE_SERVER_MODE = Qt::UserRole + 3,
-        SIEVE_SERVER_IMAP_SETTINGS = Qt::UserRole + 4
+        SIEVE_SERVER_IMAP_SETTINGS = Qt::UserRole + 4,
+        SIEVE_SERVER_LIST_SCRIPT = Qt::UserRole + 5
     };
     bool serverHasError(QTreeWidgetItem *item) const;
     void killAllJobs();

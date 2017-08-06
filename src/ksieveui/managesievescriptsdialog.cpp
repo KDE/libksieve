@@ -164,21 +164,21 @@ void ManageSieveScriptsDialog::slotUpdateButtons(QTreeWidgetItem *item)
     d->mDeactivateScript->setEnabled(desactivateScriptAction);
 }
 
-void ManageSieveScriptsDialog::slotEditScript(const QUrl &url, const QStringList &capabilities, const KSieveUi::SieveImapAccountSettings &sieveImapAccountSettings)
+void ManageSieveScriptsDialog::slotEditScript(const ManageSieveWidget::ScriptInfo &info)
 {
-    d->mCurrentURL = url;
-    d->mCurrentCapabilities = capabilities;
+    d->mCurrentURL = info.currentUrl;
+    d->mCurrentCapabilities = info.currentCapabilities;
     d->mIsNewScript = false;
-    d->mSieveImapAccountSettings = sieveImapAccountSettings;
-    KManageSieve::SieveJob *job = KManageSieve::SieveJob::get(url);
+    d->mSieveImapAccountSettings = info.sieveImapAccountSettings;
+    KManageSieve::SieveJob *job = KManageSieve::SieveJob::get(info.currentUrl);
     connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveScriptsDialog::slotGetResult);
 }
 
-void ManageSieveScriptsDialog::slotNewScript(const QUrl &url, const QStringList &capabilities, const SieveImapAccountSettings &sieveImapAccountSettings)
+void ManageSieveScriptsDialog::slotNewScript(const ManageSieveWidget::ScriptInfo &info)
 {
-    d->mCurrentCapabilities = capabilities;
-    d->mSieveImapAccountSettings = sieveImapAccountSettings;
-    d->mCurrentURL = url;
+    d->mCurrentCapabilities = info.currentCapabilities;
+    d->mSieveImapAccountSettings = info.sieveImapAccountSettings;
+    d->mCurrentURL = info.currentUrl;
     d->mIsNewScript = true;
     slotGetResult(nullptr, true, QString(), false);
 }

@@ -53,8 +53,8 @@ private Q_SLOTS:
     void slotSieveEditorCancelClicked();
     void slotSieveEditorCheckSyntaxClicked();
     void slotUpdateButtons(QTreeWidgetItem *item);
-    void slotEditScript(const QUrl &u, const QStringList &capabilities, const SieveImapAccountSettings &sieveImapAccountSettings);
-    void slotNewScript(const QUrl &u, const QStringList &capabilities, const SieveImapAccountSettings &sieveImapAccountSettings);
+    void slotEditScript(const ManageSieveWidget::ScriptInfo &info);
+    void slotNewScript(const ManageSieveWidget::ScriptInfo &info);
     void slotCheckScriptFinished(const QString &errorMsg, bool success);
 protected:
     void hideEvent(QHideEvent *) override;
