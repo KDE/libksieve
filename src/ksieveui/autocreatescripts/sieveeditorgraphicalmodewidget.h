@@ -47,6 +47,9 @@ public:
     QString currentscript() override;
     void setImportScript(const QString &) override;
 
+    void setListOfIncludeFile(const QStringList &listOfIncludeFile) override;
+    QStringList listOfIncludeFile() const override;
+
 Q_SIGNALS:
     void enableButtonOk(bool);
     void switchTextMode(const QString &script);
@@ -64,6 +67,7 @@ private Q_SLOTS:
 
 private:
     QStringList mCapabilities;
+    QStringList mListOfIncludeFile;
     SieveScriptListBox *mSieveScript;
     QStackedWidget *mStackWidget;
     QSplitter *mSplitter;

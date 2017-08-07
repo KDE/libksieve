@@ -154,7 +154,18 @@ void SieveEditorGraphicalModeWidget::setImportScript(const QString &script)
     }
 }
 
+void SieveEditorGraphicalModeWidget::setListOfIncludeFile(const QStringList &listOfIncludeFile)
+{
+    mListOfIncludeFile = listOfIncludeFile;
+}
+
 void SieveEditorGraphicalModeWidget::slotSwitchToTextMode()
 {
     switchTextMode(mSieveParsingWarning->initialScript());
+}
+
+
+QStringList KSieveUi::SieveEditorGraphicalModeWidget::listOfIncludeFile() const
+{
+    return mListOfIncludeFile;
 }

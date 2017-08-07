@@ -37,6 +37,9 @@ public:
     virtual QStringList sieveCapabilities() = 0;
 
     virtual void loadScript(const QString &doc, QString &error) = 0;
+
+    virtual void setListOfIncludeFile(const QStringList &listOfIncludeFile) = 0;
+    virtual QStringList listOfIncludeFile() const = 0;
 };
 }
 
