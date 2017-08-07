@@ -32,6 +32,7 @@ void IncludeFileLineEditTest::shouldHaveDefaultValue()
     KSieveUi::IncludeFileLineEdit w;
     QCompleter *completer = w.findChild<QCompleter *>(QStringLiteral("completer"));
     QVERIFY(completer);
+    QVERIFY(w.completer());
     QCOMPARE(completer->caseSensitivity(), Qt::CaseInsensitive);
 }
 
