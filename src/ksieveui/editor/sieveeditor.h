@@ -46,6 +46,7 @@ public:
     void setSieveCapabilities(const QStringList &capabilities);
     void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);
 
+    void setListOfIncludeFile(const QStringList &listOfIncludeFile);
 private Q_SLOTS:
     void slotEnableButtonOk(bool b);
     void slotAccepted();

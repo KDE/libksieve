@@ -23,6 +23,7 @@
 #include "sieveforeverypartwidget.h"
 #include "sievescriptpage.h"
 #include "sieveincludewidget.h"
+#include "sieveeditorgraphicalmodewidget.h"
 
 #include <QHBoxLayout>
 #include <KMessageBox>
@@ -235,6 +236,7 @@ SieveScriptPage *SieveScriptListBox::createNewScript(const QString &newName, con
     SieveScriptListItem *item = new SieveScriptListItem(newName, mSieveListScript);
     item->setDescription(description);
     SieveScriptPage *page = new SieveScriptPage(mSieveGraphicalModeWidget);
+    page->setListOfIncludeFile(mSieveGraphicalModeWidget->listOfIncludeFile());
     item->setScriptPage(page);
     Q_EMIT addNewPage(page);
     Q_EMIT enableButtonOk(true);

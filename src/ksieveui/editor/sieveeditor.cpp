@@ -161,6 +161,11 @@ void SieveEditor::setSieveCapabilities(const QStringList &capabilities)
     d->mSieveEditorWidget->setSieveCapabilities(capabilities);
 }
 
+void SieveEditor::setListOfIncludeFile(const QStringList &listOfIncludeFile)
+{
+    d->mSieveEditorWidget->setListOfIncludeFile(listOfIncludeFile);
+}
+
 void SieveEditor::addFailedMessage(const QString &err)
 {
     d->mSieveEditorWidget->addFailedMessage(err);

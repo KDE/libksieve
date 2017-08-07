@@ -65,6 +65,7 @@ public:
 
     QUrl mCurrentURL;
     QStringList mCurrentCapabilities;
+    QStringList mListOfIncludeFile;
     KSieveUi::SieveImapAccountSettings mSieveImapAccountSettings;
 
     QPushButton *mNewScript;
@@ -168,6 +169,7 @@ void ManageSieveScriptsDialog::slotEditScript(const ManageSieveWidget::ScriptInf
 {
     d->mCurrentURL = info.currentUrl;
     d->mCurrentCapabilities = info.currentCapabilities;
+    d->mListOfIncludeFile = info.scriptList;
     d->mIsNewScript = false;
     d->mSieveImapAccountSettings = info.sieveImapAccountSettings;
     KManageSieve::SieveJob *job = KManageSieve::SieveJob::get(info.currentUrl);
@@ -179,6 +181,7 @@ void ManageSieveScriptsDialog::slotNewScript(const ManageSieveWidget::ScriptInfo
     d->mCurrentCapabilities = info.currentCapabilities;
     d->mSieveImapAccountSettings = info.sieveImapAccountSettings;
     d->mCurrentURL = info.currentUrl;
+    d->mListOfIncludeFile = info.scriptList;
     d->mIsNewScript = true;
     slotGetResult(nullptr, true, QString(), false);
 }
@@ -201,6 +204,7 @@ void ManageSieveScriptsDialog::slotGetResult(KManageSieve::SieveJob *job, bool s
     d->mSieveEditor->setSieveCapabilities(d->mCurrentCapabilities);
     d->mSieveEditor->setScript(script, true); /*clear undo/redo*/
     d->mSieveEditor->setSieveImapAccountSettings(d->mSieveImapAccountSettings);
+    d->mSieveEditor->setListOfIncludeFile(d->mListOfIncludeFile);
 
     connect(d->mSieveEditor, &SieveEditor::okClicked, this, &ManageSieveScriptsDialog::slotSieveEditorOkClicked);
     connect(d->mSieveEditor, &SieveEditor::cancelClicked, this, &ManageSieveScriptsDialog::slotSieveEditorCancelClicked);

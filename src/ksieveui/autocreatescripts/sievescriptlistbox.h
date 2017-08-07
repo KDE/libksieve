@@ -23,6 +23,7 @@
 #include <QGroupBox>
 #include <QListWidgetItem>
 #include "ksieveui_private_export.h"
+
 class QListWidget;
 class QPushButton;
 class QXmlStreamReader;
