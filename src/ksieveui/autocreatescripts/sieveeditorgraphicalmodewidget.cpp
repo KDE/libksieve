@@ -164,7 +164,6 @@ void SieveEditorGraphicalModeWidget::slotSwitchToTextMode()
     switchTextMode(mSieveParsingWarning->initialScript());
 }
 
-
 QStringList KSieveUi::SieveEditorGraphicalModeWidget::listOfIncludeFile() const
 {
     return mListOfIncludeFile;
