@@ -32,6 +32,7 @@ IncludeFileLineEdit::IncludeFileLineEdit(QWidget *parent)
     mCompleter->setCaseSensitivity(Qt::CaseInsensitive);
     mStringListModel = new QStringListModel(this);
     mCompleter->setModel(mStringListModel);
+    setCompleter(mCompleter);
 }
 
 IncludeFileLineEdit::~IncludeFileLineEdit()
