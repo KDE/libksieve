@@ -303,6 +303,14 @@ void SieveIncludeWidgetLister::updateAddRemoveButton()
 void SieveIncludeWidgetLister::setListOfIncludeFile(const QStringList &listOfIncludeFile)
 {
     mListOfIncludeFile = listOfIncludeFile;
+    //Update all lineedit
+    const QList<QWidget *> widgetList = widgets();
+    QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
+    QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
+    for (; wIt != wEnd; ++wIt) {
+        SieveIncludeActionWidget *w = qobject_cast<SieveIncludeActionWidget *>(*wIt);
+        w->setListOfIncludeFile(mListOfIncludeFile);
+    }
 }
 
 void SieveIncludeWidgetLister::generatedScript(QString &script, QStringList &requires)
