@@ -49,6 +49,7 @@ SieveScriptPage::SieveScriptPage(SieveEditorGraphicalModeWidget *sieveEditorGrap
 
     if (mSieveGraphicalModeWidget->sieveCapabilities().contains(QStringLiteral("include"))) {
         mIncludeWidget = new SieveIncludeWidget(this);
+        mIncludeWidget->setListOfIncludeFile(mSieveGraphicalModeWidget->listOfIncludeFile());
         connect(mIncludeWidget, &SieveIncludeWidget::valueChanged, this, &SieveScriptPage::valueChanged);
         mTabWidget->addTab(mIncludeWidget, i18n("Includes"));
 

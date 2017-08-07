@@ -212,7 +212,6 @@ SieveIncludeWidget::SieveIncludeWidget(QWidget *parent)
     connect(mHelpButton, &SieveHelpButton::clicked, this, &SieveIncludeWidget::slotHelp);
 
     mIncludeLister = new SieveIncludeWidgetLister;
-    //mIncludeLister->setListOfIncludeFile();
     connect(mIncludeLister, &SieveIncludeWidgetLister::valueChanged, this, &SieveIncludeWidget::valueChanged);
     lay->addWidget(mIncludeLister, 0, Qt::AlignTop);
     setPageType(KSieveUi::SieveScriptBlockWidget::Include);
