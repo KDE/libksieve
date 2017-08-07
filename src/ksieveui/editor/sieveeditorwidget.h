@@ -54,6 +54,7 @@ public:
 
     void setSieveCapabilities(const QStringList &capabilities);
     void setSieveImapAccountSettings(const SieveImapAccountSettings &sieveImapAccountSettings);
+    void setListOfIncludeFile(const QStringList &listOfIncludeFile);
 
     void addFailedMessage(const QString &err);
     void addOkMessage(const QString &msg);
