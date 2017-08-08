@@ -100,6 +100,7 @@ public:
     bool isTextEditor() const;
     SieveEditorTabWidget *tabWidget() const;
 
+    void setListOfIncludeFile(const QStringList &listOfIncludeFile);
 Q_SIGNALS:
     void enableButtonOk(bool);
     void switchToGraphicalMode();
@@ -121,6 +122,7 @@ private:
     bool loadFromFile(const QString &filename);
     QString mOriginalScript;
     QStringList mSieveCapabilities;
+    QStringList mListOfIncludeFile;
     SieveTextEdit *mTextEdit;
     KPIMTextEdit::PlainTextEditorWidget *mDebugTextEdit;
     KPIMTextEdit::PlainTextEditFindBar *mFindBar;

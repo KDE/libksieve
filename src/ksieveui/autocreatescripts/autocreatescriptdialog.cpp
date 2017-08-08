@@ -71,6 +71,11 @@ void AutoCreateScriptDialog::setSieveCapabilities(const QStringList &capabilitie
     mEditor->setSieveCapabilities(capabilities);
 }
 
+void AutoCreateScriptDialog::setListOfIncludeFile(const QStringList &listOfIncludeFile)
+{
+    mEditor->setListOfIncludeFile(listOfIncludeFile);
+}
+
 QString AutoCreateScriptDialog::script(QString &requires) const
 {
     return mEditor->script(requires);

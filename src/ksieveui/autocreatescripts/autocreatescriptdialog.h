@@ -36,6 +36,7 @@ public:
 
     QString script(QString &requires) const;
     void setSieveCapabilities(const QStringList &capabilities);
+    void setListOfIncludeFile(const QStringList &listOfIncludeFile);
 
     void loadScript(const QString &doc, QString &error);
 

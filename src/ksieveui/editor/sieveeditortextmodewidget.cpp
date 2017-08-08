@@ -237,6 +237,7 @@ void SieveEditorTextModeWidget::createRulesGraphically()
     QPointer<AutoCreateScriptDialog> dlg = new AutoCreateScriptDialog(this);
     dlg->setSieveCapabilities(mSieveCapabilities);
     dlg->setSieveImapAccountSettings(mSieveImapAccountSettings);
+    dlg->setListOfIncludeFile(mListOfIncludeFile);
     if (dlg->exec()) {
         QString requires;
         const QString script = dlg->script(requires);
@@ -475,6 +476,11 @@ void SieveEditorTextModeWidget::setDebugScript(const QString &debug)
 {
     mDebugTextEdit->editor()->clear();
     mDebugTextEdit->editor()->appendHtml(debug);
+}
+
+void SieveEditorTextModeWidget::setListOfIncludeFile(const QStringList &listOfIncludeFile)
+{
+    mListOfIncludeFile = listOfIncludeFile;
 }
 
 void SieveEditorTextModeWidget::setSieveCapabilities(const QStringList &capabilities)

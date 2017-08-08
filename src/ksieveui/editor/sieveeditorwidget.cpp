@@ -523,6 +523,7 @@ void SieveEditorWidget::setSieveImapAccountSettings(const SieveImapAccountSettin
 
 void SieveEditorWidget::setListOfIncludeFile(const QStringList &listOfIncludeFile)
 {
+    mTextModeWidget->setListOfIncludeFile(listOfIncludeFile);
     mGraphicalModeWidget->setListOfIncludeFile(listOfIncludeFile);
 }
 
