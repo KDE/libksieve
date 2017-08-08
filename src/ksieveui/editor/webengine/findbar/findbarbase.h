@@ -27,7 +27,7 @@ class QPushButton;
 class QMenu;
 class QLabel;
 namespace PimCommon {
-class LineEditWithCompleter;
+class LineEditWithCompleterNg;
 }
 namespace KSieveUi {
 class KSIEVEUI_EXPORT FindBarBase : public QWidget
@@ -64,14 +64,13 @@ Q_SIGNALS:
 protected Q_SLOTS:
     void caseSensitivityChanged(bool);
     void slotHighlightAllChanged(bool);
-    void slotClearSearch();
 
 protected:
     QString mNotFoundString;
     QString mPositiveBackground;
     QString mNegativeBackground;
     QString mLastSearchStr;
-    PimCommon::LineEditWithCompleter *mSearch;
+    PimCommon::LineEditWithCompleterNg *mSearch;
     QAction *mCaseSensitiveAct;
 
     QPushButton *mFindPrevBtn;
