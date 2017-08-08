@@ -391,8 +391,7 @@ void SieveEditorTextModeWidget::printPreview()
         bool restoreSpellCheck = mTextEdit->checkSpellingEnabled();
         mTextEdit->setCheckSpellingEnabled(false);
         PimCommon::KPimPrintPreviewDialog previewdlg(this);
-        connect(&previewdlg, &QPrintPreviewDialog::paintRequested, this, [this](QPrinter *printer) {
-            mTextEdit->print(printer);
+        connect(&previewdlg, &QPrintPreviewDialog::paintRequested, this, [this](QPrinter *printer) { mTextEdit->print(printer);
         });
         previewdlg.exec();
         mTextEdit->setCheckSpellingEnabled(restoreSpellCheck);

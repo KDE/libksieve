@@ -29,7 +29,7 @@ SelectMatchTypeComboBox::SelectMatchTypeComboBox(SieveEditorGraphicalModeWidget 
 {
     mHasRegexCapability = sieveGraphicalModeWidget->sieveCapabilities().contains(QStringLiteral("regex"));
     initialize();
-    connect(this, static_cast<void (SelectMatchTypeComboBox::*)(int)>(&SelectMatchTypeComboBox::activated), this, &SelectMatchTypeComboBox::slotValueChanged);
+    connect(this, QOverload<int>::of(&SelectMatchTypeComboBox::activated), this, &SelectMatchTypeComboBox::slotValueChanged);
 }
 
 SelectMatchTypeComboBox::~SelectMatchTypeComboBox()

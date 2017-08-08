@@ -151,7 +151,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mIntervalSpin->setValue(defDayInterval);
     mIntervalSpin->setObjectName(QStringLiteral("mIntervalSpin"));
     mIntervalSpin->setSuffix(i18np(" day", " days", defDayInterval));
-    connect(mIntervalSpin, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &VacationEditWidget::slotIntervalSpinChanged);
+    connect(mIntervalSpin, QOverload<int>::of(&QSpinBox::valueChanged), this, &VacationEditWidget::slotIntervalSpinChanged);
     QLabel *resendNotificationLabel = new QLabel(i18n("&Resend notification only after:"), this);
     resendNotificationLabel->setObjectName(QStringLiteral("resendNotificationLabel"));
     resendNotificationLabel->setBuddy(mIntervalSpin);
@@ -175,7 +175,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
         mMailAction->addItem(VacationUtils::mailAction((VacationUtils::MailAction)i));
     }
     mMailAction->setObjectName(QStringLiteral("mMailAction"));
-    connect(mMailAction, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, &VacationEditWidget::mailActionChanged);
+    connect(mMailAction, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &VacationEditWidget::mailActionChanged);
 
     mMailActionRecipient = new QLineEdit(this);
     mMailActionRecipient->setObjectName(QStringLiteral("mMailActionRecipient"));

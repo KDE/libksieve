@@ -28,7 +28,7 @@ SelectImportanceCombobox::SelectImportanceCombobox(QWidget *parent)
     : KComboBox(parent)
 {
     initialize();
-    connect(this, static_cast<void (SelectImportanceCombobox::*)(int)>(&SelectImportanceCombobox::activated), this, &SelectImportanceCombobox::valueChanged);
+    connect(this, QOverload<int>::of(&SelectImportanceCombobox::activated), this, &SelectImportanceCombobox::valueChanged);
 }
 
 SelectImportanceCombobox::~SelectImportanceCombobox()

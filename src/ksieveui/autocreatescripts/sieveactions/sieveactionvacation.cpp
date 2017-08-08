@@ -62,7 +62,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
     day->setMinimum(1);
     day->setMaximum(999);
     day->setObjectName(QStringLiteral("day"));
-    connect(day, static_cast<void (QSpinBox::*)(int)>(&QSpinBox::valueChanged), this, &SieveActionVacation::valueChanged);
+    connect(day, QOverload<int>::of(&QSpinBox::valueChanged), this, &SieveActionVacation::valueChanged);
     grid->addWidget(day, 0, 1);
 
     lab = new QLabel(i18n("Message subject:"));

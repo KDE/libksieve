@@ -29,7 +29,7 @@ SelectAddressPartComboBox::SelectAddressPartComboBox(SieveEditorGraphicalModeWid
 {
     mHasSubaddressCapability = sieveGraphicalModeWidget->sieveCapabilities().contains(QStringLiteral("subaddress"));
     initialize();
-    connect(this, static_cast<void (SelectAddressPartComboBox::*)(int)>(&SelectAddressPartComboBox::activated), this, &SelectAddressPartComboBox::valueChanged);
+    connect(this, QOverload<int>::of(&SelectAddressPartComboBox::activated), this, &SelectAddressPartComboBox::valueChanged);
 }
 
 SelectAddressPartComboBox::~SelectAddressPartComboBox()

@@ -27,7 +27,7 @@ SelectVariableModifierComboBox::SelectVariableModifierComboBox(QWidget *parent)
     : KComboBox(parent)
 {
     initialize();
-    connect(this, static_cast<void (SelectVariableModifierComboBox::*)(int)>(&SelectVariableModifierComboBox::activated), this, &SelectVariableModifierComboBox::valueChanged);
+    connect(this, QOverload<int>::of(&SelectVariableModifierComboBox::activated), this, &SelectVariableModifierComboBox::valueChanged);
 }
 
 SelectVariableModifierComboBox::~SelectVariableModifierComboBox()

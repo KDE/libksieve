@@ -27,7 +27,7 @@ SelectSizeTypeComboBox::SelectSizeTypeComboBox(QWidget *parent)
     : QComboBox(parent)
 {
     initialize();
-    connect(this, static_cast<void (SelectSizeTypeComboBox::*)(int)>(&SelectSizeTypeComboBox::activated), this, &SelectSizeTypeComboBox::valueChanged);
+    connect(this, QOverload<int>::of(&SelectSizeTypeComboBox::activated), this, &SelectSizeTypeComboBox::valueChanged);
 }
 
 SelectSizeTypeComboBox::~SelectSizeTypeComboBox()
