@@ -105,6 +105,7 @@ void SieveGlobalVariableActionWidget::clear()
 {
     mVariableName->clear();
     mSetValueTo->setChecked(false);
+    mVariableValue->setEnabled(false);
     mVariableValue->clear();
 }
 
