@@ -33,7 +33,7 @@ set(KIMAP_LIB_VERSION "5.6.40")
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
 
 
-find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Test PrintSupport WebEngine WebEngineWidgets)
+find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets PrintSupport WebEngine WebEngineWidgets)
 find_package(KF5I18n ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5DocTools ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5KIO ${KF5_VERSION} CONFIG REQUIRED)
@@ -93,6 +93,9 @@ install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5} COMPONENT Devel
 )
+if(BUILD_TESTING)
+    find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)
+endif(BUILD_TESTING)
 
 
 add_subdirectory(src)
