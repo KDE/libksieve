@@ -23,7 +23,7 @@
 
 namespace KSieveUi {
 class SieveEditorGraphicalModeWidget;
-class SelectMatchTypeComboBox : public KComboBox
+class SelectMatchTypeComboBox : public QComboBox
 {
     Q_OBJECT
 public:

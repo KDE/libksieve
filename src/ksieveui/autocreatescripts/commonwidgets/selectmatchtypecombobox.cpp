@@ -25,7 +25,7 @@
 using namespace KSieveUi;
 
 SelectMatchTypeComboBox::SelectMatchTypeComboBox(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent)
-    : KComboBox(parent)
+    : QComboBox(parent)
 {
     mHasRegexCapability = sieveGraphicalModeWidget->sieveCapabilities().contains(QStringLiteral("regex"));
     initialize();
