@@ -254,7 +254,7 @@ void SelectHeaderTypeComboBox::headerMap(bool onlyEnvelopType)
     mHeaderMap.insert(QStringLiteral("cc"), i18n("Cc"));
     mHeaderMap.insert(QStringLiteral("bcc"), i18n("Bcc"));
     if (!onlyEnvelopType) {
-        mHeaderMap.insert(QStringLiteral("Subject"), i18n("Subject"));
+        mHeaderMap.insert(QStringLiteral("subject"), i18n("Subject"));
         mHeaderMap.insert(QStringLiteral("sender"), i18n("Sender"));
         mHeaderMap.insert(QStringLiteral("Date"), i18n("Date"));
         mHeaderMap.insert(QStringLiteral("Message-ID"), i18n("Message Id"));
