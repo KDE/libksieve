@@ -24,19 +24,6 @@
 
 using namespace KSieveUi;
 
-class SieveImapInstanceInterfaceManagerPrivate
-{
-public:
-    SieveImapInstanceInterfaceManagerPrivate()
-        : manager(new SieveImapInstanceInterfaceManager)
-    {
-    }
-
-    SieveImapInstanceInterfaceManager *manager;
-};
-
-Q_GLOBAL_STATIC(SieveImapInstanceInterfaceManagerPrivate, sInstance)
-
 SieveImapInstanceInterfaceManager::SieveImapInstanceInterfaceManager(QObject *parent)
     : QObject(parent)
     , mInterface(nullptr)
@@ -50,7 +37,8 @@ SieveImapInstanceInterfaceManager::~SieveImapInstanceInterfaceManager()
 
 SieveImapInstanceInterfaceManager *SieveImapInstanceInterfaceManager::self()
 {
-    return sInstance->manager;
+    static SieveImapInstanceInterfaceManager s_self;
+    return &s_self;
 }
 
 void SieveImapInstanceInterfaceManager::setSieveImapInstanceInterface(SieveImapInstanceInterface *interface)
