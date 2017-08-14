@@ -118,9 +118,5 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
 QWebEngineView *SieveEditorWebEngineView::createWindow(QWebEnginePage::WebWindowType type)
 {
     Q_UNUSED(type);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 8, 0)
     return this;
-#else
-    return nullptr;
-#endif
 }
