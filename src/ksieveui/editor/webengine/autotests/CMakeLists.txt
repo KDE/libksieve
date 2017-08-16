@@ -3,7 +3,7 @@ set( libksieveui_sieveeditorhelphtmlwidgettest_source sieveeditorhelphtmlwidgett
     ../sieveeditorloadprogressindicator.cpp
     )
 add_executable( sieveeditorhelphtmlwidgettest ${libksieveui_sieveeditorhelphtmlwidgettest_source})
-add_test(sieveeditorhelphtmlwidgettest sieveeditorhelphtmlwidgettest)
+add_test(NAME sieveeditorhelphtmlwidgettest COMMAND sieveeditorhelphtmlwidgettest)
 ecm_mark_as_test(sieveeditorhelphtmlwidgettest)
 target_link_libraries( sieveeditorhelphtmlwidgettest
     Qt5::Test

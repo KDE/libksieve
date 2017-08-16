@@ -14,7 +14,7 @@ macro( add_vacation_test _source )
   get_filename_component(_name ${_source}test NAME_WE)
   ecm_qt_declare_logging_category(_test HEADER libksieve_debug.h IDENTIFIER LIBKSIEVE_LOG CATEGORY_NAME org.kde.pim.libksieve)
   add_executable(${_name} ${_test})
-  add_test(vacation-${_name} ${_name})
+  add_test(NAME vacation-${_name} COMMAND ${_name})
   ecm_mark_as_test(vacation-${_name})
   add_definitions(-DVACATIONTESTDATADIR="${CMAKE_CURRENT_SOURCE_DIR}/data/")
   target_link_libraries(${_name}
