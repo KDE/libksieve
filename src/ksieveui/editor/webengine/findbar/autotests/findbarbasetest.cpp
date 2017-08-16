@@ -20,7 +20,7 @@
 #include "findbarbasetest.h"
 #include "../findbarbase.h"
 
-#include <KLineEdit>
+#include <PimCommon/LineEditWithCompleterNg>
 #include <QLabel>
 #include <QPushButton>
 #include <QToolButton>
@@ -54,7 +54,7 @@ void FindBarBaseTest::shouldHaveDefaultValue()
     QToolButton *close = bar.findChild<QToolButton *>(QStringLiteral("close"));
     QVERIFY(close);
 
-    KLineEdit *lineedit = bar.findChild<KLineEdit *>(QStringLiteral("searchline"));
+    PimCommon::LineEditWithCompleterNg *lineedit = bar.findChild<PimCommon::LineEditWithCompleterNg *>(QStringLiteral("searchline"));
     QVERIFY(lineedit);
     QVERIFY(lineedit->text().isEmpty());
 }
@@ -67,7 +67,7 @@ void FindBarBaseTest::shouldClearLineWhenClose()
     QTest::qWaitForWindowExposed(&bar);
     QVERIFY(bar.isVisible());
     bar.focusAndSetCursor();
-    KLineEdit *lineedit = bar.findChild<KLineEdit *>(QStringLiteral("searchline"));
+    PimCommon::LineEditWithCompleterNg *lineedit = bar.findChild<PimCommon::LineEditWithCompleterNg *>(QStringLiteral("searchline"));
     lineedit->setText(QStringLiteral("FOO"));
     QVERIFY(!lineedit->text().isEmpty());
     QVERIFY(lineedit->hasFocus());
@@ -106,7 +106,7 @@ void FindBarBaseTest::shouldClearAllWhenShowBar()
 
     bar.show();
     bar.focusAndSetCursor();
-    KLineEdit *lineedit = bar.findChild<KLineEdit *>(QStringLiteral("searchline"));
+    PimCommon::LineEditWithCompleterNg *lineedit = bar.findChild<PimCommon::LineEditWithCompleterNg *>(QStringLiteral("searchline"));
     QVERIFY(lineedit->hasFocus());
     QVERIFY(status->text().isEmpty());
 }
