@@ -21,7 +21,7 @@
 #include <KAboutData>
 #include <KLocalizedString>
 #include <QCommandLineParser>
-
+#include <QStandardPaths>
 #include "../autocreatescriptdialog.h"
 #include <PimCommon/SieveSyntaxHighlighterUtil>
 
@@ -30,6 +30,8 @@ int main(int argc, char **argv)
     QApplication app(argc, argv);
     KAboutData aboutData(QStringLiteral("autocreatescripts_gui"), i18n("AutoCreateScripttest_Gui"), QStringLiteral("1.0"));
     aboutData.setShortDescription(i18n("Test for autocreate script dialog"));
+
+    QStandardPaths::setTestModeEnabled(true);
     QCommandLineParser parser;
     KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
