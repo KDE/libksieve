@@ -22,11 +22,13 @@
 #include "../sievescriptdebuggerwidget.h"
 #include <QDialogButtonBox>
 #include <QPushButton>
+#include <QStandardPaths>
 #include <QTest>
 
 SieveScriptDebuggerDialogTest::SieveScriptDebuggerDialogTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 SieveScriptDebuggerDialogTest::~SieveScriptDebuggerDialogTest()

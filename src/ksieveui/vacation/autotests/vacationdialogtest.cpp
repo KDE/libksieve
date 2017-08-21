@@ -22,10 +22,11 @@
 #include <QDialogButtonBox>
 #include <QTest>
 #include <vacation/vacationeditwidget.h>
-
+#include <QStandardPaths>
 VacationDialogTest::VacationDialogTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 VacationDialogTest::~VacationDialogTest()
