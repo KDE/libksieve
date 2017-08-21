@@ -234,6 +234,8 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("wierd-script") << QStringLiteral("wierd-script") << false << true;
 
     QTest::newRow("test-text-with-backslash") << QStringLiteral("test-text-with-backslash") << false << true;
+    //Bug 383756
+    QTest::newRow("body-without-bodytype") << QStringLiteral("body-without-bodytype") << false << true;
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)

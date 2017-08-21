@@ -150,8 +150,12 @@ bool SieveConditionBody::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             matchType->setCode(tagValueList.at(1), name(), error);
         } else {
             SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
-            matchType->setCode(tagValueList.at(0), name(), error);
-            bodyType->setCode(tagValueList.at(1), QString(), name(), errorStr);
+            if (tagValueList.count() == 1) {
+                matchType->setCode(tagValueList.at(0), name(), error);
+            } else if (tagValueList.count() == 2) {
+                matchType->setCode(tagValueList.at(0), name(), error);
+                bodyType->setCode(tagValueList.at(1), QString(), name(), errorStr);
+            }
         }
         AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
         edit->setCode(wasListElement ? strValue.at(0) : AutoCreateScriptUtil::quoteStr(strValue.at(0)));
