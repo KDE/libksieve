@@ -1,0 +1,3 @@
+if anyof (body :contains "foo")
+{
+}
