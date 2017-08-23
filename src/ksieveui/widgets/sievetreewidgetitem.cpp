@@ -24,7 +24,6 @@
 using namespace KSieveUi;
 SieveTreeWidgetProgress::SieveTreeWidgetProgress(SieveTreeWidgetItem *item, QObject *parent)
     : QObject(parent)
-    , mProgressCount(0)
     , mItem(item)
 {
     KIconLoader loader;

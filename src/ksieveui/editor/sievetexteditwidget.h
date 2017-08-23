@@ -46,9 +46,9 @@ public Q_SLOTS:
 private:
     void initialize(KSieveUi::SieveTextEdit *custom = nullptr);
     SieveTextEditWidgetPrivate *const d;
-    KSieveUi::SieveTextEdit *mTextEdit;
-    KPIMTextEdit::SlideContainer *mSliderContainer;
-    KPIMTextEdit::PlainTextEditFindBar *mFindBar;
+    KSieveUi::SieveTextEdit *mTextEdit = nullptr;
+    KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
+    KPIMTextEdit::PlainTextEditFindBar *mFindBar = nullptr;
 };
 }
 #endif // SIEVETEXTEDITWIDGET_H

@@ -62,9 +62,9 @@ private Q_SLOTS:
 private:
     void readConfig();
     void writeConfig();
-    SelectHeadersWidget *mListWidget;
-    KLineEdit *mNewHeader;
-    QPushButton *mAddNewHeader;
+    SelectHeadersWidget *mListWidget = nullptr;
+    KLineEdit *mNewHeader = nullptr;
+    QPushButton *mAddNewHeader = nullptr;
 };
 
 class SelectHeaderTypeComboBox : public QComboBox

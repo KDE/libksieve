@@ -42,7 +42,7 @@ Q_SIGNALS:
 private:
     void slotValueChanged(int val);
     void initialize();
-    bool mHasRegexCapability;
+    bool mHasRegexCapability = false;
 };
 }
 

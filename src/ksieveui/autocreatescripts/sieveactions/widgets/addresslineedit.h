@@ -39,7 +39,7 @@ private:
     void slotTextChanged();
     void verifyAddress();
     QString mNegativeBackground;
-    bool mIncorrectEmail;
+    bool mIncorrectEmail = false;
 };
 }
 

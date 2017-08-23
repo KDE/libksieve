@@ -46,7 +46,7 @@ Q_SIGNALS:
 private:
     void killJob();
     QUrl mUrl;
-    KManageSieve::SieveJob *mSieveJob;
+    KManageSieve::SieveJob *mSieveJob = nullptr;
 };
 }
 

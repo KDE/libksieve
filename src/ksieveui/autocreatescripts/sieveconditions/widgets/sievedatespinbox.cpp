@@ -24,7 +24,6 @@ using namespace KSieveUi;
 
 SieveDateSpinBox::SieveDateSpinBox(QWidget *parent)
     : QSpinBox(parent)
-    , mType(SelectDateWidget::Year)
 {
     setSpecialValueText(QStringLiteral("*"));
 }

@@ -52,8 +52,6 @@ using namespace KSieveUi;
 
 SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     : QWidget(parent)
-    , mMode(TextMode)
-    , mModified(false)
 {
     QVBoxLayout *lay = new QVBoxLayout;
 #if !defined(NDEBUG)

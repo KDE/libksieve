@@ -39,8 +39,8 @@ Q_SIGNALS:
     void valueChanged();
 
 private:
-    SelectSizeTypeComboBox *mSelectSizeType;
-    QSpinBox *mSpinBoxSize;
+    SelectSizeTypeComboBox *mSelectSizeType = nullptr;
+    QSpinBox *mSpinBoxSize = nullptr;
 };
 }
 

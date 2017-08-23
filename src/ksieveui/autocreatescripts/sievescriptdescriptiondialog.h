@@ -41,7 +41,7 @@ private:
     void writeConfig();
 
 private:
-    KPIMTextEdit::PlainTextEditorWidget *mEdit;
+    KPIMTextEdit::PlainTextEditorWidget *mEdit = nullptr;
 };
 }
 

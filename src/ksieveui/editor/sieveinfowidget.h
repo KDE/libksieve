@@ -33,7 +33,7 @@ public:
     void setServerInfo(QStringList info);
 
 private:
-    QTextEdit *mInfo;
+    QTextEdit *mInfo = nullptr;
 };
 }
 

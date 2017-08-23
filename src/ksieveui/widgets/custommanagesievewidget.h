@@ -33,7 +33,7 @@ protected:
     bool refreshList() override;
 
 private:
-    SieveImapPasswordProvider *mPasswordProvider;
+    SieveImapPasswordProvider *mPasswordProvider = nullptr;
 };
 }
 

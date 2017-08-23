@@ -44,7 +44,7 @@ public:
 
     QUrl href() const override;
 private:
-    bool mHasSpamTestPlusSupport;
+    bool mHasSpamTestPlusSupport = false;
 };
 }
 

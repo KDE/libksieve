@@ -61,14 +61,14 @@ private Q_SLOTS:
 
 private:
     void updateDebugButton();
-    KSieveUi::SieveTextEditWidget *mSieveTextEditWidget;
-    KSieveUi::SieveScriptDebuggerWarning *mSieveScriptDebuggerWarning;
-    KPIMTextEdit::PlainTextEditorWidget *mSieveTestResult;
-    KUrlRequester *mEmailPath;
-    QPushButton *mDebugScript;
-    QProcess *mProcess;
-    KLineEdit *mExtension;
-    QSplitter *mSplitter;
+    KSieveUi::SieveTextEditWidget *mSieveTextEditWidget = nullptr;
+    KSieveUi::SieveScriptDebuggerWarning *mSieveScriptDebuggerWarning = nullptr;
+    KPIMTextEdit::PlainTextEditorWidget *mSieveTestResult = nullptr;
+    KUrlRequester *mEmailPath = nullptr;
+    QPushButton *mDebugScript = nullptr;
+    QProcess *mProcess = nullptr;
+    KLineEdit *mExtension = nullptr;
+    QSplitter *mSplitter = nullptr;
 };
 }
 #endif // SIEVESCRIPTDEBUGGERFONTENDWIDGET_H

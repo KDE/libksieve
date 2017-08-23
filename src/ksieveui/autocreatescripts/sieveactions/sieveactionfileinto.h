@@ -36,8 +36,8 @@ public:
     QUrl href() const override;
 
 private:
-    bool mHasCopySupport;
-    bool mHasMailBoxSupport;
+    bool mHasCopySupport = false;
+    bool mHasMailBoxSupport = false;
 };
 }
 

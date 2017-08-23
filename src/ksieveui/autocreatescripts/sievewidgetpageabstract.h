@@ -48,7 +48,7 @@ Q_SIGNALS:
     void valueChanged();
 
 private:
-    PageType mType;
+    PageType mType = BlockIf;
 };
 }
 

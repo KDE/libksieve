@@ -58,13 +58,13 @@ private:
 
     QString mServerName;
     QUrl mUrl;
-    QStackedWidget *mStackWidget;
-    VacationEditWidget *mVacationEditWidget;
-    VacationWarningWidget *mVacationWarningWidget;
-    MultiImapVacationManager *mVacationManager;
+    QStackedWidget *mStackWidget = nullptr;
+    VacationEditWidget *mVacationEditWidget = nullptr;
+    VacationWarningWidget *mVacationWarningWidget = nullptr;
+    MultiImapVacationManager *mVacationManager = nullptr;
     PageType mPageScript;
-    bool mWasActive;
-    bool mHasDateSupport;
+    bool mWasActive = false;
+    bool mHasDateSupport = false;
 };
 }
 

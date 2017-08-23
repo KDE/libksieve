@@ -68,12 +68,12 @@ Q_SIGNALS:
 
 private:
     void initWidget();
-    QPushButton *mAdd;
-    QPushButton *mRemove;
-    QGridLayout *mLayout;
-    QLineEdit *mVariableName;
-    QCheckBox *mSetValueTo;
-    QLineEdit *mVariableValue;
+    QPushButton *mAdd = nullptr;
+    QPushButton *mRemove = nullptr;
+    QGridLayout *mLayout = nullptr;
+    QLineEdit *mVariableName = nullptr;
+    QCheckBox *mSetValueTo = nullptr;
+    QLineEdit *mVariableValue = nullptr;
 };
 
 class SieveGlobalVariableLister : public KPIM::KWidgetLister
@@ -118,8 +118,8 @@ private Q_SLOTS:
     void slotHelp();
 
 private:
-    SieveGlobalVariableLister *mIncludeLister;
-    SieveHelpButton *mHelpButton;
+    SieveGlobalVariableLister *mIncludeLister = nullptr;
+    SieveHelpButton *mHelpButton = nullptr;
 };
 }
 

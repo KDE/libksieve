@@ -37,8 +37,8 @@ Q_SIGNALS:
 
 private:
     void initialize();
-    QSpinBox *mWidth;
-    QSpinBox *mHeight;
+    QSpinBox *mWidth = nullptr;
+    QSpinBox *mHeight = nullptr;
 };
 }
 

@@ -28,8 +28,7 @@ using KSieve::Parser;
 
 using namespace KSieveUi;
 XMLPrintingScriptBuilder::XMLPrintingScriptBuilder(int indent)
-    : KSieve::ScriptBuilder(),
-      mStream(nullptr)
+    : KSieve::ScriptBuilder()
 {
     initialize(indent);
 }

@@ -77,7 +77,7 @@ Q_SIGNALS:
     void result(CheckKolabKep14SupportJob *, bool);
 
 private:
-    CheckKolabKep14SupportJobPrivate *d;
+    CheckKolabKep14SupportJobPrivate *const d;
 
 private Q_SLOTS:
     void slotCheckKep14Support(KManageSieve::SieveJob *job, bool success, const QStringList &availableScripts, const QString &activeScript);

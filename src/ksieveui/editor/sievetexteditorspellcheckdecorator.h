@@ -29,7 +29,7 @@ public:
     explicit SieveTextEditorSpellCheckDecorator(SieveTextEdit *plainTextEdit);
     bool isSpellCheckingEnabledForBlock(const QString &textBlock) const override;
 private:
-    SieveTextEdit *mPlainTextEdit;
+    SieveTextEdit *mPlainTextEdit = nullptr;
 };
 }
 #endif // SIEVETEXTEDITORSPELLCHECKDECORATOR_H

@@ -74,13 +74,13 @@ Q_SIGNALS:
 
 private:
     void initWidget();
-    QPushButton *mAdd;
-    QPushButton *mRemove;
-    QGridLayout *mLayout;
-    QCheckBox *mOptional;
-    QCheckBox *mOnce;
-    SieveIncludeLocation *mLocation;
-    IncludeFileLineEdit *mIncludeFileName;
+    QPushButton *mAdd = nullptr;
+    QPushButton *mRemove = nullptr;
+    QGridLayout *mLayout = nullptr;
+    QCheckBox *mOptional = nullptr;
+    QCheckBox *mOnce = nullptr;
+    SieveIncludeLocation *mLocation = nullptr;
+    IncludeFileLineEdit *mIncludeFileName = nullptr;
 };
 
 class SieveIncludeWidgetLister : public KPIM::KWidgetLister
@@ -127,8 +127,8 @@ private Q_SLOTS:
     void slotHelp();
 
 private:
-    SieveIncludeWidgetLister *mIncludeLister;
-    SieveHelpButton *mHelpButton;
+    SieveIncludeWidgetLister *mIncludeLister = nullptr;
+    SieveHelpButton *mHelpButton = nullptr;
 };
 }
 

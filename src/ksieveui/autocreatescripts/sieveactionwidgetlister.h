@@ -68,13 +68,13 @@ private:
     void setFilterAction(QWidget *widget);
     void initWidget();
     QList<KSieveUi::SieveAction *> mActionList;
-    QPushButton *mAdd;
-    QPushButton *mRemove;
-    PimCommon::MinimumComboBox *mComboBox;
-    QGridLayout *mLayout;
-    SieveHelpButton *mHelpButton;
-    QToolButton *mCommentButton;
-    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
+    QPushButton *mAdd = nullptr;
+    QPushButton *mRemove = nullptr;
+    PimCommon::MinimumComboBox *mComboBox = nullptr;
+    QGridLayout *mLayout = nullptr;
+    SieveHelpButton *mHelpButton = nullptr;
+    QToolButton *mCommentButton = nullptr;
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
 };
 
 class SieveActionWidgetLister : public KPIM::KWidgetLister
@@ -104,7 +104,7 @@ private:
     void reconnectWidget(SieveActionWidget *w);
     void updateAddRemoveButton();
 
-    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
 };
 }
 

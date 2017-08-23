@@ -39,7 +39,7 @@ public:
     void setPlaceholderText(const QString &str) override;
 
 private:
-    QLineEdit *mLineEdit;
+    QLineEdit *mLineEdit = nullptr;
 };
 }
 

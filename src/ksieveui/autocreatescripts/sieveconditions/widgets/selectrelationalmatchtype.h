@@ -38,8 +38,8 @@ Q_SIGNALS:
 
 private:
     void initialize();
-    KComboBox *mType;
-    KComboBox *mMatch;
+    KComboBox *mType = nullptr;
+    KComboBox *mMatch = nullptr;
 };
 }
 

@@ -40,7 +40,7 @@ Q_SIGNALS:
 
 private:
     void initialize();
-    bool mHasSubaddressCapability;
+    bool mHasSubaddressCapability = false;
 };
 }
 

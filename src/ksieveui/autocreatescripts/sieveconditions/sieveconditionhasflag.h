@@ -43,7 +43,7 @@ public:
     bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error) override;
     QUrl href() const override;
 private:
-    bool hasVariableSupport;
+    bool hasVariableSupport = false;
 };
 }
 

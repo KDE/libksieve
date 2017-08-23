@@ -60,11 +60,11 @@ private:
     QUrl mUrl;
     KSyntaxHighlighting::Repository mRepo;
 
-    SieveImapPasswordProvider *mPasswordProvider;
-    KPIMTextEdit::PlainTextEditorWidget *mEdit;
+    SieveImapPasswordProvider *mPasswordProvider = nullptr;
+    KPIMTextEdit::PlainTextEditorWidget *mEdit = nullptr;
     QStringList mResourceIdentifier;
     QStringList mScriptList;
-    QTimer *mShutDownJob;
+    QTimer *mShutDownJob = nullptr;
 };
 }
 

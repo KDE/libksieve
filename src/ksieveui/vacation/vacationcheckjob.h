@@ -62,11 +62,11 @@ private:
     QString mScript;
     QString mServerName;
     QUrl mUrl;
-    KManageSieve::SieveJob *mSieveJob;
-    ParseUserScriptJob *mParseJob;
-    int mScriptPos;
-    bool mKep14Support;
-    bool mNoScriptFound;
+    KManageSieve::SieveJob *mSieveJob = nullptr;
+    ParseUserScriptJob *mParseJob = nullptr;
+    int mScriptPos = -1;
+    bool mKep14Support = false;
+    bool mNoScriptFound = false;
 };
 }
 

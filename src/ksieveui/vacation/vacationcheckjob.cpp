@@ -33,11 +33,6 @@ VacationCheckJob::VacationCheckJob(const QUrl &url, const QString &serverName, Q
     : QObject(parent)
     , mServerName(serverName)
     , mUrl(url)
-    , mSieveJob(nullptr)
-    , mParseJob(nullptr)
-    , mScriptPos(-1)
-    , mKep14Support(false)
-    , mNoScriptFound(false)
 {
 }
 

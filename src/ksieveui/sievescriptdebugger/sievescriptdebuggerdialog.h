@@ -42,8 +42,8 @@ private:
     void writeConfig();
     void readConfig();
     QString mOriginScript;
-    SieveScriptDebuggerWidget *mSieveScriptDebuggerWidget;
-    QPushButton *mOkButton;
+    SieveScriptDebuggerWidget *mSieveScriptDebuggerWidget = nullptr;
+    QPushButton *mOkButton = nullptr;
 };
 }
 

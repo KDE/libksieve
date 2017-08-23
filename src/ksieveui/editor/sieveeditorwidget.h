@@ -130,20 +130,20 @@ private:
     void changeMode(EditorMode mode);
     void addMessageEntry(const QString &errorMsg, const QColor &color);
     QString mOriginalScript;
-    SieveEditorTextModeWidget *mTextModeWidget;
-    SieveEditorGraphicalModeWidget *mGraphicalModeWidget;
-    QStackedWidget *mStackedWidget;
-    QLineEdit *mScriptName;
-    QAction *mCheckSyntax;
-    QAction *mSwitchMode;
-    QAction *mCreateRulesGraphically;
-    QAction *mSaveAs;
-    QAction *mShareScript;
+    SieveEditorTextModeWidget *mTextModeWidget = nullptr;
+    SieveEditorGraphicalModeWidget *mGraphicalModeWidget = nullptr;
+    QStackedWidget *mStackedWidget = nullptr;
+    QLineEdit *mScriptName = nullptr;
+    QAction *mCheckSyntax = nullptr;
+    QAction *mSwitchMode = nullptr;
+    QAction *mCreateRulesGraphically = nullptr;
+    QAction *mSaveAs = nullptr;
+    QAction *mShareScript = nullptr;
 #if !defined(NDEBUG)
-    QAction *mGenerateXml;
+    QAction *mGenerateXml = nullptr;
 #endif
-    EditorMode mMode;
-    bool mModified;
+    EditorMode mMode = EditorMode::TextMode;
+    bool mModified = false;
 };
 }
 

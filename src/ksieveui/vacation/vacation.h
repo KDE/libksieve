@@ -64,9 +64,9 @@ protected:
     QUrl mUrl;
     QString mServerName;
     // GUI:
-    VacationDialog *mDialog;
-    bool mWasActive;
-    bool mCheckOnly;
+    VacationDialog *mDialog = nullptr;
+    bool mWasActive = false;
+    bool mCheckOnly = false;
 };
 }
 

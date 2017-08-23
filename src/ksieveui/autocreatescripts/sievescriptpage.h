@@ -60,12 +60,12 @@ private:
     bool hasAnElseBlock() const;
     QString blockName(SieveWidgetPageAbstract::PageType type) const;
 
-    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
-    SieveScriptTabWidget *mTabWidget;
-    SieveIncludeWidget *mIncludeWidget;
-    SieveForEveryPartWidget *mForEveryPartWidget;
-    SieveGlobalVariableWidget *mGlobalVariableWidget;
-    SieveScriptBlockWidget *mBlockIfWidget;
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
+    SieveScriptTabWidget *mTabWidget = nullptr;
+    SieveIncludeWidget *mIncludeWidget = nullptr;
+    SieveForEveryPartWidget *mForEveryPartWidget = nullptr;
+    SieveGlobalVariableWidget *mGlobalVariableWidget = nullptr;
+    SieveScriptBlockWidget *mBlockIfWidget = nullptr;
 };
 }
 

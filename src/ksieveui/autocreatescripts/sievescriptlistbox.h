@@ -47,7 +47,7 @@ public:
 
 private:
     QString mDescription;
-    SieveScriptPage *mScriptPage;
+    SieveScriptPage *mScriptPage = nullptr;
 };
 
 class KSIEVEUI_TESTS_EXPORT SieveScriptListBox : public QGroupBox
@@ -96,17 +96,17 @@ private:
     void clear();
     SieveScriptPage *createNewScript(const QString &newName, const QString &description = QString());
     QString createUniqName();
-    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
-    QListWidget *mSieveListScript;
-    QPushButton *mBtnNew;
-    QPushButton *mBtnDelete;
-    QPushButton *mBtnRename;
-    QPushButton *mBtnDescription;
-    QPushButton *mBtnTop;
-    QPushButton *mBtnUp;
-    QPushButton *mBtnDown;
-    QPushButton *mBtnBottom;
-    int mScriptNumber;
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
+    QListWidget *mSieveListScript = nullptr;
+    QPushButton *mBtnNew = nullptr;
+    QPushButton *mBtnDelete = nullptr;
+    QPushButton *mBtnRename = nullptr;
+    QPushButton *mBtnDescription = nullptr;
+    QPushButton *mBtnTop = nullptr;
+    QPushButton *mBtnUp = nullptr;
+    QPushButton *mBtnDown = nullptr;
+    QPushButton *mBtnBottom = nullptr;
+    int mScriptNumber = 0;
 };
 }
 

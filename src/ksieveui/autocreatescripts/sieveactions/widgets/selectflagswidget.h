@@ -54,7 +54,7 @@ public:
 private:
     void readConfig();
     void writeConfig();
-    SelectFlagsListWidget *mListWidget;
+    SelectFlagsListWidget *mListWidget = nullptr;
 };
 
 class SelectFlagsWidget : public QWidget
@@ -72,7 +72,7 @@ Q_SIGNALS:
 
 private:
     void slotSelectFlags();
-    QLineEdit *mEdit;
+    QLineEdit *mEdit = nullptr;
 };
 }
 

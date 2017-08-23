@@ -66,10 +66,10 @@ private:
     void slotLoadFinished(bool success);
     void slotSelectionChanged();
     QString mTitle;
-    SieveEditorWebEngineView *mWebView;
-    SieveEditorLoadProgressIndicator *mProgressIndicator;
-    KPIMTextEdit::SlideContainer *mSliderContainer;
-    KSieveUi::FindBarWebEngineView *mFindBar;
+    SieveEditorWebEngineView *mWebView = nullptr;
+    SieveEditorLoadProgressIndicator *mProgressIndicator = nullptr;
+    KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
+    KSieveUi::FindBarWebEngineView *mFindBar = nullptr;
     qreal mZoomFactor;
 };
 }

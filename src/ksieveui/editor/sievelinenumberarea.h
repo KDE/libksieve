@@ -36,7 +36,7 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
 private:
-    SieveTextEdit *m_sieveTextEdit;
+    SieveTextEdit *m_sieveTextEdit = nullptr;
 };
 }
 

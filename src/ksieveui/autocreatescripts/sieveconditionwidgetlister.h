@@ -63,13 +63,13 @@ private:
     void initWidget();
     void setFilterCondition(QWidget *widget);
     QList<KSieveUi::SieveCondition *> mConditionList;
-    QPushButton *mAdd;
-    QPushButton *mRemove;
-    PimCommon::MinimumComboBox *mComboBox;
-    QGridLayout *mLayout;
-    SieveHelpButton *mHelpButton;
-    QToolButton *mCommentButton;
-    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
+    QPushButton *mAdd = nullptr;
+    QPushButton *mRemove = nullptr;
+    PimCommon::MinimumComboBox *mComboBox = nullptr;
+    QGridLayout *mLayout = nullptr;
+    SieveHelpButton *mHelpButton = nullptr;
+    QToolButton *mCommentButton = nullptr;
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
 };
 
 class SieveConditionWidgetLister : public KPIM::KWidgetLister
@@ -98,7 +98,7 @@ private:
     void loadTest(QXmlStreamReader &e, bool notCondition, QString &error);
     void reconnectWidget(SieveConditionWidget *w);
     void updateAddRemoveButton();
-    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
 };
 }
 

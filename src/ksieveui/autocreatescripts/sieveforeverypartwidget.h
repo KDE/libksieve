@@ -41,9 +41,9 @@ private Q_SLOTS:
     void slotHelp();
 
 private:
-    QCheckBox *mForLoop;
-    QLineEdit *mName;
-    SieveHelpButton *mHelpButton;
+    QCheckBox *mForLoop = nullptr;
+    QLineEdit *mName = nullptr;
+    SieveHelpButton *mHelpButton = nullptr;
 };
 }
 

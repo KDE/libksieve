@@ -24,7 +24,6 @@ using namespace KSieveUi;
 
 AddressLineEdit::AddressLineEdit(QWidget *parent)
     : QLineEdit(parent)
-    , mIncorrectEmail(false)
 {
     setClearButtonEnabled(true);
     connect(this, &AddressLineEdit::textChanged, this, &AddressLineEdit::slotTextChanged);

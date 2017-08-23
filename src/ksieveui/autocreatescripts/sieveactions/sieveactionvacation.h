@@ -36,7 +36,7 @@ public:
     QString help() const override;
     QUrl href() const override;
 private:
-    bool mHasVacationSecondsSupport;
+    bool mHasVacationSecondsSupport = false;
 };
 }
 

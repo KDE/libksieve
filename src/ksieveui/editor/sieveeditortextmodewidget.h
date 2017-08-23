@@ -123,22 +123,22 @@ private:
     QString mOriginalScript;
     QStringList mSieveCapabilities;
     QStringList mListOfIncludeFile;
-    SieveTextEdit *mTextEdit;
-    KPIMTextEdit::PlainTextEditorWidget *mDebugTextEdit;
-    KPIMTextEdit::PlainTextEditFindBar *mFindBar;
-    KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget;
-    SieveInfoWidget *mSieveInfo;
-    QSplitter *mMainSplitter;
-    QSplitter *mExtraSplitter;
-    QSplitter *mTemplateSplitter;
-    SieveEditorWarning *mSieveEditorWarning;
-    SieveEditorParsingMissingFeatureWarning *mSieveParsingWarning;
-    SieveEditorTabWidget *mTabWidget;
-    KPIMTextEdit::TextGoToLineWidget *mGoToLine;
-    KPIMTextEdit::SlideContainer *mGotoLineSliderContainer;
-    KPIMTextEdit::SlideContainer *mSliderContainer;
-    SieveTemplateWidget *mSieveTemplateWidget;
-    QWidget *mEditorWidget;
+    SieveTextEdit *mTextEdit = nullptr;
+    KPIMTextEdit::PlainTextEditorWidget *mDebugTextEdit = nullptr;
+    KPIMTextEdit::PlainTextEditFindBar *mFindBar = nullptr;
+    KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
+    SieveInfoWidget *mSieveInfo = nullptr;
+    QSplitter *mMainSplitter = nullptr;
+    QSplitter *mExtraSplitter = nullptr;
+    QSplitter *mTemplateSplitter = nullptr;
+    SieveEditorWarning *mSieveEditorWarning = nullptr;
+    SieveEditorParsingMissingFeatureWarning *mSieveParsingWarning = nullptr;
+    SieveEditorTabWidget *mTabWidget = nullptr;
+    KPIMTextEdit::TextGoToLineWidget *mGoToLine = nullptr;
+    KPIMTextEdit::SlideContainer *mGotoLineSliderContainer = nullptr;
+    KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
+    SieveTemplateWidget *mSieveTemplateWidget = nullptr;
+    QWidget *mEditorWidget = nullptr;
 };
 }
 

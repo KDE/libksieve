@@ -34,8 +34,8 @@ public:
     QUrl href() const override;
 
 private:
-    bool mHasFlagSupport;
-    bool mHasImapFlag4Support;
+    bool mHasFlagSupport = false;
+    bool mHasImapFlag4Support = false;
 };
 }
 #endif // SIEVEACTIONKEEP_H

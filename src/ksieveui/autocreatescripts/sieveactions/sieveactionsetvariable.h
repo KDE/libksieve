@@ -37,7 +37,7 @@ public:
     QUrl href() const override;
     void setLocalVariable(QWidget *w, const SieveGlobalVariableActionWidget::VariableElement &var);
 private:
-    bool mHasRegexCapability;
+    bool mHasRegexCapability = false;
 };
 }
 

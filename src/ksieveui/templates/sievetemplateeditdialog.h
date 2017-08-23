@@ -45,9 +45,9 @@ private:
     void slotTemplateChanged();
     void readConfig();
     void writeConfig();
-    SieveTextEditWidget *mTextEditWidget;
-    KLineEdit *mTemplateNameEdit;
-    QPushButton *mOkButton;
+    SieveTextEditWidget *mTextEditWidget = nullptr;
+    KLineEdit *mTemplateNameEdit = nullptr;
+    QPushButton *mOkButton = nullptr;
 };
 }
 

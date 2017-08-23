@@ -49,7 +49,7 @@ private:
     void writeConfig();
 
 private:
-    SieveEditorGraphicalModeWidget *mEditor;
+    SieveEditorGraphicalModeWidget *mEditor = nullptr;
 };
 }
 

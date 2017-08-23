@@ -36,7 +36,7 @@ public:
     SieveImapInstanceInterface *sieveImapInstanceInterface() const;
     QVector<KSieveUi::SieveImapInstance> sieveImapInstanceList() const;
 private:
-    SieveImapInstanceInterface *mInterface;
+    SieveImapInstanceInterface *mInterface = nullptr;
 };
 }
 

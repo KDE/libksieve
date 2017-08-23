@@ -40,7 +40,7 @@ private Q_SLOTS:
 private:
     void readConfig();
     void writeConfig();
-    KPIMTextEdit::PlainTextEditorWidget *mTextEdit;
+    KPIMTextEdit::PlainTextEditorWidget *mTextEdit = nullptr;
 };
 }
 

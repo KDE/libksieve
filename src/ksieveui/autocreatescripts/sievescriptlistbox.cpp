@@ -100,8 +100,6 @@ QString SieveScriptListItem::generatedScript(QStringList &requires) const
 
 SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     : QGroupBox(title, parent)
-    , mSieveGraphicalModeWidget(nullptr)
-    , mScriptNumber(0)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
     mSieveListScript = new QListWidget(this);

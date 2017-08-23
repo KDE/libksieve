@@ -55,10 +55,10 @@ private:
     QString loadInclude();
     QStringList extractActiveScript(const QString &doc);
     QUrl mCurrentUrl;
-    KManageSieve::SieveJob *mSieveJob;
+    KManageSieve::SieveJob *mSieveJob = nullptr;
     QStringList mActiveScripts;
     QString mError;
-    QXmlStreamReader *mStreamReader;
+    QXmlStreamReader *mStreamReader = nullptr;
 };
 }
 

@@ -42,7 +42,7 @@ private:
     void writeConfig();
 
 private:
-    KPIMTextEdit::RichTextEditorWidget *mTextEdit;
+    KPIMTextEdit::RichTextEditorWidget *mTextEdit = nullptr;
 };
 }
 #endif // SIEVESCRIPTPARSINGERRORDIALOG_H

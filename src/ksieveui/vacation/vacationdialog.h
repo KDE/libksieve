@@ -95,7 +95,7 @@ private:
     void writeConfig();
     void readConfig();
 
-    VacationEditWidget *mVacationEditWidget;
+    VacationEditWidget *mVacationEditWidget = nullptr;
 };
 }
 

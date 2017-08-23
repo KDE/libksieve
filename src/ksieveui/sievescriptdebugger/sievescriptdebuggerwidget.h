@@ -46,9 +46,9 @@ Q_SIGNALS:
 
 private:
     void checkSieveTestApplication();
-    QStackedWidget *mStackedWidget;
-    SieveScriptDebuggerFrontEndWidget *mSieveScriptFrontEnd;
-    QLabel *mSieveNoExistingFrontEnd;
+    QStackedWidget *mStackedWidget = nullptr;
+    SieveScriptDebuggerFrontEndWidget *mSieveScriptFrontEnd = nullptr;
+    QLabel *mSieveNoExistingFrontEnd = nullptr;
 };
 }
 #endif // SIEVESCRIPTDEBUGGERWIDGET_H

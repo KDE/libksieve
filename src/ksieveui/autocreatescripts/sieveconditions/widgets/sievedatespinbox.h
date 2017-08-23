@@ -39,7 +39,7 @@ public:
 
 private:
     QString convertValue() const;
-    SelectDateWidget::DateType mType;
+    SelectDateWidget::DateType mType = SelectDateWidget::Year;
 };
 }
 

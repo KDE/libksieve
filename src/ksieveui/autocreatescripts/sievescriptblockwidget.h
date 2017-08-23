@@ -68,15 +68,15 @@ private:
     void updateWidget();
     void updateCondition();
     MatchCondition mMatchCondition;
-    QGroupBox *mConditions;
-    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
-    SieveConditionWidgetLister *mScriptConditionLister;
-    SieveActionWidgetLister *mScriptActionLister;
-    QRadioButton *mMatchAll;
-    QRadioButton *mMatchAny;
-    QRadioButton *mAllMessageRBtn;
-    KComboBox *mNewBlockType;
-    QPushButton *mAddBlockType;
+    QGroupBox *mConditions = nullptr;
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
+    SieveConditionWidgetLister *mScriptConditionLister = nullptr;
+    SieveActionWidgetLister *mScriptActionLister = nullptr;
+    QRadioButton *mMatchAll = nullptr;
+    QRadioButton *mMatchAny = nullptr;
+    QRadioButton *mAllMessageRBtn = nullptr;
+    KComboBox *mNewBlockType = nullptr;
+    QPushButton *mAddBlockType = nullptr;
 };
 }
 

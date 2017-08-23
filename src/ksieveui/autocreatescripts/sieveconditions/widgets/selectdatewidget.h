@@ -67,12 +67,12 @@ private:
     void initialize();
     QString dateType(DateType type) const;
     QString dateValue(DateType type) const;
-    KComboBox *mDateType;
-    QLineEdit *mDateLineEdit;
-    SieveDateSpinBox *mDateValue;
-    KDateComboBox *mDateEdit;
-    KTimeComboBox *mTimeEdit;
-    QStackedWidget *mStackWidget;
+    KComboBox *mDateType = nullptr;
+    QLineEdit *mDateLineEdit = nullptr;
+    SieveDateSpinBox *mDateValue = nullptr;
+    KDateComboBox *mDateEdit = nullptr;
+    KTimeComboBox *mTimeEdit = nullptr;
+    QStackedWidget *mStackWidget = nullptr;
 };
 }
 Q_DECLARE_METATYPE(KSieveUi::SelectDateWidget::DateType)

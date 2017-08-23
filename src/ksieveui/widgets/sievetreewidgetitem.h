@@ -57,10 +57,10 @@ public:
 
 private:
     void slotTimerDone();
-    int mProgressCount;
+    int mProgressCount = 0;
     KPixmapSequence mProgressPix;
-    QTimer *mProgressTimer;
-    SieveTreeWidgetItem *mItem;
+    QTimer *mProgressTimer = nullptr;
+    SieveTreeWidgetItem *mItem = nullptr;
 };
 }
 

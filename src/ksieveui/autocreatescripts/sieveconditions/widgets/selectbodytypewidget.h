@@ -43,8 +43,8 @@ private Q_SLOTS:
 
 private:
     void initialize();
-    KComboBox *mBodyCombobox;
-    QLineEdit *mBodyLineEdit;
+    KComboBox *mBodyCombobox = nullptr;
+    QLineEdit *mBodyLineEdit = nullptr;
 };
 }
 

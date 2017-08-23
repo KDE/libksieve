@@ -108,24 +108,24 @@ private Q_SLOTS:
     void mailActionChanged(int index);
 
 protected:
-    QCheckBox *mActiveCheck;
-    QSpinBox *mIntervalSpin;
-    QLineEdit *mMailAliasesEdit;
-    KPIMTextEdit::PlainTextEditorWidget *mTextEdit;
-    QCheckBox *mSpamCheck;
-    QCheckBox *mDomainCheck;
-    QLineEdit *mDomainEdit;
-    QLineEdit *mSubject;
-    QComboBox *mMailAction;
-    QLineEdit *mMailActionRecipient;
-    KDateComboBox *mStartDate;
-    KTimeComboBox *mStartTime;
-    QCheckBox *mStartTimeActive;
-    QLabel *mStartDateLabel;
-    KDateComboBox *mEndDate;
-    KTimeComboBox *mEndTime;
-    QCheckBox *mEndTimeActive;
-    QLabel *mEndDateLabel;
+    QCheckBox *mActiveCheck = nullptr;
+    QSpinBox *mIntervalSpin = nullptr;
+    QLineEdit *mMailAliasesEdit = nullptr;
+    KPIMTextEdit::PlainTextEditorWidget *mTextEdit = nullptr;
+    QCheckBox *mSpamCheck = nullptr;
+    QCheckBox *mDomainCheck = nullptr;
+    QLineEdit *mDomainEdit = nullptr;
+    QLineEdit *mSubject = nullptr;
+    QComboBox *mMailAction = nullptr;
+    QLineEdit *mMailActionRecipient = nullptr;
+    KDateComboBox *mStartDate = nullptr;
+    KTimeComboBox *mStartTime = nullptr;
+    QCheckBox *mStartTimeActive = nullptr;
+    QLabel *mStartDateLabel = nullptr;
+    KDateComboBox *mEndDate = nullptr;
+    KTimeComboBox *mEndTime = nullptr;
+    QCheckBox *mEndTimeActive = nullptr;
+    QLabel *mEndDateLabel = nullptr;
 };
 }
 

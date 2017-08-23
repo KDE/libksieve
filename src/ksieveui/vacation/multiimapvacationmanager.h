@@ -52,9 +52,9 @@ private Q_SLOTS:
     void slotCheckKep14Ended(KSieveUi::CheckKolabKep14SupportJob *job, bool success);
 
 private:
-    SieveImapPasswordProvider *mPasswordProvider;
-    int mNumberOfJobs;
-    bool mCheckInProgress;
+    SieveImapPasswordProvider *mPasswordProvider = nullptr;
+    int mNumberOfJobs = 0;
+    bool mCheckInProgress = false;
 
     QMap<QString, bool> mKep14Support;      //if the server has KEP:14 support
 };

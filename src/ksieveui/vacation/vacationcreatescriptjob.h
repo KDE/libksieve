@@ -67,9 +67,9 @@ private:
     bool mUserJobRunning;
     bool mScriptJobRunning;
     bool mSuccess;
-    KManageSieve::SieveJob *mSieveJob;
-    ParseUserScriptJob *mParseUserJob;
-    GenerateGlobalScriptJob *mCreateJob;
+    KManageSieve::SieveJob *mSieveJob = nullptr;
+    ParseUserScriptJob *mParseUserJob = nullptr;
+    GenerateGlobalScriptJob *mCreateJob = nullptr;
 };
 }
 

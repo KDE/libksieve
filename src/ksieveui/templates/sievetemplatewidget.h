@@ -42,7 +42,7 @@ protected:
     QMimeData *mimeData(const QList<QListWidgetItem *> items) const override;
 private:
     QStringList mCapabilities;
-    PimCommon::TemplateManager *mTemplateManager;
+    PimCommon::TemplateManager *mTemplateManager = nullptr;
 };
 
 class SieveTemplateWidget : public QWidget
@@ -57,7 +57,7 @@ Q_SIGNALS:
     void insertTemplate(const QString &);
 
 private:
-    SieveTemplateListWidget *mListTemplate;
+    SieveTemplateListWidget *mListTemplate = nullptr;
 };
 }
 

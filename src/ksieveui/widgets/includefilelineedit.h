@@ -36,8 +36,8 @@ public:
 
 private:
     void initialize();
-    QCompleter *mCompleter;
-    QStringListModel *mStringListModel;
+    QCompleter *mCompleter = nullptr;
+    QStringListModel *mStringListModel = nullptr;
 };
 }
 #endif // INCLUDEFILELINEEDIT_H
