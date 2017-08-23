@@ -1,0 +1,6 @@
+require "body";
+
+#SCRIPTNAME: Script part 0
+if body :raw :contains "foo"
+{
+} 
