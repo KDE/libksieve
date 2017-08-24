@@ -22,9 +22,6 @@
 using namespace KSieveUi;
 
 SieveImapAccountSettings::SieveImapAccountSettings()
-    : mAuthenticationType(Plain)
-    , mEncryptionMode(Unencrypted)
-    , mPort(-1)
 {
 }
 

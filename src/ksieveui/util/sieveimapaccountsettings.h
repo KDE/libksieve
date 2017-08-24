@@ -79,9 +79,9 @@ private:
     QString mServerName;
     QString mUserName;
     QString mPassword;
-    SieveImapAccountSettings::AuthenticationMode mAuthenticationType;
-    SieveImapAccountSettings::EncryptionMode mEncryptionMode;
-    int mPort;
+    SieveImapAccountSettings::AuthenticationMode mAuthenticationType = Plain;
+    SieveImapAccountSettings::EncryptionMode mEncryptionMode = Unencrypted;
+    int mPort = -1;
 };
 }
 Q_DECLARE_METATYPE(KSieveUi::SieveImapAccountSettings)
