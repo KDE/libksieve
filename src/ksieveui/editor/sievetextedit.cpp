@@ -45,16 +45,13 @@ class KSieveUi::SieveTextEditPrivate
 {
 public:
     SieveTextEditPrivate()
-        : m_sieveLineNumberArea(nullptr)
-        , mTextEditorCompleter(nullptr)
-        , mShowHelpMenu(true)
     {
     }
 
     PimCommon::SieveSyntaxHighlighterRules mSieveHighliterRules;
-    SieveLineNumberArea *m_sieveLineNumberArea;
-    KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter;
-    bool mShowHelpMenu;
+    SieveLineNumberArea *m_sieveLineNumberArea = nullptr;
+    KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter = nullptr;
+    bool mShowHelpMenu = true;
 };
 
 SieveTextEdit::SieveTextEdit(QWidget *parent)

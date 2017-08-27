@@ -34,13 +34,11 @@ class KSieveUi::SieveEditorPrivate
 {
 public:
     SieveEditorPrivate()
-        : mSieveEditorWidget(nullptr)
-        , mOkButton(nullptr)
     {
     }
 
-    SieveEditorWidget *mSieveEditorWidget;
-    QPushButton *mOkButton;
+    SieveEditorWidget *mSieveEditorWidget = nullptr;
+    QPushButton *mOkButton = nullptr;
 };
 
 SieveEditor::SieveEditor(QWidget *parent)

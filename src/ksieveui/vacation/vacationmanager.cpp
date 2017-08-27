@@ -32,16 +32,13 @@ class KSieveUi::VacationManagerPrivate
 public:
     VacationManagerPrivate(QWidget *parent)
         : mWidget(parent)
-        , mMultiImapVacationDialog(nullptr)
-        , mCheckVacation(nullptr)
-        , mQuestionAsked(false)
     {
     }
 
-    QWidget *mWidget;
-    QPointer<KSieveUi::MultiImapVacationDialog> mMultiImapVacationDialog;
-    QPointer<KSieveUi::MultiImapVacationManager> mCheckVacation;
-    bool mQuestionAsked;
+    QWidget *mWidget = nullptr;
+    QPointer<KSieveUi::MultiImapVacationDialog> mMultiImapVacationDialog = nullptr;
+    QPointer<KSieveUi::MultiImapVacationManager> mCheckVacation = nullptr;
+    bool mQuestionAsked = false;
 };
 
 VacationManager::VacationManager(SieveImapPasswordProvider *passwordProvider, QWidget *parent)

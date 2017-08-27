@@ -60,18 +60,18 @@ public:
     {
     }
 
-    CustomManageSieveWidget *mTreeView;
-    SieveEditor *mSieveEditor;
+    CustomManageSieveWidget *mTreeView = nullptr;
+    SieveEditor *mSieveEditor = nullptr;
 
     QUrl mCurrentURL;
     QStringList mCurrentCapabilities;
     QStringList mListOfIncludeFile;
     KSieveUi::SieveImapAccountSettings mSieveImapAccountSettings;
 
-    QPushButton *mNewScript;
-    QPushButton *mEditScript;
-    QPushButton *mDeleteScript;
-    QPushButton *mDeactivateScript;
+    QPushButton *mNewScript = nullptr;
+    QPushButton *mEditScript = nullptr;
+    QPushButton *mDeleteScript = nullptr;
+    QPushButton *mDeactivateScript = nullptr;
 
     bool mIsNewScript : 1;
     bool mWasActive : 1;

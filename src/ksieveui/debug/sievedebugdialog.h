@@ -56,7 +56,7 @@ private Q_SLOTS:
 private:
     void writeConfig();
     void readConfig();
-    KManageSieve::SieveJob *mSieveJob;
+    KManageSieve::SieveJob *mSieveJob = nullptr;
     QUrl mUrl;
     KSyntaxHighlighting::Repository mRepo;
 

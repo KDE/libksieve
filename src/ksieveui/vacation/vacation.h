@@ -59,8 +59,8 @@ protected Q_SLOTS:
     void slotPutInactiveResult(KManageSieve::SieveJob *, bool);
 protected:
     // IO:
-    SieveImapPasswordProvider *mPasswordProvider;
-    KManageSieve::SieveJob *mSieveJob;
+    SieveImapPasswordProvider *mPasswordProvider = nullptr;
+    KManageSieve::SieveJob *mSieveJob = nullptr;
     QUrl mUrl;
     QString mServerName;
     // GUI:

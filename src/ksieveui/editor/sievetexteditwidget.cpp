@@ -27,15 +27,12 @@ class KSieveUi::SieveTextEditWidgetPrivate
 {
 public:
     SieveTextEditWidgetPrivate()
-        : mTextEdit(nullptr)
-        , mSliderContainer(nullptr)
-        , mFindBar(nullptr)
     {
     }
 
-    KSieveUi::SieveTextEdit *mTextEdit;
-    KPIMTextEdit::SlideContainer *mSliderContainer;
-    KPIMTextEdit::PlainTextEditFindBar *mFindBar;
+    KSieveUi::SieveTextEdit *mTextEdit = nullptr;
+    KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
+    KPIMTextEdit::PlainTextEditFindBar *mFindBar = nullptr;
 };
 
 SieveTextEditWidget::SieveTextEditWidget(KSieveUi::SieveTextEdit *customTextEdit, QWidget *parent)

@@ -32,16 +32,14 @@ class KSieveUi::CheckKolabKep14SupportJobPrivate
 {
 public:
     CheckKolabKep14SupportJobPrivate()
-        : mSieveJob(nullptr)
-        , mKolabKep14Support(false)
     {
     }
 
     QUrl mUrl;
-    KManageSieve::SieveJob *mSieveJob;
+    KManageSieve::SieveJob *mSieveJob = nullptr;
     QStringList mAvailableScripts;
     QString mServerName;
-    bool mKolabKep14Support;
+    bool mKolabKep14Support = false;
 };
 
 CheckKolabKep14SupportJob::CheckKolabKep14SupportJob(QObject *parent)

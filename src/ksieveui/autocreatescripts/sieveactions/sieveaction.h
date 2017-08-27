@@ -63,7 +63,7 @@ protected:
     SieveImapAccountSettings sieveImapAccountSettings() const;
     QStringList listOfIncludeFile() const;
     QStringList sieveCapabilities() const;
-    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
 
 Q_SIGNALS:
     void valueChanged();

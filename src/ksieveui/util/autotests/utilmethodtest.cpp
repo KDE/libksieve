@@ -44,7 +44,7 @@ public:
         return mData->sieveCustomPassword;
     }
 
-    AkonadiImapSettingInterfaceDataTest *mData;
+    AkonadiImapSettingInterfaceDataTest *mData = nullptr;
 };
 
 UtilMethodTest::UtilMethodTest(QObject *parent)

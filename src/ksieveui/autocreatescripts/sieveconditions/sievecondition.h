@@ -69,7 +69,7 @@ public:
 
 protected:
     QStringList sieveCapabilities() const;
-    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget;
+    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
 
 Q_SIGNALS:
     void valueChanged();
