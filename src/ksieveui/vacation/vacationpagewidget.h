@@ -22,7 +22,6 @@
 #include <QUrl>
 class QStackedWidget;
 namespace KManageSieve {
-class SieveJob;
 }
 
 namespace KSieveUi {
@@ -30,7 +29,6 @@ class VacationEditWidget;
 class VacationWarningWidget;
 class VacationCreateScriptJob;
 class MultiImapVacationManager;
-class ParseUserScriptJob;
 class VacationPageWidget : public QWidget
 {
     Q_OBJECT

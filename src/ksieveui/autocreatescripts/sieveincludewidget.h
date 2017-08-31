@@ -25,7 +25,6 @@
 #include <KComboBox>
 
 class QPushButton;
-class KLineEdit;
 class QGridLayout;
 class QCheckBox;
 class QXmlStreamReader;
