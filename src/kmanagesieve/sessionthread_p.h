@@ -83,19 +83,19 @@ private:
     void sslResult(bool encrypted);
 
 private:
-    Session *m_session;
-    KTcpSocket *m_socket;
+    Session *m_session = nullptr;
+    KTcpSocket *m_socket = nullptr;
 
     QUrl m_url;
 
-    sasl_conn_t *m_sasl_conn;
-    sasl_interact_t *m_sasl_client_interact;
+    sasl_conn_t *m_sasl_conn = nullptr;
+    sasl_interact_t *m_sasl_client_interact = nullptr;
 
     QByteArray m_data;
     Response m_lastResponse;
     qint64 m_pendingQuantity;
 
-    QTimer *m_sslCheck;
+    QTimer *m_sslCheck = nullptr;
 };
 } // namespace KManageSieve
 

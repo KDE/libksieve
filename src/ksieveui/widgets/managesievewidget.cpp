@@ -60,7 +60,7 @@ public:
 
     // Maps top-level items to their child which has the radio button selection
     QMap<QTreeWidgetItem *, QTreeWidgetItem *> mSelectedItems;
-    ManageSieveTreeView *mTreeView;
+    ManageSieveTreeView *mTreeView = nullptr;
     bool mClearAll : 1;
     bool mBlockSignal : 1;
 };
@@ -353,7 +353,7 @@ void ManageSieveWidget::changeActiveScript(QTreeWidgetItem *item, bool activate)
     u = u.adjusted(QUrl::RemoveFilename);
     u.setPath(u.path() +  QLatin1Char('/') + selected->text(0));
 
-    KManageSieve::SieveJob *job;
+    KManageSieve::SieveJob *job = nullptr;
     if (activate) {
         job = KManageSieve::SieveJob::activate(u);
     } else {

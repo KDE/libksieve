@@ -58,7 +58,7 @@ public:
 
     class Impl;
 private:
-    Impl *i;
+    Impl *i = nullptr;
 
 private:
     const Parser &operator=(const Parser &);

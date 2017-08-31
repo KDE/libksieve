@@ -65,7 +65,6 @@ class KSieveUi::SieveTreeWidgetItemPrivate
 {
 public:
     SieveTreeWidgetItemPrivate()
-        : mProgress(nullptr)
     {
     }
 
@@ -74,7 +73,7 @@ public:
         delete mProgress;
     }
 
-    SieveTreeWidgetProgress *mProgress;
+    SieveTreeWidgetProgress *mProgress = nullptr;
 };
 
 SieveTreeWidgetItem::SieveTreeWidgetItem(QTreeWidget *treeWidget, QTreeWidgetItem *item)

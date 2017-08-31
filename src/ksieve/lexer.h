@@ -98,7 +98,7 @@ public:
 
     class Impl;
 private:
-    Impl *i;
+    Impl *i = nullptr;
 
 private:
     const Lexer &operator=(const Lexer &);
