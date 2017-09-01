@@ -56,10 +56,10 @@ int main(int argc, char **argv)
     QByteArray script;
 
     QString fileName;
-    if (parser.positionalArguments().count()) {
+    if (!parser.positionalArguments().isEmpty()) {
         fileName = parser.positionalArguments().at(0);
     } else {
-        fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), i18n("Sieve File (*.siv)"));
+        fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), QStringLiteral("Sieve File (*.siv)"));
     }
     if (!fileName.isEmpty()) {
         QFile file(fileName);
