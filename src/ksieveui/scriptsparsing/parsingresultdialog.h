@@ -20,6 +20,7 @@
 #define PARSINGRESULTDIALOG_H
 #include "ksieveui_private_export.h"
 #include <QDialog>
+#include <KSyntaxHighlighting/Repository>
 
 namespace KPIMTextEdit {
 class PlainTextEditorWidget;
@@ -41,6 +42,7 @@ private:
     void readConfig();
     void writeConfig();
     KPIMTextEdit::PlainTextEditorWidget *mTextEdit = nullptr;
+    KSyntaxHighlighting::Repository mSyntaxRepo;
 };
 }
 

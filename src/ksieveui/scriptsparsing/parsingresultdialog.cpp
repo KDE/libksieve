@@ -18,15 +18,18 @@
 */
 
 #include "parsingresultdialog.h"
-#include "xmlprintingsyntaxhighlighter.h"
 #include <PimCommon/PimUtil>
 #include "kpimtextedit/plaintexteditorwidget.h"
 #include "kpimtextedit/plaintexteditor.h"
 
 #include <KLocalizedString>
 #include <KSharedConfig>
-#include <QDialogButtonBox>
 #include <KConfigGroup>
+#include <KSyntaxHighlighting/Definition>
+#include <KSyntaxHighlighting/SyntaxHighlighter>
+#include <KSyntaxHighlighting/Theme>
+
+#include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
 
@@ -45,7 +48,11 @@ ParsingResultDialog::ParsingResultDialog(QWidget *parent)
     user1Button->setText(i18n("Save As..."));
 
     mTextEdit = new KPIMTextEdit::PlainTextEditorWidget(this);
-    new XMLPrintingSyntaxHighLighter(mTextEdit->editor()->document());
+    auto highlighter = new KSyntaxHighlighting::SyntaxHighlighter(mTextEdit->editor()->document());
+    highlighter->setDefinition(mSyntaxRepo.definitionForName(QStringLiteral("XML")));
+    highlighter->setTheme((palette().color(QPalette::Base).lightness() < 128)
+        ? mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+        : mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     mTextEdit->setReadOnly(true);
     mainLayout->addWidget(mTextEdit);
     mainLayout->addWidget(buttonBox);

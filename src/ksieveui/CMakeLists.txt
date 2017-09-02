@@ -164,7 +164,6 @@ set(ksieveui_autocreatescripts_LIB_SRCS
 set(ksieveui_scriptsparsing_LIB_SRCS
     scriptsparsing/xmlprintingscriptbuilder.cpp
     scriptsparsing/parsingresultdialog.cpp
-    scriptsparsing/xmlprintingsyntaxhighlighter.cpp
     scriptsparsing/parsingutil.cpp
     )
 
