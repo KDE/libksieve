@@ -16,17 +16,22 @@
  * Boston, MA 02110-1301, USA.
  */
 
-#include "sievesyntaxspellcheckinghighlighter.h"
 #include "sievetextedit.h"
 #include "editor/sievelinenumberarea.h"
 #include "editor/sieveeditorutil.h"
-#include "KPIMTextEdit/EditorUtil"
 #include "editor/sievetexteditorspellcheckdecorator.h"
-#include "kpimtextedit/plaintextsyntaxspellcheckinghighlighter.h"
+
+#include <KPIMTextEdit/PlainTextSyntaxSpellCheckingHighlighter>
+#include <KPIMTextEdit/EditorUtil>
+#include <KPIMTextEdit/TextEditorCompleter>
+
 #include <KLocalizedString>
+#include <KSyntaxHighlighting/Definition>
+#include <KSyntaxHighlighting/Repository>
+#include <KSyntaxHighlighting/Theme>
+
 #include <QAction>
 #include <QIcon>
-
 #include <QAbstractItemView>
 #include <QCompleter>
 #include <QStringListModel>
@@ -35,9 +40,6 @@
 #include <QScrollBar>
 #include <QMenu>
 #include <QFontDatabase>
-
-#include <KPIMTextEdit/SyntaxHighlighterBase>
-#include <KPIMTextEdit/TextEditorCompleter>
 
 using namespace KSieveUi;
 
@@ -48,9 +50,9 @@ public:
     {
     }
 
-    PimCommon::SieveSyntaxHighlighterRules mSieveHighliterRules;
     SieveLineNumberArea *m_sieveLineNumberArea = nullptr;
     KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter = nullptr;
+    KSyntaxHighlighting::Repository mSyntaxRepo;
     bool mShowHelpMenu = true;
 };
 
@@ -83,7 +85,7 @@ SieveTextEdit::~SieveTextEdit()
 
 void SieveTextEdit::updateHighLighter()
 {
-    KSieveUi::SieveSyntaxSpellCheckingHighlighter *hlighter = dynamic_cast<KSieveUi::SieveSyntaxSpellCheckingHighlighter *>(highlighter());
+    auto hlighter = dynamic_cast<KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter*>(highlighter());
     if (hlighter) {
         hlighter->toggleSpellHighlighting(checkSpellingEnabled());
     }
@@ -96,10 +98,13 @@ void SieveTextEdit::clearDecorator()
 
 void SieveTextEdit::createHighlighter()
 {
-    KSieveUi::SieveSyntaxSpellCheckingHighlighter *highlighter = new KSieveUi::SieveSyntaxSpellCheckingHighlighter(this);
+    auto highlighter = new KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter(this);
     highlighter->toggleSpellHighlighting(checkSpellingEnabled());
     highlighter->setCurrentLanguage(spellCheckingLanguage());
-    highlighter->setSyntaxHighlighterRules(d->mSieveHighliterRules.rules());
+    highlighter->setDefinition(d->mSyntaxRepo.definitionForName(QStringLiteral("Sieve")));
+    highlighter->setTheme((palette().color(QPalette::Base).lightness() < 128)
+        ? d->mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+        : d->mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     setHighlighter(highlighter);
 }
 
@@ -273,12 +278,6 @@ void SieveTextEdit::keyPressEvent(QKeyEvent *e)
 
 void SieveTextEdit::setSieveCapabilities(const QStringList &capabilities)
 {
-    d->mSieveHighliterRules.addCapabilities(capabilities);
-    KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter *hlighter = dynamic_cast<KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter *>(highlighter());
-    if (hlighter) {
-        hlighter->setSyntaxHighlighterRules(d->mSieveHighliterRules.rules());
-    }
-
     setCompleterList(completerList() + capabilities);
 }
 
