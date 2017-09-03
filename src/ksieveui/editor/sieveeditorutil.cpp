@@ -27,9 +27,9 @@ QUrl KSieveUi::SieveEditorUtil::helpUrl(KSieveUi::SieveEditorUtil::HelpVariableN
     case ConvertCondition:
         return QUrl(); //TODO
     case CurrentdateCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/search/rfc5260#page-6"));
+        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5260#page-6"));
     case DateCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/search/rfc5260#page-4"));
+        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5260#page-4"));
     case EnvelopeCondition:
         return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-24"));
     case EnvironmentCondition:
@@ -87,11 +87,11 @@ QUrl KSieveUi::SieveEditorUtil::helpUrl(KSieveUi::SieveEditorUtil::HelpVariableN
     case ExtracttextAction:
         return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5703#page-11"));
     case FileintoAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/search/rfc3028#page-20"));
+        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-20"));
     case KeepAction:
         return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-21"));
     case NotifyAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/search/rfc5435#page-3"));
+        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5435#page-3"));
     case RedirectAction:
         return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-20"));
     case RejectAction:
@@ -107,13 +107,13 @@ QUrl KSieveUi::SieveEditorUtil::helpUrl(KSieveUi::SieveEditorUtil::HelpVariableN
     case SetflagsAction:
         return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5232#page-4"));
     case SetvariableAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/search/rfc5229"));
+        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5229"));
     case StopAction:
         return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-19"));
     case VacationAction:
         return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5230#page-3"));
     case GlobalVariable:
-        return QUrl(QStringLiteral("http://tools.ietf.org/search/rfc5229"));
+        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5229"));
     case Includes:
         return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc6609#page-4"));
     case ForEveryPart:
