@@ -55,7 +55,7 @@ public:
     bool handleResponse(const Response &response, const QByteArray &data);
     void killed();
 
-    SieveJob *q;
+    SieveJob *q = nullptr;
     QUrl mUrl;
     QString mScript;
     QString mActiveScriptName;

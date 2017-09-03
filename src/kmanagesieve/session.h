@@ -83,10 +83,10 @@ private Q_SLOTS:
     void executeNextJob();
 
 private:
-    SessionThread *m_thread;
+    SessionThread *m_thread = nullptr;
     QUrl m_url;
     QQueue<SieveJob *> m_jobs;
-    SieveJob *m_currentJob;
+    SieveJob *m_currentJob = nullptr;
     QStringList m_sieveExtensions;
     QStringList m_saslMethods;
     QString m_implementation;
@@ -98,9 +98,9 @@ private:
         Authenticating
     };
     State m_state;
-    bool m_supportsStartTls;
-    bool m_connected;
-    bool m_disconnected;
+    bool m_supportsStartTls = false;
+    bool m_connected = false;
+    bool m_disconnected = false;
 
     friend class SessionThread;
 };
