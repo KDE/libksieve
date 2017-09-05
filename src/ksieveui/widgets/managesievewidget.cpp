@@ -410,6 +410,10 @@ void ManageSieveWidget::slotRenameScript()
         return;
     }
 
+    if (newName == currentItem->text(0)) {
+        return;
+    }
+
     u = u.adjusted(QUrl::RemoveFilename);
     u.setPath(u.path() +  QLatin1Char('/') + currentItem->text(0));
 #ifdef USE_RENAME_SIEVE_METHOD
