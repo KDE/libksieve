@@ -60,7 +60,7 @@ Q_SIGNALS:
 
 protected:
     bool event(QEvent *e) override;
-
+    void closeEvent(QCloseEvent *e) override;
 private:
     void writeConfig();
     void readConfig();

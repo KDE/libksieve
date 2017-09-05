@@ -21,6 +21,7 @@
 #include "sieveeditorwidget.h"
 
 #include <KLocalizedString>
+#include <KMessageBox>
 
 #include <QPushButton>
 #include <QKeyEvent>
@@ -177,4 +178,16 @@ void SieveEditor::addOkMessage(const QString &msg)
 void SieveEditor::addNormalMessage(const QString &msg)
 {
     d->mSieveEditorWidget->addNormalMessage(msg);
+}
+
+void SieveEditor::closeEvent(QCloseEvent *e)
+{
+    if (d->mSieveEditorWidget->isModified()) {
+        if (KMessageBox::No == KMessageBox::warningYesNo(this, i18n("Script is modified. Do you want to close editor ?"))) {
+            e->ignore();
+            return;
+        }
+    }
+    Q_EMIT cancelClicked();
+    e->accept();
 }
