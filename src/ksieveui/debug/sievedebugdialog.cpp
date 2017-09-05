@@ -226,7 +226,7 @@ void SieveDebugDialog::slotGetScriptList(KManageSieve::SieveJob *job, bool succe
             mEdit->editor()->appendPlainText(QLatin1String("* ") + *it + QLatin1Char('\n'));
         }
         mEdit->editor()->appendPlainText(QStringLiteral("\n"));
-        mEdit->editor()->appendPlainText(i18n("Active script: %1\n\n", activeScript));
+        mEdit->editor()->appendPlainText(i18n("Active script: '%1'\n\n", activeScript));
     }
 
     // Handle next job: dump scripts for this server
