@@ -14,6 +14,10 @@ endif()
 
 find_package(ECM ${ECM_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${libksieve_SOURCE_DIR}/cmake ${ECM_MODULE_PATH})
+if (POLICY CMP0053)
+    cmake_policy(SET CMP0053 NEW)
+endif()
+
 set(LIBRARY_NAMELINK)
 include(GenerateExportHeader)
 include(ECMGenerateHeaders)
