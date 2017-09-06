@@ -405,7 +405,7 @@ void ManageSieveWidget::slotRenameScript()
         return;
     }
 
-    const QString newName = QInputDialog::getText(this, i18n("New Script Name"), i18n("Script Name:"), QLineEdit::Normal, currentItem->text(0));
+    const QString newName = QInputDialog::getText(this, i18n("Rename Script"), i18n("Script Name:"), QLineEdit::Normal, currentItem->text(0));
     if (newName.trimmed().isEmpty()) {
         return;
     }
