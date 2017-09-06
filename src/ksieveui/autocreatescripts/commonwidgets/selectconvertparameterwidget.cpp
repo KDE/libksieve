@@ -25,7 +25,7 @@
 #include <QSpinBox>
 #include "libksieve_debug.h"
 
-namespace KSieveUi {
+using namespace KSieveUi;
 SelectConvertParameterWidget::SelectConvertParameterWidget(QWidget *parent)
     : QWidget(parent)
 {
@@ -68,9 +68,9 @@ QString SelectConvertParameterWidget::code() const
 
 void SelectConvertParameterWidget::initialize()
 {
-    QBoxLayout *hbox = new QHBoxLayout;
+    QBoxLayout *hbox = new QHBoxLayout(this);
     hbox->setMargin(0);
-    mWidth = new QSpinBox;
+    mWidth = new QSpinBox(this);
     mWidth->setSuffix(i18n(" px"));
     mWidth->setMinimum(1);
     mWidth->setMaximum(9999);
@@ -78,10 +78,10 @@ void SelectConvertParameterWidget::initialize()
     hbox->addWidget(mWidth);
     connect(mWidth, QOverload<int>::of(&QSpinBox::valueChanged), this, &SelectConvertParameterWidget::valueChanged);
 
-    QLabel *lab = new QLabel(QStringLiteral("x"));
+    QLabel *lab = new QLabel(QStringLiteral("x"), this);
     hbox->addWidget(lab);
 
-    mHeight = new QSpinBox;
+    mHeight = new QSpinBox(this);
     mHeight->setSuffix(i18n(" px"));
     mHeight->setMinimum(1);
     mHeight->setMaximum(9999);
@@ -89,6 +89,4 @@ void SelectConvertParameterWidget::initialize()
     hbox->addWidget(mHeight);
 
     connect(mHeight, QOverload<int>::of(&QSpinBox::valueChanged), this, &SelectConvertParameterWidget::valueChanged);
-    setLayout(hbox);
-}
 }

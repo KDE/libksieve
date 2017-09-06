@@ -28,20 +28,18 @@ using namespace KSieveUi;
 SelectSizeWidget::SelectSizeWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *hbox = new QHBoxLayout;
+    QHBoxLayout *hbox = new QHBoxLayout(this);
     hbox->setMargin(0);
 
-    mSpinBoxSize = new QSpinBox;
+    mSpinBoxSize = new QSpinBox(this);
     mSpinBoxSize->setMinimum(1);
     mSpinBoxSize->setMaximum(99999);
     hbox->addWidget(mSpinBoxSize);
     connect(mSpinBoxSize, QOverload<int>::of(&QSpinBox::valueChanged), this, &SelectSizeWidget::valueChanged);
 
-    mSelectSizeType = new SelectSizeTypeComboBox;
+    mSelectSizeType = new SelectSizeTypeComboBox(this);
     connect(mSelectSizeType, &SelectSizeTypeComboBox::valueChanged, this, &SelectSizeWidget::valueChanged);
     hbox->addWidget(mSelectSizeType);
-
-    setLayout(hbox);
 }
 
 SelectSizeWidget::~SelectSizeWidget()

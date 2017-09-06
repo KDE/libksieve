@@ -45,7 +45,7 @@ SelectDateWidget::~SelectDateWidget()
 
 void SelectDateWidget::initialize()
 {
-    QHBoxLayout *lay = new QHBoxLayout;
+    QHBoxLayout *lay = new QHBoxLayout(this);
     lay->setMargin(0);
 
     mDateType = new KComboBox;
@@ -88,8 +88,6 @@ void SelectDateWidget::initialize()
     connect(mTimeEdit, &KTimeComboBox::timeChanged, this, &SelectDateWidget::valueChanged);
 
     mStackWidget->setCurrentWidget(mDateValue);
-
-    setLayout(lay);
 }
 
 void SelectDateWidget::slotDateTypeActivated(int index)

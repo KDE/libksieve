@@ -39,18 +39,17 @@ SelectBodyTypeWidget::~SelectBodyTypeWidget()
 
 void SelectBodyTypeWidget::initialize()
 {
-    QHBoxLayout *lay = new QHBoxLayout;
+    QHBoxLayout *lay = new QHBoxLayout(this);
     lay->setMargin(0);
-    setLayout(lay);
 
-    mBodyCombobox = new KComboBox;
+    mBodyCombobox = new KComboBox(this);
     lay->addWidget(mBodyCombobox);
     mBodyCombobox->addItem(i18n("raw"), QStringLiteral(":raw"));
     mBodyCombobox->addItem(i18n("content"), QStringLiteral(":content"));
     mBodyCombobox->addItem(i18n("text"), QStringLiteral(":text"));
     connect(mBodyCombobox, QOverload<int>::of(&KComboBox::activated), this, &SelectBodyTypeWidget::slotBodyTypeChanged);
 
-    mBodyLineEdit = new QLineEdit;
+    mBodyLineEdit = new QLineEdit(this);
     connect(mBodyLineEdit, &QLineEdit::textChanged, this, &SelectBodyTypeWidget::valueChanged);
     lay->addWidget(mBodyLineEdit);
     mBodyLineEdit->hide();

@@ -206,16 +206,15 @@ void SieveIncludeActionWidget::updateAddRemoveButton(bool addButtonEnabled, bool
 SieveIncludeWidget::SieveIncludeWidget(QWidget *parent)
     : SieveWidgetPageAbstract(parent)
 {
-    QVBoxLayout *lay = new QVBoxLayout;
-    mHelpButton = new SieveHelpButton;
+    QVBoxLayout *lay = new QVBoxLayout(this);
+    mHelpButton = new SieveHelpButton(this);
     lay->addWidget(mHelpButton);
     connect(mHelpButton, &SieveHelpButton::clicked, this, &SieveIncludeWidget::slotHelp);
 
-    mIncludeLister = new SieveIncludeWidgetLister;
+    mIncludeLister = new SieveIncludeWidgetLister(this);
     connect(mIncludeLister, &SieveIncludeWidgetLister::valueChanged, this, &SieveIncludeWidget::valueChanged);
     lay->addWidget(mIncludeLister, 0, Qt::AlignTop);
     setPageType(KSieveUi::SieveScriptBlockWidget::Include);
-    setLayout(lay);
 }
 
 SieveIncludeWidget::~SieveIncludeWidget()

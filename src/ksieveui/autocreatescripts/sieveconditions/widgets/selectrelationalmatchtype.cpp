@@ -62,17 +62,16 @@ QString SelectRelationalMatchType::code() const
 
 void SelectRelationalMatchType::initialize()
 {
-    QHBoxLayout *lay = new QHBoxLayout;
+    QHBoxLayout *lay = new QHBoxLayout(this);
     lay->setMargin(0);
-    setLayout(lay);
 
-    mType = new KComboBox;
+    mType = new KComboBox(this);
     mType->addItem(i18n("Value"), QStringLiteral(":value"));
     mType->addItem(i18n("Count"), QStringLiteral(":count"));
     lay->addWidget(mType);
     connect(mType, QOverload<int>::of(&KComboBox::activated), this, &SelectRelationalMatchType::valueChanged);
 
-    mMatch = new KComboBox;
+    mMatch = new KComboBox(this);
     mMatch->addItem(i18n("Greater than"), QStringLiteral("gt"));
     mMatch->addItem(i18n("Greater than or equal"), QStringLiteral("ge"));
     mMatch->addItem(i18n("Less than"), QStringLiteral("lt"));
