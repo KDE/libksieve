@@ -69,10 +69,10 @@ ManageSieveWidget::ManageSieveWidget(QWidget *parent)
     : QWidget(parent)
     , d(new KSieveUi::ManageSieveWidgetPrivate)
 {
-    QHBoxLayout *lay = new QHBoxLayout;
+    QHBoxLayout *lay = new QHBoxLayout(this);
     lay->setMargin(0);
 
-    d->mTreeView = new ManageSieveTreeView;
+    d->mTreeView = new ManageSieveTreeView(this);
 #ifndef QT_NO_CONTEXTMENU
     connect(d->mTreeView, &ManageSieveTreeView::customContextMenuRequested, this, &ManageSieveWidget::slotContextMenuRequested);
 #endif
@@ -83,7 +83,6 @@ ManageSieveWidget::ManageSieveWidget(QWidget *parent)
     connect(PimCommon::NetworkManager::self()->networkConfigureManager(), &QNetworkConfigurationManager::onlineStateChanged, this, &ManageSieveWidget::slotSystemNetworkOnlineStateChanged);
 
     lay->addWidget(d->mTreeView);
-    setLayout(lay);
     QTimer::singleShot(0, this, &ManageSieveWidget::slotCheckNetworkStatus);
 }
 

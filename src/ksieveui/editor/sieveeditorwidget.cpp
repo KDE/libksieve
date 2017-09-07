@@ -53,7 +53,7 @@ using namespace KSieveUi;
 SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *lay = new QVBoxLayout;
+    QVBoxLayout *lay = new QVBoxLayout(this);
 #if !defined(NDEBUG)
     mGenerateXml = nullptr;
 #endif
@@ -136,7 +136,6 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     lay->addLayout(nameLayout);
 
     lay->setMargin(0);
-    setLayout(lay);
     mStackedWidget = new QStackedWidget;
 
     mTextModeWidget = new SieveEditorTextModeWidget;
