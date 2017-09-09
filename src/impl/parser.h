@@ -132,7 +132,7 @@ private:
     Lexer::Token mToken;
     QString mTokenValue;
     Lexer::Impl lexer;
-    ScriptBuilder *mBuilder;
+    ScriptBuilder *mBuilder = nullptr;
 };
 }
 
