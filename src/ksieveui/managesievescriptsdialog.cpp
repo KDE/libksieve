@@ -200,6 +200,7 @@ void ManageSieveScriptsDialog::slotGetResult(KManageSieve::SieveJob *job, bool s
 
     disableManagerScriptsDialog(true);
     d->mSieveEditor = new SieveEditor;
+    d->mSieveEditor->show();
     d->mSieveEditor->setScriptName(d->mCurrentURL.fileName());
     d->mSieveEditor->setSieveCapabilities(d->mCurrentCapabilities);
     d->mSieveEditor->setScript(script, true); /*clear undo/redo*/
@@ -209,8 +210,8 @@ void ManageSieveScriptsDialog::slotGetResult(KManageSieve::SieveJob *job, bool s
     connect(d->mSieveEditor, &SieveEditor::okClicked, this, &ManageSieveScriptsDialog::slotSieveEditorOkClicked);
     connect(d->mSieveEditor, &SieveEditor::cancelClicked, this, &ManageSieveScriptsDialog::slotSieveEditorCancelClicked);
     connect(d->mSieveEditor, &SieveEditor::checkSyntax, this, &ManageSieveScriptsDialog::slotSieveEditorCheckSyntaxClicked);
-    d->mSieveEditor->show();
     d->mWasActive = isActive;
+    d->mSieveEditor->setModified(false);
 }
 
 void ManageSieveScriptsDialog::slotSieveEditorCheckSyntaxClicked()

@@ -100,6 +100,11 @@ bool SieveEditor::event(QEvent *e)
     return QDialog::event(e);
 }
 
+void SieveEditor::setModified(bool b)
+{
+    d->mSieveEditorWidget->setModified(b);
+}
+
 void SieveEditor::slotEnableButtonOk(bool b)
 {
     d->mOkButton->setEnabled(b);
