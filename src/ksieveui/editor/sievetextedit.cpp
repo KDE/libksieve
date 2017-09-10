@@ -85,7 +85,7 @@ SieveTextEdit::~SieveTextEdit()
 
 void SieveTextEdit::updateHighLighter()
 {
-    auto hlighter = dynamic_cast<KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter*>(highlighter());
+    auto hlighter = dynamic_cast<KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter *>(highlighter());
     if (hlighter) {
         hlighter->toggleSpellHighlighting(checkSpellingEnabled());
     }
@@ -103,8 +103,8 @@ void SieveTextEdit::createHighlighter()
     highlighter->setCurrentLanguage(spellCheckingLanguage());
     highlighter->setDefinition(d->mSyntaxRepo.definitionForName(QStringLiteral("Sieve")));
     highlighter->setTheme((palette().color(QPalette::Base).lightness() < 128)
-        ? d->mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
-        : d->mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
+                          ? d->mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+                          : d->mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     setHighlighter(highlighter);
 }
 

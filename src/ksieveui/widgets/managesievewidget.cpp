@@ -267,7 +267,6 @@ void ManageSieveWidget::slotNewScript()
     info.sieveImapAccountSettings = sieveimapaccountsettings;
     info.scriptList = listscript;
 
-
     Q_EMIT newScript(info);
 }
 

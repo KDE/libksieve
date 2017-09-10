@@ -51,8 +51,8 @@ ParsingResultDialog::ParsingResultDialog(QWidget *parent)
     auto highlighter = new KSyntaxHighlighting::SyntaxHighlighter(mTextEdit->editor()->document());
     highlighter->setDefinition(mSyntaxRepo.definitionForName(QStringLiteral("XML")));
     highlighter->setTheme((palette().color(QPalette::Base).lightness() < 128)
-        ? mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
-        : mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
+                          ? mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+                          : mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     mTextEdit->setReadOnly(true);
     mainLayout->addWidget(mTextEdit);
     mainLayout->addWidget(buttonBox);
