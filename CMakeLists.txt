@@ -3,16 +3,9 @@ set(PIM_VERSION "5.6.43")
 
 project(libksieve VERSION ${PIM_VERSION})
 
-set(KF5_VERSION "5.37.0")
-option(RUN_UNINSTALL "test run uninstalled apps (experimental)" FALSE)
+set(KF5_VERSION "5.38.0")
 
-set(ECM_VERSION ${KF5_VERSION})
-# ECM setup
-if (RUN_UNINSTALL)
-   set(ECM_VERSION "5.38.0")
-endif()
-
-find_package(ECM ${ECM_VERSION} CONFIG REQUIRED)
+find_package(ECM ${KF5_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${libksieve_SOURCE_DIR}/cmake ${ECM_MODULE_PATH})
 if (POLICY CMP0053)
     cmake_policy(SET CMP0053 NEW)
