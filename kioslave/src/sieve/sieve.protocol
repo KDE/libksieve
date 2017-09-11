@@ -42,3 +42,4 @@ Description[sv]=En I/O-slav för brevfiltreringsprotokollet Sieve
 Description[tr]=Sieve posta filtreleme protokolü için bir ioslave
 Description[uk]=Підлеглий засіб введення-виведення для протоколу фільтрування пошти Sieve
 Description[x-test]=xxAn ioslave for the Sieve mail filtering protocolxx
+Description[zh_CN]=Sieve 邮件过滤协议的 IO 苦力
