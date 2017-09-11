@@ -29,8 +29,6 @@ using KSieve::Parser;
 #include <ksieve/scriptbuilder.h>
 #include <QFileDialog>
 #include <QApplication>
-#include <KAboutData>
-#include <KLocalizedString>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 
@@ -41,17 +39,12 @@ using KSieve::Parser;
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
-    KAboutData aboutData(QStringLiteral("parsingscript_gui"), i18n("ParsingScriptTest_Gui"), QStringLiteral("1.0"));
-    aboutData.setShortDescription(i18n("Test for parsing script dialog"));
     QCommandLineParser parser;
-    KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"), i18n("URL of a sieve script to be opened")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"), QStringLiteral("URL of a sieve script to be opened")));
 
-    aboutData.setupCommandLine(&parser);
     parser.process(app);
-    aboutData.processCommandLine(&parser);
 
     QByteArray script;
 

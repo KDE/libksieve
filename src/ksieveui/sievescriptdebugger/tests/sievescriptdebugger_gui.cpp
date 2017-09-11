@@ -18,8 +18,6 @@
 */
 
 #include <QApplication>
-#include <KAboutData>
-#include <KLocalizedString>
 #include <QCommandLineParser>
 #include <QStandardPaths>
 
@@ -29,15 +27,10 @@ int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
-    KAboutData aboutData(QStringLiteral("sievescriptdebuggerdialog_gui"), QStringLiteral("sievescriptdebuggerdialog_gui"), QStringLiteral("1.0"));
-    aboutData.setShortDescription(QStringLiteral("Test for Sieve Script Debugger Dialog"));
     QCommandLineParser parser;
-    KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
-    aboutData.setupCommandLine(&parser);
     parser.process(app);
-    aboutData.processCommandLine(&parser);
     KSieveUi::SieveScriptDebuggerDialog dlg;
     return dlg.exec();
 }

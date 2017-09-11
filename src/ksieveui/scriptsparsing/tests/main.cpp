@@ -30,26 +30,19 @@ using KSieve::Parser;
 #include <QStandardPaths>
 #include <QFileDialog>
 #include <QApplication>
-#include <KAboutData>
-#include <KLocalizedString>
 #include <QCommandLineParser>
 #include <QCommandLineOption>
 
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
-    KAboutData aboutData(QStringLiteral("scriptsieveparsing"), i18n("ScriptSieveParsingTest_Gui"), QStringLiteral("1.0"));
-    aboutData.setShortDescription(i18n("Test for script sieve parsing"));
     QStandardPaths::setTestModeEnabled(true);
     QCommandLineParser parser;
-    KAboutData::setApplicationData(aboutData);
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"), i18n("URL of a sieve script to be opened")));
+    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"), QStringLiteral("URL of a sieve script to be opened")));
 
-    aboutData.setupCommandLine(&parser);
     parser.process(app);
-    aboutData.processCommandLine(&parser);
 
     QByteArray script;
 

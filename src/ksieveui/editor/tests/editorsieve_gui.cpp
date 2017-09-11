@@ -22,26 +22,18 @@
 
 #include <qapplication.h>
 #include <QCommandLineParser>
-#include <kaboutdata.h>
-#include <KLocalizedString>
 #include <QStandardPaths>
 
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
     QStandardPaths::setTestModeEnabled(true);
-    KAboutData aboutData(QStringLiteral("editorsieve_gui"),
-                         i18n("EditorSievetest_Gui"),
-                         QStringLiteral("1.0"));
-    KAboutData::setApplicationData(aboutData);
 
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
-    aboutData.setupCommandLine(&parser);
 
     parser.process(app);
-    aboutData.processCommandLine(&parser);
 
     SieveEditorTestWidget *dialog = new SieveEditorTestWidget;
     PimCommon::SieveSyntaxHighlighterUtil sieveHighlighterutil;
