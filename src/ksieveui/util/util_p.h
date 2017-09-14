@@ -43,8 +43,7 @@
 #include <KSieveUi/SieveImapAccountSettings>
 #include <KSieveUi/SieveImapInstance>
 #include <memory>
-
-class QUrl;
+#include <QUrl>
 class QString;
 class QStringList;
 

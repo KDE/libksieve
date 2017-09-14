@@ -28,7 +28,6 @@
 
 #include "util/util_p.h"
 
-#include <KSieveUi/SieveImapAccountSettings>
 
 #include <QInputDialog>
 #include <KStandardGuiItem>

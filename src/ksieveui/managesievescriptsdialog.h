@@ -22,7 +22,6 @@
 #include "ksieveui/managesievewidget.h"
 
 #include <qdialog.h>
-#include <QUrl>
 
 class QTreeWidgetItem;
 

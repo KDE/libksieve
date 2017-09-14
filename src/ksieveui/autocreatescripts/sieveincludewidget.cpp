@@ -27,7 +27,6 @@
 
 #include <QPushButton>
 #include <KLocalizedString>
-#include <KLineEdit>
 #include <QIcon>
 
 #include <QGridLayout>

@@ -19,7 +19,6 @@
 
 #include "sievedatespinbox.h"
 #include "libksieve_debug.h"
-#include <QDebug>
 using namespace KSieveUi;
 
 SieveDateSpinBox::SieveDateSpinBox(QWidget *parent)

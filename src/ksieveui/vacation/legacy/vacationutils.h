@@ -23,7 +23,6 @@ See README for further information.
 */
 #ifndef LEGACY_VACATIONUTILS_H
 #define LEGACY_VACATIONUTILS_H
-#include <QStringList>
 #include <QString>
 #include "ksieveui_export.h"
 

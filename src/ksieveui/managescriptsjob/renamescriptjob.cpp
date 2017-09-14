@@ -20,7 +20,6 @@
 
 #include <KLocalizedString>
 
-#include <QDebug>
 
 using namespace KSieveUi;
 

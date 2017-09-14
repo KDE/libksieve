@@ -36,7 +36,6 @@
 #include <QWhatsThis>
 #include "libksieve_debug.h"
 #include "sievescriptdescriptiondialog.h"
-#include <QDomElement>
 
 using namespace KSieveUi;
 

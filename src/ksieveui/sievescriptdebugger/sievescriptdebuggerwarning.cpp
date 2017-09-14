@@ -18,7 +18,6 @@
 */
 
 #include "sievescriptdebuggerwarning.h"
-#include <KLocalizedString>
 
 using namespace KSieveUi;
 

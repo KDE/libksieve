@@ -35,8 +35,6 @@
 #include <QCheckBox>
 #include <QGridLayout>
 #include <QLabel>
-#include <QDialog>
-#include <QVBoxLayout>
 
 using KMime::Types::AddrSpecList;
 using KMime::Types::AddressList;

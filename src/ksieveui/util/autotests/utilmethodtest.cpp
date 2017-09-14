@@ -23,7 +23,6 @@
 #include "akonadiimapsettinginterfacetest.h"
 #include "../abstractakonadiimapsettinginterface.h"
 #include "../sieveimappasswordprovider.h"
-#include <KSieveUi/SieveImapAccountSettings>
 #include <QTest>
 
 class DataImapPasswordProvider : public KSieveUi::SieveImapPasswordProvider

@@ -20,6 +20,7 @@
 
 #include <QUrl>
 #include <QPointer>
+#include <QStack>
 
 namespace KManageSieve {
 class SieveJob::Private

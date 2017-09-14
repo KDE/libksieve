@@ -21,7 +21,6 @@
 #define AKONADIIMAPSETTINGINTERFACE_H
 
 #include "abstractakonadiimapsettinginterface.h"
-#include <QObject>
 #include <memory>
 class OrgKdeAkonadiImapSettingsInterface;
 namespace KSieveUi {

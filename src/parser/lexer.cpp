@@ -39,7 +39,6 @@
 #include <QString>
 #include <QStringList>
 #include <QTextCodec>
-#include <QDebug>
 
 #include <memory> // std::unique_ptr
 

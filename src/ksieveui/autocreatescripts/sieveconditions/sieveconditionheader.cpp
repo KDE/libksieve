@@ -23,7 +23,6 @@
 #include "editor/sieveeditorutil.h"
 
 #include <KLocalizedString>
-#include <QLineEdit>
 
 #include <QHBoxLayout>
 #include <QLabel>

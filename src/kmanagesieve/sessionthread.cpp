@@ -23,7 +23,6 @@
 #include "kmanagersieve_debug.h"
 
 #include <QThread>
-#include <QUrlQuery>
 #include <QTimer>
 
 #include <KLocalizedString>

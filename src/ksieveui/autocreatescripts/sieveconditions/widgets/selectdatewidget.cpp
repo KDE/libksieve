@@ -30,7 +30,7 @@
 #include <QStackedWidget>
 #include <QSpinBox>
 #include "libksieve_debug.h"
-#include <QDate>
+#include <QTime>
 
 using namespace KSieveUi;
 SelectDateWidget::SelectDateWidget(QWidget *parent)

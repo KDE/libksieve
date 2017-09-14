@@ -20,7 +20,6 @@
 #include <PimCommon/LineEditWithCompleterNg>
 #include <QWebEngineView>
 #include <QAction>
-
 using namespace KSieveUi;
 
 class KSieveUi::FindBarWebEngineViewPrivate

@@ -18,10 +18,8 @@
 #include "parseuserscriptjob.h"
 #include "ksieveui/scriptsparsing/parsingutil.h"
 #include <kmanagesieve/sievejob.h>
-
+#include <QXmlStreamReader>
 #include <KLocalizedString>
-#include <QXmlStreamWriter>
-#include <QDebug>
 
 using namespace KSieveUi;
 ParseUserScriptJob::ParseUserScriptJob(const QUrl &url, QObject *parent)

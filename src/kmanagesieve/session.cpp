@@ -32,7 +32,6 @@
 #include <KMessageBox>
 #include <kio/job.h>
 #include <QRegularExpression>
-#include <QTimer>
 #include <QUrlQuery>
 
 using namespace KManageSieve;

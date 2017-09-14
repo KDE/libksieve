@@ -19,7 +19,6 @@
 
 #ifndef VACATIONUTILS_H
 #define VACATIONUTILS_H
-#include <QStringList>
 #include <QString>
 #include <kmime/kmime_header_parsing.h>
 

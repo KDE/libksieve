@@ -17,7 +17,6 @@
 #include "kmanagesieve_export.h"
 
 #include <QObject>
-#include <QStack>
 #include <QStringList>
 
 #include <QUrl>

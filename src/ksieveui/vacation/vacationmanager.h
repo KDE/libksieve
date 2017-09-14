@@ -21,7 +21,6 @@
 #include <QObject>
 #include "ksieveui_export.h"
 
-#include <QPointer>
 
 class QWidget;
 namespace KSieveUi {

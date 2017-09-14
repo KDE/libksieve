@@ -36,7 +36,6 @@
 #include "libksieve_debug.h"
 #include <QToolButton>
 #include <QWhatsThis>
-#include <QDomElement>
 
 #include <autocreatescripts/sieveactions/sieveactionsetvariable.h>
 

@@ -21,7 +21,7 @@
 #include "ksieveui/vacation/vacationcreatescriptjob.h"
 
 #include <QWidget>
-
+#include <QPointer>
 #include <KLocalizedString>
 #include <KMessageBox>
 

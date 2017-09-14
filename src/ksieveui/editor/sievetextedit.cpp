@@ -33,14 +33,11 @@
 #include <QAction>
 #include <QIcon>
 #include <QAbstractItemView>
-#include <QCompleter>
-#include <QStringListModel>
 #include <QKeyEvent>
 #include <QPainter>
-#include <QScrollBar>
 #include <QMenu>
 #include <QFontDatabase>
-
+#include <QCompleter>
 using namespace KSieveUi;
 
 class KSieveUi::SieveTextEditPrivate

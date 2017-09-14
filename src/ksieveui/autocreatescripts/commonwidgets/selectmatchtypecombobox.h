@@ -19,7 +19,7 @@
 #ifndef SELECTMATCHTYPECOMBOBOX_H
 #define SELECTMATCHTYPECOMBOBOX_H
 
-#include <KComboBox>
+#include <QComboBox>
 
 namespace KSieveUi {
 class SieveEditorGraphicalModeWidget;

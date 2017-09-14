@@ -30,7 +30,6 @@
 #include <kns3/uploaddialog.h>
 #include <KLocalizedString>
 #include <KIconLoader>
-#include <KStandardGuiItem>
 #include <QTemporaryDir>
 #include <kzip.h>
 #include <KIconEngine>

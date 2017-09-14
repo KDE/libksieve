@@ -24,7 +24,6 @@
 #include "widgets/selectheadertypecombobox.h"
 #include "editor/sieveeditorutil.h"
 
-#include <QLineEdit>
 #include <KLocalizedString>
 
 #include <QHBoxLayout>

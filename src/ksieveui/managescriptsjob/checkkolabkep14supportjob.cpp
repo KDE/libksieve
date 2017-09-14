@@ -21,8 +21,6 @@
 #include "util/util_p.h"
 #include <kmanagesieve/sievejob.h>
 
-#include <KMessageBox>
-#include <KLocalizedString>
 
 #include "libksieve_debug.h"
 

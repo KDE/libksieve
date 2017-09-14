@@ -25,7 +25,6 @@
 #include <KPluginFactory>
 #include <QStringList>
 #include <QRegularExpression>
-#include <QDebug>
 
 #include "autocreatescripts/sieveconditions/widgets/regexpeditorlineedit.h"
 using namespace KSieveUi;

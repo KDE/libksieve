@@ -25,9 +25,7 @@ See README for further information.
 #include "vacationscriptextractor.h"
 #include "sieve-vacation.h"
 
-#include <KLocalizedString>
 #include <QDate>
-#include <QLocale>
 #include <QRegularExpression>
 
 using KMime::Types::AddrSpecList;

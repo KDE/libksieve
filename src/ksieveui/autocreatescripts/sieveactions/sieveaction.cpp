@@ -23,8 +23,7 @@
 #include <KLocalizedString>
 
 #include <QWidget>
-#include <QXmlStreamWriter>
-
+#include <QXmlStreamReader>
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 
 using namespace KSieveUi;

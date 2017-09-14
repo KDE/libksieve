@@ -24,7 +24,6 @@ using KSieve::Parser;
 #include <ksieve/error.h>
 #include "libksieve_debug.h"
 #include <QXmlStreamWriter>
-#include <QDebug>
 
 using namespace KSieveUi;
 XMLPrintingScriptBuilder::XMLPrintingScriptBuilder(int indent)

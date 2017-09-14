@@ -24,7 +24,7 @@
 #include "sievescriptpage.h"
 #include "sieveincludewidget.h"
 #include "sieveeditorgraphicalmodewidget.h"
-
+#include <QXmlStreamReader>
 #include <QHBoxLayout>
 #include <KMessageBox>
 #include <KLocalizedString>
@@ -32,12 +32,10 @@
 #include <QPushButton>
 #include <KIconLoader>
 #include <QIcon>
-#include <QXmlStreamWriter>
 
 #include <QVBoxLayout>
 #include <QListWidget>
 #include <QPointer>
-#include <QDomElement>
 #include "libksieve_debug.h"
 
 namespace {
