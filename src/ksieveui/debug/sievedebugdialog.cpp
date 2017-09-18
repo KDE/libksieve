@@ -182,7 +182,7 @@ void SieveDebugDialog::slotGetScript(KManageSieve::SieveJob *job, bool success, 
         mEdit->editor()->appendPlainText(i18n("Retrieving the script failed.\n"
                                               "The server responded:\n%1", job->errorString()));
     } else if (script.isEmpty()) {
-        mEdit->editor()->appendPlainText(i18n("(This script is empty.)\n\n"));
+        mEdit->editor()->appendPlainText(i18n("(This script is empty)\n\n"));
     } else {
         mEdit->editor()->appendPlainText(i18n(
                                              "------------------------------------------------------------\n"
