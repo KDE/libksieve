@@ -85,7 +85,7 @@ void SessionThread::doInit()
 
     m_socket = new KTcpSocket(this);
     connect(m_socket, &QIODevice::readyRead, this, &SessionThread::slotDataReceived);
-    connect(m_socket, SIGNAL(error(KTcpSocket::Error)), this, SLOT(slotSocketError()));
+    connect(m_socket, QOverload<KTcpSocket::Error>::of(&KTcpSocket::error), this, &SessionThread::slotSocketError);
     connect(m_socket, &KTcpSocket::disconnected, this, &SessionThread::socketDisconnected);
     connect(m_socket, &KTcpSocket::connected, this, &SessionThread::socketConnected);
 }
