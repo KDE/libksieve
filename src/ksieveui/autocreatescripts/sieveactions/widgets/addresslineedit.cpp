@@ -45,8 +45,9 @@ void AddressLineEdit::verifyAddress()
 {
 #ifndef QT_NO_STYLE_STYLESHEET
     QString styleSheet;
-    if (!text().isEmpty()) {
-        mIncorrectEmail = !text().contains(QLatin1Char('@'));
+    const QString lineEditText = text();
+    if (!lineEditText.isEmpty()) {
+        mIncorrectEmail = !lineEditText.contains(QLatin1Char('@'));
         if (mNegativeBackground.isEmpty()) {
             KStatefulBrush bgBrush = KStatefulBrush(KColorScheme::View, KColorScheme::NegativeText);
             mNegativeBackground = QStringLiteral("QLineEdit{ color:%1 }").arg(bgBrush.brush(this).color().name());

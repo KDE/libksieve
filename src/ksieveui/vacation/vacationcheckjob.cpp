@@ -116,8 +116,9 @@ void VacationCheckJob::slotGotActiveScripts(ParseUserScriptJob *job)
 {
     Q_ASSERT(job == mParseJob);
     mParseJob = nullptr;
-    if (!job->error().isEmpty()) {
-        emitError(i18n("ParseUserScriptJob failed: %1", job->error()));
+    const QString jobError = job->error();
+    if (!jobError.isEmpty()) {
+        emitError(i18n("ParseUserScriptJob failed: %1", jobError));
         return;
     }
     mActiveScripts = job->activeScriptList();
