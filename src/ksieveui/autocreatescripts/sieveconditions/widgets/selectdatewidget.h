@@ -59,10 +59,8 @@ public:
 Q_SIGNALS:
     void valueChanged();
 
-private Q_SLOTS:
-    void slotDateTypeActivated(int);
-
 private:
+    void slotDateTypeActivated(int);
     SelectDateWidget::DateType dateTypeFromString(const QString &str);
     void initialize();
     QString dateType(DateType type) const;

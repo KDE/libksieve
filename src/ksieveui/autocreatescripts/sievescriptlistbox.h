@@ -68,7 +68,7 @@ Q_SIGNALS:
     void enableButtonOk(bool);
     void valueChanged();
 
-private Q_SLOTS:
+private:
     void slotNew();
     void slotDelete();
     void slotRename();
@@ -80,7 +80,6 @@ private Q_SLOTS:
     void slotDown();
     void slotUp();
 
-private:
     enum ParseSieveScriptTypeBlock {
         TypeUnknown = 0,
         TypeBlockIf,

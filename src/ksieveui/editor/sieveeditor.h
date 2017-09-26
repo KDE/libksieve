@@ -48,10 +48,6 @@ public:
 
     void setListOfIncludeFile(const QStringList &listOfIncludeFile);
     void setModified(bool b);
-private Q_SLOTS:
-    void slotEnableButtonOk(bool b);
-    void slotAccepted();
-    void slotCanceled();
 
 Q_SIGNALS:
     void checkSyntax();
@@ -63,6 +59,9 @@ protected:
     bool event(QEvent *e) override;
     void closeEvent(QCloseEvent *e) override;
 private:
+    void slotEnableButtonOk(bool b);
+    void slotAccepted();
+    void slotCanceled();
     void writeConfig();
     void readConfig();
     SieveEditorPrivate *const d;

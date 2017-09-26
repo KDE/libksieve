@@ -37,10 +37,8 @@ public:
     void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) override;
     void loadScript(QXmlStreamReader &element, QString &error);
 
-private Q_SLOTS:
-    void slotHelp();
-
 private:
+    void slotHelp();
     QCheckBox *mForLoop = nullptr;
     QLineEdit *mName = nullptr;
     SieveHelpButton *mHelpButton = nullptr;

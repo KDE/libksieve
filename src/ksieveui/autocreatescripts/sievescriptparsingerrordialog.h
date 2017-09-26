@@ -34,10 +34,8 @@ public:
 
     void setError(QString script, QString);
 
-private Q_SLOTS:
-    void slotSaveAs();
-
 private:
+    void slotSaveAs();
     void readConfig();
     void writeConfig();
 

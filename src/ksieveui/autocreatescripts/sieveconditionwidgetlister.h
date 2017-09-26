@@ -47,19 +47,17 @@ public:
     void setCondition(const QString &conditionName, QXmlStreamReader &element, bool notCondition, QString &error);
     void clear();
 
-private Q_SLOTS:
-    void slotAddWidget();
-    void slotRemoveWidget();
-    void slotConditionChanged(int index);
-    void slotHelp();
-    void slotAddComment();
-
 Q_SIGNALS:
     void addWidget(QWidget *w);
     void removeWidget(QWidget *w);
     void valueChanged();
 
 private:
+    void slotAddWidget();
+    void slotRemoveWidget();
+    void slotConditionChanged(int index);
+    void slotHelp();
+    void slotAddComment();
     void initWidget();
     void setFilterCondition(QWidget *widget);
     QList<KSieveUi::SieveCondition *> mConditionList;

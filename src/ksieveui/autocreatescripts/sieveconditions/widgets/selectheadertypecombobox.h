@@ -55,11 +55,10 @@ public:
     QString headers() const;
     void setListHeaders(const QMap<QString, QString> &lst, const QStringList &selectedHeaders);
 
-private Q_SLOTS:
-    void slotNewHeaderTextChanged(const QString &text);
-    void slotAddNewHeader();
 
 private:
+    void slotNewHeaderTextChanged(const QString &text);
+    void slotAddNewHeader();
     void readConfig();
     void writeConfig();
     SelectHeadersWidget *mListWidget = nullptr;

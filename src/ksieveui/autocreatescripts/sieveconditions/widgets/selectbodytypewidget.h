@@ -37,11 +37,8 @@ public:
 
 Q_SIGNALS:
     void valueChanged();
-
-private Q_SLOTS:
-    void slotBodyTypeChanged(int);
-
 private:
+    void slotBodyTypeChanged(int);
     void initialize();
     KComboBox *mBodyCombobox = nullptr;
     QLineEdit *mBodyLineEdit = nullptr;

@@ -60,11 +60,9 @@ public:
 Q_SIGNALS:
     void addNewBlock(QWidget *widget, KSieveUi::SieveWidgetPageAbstract::PageType type);
 
-private Q_SLOTS:
+private:
     void slotRadioClicked(QAbstractButton *);
     void slotAddBlock();
-
-private:
     void updateWidget();
     void updateCondition();
     MatchCondition mMatchCondition;

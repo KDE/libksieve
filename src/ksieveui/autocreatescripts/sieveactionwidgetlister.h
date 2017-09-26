@@ -51,12 +51,6 @@ public:
 
     void setLocaleVariable(const SieveGlobalVariableActionWidget::VariableElement &var);
 
-private Q_SLOTS:
-    void slotAddWidget();
-    void slotRemoveWidget();
-    void slotActionChanged(int index);
-    void slotHelp();
-    void slotAddComment();
 
 Q_SIGNALS:
     void addWidget(QWidget *w);
@@ -65,6 +59,11 @@ Q_SIGNALS:
     void valueChanged();
 
 private:
+    void slotAddWidget();
+    void slotRemoveWidget();
+    void slotActionChanged(int index);
+    void slotHelp();
+    void slotAddComment();
     void setFilterAction(QWidget *widget);
     void initWidget();
     QList<KSieveUi::SieveAction *> mActionList;
