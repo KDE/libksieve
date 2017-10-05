@@ -44,7 +44,10 @@ public:
 Q_SIGNALS:
     void finished();
 
-private Q_SLOTS:
+protected:
+    void hideEvent(QHideEvent *) override;
+
+private:
     void slotGetResult(KManageSieve::SieveJob *, bool, const QString &, bool);
     void slotPutResult(KManageSieve::SieveJob *job, bool);
 
@@ -55,10 +58,6 @@ private Q_SLOTS:
     void slotEditScript(const ManageSieveWidget::ScriptInfo &info);
     void slotNewScript(const ManageSieveWidget::ScriptInfo &info);
     void slotCheckScriptFinished(const QString &errorMsg, bool success);
-protected:
-    void hideEvent(QHideEvent *) override;
-
-private:
     void changeActiveScript(QTreeWidgetItem *, bool activate = true);
 
     void updateButtons(QTreeWidgetItem *item);

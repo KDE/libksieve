@@ -41,7 +41,7 @@ public Q_SLOTS:
 Q_SIGNALS:
     void updateVacationScriptStatus(bool active, const QString &serverName);
 
-private Q_SLOTS:
+private:
     void slotDialogCanceled();
     void slotDialogOk();
     void slotUpdateVacationScriptStatus(bool active, const QString &serverName);

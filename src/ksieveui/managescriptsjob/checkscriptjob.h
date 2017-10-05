@@ -44,11 +44,9 @@ public:
 Q_SIGNALS:
     void finished(const QString &msg, bool success);
 
-private Q_SLOTS:
+private:
     void slotPutCheckSyntaxResult(KManageSieve::SieveJob *job, bool success);
     void slotRestoreFile(KManageSieve::SieveJob *job, bool success);
-
-private:
     CheckScriptJobPrivate *const d;
 };
 }

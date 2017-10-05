@@ -35,15 +35,13 @@ public:
 
     void searchActiveJob();
 
-private Q_SLOTS:
-    void slotGetScriptList(KManageSieve::SieveJob *job, bool success, const QStringList &scriptList, const QString &activeScript);
-
 Q_SIGNALS:
     void canNotGetScriptList();
     void resourceHasNotSieveSupport();
     void scriptListResult(const QStringList &scriptList, const QString &activeScript, bool hasIncludeSupport);
 
 private:
+    void slotGetScriptList(KManageSieve::SieveJob *job, bool success, const QStringList &scriptList, const QString &activeScript);
     void killJob();
     QUrl mUrl;
     KManageSieve::SieveJob *mSieveJob = nullptr;

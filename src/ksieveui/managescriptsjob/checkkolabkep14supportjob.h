@@ -79,7 +79,7 @@ Q_SIGNALS:
 private:
     CheckKolabKep14SupportJobPrivate *const d;
 
-private Q_SLOTS:
+private:
     void slotCheckKep14Support(KManageSieve::SieveJob *job, bool success, const QStringList &availableScripts, const QString &activeScript);
 };
 }
