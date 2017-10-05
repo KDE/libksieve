@@ -294,7 +294,7 @@ Lexer::Token Lexer::Impl::nextToken(QString &result)
             // and CRLF! That should be preserved somehow...
             return MultiLineString;
         }
-    // else fall through:
+        Q_FALLTHROUGH();
     default: // Identifier (first must not be 0-9, and can't (caught by Number above))
         if (!isIText(*mState.cursor)) {
             makeError(Error::IllegalCharacter);
@@ -688,7 +688,7 @@ bool Lexer::Impl::parseQuotedString(QString &result)
             if (atEnd()) {
                 break;
             }
-        // else fall through:
+            Q_FALLTHROUGH();
         default:
             if (!is8Bit(*mState.cursor)) {
                 result += QLatin1Char(*mState.cursor++);
