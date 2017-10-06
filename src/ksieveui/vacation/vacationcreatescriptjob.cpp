@@ -126,9 +126,8 @@ void VacationCreateScriptJob::slotGetScript(KManageSieve::SieveJob *job, bool su
     mSieveJob = nullptr;
     QString script = mScript;
     if (success || !oldScript.trimmed().isEmpty()) {
-        //TODO ???? why using script for two method ?
         script = VacationUtils::mergeRequireLine(oldScript, mScript);
-        script = VacationUtils::updateVacationBlock(oldScript, mScript);
+        script = VacationUtils::updateVacationBlock(oldScript, script);
     }
     if (mKep14Support) {
         mSieveJob = KManageSieve::SieveJob::put(mUrl, mScript, false, false);

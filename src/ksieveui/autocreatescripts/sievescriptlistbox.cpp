@@ -521,7 +521,7 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
                         const SieveGlobalVariableActionWidget::VariableElement var = currentPage->globalVariableWidget()->loadSetVariable(n, error);
                         if (var.isValid()) {
                             qCDebug(LIBKSIEVE_LOG) << "It's not a global variable";
-                            if (!currentPage || (typeBlock == TypeBlockIf) || (typeBlock == TypeBlockElse) || (typeBlock == TypeBlockElsif)) {
+                            if ((typeBlock == TypeBlockIf) || (typeBlock == TypeBlockElse) || (typeBlock == TypeBlockElsif)) {
                                 currentPage = createNewScript(scriptName.isEmpty() ? createUniqName() : scriptName, comment);
                             }
                             typeBlock = TypeBlockAction;
