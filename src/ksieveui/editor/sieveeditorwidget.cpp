@@ -54,7 +54,6 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
     mDebug = !qEnvironmentVariableIsEmpty("KDEPIM_DEBUGGING");
-    mGenerateXml = nullptr;
 
     QToolBar *toolbar = new QToolBar;
     toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
