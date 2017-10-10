@@ -43,7 +43,8 @@ SieveEditorGraphicalModeWidgetTest::SieveEditorGraphicalModeWidgetTest(QObject *
 QString readSieveFile(const QString &sieveFile)
 {
     QFile file(sieveFile);
-    file.open(QIODevice::ReadOnly);
+    bool result = file.open(QIODevice::ReadOnly);
+    Q_ASSERT(result);
     Q_ASSERT(file.isOpen());
     const QString data = QString::fromUtf8(file.readAll());
     return data;
