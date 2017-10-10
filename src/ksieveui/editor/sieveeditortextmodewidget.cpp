@@ -214,7 +214,6 @@ void SieveEditorTextModeWidget::slotShowGoToLine()
 
 void SieveEditorTextModeWidget::generateXml()
 {
-#if !defined(NDEBUG)
     const QByteArray script = mTextEdit->toPlainText().toUtf8();
     KSieve::Parser parser(script.begin(),
                           script.begin() + script.length());
@@ -229,7 +228,6 @@ void SieveEditorTextModeWidget::generateXml()
     }
     dlg->exec();
     delete dlg;
-#endif
 }
 
 void SieveEditorTextModeWidget::createRulesGraphically()
