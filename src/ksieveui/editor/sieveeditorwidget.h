@@ -139,11 +139,10 @@ private:
     QAction *mCreateRulesGraphically = nullptr;
     QAction *mSaveAs = nullptr;
     QAction *mShareScript = nullptr;
-#if !defined(NDEBUG)
     QAction *mGenerateXml = nullptr;
-#endif
     EditorMode mMode = EditorMode::TextMode;
     bool mModified = false;
+    bool mDebug = false;
 };
 }
 
