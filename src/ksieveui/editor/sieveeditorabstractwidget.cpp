@@ -74,7 +74,7 @@ void SieveEditorAbstractWidget::slotImport()
     const QString filter = i18n("*.siv;;sieve files (*.siv);;all files (*)");
     QPointer<QFileDialog> fdlg(new QFileDialog(this, i18n("Import Script Sieve"), QString(), filter));
     fdlg->setFileMode(QFileDialog::ExistingFile);
-    if (fdlg->exec() == QDialog::Accepted && fdlg) {
+    if (fdlg->exec() == QDialog::Accepted) {
         const QStringList fileNames = fdlg->selectedFiles();
         if (!loadFromFile(fileNames.at(0))) {
             KMessageBox::error(this,
