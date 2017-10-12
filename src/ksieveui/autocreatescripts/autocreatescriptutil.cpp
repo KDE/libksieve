@@ -52,7 +52,7 @@ QString AutoCreateScriptUtil::createList(const QString &str, QChar separator, bo
     }
 }
 
-QString AutoCreateScriptUtil::quoteStr(QString str, bool protectSlash)
+QString AutoCreateScriptUtil::quoteStr(const QString &str, bool protectSlash)
 {
     QString st = str;
     if (protectSlash) {
@@ -100,6 +100,7 @@ QStringList AutoCreateScriptUtil::createListFromString(QString str)
     }
     lst = str.split(QStringLiteral(", "));
     QStringList resultLst;
+    resultLst.reserve(lst.count());
     for (QString s : qAsConst(lst)) {
         s.remove(QLatin1Char('"'));
         resultLst << s.trimmed();

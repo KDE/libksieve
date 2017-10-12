@@ -38,7 +38,7 @@ QString strValue(QXmlStreamReader &element);
 QStringList listValue(QXmlStreamReader &element);
 QString listValueToStr(QXmlStreamReader &element);
 QString fixListValue(QString valueStr);
-QString quoteStr(QString str, bool protectSlash = true);
+QString quoteStr(const QString &str, bool protectSlash = true);
 void comboboxItemNotFound(const QString &searchItem, const QString &name, QString &error);
 QString createFullWhatsThis(const QString &help, const QString &href);
 QString protectSlash(QString str);

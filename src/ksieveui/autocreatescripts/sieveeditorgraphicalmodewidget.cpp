@@ -161,7 +161,7 @@ void SieveEditorGraphicalModeWidget::setListOfIncludeFile(const QStringList &lis
 
 void SieveEditorGraphicalModeWidget::slotSwitchToTextMode()
 {
-    switchTextMode(mSieveParsingWarning->initialScript());
+    Q_EMIT switchTextMode(mSieveParsingWarning->initialScript());
 }
 
 QStringList KSieveUi::SieveEditorGraphicalModeWidget::listOfIncludeFile() const

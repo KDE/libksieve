@@ -284,6 +284,7 @@ QString KSieveUi::VacationUtils::composeScript(const Vacation &vacation)
     if (!vacation.aliases.empty()) {
         addressesArgument += QStringLiteral(":addresses [ ");
         QStringList sl;
+        sl.reserve(vacation.aliases.count());
         AddrSpecList::const_iterator end = vacation.aliases.constEnd();
         for (AddrSpecList::const_iterator it = vacation.aliases.begin(); it != end; ++it) {
             sl.push_back(QLatin1Char('"') + (*it).asString().replace(QLatin1Char('\\'), QStringLiteral("\\\\")).replace(QLatin1Char('"'), QStringLiteral("\\\"")) + QLatin1Char('"'));

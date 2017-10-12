@@ -64,8 +64,8 @@ int main(int argc, char **argv)
     }
     //qDebug() << "scriptUtf8 = \"" + script +"\"";
 
-    KSieve::Parser sieveParser(script.begin(),
-                               script.begin() + script.length());
+    KSieve::Parser sieveParser(script.constBegin(),
+                               script.constBegin() + script.length());
     KSieveUi::XMLPrintingScriptBuilder psb(2);
     sieveParser.setScriptBuilder(&psb);
     if (sieveParser.parse()) {
