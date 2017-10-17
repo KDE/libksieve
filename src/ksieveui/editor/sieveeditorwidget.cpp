@@ -247,9 +247,12 @@ void SieveEditorWidget::updateOriginalScript()
 void SieveEditorWidget::print()
 {
     switch (mMode) {
-    case TextMode:
+    case TextMode: {
+        bool wasModified = isModified();
         mTextModeWidget->print();
+        setModified(wasModified);
         break;
+    }
     case GraphicMode:
         break;
     case Unknown:
@@ -261,9 +264,12 @@ void SieveEditorWidget::print()
 void SieveEditorWidget::printPreview()
 {
     switch (mMode) {
-    case TextMode:
+    case TextMode: {
+        bool wasModified = isModified();
         mTextModeWidget->printPreview();
+        setModified(wasModified);
         break;
+    }
     case GraphicMode:
         break;
     case Unknown:
