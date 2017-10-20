@@ -113,6 +113,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
         connect(this, &SieveEditorWidget::copyAvailable, menuBar, &SieveEditorMenuBar::slotCopyAvailable);
         connect(this, &SieveEditorWidget::redoAvailable, menuBar, &SieveEditorMenuBar::slotRedoAvailable);
         connect(this, &SieveEditorWidget::undoAvailable, menuBar, &SieveEditorMenuBar::slotUndoAvailable);
+        menuBar->fileMenu()->addSeparator();
         menuBar->fileMenu()->addAction(mSaveAs);
         menuBar->fileMenu()->addSeparator();
         menuBar->fileMenu()->addAction(mShareScript);
