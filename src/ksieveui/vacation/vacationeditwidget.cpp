@@ -254,8 +254,8 @@ AddrSpecList VacationEditWidget::mailAliases() const
 {
     QByteArray text = mMailAliasesEdit->text().toLatin1(); // ### IMAA: !ok
     AddressList al;
-    const char *s = text.begin();
-    parseAddressList(s, text.end(), al);
+    const char *s = text.cbegin();
+    parseAddressList(s, text.cend(), al);
 
     AddrSpecList asl;
     AddressList::const_iterator end(al.constEnd());
