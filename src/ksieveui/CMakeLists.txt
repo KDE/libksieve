@@ -41,6 +41,7 @@ set(ksieveui_vacation_LIB_SRCS
     vacation/vacationcheckjob.cpp
     vacation/multiimapvacationmanager.cpp
     vacation/vacationmanager.cpp
+    vacation/vacationmailactionwidget.cpp
     vacation/legacy/vacationutils.cpp
     vacation/legacy/vacationscriptextractor.cpp
     )

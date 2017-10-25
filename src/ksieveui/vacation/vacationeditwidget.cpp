@@ -175,6 +175,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mMailAction->setObjectName(QStringLiteral("mMailAction"));
     connect(mMailAction, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &VacationEditWidget::mailActionChanged);
 
+    //Add imap select folder plugin here.
     mMailActionRecipient = new QLineEdit(this);
     mMailActionRecipient->setObjectName(QStringLiteral("mMailActionRecipient"));
     mMailActionRecipient->setClearButtonEnabled(true);
