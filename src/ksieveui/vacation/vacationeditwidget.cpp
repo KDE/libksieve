@@ -420,6 +420,11 @@ void VacationEditWidget::setMailAction(VacationUtils::MailAction action, const Q
     mMailActionRecipient->setMailAction(action, recipient);
 }
 
+void VacationEditWidget::setSieveImapAccountSettings(const SieveImapAccountSettings &account)
+{
+    mMailActionRecipient->setSieveImapAccountSettings(account);
+}
+
 VacationUtils::MailAction VacationEditWidget::mailAction() const
 {
     return static_cast<VacationUtils::MailAction>(mMailAction->currentIndex());

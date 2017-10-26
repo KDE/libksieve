@@ -227,6 +227,11 @@ void VacationDialog::setEndTime(const QTime &endTime)
     mVacationEditWidget->setEndTime(endTime);
 }
 
+void VacationDialog::setSieveImapAccountSettings(const SieveImapAccountSettings &account)
+{
+    mVacationEditWidget->setSieveImapAccountSettings(account);
+}
+
 QDate VacationDialog::startDate() const
 {
     return mVacationEditWidget->startDate();

@@ -31,6 +31,7 @@ typedef QVector<AddrSpec> AddrSpecList;
 
 namespace KSieveUi {
 class VacationEditWidget;
+class SieveImapAccountSettings;
 class VacationDialog : public QDialog
 {
     Q_OBJECT
@@ -82,6 +83,8 @@ public:
 
     QTime endTime() const;
     void setEndTime(const QTime &endTime);
+
+    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);
 
 Q_SIGNALS:
     void okClicked();

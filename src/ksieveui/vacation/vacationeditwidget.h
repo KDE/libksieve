@@ -51,6 +51,7 @@ typedef QVector<AddrSpec> AddrSpecList;
 
 namespace KSieveUi {
 class VacationMailActionWidget;
+class SieveImapAccountSettings;
 class VacationEditWidget : public QWidget
 {
     Q_OBJECT
@@ -101,6 +102,7 @@ public:
     VacationUtils::MailAction mailAction() const;
     QString mailActionRecipient() const;
     void setMailAction(VacationUtils::MailAction action, const QString &recipient);
+    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);
 
     void setDefault();
 
