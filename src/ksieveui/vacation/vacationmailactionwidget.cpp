@@ -21,6 +21,7 @@
 #include "vacationmailactionwidget.h"
 #include <QStackedWidget>
 #include <QHBoxLayout>
+#include <QLineEdit>
 
 using namespace KSieveUi;
 
@@ -34,6 +35,12 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
     mStackedWidget = new QStackedWidget(this);
     mStackedWidget->setObjectName(QStringLiteral("stackedWidget"));
     mainLayout->addWidget(mStackedWidget);
+
+
+    //AbstractMoveImapFolderWidget *mMoveImapFolderWidget;
+    mMailActionRecipient = new QLineEdit(this);
+    mMailActionRecipient->setObjectName(QStringLiteral("mailActionRecipient"));
+    mStackedWidget->addWidget(mMailActionRecipient);
 
 }
 

@@ -22,7 +22,9 @@
 
 #include <QWidget>
 class QStackedWidget;
+class QLineEdit;
 namespace KSieveUi {
+class AbstractMoveImapFolderWidget;
 class VacationMailActionWidget : public QWidget
 {
     Q_OBJECT
@@ -30,7 +32,9 @@ public:
     explicit VacationMailActionWidget(QWidget *parent = nullptr);
     ~VacationMailActionWidget();
 private:
-    QStackedWidget *mStackedWidget;
+    QStackedWidget *mStackedWidget = nullptr;
+    AbstractMoveImapFolderWidget *mMoveImapFolderWidget = nullptr;
+    QLineEdit *mMailActionRecipient = nullptr;
 };
 }
 
