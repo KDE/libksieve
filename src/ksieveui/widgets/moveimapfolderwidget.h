@@ -22,10 +22,11 @@
 
 #include <QWidget>
 #include <KSieveUi/AbstractMoveImapFolderWidget>
+#include "ksieveui_private_export.h"
 class QLineEdit;
 namespace KSieveUi {
 class SieveImapAccountSettings;
-class MoveImapFolderWidget : public KSieveUi::AbstractMoveImapFolderWidget
+class KSIEVEUI_TESTS_EXPORT MoveImapFolderWidget : public KSieveUi::AbstractMoveImapFolderWidget
 {
     Q_OBJECT
 public:
