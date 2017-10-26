@@ -27,6 +27,7 @@
 #include <QSpinBox>
 #include <QTest>
 #include <kpimtextedit/plaintexteditorwidget.h>
+#include <vacation/vacationmailactionwidget.h>
 
 VacationEditWidgetTest::VacationEditWidgetTest(QObject *parent)
     : QObject(parent)
@@ -111,11 +112,9 @@ void VacationEditWidgetTest::shouldHaveDefaultValue()
     QVERIFY(mMailAction);
     QCOMPARE(mMailAction->count(), 4);
 
-    QLineEdit *mMailActionRecipient = w.findChild<QLineEdit *>(QStringLiteral("mMailActionRecipient"));
+    KSieveUi::VacationMailActionWidget *mMailActionRecipient = w.findChild<KSieveUi::VacationMailActionWidget *>(QStringLiteral("mMailActionRecipient"));
     QVERIFY(mMailActionRecipient);
-    QVERIFY(mMailActionRecipient->text().isEmpty());
-    QVERIFY(!mMailActionRecipient->isEnabled());
-    QVERIFY(mMailActionRecipient->isClearButtonEnabled());
+    QVERIFY(mMailActionRecipient->mailActionRecipient().isEmpty());
 
     QLabel *actionIncomingMailsLabel = w.findChild<QLabel *>(QStringLiteral("actionIncomingMailsLabel"));
     QVERIFY(actionIncomingMailsLabel);
