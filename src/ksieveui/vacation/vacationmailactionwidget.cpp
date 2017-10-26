@@ -42,7 +42,6 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
     mMailActionRecipient = new QLineEdit(this);
     mMailActionRecipient->setObjectName(QStringLiteral("mailActionRecipient"));
     mMailActionRecipient->setClearButtonEnabled(true);
-    mMailActionRecipient->setEnabled(false);
 
     mStackedWidget->addWidget(mMailActionRecipient);
 
@@ -56,6 +55,7 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
     mMoveImapFolderWidget->setObjectName(QStringLiteral("moveImapFolderWidget"));
     mStackedWidget->addWidget(mMoveImapFolderWidget);
     mStackedWidget->setCurrentIndex(0);
+    setEnabled(false);
 }
 
 VacationMailActionWidget::~VacationMailActionWidget()
