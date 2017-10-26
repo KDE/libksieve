@@ -118,12 +118,11 @@ void MultiImapVacationDialog::init()
     bool foundOneImap = false;
     QDialogButtonBox *buttonBox = nullptr;
 
-    const QMap <QString, QUrl> list = d->mVacationManager->serverList();
-    QMapIterator<QString, QUrl> i(list);
+    const QMap <QString, KSieveUi::Util::AccountInfo> list = d->mVacationManager->serverList();
+    QMapIterator<QString, KSieveUi::Util::AccountInfo> i(list);
     while (i.hasNext()) {
         i.next();
-        const QUrl url = i.value();
-        createPage(i.key(), url);
+        createPage(i.key(), i.value());
         foundOneImap = true;
     }
     if (foundOneImap) {
@@ -151,13 +150,14 @@ void MultiImapVacationDialog::slotCanceled()
     Q_EMIT cancelClicked();
 }
 
-void MultiImapVacationDialog::createPage(const QString &serverName, const QUrl &url)
+void MultiImapVacationDialog::createPage(const QString &serverName, const KSieveUi::Util::AccountInfo &info)
 {
     VacationPageWidget *page = new VacationPageWidget;
-    page->setServerUrl(url);
+    page->setServerUrl(info.sieveUrl);
     page->setServerName(serverName);
     page->setVacationManager(d->mVacationManager);
-    d->mTabWidget->addTab(page, serverName + QStringLiteral(" (%1)").arg(url.userName()));
+    page->setSieveImapAccountSettings(info.sieveImapAccountSettings);
+    d->mTabWidget->addTab(page, serverName + QStringLiteral(" (%1)").arg(info.sieveUrl.userName()));
 }
 
 void MultiImapVacationDialog::readConfig()

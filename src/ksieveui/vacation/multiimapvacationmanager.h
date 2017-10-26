@@ -22,7 +22,7 @@
 
 #include <QObject>
 #include <QMap>
-
+#include "util_p.h"
 #include "ksieveui_export.h"
 
 class QUrl;
@@ -39,7 +39,7 @@ public:
     ~MultiImapVacationManager();
 
     void checkVacation();
-    QMap<QString, QUrl> serverList() const;
+    QMap<QString, KSieveUi::Util::AccountInfo> serverList() const;
     void checkVacation(const QString &serverName, const QUrl &url);
 
     bool kep14Support(const QString &serverName) const;

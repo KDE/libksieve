@@ -23,6 +23,7 @@
 #include <QDialog>
 #include <QUrl>
 #include "ksieveui_export.h"
+#include "util_p.h"
 
 namespace KSieveUi {
 class VacationCreateScriptJob;
@@ -47,7 +48,7 @@ private:
     void slotOkClicked();
     void slotDefaultClicked();
     void slotCanceled();
-    void createPage(const QString &serverName, const QUrl &url);
+    void createPage(const QString &serverName, const KSieveUi::Util::AccountInfo &info);
     void init();
     void readConfig();
     void writeConfig();

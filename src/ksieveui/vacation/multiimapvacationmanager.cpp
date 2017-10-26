@@ -40,9 +40,9 @@ MultiImapVacationManager::~MultiImapVacationManager()
 {
 }
 
-QMap <QString, QUrl> MultiImapVacationManager::serverList() const
+QMap <QString, KSieveUi::Util::AccountInfo> MultiImapVacationManager::serverList() const
 {
-    QMap <QString, QUrl> list;
+    QMap <QString, KSieveUi::Util::AccountInfo> list;
     const QVector<KSieveUi::SieveImapInstance> instances = KSieveUi::Util::sieveImapInstances();
     for (const KSieveUi::SieveImapInstance &instance : instances) {
         if (instance.status() == KSieveUi::SieveImapInstance::Broken) {
@@ -52,7 +52,7 @@ QMap <QString, QUrl> MultiImapVacationManager::serverList() const
         const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(instance.identifier(), mPasswordProvider);
         const QUrl url = info.sieveUrl;
         if (!url.isEmpty()) {
-            list.insert(instance.name(), url);
+            list.insert(instance.name(), info);
         }
     }
     return list;
@@ -84,10 +84,10 @@ void MultiImapVacationManager::checkVacation()
     mNumberOfJobs = 0;
     mCheckInProgress = true;
 
-    QMapIterator<QString, QUrl> i(serverList());
+    QMapIterator<QString, KSieveUi::Util::AccountInfo> i(serverList());
     while (i.hasNext()) {
         i.next();
-        checkVacation(i.key(), i.value());
+        checkVacation(i.key(), i.value().sieveUrl);
     }
 }
 
