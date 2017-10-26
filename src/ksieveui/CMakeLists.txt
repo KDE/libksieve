@@ -120,7 +120,6 @@ set(ksieveui_autocreatescripts_LIB_SRCS
     autocreatescripts/sieveactions/widgets/multilineedit.cpp
     autocreatescripts/sieveactions/widgets/selectvacationcombobox.cpp
     autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp
-    autocreatescripts/sieveactions/widgets/moveimapfolderwidget.cpp
     autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp
     autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp
     autocreatescripts/commonwidgets/selectmimetypecombobox.cpp
@@ -205,6 +204,7 @@ set(ksieveui_widgets_SRCS
     widgets/abstractregexpeditorlineedit.cpp
     widgets/lineeditvalidator.cpp
     widgets/includefilelineedit.cpp
+    widgets/moveimapfolderwidget.cpp
     )
 
 set(ksieveui_LIB_SRCS

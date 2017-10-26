@@ -35,8 +35,6 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
     mStackedWidget->setObjectName(QStringLiteral("stackedWidget"));
     mainLayout->addWidget(mStackedWidget);
 
-
-
 }
 
 VacationMailActionWidget::~VacationMailActionWidget()

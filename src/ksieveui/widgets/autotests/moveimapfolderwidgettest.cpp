@@ -18,7 +18,7 @@
 */
 
 #include "moveimapfolderwidgettest.h"
-#include "../sieveactions/widgets/moveimapfolderwidget.h"
+#include "../moveimapfolderwidget.h"
 #include <QTest>
 #include <QHBoxLayout>
 #include <QLineEdit>

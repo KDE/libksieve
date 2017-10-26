@@ -9,3 +9,5 @@ endmacro()
 
 add_autocreatescriptswidget_test(lineeditvalidatortest.cpp "")
 add_autocreatescriptswidget_test(includefilelineedittest.cpp "")
+add_autocreatescriptswidget_test(moveimapfolderwidgettest.cpp "../moveimapfolderwidget.cpp")
+
