@@ -19,12 +19,23 @@
 
 
 #include "vacationmailactionwidget.h"
+#include <QStackedWidget>
+#include <QHBoxLayout>
 
 using namespace KSieveUi;
 
 VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
     : QWidget(parent)
 {
+    QHBoxLayout *mainLayout = new QHBoxLayout(this);
+    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setMargin(0);
+
+    mStackedWidget = new QStackedWidget(this);
+    mStackedWidget->setObjectName(QStringLiteral("stackedWidget"));
+    mainLayout->addWidget(mStackedWidget);
+
+
 
 }
 

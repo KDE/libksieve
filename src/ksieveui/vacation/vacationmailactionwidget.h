@@ -21,6 +21,7 @@
 #define VACATIONMAILACTIONWIDGET_H
 
 #include <QWidget>
+class QStackedWidget;
 namespace KSieveUi {
 class VacationMailActionWidget : public QWidget
 {
@@ -28,6 +29,8 @@ class VacationMailActionWidget : public QWidget
 public:
     explicit VacationMailActionWidget(QWidget *parent = nullptr);
     ~VacationMailActionWidget();
+private:
+    QStackedWidget *mStackedWidget;
 };
 }
 

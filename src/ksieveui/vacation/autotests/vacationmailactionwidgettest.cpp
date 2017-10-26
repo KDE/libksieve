@@ -18,6 +18,9 @@
 */
 
 #include "vacationmailactionwidgettest.h"
+#include "../vacationmailactionwidget.h"
+#include <QHBoxLayout>
+#include <QStackedWidget>
 #include <QTest>
 
 QTEST_MAIN(VacationMailActionWidgetTest)
@@ -26,4 +29,16 @@ VacationMailActionWidgetTest::VacationMailActionWidgetTest(QObject *parent)
     : QObject(parent)
 {
 
+}
+
+void VacationMailActionWidgetTest::shouldHaveDefaultValue()
+{
+    KSieveUi::VacationMailActionWidget w;
+
+    QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
+    QVERIFY(mainLayout);
+    QCOMPARE(mainLayout->margin(), 0);
+
+    QStackedWidget *mStackedWidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedWidget"));
+    QVERIFY(mStackedWidget);
 }

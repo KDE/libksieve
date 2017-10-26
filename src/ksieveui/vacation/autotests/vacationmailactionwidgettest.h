@@ -28,6 +28,8 @@ class VacationMailActionWidgetTest : public QObject
 public:
     explicit VacationMailActionWidgetTest(QObject *parent = nullptr);
     ~VacationMailActionWidgetTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValue();
 };
 
 #endif // VACATIONMAILACTIONWIDGETTEST_H
