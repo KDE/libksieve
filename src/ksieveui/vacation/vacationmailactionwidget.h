@@ -21,16 +21,20 @@
 #define VACATIONMAILACTIONWIDGET_H
 
 #include <QWidget>
+#include "vacation/vacationutils.h"
 class QStackedWidget;
 class QLineEdit;
 namespace KSieveUi {
 class AbstractMoveImapFolderWidget;
+class SieveImapAccountSettings;
 class VacationMailActionWidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit VacationMailActionWidget(QWidget *parent = nullptr);
     ~VacationMailActionWidget();
+    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);
+    void mailActionChanged(KSieveUi::VacationUtils::MailAction action);
 private:
     QStackedWidget *mStackedWidget = nullptr;
     AbstractMoveImapFolderWidget *mMoveImapFolderWidget = nullptr;

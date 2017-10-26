@@ -47,8 +47,6 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
     KPluginFactory *factory = loader.factory();
     if (factory) {
         mMoveImapFolderWidget = factory->create<KSieveUi::AbstractMoveImapFolderWidget>();
-        //TODO
-        //mMoveImapFolderWidget->setSieveImapAccountSettings(sieveImapAccountSettings());
     } else {
         mMoveImapFolderWidget = new KSieveUi::MoveImapFolderWidget;
     }
@@ -59,4 +57,14 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
 VacationMailActionWidget::~VacationMailActionWidget()
 {
 
+}
+
+void VacationMailActionWidget::setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account)
+{
+    mMoveImapFolderWidget->setSieveImapAccountSettings(account);
+}
+
+void VacationMailActionWidget::mailActionChanged(KSieveUi::VacationUtils::MailAction action)
+{
+    //TODO
 }
