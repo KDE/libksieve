@@ -55,6 +55,7 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
     }
     mMoveImapFolderWidget->setObjectName(QStringLiteral("moveImapFolderWidget"));
     mStackedWidget->addWidget(mMoveImapFolderWidget);
+    mStackedWidget->setCurrentIndex(0);
 }
 
 VacationMailActionWidget::~VacationMailActionWidget()

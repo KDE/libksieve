@@ -23,6 +23,7 @@
 #include <QLineEdit>
 #include <QStackedWidget>
 #include <QTest>
+#include <KSieveUi/AbstractMoveImapFolderWidget>
 
 QTEST_MAIN(VacationMailActionWidgetTest)
 
@@ -43,6 +44,7 @@ void VacationMailActionWidgetTest::shouldHaveDefaultValue()
     QStackedWidget *mStackedWidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedWidget"));
     QVERIFY(mStackedWidget);
 
+    QCOMPARE(mStackedWidget->count(), 2);
     QWidget *mMailActionRecipient = mStackedWidget->widget(0);
     QVERIFY(mMailActionRecipient);
     QLineEdit *lineEdit = dynamic_cast<QLineEdit *>(mMailActionRecipient);
@@ -50,4 +52,15 @@ void VacationMailActionWidgetTest::shouldHaveDefaultValue()
     QCOMPARE(lineEdit->objectName(), QStringLiteral("mailActionRecipient"));
     QVERIFY(!lineEdit->isEnabled());
     QVERIFY(lineEdit->isClearButtonEnabled());
+
+
+    QCOMPARE(mStackedWidget->currentIndex(), 0);
+
+    QWidget *mMoveImapFolderWidget = mStackedWidget->widget(1);
+    QVERIFY(mMoveImapFolderWidget);
+    KSieveUi::AbstractMoveImapFolderWidget *abstractMoveImapFolderWidget = dynamic_cast<KSieveUi::AbstractMoveImapFolderWidget *>(mMoveImapFolderWidget);
+    QVERIFY(abstractMoveImapFolderWidget);
+    QCOMPARE(abstractMoveImapFolderWidget->objectName(), QStringLiteral("moveImapFolderWidget"));
+
+    QVERIFY(w.mailActionRecipient().isEmpty());
 }
