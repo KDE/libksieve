@@ -19,6 +19,7 @@
 
 #include "vacationeditwidget.h"
 #include "vacationutils.h"
+#include "vacationmailactionwidget.h"
 
 #include <KLocalizedString>
 #include <KDateComboBox>
@@ -176,10 +177,8 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     connect(mMailAction, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &VacationEditWidget::mailActionChanged);
 
     //Add imap select folder plugin here.
-    mMailActionRecipient = new QLineEdit(this);
+    mMailActionRecipient = new VacationMailActionWidget(this);
     mMailActionRecipient->setObjectName(QStringLiteral("mMailActionRecipient"));
-    mMailActionRecipient->setClearButtonEnabled(true);
-    mMailActionRecipient->setEnabled(false);
 
     QHBoxLayout *hLayout = new QHBoxLayout;
 
@@ -412,14 +411,13 @@ void VacationEditWidget::enableDates(bool enable)
 
 void VacationEditWidget::mailActionChanged(int action)
 {
-    bool enable = (action == VacationUtils::CopyTo || action == VacationUtils::Sendto);
-    mMailActionRecipient->setEnabled(enable);
+    mMailActionRecipient->mailActionChanged(static_cast<KSieveUi::VacationUtils::MailAction>(action));
 }
 
 void VacationEditWidget::setMailAction(VacationUtils::MailAction action, const QString &recipient)
 {
     mMailAction->setCurrentIndex(action);
-    mMailActionRecipient->setText(recipient);
+    mMailActionRecipient->setMailAction(action, recipient);
 }
 
 VacationUtils::MailAction VacationEditWidget::mailAction() const
@@ -429,7 +427,7 @@ VacationUtils::MailAction VacationEditWidget::mailAction() const
 
 QString VacationEditWidget::mailActionRecipient() const
 {
-    return mMailActionRecipient->text();
+    return mMailActionRecipient->mailActionRecipient();
 }
 
 void VacationEditWidget::enableDomainAndSendForSpam(bool enable)

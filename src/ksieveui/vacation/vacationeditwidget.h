@@ -50,6 +50,7 @@ typedef QVector<AddrSpec> AddrSpecList;
 }
 
 namespace KSieveUi {
+class VacationMailActionWidget;
 class VacationEditWidget : public QWidget
 {
     Q_OBJECT
@@ -117,7 +118,7 @@ protected:
     QLineEdit *mDomainEdit = nullptr;
     QLineEdit *mSubject = nullptr;
     QComboBox *mMailAction = nullptr;
-    QLineEdit *mMailActionRecipient = nullptr;
+    VacationMailActionWidget *mMailActionRecipient = nullptr;
     KDateComboBox *mStartDate = nullptr;
     KTimeComboBox *mStartTime = nullptr;
     QCheckBox *mStartTimeActive = nullptr;
