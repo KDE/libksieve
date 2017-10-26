@@ -66,5 +66,40 @@ void VacationMailActionWidget::setSieveImapAccountSettings(const KSieveUi::Sieve
 
 void VacationMailActionWidget::mailActionChanged(KSieveUi::VacationUtils::MailAction action)
 {
-    //TODO
+    bool enable = (action == VacationUtils::CopyTo || action == VacationUtils::Sendto);
+    setEnabled(enable);
+    selectMailActionWidget(action);
+}
+
+void VacationMailActionWidget::selectMailActionWidget(VacationUtils::MailAction action)
+{
+    if (action == VacationUtils::CopyTo) {
+        mStackedWidget->setCurrentWidget(mMoveImapFolderWidget);
+    } else {
+        mStackedWidget->setCurrentWidget(mMailActionRecipient);
+    }
+}
+
+void VacationMailActionWidget::setMailAction(VacationUtils::MailAction action, const QString &recipient)
+{
+    selectMailActionWidget(action);
+    mMailActionRecipient->setText(recipient);
+}
+
+void VacationMailActionWidget::setText(const QString &recipient)
+{
+    if (mStackedWidget->currentWidget() == mMoveImapFolderWidget) {
+        mMoveImapFolderWidget->setText(recipient);
+    } else {
+        mMailActionRecipient->setText(recipient);
+    }
+}
+
+QString VacationMailActionWidget::mailActionRecipient() const
+{
+    if (mStackedWidget->currentWidget() == mMoveImapFolderWidget) {
+        return mMoveImapFolderWidget->text();
+    } else {
+        return mMailActionRecipient->text();
+    }
 }

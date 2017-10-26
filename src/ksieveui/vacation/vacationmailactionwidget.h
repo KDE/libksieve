@@ -35,7 +35,11 @@ public:
     ~VacationMailActionWidget();
     void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);
     void mailActionChanged(KSieveUi::VacationUtils::MailAction action);
+    QString mailActionRecipient() const;
+    void setMailAction(VacationUtils::MailAction action, const QString &recipient);
 private:
+    void selectMailActionWidget(VacationUtils::MailAction action);
+    void setText(const QString &recipient);
     QStackedWidget *mStackedWidget = nullptr;
     AbstractMoveImapFolderWidget *mMoveImapFolderWidget = nullptr;
     QLineEdit *mMailActionRecipient = nullptr;
