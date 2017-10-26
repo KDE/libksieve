@@ -30,6 +30,7 @@ public:
     ~VacationMailActionWidgetTest() = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldSwitchComponents();
 };
 
 #endif // VACATIONMAILACTIONWIDGETTEST_H

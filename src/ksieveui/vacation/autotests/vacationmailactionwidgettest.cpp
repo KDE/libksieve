@@ -64,3 +64,35 @@ void VacationMailActionWidgetTest::shouldHaveDefaultValue()
 
     QVERIFY(w.mailActionRecipient().isEmpty());
 }
+
+void VacationMailActionWidgetTest::shouldSwitchComponents()
+{
+    KSieveUi::VacationMailActionWidget w;
+    QStackedWidget *mStackedWidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedWidget"));
+    QWidget *mMailActionRecipient = mStackedWidget->widget(0);
+    QLineEdit *lineEdit = dynamic_cast<QLineEdit *>(mMailActionRecipient);
+
+    QWidget *mMoveImapFolderWidget = mStackedWidget->widget(1);
+    KSieveUi::AbstractMoveImapFolderWidget *abstractMoveImapFolderWidget = dynamic_cast<KSieveUi::AbstractMoveImapFolderWidget *>(mMoveImapFolderWidget);
+
+
+    w.mailActionChanged(KSieveUi::VacationUtils::Keep);
+    QCOMPARE(mStackedWidget->currentIndex(), 0);
+    QVERIFY(w.mailActionRecipient().isEmpty());
+    QVERIFY(!w.isEnabled());
+
+    w.mailActionChanged(KSieveUi::VacationUtils::CopyTo);
+    QCOMPARE(mStackedWidget->currentIndex(), 1);
+    QVERIFY(w.mailActionRecipient().isEmpty());
+    QVERIFY(w.isEnabled());
+
+    w.mailActionChanged(KSieveUi::VacationUtils::Discard);
+    QCOMPARE(mStackedWidget->currentIndex(), 0);
+    QVERIFY(w.mailActionRecipient().isEmpty());
+    QVERIFY(!w.isEnabled());
+
+    w.mailActionChanged(KSieveUi::VacationUtils::Sendto);
+    QCOMPARE(mStackedWidget->currentIndex(), 0);
+    QVERIFY(w.mailActionRecipient().isEmpty());
+    QVERIFY(w.isEnabled());
+}
