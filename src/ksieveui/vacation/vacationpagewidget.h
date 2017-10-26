@@ -29,6 +29,7 @@ class VacationEditWidget;
 class VacationWarningWidget;
 class VacationCreateScriptJob;
 class MultiImapVacationManager;
+class SieveImapAccountSettings;
 class VacationPageWidget : public QWidget
 {
     Q_OBJECT
@@ -41,6 +42,7 @@ public:
     KSieveUi::VacationCreateScriptJob *writeScript();
     void setDefault();
     void setVacationManager(MultiImapVacationManager *vacationManager);
+    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);
 
 private Q_SLOTS:
     void slotGetResult(const QString &serverName, const QStringList &sieveCapabilities, const QString &scriptName, const QString &script, bool active);

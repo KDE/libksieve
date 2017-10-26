@@ -53,10 +53,10 @@ VacationPageWidget::VacationPageWidget(QWidget *parent)
     QVBoxLayout *vbox = new QVBoxLayout;
     vbox->setMargin(0);
     mainPage->setLayout(vbox);
-    mVacationWarningWidget = new VacationWarningWidget;
+    mVacationWarningWidget = new VacationWarningWidget(this);
     vbox->addWidget(mVacationWarningWidget);
 
-    mVacationEditWidget = new VacationEditWidget;
+    mVacationEditWidget = new VacationEditWidget(this);
     vbox->addWidget(mVacationEditWidget);
     mStackWidget->addWidget(mainPage);
 
@@ -95,6 +95,11 @@ void VacationPageWidget::setVacationManager(MultiImapVacationManager *vacationMa
     mVacationManager = vacationManager;
     connect(mVacationManager, &MultiImapVacationManager::scriptAvailable, this, &VacationPageWidget::slotGetResult);
     mVacationManager->checkVacation(mServerName, mUrl);
+}
+
+void VacationPageWidget::setSieveImapAccountSettings(const SieveImapAccountSettings &account)
+{
+    mVacationEditWidget->setSieveImapAccountSettings(account);
 }
 
 void VacationPageWidget::setServerName(const QString &serverName)
