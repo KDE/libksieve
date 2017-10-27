@@ -3,7 +3,7 @@ set(PIM_VERSION "5.6.44")
 
 project(libksieve VERSION ${PIM_VERSION})
 
-set(KF5_VERSION "5.38.0")
+set(KF5_VERSION "5.39.0")
 
 find_package(ECM ${KF5_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${libksieve_SOURCE_DIR}/cmake ${ECM_MODULE_PATH})
