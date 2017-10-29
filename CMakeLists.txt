@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-set(PIM_VERSION "5.6.44")
+set(PIM_VERSION "5.6.80")
 
 project(libksieve VERSION ${PIM_VERSION})
 
