@@ -79,7 +79,6 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
         toolbar->addAction(mGenerateXml);
     }
 
-
     QStringList overlays;
     overlays << QStringLiteral("list-add");
     mShareScript = new QAction(QIcon(new KIconEngine(QStringLiteral("get-hot-new-stuff"), KIconLoader::global(), overlays)), i18n("Share..."), this);
@@ -248,7 +247,8 @@ void SieveEditorWidget::updateOriginalScript()
 void SieveEditorWidget::print()
 {
     switch (mMode) {
-    case TextMode: {
+    case TextMode:
+    {
         bool wasModified = isModified();
         mTextModeWidget->print();
         setModified(wasModified);
@@ -265,7 +265,8 @@ void SieveEditorWidget::print()
 void SieveEditorWidget::printPreview()
 {
     switch (mMode) {
-    case TextMode: {
+    case TextMode:
+    {
         bool wasModified = isModified();
         mTextModeWidget->printPreview();
         setModified(wasModified);

@@ -21,7 +21,6 @@
 #include <QObject>
 #include "ksieveui_export.h"
 
-
 class QWidget;
 namespace KSieveUi {
 class VacationManagerPrivate;

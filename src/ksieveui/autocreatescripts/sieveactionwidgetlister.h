@@ -51,7 +51,6 @@ public:
 
     void setLocaleVariable(const SieveGlobalVariableActionWidget::VariableElement &var);
 
-
 Q_SIGNALS:
     void addWidget(QWidget *w);
     void removeWidget(QWidget *w);

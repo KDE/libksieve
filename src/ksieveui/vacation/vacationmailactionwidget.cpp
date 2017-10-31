@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "vacationmailactionwidget.h"
 #include "widgets/moveimapfolderwidget.h"
 #include <QStackedWidget>
@@ -60,7 +59,6 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
 
 VacationMailActionWidget::~VacationMailActionWidget()
 {
-
 }
 
 void VacationMailActionWidget::setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account)

@@ -28,7 +28,6 @@
 
 #include "util/util_p.h"
 
-
 #include <QInputDialog>
 #include <KStandardGuiItem>
 #include <KLocalizedString>

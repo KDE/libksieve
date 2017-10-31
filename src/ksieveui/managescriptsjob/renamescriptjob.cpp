@@ -20,7 +20,6 @@
 
 #include <KLocalizedString>
 
-
 using namespace KSieveUi;
 
 class KSieveUi::RenameScriptJobPrivate

@@ -30,7 +30,6 @@ QTEST_MAIN(VacationMailActionWidgetTest)
 VacationMailActionWidgetTest::VacationMailActionWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void VacationMailActionWidgetTest::shouldHaveDefaultValue()
@@ -53,7 +52,6 @@ void VacationMailActionWidgetTest::shouldHaveDefaultValue()
     QVERIFY(!lineEdit->isEnabled());
     QVERIFY(lineEdit->isClearButtonEnabled());
 
-
     QCOMPARE(mStackedWidget->currentIndex(), 0);
 
     QWidget *mMoveImapFolderWidget = mStackedWidget->widget(1);
@@ -74,7 +72,6 @@ void VacationMailActionWidgetTest::shouldSwitchComponents()
 
     QWidget *mMoveImapFolderWidget = mStackedWidget->widget(1);
     KSieveUi::AbstractMoveImapFolderWidget *abstractMoveImapFolderWidget = dynamic_cast<KSieveUi::AbstractMoveImapFolderWidget *>(mMoveImapFolderWidget);
-
 
     w.mailActionChanged(KSieveUi::VacationUtils::Keep);
     QCOMPARE(mStackedWidget->currentIndex(), 0);

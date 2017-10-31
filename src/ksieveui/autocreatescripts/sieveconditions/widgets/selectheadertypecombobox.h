@@ -55,7 +55,6 @@ public:
     QString headers() const;
     void setListHeaders(const QMap<QString, QString> &lst, const QStringList &selectedHeaders);
 
-
 private:
     void slotNewHeaderTextChanged(const QString &text);
     void slotAddNewHeader();
