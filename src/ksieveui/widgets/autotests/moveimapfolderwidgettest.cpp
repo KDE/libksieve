@@ -43,6 +43,7 @@ void MoveImapFolderWidgetTest::shouldHaveDefaultValue()
     QVERIFY(mLineEdit);
     QVERIFY(mLineEdit->text().isEmpty());
     QVERIFY(w.text().isEmpty());
+    QVERIFY(mLineEdit->isClearButtonEnabled());
 }
 
 void MoveImapFolderWidgetTest::shouldAssignValue()

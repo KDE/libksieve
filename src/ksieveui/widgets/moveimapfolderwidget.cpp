@@ -30,6 +30,7 @@ MoveImapFolderWidget::MoveImapFolderWidget(QWidget *parent)
     mainLayout->setMargin(0);
     mLineEdit = new QLineEdit(this);
     mLineEdit->setObjectName(QStringLiteral("lineedit"));
+    mLineEdit->setClearButtonEnabled(true);
     mainLayout->addWidget(mLineEdit);
     connect(mLineEdit, &QLineEdit::textChanged, this, &MoveImapFolderWidget::textChanged);
 }
