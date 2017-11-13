@@ -43,6 +43,10 @@ set(KIMAP_LIB_VERSION "5.6.80")
 
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
 
+# Look for Sasl2 before anything else
+find_package(Sasl2)
+set_package_properties(Sasl2 PROPERTIES TYPE REQUIRED)
+
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets PrintSupport WebEngine WebEngineWidgets)
 find_package(KF5I18n ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5DocTools ${KF5_VERSION} CONFIG REQUIRED)
@@ -59,9 +63,6 @@ find_package(KF5IdentityManagement ${IDENTITYMANAGEMENT_LIB_VERSION} CONFIG REQU
 find_package(KF5MailTransport ${KMAILTRANSPORT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5PimTextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5IMAP ${KIMAP_LIB_VERSION} CONFIG REQUIRED)
-
-find_package(Sasl2)
-set_package_properties(Sasl2 PROPERTIES TYPE REQUIRED)
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVE
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h"
