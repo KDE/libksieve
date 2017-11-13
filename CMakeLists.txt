@@ -6,7 +6,13 @@ project(libksieve VERSION ${PIM_VERSION})
 set(KF5_VERSION "5.39.0")
 
 find_package(ECM ${KF5_VERSION} CONFIG REQUIRED)
-set(CMAKE_MODULE_PATH ${libksieve_SOURCE_DIR}/cmake ${ECM_MODULE_PATH})
+set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+
+# TODO: Remove the cmake directory when we'll require ECM >= 5.41.0
+if("${ECM_VERSION}" VERSION_LESS "5.41.0")
+  set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${libksieve_SOURCE_DIR}/cmake)
+endif()
+
 if (POLICY CMP0053)
     cmake_policy(SET CMP0053 NEW)
 endif()
@@ -37,7 +43,6 @@ set(KIMAP_LIB_VERSION "5.6.80")
 
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
 
-
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets PrintSupport WebEngine WebEngineWidgets)
 find_package(KF5I18n ${KF5_VERSION} CONFIG REQUIRED)
 find_package(KF5DocTools ${KF5_VERSION} CONFIG REQUIRED)
@@ -56,13 +61,7 @@ find_package(KF5PimTextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5IMAP ${KIMAP_LIB_VERSION} CONFIG REQUIRED)
 
 find_package(Sasl2)
-set_package_properties(Sasl2 PROPERTIES
-                             DESCRIPTION "The Cyrus-sasl library"
-                             URL "http://www.cyrussasl.org"
-                             TYPE OPTIONAL
-)
-
-include_directories(${Sasl2_INCLUDE_DIRS})
+set_package_properties(Sasl2 PROPERTIES TYPE REQUIRED)
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVE
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h"

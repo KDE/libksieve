@@ -1,8 +1,3 @@
-find_package(Sasl2)
-set_package_properties(Sasl2 PROPERTIES DESCRIPTION "Cyrus SASL API" URL "http://asg.web.cmu.edu/sasl/sasl-library.html" TYPE REQUIRED PURPOSE "Required to support authentication of logins on ManageSieve servers.")
-
-include_directories(${SASL2_INCLUDE_DIR})
-
 set(kmanagesieve_LIB_SRCS
   response.cpp
   session.cpp
@@ -25,10 +20,9 @@ PRIVATE
   KF5::I18n 
   KF5::KIOCore
   KF5::KIOWidgets
-  ${Sasl2_LIBRARIES}
+  Sasl2::Sasl2
   ${extra_LIBS}
 )
-
 
 set_target_properties(KF5KManageSieve PROPERTIES
   VERSION ${LIBKSIEVE_VERSION_STRING}
