@@ -40,7 +40,7 @@ void SieveEditorHelpHtmlWidgetTest::shouldHaveDefaultValue()
 {
     KSieveUi::SieveEditorHelpHtmlWidget w;
     w.show();
-    QTest::qWaitForWindowExposed(&w);
+    QVERIFY(QTest::qWaitForWindowExposed(&w));
 
     //KSieveUi::SieveEditorLoadProgressIndicator *mProgressIndicator = w.findChild<KSieveUi::SieveEditorLoadProgressIndicator *>(QStringLiteral("progressindicator"));
     //QVERIFY(mProgressIndicator);
