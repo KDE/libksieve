@@ -258,7 +258,7 @@ void SieveTextEdit::keyPressEvent(QKeyEvent *e)
     } else if (handleShortcut(e)) {
         return;
     }
-    QPlainTextEdit::keyPressEvent(e);
+    KPIMTextEdit::PlainTextEditor::keyPressEvent(e);
     if (e->key() == Qt::Key_F1 && !textCursor().hasSelection()) {
         const QString word = selectedWord();
         const KSieveUi::SieveEditorUtil::HelpVariableName type = KSieveUi::SieveEditorUtil::strToVariableName(word);
