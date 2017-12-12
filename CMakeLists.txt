@@ -3,15 +3,10 @@ set(PIM_VERSION "5.7.40")
 
 project(libksieve VERSION ${PIM_VERSION})
 
-set(KF5_VERSION "5.39.0")
+set(KF5_VERSION "5.41.0")
 
 find_package(ECM ${KF5_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
-
-# TODO: Remove the cmake directory when we'll require ECM >= 5.41.0
-if("${ECM_VERSION}" VERSION_LESS "5.41.0")
-  set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${libksieve_SOURCE_DIR}/cmake)
-endif()
 
 if (POLICY CMP0053)
     cmake_policy(SET CMP0053 NEW)
