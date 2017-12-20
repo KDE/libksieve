@@ -63,7 +63,7 @@ void FindBarBaseTest::shouldClearLineWhenClose()
 {
     KSieveUi::FindBarBase bar;
     bar.show();
-    QSignalSpy spy(&bar, SIGNAL(hideFindBar()));
+    QSignalSpy spy(&bar, &KSieveUi::FindBarBase::hideFindBar);
     QVERIFY(QTest::qWaitForWindowExposed(&bar));
     QVERIFY(bar.isVisible());
     bar.focusAndSetCursor();
