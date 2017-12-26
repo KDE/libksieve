@@ -189,6 +189,8 @@ void ManageSieveWidget::slotCancelFetch()
         for (KManageSieve::SieveJob *job : jobs) {
             job->kill();
         }
+    } else {
+        qCWarning(LIBKSIEVE_LOG) << "ManageSieveWidget::slotCancelFetch(): item is not selected";
     }
 }
 
