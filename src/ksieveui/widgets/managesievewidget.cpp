@@ -187,7 +187,7 @@ void ManageSieveWidget::slotCancelFetch()
     if (item) {
         const QList<KManageSieve::SieveJob *> jobs = mJobs.keys(item);
         for (KManageSieve::SieveJob *job : jobs) {
-            job->kill();
+            job->kill(KJob::EmitResult);
         }
     }
 }
