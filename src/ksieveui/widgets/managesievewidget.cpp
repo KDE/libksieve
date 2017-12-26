@@ -206,7 +206,7 @@ void ManageSieveWidget::slotCancelFetch()
     if (item) {
         const QList<KManageSieve::SieveJob *> jobs = mJobs.keys(item);
         for (KManageSieve::SieveJob *job : jobs) {
-            job->kill();
+            job->kill(KJob::EmitResult);
         }
     } else {
         qCWarning(LIBKSIEVE_LOG) << "ManageSieveWidget::slotCancelFetch(): item is not selected";
