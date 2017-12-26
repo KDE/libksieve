@@ -170,7 +170,7 @@ void ManageSieveWidget::slotContextMenuRequested(const QPoint &p)
     } else if (!item->parent()) {
         // top-levels:
         const bool jobsListIsEmpty = mJobs.keys(item).isEmpty();
-        if (!serverHasError(item) && jobsListIsEmpty) {
+        if (canAddNewScript(item, jobsListIsEmpty)) {
             menu.addAction(QIcon::fromTheme(QStringLiteral("document-new")), i18n("New Script..."), this, &ManageSieveWidget::slotNewScript);
         } else if (!jobsListIsEmpty) { //In Progress
             menu.addAction(KStandardGuiItem::cancel().icon(), KStandardGuiItem::cancel().text(), this, &ManageSieveWidget::slotCancelFetch);
@@ -179,6 +179,25 @@ void ManageSieveWidget::slotContextMenuRequested(const QPoint &p)
     if (!menu.actions().isEmpty()) {
         menu.exec(d->mTreeView->viewport()->mapToGlobal(p));
     }
+}
+
+
+bool ManageSieveWidget::canAddNewScript(QTreeWidgetItem *item, bool jobsListIsEmpty)
+{
+    if (!serverHasError(item) && jobsListIsEmpty) {
+        if (item->parent()) {
+            item = item->parent();
+        }
+        if (!item) {
+            return false;
+        }
+
+        if (!mUrls.count(item)) {
+            return false;
+        }
+        return true;
+    }
+    return false;
 }
 
 void ManageSieveWidget::slotCancelFetch()

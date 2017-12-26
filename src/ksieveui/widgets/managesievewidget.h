@@ -104,6 +104,7 @@ private:
         SIEVE_SERVER_IMAP_SETTINGS = Qt::UserRole + 4,
         SIEVE_SERVER_LIST_SCRIPT = Qt::UserRole + 5
     };
+    bool canAddNewScript(QTreeWidgetItem *item, bool jobsListIsEmpty);
     bool serverHasError(QTreeWidgetItem *item) const;
     void killAllJobs();
     void clear();
