@@ -185,7 +185,7 @@ void Vacation::slotDialogOk()
     vacation.endDate = mDialog->endDate();
     vacation.endTime = mDialog->endTime();
     const QString script = VacationUtils::composeScript(vacation);
-    emit scriptActive(active, mServerName);
+    Q_EMIT scriptActive(active, mServerName);
 
     qCDebug(LIBKSIEVE_LOG) << "script:" << endl << script;
 
