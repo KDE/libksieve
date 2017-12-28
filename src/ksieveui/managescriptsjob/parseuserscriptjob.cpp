@@ -125,8 +125,8 @@ QStringList ParseUserScriptJob::extractActiveScript(const QString &doc)
         while (mStreamReader->readNextStartElement()) {
             const QStringRef tagname = mStreamReader->name();
             if (tagname == QLatin1String("action")) {
-                if (mStreamReader->attributes().hasAttribute(QStringLiteral("name"))) {
-                    const QString actionName = mStreamReader->attributes().value(QStringLiteral("name")).toString();
+                if (mStreamReader->attributes().hasAttribute(QLatin1String("name"))) {
+                    const QString actionName = mStreamReader->attributes().value(QLatin1String("name")).toString();
                     if (actionName == QLatin1String("include")) {
                         //Load includes
                         const QString str = loadInclude();

@@ -83,8 +83,8 @@ bool SieveConditionSize::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             }
         } else if (tagName == QLatin1String("num")) {
             QString numIdentifier;
-            if (element.attributes().hasAttribute(QStringLiteral("quantifier"))) {
-                numIdentifier = element.attributes().value(QStringLiteral("quantifier")).toString();
+            if (element.attributes().hasAttribute(QLatin1String("quantifier"))) {
+                numIdentifier = element.attributes().value(QLatin1String("quantifier")).toString();
             }
             const qlonglong tagValue = element.readElementText().toLongLong();
             SelectSizeWidget *sizeWidget = w->findChild<SelectSizeWidget *>(QStringLiteral("sizewidget"));

@@ -265,8 +265,8 @@ void SieveScriptBlockWidget::loadScript(QXmlStreamReader &element, bool onlyActi
             const QStringRef tagName = element.name();
             if (tagName == QLatin1String("test")) {
                 bool notCondition = false;
-                if (element.attributes().hasAttribute(QStringLiteral("name"))) {
-                    const QString typeCondition = element.attributes().value(QStringLiteral("name")).toString();
+                if (element.attributes().hasAttribute(QLatin1String("name"))) {
+                    const QString typeCondition = element.attributes().value(QLatin1String("name")).toString();
                     if (typeCondition == QLatin1String("anyof")) {
                         mMatchCondition = OrCondition;
                     } else if (typeCondition == QLatin1String("allof")) {

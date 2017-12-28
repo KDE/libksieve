@@ -345,8 +345,8 @@ void SieveConditionWidgetLister::loadTest(QXmlStreamReader &element, bool notCon
     if (notCondition) {
         element.readNextStartElement();
     }
-    if (element.attributes().hasAttribute(QStringLiteral("name"))) {
-        const QString conditionName = element.attributes().value(QStringLiteral("name")).toString();
+    if (element.attributes().hasAttribute(QLatin1String("name"))) {
+        const QString conditionName = element.attributes().value(QLatin1String("name")).toString();
         SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
         w->setCondition(conditionName, element, notCondition, error);
     }
@@ -370,8 +370,8 @@ void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniq
                 while (element.readNextStartElement()) {
                     const QStringRef testTagName = element.name();
                     if (testTagName == QLatin1String("test")) {
-                        if (element.attributes().hasAttribute(QStringLiteral("name"))) {
-                            QString conditionName = element.attributes().value(QStringLiteral("name")).toString();
+                        if (element.attributes().hasAttribute(QLatin1String("name"))) {
+                            QString conditionName = element.attributes().value(QLatin1String("name")).toString();
                             if (firstCondition) {
                                 firstCondition = false;
                             } else {
@@ -381,8 +381,8 @@ void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniq
                             if (conditionName == QLatin1String("not")) {
                                 notCondition = true;
                                 element.readNextStartElement();
-                                if (element.attributes().hasAttribute(QStringLiteral("name"))) {
-                                    conditionName = element.attributes().value(QStringLiteral("name")).toString();
+                                if (element.attributes().hasAttribute(QLatin1String("name"))) {
+                                    conditionName = element.attributes().value(QLatin1String("name")).toString();
                                 }
                                 w->setCondition(conditionName, element, notCondition, error);
                                 element.skipCurrentElement();

@@ -396,8 +396,8 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
     if (onlyActions) {
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("action")) {
-            if (element.attributes().hasAttribute(QStringLiteral("name"))) {
-                const QString actionName = element.attributes().value(QStringLiteral("name")).toString();
+            if (element.attributes().hasAttribute(QLatin1String("name"))) {
+                const QString actionName = element.attributes().value(QLatin1String("name")).toString();
                 SieveActionWidget *w = qobject_cast<SieveActionWidget *>(widgets().constLast());
                 if (w->isConfigurated()) {
                     addWidgetAfterThisWidget(widgets().constLast());
@@ -420,8 +420,8 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
         while (element.readNextStartElement()) {
             const QStringRef tagName = element.name();
             if (tagName == QLatin1String("action") || tagName == QLatin1String("control") /*for break action*/) {
-                if (element.attributes().hasAttribute(QStringLiteral("name"))) {
-                    const QString actionName = element.attributes().value(QStringLiteral("name")).toString();
+                if (element.attributes().hasAttribute(QLatin1String("name"))) {
+                    const QString actionName = element.attributes().value(QLatin1String("name")).toString();
                     if (tagName == QLatin1String("control") && actionName == QLatin1String("if")) {
                         qCDebug(LIBKSIEVE_LOG) << "We found an loop if in a loop if. Not supported";
                         error += i18n("We detected a loop if in a loop if. It's not supported") + QLatin1Char('\n');
