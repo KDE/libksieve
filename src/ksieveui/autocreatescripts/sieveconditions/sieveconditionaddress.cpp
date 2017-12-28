@@ -57,7 +57,7 @@ QWidget *SieveConditionAddress::createParamWidget(QWidget *parent) const
     selectMatchCombobox->setObjectName(QStringLiteral("matchtypecombobox"));
     grid->addWidget(selectMatchCombobox, 0, 0);
 
-    SelectHeaderTypeComboBox *selectHeaderType = new SelectHeaderTypeComboBox;
+    SelectHeaderTypeComboBox *selectHeaderType = new SelectHeaderTypeComboBox(true);
     connect(selectHeaderType, &SelectHeaderTypeComboBox::valueChanged, this, &SieveConditionAddress::valueChanged);
     selectHeaderType->setObjectName(QStringLiteral("headertypecombobox"));
     grid->addWidget(selectHeaderType, 0, 1);
