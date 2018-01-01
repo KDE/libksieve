@@ -1,7 +1,7 @@
 /*
     vacationdialog.cpp
 
-    Copyright (c) 2013-2017 Laurent Montel <montel@kde.org>
+    Copyright (C) 2013-2018 Laurent Montel <montel@kde.org>
     Copyright (c) 2002 Marc Mutz <mutz@kde.org>
 
     This program is free software; you can redistribute it and/or
