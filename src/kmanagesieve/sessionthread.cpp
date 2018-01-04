@@ -69,7 +69,11 @@ SessionThread::SessionThread(Session *session, QObject *parent)
 
 SessionThread::~SessionThread()
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
+    QMetaObject::invokeMethod(this, &SessionThread::doDestroy, Qt::QueuedConnection);
+#else
     QMetaObject::invokeMethod(this, "doDestroy", Qt::QueuedConnection);
+#endif
     if (!thread()->wait(10 * 1000)) {
         thread()->terminate();
         thread()->wait();
@@ -219,8 +223,11 @@ void SessionThread::slotSocketError()
 // Called in main thread
 void SessionThread::startAuthentication()
 {
-    QMetaObject::invokeMethod(this, "doStartAuthentication",
-                              Qt::QueuedConnection);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
+    QMetaObject::invokeMethod(this, &SessionThread::doStartAuthentication, Qt::QueuedConnection);
+#else
+    QMetaObject::invokeMethod(this, "doStartAuthentication", Qt::QueuedConnection);
+#endif
 }
 
 // Called in secondary thread
@@ -406,8 +413,11 @@ bool SessionThread::saslClientStep(const QByteArray &challenge)
 // Called in main thread
 void SessionThread::startSsl()
 {
-    QMetaObject::invokeMethod(this, "doStartSsl",
-                              Qt::QueuedConnection);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
+    QMetaObject::invokeMethod(this, &SessionThread::doStartSsl, Qt::QueuedConnection);
+#else
+    QMetaObject::invokeMethod(this, "doStartSsl", Qt::QueuedConnection);
+#endif
 }
 
 // Called in secondary thread
