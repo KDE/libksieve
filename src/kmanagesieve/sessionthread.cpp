@@ -109,9 +109,14 @@ void SessionThread::doDestroy()
 // Called in main thread
 void SessionThread::connectToHost(const QUrl &url)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
+    QMetaObject::invokeMethod(this, [this, url]() { doConnectToHost(url); }, Qt::QueuedConnection);
+#else
     QMetaObject::invokeMethod(this, "doConnectToHost",
                               Qt::QueuedConnection,
                               Q_ARG(QUrl, url));
+#endif
+
 }
 
 // Called in secondary thread
@@ -130,9 +135,13 @@ void SessionThread::doConnectToHost(const QUrl &url)
 // Called in main thread
 void SessionThread::disconnectFromHost(bool sendLogout)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
+    QMetaObject::invokeMethod(this, [this, sendLogout]() { doDisconnectFromHost(sendLogout); }, Qt::QueuedConnection);
+#else
     QMetaObject::invokeMethod(this, "doDisconnectFromHost",
                               Qt::QueuedConnection,
                               Q_ARG(bool, sendLogout));
+#endif
 }
 
 // Called in secondary thread
@@ -149,9 +158,13 @@ void SessionThread::doDisconnectFromHost(bool sendLogout)
 // Called in main thread
 void SessionThread::sendData(const QByteArray &data)
 {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
+    QMetaObject::invokeMethod(this, [this, data]() { doSendData(data); }, Qt::QueuedConnection);
+#else
     QMetaObject::invokeMethod(this, "doSendData",
                               Qt::QueuedConnection,
                               Q_ARG(QByteArray, data));
+#endif
 }
 
 // Called in secondary thread
