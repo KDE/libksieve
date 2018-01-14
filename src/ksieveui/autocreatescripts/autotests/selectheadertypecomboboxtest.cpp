@@ -82,7 +82,7 @@ void SelectHeaderTypeComboBoxTest::shouldSetCode_data()
     QTest::addColumn<bool>("readOnly");
     QTest::newRow("empty") << QString() << 0 << QString() << false << false;
     QTest::newRow("empty only header") << QString() << 0 << QString() << false << false;
-    QTest::newRow("from") << QStringLiteral("from") << 8 << QStringLiteral("From") << false << true;
+    QTest::newRow("from") << QStringLiteral("from") << 9 << QStringLiteral("From") << false << true;
 }
 
 void SelectHeaderTypeComboBoxTest::shouldSetCode()
