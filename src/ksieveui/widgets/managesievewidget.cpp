@@ -181,7 +181,6 @@ void ManageSieveWidget::slotContextMenuRequested(const QPoint &p)
     }
 }
 
-
 bool ManageSieveWidget::canAddNewScript(QTreeWidgetItem *item, bool jobsListIsEmpty)
 {
     if (!serverHasError(item) && jobsListIsEmpty) {

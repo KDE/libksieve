@@ -161,7 +161,7 @@ void SieveScriptDebuggerFrontEndWidget::slotDebugScript()
         delete temporaryFile;
         return;
     }
-     Q_EMIT debugButtonEnabled(false);
+    Q_EMIT debugButtonEnabled(false);
     QTextStream stream(temporaryFile);
     stream << mSieveTextEditWidget->textEdit()->toPlainText();
     temporaryFile->flush();
