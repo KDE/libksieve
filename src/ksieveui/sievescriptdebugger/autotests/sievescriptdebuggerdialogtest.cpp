@@ -49,6 +49,10 @@ void SieveScriptDebuggerDialogTest::shouldHaveDefaultValue()
     QPushButton *mOkButton = dlg.findChild<QPushButton *>(QStringLiteral("okbutton"));
     QVERIFY(mOkButton);
     QVERIFY(!mOkButton->isEnabled());
+
+    QPushButton *mDebugScriptButton = dlg.findChild<QPushButton *>(QStringLiteral("debug_button"));
+    QVERIFY(mDebugScriptButton);
+    QVERIFY(!mDebugScriptButton->isEnabled());
 }
 
 QTEST_MAIN(SieveScriptDebuggerDialogTest)
