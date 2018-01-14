@@ -109,7 +109,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     mSieveScriptDebuggerWarning->setObjectName(QStringLiteral("sievescriptdebuggerwarning"));
     mainLayout->addWidget(mSieveScriptDebuggerWarning);
 
-    connect(this, &SieveScriptDebuggerFrontEndWidget::debugButtonEnabled, this, &SieveScriptDebuggerFrontEndWidget::slotDebugScript);
+    connect(this, &SieveScriptDebuggerFrontEndWidget::debugScriptButtonClicked, this, &SieveScriptDebuggerFrontEndWidget::slotDebugScript);
 }
 
 SieveScriptDebuggerFrontEndWidget::~SieveScriptDebuggerFrontEndWidget()
@@ -120,7 +120,6 @@ SieveScriptDebuggerFrontEndWidget::~SieveScriptDebuggerFrontEndWidget()
 void SieveScriptDebuggerFrontEndWidget::updateDebugButton()
 {
     Q_EMIT debugButtonEnabled(!mSieveTextEditWidget->textEdit()->document()->isEmpty() && !mEmailPath->lineEdit()->text().trimmed().isEmpty());
-    //mDebugScript->setEnabled(!mSieveTextEditWidget->textEdit()->document()->isEmpty() && !mEmailPath->lineEdit()->text().trimmed().isEmpty());
 }
 
 void SieveScriptDebuggerFrontEndWidget::slotScriptTextChanged()
@@ -163,7 +162,6 @@ void SieveScriptDebuggerFrontEndWidget::slotDebugScript()
         return;
     }
      Q_EMIT debugButtonEnabled(false);
-    //mDebugScript->setEnabled(false);
     QTextStream stream(temporaryFile);
     stream << mSieveTextEditWidget->textEdit()->toPlainText();
     temporaryFile->flush();
@@ -192,7 +190,6 @@ void SieveScriptDebuggerFrontEndWidget::slotDebugScript()
         delete mProcess;
         mProcess = nullptr;
         Q_EMIT debugButtonEnabled(true);
-        //mDebugScript->setEnabled(true);
     }
 }
 
@@ -213,7 +210,6 @@ void SieveScriptDebuggerFrontEndWidget::slotDebugFinished()
     delete mProcess;
     mProcess = nullptr;
     Q_EMIT debugButtonEnabled(true);
-    //mDebugScript->setEnabled(true);
 }
 
 QString SieveScriptDebuggerFrontEndWidget::script() const
