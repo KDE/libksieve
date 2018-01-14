@@ -52,6 +52,13 @@ SieveScriptDebuggerDialog::SieveScriptDebuggerDialog(QWidget *parent)
     connect(buttonBox, &QDialogButtonBox::accepted, this, &SieveScriptDebuggerDialog::slotAccepted);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &SieveScriptDebuggerDialog::reject);
     connect(mSieveScriptDebuggerWidget, &SieveScriptDebuggerWidget::scriptTextChanged, this, &SieveScriptDebuggerDialog::slotScriptTextChanged);
+    connect(mSieveScriptDebuggerWidget, &SieveScriptDebuggerWidget::debugButtonEnabled, this, &SieveScriptDebuggerDialog::debugButtonEnableStateChanged);
+
+    mDebugScriptButton = new QPushButton(i18n("Debug"), this);
+    mDebugScriptButton->setObjectName(QStringLiteral("debug_button"));
+    mDebugScriptButton->setEnabled(false);
+    connect(mDebugScriptButton, &QPushButton::clicked, mSieveScriptDebuggerWidget, &SieveScriptDebuggerWidget::debugScriptButtonClicked);
+    buttonBox->addButton(mDebugScriptButton, QDialogButtonBox::ActionRole);
     readConfig();
 }
 
@@ -59,6 +66,11 @@ SieveScriptDebuggerDialog::~SieveScriptDebuggerDialog()
 {
     disconnect(mSieveScriptDebuggerWidget, &SieveScriptDebuggerWidget::scriptTextChanged, this, &SieveScriptDebuggerDialog::slotScriptTextChanged);
     writeConfig();
+}
+
+void SieveScriptDebuggerDialog::debugButtonEnableStateChanged(bool state)
+{
+    mDebugScriptButton->setEnabled(state);
 }
 
 void SieveScriptDebuggerDialog::slotScriptTextChanged()

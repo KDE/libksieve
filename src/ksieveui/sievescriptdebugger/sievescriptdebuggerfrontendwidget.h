@@ -50,6 +50,8 @@ public:
 
 Q_SIGNALS:
     void scriptTextChanged();
+    void debugScriptButtonClicked();
+    void debugButtonEnabled(bool state);
 
 private Q_SLOTS:
     void slotDebugScript();
@@ -65,7 +67,6 @@ private:
     KSieveUi::SieveScriptDebuggerWarning *mSieveScriptDebuggerWarning = nullptr;
     KPIMTextEdit::PlainTextEditorWidget *mSieveTestResult = nullptr;
     KUrlRequester *mEmailPath = nullptr;
-    QPushButton *mDebugScript = nullptr;
     QProcess *mProcess = nullptr;
     KLineEdit *mExtension = nullptr;
     QSplitter *mSplitter = nullptr;

@@ -43,6 +43,8 @@ public:
 
 Q_SIGNALS:
     void scriptTextChanged();
+    void debugScriptButtonClicked();
+    void debugButtonEnabled(bool state);
 
 private:
     void checkSieveTestApplication();

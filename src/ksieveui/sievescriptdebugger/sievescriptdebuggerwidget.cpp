@@ -41,6 +41,8 @@ SieveScriptDebuggerWidget::SieveScriptDebuggerWidget(QWidget *parent)
     mSieveScriptFrontEnd->setObjectName(QStringLiteral("sievescriptfrontend"));
     mStackedWidget->addWidget(mSieveScriptFrontEnd);
     connect(mSieveScriptFrontEnd, &SieveScriptDebuggerFrontEndWidget::scriptTextChanged, this, &SieveScriptDebuggerWidget::scriptTextChanged);
+    connect(mSieveScriptFrontEnd, &SieveScriptDebuggerFrontEndWidget::debugButtonEnabled, this, &SieveScriptDebuggerWidget::debugButtonEnabled);
+    connect(this, &SieveScriptDebuggerWidget::debugScriptButtonClicked, mSieveScriptFrontEnd, &SieveScriptDebuggerFrontEndWidget::debugScriptButtonClicked);
 
     mSieveNoExistingFrontEnd = new QLabel(i18n("\"sieve-test\" was not found on system. Please install it. (See in Dovecot package)"));
     mSieveNoExistingFrontEnd->setAlignment(Qt::AlignHCenter);

@@ -41,9 +41,11 @@ private:
     void slotAccepted();
     void writeConfig();
     void readConfig();
+    void debugButtonEnableStateChanged(bool state);
     QString mOriginScript;
     SieveScriptDebuggerWidget *mSieveScriptDebuggerWidget = nullptr;
     QPushButton *mOkButton = nullptr;
+    QPushButton *mDebugScriptButton = nullptr;
 };
 }
 
