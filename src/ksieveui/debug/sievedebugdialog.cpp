@@ -48,6 +48,9 @@ SieveDebugDialog::SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, 
     mEdit->setReadOnly(true);
     KSyntaxHighlighting::Definition def;
     def = mRepo.definitionForName(QStringLiteral("Sieve"));
+    if (!def.isValid()) {
+        qCWarning(LIBKSIEVE_LOG) << "Invalid definition name";
+    }
 
     KSyntaxHighlighting::SyntaxHighlighter *hl = new KSyntaxHighlighting::SyntaxHighlighter(mEdit->editor()->document());
     hl->setTheme((palette().color(QPalette::Base).lightness() < 128)
