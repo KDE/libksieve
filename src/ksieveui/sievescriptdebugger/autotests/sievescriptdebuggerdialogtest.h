@@ -31,6 +31,7 @@ public:
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();
+    void shouldChangeDebugButtonEnabledState();
 };
 
 #endif // SIEVESCRIPTDEBUGGERDIALOGTEST_H

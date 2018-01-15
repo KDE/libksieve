@@ -20,6 +20,8 @@
 #include "sievescriptdebuggerdialogtest.h"
 #include "../sievescriptdebuggerdialog.h"
 #include "../sievescriptdebuggerwidget.h"
+#include "../sievescriptdebuggerfrontendwidget.h"
+#include <KUrlRequester>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QStandardPaths>
@@ -55,24 +57,29 @@ void SieveScriptDebuggerDialogTest::shouldHaveDefaultValue()
     QVERIFY(!mDebugScriptButton->isEnabled());
 }
 
-/*
-void SieveScriptDebuggerFrontEndWidgetTest::shouldChangeButtonEnabledState()
+void SieveScriptDebuggerDialogTest::shouldChangeDebugButtonEnabledState()
 {
-    KSieveUi::SieveScriptDebuggerFrontEndWidget w;
-    QVERIFY(w.script().isEmpty());
+    KSieveUi::SieveScriptDebuggerDialog dlg;
+    KSieveUi::SieveScriptDebuggerWidget *widget = dlg.findChild<KSieveUi::SieveScriptDebuggerWidget *>(QStringLiteral("sievescriptdebuggerwidget"));
 
-    KUrlRequester *emailPath = w.findChild<KUrlRequester *>(QStringLiteral("emailpath"));
+    KSieveUi::SieveScriptDebuggerFrontEndWidget *mSieveScriptFrontEnd = widget->findChild<KSieveUi::SieveScriptDebuggerFrontEndWidget *>(QStringLiteral("sievescriptfrontend"));
+    QVERIFY(mSieveScriptFrontEnd);
+
+    KUrlRequester *emailPath = mSieveScriptFrontEnd->findChild<KUrlRequester *>(QStringLiteral("emailpath"));
+    QVERIFY(emailPath);
+
+    QPushButton *mDebugScriptButton = dlg.findChild<QPushButton *>(QStringLiteral("debug_button"));
+    QVERIFY(mDebugScriptButton);
+    QVERIFY(!mDebugScriptButton->isEnabled());
+
     emailPath->setUrl(QUrl::fromLocalFile(QStringLiteral("/")));
-//    QPushButton *debugScriptButton = w.findChild<QPushButton *>(QStringLiteral("debugbutton"));
+    QVERIFY(!mDebugScriptButton->isEnabled());
 
-//    QVERIFY(!debugScriptButton->isEnabled());
+    mSieveScriptFrontEnd->setScript(QStringLiteral("foo"));
+    QVERIFY(mDebugScriptButton->isEnabled());
 
-//    w.setScript(QStringLiteral("foo"));
-//    QVERIFY(debugScriptButton->isEnabled());
-
-//    emailPath->setUrl(QUrl::fromLocalFile(QStringLiteral("    ")));
-//    QVERIFY(!debugScriptButton->isEnabled());
+    emailPath->setUrl(QUrl::fromLocalFile(QStringLiteral("    ")));
+    QVERIFY(!mDebugScriptButton->isEnabled());
 }
-*/
 
 QTEST_MAIN(SieveScriptDebuggerDialogTest)
