@@ -55,4 +55,24 @@ void SieveScriptDebuggerDialogTest::shouldHaveDefaultValue()
     QVERIFY(!mDebugScriptButton->isEnabled());
 }
 
+/*
+void SieveScriptDebuggerFrontEndWidgetTest::shouldChangeButtonEnabledState()
+{
+    KSieveUi::SieveScriptDebuggerFrontEndWidget w;
+    QVERIFY(w.script().isEmpty());
+
+    KUrlRequester *emailPath = w.findChild<KUrlRequester *>(QStringLiteral("emailpath"));
+    emailPath->setUrl(QUrl::fromLocalFile(QStringLiteral("/")));
+//    QPushButton *debugScriptButton = w.findChild<QPushButton *>(QStringLiteral("debugbutton"));
+
+//    QVERIFY(!debugScriptButton->isEnabled());
+
+//    w.setScript(QStringLiteral("foo"));
+//    QVERIFY(debugScriptButton->isEnabled());
+
+//    emailPath->setUrl(QUrl::fromLocalFile(QStringLiteral("    ")));
+//    QVERIFY(!debugScriptButton->isEnabled());
+}
+*/
+
 QTEST_MAIN(SieveScriptDebuggerDialogTest)
