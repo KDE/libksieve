@@ -46,8 +46,7 @@ SieveDebugDialog::SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, 
 
     mEdit = new KPIMTextEdit::PlainTextEditorWidget(this);
     mEdit->setReadOnly(true);
-    KSyntaxHighlighting::Definition def;
-    def = mRepo.definitionForName(QStringLiteral("Sieve"));
+    const KSyntaxHighlighting::Definition def = mRepo.definitionForName(QStringLiteral("Sieve"));
     if (!def.isValid()) {
         qCWarning(LIBKSIEVE_LOG) << "Invalid definition name";
     }
