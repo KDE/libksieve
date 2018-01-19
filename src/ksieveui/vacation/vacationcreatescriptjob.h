@@ -57,6 +57,7 @@ private Q_SLOTS:
     void slotGenerateDone(const QString &error = QString());
 
 private:
+    Q_DISABLE_COPY(VacationCreateScriptJob)
     void handleResult();
     QUrl mUrl;
     QString mScript;

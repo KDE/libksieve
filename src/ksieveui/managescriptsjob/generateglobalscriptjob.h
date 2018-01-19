@@ -42,6 +42,7 @@ Q_SIGNALS:
     void error(const QString &msgError);
 
 private:
+    Q_DISABLE_COPY(GenerateGlobalScriptJob)
     void slotPutMasterResult(KManageSieve::SieveJob *job, bool success);
     void slotPutUserResult(KManageSieve::SieveJob *, bool success);
     void disableAllOtherScripts();

@@ -83,6 +83,7 @@ private:
     void sslResult(bool encrypted);
 
 private:
+    Q_DISABLE_COPY(SessionThread)
     Session *m_session = nullptr;
     KTcpSocket *m_socket = nullptr;
 

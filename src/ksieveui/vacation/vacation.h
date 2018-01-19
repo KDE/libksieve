@@ -67,6 +67,8 @@ protected:
     VacationDialog *mDialog = nullptr;
     bool mWasActive = false;
     bool mCheckOnly = false;
+private:
+    Q_DISABLE_COPY(Vacation)
 };
 }
 

@@ -52,6 +52,7 @@ private Q_SLOTS:
     void slotCheckKep14Ended(KSieveUi::CheckKolabKep14SupportJob *job, bool success);
 
 private:
+    Q_DISABLE_COPY(MultiImapVacationManager)
     SieveImapPasswordProvider *mPasswordProvider = nullptr;
     int mNumberOfJobs = 0;
     bool mCheckInProgress = false;

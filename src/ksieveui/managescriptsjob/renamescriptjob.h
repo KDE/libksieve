@@ -51,6 +51,7 @@ private Q_SLOTS:
     void slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool isActive);
 
 private:
+    Q_DISABLE_COPY(RenameScriptJob)
     RenameScriptJobPrivate *const d;
 };
 }

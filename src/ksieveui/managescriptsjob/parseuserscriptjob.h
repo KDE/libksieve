@@ -49,6 +49,7 @@ Q_SIGNALS:
     void finished(ParseUserScriptJob *job);
 
 private:
+    Q_DISABLE_COPY(ParseUserScriptJob)
     void slotGetResult(KManageSieve::SieveJob *job, bool, const QString &, bool);
     void emitSuccess(const QStringList &activeScriptList);
     void emitError(const QString &msgError);

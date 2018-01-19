@@ -45,6 +45,7 @@ Q_SIGNALS:
     void finished(const QString &msg, bool success);
 
 private:
+    Q_DISABLE_COPY(CheckScriptJob)
     void slotPutCheckSyntaxResult(KManageSieve::SieveJob *job, bool success);
     void slotRestoreFile(KManageSieve::SieveJob *job, bool success);
     CheckScriptJobPrivate *const d;

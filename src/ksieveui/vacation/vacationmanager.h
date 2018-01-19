@@ -46,6 +46,7 @@ private:
     void slotUpdateVacationScriptStatus(bool active, const QString &serverName);
 
 private:
+    Q_DISABLE_COPY(VacationManager)
     VacationManagerPrivate *const d;
 };
 }

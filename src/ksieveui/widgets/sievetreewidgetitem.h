@@ -56,6 +56,7 @@ public:
     void stopAnimation();
 
 private:
+    Q_DISABLE_COPY(SieveTreeWidgetProgress)
     void slotTimerDone();
     int mProgressCount = 0;
     KPixmapSequence mProgressPix;

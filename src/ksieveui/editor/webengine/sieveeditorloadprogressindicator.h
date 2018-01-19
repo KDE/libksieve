@@ -38,6 +38,7 @@ Q_SIGNALS:
     void loadFinished(bool success);
 
 private:
+    Q_DISABLE_COPY(SieveEditorLoadProgressIndicator)
     void slotTimerDone();
     int mProgressCount;
     KPixmapSequence mProgressPix;

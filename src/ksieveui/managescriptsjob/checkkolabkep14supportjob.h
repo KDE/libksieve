@@ -80,6 +80,7 @@ private:
     CheckKolabKep14SupportJobPrivate *const d;
 
 private:
+    Q_DISABLE_COPY(CheckKolabKep14SupportJob)
     void slotCheckKep14Support(KManageSieve::SieveJob *job, bool success, const QStringList &availableScripts, const QString &activeScript);
 };
 }

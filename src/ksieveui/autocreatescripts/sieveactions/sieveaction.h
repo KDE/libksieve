@@ -69,6 +69,7 @@ Q_SIGNALS:
     void valueChanged();
 
 private:
+    Q_DISABLE_COPY(SieveAction)
     QString mName;
     QString mLabel;
     QString mComment;
