@@ -60,7 +60,7 @@ void SieveEditorTabWidget::slotTabContextMenuRequest(const QPoint &pos)
     closeTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
 
     QAction *allOther = menu.addAction(i18nc("@action:inmenu", "Close All Other Tabs"));
-    allOther->setEnabled(countTab);
+    allOther->setEnabled((indexBar == 0) || (count() > 2));
     allOther->setIcon(QIcon::fromTheme(QStringLiteral("tab-close-other")));
 
     QAction *allTab = menu.addAction(i18nc("@action:inmenu", "Close All Tabs"));
