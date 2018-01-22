@@ -55,26 +55,35 @@ void SieveEditorTabWidget::slotTabContextMenuRequest(const QPoint &pos)
 
     const int countTab = (count() > 1);
 
-    QAction *closeTab = menu.addAction(i18nc("@action:inmenu", "Close Tab"));
-    closeTab->setEnabled((indexBar != 0) && countTab);
-    closeTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
+    QAction *closeTab = nullptr;
+    if ((indexBar != 0) && countTab) {
+        closeTab = menu.addAction(i18nc("@action:inmenu", "Close Tab"));
+        closeTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
+    }
 
-    QAction *allOther = menu.addAction(i18nc("@action:inmenu", "Close All Other Tabs"));
-    allOther->setEnabled((indexBar == 0) || (count() > 2));
-    allOther->setIcon(QIcon::fromTheme(QStringLiteral("tab-close-other")));
+    QAction *allOther = nullptr;
+    if ((indexBar == 0) || (count() > 2)) {
+        allOther = menu.addAction(i18nc("@action:inmenu", "Close All Other Tabs"));
+        allOther->setIcon(QIcon::fromTheme(QStringLiteral("tab-close-other")));
+    }
 
-    QAction *allTab = menu.addAction(i18nc("@action:inmenu", "Close All Tabs"));
-    allTab->setEnabled(countTab);
-    allTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
+    QAction *allTab = nullptr;
+    if (countTab) {
+        allTab = menu.addAction(i18nc("@action:inmenu", "Close All Tabs"));
+        allTab->setEnabled(countTab);
+        allTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
+    }
 
     QAction *action = menu.exec(mapToGlobal(pos));
 
-    if (action == allOther) {   // Close all other tabs
-        slotCloseAllTabExcept(indexBar);
-    } else if (action == closeTab) {
-        slotCloseRequest(indexBar);
-    } else if (action == allTab) {
-        slotCloseAllTab();
+    if (action) {
+        if (action == allOther) {   // Close all other tabs
+            slotCloseAllTabExcept(indexBar);
+        } else if (action == closeTab) {
+            slotCloseRequest(indexBar);
+        } else if (action == allTab) {
+            slotCloseAllTab();
+        }
     }
 }
 
