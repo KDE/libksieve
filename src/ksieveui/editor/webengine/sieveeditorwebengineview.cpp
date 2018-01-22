@@ -83,7 +83,7 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
     }
 
     act = pageAction(QWebEnginePage::Copy);
-    if (act->isEnabled()) {
+    if (act->isEnabled() && hasSelection()) {
         menu.addAction(act);
     }
 
