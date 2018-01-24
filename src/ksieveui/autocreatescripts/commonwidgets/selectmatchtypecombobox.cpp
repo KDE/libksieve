@@ -27,7 +27,7 @@ using namespace KSieveUi;
 SelectMatchTypeComboBox::SelectMatchTypeComboBox(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent)
     : QComboBox(parent)
 {
-    mHasRegexCapability = sieveGraphicalModeWidget->sieveCapabilities().contains(QStringLiteral("regex"));
+    mHasRegexCapability = sieveGraphicalModeWidget->sieveCapabilities().contains(QLatin1String("regex"));
     initialize();
     connect(this, QOverload<int>::of(&SelectMatchTypeComboBox::activated), this, &SelectMatchTypeComboBox::slotValueChanged);
 }
@@ -40,7 +40,7 @@ void SelectMatchTypeComboBox::slotValueChanged(int val)
 {
     if (mHasRegexCapability) {
         const QString value = itemData(val).toString();
-        Q_EMIT switchToRegexp(value.contains(QStringLiteral("regex")));
+        Q_EMIT switchToRegexp(value.contains(QLatin1String("regex")));
     }
     Q_EMIT valueChanged();
 }
@@ -77,7 +77,7 @@ void SelectMatchTypeComboBox::setCode(const QString &code, const QString &name, 
         if (mHasRegexCapability) {
             //TODO optimize
             const QString value = itemData(index).toString();
-            Q_EMIT switchToRegexp(value.contains(QStringLiteral("regex")));
+            Q_EMIT switchToRegexp(value.contains(QLatin1String("regex")));
         }
     } else {
         AutoCreateScriptUtil::comboboxItemNotFound(code, name, error);

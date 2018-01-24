@@ -245,8 +245,8 @@ QVector<KSieveUi::SieveImapInstance> KSieveUi::Util::sieveImapInstances()
     QVector<KSieveUi::SieveImapInstance> relevantInstances;
     for (const KSieveUi::SieveImapInstance &instance : allInstances) {
         if (instance.mimeTypes().contains(KMime::Message::mimeType())
-            && instance.capabilities().contains(QStringLiteral("Resource"))
-            && !instance.capabilities().contains(QStringLiteral("Virtual"))) {
+            && instance.capabilities().contains(QLatin1String("Resource"))
+            && !instance.capabilities().contains(QLatin1String("Virtual"))) {
             if (PimCommon::Util::isImapResource(instance.identifier())) {
                 relevantInstances << instance;
             }
@@ -267,7 +267,7 @@ bool KSieveUi::Util::allowOutOfOfficeSettings()
 
 bool Util::hasKep14Support(const QStringList &sieveCapabilities, const QStringList &availableScripts, const QString &activeScript)
 {
-    const bool hasIncludeCapability = sieveCapabilities.contains(QStringLiteral("include"));
+    const bool hasIncludeCapability = sieveCapabilities.contains(QLatin1String("include"));
     if (!hasIncludeCapability) {
         return false;
     }

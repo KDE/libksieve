@@ -97,7 +97,7 @@ void Vacation::slotGetResult(KManageSieve::SieveJob *job, bool success, const QS
     mSieveJob = nullptr; // job deletes itself after returning from this slot!
 
     if (!mCheckOnly && mUrl.scheme() == QLatin1String("sieve")
-        && !job->sieveCapabilities().contains(QStringLiteral("vacation"))) {
+        && !job->sieveCapabilities().contains(QLatin1String("vacation"))) {
         KMessageBox::sorry(nullptr, i18n("Your server did not list \"vacation\" in "
                                          "its list of supported Sieve extensions;\n"
                                          "without it, KMail cannot install out-of-"
@@ -107,7 +107,7 @@ void Vacation::slotGetResult(KManageSieve::SieveJob *job, bool success, const QS
         return;
     }
 
-    const bool supportsDate = job->sieveCapabilities().contains(QStringLiteral("date"));
+    const bool supportsDate = job->sieveCapabilities().contains(QLatin1String("date"));
 
     if (!mDialog && !mCheckOnly) {
         mDialog = new VacationDialog(i18n("Configure \"Out of Office\" Replies"), nullptr);

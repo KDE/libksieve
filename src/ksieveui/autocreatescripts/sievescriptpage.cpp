@@ -47,7 +47,7 @@ SieveScriptPage::SieveScriptPage(SieveEditorGraphicalModeWidget *sieveEditorGrap
     mTabWidget = new SieveScriptTabWidget(this);
     connect(mTabWidget, &SieveScriptTabWidget::tabCloseRequested, this, &SieveScriptPage::slotCloseTab);
 
-    if (mSieveGraphicalModeWidget->sieveCapabilities().contains(QStringLiteral("include"))) {
+    if (mSieveGraphicalModeWidget->sieveCapabilities().contains(QLatin1String("include"))) {
         mIncludeWidget = new SieveIncludeWidget(this);
         mIncludeWidget->setListOfIncludeFile(mSieveGraphicalModeWidget->listOfIncludeFile());
         connect(mIncludeWidget, &SieveIncludeWidget::valueChanged, this, &SieveScriptPage::valueChanged);
@@ -58,7 +58,7 @@ SieveScriptPage::SieveScriptPage(SieveEditorGraphicalModeWidget *sieveEditorGrap
         mTabWidget->addTab(mGlobalVariableWidget, i18n("Global Variable"));
     }
 
-    if (mSieveGraphicalModeWidget->sieveCapabilities().contains(QStringLiteral("foreverypart"))) {
+    if (mSieveGraphicalModeWidget->sieveCapabilities().contains(QLatin1String("foreverypart"))) {
         mForEveryPartWidget = new SieveForEveryPartWidget(this);
         connect(mForEveryPartWidget, &SieveForEveryPartWidget::valueChanged, this, &SieveScriptPage::valueChanged);
         mTabWidget->addTab(mForEveryPartWidget, i18n("ForEveryPart"));
