@@ -13,6 +13,7 @@ moving=false
 Icon=view-filter
 X-DocPath=kioslave5/sieve/index.html
 Description=An ioslave for the Sieve mail filtering protocol
+Description[ar]=«تابع دخل/خرج» لميفاق ترشيح بريد «سِڤ»
 Description[ca]=Un «ioslave» pel protocol de filtratge de correu «Sieve»
 Description[ca@valencia]=Un «ioslave» pel protocol de filtratge de correu «Sieve»
 Description[cs]=Protokol pro filtrování pošty Sieve
