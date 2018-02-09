@@ -114,9 +114,6 @@ void SieveJob::Private::run(Session *session)
         session->sendData(encodedData);
         break;
     }
-
-    default:
-        Q_ASSERT(false);
     }
 }
 
@@ -231,8 +228,6 @@ bool SieveJob::Private::handleResponse(const Response &response, const QByteArra
         run(sessionForUrl(mUrl));
         return false;
     }
-
-    return true;
 }
 
 void SieveJob::Private::killed()
