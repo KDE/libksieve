@@ -642,7 +642,7 @@ class VacationDataExtractor : public KSieve::ScriptBuilder
     };
 public:
     VacationDataExtractor();
-    virtual ~VacationDataExtractor();
+    ~VacationDataExtractor() override;
 
     bool commandFound() const
     {
@@ -772,7 +772,7 @@ class RequireExtractor : public KSieve::ScriptBuilder
     };
 public:
     RequireExtractor();
-    virtual ~RequireExtractor();
+    ~RequireExtractor() override;
 
     bool commandFound() const
     {

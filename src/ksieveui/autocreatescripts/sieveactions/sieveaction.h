@@ -30,7 +30,7 @@ class SieveAction : public QObject
     Q_OBJECT
 public:
     SieveAction(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent = nullptr);
-    virtual ~SieveAction();
+    ~SieveAction() override;
 
     QString name() const;
     QString label() const;

@@ -27,7 +27,7 @@ class CustomManageSieveWidget : public KSieveUi::ManageSieveWidget
     Q_OBJECT
 public:
     explicit CustomManageSieveWidget(SieveImapPasswordProvider *passwordProvider, QWidget *parent = nullptr);
-    virtual ~CustomManageSieveWidget();
+    ~CustomManageSieveWidget() override;
 
 protected:
     bool refreshList() override;

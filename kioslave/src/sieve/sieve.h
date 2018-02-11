@@ -74,7 +74,7 @@ public:
     };
 
     kio_sieveProtocol(const QByteArray &pool_socket, const QByteArray &app_socket);
-    virtual ~kio_sieveProtocol();
+    ~kio_sieveProtocol() override;
 
     void mimetype(const QUrl &url) override;
     void get(const QUrl &url) override;

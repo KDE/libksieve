@@ -252,7 +252,7 @@ class KSIEVEUI_DEPRECATED VacationDataExtractor : public KSieve::ScriptBuilder
     };
 public:
     VacationDataExtractor();
-    virtual ~VacationDataExtractor();
+    ~VacationDataExtractor() override;
     bool commandFound() const
     {
         return mContext == VacationEnd;

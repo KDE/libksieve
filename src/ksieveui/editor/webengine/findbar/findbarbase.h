@@ -35,7 +35,7 @@ class KSIEVEUI_EXPORT FindBarBase : public QWidget
     Q_OBJECT
 public:
     explicit FindBarBase(QWidget *parent = nullptr);
-    virtual ~FindBarBase();
+    ~FindBarBase() override;
 
     QString text() const;
     void setText(const QString &text);

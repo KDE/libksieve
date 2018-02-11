@@ -34,7 +34,7 @@ class Vacation : public QObject
 
 public:
     explicit Vacation(SieveImapPasswordProvider *passwordProvider, QObject *parent = nullptr, bool checkonly = false, const QUrl &url = QUrl());
-    virtual ~Vacation();
+    ~Vacation() override;
 
     bool isUsable() const;
     QString serverName() const;
