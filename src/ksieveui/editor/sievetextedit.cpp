@@ -122,7 +122,7 @@ int SieveTextEdit::lineNumberAreaWidth() const
         ++digits;
     }
 
-    const int space = 3 + fontMetrics().width(QLatin1Char('9')) * digits;
+    const int space = 2 + fontMetrics().boundingRect(QLatin1Char('9')).width() * digits;
     return space;
 }
 
