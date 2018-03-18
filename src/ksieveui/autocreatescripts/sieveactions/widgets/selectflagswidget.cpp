@@ -144,10 +144,12 @@ SelectFlagsWidget::SelectFlagsWidget(QWidget *parent)
     lay->setMargin(0);
     mEdit = new QLineEdit(this);
     mEdit->setReadOnly(true);
+    mEdit->setPlaceholderText(i18n("Click on button for selecting flags"));
     connect(mEdit, &QLineEdit::textChanged, this, &SelectFlagsWidget::valueChanged);
     lay->addWidget(mEdit);
     QToolButton *selectFlags = new QToolButton(this);
     selectFlags->setText(i18n("..."));
+    selectFlags->setToolTip(i18n("Select Flags"));
     connect(selectFlags, &QPushButton::clicked, this, &SelectFlagsWidget::slotSelectFlags);
     lay->addWidget(selectFlags);
 }

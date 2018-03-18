@@ -17,6 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 #include "multilineedit.h"
+#include <KLocalizedString>
 #include <QStyleOptionFrame>
 #include <QApplication>
 
@@ -25,6 +26,7 @@ using namespace KSieveUi;
 MultiLineEdit::MultiLineEdit(QWidget *parent)
     : KPIMTextEdit::PlainTextEditor(parent)
 {
+    setPlaceholderText(i18n("Enter message..."));
     setSearchSupport(false);
     setSizePolicy(QSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed));
     connect(this, &MultiLineEdit::textChanged, this, &MultiLineEdit::valueChanged);
