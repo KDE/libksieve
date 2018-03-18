@@ -28,7 +28,7 @@ class SieveScriptDebuggerTextEdit : public KSieveUi::SieveTextEdit
     Q_OBJECT
 public:
     explicit SieveScriptDebuggerTextEdit(QWidget *parent = nullptr);
-    ~SieveScriptDebuggerTextEdit();
+    ~SieveScriptDebuggerTextEdit() override;
 
 protected:
     void addExtraMenuEntry(QMenu *menu, QPoint pos) override;

@@ -28,7 +28,7 @@ class AkonadiImapSettingInterface : public KSieveUi::AbstractAkonadiImapSettingI
 {
 public:
     AkonadiImapSettingInterface(std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> &interface);
-    ~AkonadiImapSettingInterface();
+    ~AkonadiImapSettingInterface() override;
 
     bool sieveSupport() const override;
     bool sieveReuseConfig() const override;

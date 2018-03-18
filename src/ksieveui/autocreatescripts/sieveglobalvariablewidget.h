@@ -81,7 +81,7 @@ class SieveGlobalVariableLister : public KPIM::KWidgetLister
     Q_OBJECT
 public:
     explicit SieveGlobalVariableLister(QWidget *parent = nullptr);
-    ~SieveGlobalVariableLister();
+    ~SieveGlobalVariableLister() override;
 
     void generatedScript(QString &script, QStringList &requires);
     void loadScript(QXmlStreamReader &element, QString &error);

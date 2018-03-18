@@ -27,7 +27,7 @@ class MultiLineEdit : public KPIMTextEdit::PlainTextEditor
     Q_OBJECT
 public:
     explicit MultiLineEdit(QWidget *parent = nullptr);
-    ~MultiLineEdit();
+    ~MultiLineEdit() override;
 
 Q_SIGNALS:
     void valueChanged();

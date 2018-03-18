@@ -44,7 +44,7 @@ class AkonadiImapSettingInterfaceTest : public KSieveUi::AbstractAkonadiImapSett
 {
 public:
     AkonadiImapSettingInterfaceTest(const AkonadiImapSettingInterfaceDataTest &data);
-    ~AkonadiImapSettingInterfaceTest();
+    ~AkonadiImapSettingInterfaceTest() override;
 
     bool sieveSupport() const override;
     bool sieveReuseConfig() const override;

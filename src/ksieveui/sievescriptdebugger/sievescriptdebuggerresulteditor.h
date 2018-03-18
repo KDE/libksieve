@@ -28,7 +28,7 @@ class SieveScriptDebuggerResultEditor : public KPIMTextEdit::PlainTextEditor
     Q_OBJECT
 public:
     explicit SieveScriptDebuggerResultEditor(QWidget *parent = nullptr);
-    ~SieveScriptDebuggerResultEditor();
+    ~SieveScriptDebuggerResultEditor() override;
 
 protected:
     void addExtraMenuEntry(QMenu *menu, QPoint pos) override;

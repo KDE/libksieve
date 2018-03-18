@@ -32,7 +32,7 @@ class SieveTemplateListWidget : public PimCommon::TemplateListWidget
     Q_OBJECT
 public:
     explicit SieveTemplateListWidget(const QString &configName, QWidget *parent = nullptr);
-    ~SieveTemplateListWidget();
+    ~SieveTemplateListWidget() override;
 
     QVector<PimCommon::defaultTemplate> defaultTemplates() override;
     bool addNewTemplate(QString &templateName, QString &templateScript) override;

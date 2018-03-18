@@ -87,7 +87,7 @@ class SieveIncludeWidgetLister : public KPIM::KWidgetLister
     Q_OBJECT
 public:
     explicit SieveIncludeWidgetLister(QWidget *parent = nullptr);
-    ~SieveIncludeWidgetLister();
+    ~SieveIncludeWidgetLister() override;
 
     void generatedScript(QString &script, QStringList &requires);
     void loadScript(QXmlStreamReader &element, QString &error);

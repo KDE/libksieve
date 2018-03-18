@@ -30,7 +30,7 @@ class KSIEVEUI_EXPORT SieveEditor : public QDialog
     Q_OBJECT
 public:
     explicit SieveEditor(QWidget *parent = nullptr);
-    ~SieveEditor();
+    ~SieveEditor() override;
 
     QString script() const;
     QString originalScript() const;

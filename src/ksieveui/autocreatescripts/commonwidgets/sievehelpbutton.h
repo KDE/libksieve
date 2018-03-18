@@ -27,7 +27,7 @@ class SieveHelpButton : public QToolButton
     Q_OBJECT
 public:
     explicit SieveHelpButton(QWidget *parent = nullptr);
-    ~SieveHelpButton();
+    ~SieveHelpButton() override;
 
 protected:
     bool event(QEvent *event) override;

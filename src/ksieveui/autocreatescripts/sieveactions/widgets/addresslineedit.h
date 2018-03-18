@@ -27,7 +27,7 @@ class AddressLineEdit : public QLineEdit
     Q_OBJECT
 public:
     explicit AddressLineEdit(QWidget *parent = nullptr);
-    ~AddressLineEdit();
+    ~AddressLineEdit() override;
 
 Q_SIGNALS:
     void valueChanged();

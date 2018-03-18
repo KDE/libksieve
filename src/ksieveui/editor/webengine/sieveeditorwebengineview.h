@@ -26,7 +26,7 @@ class SieveEditorWebEngineView : public QWebEngineView
     Q_OBJECT
 public:
     explicit SieveEditorWebEngineView(QWidget *parent = nullptr);
-    ~SieveEditorWebEngineView();
+    ~SieveEditorWebEngineView() override;
 
 protected:
     void contextMenuEvent(QContextMenuEvent *ev) override;

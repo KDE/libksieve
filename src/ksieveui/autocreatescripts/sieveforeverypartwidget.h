@@ -32,7 +32,7 @@ class SieveForEveryPartWidget : public SieveWidgetPageAbstract
     Q_OBJECT
 public:
     explicit SieveForEveryPartWidget(QWidget *parent = nullptr);
-    ~SieveForEveryPartWidget();
+    ~SieveForEveryPartWidget() override;
 
     void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) override;
     void loadScript(QXmlStreamReader &element, QString &error);

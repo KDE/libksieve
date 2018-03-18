@@ -31,7 +31,7 @@ class KSIEVEUI_TESTS_EXPORT MoveImapFolderWidget : public KSieveUi::AbstractMove
     Q_OBJECT
 public:
     explicit MoveImapFolderWidget(QWidget *parent = nullptr);
-    ~MoveImapFolderWidget();
+    ~MoveImapFolderWidget() override;
 
     void setText(const QString &str) override;
     QString text() const override;

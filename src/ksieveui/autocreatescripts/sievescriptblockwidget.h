@@ -46,7 +46,7 @@ public:
     };
 
     explicit SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent = nullptr);
-    ~SieveScriptBlockWidget();
+    ~SieveScriptBlockWidget() override;
 
     void setPageType(PageType type) override;
 

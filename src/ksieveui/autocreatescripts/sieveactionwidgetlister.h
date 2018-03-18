@@ -80,7 +80,7 @@ class SieveActionWidgetLister : public KPIM::KWidgetLister
     Q_OBJECT
 public:
     explicit SieveActionWidgetLister(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent = nullptr);
-    ~SieveActionWidgetLister();
+    ~SieveActionWidgetLister() override;
 
     void generatedScript(QString &script, QStringList &requires, bool onlyActions, bool inForEveryPartLoop);
     void loadScript(QXmlStreamReader &element, bool onlyActions, QString &error);

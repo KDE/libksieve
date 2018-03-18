@@ -32,7 +32,7 @@ class KSIEVEUI_EXPORT AutoCreateScriptDialog : public QDialog
     Q_OBJECT
 public:
     explicit AutoCreateScriptDialog(QWidget *parent = nullptr);
-    ~AutoCreateScriptDialog();
+    ~AutoCreateScriptDialog() override;
 
     QString script(QString &requires) const;
     void setSieveCapabilities(const QStringList &capabilities);

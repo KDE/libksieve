@@ -29,7 +29,7 @@ class KSIEVEUI_EXPORT SieveEditorTabWidget : public QTabWidget
     Q_OBJECT
 public:
     explicit SieveEditorTabWidget(QWidget *parent = nullptr);
-    ~SieveEditorTabWidget();
+    ~SieveEditorTabWidget() override;
 
     QUrl currentHelpUrl() const;
     QString currentHelpTitle() const;
