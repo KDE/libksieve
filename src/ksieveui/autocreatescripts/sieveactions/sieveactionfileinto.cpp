@@ -107,9 +107,8 @@ bool SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
 QWidget *SieveActionFileInto::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QHBoxLayout *lay = new QHBoxLayout;
+    QHBoxLayout *lay = new QHBoxLayout(w);
     lay->setMargin(0);
-    w->setLayout(lay);
 
     if (mHasCopySupport) {
         QCheckBox *copy = new QCheckBox(i18n("Keep a copy"));
