@@ -17,7 +17,7 @@
    Boston, MA 02110-1301, USA.
 */
 #include "addresslineedit.h"
-
+#include <KLocalizedString>
 #include <KColorScheme>
 
 using namespace KSieveUi;
@@ -26,6 +26,7 @@ AddressLineEdit::AddressLineEdit(QWidget *parent)
     : QLineEdit(parent)
 {
     setClearButtonEnabled(true);
+    setPlaceholderText(i18n("Define Email Address..."));
     connect(this, &AddressLineEdit::textChanged, this, &AddressLineEdit::slotTextChanged);
 }
 
