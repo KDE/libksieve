@@ -69,7 +69,7 @@ bool SieveActionRedirect::setParamWidgetValue(QXmlStreamReader &element, QWidget
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("str")) {
-            QLineEdit *edit = w->findChild<AddressLineEdit *>(QStringLiteral("RedirectEdit"));
+            AddressLineEdit *edit = w->findChild<AddressLineEdit *>(QStringLiteral("RedirectEdit"));
             const QString tagValue = element.readElementText();
             edit->setText(AutoCreateScriptUtil::quoteStr(tagValue));
         } else if (tagName == QLatin1String("tag")) {
@@ -110,7 +110,7 @@ bool SieveActionRedirect::setParamWidgetValue(QXmlStreamReader &element, QWidget
 QString SieveActionRedirect::code(QWidget *w) const
 {
     QString result = QStringLiteral("redirect ");
-    const QLineEdit *edit = w->findChild<AddressLineEdit *>(QStringLiteral("RedirectEdit"));
+    const AddressLineEdit *edit = w->findChild<AddressLineEdit *>(QStringLiteral("RedirectEdit"));
     const QString text = edit->text();
 
     if (mHasCopySupport) {

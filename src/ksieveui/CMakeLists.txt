@@ -202,6 +202,7 @@ set(ksieveui_widgets_SRCS
     widgets/managesievewidget.cpp
     widgets/abstractmoveimapfolderwidget.cpp
     widgets/abstractregexpeditorlineedit.cpp
+    widgets/abstractselectemaillineedit.cpp
     widgets/lineeditvalidator.cpp
     widgets/includefilelineedit.cpp
     widgets/moveimapfolderwidget.cpp
@@ -334,6 +335,7 @@ ecm_generate_headers(ksieveui_Camelcasewidgets_HEADERS
     ManageSieveTreeView
     AbstractMoveImapFolderWidget
     AbstractRegexpEditorLineEdit
+    AbstractSelectEmailLineEdit
     REQUIRED_HEADERS ksieveui_widgets_HEADERS
     PREFIX KSieveUi
     RELATIVE widgets

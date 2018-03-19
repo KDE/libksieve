@@ -20,14 +20,17 @@
 #define ADDRESSLINEEDIT_H
 
 #include <QLineEdit>
-
+#include <KSieveUi/AbstractSelectEmailLineEdit>
 namespace KSieveUi {
-class AddressLineEdit : public QLineEdit
+class AddressLineEdit : public AbstractSelectEmailLineEdit
 {
     Q_OBJECT
 public:
     explicit AddressLineEdit(QWidget *parent = nullptr);
     ~AddressLineEdit() override;
+
+    void setText(const QString &str) override;
+    QString text() const override;
 
 Q_SIGNALS:
     void valueChanged();
@@ -38,6 +41,7 @@ protected:
 private:
     void slotTextChanged();
     void verifyAddress();
+    QLineEdit *mLineEdit = nullptr;
     QString mNegativeBackground;
     bool mIncorrectEmail = false;
 };

@@ -19,15 +19,20 @@
 #include "addresslineedit.h"
 #include <KLocalizedString>
 #include <KColorScheme>
+#include <QHBoxLayout>
 
 using namespace KSieveUi;
 
 AddressLineEdit::AddressLineEdit(QWidget *parent)
-    : QLineEdit(parent)
+    : AbstractSelectEmailLineEdit(parent)
 {
-    setClearButtonEnabled(true);
-    setPlaceholderText(i18n("Define Email Address..."));
-    connect(this, &AddressLineEdit::textChanged, this, &AddressLineEdit::slotTextChanged);
+    QHBoxLayout *mainLayout = new QHBoxLayout(this);
+    mainLayout->setMargin(0);
+    mLineEdit = new QLineEdit(this);
+    mainLayout->addWidget(mLineEdit);
+    mLineEdit->setClearButtonEnabled(true);
+    mLineEdit->setPlaceholderText(i18n("Define Email Address..."));
+    connect(mLineEdit, &QLineEdit::textChanged, this, &AddressLineEdit::slotTextChanged);
 }
 
 AddressLineEdit::~AddressLineEdit()
@@ -57,12 +62,23 @@ void AddressLineEdit::verifyAddress()
             styleSheet = mNegativeBackground;
         }
     }
-    setStyleSheet(styleSheet);
+    mLineEdit->setStyleSheet(styleSheet);
 #endif
 }
 
 void AddressLineEdit::focusOutEvent(QFocusEvent *ev)
 {
     verifyAddress();
-    QLineEdit::focusOutEvent(ev);
+    AbstractSelectEmailLineEdit::focusOutEvent(ev);
+}
+
+
+void KSieveUi::AddressLineEdit::setText(const QString &str)
+{
+    mLineEdit->setText(str);
+}
+
+QString KSieveUi::AddressLineEdit::text() const
+{
+    return mLineEdit->text();
 }
