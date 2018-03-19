@@ -23,6 +23,8 @@
 #include "widgets/addresslineedit.h"
 
 #include <KLocalizedString>
+#include <KPluginFactory>
+#include <KPluginLoader>
 #include <QLineEdit>
 
 #include <QHBoxLayout>
@@ -57,7 +59,15 @@ QWidget *SieveActionRedirect::createParamWidget(QWidget *parent) const
         connect(list, &QCheckBox::clicked, this, &SieveActionRedirect::valueChanged);
         lay->addWidget(list);
     }
-    AddressLineEdit *edit = new AddressLineEdit;
+
+    KSieveUi::AbstractSelectEmailLineEdit *edit = nullptr;
+    KPluginLoader loader(QStringLiteral("libksieve/emaillineeditplugin"));
+    KPluginFactory *factory = loader.factory();
+    if (factory) {
+        edit = factory->create<KSieveUi::AbstractSelectEmailLineEdit>();
+    } else {
+        edit = new AddressLineEdit;
+    }
     edit->setObjectName(QStringLiteral("RedirectEdit"));
     connect(edit, &AddressLineEdit::valueChanged, this, &SieveActionRedirect::valueChanged);
     lay->addWidget(edit);
@@ -69,7 +79,7 @@ bool SieveActionRedirect::setParamWidgetValue(QXmlStreamReader &element, QWidget
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("str")) {
-            AddressLineEdit *edit = w->findChild<AddressLineEdit *>(QStringLiteral("RedirectEdit"));
+            AbstractSelectEmailLineEdit *edit = w->findChild<AbstractSelectEmailLineEdit *>(QStringLiteral("RedirectEdit"));
             const QString tagValue = element.readElementText();
             edit->setText(AutoCreateScriptUtil::quoteStr(tagValue));
         } else if (tagName == QLatin1String("tag")) {
@@ -110,7 +120,7 @@ bool SieveActionRedirect::setParamWidgetValue(QXmlStreamReader &element, QWidget
 QString SieveActionRedirect::code(QWidget *w) const
 {
     QString result = QStringLiteral("redirect ");
-    const AddressLineEdit *edit = w->findChild<AddressLineEdit *>(QStringLiteral("RedirectEdit"));
+    const AbstractSelectEmailLineEdit *edit = w->findChild<AbstractSelectEmailLineEdit *>(QStringLiteral("RedirectEdit"));
     const QString text = edit->text();
 
     if (mHasCopySupport) {

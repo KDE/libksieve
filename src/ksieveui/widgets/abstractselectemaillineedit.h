@@ -33,6 +33,8 @@ public:
     ~AbstractSelectEmailLineEdit();
     virtual void setText(const QString &str) = 0;
     virtual QString text() const = 0;
+Q_SIGNALS:
+    void valueChanged();
 };
 }
 
