@@ -43,7 +43,6 @@ private:
     void verifyAddress();
     QLineEdit *mLineEdit = nullptr;
     QString mNegativeBackground;
-    bool mIncorrectEmail = false;
 };
 }
 
