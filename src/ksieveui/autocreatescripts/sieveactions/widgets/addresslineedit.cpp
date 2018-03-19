@@ -52,6 +52,7 @@ void AddressLineEdit::verifyAddress()
     const QString lineEditText = text();
     if (!lineEditText.isEmpty()) {
         const bool incorrectEmail = !lineEditText.contains(QLatin1Char('@'));
+        //Fix check multi address
         if (mNegativeBackground.isEmpty()) {
             KStatefulBrush bgBrush = KStatefulBrush(KColorScheme::View, KColorScheme::NegativeText);
             mNegativeBackground = QStringLiteral("QLineEdit{ color:%1 }").arg(bgBrush.brush(this).color().name());
@@ -71,12 +72,12 @@ void AddressLineEdit::focusOutEvent(QFocusEvent *ev)
 }
 
 
-void KSieveUi::AddressLineEdit::setText(const QString &str)
+void AddressLineEdit::setText(const QString &str)
 {
     mLineEdit->setText(str);
 }
 
-QString KSieveUi::AddressLineEdit::text() const
+QString AddressLineEdit::text() const
 {
     return mLineEdit->text();
 }

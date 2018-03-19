@@ -21,8 +21,9 @@
 
 #include <QLineEdit>
 #include <KSieveUi/AbstractSelectEmailLineEdit>
+#include "ksieveui_private_export.h"
 namespace KSieveUi {
-class AddressLineEdit : public AbstractSelectEmailLineEdit
+class KSIEVEUI_TESTS_EXPORT AddressLineEdit : public AbstractSelectEmailLineEdit
 {
     Q_OBJECT
 public:

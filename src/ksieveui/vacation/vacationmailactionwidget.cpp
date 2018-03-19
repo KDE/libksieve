@@ -19,6 +19,7 @@
 
 #include "vacationmailactionwidget.h"
 #include "widgets/moveimapfolderwidget.h"
+#include "autocreatescripts/autocreatescriptutil_p.h"
 #include <QStackedWidget>
 #include <QHBoxLayout>
 #include <QLineEdit>
@@ -44,13 +45,8 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
 
     mStackedWidget->addWidget(mMailActionRecipient);
 
-    KPluginLoader loader(QStringLiteral("libksieve/imapfoldercompletionplugin"));
-    KPluginFactory *factory = loader.factory();
-    if (factory) {
-        mMoveImapFolderWidget = factory->create<KSieveUi::AbstractMoveImapFolderWidget>();
-    } else {
-        mMoveImapFolderWidget = new KSieveUi::MoveImapFolderWidget;
-    }
+    mMoveImapFolderWidget = AutoCreateScriptUtil::createImapFolderWidget();
+
     mMoveImapFolderWidget->setObjectName(QStringLiteral("moveImapFolderWidget"));
     mStackedWidget->addWidget(mMoveImapFolderWidget);
     mStackedWidget->setCurrentIndex(0);

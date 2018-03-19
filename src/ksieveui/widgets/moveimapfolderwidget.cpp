@@ -19,6 +19,7 @@
 
 #include "moveimapfolderwidget.h"
 #include <QLineEdit>
+#include <KLocalizedString>
 #include <QHBoxLayout>
 using namespace KSieveUi;
 
@@ -31,6 +32,7 @@ MoveImapFolderWidget::MoveImapFolderWidget(QWidget *parent)
     mLineEdit = new QLineEdit(this);
     mLineEdit->setObjectName(QStringLiteral("lineedit"));
     mLineEdit->setClearButtonEnabled(true);
+    mLineEdit->setPlaceholderText(i18n("Define Folder"));
     mainLayout->addWidget(mLineEdit);
     connect(mLineEdit, &QLineEdit::textChanged, this, &MoveImapFolderWidget::textChanged);
 }

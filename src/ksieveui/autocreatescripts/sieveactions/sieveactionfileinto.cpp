@@ -19,6 +19,7 @@
 #include "sieveactionfileinto.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
+#include "autocreatescripts/autocreatescriptutil_p.h"
 #include "widgets/moveimapfolderwidget.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include <KLocalizedString>
@@ -123,15 +124,7 @@ QWidget *SieveActionFileInto::createParamWidget(QWidget *parent) const
         lay->addWidget(create);
     }
 
-    KSieveUi::AbstractMoveImapFolderWidget *edit = nullptr;
-    KPluginLoader loader(QStringLiteral("libksieve/imapfoldercompletionplugin"));
-    KPluginFactory *factory = loader.factory();
-    if (factory) {
-        edit = factory->create<KSieveUi::AbstractMoveImapFolderWidget>();
-        edit->setSieveImapAccountSettings(sieveImapAccountSettings());
-    } else {
-        edit = new KSieveUi::MoveImapFolderWidget;
-    }
+    KSieveUi::AbstractMoveImapFolderWidget *edit = AutoCreateScriptUtil::createImapFolderWidget();
     connect(edit, &KSieveUi::AbstractMoveImapFolderWidget::textChanged, this, &SieveActionFileInto::valueChanged);
     lay->addWidget(edit);
     edit->setObjectName(QStringLiteral("fileintolineedit"));

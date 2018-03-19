@@ -9,6 +9,7 @@ macro( add_vacation_test _source )
     ../vacationutils.cpp
     ../vacationeditwidget.cpp
     ../vacationmailactionwidget.cpp
+    ../../autocreatescripts/autocreatescriptutil.cpp
     )
   configure_file(../../settings/sieve-editor.kcfg.cmake ${CMAKE_CURRENT_BINARY_DIR}/sieve-editor.kcfg)
   kconfig_add_kcfg_files(_test ../../settings/sieve-vacation.kcfgc ../../settings/sieve-editor.kcfgc)

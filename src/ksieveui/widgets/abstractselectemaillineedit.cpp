@@ -30,3 +30,13 @@ AbstractSelectEmailLineEdit::~AbstractSelectEmailLineEdit()
 {
 
 }
+
+bool AbstractSelectEmailLineEdit::multiSelection() const
+{
+    return mMultiSelection;
+}
+
+void AbstractSelectEmailLineEdit::setMultiSelection(bool multiSelection)
+{
+    mMultiSelection = multiSelection;
+}

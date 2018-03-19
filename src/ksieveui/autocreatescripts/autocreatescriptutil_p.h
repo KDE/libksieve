@@ -24,7 +24,10 @@
 #include <QStringList>
 #include <QXmlStreamReader>
 #include <KSieveUi/AbstractRegexpEditorLineEdit>
+#include "ksieveui_private_export.h"
 namespace KSieveUi {
+class AbstractMoveImapFolderWidget;
+class AbstractSelectEmailLineEdit;
 namespace AutoCreateScriptUtil {
 QString createMultiLine(const QString &str);
 QString createList(const QString &str, QChar separator, bool addEndSemiColon = true);
@@ -46,6 +49,8 @@ QString indentation();
 AbstractRegexpEditorLineEdit *createRegexpEditorLineEdit(QWidget *parent = nullptr);
 QString generateConditionComment(const QString &comment);
 QString loadConditionComment(QString originalComment, const QString &comment);
+KSIEVEUI_TESTS_EXPORT KSieveUi::AbstractMoveImapFolderWidget *createImapFolderWidget();
+KSIEVEUI_TESTS_EXPORT KSieveUi::AbstractSelectEmailLineEdit *createSelectEmailsWidget();
 }
 }
 #endif // AUTOCREATESCRIPTUTIL_H

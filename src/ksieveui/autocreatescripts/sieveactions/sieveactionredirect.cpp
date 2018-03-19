@@ -60,14 +60,7 @@ QWidget *SieveActionRedirect::createParamWidget(QWidget *parent) const
         lay->addWidget(list);
     }
 
-    KSieveUi::AbstractSelectEmailLineEdit *edit = nullptr;
-    KPluginLoader loader(QStringLiteral("libksieve/emaillineeditplugin"));
-    KPluginFactory *factory = loader.factory();
-    if (factory) {
-        edit = factory->create<KSieveUi::AbstractSelectEmailLineEdit>();
-    } else {
-        edit = new AddressLineEdit;
-    }
+    KSieveUi::AbstractSelectEmailLineEdit *edit = AutoCreateScriptUtil::createSelectEmailsWidget();
     edit->setObjectName(QStringLiteral("RedirectEdit"));
     connect(edit, &AddressLineEdit::valueChanged, this, &SieveActionRedirect::valueChanged);
     lay->addWidget(edit);

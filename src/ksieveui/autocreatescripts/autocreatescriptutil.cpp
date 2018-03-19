@@ -27,6 +27,13 @@
 #include <QRegularExpression>
 
 #include "autocreatescripts/sieveconditions/widgets/regexpeditorlineedit.h"
+
+#include <KSieveUi/AbstractMoveImapFolderWidget>
+#include <KSieveUi/AbstractSelectEmailLineEdit>
+
+#include <widgets/moveimapfolderwidget.h>
+
+#include <autocreatescripts/sieveactions/widgets/addresslineedit.h>
 using namespace KSieveUi;
 
 QString AutoCreateScriptUtil::createMultiLine(const QString &str)
@@ -195,6 +202,32 @@ QString AutoCreateScriptUtil::createFullWhatsThis(const QString &help, const QSt
 QString AutoCreateScriptUtil::indentation()
 {
     return QStringLiteral("    ");
+}
+
+KSieveUi::AbstractMoveImapFolderWidget *AutoCreateScriptUtil::createImapFolderWidget()
+{
+    KSieveUi::AbstractMoveImapFolderWidget *edit = nullptr;
+    KPluginLoader loader(QStringLiteral("libksieve/imapfoldercompletionplugin"));
+    KPluginFactory *factory = loader.factory();
+    if (factory) {
+        edit = factory->create<KSieveUi::AbstractMoveImapFolderWidget>();
+    } else {
+        edit = new KSieveUi::MoveImapFolderWidget;
+    }
+    return edit;
+}
+
+KSieveUi::AbstractSelectEmailLineEdit *AutoCreateScriptUtil::createSelectEmailsWidget()
+{
+    KSieveUi::AbstractSelectEmailLineEdit *edit = nullptr;
+    KPluginLoader loader(QStringLiteral("libksieve/emaillineeditplugin"));
+    KPluginFactory *factory = loader.factory();
+    if (factory) {
+        edit = factory->create<KSieveUi::AbstractSelectEmailLineEdit>();
+    } else {
+        edit = new AddressLineEdit;
+    }
+    return edit;
 }
 
 AbstractRegexpEditorLineEdit *AutoCreateScriptUtil::createRegexpEditorLineEdit(QWidget *parent)
