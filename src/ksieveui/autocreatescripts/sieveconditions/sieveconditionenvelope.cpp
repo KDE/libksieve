@@ -68,12 +68,12 @@ QWidget *SieveConditionEnvelope::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 1, 0);
 
     AbstractRegexpEditorLineEdit *edit = AutoCreateScriptUtil::createRegexpEditorLineEdit();
+    edit->setObjectName(QStringLiteral("editaddress"));
     connect(edit, &AbstractRegexpEditorLineEdit::textChanged, this, &SieveConditionEnvelope::valueChanged);
     connect(selectMatchCombobox, &SelectMatchTypeComboBox::switchToRegexp, edit, &AbstractRegexpEditorLineEdit::switchToRegexpEditorLineEdit);
     edit->setClearButtonEnabled(true);
     edit->setPlaceholderText(i18n("Use ; to separate emails"));
     grid->addWidget(edit, 1, 1);
-    edit->setObjectName(QStringLiteral("editaddress"));
 
     return w;
 }

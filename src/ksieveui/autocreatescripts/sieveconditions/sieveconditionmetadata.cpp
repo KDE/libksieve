@@ -28,6 +28,7 @@
 #include <QHBoxLayout>
 #include "libksieve_debug.h"
 #include <QXmlStreamReader>
+#include <KSieveUi/AbstractMoveImapFolderWidget>
 
 using namespace KSieveUi;
 SieveConditionMetaData::SieveConditionMetaData(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -54,8 +55,9 @@ QWidget *SieveConditionMetaData::createParamWidget(QWidget *parent) const
     QLabel *lab = new QLabel(i18n("Mailbox:"));
     grid->addWidget(lab, 0, 0);
 
-    QLineEdit *mailbox = new QLineEdit;
-    connect(mailbox, &QLineEdit::textChanged, this, &SieveConditionMetaData::valueChanged);
+    KSieveUi::AbstractMoveImapFolderWidget *mailbox = AutoCreateScriptUtil::createImapFolderWidget();
+
+    connect(mailbox, &KSieveUi::AbstractMoveImapFolderWidget::textChanged, this, &SieveConditionMetaData::valueChanged);
     mailbox->setObjectName(QStringLiteral("mailbox"));
     grid->addWidget(mailbox, 0, 1);
 
@@ -87,7 +89,7 @@ QString SieveConditionMetaData::code(QWidget *w) const
 
     QString result = AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("metadata %1 ").arg(matchString);
 
-    const QLineEdit *mailbox = w->findChild<QLineEdit *>(QStringLiteral("mailbox"));
+    const KSieveUi::AbstractMoveImapFolderWidget *mailbox = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("mailbox"));
     const QString mailboxStr = mailbox->text();
 
     result += QStringLiteral("\"%1\" ").arg(mailboxStr);
@@ -137,7 +139,7 @@ bool SieveConditionMetaData::setParamWidgetValue(QXmlStreamReader &element, QWid
             switch (index) {
             case 0:
             {
-                QLineEdit *mailbox = w->findChild<QLineEdit *>(QStringLiteral("mailbox"));
+                KSieveUi::AbstractMoveImapFolderWidget *mailbox = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("mailbox"));
                 mailbox->setText(tagValue);
                 break;
             }
