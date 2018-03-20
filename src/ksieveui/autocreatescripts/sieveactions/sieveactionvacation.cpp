@@ -31,6 +31,8 @@
 #include "libksieve_debug.h"
 #include <QXmlStreamReader>
 #include <QGridLayout>
+#include "autocreatescripts/autocreatescriptutil_p.h"
+#include <KSieveUi/AbstractSelectEmailLineEdit>
 
 using namespace KSieveUi;
 
@@ -76,9 +78,10 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("Additional email:"));
     grid->addWidget(lab, 2, 0);
 
-    QLineEdit *addresses = new QLineEdit;
+    AbstractSelectEmailLineEdit *addresses = AutoCreateScriptUtil::createSelectEmailsWidget();
     addresses->setObjectName(QStringLiteral("addresses"));
-    connect(addresses, &QLineEdit::textChanged, this, &SieveActionVacation::valueChanged);
+    addresses->setMultiSelection(true);
+    connect(addresses, &AbstractSelectEmailLineEdit::valueChanged, this, &SieveActionVacation::valueChanged);
     grid->addWidget(addresses, 2, 1);
 
     lab = new QLabel(i18n("Vacation reason:"));
@@ -108,7 +111,7 @@ bool SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
             } else if (tagValue == QLatin1String("days")) {
                 //Nothing wait num tag for it.
             } else if (tagValue == QLatin1String("addresses")) {
-                QLineEdit *addresses = w->findChild<QLineEdit *>(QStringLiteral("addresses"));
+                AbstractSelectEmailLineEdit *addresses = w->findChild<AbstractSelectEmailLineEdit *>(QStringLiteral("addresses"));
                 if (element.readNextStartElement()) {
                     const QStringRef textElementTagName = element.name();
                     if (textElementTagName == QLatin1String("str")) {
@@ -161,7 +164,7 @@ QString SieveActionVacation::code(QWidget *w) const
     const QLineEdit *subject = w->findChild<QLineEdit *>(QStringLiteral("subject"));
     const QString subjectStr = subject->text();
 
-    const QLineEdit *addresses = w->findChild<QLineEdit *>(QStringLiteral("addresses"));
+    const AbstractSelectEmailLineEdit *addresses = w->findChild<AbstractSelectEmailLineEdit *>(QStringLiteral("addresses"));
     const QString addressesStr = addresses->text();
     QString result = QStringLiteral("vacation");
     if (!dayStr.isEmpty()) {
