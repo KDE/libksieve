@@ -26,6 +26,7 @@
 #include "libksieve_debug.h"
 #include <QXmlStreamReader>
 #include <QGridLayout>
+#include <KSieveUi/AbstractMoveImapFolderWidget>
 
 using namespace KSieveUi;
 SieveConditionMetaDataExists::SieveConditionMetaDataExists(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -43,8 +44,8 @@ QWidget *SieveConditionMetaDataExists::createParamWidget(QWidget *parent) const
     QLabel *lab = new QLabel(i18n("Mailbox:"));
     grid->addWidget(lab, 0, 0);
 
-    QLineEdit *mailbox = new QLineEdit;
-    connect(mailbox, &QLineEdit::textChanged, this, &SieveConditionMetaDataExists::valueChanged);
+    KSieveUi::AbstractMoveImapFolderWidget *mailbox = AutoCreateScriptUtil::createImapFolderWidget();
+    connect(mailbox, &KSieveUi::AbstractMoveImapFolderWidget::textChanged, this, &SieveConditionMetaDataExists::valueChanged);
     mailbox->setObjectName(QStringLiteral("mailbox"));
     grid->addWidget(mailbox, 0, 1);
 
@@ -61,7 +62,7 @@ QWidget *SieveConditionMetaDataExists::createParamWidget(QWidget *parent) const
 
 QString SieveConditionMetaDataExists::code(QWidget *w) const
 {
-    const QLineEdit *mailbox = w->findChild<QLineEdit *>(QStringLiteral("mailbox"));
+    const KSieveUi::AbstractMoveImapFolderWidget *mailbox = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("mailbox"));
     const QString mailboxStr = mailbox->text();
 
     const QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
@@ -98,7 +99,7 @@ bool SieveConditionMetaDataExists::setParamWidgetValue(QXmlStreamReader &element
         if (tagName == QLatin1String("str")) {
             const QString tagValue = element.readElementText();
             if (index == 0) {
-                QLineEdit *mailbox = w->findChild<QLineEdit *>(QStringLiteral("mailbox"));
+                KSieveUi::AbstractMoveImapFolderWidget *mailbox = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("mailbox"));
                 mailbox->setText(tagValue);
             } else if (index == 1) {
                 QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
