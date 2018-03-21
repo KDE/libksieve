@@ -29,6 +29,8 @@
 #include "libksieve_debug.h"
 #include <QGridLayout>
 
+#include <KSieveUi/AbstractSelectEmailLineEdit>
+
 using namespace KSieveUi;
 SieveActionReplace::SieveActionReplace(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
     : SieveAction(sieveGraphicalModeWidget, QStringLiteral("replace"), i18n("Replace"), parent)
@@ -53,9 +55,9 @@ QWidget *SieveActionReplace::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("from:"));
     grid->addWidget(lab, 1, 0);
 
-    QLineEdit *headers = new QLineEdit;
+    KSieveUi::AbstractSelectEmailLineEdit *headers = AutoCreateScriptUtil::createSelectEmailsWidget();
     headers->setObjectName(QStringLiteral("from"));
-    connect(headers, &QLineEdit::textChanged, this, &SieveActionReplace::valueChanged);
+    connect(headers, &AbstractSelectEmailLineEdit::valueChanged, this, &SieveActionReplace::valueChanged);
     grid->addWidget(headers, 1, 1);
 
     lab = new QLabel(i18n("text:"));
@@ -87,7 +89,7 @@ bool SieveActionReplace::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             } else if (tagValue == QLatin1String("from")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
-                    QLineEdit *headers = w->findChild<QLineEdit *>(QStringLiteral("from"));
+                    KSieveUi::AbstractSelectEmailLineEdit *headers = w->findChild<KSieveUi::AbstractSelectEmailLineEdit *>(QStringLiteral("from"));
                     headers->setText(strValue);
                 }
             } else {
@@ -118,7 +120,7 @@ QString SieveActionReplace::code(QWidget *w) const
         result += QStringLiteral(":subject \"%1\" ").arg(subjectStr);
     }
 
-    const QLineEdit *headers = w->findChild<QLineEdit *>(QStringLiteral("from"));
+    const KSieveUi::AbstractSelectEmailLineEdit *headers = w->findChild<KSieveUi::AbstractSelectEmailLineEdit *>(QStringLiteral("from"));
     const QString headersStr = headers->text();
     if (!headersStr.isEmpty()) {
         result += QStringLiteral(":from \"%1\" ").arg(headersStr);
