@@ -23,7 +23,7 @@
 #include <QStack>
 
 namespace KManageSieve {
-class SieveJob::Private
+class Q_DECL_HIDDEN SieveJob::Private
 {
 public:
     Private(SieveJob *qq)
