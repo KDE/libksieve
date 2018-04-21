@@ -18,7 +18,7 @@
 #include "editorsieve_gui.h"
 #include <QDebug>
 #include "ksieveui/editor/sieveeditor.h"
-#include <PimCommon/SieveSyntaxHighlighterUtil>
+#include "ksieveui/tests/capability.h"
 
 #include <qapplication.h>
 #include <QCommandLineParser>
@@ -36,8 +36,7 @@ int main(int argc, char **argv)
     parser.process(app);
 
     SieveEditorTestWidget *dialog = new SieveEditorTestWidget;
-    PimCommon::SieveSyntaxHighlighterUtil sieveHighlighterutil;
-    const QStringList capabilities = sieveHighlighterutil.fullCapabilities();
+    const QStringList capabilities = KSieveUi::Test::fullCapabilitiesList();
     //Add all capabilities for testing
     dialog->setSieveCapabilities(capabilities);
     if (dialog->exec()) {

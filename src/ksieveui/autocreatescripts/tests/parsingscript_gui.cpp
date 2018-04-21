@@ -34,7 +34,7 @@ using KSieve::Parser;
 
 #include "../autocreatescriptdialog.h"
 #include "../sievescriptparsingerrordialog.h"
-#include <PimCommon/SieveSyntaxHighlighterUtil>
+#include "ksieveui/tests/capability.h"
 
 int main(int argc, char **argv)
 {
@@ -78,8 +78,7 @@ int main(int argc, char **argv)
     dlg.show();
 
     KSieveUi::AutoCreateScriptDialog *dialog = new KSieveUi::AutoCreateScriptDialog;
-    PimCommon::SieveSyntaxHighlighterUtil sieveHighlighterutil;
-    const QStringList capabilities = sieveHighlighterutil.fullCapabilities();
+    const QStringList capabilities = KSieveUi::Test::fullCapabilitiesList();
     //Add all capabilities for testing
     dialog->setSieveCapabilities(capabilities);
     QString error;

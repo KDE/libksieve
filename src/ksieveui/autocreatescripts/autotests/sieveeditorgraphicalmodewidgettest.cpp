@@ -20,7 +20,7 @@
 #include "sieveeditorgraphicalmodewidgettest.h"
 #include "../sieveeditorgraphicalmodewidget.h"
 #include "scriptsparsing/parsingutil.h"
-#include <PimCommon/SieveSyntaxHighlighterUtil>
+#include "tests/capability.h"
 #include <QTest>
 #include <QStandardPaths>
 #include <QProcess>
@@ -57,8 +57,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
     QFETCH(bool, success);
 
     KSieveUi::SieveEditorGraphicalModeWidget w;
-    PimCommon::SieveSyntaxHighlighterUtil sieveHighlighterutil;
-    const QStringList capabilities = sieveHighlighterutil.fullCapabilities();
+    const QStringList capabilities = KSieveUi::Test::fullCapabilitiesList();
 
     w.setSieveCapabilities(capabilities);
     const QString originalFile = QLatin1String(KSIEVEUI_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral(".siv");

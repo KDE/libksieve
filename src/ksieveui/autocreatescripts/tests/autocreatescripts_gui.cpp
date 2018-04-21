@@ -21,7 +21,7 @@
 #include <QCommandLineParser>
 #include <QStandardPaths>
 #include "../autocreatescriptdialog.h"
-#include <PimCommon/SieveSyntaxHighlighterUtil>
+#include "tests/capability.h"
 
 int main(int argc, char **argv)
 {
@@ -33,8 +33,7 @@ int main(int argc, char **argv)
     parser.addHelpOption();
     parser.process(app);
     KSieveUi::AutoCreateScriptDialog *dialog = new KSieveUi::AutoCreateScriptDialog;
-    PimCommon::SieveSyntaxHighlighterUtil sieveHighlighterutil;
-    const QStringList capabilities = sieveHighlighterutil.fullCapabilities();
+    const QStringList capabilities = KSieveUi::Test::fullCapabilitiesList();
     //Add all capabilities for testing
     dialog->setSieveCapabilities(capabilities);
     if (dialog->exec()) {
