@@ -46,7 +46,6 @@ VacationManager::VacationManager(SieveImapPasswordProvider *passwordProvider, QW
     , d(new KSieveUi::VacationManagerPrivate(parent))
 {
     d->mCheckVacation = new KSieveUi::MultiImapVacationManager(passwordProvider, this);
-    connect(d->mCheckVacation.data(), &KSieveUi::MultiImapVacationManager::scriptActive, this, &VacationManager::updateVacationScriptStatus);
     connect(d->mCheckVacation.data(), &KSieveUi::MultiImapVacationManager::scriptActive, this, &VacationManager::slotUpdateVacationScriptStatus);
 }
 
@@ -62,6 +61,7 @@ void VacationManager::checkVacation()
 
 void VacationManager::slotUpdateVacationScriptStatus(bool active, const QString &serverName)
 {
+    Q_EMIT updateVacationScriptStatus(active, serverName);
     if (active) {
         if (!d->mQuestionAsked) {
             d->mQuestionAsked = true;
