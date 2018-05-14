@@ -31,8 +31,6 @@ using namespace KSieveUi;
 MultiImapVacationManager::MultiImapVacationManager(SieveImapPasswordProvider *passwordProvider, QObject *parent)
     : QObject(parent)
     , mPasswordProvider(passwordProvider)
-    , mNumberOfJobs(0)
-    , mCheckInProgress(false)
 {
 }
 
