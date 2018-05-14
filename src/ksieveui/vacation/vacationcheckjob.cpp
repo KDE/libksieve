@@ -105,6 +105,15 @@ void VacationCheckJob::slotGetResult(KManageSieve::SieveJob *job, bool success, 
             active = false; // default to inactive
             mNoScriptFound = true;
         }
+
+        VacationUtils::Vacation vacation = VacationUtils::parseScript(script);
+        if (vacation.isValid()) {
+            active = vacation.active;
+            if (active && vacation.startDate.isValid() && vacation.endDate.isValid()) {
+                active = (vacation.startDate <= QDate::currentDate() && vacation.endDate >= QDate::currentDate());
+            }
+        }
+
         if (active) {
             mActiveScripts << mUrl.fileName();
         }
