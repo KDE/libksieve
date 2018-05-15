@@ -27,6 +27,7 @@ class QLineEdit;
 namespace KSieveUi {
 class AbstractMoveImapFolderWidget;
 class SieveImapAccountSettings;
+class AbstractSelectEmailLineEdit;
 class VacationMailActionWidget : public QWidget
 {
     Q_OBJECT
@@ -46,6 +47,7 @@ private:
 
     QStackedWidget *mStackedWidget = nullptr;
     AbstractMoveImapFolderWidget *mMoveImapFolderWidget = nullptr;
+    AbstractSelectEmailLineEdit *mSelectEmailLineEdit = nullptr;
     QLineEdit *mMailActionRecipient = nullptr;
 };
 }

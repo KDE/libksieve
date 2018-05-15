@@ -19,6 +19,7 @@
 
 #include "vacationmailactionwidget.h"
 #include "widgets/moveimapfolderwidget.h"
+#include "widgets/abstractselectemaillineedit.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include <QStackedWidget>
 #include <QHBoxLayout>
@@ -49,6 +50,11 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
 
     mMoveImapFolderWidget->setObjectName(QStringLiteral("moveImapFolderWidget"));
     mStackedWidget->addWidget(mMoveImapFolderWidget);
+
+    mSelectEmailLineEdit = AutoCreateScriptUtil::createSelectEmailsWidget();
+    mSelectEmailLineEdit->setObjectName(QStringLiteral("selectEmailLineEdit"));
+    mStackedWidget->addWidget(mSelectEmailLineEdit);
+
     mStackedWidget->setCurrentIndex(0);
     setEnabled(false);
 }
@@ -73,6 +79,8 @@ void VacationMailActionWidget::selectMailActionWidget(VacationUtils::MailAction 
 {
     if (action == VacationUtils::CopyTo) {
         mStackedWidget->setCurrentWidget(mMoveImapFolderWidget);
+    } else if (action == VacationUtils::Sendto) {
+        mStackedWidget->setCurrentWidget(mSelectEmailLineEdit);
     } else {
         mStackedWidget->setCurrentWidget(mMailActionRecipient);
     }
@@ -88,6 +96,8 @@ void VacationMailActionWidget::setText(const QString &recipient)
 {
     if (mStackedWidget->currentWidget() == mMoveImapFolderWidget) {
         mMoveImapFolderWidget->setText(recipient);
+    } else if (mStackedWidget->currentWidget() == mSelectEmailLineEdit) {
+        mSelectEmailLineEdit->setText(recipient);
     } else {
         mMailActionRecipient->setText(recipient);
     }
@@ -97,6 +107,8 @@ QString VacationMailActionWidget::mailActionRecipient() const
 {
     if (mStackedWidget->currentWidget() == mMoveImapFolderWidget) {
         return mMoveImapFolderWidget->text();
+    } else if (mStackedWidget->currentWidget() == mSelectEmailLineEdit) {
+        return mSelectEmailLineEdit->text();
     } else {
         return mMailActionRecipient->text();
     }
