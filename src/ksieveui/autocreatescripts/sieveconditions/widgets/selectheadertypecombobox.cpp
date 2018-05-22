@@ -147,7 +147,7 @@ void SelectHeadersWidget::addNewHeader(const QString &header)
     const int numberOfItem = count();
     for (int i = 0; i < numberOfItem; ++i) {
         QListWidgetItem *it = item(i);
-        if (it->data(HeaderId).toString() == header) {
+        if ((it->data(HeaderId).toString()) == header || (it->text() == header)) {
             return;
         }
     }
