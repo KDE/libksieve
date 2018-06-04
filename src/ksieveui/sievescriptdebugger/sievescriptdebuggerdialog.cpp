@@ -39,6 +39,7 @@ SieveScriptDebuggerDialog::SieveScriptDebuggerDialog(QWidget *parent)
     mSieveScriptDebuggerWidget = new SieveScriptDebuggerWidget(this);
     mSieveScriptDebuggerWidget->setObjectName(QStringLiteral("sievescriptdebuggerwidget"));
     mainLayout->addWidget(mSieveScriptDebuggerWidget);
+    connect(mSieveScriptDebuggerWidget, &SieveScriptDebuggerWidget::sieveTestNotFound, this, &SieveScriptDebuggerDialog::updateButtons);
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     mainLayout->addWidget(buttonBox);
@@ -66,6 +67,11 @@ SieveScriptDebuggerDialog::~SieveScriptDebuggerDialog()
 {
     disconnect(mSieveScriptDebuggerWidget, &SieveScriptDebuggerWidget::scriptTextChanged, this, &SieveScriptDebuggerDialog::slotScriptTextChanged);
     writeConfig();
+}
+
+void SieveScriptDebuggerDialog::updateButtons()
+{
+    mOkButton->setEnabled(false);
 }
 
 void SieveScriptDebuggerDialog::debugButtonEnableStateChanged(bool state)

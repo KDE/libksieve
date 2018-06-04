@@ -26,6 +26,7 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QStandardPaths>
+#include <QTimer>
 
 using namespace KSieveUi;
 SieveScriptDebuggerWidget::SieveScriptDebuggerWidget(QWidget *parent)
@@ -52,7 +53,7 @@ SieveScriptDebuggerWidget::SieveScriptDebuggerWidget(QWidget *parent)
     mSieveNoExistingFrontEnd->setObjectName(QStringLiteral("sievenoexistingfrontend"));
     mStackedWidget->addWidget(mSieveNoExistingFrontEnd);
 
-    checkSieveTestApplication();
+    QTimer::singleShot(0, this, &SieveScriptDebuggerWidget::checkSieveTestApplication);
 }
 
 SieveScriptDebuggerWidget::~SieveScriptDebuggerWidget()
@@ -94,6 +95,7 @@ void SieveScriptDebuggerWidget::checkSieveTestApplication()
 {
     if (QStandardPaths::findExecutable(QStringLiteral("sieve-test")).isEmpty()) {
         mStackedWidget->setCurrentWidget(mSieveNoExistingFrontEnd);
+        Q_EMIT sieveTestNotFound();
     } else {
         mStackedWidget->setCurrentWidget(mSieveScriptFrontEnd);
     }

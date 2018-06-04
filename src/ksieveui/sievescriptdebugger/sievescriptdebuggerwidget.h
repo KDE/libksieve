@@ -45,6 +45,7 @@ Q_SIGNALS:
     void scriptTextChanged();
     void debugScriptButtonClicked();
     void debugButtonEnabled(bool state);
+    void sieveTestNotFound();
 
 private:
     void checkSieveTestApplication();

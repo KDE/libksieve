@@ -42,6 +42,7 @@ private:
     void writeConfig();
     void readConfig();
     void debugButtonEnableStateChanged(bool state);
+    void updateButtons();
     QString mOriginScript;
     SieveScriptDebuggerWidget *mSieveScriptDebuggerWidget = nullptr;
     QPushButton *mOkButton = nullptr;
