@@ -44,9 +44,9 @@ public:
     ~SieveActionWidget();
 
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
-    void generatedScript(QString &script, QStringList &requires, bool onlyActions, bool inForEveryPartLoop);
-    bool setAction(const QString &actionName, QXmlStreamReader &element, const QString &comment, QString &error);
-    bool isConfigurated() const;
+    void generatedScript(QString &script, QStringList &required, bool onlyActions, bool inForEveryPartLoop);
+    Q_REQUIRED_RESULT bool setAction(const QString &actionName, QXmlStreamReader &element, const QString &comment, QString &error);
+    Q_REQUIRED_RESULT bool isConfigurated() const;
     void clear();
 
     void setLocaleVariable(const SieveGlobalVariableActionWidget::VariableElement &var);

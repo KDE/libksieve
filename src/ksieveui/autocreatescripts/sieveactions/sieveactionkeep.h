@@ -26,12 +26,12 @@ class SieveActionKeep : public SieveAction
 public:
     explicit SieveActionKeep(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
 
-    QString code(QWidget *) const override;
-    QString help() const override;
-    QWidget *createParamWidget(QWidget *parent) const override;
-    bool setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error) override;
-    QStringList needRequires(QWidget *) const override;
-    QUrl href() const override;
+    Q_REQUIRED_RESULT QString code(QWidget *) const override;
+    Q_REQUIRED_RESULT QString help() const override;
+    Q_REQUIRED_RESULT QWidget *createParamWidget(QWidget *parent) const override;
+    Q_REQUIRED_RESULT bool setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error) override;
+    Q_REQUIRED_RESULT QStringList needRequires(QWidget *) const override;
+    Q_REQUIRED_RESULT QUrl href() const override;
 
 private:
     bool mHasFlagSupport = false;

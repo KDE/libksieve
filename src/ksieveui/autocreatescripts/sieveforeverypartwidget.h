@@ -34,7 +34,7 @@ public:
     explicit SieveForEveryPartWidget(QWidget *parent = nullptr);
     ~SieveForEveryPartWidget() override;
 
-    void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) override;
+    void generatedScript(QString &script, QStringList &required, bool inForEveryPartLoop) override;
     void loadScript(QXmlStreamReader &element, QString &error);
 
 private:

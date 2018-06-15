@@ -30,11 +30,11 @@ class KSIEVEUI_TESTS_EXPORT RegexpEditorLineEdit : public KSieveUi::AbstractRege
     Q_OBJECT
 public:
     explicit RegexpEditorLineEdit(QWidget *parent = nullptr);
-    ~RegexpEditorLineEdit();
+    ~RegexpEditorLineEdit() override;
 
     void switchToRegexpEditorLineEdit(bool regexpEditor) override;
     void setCode(const QString &str) override;
-    QString code() const override;
+    Q_REQUIRED_RESULT QString code() const override;
     void setClearButtonEnabled(bool b) override;
     void setPlaceholderText(const QString &str) override;
 

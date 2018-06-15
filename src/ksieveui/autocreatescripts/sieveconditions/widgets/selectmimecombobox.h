@@ -28,10 +28,10 @@ public:
     explicit SelectMimeComboBox(QWidget *parent = nullptr);
     ~SelectMimeComboBox();
 
-    QString code() const;
+    Q_REQUIRED_RESULT QString code() const;
     void setCode(const QString &code, const QString &name, QString &error);
 
-    QString require() const;
+    Q_REQUIRED_RESULT QString require() const;
 
 Q_SIGNALS:
     void valueChanged();

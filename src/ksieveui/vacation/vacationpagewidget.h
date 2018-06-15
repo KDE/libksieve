@@ -39,7 +39,7 @@ public:
 
     void setServerUrl(const QUrl &url);
     void setServerName(const QString &serverName);
-    KSieveUi::VacationCreateScriptJob *writeScript();
+    Q_REQUIRED_RESULT KSieveUi::VacationCreateScriptJob *writeScript();
     void setDefault();
     void setVacationManager(MultiImapVacationManager *vacationManager);
     void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);

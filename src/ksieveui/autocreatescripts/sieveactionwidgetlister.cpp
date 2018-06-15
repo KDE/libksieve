@@ -75,7 +75,7 @@ void SieveActionWidget::setFilterAction(QWidget *widget)
     }
 }
 
-void SieveActionWidget::generatedScript(QString &script, QStringList &requires, bool onlyActions, bool inForEveryPartLoop)
+void SieveActionWidget::generatedScript(QString &script, QStringList &required, bool onlyActions, bool inForEveryPartLoop)
 {
     const int index = mComboBox->currentIndex();
     if (index != mComboBox->count() - 1) {
@@ -83,8 +83,8 @@ void SieveActionWidget::generatedScript(QString &script, QStringList &requires, 
         QWidget *currentWidget = mLayout->itemAtPosition(1, 3)->widget();
         const QStringList lstRequires = widgetAction->needRequires(currentWidget);
         for (const QString &r : lstRequires) {
-            if (!requires.contains(r)) {
-                requires.append(r);
+            if (!required.contains(r)) {
+                required.append(r);
             }
         }
         QString comment = widgetAction->comment();

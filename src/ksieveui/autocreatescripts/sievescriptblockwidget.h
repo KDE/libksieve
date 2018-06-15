@@ -50,9 +50,9 @@ public:
 
     void setPageType(PageType type) override;
 
-    void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) override;
+    void generatedScript(QString &script, QStringList &required, bool inForEveryPartLoop) override;
 
-    MatchCondition matchCondition() const;
+    Q_REQUIRED_RESULT MatchCondition matchCondition() const;
 
     void loadScript(QXmlStreamReader &element, bool onlyActions, QString &error);
 

@@ -35,7 +35,7 @@ public:
     ~SieveEditorParsingMissingFeatureWarning();
 
     void setErrors(const QString &initialScript, const QString &errors);
-    QString initialScript() const;
+    Q_REQUIRED_RESULT QString initialScript() const;
 
 Q_SIGNALS:
     void switchToGraphicalMode();

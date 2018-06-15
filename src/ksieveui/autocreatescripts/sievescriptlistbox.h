@@ -38,12 +38,12 @@ public:
     ~SieveScriptListItem();
 
     void setDescription(const QString &desc);
-    QString description() const;
+    Q_REQUIRED_RESULT QString description() const;
 
-    SieveScriptPage *scriptPage() const;
+    Q_REQUIRED_RESULT SieveScriptPage *scriptPage() const;
     void setScriptPage(SieveScriptPage *page);
 
-    QString generatedScript(QStringList &requires) const;
+    Q_REQUIRED_RESULT QString generatedScript(QStringList &required) const;
 
 private:
     QString mDescription;
@@ -58,7 +58,7 @@ public:
     ~SieveScriptListBox();
 
     void setSieveEditorGraphicalModeWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget);
-    QString generatedScript(QString &requires) const;
+    Q_REQUIRED_RESULT QString generatedScript(QString &required) const;
     void loadScript(const QString &doc, QString &error);
 
 Q_SIGNALS:

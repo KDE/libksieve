@@ -38,7 +38,7 @@ public:
     void setUrl(const QUrl &url);
     void setIsActive(bool active);
 
-    bool canStart() const;
+    Q_REQUIRED_RESULT bool canStart() const;
     void start();
 
 Q_SIGNALS:

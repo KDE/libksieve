@@ -102,9 +102,9 @@ QStringList SieveEditorGraphicalModeWidget::sieveCapabilities()
     return mCapabilities;
 }
 
-QString SieveEditorGraphicalModeWidget::script(QString &requires) const
+QString SieveEditorGraphicalModeWidget::script(QString &required) const
 {
-    return mSieveScript->generatedScript(requires);
+    return mSieveScript->generatedScript(required);
 }
 
 void SieveEditorGraphicalModeWidget::slotAddScriptPage(KSieveUi::SieveScriptPage *page)

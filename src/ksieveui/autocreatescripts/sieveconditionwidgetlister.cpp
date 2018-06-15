@@ -68,7 +68,7 @@ void SieveConditionWidget::setFilterCondition(QWidget *widget)
     }
 }
 
-void SieveConditionWidget::generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop)
+void SieveConditionWidget::generatedScript(QString &script, QStringList &required, bool inForEveryPartLoop)
 {
     Q_UNUSED(inForEveryPartLoop);
     const int index = mComboBox->currentIndex();
@@ -77,8 +77,8 @@ void SieveConditionWidget::generatedScript(QString &script, QStringList &require
         QWidget *currentWidget = mLayout->itemAtPosition(1, 3)->widget();
         const QStringList lstRequires = widgetCondition->needRequires(currentWidget);
         for (const QString &r : lstRequires) {
-            if (!requires.contains(r)) {
-                requires.append(r);
+            if (!required.contains(r)) {
+                required.append(r);
             }
         }
         script += mConditionList.at(mComboBox->currentIndex())->code(currentWidget) + QLatin1Char('\n');

@@ -30,7 +30,7 @@ public:
     explicit SelectRelationalMatchType(QWidget *parent = nullptr);
     ~SelectRelationalMatchType();
 
-    QString code() const;
+    Q_REQUIRED_RESULT QString code() const;
     void setCode(const QString &type, const QString &comparatorStr, const QString &name, QString &error);
 
 Q_SIGNALS:

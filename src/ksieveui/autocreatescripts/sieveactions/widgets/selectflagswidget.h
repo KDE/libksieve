@@ -32,7 +32,7 @@ public:
     ~SelectFlagsListWidget();
 
     void setFlags(const QStringList &list);
-    QStringList flags() const;
+    Q_REQUIRED_RESULT QStringList flags() const;
 
 private:
     enum Type {
@@ -49,7 +49,7 @@ public:
     ~SelectFlagsListDialog();
 
     void setFlags(const QStringList &list);
-    QStringList flags() const;
+    Q_REQUIRED_RESULT QStringList flags() const;
 
 private:
     void readConfig();
@@ -64,7 +64,7 @@ public:
     explicit SelectFlagsWidget(QWidget *parent = nullptr);
     ~SelectFlagsWidget();
 
-    QString code() const;
+    Q_REQUIRED_RESULT QString code() const;
     void setFlags(const QStringList &flags);
 
 Q_SIGNALS:

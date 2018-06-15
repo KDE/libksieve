@@ -172,7 +172,7 @@ void SieveScriptBlockWidget::updateWidget()
     mAddBlockType->setEnabled(mMatchCondition != AllCondition);
 }
 
-void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop)
+void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &required, bool inForEveryPartLoop)
 {
     QString indentation;
     if (inForEveryPartLoop) {
@@ -187,7 +187,7 @@ void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requi
     } else {
         QString conditionStr;
         int numberOfCondition = 0;
-        mScriptConditionLister->generatedScript(conditionStr, numberOfCondition, requires, inForEveryPartLoop);
+        mScriptConditionLister->generatedScript(conditionStr, numberOfCondition, required, inForEveryPartLoop);
         const bool hasUniqCondition = (numberOfCondition == 1);
         QString filterStr;
         QString blockStr;
@@ -224,7 +224,7 @@ void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requi
             script += indentation + QStringLiteral(")\n%1{\n").arg(indentation);
         }
     }
-    mScriptActionLister->generatedScript(script, requires, onlyActions, inForEveryPartLoop);
+    mScriptActionLister->generatedScript(script, required, onlyActions, inForEveryPartLoop);
     if (!onlyActions) {
         script += indentation + QLatin1String("} ");
     }

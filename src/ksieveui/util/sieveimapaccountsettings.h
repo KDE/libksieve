@@ -51,27 +51,27 @@ public:
     SieveImapAccountSettings();
     ~SieveImapAccountSettings();
 
-    QString identifier() const;
+    Q_REQUIRED_RESULT QString identifier() const;
 
     void setServerName(const QString &serverName);
-    QString serverName() const;
+    Q_REQUIRED_RESULT QString serverName() const;
 
     void setPort(int port);
-    int port() const;
+    Q_REQUIRED_RESULT int port() const;
 
     void setUserName(const QString &userName);
-    QString userName() const;
+    Q_REQUIRED_RESULT QString userName() const;
 
     void setPassword(const QString &password);
-    QString password() const;
+    Q_REQUIRED_RESULT QString password() const;
 
     void setAuthenticationType(KSieveUi::SieveImapAccountSettings::AuthenticationMode type);
-    AuthenticationMode authenticationType() const;
-    bool operator==(const SieveImapAccountSettings &other) const;
+    Q_REQUIRED_RESULT AuthenticationMode authenticationType() const;
+    Q_REQUIRED_RESULT bool operator==(const SieveImapAccountSettings &other) const;
 
-    bool isValid() const;
+    Q_REQUIRED_RESULT bool isValid() const;
 
-    SieveImapAccountSettings::EncryptionMode encryptionMode() const;
+    Q_REQUIRED_RESULT SieveImapAccountSettings::EncryptionMode encryptionMode() const;
     void setEncryptionMode(const SieveImapAccountSettings::EncryptionMode &encryptionMode);
 
 private:

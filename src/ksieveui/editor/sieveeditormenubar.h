@@ -31,35 +31,35 @@ public:
     explicit SieveEditorMenuBar(QWidget *parent = nullptr);
     ~SieveEditorMenuBar();
 
-    QAction *goToLineAction() const;
-    QAction *findAction() const;
-    QAction *replaceAction() const;
-    QAction *undoAction() const;
-    QAction *redoAction() const;
-    QAction *copyAction() const;
-    QAction *pasteAction() const;
-    QAction *cutAction() const;
-    QAction *selectAllAction() const;
+    Q_REQUIRED_RESULT QAction *goToLineAction() const;
+    Q_REQUIRED_RESULT QAction *findAction() const;
+    Q_REQUIRED_RESULT QAction *replaceAction() const;
+    Q_REQUIRED_RESULT QAction *undoAction() const;
+    Q_REQUIRED_RESULT QAction *redoAction() const;
+    Q_REQUIRED_RESULT QAction *copyAction() const;
+    Q_REQUIRED_RESULT QAction *pasteAction() const;
+    Q_REQUIRED_RESULT QAction *cutAction() const;
+    Q_REQUIRED_RESULT QAction *selectAllAction() const;
 
-    QMenu *editorMenu() const;
+    Q_REQUIRED_RESULT QMenu *editorMenu() const;
 
-    QMenu *toolsMenu() const;
+    Q_REQUIRED_RESULT QMenu *toolsMenu() const;
 
-    QMenu *fileMenu() const;
+    Q_REQUIRED_RESULT QMenu *fileMenu() const;
 
-    QAction *commentCodeAction() const;
+    Q_REQUIRED_RESULT QAction *commentCodeAction() const;
 
-    QAction *uncommentCodeAction() const;
+    Q_REQUIRED_RESULT QAction *uncommentCodeAction() const;
 
-    QAction *zoomInAction() const;
-    QAction *zoomOutAction() const;
-    QAction *debugSieveScriptAction() const;
+    Q_REQUIRED_RESULT QAction *zoomInAction() const;
+    Q_REQUIRED_RESULT QAction *zoomOutAction() const;
+    Q_REQUIRED_RESULT QAction *debugSieveScriptAction() const;
 
-    QAction *zoomResetAction() const;
-    QAction *wordWrapAction() const;
-    QAction *printPreviewAction() const;
+    Q_REQUIRED_RESULT QAction *zoomResetAction() const;
+    Q_REQUIRED_RESULT QAction *wordWrapAction() const;
+    Q_REQUIRED_RESULT QAction *printPreviewAction() const;
 
-    QAction *printAction() const;
+    Q_REQUIRED_RESULT QAction *printAction() const;
 
     void setTextModeWidget(KSieveUi::SieveEditorTextModeWidget *textModeWidget);
 

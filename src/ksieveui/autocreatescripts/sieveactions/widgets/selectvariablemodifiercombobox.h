@@ -29,7 +29,7 @@ public:
     explicit SelectVariableModifierComboBox(QWidget *parent = nullptr);
     ~SelectVariableModifierComboBox();
 
-    QString code() const;
+    Q_REQUIRED_RESULT QString code() const;
     void setCode(const QString &code, const QString &name, QString &error);
 
 Q_SIGNALS:

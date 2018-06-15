@@ -29,7 +29,7 @@ public:
     explicit SelectImportanceCombobox(QWidget *parent = nullptr);
     ~SelectImportanceCombobox();
 
-    QString code() const;
+    Q_REQUIRED_RESULT QString code() const;
     void setCode(const QString &code, const QString &name, QString &error);
 
 Q_SIGNALS:

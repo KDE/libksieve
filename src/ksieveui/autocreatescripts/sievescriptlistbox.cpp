@@ -77,7 +77,7 @@ void SieveScriptListItem::setScriptPage(SieveScriptPage *page)
     mScriptPage = page;
 }
 
-QString SieveScriptListItem::generatedScript(QStringList &requires) const
+QString SieveScriptListItem::generatedScript(QStringList &required) const
 {
     QString script;
     if (!mDescription.trimmed().isEmpty()) {
@@ -91,7 +91,7 @@ QString SieveScriptListItem::generatedScript(QStringList &requires) const
         }
     }
     if (mScriptPage) {
-        mScriptPage->generatedScript(script, requires);
+        mScriptPage->generatedScript(script, required);
     }
     return script;
 }

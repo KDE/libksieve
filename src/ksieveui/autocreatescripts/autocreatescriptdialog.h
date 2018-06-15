@@ -34,7 +34,7 @@ public:
     explicit AutoCreateScriptDialog(QWidget *parent = nullptr);
     ~AutoCreateScriptDialog() override;
 
-    QString script(QString &requires) const;
+    Q_REQUIRED_RESULT QString script(QString &required) const;
     void setSieveCapabilities(const QStringList &capabilities);
     void setListOfIncludeFile(const QStringList &listOfIncludeFile);
 

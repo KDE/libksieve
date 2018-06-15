@@ -38,13 +38,13 @@ public:
     explicit SieveScriptPage(SieveEditorGraphicalModeWidget *sieveEditorGraphicalWidget, QWidget *parent = nullptr);
     ~SieveScriptPage();
 
-    void generatedScript(QString &script, QStringList &requires);
+    void generatedScript(QString &script, QStringList &required);
 
-    SieveIncludeWidget *includeWidget() const;
-    SieveForEveryPartWidget *forEveryPartWidget() const;
-    SieveGlobalVariableWidget *globalVariableWidget() const;
-    SieveScriptBlockWidget *blockIfWidget() const;
-    SieveScriptBlockWidget *addScriptBlock(KSieveUi::SieveWidgetPageAbstract::PageType type);
+    Q_REQUIRED_RESULT SieveIncludeWidget *includeWidget() const;
+    Q_REQUIRED_RESULT SieveForEveryPartWidget *forEveryPartWidget() const;
+    Q_REQUIRED_RESULT SieveGlobalVariableWidget *globalVariableWidget() const;
+    Q_REQUIRED_RESULT SieveScriptBlockWidget *blockIfWidget() const;
+    Q_REQUIRED_RESULT SieveScriptBlockWidget *addScriptBlock(KSieveUi::SieveWidgetPageAbstract::PageType type);
 
     void setListOfIncludeFile(const QStringList &lst);
 

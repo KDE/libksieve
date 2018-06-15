@@ -30,10 +30,10 @@ public:
     explicit SelectComparatorComboBox(KSieveUi::SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent = nullptr);
     ~SelectComparatorComboBox();
 
-    QString code() const;
+    Q_REQUIRED_RESULT QString code() const;
     void setCode(const QString &code, const QString &name, QString &error);
 
-    QString require() const;
+    Q_REQUIRED_RESULT QString require() const;
 
 Q_SIGNALS:
     void valueChanged();

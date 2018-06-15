@@ -48,12 +48,12 @@ public:
     void setSieveCapabilities(const QStringList &capabilities);
     void setReadOnly(bool b);
 
-    QString script() const;
+    Q_REQUIRED_RESULT QString script() const;
     void setScript(const QString &script, bool clearUndoRedo = false);
 
     void setDebugScript(const QString &debug);
 
-    QString currentscript() override;
+    Q_REQUIRED_RESULT QString currentscript() override;
     void setImportScript(const QString &script) override;
 
     void createRulesGraphically();
@@ -87,18 +87,18 @@ public:
     void reverseCase();
     void zoomIn();
     void zoomOut();
-    QString currentHelpTitle() const;
-    QUrl currentHelpUrl() const;
+    Q_REQUIRED_RESULT QString currentHelpTitle() const;
+    Q_REQUIRED_RESULT QUrl currentHelpUrl() const;
     void openBookmarkUrl(const QUrl &url);
     void debugSieveScript();
     void zoomReset();
     void wordWrap(bool state);
-    bool isWordWrap() const;
+    Q_REQUIRED_RESULT bool isWordWrap() const;
     void print();
     void printPreview();
-    bool printSupportEnabled() const;
-    bool isTextEditor() const;
-    SieveEditorTabWidget *tabWidget() const;
+    Q_REQUIRED_RESULT bool printSupportEnabled() const;
+    Q_REQUIRED_RESULT bool isTextEditor() const;
+    Q_REQUIRED_RESULT SieveEditorTabWidget *tabWidget() const;
 
     void setListOfIncludeFile(const QStringList &listOfIncludeFile);
 Q_SIGNALS:

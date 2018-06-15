@@ -35,7 +35,7 @@ public:
     ~SieveTextEdit() override;
 
     void lineNumberAreaPaintEvent(QPaintEvent *event);
-    int lineNumberAreaWidth() const;
+    Q_REQUIRED_RESULT int lineNumberAreaWidth() const;
 
     void setSieveCapabilities(const QStringList &capabilities);
 
@@ -48,7 +48,7 @@ public:
     void sentenceCase();
     void reverseCase();
     void wordWrap(bool state);
-    bool isWordWrap() const;
+    Q_REQUIRED_RESULT bool isWordWrap() const;
 protected:
     void initCompleter();
     void keyPressEvent(QKeyEvent *e) override;

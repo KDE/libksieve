@@ -37,7 +37,7 @@ public:
     ~SieveTextEditWidget();
     void setReadOnly(bool readOnly);
 
-    KSieveUi::SieveTextEdit *textEdit() const;
+    Q_REQUIRED_RESULT KSieveUi::SieveTextEdit *textEdit() const;
 
 public Q_SLOTS:
     void slotReplace();

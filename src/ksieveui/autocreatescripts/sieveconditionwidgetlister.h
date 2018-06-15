@@ -43,7 +43,7 @@ public:
     ~SieveConditionWidget();
 
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
-    void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop);
+    void generatedScript(QString &script, QStringList &required, bool inForEveryPartLoop);
     void setCondition(const QString &conditionName, QXmlStreamReader &element, bool notCondition, QString &error);
     void clear();
 

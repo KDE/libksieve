@@ -25,7 +25,7 @@ namespace KSieveUi {
 class SieveCondition;
 class SieveEditorGraphicalModeWidget;
 namespace SieveConditionList {
-QList<KSieveUi::SieveCondition *> conditionList(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget);
+Q_REQUIRED_RESULT QList<KSieveUi::SieveCondition *> conditionList(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget);
 }
 }
 

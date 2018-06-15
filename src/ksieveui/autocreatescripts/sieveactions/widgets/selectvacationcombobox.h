@@ -28,7 +28,7 @@ public:
     explicit SelectVacationComboBox(QWidget *parent = nullptr);
     ~SelectVacationComboBox();
 
-    QString code() const;
+    Q_REQUIRED_RESULT QString code() const;
     void setCode(const QString &code, const QString &name, QString &error);
 
 Q_SIGNALS:

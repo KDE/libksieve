@@ -32,7 +32,7 @@ public:
     explicit SelectBodyTypeWidget(QWidget *parent = nullptr);
     ~SelectBodyTypeWidget();
 
-    QString code() const;
+    Q_REQUIRED_RESULT QString code() const;
     void setCode(const QString &type, const QString &content, const QString &name, QString &error);
 
 Q_SIGNALS:

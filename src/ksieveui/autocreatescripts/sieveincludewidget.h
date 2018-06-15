@@ -38,7 +38,7 @@ public:
     explicit SieveIncludeLocation(QWidget *parent = nullptr);
     ~SieveIncludeLocation();
 
-    QString code() const;
+    Q_REQUIRED_RESULT QString code() const;
     void setCode(const QString &code, QString &error);
 
 Q_SIGNALS:
@@ -58,7 +58,7 @@ public:
     void generatedScript(QString &script);
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
     void loadScript(QXmlStreamReader &element, QString &error);
-    bool isInitialized() const;
+    Q_REQUIRED_RESULT bool isInitialized() const;
     void clear();
     void setListOfIncludeFile(const QStringList &listOfIncludeFile);
 

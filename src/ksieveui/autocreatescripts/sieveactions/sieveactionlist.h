@@ -25,7 +25,7 @@ namespace KSieveUi {
 class SieveAction;
 class SieveEditorGraphicalModeWidget;
 namespace SieveActionList {
-QList<KSieveUi::SieveAction *> actionList(KSieveUi::SieveEditorGraphicalModeWidget *graphicalModeWidget);
+Q_REQUIRED_RESULT QList<KSieveUi::SieveAction *> actionList(KSieveUi::SieveEditorGraphicalModeWidget *graphicalModeWidget);
 }
 }
 

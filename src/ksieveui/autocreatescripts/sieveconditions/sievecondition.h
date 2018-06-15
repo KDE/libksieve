@@ -40,20 +40,20 @@ public:
      */
     static SieveCondition *newAction();
 
-    virtual QWidget *createParamWidget(QWidget *parent) const;
+    Q_REQUIRED_RESULT virtual QWidget *createParamWidget(QWidget *parent) const;
 
-    virtual QString code(QWidget *parent) const;
+    Q_REQUIRED_RESULT virtual QString code(QWidget *parent) const;
 
-    virtual QStringList needRequires(QWidget *parent) const;
+    Q_REQUIRED_RESULT virtual QStringList needRequires(QWidget *parent) const;
 
-    virtual bool needCheckIfServerHasCapability() const;
+    Q_REQUIRED_RESULT virtual bool needCheckIfServerHasCapability() const;
 
-    virtual QString serverNeedsCapability() const;
+    Q_REQUIRED_RESULT virtual QString serverNeedsCapability() const;
 
-    virtual QString help() const;
-    virtual QUrl href() const;
+    Q_REQUIRED_RESULT virtual QString help() const;
+    Q_REQUIRED_RESULT virtual QUrl href() const;
 
-    virtual bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error);
+    Q_REQUIRED_RESULT virtual bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error);
 
     void unknownTag(const QStringRef &tag, QString &error);
     void unknowTagValue(const QString &tagValue, QString &error);

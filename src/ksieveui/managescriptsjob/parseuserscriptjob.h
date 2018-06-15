@@ -38,12 +38,12 @@ public:
 
     void start();
 
-    QUrl scriptUrl() const;
+    Q_REQUIRED_RESULT QUrl scriptUrl() const;
 
-    QStringList activeScriptList() const;
-    QString error() const;
+    Q_REQUIRED_RESULT QStringList activeScriptList() const;
+    Q_REQUIRED_RESULT QString error() const;
     void kill();
-    QStringList parsescript(const QString &script, bool &result);
+    Q_REQUIRED_RESULT QStringList parsescript(const QString &script, bool &result);
 
 Q_SIGNALS:
     void finished(ParseUserScriptJob *job);

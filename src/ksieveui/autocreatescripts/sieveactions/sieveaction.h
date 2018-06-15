@@ -32,25 +32,25 @@ public:
     SieveAction(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent = nullptr);
     ~SieveAction() override;
 
-    QString name() const;
-    QString label() const;
+    Q_REQUIRED_RESULT QString name() const;
+    Q_REQUIRED_RESULT QString label() const;
 
-    virtual QWidget *createParamWidget(QWidget *parent) const;
+    Q_REQUIRED_RESULT virtual QWidget *createParamWidget(QWidget *parent) const;
 
-    virtual bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, QString &error);
+    Q_REQUIRED_RESULT virtual bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, QString &error);
 
-    virtual QString code(QWidget *) const;
+    Q_REQUIRED_RESULT virtual QString code(QWidget *) const;
 
-    virtual QStringList needRequires(QWidget *parent) const;
+    Q_REQUIRED_RESULT virtual QStringList needRequires(QWidget *parent) const;
 
-    virtual bool needCheckIfServerHasCapability() const;
+    Q_REQUIRED_RESULT virtual bool needCheckIfServerHasCapability() const;
 
-    virtual QString serverNeedsCapability() const;
+    Q_REQUIRED_RESULT virtual QString serverNeedsCapability() const;
 
-    virtual QString help() const;
-    virtual QUrl href() const;
+    Q_REQUIRED_RESULT virtual QString help() const;
+    Q_REQUIRED_RESULT virtual QUrl href() const;
 
-    QString comment() const;
+    Q_REQUIRED_RESULT QString comment() const;
 
     void setComment(const QString &comment);
 
@@ -60,9 +60,9 @@ public:
     void serverDoesNotSupportFeatures(const QString &feature, QString &error);
 
 protected:
-    SieveImapAccountSettings sieveImapAccountSettings() const;
-    QStringList listOfIncludeFile() const;
-    QStringList sieveCapabilities() const;
+    Q_REQUIRED_RESULT SieveImapAccountSettings sieveImapAccountSettings() const;
+    Q_REQUIRED_RESULT QStringList listOfIncludeFile() const;
+    Q_REQUIRED_RESULT QStringList sieveCapabilities() const;
     SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
 
 Q_SIGNALS:

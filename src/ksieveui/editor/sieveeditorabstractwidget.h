@@ -31,11 +31,11 @@ public:
     explicit SieveEditorAbstractWidget(QWidget *parent = nullptr);
     ~SieveEditorAbstractWidget();
 
-    virtual QString currentscript();
+    Q_REQUIRED_RESULT virtual QString currentscript();
     virtual void setImportScript(const QString &);
     void saveAs(const QString &defaultName);
 
-    KSieveUi::SieveImapAccountSettings sieveImapAccountSettings() const;
+    Q_REQUIRED_RESULT KSieveUi::SieveImapAccountSettings sieveImapAccountSettings() const;
 
     void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &sieveImapAccountSettings);
 

@@ -30,8 +30,8 @@ public:
     explicit SelectMatchTypeComboBox(KSieveUi::SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent = nullptr);
     ~SelectMatchTypeComboBox();
 
-    QString code(bool &negative) const;
-    bool isNegative() const;
+    Q_REQUIRED_RESULT QString code(bool &negative) const;
+    Q_REQUIRED_RESULT bool isNegative() const;
     void setCode(const QString &code, const QString &name, QString &error);
 
     QStringList needRequires() const;

@@ -28,9 +28,9 @@ class SieveActionAbstractEditHeader : public SieveAction
 public:
     SieveActionAbstractEditHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent = nullptr);
 
-    QStringList needRequires(QWidget *parent) const override;
+    Q_REQUIRED_RESULT QStringList needRequires(QWidget *parent) const override;
 
-    bool needCheckIfServerHasCapability() const override;
+    Q_REQUIRED_RESULT bool needCheckIfServerHasCapability() const override;
 
     QString serverNeedsCapability() const override;
 };

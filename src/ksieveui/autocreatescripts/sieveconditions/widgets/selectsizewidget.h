@@ -32,7 +32,7 @@ public:
     explicit SelectSizeWidget(QWidget *parent = nullptr);
     ~SelectSizeWidget();
 
-    QString code() const;
+    Q_REQUIRED_RESULT QString code() const;
     void setCode(qlonglong value, const QString &identifier, const QString &name, QString &error);
 
 Q_SIGNALS:

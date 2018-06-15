@@ -34,7 +34,7 @@ public:
     ~SieveScriptDescriptionDialog();
 
     void setDescription(const QString &desc);
-    QString description() const;
+    Q_REQUIRED_RESULT QString description() const;
 
 private:
     void readConfig();

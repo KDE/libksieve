@@ -53,7 +53,7 @@ public:
     explicit SelectDateWidget(QWidget *parent = nullptr);
     ~SelectDateWidget();
 
-    QString code() const;
+    Q_REQUIRED_RESULT QString code() const;
     void setCode(const QString &type, const QString &value);
 
 Q_SIGNALS:

@@ -67,11 +67,11 @@ public:
 
     void setServerUrl(const QUrl &url);
     void setServerName(const QString &name);
-    QString serverName() const;
+    Q_REQUIRED_RESULT QString serverName() const;
 
-    QStringList availableScripts() const;
-    bool hasKep14Support() const;
-    QUrl serverUrl() const;
+    Q_REQUIRED_RESULT QStringList availableScripts() const;
+    Q_REQUIRED_RESULT bool hasKep14Support() const;
+    Q_REQUIRED_RESULT QUrl serverUrl() const;
 
 Q_SIGNALS:
     void result(CheckKolabKep14SupportJob *, bool);

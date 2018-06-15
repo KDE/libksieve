@@ -35,10 +35,10 @@ public:
     ~SieveTemplateEditDialog();
 
     void setTemplateName(const QString &name);
-    QString templateName() const;
+    Q_REQUIRED_RESULT QString templateName() const;
 
     void setScript(const QString &);
-    QString script() const;
+    Q_REQUIRED_RESULT QString script() const;
     void setSieveCapabilities(const QStringList &capabilities);
 
 private:

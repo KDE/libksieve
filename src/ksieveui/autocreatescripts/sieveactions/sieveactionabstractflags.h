@@ -27,14 +27,14 @@ class SieveActionAbstractFlags : public SieveAction
 public:
     SieveActionAbstractFlags(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent = nullptr);
 
-    QWidget *createParamWidget(QWidget *parent) const override;
-    bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, QString &error) override;
-    QString code(QWidget *) const override;
-    QStringList needRequires(QWidget *parent) const override;
+    Q_REQUIRED_RESULT QWidget *createParamWidget(QWidget *parent) const override;
+    Q_REQUIRED_RESULT bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, QString &error) override;
+    Q_REQUIRED_RESULT QString code(QWidget *) const override;
+    Q_REQUIRED_RESULT QStringList needRequires(QWidget *parent) const override;
 
     virtual QString flagsCode() const = 0;
 
-    bool needCheckIfServerHasCapability() const override;
+    Q_REQUIRED_RESULT bool needCheckIfServerHasCapability() const override;
 
     QString serverNeedsCapability() const override;
 };

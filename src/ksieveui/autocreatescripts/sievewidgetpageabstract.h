@@ -39,10 +39,10 @@ public:
     explicit SieveWidgetPageAbstract(QWidget *parent = nullptr);
     ~SieveWidgetPageAbstract();
 
-    virtual void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) = 0;
+    virtual void generatedScript(QString &script, QStringList &required, bool inForEveryPartLoop) = 0;
 
     virtual void setPageType(PageType type);
-    PageType pageType() const;
+    Q_REQUIRED_RESULT PageType pageType() const;
 
 Q_SIGNALS:
     void valueChanged();

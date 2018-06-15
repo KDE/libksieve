@@ -35,8 +35,8 @@ public:
     ~SieveTemplateListWidget() override;
 
     QVector<PimCommon::defaultTemplate> defaultTemplates() override;
-    bool addNewTemplate(QString &templateName, QString &templateScript) override;
-    bool modifyTemplate(QString &templateName, QString &templateScript, bool defaultTemplate) override;
+    Q_REQUIRED_RESULT bool addNewTemplate(QString &templateName, QString &templateScript) override;
+    Q_REQUIRED_RESULT bool modifyTemplate(QString &templateName, QString &templateScript, bool defaultTemplate) override;
     void setSieveCapabilities(const QStringList &capabilities);
 protected:
     QMimeData *mimeData(const QList<QListWidgetItem *> items) const override;

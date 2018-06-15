@@ -30,16 +30,16 @@ public:
     explicit SieveEditorGraphicalModeWidgetAbstract(QWidget *parent);
     ~SieveEditorGraphicalModeWidgetAbstract();
 
-    virtual QString script(QString &requires) const = 0;
+    Q_REQUIRED_RESULT virtual QString script(QString &requires) const = 0;
 
     virtual void setSieveCapabilities(const QStringList &capabilities) = 0;
 
-    virtual QStringList sieveCapabilities() = 0;
+    Q_REQUIRED_RESULT virtual QStringList sieveCapabilities() = 0;
 
     virtual void loadScript(const QString &doc, QString &error) = 0;
 
     virtual void setListOfIncludeFile(const QStringList &listOfIncludeFile) = 0;
-    virtual QStringList listOfIncludeFile() const = 0;
+    Q_REQUIRED_RESULT virtual QStringList listOfIncludeFile() const = 0;
 };
 }
 
