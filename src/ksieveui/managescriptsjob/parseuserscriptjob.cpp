@@ -73,7 +73,7 @@ void ParseUserScriptJob::slotGetResult(KManageSieve::SieveJob *job, bool success
         return;
     }
     if (script.isEmpty()) {
-        emitError(i18n("Script is empty."));
+        emitError(i18n("Script is empty. (%1)", mCurrentUrl.path()));
         return;
     }
     bool result;
