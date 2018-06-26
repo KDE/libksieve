@@ -86,13 +86,17 @@ void VacationCheckJob::slotGetResult(KManageSieve::SieveJob *job, bool success, 
     if (mKep14Support) {
         VacationUtils::Vacation vacation = VacationUtils::parseScript(script);
         if (vacation.isValid()) {
-            const QString &scriptName = mAvailableScripts[mScriptPos - 1];
-            bool active = mActiveScripts.contains(scriptName) && vacation.active;
-            if (active && vacation.startDate.isValid() && vacation.endDate.isValid()) {
-                active = (vacation.startDate <= QDate::currentDate() && vacation.endDate >= QDate::currentDate());
+            if (!mAvailableScripts.isEmpty()) {
+                const QString &scriptName = mAvailableScripts[mScriptPos - 1];
+                bool active = mActiveScripts.contains(scriptName) && vacation.active;
+                if (active && vacation.startDate.isValid() && vacation.endDate.isValid()) {
+                    active = (vacation.startDate <= QDate::currentDate() && vacation.endDate >= QDate::currentDate());
+                }
+                Q_EMIT scriptActive(this, scriptName, active);
+                qCDebug(LIBKSIEVE_LOG) << "vacation script found :)";
+            } else {
+                Q_EMIT scriptActive(this, QString(), false);
             }
-            Q_EMIT scriptActive(this, scriptName, active);
-            qCDebug(LIBKSIEVE_LOG) << "vacation script found :)";
         } else if (isLastScript()) {
             mNoScriptFound = true;
             Q_EMIT scriptActive(this, QString(), false);
