@@ -466,7 +466,8 @@ QString SieveEditorWidget::originalScript() const
 void SieveEditorWidget::setScript(const QString &script, bool clearUndoRedo)
 {
     mTextModeWidget->setScript(script, clearUndoRedo);
-    mOriginalScript = script;
+    //Necessary to take text from editor otherwise script has \r\n
+    mOriginalScript = mTextModeWidget->script();
 }
 
 void SieveEditorWidget::addFailedMessage(const QString &err)
