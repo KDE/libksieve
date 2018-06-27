@@ -68,8 +68,6 @@ void VacationCheckJob::start()
         mParseJob = new ParseUserScriptJob(url, this);
         connect(mParseJob, &ParseUserScriptJob::finished, this, &VacationCheckJob::slotGotActiveScripts);
         mParseJob->start();
-        mSieveJob = KManageSieve::SieveJob::list(url);
-        connect(mSieveJob, &KManageSieve::SieveJob::gotList, this, &VacationCheckJob::slotGotList);
     } else {
         mSieveJob = KManageSieve::SieveJob::get(mUrl);
         connect(mSieveJob, &KManageSieve::SieveJob::gotScript, this, &VacationCheckJob::slotGetResult);
@@ -136,9 +134,8 @@ void VacationCheckJob::slotGotActiveScripts(ParseUserScriptJob *job)
     }
     mActiveScripts = job->activeScriptList();
 
-    if (!mSieveJob) {
-        searchVacationScript();
-    }
+    mSieveJob = KManageSieve::SieveJob::list(job->scriptUrl());
+    connect(mSieveJob, &KManageSieve::SieveJob::gotList, this, &VacationCheckJob::slotGotList);
 }
 
 void VacationCheckJob::slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &availableScripts, const QString &activeScript)
@@ -152,11 +149,8 @@ void VacationCheckJob::slotGotList(KManageSieve::SieveJob *job, bool success, co
         return;
     }
 
-    mAvailableScripts = availableScripts;
-
-    if (!mParseJob) {
-        searchVacationScript();
-    }
+    mAvailableScripts = availableScripts;    
+    searchVacationScript();
 }
 
 void VacationCheckJob::emitError(const QString &errorMessage)
