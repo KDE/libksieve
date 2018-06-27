@@ -104,9 +104,6 @@ void VacationCreateScriptJob::start()
     }
 
     mUserJobRunning = false;
-    mScriptJobRunning = true;
-    mSieveJob = KManageSieve::SieveJob::get(mUrl);
-    connect(mSieveJob, &KManageSieve::SieveJob::gotScript, this, &VacationCreateScriptJob::slotGetScript);
 
     if (mKep14Support && mActivate && !mScriptActive) {
         mUserJobRunning = true;
@@ -116,7 +113,16 @@ void VacationCreateScriptJob::start()
         mParseUserJob = new ParseUserScriptJob(url, this);
         connect(mParseUserJob, &ParseUserScriptJob::finished, this, &VacationCreateScriptJob::slotGotActiveScripts);
         mParseUserJob->start();
+    } else {
+        createScript();
     }
+}
+
+void VacationCreateScriptJob::createScript()
+{
+    mScriptJobRunning = true;
+    mSieveJob = KManageSieve::SieveJob::get(mUrl);
+    connect(mSieveJob, &KManageSieve::SieveJob::gotScript, this, &VacationCreateScriptJob::slotGetScript);
 }
 
 void VacationCreateScriptJob::slotGetScript(KManageSieve::SieveJob *job, bool success, const QString &oldScript, bool active)
@@ -179,17 +185,16 @@ void VacationCreateScriptJob::slotGotActiveScripts(ParseUserScriptJob *job)
     }
 
     QStringList list = job->activeScriptList();
-
     if (!list.contains(mUrl.fileName())) {
         list.prepend(mUrl.fileName());
-        mCreateJob = new GenerateGlobalScriptJob(mUrl, this);
-        mCreateJob->addUserActiveScripts(list);
-        connect(mCreateJob, &GenerateGlobalScriptJob::success, [=]() {
-            this->slotGenerateDone();
-        });
-        connect(mCreateJob, &GenerateGlobalScriptJob::error, this, &VacationCreateScriptJob::slotGenerateDone);
-        mCreateJob->start();
     }
+    mCreateJob = new GenerateGlobalScriptJob(mUrl, this);
+    mCreateJob->addUserActiveScripts(list);
+    connect(mCreateJob, &GenerateGlobalScriptJob::success, [=]() {
+        this->slotGenerateDone();
+    });
+    connect(mCreateJob, &GenerateGlobalScriptJob::error, this, &VacationCreateScriptJob::slotGenerateDone);
+    mCreateJob->start();
 }
 
 void VacationCreateScriptJob::slotGenerateDone(const QString &error)
@@ -199,6 +204,8 @@ void VacationCreateScriptJob::slotGenerateDone(const QString &error)
     if (!error.isEmpty()) {
         qCWarning(LIBKSIEVE_LOG) << error;
         mSuccess = false;
+        handleResult();
+    } else {
+        createScript();
     }
-    handleResult();
 }

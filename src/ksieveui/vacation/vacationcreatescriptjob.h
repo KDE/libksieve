@@ -59,6 +59,7 @@ private Q_SLOTS:
 private:
     Q_DISABLE_COPY(VacationCreateScriptJob)
     void handleResult();
+    void createScript();
     QUrl mUrl;
     QString mScript;
     QString mServerName;
