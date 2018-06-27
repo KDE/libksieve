@@ -66,6 +66,7 @@ void MultiImapVacationManager::checkVacation(const QString &serverName, const QU
         checkKep14Job->setServerUrl(url);
         connect(checkKep14Job, &CheckKolabKep14SupportJob::result, this, &MultiImapVacationManager::slotCheckKep14Ended);
         checkKep14Job->start();
+        return;
     }
 
     VacationCheckJob *job = new VacationCheckJob(url, serverName, this);
