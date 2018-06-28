@@ -126,15 +126,16 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mEndTimeActive->setObjectName(QStringLiteral("mEndTimeActive"));
     connect(mEndTimeActive, &QCheckBox::toggled, mEndTime, &KTimeComboBox::setEnabled);
 
+    mEndDateLabel = new QLabel(i18n("End date:"), this);
+    mEndDateLabel->setObjectName(QStringLiteral("mEndDateLabel"));
+    mEndDateLabel->setBuddy(mEndDate);
+    glay->addWidget(mEndDateLabel, row, 0);
+
     timeLayout->addWidget(mEndDate);
     timeLayout->addWidget(mEndTimeActive);
     timeLayout->addWidget(mEndTime);
     glay->addLayout(timeLayout, row, 1);
 
-    mEndDateLabel = new QLabel(i18n("End date:"), this);
-    mEndDateLabel->setObjectName(QStringLiteral("mEndDateLabel"));
-    mEndDateLabel->setBuddy(mEndDate);
-    glay->addWidget(mEndDateLabel, row, 0);
 
     // Hide the date edits by default - they must be enabled by caller when the
     // server supports this feature
