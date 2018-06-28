@@ -256,16 +256,19 @@ AddrSpecList VacationEditWidget::mailAliases() const
     QByteArray text = mMailAliasesEdit->text().toLatin1(); // ### IMAA: !ok
     AddressList al;
     const char *s = text.cbegin();
-    parseAddressList(s, text.cend(), al);
-
     AddrSpecList asl;
-    AddressList::const_iterator end(al.constEnd());
-    for (AddressList::const_iterator it = al.constBegin(); it != end; ++it) {
-        const MailboxList &mbl = (*it).mailboxList;
-        MailboxList::const_iterator endJt = mbl.constEnd();
-        for (MailboxList::const_iterator jt = mbl.constBegin(); jt != endJt; ++jt) {
-            asl.push_back((*jt).addrSpec());
+    if (parseAddressList(s, text.cend(), al)) {
+
+        AddressList::const_iterator end(al.constEnd());
+        for (AddressList::const_iterator it = al.constBegin(); it != end; ++it) {
+            const MailboxList &mbl = (*it).mailboxList;
+            MailboxList::const_iterator endJt = mbl.constEnd();
+            for (MailboxList::const_iterator jt = mbl.constBegin(); jt != endJt; ++jt) {
+                asl.push_back((*jt).addrSpec());
+            }
         }
+    } else {
+        qCWarning(LIBKSIEVE_LOG) << "Impossible to parse email!" << text;
     }
     return asl;
 }
