@@ -74,7 +74,7 @@ public:
     int notificationInterval() const;
     void setNotificationInterval(int days);
 
-    KMime::Types::AddrSpecList mailAliases() const;
+    KMime::Types::AddrSpecList mailAliases(bool &ok) const;
     void setMailAliases(const KMime::Types::AddrSpecList &aliases);
     void setMailAliases(const QString &aliases);
 

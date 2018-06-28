@@ -251,7 +251,7 @@ void VacationEditWidget::setNotificationInterval(int days)
     mIntervalSpin->setValue(days);
 }
 
-AddrSpecList VacationEditWidget::mailAliases() const
+AddrSpecList VacationEditWidget::mailAliases(bool &ok) const
 {
     QByteArray text = mMailAliasesEdit->text().toLatin1(); // ### IMAA: !ok
     AddressList al;
@@ -267,8 +267,10 @@ AddrSpecList VacationEditWidget::mailAliases() const
                 asl.push_back((*jt).addrSpec());
             }
         }
+        ok = true;
     } else {
         qCWarning(LIBKSIEVE_LOG) << "Impossible to parse email!" << text;
+        ok = false;
     }
     return asl;
 }

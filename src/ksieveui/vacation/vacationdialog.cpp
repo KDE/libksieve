@@ -149,7 +149,8 @@ void VacationDialog::setNotificationInterval(int days)
 
 AddrSpecList VacationDialog::mailAliases() const
 {
-    return mVacationEditWidget->mailAliases();
+    bool ok;
+    return mVacationEditWidget->mailAliases(ok);
 }
 
 void VacationDialog::setMailAliases(const AddrSpecList &aliases)
