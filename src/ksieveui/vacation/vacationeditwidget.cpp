@@ -172,7 +172,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     // Action for incoming mails
     mMailAction = new QComboBox(this);
     for (int i = 0; i < 4; ++i) {
-        mMailAction->addItem(VacationUtils::mailAction((VacationUtils::MailAction)i));
+        mMailAction->addItem(VacationUtils::mailAction(static_cast<VacationUtils::MailAction>(i)));
     }
     mMailAction->setObjectName(QStringLiteral("mMailAction"));
     connect(mMailAction, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &VacationEditWidget::mailActionChanged);
