@@ -23,7 +23,6 @@
 #include <QWidget>
 #include "vacation/vacationutils.h"
 class QStackedWidget;
-class QLineEdit;
 namespace KSieveUi {
 class AbstractMoveImapFolderWidget;
 class SieveImapAccountSettings;
@@ -48,7 +47,7 @@ private:
     QStackedWidget *mStackedWidget = nullptr;
     AbstractMoveImapFolderWidget *mMoveImapFolderWidget = nullptr;
     AbstractSelectEmailLineEdit *mSelectEmailLineEdit = nullptr;
-    QLineEdit *mMailActionRecipient = nullptr;
+    QWidget *mMailActionRecipient = nullptr;
 };
 }
 
