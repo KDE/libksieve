@@ -166,6 +166,8 @@ void VacationCreateScriptJob::handleResult()
                                         "Out of Office reply is now active.", mServerName)
                                  : i18n("Sieve script installed successfully on the server \'%1\'.\n"
                                         "Out of Office reply has been deactivated.", mServerName));
+    } else {
+        KMessageBox::information(nullptr, i18n("Impossible to install script on server \'%1\'", mServerName));
     }
 
     qCDebug(LIBKSIEVE_LOG) << "( ???," << mSuccess << ", ? )";
