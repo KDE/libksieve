@@ -106,6 +106,7 @@ QString VacationMailActionWidget::mailActionRecipient(bool &valid) const
     if (mStackedWidget->currentWidget() == mMoveImapFolderWidget) {
         return mMoveImapFolderWidget->text();
     } else if (mStackedWidget->currentWidget() == mSelectEmailLineEdit) {
+        valid = mSelectEmailLineEdit->isValid();
         return mSelectEmailLineEdit->text();
     } else {
         return QString();
