@@ -27,6 +27,9 @@ class VacationMailLineEdit : public QLineEdit
     Q_OBJECT
 public:
     explicit VacationMailLineEdit(QWidget *parent = nullptr);
+    ~VacationMailLineEdit() = default;
+
+    void setInvalidEmail(bool state);
 };
 }
 
