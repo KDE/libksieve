@@ -47,11 +47,8 @@ void VacationMailActionWidgetTest::shouldHaveDefaultValue()
     QCOMPARE(mStackedWidget->count(), 3);
     QWidget *mMailActionRecipient = mStackedWidget->widget(0);
     QVERIFY(mMailActionRecipient);
-    QLineEdit *lineEdit = dynamic_cast<QLineEdit *>(mMailActionRecipient);
-    QVERIFY(lineEdit);
-    QCOMPARE(lineEdit->objectName(), QStringLiteral("mailActionRecipient"));
-    QVERIFY(!lineEdit->isEnabled());
-    QVERIFY(lineEdit->isClearButtonEnabled());
+    QCOMPARE(mMailActionRecipient->objectName(), QStringLiteral("mailActionRecipient"));
+    QVERIFY(!mMailActionRecipient->isEnabled());
 
     QCOMPARE(mStackedWidget->currentIndex(), 0);
 

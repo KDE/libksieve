@@ -40,9 +40,8 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
     mStackedWidget->setObjectName(QStringLiteral("stackedWidget"));
     mainLayout->addWidget(mStackedWidget);
 
-    mMailActionRecipient = new QLineEdit(this);
+    mMailActionRecipient = new QWidget(this);
     mMailActionRecipient->setObjectName(QStringLiteral("mailActionRecipient"));
-    mMailActionRecipient->setClearButtonEnabled(true);
 
     mStackedWidget->addWidget(mMailActionRecipient);
 
@@ -90,7 +89,7 @@ void VacationMailActionWidget::selectMailActionWidget(VacationUtils::MailAction 
 void VacationMailActionWidget::setMailAction(VacationUtils::MailAction action, const QString &recipient)
 {
     selectMailActionWidget(action);
-    mMailActionRecipient->setText(recipient);
+    setText(recipient);
 }
 
 void VacationMailActionWidget::setText(const QString &recipient)
@@ -99,8 +98,6 @@ void VacationMailActionWidget::setText(const QString &recipient)
         mMoveImapFolderWidget->setText(recipient);
     } else if (mStackedWidget->currentWidget() == mSelectEmailLineEdit) {
         mSelectEmailLineEdit->setText(recipient);
-    } else {
-        mMailActionRecipient->setText(recipient);
     }
 }
 
@@ -111,6 +108,6 @@ QString VacationMailActionWidget::mailActionRecipient() const
     } else if (mStackedWidget->currentWidget() == mSelectEmailLineEdit) {
         return mSelectEmailLineEdit->text();
     } else {
-        return mMailActionRecipient->text();
+        return QString();
     }
 }
