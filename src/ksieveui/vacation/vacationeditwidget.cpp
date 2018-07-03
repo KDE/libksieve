@@ -273,6 +273,7 @@ AddrSpecList VacationEditWidget::mailAliases(bool &ok) const
         qCWarning(LIBKSIEVE_LOG) << "Impossible to parse email!" << text;
         ok = false;
     }
+    mMailAliasesEdit->setInvalidEmail(!ok);
     return asl;
 }
 

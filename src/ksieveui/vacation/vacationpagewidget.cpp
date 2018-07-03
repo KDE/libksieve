@@ -162,7 +162,6 @@ KSieveUi::VacationCreateScriptJob *VacationPageWidget::writeScript(bool &errorFo
         bool ok;
         vacation.aliases = mVacationEditWidget->mailAliases(ok);
         if (!ok) {
-            //TODO signal error here
             errorFound = true;
             return nullptr;
         }
