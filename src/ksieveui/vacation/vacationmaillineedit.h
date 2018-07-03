@@ -21,8 +21,9 @@
 #define VACATIONMAILLINEEDIT_H
 
 #include <QLineEdit>
+#include "ksieveui_private_export.h"
 namespace KSieveUi {
-class VacationMailLineEdit : public QLineEdit
+class KSIEVEUI_TESTS_EXPORT VacationMailLineEdit : public QLineEdit
 {
     Q_OBJECT
 public:

@@ -20,6 +20,7 @@
 #include "vacationeditwidget.h"
 #include "vacationutils.h"
 #include "vacationmailactionwidget.h"
+#include "vacationmaillineedit.h"
 
 #include <KLocalizedString>
 #include <KDateComboBox>
@@ -160,7 +161,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
 
     // "Send responses for these addresses" lineedit and label:
     ++row;
-    mMailAliasesEdit = new QLineEdit(this);
+    mMailAliasesEdit = new KSieveUi::VacationMailLineEdit(this);
     mMailAliasesEdit->setObjectName(QStringLiteral("mMailAliasesEdit"));
     mMailAliasesEdit->setClearButtonEnabled(true);
     QLabel *sendResponseLabel = new QLabel(i18n("&Send responses for these addresses:"), this);

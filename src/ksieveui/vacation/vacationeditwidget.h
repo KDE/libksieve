@@ -52,6 +52,7 @@ typedef QVector<AddrSpec> AddrSpecList;
 namespace KSieveUi {
 class VacationMailActionWidget;
 class SieveImapAccountSettings;
+class VacationMailLineEdit;
 class VacationEditWidget : public QWidget
 {
     Q_OBJECT
@@ -113,7 +114,7 @@ private Q_SLOTS:
 protected:
     QCheckBox *mActiveCheck = nullptr;
     QSpinBox *mIntervalSpin = nullptr;
-    QLineEdit *mMailAliasesEdit = nullptr;
+    VacationMailLineEdit *mMailAliasesEdit = nullptr;
     KPIMTextEdit::PlainTextEditorWidget *mTextEdit = nullptr;
     QCheckBox *mSpamCheck = nullptr;
     QCheckBox *mDomainCheck = nullptr;

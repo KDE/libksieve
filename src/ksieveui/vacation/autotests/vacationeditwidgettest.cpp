@@ -19,6 +19,7 @@
 
 #include "vacationeditwidgettest.h"
 #include "../vacationeditwidget.h"
+#include "../vacationmaillineedit.h"
 #include <KDateComboBox>
 #include <KTimeComboBox>
 #include <QCheckBox>
@@ -98,7 +99,7 @@ void VacationEditWidgetTest::shouldHaveDefaultValue()
     QVERIFY(resendNotificationLabel);
     QVERIFY(!resendNotificationLabel->text().isEmpty());
 
-    QLineEdit *mMailAliasesEdit = w.findChild<QLineEdit *>(QStringLiteral("mMailAliasesEdit"));
+    KSieveUi::VacationMailLineEdit *mMailAliasesEdit = w.findChild<KSieveUi::VacationMailLineEdit *>(QStringLiteral("mMailAliasesEdit"));
     QVERIFY(mMailAliasesEdit);
     QVERIFY(mMailAliasesEdit->text().isEmpty());
     QVERIFY(mMailAliasesEdit->isClearButtonEnabled());
