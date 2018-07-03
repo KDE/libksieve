@@ -28,8 +28,6 @@ if(BUILD_TESTING)
 endif()
 
 set(ksieveui_vacation_LIB_SRCS
-    vacation/vacation.cpp
-    vacation/vacationdialog.cpp
     vacation/vacationhelperjob.cpp
     vacation/vacationeditwidget.cpp
     vacation/multiimapvacationdialog.cpp

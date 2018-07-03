@@ -33,5 +33,4 @@ endmacro()
 
 add_vacation_test(vacationutils)
 add_vacation_test(vacationeditwidget)
-add_vacation_test(vacationdialog)
 add_vacation_test(vacationmailactionwidget)
