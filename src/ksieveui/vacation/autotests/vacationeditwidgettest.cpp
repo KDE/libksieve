@@ -115,7 +115,8 @@ void VacationEditWidgetTest::shouldHaveDefaultValue()
 
     KSieveUi::VacationMailActionWidget *mMailActionRecipient = w.findChild<KSieveUi::VacationMailActionWidget *>(QStringLiteral("mMailActionRecipient"));
     QVERIFY(mMailActionRecipient);
-    QVERIFY(mMailActionRecipient->mailActionRecipient().isEmpty());
+    bool ok;
+    QVERIFY(mMailActionRecipient->mailActionRecipient(ok).isEmpty());
 
     QLabel *actionIncomingMailsLabel = w.findChild<QLabel *>(QStringLiteral("actionIncomingMailsLabel"));
     QVERIFY(actionIncomingMailsLabel);

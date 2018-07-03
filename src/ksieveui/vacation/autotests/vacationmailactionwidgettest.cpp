@@ -65,7 +65,8 @@ void VacationMailActionWidgetTest::shouldHaveDefaultValue()
     QVERIFY(abstractSelectEmailWidget);
     QCOMPARE(abstractSelectEmailWidget->objectName(), QStringLiteral("selectEmailLineEdit"));
 
-    QVERIFY(w.mailActionRecipient().isEmpty());
+    bool ok;
+    QVERIFY(w.mailActionRecipient(ok).isEmpty());
 }
 
 void VacationMailActionWidgetTest::shouldSwitchComponents()
@@ -75,21 +76,22 @@ void VacationMailActionWidgetTest::shouldSwitchComponents()
 
     w.mailActionChanged(KSieveUi::VacationUtils::Keep);
     QCOMPARE(mStackedWidget->currentIndex(), 0);
-    QVERIFY(w.mailActionRecipient().isEmpty());
+    bool ok;
+    QVERIFY(w.mailActionRecipient(ok).isEmpty());
     QVERIFY(!w.isEnabled());
 
     w.mailActionChanged(KSieveUi::VacationUtils::CopyTo);
     QCOMPARE(mStackedWidget->currentIndex(), 1);
-    QVERIFY(w.mailActionRecipient().isEmpty());
+    QVERIFY(w.mailActionRecipient(ok).isEmpty());
     QVERIFY(w.isEnabled());
 
     w.mailActionChanged(KSieveUi::VacationUtils::Discard);
     QCOMPARE(mStackedWidget->currentIndex(), 0);
-    QVERIFY(w.mailActionRecipient().isEmpty());
+    QVERIFY(w.mailActionRecipient(ok).isEmpty());
     QVERIFY(!w.isEnabled());
 
     w.mailActionChanged(KSieveUi::VacationUtils::Sendto);
     QCOMPARE(mStackedWidget->currentIndex(), 2);
-    QVERIFY(w.mailActionRecipient().isEmpty());
+    QVERIFY(w.mailActionRecipient(ok).isEmpty());
     QVERIFY(w.isEnabled());
 }

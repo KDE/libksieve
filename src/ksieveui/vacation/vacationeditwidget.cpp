@@ -438,9 +438,9 @@ VacationUtils::MailAction VacationEditWidget::mailAction() const
     return static_cast<VacationUtils::MailAction>(mMailAction->currentIndex());
 }
 
-QString VacationEditWidget::mailActionRecipient() const
+QString VacationEditWidget::mailActionRecipient(bool &valid) const
 {
-    return mMailActionRecipient->mailActionRecipient();
+    return mMailActionRecipient->mailActionRecipient(valid);
 }
 
 void VacationEditWidget::enableDomainAndSendForSpam(bool enable)

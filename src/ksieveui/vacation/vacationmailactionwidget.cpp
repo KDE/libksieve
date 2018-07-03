@@ -101,7 +101,7 @@ void VacationMailActionWidget::setText(const QString &recipient)
     }
 }
 
-QString VacationMailActionWidget::mailActionRecipient() const
+QString VacationMailActionWidget::mailActionRecipient(bool &valid) const
 {
     if (mStackedWidget->currentWidget() == mMoveImapFolderWidget) {
         return mMoveImapFolderWidget->text();

@@ -170,7 +170,13 @@ KSieveUi::VacationCreateScriptJob *VacationPageWidget::writeScript(bool &errorFo
         vacation.messageText = mVacationEditWidget->messageText();
         vacation.subject = mVacationEditWidget->subject();
         vacation.mailAction = mVacationEditWidget->mailAction();
-        vacation.mailActionRecipient = mVacationEditWidget->mailActionRecipient();
+        //Check valid
+
+        vacation.mailActionRecipient = mVacationEditWidget->mailActionRecipient(ok);
+        if (!ok) {
+            errorFound = true;
+            return nullptr;
+        }
         vacation.notificationInterval = mVacationEditWidget->notificationInterval();
         vacation.sendForSpam = mVacationEditWidget->sendForSpam();
         vacation.reactOndomainName = mVacationEditWidget->domainName();

@@ -37,7 +37,7 @@ public:
     void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);
     void mailActionChanged(KSieveUi::VacationUtils::MailAction action);
 
-    Q_REQUIRED_RESULT QString mailActionRecipient() const;
+    Q_REQUIRED_RESULT QString mailActionRecipient(bool &valid) const;
     void setMailAction(VacationUtils::MailAction action, const QString &recipient);
 
 private:

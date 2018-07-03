@@ -36,6 +36,7 @@ public:
 
     bool multiSelection() const;
     void setMultiSelection(bool multiSelection);
+    virtual bool isValid() const = 0;
 
 Q_SIGNALS:
     void valueChanged();

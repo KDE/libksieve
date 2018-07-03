@@ -101,7 +101,7 @@ public:
     void setEndTime(const QTime &endTime);
 
     VacationUtils::MailAction mailAction() const;
-    QString mailActionRecipient() const;
+    QString mailActionRecipient(bool &valid) const;
     void setMailAction(VacationUtils::MailAction action, const QString &recipient);
     void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);
 

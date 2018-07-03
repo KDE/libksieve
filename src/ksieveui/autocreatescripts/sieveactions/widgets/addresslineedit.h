@@ -32,6 +32,7 @@ public:
 
     void setText(const QString &str) override;
     Q_REQUIRED_RESULT QString text() const override;
+    Q_REQUIRED_RESULT bool isValid() const override;
 
 protected:
     void focusOutEvent(QFocusEvent *ev) override;
@@ -41,6 +42,7 @@ private:
     void verifyAddress();
     QLineEdit *mLineEdit = nullptr;
     QString mNegativeBackground;
+    bool mEmailIsInvalid = true;
 };
 }
 
