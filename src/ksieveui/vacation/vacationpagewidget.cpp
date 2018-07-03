@@ -154,14 +154,18 @@ void VacationPageWidget::slotGetResult(const QString &serverName, const QStringL
     }
 }
 
-KSieveUi::VacationCreateScriptJob *VacationPageWidget::writeScript()
+KSieveUi::VacationCreateScriptJob *VacationPageWidget::writeScript(bool &errorFound)
 {
     if (mPageScript == Script) {
-        KSieveUi::VacationCreateScriptJob *createJob = new KSieveUi::VacationCreateScriptJob;
-        createJob->setServerUrl(mUrl);
-        createJob->setServerName(mServerName);
         const bool active = mVacationEditWidget->activateVacation();
         VacationUtils::Vacation vacation;
+        bool ok;
+        vacation.aliases = mVacationEditWidget->mailAliases(ok);
+        if (!ok) {
+            //TODO signal error here
+            errorFound = true;
+            return nullptr;
+        }
         vacation.valid = true;
         vacation.active = active;
         vacation.messageText = mVacationEditWidget->messageText();
@@ -169,8 +173,6 @@ KSieveUi::VacationCreateScriptJob *VacationPageWidget::writeScript()
         vacation.mailAction = mVacationEditWidget->mailAction();
         vacation.mailActionRecipient = mVacationEditWidget->mailActionRecipient();
         vacation.notificationInterval = mVacationEditWidget->notificationInterval();
-        bool ok;
-        vacation.aliases = mVacationEditWidget->mailAliases(ok);
         vacation.sendForSpam = mVacationEditWidget->sendForSpam();
         vacation.reactOndomainName = mVacationEditWidget->domainName();
         if (mHasDateSupport) {
@@ -185,6 +187,9 @@ KSieveUi::VacationCreateScriptJob *VacationPageWidget::writeScript()
             vacation.endTime = QTime();
         }
         const QString script = VacationUtils::composeScript(vacation);
+        KSieveUi::VacationCreateScriptJob *createJob = new KSieveUi::VacationCreateScriptJob;
+        createJob->setServerUrl(mUrl);
+        createJob->setServerName(mServerName);
         createJob->setStatus(active, mWasActive);
         createJob->setScript(script);
         return createJob;

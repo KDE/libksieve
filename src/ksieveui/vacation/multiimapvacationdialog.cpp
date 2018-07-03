@@ -179,16 +179,28 @@ void MultiImapVacationDialog::writeConfig()
 
 void MultiImapVacationDialog::slotOkClicked()
 {
+    bool errorFound = false;
+    qDeleteAll(d->mListCreateJob);
+    d->mListCreateJob.clear();
     for (int i = 0; i < d->mTabWidget->count(); ++i) {
         VacationPageWidget *vacationPage = qobject_cast<VacationPageWidget *>(d->mTabWidget->widget(i));
         if (vacationPage) {
-            VacationCreateScriptJob *job = vacationPage->writeScript();
-            if (job) {
+            VacationCreateScriptJob *job = vacationPage->writeScript(errorFound);
+
+            if (job && !errorFound) {
                 d->mListCreateJob.append(job);
+            }
+            if (errorFound) {
+                //Clean up job
+                qDeleteAll(d->mListCreateJob);
+                d->mListCreateJob.clear();
+                break;
             }
         }
     }
-    Q_EMIT okClicked();
+    if (!errorFound) {
+        Q_EMIT okClicked();
+    }
 }
 
 void MultiImapVacationDialog::slotDefaultClicked()
