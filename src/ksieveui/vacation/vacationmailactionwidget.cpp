@@ -52,7 +52,7 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
 
     mSelectEmailLineEdit = AutoCreateScriptUtil::createSelectEmailsWidget();
     mSelectEmailLineEdit->setObjectName(QStringLiteral("selectEmailLineEdit"));
-    mSelectEmailLineEdit->setMultiSelection(true);
+    mSelectEmailLineEdit->setMultiSelection(false);
     mStackedWidget->addWidget(mSelectEmailLineEdit);
 
     mStackedWidget->setCurrentIndex(0);
