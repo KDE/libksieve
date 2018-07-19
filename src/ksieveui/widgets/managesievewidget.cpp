@@ -357,7 +357,7 @@ void ManageSieveWidget::changeActiveScript(QTreeWidgetItem *item, bool activate)
         GenerateGlobalScriptJob *job = new GenerateGlobalScriptJob(u);
         job->addUserActiveScripts(activeScripts);
         connect(job, &GenerateGlobalScriptJob::success, this, &ManageSieveWidget::slotRefresh);
-        connect(job, &GenerateGlobalScriptJob::error, this, &ManageSieveWidget::slotRefresh);
+        connect(job, &GenerateGlobalScriptJob::error, this, &ManageSieveWidget::slotGenerateGlobalScriptError);
         job->start();
         return;
     }
@@ -377,6 +377,12 @@ void ManageSieveWidget::changeActiveScript(QTreeWidgetItem *item, bool activate)
     }
     d->mBlockSignal = true;
     connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveWidget::slotRefresh);
+}
+
+void ManageSieveWidget::slotGenerateGlobalScriptError(const QString &errorStr)
+{
+    qCWarning(LIBKSIEVE_LOG) << "MManageSieveWidget::slotGenerateGlobalScriptError: error: " << errorStr;
+    slotRefresh();
 }
 
 bool ManageSieveWidget::itemIsActived(QTreeWidgetItem *item) const
