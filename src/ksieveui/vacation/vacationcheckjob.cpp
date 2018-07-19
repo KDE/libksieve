@@ -109,7 +109,7 @@ void VacationCheckJob::slotGetResult(KManageSieve::SieveJob *job, bool success, 
         }
 
         VacationUtils::Vacation vacation = VacationUtils::parseScript(script);
-        if (vacation.isValid()) {
+        if (vacation.isValid() && active) {
             active = vacation.active;
             if (active && vacation.startDate.isValid() && vacation.endDate.isValid()) {
                 active = (vacation.startDate <= QDate::currentDate() && vacation.endDate >= QDate::currentDate());
