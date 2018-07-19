@@ -86,18 +86,18 @@ void VacationCheckJob::slotGetResult(KManageSieve::SieveJob *job, bool success, 
         if (vacation.isValid()) {
             if (!mAvailableScripts.isEmpty()) {
                 const QString &scriptName = mAvailableScripts[mScriptPos - 1];
-                bool active = mActiveScripts.contains(scriptName) && vacation.active;
-                if (active && vacation.startDate.isValid() && vacation.endDate.isValid()) {
-                    active = (vacation.startDate <= QDate::currentDate() && vacation.endDate >= QDate::currentDate());
+                bool hasVacationActive = mActiveScripts.contains(scriptName) && vacation.active;
+                if (hasVacationActive && vacation.startDate.isValid() && vacation.endDate.isValid()) {
+                    hasVacationActive = (vacation.startDate <= QDate::currentDate() && vacation.endDate >= QDate::currentDate());
                 }
-                Q_EMIT scriptActive(this, scriptName, active);
+                Q_EMIT vacationScriptActive(this, scriptName, hasVacationActive);
                 qCDebug(LIBKSIEVE_LOG) << "vacation script found :)";
             } else {
-                Q_EMIT scriptActive(this, QString(), false);
+                Q_EMIT vacationScriptActive(this, QString(), false);
             }
         } else if (isLastScript()) {
             mNoScriptFound = true;
-            Q_EMIT scriptActive(this, QString(), false);
+            Q_EMIT vacationScriptActive(this, QString(), false);
             qCDebug(LIBKSIEVE_LOG) << "no vacation script found :(";
         } else {
             getNextScript();
@@ -119,7 +119,7 @@ void VacationCheckJob::slotGetResult(KManageSieve::SieveJob *job, bool success, 
         if (active) {
             mActiveScripts << mUrl.fileName();
         }
-        Q_EMIT scriptActive(this, mUrl.fileName(), active);
+        Q_EMIT vacationScriptActive(this, mUrl.fileName(), active);
     }
 }
 
@@ -180,7 +180,7 @@ void VacationCheckJob::getNextScript()
     if (isLastScript()) {
         //TODO: no script found
         mNoScriptFound = true;
-        Q_EMIT scriptActive(this, QString(), false);
+        Q_EMIT vacationScriptActive(this, QString(), false);
         qCDebug(LIBKSIEVE_LOG) << "no vacation script found :(";
         return;
     }

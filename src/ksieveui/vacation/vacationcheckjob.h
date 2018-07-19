@@ -43,7 +43,7 @@ public:
     QString serverName() const;
 
 Q_SIGNALS:
-    void scriptActive(VacationCheckJob *job, const QString &sscriptName, bool active);
+    void vacationScriptActive(VacationCheckJob *job, const QString &sscriptName, bool active);
     void error(const QString &errorStr);
 
 private Q_SLOTS:
