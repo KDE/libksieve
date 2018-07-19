@@ -570,7 +570,7 @@ void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, c
     }
     d->mBlockSignal = false;
 
-    const bool hasKep14EditorMode = Util::hasKep14Support(job->sieveCapabilities(), listScript, activeScript);
+    bool hasKep14EditorMode = Util::hasKep14Support(job->sieveCapabilities(), listScript, activeScript);
     if (hasKep14EditorMode) {
         QUrl u = mUrls[parent];
         u = u.adjusted(QUrl::RemoveFilename);
@@ -580,6 +580,8 @@ void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, c
         connect(parseJob, &ParseUserScriptJob::finished, this, &ManageSieveWidget::setActiveScripts);
         parseJob->start();
         (static_cast<SieveTreeWidgetItem *>(parent))->startAnimation();
+    } else if (Util::hasKep14CapabilitySupport(job->sieveCapabilities())) { //We don't have user script but server support kep14
+        hasKep14EditorMode = true;
     }
 
     parent->setData(0, SIEVE_SERVER_CAPABILITIES, job->sieveCapabilities());

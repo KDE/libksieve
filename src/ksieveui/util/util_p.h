@@ -73,6 +73,8 @@ QStringList sieveImapResourceNames();
  */
 bool hasKep14Support(const QStringList &sieveCapabilities, const QStringList &availableScripts, const QString &activeScript);
 
+bool hasKep14CapabilitySupport(const QStringList &sieveCapabilities);
+
 /**
  * Is the given scriptName a protected KEP:14 name, that a normal user should not touch directly.
  * it tests against MASTER, USER and MANAGEMENT script
