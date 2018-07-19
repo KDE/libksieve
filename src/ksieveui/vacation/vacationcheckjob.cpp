@@ -103,23 +103,24 @@ void VacationCheckJob::slotGetResult(KManageSieve::SieveJob *job, bool success, 
             getNextScript();
         }
     } else {
+        bool hasVacationActive = active;
         if (!success) {
-            active = false; // default to inactive
+            hasVacationActive = false; // default to inactive
             mNoScriptFound = true;
         }
 
         VacationUtils::Vacation vacation = VacationUtils::parseScript(script);
-        if (vacation.isValid() && active) {
-            active = vacation.active;
-            if (active && vacation.startDate.isValid() && vacation.endDate.isValid()) {
-                active = (vacation.startDate <= QDate::currentDate() && vacation.endDate >= QDate::currentDate());
+        if (vacation.isValid() && hasVacationActive) {
+            bool hasVacationActive = vacation.active;
+            if (hasVacationActive && vacation.startDate.isValid() && vacation.endDate.isValid()) {
+                hasVacationActive = (vacation.startDate <= QDate::currentDate() && vacation.endDate >= QDate::currentDate());
             }
         }
 
-        if (active) {
+        if (hasVacationActive) {
             mActiveScripts << mUrl.fileName();
         }
-        Q_EMIT vacationScriptActive(this, mUrl.fileName(), active);
+        Q_EMIT vacationScriptActive(this, mUrl.fileName(), hasVacationActive);
     }
 }
 
