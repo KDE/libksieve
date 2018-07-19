@@ -265,9 +265,15 @@ bool KSieveUi::Util::allowOutOfOfficeSettings()
     return VacationSettings::self()->allowOutOfOfficeSettings();
 }
 
-bool Util::hasKep14Support(const QStringList &sieveCapabilities, const QStringList &availableScripts, const QString &activeScript)
+bool Util::hasKep14CapabilitySupport(const QStringList &sieveCapabilities)
 {
     const bool hasIncludeCapability = sieveCapabilities.contains(QLatin1String("include"));
+    return hasIncludeCapability;
+}
+
+bool Util::hasKep14Support(const QStringList &sieveCapabilities, const QStringList &availableScripts, const QString &activeScript)
+{
+    const bool hasIncludeCapability = Util::hasKep14CapabilitySupport(sieveCapabilities);
     if (!hasIncludeCapability) {
         return false;
     }

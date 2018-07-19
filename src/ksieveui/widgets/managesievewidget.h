@@ -111,6 +111,7 @@ private:
     bool isFileNameItem(QTreeWidgetItem *item) const;
     bool itemIsActived(QTreeWidgetItem *item) const;
     void changeActiveScript(QTreeWidgetItem *item, bool activate);
+    void slotGenerateGlobalScriptError(const QString &errorStr);
 
     ManageSieveWidgetPrivate *const d;
 };
