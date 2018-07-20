@@ -64,7 +64,7 @@ void VacationCheckJob::start()
     if (mKep14Support) {
         QUrl url = mUrl;
         url = url.adjusted(QUrl::RemoveFilename);
-        url.setPath(url.path() + QLatin1String("USER"));
+        url.setPath(url.path() + QLatin1Char('/') + QLatin1String("USER"));
         mParseJob = new ParseUserScriptJob(url, this);
         connect(mParseJob, &ParseUserScriptJob::finished, this, &VacationCheckJob::slotGotActiveScripts);
         mParseJob->start();
@@ -190,7 +190,7 @@ void VacationCheckJob::getNextScript()
     }
     QUrl url = mUrl;
     url = url.adjusted(QUrl::RemoveFilename);
-    url.setPath(url.path() + mAvailableScripts[mScriptPos]);
+    url.setPath(url.path() + QLatin1Char('/') + mAvailableScripts[mScriptPos]);
     mScriptPos += 1;
     if (Util::isKep14ProtectedName(url.fileName())) {
         getNextScript();

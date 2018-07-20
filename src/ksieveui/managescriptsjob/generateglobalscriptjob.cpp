@@ -20,6 +20,7 @@
 #include "kmanagesieve/sievejob.h"
 
 #include <KLocalizedString>
+#include <QDebug>
 
 using namespace KSieveUi;
 GenerateGlobalScriptJob::GenerateGlobalScriptJob(const QUrl &url, QObject *parent)
@@ -90,7 +91,7 @@ void GenerateGlobalScriptJob::writeMasterScript()
 
     QUrl url(mCurrentUrl);
     url = url.adjusted(QUrl::RemoveFilename);
-    url.setPath(url.path() + QLatin1String("MASTER"));
+    url.setPath(url.path() + QLatin1Char('/') + QLatin1String("MASTER"));
     mMasterJob = KManageSieve::SieveJob::put(url, masterScript, true, true);
     connect(mMasterJob, &KManageSieve::SieveJob::result, this, &GenerateGlobalScriptJob::slotPutMasterResult);
 }
@@ -124,7 +125,7 @@ void GenerateGlobalScriptJob::writeUserScript()
 
     QUrl url(mCurrentUrl);
     url = url.adjusted(QUrl::RemoveFilename);
-    url.setPath(url.path() + QLatin1String("USER"));
+    url.setPath(url.path() + QLatin1Char('/') + QLatin1String("USER"));
     mUserJob = KManageSieve::SieveJob::put(url, userScript, false, false);
     connect(mUserJob, &KManageSieve::SieveJob::result, this, &GenerateGlobalScriptJob::slotPutUserResult);
 }

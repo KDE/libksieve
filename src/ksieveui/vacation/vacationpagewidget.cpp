@@ -122,7 +122,7 @@ void VacationPageWidget::slotGetResult(const QString &serverName, const QStringL
     }
 
     mUrl = mUrl.adjusted(QUrl::RemoveFilename);
-    mUrl.setPath(mUrl.path() + scriptName);
+    mUrl.setPath(mUrl.path() + QLatin1Char('/') + scriptName);
 
     // Whether the server supports the "date" extension
     mHasDateSupport = mUrl.scheme() == QStringLiteral("sieve") && sieveCapabilities.contains(QLatin1String("date"));

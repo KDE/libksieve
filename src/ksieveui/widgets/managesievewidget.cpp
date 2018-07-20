@@ -580,7 +580,7 @@ void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, c
     if (hasKep14EditorMode) {
         QUrl u = mUrls[parent];
         u = u.adjusted(QUrl::RemoveFilename);
-        u.setPath(u.path() + QStringLiteral("USER"));
+        u.setPath(u.path() + QLatin1Char('/') + QStringLiteral("USER"));
         ParseUserScriptJob *parseJob = new ParseUserScriptJob(u);
         parseJob->setProperty("parentItem", QVariant::fromValue<QTreeWidgetItem *>(parent));
         connect(parseJob, &ParseUserScriptJob::finished, this, &ManageSieveWidget::setActiveScripts);

@@ -19,6 +19,7 @@
 #include "ksieveui/scriptsparsing/parsingutil.h"
 #include <kmanagesieve/sievejob.h>
 #include <QXmlStreamReader>
+#include <QDebug>
 #include <KLocalizedString>
 
 using namespace KSieveUi;
@@ -73,7 +74,7 @@ void ParseUserScriptJob::slotGetResult(KManageSieve::SieveJob *job, bool success
         return;
     }
     if (script.isEmpty()) {
-        emitError(i18n("Script is empty. (%1)", mCurrentUrl.path()));
+        emitError(i18n("Script is empty. (%1)", mCurrentUrl.fileName()));
         return;
     }
     bool result;

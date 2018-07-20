@@ -165,7 +165,7 @@ void SieveDebugDialog::slotDiagNextScript()
     mUrl = info.sieveUrl;
 
     mUrl = mUrl.adjusted(QUrl::RemoveFilename);
-    mUrl.setPath(mUrl.path() + scriptFile);
+    mUrl.setPath(mUrl.path() + QLatin1Char('/') + scriptFile);
 
     mSieveJob = KManageSieve::SieveJob::get(mUrl);
 
