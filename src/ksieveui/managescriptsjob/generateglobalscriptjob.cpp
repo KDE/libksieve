@@ -64,6 +64,7 @@ void GenerateGlobalScriptJob::start()
     writeUserScript();
 }
 
+//TODO why it's not activated ????
 void GenerateGlobalScriptJob::writeMasterScript()
 {
     const QString masterScript = QStringLiteral("# MASTER\n"
