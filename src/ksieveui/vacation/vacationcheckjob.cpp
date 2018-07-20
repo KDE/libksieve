@@ -84,7 +84,9 @@ void VacationCheckJob::slotGetResult(KManageSieve::SieveJob *job, bool success, 
     if (mKep14Support) {
         VacationUtils::Vacation vacation = VacationUtils::parseScript(script);
         if (vacation.isValid()) {
-            if (!mAvailableScripts.isEmpty()) {
+            if (mAvailableScripts.isEmpty()) {
+                Q_EMIT vacationScriptActive(this, QString(), false);
+            } else {
                 const QString &scriptName = mAvailableScripts[mScriptPos - 1];
                 bool hasVacationActive = mActiveScripts.contains(scriptName) && vacation.active;
                 if (hasVacationActive && vacation.startDate.isValid() && vacation.endDate.isValid()) {
@@ -92,8 +94,6 @@ void VacationCheckJob::slotGetResult(KManageSieve::SieveJob *job, bool success, 
                 }
                 Q_EMIT vacationScriptActive(this, scriptName, hasVacationActive);
                 qCDebug(LIBKSIEVE_LOG) << "vacation script found :)";
-            } else {
-                Q_EMIT vacationScriptActive(this, QString(), false);
             }
         } else if (isLastScript()) {
             mNoScriptFound = true;
@@ -103,14 +103,17 @@ void VacationCheckJob::slotGetResult(KManageSieve::SieveJob *job, bool success, 
             getNextScript();
         }
     } else {
-        bool hasVacationActive = active;
-        if (!success) {
-            hasVacationActive = false; // default to inactive
-            mNoScriptFound = true;
+        if (!success || !active) {
+            if (!success) {
+                mNoScriptFound = true;
+            }
+            Q_EMIT vacationScriptActive(this, mUrl.fileName(), false);
+            return;
         }
 
+        bool hasVacationActive = active;
         VacationUtils::Vacation vacation = VacationUtils::parseScript(script);
-        if (vacation.isValid() && hasVacationActive) {
+        if (vacation.isValid()) {
             hasVacationActive = vacation.active;
             if (hasVacationActive && vacation.startDate.isValid() && vacation.endDate.isValid()) {
                 hasVacationActive = (vacation.startDate <= QDate::currentDate() && vacation.endDate >= QDate::currentDate());
