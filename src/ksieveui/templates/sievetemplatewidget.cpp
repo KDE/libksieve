@@ -33,7 +33,6 @@
 using namespace KSieveUi;
 SieveTemplateListWidget::SieveTemplateListWidget(const QString &configName, QWidget *parent)
     : PimCommon::TemplateListWidget(configName, parent)
-    , mTemplateManager(nullptr)
 {
     setKNewStuffConfigFile(QStringLiteral("ksieve_script.knsrc"));
     loadTemplates();

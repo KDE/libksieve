@@ -26,7 +26,6 @@ using namespace KSieveUi;
 
 SieveEditorMenuBar::SieveEditorMenuBar(QWidget *parent)
     : QMenuBar(parent)
-    , mTextModeWidget(nullptr)
 {
     initActions();
     initMenus();

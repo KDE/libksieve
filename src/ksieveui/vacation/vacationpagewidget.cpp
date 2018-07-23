@@ -38,10 +38,6 @@
 using namespace KSieveUi;
 VacationPageWidget::VacationPageWidget(QWidget *parent)
     : QWidget(parent)
-    , mVacationManager(nullptr)
-    , mPageScript(Script)
-    , mWasActive(false)
-    , mHasDateSupport(false)
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
     lay->setMargin(0);

@@ -62,7 +62,7 @@ private:
     VacationEditWidget *mVacationEditWidget = nullptr;
     VacationWarningWidget *mVacationWarningWidget = nullptr;
     MultiImapVacationManager *mVacationManager = nullptr;
-    PageType mPageScript;
+    PageType mPageScript = Script;
     bool mWasActive = false;
     bool mHasDateSupport = false;
 };

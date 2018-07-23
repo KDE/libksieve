@@ -32,10 +32,10 @@ public:
     {
     }
 
-    QUrl mUrl;
-    KManageSieve::SieveJob *mSieveJob = nullptr;
     QStringList mAvailableScripts;
     QString mServerName;
+    QUrl mUrl;
+    KManageSieve::SieveJob *mSieveJob = nullptr;
     bool mKolabKep14Support = false;
 };
 

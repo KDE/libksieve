@@ -34,9 +34,7 @@ using namespace KSieveUi;
 
 SieveDebugDialog::SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, QWidget *parent)
     : QDialog(parent)
-    , mSieveJob(nullptr)
     , mPasswordProvider(passwordProvider)
-    , mShutDownJob(nullptr)
 {
     setWindowTitle(i18n("Sieve Diagnostics"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);

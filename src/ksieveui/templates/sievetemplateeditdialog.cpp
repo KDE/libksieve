@@ -43,7 +43,6 @@ using namespace KSieveUi;
 
 SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTemplate)
     : QDialog(parent)
-    , mOkButton(nullptr)
 {
     setWindowTitle(defaultTemplate ? i18n("Default template") : i18n("Template"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);

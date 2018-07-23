@@ -63,12 +63,12 @@ private:
     QUrl mUrl;
     QString mScript;
     QString mServerName;
-    bool mActivate;
-    bool mScriptActive;
-    bool mKep14Support;
-    bool mUserJobRunning;
-    bool mScriptJobRunning;
-    bool mSuccess;
+    bool mActivate = false;
+    bool mScriptActive = false;
+    bool mKep14Support = false;
+    bool mUserJobRunning = false;
+    bool mScriptJobRunning = false;
+    bool mSuccess = true;
     KManageSieve::SieveJob *mSieveJob = nullptr;
     ParseUserScriptJob *mParseUserJob = nullptr;
     GenerateGlobalScriptJob *mCreateJob = nullptr;

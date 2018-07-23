@@ -49,7 +49,6 @@ using namespace KSieveUi;
 
 SieveScriptListItem::SieveScriptListItem(const QString &text, QListWidget *parent)
     : QListWidgetItem(text, parent)
-    , mScriptPage(nullptr)
 {
 }
 

@@ -63,10 +63,9 @@ QString KSieveUi::VacationUtils::mailAction(KSieveUi::VacationUtils::MailAction 
         return i18n("Redirect to");
     case CopyTo:
         return i18n("Copy to");
-    default:
-        qCWarning(LIBKSIEVE_LOG) << "Unknown mail action" << action;
-        return i18n("Unknown action");
     }
+    Q_UNREACHABLE();
+    return {};
 }
 
 KSieveUi::VacationUtils::MailAction KSieveUi::VacationUtils::defaultMailAction()

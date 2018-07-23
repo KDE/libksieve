@@ -49,7 +49,6 @@ public:
         XOAuth2
     };
     SieveImapAccountSettings();
-    ~SieveImapAccountSettings();
 
     Q_REQUIRED_RESULT QString identifier() const;
 

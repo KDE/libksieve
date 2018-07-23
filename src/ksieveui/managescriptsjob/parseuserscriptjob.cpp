@@ -26,8 +26,6 @@ using namespace KSieveUi;
 ParseUserScriptJob::ParseUserScriptJob(const QUrl &url, QObject *parent)
     : QObject(parent)
     , mCurrentUrl(url)
-    , mSieveJob(nullptr)
-    , mStreamReader(nullptr)
 {
 }
 

@@ -29,15 +29,6 @@ using namespace KSieveUi;
 
 VacationCreateScriptJob::VacationCreateScriptJob(QObject *parent)
     : QObject(parent)
-    , mActivate(false)
-    , mScriptActive(false)
-    , mKep14Support(false)
-    , mUserJobRunning(false)
-    , mScriptJobRunning(false)
-    , mSuccess(true)
-    , mSieveJob(nullptr)
-    , mParseUserJob(nullptr)
-    , mCreateJob(nullptr)
 {
 }
 

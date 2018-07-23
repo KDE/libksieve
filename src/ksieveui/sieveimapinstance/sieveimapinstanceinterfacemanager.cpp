@@ -26,7 +26,6 @@ using namespace KSieveUi;
 
 SieveImapInstanceInterfaceManager::SieveImapInstanceInterfaceManager(QObject *parent)
     : QObject(parent)
-    , mInterface(nullptr)
 {
 }
 

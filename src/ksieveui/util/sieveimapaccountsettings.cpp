@@ -25,10 +25,6 @@ SieveImapAccountSettings::SieveImapAccountSettings()
 {
 }
 
-SieveImapAccountSettings::~SieveImapAccountSettings()
-{
-}
-
 QString SieveImapAccountSettings::identifier() const
 {
     return mUserName + QLatin1Char('_') + mServerName;

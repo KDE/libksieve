@@ -31,10 +31,10 @@ public:
     {
     }
 
-    bool mIsActive;
+    QUrl mUrl;
     QString mOriginalScript;
     QString mCurrentScript;
-    QUrl mUrl;
+    bool mIsActive;
 };
 
 CheckScriptJob::CheckScriptJob(QObject *parent)
