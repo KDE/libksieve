@@ -462,6 +462,10 @@ void VacationEditWidget::setDefault()
     setMailAction(VacationUtils::defaultMailAction(), QString());
     mStartTimeActive->setChecked(false);
     mEndTimeActive->setChecked(false);
+    mStartTime->setTime(QTime());
+    mEndTime->setTime(QTime());
+    mStartDate->setDate(QDate());
+    mEndDate->setDate(QDate());
     setDomainCheck(false);
     mDomainEdit->clear();
 }
