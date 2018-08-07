@@ -33,6 +33,7 @@ AddressLineEdit::AddressLineEdit(QWidget *parent)
     mLineEdit->setClearButtonEnabled(true);
     mLineEdit->setPlaceholderText(i18n("Define Email Address..."));
     connect(mLineEdit, &QLineEdit::textChanged, this, &AddressLineEdit::slotTextChanged);
+    verifyAddress();
 }
 
 AddressLineEdit::~AddressLineEdit()
@@ -50,16 +51,14 @@ void AddressLineEdit::verifyAddress()
 #ifndef QT_NO_STYLE_STYLESHEET
     QString styleSheet;
     const QString lineEditText = text();
-    if (!lineEditText.isEmpty()) {
-        mEmailIsInvalid = !lineEditText.contains(QLatin1Char('@'));
-        //Fix check multi address
-        if (mNegativeBackground.isEmpty()) {
-            KStatefulBrush bgBrush = KStatefulBrush(KColorScheme::View, KColorScheme::NegativeText);
-            mNegativeBackground = QStringLiteral("QLineEdit{ color:%1 }").arg(bgBrush.brush(this).color().name());
-        }
-        if (mEmailIsInvalid) {
-            styleSheet = mNegativeBackground;
-        }
+    mEmailIsInvalid = !lineEditText.contains(QLatin1Char('@'));
+    //Fix check multi address
+    if (mNegativeBackground.isEmpty()) {
+        KStatefulBrush bgBrush = KStatefulBrush(KColorScheme::View, KColorScheme::NegativeText);
+        mNegativeBackground = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(this).color().name());
+    }
+    if (mEmailIsInvalid) {
+        styleSheet = mNegativeBackground;
     }
     mLineEdit->setStyleSheet(styleSheet);
 #endif
