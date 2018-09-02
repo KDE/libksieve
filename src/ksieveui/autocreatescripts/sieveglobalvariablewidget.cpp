@@ -137,7 +137,7 @@ void SieveGlobalVariableActionWidget::loadScript(QXmlStreamReader &element, QStr
         if (tagName == QLatin1String("str")) {
             mVariableName->setText(element.readElementText());
         } else {
-            error += i18n("Unknown tag \"%1\" during loading of variables.") + QLatin1Char('\n');
+            error += i18n("Unknown tag \"%1\" during loading of variables.", *tagName.string()) + QLatin1Char('\n');
             qCDebug(LIBKSIEVE_LOG) << " SieveGlobalVariableActionWidget::loadScript unknown tagName " << tagName;
         }
     }
