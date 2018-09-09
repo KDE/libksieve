@@ -19,7 +19,6 @@
 #include "sieveactionfileinto.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
-#include "autocreatescripts/autocreatescriptutil_p.h"
 #include "widgets/moveimapfolderwidget.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include <KLocalizedString>

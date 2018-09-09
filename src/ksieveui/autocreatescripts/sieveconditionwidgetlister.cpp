@@ -34,7 +34,6 @@
 #include <QGridLayout>
 #include <QLabel>
 #include <QWhatsThis>
-#include "libksieve_debug.h"
 #include "sievescriptdescriptiondialog.h"
 
 using namespace KSieveUi;

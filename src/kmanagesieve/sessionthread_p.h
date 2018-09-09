@@ -17,8 +17,8 @@
     02110-1301, USA.
 */
 
-#ifndef KMANAGESIEVE_SESSIONTHREAD_H
-#define KMANAGESIEVE_SESSIONTHREAD_H
+#ifndef KMANAGESIEVE_SESSIONTHREAD_P_H
+#define KMANAGESIEVE_SESSIONTHREAD_P_H
 
 #include <QObject>
 #include <QUrl>
@@ -100,4 +100,4 @@ private:
 };
 } // namespace KManageSieve
 
-#endif // KMANAGESIEVE_SESSIONTHREAD_H
+#endif // KMANAGESIEVE_SESSIONTHREAD_P_H

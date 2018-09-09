@@ -31,7 +31,6 @@
 #include "libksieve_debug.h"
 #include <QXmlStreamReader>
 #include <QGridLayout>
-#include "autocreatescripts/autocreatescriptutil_p.h"
 #include <KSieveUi/AbstractSelectEmailLineEdit>
 
 using namespace KSieveUi;

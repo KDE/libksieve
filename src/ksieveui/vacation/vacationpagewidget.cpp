@@ -33,8 +33,6 @@
 #include <QVBoxLayout>
 #include <QLabel>
 
-#include "libksieve_debug.h"
-
 using namespace KSieveUi;
 VacationPageWidget::VacationPageWidget(QWidget *parent)
     : QWidget(parent)
