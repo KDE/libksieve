@@ -96,14 +96,11 @@ install(FILES
 )
 if(BUILD_TESTING)
     find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)
-endif(BUILD_TESTING)
-
+    add_subdirectory(autotests)
+endif()
 
 add_subdirectory(src)
 add_subdirectory(kioslave)
-if(BUILD_TESTING)
-    add_subdirectory(autotests)
-endif()
 install( FILES libksieve.categories libksieve.renamecategories DESTINATION ${KDE_INSTALL_CONFDIR} )
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
