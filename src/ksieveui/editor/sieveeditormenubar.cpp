@@ -18,7 +18,6 @@
 #include "sieveeditormenubar.h"
 #include "sieveeditortextmodewidget.h"
 #include "sieveeditortabwidget.h"
-#include <kconfig_version.h>
 
 #include <KStandardAction>
 #include <KLocalizedString>
@@ -91,13 +90,7 @@ void SieveEditorMenuBar::initActions()
     mPrintAction = KStandardAction::print(this, &SieveEditorMenuBar::print, this);
     mPrintPreviewAction = KStandardAction::printPreview(this, &SieveEditorMenuBar::printPreview, this);
 
-#if KCONFIG_VERSION < QT_VERSION_CHECK(5, 50, 0)
-    mZoomResetAction = new QAction(i18nc("Reset the zoom", "Reset"), this);
-    mZoomResetAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_0));
-    connect(mZoomResetAction, &QAction::triggered, this, &SieveEditorMenuBar::zoomReset);
-#else
     mZoomResetAction = KStandardAction::actualSize(this, &SieveEditorMenuBar::zoomReset, this);
-#endif
     mWordWrapAction = new QAction(i18n("Wordwrap"), this);
     mWordWrapAction->setCheckable(true);
     connect(mWordWrapAction, &QAction::triggered, this, &SieveEditorMenuBar::wordWrap);
