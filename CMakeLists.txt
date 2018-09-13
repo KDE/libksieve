@@ -59,6 +59,18 @@ find_package(KF5MailTransport ${KMAILTRANSPORT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5PimTextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5IMAP ${KIMAP_LIB_VERSION} CONFIG REQUIRED)
 
+find_package(KF5Purpose CONFIG QUIET)
+set_package_properties(KF5Purpose PROPERTIES DESCRIPTION "Support for sharing file"
+                       TYPE OPTIONAL
+                      )
+if (KF5Purpose_FOUND)
+  message(STATUS "Found KF5 Purpose, filesharing enabled")
+  set(KF5_USE_PURPOSE true)
+else()
+  message(STATUS "KF5 Purpose not found, filesharing disabled")
+endif()
+
+
 ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVE
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5LibKSieveConfigVersion.cmake"
