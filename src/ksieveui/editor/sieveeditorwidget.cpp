@@ -137,7 +137,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
 
     mTextModeWidget = new SieveEditorTextModeWidget;
     connect(mTextModeWidget, &SieveEditorTextModeWidget::valueChanged, this, &SieveEditorWidget::slotModified);
-    if (useMenuBar) {
+    if (menuBar) {
         menuBar->setTextModeWidget(mTextModeWidget);
     }
     mStackedWidget->addWidget(mTextModeWidget);
