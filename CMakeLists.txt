@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0)
-set(PIM_VERSION "5.9.40")
+set(PIM_VERSION "5.9.41")
 
 project(libksieve VERSION ${PIM_VERSION})
 
@@ -66,6 +66,7 @@ set_package_properties(KF5Purpose PROPERTIES DESCRIPTION "Support for sharing fi
 if (KF5Purpose_FOUND)
   message(STATUS "Found KF5 Purpose, filesharing enabled")
   set(KF5_USE_PURPOSE true)
+  add_definitions(-DKF5_USE_PURPOSE)
 else()
   message(STATUS "KF5 Purpose not found, filesharing disabled")
 endif()

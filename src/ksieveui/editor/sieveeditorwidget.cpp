@@ -34,7 +34,13 @@
 #include <kzip.h>
 #include <KIconEngine>
 #include <KStandardAction>
-#include <QTemporaryFile>
+#include <KMessageBox>
+
+#ifdef KF5_USE_PURPOSE
+#include <Purpose/AlternativesModel>
+#include <PurposeWidgets/Menu>
+#include <QJsonArray>
+#endif
 
 #include <QPushButton>
 #include <QVBoxLayout>
@@ -46,6 +52,7 @@
 #include <QAction>
 #include <QPointer>
 #include <QDir>
+#include <QTemporaryFile>
 
 using namespace KSieveUi;
 
@@ -81,11 +88,22 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
 
     QStringList overlays;
     overlays << QStringLiteral("list-add");
-    mShareScript = new QAction(QIcon(new KIconEngine(QStringLiteral("get-hot-new-stuff"), KIconLoader::global(), overlays)), i18n("Share..."), this);
+    mShareScript = new QAction(QIcon(new KIconEngine(QStringLiteral("get-hot-new-stuff"), KIconLoader::global(), overlays)), i18n("Share Script..."), this);
     connect(mShareScript, &QAction::triggered, this, &SieveEditorWidget::slotShareScript);
     //Add action to toolBar
 
     toolbar->addAction(mShareScript);
+#ifdef KF5_USE_PURPOSE
+    mShareAction = new QAction(i18n("Share..."), this);
+    mShareMenu = new Purpose::Menu(this);
+    mShareMenu->model()->setPluginType(QStringLiteral("Export"));
+    connect(mShareMenu, &Purpose::Menu::aboutToShow, this, &SieveEditorWidget::slotInitializeShareMenu);
+    mShareAction->setMenu(mShareMenu);
+    mShareAction->setIcon( QIcon::fromTheme(QStringLiteral("document-share")));
+    connect(mShareMenu, &Purpose::Menu::finished, this, &SieveEditorWidget::slotShareActionFinished);
+    toolbar->addAction(mShareAction);
+#endif
+
     SieveEditorMenuBar *menuBar = nullptr;
     if (useMenuBar) {
         menuBar = new SieveEditorMenuBar;
@@ -117,6 +135,10 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
         menuBar->fileMenu()->addSeparator();
         menuBar->fileMenu()->addAction(mShareScript);
         menuBar->toolsMenu()->addSeparator();
+#ifdef KF5_USE_PURPOSE
+        menuBar->fileMenu()->addAction(mShareAction);
+        menuBar->toolsMenu()->addSeparator();
+#endif
         menuBar->toolsMenu()->addAction(mCreateRulesGraphically);
         menuBar->toolsMenu()->addAction(mCheckSyntax);
         lay->addWidget(menuBar);
@@ -163,6 +185,44 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
 
 SieveEditorWidget::~SieveEditorWidget()
 {
+#ifdef KF5_USE_PURPOSE
+    delete mTemporaryShareFile;
+#endif
+}
+
+void SieveEditorWidget::slotInitializeShareMenu()
+{
+#ifdef KF5_USE_PURPOSE
+    delete mTemporaryShareFile;
+    mTemporaryShareFile = new QTemporaryFile();
+    mTemporaryShareFile->open();
+    mTemporaryShareFile->setPermissions(QFile::ReadUser);
+    mTemporaryShareFile->write(script().toUtf8());
+    mTemporaryShareFile->close();
+    mShareMenu->model()->setInputData(QJsonObject {
+        { QStringLiteral("urls"), QJsonArray { {mTemporaryShareFile->fileName()} } },
+        { QStringLiteral("mimeType"), { QStringLiteral("text/plain") } }
+    });
+    mShareMenu->reload();
+#endif
+}
+
+void SieveEditorWidget::slotShareActionFinished(const QJsonObject &output, int error, const QString &message)
+{
+#ifdef KF5_USE_PURPOSE
+    if (error) {
+        KMessageBox::error(this, i18n("There was a problem sharing the document: %1", message),
+                           i18n("Share"));
+    } else {
+        const QString url = output[QLatin1String("url")].toString();
+        if (url.isEmpty()) {
+            KMessageBox::information(this, i18n("File was shared."));
+        } else {
+            KMessageBox::information(this, i18n("<qt>You can find the new request at:<br /><a href='%1'>%1</a> </qt>", url),
+                    QString(), QString(), KMessageBox::AllowLink);
+        }
+    }
+#endif
 }
 
 void SieveEditorWidget::setReadOnly(bool b)
