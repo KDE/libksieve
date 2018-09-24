@@ -23,9 +23,11 @@
 #include "ksieveui_export.h"
 
 #include <QWidget>
+#ifdef KF5_USE_PURPOSE
 namespace Purpose {
 class Menu;
 }
+#endif
 class QStackedWidget;
 class QLineEdit;
 class QAction;
