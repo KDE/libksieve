@@ -33,7 +33,7 @@ set(IDENTITYMANAGEMENT_LIB_VERSION "5.9.40")
 set(KMAILTRANSPORT_LIB_VERSION "5.9.40")
 set(KPIMTEXTEDIT_LIB_VERSION "5.9.40")
 set(LIBKDEPIM_LIB_VERSION "5.9.40")
-set(PIMCOMMON_LIB_VERSION "5.9.40")
+set(PIMCOMMON_LIB_VERSION "5.9.43")
 set(KIMAP_LIB_VERSION "5.9.40")
 
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
@@ -59,6 +59,13 @@ find_package(KF5MailTransport ${KMAILTRANSPORT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5PimTextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5IMAP ${KIMAP_LIB_VERSION} CONFIG REQUIRED)
 
+
+ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVE
+                        VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h"
+                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5LibKSieveConfigVersion.cmake"
+                        SOVERSION 5
+)
+
 find_package(KF5Purpose CONFIG QUIET)
 set_package_properties(KF5Purpose PROPERTIES DESCRIPTION "Support for sharing file"
                        TYPE OPTIONAL
@@ -71,12 +78,6 @@ else()
   message(STATUS "KF5 Purpose not found, filesharing disabled")
 endif()
 
-
-ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVE
-                        VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h"
-                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5LibKSieveConfigVersion.cmake"
-                        SOVERSION 5
-)
 
 ########### Targets ###########
 

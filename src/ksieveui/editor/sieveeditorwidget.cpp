@@ -19,6 +19,7 @@
 */
 
 #include "sieveeditorwidget.h"
+#include "sievepurposemenuwidget.h"
 
 #include "sieve-editor.h"
 #include "sieveeditortextmodewidget.h"
@@ -36,11 +37,7 @@
 #include <KStandardAction>
 #include <KMessageBox>
 
-#ifdef KF5_USE_PURPOSE
-#include <Purpose/AlternativesModel>
-#include <PurposeWidgets/Menu>
-#include <QJsonArray>
-#endif
+#include <PimCommon/PurposeMenuWidget>
 
 #include <QPushButton>
 #include <QVBoxLayout>
@@ -93,16 +90,17 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     //Add action to toolBar
 
     toolbar->addAction(mShareScript);
-#ifdef KF5_USE_PURPOSE
-    mShareAction = new QAction(i18n("Share..."), this);
-    mShareMenu = new Purpose::Menu(this);
-    mShareMenu->model()->setPluginType(QStringLiteral("Export"));
-    connect(mShareMenu, &Purpose::Menu::aboutToShow, this, &SieveEditorWidget::slotInitializeShareMenu);
-    mShareAction->setMenu(mShareMenu);
-    mShareAction->setIcon( QIcon::fromTheme(QStringLiteral("document-share")));
-    connect(mShareMenu, &Purpose::Menu::finished, this, &SieveEditorWidget::slotShareActionFinished);
-    toolbar->addAction(mShareAction);
-#endif
+
+    SievePurposeMenuWidget *purposeMenu = new SievePurposeMenuWidget(this, this);
+    if (purposeMenu->menu()) {
+        mShareAction = new QAction(i18n("Share..."), this);
+        mShareAction->setMenu(purposeMenu->menu());
+        mShareAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
+        //purposeMenu->setEditorWidget(this);
+        toolbar->addAction(mShareAction);
+    } else {
+        delete purposeMenu;
+    }
 
     SieveEditorMenuBar *menuBar = nullptr;
     if (useMenuBar) {
@@ -185,44 +183,6 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
 
 SieveEditorWidget::~SieveEditorWidget()
 {
-#ifdef KF5_USE_PURPOSE
-    delete mTemporaryShareFile;
-#endif
-}
-
-void SieveEditorWidget::slotInitializeShareMenu()
-{
-#ifdef KF5_USE_PURPOSE
-    delete mTemporaryShareFile;
-    mTemporaryShareFile = new QTemporaryFile();
-    mTemporaryShareFile->open();
-    mTemporaryShareFile->setPermissions(QFile::ReadUser);
-    mTemporaryShareFile->write(script().toUtf8());
-    mTemporaryShareFile->close();
-    mShareMenu->model()->setInputData(QJsonObject {
-        { QStringLiteral("urls"), QJsonArray { {QUrl::fromLocalFile(mTemporaryShareFile->fileName()).toString()} } },
-        { QStringLiteral("mimeType"), { QStringLiteral("text/plain") } }
-    });
-    mShareMenu->reload();
-#endif
-}
-
-void SieveEditorWidget::slotShareActionFinished(const QJsonObject &output, int error, const QString &message)
-{
-#ifdef KF5_USE_PURPOSE
-    if (error) {
-        KMessageBox::error(this, i18n("There was a problem sharing the document: %1", message),
-                           i18n("Share"));
-    } else {
-        const QString url = output[QLatin1String("url")].toString();
-        if (url.isEmpty()) {
-            KMessageBox::information(this, i18n("File was shared."));
-        } else {
-            KMessageBox::information(this, i18n("<qt>You can find the new request at:<br /><a href='%1'>%1</a> </qt>", url),
-                    QString(), QString(), KMessageBox::AllowLink);
-        }
-    }
-#endif
 }
 
 void SieveEditorWidget::setReadOnly(bool b)

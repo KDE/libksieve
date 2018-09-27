@@ -23,15 +23,9 @@
 #include "ksieveui_export.h"
 
 #include <QWidget>
-#ifdef KF5_USE_PURPOSE
-namespace Purpose {
-class Menu;
-}
-#endif
 class QStackedWidget;
 class QLineEdit;
 class QAction;
-class QTemporaryFile;
 namespace KSieveUi {
 class SieveImapAccountSettings;
 class SieveEditorTextModeWidget;
@@ -134,8 +128,6 @@ private:
     void changeSwitchButtonText();
     void changeMode(EditorMode mode);
     void addMessageEntry(const QString &errorMsg, const QColor &color);
-    void slotInitializeShareMenu();
-    void slotShareActionFinished(const QJsonObject &output, int error, const QString &message);
     QString mOriginalScript;
     SieveEditorTextModeWidget *mTextModeWidget = nullptr;
     SieveEditorGraphicalModeWidget *mGraphicalModeWidget = nullptr;
@@ -148,10 +140,6 @@ private:
     QAction *mShareScript = nullptr;
     QAction *mGenerateXml = nullptr;
     QAction *mShareAction = nullptr;
-#ifdef KF5_USE_PURPOSE
-    Purpose::Menu *mShareMenu = nullptr;
-    QTemporaryFile *mTemporaryShareFile = nullptr;
-#endif
     EditorMode mMode = EditorMode::TextMode;
     bool mModified = false;
     bool mDebug = false;

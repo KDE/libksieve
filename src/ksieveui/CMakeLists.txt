@@ -66,6 +66,7 @@ set(ksieveui_editor_LIB_SRCS
     editor/sieveeditormenubar.cpp
     editor/sievetexteditorspellcheckdecorator.cpp
     editor/sievetexteditwidget.cpp
+    editor/sievepurposemenuwidget.cpp
     )
 
 set(ksieveui_autocreatescripts_LIB_SRCS
@@ -252,9 +253,6 @@ target_link_libraries(KF5KSieveUi
     Qt5::PrintSupport
     KF5::SyntaxHighlighting
     )
-if (KF5_USE_PURPOSE)
-    target_link_libraries(KF5KSieveUi PRIVATE KF5::Purpose KF5::PurposeWidgets)
-endif()
 
 set_target_properties(KF5KSieveUi PROPERTIES
     VERSION ${LIBKSIEVE_VERSION_STRING}
