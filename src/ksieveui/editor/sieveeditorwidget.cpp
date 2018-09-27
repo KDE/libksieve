@@ -96,7 +96,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
         mShareAction = new QAction(i18n("Share..."), this);
         mShareAction->setMenu(purposeMenu->menu());
         mShareAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
-        //purposeMenu->setEditorWidget(this);
+        purposeMenu->setEditorWidget(this);
         toolbar->addAction(mShareAction);
     } else {
         delete purposeMenu;
