@@ -137,7 +137,6 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     timeLayout->addWidget(mEndTime);
     glay->addLayout(timeLayout, row, 1);
 
-
     // Hide the date edits by default - they must be enabled by caller when the
     // server supports this feature
     enableDates(false);
@@ -259,7 +258,6 @@ AddrSpecList VacationEditWidget::mailAliases(bool &ok) const
     const char *s = text.cbegin();
     AddrSpecList asl;
     if (parseAddressList(s, text.cend(), al)) {
-
         AddressList::const_iterator end(al.constEnd());
         for (AddressList::const_iterator it = al.constBegin(); it != end; ++it) {
             const MailboxList &mbl = (*it).mailboxList;

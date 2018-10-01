@@ -17,14 +17,12 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #ifndef ABSTRACTSELECTEMAILLINEEDIT_H
 #define ABSTRACTSELECTEMAILLINEEDIT_H
 
 #include <QWidget>
 #include "ksieveui_export.h"
-namespace KSieveUi
-{
+namespace KSieveUi {
 class KSIEVEUI_EXPORT AbstractSelectEmailLineEdit : public QWidget
 {
     Q_OBJECT

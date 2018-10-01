@@ -70,7 +70,6 @@ void AddressLineEdit::focusOutEvent(QFocusEvent *ev)
     AbstractSelectEmailLineEdit::focusOutEvent(ev);
 }
 
-
 void AddressLineEdit::setText(const QString &str)
 {
     mLineEdit->setText(str);

@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "regexptest.h"
 #include <QTest>
 #include <QRegExp>
@@ -27,7 +26,6 @@ QTEST_GUILESS_MAIN(RegexpTest)
 RegexpTest::RegexpTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void RegexpTest::compareRegexp_data()

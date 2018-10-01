@@ -22,9 +22,7 @@
 
 namespace KSieveUi {
 namespace Test {
-
 QStringList fullCapabilitiesList();
-
 }
 }
 

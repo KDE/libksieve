@@ -24,7 +24,6 @@ using namespace KSieveUi;
 VacationMailLineEdit::VacationMailLineEdit(QWidget *parent)
     : QLineEdit(parent)
 {
-
 }
 
 void VacationMailLineEdit::setInvalidEmail(bool state)

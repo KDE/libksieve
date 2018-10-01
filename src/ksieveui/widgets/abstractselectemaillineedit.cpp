@@ -23,12 +23,10 @@ using namespace KSieveUi;
 AbstractSelectEmailLineEdit::AbstractSelectEmailLineEdit(QWidget *parent)
     : QWidget(parent)
 {
-
 }
 
 AbstractSelectEmailLineEdit::~AbstractSelectEmailLineEdit()
 {
-
 }
 
 bool AbstractSelectEmailLineEdit::multiSelection() const

@@ -153,7 +153,7 @@ void VacationCheckJob::slotGotList(KManageSieve::SieveJob *job, bool success, co
         return;
     }
 
-    mAvailableScripts = availableScripts;    
+    mAvailableScripts = availableScripts;
     searchVacationScript();
 }
 

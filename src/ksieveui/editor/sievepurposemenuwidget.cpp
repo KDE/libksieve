@@ -24,7 +24,6 @@ using namespace KSieveUi;
 SievePurposeMenuWidget::SievePurposeMenuWidget(QWidget *parentWidget, QObject *parent)
     : PimCommon::PurposeMenuWidget(parentWidget, parent)
 {
-
 }
 
 SievePurposeMenuWidget::~SievePurposeMenuWidget()

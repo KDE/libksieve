@@ -290,9 +290,9 @@ KManageSieve::AuthDetails Session::requestAuthDetails(const QUrl &url)
 
     QPointer<KPasswordDialog> dlg
         = new KPasswordDialog(
-        nullptr,
-        KPasswordDialog::ShowUsernameLine | KPasswordDialog::ShowKeepPassword
-        );
+              nullptr,
+              KPasswordDialog::ShowUsernameLine | KPasswordDialog::ShowKeepPassword
+              );
     dlg->setUsername(ai.username);
     dlg->setPassword(ai.password);
     dlg->setKeepPassword(ai.keepPassword);
