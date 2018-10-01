@@ -864,17 +864,17 @@ void kio_sieveProtocol::urlStat(const QUrl &url)
                 if (filename == QString::fromUtf8(r.getKey())) {
                     entry.clear();
 
-                    entry.insert(KIO::UDSEntry::UDS_NAME, QString::fromUtf8(r.getKey()));
+                    entry.fastInsert(KIO::UDSEntry::UDS_NAME, QString::fromUtf8(r.getKey()));
 
-                    entry.insert(KIO::UDSEntry::UDS_FILE_TYPE, S_IFREG);
+                    entry.fastInsert(KIO::UDSEntry::UDS_FILE_TYPE, S_IFREG);
 
                     if (r.getExtra() == "ACTIVE") {
-                        entry.insert(KIO::UDSEntry::UDS_ACCESS, 0700);
+                        entry.fastInsert(KIO::UDSEntry::UDS_ACCESS, 0700);
                     } else {
-                        entry.insert(KIO::UDSEntry::UDS_ACCESS, 0600);
+                        entry.fastInsert(KIO::UDSEntry::UDS_ACCESS, 0600);
                     }
 
-                    entry.insert(KIO::UDSEntry::UDS_MIME_TYPE, QStringLiteral("application/sieve"));
+                    entry.fastInsert(KIO::UDSEntry::UDS_MIME_TYPE, QStringLiteral("application/sieve"));
 
                     //setMetaData("active", (r.getExtra() == "ACTIVE") ? "yes" : "no");
 
@@ -910,17 +910,17 @@ void kio_sieveProtocol::listDir(const QUrl &url)
             }
         } else {
             entry.clear();
-            entry.insert(KIO::UDSEntry::UDS_NAME, QString::fromUtf8(r.getKey()));
+            entry.fastInsert(KIO::UDSEntry::UDS_NAME, QString::fromUtf8(r.getKey()));
 
-            entry.insert(KIO::UDSEntry::UDS_FILE_TYPE, S_IFREG);
+            entry.fastInsert(KIO::UDSEntry::UDS_FILE_TYPE, S_IFREG);
 
             if (r.getExtra() == "ACTIVE") {
-                entry.insert(KIO::UDSEntry::UDS_ACCESS, 0700);// mark exec'able
+                entry.fastInsert(KIO::UDSEntry::UDS_ACCESS, 0700);// mark exec'able
             } else {
-                entry.insert(KIO::UDSEntry::UDS_ACCESS, 0600);
+                entry.fastInsert(KIO::UDSEntry::UDS_ACCESS, 0600);
             }
 
-            entry.insert(KIO::UDSEntry::UDS_MIME_TYPE, QStringLiteral("application/sieve"));
+            entry.fastInsert(KIO::UDSEntry::UDS_MIME_TYPE, QStringLiteral("application/sieve"));
 
             //asetMetaData("active", (r.getExtra() == "ACTIVE") ? "true" : "false");
 
@@ -943,12 +943,14 @@ bool kio_sieveProtocol::saslInteract(void *in, AuthInfo &ai)
     for (; interact->id != SASL_CB_LIST_END; interact++) {
         if (interact->id == SASL_CB_AUTHNAME
             || interact->id == SASL_CB_PASS) {
-            if (m_sUser.isEmpty() || m_sPass.isEmpty()) {
-                if (!openPasswordDialog(ai)) {
+            if (m_sUser.isEmpty() || m_sPass.isEmpty()) {                
+                const int errorCode = openPasswordDialogV2(ai);
+                if (errorCode) {
                     // calling error() below is wrong for two reasons:
                     // - ERR_ABORTED is too harsh
                     // - higher layers already call error() and that can't happen twice.
                     //error(ERR_ABORTED, i18n("No authentication details supplied."));
+                    error(errorCode, QString());
                     return false;
                 }
                 m_sUser = ai.username;
