@@ -29,6 +29,7 @@
 #include <QTest>
 #include <kpimtextedit/plaintexteditorwidget.h>
 #include <vacation/vacationmailactionwidget.h>
+#include <PimCommon/SpellCheckLineEdit>
 
 VacationEditWidgetTest::VacationEditWidgetTest(QObject *parent)
     : QObject(parent)
@@ -53,10 +54,9 @@ void VacationEditWidgetTest::shouldHaveDefaultValue()
     KPIMTextEdit::PlainTextEditorWidget *mTextEdit = w.findChild<KPIMTextEdit::PlainTextEditorWidget *>(QStringLiteral("mTextEdit"));
     QVERIFY(mTextEdit);
     QVERIFY(mTextEdit->toPlainText().isEmpty());
-    QLineEdit *mSubject = w.findChild<QLineEdit *>(QStringLiteral("mSubject"));
+    PimCommon::SpellCheckLineEdit *mSubject = w.findChild<PimCommon::SpellCheckLineEdit *>(QStringLiteral("mSubject"));
     QVERIFY(mSubject);
-    QVERIFY(mSubject->text().isEmpty());
-    QVERIFY(mSubject->isClearButtonEnabled());
+    QVERIFY(mSubject->toPlainText().isEmpty());
 
     QLabel *subjectOfVacationLabel = w.findChild<QLabel *>(QStringLiteral("subjectOfVacationLabel"));
     QVERIFY(subjectOfVacationLabel);

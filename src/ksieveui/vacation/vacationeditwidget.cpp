@@ -37,6 +37,7 @@
 #include <QCheckBox>
 #include <QGridLayout>
 #include <QLabel>
+#include <PimCommon/SpellCheckLineEdit>
 
 using KMime::Types::AddrSpecList;
 using KMime::Types::AddressList;
@@ -75,9 +76,9 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
 
     // Subject
     ++row;
-    mSubject = new QLineEdit(this);
+    mSubject = new PimCommon::SpellCheckLineEdit(this, QString());
     mSubject->setObjectName(QStringLiteral("mSubject"));
-    mSubject->setClearButtonEnabled(true);
+    //mSubject->setClearButtonEnabled(true);
     QLabel *subjectOfVacationLabel = new QLabel(i18n("&Subject of the vacation mail:"), this);
     subjectOfVacationLabel->setObjectName(QStringLiteral("subjectOfVacationLabel"));
     subjectOfVacationLabel->setBuddy(mSubject);
@@ -397,7 +398,7 @@ void VacationEditWidget::setSubject(const QString &subject)
 QString VacationEditWidget::subject() const
 {
     if (mSubject->isEnabled()) {
-        return mSubject->text();
+        return mSubject->toPlainText();
     } else {
         return QString();
     }

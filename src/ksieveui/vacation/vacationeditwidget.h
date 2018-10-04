@@ -49,6 +49,10 @@ typedef QVector<AddrSpec> AddrSpecList;
 }
 }
 
+namespace PimCommon {
+class SpellCheckLineEdit;
+}
+
 namespace KSieveUi {
 class VacationMailActionWidget;
 class SieveImapAccountSettings;
@@ -119,7 +123,7 @@ protected:
     QCheckBox *mSpamCheck = nullptr;
     QCheckBox *mDomainCheck = nullptr;
     QLineEdit *mDomainEdit = nullptr;
-    QLineEdit *mSubject = nullptr;
+    PimCommon::SpellCheckLineEdit *mSubject = nullptr;
     QComboBox *mMailAction = nullptr;
     VacationMailActionWidget *mMailActionRecipient = nullptr;
     KDateComboBox *mStartDate = nullptr;
