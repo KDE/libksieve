@@ -133,10 +133,10 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
         menuBar->fileMenu()->addSeparator();
         menuBar->fileMenu()->addAction(mShareScript);
         menuBar->toolsMenu()->addSeparator();
-#ifdef KF5_USE_PURPOSE
-        menuBar->fileMenu()->addAction(mShareAction);
-        menuBar->toolsMenu()->addSeparator();
-#endif
+	if (mShareAction) {
+           menuBar->fileMenu()->addAction(mShareAction);
+           menuBar->toolsMenu()->addSeparator();
+	}
         menuBar->toolsMenu()->addAction(mCreateRulesGraphically);
         menuBar->toolsMenu()->addAction(mCheckSyntax);
         lay->addWidget(menuBar);
