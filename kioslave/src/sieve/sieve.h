@@ -13,8 +13,8 @@
  *   published by the Free Software Foundation.                            *
  *                                                                         *
  ***************************************************************************/
-#ifndef __sieve_h__
-#define __sieve_h__
+#ifndef SIEVE_H
+#define SIEVE_H
 
 #include <kio/tcpslavebase.h>
 #include <kio/authinfo.h>
