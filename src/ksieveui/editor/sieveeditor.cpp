@@ -74,7 +74,7 @@ SieveEditor::~SieveEditor()
 void SieveEditor::slotAccepted()
 {
     Q_EMIT okClicked();
-    accept();
+    //Don't accept here we need to check script. If it's failed we don't close this editor otherwise we will lose data
 }
 
 void SieveEditor::slotCanceled()
