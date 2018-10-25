@@ -275,7 +275,8 @@ void ManageSieveScriptsDialog::slotPutResult(KManageSieve::SieveJob *job, bool s
         d->mSieveEditor = nullptr;
         d->mCurrentURL = QUrl();
     } else {
-        KMessageBox::error(this, i18n("Uploading the Sieve script failed.\n"
+        //Don't add parent otherwise when there is an error it will parent to ManageSieveScriptsDialog and not editor
+        KMessageBox::error(nullptr, i18n("Uploading the Sieve script failed.\n"
                                       "The server responded:\n%1", job->errorString()), i18n("Sieve Error"));
         if (d->mSieveEditor) {
             d->mSieveEditor->show();
