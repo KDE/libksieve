@@ -349,7 +349,8 @@ void Session::setErrorMessage(const QString &msg)
     if (m_currentJob) {
         m_currentJob->setErrorMessage(msg);
     } else {
-        qCWarning(KMANAGERSIEVE_LOG) << objectName() << "No job for reporting this error message!" << msg;
+        qCWarning(KMANAGERSIEVE_LOG) << objectName() << "No job for reporting this error message!" << msg << " m_url " << m_url.host();
+        KMessageBox::error(nullptr, i18n("Server:%1\n%2", m_url.host(),msg));
     }
 }
 
