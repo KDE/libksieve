@@ -133,8 +133,8 @@ void SieveTextEdit::lineNumberAreaPaintEvent(QPaintEvent *event)
 
     QTextBlock block = firstVisibleBlock();
     int blockNumber = block.blockNumber();
-    int top = (int)blockBoundingGeometry(block).translated(contentOffset()).top();
-    int bottom = top + (int)blockBoundingRect(block).height();
+    int top = static_cast<int>(blockBoundingGeometry(block).translated(contentOffset()).top());
+    int bottom = top + static_cast<int>(blockBoundingRect(block).height());
     while (block.isValid() && top <= event->rect().bottom()) {
         if (block.isVisible() && bottom >= event->rect().top()) {
             const QString number = QString::number(blockNumber + 1);
@@ -145,7 +145,7 @@ void SieveTextEdit::lineNumberAreaPaintEvent(QPaintEvent *event)
 
         block = block.next();
         top = bottom;
-        bottom = top + (int)blockBoundingRect(block).height();
+        bottom = top + static_cast<int>(blockBoundingRect(block).height());
         ++blockNumber;
     }
 }
