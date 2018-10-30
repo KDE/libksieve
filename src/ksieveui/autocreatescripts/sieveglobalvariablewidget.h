@@ -83,7 +83,7 @@ public:
     explicit SieveGlobalVariableLister(QWidget *parent = nullptr);
     ~SieveGlobalVariableLister() override;
 
-    void generatedScript(QString &script, QStringList &requires);
+    void generatedScript(QString &script, QStringList &requireModules);
     void loadScript(QXmlStreamReader &element, QString &error);
     SieveGlobalVariableActionWidget::VariableElement loadSetVariable(QXmlStreamReader &element, QString &error);
 
@@ -109,7 +109,7 @@ public:
     explicit SieveGlobalVariableWidget(QWidget *parent = nullptr);
     ~SieveGlobalVariableWidget();
 
-    void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) override;
+    void generatedScript(QString &script, QStringList &requireModules, bool inForEveryPartLoop) override;
 
     void loadScript(QXmlStreamReader &element, QString &error);
     SieveGlobalVariableActionWidget::VariableElement loadSetVariable(QXmlStreamReader &element, QString &error);

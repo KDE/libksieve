@@ -348,7 +348,7 @@ void SieveScriptListBox::slotUp()
     }
 }
 
-QString SieveScriptListBox::generatedScript(QString &requires) const
+QString SieveScriptListBox::generatedScript(QString &requireModules) const
 {
     QString resultScript;
     QStringList lstRequires;
@@ -369,7 +369,7 @@ QString SieveScriptListBox::generatedScript(QString &requires) const
     for (const QString &r : qAsConst(lstRequires)) {
         if (!endRequires.contains(r)) {
             endRequires.append(r);
-            requires += QStringLiteral("require \"%1\";\n").arg(r);
+            requireModules += QStringLiteral("require \"%1\";\n").arg(r);
         }
     }
 

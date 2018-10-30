@@ -87,12 +87,12 @@ void SelectMatchTypeComboBox::setCode(const QString &code, const QString &name, 
 
 QStringList SelectMatchTypeComboBox::needRequires() const
 {
-    QStringList requires;
+    QStringList requireModules;
     if (mHasRegexCapability) {
         const QString value = itemData(currentIndex()).toString();
         if (value.contains(QLatin1String("regex"))) {
-            requires << QStringLiteral("regex");
+            requireModules << QStringLiteral("regex");
         }
     }
-    return requires;
+    return requireModules;
 }

@@ -310,7 +310,7 @@ QWidget *SieveConditionWidgetLister::createWidget(QWidget *parent)
     return w;
 }
 
-void SieveConditionWidgetLister::generatedScript(QString &script, int &numberOfCondition, QStringList &requires, bool inForEveryPartLoop)
+void SieveConditionWidgetLister::generatedScript(QString &script, int &numberOfCondition, QStringList &requireModules, bool inForEveryPartLoop)
 {
     const QList<QWidget *> widgetList = widgets();
     QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
@@ -319,7 +319,7 @@ void SieveConditionWidgetLister::generatedScript(QString &script, int &numberOfC
     for (; wIt != wEnd; ++wIt) {
         QString condition;
         SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(*wIt);
-        w->generatedScript(condition, requires, inForEveryPartLoop);
+        w->generatedScript(condition, requireModules, inForEveryPartLoop);
         if (!condition.isEmpty()) {
             if (!wasFirst) {
                 if (inForEveryPartLoop) {

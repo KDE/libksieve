@@ -89,7 +89,7 @@ public:
     explicit SieveIncludeWidgetLister(QWidget *parent = nullptr);
     ~SieveIncludeWidgetLister() override;
 
-    void generatedScript(QString &script, QStringList &requires);
+    void generatedScript(QString &script, QStringList &requireModules);
     void loadScript(QXmlStreamReader &element, QString &error);
 
     void setListOfIncludeFile(const QStringList &listOfIncludeFile);
@@ -117,7 +117,7 @@ public:
     explicit SieveIncludeWidget(QWidget *parent = nullptr);
     ~SieveIncludeWidget();
 
-    void generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop) override;
+    void generatedScript(QString &script, QStringList &requireModules, bool inForEveryPartLoop) override;
 
     void loadScript(QXmlStreamReader &element, QString &error);
 

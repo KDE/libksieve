@@ -341,14 +341,14 @@ void SieveActionWidgetLister::updateAddRemoveButton()
     }
 }
 
-void SieveActionWidgetLister::generatedScript(QString &script, QStringList &requires, bool onlyActions, bool inForEveryPartLoop)
+void SieveActionWidgetLister::generatedScript(QString &script, QStringList &requireModules, bool onlyActions, bool inForEveryPartLoop)
 {
     const QList<QWidget *> widgetList = widgets();
     QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
     for (; wIt != wEnd; ++wIt) {
         SieveActionWidget *w = qobject_cast<SieveActionWidget *>(*wIt);
-        w->generatedScript(script, requires, onlyActions, inForEveryPartLoop);
+        w->generatedScript(script, requireModules, onlyActions, inForEveryPartLoop);
     }
 }
 

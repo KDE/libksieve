@@ -82,7 +82,7 @@ public:
     explicit SieveActionWidgetLister(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent = nullptr);
     ~SieveActionWidgetLister() override;
 
-    void generatedScript(QString &script, QStringList &requires, bool onlyActions, bool inForEveryPartLoop);
+    void generatedScript(QString &script, QStringList &requireModules, bool onlyActions, bool inForEveryPartLoop);
     void loadScript(QXmlStreamReader &element, bool onlyActions, QString &error);
 
     int actionNumber() const;

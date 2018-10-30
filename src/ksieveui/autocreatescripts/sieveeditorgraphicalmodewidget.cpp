@@ -126,10 +126,10 @@ void SieveEditorGraphicalModeWidget::slotActivateScriptPage(QWidget *page)
 
 QString SieveEditorGraphicalModeWidget::currentscript()
 {
-    QString requires;
-    QString script = mSieveScript->generatedScript(requires);
-    if (!requires.isEmpty()) {
-        script.prepend(requires + QLatin1Char('\n'));
+    QString requireModules;
+    QString script = mSieveScript->generatedScript(requireModules);
+    if (!requireModules.isEmpty()) {
+        script.prepend(requireModules + QLatin1Char('\n'));
     }
     return script;
 }

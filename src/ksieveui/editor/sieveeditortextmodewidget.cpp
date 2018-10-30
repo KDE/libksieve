@@ -237,11 +237,11 @@ void SieveEditorTextModeWidget::createRulesGraphically()
     dlg->setSieveImapAccountSettings(mSieveImapAccountSettings);
     dlg->setListOfIncludeFile(mListOfIncludeFile);
     if (dlg->exec()) {
-        QString requires;
-        const QString script = dlg->script(requires);
+        QString requireModules;
+        const QString script = dlg->script(requireModules);
         QString newPlainText = mTextEdit->toPlainText() + script;
-        if (!requires.isEmpty()) {
-            newPlainText.prepend(requires + QLatin1Char('\n'));
+        if (!requireModules.isEmpty()) {
+            newPlainText.prepend(requireModules + QLatin1Char('\n'));
         }
         mTextEdit->selectAll();
 

@@ -30,7 +30,7 @@ public:
     explicit SieveEditorGraphicalModeWidgetAbstract(QWidget *parent);
     ~SieveEditorGraphicalModeWidgetAbstract();
 
-    Q_REQUIRED_RESULT virtual QString script(QString &requires) const = 0;
+    Q_REQUIRED_RESULT virtual QString script(QString &requireModules) const = 0;
 
     virtual void setSieveCapabilities(const QStringList &capabilities) = 0;
 

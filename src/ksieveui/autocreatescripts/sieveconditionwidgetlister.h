@@ -77,7 +77,7 @@ public:
     explicit SieveConditionWidgetLister(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent = nullptr);
     ~SieveConditionWidgetLister();
 
-    void generatedScript(QString &script, int &numberOfCondition, QStringList &requires, bool inForEveryPartLoop);
+    void generatedScript(QString &script, int &numberOfCondition, QStringList &requireModules, bool inForEveryPartLoop);
     int conditionNumber() const;
     void loadScript(QXmlStreamReader &element, bool uniqTest, bool notCondition, QString &error);
 

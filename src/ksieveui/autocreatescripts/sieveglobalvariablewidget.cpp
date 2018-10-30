@@ -188,7 +188,7 @@ void SieveGlobalVariableWidget::slotHelp()
     QWhatsThis::showText(QCursor::pos(), fullWhatsThis, mHelpButton);
 }
 
-void SieveGlobalVariableWidget::generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop)
+void SieveGlobalVariableWidget::generatedScript(QString &script, QStringList &requireModules, bool inForEveryPartLoop)
 {
     Q_UNUSED(inForEveryPartLoop)
     QString result;
@@ -196,7 +196,7 @@ void SieveGlobalVariableWidget::generatedScript(QString &script, QStringList &re
     mIncludeLister->generatedScript(result, lst);
     if (!result.isEmpty()) {
         script += result;
-        requires << lst;
+        requireModules << lst;
     }
 }
 
@@ -257,9 +257,9 @@ void SieveGlobalVariableLister::updateAddRemoveButton()
     }
 }
 
-void SieveGlobalVariableLister::generatedScript(QString &script, QStringList &requires)
+void SieveGlobalVariableLister::generatedScript(QString &script, QStringList &requireModules)
 {
-    requires << QStringLiteral("include");
+    requireModules << QStringLiteral("include");
     const QList<QWidget *> widgetList = widgets();
     QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();

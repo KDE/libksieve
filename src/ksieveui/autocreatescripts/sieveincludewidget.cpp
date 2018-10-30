@@ -234,7 +234,7 @@ void SieveIncludeWidget::slotHelp()
     QWhatsThis::showText(QCursor::pos(), fullWhatsThis, mHelpButton);
 }
 
-void SieveIncludeWidget::generatedScript(QString &script, QStringList &requires, bool inForEveryPartLoop)
+void SieveIncludeWidget::generatedScript(QString &script, QStringList &requireModules, bool inForEveryPartLoop)
 {
     Q_UNUSED(inForEveryPartLoop);
     QString result;
@@ -242,7 +242,7 @@ void SieveIncludeWidget::generatedScript(QString &script, QStringList &requires,
     mIncludeLister->generatedScript(result, lst);
     if (!result.isEmpty()) {
         script += result;
-        requires << lst;
+        requireModules << lst;
     }
 }
 
@@ -311,9 +311,9 @@ void SieveIncludeWidgetLister::setListOfIncludeFile(const QStringList &listOfInc
     }
 }
 
-void SieveIncludeWidgetLister::generatedScript(QString &script, QStringList &requires)
+void SieveIncludeWidgetLister::generatedScript(QString &script, QStringList &requireModules)
 {
-    requires << QStringLiteral("include");
+    requireModules << QStringLiteral("include");
     const QList<QWidget *> widgetList = widgets();
     QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
