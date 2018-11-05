@@ -1,9 +1,12 @@
 [KNewStuff3]
 Name=Script Sieve
 Name[ca]=Script de «Sieve»
+Name[ca@valencia]=Script de «Sieve»
 Name[gl]=Script de Sieve
 Name[nl]=Script Sieve
+Name[pl]=Skrypt Sieve
 Name[pt]=Programa do Sieve
+Name[sv]=Sieve-skript
 Name[uk]=Скрипт фільтрування
 Name[x-test]=xxScript Sievexx
 ProvidersUrl=https://autoconfig.kde.org/ocs/providers.xml
