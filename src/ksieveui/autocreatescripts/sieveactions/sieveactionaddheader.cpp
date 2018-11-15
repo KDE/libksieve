@@ -127,5 +127,5 @@ QString SieveActionAddHeader::help() const
 
 QUrl SieveActionAddHeader::href() const
 {
-    return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5293"));
+    return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5293"));
 }
