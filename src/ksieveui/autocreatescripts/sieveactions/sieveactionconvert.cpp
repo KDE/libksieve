@@ -145,5 +145,5 @@ QString SieveActionConvert::help() const
 
 QUrl SieveActionConvert::href() const
 {
-    return QUrl(QStringLiteral("http://tools.ietf.org/html/draft-ietf-sieve-convert-06"));
+    return QUrl(QStringLiteral("https://tools.ietf.org/html/draft-ietf-sieve-convert-06"));
 }

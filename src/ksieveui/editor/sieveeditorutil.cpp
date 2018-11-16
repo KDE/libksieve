@@ -21,45 +21,45 @@ QUrl KSieveUi::SieveEditorUtil::helpUrl(KSieveUi::SieveEditorUtil::HelpVariableN
 {
     switch (type) {
     case AddressCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5228#page-16"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5228#page-16"));
     case BodyCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5173"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5173"));
     case ConvertCondition:
         return QUrl(); //TODO
     case CurrentdateCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5260#page-6"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5260#page-6"));
     case DateCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5260#page-4"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5260#page-4"));
     case EnvelopeCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-24"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-24"));
     case EnvironmentCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5183"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5183"));
     case ExistsCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-25"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-25"));
     case FalseCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-25"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-25"));
     case HasflagCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5232#page-5"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5232#page-5"));
     case HeaderCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5228#page-9"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5228#page-9"));
     case IhaveCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5463"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5463"));
     case MailboxexistsCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5490#page-2"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5490#page-2"));
     case MetadataexistsCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5490#page-6"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5490#page-6"));
     case MetadataCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5490#page-5"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5490#page-5"));
     case ServermetadataexistsCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5490#page-4"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5490#page-4"));
     case ServermetadataCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5490#page-5"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5490#page-5"));
     case SizeCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-26"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-26"));
     case SpamtestCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3685#page-3"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3685#page-3"));
     case TrueCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-26"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-26"));
     case NotCondition:
         return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-26"));
     case AnyOf:
@@ -67,61 +67,61 @@ QUrl KSieveUi::SieveEditorUtil::helpUrl(KSieveUi::SieveEditorUtil::HelpVariableN
     case Allof:
         return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-23"));
     case VirustestCondition:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3685#page-4"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3685#page-4"));
     case AbstracteditheaderAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5228#page-9"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5228#page-9"));
     case AddflagsAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5232#page-5"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5232#page-5"));
     case AddheaderAction:
     case DeleteheaderAction:
     case EditHeaderExtension:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5293"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5293"));
     case BreakAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5703#page-3"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5703#page-3"));
     case ConvertAction:
         return QUrl(); //TODO
     case DiscardAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-22"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-22"));
     case EncloseAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5703#page-10"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5703#page-10"));
     case ExtracttextAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5703#page-11"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5703#page-11"));
     case FileintoAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-20"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-20"));
     case KeepAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-21"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-21"));
     case NotifyAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5435#page-3"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5435#page-3"));
     case RedirectAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-20"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-20"));
     case RejectAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-20"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-20"));
     case ERejectAction:
         return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5429#section-2.1"));
     case RemoveflagsAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5232#page-5"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5232#page-5"));
     case ReplaceAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5703#page-8"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5703#page-8"));
     case ReturnAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc6609#page-7"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc6609#page-7"));
     case SetflagsAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5232#page-4"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5232#page-4"));
     case SetvariableAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5229"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5229"));
     case StopAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3028#page-19"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-19"));
     case VacationAction:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5230#page-3"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5230#page-3"));
     case GlobalVariable:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5229"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5229"));
     case Includes:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc6609#page-4"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc6609#page-4"));
     case ForEveryPart:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5703#page-3"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5703#page-3"));
     case CopyExtension:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc3894"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3894"));
     case MBoxMetaDataExtension:
-        return QUrl(QStringLiteral("http://tools.ietf.org/html/rfc5490#page-2"));
+        return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5490#page-2"));
     case SubAddressExtension:
         return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5233"));
     case ImapFlagsExtension:
