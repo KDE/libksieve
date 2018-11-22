@@ -37,6 +37,7 @@ public:
     ~ParseUserScriptJob();
 
     void start();
+    void setAutoDelete(bool deleteMe);
 
     Q_REQUIRED_RESULT QUrl scriptUrl() const;
 
@@ -60,6 +61,7 @@ private:
     QXmlStreamReader *mStreamReader = nullptr;
     QStringList mActiveScripts;
     QString mError;
+    bool mAutoDelete = false;
 };
 }
 

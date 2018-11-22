@@ -63,6 +63,11 @@ void ParseUserScriptJob::start()
     connect(mSieveJob, &KManageSieve::SieveJob::result, this, &ParseUserScriptJob::slotGetResult);
 }
 
+void ParseUserScriptJob::setAutoDelete(bool deleteMe)
+{
+    mAutoDelete = deleteMe;
+}
+
 void ParseUserScriptJob::slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool)
 {
     mSieveJob = nullptr;
@@ -88,12 +93,18 @@ void ParseUserScriptJob::emitError(const QString &msgError)
 {
     mError = msgError;
     Q_EMIT finished(this);
+    if (mAutoDelete) {
+        deleteLater();
+    }
 }
 
 void ParseUserScriptJob::emitSuccess(const QStringList &activeScriptList)
 {
     mActiveScripts = activeScriptList;
     Q_EMIT finished(this);
+    if (mAutoDelete) {
+        deleteLater();
+    }
 }
 
 QStringList ParseUserScriptJob::parsescript(const QString &script, bool &result)
