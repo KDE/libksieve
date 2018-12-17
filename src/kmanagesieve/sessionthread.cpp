@@ -69,11 +69,7 @@ SessionThread::SessionThread(Session *session, QObject *parent)
 
 SessionThread::~SessionThread()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
     QMetaObject::invokeMethod(this, &SessionThread::doDestroy, Qt::QueuedConnection);
-#else
-    QMetaObject::invokeMethod(this, "doDestroy", Qt::QueuedConnection);
-#endif
     if (!thread()->wait(10 * 1000)) {
         thread()->terminate();
         thread()->wait();
@@ -109,15 +105,9 @@ void SessionThread::doDestroy()
 // Called in main thread
 void SessionThread::connectToHost(const QUrl &url)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
     QMetaObject::invokeMethod(this, [this, url]() {
         doConnectToHost(url);
     }, Qt::QueuedConnection);
-#else
-    QMetaObject::invokeMethod(this, "doConnectToHost",
-                              Qt::QueuedConnection,
-                              Q_ARG(QUrl, url));
-#endif
 }
 
 // Called in secondary thread
@@ -136,15 +126,9 @@ void SessionThread::doConnectToHost(const QUrl &url)
 // Called in main thread
 void SessionThread::disconnectFromHost(bool sendLogout)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
     QMetaObject::invokeMethod(this, [this, sendLogout]() {
         doDisconnectFromHost(sendLogout);
     }, Qt::QueuedConnection);
-#else
-    QMetaObject::invokeMethod(this, "doDisconnectFromHost",
-                              Qt::QueuedConnection,
-                              Q_ARG(bool, sendLogout));
-#endif
 }
 
 // Called in secondary thread
@@ -161,15 +145,9 @@ void SessionThread::doDisconnectFromHost(bool sendLogout)
 // Called in main thread
 void SessionThread::sendData(const QByteArray &data)
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
     QMetaObject::invokeMethod(this, [this, data]() {
         doSendData(data);
     }, Qt::QueuedConnection);
-#else
-    QMetaObject::invokeMethod(this, "doSendData",
-                              Qt::QueuedConnection,
-                              Q_ARG(QByteArray, data));
-#endif
 }
 
 // Called in secondary thread
@@ -241,11 +219,7 @@ void SessionThread::slotSocketError()
 // Called in main thread
 void SessionThread::startAuthentication()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
     QMetaObject::invokeMethod(this, &SessionThread::doStartAuthentication, Qt::QueuedConnection);
-#else
-    QMetaObject::invokeMethod(this, "doStartAuthentication", Qt::QueuedConnection);
-#endif
 }
 
 // Called in secondary thread
@@ -431,11 +405,7 @@ bool SessionThread::saslClientStep(const QByteArray &challenge)
 // Called in main thread
 void SessionThread::startSsl()
 {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
     QMetaObject::invokeMethod(this, &SessionThread::doStartSsl, Qt::QueuedConnection);
-#else
-    QMetaObject::invokeMethod(this, "doStartSsl", Qt::QueuedConnection);
-#endif
 }
 
 // Called in secondary thread

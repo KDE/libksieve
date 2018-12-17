@@ -174,21 +174,13 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
         if (m_currentJob) {
             if (m_currentJob->d->handleResponse(response, data)) {
                 m_currentJob = nullptr;
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
                 QMetaObject::invokeMethod(this, &Session::executeNextJob, Qt::QueuedConnection);
-#else
-                QMetaObject::invokeMethod(this, "executeNextJob", Qt::QueuedConnection);
-#endif
             }
             break;
         } else {
             // we can get here in the kill current job case
             if (response.operationResult() != Response::Other) {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
                 QMetaObject::invokeMethod(this, &Session::executeNextJob, Qt::QueuedConnection);
-#else
-                QMetaObject::invokeMethod(this, "executeNextJob", Qt::QueuedConnection);
-#endif
                 return;
             }
         }
@@ -200,11 +192,7 @@ void Session::scheduleJob(SieveJob *job)
 {
     qCDebug(KMANAGERSIEVE_LOG) << objectName() << Q_FUNC_INFO << job;
     m_jobs.enqueue(job);
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
     QMetaObject::invokeMethod(this, &Session::executeNextJob, Qt::QueuedConnection);
-#else
-    QMetaObject::invokeMethod(this, "executeNextJob", Qt::QueuedConnection);
-#endif
 }
 
 void Session::killJob(SieveJob *job, KJob::KillVerbosity verbosity)
@@ -317,11 +305,7 @@ void Session::authenticationDone()
     m_state = None;
     m_connected = true;
     qCDebug(KMANAGERSIEVE_LOG) << objectName() << "authentication done, ready to execute jobs";
-#if QT_VERSION >= QT_VERSION_CHECK(5, 10, 0)
     QMetaObject::invokeMethod(this, &Session::executeNextJob, Qt::QueuedConnection);
-#else
-    QMetaObject::invokeMethod(this, "executeNextJob", Qt::QueuedConnection);
-#endif
 }
 
 void Session::sslError(const KSslErrorUiData &data)
