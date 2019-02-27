@@ -108,7 +108,7 @@ QWidget *SieveActionFileInto::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
     QHBoxLayout *lay = new QHBoxLayout(w);
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
 
     if (mHasCopySupport) {
         QCheckBox *copy = new QCheckBox(i18n("Keep a copy"));

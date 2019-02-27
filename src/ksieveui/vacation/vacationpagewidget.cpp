@@ -38,14 +38,14 @@ VacationPageWidget::VacationPageWidget(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
     mStackWidget = new QStackedWidget;
     lay->addWidget(mStackWidget);
 
     //Main Page
     QWidget *mainPage = new QWidget;
     QVBoxLayout *vbox = new QVBoxLayout;
-    vbox->setMargin(0);
+    vbox->setContentsMargins(0, 0, 0, 0);
     mainPage->setLayout(vbox);
     mVacationWarningWidget = new VacationWarningWidget(this);
     vbox->addWidget(mVacationWarningWidget);

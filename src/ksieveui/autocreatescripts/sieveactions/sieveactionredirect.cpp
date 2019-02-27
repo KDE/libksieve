@@ -45,7 +45,7 @@ QWidget *SieveActionRedirect::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
     QHBoxLayout *lay = new QHBoxLayout;
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
     w->setLayout(lay);
     if (mHasCopySupport) {
         QCheckBox *copy = new QCheckBox(i18n("Keep a copy"));

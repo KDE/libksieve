@@ -43,7 +43,7 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *g
     , mSieveGraphicalModeWidget(graphicalModeWidget)
 {
     QVBoxLayout *topLayout = new QVBoxLayout(this);
-    topLayout->setMargin(0);
+    topLayout->setContentsMargins(0, 0, 0, 0);
 
     mConditions = new QGroupBox(i18n("Conditions"));
     QVBoxLayout *vbox = new QVBoxLayout;

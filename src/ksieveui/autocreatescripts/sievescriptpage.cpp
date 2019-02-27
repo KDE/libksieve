@@ -39,7 +39,7 @@ SieveScriptPage::SieveScriptPage(SieveEditorGraphicalModeWidget *sieveEditorGrap
     , mSieveGraphicalModeWidget(sieveEditorGraphicalWidget)
 {
     QVBoxLayout *topLayout = new QVBoxLayout(this);
-    topLayout->setMargin(0);
+    topLayout->setContentsMargins(0, 0, 0, 0);
     mTabWidget = new SieveScriptTabWidget(this);
     connect(mTabWidget, &SieveScriptTabWidget::tabCloseRequested, this, &SieveScriptPage::slotCloseTab);
 

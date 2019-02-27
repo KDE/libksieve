@@ -41,7 +41,7 @@ QWidget *SieveConditionAddress::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
     QHBoxLayout *lay = new QHBoxLayout;
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
     w->setLayout(lay);
 
     SelectAddressPartComboBox *selectAddressPart = new SelectAddressPartComboBox(mSieveGraphicalModeWidget);
@@ -50,7 +50,7 @@ QWidget *SieveConditionAddress::createParamWidget(QWidget *parent) const
     lay->addWidget(selectAddressPart);
 
     QGridLayout *grid = new QGridLayout;
-    grid->setMargin(0);
+    grid->setContentsMargins(0, 0, 0, 0);
     lay->addLayout(grid);
     SelectMatchTypeComboBox *selectMatchCombobox = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
     connect(selectMatchCombobox, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionAddress::valueChanged);

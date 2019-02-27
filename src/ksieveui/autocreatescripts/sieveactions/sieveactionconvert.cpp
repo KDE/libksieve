@@ -38,7 +38,7 @@ QWidget *SieveActionConvert::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
     QGridLayout *lay = new QGridLayout;
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
     w->setLayout(lay);
 
     QLabel *lab = new QLabel(i18n("From:"));

@@ -40,7 +40,7 @@ SelectBodyTypeWidget::~SelectBodyTypeWidget()
 void SelectBodyTypeWidget::initialize()
 {
     QHBoxLayout *lay = new QHBoxLayout(this);
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
 
     mBodyCombobox = new KComboBox(this);
     lay->addWidget(mBodyCombobox);

@@ -63,7 +63,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     : SieveEditorAbstractWidget(parent)
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
 
     mMainSplitter = new QSplitter;
     mMainSplitter->setOrientation(Qt::Vertical);
@@ -85,11 +85,11 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
 
     QWidget *textEditWidget = new QWidget;
     QVBoxLayout *textEditLayout = new QVBoxLayout;
-    textEditLayout->setMargin(0);
+    textEditLayout->setContentsMargins(0, 0, 0, 0);
 
     mEditorWidget = new QWidget;
     QVBoxLayout *editorWidgetLayout = new QVBoxLayout;
-    editorWidgetLayout->setMargin(0);
+    editorWidgetLayout->setContentsMargins(0, 0, 0, 0);
     mEditorWidget->setLayout(editorWidgetLayout);
 
     mTabWidget = new SieveEditorTabWidget;

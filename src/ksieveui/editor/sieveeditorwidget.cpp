@@ -152,7 +152,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     nameLayout->addWidget(mScriptName);
     lay->addLayout(nameLayout);
 
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
     mStackedWidget = new QStackedWidget;
 
     mTextModeWidget = new SieveEditorTextModeWidget;

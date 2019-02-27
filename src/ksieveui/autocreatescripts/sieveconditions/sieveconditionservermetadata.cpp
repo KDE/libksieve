@@ -40,7 +40,7 @@ QWidget *SieveConditionServerMetaData::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
     QHBoxLayout *lay = new QHBoxLayout;
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
     w->setLayout(lay);
 
     SelectMatchTypeComboBox *selectType = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
@@ -49,7 +49,7 @@ QWidget *SieveConditionServerMetaData::createParamWidget(QWidget *parent) const
     lay->addWidget(selectType);
 
     QGridLayout *grid = new QGridLayout;
-    grid->setMargin(0);
+    grid->setContentsMargins(0, 0, 0, 0);
     lay->addLayout(grid);
 
     QLabel *lab = new QLabel(i18n("Mailbox:"));

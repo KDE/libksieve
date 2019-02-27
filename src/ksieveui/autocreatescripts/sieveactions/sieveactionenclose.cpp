@@ -39,7 +39,7 @@ QWidget *SieveActionEnclose::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
     QGridLayout *grid = new QGridLayout;
-    grid->setMargin(0);
+    grid->setContentsMargins(0, 0, 0, 0);
     w->setLayout(grid);
 
     QLabel *lab = new QLabel(i18n("Subject:"));

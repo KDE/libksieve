@@ -39,7 +39,7 @@ SieveEditorHelpHtmlWidget::SieveEditorHelpHtmlWidget(QWidget *parent)
     , mZoomFactor(100)
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
     mProgressIndicator = new SieveEditorLoadProgressIndicator(this);
     mProgressIndicator->setObjectName(QStringLiteral("progressindicator"));
     connect(mProgressIndicator, &SieveEditorLoadProgressIndicator::pixmapChanged, this, &SieveEditorHelpHtmlWidget::slotPixmapChanged);

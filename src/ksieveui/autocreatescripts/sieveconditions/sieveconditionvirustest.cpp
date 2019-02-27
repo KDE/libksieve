@@ -40,7 +40,7 @@ QWidget *SieveConditionVirusTest::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
     QVBoxLayout *lay = new QVBoxLayout;
-    lay->setMargin(0);
+    lay->setContentsMargins(0, 0, 0, 0);
     w->setLayout(lay);
 
     SelectRelationalMatchType *relation = new SelectRelationalMatchType;

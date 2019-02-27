@@ -45,7 +45,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     : QWidget(parent)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    mainLayout->setMargin(0);
+    mainLayout->setContentsMargins(0, 0, 0, 0);
 
     QFormLayout *formLayout = new QFormLayout;
     mainLayout->addLayout(formLayout);
@@ -82,7 +82,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     QWidget *sieveEditorWidget = new QWidget(this);
     QVBoxLayout *vboxSieveEditorLayout = new QVBoxLayout;
     sieveEditorWidget->setLayout(vboxSieveEditorLayout);
-    vboxSieveEditorLayout->setMargin(0);
+    vboxSieveEditorLayout->setContentsMargins(0, 0, 0, 0);
 
     KPIMTextEdit::TextToSpeechWidget *textToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
     textToSpeechWidget->setObjectName(QStringLiteral("texttospeechwidget"));

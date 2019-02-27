@@ -27,7 +27,7 @@ AddressLineEdit::AddressLineEdit(QWidget *parent)
     : AbstractSelectEmailLineEdit(parent)
 {
     QHBoxLayout *mainLayout = new QHBoxLayout(this);
-    mainLayout->setMargin(0);
+    mainLayout->setContentsMargins(0, 0, 0, 0);
     mLineEdit = new QLineEdit(this);
     mainLayout->addWidget(mLineEdit);
     mLineEdit->setClearButtonEnabled(true);
