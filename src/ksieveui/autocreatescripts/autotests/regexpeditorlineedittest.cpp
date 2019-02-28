@@ -18,6 +18,7 @@
 */
 
 #include "regexpeditorlineedittest.h"
+#include "kdepimtest_layout.h"
 #include "autocreatescripts/sieveconditions/widgets/regexpeditorlineedit.h"
 #include <QTest>
 #include <QLineEdit>
@@ -36,7 +37,7 @@ void RegexpEditorLineEditTest::shouldHaveDefaultValue()
 
     QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
-    QCOMPARE(mainLayout->margin(), 0);
+    KdepimTestLayout::checkContentsMargins(0, mainLayout);
 }
 
 void RegexpEditorLineEditTest::shouldChangeValue_data()
