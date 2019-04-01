@@ -17,7 +17,7 @@
 
 #include "sievetextedittest.h"
 #include "../sievetextedit.h"
-#include <qtest.h>
+#include <QTest>
 
 SieveTextEditTest::SieveTextEditTest(QObject *parent)
     : QObject(parent)

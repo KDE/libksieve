@@ -16,7 +16,7 @@
 */
 
 #include "sieveeditormenubartest.h"
-#include <qtest.h>
+#include <QTest>
 #include "../sieveeditormenubar.h"
 #include <qtestmouse.h>
 #include <QSignalSpy>

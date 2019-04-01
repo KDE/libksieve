@@ -20,7 +20,7 @@
 #include "ksieveui/editor/sieveeditor.h"
 #include "ksieveui/tests/capability.h"
 
-#include <qapplication.h>
+#include <QApplication>
 #include <QCommandLineParser>
 #include <QStandardPaths>
 

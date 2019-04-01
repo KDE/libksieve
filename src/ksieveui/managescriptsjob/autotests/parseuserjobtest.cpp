@@ -16,7 +16,7 @@
 */
 #include "parseuserjobtest.h"
 #include "ksieveui/managescriptsjob/parseuserscriptjob.h"
-#include <qtest.h>
+#include <QTest>
 
 using namespace KSieveUi;
 
