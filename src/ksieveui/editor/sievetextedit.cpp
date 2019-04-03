@@ -388,14 +388,18 @@ void SieveTextEdit::uncomment()
             text.remove(0, 1);
         }
         QString newText = text;
-        for (int i = 0; i < newText.length(); ++i) {
+        for (int i = 0; i < newText.length();) {
             if (newText.at(i) == QChar::ParagraphSeparator || newText.at(i) == QChar::LineSeparator) {
                 ++i;
                 if (i < newText.length()) {
                     if (newText.at(i) == QLatin1Char('#')) {
                         newText.remove(i, 1);
+                    } else {
+                        ++i;
                     }
                 }
+            } else {
+                ++i;
             }
         }
 
