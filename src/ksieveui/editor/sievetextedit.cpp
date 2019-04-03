@@ -391,7 +391,7 @@ void SieveTextEdit::uncomment()
         for (int i = 0; i < newText.length(); ++i) {
             if (newText.at(i) == QChar::ParagraphSeparator || newText.at(i) == QChar::LineSeparator) {
                 ++i;
-                if (i < text.length()) {
+                if (i < newText.length()) {
                     if (newText.at(i) == QLatin1Char('#')) {
                         newText.remove(i, 1);
                     }
