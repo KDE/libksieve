@@ -19,7 +19,6 @@
 #include <kmanagesieve/sievejob.h>
 
 #include <KLocalizedString>
-
 using namespace KSieveUi;
 
 class KSieveUi::RenameScriptJobPrivate
@@ -89,7 +88,7 @@ void RenameScriptJob::slotGetResult(KManageSieve::SieveJob *job, bool success, c
     }
     QUrl u = d->mOldUrl;
     u = u.adjusted(QUrl::RemoveFilename);
-    u.setPath(u.path() +  QLatin1Char('/') + d->mNewName);
+    u.setPath(u.path() + d->mNewName);
     d->mNewUrl = u;
     KManageSieve::SieveJob *putJob = KManageSieve::SieveJob::put(d->mNewUrl, script, d->mIsActive, d->mIsActive);
     connect(putJob, &KManageSieve::SieveJob::result, this, &RenameScriptJob::slotPutScript);
