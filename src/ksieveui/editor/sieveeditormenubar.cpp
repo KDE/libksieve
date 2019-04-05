@@ -112,7 +112,6 @@ void SieveEditorMenuBar::initMenus()
     mFileMenu->addAction(mPrintAction);
     mFileMenu->addAction(mPrintPreviewAction);
     mEditorMenu = addMenu(i18nc("@title:menu", "Edit"));
-    mToolsMenu = addMenu(i18nc("@title:menu", "Tools"));
     mEditorMenu->addAction(mUndoAction);
     mEditorMenu->addAction(mRedoAction);
     mEditorMenu->addSeparator();
@@ -127,12 +126,15 @@ void SieveEditorMenuBar::initMenus()
     mEditorMenu->addSeparator();
     mEditorMenu->addAction(mGoToLine);
     mEditorMenu->addSeparator();
-    mEditorMenu->addAction(mZoomInAction);
-    mEditorMenu->addAction(mZoomOutAction);
-    mEditorMenu->addAction(mZoomResetAction);
-    mEditorMenu->addSeparator();
     mEditorMenu->addAction(mWordWrapAction);
 
+    mViewMenu = addMenu(i18nc("@title:menu", "View"));
+    mViewMenu->addAction(mZoomInAction);
+    mViewMenu->addAction(mZoomOutAction);
+    mViewMenu->addSeparator();
+    mViewMenu->addAction(mZoomResetAction);
+
+    mToolsMenu = addMenu(i18nc("@title:menu", "Tools"));
     mToolsMenu->addAction(mCommentCodeAction);
     mToolsMenu->addAction(mUncommentCodeAction);
     mToolsMenu->addSeparator();
@@ -166,6 +168,11 @@ void SieveEditorMenuBar::slotUpdateActions()
     mWordWrapAction->setEnabled(!hasActionInHtmlModeToo);
     mPrintAction->setEnabled(!hasActionInHtmlModeToo);
     mPrintPreviewAction->setEnabled(!hasActionInHtmlModeToo);
+}
+
+QMenu *SieveEditorMenuBar::viewMenu() const
+{
+    return mViewMenu;
 }
 
 void SieveEditorMenuBar::setTextModeWidget(SieveEditorTextModeWidget *textModeWidget)

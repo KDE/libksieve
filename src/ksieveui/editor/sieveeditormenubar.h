@@ -42,10 +42,9 @@ public:
     Q_REQUIRED_RESULT QAction *selectAllAction() const;
 
     Q_REQUIRED_RESULT QMenu *editorMenu() const;
-
     Q_REQUIRED_RESULT QMenu *toolsMenu() const;
-
     Q_REQUIRED_RESULT QMenu *fileMenu() const;
+    Q_REQUIRED_RESULT QMenu *viewMenu() const;
 
     Q_REQUIRED_RESULT QAction *commentCodeAction() const;
 
@@ -114,6 +113,7 @@ private:
     QMenu *mEditorMenu = nullptr;
     QMenu *mToolsMenu = nullptr;
     QMenu *mFileMenu = nullptr;
+    QMenu *mViewMenu = nullptr;
     KSieveUi::SieveEditorTextModeWidget *mTextModeWidget = nullptr;
 };
 }
