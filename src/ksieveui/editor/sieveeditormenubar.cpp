@@ -127,6 +127,9 @@ void SieveEditorMenuBar::initMenus()
     mEditorMenu->addAction(mGoToLine);
     mEditorMenu->addSeparator();
     mEditorMenu->addAction(mWordWrapAction);
+    mEditorMenu->addSeparator();
+    mEditorMenu->addAction(mCommentCodeAction);
+    mEditorMenu->addAction(mUncommentCodeAction);
 
     mViewMenu = addMenu(i18nc("@title:menu", "View"));
     mViewMenu->addAction(mZoomInAction);
@@ -135,9 +138,6 @@ void SieveEditorMenuBar::initMenus()
     mViewMenu->addAction(mZoomResetAction);
 
     mToolsMenu = addMenu(i18nc("@title:menu", "Tools"));
-    mToolsMenu->addAction(mCommentCodeAction);
-    mToolsMenu->addAction(mUncommentCodeAction);
-    mToolsMenu->addSeparator();
     mToolsMenu->addAction(mDebugSieveAction);
 }
 

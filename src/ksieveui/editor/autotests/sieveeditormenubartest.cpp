@@ -133,9 +133,9 @@ void SieveEditorMenuBarTest::shouldHaveDefaultValue()
     QVERIFY(bar.printAction());
     QVERIFY(bar.printPreviewAction());
     QCOMPARE(bar.actions().count(), 4);
-    QCOMPARE(bar.editorMenu()->actions().count(), 15);
+    QCOMPARE(bar.editorMenu()->actions().count(), 18);
     QCOMPARE(bar.fileMenu()->actions().count(), 2);
-    QCOMPARE(bar.toolsMenu()->actions().count(), 4);
+    QCOMPARE(bar.toolsMenu()->actions().count(), 1);
     QCOMPARE(bar.viewMenu()->actions().count(), 4);
 
     QVERIFY(bar.findAction()->isEnabled());
