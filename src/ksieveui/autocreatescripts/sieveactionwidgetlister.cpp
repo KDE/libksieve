@@ -25,14 +25,15 @@
 #include "sieveactions/sieveactionlist.h"
 #include "commonwidgets/sievehelpbutton.h"
 #include "autocreatescriptutil_p.h"
-#include <PimCommon/MinimumComboBox>
 
 #include <QPushButton>
 #include <KLocalizedString>
 #include <QIcon>
 
+#include <QComboBox>
 #include <QGridLayout>
 #include <QLabel>
+#include <QPointer>
 #include "libksieve_debug.h"
 #include <QToolButton>
 #include <QWhatsThis>
@@ -114,8 +115,9 @@ void SieveActionWidget::initWidget()
     mLayout = new QGridLayout(this);
     mLayout->setContentsMargins(0, 0, 0, 0);
 
-    mComboBox = new PimCommon::MinimumComboBox;
+    mComboBox = new QComboBox;
     mComboBox->setEditable(false);
+    mComboBox->setMinimumWidth(50);
     const QList<KSieveUi::SieveAction *> list = KSieveUi::SieveActionList::actionList(mSieveGraphicalModeWidget);
     QList<KSieveUi::SieveAction *>::const_iterator it;
     QList<KSieveUi::SieveAction *>::const_iterator end(list.constEnd());
@@ -165,7 +167,7 @@ void SieveActionWidget::initWidget()
 
     updateGeometry();
 
-    connect(mComboBox, QOverload<int>::of(&PimCommon::MinimumComboBox::activated), this, &SieveActionWidget::slotActionChanged);
+    connect(mComboBox, QOverload<int>::of(&QComboBox::activated), this, &SieveActionWidget::slotActionChanged);
 
     mAdd = new QPushButton(this);
     mAdd->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));

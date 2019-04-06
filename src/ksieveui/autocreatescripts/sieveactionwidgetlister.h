@@ -23,14 +23,10 @@
 #include <Libkdepim/KWidgetLister>
 #include "sieveglobalvariablewidget.h"
 class QPushButton;
-
+class QComboBox;
 class QGridLayout;
 class QToolButton;
 class QXmlStreamReader;
-
-namespace PimCommon {
-class MinimumComboBox;
-}
 
 namespace KSieveUi {
 class SieveAction;
@@ -68,7 +64,7 @@ private:
     QList<KSieveUi::SieveAction *> mActionList;
     QPushButton *mAdd = nullptr;
     QPushButton *mRemove = nullptr;
-    PimCommon::MinimumComboBox *mComboBox = nullptr;
+    QComboBox *mComboBox = nullptr;
     QGridLayout *mLayout = nullptr;
     SieveHelpButton *mHelpButton = nullptr;
     QToolButton *mCommentButton = nullptr;

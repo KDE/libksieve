@@ -26,10 +26,7 @@ class QPushButton;
 class QGridLayout;
 class QXmlStreamReader;
 class QToolButton;
-
-namespace PimCommon {
-class MinimumComboBox;
-}
+class QComboBox;
 
 namespace KSieveUi {
 class SieveCondition;
@@ -63,7 +60,7 @@ private:
     QList<KSieveUi::SieveCondition *> mConditionList;
     QPushButton *mAdd = nullptr;
     QPushButton *mRemove = nullptr;
-    PimCommon::MinimumComboBox *mComboBox = nullptr;
+    QComboBox *mComboBox = nullptr;
     QGridLayout *mLayout = nullptr;
     SieveHelpButton *mHelpButton = nullptr;
     QToolButton *mCommentButton = nullptr;

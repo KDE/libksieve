@@ -25,11 +25,12 @@
 #include "sieveeditorgraphicalmodewidget.h"
 #include "sieveconditions/sieveconditionlist.h"
 #include "sieveconditions/sievecondition.h"
-#include <PimCommon/MinimumComboBox>
 
 #include <QPushButton>
 #include <KLocalizedString>
 #include <QIcon>
+#include <QComboBox>
+#include <QPointer>
 
 #include <QGridLayout>
 #include <QLabel>
@@ -89,7 +90,8 @@ void SieveConditionWidget::initWidget()
     mLayout = new QGridLayout(this);
     mLayout->setContentsMargins(0, 0, 0, 0);
 
-    mComboBox = new PimCommon::MinimumComboBox;
+    mComboBox = new QComboBox;
+    mComboBox->setMinimumWidth(50);
     mComboBox->setEditable(false);
 
     const QList<KSieveUi::SieveCondition *> list = KSieveUi::SieveConditionList::conditionList(mSieveGraphicalModeWidget);
@@ -128,7 +130,7 @@ void SieveConditionWidget::initWidget()
 
     mComboBox->addItem(QLatin1String(""));
     mLayout->addWidget(mComboBox, 1, 2);
-    connect(mComboBox, QOverload<int>::of(&PimCommon::MinimumComboBox::activated), this, &SieveConditionWidget::slotConditionChanged);
+    connect(mComboBox, QOverload<int>::of(&QComboBox::activated), this, &SieveConditionWidget::slotConditionChanged);
 
     mComboBox->setMaxCount(mComboBox->count());
     mComboBox->setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
