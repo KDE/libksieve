@@ -100,7 +100,7 @@ SieveImapAccountSettings::EncryptionMode SieveImapAccountSettings::encryptionMod
     return mEncryptionMode;
 }
 
-void SieveImapAccountSettings::setEncryptionMode(const SieveImapAccountSettings::EncryptionMode &encryptionMode)
+void SieveImapAccountSettings::setEncryptionMode(SieveImapAccountSettings::EncryptionMode encryptionMode)
 {
     mEncryptionMode = encryptionMode;
 }

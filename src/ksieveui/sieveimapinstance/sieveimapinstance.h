@@ -45,7 +45,7 @@ public:
     void setIdentifier(const QString &identifier);
 
     Status status() const;
-    void setStatus(const Status &status);
+    void setStatus(Status status);
 
     QStringList mimeTypes() const;
     void setMimeTypes(const QStringList &mimeTypes);

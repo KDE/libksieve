@@ -577,7 +577,7 @@ public:
     {
     }
 
-    virtual ~VerifyingScriptBuilder()
+    ~VerifyingScriptBuilder() override
     {
     }
 
@@ -715,6 +715,7 @@ public:
     }
 
 private:
+    Q_DISABLE_COPY(VerifyingScriptBuilder)
     const TestCase::Response &currentResponse() const
     {
         assert(mNextResponse <= MAX_RESPONSES);

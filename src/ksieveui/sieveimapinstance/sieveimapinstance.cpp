@@ -49,7 +49,7 @@ KSieveUi::SieveImapInstance::Status SieveImapInstance::status() const
     return mStatus;
 }
 
-void SieveImapInstance::setStatus(const Status &status)
+void SieveImapInstance::setStatus(Status status)
 {
     mStatus = status;
 }

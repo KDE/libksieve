@@ -93,16 +93,16 @@ public:
     void setSendForSpam(bool enable);
 
     QDate startDate() const;
-    void setStartDate(const QDate &startDate);
+    void setStartDate(QDate startDate);
 
     QTime startTime() const;
-    void setStartTime(const QTime &startTime);
+    void setStartTime(QTime startTime);
 
     QDate endDate() const;
-    void setEndDate(const QDate &endDate);
+    void setEndDate(QDate endDate);
 
     QTime endTime() const;
-    void setEndTime(const QTime &endTime);
+    void setEndTime(QTime endTime);
 
     VacationUtils::MailAction mailAction() const;
     QString mailActionRecipient(bool &valid) const;

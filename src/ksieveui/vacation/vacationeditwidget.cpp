@@ -339,7 +339,7 @@ QDate VacationEditWidget::endDate() const
     }
 }
 
-void VacationEditWidget::setEndDate(const QDate &endDate)
+void VacationEditWidget::setEndDate(QDate endDate)
 {
     mEndDate->setDate(endDate);
 }
@@ -353,7 +353,7 @@ QTime VacationEditWidget::endTime() const
     }
 }
 
-void VacationEditWidget::setEndTime(const QTime &endTime)
+void VacationEditWidget::setEndTime(QTime endTime)
 {
     mEndTimeActive->setChecked(endTime.isValid());
     mEndTime->setEnabled(endTime.isValid());
@@ -369,7 +369,7 @@ QDate VacationEditWidget::startDate() const
     }
 }
 
-void VacationEditWidget::setStartDate(const QDate &startDate)
+void VacationEditWidget::setStartDate(QDate startDate)
 {
     mStartDate->setDate(startDate);
 }
@@ -383,7 +383,7 @@ QTime VacationEditWidget::startTime() const
     }
 }
 
-void VacationEditWidget::setStartTime(const QTime &startTime)
+void VacationEditWidget::setStartTime(QTime startTime)
 {
     mStartTimeActive->setChecked(startTime.isValid());
     mStartTime->setEnabled(startTime.isValid());

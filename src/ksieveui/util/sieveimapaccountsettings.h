@@ -71,7 +71,7 @@ public:
     Q_REQUIRED_RESULT bool isValid() const;
 
     Q_REQUIRED_RESULT SieveImapAccountSettings::EncryptionMode encryptionMode() const;
-    void setEncryptionMode(const SieveImapAccountSettings::EncryptionMode &encryptionMode);
+    void setEncryptionMode(EncryptionMode encryptionMode);
 
 private:
     QString mServerName;
