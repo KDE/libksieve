@@ -10,13 +10,13 @@ release: false
 libraries:
     - qmake: SieveUi
       cmake: KF5::SieveUi
-      cmakename: KF5SieveUi
+cmakename: KF5SieveUi
     - qmake: KManageSieve
       cmake: KF5::KManageSieve
-      cmakename: KF5KManageSieve
+cmakename: KF5KManageSieve
     - qmake: KF5KSieve
       cmake: KF5::Sieve
-      cmakename: KF5Sieve
+cmakename: KF5Sieve
 
 public_lib: true
 group: kdepim
