@@ -139,7 +139,6 @@ private:
     QAction *mSaveAs = nullptr;
     QAction *mShareScript = nullptr;
     QAction *mGenerateXml = nullptr;
-    QAction *mShareAction = nullptr;
     EditorMode mMode = EditorMode::TextMode;
     bool mModified = false;
     bool mDebug = false;

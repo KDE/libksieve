@@ -92,15 +92,11 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     toolbar->addAction(mShareScript);
 
     SievePurposeMenuWidget *purposeMenu = new SievePurposeMenuWidget(this, this);
-    if (purposeMenu->menu()) {
-        mShareAction = new QAction(i18n("Share..."), this);
-        mShareAction->setMenu(purposeMenu->menu());
-        mShareAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
-        purposeMenu->setEditorWidget(this);
-        toolbar->addAction(mShareAction);
-    } else {
-        delete purposeMenu;
-    }
+    QAction *shareAction = new QAction(i18n("Share..."), this);
+    shareAction->setMenu(purposeMenu->menu());
+    shareAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
+    purposeMenu->setEditorWidget(this);
+    toolbar->addAction(shareAction);
 
     SieveEditorMenuBar *menuBar = nullptr;
     if (useMenuBar) {
@@ -133,10 +129,8 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
         menuBar->fileMenu()->addSeparator();
         menuBar->fileMenu()->addAction(mShareScript);
         menuBar->toolsMenu()->addSeparator();
-	if (mShareAction) {
-           menuBar->fileMenu()->addAction(mShareAction);
-           menuBar->toolsMenu()->addSeparator();
-	}
+        menuBar->fileMenu()->addAction(shareAction);
+        menuBar->toolsMenu()->addSeparator();
         menuBar->toolsMenu()->addAction(mCreateRulesGraphically);
         menuBar->toolsMenu()->addAction(mCheckSyntax);
         lay->addWidget(menuBar);
