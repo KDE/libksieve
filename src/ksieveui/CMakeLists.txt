@@ -380,5 +380,5 @@ install(FILES
     )
 
 
-install(FILES data/ksieve_script.knsrc DESTINATION ${KDE_INSTALL_CONFDIR} )
+install(FILES data/ksieve_script.knsrc DESTINATION ${KDE_INSTALL_KNSRCDIR} )
 install(DIRECTORY data/scripts/ DESTINATION ${KDE_INSTALL_DATADIR}/sieve/scripts/ )
