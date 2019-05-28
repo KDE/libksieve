@@ -118,9 +118,9 @@ void SieveActionWidget::initWidget()
     mComboBox = new QComboBox;
     mComboBox->setEditable(false);
     mComboBox->setMinimumWidth(50);
-    const QList<KSieveUi::SieveAction *> list = KSieveUi::SieveActionList::actionList(mSieveGraphicalModeWidget);
-    QList<KSieveUi::SieveAction *>::const_iterator it;
-    QList<KSieveUi::SieveAction *>::const_iterator end(list.constEnd());
+    const QVector<KSieveUi::SieveAction *> list = KSieveUi::SieveActionList::actionList(mSieveGraphicalModeWidget);
+    QVector<KSieveUi::SieveAction *>::const_iterator it;
+    QVector<KSieveUi::SieveAction *>::const_iterator end(list.constEnd());
     int index = 0;
     QStringList listCapabilities = mSieveGraphicalModeWidget->sieveCapabilities();
     //imapflags was old name of imap4flags but still used.

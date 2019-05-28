@@ -19,13 +19,13 @@
 #ifndef SIEVEACTIONLIST_H
 #define SIEVEACTIONLIST_H
 
-#include <QList>
+#include <QVector>
 
 namespace KSieveUi {
 class SieveAction;
 class SieveEditorGraphicalModeWidget;
 namespace SieveActionList {
-Q_REQUIRED_RESULT QList<KSieveUi::SieveAction *> actionList(KSieveUi::SieveEditorGraphicalModeWidget *graphicalModeWidget);
+Q_REQUIRED_RESULT QVector<KSieveUi::SieveAction *> actionList(KSieveUi::SieveEditorGraphicalModeWidget *graphicalModeWidget);
 }
 }
 

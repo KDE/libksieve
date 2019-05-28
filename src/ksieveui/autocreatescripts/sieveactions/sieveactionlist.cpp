@@ -40,9 +40,9 @@
 #include "sieveactionsetvariable.h"
 #include "sieveactionreturn.h"
 
-QList<KSieveUi::SieveAction *> KSieveUi::SieveActionList::actionList(SieveEditorGraphicalModeWidget *graphicalModeWidget)
+QVector<KSieveUi::SieveAction *> KSieveUi::SieveActionList::actionList(SieveEditorGraphicalModeWidget *graphicalModeWidget)
 {
-    QList<KSieveUi::SieveAction *> list;
+    QVector<KSieveUi::SieveAction *> list;
     list.append(new KSieveUi::SieveActionDiscard(graphicalModeWidget));
     list.append(new KSieveUi::SieveActionStop(graphicalModeWidget));
     list.append(new KSieveUi::SieveActionSetFlags(graphicalModeWidget));

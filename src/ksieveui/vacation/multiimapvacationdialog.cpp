@@ -46,7 +46,7 @@ public:
     {
     }
 
-    QList<VacationCreateScriptJob *> mListCreateJob;
+    QVector<VacationCreateScriptJob *> mListCreateJob;
     QTabWidget *mTabWidget = nullptr;
     QStackedWidget *mStackedWidget = nullptr;
     MultiImapVacationManager *mVacationManager = nullptr;
@@ -84,7 +84,7 @@ void MultiImapVacationDialog::switchToServerNamePage(const QString &serverName)
     }
 }
 
-QList<VacationCreateScriptJob *> MultiImapVacationDialog::listCreateJob() const
+QVector<VacationCreateScriptJob *> MultiImapVacationDialog::listCreateJob() const
 {
     return d->mListCreateJob;
 }

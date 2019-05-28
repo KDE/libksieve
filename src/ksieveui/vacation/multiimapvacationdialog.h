@@ -36,7 +36,7 @@ public:
     explicit MultiImapVacationDialog(MultiImapVacationManager *manager, QWidget *parent = nullptr);
     ~MultiImapVacationDialog();
 
-    Q_REQUIRED_RESULT QList<VacationCreateScriptJob *> listCreateJob() const;
+    Q_REQUIRED_RESULT QVector<VacationCreateScriptJob *> listCreateJob() const;
 
     void switchToServerNamePage(const QString &serverName);
 
