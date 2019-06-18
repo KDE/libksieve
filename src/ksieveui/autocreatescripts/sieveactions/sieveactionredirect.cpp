@@ -25,7 +25,6 @@
 #include <KLocalizedString>
 #include <KPluginFactory>
 #include <KPluginLoader>
-#include <QLineEdit>
 
 #include <QHBoxLayout>
 #include <QCheckBox>

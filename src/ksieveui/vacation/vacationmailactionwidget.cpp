@@ -23,7 +23,6 @@
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include <QStackedWidget>
 #include <QHBoxLayout>
-#include <QLineEdit>
 #include <KPluginLoader>
 #include <KPluginFactory>
 

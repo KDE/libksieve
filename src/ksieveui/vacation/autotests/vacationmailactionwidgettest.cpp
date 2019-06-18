@@ -21,7 +21,6 @@
 #include "../vacationmailactionwidget.h"
 #include "kdepimtest_layout.h"
 #include <QHBoxLayout>
-#include <QLineEdit>
 #include <QStackedWidget>
 #include <QTest>
 #include <KSieveUi/AbstractMoveImapFolderWidget>

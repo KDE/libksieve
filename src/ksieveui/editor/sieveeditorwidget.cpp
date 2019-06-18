@@ -35,7 +35,6 @@
 #include <kzip.h>
 #include <KIconEngine>
 #include <KStandardAction>
-#include <KMessageBox>
 
 #include <PimCommon/PurposeMenuWidget>
 

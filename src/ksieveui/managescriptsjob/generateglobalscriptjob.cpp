@@ -20,7 +20,6 @@
 #include "kmanagesieve/sievejob.h"
 
 #include <KLocalizedString>
-#include <QDebug>
 
 using namespace KSieveUi;
 GenerateGlobalScriptJob::GenerateGlobalScriptJob(const QUrl &url, QObject *parent)

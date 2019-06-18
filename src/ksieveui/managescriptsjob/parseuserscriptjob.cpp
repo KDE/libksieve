@@ -19,7 +19,6 @@
 #include "ksieveui/scriptsparsing/parsingutil.h"
 #include <kmanagesieve/sievejob.h>
 #include <QXmlStreamReader>
-#include <QDebug>
 #include <KLocalizedString>
 
 using namespace KSieveUi;

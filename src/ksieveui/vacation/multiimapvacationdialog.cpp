@@ -26,7 +26,6 @@
 #include <kwindowsystem.h>
 #include <QTabWidget>
 #include <KIconLoader>
-#include <QUrl>
 
 #include <QTabBar>
 #include <QApplication>

@@ -22,7 +22,6 @@
 #include "widgets/moveimapfolderwidget.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include <KLocalizedString>
-#include <QLineEdit>
 
 #include <KPluginLoader>
 #include <QCheckBox>

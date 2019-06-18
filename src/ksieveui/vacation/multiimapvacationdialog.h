@@ -21,7 +21,6 @@
 #define MULTIIMAPVACATIONDIALOG_H
 
 #include <QDialog>
-#include <QUrl>
 #include "ksieveui_export.h"
 #include "util_p.h"
 
