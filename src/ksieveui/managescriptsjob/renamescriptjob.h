@@ -27,6 +27,10 @@ class SieveJob;
 
 namespace KSieveUi {
 class RenameScriptJobPrivate;
+/**
+ * @brief The RenameScriptJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT RenameScriptJob : public QObject
 {
     Q_OBJECT

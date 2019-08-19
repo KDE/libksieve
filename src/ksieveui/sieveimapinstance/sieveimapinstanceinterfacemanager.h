@@ -25,6 +25,10 @@
 namespace KSieveUi {
 class SieveImapInstanceInterface;
 class SieveImapInstance;
+/**
+ * @brief The SieveImapInstanceInterfaceManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT SieveImapInstanceInterfaceManager : public QObject
 {
     Q_OBJECT

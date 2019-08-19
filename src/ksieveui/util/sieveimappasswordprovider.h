@@ -25,6 +25,10 @@
 class QString;
 
 namespace KSieveUi {
+/**
+ * @brief The SieveImapPasswordProvider class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT SieveImapPasswordProvider
 {
 public:

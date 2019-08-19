@@ -23,6 +23,10 @@
 #include "ksieveui_export.h"
 #include <QDebug>
 namespace KSieveUi {
+/**
+ * @brief The SieveImapAccountSettings class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT SieveImapAccountSettings
 {
 public:

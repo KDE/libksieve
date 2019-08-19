@@ -25,6 +25,10 @@
 namespace KSieveUi {
 class SieveEditorPrivate;
 class SieveImapAccountSettings;
+/**
+ * @brief The SieveEditor class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT SieveEditor : public QDialog
 {
     Q_OBJECT

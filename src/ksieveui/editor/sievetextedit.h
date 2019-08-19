@@ -26,6 +26,10 @@
 class QMenu;
 namespace KSieveUi {
 class SieveTextEditPrivate;
+/**
+ * @brief The SieveTextEdit class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT SieveTextEdit : public KPIMTextEdit::PlainTextEditor
 {
     Q_OBJECT

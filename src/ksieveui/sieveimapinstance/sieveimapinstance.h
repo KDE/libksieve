@@ -24,6 +24,10 @@
 #include <QObject>
 
 namespace KSieveUi {
+/**
+ * @brief The SieveImapInstance class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT SieveImapInstance
 {
 public:

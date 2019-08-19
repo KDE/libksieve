@@ -27,6 +27,10 @@
 namespace KSieveUi {
 class SieveImapAccountSettings;
 class SieveEditorGraphicalModeWidget;
+/**
+ * @brief The AutoCreateScriptDialog class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT AutoCreateScriptDialog : public QDialog
 {
     Q_OBJECT

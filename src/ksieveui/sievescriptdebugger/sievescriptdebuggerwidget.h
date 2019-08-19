@@ -26,6 +26,10 @@ class QStackedWidget;
 class QLabel;
 namespace KSieveUi {
 class SieveScriptDebuggerFrontEndWidget;
+/**
+ * @brief The SieveScriptDebuggerWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT SieveScriptDebuggerWidget : public QWidget
 {
     Q_OBJECT

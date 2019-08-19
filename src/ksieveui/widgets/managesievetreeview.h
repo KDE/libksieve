@@ -22,6 +22,10 @@
 #include "ksieveui_export.h"
 
 namespace KSieveUi {
+/**
+ * @brief The ManageSieveTreeView class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT ManageSieveTreeView : public PimCommon::CustomTreeView
 {
     Q_OBJECT

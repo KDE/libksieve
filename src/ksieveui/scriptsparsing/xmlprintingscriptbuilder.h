@@ -31,7 +31,7 @@ class KSIEVEUI_TESTS_EXPORT XMLPrintingScriptBuilder : public KSieve::ScriptBuil
 public:
     XMLPrintingScriptBuilder();
     XMLPrintingScriptBuilder(int indent);
-    ~XMLPrintingScriptBuilder();
+    ~XMLPrintingScriptBuilder() override;
 
     void taggedArgument(const QString &tag) override;
     void stringArgument(const QString &string, bool multiLine, const QString & /*fixme*/) override;

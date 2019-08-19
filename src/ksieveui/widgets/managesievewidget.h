@@ -34,7 +34,10 @@ namespace KSieveUi {
 class ManageSieveTreeView;
 class ManageSieveWidgetPrivate;
 class ParseUserScriptJob;
-
+/**
+ * @brief The ManageSieveWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT ManageSieveWidget : public QWidget
 {
     Q_OBJECT

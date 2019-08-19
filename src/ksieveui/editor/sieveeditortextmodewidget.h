@@ -38,6 +38,10 @@ class SieveEditorWarning;
 class SieveEditorParsingMissingFeatureWarning;
 class SieveEditorTabWidget;
 class SieveTemplateWidget;
+/**
+ * @brief The SieveEditorTextModeWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT SieveEditorTextModeWidget : public SieveEditorAbstractWidget
 {
     Q_OBJECT

@@ -33,6 +33,10 @@ namespace KSieveUi {
 class SieveEditor;
 class ManageSieveScriptsDialogPrivate;
 class SieveImapPasswordProvider;
+/**
+ * @brief The ManageSieveScriptsDialog class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT ManageSieveScriptsDialog : public QDialog
 {
     Q_OBJECT

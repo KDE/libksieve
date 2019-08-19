@@ -30,6 +30,10 @@ namespace KSieveUi {
 class SieveImapAccountSettings;
 class SieveEditorTextModeWidget;
 class SieveEditorGraphicalModeWidget;
+/**
+ * @brief The SieveEditorWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT SieveEditorWidget : public QWidget
 {
     Q_OBJECT

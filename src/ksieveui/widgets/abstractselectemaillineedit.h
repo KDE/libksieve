@@ -23,6 +23,10 @@
 #include <QWidget>
 #include "ksieveui_export.h"
 namespace KSieveUi {
+/**
+ * @brief The AbstractSelectEmailLineEdit class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT AbstractSelectEmailLineEdit : public QWidget
 {
     Q_OBJECT

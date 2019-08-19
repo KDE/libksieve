@@ -30,6 +30,10 @@ class QTreeWidgetItem;
 namespace KSieveUi {
 class SieveTreeWidgetProgress;
 class SieveTreeWidgetItemPrivate;
+/**
+ * @brief The SieveTreeWidgetItem class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT SieveTreeWidgetItem : public QTreeWidgetItem
 {
 public:

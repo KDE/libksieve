@@ -25,6 +25,10 @@
 
 namespace KSieveUi {
 class SieveImapInstance;
+/**
+ * @brief The SieveImapInstanceInterface class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT SieveImapInstanceInterface
 {
 public:

@@ -25,6 +25,10 @@ class QWidget;
 namespace KSieveUi {
 class VacationManagerPrivate;
 class SieveImapPasswordProvider;
+/**
+ * @brief The VacationManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT VacationManager : public QObject
 {
     Q_OBJECT

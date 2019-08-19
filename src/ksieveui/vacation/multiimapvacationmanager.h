@@ -31,6 +31,10 @@ namespace KSieveUi {
 class CheckKolabKep14SupportJob;
 class VacationCheckJob;
 class SieveImapPasswordProvider;
+/**
+ * @brief The MultiImapVacationManager class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT MultiImapVacationManager : public QObject
 {
     Q_OBJECT

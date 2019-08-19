@@ -24,6 +24,10 @@
 #include "ksieveui_export.h"
 
 namespace KSieveUi {
+/**
+ * @brief The AbstractRegexpEditorLineEdit class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT AbstractRegexpEditorLineEdit : public QWidget
 {
     Q_OBJECT

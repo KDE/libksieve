@@ -24,6 +24,10 @@
 
 namespace KSieveUi {
 class SieveEditorHelpHtmlWidget;
+/**
+ * @brief The SieveEditorTabWidget class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT SieveEditorTabWidget : public QTabWidget
 {
     Q_OBJECT

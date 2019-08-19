@@ -26,6 +26,10 @@ class SieveJob;
 }
 namespace KSieveUi {
 class CheckScriptJobPrivate;
+/**
+ * @brief The CheckScriptJob class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT CheckScriptJob : public QObject
 {
     Q_OBJECT

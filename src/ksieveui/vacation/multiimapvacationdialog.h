@@ -28,6 +28,10 @@ namespace KSieveUi {
 class VacationCreateScriptJob;
 class MultiImapVacationManager;
 class MultiImapVacationDialogPrivate;
+/**
+ * @brief The MultiImapVacationDialog class
+ * @author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT MultiImapVacationDialog : public QDialog
 {
     Q_OBJECT
