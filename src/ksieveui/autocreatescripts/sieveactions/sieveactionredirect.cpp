@@ -23,8 +23,6 @@
 #include "widgets/addresslineedit.h"
 
 #include <KLocalizedString>
-#include <KPluginFactory>
-#include <KPluginLoader>
 
 #include <QHBoxLayout>
 #include <QCheckBox>

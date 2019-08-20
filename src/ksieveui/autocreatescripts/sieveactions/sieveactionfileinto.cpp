@@ -23,11 +23,9 @@
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include <KLocalizedString>
 
-#include <KPluginLoader>
 #include <QCheckBox>
 #include <QHBoxLayout>
 #include "libksieve_debug.h"
-#include <KPluginFactory>
 #include <QXmlStreamReader>
 //Add support for adding flags
 using namespace KSieveUi;
