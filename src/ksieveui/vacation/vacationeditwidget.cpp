@@ -96,12 +96,14 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mStartDate->setObjectName(QStringLiteral("mStartDate"));
     mStartDate->setOptions(KDateComboBox::EditDate | KDateComboBox::SelectDate | KDateComboBox::DatePicker | KDateComboBox::DateKeywords);
     connect(mStartDate, &KDateComboBox::dateChanged, this, &VacationEditWidget::setWasChanged);
+    connect(mStartDate, &KDateComboBox::dateEdited, this, &VacationEditWidget::setWasChanged);
 
     mStartTime = new KTimeComboBox(this);
     mStartTime->setObjectName(QStringLiteral("mStartTime"));
     mStartTime->setOptions(KTimeComboBox::EditTime | KTimeComboBox::SelectTime | KTimeComboBox::EditTime | KTimeComboBox::WarnOnInvalid);
     mStartTime->setEnabled(false); // Disable by default - we need an extension to support this
     connect(mStartTime, &KTimeComboBox::timeChanged, this, &VacationEditWidget::setWasChanged);
+    connect(mStartTime, &KTimeComboBox::timeEdited, this, &VacationEditWidget::setWasChanged);
 
     mStartTimeActive = new QCheckBox(this);
     mStartTimeActive->setObjectName(QStringLiteral("mStartTimeActive"));
@@ -125,12 +127,14 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mEndDate->setObjectName(QStringLiteral("mEndDate"));
     mEndDate->setOptions(KDateComboBox::EditDate | KDateComboBox::SelectDate | KDateComboBox::DatePicker | KDateComboBox::DateKeywords);
     connect(mEndDate, &KDateComboBox::dateChanged, this, &VacationEditWidget::setWasChanged);
+    connect(mEndDate, &KDateComboBox::dateEdited, this, &VacationEditWidget::setWasChanged);
 
     mEndTime = new KTimeComboBox(this);
     mEndTime->setObjectName(QStringLiteral("mEndTime"));
     mEndTime->setOptions(KTimeComboBox::EditTime | KTimeComboBox::SelectTime | KTimeComboBox::EditTime | KTimeComboBox::WarnOnInvalid);
     mEndTime->setEnabled(false); // Disable by default - we need an extension to support this
     connect(mEndTime, &KTimeComboBox::timeChanged, this, &VacationEditWidget::setWasChanged);
+    connect(mEndTime, &KTimeComboBox::timeEdited, this, &VacationEditWidget::setWasChanged);
 
     mEndTimeActive = new QCheckBox(this);
     mEndTimeActive->setObjectName(QStringLiteral("mEndTimeActive"));
