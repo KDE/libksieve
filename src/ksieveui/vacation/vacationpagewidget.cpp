@@ -78,6 +78,11 @@ VacationPageWidget::~VacationPageWidget()
 {
 }
 
+bool VacationPageWidget::wasChanged() const
+{
+    return mVacationEditWidget->changed();
+}
+
 void VacationPageWidget::setServerUrl(const QUrl &url)
 {
     mUrl = url;
@@ -146,6 +151,7 @@ void VacationPageWidget::slotGetResult(const QString &serverName, const QStringL
         mVacationEditWidget->setEndDate(vacation.endDate);
         mVacationEditWidget->setEndTime(vacation.endTime);
     }
+    mVacationEditWidget->setChanged(false);
 }
 
 KSieveUi::VacationCreateScriptJob *VacationPageWidget::writeScript(bool &errorFound)

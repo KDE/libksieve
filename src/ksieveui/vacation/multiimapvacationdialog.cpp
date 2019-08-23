@@ -24,6 +24,7 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <kwindowsystem.h>
+#include <KMessageBox>
 #include <QTabWidget>
 #include <KIconLoader>
 
@@ -83,6 +84,29 @@ void MultiImapVacationDialog::switchToServerNamePage(const QString &serverName)
     }
 }
 
+void MultiImapVacationDialog::reject()
+{
+    bool canCloseDialog = true;
+    for (int i = 0; i < d->mTabWidget->count(); ++i) {
+        VacationPageWidget *vacationPage = qobject_cast<VacationPageWidget *>(d->mTabWidget->widget(i));
+        if (vacationPage) {
+            if (vacationPage->wasChanged()) {
+                if (KMessageBox::questionYesNo(
+                            this,
+                            i18nc("@info", "Do you really want to cancel?"),
+                            i18nc("@title:window", "Confirmation")) == KMessageBox::Yes) {
+                        QDialog::reject(); // Discard current changes
+                }
+                canCloseDialog = false;
+                break;
+            }
+        }
+    }
+    if (canCloseDialog) {
+        QDialog::reject();
+    }
+}
+
 QVector<VacationCreateScriptJob *> MultiImapVacationDialog::listCreateJob() const
 {
     return d->mListCreateJob;
@@ -132,7 +156,7 @@ void MultiImapVacationDialog::init()
         connect(buttonBox, &QDialogButtonBox::accepted, this, &MultiImapVacationDialog::slotOkClicked);
         connect(buttonBox, &QDialogButtonBox::rejected, this, &MultiImapVacationDialog::slotCanceled);
         connect(buttonBox->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &MultiImapVacationDialog::slotDefaultClicked);
-    } else {
+    } else { //Empty
         d->mStackedWidget->setCurrentIndex(1);
         buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
         connect(buttonBox, &QDialogButtonBox::accepted, this, &MultiImapVacationDialog::slotOkClicked);

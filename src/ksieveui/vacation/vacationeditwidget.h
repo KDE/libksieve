@@ -67,53 +67,59 @@ public:
     void enableDomainAndSendForSpam(bool enable = true);
     void enableDates(bool enable = true);
 
-    bool activateVacation() const;
+    Q_REQUIRED_RESULT bool activateVacation() const;
     void setActivateVacation(bool activate);
 
-    bool domainCheck() const;
+    Q_REQUIRED_RESULT bool domainCheck() const;
     void setDomainCheck(bool check);
 
-    QString messageText() const;
+    Q_REQUIRED_RESULT QString messageText() const;
     void setMessageText(const QString &text);
 
-    int notificationInterval() const;
+    Q_REQUIRED_RESULT int notificationInterval() const;
     void setNotificationInterval(int days);
 
-    KMime::Types::AddrSpecList mailAliases(bool &ok) const;
+    Q_REQUIRED_RESULT KMime::Types::AddrSpecList mailAliases(bool &ok) const;
     void setMailAliases(const KMime::Types::AddrSpecList &aliases);
     void setMailAliases(const QString &aliases);
 
-    QString domainName() const;
+    Q_REQUIRED_RESULT QString domainName() const;
     void setDomainName(const QString &domain);
 
-    QString subject() const;
+    Q_REQUIRED_RESULT QString subject() const;
     void setSubject(const QString &subject);
 
-    bool sendForSpam() const;
+    Q_REQUIRED_RESULT bool sendForSpam() const;
     void setSendForSpam(bool enable);
 
-    QDate startDate() const;
+    Q_REQUIRED_RESULT QDate startDate() const;
     void setStartDate(QDate startDate);
 
-    QTime startTime() const;
+    Q_REQUIRED_RESULT QTime startTime() const;
     void setStartTime(QTime startTime);
 
-    QDate endDate() const;
+    Q_REQUIRED_RESULT QDate endDate() const;
     void setEndDate(QDate endDate);
 
-    QTime endTime() const;
+    Q_REQUIRED_RESULT QTime endTime() const;
     void setEndTime(QTime endTime);
 
-    VacationUtils::MailAction mailAction() const;
-    QString mailActionRecipient(bool &valid) const;
+    Q_REQUIRED_RESULT VacationUtils::MailAction mailAction() const;
+    Q_REQUIRED_RESULT QString mailActionRecipient(bool &valid) const;
     void setMailAction(VacationUtils::MailAction action, const QString &recipient);
     void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);
 
     void setDefault();
 
+    Q_REQUIRED_RESULT bool changed() const;
+    void setChanged(bool changed);
+
 private Q_SLOTS:
     void slotIntervalSpinChanged(int value);
     void mailActionChanged(int index);
+
+private:
+    void setWasChanged();
 
 protected:
     QCheckBox *mActiveCheck = nullptr;
@@ -134,6 +140,7 @@ protected:
     KTimeComboBox *mEndTime = nullptr;
     QCheckBox *mEndTimeActive = nullptr;
     QLabel *mEndDateLabel = nullptr;
+    bool mChanged = false;
 };
 }
 

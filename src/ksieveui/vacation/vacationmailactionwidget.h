@@ -40,6 +40,9 @@ public:
     Q_REQUIRED_RESULT QString mailActionRecipient(bool &valid) const;
     void setMailAction(VacationUtils::MailAction action, const QString &recipient);
 
+Q_SIGNALS:
+    void wasChanged();
+
 private:
     void selectMailActionWidget(VacationUtils::MailAction action);
     void setText(const QString &recipient);

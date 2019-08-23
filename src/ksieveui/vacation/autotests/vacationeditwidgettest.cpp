@@ -137,6 +137,7 @@ void VacationEditWidgetTest::shouldHaveDefaultValue()
     QVERIFY(mDomainEdit->text().isEmpty());
     QVERIFY(!mDomainEdit->isEnabled());
     QVERIFY(mDomainEdit->isClearButtonEnabled());
+    QVERIFY(!w.changed());
 }
 
 void VacationEditWidgetTest::shouldGetValues()

@@ -42,7 +42,7 @@ public:
     Q_REQUIRED_RESULT QVector<VacationCreateScriptJob *> listCreateJob() const;
 
     void switchToServerNamePage(const QString &serverName);
-
+    void reject() override;
 Q_SIGNALS:
     void okClicked();
     void cancelClicked();

@@ -45,11 +45,13 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
     mStackedWidget->addWidget(mMailActionRecipient);
 
     mMoveImapFolderWidget = AutoCreateScriptUtil::createImapFolderWidget();
+    connect(mMoveImapFolderWidget, &AbstractMoveImapFolderWidget::textChanged, this, &VacationMailActionWidget::wasChanged);
 
     mMoveImapFolderWidget->setObjectName(QStringLiteral("moveImapFolderWidget"));
     mStackedWidget->addWidget(mMoveImapFolderWidget);
 
     mSelectEmailLineEdit = AutoCreateScriptUtil::createSelectEmailsWidget();
+    connect(mSelectEmailLineEdit, &AbstractSelectEmailLineEdit::valueChanged, this, &VacationMailActionWidget::wasChanged);
     mSelectEmailLineEdit->setObjectName(QStringLiteral("selectEmailLineEdit"));
     mSelectEmailLineEdit->setMultiSelection(false);
     mStackedWidget->addWidget(mSelectEmailLineEdit);

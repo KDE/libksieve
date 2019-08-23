@@ -44,6 +44,7 @@ public:
     void setVacationManager(MultiImapVacationManager *vacationManager);
     void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);
 
+    bool wasChanged() const;
 private Q_SLOTS:
     void slotGetResult(const QString &serverName, const QStringList &sieveCapabilities, const QString &scriptName, const QString &script, bool active);
 
