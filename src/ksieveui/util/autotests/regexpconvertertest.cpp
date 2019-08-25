@@ -28,13 +28,13 @@ RegExpConverterTest::RegExpConverterTest(QObject *parent)
 
 static inline QString stringReplaceRegExp(QString s)
 {
-    s = s.replace(QRegExp(QLatin1String("[\n\t]+")), QStringLiteral(" "));
+    s.replace(QRegExp(QLatin1String("[\n\t]+")), QStringLiteral(" "));
     return s.replace(QLatin1Char('\"'), QStringLiteral("\\\""));
 }
 
 static inline QString stringReplaceRegularExpression(QString s)
 {
-    s = s.replace(QRegularExpression(QStringLiteral("[\n\t]+")), QStringLiteral(" "));
+    s.replace(QRegularExpression(QStringLiteral("[\n\t]+")), QStringLiteral(" "));
     return s.replace(QLatin1Char('\"'), QStringLiteral("\\\""));
 }
 

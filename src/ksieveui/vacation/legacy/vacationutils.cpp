@@ -43,7 +43,7 @@ static inline QString dotstuff(QString s)     // krazy:exclude=passbyvalue
 
 static inline QString stringReplace(QString s)
 {
-    s = s.replace(QRegularExpression(QStringLiteral("[\n\t]+")), QStringLiteral(" "));
+    s.replace(QRegularExpression(QStringLiteral("[\n\t]+")), QStringLiteral(" "));
     return s.replace(QLatin1Char('\"'), QStringLiteral("\\\""));
 }
 
