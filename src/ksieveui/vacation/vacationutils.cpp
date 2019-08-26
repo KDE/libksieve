@@ -289,7 +289,7 @@ QString KSieveUi::VacationUtils::composeScript(const Vacation &vacation)
             sl.push_back(QLatin1Char('"') + (*it).asString().replace(QLatin1Char('\\'), QStringLiteral("\\\\")).replace(QLatin1Char('"'), QStringLiteral("\\\"")) + QLatin1Char('"'));
             aliases.push_back((*it).asString());
         }
-        addressesArgument += sl.join(QStringLiteral(", ")) + QStringLiteral(" ] ");
+        addressesArgument += sl.join(QLatin1String(", ")) + QStringLiteral(" ] ");
     }
 
     QString sVacation(QStringLiteral("vacation "));

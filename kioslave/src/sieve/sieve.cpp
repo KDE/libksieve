@@ -245,12 +245,12 @@ bool kio_sieveProtocol::parseCapabilities(bool requestCapabilities /* = false*/)
             // Save list of available SASL methods
             const QString val = QLatin1String(r.getVal());
             m_sasl_caps = val.split(QLatin1Char(' '));
-            ksDebug << "Server SASL authentication methods: " << m_sasl_caps.join(QStringLiteral(", ")) << endl;
+            ksDebug << "Server SASL authentication methods: " << m_sasl_caps.join(QLatin1String(", ")) << endl;
             setMetaData(QStringLiteral("saslMethods"), QLatin1String(r.getVal()));
         } else if (r.getKey() == "SIEVE") {
             // Save script capabilities; report back as meta data:
             const QString val = QLatin1String(r.getVal());
-            ksDebug << "Server script capabilities: " << val.split(QLatin1Char(' ')).join(QStringLiteral(", ")) << endl;
+            ksDebug << "Server script capabilities: " << val.split(QLatin1Char(' ')).join(QLatin1String(", ")) << endl;
             setMetaData(QStringLiteral("sieveExtensions"), QLatin1String(r.getVal()));
         } else if (r.getKey() == "STARTTLS") {
             // The server supports TLS

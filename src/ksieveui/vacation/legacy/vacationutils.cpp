@@ -117,7 +117,7 @@ QString Legacy::VacationUtils::composeScript(const QString &messageText, const Q
             sl.push_back(QLatin1Char('"') + (*it).asString().replace(QLatin1Char('\\'), QStringLiteral("\\\\")).replace(QLatin1Char('"'), QStringLiteral("\\\"")) + QLatin1Char('"'));
             aliases.push_back((*it).asString());
         }
-        addressesArgument += sl.join(QStringLiteral(", ")) + QLatin1String(" ] ");
+        addressesArgument += sl.join(QLatin1String(", ")) + QLatin1String(" ] ");
     }
 
     QString script = QStringLiteral("require \"vacation\";\n");
