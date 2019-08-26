@@ -53,10 +53,10 @@ void SelectConvertParameterWidget::setCode(const QStringList &code, QString &err
     }
 
     QString widthStr = code.at(0);
-    widthStr = widthStr.remove(QStringLiteral("pix-x="));
+    widthStr.remove(QStringLiteral("pix-x="));
 
     QString heightStr = code.at(1);
-    heightStr = heightStr.remove(QStringLiteral("pix-y="));
+    heightStr.remove(QStringLiteral("pix-y="));
     mWidth->setValue(widthStr.toInt());
     mHeight->setValue(heightStr.toInt());
 }
