@@ -281,7 +281,7 @@ bool Util::hasKep14Support(const QStringList &sieveCapabilities, const QStringLi
     bool masterIsActive = !activeScript.isEmpty();
     if (masterIsActive) {
         const QString scriptName = activeScript.split(QLatin1Char('.')).first().toLower();
-        masterIsActive = (scriptName == QStringLiteral("master") || scriptName == QStringLiteral("user"));
+        masterIsActive = (scriptName == QLatin1String("master") || scriptName == QStringLiteral("user"));
     }
     if (!masterIsActive) {
         return false;
@@ -293,7 +293,7 @@ bool Util::hasKep14Support(const QStringList &sieveCapabilities, const QStringLi
             continue;
         }
         const QString name = script.split(QLatin1Char('.')).first().toLower();
-        if (name == QStringLiteral("user")) {
+        if (name == QLatin1String("user")) {
             hasUserScript = true;
             break;
         }
@@ -305,9 +305,9 @@ bool Util::hasKep14Support(const QStringList &sieveCapabilities, const QStringLi
 bool Util::isKep14ProtectedName(const QString &name)
 {
     const QString n = name.split(QLatin1Char('.')).first().toLower();
-    if (n == QStringLiteral("master")
-        || n == QStringLiteral("user")
-        || n == QStringLiteral("management")) {
+    if (n == QLatin1String("master")
+        || n == QLatin1String("user")
+        || n == QLatin1String("management")) {
         return true;
     }
     return false;

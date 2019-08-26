@@ -114,7 +114,7 @@ void VacationPageWidget::slotGetResult(const QString &serverName, const QStringL
     qCDebug(LIBKSIEVE_LOG) << serverName << sieveCapabilities << endl
                            << scriptName << "(" << active << ")" << endl;
 
-    if (mUrl.scheme() == QStringLiteral("sieve")
+    if (mUrl.scheme() == QLatin1String("sieve")
         && !sieveCapabilities.contains(QLatin1String("vacation"))) {
         mStackWidget->setCurrentIndex(ScriptNotSupported);
         return;
@@ -124,7 +124,7 @@ void VacationPageWidget::slotGetResult(const QString &serverName, const QStringL
     mUrl.setPath(mUrl.path() + QLatin1Char('/') + scriptName);
 
     // Whether the server supports the "date" extension
-    mHasDateSupport = mUrl.scheme() == QStringLiteral("sieve") && sieveCapabilities.contains(QLatin1String("date"));
+    mHasDateSupport = mUrl.scheme() == QLatin1String("sieve") && sieveCapabilities.contains(QLatin1String("date"));
 
     KSieveUi::VacationUtils::Vacation vacation = KSieveUi::VacationUtils::parseScript(script);
 
