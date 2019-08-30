@@ -299,8 +299,8 @@ void VacationUtilsTest::testUpdateVacationBlock()
 
     const QString attend = QStringLiteral("if true\n{\ntestcmd;\n}\n");
     const QString require = QStringLiteral("require [\"date\", \"test\"];");
-    const QString scriptAattend = scriptA + QStringLiteral("\n") + attend;
-    const QString scriptBattend = scriptB + QStringLiteral("\n") + attend;
+    const QString scriptAattend = scriptA + QLatin1String("\n") + attend;
+    const QString scriptBattend = scriptB + QLatin1String("\n") + attend;
 
     QStringList linesA = scriptA.split(QLatin1Char('\n'));
     QStringList header;

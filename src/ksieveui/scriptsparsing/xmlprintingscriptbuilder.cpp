@@ -168,7 +168,7 @@ void XMLPrintingScriptBuilder::lineFeed()
 
 void XMLPrintingScriptBuilder::error(const KSieve::Error &error)
 {
-    mError = QStringLiteral("Error: ") + error.asString();
+    mError = QLatin1String("Error: ") + error.asString();
     mResult += mError;
 }
 

@@ -256,7 +256,7 @@ QString AutoCreateScriptUtil::generateConditionComment(const QString &comment)
                 if (!strComment.isEmpty()) {
                     strComment += QLatin1Char('\n');
                 }
-                strComment += QStringLiteral(" #") + str;
+                strComment += QLatin1String(" #") + str;
             }
         }
     }
