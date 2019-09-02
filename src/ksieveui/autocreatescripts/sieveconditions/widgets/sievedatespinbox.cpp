@@ -109,7 +109,7 @@ QString SieveDateSpinBox::convertValue() const
         str = QStringLiteral("%1").arg(value(), 2, 10, QLatin1Char('0'));
         break;
     case SelectDateWidget::Weekday:
-        str = QStringLiteral("%1").arg(value());
+        str = value();
         break;
     default:
         qCWarning(LIBKSIEVE_LOG) << "This type mustn't be selected " << mType;

@@ -81,7 +81,7 @@ QString SieveConditionConvert::code(QWidget *w) const
     const SelectConvertParameterWidget *params = w->findChild<SelectConvertParameterWidget *>(QStringLiteral("params"));
     const QString paramsStr = params->code();
     if (!paramsStr.isEmpty()) {
-        result += QStringLiteral("%1").arg(paramsStr);
+        result += paramsStr;
     }
     return result + AutoCreateScriptUtil::generateConditionComment(comment());
 }
