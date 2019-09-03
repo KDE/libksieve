@@ -637,7 +637,7 @@ MultiLineStart:
             }
             const QString line = removeCRLF(QString::fromUtf8(oldBeginOfLine, lineLength));
             lines.push_back(removeDotStuff(line));
-            if (line == QLatin1String(".")) {
+            if (line == QLatin1Char('.')) {
                 break;
             }
         } else {

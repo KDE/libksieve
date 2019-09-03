@@ -54,11 +54,11 @@ QString SelectSizeWidget::code() const
 
 void SelectSizeWidget::setCode(qlonglong value, const QString &identifier, const QString &name, QString &error)
 {
-    if (identifier == QLatin1String("K")) {
+    if (identifier == QLatin1Char('K')) {
         value /= 1024;
-    } else if (identifier == QLatin1String("M")) {
+    } else if (identifier == QLatin1Char('M')) {
         value /= (1024 * 1024);
-    } else if (identifier == QLatin1String("G")) {
+    } else if (identifier == QLatin1Char('G')) {
         value /= (1024 * 1024 * 1024);
     }
     mSelectSizeType->setCode(identifier, name, error);
