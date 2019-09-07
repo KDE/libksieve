@@ -41,7 +41,7 @@ void SieveScriptDebuggerWidgetTest::shouldHaveDefaultValue()
     QCOMPARE(stackedwidget->count(), numberOfStackWidget);
     for (int i = 0; i < numberOfStackWidget; ++i) {
         QWidget *w = stackedwidget->widget(i);
-        QVERIFY((w->objectName() == QLatin1String("sievescriptfrontend")) || (w->objectName() == QStringLiteral("sievenoexistingfrontend")));
+        QVERIFY((w->objectName() == QLatin1String("sievescriptfrontend")) || (w->objectName() == QLatin1String("sievenoexistingfrontend")));
     }
 }
 

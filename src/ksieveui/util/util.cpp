@@ -281,7 +281,7 @@ bool Util::hasKep14Support(const QStringList &sieveCapabilities, const QStringLi
     bool masterIsActive = !activeScript.isEmpty();
     if (masterIsActive) {
         const QString scriptName = activeScript.split(QLatin1Char('.')).first().toLower();
-        masterIsActive = (scriptName == QLatin1String("master") || scriptName == QStringLiteral("user"));
+        masterIsActive = (scriptName == QLatin1String("master") || scriptName == QLatin1String("user"));
     }
     if (!masterIsActive) {
         return false;

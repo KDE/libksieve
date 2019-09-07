@@ -95,7 +95,7 @@ void VacationDataExtractor::finished()
 void VacationDataExtractor::testStart(const QString &test)
 {
     if (mContext == IfBlock) {
-        if (test == QLatin1String("true") || test == QStringLiteral("false")) {
+        if (test == QLatin1String("true") || test == QLatin1String("false")) {
             mActive = (test == QLatin1String("true"));
             mIfComment = QString();
         }
