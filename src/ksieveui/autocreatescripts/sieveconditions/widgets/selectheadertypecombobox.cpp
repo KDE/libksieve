@@ -210,7 +210,11 @@ SelectHeaderTypeComboBox::SelectHeaderTypeComboBox(bool onlyEnvelopType, QWidget
     lineEdit()->setClearButtonEnabled(true);
     //TODO add completion
     initialize(onlyEnvelopType);
+#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
     connect(this, QOverload<const QString &>::of(&SelectHeaderTypeComboBox::activated), this, &SelectHeaderTypeComboBox::slotSelectItem);
+#else
+    connect(this, &SelectHeaderTypeComboBox::textActivated, this, &SelectHeaderTypeComboBox::slotSelectItem);
+#endif
     connect(this, &SelectHeaderTypeComboBox::editTextChanged, this, &SelectHeaderTypeComboBox::valueChanged);
     connect(this, QOverload<int>::of(&SelectHeaderTypeComboBox::activated), this, &SelectHeaderTypeComboBox::valueChanged);
 }
