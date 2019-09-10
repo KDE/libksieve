@@ -120,7 +120,7 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
                         && KMessageBox::warningContinueCancel(nullptr,
                                                               i18n("TLS encryption was requested, but your Sieve server does not advertise TLS in its capabilities.\n"
                                                                    "You can choose to try to initiate TLS negotiations nonetheless, or cancel the operation."),
-                                                              i18n("Server Does Not Advertise TLS"), KGuiItem(i18n("&Start TLS nonetheless")), KStandardGuiItem::cancel(),
+                                                              i18n("Sieve Server Does Not Advertise TLS"), KGuiItem(i18n("&Start TLS nonetheless")), KStandardGuiItem::cancel(),
                                                               QStringLiteral("ask_starttls_%1").arg(m_url.host())) != KMessageBox::Continue) {
                         setErrorMessage(KIO::buildErrorString(KIO::ERR_USER_CANCELED, i18n("TLS encryption requested, but not supported by server.")));
                         disconnectFromHost();
@@ -334,7 +334,7 @@ void Session::setErrorMessage(const QString &msg)
         m_currentJob->setErrorMessage(msg);
     } else {
         qCWarning(KMANAGERSIEVE_LOG) << objectName() << "No job for reporting this error message!" << msg << " m_url " << m_url.host();
-        KMessageBox::error(nullptr, i18n("Server:%1\n%2", m_url.host(),msg));
+        KMessageBox::error(nullptr, i18n("The Sieve server on %1 has reported an error:\n%2", m_url.host(),msg), i18n("Sieve Manager"));
     }
 }
 
