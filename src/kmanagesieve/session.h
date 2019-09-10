@@ -73,7 +73,7 @@ private:
     bool allowUnencrypted() const;
 
 private Q_SLOTS:
-    void setErrorMessage(const QString &msg);
+    void setErrorMessage(int error, const QString &msg);
     void processResponse(const KManageSieve::Response &response, const QByteArray &data);
     KManageSieve::AuthDetails requestAuthDetails(const QUrl &url);
     void authenticationDone();

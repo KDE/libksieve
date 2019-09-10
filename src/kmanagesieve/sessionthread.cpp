@@ -211,8 +211,9 @@ void SessionThread::slotSocketError()
 {
     Q_ASSERT(QThread::currentThread() == thread());
 
-    qCWarning(KMANAGERSIEVE_LOG) << Q_FUNC_INFO << m_socket->errorString();
-    Q_EMIT error(KIO::buildErrorString(KIO::ERR_COULD_NOT_CONNECT, m_socket->errorString()));
+    qCWarning(KMANAGERSIEVE_LOG) << Q_FUNC_INFO << m_socket->error() << m_socket->errorString();
+
+    Q_EMIT error(m_socket->error(), m_socket->errorString());
     doDisconnectFromHost(false);
 }
 
@@ -220,6 +221,13 @@ void SessionThread::slotSocketError()
 void SessionThread::startAuthentication()
 {
     QMetaObject::invokeMethod(this, &SessionThread::doStartAuthentication, Qt::QueuedConnection);
+}
+
+// Called in secondary thread
+void SessionThread::handleSaslAuthError()
+{
+    Q_EMIT error(KTcpSocket::UnknownError, KIO::buildErrorString(KIO::ERR_COULD_NOT_AUTHENTICATE, QString::fromUtf8(sasl_errdetail(m_sasl_conn))));
+    doDisconnectFromHost(true);
 }
 
 // Called in secondary thread
@@ -236,8 +244,7 @@ void SessionThread::doStartAuthentication()
 
     result = sasl_client_new("sieve", m_url.host().toLatin1().constData(), nullptr, nullptr, callbacks, 0, &m_sasl_conn);
     if (result != SASL_OK) {
-        Q_EMIT error(KIO::buildErrorString(KIO::ERR_COULD_NOT_AUTHENTICATE, QString::fromUtf8(sasl_errdetail(m_sasl_conn))));
-        doDisconnectFromHost(true);
+        handleSaslAuthError();
         return;
     }
 
@@ -245,18 +252,16 @@ void SessionThread::doStartAuthentication()
         result = sasl_client_start(m_sasl_conn, m_session->requestedSaslMethod().join(QLatin1Char(' ')).toLatin1().constData(), &m_sasl_client_interact, &out, &outlen, &mechusing);
         if (result == SASL_INTERACT) {
             if (!saslInteract(m_sasl_client_interact)) {
-                Q_EMIT error(KIO::buildErrorString(KIO::ERR_COULD_NOT_AUTHENTICATE, QString::fromUtf8(sasl_errdetail(m_sasl_conn))));
+                handleSaslAuthError();
                 sasl_dispose(&m_sasl_conn);
-                doDisconnectFromHost(true);
                 return;
             }
         }
     } while (result == SASL_INTERACT);
 
     if (result != SASL_CONTINUE && result != SASL_OK) {
-        Q_EMIT error(KIO::buildErrorString(KIO::ERR_COULD_NOT_AUTHENTICATE, QString::fromUtf8(sasl_errdetail(m_sasl_conn))));
+        handleSaslAuthError();
         sasl_dispose(&m_sasl_conn);
-        doDisconnectFromHost(true);
         return;
     }
 
@@ -288,8 +293,7 @@ void SessionThread::doContinueAuthentication(const Response &response, const QBy
 
     if (response.operationResult() == Response::Other) {
         if (!saslClientStep(data)) {
-            Q_EMIT error(KIO::buildErrorString(KIO::ERR_COULD_NOT_AUTHENTICATE, QString::fromUtf8(sasl_errdetail(m_sasl_conn))));
-            doDisconnectFromHost(true);
+            handleSaslAuthError();
             return;
         }
     } else {
@@ -298,7 +302,7 @@ void SessionThread::doContinueAuthentication(const Response &response, const QBy
             qCDebug(KMANAGERSIEVE_LOG) << "Authentication complete.";
             Q_EMIT authenticationDone();
         } else {
-            Q_EMIT error(KIO::buildErrorString(KIO::ERR_COULD_NOT_AUTHENTICATE,
+            Q_EMIT error(KTcpSocket::UnknownError, KIO::buildErrorString(KIO::ERR_COULD_NOT_AUTHENTICATE,
                                                i18n("Authentication failed.\nMost likely the password is wrong.\nThe server responded:\n%1", QString::fromLatin1(response.action()))));
             doDisconnectFromHost(true);
         }
