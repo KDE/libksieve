@@ -52,9 +52,11 @@ public:
 
     void startSsl();
 
+    enum { AuthenticationError = 1500 }; // "extend" KTcpSocket::Error
+
 Q_SIGNALS:
     void responseReceived(const KManageSieve::Response &response, const QByteArray &data);
-    void error(const QString &error);
+    void error(int errorCode, const QString &error);
     void authenticationDone();
     void sslDone();
     void sslError(const KSslErrorUiData &data);
@@ -81,6 +83,7 @@ private:
     bool saslInteract(void *in);
     bool saslClientStep(const QByteArray &challenge);
     void sslResult(bool encrypted);
+    void handleSaslAuthError();
 
 private:
     Q_DISABLE_COPY(SessionThread)

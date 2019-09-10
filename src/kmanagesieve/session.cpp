@@ -112,7 +112,7 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
                 qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Sieve server ready & awaiting authentication.";
                 if (m_state == PreTlsCapabilities) {
                     if (!allowUnencrypted() && !QSslSocket::supportsSsl()) {
-                        setErrorMessage(KIO::buildErrorString(KIO::ERR_SLAVE_DEFINED, i18n("Cannot use TLS since the underlying Qt library does not support it.")));
+                        setErrorMessage(KTcpSocket::UnknownError, i18n("Cannot use TLS since the underlying Qt library does not support it."));
                         disconnectFromHost();
                         return;
                     }
@@ -122,7 +122,7 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
                                                                    "You can choose to try to initiate TLS negotiations nonetheless, or cancel the operation."),
                                                               i18n("Sieve Server Does Not Advertise TLS"), KGuiItem(i18n("&Start TLS nonetheless")), KStandardGuiItem::cancel(),
                                                               QStringLiteral("ask_starttls_%1").arg(m_url.host())) != KMessageBox::Continue) {
-                        setErrorMessage(KIO::buildErrorString(KIO::ERR_USER_CANCELED, i18n("TLS encryption requested, but not supported by server.")));
+                        setErrorMessage(KTcpSocket::UnknownError, i18n("TLS encryption requested, but not supported by server."));
                         disconnectFromHost();
                         return;
                     }
@@ -163,7 +163,7 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
             m_thread->startSsl();
             m_state = None;
         } else {
-            setErrorMessage(KIO::buildErrorString(KIO::ERR_SLAVE_DEFINED, i18n("The server does not seem to support TLS. Disable TLS if you want to connect without encryption.")));
+            setErrorMessage(KTcpSocket::UnknownError, i18n("The server does not seem to support TLS. Disable TLS if you want to connect without encryption."));
             disconnectFromHost();
         }
         break;
@@ -328,13 +328,17 @@ void Session::sslDone()
     qCDebug(KMANAGERSIEVE_LOG) << objectName() << "TLS negotiation done, m_state=" << m_state;
 }
 
-void Session::setErrorMessage(const QString &msg)
+void Session::setErrorMessage(int error, const QString &msg)
 {
     if (m_currentJob) {
         m_currentJob->setErrorMessage(msg);
     } else {
-        qCWarning(KMANAGERSIEVE_LOG) << objectName() << "No job for reporting this error message!" << msg << " m_url " << m_url.host();
-        KMessageBox::error(nullptr, i18n("The Sieve server on %1 has reported an error:\n%2", m_url.host(),msg), i18n("Sieve Manager"));
+        // Don't bother the user about idle timeout
+        if (error != KTcpSocket::RemoteHostClosedError &&
+            error != KTcpSocket::SocketTimeoutError) {
+            qCWarning(KMANAGERSIEVE_LOG) << objectName() << "No job for reporting this error message!" << msg << "host" << m_url.host() << "error" << error;
+            KMessageBox::error(nullptr, i18n("The Sieve server on %1 has reported an error:\n%2", m_url.host(),msg), i18n("Sieve Manager"));
+        }
     }
 }
 
