@@ -22,9 +22,11 @@
 
 #include <QObject>
 #include <QUrl>
+#include <memory>
 
 #include <KIO/Global>
-#include <KTcpSocket>
+#include <QSslSocket>
+#include <ktcpsocket.h>
 
 #include "sasl-common.h"
 #include "response.h"
@@ -51,8 +53,6 @@ public:
     void continueAuthentication(const Response &response, const QByteArray &data);
 
     void startSsl();
-
-    enum { AuthenticationError = 1500 }; // "extend" KTcpSocket::Error
 
 Q_SIGNALS:
     void responseReceived(const KManageSieve::Response &response, const QByteArray &data);
@@ -88,7 +88,7 @@ private:
 private:
     Q_DISABLE_COPY(SessionThread)
     Session *m_session = nullptr;
-    KTcpSocket *m_socket = nullptr;
+    std::unique_ptr<QSslSocket> m_socket;
 
     QUrl m_url;
 

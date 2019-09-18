@@ -22,6 +22,7 @@
 #include "response.h"
 #include "kmanagersieve_debug.h"
 
+#include <QSslCipher>
 #include <QThread>
 #include <QTimer>
 
@@ -48,7 +49,6 @@ static const sasl_callback_t callbacks[] = {
 SessionThread::SessionThread(Session *session, QObject *parent)
     : QObject(parent)
     , m_session(session)
-    , m_socket(nullptr)
     , m_sasl_conn(nullptr)
     , m_sasl_client_interact(nullptr)
     , m_pendingQuantity(-1)
@@ -82,12 +82,11 @@ SessionThread::~SessionThread()
 void SessionThread::doInit()
 {
     Q_ASSERT(QThread::currentThread() == thread());
-
-    m_socket = new KTcpSocket(this);
-    connect(m_socket, &QIODevice::readyRead, this, &SessionThread::slotDataReceived);
-    connect(m_socket, QOverload<KTcpSocket::Error>::of(&KTcpSocket::error), this, &SessionThread::slotSocketError);
-    connect(m_socket, &KTcpSocket::disconnected, this, &SessionThread::socketDisconnected);
-    connect(m_socket, &KTcpSocket::connected, this, &SessionThread::socketConnected);
+    m_socket = std::make_unique<QSslSocket>();
+    connect(m_socket.get(), &QSslSocket::readyRead, this, &SessionThread::slotDataReceived);
+    connect(m_socket.get(), QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error), this, &SessionThread::slotSocketError);
+    connect(m_socket.get(), &QSslSocket::disconnected, this, &SessionThread::socketDisconnected);
+    connect(m_socket.get(), &QSslSocket::connected, this, &SessionThread::socketConnected);
 }
 
 // Called in secondary thread
@@ -96,7 +95,7 @@ void SessionThread::doDestroy()
     Q_ASSERT(QThread::currentThread() == thread());
 
     doDisconnectFromHost(false);
-    delete m_socket;
+    m_socket.reset();
     delete m_sslCheck;
 
     thread()->quit();
@@ -115,7 +114,7 @@ void SessionThread::doConnectToHost(const QUrl &url)
 {
     Q_ASSERT(QThread::currentThread() == thread());
 
-    if (m_socket->state() == KTcpSocket::ConnectedState || m_socket->state() == KTcpSocket::ConnectingState) {
+    if (m_socket->state() == QAbstractSocket::ConnectedState || m_socket->state() == QAbstractSocket::ConnectingState) {
         return;
     }
 
@@ -226,7 +225,7 @@ void SessionThread::startAuthentication()
 // Called in secondary thread
 void SessionThread::handleSaslAuthError()
 {
-    Q_EMIT error(KTcpSocket::UnknownError, KIO::buildErrorString(KIO::ERR_COULD_NOT_AUTHENTICATE, QString::fromUtf8(sasl_errdetail(m_sasl_conn))));
+    Q_EMIT error(QAbstractSocket::UnknownSocketError, KIO::buildErrorString(KIO::ERR_COULD_NOT_AUTHENTICATE, QString::fromUtf8(sasl_errdetail(m_sasl_conn))));
     doDisconnectFromHost(true);
 }
 
@@ -302,7 +301,7 @@ void SessionThread::doContinueAuthentication(const Response &response, const QBy
             qCDebug(KMANAGERSIEVE_LOG) << "Authentication complete.";
             Q_EMIT authenticationDone();
         } else {
-            Q_EMIT error(KTcpSocket::UnknownError, KIO::buildErrorString(KIO::ERR_COULD_NOT_AUTHENTICATE,
+            Q_EMIT error(QAbstractSocket::UnknownSocketError, KIO::buildErrorString(KIO::ERR_COULD_NOT_AUTHENTICATE,
                                                i18n("Authentication failed.\nMost likely the password is wrong.\nThe server responded:\n%1", QString::fromLatin1(response.action()))));
             doDisconnectFromHost(true);
         }
@@ -423,9 +422,9 @@ void SessionThread::doStartSsl()
         m_sslCheck->setInterval(60 * 1000);
         connect(m_sslCheck, &QTimer::timeout, this, &SessionThread::slotSslTimeout);
     }
-    m_socket->setAdvertisedSslVersion(KTcpSocket::SecureProtocols);
+    m_socket->setProtocol(QSsl::SecureProtocols);
     m_socket->ignoreSslErrors();
-    connect(m_socket, &KTcpSocket::encrypted, this, &SessionThread::slotEncryptedDone);
+    connect(m_socket.get(), &QSslSocket::encrypted, this, &SessionThread::slotEncryptedDone);
     m_sslCheck->start();
     m_socket->startClientEncryption();
 }
@@ -435,7 +434,7 @@ void SessionThread::slotSslTimeout()
 {
     Q_ASSERT(QThread::currentThread() == thread());
 
-    disconnect(m_socket, &KTcpSocket::encrypted, this, &SessionThread::slotEncryptedDone);
+    disconnect(m_socket.get(), &QSslSocket::encrypted, this, &SessionThread::slotEncryptedDone);
     sslResult(false);
 }
 
@@ -453,9 +452,9 @@ void SessionThread::sslResult(bool encrypted)
 {
     Q_ASSERT(QThread::currentThread() == thread());
 
-    const KSslCipher cipher = m_socket->sessionCipher();
+    const QSslCipher cipher = m_socket->sessionCipher();
     const int numberOfSslError = m_socket->sslErrors().count();
-    if (!encrypted || numberOfSslError > 0 || m_socket->encryptionMode() != KTcpSocket::SslClientMode
+    if (!encrypted || numberOfSslError > 0 || !m_socket->isEncrypted()
         || cipher.isNull() || cipher.usedBits() == 0) {
         qCDebug(KMANAGERSIEVE_LOG) << "Initial SSL handshake failed. cipher.isNull() is" << cipher.isNull()
                                    << ", cipher.usedBits() is" << cipher.usedBits()
@@ -463,7 +462,7 @@ void SessionThread::sslResult(bool encrypted)
                                    << "and the list of SSL errors contains"
                                    << numberOfSslError << "items.";
 
-        Q_EMIT sslError(KSslErrorUiData(m_socket));
+        Q_EMIT sslError(KSslErrorUiData(m_socket.get()));
     } else {
         Q_EMIT sslDone();
     }
