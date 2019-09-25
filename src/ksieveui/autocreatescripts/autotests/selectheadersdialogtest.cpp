@@ -19,7 +19,6 @@
 
 #include "selectheadersdialogtest.h"
 #include "../sieveconditions/widgets/selectheadertypecombobox.h"
-#include "kdepimtest_layout.h"
 #include <QTest>
 #include <QStandardPaths>
 #include <QDialogButtonBox>
@@ -48,7 +47,7 @@ void SelectHeadersDialogTest::shouldHaveDefaultValue()
 
     QVBoxLayout *lay = dlg.findChild<QVBoxLayout *>(QStringLiteral("widgetlayout"));
     QVERIFY(lay);
-    KdepimTestLayout::checkContentsMargins(0, lay);
+    QCOMPARE(lay->contentsMargins(), QMargins(0, 0, 0, 0));
 
     KSieveUi::SelectHeadersWidget *mListWidget = dlg.findChild<KSieveUi::SelectHeadersWidget *>(QStringLiteral("listwidget"));
     QVERIFY(mListWidget);

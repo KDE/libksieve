@@ -19,7 +19,6 @@
 
 #include "moveimapfolderwidgettest.h"
 #include "../moveimapfolderwidget.h"
-#include "kdepimtest_layout.h"
 #include <QTest>
 #include <QHBoxLayout>
 #include <QLineEdit>
@@ -39,7 +38,7 @@ void MoveImapFolderWidgetTest::shouldHaveDefaultValue()
 
     QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
-    KdepimTestLayout::checkContentsMargins(0, mainLayout);
+    QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
     QLineEdit *mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
     QVERIFY(mLineEdit);
     QVERIFY(mLineEdit->text().isEmpty());

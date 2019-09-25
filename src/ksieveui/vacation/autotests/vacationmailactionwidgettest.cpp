@@ -19,7 +19,6 @@
 
 #include "vacationmailactionwidgettest.h"
 #include "../vacationmailactionwidget.h"
-#include "kdepimtest_layout.h"
 #include <QHBoxLayout>
 #include <QStackedWidget>
 #include <QTest>
@@ -39,7 +38,7 @@ void VacationMailActionWidgetTest::shouldHaveDefaultValue()
 
     QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
-    KdepimTestLayout::checkContentsMargins(0, mainLayout);
+    QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
     QStackedWidget *mStackedWidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedWidget"));
     QVERIFY(mStackedWidget);
