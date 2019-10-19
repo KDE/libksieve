@@ -245,7 +245,6 @@ target_link_libraries(KF5KSieveUi
     KF5::MailTransport
     KF5::KIOWidgets
     KF5::NewStuff
-    KF5::WindowSystem
     Qt5::WebEngineWidgets
     KF5::PimTextEdit
     KF5::I18n

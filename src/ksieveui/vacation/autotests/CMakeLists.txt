@@ -26,7 +26,6 @@ macro( add_vacation_test _source )
     KF5::Mime
     KF5::I18n
     KF5::IconThemes
-    KF5::WindowSystem
     KF5::MailTransport
     )
 endmacro()

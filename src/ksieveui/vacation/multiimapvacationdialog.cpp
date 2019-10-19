@@ -23,10 +23,8 @@
 
 #include <KLocalizedString>
 #include <KSharedConfig>
-#include <kwindowsystem.h>
 #include <KMessageBox>
 #include <QTabWidget>
-#include <KIconLoader>
 
 #include <QTabBar>
 #include <QApplication>
@@ -59,10 +57,6 @@ MultiImapVacationDialog::MultiImapVacationDialog(MultiImapVacationManager *manag
     d->mVacationManager = manager;
 
     setWindowTitle(i18n("Configure \"Out of Office\" Replies"));
-
-    KWindowSystem::setIcons(winId(), qApp->windowIcon().pixmap(IconSize(KIconLoader::Desktop), IconSize(KIconLoader::Desktop)),
-                            qApp->windowIcon().pixmap(IconSize(KIconLoader::Small), IconSize(KIconLoader::Small)));
-
     init();
     readConfig();
 }

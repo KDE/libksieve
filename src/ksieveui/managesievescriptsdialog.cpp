@@ -26,8 +26,6 @@
 #include "util/sieveimapaccountsettings.h"
 
 #include <KLocalizedString>
-#include <kiconloader.h>
-#include <kwindowsystem.h>
 #include <QPushButton>
 #include <kmessagebox.h>
 #include <KConfigGroup>
@@ -85,8 +83,6 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(SieveImapPasswordProvider *pa
     setModal(false);
     setAttribute(Qt::WA_GroupLeader);
     setAttribute(Qt::WA_DeleteOnClose);
-    KWindowSystem::setIcons(winId(), qApp->windowIcon().pixmap(IconSize(KIconLoader::Desktop), IconSize(KIconLoader::Desktop)),
-                            qApp->windowIcon().pixmap(IconSize(KIconLoader::Small), IconSize(KIconLoader::Small)));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     QFrame *frame = new QFrame;
     mainLayout->addWidget(frame);

@@ -30,7 +30,6 @@
 #include <KLocalizedString>
 #include <QInputDialog>
 #include <QPushButton>
-#include <KIconLoader>
 #include <QIcon>
 
 #include <QVBoxLayout>
@@ -111,26 +110,22 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     mBtnTop = new QPushButton(hb);
     hbHBoxLayout->addWidget(mBtnTop);
     mBtnTop->setIcon(QIcon::fromTheme(QStringLiteral("go-top")));
-    mBtnTop->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     mBtnTop->setMinimumSize(mBtnTop->sizeHint() * 1.2);
 
     mBtnUp = new QPushButton(hb);
     hbHBoxLayout->addWidget(mBtnUp);
     mBtnUp->setAutoRepeat(true);
     mBtnUp->setIcon(QIcon::fromTheme(QStringLiteral("go-up")));
-    mBtnUp->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     mBtnUp->setMinimumSize(mBtnUp->sizeHint() * 1.2);
     mBtnDown = new QPushButton(hb);
     hbHBoxLayout->addWidget(mBtnDown);
     mBtnDown->setAutoRepeat(true);
     mBtnDown->setIcon(QIcon::fromTheme(QStringLiteral("go-down")));
-    mBtnDown->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     mBtnDown->setMinimumSize(mBtnDown->sizeHint() * 1.2);
 
     mBtnBottom = new QPushButton(hb);
     hbHBoxLayout->addWidget(mBtnBottom);
     mBtnBottom->setIcon(QIcon::fromTheme(QStringLiteral("go-bottom")));
-    mBtnBottom->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     mBtnBottom->setMinimumSize(mBtnBottom->sizeHint() * 1.2);
 
     mBtnUp->setToolTip(i18nc("Move selected filter up.", "Up"));
@@ -148,28 +143,24 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     mBtnNew = new QPushButton(hb);
     hbHBoxLayout->addWidget(mBtnNew);
     mBtnNew->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
-    mBtnNew->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     mBtnNew->setToolTip(i18n("New Script"));
     mBtnNew->setMinimumSize(mBtnNew->sizeHint() * 1.2);
 
     mBtnDelete = new QPushButton(hb);
     hbHBoxLayout->addWidget(mBtnDelete);
     mBtnDelete->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
-    mBtnDelete->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     mBtnDelete->setToolTip(i18n("Delete Script"));
     mBtnDelete->setMinimumSize(mBtnDelete->sizeHint() * 1.2);
 
     mBtnRename = new QPushButton(hb);
     mBtnRename->setToolTip(i18n("Rename Script"));
     mBtnRename->setIcon(QIcon::fromTheme(QStringLiteral("edit-rename")));
-    mBtnRename->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     mBtnRename->setMinimumSize(mBtnRename->sizeHint() * 1.2);
     hbHBoxLayout->addWidget(mBtnRename);
 
     mBtnDescription = new QPushButton(hb);
     mBtnDescription->setToolTip(i18n("Edit Script Description"));
     mBtnDescription->setIcon(QIcon::fromTheme(QStringLiteral("edit-comment")));
-    mBtnDescription->setIconSize(QSize(KIconLoader::SizeSmall, KIconLoader::SizeSmall));
     mBtnDescription->setMinimumSize(mBtnDescription->sizeHint() * 1.2);
 
     hbHBoxLayout->addWidget(mBtnDescription);
