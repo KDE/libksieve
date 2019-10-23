@@ -225,7 +225,7 @@ void SessionThread::startAuthentication()
 // Called in secondary thread
 void SessionThread::handleSaslAuthError()
 {
-    Q_EMIT error(QAbstractSocket::UnknownSocketError, KIO::buildErrorString(KIO::ERR_COULD_NOT_AUTHENTICATE, QString::fromUtf8(sasl_errdetail(m_sasl_conn))));
+    Q_EMIT error(QAbstractSocket::UnknownSocketError, KIO::buildErrorString(KIO::ERR_CANNOT_AUTHENTICATE, QString::fromUtf8(sasl_errdetail(m_sasl_conn))));
     doDisconnectFromHost(true);
 }
 
@@ -301,7 +301,7 @@ void SessionThread::doContinueAuthentication(const Response &response, const QBy
             qCDebug(KMANAGERSIEVE_LOG) << "Authentication complete.";
             Q_EMIT authenticationDone();
         } else {
-            Q_EMIT error(QAbstractSocket::UnknownSocketError, KIO::buildErrorString(KIO::ERR_COULD_NOT_AUTHENTICATE,
+            Q_EMIT error(QAbstractSocket::UnknownSocketError, KIO::buildErrorString(KIO::ERR_CANNOT_AUTHENTICATE,
                                                i18n("Authentication failed.\nMost likely the password is wrong.\nThe server responded:\n%1", QString::fromLatin1(response.action()))));
             doDisconnectFromHost(true);
         }

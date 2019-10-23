@@ -403,7 +403,7 @@ bool kio_sieveProtocol::connect(bool useTLSIfAvailable)
     infoMessage(i18n("Authenticating user..."));
     if (!authenticate()) {
         disconnect();
-        error(ERR_COULD_NOT_AUTHENTICATE, i18n("Authentication failed."));
+        error(ERR_CANNOT_AUTHENTICATE, i18n("Authentication failed."));
         return false;
     }
 
@@ -566,7 +566,7 @@ void kio_sieveProtocol::put(const QUrl &url, int /*permissions*/, KIO::JobFlags)
         append_lf2crlf(data, buffer);
         if (newSize < 0) {
             // read error: network in unknown state so disconnect
-            error(ERR_COULD_NOT_READ, i18n("KIO data supply error."));
+            error(ERR_CANNOT_READ, i18n("KIO data supply error."));
             return;
         }
         if (newSize == 0) {
@@ -617,7 +617,7 @@ void kio_sieveProtocol::put(const QUrl &url, int /*permissions*/, KIO::JobFlags)
 
     // upload data to the server
     if (write(data.constData(), bufLen) != bufLen) {
-        error(ERR_COULD_NOT_WRITE, i18n("Network error."));
+        error(ERR_CANNOT_WRITE, i18n("Network error."));
         disconnect(true);
         return;
     }
@@ -842,11 +842,11 @@ void kio_sieveProtocol::urlStat(const QUrl &url)
     QString filename = url.fileName();
 
     if (filename.isEmpty()) {
-        entry.insert(KIO::UDSEntry::UDS_NAME, QStringLiteral("/"));
+        entry.fastInsert(KIO::UDSEntry::UDS_NAME, QStringLiteral("/"));
 
-        entry.insert(KIO::UDSEntry::UDS_FILE_TYPE, S_IFDIR);
+        entry.fastInsert(KIO::UDSEntry::UDS_FILE_TYPE, S_IFDIR);
 
-        entry.insert(KIO::UDSEntry::UDS_ACCESS, 0700);
+        entry.fastInsert(KIO::UDSEntry::UDS_ACCESS, 0700);
 
         statEntry(entry);
     } else {
@@ -985,7 +985,7 @@ bool kio_sieveProtocol::saslInteract(void *in, AuthInfo &ai)
     return true;
 }
 
-#define SASLERROR  error(ERR_COULD_NOT_AUTHENTICATE, i18n("An error occurred during authentication: %1", \
+#define SASLERROR  error(ERR_CANNOT_AUTHENTICATE, i18n("An error occurred during authentication: %1", \
                                                           QString::fromUtf8(sasl_errdetail(conn))));
 
 bool kio_sieveProtocol::authenticate()
@@ -1122,7 +1122,7 @@ bool kio_sieveProtocol::authenticate()
         return true;
     } else {
         // Authentication failed.
-        error(ERR_COULD_NOT_AUTHENTICATE, i18n("Authentication failed.\nMost likely the password is wrong.\nThe server responded:\n%1",
+        error(ERR_CANNOT_AUTHENTICATE, i18n("Authentication failed.\nMost likely the password is wrong.\nThe server responded:\n%1",
                                                QString::fromLatin1(r.getAction())));
         return false;
     }
@@ -1152,7 +1152,7 @@ bool kio_sieveProtocol::sendData(const QByteArray &data)
     // Write the command
     ssize_t write_buf_len = write_buf.length();
     if (write(write_buf.data(), write_buf_len) != write_buf_len) {
-        error(ERR_COULD_NOT_WRITE, i18n("Network error."));
+        error(ERR_CANNOT_WRITE, i18n("Network error."));
         disconnect(true);
         return false;
     }
