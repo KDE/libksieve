@@ -17,7 +17,7 @@
 
 /*
 
-This file only contains legacy code, that can be removed if the lagacy code is not needed anymore.
+This file only contains legacy code, that can be removed if the legacy code is not needed anymore.
 See README for further information.
 
 */
@@ -49,7 +49,7 @@ static inline QString stringReplace(QString s)
 
 /*
 
-This file only contains legacy code, that can be removed if the lagacy code is not needed anymore.
+This file only contains legacy code, that can be removed if the legacy code is not needed anymore.
 See README for further information.
 
 */
@@ -100,7 +100,7 @@ bool Legacy::VacationUtils::parseScript(const QString &script, QString &messageT
 
 /*
 
-This file only contains legacy code, that can be removed if the lagacy code is not needed anymore.
+This file only contains legacy code, that can be removed if the legacy code is not needed anymore.
 See README for further information.
 
 */

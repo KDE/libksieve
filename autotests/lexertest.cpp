@@ -355,7 +355,7 @@ static const TestCase testcases[] = {
         Error::None, 0, 0
     },
     {
-        "Mutiline with a line with only one '.'", "text:\r\nfoo\r\n..\r\nbar\r\n.",
+        "Multiline with a line with only one '.'", "text:\r\nfoo\r\n..\r\nbar\r\n.",
         { { Lexer::MultiLineString, "foo\n.\nbar" }, { Lexer::None, nullptr } },
         Error::None, 0, 0
     },

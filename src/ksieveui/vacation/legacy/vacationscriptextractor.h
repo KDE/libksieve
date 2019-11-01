@@ -37,7 +37,7 @@ namespace KSieveUi {
 namespace Legacy {
 /*
 
-This file only contains legacy code, that can be removed if the lagacy code is not needed anymore.
+This file only contains legacy code, that can be removed if the legacy code is not needed anymore.
 See README for further information.
 
 */
@@ -76,7 +76,7 @@ static const unsigned int numSpamNodes = sizeof spamNodes / sizeof *spamNodes;
 
 /*
 
-This file only contains legacy code, that can be removed if the lagacy code is not needed anymore.
+This file only contains legacy code, that can be removed if the legacy code is not needed anymore.
 See README for further information.
 
 */
@@ -138,7 +138,7 @@ static const unsigned int numDomainNodes = sizeof domainNodes / sizeof *domainNo
 
 /*
 
-This file only contains legacy code, that can be removed if the lagacy code is not needed anymore.
+This file only contains legacy code, that can be removed if the legacy code is not needed anymore.
 See README for further information.
 
 */
@@ -202,7 +202,7 @@ static const unsigned int numDatesNodes = sizeof datesNodes / sizeof *datesNodes
 
 /*
 
-This file only contains legacy code, that can be removed if the lagacy code is not needed anymore.
+This file only contains legacy code, that can be removed if the legacy code is not needed anymore.
 See README for further information.
 
 */
@@ -236,7 +236,7 @@ private:
 
 /*
 
-This file only contains legacy code, that can be removed if the lagacy code is not needed anymore.
+This file only contains legacy code, that can be removed if the legacy code is not needed anymore.
 See README for further information.
 
 */

@@ -58,7 +58,7 @@ void FindBarWebEngineView::searchText(bool backward, bool isAutoSearch)
     if (!isAutoSearch && !mLastSearchStr.contains(searchWord, Qt::CaseSensitive)) {
         clearSelections();
     }
-    d->mView->findText(QString()); //Clear an existing highligh
+    d->mView->findText(QString()); //Clear an existing highlight
     mLastSearchStr = searchWord;
     d->mView->findText(mLastSearchStr, searchOptions, [this](bool found) {
         setFoundMatch(found);

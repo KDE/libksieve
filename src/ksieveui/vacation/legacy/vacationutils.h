@@ -17,7 +17,7 @@
 
 /*
 
-This file only contains legacy code, that can be removed if the lagacy code is not needed anymore.
+This file only contains legacy code, that can be removed if the legacy code is not needed anymore.
 See README for further information.
 
 */
@@ -40,7 +40,7 @@ namespace Legacy {
 namespace VacationUtils {
 /*
 
-This file only contains legacy code, that can be removed if the lagacy code is not needed anymore.
+This file only contains legacy code, that can be removed if the legacy code is not needed anymore.
 See README for further information.
 
 */
@@ -49,7 +49,7 @@ QString KSIEVEUI_DEPRECATED composeScript(const QString &messageText, const QStr
 
 /*
 
-This file only contains legacy code, that can be removed if the lagacy code is not needed anymore.
+This file only contains legacy code, that can be removed if the legacy code is not needed anymore.
 See README for further information.
 
 */

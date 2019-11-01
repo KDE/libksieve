@@ -563,7 +563,7 @@ private:
     }
 };
 
-// verifes that methods get called with expected arguments (and in
+// verifies that methods get called with expected arguments (and in
 // expected sequence) as specified by the TestCase. For automated
 // tests.
 class VerifyingScriptBuilder : public KSieve::ScriptBuilder

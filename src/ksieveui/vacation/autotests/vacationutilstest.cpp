@@ -70,7 +70,7 @@ void VacationUtilsTest::testParseActivate_data()
 
     QTest::newRow("notfound") << QStringLiteral("vacation-notfound.siv") << false << false;
     QTest::newRow("simple") << QStringLiteral("vacation-simple.siv") << true << true;
-    QTest::newRow("multile if") << QStringLiteral("vacation-multiple.siv") << true << true;
+    QTest::newRow("multiple if") << QStringLiteral("vacation-multiple.siv") << true << true;
     QTest::newRow("deactivate") << QStringLiteral("vacation-deactivate.siv") << true << false;
     QTest::newRow("deactivate-multiple if") << QStringLiteral("vacation-deactivate-multiple.siv") << true << false;
     QTest::newRow("deactivate-complex") << QStringLiteral("vacation-deactivate-complex.siv") << true << false;

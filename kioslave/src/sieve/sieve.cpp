@@ -772,7 +772,7 @@ void kio_sieveProtocol::get(const QUrl &url)
         return;
     }
 
-    infoMessage(i18nc("data retrival complete", "Done."));
+    infoMessage(i18nc("data retrieval complete", "Done."));
     finished();
 }
 

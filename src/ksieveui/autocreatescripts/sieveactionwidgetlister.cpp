@@ -414,7 +414,7 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript don't have name attribute " << tagName;
             }
         } else {
-            qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript Unknow tag name " << tagName;
+            qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript Unknown tag name " << tagName;
         }
     } else {
         bool firstAction = true;

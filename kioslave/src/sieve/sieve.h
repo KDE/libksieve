@@ -121,7 +121,7 @@ protected:
     QStringList m_sasl_caps;
     bool m_supportsTLS;
 
-    // Global server respose class
+    // Global server response class
     kio_sieveResponse r;
 
     // connection details

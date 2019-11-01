@@ -48,7 +48,7 @@ which can be activated and deactivated as required, thus enabling splitting of t
 Sieve functionality into more conveniently managed files.
 
 Every sieve server can support KEP:14, because it is only a standardisation of filenames and a
-way to support and enable mutliple scripts.
+way to support and enable multiple scripts.
 
 For more information on Kolab KEP:14 see:
  * http://wiki.kolab.org/KEP:14
