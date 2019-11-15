@@ -16,6 +16,8 @@
 */
 
 #include "sieveeditorwebengineview.h"
+#include <qtwebenginewidgetsversion.h>
+
 #include <KLocalizedString>
 #include <QContextMenuEvent>
 #include <QMenu>
@@ -61,7 +63,11 @@ void SieveEditorWebEngineView::downloadRequested(QWebEngineDownloadItem *downloa
     const QString filename = QFileDialog::getSaveFileName(this, i18n("Save Web Page"));
     if (!filename.isEmpty()) {
         download->setSavePageFormat(QWebEngineDownloadItem::SingleHtmlSaveFormat);
+#if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+        download->setDownloadFileName(filename);
+#else
         download->setPath(filename);
+#endif
         download->accept();
     } else {
         download->cancel();
