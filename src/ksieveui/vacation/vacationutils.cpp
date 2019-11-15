@@ -385,11 +385,11 @@ QString KSieveUi::VacationUtils::mergeRequireLine(const QString &script, const Q
 
     const int requirementscount = requirements.count();
     if (requirementscount > 1) {
-        QStringList req = requirements.toList();
+        QStringList req = requirements.values();
         req.sort();
         lines.insert(insert, QStringLiteral("require [\"%1\"];").arg(req.join(QStringLiteral("\", \""))));
     } else if (requirementscount == 1) {
-        lines.insert(insert, QStringLiteral("require \"%1\";").arg(requirements.toList().at(0)));
+        lines.insert(insert, QStringLiteral("require \"%1\";").arg(requirements.values().at(0)));
     }
 
     return lines.join(QLatin1Char('\n'));
