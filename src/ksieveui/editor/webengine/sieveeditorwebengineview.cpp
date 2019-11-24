@@ -64,7 +64,8 @@ void SieveEditorWebEngineView::downloadRequested(QWebEngineDownloadItem *downloa
     if (!filename.isEmpty()) {
         download->setSavePageFormat(QWebEngineDownloadItem::SingleHtmlSaveFormat);
 #if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 14, 0)
-        download->setDownloadFileName(filename);
+        download->setDownloadDirectory(QFileInfo(fileName).path());
+        download->setDownloadFileName(QFileInfo(fileName).fileName());
 #else
         download->setPath(filename);
 #endif
