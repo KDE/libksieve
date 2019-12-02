@@ -26,7 +26,7 @@
 
 #include <KIO/Global>
 #include <QSslSocket>
-#include <ksslerroruidata.h>
+#include <KSslErrorUiData>
 
 #include "sasl-common.h"
 #include "response.h"

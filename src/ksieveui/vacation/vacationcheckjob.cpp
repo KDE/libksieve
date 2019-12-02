@@ -24,7 +24,7 @@
 #include <kmanagesieve/sievejob.h>
 
 #include <QDate>
-#include <klocalizedstring.h>
+#include <KLocalizedString>
 
 #include "libksieve_debug.h"
 

@@ -27,7 +27,7 @@
 
 #include <KLocalizedString>
 #include <QPushButton>
-#include <kmessagebox.h>
+#include <KMessageBox>
 #include <KConfigGroup>
 
 #include <kmanagesieve/sievejob.h>
