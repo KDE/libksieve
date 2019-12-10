@@ -61,7 +61,7 @@ bool SieveActionBreak::setParamWidgetValue(QXmlStreamReader &element, QWidget *w
                 QLineEdit *name = w->findChild<QLineEdit *>(QStringLiteral("name"));
                 name->setText(AutoCreateScriptUtil::strValue(element));
             } else {
-                unknowTagValue(tagValue, error);
+                unknownTagValue(tagValue, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionBreak::setParamWidgetValue unknown tagValue " << tagValue;
             }
         } else if (tagName == QLatin1String("str")) {

@@ -56,7 +56,7 @@ public:
     Q_REQUIRED_RESULT virtual bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error);
 
     void unknownTag(const QStringRef &tag, QString &error);
-    void unknowTagValue(const QString &tagValue, QString &error);
+    void unknownTagValue(const QString &tagValue, QString &error);
     void tooManyArgument(const QStringRef &tagName, int index, int maxValue, QString &error);
     void tooManyArgument(const QString &tagName, int index, int maxValue, QString &error);
     void serverDoesNotSupportFeatures(const QString &feature, QString &error);

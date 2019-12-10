@@ -126,7 +126,7 @@ bool SieveConditionVirusTest::setParamWidgetValue(QXmlStreamReader &element, QWi
                     }
                 }
             } else {
-                unknowTagValue(tagValue, error);
+                unknownTagValue(tagValue, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionVirusTest::setParamWidgetValue unknown tagValue " << tagValue;
             }
         } else if (tagName == QLatin1String("str")) {

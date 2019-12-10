@@ -103,7 +103,7 @@ void SieveCondition::unknownTag(const QStringRef &tag, QString &error)
     error += i18n("Unknown tag \"%1\" during parsing condition \"%2\"", *tag.string(), name()) + QLatin1Char('\n');
 }
 
-void SieveCondition::unknowTagValue(const QString &tagValue, QString &error)
+void SieveCondition::unknownTagValue(const QString &tagValue, QString &error)
 {
     error += i18n("An unknown tag value \"%1\" was found during parsing condition \"%2\".", tagValue, name()) + QLatin1Char('\n');
 }

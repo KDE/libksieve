@@ -152,7 +152,7 @@ bool SieveConditionSpamTest::setParamWidgetValue(QXmlStreamReader &element, QWid
                     qCDebug(LIBKSIEVE_LOG) << " SieveConditionSpamTest::setParamWidgetValue server has not percent support";
                 }
             } else {
-                unknowTagValue(tagValue, error);
+                unknownTagValue(tagValue, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionSpamTest::setParamWidgetValue unknown tagvalue " << tagValue;
             }
         } else if (tagName == QLatin1String("str")) {

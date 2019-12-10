@@ -123,7 +123,7 @@ bool SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
                 QLineEdit *subject = w->findChild<QLineEdit *>(QStringLiteral("subject"));
                 subject->setText(AutoCreateScriptUtil::strValue(element));
             } else {
-                unknowTagValue(tagValue, error);
+                unknownTagValue(tagValue, error);
                 qCDebug(LIBKSIEVE_LOG) << "SieveActionVacation::setParamWidgetValue unknown tagValue :" << tagValue;
             }
         } else if (tagName == QLatin1String("num")) {

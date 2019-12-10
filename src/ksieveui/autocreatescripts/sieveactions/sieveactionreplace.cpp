@@ -93,7 +93,7 @@ bool SieveActionReplace::setParamWidgetValue(QXmlStreamReader &element, QWidget 
                     headers->setText(strValue);
                 }
             } else {
-                unknowTagValue(tagValue, error);
+                unknownTagValue(tagValue, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionReplace::setParamWidgetValue unknown tagValue " << tagValue;
             }
         } else if (tagName == QLatin1String("crlf")) {
