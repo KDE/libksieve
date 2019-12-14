@@ -141,7 +141,7 @@ bool SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWid
                 SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
                 selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(tagValue, notCondition), name(), error);
             } else {
-                tooManyArgument(tagName, indexTag, 2, error);
+                tooManyArguments(tagName, indexTag, 2, error);
                 qCDebug(LIBKSIEVE_LOG) << "SieveConditionEnvelope::setParamWidgetValue too many argument :" << indexTag;
             }
             ++indexTag;
@@ -153,7 +153,7 @@ bool SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWid
                 AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
                 edit->setCode(AutoCreateScriptUtil::quoteStr(element.readElementText()));
             } else {
-                tooManyArgument(tagName, indexStr, 2, error);
+                tooManyArguments(tagName, indexStr, 2, error);
                 qCDebug(LIBKSIEVE_LOG) << "SieveConditionEnvelope::setParamWidgetValue too many argument indexStr " << indexStr;
             }
             ++indexStr;

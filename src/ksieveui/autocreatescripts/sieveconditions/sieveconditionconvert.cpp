@@ -120,7 +120,7 @@ bool SieveConditionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidg
                 SelectMimeTypeComboBox *toMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("to"));
                 toMimeType->setCode(element.readElementText(), name(), error);
             } else {
-                tooManyArgument(tagName, index, 2, error);
+                tooManyArguments(tagName, index, 2, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionConvert::setParamWidgetValue too many argument :" << index;
             }
             ++index;

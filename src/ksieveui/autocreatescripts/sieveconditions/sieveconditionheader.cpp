@@ -113,7 +113,7 @@ bool SieveConditionHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
                 QString st = AutoCreateScriptUtil::quoteStr(element.readElementText(), true);
                 value->setCode(st);
             } else {
-                tooManyArgument(tagName, index, 2, error);
+                tooManyArguments(tagName, index, 2, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionHeader::setParamWidgetValue too many argument " << index;
             }
             ++index;
@@ -126,7 +126,7 @@ bool SieveConditionHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
                 AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
                 value->setCode(AutoCreateScriptUtil::listValueToStr(element));
             } else {
-                tooManyArgument(tagName, index, 2, error);
+                tooManyArguments(tagName, index, 2, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionHeader::setParamWidgetValue too many argument " << index;
             }
             ++index;

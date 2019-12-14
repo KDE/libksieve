@@ -126,7 +126,7 @@ bool SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
                 AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
                 edit->setCode(AutoCreateScriptUtil::quoteStr(element.readElementText()));
             } else {
-                tooManyArgument(tagName, indexStr, 2, error);
+                tooManyArguments(tagName, indexStr, 2, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionAddress::setParamWidgetValue too many argument :" << index;
             }
             ++indexStr;
@@ -138,7 +138,7 @@ bool SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
                 AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
                 edit->setCode(AutoCreateScriptUtil::listValueToStr(element));
             } else {
-                tooManyArgument(tagName, indexStr, 2, error);
+                tooManyArguments(tagName, indexStr, 2, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionAddress::setParamWidgetValue too many argument :" << index;
             }
             ++indexStr;
@@ -176,7 +176,7 @@ bool SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
             selectAddressPart->setCode(AutoCreateScriptUtil::tagValue(lstTagValue.at(1)), name(), error);
         }
     } else if (lstTagValue.count() > 2) {
-        tooManyArgument(QStringLiteral("tag"), lstTagValue.count(), 2, error);
+        tooManyArguments(QStringLiteral("tag"), lstTagValue.count(), 2, error);
         qCDebug(LIBKSIEVE_LOG) << "SieveConditionAddress::setParamWidgetValue too many argument :" << lstTagValue.count();
     }
 

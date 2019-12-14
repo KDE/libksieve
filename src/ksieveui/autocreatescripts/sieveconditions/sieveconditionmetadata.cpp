@@ -156,7 +156,7 @@ bool SieveConditionMetaData::setParamWidgetValue(QXmlStreamReader &element, QWid
                 break;
             }
             default:
-                tooManyArgument(tagName, index, 3, error);
+                tooManyArguments(tagName, index, 3, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionMetaData::setParamWidgetValue too many argument " << index;
                 break;
             }

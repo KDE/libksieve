@@ -121,7 +121,7 @@ bool SieveConditionDate::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             } else if (index == 2) {
                 value = element.readElementText();
             } else {
-                tooManyArgument(tagName, index, 3, error);
+                tooManyArguments(tagName, index, 3, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionDate::setParamWidgetValue too many argument :" << index;
             }
             ++index;

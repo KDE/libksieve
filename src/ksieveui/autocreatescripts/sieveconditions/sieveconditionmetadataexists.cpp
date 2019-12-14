@@ -105,7 +105,7 @@ bool SieveConditionMetaDataExists::setParamWidgetValue(QXmlStreamReader &element
                 QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
                 value->setText(AutoCreateScriptUtil::quoteStr(tagValue));
             } else {
-                tooManyArgument(tagName, index, 2, error);
+                tooManyArguments(tagName, index, 2, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaDataExists::setParamWidgetValue to many attribute " << index;
             }
             ++index;

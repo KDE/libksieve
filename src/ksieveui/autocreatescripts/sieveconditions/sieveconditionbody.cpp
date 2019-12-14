@@ -116,7 +116,7 @@ bool SieveConditionBody::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             } else if (index == 1) {
                 tagValueList << AutoCreateScriptUtil::tagValueWithCondition(tagValue, notCondition);
             } else {
-                tooManyArgument(tagName, index, 2, error);
+                tooManyArguments(tagName, index, 2, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionBody::setParamWidgetValue too many argument " << index;
             }
             ++index;

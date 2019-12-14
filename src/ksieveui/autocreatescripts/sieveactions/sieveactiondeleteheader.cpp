@@ -92,7 +92,7 @@ bool SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, 
                 QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("valueedit"));
                 value->setText(element.readElementText());
             } else {
-                tooManyArgument(tagName, index, 2, error);
+                tooManyArguments(tagName, index, 2, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionAddHeader::setParamWidgetValue too many argument :" << index;
             }
             ++index;

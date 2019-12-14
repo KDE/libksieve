@@ -119,7 +119,7 @@ bool SieveConditionEnvironment::setParamWidgetValue(QXmlStreamReader &element, Q
                 QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
                 value->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
             } else {
-                tooManyArgument(tagName, index, 2, error);
+                tooManyArguments(tagName, index, 2, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionEnvironment::setParamWidgetValue to many argument " << index;
             }
             ++index;

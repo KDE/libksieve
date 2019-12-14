@@ -83,7 +83,7 @@ bool SieveActionAddHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
                 QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("valueedit"));
                 value->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
             } else {
-                tooManyArgument(tagName, index, 2, error);
+                tooManyArguments(tagName, index, 2, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionAddHeader::setParamWidgetValue too many argument :" << index;
             }
             ++index;
