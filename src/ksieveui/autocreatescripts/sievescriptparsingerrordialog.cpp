@@ -33,7 +33,7 @@ using namespace KSieveUi;
 SieveScriptParsingErrorDialog::SieveScriptParsingErrorDialog(QWidget *parent)
     : QDialog(parent)
 {
-    setWindowTitle(i18n("Sieve Parsing Error"));
+    setWindowTitle(i18nc("@title:window", "Sieve Parsing Error"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     mTextEdit = new KPIMTextEdit::RichTextEditorWidget(this);

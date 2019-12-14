@@ -38,7 +38,7 @@ using namespace KSieveUi;
 ParsingResultDialog::ParsingResultDialog(QWidget *parent)
     : QDialog(parent)
 {
-    setWindowTitle(i18n("Sieve Parsing"));
+    setWindowTitle(i18nc("@title:window", "Sieve Parsing"));
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
 
     QVBoxLayout *mainLayout = new QVBoxLayout(this);

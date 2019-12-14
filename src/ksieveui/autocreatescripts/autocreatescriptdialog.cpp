@@ -36,7 +36,7 @@ using namespace KSieveUi;
 AutoCreateScriptDialog::AutoCreateScriptDialog(QWidget *parent)
     : QDialog(parent)
 {
-    setWindowTitle(i18n("Create sieve filter"));
+    setWindowTitle(i18nc("@title:window", "Create Sieve Filter"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
