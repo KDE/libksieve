@@ -156,7 +156,7 @@ void SieveScriptDebuggerFrontEndWidget::slotDebugScript()
 
     QTemporaryFile *temporaryFile = new QTemporaryFile();
     if (!temporaryFile->open()) {
-        mSieveScriptDebuggerWarning->setErrorMessage(i18n("Impossible to open temporary file."));
+        mSieveScriptDebuggerWarning->setErrorMessage(i18n("Failed to open temporary file."));
         delete temporaryFile;
         return;
     }

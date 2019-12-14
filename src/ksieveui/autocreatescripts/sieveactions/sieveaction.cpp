@@ -136,7 +136,7 @@ void SieveAction::unknownTagValue(const QString &tagValue, QString &error)
 
 void SieveAction::tooManyArguments(const QStringRef &tagName, int index, int maxValue, QString &error)
 {
-    error += i18n("Too many argument found for \"%1\", max value is %2, number of value found %3 for %4", name(), maxValue, index, *tagName.string()) + QLatin1Char('\n');
+    error += i18n("Too many arguments found for \"%1\", max value is %2, number of value found %3 for %4", name(), maxValue, index, *tagName.string()) + QLatin1Char('\n');
 }
 
 void SieveAction::serverDoesNotSupportFeatures(const QString &feature, QString &error)

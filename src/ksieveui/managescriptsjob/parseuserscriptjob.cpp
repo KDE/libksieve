@@ -84,7 +84,7 @@ void ParseUserScriptJob::slotGetResult(KManageSieve::SieveJob *job, bool success
     if (result) {
         emitSuccess(lst);
     } else {
-        emitError(i18n("Script parsing error"));
+        emitError(i18n("Script parsing error."));
     }
 }
 
