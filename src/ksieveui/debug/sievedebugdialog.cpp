@@ -36,7 +36,7 @@ SieveDebugDialog::SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, 
     : QDialog(parent)
     , mPasswordProvider(passwordProvider)
 {
-    setWindowTitle(i18n("Sieve Diagnostics"));
+    setWindowTitle(i18nc("@title:window", "Sieve Diagnostics"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     // Collect all accounts

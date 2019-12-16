@@ -56,7 +56,7 @@ MultiImapVacationDialog::MultiImapVacationDialog(MultiImapVacationManager *manag
 {
     d->mVacationManager = manager;
 
-    setWindowTitle(i18n("Configure \"Out of Office\" Replies"));
+    setWindowTitle(i18nc("@title:window", "Configure \"Out of Office\" Replies"));
     init();
     readConfig();
 }

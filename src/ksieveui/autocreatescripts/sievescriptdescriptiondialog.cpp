@@ -32,7 +32,7 @@ using namespace KSieveUi;
 SieveScriptDescriptionDialog::SieveScriptDescriptionDialog(QWidget *parent)
     : QDialog(parent)
 {
-    setWindowTitle(i18n("Description"));
+    setWindowTitle(i18nc("@title:window", "Description"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     mEdit = new KPIMTextEdit::PlainTextEditorWidget(this);

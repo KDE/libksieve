@@ -46,7 +46,7 @@ SieveEditor::SieveEditor(QWidget *parent)
     : QDialog(parent)
     , d(new KSieveUi::SieveEditorPrivate)
 {
-    setWindowTitle(i18n("Edit Sieve Script"));
+    setWindowTitle(i18nc("@title:window", "Edit Sieve Script"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);

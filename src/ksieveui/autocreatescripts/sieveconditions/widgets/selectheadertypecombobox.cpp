@@ -38,7 +38,7 @@ static const char selectMultipleHeaders[] = I18N_NOOP("Select multiple headers..
 SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     : QDialog(parent)
 {
-    setWindowTitle(i18n("Headers"));
+    setWindowTitle(i18nc("@title:window", "Headers"));
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));

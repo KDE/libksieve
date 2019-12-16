@@ -36,7 +36,7 @@ using namespace KSieveUi;
 SelectFlagsListDialog::SelectFlagsListDialog(QWidget *parent)
     : QDialog(parent)
 {
-    setWindowTitle(i18n("Flags"));
+    setWindowTitle(i18nc("@title:window", "Flags"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mListWidget = new SelectFlagsListWidget(this);
     mainLayout->addWidget(mListWidget);

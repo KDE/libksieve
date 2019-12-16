@@ -34,7 +34,7 @@ SieveScriptDebuggerDialog::SieveScriptDebuggerDialog(QWidget *parent)
     : QDialog(parent)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    setWindowTitle(i18n("Debug Sieve Script"));
+    setWindowTitle(i18nc("@title:window", "Debug Sieve Script"));
 
     mSieveScriptDebuggerWidget = new SieveScriptDebuggerWidget(this);
     mSieveScriptDebuggerWidget->setObjectName(QStringLiteral("sievescriptdebuggerwidget"));

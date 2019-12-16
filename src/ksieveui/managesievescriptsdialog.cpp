@@ -79,7 +79,7 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(SieveImapPasswordProvider *pa
     : QDialog(parent)
     , d(new KSieveUi::ManageSieveScriptsDialogPrivate)
 {
-    setWindowTitle(i18n("Manage Sieve Scripts"));
+    setWindowTitle(i18nc("@title:window", "Manage Sieve Scripts"));
     setModal(false);
     setAttribute(Qt::WA_GroupLeader);
     setAttribute(Qt::WA_DeleteOnClose);
