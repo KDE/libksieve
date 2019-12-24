@@ -333,10 +333,10 @@ void Session::setErrorMessage(int error, const QString &msg)
         m_currentJob->setErrorMessage(msg);
     } else {
         // Don't bother the user about idle timeout
-        if (error != QAbstractSocket::RemoteHostClosedError &&
-            error != QAbstractSocket::SocketTimeoutError) {
+        if (error != QAbstractSocket::RemoteHostClosedError
+            && error != QAbstractSocket::SocketTimeoutError) {
             qCWarning(KMANAGERSIEVE_LOG) << objectName() << "No job for reporting this error message!" << msg << "host" << m_url.host() << "error" << error;
-            KMessageBox::error(nullptr, i18n("The Sieve server on %1 has reported an error:\n%2", m_url.host(),msg), i18n("Sieve Manager"));
+            KMessageBox::error(nullptr, i18n("The Sieve server on %1 has reported an error:\n%2", m_url.host(), msg), i18n("Sieve Manager"));
         }
     }
 }

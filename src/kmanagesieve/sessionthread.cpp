@@ -302,7 +302,7 @@ void SessionThread::doContinueAuthentication(const Response &response, const QBy
             Q_EMIT authenticationDone();
         } else {
             Q_EMIT error(QAbstractSocket::UnknownSocketError, KIO::buildErrorString(KIO::ERR_CANNOT_AUTHENTICATE,
-                                               i18n("Authentication failed.\nMost likely the password is wrong.\nThe server responded:\n%1", QString::fromLatin1(response.action()))));
+                                                                                    i18n("Authentication failed.\nMost likely the password is wrong.\nThe server responded:\n%1", QString::fromLatin1(response.action()))));
             doDisconnectFromHost(true);
         }
     }

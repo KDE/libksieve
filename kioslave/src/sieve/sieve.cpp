@@ -943,7 +943,7 @@ bool kio_sieveProtocol::saslInteract(void *in, AuthInfo &ai)
     for (; interact->id != SASL_CB_LIST_END; interact++) {
         if (interact->id == SASL_CB_AUTHNAME
             || interact->id == SASL_CB_PASS) {
-            if (m_sUser.isEmpty() || m_sPass.isEmpty()) {                
+            if (m_sUser.isEmpty() || m_sPass.isEmpty()) {
                 const int errorCode = openPasswordDialogV2(ai);
                 if (errorCode) {
                     // calling error() below is wrong for two reasons:
@@ -986,7 +986,7 @@ bool kio_sieveProtocol::saslInteract(void *in, AuthInfo &ai)
 }
 
 #define SASLERROR  error(ERR_CANNOT_AUTHENTICATE, i18n("An error occurred during authentication: %1", \
-                                                          QString::fromUtf8(sasl_errdetail(conn))));
+                                                       QString::fromUtf8(sasl_errdetail(conn))));
 
 bool kio_sieveProtocol::authenticate()
 {
@@ -1123,7 +1123,7 @@ bool kio_sieveProtocol::authenticate()
     } else {
         // Authentication failed.
         error(ERR_CANNOT_AUTHENTICATE, i18n("Authentication failed.\nMost likely the password is wrong.\nThe server responded:\n%1",
-                                               QString::fromLatin1(r.getAction())));
+                                            QString::fromLatin1(r.getAction())));
         return false;
     }
 }

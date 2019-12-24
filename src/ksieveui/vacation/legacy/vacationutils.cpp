@@ -53,8 +53,7 @@ This file only contains legacy code, that can be removed if the legacy code is n
 See README for further information.
 
 */
-bool Legacy::VacationUtils::parseScript(const QString &script, QString &messageText, QString &subject, int &notificationInterval, AddrSpecList &aliases, bool &sendForSpam, QString &domainName,
-                                        QDate &startDate, QDate &endDate)
+bool Legacy::VacationUtils::parseScript(const QString &script, QString &messageText, QString &subject, int &notificationInterval, AddrSpecList &aliases, bool &sendForSpam, QString &domainName, QDate &startDate, QDate &endDate)
 {
     const QString trimmedScript = script.trimmed();
     if (trimmedScript.isEmpty()) {
@@ -104,8 +103,7 @@ This file only contains legacy code, that can be removed if the legacy code is n
 See README for further information.
 
 */
-QString Legacy::VacationUtils::composeScript(const QString &messageText, const QString &subject, int notificationInterval, const AddrSpecList &addrSpecs, bool sendForSpam, const QString &domain,
-                                             const QDate &startDate, const QDate &endDate)
+QString Legacy::VacationUtils::composeScript(const QString &messageText, const QString &subject, int notificationInterval, const AddrSpecList &addrSpecs, bool sendForSpam, const QString &domain, const QDate &startDate, const QDate &endDate)
 {
     QString addressesArgument;
     QStringList aliases;

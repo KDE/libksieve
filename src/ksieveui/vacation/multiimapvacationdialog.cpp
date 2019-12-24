@@ -86,10 +86,10 @@ void MultiImapVacationDialog::reject()
         if (vacationPage) {
             if (vacationPage->wasChanged()) {
                 if (KMessageBox::questionYesNo(
-                            this,
-                            i18nc("@info", "Do you really want to cancel?"),
-                            i18nc("@title:window", "Confirmation")) == KMessageBox::Yes) {
-                        QDialog::reject(); // Discard current changes
+                        this,
+                        i18nc("@info", "Do you really want to cancel?"),
+                        i18nc("@title:window", "Confirmation")) == KMessageBox::Yes) {
+                    QDialog::reject();     // Discard current changes
                 }
                 canCloseDialog = false;
                 break;
