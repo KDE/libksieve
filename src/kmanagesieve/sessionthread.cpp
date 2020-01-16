@@ -210,9 +210,21 @@ void SessionThread::slotSocketError()
 {
     Q_ASSERT(QThread::currentThread() == thread());
 
-    qCWarning(KMANAGERSIEVE_LOG) << Q_FUNC_INFO << m_socket->error() << m_socket->errorString();
+    qCWarning(KMANAGERSIEVE_LOG) << Q_FUNC_INFO <<
+                                #if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
+                                    m_socket->error()
+                                #else
+                                    m_socket->socketError()
+                                #endif
+                                 << m_socket->errorString();
 
-    Q_EMIT error(m_socket->error(), m_socket->errorString());
+    Q_EMIT error(
+            #if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
+                m_socket->error()
+            #else
+                m_socket->socketError()
+            #endif
+                , m_socket->errorString());
     doDisconnectFromHost(false);
 }
 
@@ -453,7 +465,11 @@ void SessionThread::sslResult(bool encrypted)
     Q_ASSERT(QThread::currentThread() == thread());
 
     const QSslCipher cipher = m_socket->sessionCipher();
+#if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
     const int numberOfSslError = m_socket->sslErrors().count();
+#else
+    const int numberOfSslError = m_socket->sslHandshakeErrors().count();
+#endif
     if (!encrypted || numberOfSslError > 0 || !m_socket->isEncrypted()
         || cipher.isNull() || cipher.usedBits() == 0) {
         qCDebug(KMANAGERSIEVE_LOG) << "Initial SSL handshake failed. cipher.isNull() is" << cipher.isNull()
