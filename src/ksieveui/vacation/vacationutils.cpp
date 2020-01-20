@@ -376,11 +376,21 @@ QString KSieveUi::VacationUtils::mergeRequireLine(const QString &script, const Q
         for (int i = insert; i <= endOld; ++i) {
             lines.removeAt(insert);
         }
+#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
         requirements = rx.requirements().toSet();
+#else
+        const auto requirementsSet = rx.requirements();
+        requirements = QSet<QString>(requirementsSet.begin(), requirementsSet.end());
+#endif
     }
 
     if (parserUpdate.parse() && rxUpdate.commandFound()) {
+#if QT_VERSION < QT_VERSION_CHECK(5, 14, 0)
         requirements += rxUpdate.requirements().toSet();
+#else
+        const auto requirementsSet = rxUpdate.requirements();
+        requirements += QSet<QString>(requirementsSet.begin(), requirementsSet.end());
+#endif
     }
 
     const int requirementscount = requirements.count();
