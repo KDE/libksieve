@@ -191,7 +191,7 @@ bool ManageSieveWidget::canAddNewScript(QTreeWidgetItem *item, bool jobsListIsEm
             return false;
         }
 
-        if (!mUrls.count(item)) {
+        if (!mUrls.contains(item)) {
             return false;
         }
         return true;
@@ -225,7 +225,7 @@ void ManageSieveWidget::slotNewScript()
         return;
     }
 
-    if (!mUrls.count(currentItem)) {
+    if (!mUrls.contains(currentItem)) {
         return;
     }
 
@@ -295,7 +295,7 @@ void ManageSieveWidget::slotEditScript()
         return;
     }
     QTreeWidgetItem *parent = currentItem->parent();
-    if (!mUrls.count(parent)) {
+    if (!mUrls.contains(parent)) {
         return;
     }
     QUrl url = mUrls[parent];
@@ -335,10 +335,10 @@ void ManageSieveWidget::changeActiveScript(QTreeWidgetItem *item, bool activate)
     if (!item) {
         return;
     }
-    if (!mUrls.count(item)) {
+    if (!mUrls.contains(item)) {
         return;
     }
-    if (!d->mSelectedItems.count(item)) {
+    if (!d->mSelectedItems.contains(item)) {
         return;
     }
     QUrl u = mUrls[item];
@@ -418,7 +418,7 @@ void ManageSieveWidget::slotRenameScript()
         return;
     }
 
-    if (!mUrls.count(parent)) {
+    if (!mUrls.contains(parent)) {
         return;
     }
 
@@ -481,7 +481,7 @@ void ManageSieveWidget::slotDeleteScript()
         return;
     }
 
-    if (!mUrls.count(parent)) {
+    if (!mUrls.contains(parent)) {
         return;
     }
 
@@ -650,7 +650,7 @@ void ManageSieveWidget::enableDisableActions(bool &newScriptAction, bool &editSc
     bool enabled = true;
     if (!item) {
         enabled = false;
-    } else if (!item->parent() && !mUrls.count(item)) {
+    } else if (!item->parent() && !mUrls.contains(item)) {
         enabled = false;
     }
 
@@ -663,7 +663,7 @@ void ManageSieveWidget::enableDisableActions(bool &newScriptAction, bool &editSc
         if (serverHasError(item) || !mJobs.keys(item).isEmpty()) {
             newScriptAction = false;
         } else {
-            newScriptAction = mUrls.count(item);
+            newScriptAction = mUrls.contains(item);
         }
         enabled = isFileNameItem(item);
         editScriptAction = enabled;
