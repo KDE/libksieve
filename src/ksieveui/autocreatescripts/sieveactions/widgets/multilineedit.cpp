@@ -49,7 +49,7 @@ QSize MultiLineEdit::sizeHint() const
     opt.midLineWidth = 0;
     opt.state |= QStyle::State_Sunken;
 
-    QSize s = style()->sizeFromContents(QStyle::CT_LineEdit, &opt, QSize(100, h).expandedTo(QApplication::globalStrut()), this);
+    QSize s = style()->sizeFromContents(QStyle::CT_LineEdit, &opt, QSize(100, h), this);
 
     return s;
 }
