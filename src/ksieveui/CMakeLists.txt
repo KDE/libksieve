@@ -223,7 +223,16 @@ set(ksieveui_LIB_SRCS
     ${ksieveui_managescriptjob_LIB_SRCS}
     )
 
-ecm_qt_declare_logging_category(ksieveui_LIB_SRCS HEADER libksieve_debug.h IDENTIFIER LIBKSIEVE_LOG CATEGORY_NAME org.kde.pim.libksieve)
+if (ECM_VERSION VERSION_LESS "5.68.0")
+    ecm_qt_declare_logging_category(ksieveui_LIB_SRCS HEADER libksieve_debug.h IDENTIFIER LIBKSIEVE_LOG CATEGORY_NAME org.kde.pim.libksieve)
+else()
+    ecm_qt_declare_logging_category(ksieveui_LIB_SRCS HEADER libksieve_debug.h IDENTIFIER LIBKSIEVE_LOG CATEGORY_NAME org.kde.pim.libksieve
+        DESCRIPTION "kdepim (libksieve)"
+        OLD_CATEGORY_NAMES log_libksieve
+        EXPORT LIBKSIEVE
+    )
+endif()
+
 
 kconfig_add_kcfg_files(ksieveui_LIB_SRCS settings/sieve-vacation.kcfgc settings/sieve-editor.kcfgc)
 

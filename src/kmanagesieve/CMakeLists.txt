@@ -4,7 +4,16 @@ set(kmanagesieve_LIB_SRCS
   sessionthread.cpp
   sievejob.cpp
 )
-ecm_qt_declare_logging_category(kmanagesieve_LIB_SRCS HEADER kmanagersieve_debug.h IDENTIFIER KMANAGERSIEVE_LOG CATEGORY_NAME org.kde.pim.kmanagersieve)
+if (ECM_VERSION VERSION_LESS "5.68.0")
+    ecm_qt_declare_logging_category(kmanagesieve_LIB_SRCS HEADER kmanagersieve_debug.h IDENTIFIER KMANAGERSIEVE_LOG CATEGORY_NAME org.kde.pim.kmanagersieve)
+else()
+    ecm_qt_declare_logging_category(kmanagesieve_LIB_SRCS HEADER kmanagersieve_debug.h IDENTIFIER KMANAGERSIEVE_LOG CATEGORY_NAME org.kde.pim.kmanagersieve
+        DESCRIPTION "kdepim (libksieve manager)"
+        OLD_CATEGORY_NAMES log_kmanagersieve
+        EXPORT LIBKSIEVE
+    )
+endif()
+
 
 add_library(KF5KManageSieve ${kmanagesieve_LIB_SRCS})
 generate_export_header(KF5KManageSieve BASE_NAME kmanagesieve)
