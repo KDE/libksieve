@@ -211,19 +211,11 @@ void SessionThread::slotSocketError()
     Q_ASSERT(QThread::currentThread() == thread());
 
     qCWarning(KMANAGERSIEVE_LOG) << Q_FUNC_INFO <<
-                                #if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
                                     m_socket->error()
-                                #else
-                                    m_socket->socketError()
-                                #endif
                                  << m_socket->errorString();
 
     Q_EMIT error(
-            #if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
                 m_socket->error()
-            #else
-                m_socket->socketError()
-            #endif
                 , m_socket->errorString());
     doDisconnectFromHost(false);
 }
