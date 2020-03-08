@@ -27,7 +27,6 @@ namespace KPIMTextEdit {
 class PlainTextEditorWidget;
 }
 class KUrlRequester;
-class QPushButton;
 class QProcess;
 class KLineEdit;
 class QSplitter;
