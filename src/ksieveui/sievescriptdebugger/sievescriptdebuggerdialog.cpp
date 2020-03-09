@@ -81,7 +81,9 @@ void SieveScriptDebuggerDialog::debugButtonEnableStateChanged(bool state)
 
 void SieveScriptDebuggerDialog::slotScriptTextChanged()
 {
-    mOkButton->setEnabled(mOriginScript != mSieveScriptDebuggerWidget->script());
+    if (mSieveScriptDebuggerWidget->haveDebugApps()) {
+        mOkButton->setEnabled(mOriginScript != mSieveScriptDebuggerWidget->script());
+    }
 }
 
 void SieveScriptDebuggerDialog::slotAccepted()

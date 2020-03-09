@@ -94,9 +94,16 @@ QString SieveScriptDebuggerWidget::script() const
 void SieveScriptDebuggerWidget::checkSieveTestApplication()
 {
     if (QStandardPaths::findExecutable(QStringLiteral("sieve-test")).isEmpty()) {
+        mHaveDebugApps = false;
         mStackedWidget->setCurrentWidget(mSieveNoExistingFrontEnd);
         Q_EMIT sieveTestNotFound();
     } else {
+        mHaveDebugApps = true;
         mStackedWidget->setCurrentWidget(mSieveScriptFrontEnd);
     }
+}
+
+bool SieveScriptDebuggerWidget::haveDebugApps() const
+{
+    return mHaveDebugApps;
 }

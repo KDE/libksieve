@@ -38,12 +38,14 @@ public:
     ~SieveScriptDebuggerWidget();
 
     void setScript(const QString &script);
-    QString script() const;
+    Q_REQUIRED_RESULT QString script() const;
 
     bool canAccept() const;
 
     QList<int> splitterSizes() const;
     void setSplitterSizes(const QList<int> &sizes);
+
+    Q_REQUIRED_RESULT bool haveDebugApps() const;
 
 Q_SIGNALS:
     void scriptTextChanged();
@@ -56,6 +58,7 @@ private:
     QStackedWidget *mStackedWidget = nullptr;
     SieveScriptDebuggerFrontEndWidget *mSieveScriptFrontEnd = nullptr;
     QLabel *mSieveNoExistingFrontEnd = nullptr;
+    bool mHaveDebugApps = false;
 };
 }
 #endif // SIEVESCRIPTDEBUGGERWIDGET_H
