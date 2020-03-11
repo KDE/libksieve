@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.5)
-set(PIM_VERSION "5.13.40")
+set(PIM_VERSION "5.13.80")
 
 project(libksieve VERSION ${PIM_VERSION})
 
-set(KF5_MIN_VERSION "5.67.0")
+set(KF5_MIN_VERSION "5.68.0")
 
 find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
@@ -105,15 +105,11 @@ endif()
 
 add_subdirectory(src)
 add_subdirectory(kioslave)
-if (ECM_VERSION VERSION_LESS "5.68.0")
-    install(FILES libksieve.categories libksieve.renamecategories  DESTINATION  ${KDE_INSTALL_LOGGINGCATEGORIESDIR})
-else ()
-    ecm_qt_install_logging_categories(
+ecm_qt_install_logging_categories(
         EXPORT LIBKSIEVE
         FILE libksieve.categories
         DESTINATION ${KDE_INSTALL_LOGGINGCATEGORIESDIR}
         )
-endif()
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
