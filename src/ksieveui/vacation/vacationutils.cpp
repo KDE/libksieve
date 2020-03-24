@@ -205,10 +205,10 @@ VacationUtils::Vacation VacationUtils::parseScript(const QString &script)
     if (!vacation.active && !vdx.ifComment().isEmpty()) {
         const QByteArray newScript = QByteArrayLiteral("if ") + vdx.ifComment().toUtf8() + QByteArrayLiteral("{vacation;}");
         tsb = KSieveExt::MultiScriptBuilder(&sdx, &drdx, &dx);
-        KSieve::Parser parser(newScript.begin(),
+        KSieve::Parser activeScriptParser(newScript.begin(),
                               newScript.begin() + newScript.length());
-        parser.setScriptBuilder(&tsb);
-        if (!parser.parse()) {
+        activeScriptParser.setScriptBuilder(&tsb);
+        if (!activeScriptParser.parse()) {
             vacation.valid = false;
             return vacation;
         }

@@ -209,11 +209,11 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         const QString resultCustomAuthentication = interface->sieveCustomAuthentification();
         if (resultCustomAuthentication == QLatin1String("ImapUserPassword")) {
             u.setUserName(interface->userName());
-            const QString pwd = provider->password(identifier);
-            u.setPassword(pwd);
+            const QString imapPwd = provider->password(identifier);
+            u.setPassword(imapPwd);
         } else if (resultCustomAuthentication == QLatin1String("CustomUserPassword")) {
-            const QString pwd = provider->sieveCustomPassword(identifier);
-            u.setPassword(pwd);
+            const QString customPwd = provider->sieveCustomPassword(identifier);
+            u.setPassword(customPwd);
             u.setUserName(interface->sieveCustomUsername());
         } else {
             qCWarning(LIBKSIEVE_LOG) << "resultCustomAuthentication undefined " << resultCustomAuthentication;

@@ -100,7 +100,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
 
     mStartTime = new KTimeComboBox(this);
     mStartTime->setObjectName(QStringLiteral("mStartTime"));
-    mStartTime->setOptions(KTimeComboBox::EditTime | KTimeComboBox::SelectTime | KTimeComboBox::EditTime | KTimeComboBox::WarnOnInvalid);
+    mStartTime->setOptions(KTimeComboBox::EditTime | KTimeComboBox::SelectTime | KTimeComboBox::WarnOnInvalid);
     mStartTime->setEnabled(false); // Disable by default - we need an extension to support this
     connect(mStartTime, &KTimeComboBox::timeChanged, this, &VacationEditWidget::setWasChanged);
     connect(mStartTime, &KTimeComboBox::timeEdited, this, &VacationEditWidget::setWasChanged);
@@ -131,7 +131,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
 
     mEndTime = new KTimeComboBox(this);
     mEndTime->setObjectName(QStringLiteral("mEndTime"));
-    mEndTime->setOptions(KTimeComboBox::EditTime | KTimeComboBox::SelectTime | KTimeComboBox::EditTime | KTimeComboBox::WarnOnInvalid);
+    mEndTime->setOptions(KTimeComboBox::EditTime | KTimeComboBox::SelectTime | KTimeComboBox::WarnOnInvalid);
     mEndTime->setEnabled(false); // Disable by default - we need an extension to support this
     connect(mEndTime, &KTimeComboBox::timeChanged, this, &VacationEditWidget::setWasChanged);
     connect(mEndTime, &KTimeComboBox::timeEdited, this, &VacationEditWidget::setWasChanged);
