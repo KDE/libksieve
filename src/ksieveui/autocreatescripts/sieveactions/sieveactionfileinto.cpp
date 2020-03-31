@@ -121,6 +121,7 @@ QWidget *SieveActionFileInto::createParamWidget(QWidget *parent) const
     }
 
     KSieveUi::AbstractMoveImapFolderWidget *edit = AutoCreateScriptUtil::createImapFolderWidget();
+    edit->setSieveImapAccountSettings(sieveImapAccountSettings());
     connect(edit, &KSieveUi::AbstractMoveImapFolderWidget::textChanged, this, &SieveActionFileInto::valueChanged);
     lay->addWidget(edit);
     edit->setObjectName(QStringLiteral("fileintolineedit"));

@@ -22,8 +22,10 @@
 
 #include <QObject>
 #include <QUrl>
+
 class QXmlStreamReader;
 namespace KSieveUi {
+class SieveImapAccountSettings;
 class SieveEditorGraphicalModeWidget;
 class SieveCondition : public QObject
 {
@@ -61,14 +63,15 @@ public:
     void tooManyArguments(const QString &tagName, int index, int maxValue, QString &error);
     void serverDoesNotSupportFeatures(const QString &feature, QString &error);
 
-    QString comment() const;
+    Q_REQUIRED_RESULT QString comment() const;
 
     void setComment(const QString &comment);
 
-    QString generateComment() const;
+    Q_REQUIRED_RESULT QString generateComment() const;
 
 protected:
-    QStringList sieveCapabilities() const;
+    Q_REQUIRED_RESULT KSieveUi::SieveImapAccountSettings sieveImapAccountSettings() const;
+    Q_REQUIRED_RESULT QStringList sieveCapabilities() const;
     SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
 
 Q_SIGNALS:
