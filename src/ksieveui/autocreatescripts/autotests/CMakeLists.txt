@@ -23,3 +23,5 @@ add_sieveeditor_autocreatescripts(selectheadersdialogtest.cpp "../sievecondition
 add_sieveeditor_autocreatescripts(sieveeditorgraphicalmodewidgettest.cpp "${ksieveui_sieveeditor_autocreatescripts_LIB_SRCS};../../tests/capability.cpp")
 add_sieveeditor_autocreatescripts(sievedatespinboxtest.cpp "")
 add_sieveeditor_autocreatescripts(regexpeditorlineedittest.cpp "")
+
+add_sieveeditor_autocreatescripts(sievescriptlistboxtest.cpp "")

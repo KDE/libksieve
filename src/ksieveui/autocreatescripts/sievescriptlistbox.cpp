@@ -98,7 +98,10 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     : QGroupBox(title, parent)
 {
     QVBoxLayout *layout = new QVBoxLayout(this);
+    layout->setObjectName(QStringLiteral("layout"));
     mSieveListScript = new QListWidget(this);
+    mSieveListScript->setObjectName(QStringLiteral("mSieveListScript"));
+    mSieveListScript->setDragDropMode(QAbstractItemView::InternalMove);
     layout->addWidget(mSieveListScript);
 
     //----------- the first row of buttons
