@@ -33,22 +33,21 @@ public:
     //Keep sync with KIMAP settings.
     enum EncryptionMode {
         Unencrypted = 0,
-        TlsV1,
-        SslV2,
-        SslV3,
-        SslV3_1,
-        AnySslVersion
+        SSLorTLS, /*!< Use SSL/TLS encryption, KIMAP will automatically negoatiate
+                       the best supported encryption protocol. */
+        STARTTLS  /*!< Use STARTTLS to upgrade an initially plaintext connection to
+                       encrypted connection. KIMAP will automatically negoatiate
+                       the best supported encryption protocol. */
     };
 
     enum AuthenticationMode {
-        Login = 0,
+        ClearText = 0,
+        Login,
         Plain,
         CramMD5,
         DigestMD5,
-        GSSAPI,
         NTLM,
-        APOP,
-        ClearText,
+        GSSAPI,
         Anonymous,
         XOAuth2
     };
