@@ -19,6 +19,7 @@
 #include "sieveconditionmetadataexists.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
+#include "util/sieveimapaccountsettings.h"
 #include <KLocalizedString>
 #include <QLineEdit>
 
@@ -45,6 +46,7 @@ QWidget *SieveConditionMetaDataExists::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 0, 0);
 
     KSieveUi::AbstractMoveImapFolderWidget *mailbox = AutoCreateScriptUtil::createImapFolderWidget();
+    mailbox->setSieveImapAccountSettings(sieveImapAccountSettings());
     connect(mailbox, &KSieveUi::AbstractMoveImapFolderWidget::textChanged, this, &SieveConditionMetaDataExists::valueChanged);
     mailbox->setObjectName(QStringLiteral("mailbox"));
     grid->addWidget(mailbox, 0, 1);

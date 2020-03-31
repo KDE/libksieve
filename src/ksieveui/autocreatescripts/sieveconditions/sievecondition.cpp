@@ -19,6 +19,7 @@
 
 #include "sievecondition.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
+#include "libksieve_debug.h"
 
 #include <KLocalizedString>
 
@@ -36,6 +37,15 @@ SieveCondition::SieveCondition(SieveEditorGraphicalModeWidget *sieveGraphicalMod
 
 SieveCondition::~SieveCondition()
 {
+}
+
+KSieveUi::SieveImapAccountSettings SieveCondition::sieveImapAccountSettings() const
+{
+    if (mSieveGraphicalModeWidget) {
+        return mSieveGraphicalModeWidget->sieveImapAccountSettings();
+    }
+    qCWarning(LIBKSIEVE_LOG) << "SieveAction::sieveImapAccountSettings Problem during initialize mSieveGraphicalModeWidget ";
+    return {};
 }
 
 QStringList SieveCondition::sieveCapabilities() const
