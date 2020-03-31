@@ -25,7 +25,7 @@
 #include "../sieveeditorloadprogressindicator.h"
 #include "../sieveeditorwebengineview.h"
 
-#include <kpimtextedit/slidecontainer.h>
+#include <KPIMTextEdit/SlideContainer>
 
 SieveEditorHelpHtmlWidgetTest::SieveEditorHelpHtmlWidgetTest(QObject *parent)
     : QObject(parent)

@@ -20,8 +20,8 @@
 #include "sievetemplateeditdialog.h"
 #include "editor/sievetextedit.h"
 
-#include "kpimtextedit/plaintexteditfindbar.h"
-#include "kpimtextedit/slidecontainer.h"
+#include <KPIMTextEdit/PlainTextEditFindBar>
+#include <KPIMTextEdit/SlideContainer>
 
 #include <KLocalizedString>
 #include <KLineEdit>
@@ -37,7 +37,7 @@
 
 #include <editor/sievetexteditwidget.h>
 
-#include <kpimtextedit/texttospeechwidget.h>
+#include <KPIMTextEdit/TextToSpeechWidget>
 
 using namespace KSieveUi;
 

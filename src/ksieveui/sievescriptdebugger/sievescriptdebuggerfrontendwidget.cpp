@@ -31,8 +31,8 @@
 #include <QFormLayout>
 #include "editor/sievetexteditwidget.h"
 #include "editor/sievetextedit.h"
-#include <kpimtextedit/plaintexteditorwidget.h>
-#include <kpimtextedit/texttospeechwidget.h>
+#include <KPIMTextEdit/PlainTextEditorWidget>
+#include <KPIMTextEdit/TextToSpeechWidget>
 #include <QLabel>
 #include <KUrlRequester>
 #include <KLineEdit>

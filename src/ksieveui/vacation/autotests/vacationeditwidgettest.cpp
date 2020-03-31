@@ -27,7 +27,7 @@
 #include <QLineEdit>
 #include <QSpinBox>
 #include <QTest>
-#include <kpimtextedit/plaintexteditorwidget.h>
+#include <KPIMTextEdit/PlainTextEditorWidget>
 #include <vacation/vacationmailactionwidget.h>
 #include <PimCommon/SpellCheckLineEdit>
 

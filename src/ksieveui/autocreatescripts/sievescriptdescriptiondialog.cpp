@@ -18,7 +18,7 @@
 */
 
 #include "sievescriptdescriptiondialog.h"
-#include "kpimtextedit/plaintexteditorwidget.h"
+#include <KPIMTextEdit/PlainTextEditorWidget>
 
 #include <KLocalizedString>
 #include <KSharedConfig>

@@ -19,7 +19,7 @@
 #ifndef MULTILINEEDIT_H
 #define MULTILINEEDIT_H
 
-#include "kpimtextedit/plaintexteditor.h"
+#include <KPIMTextEdit/PlainTextEditor>
 
 namespace KSieveUi {
 class MultiLineEdit : public KPIMTextEdit::PlainTextEditor

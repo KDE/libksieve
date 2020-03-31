@@ -20,7 +20,7 @@
 #ifndef SIEVESCRIPTDEBUGGERRESULTEDITOR_H
 #define SIEVESCRIPTDEBUGGERRESULTEDITOR_H
 
-#include <kpimtextedit/plaintexteditor.h>
+#include <KPIMTextEdit/PlainTextEditor>
 
 namespace KSieveUi {
 class SieveScriptDebuggerResultEditor : public KPIMTextEdit::PlainTextEditor

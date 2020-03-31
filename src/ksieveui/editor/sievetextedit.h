@@ -21,7 +21,7 @@
 
 #include "ksieveui_export.h"
 
-#include "kpimtextedit/plaintexteditor.h"
+#include <KPIMTextEdit/PlainTextEditor>
 
 class QMenu;
 namespace KSieveUi {

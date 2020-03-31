@@ -23,7 +23,7 @@
 
 #include <QVBoxLayout>
 
-#include <kpimtextedit/slidecontainer.h>
+#include <KPIMTextEdit/SlideContainer>
 
 #include "findbar/findbarwebengineview.h"
 

@@ -12,8 +12,8 @@
 */
 
 #include "sievedebugdialog.h"
-#include "kpimtextedit/plaintexteditorwidget.h"
-#include "kpimtextedit/plaintexteditor.h"
+#include <KPIMTextEdit/PlainTextEditorWidget>
+#include <KPIMTextEdit/PlainTextEditor>
 #include "util/util_p.h"
 
 #include "libksieve_debug.h"

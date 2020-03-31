@@ -29,7 +29,7 @@
 #include <QLineEdit>
 #include <QRegularExpressionValidator>
 
-#include <kpimtextedit/plaintexteditorwidget.h>
+#include <KPIMTextEdit/PlainTextEditorWidget>
 #include <KPIMTextEdit/PlainTextEditor>
 #include "libksieve_debug.h"
 

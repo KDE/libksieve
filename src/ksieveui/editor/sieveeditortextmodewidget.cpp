@@ -29,13 +29,13 @@
 #include "scriptsparsing/xmlprintingscriptbuilder.h"
 #include "scriptsparsing/parsingresultdialog.h"
 
-#include "kpimtextedit/plaintexteditfindbar.h"
-#include "kpimtextedit/plaintexteditorwidget.h"
-#include "kpimtextedit/texttospeechwidget.h"
-#include "kpimtextedit/textgotolinewidget.h"
+#include <KPIMTextEdit/PlainTextEditFindBar>
+#include <KPIMTextEdit/PlainTextEditorWidget>
+#include <KPIMTextEdit/TextToSpeechWidget>
+#include <KPIMTextEdit/TextGotoLineWidget>
 #include "KSplitterCollapserButton"
 #include "webengine/sieveeditorhelphtmlwidget.h"
-#include "kpimtextedit/slidecontainer.h"
+#include <KPIMTextEdit/SlideContainer>
 
 #include <ksieve/parser.h>
 #include <ksieve/error.h>

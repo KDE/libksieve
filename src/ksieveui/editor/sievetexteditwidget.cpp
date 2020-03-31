@@ -19,8 +19,8 @@
 #include <QVBoxLayout>
 #include "editor/sievetextedit.h"
 
-#include "kpimtextedit/plaintexteditfindbar.h"
-#include "kpimtextedit/slidecontainer.h"
+#include <KPIMTextEdit/PlainTextEditFindBar>
+#include <KPIMTextEdit/SlideContainer>
 using namespace KSieveUi;
 
 class KSieveUi::SieveTextEditWidgetPrivate
