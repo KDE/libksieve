@@ -50,7 +50,7 @@ void SieveAccountTest::shouldAssignValue()
     QString user = QStringLiteral("bla");
     int port = 42;
     KSieveUi::SieveImapAccountSettings::AuthenticationMode type = KSieveUi::SieveImapAccountSettings::DigestMD5;
-    KSieveUi::SieveImapAccountSettings::EncryptionMode mode = KSieveUi::SieveImapAccountSettings::SslV3_1;
+    KSieveUi::SieveImapAccountSettings::EncryptionMode mode = KSieveUi::SieveImapAccountSettings::SSLorTLS;
     account.setPassword(pwd);
     account.setServerName(server);
     account.setUserName(user);
@@ -73,7 +73,7 @@ void SieveAccountTest::shouldBeEqual()
     QString user = QStringLiteral("bla");
     int port = 42;
     KSieveUi::SieveImapAccountSettings::AuthenticationMode type = KSieveUi::SieveImapAccountSettings::DigestMD5;
-    KSieveUi::SieveImapAccountSettings::EncryptionMode mode = KSieveUi::SieveImapAccountSettings::SslV3_1;
+    KSieveUi::SieveImapAccountSettings::EncryptionMode mode = KSieveUi::SieveImapAccountSettings::SSLorTLS;
     account.setPassword(pwd);
     account.setServerName(server);
     account.setUserName(user);
@@ -107,7 +107,7 @@ void SieveAccountTest::shouldCreateIdentifier()
 
     //Identifier doesn't depend against theses settings
     KSieveUi::SieveImapAccountSettings::AuthenticationMode type = KSieveUi::SieveImapAccountSettings::DigestMD5;
-    KSieveUi::SieveImapAccountSettings::EncryptionMode mode = KSieveUi::SieveImapAccountSettings::SslV3_1;
+    KSieveUi::SieveImapAccountSettings::EncryptionMode mode = KSieveUi::SieveImapAccountSettings::SSLorTLS;
     account.setPort(42);
     account.setAuthenticationType(type);
     account.setEncryptionMode(mode);

@@ -99,7 +99,7 @@ void UtilMethodTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setUserName(userName);
         info1.sieveImapAccountSettings.setPassword(password);
 
-        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::CramMD5);
+        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::Plain);
         //TODO fix encryptionmode
         info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::Unencrypted);
 
@@ -139,7 +139,7 @@ void UtilMethodTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setUserName(userName);
         info1.sieveImapAccountSettings.setPassword(password);
 
-        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::Login);
+        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::ClearText);
         //TODO fix encryptionmode
         info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::Unencrypted);
 
@@ -178,9 +178,9 @@ void UtilMethodTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setUserName(userName);
         info1.sieveImapAccountSettings.setPassword(password);
 
-        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::Login);
+        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::ClearText);
         //TODO fix encryptionmode
-        info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::AnySslVersion);
+        info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::SSLorTLS);
 
         QTest::newRow("sievereuseconfig2ssl") << data1 << info1 << true << true;
     }
@@ -218,9 +218,9 @@ void UtilMethodTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setUserName(userName);
         info1.sieveImapAccountSettings.setPassword(password);
 
-        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::Login);
+        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::ClearText);
         //TODO fix encryptionmode
-        info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::TlsV1);
+        info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::STARTTLS);
 
         QTest::newRow("sievereuseconfig2startls") << data1 << info1 << true << true;
     }
@@ -287,7 +287,7 @@ void UtilMethodTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setUserName(imapUser);
         info1.sieveImapAccountSettings.setPassword(imapPasswd);
 
-        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::DigestMD5);
+        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::CramMD5);
 
         info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::Unencrypted);
 
@@ -328,7 +328,7 @@ void UtilMethodTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setUserName(imapUser);
         info1.sieveImapAccountSettings.setPassword(imapPasswd);
 
-        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::DigestMD5);
+        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::CramMD5);
 
         info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::Unencrypted);
 
@@ -370,9 +370,9 @@ void UtilMethodTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setUserName(imapUser);
         info1.sieveImapAccountSettings.setPassword(imapPasswd);
 
-        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::DigestMD5);
+        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::CramMD5);
 
-        info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::AnySslVersion);
+        info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::SSLorTLS);
 
         QTest::newRow("sievereusecustomconfig1withoutvacationfileSSL") << data1 << info1 << true << false;
     }
@@ -412,9 +412,9 @@ void UtilMethodTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setUserName(imapUser);
         info1.sieveImapAccountSettings.setPassword(imapPasswd);
 
-        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::DigestMD5);
+        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::CramMD5);
 
-        info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::TlsV1);
+        info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::STARTTLS);
 
         QTest::newRow("sievereusecustomconfig1withoutvacationfileStarttls") << data1 << info1 << true << false;
     }
@@ -454,9 +454,9 @@ void UtilMethodTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setUserName(imapUser);
         info1.sieveImapAccountSettings.setPassword(imapPasswd);
 
-        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::GSSAPI);
+        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::DigestMD5);
 
-        info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::TlsV1);
+        info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::STARTTLS);
 
         QTest::newRow("sievereusecustomconfig1withoutvacationfileStarttls2") << data1 << info1 << true << false;
     }
@@ -495,9 +495,9 @@ void UtilMethodTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setUserName(imapUser);
         info1.sieveImapAccountSettings.setPassword(imapPasswd);
 
-        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::GSSAPI);
+        info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::DigestMD5);
 
-        info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::TlsV1);
+        info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::STARTTLS);
 
         QTest::newRow("sievereusecustomconfig1withoutvacationfileStarttls3") << data1 << info1 << true << false;
     }
@@ -521,8 +521,8 @@ void UtilMethodTest::shouldAssignValue_data()
         data1.sieveVacationFilename = QStringLiteral("vacation.siv");
         data1.safety = QStringLiteral("STARTTLS");
         data1.alternateAuthentication = 4;
-        //MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
-        data1.authentication = 0;
+        //MailTransport::Transport::EnumAuthenticationType::PLAIN = 2
+        data1.authentication = 2;
         data1.sieveAlternateUrl = QStringLiteral("bla.bla.com");
         data1.password = imapPasswd;
         data1.sieveCustomPassword = sievePasswd;
@@ -545,7 +545,12 @@ void UtilMethodTest::shouldAssignValue()
     std::unique_ptr<DataImapPasswordProvider> provider(new DataImapPasswordProvider(&data));
     const KSieveUi::Util::AccountInfo info = KSieveUi::Util::findAccountInfo(QStringLiteral("foo"), provider.get(), useVacationFile, interface);
     QCOMPARE(info.sieveImapAccountSettings.isValid(), sieveImapAccountValid);
-    QCOMPARE(info, accountInfo);
+    const bool equal = (info == accountInfo);
+    if (!equal) {
+        qDebug() << " info " << info;
+        qDebug() << " accountInfo " << accountInfo;
+    }
+    QVERIFY(equal);
 }
 
 QTEST_MAIN(UtilMethodTest)

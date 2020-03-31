@@ -129,9 +129,9 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
             accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
             query.addQueryItem(QStringLiteral("x-allow-unencrypted"), QStringLiteral("true"));
         } else if (resultSafety == QLatin1String("SSL")) {
-            accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::AnySslVersion);
+            accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::SSLorTLS);
         } else if (resultSafety == QLatin1String("STARTTLS")) {
-            accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::TlsV1);
+            accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::STARTTLS);
         } else {
             accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
         }
@@ -197,9 +197,9 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
             accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
             query.addQueryItem(QStringLiteral("x-allow-unencrypted"), QStringLiteral("true"));
         } else if (resultSafety == QLatin1String("SSL")) {
-            accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::AnySslVersion);
+            accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::SSLorTLS);
         } else if (resultSafety == QLatin1String("STARTTLS")) {
-            accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::TlsV1);
+            accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::STARTTLS);
         } else {
             accountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
         }
