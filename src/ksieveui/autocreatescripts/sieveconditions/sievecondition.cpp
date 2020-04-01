@@ -36,11 +36,6 @@ SieveCondition::~SieveCondition()
 {
 }
 
-SieveCondition *SieveCondition::newAction()
-{
-    return nullptr;
-}
-
 QWidget *SieveCondition::createParamWidget(QWidget *parent) const
 {
     return new QWidget(parent);

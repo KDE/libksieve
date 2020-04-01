@@ -34,11 +34,6 @@ public:
     SieveCondition(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent = nullptr);
     ~SieveCondition() override;
 
-    /**
-     * Static function that creates a filter action of this type.
-     */
-    static SieveCondition *newAction();
-
     Q_REQUIRED_RESULT virtual QWidget *createParamWidget(QWidget *parent) const;
 
     Q_REQUIRED_RESULT virtual bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error);
