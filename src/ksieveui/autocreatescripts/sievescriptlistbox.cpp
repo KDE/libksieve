@@ -35,6 +35,7 @@
 #include <QVBoxLayout>
 #include <QListWidget>
 #include <QPointer>
+#include <QMenu>
 #include "libksieve_debug.h"
 
 namespace {
@@ -102,6 +103,8 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     mSieveListScript = new QListWidget(this);
     mSieveListScript->setObjectName(QStringLiteral("mSieveListScript"));
     mSieveListScript->setDragDropMode(QAbstractItemView::InternalMove);
+    mSieveListScript->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(mSieveListScript, &QListWidget::customContextMenuRequested, this, &SieveScriptListBox::slotCustomMenuRequested);
     layout->addWidget(mSieveListScript);
 
     //----------- the first row of buttons
@@ -188,6 +191,26 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
 
 SieveScriptListBox::~SieveScriptListBox()
 {
+}
+
+void SieveScriptListBox::slotCustomMenuRequested(const QPoint &pos)
+{
+    QMenu menu(this);
+    QAction *newScriptAction = menu.addAction(i18nc("@action:inmenu", "New Script"));
+    newScriptAction->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
+    connect(newScriptAction, &QAction::triggered, this, &SieveScriptListBox::slotNew);
+
+    if (mSieveListScript->itemAt(pos)) {
+        QAction *renameScriptAction = menu.addAction(i18nc("@action:inmenu", "Rename Script"));
+        renameScriptAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-rename")));
+        connect(renameScriptAction, &QAction::triggered, this, &SieveScriptListBox::slotRename);
+
+        menu.addSeparator();
+        QAction *deleteScriptAction = menu.addAction(i18nc("@action:inmenu", "Delete Script"));
+        deleteScriptAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
+        connect(deleteScriptAction, &QAction::triggered, this, &SieveScriptListBox::slotDelete);
+    }
+    menu.exec(mapToGlobal(pos));
 }
 
 void SieveScriptListBox::setSieveEditorGraphicalModeWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget)

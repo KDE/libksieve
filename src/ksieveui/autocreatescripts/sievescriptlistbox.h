@@ -69,6 +69,7 @@ Q_SIGNALS:
     void valueChanged();
 
 private:
+    void slotCustomMenuRequested(const QPoint &pos);
     void slotNew();
     void slotDelete();
     void slotRename();
