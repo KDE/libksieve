@@ -29,24 +29,12 @@
 using namespace KSieveUi;
 
 SieveAction::SieveAction(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent)
-    : QObject(parent)
-    , mSieveGraphicalModeWidget(sieveGraphicalModeWidget)
-    , mName(name)
-    , mLabel(label)
+    : SieveCommonActionCondition(sieveGraphicalModeWidget, name, label, parent)
 {
 }
 
 SieveAction::~SieveAction()
 {
-}
-
-KSieveUi::SieveImapAccountSettings SieveAction::sieveImapAccountSettings() const
-{
-    if (mSieveGraphicalModeWidget) {
-        return mSieveGraphicalModeWidget->sieveImapAccountSettings();
-    }
-    qCWarning(LIBKSIEVE_LOG) << "SieveAction::sieveImapAccountSettings Problem during initialize mSieveGraphicalModeWidget ";
-    return {};
 }
 
 QStringList SieveAction::listOfIncludeFile() const
@@ -67,61 +55,15 @@ QStringList SieveAction::sieveCapabilities() const
     return {};
 }
 
-QString SieveAction::name() const
-{
-    return mName;
-}
-
-QString SieveAction::label() const
-{
-    return mLabel;
-}
-
 QWidget *SieveAction::createParamWidget(QWidget *parent) const
 {
     return new QWidget(parent);
-}
-
-QString SieveAction::code(QWidget *) const
-{
-    return QString();
-}
-
-QStringList SieveAction::needRequires(QWidget *parent) const
-{
-    Q_UNUSED(parent);
-    return QStringList();
-}
-
-bool SieveAction::needCheckIfServerHasCapability() const
-{
-    return false;
-}
-
-QString SieveAction::serverNeedsCapability() const
-{
-    return QString();
-}
-
-QString SieveAction::help() const
-{
-    return QString();
 }
 
 bool SieveAction::setParamWidgetValue(QXmlStreamReader &n, QWidget *, QString &)
 {
     n.skipCurrentElement();
     return true;
-}
-
-QString SieveAction::comment() const
-{
-    return mComment;
-}
-
-void SieveAction::setComment(const QString &comment)
-{
-    mComment = comment;
 }
 
 void SieveAction::unknownTag(const QStringRef &tag, QString &error)
@@ -144,7 +86,3 @@ void SieveAction::serverDoesNotSupportFeatures(const QString &feature, QString &
     error += i18n("A feature \"%1\" in condition \"%2\" is not supported by server", feature, name()) + QLatin1Char('\n');
 }
 
-QUrl SieveAction::href() const
-{
-    return QUrl();
-}

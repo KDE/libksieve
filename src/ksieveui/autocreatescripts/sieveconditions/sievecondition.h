@@ -22,20 +22,17 @@
 
 #include <QObject>
 #include <QUrl>
-
+#include "autocreatescripts/commonwidgets/sievecommonactioncondition.h"
 class QXmlStreamReader;
 namespace KSieveUi {
 class SieveImapAccountSettings;
 class SieveEditorGraphicalModeWidget;
-class SieveCondition : public QObject
+class SieveCondition : public SieveCommonActionCondition
 {
     Q_OBJECT
 public:
     SieveCondition(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent = nullptr);
     ~SieveCondition() override;
-
-    QString name() const;
-    QString label() const;
 
     /**
      * Static function that creates a filter action of this type.
@@ -44,44 +41,14 @@ public:
 
     Q_REQUIRED_RESULT virtual QWidget *createParamWidget(QWidget *parent) const;
 
-    Q_REQUIRED_RESULT virtual QString code(QWidget *parent) const;
-
-    Q_REQUIRED_RESULT virtual QStringList needRequires(QWidget *parent) const;
-
-    Q_REQUIRED_RESULT virtual bool needCheckIfServerHasCapability() const;
-
-    Q_REQUIRED_RESULT virtual QString serverNeedsCapability() const;
-
-    Q_REQUIRED_RESULT virtual QString help() const;
-    Q_REQUIRED_RESULT virtual QUrl href() const;
-
     Q_REQUIRED_RESULT virtual bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error);
 
-    void unknownTag(const QStringRef &tag, QString &error);
-    void unknownTagValue(const QString &tagValue, QString &error);
-    void tooManyArguments(const QStringRef &tagName, int index, int maxValue, QString &error);
+    void unknownTag(const QStringRef &tag, QString &error) override;
+    void unknownTagValue(const QString &tagValue, QString &error) override;
+    void tooManyArguments(const QStringRef &tagName, int index, int maxValue, QString &error) override;
     void tooManyArguments(const QString &tagName, int index, int maxValue, QString &error);
-    void serverDoesNotSupportFeatures(const QString &feature, QString &error);
+    void serverDoesNotSupportFeatures(const QString &feature, QString &error) override;
 
-    Q_REQUIRED_RESULT QString comment() const;
-
-    void setComment(const QString &comment);
-
-    Q_REQUIRED_RESULT QString generateComment() const;
-
-protected:
-    Q_REQUIRED_RESULT KSieveUi::SieveImapAccountSettings sieveImapAccountSettings() const;
-    Q_REQUIRED_RESULT QStringList sieveCapabilities() const;
-    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
-
-Q_SIGNALS:
-    void valueChanged();
-
-private:
-    Q_DISABLE_COPY(SieveCondition)
-    QString mName;
-    QString mLabel;
-    QString mComment;
 };
 }
 

@@ -21,58 +21,31 @@
 
 #include <QObject>
 #include <QUrl>
+#include "autocreatescripts/commonwidgets/sievecommonactioncondition.h"
 class QXmlStreamReader;
 namespace KSieveUi {
 class SieveImapAccountSettings;
 class SieveEditorGraphicalModeWidget;
-class SieveAction : public QObject
+class SieveAction : public SieveCommonActionCondition
 {
     Q_OBJECT
 public:
     SieveAction(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent = nullptr);
     ~SieveAction() override;
 
-    Q_REQUIRED_RESULT QString name() const;
-    Q_REQUIRED_RESULT QString label() const;
 
     Q_REQUIRED_RESULT virtual QWidget *createParamWidget(QWidget *parent) const;
 
     Q_REQUIRED_RESULT virtual bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, QString &error);
 
-    Q_REQUIRED_RESULT virtual QString code(QWidget *) const;
-
-    Q_REQUIRED_RESULT virtual QStringList needRequires(QWidget *parent) const;
-
-    Q_REQUIRED_RESULT virtual bool needCheckIfServerHasCapability() const;
-
-    Q_REQUIRED_RESULT virtual QString serverNeedsCapability() const;
-
-    Q_REQUIRED_RESULT virtual QString help() const;
-    Q_REQUIRED_RESULT virtual QUrl href() const;
-
-    Q_REQUIRED_RESULT QString comment() const;
-
-    void setComment(const QString &comment);
-
-    void unknownTag(const QStringRef &tag, QString &error);
-    void unknownTagValue(const QString &tagValue, QString &error);
-    void tooManyArguments(const QStringRef &tagName, int index, int maxValue, QString &error);
-    void serverDoesNotSupportFeatures(const QString &feature, QString &error);
+    void unknownTag(const QStringRef &tag, QString &error) override;
+    void unknownTagValue(const QString &tagValue, QString &error) override;
+    void tooManyArguments(const QStringRef &tagName, int index, int maxValue, QString &error) override;
+    void serverDoesNotSupportFeatures(const QString &feature, QString &error) override;
 
 protected:
-    Q_REQUIRED_RESULT SieveImapAccountSettings sieveImapAccountSettings() const;
     Q_REQUIRED_RESULT QStringList listOfIncludeFile() const;
     Q_REQUIRED_RESULT QStringList sieveCapabilities() const;
-    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
-
-Q_SIGNALS:
-    void valueChanged();
-
-private:
-    Q_DISABLE_COPY(SieveAction)
-    QString mName;
-    QString mLabel;
-    QString mComment;
 };
 }
 

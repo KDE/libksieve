@@ -28,42 +28,12 @@
 using namespace KSieveUi;
 
 SieveCondition::SieveCondition(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent)
-    : QObject(parent)
-    , mSieveGraphicalModeWidget(sieveGraphicalModeWidget)
-    , mName(name)
-    , mLabel(label)
+    : SieveCommonActionCondition(sieveGraphicalModeWidget, name, label, parent)
 {
 }
 
 SieveCondition::~SieveCondition()
 {
-}
-
-KSieveUi::SieveImapAccountSettings SieveCondition::sieveImapAccountSettings() const
-{
-    if (mSieveGraphicalModeWidget) {
-        return mSieveGraphicalModeWidget->sieveImapAccountSettings();
-    }
-    qCWarning(LIBKSIEVE_LOG) << "SieveAction::sieveImapAccountSettings Problem during initialize mSieveGraphicalModeWidget ";
-    return {};
-}
-
-QStringList SieveCondition::sieveCapabilities() const
-{
-    if (mSieveGraphicalModeWidget) {
-        return mSieveGraphicalModeWidget->sieveCapabilities();
-    }
-    return {};
-}
-
-QString SieveCondition::name() const
-{
-    return mName;
-}
-
-QString SieveCondition::label() const
-{
-    return mLabel;
 }
 
 SieveCondition *SieveCondition::newAction()
@@ -74,33 +44,6 @@ SieveCondition *SieveCondition::newAction()
 QWidget *SieveCondition::createParamWidget(QWidget *parent) const
 {
     return new QWidget(parent);
-}
-
-QString SieveCondition::code(QWidget *parent) const
-{
-    Q_UNUSED(parent);
-    return QString();
-}
-
-QStringList SieveCondition::needRequires(QWidget *parent) const
-{
-    Q_UNUSED(parent);
-    return QStringList();
-}
-
-bool SieveCondition::needCheckIfServerHasCapability() const
-{
-    return false;
-}
-
-QString SieveCondition::serverNeedsCapability() const
-{
-    return QString();
-}
-
-QString SieveCondition::help() const
-{
-    return QString();
 }
 
 bool SieveCondition::setParamWidgetValue(QXmlStreamReader & /*element*/, QWidget * /*parent*/, bool /*notCondition*/, QString & /*error*/)
@@ -133,22 +76,3 @@ void SieveCondition::serverDoesNotSupportFeatures(const QString &feature, QStrin
     error += i18n("A feature \"%1\" in condition \"%2\" is not supported by server", feature, name()) + QLatin1Char('\n');
 }
 
-QUrl SieveCondition::href() const
-{
-    return QUrl();
-}
-
-QString SieveCondition::comment() const
-{
-    return mComment;
-}
-
-void SieveCondition::setComment(const QString &comment)
-{
-    mComment = comment;
-}
-
-QString SieveCondition::generateComment() const
-{
-    return {};
-}
