@@ -40,6 +40,7 @@ SieveInfoDialog::SieveInfoDialog(QWidget *parent)
     button->setObjectName(QStringLiteral("button"));
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &SieveInfoDialog::reject);
+    resize(400, 300);
 }
 
 SieveInfoDialog::~SieveInfoDialog()
