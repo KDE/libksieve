@@ -19,14 +19,27 @@
 */
 
 #include "sieveinfodialog.h"
+#include "sieveinfowidget.h"
 #include <QHBoxLayout>
 #include <KLocalizedString>
+#include <QDialogButtonBox>
 
 using namespace KSieveUi;
 SieveInfoDialog::SieveInfoDialog(QWidget *parent)
     : QDialog(parent)
 {
+    setWindowTitle(i18nc("@title:window", "Sieve Server Support"));
+    auto *mainLayout = new QVBoxLayout(this);
+    mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
+    mSieveInfoWidget = new SieveInfoWidget(this);
+    mSieveInfoWidget->setObjectName(QStringLiteral("mSieveInfoWidget"));
+    mainLayout->addWidget(mSieveInfoWidget);
+
+    QDialogButtonBox *button = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    button->setObjectName(QStringLiteral("button"));
+    mainLayout->addWidget(button);
+    connect(button, &QDialogButtonBox::accepted, this, &SieveInfoDialog::accept);
 }
 
 SieveInfoDialog::~SieveInfoDialog()

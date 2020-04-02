@@ -19,11 +19,11 @@
 #define SIEVEINFOWIDGET_H
 
 #include <QWidget>
-
+#include "ksieveui_export.h"
 class QTextEdit;
 
 namespace KSieveUi {
-class SieveInfoWidget : public QWidget
+class KSIEVEUI_EXPORT SieveInfoWidget : public QWidget
 {
     Q_OBJECT
 public:

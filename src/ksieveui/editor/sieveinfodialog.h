@@ -24,12 +24,15 @@
 #include <QDialog>
 #include "ksieveui_export.h"
 namespace KSieveUi {
+class SieveInfoWidget;
 class KSIEVEUI_EXPORT SieveInfoDialog : public QDialog
 {
     Q_OBJECT
 public:
     explicit SieveInfoDialog(QWidget *parent = nullptr);
     ~SieveInfoDialog();
+private:
+    SieveInfoWidget *mSieveInfoWidget = nullptr;
 };
 }
 
