@@ -67,6 +67,7 @@ set(ksieveui_editor_LIB_SRCS
     editor/sievetexteditorspellcheckdecorator.cpp
     editor/sievetexteditwidget.cpp
     editor/sievepurposemenuwidget.cpp
+    editor/sieveinfodialog.cpp
     )
 
 set(ksieveui_autocreatescripts_LIB_SRCS

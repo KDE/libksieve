@@ -20,3 +20,10 @@ add_executable( sievetexteditwidgettest ${libksieveui_sievetexteditwidgettest_so
 add_test(NAME sievetexteditwidgettest COMMAND sievetexteditwidgettest)
 ecm_mark_as_test(sievetexteditwidgettest)
 target_link_libraries( sievetexteditwidgettest Qt5::Test  Qt5::Gui KF5::KSieveUi KF5::PimCommon KF5::PimTextEdit Qt5::PrintSupport)
+
+set( libksieveui_sieveinfodialogtest_source sieveinfodialogtest.cpp )
+add_executable( sieveinfodialogtest ${libksieveui_sieveinfodialogtest_source})
+add_test(NAME sieveinfodialogtest COMMAND sieveinfodialogtest)
+ecm_mark_as_test(sieveinfodialogtest)
+target_link_libraries( sieveinfodialogtest Qt5::Test KF5::KSieveUi )
+
