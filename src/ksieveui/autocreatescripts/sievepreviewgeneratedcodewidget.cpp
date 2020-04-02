@@ -19,6 +19,7 @@
 
 #include "sievepreviewgeneratedcodewidget.h"
 #include <QHBoxLayout>
+#include <QTextEdit>
 using namespace KSieveUi;
 SievePreviewGeneratedCodeWidget::SievePreviewGeneratedCodeWidget(QWidget *parent)
     : QWidget(parent)
@@ -26,9 +27,19 @@ SievePreviewGeneratedCodeWidget::SievePreviewGeneratedCodeWidget(QWidget *parent
     QHBoxLayout *mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins(0, 0, 0, 0);
+
+    mTextEdit = new QTextEdit(this);
+    mTextEdit->setObjectName(QStringLiteral("mTextEdit"));
+    mTextEdit->setReadOnly(true);
+    mainLayout->addWidget(mTextEdit);
 }
 
 SievePreviewGeneratedCodeWidget::~SievePreviewGeneratedCodeWidget()
 {
 
+}
+
+void SievePreviewGeneratedCodeWidget::setCode(const QString &str)
+{
+    mTextEdit->setText(str);
 }

@@ -28,6 +28,8 @@ class SievePreviewGeneratedCodeWidget : public QWidget
 public:
     explicit SievePreviewGeneratedCodeWidget(QWidget *parent = nullptr);
     ~SievePreviewGeneratedCodeWidget();
+
+    void setCode(const QString &str);
 private:
     QTextEdit *mTextEdit = nullptr;
 };
