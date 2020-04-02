@@ -1,4 +1,4 @@
-﻿/*
+/*
    Copyright (C) 2020 Laurent Montel <montel@kde.org>
 
    This library is free software; you can redistribute it and/or
@@ -16,23 +16,21 @@
    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
    Boston, MA 02110-1301, USA.
 */
-#ifndef SIEVEPREVIEWGENERATEDCODEWIDGET_H
-#define SIEVEPREVIEWGENERATEDCODEWIDGET_H
-#include "ksieveui_private_export.h"
-#include <QWidget>
-class QTextEdit;
-namespace KSieveUi {
-class KSIEVEUI_TESTS_EXPORT SievePreviewGeneratedCodeWidget : public QWidget
+
+
+#ifndef SIEVEPREVIEWGENERATEDCODEWIDGETTEST_H
+#define SIEVEPREVIEWGENERATEDCODEWIDGETTEST_H
+
+#include <QObject>
+
+class SievePreviewGeneratedCodeWidgetTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit SievePreviewGeneratedCodeWidget(QWidget *parent = nullptr);
-    ~SievePreviewGeneratedCodeWidget();
-
-    void setCode(const QString &str);
-private:
-    QTextEdit *mTextEdit = nullptr;
+    explicit SievePreviewGeneratedCodeWidgetTest(QObject *parent = nullptr);
+    ~SievePreviewGeneratedCodeWidgetTest() = default;
+private Q_SLOTS:
+    void shouldHaveDefaultValues();
 };
-}
 
-#endif // SIEVEPREVIEWGENERATEDCODEWIDGET_H
+#endif // SIEVEPREVIEWGENERATEDCODEWIDGETTEST_H

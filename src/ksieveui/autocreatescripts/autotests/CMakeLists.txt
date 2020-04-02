@@ -25,3 +25,4 @@ add_sieveeditor_autocreatescripts(sievedatespinboxtest.cpp "")
 add_sieveeditor_autocreatescripts(regexpeditorlineedittest.cpp "")
 
 add_sieveeditor_autocreatescripts(sievescriptlistboxtest.cpp "")
+add_sieveeditor_autocreatescripts(sievepreviewgeneratedcodewidgettest.cpp "")
