@@ -31,6 +31,7 @@ class KSIEVEUI_EXPORT SieveInfoDialog : public QDialog
 public:
     explicit SieveInfoDialog(QWidget *parent = nullptr);
     ~SieveInfoDialog();
+    void setServerInfo(const QStringList &serverInfos);
 private:
     SieveInfoWidget *mSieveInfoWidget = nullptr;
 };

@@ -132,6 +132,7 @@ private:
     void changeSwitchButtonText();
     void changeMode(EditorMode mode);
     void addMessageEntry(const QString &errorMsg, const QColor &color);
+    void slotServerInfo();
     QString mOriginalScript;
     SieveEditorTextModeWidget *mTextModeWidget = nullptr;
     SieveEditorGraphicalModeWidget *mGraphicalModeWidget = nullptr;
@@ -143,6 +144,7 @@ private:
     QAction *mSaveAs = nullptr;
     QAction *mShareScript = nullptr;
     QAction *mGenerateXml = nullptr;
+    QAction *mServerInfo = nullptr;
     EditorMode mMode = EditorMode::TextMode;
     bool mModified = false;
     bool mDebug = false;

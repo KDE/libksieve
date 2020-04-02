@@ -39,10 +39,15 @@ SieveInfoDialog::SieveInfoDialog(QWidget *parent)
     QDialogButtonBox *button = new QDialogButtonBox(QDialogButtonBox::Close, this);
     button->setObjectName(QStringLiteral("button"));
     mainLayout->addWidget(button);
-    connect(button, &QDialogButtonBox::accepted, this, &SieveInfoDialog::accept);
+    connect(button, &QDialogButtonBox::rejected, this, &SieveInfoDialog::reject);
 }
 
 SieveInfoDialog::~SieveInfoDialog()
 {
 
+}
+
+void SieveInfoDialog::setServerInfo(const QStringList &serverInfos)
+{
+    mSieveInfoWidget->setServerInfo(serverInfos);
 }

@@ -32,7 +32,6 @@ class TextToSpeechWidget;
 }
 
 namespace KSieveUi {
-class SieveInfoWidget;
 class SieveTextEdit;
 class SieveEditorWarning;
 class SieveEditorParsingMissingFeatureWarning;
@@ -105,6 +104,8 @@ public:
     Q_REQUIRED_RESULT SieveEditorTabWidget *tabWidget() const;
 
     void setListOfIncludeFile(const QStringList &listOfIncludeFile);
+    Q_REQUIRED_RESULT QStringList sieveCapabilities() const;
+
 Q_SIGNALS:
     void enableButtonOk(bool);
     void switchToGraphicalMode();
@@ -131,7 +132,6 @@ private:
     KPIMTextEdit::PlainTextEditorWidget *mDebugTextEdit = nullptr;
     KPIMTextEdit::PlainTextEditFindBar *mFindBar = nullptr;
     KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
-    SieveInfoWidget *mSieveInfo = nullptr;
     QSplitter *mMainSplitter = nullptr;
     QSplitter *mExtraSplitter = nullptr;
     QSplitter *mTemplateSplitter = nullptr;

@@ -27,6 +27,7 @@
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "autocreatescripts/sievescriptparsingerrordialog.h"
 #include "sieveeditormenubar.h"
+#include "editor/sieveinfodialog.h"
 
 #include <kns3/uploaddialog.h>
 #include <KLocalizedString>
@@ -96,6 +97,11 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     shareAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
     purposeMenu->setEditorWidget(this);
     toolbar->addAction(shareAction);
+
+    mServerInfo = new QAction(i18n("Server Info"), this);
+    connect(mServerInfo, &QAction::triggered, this, &SieveEditorWidget::slotServerInfo);
+    toolbar->addAction(mServerInfo);
+
 
     SieveEditorMenuBar *menuBar = nullptr;
     if (useMenuBar) {
@@ -740,4 +746,12 @@ bool SieveEditorWidget::printSupportEnabled() const
         return mTextModeWidget->printSupportEnabled();
     }
     return false;
+}
+
+void SieveEditorWidget::slotServerInfo()
+{
+    QPointer<SieveInfoDialog> dlg = new SieveInfoDialog(this);
+    dlg->setServerInfo(mTextModeWidget->sieveCapabilities());
+    dlg->exec();
+    delete dlg;
 }

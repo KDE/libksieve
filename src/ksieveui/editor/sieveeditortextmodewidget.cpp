@@ -19,7 +19,6 @@
 #include "sieveeditortextmodewidget.h"
 #include "templates/sievetemplatewidget.h"
 #include "autocreatescripts/autocreatescriptdialog.h"
-#include "editor/sieveinfowidget.h"
 #include "editor/sievetextedit.h"
 #include "editor/warningwidget/sieveeditorwarning.h"
 #include "editor/warningwidget/sieveeditorparsingmissingfeaturewarning.h"
@@ -74,13 +73,11 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     //
     mSieveTemplateWidget = new SieveTemplateWidget(i18n("Sieve Template:"));
 
-    mSieveInfo = new SieveInfoWidget;
 
     mExtraSplitter = new QSplitter;
     mExtraSplitter->setOrientation(Qt::Vertical);
 
     mExtraSplitter->addWidget(mSieveTemplateWidget);
-    mExtraSplitter->addWidget(mSieveInfo);
     mExtraSplitter->setChildrenCollapsible(false);
 
     QWidget *textEditWidget = new QWidget;
@@ -175,6 +172,11 @@ void SieveEditorTextModeWidget::writeConfig()
     group.writeEntry("mainSplitter", mMainSplitter->sizes());
     group.writeEntry("extraSplitter", mExtraSplitter->sizes());
     group.writeEntry("templateSplitter", mTemplateSplitter->sizes());
+}
+
+QStringList SieveEditorTextModeWidget::sieveCapabilities() const
+{
+    return mSieveCapabilities;
 }
 
 SieveEditorTabWidget *SieveEditorTextModeWidget::tabWidget() const
@@ -488,7 +490,6 @@ void SieveEditorTextModeWidget::setSieveCapabilities(const QStringList &capabili
     mSieveCapabilities = capabilities;
     mTextEdit->setSieveCapabilities(mSieveCapabilities);
     mSieveTemplateWidget->setSieveCapabilities(mSieveCapabilities);
-    mSieveInfo->setServerInfo(capabilities);
 }
 
 void SieveEditorTextModeWidget::showEditorWarning()
