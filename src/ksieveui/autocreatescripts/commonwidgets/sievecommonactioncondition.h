@@ -57,6 +57,7 @@ public:
 
     Q_REQUIRED_RESULT QString generateComment() const;
 
+    virtual QWidget *createParamWidget(QWidget *parent) const;
 protected:
     Q_REQUIRED_RESULT KSieveUi::SieveImapAccountSettings sieveImapAccountSettings() const;
     Q_REQUIRED_RESULT QStringList sieveCapabilities() const;

@@ -46,20 +46,6 @@ QStringList SieveAction::listOfIncludeFile() const
     return {};
 }
 
-QStringList SieveAction::sieveCapabilities() const
-{
-    if (mSieveGraphicalModeWidget) {
-        return mSieveGraphicalModeWidget->sieveCapabilities();
-    }
-    qCWarning(LIBKSIEVE_LOG) << "SieveAction::sieveCapabilities Problem during initialize mSieveGraphicalModeWidget ";
-    return {};
-}
-
-QWidget *SieveAction::createParamWidget(QWidget *parent) const
-{
-    return new QWidget(parent);
-}
-
 bool SieveAction::setParamWidgetValue(QXmlStreamReader &n, QWidget *, QString &)
 {
     n.skipCurrentElement();

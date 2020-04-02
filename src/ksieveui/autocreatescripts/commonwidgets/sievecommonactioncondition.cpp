@@ -40,6 +40,11 @@ SieveCommonActionCondition::~SieveCommonActionCondition()
 {
 }
 
+QWidget *SieveCommonActionCondition::createParamWidget(QWidget *parent) const
+{
+    return new QWidget(parent);
+}
+
 KSieveUi::SieveImapAccountSettings SieveCommonActionCondition::sieveImapAccountSettings() const
 {
     if (mSieveGraphicalModeWidget) {

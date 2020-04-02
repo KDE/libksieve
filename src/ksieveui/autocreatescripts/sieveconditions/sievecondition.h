@@ -34,8 +34,6 @@ public:
     SieveCondition(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent = nullptr);
     ~SieveCondition() override;
 
-    Q_REQUIRED_RESULT virtual QWidget *createParamWidget(QWidget *parent) const;
-
     Q_REQUIRED_RESULT virtual bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error);
 
     void unknownTag(const QStringRef &tag, QString &error) override;
@@ -43,7 +41,6 @@ public:
     void tooManyArguments(const QStringRef &tagName, int index, int maxValue, QString &error) override;
     void tooManyArguments(const QString &tagName, int index, int maxValue, QString &error);
     void serverDoesNotSupportFeatures(const QString &feature, QString &error) override;
-
 };
 }
 

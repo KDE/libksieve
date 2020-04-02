@@ -34,8 +34,6 @@ public:
     ~SieveAction() override;
 
 
-    Q_REQUIRED_RESULT virtual QWidget *createParamWidget(QWidget *parent) const;
-
     Q_REQUIRED_RESULT virtual bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, QString &error);
 
     void unknownTag(const QStringRef &tag, QString &error) override;
@@ -45,7 +43,6 @@ public:
 
 protected:
     Q_REQUIRED_RESULT QStringList listOfIncludeFile() const;
-    Q_REQUIRED_RESULT QStringList sieveCapabilities() const;
 };
 }
 

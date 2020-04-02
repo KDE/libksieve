@@ -36,11 +36,6 @@ SieveCondition::~SieveCondition()
 {
 }
 
-QWidget *SieveCondition::createParamWidget(QWidget *parent) const
-{
-    return new QWidget(parent);
-}
-
 bool SieveCondition::setParamWidgetValue(QXmlStreamReader & /*element*/, QWidget * /*parent*/, bool /*notCondition*/, QString & /*error*/)
 {
     return true;
