@@ -133,7 +133,6 @@ private:
     KPIMTextEdit::PlainTextEditFindBar *mFindBar = nullptr;
     KPIMTextEdit::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
     QSplitter *mMainSplitter = nullptr;
-    QSplitter *mExtraSplitter = nullptr;
     QSplitter *mTemplateSplitter = nullptr;
     SieveEditorWarning *mSieveEditorWarning = nullptr;
     SieveEditorParsingMissingFeatureWarning *mSieveParsingWarning = nullptr;

@@ -73,13 +73,6 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     //
     mSieveTemplateWidget = new SieveTemplateWidget(i18n("Sieve Template:"));
 
-
-    mExtraSplitter = new QSplitter;
-    mExtraSplitter->setOrientation(Qt::Vertical);
-
-    mExtraSplitter->addWidget(mSieveTemplateWidget);
-    mExtraSplitter->setChildrenCollapsible(false);
-
     QWidget *textEditWidget = new QWidget;
     QVBoxLayout *textEditLayout = new QVBoxLayout;
     textEditLayout->setContentsMargins(0, 0, 0, 0);
@@ -132,9 +125,9 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     textEditWidget->setLayout(textEditLayout);
 
     mTemplateSplitter->addWidget(textEditWidget);
-    mTemplateSplitter->addWidget(mExtraSplitter);
+    mTemplateSplitter->addWidget(mSieveTemplateWidget);
     mTemplateSplitter->setCollapsible(0, false);
-    new KSplitterCollapserButton(mExtraSplitter, mTemplateSplitter);
+    new KSplitterCollapserButton(mSieveTemplateWidget, mTemplateSplitter);
 
     connect(mSieveTemplateWidget, &SieveTemplateWidget::insertTemplate, mTextEdit, &SieveTextEdit::insertPlainText);
 
@@ -170,7 +163,6 @@ void SieveEditorTextModeWidget::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openConfig(), "SieveEditor");
     group.writeEntry("mainSplitter", mMainSplitter->sizes());
-    group.writeEntry("extraSplitter", mExtraSplitter->sizes());
     group.writeEntry("templateSplitter", mTemplateSplitter->sizes());
 }
 
@@ -190,7 +182,6 @@ void SieveEditorTextModeWidget::readConfig()
     const QList<int> size = {400, 100};
 
     mMainSplitter->setSizes(group.readEntry("mainSplitter", size));
-    mExtraSplitter->setSizes(group.readEntry("extraSplitter", size));
     mTemplateSplitter->setSizes(group.readEntry("templateSplitter", size));
 }
 
