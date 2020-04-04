@@ -48,7 +48,7 @@
 #include "akonadiimapsettinginterface.h"
 
 #include <kmime/kmime_message.h>
-#include <mailtransport/transport.h>
+#include <MailTransport/Transport>
 #include <QUrlQuery>
 
 using namespace KSieveUi;
