@@ -190,11 +190,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
         mMailAction->addItem(VacationUtils::mailAction(static_cast<VacationUtils::MailAction>(i)));
     }
     mMailAction->setObjectName(QStringLiteral("mMailAction"));
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
     connect(mMailAction, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &VacationEditWidget::mailActionChanged);
-#else
-    connect(mMailAction, QOverload<int, const QString &>::of(&QComboBox::currentIndexChanged), this, &VacationEditWidget::mailActionChanged);
-#endif
 
     //Add imap select folder plugin here.
     mMailActionRecipient = new VacationMailActionWidget(this);
