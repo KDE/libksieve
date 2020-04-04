@@ -47,6 +47,7 @@
 #include "libksieve_debug.h"
 #include <QAction>
 #include <QPointer>
+#include <QStandardPaths>
 #include <QDir>
 #include <QTemporaryFile>
 
@@ -401,7 +402,8 @@ void SieveEditorWidget::slotShareScript()
         if (zip->open(QIODevice::WriteOnly)) {
             if (zip->addLocalFile(tmpFile.fileName(), sourceName + QLatin1String(".siv"))) {
                 zip->close();
-                QPointer<KNS3::UploadDialog> dialog = new KNS3::UploadDialog(QStringLiteral("ksieve_script.knsrc"), this);
+                const QString knsrcPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("knsrcfiles/ksieve_script.knsrc"));
+                QPointer<KNS3::UploadDialog> dialog = new KNS3::UploadDialog(knsrcPath, this);
                 dialog->setUploadFile(QUrl::fromLocalFile(zipFileName));
                 dialog->setUploadName(sourceName);
                 dialog->setDescription(i18nc("Default description for the source", "My Sieve Script"));
