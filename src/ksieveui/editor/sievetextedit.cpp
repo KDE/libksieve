@@ -38,6 +38,7 @@
 #include <QMenu>
 #include <QFontDatabase>
 #include <QCompleter>
+#include <QTextDocumentFragment>
 using namespace KSieveUi;
 
 class KSieveUi::SieveTextEditPrivate
@@ -304,6 +305,12 @@ void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
             connect(searchAction, &QAction::triggered, this, &SieveTextEdit::slotHelp);
             menu->insertAction(menu->actions().at(0), searchAction);
         }
+    } else {
+        QAction *editRules = new QAction(i18n("Edit Rule"), menu);
+        //editRules->setIcon(QIcon::fromTheme(QStringLiteral("help-hint")));
+        connect(editRules, &QAction::triggered, this, &SieveTextEdit::slotEditRule);
+        QAction *act = menu->addSeparator();
+        menu->insertActions(menu->actions().at(0), {editRules, act});
     }
 }
 
@@ -314,6 +321,12 @@ QString SieveTextEdit::selectedWord(const QPoint &pos) const
     wordSelectCursor.select(QTextCursor::WordUnderCursor);
     const QString word = wordSelectCursor.selectedText();
     return word;
+}
+
+void SieveTextEdit::slotEditRule()
+{
+    QTextCursor textcursor = textCursor();
+    Q_EMIT editRule(textcursor.selection().toPlainText());
 }
 
 void SieveTextEdit::slotHelp()

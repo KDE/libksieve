@@ -96,6 +96,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     textEditLayout->addWidget(mTabWidget);
     connect(mTextEdit, &SieveTextEdit::openHelp, mTabWidget, &SieveEditorTabWidget::slotAddHelpPage);
     connect(mTextEdit, &SieveTextEdit::say, mTextToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::say);
+    connect(mTextEdit, &SieveTextEdit::editRule, this, &SieveEditorTextModeWidget::slotEditRule);
 
     mGotoLineSliderContainer = new KPIMTextEdit::SlideContainer(this);
     mGoToLine = new KPIMTextEdit::TextGoToLineWidget;
@@ -221,6 +222,32 @@ void SieveEditorTextModeWidget::generateXml()
     }
     dlg->exec();
     delete dlg;
+}
+
+void SieveEditorTextModeWidget::slotEditRule(const QString &selectedText)
+{
+    const QByteArray script = selectedText.toUtf8();
+    KSieve::Parser parser(script.begin(),
+                          script.begin() + script.length());
+    KSieveUi::XMLPrintingScriptBuilder psb(2);
+    parser.setScriptBuilder(&psb);
+    const bool result = parser.parse();
+    if (!result) {
+        //TODO
+    } else {
+        QPointer<AutoCreateScriptDialog> dlg = new AutoCreateScriptDialog(this);
+        dlg->setSieveCapabilities(mSieveCapabilities);
+        dlg->setSieveImapAccountSettings(mSieveImapAccountSettings);
+        dlg->setListOfIncludeFile(mListOfIncludeFile);
+
+        QString error;
+        //qDebug() << " psb.result()" << psb.result();
+        dlg->loadScript(psb.result(), error);
+        if (dlg->exec()) {
+            //set text
+        }
+        delete dlg;
+    }
 }
 
 void SieveEditorTextModeWidget::createRulesGraphically()

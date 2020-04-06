@@ -66,16 +66,18 @@ protected:
     void createHighlighter() override;
 Q_SIGNALS:
     void openHelp(const QUrl &url);
+    void editRule(const QString &selectedText);
 
 private:
     void slotUpdateLineNumberAreaWidth(int newBlockCount);
     void slotUpdateLineNumberArea(const QRect &, int);
     void slotHelp();
-    bool openVariableHelp();
+    void slotEditRule();
+    Q_REQUIRED_RESULT bool openVariableHelp();
     bool overrideShortcut(QKeyEvent *event);
-    QStringList completerList() const;
+    Q_REQUIRED_RESULT QStringList completerList() const;
     void setCompleterList(const QStringList &list);
-    QString selectedWord(const QPoint &pos = QPoint()) const;
+    Q_REQUIRED_RESULT QString selectedWord(const QPoint &pos = QPoint()) const;
 
     SieveTextEditPrivate *const d;
 };

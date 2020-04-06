@@ -124,7 +124,7 @@ private:
     void slotGoToLine(int line);
     void readConfig();
     void writeConfig();
-    bool loadFromFile(const QString &filename);
+    void slotEditRule(const QString &selectedText);
     QString mOriginalScript;
     QStringList mSieveCapabilities;
     QStringList mListOfIncludeFile;
