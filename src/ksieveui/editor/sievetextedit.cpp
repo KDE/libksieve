@@ -291,6 +291,12 @@ void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
     }
 
     if (!textCursor().hasSelection()) {
+        QAction *insertRules = new QAction(i18n("Insert Rule"), menu);
+        //editRules->setIcon(QIcon::fromTheme(QStringLiteral("help-hint")));
+        connect(insertRules, &QAction::triggered, this, &SieveTextEdit::insertRule);
+        QAction *act = menu->addSeparator();
+        menu->insertActions(menu->actions().at(0), {insertRules, act});
+
         const QString word = selectedWord(pos);
         const KSieveUi::SieveEditorUtil::HelpVariableName type = KSieveUi::SieveEditorUtil::strToVariableName(word);
         if (type != KSieveUi::SieveEditorUtil::UnknownHelp) {

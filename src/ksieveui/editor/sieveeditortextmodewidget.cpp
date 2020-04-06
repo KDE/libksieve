@@ -98,6 +98,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     connect(mTextEdit, &SieveTextEdit::openHelp, mTabWidget, &SieveEditorTabWidget::slotAddHelpPage);
     connect(mTextEdit, &SieveTextEdit::say, mTextToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::say);
     connect(mTextEdit, &SieveTextEdit::editRule, this, &SieveEditorTextModeWidget::slotEditRule);
+    connect(mTextEdit, &SieveTextEdit::insertRule, this, &SieveEditorTextModeWidget::slotInsertRule);
 
     mGotoLineSliderContainer = new KPIMTextEdit::SlideContainer(this);
     mGoToLine = new KPIMTextEdit::TextGoToLineWidget;
@@ -250,6 +251,20 @@ void SieveEditorTextModeWidget::slotEditRule(const QString &selectedText)
     } else {
         KMessageBox::error(this, i18n("Selected text is not a full sieve script"), i18n("Parsing error"));
     }
+}
+
+void SieveEditorTextModeWidget::slotInsertRule()
+{
+    QPointer<AutoCreateScriptDialog> dlg = new AutoCreateScriptDialog(this);
+    dlg->setSieveCapabilities(mSieveCapabilities);
+    dlg->setSieveImapAccountSettings(mSieveImapAccountSettings);
+    dlg->setListOfIncludeFile(mListOfIncludeFile);
+    if (dlg->exec()) {
+        QString requireModules;
+        const QString newScript = dlg->script(requireModules);
+        mTextEdit->insertPlainText(newScript);
+    }
+    delete dlg;
 }
 
 void SieveEditorTextModeWidget::createRulesGraphically()

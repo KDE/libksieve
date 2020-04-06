@@ -125,6 +125,7 @@ private:
     void readConfig();
     void writeConfig();
     void slotEditRule(const QString &selectedText);
+    void slotInsertRule();
     QString mOriginalScript;
     QStringList mSieveCapabilities;
     QStringList mListOfIncludeFile;

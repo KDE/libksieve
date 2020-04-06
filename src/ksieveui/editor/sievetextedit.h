@@ -67,6 +67,7 @@ protected:
 Q_SIGNALS:
     void openHelp(const QUrl &url);
     void editRule(const QString &selectedText);
+    void insertRule();
 
 private:
     void slotUpdateLineNumberAreaWidth(int newBlockCount);
