@@ -127,7 +127,7 @@ QString SieveEditorGraphicalModeWidget::currentscript()
     QStringList requireModules;
     QString script = mSieveScript->generatedScript(requireModules);
     if (!requireModules.isEmpty()) {
-        script.prepend(requireModules.join(QStringLiteral("\n")) + QStringLiteral("\n\n"));
+        script.prepend(requireModules.join(QLatin1Char('\n')) + QStringLiteral("\n\n"));
     }
     return script;
 }

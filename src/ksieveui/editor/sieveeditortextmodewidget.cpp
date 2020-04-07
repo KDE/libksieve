@@ -278,7 +278,7 @@ void SieveEditorTextModeWidget::createRulesGraphically()
         const QString script = dlg->script(requireModules);
         QString newPlainText = mTextEdit->toPlainText() + script;
         if (!requireModules.isEmpty()) {
-            newPlainText.prepend(requireModules.join(QStringLiteral("\n")) + QLatin1Char('\n'));
+            newPlainText.prepend(requireModules.join(QLatin1Char('\n')) + QLatin1Char('\n'));
         }
         mTextEdit->selectAll();
 
