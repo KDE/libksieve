@@ -53,7 +53,7 @@ Q_SIGNALS:
 private Q_SLOTS:
     void slotPutResult(KManageSieve::SieveJob *job, bool success);
     void slotGetScript(KManageSieve::SieveJob *job, bool success, const QString &oldScript, bool active);
-    void slotGotActiveScripts(ParseUserScriptJob *job);
+    void slotGotActiveScripts(KSieveUi::ParseUserScriptJob *job);
     void slotGenerateDone(const QString &error = QString());
 
 private:

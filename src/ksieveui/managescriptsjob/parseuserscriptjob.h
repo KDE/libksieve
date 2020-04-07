@@ -47,7 +47,7 @@ public:
     Q_REQUIRED_RESULT QStringList parsescript(const QString &script, bool &result);
 
 Q_SIGNALS:
-    void finished(ParseUserScriptJob *job);
+    void finished(KSieveUi::ParseUserScriptJob *job);
 
 private:
     Q_DISABLE_COPY(ParseUserScriptJob)

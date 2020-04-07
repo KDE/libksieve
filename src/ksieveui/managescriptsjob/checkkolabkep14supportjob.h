@@ -74,7 +74,7 @@ public:
     Q_REQUIRED_RESULT QUrl serverUrl() const;
 
 Q_SIGNALS:
-    void result(CheckKolabKep14SupportJob *, bool);
+    void result(KSieveUi::CheckKolabKep14SupportJob *, bool);
 
 private:
     CheckKolabKep14SupportJobPrivate *const d;

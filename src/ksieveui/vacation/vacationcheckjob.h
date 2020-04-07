@@ -37,10 +37,10 @@ public:
     void setKep14Support(bool kep14Support);
     void start();
     void kill();
-    bool noScriptFound() const;
-    QString script() const;
-    QStringList sieveCapabilities() const;
-    QString serverName() const;
+    Q_REQUIRED_RESULT bool noScriptFound() const;
+    Q_REQUIRED_RESULT QString script() const;
+    Q_REQUIRED_RESULT QStringList sieveCapabilities() const;
+    Q_REQUIRED_RESULT QString serverName() const;
 
 Q_SIGNALS:
     void vacationScriptActive(VacationCheckJob *job, const QString &sscriptName, bool active);
@@ -53,9 +53,9 @@ private Q_SLOTS:
     void emitError(const QString &errorMessage);
     void searchVacationScript();
     void getNextScript();
-    bool isLastScript() const;
 
 private:
+    Q_REQUIRED_RESULT bool isLastScript() const;
     Q_DISABLE_COPY(VacationCheckJob)
     QStringList mAvailableScripts;
     QStringList mActiveScripts;
