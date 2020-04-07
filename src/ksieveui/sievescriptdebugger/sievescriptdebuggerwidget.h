@@ -40,9 +40,9 @@ public:
     void setScript(const QString &script);
     Q_REQUIRED_RESULT QString script() const;
 
-    bool canAccept() const;
+    Q_REQUIRED_RESULT bool canAccept() const;
 
-    QList<int> splitterSizes() const;
+    Q_REQUIRED_RESULT QList<int> splitterSizes() const;
     void setSplitterSizes(const QList<int> &sizes);
 
     Q_REQUIRED_RESULT bool haveDebugApps() const;

@@ -21,7 +21,7 @@
 #define SIEVECONDITIONWIDGETLISTER_H
 
 #include <Libkdepim/KWidgetLister>
-
+#include <QVector>
 class QPushButton;
 class QGridLayout;
 class QXmlStreamReader;
@@ -57,7 +57,7 @@ private:
     void slotAddComment();
     void initWidget();
     void setFilterCondition(QWidget *widget);
-    QList<KSieveUi::SieveCondition *> mConditionList;
+    QVector<KSieveUi::SieveCondition *> mConditionList;
     QPushButton *mAdd = nullptr;
     QPushButton *mRemove = nullptr;
     QComboBox *mComboBox = nullptr;
