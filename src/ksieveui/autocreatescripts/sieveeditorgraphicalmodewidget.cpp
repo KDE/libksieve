@@ -100,7 +100,7 @@ QStringList SieveEditorGraphicalModeWidget::sieveCapabilities()
     return mCapabilities;
 }
 
-QString SieveEditorGraphicalModeWidget::script(QString &required) const
+QString SieveEditorGraphicalModeWidget::script(QStringList &required) const
 {
     return mSieveScript->generatedScript(required);
 }
@@ -124,10 +124,10 @@ void SieveEditorGraphicalModeWidget::slotActivateScriptPage(QWidget *page)
 
 QString SieveEditorGraphicalModeWidget::currentscript()
 {
-    QString requireModules;
+    QStringList requireModules;
     QString script = mSieveScript->generatedScript(requireModules);
     if (!requireModules.isEmpty()) {
-        script.prepend(requireModules + QLatin1Char('\n'));
+        script.prepend(requireModules.join(QStringLiteral("\n")) + QStringLiteral("\n\n"));
     }
     return script;
 }

@@ -58,7 +58,7 @@ public:
     ~SieveScriptListBox();
 
     void setSieveEditorGraphicalModeWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget);
-    Q_REQUIRED_RESULT QString generatedScript(QString &required) const;
+    Q_REQUIRED_RESULT QString generatedScript(QStringList &required) const;
     void loadScript(const QString &doc, QString &error);
 
 Q_SIGNALS:

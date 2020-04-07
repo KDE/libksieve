@@ -76,7 +76,7 @@ void AutoCreateScriptDialog::setListOfIncludeFile(const QStringList &listOfInclu
     mEditor->setListOfIncludeFile(listOfIncludeFile);
 }
 
-QString AutoCreateScriptDialog::script(QString &required) const
+QString AutoCreateScriptDialog::script(QStringList &required) const
 {
     return mEditor->script(required);
 }

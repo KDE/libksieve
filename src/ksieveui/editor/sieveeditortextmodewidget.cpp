@@ -243,7 +243,7 @@ void SieveEditorTextModeWidget::slotEditRule(const QString &selectedText)
         //qDebug() << " psb.result()" << psb.result();
         dlg->loadScript(psb.result(), error);
         if (dlg->exec()) {
-            QString requireModules;
+            QStringList requireModules;
             const QString newScript = dlg->script(requireModules);
             mTextEdit->insertPlainText(newScript);
         }
@@ -260,7 +260,7 @@ void SieveEditorTextModeWidget::slotInsertRule()
     dlg->setSieveImapAccountSettings(mSieveImapAccountSettings);
     dlg->setListOfIncludeFile(mListOfIncludeFile);
     if (dlg->exec()) {
-        QString requireModules;
+        QStringList requireModules;
         const QString newScript = dlg->script(requireModules);
         mTextEdit->insertPlainText(newScript);
     }
@@ -274,11 +274,11 @@ void SieveEditorTextModeWidget::createRulesGraphically()
     dlg->setSieveImapAccountSettings(mSieveImapAccountSettings);
     dlg->setListOfIncludeFile(mListOfIncludeFile);
     if (dlg->exec()) {
-        QString requireModules;
+        QStringList requireModules;
         const QString script = dlg->script(requireModules);
         QString newPlainText = mTextEdit->toPlainText() + script;
         if (!requireModules.isEmpty()) {
-            newPlainText.prepend(requireModules + QLatin1Char('\n'));
+            newPlainText.prepend(requireModules.join(QStringLiteral("\n")) + QLatin1Char('\n'));
         }
         mTextEdit->selectAll();
 

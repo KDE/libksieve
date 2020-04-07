@@ -37,7 +37,7 @@ public:
     explicit SieveEditorGraphicalModeWidget(QWidget *parent = nullptr);
     ~SieveEditorGraphicalModeWidget();
 
-    Q_REQUIRED_RESULT QString script(QString &required) const override;
+    Q_REQUIRED_RESULT QString script(QStringList &required) const override;
 
     void setSieveCapabilities(const QStringList &capabilities) override;
     Q_REQUIRED_RESULT QStringList sieveCapabilities() override;

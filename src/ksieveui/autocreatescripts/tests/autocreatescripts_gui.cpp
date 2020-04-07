@@ -37,7 +37,7 @@ int main(int argc, char **argv)
     //Add all capabilities for testing
     dialog->setSieveCapabilities(capabilities);
     if (dialog->exec()) {
-        QString requireModules;
+        QStringList requireModules;
         const QString script = dialog->script(requireModules);
         qDebug() << " generated script :\n" << requireModules << "\n" << script;
     }
