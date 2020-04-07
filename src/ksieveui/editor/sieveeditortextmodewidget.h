@@ -126,6 +126,8 @@ private:
     void writeConfig();
     void slotEditRule(const QString &selectedText);
     void slotInsertRule();
+    void insertRequires(const QStringList &needToAddRequire);
+    Q_REQUIRED_RESULT QStringList insertNecessaryRequires(const QStringList &requireModules);
     QString mOriginalScript;
     QStringList mSieveCapabilities;
     QStringList mListOfIncludeFile;

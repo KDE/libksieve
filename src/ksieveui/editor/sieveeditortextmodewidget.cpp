@@ -245,12 +245,35 @@ void SieveEditorTextModeWidget::slotEditRule(const QString &selectedText)
         if (dlg->exec()) {
             QStringList requireModules;
             const QString newScript = dlg->script(requireModules);
+            const QStringList needToAddRequire = insertNecessaryRequires(requireModules);
             mTextEdit->insertPlainText(newScript);
+            insertRequires(needToAddRequire);
         }
         delete dlg;
     } else {
         KMessageBox::error(this, i18n("Selected text is not a full sieve script"), i18n("Parsing error"));
     }
+}
+
+void SieveEditorTextModeWidget::insertRequires(const QStringList &needToAddRequire)
+{
+    if (!needToAddRequire.isEmpty()) {
+        QTextCursor textCursor = mTextEdit->textCursor();
+        textCursor.movePosition(QTextCursor::MoveOperation::Start);
+        textCursor.insertText(needToAddRequire.join(QLatin1Char('\n')) + QLatin1Char('\n'));
+    }
+}
+
+QStringList SieveEditorTextModeWidget::insertNecessaryRequires(const QStringList &requireModules)
+{
+    QStringList needToAddRequire;
+    const QString plainText = mTextEdit->toPlainText();
+    for (const QString &module : qAsConst(requireModules)) {
+        if (!plainText.contains(module)) {
+            needToAddRequire.append(module);
+        }
+    }
+    return needToAddRequire;
 }
 
 void SieveEditorTextModeWidget::slotInsertRule()
@@ -262,7 +285,9 @@ void SieveEditorTextModeWidget::slotInsertRule()
     if (dlg->exec()) {
         QStringList requireModules;
         const QString newScript = dlg->script(requireModules);
+        const QStringList needToAddRequire = insertNecessaryRequires(requireModules);
         mTextEdit->insertPlainText(newScript);
+        insertRequires(needToAddRequire);
     }
     delete dlg;
 }
@@ -276,8 +301,9 @@ void SieveEditorTextModeWidget::createRulesGraphically()
     if (dlg->exec()) {
         QStringList requireModules;
         const QString script = dlg->script(requireModules);
+        const QStringList needToAddRequire = insertNecessaryRequires(requireModules);
         QString newPlainText = mTextEdit->toPlainText() + script;
-        if (!requireModules.isEmpty()) {
+        if (!needToAddRequire.isEmpty()) {
             newPlainText.prepend(requireModules.join(QLatin1Char('\n')) + QLatin1Char('\n'));
         }
         mTextEdit->selectAll();
