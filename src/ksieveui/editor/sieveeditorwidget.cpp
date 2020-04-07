@@ -403,7 +403,7 @@ void SieveEditorWidget::slotShareScript()
         out << script();
         tmpFile.close();
         const QString sourceName = mScriptName->text();
-        const QString zipFileName = tmp.path() + QDir::separator() + sourceName + QLatin1String(".zip");
+        const QString zipFileName = tmp.path() + QLatin1Char('/') + sourceName + QLatin1String(".zip");
         KZip *zip = new KZip(zipFileName);
         if (zip->open(QIODevice::WriteOnly)) {
             if (zip->addLocalFile(tmpFile.fileName(), sourceName + QLatin1String(".siv"))) {
