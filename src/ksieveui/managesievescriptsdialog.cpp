@@ -133,6 +133,7 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(SieveImapPasswordProvider *pa
 
 ManageSieveScriptsDialog::~ManageSieveScriptsDialog()
 {
+    disconnect(d->mTreeView, &CustomManageSieveWidget::updateButtons, this, &ManageSieveScriptsDialog::slotUpdateButtons);
     KConfigGroup group(KSharedConfig::openConfig(), "ManageSieveScriptsDialog");
     group.writeEntry("Size", size());
     // prevent QTreeWidget signals triggered by it's destructor from calling our slots
