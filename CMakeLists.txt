@@ -76,6 +76,7 @@ if (EXISTS "${CMAKE_SOURCE_DIR}/.git")
 endif()
 
 add_definitions(-DQT_NO_FOREACH)
+add_definitions(-DQT_NO_KEYWORDS)
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5LibKSieve")
 
