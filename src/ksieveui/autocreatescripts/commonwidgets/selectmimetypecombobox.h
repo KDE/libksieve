@@ -19,10 +19,10 @@
 #ifndef SELECTMIMETYPECOMBOBOX_H
 #define SELECTMIMETYPECOMBOBOX_H
 
-#include <KComboBox>
+#include <QComboBox>
 
 namespace KSieveUi {
-class SelectMimeTypeComboBox : public KComboBox
+class SelectMimeTypeComboBox : public QComboBox
 {
     Q_OBJECT
 public:

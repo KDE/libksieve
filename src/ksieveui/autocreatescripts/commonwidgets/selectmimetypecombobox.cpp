@@ -24,7 +24,7 @@
 using namespace KSieveUi;
 
 SelectMimeTypeComboBox::SelectMimeTypeComboBox(QWidget *parent)
-    : KComboBox(parent)
+    : QComboBox(parent)
 {
     initialize();
     connect(this, QOverload<int>::of(&SelectMimeTypeComboBox::activated), this, &SelectMimeTypeComboBox::valueChanged);
