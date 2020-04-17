@@ -21,7 +21,7 @@
 #define SELECTRELATIONALMATCHTYPE_H
 
 #include <QWidget>
-class KComboBox;
+class QComboBox;
 namespace KSieveUi {
 class SelectRelationalMatchType : public QWidget
 {
@@ -38,8 +38,8 @@ Q_SIGNALS:
 
 private:
     void initialize();
-    KComboBox *mType = nullptr;
-    KComboBox *mMatch = nullptr;
+    QComboBox *mType = nullptr;
+    QComboBox *mMatch = nullptr;
 };
 }
 

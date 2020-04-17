@@ -18,10 +18,10 @@
 */
 #ifndef SELECTVACATIONCOMBOBOX_H
 #define SELECTVACATIONCOMBOBOX_H
-#include <KComboBox>
+#include <QComboBox>
 
 namespace KSieveUi {
-class SelectVacationComboBox : public KComboBox
+class SelectVacationComboBox : public QComboBox
 {
     Q_OBJECT
 public:

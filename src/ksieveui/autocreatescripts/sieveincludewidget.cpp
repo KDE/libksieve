@@ -42,7 +42,7 @@ static const int MINIMUMINCLUDEACTION = 1;
 static const int MAXIMUMINCLUDEACTION = 20;
 
 SieveIncludeLocation::SieveIncludeLocation(QWidget *parent)
-    : KComboBox(parent)
+    : QComboBox(parent)
 {
     initialize();
     connect(this, QOverload<int>::of(&SieveIncludeLocation::activated), this, &SieveIncludeLocation::valueChanged);

@@ -19,12 +19,12 @@
 #include "selectaddheaderpositioncombobox.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
-#include <KComboBox>
+#include <QComboBox>
 #include <KLocalizedString>
 
 using namespace KSieveUi;
 SelectAddHeaderPositionCombobox::SelectAddHeaderPositionCombobox(QWidget *parent)
-    : KComboBox(parent)
+    : QComboBox(parent)
 {
     initialize();
     connect(this, QOverload<int>::of(&SelectAddHeaderPositionCombobox::activated), this, &SelectAddHeaderPositionCombobox::valueChanged);

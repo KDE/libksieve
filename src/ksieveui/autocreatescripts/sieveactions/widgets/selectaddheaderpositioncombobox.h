@@ -18,10 +18,10 @@
 */
 #ifndef SELECTADDHEADERPOSITIONCOMBOBOX_H
 #define SELECTADDHEADERPOSITIONCOMBOBOX_H
-#include <KComboBox>
+#include <QComboBox>
 
 namespace KSieveUi {
-class SelectAddHeaderPositionCombobox : public KComboBox
+class SelectAddHeaderPositionCombobox : public QComboBox
 {
     Q_OBJECT
 public:

@@ -26,7 +26,7 @@
 class QRadioButton;
 class QGroupBox;
 class QAbstractButton;
-class KComboBox;
+class QComboBox;
 class QPushButton;
 class QXmlStreamReader;
 
@@ -73,7 +73,7 @@ private:
     QRadioButton *mMatchAll = nullptr;
     QRadioButton *mMatchAny = nullptr;
     QRadioButton *mAllMessageRBtn = nullptr;
-    KComboBox *mNewBlockType = nullptr;
+    QComboBox *mNewBlockType = nullptr;
     QPushButton *mAddBlockType = nullptr;
 };
 }

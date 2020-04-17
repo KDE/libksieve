@@ -24,7 +24,7 @@
 
 using namespace KSieveUi;
 SelectVacationComboBox::SelectVacationComboBox(QWidget *parent)
-    : KComboBox(parent)
+    : QComboBox(parent)
 {
     initialize();
     connect(this, QOverload<int>::of(&SelectVacationComboBox::activated), this, &SelectVacationComboBox::valueChanged);

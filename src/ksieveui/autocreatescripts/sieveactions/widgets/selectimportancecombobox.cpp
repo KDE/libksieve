@@ -19,13 +19,13 @@
 #include "selectimportancecombobox.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
-#include <KComboBox>
+#include <QComboBox>
 #include <KLocalizedString>
 
 using namespace KSieveUi;
 
 SelectImportanceCombobox::SelectImportanceCombobox(QWidget *parent)
-    : KComboBox(parent)
+    : QComboBox(parent)
 {
     initialize();
     connect(this, QOverload<int>::of(&SelectImportanceCombobox::activated), this, &SelectImportanceCombobox::valueChanged);

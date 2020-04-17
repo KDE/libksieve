@@ -24,7 +24,7 @@
 using namespace KSieveUi;
 
 SelectVariableModifierComboBox::SelectVariableModifierComboBox(QWidget *parent)
-    : KComboBox(parent)
+    : QComboBox(parent)
 {
     initialize();
     connect(this, QOverload<int>::of(&SelectVariableModifierComboBox::activated), this, &SelectVariableModifierComboBox::valueChanged);

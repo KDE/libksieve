@@ -19,10 +19,10 @@
 #ifndef SELECTIMPORTANCECOMBOBOX_H
 #define SELECTIMPORTANCECOMBOBOX_H
 
-#include <KComboBox>
+#include <QComboBox>
 
 namespace KSieveUi {
-class SelectImportanceCombobox : public KComboBox
+class SelectImportanceCombobox : public QComboBox
 {
     Q_OBJECT
 public:

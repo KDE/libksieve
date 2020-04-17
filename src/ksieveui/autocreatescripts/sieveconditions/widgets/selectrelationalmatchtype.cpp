@@ -19,7 +19,7 @@
 #include "selectrelationalmatchtype.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
-#include <KComboBox>
+#include <QComboBox>
 
 #include <KLocalizedString>
 #include <QHBoxLayout>
@@ -65,19 +65,19 @@ void SelectRelationalMatchType::initialize()
     QHBoxLayout *lay = new QHBoxLayout(this);
     lay->setContentsMargins(0, 0, 0, 0);
 
-    mType = new KComboBox(this);
+    mType = new QComboBox(this);
     mType->addItem(i18n("Value"), QStringLiteral(":value"));
     mType->addItem(i18n("Count"), QStringLiteral(":count"));
     lay->addWidget(mType);
-    connect(mType, QOverload<int>::of(&KComboBox::activated), this, &SelectRelationalMatchType::valueChanged);
+    connect(mType, QOverload<int>::of(&QComboBox::activated), this, &SelectRelationalMatchType::valueChanged);
 
-    mMatch = new KComboBox(this);
+    mMatch = new QComboBox(this);
     mMatch->addItem(i18n("Greater than"), QStringLiteral("gt"));
     mMatch->addItem(i18n("Greater than or equal"), QStringLiteral("ge"));
     mMatch->addItem(i18n("Less than"), QStringLiteral("lt"));
     mMatch->addItem(i18n("Less than or equal"), QStringLiteral("le"));
     mMatch->addItem(i18n("Equal to"), QStringLiteral("eq"));
     mMatch->addItem(i18n("Not equal to"), QStringLiteral("ne"));
-    connect(mMatch, QOverload<int>::of(&KComboBox::activated), this, &SelectRelationalMatchType::valueChanged);
+    connect(mMatch, QOverload<int>::of(&QComboBox::activated), this, &SelectRelationalMatchType::valueChanged);
     lay->addWidget(mMatch);
 }

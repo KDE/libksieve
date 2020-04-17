@@ -22,7 +22,7 @@
 
 #include "sievewidgetpageabstract.h"
 #include <Libkdepim/KWidgetLister>
-#include <KComboBox>
+#include <QComboBox>
 
 class QPushButton;
 class QGridLayout;
@@ -31,7 +31,7 @@ class QXmlStreamReader;
 namespace KSieveUi {
 class SieveHelpButton;
 class IncludeFileLineEdit;
-class SieveIncludeLocation : public KComboBox
+class SieveIncludeLocation : public QComboBox
 {
     Q_OBJECT
 public:

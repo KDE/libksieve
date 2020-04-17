@@ -20,7 +20,7 @@
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
-#include <KComboBox>
+#include <QComboBox>
 #include <QLineEdit>
 
 #include <QHBoxLayout>
@@ -42,12 +42,12 @@ void SelectBodyTypeWidget::initialize()
     QHBoxLayout *lay = new QHBoxLayout(this);
     lay->setContentsMargins(0, 0, 0, 0);
 
-    mBodyCombobox = new KComboBox(this);
+    mBodyCombobox = new QComboBox(this);
     lay->addWidget(mBodyCombobox);
     mBodyCombobox->addItem(i18n("raw"), QStringLiteral(":raw"));
     mBodyCombobox->addItem(i18n("content"), QStringLiteral(":content"));
     mBodyCombobox->addItem(i18n("text"), QStringLiteral(":text"));
-    connect(mBodyCombobox, QOverload<int>::of(&KComboBox::activated), this, &SelectBodyTypeWidget::slotBodyTypeChanged);
+    connect(mBodyCombobox, QOverload<int>::of(&QComboBox::activated), this, &SelectBodyTypeWidget::slotBodyTypeChanged);
 
     mBodyLineEdit = new QLineEdit(this);
     connect(mBodyLineEdit, &QLineEdit::textChanged, this, &SelectBodyTypeWidget::valueChanged);

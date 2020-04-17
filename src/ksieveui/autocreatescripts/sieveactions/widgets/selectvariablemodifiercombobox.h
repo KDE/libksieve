@@ -19,10 +19,10 @@
 #ifndef SELECTVARIABLEMODIFIERCOMBOBOX_H
 #define SELECTVARIABLEMODIFIERCOMBOBOX_H
 
-#include <KComboBox>
+#include <QComboBox>
 
 namespace KSieveUi {
-class SelectVariableModifierComboBox : public KComboBox
+class SelectVariableModifierComboBox : public QComboBox
 {
     Q_OBJECT
 public:

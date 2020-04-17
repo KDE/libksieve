@@ -20,7 +20,7 @@
 #include "sievedatespinbox.h"
 
 #include <KLocalizedString>
-#include <KComboBox>
+#include <QComboBox>
 #include <QLineEdit>
 #include <KDateComboBox>
 #include <KTimeComboBox>
@@ -48,8 +48,8 @@ void SelectDateWidget::initialize()
     QHBoxLayout *lay = new QHBoxLayout(this);
     lay->setContentsMargins(0, 0, 0, 0);
 
-    mDateType = new KComboBox;
-    connect(mDateType, QOverload<int>::of(&KComboBox::activated), this, &SelectDateWidget::slotDateTypeActivated);
+    mDateType = new QComboBox;
+    connect(mDateType, QOverload<int>::of(&QComboBox::activated), this, &SelectDateWidget::slotDateTypeActivated);
     mDateType->addItem(i18n("Year"), QVariant::fromValue(KSieveUi::SelectDateWidget::Year));
     mDateType->addItem(i18n("Month"), QVariant::fromValue(KSieveUi::SelectDateWidget::Month));
     mDateType->addItem(i18n("Day"), QVariant::fromValue(KSieveUi::SelectDateWidget::Day));

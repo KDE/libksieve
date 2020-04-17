@@ -23,7 +23,7 @@
 #include "autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
-#include <KComboBox>
+#include <QComboBox>
 #include <QPushButton>
 #include <QIcon>
 
@@ -84,7 +84,7 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *g
     QHBoxLayout *newBlockLayout = new QHBoxLayout;
     QLabel *lab = new QLabel(i18n("Add new block:"));
     newBlockLayout->addWidget(lab);
-    mNewBlockType = new KComboBox;
+    mNewBlockType = new QComboBox;
     newBlockLayout->addWidget(mNewBlockType);
     mNewBlockType->addItem(i18n("\"elsif\" block"));
     mNewBlockType->addItem(i18n("\"else\" block"));

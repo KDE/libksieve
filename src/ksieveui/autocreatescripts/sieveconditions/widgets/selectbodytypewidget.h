@@ -21,7 +21,7 @@
 
 #include <QWidget>
 
-class KComboBox;
+class QComboBox;
 class QLineEdit;
 
 namespace KSieveUi {
@@ -40,7 +40,7 @@ Q_SIGNALS:
 private:
     void slotBodyTypeChanged(int);
     void initialize();
-    KComboBox *mBodyCombobox = nullptr;
+    QComboBox *mBodyCombobox = nullptr;
     QLineEdit *mBodyLineEdit = nullptr;
 };
 }

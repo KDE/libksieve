@@ -23,7 +23,7 @@
 #include <QSpinBox>
 #include "ksieveui_private_export.h"
 
-class KComboBox;
+class QComboBox;
 class QLineEdit;
 class QStackedWidget;
 class QSpinBox;
@@ -65,7 +65,7 @@ private:
     void initialize();
     QString dateType(DateType type) const;
     QString dateValue(DateType type) const;
-    KComboBox *mDateType = nullptr;
+    QComboBox *mDateType = nullptr;
     QLineEdit *mDateLineEdit = nullptr;
     SieveDateSpinBox *mDateValue = nullptr;
     KDateComboBox *mDateEdit = nullptr;
