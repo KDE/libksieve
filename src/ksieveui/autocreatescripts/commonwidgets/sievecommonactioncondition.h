@@ -21,7 +21,6 @@
 #define SIEVECOMMONACTIONCONDITION_H
 
 #include <QObject>
-class QXmlStreamReader;
 namespace KSieveUi {
 class SieveImapAccountSettings;
 class SieveEditorGraphicalModeWidget;

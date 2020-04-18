@@ -25,7 +25,6 @@
 #include "autocreatescripts/commonwidgets/sievecommonactioncondition.h"
 class QXmlStreamReader;
 namespace KSieveUi {
-class SieveImapAccountSettings;
 class SieveEditorGraphicalModeWidget;
 class SieveCondition : public SieveCommonActionCondition
 {
