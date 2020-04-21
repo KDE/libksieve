@@ -30,6 +30,8 @@
 #include <KSharedConfig>
 #include <QDialogButtonBox>
 #include <KConfigGroup>
+#include <QEvent>
+#include <QKeyEvent>
 
 using namespace KSieveUi;
 
@@ -64,11 +66,12 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
 
     QHBoxLayout *hbox = new QHBoxLayout;
 
-    mNewHeader = new KLineEdit(this);
+    mNewHeader = new QLineEdit(this);
+    new LineEditCatchReturnKey(mNewHeader, this);
     mNewHeader->setObjectName(QStringLiteral("newheader"));
     mNewHeader->setClearButtonEnabled(true);
-    mNewHeader->setTrapReturnKey(true);
-    connect(mNewHeader, &KLineEdit::returnPressed, this, &SelectHeadersDialog::slotAddNewHeader);
+    //mNewHeader->setTrapReturnKey(true);
+    connect(mNewHeader, &QLineEdit::returnPressed, this, &SelectHeadersDialog::slotAddNewHeader);
     mNewHeader->setClearButtonEnabled(true);
 
     mAddNewHeader = new QPushButton(this);
@@ -77,7 +80,7 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     mAddNewHeader->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
     mAddNewHeader->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
     connect(mAddNewHeader, &QPushButton::clicked, this, &SelectHeadersDialog::slotAddNewHeader);
-    connect(mNewHeader, &KLineEdit::textChanged, this, &SelectHeadersDialog::slotNewHeaderTextChanged);
+    connect(mNewHeader, &QLineEdit::textChanged, this, &SelectHeadersDialog::slotNewHeaderTextChanged);
     hbox->addWidget(mNewHeader);
     hbox->addWidget(mAddNewHeader);
 
@@ -319,4 +322,34 @@ void SelectHeaderTypeComboBox::setCode(const QString &code)
     }
     mCode = code;
     changeReadOnlyStatus();
+}
+
+LineEditCatchReturnKey::LineEditCatchReturnKey(QLineEdit *lineEdit, QObject *parent)
+    : QObject(parent)
+    , mLineEdit(lineEdit)
+{
+    mLineEdit->installEventFilter(this);
+}
+
+LineEditCatchReturnKey::~LineEditCatchReturnKey()
+{
+
+}
+
+bool LineEditCatchReturnKey::eventFilter(QObject *obj, QEvent *event)
+{
+    if (obj == mLineEdit) {
+        if (event->type() == QEvent::KeyPress) {
+            QKeyEvent *e = static_cast<QKeyEvent *>(event);
+            if (e->key() == Qt::Key_Return || e->key() == Qt::Key_Enter) {
+                const bool stopEvent = (e->modifiers() == Qt::NoButton ||
+                                        e->modifiers() == Qt::KeypadModifier);
+                if (stopEvent) {
+                    Q_EMIT mLineEdit->returnPressed();
+                }
+                return true;
+            }
+        }
+    }
+    return QObject::eventFilter(obj, event);
 }

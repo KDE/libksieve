@@ -27,6 +27,20 @@
 class KLineEdit;
 class QPushButton;
 namespace KSieveUi {
+
+class LineEditCatchReturnKey : public QObject
+{
+    Q_OBJECT
+public:
+    explicit LineEditCatchReturnKey(QLineEdit *lineEdit, QObject *parent = nullptr);
+    ~LineEditCatchReturnKey();
+
+protected:
+    bool eventFilter(QObject *obj, QEvent *event) override;
+private:
+    QLineEdit *mLineEdit = nullptr;
+};
+
 class SelectHeadersWidget : public QListWidget
 {
     Q_OBJECT
@@ -61,7 +75,7 @@ private:
     void readConfig();
     void writeConfig();
     SelectHeadersWidget *mListWidget = nullptr;
-    KLineEdit *mNewHeader = nullptr;
+    QLineEdit *mNewHeader = nullptr;
     QPushButton *mAddNewHeader = nullptr;
 };
 

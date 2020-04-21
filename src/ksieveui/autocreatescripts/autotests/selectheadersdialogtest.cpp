@@ -24,7 +24,7 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QLabel>
-#include <KLineEdit>
+#include <QLineEdit>
 #include <QPushButton>
 
 SelectHeadersDialogTest::SelectHeadersDialogTest(QObject *parent)
@@ -56,10 +56,9 @@ void SelectHeadersDialogTest::shouldHaveDefaultValue()
     QVERIFY(lab);
     QVERIFY(!lab->text().isEmpty());
 
-    KLineEdit *mNewHeader = dlg.findChild<KLineEdit *>(QStringLiteral("newheader"));
+    QLineEdit *mNewHeader = dlg.findChild<QLineEdit *>(QStringLiteral("newheader"));
     QVERIFY(mNewHeader);
     QVERIFY(mNewHeader->isClearButtonEnabled());
-    QVERIFY(mNewHeader->trapReturnKey());
 
     QPushButton *mAddNewHeader = dlg.findChild<QPushButton *>(QStringLiteral("addnewheader"));
     QVERIFY(mAddNewHeader);
