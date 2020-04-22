@@ -24,22 +24,9 @@
 
 #include <QListWidget>
 
-class KLineEdit;
+class QLineEdit;
 class QPushButton;
 namespace KSieveUi {
-
-class LineEditCatchReturnKey : public QObject
-{
-    Q_OBJECT
-public:
-    explicit LineEditCatchReturnKey(QLineEdit *lineEdit, QObject *parent = nullptr);
-    ~LineEditCatchReturnKey();
-
-protected:
-    bool eventFilter(QObject *obj, QEvent *event) override;
-private:
-    QLineEdit *mLineEdit = nullptr;
-};
 
 class SelectHeadersWidget : public QListWidget
 {

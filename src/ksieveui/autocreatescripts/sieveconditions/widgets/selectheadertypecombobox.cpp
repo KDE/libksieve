@@ -18,10 +18,11 @@
 */
 #include "selectheadertypecombobox.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
-
+#include <Libkdepim/LineEditCatchReturnKey>
 #include <KLocalizedString>
-#include <KLineEdit>
 #include <QPushButton>
+#include <QLineEdit>
+#include <QPointer>
 #include <QIcon>
 
 #include <QVBoxLayout>
@@ -67,7 +68,7 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     QHBoxLayout *hbox = new QHBoxLayout;
 
     mNewHeader = new QLineEdit(this);
-    new LineEditCatchReturnKey(mNewHeader, this);
+    new KPIM::LineEditCatchReturnKey(mNewHeader, this);
     mNewHeader->setObjectName(QStringLiteral("newheader"));
     mNewHeader->setClearButtonEnabled(true);
     //mNewHeader->setTrapReturnKey(true);
@@ -322,34 +323,4 @@ void SelectHeaderTypeComboBox::setCode(const QString &code)
     }
     mCode = code;
     changeReadOnlyStatus();
-}
-
-LineEditCatchReturnKey::LineEditCatchReturnKey(QLineEdit *lineEdit, QObject *parent)
-    : QObject(parent)
-    , mLineEdit(lineEdit)
-{
-    mLineEdit->installEventFilter(this);
-}
-
-LineEditCatchReturnKey::~LineEditCatchReturnKey()
-{
-
-}
-
-bool LineEditCatchReturnKey::eventFilter(QObject *obj, QEvent *event)
-{
-    if (obj == mLineEdit) {
-        if (event->type() == QEvent::KeyPress) {
-            QKeyEvent *e = static_cast<QKeyEvent *>(event);
-            if (e->key() == Qt::Key_Return || e->key() == Qt::Key_Enter) {
-                const bool stopEvent = (e->modifiers() == Qt::NoButton ||
-                                        e->modifiers() == Qt::KeypadModifier);
-                if (stopEvent) {
-                    Q_EMIT mLineEdit->returnPressed();
-                }
-                return true;
-            }
-        }
-    }
-    return QObject::eventFilter(obj, event);
 }
