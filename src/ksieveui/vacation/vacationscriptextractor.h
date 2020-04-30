@@ -95,7 +95,7 @@ private:
 #ifdef FOREACH
 #undef FOREACH
 #endif
-#define FOREACH for (std::vector<KSieve::ScriptBuilder *>::const_iterator it = mBuilders.begin(), end = mBuilders.end(); it != end; ++it) (*it) ->
+#define FOREACH for (std::vector<KSieve::ScriptBuilder *>::const_iterator it = mBuilders.begin(), end = mBuilders.end(); it != end; ++it) (*it)->
     void commandStart(const QString &identifier, int lineNumber) override
     {
         FOREACH commandStart(identifier, lineNumber);

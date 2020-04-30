@@ -28,7 +28,6 @@ QTEST_MAIN(SieveInfoDialogTest)
 SieveInfoDialogTest::SieveInfoDialogTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void SieveInfoDialogTest::shouldHaveDefaultValues()
@@ -36,7 +35,6 @@ void SieveInfoDialogTest::shouldHaveDefaultValues()
     KSieveUi::SieveInfoDialog dlg;
     auto *mainLayout = dlg.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
-
 
     KSieveUi::SieveInfoWidget *mSieveInfoWidget = dlg.findChild<KSieveUi::SieveInfoWidget *>(QStringLiteral("mSieveInfoWidget"));
     QVERIFY(mSieveInfoWidget);

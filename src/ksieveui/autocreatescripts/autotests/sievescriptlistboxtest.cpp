@@ -25,7 +25,6 @@ QTEST_MAIN(SieveScriptListBoxTest)
 SieveScriptListBoxTest::SieveScriptListBoxTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void SieveScriptListBoxTest::shouldHaveDefaultValues()

@@ -45,7 +45,6 @@ SieveInfoDialog::SieveInfoDialog(QWidget *parent)
 
 SieveInfoDialog::~SieveInfoDialog()
 {
-
 }
 
 void SieveInfoDialog::setServerInfo(const QStringList &serverInfos)

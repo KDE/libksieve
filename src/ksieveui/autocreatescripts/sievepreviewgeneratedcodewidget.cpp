@@ -36,7 +36,6 @@ SievePreviewGeneratedCodeWidget::SievePreviewGeneratedCodeWidget(QWidget *parent
 
 SievePreviewGeneratedCodeWidget::~SievePreviewGeneratedCodeWidget()
 {
-
 }
 
 void SievePreviewGeneratedCodeWidget::setCode(const QString &str)

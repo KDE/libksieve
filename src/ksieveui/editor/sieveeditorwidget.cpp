@@ -103,7 +103,6 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     connect(mServerInfo, &QAction::triggered, this, &SieveEditorWidget::slotServerInfo);
     toolbar->addAction(mServerInfo);
 
-
     SieveEditorMenuBar *menuBar = nullptr;
     if (useMenuBar) {
         menuBar = new SieveEditorMenuBar;

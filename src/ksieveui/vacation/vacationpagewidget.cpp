@@ -113,17 +113,17 @@ void VacationPageWidget::slotGetResult(const QString &serverName, const QStringL
     }
     qCDebug(LIBKSIEVE_LOG) << serverName << sieveCapabilities
                           #if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
-                           << endl
+        << endl
                           #else
-                           << Qt::endl
+        << Qt::endl
                           #endif
-                           << scriptName << "(" << active << ")"
+        << scriptName << "(" << active << ")"
                           #if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
-                           << endl
+        << endl
                           #else
-                           << Qt::endl
+        << Qt::endl
                           #endif
-                              ;
+    ;
 
     if (mUrl.scheme() == QLatin1String("sieve")
         && !sieveCapabilities.contains(QLatin1String("vacation"))) {

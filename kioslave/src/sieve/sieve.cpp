@@ -43,11 +43,12 @@ extern "C" {
 #include <sys/stat.h>
 #include <cassert>
 namespace {
-auto returnEndLine() {
+auto returnEndLine()
+{
 #if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
-     return endl;
+    return endl;
 #else
-     return Qt::endl;
+    return Qt::endl;
 #endif
 }
 }

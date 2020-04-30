@@ -27,7 +27,6 @@
 class QLineEdit;
 class QPushButton;
 namespace KSieveUi {
-
 class SelectHeadersWidget : public QListWidget
 {
     Q_OBJECT

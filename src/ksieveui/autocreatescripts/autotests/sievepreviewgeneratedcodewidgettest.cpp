@@ -17,7 +17,6 @@
    Boston, MA 02110-1301, USA.
 */
 
-
 #include "sievepreviewgeneratedcodewidgettest.h"
 #include "autocreatescripts/sievepreviewgeneratedcodewidget.h"
 #include <QHBoxLayout>
@@ -27,7 +26,6 @@ QTEST_MAIN(SievePreviewGeneratedCodeWidgetTest)
 SievePreviewGeneratedCodeWidgetTest::SievePreviewGeneratedCodeWidgetTest(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 void SievePreviewGeneratedCodeWidgetTest::shouldHaveDefaultValues()

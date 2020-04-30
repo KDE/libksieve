@@ -70,7 +70,6 @@ private:
     QString mName;
     QString mLabel;
     QString mComment;
-
 };
 }
 

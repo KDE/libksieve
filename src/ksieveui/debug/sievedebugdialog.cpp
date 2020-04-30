@@ -175,17 +175,17 @@ void SieveDebugDialog::slotGetScript(KManageSieve::SieveJob *job, bool success, 
     qCDebug(LIBKSIEVE_LOG) << "( ??," << success
                            << ", ?," << active << ")"
                           #if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
-                           << endl
+        << endl
                           #else
-                           << Qt::endl
+        << Qt::endl
                           #endif
-                           << "script:"
+        << "script:"
                           #if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
-                           << endl
+        << endl
                           #else
-                           << Qt::endl
+        << Qt::endl
                           #endif
-                           << script;
+        << script;
     mSieveJob = nullptr; // job deletes itself after returning from this slot!
 
     if (!success) {

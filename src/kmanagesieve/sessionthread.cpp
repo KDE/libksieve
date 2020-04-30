@@ -214,13 +214,13 @@ void SessionThread::slotSocketError()
 {
     Q_ASSERT(QThread::currentThread() == thread());
 
-    qCWarning(KMANAGERSIEVE_LOG) << Q_FUNC_INFO <<
-                                    m_socket->error()
+    qCWarning(KMANAGERSIEVE_LOG) << Q_FUNC_INFO
+                                 <<m_socket->error()
                                  << m_socket->errorString();
 
     Q_EMIT error(
-                m_socket->error()
-                , m_socket->errorString());
+        m_socket->error(),
+        m_socket->errorString());
     doDisconnectFromHost(false);
 }
 
