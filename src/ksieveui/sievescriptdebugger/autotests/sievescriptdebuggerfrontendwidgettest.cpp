@@ -19,7 +19,7 @@
 
 #include "sievescriptdebuggerfrontendwidgettest.h"
 #include "../sievescriptdebuggerfrontendwidget.h"
-#include <KLineEdit>
+#include <QLineEdit>
 #include <KPIMTextEdit/kpimtextedit/texttospeechwidget.h>
 #include <KUrlRequester>
 #include <QLabel>
@@ -57,11 +57,10 @@ void SieveScriptDebuggerFrontEndWidgetTest::shouldHaveDefaultValue()
     QLabel *extensionLab = w.findChild<QLabel *>(QStringLiteral("extensionlab"));
     QVERIFY(extensionLab);
 
-    KLineEdit *extension = w.findChild<KLineEdit *>(QStringLiteral("extension"));
+    QLineEdit *extension = w.findChild<QLineEdit *>(QStringLiteral("extension"));
     QVERIFY(extension);
     QVERIFY(extension->text().isEmpty());
     QVERIFY(extension->isClearButtonEnabled());
-    QVERIFY(extension->trapReturnKey());
 
     KPIMTextEdit::TextToSpeechWidget *textToSpeechWidget = w.findChild<KPIMTextEdit::TextToSpeechWidget *>(QStringLiteral("texttospeechwidget"));
     QVERIFY(textToSpeechWidget);

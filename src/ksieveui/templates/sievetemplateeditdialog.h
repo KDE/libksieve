@@ -22,7 +22,7 @@
 
 #include <QDialog>
 
-class KLineEdit;
+class QLineEdit;
 class QPushButton;
 
 namespace KSieveUi {
@@ -46,7 +46,7 @@ private:
     void readConfig();
     void writeConfig();
     SieveTextEditWidget *mTextEditWidget = nullptr;
-    KLineEdit *mTemplateNameEdit = nullptr;
+    QLineEdit *mTemplateNameEdit = nullptr;
     QPushButton *mOkButton = nullptr;
 };
 }

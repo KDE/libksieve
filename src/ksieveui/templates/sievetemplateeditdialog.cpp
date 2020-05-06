@@ -22,9 +22,10 @@
 
 #include <KPIMTextEdit/PlainTextEditFindBar>
 #include <KPIMTextEdit/SlideContainer>
+#include <Libkdepim/LineEditCatchReturnKey>
 
 #include <KLocalizedString>
-#include <KLineEdit>
+#include <QLineEdit>
 
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -67,9 +68,9 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     QLabel *label = new QLabel(i18n("Name:"));
     hbox->addWidget(label);
 
-    mTemplateNameEdit = new KLineEdit;
+    mTemplateNameEdit = new QLineEdit;
     mTemplateNameEdit->setReadOnly(defaultTemplate);
-    mTemplateNameEdit->setTrapReturnKey(true);
+    new KPIM::LineEditCatchReturnKey(mTemplateNameEdit, this);
     mTemplateNameEdit->setClearButtonEnabled(!defaultTemplate);
     hbox->addWidget(mTemplateNameEdit);
 

@@ -33,6 +33,7 @@
 #include "editor/sievetextedit.h"
 #include <KPIMTextEdit/PlainTextEditorWidget>
 #include <KPIMTextEdit/TextToSpeechWidget>
+#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLabel>
 #include <KUrlRequester>
 #include <KLineEdit>
@@ -67,11 +68,11 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     QLabel *extensionLab = new QLabel(i18n("Extension:"));
     extensionLab->setObjectName(QStringLiteral("extensionlab"));
 
-    mExtension = new KLineEdit(this);
+    mExtension = new QLineEdit(this);
     mExtension->setObjectName(QStringLiteral("extension"));
     mExtension->setPlaceholderText(i18n("Activate extension with \"+<name of extension>\", deactivate it with \"-<name of extension>\""));
     mExtension->setClearButtonEnabled(true);
-    mExtension->setTrapReturnKey(true);
+    new KPIM::LineEditCatchReturnKey(mExtension, this);
 
     formLayout->addRow(extensionLab, mExtension);
 

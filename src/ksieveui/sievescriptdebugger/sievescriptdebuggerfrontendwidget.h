@@ -28,7 +28,7 @@ class PlainTextEditorWidget;
 }
 class KUrlRequester;
 class QProcess;
-class KLineEdit;
+class QLineEdit;
 class QSplitter;
 namespace KSieveUi {
 class SieveTextEditWidget;
@@ -67,7 +67,7 @@ private:
     KPIMTextEdit::PlainTextEditorWidget *mSieveTestResult = nullptr;
     KUrlRequester *mEmailPath = nullptr;
     QProcess *mProcess = nullptr;
-    KLineEdit *mExtension = nullptr;
+    QLineEdit *mExtension = nullptr;
     QSplitter *mSplitter = nullptr;
 };
 }
