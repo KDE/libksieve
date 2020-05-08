@@ -72,7 +72,7 @@ public:
     explicit SelectHeaderTypeComboBox(bool onlyEnvelopType = false, QWidget *parent = nullptr);
     ~SelectHeaderTypeComboBox();
 
-    QString code() const;
+    Q_REQUIRED_RESULT QString code() const;
     void setCode(const QString &code);
 
 Q_SIGNALS:
