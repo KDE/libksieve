@@ -46,19 +46,19 @@ public:
     AkonadiImapSettingInterfaceTest(const AkonadiImapSettingInterfaceDataTest &data);
     ~AkonadiImapSettingInterfaceTest() override;
 
-    bool sieveSupport() const override;
-    bool sieveReuseConfig() const override;
-    QString imapServer() const override;
-    QString userName() const override;
-    int sievePort() const override;
-    QString sieveCustomUsername() const override;
-    QString sieveCustomAuthentification() const override;
-    QString sieveVacationFilename() const override;
-    QString safety() const override;
-    int alternateAuthentication() const override;
-    int authentication() const override;
-    QString sieveAlternateUrl() const override;
-    int imapPort() const override;
+    Q_REQUIRED_RESULT bool sieveSupport() const override;
+    Q_REQUIRED_RESULT bool sieveReuseConfig() const override;
+    Q_REQUIRED_RESULT QString imapServer() const override;
+    Q_REQUIRED_RESULT QString userName() const override;
+    Q_REQUIRED_RESULT int sievePort() const override;
+    Q_REQUIRED_RESULT QString sieveCustomUsername() const override;
+    Q_REQUIRED_RESULT QString sieveCustomAuthentification() const override;
+    Q_REQUIRED_RESULT QString sieveVacationFilename() const override;
+    Q_REQUIRED_RESULT QString safety() const override;
+    Q_REQUIRED_RESULT int alternateAuthentication() const override;
+    Q_REQUIRED_RESULT int authentication() const override;
+    Q_REQUIRED_RESULT QString sieveAlternateUrl() const override;
+    Q_REQUIRED_RESULT int imapPort() const override;
 private:
     AkonadiImapSettingInterfaceDataTest mData;
 };
