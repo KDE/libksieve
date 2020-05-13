@@ -56,7 +56,7 @@ QString SieveActionFileInto::code(QWidget *w) const
     return result + QStringLiteral("\"%1\";").arg(text);
 }
 
-bool SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
+void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
@@ -97,8 +97,6 @@ bool SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
             qCDebug(LIBKSIEVE_LOG) << " SieveActionFileInto::setParamWidgetValue unknown tagName " << tagName;
         }
     }
-
-    return true;
 }
 
 QWidget *SieveActionFileInto::createParamWidget(QWidget *parent) const

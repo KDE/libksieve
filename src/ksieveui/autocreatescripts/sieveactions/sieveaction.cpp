@@ -46,10 +46,9 @@ QStringList SieveAction::listOfIncludeFile() const
     return {};
 }
 
-bool SieveAction::setParamWidgetValue(QXmlStreamReader &n, QWidget *, QString &)
+void SieveAction::setParamWidgetValue(QXmlStreamReader &n, QWidget *, QString &)
 {
     n.skipCurrentElement();
-    return true;
 }
 
 void SieveAction::unknownTag(const QStringRef &tag, QString &error)

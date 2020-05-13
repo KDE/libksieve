@@ -36,9 +36,8 @@ SieveCondition::~SieveCondition()
 {
 }
 
-bool SieveCondition::setParamWidgetValue(QXmlStreamReader & /*element*/, QWidget * /*parent*/, bool /*notCondition*/, QString & /*error*/)
+void SieveCondition::setParamWidgetValue(QXmlStreamReader & /*element*/, QWidget * /*parent*/, bool /*notCondition*/, QString & /*error*/)
 {
-    return true;
 }
 
 void SieveCondition::unknownTag(const QStringRef &tag, QString &error)

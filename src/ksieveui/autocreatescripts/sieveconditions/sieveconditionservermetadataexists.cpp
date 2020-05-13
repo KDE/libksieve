@@ -78,7 +78,7 @@ QString SieveConditionServerMetaDataExists::help() const
     return i18n("The \"servermetadataexists\" test is true if all of the server annotations listed in the \"annotation-names\" argument exist.");
 }
 
-bool SieveConditionServerMetaDataExists::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
+void SieveConditionServerMetaDataExists::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
 {
     QString commentStr;
     while (element.readNextStartElement()) {
@@ -100,7 +100,6 @@ bool SieveConditionServerMetaDataExists::setParamWidgetValue(QXmlStreamReader &e
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-    return true;
 }
 
 QUrl SieveConditionServerMetaDataExists::href() const

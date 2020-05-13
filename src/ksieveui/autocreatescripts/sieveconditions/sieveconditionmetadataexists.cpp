@@ -92,7 +92,7 @@ QString SieveConditionMetaDataExists::help() const
     return i18n("The \"metadataexists\" test is true if all of the annotations listed in the \"annotation-names\" argument exist for the specified mailbox.");
 }
 
-bool SieveConditionMetaDataExists::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
+void SieveConditionMetaDataExists::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
 {
     int index = 0;
     QString commentStr;
@@ -124,8 +124,6 @@ bool SieveConditionMetaDataExists::setParamWidgetValue(QXmlStreamReader &element
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
-    return true;
 }
 
 QUrl SieveConditionMetaDataExists::href() const

@@ -90,7 +90,7 @@ QString SieveConditionCurrentDate::help() const
     return i18n("The currentdate test is similar to the date test, except that it operates on the current date/time rather than a value extracted from the message header.");
 }
 
-bool SieveConditionCurrentDate::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
+void SieveConditionCurrentDate::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
     int index = 0;
     QString type;
@@ -127,8 +127,6 @@ bool SieveConditionCurrentDate::setParamWidgetValue(QXmlStreamReader &element, Q
 
     SelectDateWidget *dateWidget = w->findChild<SelectDateWidget *>(QStringLiteral("datewidget"));
     dateWidget->setCode(type, value);
-
-    return true;
 }
 
 QUrl SieveConditionCurrentDate::href() const

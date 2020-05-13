@@ -40,7 +40,7 @@ public:
 
     Q_REQUIRED_RESULT QString help() const override;
 
-    Q_REQUIRED_RESULT bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error) override;
+    void setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error) override;
 
     Q_REQUIRED_RESULT QUrl href() const override;
 };

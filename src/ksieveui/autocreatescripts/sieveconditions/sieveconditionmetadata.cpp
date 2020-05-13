@@ -130,7 +130,7 @@ QString SieveConditionMetaData::help() const
         "This test retrieves the value of the mailbox annotation \"annotation-name\" for the mailbox \"mailbox\". The retrieved value is compared to the \"key-list\". The test returns true if the annotation exists and its value matches any of the keys.");
 }
 
-bool SieveConditionMetaData::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
+void SieveConditionMetaData::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
     int index = 0;
     QString commentStr;
@@ -179,8 +179,6 @@ bool SieveConditionMetaData::setParamWidgetValue(QXmlStreamReader &element, QWid
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
-    return true;
 }
 
 QUrl SieveConditionMetaData::href() const

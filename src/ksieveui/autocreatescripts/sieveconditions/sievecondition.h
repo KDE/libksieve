@@ -33,7 +33,7 @@ public:
     SieveCondition(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent = nullptr);
     ~SieveCondition() override;
 
-    Q_REQUIRED_RESULT virtual bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error);
+    virtual void setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error);
 
     void unknownTag(const QStringRef &tag, QString &error) override;
     void unknownTagValue(const QString &tagValue, QString &error) override;

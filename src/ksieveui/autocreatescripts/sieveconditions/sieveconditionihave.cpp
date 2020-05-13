@@ -79,7 +79,7 @@ QString SieveConditionIhave::help() const
     return i18n("The \"ihave\" test provides a means for Sieve scripts to test for the existence of a given extension prior to actually using it.");
 }
 
-bool SieveConditionIhave::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool, QString &error)
+void SieveConditionIhave::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool, QString &error)
 {
     QString commentStr;
     while (element.readNextStartElement()) {
@@ -101,8 +101,6 @@ bool SieveConditionIhave::setParamWidgetValue(QXmlStreamReader &element, QWidget
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
-    return true;
 }
 
 QUrl SieveConditionIhave::href() const

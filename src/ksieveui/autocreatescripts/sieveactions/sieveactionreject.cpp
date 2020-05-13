@@ -50,7 +50,7 @@ QWidget *SieveActionReject::createParamWidget(QWidget *parent) const
     return w;
 }
 
-bool SieveActionReject::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
+void SieveActionReject::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
@@ -69,7 +69,6 @@ bool SieveActionReject::setParamWidgetValue(QXmlStreamReader &element, QWidget *
             qCDebug(LIBKSIEVE_LOG) << " SieveActionReject::setParamWidgetValue unknown tagName " << tagName;
         }
     }
-    return true;
 }
 
 QString SieveActionReject::code(QWidget *w) const

@@ -28,7 +28,7 @@ public:
     explicit SieveActionAddHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
     Q_REQUIRED_RESULT QString code(QWidget *w) const override;
     Q_REQUIRED_RESULT QWidget *createParamWidget(QWidget *parent) const override;
-    Q_REQUIRED_RESULT bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, QString &error) override;
+    void setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, QString &error) override;
     Q_REQUIRED_RESULT QString help() const override;
     Q_REQUIRED_RESULT QUrl href() const override;
 };

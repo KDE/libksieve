@@ -277,22 +277,20 @@ void SieveActionWidget::setLocaleVariable(const SieveGlobalVariableActionWidget:
     }
 }
 
-bool SieveActionWidget::setAction(const QString &actionName, QXmlStreamReader &element, const QString &comment, QString &error)
+void SieveActionWidget::setAction(const QString &actionName, QXmlStreamReader &element, const QString &comment, QString &error)
 {
     const int index = mComboBox->findData(actionName);
-    bool result = false;
     if (index != -1) {
         mComboBox->setCurrentIndex(index);
         slotActionChanged(index);
         KSieveUi::SieveAction *action = mActionList.at(index);
-        result = action->setParamWidgetValue(element, this, error);
+        action->setParamWidgetValue(element, this, error);
         action->setComment(comment);
     } else {
         error += i18n("Script contains unsupported feature \"%1\"", actionName) + QLatin1Char('\n');
         qCDebug(LIBKSIEVE_LOG) << "Action " << actionName << " not supported";
         element.skipCurrentElement();
     }
-    return result;
 }
 
 SieveActionWidgetLister::SieveActionWidgetLister(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent)

@@ -33,7 +33,7 @@ public:
     Q_REQUIRED_RESULT bool needCheckIfServerHasCapability() const override;
     Q_REQUIRED_RESULT QString serverNeedsCapability() const override;
     Q_REQUIRED_RESULT QString help() const override;
-    Q_REQUIRED_RESULT bool setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error) override;
+    void setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error) override;
 };
 }
 

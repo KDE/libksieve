@@ -77,7 +77,7 @@ QWidget *SieveActionKeep::createParamWidget(QWidget *parent) const
     }
 }
 
-bool SieveActionKeep::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
+void SieveActionKeep::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
     if (mHasFlagSupport) {
         while (element.readNextStartElement()) {
@@ -105,8 +105,6 @@ bool SieveActionKeep::setParamWidgetValue(QXmlStreamReader &element, QWidget *w,
     } else {
         qCDebug(LIBKSIEVE_LOG) << " Server doesn't support imapflags";
     }
-
-    return true;
 }
 
 QStringList SieveActionKeep::needRequires(QWidget *) const

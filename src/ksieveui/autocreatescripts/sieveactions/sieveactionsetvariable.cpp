@@ -89,7 +89,7 @@ void SieveActionSetVariable::setLocalVariable(QWidget *w, const SieveGlobalVaria
     variable->setText(AutoCreateScriptUtil::protectSlash(var.variableName));
 }
 
-bool SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
+void SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
@@ -104,7 +104,7 @@ bool SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWid
                     variable->setText(AutoCreateScriptUtil::protectSlash(element.readElementText()));
                 }
             } else {
-                return false;
+                return;
             }
         } else if (tagName == QLatin1String("tag")) {
             const QString tagValue = element.readElementText();
@@ -130,8 +130,6 @@ bool SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWid
             qCDebug(LIBKSIEVE_LOG) << " SieveActionSetVariable::setParamWidgetValue unknown tagName " << tagName;
         }
     }
-
-    return true;
 }
 
 QString SieveActionSetVariable::code(QWidget *w) const

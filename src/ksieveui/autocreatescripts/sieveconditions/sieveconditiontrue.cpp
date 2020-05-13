@@ -56,7 +56,7 @@ QString SieveConditionTrue::help() const
     return i18n("The \"true\" test always evaluates to true.");
 }
 
-bool SieveConditionTrue::setParamWidgetValue(QXmlStreamReader &element, QWidget *, bool, QString &error)
+void SieveConditionTrue::setParamWidgetValue(QXmlStreamReader &element, QWidget *, bool, QString &error)
 {
     QString commentStr;
     while (element.readNextStartElement()) {
@@ -74,8 +74,6 @@ bool SieveConditionTrue::setParamWidgetValue(QXmlStreamReader &element, QWidget 
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
-    return true;
 }
 
 QUrl SieveConditionTrue::href() const

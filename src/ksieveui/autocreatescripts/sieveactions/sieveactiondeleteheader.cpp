@@ -67,7 +67,7 @@ QWidget *SieveActionDeleteHeader::createParamWidget(QWidget *parent) const
     return w;
 }
 
-bool SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, QString &error, bool isNegative)
+void SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, QString &error, bool isNegative)
 {
     int index = 0;
     while (element.readNextStartElement()) {
@@ -78,9 +78,9 @@ bool SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, 
                 nameValue = element.attributes().value(QLatin1String("name")).toString();
             }
             const bool isNegative = (nameValue == QLatin1String("not"));
-            bool result = parseValue(element, w, error, isNegative);
+            parseValue(element, w, error, isNegative);
             element.skipCurrentElement();
-            return result;
+            return;
         } else if (tagName == QLatin1String("tag")) {
             SelectMatchTypeComboBox *combo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
             combo->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), isNegative), name(), error);
@@ -107,13 +107,11 @@ bool SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, 
             qCDebug(LIBKSIEVE_LOG) << "SieveActionAddHeader::setParamWidgetValue unknown tag " << tagName;
         }
     }
-
-    return true;
 }
 
-bool SieveActionDeleteHeader::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
+void SieveActionDeleteHeader::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
-    return parseValue(element, w, error, false);
+    parseValue(element, w, error, false);
 }
 
 QString SieveActionDeleteHeader::code(QWidget *w) const

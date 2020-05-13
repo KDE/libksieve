@@ -127,7 +127,7 @@ QString SieveConditionServerMetaData::help() const
         "This test retrieves the value of the server annotation \"annotation-name\".  The retrieved value is compared to the \"key-list\". The test returns true if the annotation exists and its value matches any of the keys.");
 }
 
-bool SieveConditionServerMetaData::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
+void SieveConditionServerMetaData::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
     int index = 0;
     QString commentStr;
@@ -176,8 +176,6 @@ bool SieveConditionServerMetaData::setParamWidgetValue(QXmlStreamReader &element
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
-    return true;
 }
 
 QUrl SieveConditionServerMetaData::href() const

@@ -122,7 +122,7 @@ QString SieveConditionSpamTest::help() const
     return i18n("Sieve implementations that implement the \"spamtest\" test use an identifier of either \"spamtest\" or \"spamtestplus\" for use with the capability mechanism.");
 }
 
-bool SieveConditionSpamTest::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
+void SieveConditionSpamTest::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
 {
     QString commentStr;
     while (element.readNextStartElement()) {
@@ -171,7 +171,6 @@ bool SieveConditionSpamTest::setParamWidgetValue(QXmlStreamReader &element, QWid
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-    return true;
 }
 
 QUrl SieveConditionSpamTest::href() const

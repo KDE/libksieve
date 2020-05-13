@@ -77,7 +77,7 @@ QString SieveConditionMailboxExists::help() const
         "The \"mailboxexists\" test is true if all mailboxes listed in the \"mailbox-names\" argument exist in the mailstore, and each allows the user in whose context the Sieve script runs to \"deliver\" messages into it.");
 }
 
-bool SieveConditionMailboxExists::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
+void SieveConditionMailboxExists::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
 {
     QString commentStr;
     while (element.readNextStartElement()) {
@@ -99,8 +99,6 @@ bool SieveConditionMailboxExists::setParamWidgetValue(QXmlStreamReader &element,
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
-    return true;
 }
 
 QUrl SieveConditionMailboxExists::href() const

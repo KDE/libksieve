@@ -75,7 +75,7 @@ QString SieveConditionExists::help() const
     return i18n("The \"exists\" test is true if the headers listed in the header-names argument exist within the message.  All of the headers must exist or the test is false.");
 }
 
-bool SieveConditionExists::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
+void SieveConditionExists::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
     QString commentStr;
     while (element.readNextStartElement()) {
@@ -103,7 +103,6 @@ bool SieveConditionExists::setParamWidgetValue(QXmlStreamReader &element, QWidge
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-    return true;
 }
 
 QUrl SieveConditionExists::href() const

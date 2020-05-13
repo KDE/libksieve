@@ -107,7 +107,7 @@ QString SieveConditionAddress::help() const
         "The \"address\" test matches Internet addresses in structured headers that contain addresses.  It returns true if any header contains any key in the specified part of the address, as modified by the comparator and the match keyword.");
 }
 
-bool SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
+void SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
     int index = 0;
     int indexStr = 0;
@@ -179,8 +179,6 @@ bool SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
         tooManyArguments(QStringLiteral("tag"), lstTagValue.count(), 2, error);
         qCDebug(LIBKSIEVE_LOG) << "SieveConditionAddress::setParamWidgetValue too many argument :" << lstTagValue.count();
     }
-
-    return true;
 }
 
 QUrl SieveConditionAddress::href() const

@@ -69,7 +69,7 @@ QString SieveConditionSize::help() const
     return i18n("The \"size\" test deals with the size of a message.  It takes either a tagged argument of \":over\" or \":under\", followed by a number representing the size of the message.");
 }
 
-bool SieveConditionSize::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
+void SieveConditionSize::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
 {
     QString commentStr;
     while (element.readNextStartElement()) {
@@ -102,8 +102,6 @@ bool SieveConditionSize::setParamWidgetValue(QXmlStreamReader &element, QWidget 
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
-    return true;
 }
 
 QUrl SieveConditionSize::href() const

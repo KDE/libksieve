@@ -118,7 +118,7 @@ QString SieveConditionEnvelope::help() const
     return i18n("The \"envelope\" test is true if the specified part of the [SMTP] (or equivalent) envelope matches the specified key.");
 }
 
-bool SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
+void SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
     int indexTag = 0;
     int indexStr = 0;
@@ -179,8 +179,6 @@ bool SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWid
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
-    return true;
 }
 
 QUrl KSieveUi::SieveConditionEnvelope::href() const

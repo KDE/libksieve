@@ -138,7 +138,7 @@ QString SieveConditionHasFlag::help() const
     return i18n("The hasflag test evaluates to true if any of the variables matches any flag name.");
 }
 
-bool SieveConditionHasFlag::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
+void SieveConditionHasFlag::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
 {
     QStringList strList;
     QString commentStr;
@@ -184,8 +184,6 @@ bool SieveConditionHasFlag::setParamWidgetValue(QXmlStreamReader &element, QWidg
         qCDebug(LIBKSIEVE_LOG) << " SieveConditionHasFlag::setParamWidgetValue str list count not correct :" << strList.count();
         break;
     }
-
-    return true;
 }
 
 QUrl SieveConditionHasFlag::href() const

@@ -105,7 +105,7 @@ QString SieveConditionEnvironment::help() const
     return i18n("The environment test retrieves the item of environment information specified by the name string and matches it to the values specified in the key-list argument.");
 }
 
-bool SieveConditionEnvironment::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
+void SieveConditionEnvironment::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
 {
     int index = 0;
     QString commentStr;
@@ -136,8 +136,6 @@ bool SieveConditionEnvironment::setParamWidgetValue(QXmlStreamReader &element, Q
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
-    return true;
 }
 
 QUrl KSieveUi::SieveConditionEnvironment::href() const

@@ -103,7 +103,7 @@ QString SieveConditionVirusTest::help() const
     return i18n("Sieve implementations that implement the \"virustest\" test have an identifier of \"virustest\" for use with the capability mechanism.");
 }
 
-bool SieveConditionVirusTest::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
+void SieveConditionVirusTest::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
 {
     QString commentStr;
     while (element.readNextStartElement()) {
@@ -145,8 +145,6 @@ bool SieveConditionVirusTest::setParamWidgetValue(QXmlStreamReader &element, QWi
     if (!commentStr.isEmpty()) {
         setComment(commentStr);
     }
-
-    return true;
 }
 
 QUrl SieveConditionVirusTest::href() const
