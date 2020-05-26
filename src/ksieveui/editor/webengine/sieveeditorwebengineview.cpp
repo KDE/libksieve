@@ -46,9 +46,7 @@ SieveEditorWebEngineView::SieveEditorWebEngineView(QWidget *parent)
     page->settings()->setAttribute(QWebEngineSettings::ScreenCaptureEnabled, false);
     page->settings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, false);
     page->settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
-#if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 13, 0)
     page->settings()->setAttribute(QWebEngineSettings::PdfViewerEnabled, false);
-#endif
 
     connect(profile, &QWebEngineProfile::downloadRequested, this, &SieveEditorWebEngineView::downloadRequested);
     setPage(page);
