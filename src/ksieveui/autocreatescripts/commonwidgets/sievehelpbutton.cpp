@@ -20,9 +20,15 @@
 
 #include <KLocalizedString>
 #include <QIcon>
-#include <KRun>
 #include <QWhatsThisClickedEvent>
 #include <QWhatsThis>
+#include <kio_version.h>
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
+#include <KIO/JobUiDelegate>
+#include <KIO/OpenUrlJob>
+#else
+#include <KRun>
+#endif
 
 using namespace KSieveUi;
 SieveHelpButton::SieveHelpButton(QWidget *parent)
@@ -40,7 +46,13 @@ bool SieveHelpButton::event(QEvent *event)
 {
     if (event->type() == QEvent::WhatsThisClicked) {
         QWhatsThisClickedEvent *clicked = static_cast<QWhatsThisClickedEvent *>(event);
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 71, 0)
+        KIO::OpenUrlJob *job = new KIO::OpenUrlJob(QUrl(clicked->href()));
+        job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
+        job->start();
+#else
         new KRun(QUrl(clicked->href()), this);
+#endif
         return true;
     }
     return QToolButton::event(event);
