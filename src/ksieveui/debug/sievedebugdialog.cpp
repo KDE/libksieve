@@ -154,12 +154,12 @@ void SieveDebugDialog::slotDiagNextScript()
         return;
     }
 
-    QString scriptFile = mScriptList.first();
+    QString scriptFile = mScriptList.constFirst();
     mScriptList.pop_front();
 
     mEdit->editor()->appendPlainText(i18n("Contents of script '%1':\n", scriptFile));
 
-    const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(mResourceIdentifier.first(), mPasswordProvider);
+    const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(mResourceIdentifier.constFirst(), mPasswordProvider);
     mUrl = info.sieveUrl;
 
     mUrl = mUrl.adjusted(QUrl::RemoveFilename);

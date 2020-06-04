@@ -182,7 +182,7 @@ void VacationCreateScriptJob::slotGotActiveScripts(ParseUserScriptJob *job)
     }
     mCreateJob = new GenerateGlobalScriptJob(mUrl, this);
     mCreateJob->addUserActiveScripts(list);
-    connect(mCreateJob, &GenerateGlobalScriptJob::success, [=]() {
+    connect(mCreateJob, &GenerateGlobalScriptJob::success, this, [=]() {
         this->slotGenerateDone();
     });
     connect(mCreateJob, &GenerateGlobalScriptJob::error, this, &VacationCreateScriptJob::slotGenerateDone);

@@ -267,7 +267,7 @@ void SieveActionWidget::setLocaleVariable(const SieveGlobalVariableActionWidget:
     if (index != -1) {
         mComboBox->setCurrentIndex(index);
         slotActionChanged(index);
-        KSieveUi::SieveActionSetVariable *localVar = dynamic_cast<KSieveUi::SieveActionSetVariable *>(mActionList.at(index));
+        KSieveUi::SieveActionSetVariable *localVar = qobject_cast<KSieveUi::SieveActionSetVariable *>(mActionList.at(index));
         if (localVar) {
             localVar->setLocalVariable(this, var);
         }

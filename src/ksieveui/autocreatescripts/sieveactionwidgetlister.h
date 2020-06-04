@@ -41,7 +41,7 @@ public:
 
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
     void generatedScript(QString &script, QStringList &required, bool onlyActions, bool inForEveryPartLoop);
-    Q_REQUIRED_RESULT void setAction(const QString &actionName, QXmlStreamReader &element, const QString &comment, QString &error);
+    void setAction(const QString &actionName, QXmlStreamReader &element, const QString &comment, QString &error);
     Q_REQUIRED_RESULT bool isConfigurated() const;
     void clear();
 
