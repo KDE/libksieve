@@ -35,7 +35,7 @@ SieveEditorWebEngineView::SieveEditorWebEngineView(QWidget *parent)
     QWebEnginePage *page = new QWebEnginePage(profile, this);
     page->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, false);
     page->settings()->setAttribute(QWebEngineSettings::PluginsEnabled, false);
-    page->settings()->setAttribute(QWebEngineSettings::AutoLoadImages, false);
+    page->settings()->setAttribute(QWebEngineSettings::AutoLoadImages, true);
     page->settings()->setAttribute(QWebEngineSettings::JavascriptCanOpenWindows, false);
     page->settings()->setAttribute(QWebEngineSettings::JavascriptCanAccessClipboard, false);
     page->settings()->setAttribute(QWebEngineSettings::LocalStorageEnabled, false);
