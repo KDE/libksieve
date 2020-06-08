@@ -86,6 +86,7 @@ ManageSieveWidget::ManageSieveWidget(QWidget *parent)
 
 ManageSieveWidget::~ManageSieveWidget()
 {
+    disconnect(d->mTreeView, &ManageSieveTreeView::itemSelectionChanged, this, &ManageSieveWidget::slotUpdateButtons);
     clear();
     delete d;
 }
