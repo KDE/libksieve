@@ -22,6 +22,7 @@ Name[sk]=Script Sieve
 Name[sl]=Skript Sieve
 Name[sv]=Sieve-skript
 Name[uk]=Скрипт фільтрування
+Name[x-test]=xxScript Sievexx
 Name[zh_TW]=編寫 Sieve 指令碼
 ProvidersUrl=https://autoconfig.kde.org/ocs/providers.xml
 Categories=Script Sieve
