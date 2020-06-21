@@ -70,7 +70,7 @@ enum BuilderMethod {
 
 static const unsigned int MAX_RESPONSES = 100;
 
-struct TestCase {
+static struct TestCase {
     const char *name;
     const char *script;
     struct Response {
