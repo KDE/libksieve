@@ -204,7 +204,7 @@ void Session::scheduleJob(SieveJob *job)
 
 void Session::killJob(SieveJob *job, KJob::KillVerbosity verbosity)
 {
-    qCDebug(KMANAGERSIEVE_LOG) << objectName() << Q_FUNC_INFO << job;
+    qCDebug(KMANAGERSIEVE_LOG) << objectName() << Q_FUNC_INFO << "job " << job << " m_currentJob " << m_currentJob << " verbosity " << verbosity;
     if (m_currentJob == job) {
         if (verbosity == KJob::EmitResult) {
             m_currentJob->d->killed();
@@ -214,6 +214,8 @@ void Session::killJob(SieveJob *job, KJob::KillVerbosity verbosity)
         m_jobs.removeAll(job);
         if (verbosity == KJob::EmitResult) {
             job->d->killed();
+        } else {
+            job->deleteLater();
         }
     }
 }
