@@ -1,18 +1,11 @@
-/***************************************************************************
-                          sieve.h  -  description
-                             -------------------
-    begin                : Thu Dec 20 18:47:08 EST 2001
-    copyright            : (C) 2001 by Hamish Rodda
-    email                : meddie@yoyo.cc.monash.edu.au
- ***************************************************************************/
+/*
+    sieve.h
 
-/***************************************************************************
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License version 2 as     *
- *   published by the Free Software Foundation.                            *
- *                                                                         *
- ***************************************************************************/
+    SPDX-FileCopyrightText: 2001 Hamish Rodda <meddie@yoyo.cc.monash.edu.au>
+
+    SPDX-License-Identifier: GPL-2.0-only
+*/
+
 #ifndef SIEVE_H
 #define SIEVE_H
 

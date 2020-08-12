@@ -1,24 +1,15 @@
-/***************************************************************************
-                          sieve.cpp  -  description
-                             -------------------
-    begin                : Thu Dec 20 18:47:08 EST 2001
-    copyright            : (C) 2001 by Hamish Rodda
-    email                : meddie@yoyo.cc.monash.edu.au
- ***************************************************************************/
+/*
+    sieve.cpp
 
-/***************************************************************************
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License version 2 as     *
- *   published by the Free Software Foundation.                            *
- *                                                                         *
- ***************************************************************************/
+    SPDX-FileCopyrightText: 2001 Hamish Rodda <meddie@yoyo.cc.monash.edu.au>
+
+    SPDX-License-Identifier: GPL-2.0-only
+*/
 
 /**
  * Portions adapted from the SMTP ioslave.
- * Copyright (c) 2000, 2001 Alex Zepeda <jazepeda@pacbell.net>
- * Copyright (c) 2001 Michael Häckel <Michael@Haeckel.Net>
- * All rights reserved.
+ * SPDX-FileCopyrightText: 2000, 2001 Alex Zepeda <jazepeda@pacbell.net>
+ * SPDX-FileCopyrightText: 2001 Michael Häckel <Michael@Haeckel.Net>
  *
  * Policy: the function where the error occurs calls error(). A result of
  * false, where it signifies an error, thus doesn't need to call error() itself.
