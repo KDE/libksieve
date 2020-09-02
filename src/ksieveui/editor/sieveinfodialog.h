@@ -20,6 +20,8 @@ public:
     ~SieveInfoDialog();
     void setServerInfo(const QStringList &serverInfos);
 private:
+    void readConfig();
+    void writeConfig();
     SieveInfoWidget *mSieveInfoWidget = nullptr;
 };
 }

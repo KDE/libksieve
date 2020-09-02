@@ -10,6 +10,12 @@
 #include <QHBoxLayout>
 #include <KLocalizedString>
 #include <QDialogButtonBox>
+#include <KConfigGroup>
+#include <KSharedConfig>
+
+namespace {
+static const char myConfigGroupName[] = "SieveInfoDialog";
+}
 
 using namespace KSieveUi;
 SieveInfoDialog::SieveInfoDialog(QWidget *parent)
@@ -27,14 +33,30 @@ SieveInfoDialog::SieveInfoDialog(QWidget *parent)
     button->setObjectName(QStringLiteral("button"));
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &SieveInfoDialog::reject);
-    resize(400, 300);
+    readConfig();
 }
 
 SieveInfoDialog::~SieveInfoDialog()
 {
+    writeConfig();
 }
 
 void SieveInfoDialog::setServerInfo(const QStringList &serverInfos)
 {
     mSieveInfoWidget->setServerInfo(serverInfos);
+}
+
+void SieveInfoDialog::readConfig()
+{
+    KConfigGroup group(KSharedConfig::openConfig(), myConfigGroupName);
+    const QSize sizeDialog = group.readEntry("Size", QSize(400, 300));
+    if (sizeDialog.isValid()) {
+        resize(sizeDialog);
+    }
+}
+
+void SieveInfoDialog::writeConfig()
+{
+    KConfigGroup group(KSharedConfig::openConfig(), myConfigGroupName);
+    group.writeEntry("Size", size());
 }
