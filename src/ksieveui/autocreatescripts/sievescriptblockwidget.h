@@ -54,7 +54,7 @@ private:
     void updateCondition();
     MatchCondition mMatchCondition;
     QGroupBox *mConditions = nullptr;
-    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
+    SieveEditorGraphicalModeWidget *const mSieveGraphicalModeWidget;
     SieveConditionWidgetLister *mScriptConditionLister = nullptr;
     SieveActionWidgetLister *mScriptActionLister = nullptr;
     QRadioButton *mMatchAll = nullptr;

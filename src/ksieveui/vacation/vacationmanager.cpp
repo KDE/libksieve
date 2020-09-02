@@ -24,7 +24,7 @@ public:
     {
     }
 
-    QWidget *mWidget = nullptr;
+    QWidget *const mWidget;
     QPointer<KSieveUi::MultiImapVacationDialog> mMultiImapVacationDialog = nullptr;
     QPointer<KSieveUi::MultiImapVacationManager> mCheckVacation = nullptr;
     bool mQuestionAsked = false;

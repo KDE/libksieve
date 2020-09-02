@@ -23,7 +23,7 @@ protected:
     void paintEvent(QPaintEvent *event) override;
 
 private:
-    SieveTextEdit *m_sieveTextEdit = nullptr;
+    SieveTextEdit *const m_sieveTextEdit;
 };
 }
 

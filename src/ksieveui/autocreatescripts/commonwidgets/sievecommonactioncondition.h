@@ -47,7 +47,7 @@ public:
 protected:
     Q_REQUIRED_RESULT KSieveUi::SieveImapAccountSettings sieveImapAccountSettings() const;
     Q_REQUIRED_RESULT QStringList sieveCapabilities() const;
-    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
+    SieveEditorGraphicalModeWidget *const mSieveGraphicalModeWidget;
 
 Q_SIGNALS:
     void valueChanged();

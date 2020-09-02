@@ -44,10 +44,10 @@ private Q_SLOTS:
 
 private:
     SieveScriptBlockWidget *createScriptBlock(KSieveUi::SieveWidgetPageAbstract::PageType type);
-    bool hasAnElseBlock() const;
-    QString blockName(SieveWidgetPageAbstract::PageType type) const;
+    Q_REQUIRED_RESULT bool hasAnElseBlock() const;
+    Q_REQUIRED_RESULT QString blockName(SieveWidgetPageAbstract::PageType type) const;
 
-    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
+    SieveEditorGraphicalModeWidget *const mSieveGraphicalModeWidget;
     SieveScriptTabWidget *mTabWidget = nullptr;
     SieveIncludeWidget *mIncludeWidget = nullptr;
     SieveForEveryPartWidget *mForEveryPartWidget = nullptr;

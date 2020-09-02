@@ -44,7 +44,7 @@ private Q_SLOTS:
 
 private:
     Q_DISABLE_COPY(MultiImapVacationManager)
-    SieveImapPasswordProvider *mPasswordProvider = nullptr;
+    SieveImapPasswordProvider *const mPasswordProvider;
     int mNumberOfJobs = 0;
     bool mCheckInProgress = false;
 

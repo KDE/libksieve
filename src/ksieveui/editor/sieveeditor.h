@@ -23,8 +23,8 @@ public:
     explicit SieveEditor(QWidget *parent = nullptr);
     ~SieveEditor() override;
 
-    QString script() const;
-    QString originalScript() const;
+    Q_REQUIRED_RESULT QString script() const;
+    Q_REQUIRED_RESULT QString originalScript() const;
     void setScript(const QString &script, bool clearUndoRedo = false);
     void setDebugScript(const QString &debug);
     void addFailedMessage(const QString &err);

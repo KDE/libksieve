@@ -324,8 +324,8 @@ private:
     void stringListArgumentEnd() override;
 
 private:
-    Context mContext;
-    int mNotificationInterval;
+    Context mContext = None;
+    int mNotificationInterval = 0;
     QString mMessageText;
     QString mSubject;
     QStringList mAliases;

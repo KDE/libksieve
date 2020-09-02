@@ -55,7 +55,7 @@ private:
     QUrl mUrl;
     KSyntaxHighlighting::Repository mRepo;
 
-    SieveImapPasswordProvider *mPasswordProvider = nullptr;
+    SieveImapPasswordProvider *const mPasswordProvider;
     KPIMTextEdit::PlainTextEditorWidget *mEdit = nullptr;
     QStringList mResourceIdentifier;
     QStringList mScriptList;

@@ -20,8 +20,7 @@ XMLPrintingScriptBuilder::XMLPrintingScriptBuilder(int indent)
 }
 
 XMLPrintingScriptBuilder::XMLPrintingScriptBuilder()
-    : KSieve::ScriptBuilder(),
-      mStream(nullptr)
+    : KSieve::ScriptBuilder()
 {
     initialize();
 }

@@ -54,7 +54,7 @@ private:
     int mProgressCount = 0;
     KPixmapSequence mProgressPix;
     QTimer *mProgressTimer = nullptr;
-    SieveTreeWidgetItem *mItem = nullptr;
+    SieveTreeWidgetItem *const mItem;
 };
 }
 

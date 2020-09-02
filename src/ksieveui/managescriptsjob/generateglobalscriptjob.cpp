@@ -14,8 +14,6 @@ using namespace KSieveUi;
 GenerateGlobalScriptJob::GenerateGlobalScriptJob(const QUrl &url, QObject *parent)
     : QObject(parent)
     , mCurrentUrl(url)
-    , mMasterJob(nullptr)
-    , mUserJob(nullptr)
 {
 }
 

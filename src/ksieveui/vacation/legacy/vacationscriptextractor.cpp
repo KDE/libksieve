@@ -9,8 +9,6 @@
 using namespace KSieveUi::Legacy;
 KSieveUi::Legacy::VacationDataExtractor::VacationDataExtractor()
     : KSieve::ScriptBuilder()
-    , mContext(None)
-    , mNotificationInterval(0)
 {
     qCDebug(LIBKSIEVE_LOG);
 }

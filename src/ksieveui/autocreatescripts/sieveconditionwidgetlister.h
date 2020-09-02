@@ -51,7 +51,7 @@ private:
     QGridLayout *mLayout = nullptr;
     SieveHelpButton *mHelpButton = nullptr;
     QToolButton *mCommentButton = nullptr;
-    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
+    SieveEditorGraphicalModeWidget *const mSieveGraphicalModeWidget;
 };
 
 class SieveConditionWidgetLister : public KPIM::KWidgetLister

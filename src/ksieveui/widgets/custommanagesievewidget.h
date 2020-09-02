@@ -22,7 +22,7 @@ protected:
     bool refreshList() override;
 
 private:
-    SieveImapPasswordProvider *mPasswordProvider = nullptr;
+    SieveImapPasswordProvider *const mPasswordProvider;
 };
 }
 
