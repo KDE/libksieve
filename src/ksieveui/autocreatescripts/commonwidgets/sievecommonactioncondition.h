@@ -54,8 +54,8 @@ Q_SIGNALS:
 
 private:
     Q_DISABLE_COPY(SieveCommonActionCondition)
-    QString mName;
-    QString mLabel;
+    const QString mName;
+    const QString mLabel;
     QString mComment;
 };
 }

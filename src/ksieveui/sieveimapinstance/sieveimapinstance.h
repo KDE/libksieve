@@ -50,7 +50,7 @@ private:
     QStringList mCapabilities;
     QString mName;
     QString mIdentifier;
-    Status mStatus;
+    Status mStatus = Idle;
 };
 }
 Q_DECLARE_TYPEINFO(KSieveUi::SieveImapInstance, Q_MOVABLE_TYPE);

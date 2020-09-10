@@ -57,7 +57,7 @@ private:
     SieveEditorLoadProgressIndicator *mProgressIndicator = nullptr;
     KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
     KSieveUi::FindBarWebEngineView *mFindBar = nullptr;
-    qreal mZoomFactor;
+    qreal mZoomFactor = 100;
 };
 }
 

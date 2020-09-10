@@ -29,11 +29,6 @@ Q_DECLARE_METATYPE(KSslErrorUiData)
 Session::Session(QObject *parent)
     : QObject(parent)
     , m_thread(new SessionThread(this))
-    , m_currentJob(nullptr)
-    , m_state(None)
-    , m_supportsStartTls(false)
-    , m_connected(false)
-    , m_disconnected(true)
 {
     qRegisterMetaType<KManageSieve::AuthDetails>();
     qRegisterMetaType<KManageSieve::Response>();

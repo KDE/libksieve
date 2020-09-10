@@ -52,7 +52,7 @@ private:
     void slotAddBlock();
     void updateWidget();
     void updateCondition();
-    MatchCondition mMatchCondition;
+    MatchCondition mMatchCondition = AndCondition;
     QGroupBox *mConditions = nullptr;
     SieveEditorGraphicalModeWidget *const mSieveGraphicalModeWidget;
     SieveConditionWidgetLister *mScriptConditionLister = nullptr;

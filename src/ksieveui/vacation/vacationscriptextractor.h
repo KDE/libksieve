@@ -729,21 +729,21 @@ private:
     void stringListArgumentEnd() override;
 
 private:
-    Context mContext;
-    int mNotificationInterval;
+    Context mContext = None;
+    int mNotificationInterval = 0;
     QString mMessageText;
     QString mSubject;
     QStringList mAliases;
-    bool mActive;
-    bool mInIfBlock;
-    bool mFoundInBlock;
-    int mBlockLevel;
+    bool mActive = true;
+    bool mInIfBlock = false;
+    bool mFoundInBlock = false;
+    int mBlockLevel = 0;
     QString mIfComment;
-    int mLineStart;
-    int mLineEnd;
+    int mLineStart = 0;
+    int mLineEnd = 0;
 
-    VacationUtils::MailAction mMailAction;
-    Context mMailActionContext;
+    VacationUtils::MailAction mMailAction = VacationUtils::Keep;
+    Context mMailActionContext = None;
     QString mMailActionRecipient;
 
     void reset();

@@ -85,7 +85,7 @@ private:
     void reconnectWidget(SieveActionWidget *w);
     void updateAddRemoveButton();
 
-    SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
+    SieveEditorGraphicalModeWidget *const mSieveGraphicalModeWidget;
 };
 }
 

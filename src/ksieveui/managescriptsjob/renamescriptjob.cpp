@@ -13,15 +13,10 @@ using namespace KSieveUi;
 class KSieveUi::RenameScriptJobPrivate
 {
 public:
-    RenameScriptJobPrivate()
-        : mIsActive(false)
-    {
-    }
-
     QString mNewName;
     QUrl mOldUrl;
     QUrl mNewUrl;
-    bool mIsActive;
+    bool mIsActive = false;
 };
 
 RenameScriptJob::RenameScriptJob(QObject *parent)

@@ -26,7 +26,6 @@ using namespace KSieveUi;
 
 SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent)
     : SieveWidgetPageAbstract(parent)
-    , mMatchCondition(AndCondition)
     , mSieveGraphicalModeWidget(graphicalModeWidget)
 {
     QVBoxLayout *topLayout = new QVBoxLayout(this);

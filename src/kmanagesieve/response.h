@@ -25,8 +25,6 @@ public:
     };
 
     Response()
-        : m_type(None)
-        , m_quantity(0)
     {
     }
 
@@ -51,8 +49,8 @@ public:
     bool parseResponse(const QByteArray &line);
 
 private:
-    Type m_type;
-    uint m_quantity;
+    Type m_type = None;
+    uint m_quantity = 0;
     QByteArray m_key;
     QByteArray m_value;
     QByteArray m_extra;

@@ -50,8 +50,8 @@ private:
     QStringList mActiveScripts;
     QStringList mSieveCapabilities;
     QString mScript;
-    QString mServerName;
-    QUrl mUrl;
+    const QString mServerName;
+    const QUrl mUrl;
     KManageSieve::SieveJob *mSieveJob = nullptr;
     ParseUserScriptJob *mParseJob = nullptr;
     int mScriptPos = -1;

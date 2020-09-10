@@ -12,7 +12,6 @@
 using namespace KSieveUi;
 SieveEditorLoadProgressIndicator::SieveEditorLoadProgressIndicator(QObject *parent)
     : QObject(parent)
-    , mProgressCount(0)
 {
     mProgressPix = KIconLoader::global()->loadPixmapSequence(QStringLiteral("process-working"), KIconLoader::SizeSmallMedium);
     mProgressTimer = new QTimer(this);

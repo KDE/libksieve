@@ -35,8 +35,7 @@ class KSieveUi::ManageSieveWidgetPrivate
 {
 public:
     ManageSieveWidgetPrivate()
-        : mTreeView(nullptr)
-        , mClearAll(false)
+        : mClearAll(false)
         , mBlockSignal(false)
     {
     }

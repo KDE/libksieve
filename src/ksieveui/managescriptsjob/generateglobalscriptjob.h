@@ -38,7 +38,7 @@ private:
     void writeMasterScript();
     void writeUserScript();
     QStringList mListUserActiveScripts;
-    QUrl mCurrentUrl;
+    const QUrl mCurrentUrl;
     KManageSieve::SieveJob *mMasterJob = nullptr;
     KManageSieve::SieveJob *mUserJob = nullptr;
 };

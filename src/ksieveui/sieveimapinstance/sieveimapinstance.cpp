@@ -7,7 +7,6 @@
 #include "sieveimapinstance.h"
 using namespace KSieveUi;
 SieveImapInstance::SieveImapInstance()
-    : mStatus(Idle)
 {
 }
 

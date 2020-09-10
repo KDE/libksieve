@@ -43,9 +43,9 @@ private:
     void slotGetResult(KManageSieve::SieveJob *job, bool, const QString &, bool);
     void emitSuccess(const QStringList &activeScriptList);
     void emitError(const QString &msgError);
-    QString loadInclude();
-    QStringList extractActiveScript(const QString &doc);
-    QUrl mCurrentUrl;
+    Q_REQUIRED_RESULT QString loadInclude();
+    Q_REQUIRED_RESULT QStringList extractActiveScript(const QString &doc);
+    const QUrl mCurrentUrl;
     KManageSieve::SieveJob *mSieveJob = nullptr;
     QXmlStreamReader *mStreamReader = nullptr;
     QStringList mActiveScripts;

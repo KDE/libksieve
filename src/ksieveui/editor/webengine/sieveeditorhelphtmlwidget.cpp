@@ -23,7 +23,6 @@ qreal zoomBy()
 }
 SieveEditorHelpHtmlWidget::SieveEditorHelpHtmlWidget(QWidget *parent)
     : QWidget(parent)
-    , mZoomFactor(100)
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
     lay->setContentsMargins(0, 0, 0, 0);

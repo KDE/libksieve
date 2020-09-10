@@ -36,9 +36,8 @@ namespace KSieve {
 //
 
 Lexer::Lexer(const char *scursor, const char *send, int options)
-    : i(nullptr)
+    : i(new Impl(scursor, send, options))
 {
-    i = new Impl(scursor, send, options);
 }
 
 Lexer::~Lexer()

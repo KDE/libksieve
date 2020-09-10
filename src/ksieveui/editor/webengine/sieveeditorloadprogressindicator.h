@@ -27,7 +27,7 @@ Q_SIGNALS:
 private:
     Q_DISABLE_COPY(SieveEditorLoadProgressIndicator)
     void slotTimerDone();
-    int mProgressCount;
+    int mProgressCount = 0;
     KPixmapSequence mProgressPix;
     QTimer *mProgressTimer = nullptr;
 };

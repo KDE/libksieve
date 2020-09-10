@@ -36,10 +36,6 @@ static const sasl_callback_t callbacks[] = {
 SessionThread::SessionThread(Session *session, QObject *parent)
     : QObject(parent)
     , m_session(session)
-    , m_sasl_conn(nullptr)
-    , m_sasl_client_interact(nullptr)
-    , m_pendingQuantity(-1)
-    , m_sslCheck(nullptr)
 {
     static bool saslInitialized = false;
     if (!saslInitialized) {

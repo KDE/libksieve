@@ -15,15 +15,10 @@ using namespace KSieveUi;
 class KSieveUi::CheckScriptJobPrivate
 {
 public:
-    CheckScriptJobPrivate()
-        : mIsActive(false)
-    {
-    }
-
     QUrl mUrl;
     QString mOriginalScript;
     QString mCurrentScript;
-    bool mIsActive;
+    bool mIsActive = false;
 };
 
 CheckScriptJob::CheckScriptJob(QObject *parent)

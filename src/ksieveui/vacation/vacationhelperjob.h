@@ -33,7 +33,7 @@ private:
     Q_DISABLE_COPY(VacationHelperJob)
     void slotGetScriptList(KManageSieve::SieveJob *job, bool success, const QStringList &scriptList, const QString &activeScript);
     void killJob();
-    QUrl mUrl;
+    const QUrl mUrl;
     KManageSieve::SieveJob *mSieveJob = nullptr;
 };
 }

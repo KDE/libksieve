@@ -84,7 +84,7 @@ private:
 
     QByteArray m_data;
     Response m_lastResponse;
-    qint64 m_pendingQuantity;
+    qint64 m_pendingQuantity = -1;
 
     QTimer *m_sslCheck = nullptr;
 };

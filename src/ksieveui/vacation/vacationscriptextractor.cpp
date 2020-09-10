@@ -11,16 +11,6 @@
 using namespace KSieveUi;
 VacationDataExtractor::VacationDataExtractor()
     : KSieve::ScriptBuilder()
-    , mContext(None)
-    , mNotificationInterval(0)
-    , mActive(true)
-    , mInIfBlock(false)
-    , mFoundInBlock(false)
-    , mBlockLevel(0)
-    , mLineStart(0)
-    , mLineEnd(0)
-    , mMailAction(VacationUtils::Keep)
-    , mMailActionContext(None)
 {
     qCDebug(LIBKSIEVE_LOG);
 }

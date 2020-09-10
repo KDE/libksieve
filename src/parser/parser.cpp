@@ -28,9 +28,9 @@ namespace KSieve {
 //
 
 Parser::Parser(const char *scursor, const char *const send, int options)
-    : i(nullptr)
+    : i(new Impl(scursor, send, options))
 {
-    i = new Impl(scursor, send, options);
+
 }
 
 Parser::~Parser()
