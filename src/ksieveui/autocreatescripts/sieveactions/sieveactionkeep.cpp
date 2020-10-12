@@ -49,7 +49,7 @@ QWidget *SieveActionKeep::createParamWidget(QWidget *parent) const
     if (mHasFlagSupport) {
         QWidget *w = new QWidget(parent);
         QHBoxLayout *lay = new QHBoxLayout;
-        lay->setContentsMargins(0, 0, 0, 0);
+        lay->setContentsMargins({});
         w->setLayout(lay);
         QLabel *addFlags = new QLabel(i18n("Add flags:"));
         lay->addWidget(addFlags);

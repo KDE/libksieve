@@ -32,7 +32,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
     QGridLayout *grid = new QGridLayout;
-    grid->setContentsMargins(0, 0, 0, 0);
+    grid->setContentsMargins({});
     w->setLayout(grid);
 
     QLabel *lab = nullptr;

@@ -138,7 +138,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     nameLayout->addWidget(mScriptName);
     lay->addLayout(nameLayout);
 
-    lay->setContentsMargins(0, 0, 0, 0);
+    lay->setContentsMargins({});
     mStackedWidget = new QStackedWidget;
 
     mTextModeWidget = new SieveEditorTextModeWidget;
@@ -738,8 +738,7 @@ bool SieveEditorWidget::printSupportEnabled() const
 
 void SieveEditorWidget::slotServerInfo()
 {
-    QPointer<SieveInfoDialog> dlg = new SieveInfoDialog(this);
-    dlg->setServerInfo(mTextModeWidget->sieveCapabilities());
-    dlg->exec();
-    delete dlg;
+    SieveInfoDialog dlg(this);
+    dlg.setServerInfo(mTextModeWidget->sieveCapabilities());
+    dlg.exec();
 }

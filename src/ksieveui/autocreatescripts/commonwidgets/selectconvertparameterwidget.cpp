@@ -56,7 +56,7 @@ QString SelectConvertParameterWidget::code() const
 void SelectConvertParameterWidget::initialize()
 {
     QBoxLayout *hbox = new QHBoxLayout(this);
-    hbox->setContentsMargins(0, 0, 0, 0);
+    hbox->setContentsMargins({});
     mWidth = new QSpinBox(this);
     mWidth->setSuffix(i18n(" px"));
     mWidth->setMinimum(1);

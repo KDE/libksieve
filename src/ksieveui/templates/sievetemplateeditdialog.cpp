@@ -49,7 +49,7 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     QWidget *w = new QWidget;
 
     QVBoxLayout *vbox = new QVBoxLayout;
-    vbox->setContentsMargins(0, 0, 0, 0);
+    vbox->setContentsMargins({});
 
     QHBoxLayout *hbox = new QHBoxLayout;
     QLabel *label = new QLabel(i18n("Name:"));

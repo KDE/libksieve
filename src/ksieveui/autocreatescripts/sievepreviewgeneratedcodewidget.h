@@ -18,7 +18,7 @@ public:
 
     void setCode(const QString &str);
 private:
-    QTextEdit *mTextEdit = nullptr;
+    QTextEdit *const mTextEdit;
 };
 }
 

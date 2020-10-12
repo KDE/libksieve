@@ -46,7 +46,7 @@ SieveTextEditWidget::~SieveTextEditWidget()
 void SieveTextEditWidget::initialize(KSieveUi::SieveTextEdit *custom)
 {
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    mainLayout->setContentsMargins(0, 0, 0, 0);
+    mainLayout->setContentsMargins({});
     if (custom) {
         d->mTextEdit = custom;
     } else {

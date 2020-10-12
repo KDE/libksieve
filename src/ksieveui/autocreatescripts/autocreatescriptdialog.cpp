@@ -22,6 +22,7 @@ using namespace KSieveUi;
 
 AutoCreateScriptDialog::AutoCreateScriptDialog(QWidget *parent)
     : QDialog(parent)
+    , mEditor(new SieveEditorGraphicalModeWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Create Sieve Filter"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
@@ -32,7 +33,6 @@ AutoCreateScriptDialog::AutoCreateScriptDialog(QWidget *parent)
     connect(buttonBox, &QDialogButtonBox::accepted, this, &AutoCreateScriptDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &AutoCreateScriptDialog::reject);
     okButton->setFocus();
-    mEditor = new SieveEditorGraphicalModeWidget(this);
     mainLayout->addWidget(mEditor);
     mainLayout->addWidget(buttonBox);
     readConfig();

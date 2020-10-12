@@ -39,7 +39,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     int row = -1;
 
     QGridLayout *glay = new QGridLayout(this);
-    glay->setContentsMargins(0, 0, 0, 0);
+    glay->setContentsMargins({});
     glay->setColumnStretch(1, 1);
 
     // explanation label:

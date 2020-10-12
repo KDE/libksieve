@@ -25,7 +25,7 @@ QWidget *SieveConditionTrue::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
     QHBoxLayout *lay = new QHBoxLayout;
-    lay->setContentsMargins(0, 0, 0, 0);
+    lay->setContentsMargins({});
     w->setLayout(lay);
 
     QLabel *label = new QLabel(i18n("true"));

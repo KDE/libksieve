@@ -91,7 +91,7 @@ SieveTemplateWidget::SieveTemplateWidget(const QString &title, QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *lay = new QVBoxLayout(this);
-    lay->setContentsMargins(0, 0, 0, 0);
+    lay->setContentsMargins({});
     QLabel *lab = new QLabel(title, this);
     lay->addWidget(lab);
     mListTemplate = new SieveTemplateListWidget(QStringLiteral("sievetemplaterc"), this);

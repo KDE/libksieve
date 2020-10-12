@@ -41,7 +41,7 @@ public:
 private:
     void readConfig();
     void writeConfig();
-    SelectFlagsListWidget *mListWidget = nullptr;
+    SelectFlagsListWidget *const mListWidget;
 };
 
 class SelectFlagsWidget : public QWidget

@@ -10,12 +10,12 @@
 using namespace KSieveUi;
 SievePreviewGeneratedCodeWidget::SievePreviewGeneratedCodeWidget(QWidget *parent)
     : QWidget(parent)
+    , mTextEdit(new QTextEdit(this))
 {
     QHBoxLayout *mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
-    mainLayout->setContentsMargins(0, 0, 0, 0);
+    mainLayout->setContentsMargins({});
 
-    mTextEdit = new QTextEdit(this);
     mTextEdit->setObjectName(QStringLiteral("mTextEdit"));
     mTextEdit->setReadOnly(true);
     mainLayout->addWidget(mTextEdit);

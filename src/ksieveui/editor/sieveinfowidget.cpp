@@ -14,10 +14,10 @@
 using namespace KSieveUi;
 SieveInfoWidget::SieveInfoWidget(QWidget *parent)
     : QWidget(parent)
+    , mInfo(new QTextEdit(this))
 {
     QHBoxLayout *lay = new QHBoxLayout(this);
-    lay->setContentsMargins(0, 0, 0, 0);
-    mInfo = new QTextEdit(this);
+    lay->setContentsMargins({});
     mInfo->setReadOnly(true);
     mInfo->setAcceptRichText(true);
     lay->addWidget(mInfo);

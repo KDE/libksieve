@@ -25,7 +25,7 @@ QWidget *SieveConditionConvert::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
     QGridLayout *lay = new QGridLayout;
-    lay->setContentsMargins(0, 0, 0, 0);
+    lay->setContentsMargins({});
     w->setLayout(lay);
 
     QLabel *lab = new QLabel(i18n("From:"));

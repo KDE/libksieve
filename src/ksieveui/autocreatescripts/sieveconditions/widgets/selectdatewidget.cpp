@@ -33,7 +33,7 @@ SelectDateWidget::~SelectDateWidget()
 void SelectDateWidget::initialize()
 {
     QHBoxLayout *lay = new QHBoxLayout(this);
-    lay->setContentsMargins(0, 0, 0, 0);
+    lay->setContentsMargins({});
 
     mDateType = new QComboBox;
     connect(mDateType, QOverload<int>::of(&QComboBox::activated), this, &SelectDateWidget::slotDateTypeActivated);

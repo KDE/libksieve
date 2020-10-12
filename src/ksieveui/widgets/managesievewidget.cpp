@@ -56,7 +56,7 @@ ManageSieveWidget::ManageSieveWidget(QWidget *parent)
     , d(new KSieveUi::ManageSieveWidgetPrivate)
 {
     QHBoxLayout *lay = new QHBoxLayout(this);
-    lay->setContentsMargins(0, 0, 0, 0);
+    lay->setContentsMargins({});
 
     d->mTreeView = new ManageSieveTreeView(this);
 #ifndef QT_NO_CONTEXTMENU

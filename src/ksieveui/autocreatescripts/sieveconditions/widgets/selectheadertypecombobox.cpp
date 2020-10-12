@@ -42,7 +42,7 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
 
     QVBoxLayout *lay = new QVBoxLayout;
     lay->setObjectName(QStringLiteral("widgetlayout"));
-    lay->setContentsMargins(0, 0, 0, 0);
+    lay->setContentsMargins({});
     mainLayout->addLayout(lay);
     mListWidget = new SelectHeadersWidget(this);
     mListWidget->setObjectName(QStringLiteral("listwidget"));

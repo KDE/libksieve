@@ -75,7 +75,7 @@ void SieveConditionWidget::generatedScript(QString &script, QStringList &require
 void SieveConditionWidget::initWidget()
 {
     mLayout = new QGridLayout(this);
-    mLayout->setContentsMargins(0, 0, 0, 0);
+    mLayout->setContentsMargins({});
 
     mComboBox = new QComboBox;
     mComboBox->setMinimumWidth(50);

@@ -100,7 +100,7 @@ void SieveActionWidget::generatedScript(QString &script, QStringList &required, 
 void SieveActionWidget::initWidget()
 {
     mLayout = new QGridLayout(this);
-    mLayout->setContentsMargins(0, 0, 0, 0);
+    mLayout->setContentsMargins({});
 
     mComboBox = new QComboBox;
     mComboBox->setEditable(false);

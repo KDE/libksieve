@@ -27,7 +27,7 @@ SieveEditorGraphicalModeWidget::SieveEditorGraphicalModeWidget(QWidget *parent)
     : SieveEditorGraphicalModeWidgetAbstract::SieveEditorGraphicalModeWidgetAbstract(parent)
 {
     QVBoxLayout *vlay = new QVBoxLayout(this);
-    vlay->setContentsMargins(0, 0, 0, 0);
+    vlay->setContentsMargins({});
 
     mSplitter = new QSplitter;
     mSplitter->setChildrenCollapsible(false);

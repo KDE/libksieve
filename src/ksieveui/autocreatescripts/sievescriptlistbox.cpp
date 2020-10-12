@@ -97,7 +97,7 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     //----------- the first row of buttons
     QWidget *hb = new QWidget(this);
     QHBoxLayout *hbHBoxLayout = new QHBoxLayout(hb);
-    hbHBoxLayout->setContentsMargins(0, 0, 0, 0);
+    hbHBoxLayout->setContentsMargins({});
     hbHBoxLayout->setSpacing(4);
 
     mBtnTop = new QPushButton(hb);
@@ -130,7 +130,7 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
 
     hb = new QWidget(this);
     hbHBoxLayout = new QHBoxLayout(hb);
-    hbHBoxLayout->setContentsMargins(0, 0, 0, 0);
+    hbHBoxLayout->setContentsMargins({});
     hbHBoxLayout->setSpacing(4);
 
     mBtnNew = new QPushButton(hb);

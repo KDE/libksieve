@@ -22,10 +22,10 @@ using namespace KSieveUi;
 
 SelectFlagsListDialog::SelectFlagsListDialog(QWidget *parent)
     : QDialog(parent)
+    , mListWidget(new SelectFlagsListWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Flags"));
     QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    mListWidget = new SelectFlagsListWidget(this);
     mainLayout->addWidget(mListWidget);
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
@@ -128,7 +128,7 @@ SelectFlagsWidget::SelectFlagsWidget(QWidget *parent)
     : QWidget(parent)
 {
     QHBoxLayout *lay = new QHBoxLayout(this);
-    lay->setContentsMargins(0, 0, 0, 0);
+    lay->setContentsMargins({});
     mEdit = new QLineEdit(this);
     mEdit->setReadOnly(true);
     mEdit->setPlaceholderText(i18n("Click on button for selecting flags..."));

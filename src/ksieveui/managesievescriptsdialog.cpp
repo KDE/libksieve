@@ -72,7 +72,7 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(SieveImapPasswordProvider *pa
     mainLayout->addWidget(frame);
     QVBoxLayout *vlay = new QVBoxLayout(frame);
     vlay->setSpacing(0);
-    vlay->setContentsMargins(0, 0, 0, 0);
+    vlay->setContentsMargins({});
 
     d->mTreeView = new CustomManageSieveWidget(passwordProvider, frame);
     connect(d->mTreeView, &CustomManageSieveWidget::editScript, this, &ManageSieveScriptsDialog::slotEditScript);

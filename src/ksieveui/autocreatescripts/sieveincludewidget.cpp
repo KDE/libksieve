@@ -128,7 +128,7 @@ void SieveIncludeActionWidget::generatedScript(QString &script)
 void SieveIncludeActionWidget::initWidget()
 {
     mLayout = new QGridLayout(this);
-    mLayout->setContentsMargins(0, 0, 0, 0);
+    mLayout->setContentsMargins({});
 
     QLabel *lab = new QLabel(i18n("Include:"));
     mLayout->addWidget(lab, 1, 0);
