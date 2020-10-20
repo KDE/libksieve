@@ -19,7 +19,7 @@ public:
     ~CustomManageSieveWidget() override;
 
 protected:
-    bool refreshList() override;
+    Q_REQUIRED_RESULT bool refreshList() override;
 
 private:
     SieveImapPasswordProvider *const mPasswordProvider;

@@ -20,27 +20,22 @@ enum MailAction {
     CopyTo,
 };
 
-QString defaultMessageText();
-QString defaultSubject();
-MailAction defaultMailAction();
-int defaultNotificationInterval();
-KMime::Types::AddrSpecList defaultMailAliases();
-bool defaultSendForSpam();
-QString defaultDomainName();
-QDate defaultStartDate();
-QDate defaultEndDate();
+Q_REQUIRED_RESULT QString defaultMessageText();
+Q_REQUIRED_RESULT QString defaultSubject();
+Q_REQUIRED_RESULT MailAction defaultMailAction();
+Q_REQUIRED_RESULT int defaultNotificationInterval();
+Q_REQUIRED_RESULT KMime::Types::AddrSpecList defaultMailAliases();
+Q_REQUIRED_RESULT bool defaultSendForSpam();
+Q_REQUIRED_RESULT QString defaultDomainName();
+Q_REQUIRED_RESULT QDate defaultStartDate();
+Q_REQUIRED_RESULT QDate defaultEndDate();
 
 struct Vacation {
     Vacation()
-        : notificationInterval(1)
-        , mailAction(Keep)
-        , valid(false)
-        , active(false)
-        , sendForSpam(true)
     {
     }
 
-    bool isValid() const
+    Q_REQUIRED_RESULT bool isValid() const
     {
         return valid;
     }
@@ -54,11 +49,11 @@ struct Vacation {
     QTime startTime;
     QDate endDate;
     QTime endTime;
-    int notificationInterval;
-    MailAction mailAction;
-    bool valid;
-    bool active;
-    bool sendForSpam;
+    int notificationInterval = 1;
+    MailAction mailAction = Keep;
+    bool valid = false;
+    bool active = false;
+    bool sendForSpam = true;
 };
 
 Q_REQUIRED_RESULT QString composeScript(const Vacation &vacation);

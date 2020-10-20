@@ -41,9 +41,9 @@ public:
     void error(const KSieve::Error &error) override;
     void finished() override;
 
-    QString result() const;
-    QString error() const;
-    bool hasError() const;
+    Q_REQUIRED_RESULT QString result() const;
+    Q_REQUIRED_RESULT QString error() const;
+    Q_REQUIRED_RESULT bool hasError() const;
 
     void clear();
 
