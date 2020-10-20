@@ -23,6 +23,7 @@
 #include <kzip.h>
 #include <KIconEngine>
 #include <KStandardAction>
+#include <KActionMenu>
 
 #include <PimCommon/PurposeMenuWidget>
 
@@ -80,7 +81,8 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     toolbar->addAction(mShareScript);
 
     SievePurposeMenuWidget *purposeMenu = new SievePurposeMenuWidget(this, this);
-    QAction *shareAction = new QAction(i18n("Share..."), this);
+    KActionMenu *shareAction = new KActionMenu(i18n("Share..."), this);
+    shareAction->setDelayed(false);
     shareAction->setMenu(purposeMenu->menu());
     shareAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
     purposeMenu->setEditorWidget(this);
