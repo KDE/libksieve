@@ -6,7 +6,6 @@
 #include "selectimportancecombobox.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
-#include <QComboBox>
 #include <KLocalizedString>
 
 using namespace KSieveUi;

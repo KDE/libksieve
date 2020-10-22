@@ -6,7 +6,6 @@
 
 #include "editorsieve_gui.h"
 #include <QDebug>
-#include "ksieveui/editor/sieveeditor.h"
 #include "ksieveui/tests/capability.h"
 
 #include <QApplication>

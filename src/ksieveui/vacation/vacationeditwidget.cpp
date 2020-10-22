@@ -5,7 +5,6 @@
 */
 
 #include "vacationeditwidget.h"
-#include "vacationutils.h"
 #include "vacationmailactionwidget.h"
 #include "vacationmaillineedit.h"
 

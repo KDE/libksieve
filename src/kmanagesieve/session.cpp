@@ -6,7 +6,6 @@
 */
 
 #include "session.h"
-#include "response.h"
 #include "sievejob_p.h"
 #include "sessionthread_p.h"
 

@@ -11,7 +11,6 @@
 #include "session.h"
 
 #include "kmanagersieve_debug.h"
-#include <QUrl>
 #include <KLocalizedString>
 #include <QPointer>
 

@@ -15,7 +15,6 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QStackedWidget>
-#include <QSpinBox>
 #include "libksieve_debug.h"
 #include <QTime>
 
