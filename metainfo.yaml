@@ -8,11 +8,11 @@ portingAid: false
 deprecated: false
 release: false
 libraries:
-    - qmake: SieveUi
+    - qmake: KSieveUi
       cmake: KF5::SieveUi
     - qmake: KManageSieve
       cmake: KF5::KManageSieve
-    - qmake: KF5KSieve
+    - qmake: KSieve
       cmake: KF5::Sieve
 cmakename: KF5LibKSieve
 
