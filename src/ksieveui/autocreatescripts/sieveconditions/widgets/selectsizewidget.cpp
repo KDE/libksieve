@@ -15,7 +15,7 @@ using namespace KSieveUi;
 SelectSizeWidget::SelectSizeWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *hbox = new QHBoxLayout(this);
+    auto *hbox = new QHBoxLayout(this);
     hbox->setContentsMargins({});
 
     mSpinBoxSize = new QSpinBox(this);

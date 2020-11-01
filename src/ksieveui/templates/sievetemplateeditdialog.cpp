@@ -33,7 +33,7 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     : QDialog(parent)
 {
     setWindowTitle(defaultTemplate ? i18n("Default template") : i18n("Template"));
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
     QDialogButtonBox *buttonBox = nullptr;
     if (defaultTemplate) {
         buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
@@ -48,10 +48,10 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     }
     QWidget *w = new QWidget;
 
-    QVBoxLayout *vbox = new QVBoxLayout;
+    auto *vbox = new QVBoxLayout;
     vbox->setContentsMargins({});
 
-    QHBoxLayout *hbox = new QHBoxLayout;
+    auto *hbox = new QHBoxLayout;
     QLabel *label = new QLabel(i18n("Name:"));
     hbox->addWidget(label);
 
@@ -63,7 +63,7 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
 
     vbox->addLayout(hbox);
 
-    KPIMTextEdit::TextToSpeechWidget *textToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
+    auto *textToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
     vbox->addWidget(textToSpeechWidget);
 
     mTextEditWidget = new KSieveUi::SieveTextEditWidget;
@@ -72,7 +72,7 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     vbox->addWidget(mTextEditWidget);
     connect(mTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::say);
 
-    QShortcut *shortcut = new QShortcut(this);
+    auto *shortcut = new QShortcut(this);
     shortcut->setKey(Qt::Key_F + Qt::CTRL);
     connect(shortcut, &QShortcut::activated, mTextEditWidget, &SieveTextEditWidget::slotFind);
 

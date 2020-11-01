@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 
     parser.process(app);
 
-    SieveEditorTestWidget *dialog = new SieveEditorTestWidget;
+    auto *dialog = new SieveEditorTestWidget;
     const QStringList capabilities = KSieveUi::Test::fullCapabilitiesList();
     //Add all capabilities for testing
     dialog->setSieveCapabilities(capabilities);

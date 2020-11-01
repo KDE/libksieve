@@ -23,14 +23,14 @@ SieveConditionServerMetaDataExists::SieveConditionServerMetaDataExists(SieveEdit
 QWidget *SieveConditionServerMetaDataExists::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QHBoxLayout *lay = new QHBoxLayout;
+    auto *lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
     QLabel *lab = new QLabel(i18n("Annotation:"));
     lay->addWidget(lab);
 
-    QLineEdit *value = new QLineEdit;
+    auto *value = new QLineEdit;
     value->setObjectName(QStringLiteral("value"));
     connect(value, &QLineEdit::textChanged, this, &SieveConditionServerMetaDataExists::valueChanged);
     lay->addWidget(value);
@@ -72,7 +72,7 @@ void SieveConditionServerMetaDataExists::setParamWidgetValue(QXmlStreamReader &e
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("str")) {
             const QString tagValue = element.readElementText();
-            QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+            auto *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
             value->setText(tagValue);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();

@@ -19,11 +19,11 @@ void SievePreviewGeneratedCodeWidgetTest::shouldHaveDefaultValues()
 {
     KSieveUi::SievePreviewGeneratedCodeWidget w;
 
-    QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    auto *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    QTextEdit *mTextEdit = w.findChild<QTextEdit *>(QStringLiteral("mTextEdit"));
+    auto *mTextEdit = w.findChild<QTextEdit *>(QStringLiteral("mTextEdit"));
     QVERIFY(mTextEdit);
     QVERIFY(mTextEdit->isReadOnly());
 }

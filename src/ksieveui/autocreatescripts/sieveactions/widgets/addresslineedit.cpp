@@ -13,7 +13,7 @@ using namespace KSieveUi;
 AddressLineEdit::AddressLineEdit(QWidget *parent)
     : AbstractSelectEmailLineEdit(parent)
 {
-    QHBoxLayout *mainLayout = new QHBoxLayout(this);
+    auto *mainLayout = new QHBoxLayout(this);
     mainLayout->setContentsMargins({});
     mLineEdit = new QLineEdit(this);
     mainLayout->addWidget(mLineEdit);

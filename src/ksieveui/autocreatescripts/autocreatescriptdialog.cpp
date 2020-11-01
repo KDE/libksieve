@@ -25,7 +25,7 @@ AutoCreateScriptDialog::AutoCreateScriptDialog(QWidget *parent)
     , mEditor(new SieveEditorGraphicalModeWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Create Sieve Filter"));
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
@@ -87,7 +87,7 @@ bool AutoCreateScriptDialog::event(QEvent *e)
 {
     const bool shortCutOverride = (e->type() == QEvent::ShortcutOverride);
     if (shortCutOverride || e->type() == QEvent::KeyPress) {
-        QKeyEvent *kev = static_cast<QKeyEvent * >(e);
+        auto *kev = static_cast<QKeyEvent * >(e);
         if (kev->key() == Qt::Key_Escape) {
             e->ignore();
             return true;

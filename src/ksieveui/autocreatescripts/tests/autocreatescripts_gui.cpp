@@ -19,7 +19,7 @@ int main(int argc, char **argv)
     parser.addVersionOption();
     parser.addHelpOption();
     parser.process(app);
-    KSieveUi::AutoCreateScriptDialog *dialog = new KSieveUi::AutoCreateScriptDialog;
+    auto *dialog = new KSieveUi::AutoCreateScriptDialog;
     const QStringList capabilities = KSieveUi::Test::fullCapabilitiesList();
     //Add all capabilities for testing
     dialog->setSieveCapabilities(capabilities);

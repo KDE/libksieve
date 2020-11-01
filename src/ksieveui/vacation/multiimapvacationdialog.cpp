@@ -69,7 +69,7 @@ void MultiImapVacationDialog::reject()
 {
     bool canCloseDialog = true;
     for (int i = 0; i < d->mTabWidget->count(); ++i) {
-        VacationPageWidget *vacationPage = qobject_cast<VacationPageWidget *>(d->mTabWidget->widget(i));
+        auto *vacationPage = qobject_cast<VacationPageWidget *>(d->mTabWidget->widget(i));
         if (vacationPage) {
             if (vacationPage->wasChanged()) {
                 if (KMessageBox::questionYesNo(
@@ -96,13 +96,13 @@ QVector<VacationCreateScriptJob *> MultiImapVacationDialog::listCreateJob() cons
 void MultiImapVacationDialog::init()
 {
     d->mStackedWidget = new QStackedWidget;
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(d->mStackedWidget);
     d->mTabWidget = new QTabWidget;
     d->mStackedWidget->addWidget(d->mTabWidget);
 
     QWidget *w = new QWidget;
-    QVBoxLayout *vbox = new QVBoxLayout;
+    auto *vbox = new QVBoxLayout;
     w->setLayout(vbox);
     QLabel *lab = new QLabel(i18n("KMail's Out of Office Reply functionality relies on "
                                   "server-side filtering. You have not yet configured an "
@@ -156,7 +156,7 @@ void MultiImapVacationDialog::slotCanceled()
 
 void MultiImapVacationDialog::createPage(const QString &serverName, const KSieveUi::Util::AccountInfo &info)
 {
-    VacationPageWidget *page = new VacationPageWidget;
+    auto *page = new VacationPageWidget;
     page->setServerUrl(info.sieveUrl);
     page->setServerName(serverName);
     page->setVacationManager(d->mVacationManager);
@@ -187,7 +187,7 @@ void MultiImapVacationDialog::slotOkClicked()
     qDeleteAll(d->mListCreateJob);
     d->mListCreateJob.clear();
     for (int i = 0; i < d->mTabWidget->count(); ++i) {
-        VacationPageWidget *vacationPage = qobject_cast<VacationPageWidget *>(d->mTabWidget->widget(i));
+        auto *vacationPage = qobject_cast<VacationPageWidget *>(d->mTabWidget->widget(i));
         if (vacationPage) {
             VacationCreateScriptJob *job = vacationPage->writeScript(errorFound);
 
@@ -210,7 +210,7 @@ void MultiImapVacationDialog::slotOkClicked()
 void MultiImapVacationDialog::slotDefaultClicked()
 {
     for (int i = 0; i < d->mTabWidget->count(); ++i) {
-        VacationPageWidget *vacationPage = qobject_cast<VacationPageWidget *>(d->mTabWidget->widget(i));
+        auto *vacationPage = qobject_cast<VacationPageWidget *>(d->mTabWidget->widget(i));
         if (vacationPage) {
             vacationPage->setDefault();
         }

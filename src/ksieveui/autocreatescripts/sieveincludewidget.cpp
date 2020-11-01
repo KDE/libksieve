@@ -192,7 +192,7 @@ void SieveIncludeActionWidget::updateAddRemoveButton(bool addButtonEnabled, bool
 SieveIncludeWidget::SieveIncludeWidget(QWidget *parent)
     : SieveWidgetPageAbstract(parent)
 {
-    QVBoxLayout *lay = new QVBoxLayout(this);
+    auto *lay = new QVBoxLayout(this);
     mHelpButton = new SieveHelpButton(this);
     lay->addWidget(mHelpButton);
     connect(mHelpButton, &SieveHelpButton::clicked, this, &SieveIncludeWidget::slotHelp);
@@ -280,7 +280,7 @@ void SieveIncludeWidgetLister::updateAddRemoveButton()
     QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
     for (; wIt != wEnd; ++wIt) {
-        SieveIncludeActionWidget *w = qobject_cast<SieveIncludeActionWidget *>(*wIt);
+        auto *w = qobject_cast<SieveIncludeActionWidget *>(*wIt);
         w->updateAddRemoveButton(addButtonEnabled, removeButtonEnabled);
     }
 }
@@ -293,7 +293,7 @@ void SieveIncludeWidgetLister::setListOfIncludeFile(const QStringList &listOfInc
     QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
     for (; wIt != wEnd; ++wIt) {
-        SieveIncludeActionWidget *w = qobject_cast<SieveIncludeActionWidget *>(*wIt);
+        auto *w = qobject_cast<SieveIncludeActionWidget *>(*wIt);
         w->setListOfIncludeFile(mListOfIncludeFile);
     }
 }
@@ -305,7 +305,7 @@ void SieveIncludeWidgetLister::generatedScript(QString &script, QStringList &req
     QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
     for (; wIt != wEnd; ++wIt) {
-        SieveIncludeActionWidget *w = qobject_cast<SieveIncludeActionWidget *>(*wIt);
+        auto *w = qobject_cast<SieveIncludeActionWidget *>(*wIt);
         w->generatedScript(script);
     }
 }
@@ -320,7 +320,7 @@ void SieveIncludeWidgetLister::reconnectWidget(SieveIncludeActionWidget *w)
 void SieveIncludeWidgetLister::clearWidget(QWidget *aWidget)
 {
     if (aWidget) {
-        SieveIncludeActionWidget *widget = static_cast<SieveIncludeActionWidget *>(aWidget);
+        auto *widget = static_cast<SieveIncludeActionWidget *>(aWidget);
         widget->clear();
     }
     Q_EMIT valueChanged();
@@ -328,7 +328,7 @@ void SieveIncludeWidgetLister::clearWidget(QWidget *aWidget)
 
 QWidget *SieveIncludeWidgetLister::createWidget(QWidget *parent)
 {
-    SieveIncludeActionWidget *w = new SieveIncludeActionWidget(parent);
+    auto *w = new SieveIncludeActionWidget(parent);
     w->setListOfIncludeFile(mListOfIncludeFile);
     reconnectWidget(w);
     return w;

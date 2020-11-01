@@ -48,13 +48,13 @@ QWidget *SieveActionKeep::createParamWidget(QWidget *parent) const
 {
     if (mHasFlagSupport) {
         QWidget *w = new QWidget(parent);
-        QHBoxLayout *lay = new QHBoxLayout;
+        auto *lay = new QHBoxLayout;
         lay->setContentsMargins({});
         w->setLayout(lay);
         QLabel *addFlags = new QLabel(i18n("Add flags:"));
         lay->addWidget(addFlags);
 
-        SelectFlagsWidget *flagsWidget = new SelectFlagsWidget;
+        auto *flagsWidget = new SelectFlagsWidget;
         connect(flagsWidget, &SelectFlagsWidget::valueChanged, this, &SieveActionKeep::valueChanged);
         flagsWidget->setObjectName(QStringLiteral("flagswidget"));
         lay->addWidget(flagsWidget);
@@ -70,10 +70,10 @@ void SieveActionKeep::setParamWidgetValue(QXmlStreamReader &element, QWidget *w,
         while (element.readNextStartElement()) {
             const QStringRef tagName = element.name();
             if (tagName == QLatin1String("list")) {
-                SelectFlagsWidget *flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
+                auto *flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
                 flagsWidget->setFlags(AutoCreateScriptUtil::listValue(element));
             } else if (tagName == QLatin1String("str")) {
-                SelectFlagsWidget *flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
+                auto *flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
                 flagsWidget->setFlags(QStringList() << element.readElementText());
             } else if (tagName == QLatin1String("tag") && element.readElementText() == QLatin1String("flags")) {
                 //nothing :)

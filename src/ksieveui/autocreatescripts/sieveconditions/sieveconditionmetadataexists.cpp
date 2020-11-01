@@ -25,7 +25,7 @@ SieveConditionMetaDataExists::SieveConditionMetaDataExists(SieveEditorGraphicalM
 QWidget *SieveConditionMetaDataExists::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QGridLayout *grid = new QGridLayout;
+    auto *grid = new QGridLayout;
     grid->setContentsMargins({});
     w->setLayout(grid);
 
@@ -41,7 +41,7 @@ QWidget *SieveConditionMetaDataExists::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("Annotation:"));
     grid->addWidget(lab, 1, 0);
 
-    QLineEdit *value = new QLineEdit;
+    auto *value = new QLineEdit;
     connect(value, &QLineEdit::textChanged, this, &SieveConditionMetaDataExists::valueChanged);
     value->setObjectName(QStringLiteral("value"));
     grid->addWidget(value, 1, 1);
@@ -88,10 +88,10 @@ void SieveConditionMetaDataExists::setParamWidgetValue(QXmlStreamReader &element
         if (tagName == QLatin1String("str")) {
             const QString tagValue = element.readElementText();
             if (index == 0) {
-                KSieveUi::AbstractMoveImapFolderWidget *mailbox = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("mailbox"));
+                auto *mailbox = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("mailbox"));
                 mailbox->setText(tagValue);
             } else if (index == 1) {
-                QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+                auto *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
                 value->setText(AutoCreateScriptUtil::quoteStr(tagValue));
             } else {
                 tooManyArguments(tagName, index, 2, error);

@@ -31,13 +31,13 @@ SieveActionVacation::SieveActionVacation(SieveEditorGraphicalModeWidget *sieveGr
 QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QGridLayout *grid = new QGridLayout;
+    auto *grid = new QGridLayout;
     grid->setContentsMargins({});
     w->setLayout(grid);
 
     QLabel *lab = nullptr;
     if (mHasVacationSecondsSupport) {
-        SelectVacationComboBox *vacation = new SelectVacationComboBox;
+        auto *vacation = new SelectVacationComboBox;
         vacation->setObjectName(QStringLiteral("vacationcombobox"));
         connect(vacation, &SelectVacationComboBox::valueChanged, this, &SieveActionVacation::valueChanged);
         grid->addWidget(vacation, 0, 0);
@@ -46,7 +46,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
         grid->addWidget(lab, 0, 0);
     }
 
-    QSpinBox *day = new QSpinBox;
+    auto *day = new QSpinBox;
     day->setMinimum(1);
     day->setMaximum(999);
     day->setObjectName(QStringLiteral("day"));
@@ -56,7 +56,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("Message subject:"));
     grid->addWidget(lab, 1, 0);
 
-    QLineEdit *subject = new QLineEdit;
+    auto *subject = new QLineEdit;
     subject->setObjectName(QStringLiteral("subject"));
     connect(subject, &QLineEdit::textChanged, this, &SieveActionVacation::valueChanged);
     grid->addWidget(subject, 1, 1);
@@ -73,7 +73,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("Vacation reason:"));
     grid->addWidget(lab, 3, 0);
 
-    MultiLineEdit *text = new MultiLineEdit;
+    auto *text = new MultiLineEdit;
     connect(text, &MultiLineEdit::valueChanged, this, &SieveActionVacation::valueChanged);
     text->setObjectName(QStringLiteral("text"));
     grid->addWidget(text, 3, 1);
@@ -89,7 +89,7 @@ void SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1String("seconds")) {
                 if (mHasVacationSecondsSupport) {
-                    SelectVacationComboBox *vacationcombobox = w->findChild<SelectVacationComboBox *>(QStringLiteral("vacationcombobox"));
+                    auto *vacationcombobox = w->findChild<SelectVacationComboBox *>(QStringLiteral("vacationcombobox"));
                     vacationcombobox->setCode(AutoCreateScriptUtil::tagValue(tagValue), name(), error);
                 } else {
                     serverDoesNotSupportFeatures(QStringLiteral("seconds"), error);
@@ -97,7 +97,7 @@ void SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
             } else if (tagValue == QLatin1String("days")) {
                 //Nothing wait num tag for it.
             } else if (tagValue == QLatin1String("addresses")) {
-                AbstractSelectEmailLineEdit *addresses = w->findChild<AbstractSelectEmailLineEdit *>(QStringLiteral("addresses"));
+                auto *addresses = w->findChild<AbstractSelectEmailLineEdit *>(QStringLiteral("addresses"));
                 if (element.readNextStartElement()) {
                     const QStringRef textElementTagName = element.name();
                     if (textElementTagName == QLatin1String("str")) {
@@ -107,17 +107,17 @@ void SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
                     }
                 }
             } else if (tagValue == QLatin1String("subject")) {
-                QLineEdit *subject = w->findChild<QLineEdit *>(QStringLiteral("subject"));
+                auto *subject = w->findChild<QLineEdit *>(QStringLiteral("subject"));
                 subject->setText(AutoCreateScriptUtil::strValue(element));
             } else {
                 unknownTagValue(tagValue, error);
                 qCDebug(LIBKSIEVE_LOG) << "SieveActionVacation::setParamWidgetValue unknown tagValue :" << tagValue;
             }
         } else if (tagName == QLatin1String("num")) {
-            QSpinBox *day = w->findChild<QSpinBox *>(QStringLiteral("day"));
+            auto *day = w->findChild<QSpinBox *>(QStringLiteral("day"));
             day->setValue(element.readElementText().toInt());
         } else if (tagName == QLatin1String("str")) {
-            MultiLineEdit *text = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
+            auto *text = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
             text->setPlainText(element.readElementText());
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();

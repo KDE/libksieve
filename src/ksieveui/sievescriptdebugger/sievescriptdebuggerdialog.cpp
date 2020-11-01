@@ -20,7 +20,7 @@ using namespace KSieveUi;
 SieveScriptDebuggerDialog::SieveScriptDebuggerDialog(QWidget *parent)
     : QDialog(parent)
 {
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
     setWindowTitle(i18nc("@title:window", "Debug Sieve Script"));
 
     mSieveScriptDebuggerWidget = new SieveScriptDebuggerWidget(this);

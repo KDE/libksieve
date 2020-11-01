@@ -23,11 +23,11 @@ void VacationMailActionWidgetTest::shouldHaveDefaultValue()
 {
     KSieveUi::VacationMailActionWidget w;
 
-    QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
+    auto *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    QStackedWidget *mStackedWidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedWidget"));
+    auto *mStackedWidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedWidget"));
     QVERIFY(mStackedWidget);
 
     QCOMPARE(mStackedWidget->count(), 3);
@@ -40,14 +40,14 @@ void VacationMailActionWidgetTest::shouldHaveDefaultValue()
 
     QWidget *mMoveImapFolderWidget = mStackedWidget->widget(1);
     QVERIFY(mMoveImapFolderWidget);
-    KSieveUi::AbstractMoveImapFolderWidget *abstractMoveImapFolderWidget = dynamic_cast<KSieveUi::AbstractMoveImapFolderWidget *>(mMoveImapFolderWidget);
+    auto *abstractMoveImapFolderWidget = dynamic_cast<KSieveUi::AbstractMoveImapFolderWidget *>(mMoveImapFolderWidget);
     QVERIFY(abstractMoveImapFolderWidget);
     QCOMPARE(abstractMoveImapFolderWidget->objectName(), QStringLiteral("moveImapFolderWidget"));
 
     QWidget *mSelectEmailLineEdit = mStackedWidget->widget(2);
     QVERIFY(mSelectEmailLineEdit);
 
-    KSieveUi::AbstractSelectEmailLineEdit *abstractSelectEmailWidget = dynamic_cast<KSieveUi::AbstractSelectEmailLineEdit *>(mSelectEmailLineEdit);
+    auto *abstractSelectEmailWidget = dynamic_cast<KSieveUi::AbstractSelectEmailLineEdit *>(mSelectEmailLineEdit);
     QVERIFY(abstractSelectEmailWidget);
     QCOMPARE(abstractSelectEmailWidget->objectName(), QStringLiteral("selectEmailLineEdit"));
 
@@ -58,7 +58,7 @@ void VacationMailActionWidgetTest::shouldHaveDefaultValue()
 void VacationMailActionWidgetTest::shouldSwitchComponents()
 {
     KSieveUi::VacationMailActionWidget w;
-    QStackedWidget *mStackedWidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedWidget"));
+    auto *mStackedWidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedWidget"));
 
     w.mailActionChanged(KSieveUi::VacationUtils::Keep);
     QCOMPARE(mStackedWidget->currentIndex(), 0);

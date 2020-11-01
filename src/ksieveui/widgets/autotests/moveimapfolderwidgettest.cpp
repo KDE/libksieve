@@ -23,10 +23,10 @@ void MoveImapFolderWidgetTest::shouldHaveDefaultValue()
 {
     KSieveUi::MoveImapFolderWidget w;
 
-    QHBoxLayout *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
+    auto *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
-    QLineEdit *mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
+    auto *mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
     QVERIFY(mLineEdit);
     QVERIFY(mLineEdit->text().isEmpty());
     QVERIFY(w.text().isEmpty());
@@ -36,7 +36,7 @@ void MoveImapFolderWidgetTest::shouldHaveDefaultValue()
 void MoveImapFolderWidgetTest::shouldAssignValue()
 {
     KSieveUi::MoveImapFolderWidget w;
-    QLineEdit *mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
+    auto *mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
     QString str = QStringLiteral("foo");
     w.setText(str);
     QCOMPARE(mLineEdit->text(), str);

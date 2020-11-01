@@ -28,11 +28,11 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *g
     : SieveWidgetPageAbstract(parent)
     , mSieveGraphicalModeWidget(graphicalModeWidget)
 {
-    QVBoxLayout *topLayout = new QVBoxLayout(this);
+    auto *topLayout = new QVBoxLayout(this);
     topLayout->setContentsMargins({});
 
     mConditions = new QGroupBox(i18n("Conditions"));
-    QVBoxLayout *vbox = new QVBoxLayout;
+    auto *vbox = new QVBoxLayout;
 
     mAllMessageRBtn = new QRadioButton(i18n("Match all messages"), this);
     mMatchAll = new QRadioButton(i18n("Match a&ll of the following"), this);
@@ -45,7 +45,7 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *g
     mMatchAny->setChecked(false);
     mAllMessageRBtn->setChecked(false);
 
-    QButtonGroup *bg = new QButtonGroup(this);
+    auto *bg = new QButtonGroup(this);
     bg->addButton(mMatchAll);
     bg->addButton(mMatchAny);
     bg->addButton(mAllMessageRBtn);
@@ -67,7 +67,7 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *g
     vbox->addWidget(mScriptActionLister, 0, Qt::AlignTop);
     topLayout->addWidget(actions);
 
-    QHBoxLayout *newBlockLayout = new QHBoxLayout;
+    auto *newBlockLayout = new QHBoxLayout;
     QLabel *lab = new QLabel(i18n("Add new block:"));
     newBlockLayout->addWidget(lab);
     mNewBlockType = new QComboBox;

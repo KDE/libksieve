@@ -291,7 +291,7 @@ SieveJob *SieveJob::put(const QUrl &destination, const QString &script, bool mak
 
     commands.push(Private::Put);
 
-    SieveJob *job = new SieveJob;
+    auto *job = new SieveJob;
     job->d->mUrl = destination;
     job->d->mScript = script;
     job->d->mCommands = commands;
@@ -306,7 +306,7 @@ SieveJob *SieveJob::get(const QUrl &source)
     commands.push(Private::Get);
     commands.push(Private::SearchActive);
 
-    SieveJob *job = new SieveJob;
+    auto *job = new SieveJob;
     job->d->mUrl = source;
     job->d->mCommands = commands;
 
@@ -319,7 +319,7 @@ SieveJob *SieveJob::list(const QUrl &source)
     QStack<Private::Command> commands;
     commands.push(Private::List);
 
-    SieveJob *job = new SieveJob;
+    auto *job = new SieveJob;
     job->d->mUrl = source;
     job->d->mCommands = commands;
 
@@ -332,7 +332,7 @@ SieveJob *SieveJob::del(const QUrl &url)
     QStack<Private::Command> commands;
     commands.push(Private::Delete);
 
-    SieveJob *job = new SieveJob;
+    auto *job = new SieveJob;
     job->d->mUrl = url;
     job->d->mCommands = commands;
 
@@ -344,7 +344,7 @@ SieveJob *SieveJob::deactivate(const QUrl &url)
 {
     QStack<Private::Command> commands;
     commands.push(Private::Deactivate);
-    SieveJob *job = new SieveJob;
+    auto *job = new SieveJob;
     job->d->mUrl = url;
     job->d->mCommands = commands;
 
@@ -357,7 +357,7 @@ SieveJob *SieveJob::rename(const QUrl &url, const QString &newName)
     QStack<Private::Command> commands;
     commands.push(Private::Rename);
 
-    SieveJob *job = new SieveJob;
+    auto *job = new SieveJob;
     job->d->mUrl = url;
     job->d->mNewName = newName;
     job->d->mCommands = commands;
@@ -371,7 +371,7 @@ SieveJob *SieveJob::check(const QUrl &url, const QString &script)
     QStack<Private::Command> commands;
     commands.push(Private::Check);
 
-    SieveJob *job = new SieveJob;
+    auto *job = new SieveJob;
     job->d->mUrl = url;
     job->d->mScript = script;
     job->d->mCommands = commands;
@@ -385,7 +385,7 @@ SieveJob *SieveJob::activate(const QUrl &url)
     QStack<Private::Command> commands;
     commands.push(Private::Activate);
 
-    SieveJob *job = new SieveJob;
+    auto *job = new SieveJob;
     job->d->mUrl = url;
     job->d->mCommands = commands;
 

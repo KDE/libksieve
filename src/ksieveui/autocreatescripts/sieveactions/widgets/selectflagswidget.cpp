@@ -25,7 +25,7 @@ SelectFlagsListDialog::SelectFlagsListDialog(QWidget *parent)
     , mListWidget(new SelectFlagsListWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Flags"));
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(mListWidget);
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
@@ -127,14 +127,14 @@ QStringList SelectFlagsListWidget::flags() const
 SelectFlagsWidget::SelectFlagsWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QHBoxLayout *lay = new QHBoxLayout(this);
+    auto *lay = new QHBoxLayout(this);
     lay->setContentsMargins({});
     mEdit = new QLineEdit(this);
     mEdit->setReadOnly(true);
     mEdit->setPlaceholderText(i18n("Click on button for selecting flags..."));
     connect(mEdit, &QLineEdit::textChanged, this, &SelectFlagsWidget::valueChanged);
     lay->addWidget(mEdit);
-    QToolButton *selectFlags = new QToolButton(this);
+    auto *selectFlags = new QToolButton(this);
     selectFlags->setText(i18n("..."));
     selectFlags->setToolTip(i18n("Select Flags"));
     connect(selectFlags, &QPushButton::clicked, this, &SelectFlagsWidget::slotSelectFlags);

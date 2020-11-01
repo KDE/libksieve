@@ -28,8 +28,8 @@ ParsingResultDialog::ParsingResultDialog(QWidget *parent)
     setWindowTitle(i18nc("@title:window", "Sieve Parsing"));
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
 
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    QPushButton *user1Button = new QPushButton(this);
+    auto *mainLayout = new QVBoxLayout(this);
+    auto *user1Button = new QPushButton(this);
     buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &ParsingResultDialog::reject);
     user1Button->setText(i18n("Save As..."));

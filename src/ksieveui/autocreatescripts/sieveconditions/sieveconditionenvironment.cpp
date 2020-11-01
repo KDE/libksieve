@@ -26,13 +26,13 @@ SieveConditionEnvironment::SieveConditionEnvironment(SieveEditorGraphicalModeWid
 QWidget *SieveConditionEnvironment::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QGridLayout *grid = new QGridLayout;
+    auto *grid = new QGridLayout;
     grid->setContentsMargins({});
     w->setLayout(grid);
     QLabel *lab = new QLabel(i18n("Item:"));
     grid->addWidget(lab, 0, 0);
 
-    QLineEdit *item = new QLineEdit;
+    auto *item = new QLineEdit;
     QStringList itemList;
     itemList << QStringLiteral("domain")
              << QStringLiteral("host")
@@ -42,7 +42,7 @@ QWidget *SieveConditionEnvironment::createParamWidget(QWidget *parent) const
              << QStringLiteral("remote-host")
              << QStringLiteral("remote-ip")
              << QStringLiteral("version");
-    QCompleter *completer = new QCompleter(itemList, w);
+    auto *completer = new QCompleter(itemList, w);
     completer->setCaseSensitivity(Qt::CaseInsensitive);
     item->setCompleter(completer);
     connect(item, &QLineEdit::textChanged, this, &SieveConditionEnvironment::valueChanged);
@@ -53,7 +53,7 @@ QWidget *SieveConditionEnvironment::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("Value:"));
     grid->addWidget(lab, 1, 0);
 
-    QLineEdit *value = new QLineEdit;
+    auto *value = new QLineEdit;
     connect(value, &QLineEdit::textChanged, this, &SieveConditionEnvironment::valueChanged);
     value->setObjectName(QStringLiteral("value"));
     grid->addWidget(value, 1, 1);
@@ -100,10 +100,10 @@ void SieveConditionEnvironment::setParamWidgetValue(QXmlStreamReader &element, Q
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("str")) {
             if (index == 0) {
-                QLineEdit *item = w->findChild<QLineEdit *>(QStringLiteral("item"));
+                auto *item = w->findChild<QLineEdit *>(QStringLiteral("item"));
                 item->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
             } else if (index == 1) {
-                QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+                auto *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
                 value->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
             } else {
                 tooManyArguments(tagName, index, 2, error);

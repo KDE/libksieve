@@ -28,11 +28,11 @@ SieveActionSetVariable::SieveActionSetVariable(SieveEditorGraphicalModeWidget *s
 QWidget *SieveActionSetVariable::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QGridLayout *grid = new QGridLayout;
+    auto *grid = new QGridLayout;
     grid->setContentsMargins({});
     w->setLayout(grid);
 
-    SelectVariableModifierComboBox *modifier = new SelectVariableModifierComboBox;
+    auto *modifier = new SelectVariableModifierComboBox;
     modifier->setObjectName(QStringLiteral("modifier"));
     connect(modifier, &SelectVariableModifierComboBox::valueChanged, this, &SieveActionSetVariable::valueChanged);
     grid->addWidget(modifier, 0, 0);
@@ -47,7 +47,7 @@ QWidget *SieveActionSetVariable::createParamWidget(QWidget *parent) const
     QLabel *lab = new QLabel(i18n("Value:"));
     grid->addWidget(lab, 1, 0);
 
-    QLineEdit *value = new QLineEdit;
+    auto *value = new QLineEdit;
     value->setObjectName(QStringLiteral("value"));
     connect(value, &QLineEdit::textChanged, this, &SieveActionSetVariable::valueChanged);
     grid->addWidget(value, 1, 1);
@@ -55,7 +55,7 @@ QWidget *SieveActionSetVariable::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("In variable:"));
     grid->addWidget(lab, 2, 0);
 
-    QLineEdit *variable = new QLineEdit;
+    auto *variable = new QLineEdit;
     variable->setObjectName(QStringLiteral("variable"));
     connect(variable, &QLineEdit::textChanged, this, &SieveActionSetVariable::valueChanged);
     grid->addWidget(variable, 2, 1);
@@ -70,9 +70,9 @@ QUrl SieveActionSetVariable::href() const
 
 void SieveActionSetVariable::setLocalVariable(QWidget *w, const SieveGlobalVariableActionWidget::VariableElement &var)
 {
-    QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+    auto *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
     value->setText(var.variableValue);
-    QLineEdit *variable = w->findChild<QLineEdit *>(QStringLiteral("variable"));
+    auto *variable = w->findChild<QLineEdit *>(QStringLiteral("variable"));
     variable->setText(AutoCreateScriptUtil::protectSlash(var.variableName));
 }
 
@@ -82,12 +82,12 @@ void SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWid
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("str")) {
             const QString tagValue = element.readElementText();
-            QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+            auto *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
             value->setText(tagValue);
             if (element.readNextStartElement()) {
                 const QStringRef variableTagName = element.name();
                 if (variableTagName == QLatin1String("str")) {
-                    QLineEdit *variable = w->findChild<QLineEdit *>(QStringLiteral("variable"));
+                    auto *variable = w->findChild<QLineEdit *>(QStringLiteral("variable"));
                     variable->setText(AutoCreateScriptUtil::protectSlash(element.readElementText()));
                 }
             } else {
@@ -97,13 +97,13 @@ void SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWid
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1String("quoteregex")) {
                 if (mHasRegexCapability) {
-                    QCheckBox *protectAgainstUseRegexp = w->findChild<QCheckBox *>(QStringLiteral("regexprotect"));
+                    auto *protectAgainstUseRegexp = w->findChild<QCheckBox *>(QStringLiteral("regexprotect"));
                     protectAgainstUseRegexp->setChecked(true);
                 } else {
                     error += i18n("Script needs regex support, but server does not have it.") + QLatin1Char('\n');
                 }
             } else {
-                SelectVariableModifierComboBox *modifier = w->findChild<SelectVariableModifierComboBox *>(QStringLiteral("modifier"));
+                auto *modifier = w->findChild<SelectVariableModifierComboBox *>(QStringLiteral("modifier"));
                 modifier->setCode(AutoCreateScriptUtil::tagValue(tagValue), name(), error);
             }
         } else if (tagName == QLatin1String("crlf")) {

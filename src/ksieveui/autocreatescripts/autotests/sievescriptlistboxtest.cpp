@@ -17,10 +17,10 @@ SieveScriptListBoxTest::SieveScriptListBoxTest(QObject *parent)
 void SieveScriptListBoxTest::shouldHaveDefaultValues()
 {
     KSieveUi::SieveScriptListBox lst(QStringLiteral("foo"));
-    QVBoxLayout *layout = lst.findChild<QVBoxLayout *>(QStringLiteral("layout"));
+    auto *layout = lst.findChild<QVBoxLayout *>(QStringLiteral("layout"));
     QVERIFY(layout);
 
-    QListWidget *mSieveListScript = lst.findChild<QListWidget *>(QStringLiteral("mSieveListScript"));
+    auto *mSieveListScript = lst.findChild<QListWidget *>(QStringLiteral("mSieveListScript"));
     QVERIFY(mSieveListScript);
     QCOMPARE(mSieveListScript->dragDropMode(), QAbstractItemView::InternalMove);
 }

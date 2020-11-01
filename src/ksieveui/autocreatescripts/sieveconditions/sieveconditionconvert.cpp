@@ -24,14 +24,14 @@ SieveConditionConvert::SieveConditionConvert(SieveEditorGraphicalModeWidget *sie
 QWidget *SieveConditionConvert::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QGridLayout *lay = new QGridLayout;
+    auto *lay = new QGridLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
     QLabel *lab = new QLabel(i18n("From:"));
     lay->addWidget(lab, 0, 0);
 
-    SelectMimeTypeComboBox *fromMimeType = new SelectMimeTypeComboBox;
+    auto *fromMimeType = new SelectMimeTypeComboBox;
     fromMimeType->setObjectName(QStringLiteral("from"));
     connect(fromMimeType, &SelectMimeTypeComboBox::valueChanged, this, &SieveConditionConvert::valueChanged);
     lay->addWidget(fromMimeType, 0, 1);
@@ -39,7 +39,7 @@ QWidget *SieveConditionConvert::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("To:"));
     lay->addWidget(lab, 0, 2);
 
-    SelectMimeTypeComboBox *toMimeType = new SelectMimeTypeComboBox;
+    auto *toMimeType = new SelectMimeTypeComboBox;
     connect(toMimeType, &SelectMimeTypeComboBox::valueChanged, this, &SieveConditionConvert::valueChanged);
     toMimeType->setObjectName(QStringLiteral("to"));
     lay->addWidget(toMimeType, 0, 3);
@@ -47,7 +47,7 @@ QWidget *SieveConditionConvert::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("Parameters:"));
     lay->addWidget(lab, 1, 0);
 
-    SelectConvertParameterWidget *params = new SelectConvertParameterWidget;
+    auto *params = new SelectConvertParameterWidget;
     connect(params, &SelectConvertParameterWidget::valueChanged, this, &SieveConditionConvert::valueChanged);
     params->setObjectName(QStringLiteral("params"));
     lay->addWidget(params, 1, 1, 2, 3);
@@ -101,10 +101,10 @@ void SieveConditionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidg
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("str")) {
             if (index == 0) {
-                SelectMimeTypeComboBox *fromMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("from"));
+                auto *fromMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("from"));
                 fromMimeType->setCode(element.readElementText(), name(), error);
             } else if (index == 1) {
-                SelectMimeTypeComboBox *toMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("to"));
+                auto *toMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("to"));
                 toMimeType->setCode(element.readElementText(), name(), error);
             } else {
                 tooManyArguments(tagName, index, 2, error);
@@ -112,7 +112,7 @@ void SieveConditionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidg
             }
             ++index;
         } else if (tagName == QLatin1String("list")) {
-            SelectConvertParameterWidget *params = w->findChild<SelectConvertParameterWidget *>(QStringLiteral("params"));
+            auto *params = w->findChild<SelectConvertParameterWidget *>(QStringLiteral("params"));
             params->setCode(AutoCreateScriptUtil::listValue(element), error);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();

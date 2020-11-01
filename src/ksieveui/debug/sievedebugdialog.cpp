@@ -32,7 +32,7 @@ SieveDebugDialog::SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, 
     , mPasswordProvider(passwordProvider)
 {
     setWindowTitle(i18nc("@title:window", "Sieve Diagnostics"));
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
 
     // Collect all accounts
     mResourceIdentifier = KSieveUi::Util::sieveImapResourceNames();
@@ -44,7 +44,7 @@ SieveDebugDialog::SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, 
         qCWarning(LIBKSIEVE_LOG) << "Invalid definition name";
     }
 
-    KSyntaxHighlighting::SyntaxHighlighter *hl = new KSyntaxHighlighting::SyntaxHighlighter(mEdit->editor()->document());
+    auto *hl = new KSyntaxHighlighting::SyntaxHighlighter(mEdit->editor()->document());
     hl->setTheme((palette().color(QPalette::Base).lightness() < 128)
                  ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
                  : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));

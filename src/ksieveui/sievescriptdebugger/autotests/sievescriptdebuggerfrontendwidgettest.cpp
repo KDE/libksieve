@@ -28,28 +28,28 @@ void SieveScriptDebuggerFrontEndWidgetTest::shouldHaveDefaultValue()
     KSieveUi::SieveScriptDebuggerFrontEndWidget w;
     QVERIFY(w.script().isEmpty());
 
-    QSplitter *splitter = w.findChild<QSplitter *>(QStringLiteral("splitter"));
+    auto *splitter = w.findChild<QSplitter *>(QStringLiteral("splitter"));
     QVERIFY(splitter);
     QCOMPARE(splitter->count(), 2);
 
-    KSieveUi::SieveScriptDebuggerWarning *warning = w.findChild<KSieveUi::SieveScriptDebuggerWarning *>(QStringLiteral("sievescriptdebuggerwarning"));
+    auto *warning = w.findChild<KSieveUi::SieveScriptDebuggerWarning *>(QStringLiteral("sievescriptdebuggerwarning"));
     QVERIFY(warning);
 
-    QLabel *emailLab = w.findChild<QLabel *>(QStringLiteral("emaillab"));
+    auto *emailLab = w.findChild<QLabel *>(QStringLiteral("emaillab"));
     QVERIFY(emailLab);
 
-    KUrlRequester *emailPath = w.findChild<KUrlRequester *>(QStringLiteral("emailpath"));
+    auto *emailPath = w.findChild<KUrlRequester *>(QStringLiteral("emailpath"));
     QVERIFY(emailPath);
 
-    QLabel *extensionLab = w.findChild<QLabel *>(QStringLiteral("extensionlab"));
+    auto *extensionLab = w.findChild<QLabel *>(QStringLiteral("extensionlab"));
     QVERIFY(extensionLab);
 
-    QLineEdit *extension = w.findChild<QLineEdit *>(QStringLiteral("extension"));
+    auto *extension = w.findChild<QLineEdit *>(QStringLiteral("extension"));
     QVERIFY(extension);
     QVERIFY(extension->text().isEmpty());
     QVERIFY(extension->isClearButtonEnabled());
 
-    KPIMTextEdit::TextToSpeechWidget *textToSpeechWidget = w.findChild<KPIMTextEdit::TextToSpeechWidget *>(QStringLiteral("texttospeechwidget"));
+    auto *textToSpeechWidget = w.findChild<KPIMTextEdit::TextToSpeechWidget *>(QStringLiteral("texttospeechwidget"));
     QVERIFY(textToSpeechWidget);
 }
 
@@ -58,7 +58,7 @@ void SieveScriptDebuggerFrontEndWidgetTest::shouldChangeButtonEnabledState()
     KSieveUi::SieveScriptDebuggerFrontEndWidget w;
     QVERIFY(w.script().isEmpty());
 
-    KUrlRequester *emailPath = w.findChild<KUrlRequester *>(QStringLiteral("emailpath"));
+    auto *emailPath = w.findChild<KUrlRequester *>(QStringLiteral("emailpath"));
     emailPath->setUrl(QUrl::fromLocalFile(QStringLiteral("/")));
 //    QPushButton *debugScriptButton = w.findChild<QPushButton *>(QStringLiteral("debugbutton"));
 
@@ -84,7 +84,7 @@ void SieveScriptDebuggerFrontEndWidgetTest::shouldNotAccept()
     KSieveUi::SieveScriptDebuggerFrontEndWidget w;
     w.show();
     w.setScript(QStringLiteral("debug_log"));
-    KSieveUi::SieveScriptDebuggerWarning *warning = w.findChild<KSieveUi::SieveScriptDebuggerWarning *>(QStringLiteral("sievescriptdebuggerwarning"));
+    auto *warning = w.findChild<KSieveUi::SieveScriptDebuggerWarning *>(QStringLiteral("sievescriptdebuggerwarning"));
 
     QVERIFY(!w.canAccept());
     QVERIFY(warning->isVisible());

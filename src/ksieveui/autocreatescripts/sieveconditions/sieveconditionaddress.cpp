@@ -27,24 +27,24 @@ SieveConditionAddress::SieveConditionAddress(SieveEditorGraphicalModeWidget *sie
 QWidget *SieveConditionAddress::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QHBoxLayout *lay = new QHBoxLayout;
+    auto *lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    SelectAddressPartComboBox *selectAddressPart = new SelectAddressPartComboBox(mSieveGraphicalModeWidget);
+    auto *selectAddressPart = new SelectAddressPartComboBox(mSieveGraphicalModeWidget);
     connect(selectAddressPart, &SelectAddressPartComboBox::valueChanged, this, &SieveConditionAddress::valueChanged);
     selectAddressPart->setObjectName(QStringLiteral("addresspartcombobox"));
     lay->addWidget(selectAddressPart);
 
-    QGridLayout *grid = new QGridLayout;
+    auto *grid = new QGridLayout;
     grid->setContentsMargins({});
     lay->addLayout(grid);
-    SelectMatchTypeComboBox *selectMatchCombobox = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
+    auto *selectMatchCombobox = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
     connect(selectMatchCombobox, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionAddress::valueChanged);
     selectMatchCombobox->setObjectName(QStringLiteral("matchtypecombobox"));
     grid->addWidget(selectMatchCombobox, 0, 0);
 
-    SelectHeaderTypeComboBox *selectHeaderType = new SelectHeaderTypeComboBox(true);
+    auto *selectHeaderType = new SelectHeaderTypeComboBox(true);
     connect(selectHeaderType, &SelectHeaderTypeComboBox::valueChanged, this, &SieveConditionAddress::valueChanged);
     selectHeaderType->setObjectName(QStringLiteral("headertypecombobox"));
     grid->addWidget(selectHeaderType, 0, 1);
@@ -107,10 +107,10 @@ void SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
             ++index;
         } else if (tagName == QLatin1String("str")) {
             if (indexStr == 0) {
-                SelectHeaderTypeComboBox *selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
+                auto *selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
                 selectHeaderType->setCode(element.readElementText());
             } else if (indexStr == 1) {
-                AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
+                auto *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
                 edit->setCode(AutoCreateScriptUtil::quoteStr(element.readElementText()));
             } else {
                 tooManyArguments(tagName, indexStr, 2, error);
@@ -119,10 +119,10 @@ void SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
             ++indexStr;
         } else if (tagName == QLatin1String("list")) {
             if (indexStr == 0) {
-                SelectHeaderTypeComboBox *selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
+                auto *selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
                 selectHeaderType->setCode(AutoCreateScriptUtil::listValueToStr(element));
             } else if (indexStr == 1) {
-                AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
+                auto *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
                 edit->setCode(AutoCreateScriptUtil::listValueToStr(element));
             } else {
                 tooManyArguments(tagName, indexStr, 2, error);
@@ -144,21 +144,21 @@ void SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
     }
     if (lstTagValue.count() == 1) {
         QString specificError;
-        SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
+        auto *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
         selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(lstTagValue.at(0), notCondition), name(), specificError);
         if (!specificError.isEmpty()) { //Test if default match type == is
-            SelectAddressPartComboBox *selectAddressPart = w->findChild<SelectAddressPartComboBox *>(QStringLiteral("addresspartcombobox"));
+            auto *selectAddressPart = w->findChild<SelectAddressPartComboBox *>(QStringLiteral("addresspartcombobox"));
             selectAddressPart->setCode(AutoCreateScriptUtil::tagValue(lstTagValue.at(0)), name(), error);
         }
     } else if (lstTagValue.count() == 2) {
         QString errorStr;
-        SelectAddressPartComboBox *selectAddressPart = w->findChild<SelectAddressPartComboBox *>(QStringLiteral("addresspartcombobox"));
+        auto *selectAddressPart = w->findChild<SelectAddressPartComboBox *>(QStringLiteral("addresspartcombobox"));
         selectAddressPart->setCode(AutoCreateScriptUtil::tagValue(lstTagValue.at(0)), name(), errorStr);
         if (errorStr.isEmpty()) {
-            SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
+            auto *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
             selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(lstTagValue.at(1), notCondition), name(), error);
         } else { //Problem with order
-            SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
+            auto *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
             selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(lstTagValue.at(0), notCondition), name(), error);
             selectAddressPart->setCode(AutoCreateScriptUtil::tagValue(lstTagValue.at(1)), name(), error);
         }

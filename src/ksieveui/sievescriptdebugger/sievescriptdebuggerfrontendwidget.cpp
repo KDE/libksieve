@@ -32,10 +32,10 @@ using namespace KSieveUi;
 SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
     mainLayout->setContentsMargins({});
 
-    QFormLayout *formLayout = new QFormLayout;
+    auto *formLayout = new QFormLayout;
     mainLayout->addLayout(formLayout);
 
     QLabel *emailLab = new QLabel(i18n("Email path:"), this);
@@ -49,7 +49,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
 
     formLayout->addRow(emailLab, mEmailPath);
 
-    QHBoxLayout *extensionLayout = new QHBoxLayout;
+    auto *extensionLayout = new QHBoxLayout;
     mainLayout->addLayout(extensionLayout);
 
     QLabel *extensionLab = new QLabel(i18n("Extension:"));
@@ -68,15 +68,15 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     mainLayout->addWidget(mSplitter);
 
     QWidget *sieveEditorWidget = new QWidget(this);
-    QVBoxLayout *vboxSieveEditorLayout = new QVBoxLayout;
+    auto *vboxSieveEditorLayout = new QVBoxLayout;
     sieveEditorWidget->setLayout(vboxSieveEditorLayout);
     vboxSieveEditorLayout->setContentsMargins({});
 
-    KPIMTextEdit::TextToSpeechWidget *textToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
+    auto *textToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
     textToSpeechWidget->setObjectName(QStringLiteral("texttospeechwidget"));
     vboxSieveEditorLayout->addWidget(textToSpeechWidget);
 
-    KSieveUi::SieveScriptDebuggerTextEdit *textEdit = new KSieveUi::SieveScriptDebuggerTextEdit(this);
+    auto *textEdit = new KSieveUi::SieveScriptDebuggerTextEdit(this);
     connect(textEdit, &KSieveUi::SieveScriptDebuggerTextEdit::textChanged, this, &SieveScriptDebuggerFrontEndWidget::slotScriptTextChanged);
     mSieveTextEditWidget = new KSieveUi::SieveTextEditWidget(textEdit, this);
     mSieveTextEditWidget->setObjectName(QStringLiteral("sievetexteditwidget"));
@@ -142,7 +142,7 @@ void SieveScriptDebuggerFrontEndWidget::slotDebugScript()
         return;
     }
 
-    QTemporaryFile *temporaryFile = new QTemporaryFile();
+    auto *temporaryFile = new QTemporaryFile();
     if (!temporaryFile->open()) {
         mSieveScriptDebuggerWarning->setErrorMessage(i18n("Failed to open temporary file."));
         delete temporaryFile;

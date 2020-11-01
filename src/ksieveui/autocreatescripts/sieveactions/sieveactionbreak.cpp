@@ -24,14 +24,14 @@ SieveActionBreak::SieveActionBreak(SieveEditorGraphicalModeWidget *sieveGraphica
 QWidget *SieveActionBreak::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QHBoxLayout *lay = new QHBoxLayout;
+    auto *lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
     QLabel *lab = new QLabel(i18n("Name (optional):"));
     lay->addWidget(lab);
 
-    QLineEdit *subject = new QLineEdit;
+    auto *subject = new QLineEdit;
     subject->setObjectName(QStringLiteral("name"));
     connect(subject, &QLineEdit::textChanged, this, &SieveActionBreak::valueChanged);
     lay->addWidget(subject);
@@ -45,7 +45,7 @@ void SieveActionBreak::setParamWidgetValue(QXmlStreamReader &element, QWidget *w
         if (tagName == QLatin1String("tag")) {
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1String("name")) {
-                QLineEdit *name = w->findChild<QLineEdit *>(QStringLiteral("name"));
+                auto *name = w->findChild<QLineEdit *>(QStringLiteral("name"));
                 name->setText(AutoCreateScriptUtil::strValue(element));
             } else {
                 unknownTagValue(tagValue, error);

@@ -26,23 +26,23 @@ SieveConditionServerMetaData::SieveConditionServerMetaData(SieveEditorGraphicalM
 QWidget *SieveConditionServerMetaData::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QHBoxLayout *lay = new QHBoxLayout;
+    auto *lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    SelectMatchTypeComboBox *selectType = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
+    auto *selectType = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
     selectType->setObjectName(QStringLiteral("selecttype"));
     connect(selectType, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionServerMetaData::valueChanged);
     lay->addWidget(selectType);
 
-    QGridLayout *grid = new QGridLayout;
+    auto *grid = new QGridLayout;
     grid->setContentsMargins({});
     lay->addLayout(grid);
 
     QLabel *lab = new QLabel(i18n("Mailbox:"));
     grid->addWidget(lab, 0, 0);
 
-    QLineEdit *mailbox = new QLineEdit;
+    auto *mailbox = new QLineEdit;
     mailbox->setObjectName(QStringLiteral("mailbox"));
     connect(mailbox, &QLineEdit::textChanged, this, &SieveConditionServerMetaData::valueChanged);
     grid->addWidget(mailbox, 0, 1);
@@ -50,7 +50,7 @@ QWidget *SieveConditionServerMetaData::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("Annotations:"));
     grid->addWidget(lab, 1, 0);
 
-    QLineEdit *annotation = new QLineEdit;
+    auto *annotation = new QLineEdit;
     connect(annotation, &QLineEdit::textChanged, this, &SieveConditionServerMetaData::valueChanged);
     annotation->setObjectName(QStringLiteral("annotation"));
     grid->addWidget(annotation, 1, 1);
@@ -125,19 +125,19 @@ void SieveConditionServerMetaData::setParamWidgetValue(QXmlStreamReader &element
             switch (index) {
             case 0:
             {
-                QLineEdit *mailbox = w->findChild<QLineEdit *>(QStringLiteral("mailbox"));
+                auto *mailbox = w->findChild<QLineEdit *>(QStringLiteral("mailbox"));
                 mailbox->setText(tagValue);
                 break;
             }
             case 1:
             {
-                QLineEdit *annotation = w->findChild<QLineEdit *>(QStringLiteral("annotation"));
+                auto *annotation = w->findChild<QLineEdit *>(QStringLiteral("annotation"));
                 annotation->setText(tagValue);
                 break;
             }
             case 2:
             {
-                AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+                auto *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
                 value->setCode(tagValue);
                 break;
             }
@@ -148,7 +148,7 @@ void SieveConditionServerMetaData::setParamWidgetValue(QXmlStreamReader &element
             }
             ++index;
         } else if (tagName == QLatin1String("tag")) {
-            SelectMatchTypeComboBox *selectType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("selecttype"));
+            auto *selectType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("selecttype"));
             selectType->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();

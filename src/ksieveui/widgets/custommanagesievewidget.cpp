@@ -43,7 +43,7 @@ bool CustomManageSieveWidget::refreshList()
         const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(type.identifier(), mPasswordProvider, false);
         const QUrl u = info.sieveUrl;
         if (u.isEmpty()) {
-            QTreeWidgetItem *item = new QTreeWidgetItem(last);
+            auto *item = new QTreeWidgetItem(last);
             item->setText(0, i18n("No Sieve URL configured"));
             item->setFlags(item->flags() & ~Qt::ItemIsEnabled);
             treeView()->expandItem(last);

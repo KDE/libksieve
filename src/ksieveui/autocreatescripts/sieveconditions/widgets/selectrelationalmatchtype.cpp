@@ -49,7 +49,7 @@ QString SelectRelationalMatchType::code() const
 
 void SelectRelationalMatchType::initialize()
 {
-    QHBoxLayout *lay = new QHBoxLayout(this);
+    auto *lay = new QHBoxLayout(this);
     lay->setContentsMargins({});
 
     mType = new QComboBox(this);

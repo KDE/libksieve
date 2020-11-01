@@ -44,7 +44,7 @@ SessionThread::SessionThread(Session *session, QObject *parent)
         saslInitialized = true;
     }
 
-    QThread *thread = new QThread();
+    auto *thread = new QThread();
     moveToThread(thread);
     thread->start();
     QMetaObject::invokeMethod(this, "doInit");
@@ -305,7 +305,7 @@ bool SessionThread::saslInteract(void *in)
     Q_ASSERT(QThread::currentThread() == thread());
 
     qCDebug(KMANAGERSIEVE_LOG) << "SessionThread::saslInteract";
-    sasl_interact_t *interact = (sasl_interact_t *)in;
+    auto *interact = (sasl_interact_t *)in;
 
     //some mechanisms do not require username && pass, so it doesn't need a popup
     //window for getting this info

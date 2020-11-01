@@ -13,7 +13,7 @@ using namespace KSieveUi;
 MoveImapFolderWidget::MoveImapFolderWidget(QWidget *parent)
     : KSieveUi::AbstractMoveImapFolderWidget(parent)
 {
-    QHBoxLayout *mainLayout = new QHBoxLayout(this);
+    auto *mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
     mLineEdit = new QLineEdit(this);

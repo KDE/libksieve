@@ -34,7 +34,7 @@ SieveEditor::SieveEditor(QWidget *parent)
     , d(new KSieveUi::SieveEditorPrivate)
 {
     setWindowTitle(i18nc("@title:window", "Edit Sieve Script"));
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     d->mOkButton = buttonBox->button(QDialogButtonBox::Ok);
@@ -78,7 +78,7 @@ bool SieveEditor::event(QEvent *e)
     // With a shortcut override we can catch this before it gets to kactions.
     const bool shortCutOverride = (e->type() == QEvent::ShortcutOverride);
     if (shortCutOverride || e->type() == QEvent::KeyPress) {
-        QKeyEvent *kev = static_cast<QKeyEvent * >(e);
+        auto *kev = static_cast<QKeyEvent * >(e);
         if (kev->key() == Qt::Key_Escape) {
             e->ignore();
             return true;

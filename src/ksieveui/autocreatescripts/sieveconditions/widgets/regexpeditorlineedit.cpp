@@ -12,7 +12,7 @@ using namespace KSieveUi;
 RegexpEditorLineEdit::RegexpEditorLineEdit(QWidget *parent)
     : KSieveUi::AbstractRegexpEditorLineEdit(parent)
 {
-    QHBoxLayout *mainLayout = new QHBoxLayout(this);
+    auto *mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
     mLineEdit = new QLineEdit(this);

@@ -23,11 +23,11 @@ SieveConditionMailboxExists::SieveConditionMailboxExists(SieveEditorGraphicalMod
 QWidget *SieveConditionMailboxExists::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QHBoxLayout *lay = new QHBoxLayout;
+    auto *lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    QLineEdit *edit = new QLineEdit;
+    auto *edit = new QLineEdit;
     connect(edit, &QLineEdit::textChanged, this, &SieveConditionMailboxExists::valueChanged);
     edit->setClearButtonEnabled(true);
     lay->addWidget(edit);
@@ -71,7 +71,7 @@ void SieveConditionMailboxExists::setParamWidgetValue(QXmlStreamReader &element,
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("str")) {
             const QString tagValue = element.readElementText();
-            QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
+            auto *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
             edit->setText(AutoCreateScriptUtil::quoteStr(tagValue));
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();

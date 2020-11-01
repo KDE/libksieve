@@ -47,7 +47,7 @@ void MultiImapVacationManager::checkVacation(const QString &serverName, const QU
 {
     ++mNumberOfJobs;
     if (!mKep14Support.contains(serverName)) {
-        CheckKolabKep14SupportJob *checkKep14Job = new CheckKolabKep14SupportJob(this);
+        auto *checkKep14Job = new CheckKolabKep14SupportJob(this);
         checkKep14Job->setProperty("triggerScript", true);
         checkKep14Job->setServerName(serverName);
         checkKep14Job->setServerUrl(url);
@@ -56,7 +56,7 @@ void MultiImapVacationManager::checkVacation(const QString &serverName, const QU
         return;
     }
 
-    VacationCheckJob *job = new VacationCheckJob(url, serverName, this);
+    auto *job = new VacationCheckJob(url, serverName, this);
     job->setKep14Support(mKep14Support[serverName]);
     connect(job, &VacationCheckJob::vacationScriptActive, this, &MultiImapVacationManager::slotScriptActive);
     job->start();

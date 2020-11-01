@@ -254,7 +254,7 @@ void SieveActionWidget::setLocaleVariable(const SieveGlobalVariableActionWidget:
     if (index != -1) {
         mComboBox->setCurrentIndex(index);
         slotActionChanged(index);
-        KSieveUi::SieveActionSetVariable *localVar = qobject_cast<KSieveUi::SieveActionSetVariable *>(mActionList.at(index));
+        auto *localVar = qobject_cast<KSieveUi::SieveActionSetVariable *>(mActionList.at(index));
         if (localVar) {
             localVar->setLocalVariable(this, var);
         }
@@ -323,7 +323,7 @@ void SieveActionWidgetLister::updateAddRemoveButton()
     QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
     for (; wIt != wEnd; ++wIt) {
-        SieveActionWidget *w = qobject_cast<SieveActionWidget *>(*wIt);
+        auto *w = qobject_cast<SieveActionWidget *>(*wIt);
         w->updateAddRemoveButton(addButtonEnabled, removeButtonEnabled);
     }
 }
@@ -334,7 +334,7 @@ void SieveActionWidgetLister::generatedScript(QString &script, QStringList &requ
     QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
     for (; wIt != wEnd; ++wIt) {
-        SieveActionWidget *w = qobject_cast<SieveActionWidget *>(*wIt);
+        auto *w = qobject_cast<SieveActionWidget *>(*wIt);
         w->generatedScript(script, requireModules, onlyActions, inForEveryPartLoop);
     }
 }
@@ -349,7 +349,7 @@ void SieveActionWidgetLister::reconnectWidget(SieveActionWidget *w)
 void SieveActionWidgetLister::clearWidget(QWidget *aWidget)
 {
     if (aWidget) {
-        SieveActionWidget *widget = static_cast<SieveActionWidget *>(aWidget);
+        auto *widget = static_cast<SieveActionWidget *>(aWidget);
         widget->clear();
     }
     Q_EMIT valueChanged();
@@ -357,7 +357,7 @@ void SieveActionWidgetLister::clearWidget(QWidget *aWidget)
 
 QWidget *SieveActionWidgetLister::createWidget(QWidget *parent)
 {
-    SieveActionWidget *w = new SieveActionWidget(mSieveGraphicalModeWidget, parent);
+    auto *w = new SieveActionWidget(mSieveGraphicalModeWidget, parent);
     reconnectWidget(w);
     return w;
 }
@@ -369,7 +369,7 @@ int SieveActionWidgetLister::actionNumber() const
 
 void SieveActionWidgetLister::loadLocalVariable(const SieveGlobalVariableActionWidget::VariableElement &var)
 {
-    SieveActionWidget *w = qobject_cast<SieveActionWidget *>(widgets().constLast());
+    auto *w = qobject_cast<SieveActionWidget *>(widgets().constLast());
     if (w->isConfigurated()) {
         addWidgetAfterThisWidget(widgets().constLast());
         w = qobject_cast<SieveActionWidget *>(widgets().constLast());
@@ -385,7 +385,7 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
         if (tagName == QLatin1String("action")) {
             if (element.attributes().hasAttribute(QLatin1String("name"))) {
                 const QString actionName = element.attributes().value(QLatin1String("name")).toString();
-                SieveActionWidget *w = qobject_cast<SieveActionWidget *>(widgets().constLast());
+                auto *w = qobject_cast<SieveActionWidget *>(widgets().constLast());
                 if (w->isConfigurated()) {
                     addWidgetAfterThisWidget(widgets().constLast());
                     w = qobject_cast<SieveActionWidget *>(widgets().constLast());
@@ -418,7 +418,7 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                     } else {
                         addWidgetAfterThisWidget(widgets().constLast());
                     }
-                    SieveActionWidget *w = qobject_cast<SieveActionWidget *>(widgets().constLast());
+                    auto *w = qobject_cast<SieveActionWidget *>(widgets().constLast());
                     w->setAction(actionName, element, comment, error);
                     comment.clear();
                 } else {

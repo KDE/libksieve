@@ -67,10 +67,10 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(SieveImapPasswordProvider *pa
     setModal(false);
     setAttribute(Qt::WA_GroupLeader);
     setAttribute(Qt::WA_DeleteOnClose);
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
     QFrame *frame = new QFrame;
     mainLayout->addWidget(frame);
-    QVBoxLayout *vlay = new QVBoxLayout(frame);
+    auto *vlay = new QVBoxLayout(frame);
     vlay->setSpacing(0);
     vlay->setContentsMargins({});
 
@@ -80,7 +80,7 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(SieveImapPasswordProvider *pa
     connect(d->mTreeView, &CustomManageSieveWidget::updateButtons, this, &ManageSieveScriptsDialog::slotUpdateButtons);
     vlay->addWidget(d->mTreeView);
 
-    QHBoxLayout *buttonLayout = new QHBoxLayout;
+    auto *buttonLayout = new QHBoxLayout;
     vlay->addLayout(buttonLayout);
 
     d->mNewScript = new QPushButton(i18nc("create a new sieve script", "New..."));
@@ -99,7 +99,7 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(SieveImapPasswordProvider *pa
     connect(d->mDeactivateScript, &QPushButton::clicked, d->mTreeView, &CustomManageSieveWidget::slotDeactivateScript);
     buttonLayout->addWidget(d->mDeactivateScript);
 
-    QPushButton *close = new QPushButton;
+    auto *close = new QPushButton;
     KGuiItem::assign(close, KStandardGuiItem::close());
     connect(close, &QPushButton::clicked, this, &ManageSieveScriptsDialog::accept);
     buttonLayout->addWidget(close);
@@ -205,7 +205,7 @@ void ManageSieveScriptsDialog::slotSieveEditorCheckSyntaxClicked()
         return;
     }
     d->mSieveEditor->addNormalMessage(i18n("Uploading script to server for checking it, please wait..."));
-    KSieveUi::CheckScriptJob *checkScriptJob = new KSieveUi::CheckScriptJob(this);
+    auto *checkScriptJob = new KSieveUi::CheckScriptJob(this);
     connect(checkScriptJob, &CheckScriptJob::finished, this, &ManageSieveScriptsDialog::slotCheckScriptFinished);
     checkScriptJob->setIsActive(d->mWasActive);
     checkScriptJob->setOriginalScript(d->mSieveEditor->originalScript());

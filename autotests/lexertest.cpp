@@ -266,17 +266,17 @@ static const TestCase testcases[] = {
         Error::None, 0, 0
     },
     {
-        "Quoted string, escaped '\"'", "\"foo\\\"bar\"",
+        "Quoted string, escaped '\"'", R"("foo\"bar")",
         { { Lexer::QuotedString, "foo\"bar" }, { Lexer::None, nullptr } },
         Error::None, 0, 0
     },
     {
-        "Quoted string, escaped '\\'", "\"foo\\\\bar\"",
+        "Quoted string, escaped '\\'", R"("foo\\bar")",
         { { Lexer::QuotedString, "foo\\bar" }, { Lexer::None, nullptr } },
         Error::None, 0, 0
     },
     {
-        "Quoted string, excessive escapes", "\"\\fo\\o\"",
+        "Quoted string, excessive escapes", R"("\fo\o")",
         { { Lexer::QuotedString, "foo" }, { Lexer::None, nullptr } },
         Error::None, 0, 0
     },

@@ -27,16 +27,16 @@ SieveConditionMetaData::SieveConditionMetaData(SieveEditorGraphicalModeWidget *s
 QWidget *SieveConditionMetaData::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QHBoxLayout *lay = new QHBoxLayout;
+    auto *lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    SelectMatchTypeComboBox *selectType = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
+    auto *selectType = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
     selectType->setObjectName(QStringLiteral("selecttype"));
     connect(selectType, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionMetaData::valueChanged);
     lay->addWidget(selectType);
 
-    QGridLayout *grid = new QGridLayout;
+    auto *grid = new QGridLayout;
     grid->setContentsMargins({});
     lay->addLayout(grid);
 
@@ -53,7 +53,7 @@ QWidget *SieveConditionMetaData::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("Annotations:"));
     grid->addWidget(lab, 1, 0);
 
-    QLineEdit *annotation = new QLineEdit;
+    auto *annotation = new QLineEdit;
     connect(annotation, &QLineEdit::textChanged, this, &SieveConditionMetaData::valueChanged);
     annotation->setObjectName(QStringLiteral("annotation"));
     grid->addWidget(annotation, 1, 1);
@@ -128,19 +128,19 @@ void SieveConditionMetaData::setParamWidgetValue(QXmlStreamReader &element, QWid
             switch (index) {
             case 0:
             {
-                KSieveUi::AbstractMoveImapFolderWidget *mailbox = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("mailbox"));
+                auto *mailbox = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("mailbox"));
                 mailbox->setText(tagValue);
                 break;
             }
             case 1:
             {
-                QLineEdit *annotation = w->findChild<QLineEdit *>(QStringLiteral("annotation"));
+                auto *annotation = w->findChild<QLineEdit *>(QStringLiteral("annotation"));
                 annotation->setText(AutoCreateScriptUtil::quoteStr(tagValue));
                 break;
             }
             case 2:
             {
-                AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+                auto *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
                 value->setCode(AutoCreateScriptUtil::quoteStr(tagValue));
                 break;
             }
@@ -151,7 +151,7 @@ void SieveConditionMetaData::setParamWidgetValue(QXmlStreamReader &element, QWid
             }
             ++index;
         } else if (tagName == QLatin1String("tag")) {
-            SelectMatchTypeComboBox *selectType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("selecttype"));
+            auto *selectType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("selecttype"));
             selectType->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();

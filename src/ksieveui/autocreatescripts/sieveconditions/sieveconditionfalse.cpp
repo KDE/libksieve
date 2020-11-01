@@ -24,7 +24,7 @@ SieveConditionFalse::SieveConditionFalse(SieveEditorGraphicalModeWidget *sieveGr
 QWidget *SieveConditionFalse::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QHBoxLayout *lay = new QHBoxLayout;
+    auto *lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 

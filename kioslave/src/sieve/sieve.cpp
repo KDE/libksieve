@@ -936,7 +936,7 @@ void kio_sieveProtocol::listDir(const QUrl &url)
 bool kio_sieveProtocol::saslInteract(void *in, AuthInfo &ai)
 {
     ksDebug << "sasl_interact" << returnEndLine();
-    sasl_interact_t *interact = (sasl_interact_t *)in;
+    auto *interact = (sasl_interact_t *)in;
 
     //some mechanisms do not require username && pass, so it doesn't need a popup
     //window for getting this info

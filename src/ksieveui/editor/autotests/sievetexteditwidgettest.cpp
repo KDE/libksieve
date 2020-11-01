@@ -23,11 +23,11 @@ SieveTextEditWidgetTest::~SieveTextEditWidgetTest()
 void SieveTextEditWidgetTest::shouldHaveDefaultValue()
 {
     KSieveUi::SieveTextEditWidget w;
-    KSieveUi::SieveTextEdit *textedit = w.findChild<KSieveUi::SieveTextEdit *>(QStringLiteral("textedit"));
+    auto *textedit = w.findChild<KSieveUi::SieveTextEdit *>(QStringLiteral("textedit"));
     QVERIFY(textedit);
     QVERIFY(!textedit->isReadOnly());
 
-    KPIMTextEdit::SlideContainer *slider = w.findChild<KPIMTextEdit::SlideContainer *>(QStringLiteral("slidercontainer"));
+    auto *slider = w.findChild<KPIMTextEdit::SlideContainer *>(QStringLiteral("slidercontainer"));
     QVERIFY(slider);
     QWidget *contentWidget = slider->content();
     QVERIFY(contentWidget);

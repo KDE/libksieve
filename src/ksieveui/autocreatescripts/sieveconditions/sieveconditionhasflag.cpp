@@ -28,15 +28,15 @@ SieveConditionHasFlag::SieveConditionHasFlag(SieveEditorGraphicalModeWidget *sie
 QWidget *SieveConditionHasFlag::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QHBoxLayout *lay = new QHBoxLayout;
+    auto *lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
-    SelectMatchTypeComboBox *selecttype = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
+    auto *selecttype = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
     selecttype->setObjectName(QStringLiteral("matchtype"));
     connect(selecttype, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionHasFlag::valueChanged);
     lay->addWidget(selecttype);
 
-    QGridLayout *grid = new QGridLayout;
+    auto *grid = new QGridLayout;
     grid->setContentsMargins({});
     lay->addLayout(grid);
 
@@ -45,7 +45,7 @@ QWidget *SieveConditionHasFlag::createParamWidget(QWidget *parent) const
         QLabel *lab = new QLabel(i18n("Variable name\n (if empty it uses internal variable):"));
         grid->addWidget(lab, row, 0);
 
-        QLineEdit *variableName = new QLineEdit;
+        auto *variableName = new QLineEdit;
         variableName->setObjectName(QStringLiteral("variablename"));
         connect(variableName, &QLineEdit::textChanged, this, &SieveConditionHasFlag::valueChanged);
         grid->addWidget(variableName, row, 1);
@@ -132,7 +132,7 @@ void SieveConditionHasFlag::setParamWidgetValue(QXmlStreamReader &element, QWidg
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("tag")) {
-            SelectMatchTypeComboBox *matchTypeCombo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+            auto *matchTypeCombo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
             matchTypeCombo->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
         } else if (tagName == QLatin1String("str")) {
             strList << element.readElementText();
@@ -153,15 +153,15 @@ void SieveConditionHasFlag::setParamWidgetValue(QXmlStreamReader &element, QWidg
     switch (strList.count()) {
     case 1:
     {
-        AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+        auto *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
         value->setCode(strList.at(0));
         break;
     }
     case 2:
         if (hasVariableSupport) {
-            QLineEdit *variableName = w->findChild<QLineEdit *>(QStringLiteral("variablename"));
+            auto *variableName = w->findChild<QLineEdit *>(QStringLiteral("variablename"));
             variableName->setText(strList.at(0));
-            AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+            auto *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
             value->setCode(strList.at(1));
         } else {
             qCDebug(LIBKSIEVE_LOG) << " SieveConditionHasFlag has not variable support";

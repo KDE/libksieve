@@ -31,7 +31,7 @@ SelectDateWidget::~SelectDateWidget()
 
 void SelectDateWidget::initialize()
 {
-    QHBoxLayout *lay = new QHBoxLayout(this);
+    auto *lay = new QHBoxLayout(this);
     lay->setContentsMargins({});
 
     mDateType = new QComboBox;
@@ -78,7 +78,7 @@ void SelectDateWidget::initialize()
 
 void SelectDateWidget::slotDateTypeActivated(int index)
 {
-    const DateType type = mDateType->itemData(index).value<KSieveUi::SelectDateWidget::DateType>();
+    const auto type = mDateType->itemData(index).value<KSieveUi::SelectDateWidget::DateType>();
     switch (type) {
     case Year:
     case Month:
@@ -231,7 +231,7 @@ QString SelectDateWidget::dateType(SelectDateWidget::DateType type) const
 
 QString SelectDateWidget::code() const
 {
-    const DateType type = mDateType->itemData(mDateType->currentIndex()).value<KSieveUi::SelectDateWidget::DateType>();
+    const auto type = mDateType->itemData(mDateType->currentIndex()).value<KSieveUi::SelectDateWidget::DateType>();
     return QStringLiteral("\"%1\" \"%2\"").arg(dateType(type), dateValue(type));
 }
 
@@ -243,7 +243,7 @@ void SelectDateWidget::setCode(const QString &type, const QString &value)
     } else {
         mDateType->setCurrentIndex(0);
     }
-    const DateType dateType = mDateType->itemData(index).value<KSieveUi::SelectDateWidget::DateType>();
+    const auto dateType = mDateType->itemData(index).value<KSieveUi::SelectDateWidget::DateType>();
     switch (dateType) {
     case Month:
     case Day:

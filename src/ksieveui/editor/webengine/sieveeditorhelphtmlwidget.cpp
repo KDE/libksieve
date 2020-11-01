@@ -24,7 +24,7 @@ qreal zoomBy()
 SieveEditorHelpHtmlWidget::SieveEditorHelpHtmlWidget(QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *lay = new QVBoxLayout(this);
+    auto *lay = new QVBoxLayout(this);
     lay->setContentsMargins({});
     mProgressIndicator = new SieveEditorLoadProgressIndicator(this);
     mProgressIndicator->setObjectName(QStringLiteral("progressindicator"));

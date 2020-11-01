@@ -26,11 +26,11 @@ SieveConditionExists::SieveConditionExists(SieveEditorGraphicalModeWidget *sieve
 QWidget *SieveConditionExists::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QHBoxLayout *lay = new QHBoxLayout;
+    auto *lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    QComboBox *combo = new QComboBox;
+    auto *combo = new QComboBox;
     combo->setObjectName(QStringLiteral("existscheck"));
     combo->addItem(i18n("exists"), QStringLiteral("exists"));
     combo->addItem(i18n("not exists"), QStringLiteral("not exists"));
@@ -40,7 +40,7 @@ QWidget *SieveConditionExists::createParamWidget(QWidget *parent) const
     QLabel *lab = new QLabel(i18n("headers:"));
     lay->addWidget(lab);
 
-    SelectHeaderTypeComboBox *value = new SelectHeaderTypeComboBox;
+    auto *value = new SelectHeaderTypeComboBox;
     connect(value, &SelectHeaderTypeComboBox::valueChanged, this, &SieveConditionExists::valueChanged);
     value->setObjectName(QStringLiteral("headervalue"));
 
@@ -68,14 +68,14 @@ void SieveConditionExists::setParamWidgetValue(QXmlStreamReader &element, QWidge
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
         if (notCondition) {
-            QComboBox *combo = w->findChild<QComboBox *>(QStringLiteral("existscheck"));
+            auto *combo = w->findChild<QComboBox *>(QStringLiteral("existscheck"));
             combo->setCurrentIndex(1);
         }
         if (tagName == QLatin1String("str")) {
-            SelectHeaderTypeComboBox *value = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headervalue"));
+            auto *value = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headervalue"));
             value->setCode(element.readElementText());
         } else if (tagName == QLatin1String("list")) {
-            SelectHeaderTypeComboBox *selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headervalue"));
+            auto *selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headervalue"));
             selectHeaderType->setCode(AutoCreateScriptUtil::listValueToStr(element));
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();

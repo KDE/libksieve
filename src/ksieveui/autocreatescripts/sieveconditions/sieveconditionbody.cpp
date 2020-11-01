@@ -24,16 +24,16 @@ SieveConditionBody::SieveConditionBody(SieveEditorGraphicalModeWidget *sieveGrap
 QWidget *SieveConditionBody::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QHBoxLayout *lay = new QHBoxLayout;
+    auto *lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    SelectBodyTypeWidget *bodyType = new SelectBodyTypeWidget;
+    auto *bodyType = new SelectBodyTypeWidget;
     bodyType->setObjectName(QStringLiteral("bodytype"));
     connect(bodyType, &SelectBodyTypeWidget::valueChanged, this, &SieveConditionBody::valueChanged);
     lay->addWidget(bodyType);
 
-    SelectMatchTypeComboBox *matchType = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
+    auto *matchType = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
     lay->addWidget(matchType);
     matchType->setObjectName(QStringLiteral("matchtype"));
     connect(matchType, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionBody::valueChanged);
@@ -129,13 +129,13 @@ void SieveConditionBody::setParamWidgetValue(QXmlStreamReader &element, QWidget 
     }
     QString errorStr;
     if (strValue.count() == 1) {
-        SelectBodyTypeWidget *bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
+        auto *bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
         bodyType->setCode(tagValueList.at(0), QString(), name(), errorStr);
         if (errorStr.isEmpty()) {
-            SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+            auto *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
             matchType->setCode(tagValueList.at(1), name(), error);
         } else {
-            SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+            auto *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
             if (tagValueList.count() == 1) {
                 matchType->setCode(tagValueList.at(0), name(), error);
             } else if (tagValueList.count() == 2) {
@@ -143,19 +143,19 @@ void SieveConditionBody::setParamWidgetValue(QXmlStreamReader &element, QWidget 
                 bodyType->setCode(tagValueList.at(1), QString(), name(), errorStr);
             }
         }
-        AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
+        auto *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
         edit->setCode(wasListElement ? strValue.at(0) : AutoCreateScriptUtil::quoteStr(strValue.at(0)));
     } else if (strValue.count() == 2) {
-        SelectBodyTypeWidget *bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
+        auto *bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
         bodyType->setCode(tagValueList.at(0), indexStr == 2 ? strValue.at(0) : QString(), name(), errorStr);
-        SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+        auto *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
         if (!errorStr.isEmpty()) {
             matchType->setCode(tagValueList.at(0), name(), error);
             bodyType->setCode(tagValueList.at(1), indexStr == 2 ? strValue.at(0) : QString(), name(), error);
         } else {
             matchType->setCode(tagValueList.at(1), name(), error);
         }
-        AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
+        auto *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
         edit->setCode(indexStr == 1 ? AutoCreateScriptUtil::quoteStr(strValue.at(0)) : AutoCreateScriptUtil::quoteStr(strValue.at(1)));
     }
 }

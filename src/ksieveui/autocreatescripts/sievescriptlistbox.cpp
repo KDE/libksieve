@@ -85,7 +85,7 @@ QString SieveScriptListItem::generatedScript(QStringList &required) const
 SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     : QGroupBox(title, parent)
 {
-    QVBoxLayout *layout = new QVBoxLayout(this);
+    auto *layout = new QVBoxLayout(this);
     layout->setObjectName(QStringLiteral("layout"));
     mSieveListScript = new QListWidget(this);
     mSieveListScript->setObjectName(QStringLiteral("mSieveListScript"));
@@ -96,7 +96,7 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
 
     //----------- the first row of buttons
     QWidget *hb = new QWidget(this);
-    QHBoxLayout *hbHBoxLayout = new QHBoxLayout(hb);
+    auto *hbHBoxLayout = new QHBoxLayout(hb);
     hbHBoxLayout->setContentsMargins({});
     hbHBoxLayout->setSpacing(4);
 
@@ -208,7 +208,7 @@ void SieveScriptListBox::setSieveEditorGraphicalModeWidget(SieveEditorGraphicalM
 void SieveScriptListBox::slotItemActived(QListWidgetItem *item)
 {
     if (item) {
-        SieveScriptListItem *itemScript = static_cast<SieveScriptListItem *>(item);
+        auto *itemScript = static_cast<SieveScriptListItem *>(item);
         Q_EMIT activatePage(itemScript->scriptPage());
     }
 }
@@ -232,9 +232,9 @@ void SieveScriptListBox::updateButtons()
 
 SieveScriptPage *SieveScriptListBox::createNewScript(const QString &newName, const QString &description)
 {
-    SieveScriptListItem *item = new SieveScriptListItem(newName, mSieveListScript);
+    auto *item = new SieveScriptListItem(newName, mSieveListScript);
     item->setDescription(description);
-    SieveScriptPage *page = new SieveScriptPage(mSieveGraphicalModeWidget);
+    auto *page = new SieveScriptPage(mSieveGraphicalModeWidget);
     page->setListOfIncludeFile(mSieveGraphicalModeWidget->listOfIncludeFile());
     item->setScriptPage(page);
     Q_EMIT addNewPage(page);
@@ -259,7 +259,7 @@ void SieveScriptListBox::slotDelete()
     if (item) {
         if (KMessageBox::warningYesNo(this, i18n("Do you want to delete \"%1\" script?", item->text()),
                                       i18nc("@title:window", "Delete Script")) == KMessageBox::Yes) {
-            SieveScriptListItem *itemScript = static_cast<SieveScriptListItem *>(item);
+            auto *itemScript = static_cast<SieveScriptListItem *>(item);
             Q_EMIT removePage(itemScript->scriptPage());
             delete item;
             Q_EMIT enableButtonOk(mSieveListScript->count() > 0);
@@ -286,7 +286,7 @@ void SieveScriptListBox::slotEditDescription()
 {
     QListWidgetItem *item = mSieveListScript->currentItem();
     if (item) {
-        SieveScriptListItem *sieveItem = static_cast<SieveScriptListItem *>(item);
+        auto *sieveItem = static_cast<SieveScriptListItem *>(item);
         QPointer<SieveScriptDescriptionDialog> dlg = new SieveScriptDescriptionDialog(this);
         dlg->setDescription(sieveItem->description());
         if (dlg->exec()) {
@@ -359,7 +359,7 @@ QString SieveScriptListBox::generatedScript(QStringList &requireModules) const
     QStringList lstRequires;
     const int numberOfScripts(mSieveListScript->count());
     for (int i = 0; i < numberOfScripts; ++i) {
-        SieveScriptListItem *item = static_cast<SieveScriptListItem *>(mSieveListScript->item(i));
+        auto *item = static_cast<SieveScriptListItem *>(mSieveListScript->item(i));
         if (i != 0) {
             resultScript += QLatin1String("\n\n");
         }

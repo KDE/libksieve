@@ -271,7 +271,7 @@ void SieveConditionWidgetLister::updateAddRemoveButton()
     QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
     for (; wIt != wEnd; ++wIt) {
-        SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(*wIt);
+        auto *w = qobject_cast<SieveConditionWidget *>(*wIt);
         w->updateAddRemoveButton(addButtonEnabled, removeButtonEnabled);
     }
 }
@@ -286,7 +286,7 @@ void SieveConditionWidgetLister::reconnectWidget(SieveConditionWidget *w)
 void SieveConditionWidgetLister::clearWidget(QWidget *aWidget)
 {
     if (aWidget) {
-        SieveConditionWidget *widget = static_cast<SieveConditionWidget *>(aWidget);
+        auto *widget = static_cast<SieveConditionWidget *>(aWidget);
         widget->clear();
     }
     Q_EMIT valueChanged();
@@ -294,7 +294,7 @@ void SieveConditionWidgetLister::clearWidget(QWidget *aWidget)
 
 QWidget *SieveConditionWidgetLister::createWidget(QWidget *parent)
 {
-    SieveConditionWidget *w = new SieveConditionWidget(mSieveGraphicalModeWidget, parent);
+    auto *w = new SieveConditionWidget(mSieveGraphicalModeWidget, parent);
     reconnectWidget(w);
     return w;
 }
@@ -307,7 +307,7 @@ void SieveConditionWidgetLister::generatedScript(QString &script, int &numberOfC
     bool wasFirst = true;
     for (; wIt != wEnd; ++wIt) {
         QString condition;
-        SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(*wIt);
+        auto *w = qobject_cast<SieveConditionWidget *>(*wIt);
         w->generatedScript(condition, requireModules, inForEveryPartLoop);
         if (!condition.isEmpty()) {
             if (!wasFirst) {
@@ -335,7 +335,7 @@ void SieveConditionWidgetLister::loadTest(QXmlStreamReader &element, bool notCon
     }
     if (element.attributes().hasAttribute(QLatin1String("name"))) {
         const QString conditionName = element.attributes().value(QLatin1String("name")).toString();
-        SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
+        auto *w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
         w->setCondition(conditionName, element, notCondition, error);
     }
     if (notCondition) {
@@ -365,7 +365,7 @@ void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniq
                             } else {
                                 addWidgetAfterThisWidget(widgets().constLast());
                             }
-                            SieveConditionWidget *w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
+                            auto *w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
                             if (conditionName == QLatin1String("not")) {
                                 notCondition = true;
                                 element.readNextStartElement();

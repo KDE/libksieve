@@ -26,11 +26,11 @@ SieveActionNotify::SieveActionNotify(SieveEditorGraphicalModeWidget *sieveGraphi
 QWidget *SieveActionNotify::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    QHBoxLayout *lay = new QHBoxLayout;
+    auto *lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    SelectImportanceCombobox *importanceCombobox = new SelectImportanceCombobox;
+    auto *importanceCombobox = new SelectImportanceCombobox;
     importanceCombobox->setObjectName(QStringLiteral("importancecombo"));
     connect(importanceCombobox, &SelectImportanceCombobox::valueChanged, this, &SieveActionNotify::valueChanged);
     lay->addWidget(importanceCombobox);
@@ -38,7 +38,7 @@ QWidget *SieveActionNotify::createParamWidget(QWidget *parent) const
     QLabel *lab = new QLabel(i18n("message:"));
     lay->addWidget(lab);
 
-    QLineEdit *message = new QLineEdit;
+    auto *message = new QLineEdit;
     message->setObjectName(QStringLiteral("message"));
     connect(message, &QLineEdit::textChanged, this, &SieveActionNotify::valueChanged);
     lay->addWidget(message);
@@ -46,7 +46,7 @@ QWidget *SieveActionNotify::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("method:"));
     lay->addWidget(lab);
 
-    QLineEdit *method = new QLineEdit;
+    auto *method = new QLineEdit;
     method->setObjectName(QStringLiteral("method"));
     lay->addWidget(method);
     connect(method, &QLineEdit::textChanged, this, &SieveActionNotify::valueChanged);
@@ -63,13 +63,13 @@ void SieveActionNotify::setParamWidgetValue(QXmlStreamReader &element, QWidget *
             if (tagValue == QLatin1String("message")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
-                    QLineEdit *message = w->findChild<QLineEdit *>(QStringLiteral("message"));
+                    auto *message = w->findChild<QLineEdit *>(QStringLiteral("message"));
                     message->setText(AutoCreateScriptUtil::quoteStr(strValue));
                 }
             } else if (tagValue == QLatin1String("importance")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
-                    SelectImportanceCombobox *importance = w->findChild<SelectImportanceCombobox *>(QStringLiteral("importancecombo"));
+                    auto *importance = w->findChild<SelectImportanceCombobox *>(QStringLiteral("importancecombo"));
                     importance->setCode(strValue, name(), error);
                 }
             } else {
@@ -83,7 +83,7 @@ void SieveActionNotify::setParamWidgetValue(QXmlStreamReader &element, QWidget *
             element.skipCurrentElement();
             //implement in the future ?
         } else if (tagName == QLatin1String("str")) {
-            QLineEdit *method = w->findChild<QLineEdit *>(QStringLiteral("method"));
+            auto *method = w->findChild<QLineEdit *>(QStringLiteral("method"));
             method->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
         } else {
             unknownTag(tagName, error);

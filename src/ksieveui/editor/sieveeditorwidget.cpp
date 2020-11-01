@@ -45,10 +45,10 @@ using namespace KSieveUi;
 SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     : QWidget(parent)
 {
-    QVBoxLayout *lay = new QVBoxLayout(this);
+    auto *lay = new QVBoxLayout(this);
     mDebug = !qEnvironmentVariableIsEmpty("KDEPIM_DEBUGGING");
 
-    QToolBar *toolbar = new QToolBar;
+    auto *toolbar = new QToolBar;
     toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
     mCheckSyntax = new QAction(i18n("Check Syntax"), this);
@@ -80,7 +80,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
 
     toolbar->addAction(mShareScript);
 
-    SievePurposeMenuWidget *purposeMenu = new SievePurposeMenuWidget(this, this);
+    auto *purposeMenu = new SievePurposeMenuWidget(this, this);
     KActionMenu *shareAction = new KActionMenu(i18n("Share..."), this);
     shareAction->setDelayed(false);
     shareAction->setMenu(purposeMenu->menu());
@@ -132,7 +132,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
 
     lay->addWidget(toolbar);
 
-    QHBoxLayout *nameLayout = new QHBoxLayout;
+    auto *nameLayout = new QHBoxLayout;
     QLabel *label = new QLabel(i18n("Script name:"));
     nameLayout->addWidget(label);
     mScriptName = new QLineEdit;

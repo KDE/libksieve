@@ -23,9 +23,9 @@ void SieveInfoDialogTest::shouldHaveDefaultValues()
     auto *mainLayout = dlg.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
     QVERIFY(mainLayout);
 
-    KSieveUi::SieveInfoWidget *mSieveInfoWidget = dlg.findChild<KSieveUi::SieveInfoWidget *>(QStringLiteral("mSieveInfoWidget"));
+    auto *mSieveInfoWidget = dlg.findChild<KSieveUi::SieveInfoWidget *>(QStringLiteral("mSieveInfoWidget"));
     QVERIFY(mSieveInfoWidget);
 
-    QDialogButtonBox *button = dlg.findChild<QDialogButtonBox *>(QStringLiteral("button"));
+    auto *button = dlg.findChild<QDialogButtonBox *>(QStringLiteral("button"));
     QVERIFY(button);
 }

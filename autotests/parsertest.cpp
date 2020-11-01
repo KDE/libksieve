@@ -252,7 +252,7 @@ static struct TestCase {
 
     {
         "single two-element string list argument - quoted strings",
-        "command [\"string\",\"string\"];",
+        R"(command ["string","string"];)",
         {   { CommandStart, "command", false },
             { StringListArgumentStart, nullptr, false },
             { StringListEntry, "string", false /*quoted*/ },

@@ -27,8 +27,8 @@ using namespace KSieveUi;
 SieveForEveryPartWidget::SieveForEveryPartWidget(QWidget *parent)
     : SieveWidgetPageAbstract(parent)
 {
-    QVBoxLayout *mainLayout = new QVBoxLayout(this);
-    QHBoxLayout *lay = new QHBoxLayout;
+    auto *mainLayout = new QVBoxLayout(this);
+    auto *lay = new QHBoxLayout;
     mainLayout->addLayout(lay);
     mainLayout->addStretch(1);
 
