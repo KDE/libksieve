@@ -8,6 +8,7 @@
 #define CUSTOMMANAGESIEVEWIDGET_H
 
 #include <widgets/managesievewidget.h>
+#include <KSieveUi/SieveImapInstance>
 
 namespace KSieveUi {
 class SieveImapPasswordProvider;
@@ -20,8 +21,10 @@ public:
 
 protected:
     Q_REQUIRED_RESULT bool refreshList() override;
+    void updateSieveSettings() override;
 
 private:
+    QVector<KSieveUi::SieveImapInstance> mSieveImapInstances;
     SieveImapPasswordProvider *const mPasswordProvider;
 };
 }

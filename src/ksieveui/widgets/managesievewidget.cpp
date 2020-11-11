@@ -65,6 +65,7 @@ ManageSieveWidget::ManageSieveWidget(QWidget *parent)
     connect(d->mTreeView, &ManageSieveTreeView::itemDoubleClicked, this, &ManageSieveWidget::slotDoubleClicked);
     connect(d->mTreeView, &ManageSieveTreeView::itemSelectionChanged, this, &ManageSieveWidget::slotUpdateButtons);
     connect(d->mTreeView, &ManageSieveTreeView::itemChanged, this, &ManageSieveWidget::slotItemChanged);
+    connect(this, &ManageSieveWidget::updateSieveSettingsDone, this, &ManageSieveWidget::updateSieveSettingsFinished);
 
     connect(PimCommon::NetworkManager::self()->networkConfigureManager(), &QNetworkConfigurationManager::onlineStateChanged, this, &ManageSieveWidget::slotSystemNetworkOnlineStateChanged);
 
@@ -507,6 +508,11 @@ void ManageSieveWidget::slotRefresh()
 {
     d->mBlockSignal = true;
     clear();
+    updateSieveSettings();
+}
+
+void ManageSieveWidget::updateSieveSettingsFinished()
+{
     const bool noImapFound = refreshList();
     slotUpdateButtons();
     d->mTreeView->setNoImapFound(noImapFound);

@@ -26,12 +26,17 @@ CustomManageSieveWidget::~CustomManageSieveWidget()
 {
 }
 
+void CustomManageSieveWidget::updateSieveSettings()
+{
+    mSieveImapInstances = KSieveUi::Util::sieveImapInstances();
+    Q_EMIT updateSieveSettingsDone();
+}
+
 bool CustomManageSieveWidget::refreshList()
 {
     bool noImapFound = true;
     SieveTreeWidgetItem *last = nullptr;
-    const QVector<KSieveUi::SieveImapInstance> lst = KSieveUi::Util::sieveImapInstances();
-    for (const KSieveUi::SieveImapInstance &type : lst) {
+    for (const KSieveUi::SieveImapInstance &type : mSieveImapInstances) {
         if (type.status() == KSieveUi::SieveImapInstance::Broken) {
             continue;
         }

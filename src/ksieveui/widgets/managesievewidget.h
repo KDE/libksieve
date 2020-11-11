@@ -57,9 +57,11 @@ Q_SIGNALS:
     void scriptDeleted(const QUrl &u);
     void serverSieveFound(bool imapFound);
     void scriptRenamed(const QUrl &oldUrl, const QUrl &newUrl);
+    void updateSieveSettingsDone();
 
 protected:
     virtual bool refreshList() = 0;
+    virtual void updateSieveSettings() = 0;
 
 private Q_SLOTS:
     void slotItemChanged(QTreeWidgetItem *item, int col);
@@ -89,6 +91,7 @@ protected:
     QMap<QTreeWidgetItem *, QUrl> mUrls;
 
 private:
+    void updateSieveSettingsFinished();
     enum sieveServerStatus {
         SIEVE_SERVER_ERROR = Qt::UserRole + 1,
         SIEVE_SERVER_CAPABILITIES = Qt::UserRole + 2,
