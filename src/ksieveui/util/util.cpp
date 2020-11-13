@@ -188,7 +188,7 @@ KSieveUi::Util::AccountInfo KSieveUi::Util::findAccountInfo(const QString &ident
         }
         u = u.adjusted(QUrl::RemoveFilename);
         if (withVacationFileName) {
-            u.setPath(u.path() + QLatin1Char('/') + QString(interface->sieveVacationFilename()));
+            u.setPath(u.path() + QLatin1Char('/') + interface->sieveVacationFilename());
         }
         accountInfo.sieveUrl = u;
         return accountInfo;
