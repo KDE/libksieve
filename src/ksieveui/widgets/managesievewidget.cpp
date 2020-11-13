@@ -513,6 +513,7 @@ void ManageSieveWidget::slotRefresh()
 
 void ManageSieveWidget::updateSieveSettingsFinished()
 {
+    clear();
     const bool noImapFound = refreshList();
     slotUpdateButtons();
     d->mTreeView->setNoImapFound(noImapFound);
