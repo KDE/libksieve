@@ -454,7 +454,7 @@ void ManageSieveWidget::slotRenameFinished(const QUrl &oldUrl, const QUrl &newUr
 
 void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)
 {
-    Q_UNUSED(job);
+    Q_UNUSED(job)
     qCDebug(LIBKSIEVE_LOG) << " void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)" << success;
     slotRefresh();
 }

@@ -37,8 +37,6 @@ class KSieveUi::ManageSieveScriptsDialogPrivate
 {
 public:
     ManageSieveScriptsDialogPrivate()
-        : mIsNewScript(false)
-        , mWasActive(false)
     {
     }
 
@@ -55,8 +53,8 @@ public:
     QPushButton *mDeleteScript = nullptr;
     QPushButton *mDeactivateScript = nullptr;
 
-    bool mIsNewScript : 1;
-    bool mWasActive : 1;
+    bool mIsNewScript = false;
+    bool mWasActive = false;
 };
 
 ManageSieveScriptsDialog::ManageSieveScriptsDialog(SieveImapPasswordProvider *passwordProvider, QWidget *parent)
@@ -134,7 +132,7 @@ void ManageSieveScriptsDialog::hideEvent(QHideEvent *event)
 
 void ManageSieveScriptsDialog::slotUpdateButtons(QTreeWidgetItem *item)
 {
-    Q_UNUSED(item);
+    Q_UNUSED(item)
     bool newScriptAction;
     bool editScriptAction;
     bool deleteScriptAction;
