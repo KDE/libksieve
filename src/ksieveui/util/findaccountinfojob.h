@@ -36,6 +36,8 @@ Q_SIGNALS:
     void findAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
 
 private:
+    void sendAccountInfo();
+    KSieveUi::Util::AccountInfo mAccountInfo;
     QString mIdentifier;
     SieveImapPasswordProvider *mProvider = nullptr;
     bool mWithVacationFileName = false;
