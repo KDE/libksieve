@@ -7,6 +7,8 @@
 #ifndef FINDACCOUNTINFOJOB_H
 #define FINDACCOUNTINFOJOB_H
 
+#include "util_p.h"
+
 #include <QObject>
 namespace KSieveUi {
 class SieveImapPasswordProvider;
@@ -22,11 +24,16 @@ public:
     Q_REQUIRED_RESULT QString identifier() const;
     void setIdentifier(const QString &newIdentifier);
 
-    bool withVacationFileName() const;
+    Q_REQUIRED_RESULT bool withVacationFileName() const;
     void setWithVacationFileName(bool newWithVacationFileName);
 
     SieveImapPasswordProvider *provider() const;
     void setProvider(SieveImapPasswordProvider *newProvider);
+
+    Q_REQUIRED_RESULT bool canStart() const;
+
+Q_SIGNALS:
+    void findAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
 
 private:
     QString mIdentifier;

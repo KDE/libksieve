@@ -4,7 +4,11 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "findaccountinfojob.h"
-
+#include "libksieve_debug.h"
+#include <PimCommon/PimUtil>
+#include "abstractakonadiimapsettinginterface.h"
+#include "akonadiimapsettinginterface.h"
+#include "imapresourcesettings.h"
 using namespace KSieveUi;
 findAccountInfoJob::findAccountInfoJob(QObject *parent)
     : QObject(parent)
@@ -17,31 +21,42 @@ findAccountInfoJob::~findAccountInfoJob()
 
 }
 
+bool findAccountInfoJob::canStart() const
+{
+    return !mIdentifier.isEmpty();
+}
+
 void findAccountInfoJob::start()
 {
-#if 0
-    std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> interfaceImap(PimCommon::Util::createImapSettingsInterface(identifier));
-    std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> interface(new KSieveUi::AkonadiImapSettingInterface(interfaceImap));
-    KSieveUi::Util::AccountInfo accountInfo = KSieveUi::Util::findAccountInfo(identifier, provider, withVacationFileName, interface);
-    return accountInfo;
-#endif
-
-#if 0
     KSieveUi::Util::AccountInfo accountInfo;
+    if (canStart()) {
+        qCWarning(LIBKSIEVE_LOG) << "Impossible to start findAccountInfoJob";
+        deleteLater();
+        Q_EMIT findAccountInfoFinished(accountInfo);
+        return;
+    }
+    std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> interfaceImap(PimCommon::Util::createImapSettingsInterface(mIdentifier));
+    std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> interface(new KSieveUi::AkonadiImapSettingInterface(interfaceImap));
     if (!interface) {
-        return accountInfo;
+        deleteLater();
+        Q_EMIT findAccountInfoFinished(accountInfo);
+        return;
     }
 
     if (!interface->sieveSupport()) {
-        return accountInfo;
+        deleteLater();
+        Q_EMIT findAccountInfoFinished(accountInfo);
+        return;
     }
+
+#if 0
 
     if (interface->sieveReuseConfig()) {
         // assemble Sieve url from the settings of the account:
         QUrl u;
         u.setScheme(QStringLiteral("sieve"));
         QString server;
-        QString reply = interface->imapServer();
+        const QString reply = interface->imapServer();
         if (!reply.isEmpty()) {
             server = reply;
             server = server.section(QLatin1Char(':'), 0, 0);
@@ -108,7 +123,7 @@ void findAccountInfoJob::start()
         return accountInfo;
     } else {
         QString server;
-        QString reply = interface->imapServer();
+        const QString reply = interface->imapServer();
         if (!reply.isEmpty()) {
             server = reply;
             server = server.section(QLatin1Char(':'), 0, 0);
@@ -191,7 +206,8 @@ void findAccountInfoJob::start()
     }
 
 #endif
-    //TODO
+    deleteLater();
+    Q_EMIT findAccountInfoFinished(accountInfo);
 }
 
 QString findAccountInfoJob::identifier() const
