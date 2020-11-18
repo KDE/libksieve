@@ -25,6 +25,7 @@ MultiImapVacationManager::~MultiImapVacationManager()
 {
 }
 
+//Make it async too
 QMap <QString, KSieveUi::Util::AccountInfo> MultiImapVacationManager::serverList() const
 {
     QMap <QString, KSieveUi::Util::AccountInfo> list;

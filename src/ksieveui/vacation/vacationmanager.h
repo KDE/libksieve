@@ -23,7 +23,7 @@ class KSIEVEUI_EXPORT VacationManager : public QObject
     Q_OBJECT
 public:
     explicit VacationManager(SieveImapPasswordProvider *passwordProvider, QWidget *parent);
-    ~VacationManager();
+    ~VacationManager() override;
 
     void checkVacation();
 
