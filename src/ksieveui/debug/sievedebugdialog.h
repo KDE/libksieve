@@ -10,6 +10,7 @@
 #define KSIEVE_KSIEVEUI_SIEVEDEBUGDIALOG_H
 
 #include "ksieveui_export.h"
+#include "util_p.h"
 
 #include <QDialog>
 #include <QUrl>
@@ -35,7 +36,7 @@ class KSIEVEUI_EXPORT SieveDebugDialog : public QDialog
     Q_OBJECT
 public:
     explicit SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, QWidget *parent = nullptr);
-    ~SieveDebugDialog();
+    ~SieveDebugDialog() override;
 
 Q_SIGNALS:
     void result(bool success);
@@ -49,6 +50,8 @@ private Q_SLOTS:
 
     void slotShutDownJob();
 private:
+    void slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
+    void slotFindAccountInfoForScriptFinished(const KSieveUi::Util::AccountInfo &info);
     void writeConfig();
     void readConfig();
     KManageSieve::SieveJob *mSieveJob = nullptr;

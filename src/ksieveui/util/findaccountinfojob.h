@@ -12,12 +12,12 @@
 #include <QObject>
 namespace KSieveUi {
 class SieveImapPasswordProvider;
-class findAccountInfoJob : public QObject
+class FindAccountInfoJob : public QObject
 {
     Q_OBJECT
 public:
-    explicit findAccountInfoJob(QObject *parent = nullptr);
-    ~findAccountInfoJob() override;
+    explicit FindAccountInfoJob(QObject *parent = nullptr);
+    ~FindAccountInfoJob() override;
 
     void start();
 

@@ -10,6 +10,7 @@
 #include <KPIMTextEdit/PlainTextEditorWidget>
 #include <KPIMTextEdit/PlainTextEditor>
 #include "util/util_p.h"
+#include "util/findaccountinfojob.h"
 
 #include "libksieve_debug.h"
 #include <KLocalizedString>
@@ -111,13 +112,21 @@ void SieveDebugDialog::slotDiagNextAccount()
         connect(mShutDownJob, &QTimer::timeout, this, &SieveDebugDialog::slotShutDownJob);
     }
     mShutDownJob->start(30 * 1000); // 30 seconds
-    QString ident = mResourceIdentifier.first();
+    const QString ident = mResourceIdentifier.first();
 
     mEdit->editor()->appendPlainText(i18n("Collecting data for account '%1'...\n", ident));
     mEdit->editor()->appendPlainText(i18n("------------------------------------------------------------\n"));
 
+    auto *job = new FindAccountInfoJob(this);
+    connect(job, &FindAccountInfoJob::findAccountInfoFinished, this, &SieveDebugDialog::slotFindAccountInfoFinished);
+    job->setIdentifier(ident);
+    job->setProvider(mPasswordProvider);
+    job->start();
+}
+
+void SieveDebugDialog::slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info)
+{
     // Detect URL for this IMAP account
-    const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(ident, mPasswordProvider);
     const QUrl url = info.sieveUrl;
     if (!url.isValid()) {
         mEdit->editor()->appendPlainText(i18n("(Account does not support Sieve)\n\n"));
@@ -149,15 +158,25 @@ void SieveDebugDialog::slotDiagNextScript()
         return;
     }
 
-    QString scriptFile = mScriptList.constFirst();
+    const QString scriptFile = mScriptList.constFirst();
     mScriptList.pop_front();
 
     mEdit->editor()->appendPlainText(i18n("Contents of script '%1':\n", scriptFile));
 
-    const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(mResourceIdentifier.constFirst(), mPasswordProvider);
+    auto *job = new FindAccountInfoJob(this);
+    connect(job, &FindAccountInfoJob::findAccountInfoFinished, this, &SieveDebugDialog::slotFindAccountInfoForScriptFinished);
+    job->setIdentifier(mResourceIdentifier.constFirst());
+    job->setProvider(mPasswordProvider);
+    job->setProperty("scriptfile", scriptFile);
+    job->start();
+}
+
+void SieveDebugDialog::slotFindAccountInfoForScriptFinished(const KSieveUi::Util::AccountInfo &info)
+{
     mUrl = info.sieveUrl;
 
     mUrl = mUrl.adjusted(QUrl::RemoveFilename);
+    const QString scriptFile = sender()->property("scriptfile").toString();
     mUrl.setPath(mUrl.path() + QLatin1Char('/') + scriptFile);
 
     mSieveJob = KManageSieve::SieveJob::get(mUrl);

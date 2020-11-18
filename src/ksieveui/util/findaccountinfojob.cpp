@@ -14,31 +14,31 @@
 #include <QUrlQuery>
 
 using namespace KSieveUi;
-findAccountInfoJob::findAccountInfoJob(QObject *parent)
+FindAccountInfoJob::FindAccountInfoJob(QObject *parent)
     : QObject(parent)
 {
 
 }
 
-findAccountInfoJob::~findAccountInfoJob()
+FindAccountInfoJob::~FindAccountInfoJob()
 {
 
 }
 
-bool findAccountInfoJob::canStart() const
+bool FindAccountInfoJob::canStart() const
 {
     return !mIdentifier.isEmpty() && mProvider;
 }
 
-void findAccountInfoJob::sendAccountInfo()
+void FindAccountInfoJob::sendAccountInfo()
 {
     deleteLater();
     Q_EMIT findAccountInfoFinished(mAccountInfo);
 }
 
-void findAccountInfoJob::start()
+void FindAccountInfoJob::start()
 {
-    if (canStart()) {
+    if (!canStart()) {
         qCWarning(LIBKSIEVE_LOG) << "Impossible to start findAccountInfoJob";
         sendAccountInfo();
         return;
@@ -212,32 +212,32 @@ void findAccountInfoJob::start()
     }
 }
 
-QString findAccountInfoJob::identifier() const
+QString FindAccountInfoJob::identifier() const
 {
     return mIdentifier;
 }
 
-void findAccountInfoJob::setIdentifier(const QString &newIdentifier)
+void FindAccountInfoJob::setIdentifier(const QString &newIdentifier)
 {
     mIdentifier = newIdentifier;
 }
 
-bool findAccountInfoJob::withVacationFileName() const
+bool FindAccountInfoJob::withVacationFileName() const
 {
     return mWithVacationFileName;
 }
 
-void findAccountInfoJob::setWithVacationFileName(bool newWithVacationFileName)
+void FindAccountInfoJob::setWithVacationFileName(bool newWithVacationFileName)
 {
     mWithVacationFileName = newWithVacationFileName;
 }
 
-SieveImapPasswordProvider *findAccountInfoJob::provider() const
+SieveImapPasswordProvider *FindAccountInfoJob::provider() const
 {
     return mProvider;
 }
 
-void findAccountInfoJob::setProvider(SieveImapPasswordProvider *newProvider)
+void FindAccountInfoJob::setProvider(SieveImapPasswordProvider *newProvider)
 {
     mProvider = newProvider;
 }
