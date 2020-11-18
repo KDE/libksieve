@@ -12,6 +12,7 @@
 
 namespace KSieveUi {
 class SieveImapPasswordProvider;
+class SieveTreeWidgetItem;
 class CustomManageSieveWidget : public KSieveUi::ManageSieveWidget
 {
     Q_OBJECT
@@ -24,8 +25,12 @@ protected:
     void updateSieveSettings() override;
 
 private:
+    void searchSieveScript();
     QVector<KSieveUi::SieveImapInstance> mSieveImapInstances;
+    //name, identifier
+    QMap<QString, QString> mServerSieveInfos;
     SieveImapPasswordProvider *const mPasswordProvider;
+    SieveTreeWidgetItem *mLastSieveTreeWidgetItem = nullptr;
 };
 }
 

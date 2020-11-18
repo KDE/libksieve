@@ -36,10 +36,13 @@ bool CustomManageSieveWidget::refreshList()
 {
     bool noImapFound = true;
     SieveTreeWidgetItem *last = nullptr;
+    mLastSieveTreeWidgetItem = nullptr; //TODO
+    mServerSieveInfos.clear();
     for (const KSieveUi::SieveImapInstance &type : mSieveImapInstances) {
         if (type.status() == KSieveUi::SieveImapInstance::Broken) {
             continue;
         }
+        mServerSieveInfos.insert(type.name(), type.identifier());
 
         QString serverName = type.name();
         last = new SieveTreeWidgetItem(treeView(), last);
@@ -66,4 +69,32 @@ bool CustomManageSieveWidget::refreshList()
         noImapFound = false;
     }
     return noImapFound;
+}
+
+void CustomManageSieveWidget::searchSieveScript()
+{
+#if 0
+    QString serverName = type.name();
+    mLastSieveTreeWidgetItem = new SieveTreeWidgetItem(treeView(), mLastSieveTreeWidgetItem);
+    mLastSieveTreeWidgetItem->setIcon(0, QIcon::fromTheme(QStringLiteral("network-server")));
+
+    const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(type.identifier(), mPasswordProvider, false);
+    const QUrl u = info.sieveUrl;
+    if (u.isEmpty()) {
+        auto *item = new QTreeWidgetItem(mLastSieveTreeWidgetItem);
+        item->setText(0, i18n("No Sieve URL configured"));
+        item->setFlags(item->flags() & ~Qt::ItemIsEnabled);
+        treeView()->expandItem(mLastSieveTreeWidgetItem);
+    } else {
+        serverName += QStringLiteral(" (%1)").arg(u.userName());
+        KManageSieve::SieveJob *job = KManageSieve::SieveJob::list(u);
+        //qDebug() << " SETTINGS " << info;
+        job->setProperty("sieveimapaccountsettings", QVariant::fromValue(info.sieveImapAccountSettings));
+        connect(job, &KManageSieve::SieveJob::gotList, this, &CustomManageSieveWidget::slotGotList);
+        mJobs.insert(job, mLastSieveTreeWidgetItem);
+        mUrls.insert(mLastSieveTreeWidgetItem, u);
+        mLastSieveTreeWidgetItem->startAnimation();
+    }
+    mLastSieveTreeWidgetItem->setText(0, serverName);
+#endif
 }
