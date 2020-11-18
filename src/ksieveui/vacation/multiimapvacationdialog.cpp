@@ -119,8 +119,15 @@ void MultiImapVacationDialog::init()
     lab->setWordWrap(true);
     d->mStackedWidget->addWidget(w);
     d->mStackedWidget->setCurrentIndex(0);
+    mButtonBox = new QDialogButtonBox(this);
+    mButtonBox->setObjectName(QStringLiteral("mButtonBox"));
+    mainLayout->addWidget(mButtonBox);
+    initialize();
+}
+
+void MultiImapVacationDialog::initialize()
+{
     bool foundOneImap = false;
-    QDialogButtonBox *buttonBox = nullptr;
 
     const QMap <QString, KSieveUi::Util::AccountInfo> list = d->mVacationManager->serverList();
     QMapIterator<QString, KSieveUi::Util::AccountInfo> i(list);
@@ -130,24 +137,24 @@ void MultiImapVacationDialog::init()
         foundOneImap = true;
     }
     if (foundOneImap) {
-        buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults, this);
-        QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
+        mButtonBox->setStandardButtons(QDialogButtonBox::Ok | QDialogButtonBox::Cancel | QDialogButtonBox::RestoreDefaults);
+        QPushButton *okButton = mButtonBox->button(QDialogButtonBox::Ok);
         okButton->setDefault(true);
         okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
-        connect(buttonBox, &QDialogButtonBox::accepted, this, &MultiImapVacationDialog::slotOkClicked);
-        connect(buttonBox, &QDialogButtonBox::rejected, this, &MultiImapVacationDialog::slotCanceled);
-        connect(buttonBox->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &MultiImapVacationDialog::slotDefaultClicked);
+        connect(mButtonBox, &QDialogButtonBox::accepted, this, &MultiImapVacationDialog::slotOkClicked);
+        connect(mButtonBox, &QDialogButtonBox::rejected, this, &MultiImapVacationDialog::slotCanceled);
+        connect(mButtonBox->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &MultiImapVacationDialog::slotDefaultClicked);
     } else { //Empty
         d->mStackedWidget->setCurrentIndex(1);
-        buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-        connect(buttonBox, &QDialogButtonBox::accepted, this, &MultiImapVacationDialog::slotOkClicked);
-        connect(buttonBox, &QDialogButtonBox::rejected, this, &MultiImapVacationDialog::slotCanceled);
+        mButtonBox->setStandardButtons(QDialogButtonBox::Close);
+        connect(mButtonBox, &QDialogButtonBox::accepted, this, &MultiImapVacationDialog::slotOkClicked);
+        connect(mButtonBox, &QDialogButtonBox::rejected, this, &MultiImapVacationDialog::slotCanceled);
     }
-    mainLayout->addWidget(buttonBox);
     if (d->mTabWidget->count() <= 1) {
         d->mTabWidget->tabBar()->hide();
     }
 }
+
 
 void MultiImapVacationDialog::slotCanceled()
 {

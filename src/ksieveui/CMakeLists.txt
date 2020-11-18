@@ -41,6 +41,7 @@ set(ksieveui_vacation_LIB_SRCS
     vacation/vacationmailactionwidget.cpp
     vacation/legacy/vacationutils.cpp
     vacation/legacy/vacationscriptextractor.cpp
+    vacation/searchserverwithvacationsupportjob.cpp
     )
 set(ksieveui_webpageeditor_LIB_SRCS
     editor/webengine/sieveeditorwebengineview.cpp
