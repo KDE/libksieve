@@ -25,8 +25,11 @@ protected:
     void updateSieveSettings() override;
 
 private:
+    void searchNextServerSieve();
     void searchSieveScript();
+    void slotSearchSieveScript(const QString &name, const QString &identifier);
     QVector<KSieveUi::SieveImapInstance> mSieveImapInstances;
+    QMap<QString, QString>::const_iterator mSieveServerMapIterator;
     //name, identifier
     QMap<QString, QString> mServerSieveInfos;
     SieveImapPasswordProvider *const mPasswordProvider;

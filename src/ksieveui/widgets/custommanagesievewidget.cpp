@@ -35,7 +35,6 @@ void CustomManageSieveWidget::updateSieveSettings()
 bool CustomManageSieveWidget::refreshList()
 {
     bool noImapFound = true;
-    SieveTreeWidgetItem *last = nullptr;
     mLastSieveTreeWidgetItem = nullptr; //TODO
     mServerSieveInfos.clear();
     for (const KSieveUi::SieveImapInstance &type : mSieveImapInstances) {
@@ -43,42 +42,37 @@ bool CustomManageSieveWidget::refreshList()
             continue;
         }
         mServerSieveInfos.insert(type.name(), type.identifier());
-
-        QString serverName = type.name();
-        last = new SieveTreeWidgetItem(treeView(), last);
-        last->setIcon(0, QIcon::fromTheme(QStringLiteral("network-server")));
-
-        const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(type.identifier(), mPasswordProvider, false);
-        const QUrl u = info.sieveUrl;
-        if (u.isEmpty()) {
-            auto *item = new QTreeWidgetItem(last);
-            item->setText(0, i18n("No Sieve URL configured"));
-            item->setFlags(item->flags() & ~Qt::ItemIsEnabled);
-            treeView()->expandItem(last);
-        } else {
-            serverName += QStringLiteral(" (%1)").arg(u.userName());
-            KManageSieve::SieveJob *job = KManageSieve::SieveJob::list(u);
-            //qDebug() << " SETTINGS " << info;
-            job->setProperty("sieveimapaccountsettings", QVariant::fromValue(info.sieveImapAccountSettings));
-            connect(job, &KManageSieve::SieveJob::gotList, this, &CustomManageSieveWidget::slotGotList);
-            mJobs.insert(job, last);
-            mUrls.insert(last, u);
-            last->startAnimation();
-        }
-        last->setText(0, serverName);
-        noImapFound = false;
     }
+    noImapFound = mServerSieveInfos.isEmpty();
+    searchSieveScript();
     return noImapFound;
 }
 
 void CustomManageSieveWidget::searchSieveScript()
 {
-#if 0
-    QString serverName = type.name();
+    mSieveServerMapIterator = mServerSieveInfos.constBegin();
+    if (mSieveServerMapIterator != mServerSieveInfos.constEnd()) {
+        slotSearchSieveScript(mSieveServerMapIterator.key(), mSieveServerMapIterator.value());
+    }
+}
+
+void CustomManageSieveWidget::searchNextServerSieve()
+{
+    ++mSieveServerMapIterator;
+    if(mSieveServerMapIterator != mServerSieveInfos.constEnd()) {
+        slotSearchSieveScript(mSieveServerMapIterator.key(), mSieveServerMapIterator.value());
+    } else {
+        mLastSieveTreeWidgetItem = nullptr;
+    }
+}
+
+void CustomManageSieveWidget::slotSearchSieveScript(const QString &name, const QString &identifier)
+{
+    QString serverName = name;
     mLastSieveTreeWidgetItem = new SieveTreeWidgetItem(treeView(), mLastSieveTreeWidgetItem);
     mLastSieveTreeWidgetItem->setIcon(0, QIcon::fromTheme(QStringLiteral("network-server")));
 
-    const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(type.identifier(), mPasswordProvider, false);
+    const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(identifier, mPasswordProvider, false);
     const QUrl u = info.sieveUrl;
     if (u.isEmpty()) {
         auto *item = new QTreeWidgetItem(mLastSieveTreeWidgetItem);
@@ -96,5 +90,5 @@ void CustomManageSieveWidget::searchSieveScript()
         mLastSieveTreeWidgetItem->startAnimation();
     }
     mLastSieveTreeWidgetItem->setText(0, serverName);
-#endif
+    searchNextServerSieve();
 }
