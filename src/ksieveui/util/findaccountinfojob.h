@@ -40,7 +40,7 @@ private:
     KSieveUi::Util::AccountInfo mAccountInfo;
     QString mIdentifier;
     SieveImapPasswordProvider *mProvider = nullptr;
-    bool mWithVacationFileName = false;
+    bool mWithVacationFileName = true;
 };
 }
 
