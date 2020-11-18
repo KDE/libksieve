@@ -9,6 +9,7 @@
 
 #include <widgets/managesievewidget.h>
 #include <KSieveUi/SieveImapInstance>
+#include "util/util_p.h"
 
 namespace KSieveUi {
 class SieveImapPasswordProvider;
@@ -28,6 +29,7 @@ private:
     void searchNextServerSieve();
     void searchSieveScript();
     void slotSearchSieveScript(const QString &name, const QString &identifier);
+    void slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
     QVector<KSieveUi::SieveImapInstance> mSieveImapInstances;
     QMap<QString, QString>::const_iterator mSieveServerMapIterator;
     //name, identifier

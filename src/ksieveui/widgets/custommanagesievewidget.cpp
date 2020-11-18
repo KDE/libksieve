@@ -6,7 +6,7 @@
 
 #include "custommanagesievewidget.h"
 #include "widgets/managesievetreeview.h"
-#include "util/util_p.h"
+#include "util/findaccountinfojob.h"
 
 #include <KLocalizedString>
 #include <QIcon>
@@ -68,11 +68,20 @@ void CustomManageSieveWidget::searchNextServerSieve()
 
 void CustomManageSieveWidget::slotSearchSieveScript(const QString &name, const QString &identifier)
 {
-    QString serverName = name;
     mLastSieveTreeWidgetItem = new SieveTreeWidgetItem(treeView(), mLastSieveTreeWidgetItem);
     mLastSieveTreeWidgetItem->setIcon(0, QIcon::fromTheme(QStringLiteral("network-server")));
 
-    const KSieveUi::Util::AccountInfo info = KSieveUi::Util::fullAccountInfo(identifier, mPasswordProvider, false);
+    FindAccountInfoJob *job = new FindAccountInfoJob(this);
+    connect(job, &FindAccountInfoJob::findAccountInfoFinished, this, &CustomManageSieveWidget::slotFindAccountInfoFinished);
+    job->setIdentifier(identifier);
+    job->setProperty("serverName", name);
+    job->setProvider(mPasswordProvider);
+    job->start();
+}
+
+void CustomManageSieveWidget::slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info)
+{
+    QString serverName = sender()->property("serverName").toString();
     const QUrl u = info.sieveUrl;
     if (u.isEmpty()) {
         auto *item = new QTreeWidgetItem(mLastSieveTreeWidgetItem);
