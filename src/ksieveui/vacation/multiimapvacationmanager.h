@@ -46,6 +46,7 @@ private Q_SLOTS:
 
 private:
     Q_DISABLE_COPY(MultiImapVacationManager)
+    void slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveUi::Util::AccountInfo> &list);
     SieveImapPasswordProvider *const mPasswordProvider;
     int mNumberOfJobs = 0;
     bool mCheckInProgress = false;

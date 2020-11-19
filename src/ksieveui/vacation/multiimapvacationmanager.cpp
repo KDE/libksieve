@@ -13,6 +13,7 @@
 #include <kmanagesieve/sievejob.h>
 
 #include "libksieve_debug.h"
+#include "searchserverwithvacationsupportjob.h"
 
 using namespace KSieveUi;
 MultiImapVacationManager::MultiImapVacationManager(SieveImapPasswordProvider *passwordProvider, QObject *parent)
@@ -71,7 +72,15 @@ void MultiImapVacationManager::checkVacation()
     mNumberOfJobs = 0;
     mCheckInProgress = true;
 
-    QMapIterator<QString, KSieveUi::Util::AccountInfo> i(serverList());
+    auto *job = new SearchServerWithVacationSupportJob(this);
+    job->setPasswordProvider(passwordProvider());
+    connect(job, &SearchServerWithVacationSupportJob::searchServerWithVacationSupportFinished, this, &MultiImapVacationManager::slotSearchServerWithVacationSupportFinished);
+    job->start();
+}
+
+void MultiImapVacationManager::slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveUi::Util::AccountInfo> &list)
+{
+    QMapIterator<QString, KSieveUi::Util::AccountInfo> i(list);
     while (i.hasNext()) {
         i.next();
         checkVacation(i.key(), i.value().sieveUrl);
