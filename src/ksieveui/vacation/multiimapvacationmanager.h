@@ -30,10 +30,9 @@ public:
     ~MultiImapVacationManager() override;
 
     void checkVacation();
-    QMap<QString, KSieveUi::Util::AccountInfo> serverList() const;
     void checkVacation(const QString &serverName, const QUrl &url);
 
-    bool kep14Support(const QString &serverName) const;
+    Q_REQUIRED_RESULT bool kep14Support(const QString &serverName) const;
     SieveImapPasswordProvider *passwordProvider() const;
 
 Q_SIGNALS:
