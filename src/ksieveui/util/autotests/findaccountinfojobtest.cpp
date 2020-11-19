@@ -4,13 +4,16 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "utilmethodtest.h"
+#include "findaccountinfojobtest.h"
 #include "../util_p.h"
+#include "util/findaccountinfojob.h"
 #include "imapresourcesettings.h"
 #include "akonadiimapsettinginterfacetest.h"
 #include "../abstractakonadiimapsettinginterface.h"
 #include "../sieveimappasswordprovider.h"
+#include <QSignalSpy>
 #include <QTest>
+QTEST_MAIN(FindAccountInfoJobTest)
 
 class DataImapPasswordProvider : public KSieveUi::SieveImapPasswordProvider
 {
@@ -30,22 +33,28 @@ public:
         return mData->sieveCustomPassword;
     }
 
-    AkonadiImapSettingInterfaceDataTest *mData = nullptr;
+    AkonadiImapSettingInterfaceDataTest *const mData;
 };
 
-UtilMethodTest::UtilMethodTest(QObject *parent)
+FindAccountInfoJobTest::FindAccountInfoJobTest(QObject *parent)
     : QObject(parent)
 {
 }
 
-void UtilMethodTest::shouldReturnEmptyInfo()
+void FindAccountInfoJobTest::shouldReturnEmptyInfo()
 {
-    std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> interface(new KSieveUi::AbstractAkonadiImapSettingInterface);
-    KSieveUi::Util::AccountInfo info = KSieveUi::Util::findAccountInfo(QStringLiteral("dummy"), {}, false, interface);
+    auto *job = new KSieveUi::FindAccountInfoJob;
+    job->setIdentifier(QStringLiteral("dummy"));
+    job->setProvider({});
+    QSignalSpy spy(job, &KSieveUi::FindAccountInfoJob::findAccountInfoFinished);
+    job->start();
+    spy.wait(1000);
+    QCOMPARE(spy.count(), 1);
+    const KSieveUi::Util::AccountInfo info = spy.at(0).at(0).value<KSieveUi::Util::AccountInfo>();
     QVERIFY(!info.sieveImapAccountSettings.isValid());
 }
 
-void UtilMethodTest::shouldAssignValue_data()
+void FindAccountInfoJobTest::shouldAssignValue_data()
 {
     QTest::addColumn<AkonadiImapSettingInterfaceDataTest>("data");
     QTest::addColumn<KSieveUi::Util::AccountInfo>("accountInfo");
@@ -521,7 +530,7 @@ void UtilMethodTest::shouldAssignValue_data()
     }
 }
 
-void UtilMethodTest::shouldAssignValue()
+void FindAccountInfoJobTest::shouldAssignValue()
 {
     QFETCH(AkonadiImapSettingInterfaceDataTest, data);
     QFETCH(KSieveUi::Util::AccountInfo, accountInfo);
@@ -530,7 +539,17 @@ void UtilMethodTest::shouldAssignValue()
 
     std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> interface(new AkonadiImapSettingInterfaceTest(data));
     std::unique_ptr<DataImapPasswordProvider> provider(new DataImapPasswordProvider(&data));
-    const KSieveUi::Util::AccountInfo info = KSieveUi::Util::findAccountInfo(QStringLiteral("foo"), provider.get(), useVacationFile, interface);
+
+    auto *job = new KSieveUi::FindAccountInfoJob;
+    job->setIdentifier(QStringLiteral("foo"));
+    job->setProvider(provider.get());
+    job->setCustomImapSettingsInterface(interface.get());
+    job->setWithVacationFileName(useVacationFile);
+    QSignalSpy spy(job, &KSieveUi::FindAccountInfoJob::findAccountInfoFinished);
+    job->start();
+    spy.wait(1000);
+    QCOMPARE(spy.count(), 1);
+    const KSieveUi::Util::AccountInfo info = spy.at(0).at(0).value<KSieveUi::Util::AccountInfo>();
     QCOMPARE(info.sieveImapAccountSettings.isValid(), sieveImapAccountValid);
     const bool equal = (info == accountInfo);
     if (!equal) {
@@ -540,4 +559,4 @@ void UtilMethodTest::shouldAssignValue()
     QVERIFY(equal);
 }
 
-QTEST_MAIN(UtilMethodTest)
+

@@ -8,5 +8,5 @@ macro(add_sieveutil_test _source _additionalsource)
 endmacro()
 
 add_sieveutil_test(sieveaccounttest.cpp "")
-add_sieveutil_test(utilmethodtest.cpp "akonadiimapsettinginterfacetest.cpp")
+add_sieveutil_test(findaccountinfojobtest.cpp "akonadiimapsettinginterfacetest.cpp")
 add_sieveutil_test(regexpconvertertest.cpp "")

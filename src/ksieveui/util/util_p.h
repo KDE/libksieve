@@ -33,27 +33,21 @@ KSIEVEUI_EXPORT QDebug operator <<(QDebug d, const Util::AccountInfo &info);
 /**
  * Returns the list of configured IMAP agent instances.
  */
-QVector<KSieveUi::SieveImapInstance> sieveImapInstances();
-QStringList sieveImapResourceNames();
+Q_REQUIRED_RESULT QVector<KSieveUi::SieveImapInstance> sieveImapInstances();
+Q_REQUIRED_RESULT QStringList sieveImapResourceNames();
 
 /**
  * Checks if a server has KEP:14 support
  */
-bool hasKep14Support(const QStringList &sieveCapabilities, const QStringList &availableScripts, const QString &activeScript);
+Q_REQUIRED_RESULT bool hasKep14Support(const QStringList &sieveCapabilities, const QStringList &availableScripts, const QString &activeScript);
 
-bool hasKep14CapabilitySupport(const QStringList &sieveCapabilities);
+Q_REQUIRED_RESULT bool hasKep14CapabilitySupport(const QStringList &sieveCapabilities);
 
 /**
  * Is the given scriptName a protected KEP:14 name, that a normal user should not touch directly.
  * it tests against MASTER, USER and MANAGEMENT script
  */
-bool isKep14ProtectedName(const QString &scriptName);
-
-KSIEVEUI_EXPORT KSieveUi::Util::AccountInfo findAccountInfo(const QString &identifier, SieveImapPasswordProvider *provider, bool withVacationFileName, std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> &interface);
-/**
- * Returns all sieve account info with the given @p identifier.
- */
-KSIEVEUI_EXPORT KSieveUi::Util::AccountInfo fullAccountInfo(const QString &identifier, SieveImapPasswordProvider *provider, bool withVacationFileName = true);
+Q_REQUIRED_RESULT bool isKep14ProtectedName(const QString &scriptName);
 }
 }
 

@@ -4,20 +4,20 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef UTILMETHODTEST_H
-#define UTILMETHODTEST_H
+#ifndef FINDACCOUNTINFOJOBTEST_H
+#define FINDACCOUNTINFOJOBTEST_H
 
 #include <QObject>
 
-class UtilMethodTest : public QObject
+class FindAccountInfoJobTest : public QObject
 {
     Q_OBJECT
 public:
-    explicit UtilMethodTest(QObject *parent = nullptr);
-    ~UtilMethodTest() = default;
+    explicit FindAccountInfoJobTest(QObject *parent = nullptr);
+    ~FindAccountInfoJobTest() = default;
 private Q_SLOTS:
     void shouldReturnEmptyInfo();
     void shouldAssignValue_data();
     void shouldAssignValue();
 };
-#endif // UTILMETHODTEST_H
+#endif // FINDACCOUNTINFOJOBTEST_H

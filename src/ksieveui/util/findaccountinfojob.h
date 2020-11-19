@@ -8,11 +8,12 @@
 #define FINDACCOUNTINFOJOB_H
 
 #include "util_p.h"
+#include "ksieveui_export.h" //TODO use specific export for testing ?
 
 #include <QObject>
 namespace KSieveUi {
 class SieveImapPasswordProvider;
-class FindAccountInfoJob : public QObject
+class KSIEVEUI_EXPORT FindAccountInfoJob : public QObject
 {
     Q_OBJECT
 public:
@@ -32,6 +33,8 @@ public:
 
     Q_REQUIRED_RESULT bool canStart() const;
 
+    void setCustomImapSettingsInterface(KSieveUi::AbstractAkonadiImapSettingInterface *newCustomImapSettingsInterface);
+
 Q_SIGNALS:
     void findAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
 
@@ -39,6 +42,7 @@ private:
     void sendAccountInfo();
     KSieveUi::Util::AccountInfo mAccountInfo;
     QString mIdentifier;
+    KSieveUi::AbstractAkonadiImapSettingInterface *mCustomImapSettingsInterface = nullptr;
     SieveImapPasswordProvider *mProvider = nullptr;
     bool mWithVacationFileName = true;
 };
