@@ -43,7 +43,7 @@ private:
     KSieveUi::Util::AccountInfo mAccountInfo;
     QString mIdentifier;
     KSieveUi::AbstractAkonadiImapSettingInterface *mCustomImapSettingsInterface = nullptr;
-    SieveImapPasswordProvider *mProvider = nullptr;
+    SieveImapPasswordProvider *mPasswordProvider = nullptr;
     bool mWithVacationFileName = true;
 };
 }

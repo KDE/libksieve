@@ -48,7 +48,7 @@ void FindAccountInfoJob::start()
         sendAccountInfo();
         return;
     }
-    if (!mProvider) {
+    if (!mPasswordProvider) {
         sendAccountInfo();
         return;
     }
@@ -64,19 +64,20 @@ void FindAccountInfoJob::start()
         return;
     }
 
+    QString server;
+    const QString reply = mCustomImapSettingsInterface->imapServer();
+    if (!reply.isEmpty()) {
+        server = reply;
+        server = server.section(QLatin1Char(':'), 0, 0);
+    } else {
+        sendAccountInfo();
+        return;
+    }
+
     if (mCustomImapSettingsInterface->sieveReuseConfig()) {
         // assemble Sieve url from the settings of the account:
         QUrl u;
         u.setScheme(QStringLiteral("sieve"));
-        QString server;
-        const QString reply = mCustomImapSettingsInterface->imapServer();
-        if (!reply.isEmpty()) {
-            server = reply;
-            server = server.section(QLatin1Char(':'), 0, 0);
-        } else {
-            sendAccountInfo();
-            return;
-        }
         const QString userName = mCustomImapSettingsInterface->userName();
         mAccountInfo.sieveImapAccountSettings.setServerName(server);
         mAccountInfo.sieveImapAccountSettings.setUserName(userName);
@@ -84,7 +85,7 @@ void FindAccountInfoJob::start()
         u.setHost(server);
         u.setUserName(userName);
 
-        const QString pwd = mProvider->password(mIdentifier);
+        const QString pwd = mPasswordProvider->password(mIdentifier);
         u.setPassword(pwd);
         mAccountInfo.sieveImapAccountSettings.setPassword(pwd);
         mAccountInfo.sieveImapAccountSettings.setPort(mCustomImapSettingsInterface->imapPort());
@@ -136,27 +137,17 @@ void FindAccountInfoJob::start()
         mAccountInfo.sieveUrl = u;
         sendAccountInfo();
     } else {
-        QString server;
-        const QString reply = mCustomImapSettingsInterface->imapServer();
-        if (!reply.isEmpty()) {
-            server = reply;
-            server = server.section(QLatin1Char(':'), 0, 0);
-        } else {
-            sendAccountInfo();
-            return;
-        }
-
         const QString userName = mCustomImapSettingsInterface->userName();
         mAccountInfo.sieveImapAccountSettings.setServerName(server);
         mAccountInfo.sieveImapAccountSettings.setUserName(userName);
         mAccountInfo.sieveImapAccountSettings.setAuthenticationType(static_cast<SieveImapAccountSettings::AuthenticationMode>((int)mCustomImapSettingsInterface->authentication()));
-        const QString pwd = mProvider->password(mIdentifier);
+        const QString pwd = mPasswordProvider->password(mIdentifier);
         mAccountInfo.sieveImapAccountSettings.setPassword(pwd);
         mAccountInfo.sieveImapAccountSettings.setPort(mCustomImapSettingsInterface->imapPort());
 
         QUrl u;
-        u.setHost(mCustomImapSettingsInterface->sieveAlternateUrl());
         u.setScheme(QStringLiteral("sieve"));
+        u.setHost(mCustomImapSettingsInterface->sieveAlternateUrl());
         u.setPort(mCustomImapSettingsInterface->sievePort());
         QString authStr;
         const QString resultSafety = mCustomImapSettingsInterface->safety();
@@ -206,7 +197,7 @@ void FindAccountInfoJob::start()
             const QString imapPwd = pwd;
             u.setPassword(imapPwd);
         } else if (resultCustomAuthentication == QLatin1String("CustomUserPassword")) {
-            const QString customPwd = mProvider->sieveCustomPassword(mIdentifier);
+            const QString customPwd = mPasswordProvider->sieveCustomPassword(mIdentifier);
             u.setPassword(customPwd);
             u.setUserName(mCustomImapSettingsInterface->sieveCustomUsername());
         } else {
@@ -243,10 +234,10 @@ void FindAccountInfoJob::setWithVacationFileName(bool newWithVacationFileName)
 
 SieveImapPasswordProvider *FindAccountInfoJob::provider() const
 {
-    return mProvider;
+    return mPasswordProvider;
 }
 
 void FindAccountInfoJob::setProvider(SieveImapPasswordProvider *newProvider)
 {
-    mProvider = newProvider;
+    mPasswordProvider = newProvider;
 }
