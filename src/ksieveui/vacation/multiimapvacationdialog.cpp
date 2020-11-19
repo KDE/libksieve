@@ -7,6 +7,7 @@
 #include "multiimapvacationdialog.h"
 #include "vacationpagewidget.h"
 #include "multiimapvacationmanager.h"
+#include "vacation/searchserverwithvacationsupportjob.h"
 
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -127,9 +128,16 @@ void MultiImapVacationDialog::init()
 
 void MultiImapVacationDialog::initialize()
 {
+    auto *job = new SearchServerWithVacationSupportJob(this);
+    job->setPasswordProvider(d->mVacationManager->passwordProvider());
+    connect(job, &SearchServerWithVacationSupportJob::searchServerWithVacationSupportFinished, this, &MultiImapVacationDialog::slotSearchServerWithVacationSupportFinished);
+    job->start();
+}
+
+void MultiImapVacationDialog::slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveUi::Util::AccountInfo> &list)
+{
     bool foundOneImap = false;
 
-    const QMap <QString, KSieveUi::Util::AccountInfo> list = d->mVacationManager->serverList();
     QMapIterator<QString, KSieveUi::Util::AccountInfo> i(list);
     while (i.hasNext()) {
         i.next();

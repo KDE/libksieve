@@ -23,9 +23,6 @@ public:
 
     Q_REQUIRED_RESULT bool canStart() const;
 
-    Q_REQUIRED_RESULT QString identifier() const;
-    void setIdentifier(const QString &newIdentifier);
-
     SieveImapPasswordProvider *passwordProvider() const;
     void setPasswordProvider(SieveImapPasswordProvider *newProvider);
 
@@ -38,7 +35,6 @@ private:
     void searchNextInfo();
     void slotSearchSieveScript(const QString &name, const QString &identifier);
     void searchNextServerSieve();
-    QString mIdentifier;
 
     QMap<QString, QString>::const_iterator mSieveServerMapIterator;
     //name, identifier

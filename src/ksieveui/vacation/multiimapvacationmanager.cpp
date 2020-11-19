@@ -120,3 +120,8 @@ bool MultiImapVacationManager::kep14Support(const QString &serverName) const
     }
     return false;
 }
+
+SieveImapPasswordProvider *MultiImapVacationManager::passwordProvider() const
+{
+    return mPasswordProvider;
+}

@@ -35,6 +35,7 @@ Q_SIGNALS:
     void cancelClicked();
 
 private:
+    void slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveUi::Util::AccountInfo> &info);
     void slotOkClicked();
     void slotDefaultClicked();
     void slotCanceled();
@@ -42,8 +43,8 @@ private:
     void init();
     void readConfig();
     void writeConfig();
-    QDialogButtonBox *mButtonBox = nullptr;
     void initialize();
+    QDialogButtonBox *mButtonBox = nullptr;
     MultiImapVacationDialogPrivate *const d;
 };
 }

@@ -84,17 +84,7 @@ void SearchServerWithVacationSupportJob::searchNextServerSieve()
 
 bool SearchServerWithVacationSupportJob::canStart() const
 {
-    return mPasswordProvider && !mIdentifier.isEmpty();
-}
-
-QString SearchServerWithVacationSupportJob::identifier() const
-{
-    return mIdentifier;
-}
-
-void SearchServerWithVacationSupportJob::setIdentifier(const QString &newIdentifier)
-{
-    mIdentifier = newIdentifier;
+    return mPasswordProvider;
 }
 
 SieveImapPasswordProvider *SearchServerWithVacationSupportJob::passwordProvider() const

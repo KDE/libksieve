@@ -27,13 +27,15 @@ class KSIEVEUI_EXPORT MultiImapVacationManager : public QObject
     Q_OBJECT
 public:
     explicit MultiImapVacationManager(SieveImapPasswordProvider *passwordProvider, QObject *parent = nullptr);
-    ~MultiImapVacationManager();
+    ~MultiImapVacationManager() override;
 
     void checkVacation();
     QMap<QString, KSieveUi::Util::AccountInfo> serverList() const;
     void checkVacation(const QString &serverName, const QUrl &url);
 
     bool kep14Support(const QString &serverName) const;
+    SieveImapPasswordProvider *passwordProvider() const;
+
 Q_SIGNALS:
     void scriptActive(bool active, const QString &serverName);
     void scriptAvailable(const QString &serverName, const QStringList &sieveCapabilities, const QString &scriptName, const QString &script, bool active);
