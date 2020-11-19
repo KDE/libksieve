@@ -33,9 +33,18 @@ Q_SIGNALS:
     void searchServerWithVacationSupportFinished(const QMap<QString, KSieveUi::Util::AccountInfo> &info);
 
 private:
+    void slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
     void sendAccountList();
+    void searchNextInfo();
+    void slotSearchSieveScript(const QString &name, const QString &identifier);
+    void searchNextServerSieve();
     QString mIdentifier;
-    QStringList mListInstances;
+
+    QMap<QString, QString>::const_iterator mSieveServerMapIterator;
+    //name, identifier
+    QMap<QString, QString> mServerSieveInfos;
+
+    //Result
     QMap<QString, KSieveUi::Util::AccountInfo> mAccountList;
     SieveImapPasswordProvider *mPasswordProvider = nullptr;
 };

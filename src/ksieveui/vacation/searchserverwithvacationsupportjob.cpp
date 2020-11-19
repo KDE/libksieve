@@ -37,9 +37,49 @@ void SearchServerWithVacationSupportJob::start()
         if (instance.status() == KSieveUi::SieveImapInstance::Broken) {
             continue;
         }
-        mListInstances << instance.identifier();
+        mServerSieveInfos.insert(instance.name(), instance.identifier());
     }
-    //TODO search info.
+    searchNextInfo();
+}
+
+void SearchServerWithVacationSupportJob::searchNextInfo()
+{
+    mSieveServerMapIterator = mServerSieveInfos.constBegin();
+    if (mSieveServerMapIterator != mServerSieveInfos.constEnd()) {
+        slotSearchSieveScript(mSieveServerMapIterator.key(), mSieveServerMapIterator.value());
+    } else {
+        sendAccountList();
+    }
+}
+
+void SearchServerWithVacationSupportJob::slotSearchSieveScript(const QString &name, const QString &identifier)
+{
+       FindAccountInfoJob *job = new FindAccountInfoJob(this);
+       connect(job, &FindAccountInfoJob::findAccountInfoFinished, this, &SearchServerWithVacationSupportJob::slotFindAccountInfoFinished);
+       job->setIdentifier(identifier);
+       job->setProperty("serverName", name);
+       job->setProvider(mPasswordProvider);
+       job->start();
+}
+
+void SearchServerWithVacationSupportJob::slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info)
+{
+    const QUrl url = info.sieveUrl;
+    if (!url.isEmpty()) {
+        const QString serverName = sender()->property("serverName").toString();
+        mAccountList.insert(serverName, info);
+    }
+    searchNextServerSieve();
+}
+
+void SearchServerWithVacationSupportJob::searchNextServerSieve()
+{
+    ++mSieveServerMapIterator;
+    if(mSieveServerMapIterator != mServerSieveInfos.constEnd()) {
+        slotSearchSieveScript(mSieveServerMapIterator.key(), mSieveServerMapIterator.value());
+    } else {
+        sendAccountList();
+    }
 }
 
 bool SearchServerWithVacationSupportJob::canStart() const
