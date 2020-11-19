@@ -73,10 +73,14 @@ void FindAccountInfoJob::start()
         sendAccountInfo();
         return;
     }
+    const QString pwd = mPasswordProvider->password(mIdentifier);
+    passwordDone(pwd, server);
+}
 
+void FindAccountInfoJob::passwordDone(const QString &pwd, const QString &server)
+{
     QUrl sieveUrl;
     sieveUrl.setScheme(QStringLiteral("sieve"));
-    const QString pwd = mPasswordProvider->password(mIdentifier);
 
     if (mCustomImapSettingsInterface->sieveReuseConfig()) {
         // assemble Sieve url from the settings of the account:

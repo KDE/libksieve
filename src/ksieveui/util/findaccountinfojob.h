@@ -39,6 +39,7 @@ Q_SIGNALS:
     void findAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
 
 private:
+    void passwordDone(const QString &pwd, const QString &server);
     void sendAccountInfo();
     KSieveUi::Util::AccountInfo mAccountInfo;
     QString mIdentifier;
