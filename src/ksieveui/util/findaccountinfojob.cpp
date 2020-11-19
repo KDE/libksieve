@@ -74,22 +74,23 @@ void FindAccountInfoJob::start()
         return;
     }
 
+    QUrl sieveUrl;
+    sieveUrl.setScheme(QStringLiteral("sieve"));
+    const QString pwd = mPasswordProvider->password(mIdentifier);
+
     if (mCustomImapSettingsInterface->sieveReuseConfig()) {
         // assemble Sieve url from the settings of the account:
-        QUrl u;
-        u.setScheme(QStringLiteral("sieve"));
         const QString userName = mCustomImapSettingsInterface->userName();
         mAccountInfo.sieveImapAccountSettings.setServerName(server);
         mAccountInfo.sieveImapAccountSettings.setUserName(userName);
 
-        u.setHost(server);
-        u.setUserName(userName);
+        sieveUrl.setHost(server);
+        sieveUrl.setUserName(userName);
 
-        const QString pwd = mPasswordProvider->password(mIdentifier);
-        u.setPassword(pwd);
+        sieveUrl.setPassword(pwd);
         mAccountInfo.sieveImapAccountSettings.setPassword(pwd);
         mAccountInfo.sieveImapAccountSettings.setPort(mCustomImapSettingsInterface->imapPort());
-        u.setPort(mCustomImapSettingsInterface->sievePort());
+        sieveUrl.setPort(mCustomImapSettingsInterface->sievePort());
         QString authStr;
         mAccountInfo.sieveImapAccountSettings.setAuthenticationType(static_cast<SieveImapAccountSettings::AuthenticationMode>((int)mCustomImapSettingsInterface->authentication()));
         switch (mCustomImapSettingsInterface->authentication()) {
@@ -129,26 +130,17 @@ void FindAccountInfoJob::start()
         } else {
             mAccountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
         }
-        u.setQuery(query);
-        u = u.adjusted(QUrl::RemoveFilename);
-        if (mWithVacationFileName) {
-            u.setPath(u.path() + QLatin1Char('/') + QString(mCustomImapSettingsInterface->sieveVacationFilename()));
-        }
-        mAccountInfo.sieveUrl = u;
-        sendAccountInfo();
+        sieveUrl.setQuery(query);
     } else {
         const QString userName = mCustomImapSettingsInterface->userName();
         mAccountInfo.sieveImapAccountSettings.setServerName(server);
         mAccountInfo.sieveImapAccountSettings.setUserName(userName);
         mAccountInfo.sieveImapAccountSettings.setAuthenticationType(static_cast<SieveImapAccountSettings::AuthenticationMode>((int)mCustomImapSettingsInterface->authentication()));
-        const QString pwd = mPasswordProvider->password(mIdentifier);
         mAccountInfo.sieveImapAccountSettings.setPassword(pwd);
         mAccountInfo.sieveImapAccountSettings.setPort(mCustomImapSettingsInterface->imapPort());
 
-        QUrl u;
-        u.setScheme(QStringLiteral("sieve"));
-        u.setHost(mCustomImapSettingsInterface->sieveAlternateUrl());
-        u.setPort(mCustomImapSettingsInterface->sievePort());
+        sieveUrl.setHost(mCustomImapSettingsInterface->sieveAlternateUrl());
+        sieveUrl.setPort(mCustomImapSettingsInterface->sievePort());
         QString authStr;
         const QString resultSafety = mCustomImapSettingsInterface->safety();
         switch (mCustomImapSettingsInterface->alternateAuthentication()) {
@@ -189,27 +181,27 @@ void FindAccountInfoJob::start()
             mAccountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
         }
 
-        u.setQuery(query);
+        sieveUrl.setQuery(query);
 
         const QString resultCustomAuthentication = mCustomImapSettingsInterface->sieveCustomAuthentification();
         if (resultCustomAuthentication == QLatin1String("ImapUserPassword")) {
-            u.setUserName(mCustomImapSettingsInterface->userName());
+            sieveUrl.setUserName(mCustomImapSettingsInterface->userName());
             const QString imapPwd = pwd;
-            u.setPassword(imapPwd);
+            sieveUrl.setPassword(imapPwd);
         } else if (resultCustomAuthentication == QLatin1String("CustomUserPassword")) {
             const QString customPwd = mPasswordProvider->sieveCustomPassword(mIdentifier);
-            u.setPassword(customPwd);
-            u.setUserName(mCustomImapSettingsInterface->sieveCustomUsername());
+            sieveUrl.setPassword(customPwd);
+            sieveUrl.setUserName(mCustomImapSettingsInterface->sieveCustomUsername());
         } else {
             qCWarning(LIBKSIEVE_LOG) << "resultCustomAuthentication undefined " << resultCustomAuthentication;
         }
-        u = u.adjusted(QUrl::RemoveFilename);
-        if (mWithVacationFileName) {
-            u.setPath(u.path() + QLatin1Char('/') + mCustomImapSettingsInterface->sieveVacationFilename());
-        }
-        mAccountInfo.sieveUrl = u;
-        sendAccountInfo();
     }
+    sieveUrl = sieveUrl.adjusted(QUrl::RemoveFilename);
+    if (mWithVacationFileName) {
+        sieveUrl.setPath(sieveUrl.path() + QLatin1Char('/') + mCustomImapSettingsInterface->sieveVacationFilename());
+    }
+    mAccountInfo.sieveUrl = sieveUrl;
+    sendAccountInfo();
 }
 
 QString FindAccountInfoJob::identifier() const
