@@ -9,8 +9,8 @@
 
 #include "util_p.h"
 #include "ksieveui_export.h" //TODO use specific export for testing ?
-
 #include <QObject>
+class OrgKdeAkonadiImapSettingsInterface;
 namespace KSieveUi {
 class SieveImapPasswordProvider;
 class KSIEVEUI_EXPORT FindAccountInfoJob : public QObject
@@ -46,6 +46,9 @@ private:
     KSieveUi::AbstractAkonadiImapSettingInterface *mCustomImapSettingsInterface = nullptr;
     SieveImapPasswordProvider *mPasswordProvider = nullptr;
     bool mWithVacationFileName = true;
+    std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> mInterfaceImap;
+    std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> mInterface;
+
 };
 }
 

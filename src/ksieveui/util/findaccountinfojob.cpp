@@ -53,10 +53,10 @@ void FindAccountInfoJob::start()
         return;
     }
 
-    std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> interfaceImap(PimCommon::Util::createImapSettingsInterface(mIdentifier));
-    std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> interface(new KSieveUi::AkonadiImapSettingInterface(interfaceImap));
+    mInterfaceImap.reset(PimCommon::Util::createImapSettingsInterface(mIdentifier));
+    mInterface.reset(new KSieveUi::AkonadiImapSettingInterface(mInterfaceImap));
     if (!mCustomImapSettingsInterface) {
-        mCustomImapSettingsInterface = interface.get();
+        mCustomImapSettingsInterface = mInterface.get();
     }
 
     if (!mCustomImapSettingsInterface->sieveSupport()) {
