@@ -109,8 +109,6 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(SieveImapPasswordProvider *pa
     } else {
         resize(sizeHint().width(), sizeHint().height());
     }
-
-    d->mTreeView->slotRefresh();
 }
 
 ManageSieveScriptsDialog::~ManageSieveScriptsDialog()

@@ -34,8 +34,12 @@ void CustomManageSieveWidget::updateSieveSettings()
 
 bool CustomManageSieveWidget::refreshList()
 {
+    if (mRefreshInProgress) {
+        return false;
+    }
+    mRefreshInProgress = true;
     bool noImapFound = true;
-    mLastSieveTreeWidgetItem = nullptr; //TODO
+    mLastSieveTreeWidgetItem = nullptr;
     mServerSieveInfos.clear();
     for (const KSieveUi::SieveImapInstance &type : mSieveImapInstances) {
         if (type.status() == KSieveUi::SieveImapInstance::Broken) {
@@ -63,6 +67,7 @@ void CustomManageSieveWidget::searchNextServerSieve()
         slotSearchSieveScript(mSieveServerMapIterator.key(), mSieveServerMapIterator.value());
     } else {
         mLastSieveTreeWidgetItem = nullptr;
+        mRefreshInProgress = false;
     }
 }
 

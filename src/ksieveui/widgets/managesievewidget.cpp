@@ -507,7 +507,6 @@ void ManageSieveWidget::slotDeleteResult(KManageSieve::SieveJob *job, bool succe
 void ManageSieveWidget::slotRefresh()
 {
     d->mBlockSignal = true;
-    clear();
     updateSieveSettings();
 }
 

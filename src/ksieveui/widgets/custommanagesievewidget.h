@@ -36,6 +36,7 @@ private:
     QMap<QString, QString> mServerSieveInfos;
     SieveImapPasswordProvider *const mPasswordProvider;
     SieveTreeWidgetItem *mLastSieveTreeWidgetItem = nullptr;
+    bool mRefreshInProgress = false;
 };
 }
 
