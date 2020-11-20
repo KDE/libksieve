@@ -39,8 +39,8 @@ Q_SIGNALS:
     void findAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
 
 private:
-    void passwordDone(const QString &pwd, const QString &server);
     void sendAccountInfo();
+    void slotPasswordsRequested(const QString &sievePassword, const QString &sieveCustomPassword);
     KSieveUi::Util::AccountInfo mAccountInfo;
     QString mIdentifier;
     KSieveUi::AbstractAkonadiImapSettingInterface *mCustomImapSettingsInterface = nullptr;

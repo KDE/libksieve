@@ -73,12 +73,14 @@ void FindAccountInfoJob::start()
         sendAccountInfo();
         return;
     }
-    const QString pwd = mPasswordProvider->password(mIdentifier);
-    passwordDone(pwd, server);
+    connect(mPasswordProvider, &SieveImapPasswordProvider::passwordsRequested, this, &FindAccountInfoJob::slotPasswordsRequested);
+    mPasswordProvider->setProperty("server", server);
+    mPasswordProvider->passwords(mIdentifier);
 }
 
-void FindAccountInfoJob::passwordDone(const QString &pwd, const QString &server)
+void FindAccountInfoJob::slotPasswordsRequested(const QString &sievePassword, const QString &sieveCustomPassword)
 {
+    const QString server = sender()->property("server").toString();
     QUrl sieveUrl;
     sieveUrl.setScheme(QStringLiteral("sieve"));
 
@@ -91,8 +93,8 @@ void FindAccountInfoJob::passwordDone(const QString &pwd, const QString &server)
         sieveUrl.setHost(server);
         sieveUrl.setUserName(userName);
 
-        sieveUrl.setPassword(pwd);
-        mAccountInfo.sieveImapAccountSettings.setPassword(pwd);
+        sieveUrl.setPassword(sievePassword);
+        mAccountInfo.sieveImapAccountSettings.setPassword(sievePassword);
         mAccountInfo.sieveImapAccountSettings.setPort(mCustomImapSettingsInterface->imapPort());
         sieveUrl.setPort(mCustomImapSettingsInterface->sievePort());
         QString authStr;
@@ -140,7 +142,7 @@ void FindAccountInfoJob::passwordDone(const QString &pwd, const QString &server)
         mAccountInfo.sieveImapAccountSettings.setServerName(server);
         mAccountInfo.sieveImapAccountSettings.setUserName(userName);
         mAccountInfo.sieveImapAccountSettings.setAuthenticationType(static_cast<SieveImapAccountSettings::AuthenticationMode>((int)mCustomImapSettingsInterface->authentication()));
-        mAccountInfo.sieveImapAccountSettings.setPassword(pwd);
+        mAccountInfo.sieveImapAccountSettings.setPassword(sievePassword);
         mAccountInfo.sieveImapAccountSettings.setPort(mCustomImapSettingsInterface->imapPort());
 
         sieveUrl.setHost(mCustomImapSettingsInterface->sieveAlternateUrl());
@@ -190,10 +192,10 @@ void FindAccountInfoJob::passwordDone(const QString &pwd, const QString &server)
         const QString resultCustomAuthentication = mCustomImapSettingsInterface->sieveCustomAuthentification();
         if (resultCustomAuthentication == QLatin1String("ImapUserPassword")) {
             sieveUrl.setUserName(mCustomImapSettingsInterface->userName());
-            const QString imapPwd = pwd;
+            const QString imapPwd = sievePassword;
             sieveUrl.setPassword(imapPwd);
         } else if (resultCustomAuthentication == QLatin1String("CustomUserPassword")) {
-            const QString customPwd = mPasswordProvider->sieveCustomPassword(mIdentifier);
+            const QString customPwd = sieveCustomPassword;
             sieveUrl.setPassword(customPwd);
             sieveUrl.setUserName(mCustomImapSettingsInterface->sieveCustomUsername());
         } else {

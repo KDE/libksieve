@@ -196,6 +196,7 @@ set(ksieveui_sieveutil_LIB_SRCS
     util/akonadiimapsettinginterface.cpp
     util/sieveimapaccountsettings.cpp
     util/findaccountinfojob.cpp
+    util/sieveimappasswordprovider.cpp
     )	
 
 set(ksieveui_widgets_SRCS

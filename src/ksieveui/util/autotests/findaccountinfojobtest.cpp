@@ -23,17 +23,14 @@ public:
     {
     }
 
-    QString password(const QString & /*identifier*/) override
+    void passwords(const QString &identifier) override
     {
-        return mData->password;
-    }
-
-    QString sieveCustomPassword(const QString & /*identifier*/) override
-    {
-        return mData->sieveCustomPassword;
+        Q_UNUSED(identifier)
+        Q_EMIT passwordsRequested(mData->password, mData->sieveCustomPassword);
     }
 
     AkonadiImapSettingInterfaceDataTest *const mData;
+
 };
 
 FindAccountInfoJobTest::FindAccountInfoJobTest(QObject *parent)

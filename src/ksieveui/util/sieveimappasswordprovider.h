@@ -8,7 +8,7 @@
 #define SIEVEIMAPPASSWORDPROVIDER_H
 
 #include "ksieveui_export.h"
-
+#include <QObject>
 class QString;
 
 namespace KSieveUi {
@@ -16,12 +16,16 @@ namespace KSieveUi {
  * @brief The SieveImapPasswordProvider class
  * @author Laurent Montel <montel@kde.org>
  */
-class KSIEVEUI_EXPORT SieveImapPasswordProvider
+class KSIEVEUI_EXPORT SieveImapPasswordProvider : public QObject
 {
+    Q_OBJECT
 public:
-    virtual ~SieveImapPasswordProvider() = default;
-    virtual QString password(const QString &identifier) = 0;
-    virtual QString sieveCustomPassword(const QString &identifier) = 0;
+    explicit SieveImapPasswordProvider(QObject *parent = nullptr);
+
+    ~SieveImapPasswordProvider() override = default;
+    virtual void passwords(const QString &identifier) = 0;
+Q_SIGNALS:
+    void passwordsRequested(const QString &sievePassword, const QString &sieveCustomPassword);
 };
 }
 #endif
