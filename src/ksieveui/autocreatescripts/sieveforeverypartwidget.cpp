@@ -67,7 +67,7 @@ void SieveForEveryPartWidget::slotHelp()
 
 void SieveForEveryPartWidget::generatedScript(QString &script, QStringList &required, bool inForEveryPartLoop)
 {
-    Q_UNUSED(inForEveryPartLoop);
+    Q_UNUSED(inForEveryPartLoop)
     if (mForLoop->isChecked()) {
         required << QStringLiteral("foreverypart");
         const QString loopName = mName->text();

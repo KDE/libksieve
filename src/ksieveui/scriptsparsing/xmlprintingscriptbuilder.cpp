@@ -68,7 +68,7 @@ void XMLPrintingScriptBuilder::numberArgument(unsigned long number, char quantif
 
 void XMLPrintingScriptBuilder::commandStart(const QString &identifier, int lineNumber)
 {
-    Q_UNUSED(lineNumber);
+    Q_UNUSED(lineNumber)
     if (identifier == QLatin1String("else") ||
             identifier == QLatin1String("break") ||
             identifier == QLatin1String("require") ||
@@ -85,7 +85,7 @@ void XMLPrintingScriptBuilder::commandStart(const QString &identifier, int lineN
 
 void XMLPrintingScriptBuilder::commandEnd(int lineNumber)
 {
-    Q_UNUSED(lineNumber);
+    Q_UNUSED(lineNumber)
     mStream->writeEndElement();
 }
 
@@ -112,13 +112,13 @@ void XMLPrintingScriptBuilder::testListEnd()
 
 void XMLPrintingScriptBuilder::blockStart(int lineNumber)
 {
-    Q_UNUSED(lineNumber);
+    Q_UNUSED(lineNumber)
     mStream->writeStartElement(QStringLiteral("block"));
 }
 
 void XMLPrintingScriptBuilder::blockEnd(int lineNumber)
 {
-    Q_UNUSED(lineNumber);
+    Q_UNUSED(lineNumber)
     mStream->writeEndElement();
 }
 

@@ -63,8 +63,8 @@ void RenameScriptJob::start()
 
 void RenameScriptJob::slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool isActive)
 {
-    Q_UNUSED(job);
-    Q_UNUSED(isActive);
+    Q_UNUSED(job)
+    Q_UNUSED(isActive)
     if (!success) {
         Q_EMIT finished(d->mOldUrl, d->mNewUrl, i18n("An error occurred during loading the sieve script."), false);
         deleteLater();
@@ -80,7 +80,7 @@ void RenameScriptJob::slotGetResult(KManageSieve::SieveJob *job, bool success, c
 
 void RenameScriptJob::slotPutScript(KManageSieve::SieveJob *job, bool success)
 {
-    Q_UNUSED(job);
+    Q_UNUSED(job)
     if (!success) {
         Q_EMIT finished(d->mOldUrl, d->mNewUrl, i18n("An error occurred during saving the sieve script."), false);
         deleteLater();
@@ -92,7 +92,7 @@ void RenameScriptJob::slotPutScript(KManageSieve::SieveJob *job, bool success)
 
 void RenameScriptJob::slotDeleteResult(KManageSieve::SieveJob *job, bool success)
 {
-    Q_UNUSED(job);
+    Q_UNUSED(job)
     Q_EMIT finished(d->mOldUrl, d->mNewUrl, success ? QString() : i18n("An error occurred during deleting the sieve script."), success);
     deleteLater();
 }

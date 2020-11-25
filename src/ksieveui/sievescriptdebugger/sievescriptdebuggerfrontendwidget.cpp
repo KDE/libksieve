@@ -127,7 +127,7 @@ QList<int> SieveScriptDebuggerFrontEndWidget::splitterSizes() const
 
 void SieveScriptDebuggerFrontEndWidget::slotEmailChanged(const QString &text)
 {
-    Q_UNUSED(text);
+    Q_UNUSED(text)
     updateDebugButton();
 }
 

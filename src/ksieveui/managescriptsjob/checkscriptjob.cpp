@@ -77,7 +77,7 @@ void CheckScriptJob::slotPutCheckSyntaxResult(KManageSieve::SieveJob *job, bool 
 
 void CheckScriptJob::slotRestoreFile(KManageSieve::SieveJob *job, bool success)
 {
-    Q_UNUSED(job);
+    Q_UNUSED(job)
     if (!success) {
         qCWarning(LIBKSIEVE_LOG) << "Script can't be restored" << d->mUrl;
     }

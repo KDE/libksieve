@@ -19,7 +19,7 @@ KSieveUi::Legacy::VacationDataExtractor::~VacationDataExtractor()
 
 void KSieveUi::Legacy::VacationDataExtractor::commandStart(const QString &identifier, int lineNumber)
 {
-    Q_UNUSED(lineNumber);
+    Q_UNUSED(lineNumber)
     qCDebug(LIBKSIEVE_LOG) << "( \"" << identifier << "\" )";
     if (identifier != QLatin1String("vacation")) {
         return;
@@ -30,7 +30,7 @@ void KSieveUi::Legacy::VacationDataExtractor::commandStart(const QString &identi
 
 void KSieveUi::Legacy::VacationDataExtractor::commandEnd(int lineNumber)
 {
-    Q_UNUSED(lineNumber);
+    Q_UNUSED(lineNumber)
     qCDebug(LIBKSIEVE_LOG);
     if (mContext != None && mContext != VacationEnd) {
         mContext = VacationEnd;

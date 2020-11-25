@@ -115,6 +115,6 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
 
 QWebEngineView *SieveEditorWebEngineView::createWindow(QWebEnginePage::WebWindowType type)
 {
-    Q_UNUSED(type);
+    Q_UNUSED(type)
     return this;
 }

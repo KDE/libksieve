@@ -223,7 +223,7 @@ void SieveIncludeWidget::slotHelp()
 
 void SieveIncludeWidget::generatedScript(QString &script, QStringList &requireModules, bool inForEveryPartLoop)
 {
-    Q_UNUSED(inForEveryPartLoop);
+    Q_UNUSED(inForEveryPartLoop)
     QString result;
     QStringList lst;
     mIncludeLister->generatedScript(result, lst);

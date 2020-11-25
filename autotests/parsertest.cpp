@@ -422,7 +422,7 @@ public:
 
     void commandStart(const QString &identifier, int lineNumber) override
     {
-        Q_UNUSED(lineNumber);
+        Q_UNUSED(lineNumber)
         write("<command>");
         ++indent;
         write("identifier", identifier);
@@ -430,7 +430,7 @@ public:
 
     void commandEnd(int lineNumber) override
     {
-        Q_UNUSED(lineNumber);
+        Q_UNUSED(lineNumber)
         --indent;
         write("</command>");
     }
@@ -462,14 +462,14 @@ public:
 
     void blockStart(int lineNumber) override
     {
-        Q_UNUSED(lineNumber);
+        Q_UNUSED(lineNumber)
         write("<block>");
         ++indent;
     }
 
     void blockEnd(int lineNumber) override
     {
-        Q_UNUSED(lineNumber);
+        Q_UNUSED(lineNumber)
         --indent;
         write("</block>");
     }
@@ -589,7 +589,7 @@ public:
 
     void commandStart(const QString &identifier, int lineNumber) override
     {
-        Q_UNUSED(lineNumber);
+        Q_UNUSED(lineNumber)
         checkIs(CommandStart);
         checkEquals(identifier);
         ++mNextResponse;
@@ -597,7 +597,7 @@ public:
 
     void commandEnd(int lineNumber) override
     {
-        Q_UNUSED(lineNumber);
+        Q_UNUSED(lineNumber)
         checkIs(CommandEnd);
         ++mNextResponse;
     }
@@ -629,14 +629,14 @@ public:
 
     void blockStart(int lineNumber) override
     {
-        Q_UNUSED(lineNumber);
+        Q_UNUSED(lineNumber)
         checkIs(BlockStart);
         ++mNextResponse;
     }
 
     void blockEnd(int lineNumber) override
     {
-        Q_UNUSED(lineNumber);
+        Q_UNUSED(lineNumber)
         checkIs(BlockEnd);
         ++mNextResponse;
     }
