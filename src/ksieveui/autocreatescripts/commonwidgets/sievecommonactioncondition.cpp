@@ -10,7 +10,6 @@
 
 #include <QUrl>
 #include <QWidget>
-#include <QXmlStreamReader>
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 
 using namespace KSieveUi;

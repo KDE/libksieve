@@ -6,7 +6,6 @@
 #include "multilineedit.h"
 #include <KLocalizedString>
 #include <QStyleOptionFrame>
-#include <QApplication>
 
 using namespace KSieveUi;
 

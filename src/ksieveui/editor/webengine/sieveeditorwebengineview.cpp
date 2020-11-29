@@ -14,7 +14,6 @@
 #include <QWebEngineDownloadItem>
 #include <QWebEngineProfile>
 #include <QWebEngineSettings>
-#include <QtWebEngineWidgets>
 using namespace KSieveUi;
 
 SieveEditorWebEngineView::SieveEditorWebEngineView(QWidget *parent)

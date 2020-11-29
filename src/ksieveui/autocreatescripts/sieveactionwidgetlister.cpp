@@ -16,6 +16,7 @@
 #include <QPushButton>
 #include <KLocalizedString>
 #include <QIcon>
+#include <QUrl>
 
 #include <QComboBox>
 #include <QGridLayout>

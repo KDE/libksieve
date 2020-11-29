@@ -7,9 +7,9 @@
 
 #include "sieveinfodialog.h"
 #include "sieveinfowidget.h"
-#include <QHBoxLayout>
 #include <KLocalizedString>
 #include <QDialogButtonBox>
+#include <QVBoxLayout>
 #include <KConfigGroup>
 #include <KSharedConfig>
 

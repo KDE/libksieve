@@ -9,7 +9,6 @@
 
 #include <QIcon>
 #include <KLocalizedString>
-#include <KLineEdit>
 #include <KColorScheme>
 
 #include <QHBoxLayout>

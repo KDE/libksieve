@@ -22,7 +22,6 @@
 #include <kmanagesieve/sievejob.h>
 #include "libksieve_debug.h"
 
-#include <QApplication>
 #include <QTreeWidget>
 #include <QVBoxLayout>
 

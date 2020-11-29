@@ -38,7 +38,6 @@
 #include <QAction>
 #include <QPointer>
 #include <QStandardPaths>
-#include <QDir>
 #include <QTemporaryFile>
 
 using namespace KSieveUi;

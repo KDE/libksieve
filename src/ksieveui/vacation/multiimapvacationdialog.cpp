@@ -15,7 +15,6 @@
 #include <QTabWidget>
 
 #include <QTabBar>
-#include <QApplication>
 #include <QStackedWidget>
 #include <QVBoxLayout>
 #include <QLabel>

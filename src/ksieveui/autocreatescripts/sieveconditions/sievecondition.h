@@ -8,7 +8,6 @@
 #define SIEVECONDITION_H
 
 #include <QObject>
-#include <QUrl>
 #include "autocreatescripts/commonwidgets/sievecommonactioncondition.h"
 class QXmlStreamReader;
 namespace KSieveUi {

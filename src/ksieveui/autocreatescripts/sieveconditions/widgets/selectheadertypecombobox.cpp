@@ -18,8 +18,6 @@
 #include <KSharedConfig>
 #include <QDialogButtonBox>
 #include <KConfigGroup>
-#include <QEvent>
-#include <QKeyEvent>
 
 using namespace KSieveUi;
 

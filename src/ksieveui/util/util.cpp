@@ -17,7 +17,6 @@
 
 #include <kmime/kmime_message.h>
 #include <MailTransport/Transport>
-#include <QUrlQuery>
 
 using namespace KSieveUi;
 
