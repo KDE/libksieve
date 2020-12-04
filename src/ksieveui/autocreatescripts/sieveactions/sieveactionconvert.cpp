@@ -9,7 +9,7 @@
 #include "autocreatescripts/commonwidgets/selectmimetypecombobox.h"
 
 #include <KLocalizedString>
-
+#include <QUrl>
 #include <QLabel>
 #include "libksieve_debug.h"
 #include <QXmlStreamReader>

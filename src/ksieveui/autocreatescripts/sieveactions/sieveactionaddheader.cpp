@@ -15,6 +15,7 @@
 #include <QXmlStreamReader>
 #include "libksieve_debug.h"
 #include <QGridLayout>
+#include <QUrl>
 
 using namespace KSieveUi;
 
