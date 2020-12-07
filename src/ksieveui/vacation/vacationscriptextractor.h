@@ -74,7 +74,7 @@ public:
         assert(sb4);
     }
 
-    ~MultiScriptBuilder()
+    ~MultiScriptBuilder() override
     {
     }
 

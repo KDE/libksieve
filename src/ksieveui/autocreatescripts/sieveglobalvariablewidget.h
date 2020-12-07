@@ -94,7 +94,7 @@ class SieveGlobalVariableWidget : public SieveWidgetPageAbstract
     Q_OBJECT
 public:
     explicit SieveGlobalVariableWidget(QWidget *parent = nullptr);
-    ~SieveGlobalVariableWidget();
+    ~SieveGlobalVariableWidget() override;
 
     void generatedScript(QString &script, QStringList &requireModules, bool inForEveryPartLoop) override;
 

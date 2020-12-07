@@ -102,7 +102,7 @@ class SieveIncludeWidget : public SieveWidgetPageAbstract
     Q_OBJECT
 public:
     explicit SieveIncludeWidget(QWidget *parent = nullptr);
-    ~SieveIncludeWidget();
+    ~SieveIncludeWidget() override;
 
     void generatedScript(QString &script, QStringList &requireModules, bool inForEveryPartLoop) override;
 

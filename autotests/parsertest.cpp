@@ -400,7 +400,7 @@ public:
         ++indent;
     }
 
-    virtual ~PrintingScriptBuilder()
+    ~PrintingScriptBuilder() override
     {
     }
 

@@ -24,7 +24,7 @@ public:
     };
 
     explicit SieveWidgetPageAbstract(QWidget *parent = nullptr);
-    ~SieveWidgetPageAbstract();
+    ~SieveWidgetPageAbstract() override;
 
     virtual void generatedScript(QString &script, QStringList &required, bool inForEveryPartLoop) = 0;
 

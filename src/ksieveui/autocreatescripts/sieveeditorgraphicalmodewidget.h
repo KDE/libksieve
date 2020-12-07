@@ -22,7 +22,7 @@ class KSIEVEUI_TESTS_EXPORT SieveEditorGraphicalModeWidget : public SieveEditorG
     Q_OBJECT
 public:
     explicit SieveEditorGraphicalModeWidget(QWidget *parent = nullptr);
-    ~SieveEditorGraphicalModeWidget();
+    ~SieveEditorGraphicalModeWidget() override;
 
     Q_REQUIRED_RESULT QString script(QStringList &required) const override;
 
