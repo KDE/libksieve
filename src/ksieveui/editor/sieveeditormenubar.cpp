@@ -51,19 +51,19 @@ void SieveEditorMenuBar::initActions()
 {
     mGoToLine = new QAction(i18n("Go to Line"), this);
     mGoToLine->setIcon(QIcon::fromTheme(QStringLiteral("go-jump")));
-    mGoToLine->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_G));
+    mGoToLine->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_G));
     connect(mGoToLine, &QAction::triggered, this, &SieveEditorMenuBar::gotoLine);
 
     mCommentCodeAction = new QAction(i18n("Comment"), this);
-    mCommentCodeAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_D));
+    mCommentCodeAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_D));
     connect(mCommentCodeAction, &QAction::triggered, this, &SieveEditorMenuBar::comment);
 
     mUncommentCodeAction = new QAction(i18n("Uncomment"), this);
-    mUncommentCodeAction->setShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_D));
+    mUncommentCodeAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT + Qt::Key_D));
     connect(mUncommentCodeAction, &QAction::triggered, this, &SieveEditorMenuBar::uncomment);
 
     mDebugSieveAction = new QAction(i18n("Debug Sieve Script..."), this);
-    mDebugSieveAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_D));
+    mDebugSieveAction->setShortcut(QKeySequence(Qt::ALT | Qt::Key_D));
     connect(mDebugSieveAction, &QAction::triggered, this, &SieveEditorMenuBar::debugSieveScript);
 
     mFindAction = KStandardAction::find(this, &SieveEditorMenuBar::find, this);

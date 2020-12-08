@@ -73,11 +73,11 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     connect(mTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::say);
 
     auto *shortcut = new QShortcut(this);
-    shortcut->setKey(Qt::Key_F + Qt::CTRL);
+    shortcut->setKey(Qt::Key_F | Qt::CTRL);
     connect(shortcut, &QShortcut::activated, mTextEditWidget, &SieveTextEditWidget::slotFind);
 
     shortcut = new QShortcut(this);
-    shortcut->setKey(Qt::Key_R + Qt::CTRL);
+    shortcut->setKey(Qt::Key_R | Qt::CTRL);
     connect(shortcut, &QShortcut::activated, mTextEditWidget, &SieveTextEditWidget::slotReplace);
 
     w->setLayout(vbox);
