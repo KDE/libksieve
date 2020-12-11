@@ -16,7 +16,7 @@
 #include <QUrl>
 #include <KSyntaxHighlighting/Repository>
 
-class QStringList;
+#include <QStringList>
 
 namespace KManageSieve {
 class SieveJob;

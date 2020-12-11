@@ -13,7 +13,7 @@
 #include <memory>
 #include <QUrl>
 class QString;
-class QStringList;
+#include <QStringList>
 
 namespace KSieveUi {
 class AbstractAkonadiImapSettingInterface;
