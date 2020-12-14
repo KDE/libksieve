@@ -240,6 +240,10 @@ kconfig_add_kcfg_files(ksieveui_LIB_SRCS settings/sieve-vacation.kcfgc settings/
 
 add_library(KF5KSieveUi ${ksieveui_LIB_SRCS})
 generate_export_header(KF5KSieveUi BASE_NAME ksieveui)
+if (COMPILE_WITH_CMAKE_SUPPORT)
+    set_target_properties(KF5KSieveUi PROPERTIES UNITY_BUILD ON)
+endif()
+
 add_library(KF5::KSieveUi ALIAS KF5KSieveUi)
 
 target_link_libraries(KF5KSieveUi

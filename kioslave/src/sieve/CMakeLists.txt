@@ -16,6 +16,9 @@ endif()
 
 target_link_libraries(kio_sieve KF5::KIOCore KF5::I18n Qt5::Network KF5::WidgetsAddons Sasl2::Sasl2 ${extra_LIBS})
 set_target_properties(kio_sieve PROPERTIES OUTPUT_NAME "sieve")
+if (COMPILE_WITH_CMAKE_SUPPORT)
+    set_target_properties(kio_sieve PROPERTIES UNITY_BUILD ON)
+endif()
 
 install(TARGETS kio_sieve  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/kio/)
 

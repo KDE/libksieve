@@ -12,7 +12,7 @@
 
 #include <qglobal.h>
 
-static inline bool is8Bit(signed char ch)
+static inline bool isChar8Bit(signed char ch)
 {
     return ch < 0;
 }
@@ -76,7 +76,7 @@ bool KSieve::isValidUtf8(const char *s, unsigned int len)
 {
     for (unsigned int i = 0; i < len; ++i) {
         const unsigned char ch = s[i];
-        if (!is8Bit(ch)) {
+        if (!isChar8Bit(ch)) {
             continue;
         }
         if (isUtf8TupelIndicator(ch)) {

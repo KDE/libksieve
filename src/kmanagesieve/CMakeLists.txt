@@ -13,6 +13,10 @@ ecm_qt_declare_logging_category(kmanagesieve_LIB_SRCS HEADER kmanagersieve_debug
 
 add_library(KF5KManageSieve ${kmanagesieve_LIB_SRCS})
 generate_export_header(KF5KManageSieve BASE_NAME kmanagesieve)
+if (COMPILE_WITH_CMAKE_SUPPORT)
+    set_target_properties(KF5KManageSieve PROPERTIES UNITY_BUILD ON)
+endif()
+
 add_library(KF5::KManageSieve ALIAS KF5KManageSieve)
 
 if (WIN32)
