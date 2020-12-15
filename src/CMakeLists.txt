@@ -28,7 +28,7 @@ set(ksieve_LIB_SRCS
 )
 
 add_library(KF5KSieve ${ksieve_LIB_SRCS})
-if (COMPILE_WITH_CMAKE_SUPPORT)
+if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5KSieve PROPERTIES UNITY_BUILD ON)
 endif()
 generate_export_header(KF5KSieve BASE_NAME ksieve)

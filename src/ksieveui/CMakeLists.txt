@@ -240,7 +240,7 @@ kconfig_add_kcfg_files(ksieveui_LIB_SRCS settings/sieve-vacation.kcfgc settings/
 
 add_library(KF5KSieveUi ${ksieveui_LIB_SRCS})
 generate_export_header(KF5KSieveUi BASE_NAME ksieveui)
-if (COMPILE_WITH_CMAKE_SUPPORT)
+if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5KSieveUi PROPERTIES UNITY_BUILD ON)
 endif()
 
