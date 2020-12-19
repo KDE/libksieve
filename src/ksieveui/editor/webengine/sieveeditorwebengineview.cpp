@@ -49,12 +49,8 @@ void SieveEditorWebEngineView::downloadRequested(QWebEngineDownloadItem *downloa
     const QString filename = QFileDialog::getSaveFileName(this, i18n("Save Web Page"));
     if (!filename.isEmpty()) {
         download->setSavePageFormat(QWebEngineDownloadItem::SingleHtmlSaveFormat);
-#if QTWEBENGINEWIDGETS_VERSION >= QT_VERSION_CHECK(5, 14, 0)
         download->setDownloadDirectory(QFileInfo(filename).path());
         download->setDownloadFileName(QFileInfo(filename).fileName());
-#else
-        download->setPath(filename);
-#endif
         download->accept();
     } else {
         download->cancel();
