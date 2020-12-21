@@ -19,7 +19,7 @@ using namespace KSieveUi;
 SieveScriptDebuggerWidget::SieveScriptDebuggerWidget(QWidget *parent)
     : QWidget(parent)
 {
-    auto *mainLayout = new QHBoxLayout(this);
+    auto mainLayout = new QHBoxLayout(this);
     mainLayout->setContentsMargins({});
     mStackedWidget = new QStackedWidget(this);
     mStackedWidget->setObjectName(QStringLiteral("stackedwidget"));

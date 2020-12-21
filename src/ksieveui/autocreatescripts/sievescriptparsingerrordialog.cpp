@@ -21,13 +21,13 @@ SieveScriptParsingErrorDialog::SieveScriptParsingErrorDialog(QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(i18nc("@title:window", "Sieve Parsing Error"));
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
 
     mTextEdit = new KPIMTextEdit::RichTextEditorWidget(this);
     mTextEdit->setReadOnly(true);
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    auto *user1Button = new QPushButton(this);
+    auto user1Button = new QPushButton(this);
     buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &SieveScriptParsingErrorDialog::reject);
     user1Button->setText(i18n("Save As..."));

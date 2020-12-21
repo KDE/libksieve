@@ -24,13 +24,13 @@ SieveActionEReject::SieveActionEReject(SieveEditorGraphicalModeWidget *sieveGrap
 QWidget *SieveActionEReject::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    auto *lay = new QHBoxLayout;
+    auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
     QLabel *lab = new QLabel(i18n("text:"));
     lay->addWidget(lab);
 
-    auto *edit = new MultiLineEdit;
+    auto edit = new MultiLineEdit;
     connect(edit, &MultiLineEdit::textChanged, this, &SieveActionEReject::valueChanged);
     edit->setObjectName(QStringLiteral("rejectmessage"));
     lay->addWidget(edit);
@@ -43,7 +43,7 @@ void SieveActionEReject::setParamWidgetValue(QXmlStreamReader &element, QWidget 
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("str")) {
             const QString tagValue = element.readElementText();
-            auto *edit = w->findChild<MultiLineEdit *>(QStringLiteral("rejectmessage"));
+            auto edit = w->findChild<MultiLineEdit *>(QStringLiteral("rejectmessage"));
             edit->setPlainText(tagValue);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();

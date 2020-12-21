@@ -16,7 +16,7 @@ SieveInfoWidget::SieveInfoWidget(QWidget *parent)
     : QWidget(parent)
     , mInfo(new QTextEdit(this))
 {
-    auto *lay = new QHBoxLayout(this);
+    auto lay = new QHBoxLayout(this);
     lay->setContentsMargins({});
     mInfo->setReadOnly(true);
     mInfo->setAcceptRichText(true);

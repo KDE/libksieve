@@ -25,7 +25,7 @@ SieveScriptPage::SieveScriptPage(SieveEditorGraphicalModeWidget *sieveEditorGrap
     : QWidget(parent)
     , mSieveGraphicalModeWidget(sieveEditorGraphicalWidget)
 {
-    auto *topLayout = new QVBoxLayout(this);
+    auto topLayout = new QVBoxLayout(this);
     topLayout->setContentsMargins({});
     mTabWidget = new SieveScriptTabWidget(this);
     connect(mTabWidget, &SieveScriptTabWidget::tabCloseRequested, this, &SieveScriptPage::slotCloseTab);
@@ -74,7 +74,7 @@ SieveScriptBlockWidget *SieveScriptPage::addScriptBlock(KSieveUi::SieveWidgetPag
 
 SieveScriptBlockWidget *SieveScriptPage::createScriptBlock(KSieveUi::SieveWidgetPageAbstract::PageType type)
 {
-    auto *blockWidget = new SieveScriptBlockWidget(mSieveGraphicalModeWidget);
+    auto blockWidget = new SieveScriptBlockWidget(mSieveGraphicalModeWidget);
     connect(blockWidget, &SieveScriptBlockWidget::addNewBlock, this, &SieveScriptPage::slotAddNewBlock);
     connect(blockWidget, &SieveScriptBlockWidget::valueChanged, this, &SieveScriptPage::valueChanged);
     blockWidget->setPageType(type);
@@ -137,7 +137,7 @@ void SieveScriptPage::generatedScript(QString &script, QStringList &required)
     }
     const int numberOfTab(mTabWidget->count());
     for (int i = 0; i < numberOfTab; ++i) {
-        auto *page = static_cast<SieveWidgetPageAbstract *>(mTabWidget->widget(i));
+        auto page = static_cast<SieveWidgetPageAbstract *>(mTabWidget->widget(i));
         if (page->pageType() != KSieveUi::SieveScriptBlockWidget::ForEveryPart) {
             page->generatedScript(script, required, inForEveryPartLoop);
         }

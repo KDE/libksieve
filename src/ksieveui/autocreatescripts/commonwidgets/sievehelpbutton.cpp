@@ -27,7 +27,7 @@ SieveHelpButton::~SieveHelpButton()
 bool SieveHelpButton::event(QEvent *event)
 {
     if (event->type() == QEvent::WhatsThisClicked) {
-        auto *clicked = static_cast<QWhatsThisClickedEvent *>(event);
+        auto clicked = static_cast<QWhatsThisClickedEvent *>(event);
         KIO::OpenUrlJob *job = new KIO::OpenUrlJob(QUrl(clicked->href()));
         job->setUiDelegate(new KIO::JobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, this));
         job->start();

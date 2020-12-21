@@ -21,10 +21,10 @@ SieveActionAbstractFlags::SieveActionAbstractFlags(SieveEditorGraphicalModeWidge
 QWidget *SieveActionAbstractFlags::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    auto *lay = new QHBoxLayout;
+    auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
-    auto *flagsWidget = new SelectFlagsWidget;
+    auto flagsWidget = new SelectFlagsWidget;
     connect(flagsWidget, &SelectFlagsWidget::valueChanged, this, &SieveActionAbstractFlags::valueChanged);
     flagsWidget->setObjectName(QStringLiteral("flagswidget"));
     lay->addWidget(flagsWidget);
@@ -36,10 +36,10 @@ void SieveActionAbstractFlags::setParamWidgetValue(QXmlStreamReader &element, QW
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("list")) {
-            auto *flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
+            auto flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
             flagsWidget->setFlags(AutoCreateScriptUtil::listValue(element));
         } else if (tagName == QLatin1String("str")) {
-            auto *flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
+            auto flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
             flagsWidget->setFlags(QStringList() << element.readElementText());
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();

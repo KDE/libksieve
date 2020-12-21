@@ -23,11 +23,11 @@ void VacationMailActionWidgetTest::shouldHaveDefaultValue()
 {
     KSieveUi::VacationMailActionWidget w;
 
-    auto *mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    auto *mStackedWidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedWidget"));
+    auto mStackedWidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedWidget"));
     QVERIFY(mStackedWidget);
 
     QCOMPARE(mStackedWidget->count(), 3);
@@ -58,7 +58,7 @@ void VacationMailActionWidgetTest::shouldHaveDefaultValue()
 void VacationMailActionWidgetTest::shouldSwitchComponents()
 {
     KSieveUi::VacationMailActionWidget w;
-    auto *mStackedWidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedWidget"));
+    auto mStackedWidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedWidget"));
 
     w.mailActionChanged(KSieveUi::VacationUtils::Keep);
     QCOMPARE(mStackedWidget->currentIndex(), 0);

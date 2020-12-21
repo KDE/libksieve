@@ -24,18 +24,18 @@ SieveConditionSize::SieveConditionSize(SieveEditorGraphicalModeWidget *sieveGrap
 QWidget *SieveConditionSize::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    auto *lay = new QHBoxLayout;
+    auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    auto *combo = new QComboBox;
+    auto combo = new QComboBox;
     combo->setObjectName(QStringLiteral("combosize"));
     combo->addItem(i18n("under"), QStringLiteral(":under"));
     combo->addItem(i18n("over"), QStringLiteral(":over"));
     lay->addWidget(combo);
     connect(combo, QOverload<int>::of(&QComboBox::activated), this, &SieveConditionSize::valueChanged);
 
-    auto *sizeWidget = new SelectSizeWidget;
+    auto sizeWidget = new SelectSizeWidget;
     connect(sizeWidget, &SelectSizeWidget::valueChanged, this, &SieveConditionSize::valueChanged);
     sizeWidget->setObjectName(QStringLiteral("sizewidget"));
     lay->addWidget(sizeWidget);
@@ -63,7 +63,7 @@ void SieveConditionSize::setParamWidgetValue(QXmlStreamReader &element, QWidget 
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("tag")) {
             const QString tagValue = element.readElementText();
-            auto *combo = w->findChild<QComboBox *>(QStringLiteral("combosize"));
+            auto combo = w->findChild<QComboBox *>(QStringLiteral("combosize"));
             const int index = combo->findData(AutoCreateScriptUtil::tagValue(tagValue));
             if (index != -1) {
                 combo->setCurrentIndex(index);
@@ -74,7 +74,7 @@ void SieveConditionSize::setParamWidgetValue(QXmlStreamReader &element, QWidget 
                 numIdentifier = element.attributes().value(QLatin1String("quantifier")).toString();
             }
             const qlonglong tagValue = element.readElementText().toLongLong();
-            auto *sizeWidget = w->findChild<SelectSizeWidget *>(QStringLiteral("sizewidget"));
+            auto sizeWidget = w->findChild<SelectSizeWidget *>(QStringLiteral("sizewidget"));
             sizeWidget->setCode(tagValue, numIdentifier, name(), error);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();

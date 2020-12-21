@@ -20,7 +20,7 @@ SieveScriptDescriptionDialog::SieveScriptDescriptionDialog(QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(i18nc("@title:window", "Description"));
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
 
     mEdit = new KPIMTextEdit::PlainTextEditorWidget(this);
 

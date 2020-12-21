@@ -27,14 +27,14 @@ SieveActionReplace::SieveActionReplace(SieveEditorGraphicalModeWidget *sieveGrap
 QWidget *SieveActionReplace::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    auto *grid = new QGridLayout;
+    auto grid = new QGridLayout;
     grid->setContentsMargins({});
     w->setLayout(grid);
 
     QLabel *lab = new QLabel(i18n("Subject:"));
     grid->addWidget(lab, 0, 0);
 
-    auto *subject = new QLineEdit;
+    auto subject = new QLineEdit;
     subject->setObjectName(QStringLiteral("subject"));
     connect(subject, &QLineEdit::textChanged, this, &SieveActionReplace::valueChanged);
     grid->addWidget(subject, 0, 1);
@@ -50,7 +50,7 @@ QWidget *SieveActionReplace::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("text:"));
     grid->addWidget(lab, 2, 0);
 
-    auto *text = new MultiLineEdit;
+    auto text = new MultiLineEdit;
     text->setObjectName(QStringLiteral("text"));
     connect(text, &MultiLineEdit::textChanged, this, &SieveActionReplace::valueChanged);
     grid->addWidget(text, 2, 1);
@@ -63,20 +63,20 @@ void SieveActionReplace::setParamWidgetValue(QXmlStreamReader &element, QWidget 
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("str")) {
-            auto *edit = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
+            auto edit = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
             edit->setPlainText(element.readElementText());
         } else if (tagName == QLatin1String("tag")) {
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1String("subject")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
-                    auto *subject = w->findChild<QLineEdit *>(QStringLiteral("subject"));
+                    auto subject = w->findChild<QLineEdit *>(QStringLiteral("subject"));
                     subject->setText(strValue);
                 }
             } else if (tagValue == QLatin1String("from")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
-                    auto *headers = w->findChild<KSieveUi::AbstractSelectEmailLineEdit *>(QStringLiteral("from"));
+                    auto headers = w->findChild<KSieveUi::AbstractSelectEmailLineEdit *>(QStringLiteral("from"));
                     headers->setText(strValue);
                 }
             } else {

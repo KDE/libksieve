@@ -27,11 +27,11 @@ SieveActionAddHeader::SieveActionAddHeader(SieveEditorGraphicalModeWidget *sieve
 QWidget *SieveActionAddHeader::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    auto *grid = new QGridLayout;
+    auto grid = new QGridLayout;
     grid->setContentsMargins({});
     w->setLayout(grid);
 
-    auto *combo = new SelectAddHeaderPositionCombobox;
+    auto combo = new SelectAddHeaderPositionCombobox;
     combo->setObjectName(QStringLiteral("selectposition"));
     connect(combo, &SelectAddHeaderPositionCombobox::valueChanged, this, &SieveActionAddHeader::valueChanged);
     grid->addWidget(combo, 0, 0);
@@ -39,7 +39,7 @@ QWidget *SieveActionAddHeader::createParamWidget(QWidget *parent) const
     QLabel *lab = new QLabel(i18n("header:"));
     grid->addWidget(lab, 0, 1);
 
-    auto *headerEdit = new QLineEdit;
+    auto headerEdit = new QLineEdit;
     connect(headerEdit, &QLineEdit::textChanged, this, &SieveActionAddHeader::valueChanged);
     headerEdit->setObjectName(QStringLiteral("headeredit"));
     grid->addWidget(headerEdit, 0, 2);
@@ -47,7 +47,7 @@ QWidget *SieveActionAddHeader::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("value:"));
     grid->addWidget(lab, 1, 1);
 
-    auto *valueEdit = new QLineEdit;
+    auto valueEdit = new QLineEdit;
     connect(valueEdit, &QLineEdit::textChanged, this, &SieveActionAddHeader::valueChanged);
     valueEdit->setObjectName(QStringLiteral("valueedit"));
     grid->addWidget(valueEdit, 1, 2);
@@ -61,14 +61,14 @@ void SieveActionAddHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("tag")) {
-            auto *combo = w->findChild<SelectAddHeaderPositionCombobox *>(QStringLiteral("selectposition"));
+            auto combo = w->findChild<SelectAddHeaderPositionCombobox *>(QStringLiteral("selectposition"));
             combo->setCode(AutoCreateScriptUtil::tagValue(element.readElementText()), name(), error);
         } else if (tagName == QLatin1String("str")) {
             if (index == 0) {
-                auto *edit = w->findChild<QLineEdit *>(QStringLiteral("headeredit"));
+                auto edit = w->findChild<QLineEdit *>(QStringLiteral("headeredit"));
                 edit->setText(element.readElementText());
             } else if (index == 1) {
-                auto *value = w->findChild<QLineEdit *>(QStringLiteral("valueedit"));
+                auto value = w->findChild<QLineEdit *>(QStringLiteral("valueedit"));
                 value->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
             } else {
                 tooManyArguments(tagName, index, 2, error);

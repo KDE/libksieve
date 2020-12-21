@@ -38,7 +38,7 @@ void SieveScriptTabWidget::slotTabContextMenuRequest(const QPoint &pos)
         return;
     }
 
-    auto *page = qobject_cast<SieveWidgetPageAbstract *>(w);
+    auto page = qobject_cast<SieveWidgetPageAbstract *>(w);
     if (!page) {
         return;
     }

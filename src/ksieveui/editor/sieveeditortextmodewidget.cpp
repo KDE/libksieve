@@ -49,7 +49,7 @@ using namespace KSieveUi;
 SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     : SieveEditorAbstractWidget(parent)
 {
-    auto *lay = new QVBoxLayout(this);
+    auto lay = new QVBoxLayout(this);
     lay->setContentsMargins({});
 
     mMainSplitter = new QSplitter;
@@ -62,11 +62,11 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     mSieveTemplateWidget = new SieveTemplateWidget(i18n("Sieve Template:"));
 
     QWidget *textEditWidget = new QWidget;
-    auto *textEditLayout = new QVBoxLayout;
+    auto textEditLayout = new QVBoxLayout;
     textEditLayout->setContentsMargins({});
 
     mEditorWidget = new QWidget;
-    auto *editorWidgetLayout = new QVBoxLayout;
+    auto editorWidgetLayout = new QVBoxLayout;
     editorWidgetLayout->setContentsMargins({});
     mEditorWidget->setLayout(editorWidgetLayout);
 
@@ -347,7 +347,7 @@ void SieveEditorTextModeWidget::copy()
     QWidget *w = mTabWidget->currentWidget();
     if (w == mEditorWidget) {
         mTextEdit->copy();
-    } else if (auto *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
+    } else if (auto page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
         page->copy();
     }
 }
@@ -357,7 +357,7 @@ void SieveEditorTextModeWidget::selectAll()
     QWidget *w = mTabWidget->currentWidget();
     if (w == mEditorWidget) {
         mTextEdit->selectAll();
-    } else if (auto *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
+    } else if (auto page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
         page->selectAll();
     }
 }
@@ -385,7 +385,7 @@ bool SieveEditorTextModeWidget::hasSelection() const
     QWidget *w = mTabWidget->currentWidget();
     if (w == mEditorWidget) {
         return mTextEdit->textCursor().hasSelection();
-    } else if (auto *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
+    } else if (auto page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
         return page->hasSelection();
     }
     return false;
@@ -396,7 +396,7 @@ void SieveEditorTextModeWidget::zoomIn()
     QWidget *w = mTabWidget->currentWidget();
     if (w == mEditorWidget) {
         mTextEdit->zoomIn();
-    } else if (auto *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
+    } else if (auto page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
         page->zoomIn();
     }
 }
@@ -406,7 +406,7 @@ void SieveEditorTextModeWidget::zoomOut()
     QWidget *w = mTabWidget->currentWidget();
     if (w == mEditorWidget) {
         mTextEdit->zoomOut();
-    } else if (auto *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
+    } else if (auto page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
         page->zoomOut();
     }
 }
@@ -459,7 +459,7 @@ void SieveEditorTextModeWidget::zoomReset()
     QWidget *w = mTabWidget->currentWidget();
     if (w == mEditorWidget) {
         mTextEdit->slotZoomReset();
-    } else if (auto *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
+    } else if (auto page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
         page->resetZoom();
     }
 }
@@ -475,7 +475,7 @@ void SieveEditorTextModeWidget::slotFind()
         mFindBar->showFind();
         mSliderContainer->slideIn();
         mFindBar->focusAndSetCursor();
-    } else if (auto *page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
+    } else if (auto page = qobject_cast<SieveEditorHelpHtmlWidget *>(w)) {
         page->find();
     }
 }

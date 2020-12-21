@@ -24,11 +24,11 @@ SieveConditionIhave::SieveConditionIhave(SieveEditorGraphicalModeWidget *sieveGr
 QWidget *SieveConditionIhave::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    auto *lay = new QHBoxLayout;
+    auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    auto *edit = new QLineEdit;
+    auto edit = new QLineEdit;
     connect(edit, &QLineEdit::textChanged, this, &SieveConditionIhave::valueChanged);
     edit->setPlaceholderText(i18n("Use \",\" to separate capabilities"));
     edit->setClearButtonEnabled(true);
@@ -73,7 +73,7 @@ void SieveConditionIhave::setParamWidgetValue(QXmlStreamReader &element, QWidget
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("str")) {
             const QString tagValue = element.readElementText();
-            auto *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
+            auto edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
             edit->setText(tagValue);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();

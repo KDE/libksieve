@@ -31,7 +31,7 @@ SelectDateWidget::~SelectDateWidget()
 
 void SelectDateWidget::initialize()
 {
-    auto *lay = new QHBoxLayout(this);
+    auto lay = new QHBoxLayout(this);
     lay->setContentsMargins({});
 
     mDateType = new QComboBox;

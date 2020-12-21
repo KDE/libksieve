@@ -12,7 +12,7 @@ SievePreviewGeneratedCodeWidget::SievePreviewGeneratedCodeWidget(QWidget *parent
     : QWidget(parent)
     , mTextEdit(new QTextEdit(this))
 {
-    auto *mainLayout = new QHBoxLayout(this);
+    auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
     mainLayout->setContentsMargins({});
 

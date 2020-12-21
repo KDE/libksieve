@@ -26,19 +26,19 @@ SieveConditionHeader::SieveConditionHeader(SieveEditorGraphicalModeWidget *sieve
 QWidget *SieveConditionHeader::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    auto *lay = new QHBoxLayout;
+    auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    auto *matchTypeCombo = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
+    auto matchTypeCombo = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
     matchTypeCombo->setObjectName(QStringLiteral("matchtypecombobox"));
     connect(matchTypeCombo, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionHeader::valueChanged);
     lay->addWidget(matchTypeCombo);
 
-    auto *grid = new QGridLayout;
+    auto grid = new QGridLayout;
     lay->addLayout(grid);
 
-    auto *headerType = new SelectHeaderTypeComboBox;
+    auto headerType = new SelectHeaderTypeComboBox;
     headerType->setObjectName(QStringLiteral("headertype"));
     connect(headerType, &SelectHeaderTypeComboBox::valueChanged, this, &SieveConditionHeader::valueChanged);
     grid->addWidget(headerType, 0, 0, 1, 2);
@@ -88,15 +88,15 @@ void SieveConditionHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
             if (tagValue == QLatin1String("comparator")) {
                 qCWarning(LIBKSIEVE_LOG) << " comparator support not implemented yet!";
             } else {
-                auto *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
+                auto selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
                 selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(tagValue, notCondition), name(), error);
             }
         } else if (tagName == QLatin1String("str")) {
             if (index == 0) {
-                auto *headerType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertype"));
+                auto headerType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertype"));
                 headerType->setCode(element.readElementText());
             } else if (index == 1) {
-                auto *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+                auto value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
                 QString st = AutoCreateScriptUtil::quoteStr(element.readElementText(), true);
                 value->setCode(st);
             } else {
@@ -107,10 +107,10 @@ void SieveConditionHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
         } else if (tagName == QLatin1String("list")) {
             //Header list
             if (index == 0) {
-                auto *headerType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertype"));
+                auto headerType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertype"));
                 headerType->setCode(AutoCreateScriptUtil::listValueToStr(element));
             } else if (index == 1) {
-                auto *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+                auto value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
                 value->setCode(AutoCreateScriptUtil::listValueToStr(element));
             } else {
                 tooManyArguments(tagName, index, 2, error);

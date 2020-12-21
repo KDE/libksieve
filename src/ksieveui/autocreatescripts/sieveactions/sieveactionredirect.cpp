@@ -28,7 +28,7 @@ SieveActionRedirect::SieveActionRedirect(SieveEditorGraphicalModeWidget *sieveGr
 QWidget *SieveActionRedirect::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    auto *lay = new QHBoxLayout;
+    auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
     if (mHasCopySupport) {
@@ -56,21 +56,21 @@ void SieveActionRedirect::setParamWidgetValue(QXmlStreamReader &element, QWidget
     while (element.readNextStartElement()) {
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("str")) {
-            auto *edit = w->findChild<AbstractSelectEmailLineEdit *>(QStringLiteral("RedirectEdit"));
+            auto edit = w->findChild<AbstractSelectEmailLineEdit *>(QStringLiteral("RedirectEdit"));
             const QString tagValue = element.readElementText();
             edit->setText(AutoCreateScriptUtil::quoteStr(tagValue));
         } else if (tagName == QLatin1String("tag")) {
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1String("copy")) {
                 if (mHasCopySupport) {
-                    auto *copy = w->findChild<QCheckBox *>(QStringLiteral("copy"));
+                    auto copy = w->findChild<QCheckBox *>(QStringLiteral("copy"));
                     copy->setChecked(true);
                 } else {
                     serverDoesNotSupportFeatures(QStringLiteral("copy"), error);
                 }
             } else if (tagValue == QLatin1String("list")) {
                 if (mHasListSupport) {
-                    auto *list = w->findChild<QCheckBox *>(QStringLiteral("list"));
+                    auto list = w->findChild<QCheckBox *>(QStringLiteral("list"));
                     list->setChecked(true);
                 } else {
                     serverDoesNotSupportFeatures(QStringLiteral("list"), error);

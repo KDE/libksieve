@@ -36,7 +36,7 @@ QMimeData *SieveTemplateListWidget::mimeData(const QList<QListWidgetItem *> item
     if (items.isEmpty()) {
         return nullptr;
     }
-    auto *mimeData = new QMimeData();
+    auto mimeData = new QMimeData();
     QListWidgetItem *item = items.first();
     QString templateStr = item->data(TemplateListWidget::Text).toString();
     if (!mCapabilities.contains(QLatin1String("imap4flags")) && templateStr.contains(QLatin1String("imap4flags"))) {
@@ -90,7 +90,7 @@ bool SieveTemplateListWidget::modifyTemplate(QString &templateName, QString &tem
 SieveTemplateWidget::SieveTemplateWidget(const QString &title, QWidget *parent)
     : QWidget(parent)
 {
-    auto *lay = new QVBoxLayout(this);
+    auto lay = new QVBoxLayout(this);
     lay->setContentsMargins({});
     QLabel *lab = new QLabel(title, this);
     lay->addWidget(lab);

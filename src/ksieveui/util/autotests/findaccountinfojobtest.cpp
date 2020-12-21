@@ -40,7 +40,7 @@ FindAccountInfoJobTest::FindAccountInfoJobTest(QObject *parent)
 
 void FindAccountInfoJobTest::shouldReturnEmptyInfo()
 {
-    auto *job = new KSieveUi::FindAccountInfoJob;
+    auto job = new KSieveUi::FindAccountInfoJob;
     job->setIdentifier(QStringLiteral("dummy"));
     job->setProvider({});
     QSignalSpy spy(job, &KSieveUi::FindAccountInfoJob::findAccountInfoFinished);
@@ -537,7 +537,7 @@ void FindAccountInfoJobTest::shouldAssignValue()
     std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> interface(new AkonadiImapSettingInterfaceTest(data));
     std::unique_ptr<DataImapPasswordProvider> provider(new DataImapPasswordProvider(&data));
 
-    auto *job = new KSieveUi::FindAccountInfoJob;
+    auto job = new KSieveUi::FindAccountInfoJob;
     job->setIdentifier(QStringLiteral("foo"));
     job->setProvider(provider.get());
     job->setCustomImapSettingsInterface(interface.get());

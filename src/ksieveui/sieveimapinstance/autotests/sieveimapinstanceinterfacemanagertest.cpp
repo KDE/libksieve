@@ -27,7 +27,7 @@ void SieveImapInstanceInterfaceManagerTest::shouldHaveDefaultValue()
 void SieveImapInstanceInterfaceManagerTest::shouldAssignSieveImapInstanceInterface()
 {
     KSieveUi::SieveImapInstanceInterfaceManager manager;
-    auto *instance = new KSieveUi::SieveImapInstanceInterface();
+    auto instance = new KSieveUi::SieveImapInstanceInterface();
     manager.setSieveImapInstanceInterface(instance);
     QVERIFY(manager.sieveImapInstanceInterface());
     QCOMPARE(manager.sieveImapInstanceInterface(), instance);

@@ -27,11 +27,11 @@ SieveActionDeleteHeader::SieveActionDeleteHeader(SieveEditorGraphicalModeWidget 
 QWidget *SieveActionDeleteHeader::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    auto *grid = new QGridLayout;
+    auto grid = new QGridLayout;
     grid->setContentsMargins({});
     w->setLayout(grid);
 
-    auto *matchType = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
+    auto matchType = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
     matchType->setObjectName(QStringLiteral("matchtype"));
     connect(matchType, &SelectMatchTypeComboBox::valueChanged, this, &SieveActionDeleteHeader::valueChanged);
     grid->addWidget(matchType, 0, 0);
@@ -39,7 +39,7 @@ QWidget *SieveActionDeleteHeader::createParamWidget(QWidget *parent) const
     QLabel *lab = new QLabel(i18n("header:"));
     grid->addWidget(lab, 0, 1);
 
-    auto *headerEdit = new QLineEdit;
+    auto headerEdit = new QLineEdit;
     headerEdit->setObjectName(QStringLiteral("headeredit"));
     connect(headerEdit, &QLineEdit::textChanged, this, &SieveActionDeleteHeader::valueChanged);
     grid->addWidget(headerEdit, 0, 2);
@@ -47,7 +47,7 @@ QWidget *SieveActionDeleteHeader::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("value:"));
     grid->addWidget(lab, 1, 1);
 
-    auto *valueEdit = new QLineEdit;
+    auto valueEdit = new QLineEdit;
     valueEdit->setObjectName(QStringLiteral("valueedit"));
     connect(valueEdit, &QLineEdit::textChanged, this, &SieveActionDeleteHeader::valueChanged);
     grid->addWidget(valueEdit, 1, 2);
@@ -69,14 +69,14 @@ void SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, 
             element.skipCurrentElement();
             return;
         } else if (tagName == QLatin1String("tag")) {
-            auto *combo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+            auto combo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
             combo->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), isNegative), name(), error);
         } else if (tagName == QLatin1String("str")) {
             if (index == 0) {
-                auto *edit = w->findChild<QLineEdit *>(QStringLiteral("headeredit"));
+                auto edit = w->findChild<QLineEdit *>(QStringLiteral("headeredit"));
                 edit->setText(element.readElementText());
             } else if (index == 1) {
-                auto *value = w->findChild<QLineEdit *>(QStringLiteral("valueedit"));
+                auto value = w->findChild<QLineEdit *>(QStringLiteral("valueedit"));
                 value->setText(element.readElementText());
             } else {
                 tooManyArguments(tagName, index, 2, error);

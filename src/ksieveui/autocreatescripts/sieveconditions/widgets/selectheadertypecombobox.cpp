@@ -30,7 +30,7 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
 
     QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
@@ -38,7 +38,7 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     connect(buttonBox, &QDialogButtonBox::rejected, this, &SelectHeadersDialog::reject);
     okButton->setFocus();
 
-    auto *lay = new QVBoxLayout;
+    auto lay = new QVBoxLayout;
     lay->setObjectName(QStringLiteral("widgetlayout"));
     lay->setContentsMargins({});
     mainLayout->addLayout(lay);
@@ -50,7 +50,7 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     lab->setObjectName(QStringLiteral("label"));
     lay->addWidget(lab);
 
-    auto *hbox = new QHBoxLayout;
+    auto hbox = new QHBoxLayout;
 
     mNewHeader = new QLineEdit(this);
     new KPIM::LineEditCatchReturnKey(mNewHeader, this);
@@ -141,7 +141,7 @@ void SelectHeadersWidget::addNewHeader(const QString &header)
         }
     }
 
-    auto *item = new QListWidgetItem(header, this);
+    auto item = new QListWidgetItem(header, this);
     item->setData(HeaderId, header);
     item->setCheckState(Qt::Checked);
     scrollToItem(item);
@@ -153,7 +153,7 @@ void SelectHeadersWidget::setListHeaders(const QMap<QString, QString> &lst, cons
     while (i.hasNext()) {
         i.next();
         if (!i.value().isEmpty()) {
-            auto *item = new QListWidgetItem(i.value(), this);
+            auto item = new QListWidgetItem(i.value(), this);
             item->setData(HeaderId, i.key());
             if (selectedHeaders.contains(i.key())) {
                 item->setCheckState(Qt::Checked);
@@ -164,7 +164,7 @@ void SelectHeadersWidget::setListHeaders(const QMap<QString, QString> &lst, cons
     }
     for (const QString &header : selectedHeaders) {
         if (!lst.contains(header)) {
-            auto *item = new QListWidgetItem(header, this);
+            auto item = new QListWidgetItem(header, this);
             item->setData(HeaderId, header);
             item->setCheckState(Qt::Checked);
         }

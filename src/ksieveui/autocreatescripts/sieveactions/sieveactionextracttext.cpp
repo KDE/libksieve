@@ -24,14 +24,14 @@ SieveActionExtractText::SieveActionExtractText(SieveEditorGraphicalModeWidget *s
 QWidget *SieveActionExtractText::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    auto *grid = new QGridLayout;
+    auto grid = new QGridLayout;
     grid->setContentsMargins({});
     w->setLayout(grid);
 
     QLabel *lab = new QLabel(i18n("Number of characters:"));
     grid->addWidget(lab, 0, 0);
 
-    auto *nbCharacters = new QSpinBox;
+    auto nbCharacters = new QSpinBox;
     nbCharacters->setMinimum(1);
     nbCharacters->setMaximum(99999);
     nbCharacters->setObjectName(QStringLiteral("numberOfCharacters"));
@@ -41,7 +41,7 @@ QWidget *SieveActionExtractText::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("Stored in variable name:"));
     grid->addWidget(lab, 1, 0);
 
-    auto *variableName = new QLineEdit;
+    auto variableName = new QLineEdit;
     connect(variableName, &QLineEdit::textChanged, this, &SieveActionExtractText::valueChanged);
     variableName->setObjectName(QStringLiteral("variablename"));
     grid->addWidget(variableName, 1, 1);
@@ -58,10 +58,10 @@ void SieveActionExtractText::setParamWidgetValue(QXmlStreamReader &element, QWid
             element.skipCurrentElement();
             //TODO ?
         } else if (tagName == QLatin1String("num")) {
-            auto *numberOfCharacters = w->findChild<QSpinBox *>(QStringLiteral("numberOfCharacters"));
+            auto numberOfCharacters = w->findChild<QSpinBox *>(QStringLiteral("numberOfCharacters"));
             numberOfCharacters->setValue(element.readElementText().toInt());
         } else if (tagName == QLatin1String("str")) {
-            auto *variableName = w->findChild<QLineEdit *>(QStringLiteral("variablename"));
+            auto variableName = w->findChild<QLineEdit *>(QStringLiteral("variablename"));
             variableName->setText(element.readElementText());
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();

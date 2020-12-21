@@ -22,7 +22,7 @@ SieveInfoDialog::SieveInfoDialog(QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(i18nc("@title:window", "Sieve Server Support"));
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
     mSieveInfoWidget = new SieveInfoWidget(this);

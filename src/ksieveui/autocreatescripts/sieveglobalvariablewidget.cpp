@@ -151,7 +151,7 @@ void SieveGlobalVariableActionWidget::updateAddRemoveButton(bool addButtonEnable
 SieveGlobalVariableWidget::SieveGlobalVariableWidget(QWidget *parent)
     : SieveWidgetPageAbstract(parent)
 {
-    auto *lay = new QVBoxLayout(this);
+    auto lay = new QVBoxLayout(this);
     mHelpButton = new SieveHelpButton(this);
     lay->addWidget(mHelpButton);
     connect(mHelpButton, &SieveHelpButton::clicked, this, &SieveGlobalVariableWidget::slotHelp);
@@ -239,7 +239,7 @@ void SieveGlobalVariableLister::updateAddRemoveButton()
     QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
     for (; wIt != wEnd; ++wIt) {
-        auto *w = qobject_cast<SieveGlobalVariableActionWidget *>(*wIt);
+        auto w = qobject_cast<SieveGlobalVariableActionWidget *>(*wIt);
         w->updateAddRemoveButton(addButtonEnabled, removeButtonEnabled);
     }
 }
@@ -251,7 +251,7 @@ void SieveGlobalVariableLister::generatedScript(QString &script, QStringList &re
     QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
     for (; wIt != wEnd; ++wIt) {
-        auto *w = qobject_cast<SieveGlobalVariableActionWidget *>(*wIt);
+        auto w = qobject_cast<SieveGlobalVariableActionWidget *>(*wIt);
         w->generatedScript(script);
     }
 }
@@ -266,7 +266,7 @@ void SieveGlobalVariableLister::reconnectWidget(SieveGlobalVariableActionWidget 
 void SieveGlobalVariableLister::clearWidget(QWidget *aWidget)
 {
     if (aWidget) {
-        auto *widget = static_cast<SieveGlobalVariableActionWidget *>(aWidget);
+        auto widget = static_cast<SieveGlobalVariableActionWidget *>(aWidget);
         widget->clear();
     }
     Q_EMIT valueChanged();
@@ -274,7 +274,7 @@ void SieveGlobalVariableLister::clearWidget(QWidget *aWidget)
 
 QWidget *SieveGlobalVariableLister::createWidget(QWidget *parent)
 {
-    auto *w = new SieveGlobalVariableActionWidget(parent);
+    auto w = new SieveGlobalVariableActionWidget(parent);
     reconnectWidget(w);
     return w;
 }
@@ -314,7 +314,7 @@ SieveGlobalVariableActionWidget::VariableElement SieveGlobalVariableLister::load
     const QList<QWidget *> lstWidget = widgets();
     bool globalVariableFound = false;
     for (QWidget *widget : lstWidget) {
-        auto *w = static_cast<SieveGlobalVariableActionWidget *>(widget);
+        auto w = static_cast<SieveGlobalVariableActionWidget *>(widget);
         if (w->variableName() == variableName) {
             w->setVariableValue(variableValue);
             globalVariableFound = true;

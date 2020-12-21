@@ -44,7 +44,7 @@ SessionThread::SessionThread(Session *session, QObject *parent)
         saslInitialized = true;
     }
 
-    auto *thread = new QThread();
+    auto thread = new QThread();
     moveToThread(thread);
     thread->start();
     QMetaObject::invokeMethod(this, "doInit");

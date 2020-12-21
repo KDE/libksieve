@@ -64,7 +64,7 @@ int main(int argc, char **argv)
     dlg.setResultParsing(psb.result());
     dlg.show();
 
-    auto *dialog = new KSieveUi::AutoCreateScriptDialog;
+    auto dialog = new KSieveUi::AutoCreateScriptDialog;
     const QStringList capabilities = KSieveUi::Test::fullCapabilitiesList();
     //Add all capabilities for testing
     dialog->setSieveCapabilities(capabilities);

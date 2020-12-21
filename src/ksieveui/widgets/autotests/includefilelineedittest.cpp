@@ -17,7 +17,7 @@ IncludeFileLineEditTest::IncludeFileLineEditTest(QObject *parent)
 void IncludeFileLineEditTest::shouldHaveDefaultValue()
 {
     KSieveUi::IncludeFileLineEdit w;
-    auto *completer = w.findChild<QCompleter *>(QStringLiteral("completer"));
+    auto completer = w.findChild<QCompleter *>(QStringLiteral("completer"));
     QVERIFY(completer);
     QVERIFY(w.completer());
     QCOMPARE(completer->caseSensitivity(), Qt::CaseInsensitive);

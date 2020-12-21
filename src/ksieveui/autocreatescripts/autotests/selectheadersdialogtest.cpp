@@ -29,25 +29,25 @@ void SelectHeadersDialogTest::shouldHaveDefaultValue()
     KSieveUi::SelectHeadersDialog dlg;
     QVERIFY(!dlg.windowTitle().isEmpty());
 
-    auto *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
+    auto buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
     QVERIFY(buttonBox);
 
-    auto *lay = dlg.findChild<QVBoxLayout *>(QStringLiteral("widgetlayout"));
+    auto lay = dlg.findChild<QVBoxLayout *>(QStringLiteral("widgetlayout"));
     QVERIFY(lay);
     QCOMPARE(lay->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    auto *mListWidget = dlg.findChild<KSieveUi::SelectHeadersWidget *>(QStringLiteral("listwidget"));
+    auto mListWidget = dlg.findChild<KSieveUi::SelectHeadersWidget *>(QStringLiteral("listwidget"));
     QVERIFY(mListWidget);
 
-    auto *lab = dlg.findChild<QLabel *>(QStringLiteral("label"));
+    auto lab = dlg.findChild<QLabel *>(QStringLiteral("label"));
     QVERIFY(lab);
     QVERIFY(!lab->text().isEmpty());
 
-    auto *mNewHeader = dlg.findChild<QLineEdit *>(QStringLiteral("newheader"));
+    auto mNewHeader = dlg.findChild<QLineEdit *>(QStringLiteral("newheader"));
     QVERIFY(mNewHeader);
     QVERIFY(mNewHeader->isClearButtonEnabled());
 
-    auto *mAddNewHeader = dlg.findChild<QPushButton *>(QStringLiteral("addnewheader"));
+    auto mAddNewHeader = dlg.findChild<QPushButton *>(QStringLiteral("addnewheader"));
     QVERIFY(mAddNewHeader);
     QVERIFY(!mAddNewHeader->isEnabled());
 }

@@ -26,7 +26,7 @@ SelectBodyTypeWidget::~SelectBodyTypeWidget()
 
 void SelectBodyTypeWidget::initialize()
 {
-    auto *lay = new QHBoxLayout(this);
+    auto lay = new QHBoxLayout(this);
     lay->setContentsMargins({});
 
     mBodyCombobox = new QComboBox(this);

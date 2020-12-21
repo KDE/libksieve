@@ -19,8 +19,8 @@ using namespace KSieveUi;
 SieveEditorWebEngineView::SieveEditorWebEngineView(QWidget *parent)
     : QWebEngineView(parent)
 {
-    auto *profile = new QWebEngineProfile(this);
-    auto *page = new QWebEnginePage(profile, this);
+    auto profile = new QWebEngineProfile(this);
+    auto page = new QWebEnginePage(profile, this);
     page->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, false);
     page->settings()->setAttribute(QWebEngineSettings::PluginsEnabled, false);
     page->settings()->setAttribute(QWebEngineSettings::AutoLoadImages, true);
@@ -70,7 +70,7 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
     }
 
     if (!menu.actions().isEmpty()) {
-        auto *separator = new QAction(&menu);
+        auto separator = new QAction(&menu);
         separator->setSeparator(true);
         menu.addAction(separator);
     }
@@ -81,7 +81,7 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
     }
 
     if (!menu.actions().isEmpty()) {
-        auto *separator = new QAction(&menu);
+        auto separator = new QAction(&menu);
         separator->setSeparator(true);
         menu.addAction(separator);
     }
@@ -100,7 +100,7 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
     }
     act = pageAction(QWebEnginePage::SavePage);
     if (act->isEnabled()) {
-        auto *separator = new QAction(&menu);
+        auto separator = new QAction(&menu);
         separator->setSeparator(true);
         menu.addAction(separator);
         menu.addAction(act);

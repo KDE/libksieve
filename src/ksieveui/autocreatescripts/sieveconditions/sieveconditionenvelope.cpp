@@ -28,25 +28,25 @@ SieveConditionEnvelope::SieveConditionEnvelope(SieveEditorGraphicalModeWidget *s
 QWidget *SieveConditionEnvelope::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    auto *lay = new QHBoxLayout;
+    auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    auto *selectAddressPart = new SelectAddressPartComboBox(mSieveGraphicalModeWidget);
+    auto selectAddressPart = new SelectAddressPartComboBox(mSieveGraphicalModeWidget);
     connect(selectAddressPart, &SelectAddressPartComboBox::valueChanged, this, &SieveConditionEnvelope::valueChanged);
     selectAddressPart->setObjectName(QStringLiteral("addresspartcombobox"));
     lay->addWidget(selectAddressPart);
 
-    auto *grid = new QGridLayout;
+    auto grid = new QGridLayout;
     grid->setContentsMargins({});
     lay->addLayout(grid);
 
-    auto *selectMatchCombobox = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
+    auto selectMatchCombobox = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
     selectMatchCombobox->setObjectName(QStringLiteral("matchtypecombobox"));
     connect(selectMatchCombobox, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionEnvelope::valueChanged);
     grid->addWidget(selectMatchCombobox, 0, 0);
 
-    auto *selectHeaderType = new SelectHeaderTypeComboBox(true);
+    auto selectHeaderType = new SelectHeaderTypeComboBox(true);
     selectHeaderType->setObjectName(QStringLiteral("headertypecombobox"));
     connect(selectHeaderType, &SelectHeaderTypeComboBox::valueChanged, this, &SieveConditionEnvelope::valueChanged);
     grid->addWidget(selectHeaderType, 0, 1);
@@ -117,15 +117,15 @@ void SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWid
             const QString tagValue = element.readElementText();
             if (indexTag == 0) {
                 QString err;
-                auto *selectAddressPart = w->findChild<SelectAddressPartComboBox *>(QStringLiteral("addresspartcombobox"));
+                auto selectAddressPart = w->findChild<SelectAddressPartComboBox *>(QStringLiteral("addresspartcombobox"));
                 selectAddressPart->setCode(AutoCreateScriptUtil::tagValue(tagValue), name(), err);
                 //all: is default sometime we don't add it.
                 if (!err.isEmpty()) {
-                    auto *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
+                    auto selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
                     selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(tagValue, notCondition), name(), error);
                 }
             } else if (indexTag == 1) {
-                auto *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
+                auto selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
                 selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(tagValue, notCondition), name(), error);
             } else {
                 tooManyArguments(tagName, indexTag, 2, error);
@@ -134,10 +134,10 @@ void SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWid
             ++indexTag;
         } else if (tagName == QLatin1String("str")) {
             if (indexStr == 0) {
-                auto *selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
+                auto selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
                 selectHeaderType->setCode(element.readElementText());
             } else if (indexStr == 1) {
-                auto *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
+                auto edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
                 edit->setCode(AutoCreateScriptUtil::quoteStr(element.readElementText()));
             } else {
                 tooManyArguments(tagName, indexStr, 2, error);
@@ -146,10 +146,10 @@ void SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWid
             ++indexStr;
         } else if (tagName == QLatin1String("list")) {
             if (indexStr == 0) {
-                auto *selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
+                auto selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
                 selectHeaderType->setCode(AutoCreateScriptUtil::listValueToStr(element));
             } else if (indexStr == 1) {
-                auto *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
+                auto edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
                 edit->setCode(AutoCreateScriptUtil::listValueToStr(element));
             }
             ++indexStr;

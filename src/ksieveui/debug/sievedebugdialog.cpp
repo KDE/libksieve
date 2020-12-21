@@ -33,7 +33,7 @@ SieveDebugDialog::SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, 
     , mPasswordProvider(passwordProvider)
 {
     setWindowTitle(i18nc("@title:window", "Sieve Diagnostics"));
-    auto *mainLayout = new QVBoxLayout(this);
+    auto mainLayout = new QVBoxLayout(this);
 
     // Collect all accounts
     mResourceIdentifier = KSieveUi::Util::sieveImapResourceNames();
@@ -45,7 +45,7 @@ SieveDebugDialog::SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, 
         qCWarning(LIBKSIEVE_LOG) << "Invalid definition name";
     }
 
-    auto *hl = new KSyntaxHighlighting::SyntaxHighlighter(mEdit->editor()->document());
+    auto hl = new KSyntaxHighlighting::SyntaxHighlighter(mEdit->editor()->document());
     hl->setTheme((palette().color(QPalette::Base).lightness() < 128)
                  ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
                  : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
@@ -117,7 +117,7 @@ void SieveDebugDialog::slotDiagNextAccount()
     mEdit->editor()->appendPlainText(i18n("Collecting data for account '%1'...\n", ident));
     mEdit->editor()->appendPlainText(i18n("------------------------------------------------------------\n"));
 
-    auto *job = new FindAccountInfoJob(this);
+    auto job = new FindAccountInfoJob(this);
     connect(job, &FindAccountInfoJob::findAccountInfoFinished, this, &SieveDebugDialog::slotFindAccountInfoFinished);
     job->setIdentifier(ident);
     job->setProvider(mPasswordProvider);
@@ -163,7 +163,7 @@ void SieveDebugDialog::slotDiagNextScript()
 
     mEdit->editor()->appendPlainText(i18n("Contents of script '%1':\n", scriptFile));
 
-    auto *job = new FindAccountInfoJob(this);
+    auto job = new FindAccountInfoJob(this);
     connect(job, &FindAccountInfoJob::findAccountInfoFinished, this, &SieveDebugDialog::slotFindAccountInfoForScriptFinished);
     job->setIdentifier(mResourceIdentifier.constFirst());
     job->setProvider(mPasswordProvider);

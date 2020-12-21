@@ -27,19 +27,19 @@ SieveScriptDebuggerDialogTest::~SieveScriptDebuggerDialogTest()
 void SieveScriptDebuggerDialogTest::shouldHaveDefaultValue()
 {
     KSieveUi::SieveScriptDebuggerDialog dlg;
-    auto *buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
+    auto buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
     QVERIFY(buttonBox);
 
-    auto *widget = dlg.findChild<KSieveUi::SieveScriptDebuggerWidget *>(QStringLiteral("sievescriptdebuggerwidget"));
+    auto widget = dlg.findChild<KSieveUi::SieveScriptDebuggerWidget *>(QStringLiteral("sievescriptdebuggerwidget"));
     QVERIFY(widget);
 
     QVERIFY(dlg.script().isEmpty());
 
-    auto *mOkButton = dlg.findChild<QPushButton *>(QStringLiteral("okbutton"));
+    auto mOkButton = dlg.findChild<QPushButton *>(QStringLiteral("okbutton"));
     QVERIFY(mOkButton);
     QVERIFY(!mOkButton->isEnabled());
 
-    auto *mDebugScriptButton = dlg.findChild<QPushButton *>(QStringLiteral("debug_button"));
+    auto mDebugScriptButton = dlg.findChild<QPushButton *>(QStringLiteral("debug_button"));
     QVERIFY(mDebugScriptButton);
     QVERIFY(!mDebugScriptButton->isEnabled());
 }
@@ -47,15 +47,15 @@ void SieveScriptDebuggerDialogTest::shouldHaveDefaultValue()
 void SieveScriptDebuggerDialogTest::shouldChangeDebugButtonEnabledState()
 {
     KSieveUi::SieveScriptDebuggerDialog dlg;
-    auto *widget = dlg.findChild<KSieveUi::SieveScriptDebuggerWidget *>(QStringLiteral("sievescriptdebuggerwidget"));
+    auto widget = dlg.findChild<KSieveUi::SieveScriptDebuggerWidget *>(QStringLiteral("sievescriptdebuggerwidget"));
 
-    auto *mSieveScriptFrontEnd = widget->findChild<KSieveUi::SieveScriptDebuggerFrontEndWidget *>(QStringLiteral("sievescriptfrontend"));
+    auto mSieveScriptFrontEnd = widget->findChild<KSieveUi::SieveScriptDebuggerFrontEndWidget *>(QStringLiteral("sievescriptfrontend"));
     QVERIFY(mSieveScriptFrontEnd);
 
-    auto *emailPath = mSieveScriptFrontEnd->findChild<KUrlRequester *>(QStringLiteral("emailpath"));
+    auto emailPath = mSieveScriptFrontEnd->findChild<KUrlRequester *>(QStringLiteral("emailpath"));
     QVERIFY(emailPath);
 
-    auto *mDebugScriptButton = dlg.findChild<QPushButton *>(QStringLiteral("debug_button"));
+    auto mDebugScriptButton = dlg.findChild<QPushButton *>(QStringLiteral("debug_button"));
     QVERIFY(mDebugScriptButton);
     QVERIFY(!mDebugScriptButton->isEnabled());
 

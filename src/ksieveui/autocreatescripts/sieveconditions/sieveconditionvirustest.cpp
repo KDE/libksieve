@@ -26,21 +26,21 @@ SieveConditionVirusTest::SieveConditionVirusTest(SieveEditorGraphicalModeWidget 
 QWidget *SieveConditionVirusTest::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    auto *lay = new QVBoxLayout;
+    auto lay = new QVBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    auto *relation = new SelectRelationalMatchType;
+    auto relation = new SelectRelationalMatchType;
     connect(relation, &SelectRelationalMatchType::valueChanged, this, &SieveConditionVirusTest::valueChanged);
     relation->setObjectName(QStringLiteral("relation"));
     lay->addWidget(relation);
 
-    auto *comparator = new SelectComparatorComboBox(mSieveGraphicalModeWidget);
+    auto comparator = new SelectComparatorComboBox(mSieveGraphicalModeWidget);
     connect(comparator, &SelectComparatorComboBox::valueChanged, this, &SieveConditionVirusTest::valueChanged);
     comparator->setObjectName(QStringLiteral("comparator"));
     lay->addWidget(comparator);
 
-    auto *spinbox = new QSpinBox;
+    auto spinbox = new QSpinBox;
     spinbox->setMaximum(5);
     spinbox->setMinimum(0);
     spinbox->setObjectName(QStringLiteral("value"));
@@ -101,14 +101,14 @@ void SieveConditionVirusTest::setParamWidgetValue(QXmlStreamReader &element, QWi
             if (tagValue == QLatin1String("count") || tagValue == QLatin1String("value")) {
                 if (element.readNextStartElement()) {
                     if (element.name() == QLatin1String("str")) {
-                        auto *relation = w->findChild<SelectRelationalMatchType *>(QStringLiteral("relation"));
+                        auto relation = w->findChild<SelectRelationalMatchType *>(QStringLiteral("relation"));
                         relation->setCode(AutoCreateScriptUtil::tagValue(tagValue), element.readElementText(), name(), error);
                     }
                 }
             } else if (tagValue == QLatin1String("comparator")) {
                 if (element.readNextStartElement()) {
                     if (element.name() == QLatin1String("str")) {
-                        auto *comparator = w->findChild<SelectComparatorComboBox *>(QStringLiteral("comparator"));
+                        auto comparator = w->findChild<SelectComparatorComboBox *>(QStringLiteral("comparator"));
                         comparator->setCode(element.readElementText(), name(), error);
                     }
                 }
@@ -117,7 +117,7 @@ void SieveConditionVirusTest::setParamWidgetValue(QXmlStreamReader &element, QWi
                 qCDebug(LIBKSIEVE_LOG) << " SieveConditionVirusTest::setParamWidgetValue unknown tagValue " << tagValue;
             }
         } else if (tagName == QLatin1String("str")) {
-            auto *spinbox = w->findChild<QSpinBox *>(QStringLiteral("value"));
+            auto spinbox = w->findChild<QSpinBox *>(QStringLiteral("value"));
             spinbox->setValue(element.readElementText().toInt());
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();

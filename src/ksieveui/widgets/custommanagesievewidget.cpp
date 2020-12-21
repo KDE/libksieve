@@ -89,7 +89,7 @@ void CustomManageSieveWidget::slotFindAccountInfoFinished(const KSieveUi::Util::
     QString serverName = sender()->property("serverName").toString();
     const QUrl u = info.sieveUrl;
     if (u.isEmpty()) {
-        auto *item = new QTreeWidgetItem(mLastSieveTreeWidgetItem);
+        auto item = new QTreeWidgetItem(mLastSieveTreeWidgetItem);
         item->setText(0, i18n("No Sieve URL configured"));
         item->setFlags(item->flags() & ~Qt::ItemIsEnabled);
         treeView()->expandItem(mLastSieveTreeWidgetItem);

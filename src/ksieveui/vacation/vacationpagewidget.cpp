@@ -26,14 +26,14 @@ using namespace KSieveUi;
 VacationPageWidget::VacationPageWidget(QWidget *parent)
     : QWidget(parent)
 {
-    auto *lay = new QVBoxLayout(this);
+    auto lay = new QVBoxLayout(this);
     lay->setContentsMargins({});
     mStackWidget = new QStackedWidget;
     lay->addWidget(mStackWidget);
 
     //Main Page
     QWidget *mainPage = new QWidget;
-    auto *vbox = new QVBoxLayout;
+    auto vbox = new QVBoxLayout;
     vbox->setContentsMargins({});
     mainPage->setLayout(vbox);
     mVacationWarningWidget = new VacationWarningWidget(this);
@@ -192,7 +192,7 @@ KSieveUi::VacationCreateScriptJob *VacationPageWidget::writeScript(bool &errorFo
             vacation.endTime = QTime();
         }
         const QString script = VacationUtils::composeScript(vacation);
-        auto *createJob = new KSieveUi::VacationCreateScriptJob;
+        auto createJob = new KSieveUi::VacationCreateScriptJob;
         createJob->setServerUrl(mUrl);
         createJob->setServerName(mServerName);
         createJob->setStatus(active, mWasActive);

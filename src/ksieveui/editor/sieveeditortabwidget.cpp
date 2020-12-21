@@ -112,13 +112,13 @@ void SieveEditorTabWidget::slotTabCloseRequested(int index)
 
 bool SieveEditorTabWidget::currentPageIsHtmlPage() const
 {
-    auto *page = qobject_cast<SieveEditorHelpHtmlWidget *>(currentWidget());
+    auto page = qobject_cast<SieveEditorHelpHtmlWidget *>(currentWidget());
     return page ? true : false;
 }
 
 QUrl SieveEditorTabWidget::currentHelpUrl() const
 {
-    auto *page = qobject_cast<SieveEditorHelpHtmlWidget *>(currentWidget());
+    auto page = qobject_cast<SieveEditorHelpHtmlWidget *>(currentWidget());
     if (page) {
         return page->currentUrl();
     }
@@ -127,7 +127,7 @@ QUrl SieveEditorTabWidget::currentHelpUrl() const
 
 QString SieveEditorTabWidget::currentHelpTitle() const
 {
-    auto *page = qobject_cast<SieveEditorHelpHtmlWidget *>(currentWidget());
+    auto page = qobject_cast<SieveEditorHelpHtmlWidget *>(currentWidget());
     if (page) {
         return page->title();
     }
@@ -137,13 +137,13 @@ QString SieveEditorTabWidget::currentHelpTitle() const
 void SieveEditorTabWidget::slotAddHelpPage(const QUrl &url)
 {
     for (int i = 0; i < count(); ++i) {
-        auto *page = qobject_cast<SieveEditorHelpHtmlWidget *>(widget(i));
+        auto page = qobject_cast<SieveEditorHelpHtmlWidget *>(widget(i));
         if (page && page->currentUrl() == url) {
             setCurrentIndex(i);
             return;
         }
     }
-    auto *htmlPage = new SieveEditorHelpHtmlWidget;
+    auto htmlPage = new SieveEditorHelpHtmlWidget;
     connect(htmlPage, &SieveEditorHelpHtmlWidget::titleChanged, this, &SieveEditorTabWidget::slotTitleChanged);
     connect(htmlPage, &SieveEditorHelpHtmlWidget::progressIndicatorPixmapChanged, this, &SieveEditorTabWidget::slotProgressIndicatorPixmapChanged);
     connect(htmlPage, &SieveEditorHelpHtmlWidget::loadFinished, this, &SieveEditorTabWidget::slotLoadFinished);

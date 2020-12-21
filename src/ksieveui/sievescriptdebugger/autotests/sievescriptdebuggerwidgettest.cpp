@@ -21,7 +21,7 @@ SieveScriptDebuggerWidgetTest::~SieveScriptDebuggerWidgetTest()
 void SieveScriptDebuggerWidgetTest::shouldHaveDefaultValue()
 {
     KSieveUi::SieveScriptDebuggerWidget w;
-    auto *stackedwidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedwidget"));
+    auto stackedwidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedwidget"));
     QVERIFY(stackedwidget);
 
     const int numberOfStackWidget(2);

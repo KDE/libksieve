@@ -26,7 +26,7 @@ using namespace KSieveUi;
 SieveEditorGraphicalModeWidget::SieveEditorGraphicalModeWidget(QWidget *parent)
     : SieveEditorGraphicalModeWidgetAbstract::SieveEditorGraphicalModeWidgetAbstract(parent)
 {
-    auto *vlay = new QVBoxLayout(this);
+    auto vlay = new QVBoxLayout(this);
     vlay->setContentsMargins({});
 
     mSplitter = new QSplitter;

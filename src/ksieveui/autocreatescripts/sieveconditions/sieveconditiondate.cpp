@@ -26,27 +26,27 @@ SieveConditionDate::SieveConditionDate(SieveEditorGraphicalModeWidget *sieveGrap
 QWidget *SieveConditionDate::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    auto *lay = new QHBoxLayout;
+    auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    auto *matchTypeCombo = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
+    auto matchTypeCombo = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
     matchTypeCombo->setObjectName(QStringLiteral("matchtype"));
     connect(matchTypeCombo, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionDate::valueChanged);
     lay->addWidget(matchTypeCombo);
 
-    auto *grid = new QGridLayout;
+    auto grid = new QGridLayout;
     grid->setContentsMargins({});
     lay->addLayout(grid);
     QLabel *lab = new QLabel(i18n("header:"));
     grid->addWidget(lab, 0, 0);
 
-    auto *header = new QLineEdit;
+    auto header = new QLineEdit;
     connect(header, &QLineEdit::textChanged, this, &SieveConditionDate::valueChanged);
     header->setObjectName(QStringLiteral("header"));
     grid->addWidget(header, 0, 1);
 
-    auto *dateWidget = new SelectDateWidget;
+    auto dateWidget = new SelectDateWidget;
     connect(dateWidget, &SelectDateWidget::valueChanged, this, &SieveConditionDate::valueChanged);
     dateWidget->setObjectName(QStringLiteral("datewidget"));
     grid->addWidget(dateWidget, 1, 0, 1, 2);
@@ -113,7 +113,7 @@ void SieveConditionDate::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             }
             ++index;
         } else if (tagName == QLatin1String("tag")) {
-            auto *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+            auto selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
             selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
@@ -129,9 +129,9 @@ void SieveConditionDate::setParamWidgetValue(QXmlStreamReader &element, QWidget 
         setComment(commentStr);
     }
 
-    auto *dateWidget = w->findChild<SelectDateWidget *>(QStringLiteral("datewidget"));
+    auto dateWidget = w->findChild<SelectDateWidget *>(QStringLiteral("datewidget"));
     dateWidget->setCode(type, value);
-    auto *header = w->findChild<QLineEdit *>(QStringLiteral("header"));
+    auto header = w->findChild<QLineEdit *>(QStringLiteral("header"));
     header->setText(headerStr);
 }
 

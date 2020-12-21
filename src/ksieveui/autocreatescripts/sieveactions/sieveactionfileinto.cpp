@@ -51,7 +51,7 @@ void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1String("copy")) {
                 if (mHasCopySupport) {
-                    auto *copy = w->findChild<QCheckBox *>(QStringLiteral("copy"));
+                    auto copy = w->findChild<QCheckBox *>(QStringLiteral("copy"));
                     copy->setChecked(true);
                 } else {
                     error += i18n("Action \"fileinto\" has \"copy\" argument but current server does not support it") + QLatin1Char('\n');
@@ -59,7 +59,7 @@ void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
                 }
             } else if (tagValue == QLatin1String("create")) {
                 if (mHasMailBoxSupport) {
-                    auto *create = w->findChild<QCheckBox *>(QStringLiteral("create"));
+                    auto create = w->findChild<QCheckBox *>(QStringLiteral("create"));
                     create->setChecked(true);
                 } else {
                     serverDoesNotSupportFeatures(QStringLiteral("create"), error);
@@ -71,7 +71,7 @@ void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
             }
         } else if (tagName == QLatin1String("str")) {
             const QString tagValue = element.readElementText();
-            auto *edit = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("fileintolineedit"));
+            auto edit = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("fileintolineedit"));
             edit->setText(AutoCreateScriptUtil::protectSlash(tagValue));
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
@@ -89,7 +89,7 @@ void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
 QWidget *SieveActionFileInto::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    auto *lay = new QHBoxLayout(w);
+    auto lay = new QHBoxLayout(w);
     lay->setContentsMargins({});
 
     if (mHasCopySupport) {

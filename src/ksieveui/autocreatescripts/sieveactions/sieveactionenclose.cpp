@@ -25,14 +25,14 @@ SieveActionEnclose::SieveActionEnclose(SieveEditorGraphicalModeWidget *sieveGrap
 QWidget *SieveActionEnclose::createParamWidget(QWidget *parent) const
 {
     QWidget *w = new QWidget(parent);
-    auto *grid = new QGridLayout;
+    auto grid = new QGridLayout;
     grid->setContentsMargins({});
     w->setLayout(grid);
 
     QLabel *lab = new QLabel(i18n("Subject:"));
     grid->addWidget(lab, 0, 0);
 
-    auto *subject = new QLineEdit;
+    auto subject = new QLineEdit;
     subject->setObjectName(QStringLiteral("subject"));
     connect(subject, &QLineEdit::textChanged, this, &SieveActionEnclose::valueChanged);
     grid->addWidget(subject, 0, 1);
@@ -40,7 +40,7 @@ QWidget *SieveActionEnclose::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("headers:"));
     grid->addWidget(lab, 1, 0);
 
-    auto *headers = new QLineEdit;
+    auto headers = new QLineEdit;
     headers->setObjectName(QStringLiteral("headers"));
     connect(headers, &QLineEdit::textChanged, this, &SieveActionEnclose::valueChanged);
     grid->addWidget(headers, 1, 1);
@@ -48,7 +48,7 @@ QWidget *SieveActionEnclose::createParamWidget(QWidget *parent) const
     lab = new QLabel(i18n("text:"));
     grid->addWidget(lab, 2, 0);
 
-    auto *text = new MultiLineEdit;
+    auto text = new MultiLineEdit;
     text->setObjectName(QStringLiteral("text"));
     connect(text, &MultiLineEdit::valueChanged, this, &SieveActionEnclose::valueChanged);
     grid->addWidget(text, 2, 1);
@@ -65,13 +65,13 @@ void SieveActionEnclose::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             if (tagValue == QLatin1String("headers")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
-                    auto *subject = w->findChild<QLineEdit *>(QStringLiteral("headers"));
+                    auto subject = w->findChild<QLineEdit *>(QStringLiteral("headers"));
                     subject->setText(strValue);
                 }
             } else if (tagValue == QLatin1String("subject")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
-                    auto *headers = w->findChild<QLineEdit *>(QStringLiteral("subject"));
+                    auto headers = w->findChild<QLineEdit *>(QStringLiteral("subject"));
                     headers->setText(strValue);
                 }
             } else {
@@ -79,7 +79,7 @@ void SieveActionEnclose::setParamWidgetValue(QXmlStreamReader &element, QWidget 
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionEnclose::setParamWidgetValue unknown tag value:" << tagValue;
             }
         } else if (tagName == QLatin1String("str")) {
-            auto *edit = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
+            auto edit = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
             edit->setPlainText(element.readElementText());
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();

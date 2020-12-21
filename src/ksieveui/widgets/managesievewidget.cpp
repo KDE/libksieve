@@ -55,7 +55,7 @@ ManageSieveWidget::ManageSieveWidget(QWidget *parent)
     : QWidget(parent)
     , d(new KSieveUi::ManageSieveWidgetPrivate)
 {
-    auto *lay = new QHBoxLayout(this);
+    auto lay = new QHBoxLayout(this);
     lay->setContentsMargins({});
 
     d->mTreeView = new ManageSieveTreeView(this);
@@ -263,7 +263,7 @@ void ManageSieveWidget::slotNewScript()
     const QStringList listscript = currentItem->data(0, SIEVE_SERVER_LIST_SCRIPT).toStringList();
 
     d->mBlockSignal = true;
-    auto *newItem = new QTreeWidgetItem(currentItem);
+    auto newItem = new QTreeWidgetItem(currentItem);
     newItem->setFlags(newItem->flags() & (Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsSelectable));
     newItem->setText(0, name);
     newItem->setCheckState(0, Qt::Unchecked);
@@ -344,7 +344,7 @@ void ManageSieveWidget::changeActiveScript(QTreeWidgetItem *item, bool activate)
                 activeScripts << j->text(0);
             }
         }
-        auto *job = new GenerateGlobalScriptJob(u);
+        auto job = new GenerateGlobalScriptJob(u);
         job->addUserActiveScripts(activeScripts);
         connect(job, &GenerateGlobalScriptJob::success, this, &ManageSieveWidget::slotRefresh);
         connect(job, &GenerateGlobalScriptJob::error, this, &ManageSieveWidget::slotGenerateGlobalScriptError);
@@ -432,7 +432,7 @@ void ManageSieveWidget::slotRenameScript()
     KManageSieve::SieveJob *job = KManageSieve::SieveJob::rename(u, newName);
     connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveWidget::slotRenameResult);
 #else
-    auto *job = new KSieveUi::RenameScriptJob(this);
+    auto job = new KSieveUi::RenameScriptJob(this);
     job->setOldUrl(u);
     job->setIsActive(itemIsActived(currentItem));
     job->setNewName(newName);
@@ -546,7 +546,7 @@ void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, c
     if (!success) {
         d->mBlockSignal = false;
         parent->setData(0, SIEVE_SERVER_ERROR, true);
-        auto *item = new QTreeWidgetItem(parent);
+        auto item = new QTreeWidgetItem(parent);
         item->setText(0, i18n("Failed to fetch the list of scripts"));
         item->setFlags(item->flags() & ~Qt::ItemIsEnabled);
         d->mTreeView->expandItem(parent);
@@ -559,7 +559,7 @@ void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, c
         if (Util::isKep14ProtectedName(script)) {
             continue;
         }
-        auto *item = new QTreeWidgetItem(parent);
+        auto item = new QTreeWidgetItem(parent);
         item->setFlags(item->flags() & (Qt::ItemIsUserCheckable | Qt::ItemIsEnabled | Qt::ItemIsSelectable));
 
         item->setText(0, script);
@@ -576,7 +576,7 @@ void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, c
         QUrl u = mUrls[parent];
         u = u.adjusted(QUrl::RemoveFilename);
         u.setPath(u.path() + QLatin1Char('/') + QStringLiteral("USER"));
-        auto *parseJob = new ParseUserScriptJob(u, this);
+        auto parseJob = new ParseUserScriptJob(u, this);
         parseJob->setAutoDelete(true);
         parseJob->setProperty("parentItem", QVariant::fromValue<QTreeWidgetItem *>(parent));
         connect(parseJob, &ParseUserScriptJob::finished, this, &ManageSieveWidget::setActiveScripts);

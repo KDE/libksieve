@@ -190,7 +190,7 @@ void SieveTextEdit::initCompleter()
 bool SieveTextEdit::event(QEvent *ev)
 {
     if (ev->type() == QEvent::ShortcutOverride) {
-        auto *e = static_cast<QKeyEvent *>(ev);
+        auto e = static_cast<QKeyEvent *>(ev);
         if (overrideShortcut(e)) {
             e->accept();
             return true;
@@ -289,7 +289,7 @@ void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
         const QString word = selectedWord(pos);
         const KSieveUi::SieveEditorUtil::HelpVariableName type = KSieveUi::SieveEditorUtil::strToVariableName(word);
         if (type != KSieveUi::SieveEditorUtil::UnknownHelp) {
-            auto *separator = new QAction(menu);
+            auto separator = new QAction(menu);
             separator->setSeparator(true);
             menu->insertAction(menu->actions().at(0), separator);
 
@@ -328,7 +328,7 @@ void SieveTextEdit::slotEditRule()
 
 void SieveTextEdit::slotHelp()
 {
-    auto *act = qobject_cast<QAction *>(sender());
+    auto act = qobject_cast<QAction *>(sender());
     if (act) {
         const QString word = act->data().toString();
         const KSieveUi::SieveEditorUtil::HelpVariableName type = KSieveUi::SieveEditorUtil::strToVariableName(word);

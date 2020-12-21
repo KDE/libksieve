@@ -37,7 +37,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
 {
     int row = -1;
 
-    auto *glay = new QGridLayout(this);
+    auto glay = new QGridLayout(this);
     glay->setContentsMargins({});
     glay->setColumnStretch(1, 1);
 
@@ -76,7 +76,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     glay->addWidget(mSubject, row, 1);
     ++row;
 
-    auto *timeLayout = new QHBoxLayout;
+    auto timeLayout = new QHBoxLayout;
     // Start date
     mStartDate = new KDateComboBox(this);
     mStartDate->setObjectName(QStringLiteral("mStartDate"));
@@ -184,7 +184,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     connect(mMailActionRecipient, &VacationMailActionWidget::wasChanged, this, &VacationEditWidget::setWasChanged);
     //Add setChanged here too
 
-    auto *hLayout = new QHBoxLayout;
+    auto hLayout = new QHBoxLayout;
 
     hLayout->addWidget(mMailAction);
     hLayout->addWidget(mMailActionRecipient);

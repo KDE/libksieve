@@ -35,10 +35,10 @@ void SieveEditorHelpHtmlWidgetTest::shouldHaveDefaultValue()
     //KSieveUi::SieveEditorWebEngineView *mWebView = w.findChild<KSieveUi::SieveEditorWebEngineView *>(QStringLiteral("webview"));
     //QVERIFY(mWebView);
 
-    auto *mSliderContainer = w.findChild<KPIMTextEdit::SlideContainer *>(QStringLiteral("slidercontainer"));
+    auto mSliderContainer = w.findChild<KPIMTextEdit::SlideContainer *>(QStringLiteral("slidercontainer"));
     QVERIFY(mSliderContainer);
 
-    auto *mFindBar = w.findChild<KSieveUi::FindBarWebEngineView *>(QStringLiteral("findbar"));
+    auto mFindBar = w.findChild<KSieveUi::FindBarWebEngineView *>(QStringLiteral("findbar"));
     QVERIFY(mFindBar);
 }
 
