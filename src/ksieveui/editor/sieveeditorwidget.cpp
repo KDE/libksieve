@@ -9,7 +9,6 @@
 #include "sievepurposemenuwidget.h"
 
 #include "sieve-editor.h"
-#include <kwidgetsaddons_version.h>
 #include "sieveeditortextmodewidget.h"
 #include "scriptsparsing/parsingutil.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
@@ -82,11 +81,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
 
     auto purposeMenu = new SievePurposeMenuWidget(this, this);
     KActionMenu *shareAction = new KActionMenu(i18n("Share..."), this);
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 77, 0)
     shareAction->setPopupMode(QToolButton::InstantPopup);
-#else
-    shareAction->setDelayed(false);
-#endif
     shareAction->setMenu(purposeMenu->menu());
     shareAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
     purposeMenu->setEditorWidget(this);
