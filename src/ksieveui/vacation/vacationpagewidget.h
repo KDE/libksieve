@@ -39,8 +39,6 @@ private Q_SLOTS:
 
 private:
 
-    void fillWithDefaults();
-
     enum PageType {
         Script = 0,
         ScriptNotSupported = 1

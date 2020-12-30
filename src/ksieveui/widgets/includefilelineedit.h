@@ -22,7 +22,6 @@ public:
     void setListOfIncludeFile(const QStringList &lst);
 
 private:
-    void initialize();
     QCompleter *mCompleter = nullptr;
     QStringListModel *mStringListModel = nullptr;
 };

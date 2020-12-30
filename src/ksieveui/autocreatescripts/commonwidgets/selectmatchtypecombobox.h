@@ -18,7 +18,6 @@ public:
     ~SelectMatchTypeComboBox();
 
     Q_REQUIRED_RESULT QString code(bool &negative) const;
-    Q_REQUIRED_RESULT bool isNegative() const;
     void setCode(const QString &code, const QString &name, QString &error);
 
     QStringList needRequires() const;

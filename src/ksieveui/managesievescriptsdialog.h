@@ -51,7 +51,6 @@ private:
     void slotEditScript(const ManageSieveWidget::ScriptInfo &info);
     void slotNewScript(const ManageSieveWidget::ScriptInfo &info);
     void slotCheckScriptFinished(const QString &errorMsg, bool success);
-    void changeActiveScript(QTreeWidgetItem *, bool activate = true);
 
     void updateButtons(QTreeWidgetItem *item);
     void disableManagerScriptsDialog(bool disable);
