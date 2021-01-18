@@ -36,11 +36,7 @@ extern "C" {
 namespace {
 auto returnEndLine()
 {
-#if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
-    return endl;
-#else
     return Qt::endl;
-#endif
 }
 }
 #define ksDebug qCDebug(SIEVE_LOG)
