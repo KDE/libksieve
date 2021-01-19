@@ -117,7 +117,6 @@ ManageSieveScriptsDialog::~ManageSieveScriptsDialog()
     group.writeEntry("Size", size());
     // prevent QTreeWidget signals triggered by it's destructor from calling our slots
     d->mTreeView->disconnect(this);
-    delete d;
 }
 
 void ManageSieveScriptsDialog::hideEvent(QHideEvent *event)

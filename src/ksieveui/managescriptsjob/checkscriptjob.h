@@ -9,6 +9,7 @@
 
 #include <QObject>
 #include <QUrl>
+#include <memory>
 #include "ksieveui_export.h"
 namespace KManageSieve {
 class SieveJob;
@@ -41,7 +42,7 @@ private:
     Q_DISABLE_COPY(CheckScriptJob)
     void slotPutCheckSyntaxResult(KManageSieve::SieveJob *job, bool success);
     void slotRestoreFile(KManageSieve::SieveJob *job, bool success);
-    CheckScriptJobPrivate *const d;
+    std::unique_ptr<CheckScriptJobPrivate> const d;
 };
 }
 #endif // CHECKSCRIPTJOB_H

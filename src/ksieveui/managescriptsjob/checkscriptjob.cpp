@@ -27,10 +27,7 @@ CheckScriptJob::CheckScriptJob(QObject *parent)
 {
 }
 
-CheckScriptJob::~CheckScriptJob()
-{
-    delete d;
-}
+CheckScriptJob::~CheckScriptJob() = default;
 
 void CheckScriptJob::setOriginalScript(const QString &script)
 {

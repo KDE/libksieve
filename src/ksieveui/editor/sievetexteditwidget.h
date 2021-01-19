@@ -8,6 +8,7 @@
 #define SIEVETEXTEDITWIDGET_H
 
 #include <QWidget>
+#include <memory>
 #include "ksieveui_private_export.h"
 namespace KPIMTextEdit {
 class SlideContainer;
@@ -23,7 +24,7 @@ class KSIEVEUI_TESTS_EXPORT SieveTextEditWidget : public QWidget
 public:
     explicit SieveTextEditWidget(QWidget *parent = nullptr);
     SieveTextEditWidget(KSieveUi::SieveTextEdit *customTextEdit, QWidget *parent);
-    ~SieveTextEditWidget();
+    ~SieveTextEditWidget() override;
     void setReadOnly(bool readOnly);
 
     Q_REQUIRED_RESULT KSieveUi::SieveTextEdit *textEdit() const;
@@ -34,7 +35,7 @@ public Q_SLOTS:
 
 private:
     void initialize(KSieveUi::SieveTextEdit *custom = nullptr);
-    SieveTextEditWidgetPrivate *const d;
+    std::unique_ptr<SieveTextEditWidgetPrivate> const d;
     KSieveUi::SieveTextEdit *mTextEdit = nullptr;
     KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
     KPIMTextEdit::PlainTextEditFindBar *mFindBar = nullptr;

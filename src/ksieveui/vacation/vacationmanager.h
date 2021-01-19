@@ -9,7 +9,7 @@
 
 #include <QObject>
 #include "ksieveui_export.h"
-
+#include <memory>
 class QWidget;
 namespace KSieveUi {
 class VacationManagerPrivate;
@@ -40,7 +40,7 @@ private:
 
 private:
     Q_DISABLE_COPY(VacationManager)
-    VacationManagerPrivate *const d;
+    std::unique_ptr<VacationManagerPrivate> const d;
 };
 }
 

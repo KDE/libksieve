@@ -55,7 +55,6 @@ SieveEditor::SieveEditor(QWidget *parent)
 SieveEditor::~SieveEditor()
 {
     writeConfig();
-    delete d;
 }
 
 void SieveEditor::slotAccepted()

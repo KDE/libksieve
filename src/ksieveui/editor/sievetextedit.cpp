@@ -65,7 +65,6 @@ SieveTextEdit::~SieveTextEdit()
     disconnect(this, &SieveTextEdit::blockCountChanged, this, &SieveTextEdit::slotUpdateLineNumberAreaWidth);
     disconnect(this, &SieveTextEdit::updateRequest, this, &SieveTextEdit::slotUpdateLineNumberArea);
 
-    delete d;
 }
 
 void SieveTextEdit::updateHighLighter()

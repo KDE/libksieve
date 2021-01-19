@@ -7,7 +7,7 @@
 #define KSIEVE_KSIEVEUI_SIEVEEDITOR_H
 
 #include "ksieveui_export.h"
-
+#include <memory>
 #include <QDialog>
 namespace KSieveUi {
 class SieveEditorPrivate;
@@ -55,7 +55,7 @@ private:
     void slotCanceled();
     void writeConfig();
     void readConfig();
-    SieveEditorPrivate *const d;
+    std::unique_ptr<SieveEditorPrivate> const d;
 };
 }
 

@@ -40,7 +40,6 @@ SieveTextEditWidget::SieveTextEditWidget(QWidget *parent)
 
 SieveTextEditWidget::~SieveTextEditWidget()
 {
-    delete d;
 }
 
 void SieveTextEditWidget::initialize(KSieveUi::SieveTextEdit *custom)

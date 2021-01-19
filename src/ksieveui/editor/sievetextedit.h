@@ -7,7 +7,7 @@
 #define KSIEVE_KSIEVEUI_SIEVETEXTEDIT_H
 
 #include "ksieveui_export.h"
-
+#include <memory>
 #include <KPIMTextEdit/PlainTextEditor>
 
 class QMenu;
@@ -67,7 +67,7 @@ private:
     void setCompleterList(const QStringList &list);
     Q_REQUIRED_RESULT QString selectedWord(const QPoint &pos = QPoint()) const;
 
-    SieveTextEditPrivate *const d;
+    std::unique_ptr<SieveTextEditPrivate> const d;
 };
 }
 #endif

@@ -38,10 +38,7 @@ VacationManager::VacationManager(SieveImapPasswordProvider *passwordProvider, QW
     connect(d->mCheckVacation.data(), &KSieveUi::MultiImapVacationManager::scriptActive, this, &VacationManager::slotUpdateVacationScriptStatus);
 }
 
-VacationManager::~VacationManager()
-{
-    delete d;
-}
+VacationManager::~VacationManager() = default;
 
 void VacationManager::checkVacation()
 {

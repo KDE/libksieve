@@ -8,6 +8,7 @@
 
 #include "findbarbase.h"
 #include "ksieveui_export.h"
+#include <memory>
 
 class QWebEngineView;
 
@@ -26,7 +27,7 @@ private:
     void updateSensitivity(bool sensitivity) override;
 
 private:
-    FindBarWebEngineViewPrivate *const d;
+    std::unique_ptr<FindBarWebEngineViewPrivate> const d;
 };
 }
 

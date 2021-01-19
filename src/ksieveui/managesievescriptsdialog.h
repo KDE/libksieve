@@ -9,7 +9,7 @@
 
 #include "ksieveui_export.h"
 #include "ksieveui/managesievewidget.h"
-
+#include <memory>
 #include <QDialog>
 
 class QTreeWidgetItem;
@@ -56,7 +56,7 @@ private:
     void disableManagerScriptsDialog(bool disable);
 
 private:
-    ManageSieveScriptsDialogPrivate *const d;
+    std::unique_ptr<ManageSieveScriptsDialogPrivate> const d;
 };
 }
 
