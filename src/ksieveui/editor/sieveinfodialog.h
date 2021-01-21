@@ -22,7 +22,7 @@ public:
 private:
     void readConfig();
     void writeConfig();
-    SieveInfoWidget *mSieveInfoWidget = nullptr;
+    SieveInfoWidget *const mSieveInfoWidget;
 };
 }
 

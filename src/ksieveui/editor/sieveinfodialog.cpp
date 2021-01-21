@@ -20,12 +20,12 @@ static const char myConfigGroupName[] = "SieveInfoDialog";
 using namespace KSieveUi;
 SieveInfoDialog::SieveInfoDialog(QWidget *parent)
     : QDialog(parent)
+    , mSieveInfoWidget(new SieveInfoWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Sieve Server Support"));
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainLayout"));
 
-    mSieveInfoWidget = new SieveInfoWidget(this);
     mSieveInfoWidget->setObjectName(QStringLiteral("mSieveInfoWidget"));
     mainLayout->addWidget(mSieveInfoWidget);
 
