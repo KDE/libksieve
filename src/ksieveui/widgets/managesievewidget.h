@@ -7,7 +7,7 @@
 #ifndef MANAGESIEVEWIDGET_H
 #define MANAGESIEVEWIDGET_H
 #include "ksieveui_export.h"
-
+#include <memory>
 #include <QUrl>
 #include <KSieveUi/SieveImapAccountSettings>
 #include <QWidget>
@@ -107,8 +107,7 @@ private:
     bool itemIsActived(QTreeWidgetItem *item) const;
     void changeActiveScript(QTreeWidgetItem *item, bool activate);
     void slotGenerateGlobalScriptError(const QString &errorStr);
-
-    ManageSieveWidgetPrivate *const d;
+    std::unique_ptr<ManageSieveWidgetPrivate> const d;
 };
 }
 

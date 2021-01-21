@@ -77,7 +77,6 @@ ManageSieveWidget::~ManageSieveWidget()
 {
     disconnect(d->mTreeView, &ManageSieveTreeView::itemSelectionChanged, this, &ManageSieveWidget::slotUpdateButtons);
     clear();
-    delete d;
 }
 
 void ManageSieveWidget::slotCheckNetworkStatus()

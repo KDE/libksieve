@@ -10,6 +10,7 @@
 #include <QObject>
 #include <QUrl>
 #include "ksieveui_export.h"
+#include <memory>
 namespace KManageSieve {
 class SieveJob;
 }
@@ -45,7 +46,7 @@ private Q_SLOTS:
 
 private:
     Q_DISABLE_COPY(RenameScriptJob)
-    RenameScriptJobPrivate *const d;
+    std::unique_ptr<RenameScriptJobPrivate> const d;
 };
 }
 #endif // RENAMESCRIPTJOB_H

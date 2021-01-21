@@ -74,7 +74,6 @@ SieveTreeWidgetItem::SieveTreeWidgetItem(QTreeWidget *treeWidget, QTreeWidgetIte
 
 SieveTreeWidgetItem::~SieveTreeWidgetItem()
 {
-    delete d;
 }
 
 void SieveTreeWidgetItem::startAnimation()

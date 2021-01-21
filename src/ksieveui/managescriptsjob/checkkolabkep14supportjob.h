@@ -11,7 +11,7 @@
 #include <QStringList>
 
 #include "ksieveui_export.h"
-
+#include <memory>
 #include <QUrl>
 
 namespace KManageSieve {
@@ -48,7 +48,7 @@ class KSIEVEUI_EXPORT CheckKolabKep14SupportJob : public QObject
     Q_OBJECT
 public:
     explicit CheckKolabKep14SupportJob(QObject *parent = nullptr);
-    ~CheckKolabKep14SupportJob();
+    ~CheckKolabKep14SupportJob() override;
 
     void start();
 
@@ -64,7 +64,7 @@ Q_SIGNALS:
     void result(KSieveUi::CheckKolabKep14SupportJob *, bool);
 
 private:
-    CheckKolabKep14SupportJobPrivate *const d;
+    std::unique_ptr<CheckKolabKep14SupportJobPrivate> const d;
 
 private:
     Q_DISABLE_COPY(CheckKolabKep14SupportJob)

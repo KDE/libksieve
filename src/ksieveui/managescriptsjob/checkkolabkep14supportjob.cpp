@@ -34,7 +34,6 @@ CheckKolabKep14SupportJob::CheckKolabKep14SupportJob(QObject *parent)
 
 CheckKolabKep14SupportJob::~CheckKolabKep14SupportJob()
 {
-    delete d;
 }
 
 void CheckKolabKep14SupportJob::start()

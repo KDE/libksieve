@@ -10,6 +10,7 @@
 #include <QDialog>
 #include "ksieveui_export.h"
 #include "util_p.h"
+#include <memory>
 class QDialogButtonBox;
 namespace KSieveUi {
 class VacationCreateScriptJob;
@@ -45,7 +46,7 @@ private:
     void writeConfig();
     void initialize();
     QDialogButtonBox *mButtonBox = nullptr;
-    MultiImapVacationDialogPrivate *const d;
+    std::unique_ptr<MultiImapVacationDialogPrivate> const d;
 };
 }
 

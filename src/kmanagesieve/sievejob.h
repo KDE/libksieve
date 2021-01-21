@@ -155,8 +155,8 @@ private:
     void setErrorMessage(const QString &str);
 
     //@cond PRIVATE
-    SieveJob(QObject *parent = nullptr);
-    ~SieveJob();
+    explicit SieveJob(QObject *parent = nullptr);
+    ~SieveJob() override;
 
     class Private;
     Private *const d;

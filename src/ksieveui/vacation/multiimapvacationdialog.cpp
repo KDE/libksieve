@@ -51,7 +51,6 @@ MultiImapVacationDialog::MultiImapVacationDialog(MultiImapVacationManager *manag
 MultiImapVacationDialog::~MultiImapVacationDialog()
 {
     writeConfig();
-    delete d;
 }
 
 void MultiImapVacationDialog::switchToServerNamePage(const QString &serverName)

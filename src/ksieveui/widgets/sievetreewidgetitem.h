@@ -9,7 +9,7 @@
 
 #include <KPixmapSequence>
 #include <QTreeWidgetItem>
-
+#include <memory>
 #include "ksieveui_export.h"
 
 class QTimer;
@@ -27,7 +27,7 @@ class KSIEVEUI_EXPORT SieveTreeWidgetItem : public QTreeWidgetItem
 {
 public:
     SieveTreeWidgetItem(QTreeWidget *treeWidget, QTreeWidgetItem *item);
-    ~SieveTreeWidgetItem();
+    ~SieveTreeWidgetItem() override;
 
     void startAnimation();
     void stopAnimation();
@@ -35,7 +35,7 @@ public:
     void setProgressAnimation(const QPixmap &pix);
 
 private:
-    SieveTreeWidgetItemPrivate *const d;
+    std::unique_ptr<SieveTreeWidgetItemPrivate> const d;
 };
 
 class SieveTreeWidgetProgress : public QObject
@@ -43,7 +43,7 @@ class SieveTreeWidgetProgress : public QObject
     Q_OBJECT
 public:
     explicit SieveTreeWidgetProgress(SieveTreeWidgetItem *item, QObject *parent = nullptr);
-    ~SieveTreeWidgetProgress();
+    ~SieveTreeWidgetProgress() override;
 
     void startAnimation();
     void stopAnimation();
