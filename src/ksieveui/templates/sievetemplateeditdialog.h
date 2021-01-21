@@ -19,7 +19,7 @@ class SieveTemplateEditDialog : public QDialog
     Q_OBJECT
 public:
     explicit SieveTemplateEditDialog(QWidget *parent = nullptr, bool defaultTemplate = false);
-    ~SieveTemplateEditDialog();
+    ~SieveTemplateEditDialog() override;
 
     void setTemplateName(const QString &name);
     Q_REQUIRED_RESULT QString templateName() const;

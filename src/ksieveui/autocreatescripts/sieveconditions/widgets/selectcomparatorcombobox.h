@@ -15,7 +15,7 @@ class SelectComparatorComboBox : public QComboBox
     Q_OBJECT
 public:
     explicit SelectComparatorComboBox(KSieveUi::SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent = nullptr);
-    ~SelectComparatorComboBox();
+    ~SelectComparatorComboBox() override;
 
     Q_REQUIRED_RESULT QString code() const;
     void setCode(const QString &code, const QString &name, QString &error);

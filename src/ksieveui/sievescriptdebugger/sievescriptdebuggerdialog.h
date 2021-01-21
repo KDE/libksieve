@@ -18,7 +18,7 @@ class KSIEVEUI_TESTS_EXPORT SieveScriptDebuggerDialog : public QDialog
     Q_OBJECT
 public:
     explicit SieveScriptDebuggerDialog(QWidget *parent = nullptr);
-    ~SieveScriptDebuggerDialog();
+    ~SieveScriptDebuggerDialog() override;
 
     void setScript(const QString &script);
     Q_REQUIRED_RESULT QString script() const;

@@ -29,7 +29,7 @@ class SessionThread : public QObject
 
 public:
     explicit SessionThread(Session *session, QObject *parent = nullptr);
-    ~SessionThread();
+    ~SessionThread() override;
 
     void connectToHost(const QUrl &url);
     void disconnectFromHost(bool sendLogout);

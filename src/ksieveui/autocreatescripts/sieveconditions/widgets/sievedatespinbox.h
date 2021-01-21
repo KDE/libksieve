@@ -16,7 +16,7 @@ class KSIEVEUI_TESTS_EXPORT SieveDateSpinBox : public QSpinBox
     Q_OBJECT
 public:
     explicit SieveDateSpinBox(QWidget *parent = nullptr);
-    ~SieveDateSpinBox();
+    ~SieveDateSpinBox() override;
     void setType(KSieveUi::SelectDateWidget::DateType type);
 
     void setRange(int minValue, int maxValue);

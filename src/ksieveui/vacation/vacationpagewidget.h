@@ -24,7 +24,7 @@ class VacationPageWidget : public QWidget
     Q_OBJECT
 public:
     explicit VacationPageWidget(QWidget *parent = nullptr);
-    ~VacationPageWidget();
+    ~VacationPageWidget() override;
 
     void setServerUrl(const QUrl &url);
     void setServerName(const QString &serverName);

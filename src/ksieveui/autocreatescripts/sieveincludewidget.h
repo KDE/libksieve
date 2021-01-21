@@ -23,7 +23,7 @@ class SieveIncludeLocation : public QComboBox
     Q_OBJECT
 public:
     explicit SieveIncludeLocation(QWidget *parent = nullptr);
-    ~SieveIncludeLocation();
+    ~SieveIncludeLocation() override;
 
     Q_REQUIRED_RESULT QString code() const;
     void setCode(const QString &code, QString &error);

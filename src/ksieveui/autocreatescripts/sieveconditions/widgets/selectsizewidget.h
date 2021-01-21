@@ -17,7 +17,7 @@ class SelectSizeWidget : public QWidget
     Q_OBJECT
 public:
     explicit SelectSizeWidget(QWidget *parent = nullptr);
-    ~SelectSizeWidget();
+    ~SelectSizeWidget() override;
 
     Q_REQUIRED_RESULT QString code() const;
     void setCode(qlonglong value, const QString &identifier, const QString &name, QString &error);

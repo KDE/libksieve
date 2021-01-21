@@ -20,7 +20,7 @@ class VacationHelperJob : public QObject
     Q_OBJECT
 public:
     explicit VacationHelperJob(const QUrl &url, QObject *parent = nullptr);
-    ~VacationHelperJob();
+    ~VacationHelperJob() override;
 
     void searchActiveJob();
 

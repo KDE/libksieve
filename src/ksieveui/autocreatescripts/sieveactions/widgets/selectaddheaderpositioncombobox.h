@@ -13,7 +13,7 @@ class SelectAddHeaderPositionCombobox : public QComboBox
     Q_OBJECT
 public:
     explicit SelectAddHeaderPositionCombobox(QWidget *parent = nullptr);
-    ~SelectAddHeaderPositionCombobox();
+    ~SelectAddHeaderPositionCombobox() override;
 
     Q_REQUIRED_RESULT QString code() const;
     void setCode(const QString &code, const QString &name, QString &error);

@@ -23,7 +23,7 @@ class VacationCreateScriptJob : public QObject
     Q_OBJECT
 public:
     explicit VacationCreateScriptJob(QObject *parent = nullptr);
-    ~VacationCreateScriptJob();
+    ~VacationCreateScriptJob() override;
 
     void start();
     void kill();

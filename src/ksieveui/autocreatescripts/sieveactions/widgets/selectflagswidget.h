@@ -16,7 +16,7 @@ class SelectFlagsListWidget : public QListWidget
     Q_OBJECT
 public:
     explicit SelectFlagsListWidget(QWidget *parent = nullptr);
-    ~SelectFlagsListWidget();
+    ~SelectFlagsListWidget() override;
 
     void setFlags(const QStringList &list);
     Q_REQUIRED_RESULT QStringList flags() const;

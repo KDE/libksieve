@@ -17,7 +17,7 @@ class SelectBodyTypeWidget : public QWidget
     Q_OBJECT
 public:
     explicit SelectBodyTypeWidget(QWidget *parent = nullptr);
-    ~SelectBodyTypeWidget();
+    ~SelectBodyTypeWidget() override;
 
     Q_REQUIRED_RESULT QString code() const;
     void setCode(const QString &type, const QString &content, const QString &name, QString &error);

@@ -21,7 +21,7 @@ class KSIEVEUI_EXPORT SieveImapInstanceInterfaceManager : public QObject
     Q_OBJECT
 public:
     explicit SieveImapInstanceInterfaceManager(QObject *parent = nullptr);
-    ~SieveImapInstanceInterfaceManager();
+    ~SieveImapInstanceInterfaceManager() override;
     static SieveImapInstanceInterfaceManager *self();
     void setSieveImapInstanceInterface(SieveImapInstanceInterface *interface);
     SieveImapInstanceInterface *sieveImapInstanceInterface() const;

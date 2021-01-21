@@ -16,7 +16,7 @@ class KSIEVEUI_TESTS_EXPORT SieveEditorAbstractWidget : public QWidget
     Q_OBJECT
 public:
     explicit SieveEditorAbstractWidget(QWidget *parent = nullptr);
-    ~SieveEditorAbstractWidget();
+    ~SieveEditorAbstractWidget() override;
 
     Q_REQUIRED_RESULT virtual QString currentscript();
     virtual void setImportScript(const QString &);

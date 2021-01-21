@@ -19,7 +19,7 @@ class SelectHeadersWidget : public QListWidget
     Q_OBJECT
 public:
     explicit SelectHeadersWidget(QWidget *parent = nullptr);
-    ~SelectHeadersWidget();
+    ~SelectHeadersWidget() override;
 
     Q_REQUIRED_RESULT QString headers() const;
     void setListHeaders(const QMap<QString, QString> &lst, const QStringList &selectedHeaders);

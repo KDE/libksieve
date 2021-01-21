@@ -22,7 +22,7 @@ class KSIEVEUI_EXPORT SieveScriptDebuggerWidget : public QWidget
     Q_OBJECT
 public:
     explicit SieveScriptDebuggerWidget(QWidget *parent = nullptr);
-    ~SieveScriptDebuggerWidget();
+    ~SieveScriptDebuggerWidget() override;
 
     void setScript(const QString &script);
     Q_REQUIRED_RESULT QString script() const;

@@ -14,7 +14,7 @@ class SelectConvertParameterWidget : public QWidget
     Q_OBJECT
 public:
     explicit SelectConvertParameterWidget(QWidget *parent = nullptr);
-    ~SelectConvertParameterWidget();
+    ~SelectConvertParameterWidget() override;
 
     Q_REQUIRED_RESULT QString code() const;
     void setCode(const QStringList &code, QString &error);

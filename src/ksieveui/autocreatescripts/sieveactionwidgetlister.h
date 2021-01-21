@@ -24,7 +24,7 @@ class SieveActionWidget : public QWidget
     Q_OBJECT
 public:
     explicit SieveActionWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent);
-    ~SieveActionWidget();
+    ~SieveActionWidget() override;
 
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
     void generatedScript(QString &script, QStringList &required, bool onlyActions, bool inForEveryPartLoop);

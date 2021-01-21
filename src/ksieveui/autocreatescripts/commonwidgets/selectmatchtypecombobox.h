@@ -15,7 +15,7 @@ class SelectMatchTypeComboBox : public QComboBox
     Q_OBJECT
 public:
     explicit SelectMatchTypeComboBox(KSieveUi::SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent = nullptr);
-    ~SelectMatchTypeComboBox();
+    ~SelectMatchTypeComboBox() override;
 
     Q_REQUIRED_RESULT QString code(bool &negative) const;
     void setCode(const QString &code, const QString &name, QString &error);

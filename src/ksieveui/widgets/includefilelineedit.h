@@ -17,7 +17,7 @@ class KSIEVEUI_TESTS_EXPORT IncludeFileLineEdit : public LineEditValidator
     Q_OBJECT
 public:
     explicit IncludeFileLineEdit(QWidget *parent = nullptr);
-    ~IncludeFileLineEdit();
+    ~IncludeFileLineEdit() override;
 
     void setListOfIncludeFile(const QStringList &lst);
 

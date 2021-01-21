@@ -19,7 +19,7 @@ class KSIEVEUI_EXPORT AbstractSelectEmailLineEdit : public QWidget
     Q_OBJECT
 public:
     explicit AbstractSelectEmailLineEdit(QWidget *parent = nullptr);
-    ~AbstractSelectEmailLineEdit();
+    ~AbstractSelectEmailLineEdit() override;
     virtual void setText(const QString &str) = 0;
     virtual QString text() const = 0;
 

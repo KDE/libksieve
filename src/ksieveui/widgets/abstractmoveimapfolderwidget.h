@@ -20,7 +20,7 @@ class KSIEVEUI_EXPORT AbstractMoveImapFolderWidget : public QWidget
     Q_OBJECT
 public:
     explicit AbstractMoveImapFolderWidget(QWidget *parent = nullptr);
-    ~AbstractMoveImapFolderWidget();
+    ~AbstractMoveImapFolderWidget() override;
 
     virtual void setText(const QString &str) = 0;
     virtual QString text() const = 0;

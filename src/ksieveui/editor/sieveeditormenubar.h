@@ -18,7 +18,7 @@ class SieveEditorMenuBar : public QMenuBar
     Q_OBJECT
 public:
     explicit SieveEditorMenuBar(QWidget *parent = nullptr);
-    ~SieveEditorMenuBar();
+    ~SieveEditorMenuBar() override;
 
     Q_REQUIRED_RESULT QAction *goToLineAction() const;
     Q_REQUIRED_RESULT QAction *findAction() const;

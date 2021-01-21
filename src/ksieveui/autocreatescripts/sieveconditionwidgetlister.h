@@ -24,7 +24,7 @@ class SieveConditionWidget : public QWidget
     Q_OBJECT
 public:
     explicit SieveConditionWidget(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent);
-    ~SieveConditionWidget();
+    ~SieveConditionWidget() override;
 
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
     void generatedScript(QString &script, QStringList &required, bool inForEveryPartLoop);

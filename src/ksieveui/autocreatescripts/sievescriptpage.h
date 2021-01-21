@@ -23,7 +23,7 @@ class KSIEVEUI_TESTS_EXPORT SieveScriptPage : public QWidget
     Q_OBJECT
 public:
     explicit SieveScriptPage(SieveEditorGraphicalModeWidget *sieveEditorGraphicalWidget, QWidget *parent = nullptr);
-    ~SieveScriptPage();
+    ~SieveScriptPage() override;
 
     void generatedScript(QString &script, QStringList &required);
 

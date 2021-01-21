@@ -25,7 +25,7 @@ class KSIEVEUI_TESTS_EXPORT SieveScriptDebuggerFrontEndWidget : public QWidget
     Q_OBJECT
 public:
     explicit SieveScriptDebuggerFrontEndWidget(QWidget *parent = nullptr);
-    ~SieveScriptDebuggerFrontEndWidget();
+    ~SieveScriptDebuggerFrontEndWidget() override;
 
     Q_REQUIRED_RESULT QString script() const;
     void setScript(const QString &script);

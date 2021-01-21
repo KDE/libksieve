@@ -49,7 +49,7 @@ class VacationEditWidget : public QWidget
     Q_OBJECT
 public:
     explicit VacationEditWidget(QWidget *parent = nullptr);
-    ~VacationEditWidget();
+    ~VacationEditWidget() override;
 
     void enableDomainAndSendForSpam(bool enable = true);
     void enableDates(bool enable = true);

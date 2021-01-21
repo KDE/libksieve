@@ -20,7 +20,7 @@ class KSIEVEUI_EXPORT AbstractRegexpEditorLineEdit : public QWidget
     Q_OBJECT
 public:
     explicit AbstractRegexpEditorLineEdit(QWidget *parent = nullptr);
-    ~AbstractRegexpEditorLineEdit();
+    ~AbstractRegexpEditorLineEdit() override;
 
     virtual void switchToRegexpEditorLineEdit(bool regexpEditor) = 0;
     virtual void setCode(const QString &str) = 0;

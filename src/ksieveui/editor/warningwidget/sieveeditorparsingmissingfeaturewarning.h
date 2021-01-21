@@ -19,7 +19,7 @@ public:
     };
 
     explicit SieveEditorParsingMissingFeatureWarning(SieveEditorParsingMissingFeatureWarning::TextEditorType type, QWidget *parent = nullptr);
-    ~SieveEditorParsingMissingFeatureWarning();
+    ~SieveEditorParsingMissingFeatureWarning() override;
 
     void setErrors(const QString &initialScript, const QString &errors);
     Q_REQUIRED_RESULT QString initialScript() const;

@@ -15,7 +15,7 @@ class SieveScriptTabWidget : public QTabWidget
     Q_OBJECT
 public:
     explicit SieveScriptTabWidget(QWidget *parent = nullptr);
-    ~SieveScriptTabWidget();
+    ~SieveScriptTabWidget() override;
 
 private Q_SLOTS:
     void slotTabContextMenuRequest(const QPoint &);

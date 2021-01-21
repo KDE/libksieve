@@ -19,7 +19,7 @@ class VacationMailActionWidget : public QWidget
     Q_OBJECT
 public:
     explicit VacationMailActionWidget(QWidget *parent = nullptr);
-    ~VacationMailActionWidget();
+    ~VacationMailActionWidget() override;
 
     void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);
     void mailActionChanged(KSieveUi::VacationUtils::MailAction action);

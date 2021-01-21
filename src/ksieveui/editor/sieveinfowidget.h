@@ -17,7 +17,7 @@ class KSIEVEUI_EXPORT SieveInfoWidget : public QWidget
     Q_OBJECT
 public:
     explicit SieveInfoWidget(QWidget *parent = nullptr);
-    ~SieveInfoWidget();
+    ~SieveInfoWidget() override;
 
     void setServerInfo(QStringList info);
 

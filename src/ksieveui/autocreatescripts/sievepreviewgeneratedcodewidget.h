@@ -14,7 +14,7 @@ class KSIEVEUI_TESTS_EXPORT SievePreviewGeneratedCodeWidget : public QWidget
     Q_OBJECT
 public:
     explicit SievePreviewGeneratedCodeWidget(QWidget *parent = nullptr);
-    ~SievePreviewGeneratedCodeWidget();
+    ~SievePreviewGeneratedCodeWidget() override;
 
     void setCode(const QString &str);
 private:

@@ -15,7 +15,7 @@ class KSIEVEUI_TESTS_EXPORT SieveScriptDebuggerWarning : public KMessageWidget
     Q_OBJECT
 public:
     explicit SieveScriptDebuggerWarning(QWidget *parent = nullptr);
-    ~SieveScriptDebuggerWarning();
+    ~SieveScriptDebuggerWarning() override;
 
     void setErrorMessage(const QString &msg);
     void setWarningMessage(const QString &msg);

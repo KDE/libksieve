@@ -26,7 +26,7 @@ class KSIEVEUI_EXPORT SieveEditorWidget : public QWidget
     Q_OBJECT
 public:
     explicit SieveEditorWidget(bool useMenuBar, QWidget *parent = nullptr);
-    ~SieveEditorWidget();
+    ~SieveEditorWidget() override;
     enum EditorMode {
         Unknown = -1,
         TextMode = 0,

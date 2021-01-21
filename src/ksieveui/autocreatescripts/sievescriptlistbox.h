@@ -22,7 +22,7 @@ class SieveScriptListItem : public QListWidgetItem
 {
 public:
     SieveScriptListItem(const QString &text, QListWidget *parent);
-    ~SieveScriptListItem();
+    ~SieveScriptListItem() override;
 
     void setDescription(const QString &desc);
     Q_REQUIRED_RESULT QString description() const;
@@ -42,7 +42,7 @@ class KSIEVEUI_TESTS_EXPORT SieveScriptListBox : public QGroupBox
     Q_OBJECT
 public:
     explicit SieveScriptListBox(const QString &title, QWidget *parent = nullptr);
-    ~SieveScriptListBox();
+    ~SieveScriptListBox() override;
 
     void setSieveEditorGraphicalModeWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget);
     Q_REQUIRED_RESULT QString generatedScript(QStringList &required) const;

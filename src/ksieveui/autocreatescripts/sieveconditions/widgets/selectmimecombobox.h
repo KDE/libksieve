@@ -13,7 +13,7 @@ class SelectMimeComboBox : public QComboBox
     Q_OBJECT
 public:
     explicit SelectMimeComboBox(QWidget *parent = nullptr);
-    ~SelectMimeComboBox();
+    ~SelectMimeComboBox() override;
 
     Q_REQUIRED_RESULT QString code() const;
     void setCode(const QString &code, const QString &name, QString &error);

@@ -15,7 +15,7 @@ class KSIEVEUI_TESTS_EXPORT SieveEditorGraphicalModeWidgetAbstract : public KSie
     Q_OBJECT
 public:
     explicit SieveEditorGraphicalModeWidgetAbstract(QWidget *parent);
-    ~SieveEditorGraphicalModeWidgetAbstract();
+    ~SieveEditorGraphicalModeWidgetAbstract() override;
 
     Q_REQUIRED_RESULT virtual QString script(QStringList &requireModules) const = 0;
 

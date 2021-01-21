@@ -45,7 +45,7 @@ public:
     };
 
     explicit ManageSieveWidget(QWidget *parent = nullptr);
-    ~ManageSieveWidget();
+    ~ManageSieveWidget() override;
 
     ManageSieveTreeView *treeView() const;
     void enableDisableActions(bool &newScriptAction, bool &editScriptAction, bool &deleteScriptAction, bool &desactivateScriptAction);

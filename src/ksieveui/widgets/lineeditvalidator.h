@@ -16,7 +16,7 @@ class KSIEVEUI_TESTS_EXPORT LineEditValidator : public QLineEdit
     Q_OBJECT
 public:
     explicit LineEditValidator(QWidget *parent = nullptr);
-    ~LineEditValidator();
+    ~LineEditValidator() override;
 
     Q_REQUIRED_RESULT bool setRegularExpressionPattern(const QString &pattern);
 

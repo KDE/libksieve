@@ -22,7 +22,7 @@ class VacationCheckJob : public QObject
     Q_OBJECT
 public:
     explicit VacationCheckJob(const QUrl &url, const QString &serverName, QObject *parent = nullptr);
-    ~VacationCheckJob();
+    ~VacationCheckJob() override;
     void setKep14Support(bool kep14Support);
     void start();
     void kill();

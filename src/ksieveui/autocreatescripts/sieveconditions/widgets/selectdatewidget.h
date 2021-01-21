@@ -38,7 +38,7 @@ public:
         Weekday
     };
     explicit SelectDateWidget(QWidget *parent = nullptr);
-    ~SelectDateWidget();
+    ~SelectDateWidget() override;
 
     Q_REQUIRED_RESULT QString code() const;
     void setCode(const QString &type, const QString &value);

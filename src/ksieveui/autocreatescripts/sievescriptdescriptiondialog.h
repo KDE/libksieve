@@ -18,7 +18,7 @@ class SieveScriptDescriptionDialog : public QDialog
     Q_OBJECT
 public:
     explicit SieveScriptDescriptionDialog(QWidget *parent = nullptr);
-    ~SieveScriptDescriptionDialog();
+    ~SieveScriptDescriptionDialog() override;
 
     void setDescription(const QString &desc);
     Q_REQUIRED_RESULT QString description() const;

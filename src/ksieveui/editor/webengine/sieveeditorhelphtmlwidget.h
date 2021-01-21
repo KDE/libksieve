@@ -23,7 +23,7 @@ class KSIEVEUI_EXPORT SieveEditorHelpHtmlWidget : public QWidget
     Q_OBJECT
 public:
     explicit SieveEditorHelpHtmlWidget(QWidget *parent = nullptr);
-    ~SieveEditorHelpHtmlWidget();
+    ~SieveEditorHelpHtmlWidget() override;
 
     void openUrl(const QUrl &currentUrl);
     Q_REQUIRED_RESULT QString title() const;

@@ -34,7 +34,7 @@ public:
     };
 
     explicit SieveGlobalVariableActionWidget(QWidget *parent = nullptr);
-    ~SieveGlobalVariableActionWidget();
+    ~SieveGlobalVariableActionWidget() override;
 
     void generatedScript(QString &script);
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
