@@ -95,7 +95,7 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     layout->addWidget(mSieveListScript);
 
     //----------- the first row of buttons
-    QWidget *hb = new QWidget(this);
+    auto hb = new QWidget(this);
     auto hbHBoxLayout = new QHBoxLayout(hb);
     hbHBoxLayout->setContentsMargins({});
     hbHBoxLayout->setSpacing(4);

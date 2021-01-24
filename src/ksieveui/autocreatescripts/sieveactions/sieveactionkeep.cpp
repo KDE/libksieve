@@ -47,11 +47,11 @@ QString SieveActionKeep::help() const
 QWidget *SieveActionKeep::createParamWidget(QWidget *parent) const
 {
     if (mHasFlagSupport) {
-        QWidget *w = new QWidget(parent);
+        auto w = new QWidget(parent);
         auto lay = new QHBoxLayout;
         lay->setContentsMargins({});
         w->setLayout(lay);
-        QLabel *addFlags = new QLabel(i18n("Add flags:"));
+        auto addFlags = new QLabel(i18n("Add flags:"));
         lay->addWidget(addFlags);
 
         auto flagsWidget = new SelectFlagsWidget;

@@ -22,12 +22,12 @@ SieveConditionServerMetaDataExists::SieveConditionServerMetaDataExists(SieveEdit
 
 QWidget *SieveConditionServerMetaDataExists::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    QLabel *lab = new QLabel(i18n("Annotation:"));
+    auto lab = new QLabel(i18n("Annotation:"));
     lay->addWidget(lab);
 
     auto value = new QLineEdit;

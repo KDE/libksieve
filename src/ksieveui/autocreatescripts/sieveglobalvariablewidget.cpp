@@ -55,7 +55,7 @@ void SieveGlobalVariableActionWidget::initWidget()
     mLayout = new QGridLayout(this);
     mLayout->setContentsMargins({});
 
-    QLabel *lab = new QLabel(i18n("Variable name:"));
+    auto lab = new QLabel(i18n("Variable name:"));
     mLayout->addWidget(lab, 1, 0);
 
     mVariableName = new LineEditValidator;

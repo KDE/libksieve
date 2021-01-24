@@ -278,7 +278,7 @@ void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
 
     if (!textCursor().hasSelection()) {
         if (!isReadOnly()) {
-            QAction *insertRules = new QAction(i18n("Insert Rule"), menu);
+            auto insertRules = new QAction(i18n("Insert Rule"), menu);
             //editRules->setIcon(QIcon::fromTheme(QStringLiteral("help-hint")));
             connect(insertRules, &QAction::triggered, this, &SieveTextEdit::insertRule);
             QAction *act = menu->addSeparator();
@@ -292,7 +292,7 @@ void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
             separator->setSeparator(true);
             menu->insertAction(menu->actions().at(0), separator);
 
-            QAction *searchAction = new QAction(i18n("Help about: \'%1\'", word), menu);
+            auto searchAction = new QAction(i18n("Help about: \'%1\'", word), menu);
             searchAction->setShortcut(Qt::Key_F1);
             searchAction->setIcon(QIcon::fromTheme(QStringLiteral("help-hint")));
             searchAction->setData(word);
@@ -301,7 +301,7 @@ void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
         }
     } else {
         if (!isReadOnly()) {
-            QAction *editRules = new QAction(i18n("Edit Rule"), menu);
+            auto editRules = new QAction(i18n("Edit Rule"), menu);
             //editRules->setIcon(QIcon::fromTheme(QStringLiteral("help-hint")));
             connect(editRules, &QAction::triggered, this, &SieveTextEdit::slotEditRule);
             QAction *act = menu->addSeparator();

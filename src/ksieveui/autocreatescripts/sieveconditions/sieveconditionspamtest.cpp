@@ -28,13 +28,13 @@ SieveConditionSpamTest::SieveConditionSpamTest(SieveEditorGraphicalModeWidget *s
 
 QWidget *SieveConditionSpamTest::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto lay = new QVBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
     if (mHasSpamTestPlusSupport) {
-        QCheckBox *percent = new QCheckBox(i18n("Percent"));
+        auto percent = new QCheckBox(i18n("Percent"));
         percent->setObjectName(QStringLiteral("percent"));
         connect(percent, &QCheckBox::toggled, this, &SieveConditionSpamTest::valueChanged);
         lay->addWidget(percent);

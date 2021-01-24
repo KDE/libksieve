@@ -16,7 +16,7 @@ SieveLineNumberArea::SieveLineNumberArea(SieveTextEdit *editor)
 
 QSize SieveLineNumberArea::sizeHint() const
 {
-    return QSize(m_sieveTextEdit->lineNumberAreaWidth(), 0);
+    return {m_sieveTextEdit->lineNumberAreaWidth(), 0};
 }
 
 void SieveLineNumberArea::paintEvent(QPaintEvent *event)

@@ -100,10 +100,10 @@ void MultiImapVacationDialog::init()
     d->mTabWidget = new QTabWidget;
     d->mStackedWidget->addWidget(d->mTabWidget);
 
-    QWidget *w = new QWidget;
+    auto w = new QWidget;
     auto vbox = new QVBoxLayout;
     w->setLayout(vbox);
-    QLabel *lab = new QLabel(i18n("KMail's Out of Office Reply functionality relies on "
+    auto lab = new QLabel(i18n("KMail's Out of Office Reply functionality relies on "
                                   "server-side filtering. You have not yet configured an "
                                   "IMAP server for this. "
                                   "You can do this on the \"Filtering\" tab of the IMAP "

@@ -61,7 +61,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     //
     mSieveTemplateWidget = new SieveTemplateWidget(i18n("Sieve Template:"));
 
-    QWidget *textEditWidget = new QWidget;
+    auto textEditWidget = new QWidget;
     auto textEditLayout = new QVBoxLayout;
     textEditLayout->setContentsMargins({});
 

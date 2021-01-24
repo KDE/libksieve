@@ -23,12 +23,12 @@ SieveConditionFalse::SieveConditionFalse(SieveEditorGraphicalModeWidget *sieveGr
 
 QWidget *SieveConditionFalse::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    QLabel *label = new QLabel(i18n("false"));
+    auto label = new QLabel(i18n("false"));
     lay->addWidget(label);
     return w;
 }

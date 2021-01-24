@@ -30,7 +30,7 @@ SieveActionVacation::SieveActionVacation(SieveEditorGraphicalModeWidget *sieveGr
 
 QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto grid = new QGridLayout;
     grid->setContentsMargins({});
     w->setLayout(grid);

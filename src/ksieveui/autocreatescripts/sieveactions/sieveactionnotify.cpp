@@ -25,7 +25,7 @@ SieveActionNotify::SieveActionNotify(SieveEditorGraphicalModeWidget *sieveGraphi
 
 QWidget *SieveActionNotify::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
@@ -35,7 +35,7 @@ QWidget *SieveActionNotify::createParamWidget(QWidget *parent) const
     connect(importanceCombobox, &SelectImportanceCombobox::valueChanged, this, &SieveActionNotify::valueChanged);
     lay->addWidget(importanceCombobox);
 
-    QLabel *lab = new QLabel(i18n("message:"));
+    auto lab = new QLabel(i18n("message:"));
     lay->addWidget(lab);
 
     auto message = new QLineEdit;

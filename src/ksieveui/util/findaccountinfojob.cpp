@@ -4,14 +4,15 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "findaccountinfojob.h"
-#include "libksieve_debug.h"
-#include <PimCommon/PimUtil>
 #include "abstractakonadiimapsettinginterface.h"
 #include "akonadiimapsettinginterface.h"
 #include "imapresourcesettings.h"
+#include "libksieve_debug.h"
 #include "sieveimappasswordprovider.h"
 #include <MailTransport/Transport>
+#include <PimCommon/PimUtil>
 #include <QUrlQuery>
+#include <memory>
 
 using namespace KSieveUi;
 FindAccountInfoJob::FindAccountInfoJob(QObject *parent)
@@ -54,7 +55,7 @@ void FindAccountInfoJob::start()
     }
 
     mInterfaceImap.reset(PimCommon::Util::createImapSettingsInterface(mIdentifier));
-    mInterface.reset(new KSieveUi::AkonadiImapSettingInterface(mInterfaceImap));
+    mInterface = std::make_unique<KSieveUi::AkonadiImapSettingInterface>(mInterfaceImap);
     if (!mCustomImapSettingsInterface) {
         mCustomImapSettingsInterface = mInterface.get();
     }

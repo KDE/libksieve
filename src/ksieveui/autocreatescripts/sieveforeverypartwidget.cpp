@@ -40,7 +40,7 @@ SieveForEveryPartWidget::SieveForEveryPartWidget(QWidget *parent)
     connect(mForLoop, &QCheckBox::toggled, this, &SieveForEveryPartWidget::valueChanged);
     lay->addWidget(mForLoop);
 
-    QLabel *lab = new QLabel(i18n("Name (optional):"));
+    auto lab = new QLabel(i18n("Name (optional):"));
     lay->addWidget(lab);
 
     mName = new LineEditValidator;

@@ -28,7 +28,7 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Headers"));
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
     auto mainLayout = new QVBoxLayout(this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
@@ -46,7 +46,7 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     mListWidget->setObjectName(QStringLiteral("listwidget"));
     lay->addWidget(mListWidget);
 
-    QLabel *lab = new QLabel(i18n("Add new header:"), this);
+    auto lab = new QLabel(i18n("Add new header:"), this);
     lab->setObjectName(QStringLiteral("label"));
     lay->addWidget(lab);
 

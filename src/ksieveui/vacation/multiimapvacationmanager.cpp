@@ -95,7 +95,7 @@ void MultiImapVacationManager::slotCheckKep14Ended(CheckKolabKep14SupportJob *jo
 
     mKep14Support.insert(job->serverName(), job->hasKep14Support());
 
-    VacationCheckJob *checkJob = new VacationCheckJob(job->serverUrl(), job->serverName(), this);
+    auto checkJob = new VacationCheckJob(job->serverUrl(), job->serverName(), this);
     checkJob->setKep14Support(job->hasKep14Support());
     connect(checkJob, &VacationCheckJob::vacationScriptActive, this, &MultiImapVacationManager::slotScriptActive);
     checkJob->start();

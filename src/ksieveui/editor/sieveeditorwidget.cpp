@@ -80,7 +80,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     toolbar->addAction(mShareScript);
 
     auto purposeMenu = new SievePurposeMenuWidget(this, this);
-    KActionMenu *shareAction = new KActionMenu(i18n("Share..."), this);
+    auto shareAction = new KActionMenu(i18n("Share..."), this);
     shareAction->setPopupMode(QToolButton::InstantPopup);
     shareAction->setMenu(purposeMenu->menu());
     shareAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
@@ -132,7 +132,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     lay->addWidget(toolbar);
 
     auto nameLayout = new QHBoxLayout;
-    QLabel *label = new QLabel(i18n("Script name:"));
+    auto label = new QLabel(i18n("Script name:"));
     nameLayout->addWidget(label);
     mScriptName = new QLineEdit;
     mScriptName->setReadOnly(true);

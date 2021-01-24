@@ -25,7 +25,7 @@ SieveConditionExists::SieveConditionExists(SieveEditorGraphicalModeWidget *sieve
 
 QWidget *SieveConditionExists::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
@@ -37,7 +37,7 @@ QWidget *SieveConditionExists::createParamWidget(QWidget *parent) const
     lay->addWidget(combo);
     connect(combo, QOverload<int>::of(&QComboBox::activated), this, &SieveConditionExists::valueChanged);
 
-    QLabel *lab = new QLabel(i18n("headers:"));
+    auto lab = new QLabel(i18n("headers:"));
     lay->addWidget(lab);
 
     auto value = new SelectHeaderTypeComboBox;

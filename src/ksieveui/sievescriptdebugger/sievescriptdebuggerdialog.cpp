@@ -28,7 +28,7 @@ SieveScriptDebuggerDialog::SieveScriptDebuggerDialog(QWidget *parent)
     mainLayout->addWidget(mSieveScriptDebuggerWidget);
     connect(mSieveScriptDebuggerWidget, &SieveScriptDebuggerWidget::sieveTestNotFound, this, &SieveScriptDebuggerDialog::updateButtons);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     mainLayout->addWidget(buttonBox);
     buttonBox->setObjectName(QStringLiteral("buttonbox"));
     mOkButton = buttonBox->button(QDialogButtonBox::Ok);

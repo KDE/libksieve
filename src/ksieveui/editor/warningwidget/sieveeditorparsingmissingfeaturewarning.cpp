@@ -25,7 +25,7 @@ SieveEditorParsingMissingFeatureWarning::SieveEditorParsingMissingFeatureWarning
     switch (type) {
     case TextEditor:
     {
-        QAction *action = new QAction(i18n("Switch to Graphical Mode"), this);
+        auto action = new QAction(i18n("Switch to Graphical Mode"), this);
         connect(action, &QAction::triggered, this, &SieveEditorParsingMissingFeatureWarning::slotSwitchInGraphicalMode);
         addAction(action);
 
@@ -36,7 +36,7 @@ SieveEditorParsingMissingFeatureWarning::SieveEditorParsingMissingFeatureWarning
     }
     case GraphicEditor:
     {
-        QAction *action = new QAction(i18n("Switch to Text Mode"), this);
+        auto action = new QAction(i18n("Switch to Text Mode"), this);
         connect(action, &QAction::triggered, this, &SieveEditorParsingMissingFeatureWarning::slotSwitchInTextMode);
         addAction(action);
 

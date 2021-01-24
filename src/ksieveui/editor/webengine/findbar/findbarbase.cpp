@@ -41,7 +41,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     closeBtn->setAutoRaise(true);
     lay->addWidget(closeBtn);
 
-    QLabel *label = new QLabel(i18nc("Find text", "F&ind:"), this);
+    auto label = new QLabel(i18nc("Find text", "F&ind:"), this);
     lay->addWidget(label);
 
     mSearch = new PimCommon::LineEditWithCompleterNg(this);

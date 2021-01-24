@@ -23,12 +23,12 @@ SieveActionExtractText::SieveActionExtractText(SieveEditorGraphicalModeWidget *s
 
 QWidget *SieveActionExtractText::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto grid = new QGridLayout;
     grid->setContentsMargins({});
     w->setLayout(grid);
 
-    QLabel *lab = new QLabel(i18n("Number of characters:"));
+    auto lab = new QLabel(i18n("Number of characters:"));
     grid->addWidget(lab, 0, 0);
 
     auto nbCharacters = new QSpinBox;

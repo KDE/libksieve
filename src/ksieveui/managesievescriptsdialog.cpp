@@ -65,7 +65,7 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(SieveImapPasswordProvider *pa
     setAttribute(Qt::WA_GroupLeader);
     setAttribute(Qt::WA_DeleteOnClose);
     auto mainLayout = new QVBoxLayout(this);
-    QFrame *frame = new QFrame;
+    auto frame = new QFrame;
     mainLayout->addWidget(frame);
     auto vlay = new QVBoxLayout(frame);
     vlay->setSpacing(0);

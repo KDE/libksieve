@@ -27,7 +27,7 @@ SieveConditionHasFlag::SieveConditionHasFlag(SieveEditorGraphicalModeWidget *sie
 
 QWidget *SieveConditionHasFlag::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
@@ -42,7 +42,7 @@ QWidget *SieveConditionHasFlag::createParamWidget(QWidget *parent) const
 
     int row = 0;
     if (hasVariableSupport) {
-        QLabel *lab = new QLabel(i18n("Variable name\n (if empty it uses internal variable):"));
+        auto lab = new QLabel(i18n("Variable name\n (if empty it uses internal variable):"));
         grid->addWidget(lab, row, 0);
 
         auto variableName = new QLineEdit;
@@ -51,7 +51,7 @@ QWidget *SieveConditionHasFlag::createParamWidget(QWidget *parent) const
         grid->addWidget(variableName, row, 1);
         ++row;
     }
-    QLabel *lab = new QLabel(i18n("Value:"));
+    auto lab = new QLabel(i18n("Value:"));
     grid->addWidget(lab, row, 0);
 
     AbstractRegexpEditorLineEdit *value = AutoCreateScriptUtil::createRegexpEditorLineEdit();

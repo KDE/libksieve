@@ -26,7 +26,7 @@ SieveActionDeleteHeader::SieveActionDeleteHeader(SieveEditorGraphicalModeWidget 
 
 QWidget *SieveActionDeleteHeader::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto grid = new QGridLayout;
     grid->setContentsMargins({});
     w->setLayout(grid);
@@ -36,7 +36,7 @@ QWidget *SieveActionDeleteHeader::createParamWidget(QWidget *parent) const
     connect(matchType, &SelectMatchTypeComboBox::valueChanged, this, &SieveActionDeleteHeader::valueChanged);
     grid->addWidget(matchType, 0, 0);
 
-    QLabel *lab = new QLabel(i18n("header:"));
+    auto lab = new QLabel(i18n("header:"));
     grid->addWidget(lab, 0, 1);
 
     auto headerEdit = new QLineEdit;

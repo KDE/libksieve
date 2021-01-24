@@ -27,18 +27,18 @@ SieveActionRedirect::SieveActionRedirect(SieveEditorGraphicalModeWidget *sieveGr
 
 QWidget *SieveActionRedirect::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
     if (mHasCopySupport) {
-        QCheckBox *copy = new QCheckBox(i18n("Keep a copy"));
+        auto copy = new QCheckBox(i18n("Keep a copy"));
         copy->setObjectName(QStringLiteral("copy"));
         connect(copy, &QCheckBox::clicked, this, &SieveActionRedirect::valueChanged);
         lay->addWidget(copy);
     }
     if (mHasListSupport) {
-        QCheckBox *list = new QCheckBox(i18n("Use list"));
+        auto list = new QCheckBox(i18n("Use list"));
         list->setObjectName(QStringLiteral("list"));
         connect(list, &QCheckBox::clicked, this, &SieveActionRedirect::valueChanged);
         lay->addWidget(list);

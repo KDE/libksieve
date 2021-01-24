@@ -23,12 +23,12 @@ SieveConditionConvert::SieveConditionConvert(SieveEditorGraphicalModeWidget *sie
 
 QWidget *SieveConditionConvert::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto lay = new QGridLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    QLabel *lab = new QLabel(i18n("From:"));
+    auto lab = new QLabel(i18n("From:"));
     lay->addWidget(lab, 0, 0);
 
     auto fromMimeType = new SelectMimeTypeComboBox;

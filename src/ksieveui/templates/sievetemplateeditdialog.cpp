@@ -46,13 +46,13 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
         connect(buttonBox, &QDialogButtonBox::rejected, this, &SieveTemplateEditDialog::reject);
         mOkButton->setDefault(true);
     }
-    QWidget *w = new QWidget;
+    auto w = new QWidget;
 
     auto vbox = new QVBoxLayout;
     vbox->setContentsMargins({});
 
     auto hbox = new QHBoxLayout;
-    QLabel *label = new QLabel(i18n("Name:"));
+    auto label = new QLabel(i18n("Name:"));
     hbox->addWidget(label);
 
     mTemplateNameEdit = new QLineEdit;

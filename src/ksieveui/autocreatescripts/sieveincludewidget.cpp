@@ -130,7 +130,7 @@ void SieveIncludeActionWidget::initWidget()
     mLayout = new QGridLayout(this);
     mLayout->setContentsMargins({});
 
-    QLabel *lab = new QLabel(i18n("Include:"));
+    auto lab = new QLabel(i18n("Include:"));
     mLayout->addWidget(lab, 1, 0);
     mLocation = new SieveIncludeLocation(this);
     connect(mLocation, &SieveIncludeLocation::valueChanged, this, &SieveIncludeActionWidget::valueChanged);

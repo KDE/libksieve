@@ -27,7 +27,7 @@ SieveActionSetVariable::SieveActionSetVariable(SieveEditorGraphicalModeWidget *s
 
 QWidget *SieveActionSetVariable::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto grid = new QGridLayout;
     grid->setContentsMargins({});
     w->setLayout(grid);
@@ -38,13 +38,13 @@ QWidget *SieveActionSetVariable::createParamWidget(QWidget *parent) const
     grid->addWidget(modifier, 0, 0);
 
     if (mHasRegexCapability) {
-        QCheckBox *protectAgainstUseRegexp = new QCheckBox(i18n("Protect special character"));
+        auto protectAgainstUseRegexp = new QCheckBox(i18n("Protect special character"));
         connect(protectAgainstUseRegexp, &QCheckBox::clicked, this, &SieveActionSetVariable::valueChanged);
         protectAgainstUseRegexp->setObjectName(QStringLiteral("regexprotect"));
         grid->addWidget(protectAgainstUseRegexp, 0, 1);
     }
 
-    QLabel *lab = new QLabel(i18n("Value:"));
+    auto lab = new QLabel(i18n("Value:"));
     grid->addWidget(lab, 1, 0);
 
     auto value = new QLineEdit;

@@ -26,7 +26,7 @@ ParsingResultDialog::ParsingResultDialog(QWidget *parent)
     : QDialog(parent)
 {
     setWindowTitle(i18nc("@title:window", "Sieve Parsing"));
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
 
     auto mainLayout = new QVBoxLayout(this);
     auto user1Button = new QPushButton(this);

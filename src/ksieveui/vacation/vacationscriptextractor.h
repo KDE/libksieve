@@ -393,7 +393,7 @@ private:
     }
 };
 
-typedef GenericInformationExtractor GIE;
+using GIE = GenericInformationExtractor;
 static const GenericInformationExtractor::StateNode spamNodes[] = {
     { 0, GIE::CommandStart, "if", 1, 0, nullptr },               // 0
     { 0, GIE::TestStart, "allof", 2, 3, nullptr },               // 1
@@ -599,7 +599,7 @@ private:
     QDate date(const QString &name) const
     {
         if (results().count(name) == 0) {
-            return QDate();
+            return {};
         } else {
             return QDate::fromString(results().at(name), Qt::ISODate);
         }

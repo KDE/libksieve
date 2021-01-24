@@ -26,7 +26,7 @@ SieveActionAddHeader::SieveActionAddHeader(SieveEditorGraphicalModeWidget *sieve
 
 QWidget *SieveActionAddHeader::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto grid = new QGridLayout;
     grid->setContentsMargins({});
     w->setLayout(grid);
@@ -36,7 +36,7 @@ QWidget *SieveActionAddHeader::createParamWidget(QWidget *parent) const
     connect(combo, &SelectAddHeaderPositionCombobox::valueChanged, this, &SieveActionAddHeader::valueChanged);
     grid->addWidget(combo, 0, 0);
 
-    QLabel *lab = new QLabel(i18n("header:"));
+    auto lab = new QLabel(i18n("header:"));
     grid->addWidget(lab, 0, 1);
 
     auto headerEdit = new QLineEdit;

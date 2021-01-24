@@ -54,7 +54,7 @@ void SearchServerWithVacationSupportJob::searchNextInfo()
 
 void SearchServerWithVacationSupportJob::slotSearchSieveScript(const QString &name, const QString &identifier)
 {
-       FindAccountInfoJob *job = new FindAccountInfoJob(this);
+       auto job = new FindAccountInfoJob(this);
        connect(job, &FindAccountInfoJob::findAccountInfoFinished, this, &SearchServerWithVacationSupportJob::slotFindAccountInfoFinished);
        job->setIdentifier(identifier);
        job->setProperty("serverName", name);

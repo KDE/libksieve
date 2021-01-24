@@ -23,7 +23,7 @@ SieveConditionIhave::SieveConditionIhave(SieveEditorGraphicalModeWidget *sieveGr
 
 QWidget *SieveConditionIhave::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);

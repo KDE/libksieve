@@ -25,7 +25,7 @@ SieveConditionDate::SieveConditionDate(SieveEditorGraphicalModeWidget *sieveGrap
 
 QWidget *SieveConditionDate::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
@@ -38,7 +38,7 @@ QWidget *SieveConditionDate::createParamWidget(QWidget *parent) const
     auto grid = new QGridLayout;
     grid->setContentsMargins({});
     lay->addLayout(grid);
-    QLabel *lab = new QLabel(i18n("header:"));
+    auto lab = new QLabel(i18n("header:"));
     grid->addWidget(lab, 0, 0);
 
     auto header = new QLineEdit;

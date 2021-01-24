@@ -59,7 +59,7 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *g
 
     topLayout->addWidget(mConditions, 0, Qt::AlignTop);
 
-    QGroupBox *actions = new QGroupBox(i18n("Actions"));
+    auto actions = new QGroupBox(i18n("Actions"));
     vbox = new QVBoxLayout;
     actions->setLayout(vbox);
     mScriptActionLister = new SieveActionWidgetLister(mSieveGraphicalModeWidget, this);
@@ -68,7 +68,7 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *g
     topLayout->addWidget(actions);
 
     auto newBlockLayout = new QHBoxLayout;
-    QLabel *lab = new QLabel(i18n("Add new block:"));
+    auto lab = new QLabel(i18n("Add new block:"));
     newBlockLayout->addWidget(lab);
     mNewBlockType = new QComboBox;
     newBlockLayout->addWidget(mNewBlockType);

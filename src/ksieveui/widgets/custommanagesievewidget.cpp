@@ -76,7 +76,7 @@ void CustomManageSieveWidget::slotSearchSieveScript(const QString &name, const Q
     mLastSieveTreeWidgetItem = new SieveTreeWidgetItem(treeView(), mLastSieveTreeWidgetItem);
     mLastSieveTreeWidgetItem->setIcon(0, QIcon::fromTheme(QStringLiteral("network-server")));
 
-    FindAccountInfoJob *job = new FindAccountInfoJob(this);
+    auto job = new FindAccountInfoJob(this);
     connect(job, &FindAccountInfoJob::findAccountInfoFinished, this, &CustomManageSieveWidget::slotFindAccountInfoFinished);
     job->setIdentifier(identifier);
     job->setProperty("serverName", name);

@@ -20,7 +20,7 @@ class QDate;
 namespace KMime {
 namespace Types {
 struct AddrSpec;
-typedef QVector<AddrSpec> AddrSpecList;
+using AddrSpecList = QVector<AddrSpec>;
 }
 }
 

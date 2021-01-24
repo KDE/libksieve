@@ -38,7 +38,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     auto formLayout = new QFormLayout;
     mainLayout->addLayout(formLayout);
 
-    QLabel *emailLab = new QLabel(i18n("Email path:"), this);
+    auto emailLab = new QLabel(i18n("Email path:"), this);
     emailLab->setObjectName(QStringLiteral("emaillab"));
 
     mEmailPath = new KUrlRequester(this);
@@ -52,7 +52,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     auto extensionLayout = new QHBoxLayout;
     mainLayout->addLayout(extensionLayout);
 
-    QLabel *extensionLab = new QLabel(i18n("Extension:"));
+    auto extensionLab = new QLabel(i18n("Extension:"));
     extensionLab->setObjectName(QStringLiteral("extensionlab"));
 
     mExtension = new QLineEdit(this);
@@ -67,7 +67,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     mSplitter->setObjectName(QStringLiteral("splitter"));
     mainLayout->addWidget(mSplitter);
 
-    QWidget *sieveEditorWidget = new QWidget(this);
+    auto sieveEditorWidget = new QWidget(this);
     auto vboxSieveEditorLayout = new QVBoxLayout;
     sieveEditorWidget->setLayout(vboxSieveEditorLayout);
     vboxSieveEditorLayout->setContentsMargins({});

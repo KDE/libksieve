@@ -24,12 +24,12 @@ SieveActionEnclose::SieveActionEnclose(SieveEditorGraphicalModeWidget *sieveGrap
 
 QWidget *SieveActionEnclose::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto grid = new QGridLayout;
     grid->setContentsMargins({});
     w->setLayout(grid);
 
-    QLabel *lab = new QLabel(i18n("Subject:"));
+    auto lab = new QLabel(i18n("Subject:"));
     grid->addWidget(lab, 0, 0);
 
     auto subject = new QLineEdit;

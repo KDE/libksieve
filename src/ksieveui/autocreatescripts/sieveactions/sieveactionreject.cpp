@@ -23,11 +23,11 @@ SieveActionReject::SieveActionReject(SieveEditorGraphicalModeWidget *sieveGraphi
 
 QWidget *SieveActionReject::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
-    QLabel *lab = new QLabel(i18n("text:"));
+    auto lab = new QLabel(i18n("text:"));
     lay->addWidget(lab);
 
     auto edit = new MultiLineEdit;

@@ -51,7 +51,7 @@ void SelectDateWidget::initialize()
     mDateType->addItem(i18n("Weekday"), QVariant::fromValue(KSieveUi::SelectDateWidget::Weekday));
     lay->addWidget(mDateType);
 
-    QLabel *lab = new QLabel(i18n("value:"));
+    auto lab = new QLabel(i18n("value:"));
     lay->addWidget(lab);
 
     mStackWidget = new QStackedWidget;

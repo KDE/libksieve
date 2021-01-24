@@ -25,7 +25,7 @@ SieveConditionVirusTest::SieveConditionVirusTest(SieveEditorGraphicalModeWidget 
 
 QWidget *SieveConditionVirusTest::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto lay = new QVBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);

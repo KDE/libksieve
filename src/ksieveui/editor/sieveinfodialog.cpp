@@ -29,7 +29,7 @@ SieveInfoDialog::SieveInfoDialog(QWidget *parent)
     mSieveInfoWidget->setObjectName(QStringLiteral("mSieveInfoWidget"));
     mainLayout->addWidget(mSieveInfoWidget);
 
-    QDialogButtonBox *button = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    auto button = new QDialogButtonBox(QDialogButtonBox::Close, this);
     button->setObjectName(QStringLiteral("button"));
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &SieveInfoDialog::reject);

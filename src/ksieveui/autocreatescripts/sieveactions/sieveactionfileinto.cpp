@@ -88,18 +88,18 @@ void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
 
 QWidget *SieveActionFileInto::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto lay = new QHBoxLayout(w);
     lay->setContentsMargins({});
 
     if (mHasCopySupport) {
-        QCheckBox *copy = new QCheckBox(i18n("Keep a copy"));
+        auto copy = new QCheckBox(i18n("Keep a copy"));
         copy->setObjectName(QStringLiteral("copy"));
         lay->addWidget(copy);
         connect(copy, &QCheckBox::clicked, this, &SieveActionFileInto::valueChanged);
     }
     if (mHasMailBoxSupport) {
-        QCheckBox *create = new QCheckBox(i18n("Create folder"));
+        auto create = new QCheckBox(i18n("Create folder"));
         create->setObjectName(QStringLiteral("create"));
         connect(create, &QCheckBox::clicked, this, &SieveActionFileInto::valueChanged);
         lay->addWidget(create);

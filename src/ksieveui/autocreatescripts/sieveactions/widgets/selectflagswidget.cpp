@@ -28,7 +28,7 @@ SelectFlagsListDialog::SelectFlagsListDialog(QWidget *parent)
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(mListWidget);
 
-    QDialogButtonBox *buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
     okButton->setShortcut(Qt::CTRL | Qt::Key_Return);
@@ -81,7 +81,7 @@ SelectFlagsListWidget::~SelectFlagsListWidget()
 
 void SelectFlagsListWidget::init()
 {
-    QListWidgetItem *item = new QListWidgetItem(i18n("Deleted"), this);
+    auto item = new QListWidgetItem(i18n("Deleted"), this);
     item->setData(FlagsRealName, QStringLiteral("\\\\Deleted"));
     item->setCheckState(Qt::Unchecked);
     item = new QListWidgetItem(i18n("Answered"), this);

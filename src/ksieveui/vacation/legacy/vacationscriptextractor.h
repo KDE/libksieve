@@ -216,7 +216,7 @@ private:
     QDate date(const QString &name) const
     {
         if (mResults.count(name) == 0) {
-            return QDate();
+            return {};
         } else {
             return QDate::fromString(mResults.at(name), Qt::ISODate);
         }

@@ -25,7 +25,7 @@ SieveConditionHeader::SieveConditionHeader(SieveEditorGraphicalModeWidget *sieve
 
 QWidget *SieveConditionHeader::createParamWidget(QWidget *parent) const
 {
-    QWidget *w = new QWidget(parent);
+    auto w = new QWidget(parent);
     auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
@@ -43,7 +43,7 @@ QWidget *SieveConditionHeader::createParamWidget(QWidget *parent) const
     connect(headerType, &SelectHeaderTypeComboBox::valueChanged, this, &SieveConditionHeader::valueChanged);
     grid->addWidget(headerType, 0, 0, 1, 2);
 
-    QLabel *lab = new QLabel(i18n("With value:"));
+    auto lab = new QLabel(i18n("With value:"));
     grid->addWidget(lab, 1, 0);
 
     AbstractRegexpEditorLineEdit *value = AutoCreateScriptUtil::createRegexpEditorLineEdit();

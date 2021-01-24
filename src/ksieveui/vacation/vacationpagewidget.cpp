@@ -32,7 +32,7 @@ VacationPageWidget::VacationPageWidget(QWidget *parent)
     lay->addWidget(mStackWidget);
 
     //Main Page
-    QWidget *mainPage = new QWidget;
+    auto mainPage = new QWidget;
     auto vbox = new QVBoxLayout;
     vbox->setContentsMargins({});
     mainPage->setLayout(vbox);
@@ -43,9 +43,9 @@ VacationPageWidget::VacationPageWidget(QWidget *parent)
     vbox->addWidget(mVacationEditWidget);
     mStackWidget->addWidget(mainPage);
 
-    QWidget *w = new QWidget;
+    auto w = new QWidget;
     vbox = new QVBoxLayout;
-    QLabel *lab = new QLabel(i18n("Your server did not list \"vacation\" in "
+    auto lab = new QLabel(i18n("Your server did not list \"vacation\" in "
                                   "its list of supported Sieve extensions;"
                                   "without it, KMail cannot install out-of-"
                                   "office replies for you."
