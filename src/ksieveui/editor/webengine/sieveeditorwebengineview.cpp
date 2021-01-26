@@ -5,7 +5,6 @@
 */
 
 #include "sieveeditorwebengineview.h"
-#include <qtwebenginewidgetsversion.h>
 
 #include <KLocalizedString>
 #include <QContextMenuEvent>
