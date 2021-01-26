@@ -8,19 +8,20 @@
     SPDX-License-Identifier: GPL-2.0-only
 */
 
-#include <ksieve/parser.h>
 #include <impl/parser.h>
+#include <ksieve/parser.h>
 
 #include <ksieve/error.h>
 
-#include <QString>
 #include <QByteArray>
+#include <QString>
 
 #include <assert.h>
-#include <limits.h> // ULONG_MAX
 #include <ctype.h> // isdigit
+#include <limits.h> // ULONG_MAX
 
-namespace KSieve {
+namespace KSieve
+{
 //
 //
 // Parser Bridge implementation
@@ -30,7 +31,6 @@ namespace KSieve {
 Parser::Parser(const char *scursor, const char *const send, int options)
     : i(new Impl(scursor, send, options))
 {
-
 }
 
 Parser::~Parser()
@@ -77,7 +77,7 @@ static inline unsigned long factorForQuantifier(char ch)
     case 'K':
         return 1024;
     default:
-        assert(0);   // lexer should prohibit this
+        assert(0); // lexer should prohibit this
         return 1; // make compiler happy
     }
 }
@@ -88,7 +88,8 @@ static inline bool willOverflowULong(unsigned long result, unsigned long add)
     return result > maxULongByTen || ULONG_MAX - 10 * result < add;
 }
 
-namespace KSieve {
+namespace KSieve
+{
 //
 //
 // Parser Implementation
@@ -104,16 +105,12 @@ Parser::Impl::Impl(const char *scursor, const char *const send, int options)
 
 bool Parser::Impl::isStringToken() const
 {
-    return token() == Lexer::QuotedString
-           || token() == Lexer::MultiLineString;
+    return token() == Lexer::QuotedString || token() == Lexer::MultiLineString;
 }
 
 bool Parser::Impl::isArgumentToken() const
 {
-    return isStringToken()
-           || token() == Lexer::Number
-           || token() == Lexer::Tag
-           || (token() == Lexer::Special && mTokenValue == QLatin1String("["));
+    return isStringToken() || token() == Lexer::Number || token() == Lexer::Tag || (token() == Lexer::Special && mTokenValue == QLatin1String("["));
 }
 
 bool Parser::Impl::obtainToken()
@@ -148,8 +145,7 @@ bool Parser::Impl::obtainToken()
             }
             consumeToken();
             break;
-        default:
-            ;     // make compiler happy
+        default:; // make compiler happy
         }
     }
     if (lexer.error() && scriptBuilder()) {
@@ -253,12 +249,12 @@ bool Parser::Impl::parseCommand()
         return false;
     }
 
-    if (token() == Lexer::Special && tokenValue() == QLatin1Char('(')) {   // test-list
+    if (token() == Lexer::Special && tokenValue() == QLatin1Char('(')) { // test-list
         if (!parseTestList()) {
             assert(error());
             return false;
         }
-    } else if (token() == Lexer::Identifier) {   // should be test:
+    } else if (token() == Lexer::Identifier) { // should be test:
         if (!parseTest()) {
             assert(error());
             return false;
@@ -287,7 +283,7 @@ bool Parser::Impl::parseCommand()
         consumeToken();
     } else if (tokenValue() == QLatin1String("{")) { // block
         if (!parseBlock()) {
-            return false;    // it's an error since we saw '{'
+            return false; // it's an error since we saw '{'
         }
     } else {
         makeError(Error::MissingSemicolonOrBlock);
@@ -485,12 +481,12 @@ bool Parser::Impl::parseTest()
         goto TestEnd;
     }
 
-    if (token() == Lexer::Special && tokenValue() == QLatin1Char('(')) {   // test-list
+    if (token() == Lexer::Special && tokenValue() == QLatin1Char('(')) { // test-list
         if (!parseTestList()) {
             assert(error());
             return false;
         }
-    } else if (token() == Lexer::Identifier) {   // should be test:
+    } else if (token() == Lexer::Identifier) { // should be test:
         if (!parseTest()) {
             assert(error());
             return false;

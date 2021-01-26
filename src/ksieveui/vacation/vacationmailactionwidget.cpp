@@ -5,13 +5,13 @@
 */
 
 #include "vacationmailactionwidget.h"
-#include "widgets/moveimapfolderwidget.h"
-#include "widgets/abstractselectemaillineedit.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
-#include <QStackedWidget>
-#include <QHBoxLayout>
-#include <KPluginLoader>
+#include "widgets/abstractselectemaillineedit.h"
+#include "widgets/moveimapfolderwidget.h"
 #include <KPluginFactory>
+#include <KPluginLoader>
+#include <QHBoxLayout>
+#include <QStackedWidget>
 
 using namespace KSieveUi;
 

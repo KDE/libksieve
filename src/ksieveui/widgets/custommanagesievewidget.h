@@ -7,11 +7,12 @@
 #ifndef CUSTOMMANAGESIEVEWIDGET_H
 #define CUSTOMMANAGESIEVEWIDGET_H
 
-#include <widgets/managesievewidget.h>
-#include <KSieveUi/SieveImapInstance>
 #include "util/util_p.h"
+#include <KSieveUi/SieveImapInstance>
+#include <widgets/managesievewidget.h>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveImapPasswordProvider;
 class SieveTreeWidgetItem;
 class CustomManageSieveWidget : public KSieveUi::ManageSieveWidget
@@ -32,7 +33,7 @@ private:
     void slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
     QVector<KSieveUi::SieveImapInstance> mSieveImapInstances;
     QMap<QString, QString>::const_iterator mSieveServerMapIterator;
-    //name, identifier
+    // name, identifier
     QMap<QString, QString> mServerSieveInfos;
     SieveImapPasswordProvider *const mPasswordProvider;
     SieveTreeWidgetItem *mLastSieveTreeWidgetItem = nullptr;

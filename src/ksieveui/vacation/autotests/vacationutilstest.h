@@ -9,7 +9,8 @@
 
 #include <QObject>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class VacationUtilsTest : public QObject
 {
     Q_OBJECT

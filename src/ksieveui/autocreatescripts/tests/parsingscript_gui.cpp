@@ -5,19 +5,19 @@
 */
 #include <QDebug>
 
-#include <QPointer>
-#include "../src/ksieveui/scriptsparsing/xmlprintingscriptbuilder.h"
 #include "../src/ksieveui/scriptsparsing/parsingresultdialog.h"
+#include "../src/ksieveui/scriptsparsing/xmlprintingscriptbuilder.h"
+#include <QPointer>
 
 #include <ksieve/parser.h>
 using KSieve::Parser;
 
+#include <QApplication>
+#include <QCommandLineOption>
+#include <QCommandLineParser>
+#include <QFileDialog>
 #include <ksieve/error.h>
 #include <ksieve/scriptbuilder.h>
-#include <QFileDialog>
-#include <QApplication>
-#include <QCommandLineParser>
-#include <QCommandLineOption>
 
 #include "../autocreatescriptdialog.h"
 #include "../sievescriptparsingerrordialog.h"
@@ -49,10 +49,9 @@ int main(int argc, char **argv)
     } else {
         return 0;
     }
-    //qDebug() << "scriptUtf8 = \"" + script +"\"";
+    // qDebug() << "scriptUtf8 = \"" + script +"\"";
 
-    KSieve::Parser sieveParser(script.constBegin(),
-                               script.constBegin() + script.length());
+    KSieve::Parser sieveParser(script.constBegin(), script.constBegin() + script.length());
     KSieveUi::XMLPrintingScriptBuilder psb(2);
     sieveParser.setScriptBuilder(&psb);
     if (sieveParser.parse()) {
@@ -66,7 +65,7 @@ int main(int argc, char **argv)
 
     auto dialog = new KSieveUi::AutoCreateScriptDialog;
     const QStringList capabilities = KSieveUi::Test::fullCapabilitiesList();
-    //Add all capabilities for testing
+    // Add all capabilities for testing
     dialog->setSieveCapabilities(capabilities);
     QString error;
     dialog->loadScript(psb.result(), error);

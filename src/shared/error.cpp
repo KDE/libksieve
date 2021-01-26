@@ -14,12 +14,14 @@
 
 #include <climits> // UINT_MAX
 
-namespace KSieve {
+namespace KSieve
+{
 const char *Error::typeToString(Type t)
 {
     switch (t) {
-#define CASE(x) case x: \
-    return #x
+#define CASE(x)                                                                                                                                                \
+    case x:                                                                                                                                                    \
+        return #x
         CASE(None);
         CASE(Custom);
 
@@ -89,8 +91,9 @@ QString Error::asString() const
         err = i18n("Parse error: Carriage Return (CR) without Line Feed (LF)");
         break;
     case SlashWithoutAsterisk:
-        err = i18n("Parse error: Unquoted Slash ('/') without Asterisk ('*'). "
-                   "Broken Comment?");
+        err = i18n(
+            "Parse error: Unquoted Slash ('/') without Asterisk ('*'). "
+            "Broken Comment?");
         break;
     case IllegalCharacter:
         err = i18n("Parse error: Illegal Character");
@@ -102,8 +105,9 @@ QString Error::asString() const
         err = i18n("Parse error: Tag Name has leading Digits");
         break;
     case NonCWSAfterTextColon:
-        err = i18n("Parse error: Only whitespace and #comments may "
-                   "follow \"text:\" on the same line");
+        err = i18n(
+            "Parse error: Only whitespace and #comments may "
+            "follow \"text:\" on the same line");
         break;
     case NumberOutOfRange:
         err = i18n("Parse error: Number out of Range (must be smaller than %1)", UINT_MAX);

@@ -6,17 +6,17 @@
 #include "selectflagswidget.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
-#include <QLineEdit>
-#include <KLocalizedString>
 #include <KConfigGroup>
+#include <KLocalizedString>
 #include <KSharedConfig>
+#include <QLineEdit>
 
-#include <QPushButton>
+#include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QPointer>
-#include <QDialogButtonBox>
-#include <QVBoxLayout>
+#include <QPushButton>
 #include <QToolButton>
+#include <QVBoxLayout>
 
 using namespace KSieveUi;
 
@@ -93,8 +93,8 @@ void SelectFlagsListWidget::init()
     item = new QListWidgetItem(i18n("Seen"), this);
     item->setData(FlagsRealName, QStringLiteral("\\\\Seen"));
     item->setCheckState(Qt::Unchecked);
-    //item = new QListWidgetItem(QStringLiteral("\\\\Recent"), this);
-    //item->setCheckState(Qt::Unchecked);
+    // item = new QListWidgetItem(QStringLiteral("\\\\Recent"), this);
+    // item->setCheckState(Qt::Unchecked);
     item = new QListWidgetItem(i18n("Draft"), this);
     item->setData(FlagsRealName, QStringLiteral("\\\\Draft"));
     item->setCheckState(Qt::Unchecked);

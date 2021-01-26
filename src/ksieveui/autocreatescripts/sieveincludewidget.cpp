@@ -5,23 +5,23 @@
 */
 
 #include "sieveincludewidget.h"
-#include "sievescriptblockwidget.h"
+#include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
-#include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
+#include "sievescriptblockwidget.h"
 #include "widgets/includefilelineedit.h"
 
-#include <QPushButton>
 #include <KLocalizedString>
 #include <QIcon>
+#include <QPushButton>
 
-#include <QGridLayout>
+#include "libksieve_debug.h"
 #include <QCheckBox>
+#include <QGridLayout>
 #include <QLabel>
 #include <QWhatsThis>
 #include <QXmlStreamReader>
-#include "libksieve_debug.h"
 
 using namespace KSieveUi;
 
@@ -90,8 +90,7 @@ void SieveIncludeActionWidget::loadScript(QXmlStreamReader &element, QString &er
         const QStringRef tagName = element.name();
         if (tagName == QLatin1String("tag")) {
             const QString tagValue = element.readElementText();
-            if (tagValue == QLatin1String("personal")
-                || tagValue == QLatin1String("global")) {
+            if (tagValue == QLatin1String("personal") || tagValue == QLatin1String("global")) {
                 mLocation->setCode(AutoCreateScriptUtil::tagValue(tagValue), error);
             } else if (tagValue == QLatin1String("optional")) {
                 mOptional->setChecked(true);
@@ -215,7 +214,8 @@ void SieveIncludeWidget::setListOfIncludeFile(const QStringList &lst)
 void SieveIncludeWidget::slotHelp()
 {
     const QString help = i18n(
-        "The \"include\" command takes an optional \"location\" parameter, an optional \":once\" parameter, an optional \":optional\" parameter, and a single string argument representing the name of the script to include for processing at that point.");
+        "The \"include\" command takes an optional \"location\" parameter, an optional \":once\" parameter, an optional \":optional\" parameter, and a single "
+        "string argument representing the name of the script to include for processing at that point.");
     const QString href = QStringLiteral("https://tools.ietf.org/html/rfc6609#page-4");
     const QString fullWhatsThis = AutoCreateScriptUtil::createFullWhatsThis(help, href);
     QWhatsThis::showText(QCursor::pos(), fullWhatsThis, mHelpButton);
@@ -288,7 +288,7 @@ void SieveIncludeWidgetLister::updateAddRemoveButton()
 void SieveIncludeWidgetLister::setListOfIncludeFile(const QStringList &listOfIncludeFile)
 {
     mListOfIncludeFile = listOfIncludeFile;
-    //Update all lineedit
+    // Update all lineedit
     const QList<QWidget *> widgetList = widgets();
     QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();

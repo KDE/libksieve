@@ -5,8 +5,8 @@
 */
 
 #include "custommanagesievewidget.h"
-#include "widgets/managesievetreeview.h"
 #include "util/findaccountinfojob.h"
+#include "widgets/managesievetreeview.h"
 
 #include <KLocalizedString>
 #include <QIcon>
@@ -63,7 +63,7 @@ void CustomManageSieveWidget::searchSieveScript()
 void CustomManageSieveWidget::searchNextServerSieve()
 {
     ++mSieveServerMapIterator;
-    if(mSieveServerMapIterator != mServerSieveInfos.constEnd()) {
+    if (mSieveServerMapIterator != mServerSieveInfos.constEnd()) {
         slotSearchSieveScript(mSieveServerMapIterator.key(), mSieveServerMapIterator.value());
     } else {
         mLastSieveTreeWidgetItem = nullptr;
@@ -96,7 +96,7 @@ void CustomManageSieveWidget::slotFindAccountInfoFinished(const KSieveUi::Util::
     } else {
         serverName += QStringLiteral(" (%1)").arg(u.userName());
         KManageSieve::SieveJob *job = KManageSieve::SieveJob::list(u);
-        //qDebug() << " SETTINGS " << info;
+        // qDebug() << " SETTINGS " << info;
         job->setProperty("sieveimapaccountsettings", QVariant::fromValue(info.sieveImapAccountSettings));
         connect(job, &KManageSieve::SieveJob::gotList, this, &CustomManageSieveWidget::slotGotList);
         mJobs.insert(job, mLastSieveTreeWidgetItem);

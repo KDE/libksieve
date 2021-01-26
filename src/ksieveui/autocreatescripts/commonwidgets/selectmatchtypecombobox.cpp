@@ -4,8 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectmatchtypecombobox.h"
-#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
+#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 
 #include <KLocalizedString>
 
@@ -62,7 +62,7 @@ void SelectMatchTypeComboBox::setCode(const QString &code, const QString &name, 
     if (index != -1) {
         setCurrentIndex(index);
         if (mHasRegexCapability) {
-            //TODO optimize
+            // TODO optimize
             const QString value = itemData(index).toString();
             Q_EMIT switchToRegexp(value.contains(QLatin1String("regex")));
         }

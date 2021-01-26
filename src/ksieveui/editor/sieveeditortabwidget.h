@@ -6,10 +6,11 @@
 #ifndef SIEVEEDITORTABWIDGET_H
 #define SIEVEEDITORTABWIDGET_H
 
-#include <QTabWidget>
 #include "ksieveui_export.h"
+#include <QTabWidget>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveEditorHelpHtmlWidget;
 /**
  * @brief The SieveEditorTabWidget class

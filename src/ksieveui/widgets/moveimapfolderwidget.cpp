@@ -5,9 +5,9 @@
 */
 
 #include "moveimapfolderwidget.h"
-#include <QLineEdit>
 #include <KLocalizedString>
 #include <QHBoxLayout>
+#include <QLineEdit>
 using namespace KSieveUi;
 
 MoveImapFolderWidget::MoveImapFolderWidget(QWidget *parent)

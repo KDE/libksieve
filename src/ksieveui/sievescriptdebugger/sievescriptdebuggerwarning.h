@@ -7,9 +7,10 @@
 #ifndef SIEVESCRIPTDEBUGGERWARNING_H
 #define SIEVESCRIPTDEBUGGERWARNING_H
 
-#include <KMessageWidget>
 #include "ksieveui_private_export.h"
-namespace KSieveUi {
+#include <KMessageWidget>
+namespace KSieveUi
+{
 class KSIEVEUI_TESTS_EXPORT SieveScriptDebuggerWarning : public KMessageWidget
 {
     Q_OBJECT

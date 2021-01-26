@@ -14,7 +14,7 @@ QUrl KSieveUi::SieveEditorUtil::helpUrl(KSieveUi::SieveEditorUtil::HelpVariableN
     case BodyCondition:
         return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5173"));
     case ConvertCondition:
-        return QUrl(); //TODO
+        return QUrl(); // TODO
     case CurrentdateCondition:
         return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5260#page-6"));
     case DateCondition:
@@ -68,7 +68,7 @@ QUrl KSieveUi::SieveEditorUtil::helpUrl(KSieveUi::SieveEditorUtil::HelpVariableN
     case BreakAction:
         return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5703#page-3"));
     case ConvertAction:
-        return QUrl(); //TODO
+        return QUrl(); // TODO
     case DiscardAction:
         return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc3028#page-22"));
     case EncloseAction:
@@ -172,7 +172,7 @@ KSieveUi::SieveEditorUtil::HelpVariableName KSieveUi::SieveEditorUtil::strToVari
     } else if (str == QLatin1String("break")) {
         return BreakAction;
     } else if (str == QLatin1String("convert")) {
-        return ConvertAction; //TODO
+        return ConvertAction; // TODO
     } else if (str == QLatin1String("discard")) {
         return DiscardAction;
     } else if (str == QLatin1String("enclose")) {
@@ -219,6 +219,6 @@ KSieveUi::SieveEditorUtil::HelpVariableName KSieveUi::SieveEditorUtil::strToVari
         return EditHeaderExtension;
     }
 
-    //TODO
+    // TODO
     return UnknownHelp;
 }

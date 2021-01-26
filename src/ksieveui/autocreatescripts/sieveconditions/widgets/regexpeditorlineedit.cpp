@@ -28,7 +28,7 @@ RegexpEditorLineEdit::~RegexpEditorLineEdit()
 void RegexpEditorLineEdit::switchToRegexpEditorLineEdit(bool regexpEditor)
 {
     Q_UNUSED(regexpEditor)
-    //Nothing here
+    // Nothing here
 }
 
 void KSieveUi::RegexpEditorLineEdit::setCode(const QString &str)

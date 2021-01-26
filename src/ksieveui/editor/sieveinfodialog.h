@@ -8,9 +8,10 @@
 #ifndef SIEVEINFODIALOG_H
 #define SIEVEINFODIALOG_H
 
-#include <QDialog>
 #include "ksieveui_export.h"
-namespace KSieveUi {
+#include <QDialog>
+namespace KSieveUi
+{
 class SieveInfoWidget;
 class KSIEVEUI_EXPORT SieveInfoDialog : public QDialog
 {
@@ -19,6 +20,7 @@ public:
     explicit SieveInfoDialog(QWidget *parent = nullptr);
     ~SieveInfoDialog() override;
     void setServerInfo(const QStringList &serverInfos);
+
 private:
     void readConfig();
     void writeConfig();

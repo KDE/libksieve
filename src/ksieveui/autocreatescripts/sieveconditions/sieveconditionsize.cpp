@@ -4,15 +4,15 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionsize.h"
-#include "widgets/selectsizewidget.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
+#include "widgets/selectsizewidget.h"
 #include <KLocalizedString>
 
-#include <QHBoxLayout>
-#include <QComboBox>
-#include <QXmlStreamReader>
 #include "libksieve_debug.h"
+#include <QComboBox>
+#include <QHBoxLayout>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 
@@ -53,7 +53,9 @@ QString SieveConditionSize::code(QWidget *w) const
 
 QString SieveConditionSize::help() const
 {
-    return i18n("The \"size\" test deals with the size of a message.  It takes either a tagged argument of \":over\" or \":under\", followed by a number representing the size of the message.");
+    return i18n(
+        "The \"size\" test deals with the size of a message.  It takes either a tagged argument of \":over\" or \":under\", followed by a number representing "
+        "the size of the message.");
 }
 
 void SieveConditionSize::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
@@ -78,7 +80,7 @@ void SieveConditionSize::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             sizeWidget->setCode(tagValue, numIdentifier, name(), error);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {

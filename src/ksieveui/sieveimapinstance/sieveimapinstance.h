@@ -10,7 +10,8 @@
 #include "ksieveui_export.h"
 #include <QObject>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 /**
  * @brief The SieveImapInstance class
  * @author Laurent Montel <montel@kde.org>
@@ -21,12 +22,12 @@ public:
     SieveImapInstance();
     ~SieveImapInstance() = default;
 
-    //Same enum
+    // Same enum
     enum Status {
         Idle = 0, ///< The agent instance does currently nothing.
-        Running,  ///< The agent instance is working on something.
-        Broken,    ///< The agent instance encountered an error state.
-        NotConfigured  ///< The agent is lacking required configuration
+        Running, ///< The agent instance is working on something.
+        Broken, ///< The agent instance encountered an error state.
+        NotConfigured ///< The agent is lacking required configuration
     };
 
     Q_REQUIRED_RESULT QString name() const;
@@ -45,6 +46,7 @@ public:
     void setCapabilities(const QStringList &capabilities);
 
     Q_REQUIRED_RESULT bool operator==(const SieveImapInstance &other) const;
+
 private:
     QStringList mMimeTypes;
     QStringList mCapabilities;

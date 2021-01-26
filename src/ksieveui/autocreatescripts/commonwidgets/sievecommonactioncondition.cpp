@@ -8,13 +8,16 @@
 
 #include <KLocalizedString>
 
+#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include <QUrl>
 #include <QWidget>
-#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 
 using namespace KSieveUi;
 
-SieveCommonActionCondition::SieveCommonActionCondition(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent)
+SieveCommonActionCondition::SieveCommonActionCondition(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget,
+                                                       const QString &name,
+                                                       const QString &label,
+                                                       QObject *parent)
     : QObject(parent)
     , mSieveGraphicalModeWidget(sieveGraphicalModeWidget)
     , mName(name)
@@ -107,7 +110,8 @@ void SieveCommonActionCondition::unknownTagValue(const QString &tagValue, QStrin
 
 void SieveCommonActionCondition::tooManyArguments(const QStringRef &tagName, int index, int maxValue, QString &error)
 {
-    error += i18n("Too many arguments found for \"%1\", max value is %2, number of value found %3 for %4", name(), maxValue, index, *tagName.string()) + QLatin1Char('\n');
+    error += i18n("Too many arguments found for \"%1\", max value is %2, number of value found %3 for %4", name(), maxValue, index, *tagName.string())
+        + QLatin1Char('\n');
 }
 
 void SieveCommonActionCondition::serverDoesNotSupportFeatures(const QString &feature, QString &error)

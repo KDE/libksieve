@@ -8,7 +8,8 @@
 
 #include "sievecondition.h"
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveConditionTrue : public SieveCondition
 {
     Q_OBJECT

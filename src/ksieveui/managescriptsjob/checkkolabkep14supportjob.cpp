@@ -77,7 +77,10 @@ bool CheckKolabKep14SupportJob::hasKep14Support() const
     return d->mKolabKep14Support;
 }
 
-void CheckKolabKep14SupportJob::slotCheckKep14Support(KManageSieve::SieveJob *job, bool success, const QStringList &availableScripts, const QString &activeScript)
+void CheckKolabKep14SupportJob::slotCheckKep14Support(KManageSieve::SieveJob *job,
+                                                      bool success,
+                                                      const QStringList &availableScripts,
+                                                      const QString &activeScript)
 {
     if (!success) {
         Q_EMIT result(this, false);

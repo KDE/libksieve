@@ -4,42 +4,42 @@
  */
 
 #include "sieveeditortextmodewidget.h"
-#include "templates/sievetemplatewidget.h"
 #include "autocreatescripts/autocreatescriptdialog.h"
-#include "editor/sievetextedit.h"
-#include "editor/warningwidget/sieveeditorwarning.h"
-#include "editor/warningwidget/sieveeditorparsingmissingfeaturewarning.h"
 #include "editor/sieveeditortabwidget.h"
+#include "editor/sievetextedit.h"
+#include "editor/warningwidget/sieveeditorparsingmissingfeaturewarning.h"
+#include "editor/warningwidget/sieveeditorwarning.h"
 #include "sievescriptdebugger/sievescriptdebuggerdialog.h"
+#include "templates/sievetemplatewidget.h"
 
-#include "scriptsparsing/xmlprintingscriptbuilder.h"
 #include "scriptsparsing/parsingresultdialog.h"
+#include "scriptsparsing/xmlprintingscriptbuilder.h"
 
-#include <KPIMTextEdit/PlainTextEditFindBar>
-#include <KPIMTextEdit/PlainTextEditorWidget>
-#include <KPIMTextEdit/TextToSpeechWidget>
-#include <KPIMTextEdit/TextGotoLineWidget>
 #include "KSplitterCollapserButton"
 #include "webengine/sieveeditorhelphtmlwidget.h"
+#include <KPIMTextEdit/PlainTextEditFindBar>
+#include <KPIMTextEdit/PlainTextEditorWidget>
 #include <KPIMTextEdit/SlideContainer>
+#include <KPIMTextEdit/TextGotoLineWidget>
+#include <KPIMTextEdit/TextToSpeechWidget>
 
-#include <ksieve/parser.h>
 #include <ksieve/error.h>
+#include <ksieve/parser.h>
 #include <ksieve/scriptbuilder.h>
 
-#include <KLocalizedString>
-#include <KSharedConfig>
 #include <KConfigGroup>
+#include <KLocalizedString>
 #include <KMessageBox>
+#include <KSharedConfig>
 
-#include <QSplitter>
-#include <QShortcut>
-#include <QPointer>
-#include <QPushButton>
-#include <QVBoxLayout>
-#include <QPrinter>
-#include <QPrintDialog>
 #include <PimCommon/KPimPrintPreviewDialog>
+#include <QPointer>
+#include <QPrintDialog>
+#include <QPrinter>
+#include <QPushButton>
+#include <QShortcut>
+#include <QSplitter>
+#include <QVBoxLayout>
 
 #include <errno.h>
 #include <memory>
@@ -198,8 +198,7 @@ void SieveEditorTextModeWidget::slotShowGoToLine()
 void SieveEditorTextModeWidget::generateXml()
 {
     const QByteArray script = mTextEdit->toPlainText().toUtf8();
-    KSieve::Parser parser(script.begin(),
-                          script.begin() + script.length());
+    KSieve::Parser parser(script.begin(), script.begin() + script.length());
     KSieveUi::XMLPrintingScriptBuilder psb(2);
     parser.setScriptBuilder(&psb);
     const bool result = parser.parse();
@@ -216,8 +215,7 @@ void SieveEditorTextModeWidget::generateXml()
 void SieveEditorTextModeWidget::slotEditRule(const QString &selectedText)
 {
     const QByteArray script = selectedText.toUtf8();
-    KSieve::Parser parser(script.begin(),
-                          script.begin() + script.length());
+    KSieve::Parser parser(script.begin(), script.begin() + script.length());
     KSieveUi::XMLPrintingScriptBuilder psb(2);
     parser.setScriptBuilder(&psb);
     const bool result = parser.parse();
@@ -227,7 +225,7 @@ void SieveEditorTextModeWidget::slotEditRule(const QString &selectedText)
         dlg->setSieveImapAccountSettings(mSieveImapAccountSettings);
         dlg->setListOfIncludeFile(mListOfIncludeFile);
         QString error;
-        //qDebug() << " psb.result()" << psb.result();
+        // qDebug() << " psb.result()" << psb.result();
         dlg->loadScript(psb.result(), error);
         if (dlg->exec()) {
             QStringList requireModules;

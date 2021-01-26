@@ -5,14 +5,14 @@
 */
 
 #include "sievescriptpage.h"
-#include "sievescripttabwidget.h"
-#include "sieveincludewidget.h"
+#include "sieveeditorgraphicalmodewidget.h"
 #include "sieveforeverypartwidget.h"
 #include "sieveglobalvariablewidget.h"
-#include "sieveeditorgraphicalmodewidget.h"
+#include "sieveincludewidget.h"
+#include "sievescripttabwidget.h"
 
-#include "sievewidgetpageabstract.h"
 #include "autocreatescripts/autocreatescriptdialog.h"
+#include "sievewidgetpageabstract.h"
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -99,7 +99,7 @@ void SieveScriptPage::slotAddNewBlock(QWidget *widget, KSieveUi::SieveWidgetPage
         return;
     }
     SieveScriptBlockWidget *blockWidget = createScriptBlock(type);
-    if (type == KSieveUi::SieveScriptBlockWidget::BlockElse) { //Insert at the end of tabwidget
+    if (type == KSieveUi::SieveScriptBlockWidget::BlockElse) { // Insert at the end of tabwidget
         mTabWidget->insertTab(mTabWidget->count(), blockWidget, blockName(type));
     } else {
         mTabWidget->insertTab(mTabWidget->indexOf(widget) + 1, blockWidget, blockName(type));

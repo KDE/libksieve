@@ -23,17 +23,18 @@ void ParseUserTest::testParseEmptyUserJob()
 
 void ParseUserTest::testParseUserTwoActiveScriptJob()
 {
-    const QString script = QStringLiteral("# USER Management Script\n"
-                                          "#\n"
-                                          "# This script includes the various active sieve scripts\n"
-                                          "# it is AUTOMATICALLY GENERATED. DO NOT EDIT MANUALLY!\n"
-                                          "# \n"
-                                          "# For more information, see http://wiki.kolab.org/KEP:14#USER\n"
-                                          "#\n"
-                                          "\n"
-                                          "require [\"include\"];\n"
-                                          "include :personal \"file1\";\n"
-                                          "include :personal \"file2\";\n");
+    const QString script = QStringLiteral(
+        "# USER Management Script\n"
+        "#\n"
+        "# This script includes the various active sieve scripts\n"
+        "# it is AUTOMATICALLY GENERATED. DO NOT EDIT MANUALLY!\n"
+        "# \n"
+        "# For more information, see http://wiki.kolab.org/KEP:14#USER\n"
+        "#\n"
+        "\n"
+        "require [\"include\"];\n"
+        "include :personal \"file1\";\n"
+        "include :personal \"file2\";\n");
     bool result;
     ParseUserScriptJob job({});
     const QStringList lst = job.parsescript(script, result);
@@ -43,15 +44,16 @@ void ParseUserTest::testParseUserTwoActiveScriptJob()
 
 void ParseUserTest::testParseUserNoActiveScriptJob()
 {
-    const QString script = QStringLiteral("# USER Management Script\n"
-                                          "#\n"
-                                          "# This script includes the various active sieve scripts\n"
-                                          "# it is AUTOMATICALLY GENERATED. DO NOT EDIT MANUALLY!\n"
-                                          "# \n"
-                                          "# For more information, see http://wiki.kolab.org/KEP:14#USER\n"
-                                          "#\n"
-                                          "\n"
-                                          "require [\"include\"];\n");
+    const QString script = QStringLiteral(
+        "# USER Management Script\n"
+        "#\n"
+        "# This script includes the various active sieve scripts\n"
+        "# it is AUTOMATICALLY GENERATED. DO NOT EDIT MANUALLY!\n"
+        "# \n"
+        "# For more information, see http://wiki.kolab.org/KEP:14#USER\n"
+        "#\n"
+        "\n"
+        "require [\"include\"];\n");
     bool result;
     ParseUserScriptJob job({});
     const QStringList lst = job.parsescript(script, result);
@@ -61,17 +63,18 @@ void ParseUserTest::testParseUserNoActiveScriptJob()
 
 void ParseUserTest::testParseUserDuplicateActiveScriptJob()
 {
-    const QString script = QStringLiteral("# USER Management Script\n"
-                                          "#\n"
-                                          "# This script includes the various active sieve scripts\n"
-                                          "# it is AUTOMATICALLY GENERATED. DO NOT EDIT MANUALLY!\n"
-                                          "# \n"
-                                          "# For more information, see http://wiki.kolab.org/KEP:14#USER\n"
-                                          "#\n"
-                                          "\n"
-                                          "require [\"include\"];\n"
-                                          "include :personal \"file1\";\n"
-                                          "include :personal \"file1\";\n");
+    const QString script = QStringLiteral(
+        "# USER Management Script\n"
+        "#\n"
+        "# This script includes the various active sieve scripts\n"
+        "# it is AUTOMATICALLY GENERATED. DO NOT EDIT MANUALLY!\n"
+        "# \n"
+        "# For more information, see http://wiki.kolab.org/KEP:14#USER\n"
+        "#\n"
+        "\n"
+        "require [\"include\"];\n"
+        "include :personal \"file1\";\n"
+        "include :personal \"file1\";\n");
     bool result;
     ParseUserScriptJob job({});
     const QStringList lst = job.parsescript(script, result);
@@ -81,15 +84,16 @@ void ParseUserTest::testParseUserDuplicateActiveScriptJob()
 
 void ParseUserTest::testParseUserErrorScriptJob()
 {
-    const QString script = QStringLiteral("# USER Management Script\n"
-                                          "#\n"
-                                          "# This script includes the various active sieve scripts\n"
-                                          "# it is AUTOMATICALLY GENERATED. DO NOT EDIT MANUALLY!\n"
-                                          "# \n"
-                                          "# For more information, see http://wiki.kolab.org/KEP:14#USER\n"
-                                          "#\n"
-                                          "\n"
-                                          "errorscript\n");
+    const QString script = QStringLiteral(
+        "# USER Management Script\n"
+        "#\n"
+        "# This script includes the various active sieve scripts\n"
+        "# it is AUTOMATICALLY GENERATED. DO NOT EDIT MANUALLY!\n"
+        "# \n"
+        "# For more information, see http://wiki.kolab.org/KEP:14#USER\n"
+        "#\n"
+        "\n"
+        "errorscript\n");
     bool result;
     ParseUserScriptJob job({});
     const QStringList lst = job.parsescript(script, result);

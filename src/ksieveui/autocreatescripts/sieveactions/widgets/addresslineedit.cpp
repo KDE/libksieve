@@ -4,8 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "addresslineedit.h"
-#include <KLocalizedString>
 #include <KColorScheme>
+#include <KLocalizedString>
 #include <QHBoxLayout>
 
 using namespace KSieveUi;
@@ -39,7 +39,7 @@ void AddressLineEdit::verifyAddress()
     QString styleSheet;
     const QString lineEditText = text();
     mEmailIsInvalid = !lineEditText.contains(QLatin1Char('@'));
-    //Fix check multi address
+    // Fix check multi address
     if (mNegativeBackground.isEmpty()) {
         KStatefulBrush bgBrush = KStatefulBrush(KColorScheme::View, KColorScheme::NegativeText);
         mNegativeBackground = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(this).color().name());

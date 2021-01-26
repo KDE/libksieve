@@ -7,10 +7,11 @@
 #ifndef MANAGESIEVETREEVIEW_H
 #define MANAGESIEVETREEVIEW_H
 
-#include <PimCommon/CustomTreeView>
 #include "ksieveui_export.h"
+#include <PimCommon/CustomTreeView>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 /**
  * @brief The ManageSieveTreeView class
  * @author Laurent Montel <montel@kde.org>

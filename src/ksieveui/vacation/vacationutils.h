@@ -11,8 +11,10 @@
 
 class QDate;
 
-namespace KSieveUi {
-namespace VacationUtils {
+namespace KSieveUi
+{
+namespace VacationUtils
+{
 enum MailAction {
     Keep,
     Discard,

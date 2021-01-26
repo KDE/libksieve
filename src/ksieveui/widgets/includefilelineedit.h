@@ -7,11 +7,12 @@
 #ifndef INCLUDEFILELINEEDIT_H
 #define INCLUDEFILELINEEDIT_H
 
-#include "lineeditvalidator.h"
 #include "ksieveui_private_export.h"
+#include "lineeditvalidator.h"
 class QCompleter;
 class QStringListModel;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class KSIEVEUI_TESTS_EXPORT IncludeFileLineEdit : public LineEditValidator
 {
     Q_OBJECT

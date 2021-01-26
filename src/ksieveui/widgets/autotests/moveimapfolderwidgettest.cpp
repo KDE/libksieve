@@ -6,9 +6,9 @@
 
 #include "moveimapfolderwidgettest.h"
 #include "../moveimapfolderwidget.h"
-#include <QTest>
 #include <QHBoxLayout>
 #include <QLineEdit>
+#include <QTest>
 
 MoveImapFolderWidgetTest::MoveImapFolderWidgetTest(QObject *parent)
     : QObject(parent)

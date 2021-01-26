@@ -4,17 +4,17 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionheader.h"
-#include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
-#include "widgets/selectheadertypecombobox.h"
+#include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "editor/sieveeditorutil.h"
+#include "widgets/selectheadertypecombobox.h"
 
 #include <KLocalizedString>
 
+#include "libksieve_debug.h"
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QXmlStreamReader>
-#include "libksieve_debug.h"
 
 using namespace KSieveUi;
 
@@ -68,7 +68,7 @@ QString SieveConditionHeader::code(QWidget *w) const
 
     valueStr = AutoCreateScriptUtil::fixListValue(valueStr);
     return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("header %1 %2 %3").arg(matchString, headerStr, valueStr)
-           + AutoCreateScriptUtil::generateConditionComment(comment());
+        + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QString SieveConditionHeader::help() const
@@ -105,7 +105,7 @@ void SieveConditionHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
             }
             ++index;
         } else if (tagName == QLatin1String("list")) {
-            //Header list
+            // Header list
             if (index == 0) {
                 auto headerType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertype"));
                 headerType->setCode(AutoCreateScriptUtil::listValueToStr(element));
@@ -119,7 +119,7 @@ void SieveConditionHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
             ++index;
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {

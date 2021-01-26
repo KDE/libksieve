@@ -7,8 +7,8 @@
 */
 
 #include "sievejob.h"
-#include "sievejob_p.h"
 #include "session.h"
+#include "sievejob_p.h"
 
 #include "kmanagersieve_debug.h"
 #include <KLocalizedString>
@@ -16,12 +16,12 @@
 
 using namespace KManageSieve;
 
-QHash<QUrl, QPointer<Session> > SieveJob::Private::m_sessionPool;
+QHash<QUrl, QPointer<Session>> SieveJob::Private::m_sessionPool;
 
 Session *SieveJob::Private::sessionForUrl(const QUrl &url)
 {
     QUrl hostUrl(url);
-    hostUrl.setPath(QString());   // remove parts not required to identify the server
+    hostUrl.setPath(QString()); // remove parts not required to identify the server
     QPointer<Session> sessionPtr = m_sessionPool.value(hostUrl);
     if (!sessionPtr) {
         sessionPtr = QPointer<Session>(new Session());
@@ -58,14 +58,12 @@ static void append_lf2crlf(QByteArray &out, const QByteArray &in)
 void SieveJob::Private::run(Session *session)
 {
     switch (mCommands.top()) {
-    case Get:
-    {
+    case Get: {
         const QString filename = mUrl.fileName(/*QUrl::ObeyTrailingSlash*/);
         session->sendData("GETSCRIPT \"" + filename.toUtf8() + "\"");
         break;
     }
-    case Put:
-    {
+    case Put: {
         const QString filename = mUrl.fileName(/*QUrl::ObeyTrailingSlash*/);
         QByteArray encodedData;
         append_lf2crlf(encodedData, mScript.toUtf8());
@@ -73,8 +71,7 @@ void SieveJob::Private::run(Session *session)
         session->sendData(encodedData);
         break;
     }
-    case Activate:
-    {
+    case Activate: {
         const QString filename = mUrl.fileName(/*QUrl::ObeyTrailingSlash*/);
         session->sendData("SETACTIVE \"" + filename.toUtf8() + "\"");
         break;
@@ -86,21 +83,18 @@ void SieveJob::Private::run(Session *session)
     case SearchActive:
         session->sendData("LISTSCRIPTS");
         break;
-    case Delete:
-    {
+    case Delete: {
         const QString filename = mUrl.fileName(/*QUrl::ObeyTrailingSlash*/);
         session->sendData("DELETESCRIPT \"" + filename.toUtf8() + "\"");
         break;
     }
-    case Rename:
-    {
+    case Rename: {
         const QString filename = mUrl.fileName(/*QUrl::ObeyTrailingSlash*/);
         const QByteArray ba = QByteArray("RENAMESCRIPT \"" + filename.toUtf8() + "\" \"" + mNewName.toUtf8() + "\"");
         session->sendData(ba);
         break;
     }
-    case Check:
-    {
+    case Check: {
         QByteArray encodedData;
         append_lf2crlf(encodedData, mScript.toUtf8());
         session->sendData("RENAMESCRIPT {" + QByteArray::number(encodedData.size()) + "+}");
@@ -125,8 +119,7 @@ bool SieveJob::Private::handleResponse(const Response &response, const QByteArra
             mScript = QString::fromUtf8(data);
             break;
         case List:
-        case SearchActive:
-        {
+        case SearchActive: {
             const QString filename = QString::fromUtf8(response.key());
             mAvailableScripts.append(filename);
             const bool isActive = response.extra() == "ACTIVE";
@@ -145,14 +138,18 @@ bool SieveJob::Private::handleResponse(const Response &response, const QByteArra
         case Put:
             if (response.type() == Response::KeyValuePair) {
                 errMsg = QString::fromUtf8(response.key());
-                mErrorMessage = i18n("The script did not upload successfully.\n"
-                                     "This is probably due to errors in the script.\n"
-                                     "The server responded:\n%1", errMsg);
+                mErrorMessage = i18n(
+                    "The script did not upload successfully.\n"
+                    "This is probably due to errors in the script.\n"
+                    "The server responded:\n%1",
+                    errMsg);
             } else if (response.type() == Response::Quantity) {
                 errMsg = QString::fromUtf8(data);
-                mErrorMessage = i18n("The script did not upload successfully.\n"
-                                     "This is probably due to errors in the script.\n"
-                                     "The server responded:\n%1", errMsg);
+                mErrorMessage = i18n(
+                    "The script did not upload successfully.\n"
+                    "This is probably due to errors in the script.\n"
+                    "The server responded:\n%1",
+                    errMsg);
             } else {
                 mErrorMessage = i18n("The script did not upload successfully.\nThe script may contain errors.");
             }
@@ -161,7 +158,7 @@ bool SieveJob::Private::handleResponse(const Response &response, const QByteArra
             qCDebug(KMANAGERSIEVE_LOG) << "Unhandled response: " << response.key() << response.value() << response.extra() << data;
         }
         if (lastCmd != Put) {
-            return false;    // we expect more
+            return false; // we expect more
         }
     }
 
@@ -249,7 +246,7 @@ SieveJob::~SieveJob()
 void SieveJob::kill(KJob::KillVerbosity verbosity)
 {
     if (d->mCommands.isEmpty()) {
-        return;    // done already
+        return; // done already
     }
     Private::sessionForUrl(d->mUrl)->killJob(this, verbosity);
 }

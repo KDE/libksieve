@@ -7,10 +7,11 @@
 #ifndef LINEEDITVALIDATOR_H
 #define LINEEDITVALIDATOR_H
 
-#include <QLineEdit>
 #include "ksieveui_private_export.h"
+#include <QLineEdit>
 class QRegularExpressionValidator;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class KSIEVEUI_TESTS_EXPORT LineEditValidator : public QLineEdit
 {
     Q_OBJECT

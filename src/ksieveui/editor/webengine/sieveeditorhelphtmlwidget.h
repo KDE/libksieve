@@ -7,14 +7,16 @@
 #define SIEVEEDITORHELPHTMLWIDGET_H
 
 #include "ksieveui_export.h"
-#include <QWidget>
 #include <QUrl>
+#include <QWidget>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class SlideContainer;
 }
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveEditorWebEngineView;
 class SieveEditorLoadProgressIndicator;
 class FindBarWebEngineView;

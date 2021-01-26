@@ -7,12 +7,13 @@
 #ifndef MULTIIMAPVACATIONDIALOG_H
 #define MULTIIMAPVACATIONDIALOG_H
 
-#include <QDialog>
 #include "ksieveui_export.h"
 #include "util_p.h"
+#include <QDialog>
 #include <memory>
 class QDialogButtonBox;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class VacationCreateScriptJob;
 class MultiImapVacationManager;
 class MultiImapVacationDialogPrivate;

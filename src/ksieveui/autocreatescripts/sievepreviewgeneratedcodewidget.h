@@ -8,7 +8,8 @@
 #include "ksieveui_private_export.h"
 #include <QWidget>
 class QTextEdit;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class KSIEVEUI_TESTS_EXPORT SievePreviewGeneratedCodeWidget : public QWidget
 {
     Q_OBJECT
@@ -17,6 +18,7 @@ public:
     ~SievePreviewGeneratedCodeWidget() override;
 
     void setCode(const QString &str);
+
 private:
     QTextEdit *const mTextEdit;
 };

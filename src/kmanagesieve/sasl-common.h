@@ -4,14 +4,14 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-//krazy:excludeall=null since used by SASL (C library)
+// krazy:excludeall=null since used by SASL (C library)
 
 #ifndef KSIEVE_KMANAGESIEVE_SASL_COMMON_H
 #define KSIEVE_KMANAGESIEVE_SASL_COMMON_H
 
-#include <stdio.h>
-#include <QFile>
 #include <QDir>
+#include <QFile>
+#include <stdio.h>
 
 #ifdef Q_OS_WIN
 #include <QCoreApplication>
@@ -23,7 +23,7 @@ extern "C" {
 
 inline bool initSASL()
 {
-#ifdef Q_OS_WIN  //krazy:exclude=cpp
+#ifdef Q_OS_WIN // krazy:exclude=cpp
     for (const auto &path : QCoreApplication::libraryPaths()) {
         QDir dir(path);
         if (dir.exists(QStringLiteral("sasl2"))) {

@@ -4,16 +4,16 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionereject.h"
+#include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 #include "widgets/multilineedit.h"
-#include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
 
-#include <QLabel>
-#include <QHBoxLayout>
-#include <QXmlStreamReader>
 #include "libksieve_debug.h"
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 SieveActionEReject::SieveActionEReject(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -47,10 +47,10 @@ void SieveActionEReject::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             edit->setPlainText(tagValue);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             element.skipCurrentElement();
-            //implement in the future ?
+            // implement in the future ?
         } else {
             unknownTag(tagName, error);
             qCDebug(LIBKSIEVE_LOG) << " SieveActionEReject::setParamWidgetValue unknown tagName " << tagName;

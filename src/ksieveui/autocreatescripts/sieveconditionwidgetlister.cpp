@@ -7,23 +7,23 @@
 #include "sieveconditionwidgetlister.h"
 #include "autocreatescriptdialog.h"
 #include "autocreatescriptutil_p.h"
-#include "libksieve_debug.h"
 #include "commonwidgets/sievehelpbutton.h"
-#include "sieveeditorgraphicalmodewidget.h"
-#include "sieveconditions/sieveconditionlist.h"
+#include "libksieve_debug.h"
 #include "sieveconditions/sievecondition.h"
+#include "sieveconditions/sieveconditionlist.h"
+#include "sieveeditorgraphicalmodewidget.h"
 
-#include <QPushButton>
 #include <KLocalizedString>
-#include <QIcon>
-#include <QUrl>
 #include <QComboBox>
+#include <QIcon>
 #include <QPointer>
+#include <QPushButton>
+#include <QUrl>
 
+#include "sievescriptdescriptiondialog.h"
 #include <QGridLayout>
 #include <QLabel>
 #include <QWhatsThis>
-#include "sievescriptdescriptiondialog.h"
 
 using namespace KSieveUi;
 
@@ -95,7 +95,7 @@ void SieveConditionWidget::initWidget()
                 // add (i18n-ized) name to combo box
                 mComboBox->addItem((*it)->label(), (*it)->name());
             } else {
-                delete(*it);
+                delete (*it);
             }
         } else {
             // append to the list of actions:
@@ -382,12 +382,12 @@ void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniq
                         }
                     } else if (testTagName == QLatin1String("crlf")) {
                         element.skipCurrentElement();
-                        //nothing
+                        // nothing
                     } else if (testTagName == QLatin1String("comment")) {
                         qDebug() << "Need to implement comment here ";
                         element.skipCurrentElement();
-                        //nothing
-                        //implement in the future ?
+                        // nothing
+                        // implement in the future ?
                     } else {
                         qCDebug(LIBKSIEVE_LOG) << " SieveConditionWidgetLister::loadScript unknown condition tag: " << testTagName;
                     }

@@ -5,15 +5,15 @@
 */
 
 #include "vacationcheckjob.h"
-#include "vacationutils.h"
 #include "managescriptsjob/parseuserscriptjob.h"
+#include "vacationutils.h"
 
 #include "util/util_p.h"
 
 #include <kmanagesieve/sievejob.h>
 
-#include <QDate>
 #include <KLocalizedString>
+#include <QDate>
 
 #include "libksieve_debug.h"
 
@@ -137,8 +137,10 @@ void VacationCheckJob::slotGotList(KManageSieve::SieveJob *job, bool success, co
     Q_ASSERT(job == mSieveJob);
     mSieveJob = nullptr;
     if (!success) {
-        emitError(i18n("Failed to get the list of Sieve scripts.\n"
-                       "The server responded:\n%1", job->errorString()));
+        emitError(
+            i18n("Failed to get the list of Sieve scripts.\n"
+                 "The server responded:\n%1",
+                 job->errorString()));
         return;
     }
 
@@ -171,7 +173,7 @@ void VacationCheckJob::searchVacationScript()
 void VacationCheckJob::getNextScript()
 {
     if (isLastScript()) {
-        //TODO: no script found
+        // TODO: no script found
         mNoScriptFound = true;
         Q_EMIT vacationScriptActive(this, QString(), false);
         qCDebug(LIBKSIEVE_LOG) << "no vacation script found :(";

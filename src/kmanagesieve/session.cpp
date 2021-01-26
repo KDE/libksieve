@@ -6,18 +6,18 @@
 */
 
 #include "session.h"
-#include "sievejob_p.h"
 #include "sessionthread_p.h"
+#include "sievejob_p.h"
 
 #include "kmanagersieve_debug.h"
-#include <kio/sslui.h>
-#include <kio/authinfo.h>
 #include <KLocalizedString>
-#include <KPasswordDialog>
 #include <KMessageBox>
-#include <kio/job.h>
+#include <KPasswordDialog>
 #include <QRegularExpression>
 #include <QUrlQuery>
+#include <kio/authinfo.h>
+#include <kio/job.h>
+#include <kio/sslui.h>
 
 using namespace KManageSieve;
 
@@ -36,18 +36,12 @@ Session::Session(QObject *parent)
     static int counter = 0;
     setObjectName(QStringLiteral("session") + QString::number(++counter));
 
-    connect(m_thread, &SessionThread::responseReceived,
-            this, &Session::processResponse);
-    connect(m_thread, &SessionThread::error,
-            this, &Session::setErrorMessage);
-    connect(m_thread, &SessionThread::authenticationDone,
-            this, &Session::authenticationDone);
-    connect(m_thread, &SessionThread::sslError,
-            this, &Session::sslError);
-    connect(m_thread, &SessionThread::sslDone,
-            this, &Session::sslDone);
-    connect(m_thread, &SessionThread::socketDisconnected,
-            [=]() {
+    connect(m_thread, &SessionThread::responseReceived, this, &Session::processResponse);
+    connect(m_thread, &SessionThread::error, this, &Session::setErrorMessage);
+    connect(m_thread, &SessionThread::authenticationDone, this, &Session::authenticationDone);
+    connect(m_thread, &SessionThread::sslError, this, &Session::sslError);
+    connect(m_thread, &SessionThread::sslDone, this, &Session::sslDone);
+    connect(m_thread, &SessionThread::socketDisconnected, [=]() {
         m_connected = false;
         m_disconnected = true;
     });
@@ -97,11 +91,15 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
                         return;
                     }
                     if (!allowUnencrypted() && QSslSocket::supportsSsl() && !m_supportsStartTls
-                        && KMessageBox::warningContinueCancel(nullptr,
-                                                              i18n("TLS encryption was requested, but your Sieve server does not advertise TLS in its capabilities.\n"
-                                                                   "You can choose to try to initiate TLS negotiations nonetheless, or cancel the operation."),
-                                                              i18n("Sieve Server Does Not Advertise TLS"), KGuiItem(i18n("&Start TLS nonetheless")), KStandardGuiItem::cancel(),
-                                                              QStringLiteral("ask_starttls_%1").arg(m_url.host())) != KMessageBox::Continue) {
+                        && KMessageBox::warningContinueCancel(
+                               nullptr,
+                               i18n("TLS encryption was requested, but your Sieve server does not advertise TLS in its capabilities.\n"
+                                    "You can choose to try to initiate TLS negotiations nonetheless, or cancel the operation."),
+                               i18n("Sieve Server Does Not Advertise TLS"),
+                               KGuiItem(i18n("&Start TLS nonetheless")),
+                               KStandardGuiItem::cancel(),
+                               QStringLiteral("ask_starttls_%1").arg(m_url.host()))
+                            != KMessageBox::Continue) {
                         setErrorMessage(QAbstractSocket::UnknownSocketError, i18n("TLS encryption requested, but not supported by server."));
                         disconnectFromHost();
                         return;
@@ -143,7 +141,8 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
             m_thread->startSsl();
             m_state = None;
         } else {
-            setErrorMessage(QAbstractSocket::UnknownSocketError, i18n("The server does not seem to support TLS. Disable TLS if you want to connect without encryption."));
+            setErrorMessage(QAbstractSocket::UnknownSocketError,
+                            i18n("The server does not seem to support TLS. Disable TLS if you want to connect without encryption."));
             disconnectFromHost();
         }
         break;
@@ -164,7 +163,8 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
                 return;
             }
         }
-        qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Unhandled response! state=" << m_state << "response=" << response.key() << response.value() << response.extra() << data;
+        qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Unhandled response! state=" << m_state << "response=" << response.key() << response.value()
+                                   << response.extra() << data;
     }
 }
 
@@ -255,14 +255,11 @@ KManageSieve::AuthDetails Session::requestAuthDetails(const QUrl &url)
     ai.password = url.password();
     ai.keepPassword = true;
     ai.caption = i18n("Sieve Authentication Details");
-    ai.comment = i18n("Please enter your authentication details for your sieve account "
-                      "(usually the same as your email password):");
+    ai.comment = i18n(
+        "Please enter your authentication details for your sieve account "
+        "(usually the same as your email password):");
 
-    QPointer<KPasswordDialog> dlg
-        = new KPasswordDialog(
-              nullptr,
-              KPasswordDialog::ShowUsernameLine | KPasswordDialog::ShowKeepPassword
-              );
+    QPointer<KPasswordDialog> dlg = new KPasswordDialog(nullptr, KPasswordDialog::ShowUsernameLine | KPasswordDialog::ShowKeepPassword);
     dlg->setUsername(ai.username);
     dlg->setPassword(ai.password);
     dlg->setKeepPassword(ai.keepPassword);
@@ -316,8 +313,7 @@ void Session::setErrorMessage(int error, const QString &msg)
         m_currentJob->setErrorMessage(msg);
     } else {
         // Don't bother the user about idle timeout
-        if (error != QAbstractSocket::RemoteHostClosedError
-            && error != QAbstractSocket::SocketTimeoutError) {
+        if (error != QAbstractSocket::RemoteHostClosedError && error != QAbstractSocket::SocketTimeoutError) {
             qCWarning(KMANAGERSIEVE_LOG) << objectName() << "No job for reporting this error message!" << msg << "host" << m_url.host() << "error" << error;
             KMessageBox::error(nullptr, i18n("The Sieve server on %1 has reported an error:\n%2", m_url.host(), msg), i18n("Sieve Manager"));
         }

@@ -6,8 +6,8 @@
 
 #include "sievescriptdebuggerdialogtest.h"
 #include "../sievescriptdebuggerdialog.h"
-#include "../sievescriptdebuggerwidget.h"
 #include "../sievescriptdebuggerfrontendwidget.h"
+#include "../sievescriptdebuggerwidget.h"
 #include <KUrlRequester>
 #include <QDialogButtonBox>
 #include <QPushButton>

@@ -7,7 +7,8 @@
 #define SELECTADDHEADERPOSITIONCOMBOBOX_H
 #include <QComboBox>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SelectAddHeaderPositionCombobox : public QComboBox
 {
     Q_OBJECT

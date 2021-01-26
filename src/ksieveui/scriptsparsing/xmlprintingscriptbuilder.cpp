@@ -8,9 +8,9 @@
 #include <ksieve/parser.h>
 using KSieve::Parser;
 
-#include <ksieve/error.h>
 #include "libksieve_debug.h"
 #include <QXmlStreamWriter>
+#include <ksieve/error.h>
 
 using namespace KSieveUi;
 XMLPrintingScriptBuilder::XMLPrintingScriptBuilder(int indent)
@@ -69,12 +69,8 @@ void XMLPrintingScriptBuilder::numberArgument(unsigned long number, char quantif
 void XMLPrintingScriptBuilder::commandStart(const QString &identifier, int lineNumber)
 {
     Q_UNUSED(lineNumber)
-    if (identifier == QLatin1String("else") ||
-            identifier == QLatin1String("break") ||
-            identifier == QLatin1String("require") ||
-            identifier == QLatin1String("foreverypart") ||
-            identifier == QLatin1String("if") ||
-            identifier == QLatin1String("elsif")) {
+    if (identifier == QLatin1String("else") || identifier == QLatin1String("break") || identifier == QLatin1String("require")
+        || identifier == QLatin1String("foreverypart") || identifier == QLatin1String("if") || identifier == QLatin1String("elsif")) {
         mStream->writeStartElement(QStringLiteral("control"));
         mStream->writeAttribute(QStringLiteral("name"), identifier);
     } else {

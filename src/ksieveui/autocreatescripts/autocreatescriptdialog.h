@@ -11,7 +11,8 @@
 
 #include <QDialog>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveImapAccountSettings;
 class SieveEditorGraphicalModeWidget;
 /**
@@ -32,6 +33,7 @@ public:
     void loadScript(const QString &doc, QString &error);
 
     void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &sieveImapAccountSettings);
+
 protected:
     bool event(QEvent *e) override;
 

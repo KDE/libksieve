@@ -4,16 +4,16 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionkeep.h"
-#include "editor/sieveeditorutil.h"
-#include "widgets/selectflagswidget.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
+#include "editor/sieveeditorutil.h"
+#include "widgets/selectflagswidget.h"
 
-#include <KLocalizedString>
-#include <QLabel>
-#include <QHBoxLayout>
-#include <QXmlStreamReader>
 #include "libksieve_debug.h"
+#include <KLocalizedString>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 SieveActionKeep::SieveActionKeep(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -41,7 +41,8 @@ QString SieveActionKeep::code(QWidget *w) const
 QString SieveActionKeep::help() const
 {
     return i18n(
-        "The \"keep\" action is whatever action is taken in lieu of all other actions, if no filtering happens at all; generally, this simply means to file the message into the user's main mailbox.");
+        "The \"keep\" action is whatever action is taken in lieu of all other actions, if no filtering happens at all; generally, this simply means to file "
+        "the message into the user's main mailbox.");
 }
 
 QWidget *SieveActionKeep::createParamWidget(QWidget *parent) const
@@ -76,14 +77,14 @@ void SieveActionKeep::setParamWidgetValue(QXmlStreamReader &element, QWidget *w,
                 auto flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
                 flagsWidget->setFlags(QStringList() << element.readElementText());
             } else if (tagName == QLatin1String("tag") && element.readElementText() == QLatin1String("flags")) {
-                //nothing :)
-                //Don't skip here.
+                // nothing :)
+                // Don't skip here.
             } else if (tagName == QLatin1String("crlf")) {
                 element.skipCurrentElement();
-                //nothing
+                // nothing
             } else if (tagName == QLatin1String("comment")) {
                 element.skipCurrentElement();
-                //implement in the future ?
+                // implement in the future ?
             } else {
                 unknownTag(tagName, error);
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionAbstractFlags::setParamWidgetValue unknown tag :" << tagName;

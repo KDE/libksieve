@@ -8,9 +8,9 @@
 #include "../sieveeditorgraphicalmodewidget.h"
 #include "scriptsparsing/parsingutil.h"
 #include "tests/capability.h"
-#include <QTest>
-#include <QStandardPaths>
 #include <QProcess>
+#include <QStandardPaths>
+#include <QTest>
 
 #ifndef Q_OS_WIN
 void initLocale()
@@ -52,7 +52,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
     const QString generatedFile = QLatin1String(KSIEVEUI_BINARY_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral("-generated.siv");
     QDir().mkpath(QLatin1String(KSIEVEUI_BINARY_DATA_DIR));
     QString script = readSieveFile(originalFile);
-    //First parsing
+    // First parsing
     bool result = false;
     QString doc = KSieveUi::ParsingUtil::parseScript(script, result);
     QCOMPARE(success, result);
@@ -66,24 +66,21 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         doc = KSieveUi::ParsingUtil::parseScript(generatedScript, result);
         QCOMPARE(success, result);
 
-        //second parsing
+        // second parsing
         w.loadScript(doc, error);
         QCOMPARE(hasError, !error.isEmpty());
         generatedScript = w.currentscript();
 
-        //Create generated file
+        // Create generated file
         QFile f(generatedFile);
         QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
         f.write(generatedScript.toUtf8());
         f.close();
 
-        //qDebug() << " generatedScript" << generatedScript;
+        // qDebug() << " generatedScript" << generatedScript;
 
         // compare to reference file
-        QStringList args = QStringList()
-                           << QStringLiteral("-u")
-                           << refFile
-                           << generatedFile;
+        QStringList args = QStringList() << QStringLiteral("-u") << refFile << generatedFile;
         QProcess proc;
         proc.setProcessChannelMode(QProcess::ForwardedChannels);
         proc.start(QStringLiteral("diff"), args);
@@ -175,7 +172,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("vacation-multiple") << QStringLiteral("vacation-multiple") << false << true;
     QTest::newRow("vacation-multiple-with-undefined-command") << QStringLiteral("vacation-multiple-with-undefined-command") << true << true;
     QTest::newRow("full-example1") << QStringLiteral("full-example1") << false << true;
-    //We need to fix it.
+    // We need to fix it.
     QTest::newRow("regexp") << QStringLiteral("regexp") << true << true;
     QTest::newRow("comparator") << QStringLiteral("comparator") << false << true;
     QTest::newRow("test-comment") << QStringLiteral("test-comment") << false << true;
@@ -184,19 +181,19 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("add-header") << QStringLiteral("add-header") << false << true;
     QTest::newRow("problem-with-inferior-char") << QStringLiteral("problem-with-inferior-char") << false << true;
 
-    //We need to implement index support
+    // We need to implement index support
     QTest::newRow("delete-headers-with-index") << QStringLiteral("delete-headers-with-index") << true << true;
 
     QTest::newRow("notify-2") << QStringLiteral("notify-2") << false << true;
 
-    //Need to fix it
+    // Need to fix it
     QTest::newRow("foreverypart") << QStringLiteral("foreverypart") << true << true;
 
     QTest::newRow("test-foreverypart-complex") << QStringLiteral("test-foreverypart-complex") << false << true;
     QTest::newRow("test-envelop-subadress") << QStringLiteral("test-envelop-subadress") << false << true;
     QTest::newRow("test-current-date-custom") << QStringLiteral("test-current-date-custom") << false << true;
 
-    //Failed
+    // Failed
     QTest::newRow("failed-1") << QStringLiteral("failed-1") << true << true;
     QTest::newRow("failed-2") << QStringLiteral("failed-2") << false << true;
     QTest::newRow("failed-if-in-if") << QStringLiteral("failed-if-in-if") << true << true;
@@ -222,7 +219,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
     QTest::newRow("wierd-script") << QStringLiteral("wierd-script") << false << true;
 
     QTest::newRow("test-text-with-backslash") << QStringLiteral("test-text-with-backslash") << false << true;
-    //Bug 383756
+    // Bug 383756
     QTest::newRow("body-without-bodytype") << QStringLiteral("body-without-bodytype") << false << true;
 }
 

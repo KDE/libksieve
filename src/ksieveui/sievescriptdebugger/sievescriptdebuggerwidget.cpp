@@ -9,9 +9,9 @@
 
 #include <KLocalizedString>
 
-#include <QStackedWidget>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QStackedWidget>
 #include <QStandardPaths>
 #include <QTimer>
 

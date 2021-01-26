@@ -6,7 +6,7 @@
 
 #include "vacationscriptextractor.h"
 
-//TODO: add unittests for VacationDataExtractor
+// TODO: add unittests for VacationDataExtractor
 
 using namespace KSieveUi;
 VacationDataExtractor::VacationDataExtractor()
@@ -95,7 +95,7 @@ void VacationDataExtractor::blockStart(int lineNumber)
 void VacationDataExtractor::blockEnd(int lineNumber)
 {
     mBlockLevel--;
-    if (mBlockLevel == 0 && !commandFound()) {      //We are in main level again, and didn't found vacation in block
+    if (mBlockLevel == 0 && !commandFound()) { // We are in main level again, and didn't found vacation in block
         mActive = true;
         mIfComment = QString();
     } else if (mInIfBlock && mBlockLevel == 0 && commandFound()) {

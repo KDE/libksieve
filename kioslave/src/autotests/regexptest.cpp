@@ -5,9 +5,9 @@
 */
 
 #include "regexptest.h"
-#include <QTest>
 #include <QRegExp>
 #include <QRegularExpression>
+#include <QTest>
 QTEST_GUILESS_MAIN(RegexpTest)
 
 RegexpTest::RegexpTest(QObject *parent)
@@ -24,10 +24,11 @@ void RegexpTest::compareRegexp_data()
     QTest::addColumn<QString>("vendor");
     QTest::addColumn<bool>("valid");
 
-    QTest::newRow("empty") <<  QString() << 0 << 0 << 0 << QString() << false;
-    QTest::newRow("Cyrus timsieved v2.2.12") <<  QStringLiteral("Cyrus timsieved v2.2.12") << 2 << 2 << 12 << QString() << true;
-    QTest::newRow("Cyrus timsieved v2.2.12-kolab-nocaps") <<  QStringLiteral("Cyrus timsieved v2.2.12-kolab-nocaps") << 2 << 2 << 12 << QStringLiteral("-kolab-nocaps") << true;
-    QTest::newRow("Cyrus timsieved v5.2.12") <<  QStringLiteral("Cyrus timsieved v5.2.12") << 5 << 2 << 12 << QString() << true;
+    QTest::newRow("empty") << QString() << 0 << 0 << 0 << QString() << false;
+    QTest::newRow("Cyrus timsieved v2.2.12") << QStringLiteral("Cyrus timsieved v2.2.12") << 2 << 2 << 12 << QString() << true;
+    QTest::newRow("Cyrus timsieved v2.2.12-kolab-nocaps")
+        << QStringLiteral("Cyrus timsieved v2.2.12-kolab-nocaps") << 2 << 2 << 12 << QStringLiteral("-kolab-nocaps") << true;
+    QTest::newRow("Cyrus timsieved v5.2.12") << QStringLiteral("Cyrus timsieved v5.2.12") << 5 << 2 << 12 << QString() << true;
 }
 
 void RegexpTest::compareRegexp()

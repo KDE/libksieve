@@ -5,16 +5,16 @@
 */
 #include "sieveconditionaddress.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
-#include "widgets/selectaddresspartcombobox.h"
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
-#include "widgets/selectheadertypecombobox.h"
 #include "editor/sieveeditorutil.h"
+#include "widgets/selectaddresspartcombobox.h"
+#include "widgets/selectheadertypecombobox.h"
 
 #include <KLocalizedString>
 
+#include "libksieve_debug.h"
 #include <QHBoxLayout>
 #include <QLabel>
-#include "libksieve_debug.h"
 #include <QXmlStreamReader>
 
 using namespace KSieveUi;
@@ -76,8 +76,9 @@ QString SieveConditionAddress::code(QWidget *w) const
 
     const AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
     const QString addressStr = AutoCreateScriptUtil::createAddressList(edit->code().trimmed(), false);
-    return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("address %1 %2 %3 %4").arg(selectAddressPartStr, matchTypeStr, selectHeaderTypeStr, addressStr)
-           + AutoCreateScriptUtil::generateConditionComment(comment());
+    return AutoCreateScriptUtil::negativeString(isNegative)
+        + QStringLiteral("address %1 %2 %3 %4").arg(selectAddressPartStr, matchTypeStr, selectHeaderTypeStr, addressStr)
+        + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionAddress::needRequires(QWidget *w) const
@@ -91,7 +92,8 @@ QStringList SieveConditionAddress::needRequires(QWidget *w) const
 QString SieveConditionAddress::help() const
 {
     return i18n(
-        "The \"address\" test matches Internet addresses in structured headers that contain addresses.  It returns true if any header contains any key in the specified part of the address, as modified by the comparator and the match keyword.");
+        "The \"address\" test matches Internet addresses in structured headers that contain addresses.  It returns true if any header contains any key in the "
+        "specified part of the address, as modified by the comparator and the match keyword.");
 }
 
 void SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
@@ -131,7 +133,7 @@ void SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
             ++indexStr;
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
@@ -146,7 +148,7 @@ void SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
         QString specificError;
         auto selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
         selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(lstTagValue.at(0), notCondition), name(), specificError);
-        if (!specificError.isEmpty()) { //Test if default match type == is
+        if (!specificError.isEmpty()) { // Test if default match type == is
             auto selectAddressPart = w->findChild<SelectAddressPartComboBox *>(QStringLiteral("addresspartcombobox"));
             selectAddressPart->setCode(AutoCreateScriptUtil::tagValue(lstTagValue.at(0)), name(), error);
         }
@@ -157,7 +159,7 @@ void SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
         if (errorStr.isEmpty()) {
             auto selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
             selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(lstTagValue.at(1), notCondition), name(), error);
-        } else { //Problem with order
+        } else { // Problem with order
             auto selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
             selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(lstTagValue.at(0), notCondition), name(), error);
             selectAddressPart->setCode(AutoCreateScriptUtil::tagValue(lstTagValue.at(1)), name(), error);

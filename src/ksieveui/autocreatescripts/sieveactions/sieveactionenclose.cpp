@@ -4,17 +4,17 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionenclose.h"
-#include "widgets/multilineedit.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
+#include "widgets/multilineedit.h"
 
 #include <KLocalizedString>
 #include <QLineEdit>
 
-#include <QLabel>
-#include <QXmlStreamReader>
 #include "libksieve_debug.h"
 #include <QGridLayout>
+#include <QLabel>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 SieveActionEnclose::SieveActionEnclose(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -83,10 +83,10 @@ void SieveActionEnclose::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             edit->setPlainText(element.readElementText());
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             element.skipCurrentElement();
-            //implement in the future ?
+            // implement in the future ?
         } else {
             unknownTag(tagName, error);
             qCDebug(LIBKSIEVE_LOG) << " SieveActionEnclose::setParamWidgetValue unknown tagName " << tagName;

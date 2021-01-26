@@ -8,10 +8,10 @@
 
 #include <KLocalizedString>
 
-#include <KPluginLoader>
 #include <KPluginFactory>
-#include <QStringList>
+#include <KPluginLoader>
 #include <QRegularExpression>
+#include <QStringList>
 
 #include "autocreatescripts/sieveconditions/widgets/regexpeditorlineedit.h"
 
@@ -38,8 +38,7 @@ QString AutoCreateScriptUtil::createList(const QString &str, QChar separator, bo
         return QString();
     case 1:
         return QLatin1String("\"") + list.first() + QLatin1String("\"");
-    default:
-    {
+    default: {
         const QString result = createList(list, addEndSemiColon);
         return result;
     }
@@ -142,7 +141,7 @@ QString AutoCreateScriptUtil::strValue(QXmlStreamReader &element)
 QString AutoCreateScriptUtil::listValueToStr(QXmlStreamReader &element)
 {
     const QStringList lst = AutoCreateScriptUtil::listValue(element);
-    //Don't add semicolon
+    // Don't add semicolon
     return createList(lst, false);
 }
 

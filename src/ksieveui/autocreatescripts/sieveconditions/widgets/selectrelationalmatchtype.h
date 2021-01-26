@@ -9,7 +9,8 @@
 
 #include <QWidget>
 class QComboBox;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SelectRelationalMatchType : public QWidget
 {
     Q_OBJECT

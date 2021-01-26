@@ -7,8 +7,8 @@
 #ifndef SIEVESCRIPTBLOCKWIDGET_H
 #define SIEVESCRIPTBLOCKWIDGET_H
 
-#include "sievewidgetpageabstract.h"
 #include "sieveglobalvariablewidget.h"
+#include "sievewidgetpageabstract.h"
 
 class QRadioButton;
 class QGroupBox;
@@ -17,7 +17,8 @@ class QComboBox;
 class QPushButton;
 class QXmlStreamReader;
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveConditionWidgetLister;
 class SieveActionWidgetLister;
 class SieveEditorGraphicalModeWidget;
@@ -26,11 +27,7 @@ class SieveScriptBlockWidget : public SieveWidgetPageAbstract
 {
     Q_OBJECT
 public:
-    enum MatchCondition {
-        OrCondition,
-        AndCondition,
-        AllCondition
-    };
+    enum MatchCondition { OrCondition, AndCondition, AllCondition };
 
     explicit SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent = nullptr);
     ~SieveScriptBlockWidget() override;

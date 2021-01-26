@@ -6,9 +6,9 @@
 
 #include "regexpeditorlineedittest.h"
 #include "autocreatescripts/sieveconditions/widgets/regexpeditorlineedit.h"
-#include <QTest>
-#include <QLineEdit>
 #include <QHBoxLayout>
+#include <QLineEdit>
+#include <QTest>
 
 RegexpEditorLineEditTest::RegexpEditorLineEditTest(QObject *parent)
     : QObject(parent)

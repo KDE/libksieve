@@ -15,7 +15,8 @@ class QPushButton;
 class QGridLayout;
 class QCheckBox;
 class QXmlStreamReader;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveHelpButton;
 class IncludeFileLineEdit;
 class SieveIncludeLocation : public QComboBox
@@ -91,6 +92,7 @@ public Q_SLOTS:
 protected:
     void clearWidget(QWidget *aWidget) override;
     QWidget *createWidget(QWidget *parent) override;
+
 private:
     void reconnectWidget(SieveIncludeActionWidget *w);
     void updateAddRemoveButton();

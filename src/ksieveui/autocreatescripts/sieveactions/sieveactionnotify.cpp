@@ -4,17 +4,17 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionnotify.h"
+#include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 #include "widgets/selectimportancecombobox.h"
-#include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
 #include <QLineEdit>
 
+#include "libksieve_debug.h"
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QXmlStreamReader>
-#include "libksieve_debug.h"
 
 using namespace KSieveUi;
 
@@ -78,10 +78,10 @@ void SieveActionNotify::setParamWidgetValue(QXmlStreamReader &element, QWidget *
             }
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             element.skipCurrentElement();
-            //implement in the future ?
+            // implement in the future ?
         } else if (tagName == QLatin1String("str")) {
             auto method = w->findChild<QLineEdit *>(QStringLiteral("method"));
             method->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));

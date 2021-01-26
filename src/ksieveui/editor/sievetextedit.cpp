@@ -4,12 +4,12 @@
  */
 
 #include "sievetextedit.h"
-#include "editor/sievelinenumberarea.h"
 #include "editor/sieveeditorutil.h"
+#include "editor/sievelinenumberarea.h"
 #include "editor/sievetexteditorspellcheckdecorator.h"
 
-#include <KPIMTextEdit/PlainTextSyntaxSpellCheckingHighlighter>
 #include <KPIMTextEdit/EditorUtil>
+#include <KPIMTextEdit/PlainTextSyntaxSpellCheckingHighlighter>
 #include <KPIMTextEdit/TextEditorCompleter>
 
 #include <KLocalizedString>
@@ -17,14 +17,14 @@
 #include <KSyntaxHighlighting/Repository>
 #include <KSyntaxHighlighting/Theme>
 
-#include <QAction>
-#include <QIcon>
 #include <QAbstractItemView>
-#include <QKeyEvent>
-#include <QPainter>
-#include <QMenu>
-#include <QFontDatabase>
+#include <QAction>
 #include <QCompleter>
+#include <QFontDatabase>
+#include <QIcon>
+#include <QKeyEvent>
+#include <QMenu>
+#include <QPainter>
 #include <QTextDocumentFragment>
 using namespace KSieveUi;
 
@@ -64,7 +64,6 @@ SieveTextEdit::~SieveTextEdit()
     // disconnect these manually as the destruction of KPIMTextEdit::PlainTextEditorPrivate will trigger them
     disconnect(this, &SieveTextEdit::blockCountChanged, this, &SieveTextEdit::slotUpdateLineNumberAreaWidth);
     disconnect(this, &SieveTextEdit::updateRequest, this, &SieveTextEdit::slotUpdateLineNumberArea);
-
 }
 
 void SieveTextEdit::updateHighLighter()
@@ -77,7 +76,7 @@ void SieveTextEdit::updateHighLighter()
 
 void SieveTextEdit::clearDecorator()
 {
-    //Nothing
+    // Nothing
 }
 
 void SieveTextEdit::createHighlighter()
@@ -86,9 +85,8 @@ void SieveTextEdit::createHighlighter()
     highlighter->toggleSpellHighlighting(checkSpellingEnabled());
     highlighter->setCurrentLanguage(spellCheckingLanguage());
     highlighter->setDefinition(d->mSyntaxRepo.definitionForName(QStringLiteral("Sieve")));
-    highlighter->setTheme((palette().color(QPalette::Base).lightness() < 128)
-                          ? d->mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
-                          : d->mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
+    highlighter->setTheme((palette().color(QPalette::Base).lightness() < 128) ? d->mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+                                                                              : d->mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     setHighlighter(highlighter);
 }
 
@@ -126,8 +124,7 @@ void SieveTextEdit::lineNumberAreaPaintEvent(QPaintEvent *event)
         if (block.isVisible() && bottom >= event->rect().top()) {
             const QString number = QString::number(blockNumber + 1);
             painter.setPen(Qt::black);
-            painter.drawText(0, top, d->m_sieveLineNumberArea->width(), fontMetrics().height(),
-                             Qt::AlignRight, number);
+            painter.drawText(0, top, d->m_sieveLineNumberArea->width(), fontMetrics().height(), Qt::AlignRight, number);
         }
 
         block = block.next();
@@ -160,12 +157,13 @@ QStringList SieveTextEdit::completerList() const
     QStringList listWord;
 
     listWord << QStringLiteral("require") << QStringLiteral("stop");
-    listWord << QStringLiteral(":contains") << QStringLiteral(":matches") << QStringLiteral(":is") << QStringLiteral(":over") << QStringLiteral(":under") << QStringLiteral(":all") << QStringLiteral(
-        ":domain") << QStringLiteral(":localpart");
+    listWord << QStringLiteral(":contains") << QStringLiteral(":matches") << QStringLiteral(":is") << QStringLiteral(":over") << QStringLiteral(":under")
+             << QStringLiteral(":all") << QStringLiteral(":domain") << QStringLiteral(":localpart");
     listWord << QStringLiteral("if") << QStringLiteral("elsif") << QStringLiteral("else");
-    listWord << QStringLiteral("keep") << QStringLiteral("reject") << QStringLiteral("discard") << QStringLiteral("redirect")  << QStringLiteral("addflag") << QStringLiteral("setflag");
-    listWord << QStringLiteral("address") << QStringLiteral("allof") << QStringLiteral("anyof") << QStringLiteral("exists") << QStringLiteral("false") << QStringLiteral("header") << QStringLiteral(
-        "not") << QStringLiteral("size") << QStringLiteral("true");
+    listWord << QStringLiteral("keep") << QStringLiteral("reject") << QStringLiteral("discard") << QStringLiteral("redirect") << QStringLiteral("addflag")
+             << QStringLiteral("setflag");
+    listWord << QStringLiteral("address") << QStringLiteral("allof") << QStringLiteral("anyof") << QStringLiteral("exists") << QStringLiteral("false")
+             << QStringLiteral("header") << QStringLiteral("not") << QStringLiteral("size") << QStringLiteral("true");
     listWord << QStringLiteral(":days") << QStringLiteral(":seconds") << QStringLiteral(":subject") << QStringLiteral(":addresses") << QStringLiteral(":text");
     listWord << QStringLiteral(":name") << QStringLiteral(":headers") << QStringLiteral(":first") << QStringLiteral(":importance");
     listWord << QStringLiteral(":message") << QStringLiteral(":from");
@@ -279,7 +277,7 @@ void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
     if (!textCursor().hasSelection()) {
         if (!isReadOnly()) {
             auto insertRules = new QAction(i18n("Insert Rule"), menu);
-            //editRules->setIcon(QIcon::fromTheme(QStringLiteral("help-hint")));
+            // editRules->setIcon(QIcon::fromTheme(QStringLiteral("help-hint")));
             connect(insertRules, &QAction::triggered, this, &SieveTextEdit::insertRule);
             QAction *act = menu->addSeparator();
             menu->insertActions(menu->actions().at(0), {insertRules, act});
@@ -302,7 +300,7 @@ void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
     } else {
         if (!isReadOnly()) {
             auto editRules = new QAction(i18n("Edit Rule"), menu);
-            //editRules->setIcon(QIcon::fromTheme(QStringLiteral("help-hint")));
+            // editRules->setIcon(QIcon::fromTheme(QStringLiteral("help-hint")));
             connect(editRules, &QAction::triggered, this, &SieveTextEdit::slotEditRule);
             QAction *act = menu->addSeparator();
             menu->insertActions(menu->actions().at(0), {editRules, act});
@@ -342,7 +340,7 @@ void SieveTextEdit::comment()
 {
     QTextCursor textcursor = textCursor();
     if (textcursor.hasSelection()) {
-        //Move start block
+        // Move start block
         textcursor.movePosition(QTextCursor::StartOfBlock, QTextCursor::KeepAnchor);
         QString text = textcursor.selectedText();
         text = QLatin1Char('#') + text;

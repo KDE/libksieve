@@ -6,10 +6,11 @@
 #ifndef ADDRESSLINEEDIT_H
 #define ADDRESSLINEEDIT_H
 
-#include <QLineEdit>
-#include <KSieveUi/AbstractSelectEmailLineEdit>
 #include "ksieveui_private_export.h"
-namespace KSieveUi {
+#include <KSieveUi/AbstractSelectEmailLineEdit>
+#include <QLineEdit>
+namespace KSieveUi
+{
 class KSIEVEUI_TESTS_EXPORT AddressLineEdit : public AbstractSelectEmailLineEdit
 {
     Q_OBJECT

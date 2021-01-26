@@ -6,8 +6,8 @@
 
 #include "sievescriptdebuggerwidgettest.h"
 #include "../sievescriptdebuggerwidget.h"
-#include <QTest>
 #include <QStackedWidget>
+#include <QTest>
 
 SieveScriptDebuggerWidgetTest::SieveScriptDebuggerWidgetTest(QObject *parent)
     : QObject(parent)

@@ -4,19 +4,19 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionsetvariable.h"
-#include "editor/sieveeditorutil.h"
-#include "widgets/selectvariablemodifiercombobox.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
+#include "editor/sieveeditorutil.h"
+#include "widgets/selectvariablemodifiercombobox.h"
 
 #include <KLocalizedString>
 #include <QLineEdit>
 
+#include "libksieve_debug.h"
 #include <QCheckBox>
+#include <QGridLayout>
 #include <QLabel>
 #include <QXmlStreamReader>
-#include "libksieve_debug.h"
-#include <QGridLayout>
 
 using namespace KSieveUi;
 SieveActionSetVariable::SieveActionSetVariable(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -108,10 +108,10 @@ void SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWid
             }
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             element.skipCurrentElement();
-            //implement in the future ?
+            // implement in the future ?
         } else {
             unknownTag(tagName, error);
             qCDebug(LIBKSIEVE_LOG) << " SieveActionSetVariable::setParamWidgetValue unknown tagName " << tagName;
@@ -165,8 +165,9 @@ QString SieveActionSetVariable::help() const
 {
     QString helpStr = i18n("The \"set\" action stores the specified value in the variable identified by name.");
     if (mHasRegexCapability) {
-        helpStr += QLatin1Char('\n') + i18n("This modifier adds the necessary quoting to ensure that the expanded text will only match a literal occurrence if used as a parameter "
-                                            "to :regex.  Every character with special meaning (. , *, ? , etc.) is prefixed with \\ in the expansion");
+        helpStr += QLatin1Char('\n')
+            + i18n("This modifier adds the necessary quoting to ensure that the expanded text will only match a literal occurrence if used as a parameter "
+                   "to :regex.  Every character with special meaning (. , *, ? , etc.) is prefixed with \\ in the expansion");
     }
     return helpStr;
 }

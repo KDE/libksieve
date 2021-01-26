@@ -11,7 +11,8 @@
 #include <QObject>
 class QString;
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 /**
  * @brief The SieveImapPasswordProvider class
  * @author Laurent Montel <montel@kde.org>

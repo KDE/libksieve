@@ -9,7 +9,8 @@
 
 #include "ksieveui_export.h"
 #include <QDebug>
-namespace KSieveUi {
+namespace KSieveUi
+{
 /**
  * @brief The SieveImapAccountSettings class
  * @author Laurent Montel <montel@kde.org>
@@ -17,27 +18,17 @@ namespace KSieveUi {
 class KSIEVEUI_EXPORT SieveImapAccountSettings
 {
 public:
-    //Keep sync with KIMAP settings.
+    // Keep sync with KIMAP settings.
     enum EncryptionMode {
         Unencrypted = 0,
         SSLorTLS, /*!< Use SSL/TLS encryption, KIMAP will automatically negoatiate
                        the best supported encryption protocol. */
-        STARTTLS  /*!< Use STARTTLS to upgrade an initially plaintext connection to
-                       encrypted connection. KIMAP will automatically negoatiate
-                       the best supported encryption protocol. */
+        STARTTLS /*!< Use STARTTLS to upgrade an initially plaintext connection to
+                      encrypted connection. KIMAP will automatically negoatiate
+                      the best supported encryption protocol. */
     };
 
-    enum AuthenticationMode {
-        ClearText = 0,
-        Login,
-        Plain,
-        CramMD5,
-        DigestMD5,
-        NTLM,
-        GSSAPI,
-        Anonymous,
-        XOAuth2
-    };
+    enum AuthenticationMode { ClearText = 0, Login, Plain, CramMD5, DigestMD5, NTLM, GSSAPI, Anonymous, XOAuth2 };
     SieveImapAccountSettings();
 
     Q_REQUIRED_RESULT QString identifier() const;
@@ -73,5 +64,5 @@ private:
 };
 }
 Q_DECLARE_METATYPE(KSieveUi::SieveImapAccountSettings)
-KSIEVEUI_EXPORT QDebug operator <<(QDebug d, const KSieveUi::SieveImapAccountSettings &settings);
+KSIEVEUI_EXPORT QDebug operator<<(QDebug d, const KSieveUi::SieveImapAccountSettings &settings);
 #endif // SIEVEIMAPACCOUNTSETTINGS_H

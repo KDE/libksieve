@@ -14,14 +14,14 @@
 #include <KLocalizedString>
 #include <QLineEdit>
 
-#include <QVBoxLayout>
+#include <KConfigGroup>
+#include <KSharedConfig>
+#include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QShortcut>
-#include <KSharedConfig>
-#include <KConfigGroup>
-#include <QDialogButtonBox>
 #include <QPushButton>
+#include <QShortcut>
+#include <QVBoxLayout>
 
 #include <editor/sievetexteditwidget.h>
 

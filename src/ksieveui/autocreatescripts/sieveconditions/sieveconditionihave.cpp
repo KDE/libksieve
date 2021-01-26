@@ -10,9 +10,9 @@
 #include <KLocalizedString>
 #include <QLineEdit>
 
-#include <QWidget>
-#include <QHBoxLayout>
 #include "libksieve_debug.h"
+#include <QHBoxLayout>
+#include <QWidget>
 #include <QXmlStreamReader>
 
 using namespace KSieveUi;
@@ -43,7 +43,7 @@ QString SieveConditionIhave::code(QWidget *w) const
     const QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
     const QString editValue = edit->text();
     return QStringLiteral("ihave %1").arg(AutoCreateScriptUtil::createList(editValue, QLatin1Char(',')))
-           + AutoCreateScriptUtil::generateConditionComment(comment());
+        + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionIhave::needRequires(QWidget *) const
@@ -77,7 +77,7 @@ void SieveConditionIhave::setParamWidgetValue(QXmlStreamReader &element, QWidget
             edit->setText(tagValue);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {

@@ -6,13 +6,13 @@
 
 #include "selectheadersdialogtest.h"
 #include "../sieveconditions/widgets/selectheadertypecombobox.h"
-#include <QTest>
-#include <QStandardPaths>
 #include <QDialogButtonBox>
-#include <QVBoxLayout>
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
+#include <QStandardPaths>
+#include <QTest>
+#include <QVBoxLayout>
 
 SelectHeadersDialogTest::SelectHeadersDialogTest(QObject *parent)
     : QObject(parent)

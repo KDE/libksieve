@@ -5,19 +5,19 @@
 */
 #include "selectheadertypecombobox.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <KLocalizedString>
-#include <QPushButton>
+#include <Libkdepim/LineEditCatchReturnKey>
+#include <QIcon>
 #include <QLineEdit>
 #include <QPointer>
-#include <QIcon>
+#include <QPushButton>
 
-#include <QVBoxLayout>
-#include <QHBoxLayout>
-#include <QLabel>
+#include <KConfigGroup>
 #include <KSharedConfig>
 #include <QDialogButtonBox>
-#include <KConfigGroup>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QVBoxLayout>
 
 using namespace KSieveUi;
 
@@ -56,7 +56,7 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     new KPIM::LineEditCatchReturnKey(mNewHeader, this);
     mNewHeader->setObjectName(QStringLiteral("newheader"));
     mNewHeader->setClearButtonEnabled(true);
-    //mNewHeader->setTrapReturnKey(true);
+    // mNewHeader->setTrapReturnKey(true);
     connect(mNewHeader, &QLineEdit::returnPressed, this, &SelectHeadersDialog::slotAddNewHeader);
     mNewHeader->setClearButtonEnabled(true);
 
@@ -197,7 +197,7 @@ SelectHeaderTypeComboBox::SelectHeaderTypeComboBox(bool onlyEnvelopType, QWidget
 {
     setEditable(true);
     lineEdit()->setClearButtonEnabled(true);
-    //TODO add completion
+    // TODO add completion
     initialize(onlyEnvelopType);
     connect(this, &SelectHeaderTypeComboBox::textActivated, this, &SelectHeaderTypeComboBox::slotSelectItem);
     connect(this, &SelectHeaderTypeComboBox::editTextChanged, this, &SelectHeaderTypeComboBox::valueChanged);
@@ -270,7 +270,7 @@ QString SelectHeaderTypeComboBox::code() const
     if (str.isEmpty()) {
         str = currentText();
         if (str == i18n(selectMultipleHeaders)) {
-            str = QString(); //return QString();
+            str = QString(); // return QString();
         }
     }
     if (!str.isEmpty() && !str.startsWith(QLatin1Char('['))) {
@@ -293,7 +293,7 @@ void SelectHeaderTypeComboBox::setCode(const QString &code)
             break;
         }
     }
-    //If not found select last combobox item
+    // If not found select last combobox item
     if (!foundHeaders) {
         if (code.startsWith(QLatin1Char('['))) {
             setCurrentIndex(count() - 1);

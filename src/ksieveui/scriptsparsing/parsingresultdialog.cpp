@@ -5,13 +5,13 @@
 */
 
 #include "parsingresultdialog.h"
-#include <PimCommon/PimUtil>
-#include <KPIMTextEdit/PlainTextEditorWidget>
 #include <KPIMTextEdit/PlainTextEditor>
+#include <KPIMTextEdit/PlainTextEditorWidget>
+#include <PimCommon/PimUtil>
 
+#include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
-#include <KConfigGroup>
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Theme>
@@ -37,9 +37,8 @@ ParsingResultDialog::ParsingResultDialog(QWidget *parent)
     mTextEdit = new KPIMTextEdit::PlainTextEditorWidget(this);
     auto highlighter = new KSyntaxHighlighting::SyntaxHighlighter(mTextEdit->editor()->document());
     highlighter->setDefinition(mSyntaxRepo.definitionForName(QStringLiteral("XML")));
-    highlighter->setTheme((palette().color(QPalette::Base).lightness() < 128)
-                          ? mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
-                          : mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
+    highlighter->setTheme((palette().color(QPalette::Base).lightness() < 128) ? mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+                                                                              : mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     mTextEdit->setReadOnly(true);
     mainLayout->addWidget(mTextEdit);
     mainLayout->addWidget(buttonBox);

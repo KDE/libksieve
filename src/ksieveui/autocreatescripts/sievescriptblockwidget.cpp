@@ -5,22 +5,22 @@
 */
 
 #include "sievescriptblockwidget.h"
+#include "autocreatescriptutil_p.h"
 #include "sieveactionwidgetlister.h"
 #include "sieveconditionwidgetlister.h"
-#include "autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
 #include <QComboBox>
-#include <QPushButton>
 #include <QIcon>
+#include <QPushButton>
 
-#include <QXmlStreamReader>
-#include <QVBoxLayout>
-#include <QGroupBox>
-#include <QButtonGroup>
-#include <QRadioButton>
-#include <QLabel>
 #include "libksieve_debug.h"
+#include <QButtonGroup>
+#include <QGroupBox>
+#include <QLabel>
+#include <QRadioButton>
+#include <QVBoxLayout>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 
@@ -167,7 +167,7 @@ void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requi
     bool onlyActions = false;
     if (mMatchCondition == AllCondition) {
         onlyActions = true;
-        //Just actions type
+        // Just actions type
     } else if (pageType() == BlockElse) {
         script += QLatin1String("else {\n");
     } else {
@@ -187,7 +187,7 @@ void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requi
         case BlockElse:
             break;
         default:
-            //We can got here.
+            // We can got here.
             break;
         }
 

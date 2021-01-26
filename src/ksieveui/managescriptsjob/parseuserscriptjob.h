@@ -7,20 +7,23 @@
 #ifndef PARSEUSERSCRIPTJOB_H
 #define PARSEUSERSCRIPTJOB_H
 
-#include <QObject>
-#include <QUrl>
-#include <QStringList>
 #include "ksieveui_private_export.h"
-namespace KManageSieve {
+#include <QObject>
+#include <QStringList>
+#include <QUrl>
+namespace KManageSieve
+{
 class SieveJob;
 }
 class QXmlStreamReader;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class KSIEVEUI_TESTS_EXPORT ParseUserScriptJob : public QObject
 {
     Q_OBJECT
 
     friend class ParseUserTest;
+
 public:
     explicit ParseUserScriptJob(const QUrl &url, QObject *parent = nullptr);
     ~ParseUserScriptJob();

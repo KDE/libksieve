@@ -9,7 +9,8 @@
 
 #include <QWebEngineView>
 class QWebEngineDownloadItem;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveEditorWebEngineView : public QWebEngineView
 {
     Q_OBJECT
@@ -20,6 +21,7 @@ public:
 protected:
     void contextMenuEvent(QContextMenuEvent *ev) override;
     QWebEngineView *createWindow(QWebEnginePage::WebWindowType type) override;
+
 private:
     void downloadRequested(QWebEngineDownloadItem *);
 };

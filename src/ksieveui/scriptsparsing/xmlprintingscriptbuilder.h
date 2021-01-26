@@ -8,8 +8,8 @@
 #define KSIEVE_KSIEVEUI_XMLPRINTINGSCRIPTBUILDER_H
 
 #include "ksieveui_private_export.h"
-#include <ksieve/scriptbuilder.h>
 #include <QString>
+#include <ksieve/scriptbuilder.h>
 class QXmlStreamWriter;
 namespace KSieveUi
 {

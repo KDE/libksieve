@@ -5,17 +5,17 @@
 */
 
 #include "sievetemplatewidget.h"
-#include "sievetemplateeditdialog.h"
-#include "sievedefaulttemplate.h"
-#include <PimCommon/TemplateManager>
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
+#include "sievedefaulttemplate.h"
+#include "sievetemplateeditdialog.h"
+#include <PimCommon/TemplateManager>
 
 #include <KLocalizedString>
 
-#include <QPointer>
 #include <QLabel>
-#include <QVBoxLayout>
 #include <QMimeData>
+#include <QPointer>
+#include <QVBoxLayout>
 
 using namespace KSieveUi;
 SieveTemplateListWidget::SieveTemplateListWidget(const QString &configName, QWidget *parent)

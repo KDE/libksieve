@@ -10,11 +10,11 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 
-#include <QPushButton>
-#include <QKeyEvent>
-#include <KSharedConfig>
 #include <KConfigGroup>
+#include <KSharedConfig>
 #include <QDialogButtonBox>
+#include <QKeyEvent>
+#include <QPushButton>
 #include <QVBoxLayout>
 
 using namespace KSieveUi;
@@ -60,7 +60,7 @@ SieveEditor::~SieveEditor()
 void SieveEditor::slotAccepted()
 {
     Q_EMIT okClicked();
-    //Don't accept here we need to check script. If it's failed we don't close this editor otherwise we will lose data
+    // Don't accept here we need to check script. If it's failed we don't close this editor otherwise we will lose data
 }
 
 void SieveEditor::slotCanceled()
@@ -77,7 +77,7 @@ bool SieveEditor::event(QEvent *e)
     // With a shortcut override we can catch this before it gets to kactions.
     const bool shortCutOverride = (e->type() == QEvent::ShortcutOverride);
     if (shortCutOverride || e->type() == QEvent::KeyPress) {
-        auto kev = static_cast<QKeyEvent * >(e);
+        auto kev = static_cast<QKeyEvent *>(e);
         if (kev->key() == Qt::Key_Escape) {
             e->ignore();
             return true;

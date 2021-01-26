@@ -7,11 +7,12 @@
 #ifndef REGEXPEDITORLINEEDIT_H
 #define REGEXPEDITORLINEEDIT_H
 
-#include <KSieveUi/AbstractRegexpEditorLineEdit>
 #include "ksieveui_private_export.h"
+#include <KSieveUi/AbstractRegexpEditorLineEdit>
 
 class QLineEdit;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class KSIEVEUI_TESTS_EXPORT RegexpEditorLineEdit : public KSieveUi::AbstractRegexpEditorLineEdit
 {
     Q_OBJECT

@@ -7,7 +7,8 @@
 #define SIEVEACTIONNOTIFY_H
 
 #include "sieveaction.h"
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveActionNotify : public SieveAction
 {
     Q_OBJECT

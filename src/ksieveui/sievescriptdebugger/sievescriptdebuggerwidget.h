@@ -7,11 +7,12 @@
 #ifndef SIEVESCRIPTDEBUGGERWIDGET_H
 #define SIEVESCRIPTDEBUGGERWIDGET_H
 
-#include <QWidget>
 #include "ksieveui_export.h"
+#include <QWidget>
 class QStackedWidget;
 class QLabel;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveScriptDebuggerFrontEndWidget;
 /**
  * @brief The SieveScriptDebuggerWidget class

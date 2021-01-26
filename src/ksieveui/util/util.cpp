@@ -5,18 +5,18 @@
 */
 
 #include "util.h"
-#include "util_p.h"
-#include "libksieve_debug.h"
-#include <PimCommon/PimUtil>
-#include "imapresourcesettings.h"
-#include "sieveimappasswordprovider.h"
-#include "sieve-vacation.h"
-#include "sieveimapinstance/sieveimapinstanceinterfacemanager.h"
-#include "sieveimapinstance/sieveimapinstance.h"
 #include "akonadiimapsettinginterface.h"
+#include "imapresourcesettings.h"
+#include "libksieve_debug.h"
+#include "sieve-vacation.h"
+#include "sieveimapinstance/sieveimapinstance.h"
+#include "sieveimapinstance/sieveimapinstanceinterfacemanager.h"
+#include "sieveimappasswordprovider.h"
+#include "util_p.h"
+#include <PimCommon/PimUtil>
 
-#include <kmime/kmime_message.h>
 #include <MailTransport/Transport>
+#include <kmime/kmime_message.h>
 
 using namespace KSieveUi;
 
@@ -36,8 +36,7 @@ QVector<KSieveUi::SieveImapInstance> KSieveUi::Util::sieveImapInstances()
     const QVector<KSieveUi::SieveImapInstance> allInstances = KSieveUi::SieveImapInstanceInterfaceManager::self()->sieveImapInstanceList();
     QVector<KSieveUi::SieveImapInstance> relevantInstances;
     for (const KSieveUi::SieveImapInstance &instance : allInstances) {
-        if (instance.mimeTypes().contains(KMime::Message::mimeType())
-            && instance.capabilities().contains(QLatin1String("Resource"))
+        if (instance.mimeTypes().contains(KMime::Message::mimeType()) && instance.capabilities().contains(QLatin1String("Resource"))
             && !instance.capabilities().contains(QLatin1String("Virtual"))) {
             if (PimCommon::Util::isImapResource(instance.identifier())) {
                 relevantInstances << instance;
@@ -97,15 +96,13 @@ bool Util::hasKep14Support(const QStringList &sieveCapabilities, const QStringLi
 bool Util::isKep14ProtectedName(const QString &name)
 {
     const QString n = name.split(QLatin1Char('.')).first().toLower();
-    if (n == QLatin1String("master")
-        || n == QLatin1String("user")
-        || n == QLatin1String("management")) {
+    if (n == QLatin1String("master") || n == QLatin1String("user") || n == QLatin1String("management")) {
         return true;
     }
     return false;
 }
 
-QDebug Util::operator <<(QDebug d, const Util::AccountInfo &info)
+QDebug Util::operator<<(QDebug d, const Util::AccountInfo &info)
 {
     d << "sieveImapAccountSettings " << info.sieveImapAccountSettings;
     d << "url " << info.sieveUrl.toString();
@@ -114,8 +111,7 @@ QDebug Util::operator <<(QDebug d, const Util::AccountInfo &info)
 
 bool Util::AccountInfo::operator==(const Util::AccountInfo &other) const
 {
-    const bool result = (other.sieveImapAccountSettings == sieveImapAccountSettings)
-                        && (other.sieveUrl == sieveUrl);
+    const bool result = (other.sieveImapAccountSettings == sieveImapAccountSettings) && (other.sieveUrl == sieveUrl);
     if (!result) {
         qCDebug(LIBKSIEVE_LOG) << "actual :" << *this << "\n other :" << other;
     }

@@ -28,12 +28,12 @@ void RenameScriptJobTest::shouldBeStart_data()
     QTest::addColumn<QString>("newName");
     QTest::addColumn<QUrl>("url");
     QTest::addColumn<bool>("canStart");
-    QTest::newRow("empty") <<  QString() << QUrl() << false;
-    QTest::newRow("hasNewName") <<  QStringLiteral("foo") << QUrl() << false;
-    QTest::newRow("hasUrl") <<  QString() << QUrl(QStringLiteral("http://www.kde.org")) << false;
-    QTest::newRow("canStart") <<  QStringLiteral("foo") << QUrl(QStringLiteral("http://www.kde.org")) << true;
-    QTest::newRow("cannotStartHasEmptyName") <<  QStringLiteral(" ") << QUrl(QStringLiteral("http://www.kde.org")) << false;
-    //QTest::newRow("cannotStartHasInvalidUrl") <<  QStringLiteral("foo") << QUrl(QStringLiteral(" ")) << false;
+    QTest::newRow("empty") << QString() << QUrl() << false;
+    QTest::newRow("hasNewName") << QStringLiteral("foo") << QUrl() << false;
+    QTest::newRow("hasUrl") << QString() << QUrl(QStringLiteral("http://www.kde.org")) << false;
+    QTest::newRow("canStart") << QStringLiteral("foo") << QUrl(QStringLiteral("http://www.kde.org")) << true;
+    QTest::newRow("cannotStartHasEmptyName") << QStringLiteral(" ") << QUrl(QStringLiteral("http://www.kde.org")) << false;
+    // QTest::newRow("cannotStartHasInvalidUrl") <<  QStringLiteral("foo") << QUrl(QStringLiteral(" ")) << false;
 }
 
 void RenameScriptJobTest::shouldBeStart()

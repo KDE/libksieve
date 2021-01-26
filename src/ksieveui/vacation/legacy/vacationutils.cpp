@@ -11,8 +11,8 @@ See README for further information.
 
 */
 #include "vacationutils.h"
-#include "vacationscriptextractor.h"
 #include "sieve-vacation.h"
+#include "vacationscriptextractor.h"
 
 #include <QDate>
 #include <QRegularExpression>
@@ -21,7 +21,7 @@ using KMime::Types::AddrSpecList;
 using namespace KSieveUi::Legacy::VacationUtils;
 using namespace KSieveUi;
 
-static inline QString dotstuff(QString s)     // krazy:exclude=passbyvalue
+static inline QString dotstuff(QString s) // krazy:exclude=passbyvalue
 {
     if (s.startsWith(QLatin1Char('.'))) {
         return QLatin1Char('.') + s.replace(QLatin1String("\n."), QStringLiteral("\n.."));
@@ -42,7 +42,15 @@ This file only contains legacy code, that can be removed if the legacy code is n
 See README for further information.
 
 */
-bool Legacy::VacationUtils::parseScript(const QString &script, QString &messageText, QString &subject, int &notificationInterval, AddrSpecList &aliases, bool &sendForSpam, QString &domainName, QDate &startDate, QDate &endDate)
+bool Legacy::VacationUtils::parseScript(const QString &script,
+                                        QString &messageText,
+                                        QString &subject,
+                                        int &notificationInterval,
+                                        AddrSpecList &aliases,
+                                        bool &sendForSpam,
+                                        QString &domainName,
+                                        QDate &startDate,
+                                        QDate &endDate)
 {
     const QString trimmedScript = script.trimmed();
     if (trimmedScript.isEmpty()) {
@@ -54,8 +62,7 @@ bool Legacy::VacationUtils::parseScript(const QString &script, QString &messageT
     // the end, leading to a parse error.
     const QByteArray scriptUTF8 = trimmedScript.toUtf8();
     qCDebug(LIBKSIEVE_LOG) << "scriptUtf8 = \"" + scriptUTF8 + "\"";
-    KSieve::Parser parser(scriptUTF8.begin(),
-                          scriptUTF8.begin() + scriptUTF8.length());
+    KSieve::Parser parser(scriptUTF8.begin(), scriptUTF8.begin() + scriptUTF8.length());
     KSieveUi::Legacy::VacationDataExtractor vdx;
     KSieveUi::Legacy::SpamDataExtractor sdx;
     KSieveUi::Legacy::DomainRestrictionDataExtractor drdx;
@@ -92,7 +99,14 @@ This file only contains legacy code, that can be removed if the legacy code is n
 See README for further information.
 
 */
-QString Legacy::VacationUtils::composeScript(const QString &messageText, const QString &subject, int notificationInterval, const AddrSpecList &addrSpecs, bool sendForSpam, const QString &domain, const QDate &startDate, const QDate &endDate)
+QString Legacy::VacationUtils::composeScript(const QString &messageText,
+                                             const QString &subject,
+                                             int notificationInterval,
+                                             const AddrSpecList &addrSpecs,
+                                             bool sendForSpam,
+                                             const QString &domain,
+                                             const QDate &startDate,
+                                             const QDate &endDate)
 {
     QString addressesArgument;
     QStringList aliases;
@@ -101,7 +115,9 @@ QString Legacy::VacationUtils::composeScript(const QString &messageText, const Q
         QStringList sl;
         AddrSpecList::const_iterator end = addrSpecs.constEnd();
         for (AddrSpecList::const_iterator it = addrSpecs.begin(); it != end; ++it) {
-            sl.push_back(QLatin1Char('"') + (*it).asString().replace(QLatin1Char('\\'), QStringLiteral("\\\\")).replace(QLatin1Char('"'), QStringLiteral("\\\"")) + QLatin1Char('"'));
+            sl.push_back(QLatin1Char('"')
+                         + (*it).asString().replace(QLatin1Char('\\'), QStringLiteral("\\\\")).replace(QLatin1Char('"'), QStringLiteral("\\\""))
+                         + QLatin1Char('"'));
             aliases.push_back((*it).asString());
         }
         addressesArgument += sl.join(QLatin1String(", ")) + QLatin1String(" ] ");
@@ -109,25 +125,28 @@ QString Legacy::VacationUtils::composeScript(const QString &messageText, const Q
 
     QString script = QStringLiteral("require \"vacation\";\n");
     if (startDate.isValid() && endDate.isValid()) {
-        script += QStringLiteral("require \"relational\";\n"
-                                 "require \"date\";\n\n");
+        script += QStringLiteral(
+            "require \"relational\";\n"
+            "require \"date\";\n\n");
     } else {
         script += QStringLiteral("\n");
     }
 
     if (!sendForSpam) {
-        script += QStringLiteral("if header :contains \"X-Spam-Flag\" \"YES\""
-                                 " { keep; stop; }\n");  // FIXME?
+        script += QStringLiteral(
+            "if header :contains \"X-Spam-Flag\" \"YES\""
+            " { keep; stop; }\n"); // FIXME?
     }
     if (!domain.isEmpty()) { // FIXME
         script += QStringLiteral("if not address :domain :contains \"from\" \"%1\" { keep; stop; }\n").arg(domain);
     }
 
     if (startDate.isValid() && endDate.isValid()) {
-        script += QStringLiteral("if not allof(currentdate :value \"ge\" \"date\" \"%1\","
-                                 " currentdate :value \"le\" \"date\" \"%2\")"
-                                 " { keep; stop; }\n").arg(startDate.toString(Qt::ISODate),
-                                                           endDate.toString(Qt::ISODate));
+        script += QStringLiteral(
+                      "if not allof(currentdate :value \"ge\" \"date\" \"%1\","
+                      " currentdate :value \"le\" \"date\" \"%2\")"
+                      " { keep; stop; }\n")
+                      .arg(startDate.toString(Qt::ISODate), endDate.toString(Qt::ISODate));
     }
 
     script += QLatin1String("vacation ");

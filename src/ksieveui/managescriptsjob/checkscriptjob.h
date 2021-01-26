@@ -7,14 +7,16 @@
 #ifndef CHECKSCRIPTJOB_H
 #define CHECKSCRIPTJOB_H
 
+#include "ksieveui_export.h"
 #include <QObject>
 #include <QUrl>
 #include <memory>
-#include "ksieveui_export.h"
-namespace KManageSieve {
+namespace KManageSieve
+{
 class SieveJob;
 }
-namespace KSieveUi {
+namespace KSieveUi
+{
 class CheckScriptJobPrivate;
 /**
  * @brief The CheckScriptJob class

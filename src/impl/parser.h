@@ -15,16 +15,18 @@
 
 #include <ksieve/parser.h>
 
+#include <impl/lexer.h>
 #include <ksieve/error.h>
 #include <ksieve/lexer.h>
-#include <impl/lexer.h>
 
 #include <ksieve/scriptbuilder.h>
 
-namespace KSieve {
+namespace KSieve
+{
 class Parser::Impl
 {
     friend class Parser;
+
 private:
     Impl(const char *scursor, const char *const send, int options = 0);
 
@@ -100,7 +102,7 @@ private:
 
     void makeUnexpectedTokenError(Error::Type e)
     {
-        makeError(e);   // ### save wrong token...
+        makeError(e); // ### save wrong token...
     }
 
     bool isArgumentToken() const;

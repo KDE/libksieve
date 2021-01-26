@@ -7,13 +7,14 @@
 
 #include "sieveinfodialog.h"
 #include "sieveinfowidget.h"
+#include <KConfigGroup>
 #include <KLocalizedString>
+#include <KSharedConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <KConfigGroup>
-#include <KSharedConfig>
 
-namespace {
+namespace
+{
 static const char myConfigGroupName[] = "SieveInfoDialog";
 }
 

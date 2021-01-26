@@ -7,9 +7,10 @@
 #ifndef ABSTRACTMOVEIMAPFOLDERWIDGET_H
 #define ABSTRACTMOVEIMAPFOLDERWIDGET_H
 
-#include <QWidget>
 #include "ksieveui_export.h"
-namespace KSieveUi {
+#include <QWidget>
+namespace KSieveUi
+{
 class SieveImapAccountSettings;
 /**
  * @brief The AbstractMoveImapFolderWidget class

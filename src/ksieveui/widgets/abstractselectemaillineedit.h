@@ -7,9 +7,10 @@
 #ifndef ABSTRACTSELECTEMAILLINEEDIT_H
 #define ABSTRACTSELECTEMAILLINEEDIT_H
 
-#include <QWidget>
 #include "ksieveui_export.h"
-namespace KSieveUi {
+#include <QWidget>
+namespace KSieveUi
+{
 /**
  * @brief The AbstractSelectEmailLineEdit class
  * @author Laurent Montel <montel@kde.org>
@@ -29,6 +30,7 @@ public:
 
 Q_SIGNALS:
     void valueChanged();
+
 private:
     bool mMultiSelection = false;
 };

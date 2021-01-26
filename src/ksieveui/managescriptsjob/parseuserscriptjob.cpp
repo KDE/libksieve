@@ -6,9 +6,9 @@
 
 #include "parseuserscriptjob.h"
 #include "ksieveui/scriptsparsing/parsingutil.h"
-#include <kmanagesieve/sievejob.h>
-#include <QXmlStreamReader>
 #include <KLocalizedString>
+#include <QXmlStreamReader>
+#include <kmanagesieve/sievejob.h>
 
 using namespace KSieveUi;
 ParseUserScriptJob::ParseUserScriptJob(const QUrl &url, QObject *parent)
@@ -60,8 +60,10 @@ void ParseUserScriptJob::slotGetResult(KManageSieve::SieveJob *job, bool success
 {
     mSieveJob = nullptr;
     if (!success) {
-        emitError(i18n("Retrieving the script failed.\n"
-                       "The server responded:\n%1", job->errorString()));
+        emitError(
+            i18n("Retrieving the script failed.\n"
+                 "The server responded:\n%1",
+                 job->errorString()));
         return;
     }
     if (script.isEmpty()) {
@@ -126,7 +128,7 @@ QStringList ParseUserScriptJob::extractActiveScript(const QString &doc)
                 if (mStreamReader->attributes().hasAttribute(QLatin1String("name"))) {
                     const QString actionName = mStreamReader->attributes().value(QLatin1String("name")).toString();
                     if (actionName == QLatin1String("include")) {
-                        //Load includes
+                        // Load includes
                         const QString str = loadInclude();
                         if (!str.isEmpty()) {
                             if (!lstScript.contains(str)) {

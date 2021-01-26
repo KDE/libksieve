@@ -7,13 +7,15 @@
 #ifndef VACATIONPAGEWIDGET_H
 #define VACATIONPAGEWIDGET_H
 
-#include <QWidget>
 #include <QUrl>
+#include <QWidget>
 class QStackedWidget;
-namespace KManageSieve {
+namespace KManageSieve
+{
 }
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class VacationEditWidget;
 class VacationWarningWidget;
 class VacationCreateScriptJob;
@@ -38,11 +40,7 @@ private Q_SLOTS:
     void slotGetResult(const QString &serverName, const QStringList &sieveCapabilities, const QString &scriptName, const QString &script, bool active);
 
 private:
-
-    enum PageType {
-        Script = 0,
-        ScriptNotSupported = 1
-    };
+    enum PageType { Script = 0, ScriptNotSupported = 1 };
 
     QString mServerName;
     QUrl mUrl;

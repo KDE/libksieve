@@ -5,8 +5,8 @@
  */
 
 #include "vacationutilstest.h"
-#include "ksieveui/vacation/vacationutils.h"
 #include "ksieveui/vacation/legacy/vacationutils.h"
+#include "ksieveui/vacation/vacationutils.h"
 
 #include <kmime/kmime_header_parsing.h>
 
@@ -122,10 +122,10 @@ void VacationUtilsTest::testMailAction_data()
     QTest::addColumn<int>("action");
     QTest::addColumn<QString>("recipient");
 
-    QTest::newRow("keep") << QStringLiteral("vacation-complex.siv")        << (int)VacationUtils::Keep << QString();
+    QTest::newRow("keep") << QStringLiteral("vacation-complex.siv") << (int)VacationUtils::Keep << QString();
     QTest::newRow("discard") << QStringLiteral("vacation-active-discard.siv") << (int)VacationUtils::Discard << QString();
-    QTest::newRow("send") << QStringLiteral("vacation-deactive-send.siv")  << (int)VacationUtils::Sendto << QStringLiteral("redirect@example.org");
-    QTest::newRow("copy") << QStringLiteral("vacation-deactive-copy.siv")  << (int)VacationUtils::CopyTo << QStringLiteral("copy@example.org");
+    QTest::newRow("send") << QStringLiteral("vacation-deactive-send.siv") << (int)VacationUtils::Sendto << QStringLiteral("redirect@example.org");
+    QTest::newRow("copy") << QStringLiteral("vacation-deactive-copy.siv") << (int)VacationUtils::CopyTo << QStringLiteral("copy@example.org");
 }
 
 void VacationUtilsTest::testMailAction()

@@ -8,7 +8,8 @@
 
 #include "sievecondition.h"
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveConditionHasFlag : public SieveCondition
 {
     Q_OBJECT
@@ -29,6 +30,7 @@ public:
 
     void setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error) override;
     Q_REQUIRED_RESULT QUrl href() const override;
+
 private:
     bool hasVariableSupport = false;
 };

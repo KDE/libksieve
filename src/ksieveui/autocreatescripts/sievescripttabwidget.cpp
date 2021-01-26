@@ -7,9 +7,9 @@
 #include "sievescripttabwidget.h"
 #include "sievewidgetpageabstract.h"
 
-#include <QMenu>
 #include <KLocalizedString>
 #include <QIcon>
+#include <QMenu>
 
 #include <QTabBar>
 

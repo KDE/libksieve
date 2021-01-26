@@ -7,11 +7,12 @@
 #define KSIEVE_KSIEVEUI_SIEVETEXTEDIT_H
 
 #include "ksieveui_export.h"
-#include <memory>
 #include <KPIMTextEdit/PlainTextEditor>
+#include <memory>
 
 class QMenu;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveTextEditPrivate;
 /**
  * @brief The SieveTextEdit class
@@ -40,6 +41,7 @@ public:
     void reverseCase();
     void wordWrap(bool state);
     Q_REQUIRED_RESULT bool isWordWrap() const;
+
 protected:
     void initCompleter();
     void keyPressEvent(QKeyEvent *e) override;

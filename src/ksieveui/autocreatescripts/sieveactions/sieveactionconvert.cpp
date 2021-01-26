@@ -8,12 +8,12 @@
 #include "autocreatescripts/commonwidgets/selectconvertparameterwidget.h"
 #include "autocreatescripts/commonwidgets/selectmimetypecombobox.h"
 
-#include <KLocalizedString>
-#include <QUrl>
-#include <QLabel>
 #include "libksieve_debug.h"
-#include <QXmlStreamReader>
+#include <KLocalizedString>
 #include <QGridLayout>
+#include <QLabel>
+#include <QUrl>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 SieveActionConvert::SieveActionConvert(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -77,10 +77,10 @@ void SieveActionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             params->setCode(AutoCreateScriptUtil::listValue(element), error);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             element.skipCurrentElement();
-            //implement in the future ?
+            // implement in the future ?
         } else {
             unknownTag(tagName, error);
             qCDebug(LIBKSIEVE_LOG) << "SieveActionConvert::setParamWidgetValue unknown tag " << tagName;
@@ -125,7 +125,9 @@ QString SieveActionConvert::serverNeedsCapability() const
 
 QString SieveActionConvert::help() const
 {
-    return i18n("The \"convert\" action specifies that all body parts with a media type equal to \"media-type\" be converted to the media type in \"media-type\" using conversion parameters.");
+    return i18n(
+        "The \"convert\" action specifies that all body parts with a media type equal to \"media-type\" be converted to the media type in \"media-type\" using "
+        "conversion parameters.");
 }
 
 QUrl SieveActionConvert::href() const

@@ -12,12 +12,10 @@ using namespace KSieveUi;
 SearchServerWithVacationSupportJob::SearchServerWithVacationSupportJob(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 SearchServerWithVacationSupportJob::~SearchServerWithVacationSupportJob()
 {
-
 }
 
 void SearchServerWithVacationSupportJob::sendAccountList()
@@ -54,12 +52,12 @@ void SearchServerWithVacationSupportJob::searchNextInfo()
 
 void SearchServerWithVacationSupportJob::slotSearchSieveScript(const QString &name, const QString &identifier)
 {
-       auto job = new FindAccountInfoJob(this);
-       connect(job, &FindAccountInfoJob::findAccountInfoFinished, this, &SearchServerWithVacationSupportJob::slotFindAccountInfoFinished);
-       job->setIdentifier(identifier);
-       job->setProperty("serverName", name);
-       job->setProvider(mPasswordProvider);
-       job->start();
+    auto job = new FindAccountInfoJob(this);
+    connect(job, &FindAccountInfoJob::findAccountInfoFinished, this, &SearchServerWithVacationSupportJob::slotFindAccountInfoFinished);
+    job->setIdentifier(identifier);
+    job->setProperty("serverName", name);
+    job->setProvider(mPasswordProvider);
+    job->start();
 }
 
 void SearchServerWithVacationSupportJob::slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info)
@@ -75,7 +73,7 @@ void SearchServerWithVacationSupportJob::slotFindAccountInfoFinished(const KSiev
 void SearchServerWithVacationSupportJob::searchNextServerSieve()
 {
     ++mSieveServerMapIterator;
-    if(mSieveServerMapIterator != mServerSieveInfos.constEnd()) {
+    if (mSieveServerMapIterator != mServerSieveInfos.constEnd()) {
         slotSearchSieveScript(mSieveServerMapIterator.key(), mSieveServerMapIterator.value());
     } else {
         sendAccountList();

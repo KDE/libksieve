@@ -13,7 +13,8 @@
 class QStackedWidget;
 class QLineEdit;
 class QAction;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveImapAccountSettings;
 class SieveEditorTextModeWidget;
 class SieveEditorGraphicalModeWidget;
@@ -27,11 +28,7 @@ class KSIEVEUI_EXPORT SieveEditorWidget : public QWidget
 public:
     explicit SieveEditorWidget(bool useMenuBar, QWidget *parent = nullptr);
     ~SieveEditorWidget() override;
-    enum EditorMode {
-        Unknown = -1,
-        TextMode = 0,
-        GraphicMode = 1
-    };
+    enum EditorMode { Unknown = -1, TextMode = 0, GraphicMode = 1 };
 
     void setReadOnly(bool b);
     Q_REQUIRED_RESULT QString script() const;
@@ -109,6 +106,7 @@ Q_SIGNALS:
     void copyAvailable(bool);
     void changeModeEditor(bool);
     void sieveEditorTabCurrentChanged();
+
 private:
     void slotEnableButtonOk(bool b);
     void slotGenerateXml();

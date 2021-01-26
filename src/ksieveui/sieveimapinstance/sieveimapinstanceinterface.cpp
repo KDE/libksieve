@@ -5,8 +5,8 @@
 */
 
 #include "sieveimapinstanceinterface.h"
-#include "sieveimapinstance.h"
 #include "libksieve_debug.h"
+#include "sieveimapinstance.h"
 
 using namespace KSieveUi;
 SieveImapInstanceInterface::SieveImapInstanceInterface()

@@ -6,10 +6,11 @@
 #ifndef SIEVEEDITORABSTRACTWIDGET_H
 #define SIEVEEDITORABSTRACTWIDGET_H
 
-#include <QWidget>
 #include "../util/sieveimapaccountsettings.h"
 #include "ksieveui_private_export.h"
-namespace KSieveUi {
+#include <QWidget>
+namespace KSieveUi
+{
 class SieveImapAccountSettings;
 class KSIEVEUI_TESTS_EXPORT SieveEditorAbstractWidget : public QWidget
 {

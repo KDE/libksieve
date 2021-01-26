@@ -10,11 +10,11 @@
 #include <KLocalizedString>
 #include <QLineEdit>
 
-#include <QLabel>
 #include "libksieve_debug.h"
-#include <QXmlStreamReader>
-#include <QGridLayout>
 #include <KSieveUi/AbstractMoveImapFolderWidget>
+#include <QGridLayout>
+#include <QLabel>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 SieveConditionMetaDataExists::SieveConditionMetaDataExists(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -100,7 +100,7 @@ void SieveConditionMetaDataExists::setParamWidgetValue(QXmlStreamReader &element
             ++index;
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {

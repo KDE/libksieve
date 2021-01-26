@@ -7,10 +7,10 @@
 
 #include <KLocalizedString>
 
+#include "libksieve_debug.h"
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QSpinBox>
-#include "libksieve_debug.h"
 
 using namespace KSieveUi;
 SelectConvertParameterWidget::SelectConvertParameterWidget(QWidget *parent)

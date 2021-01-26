@@ -7,7 +7,8 @@
 #define SELECTVACATIONCOMBOBOX_H
 #include <QComboBox>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SelectVacationComboBox : public QComboBox
 {
     Q_OBJECT

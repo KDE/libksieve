@@ -7,7 +7,8 @@
 #define SELECTMIMECOMBOBOX_H
 #include <QComboBox>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SelectMimeComboBox : public QComboBox
 {
     Q_OBJECT

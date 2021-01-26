@@ -16,10 +16,11 @@
 #include <QString>
 
 #ifdef None // X headers
-#  undef None
+#undef None
 #endif
 
-namespace KSieve {
+namespace KSieve
+{
 class KSIEVE_EXPORT Error
 {
 public:
@@ -67,7 +68,7 @@ public:
         UnsupportedCommand,
         UnsupportedTest,
         UnsupportedComparator,
-        TestNestingTooDeep,  // site policy
+        TestNestingTooDeep, // site policy
         BlockNestingTooDeep, // site policy
         InvalidArgument,
         ConflictingArguments, // e.g. rfc3028, 2.7.{1,3}

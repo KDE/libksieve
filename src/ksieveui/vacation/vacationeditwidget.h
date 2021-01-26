@@ -7,8 +7,8 @@
 #ifndef VACATIONEDITWIDGET_H
 #define VACATIONEDITWIDGET_H
 
-#include <QWidget>
 #include "vacationutils.h"
+#include <QWidget>
 class KDateComboBox;
 class KTimeComboBox;
 
@@ -23,24 +23,29 @@ class KDateComboBox;
 
 class QDate;
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class PlainTextEditorWidget;
 }
 
 class QCheckBox;
 
-namespace KMime {
-namespace Types {
+namespace KMime
+{
+namespace Types
+{
 struct AddrSpec;
 using AddrSpecList = QVector<AddrSpec>;
 }
 }
 
-namespace PimCommon {
+namespace PimCommon
+{
 class SpellCheckLineEdit;
 }
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class VacationMailActionWidget;
 class SieveImapAccountSettings;
 class VacationMailLineEdit;

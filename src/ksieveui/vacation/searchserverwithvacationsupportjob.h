@@ -7,11 +7,12 @@
 #ifndef SEARCHSERVERWITHVACATIONSUPPORTJOB_H
 #define SEARCHSERVERWITHVACATIONSUPPORTJOB_H
 
+#include "ksieveui_export.h"
+#include "util_p.h"
 #include <QMap>
 #include <QObject>
-#include "util_p.h"
-#include "ksieveui_export.h"
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveImapPasswordProvider;
 class KSIEVEUI_EXPORT SearchServerWithVacationSupportJob : public QObject
 {
@@ -37,10 +38,10 @@ private:
     void searchNextServerSieve();
 
     QMap<QString, QString>::const_iterator mSieveServerMapIterator;
-    //name, identifier
+    // name, identifier
     QMap<QString, QString> mServerSieveInfos;
 
-    //Result
+    // Result
     QMap<QString, KSieveUi::Util::AccountInfo> mAccountList;
     SieveImapPasswordProvider *mPasswordProvider = nullptr;
 };

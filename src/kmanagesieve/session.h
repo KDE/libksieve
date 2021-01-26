@@ -11,14 +11,15 @@
 #include "response.h"
 
 #include <KJob>
-#include <QUrl>
 #include <QObject>
 #include <QQueue>
 #include <QStringList>
+#include <QUrl>
 
 class KSslErrorUiData;
 
-namespace KManageSieve {
+namespace KManageSieve
+{
 class SieveJob;
 class SessionThread;
 
@@ -78,13 +79,7 @@ private:
     QStringList m_sieveExtensions;
     QStringList m_saslMethods;
     QString m_implementation;
-    enum State {
-        None,
-        PreTlsCapabilities,
-        PostTlsCapabilities,
-        StartTls,
-        Authenticating
-    };
+    enum State { None, PreTlsCapabilities, PostTlsCapabilities, StartTls, Authenticating };
     State m_state = None;
     bool m_supportsStartTls = false;
     bool m_connected = false;

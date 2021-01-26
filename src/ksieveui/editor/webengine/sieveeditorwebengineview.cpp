@@ -8,8 +8,8 @@
 
 #include <KLocalizedString>
 #include <QContextMenuEvent>
-#include <QMenu>
 #include <QFileDialog>
+#include <QMenu>
 #include <QWebEngineDownloadItem>
 #include <QWebEngineProfile>
 #include <QWebEngineSettings>

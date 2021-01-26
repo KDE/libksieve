@@ -5,22 +5,22 @@
 */
 
 #include "sieveforeverypartwidget.h"
-#include "sievescriptblockwidget.h"
+#include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
-#include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
+#include "sievescriptblockwidget.h"
 
+#include "widgets/lineeditvalidator.h"
 #include <KLocalizedString>
 #include <QLineEdit>
-#include "widgets/lineeditvalidator.h"
 
+#include "libksieve_debug.h"
+#include <QCheckBox>
 #include <QHBoxLayout>
 #include <QLabel>
-#include <QCheckBox>
 #include <QWhatsThis>
 #include <QXmlStreamReader>
-#include "libksieve_debug.h"
 
 using namespace KSieveUi;
 
@@ -59,7 +59,8 @@ SieveForEveryPartWidget::~SieveForEveryPartWidget()
 void SieveForEveryPartWidget::slotHelp()
 {
     const QString help = i18n(
-        "\"foreverypart\", which is an iterator that walks though every MIME part of a message, including nested parts, depth first, and applies the commands in the specified block to each of them.");
+        "\"foreverypart\", which is an iterator that walks though every MIME part of a message, including nested parts, depth first, and applies the commands "
+        "in the specified block to each of them.");
     const QUrl href = KSieveUi::SieveEditorUtil::helpUrl(KSieveUi::SieveEditorUtil::ForEveryPart);
     const QString fullWhatsThis = AutoCreateScriptUtil::createFullWhatsThis(help, href.toString());
     QWhatsThis::showText(QCursor::pos(), fullWhatsThis, mHelpButton);
@@ -94,10 +95,10 @@ void SieveForEveryPartWidget::loadScript(QXmlStreamReader &element, QString &err
             mForLoop->setChecked(true);
             mName->setEnabled(true);
         } else if (tagName == QLatin1String("block")) {
-            //Nothing
-            //It's when name is empty
+            // Nothing
+            // It's when name is empty
         } else if (tagName == QLatin1String("crlf")) {
-            //Nothing
+            // Nothing
             element.skipCurrentElement();
         } else {
             error += i18n("Unknown tag \"%1\" during loading loop \"for\"", tagName.toString()) + QLatin1Char('\n');

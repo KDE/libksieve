@@ -7,8 +7,8 @@
 #ifndef AKONADIIMAPSETTINGINTERFACETEST_H
 #define AKONADIIMAPSETTINGINTERFACETEST_H
 
-#include <util/abstractakonadiimapsettinginterface.h>
 #include <QObject>
+#include <util/abstractakonadiimapsettinginterface.h>
 struct AkonadiImapSettingInterfaceDataTest {
     bool sieveSupport = true;
     bool sieveReuseConfig = true;
@@ -46,6 +46,7 @@ public:
     Q_REQUIRED_RESULT int authentication() const override;
     Q_REQUIRED_RESULT QString sieveAlternateUrl() const override;
     Q_REQUIRED_RESULT int imapPort() const override;
+
 private:
     AkonadiImapSettingInterfaceDataTest mData;
 };

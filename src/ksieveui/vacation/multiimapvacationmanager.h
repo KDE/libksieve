@@ -7,14 +7,15 @@
 #ifndef MULTIIMAPVACATIONMANAGER_H
 #define MULTIIMAPVACATIONMANAGER_H
 
-#include <QObject>
-#include <QMap>
-#include "util_p.h"
 #include "ksieveui_export.h"
+#include "util_p.h"
+#include <QMap>
+#include <QObject>
 
 class QUrl;
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class CheckKolabKep14SupportJob;
 class VacationCheckJob;
 class SieveImapPasswordProvider;
@@ -50,7 +51,7 @@ private:
     int mNumberOfJobs = 0;
     bool mCheckInProgress = false;
 
-    QMap<QString, bool> mKep14Support;      //if the server has KEP:14 support
+    QMap<QString, bool> mKep14Support; // if the server has KEP:14 support
 };
 }
 #endif // MULTIIMAPVACATIONMANAGER_H

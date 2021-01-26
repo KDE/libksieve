@@ -4,16 +4,16 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditioncurrentdate.h"
-#include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
-#include "widgets/selectdatewidget.h"
+#include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "editor/sieveeditorutil.h"
+#include "widgets/selectdatewidget.h"
 
 #include <KLocalizedString>
 
+#include "libksieve_debug.h"
 #include <QHBoxLayout>
 #include <QXmlStreamReader>
-#include "libksieve_debug.h"
 
 using namespace KSieveUi;
 
@@ -52,7 +52,7 @@ QString SieveConditionCurrentDate::code(QWidget *w) const
     const QString dateWidgetStr = dateWidget->code();
 
     return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("currentdate %1 %2").arg(matchTypeStr, dateWidgetStr)
-           + AutoCreateScriptUtil::generateConditionComment(comment());
+        + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 bool SieveConditionCurrentDate::needCheckIfServerHasCapability() const
@@ -74,7 +74,9 @@ QStringList SieveConditionCurrentDate::needRequires(QWidget *w) const
 
 QString SieveConditionCurrentDate::help() const
 {
-    return i18n("The currentdate test is similar to the date test, except that it operates on the current date/time rather than a value extracted from the message header.");
+    return i18n(
+        "The currentdate test is similar to the date test, except that it operates on the current date/time rather than a value extracted from the message "
+        "header.");
 }
 
 void SieveConditionCurrentDate::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
@@ -100,7 +102,7 @@ void SieveConditionCurrentDate::setParamWidgetValue(QXmlStreamReader &element, Q
             selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {

@@ -15,7 +15,8 @@
 #include "findbar/findbarwebengineview.h"
 
 using namespace KSieveUi;
-namespace {
+namespace
+{
 qreal zoomBy()
 {
     return 20;

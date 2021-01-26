@@ -5,27 +5,28 @@
 */
 
 #include "sievescriptlistbox.h"
-#include "sievescriptdescriptiondialog.h"
-#include "sieveglobalvariablewidget.h"
-#include "sieveforeverypartwidget.h"
-#include "sievescriptpage.h"
-#include "sieveincludewidget.h"
 #include "sieveeditorgraphicalmodewidget.h"
-#include <QXmlStreamReader>
-#include <QHBoxLayout>
-#include <KMessageBox>
+#include "sieveforeverypartwidget.h"
+#include "sieveglobalvariablewidget.h"
+#include "sieveincludewidget.h"
+#include "sievescriptdescriptiondialog.h"
+#include "sievescriptpage.h"
 #include <KLocalizedString>
+#include <KMessageBox>
+#include <QHBoxLayout>
+#include <QIcon>
 #include <QInputDialog>
 #include <QPushButton>
-#include <QIcon>
+#include <QXmlStreamReader>
 
-#include <QVBoxLayout>
-#include <QListWidget>
-#include <QPointer>
-#include <QMenu>
 #include "libksieve_debug.h"
+#include <QListWidget>
+#include <QMenu>
+#include <QPointer>
+#include <QVBoxLayout>
 
-namespace {
+namespace
+{
 inline const QString defaultScriptName()
 {
     return QStringLiteral("SCRIPTNAME: ");
@@ -257,8 +258,8 @@ void SieveScriptListBox::slotDelete()
 {
     QListWidgetItem *item = mSieveListScript->currentItem();
     if (item) {
-        if (KMessageBox::warningYesNo(this, i18n("Do you want to delete \"%1\" script?", item->text()),
-                                      i18nc("@title:window", "Delete Script")) == KMessageBox::Yes) {
+        if (KMessageBox::warningYesNo(this, i18n("Do you want to delete \"%1\" script?", item->text()), i18nc("@title:window", "Delete Script"))
+            == KMessageBox::Yes) {
             auto itemScript = static_cast<SieveScriptListItem *>(item);
             Q_EMIT removePage(itemScript->scriptPage());
             delete item;
@@ -273,7 +274,8 @@ void SieveScriptListBox::slotRename()
 {
     QListWidgetItem *item = mSieveListScript->currentItem();
     if (item) {
-        QString newName = QInputDialog::getText(this, i18nc("@title:window", "Rename Script"), i18n("New name for the script:"), QLineEdit::Normal, item->text());
+        QString newName =
+            QInputDialog::getText(this, i18nc("@title:window", "Rename Script"), i18n("New name for the script:"), QLineEdit::Normal, item->text());
         newName = newName.trimmed();
         if (!newName.isEmpty()) {
             item->setText(newName);
@@ -385,7 +387,7 @@ void SieveScriptListBox::clear()
 {
     mScriptNumber = 0;
     Q_EMIT enableButtonOk(false);
-    //Clear tabpage
+    // Clear tabpage
     mSieveListScript->clear();
     updateButtons();
 }
@@ -411,16 +413,16 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
     bool previousElementWasAComment = false;
     while (n.readNextStartElement()) {
         const QStringRef tagName = n.name();
-        //qDebug() <<"SieveScriptListBox::loadBlock tagName " << tagName;
+        // qDebug() <<"SieveScriptListBox::loadBlock tagName " << tagName;
         if (tagName == QLatin1String("control")) {
             previousElementWasAComment = false;
-            //Create a new page when before it was "onlyactions"
+            // Create a new page when before it was "onlyactions"
             if (typeBlock == TypeBlockAction) {
                 currentPage = nullptr;
             }
             if (n.attributes().hasAttribute(QLatin1String("name"))) {
                 const QString controlType = n.attributes().value(QLatin1String("name")).toString();
-                //qCDebug(LIBKSIEVE_LOG)<<" controlType"<<controlType;
+                // qCDebug(LIBKSIEVE_LOG)<<" controlType"<<controlType;
                 if (controlType == QLatin1String("if")) {
                     typeBlock = TypeBlockIf;
                     if (!currentPage || hasCreatedAIfBlock) {
@@ -449,7 +451,7 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
                     if (blockWidget) {
                         blockWidget->loadScript(n, false, error);
                     }
-                    //We are sure that we can't have another elsif
+                    // We are sure that we can't have another elsif
                     currentPage = nullptr;
                 } else if (controlType == QLatin1String("foreverypart")) {
                     typeBlock = TypeBlockForeachBlock;
@@ -462,14 +464,14 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
                     } else {
                         error += i18n("forEveryPart is not supported by your server") + QLatin1Char('\n');
                     }
-                    //TODO verify it.
+                    // TODO verify it.
 #ifdef QDOMELEMENT_FIXME
                     QDomNode block = e.firstChildElement(QStringLiteral("block")).firstChild();
                     loadBlock(block, currentPage, typeBlock, error);
 #endif
                 } else if (controlType == QLatin1String("require")) {
                     n.skipCurrentElement();
-                    //Nothing. autogenerated
+                    // Nothing. autogenerated
                 } else {
                     qCDebug(LIBKSIEVE_LOG) << " unknown controlType :" << controlType;
                 }
@@ -478,9 +480,9 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
             previousElementWasAComment = true;
 #ifdef FIXME_COMMENT
             if (e.hasAttribute(QStringLiteral("hash"))) {
-                //TODO
+                // TODO
             } else if (e.hasAttribute(QStringLiteral("bracket"))) {
-                //TODO
+                // TODO
             }
 #endif
             QString str(n.readElementText());
@@ -492,7 +494,7 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
                 }
                 comment += str;
             }
-            //qDebug() << " COMMENT " << comment;
+            // qDebug() << " COMMENT " << comment;
         } else if (tagName == QLatin1String("action")) {
             previousElementWasAComment = false;
             if (n.attributes().hasAttribute(QLatin1String("name"))) {
@@ -520,7 +522,7 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
                         qCDebug(LIBKSIEVE_LOG) << " globalVariable not supported";
                     }
                 } else if (actionName == QLatin1String("set") && (typeBlock == TypeBlockGlobal)) {
-                    //FIXME global not global variable.
+                    // FIXME global not global variable.
                     if (currentPage->globalVariableWidget()) {
                         const SieveGlobalVariableActionWidget::VariableElement var = currentPage->globalVariableWidget()->loadSetVariable(n, error);
                         if (var.isValid()) {
@@ -545,7 +547,7 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
                 }
             }
         } else if (tagName == QLatin1String("crlf")) {
-            //If it was a comment previously you will create a \n
+            // If it was a comment previously you will create a \n
             if (previousElementWasAComment) {
                 comment += QLatin1Char('\n');
             }

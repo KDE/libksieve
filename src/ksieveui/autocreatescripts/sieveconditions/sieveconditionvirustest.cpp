@@ -6,15 +6,15 @@
 #include "sieveconditionvirustest.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
-#include "widgets/selectrelationalmatchtype.h"
 #include "widgets/selectcomparatorcombobox.h"
+#include "widgets/selectrelationalmatchtype.h"
 
 #include <KLocalizedString>
 
-#include <QSpinBox>
 #include "libksieve_debug.h"
-#include <QXmlStreamReader>
+#include <QSpinBox>
 #include <QVBoxLayout>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 
@@ -121,7 +121,7 @@ void SieveConditionVirusTest::setParamWidgetValue(QXmlStreamReader &element, QWi
             spinbox->setValue(element.readElementText().toInt());
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {

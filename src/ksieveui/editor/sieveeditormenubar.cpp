@@ -5,11 +5,11 @@
 */
 
 #include "sieveeditormenubar.h"
-#include "sieveeditortextmodewidget.h"
 #include "sieveeditortabwidget.h"
+#include "sieveeditortextmodewidget.h"
 
-#include <KStandardAction>
 #include <KLocalizedString>
+#include <KStandardAction>
 #include <QAction>
 #include <QIcon>
 using namespace KSieveUi;

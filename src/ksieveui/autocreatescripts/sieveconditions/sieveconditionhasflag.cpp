@@ -4,19 +4,19 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionhasflag.h"
-#include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
+#include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "editor/sieveeditorutil.h"
 
 #include <KLocalizedString>
 #include <QLineEdit>
 
-#include <QWidget>
-#include <QHBoxLayout>
 #include "libksieve_debug.h"
-#include <QXmlStreamReader>
+#include <QHBoxLayout>
 #include <QLabel>
+#include <QWidget>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 SieveConditionHasFlag::SieveConditionHasFlag(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -138,7 +138,7 @@ void SieveConditionHasFlag::setParamWidgetValue(QXmlStreamReader &element, QWidg
             strList << element.readElementText();
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
@@ -151,8 +151,7 @@ void SieveConditionHasFlag::setParamWidgetValue(QXmlStreamReader &element, QWidg
     }
 
     switch (strList.count()) {
-    case 1:
-    {
+    case 1: {
         auto value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
         value->setCode(strList.at(0));
         break;

@@ -20,7 +20,7 @@ SieveDateSpinBox::~SieveDateSpinBox()
 
 void SieveDateSpinBox::setRange(int minValue, int maxValue)
 {
-    //We need to define specialValueText => we set minimum to minimum - 1
+    // We need to define specialValueText => we set minimum to minimum - 1
     setMaximum(maxValue);
     setMinimum(minValue - 1);
 }
@@ -58,7 +58,7 @@ void SieveDateSpinBox::setType(KSieveUi::SelectDateWidget::DateType type)
 void SieveDateSpinBox::setCode(const QString &str)
 {
     if (str == QLatin1String("*")) {
-        //setSpecialValue
+        // setSpecialValue
         setValue(minimum());
     } else {
         setValue(str.toInt());

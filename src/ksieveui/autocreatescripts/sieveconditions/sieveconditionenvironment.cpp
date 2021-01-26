@@ -10,12 +10,12 @@
 #include <KLocalizedString>
 #include <QLineEdit>
 
-#include <QWidget>
-#include <QLabel>
-#include <QCompleter>
 #include "libksieve_debug.h"
-#include <QXmlStreamReader>
+#include <QCompleter>
 #include <QGridLayout>
+#include <QLabel>
+#include <QWidget>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 SieveConditionEnvironment::SieveConditionEnvironment(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -34,14 +34,8 @@ QWidget *SieveConditionEnvironment::createParamWidget(QWidget *parent) const
 
     auto item = new QLineEdit;
     QStringList itemList;
-    itemList << QStringLiteral("domain")
-             << QStringLiteral("host")
-             << QStringLiteral("location")
-             << QStringLiteral("name")
-             << QStringLiteral("phase")
-             << QStringLiteral("remote-host")
-             << QStringLiteral("remote-ip")
-             << QStringLiteral("version");
+    itemList << QStringLiteral("domain") << QStringLiteral("host") << QStringLiteral("location") << QStringLiteral("name") << QStringLiteral("phase")
+             << QStringLiteral("remote-host") << QStringLiteral("remote-ip") << QStringLiteral("version");
     auto completer = new QCompleter(itemList, w);
     completer->setCaseSensitivity(Qt::CaseInsensitive);
     item->setCompleter(completer);
@@ -89,7 +83,9 @@ QString SieveConditionEnvironment::serverNeedsCapability() const
 
 QString SieveConditionEnvironment::help() const
 {
-    return i18n("The environment test retrieves the item of environment information specified by the name string and matches it to the values specified in the key-list argument.");
+    return i18n(
+        "The environment test retrieves the item of environment information specified by the name string and matches it to the values specified in the "
+        "key-list argument.");
 }
 
 void SieveConditionEnvironment::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
@@ -112,7 +108,7 @@ void SieveConditionEnvironment::setParamWidgetValue(QXmlStreamReader &element, Q
             ++index;
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {

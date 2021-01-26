@@ -18,13 +18,15 @@
 #include <kio/global.h>
 #include <kio/udsentry.h>
 
-namespace KIO {
+namespace KIO
+{
 class Job;
 }
 
 class KJob;
 
-namespace KManageSieve {
+namespace KManageSieve
+{
 class Session;
 
 /**

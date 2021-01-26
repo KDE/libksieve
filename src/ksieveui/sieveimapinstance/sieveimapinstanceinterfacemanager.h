@@ -7,9 +7,10 @@
 #ifndef SIEVEIMAPINSTANCEINTERFACEMANAGER_H
 #define SIEVEIMAPINSTANCEINTERFACEMANAGER_H
 
-#include <QObject>
 #include "ksieveui_export.h"
-namespace KSieveUi {
+#include <QObject>
+namespace KSieveUi
+{
 class SieveImapInstanceInterface;
 class SieveImapInstance;
 /**
@@ -26,6 +27,7 @@ public:
     void setSieveImapInstanceInterface(SieveImapInstanceInterface *interface);
     SieveImapInstanceInterface *sieveImapInstanceInterface() const;
     Q_REQUIRED_RESULT QVector<KSieveUi::SieveImapInstance> sieveImapInstanceList() const;
+
 private:
     SieveImapInstanceInterface *mInterface = nullptr;
 };

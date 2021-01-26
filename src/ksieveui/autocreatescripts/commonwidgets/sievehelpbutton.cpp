@@ -5,12 +5,12 @@
 */
 #include "sievehelpbutton.h"
 
-#include <KLocalizedString>
-#include <QIcon>
-#include <QWhatsThisClickedEvent>
-#include <QWhatsThis>
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
+#include <KLocalizedString>
+#include <QIcon>
+#include <QWhatsThis>
+#include <QWhatsThisClickedEvent>
 
 using namespace KSieveUi;
 SieveHelpButton::SieveHelpButton(QWidget *parent)

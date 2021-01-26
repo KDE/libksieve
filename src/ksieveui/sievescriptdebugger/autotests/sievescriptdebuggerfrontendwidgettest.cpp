@@ -6,10 +6,10 @@
 
 #include "sievescriptdebuggerfrontendwidgettest.h"
 #include "../sievescriptdebuggerfrontendwidget.h"
-#include <QLineEdit>
 #include <KPIMTextEdit/kpimtextedit/texttospeechwidget.h>
 #include <KUrlRequester>
 #include <QLabel>
+#include <QLineEdit>
 #include <QSplitter>
 #include <QTest>
 #include <sievescriptdebugger/sievescriptdebuggerwarning.h>
@@ -60,15 +60,15 @@ void SieveScriptDebuggerFrontEndWidgetTest::shouldChangeButtonEnabledState()
 
     auto emailPath = w.findChild<KUrlRequester *>(QStringLiteral("emailpath"));
     emailPath->setUrl(QUrl::fromLocalFile(QStringLiteral("/")));
-//    QPushButton *debugScriptButton = w.findChild<QPushButton *>(QStringLiteral("debugbutton"));
+    //    QPushButton *debugScriptButton = w.findChild<QPushButton *>(QStringLiteral("debugbutton"));
 
-//    QVERIFY(!debugScriptButton->isEnabled());
+    //    QVERIFY(!debugScriptButton->isEnabled());
 
-//    w.setScript(QStringLiteral("foo"));
-//    QVERIFY(debugScriptButton->isEnabled());
+    //    w.setScript(QStringLiteral("foo"));
+    //    QVERIFY(debugScriptButton->isEnabled());
 
-//    emailPath->setUrl(QUrl::fromLocalFile(QStringLiteral("    ")));
-//    QVERIFY(!debugScriptButton->isEnabled());
+    //    emailPath->setUrl(QUrl::fromLocalFile(QStringLiteral("    ")));
+    //    QVERIFY(!debugScriptButton->isEnabled());
 }
 
 void SieveScriptDebuggerFrontEndWidgetTest::shouldAddScript()

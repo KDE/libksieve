@@ -8,36 +8,36 @@
 #include "sieveeditorwidget.h"
 #include "sievepurposemenuwidget.h"
 
-#include "sieve-editor.h"
-#include "sieveeditortextmodewidget.h"
-#include "scriptsparsing/parsingutil.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "autocreatescripts/sievescriptparsingerrordialog.h"
-#include "sieveeditormenubar.h"
 #include "editor/sieveinfodialog.h"
+#include "scriptsparsing/parsingutil.h"
+#include "sieve-editor.h"
+#include "sieveeditormenubar.h"
+#include "sieveeditortextmodewidget.h"
 
-#include <kns3/uploaddialog.h>
-#include <KLocalizedString>
-#include <KIconLoader>
-#include <QTemporaryDir>
-#include <kzip.h>
-#include <KIconEngine>
-#include <KStandardAction>
 #include <KActionMenu>
+#include <KIconEngine>
+#include <KIconLoader>
+#include <KLocalizedString>
+#include <KStandardAction>
+#include <QTemporaryDir>
+#include <kns3/uploaddialog.h>
+#include <kzip.h>
 
 #include <PimCommon/PurposeMenuWidget>
 
-#include <QPushButton>
-#include <QVBoxLayout>
-#include <QStackedWidget>
-#include <QLabel>
-#include <QLineEdit>
-#include <QToolBar>
 #include "libksieve_debug.h"
 #include <QAction>
+#include <QLabel>
+#include <QLineEdit>
 #include <QPointer>
+#include <QPushButton>
+#include <QStackedWidget>
 #include <QStandardPaths>
 #include <QTemporaryFile>
+#include <QToolBar>
+#include <QVBoxLayout>
 
 using namespace KSieveUi;
 
@@ -65,7 +65,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     connect(mSwitchMode, &QAction::triggered, this, &SieveEditorWidget::slotSwitchMode);
 
     if (mDebug) {
-        //Not necessary to translate it.
+        // Not necessary to translate it.
         mGenerateXml = new QAction(QStringLiteral("Generate xml"), this);
         connect(mGenerateXml, &QAction::triggered, this, &SieveEditorWidget::slotGenerateXml);
         toolbar->addAction(mGenerateXml);
@@ -75,7 +75,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     overlays << QStringLiteral("list-add");
     mShareScript = new QAction(QIcon(new KIconEngine(QStringLiteral("get-hot-new-stuff"), KIconLoader::global(), overlays)), i18n("Share Script..."), this);
     connect(mShareScript, &QAction::triggered, this, &SieveEditorWidget::slotShareScript);
-    //Add action to toolBar
+    // Add action to toolBar
 
     toolbar->addAction(mShareScript);
 
@@ -254,8 +254,7 @@ void SieveEditorWidget::updateOriginalScript()
 void SieveEditorWidget::print()
 {
     switch (mMode) {
-    case TextMode:
-    {
+    case TextMode: {
         bool wasModified = isModified();
         mTextModeWidget->print();
         setModified(wasModified);
@@ -272,8 +271,7 @@ void SieveEditorWidget::print()
 void SieveEditorWidget::printPreview()
 {
     switch (mMode) {
-    case TextMode:
-    {
+    case TextMode: {
         bool wasModified = isModified();
         mTextModeWidget->printPreview();
         setModified(wasModified);
@@ -474,7 +472,7 @@ QString SieveEditorWidget::originalScript() const
 void SieveEditorWidget::setScript(const QString &script, bool clearUndoRedo)
 {
     mTextModeWidget->setScript(script, clearUndoRedo);
-    //Necessary to take text from editor otherwise script has \r\n
+    // Necessary to take text from editor otherwise script has \r\n
     mOriginalScript = mTextModeWidget->script();
 }
 
@@ -497,8 +495,7 @@ void SieveEditorWidget::addMessageEntry(const QString &errorMsg, const QColor &c
 {
     QString msg = errorMsg;
     msg.replace(QLatin1Char('\n'), QStringLiteral("<br>"));
-    const QString logText = QStringLiteral("<font color=%1>%2</font>")
-                            .arg(color.name(), msg);
+    const QString logText = QStringLiteral("<font color=%1>%2</font>").arg(color.name(), msg);
 
     setDebugScript(logText);
 }
@@ -624,8 +621,7 @@ void SieveEditorWidget::slotSwitchToGraphicalMode()
 void SieveEditorWidget::slotSwitchMode()
 {
     switch (mMode) {
-    case TextMode:
-    {
+    case TextMode: {
         bool result = false;
         const QString doc = ParsingUtil::parseScript(mTextModeWidget->currentscript(), result);
         if (result) {
@@ -644,8 +640,7 @@ void SieveEditorWidget::slotSwitchMode()
         }
         break;
     }
-    case GraphicMode:
-    {
+    case GraphicMode: {
         const QString script = mGraphicalModeWidget->currentscript();
         changeMode(TextMode);
         mTextModeWidget->setScript(script);

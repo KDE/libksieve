@@ -10,9 +10,9 @@
 #include <PimCommon/LineEditWithCompleterNg>
 #include <QLabel>
 #include <QPushButton>
-#include <QToolButton>
-#include <QTest>
 #include <QSignalSpy>
+#include <QTest>
+#include <QToolButton>
 
 FindBarBaseTest::FindBarBaseTest(QObject *parent)
     : QObject(parent)

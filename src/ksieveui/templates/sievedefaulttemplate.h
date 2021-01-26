@@ -9,8 +9,10 @@
 
 #include "sievetemplatewidget.h"
 
-namespace KSieveUi {
-namespace SieveDefaultTemplate {
+namespace KSieveUi
+{
+namespace SieveDefaultTemplate
+{
 Q_REQUIRED_RESULT QVector<PimCommon::defaultTemplate> defaultTemplates();
 }
 }

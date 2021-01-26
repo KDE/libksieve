@@ -10,7 +10,8 @@
 #include <QListWidget>
 class QLineEdit;
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SelectFlagsListWidget : public QListWidget
 {
     Q_OBJECT
@@ -22,9 +23,7 @@ public:
     Q_REQUIRED_RESULT QStringList flags() const;
 
 private:
-    enum Type {
-        FlagsRealName = Qt::UserRole + 1
-    };
+    enum Type { FlagsRealName = Qt::UserRole + 1 };
     void init();
 };
 

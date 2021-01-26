@@ -7,10 +7,11 @@
 #ifndef ABSTRACTREGEXPEDITORLINEEDIT_H
 #define ABSTRACTREGEXPEDITORLINEEDIT_H
 
-#include <QWidget>
 #include "ksieveui_export.h"
+#include <QWidget>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 /**
  * @brief The AbstractRegexpEditorLineEdit class
  * @author Laurent Montel <montel@kde.org>

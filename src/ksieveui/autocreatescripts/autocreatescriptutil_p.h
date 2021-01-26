@@ -7,15 +7,17 @@
 #ifndef AUTOCREATESCRIPTUTIL_H
 #define AUTOCREATESCRIPTUTIL_H
 
+#include "ksieveui_private_export.h"
+#include <KSieveUi/AbstractRegexpEditorLineEdit>
 #include <QString>
 #include <QStringList>
 #include <QXmlStreamReader>
-#include <KSieveUi/AbstractRegexpEditorLineEdit>
-#include "ksieveui_private_export.h"
-namespace KSieveUi {
+namespace KSieveUi
+{
 class AbstractMoveImapFolderWidget;
 class AbstractSelectEmailLineEdit;
-namespace AutoCreateScriptUtil {
+namespace AutoCreateScriptUtil
+{
 Q_REQUIRED_RESULT QString createMultiLine(const QString &str);
 Q_REQUIRED_RESULT QString createList(const QString &str, QChar separator, bool addEndSemiColon = true);
 Q_REQUIRED_RESULT QString createList(const QStringList &lst, bool addSemiColon = true, bool protectSlash = false);

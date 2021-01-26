@@ -7,7 +7,8 @@
 #define SIEVEACTIONBREAK_H
 
 #include "sieveaction.h"
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveActionBreak : public SieveAction
 {
     Q_OBJECT

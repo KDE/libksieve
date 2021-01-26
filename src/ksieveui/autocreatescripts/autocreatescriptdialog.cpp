@@ -5,16 +5,16 @@
 */
 
 #include "autocreatescriptdialog.h"
-#include "sievescriptlistbox.h"
-#include "sieveconditionwidgetlister.h"
 #include "sieveactionwidgetlister.h"
+#include "sieveconditionwidgetlister.h"
 #include "sieveeditorgraphicalmodewidget.h"
+#include "sievescriptlistbox.h"
 
+#include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
-#include <QKeyEvent>
 #include <QDialogButtonBox>
-#include <KConfigGroup>
+#include <QKeyEvent>
 #include <QPushButton>
 #include <QVBoxLayout>
 
@@ -87,7 +87,7 @@ bool AutoCreateScriptDialog::event(QEvent *e)
 {
     const bool shortCutOverride = (e->type() == QEvent::ShortcutOverride);
     if (shortCutOverride || e->type() == QEvent::KeyPress) {
-        auto kev = static_cast<QKeyEvent * >(e);
+        auto kev = static_cast<QKeyEvent *>(e);
         if (kev->key() == Qt::Key_Escape) {
             e->ignore();
             return true;

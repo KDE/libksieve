@@ -9,7 +9,8 @@
 
 #include <sonnet/spellcheckdecorator.h>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveTextEdit;
 class SieveTextEditorSpellCheckDecorator : public Sonnet::SpellCheckDecorator
 {
@@ -17,6 +18,7 @@ class SieveTextEditorSpellCheckDecorator : public Sonnet::SpellCheckDecorator
 public:
     explicit SieveTextEditorSpellCheckDecorator(SieveTextEdit *plainTextEdit);
     Q_REQUIRED_RESULT bool isSpellCheckingEnabledForBlock(const QString &textBlock) const override;
+
 private:
     SieveTextEdit *const mPlainTextEdit;
 };

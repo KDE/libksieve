@@ -8,8 +8,8 @@
     SPDX-License-Identifier: GPL-2.0-only
 */
 
-#include <config-libksieve.h> // SIZEOF_UNSIGNED_LONG
 #include <../src/ksieve/parser.h>
+#include <config-libksieve.h> // SIZEOF_UNSIGNED_LONG
 using KSieve::Parser;
 
 #include <../src/ksieve/error.h>
@@ -17,11 +17,11 @@ using KSieve::Parser;
 
 #include <QString>
 
-#include <iostream>
 #include <cstdlib>
+#include <iostream>
 
-using std::cout;
 using std::cerr;
+using std::cout;
 using std::endl;
 
 #include <cassert>
@@ -62,327 +62,207 @@ static struct TestCase {
     // single commands:
     //
 
-    {
-        "Null script",
-        nullptr,
-        { { Finished, nullptr, false } }
-    },
+    {"Null script", nullptr, {{Finished, nullptr, false}}},
 
-    {
-        "Empty script",
-        "",
-        { { Finished, nullptr, false } }
-    },
+    {"Empty script", "", {{Finished, nullptr, false}}},
 
-    {
-        "WS-only script",
-        " \t\n\r\n",
-        { { Finished, nullptr, false } }
-    },
+    {"WS-only script", " \t\n\r\n", {{Finished, nullptr, false}}},
 
-    {
-        "Bare hash comment",
-        "#comment",
-        {   { HashComment, "comment", false },
-            { Finished, nullptr, false }}
-    },
+    {"Bare hash comment", "#comment", {{HashComment, "comment", false}, {Finished, nullptr, false}}},
 
-    {
-        "Bare bracket comment",
-        "/*comment*/",
-        {   { BracketComment, "comment", false },
-            { Finished, nullptr, false }}
-    },
+    {"Bare bracket comment", "/*comment*/", {{BracketComment, "comment", false}, {Finished, nullptr, false}}},
 
-    {
-        "Bare command",
-        "command;",
-        {   { CommandStart, "command", false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"Bare command", "command;", {{CommandStart, "command", false}, {CommandEnd, nullptr, false}, {Finished, nullptr, false}}},
 
-    {
-        "Bare command - missing semicolon",
-        "command",
-        {   { CommandStart, "command", false },
-            { Error, "MissingSemicolonOrBlock", false }}
-    },
+    {"Bare command - missing semicolon", "command", {{CommandStart, "command", false}, {Error, "MissingSemicolonOrBlock", false}}},
 
-    {
-        "surrounded by bracket comments",
-        "/*comment*/command/*comment*/;/*comment*/",
-        {   { BracketComment, "comment", false },
-            { CommandStart, "command", false },
-            { BracketComment, "comment", false },
-            { CommandEnd, nullptr, false },
-            { BracketComment, "comment", false },
-            { Finished, nullptr, false }}
-    },
+    {"surrounded by bracket comments",
+     "/*comment*/command/*comment*/;/*comment*/",
+     {{BracketComment, "comment", false},
+      {CommandStart, "command", false},
+      {BracketComment, "comment", false},
+      {CommandEnd, nullptr, false},
+      {BracketComment, "comment", false},
+      {Finished, nullptr, false}}},
 
-    {
-        "surrounded by hash comments",
-        "#comment\ncommand#comment\n;#comment",
-        {   { HashComment, "comment", false },
-            { CommandStart, "command", false },
-            { HashComment, "comment", false },
-            { CommandEnd, nullptr, false },
-            { HashComment, "comment", false },
-            { Finished, nullptr, false }}
-    },
+    {"surrounded by hash comments",
+     "#comment\ncommand#comment\n;#comment",
+     {{HashComment, "comment", false},
+      {CommandStart, "command", false},
+      {HashComment, "comment", false},
+      {CommandEnd, nullptr, false},
+      {HashComment, "comment", false},
+      {Finished, nullptr, false}}},
 
-    {
-        "single tagged argument",
-        "command :tag;",
-        {   { CommandStart, "command", false },
-            { TaggedArgument, "tag", false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"single tagged argument",
+     "command :tag;",
+     {{CommandStart, "command", false}, {TaggedArgument, "tag", false}, {CommandEnd, nullptr, false}, {Finished, nullptr, false}}},
 
-    {
-        "single tagged argument - missing semicolon",
-        "command :tag",
-        {   { CommandStart, "command", false },
-            { TaggedArgument, "tag", false },
-            { Error, "MissingSemicolonOrBlock", false }}
-    },
+    {"single tagged argument - missing semicolon",
+     "command :tag",
+     {{CommandStart, "command", false}, {TaggedArgument, "tag", false}, {Error, "MissingSemicolonOrBlock", false}}},
 
-    {
-        "single string argument - quoted string",
-        "command \"string\";",
-        {   { CommandStart, "command", false },
-            { StringArgument, "string", false /*quoted*/ },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"single string argument - quoted string",
+     "command \"string\";",
+     {{CommandStart, "command", false}, {StringArgument, "string", false /*quoted*/}, {CommandEnd, nullptr, false}, {Finished, nullptr, false}}},
 
-    {
-        "single string argument - multi-line string",
-        "command text:\nstring\n.\n;",
-        {   { CommandStart, "command", false },
-            { StringArgument, "string", true /*multiline*/ },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"single string argument - multi-line string",
+     "command text:\nstring\n.\n;",
+     {{CommandStart, "command", false}, {StringArgument, "string", true /*multiline*/}, {CommandEnd, nullptr, false}, {Finished, nullptr, false}}},
 
-    {
-        "single number argument - 100",
-        "command 100;",
-        {   { CommandStart, "command", false },
-            { NumberArgument, "100 ", false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"single number argument - 100",
+     "command 100;",
+     {{CommandStart, "command", false}, {NumberArgument, "100 ", false}, {CommandEnd, nullptr, false}, {Finished, nullptr, false}}},
 
-    {
-        "single number argument - 100k",
-        "command 100k;",
-        {   { CommandStart, "command", false },
-            { NumberArgument, "102400k", false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"single number argument - 100k",
+     "command 100k;",
+     {{CommandStart, "command", false}, {NumberArgument, "102400k", false}, {CommandEnd, nullptr, false}, {Finished, nullptr, false}}},
 
-    {
-        "single number argument - 100M",
-        "command 100M;",
-        {   { CommandStart, "command", false },
-            { NumberArgument, "104857600M", false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"single number argument - 100M",
+     "command 100M;",
+     {{CommandStart, "command", false}, {NumberArgument, "104857600M", false}, {CommandEnd, nullptr, false}, {Finished, nullptr, false}}},
 
-    {
-        "single number argument - 2G",
-        "command 2G;",
-        {   { CommandStart, "command", false },
-            { NumberArgument, "2147483648G", false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"single number argument - 2G",
+     "command 2G;",
+     {{CommandStart, "command", false}, {NumberArgument, "2147483648G", false}, {CommandEnd, nullptr, false}, {Finished, nullptr, false}}},
 
 #if SIZEOF_UNSIGNED_LONG == 8
-#  define ULONG_MAX_STRING "18446744073709551615"
-#  define ULONG_MAXP1_STRING "18446744073709551616"
+#define ULONG_MAX_STRING "18446744073709551615"
+#define ULONG_MAXP1_STRING "18446744073709551616"
 #elif SIZEOF_UNSIGNED_LONG == 4
-#  define ULONG_MAX_STRING "4294967295"
-#  define ULONG_MAXP1_STRING "4G"
+#define ULONG_MAX_STRING "4294967295"
+#define ULONG_MAXP1_STRING "4G"
 #else
-#  error sizeof( unsigned long ) != 4 && sizeof( unsigned long ) != 8 ???
+#error sizeof( unsigned long ) != 4 && sizeof( unsigned long ) != 8 ???
 #endif
 
-    {
-        "single number argument - ULONG_MAX + 1",
-        "command " ULONG_MAXP1_STRING ";",
-        {   { CommandStart, "command", false },
-            { Error, "NumberOutOfRange", false }}
-    },
+    {"single number argument - ULONG_MAX + 1", "command " ULONG_MAXP1_STRING ";", {{CommandStart, "command", false}, {Error, "NumberOutOfRange", false}}},
 
-    {
-        "single number argument - ULONG_MAX",
-        "command " ULONG_MAX_STRING ";",
-        {   { CommandStart, "command", false },
-            { NumberArgument, ULONG_MAX_STRING " ", false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"single number argument - ULONG_MAX",
+     "command " ULONG_MAX_STRING ";",
+     {{CommandStart, "command", false}, {NumberArgument, ULONG_MAX_STRING " ", false}, {CommandEnd, nullptr, false}, {Finished, nullptr, false}}},
 
-    {
-        "single one-element string list argument - quoted string",
-        "command [\"string\"];",
-        {   { CommandStart, "command", false },
-            { StringListArgumentStart, nullptr, false },
-            { StringListEntry, "string", false /*quoted*/ },
-            { StringListArgumentEnd, nullptr, false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"single one-element string list argument - quoted string",
+     "command [\"string\"];",
+     {{CommandStart, "command", false},
+      {StringListArgumentStart, nullptr, false},
+      {StringListEntry, "string", false /*quoted*/},
+      {StringListArgumentEnd, nullptr, false},
+      {CommandEnd, nullptr, false},
+      {Finished, nullptr, false}}},
 
-    {
-        "single one-element string list argument - multi-line string",
-        "command [text:\nstring\n.\n];",
-        {   { CommandStart, "command", false },
-            { StringListArgumentStart, nullptr, false },
-            { StringListEntry, "string", true /*multiline*/ },
-            { StringListArgumentEnd, nullptr, false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"single one-element string list argument - multi-line string",
+     "command [text:\nstring\n.\n];",
+     {{CommandStart, "command", false},
+      {StringListArgumentStart, nullptr, false},
+      {StringListEntry, "string", true /*multiline*/},
+      {StringListArgumentEnd, nullptr, false},
+      {CommandEnd, nullptr, false},
+      {Finished, nullptr, false}}},
 
-    {
-        "single two-element string list argument - quoted strings",
-        R"(command ["string","string"];)",
-        {   { CommandStart, "command", false },
-            { StringListArgumentStart, nullptr, false },
-            { StringListEntry, "string", false /*quoted*/ },
-            { StringListEntry, "string", false /*quoted*/ },
-            { StringListArgumentEnd, nullptr, false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"single two-element string list argument - quoted strings",
+     R"(command ["string","string"];)",
+     {{CommandStart, "command", false},
+      {StringListArgumentStart, nullptr, false},
+      {StringListEntry, "string", false /*quoted*/},
+      {StringListEntry, "string", false /*quoted*/},
+      {StringListArgumentEnd, nullptr, false},
+      {CommandEnd, nullptr, false},
+      {Finished, nullptr, false}}},
 
-    {
-        "single two-element string list argument - multi-line strings",
-        "command [text:\nstring\n.\n,text:\nstring\n.\n];",
-        {   { CommandStart, "command", false },
-            { StringListArgumentStart, nullptr, false },
-            { StringListEntry, "string", true /*multiline*/ },
-            { StringListEntry, "string", true /*multiline*/ },
-            { StringListArgumentEnd, nullptr, false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"single two-element string list argument - multi-line strings",
+     "command [text:\nstring\n.\n,text:\nstring\n.\n];",
+     {{CommandStart, "command", false},
+      {StringListArgumentStart, nullptr, false},
+      {StringListEntry, "string", true /*multiline*/},
+      {StringListEntry, "string", true /*multiline*/},
+      {StringListArgumentEnd, nullptr, false},
+      {CommandEnd, nullptr, false},
+      {Finished, nullptr, false}}},
 
-    {
-        "single two-element string list argument - quoted + multi-line strings",
-        "command [\"string\",text:\nstring\n.\n];",
-        {   { CommandStart, "command", false },
-            { StringListArgumentStart, nullptr, false },
-            { StringListEntry, "string", false /*quoted*/ },
-            { StringListEntry, "string", true /*multiline*/ },
-            { StringListArgumentEnd, nullptr, false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"single two-element string list argument - quoted + multi-line strings",
+     "command [\"string\",text:\nstring\n.\n];",
+     {{CommandStart, "command", false},
+      {StringListArgumentStart, nullptr, false},
+      {StringListEntry, "string", false /*quoted*/},
+      {StringListEntry, "string", true /*multiline*/},
+      {StringListArgumentEnd, nullptr, false},
+      {CommandEnd, nullptr, false},
+      {Finished, nullptr, false}}},
 
-    {
-        "single two-element string list argument - multi-line + quoted strings",
-        "command [text:\nstring\n.\n,\"string\"];",
-        {   { CommandStart, "command", false },
-            { StringListArgumentStart, nullptr, false },
-            { StringListEntry, "string", true /*multiline*/ },
-            { StringListEntry, "string", false /*quoted*/ },
-            { StringListArgumentEnd, nullptr, false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"single two-element string list argument - multi-line + quoted strings",
+     "command [text:\nstring\n.\n,\"string\"];",
+     {{CommandStart, "command", false},
+      {StringListArgumentStart, nullptr, false},
+      {StringListEntry, "string", true /*multiline*/},
+      {StringListEntry, "string", false /*quoted*/},
+      {StringListArgumentEnd, nullptr, false},
+      {CommandEnd, nullptr, false},
+      {Finished, nullptr, false}}},
 
-    {
-        "single bare test argument",
-        "command test;",
-        {   { CommandStart, "command", false },
-            { TestStart, "test", false },
-            { TestEnd, nullptr, false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"single bare test argument",
+     "command test;",
+     {{CommandStart, "command", false}, {TestStart, "test", false}, {TestEnd, nullptr, false}, {CommandEnd, nullptr, false}, {Finished, nullptr, false}}},
 
-    {
-        "one-element test list argument",
-        "command(test);",
-        {   { CommandStart, "command", false },
-            { TestListStart, nullptr, false },
-            { TestStart, "test", false },
-            { TestEnd, nullptr, false },
-            { TestListEnd, nullptr, false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"one-element test list argument",
+     "command(test);",
+     {{CommandStart, "command", false},
+      {TestListStart, nullptr, false},
+      {TestStart, "test", false},
+      {TestEnd, nullptr, false},
+      {TestListEnd, nullptr, false},
+      {CommandEnd, nullptr, false},
+      {Finished, nullptr, false}}},
 
-    {
-        "two-element test list argument",
-        "command(test,test);",
-        {   { CommandStart, "command", false },
-            { TestListStart, nullptr, false },
-            { TestStart, "test", false },
-            { TestEnd, nullptr, false },
-            { TestStart, "test", false },
-            { TestEnd, nullptr, false },
-            { TestListEnd, nullptr, false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"two-element test list argument",
+     "command(test,test);",
+     {{CommandStart, "command", false},
+      {TestListStart, nullptr, false},
+      {TestStart, "test", false},
+      {TestEnd, nullptr, false},
+      {TestStart, "test", false},
+      {TestEnd, nullptr, false},
+      {TestListEnd, nullptr, false},
+      {CommandEnd, nullptr, false},
+      {Finished, nullptr, false}}},
 
-    {
-        "zero-element block",
-        "command{}",
-        {   { CommandStart, "command", false },
-            { BlockStart, nullptr, false },
-            { BlockEnd, nullptr, false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"zero-element block",
+     "command{}",
+     {{CommandStart, "command", false}, {BlockStart, nullptr, false}, {BlockEnd, nullptr, false}, {CommandEnd, nullptr, false}, {Finished, nullptr, false}}},
 
-    {
-        "one-element block",
-        "command{command;}",
-        {   { CommandStart, "command", false },
-            { BlockStart, nullptr, false },
-            { CommandStart, "command", false },
-            { CommandEnd, nullptr, false },
-            { BlockEnd, nullptr, false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"one-element block",
+     "command{command;}",
+     {{CommandStart, "command", false},
+      {BlockStart, nullptr, false},
+      {CommandStart, "command", false},
+      {CommandEnd, nullptr, false},
+      {BlockEnd, nullptr, false},
+      {CommandEnd, nullptr, false},
+      {Finished, nullptr, false}}},
 
-    {
-        "two-element block",
-        "command{command;command;}",
-        {   { CommandStart, "command", false },
-            { BlockStart, nullptr, false },
-            { CommandStart, "command", false },
-            { CommandEnd, nullptr, false },
-            { CommandStart, "command", false },
-            { CommandEnd, nullptr, false },
-            { BlockEnd, nullptr, false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"two-element block",
+     "command{command;command;}",
+     {{CommandStart, "command", false},
+      {BlockStart, nullptr, false},
+      {CommandStart, "command", false},
+      {CommandEnd, nullptr, false},
+      {CommandStart, "command", false},
+      {CommandEnd, nullptr, false},
+      {BlockEnd, nullptr, false},
+      {CommandEnd, nullptr, false},
+      {Finished, nullptr, false}}},
 
-    {
-        "command with a test with a test with a test",
-        "command test test test;",
-        {   { CommandStart, "command", false },
-            { TestStart, "test", false },
-            { TestStart, "test", false },
-            { TestStart, "test", false },
-            { TestEnd, nullptr, false },
-            { TestEnd, nullptr, false },
-            { TestEnd, nullptr, false },
-            { CommandEnd, nullptr, false },
-            { Finished, nullptr, false }}
-    },
+    {"command with a test with a test with a test",
+     "command test test test;",
+     {{CommandStart, "command", false},
+      {TestStart, "test", false},
+      {TestStart, "test", false},
+      {TestStart, "test", false},
+      {TestEnd, nullptr, false},
+      {TestEnd, nullptr, false},
+      {TestEnd, nullptr, false},
+      {CommandEnd, nullptr, false},
+      {Finished, nullptr, false}}},
 };
 
 static const int numTestCases = sizeof testCases / sizeof *testCases;
@@ -704,8 +584,7 @@ private:
     void checkIs(BuilderMethod m)
     {
         if (currentResponse().method != m) {
-            cerr << " expected method " << (int)currentResponse().method
-                 << ", got " << (int)m;
+            cerr << " expected method " << (int)currentResponse().method << ", got " << (int)m;
             mOk = false;
         }
     }
@@ -713,9 +592,8 @@ private:
     void checkEquals(const QString &s)
     {
         if (s != QString::fromUtf8(currentResponse().string)) {
-            cerr << " expected string arg \""
-                 << (currentResponse().string ? currentResponse().string : "<null>")
-                 << "\", got \"" << (s.isNull() ? "<null>" : s.toUtf8().data()) << "\"";
+            cerr << " expected string arg \"" << (currentResponse().string ? currentResponse().string : "<null>") << "\", got \""
+                 << (s.isNull() ? "<null>" : s.toUtf8().data()) << "\"";
             mOk = false;
         }
     }
@@ -723,8 +601,7 @@ private:
     void checkEquals(bool b)
     {
         if (b != currentResponse().boolean) {
-            cerr << " expected boolean arg <" << currentResponse().boolean
-                 << ">, got <" << b << ">";
+            cerr << " expected boolean arg <" << currentResponse().boolean << ">, got <" << b << ">";
             mOk = false;
         }
     }
@@ -736,7 +613,7 @@ private:
 
 int main(int argc, char *argv[])
 {
-    if (argc == 2) {   // manual test
+    if (argc == 2) { // manual test
         const char *scursor = argv[1];
         const char *const send = argv[1] + qstrlen(argv[1]);
 
@@ -748,7 +625,7 @@ int main(int argc, char *argv[])
         } else {
             cout << "bad" << endl;
         }
-    } else if (argc == 1) {   // automated test
+    } else if (argc == 1) { // automated test
         bool success = true;
         for (int i = 0; i < numTestCases; ++i) {
             const TestCase &t = testCases[i];

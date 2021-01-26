@@ -7,10 +7,11 @@
 #ifndef SIEVEDATESPINBOX_H
 #define SIEVEDATESPINBOX_H
 
-#include <QSpinBox>
-#include "selectdatewidget.h"
 #include "ksieveui_private_export.h"
-namespace KSieveUi {
+#include "selectdatewidget.h"
+#include <QSpinBox>
+namespace KSieveUi
+{
 class KSIEVEUI_TESTS_EXPORT SieveDateSpinBox : public QSpinBox
 {
     Q_OBJECT

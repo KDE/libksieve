@@ -4,17 +4,17 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditiondate.h"
-#include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
-#include "widgets/selectdatewidget.h"
+#include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "editor/sieveeditorutil.h"
+#include "widgets/selectdatewidget.h"
 
 #include <KLocalizedString>
 #include <QLineEdit>
 
+#include "libksieve_debug.h"
 #include <QHBoxLayout>
 #include <QLabel>
-#include "libksieve_debug.h"
 
 using namespace KSieveUi;
 
@@ -67,7 +67,7 @@ QString SieveConditionDate::code(QWidget *w) const
     const QString dateWidgetStr = dateWidget->code();
 
     return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("date %1 \"%2\" %3").arg(matchTypeStr, headerStr, dateWidgetStr)
-           + AutoCreateScriptUtil::generateConditionComment(comment());
+        + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 bool SieveConditionDate::needCheckIfServerHasCapability() const
@@ -117,7 +117,7 @@ void SieveConditionDate::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {

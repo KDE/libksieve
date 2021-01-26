@@ -5,16 +5,16 @@
 */
 #include "sieveactionfileinto.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
+#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "editor/sieveeditorutil.h"
 #include "widgets/moveimapfolderwidget.h"
-#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include <KLocalizedString>
 
+#include "libksieve_debug.h"
 #include <QCheckBox>
 #include <QHBoxLayout>
-#include "libksieve_debug.h"
 #include <QXmlStreamReader>
-//Add support for adding flags
+// Add support for adding flags
 using namespace KSieveUi;
 SieveActionFileInto::SieveActionFileInto(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
     : SieveAction(sieveGraphicalModeWidget, QStringLiteral("fileinto"), i18n("File Into"), parent)
@@ -75,10 +75,10 @@ void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
             edit->setText(AutoCreateScriptUtil::protectSlash(tagValue));
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             element.skipCurrentElement();
-            //implement in the future ?
+            // implement in the future ?
         } else {
             unknownTag(tagName, error);
             qCDebug(LIBKSIEVE_LOG) << " SieveActionFileInto::setParamWidgetValue unknown tagName " << tagName;
@@ -146,12 +146,14 @@ QString SieveActionFileInto::help() const
 {
     QString helpStr = i18n("The \"fileinto\" action delivers the message into the specified mailbox.");
     if (mHasMailBoxSupport) {
-        helpStr += QLatin1Char('\n') + i18n(
-            "If the optional \":create\" argument is specified, it instructs the Sieve interpreter to create the specified mailbox, if needed, before attempting to deliver the message into the specified mailbox.");
+        helpStr += QLatin1Char('\n')
+            + i18n("If the optional \":create\" argument is specified, it instructs the Sieve interpreter to create the specified mailbox, if needed, before "
+                   "attempting to deliver the message into the specified mailbox.");
     }
     if (mHasCopySupport) {
-        helpStr += QLatin1Char('\n') + i18n(
-            "If the optional \":copy\" keyword is specified, the tagged command does not cancel the implicit \"keep\". Instead, it merely files or redirects a copy in addition to whatever else is happening to the message.");
+        helpStr += QLatin1Char('\n')
+            + i18n("If the optional \":copy\" keyword is specified, the tagged command does not cancel the implicit \"keep\". Instead, it merely files or "
+                   "redirects a copy in addition to whatever else is happening to the message.");
     }
     return helpStr;
 }

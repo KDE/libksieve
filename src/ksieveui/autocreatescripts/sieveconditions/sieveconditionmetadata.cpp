@@ -11,12 +11,12 @@
 #include <KLocalizedString>
 #include <QLineEdit>
 
-#include <QWidget>
-#include <QLabel>
-#include <QHBoxLayout>
 #include "libksieve_debug.h"
-#include <QXmlStreamReader>
 #include <KSieveUi/AbstractMoveImapFolderWidget>
+#include <QHBoxLayout>
+#include <QLabel>
+#include <QWidget>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 SieveConditionMetaData::SieveConditionMetaData(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -114,7 +114,8 @@ QString SieveConditionMetaData::serverNeedsCapability() const
 QString SieveConditionMetaData::help() const
 {
     return i18n(
-        "This test retrieves the value of the mailbox annotation \"annotation-name\" for the mailbox \"mailbox\". The retrieved value is compared to the \"key-list\". The test returns true if the annotation exists and its value matches any of the keys.");
+        "This test retrieves the value of the mailbox annotation \"annotation-name\" for the mailbox \"mailbox\". The retrieved value is compared to the "
+        "\"key-list\". The test returns true if the annotation exists and its value matches any of the keys.");
 }
 
 void SieveConditionMetaData::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
@@ -126,20 +127,17 @@ void SieveConditionMetaData::setParamWidgetValue(QXmlStreamReader &element, QWid
         if (tagName == QLatin1String("str")) {
             const QString tagValue = element.readElementText();
             switch (index) {
-            case 0:
-            {
+            case 0: {
                 auto mailbox = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("mailbox"));
                 mailbox->setText(tagValue);
                 break;
             }
-            case 1:
-            {
+            case 1: {
                 auto annotation = w->findChild<QLineEdit *>(QStringLiteral("annotation"));
                 annotation->setText(AutoCreateScriptUtil::quoteStr(tagValue));
                 break;
             }
-            case 2:
-            {
+            case 2: {
                 auto value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
                 value->setCode(AutoCreateScriptUtil::quoteStr(tagValue));
                 break;
@@ -155,7 +153,7 @@ void SieveConditionMetaData::setParamWidgetValue(QXmlStreamReader &element, QWid
             selectType->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {

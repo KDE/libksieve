@@ -7,10 +7,11 @@
 #ifndef VACATIONMAILACTIONWIDGET_H
 #define VACATIONMAILACTIONWIDGET_H
 
-#include <QWidget>
 #include "vacation/vacationutils.h"
+#include <QWidget>
 class QStackedWidget;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class AbstractMoveImapFolderWidget;
 class SieveImapAccountSettings;
 class AbstractSelectEmailLineEdit;

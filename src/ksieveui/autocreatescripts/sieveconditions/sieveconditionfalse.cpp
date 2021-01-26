@@ -4,9 +4,9 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionfalse.h"
+#include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 #include "libksieve_debug.h"
-#include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
 
@@ -52,7 +52,7 @@ void SieveConditionFalse::setParamWidgetValue(QXmlStreamReader &element, QWidget
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else {
             unknownTag(tagName, error);
             qCDebug(LIBKSIEVE_LOG) << " SieveConditionFalse::setParamWidgetValue unknown tagName " << tagName;

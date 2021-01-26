@@ -7,7 +7,10 @@
 
 using namespace KSieveUi;
 
-SieveActionAbstractEditHeader::SieveActionAbstractEditHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent)
+SieveActionAbstractEditHeader::SieveActionAbstractEditHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget,
+                                                             const QString &name,
+                                                             const QString &label,
+                                                             QObject *parent)
     : SieveAction(sieveGraphicalModeWidget, name, label, parent)
 {
 }

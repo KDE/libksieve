@@ -10,5 +10,4 @@ using namespace KSieveUi;
 SieveImapPasswordProvider::SieveImapPasswordProvider(QObject *parent)
     : QObject(parent)
 {
-
 }

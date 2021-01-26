@@ -12,7 +12,8 @@ class QCheckBox;
 class QLineEdit;
 class QXmlStreamReader;
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveHelpButton;
 class SieveForEveryPartWidget : public SieveWidgetPageAbstract
 {

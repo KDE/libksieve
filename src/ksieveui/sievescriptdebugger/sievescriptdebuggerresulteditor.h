@@ -9,7 +9,8 @@
 
 #include <KPIMTextEdit/PlainTextEditor>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveScriptDebuggerResultEditor : public KPIMTextEdit::PlainTextEditor
 {
     Q_OBJECT

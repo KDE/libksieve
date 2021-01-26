@@ -9,14 +9,15 @@
 #ifndef KSIEVE_KMANAGESIEVE_SIEVEJOB_P_H
 #define KSIEVE_KMANAGESIEVE_SIEVEJOB_P_H
 
-#include "sievejob.h"
 #include "session.h"
+#include "sievejob.h"
 
-#include <QUrl>
 #include <QPointer>
 #include <QStack>
+#include <QUrl>
 
-namespace KManageSieve {
+namespace KManageSieve
+{
 class Q_DECL_HIDDEN SieveJob::Private
 {
 public:
@@ -26,23 +27,9 @@ public:
     {
     }
 
-    enum Command {
-        Get,
-        Put,
-        Activate,
-        Deactivate,
-        SearchActive,
-        List,
-        Delete,
-        Rename,
-        Check
-    };
+    enum Command { Get, Put, Activate, Deactivate, SearchActive, List, Delete, Rename, Check };
 
-    enum Existence {
-        DontKnow,
-        Yes,
-        No
-    };
+    enum Existence { DontKnow, Yes, No };
 
     static Session *sessionForUrl(const QUrl &url);
 
@@ -63,7 +50,7 @@ public:
 
     Existence mFileExists;
 
-    static QHash<QUrl, QPointer<Session> > m_sessionPool;
+    static QHash<QUrl, QPointer<Session>> m_sessionPool;
 };
 }
 

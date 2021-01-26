@@ -8,7 +8,8 @@
 
 #include "sieveactionabstractflags.h"
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveActionRemoveFlags : public SieveActionAbstractFlags
 {
     Q_OBJECT

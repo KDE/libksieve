@@ -9,9 +9,9 @@
 #include <KLocalizedString>
 #include <QLineEdit>
 
-#include <QWidget>
-#include <QHBoxLayout>
 #include "libksieve_debug.h"
+#include <QHBoxLayout>
+#include <QWidget>
 #include <QXmlStreamReader>
 
 using namespace KSieveUi;
@@ -61,7 +61,8 @@ QString SieveConditionMailboxExists::serverNeedsCapability() const
 QString SieveConditionMailboxExists::help() const
 {
     return i18n(
-        "The \"mailboxexists\" test is true if all mailboxes listed in the \"mailbox-names\" argument exist in the mailstore, and each allows the user in whose context the Sieve script runs to \"deliver\" messages into it.");
+        "The \"mailboxexists\" test is true if all mailboxes listed in the \"mailbox-names\" argument exist in the mailstore, and each allows the user in "
+        "whose context the Sieve script runs to \"deliver\" messages into it.");
 }
 
 void SieveConditionMailboxExists::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
@@ -75,7 +76,7 @@ void SieveConditionMailboxExists::setParamWidgetValue(QXmlStreamReader &element,
             edit->setText(AutoCreateScriptUtil::quoteStr(tagValue));
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {

@@ -6,10 +6,11 @@
 #ifndef SIEVEEDITORLOADPROGRESSINDICATOR_H
 #define SIEVEEDITORLOADPROGRESSINDICATOR_H
 
-#include <QObject>
 #include <KPixmapSequence>
+#include <QObject>
 class QTimer;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveEditorLoadProgressIndicator : public QObject
 {
     Q_OBJECT

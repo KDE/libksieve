@@ -8,28 +8,28 @@
 #include "vacationmailactionwidget.h"
 #include "vacationmaillineedit.h"
 
-#include <KLocalizedString>
 #include <KDateComboBox>
+#include <KLocalizedString>
 #include <KTimeComboBox>
-#include <QSpinBox>
 #include <QLineEdit>
 #include <QRegularExpressionValidator>
+#include <QSpinBox>
 
-#include <KPIMTextEdit/PlainTextEditorWidget>
-#include <KPIMTextEdit/PlainTextEditor>
 #include "libksieve_debug.h"
+#include <KPIMTextEdit/PlainTextEditor>
+#include <KPIMTextEdit/PlainTextEditorWidget>
 
 #include <kmime/kmime_header_parsing.h>
 
+#include <PimCommon/SpellCheckLineEdit>
 #include <QCheckBox>
 #include <QGridLayout>
 #include <QLabel>
-#include <PimCommon/SpellCheckLineEdit>
 
-using KMime::Types::AddrSpecList;
-using KMime::Types::AddressList;
-using KMime::Types::MailboxList;
 using KMime::HeaderParsing::parseAddressList;
+using KMime::Types::AddressList;
+using KMime::Types::AddrSpecList;
+using KMime::Types::MailboxList;
 
 using namespace KSieveUi;
 VacationEditWidget::VacationEditWidget(QWidget *parent)
@@ -44,7 +44,8 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     // explanation label:
     ++row;
     auto configureVacationLabel = new QLabel(i18n("Configure vacation "
-                                                     "notifications to be sent:"), this);
+                                                  "notifications to be sent:"),
+                                             this);
     configureVacationLabel->setObjectName(QStringLiteral("configureVacationLabel"));
     glay->addWidget(configureVacationLabel, row, 0, 1, 2);
 
@@ -68,7 +69,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mSubject = new PimCommon::SpellCheckLineEdit(this, QString());
     mSubject->setObjectName(QStringLiteral("mSubject"));
     connect(mSubject, &PimCommon::SpellCheckLineEdit::textChanged, this, &VacationEditWidget::setWasChanged);
-    //mSubject->setClearButtonEnabled(true);
+    // mSubject->setClearButtonEnabled(true);
     auto subjectOfVacationLabel = new QLabel(i18n("&Subject of the vacation mail:"), this);
     subjectOfVacationLabel->setObjectName(QStringLiteral("subjectOfVacationLabel"));
     subjectOfVacationLabel->setBuddy(mSubject);
@@ -143,7 +144,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
 
     // "Resent only after" spinbox and label:
     ++row;
-    int defDayInterval = 7; //default day interval
+    int defDayInterval = 7; // default day interval
     mIntervalSpin = new QSpinBox(this);
     mIntervalSpin->setMaximum(356);
     mIntervalSpin->setMinimum(1);
@@ -178,11 +179,11 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mMailAction->setObjectName(QStringLiteral("mMailAction"));
     connect(mMailAction, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &VacationEditWidget::mailActionChanged);
 
-    //Add imap select folder plugin here.
+    // Add imap select folder plugin here.
     mMailActionRecipient = new VacationMailActionWidget(this);
     mMailActionRecipient->setObjectName(QStringLiteral("mMailActionRecipient"));
     connect(mMailActionRecipient, &VacationMailActionWidget::wasChanged, this, &VacationEditWidget::setWasChanged);
-    //Add setChanged here too
+    // Add setChanged here too
 
     auto hLayout = new QHBoxLayout;
 

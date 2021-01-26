@@ -67,7 +67,7 @@ void CheckScriptJob::slotPutCheckSyntaxResult(KManageSieve::SieveJob *job, bool 
         const QString errorMsg = job->errorString();
         Q_EMIT finished(errorMsg.isEmpty() ? i18n("An unknown error was encountered.") : errorMsg, false);
     }
-    //Put original script after check otherwise we will put a script even if we don't click on ok
+    // Put original script after check otherwise we will put a script even if we don't click on ok
     KManageSieve::SieveJob *restoreJob = KManageSieve::SieveJob::put(d->mUrl, d->mOriginalScript, d->mIsActive, d->mIsActive);
     connect(restoreJob, &KManageSieve::SieveJob::result, this, &CheckScriptJob::slotRestoreFile);
 }

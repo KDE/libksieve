@@ -8,7 +8,8 @@
 
 #include "sieveaction.h"
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveActionRedirect : public SieveAction
 {
     Q_OBJECT
@@ -21,6 +22,7 @@ public:
     Q_REQUIRED_RESULT QString help() const override;
 
     Q_REQUIRED_RESULT QUrl href() const override;
+
 private:
     bool mHasCopySupport = false;
     bool mHasListSupport = false;

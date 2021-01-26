@@ -8,14 +8,18 @@
 #define SIEVECOMMONACTIONCONDITION_H
 
 #include <QObject>
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveImapAccountSettings;
 class SieveEditorGraphicalModeWidget;
 class SieveCommonActionCondition : public QObject
 {
     Q_OBJECT
 public:
-    explicit SieveCommonActionCondition(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent = nullptr);
+    explicit SieveCommonActionCondition(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget,
+                                        const QString &name,
+                                        const QString &label,
+                                        QObject *parent = nullptr);
     ~SieveCommonActionCondition() override;
 
     Q_REQUIRED_RESULT QString name() const;
@@ -44,6 +48,7 @@ public:
     Q_REQUIRED_RESULT QString generateComment() const;
 
     virtual QWidget *createParamWidget(QWidget *parent) const;
+
 protected:
     Q_REQUIRED_RESULT KSieveUi::SieveImapAccountSettings sieveImapAccountSettings() const;
     Q_REQUIRED_RESULT QStringList sieveCapabilities() const;

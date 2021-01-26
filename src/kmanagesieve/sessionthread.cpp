@@ -4,10 +4,10 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "sessionthread_p.h"
-#include "session.h"
-#include "response.h"
 #include "kmanagersieve_debug.h"
+#include "response.h"
+#include "session.h"
+#include "sessionthread_p.h"
 
 #include <QSslCipher>
 #include <QThread>
@@ -22,16 +22,14 @@
 
 using namespace KManageSieve;
 
-static const sasl_callback_t callbacks[] = {
-    { SASL_CB_ECHOPROMPT, nullptr, nullptr },
-    { SASL_CB_NOECHOPROMPT, nullptr, nullptr },
-    { SASL_CB_GETREALM, nullptr, nullptr },
-    { SASL_CB_USER, nullptr, nullptr },
-    { SASL_CB_AUTHNAME, nullptr, nullptr },
-    { SASL_CB_PASS, nullptr, nullptr },
-    { SASL_CB_CANON_USER, nullptr, nullptr },
-    { SASL_CB_LIST_END, nullptr, nullptr }
-};
+static const sasl_callback_t callbacks[] = {{SASL_CB_ECHOPROMPT, nullptr, nullptr},
+                                            {SASL_CB_NOECHOPROMPT, nullptr, nullptr},
+                                            {SASL_CB_GETREALM, nullptr, nullptr},
+                                            {SASL_CB_USER, nullptr, nullptr},
+                                            {SASL_CB_AUTHNAME, nullptr, nullptr},
+                                            {SASL_CB_PASS, nullptr, nullptr},
+                                            {SASL_CB_CANON_USER, nullptr, nullptr},
+                                            {SASL_CB_LIST_END, nullptr, nullptr}};
 
 SessionThread::SessionThread(Session *session, QObject *parent)
     : QObject(parent)
@@ -91,9 +89,12 @@ void SessionThread::doDestroy()
 // Called in main thread
 void SessionThread::connectToHost(const QUrl &url)
 {
-    QMetaObject::invokeMethod(this, [this, url]() {
-        doConnectToHost(url);
-    }, Qt::QueuedConnection);
+    QMetaObject::invokeMethod(
+        this,
+        [this, url]() {
+            doConnectToHost(url);
+        },
+        Qt::QueuedConnection);
 }
 
 // Called in secondary thread
@@ -112,9 +113,12 @@ void SessionThread::doConnectToHost(const QUrl &url)
 // Called in main thread
 void SessionThread::disconnectFromHost(bool sendLogout)
 {
-    QMetaObject::invokeMethod(this, [this, sendLogout]() {
-        doDisconnectFromHost(sendLogout);
-    }, Qt::QueuedConnection);
+    QMetaObject::invokeMethod(
+        this,
+        [this, sendLogout]() {
+            doDisconnectFromHost(sendLogout);
+        },
+        Qt::QueuedConnection);
 }
 
 // Called in secondary thread
@@ -131,9 +135,12 @@ void SessionThread::doDisconnectFromHost(bool sendLogout)
 // Called in main thread
 void SessionThread::sendData(const QByteArray &data)
 {
-    QMetaObject::invokeMethod(this, [this, data]() {
-        doSendData(data);
-    }, Qt::QueuedConnection);
+    QMetaObject::invokeMethod(
+        this,
+        [this, data]() {
+            doSendData(data);
+        },
+        Qt::QueuedConnection);
 }
 
 // Called in secondary thread
@@ -164,7 +171,7 @@ void SessionThread::slotDataReceived()
 
     while (m_socket->canReadLine()) {
         QByteArray line = m_socket->readLine();
-        if (line.endsWith("\r\n")) {     //krazy:exclude=strings
+        if (line.endsWith("\r\n")) { // krazy:exclude=strings
             line.chop(2);
         }
         if (line.isEmpty()) {
@@ -197,13 +204,9 @@ void SessionThread::slotSocketError()
 {
     Q_ASSERT(QThread::currentThread() == thread());
 
-    qCWarning(KMANAGERSIEVE_LOG) << Q_FUNC_INFO
-                                 <<m_socket->error()
-                                 << m_socket->errorString();
+    qCWarning(KMANAGERSIEVE_LOG) << Q_FUNC_INFO << m_socket->error() << m_socket->errorString();
 
-    Q_EMIT error(
-        m_socket->error(),
-        m_socket->errorString());
+    Q_EMIT error(m_socket->error(), m_socket->errorString());
     doDisconnectFromHost(false);
 }
 
@@ -239,7 +242,12 @@ void SessionThread::doStartAuthentication()
     }
 
     do {
-        result = sasl_client_start(m_sasl_conn, m_session->requestedSaslMethod().join(QLatin1Char(' ')).toLatin1().constData(), &m_sasl_client_interact, &out, &outlen, &mechusing);
+        result = sasl_client_start(m_sasl_conn,
+                                   m_session->requestedSaslMethod().join(QLatin1Char(' ')).toLatin1().constData(),
+                                   &m_sasl_client_interact,
+                                   &out,
+                                   &outlen,
+                                   &mechusing);
         if (result == SASL_INTERACT) {
             if (!saslInteract(m_sasl_client_interact)) {
                 handleSaslAuthError();
@@ -270,10 +278,7 @@ void SessionThread::doStartAuthentication()
 // Called in main thread
 void SessionThread::continueAuthentication(const Response &response, const QByteArray &data)
 {
-    QMetaObject::invokeMethod(this, "doContinueAuthentication",
-                              Qt::QueuedConnection,
-                              Q_ARG(KManageSieve::Response, response),
-                              Q_ARG(QByteArray, data));
+    QMetaObject::invokeMethod(this, "doContinueAuthentication", Qt::QueuedConnection, Q_ARG(KManageSieve::Response, response), Q_ARG(QByteArray, data));
 }
 
 // Called in secondary thread
@@ -292,8 +297,10 @@ void SessionThread::doContinueAuthentication(const Response &response, const QBy
             qCDebug(KMANAGERSIEVE_LOG) << "Authentication complete.";
             Q_EMIT authenticationDone();
         } else {
-            Q_EMIT error(QAbstractSocket::UnknownSocketError, KIO::buildErrorString(KIO::ERR_CANNOT_AUTHENTICATE,
-                                                                                    i18n("Authentication failed.\nMost likely the password is wrong.\nThe server responded:\n%1", QString::fromLatin1(response.action()))));
+            Q_EMIT error(QAbstractSocket::UnknownSocketError,
+                         KIO::buildErrorString(KIO::ERR_CANNOT_AUTHENTICATE,
+                                               i18n("Authentication failed.\nMost likely the password is wrong.\nThe server responded:\n%1",
+                                                    QString::fromLatin1(response.action()))));
             doDisconnectFromHost(true);
         }
     }
@@ -307,13 +314,14 @@ bool SessionThread::saslInteract(void *in)
     qCDebug(KMANAGERSIEVE_LOG) << "SessionThread::saslInteract";
     auto *interact = (sasl_interact_t *)in;
 
-    //some mechanisms do not require username && pass, so it doesn't need a popup
-    //window for getting this info
+    // some mechanisms do not require username && pass, so it doesn't need a popup
+    // window for getting this info
     for (; interact->id != SASL_CB_LIST_END; ++interact) {
         if (interact->id == SASL_CB_AUTHNAME || interact->id == SASL_CB_PASS) {
             if (m_url.userName().isEmpty() || m_url.password().isEmpty()) {
                 AuthDetails authData;
-                QMetaObject::invokeMethod(m_session, "requestAuthDetails",
+                QMetaObject::invokeMethod(m_session,
+                                          "requestAuthDetails",
                                           Qt::BlockingQueuedConnection,
                                           Q_RETURN_ARG(KManageSieve::AuthDetails, authData),
                                           Q_ARG(QUrl, m_url));
@@ -371,12 +379,12 @@ bool SessionThread::saslClientStep(const QByteArray &challenge)
 
     const QByteArray challenge_decoded = QByteArray::fromBase64(challenge);
     do {
-        result
-            = sasl_client_step(m_sasl_conn,
-                               challenge_decoded.isEmpty() ? nullptr : challenge_decoded.data(),
-                               challenge_decoded.size(),
-                               &m_sasl_client_interact,
-                               &out, &outlen);
+        result = sasl_client_step(m_sasl_conn,
+                                  challenge_decoded.isEmpty() ? nullptr : challenge_decoded.data(),
+                                  challenge_decoded.size(),
+                                  &m_sasl_client_interact,
+                                  &out,
+                                  &outlen);
         if (result == SASL_INTERACT) {
             if (!saslInteract(m_sasl_client_interact)) {
                 sasl_dispose(&m_sasl_conn);
@@ -449,13 +457,9 @@ void SessionThread::sslResult(bool encrypted)
 #else
     const int numberOfSslError = m_socket->sslHandshakeErrors().count();
 #endif
-    if (!encrypted || numberOfSslError > 0 || !m_socket->isEncrypted()
-        || cipher.isNull() || cipher.usedBits() == 0) {
-        qCDebug(KMANAGERSIEVE_LOG) << "Initial SSL handshake failed. cipher.isNull() is" << cipher.isNull()
-                                   << ", cipher.usedBits() is" << cipher.usedBits()
-                                   << ", the socket says:" <<  m_socket->errorString()
-                                   << "and the list of SSL errors contains"
-                                   << numberOfSslError << "items.";
+    if (!encrypted || numberOfSslError > 0 || !m_socket->isEncrypted() || cipher.isNull() || cipher.usedBits() == 0) {
+        qCDebug(KMANAGERSIEVE_LOG) << "Initial SSL handshake failed. cipher.isNull() is" << cipher.isNull() << ", cipher.usedBits() is" << cipher.usedBits()
+                                   << ", the socket says:" << m_socket->errorString() << "and the list of SSL errors contains" << numberOfSslError << "items.";
 
         Q_EMIT sslError(KSslErrorUiData(m_socket.get()));
     } else {

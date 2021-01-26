@@ -7,7 +7,8 @@
 #define SIEVEACTIONVACATION_H
 
 #include "sieveaction.h"
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveActionVacation : public SieveAction
 {
     Q_OBJECT
@@ -22,6 +23,7 @@ public:
     Q_REQUIRED_RESULT QStringList needRequires(QWidget *parent) const override;
     Q_REQUIRED_RESULT QString help() const override;
     Q_REQUIRED_RESULT QUrl href() const override;
+
 private:
     bool mHasVacationSecondsSupport = false;
 };

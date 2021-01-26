@@ -8,7 +8,8 @@
 
 #include "sieveaction.h"
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveActionReplace : public SieveAction
 {
     Q_OBJECT

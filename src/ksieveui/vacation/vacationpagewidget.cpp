@@ -5,22 +5,22 @@
 */
 
 #include "vacationpagewidget.h"
-#include "vacationeditwidget.h"
-#include "vacationwarningwidget.h"
-#include "vacationcreatescriptjob.h"
-#include "vacationutils.h"
 #include "multiimapvacationmanager.h"
-#include <managescriptsjob/parseuserscriptjob.h>
 #include "sieve-vacation.h"
+#include "vacationcreatescriptjob.h"
+#include "vacationeditwidget.h"
+#include "vacationutils.h"
+#include "vacationwarningwidget.h"
+#include <managescriptsjob/parseuserscriptjob.h>
 
 #include <kmanagesieve/sievejob.h>
 
 #include "libksieve_debug.h"
 #include <KLocalizedString>
 
+#include <QLabel>
 #include <QStackedWidget>
 #include <QVBoxLayout>
-#include <QLabel>
 
 using namespace KSieveUi;
 VacationPageWidget::VacationPageWidget(QWidget *parent)
@@ -31,7 +31,7 @@ VacationPageWidget::VacationPageWidget(QWidget *parent)
     mStackWidget = new QStackedWidget;
     lay->addWidget(mStackWidget);
 
-    //Main Page
+    // Main Page
     auto mainPage = new QWidget;
     auto vbox = new QVBoxLayout;
     vbox->setContentsMargins({});
@@ -45,11 +45,12 @@ VacationPageWidget::VacationPageWidget(QWidget *parent)
 
     auto w = new QWidget;
     vbox = new QVBoxLayout;
-    auto lab = new QLabel(i18n("Your server did not list \"vacation\" in "
-                                  "its list of supported Sieve extensions;"
-                                  "without it, KMail cannot install out-of-"
-                                  "office replies for you."
-                                  "Please contact your system administrator."));
+    auto lab =
+        new QLabel(i18n("Your server did not list \"vacation\" in "
+                        "its list of supported Sieve extensions;"
+                        "without it, KMail cannot install out-of-"
+                        "office replies for you."
+                        "Please contact your system administrator."));
     QFont font = lab->font();
     font.setBold(true);
     lab->setFont(font);
@@ -95,19 +96,18 @@ void VacationPageWidget::setServerName(const QString &serverName)
     mServerName = serverName;
 }
 
-void VacationPageWidget::slotGetResult(const QString &serverName, const QStringList &sieveCapabilities, const QString &scriptName, const QString &script, bool active)
+void VacationPageWidget::slotGetResult(const QString &serverName,
+                                       const QStringList &sieveCapabilities,
+                                       const QString &scriptName,
+                                       const QString &script,
+                                       bool active)
 {
     if (mServerName != serverName) {
         return;
     }
-    qCDebug(LIBKSIEVE_LOG) << serverName << sieveCapabilities
-        << Qt::endl
-        << scriptName << "(" << active << ")"
-        << Qt::endl
-    ;
+    qCDebug(LIBKSIEVE_LOG) << serverName << sieveCapabilities << Qt::endl << scriptName << "(" << active << ")" << Qt::endl;
 
-    if (mUrl.scheme() == QLatin1String("sieve")
-        && !sieveCapabilities.contains(QLatin1String("vacation"))) {
+    if (mUrl.scheme() == QLatin1String("sieve") && !sieveCapabilities.contains(QLatin1String("vacation"))) {
         mStackWidget->setCurrentIndex(ScriptNotSupported);
         return;
     }
@@ -162,7 +162,7 @@ KSieveUi::VacationCreateScriptJob *VacationPageWidget::writeScript(bool &errorFo
         vacation.messageText = mVacationEditWidget->messageText();
         vacation.subject = mVacationEditWidget->subject();
         vacation.mailAction = mVacationEditWidget->mailAction();
-        //Check valid
+        // Check valid
 
         vacation.mailActionRecipient = mVacationEditWidget->mailActionRecipient(ok);
         if (!ok) {

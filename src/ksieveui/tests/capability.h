@@ -9,10 +9,12 @@
 
 #include <QStringList>
 
-namespace KSieveUi {
-namespace Test {
+namespace KSieveUi
+{
+namespace Test
+{
 QStringList fullCapabilitiesList();
 }
 }
 
-#endif //KSIEVEUITESTSCAPABILITY_H
+#endif // KSIEVEUITESTSCAPABILITY_H

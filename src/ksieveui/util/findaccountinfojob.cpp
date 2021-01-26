@@ -18,12 +18,10 @@ using namespace KSieveUi;
 FindAccountInfoJob::FindAccountInfoJob(QObject *parent)
     : QObject(parent)
 {
-
 }
 
 FindAccountInfoJob::~FindAccountInfoJob()
 {
-
 }
 
 bool FindAccountInfoJob::canStart() const
@@ -99,7 +97,8 @@ void FindAccountInfoJob::slotPasswordsRequested(const QString &sievePassword, co
         mAccountInfo.sieveImapAccountSettings.setPort(mCustomImapSettingsInterface->imapPort());
         sieveUrl.setPort(mCustomImapSettingsInterface->sievePort());
         QString authStr;
-        mAccountInfo.sieveImapAccountSettings.setAuthenticationType(static_cast<SieveImapAccountSettings::AuthenticationMode>((int)mCustomImapSettingsInterface->authentication()));
+        mAccountInfo.sieveImapAccountSettings.setAuthenticationType(
+            static_cast<SieveImapAccountSettings::AuthenticationMode>((int)mCustomImapSettingsInterface->authentication()));
         switch (mCustomImapSettingsInterface->authentication()) {
         case MailTransport::Transport::EnumAuthenticationType::CLEAR:
         case MailTransport::Transport::EnumAuthenticationType::PLAIN:
@@ -142,7 +141,8 @@ void FindAccountInfoJob::slotPasswordsRequested(const QString &sievePassword, co
         const QString userName = mCustomImapSettingsInterface->userName();
         mAccountInfo.sieveImapAccountSettings.setServerName(server);
         mAccountInfo.sieveImapAccountSettings.setUserName(userName);
-        mAccountInfo.sieveImapAccountSettings.setAuthenticationType(static_cast<SieveImapAccountSettings::AuthenticationMode>((int)mCustomImapSettingsInterface->authentication()));
+        mAccountInfo.sieveImapAccountSettings.setAuthenticationType(
+            static_cast<SieveImapAccountSettings::AuthenticationMode>((int)mCustomImapSettingsInterface->authentication()));
         mAccountInfo.sieveImapAccountSettings.setPassword(sievePassword);
         mAccountInfo.sieveImapAccountSettings.setPort(mCustomImapSettingsInterface->imapPort());
 

@@ -11,11 +11,11 @@
 #include <KLocalizedString>
 #include <QLineEdit>
 
-#include <QWidget>
-#include <QLabel>
-#include <QXmlStreamReader>
 #include "libksieve_debug.h"
 #include <QGridLayout>
+#include <QLabel>
+#include <QWidget>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 
@@ -85,10 +85,10 @@ void SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, 
             ++index;
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             element.skipCurrentElement();
-            //implement in the future ?
+            // implement in the future ?
         } else {
             unknownTag(tagName, error);
             qCDebug(LIBKSIEVE_LOG) << "SieveActionAddHeader::setParamWidgetValue unknown tag " << tagName;

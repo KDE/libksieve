@@ -5,14 +5,14 @@
 */
 
 #include "vacationmanager.h"
-#include "ksieveui/vacation/multiimapvacationmanager.h"
 #include "ksieveui/vacation/multiimapvacationdialog.h"
+#include "ksieveui/vacation/multiimapvacationmanager.h"
 #include "ksieveui/vacation/vacationcreatescriptjob.h"
 
-#include <QWidget>
-#include <QPointer>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QPointer>
+#include <QWidget>
 
 using namespace KSieveUi;
 
@@ -51,8 +51,10 @@ void VacationManager::slotUpdateVacationScriptStatus(bool active, const QString 
     if (active) {
         if (!d->mQuestionAsked) {
             d->mQuestionAsked = true;
-            if (KMessageBox::questionYesNo(nullptr, i18n("There is still an active out-of-office reply configured.\n"
-                                                         "Do you want to edit it?"), i18n("Out-of-office reply still active"),
+            if (KMessageBox::questionYesNo(nullptr,
+                                           i18n("There is still an active out-of-office reply configured.\n"
+                                                "Do you want to edit it?"),
+                                           i18n("Out-of-office reply still active"),
                                            KGuiItem(i18n("Edit"), QStringLiteral("document-properties")),
                                            KGuiItem(i18n("Ignore"), QStringLiteral("dialog-cancel")))
                 == KMessageBox::Yes) {

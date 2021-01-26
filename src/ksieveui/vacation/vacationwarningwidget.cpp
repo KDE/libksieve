@@ -16,7 +16,9 @@ VacationWarningWidget::VacationWarningWidget(QWidget *parent)
     setVisible(false);
     setCloseButtonVisible(false);
     setMessageType(Information);
-    setText(i18n("Someone (probably you) changed the vacation script on the server. KMail is no longer able to determine the parameters for the autoreplies. Default values will be used."));
+    setText(
+        i18n("Someone (probably you) changed the vacation script on the server. KMail is no longer able to determine the parameters for the autoreplies. "
+             "Default values will be used."));
     setWordWrap(true);
 }
 

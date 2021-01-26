@@ -4,21 +4,21 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionvacation.h"
-#include "editor/sieveeditorutil.h"
-#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
+#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
+#include "editor/sieveeditorutil.h"
 #include "widgets/multilineedit.h"
 #include "widgets/selectvacationcombobox.h"
 
 #include <KLocalizedString>
 #include <QLineEdit>
 
+#include "libksieve_debug.h"
+#include <KSieveUi/AbstractSelectEmailLineEdit>
+#include <QGridLayout>
 #include <QLabel>
 #include <QSpinBox>
-#include "libksieve_debug.h"
 #include <QXmlStreamReader>
-#include <QGridLayout>
-#include <KSieveUi/AbstractSelectEmailLineEdit>
 
 using namespace KSieveUi;
 
@@ -95,7 +95,7 @@ void SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
                     serverDoesNotSupportFeatures(QStringLiteral("seconds"), error);
                 }
             } else if (tagValue == QLatin1String("days")) {
-                //Nothing wait num tag for it.
+                // Nothing wait num tag for it.
             } else if (tagValue == QLatin1String("addresses")) {
                 auto addresses = w->findChild<AbstractSelectEmailLineEdit *>(QStringLiteral("addresses"));
                 if (element.readNextStartElement()) {
@@ -121,10 +121,10 @@ void SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
             text->setPlainText(element.readElementText());
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             element.skipCurrentElement();
-            //implement in the future ?
+            // implement in the future ?
         } else {
             unknownTag(tagName, error);
             qCDebug(LIBKSIEVE_LOG) << " SieveActionVacation::setParamWidgetValue unknown tagName " << tagName;
@@ -163,7 +163,7 @@ QString SieveActionVacation::code(QWidget *w) const
     if (!textStr.isEmpty()) {
         result += QStringLiteral(" text:%1").arg(AutoCreateScriptUtil::createMultiLine(textStr));
     } else {
-        result += QLatin1Char(';');    //Be sure to have ";"
+        result += QLatin1Char(';'); // Be sure to have ";"
     }
     return result;
 }
@@ -191,10 +191,12 @@ QStringList SieveActionVacation::needRequires(QWidget *) const
 QString SieveActionVacation::help() const
 {
     QString helpStr = i18n(
-        "The \"vacation\" action implements a vacation autoresponder similar to the vacation command available under many versions of Unix. Its purpose is to provide correspondents with notification that the user is away for an extended period of time and that they should not expect quick responses.");
+        "The \"vacation\" action implements a vacation autoresponder similar to the vacation command available under many versions of Unix. Its purpose is to "
+        "provide correspondents with notification that the user is away for an extended period of time and that they should not expect quick responses.");
     if (mHasVacationSecondsSupport) {
-        helpStr = QLatin1Char('\n') + i18n(
-            "Through the \":days\" parameter, it limits the number of auto-replies to the same sender to one per [n] days, for a specified number of days. But there are cases when one needs more granularity, if one would like to generate \"vacation\" replies more frequently.");
+        helpStr = QLatin1Char('\n')
+            + i18n("Through the \":days\" parameter, it limits the number of auto-replies to the same sender to one per [n] days, for a specified number of "
+                   "days. But there are cases when one needs more granularity, if one would like to generate \"vacation\" replies more frequently.");
         helpStr += QLatin1Char('\n') + i18n("This extension defines a \":seconds\" parameter to provide more granularity for such situations.");
     }
     return helpStr;

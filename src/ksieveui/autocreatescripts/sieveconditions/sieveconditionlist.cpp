@@ -5,29 +5,29 @@
 */
 #include "sieveconditionlist.h"
 #include "sievecondition.h"
-#include "sieveconditionheader.h"
 #include "sieveconditionaddress.h"
-#include "sieveconditionsize.h"
 #include "sieveconditionenvelope.h"
 #include "sieveconditionexists.h"
-#include "sieveconditiontrue.h"
 #include "sieveconditionfalse.h"
-//RFC5173 (extension)
+#include "sieveconditionheader.h"
+#include "sieveconditionsize.h"
+#include "sieveconditiontrue.h"
+// RFC5173 (extension)
 #include "sieveconditionbody.h"
-//rfc5260
-#include "sieveconditiondate.h"
+// rfc5260
 #include "sieveconditioncurrentdate.h"
+#include "sieveconditiondate.h"
 
 #include "sieveconditionmailboxexists.h"
 
+#include "sieveconditionenvironment.h"
+#include "sieveconditionihave.h"
 #include "sieveconditionspamtest.h"
 #include "sieveconditionvirustest.h"
-#include "sieveconditionihave.h"
-#include "sieveconditionenvironment.h"
 
+#include "sieveconditionconvert.h"
 #include "sieveconditionhasflag.h"
 #include "sieveconditionmetadata.h"
-#include "sieveconditionconvert.h"
 #include "sieveconditionmetadataexists.h"
 #include "sieveconditionservermetadata.h"
 #include "sieveconditionservermetadataexists.h"

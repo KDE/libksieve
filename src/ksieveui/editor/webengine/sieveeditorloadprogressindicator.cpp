@@ -7,8 +7,8 @@
 
 #include <KIconLoader>
 
-#include <QTimer>
 #include <QPixmap>
+#include <QTimer>
 using namespace KSieveUi;
 SieveEditorLoadProgressIndicator::SieveEditorLoadProgressIndicator(QObject *parent)
     : QObject(parent)

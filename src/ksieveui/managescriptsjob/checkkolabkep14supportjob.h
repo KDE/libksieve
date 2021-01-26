@@ -11,14 +11,16 @@
 #include <QStringList>
 
 #include "ksieveui_export.h"
-#include <memory>
 #include <QUrl>
+#include <memory>
 
-namespace KManageSieve {
+namespace KManageSieve
+{
 class SieveJob;
 }
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class CheckKolabKep14SupportJobPrivate;
 
 /**

@@ -7,17 +7,19 @@
 #ifndef SIEVESCRIPTDEBUGGERFRONTENDWIDGET_H
 #define SIEVESCRIPTDEBUGGERFRONTENDWIDGET_H
 
-#include <QWidget>
 #include "ksieveui_private_export.h"
+#include <QWidget>
 
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class PlainTextEditorWidget;
 }
 class KUrlRequester;
 class QProcess;
 class QLineEdit;
 class QSplitter;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveTextEditWidget;
 class SieveScriptDebuggerWarning;
 class KSIEVEUI_TESTS_EXPORT SieveScriptDebuggerFrontEndWidget : public QWidget

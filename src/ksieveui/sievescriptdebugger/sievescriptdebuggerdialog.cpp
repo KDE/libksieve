@@ -7,8 +7,8 @@
 #include "sievescriptdebuggerdialog.h"
 #include "sievescriptdebuggerwidget.h"
 
-#include <KLocalizedString>
 #include <KConfigGroup>
+#include <KLocalizedString>
 #include <KSharedConfig>
 
 #include <QDialogButtonBox>
@@ -106,8 +106,6 @@ void SieveScriptDebuggerDialog::readConfig()
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
     }
-    const QList<int> size {
-        100, 400
-    };
+    const QList<int> size{100, 400};
     mSieveScriptDebuggerWidget->setSplitterSizes(group.readEntry("Splitter", size));
 }

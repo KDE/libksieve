@@ -7,7 +7,8 @@
 #define SIEVEACTIONDELETEHEADER_H
 
 #include "sieveactionabstracteditheader.h"
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveActionDeleteHeader : public SieveActionAbstractEditHeader
 {
     Q_OBJECT
@@ -19,6 +20,7 @@ public:
     Q_REQUIRED_RESULT QString help() const override;
     Q_REQUIRED_RESULT QUrl href() const override;
     Q_REQUIRED_RESULT QStringList needRequires(QWidget *parent) const override;
+
 private:
     void parseValue(QXmlStreamReader &element, QWidget *w, QString &error, bool isNegative);
 };

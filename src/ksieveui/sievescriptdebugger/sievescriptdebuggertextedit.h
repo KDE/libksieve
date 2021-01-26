@@ -9,7 +9,8 @@
 
 #include <editor/sievetextedit.h>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveScriptDebuggerTextEdit : public KSieveUi::SieveTextEdit
 {
     Q_OBJECT

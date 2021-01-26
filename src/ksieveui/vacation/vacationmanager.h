@@ -7,11 +7,12 @@
 #ifndef VACATIONMANAGER_H
 #define VACATIONMANAGER_H
 
-#include <QObject>
 #include "ksieveui_export.h"
+#include <QObject>
 #include <memory>
 class QWidget;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class VacationManagerPrivate;
 class SieveImapPasswordProvider;
 /**

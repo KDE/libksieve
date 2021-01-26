@@ -13,7 +13,8 @@
 
 #include "ksieve_export.h"
 
-namespace KSieve {
+namespace KSieve
+{
 class ScriptBuilder;
 class Error;
 
@@ -23,7 +24,6 @@ class Error;
 class KSIEVE_EXPORT Parser
 {
 public:
-
     Parser(const char *scursor, const char *const send, int options = 0);
     ~Parser();
 
@@ -35,6 +35,7 @@ public:
     const Error &error() const;
 
     class Impl;
+
 private:
     Impl *i = nullptr;
 

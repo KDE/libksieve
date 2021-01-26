@@ -64,7 +64,7 @@ void SieveEditorTabWidget::slotTabContextMenuRequest(const QPoint &pos)
     QAction *action = menu.exec(mapToGlobal(pos));
 
     if (action) {
-        if (action == allOther) {   // Close all other tabs
+        if (action == allOther) { // Close all other tabs
             slotCloseAllTabExcept(indexBar);
         } else if (action == closeTab) {
             slotCloseRequest(indexBar);
@@ -83,7 +83,7 @@ void SieveEditorTabWidget::slotCloseRequest(int index)
 
 void SieveEditorTabWidget::closeAllTabExcept(int index)
 {
-    //Don't close first tab
+    // Don't close first tab
     for (int i = count() - 1; i > 0; --i) {
         if (i == index) {
             continue;
@@ -104,7 +104,7 @@ void SieveEditorTabWidget::slotCloseAllTab()
 
 void SieveEditorTabWidget::slotTabCloseRequested(int index)
 {
-    //Don't remove first tab.
+    // Don't remove first tab.
     if (index > 0) {
         removeTab(index);
     }

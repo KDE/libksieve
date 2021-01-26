@@ -8,7 +8,8 @@
 
 #include "sieveaction.h"
 #include <autocreatescripts/sieveglobalvariablewidget.h>
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveActionSetVariable : public SieveAction
 {
     Q_OBJECT
@@ -23,6 +24,7 @@ public:
     Q_REQUIRED_RESULT QWidget *createParamWidget(QWidget *parent) const override;
     Q_REQUIRED_RESULT QUrl href() const override;
     void setLocalVariable(QWidget *w, const SieveGlobalVariableActionWidget::VariableElement &var);
+
 private:
     bool mHasRegexCapability = false;
 };

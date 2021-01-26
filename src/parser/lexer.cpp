@@ -8,8 +8,8 @@
     SPDX-License-Identifier: GPL-2.0-only
 */
 
-#include <ksieve/lexer.h>
 #include <impl/lexer.h>
+#include <ksieve/lexer.h>
 
 #include <impl/utf8validator.h>
 #include <ksieve/error.h>
@@ -24,11 +24,12 @@
 #include <ctype.h> // isdigit
 
 #ifdef STR_DIM
-# undef STR_DIM
+#undef STR_DIM
 #endif
 #define STR_DIM(x) (sizeof(x) - 1)
 
-namespace KSieve {
+namespace KSieve
+{
 //
 //
 // Lexer Bridge implementation
@@ -97,33 +98,52 @@ Lexer::Token Lexer::nextToken(QString &result)
 
 // none except a-zA-Z0-9_
 static const unsigned char iTextMap[16] = {
-    0x00, 0x00, 0x00, 0x00, // CTLs:        none
-    0x00, 0x00, 0xFF, 0xC0, // SP ... '?':  0-9
-    0x7F, 0xFF, 0xFF, 0xE1, // '@' ... '_': A-Z_
-    0x7F, 0xFF, 0xFF, 0xE0  // '`' ... DEL: a-z
+    0x00,
+    0x00,
+    0x00,
+    0x00, // CTLs:        none
+    0x00,
+    0x00,
+    0xFF,
+    0xC0, // SP ... '?':  0-9
+    0x7F,
+    0xFF,
+    0xFF,
+    0xE1, // '@' ... '_': A-Z_
+    0x7F,
+    0xFF,
+    0xFF,
+    0xE0 // '`' ... DEL: a-z
 };
 
 // SP, HT, CR, LF, {}[]();,#/
 // ### exclude '['? Why would one want to write identifier["foo"]?
 static const unsigned char delimMap[16] = {
-    0x00, 0x64, 0x00, 0x00, // CTLs:        CR, HT, LF
-    0x90, 0xC9, 0x00, 0x10, // SP ... '?':  SP, #(),;
-    0x00, 0x00, 0x00, 0x16, // '@' ... '_': []
-    0x00, 0x00, 0x00, 0x16  // '`' ... DEL: {}
+    0x00,
+    0x64,
+    0x00,
+    0x00, // CTLs:        CR, HT, LF
+    0x90,
+    0xC9,
+    0x00,
+    0x10, // SP ... '?':  SP, #(),;
+    0x00,
+    0x00,
+    0x00,
+    0x16, // '@' ... '_': []
+    0x00,
+    0x00,
+    0x00,
+    0x16 // '`' ... DEL: {}
 };
 
 // All except iText, delim, "*:
-static const unsigned char illegalMap[16] = {
-    0xFF, 0x9B, 0xFF, 0xFF,
-    0x4F, 0x16, 0x00, 0x0F,
-    0x80, 0x00, 0x00, 0x0A,
-    0x80, 0x00, 0x00, 0x0A
-};
+static const unsigned char illegalMap[16] = {0xFF, 0x9B, 0xFF, 0xFF, 0x4F, 0x16, 0x00, 0x0F, 0x80, 0x00, 0x00, 0x0A, 0x80, 0x00, 0x00, 0x0A};
 
 static inline bool isOfSet(const unsigned char map[16], unsigned char ch)
 {
     assert(ch < 128);
-    return map[ ch / 8 ] & 0x80 >> ch % 8;
+    return map[ch / 8] & 0x80 >> ch % 8;
 }
 
 static inline bool isIText(unsigned char ch)
@@ -151,7 +171,7 @@ static QString removeCRLF(const QString &s)
     const bool CRLF = s.endsWith(QLatin1String("\r\n"));
     const bool LF = !CRLF && s.endsWith(QLatin1Char('\n'));
 
-    const int e = CRLF ? 2 : LF ? 1 : 0;  // what to chop off at the end
+    const int e = CRLF ? 2 : LF ? 1 : 0; // what to chop off at the end
 
     return s.left(s.length() - e);
 }
@@ -161,7 +181,8 @@ static QString removeDotStuff(const QString &s)
     return s.startsWith(QLatin1String("..")) ? s.mid(1) : s;
 }
 
-namespace KSieve {
+namespace KSieve
+{
 //
 //
 // Lexer Implementation
@@ -183,14 +204,14 @@ Lexer::Token Lexer::Impl::nextToken(QString &result)
 {
     assert(!atEnd());
     result.clear();
-    //clearErrors();
+    // clearErrors();
 
     const int oldLine = line();
 
     const bool eatingWSSucceeded = ignoreComments() ? eatCWS() : eatWS();
 
     if (!ignoreLineFeeds() && oldLine != line()) {
-        result.setNum(line() - oldLine);   // return number of linefeeds encountered
+        result.setNum(line() - oldLine); // return number of linefeeds encountered
         return LineFeeds;
     }
 
@@ -346,10 +367,10 @@ bool Lexer::Impl::parseHashComment(QString &result, bool reallySave)
     }
     const char *const commentEnd = mState.cursor - 1;
 
-    //Laurent it creates a problem when we have just "#F" => it doesn't see it as a comment
-//    if (commentEnd == commentStart) {
-//        return true;    // # was last char in script...
-//    }
+    // Laurent it creates a problem when we have just "#F" => it doesn't see it as a comment
+    //    if (commentEnd == commentStart) {
+    //        return true;    // # was last char in script...
+    //    }
 
     if (atEnd() || eatCRLF()) {
         const int commentLength = commentEnd - commentStart + 1;
@@ -409,7 +430,7 @@ bool Lexer::Impl::parseBracketComment(QString &result, bool reallySave)
         }
         if (reallySave) {
             QString tmp = QString::fromUtf8(commentStart, commentLength);
-            result += tmp.remove(QLatin1Char('\r'));   // get rid of CR in CRLF pairs
+            result += tmp.remove(QLatin1Char('\r')); // get rid of CR in CRLF pairs
         }
     }
 
@@ -455,8 +476,7 @@ bool Lexer::Impl::eatCWS()
             }
             break;
         case '#':
-        case '/':
-        {           // comments
+        case '/': { // comments
             QString dummy;
             if (!parseComment(dummy)) {
                 return false;
@@ -479,14 +499,13 @@ bool Lexer::Impl::parseIdentifier(QString &result)
     const char *const identifierStart = mState.cursor;
 
     // first char:
-    if (isdigit(*mState.cursor)) {     // no digits for the first
+    if (isdigit(*mState.cursor)) { // no digits for the first
         makeError(Error::NoLeadingDigits);
         return false;
     }
 
     // rest of identifier chars ( now digits are allowed ):
-    for (++mState.cursor; !atEnd() && isIText(*mState.cursor); ++mState.cursor) {
-    }
+    for (++mState.cursor; !atEnd() && isIText(*mState.cursor); ++mState.cursor) { }
 
     const int identifierLength = mState.cursor - identifierStart;
 
@@ -572,8 +591,7 @@ bool Lexer::Impl::parseMultiLine(QString &result)
         case '\t':
             ++mState.cursor;
             break;
-        case '#':
-        {
+        case '#': {
             ++mState.cursor;
             QString dummy;
             if (!parseHashComment(dummy)) {
@@ -628,7 +646,7 @@ MultiLineStart:
     }
 
     assert(!lines.empty());
-    lines.erase(--lines.end());   // don't include the lone dot.
+    lines.erase(--lines.end()); // don't include the lone dot.
     result = lines.join(QLatin1Char('\n'));
     return true;
 }
@@ -643,7 +661,7 @@ bool Lexer::Impl::parseQuotedString(QString &result)
     const int qsBeginCol = column() - 1;
     const int qsBeginLine = line();
 
-    const QTextCodec *const codec = QTextCodec::codecForMib(106);    // UTF-8
+    const QTextCodec *const codec = QTextCodec::codecForMib(106); // UTF-8
     assert(codec);
     const std::unique_ptr<QTextDecoder> dec(codec->makeDecoder());
     assert(dec.get());

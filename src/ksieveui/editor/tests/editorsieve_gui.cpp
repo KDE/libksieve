@@ -5,8 +5,8 @@
 */
 
 #include "editorsieve_gui.h"
-#include <QDebug>
 #include "ksieveui/tests/capability.h"
+#include <QDebug>
 
 #include <QApplication>
 #include <QCommandLineParser>
@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 
     auto dialog = new SieveEditorTestWidget;
     const QStringList capabilities = KSieveUi::Test::fullCapabilitiesList();
-    //Add all capabilities for testing
+    // Add all capabilities for testing
     dialog->setSieveCapabilities(capabilities);
     if (dialog->exec()) {
         qDebug() << " generated script :\n" << dialog->script() << "\n";

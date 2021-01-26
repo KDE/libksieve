@@ -4,19 +4,19 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionspamtest.h"
-#include "widgets/selectrelationalmatchtype.h"
-#include "widgets/selectcomparatorcombobox.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "editor/sieveeditorutil.h"
+#include "widgets/selectcomparatorcombobox.h"
+#include "widgets/selectrelationalmatchtype.h"
 
 #include <KLocalizedString>
 
-#include <QSpinBox>
 #include "libksieve_debug.h"
-#include <QXmlStreamReader>
 #include <QCheckBox>
+#include <QSpinBox>
 #include <QVBoxLayout>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 
@@ -76,7 +76,8 @@ QString SieveConditionSpamTest::code(QWidget *w) const
     const QSpinBox *spinbox = w->findChild<QSpinBox *>(QStringLiteral("value"));
     const QString value = QString::number(spinbox->value());
 
-    return QStringLiteral("spamtest %1 %2 %3 \"%4\"").arg(percentStr, relationStr, comparatorStr, value) + AutoCreateScriptUtil::generateConditionComment(comment());
+    return QStringLiteral("spamtest %1 %2 %3 \"%4\"").arg(percentStr, relationStr, comparatorStr, value)
+        + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 bool SieveConditionSpamTest::needCheckIfServerHasCapability() const
@@ -106,7 +107,9 @@ QStringList SieveConditionSpamTest::needRequires(QWidget *w) const
 
 QString SieveConditionSpamTest::help() const
 {
-    return i18n("Sieve implementations that implement the \"spamtest\" test use an identifier of either \"spamtest\" or \"spamtestplus\" for use with the capability mechanism.");
+    return i18n(
+        "Sieve implementations that implement the \"spamtest\" test use an identifier of either \"spamtest\" or \"spamtestplus\" for use with the capability "
+        "mechanism.");
 }
 
 void SieveConditionSpamTest::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
@@ -147,7 +150,7 @@ void SieveConditionSpamTest::setParamWidgetValue(QXmlStreamReader &element, QWid
             spinbox->setValue(element.readElementText().toInt());
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {

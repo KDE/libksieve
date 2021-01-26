@@ -5,10 +5,10 @@
 */
 
 #include "sieveeditormenubartest.h"
-#include <QTest>
 #include "../sieveeditormenubar.h"
-#include <qtestmouse.h>
 #include <QSignalSpy>
+#include <QTest>
+#include <qtestmouse.h>
 
 SieveEditorMenuBarTest::SieveEditorMenuBarTest(QObject *parent)
     : QObject(parent)

@@ -10,25 +10,27 @@
 #include "ksieveui_export.h"
 #include <KSieveUi/SieveImapAccountSettings>
 #include <KSieveUi/SieveImapInstance>
-#include <memory>
 #include <QUrl>
+#include <memory>
 class QString;
 #include <QStringList>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class AbstractAkonadiImapSettingInterface;
 class SieveImapPasswordProvider;
 /**
  * The Util namespace contains a collection of helper functions use in
  * various places.
  */
-namespace Util {
+namespace Util
+{
 struct AccountInfo {
     KSieveUi::SieveImapAccountSettings sieveImapAccountSettings;
     QUrl sieveUrl;
     KSIEVEUI_EXPORT bool operator==(const AccountInfo &other) const;
 };
-KSIEVEUI_EXPORT QDebug operator <<(QDebug d, const Util::AccountInfo &info);
+KSIEVEUI_EXPORT QDebug operator<<(QDebug d, const Util::AccountInfo &info);
 
 /**
  * Returns the list of configured IMAP agent instances.

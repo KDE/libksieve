@@ -11,7 +11,8 @@
 class QComboBox;
 class QLineEdit;
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SelectBodyTypeWidget : public QWidget
 {
     Q_OBJECT
@@ -24,6 +25,7 @@ public:
 
 Q_SIGNALS:
     void valueChanged();
+
 private:
     void slotBodyTypeChanged(int);
     void initialize();

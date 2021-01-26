@@ -4,17 +4,17 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionredirect.h"
-#include "editor/sieveeditorutil.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
+#include "editor/sieveeditorutil.h"
 #include "widgets/addresslineedit.h"
 
 #include <KLocalizedString>
 
-#include <QHBoxLayout>
-#include <QCheckBox>
-#include <QXmlStreamReader>
 #include "libksieve_debug.h"
+#include <QCheckBox>
+#include <QHBoxLayout>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 
@@ -81,10 +81,10 @@ void SieveActionRedirect::setParamWidgetValue(QXmlStreamReader &element, QWidget
             }
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             setComment(element.readElementText());
-            //implement in the future ?
+            // implement in the future ?
         } else {
             unknownTag(tagName, error);
             qCDebug(LIBKSIEVE_LOG) << " SieveActionRedirect::setParamWidgetValue unknown tagName " << tagName;
@@ -136,12 +136,14 @@ QStringList SieveActionRedirect::needRequires(QWidget *parent) const
 QString SieveActionRedirect::help() const
 {
     QString helpStr = i18n(
-        "The \"redirect\" action is used to send the message to another user at a supplied address, as a mail forwarding feature does.  The \"redirect\" action makes no changes to the message body or existing headers, but it may add new headers.");
+        "The \"redirect\" action is used to send the message to another user at a supplied address, as a mail forwarding feature does.  The \"redirect\" "
+        "action makes no changes to the message body or existing headers, but it may add new headers.");
     if (mHasCopySupport) {
-        helpStr += QLatin1Char('\n') + i18n(
-            "If the optional \":copy\" keyword is specified, the tagged command does not cancel the implicit \"keep\". Instead, it redirects a copy in addition to whatever else is happening to the message.");
+        helpStr += QLatin1Char('\n')
+            + i18n("If the optional \":copy\" keyword is specified, the tagged command does not cancel the implicit \"keep\". Instead, it redirects a copy in "
+                   "addition to whatever else is happening to the message.");
     }
-    //TODO add list info
+    // TODO add list info
     return helpStr;
 }
 

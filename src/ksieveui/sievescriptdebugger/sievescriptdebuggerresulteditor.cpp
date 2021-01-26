@@ -5,9 +5,9 @@
 */
 
 #include "sievescriptdebuggerresulteditor.h"
-#include <PimCommon/PimUtil>
 #include <KLocalizedString>
 #include <KStandardAction>
+#include <PimCommon/PimUtil>
 #include <QAction>
 #include <QMenu>
 

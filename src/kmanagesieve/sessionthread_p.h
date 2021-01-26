@@ -12,15 +12,16 @@
 #include <memory>
 
 #include <KIO/Global>
-#include <QSslSocket>
 #include <KSslErrorUiData>
+#include <QSslSocket>
 
-#include "sasl-common.h"
 #include "response.h"
+#include "sasl-common.h"
 
 class QTimer;
 
-namespace KManageSieve {
+namespace KManageSieve
+{
 class Session;
 
 class SessionThread : public QObject

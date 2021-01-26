@@ -4,8 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "../xmlprintingscriptbuilder.h"
 #include "../parsingresultdialog.h"
+#include "../xmlprintingscriptbuilder.h"
 
 #include <ksieve/parser.h>
 using KSieve::Parser;
@@ -13,12 +13,12 @@ using KSieve::Parser;
 #include <ksieve/error.h>
 #include <ksieve/scriptbuilder.h>
 
-#include <QDebug>
-#include <QStandardPaths>
-#include <QFileDialog>
 #include <QApplication>
-#include <QCommandLineParser>
 #include <QCommandLineOption>
+#include <QCommandLineParser>
+#include <QDebug>
+#include <QFileDialog>
+#include <QStandardPaths>
 
 int main(int argc, char **argv)
 {
@@ -47,10 +47,9 @@ int main(int argc, char **argv)
     } else {
         return 0;
     }
-    //qDebug() << "scriptUtf8 = \"" + script +"\"";
+    // qDebug() << "scriptUtf8 = \"" + script +"\"";
 
-    KSieve::Parser sieveParser(script.constBegin(),
-                               script.constBegin() + script.length());
+    KSieve::Parser sieveParser(script.constBegin(), script.constBegin() + script.length());
     KSieveUi::XMLPrintingScriptBuilder psb(1);
     sieveParser.setScriptBuilder(&psb);
     if (sieveParser.parse()) {

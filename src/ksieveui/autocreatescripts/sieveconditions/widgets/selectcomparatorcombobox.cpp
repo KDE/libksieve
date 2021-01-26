@@ -4,8 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectcomparatorcombobox.h"
-#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
+#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 
 using namespace KSieveUi;
 SelectComparatorComboBox::SelectComparatorComboBox(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent)
@@ -21,7 +21,7 @@ SelectComparatorComboBox::~SelectComparatorComboBox()
 
 void SelectComparatorComboBox::initialize(const QStringList &sieveCapabilities)
 {
-    //Default in spec
+    // Default in spec
     addItem(QStringLiteral("i;octet"), QStringLiteral("comparator-i;octet"));
     addItem(QStringLiteral("i;ascii-casemap"), QStringLiteral("comparator-i;ascii-casemap"));
 

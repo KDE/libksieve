@@ -7,23 +7,23 @@
 */
 
 #include "sievedebugdialog.h"
-#include <KPIMTextEdit/PlainTextEditorWidget>
-#include <KPIMTextEdit/PlainTextEditor>
-#include "util/util_p.h"
 #include "util/findaccountinfojob.h"
+#include "util/util_p.h"
+#include <KPIMTextEdit/PlainTextEditor>
+#include <KPIMTextEdit/PlainTextEditorWidget>
 
 #include "libksieve_debug.h"
 #include <KLocalizedString>
-#include <kmanagesieve/sievejob.h>
-#include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Definition>
+#include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Theme>
+#include <kmanagesieve/sievejob.h>
 
-#include <QTimer>
+#include <KConfigGroup>
 #include <KSharedConfig>
 #include <QDialogButtonBox>
-#include <KConfigGroup>
 #include <QPushButton>
+#include <QTimer>
 #include <QVBoxLayout>
 
 using namespace KSieveUi;
@@ -46,9 +46,8 @@ SieveDebugDialog::SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, 
     }
 
     auto hl = new KSyntaxHighlighting::SyntaxHighlighter(mEdit->editor()->document());
-    hl->setTheme((palette().color(QPalette::Base).lightness() < 128)
-                 ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
-                 : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
+    hl->setTheme((palette().color(QPalette::Base).lightness() < 128) ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+                                                                     : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     hl->setDefinition(def);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
@@ -135,8 +134,8 @@ void SieveDebugDialog::slotFindAccountInfoFinished(const KSieveUi::Util::Account
 
         mSieveJob = KManageSieve::SieveJob::list(mUrl);
 
-        //Laurent: not necessary as it's a readonly dialog
-        //mSieveJob->setProperty("sieveimapaccountsettings", QVariant::fromValue(info.sieveImapAccountSettings));
+        // Laurent: not necessary as it's a readonly dialog
+        // mSieveJob->setProperty("sieveimapaccountsettings", QVariant::fromValue(info.sieveImapAccountSettings));
         connect(mSieveJob, &KManageSieve::SieveJob::gotList, this, &SieveDebugDialog::slotGetScriptList);
 
         // Bypass the singleShot timer -- it's fired when we get our data
@@ -186,24 +185,22 @@ void SieveDebugDialog::slotFindAccountInfoForScriptFinished(const KSieveUi::Util
 
 void SieveDebugDialog::slotGetScript(KManageSieve::SieveJob *job, bool success, const QString &script, bool active)
 {
-    qCDebug(LIBKSIEVE_LOG) << "( ??," << success
-                           << ", ?," << active << ")"
-        << Qt::endl
-        << "script:"
-        << Qt::endl
-        << script;
+    qCDebug(LIBKSIEVE_LOG) << "( ??," << success << ", ?," << active << ")" << Qt::endl << "script:" << Qt::endl << script;
     mSieveJob = nullptr; // job deletes itself after returning from this slot!
 
     if (!success) {
-        mEdit->editor()->appendPlainText(i18n("Retrieving the script failed.\n"
-                                              "The server responded:\n%1", job->errorString()));
+        mEdit->editor()->appendPlainText(
+            i18n("Retrieving the script failed.\n"
+                 "The server responded:\n%1",
+                 job->errorString()));
     } else if (script.isEmpty()) {
         mEdit->editor()->appendPlainText(i18n("(This script is empty)\n\n"));
     } else {
-        mEdit->editor()->appendPlainText(i18n(
-                                             "------------------------------------------------------------\n"
-                                             "%1\n"
-                                             "------------------------------------------------------------\n\n", script));
+        mEdit->editor()->appendPlainText(
+            i18n("------------------------------------------------------------\n"
+                 "%1\n"
+                 "------------------------------------------------------------\n\n",
+                 script));
     }
 
     // Fetch next script
@@ -215,8 +212,7 @@ void SieveDebugDialog::slotGetScriptList(KManageSieve::SieveJob *job, bool succe
     if (mShutDownJob->isActive()) {
         mShutDownJob->stop();
     }
-    qCDebug(LIBKSIEVE_LOG) << "Success:" << success << ", List:" << scriptList.join(QLatin1Char(','))
-                           <<", active:" << activeScript;
+    qCDebug(LIBKSIEVE_LOG) << "Success:" << success << ", List:" << scriptList.join(QLatin1Char(',')) << ", active:" << activeScript;
     mSieveJob = nullptr; // job deletes itself after returning from this slot!
 
     mEdit->editor()->appendPlainText(i18n("Sieve capabilities:\n"));

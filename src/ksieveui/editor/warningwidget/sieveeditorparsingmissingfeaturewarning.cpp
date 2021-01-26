@@ -23,8 +23,7 @@ SieveEditorParsingMissingFeatureWarning::SieveEditorParsingMissingFeatureWarning
     connect(this, &SieveEditorParsingMissingFeatureWarning::linkActivated, this, &SieveEditorParsingMissingFeatureWarning::slotShowDetails);
 
     switch (type) {
-    case TextEditor:
-    {
+    case TextEditor: {
         auto action = new QAction(i18n("Switch to Graphical Mode"), this);
         connect(action, &QAction::triggered, this, &SieveEditorParsingMissingFeatureWarning::slotSwitchInGraphicalMode);
         addAction(action);
@@ -34,8 +33,7 @@ SieveEditorParsingMissingFeatureWarning::SieveEditorParsingMissingFeatureWarning
         addAction(action);
         break;
     }
-    case GraphicEditor:
-    {
+    case GraphicEditor: {
         auto action = new QAction(i18n("Switch to Text Mode"), this);
         connect(action, &QAction::triggered, this, &SieveEditorParsingMissingFeatureWarning::slotSwitchInTextMode);
         addAction(action);

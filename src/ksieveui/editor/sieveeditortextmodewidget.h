@@ -6,10 +6,11 @@
 #ifndef SIEVEEDITORTEXTMODEWIDGET_H
 #define SIEVEEDITORTEXTMODEWIDGET_H
 
-#include "sieveeditorabstractwidget.h"
 #include "ksieveui_export.h"
+#include "sieveeditorabstractwidget.h"
 class QSplitter;
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class SlideContainer;
 class TextGoToLineWidget;
 class PlainTextEditFindBar;
@@ -18,7 +19,8 @@ class PlainTextEditorWidget;
 class TextToSpeechWidget;
 }
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveTextEdit;
 class SieveEditorWarning;
 class SieveEditorParsingMissingFeatureWarning;
@@ -104,6 +106,7 @@ Q_SIGNALS:
 
 public Q_SLOTS:
     void slotShowGoToLine();
+
 private:
     void slotTextChanged();
     void slotFind();

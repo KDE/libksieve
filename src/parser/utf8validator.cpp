@@ -83,7 +83,7 @@ bool KSieve::isValidUtf8(const char *s, unsigned int len)
             if (len - i < 1) { // too short
                 return false;
             }
-            if (isUtf8OverlongTupel(ch)) {   // not minimally encoded
+            if (isUtf8OverlongTupel(ch)) { // not minimally encoded
                 return false;
             }
             if (!isUtf8Continuation(s[i + 1])) { // not followed by 10xx xxxx
@@ -108,8 +108,7 @@ bool KSieve::isValidUtf8(const char *s, unsigned int len)
             if (isUtf8OverlongQuartet(ch, s[i + 1])) { // not minimally encoded
                 return false;
             }
-            if (!isUtf8Continuation(s[i + 2])
-                || !isUtf8Continuation(s[i + 3])) {  // not followed by 2x 10xx xxxx
+            if (!isUtf8Continuation(s[i + 2]) || !isUtf8Continuation(s[i + 3])) { // not followed by 2x 10xx xxxx
                 return false;
             }
             i += 3;
@@ -120,9 +119,7 @@ bool KSieve::isValidUtf8(const char *s, unsigned int len)
             if (isUtf8OverlongQuintet(ch, s[i + 1])) { // not minimally encoded
                 return false;
             }
-            if (!isUtf8Continuation(s[i + 2])
-                || !isUtf8Continuation(s[i + 3])
-                || !isUtf8Continuation(s[i + 4])) {  // not followed by 3x 10xx xxxx
+            if (!isUtf8Continuation(s[i + 2]) || !isUtf8Continuation(s[i + 3]) || !isUtf8Continuation(s[i + 4])) { // not followed by 3x 10xx xxxx
                 return false;
             }
             i += 4;
@@ -133,10 +130,8 @@ bool KSieve::isValidUtf8(const char *s, unsigned int len)
             if (isUtf8OverlongSextet(ch, s[i + 1])) { // not minimally encoded
                 return false;
             }
-            if (!isUtf8Continuation(s[i + 2])
-                || !isUtf8Continuation(s[i + 3])
-                || !isUtf8Continuation(s[i + 4])
-                || !isUtf8Continuation(s[i + 5])) {  // not followed by 4x 10xx xxxx
+            if (!isUtf8Continuation(s[i + 2]) || !isUtf8Continuation(s[i + 3]) || !isUtf8Continuation(s[i + 4])
+                || !isUtf8Continuation(s[i + 5])) { // not followed by 4x 10xx xxxx
                 return false;
             }
             i += 5;

@@ -5,30 +5,30 @@
 */
 
 #include "managesievescriptsdialog.h"
+#include "editor/sieveeditor.h"
+#include "editor/sievetextedit.h"
+#include "managescriptsjob/checkscriptjob.h"
 #include "widgets/custommanagesievewidget.h"
 #include "widgets/managesievetreeview.h"
-#include "editor/sievetextedit.h"
-#include "editor/sieveeditor.h"
 #include "widgets/sievetreewidgetitem.h"
-#include "managescriptsjob/checkscriptjob.h"
 
 #include "util/sieveimapaccountsettings.h"
 
-#include <KLocalizedString>
-#include <QPushButton>
-#include <KMessageBox>
 #include <KConfigGroup>
+#include <KLocalizedString>
+#include <KMessageBox>
+#include <QPushButton>
 
-#include <kmanagesieve/sievejob.h>
 #include "libksieve_debug.h"
+#include <kmanagesieve/sievejob.h>
 
 #include <QTreeWidget>
 #include <QVBoxLayout>
 
-#include <errno.h>
-#include <KSharedConfig>
 #include <KGuiItem>
+#include <KSharedConfig>
 #include <KStandardGuiItem>
+#include <errno.h>
 
 using namespace KSieveUi;
 
@@ -164,8 +164,11 @@ void ManageSieveScriptsDialog::slotNewScript(const ManageSieveWidget::ScriptInfo
 void ManageSieveScriptsDialog::slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool isActive)
 {
     if (!success) {
-        KMessageBox::error(this, i18n("Retrieving the script failed.\n"
-                                      "The server responded:\n%1", job->errorString()), i18n("Sieve Error"));
+        KMessageBox::error(this,
+                           i18n("Retrieving the script failed.\n"
+                                "The server responded:\n%1",
+                                job->errorString()),
+                           i18n("Sieve Error"));
         return;
     }
 
@@ -244,15 +247,17 @@ void ManageSieveScriptsDialog::slotCheckScriptFinished(const QString &errorMsg, 
 void ManageSieveScriptsDialog::slotPutResult(KManageSieve::SieveJob *job, bool success)
 {
     if (success) {
-        KMessageBox::information(this, i18n("The Sieve script was successfully uploaded."),
-                                 i18n("Sieve Script Upload"));
+        KMessageBox::information(this, i18n("The Sieve script was successfully uploaded."), i18n("Sieve Script Upload"));
         d->mSieveEditor->deleteLater();
         d->mSieveEditor = nullptr;
         d->mCurrentURL = QUrl();
     } else {
-        //Don't add parent otherwise when there is an error it will parent to ManageSieveScriptsDialog and not editor
-        KMessageBox::error(nullptr, i18n("Uploading the Sieve script failed.\n"
-                                         "The server responded:\n%1", job->errorString()), i18n("Sieve Error"));
+        // Don't add parent otherwise when there is an error it will parent to ManageSieveScriptsDialog and not editor
+        KMessageBox::error(nullptr,
+                           i18n("Uploading the Sieve script failed.\n"
+                                "The server responded:\n%1",
+                                job->errorString()),
+                           i18n("Sieve Error"));
         if (d->mSieveEditor) {
             d->mSieveEditor->show();
         }

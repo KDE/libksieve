@@ -11,7 +11,8 @@
 
 class QAction;
 class QMenu;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveEditorTextModeWidget;
 class SieveEditorMenuBar : public QMenuBar
 {

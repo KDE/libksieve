@@ -10,19 +10,15 @@
 
 #include <QByteArray>
 
-namespace KManageSieve {
+namespace KManageSieve
+{
 /** A response from a managesieve server.
  * @internal
  */
 class Response
 {
 public:
-    enum Type {
-        None,
-        KeyValuePair,
-        Action,
-        Quantity
-    };
+    enum Type { None, KeyValuePair, Action, Quantity };
 
     Response()
     {
@@ -35,12 +31,7 @@ public:
     QByteArray value() const;
     QByteArray extra() const;
 
-    enum Result {
-        Ok,
-        No,
-        Bye,
-        Other
-    };
+    enum Result { Ok, No, Bye, Other };
 
     Result operationResult() const;
     bool operationSuccessful() const;

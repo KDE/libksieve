@@ -16,7 +16,8 @@ class QGridLayout;
 class QCheckBox;
 class QXmlStreamReader;
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveHelpButton;
 class SieveGlobalVariableWidget;
 
@@ -84,6 +85,7 @@ public Q_SLOTS:
 protected:
     void clearWidget(QWidget *aWidget) override;
     QWidget *createWidget(QWidget *parent) override;
+
 private:
     void reconnectWidget(SieveGlobalVariableActionWidget *w);
     void updateAddRemoveButton();

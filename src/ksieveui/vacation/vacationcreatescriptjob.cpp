@@ -6,13 +6,13 @@
 
 #include "vacationcreatescriptjob.h"
 #include "vacationutils.h"
-#include <managescriptsjob/parseuserscriptjob.h>
-#include <managescriptsjob/generateglobalscriptjob.h>
 #include <kmanagesieve/sievejob.h>
+#include <managescriptsjob/generateglobalscriptjob.h>
+#include <managescriptsjob/parseuserscriptjob.h>
 
-#include <KMessageBox>
-#include <KLocalizedString>
 #include "libksieve_debug.h"
+#include <KLocalizedString>
+#include <KMessageBox>
 
 using namespace KSieveUi;
 
@@ -117,7 +117,7 @@ void VacationCreateScriptJob::slotGetScript(KManageSieve::SieveJob *job, bool su
     if (mKep14Support) {
         mSieveJob = KManageSieve::SieveJob::put(mUrl, mScript, false, false);
     } else {
-        mSieveJob = KManageSieve::SieveJob::put(mUrl, mScript, mActivate, false);           //Never deactivate
+        mSieveJob = KManageSieve::SieveJob::put(mUrl, mScript, mActivate, false); // Never deactivate
     }
     connect(mSieveJob, &KManageSieve::SieveJob::gotScript, this, &VacationCreateScriptJob::slotPutResult);
 }
@@ -135,16 +135,18 @@ void VacationCreateScriptJob::slotPutResult(KManageSieve::SieveJob *job, bool su
 
 void VacationCreateScriptJob::handleResult()
 {
-    if (mUserJobRunning || mScriptJobRunning) {                 // Not both jobs are done
+    if (mUserJobRunning || mScriptJobRunning) { // Not both jobs are done
         return;
     }
 
     if (mSuccess) {
-        KMessageBox::information(nullptr, mActivate
-                                 ? i18n("Sieve script installed successfully on the server \'%1\'.\n"
-                                        "Out of Office reply is now active.", mServerName)
-                                 : i18n("Sieve script installed successfully on the server \'%1\'.\n"
-                                        "Out of Office reply has been deactivated.", mServerName));
+        KMessageBox::information(nullptr,
+                                 mActivate ? i18n("Sieve script installed successfully on the server \'%1\'.\n"
+                                                  "Out of Office reply is now active.",
+                                                  mServerName)
+                                           : i18n("Sieve script installed successfully on the server \'%1\'.\n"
+                                                  "Out of Office reply has been deactivated.",
+                                                  mServerName));
     } else {
         KMessageBox::information(nullptr, i18n("Impossible to install script on server \'%1\'", mServerName));
     }

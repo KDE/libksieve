@@ -5,27 +5,27 @@
 */
 
 #include "sievescriptdebuggerfrontendwidget.h"
+#include "sievescriptdebuggerresulteditor.h"
 #include "sievescriptdebuggertextedit.h"
 #include "sievescriptdebuggerwarning.h"
-#include "sievescriptdebuggerresulteditor.h"
 
-#include <QScrollBar>
-#include <QVBoxLayout>
-#include <QSplitter>
-#include <QTemporaryFile>
-#include <QProcess>
-#include <QTextStream>
-#include <QFormLayout>
-#include "editor/sievetexteditwidget.h"
 #include "editor/sievetextedit.h"
-#include <KPIMTextEdit/PlainTextEditorWidget>
-#include <KPIMTextEdit/TextToSpeechWidget>
-#include <Libkdepim/LineEditCatchReturnKey>
-#include <QLabel>
-#include <KUrlRequester>
+#include "editor/sievetexteditwidget.h"
 #include <KLineEdit>
 #include <KLocalizedString>
+#include <KPIMTextEdit/PlainTextEditorWidget>
+#include <KPIMTextEdit/TextToSpeechWidget>
+#include <KUrlRequester>
+#include <Libkdepim/LineEditCatchReturnKey>
 #include <QDate>
+#include <QFormLayout>
+#include <QLabel>
+#include <QProcess>
+#include <QScrollBar>
+#include <QSplitter>
+#include <QTemporaryFile>
+#include <QTextStream>
+#include <QVBoxLayout>
 
 using namespace KSieveUi;
 
@@ -101,7 +101,10 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
 
 SieveScriptDebuggerFrontEndWidget::~SieveScriptDebuggerFrontEndWidget()
 {
-    disconnect(mSieveTextEditWidget->textEdit(), &KSieveUi::SieveScriptDebuggerTextEdit::textChanged, this, &SieveScriptDebuggerFrontEndWidget::slotScriptTextChanged);
+    disconnect(mSieveTextEditWidget->textEdit(),
+               &KSieveUi::SieveScriptDebuggerTextEdit::textChanged,
+               this,
+               &SieveScriptDebuggerFrontEndWidget::slotScriptTextChanged);
 }
 
 void SieveScriptDebuggerFrontEndWidget::updateDebugButton()

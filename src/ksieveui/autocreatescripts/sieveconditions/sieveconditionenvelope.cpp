@@ -6,16 +6,16 @@
 #include "sieveconditionenvelope.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
-#include "widgets/selectaddresspartcombobox.h"
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
-#include "widgets/selectheadertypecombobox.h"
 #include "editor/sieveeditorutil.h"
+#include "widgets/selectaddresspartcombobox.h"
+#include "widgets/selectheadertypecombobox.h"
 
 #include <KLocalizedString>
 
+#include "libksieve_debug.h"
 #include <QHBoxLayout>
 #include <QLabel>
-#include "libksieve_debug.h"
 #include <QXmlStreamReader>
 
 using namespace KSieveUi;
@@ -79,8 +79,9 @@ QString SieveConditionEnvelope::code(QWidget *w) const
 
     const AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("editaddress"));
     const QString addressStr = AutoCreateScriptUtil::createAddressList(edit->code().trimmed(), false);
-    return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("envelope %1 %2 %3 %4").arg(selectAddressPartStr, matchTypeStr, selectHeaderTypeStr, addressStr)
-           + AutoCreateScriptUtil::generateConditionComment(comment());
+    return AutoCreateScriptUtil::negativeString(isNegative)
+        + QStringLiteral("envelope %1 %2 %3 %4").arg(selectAddressPartStr, matchTypeStr, selectHeaderTypeStr, addressStr)
+        + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionEnvelope::needRequires(QWidget *w) const
@@ -119,7 +120,7 @@ void SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWid
                 QString err;
                 auto selectAddressPart = w->findChild<SelectAddressPartComboBox *>(QStringLiteral("addresspartcombobox"));
                 selectAddressPart->setCode(AutoCreateScriptUtil::tagValue(tagValue), name(), err);
-                //all: is default sometime we don't add it.
+                // all: is default sometime we don't add it.
                 if (!err.isEmpty()) {
                     auto selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
                     selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(tagValue, notCondition), name(), error);
@@ -155,7 +156,7 @@ void SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWid
             ++indexStr;
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {

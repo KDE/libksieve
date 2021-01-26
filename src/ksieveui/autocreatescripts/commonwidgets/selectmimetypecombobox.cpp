@@ -23,7 +23,7 @@ SelectMimeTypeComboBox::~SelectMimeTypeComboBox()
 
 void SelectMimeTypeComboBox::initialize()
 {
-    //TODO verify
+    // TODO verify
     addItem(i18n("JPEG"), QStringLiteral("image/jpeg"));
     addItem(i18n("TIFF"), QStringLiteral("image/tiff"));
     addItem(i18n("PNG"), QStringLiteral("image/png"));

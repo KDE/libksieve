@@ -13,12 +13,13 @@
 #ifndef KSIEVE_IMPL_LEXER_H
 #define KSIEVE_IMPL_LEXER_H
 
-#include <ksieve/lexer.h>
 #include <ksieve/error.h>
+#include <ksieve/lexer.h>
 
 #include <QStack>
 
-namespace KSieve {
+namespace KSieve
+{
 class Lexer::Impl
 {
 public:

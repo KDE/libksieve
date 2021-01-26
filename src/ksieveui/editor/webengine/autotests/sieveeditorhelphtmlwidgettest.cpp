@@ -7,10 +7,10 @@
 #include "sieveeditorhelphtmlwidgettest.h"
 #include "../sieveeditorhelphtmlwidget.h"
 
-#include <QTest>
 #include "../findbar/findbarwebengineview.h"
 #include "../sieveeditorloadprogressindicator.h"
 #include "../sieveeditorwebengineview.h"
+#include <QTest>
 
 #include <KPIMTextEdit/SlideContainer>
 
@@ -29,11 +29,11 @@ void SieveEditorHelpHtmlWidgetTest::shouldHaveDefaultValue()
     w.show();
     QVERIFY(QTest::qWaitForWindowExposed(&w));
 
-    //KSieveUi::SieveEditorLoadProgressIndicator *mProgressIndicator = w.findChild<KSieveUi::SieveEditorLoadProgressIndicator *>(QStringLiteral("progressindicator"));
-    //QVERIFY(mProgressIndicator);
+    // KSieveUi::SieveEditorLoadProgressIndicator *mProgressIndicator = w.findChild<KSieveUi::SieveEditorLoadProgressIndicator
+    // *>(QStringLiteral("progressindicator")); QVERIFY(mProgressIndicator);
 
-    //KSieveUi::SieveEditorWebEngineView *mWebView = w.findChild<KSieveUi::SieveEditorWebEngineView *>(QStringLiteral("webview"));
-    //QVERIFY(mWebView);
+    // KSieveUi::SieveEditorWebEngineView *mWebView = w.findChild<KSieveUi::SieveEditorWebEngineView *>(QStringLiteral("webview"));
+    // QVERIFY(mWebView);
 
     auto mSliderContainer = w.findChild<KPIMTextEdit::SlideContainer *>(QStringLiteral("slidercontainer"));
     QVERIFY(mSliderContainer);

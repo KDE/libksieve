@@ -7,11 +7,12 @@
 #ifndef SIEVESCRIPTPAGE_H
 #define SIEVESCRIPTPAGE_H
 
-#include <QWidget>
-#include "sievescriptblockwidget.h"
 #include "ksieveui_private_export.h"
+#include "sievescriptblockwidget.h"
+#include <QWidget>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveScriptBlockWidget;
 class SieveScriptTabWidget;
 class SieveIncludeWidget;

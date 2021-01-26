@@ -5,17 +5,17 @@
 */
 
 #include "sievescriptparsingerrordialog.h"
-#include <PimCommon/PimUtil>
 #include <KPIMTextEdit/RichTextEditorWidget>
+#include <PimCommon/PimUtil>
 
 #include <KLocalizedString>
 #include <KSharedConfig>
 
-#include <errno.h>
 #include <KConfigGroup>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <errno.h>
 using namespace KSieveUi;
 SieveScriptParsingErrorDialog::SieveScriptParsingErrorDialog(QWidget *parent)
     : QDialog(parent)
@@ -70,6 +70,5 @@ void SieveScriptParsingErrorDialog::writeConfig()
 void SieveScriptParsingErrorDialog::slotSaveAs()
 {
     const QString filter = i18n("All Files (*)");
-    PimCommon::Util::saveTextAs(mTextEdit->toPlainText(), filter, this, QUrl(),
-                                i18nc("@title:window", "Save Log To File"));
+    PimCommon::Util::saveTextAs(mTextEdit->toPlainText(), filter, this, QUrl(), i18nc("@title:window", "Save Log To File"));
 }

@@ -7,10 +7,11 @@
 #ifndef SIEVECONDITION_H
 #define SIEVECONDITION_H
 
-#include <QObject>
 #include "autocreatescripts/commonwidgets/sievecommonactioncondition.h"
+#include <QObject>
 class QXmlStreamReader;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveEditorGraphicalModeWidget;
 class SieveCondition : public SieveCommonActionCondition
 {

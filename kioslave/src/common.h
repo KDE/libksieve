@@ -7,17 +7,17 @@
 #ifndef _KIOSLAVE_COMMON_H
 #define _KIOSLAVE_COMMON_H
 
-#include <stdio.h>
-#include <QFile>
-#include <QDir>
 #include <QCoreApplication>
+#include <QDir>
+#include <QFile>
+#include <stdio.h>
 extern "C" {
 #include <sasl/sasl.h>
 }
 
 inline bool initSASL()
 {
-#ifdef Q_OS_WIN  //krazy:exclude=cpp
+#ifdef Q_OS_WIN // krazy:exclude=cpp
     for (const auto &path : QCoreApplication::libraryPaths()) {
         QDir dir(path);
         if (dir.exists(QStringLiteral("sasl2"))) {

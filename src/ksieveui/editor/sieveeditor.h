@@ -7,9 +7,10 @@
 #define KSIEVE_KSIEVEUI_SIEVEEDITOR_H
 
 #include "ksieveui_export.h"
-#include <memory>
 #include <QDialog>
-namespace KSieveUi {
+#include <memory>
+namespace KSieveUi
+{
 class SieveEditorPrivate;
 class SieveImapAccountSettings;
 /**
@@ -49,6 +50,7 @@ Q_SIGNALS:
 protected:
     bool event(QEvent *e) override;
     void closeEvent(QCloseEvent *e) override;
+
 private:
     void slotEnableButtonOk(bool b);
     void slotAccepted();

@@ -8,7 +8,8 @@
 #define SIEVEPURPOSEMENUWIDGET_H
 
 #include <PimCommon/PurposeMenuWidget>
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveEditorWidget;
 class SievePurposeMenuWidget : public PimCommon::PurposeMenuWidget
 {
@@ -19,6 +20,7 @@ public:
 
     Q_REQUIRED_RESULT QByteArray text() override;
     void setEditorWidget(SieveEditorWidget *editor);
+
 private:
     SieveEditorWidget *mSieveEditorWidget = nullptr;
 };

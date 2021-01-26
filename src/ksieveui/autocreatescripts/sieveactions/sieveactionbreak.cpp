@@ -10,10 +10,10 @@
 #include <KLocalizedString>
 #include <QLineEdit>
 
+#include "libksieve_debug.h"
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QXmlStreamReader>
-#include "libksieve_debug.h"
 
 using namespace KSieveUi;
 SieveActionBreak::SieveActionBreak(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -53,13 +53,13 @@ void SieveActionBreak::setParamWidgetValue(QXmlStreamReader &element, QWidget *w
             }
         } else if (tagName == QLatin1String("str")) {
             element.skipCurrentElement();
-            //Nothing
+            // Nothing
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             element.skipCurrentElement();
-            //implement in the future ?
+            // implement in the future ?
         } else {
             unknownTag(tagName, error);
             qCDebug(LIBKSIEVE_LOG) << "SieveActionBreak::setParamWidgetValue unknown tag " << tagName;
@@ -87,7 +87,7 @@ QString SieveActionBreak::help() const
     return i18n("The break command terminates the closest enclosing loop.");
 }
 
-QStringList SieveActionBreak::needRequires(QWidget */*parent*/) const
+QStringList SieveActionBreak::needRequires(QWidget * /*parent*/) const
 {
     return QStringList() << QStringLiteral("foreverypart");
 }

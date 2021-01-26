@@ -7,13 +7,14 @@
 #ifndef SIEVEEDITORGRAPHICALMODEWIDGET_H
 #define SIEVEEDITORGRAPHICALMODEWIDGET_H
 
+#include "ksieveui_private_export.h"
 #include "sieveeditorgraphicalmodewidgetabstract.h"
 #include "util/sieveimapaccountsettings.h"
-#include "ksieveui_private_export.h"
 class QSplitter;
 class QStackedWidget;
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveScriptPage;
 class SieveScriptListBox;
 class SieveEditorParsingMissingFeatureWarning;

@@ -8,7 +8,8 @@
 
 #include <QToolButton>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveHelpButton : public QToolButton
 {
     Q_OBJECT

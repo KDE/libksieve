@@ -5,12 +5,12 @@
 */
 
 #include "findaccountinfojobtest.h"
-#include "../util_p.h"
-#include "util/findaccountinfojob.h"
-#include "imapresourcesettings.h"
-#include "akonadiimapsettinginterfacetest.h"
 #include "../abstractakonadiimapsettinginterface.h"
 #include "../sieveimappasswordprovider.h"
+#include "../util_p.h"
+#include "akonadiimapsettinginterfacetest.h"
+#include "imapresourcesettings.h"
+#include "util/findaccountinfojob.h"
 #include <QSignalSpy>
 #include <QTest>
 QTEST_MAIN(FindAccountInfoJobTest)
@@ -30,7 +30,6 @@ public:
     }
 
     AkonadiImapSettingInterfaceDataTest *const mData;
-
 };
 
 FindAccountInfoJobTest::FindAccountInfoJobTest(QObject *parent)
@@ -73,7 +72,7 @@ void FindAccountInfoJobTest::shouldAssignValue_data()
         data1.sieveVacationFilename = QStringLiteral("vacation.siv");
         data1.safety = QStringLiteral("SAFETY");
         data1.alternateAuthentication = -1;
-        //MailTransport::Transport::EnumAuthenticationType::CRAM_MD5 = 2
+        // MailTransport::Transport::EnumAuthenticationType::CRAM_MD5 = 2
         data1.authentication = 2;
         data1.sieveAlternateUrl = QString();
         data1.password = QStringLiteral("password1");
@@ -93,7 +92,7 @@ void FindAccountInfoJobTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setPassword(password);
 
         info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::Plain);
-        //TODO fix encryptionmode
+        // TODO fix encryptionmode
         info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::Unencrypted);
 
         QTest::newRow("sievereuseconfig1") << data1 << info1 << true << false;
@@ -113,7 +112,7 @@ void FindAccountInfoJobTest::shouldAssignValue_data()
         data1.sieveVacationFilename = QStringLiteral("vacation.siv");
         data1.safety = QStringLiteral("SAFETY");
         data1.alternateAuthentication = -1;
-        //MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
+        // MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
         data1.authentication = 0;
         data1.sieveAlternateUrl = QString();
         data1.password = QStringLiteral("password2");
@@ -133,7 +132,7 @@ void FindAccountInfoJobTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setPassword(password);
 
         info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::ClearText);
-        //TODO fix encryptionmode
+        // TODO fix encryptionmode
         info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::Unencrypted);
 
         QTest::newRow("sievereuseconfig2") << data1 << info1 << true << true;
@@ -152,7 +151,7 @@ void FindAccountInfoJobTest::shouldAssignValue_data()
         data1.sieveVacationFilename = QStringLiteral("vacation.siv");
         data1.safety = QStringLiteral("SSL");
         data1.alternateAuthentication = -1;
-        //MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
+        // MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
         data1.authentication = 0;
         data1.sieveAlternateUrl = QString();
         data1.password = QStringLiteral("password2");
@@ -172,7 +171,7 @@ void FindAccountInfoJobTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setPassword(password);
 
         info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::ClearText);
-        //TODO fix encryptionmode
+        // TODO fix encryptionmode
         info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::SSLorTLS);
 
         QTest::newRow("sievereuseconfig2ssl") << data1 << info1 << true << true;
@@ -192,7 +191,7 @@ void FindAccountInfoJobTest::shouldAssignValue_data()
         data1.sieveVacationFilename = QStringLiteral("vacation.siv");
         data1.safety = QStringLiteral("STARTTLS");
         data1.alternateAuthentication = -1;
-        //MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
+        // MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
         data1.authentication = 0;
         data1.sieveAlternateUrl = QString();
         data1.password = QStringLiteral("password2");
@@ -212,7 +211,7 @@ void FindAccountInfoJobTest::shouldAssignValue_data()
         info1.sieveImapAccountSettings.setPassword(password);
 
         info1.sieveImapAccountSettings.setAuthenticationType(KSieveUi::SieveImapAccountSettings::ClearText);
-        //TODO fix encryptionmode
+        // TODO fix encryptionmode
         info1.sieveImapAccountSettings.setEncryptionMode(KSieveUi::SieveImapAccountSettings::STARTTLS);
 
         QTest::newRow("sievereuseconfig2startls") << data1 << info1 << true << true;
@@ -232,7 +231,7 @@ void FindAccountInfoJobTest::shouldAssignValue_data()
         data1.sieveVacationFilename = QStringLiteral("vacation.siv");
         data1.safety = QStringLiteral("SAFETY");
         data1.alternateAuthentication = -1;
-        //MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
+        // MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
         data1.authentication = 0;
         data1.sieveAlternateUrl = QString();
         data1.password = QStringLiteral("password2");
@@ -264,7 +263,7 @@ void FindAccountInfoJobTest::shouldAssignValue_data()
         data1.sieveVacationFilename = QStringLiteral("vacation.siv");
         data1.safety = QStringLiteral("SAFETY");
         data1.alternateAuthentication = 4;
-        //MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
+        // MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
         data1.authentication = 3;
         data1.sieveAlternateUrl = QStringLiteral("bla.bla.com");
         data1.password = imapPasswd;
@@ -305,7 +304,7 @@ void FindAccountInfoJobTest::shouldAssignValue_data()
         data1.sieveVacationFilename = QStringLiteral("vacation.siv");
         data1.safety = QStringLiteral("SAFETY");
         data1.alternateAuthentication = 4;
-        //MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
+        // MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
         data1.authentication = 3;
         data1.sieveAlternateUrl = QStringLiteral("bla.bla.com");
         data1.password = imapPasswd;
@@ -347,7 +346,7 @@ void FindAccountInfoJobTest::shouldAssignValue_data()
         data1.sieveVacationFilename = QStringLiteral("vacation.siv");
         data1.safety = QStringLiteral("SSL");
         data1.alternateAuthentication = 4;
-        //MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
+        // MailTransport::Transport::EnumAuthenticationType::PLAIN = 0
         data1.authentication = 3;
         data1.sieveAlternateUrl = QStringLiteral("bla.bla.com");
         data1.password = imapPasswd;
@@ -389,7 +388,7 @@ void FindAccountInfoJobTest::shouldAssignValue_data()
         data1.sieveVacationFilename = QStringLiteral("vacation.siv");
         data1.safety = QStringLiteral("STARTTLS");
         data1.alternateAuthentication = 4;
-        //MailTransport::Transport::EnumAuthenticationType::DigestMD5 = 3
+        // MailTransport::Transport::EnumAuthenticationType::DigestMD5 = 3
         data1.authentication = 3;
         data1.sieveAlternateUrl = QStringLiteral("bla.bla.com");
         data1.password = imapPasswd;
@@ -431,7 +430,7 @@ void FindAccountInfoJobTest::shouldAssignValue_data()
         data1.sieveVacationFilename = QStringLiteral("vacation.siv");
         data1.safety = QStringLiteral("STARTTLS");
         data1.alternateAuthentication = 4;
-        //MailTransport::Transport::EnumAuthenticationType::DigestMD5 = 3
+        // MailTransport::Transport::EnumAuthenticationType::DigestMD5 = 3
         data1.authentication = 4;
         data1.sieveAlternateUrl = QStringLiteral("bla.bla.com");
         data1.password = imapPasswd;
@@ -472,7 +471,7 @@ void FindAccountInfoJobTest::shouldAssignValue_data()
         data1.sieveVacationFilename = QStringLiteral("vacation.siv");
         data1.safety = QStringLiteral("STARTTLS");
         data1.alternateAuthentication = 4;
-        //MailTransport::Transport::EnumAuthenticationType::DigestMD5 = 3
+        // MailTransport::Transport::EnumAuthenticationType::DigestMD5 = 3
         data1.authentication = 4;
         data1.sieveAlternateUrl = QStringLiteral("bla.bla.com");
         data1.password = imapPasswd;
@@ -514,7 +513,7 @@ void FindAccountInfoJobTest::shouldAssignValue_data()
         data1.sieveVacationFilename = QStringLiteral("vacation.siv");
         data1.safety = QStringLiteral("STARTTLS");
         data1.alternateAuthentication = 4;
-        //MailTransport::Transport::EnumAuthenticationType::PLAIN = 2
+        // MailTransport::Transport::EnumAuthenticationType::PLAIN = 2
         data1.authentication = 2;
         data1.sieveAlternateUrl = QStringLiteral("bla.bla.com");
         data1.password = imapPasswd;
@@ -555,5 +554,3 @@ void FindAccountInfoJobTest::shouldAssignValue()
     }
     QVERIFY(equal);
 }
-
-

@@ -7,7 +7,8 @@
 #define SIEVEACTIONENCLOSE_H
 #include "sieveaction.h"
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveActionEnclose : public SieveAction
 {
     Q_OBJECT

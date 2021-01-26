@@ -5,11 +5,11 @@
 */
 
 #include "vacationutils.h"
-#include "vacationscriptextractor.h"
 #include "legacy/vacationutils.h"
 #include "sieve-vacation.h"
-#include <KIdentityManagement/IdentityManager>
+#include "vacationscriptextractor.h"
 #include <KIdentityManagement/Identity>
+#include <KIdentityManagement/IdentityManager>
 
 #include <KLocalizedString>
 #include <QDate>
@@ -19,7 +19,7 @@
 using KMime::Types::AddrSpecList;
 using namespace KSieveUi;
 
-static inline QString dotstuff(QString s)     // krazy:exclude=passbyvalue
+static inline QString dotstuff(QString s) // krazy:exclude=passbyvalue
 {
     if (s.startsWith(QLatin1Char('.'))) {
         return QLatin1Char('.') + s.replace(QLatin1String("\n."), QStringLiteral("\n.."));
@@ -62,17 +62,18 @@ KSieveUi::VacationUtils::MailAction KSieveUi::VacationUtils::defaultMailAction()
 
 QString KSieveUi::VacationUtils::defaultMessageText()
 {
-    return i18n("I am out of office till %1.\n"
-                "\n"
-                "In urgent cases, please contact Mrs. \"vacation replacement\"\n"
-                "\n"
-                "email: \"email address of vacation replacement\"\n"
-                "phone: +49 711 1111 11\n"
-                "fax.:  +49 711 1111 12\n"
-                "\n"
-                "Yours sincerely,\n"
-                "-- \"enter your name and email address here\"\n",
-                QLocale().toString(QDate::currentDate().addDays(1)));
+    return i18n(
+        "I am out of office till %1.\n"
+        "\n"
+        "In urgent cases, please contact Mrs. \"vacation replacement\"\n"
+        "\n"
+        "email: \"email address of vacation replacement\"\n"
+        "phone: +49 711 1111 11\n"
+        "fax.:  +49 711 1111 12\n"
+        "\n"
+        "Yours sincerely,\n"
+        "-- \"enter your name and email address here\"\n",
+        QLocale().toString(QDate::currentDate().addDays(1)));
 }
 
 int VacationUtils::defaultNotificationInterval()
@@ -126,11 +127,15 @@ VacationUtils::Vacation parseScriptLegacy(const QString &script)
 {
     KSieveUi::VacationUtils::Vacation vacation;
     vacation.active = true;
-    vacation.valid = Legacy::VacationUtils::parseScript(script, vacation.messageText,
+    vacation.valid = Legacy::VacationUtils::parseScript(script,
+                                                        vacation.messageText,
                                                         vacation.subject,
-                                                        vacation.notificationInterval, vacation.aliases,
-                                                        vacation.sendForSpam, vacation.reactOndomainName,
-                                                        vacation.startDate, vacation.endDate);
+                                                        vacation.notificationInterval,
+                                                        vacation.aliases,
+                                                        vacation.sendForSpam,
+                                                        vacation.reactOndomainName,
+                                                        vacation.startDate,
+                                                        vacation.endDate);
     return vacation;
 }
 
@@ -155,8 +160,7 @@ VacationUtils::Vacation VacationUtils::parseScript(const QString &script)
     // the end, leading to a parse error.
     const QByteArray scriptUTF8 = script.trimmed().toUtf8();
     qCDebug(LIBKSIEVE_LOG) << "scriptUtf8 = \"" + scriptUTF8 + "\"";
-    KSieve::Parser parser(scriptUTF8.begin(),
-                          scriptUTF8.begin() + scriptUTF8.length());
+    KSieve::Parser parser(scriptUTF8.begin(), scriptUTF8.begin() + scriptUTF8.length());
     VacationDataExtractor vdx;
     SpamDataExtractor sdx;
     DomainRestrictionDataExtractor drdx;
@@ -192,8 +196,7 @@ VacationUtils::Vacation VacationUtils::parseScript(const QString &script)
     if (!vacation.active && !vdx.ifComment().isEmpty()) {
         const QByteArray newScript = QByteArrayLiteral("if ") + vdx.ifComment().toUtf8() + QByteArrayLiteral("{vacation;}");
         tsb = KSieveExt::MultiScriptBuilder(&sdx, &drdx, &dx);
-        KSieve::Parser activeScriptParser(newScript.begin(),
-                                          newScript.begin() + newScript.length());
+        KSieve::Parser activeScriptParser(newScript.begin(), newScript.begin() + newScript.length());
         activeScriptParser.setScriptBuilder(&tsb);
         if (!activeScriptParser.parse()) {
             vacation.valid = false;
@@ -238,22 +241,18 @@ QString KSieveUi::VacationUtils::composeScript(const Vacation &vacation)
     if (vacation.startDate.isValid()) {
         if (vacation.startTime.isValid()) {
             const QDateTime start(vacation.startDate, vacation.startTime);
-            condition.append(QStringLiteral("currentdate :value \"ge\" \"iso8601\" \"%1\"")
-                             .arg(start.toString(Qt::ISODate)));
+            condition.append(QStringLiteral("currentdate :value \"ge\" \"iso8601\" \"%1\"").arg(start.toString(Qt::ISODate)));
         } else {
-            condition.append(QStringLiteral("currentdate :value \"ge\" \"date\" \"%1\"")
-                             .arg(vacation.startDate.toString(Qt::ISODate)));
+            condition.append(QStringLiteral("currentdate :value \"ge\" \"date\" \"%1\"").arg(vacation.startDate.toString(Qt::ISODate)));
         }
     }
 
     if (vacation.endDate.isValid()) {
         if (vacation.endTime.isValid()) {
             const QDateTime end(vacation.endDate, vacation.endTime);
-            condition.append(QStringLiteral("currentdate :value \"le\" \"iso8601\" \"%1\"")
-                             .arg(end.toString(Qt::ISODate)));
+            condition.append(QStringLiteral("currentdate :value \"le\" \"iso8601\" \"%1\"").arg(end.toString(Qt::ISODate)));
         } else {
-            condition.append(QStringLiteral("currentdate :value \"le\" \"date\" \"%1\"")
-                             .arg(vacation.endDate.toString(Qt::ISODate)));
+            condition.append(QStringLiteral("currentdate :value \"le\" \"date\" \"%1\"").arg(vacation.endDate.toString(Qt::ISODate)));
         }
     }
 
@@ -273,7 +272,9 @@ QString KSieveUi::VacationUtils::composeScript(const Vacation &vacation)
         sl.reserve(vacation.aliases.count());
         AddrSpecList::const_iterator end = vacation.aliases.constEnd();
         for (AddrSpecList::const_iterator it = vacation.aliases.begin(); it != end; ++it) {
-            sl.push_back(QLatin1Char('"') + (*it).asString().replace(QLatin1Char('\\'), QStringLiteral("\\\\")).replace(QLatin1Char('"'), QStringLiteral("\\\"")) + QLatin1Char('"'));
+            sl.push_back(QLatin1Char('"')
+                         + (*it).asString().replace(QLatin1Char('\\'), QStringLiteral("\\\\")).replace(QLatin1Char('"'), QStringLiteral("\\\""))
+                         + QLatin1Char('"'));
             aliases.push_back((*it).asString());
         }
         addressesArgument += sl.join(QLatin1String(", ")) + QStringLiteral(" ] ");
@@ -345,10 +346,8 @@ QString KSieveUi::VacationUtils::mergeRequireLine(const QString &script, const Q
         return script;
     }
 
-    KSieve::Parser parser(scriptUTF8.begin(),
-                          scriptUTF8.begin() + scriptUTF8.length());
-    KSieve::Parser parserUpdate(scriptUpdateUTF8.begin(),
-                                scriptUpdateUTF8.begin() + scriptUpdateUTF8.length());
+    KSieve::Parser parser(scriptUTF8.begin(), scriptUTF8.begin() + scriptUTF8.length());
+    KSieve::Parser parserUpdate(scriptUpdateUTF8.begin(), scriptUpdateUTF8.begin() + scriptUpdateUTF8.length());
     RequireExtractor rx, rxUpdate;
     parser.setScriptBuilder(&rx);
     parserUpdate.setScriptBuilder(&rxUpdate);
@@ -396,10 +395,8 @@ QString KSieveUi::VacationUtils::updateVacationBlock(const QString &oldScript, c
         return oldScript;
     }
 
-    KSieve::Parser parserOld(oldScriptUTF8.begin(),
-                             oldScriptUTF8.begin() + oldScriptUTF8.length());
-    KSieve::Parser parserNew(newScriptUTF8.begin(),
-                             newScriptUTF8.begin() + newScriptUTF8.length());
+    KSieve::Parser parserOld(oldScriptUTF8.begin(), oldScriptUTF8.begin() + oldScriptUTF8.length());
+    KSieve::Parser parserNew(newScriptUTF8.begin(), newScriptUTF8.begin() + newScriptUTF8.length());
     VacationDataExtractor vdxOld, vdxNew;
     RequireExtractor rx;
     KSieveExt::MultiScriptBuilder tsb(&vdxOld, &rx);
@@ -417,7 +414,7 @@ QString KSieveUi::VacationUtils::updateVacationBlock(const QString &oldScript, c
             lines.removeAt(startOld);
         }
     } else {
-        if (rx.commandFound()) {                // after require
+        if (rx.commandFound()) { // after require
             startOld = rx.lineEnd() + 1;
         } else {
             startOld = 0;

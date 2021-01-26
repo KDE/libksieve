@@ -7,16 +7,18 @@
 #ifndef FINDBARBASE_H
 #define FINDBARBASE_H
 
-#include <QWidget>
 #include "ksieveui_export.h"
+#include <QWidget>
 class QAction;
 class QPushButton;
 class QMenu;
 class QLabel;
-namespace PimCommon {
+namespace PimCommon
+{
 class LineEditWithCompleterNg;
 }
-namespace KSieveUi {
+namespace KSieveUi
+{
 class KSIEVEUI_EXPORT FindBarBase : public QWidget
 {
     Q_OBJECT

@@ -7,19 +7,21 @@
 #ifndef MANAGESIEVEWIDGET_H
 #define MANAGESIEVEWIDGET_H
 #include "ksieveui_export.h"
-#include <memory>
-#include <QUrl>
 #include <KSieveUi/SieveImapAccountSettings>
-#include <QWidget>
 #include <QMap>
+#include <QUrl>
+#include <QWidget>
+#include <memory>
 
 class QTreeWidgetItem;
 
-namespace KManageSieve {
+namespace KManageSieve
+{
 class SieveJob;
 }
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class ManageSieveTreeView;
 class ManageSieveWidgetPrivate;
 class ParseUserScriptJob;
@@ -31,13 +33,9 @@ class KSIEVEUI_EXPORT ManageSieveWidget : public QWidget
 {
     Q_OBJECT
 public:
-    enum SieveEditorMode {
-        NormalEditorMode = 0,
-        Kep14EditorMode
-    };
+    enum SieveEditorMode { NormalEditorMode = 0, Kep14EditorMode };
 
-    struct ScriptInfo
-    {
+    struct ScriptInfo {
         QUrl currentUrl;
         QStringList currentCapabilities;
         KSieveUi::SieveImapAccountSettings sieveImapAccountSettings;

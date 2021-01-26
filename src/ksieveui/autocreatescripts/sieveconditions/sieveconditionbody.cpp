@@ -4,16 +4,16 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionbody.h"
-#include "widgets/selectbodytypewidget.h"
-#include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
+#include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "editor/sieveeditorutil.h"
+#include "widgets/selectbodytypewidget.h"
 
 #include <KLocalizedString>
 
-#include <QWidget>
-#include <QHBoxLayout>
 #include "libksieve_debug.h"
+#include <QHBoxLayout>
+#include <QWidget>
 
 using namespace KSieveUi;
 SieveConditionBody::SieveConditionBody(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -59,7 +59,7 @@ QString SieveConditionBody::code(QWidget *w) const
     const AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
     const QString editValue = AutoCreateScriptUtil::createAddressList(edit->code().trimmed(), false);
     return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("body %1 %2 %3").arg(bodyValue, matchValue, editValue)
-           + AutoCreateScriptUtil::generateConditionComment(comment());
+        + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionBody::needRequires(QWidget *w) const
@@ -82,7 +82,8 @@ QString SieveConditionBody::serverNeedsCapability() const
 QString SieveConditionBody::help() const
 {
     return i18n(
-        "The body test matches content in the body of an email message, that is, anything following the first empty line after the header.  (The empty line itself, if present, is not considered to be part of the body.)");
+        "The body test matches content in the body of an email message, that is, anything following the first empty line after the header.  (The empty line "
+        "itself, if present, is not considered to be part of the body.)");
 }
 
 void SieveConditionBody::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
@@ -112,7 +113,7 @@ void SieveConditionBody::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             ++indexStr;
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else if (tagName == QLatin1String("list")) {

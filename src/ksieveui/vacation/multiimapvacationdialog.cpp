@@ -5,22 +5,22 @@
 */
 
 #include "multiimapvacationdialog.h"
-#include "vacationpagewidget.h"
 #include "multiimapvacationmanager.h"
 #include "vacation/searchserverwithvacationsupportjob.h"
+#include "vacationpagewidget.h"
 
 #include <KLocalizedString>
-#include <KSharedConfig>
 #include <KMessageBox>
+#include <KSharedConfig>
 #include <QTabWidget>
 
-#include <QTabBar>
-#include <QStackedWidget>
-#include <QVBoxLayout>
-#include <QLabel>
 #include <KConfigGroup>
 #include <QDialogButtonBox>
+#include <QLabel>
 #include <QPushButton>
+#include <QStackedWidget>
+#include <QTabBar>
+#include <QVBoxLayout>
 
 using namespace KSieveUi;
 
@@ -71,11 +71,9 @@ void MultiImapVacationDialog::reject()
         auto vacationPage = qobject_cast<VacationPageWidget *>(d->mTabWidget->widget(i));
         if (vacationPage) {
             if (vacationPage->wasChanged()) {
-                if (KMessageBox::questionYesNo(
-                        this,
-                        i18nc("@info", "Do you really want to cancel?"),
-                        i18nc("@title:window", "Confirmation")) == KMessageBox::Yes) {
-                    QDialog::reject();     // Discard current changes
+                if (KMessageBox::questionYesNo(this, i18nc("@info", "Do you really want to cancel?"), i18nc("@title:window", "Confirmation"))
+                    == KMessageBox::Yes) {
+                    QDialog::reject(); // Discard current changes
                 }
                 canCloseDialog = false;
                 break;
@@ -103,13 +101,14 @@ void MultiImapVacationDialog::init()
     auto w = new QWidget;
     auto vbox = new QVBoxLayout;
     w->setLayout(vbox);
-    auto lab = new QLabel(i18n("KMail's Out of Office Reply functionality relies on "
-                                  "server-side filtering. You have not yet configured an "
-                                  "IMAP server for this. "
-                                  "You can do this on the \"Filtering\" tab of the IMAP "
-                                  "account configuration."));
+    auto lab =
+        new QLabel(i18n("KMail's Out of Office Reply functionality relies on "
+                        "server-side filtering. You have not yet configured an "
+                        "IMAP server for this. "
+                        "You can do this on the \"Filtering\" tab of the IMAP "
+                        "account configuration."));
     lab->setWordWrap(true);
-    lab->setAlignment(Qt::AlignHCenter|Qt::AlignVCenter);
+    lab->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     QFont font = lab->font();
     font.setBold(true);
     font.setPointSize(font.pointSize() + 2);
@@ -128,7 +127,10 @@ void MultiImapVacationDialog::initialize()
 {
     auto job = new SearchServerWithVacationSupportJob(this);
     job->setPasswordProvider(d->mVacationManager->passwordProvider());
-    connect(job, &SearchServerWithVacationSupportJob::searchServerWithVacationSupportFinished, this, &MultiImapVacationDialog::slotSearchServerWithVacationSupportFinished);
+    connect(job,
+            &SearchServerWithVacationSupportJob::searchServerWithVacationSupportFinished,
+            this,
+            &MultiImapVacationDialog::slotSearchServerWithVacationSupportFinished);
     job->start();
 }
 
@@ -150,7 +152,7 @@ void MultiImapVacationDialog::slotSearchServerWithVacationSupportFinished(const 
         connect(mButtonBox, &QDialogButtonBox::accepted, this, &MultiImapVacationDialog::slotOkClicked);
         connect(mButtonBox, &QDialogButtonBox::rejected, this, &MultiImapVacationDialog::slotCanceled);
         connect(mButtonBox->button(QDialogButtonBox::RestoreDefaults), &QPushButton::clicked, this, &MultiImapVacationDialog::slotDefaultClicked);
-    } else { //Empty
+    } else { // Empty
         d->mStackedWidget->setCurrentIndex(1);
         mButtonBox->setStandardButtons(QDialogButtonBox::Close);
         connect(mButtonBox, &QDialogButtonBox::accepted, this, &MultiImapVacationDialog::slotOkClicked);
@@ -160,7 +162,6 @@ void MultiImapVacationDialog::slotSearchServerWithVacationSupportFinished(const 
         d->mTabWidget->tabBar()->hide();
     }
 }
-
 
 void MultiImapVacationDialog::slotCanceled()
 {
@@ -208,7 +209,7 @@ void MultiImapVacationDialog::slotOkClicked()
                 d->mListCreateJob.append(job);
             }
             if (errorFound) {
-                //Clean up job
+                // Clean up job
                 qDeleteAll(d->mListCreateJob);
                 d->mListCreateJob.clear();
                 break;

@@ -7,18 +7,20 @@
 #ifndef KSIEVE_KSIEVEUI_MANAGESIEVESCRIPTSDIALOG_H
 #define KSIEVE_KSIEVEUI_MANAGESIEVESCRIPTSDIALOG_H
 
-#include "ksieveui_export.h"
 #include "ksieveui/managesievewidget.h"
-#include <memory>
+#include "ksieveui_export.h"
 #include <QDialog>
+#include <memory>
 
 class QTreeWidgetItem;
 
-namespace KManageSieve {
+namespace KManageSieve
+{
 class SieveJob;
 }
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveEditor;
 class ManageSieveScriptsDialogPrivate;
 class SieveImapPasswordProvider;

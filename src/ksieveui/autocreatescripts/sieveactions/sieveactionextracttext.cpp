@@ -9,11 +9,11 @@
 #include <KLocalizedString>
 #include <QLineEdit>
 
+#include "libksieve_debug.h"
+#include <QGridLayout>
 #include <QLabel>
 #include <QSpinBox>
 #include <QXmlStreamReader>
-#include "libksieve_debug.h"
-#include <QGridLayout>
 
 using namespace KSieveUi;
 SieveActionExtractText::SieveActionExtractText(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -56,7 +56,7 @@ void SieveActionExtractText::setParamWidgetValue(QXmlStreamReader &element, QWid
 
         if (tagName == QLatin1String("tag")) {
             element.skipCurrentElement();
-            //TODO ?
+            // TODO ?
         } else if (tagName == QLatin1String("num")) {
             auto numberOfCharacters = w->findChild<QSpinBox *>(QStringLiteral("numberOfCharacters"));
             numberOfCharacters->setValue(element.readElementText().toInt());
@@ -65,10 +65,10 @@ void SieveActionExtractText::setParamWidgetValue(QXmlStreamReader &element, QWid
             variableName->setText(element.readElementText());
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             element.skipCurrentElement();
-            //implement in the future ?
+            // implement in the future ?
         } else {
             unknownTag(tagName, error);
             qCDebug(LIBKSIEVE_LOG) << " SieveActionExtractText::setParamWidgetValue unknown tagName " << tagName;

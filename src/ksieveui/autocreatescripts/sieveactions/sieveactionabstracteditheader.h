@@ -8,12 +8,16 @@
 
 #include "sieveaction.h"
 #include <QStringList>
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveActionAbstractEditHeader : public SieveAction
 {
     Q_OBJECT
 public:
-    SieveActionAbstractEditHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent = nullptr);
+    SieveActionAbstractEditHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget,
+                                  const QString &name,
+                                  const QString &label,
+                                  QObject *parent = nullptr);
 
     Q_REQUIRED_RESULT QStringList needRequires(QWidget *parent) const override;
 

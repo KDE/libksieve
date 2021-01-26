@@ -7,9 +7,10 @@
 #ifndef SIEVEEDITORGRAPHICALMODEWIDGETABSTRACT_H
 #define SIEVEEDITORGRAPHICALMODEWIDGETABSTRACT_H
 
-#include <editor/sieveeditorabstractwidget.h>
 #include "ksieveui_private_export.h"
-namespace KSieveUi {
+#include <editor/sieveeditorabstractwidget.h>
+namespace KSieveUi
+{
 class KSIEVEUI_TESTS_EXPORT SieveEditorGraphicalModeWidgetAbstract : public KSieveUi::SieveEditorAbstractWidget
 {
     Q_OBJECT

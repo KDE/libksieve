@@ -7,15 +7,16 @@
 #ifndef SIEVEACTIONWIDGETLISTER_H
 #define SIEVEACTIONWIDGETLISTER_H
 
-#include <Libkdepim/KWidgetLister>
 #include "sieveglobalvariablewidget.h"
+#include <Libkdepim/KWidgetLister>
 class QPushButton;
 class QComboBox;
 class QGridLayout;
 class QToolButton;
 class QXmlStreamReader;
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveAction;
 class SieveHelpButton;
 class SieveEditorGraphicalModeWidget;
@@ -81,6 +82,7 @@ Q_SIGNALS:
 protected:
     void clearWidget(QWidget *aWidget) override;
     QWidget *createWidget(QWidget *parent) override;
+
 private:
     void reconnectWidget(SieveActionWidget *w);
     void updateAddRemoveButton();

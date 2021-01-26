@@ -7,19 +7,19 @@
 #include "sieveeditorgraphicalmodewidget.h"
 #include "autocreatescripts/sievescriptparsingerrordialog.h"
 #include "ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.h"
-#include "sievescriptlistbox.h"
 #include "scriptsparsing/parsingutil.h"
+#include "sievescriptlistbox.h"
 #include "sievescriptpage.h"
 
-#include <KLocalizedString>
-#include <KSharedConfig>
 #include <KConfigGroup>
+#include <KLocalizedString>
 #include <KMessageBox>
+#include <KSharedConfig>
 
-#include <QVBoxLayout>
+#include "libksieve_debug.h"
 #include <QSplitter>
 #include <QStackedWidget>
-#include "libksieve_debug.h"
+#include <QVBoxLayout>
 
 using namespace KSieveUi;
 
@@ -67,7 +67,7 @@ void SieveEditorGraphicalModeWidget::loadScript(const QString &doc, QString &err
 void SieveEditorGraphicalModeWidget::readConfig()
 {
     KConfigGroup group(KSharedConfig::openConfig(), "AutoCreateScriptDialog");
-    const QList<int> size { 100, 400 };
+    const QList<int> size{100, 400};
     mSplitter->setSizes(group.readEntry("mainSplitter", size));
 }
 

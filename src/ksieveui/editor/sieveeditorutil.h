@@ -9,8 +9,10 @@
 
 #include <QUrl>
 
-namespace KSieveUi {
-namespace SieveEditorUtil {
+namespace KSieveUi
+{
+namespace SieveEditorUtil
+{
 enum HelpVariableName {
     UnknownHelp,
     AddressCondition,

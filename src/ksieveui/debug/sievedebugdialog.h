@@ -12,19 +12,22 @@
 #include "ksieveui_export.h"
 #include "util_p.h"
 
+#include <KSyntaxHighlighting/Repository>
 #include <QDialog>
 #include <QUrl>
-#include <KSyntaxHighlighting/Repository>
 
 #include <QStringList>
 
-namespace KManageSieve {
+namespace KManageSieve
+{
 class SieveJob;
 }
-namespace KPIMTextEdit {
+namespace KPIMTextEdit
+{
 class PlainTextEditorWidget;
 }
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveImapPasswordProvider;
 
 /**
@@ -49,6 +52,7 @@ private Q_SLOTS:
     void slotDiagNextScript();
 
     void slotShutDownJob();
+
 private:
     void slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
     void slotFindAccountInfoForScriptFinished(const KSieveUi::Util::AccountInfo &info);

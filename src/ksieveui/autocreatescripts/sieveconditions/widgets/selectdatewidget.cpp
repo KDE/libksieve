@@ -6,16 +6,16 @@
 #include "selectdatewidget.h"
 #include "sievedatespinbox.h"
 
+#include <KDateComboBox>
 #include <KLocalizedString>
+#include <KTimeComboBox>
 #include <QComboBox>
 #include <QLineEdit>
-#include <KDateComboBox>
-#include <KTimeComboBox>
 
+#include "libksieve_debug.h"
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QStackedWidget>
-#include "libksieve_debug.h"
 #include <QTime>
 
 using namespace KSieveUi;
@@ -129,7 +129,7 @@ QString SelectDateWidget::dateValue(SelectDateWidget::DateType type) const
         str = QLocale::c().toString(mDateEdit->date());
         break;
     case Julian:
-        //TODO
+        // TODO
         str = QLocale::c().toString(mDateEdit->date());
         break;
     case Time:

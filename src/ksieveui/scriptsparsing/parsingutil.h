@@ -7,10 +7,12 @@
 #ifndef PARSINGUTIL_H
 #define PARSINGUTIL_H
 
-#include <QString>
 #include "ksieveui_private_export.h"
-namespace KSieveUi {
-namespace ParsingUtil {
+#include <QString>
+namespace KSieveUi
+{
+namespace ParsingUtil
+{
 KSIEVEUI_TESTS_EXPORT QString parseScript(const QString &script, bool &result);
 }
 }

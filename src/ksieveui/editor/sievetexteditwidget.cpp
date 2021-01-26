@@ -5,8 +5,8 @@
 */
 
 #include "sievetexteditwidget.h"
-#include <QVBoxLayout>
 #include "editor/sievetextedit.h"
+#include <QVBoxLayout>
 
 #include <KPIMTextEdit/PlainTextEditFindBar>
 #include <KPIMTextEdit/SlideContainer>

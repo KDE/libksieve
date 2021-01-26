@@ -7,9 +7,10 @@
 #ifndef VACATIONMAILLINEEDIT_H
 #define VACATIONMAILLINEEDIT_H
 
-#include <QLineEdit>
 #include "ksieveui_private_export.h"
-namespace KSieveUi {
+#include <QLineEdit>
+namespace KSieveUi
+{
 class KSIEVEUI_TESTS_EXPORT VacationMailLineEdit : public QLineEdit
 {
     Q_OBJECT

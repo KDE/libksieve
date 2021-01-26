@@ -5,12 +5,12 @@
 */
 
 #include "multiimapvacationmanager.h"
-#include "vacationcheckjob.h"
 #include "sieveimapinstance/sieveimapinstanceinterface.h"
 #include "util/util_p.h"
+#include "vacationcheckjob.h"
+#include <kmanagesieve/sievejob.h>
 #include <managescriptsjob/checkkolabkep14supportjob.h>
 #include <managescriptsjob/parseuserscriptjob.h>
-#include <kmanagesieve/sievejob.h>
 
 #include "libksieve_debug.h"
 #include "searchserverwithvacationsupportjob.h"
@@ -55,7 +55,10 @@ void MultiImapVacationManager::checkVacation()
 
     auto job = new SearchServerWithVacationSupportJob(this);
     job->setPasswordProvider(passwordProvider());
-    connect(job, &SearchServerWithVacationSupportJob::searchServerWithVacationSupportFinished, this, &MultiImapVacationManager::slotSearchServerWithVacationSupportFinished);
+    connect(job,
+            &SearchServerWithVacationSupportJob::searchServerWithVacationSupportFinished,
+            this,
+            &MultiImapVacationManager::slotSearchServerWithVacationSupportFinished);
     job->start();
 }
 

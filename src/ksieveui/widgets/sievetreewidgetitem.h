@@ -7,16 +7,17 @@
 #ifndef SIEVETREEWIDGETITEM_H
 #define SIEVETREEWIDGETITEM_H
 
+#include "ksieveui_export.h"
 #include <KPixmapSequence>
 #include <QTreeWidgetItem>
 #include <memory>
-#include "ksieveui_export.h"
 
 class QTimer;
 class QTreeWidget;
 class QTreeWidgetItem;
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveTreeWidgetProgress;
 class SieveTreeWidgetItemPrivate;
 /**

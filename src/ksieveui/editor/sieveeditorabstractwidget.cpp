@@ -10,8 +10,8 @@
 #include <KMessageBox>
 #include <QFileDialog>
 
-#include <QTextStream>
 #include <QPointer>
+#include <QTextStream>
 
 #include <errno.h>
 
@@ -28,8 +28,7 @@ SieveEditorAbstractWidget::~SieveEditorAbstractWidget()
 void SieveEditorAbstractWidget::saveAs(const QString &defaultName)
 {
     const QString filter = i18n("Sieve Files (*.siv);;All Files (*)");
-    PimCommon::Util::saveTextAs(currentscript(), filter, this, QUrl::fromLocalFile(defaultName),
-                                i18nc("@title:window", "Save Script"));
+    PimCommon::Util::saveTextAs(currentscript(), filter, this, QUrl::fromLocalFile(defaultName), i18nc("@title:window", "Save Script"));
 }
 
 KSieveUi::SieveImapAccountSettings SieveEditorAbstractWidget::sieveImapAccountSettings() const

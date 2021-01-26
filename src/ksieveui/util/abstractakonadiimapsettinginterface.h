@@ -9,7 +9,8 @@
 
 #include "ksieveui_private_export.h"
 #include <QString>
-namespace KSieveUi {
+namespace KSieveUi
+{
 class KSIEVEUI_TESTS_EXPORT AbstractAkonadiImapSettingInterface
 {
 public:
@@ -28,6 +29,7 @@ public:
     Q_REQUIRED_RESULT virtual int authentication() const;
     Q_REQUIRED_RESULT virtual QString sieveAlternateUrl() const;
     Q_REQUIRED_RESULT virtual int imapPort() const;
+
 private:
     Q_DISABLE_COPY(AbstractAkonadiImapSettingInterface)
 };

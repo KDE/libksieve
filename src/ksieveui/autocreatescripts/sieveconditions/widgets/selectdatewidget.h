@@ -6,9 +6,9 @@
 #ifndef SELECTDATEWIDGET_H
 #define SELECTDATEWIDGET_H
 
-#include <QWidget>
-#include <QSpinBox>
 #include "ksieveui_private_export.h"
+#include <QSpinBox>
+#include <QWidget>
 
 class QComboBox;
 class QLineEdit;
@@ -16,27 +16,14 @@ class QStackedWidget;
 class QSpinBox;
 class KDateComboBox;
 class KTimeComboBox;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveDateSpinBox;
 class KSIEVEUI_TESTS_EXPORT SelectDateWidget : public QWidget
 {
     Q_OBJECT
 public:
-    enum DateType {
-        Year = 0,
-        Month,
-        Day,
-        Date,
-        Julian,
-        Hour,
-        Minute,
-        Second,
-        Time,
-        Iso8601,
-        Std11,
-        Zone,
-        Weekday
-    };
+    enum DateType { Year = 0, Month, Day, Date, Julian, Hour, Minute, Second, Time, Iso8601, Std11, Zone, Weekday };
     explicit SelectDateWidget(QWidget *parent = nullptr);
     ~SelectDateWidget() override;
 

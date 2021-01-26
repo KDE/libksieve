@@ -8,7 +8,8 @@
 
 #include <QComboBox>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SelectImportanceCombobox : public QComboBox
 {
     Q_OBJECT

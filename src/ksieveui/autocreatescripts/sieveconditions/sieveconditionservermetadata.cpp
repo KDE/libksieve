@@ -11,10 +11,10 @@
 #include <KLocalizedString>
 #include <QLineEdit>
 
-#include <QWidget>
-#include <QHBoxLayout>
 #include "libksieve_debug.h"
+#include <QHBoxLayout>
 #include <QLabel>
+#include <QWidget>
 #include <QXmlStreamReader>
 
 using namespace KSieveUi;
@@ -111,7 +111,8 @@ QString SieveConditionServerMetaData::serverNeedsCapability() const
 QString SieveConditionServerMetaData::help() const
 {
     return i18n(
-        "This test retrieves the value of the server annotation \"annotation-name\".  The retrieved value is compared to the \"key-list\". The test returns true if the annotation exists and its value matches any of the keys.");
+        "This test retrieves the value of the server annotation \"annotation-name\".  The retrieved value is compared to the \"key-list\". The test returns "
+        "true if the annotation exists and its value matches any of the keys.");
 }
 
 void SieveConditionServerMetaData::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
@@ -123,20 +124,17 @@ void SieveConditionServerMetaData::setParamWidgetValue(QXmlStreamReader &element
         if (tagName == QLatin1String("str")) {
             const QString tagValue = element.readElementText();
             switch (index) {
-            case 0:
-            {
+            case 0: {
                 auto mailbox = w->findChild<QLineEdit *>(QStringLiteral("mailbox"));
                 mailbox->setText(tagValue);
                 break;
             }
-            case 1:
-            {
+            case 1: {
                 auto annotation = w->findChild<QLineEdit *>(QStringLiteral("annotation"));
                 annotation->setText(tagValue);
                 break;
             }
-            case 2:
-            {
+            case 2: {
                 auto value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
                 value->setCode(tagValue);
                 break;
@@ -152,7 +150,7 @@ void SieveConditionServerMetaData::setParamWidgetValue(QXmlStreamReader &element
             selectType->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {

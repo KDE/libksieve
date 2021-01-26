@@ -7,11 +7,12 @@
 #ifndef MOVEIMAPFOLDERWIDGET_H
 #define MOVEIMAPFOLDERWIDGET_H
 
-#include <QWidget>
-#include <KSieveUi/AbstractMoveImapFolderWidget>
 #include "ksieveui_private_export.h"
+#include <KSieveUi/AbstractMoveImapFolderWidget>
+#include <QWidget>
 class QLineEdit;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveImapAccountSettings;
 class KSIEVEUI_TESTS_EXPORT MoveImapFolderWidget : public KSieveUi::AbstractMoveImapFolderWidget
 {
@@ -24,6 +25,7 @@ public:
     Q_REQUIRED_RESULT QString text() const override;
 
     void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account) override;
+
 private:
     QLineEdit *mLineEdit = nullptr;
 };

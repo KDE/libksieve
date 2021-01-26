@@ -4,8 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#include "sievetextedit.h"
 #include "sievetexteditorspellcheckdecorator.h"
+#include "sievetextedit.h"
 using namespace KSieveUi;
 
 SieveTextEditorSpellCheckDecorator::SieveTextEditorSpellCheckDecorator(SieveTextEdit *plainTextEdit)

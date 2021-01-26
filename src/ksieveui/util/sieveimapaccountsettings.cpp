@@ -69,12 +69,8 @@ KSieveUi::SieveImapAccountSettings::AuthenticationMode SieveImapAccountSettings:
 
 bool SieveImapAccountSettings::operator==(const SieveImapAccountSettings &other) const
 {
-    return (mServerName == other.serverName())
-           && (mPassword == other.password())
-           && (mPort == other.port())
-           && (mUserName == other.userName())
-           && (mAuthenticationType == other.authenticationType())
-           && (mEncryptionMode == other.encryptionMode());
+    return (mServerName == other.serverName()) && (mPassword == other.password()) && (mPort == other.port()) && (mUserName == other.userName())
+        && (mAuthenticationType == other.authenticationType()) && (mEncryptionMode == other.encryptionMode());
 }
 
 bool SieveImapAccountSettings::isValid() const
@@ -92,7 +88,7 @@ void SieveImapAccountSettings::setEncryptionMode(SieveImapAccountSettings::Encry
     mEncryptionMode = encryptionMode;
 }
 
-QDebug operator <<(QDebug d, const SieveImapAccountSettings &settings)
+QDebug operator<<(QDebug d, const SieveImapAccountSettings &settings)
 {
     d << "serverName " << settings.serverName();
     d << "userName " << settings.userName();

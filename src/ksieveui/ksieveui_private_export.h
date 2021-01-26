@@ -11,11 +11,11 @@
 
 /* Classes which are exported only for unit tests */
 #ifdef BUILD_TESTING
-# ifndef KSIEVEUI_TESTS_EXPORT
-#  define KSIEVEUI_TESTS_EXPORT KSIEVEUI_EXPORT
-# endif
+#ifndef KSIEVEUI_TESTS_EXPORT
+#define KSIEVEUI_TESTS_EXPORT KSIEVEUI_EXPORT
+#endif
 #else /* not compiling tests */
-# define KSIEVEUI_TESTS_EXPORT
+#define KSIEVEUI_TESTS_EXPORT
 #endif
 
 #endif

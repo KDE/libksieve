@@ -25,18 +25,18 @@ void SieveDateSpinBoxTest::shouldAssignValue_data()
     QTest::addColumn<QString>("input");
     QTest::addColumn<QString>("output");
     QTest::addColumn<KSieveUi::SelectDateWidget::DateType>("type");
-    //Year
+    // Year
     QTest::newRow("empty") << QString() << QStringLiteral("0000") << KSieveUi::SelectDateWidget::Year;
     QTest::newRow("year-1") << QStringLiteral("1") << QStringLiteral("0001") << KSieveUi::SelectDateWidget::Year;
     QTest::newRow("year-*") << QStringLiteral("*") << QStringLiteral("*") << KSieveUi::SelectDateWidget::Year;
     QTest::newRow("year-500") << QStringLiteral("500") << QStringLiteral("0500") << KSieveUi::SelectDateWidget::Year;
 
-    //Month
+    // Month
     QTest::newRow("month-1") << QStringLiteral("1") << QStringLiteral("01") << KSieveUi::SelectDateWidget::Month;
     QTest::newRow("month-*") << QStringLiteral("*") << QStringLiteral("*") << KSieveUi::SelectDateWidget::Month;
     QTest::newRow("month-500") << QStringLiteral("500") << QStringLiteral("12") << KSieveUi::SelectDateWidget::Month;
 
-    //Second
+    // Second
     QTest::newRow("second-1") << QStringLiteral("1") << QStringLiteral("01") << KSieveUi::SelectDateWidget::Second;
     QTest::newRow("second-*") << QStringLiteral("*") << QStringLiteral("*") << KSieveUi::SelectDateWidget::Second;
     QTest::newRow("second-500") << QStringLiteral("500") << QStringLiteral("59") << KSieveUi::SelectDateWidget::Second;

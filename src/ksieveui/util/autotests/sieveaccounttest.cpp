@@ -92,7 +92,7 @@ void SieveAccountTest::shouldCreateIdentifier()
     account.setServerName(servername);
     account.setUserName(username);
 
-    //Identifier doesn't depend against theses settings
+    // Identifier doesn't depend against theses settings
     KSieveUi::SieveImapAccountSettings::AuthenticationMode type = KSieveUi::SieveImapAccountSettings::DigestMD5;
     KSieveUi::SieveImapAccountSettings::EncryptionMode mode = KSieveUi::SieveImapAccountSettings::SSLorTLS;
     account.setPort(42);

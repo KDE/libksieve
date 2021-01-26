@@ -8,7 +8,8 @@
 
 #include <QComboBox>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveEditorGraphicalModeWidget;
 class SelectAddressPartComboBox : public QComboBox
 {

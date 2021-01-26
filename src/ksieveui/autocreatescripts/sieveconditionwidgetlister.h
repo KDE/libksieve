@@ -15,7 +15,8 @@ class QXmlStreamReader;
 class QToolButton;
 class QComboBox;
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveCondition;
 class SieveHelpButton;
 class SieveEditorGraphicalModeWidget;

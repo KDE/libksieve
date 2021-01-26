@@ -9,22 +9,17 @@
 #ifndef SIEVE_H
 #define SIEVE_H
 
-#include <kio/tcpslavebase.h>
 #include <kio/authinfo.h>
+#include <kio/tcpslavebase.h>
 
-#include <QString>
 #include <QByteArray>
+#include <QString>
 #include <QStringList>
 
 class kio_sieveResponse
 {
 public:
-    enum responses {
-        NONE,
-        KEY_VAL_PAIR,
-        ACTION,
-        QUANTITY
-    };
+    enum responses { NONE, KEY_VAL_PAIR, ACTION, QUANTITY };
 
     kio_sieveResponse();
 
@@ -55,16 +50,8 @@ protected:
 class kio_sieveProtocol : public KIO::TCPSlaveBase
 {
 public:
-    enum connectionModes {
-        NORMAL,
-        CONNECTION_ORIENTED
-    };
-    enum Results {
-        OK,
-        NO,
-        BYE,
-        OTHER
-    };
+    enum connectionModes { NORMAL, CONNECTION_ORIENTED };
+    enum Results { OK, NO, BYE, OTHER };
 
     kio_sieveProtocol(const QByteArray &pool_socket, const QByteArray &app_socket);
     ~kio_sieveProtocol() override;
@@ -81,7 +68,7 @@ public:
     void setHost(const QString &host, quint16 port, const QString &user, const QString &pass) override;
     void openConnection() override;
     void closeConnection() override;
-    //virtual void slave_status();
+    // virtual void slave_status();
 
     /**
      * Special commands supported by this slave:

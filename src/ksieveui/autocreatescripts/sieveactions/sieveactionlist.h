@@ -8,10 +8,12 @@
 
 #include <QVector>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveAction;
 class SieveEditorGraphicalModeWidget;
-namespace SieveActionList {
+namespace SieveActionList
+{
 Q_REQUIRED_RESULT QVector<KSieveUi::SieveAction *> actionList(KSieveUi::SieveEditorGraphicalModeWidget *graphicalModeWidget);
 }
 }

@@ -3,12 +3,12 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#include <QDebug>
-#include <QApplication>
-#include <QCommandLineParser>
-#include <QStandardPaths>
 #include "../autocreatescriptdialog.h"
 #include "tests/capability.h"
+#include <QApplication>
+#include <QCommandLineParser>
+#include <QDebug>
+#include <QStandardPaths>
 
 int main(int argc, char **argv)
 {
@@ -21,7 +21,7 @@ int main(int argc, char **argv)
     parser.process(app);
     auto dialog = new KSieveUi::AutoCreateScriptDialog;
     const QStringList capabilities = KSieveUi::Test::fullCapabilitiesList();
-    //Add all capabilities for testing
+    // Add all capabilities for testing
     dialog->setSieveCapabilities(capabilities);
     if (dialog->exec()) {
         QStringList requireModules;

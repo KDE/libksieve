@@ -7,11 +7,12 @@
 #ifndef SIEVESCRIPTDEBUGGERDIALOG_H
 #define SIEVESCRIPTDEBUGGERDIALOG_H
 
-#include <QDialog>
 #include "ksieveui_private_export.h"
+#include <QDialog>
 
 class QPushButton;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveScriptDebuggerWidget;
 class KSIEVEUI_TESTS_EXPORT SieveScriptDebuggerDialog : public QDialog
 {

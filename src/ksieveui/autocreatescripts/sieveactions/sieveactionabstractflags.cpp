@@ -8,12 +8,15 @@
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "widgets/selectflagswidget.h"
 
+#include "libksieve_debug.h"
 #include <QHBoxLayout>
 #include <QXmlStreamReader>
-#include "libksieve_debug.h"
 
 using namespace KSieveUi;
-SieveActionAbstractFlags::SieveActionAbstractFlags(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent)
+SieveActionAbstractFlags::SieveActionAbstractFlags(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget,
+                                                   const QString &name,
+                                                   const QString &label,
+                                                   QObject *parent)
     : SieveAction(sieveGraphicalModeWidget, name, label, parent)
 {
 }
@@ -43,10 +46,10 @@ void SieveActionAbstractFlags::setParamWidgetValue(QXmlStreamReader &element, QW
             flagsWidget->setFlags(QStringList() << element.readElementText());
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             element.skipCurrentElement();
-            //implement in the future ?
+            // implement in the future ?
         } else {
             unknownTag(tagName, error);
             qCDebug(LIBKSIEVE_LOG) << " SieveActionAbstractFlags::setParamWidgetValue unknown tag :" << tagName;

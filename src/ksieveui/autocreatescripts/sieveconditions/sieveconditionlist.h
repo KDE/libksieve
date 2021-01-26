@@ -8,10 +8,12 @@
 
 #include <QList>
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveCondition;
 class SieveEditorGraphicalModeWidget;
-namespace SieveConditionList {
+namespace SieveConditionList
+{
 Q_REQUIRED_RESULT QList<KSieveUi::SieveCondition *> conditionList(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget);
 }
 }

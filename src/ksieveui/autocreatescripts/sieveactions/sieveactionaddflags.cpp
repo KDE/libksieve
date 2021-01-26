@@ -21,7 +21,9 @@ QString SieveActionAddFlags::flagsCode() const
 
 QString SieveActionAddFlags::help() const
 {
-    return i18n("Addflag is used to add flags to a list of [IMAP] flags.  It doesn't replace any previously set flags.  This means that multiple occurrences of addflag are treated additively.");
+    return i18n(
+        "Addflag is used to add flags to a list of [IMAP] flags.  It doesn't replace any previously set flags.  This means that multiple occurrences of "
+        "addflag are treated additively.");
 }
 
 QUrl SieveActionAddFlags::href() const

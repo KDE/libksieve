@@ -4,13 +4,13 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionservermetadataexists.h"
-#include "editor/sieveeditorutil.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
+#include "editor/sieveeditorutil.h"
 #include <KLocalizedString>
 #include <QLineEdit>
 
-#include <QHBoxLayout>
 #include "libksieve_debug.h"
+#include <QHBoxLayout>
 #include <QLabel>
 #include <QXmlStreamReader>
 
@@ -76,7 +76,7 @@ void SieveConditionServerMetaDataExists::setParamWidgetValue(QXmlStreamReader &e
             value->setText(tagValue);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {

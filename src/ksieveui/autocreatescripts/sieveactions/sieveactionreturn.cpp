@@ -26,10 +26,11 @@ QUrl SieveActionReturn::href() const
 
 QString SieveActionReturn::help() const
 {
-    return i18n("The \"return\" command stops processing of the immediately included script only and returns processing control to the script that includes it.");
+    return i18n(
+        "The \"return\" command stops processing of the immediately included script only and returns processing control to the script that includes it.");
 }
 
-QStringList SieveActionReturn::needRequires(QWidget */*parent*/) const
+QStringList SieveActionReturn::needRequires(QWidget * /*parent*/) const
 {
     return QStringList() << QStringLiteral("include");
 }

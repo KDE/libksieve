@@ -5,9 +5,9 @@
 */
 
 #include "sieveimapinstanceinterfacemanagertest.h"
-#include <KSieveUi/SieveImapInstanceInterfaceManager>
 #include <KSieveUi/SieveImapInstance>
 #include <KSieveUi/SieveImapInstanceInterface>
+#include <KSieveUi/SieveImapInstanceInterfaceManager>
 #include <QTest>
 
 SieveImapInstanceInterfaceManagerTest::SieveImapInstanceInterfaceManagerTest(QObject *parent)

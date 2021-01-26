@@ -15,18 +15,14 @@
 
 class QString;
 
-namespace KSieve {
+namespace KSieve
+{
 class Error;
 
 class KSIEVE_EXPORT Lexer
 {
 public:
-    enum Options {
-        IncludeComments = 0,
-        IgnoreComments = 1,
-        IncludeLineFeeds = 0,
-        IgnoreLineFeeds = 2
-    };
+    enum Options { IncludeComments = 0, IgnoreComments = 1, IncludeLineFeeds = 0, IgnoreLineFeeds = 2 };
 
     Lexer(const char *scursor, const char *send, int options = 0);
     ~Lexer();
@@ -56,15 +52,15 @@ public:
 
     enum Token {
         None = 0,
-        Number,          // 1, 100, 1M, 10k, 1G, 2g, 3m
-        Identifier,      // atom
-        Tag,             // :tag
-        Special,         // {} [] () ,;
-        QuotedString,    // "foo\"bar" -> foo"bar
+        Number, // 1, 100, 1M, 10k, 1G, 2g, 3m
+        Identifier, // atom
+        Tag, // :tag
+        Special, // {} [] () ,;
+        QuotedString, // "foo\"bar" -> foo"bar
         MultiLineString, // text: \nfoo\n. -> foo
-        HashComment,     // # foo
-        BracketComment,  // /* foo */
-        LineFeeds        // the number of line feeds encountered
+        HashComment, // # foo
+        BracketComment, // /* foo */
+        LineFeeds // the number of line feeds encountered
     };
 
     /** Parse the next token and return it's type. @p result will contain
@@ -75,6 +71,7 @@ public:
     void restore();
 
     class Impl;
+
 private:
     Impl *i = nullptr;
 

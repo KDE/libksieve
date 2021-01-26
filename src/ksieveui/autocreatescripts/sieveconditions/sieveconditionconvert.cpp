@@ -10,10 +10,10 @@
 
 #include <KLocalizedString>
 
-#include <QLabel>
-#include <QXmlStreamReader>
 #include "libksieve_debug.h"
 #include <QGridLayout>
+#include <QLabel>
+#include <QXmlStreamReader>
 
 using namespace KSieveUi;
 SieveConditionConvert::SieveConditionConvert(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
@@ -90,7 +90,9 @@ QString SieveConditionConvert::serverNeedsCapability() const
 
 QString SieveConditionConvert::help() const
 {
-    return i18n("The \"convert\" action specifies that all body parts with a media type equal to \"media-type\" be converted to the media type in \"media-type\" using conversion parameters.");
+    return i18n(
+        "The \"convert\" action specifies that all body parts with a media type equal to \"media-type\" be converted to the media type in \"media-type\" using "
+        "conversion parameters.");
 }
 
 void SieveConditionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool /*notCondition*/, QString &error)
@@ -116,7 +118,7 @@ void SieveConditionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidg
             params->setCode(AutoCreateScriptUtil::listValue(element), error);
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {

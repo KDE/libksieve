@@ -6,17 +6,15 @@
 #ifndef SIEVEEDITORPARSINGMISSINGFEATUREWARNING_H
 #define SIEVEEDITORPARSINGMISSINGFEATUREWARNING_H
 
-#include <KMessageWidget>
 #include "ksieveui_private_export.h"
-namespace KSieveUi {
+#include <KMessageWidget>
+namespace KSieveUi
+{
 class KSIEVEUI_TESTS_EXPORT SieveEditorParsingMissingFeatureWarning : public KMessageWidget
 {
     Q_OBJECT
 public:
-    enum TextEditorType {
-        TextEditor,
-        GraphicEditor
-    };
+    enum TextEditorType { TextEditor, GraphicEditor };
 
     explicit SieveEditorParsingMissingFeatureWarning(SieveEditorParsingMissingFeatureWarning::TextEditorType type, QWidget *parent = nullptr);
     ~SieveEditorParsingMissingFeatureWarning() override;

@@ -29,12 +29,12 @@ void SieveTextEditTest::comment_data()
     QTest::addColumn<QString>("result");
     QTest::addColumn<int>("startcursorposition");
     QTest::addColumn<int>("endcursorposition");
-    QTest::newRow("onelinewithoutselection") <<  QStringLiteral("foo") << QStringLiteral("#foo") << -1 << -1;
-    //Comment first line
-    QTest::newRow("multilinewithoutselection") <<  QStringLiteral("foo\nbla") << QStringLiteral("#foo\nbla") << -1 << -1;
-    QTest::newRow("multilinewithoutselectionsecondline") <<  QStringLiteral("foo\nbla") << QStringLiteral("foo\n#bla") << 6 << 6;
-    QTest::newRow("onelinewithselection") <<  QStringLiteral("foo") << QStringLiteral("#foo") << 0 << 2;
-    QTest::newRow("multilinewithselection") <<  QStringLiteral("foo\nbla") << QStringLiteral("#foo\n#bla") << 0 << 5;
+    QTest::newRow("onelinewithoutselection") << QStringLiteral("foo") << QStringLiteral("#foo") << -1 << -1;
+    // Comment first line
+    QTest::newRow("multilinewithoutselection") << QStringLiteral("foo\nbla") << QStringLiteral("#foo\nbla") << -1 << -1;
+    QTest::newRow("multilinewithoutselectionsecondline") << QStringLiteral("foo\nbla") << QStringLiteral("foo\n#bla") << 6 << 6;
+    QTest::newRow("onelinewithselection") << QStringLiteral("foo") << QStringLiteral("#foo") << 0 << 2;
+    QTest::newRow("multilinewithselection") << QStringLiteral("foo\nbla") << QStringLiteral("#foo\n#bla") << 0 << 5;
 }
 
 void SieveTextEditTest::comment()
@@ -61,13 +61,13 @@ void SieveTextEditTest::uncomment_data()
     QTest::addColumn<QString>("result");
     QTest::addColumn<int>("startcursorposition");
     QTest::addColumn<int>("endcursorposition");
-    QTest::newRow("commentedline") <<  QStringLiteral("#foo") << QStringLiteral("foo") << -1 << -1;
-    QTest::newRow("nocommentedline") <<  QStringLiteral("foo") << QStringLiteral("foo") << -1 << -1;
-    QTest::newRow("onelinewithselection") <<  QStringLiteral("#foo") << QStringLiteral("foo") << 0 << 2;
-    //First line
-    QTest::newRow("multilinewithoutselection") <<  QStringLiteral("#foo\n#bla") << QStringLiteral("foo\n#bla") << -1 << -1;
-    QTest::newRow("multilinewithoutselectionsecondline") <<  QStringLiteral("#foo\n#bla") << QStringLiteral("#foo\nbla") << 6 << 6;
-    QTest::newRow("multilinewithselection") <<  QStringLiteral("#foo\n#bla") << QStringLiteral("foo\nbla") << 0 << 6;
+    QTest::newRow("commentedline") << QStringLiteral("#foo") << QStringLiteral("foo") << -1 << -1;
+    QTest::newRow("nocommentedline") << QStringLiteral("foo") << QStringLiteral("foo") << -1 << -1;
+    QTest::newRow("onelinewithselection") << QStringLiteral("#foo") << QStringLiteral("foo") << 0 << 2;
+    // First line
+    QTest::newRow("multilinewithoutselection") << QStringLiteral("#foo\n#bla") << QStringLiteral("foo\n#bla") << -1 << -1;
+    QTest::newRow("multilinewithoutselectionsecondline") << QStringLiteral("#foo\n#bla") << QStringLiteral("#foo\nbla") << 6 << 6;
+    QTest::newRow("multilinewithselection") << QStringLiteral("#foo\n#bla") << QStringLiteral("foo\nbla") << 0 << 6;
 }
 
 void SieveTextEditTest::uncomment()

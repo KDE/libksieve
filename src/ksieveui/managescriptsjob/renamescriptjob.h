@@ -7,15 +7,17 @@
 #ifndef RENAMESCRIPTJOB_H
 #define RENAMESCRIPTJOB_H
 
+#include "ksieveui_export.h"
 #include <QObject>
 #include <QUrl>
-#include "ksieveui_export.h"
 #include <memory>
-namespace KManageSieve {
+namespace KManageSieve
+{
 class SieveJob;
 }
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class RenameScriptJobPrivate;
 /**
  * @brief The RenameScriptJob class

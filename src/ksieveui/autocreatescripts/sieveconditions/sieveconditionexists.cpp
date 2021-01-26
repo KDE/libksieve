@@ -5,16 +5,16 @@
 */
 #include "sieveconditionexists.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
-#include "widgets/selectheadertypecombobox.h"
 #include "editor/sieveeditorutil.h"
+#include "widgets/selectheadertypecombobox.h"
 
 #include <KLocalizedString>
 
-#include <QHBoxLayout>
+#include "libksieve_debug.h"
 #include <QComboBox>
+#include <QHBoxLayout>
 #include <QLabel>
 #include <QXmlStreamReader>
-#include "libksieve_debug.h"
 
 using namespace KSieveUi;
 
@@ -59,7 +59,9 @@ QString SieveConditionExists::code(QWidget *w) const
 
 QString SieveConditionExists::help() const
 {
-    return i18n("The \"exists\" test is true if the headers listed in the header-names argument exist within the message.  All of the headers must exist or the test is false.");
+    return i18n(
+        "The \"exists\" test is true if the headers listed in the header-names argument exist within the message.  All of the headers must exist or the test "
+        "is false.");
 }
 
 void SieveConditionExists::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, bool notCondition, QString &error)
@@ -79,7 +81,7 @@ void SieveConditionExists::setParamWidgetValue(QXmlStreamReader &element, QWidge
             selectHeaderType->setCode(AutoCreateScriptUtil::listValueToStr(element));
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
-            //nothing
+            // nothing
         } else if (tagName == QLatin1String("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {

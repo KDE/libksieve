@@ -7,7 +7,8 @@
 #define SieveActionEReject_H
 
 #include "sieveaction.h"
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveActionEReject : public SieveAction
 {
     Q_OBJECT

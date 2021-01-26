@@ -8,7 +8,8 @@
 #define SELECTCOMPARATORCOMBOBOX_H
 
 #include <QComboBox>
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveEditorGraphicalModeWidget;
 class SelectComparatorComboBox : public QComboBox
 {
@@ -24,6 +25,7 @@ public:
 
 Q_SIGNALS:
     void valueChanged();
+
 private:
     void initialize(const QStringList &sieveCapabilities);
 };

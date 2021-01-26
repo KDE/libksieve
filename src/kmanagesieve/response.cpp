@@ -64,8 +64,7 @@ bool KManageSieve::Response::parseResponse(const QByteArray &line)
     clear();
 
     switch (line.at(0)) {
-    case '{':
-    {
+    case '{': {
         m_type = Quantity;
         bool ok = false;
         m_quantity = parseQuantity(line, 0, &ok);
@@ -75,8 +74,7 @@ bool KManageSieve::Response::parseResponse(const QByteArray &line)
         // expecting "key" "value" pairs
         m_type = KeyValuePair;
         break;
-    default:
-    {
+    default: {
         // expecting single string
         m_type = Action;
         m_key = line;

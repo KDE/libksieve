@@ -10,10 +10,12 @@
 #include <QObject>
 #include <QStringList>
 #include <QUrl>
-namespace KManageSieve {
+namespace KManageSieve
+{
 class SieveJob;
 }
-namespace KSieveUi {
+namespace KSieveUi
+{
 class GenerateGlobalScriptJob : public QObject
 {
     Q_OBJECT

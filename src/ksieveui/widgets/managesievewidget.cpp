@@ -5,28 +5,28 @@
 */
 
 #include "managesievewidget.h"
+#include "libksieve_debug.h"
+#include "managescriptsjob/renamescriptjob.h"
 #include "managesievetreeview.h"
 #include "widgets/sievetreewidgetitem.h"
-#include "managescriptsjob/renamescriptjob.h"
-#include "libksieve_debug.h"
 
-#include <kmanagesieve/sievejob.h>
-#include <managescriptsjob/parseuserscriptjob.h>
-#include <managescriptsjob/generateglobalscriptjob.h>
 #include <PimCommon/NetworkManager>
+#include <kmanagesieve/sievejob.h>
+#include <managescriptsjob/generateglobalscriptjob.h>
+#include <managescriptsjob/parseuserscriptjob.h>
 
 #include "util/util_p.h"
 
-#include <QInputDialog>
-#include <KStandardGuiItem>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KStandardGuiItem>
+#include <QInputDialog>
 
 #include <QHBoxLayout>
 #include <QMenu>
-#include <QTimer>
 #include <QMetaType>
 #include <QNetworkConfigurationManager>
+#include <QTimer>
 //#define USE_RENAME_SIEVE_METHOD 1
 using namespace KSieveUi;
 Q_DECLARE_METATYPE(QTreeWidgetItem *)
@@ -67,7 +67,10 @@ ManageSieveWidget::ManageSieveWidget(QWidget *parent)
     connect(d->mTreeView, &ManageSieveTreeView::itemChanged, this, &ManageSieveWidget::slotItemChanged);
     connect(this, &ManageSieveWidget::updateSieveSettingsDone, this, &ManageSieveWidget::updateSieveSettingsFinished);
 
-    connect(PimCommon::NetworkManager::self()->networkConfigureManager(), &QNetworkConfigurationManager::onlineStateChanged, this, &ManageSieveWidget::slotSystemNetworkOnlineStateChanged);
+    connect(PimCommon::NetworkManager::self()->networkConfigureManager(),
+            &QNetworkConfigurationManager::onlineStateChanged,
+            this,
+            &ManageSieveWidget::slotSystemNetworkOnlineStateChanged);
 
     lay->addWidget(d->mTreeView);
     QTimer::singleShot(0, this, &ManageSieveWidget::slotCheckNetworkStatus);
@@ -161,7 +164,7 @@ void ManageSieveWidget::slotContextMenuRequested(const QPoint &p)
         const bool jobsListIsEmpty = mJobs.keys(item).isEmpty();
         if (canAddNewScript(item, jobsListIsEmpty)) {
             menu.addAction(QIcon::fromTheme(QStringLiteral("document-new")), i18n("New Script..."), this, &ManageSieveWidget::slotNewScript);
-        } else if (!jobsListIsEmpty) { //In Progress
+        } else if (!jobsListIsEmpty) { // In Progress
             menu.addAction(KStandardGuiItem::cancel().icon(), KStandardGuiItem::cancel().text(), this, &ManageSieveWidget::slotCancelFetch);
         }
     }
@@ -224,9 +227,8 @@ void ManageSieveWidget::slotNewScript()
     }
 
     bool ok = false;
-    QString name = QInputDialog::getText(this, i18n("New Sieve Script"),
-                                         i18n("Please enter a name for the new Sieve script:"), QLineEdit::Normal,
-                                         i18n("unnamed"), &ok);
+    QString name =
+        QInputDialog::getText(this, i18n("New Sieve Script"), i18n("Please enter a name for the new Sieve script:"), QLineEdit::Normal, i18n("unnamed"), &ok);
     name = name.trimmed();
     if (!ok || name.isEmpty()) {
         if (ok && name.isEmpty()) {
@@ -248,17 +250,15 @@ void ManageSieveWidget::slotNewScript()
         const int numberOfElement(parentItem->childCount());
         for (int i = 0; i < numberOfElement; ++i) {
             if (parentItem->child(i)->text(0) == name) {
-                KMessageBox::error(
-                    this,
-                    i18n("Script name already used \"%1\".", name),
-                    i18n("New Script"));
+                KMessageBox::error(this, i18n("Script name already used \"%1\".", name), i18n("New Script"));
                 return;
             }
         }
     }
 
     const QStringList currentCapabilities = currentItem->data(0, SIEVE_SERVER_CAPABILITIES).toStringList();
-    const KSieveUi::SieveImapAccountSettings sieveimapaccountsettings = currentItem->data(0, SIEVE_SERVER_IMAP_SETTINGS).value<KSieveUi::SieveImapAccountSettings>();
+    const KSieveUi::SieveImapAccountSettings sieveimapaccountsettings =
+        currentItem->data(0, SIEVE_SERVER_IMAP_SETTINGS).value<KSieveUi::SieveImapAccountSettings>();
     const QStringList listscript = currentItem->data(0, SIEVE_SERVER_LIST_SCRIPT).toStringList();
 
     d->mBlockSignal = true;
@@ -292,7 +292,7 @@ void ManageSieveWidget::slotEditScript()
         return;
     }
     url = url.adjusted(QUrl::RemoveFilename);
-    url.setPath(url.path() +  QLatin1Char('/') + currentItem->text(0));
+    url.setPath(url.path() + QLatin1Char('/') + currentItem->text(0));
     const KSieveUi::SieveImapAccountSettings sieveimapaccountsettings = parent->data(0, SIEVE_SERVER_IMAP_SETTINGS).value<KSieveUi::SieveImapAccountSettings>();
     const QStringList currentCapabilities = parent->data(0, SIEVE_SERVER_CAPABILITIES).toStringList();
     const QStringList listscript = parent->data(0, SIEVE_SERVER_LIST_SCRIPT).toStringList();
@@ -356,7 +356,7 @@ void ManageSieveWidget::changeActiveScript(QTreeWidgetItem *item, bool activate)
         return;
     }
     u = u.adjusted(QUrl::RemoveFilename);
-    u.setPath(u.path() +  QLatin1Char('/') + selected->text(0));
+    u.setPath(u.path() + QLatin1Char('/') + selected->text(0));
 
     KManageSieve::SieveJob *job = nullptr;
     if (activate) {
@@ -426,7 +426,7 @@ void ManageSieveWidget::slotRenameScript()
     }
 
     u = u.adjusted(QUrl::RemoveFilename);
-    u.setPath(u.path() +  QLatin1Char('/') + currentItem->text(0));
+    u.setPath(u.path() + QLatin1Char('/') + currentItem->text(0));
 #ifdef USE_RENAME_SIEVE_METHOD
     KManageSieve::SieveJob *job = KManageSieve::SieveJob::rename(u, newName);
     connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveWidget::slotRenameResult);
@@ -479,7 +479,8 @@ void ManageSieveWidget::slotDeleteScript()
         return;
     }
 
-    if (KMessageBox::warningContinueCancel(this, i18n("Really delete script \"%1\" from the server?", currentItem->text(0)),
+    if (KMessageBox::warningContinueCancel(this,
+                                           i18n("Really delete script \"%1\" from the server?", currentItem->text(0)),
                                            i18n("Delete Sieve Script Confirmation"),
                                            KStandardGuiItem::del())
         != KMessageBox::Continue) {
@@ -487,7 +488,7 @@ void ManageSieveWidget::slotDeleteScript()
     }
 
     u = u.adjusted(QUrl::RemoveFilename);
-    u.setPath(u.path() +  QLatin1Char('/') + currentItem->text(0));
+    u.setPath(u.path() + QLatin1Char('/') + currentItem->text(0));
 
     KManageSieve::SieveJob *job = KManageSieve::SieveJob::del(u);
     connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveWidget::slotDeleteResult);
@@ -497,8 +498,11 @@ void ManageSieveWidget::slotDeleteScript()
 void ManageSieveWidget::slotDeleteResult(KManageSieve::SieveJob *job, bool success)
 {
     if (!success) {
-        KMessageBox::error(this, i18n("Deleting the script failed.\n"
-                                      "The server responded:\n%1", job->errorString()), i18n("Sieve Error"));
+        KMessageBox::error(this,
+                           i18n("Deleting the script failed.\n"
+                                "The server responded:\n%1",
+                                job->errorString()),
+                           i18n("Sieve Error"));
     }
     slotRefresh();
 }
@@ -528,14 +532,15 @@ void ManageSieveWidget::slotUpdateButtons()
 
 void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &listScript, const QString &activeScript)
 {
-    //qCDebug(LIBKSIEVE_LOG) << "void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &listScript, const QString &activeScript) success: " << success
+    // qCDebug(LIBKSIEVE_LOG) << "void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &listScript, const QString
+    // &activeScript) success: " << success
     //                       << " listScript" << listScript;
     if (d->mClearAll) {
         return;
     }
-    //qCDebug(LIBKSIEVE_LOG) << " After mClear All";
+    // qCDebug(LIBKSIEVE_LOG) << " After mClear All";
     QTreeWidgetItem *parent = mJobs[job];
-    //qCDebug(LIBKSIEVE_LOG) << " parent " << parent;
+    // qCDebug(LIBKSIEVE_LOG) << " parent " << parent;
     if (!parent) {
         return;
     }
@@ -554,7 +559,7 @@ void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, c
 
     d->mBlockSignal = true; // don't trigger slotItemChanged
     for (const QString &script : listScript) {
-        //Hide protected name.
+        // Hide protected name.
         if (Util::isKep14ProtectedName(script)) {
             continue;
         }
@@ -581,7 +586,7 @@ void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, c
         connect(parseJob, &ParseUserScriptJob::finished, this, &ManageSieveWidget::setActiveScripts);
         parseJob->start();
         (static_cast<SieveTreeWidgetItem *>(parent))->startAnimation();
-    } else if (Util::hasKep14CapabilitySupport(job->sieveCapabilities())) { //We don't have user script but server support kep14
+    } else if (Util::hasKep14CapabilitySupport(job->sieveCapabilities())) { // We don't have user script but server support kep14
         hasKep14EditorMode = true;
     }
 
@@ -618,7 +623,7 @@ void ManageSieveWidget::setActiveScripts(ParseUserScriptJob *job)
         const bool isActive = activeScriptList.contains(item->text(0));
         item->setCheckState(0, isActive ? Qt::Checked : Qt::Unchecked);
         if (!isActive) {
-            scriptOrder <<  item->text(0);
+            scriptOrder << item->text(0);
         }
     }
 

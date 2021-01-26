@@ -13,7 +13,8 @@
 
 class QLineEdit;
 class QPushButton;
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SelectHeadersWidget : public QListWidget
 {
     Q_OBJECT
@@ -24,10 +25,9 @@ public:
     Q_REQUIRED_RESULT QString headers() const;
     void setListHeaders(const QMap<QString, QString> &lst, const QStringList &selectedHeaders);
     void addNewHeader(const QString &header);
+
 private:
-    enum HeaderEnum {
-        HeaderId = Qt::UserRole + 1
-    };
+    enum HeaderEnum { HeaderId = Qt::UserRole + 1 };
 
     void init();
 };

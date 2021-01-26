@@ -6,23 +6,23 @@
 
 #include "sieveactionwidgetlister.h"
 #include "autocreatescriptdialog.h"
-#include "sieveeditorgraphicalmodewidget.h"
-#include "sievescriptdescriptiondialog.h"
+#include "autocreatescriptutil_p.h"
+#include "commonwidgets/sievehelpbutton.h"
 #include "sieveactions/sieveaction.h"
 #include "sieveactions/sieveactionlist.h"
-#include "commonwidgets/sievehelpbutton.h"
-#include "autocreatescriptutil_p.h"
+#include "sieveeditorgraphicalmodewidget.h"
+#include "sievescriptdescriptiondialog.h"
 
-#include <QPushButton>
 #include <KLocalizedString>
 #include <QIcon>
+#include <QPushButton>
 #include <QUrl>
 
+#include "libksieve_debug.h"
 #include <QComboBox>
 #include <QGridLayout>
 #include <QLabel>
 #include <QPointer>
-#include "libksieve_debug.h"
 #include <QToolButton>
 #include <QWhatsThis>
 
@@ -111,7 +111,7 @@ void SieveActionWidget::initWidget()
     QVector<KSieveUi::SieveAction *>::const_iterator end(list.constEnd());
     int index = 0;
     QStringList listCapabilities = mSieveGraphicalModeWidget->sieveCapabilities();
-    //imapflags was old name of imap4flags but still used.
+    // imapflags was old name of imap4flags but still used.
     if (listCapabilities.contains(QLatin1String("imap4flags"))) {
         listCapabilities.append(QStringLiteral("imapflags"));
     }
@@ -124,7 +124,7 @@ void SieveActionWidget::initWidget()
                 // add (i18n-ized) name to combo box
                 mComboBox->addItem((*it)->label(), (*it)->name());
             } else {
-                delete(*it);
+                delete (*it);
             }
         } else {
             // append to the list of actions:
@@ -219,7 +219,7 @@ void SieveActionWidget::slotActionChanged(int index)
         mHelpButton->setEnabled(!action->help().isEmpty());
         mCommentButton->setEnabled(true);
         setFilterAction(action->createParamWidget(this));
-        //All actions after stop will not execute => don't allow to add more actions.
+        // All actions after stop will not execute => don't allow to add more actions.
         const bool enableAddAction = (action->name() != QLatin1String("stop"));
         mAdd->setEnabled(enableAddAction);
     } else {
@@ -260,8 +260,8 @@ void SieveActionWidget::setLocaleVariable(const SieveGlobalVariableActionWidget:
             localVar->setLocalVariable(this, var);
         }
     } else {
-        //error += i18n("Script contains unsupported feature \"%1\"", actionName) + QLatin1Char('\n');
-        //qCDebug(LIBKSIEVE_LOG) << "Action " << actionName << " not supported";
+        // error += i18n("Script contains unsupported feature \"%1\"", actionName) + QLatin1Char('\n');
+        // qCDebug(LIBKSIEVE_LOG) << "Action " << actionName << " not supported";
     }
 }
 
@@ -392,10 +392,10 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                     w = qobject_cast<SieveActionWidget *>(widgets().constLast());
                 }
                 w->setAction(actionName, element, comment, error);
-                //comment.clear();
+                // comment.clear();
             } else if (tagName == QLatin1String("crlf")) {
                 element.skipCurrentElement();
-                //nothing
+                // nothing
             } else {
                 qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript don't have name attribute " << tagName;
             }
@@ -433,7 +433,7 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                 previousActionWasAComment = true;
                 comment += element.readElementText();
             } else if (tagName == QLatin1String("crlf")) {
-                //Add new line if previous action was a comment
+                // Add new line if previous action was a comment
                 if (previousActionWasAComment) {
                     comment += QLatin1Char('\n');
                 }

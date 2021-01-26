@@ -7,15 +7,16 @@
 #ifndef SIEVESCRIPTLISTBOX_H
 #define SIEVESCRIPTLISTBOX_H
 
+#include "ksieveui_private_export.h"
 #include <QGroupBox>
 #include <QListWidgetItem>
-#include "ksieveui_private_export.h"
 
 class QListWidget;
 class QPushButton;
 class QXmlStreamReader;
 
-namespace KSieveUi {
+namespace KSieveUi
+{
 class SieveEditorGraphicalModeWidget;
 class SieveScriptPage;
 class SieveScriptListItem : public QListWidgetItem
