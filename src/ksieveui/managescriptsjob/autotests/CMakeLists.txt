@@ -6,7 +6,7 @@ macro( add_managesievejob_test _source )
   add_executable( ${_name} ${_test} )
   add_test(NAME ${_name} COMMAND ${_name})
   ecm_mark_as_test(managejob-${_name})
-  target_link_libraries( ${_name}  KF5::KSieveUi Qt5::Test    )
+  target_link_libraries( ${_name}  KF5::KSieveUi Qt::Test    )
 endmacro()
 
 
