@@ -4,7 +4,7 @@ macro(add_sieveutil_test _source _additionalsource)
   add_executable( ${_name} ${_test} )
   add_test(NAME ${_name} COMMAND ${_name})
   ecm_mark_as_test(sievescriptdebugger-${_name})
-  target_link_libraries( ${_name}  KF5::KSieveUi Qt::Test KF5::MailTransport KF5::I18n)
+  target_link_libraries( ${_name}  KF5::KSieveUi Qt5::Test KF5::MailTransport KF5::I18n)
 endmacro()
 
 add_sieveutil_test(sieveaccounttest.cpp "")

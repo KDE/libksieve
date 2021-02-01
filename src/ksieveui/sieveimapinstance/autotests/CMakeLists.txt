@@ -6,7 +6,7 @@ macro( add_sieveimapinstance_test _source _additionalsource)
   add_executable( ${_name} ${_test} )
   add_test(NAME ${_name} COMMAND ${_name})
   ecm_mark_as_test(sieveimapinstancetest-${_name})
-  target_link_libraries( ${_name}  KF5::KSieveUi Qt::Test)
+  target_link_libraries( ${_name}  KF5::KSieveUi Qt5::Test)
 endmacro()
 
 

@@ -36,7 +36,7 @@ add_library(KF5::KSieve ALIAS KF5KSieve)
 
 target_link_libraries(KF5KSieve
 PRIVATE
-  Qt::Core KF5::I18n
+  Qt5::Core KF5::I18n
 )
 
 set_target_properties(KF5KSieve PROPERTIES
