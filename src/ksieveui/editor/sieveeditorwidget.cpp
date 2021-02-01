@@ -384,7 +384,9 @@ void SieveEditorWidget::slotShareScript()
     QTemporaryFile tmpFile;
     if (tmpFile.open()) {
         QTextStream out(&tmpFile);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         out.setCodec("UTF-8");
+#endif
         out << script();
         tmpFile.close();
         const QString sourceName = mScriptName->text();
