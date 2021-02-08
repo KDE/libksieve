@@ -8,6 +8,7 @@
 #include "editor/sieveeditorutil.h"
 
 #include <KLocalizedString>
+#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
 #include "libksieve_debug.h"
@@ -29,6 +30,7 @@ QWidget *SieveConditionIhave::createParamWidget(QWidget *parent) const
     w->setLayout(lay);
 
     auto edit = new QLineEdit;
+    new KPIM::LineEditCatchReturnKey(edit, w);
     connect(edit, &QLineEdit::textChanged, this, &SieveConditionIhave::valueChanged);
     edit->setPlaceholderText(i18n("Use \",\" to separate capabilities"));
     edit->setClearButtonEnabled(true);

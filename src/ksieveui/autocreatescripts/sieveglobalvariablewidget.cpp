@@ -12,6 +12,7 @@
 #include "widgets/lineeditvalidator.h"
 
 #include <KLocalizedString>
+#include <Libkdepim/LineEditCatchReturnKey>
 #include <QIcon>
 #include <QLineEdit>
 #include <QPushButton>
@@ -55,19 +56,20 @@ void SieveGlobalVariableActionWidget::initWidget()
     mLayout = new QGridLayout(this);
     mLayout->setContentsMargins({});
 
-    auto lab = new QLabel(i18n("Variable name:"));
+    auto lab = new QLabel(i18n("Variable name:"), this);
     mLayout->addWidget(lab, 1, 0);
 
-    mVariableName = new LineEditValidator;
+    mVariableName = new LineEditValidator(this);
     connect(mVariableName, &QLineEdit::textChanged, this, &SieveGlobalVariableActionWidget::valueChanged);
     mLayout->addWidget(mVariableName, 1, 1);
 
-    mSetValueTo = new QCheckBox(i18n("Set value to:"));
+    mSetValueTo = new QCheckBox(i18n("Set value to:"), this);
     connect(mSetValueTo, &QCheckBox::toggled, this, &SieveGlobalVariableActionWidget::valueChanged);
     mLayout->addWidget(mSetValueTo, 1, 2);
     mSetValueTo->setChecked(false);
 
-    mVariableValue = new QLineEdit;
+    mVariableValue = new QLineEdit(this);
+    new KPIM::LineEditCatchReturnKey(mVariableValue, this);
     connect(mVariableValue, &QLineEdit::textChanged, this, &SieveGlobalVariableActionWidget::valueChanged);
     mVariableValue->setEnabled(false);
     mLayout->addWidget(mVariableValue, 1, 3);

@@ -6,6 +6,7 @@
 #include "addresslineedit.h"
 #include <KColorScheme>
 #include <KLocalizedString>
+#include <Libkdepim/LineEditCatchReturnKey>
 #include <QHBoxLayout>
 
 using namespace KSieveUi;
@@ -16,6 +17,7 @@ AddressLineEdit::AddressLineEdit(QWidget *parent)
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setContentsMargins({});
     mLineEdit = new QLineEdit(this);
+    new KPIM::LineEditCatchReturnKey(mLineEdit, this);
     mainLayout->addWidget(mLineEdit);
     mLineEdit->setClearButtonEnabled(true);
     mLineEdit->setPlaceholderText(i18n("Define Email Address..."));

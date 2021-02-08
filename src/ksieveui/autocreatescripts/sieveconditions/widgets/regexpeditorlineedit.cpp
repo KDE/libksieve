@@ -5,6 +5,7 @@
 */
 
 #include "regexpeditorlineedit.h"
+#include <Libkdepim/LineEditCatchReturnKey>
 #include <QHBoxLayout>
 #include <QLineEdit>
 
@@ -16,6 +17,7 @@ RegexpEditorLineEdit::RegexpEditorLineEdit(QWidget *parent)
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
     mLineEdit = new QLineEdit(this);
+    new KPIM::LineEditCatchReturnKey(mLineEdit, this);
     mLineEdit->setObjectName(QStringLiteral("lineedit"));
     connect(mLineEdit, &QLineEdit::textChanged, this, &RegexpEditorLineEdit::textChanged);
     mainLayout->addWidget(mLineEdit);

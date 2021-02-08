@@ -52,10 +52,10 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     vbox->setContentsMargins({});
 
     auto hbox = new QHBoxLayout;
-    auto label = new QLabel(i18n("Name:"));
+    auto label = new QLabel(i18n("Name:"), this);
     hbox->addWidget(label);
 
-    mTemplateNameEdit = new QLineEdit;
+    mTemplateNameEdit = new QLineEdit(this);
     mTemplateNameEdit->setReadOnly(defaultTemplate);
     new KPIM::LineEditCatchReturnKey(mTemplateNameEdit, this);
     mTemplateNameEdit->setClearButtonEnabled(!defaultTemplate);

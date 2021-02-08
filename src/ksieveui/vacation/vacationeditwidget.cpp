@@ -18,6 +18,7 @@
 #include "libksieve_debug.h"
 #include <KPIMTextEdit/PlainTextEditor>
 #include <KPIMTextEdit/PlainTextEditorWidget>
+#include <Libkdepim/LineEditCatchReturnKey>
 
 #include <kmime/kmime_header_parsing.h>
 
@@ -213,6 +214,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     connect(mDomainCheck, &QCheckBox::clicked, this, &VacationEditWidget::setWasChanged);
 
     mDomainEdit = new QLineEdit(this);
+    new KPIM::LineEditCatchReturnKey(mDomainEdit, this);
     mDomainEdit->setObjectName(QStringLiteral("mDomainEdit"));
     mDomainEdit->setClearButtonEnabled(true);
     mDomainEdit->setEnabled(false);

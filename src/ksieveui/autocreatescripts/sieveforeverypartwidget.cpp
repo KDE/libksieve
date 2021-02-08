@@ -13,6 +13,7 @@
 
 #include "widgets/lineeditvalidator.h"
 #include <KLocalizedString>
+#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
 #include "libksieve_debug.h"
@@ -32,18 +33,19 @@ SieveForEveryPartWidget::SieveForEveryPartWidget(QWidget *parent)
     mainLayout->addLayout(lay);
     mainLayout->addStretch(1);
 
-    mHelpButton = new SieveHelpButton;
+    mHelpButton = new SieveHelpButton(this);
     lay->addWidget(mHelpButton);
     connect(mHelpButton, &SieveHelpButton::clicked, this, &SieveForEveryPartWidget::slotHelp);
 
-    mForLoop = new QCheckBox(i18n("Add ForEveryPart loop"));
+    mForLoop = new QCheckBox(i18n("Add ForEveryPart loop"), this);
     connect(mForLoop, &QCheckBox::toggled, this, &SieveForEveryPartWidget::valueChanged);
     lay->addWidget(mForLoop);
 
-    auto lab = new QLabel(i18n("Name (optional):"));
+    auto lab = new QLabel(i18n("Name (optional):"), this);
     lay->addWidget(lab);
 
-    mName = new LineEditValidator;
+    mName = new LineEditValidator(this);
+    new KPIM::LineEditCatchReturnKey(mName, this);
     connect(mName, &QLineEdit::textChanged, this, &SieveForEveryPartWidget::valueChanged);
     mName->setEnabled(false);
     lay->addWidget(mName);

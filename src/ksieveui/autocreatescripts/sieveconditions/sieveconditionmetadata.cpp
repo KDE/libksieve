@@ -13,6 +13,7 @@
 
 #include "libksieve_debug.h"
 #include <KSieveUi/AbstractMoveImapFolderWidget>
+#include <Libkdepim/LineEditCatchReturnKey>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QWidget>
@@ -54,6 +55,7 @@ QWidget *SieveConditionMetaData::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 1, 0);
 
     auto annotation = new QLineEdit;
+    new KPIM::LineEditCatchReturnKey(annotation, w);
     connect(annotation, &QLineEdit::textChanged, this, &SieveConditionMetaData::valueChanged);
     annotation->setObjectName(QStringLiteral("annotation"));
     grid->addWidget(annotation, 1, 1);

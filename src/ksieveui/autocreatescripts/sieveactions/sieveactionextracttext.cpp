@@ -7,6 +7,7 @@
 #include "editor/sieveeditorutil.h"
 
 #include <KLocalizedString>
+#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
 #include "libksieve_debug.h"
@@ -42,6 +43,7 @@ QWidget *SieveActionExtractText::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 1, 0);
 
     auto variableName = new QLineEdit;
+    new KPIM::LineEditCatchReturnKey(variableName, w);
     connect(variableName, &QLineEdit::textChanged, this, &SieveActionExtractText::valueChanged);
     variableName->setObjectName(QStringLiteral("variablename"));
     grid->addWidget(variableName, 1, 1);

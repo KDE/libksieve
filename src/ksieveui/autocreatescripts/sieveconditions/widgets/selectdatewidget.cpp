@@ -9,6 +9,7 @@
 #include <KDateComboBox>
 #include <KLocalizedString>
 #include <KTimeComboBox>
+#include <Libkdepim/LineEditCatchReturnKey>
 #include <QComboBox>
 #include <QLineEdit>
 
@@ -34,7 +35,7 @@ void SelectDateWidget::initialize()
     auto lay = new QHBoxLayout(this);
     lay->setContentsMargins({});
 
-    mDateType = new QComboBox;
+    mDateType = new QComboBox(this);
     connect(mDateType, QOverload<int>::of(&QComboBox::activated), this, &SelectDateWidget::slotDateTypeActivated);
     mDateType->addItem(i18n("Year"), QVariant::fromValue(KSieveUi::SelectDateWidget::Year));
     mDateType->addItem(i18n("Month"), QVariant::fromValue(KSieveUi::SelectDateWidget::Month));
@@ -51,25 +52,26 @@ void SelectDateWidget::initialize()
     mDateType->addItem(i18n("Weekday"), QVariant::fromValue(KSieveUi::SelectDateWidget::Weekday));
     lay->addWidget(mDateType);
 
-    auto lab = new QLabel(i18n("value:"));
+    auto lab = new QLabel(i18n("value:"), this);
     lay->addWidget(lab);
 
     mStackWidget = new QStackedWidget;
     lay->addWidget(mStackWidget);
 
-    mDateLineEdit = new QLineEdit;
+    mDateLineEdit = new QLineEdit(this);
+    new KPIM::LineEditCatchReturnKey(mDateLineEdit, this);
     mStackWidget->addWidget(mDateLineEdit);
     connect(mDateLineEdit, &QLineEdit::textChanged, this, &SelectDateWidget::valueChanged);
 
-    mDateValue = new SieveDateSpinBox;
+    mDateValue = new SieveDateSpinBox(this);
     mStackWidget->addWidget(mDateValue);
     connect(mDateValue, QOverload<int>::of(&QSpinBox::valueChanged), this, &SelectDateWidget::valueChanged);
 
-    mDateEdit = new KDateComboBox;
+    mDateEdit = new KDateComboBox(this);
     mStackWidget->addWidget(mDateEdit);
     connect(mDateEdit, &KDateComboBox::dateChanged, this, &SelectDateWidget::valueChanged);
 
-    mTimeEdit = new KTimeComboBox;
+    mTimeEdit = new KTimeComboBox(this);
     mStackWidget->addWidget(mTimeEdit);
     connect(mTimeEdit, &KTimeComboBox::timeChanged, this, &SelectDateWidget::valueChanged);
 

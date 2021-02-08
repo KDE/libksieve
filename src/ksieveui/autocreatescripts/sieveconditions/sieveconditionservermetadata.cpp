@@ -9,6 +9,7 @@
 #include "editor/sieveeditorutil.h"
 
 #include <KLocalizedString>
+#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
 #include "libksieve_debug.h"
@@ -43,6 +44,7 @@ QWidget *SieveConditionServerMetaData::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 0, 0);
 
     auto mailbox = new QLineEdit;
+    new KPIM::LineEditCatchReturnKey(mailbox, w);
     mailbox->setObjectName(QStringLiteral("mailbox"));
     connect(mailbox, &QLineEdit::textChanged, this, &SieveConditionServerMetaData::valueChanged);
     grid->addWidget(mailbox, 0, 1);
@@ -51,6 +53,7 @@ QWidget *SieveConditionServerMetaData::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 1, 0);
 
     auto annotation = new QLineEdit;
+    new KPIM::LineEditCatchReturnKey(annotation, w);
     connect(annotation, &QLineEdit::textChanged, this, &SieveConditionServerMetaData::valueChanged);
     annotation->setObjectName(QStringLiteral("annotation"));
     grid->addWidget(annotation, 1, 1);

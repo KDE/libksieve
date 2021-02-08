@@ -7,6 +7,7 @@
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
+#include <Libkdepim/LineEditCatchReturnKey>
 #include <QComboBox>
 #include <QLineEdit>
 
@@ -37,6 +38,7 @@ void SelectBodyTypeWidget::initialize()
     connect(mBodyCombobox, QOverload<int>::of(&QComboBox::activated), this, &SelectBodyTypeWidget::slotBodyTypeChanged);
 
     mBodyLineEdit = new QLineEdit(this);
+    new KPIM::LineEditCatchReturnKey(mBodyLineEdit, this);
     connect(mBodyLineEdit, &QLineEdit::textChanged, this, &SelectBodyTypeWidget::valueChanged);
     lay->addWidget(mBodyLineEdit);
     mBodyLineEdit->hide();

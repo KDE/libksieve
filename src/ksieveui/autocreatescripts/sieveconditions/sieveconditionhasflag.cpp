@@ -10,6 +10,7 @@
 #include "editor/sieveeditorutil.h"
 
 #include <KLocalizedString>
+#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
 #include "libksieve_debug.h"
@@ -46,6 +47,7 @@ QWidget *SieveConditionHasFlag::createParamWidget(QWidget *parent) const
         grid->addWidget(lab, row, 0);
 
         auto variableName = new QLineEdit;
+        new KPIM::LineEditCatchReturnKey(variableName, w);
         variableName->setObjectName(QStringLiteral("variablename"));
         connect(variableName, &QLineEdit::textChanged, this, &SieveConditionHasFlag::valueChanged);
         grid->addWidget(variableName, row, 1);
