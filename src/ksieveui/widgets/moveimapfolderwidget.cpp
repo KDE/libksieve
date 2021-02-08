@@ -6,6 +6,7 @@
 
 #include "moveimapfolderwidget.h"
 #include <KLocalizedString>
+#include <Libkdepim/LineEditCatchReturnKey>
 #include <QHBoxLayout>
 #include <QLineEdit>
 using namespace KSieveUi;
@@ -17,6 +18,7 @@ MoveImapFolderWidget::MoveImapFolderWidget(QWidget *parent)
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
     mLineEdit = new QLineEdit(this);
+    new KPIM::LineEditCatchReturnKey(mLineEdit, this);
     mLineEdit->setObjectName(QStringLiteral("lineedit"));
     mLineEdit->setClearButtonEnabled(true);
     mLineEdit->setPlaceholderText(i18n("Define Folder"));

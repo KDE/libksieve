@@ -31,7 +31,7 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *g
     auto topLayout = new QVBoxLayout(this);
     topLayout->setContentsMargins({});
 
-    mConditions = new QGroupBox(i18n("Conditions"));
+    mConditions = new QGroupBox(i18n("Conditions"), this);
     auto vbox = new QVBoxLayout;
 
     mAllMessageRBtn = new QRadioButton(i18n("Match all messages"), this);
@@ -59,7 +59,7 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *g
 
     topLayout->addWidget(mConditions, 0, Qt::AlignTop);
 
-    auto actions = new QGroupBox(i18n("Actions"));
+    auto actions = new QGroupBox(i18n("Actions"), this);
     vbox = new QVBoxLayout;
     actions->setLayout(vbox);
     mScriptActionLister = new SieveActionWidgetLister(mSieveGraphicalModeWidget, this);
@@ -70,12 +70,12 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *g
     auto newBlockLayout = new QHBoxLayout;
     auto lab = new QLabel(i18n("Add new block:"));
     newBlockLayout->addWidget(lab);
-    mNewBlockType = new QComboBox;
+    mNewBlockType = new QComboBox(this);
     newBlockLayout->addWidget(mNewBlockType);
     mNewBlockType->addItem(i18n("\"elsif\" block"));
     mNewBlockType->addItem(i18n("\"else\" block"));
 
-    mAddBlockType = new QPushButton;
+    mAddBlockType = new QPushButton(this);
     mAddBlockType->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
     mAddBlockType->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
     newBlockLayout->addWidget(mAddBlockType);

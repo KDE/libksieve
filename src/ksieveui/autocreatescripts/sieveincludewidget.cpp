@@ -11,6 +11,7 @@
 #include "editor/sieveeditorutil.h"
 #include "sievescriptblockwidget.h"
 #include "widgets/includefilelineedit.h"
+#include <Libkdepim/LineEditCatchReturnKey>
 
 #include <KLocalizedString>
 #include <QIcon>
@@ -129,25 +130,26 @@ void SieveIncludeActionWidget::initWidget()
     mLayout = new QGridLayout(this);
     mLayout->setContentsMargins({});
 
-    auto lab = new QLabel(i18n("Include:"));
+    auto lab = new QLabel(i18n("Include:"), this);
     mLayout->addWidget(lab, 1, 0);
     mLocation = new SieveIncludeLocation(this);
     connect(mLocation, &SieveIncludeLocation::valueChanged, this, &SieveIncludeActionWidget::valueChanged);
     mLayout->addWidget(mLocation, 1, 1);
 
-    lab = new QLabel(i18n("Name:"));
+    lab = new QLabel(i18n("Name:"), this);
     mLayout->addWidget(lab, 1, 2);
 
     mIncludeFileName = new IncludeFileLineEdit(this);
+    new KPIM::LineEditCatchReturnKey(mIncludeFileName, this);
     mIncludeFileName->setClearButtonEnabled(true);
     connect(mIncludeFileName, &QLineEdit::textChanged, this, &SieveIncludeActionWidget::valueChanged);
     mLayout->addWidget(mIncludeFileName, 1, 3);
 
-    mOptional = new QCheckBox(i18n("Optional"));
+    mOptional = new QCheckBox(i18n("Optional"), this);
     connect(mOptional, &QCheckBox::toggled, this, &SieveIncludeActionWidget::valueChanged);
     mLayout->addWidget(mOptional, 1, 4);
 
-    mOnce = new QCheckBox(i18n("Once"));
+    mOnce = new QCheckBox(i18n("Once"), this);
     connect(mOnce, &QCheckBox::toggled, this, &SieveIncludeActionWidget::valueChanged);
     mLayout->addWidget(mOnce, 1, 5);
 
