@@ -14,7 +14,7 @@ class RegExpConverterTest : public QObject
     Q_OBJECT
 public:
     explicit RegExpConverterTest(QObject *parent = nullptr);
-    ~RegExpConverterTest() = default;
+    ~RegExpConverterTest() override = default;
 private Q_SLOTS:
     void convertRegExp_data();
     void convertRegExp();

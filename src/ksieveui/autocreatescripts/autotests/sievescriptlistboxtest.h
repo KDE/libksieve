@@ -14,7 +14,7 @@ class SieveScriptListBoxTest : public QObject
     Q_OBJECT
 public:
     explicit SieveScriptListBoxTest(QObject *parent = nullptr);
-    ~SieveScriptListBoxTest() = default;
+    ~SieveScriptListBoxTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

@@ -16,7 +16,7 @@ class KSIEVEUI_TESTS_EXPORT VacationMailLineEdit : public QLineEdit
     Q_OBJECT
 public:
     explicit VacationMailLineEdit(QWidget *parent = nullptr);
-    ~VacationMailLineEdit() = default;
+    ~VacationMailLineEdit() override = default;
 
     void setInvalidEmail(bool state);
 };

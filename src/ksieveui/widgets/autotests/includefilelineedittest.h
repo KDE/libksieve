@@ -14,7 +14,7 @@ class IncludeFileLineEditTest : public QObject
     Q_OBJECT
 public:
     explicit IncludeFileLineEditTest(QObject *parent = nullptr);
-    ~IncludeFileLineEditTest() = default;
+    ~IncludeFileLineEditTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

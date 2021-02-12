@@ -14,7 +14,7 @@ class FindAccountInfoJobTest : public QObject
     Q_OBJECT
 public:
     explicit FindAccountInfoJobTest(QObject *parent = nullptr);
-    ~FindAccountInfoJobTest() = default;
+    ~FindAccountInfoJobTest() override = default;
 private Q_SLOTS:
     void shouldReturnEmptyInfo();
     void shouldAssignValue_data();

@@ -15,7 +15,7 @@ class SieveInfoDialogTest : public QObject
     Q_OBJECT
 public:
     explicit SieveInfoDialogTest(QObject *parent = nullptr);
-    ~SieveInfoDialogTest() = default;
+    ~SieveInfoDialogTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };

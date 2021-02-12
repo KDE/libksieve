@@ -14,7 +14,7 @@ class XMLPrintingScriptBuilderTest : public QObject
     Q_OBJECT
 public:
     explicit XMLPrintingScriptBuilderTest(QObject *parent = nullptr);
-    ~XMLPrintingScriptBuilderTest() = default;
+    ~XMLPrintingScriptBuilderTest() override = default;
 private Q_SLOTS:
     void shouldCreateXml_data();
     void shouldCreateXml();

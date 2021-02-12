@@ -14,7 +14,7 @@ class SieveImapInstanceInterfaceManagerTest : public QObject
     Q_OBJECT
 public:
     explicit SieveImapInstanceInterfaceManagerTest(QObject *parent = nullptr);
-    ~SieveImapInstanceInterfaceManagerTest() = default;
+    ~SieveImapInstanceInterfaceManagerTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldAssignSieveImapInstanceInterface();

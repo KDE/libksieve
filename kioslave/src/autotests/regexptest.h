@@ -14,7 +14,7 @@ class RegexpTest : public QObject
     Q_OBJECT
 public:
     explicit RegexpTest(QObject *parent = nullptr);
-    ~RegexpTest() = default;
+    ~RegexpTest() override = default;
 private Q_SLOTS:
     void compareRegexp_data();
     void compareRegexp();

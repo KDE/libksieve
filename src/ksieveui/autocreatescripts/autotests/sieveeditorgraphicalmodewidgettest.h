@@ -14,7 +14,7 @@ class SieveEditorGraphicalModeWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit SieveEditorGraphicalModeWidgetTest(QObject *parent = nullptr);
-    ~SieveEditorGraphicalModeWidgetTest() = default;
+    ~SieveEditorGraphicalModeWidgetTest() override = default;
 private Q_SLOTS:
     void shouldLoadScripts();
     void shouldLoadScripts_data();

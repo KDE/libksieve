@@ -14,7 +14,7 @@ class VacationMailActionWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit VacationMailActionWidgetTest(QObject *parent = nullptr);
-    ~VacationMailActionWidgetTest() = default;
+    ~VacationMailActionWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldSwitchComponents();

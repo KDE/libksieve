@@ -14,7 +14,7 @@ class SieveDateSpinBoxTest : public QObject
     Q_OBJECT
 public:
     explicit SieveDateSpinBoxTest(QObject *parent = nullptr);
-    ~SieveDateSpinBoxTest() = default;
+    ~SieveDateSpinBoxTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldAssignValue_data();

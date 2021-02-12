@@ -14,7 +14,7 @@ class SievePreviewGeneratedCodeWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit SievePreviewGeneratedCodeWidgetTest(QObject *parent = nullptr);
-    ~SievePreviewGeneratedCodeWidgetTest() = default;
+    ~SievePreviewGeneratedCodeWidgetTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
 };
