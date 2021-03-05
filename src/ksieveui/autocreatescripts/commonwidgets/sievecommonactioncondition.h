@@ -45,8 +45,6 @@ public:
 
     void setComment(const QString &comment);
 
-    Q_REQUIRED_RESULT QString generateComment() const;
-
     virtual QWidget *createParamWidget(QWidget *parent) const;
 
 protected:
