@@ -14,6 +14,7 @@ class OrgKdeAkonadiImapSettingsInterface;
 namespace KSieveUi
 {
 class SieveImapPasswordProvider;
+class AbstractAkonadiImapSettingInterface;
 class KSIEVEUI_EXPORT FindAccountInfoJob : public QObject
 {
     Q_OBJECT

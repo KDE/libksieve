@@ -17,8 +17,6 @@ class QString;
 
 namespace KSieveUi
 {
-class AbstractAkonadiImapSettingInterface;
-class SieveImapPasswordProvider;
 /**
  * The Util namespace contains a collection of helper functions use in
  * various places.
