@@ -345,6 +345,7 @@ void ManageSieveWidget::changeActiveScript(QTreeWidgetItem *item, bool activate)
         }
         auto job = new GenerateGlobalScriptJob(u);
         job->addUserActiveScripts(activeScripts);
+        job->setForceActivateUserScript(true);
         connect(job, &GenerateGlobalScriptJob::success, this, &ManageSieveWidget::slotRefresh);
         connect(job, &GenerateGlobalScriptJob::error, this, &ManageSieveWidget::slotGenerateGlobalScriptError);
         job->start();

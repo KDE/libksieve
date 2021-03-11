@@ -28,6 +28,8 @@ public:
 
     void addUserActiveScripts(const QStringList &lstScript);
 
+    void setForceActivateUserScript(bool f);
+
 Q_SIGNALS:
     void success();
     void error(const QString &msgError);
@@ -41,6 +43,7 @@ private:
     void writeUserScript();
     QStringList mListUserActiveScripts;
     const QUrl mCurrentUrl;
+    bool mForceActivateUserScript = false;
     KManageSieve::SieveJob *mMasterJob = nullptr;
     KManageSieve::SieveJob *mUserJob = nullptr;
 };

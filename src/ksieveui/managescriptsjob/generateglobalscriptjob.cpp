@@ -41,6 +41,11 @@ void GenerateGlobalScriptJob::addUserActiveScripts(const QStringList &lstScript)
     mListUserActiveScripts = lstScript;
 }
 
+void GenerateGlobalScriptJob::setForceActivateUserScript(bool f)
+{
+    mForceActivateUserScript = f;
+}
+
 void GenerateGlobalScriptJob::start()
 {
     if (mCurrentUrl.isEmpty()) {
@@ -117,7 +122,7 @@ void GenerateGlobalScriptJob::writeUserScript()
     QUrl url(mCurrentUrl);
     url = url.adjusted(QUrl::RemoveFilename);
     url.setPath(url.path() + QLatin1Char('/') + QLatin1String("USER"));
-    mUserJob = KManageSieve::SieveJob::put(url, userScript, false, false);
+    mUserJob = KManageSieve::SieveJob::put(url, userScript, mForceActivateUserScript, false);
     connect(mUserJob, &KManageSieve::SieveJob::result, this, &GenerateGlobalScriptJob::slotPutUserResult);
 }
 
