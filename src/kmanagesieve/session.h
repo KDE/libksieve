@@ -72,7 +72,7 @@ private Q_SLOTS:
 
 private:
     Q_DISABLE_COPY(Session)
-    SessionThread *m_thread = nullptr;
+    SessionThread *const m_thread;
     QUrl m_url;
     QQueue<SieveJob *> m_jobs;
     SieveJob *m_currentJob = nullptr;

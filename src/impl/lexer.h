@@ -106,14 +106,13 @@ private:
     struct State {
         State(const char *s = nullptr)
             : cursor(s)
-            , line(0)
             , beginOfLine(s)
             , error()
         {
         }
 
         const char *cursor;
-        int line;
+        int line = 0;
         const char *beginOfLine;
         Error error;
     } mState;
