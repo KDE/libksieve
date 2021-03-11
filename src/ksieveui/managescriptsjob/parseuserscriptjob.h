@@ -26,7 +26,7 @@ class KSIEVEUI_TESTS_EXPORT ParseUserScriptJob : public QObject
 
 public:
     explicit ParseUserScriptJob(const QUrl &url, QObject *parent = nullptr);
-    ~ParseUserScriptJob();
+    ~ParseUserScriptJob() override;
 
     void start();
     void setAutoDelete(bool deleteMe);

@@ -21,7 +21,7 @@ class GenerateGlobalScriptJob : public QObject
     Q_OBJECT
 public:
     explicit GenerateGlobalScriptJob(const QUrl &url, QObject *parent = nullptr);
-    ~GenerateGlobalScriptJob();
+    ~GenerateGlobalScriptJob() override;
 
     void start();
     void kill();

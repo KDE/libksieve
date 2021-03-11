@@ -27,7 +27,7 @@ class KSIEVEUI_EXPORT CheckScriptJob : public QObject
     Q_OBJECT
 public:
     explicit CheckScriptJob(QObject *parent = nullptr);
-    ~CheckScriptJob();
+    ~CheckScriptJob() override;
 
     void setOriginalScript(const QString &script);
     void setCurrentScript(const QString &script);

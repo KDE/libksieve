@@ -28,7 +28,7 @@ class KSIEVEUI_EXPORT RenameScriptJob : public QObject
     Q_OBJECT
 public:
     explicit RenameScriptJob(QObject *parent = nullptr);
-    ~RenameScriptJob();
+    ~RenameScriptJob() override;
 
     void setOldUrl(const QUrl &url);
     void setIsActive(bool active);

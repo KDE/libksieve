@@ -13,11 +13,11 @@ using namespace KSieveUi;
 
 MoveImapFolderWidget::MoveImapFolderWidget(QWidget *parent)
     : KSieveUi::AbstractMoveImapFolderWidget(parent)
+    , mLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
-    mLineEdit = new QLineEdit(this);
     new KPIM::LineEditCatchReturnKey(mLineEdit, this);
     mLineEdit->setObjectName(QStringLiteral("lineedit"));
     mLineEdit->setClearButtonEnabled(true);

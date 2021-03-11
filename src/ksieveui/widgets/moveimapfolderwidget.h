@@ -27,7 +27,7 @@ public:
     void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account) override;
 
 private:
-    QLineEdit *mLineEdit = nullptr;
+    QLineEdit *const mLineEdit;
 };
 }
 #endif // MOVEIMAPFOLDERWIDGET_H

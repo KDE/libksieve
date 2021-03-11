@@ -13,8 +13,8 @@ using namespace KSieveUi;
 
 IncludeFileLineEdit::IncludeFileLineEdit(QWidget *parent)
     : LineEditValidator(parent)
+    , mCompleter(new QCompleter(this))
 {
-    mCompleter = new QCompleter(this);
     mCompleter->setObjectName(QStringLiteral("completer"));
     mCompleter->setCaseSensitivity(Qt::CaseInsensitive);
     mStringListModel = new QStringListModel(this);
