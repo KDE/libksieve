@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVEWIDGETPAGEABSTRACT_H
-#define SIEVEWIDGETPAGEABSTRACT_H
+#pragma once
 
 #include <QWidget>
 
@@ -33,4 +32,3 @@ private:
 };
 }
 
-#endif // SIEVEWIDGETPAGEABSTRACT_H

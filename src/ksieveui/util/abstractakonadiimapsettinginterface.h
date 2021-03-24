@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef ABSTRACTAKONADIIMAPSETTINGINTERFACE_H
-#define ABSTRACTAKONADIIMAPSETTINGINTERFACE_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include <QString>
@@ -35,4 +34,3 @@ private:
 };
 }
 
-#endif // ABSTRACTAKONADIIMAPSETTINGINTERFACE_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SELECTSIZEWIDGET_H
-#define SELECTSIZEWIDGET_H
+#pragma once
 
 #include <QWidget>
 
@@ -32,4 +31,3 @@ private:
 };
 }
 
-#endif // SELECTSIZEWIDGET_H

@@ -3,8 +3,7 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-#ifndef KSIEVE_KSIEVEUI_SIEVEEDITOR_H
-#define KSIEVE_KSIEVEUI_SIEVEEDITOR_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QDialog>
@@ -61,4 +60,3 @@ private:
 };
 }
 
-#endif

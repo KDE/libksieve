@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-#ifndef FINDBARBASE_H
-#define FINDBARBASE_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QWidget>
@@ -70,4 +69,3 @@ protected:
 };
 }
 
-#endif /* FINDBARBASE_H */

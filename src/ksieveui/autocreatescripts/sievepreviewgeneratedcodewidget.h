@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVEPREVIEWGENERATEDCODEWIDGET_H
-#define SIEVEPREVIEWGENERATEDCODEWIDGET_H
+#pragma once
 #include "ksieveui_private_export.h"
 #include <QWidget>
 class QTextEdit;
@@ -24,4 +23,3 @@ private:
 };
 }
 
-#endif // SIEVEPREVIEWGENERATEDCODEWIDGET_H

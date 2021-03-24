@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef VACATIONPAGEWIDGET_H
-#define VACATIONPAGEWIDGET_H
+#pragma once
 
 #include <QUrl>
 #include <QWidget>
@@ -54,4 +53,3 @@ private:
 };
 }
 
-#endif // VACATIONPAGEWIDGET_H

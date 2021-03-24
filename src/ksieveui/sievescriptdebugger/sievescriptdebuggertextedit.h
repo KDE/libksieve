@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVESCRIPTDEBUGGERTEXTEDIT_H
-#define SIEVESCRIPTDEBUGGERTEXTEDIT_H
+#pragma once
 
 #include <editor/sievetextedit.h>
 
@@ -25,4 +24,3 @@ private:
     void slotAddDebug();
 };
 }
-#endif // SIEVESCRIPTDEBUGGERTEXTEDIT_H

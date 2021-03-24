@@ -8,8 +8,7 @@
     SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef KSIEVE_KSIEVE_PARSER_H
-#define KSIEVE_KSIEVE_PARSER_H
+#pragma once
 
 #include "ksieve_export.h"
 
@@ -45,4 +44,3 @@ private:
 };
 } // namespace KSieve
 
-#endif // LIBKSIEVE_KSIEVE_PARSER_H

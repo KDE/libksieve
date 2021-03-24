@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVEACCOUNTTEST_H
-#define SIEVEACCOUNTTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -25,4 +24,3 @@ private Q_SLOTS:
     void shouldCreateIdentifier_data();
 };
 
-#endif // SIEVEACCOUNTTEST_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVESCRIPTPAGE_H
-#define SIEVESCRIPTPAGE_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include "sievescriptblockwidget.h"
@@ -57,4 +56,3 @@ private:
 };
 }
 
-#endif // SIEVESCRIPTPAGE_H

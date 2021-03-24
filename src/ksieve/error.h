@@ -8,8 +8,7 @@
     SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef KSIEVE_KSIEVE_ERROR_H
-#define KSIEVE_KSIEVE_ERROR_H
+#pragma once
 
 #include "ksieve_export.h"
 
@@ -142,4 +141,3 @@ protected:
 };
 } // namespace KSieve
 
-#endif

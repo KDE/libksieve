@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVESCRIPTPARSINGERRORDIALOG_H
-#define SIEVESCRIPTPARSINGERRORDIALOG_H
+#pragma once
 #include "ksieveui_private_export.h"
 #include <QDialog>
 namespace KPIMTextEdit
@@ -32,4 +31,3 @@ private:
     KPIMTextEdit::RichTextEditorWidget *mTextEdit = nullptr;
 };
 }
-#endif // SIEVESCRIPTPARSINGERRORDIALOG_H

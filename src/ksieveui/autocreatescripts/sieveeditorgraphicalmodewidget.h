@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVEEDITORGRAPHICALMODEWIDGET_H
-#define SIEVEEDITORGRAPHICALMODEWIDGET_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include "sieveeditorgraphicalmodewidgetabstract.h"
@@ -63,4 +62,3 @@ private:
 };
 }
 
-#endif // SIEVEEDITORGRAPHICALMODEWIDGET_H

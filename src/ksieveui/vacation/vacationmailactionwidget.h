@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef VACATIONMAILACTIONWIDGET_H
-#define VACATIONMAILACTIONWIDGET_H
+#pragma once
 
 #include "vacation/vacationutils.h"
 #include <QWidget>
@@ -42,4 +41,3 @@ private:
 };
 }
 
-#endif // VACATIONMAILACTIONWIDGET_H

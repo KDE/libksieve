@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef MANAGESIEVEWIDGET_H
-#define MANAGESIEVEWIDGET_H
+#pragma once
 #include "ksieveui_export.h"
 #include <KSieveUi/SieveImapAccountSettings>
 #include <QMap>
@@ -109,4 +108,3 @@ private:
 };
 }
 
-#endif // MANAGESIEVEWIDGET_H

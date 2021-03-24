@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef KSIEVEUIPRIVATE_EXPORT_H
-#define KSIEVEUIPRIVATE_EXPORT_H
+#pragma once
 
 #include "ksieveui_export.h"
 
@@ -18,4 +17,3 @@
 #define KSIEVEUI_TESTS_EXPORT
 #endif
 
-#endif

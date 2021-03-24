@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef RENAMESCRIPTJOB_H
-#define RENAMESCRIPTJOB_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QObject>
@@ -51,4 +50,3 @@ private:
     std::unique_ptr<RenameScriptJobPrivate> const d;
 };
 }
-#endif // RENAMESCRIPTJOB_H

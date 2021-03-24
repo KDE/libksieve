@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVEHELPBUTTON_H
-#define SIEVEHELPBUTTON_H
+#pragma once
 
 #include <QToolButton>
 
@@ -22,4 +21,3 @@ protected:
 };
 }
 
-#endif // SIEVEHELPBUTTON_H

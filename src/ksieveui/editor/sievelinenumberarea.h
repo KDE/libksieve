@@ -3,8 +3,7 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-#ifndef KSIEVE_KSIEVEUI_SIEVELINENUMBERAREA_H
-#define KSIEVE_KSIEVEUI_SIEVELINENUMBERAREA_H
+#pragma once
 
 #include <QWidget>
 
@@ -28,4 +27,3 @@ private:
 };
 }
 
-#endif

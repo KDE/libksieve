@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef AUTOCREATESCRIPTDIALOG_H
-#define AUTOCREATESCRIPTDIALOG_H
+#pragma once
 
 #include "ksieveui_export.h"
 
@@ -46,4 +45,3 @@ private:
 };
 }
 
-#endif // AUTOCREATESCRIPTDIALOG_H

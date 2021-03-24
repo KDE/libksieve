@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef PARSINGUTIL_H
-#define PARSINGUTIL_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include <QString>
@@ -16,4 +15,3 @@ namespace ParsingUtil
 KSIEVEUI_TESTS_EXPORT QString parseScript(const QString &script, bool &result);
 }
 }
-#endif // PARSINGUTIL_H

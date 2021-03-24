@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef AUTOCREATESCRIPTUTIL_H
-#define AUTOCREATESCRIPTUTIL_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include <KSieveUi/AbstractRegexpEditorLineEdit>
@@ -42,4 +41,3 @@ KSIEVEUI_TESTS_EXPORT KSieveUi::AbstractMoveImapFolderWidget *createImapFolderWi
 KSIEVEUI_TESTS_EXPORT KSieveUi::AbstractSelectEmailLineEdit *createSelectEmailsWidget();
 }
 }
-#endif // AUTOCREATESCRIPTUTIL_H

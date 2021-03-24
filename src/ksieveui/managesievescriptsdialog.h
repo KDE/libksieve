@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef KSIEVE_KSIEVEUI_MANAGESIEVESCRIPTSDIALOG_H
-#define KSIEVE_KSIEVEUI_MANAGESIEVESCRIPTSDIALOG_H
+#pragma once
 
 #include "ksieveui/managesievewidget.h"
 #include "ksieveui_export.h"
@@ -62,4 +61,3 @@ private:
 };
 }
 
-#endif

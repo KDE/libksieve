@@ -5,8 +5,7 @@
 
 */
 
-#ifndef SIEVEINFODIALOGTEST_H
-#define SIEVEINFODIALOGTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -20,4 +19,3 @@ private Q_SLOTS:
     void shouldHaveDefaultValues();
 };
 
-#endif // SIEVEINFODIALOGTEST_H

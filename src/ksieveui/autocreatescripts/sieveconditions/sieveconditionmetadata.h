@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVECONDITIONMETADATA_H
-#define SIEVECONDITIONMETADATA_H
+#pragma once
 
 #include "sievecondition.h"
 
@@ -33,4 +32,3 @@ public:
 };
 }
 
-#endif // SIEVECONDITIONMETADATA_H

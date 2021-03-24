@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef ABSTRACTREGEXPEDITORLINEEDIT_H
-#define ABSTRACTREGEXPEDITORLINEEDIT_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QWidget>
@@ -35,4 +34,3 @@ Q_SIGNALS:
 };
 }
 
-#endif // ABSTRACTREGEXPEDITORLINEEDIT_H

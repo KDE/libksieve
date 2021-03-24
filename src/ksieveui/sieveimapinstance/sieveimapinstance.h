@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVEIMAPINSTANCE_H
-#define SIEVEIMAPINSTANCE_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QObject>
@@ -57,4 +56,3 @@ private:
 }
 Q_DECLARE_TYPEINFO(KSieveUi::SieveImapInstance, Q_MOVABLE_TYPE);
 
-#endif // SIEVEIMAPINSTANCE_H

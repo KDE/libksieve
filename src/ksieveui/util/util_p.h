@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef KSIEVE_KSIEVEUI_UTIL_P_H
-#define KSIEVE_KSIEVEUI_UTIL_P_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <KSieveUi/SieveImapAccountSettings>
@@ -52,4 +51,3 @@ Q_REQUIRED_RESULT bool isKep14ProtectedName(const QString &scriptName);
 }
 
 Q_DECLARE_METATYPE(KSieveUi::Util::AccountInfo)
-#endif

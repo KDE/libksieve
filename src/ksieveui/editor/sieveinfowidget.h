@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef SIEVEINFOWIDGET_H
-#define SIEVEINFOWIDGET_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QWidget>
@@ -27,4 +26,3 @@ private:
 };
 }
 
-#endif // SIEVEINFOWIDGET_H

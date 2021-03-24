@@ -6,8 +6,7 @@
 
 // krazy:excludeall=null since used by SASL (C library)
 
-#ifndef KSIEVE_KMANAGESIEVE_SASL_COMMON_H
-#define KSIEVE_KMANAGESIEVE_SASL_COMMON_H
+#pragma once
 
 #include <QDir>
 #include <QFile>
@@ -44,4 +43,3 @@ inline bool initSASL()
     return true;
 }
 
-#endif

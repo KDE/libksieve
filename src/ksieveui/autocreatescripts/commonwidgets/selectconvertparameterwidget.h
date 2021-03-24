@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SELECTCONVERTPARAMETERWIDGET_H
-#define SELECTCONVERTPARAMETERWIDGET_H
+#pragma once
 
 #include <QWidget>
 class QSpinBox;
@@ -30,4 +29,3 @@ private:
 };
 }
 
-#endif // SELECTCONVERTPARAMETERWIDGET_H

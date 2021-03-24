@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVEDATESPINBOX_H
-#define SIEVEDATESPINBOX_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include "selectdatewidget.h"
@@ -31,4 +30,3 @@ private:
 };
 }
 
-#endif // SIEVEDATESPINBOX_H

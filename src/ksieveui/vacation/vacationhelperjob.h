@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef VACATIONHELPERJOB_H
-#define VACATIONHELPERJOB_H
+#pragma once
 
 #include <QUrl>
 
@@ -40,4 +39,3 @@ private:
 };
 }
 
-#endif // VACATIONHELPERJOB_H

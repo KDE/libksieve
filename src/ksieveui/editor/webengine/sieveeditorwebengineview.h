@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef SIEVEEDITORWEBENGINEVIEW_H
-#define SIEVEEDITORWEBENGINEVIEW_H
+#pragma once
 
 #include <QWebEngineView>
 class QWebEngineDownloadItem;
@@ -27,4 +26,3 @@ private:
 };
 }
 
-#endif // SIEVEEDITORWEBENGINEVIEW_H

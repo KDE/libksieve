@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVEACTIONDELETEHEADER_H
-#define SIEVEACTIONDELETEHEADER_H
+#pragma once
 
 #include "sieveactionabstracteditheader.h"
 namespace KSieveUi
@@ -26,4 +25,3 @@ private:
 };
 }
 
-#endif // SIEVEACTIONDELETEHEADER_H

@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVECONDITIONLIST_H
-#define SIEVECONDITIONLIST_H
+#pragma once
 
 #include <QList>
 
@@ -18,4 +17,3 @@ Q_REQUIRED_RESULT QList<KSieveUi::SieveCondition *> conditionList(SieveEditorGra
 }
 }
 
-#endif // SIEVECONDITIONLIST_H

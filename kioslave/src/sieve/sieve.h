@@ -6,8 +6,7 @@
     SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef SIEVE_H
-#define SIEVE_H
+#pragma once
 
 #include <kio/authinfo.h>
 #include <kio/tcpslavebase.h>
@@ -119,4 +118,3 @@ private:
     QString m_implementation;
 };
 
-#endif

@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef SIEVETREEWIDGETITEM_H
-#define SIEVETREEWIDGETITEM_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <KPixmapSequence>
@@ -59,4 +58,3 @@ private:
 };
 }
 
-#endif // SIEVETREEWIDGETITEM_H

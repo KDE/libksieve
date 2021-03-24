@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVECONDITION_H
-#define SIEVECONDITION_H
+#pragma once
 
 #include "autocreatescripts/commonwidgets/sievecommonactioncondition.h"
 #include <QObject>
@@ -30,4 +29,3 @@ public:
 };
 }
 
-#endif // SIEVECONDITION_H

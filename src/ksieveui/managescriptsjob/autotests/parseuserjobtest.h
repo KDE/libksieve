@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef PARSEUSERJOBTEST_H
-#define PARSEUSERJOBTEST_H
+#pragma once
 
 #include <QObject>
 namespace KSieveUi
@@ -21,4 +20,3 @@ private Q_SLOTS:
     void testParseUserErrorScriptJob();
 };
 }
-#endif // PARSEUSERJOBTEST_H

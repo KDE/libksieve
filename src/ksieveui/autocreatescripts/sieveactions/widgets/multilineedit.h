@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef MULTILINEEDIT_H
-#define MULTILINEEDIT_H
+#pragma once
 
 #include <KPIMTextEdit/PlainTextEditor>
 
@@ -26,4 +25,3 @@ protected:
 };
 }
 
-#endif // MULTILINEEDIT_H

@@ -4,8 +4,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef KMANAGESIEVE_SESSIONTHREAD_P_H
-#define KMANAGESIEVE_SESSIONTHREAD_P_H
+#pragma once
 
 #include <QObject>
 #include <QUrl>
@@ -91,4 +90,3 @@ private:
 };
 } // namespace KManageSieve
 
-#endif // KMANAGESIEVE_SESSIONTHREAD_P_H

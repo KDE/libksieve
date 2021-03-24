@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVEPURPOSEMENUWIDGET_H
-#define SIEVEPURPOSEMENUWIDGET_H
+#pragma once
 
 #include <PimCommon/PurposeMenuWidget>
 namespace KSieveUi
@@ -26,4 +25,3 @@ private:
 };
 }
 
-#endif // SIEVEPURPOSEMENUWIDGET_H

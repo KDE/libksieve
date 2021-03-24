@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef SIEVETEXTEDITORSPELLCHECKDECORATOR_H
-#define SIEVETEXTEDITORSPELLCHECKDECORATOR_H
+#pragma once
 
 #include <sonnet/spellcheckdecorator.h>
 
@@ -23,4 +22,3 @@ private:
     SieveTextEdit *const mPlainTextEdit;
 };
 }
-#endif // SIEVETEXTEDITORSPELLCHECKDECORATOR_H

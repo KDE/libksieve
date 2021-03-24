@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SELECTFLAGSWIDGET_H
-#define SELECTFLAGSWIDGET_H
+#pragma once
 
 #include <QDialog>
 #include <QListWidget>
@@ -62,4 +61,3 @@ private:
 };
 }
 
-#endif // SELECTFLAGSWIDGET_H

@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVECONDITIONVIRUSTEST_H
-#define SIEVECONDITIONVIRUSTEST_H
+#pragma once
 
 #include "sievecondition.h"
 
@@ -32,4 +31,3 @@ public:
     Q_REQUIRED_RESULT QUrl href() const override;
 };
 }
-#endif // SIEVECONDITIONVIRUSTEST_H

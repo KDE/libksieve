@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef KSIEVE_KSIEVEUI_UTIL_H
-#define KSIEVE_KSIEVEUI_UTIL_H
+#pragma once
 
 #include "ksieveui_export.h"
 
@@ -31,4 +30,3 @@ KSIEVEUI_EXPORT bool allowOutOfOfficeSettings();
 }
 }
 
-#endif

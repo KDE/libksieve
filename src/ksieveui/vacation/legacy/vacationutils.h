@@ -10,8 +10,7 @@ This file only contains legacy code, that can be removed if the legacy code is n
 See README for further information.
 
 */
-#ifndef LEGACY_VACATIONUTILS_H
-#define LEGACY_VACATIONUTILS_H
+#pragma once
 #include "ksieveui_export.h"
 #include <QString>
 
@@ -65,4 +64,3 @@ bool KSIEVEUI_DEPRECATED parseScript(const QString &script,
 }
 }
 }
-#endif // LEGACY_VACATIONUTILS_H

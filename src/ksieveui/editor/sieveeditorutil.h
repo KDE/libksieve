@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef SIEVEEDITORUTIL_H
-#define SIEVEEDITORUTIL_H
+#pragma once
 
 #include <QUrl>
 
@@ -76,4 +75,3 @@ QUrl helpUrl(KSieveUi::SieveEditorUtil::HelpVariableName type);
 }
 }
 
-#endif // SIEVEEDITORUTIL_H

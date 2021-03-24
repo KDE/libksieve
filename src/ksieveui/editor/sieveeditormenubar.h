@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef SIEVEEDITORMENUBAR_H
-#define SIEVEEDITORMENUBAR_H
+#pragma once
 
 #include <QMenuBar>
 
@@ -108,4 +107,3 @@ private:
 };
 }
 
-#endif // SIEVEEDITORMENUBAR_H

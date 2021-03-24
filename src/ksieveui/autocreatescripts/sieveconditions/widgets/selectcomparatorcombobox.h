@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SELECTCOMPARATORCOMBOBOX_H
-#define SELECTCOMPARATORCOMBOBOX_H
+#pragma once
 
 #include <QComboBox>
 namespace KSieveUi
@@ -30,4 +29,3 @@ private:
     void initialize(const QStringList &sieveCapabilities);
 };
 }
-#endif // SELECTCOMPARATORCOMBOBOX_H

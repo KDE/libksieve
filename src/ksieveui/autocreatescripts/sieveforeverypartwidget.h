@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVEFOREVERYPARTWIDGET_H
-#define SIEVEFOREVERYPARTWIDGET_H
+#pragma once
 
 #include "sievewidgetpageabstract.h"
 class QCheckBox;
@@ -33,4 +32,3 @@ private:
 };
 }
 
-#endif // SIEVEFOREVERYPARTWIDGET_H

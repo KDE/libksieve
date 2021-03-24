@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVESCRIPTDESCRIPTIONDIALOG_H
-#define SIEVESCRIPTDESCRIPTIONDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -34,4 +33,3 @@ private:
 };
 }
 
-#endif // SIEVESCRIPTDESCRIPTIONDIALOG_H

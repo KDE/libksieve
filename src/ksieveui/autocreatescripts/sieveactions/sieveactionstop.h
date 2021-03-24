@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVEACTIONSTOP_H
-#define SIEVEACTIONSTOP_H
+#pragma once
 
 #include "sieveaction.h"
 
@@ -21,4 +20,3 @@ public:
 };
 }
 
-#endif // SIEVEACTIONSTOP_H

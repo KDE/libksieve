@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef ABSTRACTMOVEIMAPFOLDERWIDGET_H
-#define ABSTRACTMOVEIMAPFOLDERWIDGET_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QWidget>
@@ -31,4 +30,3 @@ Q_SIGNALS:
 };
 }
 
-#endif // ABSTRACTMOVEIMAPFOLDERWIDGET_H

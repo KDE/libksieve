@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef VACATIONMAILLINEEDIT_H
-#define VACATIONMAILLINEEDIT_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include <QLineEdit>
@@ -22,4 +21,3 @@ public:
 };
 }
 
-#endif // VACATIONMAILLINEEDIT_H

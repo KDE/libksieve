@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef VACATIONMANAGER_H
-#define VACATIONMANAGER_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QObject>
@@ -45,4 +44,3 @@ private:
 };
 }
 
-#endif // VACATIONMANAGER_H

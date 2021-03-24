@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef FINDACCOUNTINFOJOB_H
-#define FINDACCOUNTINFOJOB_H
+#pragma once
 
 #include "ksieveui_export.h" //TODO use specific export for testing ?
 #include "util_p.h"
@@ -53,4 +52,3 @@ private:
 };
 }
 
-#endif // FINDACCOUNTINFOJOB_H

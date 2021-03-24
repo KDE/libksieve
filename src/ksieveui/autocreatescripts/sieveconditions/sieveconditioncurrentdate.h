@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVECONDITIONCURRENTDATE_H
-#define SIEVECONDITIONCURRENTDATE_H
+#pragma once
 
 #include "sievecondition.h"
 
@@ -34,4 +33,3 @@ public:
 };
 }
 
-#endif // SIEVECONDITIONCURRENTDATE_H

@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVEACTIONLIST_H
-#define SIEVEACTIONLIST_H
+#pragma once
 
 #include <QVector>
 
@@ -18,4 +17,3 @@ Q_REQUIRED_RESULT QVector<KSieveUi::SieveAction *> actionList(KSieveUi::SieveEdi
 }
 }
 
-#endif // SIEVEACTIONLIST_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVECOMMONACTIONCONDITION_H
-#define SIEVECOMMONACTIONCONDITION_H
+#pragma once
 
 #include <QObject>
 namespace KSieveUi
@@ -63,4 +62,3 @@ private:
 };
 }
 
-#endif // SIEVECOMMONACTIONCONDITION_H

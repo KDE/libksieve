@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVECONDITIONMAILBOXEXISTS_H
-#define SIEVECONDITIONMAILBOXEXISTS_H
+#pragma once
 
 #include "sievecondition.h"
 
@@ -33,4 +32,3 @@ public:
     Q_REQUIRED_RESULT QUrl href() const override;
 };
 }
-#endif // SIEVECONDITIONMAILBOXEXISTS_H

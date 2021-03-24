@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVESCRIPTDEBUGGERWIDGET_H
-#define SIEVESCRIPTDEBUGGERWIDGET_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QWidget>
@@ -49,4 +48,3 @@ private:
     bool mHaveDebugApps = false;
 };
 }
-#endif // SIEVESCRIPTDEBUGGERWIDGET_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SELECTRELATIONALMATCHTYPE_H
-#define SELECTRELATIONALMATCHTYPE_H
+#pragma once
 
 #include <QWidget>
 class QComboBox;
@@ -31,4 +30,3 @@ private:
 };
 }
 
-#endif // SELECTRELATIONALMATCHTYPE_H

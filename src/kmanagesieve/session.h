@@ -5,8 +5,7 @@
     SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef KSIEVE_KMANAGESIEVE_SESSION_H
-#define KSIEVE_KMANAGESIEVE_SESSION_H
+#pragma once
 
 #include "response.h"
 
@@ -89,4 +88,3 @@ private:
 };
 }
 
-#endif

@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef KSIEVEUITESTSCAPABILITY_H
-#define KSIEVEUITESTSCAPABILITY_H
+#pragma once
 
 #include <QStringList>
 
@@ -17,4 +16,3 @@ QStringList fullCapabilitiesList();
 }
 }
 
-#endif // KSIEVEUITESTSCAPABILITY_H

@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVEEDITORHELPHTMLWIDGET_H
-#define SIEVEEDITORHELPHTMLWIDGET_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QUrl>
@@ -63,4 +62,3 @@ private:
 };
 }
 
-#endif // SIEVEEDITORHELPHTMLWIDGET_H

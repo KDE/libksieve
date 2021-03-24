@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef MANAGESIEVETREEVIEW_H
-#define MANAGESIEVETREEVIEW_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <PimCommon/CustomTreeView>
@@ -28,4 +27,3 @@ public:
 };
 }
 
-#endif // MANAGESIEVETREEVIEW_H

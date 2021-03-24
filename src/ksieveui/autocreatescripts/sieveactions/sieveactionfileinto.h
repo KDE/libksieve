@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVEACTIONFILEINTO_H
-#define SIEVEACTIONFILEINTO_H
+#pragma once
 #include "sieveaction.h"
 
 namespace KSieveUi
@@ -29,4 +28,3 @@ private:
 };
 }
 
-#endif // SIEVEACTIONFILEINTO_H

@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef ADDRESSLINEEDIT_H
-#define ADDRESSLINEEDIT_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include <KSieveUi/AbstractSelectEmailLineEdit>
@@ -34,4 +33,3 @@ private:
 };
 }
 
-#endif // ADDRESSLINEEDIT_H

@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVEEDITORPARSINGMISSINGFEATUREWARNING_H
-#define SIEVEEDITORPARSINGMISSINGFEATUREWARNING_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include <KMessageWidget>
@@ -36,4 +35,3 @@ private:
 };
 }
 
-#endif // SIEVEEDITORPARSINGMISSINGFEATUREWARNING_H

@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef SEARCHSERVERWITHVACATIONSUPPORTJOB_H
-#define SEARCHSERVERWITHVACATIONSUPPORTJOB_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include "util_p.h"
@@ -47,4 +46,3 @@ private:
 };
 }
 
-#endif // SEARCHSERVERWITHVACATIONSUPPORTJOB_H

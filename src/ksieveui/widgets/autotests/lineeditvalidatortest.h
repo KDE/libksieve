@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef LINEEDITVALIDATORTEST_H
-#define LINEEDITVALIDATORTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -25,4 +24,3 @@ private Q_SLOTS:
     void shouldValidateText();
 };
 
-#endif // LINEEDITVALIDATORTEST_H

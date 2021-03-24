@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef ABSTRACTSELECTEMAILLINEEDIT_H
-#define ABSTRACTSELECTEMAILLINEEDIT_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QWidget>
@@ -36,4 +35,3 @@ private:
 };
 }
 
-#endif // ABSTRACTSELECTEMAILLINEEDIT_H

@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVEEDITORTABWIDGET_H
-#define SIEVEEDITORTABWIDGET_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QTabWidget>
@@ -51,4 +50,3 @@ private:
 };
 }
 
-#endif // SIEVEEDITORTABWIDGET_H

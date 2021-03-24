@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SELECTADDHEADERPOSITIONCOMBOBOX_H
-#define SELECTADDHEADERPOSITIONCOMBOBOX_H
+#pragma once
 #include <QComboBox>
 
 namespace KSieveUi
@@ -27,4 +26,3 @@ private:
 };
 }
 
-#endif // SELECTADDHEADERPOSITIONCOMBOBOX_H

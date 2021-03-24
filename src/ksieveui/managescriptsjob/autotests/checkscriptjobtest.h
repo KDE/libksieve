@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef CHECKSCRIPTJOBTEST_H
-#define CHECKSCRIPTJOBTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -20,4 +19,3 @@ private Q_SLOTS:
     void canBeStarted();
 };
 
-#endif // CHECKSCRIPTJOBTEST_H

@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SELECTBODYTYPEWIDGET_H
-#define SELECTBODYTYPEWIDGET_H
+#pragma once
 
 #include <QWidget>
 
@@ -34,4 +33,3 @@ private:
 };
 }
 
-#endif // SELECTBODYTYPEWIDGET_H

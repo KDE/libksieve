@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef VACATIONCREATESCRIPTJOB_H
-#define VACATIONCREATESCRIPTJOB_H
+#pragma once
 
 #include <QObject>
 
@@ -66,4 +65,3 @@ private:
 };
 }
 
-#endif // VACATIONCREATESCRIPTJOB_H

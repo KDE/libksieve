@@ -8,8 +8,7 @@
     SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef KSIEVE_KSIEVE_LEXER_H
-#define KSIEVE_KSIEVE_LEXER_H
+#pragma once
 
 #include "ksieve_export.h"
 
@@ -81,4 +80,3 @@ private:
 };
 } // namespace KSieve
 
-#endif

@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-#ifndef CHECKKOLABKEP14SUPPORTJOB_H
-#define CHECKKOLABKEP14SUPPORTJOB_H
+#pragma once
 
 #include <QObject>
 #include <QStringList>
@@ -74,4 +73,3 @@ private:
 };
 }
 
-#endif // CHECKKOLABKEP14SUPPORTJOB_H

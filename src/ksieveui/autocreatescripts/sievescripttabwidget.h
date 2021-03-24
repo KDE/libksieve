@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVESCRIPTTABWIDGET_H
-#define SIEVESCRIPTTABWIDGET_H
+#pragma once
 
 #include <QTabWidget>
 
@@ -23,4 +22,3 @@ private Q_SLOTS:
 };
 }
 
-#endif // SIEVESCRIPTTABWIDGET_H

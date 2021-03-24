@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVESCRIPTDEBUGGERRESULTEDITOR_H
-#define SIEVESCRIPTDEBUGGERRESULTEDITOR_H
+#pragma once
 
 #include <KPIMTextEdit/PlainTextEditor>
 
@@ -26,4 +25,3 @@ private:
     void slotSaveAs();
 };
 }
-#endif // SIEVESCRIPTDEBUGGERRESULTEDITOR_H

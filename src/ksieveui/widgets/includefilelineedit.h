@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef INCLUDEFILELINEEDIT_H
-#define INCLUDEFILELINEEDIT_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include "lineeditvalidator.h"
@@ -27,4 +26,3 @@ private:
     QStringListModel *mStringListModel = nullptr;
 };
 }
-#endif // INCLUDEFILELINEEDIT_H

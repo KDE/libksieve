@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVEEDITORWARNING_H
-#define SIEVEEDITORWARNING_H
+#pragma once
 
 #include <KMessageWidget>
 
@@ -19,4 +18,3 @@ public:
 };
 }
 
-#endif // SIEVEEDITORWARNING_H

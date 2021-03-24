@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef KSIEVE_EDITORSIEVEGUI_TEST_H
-#define KSIEVE_EDITORSIEVEGUI_TEST_H
+#pragma once
 
 #include "ksieveui/editor/sieveeditor.h"
 
@@ -20,4 +19,3 @@ private Q_SLOTS:
     void slotValueChanged(bool);
 };
 
-#endif

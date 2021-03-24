@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVEIMAPACCOUNTSETTINGS_H
-#define SIEVEIMAPACCOUNTSETTINGS_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QDebug>
@@ -65,4 +64,3 @@ private:
 }
 Q_DECLARE_METATYPE(KSieveUi::SieveImapAccountSettings)
 KSIEVEUI_EXPORT QDebug operator<<(QDebug d, const KSieveUi::SieveImapAccountSettings &settings);
-#endif // SIEVEIMAPACCOUNTSETTINGS_H

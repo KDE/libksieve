@@ -10,8 +10,7 @@
     SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef KSIEVE_IMPL_LEXER_H
-#define KSIEVE_IMPL_LEXER_H
+#pragma once
 
 #include <ksieve/error.h>
 #include <ksieve/lexer.h>
@@ -204,4 +203,3 @@ private:
 };
 }
 
-#endif

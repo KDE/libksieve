@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef LINEEDITVALIDATOR_H
-#define LINEEDITVALIDATOR_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include <QLineEdit>
@@ -26,4 +25,3 @@ private:
     QRegularExpressionValidator *mValidator = nullptr;
 };
 }
-#endif // LINEEDITVALIDATOR_H

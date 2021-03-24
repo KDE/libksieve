@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef CHECKSCRIPTJOB_H
-#define CHECKSCRIPTJOB_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QObject>
@@ -47,4 +46,3 @@ private:
     std::unique_ptr<CheckScriptJobPrivate> const d;
 };
 }
-#endif // CHECKSCRIPTJOB_H

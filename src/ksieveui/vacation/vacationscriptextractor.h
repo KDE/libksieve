@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef VACATIONSCRIPTEXTRACTOR_H
-#define VACATIONSCRIPTEXTRACTOR_H
+#pragma once
 
 #include "sieve-vacation.h"
 #include "vacationutils.h"
@@ -861,4 +860,3 @@ private:
 };
 }
 
-#endif // VACATIONSCRIPTEXTRACTOR_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#ifndef REGEXPEDITORLINEEDIT_H
-#define REGEXPEDITORLINEEDIT_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include <KSieveUi/AbstractRegexpEditorLineEdit>
@@ -31,4 +30,3 @@ private:
 };
 }
 
-#endif // REGEXPEDITORLINEEDIT_H

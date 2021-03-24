@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVEACTIONSETVARIABLE_H
-#define SIEVEACTIONSETVARIABLE_H
+#pragma once
 
 #include "sieveaction.h"
 #include <autocreatescripts/sieveglobalvariablewidget.h>
@@ -30,4 +29,3 @@ private:
 };
 }
 
-#endif // SIEVEACTIONSETVARIABLE_H

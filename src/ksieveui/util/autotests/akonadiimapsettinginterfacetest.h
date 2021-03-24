@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef AKONADIIMAPSETTINGINTERFACETEST_H
-#define AKONADIIMAPSETTINGINTERFACETEST_H
+#pragma once
 
 #include <QObject>
 #include <util/abstractakonadiimapsettinginterface.h>
@@ -52,4 +51,3 @@ private:
 };
 
 Q_DECLARE_METATYPE(AkonadiImapSettingInterfaceDataTest)
-#endif // AKONADIIMAPSETTINGINTERFACETEST_H

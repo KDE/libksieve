@@ -6,8 +6,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef KSIEVE_KSIEVEUI_SIEVEDEBUGDIALOG_H
-#define KSIEVE_KSIEVEUI_SIEVEDEBUGDIALOG_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include "util_p.h"
@@ -70,4 +69,3 @@ private:
 };
 }
 
-#endif

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVESCRIPTDEBUGGERWARNING_H
-#define SIEVESCRIPTDEBUGGERWARNING_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include <KMessageWidget>
@@ -22,4 +21,3 @@ public:
     void setWarningMessage(const QString &msg);
 };
 }
-#endif // SIEVESCRIPTDEBUGGERWARNING_H

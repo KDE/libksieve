@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SELECTIMPORTANCECOMBOBOX_H
-#define SELECTIMPORTANCECOMBOBOX_H
+#pragma once
 
 #include <QComboBox>
 
@@ -27,4 +26,3 @@ private:
     void initialize();
 };
 }
-#endif // SELECTIMPORTANCECOMBOBOX_H

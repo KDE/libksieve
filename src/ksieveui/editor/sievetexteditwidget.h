@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef SIEVETEXTEDITWIDGET_H
-#define SIEVETEXTEDITWIDGET_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include <QWidget>
@@ -43,4 +42,3 @@ private:
     KPIMTextEdit::PlainTextEditFindBar *mFindBar = nullptr;
 };
 }
-#endif // SIEVETEXTEDITWIDGET_H

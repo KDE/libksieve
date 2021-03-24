@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SELECTDATEWIDGET_H
-#define SELECTDATEWIDGET_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include <QSpinBox>
@@ -49,4 +48,3 @@ private:
 }
 Q_DECLARE_METATYPE(KSieveUi::SelectDateWidget::DateType)
 
-#endif // SELECTDATEWIDGET_H

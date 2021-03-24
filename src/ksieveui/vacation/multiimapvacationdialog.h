@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MULTIIMAPVACATIONDIALOG_H
-#define MULTIIMAPVACATIONDIALOG_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include "util_p.h"
@@ -51,4 +50,3 @@ private:
 };
 }
 
-#endif // MULTIIMAPVACATIONDIALOG_H

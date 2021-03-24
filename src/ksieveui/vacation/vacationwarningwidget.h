@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef VACATIONWARNINGWIDGET_H
-#define VACATIONWARNINGWIDGET_H
+#pragma once
 
 #include <KMessageWidget>
 
@@ -20,4 +19,3 @@ public:
 };
 }
 
-#endif // VACATIONWARNINGWIDGET_H

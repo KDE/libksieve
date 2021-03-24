@@ -3,8 +3,7 @@
  * SPDX-License-Identifier: LGPL-2.0-or-later
  */
 
-#ifndef KSIEVE_KSIEVEUI_SIEVETEXTEDIT_H
-#define KSIEVE_KSIEVEUI_SIEVETEXTEDIT_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <KPIMTextEdit/PlainTextEditor>
@@ -72,4 +71,3 @@ private:
     std::unique_ptr<SieveTextEditPrivate> const d;
 };
 }
-#endif

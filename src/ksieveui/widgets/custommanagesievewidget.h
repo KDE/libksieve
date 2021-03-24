@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef CUSTOMMANAGESIEVEWIDGET_H
-#define CUSTOMMANAGESIEVEWIDGET_H
+#pragma once
 
 #include "util/util_p.h"
 #include <KSieveUi/SieveImapInstance>
@@ -41,4 +40,3 @@ private:
 };
 }
 
-#endif // CUSTOMMANAGESIEVEWIDGET_H

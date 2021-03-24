@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MULTIIMAPVACATIONMANAGER_H
-#define MULTIIMAPVACATIONMANAGER_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include "util_p.h"
@@ -54,4 +53,3 @@ private:
     QMap<QString, bool> mKep14Support; // if the server has KEP:14 support
 };
 }
-#endif // MULTIIMAPVACATIONMANAGER_H

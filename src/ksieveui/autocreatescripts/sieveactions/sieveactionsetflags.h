@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVEACTIONSETFLAGS_H
-#define SIEVEACTIONSETFLAGS_H
+#pragma once
 
 #include "sieveactionabstractflags.h"
 namespace KSieveUi
@@ -20,4 +19,3 @@ public:
 };
 }
 
-#endif // SIEVEACTIONSETFLAGS_H

@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVEIMAPINSTANCEINTERFACE_H
-#define SIEVEIMAPINSTANCEINTERFACE_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QVector>
@@ -26,4 +25,3 @@ public:
 };
 }
 
-#endif // SIEVEIMAPINSTANCEINTERFACE_H

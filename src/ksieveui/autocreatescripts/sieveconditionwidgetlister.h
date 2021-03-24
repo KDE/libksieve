@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVECONDITIONWIDGETLISTER_H
-#define SIEVECONDITIONWIDGETLISTER_H
+#pragma once
 
 #include <Libkdepim/KWidgetLister>
 #include <QVector>
@@ -85,4 +84,3 @@ private:
 };
 }
 
-#endif // SIEVECONDITIONWIDGETLISTER_H

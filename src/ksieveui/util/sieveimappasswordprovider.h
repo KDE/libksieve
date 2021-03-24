@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVEIMAPPASSWORDPROVIDER_H
-#define SIEVEIMAPPASSWORDPROVIDER_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QObject>
@@ -29,4 +28,3 @@ Q_SIGNALS:
     void passwordsRequested(const QString &sievePassword, const QString &sieveCustomPassword);
 };
 }
-#endif

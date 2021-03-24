@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef LEGACY_VACATIONSCRIPTEXTRACTOR_H
-#define LEGACY_VACATIONSCRIPTEXTRACTOR_H
+#pragma once
 
 #include "../vacationscriptextractor.h"
 #include "ksieveui_export.h"
@@ -347,4 +346,3 @@ private:
 }
 }
 
-#endif // LEGACY_VACATIONSCRIPTEXTRACTOR_H

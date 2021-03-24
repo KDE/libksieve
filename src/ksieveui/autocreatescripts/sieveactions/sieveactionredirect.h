@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVEACTIONREDIRECT_H
-#define SIEVEACTIONREDIRECT_H
+#pragma once
 
 #include "sieveaction.h"
 
@@ -29,4 +28,3 @@ private:
 };
 }
 
-#endif // SIEVEACTIONREDIRECT_H

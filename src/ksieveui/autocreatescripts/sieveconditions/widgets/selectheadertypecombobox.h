@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SELECTHEADERTYPECOMBOBOX_H
-#define SELECTHEADERTYPECOMBOBOX_H
+#pragma once
 
 #include <QComboBox>
 #include <QDialog>
@@ -77,4 +76,3 @@ private:
 };
 }
 
-#endif // SELECTHEADERTYPECOMBOBOX_H

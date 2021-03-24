@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVEDATESPINBOXTEST_H
-#define SIEVEDATESPINBOXTEST_H
+#pragma once
 
 #include <QObject>
 
@@ -21,4 +20,3 @@ private Q_SLOTS:
     void shouldAssignValue();
 };
 
-#endif // SIEVEDATESPINBOXTEST_H

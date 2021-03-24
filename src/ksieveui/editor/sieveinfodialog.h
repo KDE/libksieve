@@ -5,8 +5,7 @@
 
 */
 
-#ifndef SIEVEINFODIALOG_H
-#define SIEVEINFODIALOG_H
+#pragma once
 
 #include "ksieveui_export.h"
 #include <QDialog>
@@ -28,4 +27,3 @@ private:
 };
 }
 
-#endif // SIEVEINFODIALOG_H

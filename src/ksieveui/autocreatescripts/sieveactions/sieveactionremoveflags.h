@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVEACTIONREMOVEFLAGS_H
-#define SIEVEACTIONREMOVEFLAGS_H
+#pragma once
 
 #include "sieveactionabstractflags.h"
 
@@ -20,4 +19,3 @@ public:
     Q_REQUIRED_RESULT QUrl href() const override;
 };
 }
-#endif // SIEVEACTIONREMOVEFLAGS_H

@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef GENERATEGLOBALSCRIPTJOB_H
-#define GENERATEGLOBALSCRIPTJOB_H
+#pragma once
 
 #include <QObject>
 #include <QStringList>
@@ -49,4 +48,3 @@ private:
 };
 }
 
-#endif // GENERATEGLOBALSCRIPTJOB_H

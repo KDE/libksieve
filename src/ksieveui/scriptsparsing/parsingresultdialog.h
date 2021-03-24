@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef PARSINGRESULTDIALOG_H
-#define PARSINGRESULTDIALOG_H
+#pragma once
 #include "ksieveui_private_export.h"
 #include <KSyntaxHighlighting/Repository>
 #include <QDialog>
@@ -35,4 +34,3 @@ private:
 };
 }
 
-#endif // PARSINGRESULTDIALOG_H

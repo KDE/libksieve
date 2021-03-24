@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef MOVEIMAPFOLDERWIDGET_H
-#define MOVEIMAPFOLDERWIDGET_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include <KSieveUi/AbstractMoveImapFolderWidget>
@@ -30,4 +29,3 @@ private:
     QLineEdit *const mLineEdit;
 };
 }
-#endif // MOVEIMAPFOLDERWIDGET_H

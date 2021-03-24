@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVEGLOBALVARIABLEWIDGET_H
-#define SIEVEGLOBALVARIABLEWIDGET_H
+#pragma once
 
 #include "sievewidgetpageabstract.h"
 #include <Libkdepim/KWidgetLister>
@@ -112,4 +111,3 @@ private:
 };
 }
 
-#endif // SIEVEGLOBALVARIABLEWIDGET_H

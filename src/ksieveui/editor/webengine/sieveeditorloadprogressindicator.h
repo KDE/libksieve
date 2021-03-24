@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SIEVEEDITORLOADPROGRESSINDICATOR_H
-#define SIEVEEDITORLOADPROGRESSINDICATOR_H
+#pragma once
 
 #include <KPixmapSequence>
 #include <QObject>
@@ -34,4 +33,3 @@ private:
 };
 }
 
-#endif // SIEVEEDITORLOADPROGRESSINDICATOR_H

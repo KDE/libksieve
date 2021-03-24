@@ -3,8 +3,7 @@
 
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
-#ifndef SELECTMIMECOMBOBOX_H
-#define SELECTMIMECOMBOBOX_H
+#pragma once
 #include <QComboBox>
 
 namespace KSieveUi
@@ -29,4 +28,3 @@ private:
 };
 }
 
-#endif // SELECTMIMECOMBOBOX_H

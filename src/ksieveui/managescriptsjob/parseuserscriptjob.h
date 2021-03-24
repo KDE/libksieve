@@ -4,8 +4,7 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef PARSEUSERSCRIPTJOB_H
-#define PARSEUSERSCRIPTJOB_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include <QObject>
@@ -57,4 +56,3 @@ private:
 };
 }
 
-#endif // PARSEUSERSCRIPTJOB_H

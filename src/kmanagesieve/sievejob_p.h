@@ -6,8 +6,7 @@
     SPDX-License-Identifier: GPL-2.0-only
 */
 
-#ifndef KSIEVE_KMANAGESIEVE_SIEVEJOB_P_H
-#define KSIEVE_KMANAGESIEVE_SIEVEJOB_P_H
+#pragma once
 
 #include "session.h"
 #include "sievejob.h"
@@ -54,4 +53,3 @@ public:
 };
 }
 
-#endif

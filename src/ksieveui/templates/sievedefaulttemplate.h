@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVEDEFAULTTEMPLATE_H
-#define SIEVEDEFAULTTEMPLATE_H
+#pragma once
 
 #include "sievetemplatewidget.h"
 
@@ -17,4 +16,3 @@ Q_REQUIRED_RESULT QVector<PimCommon::defaultTemplate> defaultTemplates();
 }
 }
 
-#endif // SIEVEDEFAULTTEMPLATE_H

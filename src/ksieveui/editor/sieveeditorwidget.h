@@ -5,8 +5,7 @@
 
 */
 
-#ifndef SIEVEEDITORWIDGET_H
-#define SIEVEEDITORWIDGET_H
+#pragma once
 #include "ksieveui_export.h"
 
 #include <QWidget>
@@ -136,4 +135,3 @@ private:
 };
 }
 
-#endif // SIEVEEDITORWIDGET_H

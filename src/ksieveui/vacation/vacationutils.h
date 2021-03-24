@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef VACATIONUTILS_H
-#define VACATIONUTILS_H
+#pragma once
 #include <QString>
 #include <kmime/kmime_header_parsing.h>
 
@@ -70,4 +69,3 @@ Q_REQUIRED_RESULT QString mailAction(MailAction action);
 }
 }
 
-#endif // VACATIONUTILS_H

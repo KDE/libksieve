@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVESCRIPTDEBUGGERFRONTENDWIDGET_H
-#define SIEVESCRIPTDEBUGGERFRONTENDWIDGET_H
+#pragma once
 
 #include "ksieveui_private_export.h"
 #include <QWidget>
@@ -60,4 +59,3 @@ private:
     QSplitter *mSplitter = nullptr;
 };
 }
-#endif // SIEVESCRIPTDEBUGGERFONTENDWIDGET_H

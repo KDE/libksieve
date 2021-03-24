@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef AKONADIIMAPSETTINGINTERFACE_H
-#define AKONADIIMAPSETTINGINTERFACE_H
+#pragma once
 
 #include "abstractakonadiimapsettinginterface.h"
 #include <memory>
@@ -36,4 +35,3 @@ private:
     std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> mInterface;
 };
 }
-#endif // AKONADIIMAPSETTINGINTERFACE_H

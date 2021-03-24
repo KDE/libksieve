@@ -4,8 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef SIEVETEMPLATEWIDGET_H
-#define SIEVETEMPLATEWIDGET_H
+#pragma once
 
 #include <PimCommon/TemplateListWidget>
 
@@ -52,4 +51,3 @@ private:
 };
 }
 
-#endif // SIEVETEMPLATEWIDGET_H
