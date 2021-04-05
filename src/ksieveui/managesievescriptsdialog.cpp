@@ -28,7 +28,7 @@
 #include <KGuiItem>
 #include <KSharedConfig>
 #include <KStandardGuiItem>
-#include <errno.h>
+#include <cerrno>
 
 using namespace KSieveUi;
 

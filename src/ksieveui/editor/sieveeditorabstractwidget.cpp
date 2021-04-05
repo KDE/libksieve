@@ -13,7 +13,7 @@
 #include <QPointer>
 #include <QTextStream>
 
-#include <errno.h>
+#include <cerrno>
 
 using namespace KSieveUi;
 SieveEditorAbstractWidget::SieveEditorAbstractWidget(QWidget *parent)

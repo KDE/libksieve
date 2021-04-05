@@ -41,7 +41,7 @@
 #include <QSplitter>
 #include <QVBoxLayout>
 
-#include <errno.h>
+#include <cerrno>
 #include <memory>
 
 using namespace KSieveUi;
