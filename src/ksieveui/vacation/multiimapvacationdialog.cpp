@@ -180,7 +180,7 @@ void MultiImapVacationDialog::createPage(const QString &serverName, const KSieve
 
 void MultiImapVacationDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "MultiImapVacationDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "MultiImapVacationDialog");
     const QSize size = group.readEntry("Size", QSize());
     if (size.isValid()) {
         resize(size);
@@ -191,7 +191,7 @@ void MultiImapVacationDialog::readConfig()
 
 void MultiImapVacationDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "MultiImapVacationDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "MultiImapVacationDialog");
     group.writeEntry("Size", size());
 }
 

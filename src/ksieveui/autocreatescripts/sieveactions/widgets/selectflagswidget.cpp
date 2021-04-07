@@ -47,7 +47,7 @@ SelectFlagsListDialog::~SelectFlagsListDialog()
 
 void SelectFlagsListDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SelectFlagsListDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SelectFlagsListDialog");
     const QSize sizeDialog = group.readEntry("Size", QSize(300, 200));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
@@ -56,7 +56,7 @@ void SelectFlagsListDialog::readConfig()
 
 void SelectFlagsListDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SelectFlagsListDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SelectFlagsListDialog");
     group.writeEntry("Size", size());
 }
 

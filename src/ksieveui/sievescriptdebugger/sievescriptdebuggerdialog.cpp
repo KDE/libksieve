@@ -94,14 +94,14 @@ QString SieveScriptDebuggerDialog::script() const
 
 void SieveScriptDebuggerDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SieveScriptDebuggerDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveScriptDebuggerDialog");
     group.writeEntry("Size", size());
     group.writeEntry("Splitter", mSieveScriptDebuggerWidget->splitterSizes());
 }
 
 void SieveScriptDebuggerDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SieveScriptDebuggerDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveScriptDebuggerDialog");
     const QSize sizeDialog = group.readEntry("Size", QSize(800, 600));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);

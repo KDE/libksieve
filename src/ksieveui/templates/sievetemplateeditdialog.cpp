@@ -104,13 +104,13 @@ SieveTemplateEditDialog::~SieveTemplateEditDialog()
 
 void SieveTemplateEditDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SieveTemplateEditDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveTemplateEditDialog");
     group.writeEntry("Size", size());
 }
 
 void SieveTemplateEditDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SieveTemplateEditDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveTemplateEditDialog");
     const QSize sizeDialog = group.readEntry("Size", QSize(600, 400));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);

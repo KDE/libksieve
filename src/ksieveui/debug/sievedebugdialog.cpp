@@ -77,7 +77,7 @@ SieveDebugDialog::~SieveDebugDialog()
 
 void SieveDebugDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SieveDebugDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveDebugDialog");
     const QSize sizeDialog = group.readEntry("Size", QSize(640, 480));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
@@ -86,7 +86,7 @@ void SieveDebugDialog::readConfig()
 
 void SieveDebugDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SieveDebugDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveDebugDialog");
     group.writeEntry("Size", size());
 }
 

@@ -84,7 +84,7 @@ SelectHeadersDialog::~SelectHeadersDialog()
 
 void SelectHeadersDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SelectHeadersDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SelectHeadersDialog");
     const QSize size = group.readEntry("Size", QSize(400, 300));
     if (size.isValid()) {
         resize(size);
@@ -93,7 +93,7 @@ void SelectHeadersDialog::readConfig()
 
 void SelectHeadersDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SelectHeadersDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SelectHeadersDialog");
     group.writeEntry("Size", size());
     group.sync();
 }

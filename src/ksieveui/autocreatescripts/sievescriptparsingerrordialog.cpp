@@ -54,7 +54,7 @@ void SieveScriptParsingErrorDialog::setError(QString script, QString error)
 
 void SieveScriptParsingErrorDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SieveScriptParsingErrorDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveScriptParsingErrorDialog");
     const QSize sizeDialog = group.readEntry("Size", QSize(800, 600));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
@@ -63,7 +63,7 @@ void SieveScriptParsingErrorDialog::readConfig()
 
 void SieveScriptParsingErrorDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SieveScriptParsingErrorDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveScriptParsingErrorDialog");
     group.writeEntry("Size", size());
 }
 

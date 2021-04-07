@@ -54,7 +54,7 @@ QString SieveScriptDescriptionDialog::description() const
 
 void SieveScriptDescriptionDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SieveScriptDescriptionDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveScriptDescriptionDialog");
     const QSize sizeDialog = group.readEntry("Size", QSize(800, 600));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
@@ -63,6 +63,6 @@ void SieveScriptDescriptionDialog::readConfig()
 
 void SieveScriptDescriptionDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SieveScriptDescriptionDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveScriptDescriptionDialog");
     group.writeEntry("Size", size());
 }

@@ -98,13 +98,13 @@ void SieveEditor::slotEnableButtonOk(bool b)
 
 void SieveEditor::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SieveEditor");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveEditor");
     group.writeEntry("Size", size());
 }
 
 void SieveEditor::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openConfig(), "SieveEditor");
+    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveEditor");
     const QSize sizeDialog = group.readEntry("Size", QSize(800, 600));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
