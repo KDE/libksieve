@@ -65,11 +65,7 @@ void SessionThread::doInit()
     Q_ASSERT(QThread::currentThread() == thread());
     m_socket = std::make_unique<QSslSocket>();
     connect(m_socket.get(), &QSslSocket::readyRead, this, &SessionThread::slotDataReceived);
-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
-    connect(m_socket.get(), QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error), this, &SessionThread::slotSocketError);
-#else
     connect(m_socket.get(), QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::errorOccurred), this, &SessionThread::slotSocketError);
-#endif
     connect(m_socket.get(), &QSslSocket::disconnected, this, &SessionThread::socketDisconnected);
     connect(m_socket.get(), &QSslSocket::connected, this, &SessionThread::socketConnected);
 }
@@ -452,11 +448,7 @@ void SessionThread::sslResult(bool encrypted)
     Q_ASSERT(QThread::currentThread() == thread());
 
     const QSslCipher cipher = m_socket->sessionCipher();
-#if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
-    const int numberOfSslError = m_socket->sslErrors().count();
-#else
     const int numberOfSslError = m_socket->sslHandshakeErrors().count();
-#endif
     if (!encrypted || numberOfSslError > 0 || !m_socket->isEncrypted() || cipher.isNull() || cipher.usedBits() == 0) {
         qCDebug(KMANAGERSIEVE_LOG) << "Initial SSL handshake failed. cipher.isNull() is" << cipher.isNull() << ", cipher.usedBits() is" << cipher.usedBits()
                                    << ", the socket says:" << m_socket->errorString() << "and the list of SSL errors contains" << numberOfSslError << "items.";
