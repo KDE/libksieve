@@ -13,7 +13,6 @@
 
 class QTimer;
 class QTreeWidget;
-class QTreeWidgetItem;
 
 namespace KSieveUi
 {

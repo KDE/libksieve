@@ -12,7 +12,6 @@
 class QComboBox;
 class QLineEdit;
 class QStackedWidget;
-class QSpinBox;
 class KDateComboBox;
 class KTimeComboBox;
 namespace KSieveUi
