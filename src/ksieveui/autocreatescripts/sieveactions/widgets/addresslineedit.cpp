@@ -13,10 +13,10 @@ using namespace KSieveUi;
 
 AddressLineEdit::AddressLineEdit(QWidget *parent)
     : AbstractSelectEmailLineEdit(parent)
+    , mLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setContentsMargins({});
-    mLineEdit = new QLineEdit(this);
     new KPIM::LineEditCatchReturnKey(mLineEdit, this);
     mainLayout->addWidget(mLineEdit);
     mLineEdit->setClearButtonEnabled(true);

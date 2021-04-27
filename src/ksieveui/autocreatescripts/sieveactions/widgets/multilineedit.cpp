@@ -24,7 +24,7 @@ MultiLineEdit::~MultiLineEdit()
 
 QSize MultiLineEdit::sizeHint() const
 {
-    QFontMetrics fm(font());
+    const QFontMetrics fm(font());
 
     const int h = qMax(document()->size().toSize().height() - fm.descent() + 2 * frameWidth(), 50);
 

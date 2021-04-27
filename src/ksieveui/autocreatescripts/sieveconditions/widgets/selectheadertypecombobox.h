@@ -46,9 +46,9 @@ private:
     void slotAddNewHeader();
     void readConfig();
     void writeConfig();
-    SelectHeadersWidget *mListWidget = nullptr;
-    QLineEdit *mNewHeader = nullptr;
-    QPushButton *mAddNewHeader = nullptr;
+    SelectHeadersWidget *const mListWidget;
+    QLineEdit *const mNewHeader;
+    QPushButton *const mAddNewHeader;
 };
 
 class SelectHeaderTypeComboBox : public QComboBox

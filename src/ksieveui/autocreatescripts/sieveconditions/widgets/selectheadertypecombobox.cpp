@@ -25,6 +25,9 @@ static const char selectMultipleHeaders[] = I18N_NOOP("Select multiple headers..
 
 SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     : QDialog(parent)
+    , mListWidget(new SelectHeadersWidget(this))
+    , mNewHeader(new QLineEdit(this))
+    , mAddNewHeader(new QPushButton(this))
 {
     setWindowTitle(i18nc("@title:window", "Headers"));
 
@@ -42,7 +45,6 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     lay->setObjectName(QStringLiteral("widgetlayout"));
     lay->setContentsMargins({});
     mainLayout->addLayout(lay);
-    mListWidget = new SelectHeadersWidget(this);
     mListWidget->setObjectName(QStringLiteral("listwidget"));
     lay->addWidget(mListWidget);
 
@@ -52,7 +54,6 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
 
     auto hbox = new QHBoxLayout;
 
-    mNewHeader = new QLineEdit(this);
     new KPIM::LineEditCatchReturnKey(mNewHeader, this);
     mNewHeader->setObjectName(QStringLiteral("newheader"));
     mNewHeader->setClearButtonEnabled(true);
@@ -60,7 +61,6 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     connect(mNewHeader, &QLineEdit::returnPressed, this, &SelectHeadersDialog::slotAddNewHeader);
     mNewHeader->setClearButtonEnabled(true);
 
-    mAddNewHeader = new QPushButton(this);
     mAddNewHeader->setObjectName(QStringLiteral("addnewheader"));
     mAddNewHeader->setEnabled(false);
     mAddNewHeader->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
