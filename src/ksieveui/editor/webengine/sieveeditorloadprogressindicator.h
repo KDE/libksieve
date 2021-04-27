@@ -29,7 +29,7 @@ private:
     void slotTimerDone();
     int mProgressCount = 0;
     KPixmapSequence mProgressPix;
-    QTimer *mProgressTimer = nullptr;
+    QTimer *const mProgressTimer;
 };
 }
 
