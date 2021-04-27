@@ -81,10 +81,10 @@ private:
 
     void loadBlock(QXmlStreamReader &n, SieveScriptPage *currentPage, ParseSieveScriptTypeBlock typeBlock, QString &error);
     void clear();
-    SieveScriptPage *createNewScript(const QString &newName, const QString &description = QString());
-    QString createUniqName();
+    Q_REQUIRED_RESULT SieveScriptPage *createNewScript(const QString &newName, const QString &description = QString());
+    Q_REQUIRED_RESULT QString createUniqName();
     SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
-    QListWidget *mSieveListScript = nullptr;
+    QListWidget *const mSieveListScript;
     QPushButton *mBtnNew = nullptr;
     QPushButton *mBtnDelete = nullptr;
     QPushButton *mBtnRename = nullptr;

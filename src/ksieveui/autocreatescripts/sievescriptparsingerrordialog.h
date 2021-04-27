@@ -28,6 +28,6 @@ private:
     void writeConfig();
 
 private:
-    KPIMTextEdit::RichTextEditorWidget *mTextEdit = nullptr;
+    KPIMTextEdit::RichTextEditorWidget *const mTextEdit;
 };
 }

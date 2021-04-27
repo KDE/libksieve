@@ -19,11 +19,11 @@
 using namespace KSieveUi;
 SieveScriptParsingErrorDialog::SieveScriptParsingErrorDialog(QWidget *parent)
     : QDialog(parent)
+    , mTextEdit(new KPIMTextEdit::RichTextEditorWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Sieve Parsing Error"));
     auto mainLayout = new QVBoxLayout(this);
 
-    mTextEdit = new KPIMTextEdit::RichTextEditorWidget(this);
     mTextEdit->setReadOnly(true);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);

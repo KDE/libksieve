@@ -55,9 +55,9 @@ private Q_SLOTS:
 private:
     QStringList mCapabilities;
     QStringList mListOfIncludeFile;
-    SieveScriptListBox *mSieveScript = nullptr;
+    SieveScriptListBox *const mSieveScript;
     QStackedWidget *mStackWidget = nullptr;
-    QSplitter *mSplitter = nullptr;
+    QSplitter *const mSplitter;
     SieveEditorParsingMissingFeatureWarning *mSieveParsingWarning = nullptr;
 };
 }

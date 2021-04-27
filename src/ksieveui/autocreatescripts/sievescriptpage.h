@@ -43,7 +43,7 @@ private Q_SLOTS:
     void slotCloseTab(int);
 
 private:
-    SieveScriptBlockWidget *createScriptBlock(KSieveUi::SieveWidgetPageAbstract::PageType type);
+    Q_REQUIRED_RESULT SieveScriptBlockWidget *createScriptBlock(KSieveUi::SieveWidgetPageAbstract::PageType type);
     Q_REQUIRED_RESULT bool hasAnElseBlock() const;
     Q_REQUIRED_RESULT QString blockName(SieveWidgetPageAbstract::PageType type) const;
 

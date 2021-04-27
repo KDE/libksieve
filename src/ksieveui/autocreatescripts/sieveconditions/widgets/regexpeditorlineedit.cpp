@@ -12,11 +12,11 @@
 using namespace KSieveUi;
 RegexpEditorLineEdit::RegexpEditorLineEdit(QWidget *parent)
     : KSieveUi::AbstractRegexpEditorLineEdit(parent)
+    , mLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setObjectName(QStringLiteral("mainlayout"));
     mainLayout->setContentsMargins({});
-    mLineEdit = new QLineEdit(this);
     new KPIM::LineEditCatchReturnKey(mLineEdit, this);
     mLineEdit->setObjectName(QStringLiteral("lineedit"));
     connect(mLineEdit, &QLineEdit::textChanged, this, &RegexpEditorLineEdit::textChanged);

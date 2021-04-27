@@ -25,13 +25,13 @@ using namespace KSieveUi;
 
 SieveEditorGraphicalModeWidget::SieveEditorGraphicalModeWidget(QWidget *parent)
     : SieveEditorGraphicalModeWidgetAbstract::SieveEditorGraphicalModeWidgetAbstract(parent)
+    , mSieveScript(new SieveScriptListBox(i18n("Sieve Script"), this))
+    , mSplitter(new QSplitter)
 {
     auto vlay = new QVBoxLayout(this);
     vlay->setContentsMargins({});
 
-    mSplitter = new QSplitter;
     mSplitter->setChildrenCollapsible(false);
-    mSieveScript = new SieveScriptListBox(i18n("Sieve Script"));
     mSieveScript->setSieveEditorGraphicalModeWidget(this);
     connect(mSieveScript, &SieveScriptListBox::valueChanged, this, &SieveEditorGraphicalModeWidget::valueChanged);
     connect(mSieveScript, &SieveScriptListBox::addNewPage, this, &SieveEditorGraphicalModeWidget::slotAddScriptPage);

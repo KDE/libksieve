@@ -25,8 +25,8 @@ Q_SIGNALS:
 
 private:
     void initialize();
-    QComboBox *mType = nullptr;
-    QComboBox *mMatch = nullptr;
+    QComboBox *const mType;
+    QComboBox *const mMatch;
 };
 }
 

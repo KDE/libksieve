@@ -14,17 +14,17 @@ using namespace KSieveUi;
 
 SelectSizeWidget::SelectSizeWidget(QWidget *parent)
     : QWidget(parent)
+    , mSpinBoxSize(new QSpinBox(this))
+    , mSelectSizeType(new SelectSizeTypeComboBox(this))
 {
     auto hbox = new QHBoxLayout(this);
     hbox->setContentsMargins({});
 
-    mSpinBoxSize = new QSpinBox(this);
     mSpinBoxSize->setMinimum(1);
     mSpinBoxSize->setMaximum(99999);
     hbox->addWidget(mSpinBoxSize);
     connect(mSpinBoxSize, QOverload<int>::of(&QSpinBox::valueChanged), this, &SelectSizeWidget::valueChanged);
 
-    mSelectSizeType = new SelectSizeTypeComboBox(this);
     connect(mSelectSizeType, &SelectSizeTypeComboBox::valueChanged, this, &SelectSizeWidget::valueChanged);
     hbox->addWidget(mSelectSizeType);
 }

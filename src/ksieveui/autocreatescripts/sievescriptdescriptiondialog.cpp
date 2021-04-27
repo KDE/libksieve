@@ -18,11 +18,11 @@ using namespace KSieveUi;
 
 SieveScriptDescriptionDialog::SieveScriptDescriptionDialog(QWidget *parent)
     : QDialog(parent)
+    , mEdit(new KPIMTextEdit::PlainTextEditorWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Description"));
     auto mainLayout = new QVBoxLayout(this);
 
-    mEdit = new KPIMTextEdit::PlainTextEditorWidget(this);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);

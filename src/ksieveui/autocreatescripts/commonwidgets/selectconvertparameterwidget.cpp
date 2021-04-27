@@ -29,12 +29,13 @@ void SelectConvertParameterWidget::setCode(const QStringList &code, QString &err
         return;
     }
 
-    if (code.count() < 2) {
+    const int codeCount{code.count()};
+    if (codeCount < 2) {
         error += i18n("Not enough arguments for SelectConvertParameterWidget. Expected 2 arguments.") + QLatin1Char('\n');
         qCDebug(LIBKSIEVE_LOG) << " SelectConvertParameterWidget::setCode parsing error ?";
         return;
     }
-    if (code.count() > 2) {
+    if (codeCount > 2) {
         error += i18n("Too many arguments for SelectConvertParameterWidget, \"%1\"", code.count()) + QLatin1Char('\n');
         qCDebug(LIBKSIEVE_LOG) << " too many argument " << code.count();
     }
@@ -55,7 +56,7 @@ QString SelectConvertParameterWidget::code() const
 
 void SelectConvertParameterWidget::initialize()
 {
-    QBoxLayout *hbox = new QHBoxLayout(this);
+    auto hbox = new QHBoxLayout(this);
     hbox->setContentsMargins({});
     mWidth = new QSpinBox(this);
     mWidth->setSuffix(i18n(" px"));

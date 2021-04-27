@@ -15,6 +15,8 @@ using namespace KSieveUi;
 
 SelectRelationalMatchType::SelectRelationalMatchType(QWidget *parent)
     : QWidget(parent)
+    , mType(new QComboBox(this))
+    , mMatch(new QComboBox(this))
 {
     initialize();
 }
@@ -52,13 +54,11 @@ void SelectRelationalMatchType::initialize()
     auto lay = new QHBoxLayout(this);
     lay->setContentsMargins({});
 
-    mType = new QComboBox(this);
     mType->addItem(i18n("Value"), QStringLiteral(":value"));
     mType->addItem(i18n("Count"), QStringLiteral(":count"));
     lay->addWidget(mType);
     connect(mType, QOverload<int>::of(&QComboBox::activated), this, &SelectRelationalMatchType::valueChanged);
 
-    mMatch = new QComboBox(this);
     mMatch->addItem(i18n("Greater than"), QStringLiteral("gt"));
     mMatch->addItem(i18n("Greater than or equal"), QStringLiteral("ge"));
     mMatch->addItem(i18n("Less than"), QStringLiteral("lt"));

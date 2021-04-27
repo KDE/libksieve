@@ -85,10 +85,10 @@ QString SieveScriptListItem::generatedScript(QStringList &required) const
 
 SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     : QGroupBox(title, parent)
+    , mSieveListScript(new QListWidget(this))
 {
     auto layout = new QVBoxLayout(this);
     layout->setObjectName(QStringLiteral("layout"));
-    mSieveListScript = new QListWidget(this);
     mSieveListScript->setObjectName(QStringLiteral("mSieveListScript"));
     mSieveListScript->setDragDropMode(QAbstractItemView::InternalMove);
     mSieveListScript->setContextMenuPolicy(Qt::CustomContextMenu);
