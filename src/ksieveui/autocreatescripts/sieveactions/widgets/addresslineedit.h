@@ -7,7 +7,7 @@
 
 #include "ksieveui_private_export.h"
 #include <KSieveUi/AbstractSelectEmailLineEdit>
-#include <QLineEdit>
+class QLineEdit;
 namespace KSieveUi
 {
 class KSIEVEUI_TESTS_EXPORT AddressLineEdit : public AbstractSelectEmailLineEdit

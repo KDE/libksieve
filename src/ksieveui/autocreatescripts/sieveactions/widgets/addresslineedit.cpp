@@ -8,6 +8,7 @@
 #include <KLocalizedString>
 #include <Libkdepim/LineEditCatchReturnKey>
 #include <QHBoxLayout>
+#include <QLineEdit>
 
 using namespace KSieveUi;
 
