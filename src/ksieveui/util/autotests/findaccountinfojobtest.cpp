@@ -46,7 +46,7 @@ void FindAccountInfoJobTest::shouldReturnEmptyInfo()
     job->start();
     spy.wait(1000);
     QCOMPARE(spy.count(), 1);
-    const KSieveUi::Util::AccountInfo info = spy.at(0).at(0).value<KSieveUi::Util::AccountInfo>();
+    const auto info = spy.at(0).at(0).value<KSieveUi::Util::AccountInfo>();
     QVERIFY(!info.sieveImapAccountSettings.isValid());
 }
 
@@ -545,7 +545,7 @@ void FindAccountInfoJobTest::shouldAssignValue()
     job->start();
     spy.wait(1000);
     QCOMPARE(spy.count(), 1);
-    const KSieveUi::Util::AccountInfo info = spy.at(0).at(0).value<KSieveUi::Util::AccountInfo>();
+    const auto info = spy.at(0).at(0).value<KSieveUi::Util::AccountInfo>();
     QCOMPARE(info.sieveImapAccountSettings.isValid(), sieveImapAccountValid);
     const bool equal = (info == accountInfo);
     if (!equal) {

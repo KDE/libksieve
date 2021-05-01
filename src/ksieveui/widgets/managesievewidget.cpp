@@ -257,8 +257,7 @@ void ManageSieveWidget::slotNewScript()
     }
 
     const QStringList currentCapabilities = currentItem->data(0, SIEVE_SERVER_CAPABILITIES).toStringList();
-    const KSieveUi::SieveImapAccountSettings sieveimapaccountsettings =
-        currentItem->data(0, SIEVE_SERVER_IMAP_SETTINGS).value<KSieveUi::SieveImapAccountSettings>();
+    const auto sieveimapaccountsettings = currentItem->data(0, SIEVE_SERVER_IMAP_SETTINGS).value<KSieveUi::SieveImapAccountSettings>();
     const QStringList listscript = currentItem->data(0, SIEVE_SERVER_LIST_SCRIPT).toStringList();
 
     d->mBlockSignal = true;
@@ -293,7 +292,7 @@ void ManageSieveWidget::slotEditScript()
     }
     url = url.adjusted(QUrl::RemoveFilename);
     url.setPath(url.path() + QLatin1Char('/') + currentItem->text(0));
-    const KSieveUi::SieveImapAccountSettings sieveimapaccountsettings = parent->data(0, SIEVE_SERVER_IMAP_SETTINGS).value<KSieveUi::SieveImapAccountSettings>();
+    const auto sieveimapaccountsettings = parent->data(0, SIEVE_SERVER_IMAP_SETTINGS).value<KSieveUi::SieveImapAccountSettings>();
     const QStringList currentCapabilities = parent->data(0, SIEVE_SERVER_CAPABILITIES).toStringList();
     const QStringList listscript = parent->data(0, SIEVE_SERVER_LIST_SCRIPT).toStringList();
 
