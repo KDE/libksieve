@@ -269,7 +269,7 @@ target_link_libraries(KF5KSieveUi
     )
 
 set_target_properties(KF5KSieveUi PROPERTIES
-    VERSION ${LIBKSIEVE_VERSION_STRING}
+    VERSION ${LIBKSIEVE_VERSION}
     SOVERSION ${LIBKSIEVE_SOVERSION}
     EXPORT_NAME KSieveUi
     )
