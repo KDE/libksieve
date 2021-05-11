@@ -49,8 +49,8 @@ public:
 
 Q_SIGNALS:
     void updateButtons(QTreeWidgetItem *item);
-    void newScript(const ScriptInfo &info);
-    void editScript(const ScriptInfo &info);
+    void newScript(const KSieveUi::ManageSieveWidget::ScriptInfo &info);
+    void editScript(const KSieveUi::ManageSieveWidget::ScriptInfo &info);
     void scriptDeleted(const QUrl &u);
     void serverSieveFound(bool imapFound);
     void scriptRenamed(const QUrl &oldUrl, const QUrl &newUrl);
@@ -67,7 +67,7 @@ private Q_SLOTS:
     void slotDoubleClicked(QTreeWidgetItem *item);
     void slotSystemNetworkOnlineStateChanged(bool state);
     void slotCheckNetworkStatus();
-    void setActiveScripts(ParseUserScriptJob *job);
+    void setActiveScripts(KSieveUi::ParseUserScriptJob *job);
 
     void slotCancelFetch();
     void slotRenameResult(KManageSieve::SieveJob *job, bool success);

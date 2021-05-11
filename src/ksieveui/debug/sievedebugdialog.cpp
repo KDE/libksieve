@@ -111,7 +111,7 @@ void SieveDebugDialog::slotDiagNextAccount()
         connect(mShutDownJob, &QTimer::timeout, this, &SieveDebugDialog::slotShutDownJob);
     }
     mShutDownJob->start(30 * 1000); // 30 seconds
-    const QString ident = mResourceIdentifier.first();
+    const QString ident = mResourceIdentifier.constFirst();
 
     mEdit->editor()->appendPlainText(i18n("Collecting data for account '%1'...\n", ident));
     mEdit->editor()->appendPlainText(i18n("------------------------------------------------------------\n"));

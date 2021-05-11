@@ -105,8 +105,8 @@ QString Legacy::VacationUtils::composeScript(const QString &messageText,
                                              const AddrSpecList &addrSpecs,
                                              bool sendForSpam,
                                              const QString &domain,
-                                             const QDate &startDate,
-                                             const QDate &endDate)
+                                             QDate startDate,
+                                             QDate endDate)
 {
     QString addressesArgument;
     QStringList aliases;

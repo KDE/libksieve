@@ -33,12 +33,12 @@ public:
     Q_REQUIRED_RESULT QString serverName() const;
 
 Q_SIGNALS:
-    void vacationScriptActive(VacationCheckJob *job, const QString &sscriptName, bool active);
+    void vacationScriptActive(KSieveUi::VacationCheckJob *job, const QString &sscriptName, bool active);
     void error(const QString &errorStr);
 
 private Q_SLOTS:
     void slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool active);
-    void slotGotActiveScripts(ParseUserScriptJob *job);
+    void slotGotActiveScripts(KSieveUi::ParseUserScriptJob *job);
     void slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &availableScripts, const QString &activeScript);
     void emitError(const QString &errorMessage);
     void searchVacationScript();

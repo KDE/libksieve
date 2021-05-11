@@ -43,8 +43,8 @@ QString KSIEVEUI_DEPRECATED composeScript(const QString &messageText,
                                           const KMime::Types::AddrSpecList &aliases,
                                           bool sendForSpam,
                                           const QString &excludeDomain,
-                                          const QDate &startDate,
-                                          const QDate &endDate);
+                                          QDate startDate,
+                                          QDate endDate);
 
 /*
 
