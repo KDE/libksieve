@@ -5,7 +5,7 @@ macro(add_sieveeditor_xmlprintingscriptbuilding _source _extrasource)
     ecm_add_test(${_test}
         TEST_NAME ${_name}
         NAME_PREFIX "sieveeditor-xmlprintingscriptbuilding-"
-        LINK_LIBRARIES Qt5::Test KF5::I18n KF5::KSieveUi
+        LINK_LIBRARIES Qt::Test KF5::I18n KF5::KSieveUi
         )
 endmacro()
 add_sieveeditor_xmlprintingscriptbuilding(xmlprintingscriptbuildertest.cpp "" "")

@@ -13,7 +13,7 @@ macro(add_sieveeditor_autocreatescripts _source _extrasource)
     ecm_add_test(${_test}
         TEST_NAME ${_name}
         NAME_PREFIX "sieveeditor-autocreatescripts-"
-        LINK_LIBRARIES Qt5::Test Qt5::Widgets KF5::I18n KF5::Completion KF5::ConfigCore KF5::KSieveUi KF5::MailTransport KF5::Libkdepim
+        LINK_LIBRARIES Qt::Test Qt::Widgets KF5::I18n KF5::Completion KF5::ConfigCore KF5::KSieveUi KF5::MailTransport KF5::Libkdepim
         )
     if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
         set_target_properties(${_name} PROPERTIES UNITY_BUILD ON)

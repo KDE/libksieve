@@ -260,11 +260,11 @@ target_link_libraries(KF5KSieveUi
     KF5::MailTransport
     KF5::KIOWidgets
     KF5::NewStuff
-    Qt5::WebEngineWidgets
+    Qt::WebEngineWidgets
     KF5::PimTextEdit
     KF5::I18n
     KF5::SonnetUi
-    Qt5::PrintSupport
+    Qt::PrintSupport
     KF5::SyntaxHighlighting
     )
 
