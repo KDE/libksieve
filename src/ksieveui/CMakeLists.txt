@@ -1,3 +1,5 @@
+add_library(KF5KSieveUi)
+add_library(KF5::KSieveUi ALIAS KF5KSieveUi)
 if(KDEPIM_ENTERPRISE_BUILD)
     set(USE_GRAPHICAL_SIEVE_EDITOR true)
 else()
@@ -25,7 +27,7 @@ if(BUILD_TESTING)
     add_subdirectory(widgets/autotests)
 endif()
 
-set(ksieveui_vacation_LIB_SRCS
+target_sources(KF5KSieveUi PRIVATE
     vacation/vacationmaillineedit.cpp
     vacation/vacationhelperjob.cpp
     vacation/vacationeditwidget.cpp
@@ -43,7 +45,7 @@ set(ksieveui_vacation_LIB_SRCS
     vacation/legacy/vacationscriptextractor.cpp
     vacation/searchserverwithvacationsupportjob.cpp
     )
-set(ksieveui_webpageeditor_LIB_SRCS
+target_sources(KF5KSieveUi PRIVATE
     editor/webengine/sieveeditorwebengineview.cpp
     editor/webengine/sieveeditorhelphtmlwidget.cpp
     editor/webengine/sieveeditorloadprogressindicator.cpp
@@ -51,8 +53,7 @@ set(ksieveui_webpageeditor_LIB_SRCS
     editor/webengine/findbar/findbarwebengineview.cpp
     )
 
-set(ksieveui_editor_LIB_SRCS
-    ${ksieveui_webpageeditor_LIB_SRCS}
+target_sources(KF5KSieveUi PRIVATE
     editor/sieveeditorwidget.cpp
     editor/sievetextedit.cpp
     editor/sieveeditor.cpp
@@ -71,7 +72,7 @@ set(ksieveui_editor_LIB_SRCS
     editor/sieveinfodialog.cpp
     )
 
-set(ksieveui_autocreatescripts_LIB_SRCS
+target_sources(KF5KSieveUi PRIVATE
     autocreatescripts/sievepreviewgeneratedcodewidget.cpp
     autocreatescripts/sieveeditorgraphicalmodewidgetabstract.cpp
     autocreatescripts/sievescriptparsingerrordialog.cpp
@@ -162,13 +163,13 @@ set(ksieveui_autocreatescripts_LIB_SRCS
     autocreatescripts/sieveconditions/widgets/regexpeditorlineedit.cpp
     )
 
-set(ksieveui_scriptsparsing_LIB_SRCS
+target_sources(KF5KSieveUi PRIVATE
     scriptsparsing/xmlprintingscriptbuilder.cpp
     scriptsparsing/parsingresultdialog.cpp
     scriptsparsing/parsingutil.cpp
     )
 
-set(ksieveui_sievescriptdebugger_LIB_SRCS
+target_sources(KF5KSieveUi PRIVATE
     sievescriptdebugger/sievescriptdebuggerdialog.cpp
     sievescriptdebugger/sievescriptdebuggerwidget.cpp
     sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp
@@ -177,20 +178,20 @@ set(ksieveui_sievescriptdebugger_LIB_SRCS
     sievescriptdebugger/sievescriptdebuggerresulteditor.cpp
     )
 
-set(ksieveui_managescriptjob_LIB_SRCS
+target_sources(KF5KSieveUi PRIVATE
     managescriptsjob/checkkolabkep14supportjob.cpp
     managescriptsjob/generateglobalscriptjob.cpp
     managescriptsjob/parseuserscriptjob.cpp
     managescriptsjob/renamescriptjob.cpp
     managescriptsjob/checkscriptjob.cpp
     )
-set(ksieveui_sieveimapinstance_LIB_SRCS
+target_sources(KF5KSieveUi PRIVATE
     sieveimapinstance/sieveimapinstance.cpp
     sieveimapinstance/sieveimapinstanceinterface.cpp
     sieveimapinstance/sieveimapinstanceinterfacemanager.cpp
     )
     
-set(ksieveui_sieveutil_LIB_SRCS
+target_sources(KF5KSieveUi PRIVATE
     util/util.cpp
     util/abstractakonadiimapsettinginterface.cpp
     util/akonadiimapsettinginterface.cpp
@@ -199,7 +200,7 @@ set(ksieveui_sieveutil_LIB_SRCS
     util/sieveimappasswordprovider.cpp
     )	
 
-set(ksieveui_widgets_SRCS
+target_sources(KF5KSieveUi PRIVATE
     widgets/custommanagesievewidget.cpp
     widgets/sievetreewidgetitem.cpp
     widgets/managesievetreeview.cpp
@@ -212,39 +213,29 @@ set(ksieveui_widgets_SRCS
     widgets/moveimapfolderwidget.cpp
     )
 
-set(ksieveui_LIB_SRCS
+target_sources(KF5KSieveUi PRIVATE
     managesievescriptsdialog.cpp
     debug/sievedebugdialog.cpp
     templates/sievetemplatewidget.cpp
     templates/sievedefaulttemplate.cpp
     templates/sievetemplateeditdialog.cpp
-    ${ksieveui_widgets_SRCS}
-    ${ksieveui_sieveutil_LIB_SRCS}
-    ${ksieveui_sieveimapinstance_LIB_SRCS}
-    ${ksieveui_scriptsparsing_LIB_SRCS}
-    ${ksieveui_vacation_LIB_SRCS}
-    ${ksieveui_editor_LIB_SRCS}
-    ${ksieveui_autocreatescripts_LIB_SRCS}
-    ${ksieveui_sievescriptdebugger_LIB_SRCS}
-    ${ksieveui_managescriptjob_LIB_SRCS}
     )
 
-ecm_qt_declare_logging_category(ksieveui_LIB_SRCS HEADER libksieve_debug.h IDENTIFIER LIBKSIEVE_LOG CATEGORY_NAME org.kde.pim.libksieve
+ecm_qt_declare_logging_category(KF5KSieveUi HEADER libksieve_debug.h IDENTIFIER LIBKSIEVE_LOG CATEGORY_NAME org.kde.pim.libksieve
         DESCRIPTION "kdepim (libksieve)"
         OLD_CATEGORY_NAMES log_libksieve
         EXPORT LIBKSIEVE
     )
 
 
-kconfig_add_kcfg_files(ksieveui_LIB_SRCS settings/sieve-vacation.kcfgc settings/sieve-editor.kcfgc)
+kconfig_add_kcfg_files(KF5KSieveUi settings/sieve-vacation.kcfgc settings/sieve-editor.kcfgc)
 
-add_library(KF5KSieveUi ${ksieveui_LIB_SRCS})
 generate_export_header(KF5KSieveUi BASE_NAME ksieveui)
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KF5KSieveUi PROPERTIES UNITY_BUILD ON)
 endif()
 
-add_library(KF5::KSieveUi ALIAS KF5KSieveUi)
+
 
 target_link_libraries(KF5KSieveUi
     PUBLIC
