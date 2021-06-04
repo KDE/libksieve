@@ -21,8 +21,3 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()
 
 install(TARGETS kio_sieve  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/kio/)
-
-
-########### install files ###############
-
-install( FILES sieve.protocol  DESTINATION ${KDE_INSTALL_KSERVICES5DIR})

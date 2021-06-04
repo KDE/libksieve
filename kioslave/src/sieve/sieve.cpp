@@ -55,6 +55,13 @@ static const sasl_callback_t callbacks[] = {{SASL_CB_ECHOPROMPT, nullptr, nullpt
 
 static const unsigned int SIEVE_DEFAULT_RECIEVE_BUFFER = 512;
 
+// Pseudo plugin class to embed meta data
+class KIOPluginForMetaData : public QObject
+{
+    Q_OBJECT
+    Q_PLUGIN_METADATA(IID "org.kde.kio.slave.sieve" FILE "sieve.json")
+};
+
 using namespace KIO;
 extern "C" {
 Q_DECL_EXPORT int kdemain(int argc, char **argv)
@@ -1303,3 +1310,4 @@ bool kio_sieveProtocol::requestCapabilitiesAfterStartTLS() const
     }
     return false;
 }
+#include "sieve.moc"

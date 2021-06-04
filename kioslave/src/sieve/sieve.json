@@ -1,0 +1,23 @@
+{
+    "KDE-KIO-Protocols": {
+        "ldap": {
+            "Icon": "view-filter",
+            "X-DocPath": "kioslave5/sieve/index.html",
+            "deleting": true,
+            "determineMimetypeFromExtension": false,
+            "exec": "kf5/kio/ldap",
+            "input": "none",
+            "listing": [
+                "Name",
+		"Access",
+		"Type",
+		"MimeType"
+            ],
+            "output": "filesystem",
+            "protocol": "sieve",
+            "reading": true,
+            "source": true,
+            "writing": true
+        }
+    }
+}
