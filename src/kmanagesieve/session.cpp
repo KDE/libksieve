@@ -10,6 +10,7 @@
 #include "sievejob_p.h"
 
 #include "kmanagersieve_debug.h"
+#include <KAuthorized>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KPasswordDialog>
@@ -18,6 +19,7 @@
 #include <kio/authinfo.h>
 #include <kio/job.h>
 #include <kio/sslui.h>
+#include <kwidgetsaddons_version.h>
 
 using namespace KManageSieve;
 
@@ -260,6 +262,9 @@ KManageSieve::AuthDetails Session::requestAuthDetails(const QUrl &url)
         "(usually the same as your email password):");
 
     QPointer<KPasswordDialog> dlg = new KPasswordDialog(nullptr, KPasswordDialog::ShowUsernameLine | KPasswordDialog::ShowKeepPassword);
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 84, 0)
+    dlg->setRevealPasswordAvailable(KAuthorized::authorize(QStringLiteral("lineedit_reveal_password")));
+#endif
     dlg->setUsername(ai.username);
     dlg->setPassword(ai.password);
     dlg->setKeepPassword(ai.keepPassword);
