@@ -22,7 +22,6 @@
 #include <KLocalizedString>
 #include <KStandardAction>
 #include <QTemporaryDir>
-#include <kns3/uploaddialog.h>
 #include <kzip.h>
 
 #include <PimCommon/PurposeMenuWidget>
@@ -71,14 +70,6 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
         toolbar->addAction(mGenerateXml);
     }
 
-    QStringList overlays;
-    overlays << QStringLiteral("list-add");
-    mShareScript = new QAction(QIcon(new KIconEngine(QStringLiteral("get-hot-new-stuff"), KIconLoader::global(), overlays)), i18n("Share Script..."), this);
-    connect(mShareScript, &QAction::triggered, this, &SieveEditorWidget::slotShareScript);
-    // Add action to toolBar
-
-    toolbar->addAction(mShareScript);
-
     auto purposeMenu = new SievePurposeMenuWidget(this, this);
     auto shareAction = new KActionMenu(i18n("Share..."), this);
     shareAction->setPopupMode(QToolButton::InstantPopup);
@@ -120,7 +111,6 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
         menuBar->fileMenu()->addSeparator();
         menuBar->fileMenu()->addAction(mSaveAs);
         menuBar->fileMenu()->addSeparator();
-        menuBar->fileMenu()->addAction(mShareScript);
         menuBar->toolsMenu()->addSeparator();
         menuBar->fileMenu()->addAction(shareAction);
         menuBar->toolsMenu()->addSeparator();
@@ -375,40 +365,6 @@ void SieveEditorWidget::setModified(bool b)
     if (mModified != b) {
         mModified = b;
         Q_EMIT valueChanged(mModified);
-    }
-}
-
-void SieveEditorWidget::slotShareScript()
-{
-    QTemporaryDir tmp;
-    QTemporaryFile tmpFile;
-    if (tmpFile.open()) {
-        QTextStream out(&tmpFile);
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        out.setCodec("UTF-8");
-#endif
-        out << script();
-        tmpFile.close();
-        const QString sourceName = mScriptName->text();
-        const QString zipFileName = tmp.path() + QLatin1Char('/') + sourceName + QLatin1String(".zip");
-        KZip *zip = new KZip(zipFileName);
-        if (zip->open(QIODevice::WriteOnly)) {
-            if (zip->addLocalFile(tmpFile.fileName(), sourceName + QLatin1String(".siv"))) {
-                zip->close();
-                const QString knsrcPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("knsrcfiles/ksieve_script.knsrc"));
-                QPointer<KNS3::UploadDialog> dialog = new KNS3::UploadDialog(knsrcPath, this);
-                dialog->setUploadFile(QUrl::fromLocalFile(zipFileName));
-                dialog->setUploadName(sourceName);
-                dialog->setDescription(i18nc("Default description for the source", "My Sieve Script"));
-                dialog->exec();
-                delete dialog;
-            } else {
-                zip->close();
-            }
-        }
-        delete zip;
-    } else {
-        qCWarning(LIBKSIEVE_LOG) << "Impossible to open temp file";
     }
 }
 

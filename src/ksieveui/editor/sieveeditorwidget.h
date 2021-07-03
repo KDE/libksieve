@@ -88,7 +88,6 @@ public Q_SLOTS:
     void goToLine();
     void slotSaveAs();
     void slotImport();
-    void slotShareScript();
     void slotCreateRulesGraphically();
     void slotCheckSyntax();
     void comment();
@@ -126,7 +125,6 @@ private:
     QAction *mSwitchMode = nullptr;
     QAction *mCreateRulesGraphically = nullptr;
     QAction *mSaveAs = nullptr;
-    QAction *mShareScript = nullptr;
     QAction *mGenerateXml = nullptr;
     QAction *mServerInfo = nullptr;
     EditorMode mMode = EditorMode::TextMode;
