@@ -627,7 +627,7 @@ void ManageSieveWidget::setActiveScripts(ParseUserScriptJob *job)
         }
     }
 
-    for (const QString &scriptName : qAsConst(scriptOrder)) {
+    for (const QString &scriptName : std::as_const(scriptOrder)) {
         parent->addChild(scriptMap[scriptName]);
     }
 

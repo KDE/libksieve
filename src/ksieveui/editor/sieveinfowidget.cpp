@@ -31,7 +31,7 @@ void SieveInfoWidget::setServerInfo(QStringList serverInfos)
 {
     serverInfos.sort();
     QString result = QLatin1String("<qt><b>") + i18n("Sieve server supports:") + QLatin1String("</b><ul>");
-    for (const QString &info : qAsConst(serverInfos)) {
+    for (const QString &info : std::as_const(serverInfos)) {
         result += QLatin1String("<li>") + info;
     }
     result += QLatin1String("</ul></qt>");

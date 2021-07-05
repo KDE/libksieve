@@ -253,7 +253,7 @@ QStringList SieveEditorTextModeWidget::insertNecessaryRequires(const QStringList
 {
     QStringList needToAddRequire;
     const QString plainText = mTextEdit->toPlainText();
-    for (const QString &module : qAsConst(requireModules)) {
+    for (const QString &module : std::as_const(requireModules)) {
         if (!plainText.contains(module)) {
             needToAddRequire.append(module);
         }

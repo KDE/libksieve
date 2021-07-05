@@ -71,7 +71,7 @@ void Session::disconnectFromHost(bool sendLogout)
     if (m_currentJob) {
         killJob(m_currentJob, KJob::EmitResult);
     }
-    for (SieveJob *job : qAsConst(m_jobs)) {
+    for (SieveJob *job : std::as_const(m_jobs)) {
         killJob(job, KJob::EmitResult);
     }
     deleteLater();

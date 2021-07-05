@@ -94,7 +94,7 @@ QStringList AutoCreateScriptUtil::createListFromString(QString str)
     lst = str.split(QStringLiteral(", "));
     QStringList resultLst;
     resultLst.reserve(lst.count());
-    for (QString s : qAsConst(lst)) {
+    for (QString s : std::as_const(lst)) {
         s.remove(QLatin1Char('"'));
         resultLst << s.trimmed();
     }

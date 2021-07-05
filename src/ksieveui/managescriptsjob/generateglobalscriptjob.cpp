@@ -115,7 +115,7 @@ void GenerateGlobalScriptJob::writeUserScript()
         "\n"
         "require [\"include\"];\n");
 
-    for (const QString &activeScript : qAsConst(mListUserActiveScripts)) {
+    for (const QString &activeScript : std::as_const(mListUserActiveScripts)) {
         userScript += QStringLiteral("\ninclude :personal \"%1\";").arg(activeScript);
     }
 

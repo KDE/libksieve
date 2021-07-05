@@ -373,7 +373,7 @@ QString SieveScriptListBox::generatedScript(QStringList &requireModules) const
     }
 
     QStringList endRequires;
-    for (const QString &r : qAsConst(lstRequires)) {
+    for (const QString &r : std::as_const(lstRequires)) {
         if (!endRequires.contains(r)) {
             endRequires.append(r);
             requireModules += QStringLiteral("require \"%1\";").arg(r);
