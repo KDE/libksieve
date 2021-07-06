@@ -41,7 +41,7 @@ bool CustomManageSieveWidget::refreshList()
     bool noImapFound = true;
     mLastSieveTreeWidgetItem = nullptr;
     mServerSieveInfos.clear();
-    for (const KSieveUi::SieveImapInstance &type : mSieveImapInstances) {
+    for (const KSieveUi::SieveImapInstance &type : std::as_const(mSieveImapInstances)) {
         if (type.status() == KSieveUi::SieveImapInstance::Broken) {
             continue;
         }
