@@ -339,7 +339,7 @@ bool ManageSieveWidget::updateGlobalScript(QTreeWidgetItem *item, const QUrl &u)
     return false;
 }
 
-void ManageSieveWidget::changeActiveScript(QTreeWidgetItem *item, bool activate)
+void ManageSieveWidget::changeActiveScript(QTreeWidgetItem *item, bool activate, bool deleteScript)
 {
     if (!item) {
         return;
@@ -371,7 +371,14 @@ void ManageSieveWidget::changeActiveScript(QTreeWidgetItem *item, bool activate)
         job = KManageSieve::SieveJob::deactivate(u);
     }
     d->mBlockSignal = true;
-    connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveWidget::slotRefresh);
+    connect(job, &KManageSieve::SieveJob::result, this, [this, u, deleteScript]() {
+        slotRefresh();
+        if (deleteScript) {
+            KManageSieve::SieveJob *job = KManageSieve::SieveJob::del(u);
+            connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveWidget::slotDeleteResult);
+            Q_EMIT scriptDeleted(u);
+        }
+    });
 }
 
 void ManageSieveWidget::slotGenerateGlobalScriptError(const QString &errorStr)
