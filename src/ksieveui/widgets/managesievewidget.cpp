@@ -318,6 +318,27 @@ void ManageSieveWidget::slotDeactivateScript()
     }
 }
 
+bool ManageSieveWidget::updateGlobalScript(QTreeWidgetItem *item, const QUrl &u)
+{
+    if (item->data(0, SIEVE_SERVER_MODE).toInt() == Kep14EditorMode) {
+        QStringList activeScripts;
+        for (int i = 0; i < item->childCount(); ++i) {
+            QTreeWidgetItem *j = item->child(i);
+            if (itemIsActived(j)) {
+                activeScripts << j->text(0);
+            }
+        }
+        auto job = new GenerateGlobalScriptJob(u);
+        job->addUserActiveScripts(activeScripts);
+        job->setForceActivateUserScript(true);
+        connect(job, &GenerateGlobalScriptJob::success, this, &ManageSieveWidget::slotRefresh);
+        connect(job, &GenerateGlobalScriptJob::error, this, &ManageSieveWidget::slotGenerateGlobalScriptError);
+        job->start();
+        return true;
+    }
+    return false;
+}
+
 void ManageSieveWidget::changeActiveScript(QTreeWidgetItem *item, bool activate)
 {
     if (!item) {
@@ -333,23 +354,8 @@ void ManageSieveWidget::changeActiveScript(QTreeWidgetItem *item, bool activate)
     if (u.isEmpty()) {
         return;
     }
-
-    if (item->data(0, SIEVE_SERVER_MODE).toInt() == Kep14EditorMode) {
-        QStringList activeScripts;
-        for (int i = 0; i < item->childCount(); ++i) {
-            QTreeWidgetItem *j = item->child(i);
-            if (itemIsActived(j)) {
-                activeScripts << j->text(0);
-            }
-        }
-        auto job = new GenerateGlobalScriptJob(u);
-        job->addUserActiveScripts(activeScripts);
-        job->setForceActivateUserScript(true);
-        connect(job, &GenerateGlobalScriptJob::success, this, &ManageSieveWidget::slotRefresh);
-        connect(job, &GenerateGlobalScriptJob::error, this, &ManageSieveWidget::slotGenerateGlobalScriptError);
-        job->start();
+    if (updateGlobalScript(item, u))
         return;
-    }
 
     QTreeWidgetItem *selected = d->mSelectedItems[item];
     if (!selected) {

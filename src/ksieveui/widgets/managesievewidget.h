@@ -103,6 +103,7 @@ private:
     bool isFileNameItem(QTreeWidgetItem *item) const;
     bool itemIsActived(QTreeWidgetItem *item) const;
     void changeActiveScript(QTreeWidgetItem *item, bool activate);
+    Q_REQUIRED_RESULT bool updateGlobalScript(QTreeWidgetItem *item, const QUrl &u);
     void slotGenerateGlobalScriptError(const QString &errorStr);
     std::unique_ptr<ManageSieveWidgetPrivate> const d;
 };
