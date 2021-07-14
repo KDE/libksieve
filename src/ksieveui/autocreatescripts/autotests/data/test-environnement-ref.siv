@@ -2,7 +2,7 @@ require "environment";
 require "imap4flags";
 
 #SCRIPTNAME: Script part 0
-#Script name: test environnement
+#Script name: test environment
 
 if environment "PATH" "local folder"
 {

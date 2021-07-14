@@ -173,7 +173,7 @@ bool Parser::Impl::parse()
 bool Parser::Impl::parseCommandList()
 {
     // our ABNF:
-    // command-list := *comand
+    // command-list := *command
 
     while (!atEnd()) {
         if (!obtainToken()) {

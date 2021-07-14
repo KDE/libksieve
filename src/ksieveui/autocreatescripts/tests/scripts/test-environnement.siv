@@ -1,6 +1,6 @@
 require "environment";
  
-#Script name: test environnement
+#Script name: test environment
 
 if environment "PATH" "local folder"
 {

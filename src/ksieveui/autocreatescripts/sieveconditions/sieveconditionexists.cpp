@@ -51,10 +51,10 @@ QWidget *SieveConditionExists::createParamWidget(QWidget *parent) const
 QString SieveConditionExists::code(QWidget *w) const
 {
     const QComboBox *combo = w->findChild<QComboBox *>(QStringLiteral("existscheck"));
-    const QString comparaison = combo->itemData(combo->currentIndex()).toString();
+    const QString comparison = combo->itemData(combo->currentIndex()).toString();
 
     const SelectHeaderTypeComboBox *value = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headervalue"));
-    return QStringLiteral("%1 %2").arg(comparaison, value->code()) + AutoCreateScriptUtil::generateConditionComment(comment());
+    return QStringLiteral("%1 %2").arg(comparison, value->code()) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QString SieveConditionExists::help() const
