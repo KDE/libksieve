@@ -247,8 +247,9 @@ SieveScriptPage *SieveScriptListBox::createNewScript(const QString &newName, con
 
 void SieveScriptListBox::slotNew()
 {
-    const QString newName = QInputDialog::getText(this, i18nc("@title:window", "New Script"), i18n("New script name:"));
-    if (!newName.trimmed().isEmpty()) {
+    bool ok;
+    const QString newName = QInputDialog::getText(this, i18nc("@title:window", "New Script"), i18n("New script name:"), {}, {}, &ok);
+    if (!newName.trimmed().isEmpty() && ok) {
         createNewScript(newName);
         Q_EMIT valueChanged();
     }
@@ -274,12 +275,15 @@ void SieveScriptListBox::slotRename()
 {
     QListWidgetItem *item = mSieveListScript->currentItem();
     if (item) {
+        bool ok = false;
         QString newName =
-            QInputDialog::getText(this, i18nc("@title:window", "Rename Script"), i18n("New name for the script:"), QLineEdit::Normal, item->text());
-        newName = newName.trimmed();
-        if (!newName.isEmpty()) {
-            item->setText(newName);
-            Q_EMIT valueChanged();
+            QInputDialog::getText(this, i18nc("@title:window", "Rename Script"), i18n("New name for the script:"), QLineEdit::Normal, item->text(), &ok);
+        if (ok) {
+            newName = newName.trimmed();
+            if (!newName.isEmpty()) {
+                item->setText(newName);
+                Q_EMIT valueChanged();
+            }
         }
     }
 }
