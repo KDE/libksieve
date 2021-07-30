@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2011-2021 Laurent Montel <montel@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
+
 include_directories(${libksieve_SOURCE_DIR}
         ${libksieve_SOURCE_DIR}/src/ksieveui/scriptsparsing
         )

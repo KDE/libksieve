@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2011-2021 Laurent Montel <montel@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
 ecm_add_test(findbarbasetest.cpp
     TEST_NAME findbarbasetest
     NAME_PREFIX "libksieveui-findbar-"

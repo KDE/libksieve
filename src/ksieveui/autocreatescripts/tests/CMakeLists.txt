@@ -1,3 +1,5 @@
+# SPDX-FileCopyrightText: 2011-2021 Laurent Montel <montel@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
 
 add_executable(autocreatescripts_gui autocreatescripts_gui.cpp ../../tests/capability.cpp)
 target_include_directories(autocreatescripts_gui PRIVATE ${libksieve_SOURCE_DIR}/src/ksieveui/scriptsparsing)

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2011-2021 Laurent Montel <montel@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
+
 set( libksieveui_sieveeditormenubartest_source sieveeditormenubartest.cpp ../sieveeditormenubar.cpp
     )
 add_executable( sieveeditormenubartest ${libksieveui_sieveeditormenubartest_source})

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2011-2021 Laurent Montel <montel@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
+
 add_library(KF5KSieveUi)
 add_library(KF5::KSieveUi ALIAS KF5KSieveUi)
 if(KDEPIM_ENTERPRISE_BUILD)

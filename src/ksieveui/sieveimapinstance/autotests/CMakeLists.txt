@@ -1,7 +1,10 @@
+# SPDX-FileCopyrightText: 2011-2021 Laurent Montel <montel@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
+
 set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
 
-macro( add_sieveimapinstance_test _source _additionalsource)
-  set( _test ${_source} ${_additionalsource})
+macro( add_sieveimapinstance_test _source)
+  set( _test ${_source})
   get_filename_component( _name ${_source} NAME_WE )
   add_executable( ${_name} ${_test} )
   add_test(NAME ${_name} COMMAND ${_name})
@@ -10,5 +13,5 @@ macro( add_sieveimapinstance_test _source _additionalsource)
 endmacro()
 
 
-add_sieveimapinstance_test(sieveimapinstancetest.cpp "")
-add_sieveimapinstance_test(sieveimapinstanceinterfacemanagertest.cpp "")
+add_sieveimapinstance_test(sieveimapinstancetest.cpp)
+add_sieveimapinstance_test(sieveimapinstanceinterfacemanagertest.cpp)

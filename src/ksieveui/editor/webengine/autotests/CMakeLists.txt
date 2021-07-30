@@ -1,8 +1,8 @@
-set( libksieveui_sieveeditorhelphtmlwidgettest_source sieveeditorhelphtmlwidgettest.cpp
-    ../sieveeditorwebengineview.cpp
-    ../sieveeditorloadprogressindicator.cpp
-    )
-add_executable( sieveeditorhelphtmlwidgettest ${libksieveui_sieveeditorhelphtmlwidgettest_source})
+# SPDX-FileCopyrightText: 2011-2021 Laurent Montel <montel@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
+
+add_executable( sieveeditorhelphtmlwidgettest)
+target_sources(sieveeditorhelphtmlwidgettest PRIVATE sieveeditorhelphtmlwidgettest.cpp ../sieveeditorwebengineview.cpp ../sieveeditorloadprogressindicator.cpp)
 add_test(NAME sieveeditorhelphtmlwidgettest COMMAND sieveeditorhelphtmlwidgettest)
 ecm_mark_as_test(sieveeditorhelphtmlwidgettest)
 target_link_libraries( sieveeditorhelphtmlwidgettest
