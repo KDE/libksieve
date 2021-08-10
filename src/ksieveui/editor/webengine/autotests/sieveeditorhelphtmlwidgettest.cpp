@@ -26,6 +26,9 @@ SieveEditorHelpHtmlWidgetTest::~SieveEditorHelpHtmlWidgetTest()
 void SieveEditorHelpHtmlWidgetTest::shouldHaveDefaultValue()
 {
     KSieveUi::SieveEditorHelpHtmlWidget w;
+    // widget is 0x0 size without any content, which results in show() not creating a window, at least in Qt 5.15
+    // so set some dummy size to make window appear
+    w.resize(100, 100);
     w.show();
     QVERIFY(QTest::qWaitForWindowExposed(&w));
 
