@@ -21,7 +21,8 @@ static inline QString stringReplaceRegExp(QString s)
 
 static inline QString stringReplaceRegularExpression(QString s)
 {
-    s.replace(QRegularExpression(QStringLiteral("[\n\t]+")), QStringLiteral(" "));
+    static QRegularExpression reg(QStringLiteral("[\n\t]+"));
+    s.replace(reg, QStringLiteral(" "));
     return s.replace(QLatin1Char('\"'), QStringLiteral("\\\""));
 }
 

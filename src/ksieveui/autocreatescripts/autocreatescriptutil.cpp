@@ -161,9 +161,10 @@ QStringList AutoCreateScriptUtil::listValue(QXmlStreamReader &element)
 
 QString AutoCreateScriptUtil::fixListValue(QString valueStr)
 {
+    static QRegularExpression reg(QStringLiteral("^\\[\\s*\".*\"\\s*]$"));
     if (!(valueStr.startsWith(QLatin1Char('[')) && valueStr.endsWith(QLatin1Char(']')))) {
         valueStr = QStringLiteral("\"%1\"").arg(valueStr);
-    } else if (valueStr.contains(QRegularExpression(QStringLiteral("^\\[\\s*\".*\"\\s*]$")))) {
+    } else if (valueStr.contains(reg)) {
     } else {
         valueStr = QStringLiteral("\"%1\"").arg(valueStr);
     }

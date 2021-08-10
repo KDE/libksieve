@@ -40,9 +40,6 @@ public:
     explicit SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, QWidget *parent = nullptr);
     ~SieveDebugDialog() override;
 
-Q_SIGNALS:
-    void result(bool success);
-
 private Q_SLOTS:
     void slotGetScript(KManageSieve::SieveJob *job, bool success, const QString &script, bool active);
     void slotGetScriptList(KManageSieve::SieveJob *job, bool success, const QStringList &scriptList, const QString &activeScript);
