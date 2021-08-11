@@ -15,7 +15,9 @@
 
 using namespace KSieveUi;
 
-QTEST_APPLESS_MAIN(VacationUtilsTest)
+// using KI18n calls which require a Q*Application instance to exist
+// and will assert on the condition when in build in debug mode
+QTEST_MAIN(VacationUtilsTest)
 
 void testAliases(const KMime::Types::AddrSpecList &l1, const KMime::Types::AddrSpecList &l2)
 {
