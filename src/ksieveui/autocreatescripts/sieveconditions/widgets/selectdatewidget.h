@@ -6,7 +6,6 @@
 #pragma once
 
 #include "ksieveui_private_export.h"
-#include <QSpinBox>
 #include <QWidget>
 
 class QComboBox;

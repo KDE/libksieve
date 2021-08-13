@@ -17,11 +17,8 @@
 #include "sieveeditortextmodewidget.h"
 
 #include <KActionMenu>
-#include <KIconEngine>
-#include <KIconLoader>
 #include <KLocalizedString>
 #include <KStandardAction>
-#include <QTemporaryDir>
 #include <kzip.h>
 
 #include <PimCommon/PurposeMenuWidget>
@@ -30,11 +27,9 @@
 #include <QAction>
 #include <QLabel>
 #include <QLineEdit>
-#include <QPointer>
 #include <QPushButton>
 #include <QStackedWidget>
 #include <QStandardPaths>
-#include <QTemporaryFile>
 #include <QToolBar>
 #include <QVBoxLayout>
 
