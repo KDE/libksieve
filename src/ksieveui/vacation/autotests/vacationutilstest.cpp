@@ -197,7 +197,8 @@ void VacationUtilsTest::testParseScriptComplexTime()
 
 void VacationUtilsTest::testWriteScript()
 {
-    VacationUtils::Vacation vacation, vacationA;
+    VacationUtils::Vacation vacation;
+    VacationUtils::Vacation vacationA;
     const QStringList aliases = QStringList() << QStringLiteral("test@test.de");
     vacation.valid = true;
 

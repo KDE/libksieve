@@ -349,7 +349,8 @@ QString KSieveUi::VacationUtils::mergeRequireLine(const QString &script, const Q
 
     KSieve::Parser parser(scriptUTF8.begin(), scriptUTF8.begin() + scriptUTF8.length());
     KSieve::Parser parserUpdate(scriptUpdateUTF8.begin(), scriptUpdateUTF8.begin() + scriptUpdateUTF8.length());
-    RequireExtractor rx, rxUpdate;
+    RequireExtractor rx;
+    RequireExtractor rxUpdate;
     parser.setScriptBuilder(&rx);
     parserUpdate.setScriptBuilder(&rxUpdate);
 
@@ -398,7 +399,8 @@ QString KSieveUi::VacationUtils::updateVacationBlock(const QString &oldScript, c
 
     KSieve::Parser parserOld(oldScriptUTF8.begin(), oldScriptUTF8.begin() + oldScriptUTF8.length());
     KSieve::Parser parserNew(newScriptUTF8.begin(), newScriptUTF8.begin() + newScriptUTF8.length());
-    VacationDataExtractor vdxOld, vdxNew;
+    VacationDataExtractor vdxOld;
+    VacationDataExtractor vdxNew;
     RequireExtractor rx;
     KSieveExt::MultiScriptBuilder tsb(&vdxOld, &rx);
     parserOld.setScriptBuilder(&tsb);

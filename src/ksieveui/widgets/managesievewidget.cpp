@@ -354,8 +354,9 @@ void ManageSieveWidget::changeActiveScript(QTreeWidgetItem *item, bool activate,
     if (u.isEmpty()) {
         return;
     }
-    if (updateGlobalScript(item, u))
+    if (updateGlobalScript(item, u)) {
         return;
+    }
 
     QTreeWidgetItem *selected = d->mSelectedItems[item];
     if (!selected) {

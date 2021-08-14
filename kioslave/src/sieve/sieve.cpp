@@ -1170,7 +1170,8 @@ bool kio_sieveProtocol::sendData(const QByteArray &data)
 bool kio_sieveProtocol::receiveData(bool waitForData, const QByteArray &reparse)
 {
     QByteArray interpret;
-    int start, end;
+    int start;
+    int end;
 
     if (reparse.isEmpty()) {
         if (!waitForData) {
