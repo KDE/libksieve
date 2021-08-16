@@ -1,6 +1,16 @@
 # SPDX-FileCopyrightText: 2011-2021 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KF5KSieveUi_QCH
+        FILE KF5KSieveUiQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5KSieveUiQchTargets.cmake\")")
+endif()
+
 add_library(KF5KSieveUi)
 add_library(KF5::KSieveUi ALIAS KF5KSieveUi)
 if(KDEPIM_ENTERPRISE_BUILD)
@@ -390,3 +400,35 @@ install(FILES
 
 install(FILES data/ksieve_script.knsrc DESTINATION ${KDE_INSTALL_KNSRCDIR} )
 install(DIRECTORY data/scripts/ DESTINATION ${KDE_INSTALL_DATADIR}/sieve/scripts/ )
+
+if (BUILD_QCH)
+    ecm_add_qch(
+        KF5KSieveUi_QCH
+        NAME KF5KSieveUi
+        BASE_NAME KF5KSieveUi
+        VERSION ${PIM_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES # using only public headers, to cover only public API
+            ${ksieveui_imapinstance_HEADERS}
+            ${ksieveui_widgets_HEADERS}
+            ${ksieveui_debug_HEADERS}
+            ${ksieveui_vacation_HEADERS}
+            ${ksieveui_HEADERS}
+            ${ksieveui_editor_HEADERS}
+            ${ksieveui_util_HEADERS}
+            ${ksieveui_managescriptsjob_HEADERS}
+        #MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
+        #IMAGE_DIRS "${CMAKE_SOURCE_DIR}/docs/pics"
+        LINK_QCHS
+            Qt5Core_QCH
+            Qt5Gui_QCH
+            Qt5Widgets_QCH
+        INCLUDE_DIRS
+            ${CMAKE_CURRENT_BINARY_DIR}
+        BLANK_MACROS
+            KSIEVEUI_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()
