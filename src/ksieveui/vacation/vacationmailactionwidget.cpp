@@ -9,7 +9,6 @@
 #include "widgets/abstractselectemaillineedit.h"
 #include "widgets/moveimapfolderwidget.h"
 #include <KPluginFactory>
-#include <KPluginLoader>
 #include <QHBoxLayout>
 #include <QStackedWidget>
 
