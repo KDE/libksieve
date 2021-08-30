@@ -37,7 +37,7 @@ QWidget *SieveActionExtractText::createParamWidget(QWidget *parent) const
     nbCharacters->setMaximum(99999);
     nbCharacters->setObjectName(QStringLiteral("numberOfCharacters"));
     grid->addWidget(nbCharacters, 0, 1);
-    connect(nbCharacters, QOverload<int>::of(&QSpinBox::valueChanged), this, &SieveActionExtractText::valueChanged);
+    connect(nbCharacters, qOverload<int>(&QSpinBox::valueChanged), this, &SieveActionExtractText::valueChanged);
 
     lab = new QLabel(i18n("Stored in variable name:"));
     grid->addWidget(lab, 1, 0);

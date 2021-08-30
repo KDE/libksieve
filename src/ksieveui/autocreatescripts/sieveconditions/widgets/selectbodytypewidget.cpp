@@ -35,7 +35,7 @@ void SelectBodyTypeWidget::initialize()
     mBodyCombobox->addItem(i18n("raw"), QStringLiteral(":raw"));
     mBodyCombobox->addItem(i18n("content"), QStringLiteral(":content"));
     mBodyCombobox->addItem(i18n("text"), QStringLiteral(":text"));
-    connect(mBodyCombobox, QOverload<int>::of(&QComboBox::activated), this, &SelectBodyTypeWidget::slotBodyTypeChanged);
+    connect(mBodyCombobox, qOverload<int>(&QComboBox::activated), this, &SelectBodyTypeWidget::slotBodyTypeChanged);
 
     mBodyLineEdit = new QLineEdit(this);
     new KPIM::LineEditCatchReturnKey(mBodyLineEdit, this);

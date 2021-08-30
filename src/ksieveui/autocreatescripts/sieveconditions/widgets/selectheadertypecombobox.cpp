@@ -201,7 +201,7 @@ SelectHeaderTypeComboBox::SelectHeaderTypeComboBox(bool onlyEnvelopType, QWidget
     initialize(onlyEnvelopType);
     connect(this, &SelectHeaderTypeComboBox::textActivated, this, &SelectHeaderTypeComboBox::slotSelectItem);
     connect(this, &SelectHeaderTypeComboBox::editTextChanged, this, &SelectHeaderTypeComboBox::valueChanged);
-    connect(this, QOverload<int>::of(&SelectHeaderTypeComboBox::activated), this, &SelectHeaderTypeComboBox::valueChanged);
+    connect(this, qOverload<int>(&SelectHeaderTypeComboBox::activated), this, &SelectHeaderTypeComboBox::valueChanged);
 }
 
 SelectHeaderTypeComboBox::~SelectHeaderTypeComboBox()

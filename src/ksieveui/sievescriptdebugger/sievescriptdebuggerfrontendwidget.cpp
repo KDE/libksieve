@@ -172,7 +172,7 @@ void SieveScriptDebuggerFrontEndWidget::slotDebugScript()
     mProcess->start(QStringLiteral("sieve-test"), QStringList() << arguments);
     connect(mProcess, &QProcess::readyReadStandardOutput, this, &SieveScriptDebuggerFrontEndWidget::slotReadStandardOutput);
     connect(mProcess, &QProcess::readyReadStandardError, this, &SieveScriptDebuggerFrontEndWidget::slotReadErrorOutput);
-    connect(mProcess, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &SieveScriptDebuggerFrontEndWidget::slotDebugFinished);
+    connect(mProcess, qOverload<int, QProcess::ExitStatus>(&QProcess::finished), this, &SieveScriptDebuggerFrontEndWidget::slotDebugFinished);
     mSieveTestResult->editor()->appendPlainText(QStringLiteral("--------------------------------------"));
     mSieveTestResult->editor()->appendPlainText(QLocale().toString(QDateTime::currentDateTime()));
     mSieveTestResult->editor()->appendPlainText(QStringLiteral("\n"));

@@ -36,7 +36,7 @@ void SelectDateWidget::initialize()
     lay->setContentsMargins({});
 
     mDateType = new QComboBox(this);
-    connect(mDateType, QOverload<int>::of(&QComboBox::activated), this, &SelectDateWidget::slotDateTypeActivated);
+    connect(mDateType, qOverload<int>(&QComboBox::activated), this, &SelectDateWidget::slotDateTypeActivated);
     mDateType->addItem(i18n("Year"), QVariant::fromValue(KSieveUi::SelectDateWidget::Year));
     mDateType->addItem(i18n("Month"), QVariant::fromValue(KSieveUi::SelectDateWidget::Month));
     mDateType->addItem(i18n("Day"), QVariant::fromValue(KSieveUi::SelectDateWidget::Day));
@@ -65,7 +65,7 @@ void SelectDateWidget::initialize()
 
     mDateValue = new SieveDateSpinBox(this);
     mStackWidget->addWidget(mDateValue);
-    connect(mDateValue, QOverload<int>::of(&QSpinBox::valueChanged), this, &SelectDateWidget::valueChanged);
+    connect(mDateValue, qOverload<int>(&QSpinBox::valueChanged), this, &SelectDateWidget::valueChanged);
 
     mDateEdit = new KDateComboBox(this);
     mStackWidget->addWidget(mDateEdit);

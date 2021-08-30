@@ -118,7 +118,7 @@ void SieveConditionWidget::initWidget()
 
     mComboBox->addItem(QLatin1String(""));
     mLayout->addWidget(mComboBox, 1, 2);
-    connect(mComboBox, QOverload<int>::of(&QComboBox::activated), this, &SieveConditionWidget::slotConditionChanged);
+    connect(mComboBox, qOverload<int>(&QComboBox::activated), this, &SieveConditionWidget::slotConditionChanged);
 
     mComboBox->setMaxCount(mComboBox->count());
     mComboBox->setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));

@@ -153,7 +153,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mIntervalSpin->setValue(defDayInterval);
     mIntervalSpin->setObjectName(QStringLiteral("mIntervalSpin"));
     mIntervalSpin->setSuffix(i18np(" day", " days", defDayInterval));
-    connect(mIntervalSpin, QOverload<int>::of(&QSpinBox::valueChanged), this, &VacationEditWidget::slotIntervalSpinChanged);
+    connect(mIntervalSpin, qOverload<int>(&QSpinBox::valueChanged), this, &VacationEditWidget::slotIntervalSpinChanged);
     auto resendNotificationLabel = new QLabel(i18n("&Resend notification only after:"), this);
     resendNotificationLabel->setObjectName(QStringLiteral("resendNotificationLabel"));
     resendNotificationLabel->setBuddy(mIntervalSpin);
@@ -178,7 +178,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
         mMailAction->addItem(VacationUtils::mailAction(static_cast<VacationUtils::MailAction>(i)));
     }
     mMailAction->setObjectName(QStringLiteral("mMailAction"));
-    connect(mMailAction, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &VacationEditWidget::mailActionChanged);
+    connect(mMailAction, qOverload<int>(&QComboBox::currentIndexChanged), this, &VacationEditWidget::mailActionChanged);
 
     // Add imap select folder plugin here.
     mMailActionRecipient = new VacationMailActionWidget(this);
