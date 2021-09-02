@@ -66,7 +66,7 @@ private:
     bool overrideShortcut(QKeyEvent *event);
     Q_REQUIRED_RESULT QStringList completerList() const;
     void setCompleterList(const QStringList &list);
-    Q_REQUIRED_RESULT QString selectedWord(const QPoint &pos = QPoint()) const;
+    Q_REQUIRED_RESULT QString selectedWord(QPoint pos = QPoint()) const;
 
     std::unique_ptr<SieveTextEditPrivate> const d;
 };

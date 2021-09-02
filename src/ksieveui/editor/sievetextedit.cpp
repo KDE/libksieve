@@ -308,7 +308,7 @@ void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
     }
 }
 
-QString SieveTextEdit::selectedWord(const QPoint &pos) const
+QString SieveTextEdit::selectedWord(QPoint pos) const
 {
     QTextCursor wordSelectCursor(pos.isNull() ? textCursor() : cursorForPosition(pos));
     wordSelectCursor.clearSelection();
