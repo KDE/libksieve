@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: None
+# SPDX-License-Identifier: CC0-1.0
+
+Dependencies:
+- 'on': ['@all']
+  'require':
+    'kde/pim/kidentitymanagement' : '@latest'
+    'kde/pim/kimap' : '@latest'
+    'kde/pim/kmailtransport' : '@latest'
+    'kde/pim/kmime' : '@latest'
+    'kde/pim/kpimtextedit' : '@latest'
+    'kde/pim/libkdepim' : '@latest'
+    'kde/pim/pimcommon' : '@latest'
