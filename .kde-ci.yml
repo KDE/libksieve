@@ -4,10 +4,10 @@
 Dependencies:
 - 'on': ['@all']
   'require':
-    'kde/pim/kidentitymanagement' : '@latest'
-    'kde/pim/kimap' : '@latest'
-    'kde/pim/kmailtransport' : '@latest'
-    'kde/pim/kmime' : '@latest'
-    'kde/pim/kpimtextedit' : '@latest'
-    'kde/pim/libkdepim' : '@latest'
-    'kde/pim/pimcommon' : '@latest'
+    'kde/pim/kidentitymanagement' : '@same'
+    'kde/pim/kimap' : '@same'
+    'kde/pim/kmailtransport' : '@same'
+    'kde/pim/kmime' : '@same'
+    'kde/pim/kpimtextedit' : '@same'
+    'kde/pim/libkdepim' : '@same'
+    'kde/pim/pimcommon' : '@same'
