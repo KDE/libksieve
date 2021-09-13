@@ -8,7 +8,6 @@
 #include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
 #include <KLocalizedString>
-#include <KPluginLoader>
 #include <QIcon>
 #include <QWhatsThis>
 #include <QWhatsThisClickedEvent>
