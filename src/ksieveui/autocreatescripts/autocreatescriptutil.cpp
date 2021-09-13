@@ -9,7 +9,6 @@
 #include <KLocalizedString>
 
 #include <KPluginFactory>
-#include <KPluginLoader>
 #include <KPluginMetaData>
 #include <QRegularExpression>
 #include <QStringList>
@@ -21,7 +20,6 @@
 
 #include <widgets/moveimapfolderwidget.h>
 
-#include "kcoreaddons_version.h"
 #include <autocreatescripts/sieveactions/widgets/addresslineedit.h>
 using namespace KSieveUi;
 
@@ -196,19 +194,12 @@ QString AutoCreateScriptUtil::indentation()
 KSieveUi::AbstractMoveImapFolderWidget *AutoCreateScriptUtil::createImapFolderWidget()
 {
     KSieveUi::AbstractMoveImapFolderWidget *edit = nullptr;
-#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
-    KPluginLoader loader(QStringLiteral("libksieve/imapfoldercompletionplugin"));
-    KPluginFactory *factory = loader.factory();
-    if (factory) {
-        edit = factory->create<KSieveUi::AbstractMoveImapFolderWidget>();
-#else
     const KPluginMetaData editWidgetPlugin(QStringLiteral("libksieve/imapfoldercompletionplugin"));
 
     const auto result = KPluginFactory::instantiatePlugin<KSieveUi::AbstractMoveImapFolderWidget>(editWidgetPlugin);
     if (result) {
         edit = result.plugin;
     } else {
-#endif
         edit = new KSieveUi::MoveImapFolderWidget;
     }
     return edit;
@@ -217,19 +208,12 @@ KSieveUi::AbstractMoveImapFolderWidget *AutoCreateScriptUtil::createImapFolderWi
 KSieveUi::AbstractSelectEmailLineEdit *AutoCreateScriptUtil::createSelectEmailsWidget()
 {
     KSieveUi::AbstractSelectEmailLineEdit *edit = nullptr;
-#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
-    KPluginLoader loader(QStringLiteral("libksieve/emaillineeditplugin"));
-    KPluginFactory *factory = loader.factory();
-    if (factory) {
-        edit = factory->create<KSieveUi::AbstractSelectEmailLineEdit>();
-#else
     const KPluginMetaData editWidgetPlugin(QStringLiteral("libksieve/emaillineeditplugin"));
 
     const auto result = KPluginFactory::instantiatePlugin<KSieveUi::AbstractSelectEmailLineEdit>(editWidgetPlugin);
     if (result) {
         edit = result.plugin;
     } else {
-#endif
         edit = new AddressLineEdit;
     }
     return edit;
@@ -238,18 +222,11 @@ KSieveUi::AbstractSelectEmailLineEdit *AutoCreateScriptUtil::createSelectEmailsW
 AbstractRegexpEditorLineEdit *AutoCreateScriptUtil::createRegexpEditorLineEdit(QWidget *parent)
 {
     KSieveUi::AbstractRegexpEditorLineEdit *edit = nullptr;
-#if KCOREADDONS_VERSION < QT_VERSION_CHECK(5, 86, 0)
-    KPluginLoader loader(QStringLiteral("libksieve/regexpeditorlineeditplugin"));
-    KPluginFactory *factory = loader.factory();
-    if (factory) {
-        edit = factory->create<KSieveUi::AbstractRegexpEditorLineEdit>(parent);
-#else
     const KPluginMetaData editWidgetPlugin(QStringLiteral("libksieve/regexpeditorlineeditplugin"));
 
     const auto result = KPluginFactory::instantiatePlugin<KSieveUi::AbstractRegexpEditorLineEdit>(editWidgetPlugin, parent);
     if (result) {
         edit = result.plugin;
-#endif
     } else {
         edit = new KSieveUi::RegexpEditorLineEdit(parent);
     }
