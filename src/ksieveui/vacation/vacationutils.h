@@ -5,8 +5,8 @@
 */
 
 #pragma once
+#include <KMime/HeaderParsing>
 #include <QString>
-#include <kmime/kmime_header_parsing.h>
 
 class QDate;
 

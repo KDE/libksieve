@@ -8,7 +8,7 @@
 #include "ksieveui/vacation/legacy/vacationutils.h"
 #include "ksieveui/vacation/vacationutils.h"
 
-#include <kmime/kmime_header_parsing.h>
+#include <KMime/HeaderParsing>
 
 #include <QFile>
 #include <QTest>

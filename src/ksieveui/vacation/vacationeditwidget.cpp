@@ -20,7 +20,7 @@
 #include <KPIMTextEdit/PlainTextEditorWidget>
 #include <Libkdepim/LineEditCatchReturnKey>
 
-#include <kmime/kmime_header_parsing.h>
+#include <KMime/HeaderParsing>
 
 #include <PimCommon/SpellCheckLineEdit>
 #include <QCheckBox>
