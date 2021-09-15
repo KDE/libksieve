@@ -13,9 +13,9 @@
 #include <QObject>
 #include <QStringList>
 
+#include <KIO/Global>
+#include <KIO/UDSEntry>
 #include <QUrl>
-#include <kio/global.h>
-#include <kio/udsentry.h>
 
 namespace KIO
 {

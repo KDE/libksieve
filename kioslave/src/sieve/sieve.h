@@ -8,8 +8,8 @@
 
 #pragma once
 
-#include <kio/authinfo.h>
-#include <kio/tcpslavebase.h>
+#include <KIO/AuthInfo>
+#include <KIO/TCPSlaveBase>
 
 #include <QByteArray>
 #include <QString>

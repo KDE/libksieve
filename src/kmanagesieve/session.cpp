@@ -11,14 +11,14 @@
 
 #include "kmanagersieve_debug.h"
 #include <KAuthorized>
+#include <KIO/AuthInfo>
+#include <KIO/Job>
+#include <KIO/SslUi>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KPasswordDialog>
 #include <QRegularExpression>
 #include <QUrlQuery>
-#include <kio/authinfo.h>
-#include <kio/job.h>
-#include <kio/sslui.h>
 #include <kwidgetsaddons_version.h>
 
 using namespace KManageSieve;

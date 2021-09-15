@@ -15,8 +15,8 @@
 #include "util_p.h"
 #include <PimCommon/PimUtil>
 
+#include <KMime/KMimeMessage>
 #include <MailTransport/Transport>
-#include <kmime/kmime_message.h>
 
 using namespace KSieveUi;
 
