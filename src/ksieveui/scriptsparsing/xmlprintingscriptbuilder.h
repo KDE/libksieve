@@ -4,9 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#ifndef KSIEVE_KSIEVEUI_XMLPRINTINGSCRIPTBUILDER_H
-#define KSIEVE_KSIEVEUI_XMLPRINTINGSCRIPTBUILDER_H
-
+#pragma once
 #include "ksieveui_private_export.h"
 #include <QString>
 #include <ksieve/scriptbuilder.h>
@@ -57,4 +55,3 @@ private:
     QString mError;
 };
 }
-#endif

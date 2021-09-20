@@ -7,9 +7,7 @@
 
     SPDX-License-Identifier: GPL-2.0-only
 */
-
-#ifndef KSIEVE_KSIEVE_SCRIPTBUILDER_H
-#define KSIEVE_KSIEVE_SCRIPTBUILDER_H
+#pragma once
 
 class QString;
 
@@ -58,4 +56,3 @@ public:
 
 } // namespace KSieve
 
-#endif
