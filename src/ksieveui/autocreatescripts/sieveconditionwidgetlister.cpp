@@ -151,7 +151,7 @@ void SieveConditionWidget::slotAddComment()
     if (index < mConditionList.count()) {
         KSieveUi::SieveCondition *condition = mConditionList.at(index);
         const QString comment = condition->comment();
-        QPointer<SieveScriptDescriptionDialog> dlg = new SieveScriptDescriptionDialog;
+        QPointer<SieveScriptDescriptionDialog> dlg = new SieveScriptDescriptionDialog(this);
         dlg->setDescription(comment);
         if (dlg->exec()) {
             condition->setComment(dlg->description());
