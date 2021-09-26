@@ -33,7 +33,7 @@ SieveIncludeLocation::SieveIncludeLocation(QWidget *parent)
     : QComboBox(parent)
 {
     initialize();
-    connect(this, qOverload<int>(&SieveIncludeLocation::activated), this, &SieveIncludeLocation::valueChanged);
+    connect(this, &SieveIncludeLocation::activated, this, &SieveIncludeLocation::valueChanged);
 }
 
 SieveIncludeLocation::~SieveIncludeLocation()

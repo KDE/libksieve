@@ -13,7 +13,7 @@ SelectAddHeaderPositionCombobox::SelectAddHeaderPositionCombobox(QWidget *parent
     : QComboBox(parent)
 {
     initialize();
-    connect(this, qOverload<int>(&SelectAddHeaderPositionCombobox::activated), this, &SelectAddHeaderPositionCombobox::valueChanged);
+    connect(this, &SelectAddHeaderPositionCombobox::activated, this, &SelectAddHeaderPositionCombobox::valueChanged);
 }
 
 SelectAddHeaderPositionCombobox::~SelectAddHeaderPositionCombobox()

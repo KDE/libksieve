@@ -14,7 +14,7 @@ SelectMimeTypeComboBox::SelectMimeTypeComboBox(QWidget *parent)
     : QComboBox(parent)
 {
     initialize();
-    connect(this, qOverload<int>(&SelectMimeTypeComboBox::activated), this, &SelectMimeTypeComboBox::valueChanged);
+    connect(this, &SelectMimeTypeComboBox::activated, this, &SelectMimeTypeComboBox::valueChanged);
 }
 
 SelectMimeTypeComboBox::~SelectMimeTypeComboBox()

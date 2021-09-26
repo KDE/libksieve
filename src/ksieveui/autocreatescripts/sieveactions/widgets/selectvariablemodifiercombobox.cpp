@@ -14,7 +14,7 @@ SelectVariableModifierComboBox::SelectVariableModifierComboBox(QWidget *parent)
     : QComboBox(parent)
 {
     initialize();
-    connect(this, qOverload<int>(&SelectVariableModifierComboBox::activated), this, &SelectVariableModifierComboBox::valueChanged);
+    connect(this, &SelectVariableModifierComboBox::activated, this, &SelectVariableModifierComboBox::valueChanged);
 }
 
 SelectVariableModifierComboBox::~SelectVariableModifierComboBox()

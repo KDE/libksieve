@@ -153,7 +153,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mIntervalSpin->setValue(defDayInterval);
     mIntervalSpin->setObjectName(QStringLiteral("mIntervalSpin"));
     mIntervalSpin->setSuffix(i18np(" day", " days", defDayInterval));
-    connect(mIntervalSpin, qOverload<int>(&QSpinBox::valueChanged), this, &VacationEditWidget::slotIntervalSpinChanged);
+    connect(mIntervalSpin, &QSpinBox::valueChanged, this, &VacationEditWidget::slotIntervalSpinChanged);
     auto resendNotificationLabel = new QLabel(i18n("&Resend notification only after:"), this);
     resendNotificationLabel->setObjectName(QStringLiteral("resendNotificationLabel"));
     resendNotificationLabel->setBuddy(mIntervalSpin);

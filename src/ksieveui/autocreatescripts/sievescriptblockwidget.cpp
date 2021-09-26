@@ -50,7 +50,7 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *g
     bg->addButton(mMatchAny);
     bg->addButton(mAllMessageRBtn);
 
-    connect(bg, qOverload<QAbstractButton *>(&QButtonGroup::buttonClicked), this, &SieveScriptBlockWidget::slotRadioClicked);
+    connect(bg, &QButtonGroup::buttonClicked, this, &SieveScriptBlockWidget::slotRadioClicked);
     mConditions->setLayout(vbox);
 
     mScriptConditionLister = new SieveConditionWidgetLister(mSieveGraphicalModeWidget, this);

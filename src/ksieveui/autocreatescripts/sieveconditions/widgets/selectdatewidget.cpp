@@ -65,7 +65,7 @@ void SelectDateWidget::initialize()
 
     mDateValue = new SieveDateSpinBox(this);
     mStackWidget->addWidget(mDateValue);
-    connect(mDateValue, qOverload<int>(&QSpinBox::valueChanged), this, &SelectDateWidget::valueChanged);
+    connect(mDateValue, &QSpinBox::valueChanged, this, &SelectDateWidget::valueChanged);
 
     mDateEdit = new KDateComboBox(this);
     mStackWidget->addWidget(mDateEdit);

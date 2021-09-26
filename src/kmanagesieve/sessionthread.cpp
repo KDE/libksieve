@@ -65,7 +65,7 @@ void SessionThread::doInit()
     Q_ASSERT(QThread::currentThread() == thread());
     m_socket = std::make_unique<QSslSocket>();
     connect(m_socket.get(), &QSslSocket::readyRead, this, &SessionThread::slotDataReceived);
-    connect(m_socket.get(), qOverload<QAbstractSocket::SocketError>(&QAbstractSocket::errorOccurred), this, &SessionThread::slotSocketError);
+    connect(m_socket.get(), &QAbstractSocket::errorOccurred, this, &SessionThread::slotSocketError);
     connect(m_socket.get(), &QSslSocket::disconnected, this, &SessionThread::socketDisconnected);
     connect(m_socket.get(), &QSslSocket::connected, this, &SessionThread::socketConnected);
 }

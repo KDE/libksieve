@@ -11,7 +11,7 @@ using namespace KSieveUi;
 SelectComparatorComboBox::SelectComparatorComboBox(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent)
     : QComboBox(parent)
 {
-    connect(this, qOverload<int>(&SelectComparatorComboBox::activated), this, &SelectComparatorComboBox::valueChanged);
+    connect(this, &SelectComparatorComboBox::activated, this, &SelectComparatorComboBox::valueChanged);
     initialize(sieveGraphicalModeWidget->sieveCapabilities());
 }
 

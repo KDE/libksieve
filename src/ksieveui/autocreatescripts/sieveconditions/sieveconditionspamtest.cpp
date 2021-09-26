@@ -54,7 +54,7 @@ QWidget *SieveConditionSpamTest::createParamWidget(QWidget *parent) const
     spinbox->setMaximum(10);
     spinbox->setMinimum(0);
     spinbox->setObjectName(QStringLiteral("value"));
-    connect(spinbox, qOverload<int>(&QSpinBox::valueChanged), this, &SieveConditionSpamTest::valueChanged);
+    connect(spinbox, &QSpinBox::valueChanged, this, &SieveConditionSpamTest::valueChanged);
     lay->addWidget(spinbox);
     return w;
 }
