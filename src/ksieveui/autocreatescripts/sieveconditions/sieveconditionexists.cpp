@@ -35,7 +35,7 @@ QWidget *SieveConditionExists::createParamWidget(QWidget *parent) const
     combo->addItem(i18n("exists"), QStringLiteral("exists"));
     combo->addItem(i18n("not exists"), QStringLiteral("not exists"));
     lay->addWidget(combo);
-    connect(combo, qOverload<int>(&QComboBox::activated), this, &SieveConditionExists::valueChanged);
+    connect(combo, &QComboBox::activated, this, &SieveConditionExists::valueChanged);
 
     auto lab = new QLabel(i18n("headers:"));
     lay->addWidget(lab);

@@ -160,7 +160,7 @@ void SieveActionWidget::initWidget()
 
     updateGeometry();
 
-    connect(mComboBox, qOverload<int>(&QComboBox::activated), this, &SieveActionWidget::slotActionChanged);
+    connect(mComboBox, &QComboBox::activated, this, &SieveActionWidget::slotActionChanged);
 
     mAdd = new QPushButton(this);
     mAdd->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));

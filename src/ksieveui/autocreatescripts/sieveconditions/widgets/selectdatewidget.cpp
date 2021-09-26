@@ -36,7 +36,7 @@ void SelectDateWidget::initialize()
     lay->setContentsMargins({});
 
     mDateType = new QComboBox(this);
-    connect(mDateType, qOverload<int>(&QComboBox::activated), this, &SelectDateWidget::slotDateTypeActivated);
+    connect(mDateType, &QComboBox::activated, this, &SelectDateWidget::slotDateTypeActivated);
     mDateType->addItem(i18n("Year"), QVariant::fromValue(KSieveUi::SelectDateWidget::Year));
     mDateType->addItem(i18n("Month"), QVariant::fromValue(KSieveUi::SelectDateWidget::Month));
     mDateType->addItem(i18n("Day"), QVariant::fromValue(KSieveUi::SelectDateWidget::Day));
