@@ -67,8 +67,8 @@ void SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, 
             if (element.attributes().hasAttribute(QLatin1String("name"))) {
                 nameValue = element.attributes().value(QLatin1String("name")).toString();
             }
-            const bool isNegative = (nameValue == QLatin1String("not"));
-            parseValue(element, w, error, isNegative);
+            const bool isNot = (nameValue == QLatin1String("not"));
+            parseValue(element, w, error, isNot);
             element.skipCurrentElement();
             return;
         } else if (tagName == QLatin1String("tag")) {

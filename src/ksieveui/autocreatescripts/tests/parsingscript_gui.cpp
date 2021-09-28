@@ -70,10 +70,9 @@ int main(int argc, char **argv)
     QString error;
     dialog->loadScript(psb.result(), error);
     if (!error.isEmpty()) {
-        QPointer<KSieveUi::SieveScriptParsingErrorDialog> dlg = new KSieveUi::SieveScriptParsingErrorDialog;
-        dlg->setError(QString::fromLatin1(script), error);
-        dlg->exec();
-        delete dlg;
+        KSieveUi::SieveScriptParsingErrorDialog dlgError;
+        dlgError.setError(QString::fromLatin1(script), error);
+        dlgError.exec();
     }
 
     dialog->show();
