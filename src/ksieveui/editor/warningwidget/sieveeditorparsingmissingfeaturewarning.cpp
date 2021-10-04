@@ -9,7 +9,6 @@
 #include <KLocalizedString>
 #include <QAction>
 
-#include <QPointer>
 
 using namespace KSieveUi;
 

@@ -7,7 +7,6 @@
 
 #include "../src/ksieveui/scriptsparsing/parsingresultdialog.h"
 #include "../src/ksieveui/scriptsparsing/xmlprintingscriptbuilder.h"
-#include <QPointer>
 
 #include <ksieve/parser.h>
 using KSieve::Parser;
