@@ -13,7 +13,7 @@ class VacationEditWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit VacationEditWidgetTest(QObject *parent = nullptr);
-    ~VacationEditWidgetTest();
+    ~VacationEditWidgetTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldGetValues();

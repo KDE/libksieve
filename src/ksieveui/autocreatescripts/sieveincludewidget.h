@@ -40,7 +40,7 @@ class SieveIncludeActionWidget : public QWidget
     Q_OBJECT
 public:
     explicit SieveIncludeActionWidget(QWidget *parent = nullptr);
-    ~SieveIncludeActionWidget();
+    ~SieveIncludeActionWidget() override;
 
     void generatedScript(QString &script);
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);

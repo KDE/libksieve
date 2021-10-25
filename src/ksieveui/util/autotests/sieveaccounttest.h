@@ -13,7 +13,7 @@ class SieveAccountTest : public QObject
     Q_OBJECT
 public:
     explicit SieveAccountTest(QObject *parent = nullptr);
-    ~SieveAccountTest();
+    ~SieveAccountTest() override;
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();

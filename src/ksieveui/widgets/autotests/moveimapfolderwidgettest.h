@@ -13,7 +13,7 @@ class MoveImapFolderWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit MoveImapFolderWidgetTest(QObject *parent = nullptr);
-    ~MoveImapFolderWidgetTest();
+    ~MoveImapFolderWidgetTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldAssignValue();

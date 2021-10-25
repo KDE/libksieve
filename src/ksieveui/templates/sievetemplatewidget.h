@@ -44,7 +44,7 @@ class SieveTemplateWidget : public QWidget
     Q_OBJECT
 public:
     explicit SieveTemplateWidget(const QString &title, QWidget *parent = nullptr);
-    ~SieveTemplateWidget();
+    ~SieveTemplateWidget() override;
 
     void setSieveCapabilities(const QStringList &capabilities);
 Q_SIGNALS:

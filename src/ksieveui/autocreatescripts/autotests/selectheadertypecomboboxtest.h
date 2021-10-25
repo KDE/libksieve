@@ -13,7 +13,7 @@ class SelectHeaderTypeComboBoxTest : public QObject
     Q_OBJECT
 public:
     explicit SelectHeaderTypeComboBoxTest(QObject *parent = nullptr);
-    ~SelectHeaderTypeComboBoxTest();
+    ~SelectHeaderTypeComboBoxTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldSetCode_data();

@@ -13,7 +13,7 @@ class SelectHeadersDialogTest : public QObject
     Q_OBJECT
 public:
     explicit SelectHeadersDialogTest(QObject *parent = nullptr);
-    ~SelectHeadersDialogTest();
+    ~SelectHeadersDialogTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

@@ -13,7 +13,7 @@ class SieveScriptDebuggerWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit SieveScriptDebuggerWidgetTest(QObject *parent = nullptr);
-    ~SieveScriptDebuggerWidgetTest();
+    ~SieveScriptDebuggerWidgetTest() override;
 
 private Q_SLOTS:
     void shouldHaveDefaultValue();

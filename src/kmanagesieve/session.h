@@ -37,7 +37,7 @@ class Session : public QObject
 
 public:
     explicit Session(QObject *parent = nullptr);
-    ~Session();
+    ~Session() override;
 
     void connectToHost(const QUrl &url);
     void disconnectFromHost(bool sendLogout = true);

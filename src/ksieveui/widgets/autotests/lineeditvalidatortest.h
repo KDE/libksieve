@@ -13,7 +13,7 @@ class LineEditValidatorTest : public QObject
     Q_OBJECT
 public:
     explicit LineEditValidatorTest(QObject *parent = nullptr);
-    ~LineEditValidatorTest();
+    ~LineEditValidatorTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 

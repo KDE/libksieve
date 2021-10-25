@@ -13,7 +13,7 @@ class SieveEditorMenuBarTest : public QObject
     Q_OBJECT
 public:
     explicit SieveEditorMenuBarTest(QObject *parent = nullptr);
-    ~SieveEditorMenuBarTest();
+    ~SieveEditorMenuBarTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
     void shouldEmitSignals();

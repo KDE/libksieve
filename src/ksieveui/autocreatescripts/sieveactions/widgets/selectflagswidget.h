@@ -31,7 +31,7 @@ class SelectFlagsListDialog : public QDialog
     Q_OBJECT
 public:
     explicit SelectFlagsListDialog(QWidget *parent = nullptr);
-    ~SelectFlagsListDialog();
+    ~SelectFlagsListDialog() override;
 
     void setFlags(const QStringList &list);
     Q_REQUIRED_RESULT QStringList flags() const;
@@ -47,7 +47,7 @@ class SelectFlagsWidget : public QWidget
     Q_OBJECT
 public:
     explicit SelectFlagsWidget(QWidget *parent = nullptr);
-    ~SelectFlagsWidget();
+    ~SelectFlagsWidget() override;
 
     Q_REQUIRED_RESULT QString code() const;
     void setFlags(const QStringList &flags);

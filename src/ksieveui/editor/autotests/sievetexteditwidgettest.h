@@ -13,7 +13,7 @@ class SieveTextEditWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit SieveTextEditWidgetTest(QObject *parent = nullptr);
-    ~SieveTextEditWidgetTest();
+    ~SieveTextEditWidgetTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

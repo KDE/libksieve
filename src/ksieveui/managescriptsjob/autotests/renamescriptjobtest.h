@@ -13,7 +13,7 @@ class RenameScriptJobTest : public QObject
     Q_OBJECT
 public:
     explicit RenameScriptJobTest(QObject *parent = nullptr);
-    ~RenameScriptJobTest();
+    ~RenameScriptJobTest() override;
 
 private Q_SLOTS:
     void canNotStartByDefault();

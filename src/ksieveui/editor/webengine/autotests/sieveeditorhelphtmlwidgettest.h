@@ -13,7 +13,7 @@ class SieveEditorHelpHtmlWidgetTest : public QObject
     Q_OBJECT
 public:
     explicit SieveEditorHelpHtmlWidgetTest(QObject *parent = nullptr);
-    ~SieveEditorHelpHtmlWidgetTest();
+    ~SieveEditorHelpHtmlWidgetTest() override;
 private Q_SLOTS:
     void shouldHaveDefaultValue();
 };

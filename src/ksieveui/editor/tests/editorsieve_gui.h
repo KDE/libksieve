@@ -13,7 +13,7 @@ class SieveEditorTestWidget : public KSieveUi::SieveEditor
     Q_OBJECT
 public:
     explicit SieveEditorTestWidget(QWidget *parent = nullptr);
-    ~SieveEditorTestWidget();
+    ~SieveEditorTestWidget() override;
 
 private Q_SLOTS:
     void slotValueChanged(bool);

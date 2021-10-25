@@ -13,7 +13,7 @@ class CheckScriptJobTest : public QObject
     Q_OBJECT
 public:
     explicit CheckScriptJobTest(QObject *parent = nullptr);
-    ~CheckScriptJobTest();
+    ~CheckScriptJobTest() override;
 
 private Q_SLOTS:
     void canBeStarted();
