@@ -83,26 +83,23 @@ void SieveConditionWidget::initWidget()
     mComboBox->setEditable(false);
 
     const QList<KSieveUi::SieveCondition *> list = KSieveUi::SieveConditionList::conditionList(mSieveGraphicalModeWidget);
-    QList<KSieveUi::SieveCondition *>::const_iterator it;
-    QList<KSieveUi::SieveCondition *>::const_iterator end(list.constEnd());
-    int index = 0;
-    for (index = 0, it = list.constBegin(); it != end; ++it, ++index) {
-        if ((*it)->needCheckIfServerHasCapability()) {
-            if (mSieveGraphicalModeWidget->sieveCapabilities().contains((*it)->serverNeedsCapability())) {
+    for (const auto &action : list) {
+        if (action->needCheckIfServerHasCapability()) {
+            if (mSieveGraphicalModeWidget->sieveCapabilities().contains(action->serverNeedsCapability())) {
                 // append to the list of actions:
-                mConditionList.append(*it);
-                connect(*it, &SieveCondition::valueChanged, this, &SieveConditionWidget::valueChanged);
+                mConditionList.append(action);
+                connect(action, &SieveCondition::valueChanged, this, &SieveConditionWidget::valueChanged);
                 // add (i18n-ized) name to combo box
-                mComboBox->addItem((*it)->label(), (*it)->name());
+                mComboBox->addItem(action->label(), action->name());
             } else {
-                delete (*it);
+                delete action;
             }
         } else {
             // append to the list of actions:
-            mConditionList.append(*it);
-            connect(*it, &SieveCondition::valueChanged, this, &SieveConditionWidget::valueChanged);
+            mConditionList.append(action);
+            connect(action, &SieveCondition::valueChanged, this, &SieveConditionWidget::valueChanged);
             // add (i18n-ized) name to combo box
-            mComboBox->addItem((*it)->label(), (*it)->name());
+            mComboBox->addItem(action->label(), action->name());
         }
     }
 
