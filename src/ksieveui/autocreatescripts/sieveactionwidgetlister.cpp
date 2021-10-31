@@ -112,31 +112,28 @@ void SieveActionWidget::initWidget()
     mComboBox->setEditable(false);
     mComboBox->setMinimumWidth(50);
     const QVector<KSieveUi::SieveAction *> list = KSieveUi::SieveActionList::actionList(mSieveGraphicalModeWidget);
-    QVector<KSieveUi::SieveAction *>::const_iterator it;
-    QVector<KSieveUi::SieveAction *>::const_iterator end(list.constEnd());
-    int index = 0;
     QStringList listCapabilities = mSieveGraphicalModeWidget->sieveCapabilities();
     // imapflags was old name of imap4flags but still used.
     if (listCapabilities.contains(QLatin1String("imap4flags"))) {
         listCapabilities.append(QStringLiteral("imapflags"));
     }
-    for (index = 0, it = list.constBegin(); it != end; ++it, ++index) {
-        if ((*it)->needCheckIfServerHasCapability()) {
-            if (listCapabilities.contains((*it)->serverNeedsCapability())) {
+    for (const auto &action : list) {
+        if (action->needCheckIfServerHasCapability()) {
+            if (listCapabilities.contains(action->serverNeedsCapability())) {
                 // append to the list of actions:
-                mActionList.append(*it);
-                connect(*it, &SieveAction::valueChanged, this, &SieveActionWidget::valueChanged);
+                mActionList.append(action);
+                connect(action, &SieveAction::valueChanged, this, &SieveActionWidget::valueChanged);
                 // add (i18n-ized) name to combo box
-                mComboBox->addItem((*it)->label(), (*it)->name());
+                mComboBox->addItem(action->label(), action->name());
             } else {
-                delete (*it);
+                delete (action);
             }
         } else {
             // append to the list of actions:
-            mActionList.append(*it);
-            connect(*it, &SieveAction::valueChanged, this, &SieveActionWidget::valueChanged);
+            mActionList.append(action);
+            connect(action, &SieveAction::valueChanged, this, &SieveActionWidget::valueChanged);
             // add (i18n-ized) name to combo box
-            mComboBox->addItem((*it)->label(), (*it)->name());
+            mComboBox->addItem(action->label(), action->name());
         }
     }
 

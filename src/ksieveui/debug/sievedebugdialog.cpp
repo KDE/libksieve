@@ -220,9 +220,8 @@ void SieveDebugDialog::slotGetScriptList(KManageSieve::SieveJob *job, bool succe
     if (caps.isEmpty()) {
         mEdit->editor()->appendPlainText(i18n("(No special capabilities available)"));
     } else {
-        QStringList::const_iterator end = caps.constEnd();
-        for (QStringList::const_iterator it = caps.constBegin(); it != end; ++it) {
-            mEdit->editor()->appendPlainText(QLatin1String("* ") + *it + QLatin1Char('\n'));
+        for (const auto &str : caps) {
+            mEdit->editor()->appendPlainText(QLatin1String("* ") + str + QLatin1Char('\n'));
         }
         mEdit->editor()->appendPlainText(QStringLiteral("\n"));
     }
@@ -233,9 +232,8 @@ void SieveDebugDialog::slotGetScriptList(KManageSieve::SieveJob *job, bool succe
         mEdit->editor()->appendPlainText(i18n("(No Sieve scripts available on this server)\n\n"));
     } else {
         mScriptList = scriptList;
-        QStringList::const_iterator end = scriptList.constEnd();
-        for (QStringList::const_iterator it = scriptList.constBegin(); it != end; ++it) {
-            mEdit->editor()->appendPlainText(QLatin1String("* ") + *it + QLatin1Char('\n'));
+        for (const auto &str : scriptList) {
+            mEdit->editor()->appendPlainText(QLatin1String("* ") + str + QLatin1Char('\n'));
         }
         mEdit->editor()->appendPlainText(QStringLiteral("\n"));
         mEdit->editor()->appendPlainText(i18n("Active script: '%1'\n\n", activeScript));
