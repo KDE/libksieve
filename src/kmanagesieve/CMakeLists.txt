@@ -6,6 +6,13 @@ target_sources(KF5KManageSieve PRIVATE
   session.cpp
   sessionthread.cpp
   sievejob.cpp
+  sessionthread_p.h
+  sievejob_p.h
+  sasl-common.h
+  session.h
+  sievejob.h
+  response.h
+
 )
 ecm_qt_declare_logging_category(KF5KManageSieve HEADER kmanagersieve_debug.h IDENTIFIER KMANAGERSIEVE_LOG CATEGORY_NAME org.kde.pim.kmanagersieve
         DESCRIPTION "kdepim (libksieve manager)"
