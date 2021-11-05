@@ -174,7 +174,12 @@ void SieveEditor::addNormalMessage(const QString &msg)
 void SieveEditor::closeEvent(QCloseEvent *e)
 {
     if (d->mSieveEditorWidget->originalScript() != d->mSieveEditorWidget->script()) {
-        if (KMessageBox::No == KMessageBox::warningYesNo(this, i18n("Script is modified. Do you want to close editor ?"))) {
+        const int answer = KMessageBox::warningYesNo(this,
+                                                     i18n("Script is modified. Do you want to close editor?"),
+                                                     QString(),
+                                                     KGuiItem(i18nc("@action:button", "Close Editor"), QStringLiteral("dialog-close")),
+                                                     KGuiItem(i18nc("@action:button", "Do Not Close"), QStringLiteral("dialog-cancel")));
+        if (answer == KMessageBox::No) {
             e->ignore();
             return;
         }

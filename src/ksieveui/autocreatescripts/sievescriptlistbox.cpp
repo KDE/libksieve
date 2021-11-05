@@ -264,8 +264,12 @@ void SieveScriptListBox::slotDelete()
 {
     QListWidgetItem *item = mSieveListScript->currentItem();
     if (item) {
-        if (KMessageBox::warningYesNo(this, i18n("Do you want to delete \"%1\" script?", item->text()), i18nc("@title:window", "Delete Script"))
-            == KMessageBox::Yes) {
+        const int answer = KMessageBox::warningYesNo(this,
+                                                     i18n("Do you want to delete \"%1\" script?", item->text()),
+                                                     i18nc("@title:window", "Delete Script"),
+                                                     KStandardGuiItem::del(),
+                                                     KStandardGuiItem::cancel());
+        if (answer == KMessageBox::Yes) {
             auto itemScript = static_cast<SieveScriptListItem *>(item);
             Q_EMIT removePage(itemScript->scriptPage());
             delete item;

@@ -132,7 +132,12 @@ void SieveEditorGraphicalModeWidget::setImportScript(const QString &script)
             mSieveParsingWarning->animatedShow();
         }
     } else {
-        if (KMessageBox::Yes == KMessageBox::questionYesNo(this, i18n("Error during importing script. Do you want to switch to text mode?"))) {
+        const int answer = KMessageBox::questionYesNo(this,
+                                                      i18n("Error during importing script. Do you want to switch to text mode?"),
+                                                      QString(),
+                                                      KGuiItem(i18nc("@action:button", "Switch to Text Mode")),
+                                                      KGuiItem(i18nc("@action:button", "Do Not Switch"), QStringLiteral("dialog-cancel")));
+        if (answer == KMessageBox::Yes) {
             Q_EMIT switchTextMode(script);
         }
         qCDebug(LIBKSIEVE_LOG) << " cannot import script";

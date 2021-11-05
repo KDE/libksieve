@@ -53,7 +53,12 @@ void SieveEditorAbstractWidget::setImportScript(const QString &)
 void SieveEditorAbstractWidget::slotImport()
 {
     if (!currentscript().isEmpty()) {
-        if (KMessageBox::warningYesNo(this, i18n("You will overwrite script. Do you want to continue?"), i18n("Import Script")) == KMessageBox::No) {
+        const int answer = KMessageBox::warningYesNo(this,
+                                                     i18n("You will overwrite script. Do you want to continue?"),
+                                                     i18n("Import Script"),
+                                                     KStandardGuiItem::cont(),
+                                                     KStandardGuiItem::cancel());
+        if (answer == KMessageBox::No) {
             return;
         }
     }
