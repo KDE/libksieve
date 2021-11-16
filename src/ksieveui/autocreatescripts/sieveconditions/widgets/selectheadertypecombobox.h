@@ -68,6 +68,7 @@ private Q_SLOTS:
     void slotSelectItem(const QString &str);
 
 private:
+    Q_REQUIRED_RESULT const QString getSelectMultipleHeadersTranslated() const;
     void initialize(bool onlyEnvelopType);
     void changeReadOnlyStatus();
     void headerMap(bool onlyEnvelopType);

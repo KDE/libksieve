@@ -12,6 +12,7 @@
 #include <QPointer>
 #include <QPushButton>
 
+#include "ki18n_version.h"
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <QDialogButtonBox>
@@ -19,10 +20,17 @@
 #include <QLabel>
 #include <QVBoxLayout>
 
+#if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+#include <klazylocalizedstring.h>
+#undef I18N_NOOP
+#define I18N_NOOP kli18n
+#endif
 using namespace KSieveUi;
-
+#if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
+const KLazyLocalizedString selectMultipleHeaders = I18N_NOOP("Select multiple headers...");
+#else
 static const char selectMultipleHeaders[] = I18N_NOOP("Select multiple headers...");
-
+#endif
 SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     : QDialog(parent)
     , mListWidget(new SelectHeadersWidget(this))
@@ -215,10 +223,19 @@ void SelectHeaderTypeComboBox::changeReadOnlyStatus()
     lineEdit()->setClearButtonEnabled(!readOnly);
 }
 
+const QString SelectHeaderTypeComboBox::getSelectMultipleHeadersTranslated() const
+{
+#if KI18N_VERSION < QT_VERSION_CHECK(5, 89, 0)
+    return funcCombo->addItem(i18n(selectMultipleHeaders));
+#else
+    return KLocalizedString(selectMultipleHeaders).toString();
+#endif
+}
+
 void SelectHeaderTypeComboBox::slotSelectItem(const QString &str)
 {
     changeReadOnlyStatus();
-    if (str == i18n(selectMultipleHeaders)) {
+    if (str == getSelectMultipleHeadersTranslated()) {
         QPointer<SelectHeadersDialog> dlg = new SelectHeadersDialog(this);
         dlg->setListHeaders(mHeaderMap, AutoCreateScriptUtil::createListFromString(mCode));
         if (dlg->exec()) {
@@ -261,7 +278,7 @@ void SelectHeaderTypeComboBox::initialize(bool onlyEnvelopType)
         i.next();
         addItem(i.value(), i.key());
     }
-    addItem(i18n(selectMultipleHeaders));
+    addItem(getSelectMultipleHeadersTranslated());
 }
 
 QString SelectHeaderTypeComboBox::code() const
@@ -269,7 +286,7 @@ QString SelectHeaderTypeComboBox::code() const
     QString str = (currentIndex() > -1) ? itemData(currentIndex()).toString() : QString();
     if (str.isEmpty()) {
         str = currentText();
-        if (str == i18n(selectMultipleHeaders)) {
+        if (str == getSelectMultipleHeadersTranslated()) {
             str = QString(); // return QString();
         }
     }
