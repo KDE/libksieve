@@ -8,6 +8,7 @@
 #include "sievescriptdebuggerwidget.h"
 
 #include <KConfigGroup>
+#include <KGuiItem>
 #include <KLocalizedString>
 #include <KSharedConfig>
 
@@ -43,6 +44,9 @@ SieveScriptDebuggerDialog::SieveScriptDebuggerDialog(QWidget *parent)
     connect(mSieveScriptDebuggerWidget, &SieveScriptDebuggerWidget::debugButtonEnabled, this, &SieveScriptDebuggerDialog::debugButtonEnableStateChanged);
 
     mDebugScriptButton = new QPushButton(i18n("Debug"), this);
+    const KGuiItem item(i18n("Debug"), QIcon::fromTheme(QStringLiteral("debug-run")));
+    KGuiItem::assign(mDebugScriptButton, item);
+
     mDebugScriptButton->setObjectName(QStringLiteral("debug_button"));
     mDebugScriptButton->setEnabled(false);
     connect(mDebugScriptButton, &QPushButton::clicked, mSieveScriptDebuggerWidget, &SieveScriptDebuggerWidget::debugScriptButtonClicked);
