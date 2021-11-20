@@ -440,7 +440,7 @@ public:
     {
     }
 
-    bool ok() const
+    Q_REQUIRED_RESULT bool ok() const
     {
         return mOk;
     }
@@ -575,7 +575,7 @@ public:
 
 private:
     Q_DISABLE_COPY(VerifyingScriptBuilder)
-    const TestCase::Response &currentResponse() const
+    Q_REQUIRED_RESULT const TestCase::Response &currentResponse() const
     {
         assert(mNextResponse <= MAX_RESPONSES);
         return mTestCase.responses[mNextResponse];
