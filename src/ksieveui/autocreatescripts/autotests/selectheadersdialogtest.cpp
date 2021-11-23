@@ -20,9 +20,7 @@ SelectHeadersDialogTest::SelectHeadersDialogTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 }
 
-SelectHeadersDialogTest::~SelectHeadersDialogTest()
-{
-}
+SelectHeadersDialogTest::~SelectHeadersDialogTest() = default;
 
 void SelectHeadersDialogTest::shouldHaveDefaultValue()
 {

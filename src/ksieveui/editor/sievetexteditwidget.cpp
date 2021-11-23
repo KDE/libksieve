@@ -15,9 +15,7 @@ using namespace KSieveUi;
 class KSieveUi::SieveTextEditWidgetPrivate
 {
 public:
-    SieveTextEditWidgetPrivate()
-    {
-    }
+    SieveTextEditWidgetPrivate() = default;
 
     KSieveUi::SieveTextEdit *mTextEdit = nullptr;
     KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
@@ -38,9 +36,7 @@ SieveTextEditWidget::SieveTextEditWidget(QWidget *parent)
     initialize();
 }
 
-SieveTextEditWidget::~SieveTextEditWidget()
-{
-}
+SieveTextEditWidget::~SieveTextEditWidget() = default;
 
 void SieveTextEditWidget::initialize(KSieveUi::SieveTextEdit *custom)
 {

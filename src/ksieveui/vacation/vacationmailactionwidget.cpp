@@ -46,9 +46,7 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
     setEnabled(false);
 }
 
-VacationMailActionWidget::~VacationMailActionWidget()
-{
-}
+VacationMailActionWidget::~VacationMailActionWidget() = default;
 
 void VacationMailActionWidget::setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account)
 {
@@ -96,6 +94,6 @@ QString VacationMailActionWidget::mailActionRecipient(bool &valid) const
         valid = mSelectEmailLineEdit->isValid();
         return mSelectEmailLineEdit->text();
     } else {
-        return QString();
+        return {};
     }
 }

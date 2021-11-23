@@ -15,9 +15,7 @@ MoveImapFolderWidgetTest::MoveImapFolderWidgetTest(QObject *parent)
 {
 }
 
-MoveImapFolderWidgetTest::~MoveImapFolderWidgetTest()
-{
-}
+MoveImapFolderWidgetTest::~MoveImapFolderWidgetTest() = default;
 
 void MoveImapFolderWidgetTest::shouldHaveDefaultValue()
 {

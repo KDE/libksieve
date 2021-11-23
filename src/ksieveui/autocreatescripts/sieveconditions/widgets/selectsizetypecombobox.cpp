@@ -17,9 +17,7 @@ SelectSizeTypeComboBox::SelectSizeTypeComboBox(QWidget *parent)
     connect(this, &SelectSizeTypeComboBox::activated, this, &SelectSizeTypeComboBox::valueChanged);
 }
 
-SelectSizeTypeComboBox::~SelectSizeTypeComboBox()
-{
-}
+SelectSizeTypeComboBox::~SelectSizeTypeComboBox() = default;
 
 void SelectSizeTypeComboBox::initialize()
 {

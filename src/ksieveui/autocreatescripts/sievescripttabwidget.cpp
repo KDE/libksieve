@@ -25,9 +25,7 @@ SieveScriptTabWidget::SieveScriptTabWidget(QWidget *parent)
     connect(this, &SieveScriptTabWidget::customContextMenuRequested, this, &SieveScriptTabWidget::slotTabContextMenuRequest);
 }
 
-SieveScriptTabWidget::~SieveScriptTabWidget()
-{
-}
+SieveScriptTabWidget::~SieveScriptTabWidget() = default;
 
 void SieveScriptTabWidget::slotTabContextMenuRequest(const QPoint &pos)
 {

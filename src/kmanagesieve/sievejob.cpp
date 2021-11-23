@@ -257,7 +257,7 @@ QStringList SieveJob::sieveCapabilities() const
     if (session) {
         return session->sieveExtensions();
     }
-    return QStringList();
+    return {};
 }
 
 bool SieveJob::fileExists() const

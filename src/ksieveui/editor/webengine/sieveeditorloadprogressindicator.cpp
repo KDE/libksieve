@@ -18,9 +18,7 @@ SieveEditorLoadProgressIndicator::SieveEditorLoadProgressIndicator(QObject *pare
     connect(mProgressTimer, &QTimer::timeout, this, &SieveEditorLoadProgressIndicator::slotTimerDone);
 }
 
-SieveEditorLoadProgressIndicator::~SieveEditorLoadProgressIndicator()
-{
-}
+SieveEditorLoadProgressIndicator::~SieveEditorLoadProgressIndicator() = default;
 
 void SieveEditorLoadProgressIndicator::startAnimation()
 {

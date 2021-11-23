@@ -13,9 +13,7 @@ CheckScriptJobTest::CheckScriptJobTest(QObject *parent)
 {
 }
 
-CheckScriptJobTest::~CheckScriptJobTest()
-{
-}
+CheckScriptJobTest::~CheckScriptJobTest() = default;
 
 void CheckScriptJobTest::canBeStarted()
 {

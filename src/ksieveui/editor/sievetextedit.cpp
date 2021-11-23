@@ -31,9 +31,7 @@ using namespace KSieveUi;
 class KSieveUi::SieveTextEditPrivate
 {
 public:
-    SieveTextEditPrivate()
-    {
-    }
+    SieveTextEditPrivate() = default;
 
     SieveLineNumberArea *m_sieveLineNumberArea = nullptr;
     KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter = nullptr;

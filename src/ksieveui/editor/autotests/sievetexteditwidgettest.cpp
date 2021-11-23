@@ -16,9 +16,7 @@ SieveTextEditWidgetTest::SieveTextEditWidgetTest(QObject *parent)
 {
 }
 
-SieveTextEditWidgetTest::~SieveTextEditWidgetTest()
-{
-}
+SieveTextEditWidgetTest::~SieveTextEditWidgetTest() = default;
 
 void SieveTextEditWidgetTest::shouldHaveDefaultValue()
 {

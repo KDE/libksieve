@@ -15,7 +15,7 @@
 
 #include "libksieve_debug.h"
 #include <cassert>
-#include <limits.h>
+#include <climits>
 #include <map>
 #include <set>
 #include <vector>
@@ -76,9 +76,7 @@ public:
         assert(sb4);
     }
 
-    ~MultiScriptBuilder() override
-    {
-    }
+    ~MultiScriptBuilder() override = default;
 
 private:
 #ifdef FOREACH
@@ -608,7 +606,7 @@ private:
     QDateTime datetime(const QString &name) const
     {
         if (results().count(name) == 0) {
-            return QDateTime();
+            return {};
         } else {
             return QDateTime::fromString(results().at(name), Qt::ISODate);
         }

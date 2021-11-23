@@ -13,6 +13,4 @@ AbstractRegexpEditorLineEdit::AbstractRegexpEditorLineEdit(QWidget *parent)
 {
 }
 
-AbstractRegexpEditorLineEdit::~AbstractRegexpEditorLineEdit()
-{
-}
+AbstractRegexpEditorLineEdit::~AbstractRegexpEditorLineEdit() = default;

@@ -21,9 +21,7 @@ using namespace KSieveUi;
 class KSieveUi::SieveEditorPrivate
 {
 public:
-    SieveEditorPrivate()
-    {
-    }
+    SieveEditorPrivate() = default;
 
     SieveEditorWidget *mSieveEditorWidget = nullptr;
     QPushButton *mOkButton = nullptr;

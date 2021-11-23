@@ -64,9 +64,7 @@ VacationPageWidget::VacationPageWidget(QWidget *parent)
     mStackWidget->setCurrentIndex(Script);
 }
 
-VacationPageWidget::~VacationPageWidget()
-{
-}
+VacationPageWidget::~VacationPageWidget() = default;
 
 bool VacationPageWidget::wasChanged() const
 {

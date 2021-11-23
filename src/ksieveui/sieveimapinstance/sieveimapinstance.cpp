@@ -6,9 +6,7 @@
 
 #include "sieveimapinstance.h"
 using namespace KSieveUi;
-SieveImapInstance::SieveImapInstance()
-{
-}
+SieveImapInstance::SieveImapInstance() = default;
 
 QString SieveImapInstance::name() const
 {

@@ -24,9 +24,7 @@ SelectHeaderTypeComboBoxTest::SelectHeaderTypeComboBoxTest(QObject *parent)
 {
 }
 
-SelectHeaderTypeComboBoxTest::~SelectHeaderTypeComboBoxTest()
-{
-}
+SelectHeaderTypeComboBoxTest::~SelectHeaderTypeComboBoxTest() = default;
 
 void SelectHeaderTypeComboBoxTest::shouldHaveDefaultValue()
 {

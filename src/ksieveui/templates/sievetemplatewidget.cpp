@@ -50,9 +50,7 @@ QMimeData *SieveTemplateListWidget::mimeData(const QList<QListWidgetItem *> &ite
     return mimeData;
 }
 
-SieveTemplateListWidget::~SieveTemplateListWidget()
-{
-}
+SieveTemplateListWidget::~SieveTemplateListWidget() = default;
 
 QVector<PimCommon::defaultTemplate> SieveTemplateListWidget::defaultTemplates()
 {
@@ -104,9 +102,7 @@ SieveTemplateWidget::SieveTemplateWidget(const QString &title, QWidget *parent)
     lay->addWidget(mListTemplate);
 }
 
-SieveTemplateWidget::~SieveTemplateWidget()
-{
-}
+SieveTemplateWidget::~SieveTemplateWidget() = default;
 
 void SieveTemplateWidget::setSieveCapabilities(const QStringList &capabilities)
 {

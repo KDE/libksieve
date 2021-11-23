@@ -135,9 +135,7 @@ SelectHeadersWidget::SelectHeadersWidget(QWidget *parent)
 {
 }
 
-SelectHeadersWidget::~SelectHeadersWidget()
-{
-}
+SelectHeadersWidget::~SelectHeadersWidget() = default;
 
 void SelectHeadersWidget::addNewHeader(const QString &header)
 {
@@ -212,9 +210,7 @@ SelectHeaderTypeComboBox::SelectHeaderTypeComboBox(bool onlyEnvelopType, QWidget
     connect(this, &SelectHeaderTypeComboBox::activated, this, &SelectHeaderTypeComboBox::valueChanged);
 }
 
-SelectHeaderTypeComboBox::~SelectHeaderTypeComboBox()
-{
-}
+SelectHeaderTypeComboBox::~SelectHeaderTypeComboBox() = default;
 
 void SelectHeaderTypeComboBox::changeReadOnlyStatus()
 {

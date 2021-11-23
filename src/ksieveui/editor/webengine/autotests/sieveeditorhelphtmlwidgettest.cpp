@@ -19,9 +19,7 @@ SieveEditorHelpHtmlWidgetTest::SieveEditorHelpHtmlWidgetTest(QObject *parent)
 {
 }
 
-SieveEditorHelpHtmlWidgetTest::~SieveEditorHelpHtmlWidgetTest()
-{
-}
+SieveEditorHelpHtmlWidgetTest::~SieveEditorHelpHtmlWidgetTest() = default;
 
 void SieveEditorHelpHtmlWidgetTest::shouldHaveDefaultValue()
 {

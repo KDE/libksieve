@@ -12,9 +12,7 @@ AkonadiImapSettingInterfaceTest::AkonadiImapSettingInterfaceTest(const AkonadiIm
 {
 }
 
-AkonadiImapSettingInterfaceTest::~AkonadiImapSettingInterfaceTest()
-{
-}
+AkonadiImapSettingInterfaceTest::~AkonadiImapSettingInterfaceTest() = default;
 
 bool AkonadiImapSettingInterfaceTest::sieveSupport() const
 {

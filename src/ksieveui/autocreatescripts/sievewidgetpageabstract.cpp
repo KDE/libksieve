@@ -13,9 +13,7 @@ SieveWidgetPageAbstract::SieveWidgetPageAbstract(QWidget *parent)
 {
 }
 
-SieveWidgetPageAbstract::~SieveWidgetPageAbstract()
-{
-}
+SieveWidgetPageAbstract::~SieveWidgetPageAbstract() = default;
 
 void SieveWidgetPageAbstract::setPageType(PageType type)
 {

@@ -16,9 +16,7 @@ LineEditValidator::LineEditValidator(QWidget *parent)
     initialize();
 }
 
-LineEditValidator::~LineEditValidator()
-{
-}
+LineEditValidator::~LineEditValidator() = default;
 
 void LineEditValidator::initialize()
 {

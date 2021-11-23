@@ -39,9 +39,7 @@ SieveEditorWebEngineView::SieveEditorWebEngineView(QWidget *parent)
     setPage(page);
 }
 
-SieveEditorWebEngineView::~SieveEditorWebEngineView()
-{
-}
+SieveEditorWebEngineView::~SieveEditorWebEngineView() = default;
 
 void SieveEditorWebEngineView::downloadRequested(QWebEngineDownloadItem *download)
 {

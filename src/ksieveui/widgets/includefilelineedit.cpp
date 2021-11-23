@@ -22,9 +22,7 @@ IncludeFileLineEdit::IncludeFileLineEdit(QWidget *parent)
     setCompleter(mCompleter);
 }
 
-IncludeFileLineEdit::~IncludeFileLineEdit()
-{
-}
+IncludeFileLineEdit::~IncludeFileLineEdit() = default;
 
 void IncludeFileLineEdit::setListOfIncludeFile(const QStringList &lst)
 {

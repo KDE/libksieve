@@ -19,9 +19,7 @@ SieveScriptDebuggerFrontEndWidgetTest::SieveScriptDebuggerFrontEndWidgetTest(QOb
 {
 }
 
-SieveScriptDebuggerFrontEndWidgetTest::~SieveScriptDebuggerFrontEndWidgetTest()
-{
-}
+SieveScriptDebuggerFrontEndWidgetTest::~SieveScriptDebuggerFrontEndWidgetTest() = default;
 
 void SieveScriptDebuggerFrontEndWidgetTest::shouldHaveDefaultValue()
 {

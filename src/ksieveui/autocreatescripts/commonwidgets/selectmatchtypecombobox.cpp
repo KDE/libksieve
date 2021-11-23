@@ -19,9 +19,7 @@ SelectMatchTypeComboBox::SelectMatchTypeComboBox(SieveEditorGraphicalModeWidget 
     connect(this, &SelectMatchTypeComboBox::activated, this, &SelectMatchTypeComboBox::slotValueChanged);
 }
 
-SelectMatchTypeComboBox::~SelectMatchTypeComboBox()
-{
-}
+SelectMatchTypeComboBox::~SelectMatchTypeComboBox() = default;
 
 void SelectMatchTypeComboBox::slotValueChanged(int val)
 {

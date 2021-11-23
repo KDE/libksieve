@@ -16,7 +16,7 @@
 
 #include "libksieve_debug.h"
 #include <cassert>
-#include <limits.h>
+#include <climits>
 #include <map>
 #include <set>
 #include <vector>

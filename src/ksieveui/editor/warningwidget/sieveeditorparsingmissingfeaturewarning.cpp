@@ -47,9 +47,7 @@ SieveEditorParsingMissingFeatureWarning::SieveEditorParsingMissingFeatureWarning
     setWordWrap(true);
 }
 
-SieveEditorParsingMissingFeatureWarning::~SieveEditorParsingMissingFeatureWarning()
-{
-}
+SieveEditorParsingMissingFeatureWarning::~SieveEditorParsingMissingFeatureWarning() = default;
 
 QString SieveEditorParsingMissingFeatureWarning::initialScript() const
 {

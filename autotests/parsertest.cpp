@@ -280,9 +280,7 @@ public:
         ++indent;
     }
 
-    ~PrintingScriptBuilder() override
-    {
-    }
+    ~PrintingScriptBuilder() override = default;
 
     void taggedArgument(const QString &tag) override
     {
@@ -436,9 +434,7 @@ public:
     {
     }
 
-    ~VerifyingScriptBuilder() override
-    {
-    }
+    ~VerifyingScriptBuilder() override = default;
 
     Q_REQUIRED_RESULT bool ok() const
     {

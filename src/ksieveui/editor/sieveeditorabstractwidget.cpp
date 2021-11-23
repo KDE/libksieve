@@ -21,9 +21,7 @@ SieveEditorAbstractWidget::SieveEditorAbstractWidget(QWidget *parent)
 {
 }
 
-SieveEditorAbstractWidget::~SieveEditorAbstractWidget()
-{
-}
+SieveEditorAbstractWidget::~SieveEditorAbstractWidget() = default;
 
 void SieveEditorAbstractWidget::saveAs(const QString &defaultName)
 {
@@ -43,7 +41,7 @@ void SieveEditorAbstractWidget::setSieveImapAccountSettings(const SieveImapAccou
 
 QString SieveEditorAbstractWidget::currentscript()
 {
-    return QString();
+    return {};
 }
 
 void SieveEditorAbstractWidget::setImportScript(const QString &)

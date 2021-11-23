@@ -20,9 +20,7 @@ SieveHelpButton::SieveHelpButton(QWidget *parent)
     setIcon(QIcon::fromTheme(QStringLiteral("help-hint")));
 }
 
-SieveHelpButton::~SieveHelpButton()
-{
-}
+SieveHelpButton::~SieveHelpButton() = default;
 
 bool SieveHelpButton::event(QEvent *event)
 {

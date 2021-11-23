@@ -15,9 +15,7 @@ SieveEditorMenuBarTest::SieveEditorMenuBarTest(QObject *parent)
 {
 }
 
-SieveEditorMenuBarTest::~SieveEditorMenuBarTest()
-{
-}
+SieveEditorMenuBarTest::~SieveEditorMenuBarTest() = default;
 
 void SieveEditorMenuBarTest::shouldDisableActions()
 {

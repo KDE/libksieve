@@ -22,9 +22,7 @@ CustomManageSieveWidget::CustomManageSieveWidget(SieveImapPasswordProvider *pass
 {
 }
 
-CustomManageSieveWidget::~CustomManageSieveWidget()
-{
-}
+CustomManageSieveWidget::~CustomManageSieveWidget() = default;
 
 void CustomManageSieveWidget::updateSieveSettings()
 {

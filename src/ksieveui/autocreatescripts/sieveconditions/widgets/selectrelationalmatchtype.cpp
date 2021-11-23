@@ -21,9 +21,7 @@ SelectRelationalMatchType::SelectRelationalMatchType(QWidget *parent)
     initialize();
 }
 
-SelectRelationalMatchType::~SelectRelationalMatchType()
-{
-}
+SelectRelationalMatchType::~SelectRelationalMatchType() = default;
 
 void SelectRelationalMatchType::setCode(const QString &type, const QString &comparatorStr, const QString &name, QString &error)
 {

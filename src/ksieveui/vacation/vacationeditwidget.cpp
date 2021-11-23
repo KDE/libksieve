@@ -225,9 +225,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     connect(mDomainEdit, &QLineEdit::textChanged, this, &VacationEditWidget::setWasChanged);
 }
 
-VacationEditWidget::~VacationEditWidget()
-{
-}
+VacationEditWidget::~VacationEditWidget() = default;
 
 bool VacationEditWidget::activateVacation() const
 {
@@ -409,7 +407,7 @@ QString VacationEditWidget::subject() const
     if (mSubject->isEnabled()) {
         return mSubject->toPlainText();
     } else {
-        return QString();
+        return {};
     }
 }
 

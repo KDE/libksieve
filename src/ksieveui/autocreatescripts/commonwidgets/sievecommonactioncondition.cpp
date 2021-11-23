@@ -25,9 +25,7 @@ SieveCommonActionCondition::SieveCommonActionCondition(SieveEditorGraphicalModeW
 {
 }
 
-SieveCommonActionCondition::~SieveCommonActionCondition()
-{
-}
+SieveCommonActionCondition::~SieveCommonActionCondition() = default;
 
 QWidget *SieveCommonActionCondition::createParamWidget(QWidget *parent) const
 {
@@ -64,13 +62,13 @@ QString SieveCommonActionCondition::label() const
 
 QString SieveCommonActionCondition::code(QWidget *) const
 {
-    return QString();
+    return {};
 }
 
 QStringList SieveCommonActionCondition::needRequires(QWidget *parent) const
 {
     Q_UNUSED(parent)
-    return QStringList();
+    return {};
 }
 
 bool SieveCommonActionCondition::needCheckIfServerHasCapability() const
@@ -80,12 +78,12 @@ bool SieveCommonActionCondition::needCheckIfServerHasCapability() const
 
 QString SieveCommonActionCondition::serverNeedsCapability() const
 {
-    return QString();
+    return {};
 }
 
 QString SieveCommonActionCondition::help() const
 {
-    return QString();
+    return {};
 }
 
 QString SieveCommonActionCondition::comment() const
@@ -121,5 +119,5 @@ void SieveCommonActionCondition::serverDoesNotSupportFeatures(const QString &fea
 
 QUrl SieveCommonActionCondition::href() const
 {
-    return QUrl();
+    return {};
 }

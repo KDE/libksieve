@@ -153,9 +153,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     }
 }
 
-SieveEditorWidget::~SieveEditorWidget()
-{
-}
+SieveEditorWidget::~SieveEditorWidget() = default;
 
 void SieveEditorWidget::setReadOnly(bool b)
 {
@@ -658,7 +656,7 @@ QString SieveEditorWidget::currentHelpTitle() const
     if (mMode == TextMode) {
         return mTextModeWidget->currentHelpTitle();
     }
-    return QString();
+    return {};
 }
 
 QUrl SieveEditorWidget::currentHelpUrl() const
@@ -666,7 +664,7 @@ QUrl SieveEditorWidget::currentHelpUrl() const
     if (mMode == TextMode) {
         return mTextModeWidget->currentHelpUrl();
     }
-    return QUrl();
+    return {};
 }
 
 bool SieveEditorWidget::isTextEditor() const

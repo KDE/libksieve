@@ -40,9 +40,7 @@ SieveScriptListItem::SieveScriptListItem(const QString &text, QListWidget *paren
 {
 }
 
-SieveScriptListItem::~SieveScriptListItem()
-{
-}
+SieveScriptListItem::~SieveScriptListItem() = default;
 
 void SieveScriptListItem::setDescription(const QString &desc)
 {
@@ -182,9 +180,7 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     updateButtons();
 }
 
-SieveScriptListBox::~SieveScriptListBox()
-{
-}
+SieveScriptListBox::~SieveScriptListBox() = default;
 
 void SieveScriptListBox::slotCustomMenuRequested(const QPoint &pos)
 {

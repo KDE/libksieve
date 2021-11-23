@@ -26,9 +26,7 @@ SelectDateWidget::SelectDateWidget(QWidget *parent)
     initialize();
 }
 
-SelectDateWidget::~SelectDateWidget()
-{
-}
+SelectDateWidget::~SelectDateWidget() = default;
 
 void SelectDateWidget::initialize()
 {

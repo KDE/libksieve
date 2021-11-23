@@ -18,9 +18,7 @@ MultiLineEdit::MultiLineEdit(QWidget *parent)
     connect(this, &MultiLineEdit::textChanged, this, &MultiLineEdit::valueChanged);
 }
 
-MultiLineEdit::~MultiLineEdit()
-{
-}
+MultiLineEdit::~MultiLineEdit() = default;
 
 QSize MultiLineEdit::sizeHint() const
 {

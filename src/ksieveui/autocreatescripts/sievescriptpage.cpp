@@ -53,9 +53,7 @@ SieveScriptPage::SieveScriptPage(SieveEditorGraphicalModeWidget *sieveEditorGrap
     mTabWidget->setCurrentWidget(mBlockIfWidget);
 }
 
-SieveScriptPage::~SieveScriptPage()
-{
-}
+SieveScriptPage::~SieveScriptPage() = default;
 
 void SieveScriptPage::setListOfIncludeFile(const QStringList &lst)
 {
@@ -119,7 +117,7 @@ QString SieveScriptPage::blockName(KSieveUi::SieveWidgetPageAbstract::PageType t
     default:
         break;
     }
-    return QString();
+    return {};
 }
 
 void SieveScriptPage::generatedScript(QString &script, QStringList &required)

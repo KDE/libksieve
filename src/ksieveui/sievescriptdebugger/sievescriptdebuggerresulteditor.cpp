@@ -18,9 +18,7 @@ SieveScriptDebuggerResultEditor::SieveScriptDebuggerResultEditor(QWidget *parent
 {
 }
 
-SieveScriptDebuggerResultEditor::~SieveScriptDebuggerResultEditor()
-{
-}
+SieveScriptDebuggerResultEditor::~SieveScriptDebuggerResultEditor() = default;
 
 void SieveScriptDebuggerResultEditor::addExtraMenuEntry(QMenu *menu, QPoint pos)
 {

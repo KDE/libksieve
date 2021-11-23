@@ -29,9 +29,7 @@ SelectSizeWidget::SelectSizeWidget(QWidget *parent)
     hbox->addWidget(mSelectSizeType);
 }
 
-SelectSizeWidget::~SelectSizeWidget()
-{
-}
+SelectSizeWidget::~SelectSizeWidget() = default;
 
 QString SelectSizeWidget::code() const
 {

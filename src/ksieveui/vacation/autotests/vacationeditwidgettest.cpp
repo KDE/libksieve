@@ -23,9 +23,7 @@ VacationEditWidgetTest::VacationEditWidgetTest(QObject *parent)
 {
 }
 
-VacationEditWidgetTest::~VacationEditWidgetTest()
-{
-}
+VacationEditWidgetTest::~VacationEditWidgetTest() = default;
 
 void VacationEditWidgetTest::shouldHaveDefaultValue()
 {

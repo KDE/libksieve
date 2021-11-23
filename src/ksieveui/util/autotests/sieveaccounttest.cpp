@@ -14,9 +14,7 @@ SieveAccountTest::SieveAccountTest(QObject *parent)
 {
 }
 
-SieveAccountTest::~SieveAccountTest()
-{
-}
+SieveAccountTest::~SieveAccountTest() = default;
 
 void SieveAccountTest::shouldHaveDefaultValue()
 {

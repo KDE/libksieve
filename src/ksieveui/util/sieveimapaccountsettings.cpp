@@ -8,9 +8,7 @@
 
 using namespace KSieveUi;
 
-SieveImapAccountSettings::SieveImapAccountSettings()
-{
-}
+SieveImapAccountSettings::SieveImapAccountSettings() = default;
 
 QString SieveImapAccountSettings::identifier() const
 {

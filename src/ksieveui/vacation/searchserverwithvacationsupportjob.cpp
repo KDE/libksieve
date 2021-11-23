@@ -14,9 +14,7 @@ SearchServerWithVacationSupportJob::SearchServerWithVacationSupportJob(QObject *
 {
 }
 
-SearchServerWithVacationSupportJob::~SearchServerWithVacationSupportJob()
-{
-}
+SearchServerWithVacationSupportJob::~SearchServerWithVacationSupportJob() = default;
 
 void SearchServerWithVacationSupportJob::sendAccountList()
 {

@@ -17,9 +17,7 @@ SelectImportanceCombobox::SelectImportanceCombobox(QWidget *parent)
     connect(this, &SelectImportanceCombobox::activated, this, &SelectImportanceCombobox::valueChanged);
 }
 
-SelectImportanceCombobox::~SelectImportanceCombobox()
-{
-}
+SelectImportanceCombobox::~SelectImportanceCombobox() = default;
 
 void SelectImportanceCombobox::initialize()
 {

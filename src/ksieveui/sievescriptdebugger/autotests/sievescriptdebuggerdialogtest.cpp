@@ -20,9 +20,7 @@ SieveScriptDebuggerDialogTest::SieveScriptDebuggerDialogTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 }
 
-SieveScriptDebuggerDialogTest::~SieveScriptDebuggerDialogTest()
-{
-}
+SieveScriptDebuggerDialogTest::~SieveScriptDebuggerDialogTest() = default;
 
 void SieveScriptDebuggerDialogTest::shouldHaveDefaultValue()
 {

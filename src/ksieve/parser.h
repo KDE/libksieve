@@ -39,8 +39,8 @@ private:
     Impl *i = nullptr;
 
 private:
-    const Parser &operator=(const Parser &);
-    Parser(const Parser &);
+    const Parser &operator=(const Parser &) = delete;
+    Parser(const Parser &) = delete;
 };
 } // namespace KSieve
 

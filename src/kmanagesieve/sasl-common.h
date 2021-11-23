@@ -10,7 +10,7 @@
 
 #include <QDir>
 #include <QFile>
-#include <stdio.h>
+#include <cstdio>
 
 #ifdef Q_OS_WIN
 #include <QCoreApplication>

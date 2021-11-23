@@ -19,9 +19,7 @@ SieveScriptDebuggerTextEdit::SieveScriptDebuggerTextEdit(QWidget *parent)
     setWordWrapMode(QTextOption::WordWrap);
 }
 
-SieveScriptDebuggerTextEdit::~SieveScriptDebuggerTextEdit()
-{
-}
+SieveScriptDebuggerTextEdit::~SieveScriptDebuggerTextEdit() = default;
 
 void SieveScriptDebuggerTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
 {

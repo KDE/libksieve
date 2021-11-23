@@ -234,9 +234,7 @@ SieveConditionWidgetLister::SieveConditionWidgetLister(SieveEditorGraphicalModeW
     updateAddRemoveButton();
 }
 
-SieveConditionWidgetLister::~SieveConditionWidgetLister()
-{
-}
+SieveConditionWidgetLister::~SieveConditionWidgetLister() = default;
 
 void SieveConditionWidgetLister::slotAddWidget(QWidget *w)
 {

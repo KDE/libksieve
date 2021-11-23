@@ -19,9 +19,7 @@ SelectConvertParameterWidget::SelectConvertParameterWidget(QWidget *parent)
     initialize();
 }
 
-SelectConvertParameterWidget::~SelectConvertParameterWidget()
-{
-}
+SelectConvertParameterWidget::~SelectConvertParameterWidget() = default;
 
 void SelectConvertParameterWidget::setCode(const QStringList &code, QString &error)
 {

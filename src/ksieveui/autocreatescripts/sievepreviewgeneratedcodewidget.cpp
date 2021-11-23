@@ -21,9 +21,7 @@ SievePreviewGeneratedCodeWidget::SievePreviewGeneratedCodeWidget(QWidget *parent
     mainLayout->addWidget(mTextEdit);
 }
 
-SievePreviewGeneratedCodeWidget::~SievePreviewGeneratedCodeWidget()
-{
-}
+SievePreviewGeneratedCodeWidget::~SievePreviewGeneratedCodeWidget() = default;
 
 void SievePreviewGeneratedCodeWidget::setCode(const QString &str)
 {

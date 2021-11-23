@@ -43,9 +43,7 @@ SieveScriptDebuggerWidget::SieveScriptDebuggerWidget(QWidget *parent)
     QTimer::singleShot(0, this, &SieveScriptDebuggerWidget::checkSieveTestApplication);
 }
 
-SieveScriptDebuggerWidget::~SieveScriptDebuggerWidget()
-{
-}
+SieveScriptDebuggerWidget::~SieveScriptDebuggerWidget() = default;
 
 QList<int> SieveScriptDebuggerWidget::splitterSizes() const
 {
@@ -74,7 +72,7 @@ QString SieveScriptDebuggerWidget::script() const
     if (mStackedWidget->currentWidget() == mSieveScriptFrontEnd) {
         return mSieveScriptFrontEnd->script();
     } else {
-        return QString();
+        return {};
     }
 }
 

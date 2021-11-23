@@ -49,9 +49,7 @@ SieveEditorHelpHtmlWidget::SieveEditorHelpHtmlWidget(QWidget *parent)
     mSliderContainer->setContent(mFindBar);
 }
 
-SieveEditorHelpHtmlWidget::~SieveEditorHelpHtmlWidget()
-{
-}
+SieveEditorHelpHtmlWidget::~SieveEditorHelpHtmlWidget() = default;
 
 QString SieveEditorHelpHtmlWidget::title() const
 {

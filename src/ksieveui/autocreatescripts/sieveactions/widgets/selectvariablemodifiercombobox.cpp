@@ -17,9 +17,7 @@ SelectVariableModifierComboBox::SelectVariableModifierComboBox(QWidget *parent)
     connect(this, &SelectVariableModifierComboBox::activated, this, &SelectVariableModifierComboBox::valueChanged);
 }
 
-SelectVariableModifierComboBox::~SelectVariableModifierComboBox()
-{
-}
+SelectVariableModifierComboBox::~SelectVariableModifierComboBox() = default;
 
 void SelectVariableModifierComboBox::initialize()
 {

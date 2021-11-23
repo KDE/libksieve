@@ -32,9 +32,7 @@ Q_REQUIRED_RESULT QDate defaultStartDate();
 Q_REQUIRED_RESULT QDate defaultEndDate();
 
 struct Vacation {
-    Vacation()
-    {
-    }
+    Vacation() = default;
 
     Q_REQUIRED_RESULT bool isValid() const
     {

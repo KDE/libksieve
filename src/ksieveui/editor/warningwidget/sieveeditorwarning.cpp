@@ -18,6 +18,4 @@ SieveEditorWarning::SieveEditorWarning(QWidget *parent)
     setWordWrap(true);
 }
 
-SieveEditorWarning::~SieveEditorWarning()
-{
-}
+SieveEditorWarning::~SieveEditorWarning() = default;

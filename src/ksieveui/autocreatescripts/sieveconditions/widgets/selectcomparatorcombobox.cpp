@@ -15,9 +15,7 @@ SelectComparatorComboBox::SelectComparatorComboBox(SieveEditorGraphicalModeWidge
     initialize(sieveGraphicalModeWidget->sieveCapabilities());
 }
 
-SelectComparatorComboBox::~SelectComparatorComboBox()
-{
-}
+SelectComparatorComboBox::~SelectComparatorComboBox() = default;
 
 void SelectComparatorComboBox::initialize(const QStringList &sieveCapabilities)
 {
@@ -37,7 +35,7 @@ void SelectComparatorComboBox::initialize(const QStringList &sieveCapabilities)
 QString SelectComparatorComboBox::require() const
 {
     if (currentIndex() < 2) {
-        return QString();
+        return {};
     }
     return itemData(currentIndex()).toString();
 }

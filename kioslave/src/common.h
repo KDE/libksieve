@@ -9,7 +9,7 @@
 #include <QCoreApplication>
 #include <QDir>
 #include <QFile>
-#include <stdio.h>
+#include <cstdio>
 extern "C" {
 #include <sasl/sasl.h>
 }

@@ -82,7 +82,7 @@ QString Error::asString() const
     QString err;
     switch (type()) {
     case None:
-        return QString();
+        return {};
     case Custom:
         return mStringOne;
 

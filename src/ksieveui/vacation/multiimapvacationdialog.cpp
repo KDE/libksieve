@@ -27,9 +27,7 @@ using namespace KSieveUi;
 class KSieveUi::MultiImapVacationDialogPrivate
 {
 public:
-    MultiImapVacationDialogPrivate()
-    {
-    }
+    MultiImapVacationDialogPrivate() = default;
 
     QVector<VacationCreateScriptJob *> mListCreateJob;
     QTabWidget *mTabWidget = nullptr;

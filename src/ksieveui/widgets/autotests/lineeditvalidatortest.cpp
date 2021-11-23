@@ -15,9 +15,7 @@ LineEditValidatorTest::LineEditValidatorTest(QObject *parent)
 {
 }
 
-LineEditValidatorTest::~LineEditValidatorTest()
-{
-}
+LineEditValidatorTest::~LineEditValidatorTest() = default;
 
 void LineEditValidatorTest::shouldHaveDefaultValue()
 {

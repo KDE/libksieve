@@ -19,9 +19,7 @@ SieveCondition::SieveCondition(SieveEditorGraphicalModeWidget *sieveGraphicalMod
 {
 }
 
-SieveCondition::~SieveCondition()
-{
-}
+SieveCondition::~SieveCondition() = default;
 
 void SieveCondition::setParamWidgetValue(QXmlStreamReader & /*element*/, QWidget * /*parent*/, bool /*notCondition*/, QString & /*error*/)
 {

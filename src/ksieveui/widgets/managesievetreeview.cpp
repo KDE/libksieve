@@ -22,9 +22,7 @@ ManageSieveTreeView::ManageSieveTreeView(QWidget *parent)
     setContextMenuPolicy(Qt::CustomContextMenu);
 }
 
-ManageSieveTreeView::~ManageSieveTreeView()
-{
-}
+ManageSieveTreeView::~ManageSieveTreeView() = default;
 
 void ManageSieveTreeView::setNoImapFound(bool found)
 {

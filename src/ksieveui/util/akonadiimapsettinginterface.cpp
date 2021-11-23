@@ -15,9 +15,7 @@ AkonadiImapSettingInterface::AkonadiImapSettingInterface(std::unique_ptr<OrgKdeA
 {
 }
 
-AkonadiImapSettingInterface::~AkonadiImapSettingInterface()
-{
-}
+AkonadiImapSettingInterface::~AkonadiImapSettingInterface() = default;
 
 bool AkonadiImapSettingInterface::sieveSupport() const
 {

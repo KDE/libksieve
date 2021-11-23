@@ -26,9 +26,7 @@ MoveImapFolderWidget::MoveImapFolderWidget(QWidget *parent)
     connect(mLineEdit, &QLineEdit::textChanged, this, &MoveImapFolderWidget::textChanged);
 }
 
-MoveImapFolderWidget::~MoveImapFolderWidget()
-{
-}
+MoveImapFolderWidget::~MoveImapFolderWidget() = default;
 
 void MoveImapFolderWidget::setText(const QString &str)
 {

@@ -19,9 +19,7 @@ SelectAddressPartComboBox::SelectAddressPartComboBox(SieveEditorGraphicalModeWid
     connect(this, &SelectAddressPartComboBox::activated, this, &SelectAddressPartComboBox::valueChanged);
 }
 
-SelectAddressPartComboBox::~SelectAddressPartComboBox()
-{
-}
+SelectAddressPartComboBox::~SelectAddressPartComboBox() = default;
 
 void SelectAddressPartComboBox::initialize()
 {

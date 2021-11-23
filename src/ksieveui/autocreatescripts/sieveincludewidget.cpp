@@ -36,9 +36,7 @@ SieveIncludeLocation::SieveIncludeLocation(QWidget *parent)
     connect(this, &SieveIncludeLocation::activated, this, &SieveIncludeLocation::valueChanged);
 }
 
-SieveIncludeLocation::~SieveIncludeLocation()
-{
-}
+SieveIncludeLocation::~SieveIncludeLocation() = default;
 
 void SieveIncludeLocation::initialize()
 {
@@ -68,9 +66,7 @@ SieveIncludeActionWidget::SieveIncludeActionWidget(QWidget *parent)
     initWidget();
 }
 
-SieveIncludeActionWidget::~SieveIncludeActionWidget()
-{
-}
+SieveIncludeActionWidget::~SieveIncludeActionWidget() = default;
 
 void SieveIncludeActionWidget::clear()
 {
@@ -204,9 +200,7 @@ SieveIncludeWidget::SieveIncludeWidget(QWidget *parent)
     setPageType(KSieveUi::SieveScriptBlockWidget::Include);
 }
 
-SieveIncludeWidget::~SieveIncludeWidget()
-{
-}
+SieveIncludeWidget::~SieveIncludeWidget() = default;
 
 void SieveIncludeWidget::setListOfIncludeFile(const QStringList &lst)
 {
@@ -247,9 +241,7 @@ SieveIncludeWidgetLister::SieveIncludeWidgetLister(QWidget *parent)
     updateAddRemoveButton();
 }
 
-SieveIncludeWidgetLister::~SieveIncludeWidgetLister()
-{
-}
+SieveIncludeWidgetLister::~SieveIncludeWidgetLister() = default;
 
 void SieveIncludeWidgetLister::slotAddWidget(QWidget *w)
 {

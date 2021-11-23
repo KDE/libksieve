@@ -40,9 +40,7 @@ public:
     {
     }
 
-    ~ManageSieveWidgetPrivate()
-    {
-    }
+    ~ManageSieveWidgetPrivate() = default;
 
     // Maps top-level items to their child which has the radio button selection
     QMap<QTreeWidgetItem *, QTreeWidgetItem *> mSelectedItems;

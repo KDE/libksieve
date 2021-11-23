@@ -9,13 +9,9 @@
 #include "sieveimapinstance.h"
 
 using namespace KSieveUi;
-SieveImapInstanceInterface::SieveImapInstanceInterface()
-{
-}
+SieveImapInstanceInterface::SieveImapInstanceInterface() = default;
 
-SieveImapInstanceInterface::~SieveImapInstanceInterface()
-{
-}
+SieveImapInstanceInterface::~SieveImapInstanceInterface() = default;
 
 QVector<KSieveUi::SieveImapInstance> SieveImapInstanceInterface::sieveImapInstances()
 {

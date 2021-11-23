@@ -16,9 +16,9 @@
 #include <QByteArray>
 #include <QString>
 
-#include <assert.h>
-#include <ctype.h> // isdigit
-#include <limits.h> // ULONG_MAX
+#include <cassert>
+#include <cctype> // isdigit
+#include <climits> // ULONG_MAX
 
 namespace KSieve
 {

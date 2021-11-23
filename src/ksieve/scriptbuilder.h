@@ -18,9 +18,7 @@ class Error;
 class ScriptBuilder
 {
 public:
-    virtual ~ScriptBuilder()
-    {
-    }
+    virtual ~ScriptBuilder() = default;
 
     virtual void taggedArgument(const QString &tag) = 0;
     virtual void stringArgument(const QString &string, bool multiLine, const QString &embeddedHashComment) = 0;

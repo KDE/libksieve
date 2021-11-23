@@ -22,6 +22,4 @@ VacationWarningWidget::VacationWarningWidget(QWidget *parent)
     setWordWrap(true);
 }
 
-VacationWarningWidget::~VacationWarningWidget()
-{
-}
+VacationWarningWidget::~VacationWarningWidget() = default;

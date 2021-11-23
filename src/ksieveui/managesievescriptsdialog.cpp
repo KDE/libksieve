@@ -35,9 +35,7 @@ using namespace KSieveUi;
 class KSieveUi::ManageSieveScriptsDialogPrivate
 {
 public:
-    ManageSieveScriptsDialogPrivate()
-    {
-    }
+    ManageSieveScriptsDialogPrivate() = default;
 
     CustomManageSieveWidget *mTreeView = nullptr;
     SieveEditor *mSieveEditor = nullptr;

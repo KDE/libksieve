@@ -26,9 +26,7 @@ AddressLineEdit::AddressLineEdit(QWidget *parent)
     verifyAddress();
 }
 
-AddressLineEdit::~AddressLineEdit()
-{
-}
+AddressLineEdit::~AddressLineEdit() = default;
 
 void AddressLineEdit::slotTextChanged()
 {

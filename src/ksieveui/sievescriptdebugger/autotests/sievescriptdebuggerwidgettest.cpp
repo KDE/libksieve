@@ -14,9 +14,7 @@ SieveScriptDebuggerWidgetTest::SieveScriptDebuggerWidgetTest(QObject *parent)
 {
 }
 
-SieveScriptDebuggerWidgetTest::~SieveScriptDebuggerWidgetTest()
-{
-}
+SieveScriptDebuggerWidgetTest::~SieveScriptDebuggerWidgetTest() = default;
 
 void SieveScriptDebuggerWidgetTest::shouldHaveDefaultValue()
 {

@@ -13,9 +13,7 @@ KSieveUi::Legacy::VacationDataExtractor::VacationDataExtractor()
     qCDebug(LIBKSIEVE_LOG);
 }
 
-KSieveUi::Legacy::VacationDataExtractor::~VacationDataExtractor()
-{
-}
+KSieveUi::Legacy::VacationDataExtractor::~VacationDataExtractor() = default;
 
 void KSieveUi::Legacy::VacationDataExtractor::commandStart(const QString &identifier, int lineNumber)
 {

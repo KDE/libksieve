@@ -15,9 +15,7 @@ SieveScriptDebuggerWarning::SieveScriptDebuggerWarning(QWidget *parent)
     hide();
 }
 
-SieveScriptDebuggerWarning::~SieveScriptDebuggerWarning()
-{
-}
+SieveScriptDebuggerWarning::~SieveScriptDebuggerWarning() = default;
 
 void SieveScriptDebuggerWarning::setErrorMessage(const QString &msg)
 {

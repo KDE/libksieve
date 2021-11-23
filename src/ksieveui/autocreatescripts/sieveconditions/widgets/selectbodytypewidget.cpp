@@ -21,9 +21,7 @@ SelectBodyTypeWidget::SelectBodyTypeWidget(QWidget *parent)
     initialize();
 }
 
-SelectBodyTypeWidget::~SelectBodyTypeWidget()
-{
-}
+SelectBodyTypeWidget::~SelectBodyTypeWidget() = default;
 
 void SelectBodyTypeWidget::initialize()
 {

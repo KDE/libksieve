@@ -20,8 +20,8 @@
 
 #include <memory> // std::unique_ptr
 
-#include <assert.h>
-#include <ctype.h> // isdigit
+#include <cassert>
+#include <cctype> // isdigit
 
 #ifdef STR_DIM
 #undef STR_DIM

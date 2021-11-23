@@ -15,9 +15,7 @@ VacationDataExtractor::VacationDataExtractor()
     qCDebug(LIBKSIEVE_LOG);
 }
 
-VacationDataExtractor::~VacationDataExtractor()
-{
-}
+VacationDataExtractor::~VacationDataExtractor() = default;
 
 void VacationDataExtractor::commandStart(const QString &identifier, int lineNumber)
 {
@@ -197,9 +195,7 @@ RequireExtractor::RequireExtractor()
 {
 }
 
-RequireExtractor::~RequireExtractor()
-{
-}
+RequireExtractor::~RequireExtractor() = default;
 
 void RequireExtractor::commandStart(const QString &identifier, int lineNumber)
 {

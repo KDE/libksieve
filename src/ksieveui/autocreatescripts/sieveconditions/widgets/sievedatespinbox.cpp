@@ -14,9 +14,7 @@ SieveDateSpinBox::SieveDateSpinBox(QWidget *parent)
     setSpecialValueText(QStringLiteral("*"));
 }
 
-SieveDateSpinBox::~SieveDateSpinBox()
-{
-}
+SieveDateSpinBox::~SieveDateSpinBox() = default;
 
 void SieveDateSpinBox::setRange(int minValue, int maxValue)
 {

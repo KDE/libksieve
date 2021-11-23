@@ -40,9 +40,7 @@ SieveEditorTestWidget::SieveEditorTestWidget(QWidget *parent)
     connect(this, &SieveEditorTestWidget::valueChanged, this, &SieveEditorTestWidget::slotValueChanged);
 }
 
-SieveEditorTestWidget::~SieveEditorTestWidget()
-{
-}
+SieveEditorTestWidget::~SieveEditorTestWidget() = default;
 
 void SieveEditorTestWidget::slotValueChanged(bool changed)
 {

@@ -17,9 +17,7 @@ SelectMimeTypeComboBox::SelectMimeTypeComboBox(QWidget *parent)
     connect(this, &SelectMimeTypeComboBox::activated, this, &SelectMimeTypeComboBox::valueChanged);
 }
 
-SelectMimeTypeComboBox::~SelectMimeTypeComboBox()
-{
-}
+SelectMimeTypeComboBox::~SelectMimeTypeComboBox() = default;
 
 void SelectMimeTypeComboBox::initialize()
 {

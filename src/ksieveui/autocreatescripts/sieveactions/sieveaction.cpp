@@ -20,9 +20,7 @@ SieveAction::SieveAction(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidge
 {
 }
 
-SieveAction::~SieveAction()
-{
-}
+SieveAction::~SieveAction() = default;
 
 QStringList SieveAction::listOfIncludeFile() const
 {

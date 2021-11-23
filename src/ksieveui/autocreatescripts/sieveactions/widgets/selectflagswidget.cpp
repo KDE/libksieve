@@ -76,9 +76,7 @@ SelectFlagsListWidget::SelectFlagsListWidget(QWidget *parent)
     init();
 }
 
-SelectFlagsListWidget::~SelectFlagsListWidget()
-{
-}
+SelectFlagsListWidget::~SelectFlagsListWidget() = default;
 
 void SelectFlagsListWidget::init()
 {
@@ -143,9 +141,7 @@ SelectFlagsWidget::SelectFlagsWidget(QWidget *parent)
     lay->addWidget(selectFlags);
 }
 
-SelectFlagsWidget::~SelectFlagsWidget()
-{
-}
+SelectFlagsWidget::~SelectFlagsWidget() = default;
 
 void SelectFlagsWidget::slotSelectFlags()
 {

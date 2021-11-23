@@ -19,9 +19,7 @@ class Response
 public:
     enum Type { None, KeyValuePair, Action, Quantity };
 
-    Response()
-    {
-    }
+    Response() = default;
 
     Type type() const;
     QByteArray action() const;

@@ -25,9 +25,7 @@ RenameScriptJob::RenameScriptJob(QObject *parent)
 {
 }
 
-RenameScriptJob::~RenameScriptJob()
-{
-}
+RenameScriptJob::~RenameScriptJob() = default;
 
 void RenameScriptJob::setOldUrl(const QUrl &url)
 {

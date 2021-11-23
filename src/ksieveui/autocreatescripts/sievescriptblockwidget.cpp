@@ -84,9 +84,7 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *g
     topLayout->addLayout(newBlockLayout);
 }
 
-SieveScriptBlockWidget::~SieveScriptBlockWidget()
-{
-}
+SieveScriptBlockWidget::~SieveScriptBlockWidget() = default;
 
 void SieveScriptBlockWidget::slotAddBlock()
 {

@@ -12,6 +12,4 @@ SieveEditorGraphicalModeWidgetAbstract::SieveEditorGraphicalModeWidgetAbstract(Q
 {
 }
 
-SieveEditorGraphicalModeWidgetAbstract::~SieveEditorGraphicalModeWidgetAbstract()
-{
-}
+SieveEditorGraphicalModeWidgetAbstract::~SieveEditorGraphicalModeWidgetAbstract() = default;

@@ -23,9 +23,7 @@ RegexpEditorLineEdit::RegexpEditorLineEdit(QWidget *parent)
     mainLayout->addWidget(mLineEdit);
 }
 
-RegexpEditorLineEdit::~RegexpEditorLineEdit()
-{
-}
+RegexpEditorLineEdit::~RegexpEditorLineEdit() = default;
 
 void RegexpEditorLineEdit::switchToRegexpEditorLineEdit(bool regexpEditor)
 {

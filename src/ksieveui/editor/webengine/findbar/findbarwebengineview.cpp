@@ -12,9 +12,7 @@ using namespace KSieveUi;
 class KSieveUi::FindBarWebEngineViewPrivate
 {
 public:
-    FindBarWebEngineViewPrivate()
-    {
-    }
+    FindBarWebEngineViewPrivate() = default;
 
     QWebEngineView *mView = nullptr;
 };
@@ -26,9 +24,7 @@ FindBarWebEngineView::FindBarWebEngineView(QWebEngineView *view, QWidget *parent
     d->mView = view;
 }
 
-FindBarWebEngineView::~FindBarWebEngineView()
-{
-}
+FindBarWebEngineView::~FindBarWebEngineView() = default;
 
 void FindBarWebEngineView::searchText(bool backward, bool isAutoSearch)
 {

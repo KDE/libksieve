@@ -13,9 +13,7 @@ SieveScriptDebuggerWarningTest::SieveScriptDebuggerWarningTest(QObject *parent)
 {
 }
 
-SieveScriptDebuggerWarningTest::~SieveScriptDebuggerWarningTest()
-{
-}
+SieveScriptDebuggerWarningTest::~SieveScriptDebuggerWarningTest() = default;
 
 void SieveScriptDebuggerWarningTest::shouldHaveDefaultValue()
 {

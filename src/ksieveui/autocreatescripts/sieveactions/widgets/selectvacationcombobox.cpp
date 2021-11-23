@@ -17,9 +17,7 @@ SelectVacationComboBox::SelectVacationComboBox(QWidget *parent)
     connect(this, &SelectVacationComboBox::activated, this, &SelectVacationComboBox::valueChanged);
 }
 
-SelectVacationComboBox::~SelectVacationComboBox()
-{
-}
+SelectVacationComboBox::~SelectVacationComboBox() = default;
 
 void SelectVacationComboBox::initialize()
 {

@@ -34,9 +34,7 @@ SieveGlobalVariableActionWidget::SieveGlobalVariableActionWidget(QWidget *parent
     initWidget();
 }
 
-SieveGlobalVariableActionWidget::~SieveGlobalVariableActionWidget()
-{
-}
+SieveGlobalVariableActionWidget::~SieveGlobalVariableActionWidget() = default;
 
 void SieveGlobalVariableActionWidget::generatedScript(QString &script)
 {
@@ -164,9 +162,7 @@ SieveGlobalVariableWidget::SieveGlobalVariableWidget(QWidget *parent)
     setPageType(KSieveUi::SieveScriptBlockWidget::GlobalVariable);
 }
 
-SieveGlobalVariableWidget::~SieveGlobalVariableWidget()
-{
-}
+SieveGlobalVariableWidget::~SieveGlobalVariableWidget() = default;
 
 void SieveGlobalVariableWidget::slotHelp()
 {
@@ -207,9 +203,7 @@ SieveGlobalVariableLister::SieveGlobalVariableLister(QWidget *parent)
     updateAddRemoveButton();
 }
 
-SieveGlobalVariableLister::~SieveGlobalVariableLister()
-{
-}
+SieveGlobalVariableLister::~SieveGlobalVariableLister() = default;
 
 void SieveGlobalVariableLister::slotAddWidget(QWidget *w)
 {

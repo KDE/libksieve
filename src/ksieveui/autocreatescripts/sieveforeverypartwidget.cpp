@@ -54,9 +54,7 @@ SieveForEveryPartWidget::SieveForEveryPartWidget(QWidget *parent)
     setPageType(KSieveUi::SieveScriptBlockWidget::ForEveryPart);
 }
 
-SieveForEveryPartWidget::~SieveForEveryPartWidget()
-{
-}
+SieveForEveryPartWidget::~SieveForEveryPartWidget() = default;
 
 void SieveForEveryPartWidget::slotHelp()
 {

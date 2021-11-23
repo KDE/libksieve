@@ -22,9 +22,7 @@ MultiImapVacationManager::MultiImapVacationManager(SieveImapPasswordProvider *pa
 {
 }
 
-MultiImapVacationManager::~MultiImapVacationManager()
-{
-}
+MultiImapVacationManager::~MultiImapVacationManager() = default;
 
 void MultiImapVacationManager::checkVacation(const QString &serverName, const QUrl &url)
 {

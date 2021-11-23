@@ -16,9 +16,7 @@ SelectAddHeaderPositionCombobox::SelectAddHeaderPositionCombobox(QWidget *parent
     connect(this, &SelectAddHeaderPositionCombobox::activated, this, &SelectAddHeaderPositionCombobox::valueChanged);
 }
 
-SelectAddHeaderPositionCombobox::~SelectAddHeaderPositionCombobox()
-{
-}
+SelectAddHeaderPositionCombobox::~SelectAddHeaderPositionCombobox() = default;
 
 void SelectAddHeaderPositionCombobox::initialize()
 {

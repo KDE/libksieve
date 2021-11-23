@@ -23,9 +23,7 @@ SieveEditorTabWidget::SieveEditorTabWidget(QWidget *parent)
     connect(this, &SieveEditorTabWidget::customContextMenuRequested, this, &SieveEditorTabWidget::slotTabContextMenuRequest);
 }
 
-SieveEditorTabWidget::~SieveEditorTabWidget()
-{
-}
+SieveEditorTabWidget::~SieveEditorTabWidget() = default;
 
 void SieveEditorTabWidget::slotTabContextMenuRequest(const QPoint &pos)
 {
@@ -122,7 +120,7 @@ QUrl SieveEditorTabWidget::currentHelpUrl() const
     if (page) {
         return page->currentUrl();
     }
-    return QUrl();
+    return {};
 }
 
 QString SieveEditorTabWidget::currentHelpTitle() const
@@ -131,7 +129,7 @@ QString SieveEditorTabWidget::currentHelpTitle() const
     if (page) {
         return page->title();
     }
-    return QString();
+    return {};
 }
 
 void SieveEditorTabWidget::slotAddHelpPage(const QUrl &url)

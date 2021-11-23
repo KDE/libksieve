@@ -18,7 +18,7 @@
 #include <KIO/Job>
 
 #include "sasl-common.h"
-#include <string.h> // strlen()
+#include <cstring> // strlen()
 
 using namespace KManageSieve;
 

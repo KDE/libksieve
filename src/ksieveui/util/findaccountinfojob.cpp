@@ -20,9 +20,7 @@ FindAccountInfoJob::FindAccountInfoJob(QObject *parent)
 {
 }
 
-FindAccountInfoJob::~FindAccountInfoJob()
-{
-}
+FindAccountInfoJob::~FindAccountInfoJob() = default;
 
 bool FindAccountInfoJob::canStart() const
 {

@@ -15,9 +15,7 @@ using namespace KSieveUi;
 class KSieveUi::CheckKolabKep14SupportJobPrivate
 {
 public:
-    CheckKolabKep14SupportJobPrivate()
-    {
-    }
+    CheckKolabKep14SupportJobPrivate() = default;
 
     QStringList mAvailableScripts;
     QString mServerName;
@@ -32,9 +30,7 @@ CheckKolabKep14SupportJob::CheckKolabKep14SupportJob(QObject *parent)
 {
 }
 
-CheckKolabKep14SupportJob::~CheckKolabKep14SupportJob()
-{
-}
+CheckKolabKep14SupportJob::~CheckKolabKep14SupportJob() = default;
 
 void CheckKolabKep14SupportJob::start()
 {

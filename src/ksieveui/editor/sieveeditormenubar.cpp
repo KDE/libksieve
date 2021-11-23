@@ -21,9 +21,7 @@ SieveEditorMenuBar::SieveEditorMenuBar(QWidget *parent)
     initMenus();
 }
 
-SieveEditorMenuBar::~SieveEditorMenuBar()
-{
-}
+SieveEditorMenuBar::~SieveEditorMenuBar() = default;
 
 void SieveEditorMenuBar::setEditorMode(bool editorMode)
 {

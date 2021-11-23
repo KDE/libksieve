@@ -12,6 +12,4 @@ AbstractMoveImapFolderWidget::AbstractMoveImapFolderWidget(QWidget *parent)
 {
 }
 
-AbstractMoveImapFolderWidget::~AbstractMoveImapFolderWidget()
-{
-}
+AbstractMoveImapFolderWidget::~AbstractMoveImapFolderWidget() = default;

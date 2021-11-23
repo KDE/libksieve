@@ -23,9 +23,7 @@ SieveInfoWidget::SieveInfoWidget(QWidget *parent)
     lay->addWidget(mInfo);
 }
 
-SieveInfoWidget::~SieveInfoWidget()
-{
-}
+SieveInfoWidget::~SieveInfoWidget() = default;
 
 void SieveInfoWidget::setServerInfo(QStringList serverInfos)
 {

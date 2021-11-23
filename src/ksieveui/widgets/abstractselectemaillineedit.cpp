@@ -12,9 +12,7 @@ AbstractSelectEmailLineEdit::AbstractSelectEmailLineEdit(QWidget *parent)
 {
 }
 
-AbstractSelectEmailLineEdit::~AbstractSelectEmailLineEdit()
-{
-}
+AbstractSelectEmailLineEdit::~AbstractSelectEmailLineEdit() = default;
 
 bool AbstractSelectEmailLineEdit::multiSelection() const
 {

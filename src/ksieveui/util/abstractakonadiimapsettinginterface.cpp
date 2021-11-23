@@ -8,13 +8,9 @@
 
 using namespace KSieveUi;
 
-AbstractAkonadiImapSettingInterface::AbstractAkonadiImapSettingInterface()
-{
-}
+AbstractAkonadiImapSettingInterface::AbstractAkonadiImapSettingInterface() = default;
 
-AbstractAkonadiImapSettingInterface::~AbstractAkonadiImapSettingInterface()
-{
-}
+AbstractAkonadiImapSettingInterface::~AbstractAkonadiImapSettingInterface() = default;
 
 bool AbstractAkonadiImapSettingInterface::sieveSupport() const
 {

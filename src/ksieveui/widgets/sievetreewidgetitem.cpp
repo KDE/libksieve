@@ -21,9 +21,7 @@ SieveTreeWidgetProgress::SieveTreeWidgetProgress(SieveTreeWidgetItem *item, QObj
     connect(mProgressTimer, &QTimer::timeout, this, &SieveTreeWidgetProgress::slotTimerDone);
 }
 
-SieveTreeWidgetProgress::~SieveTreeWidgetProgress()
-{
-}
+SieveTreeWidgetProgress::~SieveTreeWidgetProgress() = default;
 
 void SieveTreeWidgetProgress::slotTimerDone()
 {
@@ -53,9 +51,7 @@ void SieveTreeWidgetProgress::stopAnimation()
 class KSieveUi::SieveTreeWidgetItemPrivate
 {
 public:
-    SieveTreeWidgetItemPrivate()
-    {
-    }
+    SieveTreeWidgetItemPrivate() = default;
 
     ~SieveTreeWidgetItemPrivate()
     {
@@ -72,9 +68,7 @@ SieveTreeWidgetItem::SieveTreeWidgetItem(QTreeWidget *treeWidget, QTreeWidgetIte
     d->mProgress = new SieveTreeWidgetProgress(this);
 }
 
-SieveTreeWidgetItem::~SieveTreeWidgetItem()
-{
-}
+SieveTreeWidgetItem::~SieveTreeWidgetItem() = default;
 
 void SieveTreeWidgetItem::startAnimation()
 {

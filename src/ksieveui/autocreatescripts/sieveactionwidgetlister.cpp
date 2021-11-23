@@ -291,9 +291,7 @@ SieveActionWidgetLister::SieveActionWidgetLister(SieveEditorGraphicalModeWidget 
     updateAddRemoveButton();
 }
 
-SieveActionWidgetLister::~SieveActionWidgetLister()
-{
-}
+SieveActionWidgetLister::~SieveActionWidgetLister() = default;
 
 void SieveActionWidgetLister::slotAddWidget(QWidget *w)
 {

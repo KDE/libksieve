@@ -35,7 +35,7 @@ QString AutoCreateScriptUtil::createList(const QString &str, QChar separator, bo
     const int count = list.count();
     switch (count) {
     case 0:
-        return QString();
+        return {};
     case 1:
         return QLatin1String("\"") + list.first() + QLatin1String("\"");
     default: {
@@ -135,7 +135,7 @@ QString AutoCreateScriptUtil::strValue(QXmlStreamReader &element)
             element.skipCurrentElement();
         }
     }
-    return QString();
+    return {};
 }
 
 QString AutoCreateScriptUtil::listValueToStr(QXmlStreamReader &element)
