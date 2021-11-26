@@ -224,7 +224,7 @@ const QString SelectHeaderTypeComboBox::getSelectMultipleHeadersTranslated() con
 #if KI18N_VERSION < QT_VERSION_CHECK(5, 89, 0)
     return funcCombo->addItem(i18n(selectMultipleHeaders));
 #else
-    return KLocalizedString(selectMultipleHeaders).toString();
+    return selectMultipleHeaders.toString();
 #endif
 }
 
