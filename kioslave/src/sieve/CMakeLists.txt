@@ -1,4 +1,5 @@
-
+# SPDX-FileCopyrightText: 2011-2021 Laurent Montel <montel@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
 
 add_library(kio_sieve MODULE)
 target_sources(kio_sieve PRIVATE sieve.cpp sieve.h)

@@ -1,4 +1,5 @@
-
+# SPDX-FileCopyrightText: 2011-2021 Laurent Montel <montel@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
 include(CheckTypeSize)
 check_type_size("unsigned long" SIZEOF_UNSIGNED_LONG)
 configure_file(config-libksieve.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config-libksieve.h)
