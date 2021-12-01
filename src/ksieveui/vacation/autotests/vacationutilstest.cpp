@@ -5,7 +5,6 @@
  */
 
 #include "vacationutilstest.h"
-#include "ksieveui/vacation/legacy/vacationutils.h"
 #include "ksieveui/vacation/vacationutils.h"
 
 #include <KMime/HeaderParsing>
@@ -88,7 +87,6 @@ void VacationUtilsTest::testParseScript_data()
 
     QTest::newRow("simple") << QStringLiteral("vacation-simple.siv") << QStringLiteral("vacation-deactivate.siv");
     QTest::newRow("complex") << QStringLiteral("vacation-complex.siv") << QStringLiteral("vacation-deactivate-complex.siv");
-    QTest::newRow("old") << QStringLiteral("vacation-old.siv") << QStringLiteral("vacation-deactivate-complex-old.siv");
 }
 
 void VacationUtilsTest::testParseScript()

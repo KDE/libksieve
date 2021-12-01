@@ -5,8 +5,6 @@ set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
 macro( add_vacation_test _source )
   set( _test ${_source}test.cpp
     ../${_source}.cpp
-    ../legacy/vacationutils.cpp
-    ../legacy/vacationscriptextractor.cpp
     ../vacationscriptextractor.cpp
     ../vacationutils.cpp
     ../vacationeditwidget.cpp

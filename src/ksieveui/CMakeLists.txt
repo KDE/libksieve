@@ -54,8 +54,6 @@ target_sources(KF5KSieveUi PRIVATE
     vacation/multiimapvacationmanager.cpp
     vacation/vacationmanager.cpp
     vacation/vacationmailactionwidget.cpp
-    vacation/legacy/vacationutils.cpp
-    vacation/legacy/vacationscriptextractor.cpp
     vacation/searchserverwithvacationsupportjob.cpp
     )
 target_sources(KF5KSieveUi PRIVATE
@@ -291,8 +289,6 @@ target_sources(KF5KSieveUi PRIVATE
     vacation/vacationpagewidget.h
     vacation/vacationeditwidget.h
     vacation/multiimapvacationmanager.h
-    vacation/legacy/vacationutils.h
-    vacation/legacy/vacationscriptextractor.h
     autocreatescripts/sieveforeverypartwidget.h
     autocreatescripts/sievepreviewgeneratedcodewidget.h
     autocreatescripts/sievescriptdescriptiondialog.h
