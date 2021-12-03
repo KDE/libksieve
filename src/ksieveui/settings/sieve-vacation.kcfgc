@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: BSD-3-Clause
+
 File=sieve-vacation.kcfg
 NameSpace=KSieveUi
 ClassName=VacationSettings
