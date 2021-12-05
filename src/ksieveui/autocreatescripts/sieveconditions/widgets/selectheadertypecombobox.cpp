@@ -222,7 +222,7 @@ void SelectHeaderTypeComboBox::changeReadOnlyStatus()
 const QString SelectHeaderTypeComboBox::getSelectMultipleHeadersTranslated() const
 {
 #if KI18N_VERSION < QT_VERSION_CHECK(5, 89, 0)
-    return funcCombo->addItem(i18n(selectMultipleHeaders));
+    return i18n(selectMultipleHeaders);
 #else
     return selectMultipleHeaders.toString();
 #endif
