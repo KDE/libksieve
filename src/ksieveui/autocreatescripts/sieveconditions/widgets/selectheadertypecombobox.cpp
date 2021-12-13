@@ -18,19 +18,9 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QVBoxLayout>
-#include <ki18n_version.h>
-
-#if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
 #include <KLazyLocalizedString>
-#undef I18N_NOOP
-#define I18N_NOOP kli18n
-#endif
 using namespace KSieveUi;
-#if KI18N_VERSION >= QT_VERSION_CHECK(5, 89, 0)
-const KLazyLocalizedString selectMultipleHeaders = I18N_NOOP("Select multiple headers...");
-#else
-static const char selectMultipleHeaders[] = I18N_NOOP("Select multiple headers...");
-#endif
+const KLazyLocalizedString selectMultipleHeaders = kli18n("Select multiple headers...");
 SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     : QDialog(parent)
     , mListWidget(new SelectHeadersWidget(this))
@@ -221,11 +211,7 @@ void SelectHeaderTypeComboBox::changeReadOnlyStatus()
 
 const QString SelectHeaderTypeComboBox::getSelectMultipleHeadersTranslated() const
 {
-#if KI18N_VERSION < QT_VERSION_CHECK(5, 89, 0)
-    return i18n(selectMultipleHeaders);
-#else
     return selectMultipleHeaders.toString();
-#endif
 }
 
 void SelectHeaderTypeComboBox::slotSelectItem(const QString &str)
