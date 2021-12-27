@@ -56,7 +56,6 @@ set_package_properties(Sasl2 PROPERTIES TYPE REQUIRED)
 
 find_package(Qt5 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets PrintSupport WebEngine WebEngineWidgets)
 find_package(KF5I18n ${KF5_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF5DocTools ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5KIO ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5IconThemes ${KF5_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5PimCommon ${PIMCOMMON_LIB_VERSION} CONFIG REQUIRED)
@@ -69,6 +68,12 @@ find_package(KF5IdentityManagement ${IDENTITYMANAGEMENT_LIB_VERSION} CONFIG REQU
 find_package(KF5MailTransport ${KMAILTRANSPORT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5PimTextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5IMAP ${KIMAP_LIB_VERSION} CONFIG REQUIRED)
+
+find_package(KF5DocTools ${KF5_MIN_VERSION})
+set_package_properties(KF5DocTools PROPERTIES DESCRIPTION
+    "Tools to generate documentation"
+    TYPE OPTIONAL
+)
 
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVE
@@ -119,7 +124,11 @@ ecm_qt_install_logging_categories(
         )
 
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
+
 ki18n_install(po)
-kdoctools_install(po)
+if(KF5DocTools_FOUND)
+    kdoctools_install(po)
+endif()
+
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
