@@ -49,7 +49,7 @@ set_target_properties(KF5KManageSieve PROPERTIES
   EXPORT_NAME KManageSieve
 )
 
-target_include_directories(KF5KManageSieve INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KManageSieve/;${KDE_INSTALL_INCLUDEDIR_KF5}/kmanagesieve;${KDE_INSTALL_INCLUDEDIR_KF5}>")
+target_include_directories(KF5KManageSieve INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KManageSieve/;${KDE_INSTALL_INCLUDEDIR_KF}/kmanagesieve;${KDE_INSTALL_INCLUDEDIR_KF}>")
 target_include_directories(KF5KManageSieve PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/kmanagesieve;${libksieve_BINARY_DIR}/src/kmanagesieve>")
 
 
@@ -69,14 +69,14 @@ ecm_generate_pri_file(BASE_NAME KManageSieve
 install(TARGETS KF5KManageSieve EXPORT KF5KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
     ${kmanagesieve_CamelCase_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KManageSieve
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KManageSieve
     COMPONENT Devel
 )
 
 install(FILES
     ${kmanagesieve_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/kmanagesieve_export.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/kmanagesieve
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/kmanagesieve
     COMPONENT Devel
 )
 install(FILES

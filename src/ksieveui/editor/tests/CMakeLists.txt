@@ -12,6 +12,6 @@ target_link_libraries(editorsieve_gui
   KF5::KSieveUi
   KF5::PimCommon
   KF5::I18n
-  Qt::PrintSupport
+  Qt${QT_MAJOR_VERSION}::PrintSupport
 )
 

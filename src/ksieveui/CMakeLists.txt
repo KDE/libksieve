@@ -424,11 +424,11 @@ target_link_libraries(KF5KSieveUi
     KF5::MailTransport
     KF5::KIOWidgets
     KF5::NewStuff
-    Qt::WebEngineWidgets
+    Qt${QT_MAJOR_VERSION}::WebEngineWidgets
     KF5::PimTextEdit
     KF5::I18n
     KF5::SonnetUi
-    Qt::PrintSupport
+    Qt${QT_MAJOR_VERSION}::PrintSupport
     KF5::SyntaxHighlighting
     )
 
@@ -438,7 +438,7 @@ set_target_properties(KF5KSieveUi PROPERTIES
     EXPORT_NAME KSieveUi
     )
 
-target_include_directories(KF5KSieveUi INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF5}/KSieveUi/;${KDE_INSTALL_INCLUDEDIR_KF5}/ksieveui;${KDE_INSTALL_INCLUDEDIR_KF5}>")
+target_include_directories(KF5KSieveUi INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KSieveUi/;${KDE_INSTALL_INCLUDEDIR_KF}/ksieveui;${KDE_INSTALL_INCLUDEDIR_KF}>")
 target_include_directories(KF5KSieveUi PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/ksieveui;${libksieve_SOURCE_DIR}/src/ksieveui/util/;${libksieve_BINARY_DIR}/src/ksieveui>")
 
 ecm_generate_headers(ksieveui_CamelCase_HEADERS
@@ -534,7 +534,7 @@ install(FILES
     ${ksieveui_Camelcaseeditor_HEADERS}
     ${ksieveui_Camelcaseutil_HEADERS}
     ${ksieveui_Camelmanagescriptsjob_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KSieveUi
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KSieveUi
     COMPONENT Devel
     )
 
@@ -549,7 +549,7 @@ install(FILES
     ${ksieveui_util_HEADERS}
     ${ksieveui_managescriptsjob_HEADERS}
     util/util_p.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/ksieveui
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/ksieveui
     COMPONENT Devel
     )
 install(FILES

@@ -35,7 +35,7 @@ generate_export_header(KF5KSieve BASE_NAME ksieve)
 
 target_link_libraries(KF5KSieve
 PRIVATE
-  Qt::Core KF5::I18n
+  Qt${QT_MAJOR_VERSION}::Core KF5::I18n
 )
 
 set_target_properties(KF5KSieve PROPERTIES
@@ -60,13 +60,13 @@ add_subdirectory(ksieveui)
 install(TARGETS KF5KSieve EXPORT KF5KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
     ${ksieve_CamelCase_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/KSieve
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KSieve
     COMPONENT Devel
 )
 
 install(FILES
     ${ksieve_CamelCase_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF5}/ksieve
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/ksieve
     COMPONENT Devel
 )
 install(FILES

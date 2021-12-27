@@ -20,7 +20,7 @@ macro( add_vacation_test _source )
   add_definitions(-DVACATIONTESTDATADIR="${CMAKE_CURRENT_SOURCE_DIR}/data/")
   target_link_libraries(${_name}
     KF5::KSieveUi
-    Qt::Test
+    Qt${QT_MAJOR_VERSION}::Test
     KF5::IdentityManagement
     KF5::Mime
     KF5::I18n
