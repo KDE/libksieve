@@ -3,9 +3,9 @@
 # Create the directory that will contain the generated xml files
 file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/data")
 
-macro(add_sieveeditor_xmlprintingscriptbuilding _source _extrasource)
-    set(_test ${_source} ${_extrasource})
+macro(add_sieveeditor_xmlprintingscriptbuilding _source)
     get_filename_component(_name ${_source} NAME_WE)
+    set(_test ${_source} ${_name}.h)
     ecm_add_test(${_test}
         TEST_NAME ${_name}
         NAME_PREFIX "sieveeditor-xmlprintingscriptbuilding-"
@@ -15,4 +15,4 @@ macro(add_sieveeditor_xmlprintingscriptbuilding _source _extrasource)
     target_compile_definitions(${_name} PRIVATE XMLPRINTINGSCRIPTBUILDER_GENERATED_DATA_DIR="${CMAKE_CURRENT_BINARY_DIR}/data")
 endmacro()
 
-add_sieveeditor_xmlprintingscriptbuilding(xmlprintingscriptbuildertest.cpp "")
+add_sieveeditor_xmlprintingscriptbuilding(xmlprintingscriptbuildertest.cpp)

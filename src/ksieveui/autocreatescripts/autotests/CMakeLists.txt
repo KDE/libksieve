@@ -11,8 +11,8 @@ ecm_qt_declare_logging_category(ksieveui_sieveeditor_autocreatescripts_LIB_SRCS 
     libksieve_debug.h IDENTIFIER LIBKSIEVE_LOG CATEGORY_NAME org.kde.pim.libksieve)
 
 macro(add_sieveeditor_autocreatescripts _source _extrasource)
-    set(_test ${_source} ${_extrasource})
     get_filename_component(_name ${_source} NAME_WE)
+    set(_test ${_source} ${_extrasource} ${_name}.h)
     ecm_add_test(${_test}
         TEST_NAME ${_name}
         NAME_PREFIX "sieveeditor-autocreatescripts-"

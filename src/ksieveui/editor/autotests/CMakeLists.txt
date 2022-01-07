@@ -11,20 +11,20 @@ set_property(TARGET sieveeditormenubartest PROPERTY INCLUDE_DIRECTORIES ${CMAKE_
 
 
 
-set( libksieveui_sievetextedittest_source sievetextedittest.cpp )
+set( libksieveui_sievetextedittest_source sievetextedittest.cpp sievetextedittest.h)
 add_executable( sievetextedittest ${libksieveui_sievetextedittest_source})
 add_test(NAME sievetextedittest COMMAND sievetextedittest)
 ecm_mark_as_test(sievetextedittest)
 target_link_libraries( sievetextedittest Qt::Test  Qt::Gui KF5::KSieveUi KF5::PimCommon KF5::PimTextEdit Qt::PrintSupport)
 
 
-set( libksieveui_sievetexteditwidgettest_source sievetexteditwidgettest.cpp )
+set( libksieveui_sievetexteditwidgettest_source sievetexteditwidgettest.cpp sievetexteditwidgettest.h)
 add_executable( sievetexteditwidgettest ${libksieveui_sievetexteditwidgettest_source})
 add_test(NAME sievetexteditwidgettest COMMAND sievetexteditwidgettest)
 ecm_mark_as_test(sievetexteditwidgettest)
 target_link_libraries( sievetexteditwidgettest Qt::Test  Qt::Gui KF5::KSieveUi KF5::PimCommon KF5::PimTextEdit Qt::PrintSupport)
 
-set( libksieveui_sieveinfodialogtest_source sieveinfodialogtest.cpp )
+set( libksieveui_sieveinfodialogtest_source sieveinfodialogtest.cpp sieveinfodialogtest.h)
 add_executable( sieveinfodialogtest ${libksieveui_sieveinfodialogtest_source})
 add_test(NAME sieveinfodialogtest COMMAND sieveinfodialogtest)
 ecm_mark_as_test(sieveinfodialogtest)
