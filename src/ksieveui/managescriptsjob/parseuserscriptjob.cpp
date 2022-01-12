@@ -123,7 +123,11 @@ QStringList ParseUserScriptJob::extractActiveScript(const QString &doc)
     QStringList lstScript;
     if (mStreamReader->readNextStartElement()) {
         while (mStreamReader->readNextStartElement()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             const QStringRef tagname = mStreamReader->name();
+#else
+            const QStringView tagname = mStreamReader->name();
+#endif
             if (tagname == QLatin1String("action")) {
                 if (mStreamReader->attributes().hasAttribute(QLatin1String("name"))) {
                     const QString actionName = mStreamReader->attributes().value(QLatin1String("name")).toString();

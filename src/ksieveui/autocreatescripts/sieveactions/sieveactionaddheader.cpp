@@ -62,7 +62,11 @@ void SieveActionAddHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
 {
     int index = 0;
     while (element.readNextStartElement()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         const QStringRef tagName = element.name();
+#else
+        const QStringView tagName = element.name();
+#endif
         if (tagName == QLatin1String("tag")) {
             auto combo = w->findChild<SelectAddHeaderPositionCombobox *>(QStringLiteral("selectposition"));
             combo->setCode(AutoCreateScriptUtil::tagValue(element.readElementText()), name(), error);

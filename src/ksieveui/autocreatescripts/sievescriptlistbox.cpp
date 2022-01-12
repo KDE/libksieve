@@ -421,7 +421,11 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
     bool hasCreatedAIfBlock = false;
     bool previousElementWasAComment = false;
     while (n.readNextStartElement()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         const QStringRef tagName = n.name();
+#else
+        const QStringView tagName = n.name();
+#endif
         // qDebug() <<"SieveScriptListBox::loadBlock tagName " << tagName;
         if (tagName == QLatin1String("control")) {
             previousElementWasAComment = false;

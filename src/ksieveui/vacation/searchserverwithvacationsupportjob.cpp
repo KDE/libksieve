@@ -6,6 +6,7 @@
 
 #include "searchserverwithvacationsupportjob.h"
 #include "util/findaccountinfojob.h"
+#include <QVariant>
 
 using namespace KSieveUi;
 
@@ -53,7 +54,7 @@ void SearchServerWithVacationSupportJob::slotSearchSieveScript(const QString &na
     auto job = new FindAccountInfoJob(this);
     connect(job, &FindAccountInfoJob::findAccountInfoFinished, this, &SearchServerWithVacationSupportJob::slotFindAccountInfoFinished);
     job->setIdentifier(identifier);
-    job->setProperty("serverName", name);
+    job->setProperty("serverName", QVariant(name));
     job->setProvider(mPasswordProvider);
     job->start();
 }

@@ -246,7 +246,11 @@ void SieveScriptBlockWidget::loadScript(QXmlStreamReader &element, bool onlyActi
     } else {
         bool uniqueTest = false;
         while (element.readNextStartElement()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             const QStringRef tagName = element.name();
+#else
+            const QStringView tagName = element.name();
+#endif
             if (tagName == QLatin1String("test")) {
                 bool notCondition = false;
                 if (element.attributes().hasAttribute(QLatin1String("name"))) {

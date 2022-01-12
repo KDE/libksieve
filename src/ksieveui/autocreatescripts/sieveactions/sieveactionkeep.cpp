@@ -69,7 +69,11 @@ void SieveActionKeep::setParamWidgetValue(QXmlStreamReader &element, QWidget *w,
 {
     if (mHasFlagSupport) {
         while (element.readNextStartElement()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             const QStringRef tagName = element.name();
+#else
+            const QStringView tagName = element.name();
+#endif
             if (tagName == QLatin1String("list")) {
                 auto flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
                 flagsWidget->setFlags(AutoCreateScriptUtil::listValue(element));

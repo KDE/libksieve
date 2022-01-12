@@ -62,7 +62,11 @@ void SieveConditionSize::setParamWidgetValue(QXmlStreamReader &element, QWidget 
 {
     QString commentStr;
     while (element.readNextStartElement()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         const QStringRef tagName = element.name();
+#else
+        const QStringView tagName = element.name();
+#endif
         if (tagName == QLatin1String("tag")) {
             const QString tagValue = element.readElementText();
             auto combo = w->findChild<QComboBox *>(QStringLiteral("combosize"));

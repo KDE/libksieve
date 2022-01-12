@@ -120,11 +120,20 @@ void SieveGlobalVariableActionWidget::setVariableValue(const QString &name)
 void SieveGlobalVariableActionWidget::loadScript(QXmlStreamReader &element, QString &error)
 {
     while (element.readNextStartElement()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         const QStringRef tagName = element.name();
+#else
+        const QStringView tagName = element.name();
+#endif
         if (tagName == QLatin1String("str")) {
             mVariableName->setText(element.readElementText());
         } else {
-            error += i18n("Unknown tag \"%1\" during loading of variables.", *tagName.string()) + QLatin1Char('\n');
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+            const QString result = *tagName.string();
+#else
+            const QString result = tagName.toString();
+#endif
+            error += i18n("Unknown tag \"%1\" during loading of variables.", result) + QLatin1Char('\n');
             qCDebug(LIBKSIEVE_LOG) << " SieveGlobalVariableActionWidget::loadScript unknown tagName " << tagName;
         }
     }
@@ -293,7 +302,11 @@ SieveGlobalVariableActionWidget::VariableElement SieveGlobalVariableLister::load
     QString variableValue;
     int index = 0;
     while (element.readNextStartElement()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         const QStringRef tagName = element.name();
+#else
+        const QStringView tagName = element.name();
+#endif
         if (tagName == QLatin1String("str")) {
             if (index == 0) {
                 variableName = element.readElementText();

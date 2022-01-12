@@ -40,7 +40,11 @@ QWidget *SieveActionEReject::createParamWidget(QWidget *parent) const
 void SieveActionEReject::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
     while (element.readNextStartElement()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         const QStringRef tagName = element.name();
+#else
+        const QStringView tagName = element.name();
+#endif
         if (tagName == QLatin1String("str")) {
             const QString tagValue = element.readElementText();
             auto edit = w->findChild<MultiLineEdit *>(QStringLiteral("rejectmessage"));

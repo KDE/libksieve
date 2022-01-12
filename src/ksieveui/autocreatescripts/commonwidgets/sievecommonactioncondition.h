@@ -35,9 +35,14 @@ public:
     Q_REQUIRED_RESULT virtual QString help() const;
     Q_REQUIRED_RESULT virtual QUrl href() const;
 
-    virtual void unknownTag(const QStringRef &tag, QString &error);
     virtual void unknownTagValue(const QString &tagValue, QString &error);
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    virtual void unknownTag(const QStringRef &tag, QString &error);
     virtual void tooManyArguments(const QStringRef &tagName, int index, int maxValue, QString &error);
+#else
+    virtual void unknownTag(const QStringView &tag, QString &error);
+    virtual void tooManyArguments(const QStringView &tagName, int index, int maxValue, QString &error);
+#endif
     virtual void serverDoesNotSupportFeatures(const QString &feature, QString &error);
 
     Q_REQUIRED_RESULT QString comment() const;

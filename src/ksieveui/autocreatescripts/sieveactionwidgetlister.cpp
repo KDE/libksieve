@@ -382,7 +382,11 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
 {
     QString comment;
     if (onlyActions) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         const QStringRef tagName = element.name();
+#else
+        const QStringView tagName = element.name();
+#endif
         if (tagName == QLatin1String("action")) {
             if (element.attributes().hasAttribute(QLatin1String("name"))) {
                 const QString actionName = element.attributes().value(QLatin1String("name")).toString();
@@ -406,7 +410,11 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
         bool firstAction = true;
         bool previousActionWasAComment = false;
         while (element.readNextStartElement()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
             const QStringRef tagName = element.name();
+#else
+            const QStringView tagName = element.name();
+#endif
             if (tagName == QLatin1String("action") || tagName == QLatin1String("control") /*for break action*/) {
                 if (element.attributes().hasAttribute(QLatin1String("name"))) {
                     const QString actionName = element.attributes().value(QLatin1String("name")).toString();

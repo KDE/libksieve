@@ -7,7 +7,11 @@
 #pragma once
 
 #include <QWebEngineView>
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 class QWebEngineDownloadItem;
+#else
+class QWebEngineDownloadRequest;
+#endif
 namespace KSieveUi
 {
 class SieveEditorWebEngineView : public QWebEngineView
@@ -22,7 +26,11 @@ protected:
     QWebEngineView *createWindow(QWebEnginePage::WebWindowType type) override;
 
 private:
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     void downloadRequested(QWebEngineDownloadItem *);
+#else
+    void downloadRequested(QWebEngineDownloadRequest *);
+#endif
 };
 }
 

@@ -59,7 +59,11 @@ void SieveActionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidget 
 {
     int index = 0;
     while (element.readNextStartElement()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         const QStringRef tagName = element.name();
+#else
+        const QStringView tagName = element.name();
+#endif
         if (tagName == QLatin1String("str")) {
             if (index == 0) {
                 auto fromMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("from"));

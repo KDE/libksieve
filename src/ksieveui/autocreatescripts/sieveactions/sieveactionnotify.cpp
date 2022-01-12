@@ -60,7 +60,11 @@ QWidget *SieveActionNotify::createParamWidget(QWidget *parent) const
 void SieveActionNotify::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
     while (element.readNextStartElement()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         const QStringRef tagName = element.name();
+#else
+        const QStringView tagName = element.name();
+#endif
         if (tagName == QLatin1String("tag")) {
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1String("message")) {

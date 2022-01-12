@@ -25,14 +25,27 @@ void SieveCondition::setParamWidgetValue(QXmlStreamReader & /*element*/, QWidget
 {
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 void SieveCondition::unknownTag(const QStringRef &tag, QString &error)
+#else
+void SieveCondition::unknownTag(const QStringView &tag, QString &error)
+#endif
 {
-    error += i18n("Unknown tag \"%1\" during parsing condition \"%2\"", *tag.string(), name()) + QLatin1Char('\n');
-}
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+    const QString result = *tag.string();
+#else
+    const QString result = tag.toString();
+#endif
 
-void SieveCondition::unknownTagValue(const QString &tagValue, QString &error)
+    error += i18n("Unknown tag \"%1\" during parsing condition \"%2\"", result, name()) + QLatin1Char('\n');
+}
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
+void SieveCondition::tooManyArguments(const QStringRef &tagName, int index, int maxValue, QString &error)
+#else
+void SieveCondition::tooManyArguments(const QStringView &tagName, int index, int maxValue, QString &error)
+#endif
 {
-    error += i18n("An unknown tag value \"%1\" was found during parsing condition \"%2\".", tagValue, name()) + QLatin1Char('\n');
+    tooManyArguments(tagName.toString(), index, maxValue, error);
 }
 
 void SieveCondition::tooManyArguments(const QString &tagName, int index, int maxValue, QString &error)
@@ -41,9 +54,9 @@ void SieveCondition::tooManyArguments(const QString &tagName, int index, int max
         + QLatin1Char('\n');
 }
 
-void SieveCondition::tooManyArguments(const QStringRef &tagName, int index, int maxValue, QString &error)
+void SieveCondition::unknownTagValue(const QString &tagValue, QString &error)
 {
-    tooManyArguments(tagName.toString(), index, maxValue, error);
+    error += i18n("An unknown tag value \"%1\" was found during parsing condition \"%2\".", tagValue, name()) + QLatin1Char('\n');
 }
 
 void SieveCondition::serverDoesNotSupportFeatures(const QString &feature, QString &error)

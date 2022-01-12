@@ -19,7 +19,6 @@
 #include <KPasswordDialog>
 #include <QRegularExpression>
 #include <QUrlQuery>
-#include <kwidgetsaddons_version.h>
 
 using namespace KManageSieve;
 

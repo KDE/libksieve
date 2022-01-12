@@ -128,7 +128,11 @@ QString AutoCreateScriptUtil::tagValue(const QString &tag)
 QString AutoCreateScriptUtil::strValue(QXmlStreamReader &element)
 {
     if (element.readNextStartElement()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         const QStringRef textElementTagName = element.name();
+#else
+        const QStringView textElementTagName = element.name();
+#endif
         if (textElementTagName == QLatin1String("str")) {
             return element.readElementText();
         } else {
@@ -149,7 +153,11 @@ QStringList AutoCreateScriptUtil::listValue(QXmlStreamReader &element)
 {
     QStringList lst;
     while (element.readNextStartElement()) {
+#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
         const QStringRef tagName = element.name();
+#else
+        const QStringView tagName = element.name();
+#endif
         if (tagName == QLatin1String("str")) {
             lst << element.readElementText();
         } else {
