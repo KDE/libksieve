@@ -38,6 +38,10 @@ PRIVATE
   Qt${QT_MAJOR_VERSION}::Core KF5::I18n
 )
 
+if (QT_MAJOR_VERSION STREQUAL "6")
+    target_link_libraries(KF5KSieve PRIVATE Qt6::Core5Compat)
+endif()
+
 set_target_properties(KF5KSieve PROPERTIES
   VERSION ${LIBKSIEVE_VERSION}
   SOVERSION ${LIBKSIEVE_SOVERSION}
