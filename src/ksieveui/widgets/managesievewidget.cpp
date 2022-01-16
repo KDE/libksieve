@@ -82,7 +82,7 @@ ManageSieveWidget::~ManageSieveWidget()
 
 void ManageSieveWidget::slotCheckNetworkStatus()
 {
-    slotSystemNetworkOnlineStateChanged(PimCommon::NetworkManager::self()->networkConfigureManager()->isOnline());
+    slotSystemNetworkOnlineStateChanged(PimCommon::NetworkManager::self()->isOnline());
 }
 
 void ManageSieveWidget::slotSystemNetworkOnlineStateChanged(bool state)
