@@ -25,7 +25,6 @@
 #include <QHBoxLayout>
 #include <QMenu>
 #include <QMetaType>
-#include <QNetworkConfigurationManager>
 #include <QTimer>
 //#define USE_RENAME_SIEVE_METHOD 1
 using namespace KSieveUi;
@@ -65,11 +64,7 @@ ManageSieveWidget::ManageSieveWidget(QWidget *parent)
     connect(d->mTreeView, &ManageSieveTreeView::itemChanged, this, &ManageSieveWidget::slotItemChanged);
     connect(this, &ManageSieveWidget::updateSieveSettingsDone, this, &ManageSieveWidget::updateSieveSettingsFinished);
 
-    connect(PimCommon::NetworkManager::self()->networkConfigureManager(),
-            &QNetworkConfigurationManager::onlineStateChanged,
-            this,
-            &ManageSieveWidget::slotSystemNetworkOnlineStateChanged);
-
+    connect(PimCommon::NetworkManager::self(), &PimCommon::NetworkManager::networkStatusChanged, this, &ManageSieveWidget::slotSystemNetworkOnlineStateChanged);
     lay->addWidget(d->mTreeView);
     QTimer::singleShot(0, this, &ManageSieveWidget::slotCheckNetworkStatus);
 }
