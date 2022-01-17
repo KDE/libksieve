@@ -25,7 +25,7 @@ public:
 
     Q_REQUIRED_RESULT bool multiSelection() const;
     void setMultiSelection(bool multiSelection);
-    virtual Q_REQUIRED_RESULT bool isValid() const = 0;
+    Q_REQUIRED_RESULT virtual bool isValid() const = 0;
 
 Q_SIGNALS:
     void valueChanged();
