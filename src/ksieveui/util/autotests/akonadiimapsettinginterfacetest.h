@@ -29,7 +29,7 @@ struct AkonadiImapSettingInterfaceDataTest {
 class AkonadiImapSettingInterfaceTest : public KSieveUi::AbstractAkonadiImapSettingInterface
 {
 public:
-    AkonadiImapSettingInterfaceTest(const AkonadiImapSettingInterfaceDataTest &data);
+    explicit AkonadiImapSettingInterfaceTest(const AkonadiImapSettingInterfaceDataTest &data);
     ~AkonadiImapSettingInterfaceTest() override;
 
     Q_REQUIRED_RESULT bool sieveSupport() const override;
