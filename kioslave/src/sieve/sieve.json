@@ -5,7 +5,6 @@
             "X-DocPath": "kioslave5/sieve/index.html",
             "deleting": true,
             "determineMimetypeFromExtension": false,
-            "exec": "kf5/kio/ldap",
             "input": "none",
             "listing": [
                 "Name",
