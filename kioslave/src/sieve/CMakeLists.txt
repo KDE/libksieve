@@ -21,4 +21,4 @@ if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(kio_sieve PROPERTIES UNITY_BUILD ON)
 endif()
 
-install(TARGETS kio_sieve  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf5/kio/)
+install(TARGETS kio_sieve  DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/kio/)
