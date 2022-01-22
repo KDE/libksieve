@@ -60,7 +60,7 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(SieveImapPasswordProvider *pa
 {
     setWindowTitle(i18nc("@title:window", "Manage Sieve Scripts"));
     setModal(false);
-    setAttribute(Qt::WA_GroupLeader);
+    setWindowModality(Qt::WindowModal);
     setAttribute(Qt::WA_DeleteOnClose);
     auto mainLayout = new QVBoxLayout(this);
     auto frame = new QFrame;

@@ -27,7 +27,7 @@ void SelectConvertParameterWidget::setCode(const QStringList &code, QString &err
         return;
     }
 
-    const int codeCount{code.count()};
+    const auto codeCount{code.count()};
     if (codeCount < 2) {
         error += i18n("Not enough arguments for SelectConvertParameterWidget. Expected 2 arguments.") + QLatin1Char('\n');
         qCDebug(LIBKSIEVE_LOG) << " SelectConvertParameterWidget::setCode parsing error ?";
