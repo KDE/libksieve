@@ -14,7 +14,9 @@
 #include <KLineEdit>
 #include <KLocalizedString>
 #include <KPIMTextEdit/PlainTextEditorWidget>
+#ifndef DONT_HAVE_TEXT_TO_SPEACH_SUPPORT
 #include <KPIMTextEdit/TextToSpeechWidget>
+#endif
 #include <KUrlRequester>
 #include <Libkdepim/LineEditCatchReturnKey>
 #include <QDate>
@@ -71,18 +73,19 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     auto vboxSieveEditorLayout = new QVBoxLayout;
     sieveEditorWidget->setLayout(vboxSieveEditorLayout);
     vboxSieveEditorLayout->setContentsMargins({});
-
+#ifndef DONT_HAVE_TEXT_TO_SPEACH_SUPPORT
     auto textToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
     textToSpeechWidget->setObjectName(QStringLiteral("texttospeechwidget"));
     vboxSieveEditorLayout->addWidget(textToSpeechWidget);
-
+#endif
     auto textEdit = new KSieveUi::SieveScriptDebuggerTextEdit(this);
     connect(textEdit, &KSieveUi::SieveScriptDebuggerTextEdit::textChanged, this, &SieveScriptDebuggerFrontEndWidget::slotScriptTextChanged);
     mSieveTextEditWidget = new KSieveUi::SieveTextEditWidget(textEdit, this);
     mSieveTextEditWidget->setObjectName(QStringLiteral("sievetexteditwidget"));
     vboxSieveEditorLayout->addWidget(mSieveTextEditWidget);
+#ifndef DONT_HAVE_TEXT_TO_SPEACH_SUPPORT
     connect(mSieveTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::say);
-
+#endif
     mSplitter->addWidget(sieveEditorWidget);
     mSplitter->setChildrenCollapsible(false);
 

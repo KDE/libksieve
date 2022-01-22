@@ -78,6 +78,7 @@ set_package_properties(KF5DocTools PROPERTIES DESCRIPTION
 
 if (QT_MAJOR_VERSION STREQUAL "6")
     find_package(Qt6Core5Compat)
+    add_definitions(-DDONT_HAVE_TEXT_TO_SPEACH_SUPPORT)
 endif()
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVE
