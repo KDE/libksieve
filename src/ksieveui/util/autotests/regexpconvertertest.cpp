@@ -13,12 +13,6 @@ RegExpConverterTest::RegExpConverterTest(QObject *parent)
 {
 }
 
-static inline QString stringReplaceRegExp(QString s)
-{
-    s.replace(QRegExp(QLatin1String("[\n\t]+")), QStringLiteral(" "));
-    return s.replace(QLatin1Char('\"'), QStringLiteral("\\\""));
-}
-
 static inline QString stringReplaceRegularExpression(QString s)
 {
     static QRegularExpression reg(QStringLiteral("[\n\t]+"));
@@ -44,7 +38,6 @@ void RegExpConverterTest::convertRegExp()
     QFETCH(QString, input);
     QFETCH(QString, output);
 
-    QCOMPARE(stringReplaceRegExp(input), output);
     QCOMPARE(stringReplaceRegularExpression(input), output);
 }
 
