@@ -79,9 +79,15 @@ target_sources(KF5KSieveUi PRIVATE
     editor/sieveeditormenubar.cpp
     editor/sievetexteditorspellcheckdecorator.cpp
     editor/sievetexteditwidget.cpp
-    editor/sievepurposemenuwidget.cpp
     editor/sieveinfodialog.cpp
     )
+
+if (TARGET KF5::Purpose)
+    target_sources(KF5KSieveUi PRIVATE
+        editor/sievepurposemenuwidget.cpp
+        editor/sievepurposemenuwidget.h
+    )
+endif()
 
 target_sources(KF5KSieveUi PRIVATE
     autocreatescripts/sievepreviewgeneratedcodewidget.cpp
@@ -231,7 +237,6 @@ target_sources(KF5KSieveUi PRIVATE
     templates/sievedefaulttemplate.cpp
     templates/sievetemplateeditdialog.cpp
     editor/sieveeditortabwidget.h
-    editor/sievepurposemenuwidget.h
     editor/sievetextedit.h
     editor/sievetexteditorspellcheckdecorator.h
     editor/sieveeditortextmodewidget.h

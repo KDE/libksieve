@@ -18,6 +18,7 @@ target_link_libraries(parsingscript_gui
   KF5::KSieve
   KF5::PimCommon
   KF5::I18n
+  KF5::SyntaxHighlighting
 )
 
 

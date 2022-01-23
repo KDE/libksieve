@@ -13,5 +13,6 @@ target_link_libraries(editorsieve_gui
   KF5::PimCommon
   KF5::I18n
   Qt${QT_MAJOR_VERSION}::PrintSupport
+  KF5::SyntaxHighlighting
 )
 
