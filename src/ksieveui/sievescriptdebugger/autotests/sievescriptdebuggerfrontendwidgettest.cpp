@@ -6,7 +6,9 @@
 
 #include "sievescriptdebuggerfrontendwidgettest.h"
 #include "../sievescriptdebuggerfrontendwidget.h"
-#include <KPIMTextEdit/kpimtextedit/texttospeechwidget.h>
+#ifndef DONT_HAVE_TEXT_TO_SPEACH_SUPPORT
+#include <kpimtextedit/texttospeechwidget.h>
+#endif
 #include <KUrlRequester>
 #include <QLabel>
 #include <QLineEdit>
@@ -46,9 +48,10 @@ void SieveScriptDebuggerFrontEndWidgetTest::shouldHaveDefaultValue()
     QVERIFY(extension);
     QVERIFY(extension->text().isEmpty());
     QVERIFY(extension->isClearButtonEnabled());
-
+#ifndef DONT_HAVE_TEXT_TO_SPEACH_SUPPORT
     auto textToSpeechWidget = w.findChild<KPIMTextEdit::TextToSpeechWidget *>(QStringLiteral("texttospeechwidget"));
     QVERIFY(textToSpeechWidget);
+#endif
 }
 
 void SieveScriptDebuggerFrontEndWidgetTest::shouldChangeButtonEnabledState()
