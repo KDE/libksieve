@@ -5,7 +5,7 @@
 */
 
 #include "akonadiimapsettinginterface.h"
-#include "imapresourcesettings.h"
+#include <pimcommon/imapresourcesettings.h>
 
 using namespace KSieveUi;
 

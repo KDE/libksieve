@@ -6,13 +6,13 @@
 #include "findaccountinfojob.h"
 #include "abstractakonadiimapsettinginterface.h"
 #include "akonadiimapsettinginterface.h"
-#include "imapresourcesettings.h"
 #include "libksieve_debug.h"
 #include "sieveimappasswordprovider.h"
 #include <MailTransport/Transport>
 #include <PimCommon/PimUtil>
 #include <QUrlQuery>
 #include <memory>
+#include <pimcommon/imapresourcesettings.h>
 
 using namespace KSieveUi;
 FindAccountInfoJob::FindAccountInfoJob(QObject *parent)

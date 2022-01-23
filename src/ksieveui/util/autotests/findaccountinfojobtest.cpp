@@ -9,7 +9,6 @@
 #include "../sieveimappasswordprovider.h"
 #include "../util_p.h"
 #include "akonadiimapsettinginterfacetest.h"
-#include "imapresourcesettings.h"
 #include "util/findaccountinfojob.h"
 #include <QSignalSpy>
 #include <QTest>

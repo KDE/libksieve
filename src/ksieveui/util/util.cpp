@@ -6,7 +6,6 @@
 
 #include "util.h"
 #include "akonadiimapsettinginterface.h"
-#include "imapresourcesettings.h"
 #include "libksieve_debug.h"
 #include "sieve-vacation.h"
 #include "sieveimapinstance/sieveimapinstance.h"
@@ -14,6 +13,7 @@
 #include "sieveimappasswordprovider.h"
 #include "util_p.h"
 #include <PimCommon/PimUtil>
+#include <pimcommon/imapresourcesettings.h>
 
 #include <KMime/KMimeMessage>
 #include <MailTransport/Transport>
