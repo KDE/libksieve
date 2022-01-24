@@ -7,7 +7,7 @@
 #include "sievescriptdebuggerfrontendwidgettest.h"
 #include "../sievescriptdebuggerfrontendwidget.h"
 #ifndef DONT_HAVE_TEXT_TO_SPEACH_SUPPORT
-#include <kpimtextedit/texttospeechwidget.h>
+#include <KPIMTextEdit/TextToSpeechWidget>
 #endif
 #include <KUrlRequester>
 #include <QLabel>
