@@ -443,7 +443,7 @@ set_target_properties(KF5KSieveUi PROPERTIES
     EXPORT_NAME KSieveUi
     )
 
-target_include_directories(KF5KSieveUi INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KSieveUi/;${KDE_INSTALL_INCLUDEDIR_KF}/ksieveui;${KDE_INSTALL_INCLUDEDIR_KF}>")
+target_include_directories(KF5KSieveUi INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KSieveUi/>")
 target_include_directories(KF5KSieveUi PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/ksieveui;${libksieve_SOURCE_DIR}/src/ksieveui/util/;${libksieve_BINARY_DIR}/src/ksieveui>")
 
 ecm_generate_headers(ksieveui_CamelCase_HEADERS
@@ -539,7 +539,7 @@ install(FILES
     ${ksieveui_Camelcaseeditor_HEADERS}
     ${ksieveui_Camelcaseutil_HEADERS}
     ${ksieveui_Camelmanagescriptsjob_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KSieveUi
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KSieveUi/KSieveUi
     COMPONENT Devel
     )
 
@@ -554,7 +554,7 @@ install(FILES
     ${ksieveui_util_HEADERS}
     ${ksieveui_managescriptsjob_HEADERS}
     util/util_p.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/ksieveui
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KSieveUi/ksieveui
     COMPONENT Devel
     )
 install(FILES
