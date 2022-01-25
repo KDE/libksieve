@@ -25,7 +25,6 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libksieve\")
 
 target_sources(KF5KSieve PRIVATE
   shared/error.cpp
-  ${libksieve_parser_SRCS}
 )
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -52,18 +51,8 @@ target_include_directories(KF5KSieve PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURC
 target_include_directories(KF5KSieve PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/parser>")
 
 
-ecm_generate_pri_file(BASE_NAME KSieve
-    LIB_NAME KF5KSieve
-    DEPS "" FILENAME_VAR PRI_FILENAME
-)
-
 add_subdirectory(kmanagesieve)
 add_subdirectory(ksieveui)
 
 
 install(TARGETS KF5KSieve EXPORT KF5KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
-install(FILES
-    ${PRI_FILENAME}
-    DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
-)
-
