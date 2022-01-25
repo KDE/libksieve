@@ -63,17 +63,6 @@ add_subdirectory(ksieveui)
 
 install(TARGETS KF5KSieve EXPORT KF5KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
-    ${ksieve_CamelCase_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KSieve
-    COMPONENT Devel
-)
-
-install(FILES
-    ${ksieve_CamelCase_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/ksieve
-    COMPONENT Devel
-)
-install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
 )
