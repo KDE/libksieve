@@ -80,14 +80,9 @@ target_sources(KF5KSieveUi PRIVATE
     editor/sievetexteditorspellcheckdecorator.cpp
     editor/sievetexteditwidget.cpp
     editor/sieveinfodialog.cpp
+    editor/sievepurposemenuwidget.cpp
+    editor/sievepurposemenuwidget.h
     )
-
-if (TARGET KF5::Purpose)
-    target_sources(KF5KSieveUi PRIVATE
-        editor/sievepurposemenuwidget.cpp
-        editor/sievepurposemenuwidget.h
-    )
-endif()
 
 target_sources(KF5KSieveUi PRIVATE
     autocreatescripts/sievepreviewgeneratedcodewidget.cpp

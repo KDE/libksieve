@@ -69,13 +69,6 @@ find_package(KF5MailTransport ${KMAILTRANSPORT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5PimTextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5IMAP ${KIMAP_LIB_VERSION} CONFIG REQUIRED)
 
-if (QT_MAJOR_VERSION STREQUAL "6")
-    find_package(KF5Purpose ${KF5_MIN_VERSION} CONFIG)
-endif()
-if (TARGET KF5::Purpose)
-    add_definitions(-DHAVE_PURPOSE_SUPPORT)
-endif()
-
 find_package(KF5DocTools ${KF5_MIN_VERSION})
 set_package_properties(KF5DocTools PROPERTIES DESCRIPTION
     "Tools to generate documentation"

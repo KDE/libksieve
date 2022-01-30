@@ -20,9 +20,7 @@
 #include <KLocalizedString>
 #include <KStandardAction>
 #include <kzip.h>
-#ifdef HAVE_PURPOSE_SUPPORT
 #include <PimCommon/PurposeMenuWidget>
-#endif
 #include "libksieve_debug.h"
 #include <QAction>
 #include <QLabel>
@@ -64,7 +62,6 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
         connect(mGenerateXml, &QAction::triggered, this, &SieveEditorWidget::slotGenerateXml);
         toolbar->addAction(mGenerateXml);
     }
-#ifdef HAVE_PURPOSE_SUPPORT
     auto purposeMenu = new SievePurposeMenuWidget(this, this);
     auto shareAction = new KActionMenu(i18n("Share..."), this);
     shareAction->setPopupMode(QToolButton::InstantPopup);
@@ -72,7 +69,6 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     shareAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
     purposeMenu->setEditorWidget(this);
     toolbar->addAction(shareAction);
-#endif
     mServerInfo = new QAction(i18n("Server Info"), this);
     connect(mServerInfo, &QAction::triggered, this, &SieveEditorWidget::slotServerInfo);
     toolbar->addAction(mServerInfo);
@@ -107,9 +103,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
         menuBar->fileMenu()->addAction(mSaveAs);
         menuBar->fileMenu()->addSeparator();
         menuBar->toolsMenu()->addSeparator();
-#ifdef HAVE_PURPOSE_SUPPORT
         menuBar->fileMenu()->addAction(shareAction);
-#endif
         menuBar->toolsMenu()->addSeparator();
         menuBar->toolsMenu()->addAction(mCreateRulesGraphically);
         menuBar->toolsMenu()->addAction(mCheckSyntax);
