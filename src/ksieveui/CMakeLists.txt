@@ -421,6 +421,7 @@ target_link_libraries(KF5KSieveUi
     KF5::Mime
     KF5::IconThemes
     KF5::IdentityManagement
+    KF5::PimTextEdit
     KF5::MailTransport
     KF5::KIOWidgets
     KF5::NewStuff
