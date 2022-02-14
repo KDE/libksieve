@@ -7,6 +7,7 @@
 
 #include "ksieveui_export.h"
 #include "sieveeditorabstractwidget.h"
+#include <kpimtextedit/kpimtextedit-texttospeech.h>
 class QSplitter;
 namespace KPIMTextEdit
 {

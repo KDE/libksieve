@@ -24,7 +24,8 @@
 #include <QVBoxLayout>
 
 #include <editor/sievetexteditwidget.h>
-#ifndef DONT_HAVE_TEXT_TO_SPEACH_SUPPORT
+#include <kpimtextedit/kpimtextedit-texttospeech.h>
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
 #include <KPIMTextEdit/TextToSpeechWidget>
 #endif
 using namespace KSieveUi;
@@ -62,7 +63,7 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     hbox->addWidget(mTemplateNameEdit);
 
     vbox->addLayout(hbox);
-#ifndef DONT_HAVE_TEXT_TO_SPEACH_SUPPORT
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     auto textToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
     vbox->addWidget(textToSpeechWidget);
 #endif
@@ -71,7 +72,7 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     mTextEditWidget->textEdit()->setShowHelpMenu(false);
     mTextEditWidget->setReadOnly(defaultTemplate);
     vbox->addWidget(mTextEditWidget);
-#ifndef DONT_HAVE_TEXT_TO_SPEACH_SUPPORT
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     connect(mTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::say);
 #endif
     auto shortcut = new QShortcut(this);

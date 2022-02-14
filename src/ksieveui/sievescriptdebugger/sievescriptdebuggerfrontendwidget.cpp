@@ -14,7 +14,8 @@
 #include <KLineEdit>
 #include <KLocalizedString>
 #include <KPIMTextEdit/PlainTextEditorWidget>
-#ifndef DONT_HAVE_TEXT_TO_SPEACH_SUPPORT
+#include <kpimtextedit/kpimtextedit-texttospeech.h>
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
 #include <KPIMTextEdit/TextToSpeechWidget>
 #endif
 #include <KUrlRequester>
@@ -73,7 +74,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     auto vboxSieveEditorLayout = new QVBoxLayout;
     sieveEditorWidget->setLayout(vboxSieveEditorLayout);
     vboxSieveEditorLayout->setContentsMargins({});
-#ifndef DONT_HAVE_TEXT_TO_SPEACH_SUPPORT
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     auto textToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
     textToSpeechWidget->setObjectName(QStringLiteral("texttospeechwidget"));
     vboxSieveEditorLayout->addWidget(textToSpeechWidget);
@@ -83,7 +84,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     mSieveTextEditWidget = new KSieveUi::SieveTextEditWidget(textEdit, this);
     mSieveTextEditWidget->setObjectName(QStringLiteral("sievetexteditwidget"));
     vboxSieveEditorLayout->addWidget(mSieveTextEditWidget);
-#ifndef DONT_HAVE_TEXT_TO_SPEACH_SUPPORT
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     connect(mSieveTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::say);
 #endif
     mSplitter->addWidget(sieveEditorWidget);

@@ -21,7 +21,7 @@
 #include <KPIMTextEdit/PlainTextEditorWidget>
 #include <KPIMTextEdit/SlideContainer>
 #include <KPIMTextEdit/TextGotoLineWidget>
-#ifndef DONT_HAVE_TEXT_TO_SPEACH_SUPPORT
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
 #include <KPIMTextEdit/TextToSpeechWidget>
 #endif
 
@@ -75,7 +75,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     mTabWidget = new SieveEditorTabWidget;
     connect(mTabWidget, &SieveEditorTabWidget::currentChanged, this, &SieveEditorTextModeWidget::sieveEditorTabCurrentChanged);
     connect(mTabWidget, &SieveEditorTabWidget::copyAvailable, this, &SieveEditorTextModeWidget::copyAvailable);
-#ifndef DONT_HAVE_TEXT_TO_SPEACH_SUPPORT
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     mTextToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
     editorWidgetLayout->addWidget(mTextToSpeechWidget);
 #endif
@@ -86,7 +86,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     mTabWidget->tabBar()->hide();
     textEditLayout->addWidget(mTabWidget);
     connect(mTextEdit, &SieveTextEdit::openHelp, mTabWidget, &SieveEditorTabWidget::slotAddHelpPage);
-#ifndef DONT_HAVE_TEXT_TO_SPEACH_SUPPORT
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     connect(mTextEdit, &SieveTextEdit::say, mTextToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::say);
 #endif
     connect(mTextEdit, &SieveTextEdit::editRule, this, &SieveEditorTextModeWidget::slotEditRule);
