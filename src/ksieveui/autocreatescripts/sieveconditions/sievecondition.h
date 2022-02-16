@@ -7,7 +7,6 @@
 #pragma once
 
 #include "autocreatescripts/commonwidgets/sievecommonactioncondition.h"
-#include <QObject>
 class QXmlStreamReader;
 namespace KSieveUi
 {

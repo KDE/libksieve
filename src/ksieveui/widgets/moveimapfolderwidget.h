@@ -8,7 +8,6 @@
 
 #include "ksieveui_private_export.h"
 #include <KSieveUi/AbstractMoveImapFolderWidget>
-#include <QWidget>
 class QLineEdit;
 namespace KSieveUi
 {
