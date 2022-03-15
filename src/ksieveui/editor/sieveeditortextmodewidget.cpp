@@ -33,10 +33,11 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KSharedConfig>
+#include <KWindowStateSaver>
 
-#include <PimCommon/KPimPrintPreviewDialog>
 #include <QPointer>
 #include <QPrintDialog>
+#include <QPrintPreviewDialog>
 #include <QPrinter>
 #include <QPushButton>
 #include <QShortcut>
@@ -442,7 +443,8 @@ void SieveEditorTextModeWidget::printPreview()
     if (w == mEditorWidget) {
         bool restoreSpellCheck = mTextEdit->checkSpellingEnabled();
         mTextEdit->setCheckSpellingEnabled(false);
-        QPointer<PimCommon::KPimPrintPreviewDialog> previewdlg = new PimCommon::KPimPrintPreviewDialog(this);
+        QPointer<QPrintPreviewDialog> previewdlg = new QPrintPreviewDialog(this);
+        new KWindowStateSaver(previewdlg.data(), "SieveEditorPrintPreviewDialog");
         connect(previewdlg.data(), &QPrintPreviewDialog::paintRequested, this, [this](QPrinter *printer) {
             mTextEdit->print(printer);
         });
