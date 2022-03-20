@@ -29,4 +29,3 @@ private:
     SelectDateWidget::DateType mType = SelectDateWidget::Year;
 };
 }
-

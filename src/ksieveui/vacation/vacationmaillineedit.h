@@ -20,4 +20,3 @@ public:
     void setInvalidEmail(bool state);
 };
 }
-

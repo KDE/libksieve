@@ -15,4 +15,3 @@ namespace SieveDefaultTemplate
 Q_REQUIRED_RESULT QVector<PimCommon::defaultTemplate> defaultTemplates();
 }
 }
-

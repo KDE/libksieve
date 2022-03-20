@@ -61,4 +61,3 @@ private:
     qreal mZoomFactor = 100;
 };
 }
-

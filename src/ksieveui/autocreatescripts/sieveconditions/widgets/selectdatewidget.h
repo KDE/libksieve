@@ -45,4 +45,3 @@ private:
 };
 }
 Q_DECLARE_METATYPE(KSieveUi::SelectDateWidget::DateType)
-

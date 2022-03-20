@@ -35,4 +35,3 @@ inline bool initSASL()
     }
     return true;
 }
-

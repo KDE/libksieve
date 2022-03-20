@@ -14,4 +14,3 @@ namespace KSieve
 {
 extern bool isValidUtf8(const char *s, unsigned int len);
 } // namespace KSieve
-

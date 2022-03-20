@@ -18,4 +18,3 @@ private Q_SLOTS:
     void compareRegexp_data();
     void compareRegexp();
 };
-

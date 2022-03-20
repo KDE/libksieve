@@ -37,4 +37,3 @@ private:
     QPushButton *mOkButton = nullptr;
 };
 }
-

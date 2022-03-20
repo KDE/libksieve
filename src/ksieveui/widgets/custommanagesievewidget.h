@@ -39,4 +39,3 @@ private:
     bool mRefreshInProgress = false;
 };
 }
-

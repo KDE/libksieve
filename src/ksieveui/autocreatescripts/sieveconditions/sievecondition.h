@@ -32,4 +32,3 @@ public:
     void serverDoesNotSupportFeatures(const QString &feature, QString &error) override;
 };
 }
-

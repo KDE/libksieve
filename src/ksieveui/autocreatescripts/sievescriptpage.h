@@ -55,4 +55,3 @@ private:
     SieveScriptBlockWidget *mBlockIfWidget = nullptr;
 };
 }
-

@@ -61,4 +61,3 @@ private:
     SieveEditorParsingMissingFeatureWarning *mSieveParsingWarning = nullptr;
 };
 }
-

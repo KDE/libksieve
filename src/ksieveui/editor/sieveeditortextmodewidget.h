@@ -137,4 +137,3 @@ private:
     QWidget *mEditorWidget = nullptr;
 };
 }
-

@@ -9,7 +9,6 @@
 #include <KLocalizedString>
 #include <QAction>
 
-
 using namespace KSieveUi;
 
 SieveEditorParsingMissingFeatureWarning::SieveEditorParsingMissingFeatureWarning(TextEditorType type, QWidget *parent)

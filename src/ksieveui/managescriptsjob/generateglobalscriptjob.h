@@ -47,4 +47,3 @@ private:
     KManageSieve::SieveJob *mUserJob = nullptr;
 };
 }
-

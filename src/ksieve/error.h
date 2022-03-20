@@ -140,4 +140,3 @@ protected:
     QString mStringOne, mStringTwo;
 };
 } // namespace KSieve
-

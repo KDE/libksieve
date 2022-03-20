@@ -26,4 +26,3 @@ private:
     SieveTextEdit *const m_sieveTextEdit;
 };
 }
-

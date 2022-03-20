@@ -31,4 +31,3 @@ private:
     PageType mType = BlockIf;
 };
 }
-

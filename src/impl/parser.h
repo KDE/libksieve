@@ -114,4 +114,3 @@ private:
     ScriptBuilder *mBuilder = nullptr;
 };
 }
-

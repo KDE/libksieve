@@ -16,12 +16,11 @@
 #include "sieveeditormenubar.h"
 #include "sieveeditortextmodewidget.h"
 
+#include "libksieve_debug.h"
 #include <KActionMenu>
 #include <KLocalizedString>
 #include <KStandardAction>
-#include <kzip.h>
 #include <PimCommon/PurposeMenuWidget>
-#include "libksieve_debug.h"
 #include <QAction>
 #include <QLabel>
 #include <QLineEdit>
@@ -30,6 +29,7 @@
 #include <QStandardPaths>
 #include <QToolBar>
 #include <QVBoxLayout>
+#include <kzip.h>
 
 using namespace KSieveUi;
 

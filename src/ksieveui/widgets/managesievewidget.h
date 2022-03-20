@@ -108,4 +108,3 @@ private:
     std::unique_ptr<ManageSieveWidgetPrivate> const d;
 };
 }
-

@@ -43,4 +43,3 @@ private:
     Parser(const Parser &) = delete;
 };
 } // namespace KSieve
-

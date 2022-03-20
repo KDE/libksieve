@@ -29,4 +29,3 @@ public:
     Q_REQUIRED_RESULT virtual QStringList listOfIncludeFile() const = 0;
 };
 }
-

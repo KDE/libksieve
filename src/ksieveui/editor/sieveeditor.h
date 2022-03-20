@@ -59,4 +59,3 @@ private:
     std::unique_ptr<SieveEditorPrivate> const d;
 };
 }
-

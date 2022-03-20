@@ -30,4 +30,3 @@ private:
     std::unique_ptr<FindBarWebEngineViewPrivate> const d;
 };
 }
-

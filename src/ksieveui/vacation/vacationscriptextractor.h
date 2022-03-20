@@ -857,4 +857,3 @@ private:
     int mLineEnd;
 };
 }
-

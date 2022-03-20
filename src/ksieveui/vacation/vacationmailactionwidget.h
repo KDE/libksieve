@@ -40,4 +40,3 @@ private:
     QWidget *mMailActionRecipient = nullptr;
 };
 }
-

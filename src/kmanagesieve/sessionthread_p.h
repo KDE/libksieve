@@ -89,4 +89,3 @@ private:
     QTimer *m_sslCheck = nullptr;
 };
 } // namespace KManageSieve
-

@@ -65,4 +65,3 @@ private:
     QTimer *mShutDownJob = nullptr;
 };
 }
-

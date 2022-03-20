@@ -134,4 +134,3 @@ protected:
     bool mChanged = false;
 };
 }
-

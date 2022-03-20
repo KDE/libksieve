@@ -54,4 +54,3 @@ private:
     SieveTemplateListWidget *mListTemplate = nullptr;
 };
 }
-

@@ -56,4 +56,3 @@ private:
     SieveTreeWidgetItem *const mItem;
 };
 }
-

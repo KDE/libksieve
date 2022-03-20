@@ -15,4 +15,3 @@ namespace Test
 QStringList fullCapabilitiesList();
 }
 }
-

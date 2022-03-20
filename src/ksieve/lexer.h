@@ -79,4 +79,3 @@ private:
     Lexer(const Lexer &);
 };
 } // namespace KSieve
-

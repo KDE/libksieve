@@ -35,4 +35,3 @@ private:
     bool mHasSpamTestPlusSupport = false;
 };
 }
-

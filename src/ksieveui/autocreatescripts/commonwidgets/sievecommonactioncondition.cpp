@@ -96,7 +96,6 @@ void SieveCommonActionCondition::setComment(const QString &comment)
     mComment = comment;
 }
 
-
 void SieveCommonActionCondition::unknownTagValue(const QString &tagValue, QString &error)
 {
     error += i18n("An unknown tag value \"%1\" was found during parsing action \"%2\".", tagValue, name()) + QLatin1Char('\n');

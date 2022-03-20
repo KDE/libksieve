@@ -26,4 +26,3 @@ public:
     QString serverNeedsCapability() const override;
 };
 }
-

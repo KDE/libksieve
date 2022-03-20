@@ -83,4 +83,3 @@ private:
     SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
 };
 }
-

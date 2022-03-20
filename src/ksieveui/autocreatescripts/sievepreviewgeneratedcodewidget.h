@@ -22,4 +22,3 @@ private:
     QTextEdit *const mTextEdit;
 };
 }
-

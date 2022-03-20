@@ -106,4 +106,3 @@ private:
     KSieveUi::SieveEditorTextModeWidget *mTextModeWidget = nullptr;
 };
 }
-

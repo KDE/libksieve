@@ -33,4 +33,3 @@ protected:
     Q_REQUIRED_RESULT QStringList listOfIncludeFile() const;
 };
 }
-

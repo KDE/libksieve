@@ -72,4 +72,3 @@ private:
     void slotCheckKep14Support(KManageSieve::SieveJob *job, bool success, const QStringList &availableScripts, const QString &activeScript);
 };
 }
-

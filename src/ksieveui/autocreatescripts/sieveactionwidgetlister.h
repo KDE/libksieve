@@ -89,4 +89,3 @@ private:
     SieveEditorGraphicalModeWidget *const mSieveGraphicalModeWidget;
 };
 }
-

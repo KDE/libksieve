@@ -66,4 +66,3 @@ Q_REQUIRED_RESULT QString updateVacationBlock(const QString &oldScript, const QS
 Q_REQUIRED_RESULT QString mailAction(MailAction action);
 }
 }
-

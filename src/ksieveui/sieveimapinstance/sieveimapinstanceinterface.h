@@ -24,4 +24,3 @@ public:
     virtual QVector<KSieveUi::SieveImapInstance> sieveImapInstances();
 };
 }
-

@@ -24,4 +24,3 @@ private:
     void parseValue(QXmlStreamReader &element, QWidget *w, QString &error, bool isNegative);
 };
 }
-

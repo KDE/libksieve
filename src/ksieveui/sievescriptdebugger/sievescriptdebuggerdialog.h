@@ -36,4 +36,3 @@ private:
     QPushButton *mDebugScriptButton = nullptr;
 };
 }
-

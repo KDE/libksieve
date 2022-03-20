@@ -26,4 +26,3 @@ private:
     SieveInfoWidget *const mSieveInfoWidget;
 };
 }
-

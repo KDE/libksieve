@@ -44,4 +44,3 @@ private:
     QByteArray m_extra;
 };
 }
-

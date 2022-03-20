@@ -38,4 +38,3 @@ private:
     KManageSieve::SieveJob *mSieveJob = nullptr;
 };
 }
-

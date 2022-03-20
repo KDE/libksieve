@@ -51,4 +51,3 @@ private:
     std::unique_ptr<KSieveUi::AbstractAkonadiImapSettingInterface> mInterface;
 };
 }
-

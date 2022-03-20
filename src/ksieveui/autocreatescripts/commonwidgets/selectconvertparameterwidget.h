@@ -28,4 +28,3 @@ private:
     QSpinBox *mHeight = nullptr;
 };
 }
-

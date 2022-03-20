@@ -49,4 +49,3 @@ private:
     void closeAllTabExcept(int index = -1);
 };
 }
-

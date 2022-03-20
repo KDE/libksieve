@@ -96,4 +96,3 @@ private:
     int mScriptNumber = 0;
 };
 }
-

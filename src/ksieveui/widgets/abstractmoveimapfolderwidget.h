@@ -29,4 +29,3 @@ Q_SIGNALS:
     void textChanged(const QString &);
 };
 }
-

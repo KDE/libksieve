@@ -55,4 +55,3 @@ private:
 };
 }
 Q_DECLARE_TYPEINFO(KSieveUi::SieveImapInstance, Q_MOVABLE_TYPE);
-

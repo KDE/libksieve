@@ -45,4 +45,3 @@ private:
     SieveImapPasswordProvider *mPasswordProvider = nullptr;
 };
 }
-

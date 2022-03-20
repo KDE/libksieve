@@ -87,4 +87,3 @@ private:
     friend class SessionThread;
 };
 }
-

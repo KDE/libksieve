@@ -18,4 +18,3 @@ private Q_SLOTS:
     void shouldLoadScripts();
     void shouldLoadScripts_data();
 };
-

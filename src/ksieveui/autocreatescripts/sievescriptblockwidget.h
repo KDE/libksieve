@@ -60,4 +60,3 @@ private:
     QPushButton *mAddBlockType = nullptr;
 };
 }
-

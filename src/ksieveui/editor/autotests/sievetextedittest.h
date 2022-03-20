@@ -22,4 +22,3 @@ private Q_SLOTS:
     void uncomment_data();
     void uncomment();
 };
-

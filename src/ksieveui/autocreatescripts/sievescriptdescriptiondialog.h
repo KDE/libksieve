@@ -32,4 +32,3 @@ private:
     KPIMTextEdit::PlainTextEditorWidget *mEdit = nullptr;
 };
 }
-

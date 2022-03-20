@@ -13,12 +13,12 @@
 #include <QPushButton>
 
 #include <KConfigGroup>
+#include <KLazyLocalizedString>
 #include <KSharedConfig>
 #include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QVBoxLayout>
-#include <KLazyLocalizedString>
 using namespace KSieveUi;
 const KLazyLocalizedString selectMultipleHeaders = kli18n("Select multiple headers...");
 SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)

@@ -26,4 +26,3 @@ public:
     void setNetworkDown(bool state);
 };
 }
-

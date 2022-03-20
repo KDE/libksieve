@@ -110,4 +110,3 @@ private:
     SieveHelpButton *mHelpButton = nullptr;
 };
 }
-

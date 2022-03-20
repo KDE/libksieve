@@ -18,4 +18,3 @@ private Q_SLOTS:
     void convertRegExp_data();
     void convertRegExp();
 };
-

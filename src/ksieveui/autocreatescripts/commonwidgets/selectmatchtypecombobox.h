@@ -31,4 +31,3 @@ private:
     bool mHasRegexCapability = false;
 };
 }
-

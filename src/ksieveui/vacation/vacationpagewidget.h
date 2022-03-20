@@ -52,4 +52,3 @@ private:
     bool mHasDateSupport = false;
 };
 }
-

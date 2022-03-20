@@ -123,7 +123,6 @@ QDate VacationUtils::defaultEndDate()
     return defaultStartDate().addDays(7);
 }
 
-
 VacationUtils::Vacation VacationUtils::parseScript(const QString &script)
 {
     KSieveUi::VacationUtils::Vacation vacation;

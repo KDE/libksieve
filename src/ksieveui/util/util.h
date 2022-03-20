@@ -29,4 +29,3 @@ KSIEVEUI_EXPORT bool checkOutOfOfficeOnStartup();
 KSIEVEUI_EXPORT bool allowOutOfOfficeSettings();
 }
 }
-

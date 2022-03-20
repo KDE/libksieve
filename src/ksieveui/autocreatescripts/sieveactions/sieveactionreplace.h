@@ -24,4 +24,3 @@ public:
     Q_REQUIRED_RESULT QUrl href() const override;
 };
 }
-

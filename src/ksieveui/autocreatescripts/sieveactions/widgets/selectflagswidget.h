@@ -60,4 +60,3 @@ private:
     QLineEdit *mEdit = nullptr;
 };
 }
-

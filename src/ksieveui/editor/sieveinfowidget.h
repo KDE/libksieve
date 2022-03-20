@@ -25,4 +25,3 @@ private:
     QTextEdit *const mInfo;
 };
 }
-

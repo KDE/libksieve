@@ -36,4 +36,3 @@ private:
     bool loadFromFile(const QString &filename);
 };
 }
-

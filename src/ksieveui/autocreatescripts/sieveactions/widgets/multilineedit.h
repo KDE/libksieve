@@ -24,4 +24,3 @@ protected:
     QSize minimumSizeHint() const override;
 };
 }
-

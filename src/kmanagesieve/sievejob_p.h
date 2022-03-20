@@ -52,4 +52,3 @@ public:
     static QHash<QUrl, QPointer<Session>> m_sessionPool;
 };
 }
-

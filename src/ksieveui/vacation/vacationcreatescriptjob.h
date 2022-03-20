@@ -64,4 +64,3 @@ private:
     GenerateGlobalScriptJob *mCreateJob = nullptr;
 };
 }
-

@@ -16,4 +16,3 @@
 #else /* not compiling tests */
 #define KSIEVEUI_TESTS_EXPORT
 #endif
-

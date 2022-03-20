@@ -117,4 +117,3 @@ private:
 
     QString m_implementation;
 };
-

@@ -32,4 +32,3 @@ private:
     QTimer *const mProgressTimer;
 };
 }
-

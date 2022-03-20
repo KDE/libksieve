@@ -74,4 +74,3 @@ KSieveUi::SieveEditorUtil::HelpVariableName strToVariableName(const QString &str
 QUrl helpUrl(KSieveUi::SieveEditorUtil::HelpVariableName type);
 }
 }
-

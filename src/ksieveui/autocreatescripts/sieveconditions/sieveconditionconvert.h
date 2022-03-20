@@ -23,4 +23,3 @@ public:
     void setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error) override;
 };
 }
-
