@@ -55,7 +55,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     auto lay = new QVBoxLayout(this);
     lay->setContentsMargins({});
 
-    mMainSplitter = new QSplitter;
+    mMainSplitter = new QSplitter(this);
     mMainSplitter->setOrientation(Qt::Vertical);
     lay->addWidget(mMainSplitter);
 
@@ -64,23 +64,23 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     //
     mSieveTemplateWidget = new SieveTemplateWidget(i18n("Sieve Template:"));
 
-    auto textEditWidget = new QWidget;
+    auto textEditWidget = new QWidget(this);
     auto textEditLayout = new QVBoxLayout;
     textEditLayout->setContentsMargins({});
 
-    mEditorWidget = new QWidget;
+    mEditorWidget = new QWidget(this);
     auto editorWidgetLayout = new QVBoxLayout;
     editorWidgetLayout->setContentsMargins({});
     mEditorWidget->setLayout(editorWidgetLayout);
 
-    mTabWidget = new SieveEditorTabWidget;
+    mTabWidget = new SieveEditorTabWidget(this);
     connect(mTabWidget, &SieveEditorTabWidget::currentChanged, this, &SieveEditorTextModeWidget::sieveEditorTabCurrentChanged);
     connect(mTabWidget, &SieveEditorTabWidget::copyAvailable, this, &SieveEditorTextModeWidget::copyAvailable);
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
     mTextToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
     editorWidgetLayout->addWidget(mTextToSpeechWidget);
 #endif
-    mTextEdit = new SieveTextEdit;
+    mTextEdit = new SieveTextEdit(this);
     editorWidgetLayout->addWidget(mTextEdit);
     connect(mTextEdit, &SieveTextEdit::textChanged, this, &SieveEditorTextModeWidget::valueChanged);
     mTabWidget->addTab(mEditorWidget, i18n("Editor"));
@@ -94,7 +94,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     connect(mTextEdit, &SieveTextEdit::insertRule, this, &SieveEditorTextModeWidget::slotInsertRule);
 
     mGotoLineSliderContainer = new KPIMTextEdit::SlideContainer(this);
-    mGoToLine = new KPIMTextEdit::TextGoToLineWidget;
+    mGoToLine = new KPIMTextEdit::TextGoToLineWidget(this);
     mGoToLine->hide();
     mGotoLineSliderContainer->setContent(mGoToLine);
     editorWidgetLayout->addWidget(mGotoLineSliderContainer);
@@ -111,7 +111,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     mSliderContainer->setContent(mFindBar);
     editorWidgetLayout->addWidget(mSliderContainer);
 
-    mSieveEditorWarning = new SieveEditorWarning;
+    mSieveEditorWarning = new SieveEditorWarning(this);
     editorWidgetLayout->addWidget(mSieveEditorWarning);
 
     mSieveParsingWarning = new SieveEditorParsingMissingFeatureWarning(SieveEditorParsingMissingFeatureWarning::TextEditor);
@@ -131,7 +131,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     connect(mTextEdit, &SieveTextEdit::findText, this, &SieveEditorTextModeWidget::slotFind);
     connect(mTextEdit, &SieveTextEdit::replaceText, this, &SieveEditorTextModeWidget::slotReplace);
 
-    mDebugTextEdit = new KPIMTextEdit::PlainTextEditorWidget;
+    mDebugTextEdit = new KPIMTextEdit::PlainTextEditorWidget(this);
     mDebugTextEdit->editor()->setSearchSupport(false);
     mDebugTextEdit->editor()->setReadOnly(true);
     mDebugTextEdit->editor()->setPlaceholderText(i18n("Show result from \"check syntax\""));

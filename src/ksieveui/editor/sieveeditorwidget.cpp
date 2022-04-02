@@ -39,7 +39,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     auto lay = new QVBoxLayout(this);
     mDebug = !qEnvironmentVariableIsEmpty("KDEPIM_DEBUGGING");
 
-    auto toolbar = new QToolBar;
+    auto toolbar = new QToolBar(this);
     toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
     mCheckSyntax = new QAction(i18n("Check Syntax"), this);
