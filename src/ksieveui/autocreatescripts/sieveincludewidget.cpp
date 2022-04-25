@@ -110,8 +110,8 @@ void SieveIncludeActionWidget::loadScript(QXmlStreamReader &element, QString &er
 
 void SieveIncludeActionWidget::generatedScript(QString &script)
 {
-    const QString includeName = mIncludeFileName->text();
-    if (includeName.trimmed().isEmpty()) {
+    const QString includeName = mIncludeFileName->text().trimmed();
+    if (includeName.isEmpty()) {
         return;
     }
     script += QLatin1String("include ");
