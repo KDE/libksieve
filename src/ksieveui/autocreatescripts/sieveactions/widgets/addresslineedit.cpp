@@ -4,10 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "addresslineedit.h"
-#include <kconfigwidgets_version.h>
-#if KCONFIGWIDGETS_VERSION >= QT_VERSION_CHECK(5, 93, 0)
-#include <KStatefulBrush> // was moved to own header in 5.93.0
-#endif
+#include <KStatefulBrush>
 
 #include <KColorScheme>
 #include <KLocalizedString>
