@@ -439,7 +439,8 @@ set_target_properties(KF5KSieveUi PROPERTIES
     EXPORT_NAME KSieveUi
     )
 
-target_include_directories(KF5KSieveUi INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KSieveUi/>")
+target_include_directories(KF5KSieveUi
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KSieveUi/;${KDE_INSTALL_INCLUDEDIR_KF}/KSieve>")
 target_include_directories(KF5KSieveUi PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/ksieveui;${libksieve_SOURCE_DIR}/src/ksieveui/util/;${libksieve_BINARY_DIR}/src/ksieveui>")
 
 ecm_generate_headers(ksieveui_CamelCase_HEADERS
