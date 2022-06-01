@@ -202,7 +202,7 @@ QString AutoCreateScriptUtil::indentation()
 KSieveUi::AbstractMoveImapFolderWidget *AutoCreateScriptUtil::createImapFolderWidget()
 {
     KSieveUi::AbstractMoveImapFolderWidget *edit = nullptr;
-    const KPluginMetaData editWidgetPlugin(QStringLiteral("libksieve/imapfoldercompletionplugin"));
+    const KPluginMetaData editWidgetPlugin(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/libksieve/imapfoldercompletionplugin"));
 
     const auto result = KPluginFactory::instantiatePlugin<KSieveUi::AbstractMoveImapFolderWidget>(editWidgetPlugin);
     if (result) {
@@ -216,7 +216,7 @@ KSieveUi::AbstractMoveImapFolderWidget *AutoCreateScriptUtil::createImapFolderWi
 KSieveUi::AbstractSelectEmailLineEdit *AutoCreateScriptUtil::createSelectEmailsWidget()
 {
     KSieveUi::AbstractSelectEmailLineEdit *edit = nullptr;
-    const KPluginMetaData editWidgetPlugin(QStringLiteral("libksieve/emaillineeditplugin"));
+    const KPluginMetaData editWidgetPlugin(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/libksieve/emaillineeditplugin"));
 
     const auto result = KPluginFactory::instantiatePlugin<KSieveUi::AbstractSelectEmailLineEdit>(editWidgetPlugin);
     if (result) {
@@ -230,7 +230,7 @@ KSieveUi::AbstractSelectEmailLineEdit *AutoCreateScriptUtil::createSelectEmailsW
 AbstractRegexpEditorLineEdit *AutoCreateScriptUtil::createRegexpEditorLineEdit(QWidget *parent)
 {
     KSieveUi::AbstractRegexpEditorLineEdit *edit = nullptr;
-    const KPluginMetaData editWidgetPlugin(QStringLiteral("libksieve/regexpeditorlineeditplugin"));
+    const KPluginMetaData editWidgetPlugin(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/libksieve/regexpeditorlineeditplugin"));
 
     const auto result = KPluginFactory::instantiatePlugin<KSieveUi::AbstractRegexpEditorLineEdit>(editWidgetPlugin, parent);
     if (result) {
