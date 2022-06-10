@@ -38,10 +38,10 @@ void SieveEditorTabWidget::slotTabContextMenuRequest(const QPoint &pos)
     }
     QMenu menu(this);
 
-    const int countTab = (count() > 1);
+    const bool hasMoreThanTwoTab = (count() > 1);
 
     QAction *closeTab = nullptr;
-    if ((indexBar != 0) && countTab) {
+    if ((indexBar != 0) && hasMoreThanTwoTab) {
         closeTab = menu.addAction(i18nc("@action:inmenu", "Close Tab"));
         closeTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
     }
@@ -53,9 +53,9 @@ void SieveEditorTabWidget::slotTabContextMenuRequest(const QPoint &pos)
     }
 
     QAction *allTab = nullptr;
-    if (countTab) {
+    if (hasMoreThanTwoTab) {
         allTab = menu.addAction(i18nc("@action:inmenu", "Close All Tabs"));
-        allTab->setEnabled(countTab);
+        allTab->setEnabled(hasMoreThanTwoTab);
         allTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
     }
 
