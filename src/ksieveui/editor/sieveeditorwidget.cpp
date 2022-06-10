@@ -92,7 +92,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
         connect(menuBar, &SieveEditorMenuBar::zoomOut, this, &SieveEditorWidget::zoomOut);
         connect(menuBar, &SieveEditorMenuBar::zoomReset, this, &SieveEditorWidget::zoomReset);
         connect(menuBar, &SieveEditorMenuBar::debugSieveScript, this, &SieveEditorWidget::debugSieveScript);
-        connect(menuBar, &SieveEditorMenuBar::wordWrap, this, &SieveEditorWidget::wordWrap);
+        connect(menuBar, &SieveEditorMenuBar::wordWrap, this, &SieveEditorWidget::setWordWrap);
         connect(menuBar, &SieveEditorMenuBar::print, this, &SieveEditorWidget::print);
         connect(menuBar, &SieveEditorMenuBar::printPreview, this, &SieveEditorWidget::printPreview);
 
@@ -264,10 +264,10 @@ void SieveEditorWidget::printPreview()
     }
 }
 
-void SieveEditorWidget::wordWrap(bool state)
+void SieveEditorWidget::setWordWrap(bool state)
 {
     if (mMode == TextMode) {
-        mTextModeWidget->wordWrap(state);
+        mTextModeWidget->setWordWrap(state);
     }
 }
 

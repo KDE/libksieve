@@ -38,7 +38,7 @@ public:
     void lowerCase();
     void sentenceCase();
     void reverseCase();
-    void wordWrap(bool state);
+    void setWordWrap(bool state);
     Q_REQUIRED_RESULT bool isWordWrap() const;
 
 protected:

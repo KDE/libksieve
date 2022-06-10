@@ -92,7 +92,7 @@ public Q_SLOTS:
     void slotCheckSyntax();
     void comment();
     void uncomment();
-    void wordWrap(bool state);
+    void setWordWrap(bool state);
 
 Q_SIGNALS:
     void checkSyntax();

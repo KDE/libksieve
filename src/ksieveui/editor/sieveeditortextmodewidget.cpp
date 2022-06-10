@@ -454,9 +454,9 @@ void SieveEditorTextModeWidget::printPreview()
     }
 }
 
-void SieveEditorTextModeWidget::wordWrap(bool state)
+void SieveEditorTextModeWidget::setWordWrap(bool state)
 {
-    mTextEdit->wordWrap(state);
+    mTextEdit->setWordWrap(state);
 }
 
 void SieveEditorTextModeWidget::zoomReset()
