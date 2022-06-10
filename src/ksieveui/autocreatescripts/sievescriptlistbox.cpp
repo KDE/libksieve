@@ -199,7 +199,7 @@ void SieveScriptListBox::slotCustomMenuRequested(const QPoint &pos)
         deleteScriptAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
         connect(deleteScriptAction, &QAction::triggered, this, &SieveScriptListBox::slotDelete);
     }
-    menu.exec(mapToGlobal(pos));
+    menu.exec(QCursor::pos());
 }
 
 void SieveScriptListBox::setSieveEditorGraphicalModeWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget)
