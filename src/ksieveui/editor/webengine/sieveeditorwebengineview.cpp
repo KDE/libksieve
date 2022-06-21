@@ -86,6 +86,7 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
 
     act = pageAction(QWebEnginePage::Copy);
     if (act->isEnabled() && hasSelection()) {
+        act->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")));
         menu.addAction(act);
     }
 
@@ -101,6 +102,7 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
 
     act = pageAction(QWebEnginePage::SelectAll);
     if (act->isEnabled()) {
+        act->setIcon(QIcon::fromTheme(QStringLiteral("edit-select-all")));
         menu.addAction(act);
     }
     act = pageAction(QWebEnginePage::CopyLinkToClipboard);
@@ -112,6 +114,7 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
         auto separator = new QAction(&menu);
         separator->setSeparator(true);
         menu.addAction(separator);
+        act->setIcon(QIcon::fromTheme(QStringLiteral("document-save")));
         menu.addAction(act);
     }
     menu.exec(ev->globalPos());
