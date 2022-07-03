@@ -9,3 +9,6 @@ target_link_libraries( sieveeditorhelphtmlwidgettest
     Qt${QT_MAJOR_VERSION}::Test
     KF5::Completion KF5::PimCommon KF5::IconThemes Qt${QT_MAJOR_VERSION}::Gui Qt${QT_MAJOR_VERSION}::Widgets KF5::ConfigWidgets KF5::I18n KF5::PimTextEdit Qt${QT_MAJOR_VERSION}::WebEngineWidgets KF5::KSieveUi)
 set_property(TARGET sieveeditorhelphtmlwidgettest PROPERTY INCLUDE_DIRECTORIES ${CMAKE_SOURCE_DIR}/src/ksieveui/editor/webengine/ ${CMAKE_SOURCE_DIR}/src/ksieveui/editor/webengine/findbar ${CMAKE_BINARY_DIR}/src/ksieveui/)
+# needed for the CI to run webengine-related tests
+# the CI runs as root, and webengine insists on disabling sandboxing in that case
+set_tests_properties(sieveeditorhelphtmlwidgettest PROPERTIES ENVIRONMENT "QTWEBENGINE_DISABLE_SANDBOX=1")
