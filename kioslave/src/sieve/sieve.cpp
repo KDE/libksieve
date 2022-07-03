@@ -18,6 +18,7 @@
 #include "sieve.h"
 #include "../common.h"
 #include "sieve_debug.h"
+#include <kio_version.h>
 
 extern "C" {
 #include <sasl/sasl.h>
@@ -345,7 +346,11 @@ bool kio_sieveProtocol::connect(bool useTLSIfAvailable)
 
     // Attempt to start TLS
     if (!m_allowUnencrypted && !QSslSocket::supportsSsl()) {
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 96, 0)
+        error(KIO::ERR_WORKER_DEFINED, i18n("Can not use TLS since the underlying Qt library does not support it."));
+#else
         error(ERR_SLAVE_DEFINED, i18n("Can not use TLS since the underlying Qt library does not support it."));
+#endif
         disconnect();
         return false;
     }
@@ -388,9 +393,15 @@ bool kio_sieveProtocol::connect(bool useTLSIfAvailable)
         } else if (!m_allowUnencrypted) {
             ksDebug << "Server incapable of TLS.";
             disconnect();
+#if KIO_VERSION >= QT_VERSION_CHECK(5, 96, 0)
+            error(KIO::ERR_WORKER_DEFINED,
+                  i18n("The server does not seem to support TLS. "
+                       "Disable TLS if you want to connect without encryption."));
+#else
             error(ERR_SLAVE_DEFINED,
                   i18n("The server does not seem to support TLS. "
                        "Disable TLS if you want to connect without encryption."));
+#endif
             return false;
         } else {
             ksDebug << "Server incapable of TLS. Transmitted documents will be unencrypted." << returnEndLine();
