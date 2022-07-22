@@ -164,7 +164,7 @@ static const TestCase testcases[] = {
     {"Basic quoted string \"foo\"", "\"foo\"", {{Lexer::QuotedString, "foo"}, {Lexer::None, nullptr}}, Error::None, 0, 0},
     {"Basic quoted string, UTF-8",
      "\"foo\xC3\xB1"
-     "foo\"", // foo‰foo
+     "foo\"", // foo√§foo
      {{Lexer::QuotedString,
        "foo\xC3\xB1"
        "foo"},
@@ -223,14 +223,14 @@ static const TestCase testcases[] = {
     // identifiers:
     //
     {"Identifier, leading digits", "0id", {{Lexer::Number, "0"}}, Error::UnexpectedCharacter, 0, 1},
-    {"Identifier, embedded umlaut", "id‰id", {{Lexer::Identifier, "id"}}, Error::IllegalCharacter, 0, 2},
+    {"Identifier, embedded umlaut", "id√§id", {{Lexer::Identifier, "id"}}, Error::IllegalCharacter, 0, 2},
     //
     // tags:
     //
     {"Lone ':' (at end)", ":", {{Lexer::Tag, nullptr}}, Error::UnexpectedCharacter, 0, 0},
     {"Lone ':' (in stream)", ": ", {{Lexer::Tag, nullptr}}, Error::UnexpectedCharacter, 0, 1},
     {"Tag, leading digits", ":0tag", {{Lexer::Tag, nullptr}}, Error::NoLeadingDigits, 0, 1},
-    {"Tag, embedded umlaut", ":tag‰tag", {{Lexer::Tag, "tag"}}, Error::IllegalCharacter, 0, 4},
+    {"Tag, embedded umlaut", ":tag√§tag", {{Lexer::Tag, "tag"}}, Error::IllegalCharacter, 0, 4},
     //
     // specials: (none)
     // quoted string:
