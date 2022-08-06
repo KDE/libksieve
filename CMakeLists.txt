@@ -122,7 +122,6 @@ if(BUILD_TESTING)
 endif()
 
 add_subdirectory(src)
-add_subdirectory(kioslave)
 ecm_qt_install_logging_categories(
         EXPORT LIBKSIEVE
         FILE libksieve.categories
