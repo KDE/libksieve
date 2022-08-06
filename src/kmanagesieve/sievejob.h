@@ -13,14 +13,9 @@
 #include <QObject>
 #include <QStringList>
 
-#include <KIO/Global>
-#include <KIO/UDSEntry>
-#include <QUrl>
+#include <KJob>
 
-namespace KIO
-{
-class Job;
-}
+#include <QUrl>
 
 class KJob;
 

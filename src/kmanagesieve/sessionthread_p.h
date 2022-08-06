@@ -10,7 +10,6 @@
 #include <QUrl>
 #include <memory>
 
-#include <KIO/Global>
 #include <KSslErrorUiData>
 #include <QSslSocket>
 
