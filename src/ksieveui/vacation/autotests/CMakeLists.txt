@@ -3,7 +3,7 @@
 set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
 
 macro( add_vacation_test _source )
-  set( _test ${_source}test.cpp
+  set( _test ${_source}test.cpp  ${_source}test.h
     ../${_source}.cpp
     ../vacationscriptextractor.cpp
     ../vacationutils.cpp
