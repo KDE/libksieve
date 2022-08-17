@@ -34,7 +34,7 @@ generate_export_header(KF5KSieve BASE_NAME ksieve)
 
 target_link_libraries(KF5KSieve
 PRIVATE
-  Qt${QT_MAJOR_VERSION}::Core KF5::I18n
+  Qt::Core KF5::I18n
 )
 
 if (QT_MAJOR_VERSION STREQUAL "6")

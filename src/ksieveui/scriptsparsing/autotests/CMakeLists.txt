@@ -9,7 +9,7 @@ macro(add_sieveeditor_xmlprintingscriptbuilding _source)
     ecm_add_test(${_test}
         TEST_NAME ${_name}
         NAME_PREFIX "sieveeditor-xmlprintingscriptbuilding-"
-        LINK_LIBRARIES Qt${QT_MAJOR_VERSION}::Test KF5::I18n KF5::KSieveUi
+        LINK_LIBRARIES Qt::Test KF5::I18n KF5::KSieveUi
         )
     target_compile_definitions(${_name} PRIVATE XMLPRINTINGSCRIPTBUILDER_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
     target_compile_definitions(${_name} PRIVATE XMLPRINTINGSCRIPTBUILDER_GENERATED_DATA_DIR="${CMAKE_CURRENT_BINARY_DIR}/data")
