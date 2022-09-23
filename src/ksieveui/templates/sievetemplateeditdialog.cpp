@@ -7,8 +7,6 @@
 #include "sievetemplateeditdialog.h"
 #include "editor/sievetextedit.h"
 
-#include <KPIMTextEdit/PlainTextEditFindBar>
-#include <KPIMTextEdit/SlideContainer>
 #include <Libkdepim/LineEditCatchReturnKey>
 
 #include <KLocalizedString>
