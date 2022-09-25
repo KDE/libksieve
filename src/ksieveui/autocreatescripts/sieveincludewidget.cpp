@@ -8,7 +8,6 @@
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
-#include "editor/sieveeditorutil.h"
 #include "sievescriptblockwidget.h"
 #include "widgets/includefilelineedit.h"
 #include <Libkdepim/LineEditCatchReturnKey>

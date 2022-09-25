@@ -5,7 +5,6 @@
 */
 
 #include "multiimapvacationmanager.h"
-#include "sieveimapinstance/sieveimapinstanceinterface.h"
 #include "util/util_p.h"
 #include "vacationcheckjob.h"
 #include <kmanagesieve/sievejob.h>

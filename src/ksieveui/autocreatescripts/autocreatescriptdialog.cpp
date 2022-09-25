@@ -5,10 +5,7 @@
 */
 
 #include "autocreatescriptdialog.h"
-#include "sieveactionwidgetlister.h"
-#include "sieveconditionwidgetlister.h"
 #include "sieveeditorgraphicalmodewidget.h"
-#include "sievescriptlistbox.h"
 
 #include <KConfigGroup>
 #include <KLocalizedString>

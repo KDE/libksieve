@@ -5,7 +5,6 @@
 */
 
 #include "sieveeditorgraphicalmodewidget.h"
-#include "autocreatescripts/sievescriptparsingerrordialog.h"
 #include "ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.h"
 #include "scriptsparsing/parsingutil.h"
 #include "sievescriptlistbox.h"

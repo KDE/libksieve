@@ -5,7 +5,6 @@
 */
 
 #include "sieveconditionwidgetlister.h"
-#include "autocreatescriptdialog.h"
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
 #include "libksieve_debug.h"

@@ -9,7 +9,6 @@
 #include "sievepurposemenuwidget.h"
 
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
-#include "autocreatescripts/sievescriptparsingerrordialog.h"
 #include "editor/sieveinfodialog.h"
 #include "scriptsparsing/parsingutil.h"
 #include "sieve-editor.h"

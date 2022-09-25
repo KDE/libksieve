@@ -5,7 +5,6 @@
 */
 
 #include "sievetemplatewidget.h"
-#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "sievedefaulttemplate.h"
 #include "sievetemplateeditdialog.h"
 #include <PimCommon/TemplateManager>

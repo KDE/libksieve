@@ -6,7 +6,6 @@
 #include "sieveconditionheader.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
-#include "editor/sieveeditorutil.h"
 #include "widgets/selectheadertypecombobox.h"
 
 #include <KLocalizedString>

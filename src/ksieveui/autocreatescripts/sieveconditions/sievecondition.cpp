@@ -6,7 +6,6 @@
 
 #include "sievecondition.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
-#include "libksieve_debug.h"
 
 #include <KLocalizedString>
 

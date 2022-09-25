@@ -7,7 +7,6 @@
 #include "xmlprintingscriptbuilder.h"
 #include <ksieve/parser.h>
 
-#include "libksieve_debug.h"
 #include <QXmlStreamWriter>
 #include <ksieve/error.h>
 

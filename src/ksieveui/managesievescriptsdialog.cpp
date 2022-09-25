@@ -6,20 +6,17 @@
 
 #include "managesievescriptsdialog.h"
 #include "editor/sieveeditor.h"
-#include "editor/sievetextedit.h"
 #include "managescriptsjob/checkscriptjob.h"
 #include "widgets/custommanagesievewidget.h"
-#include "widgets/managesievetreeview.h"
-#include "widgets/sievetreewidgetitem.h"
 
 #include "util/sieveimapaccountsettings.h"
 
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QHideEvent>
 #include <QPushButton>
 
-#include "libksieve_debug.h"
 #include <kmanagesieve/sievejob.h>
 
 #include <QTreeWidget>

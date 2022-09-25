@@ -5,7 +5,6 @@
 */
 
 #include "sieveactionwidgetlister.h"
-#include "autocreatescriptdialog.h"
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
 #include "sieveactions/sieveaction.h"

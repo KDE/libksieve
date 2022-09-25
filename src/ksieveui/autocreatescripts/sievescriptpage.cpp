@@ -11,7 +11,6 @@
 #include "sieveincludewidget.h"
 #include "sievescripttabwidget.h"
 
-#include "autocreatescripts/autocreatescriptdialog.h"
 #include "sievewidgetpageabstract.h"
 
 #include <KLocalizedString>
