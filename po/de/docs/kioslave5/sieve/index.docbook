@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % German "INCLUDE"
+> <!-- change language only here -->
+]>
+	
+<article lang="&language;" id="sieve">
+<title
+>sieve</title>
+<articleinfo>
+
+<authorgroup>
+<author
+><personname
+><firstname
+>Daniel</firstname
+><surname
+>Black</surname
+></personname
+> <email
+>daniel.subs@internode.on.net</email
+></author>
+<othercredit role="translator"
+><firstname
+>Burkhard</firstname
+><surname
+>Lück</surname
+><affiliation
+><address
+><email
+>lueck@hube-lueck.de</email
+></address
+></affiliation
+><contrib
+>Übersetzung</contrib
+></othercredit
+> 
+</authorgroup>
+ 
+<date
+>2009-11-05</date>
+
+ 
+</articleinfo>
+
+<para
+>Sieve ist ein Protokoll für die Filterung von E-Mails.</para
+> 
+
+<para
+>Die Filter werden auf dem E-Mailserver gespeichert und auch ausgeführt.</para>
+
+<para
+>Unter <ulink url="https://www.ietf.org/rfc/rfc5228.txt"
+>IETF RF5228</ulink
+> finden Sie weitere Informationen.</para>
+
+</article>

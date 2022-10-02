@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Spanish "INCLUDE"
+> <!-- change language only here -->
+]>
+	
+<article lang="&language;" id="sieve">
+<title
+>sieve</title>
+<articleinfo>
+
+<authorgroup>
+<author
+><personname
+><firstname
+>Daniel</firstname
+><surname
+>Black</surname
+></personname
+> <email
+>daniel.subs@internode.on.net</email
+></author>
+<othercredit role="translator"
+><firstname
+>Eloy</firstname
+><surname
+>Cuadra</surname
+><affiliation
+><address
+><email
+>ecuadra@eloihr.net</email
+></address
+></affiliation
+><contrib
+>Traductor</contrib
+></othercredit
+> <othercredit role="translator"
+><firstname
+>Javier</firstname
+><surname
+>Viñal</surname
+><affiliation
+><address
+><email
+>fjvinal@gmail.com</email
+></address
+></affiliation
+><contrib
+>Traductor</contrib
+></othercredit
+> 
+</authorgroup>
+ 
+<date
+>2009-11-05</date>
+
+ 
+</articleinfo>
+
+<para
+>Sieve es un protocolo que se usa para gestionar filtros de correo electrónico.</para
+> 
+
+<para
+>Los filtros se almacenan y se ejecutan en el servidor de correo electrónico.</para>
+
+<para
+><ulink url="http://www.ietf.org/rfc/rfc5228.txt"
+>IETF RF5228</ulink
+> proporciona más información.</para>
+
+</article>

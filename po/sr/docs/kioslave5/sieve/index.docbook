@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdedbx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Serbian "INCLUDE"
+> <!-- change language only here -->
+]>
+	
+<article lang="&language;" id="sieve">
+<title
+>Сито</title>
+<articleinfo>
+
+<authorgroup>
+<author
+><personname
+><firstname
+>Данијел</firstname
+> <surname
+>Блек</surname
+></personname
+> <email
+>daniel.subs@internode.on.net</email
+></author>
+<othercredit role="translator"
+><firstname
+>Часлав</firstname
+><surname
+>Илић</surname
+><affiliation
+><address
+><email
+>caslav.ilic@gmx.net</email
+></address
+></affiliation
+><contrib
+>превод</contrib
+></othercredit
+> 
+</authorgroup>
+ 
+<date
+>5. 11. 2009.</date>
+
+ 
+</articleinfo>
+
+<para
+>Сито је протокол за управљање филтерима е‑поште.</para
+> 
+
+<para
+>Филтери се складиште и извршавају на е‑поштанском серверу.</para>
+
+<para
+>Погледајте <ulink url="http://www.ietf.org/rfc/rfc5228.txt"
+>ИЕТФ‑ов РФЦ 5228</ulink
+> за више детаља.</para>
+
+</article>

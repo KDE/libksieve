@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<!DOCTYPE article PUBLIC "-//KDE//DTD DocBook XML V4.5-Based Variant V1.1//EN"
+"dtd/kdebx45.dtd" [
+<!ENTITY % addindex "IGNORE">
+<!ENTITY % Estonian  "INCLUDE"
+> <!-- change language only here -->
+]>
+	
+<article lang="&language;" id="sieve">
+<title
+>sieve</title>
+<articleinfo>
+
+<authorgroup>
+<author
+><personname
+><firstname
+>Daniel</firstname
+><surname
+>Black</surname
+></personname
+> <email
+>daniel.subs@internode.on.net</email
+></author>
+<othercredit role="translator"
+><firstname
+>Marek</firstname
+><surname
+>Laane</surname
+><affiliation
+><address
+><email
+>bald@smail.ee</email
+></address
+></affiliation
+><contrib
+>Tõlge eesti keelde</contrib
+></othercredit
+> 
+</authorgroup>
+ 
+<date
+>2009-11-05</date>
+
+ 
+</articleinfo>
+
+<para
+>Sieve on e-kirjade filtrite haldamiseks kasutatav protokoll.</para
+> 
+
+<para
+>Filtrid salvestatakse ja pannakse tööle e-posti serveris.</para>
+
+<para
+>Rohkem teavet annab <ulink url="http://www.ietf.org/rfc/rfc5228.txt"
+>IETF RF5228</ulink
+>.</para>
+
+</article>
