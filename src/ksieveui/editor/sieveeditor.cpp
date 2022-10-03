@@ -26,7 +26,10 @@ public:
     SieveEditorWidget *mSieveEditorWidget = nullptr;
     QPushButton *mOkButton = nullptr;
 };
-
+namespace
+{
+static const char mySieveEditorGroupName[] = "SieveEditor";
+}
 SieveEditor::SieveEditor(QWidget *parent)
     : QDialog(parent)
     , d(new KSieveUi::SieveEditorPrivate)
@@ -96,13 +99,13 @@ void SieveEditor::slotEnableButtonOk(bool b)
 
 void SieveEditor::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveEditor");
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveEditorGroupName);
     group.writeEntry("Size", size());
 }
 
 void SieveEditor::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveEditor");
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveEditorGroupName);
     const QSize sizeDialog = group.readEntry("Size", QSize(800, 600));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);

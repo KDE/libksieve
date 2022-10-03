@@ -23,7 +23,10 @@
 #include <QVBoxLayout>
 
 using namespace KSieveUi;
-
+namespace
+{
+static const char myMultiImapVacationDialogGroupName[] = "MultiImapVacationDialog";
+}
 class KSieveUi::MultiImapVacationDialogPrivate
 {
 public:
@@ -182,7 +185,7 @@ void MultiImapVacationDialog::createPage(const QString &serverName, const KSieve
 
 void MultiImapVacationDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "MultiImapVacationDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), myMultiImapVacationDialogGroupName);
     const QSize size = group.readEntry("Size", QSize());
     if (size.isValid()) {
         resize(size);
@@ -193,7 +196,7 @@ void MultiImapVacationDialog::readConfig()
 
 void MultiImapVacationDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "MultiImapVacationDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), myMultiImapVacationDialogGroupName);
     group.writeEntry("Size", size());
 }
 

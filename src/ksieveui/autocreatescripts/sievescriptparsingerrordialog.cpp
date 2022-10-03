@@ -17,6 +17,10 @@
 #include <QVBoxLayout>
 #include <cerrno>
 using namespace KSieveUi;
+namespace
+{
+static const char mySieveScriptParsingErrorDialogGroupName[] = "SieveScriptParsingErrorDialog";
+}
 SieveScriptParsingErrorDialog::SieveScriptParsingErrorDialog(QWidget *parent)
     : QDialog(parent)
     , mTextEdit(new KPIMTextEdit::RichTextEditorWidget(this))
@@ -54,7 +58,7 @@ void SieveScriptParsingErrorDialog::setError(QString script, QString error)
 
 void SieveScriptParsingErrorDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveScriptParsingErrorDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveScriptParsingErrorDialogGroupName);
     const QSize sizeDialog = group.readEntry("Size", QSize(800, 600));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
@@ -63,7 +67,7 @@ void SieveScriptParsingErrorDialog::readConfig()
 
 void SieveScriptParsingErrorDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveScriptParsingErrorDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveScriptParsingErrorDialogGroupName);
     group.writeEntry("Size", size());
 }
 

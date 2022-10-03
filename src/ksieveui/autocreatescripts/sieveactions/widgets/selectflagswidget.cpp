@@ -20,7 +20,10 @@
 #include <QVBoxLayout>
 
 using namespace KSieveUi;
-
+namespace
+{
+static const char mySelectFlagsListDialogGroupName[] = "SelectFlagsListDialog";
+}
 SelectFlagsListDialog::SelectFlagsListDialog(QWidget *parent)
     : QDialog(parent)
     , mListWidget(new SelectFlagsListWidget(this))
@@ -47,7 +50,7 @@ SelectFlagsListDialog::~SelectFlagsListDialog()
 
 void SelectFlagsListDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SelectFlagsListDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySelectFlagsListDialogGroupName);
     const QSize sizeDialog = group.readEntry("Size", QSize(300, 200));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
@@ -56,7 +59,7 @@ void SelectFlagsListDialog::readConfig()
 
 void SelectFlagsListDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SelectFlagsListDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySelectFlagsListDialogGroupName);
     group.writeEntry("Size", size());
 }
 

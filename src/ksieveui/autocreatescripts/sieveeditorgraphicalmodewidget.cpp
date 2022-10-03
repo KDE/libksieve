@@ -21,7 +21,10 @@
 #include <QVBoxLayout>
 
 using namespace KSieveUi;
-
+namespace
+{
+static const char myAutoCreateScriptDialogGroupName[] = "AutoCreateScriptDialog";
+}
 SieveEditorGraphicalModeWidget::SieveEditorGraphicalModeWidget(QWidget *parent)
     : SieveEditorGraphicalModeWidgetAbstract::SieveEditorGraphicalModeWidgetAbstract(parent)
     , mSieveScript(new SieveScriptListBox(i18n("Sieve Script"), this))
@@ -65,14 +68,14 @@ void SieveEditorGraphicalModeWidget::loadScript(const QString &doc, QString &err
 
 void SieveEditorGraphicalModeWidget::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "AutoCreateScriptDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), myAutoCreateScriptDialogGroupName);
     const QList<int> size{100, 400};
     mSplitter->setSizes(group.readEntry("mainSplitter", size));
 }
 
 void SieveEditorGraphicalModeWidget::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "AutoCreateScriptDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), myAutoCreateScriptDialogGroupName);
     group.writeEntry("mainSplitter", mSplitter->sizes());
 }
 

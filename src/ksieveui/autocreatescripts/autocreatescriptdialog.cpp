@@ -16,7 +16,10 @@
 #include <QVBoxLayout>
 
 using namespace KSieveUi;
-
+namespace
+{
+static const char myAutoCreateScriptDialogGroupName[] = "AutoCreateScriptDialog";
+}
 AutoCreateScriptDialog::AutoCreateScriptDialog(QWidget *parent)
     : QDialog(parent)
     , mEditor(new SieveEditorGraphicalModeWidget(this))
@@ -67,7 +70,7 @@ QString AutoCreateScriptDialog::script(QStringList &required) const
 
 void AutoCreateScriptDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "AutoCreateScriptDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), myAutoCreateScriptDialogGroupName);
     const QSize sizeDialog = group.readEntry("Size", QSize(800, 600));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
@@ -76,7 +79,7 @@ void AutoCreateScriptDialog::readConfig()
 
 void AutoCreateScriptDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "AutoCreateScriptDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), myAutoCreateScriptDialogGroupName);
     group.writeEntry("Size", size());
 }
 

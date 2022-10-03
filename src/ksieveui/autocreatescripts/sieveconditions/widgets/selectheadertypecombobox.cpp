@@ -20,6 +20,10 @@
 #include <QLabel>
 #include <QVBoxLayout>
 using namespace KSieveUi;
+namespace
+{
+static const char mySelectFlagsListDialogGroupName[] = "SelectHeadersDialog";
+}
 const KLazyLocalizedString selectMultipleHeaders = kli18n("Select multiple headers...");
 SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     : QDialog(parent)
@@ -82,7 +86,7 @@ SelectHeadersDialog::~SelectHeadersDialog()
 
 void SelectHeadersDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SelectHeadersDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySelectFlagsListDialogGroupName);
     const QSize size = group.readEntry("Size", QSize(400, 300));
     if (size.isValid()) {
         resize(size);
@@ -91,7 +95,7 @@ void SelectHeadersDialog::readConfig()
 
 void SelectHeadersDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SelectHeadersDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySelectFlagsListDialogGroupName);
     group.writeEntry("Size", size());
     group.sync();
 }

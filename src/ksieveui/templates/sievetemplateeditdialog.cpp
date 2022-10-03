@@ -27,7 +27,10 @@
 #include <KPIMTextEdit/TextToSpeechWidget>
 #endif
 using namespace KSieveUi;
-
+namespace
+{
+static const char mySieveTemplateEditDialogGroupName[] = "SieveTemplateEditDialog";
+}
 SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTemplate)
     : QDialog(parent)
 {
@@ -105,13 +108,13 @@ SieveTemplateEditDialog::~SieveTemplateEditDialog()
 
 void SieveTemplateEditDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveTemplateEditDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveTemplateEditDialogGroupName);
     group.writeEntry("Size", size());
 }
 
 void SieveTemplateEditDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveTemplateEditDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveTemplateEditDialogGroupName);
     const QSize sizeDialog = group.readEntry("Size", QSize(600, 400));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);

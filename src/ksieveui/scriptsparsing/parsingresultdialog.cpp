@@ -21,7 +21,10 @@
 #include <QVBoxLayout>
 
 using namespace KSieveUi;
-
+namespace
+{
+static const char myParsingResultDialogGroupName[] = "ParsingResultDialog";
+}
 ParsingResultDialog::ParsingResultDialog(QWidget *parent)
     : QDialog(parent)
 {
@@ -59,7 +62,7 @@ void ParsingResultDialog::setResultParsing(const QString &result)
 
 void ParsingResultDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "ParsingResultDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), myParsingResultDialogGroupName);
     const QSize sizeDialog = group.readEntry("Size", QSize(800, 600));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
@@ -68,7 +71,7 @@ void ParsingResultDialog::readConfig()
 
 void ParsingResultDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "ParsingResultDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), myParsingResultDialogGroupName);
     group.writeEntry("Size", size());
 }
 

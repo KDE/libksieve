@@ -27,7 +27,10 @@
 #include <QVBoxLayout>
 
 using namespace KSieveUi;
-
+namespace
+{
+static const char mySieveDebugDialogGroupName[] = "SieveDebugDialog";
+}
 SieveDebugDialog::SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, QWidget *parent)
     : QDialog(parent)
     , mPasswordProvider(passwordProvider)
@@ -77,7 +80,7 @@ SieveDebugDialog::~SieveDebugDialog()
 
 void SieveDebugDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveDebugDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveDebugDialogGroupName);
     const QSize sizeDialog = group.readEntry("Size", QSize(640, 480));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
@@ -86,7 +89,7 @@ void SieveDebugDialog::readConfig()
 
 void SieveDebugDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveDebugDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveDebugDialogGroupName);
     group.writeEntry("Size", size());
 }
 

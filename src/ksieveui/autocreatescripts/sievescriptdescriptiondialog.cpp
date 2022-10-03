@@ -15,7 +15,10 @@
 #include <QVBoxLayout>
 
 using namespace KSieveUi;
-
+namespace
+{
+static const char mySieveScriptDescriptionDialogGroupName[] = "SieveScriptDescriptionDialog";
+}
 SieveScriptDescriptionDialog::SieveScriptDescriptionDialog(QWidget *parent)
     : QDialog(parent)
     , mEdit(new KPIMTextEdit::PlainTextEditorWidget(this))
@@ -53,7 +56,7 @@ QString SieveScriptDescriptionDialog::description() const
 
 void SieveScriptDescriptionDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveScriptDescriptionDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveScriptDescriptionDialogGroupName);
     const QSize sizeDialog = group.readEntry("Size", QSize(800, 600));
     if (sizeDialog.isValid()) {
         resize(sizeDialog);
@@ -62,6 +65,6 @@ void SieveScriptDescriptionDialog::readConfig()
 
 void SieveScriptDescriptionDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveScriptDescriptionDialog");
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveScriptDescriptionDialogGroupName);
     group.writeEntry("Size", size());
 }
