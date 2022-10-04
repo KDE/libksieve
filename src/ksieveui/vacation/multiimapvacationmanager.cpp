@@ -13,6 +13,7 @@
 
 #include "libksieve_debug.h"
 #include "searchserverwithvacationsupportjob.h"
+#include <QVariant>
 
 using namespace KSieveUi;
 MultiImapVacationManager::MultiImapVacationManager(SieveImapPasswordProvider *passwordProvider, QObject *parent)
@@ -28,7 +29,7 @@ void MultiImapVacationManager::checkVacation(const QString &serverName, const QU
     ++mNumberOfJobs;
     if (!mKep14Support.contains(serverName)) {
         auto checkKep14Job = new CheckKolabKep14SupportJob(this);
-        checkKep14Job->setProperty("triggerScript", true);
+        checkKep14Job->setProperty("triggerScript", QVariant(true));
         checkKep14Job->setServerName(serverName);
         checkKep14Job->setServerUrl(url);
         connect(checkKep14Job, &CheckKolabKep14SupportJob::result, this, &MultiImapVacationManager::slotCheckKep14Ended);
