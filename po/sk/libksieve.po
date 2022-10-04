@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-09-26 00:46+0000\n"
+"POT-Creation-Date: 2022-10-04 00:45+0000\n"
 "PO-Revision-Date: 2019-11-11 15:16+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -122,7 +122,7 @@ msgstr ""
 "Skript nebol úspešne nahraný.\n"
 "Skript môže obsahovať chyby."
 
-#: ksieveui/autocreatescripts/autocreatescriptdialog.cpp:24
+#: ksieveui/autocreatescripts/autocreatescriptdialog.cpp:27
 #, fuzzy, kde-format
 #| msgid "Create sieve filter"
 msgctxt "@title:window"
@@ -791,49 +791,49 @@ msgstr "Vložiť na začiatok"
 msgid "Append at the end"
 msgstr "Pripojiť na koniec"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:28
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:31
 #, fuzzy, kde-format
 #| msgid "Flags"
 msgctxt "@title:window"
 msgid "Flags"
 msgstr "Príznaky"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:83
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:86
 #, kde-format
 msgid "Deleted"
 msgstr "Vymazané"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:86
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:89
 #, kde-format
 msgid "Answered"
 msgstr "Odpovedané"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:89
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:92
 #, kde-format
 msgid "Flagged"
 msgstr "Označené"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:92
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:95
 #, kde-format
 msgid "Seen"
 msgstr "Prečítané"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:97
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:100
 #, kde-format
 msgid "Draft"
 msgstr "Návrh"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:134
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:137
 #, kde-format
 msgid "Click on button for selecting flags..."
 msgstr "Kliknutím na tlačidlo vyberiete vlajky..."
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:138
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:141
 #, kde-format
 msgid "..."
 msgstr "..."
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:139
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:142
 #, kde-format
 msgid "Select Flags"
 msgstr "Vybrať vlajky"
@@ -1002,7 +1002,7 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:23
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:41
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:253
 #, kde-format
 msgid "Date"
 msgstr "Dátum"
@@ -1424,73 +1424,73 @@ msgstr "Pásmo"
 msgid "Weekday"
 msgstr "Deň v týždni"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:23
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:27
 msgid "Select multiple headers..."
 msgstr "Vybrať viac hlavičiek..."
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:30
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:34
 #, fuzzy, kde-format
 #| msgid "Headers"
 msgctxt "@title:window"
 msgid "Headers"
 msgstr "Hlavičky"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:49
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:53
 #, kde-format
 msgid "Add new header:"
 msgstr "Pridať novú hlavičku:"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:239
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:243
 #, kde-format
 msgid "From"
 msgstr "Od"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:240
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:244
 #, kde-format
 msgid "To"
 msgstr "Pre"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:241
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:245
 #, kde-format
 msgid "Reply To"
 msgstr "Adresa pre odpoveď"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:242
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:246
 #, kde-format
 msgid "Cc"
 msgstr "Kópia"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:243
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:247
 #, kde-format
 msgid "Bcc"
 msgstr "Skrytá kópia"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:244
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
 #, kde-format
 msgid "Resent From"
 msgstr "Znova odoslať z"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:245
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
 #, kde-format
 msgid "Resent To"
 msgstr "Znova odoslať do"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:246
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
 #, kde-format
 msgid "Sender"
 msgstr "Odosielateľ"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
 #, kde-format
 msgid "Subject"
 msgstr "Predmet"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:254
 #, kde-format
 msgid "Message Id"
 msgstr "ID správy"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:255
 #, kde-format
 msgid "Content type"
 msgstr "Typ obsahu"
@@ -1583,24 +1583,24 @@ msgstr "GB"
 msgid "Please select an condition."
 msgstr "Prosím vyberte podmienku."
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:27
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:30
 #, kde-format
 msgid "Sieve Script"
 msgstr "Sieve skript"
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:135
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:138
 #, kde-format
 msgid "Error during importing script. Do you want to switch to text mode?"
 msgstr "Chyba počas importu skriptu. Chcete prepnúť do textového režimu?"
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:137
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:140
 #, fuzzy, kde-format
 #| msgid "Switch in text mode"
 msgctxt "@action:button"
 msgid "Switch to Text Mode"
 msgstr "Prepnúť do textového režimu"
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:138
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:141
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Switch"
@@ -1680,7 +1680,7 @@ msgid "Include:"
 msgstr "Zahrnúť:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:138
-#: ksieveui/templates/sievetemplateeditdialog.cpp:54
+#: ksieveui/templates/sievetemplateeditdialog.cpp:57
 #, kde-format
 msgid "Name:"
 msgstr "Názov:"
@@ -1753,7 +1753,7 @@ msgstr "blok \"elsif\""
 msgid "\"else\" block"
 msgstr "blok \"else\""
 
-#: ksieveui/autocreatescripts/sievescriptdescriptiondialog.cpp:23
+#: ksieveui/autocreatescripts/sievescriptdescriptiondialog.cpp:26
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title:window"
@@ -1916,35 +1916,35 @@ msgstr "Blok \"Elsif\""
 msgid "Block \"Else\""
 msgstr "Blok \"Else\""
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:24
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:28
 #, fuzzy, kde-format
 #| msgid "Sieve Parsing Error"
 msgctxt "@title:window"
 msgid "Sieve Parsing Error"
 msgstr "Chyba spracovania Sieve"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:33
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:35
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:37
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:38
 #, kde-format
 msgid "Save As..."
 msgstr "Uložiť ako..."
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:48
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:52
 #, kde-format
 msgid "Sieve script:"
 msgstr "Sieve skript:"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:50
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
 #, kde-format
 msgid "Errors reported:"
 msgstr "Oznámená chyba:"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:72
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:76
 #, kde-format
 msgid "All Files (*)"
 msgstr "Všetky súbory (*)"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:73
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Log To File"
@@ -1957,14 +1957,14 @@ msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Zavrieť kartu"
 
-#: ksieveui/debug/sievedebugdialog.cpp:35
+#: ksieveui/debug/sievedebugdialog.cpp:38
 #, fuzzy, kde-format
 #| msgid "Sieve Diagnostics"
 msgctxt "@title:window"
 msgid "Sieve Diagnostics"
 msgstr "Sieve diagnostika"
 
-#: ksieveui/debug/sievedebugdialog.cpp:60
+#: ksieveui/debug/sievedebugdialog.cpp:63
 #, kde-format
 msgid ""
 "Collecting diagnostic information about Sieve support...\n"
@@ -1973,12 +1973,12 @@ msgstr ""
 "Zhromažďovanie diagnostických informácií o podpore Sieve ...\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:63
+#: ksieveui/debug/sievedebugdialog.cpp:66
 #, kde-format
 msgid "No IMAP resource found."
 msgstr "Nenašiel sa žiadny IMAP zdroj."
 
-#: ksieveui/debug/sievedebugdialog.cpp:98
+#: ksieveui/debug/sievedebugdialog.cpp:101
 #, kde-format
 msgid ""
 "Unable to get the info\n"
@@ -1987,17 +1987,17 @@ msgstr ""
 "Nie je možné získať info\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:116
+#: ksieveui/debug/sievedebugdialog.cpp:119
 #, kde-format
 msgid "Collecting data for account '%1'...\n"
 msgstr "Zhromažďovanie údajov pre účet '%1'...\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:117
+#: ksieveui/debug/sievedebugdialog.cpp:120
 #, kde-format
 msgid "------------------------------------------------------------\n"
 msgstr "------------------------------------------------------------\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:131
+#: ksieveui/debug/sievedebugdialog.cpp:134
 #, kde-format
 msgid ""
 "(Account does not support Sieve)\n"
@@ -2006,12 +2006,12 @@ msgstr ""
 "(Účet nepodporuje Sieve)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:163
+#: ksieveui/debug/sievedebugdialog.cpp:166
 #, kde-format
 msgid "Contents of script '%1':\n"
 msgstr "Obsah skriptu '%1':\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:193
+#: ksieveui/debug/sievedebugdialog.cpp:196
 #: ksieveui/managescriptsjob/parseuserscriptjob.cpp:64
 #: ksieveui/managesievescriptsdialog.cpp:163
 #, kde-format
@@ -2024,7 +2024,7 @@ msgstr ""
 "Server odpovedal:\n"
 "%1"
 
-#: ksieveui/debug/sievedebugdialog.cpp:197
+#: ksieveui/debug/sievedebugdialog.cpp:200
 #, kde-format
 msgid ""
 "(This script is empty)\n"
@@ -2033,7 +2033,7 @@ msgstr ""
 "(Tento skript je prázdny.)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:200
+#: ksieveui/debug/sievedebugdialog.cpp:203
 #, kde-format
 msgid ""
 "------------------------------------------------------------\n"
@@ -2046,22 +2046,22 @@ msgstr ""
 "------------------------------------------------------------\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:218
+#: ksieveui/debug/sievedebugdialog.cpp:221
 #, kde-format
 msgid "Sieve capabilities:\n"
 msgstr "Sieve schopnosti:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:221
+#: ksieveui/debug/sievedebugdialog.cpp:224
 #, kde-format
 msgid "(No special capabilities available)"
 msgstr "(Nie sú k dispozícii špeciálne schopnosti)"
 
-#: ksieveui/debug/sievedebugdialog.cpp:229
+#: ksieveui/debug/sievedebugdialog.cpp:232
 #, kde-format
 msgid "Available Sieve scripts:\n"
 msgstr "Dostupné Sieve skripty:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:232
+#: ksieveui/debug/sievedebugdialog.cpp:235
 #, kde-format
 msgid ""
 "(No Sieve scripts available on this server)\n"
@@ -2070,7 +2070,7 @@ msgstr ""
 "(Nie sú dostupné Sieve skripty na tomto serveri)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:239
+#: ksieveui/debug/sievedebugdialog.cpp:242
 #, kde-format
 msgid ""
 "Active script: '%1'\n"
@@ -2079,27 +2079,27 @@ msgstr ""
 "Aktívny skript: '%1'\n"
 "\n"
 
-#: ksieveui/editor/sieveeditor.cpp:34
+#: ksieveui/editor/sieveeditor.cpp:37
 #, fuzzy, kde-format
 #| msgid "Edit Sieve Script"
 msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr "Upraviť Sieve skript"
 
-#: ksieveui/editor/sieveeditor.cpp:176
+#: ksieveui/editor/sieveeditor.cpp:179
 #, fuzzy, kde-format
 #| msgid "Script is modified. Do you want to close editor ?"
 msgid "Script is modified. Do you want to close editor?"
 msgstr "Skript je zmenený. Chcete zatvoriť editor?"
 
-#: ksieveui/editor/sieveeditor.cpp:178
+#: ksieveui/editor/sieveeditor.cpp:181
 #, fuzzy, kde-format
 #| msgid "Editor"
 msgctxt "@action:button"
 msgid "Close Editor"
 msgstr "Editor"
 
-#: ksieveui/editor/sieveeditor.cpp:179
+#: ksieveui/editor/sieveeditor.cpp:182
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Close"
@@ -2554,14 +2554,14 @@ msgstr ""
 "Server odpovedal:\n"
 "%1"
 
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:28
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:31
 #, fuzzy, kde-format
 #| msgid "Sieve Parsing"
 msgctxt "@title:window"
 msgid "Sieve Parsing"
 msgstr "Spracovanie Sieve"
 
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:77
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:80
 #, kde-format
 msgid "XML Files (*.xml);;All Files (*)"
 msgstr "XML súbory (*.xml);;Všetky súbory (*)"
@@ -2734,14 +2734,14 @@ msgstr "Zničiť mail poslaný od..."
 msgid "Vacations"
 msgstr "Prázdniny"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:34
+#: ksieveui/templates/sievetemplateeditdialog.cpp:37
 #, fuzzy, kde-format
 #| msgid "Default template"
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "Predvolená šablóna"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:34
+#: ksieveui/templates/sievetemplateeditdialog.cpp:37
 #, fuzzy, kde-format
 #| msgid "Template"
 msgctxt "@title:window"
@@ -2753,38 +2753,38 @@ msgstr "Šablóna"
 msgid "You can drag and drop element on editor to import template"
 msgstr "Môžete pretiahnuť prvok na editore na import šablóny"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:44
+#: ksieveui/vacation/multiimapvacationdialog.cpp:47
 #, fuzzy, kde-format
 #| msgid "Configure \"Out of Office\" Replies"
 msgctxt "@title:window"
 msgid "Configure \"Out of Office\" Replies"
 msgstr "Nastaviť odpovede \"Mimo kanceláriu\""
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:73
+#: ksieveui/vacation/multiimapvacationdialog.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr "Naozaj chcete zrušiť?"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:74
+#: ksieveui/vacation/multiimapvacationdialog.cpp:77
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Potvrdenie"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:75
+#: ksieveui/vacation/multiimapvacationdialog.cpp:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel Editing"
 msgstr ""
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:76
+#: ksieveui/vacation/multiimapvacationdialog.cpp:79
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Cancel"
 msgstr ""
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:107
+#: ksieveui/vacation/multiimapvacationdialog.cpp:110
 #, kde-format
 msgid ""
 "KMail's Out of Office Reply functionality relies on server-side filtering. "
