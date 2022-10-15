@@ -13,6 +13,7 @@
 #include <KMessageBox>
 #include <QPointer>
 #include <QWidget>
+#include <kwidgetsaddons_version.h>
 
 using namespace KSieveUi;
 
@@ -51,13 +52,22 @@ void VacationManager::slotUpdateVacationScriptStatus(bool active, const QString 
     if (active) {
         if (!d->mQuestionAsked) {
             d->mQuestionAsked = true;
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+            if (KMessageBox::questionTwoActions(nullptr,
+#else
             if (KMessageBox::questionYesNo(nullptr,
-                                           i18n("There is still an active out-of-office reply configured.\n"
-                                                "Do you want to edit it?"),
-                                           i18n("Out-of-office reply still active"),
-                                           KGuiItem(i18n("Edit"), QStringLiteral("document-properties")),
-                                           KGuiItem(i18n("Ignore"), QStringLiteral("dialog-cancel")))
+
+#endif
+                                                i18n("There is still an active out-of-office reply configured.\n"
+                                                     "Do you want to edit it?"),
+                                                i18n("Out-of-office reply still active"),
+                                                KGuiItem(i18n("Edit"), QStringLiteral("document-properties")),
+                                                KGuiItem(i18n("Ignore"), QStringLiteral("dialog-cancel")))
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                == KMessageBox::ButtonCode::PrimaryAction) {
+#else
                 == KMessageBox::Yes) {
+#endif
                 slotEditVacation(serverName);
             }
         }

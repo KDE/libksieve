@@ -21,6 +21,7 @@
 #include <QStackedWidget>
 #include <QTabBar>
 #include <QVBoxLayout>
+#include <kwidgetsaddons_version.h>
 
 using namespace KSieveUi;
 namespace
@@ -72,12 +73,20 @@ void MultiImapVacationDialog::reject()
         auto vacationPage = qobject_cast<VacationPageWidget *>(d->mTabWidget->widget(i));
         if (vacationPage) {
             if (vacationPage->wasChanged()) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                const int answer = KMessageBox::questionTwoActions(this,
+#else
                 const int answer = KMessageBox::questionYesNo(this,
-                                                              i18nc("@info", "Do you really want to cancel?"),
-                                                              i18nc("@title:window", "Confirmation"),
-                                                              KGuiItem(i18nc("@action:button", "Cancel Editing"), QStringLiteral("dialog-ok")),
-                                                              KGuiItem(i18nc("@action:button", "Do Not Cancel"), QStringLiteral("dialog-cancel")));
+#endif
+                                                                   i18nc("@info", "Do you really want to cancel?"),
+                                                                   i18nc("@title:window", "Confirmation"),
+                                                                   KGuiItem(i18nc("@action:button", "Cancel Editing"), QStringLiteral("dialog-ok")),
+                                                                   KGuiItem(i18nc("@action:button", "Do Not Cancel"), QStringLiteral("dialog-cancel")));
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+                if (answer == KMessageBox::ButtonCode::PrimaryAction) {
+#else
                 if (answer == KMessageBox::Yes) {
+#endif
                     QDialog::reject(); // Discard current changes
                 }
                 canCloseDialog = false;

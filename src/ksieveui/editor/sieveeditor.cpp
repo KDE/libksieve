@@ -16,6 +16,7 @@
 #include <QKeyEvent>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <kwidgetsaddons_version.h>
 
 using namespace KSieveUi;
 class KSieveUi::SieveEditorPrivate
@@ -175,12 +176,20 @@ void SieveEditor::addNormalMessage(const QString &msg)
 void SieveEditor::closeEvent(QCloseEvent *e)
 {
     if (d->mSieveEditorWidget->originalScript() != d->mSieveEditorWidget->script()) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        const int answer = KMessageBox::warningTwoActions(this,
+#else
         const int answer = KMessageBox::warningYesNo(this,
-                                                     i18n("Script is modified. Do you want to close editor?"),
-                                                     QString(),
-                                                     KGuiItem(i18nc("@action:button", "Close Editor"), QStringLiteral("dialog-close")),
-                                                     KGuiItem(i18nc("@action:button", "Do Not Close"), QStringLiteral("dialog-cancel")));
+#endif
+                                                          i18n("Script is modified. Do you want to close editor?"),
+                                                          QString(),
+                                                          KGuiItem(i18nc("@action:button", "Close Editor"), QStringLiteral("dialog-close")),
+                                                          KGuiItem(i18nc("@action:button", "Do Not Close"), QStringLiteral("dialog-cancel")));
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        if (answer == KMessageBox::ButtonCode::SecondaryAction) {
+#else
         if (answer == KMessageBox::No) {
+#endif
             e->ignore();
             return;
         }

@@ -14,6 +14,7 @@
 #include <QTextStream>
 
 #include <cerrno>
+#include <kwidgetsaddons_version.h>
 
 using namespace KSieveUi;
 SieveEditorAbstractWidget::SieveEditorAbstractWidget(QWidget *parent)
@@ -51,12 +52,20 @@ void SieveEditorAbstractWidget::setImportScript(const QString &)
 void SieveEditorAbstractWidget::slotImport()
 {
     if (!currentscript().isEmpty()) {
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        const int answer = KMessageBox::warningTwoActions(this,
+#else
         const int answer = KMessageBox::warningYesNo(this,
-                                                     i18n("You will overwrite script. Do you want to continue?"),
-                                                     i18n("Import Script"),
-                                                     KStandardGuiItem::cont(),
-                                                     KStandardGuiItem::cancel());
+#endif
+                                                          i18n("You will overwrite script. Do you want to continue?"),
+                                                          i18n("Import Script"),
+                                                          KStandardGuiItem::cont(),
+                                                          KStandardGuiItem::cancel());
+#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
+        if (answer == KMessageBox::ButtonCode::SecondaryAction) {
+#else
         if (answer == KMessageBox::No) {
+#endif
             return;
         }
     }
