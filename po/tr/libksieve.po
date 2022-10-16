@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-04 00:45+0000\n"
+"POT-Creation-Date: 2022-10-16 00:47+0000\n"
 "PO-Revision-Date: 2022-05-24 12:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1585,23 +1585,23 @@ msgstr "GiB"
 msgid "Please select an condition."
 msgstr "Lütfen bir koşul seçin."
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:30
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:31
 #, kde-format
 msgid "Sieve Script"
 msgstr "Sieve Betiği"
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:138
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:143
 #, kde-format
 msgid "Error during importing script. Do you want to switch to text mode?"
 msgstr "Betiği içe aktarırken hata. Metin kipine geçmek istiyor musunuz?"
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:140
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:145
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch to Text Mode"
 msgstr "Metin Kipine Geç"
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:141
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:146
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Switch"
@@ -1758,31 +1758,31 @@ msgctxt "@title:window"
 msgid "Description"
 msgstr "Açıklama"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:128
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:129
 #, kde-format
 msgctxt "Move selected filter up."
 msgid "Up"
 msgstr "Yukarı"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:129
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:130
 #, kde-format
 msgctxt "Move selected filter down."
 msgid "Down"
 msgstr "Aşağı"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:130
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:131
 #, kde-format
 msgctxt "Move selected filter to the top."
 msgid "Top"
 msgstr "Üst"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:131
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:132
 #, kde-format
 msgctxt "Move selected filter to the bottom."
 msgid "Bottom"
 msgstr "Alt"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:144
 #: ksieveui/widgets/managesievewidget.cpp:228
 #: ksieveui/widgets/managesievewidget.cpp:234
 #: ksieveui/widgets/managesievewidget.cpp:246
@@ -1790,81 +1790,81 @@ msgstr "Alt"
 msgid "New Script"
 msgstr "Yeni Betik"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:150
 #: ksieveui/widgets/managesievewidget.cpp:150
 #, kde-format
 msgid "Delete Script"
 msgstr "Betiği Sil"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:154
 #: ksieveui/widgets/managesievewidget.cpp:426
 #: ksieveui/widgets/managesievewidget.cpp:454
 #, kde-format
 msgid "Rename Script"
 msgstr "Betiği Yeniden Adlandır"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:160
 #, kde-format
 msgid "Edit Script Description"
 msgstr "Betik Açıklamasını Düzenle"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:188
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:189
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Script"
 msgstr "Yeni Betik"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:193
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:194
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Rename Script"
 msgstr "Betiği Yeniden Adlandır"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:199
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Script"
 msgstr "Betiği Sil"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:253
 #, kde-format
 msgctxt "@title:window"
 msgid "New Script"
 msgstr "Yeni Betik"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:253
 #, kde-format
 msgid "New script name:"
 msgstr "Yeni betik adı:"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:264
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:269
 #, kde-format
 msgid "Do you want to delete \"%1\" script?"
 msgstr "\"%1\" betiğini silmek istiyor musunuz?"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:265
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Script"
 msgstr "Betiği Sil"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:294
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Script"
 msgstr "Betiği Yeniden Adlandır"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:294
 #, kde-format
 msgid "New name for the script:"
 msgstr "Betik için yeni ad:"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:478
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:487
 #, kde-format
 msgid "forEveryPart is not supported by your server"
 msgstr "forEveryPart sunucunuz tarafından desteklenmiyor"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:576
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:585
 #, kde-format
 msgid "Script part %1"
 msgstr "Betik bölüm %1"
@@ -2068,62 +2068,62 @@ msgstr ""
 "Etkin betik: '%1'\n"
 "\n"
 
-#: ksieveui/editor/sieveeditor.cpp:37
+#: ksieveui/editor/sieveeditor.cpp:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr "Sieve Betiğini Düzenle"
 
-#: ksieveui/editor/sieveeditor.cpp:179
+#: ksieveui/editor/sieveeditor.cpp:184
 #, kde-format
 msgid "Script is modified. Do you want to close editor?"
 msgstr "Betik değiştirilmiş. Düzenleyiciyi kapatmak istiyor musunuz?"
 
-#: ksieveui/editor/sieveeditor.cpp:181
+#: ksieveui/editor/sieveeditor.cpp:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Editor"
 msgstr "Düzenleyiciyi Kapat"
 
-#: ksieveui/editor/sieveeditor.cpp:182
+#: ksieveui/editor/sieveeditor.cpp:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Close"
 msgstr "Kapatma"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:28
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:29
 #, kde-format
 msgid "Sieve Files (*.siv);;All Files (*)"
 msgstr "Sieve Dosyaları (*.siv);;Tüm Dosyalar (*)"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:29
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Script"
 msgstr "Sieve Betiği"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:55
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:60
 #, kde-format
 msgid "You will overwrite script. Do you want to continue?"
 msgstr "Betiğin üzerine yazacaksınız. Sürdürmek istiyor musunuz?"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:56
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:61
 #, kde-format
 msgid "Import Script"
 msgstr "Betiği İçe Aktar"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:63
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:72
 #, kde-format
 msgid "*.siv;;sieve files (*.siv);;all files (*)"
 msgstr "*.siv;;sieve dosyaları (*.siv);;tüm dosyalar (*)"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:64
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:73
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Script Sieve"
 msgstr "Sieve Betiğini İçe Aktar"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:70
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:79
 #, kde-format
 msgid ""
 "Could not load the file %1:\n"
@@ -2132,7 +2132,7 @@ msgstr ""
 "\"%1\" dosyası yüklenemedi:\n"
 "\"%2\" detaylı hata tanımlamasıdır."
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:74
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:83
 #, kde-format
 msgid "Sieve Editor Error"
 msgstr "Sieve Düzenleyici Hatası"
@@ -2727,37 +2727,37 @@ msgid "You can drag and drop element on editor to import template"
 msgstr ""
 "Şablonu içe aktarmak için düzenleyici üzerine öge sürükleyip bırakabilirsiniz"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:47
+#: ksieveui/vacation/multiimapvacationdialog.cpp:48
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure \"Out of Office\" Replies"
 msgstr "\"Ofis Dışında\" Yanıtlarını Yapılandır"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:76
+#: ksieveui/vacation/multiimapvacationdialog.cpp:81
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr "Gerçekten iptal etmek istiyor musunuz?"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:77
+#: ksieveui/vacation/multiimapvacationdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Onaylar"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:78
+#: ksieveui/vacation/multiimapvacationdialog.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel Editing"
 msgstr "Düzenlemeyi İptal Et"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:79
+#: ksieveui/vacation/multiimapvacationdialog.cpp:84
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Cancel"
 msgstr "İptal Etme"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:110
+#: ksieveui/vacation/multiimapvacationdialog.cpp:119
 #, kde-format
 msgid ""
 "KMail's Out of Office Reply functionality relies on server-side filtering. "
@@ -2865,7 +2865,7 @@ msgstr "Spam iletilere tatil yanıtları gönderme"
 msgid "Only react to mail coming from domain"
 msgstr "Sadece bu alandan gelen iletilere tepki ver"
 
-#: ksieveui/vacation/vacationmanager.cpp:55
+#: ksieveui/vacation/vacationmanager.cpp:61
 #, kde-format
 msgid ""
 "There is still an active out-of-office reply configured.\n"
@@ -2874,17 +2874,17 @@ msgstr ""
 "Etkin bir ofis dışındayım yanıtı yapılandırılmış.\n"
 "Onu düzenlemek istiyor musunuz?"
 
-#: ksieveui/vacation/vacationmanager.cpp:57
+#: ksieveui/vacation/vacationmanager.cpp:63
 #, kde-format
 msgid "Out-of-office reply still active"
 msgstr "Ofis-dışı yanıtı hâlâ aktif"
 
-#: ksieveui/vacation/vacationmanager.cpp:58
+#: ksieveui/vacation/vacationmanager.cpp:64
 #, kde-format
 msgid "Edit"
 msgstr "Düzenle"
 
-#: ksieveui/vacation/vacationmanager.cpp:59
+#: ksieveui/vacation/vacationmanager.cpp:65
 #, kde-format
 msgid "Ignore"
 msgstr "Yok Say"

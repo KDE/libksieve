@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-04 00:45+0000\n"
+"POT-Creation-Date: 2022-10-16 00:47+0000\n"
 "PO-Revision-Date: 2014-03-26 01:10+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1503,25 +1503,25 @@ msgstr "GB"
 msgid "Please select an condition."
 msgstr "Παρακαλώ επιλέξτε μια συνθήκη."
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:30
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:31
 #, kde-format
 msgid "Sieve Script"
 msgstr "Σενάριο του Sieve"
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:138
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:143
 #, fuzzy, kde-format
 #| msgid "You will overwrite script. Do you want to continue?"
 msgid "Error during importing script. Do you want to switch to text mode?"
 msgstr "Θα αντικαταστήσετε το σενάριο. Θέλετε να συνεχίσετε;"
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:140
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:145
 #, fuzzy, kde-format
 #| msgid "Switch in text mode"
 msgctxt "@action:button"
 msgid "Switch to Text Mode"
 msgstr "Αλλαγή σε λειτουργία κειμένου"
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:141
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:146
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Switch"
@@ -1671,31 +1671,31 @@ msgctxt "@title:window"
 msgid "Description"
 msgstr "Περιγραφή"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:128
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:129
 #, kde-format
 msgctxt "Move selected filter up."
 msgid "Up"
 msgstr "Πάνω"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:129
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:130
 #, kde-format
 msgctxt "Move selected filter down."
 msgid "Down"
 msgstr "Κάτω"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:130
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:131
 #, kde-format
 msgctxt "Move selected filter to the top."
 msgid "Top"
 msgstr "Κορυφή"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:131
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:132
 #, kde-format
 msgctxt "Move selected filter to the bottom."
 msgid "Bottom"
 msgstr "Τέλος"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:144
 #: ksieveui/widgets/managesievewidget.cpp:228
 #: ksieveui/widgets/managesievewidget.cpp:234
 #: ksieveui/widgets/managesievewidget.cpp:246
@@ -1703,13 +1703,13 @@ msgstr "Τέλος"
 msgid "New Script"
 msgstr "Νέο σενάριο"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:150
 #: ksieveui/widgets/managesievewidget.cpp:150
 #, kde-format
 msgid "Delete Script"
 msgstr "Διαγραφή σεναρίου"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:154
 #: ksieveui/widgets/managesievewidget.cpp:426
 #: ksieveui/widgets/managesievewidget.cpp:454
 #, fuzzy, kde-format
@@ -1717,72 +1717,72 @@ msgstr "Διαγραφή σεναρίου"
 msgid "Rename Script"
 msgstr "Σενάριο του Sieve"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:160
 #, fuzzy, kde-format
 #| msgid "Edit description..."
 msgid "Edit Script Description"
 msgstr "Επεξεργασία περιγραφής..."
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:188
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:189
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgctxt "@action:inmenu"
 msgid "New Script"
 msgstr "Νέο σενάριο"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:193
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:194
 #, fuzzy, kde-format
 #| msgid "Sieve Script"
 msgctxt "@action:inmenu"
 msgid "Rename Script"
 msgstr "Σενάριο του Sieve"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:199
 #, fuzzy, kde-format
 #| msgid "Delete Script"
 msgctxt "@action:inmenu"
 msgid "Delete Script"
 msgstr "Διαγραφή σεναρίου"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:253
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgctxt "@title:window"
 msgid "New Script"
 msgstr "Νέο σενάριο"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:253
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgid "New script name:"
 msgstr "Νέο σενάριο"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:264
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:269
 #, kde-format
 msgid "Do you want to delete \"%1\" script?"
 msgstr "Επιθυμείτε πραγματικά τη διαγραφή του σεναρίου \"%1\";"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:265
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:270
 #, fuzzy, kde-format
 #| msgid "Delete Script"
 msgctxt "@title:window"
 msgid "Delete Script"
 msgstr "Διαγραφή σεναρίου"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:294
 #, fuzzy, kde-format
 #| msgid "Sieve Script"
 msgctxt "@title:window"
 msgid "Rename Script"
 msgstr "Σενάριο του Sieve"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:294
 #, fuzzy, kde-format
 #| msgid "Please enter a name for the new Sieve script:"
 msgid "New name for the script:"
 msgstr "Δώστε ένα όνομα για το νέο σενάριο sieve:"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:478
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:487
 #, fuzzy, kde-format
 #| msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgid "forEveryPart is not supported by your server"
@@ -1790,7 +1790,7 @@ msgstr ""
 "Το χαρακτηριστικό \"%1\" στη συνθήκη \"%2\" δεν υποστηρίζεται από τον "
 "εξυπηρετητή"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:576
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:585
 #, kde-format
 msgid "Script part %1"
 msgstr "Τμήμα σεναρίου %1"
@@ -2004,32 +2004,32 @@ msgstr ""
 "Ενεργό σενάριο: %1\n"
 "\n"
 
-#: ksieveui/editor/sieveeditor.cpp:37
+#: ksieveui/editor/sieveeditor.cpp:38
 #, fuzzy, kde-format
 #| msgid "Edit Sieve Script"
 msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr "Επεξεργασία σεναρίου Sieve"
 
-#: ksieveui/editor/sieveeditor.cpp:179
+#: ksieveui/editor/sieveeditor.cpp:184
 #, kde-format
 msgid "Script is modified. Do you want to close editor?"
 msgstr ""
 
-#: ksieveui/editor/sieveeditor.cpp:181
+#: ksieveui/editor/sieveeditor.cpp:186
 #, fuzzy, kde-format
 #| msgid "Editor"
 msgctxt "@action:button"
 msgid "Close Editor"
 msgstr "Επεξεργαστής"
 
-#: ksieveui/editor/sieveeditor.cpp:182
+#: ksieveui/editor/sieveeditor.cpp:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Close"
 msgstr ""
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:28
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:29
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.siv|sieve files (*.siv)\n"
@@ -2039,24 +2039,24 @@ msgstr ""
 "*.siv|sieve αρχεία (*.siv)\n"
 "*|όλα τα αρχεία (*)"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:29
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:30
 #, fuzzy, kde-format
 #| msgid "Sieve Script"
 msgctxt "@title:window"
 msgid "Save Script"
 msgstr "Σενάριο του Sieve"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:55
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:60
 #, kde-format
 msgid "You will overwrite script. Do you want to continue?"
 msgstr "Θα αντικαταστήσετε το σενάριο. Θέλετε να συνεχίσετε;"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:56
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:61
 #, kde-format
 msgid "Import Script"
 msgstr "Εισαγωγή σεναρίου"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:63
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:72
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.siv|sieve files (*.siv)\n"
@@ -2066,14 +2066,14 @@ msgstr ""
 "*.siv|sieve αρχεία (*.siv)\n"
 "*|όλα τα αρχεία (*)"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:64
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:73
 #, fuzzy, kde-format
 #| msgid "Import Script"
 msgctxt "@title:window"
 msgid "Import Script Sieve"
 msgstr "Εισαγωγή σεναρίου"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:70
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:79
 #, kde-format
 msgid ""
 "Could not load the file %1:\n"
@@ -2082,7 +2082,7 @@ msgstr ""
 "Αδυναμία φόρτωσης του αρχείου %1:\n"
 "\"%2\" είναι η λεπτομερής περιγραφή σφάλματος."
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:74
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:83
 #, kde-format
 msgid "Sieve Editor Error"
 msgstr "Σφάλμα επεξεργαστή Sieve"
@@ -2720,39 +2720,39 @@ msgstr ""
 "Μπορείτε να εισάγετε πρότυπο με μεταφορά &amp; απόθεση του αντικειμένου στον "
 "επεξεργαστή"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:47
+#: ksieveui/vacation/multiimapvacationdialog.cpp:48
 #, fuzzy, kde-format
 #| msgid "Configure \"Out of Office\" Replies"
 msgctxt "@title:window"
 msgid "Configure \"Out of Office\" Replies"
 msgstr "Διαμόρφωση «Εκτός γραφείου» απαντήσεων"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:76
+#: ksieveui/vacation/multiimapvacationdialog.cpp:81
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr ""
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:77
+#: ksieveui/vacation/multiimapvacationdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Conditions"
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Συνθήκες"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:78
+#: ksieveui/vacation/multiimapvacationdialog.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel Editing"
 msgstr ""
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:79
+#: ksieveui/vacation/multiimapvacationdialog.cpp:84
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Cancel"
 msgstr ""
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:110
+#: ksieveui/vacation/multiimapvacationdialog.cpp:119
 #, kde-format
 msgid ""
 "KMail's Out of Office Reply functionality relies on server-side filtering. "
@@ -2865,7 +2865,7 @@ msgstr "Να μη γίνεται αποστολή απαντήσεων διακ�
 msgid "Only react to mail coming from domain"
 msgstr "Να υπάρχει ανταπόκριση μόνο σε μηνύματα προερχόμενα από τομέα"
 
-#: ksieveui/vacation/vacationmanager.cpp:55
+#: ksieveui/vacation/vacationmanager.cpp:61
 #, kde-format
 msgid ""
 "There is still an active out-of-office reply configured.\n"
@@ -2874,17 +2874,17 @@ msgstr ""
 "Υπάρχει ακόμη διαμορφωμένη μια ενεργή εκτός-γραφείου απάντηση.\n"
 "Θέλετε να την επεξεργαστείτε;"
 
-#: ksieveui/vacation/vacationmanager.cpp:57
+#: ksieveui/vacation/vacationmanager.cpp:63
 #, kde-format
 msgid "Out-of-office reply still active"
 msgstr "Εκτός-γραφείου απάντηση ακόμη ενεργή"
 
-#: ksieveui/vacation/vacationmanager.cpp:58
+#: ksieveui/vacation/vacationmanager.cpp:64
 #, kde-format
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#: ksieveui/vacation/vacationmanager.cpp:59
+#: ksieveui/vacation/vacationmanager.cpp:65
 #, kde-format
 msgid "Ignore"
 msgstr "Αγνόηση"
