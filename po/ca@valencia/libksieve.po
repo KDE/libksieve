@@ -2389,7 +2389,7 @@ msgstr "Bu&sca:"
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:52
 #, kde-format
 msgid "Text to search for"
-msgstr "Text que cal buscar"
+msgstr "Text que s'ha de buscar"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
 #, kde-format
@@ -2849,7 +2849,7 @@ msgstr "Impossible instal·lar script en el servidor «%1»"
 #: ksieveui/vacation/vacationeditwidget.cpp:47
 #, kde-format
 msgid "Configure vacation notifications to be sent:"
-msgstr "Configura les notificacions d'absències a enviar:"
+msgstr "Configura les notificacions d'absències que s'han d'enviar:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:55
 #, kde-format
