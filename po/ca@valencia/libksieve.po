@@ -2593,7 +2593,7 @@ msgid ""
 "switch."
 msgstr ""
 "Permet que els usuaris pugen scripts de «Sieve» de «fora de l'oficina», però "
-"impedix que canvien qualsevol opció de configuració, com el domini a "
+"impedix que canvien qualsevol opció de configuració, com el domini al qual "
 "respondre o el commutador de resposta al correu brossa."
 
 #. i18n: ectx: label, entry (OutOfOfficeDomain), group (OutOfOffice)
