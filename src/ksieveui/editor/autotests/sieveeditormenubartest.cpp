@@ -138,6 +138,7 @@ void SieveEditorMenuBarTest::shouldHaveDefaultValue()
 void SieveEditorMenuBarTest::shouldEmitSignals()
 {
     KSieveUi::SieveEditorMenuBar bar;
+    bar.setEditorMode(true);
     QSignalSpy spyComment(&bar, &KSieveUi::SieveEditorMenuBar::comment);
     bar.commentCodeAction()->trigger();
 
