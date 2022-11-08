@@ -3320,10 +3320,3 @@ msgstr ""
 #, kde-format
 msgid "Unknown error"
 msgstr "Error desconegut"
-
-#~ msgid "Share Script..."
-#~ msgstr "Comparteix l'script..."
-
-#~ msgctxt "Default description for the source"
-#~ msgid "My Sieve Script"
-#~ msgstr "El meu script de «Sieve»"
