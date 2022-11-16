@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:47+0000\n"
-"PO-Revision-Date: 2022-05-24 12:34+0300\n"
+"PO-Revision-Date: 2022-11-15 05:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.04.0\n"
+"X-Generator: Lokalize 22.08.3\n"
 "X-POOTLE-MTIME: 1413117019.000000\n"
 
 #: kmanagesieve/session.cpp:90
@@ -1002,8 +1002,8 @@ msgid ""
 "The currentdate test is similar to the date test, except that it operates on "
 "the current date/time rather than a value extracted from the message header."
 msgstr ""
-"currentdate testi date testine benzer, farklı olarak ileti başlığından "
-"çıkartılan değerler yerine mevcut tarih/saat ile çalışır."
+"currentdate testi date sınamasına benzer, farklı olarak ileti başlığından "
+"çıkarılan değerler yerine geçerli tarih/saat ile çalışır."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:23
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:41
@@ -1018,8 +1018,8 @@ msgid ""
 "The date test matches date/time information derived from headers containing "
 "date-time values."
 msgstr ""
-"Date testi tarih/zaman bilgisini başlıktan çıkartılan tarih-zaman bilgisiyle "
-"eşleştirir."
+"Tarih sınaması, tarih/zaman bilgisini başlıktan çıkarılan tarih-zaman "
+"bilgisiyle eşleştirir."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:24
 #, kde-format
