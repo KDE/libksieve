@@ -26,7 +26,7 @@
 #include <QMenu>
 #include <QMetaType>
 #include <QTimer>
-//#define USE_RENAME_SIEVE_METHOD 1
+// #define USE_RENAME_SIEVE_METHOD 1
 using namespace KSieveUi;
 Q_DECLARE_METATYPE(QTreeWidgetItem *)
 
