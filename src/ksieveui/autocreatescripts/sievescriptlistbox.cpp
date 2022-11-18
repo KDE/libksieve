@@ -24,7 +24,6 @@
 #include <QMenu>
 #include <QPointer>
 #include <QVBoxLayout>
-#include <kwidgetsaddons_version.h>
 
 namespace
 {
@@ -261,20 +260,12 @@ void SieveScriptListBox::slotDelete()
 {
     QListWidgetItem *item = mSieveListScript->currentItem();
     if (item) {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
         const int answer = KMessageBox::warningTwoActions(this,
-#else
-        const int answer = KMessageBox::warningYesNo(this,
-#endif
                                                           i18n("Do you want to delete \"%1\" script?", item->text()),
                                                           i18nc("@title:window", "Delete Script"),
                                                           KStandardGuiItem::del(),
                                                           KStandardGuiItem::cancel());
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
         if (answer == KMessageBox::ButtonCode::PrimaryAction) {
-#else
-        if (answer == KMessageBox::Yes) {
-#endif
             auto itemScript = static_cast<SieveScriptListItem *>(item);
             Q_EMIT removePage(itemScript->scriptPage());
             delete item;

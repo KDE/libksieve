@@ -19,7 +19,6 @@
 #include <QSplitter>
 #include <QStackedWidget>
 #include <QVBoxLayout>
-#include <kwidgetsaddons_version.h>
 
 using namespace KSieveUi;
 namespace
@@ -135,20 +134,12 @@ void SieveEditorGraphicalModeWidget::setImportScript(const QString &script)
             mSieveParsingWarning->animatedShow();
         }
     } else {
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
         const int answer = KMessageBox::questionTwoActions(this,
-#else
-        const int answer = KMessageBox::questionYesNo(this,
-#endif
                                                            i18n("Error during importing script. Do you want to switch to text mode?"),
                                                            QString(),
                                                            KGuiItem(i18nc("@action:button", "Switch to Text Mode")),
                                                            KGuiItem(i18nc("@action:button", "Do Not Switch"), QStringLiteral("dialog-cancel")));
-#if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
         if (answer == KMessageBox::ButtonCode::PrimaryAction) {
-#else
-        if (answer == KMessageBox::Yes) {
-#endif
             Q_EMIT switchTextMode(script);
         }
         qCDebug(LIBKSIEVE_LOG) << " cannot import script";
