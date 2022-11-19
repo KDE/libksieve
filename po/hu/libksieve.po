@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-10-16 00:47+0000\n"
+"POT-Creation-Date: 2022-11-19 00:47+0000\n"
 "PO-Revision-Date: 2021-11-04 13:50+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1559,25 +1559,25 @@ msgstr "GB"
 msgid "Please select an condition."
 msgstr "Válasszon egy feltételt."
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:31
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:30
 #, kde-format
 msgid "Sieve Script"
 msgstr "Sieve parancsfájl"
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:143
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:138
 #, kde-format
 msgid "Error during importing script. Do you want to switch to text mode?"
 msgstr ""
 "Hiba a parancsfájl importálása közben. Szeretne átváltani szöveges módra?"
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:145
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:140
 #, fuzzy, kde-format
 #| msgid "Switch in text mode"
 msgctxt "@action:button"
 msgid "Switch to Text Mode"
 msgstr "Átváltás szöveges módba"
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:146
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:141
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Switch"
@@ -1737,31 +1737,31 @@ msgctxt "@title:window"
 msgid "Description"
 msgstr "Leírás"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:129
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:128
 #, kde-format
 msgctxt "Move selected filter up."
 msgid "Up"
 msgstr "Fel"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:130
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:129
 #, kde-format
 msgctxt "Move selected filter down."
 msgid "Down"
 msgstr "Le"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:131
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:130
 #, kde-format
 msgctxt "Move selected filter to the top."
 msgid "Top"
 msgstr "Fent"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:132
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:131
 #, kde-format
 msgctxt "Move selected filter to the bottom."
 msgid "Bottom"
 msgstr "Lent"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:144
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
 #: ksieveui/widgets/managesievewidget.cpp:228
 #: ksieveui/widgets/managesievewidget.cpp:234
 #: ksieveui/widgets/managesievewidget.cpp:246
@@ -1769,13 +1769,13 @@ msgstr "Lent"
 msgid "New Script"
 msgstr "Új parancsfájl"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:150
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
 #: ksieveui/widgets/managesievewidget.cpp:150
 #, kde-format
 msgid "Delete Script"
 msgstr "Parancsfájl törlése "
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:154
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
 #: ksieveui/widgets/managesievewidget.cpp:426
 #: ksieveui/widgets/managesievewidget.cpp:454
 #, fuzzy, kde-format
@@ -1783,77 +1783,77 @@ msgstr "Parancsfájl törlése "
 msgid "Rename Script"
 msgstr "Parancsfájl mentése"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:160
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
 #, fuzzy, kde-format
 #| msgid "Edit description..."
 msgid "Edit Script Description"
 msgstr "Leírás szerkesztése…"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:189
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:188
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgctxt "@action:inmenu"
 msgid "New Script"
 msgstr "Új parancsfájl"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:194
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:193
 #, fuzzy, kde-format
 #| msgid "Save Script"
 msgctxt "@action:inmenu"
 msgid "Rename Script"
 msgstr "Parancsfájl mentése"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:199
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
 #, fuzzy, kde-format
 #| msgid "Delete Script"
 msgctxt "@action:inmenu"
 msgid "Delete Script"
 msgstr "Parancsfájl törlése "
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:253
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgctxt "@title:window"
 msgid "New Script"
 msgstr "Új parancsfájl"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:253
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgid "New script name:"
 msgstr "Új parancsfájl"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:269
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:264
 #, kde-format
 msgid "Do you want to delete \"%1\" script?"
 msgstr "Szeretné törölni a(z) „%1” parancsfájlt?"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:270
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:265
 #, fuzzy, kde-format
 #| msgid "Delete Script"
 msgctxt "@title:window"
 msgid "Delete Script"
 msgstr "Parancsfájl törlése "
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:294
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
 #, fuzzy, kde-format
 #| msgid "Save Script"
 msgctxt "@title:window"
 msgid "Rename Script"
 msgstr "Parancsfájl mentése"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:294
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
 #, fuzzy, kde-format
 #| msgid "Please enter a name for the new Sieve script:"
 msgid "New name for the script:"
 msgstr "Adja meg az új Sieve parancsfájl nevét:"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:487
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:478
 #, kde-format
 msgid "forEveryPart is not supported by your server"
 msgstr "A forEveryPart nincs támogatva a kiszolgálóján"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:585
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:576
 #, kde-format
 msgid "Script part %1"
 msgstr "Parancsfájl %1. része"
@@ -2070,32 +2070,32 @@ msgstr ""
 "Aktív parancsfájl: %1\n"
 "\n"
 
-#: ksieveui/editor/sieveeditor.cpp:38
+#: ksieveui/editor/sieveeditor.cpp:37
 #, fuzzy, kde-format
 #| msgid "Edit Sieve Script"
 msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr "Sieve parancsfájl szerkesztése"
 
-#: ksieveui/editor/sieveeditor.cpp:184
+#: ksieveui/editor/sieveeditor.cpp:179
 #, kde-format
 msgid "Script is modified. Do you want to close editor?"
 msgstr ""
 
-#: ksieveui/editor/sieveeditor.cpp:186
+#: ksieveui/editor/sieveeditor.cpp:181
 #, fuzzy, kde-format
 #| msgid "Editor"
 msgctxt "@action:button"
 msgid "Close Editor"
 msgstr "Szerkesztő"
 
-#: ksieveui/editor/sieveeditor.cpp:187
+#: ksieveui/editor/sieveeditor.cpp:182
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Close"
 msgstr ""
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:29
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:28
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.siv|sieve files (*.siv)\n"
@@ -2105,24 +2105,24 @@ msgstr ""
 "*.siv|sieve fájlok (*.siv)\n"
 "*|minden fájl (*)"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:30
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:29
 #, fuzzy, kde-format
 #| msgid "Save Script"
 msgctxt "@title:window"
 msgid "Save Script"
 msgstr "Parancsfájl mentése"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:60
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:55
 #, kde-format
 msgid "You will overwrite script. Do you want to continue?"
 msgstr "Felül fogja írni a parancsfájlt. Szeretné folytatni?"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:61
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:56
 #, kde-format
 msgid "Import Script"
 msgstr "Parancsfájl importálása"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:72
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:63
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.siv|sieve files (*.siv)\n"
@@ -2132,14 +2132,14 @@ msgstr ""
 "*.siv|sieve fájlok (*.siv)\n"
 "*|minden fájl (*)"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:73
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:64
 #, fuzzy, kde-format
 #| msgid "Import Script Sieve"
 msgctxt "@title:window"
 msgid "Import Script Sieve"
 msgstr "Sieve parancsfájl importálása"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:79
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:70
 #, kde-format
 msgid ""
 "Could not load the file %1:\n"
@@ -2148,7 +2148,7 @@ msgstr ""
 "Nem sikerült betölteni a(z) %1 fájlt:\n"
 "Részletes hibaleírás: „%2”"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:83
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:74
 #, kde-format
 msgid "Sieve Editor Error"
 msgstr "Sieve-szerkesztő hiba"
@@ -2774,39 +2774,39 @@ msgstr ""
 "Sablon importálásához a szerkesztőben használhatja az elemeken a fogd és "
 "vidd módszert"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:48
+#: ksieveui/vacation/multiimapvacationdialog.cpp:47
 #, fuzzy, kde-format
 #| msgid "Configure \"Out of Office\" Replies"
 msgctxt "@title:window"
 msgid "Configure \"Out of Office\" Replies"
 msgstr "Az „Irodán kívül vagyok” üzenetek beállítása"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:81
+#: ksieveui/vacation/multiimapvacationdialog.cpp:76
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr ""
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:82
+#: ksieveui/vacation/multiimapvacationdialog.cpp:77
 #, fuzzy, kde-format
 #| msgid "Conditions"
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Feltételek"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:83
+#: ksieveui/vacation/multiimapvacationdialog.cpp:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel Editing"
 msgstr ""
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:84
+#: ksieveui/vacation/multiimapvacationdialog.cpp:79
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Cancel"
 msgstr ""
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:119
+#: ksieveui/vacation/multiimapvacationdialog.cpp:110
 #, kde-format
 msgid ""
 "KMail's Out of Office Reply functionality relies on server-side filtering. "
@@ -2918,7 +2918,7 @@ msgstr "Ne küldjön szabadság választ spam üzenetekre"
 msgid "Only react to mail coming from domain"
 msgstr "Csak tartományból érkező levelekre reagáljon"
 
-#: ksieveui/vacation/vacationmanager.cpp:61
+#: ksieveui/vacation/vacationmanager.cpp:55
 #, kde-format
 msgid ""
 "There is still an active out-of-office reply configured.\n"
@@ -2927,17 +2927,17 @@ msgstr ""
 "Még mindig van egy aktív „Irodán kívül vagyok” válasz beállítva.\n"
 "Szeretné szerkeszteni?"
 
-#: ksieveui/vacation/vacationmanager.cpp:63
+#: ksieveui/vacation/vacationmanager.cpp:57
 #, kde-format
 msgid "Out-of-office reply still active"
 msgstr "Az „Irodán kívül vagyok” válasz még aktív"
 
-#: ksieveui/vacation/vacationmanager.cpp:64
+#: ksieveui/vacation/vacationmanager.cpp:58
 #, kde-format
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: ksieveui/vacation/vacationmanager.cpp:65
+#: ksieveui/vacation/vacationmanager.cpp:59
 #, kde-format
 msgid "Ignore"
 msgstr "Figyelmen kívül hagyás"
