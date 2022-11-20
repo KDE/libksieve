@@ -22,7 +22,7 @@
 #include <KPIMTextEdit/SlideContainer>
 #include <KPIMTextEdit/TextGotoLineWidget>
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-#include <KPIMTextEdit/TextToSpeechWidget>
+#include <KPIMTextEditTextToSpeech/TextToSpeechWidget>
 #endif
 
 #include <ksieve/error.h>
@@ -77,7 +77,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     connect(mTabWidget, &SieveEditorTabWidget::currentChanged, this, &SieveEditorTextModeWidget::sieveEditorTabCurrentChanged);
     connect(mTabWidget, &SieveEditorTabWidget::copyAvailable, this, &SieveEditorTextModeWidget::copyAvailable);
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-    mTextToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
+    mTextToSpeechWidget = new KPIMTextEditTextToSpeech::TextToSpeechWidget(this);
     editorWidgetLayout->addWidget(mTextToSpeechWidget);
 #endif
     mTextEdit = new SieveTextEdit(this);
@@ -88,7 +88,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     textEditLayout->addWidget(mTabWidget);
     connect(mTextEdit, &SieveTextEdit::openHelp, mTabWidget, &SieveEditorTabWidget::slotAddHelpPage);
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-    connect(mTextEdit, &SieveTextEdit::say, mTextToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::say);
+    connect(mTextEdit, &SieveTextEdit::say, mTextToSpeechWidget, &KPIMTextEditTextToSpeech::TextToSpeechWidget::say);
 #endif
     connect(mTextEdit, &SieveTextEdit::editRule, this, &SieveEditorTextModeWidget::slotEditRule);
     connect(mTextEdit, &SieveTextEdit::insertRule, this, &SieveEditorTextModeWidget::slotInsertRule);

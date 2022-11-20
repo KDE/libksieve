@@ -8,7 +8,7 @@
 #include "../sievescriptdebuggerfrontendwidget.h"
 #include <kpimtextedit/kpimtextedit-texttospeech.h>
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-#include <KPIMTextEdit/TextToSpeechWidget>
+#include <KPIMTextEditTextToSpeech/TextToSpeechWidget>
 #endif
 #include <KUrlRequester>
 #include <QLabel>
@@ -50,7 +50,7 @@ void SieveScriptDebuggerFrontEndWidgetTest::shouldHaveDefaultValue()
     QVERIFY(extension->text().isEmpty());
     QVERIFY(extension->isClearButtonEnabled());
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-    auto textToSpeechWidget = w.findChild<KPIMTextEdit::TextToSpeechWidget *>(QStringLiteral("texttospeechwidget"));
+    auto textToSpeechWidget = w.findChild<KPIMTextEditTextToSpeech::TextToSpeechWidget *>(QStringLiteral("texttospeechwidget"));
     QVERIFY(textToSpeechWidget);
 #endif
 }

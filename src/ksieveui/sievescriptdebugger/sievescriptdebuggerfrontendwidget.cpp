@@ -16,7 +16,7 @@
 #include <KPIMTextEdit/PlainTextEditorWidget>
 #include <kpimtextedit/kpimtextedit-texttospeech.h>
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-#include <KPIMTextEdit/TextToSpeechWidget>
+#include <KPIMTextEditTextToSpeech/TextToSpeechWidget>
 #endif
 #include <KUrlRequester>
 #include <Libkdepim/LineEditCatchReturnKey>
@@ -75,7 +75,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     sieveEditorWidget->setLayout(vboxSieveEditorLayout);
     vboxSieveEditorLayout->setContentsMargins({});
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-    auto textToSpeechWidget = new KPIMTextEdit::TextToSpeechWidget(this);
+    auto textToSpeechWidget = new KPIMTextEditTextToSpeech::TextToSpeechWidget(this);
     textToSpeechWidget->setObjectName(QStringLiteral("texttospeechwidget"));
     vboxSieveEditorLayout->addWidget(textToSpeechWidget);
 #endif
@@ -85,7 +85,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     mSieveTextEditWidget->setObjectName(QStringLiteral("sievetexteditwidget"));
     vboxSieveEditorLayout->addWidget(mSieveTextEditWidget);
 #if KPIMTEXTEDIT_TEXT_TO_SPEECH
-    connect(mSieveTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &KPIMTextEdit::TextToSpeechWidget::say);
+    connect(mSieveTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &KPIMTextEditTextToSpeech::TextToSpeechWidget::say);
 #endif
     mSplitter->addWidget(sieveEditorWidget);
     mSplitter->setChildrenCollapsible(false);
