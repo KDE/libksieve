@@ -21,10 +21,12 @@
 
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QTimer>
 #include <QVBoxLayout>
+#include <QWindow>
 
 using namespace KSieveUi;
 namespace
@@ -80,17 +82,18 @@ SieveDebugDialog::~SieveDebugDialog()
 
 void SieveDebugDialog::readConfig()
 {
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(640, 480));
     KConfigGroup group(KSharedConfig::openStateConfig(), mySieveDebugDialogGroupName);
-    const QSize sizeDialog = group.readEntry("Size", QSize(640, 480));
-    if (sizeDialog.isValid()) {
-        resize(sizeDialog);
-    }
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void SieveDebugDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), mySieveDebugDialogGroupName);
-    group.writeEntry("Size", size());
+    KWindowConfig::saveWindowSize(windowHandle(), group);
+    group.sync();
 }
 
 void SieveDebugDialog::slotShutDownJob()

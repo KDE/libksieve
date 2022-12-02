@@ -16,9 +16,11 @@
 #include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Theme>
 
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QWindow>
 
 using namespace KSieveUi;
 namespace
@@ -62,17 +64,18 @@ void ParsingResultDialog::setResultParsing(const QString &result)
 
 void ParsingResultDialog::readConfig()
 {
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(800, 600));
     KConfigGroup group(KSharedConfig::openStateConfig(), myParsingResultDialogGroupName);
-    const QSize sizeDialog = group.readEntry("Size", QSize(800, 600));
-    if (sizeDialog.isValid()) {
-        resize(sizeDialog);
-    }
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void ParsingResultDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), myParsingResultDialogGroupName);
-    group.writeEntry("Size", size());
+    KWindowConfig::saveWindowSize(windowHandle(), group);
+    group.sync();
 }
 
 void ParsingResultDialog::slotSaveAs()

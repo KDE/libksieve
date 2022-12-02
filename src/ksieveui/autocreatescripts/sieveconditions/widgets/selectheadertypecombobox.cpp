@@ -15,10 +15,12 @@
 #include <KConfigGroup>
 #include <KLazyLocalizedString>
 #include <KSharedConfig>
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QVBoxLayout>
+#include <QWindow>
 using namespace KSieveUi;
 namespace
 {
@@ -86,17 +88,17 @@ SelectHeadersDialog::~SelectHeadersDialog()
 
 void SelectHeadersDialog::readConfig()
 {
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(400, 300));
     KConfigGroup group(KSharedConfig::openStateConfig(), mySelectFlagsListDialogGroupName);
-    const QSize size = group.readEntry("Size", QSize(400, 300));
-    if (size.isValid()) {
-        resize(size);
-    }
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void SelectHeadersDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), mySelectFlagsListDialogGroupName);
-    group.writeEntry("Size", size());
+    KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }
 

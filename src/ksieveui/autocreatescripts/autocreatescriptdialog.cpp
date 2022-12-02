@@ -10,10 +10,12 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QKeyEvent>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QWindow>
 
 using namespace KSieveUi;
 namespace
@@ -70,17 +72,18 @@ QString AutoCreateScriptDialog::script(QStringList &required) const
 
 void AutoCreateScriptDialog::readConfig()
 {
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(800, 600));
     KConfigGroup group(KSharedConfig::openStateConfig(), myAutoCreateScriptDialogGroupName);
-    const QSize sizeDialog = group.readEntry("Size", QSize(800, 600));
-    if (sizeDialog.isValid()) {
-        resize(sizeDialog);
-    }
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void AutoCreateScriptDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), myAutoCreateScriptDialogGroupName);
-    group.writeEntry("Size", size());
+    KWindowConfig::saveWindowSize(windowHandle(), group);
+    group.sync();
 }
 
 bool AutoCreateScriptDialog::event(QEvent *e)

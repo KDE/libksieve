@@ -15,12 +15,14 @@
 #include <QTabWidget>
 
 #include <KConfigGroup>
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QPushButton>
 #include <QStackedWidget>
 #include <QTabBar>
 #include <QVBoxLayout>
+#include <QWindow>
 
 using namespace KSieveUi;
 namespace
@@ -185,19 +187,18 @@ void MultiImapVacationDialog::createPage(const QString &serverName, const KSieve
 
 void MultiImapVacationDialog::readConfig()
 {
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(600, 400));
     KConfigGroup group(KSharedConfig::openStateConfig(), myMultiImapVacationDialogGroupName);
-    const QSize size = group.readEntry("Size", QSize());
-    if (size.isValid()) {
-        resize(size);
-    } else {
-        resize(sizeHint().width(), sizeHint().height());
-    }
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void MultiImapVacationDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), myMultiImapVacationDialogGroupName);
-    group.writeEntry("Size", size());
+    KWindowConfig::saveWindowSize(windowHandle(), group);
+    group.sync();
 }
 
 void MultiImapVacationDialog::slotOkClicked()

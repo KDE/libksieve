@@ -12,12 +12,14 @@
 #include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QPointer>
 #include <QPushButton>
 #include <QToolButton>
 #include <QVBoxLayout>
+#include <QWindow>
 
 using namespace KSieveUi;
 namespace
@@ -50,17 +52,18 @@ SelectFlagsListDialog::~SelectFlagsListDialog()
 
 void SelectFlagsListDialog::readConfig()
 {
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(300, 200));
     KConfigGroup group(KSharedConfig::openStateConfig(), mySelectFlagsListDialogGroupName);
-    const QSize sizeDialog = group.readEntry("Size", QSize(300, 200));
-    if (sizeDialog.isValid()) {
-        resize(sizeDialog);
-    }
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void SelectFlagsListDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), mySelectFlagsListDialogGroupName);
-    group.writeEntry("Size", size());
+    KWindowConfig::saveWindowSize(windowHandle(), group);
+    group.sync();
 }
 
 void SelectFlagsListDialog::setFlags(const QStringList &list)

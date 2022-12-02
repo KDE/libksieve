@@ -12,10 +12,12 @@
 
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QKeyEvent>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QWindow>
 
 using namespace KSieveUi;
 class KSieveUi::SieveEditorPrivate
@@ -97,19 +99,20 @@ void SieveEditor::slotEnableButtonOk(bool b)
     d->mOkButton->setEnabled(b);
 }
 
+void SieveEditor::readConfig()
+{
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(800, 600));
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveEditorGroupName);
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
+}
+
 void SieveEditor::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), mySieveEditorGroupName);
-    group.writeEntry("Size", size());
-}
-
-void SieveEditor::readConfig()
-{
-    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveEditorGroupName);
-    const QSize sizeDialog = group.readEntry("Size", QSize(800, 600));
-    if (sizeDialog.isValid()) {
-        resize(sizeDialog);
-    }
+    KWindowConfig::saveWindowSize(windowHandle(), group);
+    group.sync();
 }
 
 QString SieveEditor::script() const

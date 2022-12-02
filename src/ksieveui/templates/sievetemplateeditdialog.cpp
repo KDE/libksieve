@@ -14,12 +14,14 @@
 
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QPushButton>
 #include <QShortcut>
 #include <QVBoxLayout>
+#include <QWindow>
 
 #include <editor/sievetexteditwidget.h>
 #include <kpimtextedit/kpimtextedit-texttospeech.h>
@@ -106,19 +108,20 @@ SieveTemplateEditDialog::~SieveTemplateEditDialog()
     disconnect(mTextEditWidget->textEdit(), &SieveTextEdit::textChanged, this, &SieveTemplateEditDialog::slotTemplateChanged);
 }
 
+void SieveTemplateEditDialog::readConfig()
+{
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(600, 400));
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveTemplateEditDialogGroupName);
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
+}
+
 void SieveTemplateEditDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), mySieveTemplateEditDialogGroupName);
-    group.writeEntry("Size", size());
-}
-
-void SieveTemplateEditDialog::readConfig()
-{
-    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveTemplateEditDialogGroupName);
-    const QSize sizeDialog = group.readEntry("Size", QSize(600, 400));
-    if (sizeDialog.isValid()) {
-        resize(sizeDialog);
-    }
+    KWindowConfig::saveWindowSize(windowHandle(), group);
+    group.sync();
 }
 
 void SieveTemplateEditDialog::slotTemplateChanged()
