@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-03 00:47+0000\n"
-"PO-Revision-Date: 2022-11-15 05:13+0300\n"
+"PO-Revision-Date: 2022-12-11 20:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.12.0\n"
 "X-POOTLE-MTIME: 1413117019.000000\n"
 
 #: kmanagesieve/session.cpp:90
@@ -1116,8 +1116,8 @@ msgid ""
 "The hasflag test evaluates to true if any of the variables matches any flag "
 "name."
 msgstr ""
-"Hasflag testi değişkenlerden herhangi biri, bir bayrak adıyla eşleştiğinde "
-"doğru değerini döndürür."
+"Hasflag sınaması, değişkenlerden herhangi biri, bir bayrak adıyla "
+"eşleştiğinde doğru değerini döndürür."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:21
 #, kde-format
@@ -1276,14 +1276,14 @@ msgid ""
 "tagged argument of \":over\" or \":under\", followed by a number "
 "representing the size of the message."
 msgstr ""
-"\"size\" testi iletinin boyutuyla ilgilidir.  Devamında \":over\" veya \":"
+"\"size\" testi iletinin boyutuyla ilgilidir.  Süreğinde, \":over\" veya \":"
 "under\" bayraklarından birini ve sonrasında da iletinin boyutunu temsil eden "
 "sayıyı alır."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:24
 #, kde-format
 msgid "Spam Test"
-msgstr "Spam Testi"
+msgstr "İstenmeyen Posta Sınaması"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:37
 #, kde-format
@@ -2558,8 +2558,8 @@ msgid ""
 "switch."
 msgstr ""
 "Kullanıcıların ofis dışındayım sieve betikleri yüklemelerine izin ver ama "
-"ulaşılacak alanı veya spam karşısında yapılacak eylemi değiştirme gibi "
-"ayarları değiştirmelerine izin verme."
+"ulaşılacak alanı veya istenmeyen posta karşısında yapılacak eylemi "
+"değiştirme gibi ayarları değiştirmelerine izin verme."
 
 #. i18n: ectx: label, entry (OutOfOfficeDomain), group (OutOfOffice)
 #: ksieveui/settings/sieve-vacation.kcfg:24
@@ -2858,7 +2858,7 @@ msgstr "Gelen postalar için &eylem:"
 #: ksieveui/vacation/vacationeditwidget.cpp:203
 #, kde-format
 msgid "Do not send vacation replies to spam messages"
-msgstr "Spam iletilere tatil yanıtları gönderme"
+msgstr "İstenmeyen iletilere tatil yanıtları gönderme"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:211
 #, kde-format
