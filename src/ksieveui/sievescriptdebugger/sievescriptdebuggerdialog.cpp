@@ -12,12 +12,17 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 
+#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <QWindow>
 
 using namespace KSieveUi;
-
+namespace
+{
+static const char mySieveScriptDebuggerDialog[] = "SieveScriptDebuggerDialog";
+}
 SieveScriptDebuggerDialog::SieveScriptDebuggerDialog(QWidget *parent)
     : QDialog(parent)
 {
@@ -96,20 +101,21 @@ QString SieveScriptDebuggerDialog::script() const
     return mSieveScriptDebuggerWidget->script();
 }
 
-void SieveScriptDebuggerDialog::writeConfig()
-{
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveScriptDebuggerDialog");
-    group.writeEntry("Size", size());
-    group.writeEntry("Splitter", mSieveScriptDebuggerWidget->splitterSizes());
-}
-
 void SieveScriptDebuggerDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveScriptDebuggerDialog");
-    const QSize sizeDialog = group.readEntry("Size", QSize(800, 600));
-    if (sizeDialog.isValid()) {
-        resize(sizeDialog);
-    }
+    create(); // ensure a window is created
+    windowHandle()->resize(QSize(800, 600));
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveScriptDebuggerDialog);
+    KWindowConfig::restoreWindowSize(windowHandle(), group);
+    resize(windowHandle()->size()); // workaround for QTBUG-40584
     const QList<int> size{100, 400};
     mSieveScriptDebuggerWidget->setSplitterSizes(group.readEntry("Splitter", size));
+}
+
+void SieveScriptDebuggerDialog::writeConfig()
+{
+    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveScriptDebuggerDialog);
+    KWindowConfig::saveWindowSize(windowHandle(), group);
+    group.writeEntry("Splitter", mSieveScriptDebuggerWidget->splitterSizes());
+    group.sync();
 }
