@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-03 00:47+0000\n"
+"POT-Creation-Date: 2022-12-20 00:47+0000\n"
 "PO-Revision-Date: 2016-08-11 22:06+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -2047,7 +2047,7 @@ msgstr "Indhold af scriptet \"%1\":\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:199
 #: ksieveui/managescriptsjob/parseuserscriptjob.cpp:64
-#: ksieveui/managesievescriptsdialog.cpp:163
+#: ksieveui/managesievescriptsdialog.cpp:168
 #, fuzzy, kde-format
 #| msgid ""
 #| "Sieve operation failed.\n"
@@ -2538,57 +2538,57 @@ msgstr ""
 msgid "An error occurred during deleting the sieve script."
 msgstr ""
 
-#: ksieveui/managesievescriptsdialog.cpp:58
+#: ksieveui/managesievescriptsdialog.cpp:63
 #, fuzzy, kde-format
 #| msgid "Manage Sieve Scripts"
 msgctxt "@title:window"
 msgid "Manage Sieve Scripts"
 msgstr "Håndtér Sieve-scripts"
 
-#: ksieveui/managesievescriptsdialog.cpp:78
+#: ksieveui/managesievescriptsdialog.cpp:83
 #, kde-format
 msgctxt "create a new sieve script"
 msgid "New..."
 msgstr "Nyt..."
 
-#: ksieveui/managesievescriptsdialog.cpp:82
+#: ksieveui/managesievescriptsdialog.cpp:87
 #, kde-format
 msgid "Edit..."
 msgstr "Redigér..."
 
-#: ksieveui/managesievescriptsdialog.cpp:86
+#: ksieveui/managesievescriptsdialog.cpp:91
 #, kde-format
 msgid "Delete"
 msgstr "Slet"
 
-#: ksieveui/managesievescriptsdialog.cpp:90
+#: ksieveui/managesievescriptsdialog.cpp:95
 #, kde-format
 msgid "Deactivate"
 msgstr "Deaktivér"
 
-#: ksieveui/managesievescriptsdialog.cpp:166
-#: ksieveui/managesievescriptsdialog.cpp:255
+#: ksieveui/managesievescriptsdialog.cpp:171
+#: ksieveui/managesievescriptsdialog.cpp:260
 #: ksieveui/widgets/managesievewidget.cpp:512
 #, kde-format
 msgid "Sieve Error"
 msgstr "Sieve-fejl"
 
-#: ksieveui/managesievescriptsdialog.cpp:199
+#: ksieveui/managesievescriptsdialog.cpp:204
 #, kde-format
 msgid "Uploading script to server for checking it, please wait..."
 msgstr "Uploader script til serveren for at tjekke det, vent venligst..."
 
-#: ksieveui/managesievescriptsdialog.cpp:245
+#: ksieveui/managesievescriptsdialog.cpp:250
 #, kde-format
 msgid "The Sieve script was successfully uploaded."
 msgstr "Upload af Sieve-scriptet gennemført."
 
-#: ksieveui/managesievescriptsdialog.cpp:245
+#: ksieveui/managesievescriptsdialog.cpp:250
 #, kde-format
 msgid "Sieve Script Upload"
 msgstr "Upload af Sieve-script"
 
-#: ksieveui/managesievescriptsdialog.cpp:252
+#: ksieveui/managesievescriptsdialog.cpp:257
 #, kde-format
 msgid ""
 "Uploading the Sieve script failed.\n"
@@ -2652,20 +2652,20 @@ msgstr ""
 "Tjek om der stadig er et aktivt \"væk fra kontoret\"-svar konfigureret når "
 "KMail startes."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:25
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:30
 #, fuzzy, kde-format
 #| msgid "Debug Sieve Script"
 msgctxt "@title:window"
 msgid "Debug Sieve Script"
 msgstr "Fejlsøg Sieve-script"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:37
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:42
 #, kde-format
 msgid "Apply Changes"
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:46
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:47
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:51
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:52
 #, kde-format
 msgid "Debug"
 msgstr "Fejlsøgning"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-03 00:47+0000\n"
+"POT-Creation-Date: 2022-12-20 00:47+0000\n"
 "PO-Revision-Date: 2022-03-11 20:50+0100\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -2035,7 +2035,7 @@ msgstr "Inhalt von Skript „%1“:\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:199
 #: ksieveui/managescriptsjob/parseuserscriptjob.cpp:64
-#: ksieveui/managesievescriptsdialog.cpp:163
+#: ksieveui/managesievescriptsdialog.cpp:168
 #, kde-format
 msgid ""
 "Retrieving the script failed.\n"
@@ -2505,57 +2505,57 @@ msgstr "Beim Speichern des Skripts ist ein Fehler aufgetreten."
 msgid "An error occurred during deleting the sieve script."
 msgstr "Beim Löschen des Skripts ist ein Fehler aufgetreten."
 
-#: ksieveui/managesievescriptsdialog.cpp:58
+#: ksieveui/managesievescriptsdialog.cpp:63
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Sieve Scripts"
 msgstr "„Sieve“-Skripte verwalten"
 
-#: ksieveui/managesievescriptsdialog.cpp:78
+#: ksieveui/managesievescriptsdialog.cpp:83
 #, kde-format
 msgctxt "create a new sieve script"
 msgid "New..."
 msgstr "Neu ..."
 
-#: ksieveui/managesievescriptsdialog.cpp:82
+#: ksieveui/managesievescriptsdialog.cpp:87
 #, kde-format
 msgid "Edit..."
 msgstr "Bearbeiten ..."
 
-#: ksieveui/managesievescriptsdialog.cpp:86
+#: ksieveui/managesievescriptsdialog.cpp:91
 #, kde-format
 msgid "Delete"
 msgstr "Löschen"
 
-#: ksieveui/managesievescriptsdialog.cpp:90
+#: ksieveui/managesievescriptsdialog.cpp:95
 #, kde-format
 msgid "Deactivate"
 msgstr "Deaktivieren"
 
-#: ksieveui/managesievescriptsdialog.cpp:166
-#: ksieveui/managesievescriptsdialog.cpp:255
+#: ksieveui/managesievescriptsdialog.cpp:171
+#: ksieveui/managesievescriptsdialog.cpp:260
 #: ksieveui/widgets/managesievewidget.cpp:512
 #, kde-format
 msgid "Sieve Error"
 msgstr "Sieve-Fehler"
 
-#: ksieveui/managesievescriptsdialog.cpp:199
+#: ksieveui/managesievescriptsdialog.cpp:204
 #, kde-format
 msgid "Uploading script to server for checking it, please wait..."
 msgstr ""
 "Das Skript wird zur Prüfung auf den Server hochgeladen. Bitte warten ..."
 
-#: ksieveui/managesievescriptsdialog.cpp:245
+#: ksieveui/managesievescriptsdialog.cpp:250
 #, kde-format
 msgid "The Sieve script was successfully uploaded."
 msgstr "Das Sieve-Skript wurde erfolgreich hochgeladen."
 
-#: ksieveui/managesievescriptsdialog.cpp:245
+#: ksieveui/managesievescriptsdialog.cpp:250
 #, kde-format
 msgid "Sieve Script Upload"
 msgstr "Hochladen des Sieve-Skripts"
 
-#: ksieveui/managesievescriptsdialog.cpp:252
+#: ksieveui/managesievescriptsdialog.cpp:257
 #, kde-format
 msgid ""
 "Uploading the Sieve script failed.\n"
@@ -2616,19 +2616,19 @@ msgid ""
 "Check if there is still an active out-of-office reply configured on startup."
 msgstr "Beim Start prüfen, ob noch Abwesenheitsbenachrichtigungen aktiv sind."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:25
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug Sieve Script"
 msgstr "Fehlersuche in Sieve-Skript"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:37
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:42
 #, kde-format
 msgid "Apply Changes"
 msgstr "Änderungen anwenden"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:46
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:47
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:51
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:52
 #, kde-format
 msgid "Debug"
 msgstr "Fehlersuche"
