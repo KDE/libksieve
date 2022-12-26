@@ -17,8 +17,6 @@
 
 #include <QUrl>
 
-class KJob;
-
 namespace KManageSieve
 {
 class Session;
