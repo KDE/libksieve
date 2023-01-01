@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2011-2022 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2011-2023 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 ecm_add_test(findbarbasetest.cpp findbarbasetest.h
     TEST_NAME findbarbasetest

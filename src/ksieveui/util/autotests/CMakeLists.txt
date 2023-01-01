@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2011-2022 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2011-2023 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 macro(add_sieveutil_test _source _additionalsource)
   set( _test ${_source} ${_additionalsource})
