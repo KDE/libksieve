@@ -3100,28 +3100,35 @@ msgstr "Definix la carpeta"
 #: shared/error.cpp:91
 #, kde-format
 msgid "Parse error: Carriage Return (CR) without Line Feed (LF)"
-msgstr "Error analitzant: Tecla de retorn (CR) sense salt de línia (LF)"
+msgstr ""
+"S'ha produït un error analitzant: Tecla de retorn (CR) sense salt de línia "
+"(LF)"
 
 #: shared/error.cpp:95
 #, kde-format
 msgid ""
 "Parse error: Unquoted Slash ('/') without Asterisk ('*'). Broken Comment?"
-msgstr "Error analitzant: Barra ('/') sense asterisc ('*'). Comentari trencat?"
+msgstr ""
+"S'ha produït un error analitzant: Barra ('/') sense asterisc ('*'). "
+"Comentari trencat?"
 
 #: shared/error.cpp:99
 #, kde-format
 msgid "Parse error: Illegal Character"
-msgstr "Error analitzant: Caràcter il·legal"
+msgstr "S'ha produït un error analitzant: Caràcter il·legal"
 
 #: shared/error.cpp:102
 #, kde-format
 msgid "Parse error: Unexpected Character, probably a missing space?"
-msgstr "Error analitzant: Caràcter inesperat, probablement falta un espai?"
+msgstr ""
+"S'ha produït un error analitzant: Caràcter inesperat, probablement falta un "
+"espai?"
 
 #: shared/error.cpp:105
 #, kde-format
 msgid "Parse error: Tag Name has leading Digits"
-msgstr "Error analitzant: El nom de l'etiqueta comença per un dígit"
+msgstr ""
+"S'ha produït un error analitzant: El nom de l'etiqueta comença per un dígit"
 
 #: shared/error.cpp:109
 #, kde-format
@@ -3129,109 +3136,122 @@ msgid ""
 "Parse error: Only whitespace and #comments may follow \"text:\" on the same "
 "line"
 msgstr ""
-"Error analitzant: A continuació de «text:» i a la mateixa línia, tan sols "
-"poden aparéixer espais en blanc i #comentaris"
+"S'ha produït un error analitzant: A continuació de «text:» i a la mateixa "
+"línia, tan sols poden aparéixer espais en blanc i #comentaris"
 
 #: shared/error.cpp:113
 #, kde-format
 msgid "Parse error: Number out of Range (must be smaller than %1)"
 msgstr ""
-"Error analitzant: número fora d'abast (hauria de ser més xicotet que %1)"
+"S'ha produït un error analitzant: número fora d'abast (hauria de ser més "
+"xicotet que %1)"
 
 #: shared/error.cpp:116
 #, kde-format
 msgid "Parse error: Invalid UTF-8 sequence"
-msgstr "Error analitzant: seqüència UTF-8 no vàlida"
+msgstr "S'ha produït un error analitzant: seqüència UTF-8 no vàlida"
 
 #: shared/error.cpp:119
 #, kde-format
 msgid ""
 "Parse error: Premature end of Multiline String (did you forget the '.'?)"
 msgstr ""
-"Error analitzant: Fi prematur d'una cadena de múltiples línies (vos heu "
-"oblidat del «.»?)"
+"S'ha produït un error analitzant: Fi prematur d'una cadena de múltiples "
+"línies (vos heu oblidat del «.»?)"
 
 #: shared/error.cpp:122
 #, kde-format
 msgid "Parse error: Premature end of Quoted String (missing closing '\"')"
 msgstr ""
-"Error analitzant: Fi prematur d'una cadena citada (falta la «\"» de "
-"tancament)"
+"S'ha produït un error analitzant: Fi prematur d'una cadena citada (falta la "
+"«\"» de tancament)"
 
 #: shared/error.cpp:125
 #, kde-format
 msgid "Parse error: Premature end of String List (missing closing ']')"
 msgstr ""
-"Error analitzant: Fi prematur d'una llista de cadenes (falta el «]» de "
-"tancament)"
+"S'ha produït un error analitzant: Fi prematur d'una llista de cadenes (falta "
+"el «]» de tancament)"
 
 #: shared/error.cpp:128
 #, kde-format
 msgid "Parse error: Premature end of Test List (missing closing ')')"
 msgstr ""
-"Error analitzant: Fi prematur d'una llista de tests (falta el «)» de "
-"tancament)"
+"S'ha produït un error analitzant: Fi prematur d'una llista de tests (falta "
+"el «)» de tancament)"
 
 #: shared/error.cpp:131
 #, kde-format
 msgid "Parse error: Premature end of Block (missing closing '}')"
-msgstr "Error analitzant: Fi prematur d'un bloc (falta el «}» de tancament)"
+msgstr ""
+"S'ha produït un error analitzant: Fi prematur d'un bloc (falta el «}» de "
+"tancament)"
 
 #: shared/error.cpp:134
 #, kde-format
 msgid "Parse error: Missing Whitespace"
-msgstr "Error analitzant: Falta un espai"
+msgstr "S'ha produït un error analitzant: Falta un espai"
 
 #: shared/error.cpp:137
 #, kde-format
 msgid "Parse error: Missing ';' or Block"
-msgstr "Error analitzant: Falta un «;» o un bloc"
+msgstr "S'ha produït un error analitzant: Falta un «;» o un bloc"
 
 #: shared/error.cpp:140
 #, kde-format
 msgid "Parse error: Expected ';' or '{', got something else"
 msgstr ""
-"Error analitzant: S'esperava un «;» o un «{», s'ha trobat una altra cosa"
+"S'ha produït un error analitzant: S'esperava un «;» o un «{», s'ha trobat "
+"una altra cosa"
 
 #: shared/error.cpp:143 shared/error.cpp:158
 #, kde-format
 msgid "Parse error: Expected Command, got something else"
-msgstr "Error analitzant: S'esperava una ordre, s'ha trobat una altra cosa"
+msgstr ""
+"S'ha produït un error analitzant: S'esperava una ordre, s'ha trobat una "
+"altra cosa"
 
 #: shared/error.cpp:146
 #, kde-format
 msgid "Parse error: Trailing, Leading or Duplicate Commas in String List"
 msgstr ""
-"Error analitzant: Comes al final, al principi o duplicades a la llista de "
-"cadenes"
+"S'ha produït un error analitzant: Comes al final, al principi o duplicades "
+"en la llista de cadenes"
 
 #: shared/error.cpp:149
 #, kde-format
 msgid "Parse error: Trailing, Leading or Duplicate Commas in Test List"
 msgstr ""
-"Error analitzant: Comes al final, al principi o duplicades a la llista de "
-"tests"
+"S'ha produït un error analitzant: Comes al final, al principi o duplicades "
+"en la llista de tests"
 
 #: shared/error.cpp:152
 #, kde-format
 msgid "Parse error: Missing ',' between Strings in String List"
-msgstr "Error analitzant: Falta una «,» entre cadenes a la llista de cadenes"
+msgstr ""
+"S'ha produït un error analitzant: Falta una «,» entre cadenes en la llista "
+"de cadenes"
 
 #: shared/error.cpp:155
 #, kde-format
 msgid "Parse error: Missing ',' between Tests in Test List"
-msgstr "Error analitzant: Falta una «,» entre tests a la llista de tests"
+msgstr ""
+"S'ha produït un error analitzant: Falta una «,» entre tests en la llista de "
+"tests"
 
 #: shared/error.cpp:161
 #, kde-format
 msgid "Parse error: Only Strings allowed in String Lists"
 msgstr ""
-"Error analitzant: Tan sols es permeten cadenes en les llistes de cadenes"
+"S'ha produït un error analitzant: Tan sols es permeten cadenes en les "
+"llistes de cadenes"
 
 #: shared/error.cpp:164
 #, kde-format
 msgid "Parse error: Only Tests allowed in Test Lists"
-msgstr "Error analitzant: Tan sols es permeten tests en les llistes de tests"
+msgstr ""
+"S'ha produït un error analitzant: Tan sols es permeten tests en les llistes "
+"de tests"
 
 #: shared/error.cpp:169
 #, kde-format
