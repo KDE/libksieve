@@ -432,6 +432,17 @@ target_link_libraries(KF5KSieveUi
     Qt::PrintSupport
     KF5::SyntaxHighlighting
     )
+if (USE_KTEXTADDONS_LIB)
+    target_link_libraries(KF5KSieveUi
+        PRIVATE
+        KF5::TextEditTextToSpeech
+    )
+else()
+    target_link_libraries(KF5KSieveUi
+        PRIVATE
+        KF5::PimTextEditTextToSpeech
+    )
+endif()
 
 set_target_properties(KF5KSieveUi PROPERTIES
     VERSION ${LIBKSIEVE_VERSION}
