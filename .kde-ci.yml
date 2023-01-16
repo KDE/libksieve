@@ -12,6 +12,7 @@ Dependencies:
     'pim/kpimtextedit' : '@same'
     'pim/libkdepim' : '@same'
     'pim/pimcommon' : '@same'
+    'libraries/ktextaddons': '@stable'
 
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD' ]
