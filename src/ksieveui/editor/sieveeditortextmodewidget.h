@@ -19,7 +19,7 @@ class PlainTextEditorWidget;
 }
 namespace KPIMTextEditTextToSpeech
 {
-class TextToSpeechWidget;
+class TextToSpeechContainerWidget;
 }
 namespace KSieveUi
 {
@@ -126,7 +126,7 @@ private:
     SieveTextEdit *mTextEdit = nullptr;
     KPIMTextEdit::PlainTextEditorWidget *mDebugTextEdit = nullptr;
     KPIMTextEdit::PlainTextEditFindBar *mFindBar = nullptr;
-    KPIMTextEditTextToSpeech::TextToSpeechWidget *mTextToSpeechWidget = nullptr;
+    KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
     QSplitter *mMainSplitter = nullptr;
     QSplitter *mTemplateSplitter = nullptr;
     SieveEditorWarning *mSieveEditorWarning = nullptr;
