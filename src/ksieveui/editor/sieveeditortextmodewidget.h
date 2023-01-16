@@ -17,10 +17,12 @@ class PlainTextEditFindBar;
 class PlainTextEditor;
 class PlainTextEditorWidget;
 }
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
 namespace KPIMTextEditTextToSpeech
 {
 class TextToSpeechContainerWidget;
 }
+#endif
 namespace KSieveUi
 {
 class SieveTextEdit;
@@ -126,7 +128,9 @@ private:
     SieveTextEdit *mTextEdit = nullptr;
     KPIMTextEdit::PlainTextEditorWidget *mDebugTextEdit = nullptr;
     KPIMTextEdit::PlainTextEditFindBar *mFindBar = nullptr;
+#if KPIMTEXTEDIT_TEXT_TO_SPEECH
     KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
+#endif
     QSplitter *mMainSplitter = nullptr;
     QSplitter *mTemplateSplitter = nullptr;
     SieveEditorWarning *mSieveEditorWarning = nullptr;
