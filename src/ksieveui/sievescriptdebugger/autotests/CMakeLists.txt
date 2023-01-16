@@ -9,6 +9,11 @@ macro( add_sievescriptdebugger_test _source )
   add_test(NAME ${_name} COMMAND ${_name})
   ecm_mark_as_test(sievescriptdebugger-${_name})
   target_link_libraries( ${_name}  KF5::KSieveUi Qt::Test KF5::Completion KF5::KIOWidgets KF5::PimTextEdit)
+  if (USE_KTEXTADDONS_LIB)
+      target_link_libraries(${_name}
+          KF5::TextEditTextToSpeech
+      )
+  endif()
 endmacro()
 
 

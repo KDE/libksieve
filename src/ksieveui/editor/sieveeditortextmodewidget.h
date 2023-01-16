@@ -7,7 +7,9 @@
 
 #include "ksieveui_export.h"
 #include "sieveeditorabstractwidget.h"
+#ifndef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <kpimtextedit/kpimtextedit-texttospeech.h>
+#endif
 class QSplitter;
 namespace KPIMTextEdit
 {
@@ -17,8 +19,14 @@ class PlainTextEditFindBar;
 class PlainTextEditor;
 class PlainTextEditorWidget;
 }
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
 namespace KPIMTextEditTextToSpeech
+{
+class TextToSpeechContainerWidget;
+}
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+namespace TextEditTextToSpeech
 {
 class TextToSpeechContainerWidget;
 }
@@ -128,8 +136,11 @@ private:
     SieveTextEdit *mTextEdit = nullptr;
     KPIMTextEdit::PlainTextEditorWidget *mDebugTextEdit = nullptr;
     KPIMTextEdit::PlainTextEditFindBar *mFindBar = nullptr;
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
     KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
 #endif
     QSplitter *mMainSplitter = nullptr;
     QSplitter *mTemplateSplitter = nullptr;

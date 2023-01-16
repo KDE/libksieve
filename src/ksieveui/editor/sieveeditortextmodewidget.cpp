@@ -21,8 +21,11 @@
 #include <KPIMTextEdit/PlainTextEditorWidget>
 #include <KPIMTextEdit/SlideContainer>
 #include <KPIMTextEdit/TextGotoLineWidget>
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
 #include <KPIMTextEditTextToSpeech/TextToSpeechContainerWidget>
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
 
 #include <ksieve/error.h>
@@ -76,10 +79,15 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     mTabWidget = new SieveEditorTabWidget(this);
     connect(mTabWidget, &SieveEditorTabWidget::currentChanged, this, &SieveEditorTextModeWidget::sieveEditorTabCurrentChanged);
     connect(mTabWidget, &SieveEditorTabWidget::copyAvailable, this, &SieveEditorTextModeWidget::copyAvailable);
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
     mTextToSpeechWidget = new KPIMTextEditTextToSpeech::TextToSpeechContainerWidget(this);
     editorWidgetLayout->addWidget(mTextToSpeechWidget);
 #endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    mTextToSpeechWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(this);
+    editorWidgetLayout->addWidget(mTextToSpeechWidget);
+#endif
+
     mTextEdit = new SieveTextEdit(this);
     editorWidgetLayout->addWidget(mTextEdit);
     connect(mTextEdit, &SieveTextEdit::textChanged, this, &SieveEditorTextModeWidget::valueChanged);
@@ -87,8 +95,11 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     mTabWidget->tabBar()->hide();
     textEditLayout->addWidget(mTabWidget);
     connect(mTextEdit, &SieveTextEdit::openHelp, mTabWidget, &SieveEditorTabWidget::slotAddHelpPage);
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
     connect(mTextEdit, &SieveTextEdit::say, mTextToSpeechWidget, &KPIMTextEditTextToSpeech::TextToSpeechContainerWidget::say);
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    connect(mTextEdit, &SieveTextEdit::say, mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
 #endif
     connect(mTextEdit, &SieveTextEdit::editRule, this, &SieveEditorTextModeWidget::slotEditRule);
     connect(mTextEdit, &SieveTextEdit::insertRule, this, &SieveEditorTextModeWidget::slotInsertRule);

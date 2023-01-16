@@ -14,9 +14,14 @@
 #include <KLineEdit>
 #include <KLocalizedString>
 #include <KPIMTextEdit/PlainTextEditorWidget>
+#ifndef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <kpimtextedit/kpimtextedit-texttospeech.h>
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#endif
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
 #include <KPIMTextEditTextToSpeech/TextToSpeechContainerWidget>
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
 #include <KUrlRequester>
 #include <Libkdepim/LineEditCatchReturnKey>
@@ -74,18 +79,25 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     auto vboxSieveEditorLayout = new QVBoxLayout;
     sieveEditorWidget->setLayout(vboxSieveEditorLayout);
     vboxSieveEditorLayout->setContentsMargins({});
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
     auto textToSpeechWidget = new KPIMTextEditTextToSpeech::TextToSpeechContainerWidget(this);
     textToSpeechWidget->setObjectName(QStringLiteral("texttospeechwidget"));
-    vboxSieveEditorLayout->addWidget(textToSpeechWidget);
 #endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    auto textToSpeechWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(this);
+    textToSpeechWidget->setObjectName(QStringLiteral("texttospeechwidget"));
+#endif
+    vboxSieveEditorLayout->addWidget(textToSpeechWidget);
     auto textEdit = new KSieveUi::SieveScriptDebuggerTextEdit(this);
     connect(textEdit, &KSieveUi::SieveScriptDebuggerTextEdit::textChanged, this, &SieveScriptDebuggerFrontEndWidget::slotScriptTextChanged);
     mSieveTextEditWidget = new KSieveUi::SieveTextEditWidget(textEdit, this);
     mSieveTextEditWidget->setObjectName(QStringLiteral("sievetexteditwidget"));
     vboxSieveEditorLayout->addWidget(mSieveTextEditWidget);
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
     connect(mSieveTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &KPIMTextEditTextToSpeech::TextToSpeechContainerWidget::say);
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    connect(mSieveTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
 #endif
     mSplitter->addWidget(sieveEditorWidget);
     mSplitter->setChildrenCollapsible(false);

@@ -24,10 +24,16 @@
 #include <QWindow>
 
 #include <editor/sievetexteditwidget.h>
+#ifndef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <kpimtextedit/kpimtextedit-texttospeech.h>
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#endif
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
 #include <KPIMTextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#include <TextEditTextToSpeech/TextToSpeechContainerWidget>
+#endif
+
 using namespace KSieveUi;
 namespace
 {
@@ -66,8 +72,12 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     hbox->addWidget(mTemplateNameEdit);
 
     vbox->addLayout(hbox);
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
     auto textToSpeechWidget = new KPIMTextEditTextToSpeech::TextToSpeechContainerWidget(this);
+    vbox->addWidget(textToSpeechWidget);
+#endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    auto textToSpeechWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(this);
     vbox->addWidget(textToSpeechWidget);
 #endif
 
@@ -75,9 +85,13 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     mTextEditWidget->textEdit()->setShowHelpMenu(false);
     mTextEditWidget->setReadOnly(defaultTemplate);
     vbox->addWidget(mTextEditWidget);
-#if KPIMTEXTEDIT_TEXT_TO_SPEECH
+#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
     connect(mTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &KPIMTextEditTextToSpeech::TextToSpeechContainerWidget::say);
 #endif
+#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+    connect(mTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
+#endif
+
     auto shortcut = new QShortcut(this);
     shortcut->setKey(Qt::Key_F | Qt::CTRL);
     connect(shortcut, &QShortcut::activated, mTextEditWidget, &SieveTextEditWidget::slotFind);
