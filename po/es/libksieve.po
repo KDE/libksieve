@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-20 00:47+0000\n"
+"POT-Creation-Date: 2023-01-17 00:59+0000\n"
 "PO-Revision-Date: 2021-11-07 01:00+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -1710,7 +1710,7 @@ msgid "Include:"
 msgstr "Incluir:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:138
-#: ksieveui/templates/sievetemplateeditdialog.cpp:59
+#: ksieveui/templates/sievetemplateeditdialog.cpp:65
 #, kde-format
 msgid "Name:"
 msgstr "Nombre:"
@@ -2239,32 +2239,32 @@ msgstr "Error durante la carga de la página sobre %1"
 msgid "Help about: %1"
 msgstr "Ayuda sobre: %1"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:65
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:68
 #, kde-format
 msgid "Sieve Template:"
 msgstr "Plantilla de Sieve:"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:86
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:94
 #, kde-format
 msgid "Editor"
 msgstr "Editor"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:137
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:148
 #, kde-format
 msgid "Show result from \"check syntax\""
 msgstr "Mostrar resultados desde «comprobar sintáxis»"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:215
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:226
 #, kde-format
 msgid "Error during parsing"
 msgstr "Error durante el análisis"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:245
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:256
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "El texto seleccionado no es un guion completo de Sieve"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:245
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:256
 #, kde-format
 msgid "Parsing error"
 msgstr "Error de análisis"
@@ -2634,17 +2634,17 @@ msgstr "Aplicar cambios"
 msgid "Debug"
 msgstr "Depurar"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:44
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:49
 #, kde-format
 msgid "Email path:"
 msgstr "Ruta del correo:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:58
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:63
 #, kde-format
 msgid "Extension:"
 msgstr "Extensión:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:63
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:68
 #, kde-format
 msgid ""
 "Activate extension with \"+<name of extension>\", deactivate it with \"-"
@@ -2653,27 +2653,27 @@ msgstr ""
 "Activar extensión con «+<nombre de la extensión>», desactivarla con «-"
 "<nombre de la extensión>»"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:95
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:107
 #, kde-format
 msgid "Display check script result..."
 msgstr "Mostrar resultado del guion de comprobación..."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:144
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
 #, kde-format
 msgid "Script text is empty."
 msgstr "El texto del guion está vacío."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:148
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:160
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "El archivo de correo debe instalarse localmente."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:154
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:166
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "No se ha podido abrir el archivo temporal."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:224
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:236
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr ""
@@ -2743,13 +2743,13 @@ msgstr "Destruir correo enviado por..."
 msgid "Vacations"
 msgstr "Vacaciones"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:39
+#: ksieveui/templates/sievetemplateeditdialog.cpp:45
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "Plantilla predeterminada"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:39
+#: ksieveui/templates/sievetemplateeditdialog.cpp:45
 #, kde-format
 msgctxt "@title:window"
 msgid "Template"

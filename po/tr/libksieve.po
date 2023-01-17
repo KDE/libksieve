@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-20 00:47+0000\n"
+"POT-Creation-Date: 2023-01-17 00:59+0000\n"
 "PO-Revision-Date: 2023-01-10 21:45+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1680,7 +1680,7 @@ msgid "Include:"
 msgstr "İçer:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:138
-#: ksieveui/templates/sievetemplateeditdialog.cpp:59
+#: ksieveui/templates/sievetemplateeditdialog.cpp:65
 #, kde-format
 msgid "Name:"
 msgstr "Ad:"
@@ -2208,32 +2208,32 @@ msgstr "%1 hakkında sayfa yüklerken hata"
 msgid "Help about: %1"
 msgstr "%1 için yardım"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:65
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:68
 #, kde-format
 msgid "Sieve Template:"
 msgstr "Sieve Şablonu:"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:86
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:94
 #, kde-format
 msgid "Editor"
 msgstr "Düzenleyici"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:137
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:148
 #, kde-format
 msgid "Show result from \"check syntax\""
 msgstr "\"sözdizimini denetle\" üzerindeki sonuçları göster"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:215
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:226
 #, kde-format
 msgid "Error during parsing"
 msgstr "Ayrıştırma sırasında hata"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:245
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:256
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "Seçili metin tam bir Sieve betiği değil"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:245
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:256
 #, kde-format
 msgid "Parsing error"
 msgstr "Ayrıştırma hatası"
@@ -2601,17 +2601,17 @@ msgstr "Değişiklikleri Uygula"
 msgid "Debug"
 msgstr "Hata Ayıkla"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:44
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:49
 #, kde-format
 msgid "Email path:"
 msgstr "E-posta yolu:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:58
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:63
 #, kde-format
 msgid "Extension:"
 msgstr "Uzantı:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:63
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:68
 #, kde-format
 msgid ""
 "Activate extension with \"+<name of extension>\", deactivate it with \"-"
@@ -2620,27 +2620,27 @@ msgstr ""
 "Etkinleştirilecek uzantı \"+<name of extension>\", pasifleştirilecek uzantı "
 "\"-<name of extension>\""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:95
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:107
 #, kde-format
 msgid "Display check script result..."
 msgstr "Betik denetleme sonuçlarını göster..."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:144
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
 #, kde-format
 msgid "Script text is empty."
 msgstr "Betik metni boş."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:148
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:160
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "E-posta dosyası yerelde kurulu olmalıdır."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:154
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:166
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "Geçici dosya açılamadı."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:224
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:236
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr "Betik hala hata ayıklama yöntemi içeriyor. Lütfen onu silin."
@@ -2709,13 +2709,13 @@ msgstr "Postaları silinecek kullanıcı..."
 msgid "Vacations"
 msgstr "Tatiller"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:39
+#: ksieveui/templates/sievetemplateeditdialog.cpp:45
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "Öntanımlı şablon"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:39
+#: ksieveui/templates/sievetemplateeditdialog.cpp:45
 #, kde-format
 msgctxt "@title:window"
 msgid "Template"

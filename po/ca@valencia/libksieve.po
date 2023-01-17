@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-20 00:47+0000\n"
+"POT-Creation-Date: 2023-01-17 00:59+0000\n"
 "PO-Revision-Date: 2022-01-03 12:13+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -131,7 +131,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Sieve Filter"
-msgstr "Creació d'un filtre de «Sieve»"
+msgstr "Creeu un filtre de «Sieve»"
 
 #: ksieveui/autocreatescripts/autocreatescriptutil.cpp:185
 #, kde-format
@@ -1713,7 +1713,7 @@ msgid "Include:"
 msgstr "Inclusió:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:138
-#: ksieveui/templates/sievetemplateeditdialog.cpp:59
+#: ksieveui/templates/sievetemplateeditdialog.cpp:65
 #, kde-format
 msgid "Name:"
 msgstr "Nom:"
@@ -2108,7 +2108,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Sieve Script"
-msgstr "Edició de l'script de «Sieve»"
+msgstr "Editeu l'script de «Sieve»"
 
 #: ksieveui/editor/sieveeditor.cpp:182
 #, kde-format
@@ -2157,7 +2157,7 @@ msgstr "*.siv;;Fitxers de «Sieve» (*.siv);;Tots els fitxers (*)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Script Sieve"
-msgstr "Importació d'un script de «Sieve»"
+msgstr "Importeu un script de «Sieve»"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:70
 #, kde-format
@@ -2244,32 +2244,32 @@ msgstr "S'ha produït un error en carregar la pàgina sobre %1"
 msgid "Help about: %1"
 msgstr "Ajuda quant a: %1"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:65
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:68
 #, kde-format
 msgid "Sieve Template:"
 msgstr "Plantilla de «Sieve»:"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:86
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:94
 #, kde-format
 msgid "Editor"
 msgstr "Editor"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:137
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:148
 #, kde-format
 msgid "Show result from \"check syntax\""
 msgstr "Mostra el resultat des de «Comprova la sintaxi»"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:215
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:226
 #, kde-format
 msgid "Error during parsing"
 msgstr "Error durant l'anàlisi"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:245
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:256
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "El text seleccionat no és cap script «sieve» complet"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:245
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:256
 #, kde-format
 msgid "Parsing error"
 msgstr "S'ha produït un error d'anàlisi"
@@ -2510,7 +2510,7 @@ msgstr "S'ha produït un error en eliminar l'script de «sieve»."
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Sieve Scripts"
-msgstr "Gestió dels scripts de «Sieve»"
+msgstr "Gestioneu els scripts de «Sieve»"
 
 #: ksieveui/managesievescriptsdialog.cpp:83
 #, kde-format
@@ -2638,17 +2638,17 @@ msgstr "Aplica els canvis"
 msgid "Debug"
 msgstr "Depuració"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:44
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:49
 #, kde-format
 msgid "Email path:"
 msgstr "Camí de correu electrònic:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:58
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:63
 #, kde-format
 msgid "Extension:"
 msgstr "Extensió:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:63
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:68
 #, kde-format
 msgid ""
 "Activate extension with \"+<name of extension>\", deactivate it with \"-"
@@ -2657,27 +2657,27 @@ msgstr ""
 "Activeu l'extensió amb «+<nom de l'extensió>», desactiveu-la amb «-<nom de "
 "l'extensió>»"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:95
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:107
 #, kde-format
 msgid "Display check script result..."
 msgstr "Mostra el resultat de la verificació de l'script..."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:144
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
 #, kde-format
 msgid "Script text is empty."
 msgstr "El text de l'script està buit."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:148
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:160
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "El fitxer de correu cal que s'instal·le en local."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:154
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:166
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "No s'ha pogut obrir el fitxer temporal."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:224
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:236
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr "L'script encara conté el mètode de depuració. Per favor, elimineu-lo."
@@ -2746,13 +2746,13 @@ msgstr "Destruïx el correu enviat per..."
 msgid "Vacations"
 msgstr "Vacances"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:39
+#: ksieveui/templates/sievetemplateeditdialog.cpp:45
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "Plantilla predeterminada"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:39
+#: ksieveui/templates/sievetemplateeditdialog.cpp:45
 #, kde-format
 msgctxt "@title:window"
 msgid "Template"
@@ -2769,7 +2769,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure \"Out of Office\" Replies"
-msgstr "Configuració de les respostes «fora de l'oficina»"
+msgstr "Configureu les respostes «fora de l'oficina»"
 
 #: ksieveui/vacation/multiimapvacationdialog.cpp:78
 #, kde-format
