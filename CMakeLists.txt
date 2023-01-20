@@ -5,9 +5,9 @@ set(PIM_VERSION "5.22.41")
 
 project(libksieve VERSION ${PIM_VERSION})
 
-set(KF5_MIN_VERSION "5.102.0")
+set(KF_MIN_VERSION "5.102.0")
 
-find_package(ECM ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
@@ -65,14 +65,14 @@ if (QT_MAJOR_VERSION STREQUAL "6")
 endif()
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets PrintSupport WebEngineWidgets)
-find_package(KF5I18n ${KF5_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF5KIO ${KF5_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF5IconThemes ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5KIO ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5IconThemes ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5PimCommon ${PIMCOMMON_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5Libkdepim ${LIBKDEPIM_LIB_VERSION} CONFIG REQUIRED)
-find_package(KF5NewStuff ${KF5_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF5Archive ${KF5_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF5SyntaxHighlighting ${KF5_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5NewStuff ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5Archive ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF5SyntaxHighlighting ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF5Mime ${KMIME_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5IdentityManagement ${IDENTITYMANAGEMENT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KF5MailTransport ${KMAILTRANSPORT_LIB_VERSION} CONFIG REQUIRED)
@@ -88,7 +88,7 @@ else()
     find_package(KF5PimTextEditTextToSpeech ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
 endif()
 
-find_package(KF5DocTools ${KF5_MIN_VERSION})
+find_package(KF5DocTools ${KF_MIN_VERSION})
 set_package_properties(KF5DocTools PROPERTIES DESCRIPTION
     "Tools to generate documentation"
     TYPE OPTIONAL
