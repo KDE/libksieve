@@ -36,9 +36,9 @@ endif()
 
 target_link_libraries(KF5KManageSieve
 PRIVATE
-  KF5::I18n 
-  KF5::KIOCore
-  KF5::KIOWidgets
+  KF${KF_MAJOR_VERSION}::I18n 
+  KF${KF_MAJOR_VERSION}::KIOCore
+  KF${KF_MAJOR_VERSION}::KIOWidgets
   Sasl2::Sasl2
   ${extra_LIBS}
 )

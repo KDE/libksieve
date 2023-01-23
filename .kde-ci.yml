@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['@all']
+- 'on': ['Linux/Qt5', 'FreeBSD/Qt5', 'Windows/Qt5']
   'require':
     'frameworks/extra-cmake-modules': '@latest'
     'pim/kidentitymanagement' : '@same'
@@ -13,6 +13,18 @@ Dependencies:
     'pim/libkdepim' : '@same'
     'pim/pimcommon' : '@same'
     'libraries/ktextaddons': '@stable'
+
+- 'on': ['Linux/Qt6', 'FreeBSD/Qt6', 'Windows/Qt6']
+  'require':
+    'frameworks/extra-cmake-modules': '@latest-kf6'
+    'pim/kidentitymanagement' : '@latest-kf6'
+    'pim/kimap' : '@latest-kf6'
+    'pim/kmailtransport' : '@latest-kf6'
+    'pim/kmime' : '@latest-kf6'
+    'pim/kpimtextedit' : '@latest-kf6'
+    'pim/libkdepim' : '@latest-kf6'
+    'pim/pimcommon' : '@latest-kf6'
+    'libraries/ktextaddons': '@latest-kf6'
 
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD' ]

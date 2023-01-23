@@ -417,20 +417,20 @@ target_link_libraries(KF5KSieveUi
     KF5::PimCommon
     PRIVATE
     KF5::Libkdepim
-    KF5::Archive
+    KF${KF_MAJOR_VERSION}::Archive
     KF5::Mime
-    KF5::IconThemes
+    KF${KF_MAJOR_VERSION}::IconThemes
     KF5::IdentityManagement
     KF5::PimTextEdit
     KF5::MailTransport
-    KF5::KIOWidgets
-    KF5::NewStuff
+    KF${KF_MAJOR_VERSION}::KIOWidgets
+    KF${KF_MAJOR_VERSION}::NewStuff
     Qt::WebEngineWidgets
     KF5::PimTextEdit
-    KF5::I18n
-    KF5::SonnetUi
+    KF${KF_MAJOR_VERSION}::I18n
+    KF${KF_MAJOR_VERSION}::SonnetUi
     Qt::PrintSupport
-    KF5::SyntaxHighlighting
+    KF${KF_MAJOR_VERSION}::SyntaxHighlighting
     )
 if (USE_KTEXTADDONS_LIB)
     target_link_libraries(KF5KSieveUi

@@ -6,7 +6,7 @@ target_include_directories(autocreatescripts_gui PRIVATE ${libksieve_SOURCE_DIR}
 target_link_libraries(autocreatescripts_gui
   KF5::KSieveUi
   KF5::PimCommon
-  KF5::I18n
+  KF${KF_MAJOR_VERSION}::I18n
 )
 
 ####
@@ -16,8 +16,8 @@ target_link_libraries(parsingscript_gui
   KF5::KSieveUi
   KF5::KSieve
   KF5::PimCommon
-  KF5::I18n
-  KF5::SyntaxHighlighting
+  KF${KF_MAJOR_VERSION}::I18n
+  KF${KF_MAJOR_VERSION}::SyntaxHighlighting
 )
 
 

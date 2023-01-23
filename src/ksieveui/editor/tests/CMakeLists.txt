@@ -11,8 +11,8 @@ add_executable(editorsieve_gui ${editorsieve_gui_SRCS})
 target_link_libraries(editorsieve_gui
   KF5::KSieveUi
   KF5::PimCommon
-  KF5::I18n
+  KF${KF_MAJOR_VERSION}::I18n
   Qt::PrintSupport
-  KF5::SyntaxHighlighting
+  KF${KF_MAJOR_VERSION}::SyntaxHighlighting
 )
 
