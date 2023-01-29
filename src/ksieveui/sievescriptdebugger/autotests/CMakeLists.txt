@@ -11,7 +11,7 @@ macro( add_sievescriptdebugger_test _source )
   target_link_libraries( ${_name}  KF5::KSieveUi Qt::Test KF${KF_MAJOR_VERSION}::Completion KF${KF_MAJOR_VERSION}::KIOWidgets KF5::PimTextEdit)
   if (USE_KTEXTADDONS_LIB)
       target_link_libraries(${_name}
-          KF5::TextEditTextToSpeech
+          KF${KF_MAJOR_VERSION}::TextEditTextToSpeech
       )
   endif()
 endmacro()
