@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-10-16 00:47+0000\n"
-"PO-Revision-Date: 2023-01-28 11:37+0100\n"
+"PO-Revision-Date: 2023-01-29 09:49+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -22,6 +22,8 @@ msgstr ""
 #, kde-format
 msgid "Cannot use TLS since the underlying Qt library does not support it."
 msgstr ""
+"TLS-ის გამოყენება შეუძლებელია, რადგან Qt ბიბლიოთეკას მისი მხარდაჭერა არ "
+"გააჩნია."
 
 #: kmanagesieve/session.cpp:97
 #, kde-format
@@ -57,7 +59,7 @@ msgstr ""
 #: kmanagesieve/session.cpp:258
 #, kde-format
 msgid "Sieve Authentication Details"
-msgstr ""
+msgstr "Sieve-ის ავთენტიკაციის დეტალები"
 
 #: kmanagesieve/session.cpp:260
 #, kde-format
@@ -76,7 +78,7 @@ msgstr ""
 #: kmanagesieve/session.cpp:320
 #, kde-format
 msgid "Sieve Manager"
-msgstr ""
+msgstr "Sieve-ის მმართველი"
 
 #: kmanagesieve/sessionthread.cpp:298
 #, kde-format
@@ -107,12 +109,12 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Sieve Filter"
-msgstr ""
+msgstr "Sieve-ის ფილტრის შექმნა"
 
 #: ksieveui/autocreatescripts/autocreatescriptutil.cpp:185
 #, kde-format
 msgid "Cannot find item \"%1\" in widget \"%2\""
-msgstr ""
+msgstr "ვიჯეტში \"%2\" ელემენტი %1 ვერ ვიპოვე"
 
 #: ksieveui/autocreatescripts/autocreatescriptutil.cpp:193
 #, kde-format
@@ -342,7 +344,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:22
 #, kde-format
 msgid "Enclose"
-msgstr ""
+msgstr "ჩადება"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:33
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:35
@@ -374,7 +376,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:20
 #, kde-format
 msgid "E-Reject"
-msgstr ""
+msgstr "უარყოფა (E-Reject)"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:90
 #, kde-format
@@ -386,7 +388,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:21
 #, kde-format
 msgid "Extract Text"
-msgstr ""
+msgstr "ტექსტის გამოღება"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:32
 #, kde-format
@@ -408,7 +410,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:20
 #, kde-format
 msgid "File Into"
-msgstr ""
+msgstr "ჩადება"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:61
 #, kde-format
@@ -794,22 +796,22 @@ msgstr "დაწევა"
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:26
 #, kde-format
 msgid "Upper"
-msgstr ""
+msgstr "ზედა რეგისტრში"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:27
 #, kde-format
 msgid "Lower first letter"
-msgstr ""
+msgstr "პირველი სიმბოლო დაბალ რეგისტრში"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:28
 #, kde-format
 msgid "Upper first letter"
-msgstr ""
+msgstr "პირველი სიმბოლო მაღალ რეგისტრში"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:29
 #, kde-format
 msgid "Quote wildcard"
-msgstr ""
+msgstr "ვაილდკარდის ბრჭყალებში ჩასმა"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:30
 #, kde-format
@@ -870,7 +872,7 @@ msgstr "მისამართი:"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:62
 #, kde-format
 msgid "Use ; to separate emails"
-msgstr ""
+msgstr "ელფოსტების დასაშორებლად ';'-ის გამოყენება"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:95
 #, kde-format
@@ -897,7 +899,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditioncurrentdate.cpp:21
 #, kde-format
 msgid "Currentdate"
-msgstr ""
+msgstr "მიმდინარე თარიღი"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditioncurrentdate.cpp:78
 #, kde-format
@@ -1015,7 +1017,7 @@ msgstr "სათაური"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:45
 #, kde-format
 msgid "With value:"
-msgstr ""
+msgstr "მნიშვნელობით:"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:75
 #, kde-format
@@ -1027,7 +1029,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:21
 #, kde-format
 msgid "IHave"
-msgstr ""
+msgstr "მაქვს"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:35
 #, kde-format
@@ -1137,7 +1139,7 @@ msgstr "ქვეშ"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionsize.cpp:34
 #, kde-format
 msgid "over"
-msgstr ""
+msgstr "ზემოთ"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionsize.cpp:57
 #, kde-format
@@ -1150,7 +1152,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:24
 #, kde-format
 msgid "Spam Test"
-msgstr ""
+msgstr "სპამის ტესტი"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:37
 #, kde-format
@@ -1183,7 +1185,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionvirustest.cpp:22
 #, kde-format
 msgid "Virus Test"
-msgstr ""
+msgstr "ვირუსის ტესტი"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionvirustest.cpp:90
 #, kde-format
@@ -1200,7 +1202,7 @@ msgstr "ყველა"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:27
 #, kde-format
 msgid "localpart"
-msgstr ""
+msgstr "ლოკალურინაწილი"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:28
 #, kde-format
@@ -1305,7 +1307,7 @@ msgstr "სათაურები"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:53
 #, kde-format
 msgid "Add new header:"
-msgstr ""
+msgstr "ახალი თავსართის დამატება:"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:243
 #, kde-format
@@ -1335,12 +1337,12 @@ msgstr "ფარულიასლი"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
 #, kde-format
 msgid "Resent From"
-msgstr ""
+msgstr "გადმოგზავნილია ვისგან"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
 #, kde-format
 msgid "Resent To"
-msgstr ""
+msgstr "გადაგზავნილია ვისთან"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
 #, kde-format
@@ -1375,7 +1377,7 @@ msgstr "ქვეტიპი"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
 #, kde-format
 msgid "Anychild"
-msgstr ""
+msgstr "ნებისმიერი შვიი"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
 #, kde-format
@@ -1445,12 +1447,12 @@ msgstr "გიბ"
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:54
 #, kde-format
 msgid "Please select an condition."
-msgstr ""
+msgstr "აირჩიეთ პირობა."
 
 #: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:31
 #, kde-format
 msgid "Sieve Script"
-msgstr ""
+msgstr "Sieve-ის სკრიპტი"
 
 #: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:143
 #, kde-format
@@ -1534,7 +1536,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:132
 #, kde-format
 msgid "Include:"
-msgstr ""
+msgstr "ჩასმა:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:138
 #: ksieveui/templates/sievetemplateeditdialog.cpp:57
@@ -1594,23 +1596,23 @@ msgstr "მოქმედებები"
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:71
 #, kde-format
 msgid "Add new block:"
-msgstr ""
+msgstr "ახალი ბლოკის დამატება:"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:75
 #, kde-format
 msgid "\"elsif\" block"
-msgstr ""
+msgstr "ბლოკი \"elsif\""
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:76
 #, kde-format
 msgid "\"else\" block"
-msgstr ""
+msgstr "ბლოკი \"else\""
 
 #: ksieveui/autocreatescripts/sievescriptdescriptiondialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Description"
-msgstr ""
+msgstr "აღწერა"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:129
 #, kde-format
@@ -1660,7 +1662,7 @@ msgstr "სკრიპტის სახელის გადარქმე�
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:160
 #, kde-format
 msgid "Edit Script Description"
-msgstr ""
+msgstr "სკრიპტის აღწერის შეცვლა"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:189
 #, kde-format
@@ -1689,7 +1691,7 @@ msgstr "ახალი სკრიპტი"
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:253
 #, kde-format
 msgid "New script name:"
-msgstr ""
+msgstr "ახალი სკრიპტის სახელი:"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:269
 #, kde-format
@@ -1711,7 +1713,7 @@ msgstr "სკრიპტის სახელის გადარქმე�
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:294
 #, kde-format
 msgid "New name for the script:"
-msgstr ""
+msgstr "ახალი სახელი სკრიპტისთვის:"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:487
 #, kde-format
@@ -1721,7 +1723,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:585
 #, kde-format
 msgid "Script part %1"
-msgstr ""
+msgstr "სკრიპტის ნაწილი %1"
 
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:36
 #, kde-format
@@ -1731,7 +1733,7 @@ msgstr "ჩასმულები"
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:40
 #, kde-format
 msgid "Global Variable"
-msgstr ""
+msgstr "გლობალური ცვლადი"
 
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:46
 #, kde-format
@@ -1763,7 +1765,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Parsing Error"
-msgstr ""
+msgstr "Sieve-ის დამუშავების შედომა"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:37
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:38
@@ -1779,7 +1781,7 @@ msgstr "Sieve -ის სკრიპტი:"
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
 #, kde-format
 msgid "Errors reported:"
-msgstr ""
+msgstr "გამოტანილი შეცდომები:"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:76
 #, kde-format
@@ -1803,7 +1805,7 @@ msgstr "ჩანართის დახურვა"
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Diagnostics"
-msgstr ""
+msgstr "Sieve-ის დიაგნოსტიკა"
 
 #: ksieveui/debug/sievedebugdialog.cpp:63
 #, kde-format
@@ -1815,7 +1817,7 @@ msgstr ""
 #: ksieveui/debug/sievedebugdialog.cpp:66
 #, kde-format
 msgid "No IMAP resource found."
-msgstr ""
+msgstr "IMAP რესურსი ნაპოვნი არაა."
 
 #: ksieveui/debug/sievedebugdialog.cpp:101
 #, kde-format
@@ -1861,7 +1863,7 @@ msgstr ""
 msgid ""
 "(This script is empty)\n"
 "\n"
-msgstr ""
+msgstr "(ეს სკრიპტი ცარიელია)\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:203
 #, kde-format
@@ -1879,7 +1881,7 @@ msgstr ""
 #: ksieveui/debug/sievedebugdialog.cpp:221
 #, kde-format
 msgid "Sieve capabilities:\n"
-msgstr ""
+msgstr "Sieve-ის შესაძლებლობები:\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:224
 #, kde-format
@@ -1889,7 +1891,7 @@ msgstr ""
 #: ksieveui/debug/sievedebugdialog.cpp:232
 #, kde-format
 msgid "Available Sieve scripts:\n"
-msgstr ""
+msgstr "Sieve-ის ხელმისაწვდომი სკრიპტები:\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:235
 #, kde-format
@@ -1904,6 +1906,8 @@ msgid ""
 "Active script: '%1'\n"
 "\n"
 msgstr ""
+"აქტიური სკრიპტი: '%1'\n"
+"\n"
 
 #: ksieveui/editor/sieveeditor.cpp:38
 #, kde-format
@@ -1952,7 +1956,7 @@ msgstr "სკრიპტის შემოტანა"
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:72
 #, kde-format
 msgid "*.siv;;sieve files (*.siv);;all files (*)"
-msgstr ""
+msgstr "*.siv;;sieve-ის ფაილები (*.siv);;ყველა ფაილი (*)"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:73
 #, kde-format
@@ -2041,12 +2045,12 @@ msgstr ""
 #: ksieveui/editor/sieveeditortabwidget.cpp:178
 #, kde-format
 msgid "Help about: %1"
-msgstr ""
+msgstr "დახმარება: %1"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:65
 #, kde-format
 msgid "Sieve Template:"
-msgstr ""
+msgstr "Sieve-ის ნიმუში:"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:86
 #, kde-format
@@ -2061,7 +2065,7 @@ msgstr ""
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:215
 #, kde-format
 msgid "Error during parsing"
-msgstr ""
+msgstr "შეცდომა დამუშავებისას"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:245
 #, kde-format
@@ -2117,12 +2121,12 @@ msgstr "დამატებითი პარამეტრები"
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Support"
-msgstr ""
+msgstr "Sieve-ის სერვერის მხარდაჭერა"
 
 #: ksieveui/editor/sieveinfowidget.cpp:31
 #, kde-format
 msgid "Sieve server supports:"
-msgstr ""
+msgstr "Sieve-ის სერვერს აქვს მხარდაჭერა:"
 
 #: ksieveui/editor/sievetextedit.cpp:277
 #, kde-format
@@ -2132,7 +2136,7 @@ msgstr "წესის დამატება"
 #: ksieveui/editor/sievetextedit.cpp:291
 #, kde-format
 msgid "Help about: '%1'"
-msgstr ""
+msgstr "დახმარება: %1"
 
 #: ksieveui/editor/sievetextedit.cpp:300
 #, kde-format
@@ -2270,12 +2274,12 @@ msgstr ""
 #: ksieveui/managescriptsjob/parseuserscriptjob.cpp:70
 #, kde-format
 msgid "Script is empty. (%1)"
-msgstr ""
+msgstr "სკრიპტი ცარიელია. (%1)"
 
 #: ksieveui/managescriptsjob/parseuserscriptjob.cpp:78
 #, kde-format
 msgid "Script parsing error."
-msgstr ""
+msgstr "სკრიპტის დამუშავების შეცდომა."
 
 #: ksieveui/managescriptsjob/renamescriptjob.cpp:56
 #, kde-format
@@ -2301,7 +2305,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Sieve Scripts"
-msgstr ""
+msgstr "Sieve-ის სკრიპტების მართვა"
 
 #: ksieveui/managesievescriptsdialog.cpp:78
 #, kde-format
@@ -2361,7 +2365,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Parsing"
-msgstr ""
+msgstr "Sieve-ის დამუშავება"
 
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:80
 #, kde-format
@@ -2406,7 +2410,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug Sieve Script"
-msgstr ""
+msgstr "Sieve-ის სკრიპტის გამართვა"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:37
 #, kde-format
@@ -2444,7 +2448,7 @@ msgstr ""
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:144
 #, kde-format
 msgid "Script text is empty."
-msgstr ""
+msgstr "სკრიპტის ტექსტი ცარიელია."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:148
 #, kde-format
@@ -2474,7 +2478,7 @@ msgstr "ტექსტური ფაილები (*.txt);;ყველა 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:30
 #, kde-format
 msgid "Add debug here"
-msgstr ""
+msgstr "გამართვის აქ დამატება"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerwidget.cpp:35
 #, kde-format
@@ -2521,7 +2525,7 @@ msgstr ""
 #: ksieveui/templates/sievedefaulttemplate.cpp:79
 #, kde-format
 msgid "Vacations"
-msgstr ""
+msgstr "დასვენებები"
 
 #: ksieveui/templates/sievetemplateeditdialog.cpp:37
 #, kde-format
@@ -2795,17 +2799,17 @@ msgstr "უსახელო"
 #: ksieveui/widgets/managesievewidget.cpp:228
 #, kde-format
 msgid "Empty name is not a valid name"
-msgstr ""
+msgstr "ცარიელი სახელი სწორი სახელი არაა"
 
 #: ksieveui/widgets/managesievewidget.cpp:234
 #, kde-format
 msgid "You cannot use protected name."
-msgstr ""
+msgstr "დაცულ სახელს ვერ გაოიყენებთ."
 
 #: ksieveui/widgets/managesievewidget.cpp:246
 #, kde-format
 msgid "Script name already used \"%1\"."
-msgstr ""
+msgstr "სკრიპტის სახელი უკვე გამოიყენება \"%1\"."
 
 #: ksieveui/widgets/managesievewidget.cpp:426
 #, kde-format
@@ -2962,17 +2966,17 @@ msgstr ""
 #: shared/error.cpp:169
 #, kde-format
 msgid "\"require\" must be first command"
-msgstr ""
+msgstr "\"require\" პირველი ბრძანება უნდა იყოს"
 
 #: shared/error.cpp:172
 #, kde-format
 msgid "\"require\" missing for command \"%1\""
-msgstr ""
+msgstr "\"require\" აკლია ბრძანებისთვის \"%1\""
 
 #: shared/error.cpp:175
 #, kde-format
 msgid "\"require\" missing for test \"%1\""
-msgstr ""
+msgstr "\"require\" აკლია ტესტისთვის \"%1\""
 
 #: shared/error.cpp:178
 #, kde-format
