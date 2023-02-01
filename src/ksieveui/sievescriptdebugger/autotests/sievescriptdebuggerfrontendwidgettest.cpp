@@ -9,9 +9,6 @@
 #ifndef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <kpimtextedit/kpimtextedit-texttospeech.h>
 #endif
-#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
-#include <KPIMTextEditTextToSpeech/TextToSpeechContainerWidget>
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
@@ -54,10 +51,6 @@ void SieveScriptDebuggerFrontEndWidgetTest::shouldHaveDefaultValue()
     QVERIFY(extension);
     QVERIFY(extension->text().isEmpty());
     QVERIFY(extension->isClearButtonEnabled());
-#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
-    auto textToSpeechWidget = w.findChild<KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *>(QStringLiteral("texttospeechwidget"));
-    QVERIFY(textToSpeechWidget);
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     auto textToSpeechWidget = w.findChild<TextEditTextToSpeech::TextToSpeechContainerWidget *>(QStringLiteral("texttospeechwidget"));
     QVERIFY(textToSpeechWidget);

@@ -19,12 +19,6 @@ class PlainTextEditFindBar;
 class PlainTextEditor;
 class PlainTextEditorWidget;
 }
-#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
-namespace KPIMTextEditTextToSpeech
-{
-class TextToSpeechContainerWidget;
-}
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 namespace TextEditTextToSpeech
 {
@@ -136,9 +130,6 @@ private:
     SieveTextEdit *mTextEdit = nullptr;
     KPIMTextEdit::PlainTextEditorWidget *mDebugTextEdit = nullptr;
     KPIMTextEdit::PlainTextEditFindBar *mFindBar = nullptr;
-#ifdef KPIMTEXTEDIT_TEXT_TO_SPEECH
-    KPIMTextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
-#endif
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
 #endif
