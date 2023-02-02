@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-17 00:59+0000\n"
+"POT-Creation-Date: 2023-02-02 00:59+0000\n"
 "PO-Revision-Date: 2022-05-07 02:58+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1608,7 +1608,7 @@ msgid "Include:"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:138
-#: ksieveui/templates/sievetemplateeditdialog.cpp:65
+#: ksieveui/templates/sievetemplateeditdialog.cpp:62
 #, kde-format
 msgid "Name:"
 msgstr "이름:"
@@ -2161,33 +2161,33 @@ msgstr ""
 msgid "Help about: %1"
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:68
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:65
 #, fuzzy, kde-format
 #| msgid "Sieve capabilities:\n"
 msgid "Sieve Template:"
 msgstr "사용 가능한 Sieve 기능:\n"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:94
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:87
 #, kde-format
 msgid "Editor"
 msgstr "편집기"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:148
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:138
 #, kde-format
 msgid "Show result from \"check syntax\""
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:226
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:216
 #, kde-format
 msgid "Error during parsing"
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:256
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:246
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:256
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:246
 #, kde-format
 msgid "Parsing error"
 msgstr "해석 오류"
@@ -2554,45 +2554,45 @@ msgstr "변경 사항 적용"
 msgid "Debug"
 msgstr "디버그"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:49
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:46
 #, kde-format
 msgid "Email path:"
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:63
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:60
 #, kde-format
 msgid "Extension:"
 msgstr "확장자:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:68
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:65
 #, kde-format
 msgid ""
 "Activate extension with \"+<name of extension>\", deactivate it with \"-"
 "<name of extension>\""
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:107
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:97
 #, kde-format
 msgid "Display check script result..."
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:146
 #, fuzzy, kde-format
 #| msgid "Script is empty."
 msgid "Script text is empty."
 msgstr "스크립트가 비어 있습니다."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:160
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:166
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:236
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:226
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr ""
@@ -2659,13 +2659,13 @@ msgstr "다음 사람이 게시한 메일 삭제..."
 msgid "Vacations"
 msgstr "휴가"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:45
+#: ksieveui/templates/sievetemplateeditdialog.cpp:42
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "기본 템플릿"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:45
+#: ksieveui/templates/sievetemplateeditdialog.cpp:42
 #, kde-format
 msgctxt "@title:window"
 msgid "Template"

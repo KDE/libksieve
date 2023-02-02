@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-17 00:59+0000\n"
+"POT-Creation-Date: 2023-02-02 00:59+0000\n"
 "PO-Revision-Date: 2023-01-15 20:49+0800\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -1604,7 +1604,7 @@ msgid "Include:"
 msgstr "引入："
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:138
-#: ksieveui/templates/sievetemplateeditdialog.cpp:65
+#: ksieveui/templates/sievetemplateeditdialog.cpp:62
 #, kde-format
 msgid "Name:"
 msgstr "名稱："
@@ -2127,32 +2127,32 @@ msgstr "載入關於 %1 的頁面時發生錯誤"
 msgid "Help about: %1"
 msgstr "說明項目：%1"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:68
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:65
 #, kde-format
 msgid "Sieve Template:"
 msgstr "過濾器樣本："
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:94
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:87
 #, kde-format
 msgid "Editor"
 msgstr "編輯器"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:148
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:138
 #, kde-format
 msgid "Show result from \"check syntax\""
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:226
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:216
 #, kde-format
 msgid "Error during parsing"
 msgstr "剖析時發生錯誤"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:256
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:246
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:256
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:246
 #, kde-format
 msgid "Parsing error"
 msgstr "剖析錯誤"
@@ -2511,44 +2511,44 @@ msgstr "套用變更"
 msgid "Debug"
 msgstr "除錯"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:49
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:46
 #, kde-format
 msgid "Email path:"
 msgstr "電子郵件路徑；"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:63
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:60
 #, kde-format
 msgid "Extension:"
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:68
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:65
 #, kde-format
 msgid ""
 "Activate extension with \"+<name of extension>\", deactivate it with \"-"
 "<name of extension>\""
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:107
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:97
 #, kde-format
 msgid "Display check script result..."
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:146
 #, kde-format
 msgid "Script text is empty."
 msgstr "文稿內容是空的。"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:160
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:166
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:236
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:226
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr ""
@@ -2616,13 +2616,13 @@ msgstr "刪除誰發的信件："
 msgid "Vacations"
 msgstr "休假"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:45
+#: ksieveui/templates/sievetemplateeditdialog.cpp:42
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "預設樣本"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:45
+#: ksieveui/templates/sievetemplateeditdialog.cpp:42
 #, kde-format
 msgctxt "@title:window"
 msgid "Template"

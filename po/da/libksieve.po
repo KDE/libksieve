@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-17 00:59+0000\n"
+"POT-Creation-Date: 2023-02-02 00:59+0000\n"
 "PO-Revision-Date: 2016-08-11 22:06+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1713,7 +1713,7 @@ msgid "Include:"
 msgstr "Inkludér:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:138
-#: ksieveui/templates/sievetemplateeditdialog.cpp:65
+#: ksieveui/templates/sievetemplateeditdialog.cpp:62
 #, kde-format
 msgid "Name:"
 msgstr "Navn:"
@@ -2271,32 +2271,32 @@ msgstr "Fejl under indlæsning af side om %1"
 msgid "Help about: %1"
 msgstr "Hjælp til: %1"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:68
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:65
 #, kde-format
 msgid "Sieve Template:"
 msgstr "Sieve-skabelon:"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:94
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:87
 #, kde-format
 msgid "Editor"
 msgstr "Editor"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:148
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:138
 #, kde-format
 msgid "Show result from \"check syntax\""
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:226
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:216
 #, kde-format
 msgid "Error during parsing"
 msgstr "Fejl under fortolkning"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:256
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:246
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:256
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:246
 #, fuzzy, kde-format
 #| msgid "Sieve Parsing Error"
 msgid "Parsing error"
@@ -2670,45 +2670,45 @@ msgstr ""
 msgid "Debug"
 msgstr "Fejlsøgning"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:49
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:46
 #, kde-format
 msgid "Email path:"
 msgstr "E-mail-sti:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:63
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:60
 #, kde-format
 msgid "Extension:"
 msgstr "Endelse:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:68
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:65
 #, kde-format
 msgid ""
 "Activate extension with \"+<name of extension>\", deactivate it with \"-"
 "<name of extension>\""
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:107
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:97
 #, kde-format
 msgid "Display check script result..."
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:146
 #, fuzzy, kde-format
 #| msgid "Script is empty."
 msgid "Script text is empty."
 msgstr "Scriptet er tomt."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:160
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:166
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:236
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:226
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr ""
@@ -2781,14 +2781,14 @@ msgstr "Destruér breve postet af..."
 msgid "Vacations"
 msgstr "Ferier"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:45
+#: ksieveui/templates/sievetemplateeditdialog.cpp:42
 #, fuzzy, kde-format
 #| msgid "Default template"
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "Standardskabelon"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:45
+#: ksieveui/templates/sievetemplateeditdialog.cpp:42
 #, fuzzy, kde-format
 #| msgid "Template"
 msgctxt "@title:window"
