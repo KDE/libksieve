@@ -79,8 +79,8 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     auto textToSpeechWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(this);
     textToSpeechWidget->setObjectName(QStringLiteral("texttospeechwidget"));
-#endif
     vboxSieveEditorLayout->addWidget(textToSpeechWidget);
+#endif
     auto textEdit = new KSieveUi::SieveScriptDebuggerTextEdit(this);
     connect(textEdit, &KSieveUi::SieveScriptDebuggerTextEdit::textChanged, this, &SieveScriptDebuggerFrontEndWidget::slotScriptTextChanged);
     mSieveTextEditWidget = new KSieveUi::SieveTextEditWidget(textEdit, this);
