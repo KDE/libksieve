@@ -19,7 +19,7 @@ public:
     explicit SieveInfoWidget(QWidget *parent = nullptr);
     ~SieveInfoWidget() override;
 
-    void setServerInfo(QStringList info);
+    void setServerInfo(QStringList serverInfos);
 
 private:
     QTextEdit *const mInfo;
