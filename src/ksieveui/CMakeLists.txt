@@ -418,7 +418,7 @@ target_link_libraries(KF5KSieveUi
     PRIVATE
     KF5::Libkdepim
     KF${KF_MAJOR_VERSION}::Archive
-    KF5::Mime
+    KPim${KF_MAJOR_VERSION}::Mime
     KF${KF_MAJOR_VERSION}::IconThemes
     KF5::IdentityManagement
     KF5::PimTextEdit

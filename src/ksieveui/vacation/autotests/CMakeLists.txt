@@ -22,7 +22,7 @@ macro( add_vacation_test _source )
     KF5::KSieveUi
     Qt::Test
     KF5::IdentityManagement
-    KF5::Mime
+    KPim${KF_MAJOR_VERSION}::Mime
     KF${KF_MAJOR_VERSION}::I18n
     KF5::MailTransport
     KF5::Libkdepim
