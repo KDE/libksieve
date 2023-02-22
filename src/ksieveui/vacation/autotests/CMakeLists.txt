@@ -21,11 +21,11 @@ macro( add_vacation_test _source )
   target_link_libraries(${_name}
     KF5::KSieveUi
     Qt::Test
-    KF5::IdentityManagement
+    KPim${KF_MAJOR_VERSION}::IdentityManagement
     KPim${KF_MAJOR_VERSION}::Mime
     KF${KF_MAJOR_VERSION}::I18n
     KF5::MailTransport
-    KF5::Libkdepim
+    KPim${KF_MAJOR_VERSION}::Libkdepim
     KF5::PimCommon
     KF5::PimTextEdit
     )

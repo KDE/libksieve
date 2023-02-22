@@ -416,11 +416,11 @@ target_link_libraries(KF5KSieveUi
     KF5::KSieve
     KF5::PimCommon
     PRIVATE
-    KF5::Libkdepim
+    KPim${KF_MAJOR_VERSION}::Libkdepim
     KF${KF_MAJOR_VERSION}::Archive
     KPim${KF_MAJOR_VERSION}::Mime
     KF${KF_MAJOR_VERSION}::IconThemes
-    KF5::IdentityManagement
+    KPim${KF_MAJOR_VERSION}::IdentityManagement
     KF5::PimTextEdit
     KF5::MailTransport
     KF${KF_MAJOR_VERSION}::KIOWidgets
