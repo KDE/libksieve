@@ -24,7 +24,7 @@ macro( add_vacation_test _source )
     KPim${KF_MAJOR_VERSION}::IdentityManagement
     KPim${KF_MAJOR_VERSION}::Mime
     KF${KF_MAJOR_VERSION}::I18n
-    KF5::MailTransport
+    KPim${KF_MAJOR_VERSION}::MailTransport
     KPim${KF_MAJOR_VERSION}::Libkdepim
     KF5::PimCommon
     KF5::PimTextEdit

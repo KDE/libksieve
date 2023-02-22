@@ -422,7 +422,7 @@ target_link_libraries(KF5KSieveUi
     KF${KF_MAJOR_VERSION}::IconThemes
     KPim${KF_MAJOR_VERSION}::IdentityManagement
     KF5::PimTextEdit
-    KF5::MailTransport
+    KPim${KF_MAJOR_VERSION}::MailTransport
     KF${KF_MAJOR_VERSION}::KIOWidgets
     KF${KF_MAJOR_VERSION}::NewStuff
     Qt::WebEngineWidgets
