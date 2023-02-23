@@ -13,6 +13,7 @@ endif()
 
 add_library(KPim${KF_MAJOR_VERSION}KSieveUi)
 add_library(KPim${KF_MAJOR_VERSION}::KSieveUi ALIAS KPim${KF_MAJOR_VERSION}KSieveUi)
+add_library(KF5::KSieveUi ALIAS KPim${KF_MAJOR_VERSION}KSieveUi)
 if(KDEPIM_ENTERPRISE_BUILD)
     set(USE_GRAPHICAL_SIEVE_EDITOR true)
 else()
