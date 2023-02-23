@@ -106,7 +106,7 @@ endif()
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVE
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h"
-                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KF5LibKSieveConfigVersion.cmake"
+                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}LibKSieveConfigVersion.cmake"
                         SOVERSION 5
 )
 
@@ -117,22 +117,22 @@ ecm_set_disabled_deprecation_versions(QT 6.4  KF 5.103.0)
 
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5LibKSieve")
-
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim${KF_MAJOR_VERSION}LibKSieve")
+set(KSIEVE_KF5_COMPAT FALSE)
 configure_package_config_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/KF5LibKSieveConfig.cmake.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/KF5LibKSieveConfig.cmake"
+  "${CMAKE_CURRENT_SOURCE_DIR}/KPimLibKSieveConfig.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}LibKSieveConfig.cmake"
   INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
 )
 
 install(FILES
-  "${CMAKE_CURRENT_BINARY_DIR}/KF5LibKSieveConfig.cmake"
-  "${CMAKE_CURRENT_BINARY_DIR}/KF5LibKSieveConfigVersion.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}LibKSieveConfig.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}LibKSieveConfigVersion.cmake"
   DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
   COMPONENT Devel
 )
 
-install(EXPORT KF5KSieveTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KF5LibKSieveTargets.cmake NAMESPACE KF5::)
+install(EXPORT KPim${KF_MAJOR_VERSION}KSieveTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim${KF_MAJOR_VERSION}LibKSieveTargets.cmake NAMESPACE KPim${KF_MAJOR_VERSION}::)
 
 install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h
@@ -155,6 +155,36 @@ kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 ki18n_install(po)
 if(KF${KF_MAJOR_VERSION}DocTools_FOUND)
     kdoctools_install(po)
+endif()
+
+if (QT_MAJOR_VERSION STREQUAL "5")
+##
+# TODO: Backwards compatiblity. Remove in next major version
+##
+set(CMAKECONFIG_INSTALL_DIR_KF5 "${KDE_INSTALL_CMAKEPACKAGEDIR}/KF5LibKSieve")
+set(KSIEVE_KF5_COMPAT TRUE)
+configure_package_config_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/KPimLibKSieveConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KF5LibKSieveConfig.cmake"
+    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR_KF5}
+)
+
+install(FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/KF5LibKSieveConfig.cmake"
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR_KF5}"
+    COMPONENT Devel
+)
+install(FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}LibKSieveConfigVersion.cmake"
+    RENAME "KF5LibKSieveConfigVersion.cmake"
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR_KF5}"
+    COMPONENT Devel
+)
+install(EXPORT KPim${KF_MAJOR_VERSION}KSieveTargets
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR_KF5}"
+    FILE KPim${KF_MAJOR_VERSION}LibKSieveTargets.cmake
+    NAMESPACE KF5::
+)
 endif()
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

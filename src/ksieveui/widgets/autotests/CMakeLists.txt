@@ -6,7 +6,7 @@ macro(add_autocreatescriptswidget_test _source)
   add_executable( ${_name} ${_test} ${_name}.h)
   add_test(NAME ${_name} COMMAND ${_name})
   ecm_mark_as_test(sievescriptdebugger-${_name})
-  target_link_libraries( ${_name} KF5::KSieveUi Qt::Test KF${KF_MAJOR_VERSION}::I18n)
+  target_link_libraries( ${_name} KPim${KF_MAJOR_VERSION}KSieveUi Qt::Test KF${KF_MAJOR_VERSION}::I18n)
 endmacro()
 
 add_autocreatescriptswidget_test(lineeditvalidatortest.cpp)

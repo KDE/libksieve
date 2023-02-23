@@ -1,9 +1,9 @@
 # SPDX-FileCopyrightText: 2011-2023 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
-add_library(KF5KManageSieve)
-add_library(KF5::KManageSieve ALIAS KF5KManageSieve)
+add_library(KPim${KF_MAJOR_VERSION}KManageSieve)
+add_library(KPim${KF_MAJOR_VERSION}::KManageSieve ALIAS KPim${KF_MAJOR_VERSION}KManageSieve)
 
-target_sources(KF5KManageSieve PRIVATE
+target_sources(KPim${KF_MAJOR_VERSION}KManageSieve PRIVATE
   response.cpp
   session.cpp
   sessionthread.cpp
@@ -16,16 +16,16 @@ target_sources(KF5KManageSieve PRIVATE
   response.h
 
 )
-ecm_qt_declare_logging_category(KF5KManageSieve HEADER kmanagersieve_debug.h IDENTIFIER KMANAGERSIEVE_LOG CATEGORY_NAME org.kde.pim.kmanagersieve
+ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}KManageSieve HEADER kmanagersieve_debug.h IDENTIFIER KMANAGERSIEVE_LOG CATEGORY_NAME org.kde.pim.kmanagersieve
         DESCRIPTION "kdepim (libksieve manager)"
         OLD_CATEGORY_NAMES log_kmanagersieve
         EXPORT LIBKSIEVE
     )
 
 
-generate_export_header(KF5KManageSieve BASE_NAME kmanagesieve)
+generate_export_header(KPim${KF_MAJOR_VERSION}KManageSieve BASE_NAME kmanagesieve)
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF5KManageSieve PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim${KF_MAJOR_VERSION}KManageSieve PROPERTIES UNITY_BUILD ON)
 endif()
 
 
@@ -34,7 +34,7 @@ if (WIN32)
 endif()
 
 
-target_link_libraries(KF5KManageSieve
+target_link_libraries(KPim${KF_MAJOR_VERSION}KManageSieve
 PRIVATE
   KF${KF_MAJOR_VERSION}::I18n 
   KF${KF_MAJOR_VERSION}::KIOCore
@@ -43,16 +43,16 @@ PRIVATE
   ${extra_LIBS}
 )
 
-set_target_properties(KF5KManageSieve PROPERTIES
+set_target_properties(KPim${KF_MAJOR_VERSION}KManageSieve PROPERTIES
   VERSION ${LIBKSIEVE_VERSION}
   SOVERSION ${LIBKSIEVE_SOVERSION}
   EXPORT_NAME KManageSieve
 )
 
-target_include_directories(KF5KManageSieve
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR_KF}/KManageSieve/;${KDE_INSTALL_INCLUDEDIR_KF}/KSieve>"
+target_include_directories(KPim${KF_MAJOR_VERSION}KManageSieve
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/KManageSieve/;${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/KSieveUi>"
 )
-target_include_directories(KF5KManageSieve PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/kmanagesieve;${libksieve_BINARY_DIR}/src/kmanagesieve>")
+target_include_directories(KPim${KF_MAJOR_VERSION}KManageSieve PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/kmanagesieve;${libksieve_BINARY_DIR}/src/kmanagesieve>")
 
 
 
@@ -68,17 +68,17 @@ ecm_generate_pri_file(BASE_NAME KManageSieve
     DEPS "" FILENAME_VAR PRI_FILENAME
 )
 
-install(TARGETS KF5KManageSieve EXPORT KF5KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KPim${KF_MAJOR_VERSION}KManageSieve EXPORT KPim${KF_MAJOR_VERSION}KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
     ${kmanagesieve_CamelCase_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KManageSieve/KManageSieve
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/KManageSieve/KManageSieve
     COMPONENT Devel
 )
 
 install(FILES
     ${kmanagesieve_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/kmanagesieve_export.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KManageSieve/kmanagesieve
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/KManageSieve/kmanagesieve
     COMPONENT Devel
 )
 install(FILES
