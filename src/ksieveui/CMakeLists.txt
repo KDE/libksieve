@@ -422,12 +422,12 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}KSieveUi
     KPim${KF_MAJOR_VERSION}::Mime
     KF${KF_MAJOR_VERSION}::IconThemes
     KPim${KF_MAJOR_VERSION}::IdentityManagement
-    KF5::PimTextEdit
+    KPim${KF_MAJOR_VERSION}::PimTextEdit
     KPim${KF_MAJOR_VERSION}::MailTransport
     KF${KF_MAJOR_VERSION}::KIOWidgets
     KF${KF_MAJOR_VERSION}::NewStuff
     Qt::WebEngineWidgets
-    KF5::PimTextEdit
+    KPim${KF_MAJOR_VERSION}::PimTextEdit
     KF${KF_MAJOR_VERSION}::I18n
     KF${KF_MAJOR_VERSION}::SonnetUi
     Qt::PrintSupport

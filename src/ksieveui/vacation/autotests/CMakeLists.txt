@@ -27,7 +27,7 @@ macro( add_vacation_test _source )
     KPim${KF_MAJOR_VERSION}::MailTransport
     KPim${KF_MAJOR_VERSION}::Libkdepim
     KF5::PimCommon
-    KF5::PimTextEdit
+    KPim${KF_MAJOR_VERSION}::PimTextEdit
     )
 endmacro()
 
