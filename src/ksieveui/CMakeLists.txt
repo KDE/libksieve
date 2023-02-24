@@ -8,7 +8,7 @@ if (BUILD_QCH)
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KF5KSieveUiQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}KSieveUiQchTargets.cmake\")")
 endif()
 
 add_library(KPim${KF_MAJOR_VERSION}KSieveUi)
@@ -406,7 +406,7 @@ kconfig_add_kcfg_files(KPim${KF_MAJOR_VERSION}KSieveUi settings/sieve-vacation.k
 
 generate_export_header(KPim${KF_MAJOR_VERSION}KSieveUi BASE_NAME ksieveui)
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KF5KSieveUi PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim${KF_MAJOR_VERSION}KSieveUi PROPERTIES UNITY_BUILD ON)
 endif()
 
 

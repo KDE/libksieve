@@ -65,7 +65,7 @@ ecm_generate_headers(kmanagesieve_CamelCase_HEADERS
 )
 
 ecm_generate_pri_file(BASE_NAME KManageSieve
-    LIB_NAME KF5KManageSieve
+    LIB_NAME KPim${KF_MAJOR_VERSION}KManageSieve
     DEPS "" FILENAME_VAR PRI_FILENAME
 )
 
