@@ -39,6 +39,8 @@ else()
     set(KTEXTADDONS_MIN_VERSION "1.0.2")
 endif()
 
+option(BUILD_WITH_COMPAT_LIBS "Generate compat cmake file (Set at false will allow to co-install lib)" ON)
+
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
@@ -157,6 +159,7 @@ if(KF${KF_MAJOR_VERSION}DocTools_FOUND)
     kdoctools_install(po)
 endif()
 
+if (BUILD_WITH_COMPAT_LIBS)
 if (QT_MAJOR_VERSION STREQUAL "5")
 ##
 # TODO: Backwards compatiblity. Remove in next major version
@@ -185,6 +188,7 @@ install(EXPORT KPim${KF_MAJOR_VERSION}KSieveTargets
     FILE KPim${KF_MAJOR_VERSION}LibKSieveTargets.cmake
     NAMESPACE KF5::
 )
+endif()
 endif()
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
