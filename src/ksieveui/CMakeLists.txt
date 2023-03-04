@@ -425,7 +425,7 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}KSieveUi
     KPim${KF_MAJOR_VERSION}::PimTextEdit
     KPim${KF_MAJOR_VERSION}::MailTransport
     KF${KF_MAJOR_VERSION}::KIOWidgets
-    KF${KF_MAJOR_VERSION}::NewStuff
+    KF${KF_MAJOR_VERSION}::NewStuffCore
     Qt::WebEngineWidgets
     KPim${KF_MAJOR_VERSION}::PimTextEdit
     KF${KF_MAJOR_VERSION}::I18n
