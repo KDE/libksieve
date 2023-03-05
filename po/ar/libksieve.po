@@ -32,7 +32,7 @@ msgid ""
 "You can choose to try to initiate TLS negotiations nonetheless, or cancel "
 "the operation."
 msgstr ""
-"طُلبت تعمية TLS ولكنّ خادوم «سِڤ» لم يعلن TLS في إمكانيّاته.\n"
+"طُلبت تعمية TLS ولكنّ خادوم «سِف» لم يعلن TLS في إمكانيّاته.\n"
 "يمكنك تجربة تمهيد مفاوضات TLS رغم ذلك، أو إلغاء العمليّة."
 
 #: kmanagesieve/session.cpp:99
@@ -60,7 +60,7 @@ msgstr "لا يبدو أنّ الخادوم يدعم SASL. عطّل TLS إن أ�
 #: kmanagesieve/session.cpp:258
 #, kde-format
 msgid "Sieve Authentication Details"
-msgstr "تفاصيل استيثاق «سِڤ»"
+msgstr "تفاصيل استيثاق «سِف»"
 
 #: kmanagesieve/session.cpp:260
 #, kde-format
@@ -68,7 +68,7 @@ msgid ""
 "Please enter your authentication details for your sieve account (usually the "
 "same as your email password):"
 msgstr ""
-"رجاءً أدخِل تفاصيل الاستيثاق لحساب «سِڤ» (غالبًا ما تكون مثل البريد وكلمة السّرّ):"
+"رجاءً أدخِل تفاصيل الاستيثاق لحساب «سِف» (غالبًا ما تكون مثل البريد وكلمة السّرّ):"
 
 #: kmanagesieve/session.cpp:320
 #, kde-format
@@ -1464,7 +1464,7 @@ msgstr "رجاءً اختر شرط."
 #: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:30
 #, kde-format
 msgid "Sieve Script"
-msgstr "سكربت «سِڤ»"
+msgstr "سكربت «سِف»"
 
 #: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:138
 #, kde-format
@@ -1788,7 +1788,7 @@ msgstr "احفظ كَ‍..."
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
 #, kde-format
 msgid "Sieve script:"
-msgstr "سكربت «سِڤ»:"
+msgstr "سكربت «سِف»:"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:56
 #, kde-format
@@ -1945,7 +1945,7 @@ msgstr "لا تغلق"
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:28
 #, kde-format
 msgid "Sieve Files (*.siv);;All Files (*)"
-msgstr "ملفّات سِڤ (*.siv);;كلّ الملفّات (*)"
+msgstr "ملفّات سِف (*.siv);;كلّ الملفّات (*)"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:29
 #, kde-format
@@ -2004,7 +2004,7 @@ msgstr "أزل التّعليق"
 #: ksieveui/editor/sieveeditormenubar.cpp:63
 #, kde-format
 msgid "Debug Sieve Script..."
-msgstr "نقّح سكربت «سِڤ»..."
+msgstr "نقّح سكربت «سِف»..."
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
 #, kde-format
@@ -2343,7 +2343,7 @@ msgstr ""
 #: ksieveui/widgets/managesievewidget.cpp:512
 #, kde-format
 msgid "Sieve Error"
-msgstr "خطأ في «سِڤ»"
+msgstr "خطأ في «سِف»"
 
 #: ksieveui/managesievescriptsdialog.cpp:204
 #, kde-format
@@ -2353,12 +2353,12 @@ msgstr "يرفع سكربتًا إلى الخادوم لفحص، رجاءً ان
 #: ksieveui/managesievescriptsdialog.cpp:250
 #, kde-format
 msgid "The Sieve script was successfully uploaded."
-msgstr "رُفع سكربت «سِڤ» بنجاح."
+msgstr "رُفع سكربت «سِف» بنجاح."
 
 #: ksieveui/managesievescriptsdialog.cpp:250
 #, kde-format
 msgid "Sieve Script Upload"
-msgstr "رفع سكربت «سِڤ»"
+msgstr "رفع سكربت «سِف»"
 
 #: ksieveui/managesievescriptsdialog.cpp:257
 #, kde-format
@@ -2367,7 +2367,7 @@ msgid ""
 "The server responded:\n"
 "%1"
 msgstr ""
-"فشل رفع سكربت «سِڤ».\n"
+"فشل رفع سكربت «سِف».\n"
 "ردّ الخادوم بِ‍:\n"
 "%1"
 
@@ -2420,7 +2420,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug Sieve Script"
-msgstr "نقّح سكربت «سِڤ»..."
+msgstr "نقّح سكربت «سِف»..."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:42
 #, kde-format
@@ -2757,7 +2757,7 @@ msgstr ""
 #: ksieveui/widgets/custommanagesievewidget.cpp:91
 #, kde-format
 msgid "No Sieve URL configured"
-msgstr "لم يُضبط مسار «سِڤ»"
+msgstr "لم يُضبط مسار «سِف»"
 
 #: ksieveui/widgets/managesievetreeview.cpp:16
 #: ksieveui/widgets/managesievetreeview.cpp:30
