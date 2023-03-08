@@ -273,7 +273,7 @@ KManageSieve::AuthDetails Session::requestAuthDetails(const QUrl &url)
     AuthDetails ad;
     ad.valid = false;
     if (dlg->exec()) {
-        ad.username = dlg->password();
+        ad.username = dlg->username();
         ad.password = dlg->password();
         ad.valid = true;
     }
