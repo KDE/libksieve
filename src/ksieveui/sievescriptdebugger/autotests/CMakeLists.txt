@@ -9,7 +9,10 @@ macro( add_sievescriptdebugger_test _source )
   add_test(NAME ${_name} COMMAND ${_name})
   ecm_mark_as_test(sievescriptdebugger-${_name})
   target_link_libraries( ${_name}  KPim${KF_MAJOR_VERSION}KSieveUi Qt::Test KF${KF_MAJOR_VERSION}::Completion KF${KF_MAJOR_VERSION}::KIOWidgets
-      KPim${KF_MAJOR_VERSION}::PimTextEdit KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
+      KPim${KF_MAJOR_VERSION}::PimTextEdit)
+  if (TARGET KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
+      target_link_libraries( ${_name} KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
+  endif()
 endmacro()
 
 
