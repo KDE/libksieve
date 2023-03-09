@@ -37,7 +37,6 @@ public:
 Q_SIGNALS:
     void addWidget(QWidget *w);
     void removeWidget(QWidget *w);
-    void actionModified();
     void valueChanged();
 
 private:
