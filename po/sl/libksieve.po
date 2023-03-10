@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:59+0000\n"
+"POT-Creation-Date: 2023-03-10 00:49+0000\n"
 "PO-Revision-Date: 2021-11-08 08:34+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1686,7 +1686,7 @@ msgid "Include:"
 msgstr "Vključi:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:138
-#: ksieveui/templates/sievetemplateeditdialog.cpp:62
+#: ksieveui/templates/sievetemplateeditdialog.cpp:59
 #, kde-format
 msgid "Name:"
 msgstr "Ime:"
@@ -2602,17 +2602,17 @@ msgstr "Uveljavi spremembe"
 msgid "Debug"
 msgstr "Razhrošči"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:46
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:43
 #, kde-format
 msgid "Email path:"
 msgstr "Pot e-pošte:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:60
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:57
 #, kde-format
 msgid "Extension:"
 msgstr "Razširitev:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:65
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:62
 #, kde-format
 msgid ""
 "Activate extension with \"+<name of extension>\", deactivate it with \"-"
@@ -2621,27 +2621,27 @@ msgstr ""
 "Omogočite razširitev s \"+<ime razširitve>\", onemogočite z \"-<ime "
 "razširitve>\""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:97
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
 #, kde-format
 msgid "Display check script result..."
 msgstr "Pokaži rezultat preverjalnega skripta ..."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:146
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
 #, kde-format
 msgid "Script text is empty."
 msgstr "Besedilo skripta je prazno."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:147
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "Datoteka e-pošte mora biti krajevno nameščena."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:153
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "Ni bilo mogoče odpreti začasne datoteke."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:226
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:223
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr "Skript še vedno vsebuje način za razhroščevanje. Odstranite ga."
@@ -2710,13 +2710,13 @@ msgstr "Uniči e-pošto, ki jo je poslal ..."
 msgid "Vacations"
 msgstr "Dopusti"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:42
+#: ksieveui/templates/sievetemplateeditdialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "Privzeta predloga"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:42
+#: ksieveui/templates/sievetemplateeditdialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Template"

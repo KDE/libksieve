@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:59+0000\n"
+"POT-Creation-Date: 2023-03-10 00:49+0000\n"
 "PO-Revision-Date: 2022-01-28 10:58+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1721,7 +1721,7 @@ msgid "Include:"
 msgstr "Включает:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:138
-#: ksieveui/templates/sievetemplateeditdialog.cpp:62
+#: ksieveui/templates/sievetemplateeditdialog.cpp:59
 #, kde-format
 msgid "Name:"
 msgstr "Имя:"
@@ -2653,19 +2653,19 @@ msgid "Debug"
 msgstr "Отладка"
 
 # BUGME: please verify Ukrainian translation --aspotashev
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:46
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:43
 #, kde-format
 msgid "Email path:"
 msgstr "Путь к файлу электронного письма:"
 
 # BUGME: "Extension_s_"? --aspotashev
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:60
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:57
 #, kde-format
 msgid "Extension:"
 msgstr "Расширения:"
 
 # BUGME: This string may be too long for a placeholder text. --aspotashev
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:65
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:62
 #, kde-format
 msgid ""
 "Activate extension with \"+<name of extension>\", deactivate it with \"-"
@@ -2674,27 +2674,27 @@ msgstr ""
 "Чтобы задействовать расширение, напишите «+<название расширения>», чтобы "
 "выключить расширение — «-<название расширения>»."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:97
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
 #, kde-format
 msgid "Display check script result..."
 msgstr "Показать результаты проверки сценария..."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:146
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
 #, kde-format
 msgid "Script text is empty."
 msgstr "Сценарий пустой."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:147
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "Файл электронного письма должен находиться на этом компьютере."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:153
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "Не удалось открыть временный файл."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:226
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:223
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr "Сценарий по-прежнему содержит отладочный вызов. Удалите его."
@@ -2763,13 +2763,13 @@ msgstr "Уничтожить сообщение отправленное..."
 msgid "Vacations"
 msgstr "Отсутствие"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:42
+#: ksieveui/templates/sievetemplateeditdialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "Стандартный шаблон"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:42
+#: ksieveui/templates/sievetemplateeditdialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Template"

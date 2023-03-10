@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-02 00:59+0000\n"
-"PO-Revision-Date: 2023-03-07 20:24+0300\n"
+"POT-Creation-Date: 2023-03-10 00:49+0000\n"
+"PO-Revision-Date: 2023-03-09 13:33+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -683,7 +683,8 @@ msgstr "Değişken:"
 #, kde-format
 msgid "Script needs regex support, but server does not have it."
 msgstr ""
-"Betik düzenli ifade desteğine ihtiyaç duyuyor ama sunucunun bu desteği yok."
+"Betik düzenli ifade desteğine gereksinim duyuyor ama sunucunun bu desteği "
+"yok."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:177
 #, kde-format
@@ -1680,7 +1681,7 @@ msgid "Include:"
 msgstr "İçer:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:138
-#: ksieveui/templates/sievetemplateeditdialog.cpp:62
+#: ksieveui/templates/sievetemplateeditdialog.cpp:59
 #, kde-format
 msgid "Name:"
 msgstr "Ad:"
@@ -2601,17 +2602,17 @@ msgstr "Değişiklikleri Uygula"
 msgid "Debug"
 msgstr "Hata Ayıkla"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:46
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:43
 #, kde-format
 msgid "Email path:"
 msgstr "E-posta yolu:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:60
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:57
 #, kde-format
 msgid "Extension:"
 msgstr "Uzantı:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:65
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:62
 #, kde-format
 msgid ""
 "Activate extension with \"+<name of extension>\", deactivate it with \"-"
@@ -2620,27 +2621,27 @@ msgstr ""
 "Etkinleştirilecek uzantı \"+<name of extension>\", pasifleştirilecek uzantı "
 "\"-<name of extension>\""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:97
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
 #, kde-format
 msgid "Display check script result..."
 msgstr "Betik denetleme sonuçlarını göster..."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:146
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
 #, kde-format
 msgid "Script text is empty."
 msgstr "Betik metni boş."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:147
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "E-posta dosyası yerelde kurulu olmalıdır."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:153
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "Geçici dosya açılamadı."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:226
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:223
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr "Betik hala hata ayıklama yöntemi içeriyor. Lütfen onu silin."
@@ -2709,13 +2710,13 @@ msgstr "Postaları silinecek kullanıcı..."
 msgid "Vacations"
 msgstr "Tatiller"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:42
+#: ksieveui/templates/sievetemplateeditdialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "Öntanımlı şablon"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:42
+#: ksieveui/templates/sievetemplateeditdialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Template"
