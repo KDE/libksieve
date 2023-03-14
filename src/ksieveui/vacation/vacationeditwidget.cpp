@@ -208,7 +208,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
 
     //  domain checkbox and linedit:
     ++row;
-    mDomainCheck = new QCheckBox(i18n("Only react to mail coming from domain"), this);
+    mDomainCheck = new QCheckBox(i18n("Only react to mail coming from domain:"), this);
     mDomainCheck->setObjectName(QStringLiteral("mDomainCheck"));
     mDomainCheck->setChecked(false);
     connect(mDomainCheck, &QCheckBox::clicked, this, &VacationEditWidget::setWasChanged);
