@@ -2,7 +2,6 @@
 # SPDX-License-Identifier: BSD-3-Clause
 add_library(KPim${KF_MAJOR_VERSION}KManageSieve)
 add_library(KPim${KF_MAJOR_VERSION}::KManageSieve ALIAS KPim${KF_MAJOR_VERSION}KManageSieve)
-add_library(KF5::KManageSieve ALIAS KPim${KF_MAJOR_VERSION}KManageSieve)
 
 target_sources(KPim${KF_MAJOR_VERSION}KManageSieve PRIVATE
   response.cpp
