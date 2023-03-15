@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-10 00:49+0000\n"
+"POT-Creation-Date: 2023-03-15 00:48+0000\n"
 "PO-Revision-Date: 2014-01-31 19:22+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -2945,8 +2945,9 @@ msgid "Do not send vacation replies to spam messages"
 msgstr "Ne šalji odgovore o odmoru na spam"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:211
-#, kde-format
-msgid "Only react to mail coming from domain"
+#, fuzzy, kde-format
+#| msgid "Only react to mail coming from domain"
+msgid "Only react to mail coming from domain:"
 msgstr "Reaguj samo na poštu sa domena"
 
 #: ksieveui/vacation/vacationmanager.cpp:55

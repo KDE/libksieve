@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-10 00:49+0000\n"
+"POT-Creation-Date: 2023-03-15 00:48+0000\n"
 "PO-Revision-Date: 2021-11-09 23:45+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -2717,8 +2717,9 @@ msgid "Do not send vacation replies to spam messages"
 msgstr "Non inviar replicas de vacantias a messages de spam"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:211
-#, kde-format
-msgid "Only react to mail coming from domain"
+#, fuzzy, kde-format
+#| msgid "Only react to mail coming from domain"
+msgid "Only react to mail coming from domain:"
 msgstr "Solmente il reage a posta veniente ex dominio"
 
 #: ksieveui/vacation/vacationmanager.cpp:55

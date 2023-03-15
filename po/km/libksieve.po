@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-10 00:49+0000\n"
+"POT-Creation-Date: 2023-03-15 00:48+0000\n"
 "PO-Revision-Date: 2012-12-28 15:41+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -2804,8 +2804,9 @@ msgid "Do not send vacation replies to spam messages"
 msgstr "កុំ​ផ្ញើ​ការ​​ឆ្លើយ​តប​វិស្សមកាល​ទៅកាន់​សារ​ឥតបានការ​​"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:211
-#, kde-format
-msgid "Only react to mail coming from domain"
+#, fuzzy, kde-format
+#| msgid "Only react to mail coming from domain"
+msgid "Only react to mail coming from domain:"
 msgstr "ឆ្លើយតប​ទៅកាន់​សំបុត្រ​ដែល​មក​ដល់​ពី​ដែន​ប៉ុណ្ណោះ​"
 
 #: ksieveui/vacation/vacationmanager.cpp:55
