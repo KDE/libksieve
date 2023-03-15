@@ -5,7 +5,7 @@ add_executable(autocreatescripts_gui autocreatescripts_gui.cpp ../../tests/capab
 target_include_directories(autocreatescripts_gui PRIVATE ${libksieve_SOURCE_DIR}/src/ksieveui/scriptsparsing)
 target_link_libraries(autocreatescripts_gui
   KPim${KF_MAJOR_VERSION}KSieveUi
-  KF5::PimCommon
+  KPim${KF_MAJOR_VERSION}::PimCommon
   KF${KF_MAJOR_VERSION}::I18n
 )
 
@@ -15,7 +15,7 @@ target_include_directories(parsingscript_gui PRIVATE ${libksieve_SOURCE_DIR}/src
 target_link_libraries(parsingscript_gui
   KPim${KF_MAJOR_VERSION}KSieveUi
   KPim${KF_MAJOR_VERSION}::KSieve
-  KF5::PimCommon
+  KPim${KF_MAJOR_VERSION}::PimCommon
   KF${KF_MAJOR_VERSION}::I18n
   KF${KF_MAJOR_VERSION}::SyntaxHighlighting
 )

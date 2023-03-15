@@ -10,7 +10,7 @@ set(editorsieve_gui_SRCS editorsieve_gui.cpp ../../tests/capability.cpp editorsi
 add_executable(editorsieve_gui ${editorsieve_gui_SRCS}) 
 target_link_libraries(editorsieve_gui
   KPim${KF_MAJOR_VERSION}KSieveUi
-  KF5::PimCommon
+  KPim${KF_MAJOR_VERSION}::PimCommon
   KF${KF_MAJOR_VERSION}::I18n
   Qt::PrintSupport
   KF${KF_MAJOR_VERSION}::SyntaxHighlighting

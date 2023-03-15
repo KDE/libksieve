@@ -414,7 +414,7 @@ target_link_libraries(KPim${KF_MAJOR_VERSION}KSieveUi
     PUBLIC
     KPim${KF_MAJOR_VERSION}::KManageSieve
     KPim${KF_MAJOR_VERSION}::KSieve
-    KF5::PimCommon
+    KPim${KF_MAJOR_VERSION}::PimCommon
     PRIVATE
     KPim${KF_MAJOR_VERSION}::Libkdepim
     KF${KF_MAJOR_VERSION}::Archive
