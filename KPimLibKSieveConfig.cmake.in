@@ -6,15 +6,5 @@
 include(CMakeFindDependencyMacro)
 find_dependency(KF@KF_MAJOR_VERSION@SyntaxHighlighting "@KF_MIN_VERSION@")
 
-if (@KSIEVE_KF5_COMPAT@)
-    message(WARNING "\n"
-                    "************* DEPRECATION WARNING *************\n"
-		    "Using find_package(KF5KSieveUi) and KF5::KSieveUi targets is deprecated. "
-		    "Please use find_package(KPim@KF_MAJOR_VERSION@KSieveUi) and KPim@KF_MAJOR_VERSION@::KSieveUi instead. This backwards "
-                    "compatibility will be removed in the next major version.\n"
-                    "***********************************************\n")
-endif()
-
-
 include("${CMAKE_CURRENT_LIST_DIR}/KPim@KF_MAJOR_VERSION@LibKSieveTargets.cmake")
 @PACKAGE_INCLUDE_QCHTARGETS@
