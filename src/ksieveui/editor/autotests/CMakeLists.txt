@@ -6,7 +6,7 @@ set( libksieveui_sieveeditormenubartest_source sieveeditormenubartest.cpp sievee
 add_executable( sieveeditormenubartest ${libksieveui_sieveeditormenubartest_source})
 add_test(NAME sieveeditormenubartest COMMAND sieveeditormenubartest)
 ecm_mark_as_test(sieveeditormenubartest)
-target_link_libraries( sieveeditormenubartest KPim${KF_MAJOR_VERSION}KSieveUi KPim${KF_MAJOR_VERSION}::KSieve Qt::Test KF${KF_MAJOR_VERSION}::Completion KPim${KF_MAJOR_VERSION}::PimCommon KF${KF_MAJOR_VERSION}::ConfigWidgets KF${KF_MAJOR_VERSION}::I18n KPim${KF_MAJOR_VERSION}::PimTextEdit)
+target_link_libraries( sieveeditormenubartest KPim${KF_MAJOR_VERSION}KSieveUi KPim${KF_MAJOR_VERSION}::KSieve Qt::Test KF${KF_MAJOR_VERSION}::Completion KPim${KF_MAJOR_VERSION}::PimCommon KF${KF_MAJOR_VERSION}::I18n KPim${KF_MAJOR_VERSION}::PimTextEdit)
 set_property(TARGET sieveeditormenubartest PROPERTY INCLUDE_DIRECTORIES ${CMAKE_SOURCE_DIR}/src/ksieveui/ ${CMAKE_SOURCE_DIR}/src/ksieveui/editor/webengine/ ${CMAKE_SOURCE_DIR}/src/ksieveui/editor/webengine/findbar ${CMAKE_BINARY_DIR}/src/ksieveui/)
 
 
