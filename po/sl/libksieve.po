@@ -5,13 +5,13 @@
 # Andrej Vernekar <andrej.vernekar@gmail.com>, 2004, 2012.
 # Jure Repinc <jlp@holodeck1.com>, 2013.
 # Andrej Mernik <andrejm@ubuntu.si>, 2014, 2015, 2016, 2017, 2018.
-# Matjaž Jeran <matjaz.jeran@amis.net>, 2019, 2020, 2021.
+# Matjaž Jeran <matjaz.jeran@amis.net>, 2019, 2020, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-15 00:48+0000\n"
-"PO-Revision-Date: 2021-11-08 08:34+0100\n"
+"PO-Revision-Date: 2023-03-16 11:19+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 
@@ -2863,10 +2863,9 @@ msgid "Do not send vacation replies to spam messages"
 msgstr "Ne pošiljaj odgovorov o dopustu na neželena sporočila"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:211
-#, fuzzy, kde-format
-#| msgid "Only react to mail coming from domain"
+#, kde-format
 msgid "Only react to mail coming from domain:"
-msgstr "Odzovi se le na pošto, ki prihaja z domene"
+msgstr "Odzovi se le na pošto, ki prihaja z domene:"
 
 #: ksieveui/vacation/vacationmanager.cpp:55
 #, kde-format
