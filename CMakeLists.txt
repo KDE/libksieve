@@ -117,6 +117,23 @@ ecm_set_disabled_deprecation_versions(QT 6.4  KF 5.104.0)
 
 ########### CMake Config Files ###########
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim${KF_MAJOR_VERSION}LibKSieve")
+
+if(BUILD_TESTING)
+    find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)
+    add_subdirectory(autotests)
+endif()
+
+add_subdirectory(src)
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KPim${KF_MAJOR_VERSION}KSieveUi_QCH
+        FILE KPim${KF_MAJOR_VERSION}KSieveUiQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}KSieveUiQchTargets.cmake\")")
+endif()
+
 configure_package_config_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/KPimLibKSieveConfig.cmake.in"
   "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}LibKSieveConfig.cmake"
@@ -136,12 +153,6 @@ install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h
   DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KSieve COMPONENT Devel
 )
-if(BUILD_TESTING)
-    find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)
-    add_subdirectory(autotests)
-endif()
-
-add_subdirectory(src)
 ecm_qt_install_logging_categories(
         EXPORT LIBKSIEVE
         FILE libksieve.categories

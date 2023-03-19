@@ -1,16 +1,5 @@
 # SPDX-FileCopyrightText: 2011-2023 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
-
-if (BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KPim${KF_MAJOR_VERSION}KSieveUi_QCH
-        FILE KPim${KF_MAJOR_VERSION}KSieveUiQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}KSieveUiQchTargets.cmake\")")
-endif()
-
 add_library(KPim${KF_MAJOR_VERSION}KSieveUi)
 add_library(KPim${KF_MAJOR_VERSION}::KSieveUi ALIAS KPim${KF_MAJOR_VERSION}KSieveUi)
 if(KDEPIM_ENTERPRISE_BUILD)
