@@ -1,7 +1,7 @@
 # translation of libksieve.po to Italian
 # Copyright (C) 2003 Free Software Foundation, Inc.
 # Luciano Montanaro <mikelima@cirulla.net>, 2003, 2010, 2011, 2012.
-# Luigi Toscano <luigi.toscano@tiscali.it>, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
+# Luigi Toscano <luigi.toscano@tiscali.it>, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2023.
 # Vincenzo Reale <smart2128vr@gmail.com>, 2020.
 #
 msgid ""
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-15 00:48+0000\n"
-"PO-Revision-Date: 2021-11-24 00:00+0100\n"
+"PO-Revision-Date: 2023-03-19 12:25+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.08.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: kmanagesieve/session.cpp:90
 #, kde-format
@@ -2900,10 +2900,9 @@ msgid "Do not send vacation replies to spam messages"
 msgstr "Non mandare risposte per le assenze ai messaggi di spam"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:211
-#, fuzzy, kde-format
-#| msgid "Only react to mail coming from domain"
+#, kde-format
 msgid "Only react to mail coming from domain:"
-msgstr "Reagisci solo ai messaggi ricevuti dal dominio"
+msgstr "Reagisci solo ai messaggi ricevuti dal dominio:"
 
 #: ksieveui/vacation/vacationmanager.cpp:55
 #, kde-format
