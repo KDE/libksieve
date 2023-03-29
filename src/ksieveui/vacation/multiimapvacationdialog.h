@@ -36,15 +36,15 @@ Q_SIGNALS:
     void cancelClicked();
 
 private:
-    void slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveUi::Util::AccountInfo> &info);
-    void slotOkClicked();
-    void slotDefaultClicked();
-    void slotCanceled();
-    void createPage(const QString &serverName, const KSieveUi::Util::AccountInfo &info);
-    void init();
-    void readConfig();
-    void writeConfig();
-    void initialize();
+    KSIEVEUI_NO_EXPORT void slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveUi::Util::AccountInfo> &info);
+    KSIEVEUI_NO_EXPORT void slotOkClicked();
+    KSIEVEUI_NO_EXPORT void slotDefaultClicked();
+    KSIEVEUI_NO_EXPORT void slotCanceled();
+    KSIEVEUI_NO_EXPORT void createPage(const QString &serverName, const KSieveUi::Util::AccountInfo &info);
+    KSIEVEUI_NO_EXPORT void init();
+    KSIEVEUI_NO_EXPORT void readConfig();
+    KSIEVEUI_NO_EXPORT void writeConfig();
+    KSIEVEUI_NO_EXPORT void initialize();
     QDialogButtonBox *mButtonBox = nullptr;
     std::unique_ptr<MultiImapVacationDialogPrivate> const d;
 };

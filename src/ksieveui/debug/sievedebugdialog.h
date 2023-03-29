@@ -41,19 +41,19 @@ public:
     ~SieveDebugDialog() override;
 
 private Q_SLOTS:
-    void slotGetScript(KManageSieve::SieveJob *job, bool success, const QString &script, bool active);
-    void slotGetScriptList(KManageSieve::SieveJob *job, bool success, const QStringList &scriptList, const QString &activeScript);
+    KSIEVEUI_NO_EXPORT void slotGetScript(KManageSieve::SieveJob *job, bool success, const QString &script, bool active);
+    KSIEVEUI_NO_EXPORT void slotGetScriptList(KManageSieve::SieveJob *job, bool success, const QStringList &scriptList, const QString &activeScript);
 
-    void slotDiagNextAccount();
-    void slotDiagNextScript();
+    KSIEVEUI_NO_EXPORT void slotDiagNextAccount();
+    KSIEVEUI_NO_EXPORT void slotDiagNextScript();
 
-    void slotShutDownJob();
+    KSIEVEUI_NO_EXPORT void slotShutDownJob();
 
 private:
-    void slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
-    void slotFindAccountInfoForScriptFinished(const KSieveUi::Util::AccountInfo &info);
-    void writeConfig();
-    void readConfig();
+    KSIEVEUI_NO_EXPORT void slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
+    KSIEVEUI_NO_EXPORT void slotFindAccountInfoForScriptFinished(const KSieveUi::Util::AccountInfo &info);
+    KSIEVEUI_NO_EXPORT void writeConfig();
+    KSIEVEUI_NO_EXPORT void readConfig();
     KManageSieve::SieveJob *mSieveJob = nullptr;
     QUrl mUrl;
     KSyntaxHighlighting::Repository mRepo;

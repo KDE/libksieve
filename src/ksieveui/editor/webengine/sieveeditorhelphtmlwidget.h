@@ -47,12 +47,12 @@ Q_SIGNALS:
     void copyAvailable(bool);
 
 private:
-    void slotTitleChanged(const QString &title);
-    void slotFinished(bool b);
-    void slotLoadStarted();
-    void slotPixmapChanged(const QPixmap &pixmap);
-    void slotLoadFinished(bool success);
-    void slotSelectionChanged();
+    KSIEVEUI_NO_EXPORT void slotTitleChanged(const QString &title);
+    KSIEVEUI_NO_EXPORT void slotFinished(bool b);
+    KSIEVEUI_NO_EXPORT void slotLoadStarted();
+    KSIEVEUI_NO_EXPORT void slotPixmapChanged(const QPixmap &pixmap);
+    KSIEVEUI_NO_EXPORT void slotLoadFinished(bool success);
+    KSIEVEUI_NO_EXPORT void slotSelectionChanged();
     QString mTitle;
     SieveEditorWebEngineView *mWebView = nullptr;
     SieveEditorLoadProgressIndicator *mProgressIndicator = nullptr;

@@ -41,8 +41,8 @@ Q_SIGNALS:
 
 private:
     Q_DISABLE_COPY(CheckScriptJob)
-    void slotPutCheckSyntaxResult(KManageSieve::SieveJob *job, bool success);
-    void slotRestoreFile(KManageSieve::SieveJob *job, bool success);
+    KSIEVEUI_NO_EXPORT void slotPutCheckSyntaxResult(KManageSieve::SieveJob *job, bool success);
+    KSIEVEUI_NO_EXPORT void slotRestoreFile(KManageSieve::SieveJob *job, bool success);
     std::unique_ptr<CheckScriptJobPrivate> const d;
 };
 }

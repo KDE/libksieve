@@ -111,16 +111,16 @@ public Q_SLOTS:
     void slotShowGoToLine();
 
 private:
-    void slotTextChanged();
-    void slotFind();
-    void slotReplace();
-    void slotGoToLine(int line);
-    void readConfig();
-    void writeConfig();
-    void slotEditRule(const QString &selectedText);
-    void slotInsertRule();
-    void insertRequires(const QStringList &needToAddRequire);
-    Q_REQUIRED_RESULT QStringList insertNecessaryRequires(const QStringList &requireModules);
+    KSIEVEUI_NO_EXPORT void slotTextChanged();
+    KSIEVEUI_NO_EXPORT void slotFind();
+    KSIEVEUI_NO_EXPORT void slotReplace();
+    KSIEVEUI_NO_EXPORT void slotGoToLine(int line);
+    KSIEVEUI_NO_EXPORT void readConfig();
+    KSIEVEUI_NO_EXPORT void writeConfig();
+    KSIEVEUI_NO_EXPORT void slotEditRule(const QString &selectedText);
+    KSIEVEUI_NO_EXPORT void slotInsertRule();
+    KSIEVEUI_NO_EXPORT void insertRequires(const QStringList &needToAddRequire);
+    Q_REQUIRED_RESULT KSIEVEUI_NO_EXPORT QStringList insertNecessaryRequires(const QStringList &requireModules);
     QString mOriginalScript;
     QStringList mSieveCapabilities;
     QStringList mListOfIncludeFile;

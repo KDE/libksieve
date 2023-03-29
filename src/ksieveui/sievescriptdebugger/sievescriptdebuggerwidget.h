@@ -41,7 +41,7 @@ Q_SIGNALS:
     void sieveTestNotFound();
 
 private:
-    void checkSieveTestApplication();
+    KSIEVEUI_NO_EXPORT void checkSieveTestApplication();
     QStackedWidget *mStackedWidget = nullptr;
     SieveScriptDebuggerFrontEndWidget *mSieveScriptFrontEnd = nullptr;
     QLabel *mSieveNoExistingFrontEnd = nullptr;

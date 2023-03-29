@@ -34,9 +34,9 @@ Q_SIGNALS:
     void updateVacationScriptStatus(bool active, const QString &serverName);
 
 private:
-    void slotDialogCanceled();
-    void slotDialogOk();
-    void slotUpdateVacationScriptStatus(bool active, const QString &serverName);
+    KSIEVEUI_NO_EXPORT void slotDialogCanceled();
+    KSIEVEUI_NO_EXPORT void slotDialogOk();
+    KSIEVEUI_NO_EXPORT void slotUpdateVacationScriptStatus(bool active, const QString &serverName);
 
 private:
     Q_DISABLE_COPY(VacationManager)

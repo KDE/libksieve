@@ -146,7 +146,7 @@ Q_SIGNALS:
 
 private:
     Q_DISABLE_COPY(SieveJob)
-    void setErrorMessage(const QString &str);
+    KMANAGESIEVE_NO_EXPORT void setErrorMessage(const QString &str);
 
     //@cond PRIVATE
     explicit SieveJob(QObject *parent = nullptr);

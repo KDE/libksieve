@@ -40,12 +40,12 @@ Q_SIGNALS:
     void scriptAvailable(const QString &serverName, const QStringList &sieveCapabilities, const QString &scriptName, const QString &script, bool active);
 
 private Q_SLOTS:
-    void slotScriptActive(KSieveUi::VacationCheckJob *job, const QString &scriptName, bool active);
-    void slotCheckKep14Ended(KSieveUi::CheckKolabKep14SupportJob *job, bool success);
+    KSIEVEUI_NO_EXPORT void slotScriptActive(KSieveUi::VacationCheckJob *job, const QString &scriptName, bool active);
+    KSIEVEUI_NO_EXPORT void slotCheckKep14Ended(KSieveUi::CheckKolabKep14SupportJob *job, bool success);
 
 private:
     Q_DISABLE_COPY(MultiImapVacationManager)
-    void slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveUi::Util::AccountInfo> &list);
+    KSIEVEUI_NO_EXPORT void slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveUi::Util::AccountInfo> &list);
     SieveImapPasswordProvider *const mPasswordProvider;
     int mNumberOfJobs = 0;
     bool mCheckInProgress = false;

@@ -21,8 +21,8 @@ public:
     void setServerInfo(const QStringList &serverInfos);
 
 private:
-    void readConfig();
-    void writeConfig();
+    KSIEVEUI_NO_EXPORT void readConfig();
+    KSIEVEUI_NO_EXPORT void writeConfig();
     SieveInfoWidget *const mSieveInfoWidget;
 };
 }

@@ -30,11 +30,11 @@ Q_SIGNALS:
     void searchServerWithVacationSupportFinished(const QMap<QString, KSieveUi::Util::AccountInfo> &info);
 
 private:
-    void slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
-    void sendAccountList();
-    void searchNextInfo();
-    void slotSearchSieveScript(const QString &name, const QString &identifier);
-    void searchNextServerSieve();
+    KSIEVEUI_NO_EXPORT void slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
+    KSIEVEUI_NO_EXPORT void sendAccountList();
+    KSIEVEUI_NO_EXPORT void searchNextInfo();
+    KSIEVEUI_NO_EXPORT void slotSearchSieveScript(const QString &name, const QString &identifier);
+    KSIEVEUI_NO_EXPORT void searchNextServerSieve();
 
     QMap<QString, QString>::const_iterator mSieveServerMapIterator;
     // name, identifier

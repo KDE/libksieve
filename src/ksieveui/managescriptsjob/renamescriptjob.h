@@ -41,9 +41,9 @@ Q_SIGNALS:
     void finished(const QUrl &oldUrl, const QUrl &newUrl, const QString &error, bool success);
 
 private Q_SLOTS:
-    void slotDeleteResult(KManageSieve::SieveJob *job, bool success);
-    void slotPutScript(KManageSieve::SieveJob *job, bool success);
-    void slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool isActive);
+    KSIEVEUI_NO_EXPORT void slotDeleteResult(KManageSieve::SieveJob *job, bool success);
+    KSIEVEUI_NO_EXPORT void slotPutScript(KManageSieve::SieveJob *job, bool success);
+    KSIEVEUI_NO_EXPORT void slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool isActive);
 
 private:
     Q_DISABLE_COPY(RenameScriptJob)

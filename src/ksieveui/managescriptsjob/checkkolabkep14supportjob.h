@@ -69,6 +69,6 @@ private:
 
 private:
     Q_DISABLE_COPY(CheckKolabKep14SupportJob)
-    void slotCheckKep14Support(KManageSieve::SieveJob *job, bool success, const QStringList &availableScripts, const QString &activeScript);
+    KSIEVEUI_NO_EXPORT void slotCheckKep14Support(KManageSieve::SieveJob *job, bool success, const QStringList &availableScripts, const QString &activeScript);
 };
 }

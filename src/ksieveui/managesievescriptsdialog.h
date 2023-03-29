@@ -42,19 +42,19 @@ protected:
     void hideEvent(QHideEvent *) override;
 
 private:
-    void slotGetResult(KManageSieve::SieveJob *, bool, const QString &, bool);
-    void slotPutResult(KManageSieve::SieveJob *job, bool);
+    KSIEVEUI_NO_EXPORT void slotGetResult(KManageSieve::SieveJob *, bool, const QString &, bool);
+    KSIEVEUI_NO_EXPORT void slotPutResult(KManageSieve::SieveJob *job, bool);
 
-    void slotSieveEditorOkClicked();
-    void slotSieveEditorCancelClicked();
-    void slotSieveEditorCheckSyntaxClicked();
-    void slotUpdateButtons(QTreeWidgetItem *item);
-    void slotEditScript(const ManageSieveWidget::ScriptInfo &info);
-    void slotNewScript(const ManageSieveWidget::ScriptInfo &info);
-    void slotCheckScriptFinished(const QString &errorMsg, bool success);
+    KSIEVEUI_NO_EXPORT void slotSieveEditorOkClicked();
+    KSIEVEUI_NO_EXPORT void slotSieveEditorCancelClicked();
+    KSIEVEUI_NO_EXPORT void slotSieveEditorCheckSyntaxClicked();
+    KSIEVEUI_NO_EXPORT void slotUpdateButtons(QTreeWidgetItem *item);
+    KSIEVEUI_NO_EXPORT void slotEditScript(const ManageSieveWidget::ScriptInfo &info);
+    KSIEVEUI_NO_EXPORT void slotNewScript(const ManageSieveWidget::ScriptInfo &info);
+    KSIEVEUI_NO_EXPORT void slotCheckScriptFinished(const QString &errorMsg, bool success);
 
-    void updateButtons(QTreeWidgetItem *item);
-    void disableManagerScriptsDialog(bool disable);
+    KSIEVEUI_NO_EXPORT void updateButtons(QTreeWidgetItem *item);
+    KSIEVEUI_NO_EXPORT void disableManagerScriptsDialog(bool disable);
 
 private:
     std::unique_ptr<ManageSieveScriptsDialogPrivate> const d;

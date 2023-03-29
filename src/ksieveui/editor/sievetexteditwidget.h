@@ -35,7 +35,7 @@ public Q_SLOTS:
     void slotFind();
 
 private:
-    void initialize(KSieveUi::SieveTextEdit *custom = nullptr);
+    KSIEVEUI_NO_EXPORT void initialize(KSieveUi::SieveTextEdit *custom = nullptr);
     std::unique_ptr<SieveTextEditWidgetPrivate> const d;
     KSieveUi::SieveTextEdit *mTextEdit = nullptr;
     KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;

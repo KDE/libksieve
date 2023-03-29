@@ -106,16 +106,16 @@ Q_SIGNALS:
     void sieveEditorTabCurrentChanged();
 
 private:
-    void slotEnableButtonOk(bool b);
-    void slotGenerateXml();
-    void slotSwitchMode();
-    void slotSwitchTextMode(const QString &script);
-    void slotSwitchToGraphicalMode();
-    void slotModified();
-    void changeSwitchButtonText();
-    void changeMode(EditorMode mode);
-    void addMessageEntry(const QString &errorMsg, const QColor &color);
-    void slotServerInfo();
+    KSIEVEUI_NO_EXPORT void slotEnableButtonOk(bool b);
+    KSIEVEUI_NO_EXPORT void slotGenerateXml();
+    KSIEVEUI_NO_EXPORT void slotSwitchMode();
+    KSIEVEUI_NO_EXPORT void slotSwitchTextMode(const QString &script);
+    KSIEVEUI_NO_EXPORT void slotSwitchToGraphicalMode();
+    KSIEVEUI_NO_EXPORT void slotModified();
+    KSIEVEUI_NO_EXPORT void changeSwitchButtonText();
+    KSIEVEUI_NO_EXPORT void changeMode(EditorMode mode);
+    KSIEVEUI_NO_EXPORT void addMessageEntry(const QString &errorMsg, const QColor &color);
+    KSIEVEUI_NO_EXPORT void slotServerInfo();
     QString mOriginalScript;
     SieveEditorTextModeWidget *mTextModeWidget = nullptr;
     SieveEditorGraphicalModeWidget *mGraphicalModeWidget = nullptr;

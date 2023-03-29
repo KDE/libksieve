@@ -58,15 +58,15 @@ Q_SIGNALS:
     void insertRule();
 
 private:
-    void slotUpdateLineNumberAreaWidth(int newBlockCount);
-    void slotUpdateLineNumberArea(const QRect &, int);
-    void slotHelp();
-    void slotEditRule();
-    Q_REQUIRED_RESULT bool openVariableHelp();
-    bool overrideShortcut(QKeyEvent *event);
-    Q_REQUIRED_RESULT QStringList completerList() const;
-    void setCompleterList(const QStringList &list);
-    Q_REQUIRED_RESULT QString selectedWord(QPoint pos = QPoint()) const;
+    KSIEVEUI_NO_EXPORT void slotUpdateLineNumberAreaWidth(int newBlockCount);
+    KSIEVEUI_NO_EXPORT void slotUpdateLineNumberArea(const QRect &, int);
+    KSIEVEUI_NO_EXPORT void slotHelp();
+    KSIEVEUI_NO_EXPORT void slotEditRule();
+    Q_REQUIRED_RESULT KSIEVEUI_NO_EXPORT bool openVariableHelp();
+    KSIEVEUI_NO_EXPORT bool overrideShortcut(QKeyEvent *event);
+    Q_REQUIRED_RESULT KSIEVEUI_NO_EXPORT QStringList completerList() const;
+    KSIEVEUI_NO_EXPORT void setCompleterList(const QStringList &list);
+    Q_REQUIRED_RESULT KSIEVEUI_NO_EXPORT QString selectedWord(QPoint pos = QPoint()) const;
 
     std::unique_ptr<SieveTextEditPrivate> const d;
 };
