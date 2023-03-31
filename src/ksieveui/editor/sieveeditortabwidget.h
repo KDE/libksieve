@@ -37,15 +37,15 @@ Q_SIGNALS:
     void copyAvailable(bool);
 
 private:
-    void slotTitleChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QString &title);
-    void slotTabCloseRequested(int index);
-    void slotProgressIndicatorPixmapChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QPixmap &pixmap);
-    void slotLoadFinished(KSieveUi::SieveEditorHelpHtmlWidget *widget, bool success);
-    void slotTabContextMenuRequest(const QPoint &pos);
+    KSIEVEUI_NO_EXPORT void slotTitleChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QString &title);
+    KSIEVEUI_NO_EXPORT void slotTabCloseRequested(int index);
+    KSIEVEUI_NO_EXPORT void slotProgressIndicatorPixmapChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QPixmap &pixmap);
+    KSIEVEUI_NO_EXPORT void slotLoadFinished(KSieveUi::SieveEditorHelpHtmlWidget *widget, bool success);
+    KSIEVEUI_NO_EXPORT void slotTabContextMenuRequest(const QPoint &pos);
 
-    void slotCloseAllTabExcept(int index);
-    void slotCloseAllTab();
-    void slotCloseRequest(int index);
-    void closeAllTabExcept(int index = -1);
+    KSIEVEUI_NO_EXPORT void slotCloseAllTabExcept(int index);
+    KSIEVEUI_NO_EXPORT void slotCloseAllTab();
+    KSIEVEUI_NO_EXPORT void slotCloseRequest(int index);
+    KSIEVEUI_NO_EXPORT void closeAllTabExcept(int index = -1);
 };
 }
