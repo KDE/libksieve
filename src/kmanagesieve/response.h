@@ -21,17 +21,17 @@ public:
 
     Response() = default;
 
-    Type type() const;
-    QByteArray action() const;
-    uint quantity() const;
-    QByteArray key() const;
-    QByteArray value() const;
-    QByteArray extra() const;
+    Q_REQUIRED_RESULT Type type() const;
+    Q_REQUIRED_RESULT QByteArray action() const;
+    Q_REQUIRED_RESULT uint quantity() const;
+    Q_REQUIRED_RESULT QByteArray key() const;
+    Q_REQUIRED_RESULT QByteArray value() const;
+    Q_REQUIRED_RESULT QByteArray extra() const;
 
     enum Result { Ok, No, Bye, Other };
 
-    Result operationResult() const;
-    bool operationSuccessful() const;
+    Q_REQUIRED_RESULT Result operationResult() const;
+    Q_REQUIRED_RESULT bool operationSuccessful() const;
 
     void clear();
     bool parseResponse(const QByteArray &line);

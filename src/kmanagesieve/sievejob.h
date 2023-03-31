@@ -89,18 +89,18 @@ public:
     /**
      * Returns the sieve capabilities of the IMAP server.
      */
-    QStringList sieveCapabilities() const;
+    Q_REQUIRED_RESULT QStringList sieveCapabilities() const;
 
     /**
      * Returns whether the requested sieve script exists on
      * the IMAP server.
      */
-    bool fileExists() const;
+    Q_REQUIRED_RESULT bool fileExists() const;
 
     /**
      * A human-readable error message.
      */
-    QString errorString() const;
+    Q_REQUIRED_RESULT QString errorString() const;
 
 Q_SIGNALS:
     /**
