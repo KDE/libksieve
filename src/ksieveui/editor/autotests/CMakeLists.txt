@@ -6,7 +6,7 @@ set( libksieveui_sieveeditormenubartest_source sieveeditormenubartest.cpp sievee
 add_executable( sieveeditormenubartest ${libksieveui_sieveeditormenubartest_source})
 add_test(NAME sieveeditormenubartest COMMAND sieveeditormenubartest)
 ecm_mark_as_test(sieveeditormenubartest)
-target_link_libraries( sieveeditormenubartest KPim${KF_MAJOR_VERSION}KSieveUi KPim${KF_MAJOR_VERSION}::KSieve Qt::Test KF${KF_MAJOR_VERSION}::Completion KPim${KF_MAJOR_VERSION}::PimCommon KF${KF_MAJOR_VERSION}::I18n KPim${KF_MAJOR_VERSION}::PimTextEdit)
+target_link_libraries( sieveeditormenubartest KPim6KSieveUi KPim6::KSieve Qt::Test KF6::Completion KPim6::PimCommon KF6::I18n KPim6::PimTextEdit)
 set_property(TARGET sieveeditormenubartest PROPERTY INCLUDE_DIRECTORIES ${CMAKE_SOURCE_DIR}/src/ksieveui/ ${CMAKE_SOURCE_DIR}/src/ksieveui/editor/webengine/ ${CMAKE_SOURCE_DIR}/src/ksieveui/editor/webengine/findbar ${CMAKE_BINARY_DIR}/src/ksieveui/)
 
 
@@ -15,18 +15,18 @@ set( libksieveui_sievetextedittest_source sievetextedittest.cpp sievetextedittes
 add_executable( sievetextedittest ${libksieveui_sievetextedittest_source})
 add_test(NAME sievetextedittest COMMAND sievetextedittest)
 ecm_mark_as_test(sievetextedittest)
-target_link_libraries( sievetextedittest Qt::Test  Qt::Gui KPim${KF_MAJOR_VERSION}KSieveUi KPim${KF_MAJOR_VERSION}::PimCommon KPim${KF_MAJOR_VERSION}::PimTextEdit Qt::PrintSupport)
+target_link_libraries( sievetextedittest Qt::Test  Qt::Gui KPim6KSieveUi KPim6::PimCommon KPim6::PimTextEdit Qt::PrintSupport)
 
 
 set( libksieveui_sievetexteditwidgettest_source sievetexteditwidgettest.cpp sievetexteditwidgettest.h)
 add_executable( sievetexteditwidgettest ${libksieveui_sievetexteditwidgettest_source})
 add_test(NAME sievetexteditwidgettest COMMAND sievetexteditwidgettest)
 ecm_mark_as_test(sievetexteditwidgettest)
-target_link_libraries( sievetexteditwidgettest Qt::Test  Qt::Gui KPim${KF_MAJOR_VERSION}KSieveUi KPim${KF_MAJOR_VERSION}::PimCommon KPim${KF_MAJOR_VERSION}::PimTextEdit Qt::PrintSupport)
+target_link_libraries( sievetexteditwidgettest Qt::Test  Qt::Gui KPim6KSieveUi KPim6::PimCommon KPim6::PimTextEdit Qt::PrintSupport)
 
 set( libksieveui_sieveinfodialogtest_source sieveinfodialogtest.cpp sieveinfodialogtest.h)
 add_executable( sieveinfodialogtest ${libksieveui_sieveinfodialogtest_source})
 add_test(NAME sieveinfodialogtest COMMAND sieveinfodialogtest)
 ecm_mark_as_test(sieveinfodialogtest)
-target_link_libraries( sieveinfodialogtest Qt::Test KPim${KF_MAJOR_VERSION}KSieveUi )
+target_link_libraries( sieveinfodialogtest Qt::Test KPim6KSieveUi )
 

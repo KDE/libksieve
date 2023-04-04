@@ -4,20 +4,20 @@
 add_executable(autocreatescripts_gui autocreatescripts_gui.cpp ../../tests/capability.cpp)
 target_include_directories(autocreatescripts_gui PRIVATE ${libksieve_SOURCE_DIR}/src/ksieveui/scriptsparsing)
 target_link_libraries(autocreatescripts_gui
-  KPim${KF_MAJOR_VERSION}KSieveUi
-  KPim${KF_MAJOR_VERSION}::PimCommon
-  KF${KF_MAJOR_VERSION}::I18n
+  KPim6KSieveUi
+  KPim6::PimCommon
+  KF6::I18n
 )
 
 ####
 add_executable(parsingscript_gui parsingscript_gui.cpp ../../tests/capability.cpp)
 target_include_directories(parsingscript_gui PRIVATE ${libksieve_SOURCE_DIR}/src/ksieveui/scriptsparsing)
 target_link_libraries(parsingscript_gui
-  KPim${KF_MAJOR_VERSION}KSieveUi
-  KPim${KF_MAJOR_VERSION}::KSieve
-  KPim${KF_MAJOR_VERSION}::PimCommon
-  KF${KF_MAJOR_VERSION}::I18n
-  KF${KF_MAJOR_VERSION}::SyntaxHighlighting
+  KPim6KSieveUi
+  KPim6::KSieve
+  KPim6::PimCommon
+  KF6::I18n
+  KF6::SyntaxHighlighting
 )
 
 

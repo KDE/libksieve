@@ -9,12 +9,12 @@ deprecated: false
 release: false
 libraries:
     - qmake: KSieveUi
-      cmake: KF5::SieveUi
+      cmake: KPim6::SieveUi
     - qmake: KManageSieve
-      cmake: KF5::KManageSieve
+      cmake: KPim6::KManageSieve
     - qmake: KSieve
-      cmake: KF5::Sieve
-cmakename: KF5LibKSieve
+      cmake: KPim6::Sieve
+cmakename: KPim6LibKSieve
 
 public_lib: true
 group: kdepim

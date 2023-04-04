@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2011-2023 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
-add_library(KPim${KF_MAJOR_VERSION}KSieveUi)
-add_library(KPim${KF_MAJOR_VERSION}::KSieveUi ALIAS KPim${KF_MAJOR_VERSION}KSieveUi)
+add_library(KPim6KSieveUi)
+add_library(KPim6::KSieveUi ALIAS KPim6KSieveUi)
 if(KDEPIM_ENTERPRISE_BUILD)
     set(USE_GRAPHICAL_SIEVE_EDITOR true)
 else()
@@ -29,7 +29,7 @@ if(BUILD_TESTING)
     add_subdirectory(widgets/autotests)
 endif()
 
-target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
+target_sources(KPim6KSieveUi PRIVATE
     vacation/vacationmaillineedit.cpp
     vacation/vacationhelperjob.cpp
     vacation/vacationeditwidget.cpp
@@ -45,7 +45,7 @@ target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
     vacation/vacationmailactionwidget.cpp
     vacation/searchserverwithvacationsupportjob.cpp
     )
-target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
+target_sources(KPim6KSieveUi PRIVATE
     editor/webengine/sieveeditorwebengineview.cpp
     editor/webengine/sieveeditorhelphtmlwidget.cpp
     editor/webengine/sieveeditorloadprogressindicator.cpp
@@ -53,7 +53,7 @@ target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
     editor/webengine/findbar/findbarwebengineview.cpp
     )
 
-target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
+target_sources(KPim6KSieveUi PRIVATE
     editor/sieveeditorwidget.cpp
     editor/sievetextedit.cpp
     editor/sieveeditor.cpp
@@ -73,7 +73,7 @@ target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
     editor/sievepurposemenuwidget.h
     )
 
-target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
+target_sources(KPim6KSieveUi PRIVATE
     autocreatescripts/sievepreviewgeneratedcodewidget.cpp
     autocreatescripts/sieveeditorgraphicalmodewidgetabstract.cpp
     autocreatescripts/sievescriptparsingerrordialog.cpp
@@ -164,13 +164,13 @@ target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
     autocreatescripts/sieveconditions/widgets/regexpeditorlineedit.cpp
     )
 
-target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
+target_sources(KPim6KSieveUi PRIVATE
     scriptsparsing/xmlprintingscriptbuilder.cpp
     scriptsparsing/parsingresultdialog.cpp
     scriptsparsing/parsingutil.cpp
     )
 
-target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
+target_sources(KPim6KSieveUi PRIVATE
     sievescriptdebugger/sievescriptdebuggerdialog.cpp
     sievescriptdebugger/sievescriptdebuggerwidget.cpp
     sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp
@@ -179,20 +179,20 @@ target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
     sievescriptdebugger/sievescriptdebuggerresulteditor.cpp
     )
 
-target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
+target_sources(KPim6KSieveUi PRIVATE
     managescriptsjob/checkkolabkep14supportjob.cpp
     managescriptsjob/generateglobalscriptjob.cpp
     managescriptsjob/parseuserscriptjob.cpp
     managescriptsjob/renamescriptjob.cpp
     managescriptsjob/checkscriptjob.cpp
     )
-target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
+target_sources(KPim6KSieveUi PRIVATE
     sieveimapinstance/sieveimapinstance.cpp
     sieveimapinstance/sieveimapinstanceinterface.cpp
     sieveimapinstance/sieveimapinstanceinterfacemanager.cpp
     )
     
-target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
+target_sources(KPim6KSieveUi PRIVATE
     util/util.cpp
     util/abstractakonadiimapsettinginterface.cpp
     util/akonadiimapsettinginterface.cpp
@@ -201,7 +201,7 @@ target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
     util/sieveimappasswordprovider.cpp
     )	
 
-target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
+target_sources(KPim6KSieveUi PRIVATE
     widgets/custommanagesievewidget.cpp
     widgets/sievetreewidgetitem.cpp
     widgets/managesievetreeview.cpp
@@ -214,7 +214,7 @@ target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
     widgets/moveimapfolderwidget.cpp
     )
 
-target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
+target_sources(KPim6KSieveUi PRIVATE
     managesievescriptsdialog.cpp
     debug/sievedebugdialog.cpp
     templates/sievetemplatewidget.cpp
@@ -383,61 +383,61 @@ target_sources(KPim${KF_MAJOR_VERSION}KSieveUi PRIVATE
     managesievescriptsdialog.h
     )
 
-ecm_qt_declare_logging_category(KPim${KF_MAJOR_VERSION}KSieveUi HEADER libksieve_debug.h IDENTIFIER LIBKSIEVE_LOG CATEGORY_NAME org.kde.pim.libksieve
+ecm_qt_declare_logging_category(KPim6KSieveUi HEADER libksieve_debug.h IDENTIFIER LIBKSIEVE_LOG CATEGORY_NAME org.kde.pim.libksieve
         DESCRIPTION "kdepim (libksieve)"
         OLD_CATEGORY_NAMES log_libksieve
         EXPORT LIBKSIEVE
     )
 
 
-kconfig_add_kcfg_files(KPim${KF_MAJOR_VERSION}KSieveUi settings/sieve-vacation.kcfgc settings/sieve-editor.kcfgc)
+kconfig_add_kcfg_files(KPim6KSieveUi settings/sieve-vacation.kcfgc settings/sieve-editor.kcfgc)
 
-generate_export_header(KPim${KF_MAJOR_VERSION}KSieveUi BASE_NAME ksieveui)
+generate_export_header(KPim6KSieveUi BASE_NAME ksieveui)
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim${KF_MAJOR_VERSION}KSieveUi PROPERTIES UNITY_BUILD ON)
+    set_target_properties(KPim6KSieveUi PROPERTIES UNITY_BUILD ON)
 endif()
 
 
 
-target_link_libraries(KPim${KF_MAJOR_VERSION}KSieveUi
+target_link_libraries(KPim6KSieveUi
     PUBLIC
-    KPim${KF_MAJOR_VERSION}::KManageSieve
-    KPim${KF_MAJOR_VERSION}::KSieve
-    KPim${KF_MAJOR_VERSION}::PimCommon
+    KPim6::KManageSieve
+    KPim6::KSieve
+    KPim6::PimCommon
     PRIVATE
-    KPim${KF_MAJOR_VERSION}::Libkdepim
-    KF${KF_MAJOR_VERSION}::Archive
-    KPim${KF_MAJOR_VERSION}::Mime
-    KF${KF_MAJOR_VERSION}::IconThemes
-    KPim${KF_MAJOR_VERSION}::IdentityManagement
-    KPim${KF_MAJOR_VERSION}::PimTextEdit
-    KPim${KF_MAJOR_VERSION}::MailTransport
-    KF${KF_MAJOR_VERSION}::KIOWidgets
-    KF${KF_MAJOR_VERSION}::NewStuffCore
+    KPim6::Libkdepim
+    KF6::Archive
+    KPim6::Mime
+    KF6::IconThemes
+    KPim6::IdentityManagement
+    KPim6::PimTextEdit
+    KPim6::MailTransport
+    KF6::KIOWidgets
+    KF6::NewStuffCore
     Qt::WebEngineWidgets
-    KPim${KF_MAJOR_VERSION}::PimTextEdit
-    KF${KF_MAJOR_VERSION}::I18n
-    KF${KF_MAJOR_VERSION}::SonnetUi
+    KPim6::PimTextEdit
+    KF6::I18n
+    KF6::SonnetUi
     Qt::PrintSupport
-    KF${KF_MAJOR_VERSION}::SyntaxHighlighting
+    KF6::SyntaxHighlighting
     )
 
-if (TARGET KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
-    target_link_libraries(KPim${KF_MAJOR_VERSION}KSieveUi
+if (TARGET KF6::TextEditTextToSpeech)
+    target_link_libraries(KPim6KSieveUi
         PRIVATE
-        KF${KF_MAJOR_VERSION}::TextEditTextToSpeech
+        KF6::TextEditTextToSpeech
     )
 endif()
 
-set_target_properties(KPim${KF_MAJOR_VERSION}KSieveUi PROPERTIES
+set_target_properties(KPim6KSieveUi PROPERTIES
     VERSION ${LIBKSIEVE_VERSION}
     SOVERSION ${LIBKSIEVE_SOVERSION}
     EXPORT_NAME KSieveUi
     )
 
-target_include_directories(KPim${KF_MAJOR_VERSION}KSieveUi
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/KSieveUi/;${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/KSieveUi>")
-target_include_directories(KPim${KF_MAJOR_VERSION}KSieveUi PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/ksieveui;${libksieve_SOURCE_DIR}/src/ksieveui/util/;${libksieve_BINARY_DIR}/src/ksieveui>")
+target_include_directories(KPim6KSieveUi
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi/;${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi>")
+target_include_directories(KPim6KSieveUi PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/ksieveui;${libksieve_SOURCE_DIR}/src/ksieveui/util/;${libksieve_BINARY_DIR}/src/ksieveui>")
 
 ecm_generate_headers(ksieveui_CamelCase_HEADERS
     HEADER_NAMES
@@ -517,12 +517,12 @@ ecm_generate_headers(ksieveui_Camelcasewidgets_HEADERS
 
 
 ecm_generate_pri_file(BASE_NAME KSieveUi
-    LIB_NAME KPim${KF_MAJOR_VERSION}KSieveUi
+    LIB_NAME KPim6KSieveUi
     DEPS "KManageSieve KSieve PimCommon" FILENAME_VAR PRI_FILENAME
     )
 
 
-install(TARGETS KPim${KF_MAJOR_VERSION}KSieveUi EXPORT KPim${KF_MAJOR_VERSION}KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KPim6KSieveUi EXPORT KPim6KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
     ${ksieveui_Camelcaseimapinstance_HEADERS}
     ${ksieveui_Camelcasewidgets_HEADERS}
@@ -532,7 +532,7 @@ install(FILES
     ${ksieveui_Camelcaseeditor_HEADERS}
     ${ksieveui_Camelcaseutil_HEADERS}
     ${ksieveui_Camelmanagescriptsjob_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/KSieveUi/KSieveUi
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi/KSieveUi
     COMPONENT Devel
     )
 
@@ -547,7 +547,7 @@ install(FILES
     ${ksieveui_util_HEADERS}
     ${ksieveui_managescriptsjob_HEADERS}
     util/util_p.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim${KF_MAJOR_VERSION}/KSieveUi/ksieveui
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi/ksieveui
     COMPONENT Devel
     )
 install(FILES
@@ -561,9 +561,9 @@ install(DIRECTORY data/scripts/ DESTINATION ${KDE_INSTALL_DATADIR}/sieve/scripts
 
 if (BUILD_QCH)
     ecm_add_qch(
-        KPim${KF_MAJOR_VERSION}KSieveUi_QCH
-        NAME KPim${KF_MAJOR_VERSION}KSieveUi
-        BASE_NAME KPim${KF_MAJOR_VERSION}KSieveUi
+        KPim6KSieveUi_QCH
+        NAME KPim6KSieveUi
+        BASE_NAME KPim6KSieveUi
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
@@ -578,9 +578,9 @@ if (BUILD_QCH)
         #MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
         #IMAGE_DIRS "${CMAKE_SOURCE_DIR}/docs/pics"
         LINK_QCHS
-            Qt${QT_MAJOR_VERSION}Core_QCH
-            Qt${QT_MAJOR_VERSION}Gui_QCH
-            Qt${QT_MAJOR_VERSION}Widgets_QCH
+            Qt6Core_QCH
+            Qt6Gui_QCH
+            Qt6Widgets_QCH
         INCLUDE_DIRS
             ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS

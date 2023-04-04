@@ -5,8 +5,8 @@ set(PIM_VERSION "5.23.40")
 
 project(libksieve VERSION ${PIM_VERSION})
 
-set(KF_MIN_VERSION "5.105.0")
-
+set(KF_MIN_VERSION "5.240.0")
+set(QT_REQUIRED_VERSION "6.4.0")
 find_package(ECM ${KF_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
 
@@ -28,24 +28,12 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(ECMAddTests)
 include(ECMAddQch)
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(QT_REQUIRED_VERSION "6.4.0")
-    set(KF_MIN_VERSION "5.240.0")
-    set(KF_MAJOR_VERSION "6")
-    set(KTEXTADDONS_MIN_VERSION "1.1.0")
-else()
-    set(KF_MAJOR_VERSION "5")
-    set(KTEXTADDONS_MIN_VERSION "1.0.2")
-endif()
+set(KTEXTADDONS_MIN_VERSION "1.1.0")
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
 set(LIBKSIEVE_LIB_VERSION ${PIM_VERSION})
-set(QT_REQUIRED_VERSION "5.15.2")
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(QT_REQUIRED_VERSION "6.4.0")
-endif()
 set(KMIME_LIB_VERSION "5.23.40")
 set(IDENTITYMANAGEMENT_LIB_VERSION "5.23.40")
 set(KMAILTRANSPORT_LIB_VERSION "5.23.40")
@@ -70,43 +58,41 @@ if (QT_MAJOR_VERSION STREQUAL "6")
     set(QT_REQUIRED_VERSION "6.4.0")
 endif()
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets PrintSupport WebEngineWidgets)
-find_package(KF${KF_MAJOR_VERSION}I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF${KF_MAJOR_VERSION}KIO ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF${KF_MAJOR_VERSION}IconThemes ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KPim${KF_MAJOR_VERSION}PimCommon ${PIMCOMMON_LIB_VERSION} CONFIG REQUIRED)
-find_package(KPim${KF_MAJOR_VERSION}Libkdepim ${LIBKDEPIM_LIB_VERSION} CONFIG REQUIRED)
-find_package(KF${KF_MAJOR_VERSION}NewStuff ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF${KF_MAJOR_VERSION}Archive ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF${KF_MAJOR_VERSION}SyntaxHighlighting ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KF${KF_MAJOR_VERSION}Sonnet ${KF_MIN_VERSION} CONFIG REQUIRED)
-find_package(KPim${KF_MAJOR_VERSION}Mime ${KMIME_LIB_VERSION} CONFIG REQUIRED)
-find_package(KPim${KF_MAJOR_VERSION}IdentityManagement ${IDENTITYMANAGEMENT_LIB_VERSION} CONFIG REQUIRED)
-find_package(KPim${KF_MAJOR_VERSION}MailTransport ${KMAILTRANSPORT_LIB_VERSION} CONFIG REQUIRED)
-find_package(KPim${KF_MAJOR_VERSION}TextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
-find_package(KPim${KF_MAJOR_VERSION}IMAP ${KIMAP_LIB_VERSION} CONFIG REQUIRED)
+find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets PrintSupport WebEngineWidgets)
+find_package(KF6I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6KIO ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6IconThemes ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KPim6PimCommon ${PIMCOMMON_LIB_VERSION} CONFIG REQUIRED)
+find_package(KPim6Libkdepim ${LIBKDEPIM_LIB_VERSION} CONFIG REQUIRED)
+find_package(KF6NewStuff ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6Archive ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6SyntaxHighlighting ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6Sonnet ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KPim6Mime ${KMIME_LIB_VERSION} CONFIG REQUIRED)
+find_package(KPim6IdentityManagement ${IDENTITYMANAGEMENT_LIB_VERSION} CONFIG REQUIRED)
+find_package(KPim6MailTransport ${KMAILTRANSPORT_LIB_VERSION} CONFIG REQUIRED)
+find_package(KPim6TextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
+find_package(KPim6IMAP ${KIMAP_LIB_VERSION} CONFIG REQUIRED)
 
-find_package(KF${KF_MAJOR_VERSION}TextEditTextToSpeech ${KTEXTADDONS_MIN_VERSION} CONFIG)
-if (TARGET KF${KF_MAJOR_VERSION}::TextEditTextToSpeech)
+find_package(KF6TextEditTextToSpeech ${KTEXTADDONS_MIN_VERSION} CONFIG)
+if (TARGET KF6::TextEditTextToSpeech)
     add_definitions(-DHAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
 endif()
 
-find_package(KF${KF_MAJOR_VERSION}DocTools ${KF_MIN_VERSION})
-set_package_properties(KF${KF_MAJOR_VERSION}DocTools PROPERTIES DESCRIPTION
+find_package(KF6DocTools ${KF_MIN_VERSION})
+set_package_properties(KF6DocTools PROPERTIES DESCRIPTION
     "Tools to generate documentation"
     TYPE OPTIONAL
 )
 
 
-if (QT_MAJOR_VERSION STREQUAL "6")
-    find_package(Qt6Core5Compat)
-    add_definitions(-DDONT_HAVE_TEXT_TO_SPEACH_SUPPORT)
-endif()
+find_package(Qt6Core5Compat)
+add_definitions(-DDONT_HAVE_TEXT_TO_SPEACH_SUPPORT)
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVE
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h"
-                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}LibKSieveConfigVersion.cmake"
-                        SOVERSION 5
+                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveConfigVersion.cmake"
+                        SOVERSION 6
 )
 
 ########### Targets ###########
@@ -116,38 +102,38 @@ ecm_set_disabled_deprecation_versions(QT 6.4  KF 5.105.0)
 
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim${KF_MAJOR_VERSION}LibKSieve")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6LibKSieve")
 
 if(BUILD_TESTING)
-    find_package(Qt${QT_MAJOR_VERSION} ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)
+    find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)
     add_subdirectory(autotests)
 endif()
 
 add_subdirectory(src)
 if (BUILD_QCH)
     ecm_install_qch_export(
-        TARGETS KPim${KF_MAJOR_VERSION}KSieveUi_QCH
-        FILE KPim${KF_MAJOR_VERSION}KSieveUiQchTargets.cmake
+        TARGETS KPim6KSieveUi_QCH
+        FILE KPim6KSieveUiQchTargets.cmake
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim${KF_MAJOR_VERSION}KSieveUiQchTargets.cmake\")")
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KSieveUiQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/KPimLibKSieveConfig.cmake.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}LibKSieveConfig.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveConfig.cmake"
   INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
 )
 
 install(FILES
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}LibKSieveConfig.cmake"
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim${KF_MAJOR_VERSION}LibKSieveConfigVersion.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveConfig.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveConfigVersion.cmake"
   DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
   COMPONENT Devel
 )
 
-install(EXPORT KPim${KF_MAJOR_VERSION}KSieveTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim${KF_MAJOR_VERSION}LibKSieveTargets.cmake NAMESPACE KPim${KF_MAJOR_VERSION}::)
+install(EXPORT KPim6KSieveTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6LibKSieveTargets.cmake NAMESPACE KPim6::)
 
 install(FILES
    ${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h
@@ -162,7 +148,7 @@ ecm_qt_install_logging_categories(
 kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
 
 ki18n_install(po)
-if(KF${KF_MAJOR_VERSION}DocTools_FOUND)
+if(KF6DocTools_FOUND)
     kdoctools_install(po)
 endif()
 

@@ -19,15 +19,15 @@ macro( add_vacation_test _source )
   ecm_mark_as_test(vacation-${_name})
   add_definitions(-DVACATIONTESTDATADIR="${CMAKE_CURRENT_SOURCE_DIR}/data/")
   target_link_libraries(${_name}
-    KPim${KF_MAJOR_VERSION}KSieveUi
+    KPim6KSieveUi
     Qt::Test
-    KPim${KF_MAJOR_VERSION}::IdentityManagement
-    KPim${KF_MAJOR_VERSION}::Mime
-    KF${KF_MAJOR_VERSION}::I18n
-    KPim${KF_MAJOR_VERSION}::MailTransport
-    KPim${KF_MAJOR_VERSION}::Libkdepim
-    KPim${KF_MAJOR_VERSION}::PimCommon
-    KPim${KF_MAJOR_VERSION}::PimTextEdit
+    KPim6::IdentityManagement
+    KPim6::Mime
+    KF6::I18n
+    KPim6::MailTransport
+    KPim6::Libkdepim
+    KPim6::PimCommon
+    KPim6::PimTextEdit
     )
 endmacro()
 
