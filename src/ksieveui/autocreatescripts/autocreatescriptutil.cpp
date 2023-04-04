@@ -128,11 +128,7 @@ QString AutoCreateScriptUtil::tagValue(const QString &tag)
 QString AutoCreateScriptUtil::strValue(QXmlStreamReader &element)
 {
     if (element.readNextStartElement()) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        const QStringRef textElementTagName = element.name();
-#else
         const QStringView textElementTagName = element.name();
-#endif
         if (textElementTagName == QLatin1String("str")) {
             return element.readElementText();
         } else {
@@ -153,11 +149,7 @@ QStringList AutoCreateScriptUtil::listValue(QXmlStreamReader &element)
 {
     QStringList lst;
     while (element.readNextStartElement()) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        const QStringRef tagName = element.name();
-#else
         const QStringView tagName = element.name();
-#endif
         if (tagName == QLatin1String("str")) {
             lst << element.readElementText();
         } else {
@@ -202,7 +194,7 @@ QString AutoCreateScriptUtil::indentation()
 KSieveUi::AbstractMoveImapFolderWidget *AutoCreateScriptUtil::createImapFolderWidget()
 {
     KSieveUi::AbstractMoveImapFolderWidget *edit = nullptr;
-    const KPluginMetaData editWidgetPlugin(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/libksieve/imapfoldercompletionplugin"));
+    const KPluginMetaData editWidgetPlugin(QStringLiteral("pim6/libksieve/imapfoldercompletionplugin"));
 
     const auto result = KPluginFactory::instantiatePlugin<KSieveUi::AbstractMoveImapFolderWidget>(editWidgetPlugin);
     if (result) {
@@ -216,7 +208,7 @@ KSieveUi::AbstractMoveImapFolderWidget *AutoCreateScriptUtil::createImapFolderWi
 KSieveUi::AbstractSelectEmailLineEdit *AutoCreateScriptUtil::createSelectEmailsWidget()
 {
     KSieveUi::AbstractSelectEmailLineEdit *edit = nullptr;
-    const KPluginMetaData editWidgetPlugin(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/libksieve/emaillineeditplugin"));
+    const KPluginMetaData editWidgetPlugin(QStringLiteral("pim6/libksieve/emaillineeditplugin"));
 
     const auto result = KPluginFactory::instantiatePlugin<KSieveUi::AbstractSelectEmailLineEdit>(editWidgetPlugin);
     if (result) {
@@ -230,7 +222,7 @@ KSieveUi::AbstractSelectEmailLineEdit *AutoCreateScriptUtil::createSelectEmailsW
 AbstractRegexpEditorLineEdit *AutoCreateScriptUtil::createRegexpEditorLineEdit(QWidget *parent)
 {
     KSieveUi::AbstractRegexpEditorLineEdit *edit = nullptr;
-    const KPluginMetaData editWidgetPlugin(QStringLiteral("pim" QT_STRINGIFY(QT_VERSION_MAJOR)) + QStringLiteral("/libksieve/regexpeditorlineeditplugin"));
+    const KPluginMetaData editWidgetPlugin(QStringLiteral("pim6/libksieve/regexpeditorlineeditplugin"));
 
     const auto result = KPluginFactory::instantiatePlugin<KSieveUi::AbstractRegexpEditorLineEdit>(editWidgetPlugin, parent);
     if (result) {
@@ -245,13 +237,8 @@ QString AutoCreateScriptUtil::generateConditionComment(const QString &comment)
 {
     QString strComment;
     if (!comment.trimmed().isEmpty()) {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
         const QVector<QStringView> commentList = QStringView(comment).split(QLatin1Char('\n'));
         for (const QStringView str : commentList) {
-#else
-        const QVector<QStringRef> commentList = comment.splitRef(QLatin1Char('\n'));
-        for (const QStringRef &str : commentList) {
-#endif
             if (str.isEmpty()) {
                 strComment += QLatin1Char('\n');
             } else {

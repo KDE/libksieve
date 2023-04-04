@@ -103,11 +103,7 @@ void SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
     QStringList lstTagValue;
     QString commentStr;
     while (element.readNextStartElement()) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        const QStringRef tagName = element.name();
-#else
         const QStringView tagName = element.name();
-#endif
         if (tagName == QLatin1String("tag")) {
             lstTagValue << element.readElementText();
             ++index;

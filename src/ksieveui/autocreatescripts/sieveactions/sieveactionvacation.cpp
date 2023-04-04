@@ -86,11 +86,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
 void SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
 {
     while (element.readNextStartElement()) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        const QStringRef tagName = element.name();
-#else
         const QStringView tagName = element.name();
-#endif
         if (tagName == QLatin1String("tag")) {
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1String("seconds")) {
@@ -105,11 +101,7 @@ void SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
             } else if (tagValue == QLatin1String("addresses")) {
                 auto addresses = w->findChild<AbstractSelectEmailLineEdit *>(QStringLiteral("addresses"));
                 if (element.readNextStartElement()) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-                    const QStringRef textElementTagName = element.name();
-#else
                     const QStringView textElementTagName = element.name();
-#endif
                     if (textElementTagName == QLatin1String("str")) {
                         addresses->setText(element.readElementText());
                     } else if (textElementTagName == QLatin1String("list")) {

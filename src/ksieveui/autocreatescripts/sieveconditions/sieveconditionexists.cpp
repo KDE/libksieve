@@ -68,11 +68,7 @@ void SieveConditionExists::setParamWidgetValue(QXmlStreamReader &element, QWidge
 {
     QString commentStr;
     while (element.readNextStartElement()) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        const QStringRef tagName = element.name();
-#else
         const QStringView tagName = element.name();
-#endif
         if (notCondition) {
             auto combo = w->findChild<QComboBox *>(QStringLiteral("existscheck"));
             combo->setCurrentIndex(1);

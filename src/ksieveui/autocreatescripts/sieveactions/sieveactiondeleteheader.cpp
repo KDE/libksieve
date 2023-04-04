@@ -61,11 +61,7 @@ void SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, 
 {
     int index = 0;
     while (element.readNextStartElement()) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        const QStringRef tagName = element.name();
-#else
         const QStringView tagName = element.name();
-#endif
         if (tagName == QLatin1String("test")) {
             QString nameValue;
             if (element.attributes().hasAttribute(QLatin1String("name"))) {

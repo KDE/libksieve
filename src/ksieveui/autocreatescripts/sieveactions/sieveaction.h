@@ -19,13 +19,8 @@ public:
 
     virtual void setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, QString &error);
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    void unknownTag(const QStringRef &tag, QString &error) override;
-    void tooManyArguments(const QStringRef &tagName, int index, int maxValue, QString &error) override;
-#else
     void unknownTag(const QStringView &tag, QString &error) override;
     void tooManyArguments(const QStringView &tagName, int index, int maxValue, QString &error) override;
-#endif
     void unknownTagValue(const QString &tagValue, QString &error) override;
     void serverDoesNotSupportFeatures(const QString &feature, QString &error) override;
 

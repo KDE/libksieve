@@ -6,10 +6,8 @@
 #include "findbarwebengineview.h"
 #include <PimCommon/LineEditWithCompleterNg>
 #include <QAction>
-#include <QWebEngineView>
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #include <QWebEngineFindTextResult>
-#endif
+#include <QWebEngineView>
 using namespace KSieveUi;
 
 class KSieveUi::FindBarWebEngineViewPrivate
@@ -45,15 +43,9 @@ void FindBarWebEngineView::searchText(bool backward, bool isAutoSearch)
     }
     d->mView->findText(QString()); // Clear an existing highlight
     mLastSearchStr = searchWord;
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     d->mView->findText(mLastSearchStr, searchOptions, [this](const QWebEngineFindTextResult &result) {
         setFoundMatch(result.numberOfMatches() > 0);
     });
-#else
-    d->mView->findText(mLastSearchStr, searchOptions, [this](bool found) {
-        setFoundMatch(found);
-    });
-#endif
 }
 
 void FindBarWebEngineView::updateSensitivity(bool sensitivity)
@@ -63,15 +55,9 @@ void FindBarWebEngineView::updateSensitivity(bool sensitivity)
         searchOptions |= QWebEnginePage::FindCaseSensitively;
         d->mView->findText(QString()); // Clear an existing highligh
     }
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
     d->mView->findText(QString(), searchOptions, [this](const QWebEngineFindTextResult &result) {
         setFoundMatch(result.numberOfMatches() > 0);
     });
-#else
-    d->mView->findText(QString(), searchOptions, [this](bool found) {
-        setFoundMatch(found);
-    });
-#endif
 }
 
 void FindBarWebEngineView::clearSelections()

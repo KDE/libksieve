@@ -348,18 +348,10 @@ void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniq
             element.readNextStartElement();
         }
         while (element.readNextStartElement()) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-            const QStringRef tagName = element.name();
-#else
             const QStringView tagName = element.name();
-#endif
             if (tagName == QLatin1String("testlist")) {
                 while (element.readNextStartElement()) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-                    const QStringRef testTagName = element.name();
-#else
                     const QStringView testTagName = element.name();
-#endif
                     if (testTagName == QLatin1String("test")) {
                         if (element.attributes().hasAttribute(QLatin1String("name"))) {
                             QString conditionName = element.attributes().value(QLatin1String("name")).toString();

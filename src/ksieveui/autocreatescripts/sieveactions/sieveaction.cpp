@@ -35,31 +35,15 @@ void SieveAction::setParamWidgetValue(QXmlStreamReader &n, QWidget *, QString &)
 {
     n.skipCurrentElement();
 }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-void SieveAction::unknownTag(const QStringRef &tag, QString &error)
-#else
 void SieveAction::unknownTag(const QStringView &tag, QString &error)
-#endif
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    const QString result = *tag.string();
-#else
     const QString result = tag.toString();
-#endif
     error += i18n("An unknown tag \"%1\" was found during parsing action \"%2\".", result, name()) + QLatin1Char('\n');
 }
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-void SieveAction::tooManyArguments(const QStringRef &tagName, int index, int maxValue, QString &error)
-#else
 void SieveAction::tooManyArguments(const QStringView &tagName, int index, int maxValue, QString &error)
-#endif
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    const QString result = *tagName.string();
-#else
     const QString result = tagName.toString();
-#endif
 
     error += i18n("Too many arguments found for \"%1\", max value is %2, number of value found %3 for %4", name(), maxValue, index, result) + QLatin1Char('\n');
 }

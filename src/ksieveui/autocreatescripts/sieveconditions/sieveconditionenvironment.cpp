@@ -96,11 +96,7 @@ void SieveConditionEnvironment::setParamWidgetValue(QXmlStreamReader &element, Q
     int index = 0;
     QString commentStr;
     while (element.readNextStartElement()) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        const QStringRef tagName = element.name();
-#else
         const QStringView tagName = element.name();
-#endif
         if (tagName == QLatin1String("str")) {
             if (index == 0) {
                 auto item = w->findChild<QLineEdit *>(QStringLiteral("item"));

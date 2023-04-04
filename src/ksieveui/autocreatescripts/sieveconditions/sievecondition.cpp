@@ -24,25 +24,14 @@ void SieveCondition::setParamWidgetValue(QXmlStreamReader & /*element*/, QWidget
 {
 }
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-void SieveCondition::unknownTag(const QStringRef &tag, QString &error)
-#else
 void SieveCondition::unknownTag(const QStringView &tag, QString &error)
-#endif
 {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-    const QString result = *tag.string();
-#else
     const QString result = tag.toString();
-#endif
 
     error += i18n("Unknown tag \"%1\" during parsing condition \"%2\"", result, name()) + QLatin1Char('\n');
 }
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-void SieveCondition::tooManyArguments(const QStringRef &tagName, int index, int maxValue, QString &error)
-#else
+
 void SieveCondition::tooManyArguments(const QStringView &tagName, int index, int maxValue, QString &error)
-#endif
 {
     tooManyArguments(tagName.toString(), index, maxValue, error);
 }

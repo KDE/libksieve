@@ -66,13 +66,8 @@ QString SieveScriptListItem::generatedScript(QStringList &required) const
 {
     QString script;
     if (!mDescription.trimmed().isEmpty()) {
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
         const QVector<QStringView> commentList = QStringView(mDescription).split(QLatin1Char('\n'));
         for (const QStringView str : commentList) {
-#else
-        const QVector<QStringRef> commentList = mDescription.splitRef(QLatin1Char('\n'));
-        for (const QStringRef &str : commentList) {
-#endif
             if (str.isEmpty()) {
                 script += QLatin1Char('\n');
             } else {
@@ -421,11 +416,7 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
     bool hasCreatedAIfBlock = false;
     bool previousElementWasAComment = false;
     while (n.readNextStartElement()) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        const QStringRef tagName = n.name();
-#else
         const QStringView tagName = n.name();
-#endif
         // qDebug() <<"SieveScriptListBox::loadBlock tagName " << tagName;
         if (tagName == QLatin1String("control")) {
             previousElementWasAComment = false;
