@@ -54,10 +54,6 @@ option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branc
 find_package(Sasl2)
 set_package_properties(Sasl2 PROPERTIES TYPE REQUIRED)
 
-if (QT_MAJOR_VERSION STREQUAL "6")
-    set(QT_REQUIRED_VERSION "6.4.0")
-endif()
-
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets PrintSupport WebEngineWidgets)
 find_package(KF6I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6KIO ${KF_MIN_VERSION} CONFIG REQUIRED)

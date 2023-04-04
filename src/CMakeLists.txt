@@ -37,9 +37,7 @@ PRIVATE
   Qt::Core KF6::I18n
 )
 
-if (QT_MAJOR_VERSION STREQUAL "6")
-    target_link_libraries(KPim6KSieve PRIVATE Qt6::Core5Compat)
-endif()
+target_link_libraries(KPim6KSieve PRIVATE Qt6::Core5Compat)
 
 set_target_properties(KPim6KSieve PROPERTIES
   VERSION ${LIBKSIEVE_VERSION}
