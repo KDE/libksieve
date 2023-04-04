@@ -34,7 +34,7 @@ namespace KMime
 namespace Types
 {
 struct AddrSpec;
-using AddrSpecList = QVector<AddrSpec>;
+using AddrSpecList = QList<AddrSpec>;
 }
 }
 

@@ -84,7 +84,7 @@ void SieveActionWidget::generatedScript(QString &script, QStringList &required, 
             indent += AutoCreateScriptUtil::indentation();
         }
         if (!comment.trimmed().isEmpty()) {
-            const QVector<QStringView> commentList = QStringView(comment).split(QLatin1Char('\n'));
+            const QList<QStringView> commentList = QStringView(comment).split(QLatin1Char('\n'));
             for (const QStringView str : commentList) {
                 if (str.isEmpty()) {
                     script += QLatin1Char('\n');
@@ -105,7 +105,7 @@ void SieveActionWidget::initWidget()
     mComboBox = new QComboBox;
     mComboBox->setEditable(false);
     mComboBox->setMinimumWidth(50);
-    const QVector<KSieveUi::SieveAction *> list = KSieveUi::SieveActionList::actionList(mSieveGraphicalModeWidget);
+    const QList<KSieveUi::SieveAction *> list = KSieveUi::SieveActionList::actionList(mSieveGraphicalModeWidget);
     QStringList listCapabilities = mSieveGraphicalModeWidget->sieveCapabilities();
     // imapflags was old name of imap4flags but still used.
     if (listCapabilities.contains(QLatin1String("imap4flags"))) {

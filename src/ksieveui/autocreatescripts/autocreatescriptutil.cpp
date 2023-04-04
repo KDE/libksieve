@@ -237,7 +237,7 @@ QString AutoCreateScriptUtil::generateConditionComment(const QString &comment)
 {
     QString strComment;
     if (!comment.trimmed().isEmpty()) {
-        const QVector<QStringView> commentList = QStringView(comment).split(QLatin1Char('\n'));
+        const QList<QStringView> commentList = QStringView(comment).split(QLatin1Char('\n'));
         for (const QStringView str : commentList) {
             if (str.isEmpty()) {
                 strComment += QLatin1Char('\n');

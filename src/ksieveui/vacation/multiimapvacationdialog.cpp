@@ -34,7 +34,7 @@ class KSieveUi::MultiImapVacationDialogPrivate
 public:
     MultiImapVacationDialogPrivate() = default;
 
-    QVector<VacationCreateScriptJob *> mListCreateJob;
+    QList<VacationCreateScriptJob *> mListCreateJob;
     QTabWidget *mTabWidget = nullptr;
     QStackedWidget *mStackedWidget = nullptr;
     MultiImapVacationManager *mVacationManager = nullptr;
@@ -92,7 +92,7 @@ void MultiImapVacationDialog::reject()
     }
 }
 
-QVector<VacationCreateScriptJob *> MultiImapVacationDialog::listCreateJob() const
+QList<VacationCreateScriptJob *> MultiImapVacationDialog::listCreateJob() const
 {
     return d->mListCreateJob;
 }

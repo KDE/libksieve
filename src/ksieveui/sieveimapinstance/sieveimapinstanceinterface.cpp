@@ -13,7 +13,7 @@ SieveImapInstanceInterface::SieveImapInstanceInterface() = default;
 
 SieveImapInstanceInterface::~SieveImapInstanceInterface() = default;
 
-QVector<KSieveUi::SieveImapInstance> SieveImapInstanceInterface::sieveImapInstances()
+QList<KSieveUi::SieveImapInstance> SieveImapInstanceInterface::sieveImapInstances()
 {
     qCWarning(LIBKSIEVE_LOG) << "Need to reimplement in subclass";
     return {};

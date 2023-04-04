@@ -37,7 +37,7 @@ SieveImapInstanceInterface *SieveImapInstanceInterfaceManager::sieveImapInstance
     return mInterface;
 }
 
-QVector<KSieveUi::SieveImapInstance> SieveImapInstanceInterfaceManager::sieveImapInstanceList() const
+QList<KSieveUi::SieveImapInstance> SieveImapInstanceInterfaceManager::sieveImapInstanceList() const
 {
     if (mInterface) {
         return mInterface->sieveImapInstances();

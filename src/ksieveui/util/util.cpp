@@ -20,7 +20,7 @@ using namespace KSieveUi;
 
 QStringList KSieveUi::Util::sieveImapResourceNames()
 {
-    const QVector<KSieveUi::SieveImapInstance> lst = KSieveUi::Util::sieveImapInstances();
+    const QList<KSieveUi::SieveImapInstance> lst = KSieveUi::Util::sieveImapInstances();
     QStringList resourceNames;
     resourceNames.reserve(lst.count());
     for (const KSieveUi::SieveImapInstance &type : lst) {
@@ -29,10 +29,10 @@ QStringList KSieveUi::Util::sieveImapResourceNames()
     return resourceNames;
 }
 
-QVector<KSieveUi::SieveImapInstance> KSieveUi::Util::sieveImapInstances()
+QList<KSieveUi::SieveImapInstance> KSieveUi::Util::sieveImapInstances()
 {
-    const QVector<KSieveUi::SieveImapInstance> allInstances = KSieveUi::SieveImapInstanceInterfaceManager::self()->sieveImapInstanceList();
-    QVector<KSieveUi::SieveImapInstance> relevantInstances;
+    const QList<KSieveUi::SieveImapInstance> allInstances = KSieveUi::SieveImapInstanceInterfaceManager::self()->sieveImapInstanceList();
+    QList<KSieveUi::SieveImapInstance> relevantInstances;
     for (const KSieveUi::SieveImapInstance &instance : allInstances) {
         if (instance.mimeTypes().contains(KMime::Message::mimeType()) && instance.capabilities().contains(QLatin1String("Resource"))
             && !instance.capabilities().contains(QLatin1String("Virtual"))) {

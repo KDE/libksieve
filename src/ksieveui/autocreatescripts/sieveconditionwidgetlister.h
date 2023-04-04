@@ -7,7 +7,7 @@
 #pragma once
 
 #include <Libkdepim/KWidgetLister>
-#include <QVector>
+#include <QList>
 class QPushButton;
 class QGridLayout;
 class QXmlStreamReader;
@@ -44,7 +44,7 @@ private:
     void slotAddComment();
     void initWidget();
     void setFilterCondition(QWidget *widget);
-    QVector<KSieveUi::SieveCondition *> mConditionList;
+    QList<KSieveUi::SieveCondition *> mConditionList;
     QPushButton *mAdd = nullptr;
     QPushButton *mRemove = nullptr;
     QComboBox *mComboBox = nullptr;

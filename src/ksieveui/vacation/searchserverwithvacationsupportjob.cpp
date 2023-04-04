@@ -29,7 +29,7 @@ void SearchServerWithVacationSupportJob::start()
         sendAccountList();
         return;
     }
-    const QVector<KSieveUi::SieveImapInstance> instances = KSieveUi::Util::sieveImapInstances();
+    const QList<KSieveUi::SieveImapInstance> instances = KSieveUi::Util::sieveImapInstances();
     for (const KSieveUi::SieveImapInstance &instance : instances) {
         if (instance.status() == KSieveUi::SieveImapInstance::Broken) {
             continue;

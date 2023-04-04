@@ -27,9 +27,9 @@
 #include "sieveactionstop.h"
 #include "sieveactionvacation.h"
 
-QVector<KSieveUi::SieveAction *> KSieveUi::SieveActionList::actionList(SieveEditorGraphicalModeWidget *graphicalModeWidget)
+QList<KSieveUi::SieveAction *> KSieveUi::SieveActionList::actionList(SieveEditorGraphicalModeWidget *graphicalModeWidget)
 {
-    QVector<KSieveUi::SieveAction *> list;
+    QList<KSieveUi::SieveAction *> list;
     list.append(new KSieveUi::SieveActionDiscard(graphicalModeWidget));
     list.append(new KSieveUi::SieveActionStop(graphicalModeWidget));
     list.append(new KSieveUi::SieveActionSetFlags(graphicalModeWidget));

@@ -47,7 +47,7 @@ QMimeData *SieveTemplateListWidget::mimeData(const QList<QListWidgetItem *> &ite
 
 SieveTemplateListWidget::~SieveTemplateListWidget() = default;
 
-QVector<PimCommon::defaultTemplate> SieveTemplateListWidget::defaultTemplates()
+QList<PimCommon::defaultTemplate> SieveTemplateListWidget::defaultTemplates()
 {
     return KSieveUi::SieveDefaultTemplate::defaultTemplates();
 }

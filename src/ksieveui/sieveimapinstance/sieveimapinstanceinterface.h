@@ -7,7 +7,7 @@
 #pragma once
 
 #include "ksieveui_export.h"
-#include <QVector>
+#include <QList>
 
 namespace KSieveUi
 {
@@ -21,6 +21,6 @@ class KSIEVEUI_EXPORT SieveImapInstanceInterface
 public:
     SieveImapInstanceInterface();
     virtual ~SieveImapInstanceInterface();
-    virtual QVector<KSieveUi::SieveImapInstance> sieveImapInstances();
+    virtual QList<KSieveUi::SieveImapInstance> sieveImapInstances();
 };
 }

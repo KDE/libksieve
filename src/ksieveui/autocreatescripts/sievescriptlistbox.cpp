@@ -66,7 +66,7 @@ QString SieveScriptListItem::generatedScript(QStringList &required) const
 {
     QString script;
     if (!mDescription.trimmed().isEmpty()) {
-        const QVector<QStringView> commentList = QStringView(mDescription).split(QLatin1Char('\n'));
+        const QList<QStringView> commentList = QStringView(mDescription).split(QLatin1Char('\n'));
         for (const QStringView str : commentList) {
             if (str.isEmpty()) {
                 script += QLatin1Char('\n');

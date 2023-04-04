@@ -9,9 +9,9 @@
 
 #include <KLocalizedString>
 
-QVector<PimCommon::defaultTemplate> KSieveUi::SieveDefaultTemplate::defaultTemplates()
+QList<PimCommon::defaultTemplate> KSieveUi::SieveDefaultTemplate::defaultTemplates()
 {
-    QVector<PimCommon::defaultTemplate> lst;
+    QList<PimCommon::defaultTemplate> lst;
     PimCommon::defaultTemplate tmp;
     tmp.name = i18n("Filter on Mailing List-ID");
     tmp.text = QStringLiteral(

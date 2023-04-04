@@ -32,7 +32,7 @@ KSIEVEUI_EXPORT QDebug operator<<(QDebug d, const Util::AccountInfo &info);
 /**
  * Returns the list of configured IMAP agent instances.
  */
-Q_REQUIRED_RESULT QVector<KSieveUi::SieveImapInstance> sieveImapInstances();
+Q_REQUIRED_RESULT QList<KSieveUi::SieveImapInstance> sieveImapInstances();
 Q_REQUIRED_RESULT QStringList sieveImapResourceNames();
 
 /**
