@@ -10,11 +10,7 @@
 #include <QContextMenuEvent>
 #include <QFileDialog>
 #include <QMenu>
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-#include <QWebEngineDownloadItem>
-#else
 #include <QWebEngineDownloadRequest>
-#endif
 #include <QWebEngineProfile>
 #include <QWebEngineSettings>
 using namespace KSieveUi;
@@ -45,19 +41,11 @@ SieveEditorWebEngineView::SieveEditorWebEngineView(QWidget *parent)
 
 SieveEditorWebEngineView::~SieveEditorWebEngineView() = default;
 
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-void SieveEditorWebEngineView::downloadRequested(QWebEngineDownloadItem *download)
-#else
 void SieveEditorWebEngineView::downloadRequested(QWebEngineDownloadRequest *download)
-#endif
 {
     const QString filename = QFileDialog::getSaveFileName(this, i18n("Save Web Page"));
     if (!filename.isEmpty()) {
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-        download->setSavePageFormat(QWebEngineDownloadItem::SingleHtmlSaveFormat);
-#else
         download->setSavePageFormat(QWebEngineDownloadRequest::SingleHtmlSaveFormat);
-#endif
         download->setDownloadDirectory(QFileInfo(filename).path());
         download->setDownloadFileName(QFileInfo(filename).fileName());
         download->accept();
