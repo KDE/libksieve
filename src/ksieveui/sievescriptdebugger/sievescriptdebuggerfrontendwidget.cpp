@@ -17,8 +17,8 @@
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
+#include <KLineEditEventHandler>
 #include <KUrlRequester>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QDate>
 #include <QFormLayout>
 #include <QLabel>
@@ -61,7 +61,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     mExtension->setObjectName(QStringLiteral("extension"));
     mExtension->setPlaceholderText(i18n("Activate extension with \"+<name of extension>\", deactivate it with \"-<name of extension>\""));
     mExtension->setClearButtonEnabled(true);
-    new KPIM::LineEditCatchReturnKey(mExtension, this);
+    KLineEditEventHandler::catchReturnKey(mExtension);
 
     formLayout->addRow(extensionLab, mExtension);
 

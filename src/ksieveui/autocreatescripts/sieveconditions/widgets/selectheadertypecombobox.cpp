@@ -5,8 +5,8 @@
 */
 #include "selectheadertypecombobox.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QIcon>
 #include <QLineEdit>
 #include <QPointer>
@@ -58,7 +58,7 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
 
     auto hbox = new QHBoxLayout;
 
-    new KPIM::LineEditCatchReturnKey(mNewHeader, this);
+    KLineEditEventHandler::catchReturnKey(mNewHeader);
     mNewHeader->setObjectName(QStringLiteral("newheader"));
     mNewHeader->setClearButtonEnabled(true);
     // mNewHeader->setTrapReturnKey(true);

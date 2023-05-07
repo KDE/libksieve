@@ -10,7 +10,7 @@
 #include "commonwidgets/sievehelpbutton.h"
 #include "sievescriptblockwidget.h"
 #include "widgets/includefilelineedit.h"
-#include <Libkdepim/LineEditCatchReturnKey>
+#include <KLineEditEventHandler>
 
 #include <KLocalizedString>
 #include <QIcon>
@@ -135,7 +135,7 @@ void SieveIncludeActionWidget::initWidget()
     mLayout->addWidget(lab, 1, 2);
 
     mIncludeFileName = new IncludeFileLineEdit(this);
-    new KPIM::LineEditCatchReturnKey(mIncludeFileName, this);
+    KLineEditEventHandler::catchReturnKey(mIncludeFileName);
     mIncludeFileName->setClearButtonEnabled(true);
     connect(mIncludeFileName, &QLineEdit::textChanged, this, &SieveIncludeActionWidget::valueChanged);
     mLayout->addWidget(mIncludeFileName, 1, 3);

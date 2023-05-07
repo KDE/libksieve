@@ -8,8 +8,8 @@
 #include "editor/sieveeditorutil.h"
 #include "widgets/multilineedit.h"
 
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
 #include "libksieve_debug.h"
@@ -34,7 +34,7 @@ QWidget *SieveActionEnclose::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 0, 0);
 
     auto subject = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(subject, w);
+    KLineEditEventHandler::catchReturnKey(subject);
     subject->setObjectName(QStringLiteral("subject"));
     connect(subject, &QLineEdit::textChanged, this, &SieveActionEnclose::valueChanged);
     grid->addWidget(subject, 0, 1);
@@ -43,7 +43,7 @@ QWidget *SieveActionEnclose::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 1, 0);
 
     auto headers = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(headers, w);
+    KLineEditEventHandler::catchReturnKey(headers);
     headers->setObjectName(QStringLiteral("headers"));
     connect(headers, &QLineEdit::textChanged, this, &SieveActionEnclose::valueChanged);
     grid->addWidget(headers, 1, 1);

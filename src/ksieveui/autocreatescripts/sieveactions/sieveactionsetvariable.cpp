@@ -9,8 +9,8 @@
 #include "editor/sieveeditorutil.h"
 #include "widgets/selectvariablemodifiercombobox.h"
 
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
 #include "libksieve_debug.h"
@@ -49,7 +49,7 @@ QWidget *SieveActionSetVariable::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 1, 0);
 
     auto value = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(value, w);
+    KLineEditEventHandler::catchReturnKey(value);
     value->setObjectName(QStringLiteral("value"));
     connect(value, &QLineEdit::textChanged, this, &SieveActionSetVariable::valueChanged);
     grid->addWidget(value, 1, 1);
@@ -58,7 +58,7 @@ QWidget *SieveActionSetVariable::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 2, 0);
 
     auto variable = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(variable, w);
+    KLineEditEventHandler::catchReturnKey(variable);
     variable->setObjectName(QStringLiteral("variable"));
     connect(variable, &QLineEdit::textChanged, this, &SieveActionSetVariable::valueChanged);
     grid->addWidget(variable, 2, 1);

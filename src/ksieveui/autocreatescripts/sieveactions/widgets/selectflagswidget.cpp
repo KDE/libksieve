@@ -7,9 +7,9 @@
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KConfigGroup>
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <KSharedConfig>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
 #include <KWindowConfig>
@@ -135,7 +135,7 @@ SelectFlagsWidget::SelectFlagsWidget(QWidget *parent)
     auto lay = new QHBoxLayout(this);
     lay->setContentsMargins({});
     mEdit = new QLineEdit(this);
-    new KPIM::LineEditCatchReturnKey(mEdit, this);
+    KLineEditEventHandler::catchReturnKey(mEdit);
     mEdit->setReadOnly(true);
     mEdit->setPlaceholderText(i18n("Click on button for selecting flags..."));
     connect(mEdit, &QLineEdit::textChanged, this, &SelectFlagsWidget::valueChanged);

@@ -7,8 +7,8 @@
 #include <KStatefulBrush>
 
 #include <KColorScheme>
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <PimCommon/LineEditWithCompleterNg>
 #include <QHBoxLayout>
 #include <QLineEdit>
@@ -21,7 +21,7 @@ AddressLineEdit::AddressLineEdit(QWidget *parent)
 {
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setContentsMargins({});
-    new KPIM::LineEditCatchReturnKey(mLineEdit, this);
+    KLineEditEventHandler::catchReturnKey(mLineEdit);
     mainLayout->addWidget(mLineEdit);
     mLineEdit->setClearButtonEnabled(true);
     mLineEdit->setPlaceholderText(i18n("Define Email Address..."));

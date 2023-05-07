@@ -7,7 +7,7 @@
 #include "sievetemplateeditdialog.h"
 #include "editor/sievetextedit.h"
 
-#include <Libkdepim/LineEditCatchReturnKey>
+#include <KLineEditEventHandler>
 
 #include <KLocalizedString>
 #include <QLineEdit>
@@ -61,7 +61,7 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
 
     mTemplateNameEdit = new QLineEdit(this);
     mTemplateNameEdit->setReadOnly(defaultTemplate);
-    new KPIM::LineEditCatchReturnKey(mTemplateNameEdit, this);
+    KLineEditEventHandler::catchReturnKey(mTemplateNameEdit);
     mTemplateNameEdit->setClearButtonEnabled(!defaultTemplate);
     hbox->addWidget(mTemplateNameEdit);
 

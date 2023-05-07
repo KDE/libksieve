@@ -6,8 +6,8 @@
 #include "sieveconditionservermetadataexists.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
 #include "libksieve_debug.h"
@@ -32,7 +32,7 @@ QWidget *SieveConditionServerMetaDataExists::createParamWidget(QWidget *parent) 
     lay->addWidget(lab);
 
     auto value = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(value, w);
+    KLineEditEventHandler::catchReturnKey(value);
     value->setObjectName(QStringLiteral("value"));
     connect(value, &QLineEdit::textChanged, this, &SieveConditionServerMetaDataExists::valueChanged);
     lay->addWidget(value);

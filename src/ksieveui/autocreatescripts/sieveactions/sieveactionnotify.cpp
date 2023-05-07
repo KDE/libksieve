@@ -8,8 +8,8 @@
 #include "editor/sieveeditorutil.h"
 #include "widgets/selectimportancecombobox.h"
 
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
 #include "libksieve_debug.h"
@@ -40,7 +40,7 @@ QWidget *SieveActionNotify::createParamWidget(QWidget *parent) const
     lay->addWidget(lab);
 
     auto message = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(message, w);
+    KLineEditEventHandler::catchReturnKey(message);
     message->setObjectName(QStringLiteral("message"));
     connect(message, &QLineEdit::textChanged, this, &SieveActionNotify::valueChanged);
     lay->addWidget(message);
@@ -49,7 +49,7 @@ QWidget *SieveActionNotify::createParamWidget(QWidget *parent) const
     lay->addWidget(lab);
 
     auto method = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(method, w);
+    KLineEditEventHandler::catchReturnKey(method);
     method->setObjectName(QStringLiteral("method"));
     lay->addWidget(method);
     connect(method, &QLineEdit::textChanged, this, &SieveActionNotify::valueChanged);

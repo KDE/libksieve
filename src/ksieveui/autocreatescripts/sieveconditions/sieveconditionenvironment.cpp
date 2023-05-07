@@ -7,8 +7,8 @@
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
 #include "libksieve_debug.h"
@@ -34,7 +34,7 @@ QWidget *SieveConditionEnvironment::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 0, 0);
 
     auto item = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(item, w);
+    KLineEditEventHandler::catchReturnKey(item);
     QStringList itemList;
     itemList << QStringLiteral("domain") << QStringLiteral("host") << QStringLiteral("location") << QStringLiteral("name") << QStringLiteral("phase")
              << QStringLiteral("remote-host") << QStringLiteral("remote-ip") << QStringLiteral("version");
@@ -50,7 +50,7 @@ QWidget *SieveConditionEnvironment::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 1, 0);
 
     auto value = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(value, w);
+    KLineEditEventHandler::catchReturnKey(value);
     connect(value, &QLineEdit::textChanged, this, &SieveConditionEnvironment::valueChanged);
     value->setObjectName(QStringLiteral("value"));
     grid->addWidget(value, 1, 1);

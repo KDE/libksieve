@@ -11,8 +11,8 @@
 #include "sievescriptblockwidget.h"
 #include "widgets/lineeditvalidator.h"
 
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QIcon>
 #include <QLineEdit>
 #include <QPushButton>
@@ -67,7 +67,7 @@ void SieveGlobalVariableActionWidget::initWidget()
     mSetValueTo->setChecked(false);
 
     mVariableValue = new QLineEdit(this);
-    new KPIM::LineEditCatchReturnKey(mVariableValue, this);
+    KLineEditEventHandler::catchReturnKey(mVariableValue);
     connect(mVariableValue, &QLineEdit::textChanged, this, &SieveGlobalVariableActionWidget::valueChanged);
     mVariableValue->setEnabled(false);
     mLayout->addWidget(mVariableValue, 1, 3);

@@ -12,8 +12,8 @@
 #include "sievescriptblockwidget.h"
 
 #include "widgets/lineeditvalidator.h"
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
 #include "libksieve_debug.h"
@@ -45,7 +45,7 @@ SieveForEveryPartWidget::SieveForEveryPartWidget(QWidget *parent)
     auto lab = new QLabel(i18n("Name (optional):"), this);
     lay->addWidget(lab);
 
-    new KPIM::LineEditCatchReturnKey(mName, this);
+    KLineEditEventHandler::catchReturnKey(mName);
     connect(mName, &QLineEdit::textChanged, this, &SieveForEveryPartWidget::valueChanged);
     mName->setEnabled(false);
     lay->addWidget(mName);

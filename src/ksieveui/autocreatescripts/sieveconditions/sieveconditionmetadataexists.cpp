@@ -11,8 +11,8 @@
 #include <QLineEdit>
 
 #include "libksieve_debug.h"
+#include <KLineEditEventHandler>
 #include <KSieveUi/AbstractMoveImapFolderWidget>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QGridLayout>
 #include <QLabel>
 #include <QXmlStreamReader>
@@ -43,7 +43,7 @@ QWidget *SieveConditionMetaDataExists::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 1, 0);
 
     auto value = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(value, w);
+    KLineEditEventHandler::catchReturnKey(value);
     connect(value, &QLineEdit::textChanged, this, &SieveConditionMetaDataExists::valueChanged);
     value->setObjectName(QStringLiteral("value"));
     grid->addWidget(value, 1, 1);

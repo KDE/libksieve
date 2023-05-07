@@ -7,8 +7,8 @@
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
 #include "libksieve_debug.h"
@@ -33,7 +33,7 @@ QWidget *SieveActionBreak::createParamWidget(QWidget *parent) const
     lay->addWidget(lab);
 
     auto subject = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(subject, w);
+    KLineEditEventHandler::catchReturnKey(subject);
     subject->setObjectName(QStringLiteral("name"));
     connect(subject, &QLineEdit::textChanged, this, &SieveActionBreak::valueChanged);
     lay->addWidget(subject);

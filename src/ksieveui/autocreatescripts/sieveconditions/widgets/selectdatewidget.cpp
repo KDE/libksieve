@@ -7,9 +7,9 @@
 #include "sievedatespinbox.h"
 
 #include <KDateComboBox>
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <KTimeComboBox>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QComboBox>
 #include <QLineEdit>
 
@@ -57,7 +57,7 @@ void SelectDateWidget::initialize()
     lay->addWidget(mStackWidget);
 
     mDateLineEdit = new QLineEdit(this);
-    new KPIM::LineEditCatchReturnKey(mDateLineEdit, this);
+    KLineEditEventHandler::catchReturnKey(mDateLineEdit);
     mStackWidget->addWidget(mDateLineEdit);
     connect(mDateLineEdit, &QLineEdit::textChanged, this, &SelectDateWidget::valueChanged);
 

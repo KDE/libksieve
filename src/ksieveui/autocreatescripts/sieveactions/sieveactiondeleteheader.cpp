@@ -8,8 +8,8 @@
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "editor/sieveeditorutil.h"
 
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
 #include "libksieve_debug.h"
@@ -41,7 +41,7 @@ QWidget *SieveActionDeleteHeader::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 0, 1);
 
     auto headerEdit = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(headerEdit, w);
+    KLineEditEventHandler::catchReturnKey(headerEdit);
     headerEdit->setObjectName(QStringLiteral("headeredit"));
     connect(headerEdit, &QLineEdit::textChanged, this, &SieveActionDeleteHeader::valueChanged);
     grid->addWidget(headerEdit, 0, 2);
@@ -50,7 +50,7 @@ QWidget *SieveActionDeleteHeader::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 1, 1);
 
     auto valueEdit = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(valueEdit, w);
+    KLineEditEventHandler::catchReturnKey(valueEdit);
     valueEdit->setObjectName(QStringLiteral("valueedit"));
     connect(valueEdit, &QLineEdit::textChanged, this, &SieveActionDeleteHeader::valueChanged);
     grid->addWidget(valueEdit, 1, 2);

@@ -10,8 +10,8 @@
 #include "widgets/multilineedit.h"
 #include "widgets/selectvacationcombobox.h"
 
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
 #include "libksieve_debug.h"
@@ -58,7 +58,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 1, 0);
 
     auto subject = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(subject, w);
+    KLineEditEventHandler::catchReturnKey(subject);
     subject->setObjectName(QStringLiteral("subject"));
     connect(subject, &QLineEdit::textChanged, this, &SieveActionVacation::valueChanged);
     grid->addWidget(subject, 1, 1);

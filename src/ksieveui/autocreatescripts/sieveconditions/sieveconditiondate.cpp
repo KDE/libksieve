@@ -9,8 +9,8 @@
 #include "editor/sieveeditorutil.h"
 #include "widgets/selectdatewidget.h"
 
+#include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <Libkdepim/LineEditCatchReturnKey>
 #include <QLineEdit>
 
 #include "libksieve_debug.h"
@@ -43,7 +43,7 @@ QWidget *SieveConditionDate::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 0, 0);
 
     auto header = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(header, w);
+    KLineEditEventHandler::catchReturnKey(header);
     connect(header, &QLineEdit::textChanged, this, &SieveConditionDate::valueChanged);
     header->setObjectName(QStringLiteral("header"));
     grid->addWidget(header, 0, 1);

@@ -6,7 +6,7 @@
 #include "sieveactionaddheader.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "widgets/selectaddheaderpositioncombobox.h"
-#include <Libkdepim/LineEditCatchReturnKey>
+#include <KLineEditEventHandler>
 
 #include <KLocalizedString>
 #include <QLineEdit>
@@ -41,7 +41,7 @@ QWidget *SieveActionAddHeader::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 0, 1);
 
     auto headerEdit = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(headerEdit, w);
+    KLineEditEventHandler::catchReturnKey(headerEdit);
     connect(headerEdit, &QLineEdit::textChanged, this, &SieveActionAddHeader::valueChanged);
     headerEdit->setObjectName(QStringLiteral("headeredit"));
     grid->addWidget(headerEdit, 0, 2);
@@ -50,7 +50,7 @@ QWidget *SieveActionAddHeader::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 1, 1);
 
     auto valueEdit = new QLineEdit;
-    new KPIM::LineEditCatchReturnKey(valueEdit, w);
+    KLineEditEventHandler::catchReturnKey(valueEdit);
     connect(valueEdit, &QLineEdit::textChanged, this, &SieveActionAddHeader::valueChanged);
     valueEdit->setObjectName(QStringLiteral("valueedit"));
     grid->addWidget(valueEdit, 1, 2);
