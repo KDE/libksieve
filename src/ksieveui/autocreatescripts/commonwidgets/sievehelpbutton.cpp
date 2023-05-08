@@ -11,7 +11,6 @@
 #include <QIcon>
 #include <QWhatsThis>
 #include <QWhatsThisClickedEvent>
-#include <kio_version.h>
 
 using namespace KSieveUi;
 SieveHelpButton::SieveHelpButton(QWidget *parent)
