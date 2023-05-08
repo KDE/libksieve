@@ -6,7 +6,6 @@
 
 #include "findbarbase.h"
 #include <KStatefulBrush>
-#include <kconfigwidgets_version.h>
 
 #include <PimCommon/LineEditWithCompleterNg>
 

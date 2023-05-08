@@ -6,10 +6,8 @@
 
 #include "vacationmaillineedit.h"
 #include <KStatefulBrush>
-#include <kconfigwidgets_version.h>
 
 #include <KColorScheme>
-#include <PimCommon/LineEditWithCompleterNg>
 
 using namespace KSieveUi;
 VacationMailLineEdit::VacationMailLineEdit(QWidget *parent)
