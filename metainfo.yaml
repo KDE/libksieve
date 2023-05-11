@@ -3,7 +3,10 @@ description: Sieve Script Library
 tier: 3
 type: functional
 platforms:
-    - name: All
+    - name: Linux
+    - name: FreeBSD
+    - name: macOS
+    - name: Windows
 portingAid: false
 deprecated: false
 release: false
