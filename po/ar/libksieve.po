@@ -1289,7 +1289,7 @@ msgstr "الوقت"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:47
 #, kde-format
 msgid "iso8601"
-msgstr "آيزو٨٦٠١"
+msgstr "آيزو8601"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:48
 #, kde-format
