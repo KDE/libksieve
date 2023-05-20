@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-15 00:48+0000\n"
-"PO-Revision-Date: 2023-02-02 08:57+0100\n"
+"PO-Revision-Date: 2023-05-18 05:48+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #: kmanagesieve/session.cpp:90
 #, kde-format
@@ -613,6 +613,8 @@ msgstr "ცვლადში:"
 #, kde-format
 msgid "Script needs regex support, but server does not have it."
 msgstr ""
+"სკრიპტი რეგულარული გამოსახულების მხარდაჭერას მოითხოვს, მაგრამ სერვერს ის არ "
+"გააჩნია."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:177
 #, kde-format
@@ -746,7 +748,7 @@ msgstr "მონახაზი"
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
 #, kde-format
 msgid "Click on button for selecting flags..."
-msgstr ""
+msgstr "ალმების ასარჩევად დააწკაპუნეთ ღილაკზე..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
@@ -833,12 +835,12 @@ msgstr "კომენტარის დამატება"
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:222
 #, kde-format
 msgid "Script contains unsupported feature \"%1\""
-msgstr ""
+msgstr "სკრიპტი მხარდაუჭერელ თვისებას, \"%1\" შეიცავს"
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:422
 #, kde-format
 msgid "We detected a loop if in a loop if. It's not supported"
-msgstr ""
+msgstr "აღმოჩენილია მარყუჟი მარყუჟში. ეს მხარდაჭერილი არაა"
 
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:39
 #, kde-format
@@ -1034,7 +1036,7 @@ msgstr "მაქვს"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:35
 #, kde-format
 msgid "Use \",\" to separate capabilities"
-msgstr ""
+msgstr "შესაძლებლობების გამოსაყოფად ',' გამოიყენეთ"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:68
 #, kde-format
@@ -1117,7 +1119,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:20
 #, kde-format
 msgid "Server Meta Data Exists"
-msgstr ""
+msgstr "სერვერის მეტა მონაცემები არსებობს"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:67
 #, kde-format
@@ -1576,7 +1578,7 @@ msgstr "პირობები"
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:37
 #, kde-format
 msgid "Match all messages"
-msgstr ""
+msgstr "ემთხვევა ყველა შეტყობინებას"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
 #, kde-format
@@ -1718,7 +1720,7 @@ msgstr "ახალი სახელი სკრიპტისთვის:
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:478
 #, kde-format
 msgid "forEveryPart is not supported by your server"
-msgstr ""
+msgstr "ForEveryPart თქვენი სერვერის მიერ მხარდაჭერილი არაა"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:576
 #, kde-format
@@ -1738,7 +1740,7 @@ msgstr "გლობალური ცვლადი"
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:46
 #, kde-format
 msgid "ForEveryPart"
-msgstr ""
+msgstr "ForEveryPart"
 
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:95
 #, kde-format
@@ -1754,12 +1756,12 @@ msgstr "მთავარი ბლოკი"
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:113
 #, kde-format
 msgid "Block \"Elsif\""
-msgstr ""
+msgstr "ბლოკი \"Elsif\""
 
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:115
 #, kde-format
 msgid "Block \"Else\""
-msgstr ""
+msgstr "ბლოკი \"Else\""
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:30
 #, kde-format
@@ -2284,7 +2286,7 @@ msgstr "სკრიპტის დამუშავების შეცდ�
 #: ksieveui/managescriptsjob/renamescriptjob.cpp:56
 #, kde-format
 msgid "Impossible to start job"
-msgstr ""
+msgstr "დავალების გაშვება შეუძლებელია"
 
 #: ksieveui/managescriptsjob/renamescriptjob.cpp:66
 #, kde-format
@@ -2370,7 +2372,7 @@ msgstr "Sieve-ის დამუშავება"
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:83
 #, kde-format
 msgid "XML Files (*.xml);;All Files (*)"
-msgstr ""
+msgstr "XML ფაილი (*.xml);;ყველა ფაილი (*)"
 
 #. i18n: ectx: label, entry (AllowOutOfOfficeSettings), group (OutOfOffice)
 #: ksieveui/settings/sieve-vacation.kcfg:16
