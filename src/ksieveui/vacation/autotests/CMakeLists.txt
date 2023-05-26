@@ -21,7 +21,7 @@ macro( add_vacation_test _source )
   target_link_libraries(${_name}
     KPim6KSieveUi
     Qt::Test
-    KPim6::IdentityManagement
+    KPim6::IdentityManagementCore
     KPim6::Mime
     KF6::I18n
     KPim6::MailTransport

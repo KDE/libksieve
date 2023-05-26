@@ -7,8 +7,8 @@
 #include "vacationutils.h"
 #include "sieve-vacation.h"
 #include "vacationscriptextractor.h"
-#include <KIdentityManagement/Identity>
-#include <KIdentityManagement/IdentityManager>
+#include <KIdentityManagementCore/Identity>
+#include <KIdentityManagementCore/IdentityManager>
 
 #include <KLocalizedString>
 #include <QDate>
@@ -84,9 +84,9 @@ int VacationUtils::defaultNotificationInterval()
 KMime::Types::AddrSpecList VacationUtils::defaultMailAliases()
 {
     KMime::Types::AddrSpecList sl;
-    KIdentityManagement::IdentityManager *manager = KIdentityManagement::IdentityManager::self();
-    KIdentityManagement::IdentityManager::ConstIterator end(manager->end());
-    for (KIdentityManagement::IdentityManager::ConstIterator it = manager->begin(); it != end; ++it) {
+    KIdentityManagementCore::IdentityManager *manager = KIdentityManagementCore::IdentityManager::self();
+    KIdentityManagementCore::IdentityManager::ConstIterator end(manager->end());
+    for (KIdentityManagementCore::IdentityManager::ConstIterator it = manager->begin(); it != end; ++it) {
         if (!(*it).primaryEmailAddress().isEmpty()) {
             KMime::Types::Mailbox a;
             a.fromUnicodeString((*it).primaryEmailAddress());
