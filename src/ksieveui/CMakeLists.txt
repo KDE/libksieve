@@ -409,6 +409,7 @@ target_link_libraries(KPim6KSieveUi
     KF6::Archive
     KPim6::Mime
     KF6::IconThemes
+    KF6::IconWidgets
     KPim6::IdentityManagementCore
     KPim6::PimTextEdit
     KPim6::MailTransport

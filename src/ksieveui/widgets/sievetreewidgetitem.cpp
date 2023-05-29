@@ -7,6 +7,7 @@
 #include "sievetreewidgetitem.h"
 
 #include <KIconLoader>
+#include <KPixmapSequenceLoader>
 
 #include <QTimer>
 
@@ -16,7 +17,7 @@ SieveTreeWidgetProgress::SieveTreeWidgetProgress(SieveTreeWidgetItem *item, QObj
     , mItem(item)
 {
     KIconLoader loader;
-    mProgressPix = loader.loadPixmapSequence(QStringLiteral("process-working"), KIconLoader::SizeSmallMedium);
+    mProgressPix = KPixmapSequenceLoader::load(QStringLiteral("process-working"), KIconLoader::SizeSmallMedium);
     mProgressTimer = new QTimer(this);
     connect(mProgressTimer, &QTimer::timeout, this, &SieveTreeWidgetProgress::slotTimerDone);
 }

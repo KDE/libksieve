@@ -6,6 +6,7 @@
 #include "sieveeditorloadprogressindicator.h"
 
 #include <KIconLoader>
+#include <KPixmapSequenceLoader>
 
 #include <QPixmap>
 #include <QTimer>
@@ -14,7 +15,7 @@ SieveEditorLoadProgressIndicator::SieveEditorLoadProgressIndicator(QObject *pare
     : QObject(parent)
     , mProgressTimer(new QTimer(this))
 {
-    mProgressPix = KIconLoader::global()->loadPixmapSequence(QStringLiteral("process-working"), KIconLoader::SizeSmallMedium);
+    mProgressPix = KPixmapSequenceLoader::load(QStringLiteral("process-working"), KIconLoader::SizeSmallMedium);
     connect(mProgressTimer, &QTimer::timeout, this, &SieveEditorLoadProgressIndicator::slotTimerDone);
 }
 
