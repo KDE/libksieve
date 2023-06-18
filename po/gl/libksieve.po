@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-10 00:49+0000\n"
-"PO-Revision-Date: 2023-06-05 15:16+0200\n"
+"PO-Revision-Date: 2023-06-17 16:07+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #: kmanagesieve/session.cpp:90
 #, kde-format
@@ -455,7 +455,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:20
 #, kde-format
 msgid "File Into"
-msgstr "Arquivar en"
+msgstr "Gardar en"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:61
 #, kde-format
@@ -463,7 +463,7 @@ msgid ""
 "Action \"fileinto\" has \"copy\" argument but current server does not "
 "support it"
 msgstr ""
-"A acción «arquivaren» ten o argumento «copiar», pero o servidor actual non o "
+"A acción «fileinto» ten o argumento «copy», pero o servidor actual non o "
 "admite"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:100
@@ -482,7 +482,7 @@ msgstr "Crear un cartafol"
 msgid ""
 "The \"fileinto\" action delivers the message into the specified mailbox."
 msgstr ""
-"A acción «Arquivar en» entrega a mensaxe na caixa de correo que se indique."
+"A acción «fileinto» entrega a mensaxe na caixa de correo que se indique."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:154
 #, kde-format
@@ -503,7 +503,7 @@ msgid ""
 "in addition to whatever else is happening to the message."
 msgstr ""
 "Cando se indica a palabra clave opcional «:copy», a orde etiquetada non "
-"cancela o «manter» implícito. En vez disto, simplemente arquiva ou encamiña "
+"cancela o «manter» implícito. En vez disto, simplemente garda ou encamiña "
 "unha copia ademais de calquera outra cousa que lle ocorra á mensaxe."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:20
@@ -521,7 +521,7 @@ msgid ""
 msgstr ""
 "A acción «manter» é calquera acción que se tome en troques das demais "
 "accións se non se produce ningún filtrado; normalmente, isto simplemente "
-"significa que se arquive a mensaxe na caixa de correo principal do usuario."
+"significa que se garde a mensaxe na caixa de correo principal do usuario."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:55
 #, kde-format
@@ -2777,7 +2777,7 @@ msgstr "Cancelar a edición"
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Cancel"
-msgstr "Non cancelar a edición"
+msgstr "Non cancelar"
 
 #: ksieveui/vacation/multiimapvacationdialog.cpp:112
 #, kde-format
@@ -2992,7 +2992,7 @@ msgstr "Scripts dispoñíbeis"
 #: ksieveui/widgets/managesievetreeview.cpp:39
 #, kde-format
 msgid "Network down."
-msgstr "A rede está desactivada."
+msgstr "A rede está caída."
 
 #: ksieveui/widgets/managesievewidget.cpp:147
 #, kde-format
