@@ -25,7 +25,7 @@ msgstr ""
 #, kde-format
 msgid "Cannot use TLS since the underlying Qt library does not support it."
 msgstr ""
-"Non se pode empregar TLS porque a biblioteca de Qt subxacente non o admite."
+"Non se pode usar TLS porque a biblioteca de Qt subxacente non o admite."
 
 #: kmanagesieve/session.cpp:97
 #, kde-format
@@ -353,7 +353,7 @@ msgid ""
 msgstr ""
 "A acción «converter» indica que se convertan todas as partes do corpo cuxo "
 "tipo de multimedia sexa igual a «media-type» ao tipo de media de «media-"
-"type» empregando os parámetros de conversión."
+"type» usando os parámetros de conversión."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:24
 #, kde-format
@@ -378,7 +378,7 @@ msgstr "Descartar"
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:23
 #, kde-format
 msgid "Discard is used to silently throw away the message."
-msgstr "Descartar emprégase para descartar a mensaxe silenciosamente."
+msgstr "Descartar úsase para descartar a mensaxe silenciosamente."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:22
 #, kde-format
@@ -450,7 +450,7 @@ msgid ""
 "\" loop and is used to store text into a variable"
 msgstr ""
 "A acción «extracttext» pode usarse dentro do contexto dun bucle "
-"«foreverypart» e emprégase para almacenar texto nunha variábel."
+"«foreverypart» e úsase para almacenar texto nunha variábel."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:20
 #, kde-format
@@ -568,7 +568,7 @@ msgid ""
 "action makes no changes to the message body or existing headers, but it may "
 "add new headers."
 msgstr ""
-"A acción «encamiñar» emprégase para enviarlle a mensaxe a outro usuario no "
+"A acción «encamiñar» úsase para enviarlle a mensaxe a outro usuario no "
 "enderezo que se indique, igual que no encamiñamento de correo. A acción "
 "«encamiñar» non realiza ningún cambio no corpo da mensaxe nin nas cabeceiras "
 "existentes pero si pode engadir cabeceiras novas."
@@ -709,7 +709,7 @@ msgid ""
 "in the expansion"
 msgstr ""
 "Este modificador engade as citas necesarias para asegurarse de que o texto "
-"expandido só case cunha aparición literal se se emprega como parámetro de :"
+"expandido só case cunha aparición literal se se usa como parámetro de :"
 "regex. Todos os caracteres que teñan un significado especial (.,*,?, etc.) "
 "levan como prefixo \\ na expansión."
 
@@ -1161,7 +1161,7 @@ msgstr "Teño"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:35
 #, kde-format
 msgid "Use \",\" to separate capabilities"
-msgstr "Empregue «,» para separar as capacidades"
+msgstr "Use «,» para separar as capacidades"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:68
 #, kde-format
@@ -1313,7 +1313,7 @@ msgid ""
 "of either \"spamtest\" or \"spamtestplus\" for use with the capability "
 "mechanism."
 msgstr ""
-"As probas «Proba de lixo» incluídas con Sieve empregan un identificador "
+"As probas «Proba de lixo» incluídas con Sieve usan un identificador "
 "«spamtest» ou «spamtestplus» para usárense co mecanismo de capacidade."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:20
@@ -1342,7 +1342,7 @@ msgid ""
 "Sieve implementations that implement the \"virustest\" test have an "
 "identifier of \"virustest\" for use with the capability mechanism."
 msgstr ""
-"As probas «Proba de virus» incluídas con Sieve empregan un identificador "
+"As probas «Proba de virus» incluídas con Sieve usan un identificador "
 "«virustest» para usarse co mecanismo de capacidade."
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:26
@@ -1657,7 +1657,7 @@ msgstr "Nome da variábel:"
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:64
 #, kde-format
 msgid "Set value to:"
-msgstr "Estabelecer o valor:"
+msgstr "Definir o valor:"
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:136
 #, kde-format
@@ -1673,7 +1673,7 @@ msgid ""
 "script."
 msgstr ""
 "Unha variábel ten ámbito global en todos os scripts que a declarasen coa "
-"orde «global». Se un script emprega ese nome de variábel sen a declarar como "
+"orde «global». Se un script usa ese nome de variábel sen a declarar como "
 "global, o nome indica unha variábel separada, non global, dentro dese script."
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:42
@@ -2243,7 +2243,7 @@ msgstr "Editor"
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:138
 #, kde-format
 msgid "Show result from \"check syntax\""
-msgstr "Mostrar o resultado de «comprobar a sintaxe»"
+msgstr "Amosar o resultado de «comprobar a sintaxe»"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:216
 #, kde-format
@@ -2646,7 +2646,7 @@ msgstr ""
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
 #, kde-format
 msgid "Display check script result..."
-msgstr "Mostrar o resultado da revisión do script…"
+msgstr "Amosar o resultado da revisión do script…"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
 #, kde-format
@@ -2971,7 +2971,7 @@ msgid ""
 msgstr ""
 "Alguén (probabelmente vostede) cambiou o script de vacacións no servidor. "
 "KMail non é quen de determinar os parámetros para as respostas automáticas. "
-"Hanse empregar os valores predeterminados."
+"Hanse usar os valores predeterminados."
 
 #: ksieveui/widgets/custommanagesievewidget.cpp:91
 #, kde-format
@@ -3037,7 +3037,7 @@ msgstr "Os nomes baleiros non son correctos."
 #: ksieveui/widgets/managesievewidget.cpp:234
 #, kde-format
 msgid "You cannot use protected name."
-msgstr "Non pode empregar un nome protexido."
+msgstr "Non pode usar un nome protexido."
 
 #: ksieveui/widgets/managesievewidget.cpp:246
 #, kde-format
