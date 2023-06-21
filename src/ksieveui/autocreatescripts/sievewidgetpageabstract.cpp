@@ -24,3 +24,5 @@ SieveWidgetPageAbstract::PageType SieveWidgetPageAbstract::pageType() const
 {
     return mType;
 }
+
+#include "moc_sievewidgetpageabstract.cpp"

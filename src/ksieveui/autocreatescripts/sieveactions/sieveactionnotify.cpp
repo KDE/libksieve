@@ -143,3 +143,5 @@ QUrl SieveActionNotify::href() const
 {
     return SieveEditorUtil::helpUrl(SieveEditorUtil::strToVariableName(name()));
 }
+
+#include "moc_sieveactionnotify.cpp"

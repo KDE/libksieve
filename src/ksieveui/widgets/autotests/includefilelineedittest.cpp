@@ -24,3 +24,5 @@ void IncludeFileLineEditTest::shouldHaveDefaultValue()
 }
 
 QTEST_MAIN(IncludeFileLineEditTest)
+
+#include "moc_includefilelineedittest.cpp"

@@ -252,3 +252,5 @@ bool FindBarBase::event(QEvent *e)
     }
     return QWidget::event(e);
 }
+
+#include "moc_findbarbase.cpp"

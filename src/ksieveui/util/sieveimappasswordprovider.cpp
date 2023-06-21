@@ -11,3 +11,5 @@ SieveImapPasswordProvider::SieveImapPasswordProvider(QObject *parent)
     : QObject(parent)
 {
 }
+
+#include "moc_sieveimappasswordprovider.cpp"

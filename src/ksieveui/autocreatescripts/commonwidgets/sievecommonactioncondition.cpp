@@ -121,3 +121,5 @@ QUrl SieveCommonActionCondition::href() const
 {
     return {};
 }
+
+#include "moc_sievecommonactioncondition.cpp"

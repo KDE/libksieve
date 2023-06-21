@@ -50,3 +50,5 @@ void KSieveUi::RegexpEditorLineEdit::setPlaceholderText(const QString &str)
 {
     mLineEdit->setPlaceholderText(str);
 }
+
+#include "moc_regexpeditorlineedit.cpp"

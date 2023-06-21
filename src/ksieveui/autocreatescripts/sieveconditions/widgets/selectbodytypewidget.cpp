@@ -74,3 +74,5 @@ void SelectBodyTypeWidget::setCode(const QString &type, const QString &content, 
     slotBodyTypeChanged(index);
     mBodyLineEdit->setText(content);
 }
+
+#include "moc_selectbodytypewidget.cpp"

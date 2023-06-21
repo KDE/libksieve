@@ -19,3 +19,5 @@ bool SieveTextEditorSpellCheckDecorator::isSpellCheckingEnabledForBlock(const QS
     // allow to spell check comment
     return mPlainTextEdit->checkSpellingEnabled() && textBlock.startsWith(QLatin1Char('#'));
 }
+
+#include "moc_sievetexteditorspellcheckdecorator.cpp"

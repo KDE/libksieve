@@ -224,3 +224,5 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts_data()
 }
 
 QTEST_MAIN(SieveEditorGraphicalModeWidgetTest)
+
+#include "moc_sieveeditorgraphicalmodewidgettest.cpp"

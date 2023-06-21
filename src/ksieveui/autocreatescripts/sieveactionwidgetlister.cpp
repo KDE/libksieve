@@ -438,3 +438,5 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
         }
     }
 }
+
+#include "moc_sieveactionwidgetlister.cpp"

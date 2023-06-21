@@ -104,3 +104,5 @@ void CustomManageSieveWidget::slotFindAccountInfoFinished(const KSieveUi::Util::
     mLastSieveTreeWidgetItem->setText(0, serverName);
     searchNextServerSieve();
 }
+
+#include "moc_custommanagesievewidget.cpp"

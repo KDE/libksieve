@@ -389,3 +389,5 @@ SieveJob *SieveJob::activate(const QUrl &url)
     Private::sessionForUrl(url)->scheduleJob(job);
     return job;
 }
+
+#include "moc_sievejob.cpp"

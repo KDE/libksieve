@@ -136,3 +136,5 @@ QStringList KSieveUi::SieveConditionHeader::needRequires(QWidget *w) const
     const SelectMatchTypeComboBox *matchTypeCombo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
     return matchTypeCombo->needRequires();
 }
+
+#include "moc_sieveconditionheader.cpp"

@@ -90,3 +90,5 @@ QUrl SieveActionEReject::href() const
 {
     return SieveEditorUtil::helpUrl(SieveEditorUtil::strToVariableName(name()));
 }
+
+#include "moc_sieveactionereject.cpp"

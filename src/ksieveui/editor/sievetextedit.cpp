@@ -431,3 +431,5 @@ void SieveTextEdit::setWordWrap(bool state)
 {
     setWordWrapMode(state ? QTextOption::WordWrap : QTextOption::NoWrap);
 }
+
+#include "moc_sievetextedit.cpp"

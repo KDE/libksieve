@@ -56,3 +56,5 @@ void SelectComparatorComboBox::setCode(const QString &code, const QString &name,
         setCurrentIndex(0);
     }
 }
+
+#include "moc_selectcomparatorcombobox.cpp"

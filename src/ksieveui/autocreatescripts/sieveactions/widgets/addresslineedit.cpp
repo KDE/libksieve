@@ -75,3 +75,5 @@ bool AddressLineEdit::isValid() const
 {
     return !mEmailIsInvalid;
 }
+
+#include "moc_addresslineedit.cpp"

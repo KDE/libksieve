@@ -24,3 +24,5 @@ void SieveScriptListBoxTest::shouldHaveDefaultValues()
     QVERIFY(mSieveListScript);
     QCOMPARE(mSieveListScript->dragDropMode(), QAbstractItemView::InternalMove);
 }
+
+#include "moc_sievescriptlistboxtest.cpp"

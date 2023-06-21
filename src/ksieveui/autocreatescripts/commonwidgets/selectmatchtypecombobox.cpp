@@ -81,3 +81,5 @@ QStringList SelectMatchTypeComboBox::needRequires() const
     }
     return requireModules;
 }
+
+#include "moc_selectmatchtypecombobox.cpp"

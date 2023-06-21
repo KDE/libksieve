@@ -51,3 +51,5 @@ void SelectHeadersDialogTest::shouldHaveDefaultValue()
 }
 
 QTEST_MAIN(SelectHeadersDialogTest)
+
+#include "moc_selectheadersdialogtest.cpp"

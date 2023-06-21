@@ -684,3 +684,5 @@ void SieveEditorWidget::slotServerInfo()
     dlg.setServerInfo(mTextModeWidget->sieveCapabilities());
     dlg.exec();
 }
+
+#include "moc_sieveeditorwidget.cpp"

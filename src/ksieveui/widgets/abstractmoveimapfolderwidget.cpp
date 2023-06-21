@@ -13,3 +13,5 @@ AbstractMoveImapFolderWidget::AbstractMoveImapFolderWidget(QWidget *parent)
 }
 
 AbstractMoveImapFolderWidget::~AbstractMoveImapFolderWidget() = default;
+
+#include "moc_abstractmoveimapfolderwidget.cpp"

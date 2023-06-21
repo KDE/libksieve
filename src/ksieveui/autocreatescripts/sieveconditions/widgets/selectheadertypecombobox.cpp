@@ -310,3 +310,5 @@ void SelectHeaderTypeComboBox::setCode(const QString &code)
     mCode = code;
     changeReadOnlyStatus();
 }
+
+#include "moc_selectheadertypecombobox.cpp"

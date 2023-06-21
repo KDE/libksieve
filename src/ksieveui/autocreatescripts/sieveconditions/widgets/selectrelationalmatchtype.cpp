@@ -66,3 +66,5 @@ void SelectRelationalMatchType::initialize()
     connect(mMatch, &QComboBox::activated, this, &SelectRelationalMatchType::valueChanged);
     lay->addWidget(mMatch);
 }
+
+#include "moc_selectrelationalmatchtype.cpp"

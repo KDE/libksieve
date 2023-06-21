@@ -49,3 +49,5 @@ void SelectSizeWidget::setCode(qlonglong value, const QString &identifier, const
     mSelectSizeType->setCode(identifier, name, error);
     mSpinBoxSize->setValue(value);
 }
+
+#include "moc_selectsizewidget.cpp"

@@ -130,3 +130,5 @@ void SieveConditionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidg
         setComment(commentStr);
     }
 }
+
+#include "moc_sieveconditionconvert.cpp"

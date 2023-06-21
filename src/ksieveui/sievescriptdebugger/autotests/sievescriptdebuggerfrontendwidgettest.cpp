@@ -99,3 +99,5 @@ void SieveScriptDebuggerFrontEndWidgetTest::shouldNotAccept()
 }
 
 QTEST_MAIN(SieveScriptDebuggerFrontEndWidgetTest)
+
+#include "moc_sievescriptdebuggerfrontendwidgettest.cpp"

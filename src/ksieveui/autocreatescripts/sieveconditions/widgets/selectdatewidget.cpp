@@ -276,3 +276,5 @@ void SelectDateWidget::setCode(const QString &type, const QString &value)
         break;
     }
 }
+
+#include "moc_selectdatewidget.cpp"

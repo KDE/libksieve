@@ -116,3 +116,5 @@ SieveImapPasswordProvider *MultiImapVacationManager::passwordProvider() const
 {
     return mPasswordProvider;
 }
+
+#include "moc_multiimapvacationmanager.cpp"

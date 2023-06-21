@@ -59,3 +59,5 @@ void LineEditValidatorTest::shouldValidateText()
     QTest::keyClicks(&lineedit, input);
     QCOMPARE(lineedit.text(), output);
 }
+
+#include "moc_lineeditvalidatortest.cpp"

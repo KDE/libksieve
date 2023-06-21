@@ -71,3 +71,5 @@ void SieveScriptDescriptionDialog::writeConfig()
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }
+
+#include "moc_sievescriptdescriptiondialog.cpp"

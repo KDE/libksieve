@@ -23,3 +23,5 @@ void SieveScriptDebuggerWarningTest::shouldHaveDefaultValue()
 }
 
 QTEST_MAIN(SieveScriptDebuggerWarningTest)
+
+#include "moc_sievescriptdebuggerwarningtest.cpp"

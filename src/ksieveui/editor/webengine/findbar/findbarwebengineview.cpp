@@ -66,3 +66,5 @@ void FindBarWebEngineView::clearSelections()
     mLastSearchStr.clear();
     FindBarBase::clearSelections();
 }
+
+#include "moc_findbarwebengineview.cpp"

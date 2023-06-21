@@ -34,3 +34,5 @@ void SieveImapInstanceInterfaceManagerTest::shouldAssignSieveImapInstanceInterfa
 }
 
 QTEST_MAIN(SieveImapInstanceInterfaceManagerTest)
+
+#include "moc_sieveimapinstanceinterfacemanagertest.cpp"

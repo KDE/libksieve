@@ -152,3 +152,5 @@ void SieveEditorHelpHtmlWidget::find()
     mSliderContainer->slideIn();
     mFindBar->focusAndSetCursor();
 }
+
+#include "moc_sieveeditorhelphtmlwidget.cpp"

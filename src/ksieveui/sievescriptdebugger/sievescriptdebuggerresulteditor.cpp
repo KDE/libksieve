@@ -43,3 +43,5 @@ void SieveScriptDebuggerResultEditor::slotClear()
 {
     clear();
 }
+
+#include "moc_sievescriptdebuggerresulteditor.cpp"

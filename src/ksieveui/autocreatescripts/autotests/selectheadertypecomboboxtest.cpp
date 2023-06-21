@@ -85,3 +85,5 @@ void SelectHeaderTypeComboBoxTest::shouldSetCode()
 }
 
 QTEST_MAIN(SelectHeaderTypeComboBoxTest)
+
+#include "moc_selectheadertypecomboboxtest.cpp"

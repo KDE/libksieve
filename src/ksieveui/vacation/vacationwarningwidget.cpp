@@ -23,3 +23,5 @@ VacationWarningWidget::VacationWarningWidget(QWidget *parent)
 }
 
 VacationWarningWidget::~VacationWarningWidget() = default;
+
+#include "moc_vacationwarningwidget.cpp"

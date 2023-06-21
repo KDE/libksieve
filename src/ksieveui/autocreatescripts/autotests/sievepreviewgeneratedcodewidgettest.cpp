@@ -27,3 +27,5 @@ void SievePreviewGeneratedCodeWidgetTest::shouldHaveDefaultValues()
     QVERIFY(mTextEdit);
     QVERIFY(mTextEdit->isReadOnly());
 }
+
+#include "moc_sievepreviewgeneratedcodewidgettest.cpp"

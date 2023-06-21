@@ -42,3 +42,5 @@ void SelectSizeTypeComboBox::setCode(const QString &code, const QString &name, Q
         setCurrentIndex(0);
     }
 }
+
+#include "moc_selectsizetypecombobox.cpp"

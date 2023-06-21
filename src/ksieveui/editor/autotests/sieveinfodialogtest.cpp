@@ -29,3 +29,5 @@ void SieveInfoDialogTest::shouldHaveDefaultValues()
     auto button = dlg.findChild<QDialogButtonBox *>(QStringLiteral("button"));
     QVERIFY(button);
 }
+
+#include "moc_sieveinfodialogtest.cpp"

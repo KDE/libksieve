@@ -113,3 +113,5 @@ QWebEngineView *SieveEditorWebEngineView::createWindow(QWebEnginePage::WebWindow
     Q_UNUSED(type)
     return this;
 }
+
+#include "moc_sieveeditorwebengineview.cpp"

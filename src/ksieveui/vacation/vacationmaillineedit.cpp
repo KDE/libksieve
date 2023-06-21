@@ -24,3 +24,5 @@ void VacationMailLineEdit::setInvalidEmail(bool state)
         setStyleSheet(QString());
     }
 }
+
+#include "moc_vacationmaillineedit.cpp"

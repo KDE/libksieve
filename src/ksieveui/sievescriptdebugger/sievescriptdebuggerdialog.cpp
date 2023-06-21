@@ -119,3 +119,5 @@ void SieveScriptDebuggerDialog::writeConfig()
     group.writeEntry("Splitter", mSieveScriptDebuggerWidget->splitterSizes());
     group.sync();
 }
+
+#include "moc_sievescriptdebuggerdialog.cpp"

@@ -29,3 +29,5 @@ QString SieveActionAbstractEditHeader::serverNeedsCapability() const
 {
     return QStringLiteral("editheader");
 }
+
+#include "moc_sieveactionabstracteditheader.cpp"

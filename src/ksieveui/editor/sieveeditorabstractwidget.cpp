@@ -98,3 +98,5 @@ bool SieveEditorAbstractWidget::loadFromFile(const QString &filename)
     setImportScript(scriptText);
     return true;
 }
+
+#include "moc_sieveeditorabstractwidget.cpp"

@@ -23,3 +23,5 @@ void SieveLineNumberArea::paintEvent(QPaintEvent *event)
 {
     m_sieveTextEdit->lineNumberAreaPaintEvent(event);
 }
+
+#include "moc_sievelinenumberarea.cpp"

@@ -43,3 +43,5 @@ void SieveScriptDebuggerTextEdit::slotAddDebug()
         cursor.insertText(QStringLiteral("require \"vnd.dovecot.debug\";\n"));
     }
 }
+
+#include "moc_sievescriptdebuggertextedit.cpp"

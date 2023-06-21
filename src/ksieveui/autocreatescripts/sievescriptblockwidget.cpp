@@ -277,3 +277,5 @@ void SieveScriptBlockWidget::loadScript(QXmlStreamReader &element, bool onlyActi
         }
     }
 }
+
+#include "moc_sievescriptblockwidget.cpp"

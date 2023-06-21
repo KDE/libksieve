@@ -87,3 +87,5 @@ void CheckKolabKep14SupportJob::slotCheckKep14Support(KManageSieve::SieveJob *jo
     d->mAvailableScripts = availableScripts;
     Q_EMIT result(this, true);
 }
+
+#include "moc_checkkolabkep14supportjob.cpp"

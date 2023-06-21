@@ -98,3 +98,5 @@ bool AutoCreateScriptDialog::event(QEvent *e)
     }
     return QDialog::event(e);
 }
+
+#include "moc_autocreatescriptdialog.cpp"

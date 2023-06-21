@@ -14,3 +14,5 @@ AbstractRegexpEditorLineEdit::AbstractRegexpEditorLineEdit(QWidget *parent)
 }
 
 AbstractRegexpEditorLineEdit::~AbstractRegexpEditorLineEdit() = default;
+
+#include "moc_abstractregexpeditorlineedit.cpp"

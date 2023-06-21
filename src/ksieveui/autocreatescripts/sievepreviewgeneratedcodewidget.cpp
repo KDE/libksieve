@@ -27,3 +27,5 @@ void SievePreviewGeneratedCodeWidget::setCode(const QString &str)
 {
     mTextEdit->setText(str);
 }
+
+#include "moc_sievepreviewgeneratedcodewidget.cpp"

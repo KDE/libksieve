@@ -19,3 +19,5 @@ SieveEditorWarning::SieveEditorWarning(QWidget *parent)
 }
 
 SieveEditorWarning::~SieveEditorWarning() = default;
+
+#include "moc_sieveeditorwarning.cpp"

@@ -234,3 +234,5 @@ void VacationEditWidgetTest::shouldHideDateTime()
 }
 
 QTEST_MAIN(VacationEditWidgetTest)
+
+#include "moc_vacationeditwidgettest.cpp"

@@ -88,3 +88,5 @@ void SieveTextEditTest::uncomment()
 }
 
 QTEST_MAIN(SieveTextEditTest)
+
+#include "moc_sievetextedittest.cpp"

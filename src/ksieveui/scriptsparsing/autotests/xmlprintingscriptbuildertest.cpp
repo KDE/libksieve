@@ -146,3 +146,5 @@ void XMLPrintingScriptBuilderTest::shouldCreateXml()
 }
 
 QTEST_MAIN(XMLPrintingScriptBuilderTest)
+
+#include "moc_xmlprintingscriptbuildertest.cpp"

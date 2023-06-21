@@ -192,3 +192,5 @@ void VacationCreateScriptJob::slotGenerateDone(const QString &error)
         createScript();
     }
 }
+
+#include "moc_vacationcreatescriptjob.cpp"

@@ -93,3 +93,5 @@ void SearchServerWithVacationSupportJob::setPasswordProvider(SieveImapPasswordPr
 {
     mPasswordProvider = newProvider;
 }
+
+#include "moc_searchserverwithvacationsupportjob.cpp"

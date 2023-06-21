@@ -97,3 +97,5 @@ QString VacationMailActionWidget::mailActionRecipient(bool &valid) const
         return {};
     }
 }
+
+#include "moc_vacationmailactionwidget.cpp"

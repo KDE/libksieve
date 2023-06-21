@@ -46,3 +46,5 @@ void RenameScriptJobTest::shouldBeStart()
 }
 
 QTEST_MAIN(RenameScriptJobTest)
+
+#include "moc_renamescriptjobtest.cpp"

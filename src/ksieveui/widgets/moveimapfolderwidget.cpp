@@ -42,3 +42,5 @@ void MoveImapFolderWidget::setSieveImapAccountSettings(const KSieveUi::SieveImap
 {
     Q_UNUSED(account)
 }
+
+#include "moc_moveimapfolderwidget.cpp"

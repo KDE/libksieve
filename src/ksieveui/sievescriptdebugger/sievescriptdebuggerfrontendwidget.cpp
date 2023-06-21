@@ -226,3 +226,5 @@ bool SieveScriptDebuggerFrontEndWidget::canAccept() const
     mSieveScriptDebuggerWarning->hide();
     return true;
 }
+
+#include "moc_sievescriptdebuggerfrontendwidget.cpp"

@@ -553,3 +553,5 @@ void FindAccountInfoJobTest::shouldAssignValue()
     }
     QVERIFY(equal);
 }
+
+#include "moc_findaccountinfojobtest.cpp"

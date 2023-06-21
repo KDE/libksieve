@@ -108,3 +108,5 @@ void SieveForEveryPartWidget::loadScript(QXmlStreamReader &element, QString &err
         qCDebug(LIBKSIEVE_LOG) << " SieveForEveryPartWidget::loadScript problem during loading";
     }
 }
+
+#include "moc_sieveforeverypartwidget.cpp"

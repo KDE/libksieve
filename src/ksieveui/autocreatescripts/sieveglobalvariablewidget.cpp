@@ -324,3 +324,5 @@ SieveGlobalVariableActionWidget::VariableElement SieveGlobalVariableLister::load
     }
     return var;
 }
+
+#include "moc_sieveglobalvariablewidget.cpp"

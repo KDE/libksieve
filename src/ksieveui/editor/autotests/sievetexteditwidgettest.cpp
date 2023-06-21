@@ -35,3 +35,5 @@ void SieveTextEditWidgetTest::shouldHaveDefaultValue()
 }
 
 QTEST_MAIN(SieveTextEditWidgetTest)
+
+#include "moc_sievetexteditwidgettest.cpp"

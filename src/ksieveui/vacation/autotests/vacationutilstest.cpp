@@ -345,3 +345,5 @@ void VacationUtilsTest::testDisableGeneratedScript()
     QCOMPARE(vacation.sendForSpam, false);
     QCOMPARE(vacation.reactOndomainName, QStringLiteral("kde.org"));
 }
+
+#include "moc_vacationutilstest.cpp"

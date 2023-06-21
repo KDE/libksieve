@@ -238,3 +238,5 @@ void FindAccountInfoJob::setProvider(SieveImapPasswordProvider *newProvider)
 {
     mPasswordProvider = newProvider;
 }
+
+#include "moc_findaccountinfojob.cpp"

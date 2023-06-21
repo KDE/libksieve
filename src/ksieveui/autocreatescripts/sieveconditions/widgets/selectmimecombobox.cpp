@@ -47,3 +47,5 @@ void SelectMimeComboBox::setCode(const QString &code, const QString &name, QStri
         setCurrentIndex(0);
     }
 }
+
+#include "moc_selectmimecombobox.cpp"

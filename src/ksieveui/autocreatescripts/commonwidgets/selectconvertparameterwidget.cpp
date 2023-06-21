@@ -76,3 +76,5 @@ void SelectConvertParameterWidget::initialize()
 
     connect(mHeight, &QSpinBox::valueChanged, this, &SelectConvertParameterWidget::valueChanged);
 }
+
+#include "moc_selectconvertparameterwidget.cpp"

@@ -107,3 +107,5 @@ void VacationManager::slotDialogOk()
 
     d->mMultiImapVacationDialog = nullptr;
 }
+
+#include "moc_vacationmanager.cpp"

@@ -160,3 +160,5 @@ QStringList KSieveUi::SieveEditorGraphicalModeWidget::listOfIncludeFile() const
 {
     return mListOfIncludeFile;
 }
+
+#include "moc_sieveeditorgraphicalmodewidget.cpp"

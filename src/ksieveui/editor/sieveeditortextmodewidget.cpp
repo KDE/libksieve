@@ -644,3 +644,5 @@ bool SieveEditorTextModeWidget::printSupportEnabled() const
 {
     return isTextEditor();
 }
+
+#include "moc_sieveeditortextmodewidget.cpp"

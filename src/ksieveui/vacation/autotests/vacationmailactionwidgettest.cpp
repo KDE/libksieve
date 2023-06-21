@@ -81,3 +81,5 @@ void VacationMailActionWidgetTest::shouldSwitchComponents()
     QVERIFY(w.mailActionRecipient(ok).isEmpty());
     QVERIFY(w.isEnabled());
 }
+
+#include "moc_vacationmailactionwidgettest.cpp"

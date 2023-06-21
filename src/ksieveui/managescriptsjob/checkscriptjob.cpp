@@ -85,3 +85,5 @@ bool CheckScriptJob::canStart() const
 {
     return d->mUrl.isValid() && !d->mCurrentScript.isEmpty();
 }
+
+#include "moc_checkscriptjob.cpp"

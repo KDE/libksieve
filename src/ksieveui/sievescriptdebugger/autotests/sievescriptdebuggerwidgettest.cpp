@@ -31,3 +31,5 @@ void SieveScriptDebuggerWidgetTest::shouldHaveDefaultValue()
 }
 
 QTEST_MAIN(SieveScriptDebuggerWidgetTest)
+
+#include "moc_sievescriptdebuggerwidgettest.cpp"

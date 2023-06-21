@@ -214,3 +214,5 @@ void SieveEditorMenuBarTest::shouldEmitSignals()
 }
 
 QTEST_MAIN(SieveEditorMenuBarTest)
+
+#include "moc_sieveeditormenubartest.cpp"

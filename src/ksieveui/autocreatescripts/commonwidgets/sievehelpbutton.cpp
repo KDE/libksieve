@@ -33,3 +33,5 @@ bool SieveHelpButton::event(QEvent *event)
     }
     return QToolButton::event(event);
 }
+
+#include "moc_sievehelpbutton.cpp"

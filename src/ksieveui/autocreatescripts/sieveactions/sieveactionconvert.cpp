@@ -134,3 +134,5 @@ QUrl SieveActionConvert::href() const
 {
     return QUrl(QStringLiteral("https://tools.ietf.org/html/draft-ietf-sieve-convert-06"));
 }
+
+#include "moc_sieveactionconvert.cpp"

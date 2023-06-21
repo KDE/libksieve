@@ -236,3 +236,5 @@ void MultiImapVacationDialog::slotDefaultClicked()
         }
     }
 }
+
+#include "moc_multiimapvacationdialog.cpp"

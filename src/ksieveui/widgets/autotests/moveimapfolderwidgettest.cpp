@@ -46,3 +46,5 @@ void MoveImapFolderWidgetTest::shouldAssignValue()
 }
 
 QTEST_MAIN(MoveImapFolderWidgetTest)
+
+#include "moc_moveimapfolderwidgettest.cpp"

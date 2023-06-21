@@ -23,3 +23,5 @@ void AbstractSelectEmailLineEdit::setMultiSelection(bool multiSelection)
 {
     mMultiSelection = multiSelection;
 }
+
+#include "moc_abstractselectemaillineedit.cpp"

@@ -68,3 +68,5 @@ void SieveScriptDebuggerDialogTest::shouldChangeDebugButtonEnabledState()
 }
 
 QTEST_MAIN(SieveScriptDebuggerDialogTest)
+
+#include "moc_sievescriptdebuggerdialogtest.cpp"

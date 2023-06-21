@@ -42,3 +42,5 @@ void RegexpEditorLineEditTest::shouldChangeValue()
 }
 
 QTEST_MAIN(RegexpEditorLineEditTest)
+
+#include "moc_regexpeditorlineedittest.cpp"

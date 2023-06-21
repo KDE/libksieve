@@ -44,3 +44,5 @@ void SieveEditorHelpHtmlWidgetTest::shouldHaveDefaultValue()
 }
 
 QTEST_MAIN(SieveEditorHelpHtmlWidgetTest)
+
+#include "moc_sieveeditorhelphtmlwidgettest.cpp"

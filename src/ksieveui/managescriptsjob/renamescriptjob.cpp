@@ -93,3 +93,5 @@ void RenameScriptJob::slotDeleteResult(KManageSieve::SieveJob *job, bool success
     Q_EMIT finished(d->mOldUrl, d->mNewUrl, success ? QString() : i18n("An error occurred during deleting the sieve script."), success);
     deleteLater();
 }
+
+#include "moc_renamescriptjob.cpp"

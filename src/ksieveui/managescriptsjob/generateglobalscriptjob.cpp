@@ -144,3 +144,5 @@ void GenerateGlobalScriptJob::disableAllOtherScripts()
     // TODO
     Q_EMIT success();
 }
+
+#include "moc_generateglobalscriptjob.cpp"

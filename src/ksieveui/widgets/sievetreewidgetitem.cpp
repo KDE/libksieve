@@ -90,3 +90,5 @@ void SieveTreeWidgetItem::setDefaultIcon()
 {
     setIcon(0, QIcon::fromTheme(QStringLiteral("network-server")));
 }
+
+#include "moc_sievetreewidgetitem.cpp"

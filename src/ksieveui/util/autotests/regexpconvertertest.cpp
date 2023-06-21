@@ -42,3 +42,5 @@ void RegExpConverterTest::convertRegExp()
 }
 
 QTEST_MAIN(RegExpConverterTest)
+
+#include "moc_regexpconvertertest.cpp"

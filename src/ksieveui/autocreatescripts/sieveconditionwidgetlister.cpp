@@ -390,3 +390,5 @@ void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniq
         }
     }
 }
+
+#include "moc_sieveconditionwidgetlister.cpp"

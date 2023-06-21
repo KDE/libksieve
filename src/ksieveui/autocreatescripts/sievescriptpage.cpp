@@ -169,3 +169,5 @@ SieveScriptBlockWidget *SieveScriptPage::blockIfWidget() const
 {
     return mBlockIfWidget;
 }
+
+#include "moc_sievescriptpage.cpp"

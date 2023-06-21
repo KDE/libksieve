@@ -13,3 +13,5 @@ SieveEditorGraphicalModeWidgetAbstract::SieveEditorGraphicalModeWidgetAbstract(Q
 }
 
 SieveEditorGraphicalModeWidgetAbstract::~SieveEditorGraphicalModeWidgetAbstract() = default;
+
+#include "moc_sieveeditorgraphicalmodewidgetabstract.cpp"

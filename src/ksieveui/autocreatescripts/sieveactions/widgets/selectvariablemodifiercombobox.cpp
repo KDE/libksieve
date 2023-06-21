@@ -45,3 +45,5 @@ void SelectVariableModifierComboBox::setCode(const QString &code, const QString 
         setCurrentIndex(0);
     }
 }
+
+#include "moc_selectvariablemodifiercombobox.cpp"

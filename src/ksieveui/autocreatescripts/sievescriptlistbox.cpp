@@ -568,3 +568,5 @@ QString SieveScriptListBox::createUniqName()
     ++mScriptNumber;
     return pattern;
 }
+
+#include "moc_sievescriptlistbox.cpp"

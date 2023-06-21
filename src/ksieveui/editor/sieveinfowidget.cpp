@@ -35,3 +35,5 @@ void SieveInfoWidget::setServerInfo(QStringList serverInfos)
     result += QLatin1String("</ul></qt>");
     mInfo->setHtml(result);
 }
+
+#include "moc_sieveinfowidget.cpp"

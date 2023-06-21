@@ -340,3 +340,5 @@ void SieveIncludeWidgetLister::loadScript(QXmlStreamReader &element, QString &er
     }
     w->loadScript(element, error);
 }
+
+#include "moc_sieveincludewidget.cpp"

@@ -196,3 +196,5 @@ void SieveEditorTabWidget::tabInserted(int index)
     QTabWidget::tabInserted(index);
     tabBar()->tabButton(0, QTabBar::RightSide)->setEnabled(false);
 }
+
+#include "moc_sieveeditortabwidget.cpp"

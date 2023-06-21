@@ -248,3 +248,5 @@ void SieveDebugDialog::slotGetScriptList(KManageSieve::SieveJob *job, bool succe
     // Handle next job: dump scripts for this server
     QTimer::singleShot(0, this, &SieveDebugDialog::slotDiagNextScript);
 }
+
+#include "moc_sievedebugdialog.cpp"

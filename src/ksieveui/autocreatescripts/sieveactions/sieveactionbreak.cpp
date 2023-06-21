@@ -103,3 +103,5 @@ QString SieveActionBreak::serverNeedsCapability() const
 {
     return QStringLiteral("foreverypart");
 }
+
+#include "moc_sieveactionbreak.cpp"

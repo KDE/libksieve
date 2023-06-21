@@ -491,3 +491,5 @@ void VacationEditWidget::setDefault()
     setDomainCheck(false);
     mDomainEdit->clear();
 }
+
+#include "moc_vacationeditwidget.cpp"

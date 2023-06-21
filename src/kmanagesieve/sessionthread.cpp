@@ -458,3 +458,5 @@ void SessionThread::sslResult(bool encrypted)
         Q_EMIT sslDone();
     }
 }
+
+#include "moc_sessionthread_p.cpp"

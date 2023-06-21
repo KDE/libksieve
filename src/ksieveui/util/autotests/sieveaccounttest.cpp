@@ -101,3 +101,5 @@ void SieveAccountTest::shouldCreateIdentifier()
 }
 
 QTEST_MAIN(SieveAccountTest)
+
+#include "moc_sieveaccounttest.cpp"

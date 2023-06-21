@@ -44,3 +44,5 @@ QString SieveActionReturn::serverNeedsCapability() const
 {
     return QStringLiteral("include");
 }
+
+#include "moc_sieveactionreturn.cpp"

@@ -27,3 +27,5 @@ void SievePurposeMenuWidget::setEditorWidget(SieveEditorWidget *editor)
 {
     mSieveEditorWidget = editor;
 }
+
+#include "moc_sievepurposemenuwidget.cpp"

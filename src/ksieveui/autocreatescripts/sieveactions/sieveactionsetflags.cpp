@@ -28,3 +28,5 @@ QUrl SieveActionSetFlags::href() const
 {
     return SieveEditorUtil::helpUrl(SieveEditorUtil::strToVariableName(name()));
 }
+
+#include "moc_sieveactionsetflags.cpp"

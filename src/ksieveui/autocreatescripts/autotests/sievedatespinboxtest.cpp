@@ -54,3 +54,5 @@ void SieveDateSpinBoxTest::shouldAssignValue()
 }
 
 QTEST_MAIN(SieveDateSpinBoxTest)
+
+#include "moc_sievedatespinboxtest.cpp"

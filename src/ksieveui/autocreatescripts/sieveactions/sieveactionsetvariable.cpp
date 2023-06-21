@@ -174,3 +174,5 @@ QString SieveActionSetVariable::help() const
     }
     return helpStr;
 }
+
+#include "moc_sieveactionsetvariable.cpp"

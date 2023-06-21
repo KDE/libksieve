@@ -30,3 +30,5 @@ void SieveScriptDebuggerWarning::setWarningMessage(const QString &msg)
     setText(msg);
     animatedShow();
 }
+
+#include "moc_sievescriptdebuggerwarning.cpp"

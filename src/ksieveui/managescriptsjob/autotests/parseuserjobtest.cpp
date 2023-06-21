@@ -100,3 +100,5 @@ void ParseUserTest::testParseUserErrorScriptJob()
     QCOMPARE(lst.count(), 0);
     QCOMPARE(result, false);
 }
+
+#include "moc_parseuserjobtest.cpp"

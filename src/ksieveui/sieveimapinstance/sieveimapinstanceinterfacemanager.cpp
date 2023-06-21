@@ -46,3 +46,5 @@ QList<KSieveUi::SieveImapInstance> SieveImapInstanceInterfaceManager::sieveImapI
         return {};
     }
 }
+
+#include "moc_sieveimapinstanceinterfacemanager.cpp"

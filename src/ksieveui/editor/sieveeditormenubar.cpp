@@ -280,3 +280,5 @@ void SieveEditorMenuBar::slotCopyAvailable(bool b)
     mCutAction->setEnabled(b);
     mCopyAction->setEnabled(b);
 }
+
+#include "moc_sieveeditormenubar.cpp"

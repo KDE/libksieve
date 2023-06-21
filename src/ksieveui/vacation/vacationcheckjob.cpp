@@ -214,3 +214,5 @@ QStringList VacationCheckJob::sieveCapabilities() const
 {
     return mSieveCapabilities;
 }
+
+#include "moc_vacationcheckjob.cpp"

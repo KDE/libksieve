@@ -191,3 +191,5 @@ void SieveEditor::closeEvent(QCloseEvent *e)
     Q_EMIT cancelClicked();
     e->accept();
 }
+
+#include "moc_sieveeditor.cpp"

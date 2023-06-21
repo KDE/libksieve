@@ -46,3 +46,5 @@ void SieveEditorTestWidget::slotValueChanged(bool changed)
 {
     qDebug() << " value changed :" << changed;
 }
+
+#include "moc_editorsieve_gui.cpp"

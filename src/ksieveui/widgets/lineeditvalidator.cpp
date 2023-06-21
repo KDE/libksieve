@@ -36,3 +36,5 @@ bool LineEditValidator::setRegularExpressionPattern(const QString &pattern)
     }
     return false;
 }
+
+#include "moc_lineeditvalidator.cpp"

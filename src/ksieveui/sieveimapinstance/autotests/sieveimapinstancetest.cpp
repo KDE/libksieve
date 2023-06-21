@@ -64,3 +64,5 @@ void SieveImapInstanceTest::shouldEqualSieveImapInstance()
 }
 
 QTEST_MAIN(SieveImapInstanceTest)
+
+#include "moc_sieveimapinstancetest.cpp"

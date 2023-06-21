@@ -51,3 +51,5 @@ void VacationHelperJob::slotGetScriptList(KManageSieve::SieveJob *job, bool succ
         Q_EMIT canNotGetScriptList();
     }
 }
+
+#include "moc_vacationhelperjob.cpp"

@@ -102,3 +102,5 @@ QString SieveDateSpinBox::convertValue() const
     }
     return str;
 }
+
+#include "moc_sievedatespinbox.cpp"

@@ -118,3 +118,5 @@ QUrl SieveActionAddHeader::href() const
 {
     return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5293"));
 }
+
+#include "moc_sieveactionaddheader.cpp"

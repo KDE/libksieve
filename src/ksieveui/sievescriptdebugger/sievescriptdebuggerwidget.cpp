@@ -92,3 +92,5 @@ bool SieveScriptDebuggerWidget::haveDebugApps() const
 {
     return mHaveDebugApps;
 }
+
+#include "moc_sievescriptdebuggerwidget.cpp"

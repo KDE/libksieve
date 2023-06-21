@@ -103,3 +103,5 @@ void SieveTemplateWidget::setSieveCapabilities(const QStringList &capabilities)
 {
     mListTemplate->setSieveCapabilities(capabilities);
 }
+
+#include "moc_sievetemplatewidget.cpp"

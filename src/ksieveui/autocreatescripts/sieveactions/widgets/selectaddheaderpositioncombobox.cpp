@@ -39,3 +39,5 @@ void SelectAddHeaderPositionCombobox::setCode(const QString &code, const QString
         setCurrentIndex(0);
     }
 }
+
+#include "moc_selectaddheaderpositioncombobox.cpp"

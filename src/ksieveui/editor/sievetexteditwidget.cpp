@@ -93,3 +93,5 @@ SieveTextEdit *SieveTextEditWidget::textEdit() const
 {
     return d->mTextEdit;
 }
+
+#include "moc_sievetexteditwidget.cpp"

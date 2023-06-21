@@ -95,3 +95,5 @@ QUrl SieveConditionMailboxExists::href() const
 {
     return SieveEditorUtil::helpUrl(SieveEditorUtil::strToVariableName(name()));
 }
+
+#include "moc_sieveconditionmailboxexists.cpp"

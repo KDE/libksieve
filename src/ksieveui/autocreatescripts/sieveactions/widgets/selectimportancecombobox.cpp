@@ -42,3 +42,5 @@ void SelectImportanceCombobox::setCode(const QString &code, const QString &name,
         setCurrentIndex(0);
     }
 }
+
+#include "moc_selectimportancecombobox.cpp"

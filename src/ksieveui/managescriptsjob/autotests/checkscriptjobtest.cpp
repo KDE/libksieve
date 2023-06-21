@@ -22,3 +22,5 @@ void CheckScriptJobTest::canBeStarted()
 }
 
 QTEST_MAIN(CheckScriptJobTest)
+
+#include "moc_checkscriptjobtest.cpp"
