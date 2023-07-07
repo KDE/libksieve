@@ -257,8 +257,9 @@ KManageSieve::AuthDetails Session::requestAuthDetails(const QUrl &url)
     ai.keepPassword = true;
     ai.caption = i18n("Sieve Authentication Details");
     ai.comment = i18n(
-        "Please enter your authentication details for your sieve account "
-        "(usually the same as your email password):");
+        "Please enter your authentication details for your sieve account \"%1\""
+        " (usually the same as your email password):",
+        url.host());
 
     QPointer<KPasswordDialog> dlg = new KPasswordDialog(nullptr, KPasswordDialog::ShowUsernameLine | KPasswordDialog::ShowKeepPassword);
     dlg->setRevealPasswordAvailable(KAuthorized::authorize(QStringLiteral("lineedit_reveal_password")));
