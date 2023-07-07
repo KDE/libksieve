@@ -50,6 +50,7 @@ target_include_directories(KPim6KSieve PUBLIC "$<BUILD_INTERFACE:${libksieve_SOU
 
 
 add_subdirectory(kmanagesieve)
+add_subdirectory(ksievecore)
 add_subdirectory(ksieveui)
 
 
