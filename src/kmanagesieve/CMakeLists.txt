@@ -50,7 +50,7 @@ set_target_properties(KPim6KManageSieve PROPERTIES
 )
 
 target_include_directories(KPim6KManageSieve
-    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/KManageSieve/;${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi>"
+    INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/KManageSieve/>"
 )
 target_include_directories(KPim6KManageSieve PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/kmanagesieve;${libksieve_BINARY_DIR}/src/kmanagesieve>")
 
