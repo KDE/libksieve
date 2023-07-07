@@ -12,7 +12,7 @@
 #include <KPIMTextEdit/PlainTextEditor>
 #include <KPIMTextEdit/PlainTextEditorWidget>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <KLocalizedString>
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/SyntaxHighlighter>

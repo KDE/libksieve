@@ -9,7 +9,7 @@
 #include "editor/sieveeditorutil.h"
 #include "widgets/selectflagswidget.h"
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QLabel>

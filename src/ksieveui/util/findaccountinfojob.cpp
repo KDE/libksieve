@@ -6,7 +6,7 @@
 #include "findaccountinfojob.h"
 #include "abstractakonadiimapsettinginterface.h"
 #include "akonadiimapsettinginterface.h"
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include "sieveimappasswordprovider.h"
 #include <MailTransport/Transport>
 #include <PimCommon/PimUtil>

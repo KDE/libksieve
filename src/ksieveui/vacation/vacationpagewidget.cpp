@@ -15,7 +15,7 @@
 
 #include <kmanagesieve/sievejob.h>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <KLocalizedString>
 
 #include <QLabel>

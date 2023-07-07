@@ -5,7 +5,7 @@
 */
 
 #include "managesievewidget.h"
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include "managescriptsjob/renamescriptjob.h"
 #include "managesievetreeview.h"
 #include "widgets/sievetreewidgetitem.h"

@@ -8,7 +8,7 @@
 #include "util/util_p.h"
 #include <kmanagesieve/sievejob.h>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 
 using namespace KSieveUi;
 

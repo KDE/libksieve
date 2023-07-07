@@ -17,7 +17,7 @@
 #include <QLineEdit>
 #include <QPushButton>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <QCheckBox>
 #include <QGridLayout>
 #include <QLabel>

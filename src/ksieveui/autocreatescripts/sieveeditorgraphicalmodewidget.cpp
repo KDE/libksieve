@@ -15,7 +15,7 @@
 #include <KMessageBox>
 #include <KSharedConfig>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <QSplitter>
 #include <QStackedWidget>
 #include <QVBoxLayout>

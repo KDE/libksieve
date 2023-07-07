@@ -7,7 +7,7 @@
 #include "sieveconditionwidgetlister.h"
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include "sieveconditions/sievecondition.h"
 #include "sieveconditions/sieveconditionlist.h"
 #include "sieveeditorgraphicalmodewidget.h"

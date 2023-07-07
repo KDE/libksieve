@@ -9,7 +9,7 @@
 #include "widgets/selectsizewidget.h"
 #include <KLocalizedString>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <QComboBox>
 #include <QHBoxLayout>
 #include <QXmlStreamReader>

@@ -4,7 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sievecommonactioncondition.h"
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 
 #include <KLocalizedString>
 

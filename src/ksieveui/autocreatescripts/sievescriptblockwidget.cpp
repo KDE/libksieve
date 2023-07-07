@@ -14,7 +14,7 @@
 #include <QIcon>
 #include <QPushButton>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <QButtonGroup>
 #include <QGroupBox>
 #include <QLabel>

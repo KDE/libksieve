@@ -5,7 +5,7 @@
 */
 
 #include "sievedatespinbox.h"
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 using namespace KSieveUi;
 
 SieveDateSpinBox::SieveDateSpinBox(QWidget *parent)

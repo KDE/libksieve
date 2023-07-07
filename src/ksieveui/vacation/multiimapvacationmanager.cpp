@@ -11,7 +11,7 @@
 #include <managescriptsjob/checkkolabkep14supportjob.h>
 #include <managescriptsjob/parseuserscriptjob.h>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include "searchserverwithvacationsupportjob.h"
 #include <QVariant>
 

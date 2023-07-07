@@ -15,7 +15,7 @@
 #include <QRegularExpressionValidator>
 #include <QSpinBox>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <KLineEditEventHandler>
 #include <KPIMTextEdit/PlainTextEditor>
 #include <KPIMTextEdit/PlainTextEditorWidget>

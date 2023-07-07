@@ -5,7 +5,7 @@
 */
 
 #include "sieveimapinstanceinterface.h"
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include "sieveimapinstance.h"
 
 using namespace KSieveUi;

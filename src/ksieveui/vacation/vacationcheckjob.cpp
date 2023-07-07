@@ -15,7 +15,7 @@
 #include <KLocalizedString>
 #include <QDate>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 
 using namespace KSieveUi;
 VacationCheckJob::VacationCheckJob(const QUrl &url, const QString &serverName, QObject *parent)

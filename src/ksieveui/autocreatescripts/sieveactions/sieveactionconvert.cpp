@@ -8,7 +8,7 @@
 #include "autocreatescripts/commonwidgets/selectconvertparameterwidget.h"
 #include "autocreatescripts/commonwidgets/selectmimetypecombobox.h"
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <KLocalizedString>
 #include <QGridLayout>
 #include <QLabel>

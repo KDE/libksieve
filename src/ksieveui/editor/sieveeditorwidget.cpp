@@ -15,7 +15,7 @@
 #include "sieveeditormenubar.h"
 #include "sieveeditortextmodewidget.h"
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <KActionMenu>
 #include <KLocalizedString>
 #include <KStandardAction>

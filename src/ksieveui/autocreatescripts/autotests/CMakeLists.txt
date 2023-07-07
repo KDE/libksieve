@@ -8,7 +8,7 @@ add_definitions( -DKSIEVEUI_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data" )
 add_definitions( -DKSIEVEUI_BINARY_DATA_DIR="${CMAKE_CURRENT_BINARY_DIR}/data" )
 
 ecm_qt_declare_logging_category(ksieveui_sieveeditor_autocreatescripts_LIB_SRCS HEADER
-    libksieve_debug.h IDENTIFIER LIBKSIEVE_LOG CATEGORY_NAME org.kde.pim.libksieve)
+    libksieveui_debug.h IDENTIFIER LIBKSIEVE_LOG CATEGORY_NAME org.kde.pim.libksieve)
 
 macro(add_sieveeditor_autocreatescripts _source _extrasource)
     get_filename_component(_name ${_source} NAME_WE)

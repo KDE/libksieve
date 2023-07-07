@@ -10,7 +10,7 @@
 
 #include <KLocalizedString>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QXmlStreamReader>

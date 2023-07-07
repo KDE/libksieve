@@ -14,7 +14,7 @@
 #include <KLocalizedString>
 #include <QLineEdit>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <KSieveUi/AbstractSelectEmailLineEdit>
 #include <QGridLayout>
 #include <QLabel>

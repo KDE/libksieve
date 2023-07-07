@@ -11,7 +11,7 @@
 
 #include <KLocalizedString>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <QSpinBox>
 #include <QVBoxLayout>
 #include <QXmlStreamReader>

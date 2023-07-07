@@ -17,7 +17,7 @@
 #include <QPushButton>
 #include <QUrl>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <QComboBox>
 #include <QGridLayout>
 #include <QLabel>

@@ -5,7 +5,7 @@
 */
 
 #include "checkscriptjob.h"
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <KLocalizedString>
 
 #include <sievejob.h>

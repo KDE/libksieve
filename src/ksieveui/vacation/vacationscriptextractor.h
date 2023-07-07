@@ -13,7 +13,7 @@
 #include <ksieve/parser.h>
 #include <ksieve/scriptbuilder.h>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <cassert>
 #include <climits>
 #include <map>

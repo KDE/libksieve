@@ -11,7 +11,7 @@
 #include <KLocalizedString>
 #include <QLineEdit>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <QGridLayout>
 #include <QLabel>
 #include <QUrl>

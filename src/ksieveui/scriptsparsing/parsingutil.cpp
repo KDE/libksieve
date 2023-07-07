@@ -12,7 +12,7 @@ using KSieve::Parser;
 #include <ksieve/error.h>
 #include <ksieve/scriptbuilder.h>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 
 using namespace KSieveUi;
 

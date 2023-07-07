@@ -19,7 +19,7 @@
 #include <QPushButton>
 #include <QXmlStreamReader>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <QListWidget>
 #include <QMenu>
 #include <QPointer>

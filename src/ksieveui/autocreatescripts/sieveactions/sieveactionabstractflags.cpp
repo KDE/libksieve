@@ -8,7 +8,7 @@
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "widgets/selectflagswidget.h"
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <QHBoxLayout>
 #include <QXmlStreamReader>
 

@@ -5,7 +5,7 @@
 */
 
 #include "util.h"
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include "sieve-vacation.h"
 #include "sieveimapinstance/sieveimapinstance.h"
 #include "sieveimapinstance/sieveimapinstanceinterfacemanager.h"

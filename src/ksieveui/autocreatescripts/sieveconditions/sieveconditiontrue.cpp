@@ -6,7 +6,7 @@
 #include "sieveconditiontrue.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 
 #include <KLocalizedString>
 

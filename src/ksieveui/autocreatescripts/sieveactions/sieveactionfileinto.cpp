@@ -10,7 +10,7 @@
 #include "widgets/moveimapfolderwidget.h"
 #include <KLocalizedString>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <QCheckBox>
 #include <QHBoxLayout>
 #include <QXmlStreamReader>

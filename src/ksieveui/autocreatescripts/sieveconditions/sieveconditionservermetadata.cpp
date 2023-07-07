@@ -12,7 +12,7 @@
 #include <KLocalizedString>
 #include <QLineEdit>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QWidget>

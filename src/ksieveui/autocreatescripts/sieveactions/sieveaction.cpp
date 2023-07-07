@@ -5,7 +5,7 @@
 */
 
 #include "sieveaction.h"
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 
 #include <KLocalizedString>
 

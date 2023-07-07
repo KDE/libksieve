@@ -10,7 +10,7 @@
 #include <managescriptsjob/generateglobalscriptjob.h>
 #include <managescriptsjob/parseuserscriptjob.h>
 
-#include "libksieve_debug.h"
+#include "libksieveui_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 
