@@ -7,7 +7,7 @@
 #pragma once
 
 #include "util/util_p.h"
-#include <KSieveUi/SieveImapInstance>
+#include <KSieveCore/SieveImapInstance>
 #include <widgets/managesievewidget.h>
 
 namespace KSieveUi
@@ -30,7 +30,7 @@ private:
     void searchSieveScript();
     void slotSearchSieveScript(const QString &name, const QString &identifier);
     void slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
-    QList<KSieveUi::SieveImapInstance> mSieveImapInstances;
+    QList<KSieveCore::SieveImapInstance> mSieveImapInstances;
     QMap<QString, QString>::const_iterator mSieveServerMapIterator;
     // name, identifier
     QMap<QString, QString> mServerSieveInfos;

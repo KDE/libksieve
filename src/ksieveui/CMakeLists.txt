@@ -25,7 +25,6 @@ if(BUILD_TESTING)
     add_subdirectory(editor/webengine/findbar/autotests/)
     add_subdirectory(editor/webengine/autotests/)
     add_subdirectory(util/autotests/)
-    add_subdirectory(sieveimapinstance/autotests)
     add_subdirectory(widgets/autotests)
 endif()
 
@@ -186,11 +185,6 @@ target_sources(KPim6KSieveUi PRIVATE
     managescriptsjob/renamescriptjob.cpp
     managescriptsjob/checkscriptjob.cpp
     )
-target_sources(KPim6KSieveUi PRIVATE
-    sieveimapinstance/sieveimapinstance.cpp
-    sieveimapinstance/sieveimapinstanceinterface.cpp
-    sieveimapinstance/sieveimapinstanceinterfacemanager.cpp
-    )
     
 target_sources(KPim6KSieveUi PRIVATE
     util/util.cpp
@@ -248,9 +242,6 @@ target_sources(KPim6KSieveUi PRIVATE
     managescriptsjob/checkscriptjob.h
     managescriptsjob/checkkolabkep14supportjob.h
     managescriptsjob/parseuserscriptjob.h
-    sieveimapinstance/sieveimapinstanceinterfacemanager.h
-    sieveimapinstance/sieveimapinstance.h
-    sieveimapinstance/sieveimapinstanceinterface.h
     scriptsparsing/parsingresultdialog.h
     scriptsparsing/parsingutil.h
     ksieveui_private_export.h
@@ -401,6 +392,7 @@ endif()
 
 target_link_libraries(KPim6KSieveUi
     PUBLIC
+    KPim6::KSieveCore
     KPim6::KManageSieve
     KPim6::KSieve
     KPim6::PimCommon
@@ -455,16 +447,6 @@ ecm_generate_headers(ksieveui_Camelcaseutil_HEADERS
     REQUIRED_HEADERS ksieveui_util_HEADERS
     PREFIX KSieveUi
     RELATIVE util
-    )
-
-ecm_generate_headers(ksieveui_Camelcaseimapinstance_HEADERS
-    HEADER_NAMES
-    SieveImapInstance
-    SieveImapInstanceInterface
-    SieveImapInstanceInterfaceManager
-    REQUIRED_HEADERS ksieveui_imapinstance_HEADERS
-    PREFIX KSieveUi
-    RELATIVE sieveimapinstance
     )
 
 ecm_generate_headers(ksieveui_Camelmanagescriptsjob_HEADERS
@@ -525,7 +507,6 @@ ecm_generate_pri_file(BASE_NAME KSieveUi
 
 install(TARGETS KPim6KSieveUi EXPORT KPim6KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
-    ${ksieveui_Camelcaseimapinstance_HEADERS}
     ${ksieveui_Camelcasewidgets_HEADERS}
     ${ksieveui_Camelcasedebug_HEADERS}
     ${ksieveui_Camelcasevacation_HEADERS}
@@ -539,7 +520,6 @@ install(FILES
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/ksieveui_export.h
-    ${ksieveui_imapinstance_HEADERS}
     ${ksieveui_widgets_HEADERS}
     ${ksieveui_debug_HEADERS}
     ${ksieveui_vacation_HEADERS}
@@ -568,7 +548,6 @@ if (BUILD_QCH)
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-            ${ksieveui_imapinstance_HEADERS}
             ${ksieveui_widgets_HEADERS}
             ${ksieveui_debug_HEADERS}
             ${ksieveui_vacation_HEADERS}

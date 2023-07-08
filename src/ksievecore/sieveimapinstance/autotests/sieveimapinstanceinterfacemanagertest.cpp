@@ -5,9 +5,9 @@
 */
 
 #include "sieveimapinstanceinterfacemanagertest.h"
-#include <KSieveUi/SieveImapInstance>
-#include <KSieveUi/SieveImapInstanceInterface>
-#include <KSieveUi/SieveImapInstanceInterfaceManager>
+#include <KSieveCore/SieveImapInstance>
+#include <KSieveCore/SieveImapInstanceInterface>
+#include <KSieveCore/SieveImapInstanceInterfaceManager>
 #include <QTest>
 
 SieveImapInstanceInterfaceManagerTest::SieveImapInstanceInterfaceManagerTest(QObject *parent)
@@ -17,17 +17,17 @@ SieveImapInstanceInterfaceManagerTest::SieveImapInstanceInterfaceManagerTest(QOb
 
 void SieveImapInstanceInterfaceManagerTest::shouldHaveDefaultValue()
 {
-    KSieveUi::SieveImapInstanceInterfaceManager manager;
+    KSieveCore::SieveImapInstanceInterfaceManager manager;
     QVERIFY(!manager.sieveImapInstanceInterface());
 
-    QVERIFY(!KSieveUi::SieveImapInstanceInterfaceManager::self()->sieveImapInstanceInterface());
-    QVERIFY(KSieveUi::SieveImapInstanceInterfaceManager::self()->sieveImapInstanceList().isEmpty());
+    QVERIFY(!KSieveCore::SieveImapInstanceInterfaceManager::self()->sieveImapInstanceInterface());
+    QVERIFY(KSieveCore::SieveImapInstanceInterfaceManager::self()->sieveImapInstanceList().isEmpty());
 }
 
 void SieveImapInstanceInterfaceManagerTest::shouldAssignSieveImapInstanceInterface()
 {
-    KSieveUi::SieveImapInstanceInterfaceManager manager;
-    auto instance = new KSieveUi::SieveImapInstanceInterface();
+    KSieveCore::SieveImapInstanceInterfaceManager manager;
+    auto instance = new KSieveCore::SieveImapInstanceInterface();
     manager.setSieveImapInstanceInterface(instance);
     QVERIFY(manager.sieveImapInstanceInterface());
     QCOMPARE(manager.sieveImapInstanceInterface(), instance);

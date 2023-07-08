@@ -5,16 +5,16 @@
 */
 
 #include "sieveimapinstanceinterface.h"
-#include "libksieveui_debug.h"
+#include "libksievecore_debug.h"
 #include "sieveimapinstance.h"
 
-using namespace KSieveUi;
+using namespace KSieveCore;
 SieveImapInstanceInterface::SieveImapInstanceInterface() = default;
 
 SieveImapInstanceInterface::~SieveImapInstanceInterface() = default;
 
-QList<KSieveUi::SieveImapInstance> SieveImapInstanceInterface::sieveImapInstances()
+QList<KSieveCore::SieveImapInstance> SieveImapInstanceInterface::sieveImapInstances()
 {
-    qCWarning(LIBKSIEVE_LOG) << "Need to reimplement in subclass";
+    qCWarning(LIBKSIEVECORE_LOG) << "Need to reimplement in subclass";
     return {};
 }

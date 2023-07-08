@@ -5,7 +5,7 @@
 */
 
 #include "sieveimapinstancetest.h"
-#include <KSieveUi/SieveImapInstance>
+#include <KSieveCore/SieveImapInstance>
 
 #include <QTest>
 
@@ -16,22 +16,22 @@ SieveImapInstanceTest::SieveImapInstanceTest(QObject *parent)
 
 void SieveImapInstanceTest::shouldHaveDefaultValue()
 {
-    KSieveUi::SieveImapInstance instance;
+    KSieveCore::SieveImapInstance instance;
     QVERIFY(instance.name().isEmpty());
     QVERIFY(instance.identifier().isEmpty());
     QVERIFY(instance.mimeTypes().isEmpty());
     QVERIFY(instance.capabilities().isEmpty());
-    QCOMPARE(instance.status(), KSieveUi::SieveImapInstance::Idle);
+    QCOMPARE(instance.status(), KSieveCore::SieveImapInstance::Idle);
 }
 
 void SieveImapInstanceTest::shouldAssignValues()
 {
-    KSieveUi::SieveImapInstance instance;
+    KSieveCore::SieveImapInstance instance;
     const QStringList mMimeTypes = {QStringLiteral("ff"), QStringLiteral("ff2")};
     const QStringList mCapabilities = {QStringLiteral("bb"), QStringLiteral("bb2")};
     const QString mName = {QStringLiteral("cc")};
     const QString mIdentifier = {QStringLiteral("ee")};
-    const KSieveUi::SieveImapInstance::Status mStatus = KSieveUi::SieveImapInstance::Broken;
+    const KSieveCore::SieveImapInstance::Status mStatus = KSieveCore::SieveImapInstance::Broken;
     instance.setName(mName);
     instance.setIdentifier(mIdentifier);
     instance.setStatus(mStatus);
@@ -47,19 +47,19 @@ void SieveImapInstanceTest::shouldAssignValues()
 
 void SieveImapInstanceTest::shouldEqualSieveImapInstance()
 {
-    KSieveUi::SieveImapInstance instance;
+    KSieveCore::SieveImapInstance instance;
     const QStringList mMimeTypes = {QStringLiteral("ff"), QStringLiteral("ff2")};
     const QStringList mCapabilities = {QStringLiteral("bb"), QStringLiteral("bb2")};
     const QString mName = {QStringLiteral("cc")};
     const QString mIdentifier = {QStringLiteral("ee")};
-    const KSieveUi::SieveImapInstance::Status mStatus = KSieveUi::SieveImapInstance::Broken;
+    const KSieveCore::SieveImapInstance::Status mStatus = KSieveCore::SieveImapInstance::Broken;
     instance.setName(mName);
     instance.setIdentifier(mIdentifier);
     instance.setStatus(mStatus);
     instance.setMimeTypes(mMimeTypes);
     instance.setCapabilities(mCapabilities);
 
-    KSieveUi::SieveImapInstance instance2 = instance;
+    KSieveCore::SieveImapInstance instance2 = instance;
     QCOMPARE(instance, instance2);
 }
 

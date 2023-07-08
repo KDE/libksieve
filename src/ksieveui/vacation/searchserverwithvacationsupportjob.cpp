@@ -29,9 +29,9 @@ void SearchServerWithVacationSupportJob::start()
         sendAccountList();
         return;
     }
-    const QList<KSieveUi::SieveImapInstance> instances = KSieveUi::Util::sieveImapInstances();
-    for (const KSieveUi::SieveImapInstance &instance : instances) {
-        if (instance.status() == KSieveUi::SieveImapInstance::Broken) {
+    const QList<KSieveCore::SieveImapInstance> instances = KSieveUi::Util::sieveImapInstances();
+    for (const KSieveCore::SieveImapInstance &instance : instances) {
+        if (instance.status() == KSieveCore::SieveImapInstance::Broken) {
             continue;
         }
         mServerSieveInfos.insert(instance.name(), instance.identifier());

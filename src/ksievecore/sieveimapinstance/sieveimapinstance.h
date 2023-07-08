@@ -6,16 +6,16 @@
 
 #pragma once
 
-#include "ksieveui_export.h"
+#include "ksievecore_export.h"
 #include <QObject>
 
-namespace KSieveUi
+namespace KSieveCore
 {
 /**
  * @brief The SieveImapInstance class
  * @author Laurent Montel <montel@kde.org>
  */
-class KSIEVEUI_EXPORT SieveImapInstance
+class KSIEVECORE_EXPORT SieveImapInstance
 {
 public:
     SieveImapInstance();
@@ -54,4 +54,4 @@ private:
     Status mStatus = Idle;
 };
 }
-Q_DECLARE_TYPEINFO(KSieveUi::SieveImapInstance, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(KSieveCore::SieveImapInstance, Q_MOVABLE_TYPE);

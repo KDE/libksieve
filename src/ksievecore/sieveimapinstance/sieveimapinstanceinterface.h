@@ -6,21 +6,21 @@
 
 #pragma once
 
-#include "ksieveui_export.h"
+#include "ksievecore_export.h"
 #include <QList>
 
-namespace KSieveUi
+namespace KSieveCore
 {
 class SieveImapInstance;
 /**
  * @brief The SieveImapInstanceInterface class
  * @author Laurent Montel <montel@kde.org>
  */
-class KSIEVEUI_EXPORT SieveImapInstanceInterface
+class KSIEVECORE_EXPORT SieveImapInstanceInterface
 {
 public:
     SieveImapInstanceInterface();
     virtual ~SieveImapInstanceInterface();
-    virtual QList<KSieveUi::SieveImapInstance> sieveImapInstances();
+    virtual QList<KSieveCore::SieveImapInstance> sieveImapInstances();
 };
 }

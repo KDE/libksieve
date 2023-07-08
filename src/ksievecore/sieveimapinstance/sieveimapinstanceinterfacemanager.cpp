@@ -5,11 +5,11 @@
 */
 
 #include "sieveimapinstanceinterfacemanager.h"
-#include "libksieveui_debug.h"
-#include <KSieveUi/SieveImapInstance>
-#include <KSieveUi/SieveImapInstanceInterface>
+#include "libksievecore_debug.h"
+#include <KSieveCore/SieveImapInstance>
+#include <KSieveCore/SieveImapInstanceInterface>
 
-using namespace KSieveUi;
+using namespace KSieveCore;
 
 SieveImapInstanceInterfaceManager::SieveImapInstanceInterfaceManager(QObject *parent)
     : QObject(parent)
@@ -37,12 +37,12 @@ SieveImapInstanceInterface *SieveImapInstanceInterfaceManager::sieveImapInstance
     return mInterface;
 }
 
-QList<KSieveUi::SieveImapInstance> SieveImapInstanceInterfaceManager::sieveImapInstanceList() const
+QList<KSieveCore::SieveImapInstance> SieveImapInstanceInterfaceManager::sieveImapInstanceList() const
 {
     if (mInterface) {
         return mInterface->sieveImapInstances();
     } else {
-        qCWarning(LIBKSIEVE_LOG) << " mInterface not defined";
+        qCWarning(LIBKSIEVECORE_LOG) << " mInterface not defined";
         return {};
     }
 }

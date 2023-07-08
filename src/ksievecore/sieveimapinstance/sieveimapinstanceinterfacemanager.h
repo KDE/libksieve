@@ -6,9 +6,9 @@
 
 #pragma once
 
-#include "ksieveui_export.h"
+#include "ksievecore_export.h"
 #include <QObject>
-namespace KSieveUi
+namespace KSieveCore
 {
 class SieveImapInstanceInterface;
 class SieveImapInstance;
@@ -16,7 +16,7 @@ class SieveImapInstance;
  * @brief The SieveImapInstanceInterfaceManager class
  * @author Laurent Montel <montel@kde.org>
  */
-class KSIEVEUI_EXPORT SieveImapInstanceInterfaceManager : public QObject
+class KSIEVECORE_EXPORT SieveImapInstanceInterfaceManager : public QObject
 {
     Q_OBJECT
 public:
@@ -25,7 +25,7 @@ public:
     static SieveImapInstanceInterfaceManager *self();
     void setSieveImapInstanceInterface(SieveImapInstanceInterface *interface);
     SieveImapInstanceInterface *sieveImapInstanceInterface() const;
-    Q_REQUIRED_RESULT QList<KSieveUi::SieveImapInstance> sieveImapInstanceList() const;
+    Q_REQUIRED_RESULT QList<KSieveCore::SieveImapInstance> sieveImapInstanceList() const;
 
 private:
     SieveImapInstanceInterface *mInterface = nullptr;

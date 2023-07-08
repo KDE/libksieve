@@ -5,7 +5,7 @@
 */
 
 #include "sieveimapinstance.h"
-using namespace KSieveUi;
+using namespace KSieveCore;
 SieveImapInstance::SieveImapInstance() = default;
 
 QString SieveImapInstance::name() const
@@ -28,7 +28,7 @@ void SieveImapInstance::setIdentifier(const QString &identifier)
     mIdentifier = identifier;
 }
 
-KSieveUi::SieveImapInstance::Status SieveImapInstance::status() const
+KSieveCore::SieveImapInstance::Status SieveImapInstance::status() const
 {
     return mStatus;
 }

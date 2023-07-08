@@ -7,8 +7,8 @@
 #pragma once
 
 #include "ksieveui_export.h"
+#include <KSieveCore/SieveImapInstance>
 #include <KSieveUi/SieveImapAccountSettings>
-#include <KSieveUi/SieveImapInstance>
 #include <QUrl>
 #include <memory>
 class QString;
@@ -32,7 +32,7 @@ KSIEVEUI_EXPORT QDebug operator<<(QDebug d, const Util::AccountInfo &info);
 /**
  * Returns the list of configured IMAP agent instances.
  */
-Q_REQUIRED_RESULT QList<KSieveUi::SieveImapInstance> sieveImapInstances();
+Q_REQUIRED_RESULT QList<KSieveCore::SieveImapInstance> sieveImapInstances();
 Q_REQUIRED_RESULT QStringList sieveImapResourceNames();
 
 /**
