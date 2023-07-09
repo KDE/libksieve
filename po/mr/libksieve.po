@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-15 00:48+0000\n"
+"POT-Creation-Date: 2023-07-08 01:17+0000\n"
 "PO-Revision-Date: 2013-04-13 16:36+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -61,18 +61,18 @@ msgstr ""
 #: kmanagesieve/session.cpp:260
 #, kde-format
 msgid ""
-"Please enter your authentication details for your sieve account (usually the "
-"same as your email password):"
+"Please enter your authentication details for your sieve account "
+"\"%1\" (usually the same as your email password):"
 msgstr ""
 
-#: kmanagesieve/session.cpp:320
+#: kmanagesieve/session.cpp:321
 #, kde-format
 msgid ""
 "The Sieve server on %1 has reported an error:\n"
 "%2"
 msgstr ""
 
-#: kmanagesieve/session.cpp:320
+#: kmanagesieve/session.cpp:321
 #, fuzzy, kde-format
 #| msgid "Sieve Script"
 msgid "Sieve Manager"

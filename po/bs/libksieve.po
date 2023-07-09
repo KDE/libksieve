@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-15 00:48+0000\n"
+"POT-Creation-Date: 2023-07-08 01:17+0000\n"
 "PO-Revision-Date: 2014-01-31 19:22+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -69,22 +69,25 @@ msgid "Sieve Authentication Details"
 msgstr "Detalji autentifikacije programom Sieve"
 
 #: kmanagesieve/session.cpp:260
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Please enter your authentication details for your sieve account (usually "
+#| "the same as your email password):"
 msgid ""
-"Please enter your authentication details for your sieve account (usually the "
-"same as your email password):"
+"Please enter your authentication details for your sieve account "
+"\"%1\" (usually the same as your email password):"
 msgstr ""
 "Unesite detalje za autentifikaciju na Sieve nalogu (obično isto kao lozinka "
 "e‑pošte):"
 
-#: kmanagesieve/session.cpp:320
+#: kmanagesieve/session.cpp:321
 #, kde-format
 msgid ""
 "The Sieve server on %1 has reported an error:\n"
 "%2"
 msgstr ""
 
-#: kmanagesieve/session.cpp:320
+#: kmanagesieve/session.cpp:321
 #, fuzzy, kde-format
 #| msgid "Sieve Parsing"
 msgid "Sieve Manager"

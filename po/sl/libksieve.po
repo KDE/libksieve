@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-15 00:48+0000\n"
+"POT-Creation-Date: 2023-07-08 01:17+0000\n"
 "PO-Revision-Date: 2023-03-16 11:19+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -71,15 +71,18 @@ msgid "Sieve Authentication Details"
 msgstr "Podrobnosti overitve Sieve"
 
 #: kmanagesieve/session.cpp:260
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Please enter your authentication details for your sieve account (usually "
+#| "the same as your email password):"
 msgid ""
-"Please enter your authentication details for your sieve account (usually the "
-"same as your email password):"
+"Please enter your authentication details for your sieve account "
+"\"%1\" (usually the same as your email password):"
 msgstr ""
 "Vnesite podrobnosti overitve za vaš račun za Sieve (običajno je enak vašemu "
 "geslu za e-pošto):"
 
-#: kmanagesieve/session.cpp:320
+#: kmanagesieve/session.cpp:321
 #, kde-format
 msgid ""
 "The Sieve server on %1 has reported an error:\n"
@@ -88,7 +91,7 @@ msgstr ""
 "Strežnik Sieve na %1 je sporočil napako:\n"
 "%2"
 
-#: kmanagesieve/session.cpp:320
+#: kmanagesieve/session.cpp:321
 #, kde-format
 msgid "Sieve Manager"
 msgstr "Upravljalnik Sieve"
