@@ -15,7 +15,6 @@ macro( add_vacation_test _source )
   add_executable(${_name} ${_test})
   add_test(NAME vacation-${_name} COMMAND ${_name})
   ecm_mark_as_test(vacation-${_name})
-  add_definitions(-DVACATIONTESTDATADIR="${CMAKE_CURRENT_SOURCE_DIR}/data/")
   target_link_libraries(${_name}
     KPim6KSieveUi
     Qt::Test
