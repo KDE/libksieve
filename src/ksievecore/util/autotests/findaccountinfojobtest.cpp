@@ -7,7 +7,7 @@
 #include "findaccountinfojobtest.h"
 #include "../abstractakonadiimapsettinginterface.h"
 #include "../sieveimappasswordprovider.h"
-#include "../util_p.h"
+#include "../util.h"
 #include "akonadiimapsettinginterfacetest.h"
 #include "util/findaccountinfojob.h"
 #include <QSignalSpy>

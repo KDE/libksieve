@@ -28,7 +28,6 @@ target_sources(KPim6KSieveCore PRIVATE
 
 target_sources(KPim6KSieveCore PRIVATE
     util/util.cpp
-    util/util_p.h
     util/util.h
     util/abstractakonadiimapsettinginterface.cpp
     util/abstractakonadiimapsettinginterface.h
@@ -147,7 +146,6 @@ install(FILES
     ${ksievecore_util_HEADERS}
     ${ksievecore_scriptsparsing_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/sieve-vacation.h
-    util/util_p.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveCore/ksievecore
     COMPONENT Devel
     )

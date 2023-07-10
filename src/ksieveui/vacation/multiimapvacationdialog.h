@@ -8,7 +8,7 @@
 
 #include "ksieveui_export.h"
 #include <QDialog>
-#include <ksievecore/util/util_p.h>
+#include <ksievecore/util/util.h>
 #include <memory>
 class QDialogButtonBox;
 namespace KSieveUi

@@ -8,7 +8,7 @@
 
 #include "sievedebugdialog.h"
 #include "util/findaccountinfojob.h"
-#include "util/util_p.h"
+#include "util/util.h"
 #include <KPIMTextEdit/PlainTextEditor>
 #include <KPIMTextEdit/PlainTextEditorWidget>
 

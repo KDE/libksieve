@@ -9,7 +9,7 @@
 #include "sieve-vacation.h"
 #include "sieveimapinstance/sieveimapinstance.h"
 #include "sieveimapinstance/sieveimapinstanceinterfacemanager.h"
-#include "util_p.h"
+#include "util.h"
 #include <PimCommon/PimUtil>
 #include <pimcommon/imapresourcesettings.h>
 

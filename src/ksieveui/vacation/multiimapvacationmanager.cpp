@@ -7,7 +7,7 @@
 #include "multiimapvacationmanager.h"
 #include "vacationcheckjob.h"
 #include <kmanagesieve/sievejob.h>
-#include <ksievecore/util/util_p.h>
+#include <ksievecore/util/util.h>
 #include <managescriptsjob/checkkolabkep14supportjob.h>
 #include <managescriptsjob/parseuserscriptjob.h>
 

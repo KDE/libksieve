@@ -9,7 +9,7 @@
 #pragma once
 
 #include "ksieveui_export.h"
-#include <ksievecore/util/util_p.h>
+#include <ksievecore/util/util.h>
 
 #include <KSyntaxHighlighting/Repository>
 #include <QDialog>

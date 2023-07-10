@@ -9,7 +9,7 @@
 #include "ksieveui_export.h"
 #include <QMap>
 #include <QObject>
-#include <ksievecore/util/util_p.h>
+#include <ksievecore/util/util.h>
 namespace KSieveCore
 {
 class SieveImapPasswordProvider;

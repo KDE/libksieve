@@ -7,7 +7,7 @@
 #pragma once
 
 #include "ksievecore_export.h" //TODO use specific export for testing ?
-#include "util_p.h"
+#include "util.h"
 #include <QObject>
 class OrgKdeAkonadiImapSettingsInterface;
 namespace KSieveCore
