@@ -8,15 +8,14 @@
 #include "../src/ksieveui/scriptsparsing/parsingresultdialog.h"
 #include <KSieveCore/XMLPrintingScriptBuilder>
 
-#include <ksieve/parser.h>
+#include "parser.h"
 using KSieve::Parser;
 
+#include "scriptbuilder.h"
 #include <QApplication>
 #include <QCommandLineOption>
 #include <QCommandLineParser>
 #include <QFileDialog>
-#include <ksieve/error.h>
-#include <ksieve/scriptbuilder.h>
 
 #include "../autocreatescriptdialog.h"
 #include "../sievescriptparsingerrordialog.h"

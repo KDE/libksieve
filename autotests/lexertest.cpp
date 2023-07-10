@@ -8,10 +8,10 @@
     SPDX-License-Identifier: GPL-2.0-only
 */
 
-#include <ksieve/lexer.h>
+#include "lexer.h"
 using KSieve::Lexer;
 
-#include <ksieve/error.h>
+#include "error.h"
 using KSieve::Error;
 
 #include <QString>

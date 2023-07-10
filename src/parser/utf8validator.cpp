@@ -8,7 +8,7 @@
     SPDX-License-Identifier: GPL-2.0-only
 */
 
-#include <impl/utf8validator.h>
+#include "utf8validator.h"
 
 #include <qglobal.h>
 

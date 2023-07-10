@@ -12,8 +12,8 @@
 
 #pragma once
 
-#include <ksieve/error.h>
-#include <ksieve/lexer.h>
+#include "error.h"
+#include "lexer.h"
 
 #include <QStack>
 

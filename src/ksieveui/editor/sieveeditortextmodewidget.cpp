@@ -25,9 +25,9 @@
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
 
-#include <ksieve/error.h>
-#include <ksieve/parser.h>
-#include <ksieve/scriptbuilder.h>
+#include "error.h"
+#include "parser.h"
+#include "scriptbuilder.h"
 
 #include <KConfigGroup>
 #include <KLocalizedString>

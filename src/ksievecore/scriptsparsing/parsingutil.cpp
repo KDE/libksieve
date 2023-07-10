@@ -5,12 +5,11 @@
 */
 
 #include "parsingutil.h"
+#include "parser.h"
 #include "xmlprintingscriptbuilder.h"
-#include <ksieve/parser.h>
 using KSieve::Parser;
 
-#include <ksieve/error.h>
-#include <ksieve/scriptbuilder.h>
+#include "scriptbuilder.h"
 
 #include "libksievecore_debug.h"
 

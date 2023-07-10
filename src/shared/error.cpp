@@ -8,7 +8,7 @@
     SPDX-License-Identifier: GPL-2.0-only
 */
 
-#include <ksieve/error.h>
+#include "error.h"
 
 #include <KLocalizedString> // i18n
 

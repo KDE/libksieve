@@ -8,12 +8,12 @@
     SPDX-License-Identifier: GPL-2.0-only
 */
 
-#include <../src/ksieve/parser.h>
+#include "parser.h"
 #include <config-libksieve.h> // SIZEOF_UNSIGNED_LONG
 using KSieve::Parser;
 
-#include <../src/ksieve/error.h>
-#include <../src/ksieve/scriptbuilder.h>
+#include "error.h"
+#include "scriptbuilder.h"
 
 #include <QString>
 

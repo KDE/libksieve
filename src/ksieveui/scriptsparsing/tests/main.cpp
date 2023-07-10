@@ -7,11 +7,10 @@
 #include "../parsingresultdialog.h"
 #include <KSieveCore/XMLPrintingScriptBuilder>
 
-#include <ksieve/parser.h>
+#include "parser.h"
 using KSieve::Parser;
 
-#include <ksieve/error.h>
-#include <ksieve/scriptbuilder.h>
+#include "scriptbuilder.h"
 
 #include <QApplication>
 #include <QCommandLineOption>

@@ -9,9 +9,9 @@
 #include "sieve-vacation.h"
 #include "vacationutils.h"
 
-#include <ksieve/error.h>
-#include <ksieve/parser.h>
-#include <ksieve/scriptbuilder.h>
+#include "error.h"
+#include "parser.h"
+#include "scriptbuilder.h"
 
 #include "libksievecore_debug.h"
 #include <cassert>

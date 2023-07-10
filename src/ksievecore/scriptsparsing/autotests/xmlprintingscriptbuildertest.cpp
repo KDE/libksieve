@@ -5,10 +5,10 @@
 */
 
 #include "xmlprintingscriptbuildertest.h"
+#include "parser.h"
 #include <KSieveCore/XMLPrintingScriptBuilder>
 #include <QProcess>
 #include <QTest>
-#include <ksieve/parser.h>
 
 #ifndef Q_OS_WIN
 void initLocale()

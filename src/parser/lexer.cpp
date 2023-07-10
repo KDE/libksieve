@@ -8,11 +8,10 @@
     SPDX-License-Identifier: GPL-2.0-only
 */
 
-#include <impl/lexer.h>
-#include <ksieve/lexer.h>
+#include "lexer_p.h"
 
-#include <impl/utf8validator.h>
-#include <ksieve/error.h>
+#include "error.h"
+#include "utf8validator.h"
 
 #include <QString>
 #include <QStringList>

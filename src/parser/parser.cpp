@@ -8,10 +8,9 @@
     SPDX-License-Identifier: GPL-2.0-only
 */
 
-#include <impl/parser.h>
-#include <ksieve/parser.h>
+#include "parser_p.h"
 
-#include <ksieve/error.h>
+#include "error.h"
 
 #include <QByteArray>
 #include <QString>

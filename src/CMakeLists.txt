@@ -13,8 +13,13 @@ add_library(KPim6::KSieve ALIAS KPim6KSieve)
 
 target_sources(KPim6KSieve PRIVATE
   parser/utf8validator.cpp
+  parser/utf8validator.h
   parser/lexer.cpp
+  parser/lexer_p.h
+  parser/lexer.h
   parser/parser.cpp
+  parser/parser.h
+  parser/parser_p.h
 )
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libksieve\")

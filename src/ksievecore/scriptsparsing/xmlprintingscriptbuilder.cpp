@@ -5,10 +5,10 @@
 */
 
 #include "xmlprintingscriptbuilder.h"
-#include <ksieve/parser.h>
+#include "parser.h"
 
+#include "error.h"
 #include <QXmlStreamWriter>
-#include <ksieve/error.h>
 
 using namespace KSieveCore;
 XMLPrintingScriptBuilder::XMLPrintingScriptBuilder(int indent)
