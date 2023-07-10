@@ -16,10 +16,10 @@
 
 #include <QString>
 #include <QStringList>
-#include <QTextCodec>
 
 #include <memory> // std::unique_ptr
 
+#include <QStringDecoder>
 #include <cassert>
 #include <cctype> // isdigit
 
@@ -661,11 +661,7 @@ bool Lexer::Impl::parseQuotedString(QString &result)
     const int qsBeginCol = column() - 1;
     const int qsBeginLine = line();
 
-    const QTextCodec *const codec = QTextCodec::codecForMib(106); // UTF-8
-    assert(codec);
-    const std::unique_ptr<QTextDecoder> dec(codec->makeDecoder());
-    assert(dec.get());
-
+    QStringDecoder dec(QStringDecoder::Utf8);
     while (!atEnd()) {
         switch (*mState.cursor) {
         case '"':
@@ -693,7 +689,7 @@ bool Lexer::Impl::parseQuotedString(QString &result)
                 const int eightBitLen = mState.cursor - eightBitBegin;
                 assert(eightBitLen > 0);
                 if (isValidUtf8(eightBitBegin, eightBitLen)) {
-                    result += dec->toUnicode(eightBitBegin, eightBitLen);
+                    result += dec.decode(QByteArrayView(eightBitBegin, eightBitLen));
                 } else {
                     assert(column() >= eightBitLen);
                     makeError(Error::InvalidUTF8, line(), column() - eightBitLen);
