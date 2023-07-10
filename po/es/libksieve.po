@@ -13,14 +13,14 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-08 01:17+0000\n"
-"PO-Revision-Date: 2023-03-15 16:29+0100\n"
+"PO-Revision-Date: 2023-07-09 12:32+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: kmanagesieve/session.cpp:90
@@ -72,16 +72,13 @@ msgid "Sieve Authentication Details"
 msgstr "Detalles de autenticación Sieve"
 
 #: kmanagesieve/session.cpp:260
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please enter your authentication details for your sieve account (usually "
-#| "the same as your email password):"
+#, kde-format
 msgid ""
 "Please enter your authentication details for your sieve account "
 "\"%1\" (usually the same as your email password):"
 msgstr ""
-"Por favor, introduzca sus detalles de autenticación para su cuenta sieve "
-"(generalmente la misma que su contraseña de correo):"
+"Introduzca los datos de autenticación para su cuenta sieve «%1» (suele ser "
+"la misma que su contraseña de correo):"
 
 #: kmanagesieve/session.cpp:321
 #, kde-format
@@ -929,7 +926,7 @@ msgstr "Longitud"
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:62
 #, kde-format
 msgid "Please select an action."
-msgstr "Por favor, seleccione una acción."
+msgstr "Seleccione una acción."
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:144
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
@@ -1613,7 +1610,7 @@ msgstr "GiB"
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:54
 #, kde-format
 msgid "Please select an condition."
-msgstr "Por favor, seleccione una condición."
+msgstr "Seleccione una condición."
 
 #: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:30
 #, kde-format
@@ -2541,7 +2538,7 @@ msgstr "Error de Sieve"
 #: ksieveui/managesievescriptsdialog.cpp:204
 #, kde-format
 msgid "Uploading script to server for checking it, please wait..."
-msgstr "Subiendo el guion al servidor para comprobarlo, por favor, espere..."
+msgstr "Subiendo el guion al servidor para comprobarlo. Espere un momento..."
 
 #: ksieveui/managesievescriptsdialog.cpp:250
 #, kde-format
@@ -2679,8 +2676,7 @@ msgstr "No se ha podido abrir el archivo temporal."
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:223
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
-msgstr ""
-"El guion todavía contiene un método de depuración. Elimínelo, por favor."
+msgstr "El guion todavía contiene un método de depuración. Debería eliminarlo."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
 #, kde-format
@@ -2703,8 +2699,8 @@ msgid ""
 "\"sieve-test\" was not found on system. Please install it. (See in Dovecot "
 "package)"
 msgstr ""
-"«sieve-test» no se encontró en el sistema. Por favor, instálelo. (Consulte "
-"en el paquete Dovecot)"
+"«sieve-test» no se ha encontrado en el sistema. Instálelo (consulte el "
+"paquete Dovecot)."
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:16
 #, kde-format
@@ -2935,9 +2931,9 @@ msgid ""
 "extensions;without it, KMail cannot install out-of-office replies for you."
 "Please contact your system administrator."
 msgstr ""
-"Su servidor no incluye «vacaciones» en su lista de extensiones Sieve "
-"admitidas; sin esto, KMail no puede instalar respuestas de fuera de oficina "
-"para usted. Por favor, contacte con su administrador de sistemas."
+"Su servidor no incluye «vacaciones» en la lista de extensiones Sieve "
+"admitidas; sin esto, KMail no puede instalar respuestas de fuera de oficina. "
+"Póngase en contacto con su administrador del sistema."
 
 #: ksieveui/vacation/vacationutils.cpp:39
 #, kde-format
@@ -2970,7 +2966,7 @@ msgid ""
 msgstr ""
 "Estoy fuera de la oficina hasta %1.\n"
 "\n"
-"En caso de urgencia, por favor póngase en contacto con la Sra. «sustituto en "
+"En caso de urgencia, póngase en contacto con la Sra. «sustituto en "
 "vacaciones»\n"
 "\n"
 "correo: «dirección de correo del sustituto en vacaciones»\n"
@@ -3040,7 +3036,7 @@ msgstr "Nuevo guion Sieve"
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format
 msgid "Please enter a name for the new Sieve script:"
-msgstr "Por favor, introduzca un nombre para el nuevo guion Sieve:"
+msgstr "Introduzca un nombre para el nuevo guion Sieve:"
 
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format
