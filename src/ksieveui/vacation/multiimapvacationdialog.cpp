@@ -6,8 +6,8 @@
 
 #include "multiimapvacationdialog.h"
 #include "multiimapvacationmanager.h"
-#include "vacation/searchserverwithvacationsupportjob.h"
 #include "vacationpagewidget.h"
+#include <KSieveCore/SearchServerWithVacationSupportJob>
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -34,7 +34,7 @@ class KSieveUi::MultiImapVacationDialogPrivate
 public:
     MultiImapVacationDialogPrivate() = default;
 
-    QList<VacationCreateScriptJob *> mListCreateJob;
+    QList<KSieveCore::VacationCreateScriptJob *> mListCreateJob;
     QTabWidget *mTabWidget = nullptr;
     QStackedWidget *mStackedWidget = nullptr;
     MultiImapVacationManager *mVacationManager = nullptr;
@@ -92,7 +92,7 @@ void MultiImapVacationDialog::reject()
     }
 }
 
-QList<VacationCreateScriptJob *> MultiImapVacationDialog::listCreateJob() const
+QList<KSieveCore::VacationCreateScriptJob *> MultiImapVacationDialog::listCreateJob() const
 {
     return d->mListCreateJob;
 }
@@ -132,10 +132,10 @@ void MultiImapVacationDialog::init()
 
 void MultiImapVacationDialog::initialize()
 {
-    auto job = new SearchServerWithVacationSupportJob(this);
+    auto job = new KSieveCore::SearchServerWithVacationSupportJob(this);
     job->setPasswordProvider(d->mVacationManager->passwordProvider());
     connect(job,
-            &SearchServerWithVacationSupportJob::searchServerWithVacationSupportFinished,
+            &KSieveCore::SearchServerWithVacationSupportJob::searchServerWithVacationSupportFinished,
             this,
             &MultiImapVacationDialog::slotSearchServerWithVacationSupportFinished);
     job->start();
@@ -209,7 +209,7 @@ void MultiImapVacationDialog::slotOkClicked()
     for (int i = 0; i < d->mTabWidget->count(); ++i) {
         auto vacationPage = qobject_cast<VacationPageWidget *>(d->mTabWidget->widget(i));
         if (vacationPage) {
-            VacationCreateScriptJob *job = vacationPage->writeScript(errorFound);
+            KSieveCore::VacationCreateScriptJob *job = vacationPage->writeScript(errorFound);
 
             if (job && !errorFound) {
                 d->mListCreateJob.append(job);

@@ -16,12 +16,12 @@ namespace KManageSieve
 namespace KSieveCore
 {
 class SieveImapAccountSettings;
+class VacationCreateScriptJob;
 }
 namespace KSieveUi
 {
 class VacationEditWidget;
 class VacationWarningWidget;
-class VacationCreateScriptJob;
 class MultiImapVacationManager;
 class VacationPageWidget : public QWidget
 {
@@ -32,7 +32,7 @@ public:
 
     void setServerUrl(const QUrl &url);
     void setServerName(const QString &serverName);
-    Q_REQUIRED_RESULT KSieveUi::VacationCreateScriptJob *writeScript(bool &errorFound);
+    Q_REQUIRED_RESULT KSieveCore::VacationCreateScriptJob *writeScript(bool &errorFound);
     void setDefault();
     void setVacationManager(MultiImapVacationManager *vacationManager);
     void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account);

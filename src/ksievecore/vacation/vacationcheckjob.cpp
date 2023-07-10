@@ -15,9 +15,9 @@
 #include <KLocalizedString>
 #include <QDate>
 
-#include "libksieveui_debug.h"
+#include "libksievecore_debug.h"
 
-using namespace KSieveUi;
+using namespace KSieveCore;
 VacationCheckJob::VacationCheckJob(const QUrl &url, const QString &serverName, QObject *parent)
     : QObject(parent)
     , mServerName(serverName)
@@ -82,12 +82,12 @@ void VacationCheckJob::slotGetResult(KManageSieve::SieveJob *job, bool success, 
                     hasVacationActive = (vacation.startDate <= QDate::currentDate() && vacation.endDate >= QDate::currentDate());
                 }
                 Q_EMIT vacationScriptActive(this, scriptName, hasVacationActive);
-                qCDebug(LIBKSIEVE_LOG) << "vacation script found :)";
+                qCDebug(LIBKSIEVECORE_LOG) << "vacation script found :)";
             }
         } else if (isLastScript()) {
             mNoScriptFound = true;
             Q_EMIT vacationScriptActive(this, QString(), false);
-            qCDebug(LIBKSIEVE_LOG) << "no vacation script found :(";
+            qCDebug(LIBKSIEVECORE_LOG) << "no vacation script found :(";
         } else {
             getNextScript();
         }
@@ -150,7 +150,7 @@ void VacationCheckJob::slotGotList(KManageSieve::SieveJob *job, bool success, co
 
 void VacationCheckJob::emitError(const QString &errorMessage)
 {
-    qCWarning(LIBKSIEVE_LOG) << errorMessage;
+    qCWarning(LIBKSIEVECORE_LOG) << errorMessage;
     Q_EMIT error(errorMessage);
 }
 
@@ -176,7 +176,7 @@ void VacationCheckJob::getNextScript()
         // TODO: no script found
         mNoScriptFound = true;
         Q_EMIT vacationScriptActive(this, QString(), false);
-        qCDebug(LIBKSIEVE_LOG) << "no vacation script found :(";
+        qCDebug(LIBKSIEVECORE_LOG) << "no vacation script found :(";
         return;
     }
     QUrl url = mUrl;

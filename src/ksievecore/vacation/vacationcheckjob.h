@@ -5,7 +5,7 @@
 */
 
 #pragma once
-
+#include "ksievecore_export.h"
 #include <QObject>
 #include <QStringList>
 #include <QUrl>
@@ -18,11 +18,7 @@ class SieveJob;
 namespace KSieveCore
 {
 class ParseUserScriptJob;
-}
-
-namespace KSieveUi
-{
-class VacationCheckJob : public QObject
+class KSIEVECORE_EXPORT VacationCheckJob : public QObject
 {
     Q_OBJECT
 public:
@@ -37,7 +33,7 @@ public:
     Q_REQUIRED_RESULT QString serverName() const;
 
 Q_SIGNALS:
-    void vacationScriptActive(KSieveUi::VacationCheckJob *job, const QString &sscriptName, bool active);
+    void vacationScriptActive(KSieveCore::VacationCheckJob *job, const QString &sscriptName, bool active);
     void error(const QString &errorStr);
 
 private Q_SLOTS:

@@ -13,7 +13,7 @@
 #include <ksieve/parser.h>
 #include <ksieve/scriptbuilder.h>
 
-#include "libksieveui_debug.h"
+#include "libksievecore_debug.h"
 #include <cassert>
 #include <climits>
 #include <map>
@@ -184,7 +184,7 @@ private:
 };
 }
 
-namespace KSieveUi
+namespace KSieveCore
 {
 class GenericInformationExtractor : public KSieve::ScriptBuilder
 {
@@ -264,7 +264,7 @@ private:
                 found = false;
             }
         }
-        qCDebug(LIBKSIEVE_LOG) << (found ? "found:" : "not found:") << mState << "->" << (found ? expected.if_found : expected.if_not_found);
+        qCDebug(LIBKSIEVECORE_LOG) << (found ? "found:" : "not found:") << mState << "->" << (found ? expected.if_found : expected.if_not_found);
         mState = found ? expected.if_found : expected.if_not_found;
         assert(mState < mNodes.size());
         if (found) {
@@ -280,45 +280,45 @@ private:
     void commandStart(const QString &identifier, int lineNumber) override
     {
         Q_UNUSED(lineNumber)
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
         process(CommandStart, identifier);
     }
 
     void commandEnd(int lineNumber) override
     {
         Q_UNUSED(lineNumber)
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
         process(CommandEnd);
     }
 
     void testStart(const QString &identifier) override
     {
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
         process(TestStart, identifier);
     }
 
     void testEnd() override
     {
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
         process(TestEnd);
     }
 
     void testListStart() override
     {
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
         process(TestListStart);
     }
 
     void testListEnd() override
     {
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
         process(TestListEnd);
     }
 
     void blockStart(int lineNumber) override
     {
         Q_UNUSED(lineNumber)
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
         process(BlockStart);
         ++mNestingDepth;
     }
@@ -326,70 +326,70 @@ private:
     void blockEnd(int lineNumber) override
     {
         Q_UNUSED(lineNumber)
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
         --mNestingDepth;
         process(BlockEnd);
     }
 
     void hashComment(const QString &) override
     {
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
     }
 
     void bracketComment(const QString &) override
     {
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
     }
 
     void lineFeed() override
     {
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
     }
 
     void error(const KSieve::Error &) override
     {
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
         mState = 0;
     }
 
     void finished() override
     {
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
     }
 
     void taggedArgument(const QString &tag) override
     {
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
         process(TaggedArgument, tag);
     }
 
     void stringArgument(const QString &string, bool, const QString &) override
     {
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
         process(StringArgument, string);
     }
 
     void numberArgument(unsigned long number, char) override
     {
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
         process(NumberArgument, QString::number(number));
     }
 
     void stringListArgumentStart() override
     {
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
         process(StringListArgumentStart);
     }
 
     void stringListEntry(const QString &string, bool, const QString &) override
     {
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
         process(StringListEntry, string);
     }
 
     void stringListArgumentEnd() override
     {
-        qCDebug(LIBKSIEVE_LOG);
+        qCDebug(LIBKSIEVECORE_LOG);
         process(StringListArgumentEnd);
     }
 };

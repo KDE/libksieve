@@ -6,17 +6,14 @@
 
 #pragma once
 
-#include "ksieveui_export.h"
+#include "ksievecore_export.h"
 #include <QMap>
 #include <QObject>
 #include <ksievecore/util/util.h>
 namespace KSieveCore
 {
 class SieveImapPasswordProvider;
-}
-namespace KSieveUi
-{
-class KSIEVEUI_EXPORT SearchServerWithVacationSupportJob : public QObject
+class KSIEVECORE_EXPORT SearchServerWithVacationSupportJob : public QObject
 {
     Q_OBJECT
 public:
@@ -33,11 +30,11 @@ Q_SIGNALS:
     void searchServerWithVacationSupportFinished(const QMap<QString, KSieveCore::Util::AccountInfo> &info);
 
 private:
-    KSIEVEUI_NO_EXPORT void slotFindAccountInfoFinished(const KSieveCore::Util::AccountInfo &info);
-    KSIEVEUI_NO_EXPORT void sendAccountList();
-    KSIEVEUI_NO_EXPORT void searchNextInfo();
-    KSIEVEUI_NO_EXPORT void slotSearchSieveScript(const QString &name, const QString &identifier);
-    KSIEVEUI_NO_EXPORT void searchNextServerSieve();
+    KSIEVECORE_NO_EXPORT void slotFindAccountInfoFinished(const KSieveCore::Util::AccountInfo &info);
+    KSIEVECORE_NO_EXPORT void sendAccountList();
+    KSIEVECORE_NO_EXPORT void searchNextInfo();
+    KSIEVECORE_NO_EXPORT void slotSearchSieveScript(const QString &name, const QString &identifier);
+    KSIEVECORE_NO_EXPORT void searchNextServerSieve();
 
     QMap<QString, QString>::const_iterator mSieveServerMapIterator;
     // name, identifier

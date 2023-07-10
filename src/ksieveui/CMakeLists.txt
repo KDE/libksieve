@@ -27,19 +27,13 @@ endif()
 
 target_sources(KPim6KSieveUi PRIVATE
     vacation/vacationmaillineedit.cpp
-    vacation/vacationhelperjob.cpp
     vacation/vacationeditwidget.cpp
     vacation/multiimapvacationdialog.cpp
     vacation/vacationpagewidget.cpp
     vacation/vacationwarningwidget.cpp
-    vacation/vacationscriptextractor.cpp
-    vacation/vacationutils.cpp
-    vacation/vacationcreatescriptjob.cpp
-    vacation/vacationcheckjob.cpp
     vacation/multiimapvacationmanager.cpp
     vacation/vacationmanager.cpp
     vacation/vacationmailactionwidget.cpp
-    vacation/searchserverwithvacationsupportjob.cpp
     )
 target_sources(KPim6KSieveUi PRIVATE
     editor/webengine/sieveeditorwebengineview.cpp
@@ -227,15 +221,9 @@ target_sources(KPim6KSieveUi PRIVATE
     widgets/abstractselectemaillineedit.h
     widgets/abstractmoveimapfolderwidget.h
     widgets/includefilelineedit.h
-    vacation/vacationcheckjob.h
-    vacation/vacationutils.h
     vacation/vacationwarningwidget.h
     vacation/vacationmailactionwidget.h
-    vacation/searchserverwithvacationsupportjob.h
     vacation/multiimapvacationdialog.h
-    vacation/vacationscriptextractor.h
-    vacation/vacationcreatescriptjob.h
-    vacation/vacationhelperjob.h
     vacation/vacationmaillineedit.h
     vacation/vacationmanager.h
     vacation/vacationpagewidget.h

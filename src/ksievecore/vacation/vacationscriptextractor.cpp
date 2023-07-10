@@ -8,18 +8,18 @@
 
 // TODO: add unittests for VacationDataExtractor
 
-using namespace KSieveUi;
+using namespace KSieveCore;
 VacationDataExtractor::VacationDataExtractor()
     : KSieve::ScriptBuilder()
 {
-    qCDebug(LIBKSIEVE_LOG);
+    qCDebug(LIBKSIEVECORE_LOG);
 }
 
 VacationDataExtractor::~VacationDataExtractor() = default;
 
 void VacationDataExtractor::commandStart(const QString &identifier, int lineNumber)
 {
-    qCDebug(LIBKSIEVE_LOG) << "(\"" << identifier << "\")";
+    qCDebug(LIBKSIEVECORE_LOG) << "(\"" << identifier << "\")";
     if (identifier == QLatin1String("if") && mContext == None) {
         mContext = IfBlock;
         mLineStart = lineNumber;
@@ -50,7 +50,7 @@ void VacationDataExtractor::commandStart(const QString &identifier, int lineNumb
 
 void VacationDataExtractor::commandEnd(int lineNumber)
 {
-    qCDebug(LIBKSIEVE_LOG);
+    qCDebug(LIBKSIEVECORE_LOG);
     if (mContext != None && mContext != IfBlock && mContext != VacationEnd) {
         mContext = VacationEnd;
         mLineEnd = lineNumber;
@@ -60,7 +60,7 @@ void VacationDataExtractor::commandEnd(int lineNumber)
 
 void VacationDataExtractor::error(const KSieve::Error &e)
 {
-    qCDebug(LIBKSIEVE_LOG) << e.asString() << "@" << e.line() << "," << e.column();
+    qCDebug(LIBKSIEVECORE_LOG) << e.asString() << "@" << e.line() << "," << e.column();
 }
 
 void VacationDataExtractor::finished()
@@ -104,7 +104,7 @@ void VacationDataExtractor::blockEnd(int lineNumber)
 
 void VacationDataExtractor::taggedArgument(const QString &tag)
 {
-    qCDebug(LIBKSIEVE_LOG) << "(\"" << tag << "\")";
+    qCDebug(LIBKSIEVECORE_LOG) << "(\"" << tag << "\")";
     if (mMailActionContext == RedirectCommand) {
         if (tag == QLatin1String("copy")) {
             mMailAction = VacationUtils::CopyTo;
@@ -124,7 +124,7 @@ void VacationDataExtractor::taggedArgument(const QString &tag)
 
 void VacationDataExtractor::stringArgument(const QString &string, bool, const QString &)
 {
-    qCDebug(LIBKSIEVE_LOG) << "(\"" << string << "\")";
+    qCDebug(LIBKSIEVECORE_LOG) << "(\"" << string << "\")";
     if (mContext == Addresses) {
         mAliases.push_back(string);
         mContext = VacationCommand;
@@ -142,7 +142,7 @@ void VacationDataExtractor::stringArgument(const QString &string, bool, const QS
 
 void VacationDataExtractor::numberArgument(unsigned long number, char)
 {
-    qCDebug(LIBKSIEVE_LOG) << "(\"" << number << "\")";
+    qCDebug(LIBKSIEVECORE_LOG) << "(\"" << number << "\")";
     if (mContext != Days) {
         return;
     }
@@ -160,7 +160,7 @@ void VacationDataExtractor::stringListArgumentStart()
 
 void VacationDataExtractor::stringListEntry(const QString &string, bool, const QString &)
 {
-    qCDebug(LIBKSIEVE_LOG) << "(\"" << string << "\")";
+    qCDebug(LIBKSIEVECORE_LOG) << "(\"" << string << "\")";
     if (mContext != Addresses) {
         return;
     }
@@ -169,7 +169,7 @@ void VacationDataExtractor::stringListEntry(const QString &string, bool, const Q
 
 void VacationDataExtractor::stringListArgumentEnd()
 {
-    qCDebug(LIBKSIEVE_LOG);
+    qCDebug(LIBKSIEVECORE_LOG);
     if (mContext != Addresses) {
         return;
     }
@@ -178,7 +178,7 @@ void VacationDataExtractor::stringListArgumentEnd()
 
 void VacationDataExtractor::reset()
 {
-    qCDebug(LIBKSIEVE_LOG);
+    qCDebug(LIBKSIEVECORE_LOG);
     mContext = None;
     mMailAction = VacationUtils::Keep;
     mMailActionRecipient = QString();
@@ -215,7 +215,7 @@ void RequireExtractor::commandEnd(int lineNumber)
 
 void RequireExtractor::error(const KSieve::Error &e)
 {
-    qCDebug(LIBKSIEVE_LOG) << e.asString() << "@" << e.line() << "," << e.column();
+    qCDebug(LIBKSIEVECORE_LOG) << e.asString() << "@" << e.line() << "," << e.column();
 }
 
 void RequireExtractor::finished()

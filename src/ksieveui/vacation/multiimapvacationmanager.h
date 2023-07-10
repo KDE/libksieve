@@ -17,10 +17,10 @@ namespace KSieveCore
 {
 class SieveImapPasswordProvider;
 class CheckKolabKep14SupportJob;
+class VacationCheckJob;
 }
 namespace KSieveUi
 {
-class VacationCheckJob;
 /**
  * @brief The MultiImapVacationManager class
  * @author Laurent Montel <montel@kde.org>
@@ -43,7 +43,7 @@ Q_SIGNALS:
     void scriptAvailable(const QString &serverName, const QStringList &sieveCapabilities, const QString &scriptName, const QString &script, bool active);
 
 private Q_SLOTS:
-    KSIEVEUI_NO_EXPORT void slotScriptActive(KSieveUi::VacationCheckJob *job, const QString &scriptName, bool active);
+    KSIEVEUI_NO_EXPORT void slotScriptActive(KSieveCore::VacationCheckJob *job, const QString &scriptName, bool active);
     KSIEVEUI_NO_EXPORT void slotCheckKep14Ended(KSieveCore::CheckKolabKep14SupportJob *job, bool success);
 
 private:

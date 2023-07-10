@@ -11,9 +11,12 @@
 #include <ksievecore/util/util.h>
 #include <memory>
 class QDialogButtonBox;
-namespace KSieveUi
+namespace KSieveCore
 {
 class VacationCreateScriptJob;
+}
+namespace KSieveUi
+{
 class MultiImapVacationManager;
 class MultiImapVacationDialogPrivate;
 /**
@@ -27,7 +30,7 @@ public:
     explicit MultiImapVacationDialog(MultiImapVacationManager *manager, QWidget *parent = nullptr);
     ~MultiImapVacationDialog() override;
 
-    Q_REQUIRED_RESULT QList<VacationCreateScriptJob *> listCreateJob() const;
+    Q_REQUIRED_RESULT QList<KSieveCore::VacationCreateScriptJob *> listCreateJob() const;
 
     void switchToServerNamePage(const QString &serverName);
     void reject() override;

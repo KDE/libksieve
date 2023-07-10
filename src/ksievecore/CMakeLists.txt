@@ -48,6 +48,21 @@ target_sources(KPim6KSieveCore PRIVATE
     scriptsparsing/parsingutil.h
 )
 
+target_sources(KPim6KSieveCore PRIVATE
+    vacation/vacationhelperjob.cpp
+    vacation/vacationhelperjob.h
+    vacation/vacationscriptextractor.cpp
+    vacation/vacationscriptextractor.h
+    vacation/vacationutils.cpp
+    vacation/vacationutils.h
+    vacation/vacationcreatescriptjob.cpp
+    vacation/vacationcreatescriptjob.h
+    vacation/vacationcheckjob.cpp
+    vacation/vacationcheckjob.h
+    vacation/searchserverwithvacationsupportjob.cpp
+    vacation/searchserverwithvacationsupportjob.h
+    )
+
 ecm_qt_declare_logging_category(KPim6KSieveCore HEADER libksievecore_debug.h IDENTIFIER LIBKSIEVECORE_LOG CATEGORY_NAME org.kde.pim.libksieve.core
         DESCRIPTION "kdepim (libksievecore)"
         EXPORT LIBKSIEVE
@@ -66,6 +81,7 @@ target_link_libraries(KPim6KSieveCore
     KF6::CoreAddons
     KPim6::MailTransport
     KPim6::Mime
+    KPim6::IdentityManagementCore
     )
 
 generate_export_header(KPim6KSieveCore BASE_NAME ksievecore)
@@ -129,12 +145,24 @@ ecm_generate_headers(ksievecore_Camelcasescriptsparsing_HEADERS
     RELATIVE scriptsparsing
     )
 
+ecm_generate_headers(ksievecore_Camelcasevacation_HEADERS
+    HEADER_NAMES
+    SearchServerWithVacationSupportJob
+    VacationUtils
+    VacationCreateScriptJob
+    VacationCheckJob
+    REQUIRED_HEADERS ksievecore_vacation_HEADERS
+    PREFIX KSieveCore
+    RELATIVE vacation
+    )
+
 install(TARGETS KPim6KSieveCore EXPORT KPim6KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
     ${ksievecore_Camelcaseimapinstance_HEADERS}
     ${ksievecore_Camelmanagescriptsjob_HEADERS}
     ${ksievecore_Camelcaseutil_HEADERS}
     ${ksievecore_Camelcasescriptsparsing_HEADERS}
+    ${ksievecore_Camelcasevacation_HEADERS}
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveCore/KSieveCore
     COMPONENT Devel
@@ -146,6 +174,7 @@ install(FILES
     ${ksievecore_managescriptsjob_HEADERS}
     ${ksievecore_util_HEADERS}
     ${ksievecore_scriptsparsing_HEADERS}
+    ${ksievecore_vacation_HEADERS}
     ${CMAKE_CURRENT_BINARY_DIR}/sieve-vacation.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveCore/ksievecore
     COMPONENT Devel

@@ -7,7 +7,7 @@
 #include "vacationhelperjob.h"
 #include "kmanagesieve/sievejob.h"
 
-using namespace KSieveUi;
+using namespace KSieveCore;
 
 VacationHelperJob::VacationHelperJob(const QUrl &url, QObject *parent)
     : QObject(parent)

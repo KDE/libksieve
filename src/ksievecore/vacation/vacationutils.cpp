@@ -16,7 +16,7 @@
 #include <QRegularExpression>
 
 using KMime::Types::AddrSpecList;
-using namespace KSieveUi;
+using namespace KSieveCore;
 
 static inline QString dotstuff(QString s) // krazy:exclude=passbyvalue
 {
@@ -39,7 +39,7 @@ QString VacationUtils::defaultSubject()
     return i18n("Out of office till %1", QLocale().toString(QDate::currentDate().addDays(1)));
 }
 
-QString KSieveUi::VacationUtils::mailAction(KSieveUi::VacationUtils::MailAction action)
+QString KSieveCore::VacationUtils::mailAction(KSieveCore::VacationUtils::MailAction action)
 {
     switch (action) {
     case Keep:
@@ -55,12 +55,12 @@ QString KSieveUi::VacationUtils::mailAction(KSieveUi::VacationUtils::MailAction 
     return {};
 }
 
-KSieveUi::VacationUtils::MailAction KSieveUi::VacationUtils::defaultMailAction()
+KSieveCore::VacationUtils::MailAction KSieveCore::VacationUtils::defaultMailAction()
 {
-    return KSieveUi::VacationUtils::Keep;
+    return KSieveCore::VacationUtils::Keep;
 }
 
-QString KSieveUi::VacationUtils::defaultMessageText()
+QString KSieveCore::VacationUtils::defaultMessageText()
 {
     return i18n(
         "I am out of office till %1.\n"
@@ -125,7 +125,7 @@ QDate VacationUtils::defaultEndDate()
 
 VacationUtils::Vacation VacationUtils::parseScript(const QString &script)
 {
-    KSieveUi::VacationUtils::Vacation vacation;
+    KSieveCore::VacationUtils::Vacation vacation;
     if (script.trimmed().isEmpty()) {
         vacation.valid = false;
         vacation.active = false;
@@ -143,7 +143,7 @@ VacationUtils::Vacation VacationUtils::parseScript(const QString &script)
     // slave somehow omits the last \n, which results in a lone \r at
     // the end, leading to a parse error.
     const QByteArray scriptUTF8 = script.trimmed().toUtf8();
-    qCDebug(LIBKSIEVE_LOG) << "scriptUtf8 = \"" + scriptUTF8 + "\"";
+    qCDebug(LIBKSIEVECORE_LOG) << "scriptUtf8 = \"" + scriptUTF8 + "\"";
     KSieve::Parser parser(scriptUTF8.begin(), scriptUTF8.begin() + scriptUTF8.length());
     VacationDataExtractor vdx;
     SpamDataExtractor sdx;
@@ -194,7 +194,7 @@ VacationUtils::Vacation VacationUtils::parseScript(const QString &script)
     return vacation;
 }
 
-QString KSieveUi::VacationUtils::composeScript(const Vacation &vacation)
+QString KSieveCore::VacationUtils::composeScript(const Vacation &vacation)
 {
     QStringList condition;
     QStringList require;
@@ -302,7 +302,7 @@ QString KSieveUi::VacationUtils::composeScript(const Vacation &vacation)
     return script;
 }
 
-QString KSieveUi::VacationUtils::mergeRequireLine(const QString &script, const QString &scriptUpdate)
+QString KSieveCore::VacationUtils::mergeRequireLine(const QString &script, const QString &scriptUpdate)
 {
     const QByteArray scriptUTF8 = script.trimmed().toUtf8();
     if (scriptUTF8.isEmpty()) {
@@ -352,7 +352,7 @@ QString KSieveUi::VacationUtils::mergeRequireLine(const QString &script, const Q
     return lines.join(QLatin1Char('\n'));
 }
 
-QString KSieveUi::VacationUtils::updateVacationBlock(const QString &oldScript, const QString &newScript)
+QString KSieveCore::VacationUtils::updateVacationBlock(const QString &oldScript, const QString &newScript)
 {
     const QByteArray oldScriptUTF8 = oldScript.trimmed().toUtf8();
     if (oldScriptUTF8.isEmpty()) {

@@ -5,7 +5,7 @@
 */
 
 #include "sievedefaulttemplate.h"
-#include "vacation/vacationutils.h"
+#include <KSieveCore/VacationUtils>
 
 #include <KLocalizedString>
 
@@ -83,7 +83,7 @@ QList<PimCommon::defaultTemplate> KSieveUi::SieveDefaultTemplate::defaultTemplat
                    "if header :contains \"X-Spam-Flag\" \"YES\" { keep; stop; }\n"
                    "vacation :addresses [ \"me@example.net\", \"other@example.net\" ] :days 7 text: \n%1"
                    "\n.\n;\n")
-                   .arg(VacationUtils::defaultMessageText());
+                   .arg(KSieveCore::VacationUtils::defaultMessageText());
     lst << tmp;
 
     return lst;

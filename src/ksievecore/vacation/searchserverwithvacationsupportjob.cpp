@@ -8,7 +8,7 @@
 #include "util/findaccountinfojob.h"
 #include <QVariant>
 
-using namespace KSieveUi;
+using namespace KSieveCore;
 
 SearchServerWithVacationSupportJob::SearchServerWithVacationSupportJob(QObject *parent)
     : QObject(parent)

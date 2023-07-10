@@ -5,7 +5,7 @@
 */
 
 #pragma once
-
+#include "ksievecore_export.h"
 #include <QObject>
 
 #include <QUrl>
@@ -19,10 +19,7 @@ namespace KSieveCore
 {
 class ParseUserScriptJob;
 class GenerateGlobalScriptJob;
-}
-namespace KSieveUi
-{
-class VacationCreateScriptJob : public QObject
+class KSIEVECORE_EXPORT VacationCreateScriptJob : public QObject
 {
     Q_OBJECT
 public:

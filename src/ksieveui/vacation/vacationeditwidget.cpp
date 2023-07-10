@@ -175,7 +175,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     // Action for incoming mails
     mMailAction = new QComboBox(this);
     for (int i = 0; i < 4; ++i) {
-        mMailAction->addItem(VacationUtils::mailAction(static_cast<VacationUtils::MailAction>(i)));
+        mMailAction->addItem(KSieveCore::VacationUtils::mailAction(static_cast<KSieveCore::VacationUtils::MailAction>(i)));
     }
     mMailAction->setObjectName(QStringLiteral("mMailAction"));
     connect(mMailAction, &QComboBox::currentIndexChanged, this, &VacationEditWidget::mailActionChanged);
@@ -425,7 +425,7 @@ void VacationEditWidget::enableDates(bool enable)
 
 void VacationEditWidget::mailActionChanged(int action)
 {
-    mMailActionRecipient->mailActionChanged(static_cast<KSieveUi::VacationUtils::MailAction>(action));
+    mMailActionRecipient->mailActionChanged(static_cast<KSieveCore::VacationUtils::MailAction>(action));
     setWasChanged();
 }
 
@@ -444,7 +444,7 @@ void VacationEditWidget::setChanged(bool changed)
     mChanged = changed;
 }
 
-void VacationEditWidget::setMailAction(VacationUtils::MailAction action, const QString &recipient)
+void VacationEditWidget::setMailAction(KSieveCore::VacationUtils::MailAction action, const QString &recipient)
 {
     mMailAction->setCurrentIndex(action);
     mMailActionRecipient->setMailAction(action, recipient);
@@ -455,9 +455,9 @@ void VacationEditWidget::setSieveImapAccountSettings(const KSieveCore::SieveImap
     mMailActionRecipient->setSieveImapAccountSettings(account);
 }
 
-VacationUtils::MailAction VacationEditWidget::mailAction() const
+KSieveCore::VacationUtils::MailAction VacationEditWidget::mailAction() const
 {
-    return static_cast<VacationUtils::MailAction>(mMailAction->currentIndex());
+    return static_cast<KSieveCore::VacationUtils::MailAction>(mMailAction->currentIndex());
 }
 
 QString VacationEditWidget::mailActionRecipient(bool &valid) const
@@ -475,13 +475,13 @@ void VacationEditWidget::enableDomainAndSendForSpam(bool enable)
 void VacationEditWidget::setDefault()
 {
     setActivateVacation(true);
-    setMessageText(VacationUtils::defaultMessageText());
-    setSubject(VacationUtils::defaultSubject());
-    setNotificationInterval(VacationUtils::defaultNotificationInterval());
-    setMailAliases(VacationUtils::defaultMailAliases());
-    setSendForSpam(VacationUtils::defaultSendForSpam());
-    setDomainName(VacationUtils::defaultDomainName());
-    setMailAction(VacationUtils::defaultMailAction(), QString());
+    setMessageText(KSieveCore::VacationUtils::defaultMessageText());
+    setSubject(KSieveCore::VacationUtils::defaultSubject());
+    setNotificationInterval(KSieveCore::VacationUtils::defaultNotificationInterval());
+    setMailAliases(KSieveCore::VacationUtils::defaultMailAliases());
+    setSendForSpam(KSieveCore::VacationUtils::defaultSendForSpam());
+    setDomainName(KSieveCore::VacationUtils::defaultDomainName());
+    setMailAction(KSieveCore::VacationUtils::defaultMailAction(), QString());
     mStartTimeActive->setChecked(false);
     mEndTimeActive->setChecked(false);
     mStartTime->setTime(QTime());

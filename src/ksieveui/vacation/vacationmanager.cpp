@@ -7,7 +7,7 @@
 #include "vacationmanager.h"
 #include "ksieveui/vacation/multiimapvacationdialog.h"
 #include "ksieveui/vacation/multiimapvacationmanager.h"
-#include "ksieveui/vacation/vacationcreatescriptjob.h"
+#include <KSieveCore/VacationCreateScriptJob>
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -93,9 +93,9 @@ void VacationManager::slotDialogCanceled()
 
 void VacationManager::slotDialogOk()
 {
-    const QList<KSieveUi::VacationCreateScriptJob *> listJob = d->mMultiImapVacationDialog->listCreateJob();
-    for (KSieveUi::VacationCreateScriptJob *job : listJob) {
-        connect(job, &VacationCreateScriptJob::scriptActive, this, &VacationManager::updateVacationScriptStatus);
+    const QList<KSieveCore::VacationCreateScriptJob *> listJob = d->mMultiImapVacationDialog->listCreateJob();
+    for (KSieveCore::VacationCreateScriptJob *job : listJob) {
+        connect(job, &KSieveCore::VacationCreateScriptJob::scriptActive, this, &VacationManager::updateVacationScriptStatus);
         job->setKep14Support(d->mCheckVacation->kep14Support(job->serverName()));
         job->start();
     }

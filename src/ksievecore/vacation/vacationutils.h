@@ -10,7 +10,7 @@
 
 class QDate;
 
-namespace KSieveUi
+namespace KSieveCore
 {
 namespace VacationUtils
 {
@@ -57,7 +57,7 @@ struct Vacation {
 
 Q_REQUIRED_RESULT QString composeScript(const Vacation &vacation);
 
-Q_REQUIRED_RESULT KSieveUi::VacationUtils::Vacation parseScript(const QString &script);
+Q_REQUIRED_RESULT KSieveCore::VacationUtils::Vacation parseScript(const QString &script);
 
 Q_REQUIRED_RESULT QString mergeRequireLine(const QString &script, const QString &scriptUpdate);
 

@@ -10,11 +10,11 @@
 #include <managescriptsjob/generateglobalscriptjob.h>
 #include <managescriptsjob/parseuserscriptjob.h>
 
-#include "libksieveui_debug.h"
+#include "libksievecore_debug.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 
-using namespace KSieveUi;
+using namespace KSieveCore;
 
 VacationCreateScriptJob::VacationCreateScriptJob(QObject *parent)
     : QObject(parent)
@@ -78,7 +78,7 @@ void VacationCreateScriptJob::setScript(const QString &script)
 void VacationCreateScriptJob::start()
 {
     if (mUrl.isEmpty()) {
-        qCDebug(LIBKSIEVE_LOG) << " server url is empty";
+        qCDebug(LIBKSIEVECORE_LOG) << " server url is empty";
         deleteLater();
         return;
     }
@@ -111,8 +111,8 @@ void VacationCreateScriptJob::slotGetScript(KManageSieve::SieveJob *job, bool su
     Q_ASSERT(job == mSieveJob);
     mSieveJob = nullptr;
     if (success || !oldScript.trimmed().isEmpty()) {
-        QString script = VacationUtils::mergeRequireLine(oldScript, mScript);
-        script = VacationUtils::updateVacationBlock(oldScript, script);
+        QString script = KSieveCore::VacationUtils::mergeRequireLine(oldScript, mScript);
+        script = KSieveCore::VacationUtils::updateVacationBlock(oldScript, script);
     }
     if (mKep14Support) {
         mSieveJob = KManageSieve::SieveJob::put(mUrl, mScript, false, false);
@@ -151,7 +151,7 @@ void VacationCreateScriptJob::handleResult()
         KMessageBox::information(nullptr, i18n("Impossible to install script on server \'%1\'", mServerName));
     }
 
-    qCDebug(LIBKSIEVE_LOG) << "( ???," << mSuccess << ", ? )";
+    qCDebug(LIBKSIEVECORE_LOG) << "( ???," << mSuccess << ", ? )";
     mSieveJob = nullptr; // job deletes itself after returning from this slot!
     Q_EMIT result(mSuccess);
     Q_EMIT scriptActive(mActivate, mServerName);
@@ -185,7 +185,7 @@ void VacationCreateScriptJob::slotGenerateDone(const QString &error)
     mCreateJob = nullptr;
     mUserJobRunning = false;
     if (!error.isEmpty()) {
-        qCWarning(LIBKSIEVE_LOG) << error;
+        qCWarning(LIBKSIEVECORE_LOG) << error;
         mSuccess = false;
         handleResult();
     } else {

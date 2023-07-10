@@ -14,7 +14,7 @@ namespace KManageSieve
 class SieveJob;
 }
 
-namespace KSieveUi
+namespace KSieveCore
 {
 class VacationHelperJob : public QObject
 {

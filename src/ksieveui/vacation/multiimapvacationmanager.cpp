@@ -5,14 +5,14 @@
 */
 
 #include "multiimapvacationmanager.h"
-#include "vacationcheckjob.h"
+#include <KSieveCore/SearchServerWithVacationSupportJob>
+#include <KSieveCore/VacationCheckJob>
 #include <kmanagesieve/sievejob.h>
 #include <ksievecore/util/util.h>
 #include <managescriptsjob/checkkolabkep14supportjob.h>
 #include <managescriptsjob/parseuserscriptjob.h>
 
 #include "libksieveui_debug.h"
-#include "searchserverwithvacationsupportjob.h"
 #include <QVariant>
 
 using namespace KSieveUi;
@@ -37,9 +37,9 @@ void MultiImapVacationManager::checkVacation(const QString &serverName, const QU
         return;
     }
 
-    auto job = new VacationCheckJob(url, serverName, this);
+    auto job = new KSieveCore::VacationCheckJob(url, serverName, this);
     job->setKep14Support(mKep14Support[serverName]);
-    connect(job, &VacationCheckJob::vacationScriptActive, this, &MultiImapVacationManager::slotScriptActive);
+    connect(job, &KSieveCore::VacationCheckJob::vacationScriptActive, this, &MultiImapVacationManager::slotScriptActive);
     job->start();
 }
 
@@ -51,10 +51,10 @@ void MultiImapVacationManager::checkVacation()
     mNumberOfJobs = 0;
     mCheckInProgress = true;
 
-    auto job = new SearchServerWithVacationSupportJob(this);
+    auto job = new KSieveCore::SearchServerWithVacationSupportJob(this);
     job->setPasswordProvider(passwordProvider());
     connect(job,
-            &SearchServerWithVacationSupportJob::searchServerWithVacationSupportFinished,
+            &KSieveCore::SearchServerWithVacationSupportJob::searchServerWithVacationSupportFinished,
             this,
             &MultiImapVacationManager::slotSearchServerWithVacationSupportFinished);
     job->start();
@@ -69,7 +69,7 @@ void MultiImapVacationManager::slotSearchServerWithVacationSupportFinished(const
     }
 }
 
-void MultiImapVacationManager::slotScriptActive(VacationCheckJob *job, const QString &scriptName, bool active)
+void MultiImapVacationManager::slotScriptActive(KSieveCore::VacationCheckJob *job, const QString &scriptName, bool active)
 {
     --mNumberOfJobs;
     if (mNumberOfJobs == 0) {
@@ -96,9 +96,9 @@ void MultiImapVacationManager::slotCheckKep14Ended(KSieveCore::CheckKolabKep14Su
 
     mKep14Support.insert(job->serverName(), job->hasKep14Support());
 
-    auto checkJob = new VacationCheckJob(job->serverUrl(), job->serverName(), this);
+    auto checkJob = new KSieveCore::VacationCheckJob(job->serverUrl(), job->serverName(), this);
     checkJob->setKep14Support(job->hasKep14Support());
-    connect(checkJob, &VacationCheckJob::vacationScriptActive, this, &MultiImapVacationManager::slotScriptActive);
+    connect(checkJob, &KSieveCore::VacationCheckJob::vacationScriptActive, this, &MultiImapVacationManager::slotScriptActive);
     checkJob->start();
 }
 
