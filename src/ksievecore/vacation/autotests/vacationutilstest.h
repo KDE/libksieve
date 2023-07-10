@@ -8,8 +8,6 @@
 
 #include <QObject>
 
-namespace KSieveUi
-{
 class VacationUtilsTest : public QObject
 {
     Q_OBJECT
@@ -30,4 +28,3 @@ private Q_SLOTS:
     void testMergeRequireLine();
     void testDisableGeneratedScript();
 };
-}

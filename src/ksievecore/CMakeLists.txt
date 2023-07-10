@@ -107,6 +107,7 @@ if(BUILD_TESTING)
     add_subdirectory(managescriptsjob/autotests)
     add_subdirectory(util/autotests/)
     add_subdirectory(scriptsparsing/autotests)
+    add_subdirectory(vacation/autotests)
 endif()
 
 ecm_generate_headers(ksievecore_Camelcaseimapinstance_HEADERS

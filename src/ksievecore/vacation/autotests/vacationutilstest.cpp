@@ -5,12 +5,12 @@
  */
 
 #include "vacationutilstest.h"
-#include "ksieveui/vacation/vacationutils.h"
+#include "vacation/vacationutils.h"
 
 #include <QFile>
 #include <QTest>
 
-using namespace KSieveUi;
+using namespace KSieveCore;
 
 // using KI18n calls which require a Q*Application instance to exist
 // and will assert on the condition when in build in debug mode

@@ -5,13 +5,11 @@ set( EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR} )
 macro( add_vacation_test _source )
   set( _test ${_source}test.cpp  ${_source}test.h
     ../${_source}.cpp
-    ../vacationscriptextractor.cpp
-    ../vacationutils.cpp
     ../vacationeditwidget.cpp
     ../vacationmailactionwidget.cpp
     )
   configure_file(../../settings/sieve-editor.kcfg.cmake ${CMAKE_CURRENT_BINARY_DIR}/sieve-editor.kcfg)
-  kconfig_add_kcfg_files(_test ../../settings/sieve-vacation.kcfgc ../../settings/sieve-editor.kcfgc)
+  kconfig_add_kcfg_files(_test ../../settings/sieve-editor.kcfgc)
   get_filename_component(_name ${_source}test NAME_WE)
   ecm_qt_declare_logging_category(_test HEADER libksieveui_debug.h IDENTIFIER LIBKSIEVE_LOG CATEGORY_NAME org.kde.pim.libksieve)
   add_executable(${_name} ${_test})
@@ -31,6 +29,5 @@ macro( add_vacation_test _source )
     )
 endmacro()
 
-add_vacation_test(vacationutils)
 add_vacation_test(vacationeditwidget)
 add_vacation_test(vacationmailactionwidget)
