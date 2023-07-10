@@ -142,7 +142,7 @@ void SieveEditorGraphicalModeWidget::setImportScript(const QString &script)
         if (answer == KMessageBox::ButtonCode::PrimaryAction) {
             Q_EMIT switchTextMode(script);
         }
-        qCDebug(LIBKSIEVE_LOG) << " cannot import script";
+        qCDebug(LIBKSIEVEUI_LOG) << " cannot import script";
     }
 }
 

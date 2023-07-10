@@ -84,7 +84,7 @@ void SieveConditionIhave::setParamWidgetValue(QXmlStreamReader &element, QWidget
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveConditionIhave::setParamWidgetValue unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionIhave::setParamWidgetValue unknown tagName " << tagName;
         }
     }
     if (!commentStr.isEmpty()) {

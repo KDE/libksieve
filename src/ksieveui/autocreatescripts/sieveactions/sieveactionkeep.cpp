@@ -87,11 +87,11 @@ void SieveActionKeep::setParamWidgetValue(QXmlStreamReader &element, QWidget *w,
                 // implement in the future ?
             } else {
                 unknownTag(tagName, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveActionAbstractFlags::setParamWidgetValue unknown tag :" << tagName;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveActionAbstractFlags::setParamWidgetValue unknown tag :" << tagName;
             }
         }
     } else {
-        qCDebug(LIBKSIEVE_LOG) << " Server doesn't support imapflags";
+        qCDebug(LIBKSIEVEUI_LOG) << " Server doesn't support imapflags";
     }
 }
 

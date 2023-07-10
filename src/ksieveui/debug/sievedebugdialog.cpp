@@ -47,7 +47,7 @@ SieveDebugDialog::SieveDebugDialog(KSieveCore::SieveImapPasswordProvider *passwo
     mEdit->setReadOnly(true);
     const KSyntaxHighlighting::Definition def = mRepo.definitionForName(QStringLiteral("Sieve"));
     if (!def.isValid()) {
-        qCWarning(LIBKSIEVE_LOG) << "Invalid definition name";
+        qCWarning(LIBKSIEVEUI_LOG) << "Invalid definition name";
     }
 
     auto hl = new KSyntaxHighlighting::SyntaxHighlighter(mEdit->editor()->document());
@@ -76,7 +76,7 @@ SieveDebugDialog::~SieveDebugDialog()
         mSieveJob->kill();
         mSieveJob = nullptr;
     }
-    qCDebug(LIBKSIEVE_LOG);
+    qCDebug(LIBKSIEVEUI_LOG);
     writeConfig();
 }
 
@@ -191,7 +191,7 @@ void SieveDebugDialog::slotFindAccountInfoForScriptFinished(const KSieveCore::Ut
 
 void SieveDebugDialog::slotGetScript(KManageSieve::SieveJob *job, bool success, const QString &script, bool active)
 {
-    qCDebug(LIBKSIEVE_LOG) << "( ??," << success << ", ?," << active << ")" << Qt::endl << "script:" << Qt::endl << script;
+    qCDebug(LIBKSIEVEUI_LOG) << "( ??," << success << ", ?," << active << ")" << Qt::endl << "script:" << Qt::endl << script;
     mSieveJob = nullptr; // job deletes itself after returning from this slot!
 
     if (!success) {
@@ -218,7 +218,7 @@ void SieveDebugDialog::slotGetScriptList(KManageSieve::SieveJob *job, bool succe
     if (mShutDownJob->isActive()) {
         mShutDownJob->stop();
     }
-    qCDebug(LIBKSIEVE_LOG) << "Success:" << success << ", List:" << scriptList.join(QLatin1Char(',')) << ", active:" << activeScript;
+    qCDebug(LIBKSIEVEUI_LOG) << "Success:" << success << ", List:" << scriptList.join(QLatin1Char(',')) << ", active:" << activeScript;
     mSieveJob = nullptr; // job deletes itself after returning from this slot!
 
     mEdit->editor()->appendPlainText(i18n("Sieve capabilities:\n"));

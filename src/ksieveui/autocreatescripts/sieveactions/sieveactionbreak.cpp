@@ -51,7 +51,7 @@ void SieveActionBreak::setParamWidgetValue(QXmlStreamReader &element, QWidget *w
                 name->setText(AutoCreateScriptUtil::strValue(element));
             } else {
                 unknownTagValue(tagValue, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveActionBreak::setParamWidgetValue unknown tagValue " << tagValue;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveActionBreak::setParamWidgetValue unknown tagValue " << tagValue;
             }
         } else if (tagName == QLatin1String("str")) {
             element.skipCurrentElement();
@@ -64,7 +64,7 @@ void SieveActionBreak::setParamWidgetValue(QXmlStreamReader &element, QWidget *w
             // implement in the future ?
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << "SieveActionBreak::setParamWidgetValue unknown tag " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << "SieveActionBreak::setParamWidgetValue unknown tag " << tagName;
         }
     }
 }

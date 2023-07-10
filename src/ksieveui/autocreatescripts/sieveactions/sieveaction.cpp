@@ -27,7 +27,7 @@ QStringList SieveAction::listOfIncludeFile() const
     if (mSieveGraphicalModeWidget) {
         return mSieveGraphicalModeWidget->listOfIncludeFile();
     }
-    qCWarning(LIBKSIEVE_LOG) << "SieveAction::listOfIncludeFile Problem during initialize mSieveGraphicalModeWidget ";
+    qCWarning(LIBKSIEVEUI_LOG) << "SieveAction::listOfIncludeFile Problem during initialize mSieveGraphicalModeWidget ";
     return {};
 }
 

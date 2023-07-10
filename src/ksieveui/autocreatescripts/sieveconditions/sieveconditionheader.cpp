@@ -85,7 +85,7 @@ void SieveConditionHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
         if (tagName == QLatin1String("tag")) {
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1String("comparator")) {
-                qCWarning(LIBKSIEVE_LOG) << " comparator support not implemented yet!";
+                qCWarning(LIBKSIEVEUI_LOG) << " comparator support not implemented yet!";
             } else {
                 auto selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
                 selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(tagValue, notCondition), name(), error);
@@ -100,7 +100,7 @@ void SieveConditionHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
                 value->setCode(st);
             } else {
                 tooManyArguments(tagName, index, 2, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionHeader::setParamWidgetValue too many argument " << index;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionHeader::setParamWidgetValue too many argument " << index;
             }
             ++index;
         } else if (tagName == QLatin1String("list")) {
@@ -113,7 +113,7 @@ void SieveConditionHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
                 value->setCode(AutoCreateScriptUtil::listValueToStr(element));
             } else {
                 tooManyArguments(tagName, index, 2, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionHeader::setParamWidgetValue too many argument " << index;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionHeader::setParamWidgetValue too many argument " << index;
             }
             ++index;
         } else if (tagName == QLatin1String("crlf")) {
@@ -123,7 +123,7 @@ void SieveConditionHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveConditionHeader::setParamWidgetValue unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionHeader::setParamWidgetValue unknown tagName " << tagName;
         }
     }
     if (!commentStr.isEmpty()) {

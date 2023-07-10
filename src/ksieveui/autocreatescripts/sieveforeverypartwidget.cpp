@@ -90,7 +90,7 @@ void SieveForEveryPartWidget::loadScript(QXmlStreamReader &element, QString &err
                 mName->setText(AutoCreateScriptUtil::strValue(element));
             } else {
                 error += i18n("Unknown tagValue \"%1\" during loading loop \"for\"", tagValue) + QLatin1Char('\n');
-                qCDebug(LIBKSIEVE_LOG) << " SieveForEveryPartWidget::loadScript unknown tagValue " << tagValue;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveForEveryPartWidget::loadScript unknown tagValue " << tagValue;
             }
             mForLoop->setChecked(true);
             mName->setEnabled(true);
@@ -102,10 +102,10 @@ void SieveForEveryPartWidget::loadScript(QXmlStreamReader &element, QString &err
             element.skipCurrentElement();
         } else {
             error += i18n("Unknown tag \"%1\" during loading loop \"for\"", tagName.toString()) + QLatin1Char('\n');
-            qCDebug(LIBKSIEVE_LOG) << " SieveForEveryPartWidget::loadScript unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveForEveryPartWidget::loadScript unknown tagName " << tagName;
         }
     } else {
-        qCDebug(LIBKSIEVE_LOG) << " SieveForEveryPartWidget::loadScript problem during loading";
+        qCDebug(LIBKSIEVEUI_LOG) << " SieveForEveryPartWidget::loadScript problem during loading";
     }
 }
 

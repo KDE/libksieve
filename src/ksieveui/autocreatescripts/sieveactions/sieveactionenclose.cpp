@@ -79,7 +79,7 @@ void SieveActionEnclose::setParamWidgetValue(QXmlStreamReader &element, QWidget 
                 }
             } else {
                 unknownTagValue(tagValue, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveActionEnclose::setParamWidgetValue unknown tag value:" << tagValue;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveActionEnclose::setParamWidgetValue unknown tag value:" << tagValue;
             }
         } else if (tagName == QLatin1String("str")) {
             auto edit = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
@@ -92,7 +92,7 @@ void SieveActionEnclose::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             // implement in the future ?
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveActionEnclose::setParamWidgetValue unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveActionEnclose::setParamWidgetValue unknown tagName " << tagName;
         }
     }
 }

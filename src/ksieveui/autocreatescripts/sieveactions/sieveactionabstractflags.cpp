@@ -52,7 +52,7 @@ void SieveActionAbstractFlags::setParamWidgetValue(QXmlStreamReader &element, QW
             // implement in the future ?
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveActionAbstractFlags::setParamWidgetValue unknown tag :" << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveActionAbstractFlags::setParamWidgetValue unknown tag :" << tagName;
         }
     }
 }

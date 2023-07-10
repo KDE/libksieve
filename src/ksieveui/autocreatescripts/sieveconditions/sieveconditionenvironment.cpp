@@ -106,7 +106,7 @@ void SieveConditionEnvironment::setParamWidgetValue(QXmlStreamReader &element, Q
                 value->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
             } else {
                 tooManyArguments(tagName, index, 2, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionEnvironment::setParamWidgetValue to many argument " << index;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionEnvironment::setParamWidgetValue to many argument " << index;
             }
             ++index;
         } else if (tagName == QLatin1String("crlf")) {
@@ -116,7 +116,7 @@ void SieveConditionEnvironment::setParamWidgetValue(QXmlStreamReader &element, Q
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveActionSetVariable::setParamWidgetValue unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveActionSetVariable::setParamWidgetValue unknown tagName " << tagName;
         }
     }
     if (!commentStr.isEmpty()) {

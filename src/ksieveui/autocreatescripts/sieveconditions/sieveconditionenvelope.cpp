@@ -130,7 +130,7 @@ void SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWid
                 selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(tagValue, notCondition), name(), error);
             } else {
                 tooManyArguments(tagName, indexTag, 2, error);
-                qCDebug(LIBKSIEVE_LOG) << "SieveConditionEnvelope::setParamWidgetValue too many argument :" << indexTag;
+                qCDebug(LIBKSIEVEUI_LOG) << "SieveConditionEnvelope::setParamWidgetValue too many argument :" << indexTag;
             }
             ++indexTag;
         } else if (tagName == QLatin1String("str")) {
@@ -142,7 +142,7 @@ void SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWid
                 edit->setCode(AutoCreateScriptUtil::quoteStr(element.readElementText()));
             } else {
                 tooManyArguments(tagName, indexStr, 2, error);
-                qCDebug(LIBKSIEVE_LOG) << "SieveConditionEnvelope::setParamWidgetValue too many argument indexStr " << indexStr;
+                qCDebug(LIBKSIEVEUI_LOG) << "SieveConditionEnvelope::setParamWidgetValue too many argument indexStr " << indexStr;
             }
             ++indexStr;
         } else if (tagName == QLatin1String("list")) {
@@ -161,7 +161,7 @@ void SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWid
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveConditionEnvelope::setParamWidgetValue unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionEnvelope::setParamWidgetValue unknown tagName " << tagName;
         }
     }
     if (!commentStr.isEmpty()) {

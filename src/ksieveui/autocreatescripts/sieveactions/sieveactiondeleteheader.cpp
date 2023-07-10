@@ -83,7 +83,7 @@ void SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, 
                 value->setText(element.readElementText());
             } else {
                 tooManyArguments(tagName, index, 2, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveActionAddHeader::setParamWidgetValue too many argument :" << index;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveActionAddHeader::setParamWidgetValue too many argument :" << index;
             }
             ++index;
         } else if (tagName == QLatin1String("crlf")) {
@@ -94,7 +94,7 @@ void SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, 
             // implement in the future ?
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << "SieveActionAddHeader::setParamWidgetValue unknown tag " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << "SieveActionAddHeader::setParamWidgetValue unknown tag " << tagName;
         }
     }
 }

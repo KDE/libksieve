@@ -49,7 +49,7 @@ void SieveDateSpinBox::setType(KSieveUi::SelectDateWidget::DateType type)
         setRange(0, 6);
         break;
     default:
-        qCWarning(LIBKSIEVE_LOG) << "This type mustn't be selected " << mType;
+        qCWarning(LIBKSIEVEUI_LOG) << "This type mustn't be selected " << mType;
     }
 }
 
@@ -97,7 +97,7 @@ QString SieveDateSpinBox::convertValue() const
         str = QString::number(value());
         break;
     default:
-        qCWarning(LIBKSIEVE_LOG) << "This type mustn't be selected " << mType;
+        qCWarning(LIBKSIEVEUI_LOG) << "This type mustn't be selected " << mType;
         break;
     }
     return str;

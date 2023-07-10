@@ -117,7 +117,7 @@ void SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWid
             // implement in the future ?
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveActionSetVariable::setParamWidgetValue unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveActionSetVariable::setParamWidgetValue unknown tagName " << tagName;
         }
     }
 }

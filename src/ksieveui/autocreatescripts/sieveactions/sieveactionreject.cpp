@@ -53,7 +53,7 @@ void SieveActionReject::setParamWidgetValue(QXmlStreamReader &element, QWidget *
             // implement in the future ?
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveActionReject::setParamWidgetValue unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveActionReject::setParamWidgetValue unknown tagName " << tagName;
         }
     }
 }

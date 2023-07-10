@@ -97,7 +97,7 @@ void SieveConditionMetaDataExists::setParamWidgetValue(QXmlStreamReader &element
                 value->setText(AutoCreateScriptUtil::quoteStr(tagValue));
             } else {
                 tooManyArguments(tagName, index, 2, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaDataExists::setParamWidgetValue to many attribute " << index;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionServerMetaDataExists::setParamWidgetValue to many attribute " << index;
             }
             ++index;
         } else if (tagName == QLatin1String("crlf")) {
@@ -107,7 +107,7 @@ void SieveConditionMetaDataExists::setParamWidgetValue(QXmlStreamReader &element
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaDataExists::setParamWidgetValue unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionServerMetaDataExists::setParamWidgetValue unknown tagName " << tagName;
         }
     }
     if (!commentStr.isEmpty()) {

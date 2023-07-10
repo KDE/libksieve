@@ -69,7 +69,7 @@ void SieveActionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidget 
                 toMimeType->setCode(element.readElementText(), name(), error);
             } else {
                 tooManyArguments(tagName, index, 2, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveActionConvert::setParamWidgetValue too many argument :" << index;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveActionConvert::setParamWidgetValue too many argument :" << index;
             }
             ++index;
         } else if (tagName == QLatin1String("list")) {
@@ -83,7 +83,7 @@ void SieveActionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             // implement in the future ?
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << "SieveActionConvert::setParamWidgetValue unknown tag " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << "SieveActionConvert::setParamWidgetValue unknown tag " << tagName;
         }
     }
 }

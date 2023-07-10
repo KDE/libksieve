@@ -257,7 +257,7 @@ void SieveActionWidget::setLocaleVariable(const SieveGlobalVariableActionWidget:
         }
     } else {
         // error += i18n("Script contains unsupported feature \"%1\"", actionName) + QLatin1Char('\n');
-        // qCDebug(LIBKSIEVE_LOG) << "Action " << actionName << " not supported";
+        // qCDebug(LIBKSIEVEUI_LOG) << "Action " << actionName << " not supported";
     }
 }
 
@@ -272,7 +272,7 @@ void SieveActionWidget::setAction(const QString &actionName, QXmlStreamReader &e
         action->setComment(comment);
     } else {
         error += i18n("Script contains unsupported feature \"%1\"", actionName) + QLatin1Char('\n');
-        qCDebug(LIBKSIEVE_LOG) << "Action " << actionName << " not supported";
+        qCDebug(LIBKSIEVEUI_LOG) << "Action " << actionName << " not supported";
         element.skipCurrentElement();
     }
 }
@@ -391,10 +391,10 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                 element.skipCurrentElement();
                 // nothing
             } else {
-                qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript don't have name attribute " << tagName;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveActionWidgetLister::loadScript don't have name attribute " << tagName;
             }
         } else {
-            qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript Unknown tag name " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveActionWidgetLister::loadScript Unknown tag name " << tagName;
         }
     } else {
         bool firstAction = true;
@@ -405,7 +405,7 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                 if (element.attributes().hasAttribute(QLatin1String("name"))) {
                     const QString actionName = element.attributes().value(QLatin1String("name")).toString();
                     if (tagName == QLatin1String("control") && actionName == QLatin1String("if")) {
-                        qCDebug(LIBKSIEVE_LOG) << "We found an loop if in a loop if. Not supported";
+                        qCDebug(LIBKSIEVEUI_LOG) << "We found an loop if in a loop if. Not supported";
                         error += i18n("We detected a loop if in a loop if. It's not supported") + QLatin1Char('\n');
                     }
                     if (firstAction) {
@@ -417,7 +417,7 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                     w->setAction(actionName, element, comment, error);
                     comment.clear();
                 } else {
-                    qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript don't have name attribute " << tagName;
+                    qCDebug(LIBKSIEVEUI_LOG) << " SieveActionWidgetLister::loadScript don't have name attribute " << tagName;
                 }
                 previousActionWasAComment = false;
             } else if (tagName == QLatin1String("comment")) {
@@ -433,7 +433,7 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                 }
                 element.skipCurrentElement();
             } else {
-                qCDebug(LIBKSIEVE_LOG) << " SieveActionWidgetLister::loadScript unknown tagName " << tagName;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveActionWidgetLister::loadScript unknown tagName " << tagName;
             }
         }
     }

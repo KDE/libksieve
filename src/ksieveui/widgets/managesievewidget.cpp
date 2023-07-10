@@ -193,7 +193,7 @@ void ManageSieveWidget::slotCancelFetch()
             job->kill(KJob::EmitResult);
         }
     } else {
-        qCWarning(LIBKSIEVE_LOG) << "ManageSieveWidget::slotCancelFetch(): item is not selected";
+        qCWarning(LIBKSIEVEUI_LOG) << "ManageSieveWidget::slotCancelFetch(): item is not selected";
     }
 }
 
@@ -377,7 +377,7 @@ void ManageSieveWidget::changeActiveScript(QTreeWidgetItem *item, bool activate,
 
 void ManageSieveWidget::slotGenerateGlobalScriptError(const QString &errorStr)
 {
-    qCWarning(LIBKSIEVE_LOG) << "MManageSieveWidget::slotGenerateGlobalScriptError: error: " << errorStr;
+    qCWarning(LIBKSIEVEUI_LOG) << "MManageSieveWidget::slotGenerateGlobalScriptError: error: " << errorStr;
     slotRefresh();
 }
 
@@ -449,7 +449,7 @@ void ManageSieveWidget::slotRenameScript()
 
 void ManageSieveWidget::slotRenameFinished(const QUrl &oldUrl, const QUrl &newUrl, const QString &errorStr, bool success)
 {
-    qCDebug(LIBKSIEVE_LOG) << " void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)" << success;
+    qCDebug(LIBKSIEVEUI_LOG) << " void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)" << success;
     if (!success) {
         KMessageBox::error(this, errorStr, i18n("Rename Script"));
     } else {
@@ -461,7 +461,7 @@ void ManageSieveWidget::slotRenameFinished(const QUrl &oldUrl, const QUrl &newUr
 void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)
 {
     Q_UNUSED(job)
-    qCDebug(LIBKSIEVE_LOG) << " void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)" << success;
+    qCDebug(LIBKSIEVEUI_LOG) << " void ManageSieveWidget::slotRenameResult(KManageSieve::SieveJob *job, bool success)" << success;
     slotRefresh();
 }
 
@@ -539,15 +539,15 @@ void ManageSieveWidget::slotUpdateButtons()
 
 void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &listScript, const QString &activeScript)
 {
-    // qCDebug(LIBKSIEVE_LOG) << "void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &listScript, const QString
+    // qCDebug(LIBKSIEVEUI_LOG) << "void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &listScript, const QString
     // &activeScript) success: " << success
     //                       << " listScript" << listScript;
     if (d->mClearAll) {
         return;
     }
-    // qCDebug(LIBKSIEVE_LOG) << " After mClear All";
+    // qCDebug(LIBKSIEVEUI_LOG) << " After mClear All";
     QTreeWidgetItem *parent = mJobs[job];
-    // qCDebug(LIBKSIEVE_LOG) << " parent " << parent;
+    // qCDebug(LIBKSIEVEUI_LOG) << " parent " << parent;
     if (!parent) {
         return;
     }
@@ -616,7 +616,7 @@ void ManageSieveWidget::setActiveScripts(KSieveCore::ParseUserScriptJob *job)
     (static_cast<SieveTreeWidgetItem *>(parent))->stopAnimation();
 
     if (!job->error().isEmpty()) {
-        qCWarning(LIBKSIEVE_LOG) << job->error();
+        qCWarning(LIBKSIEVEUI_LOG) << job->error();
         return;
     }
 

@@ -30,12 +30,12 @@ void SelectConvertParameterWidget::setCode(const QStringList &code, QString &err
     const auto codeCount{code.count()};
     if (codeCount < 2) {
         error += i18n("Not enough arguments for SelectConvertParameterWidget. Expected 2 arguments.") + QLatin1Char('\n');
-        qCDebug(LIBKSIEVE_LOG) << " SelectConvertParameterWidget::setCode parsing error ?";
+        qCDebug(LIBKSIEVEUI_LOG) << " SelectConvertParameterWidget::setCode parsing error ?";
         return;
     }
     if (codeCount > 2) {
         error += i18n("Too many arguments for SelectConvertParameterWidget, \"%1\"", code.count()) + QLatin1Char('\n');
-        qCDebug(LIBKSIEVE_LOG) << " too many argument " << code.count();
+        qCDebug(LIBKSIEVEUI_LOG) << " too many argument " << code.count();
     }
 
     QString widthStr = code.at(0);

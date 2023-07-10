@@ -241,7 +241,7 @@ void SieveEditorWidget::print()
     case GraphicMode:
         break;
     case Unknown:
-        qCDebug(LIBKSIEVE_LOG) << " Unknown mode";
+        qCDebug(LIBKSIEVEUI_LOG) << " Unknown mode";
         break;
     }
 }
@@ -258,7 +258,7 @@ void SieveEditorWidget::printPreview()
     case GraphicMode:
         break;
     case Unknown:
-        qCDebug(LIBKSIEVE_LOG) << " Unknown mode";
+        qCDebug(LIBKSIEVEUI_LOG) << " Unknown mode";
         break;
     }
 }
@@ -404,7 +404,7 @@ QString SieveEditorWidget::script() const
         currentScript = mGraphicalModeWidget->currentscript();
         break;
     case Unknown:
-        qCDebug(LIBKSIEVE_LOG) << " Unknown Mode!";
+        qCDebug(LIBKSIEVEUI_LOG) << " Unknown Mode!";
         break;
     }
     return currentScript;
@@ -538,7 +538,7 @@ void SieveEditorWidget::slotSaveAs()
         mGraphicalModeWidget->saveAs(mScriptName->text());
         break;
     case Unknown:
-        qCDebug(LIBKSIEVE_LOG) << " Unknown mode";
+        qCDebug(LIBKSIEVEUI_LOG) << " Unknown mode";
         break;
     }
 }
@@ -553,7 +553,7 @@ void SieveEditorWidget::slotImport()
         mGraphicalModeWidget->slotImport();
         break;
     case Unknown:
-        qCDebug(LIBKSIEVE_LOG) << " Unknown mode";
+        qCDebug(LIBKSIEVEUI_LOG) << " Unknown mode";
         break;
     }
 }
@@ -582,7 +582,7 @@ void SieveEditorWidget::slotSwitchMode()
             }
         } else {
             mTextModeWidget->showEditorWarning();
-            qCDebug(LIBKSIEVE_LOG) << "Impossible to parse file";
+            qCDebug(LIBKSIEVEUI_LOG) << "Impossible to parse file";
         }
         break;
     }
@@ -593,7 +593,7 @@ void SieveEditorWidget::slotSwitchMode()
         break;
     }
     case Unknown:
-        qCDebug(LIBKSIEVE_LOG) << " Unknown mode";
+        qCDebug(LIBKSIEVEUI_LOG) << " Unknown mode";
         break;
     }
 }

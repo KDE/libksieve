@@ -114,7 +114,7 @@ void SieveConditionVirusTest::setParamWidgetValue(QXmlStreamReader &element, QWi
                 }
             } else {
                 unknownTagValue(tagValue, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionVirusTest::setParamWidgetValue unknown tagValue " << tagValue;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionVirusTest::setParamWidgetValue unknown tagValue " << tagValue;
             }
         } else if (tagName == QLatin1String("str")) {
             auto spinbox = w->findChild<QSpinBox *>(QStringLiteral("value"));
@@ -126,7 +126,7 @@ void SieveConditionVirusTest::setParamWidgetValue(QXmlStreamReader &element, QWi
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveConditionVirusTest::setParamWidgetValue unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionVirusTest::setParamWidgetValue unknown tagName " << tagName;
         }
     }
     if (!commentStr.isEmpty()) {

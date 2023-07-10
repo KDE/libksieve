@@ -110,7 +110,7 @@ void SieveConditionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidg
                 toMimeType->setCode(element.readElementText(), name(), error);
             } else {
                 tooManyArguments(tagName, index, 2, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveActionConvert::setParamWidgetValue too many argument :" << index;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveActionConvert::setParamWidgetValue too many argument :" << index;
             }
             ++index;
         } else if (tagName == QLatin1String("list")) {
@@ -123,7 +123,7 @@ void SieveConditionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidg
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << "SieveActionConvert::setParamWidgetValue unknown tag " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << "SieveActionConvert::setParamWidgetValue unknown tag " << tagName;
         }
     }
     if (!commentStr.isEmpty()) {

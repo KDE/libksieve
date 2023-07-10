@@ -113,7 +113,7 @@ void SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
                 subject->setText(AutoCreateScriptUtil::strValue(element));
             } else {
                 unknownTagValue(tagValue, error);
-                qCDebug(LIBKSIEVE_LOG) << "SieveActionVacation::setParamWidgetValue unknown tagValue :" << tagValue;
+                qCDebug(LIBKSIEVEUI_LOG) << "SieveActionVacation::setParamWidgetValue unknown tagValue :" << tagValue;
             }
         } else if (tagName == QLatin1String("num")) {
             auto day = w->findChild<QSpinBox *>(QStringLiteral("day"));
@@ -129,7 +129,7 @@ void SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
             // implement in the future ?
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveActionVacation::setParamWidgetValue unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveActionVacation::setParamWidgetValue unknown tagName " << tagName;
         }
     }
 }

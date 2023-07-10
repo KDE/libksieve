@@ -111,7 +111,7 @@ void SieveConditionDate::setParamWidgetValue(QXmlStreamReader &element, QWidget 
                 value = element.readElementText();
             } else {
                 tooManyArguments(tagName, index, 3, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionDate::setParamWidgetValue too many argument :" << index;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionDate::setParamWidgetValue too many argument :" << index;
             }
             ++index;
         } else if (tagName == QLatin1String("tag")) {
@@ -124,7 +124,7 @@ void SieveConditionDate::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << "SieveConditionDate::setParamWidgetValue unknown tag " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << "SieveConditionDate::setParamWidgetValue unknown tag " << tagName;
         }
     }
     if (!commentStr.isEmpty()) {

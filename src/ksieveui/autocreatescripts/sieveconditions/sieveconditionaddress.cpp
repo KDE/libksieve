@@ -116,7 +116,7 @@ void SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
                 edit->setCode(AutoCreateScriptUtil::quoteStr(element.readElementText()));
             } else {
                 tooManyArguments(tagName, indexStr, 2, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionAddress::setParamWidgetValue too many argument :" << index;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionAddress::setParamWidgetValue too many argument :" << index;
             }
             ++indexStr;
         } else if (tagName == QLatin1String("list")) {
@@ -128,7 +128,7 @@ void SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
                 edit->setCode(AutoCreateScriptUtil::listValueToStr(element));
             } else {
                 tooManyArguments(tagName, indexStr, 2, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionAddress::setParamWidgetValue too many argument :" << index;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionAddress::setParamWidgetValue too many argument :" << index;
             }
             ++indexStr;
         } else if (tagName == QLatin1String("crlf")) {
@@ -138,7 +138,7 @@ void SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveConditionAddress::setParamWidgetValue unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionAddress::setParamWidgetValue unknown tagName " << tagName;
         }
     }
     if (!commentStr.isEmpty()) {
@@ -166,7 +166,7 @@ void SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
         }
     } else if (lstTagValue.count() > 2) {
         tooManyArguments(QStringLiteral("tag"), lstTagValue.count(), 2, error);
-        qCDebug(LIBKSIEVE_LOG) << "SieveConditionAddress::setParamWidgetValue too many argument :" << lstTagValue.count();
+        qCDebug(LIBKSIEVEUI_LOG) << "SieveConditionAddress::setParamWidgetValue too many argument :" << lstTagValue.count();
     }
 }
 

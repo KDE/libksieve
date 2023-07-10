@@ -269,7 +269,7 @@ void SieveScriptBlockWidget::loadScript(QXmlStreamReader &element, bool onlyActi
                 mScriptActionLister->loadScript(element, false, error);
             } else {
                 if (tagName != QLatin1String("crlf")) {
-                    qCDebug(LIBKSIEVE_LOG) << " e.tag" << tagName;
+                    qCDebug(LIBKSIEVEUI_LOG) << " e.tag" << tagName;
                 } else {
                     element.skipCurrentElement();
                 }

@@ -55,7 +55,7 @@ void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
                     copy->setChecked(true);
                 } else {
                     error += i18n("Action \"fileinto\" has \"copy\" argument but current server does not support it") + QLatin1Char('\n');
-                    qCDebug(LIBKSIEVE_LOG) << "SieveActionFileInto::setParamWidgetValue has not copy support ";
+                    qCDebug(LIBKSIEVEUI_LOG) << "SieveActionFileInto::setParamWidgetValue has not copy support ";
                 }
             } else if (tagValue == QLatin1String("create")) {
                 if (mHasMailBoxSupport) {
@@ -63,11 +63,11 @@ void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
                     create->setChecked(true);
                 } else {
                     serverDoesNotSupportFeatures(QStringLiteral("create"), error);
-                    qCDebug(LIBKSIEVE_LOG) << "SieveActionFileInto::setParamWidgetValue server has not create support ";
+                    qCDebug(LIBKSIEVEUI_LOG) << "SieveActionFileInto::setParamWidgetValue server has not create support ";
                 }
             } else {
                 serverDoesNotSupportFeatures(tagValue, error);
-                qCDebug(LIBKSIEVE_LOG) << "SieveActionFileInto::setParamWidgetValue server has not flags support ";
+                qCDebug(LIBKSIEVEUI_LOG) << "SieveActionFileInto::setParamWidgetValue server has not flags support ";
             }
         } else if (tagName == QLatin1String("str")) {
             const QString tagValue = element.readElementText();
@@ -81,7 +81,7 @@ void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
             // implement in the future ?
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveActionFileInto::setParamWidgetValue unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveActionFileInto::setParamWidgetValue unknown tagName " << tagName;
         }
     }
 }

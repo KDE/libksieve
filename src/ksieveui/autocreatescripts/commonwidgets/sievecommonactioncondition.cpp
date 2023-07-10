@@ -37,7 +37,7 @@ KSieveCore::SieveImapAccountSettings SieveCommonActionCondition::sieveImapAccoun
     if (mSieveGraphicalModeWidget) {
         return mSieveGraphicalModeWidget->sieveImapAccountSettings();
     }
-    qCWarning(LIBKSIEVE_LOG) << "SieveCommonActionCondition::sieveImapAccountSettings Problem during initialize mSieveGraphicalModeWidget ";
+    qCWarning(LIBKSIEVEUI_LOG) << "SieveCommonActionCondition::sieveImapAccountSettings Problem during initialize mSieveGraphicalModeWidget ";
     return {};
 }
 
@@ -46,7 +46,7 @@ QStringList SieveCommonActionCondition::sieveCapabilities() const
     if (mSieveGraphicalModeWidget) {
         return mSieveGraphicalModeWidget->sieveCapabilities();
     }
-    qCWarning(LIBKSIEVE_LOG) << "SieveCommonActionCondition::sieveCapabilities Problem during initialize mSieveGraphicalModeWidget ";
+    qCWarning(LIBKSIEVEUI_LOG) << "SieveCommonActionCondition::sieveCapabilities Problem during initialize mSieveGraphicalModeWidget ";
     return {};
 }
 

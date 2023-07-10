@@ -139,11 +139,11 @@ void SieveConditionSpamTest::setParamWidgetValue(QXmlStreamReader &element, QWid
                     checkbox->setChecked(true);
                 } else {
                     serverDoesNotSupportFeatures(QStringLiteral("percent"), error);
-                    qCDebug(LIBKSIEVE_LOG) << " SieveConditionSpamTest::setParamWidgetValue server has not percent support";
+                    qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionSpamTest::setParamWidgetValue server has not percent support";
                 }
             } else {
                 unknownTagValue(tagValue, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionSpamTest::setParamWidgetValue unknown tagvalue " << tagValue;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionSpamTest::setParamWidgetValue unknown tagvalue " << tagValue;
             }
         } else if (tagName == QLatin1String("str")) {
             auto spinbox = w->findChild<QSpinBox *>(QStringLiteral("value"));
@@ -155,7 +155,7 @@ void SieveConditionSpamTest::setParamWidgetValue(QXmlStreamReader &element, QWid
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveSpamTest::setParamWidgetValue unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveSpamTest::setParamWidgetValue unknown tagName " << tagName;
         }
     }
     if (!commentStr.isEmpty()) {

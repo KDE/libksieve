@@ -144,7 +144,7 @@ void SieveConditionServerMetaData::setParamWidgetValue(QXmlStreamReader &element
             }
             default:
                 tooManyArguments(tagName, index, 3, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaData::setParamWidgetValue too many argument " << index;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionServerMetaData::setParamWidgetValue too many argument " << index;
                 break;
             }
             ++index;
@@ -158,7 +158,7 @@ void SieveConditionServerMetaData::setParamWidgetValue(QXmlStreamReader &element
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveConditionServerMetaData::setParamWidgetValue unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionServerMetaData::setParamWidgetValue unknown tagName " << tagName;
         }
     }
     if (!commentStr.isEmpty()) {

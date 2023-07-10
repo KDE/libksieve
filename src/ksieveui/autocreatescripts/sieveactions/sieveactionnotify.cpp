@@ -77,7 +77,7 @@ void SieveActionNotify::setParamWidgetValue(QXmlStreamReader &element, QWidget *
                 }
             } else {
                 unknownTagValue(tagValue, error);
-                qCDebug(LIBKSIEVE_LOG) << " SieveActionNotify::setParamWidgetValue unknown tagValue" << tagValue;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveActionNotify::setParamWidgetValue unknown tagValue" << tagValue;
             }
         } else if (tagName == QLatin1String("crlf")) {
             element.skipCurrentElement();
@@ -90,7 +90,7 @@ void SieveActionNotify::setParamWidgetValue(QXmlStreamReader &element, QWidget *
             method->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveActionNotify::setParamWidgetValue unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveActionNotify::setParamWidgetValue unknown tagName " << tagName;
         }
     }
 }

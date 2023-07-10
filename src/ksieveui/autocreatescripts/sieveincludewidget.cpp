@@ -93,12 +93,12 @@ void SieveIncludeActionWidget::loadScript(QXmlStreamReader &element, QString &er
             } else if (tagValue == QLatin1String("once")) {
                 mOnce->setChecked(true);
             } else {
-                qCDebug(LIBKSIEVE_LOG) << " SieveIncludeActionWidget::loadScript unknown tagValue " << tagValue;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveIncludeActionWidget::loadScript unknown tagValue " << tagValue;
             }
         } else if (tagName == QLatin1String("str")) {
             mIncludeFileName->setText(element.readElementText());
         } else {
-            qCDebug(LIBKSIEVE_LOG) << " SieveIncludeActionWidget::loadScript unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveIncludeActionWidget::loadScript unknown tagName " << tagName;
         }
     }
 }

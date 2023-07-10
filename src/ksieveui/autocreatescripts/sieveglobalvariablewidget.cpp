@@ -126,7 +126,7 @@ void SieveGlobalVariableActionWidget::loadScript(QXmlStreamReader &element, QStr
         } else {
             const QString result = tagName.toString();
             error += i18n("Unknown tag \"%1\" during loading of variables.", result) + QLatin1Char('\n');
-            qCDebug(LIBKSIEVE_LOG) << " SieveGlobalVariableActionWidget::loadScript unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveGlobalVariableActionWidget::loadScript unknown tagName " << tagName;
         }
     }
 }
@@ -301,11 +301,11 @@ SieveGlobalVariableActionWidget::VariableElement SieveGlobalVariableLister::load
             } else if (index == 1) {
                 variableValue = element.readElementText();
             } else {
-                qCDebug(LIBKSIEVE_LOG) << " SieveGlobalVariableLister::loadSetVariable too many argument:" << index;
+                qCDebug(LIBKSIEVEUI_LOG) << " SieveGlobalVariableLister::loadSetVariable too many argument:" << index;
             }
             ++index;
         } else {
-            qCDebug(LIBKSIEVE_LOG) << " SieveGlobalVariableLister::loadSetVariable unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveGlobalVariableLister::loadSetVariable unknown tagName " << tagName;
         }
     }
 

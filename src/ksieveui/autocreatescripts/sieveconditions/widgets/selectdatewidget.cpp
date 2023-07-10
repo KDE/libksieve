@@ -177,7 +177,7 @@ SelectDateWidget::DateType SelectDateWidget::dateTypeFromString(const QString &s
     } else if (str == QLatin1String("weekday")) {
         return Weekday;
     } else {
-        qCDebug(LIBKSIEVE_LOG) << " date type unknown :" << str;
+        qCDebug(LIBKSIEVEUI_LOG) << " date type unknown :" << str;
     }
     return Year;
 }

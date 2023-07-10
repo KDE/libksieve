@@ -145,7 +145,7 @@ void SieveConditionHasFlag::setParamWidgetValue(QXmlStreamReader &element, QWidg
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);
-            qCDebug(LIBKSIEVE_LOG) << " SieveConditionExists::setParamWidgetValue unknown tagName " << tagName;
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionExists::setParamWidgetValue unknown tagName " << tagName;
         }
     }
     if (!commentStr.isEmpty()) {
@@ -165,11 +165,11 @@ void SieveConditionHasFlag::setParamWidgetValue(QXmlStreamReader &element, QWidg
             auto value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
             value->setCode(strList.at(1));
         } else {
-            qCDebug(LIBKSIEVE_LOG) << " SieveConditionHasFlag has not variable support";
+            qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionHasFlag has not variable support";
         }
         break;
     default:
-        qCDebug(LIBKSIEVE_LOG) << " SieveConditionHasFlag::setParamWidgetValue str list count not correct :" << strList.count();
+        qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionHasFlag::setParamWidgetValue str list count not correct :" << strList.count();
         break;
     }
 }

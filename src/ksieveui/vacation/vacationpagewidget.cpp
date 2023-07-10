@@ -103,7 +103,7 @@ void VacationPageWidget::slotGetResult(const QString &serverName,
     if (mServerName != serverName) {
         return;
     }
-    qCDebug(LIBKSIEVE_LOG) << serverName << sieveCapabilities << Qt::endl << scriptName << "(" << active << ")" << Qt::endl;
+    qCDebug(LIBKSIEVEUI_LOG) << serverName << sieveCapabilities << Qt::endl << scriptName << "(" << active << ")" << Qt::endl;
 
     if (mUrl.scheme() == QLatin1String("sieve") && !sieveCapabilities.contains(QLatin1String("vacation"))) {
         mStackWidget->setCurrentIndex(ScriptNotSupported);
