@@ -5,6 +5,7 @@
 */
 
 #pragma once
+#include "ksievecore_export.h"
 #include <KMime/HeaderParsing>
 #include <QString>
 
@@ -21,17 +22,17 @@ enum MailAction {
     CopyTo,
 };
 
-Q_REQUIRED_RESULT QString defaultMessageText();
-Q_REQUIRED_RESULT QString defaultSubject();
-Q_REQUIRED_RESULT MailAction defaultMailAction();
-Q_REQUIRED_RESULT int defaultNotificationInterval();
-Q_REQUIRED_RESULT KMime::Types::AddrSpecList defaultMailAliases();
-Q_REQUIRED_RESULT bool defaultSendForSpam();
-Q_REQUIRED_RESULT QString defaultDomainName();
-Q_REQUIRED_RESULT QDate defaultStartDate();
-Q_REQUIRED_RESULT QDate defaultEndDate();
+Q_REQUIRED_RESULT KSIEVECORE_EXPORT QString defaultMessageText();
+Q_REQUIRED_RESULT KSIEVECORE_EXPORT QString defaultSubject();
+Q_REQUIRED_RESULT KSIEVECORE_EXPORT MailAction defaultMailAction();
+Q_REQUIRED_RESULT KSIEVECORE_EXPORT int defaultNotificationInterval();
+Q_REQUIRED_RESULT KSIEVECORE_EXPORT KMime::Types::AddrSpecList defaultMailAliases();
+Q_REQUIRED_RESULT KSIEVECORE_EXPORT bool defaultSendForSpam();
+Q_REQUIRED_RESULT KSIEVECORE_EXPORT QString defaultDomainName();
+Q_REQUIRED_RESULT KSIEVECORE_EXPORT QDate defaultStartDate();
+Q_REQUIRED_RESULT KSIEVECORE_EXPORT QDate defaultEndDate();
 
-struct Vacation {
+struct KSIEVECORE_EXPORT Vacation {
     Vacation() = default;
 
     Q_REQUIRED_RESULT bool isValid() const
@@ -55,14 +56,14 @@ struct Vacation {
     bool sendForSpam = true;
 };
 
-Q_REQUIRED_RESULT QString composeScript(const Vacation &vacation);
+Q_REQUIRED_RESULT KSIEVECORE_EXPORT QString composeScript(const Vacation &vacation);
 
-Q_REQUIRED_RESULT KSieveCore::VacationUtils::Vacation parseScript(const QString &script);
+Q_REQUIRED_RESULT KSIEVECORE_EXPORT KSieveCore::VacationUtils::Vacation parseScript(const QString &script);
 
 Q_REQUIRED_RESULT QString mergeRequireLine(const QString &script, const QString &scriptUpdate);
 
 Q_REQUIRED_RESULT QString updateVacationBlock(const QString &oldScript, const QString &newScript);
 
-Q_REQUIRED_RESULT QString mailAction(MailAction action);
+Q_REQUIRED_RESULT KSIEVECORE_EXPORT QString mailAction(MailAction action);
 }
 }
