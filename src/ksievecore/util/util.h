@@ -36,7 +36,7 @@ KSIEVECORE_EXPORT bool allowOutOfOfficeSettings();
 struct KSIEVECORE_EXPORT AccountInfo {
     KSieveCore::SieveImapAccountSettings sieveImapAccountSettings;
     QUrl sieveUrl;
-    KSIEVECORE_EXPORT bool operator==(const AccountInfo &other) const;
+    bool operator==(const AccountInfo &other) const;
 };
 KSIEVECORE_EXPORT QDebug operator<<(QDebug d, const Util::AccountInfo &info);
 
