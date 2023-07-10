@@ -61,6 +61,8 @@ target_sources(KPim6KSieveCore PRIVATE
     vacation/vacationcheckjob.h
     vacation/searchserverwithvacationsupportjob.cpp
     vacation/searchserverwithvacationsupportjob.h
+    vacation/multiimapvacationmanager.h
+    vacation/multiimapvacationmanager.cpp
     )
 
 ecm_qt_declare_logging_category(KPim6KSieveCore HEADER libksievecore_debug.h IDENTIFIER LIBKSIEVECORE_LOG CATEGORY_NAME org.kde.pim.libksieve.core
@@ -151,6 +153,7 @@ ecm_generate_headers(ksievecore_Camelcasevacation_HEADERS
     VacationUtils
     VacationCreateScriptJob
     VacationCheckJob
+    MultiImapVacationManager
     REQUIRED_HEADERS ksievecore_vacation_HEADERS
     PREFIX KSieveCore
     RELATIVE vacation

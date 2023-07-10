@@ -6,7 +6,7 @@
 
 #include "vacationmanager.h"
 #include "ksieveui/vacation/multiimapvacationdialog.h"
-#include "ksieveui/vacation/multiimapvacationmanager.h"
+#include <KSieveCore/MultiImapVacationManager>
 #include <KSieveCore/VacationCreateScriptJob>
 
 #include <KLocalizedString>
@@ -26,7 +26,7 @@ public:
 
     QWidget *const mWidget;
     QPointer<KSieveUi::MultiImapVacationDialog> mMultiImapVacationDialog = nullptr;
-    QPointer<KSieveUi::MultiImapVacationManager> mCheckVacation = nullptr;
+    QPointer<KSieveCore::MultiImapVacationManager> mCheckVacation = nullptr;
     bool mQuestionAsked = false;
 };
 
@@ -34,8 +34,8 @@ VacationManager::VacationManager(KSieveCore::SieveImapPasswordProvider *password
     : QObject(parent)
     , d(new KSieveUi::VacationManagerPrivate(parent))
 {
-    d->mCheckVacation = new KSieveUi::MultiImapVacationManager(passwordProvider, this);
-    connect(d->mCheckVacation.data(), &KSieveUi::MultiImapVacationManager::scriptActive, this, &VacationManager::slotUpdateVacationScriptStatus);
+    d->mCheckVacation = new KSieveCore::MultiImapVacationManager(passwordProvider, this);
+    connect(d->mCheckVacation.data(), &KSieveCore::MultiImapVacationManager::scriptActive, this, &VacationManager::slotUpdateVacationScriptStatus);
 }
 
 VacationManager::~VacationManager() = default;

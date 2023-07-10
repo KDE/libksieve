@@ -15,7 +15,7 @@
 #include <managescriptsjob/generateglobalscriptjob.h>
 #include <managescriptsjob/parseuserscriptjob.h>
 
-#include <ksievecore/util/util.h>
+#include <KSieveCore/Util>
 
 #include <KLocalizedString>
 #include <KMessageBox>

@@ -5,8 +5,8 @@
 */
 
 #include "multiimapvacationdialog.h"
-#include "multiimapvacationmanager.h"
 #include "vacationpagewidget.h"
+#include <KSieveCore/MultiImapVacationManager>
 #include <KSieveCore/SearchServerWithVacationSupportJob>
 
 #include <KLocalizedString>
@@ -37,10 +37,10 @@ public:
     QList<KSieveCore::VacationCreateScriptJob *> mListCreateJob;
     QTabWidget *mTabWidget = nullptr;
     QStackedWidget *mStackedWidget = nullptr;
-    MultiImapVacationManager *mVacationManager = nullptr;
+    KSieveCore::MultiImapVacationManager *mVacationManager = nullptr;
 };
 
-MultiImapVacationDialog::MultiImapVacationDialog(MultiImapVacationManager *manager, QWidget *parent)
+MultiImapVacationDialog::MultiImapVacationDialog(KSieveCore::MultiImapVacationManager *manager, QWidget *parent)
     : QDialog(parent)
     , d(new KSieveUi::MultiImapVacationDialogPrivate)
 {

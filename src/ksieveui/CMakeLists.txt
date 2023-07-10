@@ -15,7 +15,7 @@ if(BUILD_TESTING)
     add_subdirectory(editor/tests)
     add_subdirectory(editor/autotests)
     add_subdirectory(autocreatescripts/tests)
-    # REACTIVATE add_subdirectory(vacation/autotests)
+    # TODO reactivate add_subdirectory(vacation/autotests)
     add_subdirectory(scriptsparsing/tests)
     add_subdirectory(sievescriptdebugger/autotests)
     add_subdirectory(sievescriptdebugger/tests)
@@ -31,7 +31,6 @@ target_sources(KPim6KSieveUi PRIVATE
     vacation/multiimapvacationdialog.cpp
     vacation/vacationpagewidget.cpp
     vacation/vacationwarningwidget.cpp
-    vacation/multiimapvacationmanager.cpp
     vacation/vacationmanager.cpp
     vacation/vacationmailactionwidget.cpp
     )
@@ -228,7 +227,6 @@ target_sources(KPim6KSieveUi PRIVATE
     vacation/vacationmanager.h
     vacation/vacationpagewidget.h
     vacation/vacationeditwidget.h
-    vacation/multiimapvacationmanager.h
     autocreatescripts/sieveforeverypartwidget.h
     autocreatescripts/sievepreviewgeneratedcodewidget.h
     autocreatescripts/sievescriptdescriptiondialog.h
@@ -404,7 +402,6 @@ ecm_generate_headers(ksieveui_Camelcaseeditor_HEADERS
 ecm_generate_headers(ksieveui_Camelcasevacation_HEADERS
     HEADER_NAMES
     VacationManager
-    MultiImapVacationManager
     MultiImapVacationDialog
     REQUIRED_HEADERS ksieveui_vacation_HEADERS
     PREFIX KSieveUi

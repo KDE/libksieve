@@ -6,16 +6,16 @@
 
 #include "multiimapvacationmanager.h"
 #include <KSieveCore/SearchServerWithVacationSupportJob>
+#include <KSieveCore/Util>
 #include <KSieveCore/VacationCheckJob>
 #include <kmanagesieve/sievejob.h>
-#include <ksievecore/util/util.h>
 #include <managescriptsjob/checkkolabkep14supportjob.h>
 #include <managescriptsjob/parseuserscriptjob.h>
 
-#include "libksieveui_debug.h"
+#include "libksievecore_debug.h"
 #include <QVariant>
 
-using namespace KSieveUi;
+using namespace KSieveCore;
 MultiImapVacationManager::MultiImapVacationManager(KSieveCore::SieveImapPasswordProvider *passwordProvider, QObject *parent)
     : QObject(parent)
     , mPasswordProvider(passwordProvider)
@@ -107,7 +107,7 @@ bool MultiImapVacationManager::kep14Support(const QString &serverName) const
     if (mKep14Support.contains(serverName)) {
         return mKep14Support[serverName];
     } else {
-        qCWarning(LIBKSIEVE_LOG) << "We don't know the KEP:14 support for this server." << serverName;
+        qCWarning(LIBKSIEVECORE_LOG) << "We don't know the KEP:14 support for this server." << serverName;
     }
     return false;
 }

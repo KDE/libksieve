@@ -5,13 +5,13 @@
 */
 
 #pragma once
-#include "ksievecore_private_export.h"
+#include "ksievecore_export.h"
 #include <QString>
 #include <ksieve/scriptbuilder.h>
 class QXmlStreamWriter;
 namespace KSieveCore
 {
-class KSIEVECORE_TESTS_EXPORT XMLPrintingScriptBuilder : public KSieve::ScriptBuilder
+class KSIEVECORE_EXPORT XMLPrintingScriptBuilder : public KSieve::ScriptBuilder
 {
 public:
     XMLPrintingScriptBuilder();

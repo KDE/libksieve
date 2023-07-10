@@ -17,12 +17,12 @@ namespace KSieveCore
 {
 class SieveImapAccountSettings;
 class VacationCreateScriptJob;
+class MultiImapVacationManager;
 }
 namespace KSieveUi
 {
 class VacationEditWidget;
 class VacationWarningWidget;
-class MultiImapVacationManager;
 class VacationPageWidget : public QWidget
 {
     Q_OBJECT
@@ -34,7 +34,7 @@ public:
     void setServerName(const QString &serverName);
     Q_REQUIRED_RESULT KSieveCore::VacationCreateScriptJob *writeScript(bool &errorFound);
     void setDefault();
-    void setVacationManager(MultiImapVacationManager *vacationManager);
+    void setVacationManager(KSieveCore::MultiImapVacationManager *vacationManager);
     void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account);
 
     bool wasChanged() const;
@@ -49,7 +49,7 @@ private:
     QStackedWidget *mStackWidget = nullptr;
     VacationEditWidget *mVacationEditWidget = nullptr;
     VacationWarningWidget *mVacationWarningWidget = nullptr;
-    MultiImapVacationManager *mVacationManager = nullptr;
+    KSieveCore::MultiImapVacationManager *mVacationManager = nullptr;
     PageType mPageScript = Script;
     bool mWasActive = false;
     bool mHasDateSupport = false;

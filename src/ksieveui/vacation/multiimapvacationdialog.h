@@ -7,17 +7,17 @@
 #pragma once
 
 #include "ksieveui_export.h"
+#include <KSieveCore/Util>
 #include <QDialog>
-#include <ksievecore/util/util.h>
 #include <memory>
 class QDialogButtonBox;
 namespace KSieveCore
 {
 class VacationCreateScriptJob;
+class MultiImapVacationManager;
 }
 namespace KSieveUi
 {
-class MultiImapVacationManager;
 class MultiImapVacationDialogPrivate;
 /**
  * @brief The MultiImapVacationDialog class
@@ -27,7 +27,7 @@ class KSIEVEUI_EXPORT MultiImapVacationDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit MultiImapVacationDialog(MultiImapVacationManager *manager, QWidget *parent = nullptr);
+    explicit MultiImapVacationDialog(KSieveCore::MultiImapVacationManager *manager, QWidget *parent = nullptr);
     ~MultiImapVacationDialog() override;
 
     Q_REQUIRED_RESULT QList<KSieveCore::VacationCreateScriptJob *> listCreateJob() const;

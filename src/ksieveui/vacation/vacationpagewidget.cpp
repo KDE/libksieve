@@ -5,12 +5,12 @@
 */
 
 #include "vacationpagewidget.h"
-#include "multiimapvacationmanager.h"
-#include "sieve-vacation.h"
 #include "vacationeditwidget.h"
 #include "vacationwarningwidget.h"
+#include <KSieveCore/MultiImapVacationManager>
 #include <KSieveCore/VacationCreateScriptJob>
 #include <KSieveCore/VacationUtils>
+#include <ksievecore/sieve-vacation.h>
 #include <managescriptsjob/parseuserscriptjob.h>
 
 #include <kmanagesieve/sievejob.h>
@@ -77,10 +77,10 @@ void VacationPageWidget::setServerUrl(const QUrl &url)
     mVacationEditWidget->setEnabled(false);
 }
 
-void VacationPageWidget::setVacationManager(MultiImapVacationManager *vacationManager)
+void VacationPageWidget::setVacationManager(KSieveCore::MultiImapVacationManager *vacationManager)
 {
     mVacationManager = vacationManager;
-    connect(mVacationManager, &MultiImapVacationManager::scriptAvailable, this, &VacationPageWidget::slotGetResult);
+    connect(mVacationManager, &KSieveCore::MultiImapVacationManager::scriptAvailable, this, &VacationPageWidget::slotGetResult);
     mVacationManager->checkVacation(mServerName, mUrl);
 }
 

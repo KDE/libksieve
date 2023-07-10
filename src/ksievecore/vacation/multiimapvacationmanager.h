@@ -6,10 +6,10 @@
 
 #pragma once
 
-#include "ksieveui_export.h"
+#include "ksievecore_export.h"
+#include <KSieveCore/Util>
 #include <QMap>
 #include <QObject>
-#include <ksievecore/util/util.h>
 
 class QUrl;
 
@@ -18,14 +18,11 @@ namespace KSieveCore
 class SieveImapPasswordProvider;
 class CheckKolabKep14SupportJob;
 class VacationCheckJob;
-}
-namespace KSieveUi
-{
 /**
  * @brief The MultiImapVacationManager class
  * @author Laurent Montel <montel@kde.org>
  */
-class KSIEVEUI_EXPORT MultiImapVacationManager : public QObject
+class KSIEVECORE_EXPORT MultiImapVacationManager : public QObject
 {
     Q_OBJECT
 public:
@@ -43,12 +40,12 @@ Q_SIGNALS:
     void scriptAvailable(const QString &serverName, const QStringList &sieveCapabilities, const QString &scriptName, const QString &script, bool active);
 
 private Q_SLOTS:
-    KSIEVEUI_NO_EXPORT void slotScriptActive(KSieveCore::VacationCheckJob *job, const QString &scriptName, bool active);
-    KSIEVEUI_NO_EXPORT void slotCheckKep14Ended(KSieveCore::CheckKolabKep14SupportJob *job, bool success);
+    KSIEVECORE_NO_EXPORT void slotScriptActive(KSieveCore::VacationCheckJob *job, const QString &scriptName, bool active);
+    KSIEVECORE_NO_EXPORT void slotCheckKep14Ended(KSieveCore::CheckKolabKep14SupportJob *job, bool success);
 
 private:
     Q_DISABLE_COPY(MultiImapVacationManager)
-    KSIEVEUI_NO_EXPORT void slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveCore::Util::AccountInfo> &list);
+    KSIEVECORE_NO_EXPORT void slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveCore::Util::AccountInfo> &list);
     KSieveCore::SieveImapPasswordProvider *const mPasswordProvider;
     int mNumberOfJobs = 0;
     bool mCheckInProgress = false;

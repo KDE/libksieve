@@ -7,9 +7,9 @@
 #pragma once
 
 #include "ksievecore_export.h"
+#include <KSieveCore/Util>
 #include <QMap>
 #include <QObject>
-#include <ksievecore/util/util.h>
 namespace KSieveCore
 {
 class SieveImapPasswordProvider;

@@ -8,7 +8,7 @@
 #include "managescriptsjob/parseuserscriptjob.h"
 #include "vacationutils.h"
 
-#include <ksievecore/util/util.h>
+#include <KSieveCore/Util>
 
 #include <kmanagesieve/sievejob.h>
 

@@ -7,7 +7,7 @@
 #pragma once
 
 #include <KSieveCore/SieveImapInstance>
-#include <ksievecore/util/util.h>
+#include <KSieveCore/Util>
 #include <widgets/managesievewidget.h>
 namespace KSieveCore
 {
