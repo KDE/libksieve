@@ -1,1 +1,0 @@
-if envelope :matches "from" "*jim-???@*" { discard; stop; } 

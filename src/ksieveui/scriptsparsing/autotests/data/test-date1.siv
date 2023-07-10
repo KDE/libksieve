@@ -1,3 +1,0 @@
-require ["date", "variables", "fileinto"];
-if currentdate :matches "date" "*" { set "date" "${1}"; }
-fileinto "${date}";

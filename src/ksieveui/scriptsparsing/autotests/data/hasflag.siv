@@ -1,7 +1,0 @@
-require "imapflags";
-
-#SCRIPTNAME: test1
-if hasflag :is "foo"
-{
-} 
-

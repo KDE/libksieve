@@ -1,9 +1,0 @@
-if anyof (header :contains "Subject" "[kdepim-runtime]"
-, header :contains "Subject" "[akonadi"
-, header :contains "Subject" "[kmail2"
-, header :contains "Subject" "[pim-sieve-editor"
-, header :contains "Subject" "[pim-data-exporter"
-, header :contains "Subject" "[akonadi-search/")
-{
-    fileinto "bb";
-}

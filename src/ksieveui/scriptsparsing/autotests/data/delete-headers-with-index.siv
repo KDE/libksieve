@@ -1,1 +1,0 @@
-deleteheader :index 1 not :regex "Delivered-To" "bob@example.com";

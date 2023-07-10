@@ -1,1 +1,0 @@
-<?xml version="1.0"?><script><control name="require"><str type="quoted">extracttext</str></control><crlf/><crlf/><comment type="hash">Script name: extract-text</comment><crlf/><control name="if"><test name="true"><crlf/></test><block><crlf/><action name="extracttext"><tag>first</tag><num>11</num><str type="quoted">voiture</str></action><crlf/></block></control><crlf/></script>

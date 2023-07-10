@@ -1,2 +1,0 @@
-<?xml version="1.0"?><script><control name="require"><str type="quoted">ihave</str></control><crlf/><control name="require"><str type="quoted">reject</str></control><crlf/><crlf/><comment type="hash">Script name: reject</comment><crlf/><control name="if"><test name="ihave"><str type="quoted">reject</str><crlf/></test><block><crlf/><action name="reject"><str type="multiline"> sorry rejected
-thanks</str></action><crlf/><crlf/></block></control><crlf/></script>

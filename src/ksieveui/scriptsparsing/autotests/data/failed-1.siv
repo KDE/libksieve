@@ -1,8 +1,0 @@
-if anyof( allof( header :regex "x-spam-status" "BAYES_[6-9][0-9]",
-                 not header :contains "x-spam-flag" "yes" ),
-          allof( header :regex "x-spam-status" "BAYES_[0-4][0-9]",
-                 header :contains "x-spam-flag" "yes" ) )
-{
-    fileinto "INBOX/trash";
-    stop;
-}

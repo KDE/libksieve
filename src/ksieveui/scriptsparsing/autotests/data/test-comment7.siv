@@ -1,4 +1,0 @@
-if header :is "X-Spam-Flag" "YES" {
-    stop; #---- this stops further processing; 
-}
-

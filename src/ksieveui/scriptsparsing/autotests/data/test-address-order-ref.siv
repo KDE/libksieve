@@ -1,1 +1,0 @@
-<?xml version="1.0"?><script><crlf/><control name="if"><test name="address"><tag>matches</tag><tag>detail</tag><str type="quoted">to</str><str type="quoted">*</str></test><block><crlf/><action name="set"><str type="quoted">extension_name</str><str type="quoted">${1}</str></action><crlf/></block></control><crlf/></script>

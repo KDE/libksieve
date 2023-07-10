@@ -1,1 +1,0 @@
-<?xml version="1.0"?><script><action name="deleteheader"><tag>index</tag><num>1</num><test name="not"><tag>regex</tag><str type="quoted">Delivered-To</str><str type="quoted">bob@example.com</str></test></action><crlf/></script>
