@@ -77,8 +77,8 @@ target_link_libraries(KPim6KSieveCore
     Qt::Core
     KPim6::KManageSieve
     KPim6::KSieve
-    KPim6::PimCommon
     PRIVATE
+    KPim6::PimCommon
     KF6::I18n
     KF6::CoreAddons
     KPim6::MailTransport
