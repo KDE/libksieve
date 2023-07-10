@@ -146,6 +146,7 @@ install(FILES
     ${ksievecore_managescriptsjob_HEADERS}
     ${ksievecore_util_HEADERS}
     ${ksievecore_scriptsparsing_HEADERS}
+    ${CMAKE_CURRENT_BINARY_DIR}/sieve-vacation.h
     util/util_p.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveCore/ksievecore
     COMPONENT Devel

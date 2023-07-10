@@ -132,7 +132,7 @@ void VacationPageWidget::slotGetResult(const QString &serverName,
     mVacationEditWidget->setMailAliases(vacation.aliases);
     mVacationEditWidget->setSendForSpam(vacation.sendForSpam);
     mVacationEditWidget->setDomainName(vacation.reactOndomainName);
-    mVacationEditWidget->enableDomainAndSendForSpam(!VacationSettings::allowOutOfOfficeUploadButNoSettings());
+    mVacationEditWidget->enableDomainAndSendForSpam(!KSieveCore::VacationSettings::allowOutOfOfficeUploadButNoSettings());
 
     mVacationEditWidget->enableDates(mHasDateSupport);
     if (mHasDateSupport) {

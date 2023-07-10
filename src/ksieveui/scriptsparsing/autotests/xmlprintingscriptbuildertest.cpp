@@ -5,7 +5,7 @@
 */
 
 #include "xmlprintingscriptbuildertest.h"
-#include "../xmlprintingscriptbuilder.h"
+#include <KSieveCore/XMLPrintingScriptBuilder>
 #include <QProcess>
 #include <QTest>
 #include <ksieve/parser.h>
@@ -125,7 +125,7 @@ void XMLPrintingScriptBuilderTest::shouldCreateXml()
     const QString generatedFile = QLatin1String(XMLPRINTINGSCRIPTBUILDER_GENERATED_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral("-generated.siv");
     const QByteArray script = readSieveFile(originalFile);
     KSieve::Parser parser(script.begin(), script.begin() + script.length());
-    KSieveUi::XMLPrintingScriptBuilder builder;
+    KSieveCore::XMLPrintingScriptBuilder builder;
     parser.setScriptBuilder(&builder);
     const bool result = parser.parse();
     QCOMPARE(result, success);

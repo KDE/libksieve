@@ -14,7 +14,7 @@
 #include <QTest>
 QTEST_MAIN(FindAccountInfoJobTest)
 
-class DataImapPasswordProvider : public KSieveUi::SieveImapPasswordProvider
+class DataImapPasswordProvider : public KSieveCore::SieveImapPasswordProvider
 {
 public:
     DataImapPasswordProvider(AkonadiImapSettingInterfaceDataTest *data)

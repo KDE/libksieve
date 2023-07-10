@@ -10,3 +10,5 @@ ItemAccessors=true
 SetUserTexts=true
 TranslationDomain=libksieve
 TranslationSystem=kde
+Visibility=KSIEVECORE_EXPORT
+IncludeFiles=\"ksievecore_export.h\"

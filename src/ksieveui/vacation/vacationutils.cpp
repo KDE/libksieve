@@ -5,10 +5,10 @@
 */
 
 #include "vacationutils.h"
-#include "sieve-vacation.h"
 #include "vacationscriptextractor.h"
 #include <KIdentityManagementCore/Identity>
 #include <KIdentityManagementCore/IdentityManager>
+#include <ksievecore/sieve-vacation.h>
 
 #include <KLocalizedString>
 #include <QDate>
@@ -105,12 +105,12 @@ KMime::Types::AddrSpecList VacationUtils::defaultMailAliases()
 
 bool VacationUtils::defaultSendForSpam()
 {
-    return VacationSettings::outOfOfficeReactToSpam();
+    return KSieveCore::VacationSettings::outOfOfficeReactToSpam();
 }
 
 QString VacationUtils::defaultDomainName()
 {
-    return VacationSettings::outOfOfficeDomain();
+    return KSieveCore::VacationSettings::outOfOfficeDomain();
 }
 
 QDate VacationUtils::defaultStartDate()
