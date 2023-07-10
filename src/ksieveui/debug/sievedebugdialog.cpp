@@ -33,7 +33,7 @@ namespace
 {
 static const char mySieveDebugDialogGroupName[] = "SieveDebugDialog";
 }
-SieveDebugDialog::SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, QWidget *parent)
+SieveDebugDialog::SieveDebugDialog(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent)
     : QDialog(parent)
     , mPasswordProvider(passwordProvider)
 {
@@ -41,7 +41,7 @@ SieveDebugDialog::SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, 
     auto mainLayout = new QVBoxLayout(this);
 
     // Collect all accounts
-    mResourceIdentifier = KSieveUi::Util::sieveImapResourceNames();
+    mResourceIdentifier = KSieveCore::Util::sieveImapResourceNames();
 
     mEdit = new KPIMTextEdit::PlainTextEditorWidget(this);
     mEdit->setReadOnly(true);
@@ -122,14 +122,14 @@ void SieveDebugDialog::slotDiagNextAccount()
     mEdit->editor()->appendPlainText(i18n("Collecting data for account '%1'...\n", ident));
     mEdit->editor()->appendPlainText(i18n("------------------------------------------------------------\n"));
 
-    auto job = new FindAccountInfoJob(this);
-    connect(job, &FindAccountInfoJob::findAccountInfoFinished, this, &SieveDebugDialog::slotFindAccountInfoFinished);
+    auto job = new KSieveCore::FindAccountInfoJob(this);
+    connect(job, &KSieveCore::FindAccountInfoJob::findAccountInfoFinished, this, &SieveDebugDialog::slotFindAccountInfoFinished);
     job->setIdentifier(ident);
     job->setProvider(mPasswordProvider);
     job->start();
 }
 
-void SieveDebugDialog::slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info)
+void SieveDebugDialog::slotFindAccountInfoFinished(const KSieveCore::Util::AccountInfo &info)
 {
     // Detect URL for this IMAP account
     const QUrl url = info.sieveUrl;
@@ -168,15 +168,15 @@ void SieveDebugDialog::slotDiagNextScript()
 
     mEdit->editor()->appendPlainText(i18n("Contents of script '%1':\n", scriptFile));
 
-    auto job = new FindAccountInfoJob(this);
-    connect(job, &FindAccountInfoJob::findAccountInfoFinished, this, &SieveDebugDialog::slotFindAccountInfoForScriptFinished);
+    auto job = new KSieveCore::FindAccountInfoJob(this);
+    connect(job, &KSieveCore::FindAccountInfoJob::findAccountInfoFinished, this, &SieveDebugDialog::slotFindAccountInfoForScriptFinished);
     job->setIdentifier(mResourceIdentifier.constFirst());
     job->setProvider(mPasswordProvider);
     job->setProperty("scriptfile", scriptFile);
     job->start();
 }
 
-void SieveDebugDialog::slotFindAccountInfoForScriptFinished(const KSieveUi::Util::AccountInfo &info)
+void SieveDebugDialog::slotFindAccountInfoForScriptFinished(const KSieveCore::Util::AccountInfo &info)
 {
     mUrl = info.sieveUrl;
 

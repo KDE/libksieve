@@ -124,7 +124,7 @@ QString SieveEditorGraphicalModeWidget::currentscript()
 void SieveEditorGraphicalModeWidget::setImportScript(const QString &script)
 {
     bool result = false;
-    const QString doc = ParsingUtil::parseScript(script, result);
+    const QString doc = KSieveCore::ParsingUtil::parseScript(script, result);
     mSieveParsingWarning->animatedHide();
     if (result) {
         QString error;

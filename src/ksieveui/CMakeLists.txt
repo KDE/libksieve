@@ -13,18 +13,16 @@ configure_file(settings/sieve-editor.kcfg.cmake ${CMAKE_CURRENT_BINARY_DIR}/siev
 
 if(BUILD_TESTING)
     add_subdirectory(editor/tests)
-    add_subdirectory(managescriptsjob/autotests)
     add_subdirectory(editor/autotests)
     add_subdirectory(autocreatescripts/tests)
     add_subdirectory(scriptsparsing/tests)
     add_subdirectory(scriptsparsing/autotests)
-    add_subdirectory(vacation/autotests)
+    # REACTIVATE add_subdirectory(vacation/autotests)
     add_subdirectory(sievescriptdebugger/autotests)
     add_subdirectory(sievescriptdebugger/tests)
     add_subdirectory(autocreatescripts/autotests/)
     add_subdirectory(editor/webengine/findbar/autotests/)
     add_subdirectory(editor/webengine/autotests/)
-    add_subdirectory(util/autotests/)
     add_subdirectory(widgets/autotests)
 endif()
 
@@ -164,9 +162,7 @@ target_sources(KPim6KSieveUi PRIVATE
     )
 
 target_sources(KPim6KSieveUi PRIVATE
-    scriptsparsing/xmlprintingscriptbuilder.cpp
     scriptsparsing/parsingresultdialog.cpp
-    scriptsparsing/parsingutil.cpp
     )
 
 target_sources(KPim6KSieveUi PRIVATE
@@ -177,24 +173,7 @@ target_sources(KPim6KSieveUi PRIVATE
     sievescriptdebugger/sievescriptdebuggertextedit.cpp
     sievescriptdebugger/sievescriptdebuggerresulteditor.cpp
     )
-
-target_sources(KPim6KSieveUi PRIVATE
-    managescriptsjob/checkkolabkep14supportjob.cpp
-    managescriptsjob/generateglobalscriptjob.cpp
-    managescriptsjob/parseuserscriptjob.cpp
-    managescriptsjob/renamescriptjob.cpp
-    managescriptsjob/checkscriptjob.cpp
-    )
     
-target_sources(KPim6KSieveUi PRIVATE
-    util/util.cpp
-    util/abstractakonadiimapsettinginterface.cpp
-    util/akonadiimapsettinginterface.cpp
-    util/sieveimapaccountsettings.cpp
-    util/findaccountinfojob.cpp
-    util/sieveimappasswordprovider.cpp
-    )	
-
 target_sources(KPim6KSieveUi PRIVATE
     widgets/custommanagesievewidget.cpp
     widgets/sievetreewidgetitem.cpp
@@ -237,13 +216,7 @@ target_sources(KPim6KSieveUi PRIVATE
     templates/sievedefaulttemplate.h
     templates/sievetemplatewidget.h
     templates/sievetemplateeditdialog.h
-    managescriptsjob/renamescriptjob.h
-    managescriptsjob/generateglobalscriptjob.h
-    managescriptsjob/checkscriptjob.h
-    managescriptsjob/checkkolabkep14supportjob.h
-    managescriptsjob/parseuserscriptjob.h
     scriptsparsing/parsingresultdialog.h
-    scriptsparsing/parsingutil.h
     ksieveui_private_export.h
     widgets/lineeditvalidator.h
     widgets/sievetreewidgetitem.h
@@ -363,13 +336,6 @@ target_sources(KPim6KSieveUi PRIVATE
     sievescriptdebugger/sievescriptdebuggerwidget.h
     sievescriptdebugger/sievescriptdebuggerwarning.h
     sievescriptdebugger/sievescriptdebuggerfrontendwidget.h
-    util/akonadiimapsettinginterface.h
-    util/util_p.h
-    util/sieveimapaccountsettings.h
-    util/abstractakonadiimapsettinginterface.h
-    util/sieveimappasswordprovider.h
-    util/util.h
-    util/findaccountinfojob.h
     debug/sievedebugdialog.h
     managesievescriptsdialog.h
     )
@@ -381,7 +347,7 @@ ecm_qt_declare_logging_category(KPim6KSieveUi HEADER libksieveui_debug.h IDENTIF
     )
 
 
-kconfig_add_kcfg_files(KPim6KSieveUi settings/sieve-vacation.kcfgc settings/sieve-editor.kcfgc)
+kconfig_add_kcfg_files(KPim6KSieveUi settings/sieve-editor.kcfgc)
 
 generate_export_header(KPim6KSieveUi BASE_NAME ksieveui)
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -430,32 +396,13 @@ set_target_properties(KPim6KSieveUi PROPERTIES
 
 target_include_directories(KPim6KSieveUi
     INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi/;${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi>")
-target_include_directories(KPim6KSieveUi PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/ksieveui;${libksieve_SOURCE_DIR}/src/ksieveui/util/;${libksieve_BINARY_DIR}/src/ksieveui>")
+target_include_directories(KPim6KSieveUi PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/ksieveui;${libksieve_BINARY_DIR}/src/ksieveui>")
 
 ecm_generate_headers(ksieveui_CamelCase_HEADERS
     HEADER_NAMES
     ManageSieveScriptsDialog
     REQUIRED_HEADERS ksieveui_HEADERS
     PREFIX KSieveUi
-    )
-
-ecm_generate_headers(ksieveui_Camelcaseutil_HEADERS
-    HEADER_NAMES
-    Util
-    SieveImapAccountSettings
-    SieveImapPasswordProvider
-    REQUIRED_HEADERS ksieveui_util_HEADERS
-    PREFIX KSieveUi
-    RELATIVE util
-    )
-
-ecm_generate_headers(ksieveui_Camelmanagescriptsjob_HEADERS
-    HEADER_NAMES
-    RenameScriptJob
-    CheckScriptJob
-    REQUIRED_HEADERS ksieveui_managescriptsjob_HEADERS
-    PREFIX KSieveUi
-    RELATIVE managescriptsjob
     )
 
 ecm_generate_headers(ksieveui_Camelcaseeditor_HEADERS
@@ -512,8 +459,6 @@ install(FILES
     ${ksieveui_Camelcasevacation_HEADERS}
     ${ksieveui_CamelCase_HEADERS}
     ${ksieveui_Camelcaseeditor_HEADERS}
-    ${ksieveui_Camelcaseutil_HEADERS}
-    ${ksieveui_Camelmanagescriptsjob_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi/KSieveUi
     COMPONENT Devel
     )
@@ -525,9 +470,6 @@ install(FILES
     ${ksieveui_vacation_HEADERS}
     ${ksieveui_HEADERS}
     ${ksieveui_editor_HEADERS}
-    ${ksieveui_util_HEADERS}
-    ${ksieveui_managescriptsjob_HEADERS}
-    util/util_p.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi/ksieveui
     COMPONENT Devel
     )

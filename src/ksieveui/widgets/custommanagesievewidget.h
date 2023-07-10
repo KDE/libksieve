@@ -6,19 +6,21 @@
 
 #pragma once
 
-#include "util/util_p.h"
 #include <KSieveCore/SieveImapInstance>
+#include <ksievecore/util/util_p.h>
 #include <widgets/managesievewidget.h>
-
-namespace KSieveUi
+namespace KSieveCore
 {
 class SieveImapPasswordProvider;
+}
+namespace KSieveUi
+{
 class SieveTreeWidgetItem;
 class CustomManageSieveWidget : public KSieveUi::ManageSieveWidget
 {
     Q_OBJECT
 public:
-    explicit CustomManageSieveWidget(SieveImapPasswordProvider *passwordProvider, QWidget *parent = nullptr);
+    explicit CustomManageSieveWidget(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent = nullptr);
     ~CustomManageSieveWidget() override;
 
 protected:
@@ -29,12 +31,12 @@ private:
     void searchNextServerSieve();
     void searchSieveScript();
     void slotSearchSieveScript(const QString &name, const QString &identifier);
-    void slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
+    void slotFindAccountInfoFinished(const KSieveCore::Util::AccountInfo &info);
     QList<KSieveCore::SieveImapInstance> mSieveImapInstances;
     QMap<QString, QString>::const_iterator mSieveServerMapIterator;
     // name, identifier
     QMap<QString, QString> mServerSieveInfos;
-    SieveImapPasswordProvider *const mPasswordProvider;
+    KSieveCore::SieveImapPasswordProvider *const mPasswordProvider;
     SieveTreeWidgetItem *mLastSieveTreeWidgetItem = nullptr;
     bool mRefreshInProgress = false;
 };

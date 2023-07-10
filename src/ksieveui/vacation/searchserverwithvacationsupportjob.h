@@ -7,12 +7,15 @@
 #pragma once
 
 #include "ksieveui_export.h"
-#include "util_p.h"
 #include <QMap>
 #include <QObject>
-namespace KSieveUi
+#include <ksievecore/util/util_p.h>
+namespace KSieveCore
 {
 class SieveImapPasswordProvider;
+}
+namespace KSieveUi
+{
 class KSIEVEUI_EXPORT SearchServerWithVacationSupportJob : public QObject
 {
     Q_OBJECT
@@ -23,14 +26,14 @@ public:
 
     Q_REQUIRED_RESULT bool canStart() const;
 
-    SieveImapPasswordProvider *passwordProvider() const;
-    void setPasswordProvider(SieveImapPasswordProvider *newProvider);
+    KSieveCore::SieveImapPasswordProvider *passwordProvider() const;
+    void setPasswordProvider(KSieveCore::SieveImapPasswordProvider *newProvider);
 
 Q_SIGNALS:
-    void searchServerWithVacationSupportFinished(const QMap<QString, KSieveUi::Util::AccountInfo> &info);
+    void searchServerWithVacationSupportFinished(const QMap<QString, KSieveCore::Util::AccountInfo> &info);
 
 private:
-    KSIEVEUI_NO_EXPORT void slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
+    KSIEVEUI_NO_EXPORT void slotFindAccountInfoFinished(const KSieveCore::Util::AccountInfo &info);
     KSIEVEUI_NO_EXPORT void sendAccountList();
     KSIEVEUI_NO_EXPORT void searchNextInfo();
     KSIEVEUI_NO_EXPORT void slotSearchSieveScript(const QString &name, const QString &identifier);
@@ -41,7 +44,7 @@ private:
     QMap<QString, QString> mServerSieveInfos;
 
     // Result
-    QMap<QString, KSieveUi::Util::AccountInfo> mAccountList;
-    SieveImapPasswordProvider *mPasswordProvider = nullptr;
+    QMap<QString, KSieveCore::Util::AccountInfo> mAccountList;
+    KSieveCore::SieveImapPasswordProvider *mPasswordProvider = nullptr;
 };
 }

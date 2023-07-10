@@ -15,10 +15,13 @@ namespace KManageSieve
 class SieveJob;
 }
 
-namespace KSieveUi
+namespace KSieveCore
 {
 class ParseUserScriptJob;
 class GenerateGlobalScriptJob;
+}
+namespace KSieveUi
+{
 class VacationCreateScriptJob : public QObject
 {
     Q_OBJECT
@@ -43,7 +46,7 @@ Q_SIGNALS:
 private Q_SLOTS:
     void slotPutResult(KManageSieve::SieveJob *job, bool success);
     void slotGetScript(KManageSieve::SieveJob *job, bool success, const QString &oldScript, bool active);
-    void slotGotActiveScripts(KSieveUi::ParseUserScriptJob *job);
+    void slotGotActiveScripts(KSieveCore::ParseUserScriptJob *job);
     void slotGenerateDone(const QString &error = QString());
 
 private:
@@ -60,7 +63,7 @@ private:
     bool mScriptJobRunning = false;
     bool mSuccess = true;
     KManageSieve::SieveJob *mSieveJob = nullptr;
-    ParseUserScriptJob *mParseUserJob = nullptr;
-    GenerateGlobalScriptJob *mCreateJob = nullptr;
+    KSieveCore::ParseUserScriptJob *mParseUserJob = nullptr;
+    KSieveCore::GenerateGlobalScriptJob *mCreateJob = nullptr;
 };
 }

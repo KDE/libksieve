@@ -42,11 +42,13 @@ namespace PimCommon
 {
 class SpellCheckLineEdit;
 }
-
+namespace KSieveCore
+{
+class SieveImapAccountSettings;
+}
 namespace KSieveUi
 {
 class VacationMailActionWidget;
-class SieveImapAccountSettings;
 class VacationMailLineEdit;
 class VacationEditWidget : public QWidget
 {
@@ -98,7 +100,7 @@ public:
     Q_REQUIRED_RESULT VacationUtils::MailAction mailAction() const;
     Q_REQUIRED_RESULT QString mailActionRecipient(bool &valid) const;
     void setMailAction(VacationUtils::MailAction action, const QString &recipient);
-    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);
+    void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account);
 
     void setDefault();
 

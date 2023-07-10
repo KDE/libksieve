@@ -12,9 +12,12 @@
 class QStackedWidget;
 class QLineEdit;
 class QAction;
-namespace KSieveUi
+namespace KSieveCore
 {
 class SieveImapAccountSettings;
+}
+namespace KSieveUi
+{
 class SieveEditorTextModeWidget;
 class SieveEditorGraphicalModeWidget;
 /**
@@ -39,7 +42,7 @@ public:
     void resultDone();
 
     void setSieveCapabilities(const QStringList &capabilities);
-    void setSieveImapAccountSettings(const SieveImapAccountSettings &sieveImapAccountSettings);
+    void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &sieveImapAccountSettings);
     void setListOfIncludeFile(const QStringList &listOfIncludeFile);
 
     void addFailedMessage(const QString &err);

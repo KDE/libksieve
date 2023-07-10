@@ -9,10 +9,13 @@
 #include "vacation/vacationutils.h"
 #include <QWidget>
 class QStackedWidget;
+namespace KSieveCore
+{
+class SieveImapAccountSettings;
+}
 namespace KSieveUi
 {
 class AbstractMoveImapFolderWidget;
-class SieveImapAccountSettings;
 class AbstractSelectEmailLineEdit;
 class VacationMailActionWidget : public QWidget
 {
@@ -21,7 +24,7 @@ public:
     explicit VacationMailActionWidget(QWidget *parent = nullptr);
     ~VacationMailActionWidget() override;
 
-    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);
+    void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account);
     void mailActionChanged(KSieveUi::VacationUtils::MailAction action);
 
     Q_REQUIRED_RESULT QString mailActionRecipient(bool &valid) const;

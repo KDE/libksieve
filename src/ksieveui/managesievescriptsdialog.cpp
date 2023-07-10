@@ -40,7 +40,7 @@ public:
     QUrl mCurrentURL;
     QStringList mCurrentCapabilities;
     QStringList mListOfIncludeFile;
-    KSieveUi::SieveImapAccountSettings mSieveImapAccountSettings;
+    KSieveCore::SieveImapAccountSettings mSieveImapAccountSettings;
 
     QPushButton *mNewScript = nullptr;
     QPushButton *mEditScript = nullptr;
@@ -56,7 +56,7 @@ namespace
 static const char myManageSieveScriptsDialog[] = "ManageSieveScriptsDialog";
 }
 
-ManageSieveScriptsDialog::ManageSieveScriptsDialog(SieveImapPasswordProvider *passwordProvider, QWidget *parent)
+ManageSieveScriptsDialog::ManageSieveScriptsDialog(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent)
     : QDialog(parent)
     , d(new KSieveUi::ManageSieveScriptsDialogPrivate)
 {
@@ -202,8 +202,8 @@ void ManageSieveScriptsDialog::slotSieveEditorCheckSyntaxClicked()
         return;
     }
     d->mSieveEditor->addNormalMessage(i18n("Uploading script to server for checking it, please wait..."));
-    auto checkScriptJob = new KSieveUi::CheckScriptJob(this);
-    connect(checkScriptJob, &CheckScriptJob::finished, this, &ManageSieveScriptsDialog::slotCheckScriptFinished);
+    auto checkScriptJob = new KSieveCore::CheckScriptJob(this);
+    connect(checkScriptJob, &KSieveCore::CheckScriptJob::finished, this, &ManageSieveScriptsDialog::slotCheckScriptFinished);
     checkScriptJob->setIsActive(d->mWasActive);
     checkScriptJob->setOriginalScript(d->mSieveEditor->originalScript());
     checkScriptJob->setCurrentScript(script);

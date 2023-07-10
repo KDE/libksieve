@@ -6,7 +6,7 @@
 
 #pragma once
 #include "ksieveui_export.h"
-#include <KSieveUi/SieveImapAccountSettings>
+#include <KSieveCore/SieveImapAccountSettings>
 #include <QMap>
 #include <QUrl>
 #include <QWidget>
@@ -18,12 +18,14 @@ namespace KManageSieve
 {
 class SieveJob;
 }
-
+namespace KSieveCore
+{
+class ParseUserScriptJob;
+}
 namespace KSieveUi
 {
 class ManageSieveTreeView;
 class ManageSieveWidgetPrivate;
-class ParseUserScriptJob;
 /**
  * @brief The ManageSieveWidget class
  * @author Laurent Montel <montel@kde.org>
@@ -37,7 +39,7 @@ public:
     struct ScriptInfo {
         QUrl currentUrl;
         QStringList currentCapabilities;
-        KSieveUi::SieveImapAccountSettings sieveImapAccountSettings;
+        KSieveCore::SieveImapAccountSettings sieveImapAccountSettings;
         QStringList scriptList;
     };
 
@@ -67,7 +69,7 @@ private Q_SLOTS:
     KSIEVEUI_NO_EXPORT void slotDoubleClicked(QTreeWidgetItem *item);
     KSIEVEUI_NO_EXPORT void slotSystemNetworkOnlineStateChanged(bool state);
     KSIEVEUI_NO_EXPORT void slotCheckNetworkStatus();
-    KSIEVEUI_NO_EXPORT void setActiveScripts(KSieveUi::ParseUserScriptJob *job);
+    KSIEVEUI_NO_EXPORT void setActiveScripts(KSieveCore::ParseUserScriptJob *job);
 
     KSIEVEUI_NO_EXPORT void slotCancelFetch();
     KSIEVEUI_NO_EXPORT void slotRenameResult(KManageSieve::SieveJob *job, bool success);

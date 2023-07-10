@@ -8,7 +8,7 @@
 #include "managescriptsjob/parseuserscriptjob.h"
 #include "vacationutils.h"
 
-#include "util/util_p.h"
+#include <ksievecore/util/util_p.h>
 
 #include <kmanagesieve/sievejob.h>
 
@@ -54,8 +54,8 @@ void VacationCheckJob::start()
         QUrl url = mUrl;
         url = url.adjusted(QUrl::RemoveFilename);
         url.setPath(url.path() + QLatin1Char('/') + QLatin1String("USER"));
-        mParseJob = new ParseUserScriptJob(url, this);
-        connect(mParseJob, &ParseUserScriptJob::finished, this, &VacationCheckJob::slotGotActiveScripts);
+        mParseJob = new KSieveCore::ParseUserScriptJob(url, this);
+        connect(mParseJob, &KSieveCore::ParseUserScriptJob::finished, this, &VacationCheckJob::slotGotActiveScripts);
         mParseJob->start();
     } else {
         mSieveJob = KManageSieve::SieveJob::get(mUrl);
@@ -116,7 +116,7 @@ void VacationCheckJob::slotGetResult(KManageSieve::SieveJob *job, bool success, 
     }
 }
 
-void VacationCheckJob::slotGotActiveScripts(ParseUserScriptJob *job)
+void VacationCheckJob::slotGotActiveScripts(KSieveCore::ParseUserScriptJob *job)
 {
     Q_ASSERT(job == mParseJob);
     mParseJob = nullptr;
@@ -183,7 +183,7 @@ void VacationCheckJob::getNextScript()
     url = url.adjusted(QUrl::RemoveFilename);
     url.setPath(url.path() + QLatin1Char('/') + mAvailableScripts[mScriptPos]);
     mScriptPos += 1;
-    if (Util::isKep14ProtectedName(url.fileName())) {
+    if (KSieveCore::Util::isKep14ProtectedName(url.fileName())) {
         getNextScript();
     }
     mSieveJob = KManageSieve::SieveJob::get(url);

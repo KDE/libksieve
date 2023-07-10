@@ -10,10 +10,13 @@
 #include <QObject>
 #include <memory>
 class QWidget;
+namespace KSieveCore
+{
+class SieveImapPasswordProvider;
+}
 namespace KSieveUi
 {
 class VacationManagerPrivate;
-class SieveImapPasswordProvider;
 /**
  * @brief The VacationManager class
  * @author Laurent Montel <montel@kde.org>
@@ -22,7 +25,7 @@ class KSIEVEUI_EXPORT VacationManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit VacationManager(SieveImapPasswordProvider *passwordProvider, QWidget *parent);
+    explicit VacationManager(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent);
     ~VacationManager() override;
 
     void checkVacation();

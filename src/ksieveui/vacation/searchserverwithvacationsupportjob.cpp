@@ -29,7 +29,7 @@ void SearchServerWithVacationSupportJob::start()
         sendAccountList();
         return;
     }
-    const QList<KSieveCore::SieveImapInstance> instances = KSieveUi::Util::sieveImapInstances();
+    const QList<KSieveCore::SieveImapInstance> instances = KSieveCore::Util::sieveImapInstances();
     for (const KSieveCore::SieveImapInstance &instance : instances) {
         if (instance.status() == KSieveCore::SieveImapInstance::Broken) {
             continue;
@@ -51,15 +51,15 @@ void SearchServerWithVacationSupportJob::searchNextInfo()
 
 void SearchServerWithVacationSupportJob::slotSearchSieveScript(const QString &name, const QString &identifier)
 {
-    auto job = new FindAccountInfoJob(this);
-    connect(job, &FindAccountInfoJob::findAccountInfoFinished, this, &SearchServerWithVacationSupportJob::slotFindAccountInfoFinished);
+    auto job = new KSieveCore::FindAccountInfoJob(this);
+    connect(job, &KSieveCore::FindAccountInfoJob::findAccountInfoFinished, this, &SearchServerWithVacationSupportJob::slotFindAccountInfoFinished);
     job->setIdentifier(identifier);
     job->setProperty("serverName", QVariant(name));
     job->setProvider(mPasswordProvider);
     job->start();
 }
 
-void SearchServerWithVacationSupportJob::slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info)
+void SearchServerWithVacationSupportJob::slotFindAccountInfoFinished(const KSieveCore::Util::AccountInfo &info)
 {
     const QUrl url = info.sieveUrl;
     if (!url.isEmpty()) {
@@ -84,12 +84,12 @@ bool SearchServerWithVacationSupportJob::canStart() const
     return mPasswordProvider;
 }
 
-SieveImapPasswordProvider *SearchServerWithVacationSupportJob::passwordProvider() const
+KSieveCore::SieveImapPasswordProvider *SearchServerWithVacationSupportJob::passwordProvider() const
 {
     return mPasswordProvider;
 }
 
-void SearchServerWithVacationSupportJob::setPasswordProvider(SieveImapPasswordProvider *newProvider)
+void SearchServerWithVacationSupportJob::setPasswordProvider(KSieveCore::SieveImapPasswordProvider *newProvider)
 {
     mPasswordProvider = newProvider;
 }

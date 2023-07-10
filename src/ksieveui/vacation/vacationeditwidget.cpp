@@ -450,7 +450,7 @@ void VacationEditWidget::setMailAction(VacationUtils::MailAction action, const Q
     mMailActionRecipient->setMailAction(action, recipient);
 }
 
-void VacationEditWidget::setSieveImapAccountSettings(const SieveImapAccountSettings &account)
+void VacationEditWidget::setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account)
 {
     mMailActionRecipient->setSieveImapAccountSettings(account);
 }

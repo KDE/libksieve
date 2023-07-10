@@ -15,9 +15,13 @@ namespace KManageSieve
 class SieveJob;
 }
 
-namespace KSieveUi
+namespace KSieveCore
 {
 class ParseUserScriptJob;
+}
+
+namespace KSieveUi
+{
 class VacationCheckJob : public QObject
 {
     Q_OBJECT
@@ -38,7 +42,7 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool active);
-    void slotGotActiveScripts(KSieveUi::ParseUserScriptJob *job);
+    void slotGotActiveScripts(KSieveCore::ParseUserScriptJob *job);
     void slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &availableScripts, const QString &activeScript);
     void emitError(const QString &errorMessage);
     void searchVacationScript();
@@ -54,7 +58,7 @@ private:
     const QString mServerName;
     const QUrl mUrl;
     KManageSieve::SieveJob *mSieveJob = nullptr;
-    ParseUserScriptJob *mParseJob = nullptr;
+    KSieveCore::ParseUserScriptJob *mParseJob = nullptr;
     int mScriptPos = -1;
     bool mKep14Support = false;
     bool mNoScriptFound = false;

@@ -30,7 +30,7 @@ public:
     bool mQuestionAsked = false;
 };
 
-VacationManager::VacationManager(SieveImapPasswordProvider *passwordProvider, QWidget *parent)
+VacationManager::VacationManager(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent)
     : QObject(parent)
     , d(new KSieveUi::VacationManagerPrivate(parent))
 {

@@ -84,7 +84,7 @@ void VacationPageWidget::setVacationManager(MultiImapVacationManager *vacationMa
     mVacationManager->checkVacation(mServerName, mUrl);
 }
 
-void VacationPageWidget::setSieveImapAccountSettings(const SieveImapAccountSettings &account)
+void VacationPageWidget::setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account)
 {
     mVacationEditWidget->setSieveImapAccountSettings(account);
 }

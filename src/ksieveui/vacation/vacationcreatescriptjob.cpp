@@ -90,8 +90,8 @@ void VacationCreateScriptJob::start()
         QUrl url = mUrl;
         url = url.adjusted(QUrl::RemoveFilename);
         url.setPath(url.path() + QLatin1Char('/') + QLatin1String("USER"));
-        mParseUserJob = new ParseUserScriptJob(url, this);
-        connect(mParseUserJob, &ParseUserScriptJob::finished, this, &VacationCreateScriptJob::slotGotActiveScripts);
+        mParseUserJob = new KSieveCore::ParseUserScriptJob(url, this);
+        connect(mParseUserJob, &KSieveCore::ParseUserScriptJob::finished, this, &VacationCreateScriptJob::slotGotActiveScripts);
         mParseUserJob->start();
     } else {
         createScript();
@@ -158,7 +158,7 @@ void VacationCreateScriptJob::handleResult()
     deleteLater();
 }
 
-void VacationCreateScriptJob::slotGotActiveScripts(ParseUserScriptJob *job)
+void VacationCreateScriptJob::slotGotActiveScripts(KSieveCore::ParseUserScriptJob *job)
 {
     Q_ASSERT(job == mParseUserJob);
     mParseUserJob = nullptr;
@@ -171,12 +171,12 @@ void VacationCreateScriptJob::slotGotActiveScripts(ParseUserScriptJob *job)
     if (!list.contains(mUrl.fileName())) {
         list.prepend(mUrl.fileName());
     }
-    mCreateJob = new GenerateGlobalScriptJob(mUrl, this);
+    mCreateJob = new KSieveCore::GenerateGlobalScriptJob(mUrl, this);
     mCreateJob->addUserActiveScripts(list);
-    connect(mCreateJob, &GenerateGlobalScriptJob::success, this, [=]() {
+    connect(mCreateJob, &KSieveCore::GenerateGlobalScriptJob::success, this, [=]() {
         this->slotGenerateDone();
     });
-    connect(mCreateJob, &GenerateGlobalScriptJob::error, this, &VacationCreateScriptJob::slotGenerateDone);
+    connect(mCreateJob, &KSieveCore::GenerateGlobalScriptJob::error, this, &VacationCreateScriptJob::slotGenerateDone);
     mCreateJob->start();
 }
 

@@ -467,7 +467,7 @@ void SieveEditorWidget::setSieveCapabilities(const QStringList &capabilities)
     mGraphicalModeWidget->setSieveCapabilities(capabilities);
 }
 
-void SieveEditorWidget::setSieveImapAccountSettings(const SieveImapAccountSettings &sieveImapAccountSettings)
+void SieveEditorWidget::setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &sieveImapAccountSettings)
 {
     mGraphicalModeWidget->setSieveImapAccountSettings(sieveImapAccountSettings);
     mTextModeWidget->setSieveImapAccountSettings(sieveImapAccountSettings);
@@ -569,7 +569,7 @@ void SieveEditorWidget::slotSwitchMode()
     switch (mMode) {
     case TextMode: {
         bool result = false;
-        const QString doc = ParsingUtil::parseScript(mTextModeWidget->currentscript(), result);
+        const QString doc = KSieveCore::ParsingUtil::parseScript(mTextModeWidget->currentscript(), result);
         if (result) {
             QString error;
             mGraphicalModeWidget->loadScript(doc, error);

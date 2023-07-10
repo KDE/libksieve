@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: BSD-3-Clause
+
+File=sieve-vacation.kcfg
+NameSpace=KSieveCore
+ClassName=VacationSettings
+Mutators=true
+Singleton=true
+ItemAccessors=true
+SetUserTexts=true
+TranslationDomain=libksieve
+TranslationSystem=kde

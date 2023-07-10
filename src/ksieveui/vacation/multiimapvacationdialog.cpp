@@ -141,11 +141,11 @@ void MultiImapVacationDialog::initialize()
     job->start();
 }
 
-void MultiImapVacationDialog::slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveUi::Util::AccountInfo> &list)
+void MultiImapVacationDialog::slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveCore::Util::AccountInfo> &list)
 {
     bool foundOneImap = false;
 
-    QMapIterator<QString, KSieveUi::Util::AccountInfo> i(list);
+    QMapIterator<QString, KSieveCore::Util::AccountInfo> i(list);
     while (i.hasNext()) {
         i.next();
         createPage(i.key(), i.value());
@@ -175,7 +175,7 @@ void MultiImapVacationDialog::slotCanceled()
     Q_EMIT cancelClicked();
 }
 
-void MultiImapVacationDialog::createPage(const QString &serverName, const KSieveUi::Util::AccountInfo &info)
+void MultiImapVacationDialog::createPage(const QString &serverName, const KSieveCore::Util::AccountInfo &info)
 {
     auto page = new VacationPageWidget;
     page->setServerUrl(info.sieveUrl);

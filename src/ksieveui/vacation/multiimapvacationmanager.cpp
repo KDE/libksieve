@@ -5,9 +5,9 @@
 */
 
 #include "multiimapvacationmanager.h"
-#include "util/util_p.h"
 #include "vacationcheckjob.h"
 #include <kmanagesieve/sievejob.h>
+#include <ksievecore/util/util_p.h>
 #include <managescriptsjob/checkkolabkep14supportjob.h>
 #include <managescriptsjob/parseuserscriptjob.h>
 
@@ -16,7 +16,7 @@
 #include <QVariant>
 
 using namespace KSieveUi;
-MultiImapVacationManager::MultiImapVacationManager(SieveImapPasswordProvider *passwordProvider, QObject *parent)
+MultiImapVacationManager::MultiImapVacationManager(KSieveCore::SieveImapPasswordProvider *passwordProvider, QObject *parent)
     : QObject(parent)
     , mPasswordProvider(passwordProvider)
 {
@@ -28,11 +28,11 @@ void MultiImapVacationManager::checkVacation(const QString &serverName, const QU
 {
     ++mNumberOfJobs;
     if (!mKep14Support.contains(serverName)) {
-        auto checkKep14Job = new CheckKolabKep14SupportJob(this);
+        auto checkKep14Job = new KSieveCore::CheckKolabKep14SupportJob(this);
         checkKep14Job->setProperty("triggerScript", QVariant(true));
         checkKep14Job->setServerName(serverName);
         checkKep14Job->setServerUrl(url);
-        connect(checkKep14Job, &CheckKolabKep14SupportJob::result, this, &MultiImapVacationManager::slotCheckKep14Ended);
+        connect(checkKep14Job, &KSieveCore::CheckKolabKep14SupportJob::result, this, &MultiImapVacationManager::slotCheckKep14Ended);
         checkKep14Job->start();
         return;
     }
@@ -60,9 +60,9 @@ void MultiImapVacationManager::checkVacation()
     job->start();
 }
 
-void MultiImapVacationManager::slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveUi::Util::AccountInfo> &list)
+void MultiImapVacationManager::slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveCore::Util::AccountInfo> &list)
 {
-    QMapIterator<QString, KSieveUi::Util::AccountInfo> i(list);
+    QMapIterator<QString, KSieveCore::Util::AccountInfo> i(list);
     while (i.hasNext()) {
         i.next();
         checkVacation(i.key(), i.value().sieveUrl);
@@ -86,7 +86,7 @@ void MultiImapVacationManager::slotScriptActive(VacationCheckJob *job, const QSt
     Q_EMIT scriptAvailable(job->serverName(), job->sieveCapabilities(), scriptName, job->script(), active);
 }
 
-void MultiImapVacationManager::slotCheckKep14Ended(CheckKolabKep14SupportJob *job, bool success)
+void MultiImapVacationManager::slotCheckKep14Ended(KSieveCore::CheckKolabKep14SupportJob *job, bool success)
 {
     job->deleteLater();
     if (!success) {
@@ -112,7 +112,7 @@ bool MultiImapVacationManager::kep14Support(const QString &serverName) const
     return false;
 }
 
-SieveImapPasswordProvider *MultiImapVacationManager::passwordProvider() const
+KSieveCore::SieveImapPasswordProvider *MultiImapVacationManager::passwordProvider() const
 {
     return mPasswordProvider;
 }

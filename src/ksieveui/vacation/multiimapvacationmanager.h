@@ -7,17 +7,20 @@
 #pragma once
 
 #include "ksieveui_export.h"
-#include "util_p.h"
 #include <QMap>
 #include <QObject>
+#include <ksievecore/util/util_p.h>
 
 class QUrl;
 
+namespace KSieveCore
+{
+class SieveImapPasswordProvider;
+class CheckKolabKep14SupportJob;
+}
 namespace KSieveUi
 {
-class CheckKolabKep14SupportJob;
 class VacationCheckJob;
-class SieveImapPasswordProvider;
 /**
  * @brief The MultiImapVacationManager class
  * @author Laurent Montel <montel@kde.org>
@@ -26,14 +29,14 @@ class KSIEVEUI_EXPORT MultiImapVacationManager : public QObject
 {
     Q_OBJECT
 public:
-    explicit MultiImapVacationManager(SieveImapPasswordProvider *passwordProvider, QObject *parent = nullptr);
+    explicit MultiImapVacationManager(KSieveCore::SieveImapPasswordProvider *passwordProvider, QObject *parent = nullptr);
     ~MultiImapVacationManager() override;
 
     void checkVacation();
     void checkVacation(const QString &serverName, const QUrl &url);
 
     Q_REQUIRED_RESULT bool kep14Support(const QString &serverName) const;
-    SieveImapPasswordProvider *passwordProvider() const;
+    KSieveCore::SieveImapPasswordProvider *passwordProvider() const;
 
 Q_SIGNALS:
     void scriptActive(bool active, const QString &serverName);
@@ -41,12 +44,12 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     KSIEVEUI_NO_EXPORT void slotScriptActive(KSieveUi::VacationCheckJob *job, const QString &scriptName, bool active);
-    KSIEVEUI_NO_EXPORT void slotCheckKep14Ended(KSieveUi::CheckKolabKep14SupportJob *job, bool success);
+    KSIEVEUI_NO_EXPORT void slotCheckKep14Ended(KSieveCore::CheckKolabKep14SupportJob *job, bool success);
 
 private:
     Q_DISABLE_COPY(MultiImapVacationManager)
-    KSIEVEUI_NO_EXPORT void slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveUi::Util::AccountInfo> &list);
-    SieveImapPasswordProvider *const mPasswordProvider;
+    KSIEVEUI_NO_EXPORT void slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveCore::Util::AccountInfo> &list);
+    KSieveCore::SieveImapPasswordProvider *const mPasswordProvider;
     int mNumberOfJobs = 0;
     bool mCheckInProgress = false;
 

@@ -48,7 +48,7 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
 
 VacationMailActionWidget::~VacationMailActionWidget() = default;
 
-void VacationMailActionWidget::setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account)
+void VacationMailActionWidget::setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account)
 {
     mMoveImapFolderWidget->setSieveImapAccountSettings(account);
 }

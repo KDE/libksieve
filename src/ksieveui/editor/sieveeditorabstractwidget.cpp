@@ -29,12 +29,12 @@ void SieveEditorAbstractWidget::saveAs(const QString &defaultName)
     PimCommon::Util::saveTextAs(currentscript(), filter, this, QUrl::fromLocalFile(defaultName), i18nc("@title:window", "Save Script"));
 }
 
-KSieveUi::SieveImapAccountSettings SieveEditorAbstractWidget::sieveImapAccountSettings() const
+KSieveCore::SieveImapAccountSettings SieveEditorAbstractWidget::sieveImapAccountSettings() const
 {
     return mSieveImapAccountSettings;
 }
 
-void SieveEditorAbstractWidget::setSieveImapAccountSettings(const SieveImapAccountSettings &sieveImapAccountSettings)
+void SieveEditorAbstractWidget::setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &sieveImapAccountSettings)
 {
     mSieveImapAccountSettings = sieveImapAccountSettings;
 }

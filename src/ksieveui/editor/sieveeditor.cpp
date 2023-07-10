@@ -145,7 +145,7 @@ void SieveEditor::resultDone()
     d->mSieveEditorWidget->resultDone();
 }
 
-void SieveEditor::setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account)
+void SieveEditor::setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account)
 {
     d->mSieveEditorWidget->setSieveImapAccountSettings(account);
 }

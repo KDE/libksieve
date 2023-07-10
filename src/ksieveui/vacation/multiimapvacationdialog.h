@@ -7,8 +7,8 @@
 #pragma once
 
 #include "ksieveui_export.h"
-#include "util_p.h"
 #include <QDialog>
+#include <ksievecore/util/util_p.h>
 #include <memory>
 class QDialogButtonBox;
 namespace KSieveUi
@@ -36,11 +36,11 @@ Q_SIGNALS:
     void cancelClicked();
 
 private:
-    KSIEVEUI_NO_EXPORT void slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveUi::Util::AccountInfo> &info);
+    KSIEVEUI_NO_EXPORT void slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveCore::Util::AccountInfo> &info);
     KSIEVEUI_NO_EXPORT void slotOkClicked();
     KSIEVEUI_NO_EXPORT void slotDefaultClicked();
     KSIEVEUI_NO_EXPORT void slotCanceled();
-    KSIEVEUI_NO_EXPORT void createPage(const QString &serverName, const KSieveUi::Util::AccountInfo &info);
+    KSIEVEUI_NO_EXPORT void createPage(const QString &serverName, const KSieveCore::Util::AccountInfo &info);
     KSIEVEUI_NO_EXPORT void init();
     KSIEVEUI_NO_EXPORT void readConfig();
     KSIEVEUI_NO_EXPORT void writeConfig();

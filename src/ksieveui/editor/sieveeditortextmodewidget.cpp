@@ -206,7 +206,7 @@ void SieveEditorTextModeWidget::generateXml()
 {
     const QByteArray script = mTextEdit->toPlainText().toUtf8();
     KSieve::Parser parser(script.begin(), script.begin() + script.length());
-    KSieveUi::XMLPrintingScriptBuilder psb(2);
+    KSieveCore::XMLPrintingScriptBuilder psb(2);
     parser.setScriptBuilder(&psb);
     const bool result = parser.parse();
     QPointer<ParsingResultDialog> dlg = new ParsingResultDialog(this);
@@ -223,7 +223,7 @@ void SieveEditorTextModeWidget::slotEditRule(const QString &selectedText)
 {
     const QByteArray script = selectedText.toUtf8();
     KSieve::Parser parser(script.begin(), script.begin() + script.length());
-    KSieveUi::XMLPrintingScriptBuilder psb(2);
+    KSieveCore::XMLPrintingScriptBuilder psb(2);
     parser.setScriptBuilder(&psb);
     const bool result = parser.parse();
     if (result) {
