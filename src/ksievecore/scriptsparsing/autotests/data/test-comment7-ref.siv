@@ -1,0 +1,1 @@
+<?xml version="1.0"?><script><control name="if"><test name="header"><tag>is</tag><str type="quoted">X-Spam-Flag</str><str type="quoted">YES</str></test><block><crlf/><action name="stop"/><comment type="hash">---- this stops further processing; </comment></block></control><crlf/><crlf/></script>

@@ -1,0 +1,1 @@
+notify :importance "1" :message "You got mail" "xmpp:tim@example.com?message;subject=SIEVE";

@@ -1,0 +1,14 @@
+require "imapflags";
+require "fileinto";
+
+#SCRIPTNAME: test1
+if header :is  ""
+{
+    /*Keep comment
+    Keep multi line*/
+    keep :flags [ "\\Answered", "\\Flagged" ];
+} else {
+    #FileInto comment
+    #comment2
+    fileinto "";
+} 

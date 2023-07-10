@@ -1,0 +1,1 @@
+<?xml version="1.0"?><script><action name="notify"><tag>importance</tag><str type="quoted">1</str><tag>message</tag><str type="quoted">You got mail</str><str type="quoted">xmpp:tim@example.com?message;subject=SIEVE</str></action><crlf/></script>
