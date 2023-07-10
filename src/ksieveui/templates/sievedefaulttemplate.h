@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "sievetemplatewidget.h"
+#include <PimCommon/TemplateListWidget>
 
 namespace KSieveUi
 {
