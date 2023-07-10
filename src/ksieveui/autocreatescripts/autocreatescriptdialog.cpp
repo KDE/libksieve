@@ -50,7 +50,7 @@ void AutoCreateScriptDialog::loadScript(const QString &doc, QString &error)
     mEditor->loadScript(doc, error);
 }
 
-void AutoCreateScriptDialog::setSieveImapAccountSettings(const SieveImapAccountSettings &sieveImapAccountSettings)
+void AutoCreateScriptDialog::setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &sieveImapAccountSettings)
 {
     mEditor->setSieveImapAccountSettings(sieveImapAccountSettings);
 }

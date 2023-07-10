@@ -16,7 +16,7 @@
 
 using namespace KSieveUi;
 
-CustomManageSieveWidget::CustomManageSieveWidget(SieveImapPasswordProvider *passwordProvider, QWidget *parent)
+CustomManageSieveWidget::CustomManageSieveWidget(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent)
     : KSieveUi::ManageSieveWidget(parent)
     , mPasswordProvider(passwordProvider)
 {
@@ -26,7 +26,7 @@ CustomManageSieveWidget::~CustomManageSieveWidget() = default;
 
 void CustomManageSieveWidget::updateSieveSettings()
 {
-    mSieveImapInstances = KSieveUi::Util::sieveImapInstances();
+    mSieveImapInstances = KSieveCore::Util::sieveImapInstances();
     Q_EMIT updateSieveSettingsDone();
 }
 
@@ -39,8 +39,8 @@ bool CustomManageSieveWidget::refreshList()
     bool noImapFound = true;
     mLastSieveTreeWidgetItem = nullptr;
     mServerSieveInfos.clear();
-    for (const KSieveUi::SieveImapInstance &type : std::as_const(mSieveImapInstances)) {
-        if (type.status() == KSieveUi::SieveImapInstance::Broken) {
+    for (const KSieveCore::SieveImapInstance &type : std::as_const(mSieveImapInstances)) {
+        if (type.status() == KSieveCore::SieveImapInstance::Broken) {
             continue;
         }
         mServerSieveInfos.insert(type.name(), type.identifier());
@@ -74,15 +74,15 @@ void CustomManageSieveWidget::slotSearchSieveScript(const QString &name, const Q
     mLastSieveTreeWidgetItem = new SieveTreeWidgetItem(treeView(), mLastSieveTreeWidgetItem);
     mLastSieveTreeWidgetItem->setIcon(0, QIcon::fromTheme(QStringLiteral("network-server")));
 
-    auto job = new FindAccountInfoJob(this);
-    connect(job, &FindAccountInfoJob::findAccountInfoFinished, this, &CustomManageSieveWidget::slotFindAccountInfoFinished);
+    auto job = new KSieveCore::FindAccountInfoJob(this);
+    connect(job, &KSieveCore::FindAccountInfoJob::findAccountInfoFinished, this, &CustomManageSieveWidget::slotFindAccountInfoFinished);
     job->setIdentifier(identifier);
     job->setProperty("serverName", name);
     job->setProvider(mPasswordProvider);
     job->start();
 }
 
-void CustomManageSieveWidget::slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info)
+void CustomManageSieveWidget::slotFindAccountInfoFinished(const KSieveCore::Util::AccountInfo &info)
 {
     QString serverName = sender()->property("serverName").toString();
     const QUrl u = info.sieveUrl;

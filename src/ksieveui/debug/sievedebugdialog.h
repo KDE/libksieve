@@ -9,7 +9,7 @@
 #pragma once
 
 #include "ksieveui_export.h"
-#include "util_p.h"
+#include <KSieveCore/Util>
 
 #include <KSyntaxHighlighting/Repository>
 #include <QDialog>
@@ -25,10 +25,12 @@ namespace KPIMTextEdit
 {
 class PlainTextEditorWidget;
 }
-namespace KSieveUi
+namespace KSieveCore
 {
 class SieveImapPasswordProvider;
-
+}
+namespace KSieveUi
+{
 /**
  * Diagnostic info for Sieve. Only compiled when debug is enabled, it is
  * not useful enough for non-developers to have this in releases.
@@ -37,7 +39,7 @@ class KSIEVEUI_EXPORT SieveDebugDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit SieveDebugDialog(SieveImapPasswordProvider *passwordProvider, QWidget *parent = nullptr);
+    explicit SieveDebugDialog(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent = nullptr);
     ~SieveDebugDialog() override;
 
 private Q_SLOTS:
@@ -50,15 +52,15 @@ private Q_SLOTS:
     KSIEVEUI_NO_EXPORT void slotShutDownJob();
 
 private:
-    KSIEVEUI_NO_EXPORT void slotFindAccountInfoFinished(const KSieveUi::Util::AccountInfo &info);
-    KSIEVEUI_NO_EXPORT void slotFindAccountInfoForScriptFinished(const KSieveUi::Util::AccountInfo &info);
+    KSIEVEUI_NO_EXPORT void slotFindAccountInfoFinished(const KSieveCore::Util::AccountInfo &info);
+    KSIEVEUI_NO_EXPORT void slotFindAccountInfoForScriptFinished(const KSieveCore::Util::AccountInfo &info);
     KSIEVEUI_NO_EXPORT void writeConfig();
     KSIEVEUI_NO_EXPORT void readConfig();
     KManageSieve::SieveJob *mSieveJob = nullptr;
     QUrl mUrl;
     KSyntaxHighlighting::Repository mRepo;
 
-    SieveImapPasswordProvider *const mPasswordProvider;
+    KSieveCore::SieveImapPasswordProvider *const mPasswordProvider;
     KPIMTextEdit::PlainTextEditorWidget *mEdit = nullptr;
     QStringList mResourceIdentifier;
     QStringList mScriptList;

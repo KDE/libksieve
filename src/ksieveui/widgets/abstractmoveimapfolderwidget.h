@@ -8,9 +8,12 @@
 
 #include "ksieveui_export.h"
 #include <QWidget>
-namespace KSieveUi
+namespace KSieveCore
 {
 class SieveImapAccountSettings;
+}
+namespace KSieveUi
+{
 /**
  * @brief The AbstractMoveImapFolderWidget class
  * @author Laurent Montel <montel@kde.org>
@@ -24,7 +27,7 @@ public:
 
     virtual void setText(const QString &str) = 0;
     virtual QString text() const = 0;
-    virtual void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account) = 0;
+    virtual void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account) = 0;
 Q_SIGNALS:
     void textChanged(const QString &);
 };

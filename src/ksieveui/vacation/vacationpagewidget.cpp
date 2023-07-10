@@ -5,12 +5,12 @@
 */
 
 #include "vacationpagewidget.h"
-#include "multiimapvacationmanager.h"
-#include "sieve-vacation.h"
-#include "vacationcreatescriptjob.h"
 #include "vacationeditwidget.h"
-#include "vacationutils.h"
 #include "vacationwarningwidget.h"
+#include <KSieveCore/MultiImapVacationManager>
+#include <KSieveCore/VacationCreateScriptJob>
+#include <KSieveCore/VacationUtils>
+#include <ksievecore/sieve-vacation.h>
 #include <managescriptsjob/parseuserscriptjob.h>
 
 #include <kmanagesieve/sievejob.h>
@@ -77,14 +77,14 @@ void VacationPageWidget::setServerUrl(const QUrl &url)
     mVacationEditWidget->setEnabled(false);
 }
 
-void VacationPageWidget::setVacationManager(MultiImapVacationManager *vacationManager)
+void VacationPageWidget::setVacationManager(KSieveCore::MultiImapVacationManager *vacationManager)
 {
     mVacationManager = vacationManager;
-    connect(mVacationManager, &MultiImapVacationManager::scriptAvailable, this, &VacationPageWidget::slotGetResult);
+    connect(mVacationManager, &KSieveCore::MultiImapVacationManager::scriptAvailable, this, &VacationPageWidget::slotGetResult);
     mVacationManager->checkVacation(mServerName, mUrl);
 }
 
-void VacationPageWidget::setSieveImapAccountSettings(const SieveImapAccountSettings &account)
+void VacationPageWidget::setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account)
 {
     mVacationEditWidget->setSieveImapAccountSettings(account);
 }
@@ -116,7 +116,7 @@ void VacationPageWidget::slotGetResult(const QString &serverName,
     // Whether the server supports the "date" extension
     mHasDateSupport = mUrl.scheme() == QLatin1String("sieve") && sieveCapabilities.contains(QLatin1String("date"));
 
-    KSieveUi::VacationUtils::Vacation vacation = KSieveUi::VacationUtils::parseScript(script);
+    KSieveCore::VacationUtils::Vacation vacation = KSieveCore::VacationUtils::parseScript(script);
 
     if (!vacation.isValid() && !script.trimmed().isEmpty()) {
         mVacationWarningWidget->setVisible(true);
@@ -132,7 +132,7 @@ void VacationPageWidget::slotGetResult(const QString &serverName,
     mVacationEditWidget->setMailAliases(vacation.aliases);
     mVacationEditWidget->setSendForSpam(vacation.sendForSpam);
     mVacationEditWidget->setDomainName(vacation.reactOndomainName);
-    mVacationEditWidget->enableDomainAndSendForSpam(!VacationSettings::allowOutOfOfficeUploadButNoSettings());
+    mVacationEditWidget->enableDomainAndSendForSpam(!KSieveCore::VacationSettings::allowOutOfOfficeUploadButNoSettings());
 
     mVacationEditWidget->enableDates(mHasDateSupport);
     if (mHasDateSupport) {
@@ -144,11 +144,11 @@ void VacationPageWidget::slotGetResult(const QString &serverName,
     mVacationEditWidget->setChanged(false);
 }
 
-KSieveUi::VacationCreateScriptJob *VacationPageWidget::writeScript(bool &errorFound)
+KSieveCore::VacationCreateScriptJob *VacationPageWidget::writeScript(bool &errorFound)
 {
     if (mPageScript == Script) {
         const bool active = mVacationEditWidget->activateVacation();
-        VacationUtils::Vacation vacation;
+        KSieveCore::VacationUtils::Vacation vacation;
         bool ok;
         vacation.aliases = mVacationEditWidget->mailAliases(ok);
         if (!ok) {
@@ -181,8 +181,8 @@ KSieveUi::VacationCreateScriptJob *VacationPageWidget::writeScript(bool &errorFo
             vacation.endDate = QDate();
             vacation.endTime = QTime();
         }
-        const QString script = VacationUtils::composeScript(vacation);
-        auto createJob = new KSieveUi::VacationCreateScriptJob;
+        const QString script = KSieveCore::VacationUtils::composeScript(vacation);
+        auto createJob = new KSieveCore::VacationCreateScriptJob;
         createJob->setServerUrl(mUrl);
         createJob->setServerName(mServerName);
         createJob->setStatus(active, mWasActive);

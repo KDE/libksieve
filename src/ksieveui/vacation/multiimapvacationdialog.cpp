@@ -5,9 +5,9 @@
 */
 
 #include "multiimapvacationdialog.h"
-#include "multiimapvacationmanager.h"
-#include "vacation/searchserverwithvacationsupportjob.h"
 #include "vacationpagewidget.h"
+#include <KSieveCore/MultiImapVacationManager>
+#include <KSieveCore/SearchServerWithVacationSupportJob>
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -34,13 +34,13 @@ class KSieveUi::MultiImapVacationDialogPrivate
 public:
     MultiImapVacationDialogPrivate() = default;
 
-    QList<VacationCreateScriptJob *> mListCreateJob;
+    QList<KSieveCore::VacationCreateScriptJob *> mListCreateJob;
     QTabWidget *mTabWidget = nullptr;
     QStackedWidget *mStackedWidget = nullptr;
-    MultiImapVacationManager *mVacationManager = nullptr;
+    KSieveCore::MultiImapVacationManager *mVacationManager = nullptr;
 };
 
-MultiImapVacationDialog::MultiImapVacationDialog(MultiImapVacationManager *manager, QWidget *parent)
+MultiImapVacationDialog::MultiImapVacationDialog(KSieveCore::MultiImapVacationManager *manager, QWidget *parent)
     : QDialog(parent)
     , d(new KSieveUi::MultiImapVacationDialogPrivate)
 {
@@ -92,7 +92,7 @@ void MultiImapVacationDialog::reject()
     }
 }
 
-QList<VacationCreateScriptJob *> MultiImapVacationDialog::listCreateJob() const
+QList<KSieveCore::VacationCreateScriptJob *> MultiImapVacationDialog::listCreateJob() const
 {
     return d->mListCreateJob;
 }
@@ -132,20 +132,20 @@ void MultiImapVacationDialog::init()
 
 void MultiImapVacationDialog::initialize()
 {
-    auto job = new SearchServerWithVacationSupportJob(this);
+    auto job = new KSieveCore::SearchServerWithVacationSupportJob(this);
     job->setPasswordProvider(d->mVacationManager->passwordProvider());
     connect(job,
-            &SearchServerWithVacationSupportJob::searchServerWithVacationSupportFinished,
+            &KSieveCore::SearchServerWithVacationSupportJob::searchServerWithVacationSupportFinished,
             this,
             &MultiImapVacationDialog::slotSearchServerWithVacationSupportFinished);
     job->start();
 }
 
-void MultiImapVacationDialog::slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveUi::Util::AccountInfo> &list)
+void MultiImapVacationDialog::slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveCore::Util::AccountInfo> &list)
 {
     bool foundOneImap = false;
 
-    QMapIterator<QString, KSieveUi::Util::AccountInfo> i(list);
+    QMapIterator<QString, KSieveCore::Util::AccountInfo> i(list);
     while (i.hasNext()) {
         i.next();
         createPage(i.key(), i.value());
@@ -175,7 +175,7 @@ void MultiImapVacationDialog::slotCanceled()
     Q_EMIT cancelClicked();
 }
 
-void MultiImapVacationDialog::createPage(const QString &serverName, const KSieveUi::Util::AccountInfo &info)
+void MultiImapVacationDialog::createPage(const QString &serverName, const KSieveCore::Util::AccountInfo &info)
 {
     auto page = new VacationPageWidget;
     page->setServerUrl(info.sieveUrl);
@@ -209,7 +209,7 @@ void MultiImapVacationDialog::slotOkClicked()
     for (int i = 0; i < d->mTabWidget->count(); ++i) {
         auto vacationPage = qobject_cast<VacationPageWidget *>(d->mTabWidget->widget(i));
         if (vacationPage) {
-            VacationCreateScriptJob *job = vacationPage->writeScript(errorFound);
+            KSieveCore::VacationCreateScriptJob *job = vacationPage->writeScript(errorFound);
 
             if (job && !errorFound) {
                 d->mListCreateJob.append(job);

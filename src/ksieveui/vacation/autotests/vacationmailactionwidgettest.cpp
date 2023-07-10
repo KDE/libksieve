@@ -60,23 +60,23 @@ void VacationMailActionWidgetTest::shouldSwitchComponents()
     KSieveUi::VacationMailActionWidget w;
     auto mStackedWidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedWidget"));
 
-    w.mailActionChanged(KSieveUi::VacationUtils::Keep);
+    w.mailActionChanged(KSieveCore::VacationUtils::Keep);
     QCOMPARE(mStackedWidget->currentIndex(), 0);
     bool ok;
     QVERIFY(w.mailActionRecipient(ok).isEmpty());
     QVERIFY(!w.isEnabled());
 
-    w.mailActionChanged(KSieveUi::VacationUtils::CopyTo);
+    w.mailActionChanged(KSieveCore::VacationUtils::CopyTo);
     QCOMPARE(mStackedWidget->currentIndex(), 1);
     QVERIFY(w.mailActionRecipient(ok).isEmpty());
     QVERIFY(w.isEnabled());
 
-    w.mailActionChanged(KSieveUi::VacationUtils::Discard);
+    w.mailActionChanged(KSieveCore::VacationUtils::Discard);
     QCOMPARE(mStackedWidget->currentIndex(), 0);
     QVERIFY(w.mailActionRecipient(ok).isEmpty());
     QVERIFY(!w.isEnabled());
 
-    w.mailActionChanged(KSieveUi::VacationUtils::Sendto);
+    w.mailActionChanged(KSieveCore::VacationUtils::Sendto);
     QCOMPARE(mStackedWidget->currentIndex(), 2);
     QVERIFY(w.mailActionRecipient(ok).isEmpty());
     QVERIFY(w.isEnabled());

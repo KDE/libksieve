@@ -8,10 +8,13 @@
 #include "ksieveui_export.h"
 #include <QDialog>
 #include <memory>
+namespace KSieveCore
+{
+class SieveImapAccountSettings;
+}
 namespace KSieveUi
 {
 class SieveEditorPrivate;
-class SieveImapAccountSettings;
 /**
  * @brief The SieveEditor class
  * @author Laurent Montel <montel@kde.org>
@@ -35,7 +38,7 @@ public:
     void resultDone();
 
     void setSieveCapabilities(const QStringList &capabilities);
-    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account);
+    void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account);
 
     void setListOfIncludeFile(const QStringList &listOfIncludeFile);
     void setModified(bool b);

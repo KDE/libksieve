@@ -13,37 +13,26 @@ configure_file(settings/sieve-editor.kcfg.cmake ${CMAKE_CURRENT_BINARY_DIR}/siev
 
 if(BUILD_TESTING)
     add_subdirectory(editor/tests)
-    add_subdirectory(managescriptsjob/autotests)
     add_subdirectory(editor/autotests)
     add_subdirectory(autocreatescripts/tests)
-    add_subdirectory(scriptsparsing/tests)
-    add_subdirectory(scriptsparsing/autotests)
     add_subdirectory(vacation/autotests)
+    add_subdirectory(scriptsparsing/tests)
     add_subdirectory(sievescriptdebugger/autotests)
     add_subdirectory(sievescriptdebugger/tests)
     add_subdirectory(autocreatescripts/autotests/)
     add_subdirectory(editor/webengine/findbar/autotests/)
     add_subdirectory(editor/webengine/autotests/)
-    add_subdirectory(util/autotests/)
-    add_subdirectory(sieveimapinstance/autotests)
     add_subdirectory(widgets/autotests)
 endif()
 
 target_sources(KPim6KSieveUi PRIVATE
     vacation/vacationmaillineedit.cpp
-    vacation/vacationhelperjob.cpp
     vacation/vacationeditwidget.cpp
     vacation/multiimapvacationdialog.cpp
     vacation/vacationpagewidget.cpp
     vacation/vacationwarningwidget.cpp
-    vacation/vacationscriptextractor.cpp
-    vacation/vacationutils.cpp
-    vacation/vacationcreatescriptjob.cpp
-    vacation/vacationcheckjob.cpp
-    vacation/multiimapvacationmanager.cpp
     vacation/vacationmanager.cpp
     vacation/vacationmailactionwidget.cpp
-    vacation/searchserverwithvacationsupportjob.cpp
     )
 target_sources(KPim6KSieveUi PRIVATE
     editor/webengine/sieveeditorwebengineview.cpp
@@ -165,9 +154,7 @@ target_sources(KPim6KSieveUi PRIVATE
     )
 
 target_sources(KPim6KSieveUi PRIVATE
-    scriptsparsing/xmlprintingscriptbuilder.cpp
     scriptsparsing/parsingresultdialog.cpp
-    scriptsparsing/parsingutil.cpp
     )
 
 target_sources(KPim6KSieveUi PRIVATE
@@ -178,29 +165,7 @@ target_sources(KPim6KSieveUi PRIVATE
     sievescriptdebugger/sievescriptdebuggertextedit.cpp
     sievescriptdebugger/sievescriptdebuggerresulteditor.cpp
     )
-
-target_sources(KPim6KSieveUi PRIVATE
-    managescriptsjob/checkkolabkep14supportjob.cpp
-    managescriptsjob/generateglobalscriptjob.cpp
-    managescriptsjob/parseuserscriptjob.cpp
-    managescriptsjob/renamescriptjob.cpp
-    managescriptsjob/checkscriptjob.cpp
-    )
-target_sources(KPim6KSieveUi PRIVATE
-    sieveimapinstance/sieveimapinstance.cpp
-    sieveimapinstance/sieveimapinstanceinterface.cpp
-    sieveimapinstance/sieveimapinstanceinterfacemanager.cpp
-    )
     
-target_sources(KPim6KSieveUi PRIVATE
-    util/util.cpp
-    util/abstractakonadiimapsettinginterface.cpp
-    util/akonadiimapsettinginterface.cpp
-    util/sieveimapaccountsettings.cpp
-    util/findaccountinfojob.cpp
-    util/sieveimappasswordprovider.cpp
-    )	
-
 target_sources(KPim6KSieveUi PRIVATE
     widgets/custommanagesievewidget.cpp
     widgets/sievetreewidgetitem.cpp
@@ -243,16 +208,7 @@ target_sources(KPim6KSieveUi PRIVATE
     templates/sievedefaulttemplate.h
     templates/sievetemplatewidget.h
     templates/sievetemplateeditdialog.h
-    managescriptsjob/renamescriptjob.h
-    managescriptsjob/generateglobalscriptjob.h
-    managescriptsjob/checkscriptjob.h
-    managescriptsjob/checkkolabkep14supportjob.h
-    managescriptsjob/parseuserscriptjob.h
-    sieveimapinstance/sieveimapinstanceinterfacemanager.h
-    sieveimapinstance/sieveimapinstance.h
-    sieveimapinstance/sieveimapinstanceinterface.h
     scriptsparsing/parsingresultdialog.h
-    scriptsparsing/parsingutil.h
     ksieveui_private_export.h
     widgets/lineeditvalidator.h
     widgets/sievetreewidgetitem.h
@@ -264,20 +220,13 @@ target_sources(KPim6KSieveUi PRIVATE
     widgets/abstractselectemaillineedit.h
     widgets/abstractmoveimapfolderwidget.h
     widgets/includefilelineedit.h
-    vacation/vacationcheckjob.h
-    vacation/vacationutils.h
     vacation/vacationwarningwidget.h
     vacation/vacationmailactionwidget.h
-    vacation/searchserverwithvacationsupportjob.h
     vacation/multiimapvacationdialog.h
-    vacation/vacationscriptextractor.h
-    vacation/vacationcreatescriptjob.h
-    vacation/vacationhelperjob.h
     vacation/vacationmaillineedit.h
     vacation/vacationmanager.h
     vacation/vacationpagewidget.h
     vacation/vacationeditwidget.h
-    vacation/multiimapvacationmanager.h
     autocreatescripts/sieveforeverypartwidget.h
     autocreatescripts/sievepreviewgeneratedcodewidget.h
     autocreatescripts/sievescriptdescriptiondialog.h
@@ -372,13 +321,6 @@ target_sources(KPim6KSieveUi PRIVATE
     sievescriptdebugger/sievescriptdebuggerwidget.h
     sievescriptdebugger/sievescriptdebuggerwarning.h
     sievescriptdebugger/sievescriptdebuggerfrontendwidget.h
-    util/akonadiimapsettinginterface.h
-    util/util_p.h
-    util/sieveimapaccountsettings.h
-    util/abstractakonadiimapsettinginterface.h
-    util/sieveimappasswordprovider.h
-    util/util.h
-    util/findaccountinfojob.h
     debug/sievedebugdialog.h
     managesievescriptsdialog.h
     )
@@ -390,7 +332,7 @@ ecm_qt_declare_logging_category(KPim6KSieveUi HEADER libksieveui_debug.h IDENTIF
     )
 
 
-kconfig_add_kcfg_files(KPim6KSieveUi settings/sieve-vacation.kcfgc settings/sieve-editor.kcfgc)
+kconfig_add_kcfg_files(KPim6KSieveUi settings/sieve-editor.kcfgc)
 
 generate_export_header(KPim6KSieveUi BASE_NAME ksieveui)
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -401,6 +343,7 @@ endif()
 
 target_link_libraries(KPim6KSieveUi
     PUBLIC
+    KPim6::KSieveCore
     KPim6::KManageSieve
     KPim6::KSieve
     KPim6::PimCommon
@@ -438,42 +381,13 @@ set_target_properties(KPim6KSieveUi PROPERTIES
 
 target_include_directories(KPim6KSieveUi
     INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi/;${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi>")
-target_include_directories(KPim6KSieveUi PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/ksieveui;${libksieve_SOURCE_DIR}/src/ksieveui/util/;${libksieve_BINARY_DIR}/src/ksieveui>")
+target_include_directories(KPim6KSieveUi PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/ksieveui;${libksieve_BINARY_DIR}/src/ksieveui>")
 
 ecm_generate_headers(ksieveui_CamelCase_HEADERS
     HEADER_NAMES
     ManageSieveScriptsDialog
     REQUIRED_HEADERS ksieveui_HEADERS
     PREFIX KSieveUi
-    )
-
-ecm_generate_headers(ksieveui_Camelcaseutil_HEADERS
-    HEADER_NAMES
-    Util
-    SieveImapAccountSettings
-    SieveImapPasswordProvider
-    REQUIRED_HEADERS ksieveui_util_HEADERS
-    PREFIX KSieveUi
-    RELATIVE util
-    )
-
-ecm_generate_headers(ksieveui_Camelcaseimapinstance_HEADERS
-    HEADER_NAMES
-    SieveImapInstance
-    SieveImapInstanceInterface
-    SieveImapInstanceInterfaceManager
-    REQUIRED_HEADERS ksieveui_imapinstance_HEADERS
-    PREFIX KSieveUi
-    RELATIVE sieveimapinstance
-    )
-
-ecm_generate_headers(ksieveui_Camelmanagescriptsjob_HEADERS
-    HEADER_NAMES
-    RenameScriptJob
-    CheckScriptJob
-    REQUIRED_HEADERS ksieveui_managescriptsjob_HEADERS
-    PREFIX KSieveUi
-    RELATIVE managescriptsjob
     )
 
 ecm_generate_headers(ksieveui_Camelcaseeditor_HEADERS
@@ -488,7 +402,6 @@ ecm_generate_headers(ksieveui_Camelcaseeditor_HEADERS
 ecm_generate_headers(ksieveui_Camelcasevacation_HEADERS
     HEADER_NAMES
     VacationManager
-    MultiImapVacationManager
     MultiImapVacationDialog
     REQUIRED_HEADERS ksieveui_vacation_HEADERS
     PREFIX KSieveUi
@@ -525,29 +438,22 @@ ecm_generate_pri_file(BASE_NAME KSieveUi
 
 install(TARGETS KPim6KSieveUi EXPORT KPim6KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
-    ${ksieveui_Camelcaseimapinstance_HEADERS}
     ${ksieveui_Camelcasewidgets_HEADERS}
     ${ksieveui_Camelcasedebug_HEADERS}
     ${ksieveui_Camelcasevacation_HEADERS}
     ${ksieveui_CamelCase_HEADERS}
     ${ksieveui_Camelcaseeditor_HEADERS}
-    ${ksieveui_Camelcaseutil_HEADERS}
-    ${ksieveui_Camelmanagescriptsjob_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi/KSieveUi
     COMPONENT Devel
     )
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/ksieveui_export.h
-    ${ksieveui_imapinstance_HEADERS}
     ${ksieveui_widgets_HEADERS}
     ${ksieveui_debug_HEADERS}
     ${ksieveui_vacation_HEADERS}
     ${ksieveui_HEADERS}
     ${ksieveui_editor_HEADERS}
-    ${ksieveui_util_HEADERS}
-    ${ksieveui_managescriptsjob_HEADERS}
-    util/util_p.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi/ksieveui
     COMPONENT Devel
     )
@@ -568,7 +474,6 @@ if (BUILD_QCH)
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-            ${ksieveui_imapinstance_HEADERS}
             ${ksieveui_widgets_HEADERS}
             ${ksieveui_debug_HEADERS}
             ${ksieveui_vacation_HEADERS}

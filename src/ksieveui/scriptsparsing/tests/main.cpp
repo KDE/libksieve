@@ -5,7 +5,7 @@
 */
 
 #include "../parsingresultdialog.h"
-#include "../xmlprintingscriptbuilder.h"
+#include <KSieveCore/XMLPrintingScriptBuilder>
 
 #include <ksieve/parser.h>
 using KSieve::Parser;
@@ -50,7 +50,7 @@ int main(int argc, char **argv)
     // qDebug() << "scriptUtf8 = \"" + script +"\"";
 
     KSieve::Parser sieveParser(script.constBegin(), script.constBegin() + script.length());
-    KSieveUi::XMLPrintingScriptBuilder psb(1);
+    KSieveCore::XMLPrintingScriptBuilder psb(1);
     sieveParser.setScriptBuilder(&psb);
     if (sieveParser.parse()) {
         qDebug() << "ok";

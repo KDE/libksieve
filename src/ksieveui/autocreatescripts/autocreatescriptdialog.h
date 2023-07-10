@@ -9,10 +9,12 @@
 #include "ksieveui_export.h"
 
 #include <QDialog>
-
-namespace KSieveUi
+namespace KSieveCore
 {
 class SieveImapAccountSettings;
+}
+namespace KSieveUi
+{
 class SieveEditorGraphicalModeWidget;
 /**
  * @brief The AutoCreateScriptDialog class
@@ -31,7 +33,7 @@ public:
 
     void loadScript(const QString &doc, QString &error);
 
-    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &sieveImapAccountSettings);
+    void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &sieveImapAccountSettings);
 
 protected:
     bool event(QEvent *e) override;

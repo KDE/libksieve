@@ -48,30 +48,30 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
 
 VacationMailActionWidget::~VacationMailActionWidget() = default;
 
-void VacationMailActionWidget::setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &account)
+void VacationMailActionWidget::setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account)
 {
     mMoveImapFolderWidget->setSieveImapAccountSettings(account);
 }
 
-void VacationMailActionWidget::mailActionChanged(KSieveUi::VacationUtils::MailAction action)
+void VacationMailActionWidget::mailActionChanged(KSieveCore::VacationUtils::MailAction action)
 {
-    bool enable = (action == VacationUtils::CopyTo || action == VacationUtils::Sendto);
+    bool enable = (action == KSieveCore::VacationUtils::CopyTo || action == KSieveCore::VacationUtils::Sendto);
     setEnabled(enable);
     selectMailActionWidget(action);
 }
 
-void VacationMailActionWidget::selectMailActionWidget(VacationUtils::MailAction action)
+void VacationMailActionWidget::selectMailActionWidget(KSieveCore::VacationUtils::MailAction action)
 {
-    if (action == VacationUtils::CopyTo) {
+    if (action == KSieveCore::VacationUtils::CopyTo) {
         mStackedWidget->setCurrentWidget(mMoveImapFolderWidget);
-    } else if (action == VacationUtils::Sendto) {
+    } else if (action == KSieveCore::VacationUtils::Sendto) {
         mStackedWidget->setCurrentWidget(mSelectEmailLineEdit);
     } else {
         mStackedWidget->setCurrentWidget(mMailActionRecipient);
     }
 }
 
-void VacationMailActionWidget::setMailAction(VacationUtils::MailAction action, const QString &recipient)
+void VacationMailActionWidget::setMailAction(KSieveCore::VacationUtils::MailAction action, const QString &recipient)
 {
     selectMailActionWidget(action);
     setText(recipient);

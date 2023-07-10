@@ -8,6 +8,7 @@
 #include "../sieveeditorgraphicalmodewidget.h"
 #include "scriptsparsing/parsingutil.h"
 #include "tests/capability.h"
+#include <KSieveCore/ParsingUtil>
 #include <QProcess>
 #include <QStandardPaths>
 #include <QTest>
@@ -54,7 +55,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
     QString script = readSieveFile(originalFile);
     // First parsing
     bool result = false;
-    QString doc = KSieveUi::ParsingUtil::parseScript(script, result);
+    QString doc = KSieveCore::ParsingUtil::parseScript(script, result);
     QCOMPARE(success, result);
     if (success) {
         QString error;
@@ -63,7 +64,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
 
         QString generatedScript = w.currentscript();
 
-        doc = KSieveUi::ParsingUtil::parseScript(generatedScript, result);
+        doc = KSieveCore::ParsingUtil::parseScript(generatedScript, result);
         QCOMPARE(success, result);
 
         // second parsing

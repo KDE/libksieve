@@ -15,7 +15,7 @@
 #include <managescriptsjob/generateglobalscriptjob.h>
 #include <managescriptsjob/parseuserscriptjob.h>
 
-#include "util/util_p.h"
+#include <KSieveCore/Util>
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -230,7 +230,7 @@ void ManageSieveWidget::slotNewScript()
         return;
     }
 
-    if (Util::isKep14ProtectedName(name)) {
+    if (KSieveCore::Util::isKep14ProtectedName(name)) {
         KMessageBox::error(this, i18n("You cannot use protected name."), i18n("New Script"));
         return;
     }
@@ -250,7 +250,7 @@ void ManageSieveWidget::slotNewScript()
     }
 
     const QStringList currentCapabilities = currentItem->data(0, SIEVE_SERVER_CAPABILITIES).toStringList();
-    const auto sieveimapaccountsettings = currentItem->data(0, SIEVE_SERVER_IMAP_SETTINGS).value<KSieveUi::SieveImapAccountSettings>();
+    const auto sieveimapaccountsettings = currentItem->data(0, SIEVE_SERVER_IMAP_SETTINGS).value<KSieveCore::SieveImapAccountSettings>();
     const QStringList listscript = currentItem->data(0, SIEVE_SERVER_LIST_SCRIPT).toStringList();
 
     d->mBlockSignal = true;
@@ -285,7 +285,7 @@ void ManageSieveWidget::slotEditScript()
     }
     url = url.adjusted(QUrl::RemoveFilename);
     url.setPath(url.path() + QLatin1Char('/') + currentItem->text(0));
-    const auto sieveimapaccountsettings = parent->data(0, SIEVE_SERVER_IMAP_SETTINGS).value<KSieveUi::SieveImapAccountSettings>();
+    const auto sieveimapaccountsettings = parent->data(0, SIEVE_SERVER_IMAP_SETTINGS).value<KSieveCore::SieveImapAccountSettings>();
     const QStringList currentCapabilities = parent->data(0, SIEVE_SERVER_CAPABILITIES).toStringList();
     const QStringList listscript = parent->data(0, SIEVE_SERVER_LIST_SCRIPT).toStringList();
 
@@ -321,11 +321,11 @@ bool ManageSieveWidget::updateGlobalScript(QTreeWidgetItem *item, const QUrl &u)
                 activeScripts << j->text(0);
             }
         }
-        auto job = new GenerateGlobalScriptJob(u);
+        auto job = new KSieveCore::GenerateGlobalScriptJob(u);
         job->addUserActiveScripts(activeScripts);
         job->setForceActivateUserScript(true);
-        connect(job, &GenerateGlobalScriptJob::success, this, &ManageSieveWidget::slotRefresh);
-        connect(job, &GenerateGlobalScriptJob::error, this, &ManageSieveWidget::slotGenerateGlobalScriptError);
+        connect(job, &KSieveCore::GenerateGlobalScriptJob::success, this, &ManageSieveWidget::slotRefresh);
+        connect(job, &KSieveCore::GenerateGlobalScriptJob::error, this, &ManageSieveWidget::slotGenerateGlobalScriptError);
         job->start();
         return true;
     }
@@ -438,11 +438,11 @@ void ManageSieveWidget::slotRenameScript()
     KManageSieve::SieveJob *job = KManageSieve::SieveJob::rename(u, newName);
     connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveWidget::slotRenameResult);
 #else
-    auto job = new KSieveUi::RenameScriptJob(this);
+    auto job = new KSieveCore::RenameScriptJob(this);
     job->setOldUrl(u);
     job->setIsActive(itemIsActived(currentItem));
     job->setNewName(newName);
-    connect(job, &RenameScriptJob::finished, this, &ManageSieveWidget::slotRenameFinished);
+    connect(job, &KSieveCore::RenameScriptJob::finished, this, &ManageSieveWidget::slotRenameFinished);
     job->start();
 #endif
 }
@@ -567,7 +567,7 @@ void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, c
     d->mBlockSignal = true; // don't trigger slotItemChanged
     for (const QString &script : listScript) {
         // Hide protected name.
-        if (Util::isKep14ProtectedName(script)) {
+        if (KSieveCore::Util::isKep14ProtectedName(script)) {
             continue;
         }
         auto item = new QTreeWidgetItem(parent);
@@ -582,30 +582,32 @@ void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, c
     }
     d->mBlockSignal = false;
 
-    bool hasKep14EditorMode = Util::hasKep14Support(job->sieveCapabilities(), listScript, activeScript);
+    bool hasKep14EditorMode = KSieveCore::Util::hasKep14Support(job->sieveCapabilities(), listScript, activeScript);
     if (hasKep14EditorMode) {
         QUrl u = mUrls[parent];
         u = u.adjusted(QUrl::RemoveFilename);
         u.setPath(u.path() + QLatin1Char('/') + QStringLiteral("USER"));
-        auto parseJob = new ParseUserScriptJob(u, this);
+        auto parseJob = new KSieveCore::ParseUserScriptJob(u, this);
         parseJob->setAutoDelete(true);
         parseJob->setProperty("parentItem", QVariant::fromValue<QTreeWidgetItem *>(parent));
-        connect(parseJob, &ParseUserScriptJob::finished, this, &ManageSieveWidget::setActiveScripts);
+        connect(parseJob, &KSieveCore::ParseUserScriptJob::finished, this, &ManageSieveWidget::setActiveScripts);
         parseJob->start();
         (static_cast<SieveTreeWidgetItem *>(parent))->startAnimation();
-    } else if (Util::hasKep14CapabilitySupport(job->sieveCapabilities())) { // We don't have user script but server support kep14
+    } else if (KSieveCore::Util::hasKep14CapabilitySupport(job->sieveCapabilities())) { // We don't have user script but server support kep14
         hasKep14EditorMode = true;
     }
 
     parent->setData(0, SIEVE_SERVER_CAPABILITIES, job->sieveCapabilities());
     parent->setData(0, SIEVE_SERVER_ERROR, false);
     parent->setData(0, SIEVE_SERVER_MODE, hasKep14EditorMode ? Kep14EditorMode : NormalEditorMode);
-    parent->setData(0, SIEVE_SERVER_IMAP_SETTINGS, QVariant::fromValue(job->property("sieveimapaccountsettings").value<KSieveUi::SieveImapAccountSettings>()));
+    parent->setData(0,
+                    SIEVE_SERVER_IMAP_SETTINGS,
+                    QVariant::fromValue(job->property("sieveimapaccountsettings").value<KSieveCore::SieveImapAccountSettings>()));
     parent->setData(0, SIEVE_SERVER_LIST_SCRIPT, listScript);
     d->mTreeView->expandItem(parent);
 }
 
-void ManageSieveWidget::setActiveScripts(ParseUserScriptJob *job)
+void ManageSieveWidget::setActiveScripts(KSieveCore::ParseUserScriptJob *job)
 {
     auto *parent = job->property("parentItem").value<QTreeWidgetItem *>();
     if (!parent) {

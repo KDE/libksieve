@@ -6,8 +6,8 @@
 
 #include "vacationmanager.h"
 #include "ksieveui/vacation/multiimapvacationdialog.h"
-#include "ksieveui/vacation/multiimapvacationmanager.h"
-#include "ksieveui/vacation/vacationcreatescriptjob.h"
+#include <KSieveCore/MultiImapVacationManager>
+#include <KSieveCore/VacationCreateScriptJob>
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -26,16 +26,16 @@ public:
 
     QWidget *const mWidget;
     QPointer<KSieveUi::MultiImapVacationDialog> mMultiImapVacationDialog = nullptr;
-    QPointer<KSieveUi::MultiImapVacationManager> mCheckVacation = nullptr;
+    QPointer<KSieveCore::MultiImapVacationManager> mCheckVacation = nullptr;
     bool mQuestionAsked = false;
 };
 
-VacationManager::VacationManager(SieveImapPasswordProvider *passwordProvider, QWidget *parent)
+VacationManager::VacationManager(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent)
     : QObject(parent)
     , d(new KSieveUi::VacationManagerPrivate(parent))
 {
-    d->mCheckVacation = new KSieveUi::MultiImapVacationManager(passwordProvider, this);
-    connect(d->mCheckVacation.data(), &KSieveUi::MultiImapVacationManager::scriptActive, this, &VacationManager::slotUpdateVacationScriptStatus);
+    d->mCheckVacation = new KSieveCore::MultiImapVacationManager(passwordProvider, this);
+    connect(d->mCheckVacation.data(), &KSieveCore::MultiImapVacationManager::scriptActive, this, &VacationManager::slotUpdateVacationScriptStatus);
 }
 
 VacationManager::~VacationManager() = default;
@@ -93,9 +93,9 @@ void VacationManager::slotDialogCanceled()
 
 void VacationManager::slotDialogOk()
 {
-    const QList<KSieveUi::VacationCreateScriptJob *> listJob = d->mMultiImapVacationDialog->listCreateJob();
-    for (KSieveUi::VacationCreateScriptJob *job : listJob) {
-        connect(job, &VacationCreateScriptJob::scriptActive, this, &VacationManager::updateVacationScriptStatus);
+    const QList<KSieveCore::VacationCreateScriptJob *> listJob = d->mMultiImapVacationDialog->listCreateJob();
+    for (KSieveCore::VacationCreateScriptJob *job : listJob) {
+        connect(job, &KSieveCore::VacationCreateScriptJob::scriptActive, this, &VacationManager::updateVacationScriptStatus);
         job->setKep14Support(d->mCheckVacation->kep14Support(job->serverName()));
         job->start();
     }

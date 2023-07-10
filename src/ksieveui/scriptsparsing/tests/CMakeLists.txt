@@ -6,5 +6,5 @@ include_directories(${libksieveui_SOURCE_DIR}
         )
 
 add_executable(xmlsieveparsing  main.cpp )
-target_link_libraries(xmlsieveparsing   KPim6KSieveUi KPim6::KSieve KF6::I18n KF6::SyntaxHighlighting)
+target_link_libraries(xmlsieveparsing  KPim6KSieveCore KPim6KSieveUi KPim6::KSieve KF6::I18n KF6::SyntaxHighlighting)
 

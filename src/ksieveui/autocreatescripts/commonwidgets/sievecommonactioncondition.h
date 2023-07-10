@@ -7,9 +7,12 @@
 #pragma once
 
 #include <QObject>
-namespace KSieveUi
+namespace KSieveCore
 {
 class SieveImapAccountSettings;
+}
+namespace KSieveUi
+{
 class SieveEditorGraphicalModeWidget;
 class SieveCommonActionCondition : public QObject
 {
@@ -47,7 +50,7 @@ public:
     virtual QWidget *createParamWidget(QWidget *parent) const;
 
 protected:
-    Q_REQUIRED_RESULT KSieveUi::SieveImapAccountSettings sieveImapAccountSettings() const;
+    Q_REQUIRED_RESULT KSieveCore::SieveImapAccountSettings sieveImapAccountSettings() const;
     Q_REQUIRED_RESULT QStringList sieveCapabilities() const;
     SieveEditorGraphicalModeWidget *const mSieveGraphicalModeWidget;
 

@@ -5,12 +5,11 @@
 
 #pragma once
 
-#include "../util/sieveimapaccountsettings.h"
 #include "ksieveui_private_export.h"
+#include <KSieveCore/SieveImapAccountSettings>
 #include <QWidget>
 namespace KSieveUi
 {
-class SieveImapAccountSettings;
 class KSIEVEUI_TESTS_EXPORT SieveEditorAbstractWidget : public QWidget
 {
     Q_OBJECT
@@ -22,15 +21,15 @@ public:
     virtual void setImportScript(const QString &);
     void saveAs(const QString &defaultName);
 
-    Q_REQUIRED_RESULT KSieveUi::SieveImapAccountSettings sieveImapAccountSettings() const;
+    Q_REQUIRED_RESULT KSieveCore::SieveImapAccountSettings sieveImapAccountSettings() const;
 
-    void setSieveImapAccountSettings(const KSieveUi::SieveImapAccountSettings &sieveImapAccountSettings);
+    void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &sieveImapAccountSettings);
 
 public Q_SLOTS:
     void slotImport();
 
 protected:
-    KSieveUi::SieveImapAccountSettings mSieveImapAccountSettings;
+    KSieveCore::SieveImapAccountSettings mSieveImapAccountSettings;
 
 private:
     bool loadFromFile(const QString &filename);
