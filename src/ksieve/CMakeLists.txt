@@ -34,4 +34,3 @@ set_target_properties(KPim6KSieve PROPERTIES
 install(TARGETS KPim6KSieve ${KDE_INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
 
 target_include_directories(KPim6KSieve PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src;${libksieve_BINARY_DIR}/src>")
-target_include_directories(KPim6KSieve PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/parser>")
