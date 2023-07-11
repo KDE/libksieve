@@ -3,7 +3,7 @@
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVEUI
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libksieveui_version.h"
-                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveUiConfigVersion.cmake"
+                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6KSieveUiConfigVersion.cmake"
                         SOVERSION 6
 )
 
@@ -508,7 +508,7 @@ if (BUILD_QCH)
     )
 endif()
 
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6LibKSieveUi")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6KSieveUi")
 if (BUILD_QCH)
     ecm_install_qch_export(
         TARGETS KPim6KSieveUi_QCH
@@ -516,20 +516,20 @@ if (BUILD_QCH)
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6LibKSieveUiQchTargets.cmake\")")
+set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KSieveUiQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/KPimLibKSieveUiConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveUiConfig.cmake"
+    "${CMAKE_CURRENT_SOURCE_DIR}/KPimKSieveUiConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6KSieveUiConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
 )
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveUiConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveUiConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6KSieveUiConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6KSieveUiConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
 )
 
-install(EXPORT KPim6KSieveUiTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6LibKSieveUiTargets.cmake NAMESPACE KPim6::)
+install(EXPORT KPim6KSieveUiTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6KSieveUiTargets.cmake NAMESPACE KPim6::)

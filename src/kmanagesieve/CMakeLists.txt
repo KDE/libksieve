@@ -4,7 +4,7 @@
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX KMANAGESIEVE
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libkmanagesieve_version.h"
-                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKManageSieveConfigVersion.cmake"
+                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6KManageSieveConfigVersion.cmake"
                         SOVERSION 6
 )
 
@@ -99,7 +99,7 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KManageSieve COMPONENT Devel
     )
 
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6LibKManageSieve")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6KManageSieve")
 
 if (BUILD_QCH)
     ecm_add_qch(
@@ -135,16 +135,16 @@ set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KManag
 endif()
 
 configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/KPimLibKManageSieveConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKManageSieveConfig.cmake"
+    "${CMAKE_CURRENT_SOURCE_DIR}/KPimKManageSieveConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6KManageSieveConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
 )
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKManageSieveConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKManageSieveConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6KManageSieveConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6KManageSieveConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
 )
 
-install(EXPORT KPim6KManageSieveTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6LibKManageSieveTargets.cmake NAMESPACE KPim6::)
+install(EXPORT KPim6KManageSieveTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6KManageSieveTargets.cmake NAMESPACE KPim6::)

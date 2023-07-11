@@ -3,7 +3,7 @@
 
 ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVECORE
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libksievecore_version.h"
-                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveCoreConfigVersion.cmake"
+                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6KSieveCoreConfigVersion.cmake"
                         SOVERSION 6
 )
 
@@ -202,7 +202,7 @@ install(FILES
     )
 
 
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6LibKSieveCore")
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6KSieveCore")
 if (BUILD_QCH)
     ecm_add_qch(
         KPim6KSieveCore_QCH
@@ -243,16 +243,16 @@ set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KSieve
 endif()
 
 configure_package_config_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/KPimLibKSieveCoreConfig.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveCoreConfig.cmake"
+    "${CMAKE_CURRENT_SOURCE_DIR}/KPimKSieveCoreConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6KSieveCoreConfig.cmake"
     INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
 )
 
 install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveCoreConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveCoreConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6KSieveCoreConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6KSieveCoreConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
 )
 
-install(EXPORT KPim6KSieveCoreTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6LibKSieveCoreTargets.cmake NAMESPACE KPim6::)
+install(EXPORT KPim6KSieveCoreTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6KSieveCoreTargets.cmake NAMESPACE KPim6::)
