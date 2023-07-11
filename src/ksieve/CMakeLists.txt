@@ -62,3 +62,4 @@ install(FILES
 )
 
 target_include_directories(KPim6KSieve PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src;${libksieve_BINARY_DIR}/src>")
+install(TARGETS KPim6KSieve EXPORT KPim6KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
