@@ -20,6 +20,8 @@ target_sources(KPim6KSieve PRIVATE
   parser/parser.cpp
   parser/parser.h
   parser/parser_p.h
+  parser/error.cpp
+  parser/error.h
 )
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libksieve\")
@@ -27,10 +29,6 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libksieve\")
 
 
 ########### next target ###############
-
-target_sources(KPim6KSieve PRIVATE
-  shared/error.cpp
-)
 
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6KSieve PROPERTIES UNITY_BUILD ON)
