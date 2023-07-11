@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
+# SPDX-License-Identifier: BSD-3-Clause
+
 add_library(KPim6KSieve)
 add_library(KPim6::KSieve ALIAS KPim6KSieve)
 
