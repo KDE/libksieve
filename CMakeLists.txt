@@ -103,15 +103,6 @@ if(BUILD_TESTING)
 endif()
 
 add_subdirectory(src)
-if (BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KPim6KSieveUi_QCH
-        FILE KPim6KSieveUiQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KSieveUiQchTargets.cmake\")")
-endif()
 
 ecm_qt_install_logging_categories(
         EXPORT LIBKSIEVE
