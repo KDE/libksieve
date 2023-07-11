@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include "ksieveui_private_export.h"
 #include "vacation/vacationutils.h"
 #include <QWidget>
 class QStackedWidget;
@@ -17,7 +18,7 @@ namespace KSieveUi
 {
 class AbstractMoveImapFolderWidget;
 class AbstractSelectEmailLineEdit;
-class VacationMailActionWidget : public QWidget
+class KSIEVEUI_TESTS_EXPORT VacationMailActionWidget : public QWidget
 {
     Q_OBJECT
 public:

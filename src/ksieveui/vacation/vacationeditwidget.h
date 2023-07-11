@@ -5,7 +5,7 @@
 */
 
 #pragma once
-
+#include "ksieveui_private_export.h"
 #include <KSieveCore/VacationUtils>
 #include <QWidget>
 class KDateComboBox;
@@ -50,7 +50,7 @@ namespace KSieveUi
 {
 class VacationMailActionWidget;
 class VacationMailLineEdit;
-class VacationEditWidget : public QWidget
+class KSIEVEUI_TESTS_EXPORT VacationEditWidget : public QWidget
 {
     Q_OBJECT
 public:
