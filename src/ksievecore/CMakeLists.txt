@@ -189,6 +189,35 @@ install(FILES
     )
 
 if (0)
+    if (BUILD_QCH)
+        ecm_add_qch(
+            KPim6KSieveCore_QCH
+            NAME KPim6KSieveCore
+            BASE_NAME KPim6KSieveCore
+            VERSION ${PIM_VERSION}
+            ORG_DOMAIN org.kde
+            SOURCES # using only public headers, to cover only public API
+            ${ksievecore_imapinstance_HEADERS}
+            ${ksievecore_managescriptsjob_HEADERS}
+            ${ksievecore_util_HEADERS}
+            ${ksievecore_scriptsparsing_HEADERS}
+            ${ksievecore_vacation_HEADERS}
+            #MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
+            #IMAGE_DIRS "${CMAKE_SOURCE_DIR}/docs/pics"
+            LINK_QCHS
+                Qt6Core_QCH
+            INCLUDE_DIRS
+                ${CMAKE_CURRENT_BINARY_DIR}
+            BLANK_MACROS
+                KSIEVEUI_EXPORT
+            TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+            QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+            COMPONENT Devel
+        )
+    endif()
+
+
+
 if (BUILD_QCH)
     ecm_install_qch_export(
         TARGETS KPim6KSieveCore_QCH
