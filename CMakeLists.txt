@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2011-2023 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
-set(PIM_VERSION "5.240.41")
+set(PIM_VERSION "5.240.42")
 
 project(libksieve VERSION ${PIM_VERSION})
 
@@ -86,11 +86,7 @@ set_package_properties(KF6DocTools PROPERTIES DESCRIPTION
 find_package(Qt6Core5Compat)
 add_definitions(-DDONT_HAVE_TEXT_TO_SPEACH_SUPPORT)
 
-ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVE
-                        VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h"
-                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveConfigVersion.cmake"
-                        SOVERSION 6
-)
+
 
 ########### Targets ###########
 
@@ -117,25 +113,6 @@ if (BUILD_QCH)
     set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KSieveUiQchTargets.cmake\")")
 endif()
 
-configure_package_config_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/KPimLibKSieveConfig.cmake.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveConfig.cmake"
-  INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
-)
-
-install(FILES
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveConfig.cmake"
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveConfigVersion.cmake"
-  DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-  COMPONENT Devel
-)
-
-install(EXPORT KPim6KSieveTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6LibKSieveTargets.cmake NAMESPACE KPim6::)
-
-install(FILES
-   ${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h
-  DESTINATION ${KDE_INSTALL_INCLUDEDIR_KF}/KSieve COMPONENT Devel
-)
 ecm_qt_install_logging_categories(
         EXPORT LIBKSIEVE
         FILE libksieve.categories

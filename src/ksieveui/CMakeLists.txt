@@ -1,5 +1,12 @@
 # SPDX-FileCopyrightText: 2011-2023 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
+
+ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVEUI
+                        VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libksieveui_version.h"
+                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveUiConfigVersion.cmake"
+                        SOVERSION 6
+)
+
 add_library(KPim6KSieveUi)
 add_library(KPim6::KSieveUi ALIAS KPim6KSieveUi)
 if(KDEPIM_ENTERPRISE_BUILD)
@@ -33,14 +40,14 @@ target_sources(KPim6KSieveUi PRIVATE
     vacation/vacationwarningwidget.cpp
     vacation/vacationmanager.cpp
     vacation/vacationmailactionwidget.cpp
-    )
+)
 target_sources(KPim6KSieveUi PRIVATE
     editor/webengine/sieveeditorwebengineview.cpp
     editor/webengine/sieveeditorhelphtmlwidget.cpp
     editor/webengine/sieveeditorloadprogressindicator.cpp
     editor/webengine/findbar/findbarbase.cpp
     editor/webengine/findbar/findbarwebengineview.cpp
-    )
+)
 
 target_sources(KPim6KSieveUi PRIVATE
     editor/sieveeditorwidget.cpp
@@ -60,7 +67,7 @@ target_sources(KPim6KSieveUi PRIVATE
     editor/sieveinfodialog.cpp
     editor/sievepurposemenuwidget.cpp
     editor/sievepurposemenuwidget.h
-    )
+)
 
 target_sources(KPim6KSieveUi PRIVATE
     autocreatescripts/sievepreviewgeneratedcodewidget.cpp
@@ -151,11 +158,11 @@ target_sources(KPim6KSieveUi PRIVATE
     autocreatescripts/sieveconditions/widgets/selectsizewidget.cpp
     autocreatescripts/sieveconditions/widgets/sievedatespinbox.cpp
     autocreatescripts/sieveconditions/widgets/regexpeditorlineedit.cpp
-    )
+)
 
 target_sources(KPim6KSieveUi PRIVATE
     scriptsparsing/parsingresultdialog.cpp
-    )
+)
 
 target_sources(KPim6KSieveUi PRIVATE
     sievescriptdebugger/sievescriptdebuggerdialog.cpp
@@ -164,8 +171,8 @@ target_sources(KPim6KSieveUi PRIVATE
     sievescriptdebugger/sievescriptdebuggerwarning.cpp
     sievescriptdebugger/sievescriptdebuggertextedit.cpp
     sievescriptdebugger/sievescriptdebuggerresulteditor.cpp
-    )
-    
+)
+
 target_sources(KPim6KSieveUi PRIVATE
     widgets/custommanagesievewidget.cpp
     widgets/sievetreewidgetitem.cpp
@@ -177,7 +184,7 @@ target_sources(KPim6KSieveUi PRIVATE
     widgets/lineeditvalidator.cpp
     widgets/includefilelineedit.cpp
     widgets/moveimapfolderwidget.cpp
-    )
+)
 
 target_sources(KPim6KSieveUi PRIVATE
     managesievescriptsdialog.cpp
@@ -323,13 +330,13 @@ target_sources(KPim6KSieveUi PRIVATE
     sievescriptdebugger/sievescriptdebuggerfrontendwidget.h
     debug/sievedebugdialog.h
     managesievescriptsdialog.h
-    )
+)
 
 ecm_qt_declare_logging_category(KPim6KSieveUi HEADER libksieveui_debug.h IDENTIFIER LIBKSIEVEUI_LOG CATEGORY_NAME org.kde.pim.libksieve
-        DESCRIPTION "kdepim (libksieve)"
-        OLD_CATEGORY_NAMES log_libksieve LIBKSIEVE_LOG
-        EXPORT LIBKSIEVE
-    )
+    DESCRIPTION "kdepim (libksieve)"
+    OLD_CATEGORY_NAMES log_libksieve LIBKSIEVE_LOG
+    EXPORT LIBKSIEVE
+)
 
 
 kconfig_add_kcfg_files(KPim6KSieveUi settings/sieve-editor.kcfgc)
@@ -364,7 +371,7 @@ target_link_libraries(KPim6KSieveUi
     KF6::SonnetUi
     Qt::PrintSupport
     KF6::SyntaxHighlighting
-    )
+)
 
 if (TARGET KF6::TextEditTextToSpeech)
     target_link_libraries(KPim6KSieveUi
@@ -374,10 +381,10 @@ if (TARGET KF6::TextEditTextToSpeech)
 endif()
 
 set_target_properties(KPim6KSieveUi PROPERTIES
-    VERSION ${LIBKSIEVE_VERSION}
-    SOVERSION ${LIBKSIEVE_SOVERSION}
+    VERSION ${LIBKSIEVEUI_VERSION}
+    SOVERSION ${LIBKSIEVEUI_SOVERSION}
     EXPORT_NAME KSieveUi
-    )
+)
 
 target_include_directories(KPim6KSieveUi
     INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi/;${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi>")
@@ -388,7 +395,7 @@ ecm_generate_headers(ksieveui_CamelCase_HEADERS
     ManageSieveScriptsDialog
     REQUIRED_HEADERS ksieveui_HEADERS
     PREFIX KSieveUi
-    )
+)
 
 ecm_generate_headers(ksieveui_Camelcaseeditor_HEADERS
     HEADER_NAMES
@@ -397,7 +404,7 @@ ecm_generate_headers(ksieveui_Camelcaseeditor_HEADERS
     REQUIRED_HEADERS ksieveui_editor_HEADERS
     PREFIX KSieveUi
     RELATIVE editor
-    )
+)
 
 ecm_generate_headers(ksieveui_Camelcasevacation_HEADERS
     HEADER_NAMES
@@ -406,7 +413,7 @@ ecm_generate_headers(ksieveui_Camelcasevacation_HEADERS
     REQUIRED_HEADERS ksieveui_vacation_HEADERS
     PREFIX KSieveUi
     RELATIVE vacation
-    )
+)
 
 ecm_generate_headers(ksieveui_Camelcasedebug_HEADERS
     HEADER_NAMES
@@ -414,7 +421,7 @@ ecm_generate_headers(ksieveui_Camelcasedebug_HEADERS
     REQUIRED_HEADERS ksieveui_debug_HEADERS
     PREFIX KSieveUi
     RELATIVE debug
-    )
+)
 
 ecm_generate_headers(ksieveui_Camelcasewidgets_HEADERS
     HEADER_NAMES
@@ -427,16 +434,16 @@ ecm_generate_headers(ksieveui_Camelcasewidgets_HEADERS
     REQUIRED_HEADERS ksieveui_widgets_HEADERS
     PREFIX KSieveUi
     RELATIVE widgets
-    )
+)
 
 
 ecm_generate_pri_file(BASE_NAME KSieveUi
     LIB_NAME KPim6KSieveUi
     DEPS "KManageSieve KSieve PimCommon" FILENAME_VAR PRI_FILENAME
-    )
+)
 
 
-install(TARGETS KPim6KSieveUi EXPORT KPim6KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KPim6KSieveUi EXPORT KPim6KSieveUiTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
     ${ksieveui_Camelcasewidgets_HEADERS}
     ${ksieveui_Camelcasedebug_HEADERS}
@@ -445,7 +452,7 @@ install(FILES
     ${ksieveui_Camelcaseeditor_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi/KSieveUi
     COMPONENT Devel
-    )
+)
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/ksieveui_export.h
@@ -456,12 +463,16 @@ install(FILES
     ${ksieveui_editor_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi/ksieveui
     COMPONENT Devel
-    )
+)
 install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
-    )
+)
 
+install(FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/libksieveui_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi COMPONENT Devel
+    )
 
 install(FILES data/ksieve_script.knsrc DESTINATION ${KDE_INSTALL_KNSRCDIR} )
 install(DIRECTORY data/scripts/ DESTINATION ${KDE_INSTALL_DATADIR}/sieve/scripts/ )
@@ -474,30 +485,30 @@ if (BUILD_QCH)
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-            ${ksieveui_widgets_HEADERS}
-            ${ksieveui_debug_HEADERS}
-            ${ksieveui_vacation_HEADERS}
-            ${ksieveui_HEADERS}
-            ${ksieveui_editor_HEADERS}
-            ${ksieveui_util_HEADERS}
-            ${ksieveui_managescriptsjob_HEADERS}
+        ${ksieveui_widgets_HEADERS}
+        ${ksieveui_debug_HEADERS}
+        ${ksieveui_vacation_HEADERS}
+        ${ksieveui_HEADERS}
+        ${ksieveui_editor_HEADERS}
+        ${ksieveui_util_HEADERS}
+        ${ksieveui_managescriptsjob_HEADERS}
         #MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
         #IMAGE_DIRS "${CMAKE_SOURCE_DIR}/docs/pics"
         LINK_QCHS
-            Qt6Core_QCH
-            Qt6Gui_QCH
-            Qt6Widgets_QCH
+        Qt6Core_QCH
+        Qt6Gui_QCH
+        Qt6Widgets_QCH
         INCLUDE_DIRS
-            ${CMAKE_CURRENT_BINARY_DIR}
+        ${CMAKE_CURRENT_BINARY_DIR}
         BLANK_MACROS
-            KSIEVEUI_EXPORT
+        KSIEVEUI_EXPORT
         TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
         COMPONENT Devel
     )
 endif()
 
-if (0)
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6LibKSieveUi")
 if (BUILD_QCH)
     ecm_install_qch_export(
         TARGETS KPim6KSieveUi_QCH
@@ -505,21 +516,20 @@ if (BUILD_QCH)
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KSieveUiQchTargets.cmake\")")
+set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6LibKSieveUiQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/KPimLibKSieveUiConfig.cmake.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveUiConfig.cmake"
-  INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+    "${CMAKE_CURRENT_SOURCE_DIR}/KPimLibKSieveUiConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveUiConfig.cmake"
+    INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
 )
 
 install(FILES
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveUiConfig.cmake"
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveUiConfigVersion.cmake"
-  DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-  COMPONENT Devel
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveUiConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveUiConfigVersion.cmake"
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    COMPONENT Devel
 )
 
 install(EXPORT KPim6KSieveUiTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6LibKSieveUiTargets.cmake NAMESPACE KPim6::)
-endif()

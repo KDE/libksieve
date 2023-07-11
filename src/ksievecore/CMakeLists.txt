@@ -1,6 +1,12 @@
 # SPDX-FileCopyrightText: 2023 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 
+ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVECORE
+                        VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libksievecore_version.h"
+                        PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveCoreConfigVersion.cmake"
+                        SOVERSION 6
+)
+
 add_library(KPim6KSieveCore)
 add_library(KPim6::KSieveCore ALIAS KPim6KSieveCore)
 
@@ -11,7 +17,7 @@ target_sources(KPim6KSieveCore PRIVATE
     sieveimapinstance/sieveimapinstanceinterface.h
     sieveimapinstance/sieveimapinstanceinterfacemanager.cpp
     sieveimapinstance/sieveimapinstanceinterfacemanager.h
-    )
+)
 
 target_sources(KPim6KSieveCore PRIVATE
     managescriptsjob/checkkolabkep14supportjob.cpp
@@ -24,7 +30,7 @@ target_sources(KPim6KSieveCore PRIVATE
     managescriptsjob/renamescriptjob.h
     managescriptsjob/checkscriptjob.cpp
     managescriptsjob/checkscriptjob.h
-    )
+)
 
 target_sources(KPim6KSieveCore PRIVATE
     util/util.cpp
@@ -39,7 +45,7 @@ target_sources(KPim6KSieveCore PRIVATE
     util/findaccountinfojob.h
     util/sieveimappasswordprovider.cpp
     util/sieveimappasswordprovider.h
-    )
+)
 
 target_sources(KPim6KSieveCore PRIVATE
     scriptsparsing/xmlprintingscriptbuilder.cpp
@@ -63,12 +69,12 @@ target_sources(KPim6KSieveCore PRIVATE
     vacation/searchserverwithvacationsupportjob.h
     vacation/multiimapvacationmanager.h
     vacation/multiimapvacationmanager.cpp
-    )
+)
 
 ecm_qt_declare_logging_category(KPim6KSieveCore HEADER libksievecore_debug.h IDENTIFIER LIBKSIEVECORE_LOG CATEGORY_NAME org.kde.pim.libksieve.core
-        DESCRIPTION "kdepim (libksievecore)"
-        EXPORT LIBKSIEVE
-    )
+    DESCRIPTION "kdepim (libksievecore)"
+    EXPORT LIBKSIEVE
+)
 kconfig_add_kcfg_files(KPim6KSieveCore settings/sieve-vacation.kcfgc)
 
 
@@ -84,7 +90,7 @@ target_link_libraries(KPim6KSieveCore
     KPim6::MailTransport
     KPim6::Mime
     KPim6::IdentityManagementCore
-    )
+)
 
 generate_export_header(KPim6KSieveCore BASE_NAME ksievecore)
 if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
@@ -93,10 +99,10 @@ endif()
 
 
 set_target_properties(KPim6KSieveCore PROPERTIES
-    VERSION ${LIBKSIEVE_VERSION}
-    SOVERSION ${LIBKSIEVE_SOVERSION}
+    VERSION ${LIBKSIEVECORE_VERSION}
+    SOVERSION ${LIBKSIEVECORE_SOVERSION}
     EXPORT_NAME KSieveCore
-    )
+)
 
 target_include_directories(KPim6KSieveCore
     INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveCore/;${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveCore>")
@@ -118,7 +124,7 @@ ecm_generate_headers(ksievecore_Camelcaseimapinstance_HEADERS
     REQUIRED_HEADERS ksievecore_imapinstance_HEADERS
     PREFIX KSieveCore
     RELATIVE sieveimapinstance
-    )
+)
 
 ecm_generate_headers(ksievecore_Camelmanagescriptsjob_HEADERS
     HEADER_NAMES
@@ -127,7 +133,7 @@ ecm_generate_headers(ksievecore_Camelmanagescriptsjob_HEADERS
     REQUIRED_HEADERS ksievecore_managescriptsjob_HEADERS
     PREFIX KSieveCore
     RELATIVE managescriptsjob
-    )
+)
 
 ecm_generate_headers(ksievecore_Camelcaseutil_HEADERS
     HEADER_NAMES
@@ -137,7 +143,7 @@ ecm_generate_headers(ksievecore_Camelcaseutil_HEADERS
     REQUIRED_HEADERS ksievecore_util_HEADERS
     PREFIX KSieveCore
     RELATIVE util
-    )
+)
 
 ecm_generate_headers(ksievecore_Camelcasescriptsparsing_HEADERS
     HEADER_NAMES
@@ -146,7 +152,7 @@ ecm_generate_headers(ksievecore_Camelcasescriptsparsing_HEADERS
     REQUIRED_HEADERS ksievecore_scriptsparsing_HEADERS
     PREFIX KSieveCore
     RELATIVE scriptsparsing
-    )
+)
 
 ecm_generate_headers(ksievecore_Camelcasevacation_HEADERS
     HEADER_NAMES
@@ -158,9 +164,10 @@ ecm_generate_headers(ksievecore_Camelcasevacation_HEADERS
     REQUIRED_HEADERS ksievecore_vacation_HEADERS
     PREFIX KSieveCore
     RELATIVE vacation
-    )
+)
 
-install(TARGETS KPim6KSieveCore EXPORT KPim6KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+#install(TARGETS KPim6KSieveCore EXPORT KPim6KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS KPim6KSieveCore EXPORT KPim6KSieveCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
     ${ksievecore_Camelcaseimapinstance_HEADERS}
     ${ksievecore_Camelmanagescriptsjob_HEADERS}
@@ -170,7 +177,7 @@ install(FILES
 
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveCore/KSieveCore
     COMPONENT Devel
-    )
+)
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/ksievecore_export.h
@@ -179,42 +186,49 @@ install(FILES
     ${ksievecore_util_HEADERS}
     ${ksievecore_scriptsparsing_HEADERS}
     ${ksievecore_vacation_HEADERS}
+
     ${CMAKE_CURRENT_BINARY_DIR}/sieve-vacation.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveCore/ksievecore
     COMPONENT Devel
-    )
+)
 install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
+)
+
+install(FILES
+    ${CMAKE_CURRENT_BINARY_DIR}/libksievecore_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveCore COMPONENT Devel
     )
 
-if (0)
-    if (BUILD_QCH)
-        ecm_add_qch(
-            KPim6KSieveCore_QCH
-            NAME KPim6KSieveCore
-            BASE_NAME KPim6KSieveCore
-            VERSION ${PIM_VERSION}
-            ORG_DOMAIN org.kde
-            SOURCES # using only public headers, to cover only public API
-            ${ksievecore_imapinstance_HEADERS}
-            ${ksievecore_managescriptsjob_HEADERS}
-            ${ksievecore_util_HEADERS}
-            ${ksievecore_scriptsparsing_HEADERS}
-            ${ksievecore_vacation_HEADERS}
-            #MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
-            #IMAGE_DIRS "${CMAKE_SOURCE_DIR}/docs/pics"
-            LINK_QCHS
-                Qt6Core_QCH
-            INCLUDE_DIRS
-                ${CMAKE_CURRENT_BINARY_DIR}
-            BLANK_MACROS
-                KSIEVEUI_EXPORT
-            TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-            QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-            COMPONENT Devel
-        )
-    endif()
+
+set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6LibKSieveCore")
+if (BUILD_QCH)
+    ecm_add_qch(
+        KPim6KSieveCore_QCH
+        NAME KPim6KSieveCore
+        BASE_NAME KPim6KSieveCore
+        VERSION ${PIM_VERSION}
+        ORG_DOMAIN org.kde
+        SOURCES # using only public headers, to cover only public API
+        ${ksievecore_imapinstance_HEADERS}
+        ${ksievecore_managescriptsjob_HEADERS}
+        ${ksievecore_util_HEADERS}
+        ${ksievecore_scriptsparsing_HEADERS}
+        ${ksievecore_vacation_HEADERS}
+        #MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
+        #IMAGE_DIRS "${CMAKE_SOURCE_DIR}/docs/pics"
+        LINK_QCHS
+        Qt6Core_QCH
+        INCLUDE_DIRS
+        ${CMAKE_CURRENT_BINARY_DIR}
+        BLANK_MACROS
+        KSIEVECORE_EXPORT
+        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
+        COMPONENT Devel
+    )
+endif()
 
 
 
@@ -225,21 +239,20 @@ if (BUILD_QCH)
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KSieveCoreQchTargets.cmake\")")
+set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KSieveCoreQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/KPimLibKSieveCoreConfig.cmake.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveCoreConfig.cmake"
-  INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+    "${CMAKE_CURRENT_SOURCE_DIR}/KPimLibKSieveCoreConfig.cmake.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveCoreConfig.cmake"
+    INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
 )
 
 install(FILES
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveCoreConfig.cmake"
-  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveCoreConfigVersion.cmake"
-  DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-  COMPONENT Devel
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveCoreConfig.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveCoreConfigVersion.cmake"
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    COMPONENT Devel
 )
 
 install(EXPORT KPim6KSieveCoreTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6LibKSieveCoreTargets.cmake NAMESPACE KPim6::)
-endif()
