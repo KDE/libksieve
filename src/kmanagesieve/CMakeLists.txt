@@ -86,4 +86,29 @@ install(FILES
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
 )
 
+if (0)
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KPim6KManageSieve_QCH
+        FILE KPim6KManageSieveQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KManageSieveQchTargets.cmake\")")
+endif()
 
+configure_package_config_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/KPimLibKManageSieveConfig.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKManageSieveConfig.cmake"
+  INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+)
+
+install(FILES
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKManageSieveConfig.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKManageSieveConfigVersion.cmake"
+  DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+  COMPONENT Devel
+)
+
+install(EXPORT KPim6KManageSieveTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6LibKManageSieveTargets.cmake NAMESPACE KPim6::)
+endif()

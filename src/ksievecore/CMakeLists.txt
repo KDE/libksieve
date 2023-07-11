@@ -187,3 +187,30 @@ install(FILES
     ${PRI_FILENAME}
     DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
     )
+
+if (0)
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KPim6KSieveCore_QCH
+        FILE KPim6KSieveCoreQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KSieveCoreQchTargets.cmake\")")
+endif()
+
+configure_package_config_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/KPimLibKSieveCoreConfig.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveCoreConfig.cmake"
+  INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+)
+
+install(FILES
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveCoreConfig.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveCoreConfigVersion.cmake"
+  DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+  COMPONENT Devel
+)
+
+install(EXPORT KPim6KSieveCoreTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6LibKSieveCoreTargets.cmake NAMESPACE KPim6::)
+endif()

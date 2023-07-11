@@ -496,3 +496,30 @@ if (BUILD_QCH)
         COMPONENT Devel
     )
 endif()
+
+if (0)
+if (BUILD_QCH)
+    ecm_install_qch_export(
+        TARGETS KPim6KSieveUi_QCH
+        FILE KPim6KSieveUiQchTargets.cmake
+        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+        COMPONENT Devel
+    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KSieveUiQchTargets.cmake\")")
+endif()
+
+configure_package_config_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/KPimLibKSieveUiConfig.cmake.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveUiConfig.cmake"
+  INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+)
+
+install(FILES
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveUiConfig.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/KPim6LibKSieveUiConfigVersion.cmake"
+  DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+  COMPONENT Devel
+)
+
+install(EXPORT KPim6KSieveUiTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6LibKSieveUiTargets.cmake NAMESPACE KPim6::)
+endif()
