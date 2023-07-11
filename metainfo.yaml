@@ -13,6 +13,8 @@ release: false
 libraries:
     - qmake: KSieveUi
       cmake: KPim6::SieveUi
+    - qmake: KSieveCore
+      cmake: KPim6::SieveCore
     - qmake: KManageSieve
       cmake: KPim6::KManageSieve
     - qmake: KSieve
