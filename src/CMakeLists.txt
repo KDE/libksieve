@@ -17,5 +17,3 @@ add_subdirectory(kmanagesieve)
 add_subdirectory(ksievecore)
 add_subdirectory(ksieveui)
 
-
-install(TARGETS KPim6KSieve EXPORT KPim6KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

@@ -166,7 +166,6 @@ ecm_generate_headers(ksievecore_Camelcasevacation_HEADERS
     RELATIVE vacation
 )
 
-#install(TARGETS KPim6KSieveCore EXPORT KPim6KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(TARGETS KPim6KSieveCore EXPORT KPim6KSieveCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
     ${ksievecore_Camelcaseimapinstance_HEADERS}
