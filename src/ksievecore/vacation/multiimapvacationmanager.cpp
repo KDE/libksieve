@@ -6,7 +6,6 @@
 
 #include "multiimapvacationmanager.h"
 #include <KSieveCore/SearchServerWithVacationSupportJob>
-#include <KSieveCore/Util>
 #include <KSieveCore/VacationCheckJob>
 #include <kmanagesieve/sievejob.h>
 #include <managescriptsjob/checkkolabkep14supportjob.h>
