@@ -95,8 +95,6 @@ ecm_set_disabled_deprecation_versions(QT 6.5  KF 5.240.0)
 
 
 ########### CMake Config Files ###########
-set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6LibKSieve")
-
 if(BUILD_TESTING)
     find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)
     add_subdirectory(autotests)
