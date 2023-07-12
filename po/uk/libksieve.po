@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-08 01:17+0000\n"
-"PO-Revision-Date: 2023-03-15 07:55+0200\n"
+"PO-Revision-Date: 2023-07-08 08:40+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -74,16 +74,13 @@ msgid "Sieve Authentication Details"
 msgstr "Дані розпізнавання для фільтрування"
 
 #: kmanagesieve/session.cpp:260
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please enter your authentication details for your sieve account (usually "
-#| "the same as your email password):"
+#, kde-format
 msgid ""
 "Please enter your authentication details for your sieve account "
 "\"%1\" (usually the same as your email password):"
 msgstr ""
 "Будь ласка, вкажіть дані щодо розпізнавання на вашому обліковому записі "
-"фільтрування (зазвичай, пароль адреси ел. пошти):"
+"фільтрування «%1» (зазвичай, пароль адреси ел. пошти):"
 
 #: kmanagesieve/session.cpp:321
 #, kde-format
