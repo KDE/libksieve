@@ -215,8 +215,6 @@ if (BUILD_QCH)
         ${ksievecore_util_HEADERS}
         ${ksievecore_scriptsparsing_HEADERS}
         ${ksievecore_vacation_HEADERS}
-        #MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
-        #IMAGE_DIRS "${CMAKE_SOURCE_DIR}/docs/pics"
         LINK_QCHS
         Qt6Core_QCH
         INCLUDE_DIRS

@@ -492,8 +492,6 @@ if (BUILD_QCH)
         ${ksieveui_editor_HEADERS}
         ${ksieveui_util_HEADERS}
         ${ksieveui_managescriptsjob_HEADERS}
-        #MD_MAINPAGE "${CMAKE_SOURCE_DIR}/README.md"
-        #IMAGE_DIRS "${CMAKE_SOURCE_DIR}/docs/pics"
         LINK_QCHS
         Qt6Core_QCH
         Qt6Gui_QCH
