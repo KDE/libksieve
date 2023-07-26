@@ -54,4 +54,4 @@ private:
     Status mStatus = Idle;
 };
 }
-Q_DECLARE_TYPEINFO(KSieveCore::SieveImapInstance, Q_MOVABLE_TYPE);
+Q_DECLARE_TYPEINFO(KSieveCore::SieveImapInstance, Q_RELOCATABLE_TYPE);
