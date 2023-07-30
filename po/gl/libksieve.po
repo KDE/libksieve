@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-08 01:17+0000\n"
-"PO-Revision-Date: 2023-06-17 16:07+0200\n"
+"PO-Revision-Date: 2023-07-29 09:41+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: kmanagesieve/session.cpp:90
 #, kde-format
@@ -70,16 +70,13 @@ msgid "Sieve Authentication Details"
 msgstr "Detalles de autenticación de Sieve"
 
 #: kmanagesieve/session.cpp:260
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please enter your authentication details for your sieve account (usually "
-#| "the same as your email password):"
+#, kde-format
 msgid ""
 "Please enter your authentication details for your sieve account "
 "\"%1\" (usually the same as your email password):"
 msgstr ""
 "Insira os seus detalles de autenticación para a súa conta de Sieve "
-"(normalmente os mesmos que o contrasinal de correo electrónico):"
+"«%1» (normalmente os mesmos que o contrasinal de correo electrónico):"
 
 #: kmanagesieve/session.cpp:321
 #, kde-format
@@ -524,7 +521,8 @@ msgid ""
 msgstr ""
 "A acción «manter» é calquera acción que se tome en troques das demais "
 "accións se non se produce ningún filtrado; normalmente, isto simplemente "
-"significa que se garde a mensaxe na caixa de correo principal do usuario."
+"significa que se garde a mensaxe na caixa de correo principal da persoa "
+"usuaria."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:55
 #, kde-format
@@ -551,7 +549,8 @@ msgstr "método:"
 msgid ""
 "The \"notify\" action specifies that a notification should be sent to a user."
 msgstr ""
-"A acción «notificar» indica que se lle envíe unha notificación ao usuario."
+"A acción «notificar» indica que se lle envíe unha notificación á persoa "
+"usuaria."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:22
 #, kde-format
@@ -571,8 +570,8 @@ msgid ""
 "action makes no changes to the message body or existing headers, but it may "
 "add new headers."
 msgstr ""
-"A acción «encamiñar» úsase para enviarlle a mensaxe a outro usuario no "
-"enderezo que se indique, igual que no encamiñamento de correo. A acción "
+"A acción «encamiñar» úsase para enviarlle a mensaxe a outra persoa usuaria "
+"no enderezo que se indique, igual que no encamiñamento de correo. A acción "
 "«encamiñar» non realiza ningún cambio no corpo da mensaxe nin nas cabeceiras "
 "existentes pero si pode engadir cabeceiras novas."
 
@@ -648,7 +647,7 @@ msgid ""
 "only and returns processing control to the script that includes it."
 msgstr ""
 "A orde «return» detén só o procesamento do guión incluído inmediatamente e "
-"devolve o control sobre o procesamento ao script que o inclúe."
+"devolve o control sobre o procesamento ao guión que o inclúe."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetflags.cpp:13
 #, kde-format
@@ -765,9 +764,9 @@ msgid ""
 msgstr ""
 "A acción «vacacións» incorpora un contestador automático de vacacións "
 "similar á orde vacation dispoñíbel en moitas versións do Unix. O seu "
-"propósito é fornecerlle aos correspondentes unha notificación de que o "
-"usuario está fóra durante un período de tempo longo e que non deberían "
-"agardar respostas rápidas."
+"propósito é fornecerlle aos correspondentes unha notificación de que a "
+"persoa usuaria está fóra durante un período de tempo longo e que non "
+"deberían agardar respostas rápidas."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:208
 #, kde-format
@@ -1048,13 +1047,13 @@ msgid ""
 "The \"envelope\" test is true if the specified part of the [SMTP] (or "
 "equivalent) envelope matches the specified key."
 msgstr ""
-"A proba «sobre» é verdadeira se a parte que se especifique do sobre de "
-"[SMTP] (ou equivalente) coincide coa chave que se indique."
+"A proba «sobre» é verdadeira se a parte que se indique do sobre de [SMTP] "
+"(ou equivalente) coincide coa chave que se indique."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:23
 #, kde-format
 msgid "Environment"
-msgstr "Ambiente"
+msgstr "Contorno"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:33
 #, kde-format
@@ -1068,7 +1067,7 @@ msgid ""
 "by the name string and matches it to the values specified in the key-list "
 "argument."
 msgstr ""
-"A proba de ambiente obtén o elemento de información sobre o ambiente que se "
+"A proba de ambiente obtén o elemento de información sobre o contorno que se "
 "indique coa cadea do nome e faina coincidir cos valores indicados no "
 "argumento de lista de claves."
 
@@ -1189,8 +1188,8 @@ msgid ""
 msgstr ""
 "A proba «Existe caixa de correo» é verdadeira se todas as caixas de correo "
 "listadas no argumento «mailbox-names» existen no almacén de correo e se cada "
-"un deles permite que o usuario en cuxo contexto se execute o guión de Sieve "
-"«entregue» mensaxes nela."
+"un deles permite que a persoa usuaria en cuxo contexto se execute o guión de "
+"Sieve «entregue» mensaxes nela."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:24
 #, kde-format
@@ -1366,7 +1365,7 @@ msgstr "dominio"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:30
 #, kde-format
 msgid "user"
-msgstr "usuario"
+msgstr "usuaria"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:31
 #, kde-format
@@ -1677,7 +1676,7 @@ msgid ""
 msgstr ""
 "Unha variábel ten ámbito global en todos os guións que a declarasen coa orde "
 "«global». Se un guión usa ese nome de variábel sen a declarar como global, o "
-"nome indica unha variábel separada, non global, dentro dese script."
+"nome indica unha variábel separada, non global, dentro dese guión."
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:42
 #, kde-format
@@ -1727,7 +1726,7 @@ msgid ""
 msgstr ""
 "A orde «incluír» toma un parámetro opcional «lugar», un parámetro opcional «:"
 "once», un parámetro opcional «:optional» e un argumento dunha cadea que "
-"representa o nome do guión que se desexa incluír para procesarse nese punto."
+"representa o nome do guión que se quere incluír para procesarse nese punto."
 
 # well-spelled: include
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:337
@@ -1982,8 +1981,7 @@ msgid ""
 "Collecting diagnostic information about Sieve support...\n"
 "\n"
 msgstr ""
-"Estase a recoller a información de diagnóstico sobre a compatibilidade con "
-"Sieve…\n"
+"Recollendo a información de diagnóstico sobre a compatibilidade con Sieve…\n"
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:68
@@ -2043,7 +2041,7 @@ msgid ""
 "(This script is empty)\n"
 "\n"
 msgstr ""
-"(Este script está baleiro.)\n"
+"(Este guión está baleiro.)\n"
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:206
@@ -2089,7 +2087,7 @@ msgid ""
 "Active script: '%1'\n"
 "\n"
 msgstr ""
-"Script activo: «%1»\n"
+"Guión activo: «%1»\n"
 "\n"
 
 #: ksieveui/editor/sieveeditor.cpp:39
@@ -2460,7 +2458,7 @@ msgid ""
 "The server responded:\n"
 "%1"
 msgstr ""
-"Erro ao escribir o guión de usuario («User») no servidor.\n"
+"Erro ao escribir o guión de persoa usuaria («User») no servidor.\n"
 "O servidor respondeu:\n"
 "%1"
 
@@ -2570,7 +2568,8 @@ msgstr "Ficheiros XML (*.xml);;Todos os ficheiros (*)"
 #, kde-format
 msgid "Allow out-of-office settings to be changeable by the user."
 msgstr ""
-"Permitir que o usuario poida cambiar a configuración para fóra da oficina."
+"Permitir que a persoa usuaria poida cambiar a configuración para fóra da "
+"oficina."
 
 #. i18n: ectx: label, entry (AllowOutOfOfficeUploadButNoSettings), group (OutOfOffice)
 #: ksieveui/settings/sieve-vacation.kcfg:20
@@ -2580,9 +2579,9 @@ msgid ""
 "changing any settings, such as the domain to react to or the spam reaction "
 "switch."
 msgstr ""
-"Permitir que os usuarios envíen guións de Sieve desde fóra da oficina, pero "
-"evitar que cambien calquera configuración, como o dominio ao que reaccionar "
-"ou o conmutador de reacción a correo lixo."
+"Permitir que as persoas usuarias envíen guións de Sieve desde fóra da "
+"oficina, pero evitar que cambien calquera configuración, como o dominio ao "
+"que reaccionar ou o conmutador de reacción a correo lixo."
 
 #. i18n: ectx: label, entry (OutOfOfficeDomain), group (OutOfOffice)
 #: ksieveui/settings/sieve-vacation.kcfg:24
@@ -2724,6 +2723,7 @@ msgstr "Encamiñar a mensaxe"
 msgid "Forward Message and add copy"
 msgstr "Encamiñar a mensaxe e engadir unha copia"
 
+# skip-rule: en-post
 #: ksieveui/templates/sievedefaulttemplate.cpp:66
 #, kde-format
 msgid "Destroy mail posted by..."
@@ -2920,9 +2920,9 @@ msgid ""
 "extensions;without it, KMail cannot install out-of-office replies for you."
 "Please contact your system administrator."
 msgstr ""
-"O servidor non enumerou «vacation» na lista de extensións de Sieve "
-"admitidas; sen ela, KMail non pode instalar respostas para fóra da oficina. "
-"Contacte co administrador do sistema."
+"O servidor non incluíu «vacation» na lista de extensións de Sieve admitidas; "
+"sen ela, KMail non pode instalar respostas para fóra da oficina. Contacte "
+"coa persoa administradora do sistema."
 
 #: ksieveui/vacation/vacationutils.cpp:39
 #, kde-format
@@ -2955,9 +2955,9 @@ msgid ""
 msgstr ""
 "Estarei fóra do traballo ata %1.\n"
 "\n"
-"Se é unha urxencia, por favor contacte con «substituto»\n"
+"Se é unha urxencia, contacte con «substitución».\n"
 "\n"
-"correo electrónico: «enderezo de correo electrónico do substituto»\n"
+"correo electrónico: «enderezo de correo electrónico da substitución»\n"
 "teléfono: +34 982 061 061\n"
 "fax.:  +34 981 112 112\n"
 "\n"
@@ -2989,7 +2989,7 @@ msgstr "Non hai ningún servidor de IMAP configurado…"
 #: ksieveui/widgets/managesievetreeview.cpp:20
 #, kde-format
 msgid "Available Scripts"
-msgstr "Scripts dispoñíbeis"
+msgstr "Guións dispoñíbeis"
 
 #: ksieveui/widgets/managesievetreeview.cpp:39
 #, kde-format
@@ -3024,7 +3024,7 @@ msgstr "Novo guión de Sieve"
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format
 msgid "Please enter a name for the new Sieve script:"
-msgstr "Por favor, insira un nome para o novo guión de Sieve:"
+msgstr "Escriba o nome do novo guión de Sieve:"
 
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format
@@ -3141,8 +3141,8 @@ msgstr ""
 #, kde-format
 msgid "Parse error: Premature end of Quoted String (missing closing '\"')"
 msgstr ""
-"Erro de procesamento: fin prematura dun texto entre aspas (faltan unhas "
-"aspas de peche)"
+"Erro de procesamento: fin prematura dun texto entre comiñas (faltan as "
+"comiñas de peche)."
 
 #: shared/error.cpp:125
 #, kde-format
