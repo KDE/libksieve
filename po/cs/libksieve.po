@@ -66,16 +66,11 @@ msgid "Sieve Authentication Details"
 msgstr "Ověřovací podrobnosti Sieve"
 
 #: kmanagesieve/session.cpp:260
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please enter your authentication details for your sieve account (usually "
-#| "the same as your email password):"
+#, kde-format
 msgid ""
 "Please enter your authentication details for your sieve account "
 "\"%1\" (usually the same as your email password):"
 msgstr ""
-"Zadejte prosím podrobnosti pro ověření u vašeho účtu sieve (obvykle stejné "
-"jako vaše e-mailové heslo):"
 
 #: kmanagesieve/session.cpp:321
 #, kde-format
