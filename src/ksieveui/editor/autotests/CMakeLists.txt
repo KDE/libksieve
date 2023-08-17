@@ -22,7 +22,7 @@ set( libksieveui_sievetexteditwidgettest_source sievetexteditwidgettest.cpp siev
 add_executable( sievetexteditwidgettest ${libksieveui_sievetexteditwidgettest_source})
 add_test(NAME sievetexteditwidgettest COMMAND sievetexteditwidgettest)
 ecm_mark_as_test(sievetexteditwidgettest)
-target_link_libraries( sievetexteditwidgettest Qt::Test  Qt::Gui KPim6KSieveUi KPim6::PimCommon KPim6::PimTextEdit Qt::PrintSupport)
+target_link_libraries( sievetexteditwidgettest Qt::Test  Qt::Gui KPim6KSieveUi KPim6::PimCommon KPim6::PimTextEdit Qt::PrintSupport KF6::TextAddonsWidgets)
 
 set( libksieveui_sieveinfodialogtest_source sieveinfodialogtest.cpp sieveinfodialogtest.h)
 add_executable( sieveinfodialogtest ${libksieveui_sieveinfodialogtest_source})

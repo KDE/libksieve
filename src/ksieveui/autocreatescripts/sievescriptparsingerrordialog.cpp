@@ -5,8 +5,8 @@
 */
 
 #include "sievescriptparsingerrordialog.h"
-#include <KPIMTextEdit/RichTextEditorWidget>
 #include <PimCommon/PimUtil>
+#include <TextCustomEditor/RichTextEditorWidget>
 
 #include <KLocalizedString>
 #include <KSharedConfig>
@@ -25,7 +25,7 @@ static const char mySieveScriptParsingErrorDialogGroupName[] = "SieveScriptParsi
 }
 SieveScriptParsingErrorDialog::SieveScriptParsingErrorDialog(QWidget *parent)
     : QDialog(parent)
-    , mTextEdit(new KPIMTextEdit::RichTextEditorWidget(this))
+    , mTextEdit(new TextCustomEditor::RichTextEditorWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Sieve Parsing Error"));
     auto mainLayout = new QVBoxLayout(this);

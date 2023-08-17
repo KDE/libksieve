@@ -12,7 +12,7 @@
 #include "../sieveeditorwebengineview.h"
 #include <QTest>
 
-#include <KPIMTextEdit/SlideContainer>
+#include <TextAddonsWidgets/SlideContainer>
 
 SieveEditorHelpHtmlWidgetTest::SieveEditorHelpHtmlWidgetTest(QObject *parent)
     : QObject(parent)
@@ -36,7 +36,7 @@ void SieveEditorHelpHtmlWidgetTest::shouldHaveDefaultValue()
     // KSieveUi::SieveEditorWebEngineView *mWebView = w.findChild<KSieveUi::SieveEditorWebEngineView *>(QStringLiteral("webview"));
     // QVERIFY(mWebView);
 
-    auto mSliderContainer = w.findChild<KPIMTextEdit::SlideContainer *>(QStringLiteral("slidercontainer"));
+    auto mSliderContainer = w.findChild<TextAddonsWidgets::SlideContainer *>(QStringLiteral("slidercontainer"));
     QVERIFY(mSliderContainer);
 
     auto mFindBar = w.findChild<KSieveUi::FindBarWebEngineView *>(QStringLiteral("findbar"));

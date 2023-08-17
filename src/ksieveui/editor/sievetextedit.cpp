@@ -9,8 +9,8 @@
 #include "editor/sievetexteditorspellcheckdecorator.h"
 
 #include <KPIMTextEdit/EditorUtil>
-#include <KPIMTextEdit/PlainTextSyntaxSpellCheckingHighlighter>
 #include <KPIMTextEdit/TextEditorCompleter>
+#include <TextCustomEditor/PlainTextSyntaxSpellCheckingHighlighter>
 
 #include <KLocalizedString>
 #include <KSyntaxHighlighting/Definition>
@@ -40,7 +40,7 @@ public:
 };
 
 SieveTextEdit::SieveTextEdit(QWidget *parent)
-    : KPIMTextEdit::PlainTextEditor(parent)
+    : TextCustomEditor::PlainTextEditor(parent)
     , d(new KSieveUi::SieveTextEditPrivate)
 {
     setSpellCheckingConfigFileName(QStringLiteral("sieveeditorrc"));
@@ -66,7 +66,7 @@ SieveTextEdit::~SieveTextEdit()
 
 void SieveTextEdit::updateHighLighter()
 {
-    auto hlighter = dynamic_cast<KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter *>(highlighter());
+    auto hlighter = dynamic_cast<TextCustomEditor::PlainTextSyntaxSpellCheckingHighlighter *>(highlighter());
     if (hlighter) {
         hlighter->toggleSpellHighlighting(checkSpellingEnabled());
     }
@@ -79,7 +79,7 @@ void SieveTextEdit::clearDecorator()
 
 void SieveTextEdit::createHighlighter()
 {
-    auto highlighter = new KPIMTextEdit::PlainTextSyntaxSpellCheckingHighlighter(this);
+    auto highlighter = new TextCustomEditor::PlainTextSyntaxSpellCheckingHighlighter(this);
     highlighter->toggleSpellHighlighting(checkSpellingEnabled());
     highlighter->setCurrentLanguage(spellCheckingLanguage());
     highlighter->setDefinition(d->mSyntaxRepo.definitionForName(QStringLiteral("Sieve")));
@@ -191,7 +191,7 @@ bool SieveTextEdit::event(QEvent *ev)
             return true;
         }
     }
-    return KPIMTextEdit::PlainTextEditor::event(ev);
+    return TextCustomEditor::PlainTextEditor::event(ev);
 }
 
 Sonnet::SpellCheckDecorator *SieveTextEdit::createSpellCheckDecorator()
@@ -241,7 +241,7 @@ void SieveTextEdit::keyPressEvent(QKeyEvent *e)
     } else if (handleShortcut(e)) {
         return;
     }
-    KPIMTextEdit::PlainTextEditor::keyPressEvent(e);
+    TextCustomEditor::PlainTextEditor::keyPressEvent(e);
     if (e->key() == Qt::Key_F1 && !textCursor().hasSelection()) {
         const QString word = selectedWord();
         const KSieveUi::SieveEditorUtil::HelpVariableName type = KSieveUi::SieveEditorUtil::strToVariableName(word);

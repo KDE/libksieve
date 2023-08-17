@@ -10,7 +10,7 @@
 using namespace KSieveUi;
 
 MultiLineEdit::MultiLineEdit(QWidget *parent)
-    : KPIMTextEdit::PlainTextEditor(parent)
+    : TextCustomEditor::PlainTextEditor(parent)
 {
     setPlaceholderText(i18n("Enter message..."));
     setSearchSupport(false);

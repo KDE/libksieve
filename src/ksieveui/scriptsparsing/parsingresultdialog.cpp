@@ -5,9 +5,9 @@
 */
 
 #include "parsingresultdialog.h"
-#include <KPIMTextEdit/PlainTextEditor>
-#include <KPIMTextEdit/PlainTextEditorWidget>
 #include <PimCommon/PimUtil>
+#include <TextCustomEditor/PlainTextEditor>
+#include <TextCustomEditor/PlainTextEditorWidget>
 
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -39,7 +39,7 @@ ParsingResultDialog::ParsingResultDialog(QWidget *parent)
     connect(buttonBox, &QDialogButtonBox::rejected, this, &ParsingResultDialog::reject);
     user1Button->setText(i18n("Save As..."));
 
-    mTextEdit = new KPIMTextEdit::PlainTextEditorWidget(this);
+    mTextEdit = new TextCustomEditor::PlainTextEditorWidget(this);
     auto highlighter = new KSyntaxHighlighting::SyntaxHighlighter(mTextEdit->editor()->document());
     highlighter->setDefinition(mSyntaxRepo.definitionForName(QStringLiteral("XML")));
     highlighter->setTheme((palette().color(QPalette::Base).lightness() < 128) ? mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)

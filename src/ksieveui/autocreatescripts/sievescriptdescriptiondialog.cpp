@@ -5,7 +5,7 @@
 */
 
 #include "sievescriptdescriptiondialog.h"
-#include <KPIMTextEdit/PlainTextEditorWidget>
+#include <TextCustomEditor/PlainTextEditorWidget>
 
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -23,7 +23,7 @@ static const char mySieveScriptDescriptionDialogGroupName[] = "SieveScriptDescri
 }
 SieveScriptDescriptionDialog::SieveScriptDescriptionDialog(QWidget *parent)
     : QDialog(parent)
-    , mEdit(new KPIMTextEdit::PlainTextEditorWidget(this))
+    , mEdit(new TextCustomEditor::PlainTextEditorWidget(this))
 {
     setWindowTitle(i18nc("@title:window", "Description"));
     auto mainLayout = new QVBoxLayout(this);

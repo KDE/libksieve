@@ -8,7 +8,6 @@
 #include "../vacationeditwidget.h"
 #include "../vacationmaillineedit.h"
 #include <KDateComboBox>
-#include <KPIMTextEdit/PlainTextEditorWidget>
 #include <KTimeComboBox>
 #include <PimCommon/SpellCheckLineEdit>
 #include <QCheckBox>
@@ -16,6 +15,7 @@
 #include <QLineEdit>
 #include <QSpinBox>
 #include <QTest>
+#include <TextCustomEditor/PlainTextEditorWidget>
 #include <vacation/vacationmailactionwidget.h>
 
 VacationEditWidgetTest::VacationEditWidgetTest(QObject *parent)
@@ -36,7 +36,7 @@ void VacationEditWidgetTest::shouldHaveDefaultValue()
     QVERIFY(!mActiveCheck->text().isEmpty());
     QVERIFY(!mActiveCheck->isChecked());
 
-    auto mTextEdit = w.findChild<KPIMTextEdit::PlainTextEditorWidget *>(QStringLiteral("mTextEdit"));
+    auto mTextEdit = w.findChild<TextCustomEditor::PlainTextEditorWidget *>(QStringLiteral("mTextEdit"));
     QVERIFY(mTextEdit);
     QVERIFY(mTextEdit->toPlainText().isEmpty());
     auto mSubject = w.findChild<PimCommon::SpellCheckLineEdit *>(QStringLiteral("mSubject"));

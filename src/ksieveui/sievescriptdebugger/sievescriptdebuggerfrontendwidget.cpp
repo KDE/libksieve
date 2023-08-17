@@ -13,7 +13,7 @@
 #include "editor/sievetexteditwidget.h"
 #include <KLineEdit>
 #include <KLocalizedString>
-#include <KPIMTextEdit/PlainTextEditorWidget>
+#include <TextCustomEditor/PlainTextEditorWidget>
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
@@ -89,7 +89,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     mSplitter->addWidget(sieveEditorWidget);
     mSplitter->setChildrenCollapsible(false);
 
-    mSieveTestResult = new KPIMTextEdit::PlainTextEditorWidget(new KSieveUi::SieveScriptDebuggerResultEditor(this), this);
+    mSieveTestResult = new TextCustomEditor::PlainTextEditorWidget(new KSieveUi::SieveScriptDebuggerResultEditor(this), this);
     mSieveTestResult->setObjectName(QStringLiteral("sievetextresult"));
     mSieveTestResult->editor()->setPlaceholderText(i18n("Display check script result..."));
     mSieveTestResult->setReadOnly(true);

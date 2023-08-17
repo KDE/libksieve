@@ -5,11 +5,11 @@
 */
 #pragma once
 
-#include <KPIMTextEdit/PlainTextEditor>
+#include <TextCustomEditor/PlainTextEditor>
 
 namespace KSieveUi
 {
-class MultiLineEdit : public KPIMTextEdit::PlainTextEditor
+class MultiLineEdit : public TextCustomEditor::PlainTextEditor
 {
     Q_OBJECT
 public:

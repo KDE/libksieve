@@ -8,7 +8,7 @@
 
 #include <QDialog>
 
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 class PlainTextEditorWidget;
 }
@@ -29,6 +29,6 @@ private:
     void writeConfig();
 
 private:
-    KPIMTextEdit::PlainTextEditorWidget *mEdit = nullptr;
+    TextCustomEditor::PlainTextEditorWidget *mEdit = nullptr;
 };
 }

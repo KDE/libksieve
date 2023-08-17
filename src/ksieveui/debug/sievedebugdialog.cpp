@@ -9,8 +9,8 @@
 #include "sievedebugdialog.h"
 #include "util/findaccountinfojob.h"
 #include "util/util.h"
-#include <KPIMTextEdit/PlainTextEditor>
-#include <KPIMTextEdit/PlainTextEditorWidget>
+#include <TextCustomEditor/PlainTextEditor>
+#include <TextCustomEditor/PlainTextEditorWidget>
 
 #include "libksieveui_debug.h"
 #include <KLocalizedString>
@@ -43,7 +43,7 @@ SieveDebugDialog::SieveDebugDialog(KSieveCore::SieveImapPasswordProvider *passwo
     // Collect all accounts
     mResourceIdentifier = KSieveCore::Util::sieveImapResourceNames();
 
-    mEdit = new KPIMTextEdit::PlainTextEditorWidget(this);
+    mEdit = new TextCustomEditor::PlainTextEditorWidget(this);
     mEdit->setReadOnly(true);
     const KSyntaxHighlighting::Definition def = mRepo.definitionForName(QStringLiteral("Sieve"));
     if (!def.isValid()) {

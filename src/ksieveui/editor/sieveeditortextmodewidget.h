@@ -8,9 +8,12 @@
 #include "ksieveui_export.h"
 #include "sieveeditorabstractwidget.h"
 class QSplitter;
-namespace KPIMTextEdit
+namespace TextAddonsWidgets
 {
 class SlideContainer;
+}
+namespace TextCustomEditor
+{
 class TextGoToLineWidget;
 class PlainTextEditFindBar;
 class PlainTextEditor;
@@ -125,8 +128,8 @@ private:
     QStringList mSieveCapabilities;
     QStringList mListOfIncludeFile;
     SieveTextEdit *mTextEdit = nullptr;
-    KPIMTextEdit::PlainTextEditorWidget *mDebugTextEdit = nullptr;
-    KPIMTextEdit::PlainTextEditFindBar *mFindBar = nullptr;
+    TextCustomEditor::PlainTextEditorWidget *mDebugTextEdit = nullptr;
+    TextCustomEditor::PlainTextEditFindBar *mFindBar = nullptr;
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
 #endif
@@ -135,9 +138,9 @@ private:
     SieveEditorWarning *mSieveEditorWarning = nullptr;
     SieveEditorParsingMissingFeatureWarning *mSieveParsingWarning = nullptr;
     SieveEditorTabWidget *mTabWidget = nullptr;
-    KPIMTextEdit::TextGoToLineWidget *mGoToLine = nullptr;
-    KPIMTextEdit::SlideContainer *mGotoLineSliderContainer = nullptr;
-    KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
+    TextCustomEditor::TextGoToLineWidget *mGoToLine = nullptr;
+    TextAddonsWidgets::SlideContainer *mGotoLineSliderContainer = nullptr;
+    TextAddonsWidgets::SlideContainer *mSliderContainer = nullptr;
     SieveTemplateWidget *mSieveTemplateWidget = nullptr;
     QWidget *mEditorWidget = nullptr;
 };

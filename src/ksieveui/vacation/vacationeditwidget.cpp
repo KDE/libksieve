@@ -17,8 +17,8 @@
 
 #include "libksieveui_debug.h"
 #include <KLineEditEventHandler>
-#include <KPIMTextEdit/PlainTextEditor>
-#include <KPIMTextEdit/PlainTextEditorWidget>
+#include <TextCustomEditor/PlainTextEditor>
+#include <TextCustomEditor/PlainTextEditorWidget>
 
 #include <KMime/HeaderParsing>
 
@@ -60,10 +60,10 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     // Message text edit:
     ++row;
     glay->setRowStretch(row, 1);
-    mTextEdit = new KPIMTextEdit::PlainTextEditorWidget(this);
+    mTextEdit = new TextCustomEditor::PlainTextEditorWidget(this);
     mTextEdit->setObjectName(QStringLiteral("mTextEdit"));
     glay->addWidget(mTextEdit, row, 0, 1, 2);
-    connect(mTextEdit->editor(), &KPIMTextEdit::PlainTextEditor::textChanged, this, &VacationEditWidget::setWasChanged);
+    connect(mTextEdit->editor(), &TextCustomEditor::PlainTextEditor::textChanged, this, &VacationEditWidget::setWasChanged);
 
     // Subject
     ++row;

@@ -371,6 +371,8 @@ target_link_libraries(KPim6KSieveUi
     KF6::SonnetUi
     Qt::PrintSupport
     KF6::SyntaxHighlighting
+    KF6::TextAddonsWidgets
+    KF6::TextCustomEditor
 )
 
 if (TARGET KF6::TextEditTextToSpeech)

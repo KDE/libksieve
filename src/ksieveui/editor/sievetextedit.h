@@ -6,7 +6,7 @@
 #pragma once
 
 #include "ksieveui_export.h"
-#include <KPIMTextEdit/PlainTextEditor>
+#include <TextCustomEditor/PlainTextEditor>
 #include <memory>
 
 class QMenu;
@@ -17,7 +17,7 @@ class SieveTextEditPrivate;
  * @brief The SieveTextEdit class
  * @author Laurent Montel <montel@kde.org>
  */
-class KSIEVEUI_EXPORT SieveTextEdit : public KPIMTextEdit::PlainTextEditor
+class KSIEVEUI_EXPORT SieveTextEdit : public TextCustomEditor::PlainTextEditor
 {
     Q_OBJECT
 

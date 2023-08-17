@@ -21,7 +21,7 @@ namespace KManageSieve
 {
 class SieveJob;
 }
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 class PlainTextEditorWidget;
 }
@@ -61,7 +61,7 @@ private:
     KSyntaxHighlighting::Repository mRepo;
 
     KSieveCore::SieveImapPasswordProvider *const mPasswordProvider;
-    KPIMTextEdit::PlainTextEditorWidget *mEdit = nullptr;
+    TextCustomEditor::PlainTextEditorWidget *mEdit = nullptr;
     QStringList mResourceIdentifier;
     QStringList mScriptList;
     QTimer *mShutDownJob = nullptr;

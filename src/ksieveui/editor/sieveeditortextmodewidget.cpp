@@ -17,10 +17,10 @@
 
 #include "KSplitterCollapserButton"
 #include "webengine/sieveeditorhelphtmlwidget.h"
-#include <KPIMTextEdit/PlainTextEditFindBar>
-#include <KPIMTextEdit/PlainTextEditorWidget>
-#include <KPIMTextEdit/SlideContainer>
-#include <KPIMTextEdit/TextGotoLineWidget>
+#include <TextAddonsWidgets/SlideContainer>
+#include <TextCustomEditor/PlainTextEditFindBar>
+#include <TextCustomEditor/PlainTextEditorWidget>
+#include <TextCustomEditor/TextGotoLineWidget>
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
@@ -94,21 +94,24 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     connect(mTextEdit, &SieveTextEdit::editRule, this, &SieveEditorTextModeWidget::slotEditRule);
     connect(mTextEdit, &SieveTextEdit::insertRule, this, &SieveEditorTextModeWidget::slotInsertRule);
 
-    mGotoLineSliderContainer = new KPIMTextEdit::SlideContainer(this);
-    mGoToLine = new KPIMTextEdit::TextGoToLineWidget(this);
+    mGotoLineSliderContainer = new TextAddonsWidgets::SlideContainer(this);
+    mGoToLine = new TextCustomEditor::TextGoToLineWidget(this);
     mGoToLine->hide();
     mGotoLineSliderContainer->setContent(mGoToLine);
     editorWidgetLayout->addWidget(mGotoLineSliderContainer);
-    connect(mGoToLine, &KPIMTextEdit::TextGoToLineWidget::hideGotoLine, mGotoLineSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
+    connect(mGoToLine, &TextCustomEditor::TextGoToLineWidget::hideGotoLine, mGotoLineSliderContainer, &TextAddonsWidgets::SlideContainer::slideOut);
 
-    connect(mGoToLine, &KPIMTextEdit::TextGoToLineWidget::moveToLine, this, &SieveEditorTextModeWidget::slotGoToLine);
-    connect(mTextEdit, &SieveTextEdit::blockCountChanged, mGoToLine, &KPIMTextEdit::TextGoToLineWidget::slotBlockCountChanged);
+    connect(mGoToLine, &TextCustomEditor::TextGoToLineWidget::moveToLine, this, &SieveEditorTextModeWidget::slotGoToLine);
+    connect(mTextEdit, &SieveTextEdit::blockCountChanged, mGoToLine, &TextCustomEditor::TextGoToLineWidget::slotBlockCountChanged);
 
-    mSliderContainer = new KPIMTextEdit::SlideContainer(this);
-    mFindBar = new KPIMTextEdit::PlainTextEditFindBar(mTextEdit, textEditWidget);
+    mSliderContainer = new TextAddonsWidgets::SlideContainer(this);
+    mFindBar = new TextCustomEditor::PlainTextEditFindBar(mTextEdit, textEditWidget);
     mFindBar->setHideWhenClose(false);
-    connect(mFindBar, &KPIMTextEdit::TextEditFindBarBase::hideFindBar, mSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
-    connect(mFindBar, &KPIMTextEdit::TextEditFindBarBase::displayMessageIndicator, mTextEdit, &KPIMTextEdit::PlainTextEditor::slotDisplayMessageIndicator);
+    connect(mFindBar, &TextCustomEditor::TextEditFindBarBase::hideFindBar, mSliderContainer, &TextAddonsWidgets::SlideContainer::slideOut);
+    connect(mFindBar,
+            &TextCustomEditor::TextEditFindBarBase::displayMessageIndicator,
+            mTextEdit,
+            &TextCustomEditor::PlainTextEditor::slotDisplayMessageIndicator);
     mSliderContainer->setContent(mFindBar);
     editorWidgetLayout->addWidget(mSliderContainer);
 
@@ -132,7 +135,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     connect(mTextEdit, &SieveTextEdit::findText, this, &SieveEditorTextModeWidget::slotFind);
     connect(mTextEdit, &SieveTextEdit::replaceText, this, &SieveEditorTextModeWidget::slotReplace);
 
-    mDebugTextEdit = new KPIMTextEdit::PlainTextEditorWidget(this);
+    mDebugTextEdit = new TextCustomEditor::PlainTextEditorWidget(this);
     mDebugTextEdit->editor()->setSearchSupport(false);
     mDebugTextEdit->editor()->setReadOnly(true);
     mDebugTextEdit->editor()->setPlaceholderText(i18n("Show result from \"check syntax\""));

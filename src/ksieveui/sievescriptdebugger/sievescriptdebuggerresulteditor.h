@@ -6,11 +6,11 @@
 
 #pragma once
 
-#include <KPIMTextEdit/PlainTextEditor>
+#include <TextCustomEditor/PlainTextEditor>
 
 namespace KSieveUi
 {
-class SieveScriptDebuggerResultEditor : public KPIMTextEdit::PlainTextEditor
+class SieveScriptDebuggerResultEditor : public TextCustomEditor::PlainTextEditor
 {
     Q_OBJECT
 public:

@@ -10,7 +10,7 @@
 
 #include <QVBoxLayout>
 
-#include <KPIMTextEdit/SlideContainer>
+#include <TextAddonsWidgets/SlideContainer>
 
 #include "findbar/findbarwebengineview.h"
 
@@ -40,12 +40,12 @@ SieveEditorHelpHtmlWidget::SieveEditorHelpHtmlWidget(QWidget *parent)
     connect(mWebView, &SieveEditorWebEngineView::selectionChanged, this, &SieveEditorHelpHtmlWidget::slotSelectionChanged);
     lay->addWidget(mWebView);
 
-    mSliderContainer = new KPIMTextEdit::SlideContainer(this);
+    mSliderContainer = new TextAddonsWidgets::SlideContainer(this);
     mSliderContainer->setObjectName(QStringLiteral("slidercontainer"));
     lay->addWidget(mSliderContainer);
     mFindBar = new KSieveUi::FindBarWebEngineView(mWebView, this);
     mFindBar->setObjectName(QStringLiteral("findbar"));
-    connect(mFindBar, &KSieveUi::FindBarWebEngineView::hideFindBar, mSliderContainer, &KPIMTextEdit::SlideContainer::slideOut);
+    connect(mFindBar, &KSieveUi::FindBarWebEngineView::hideFindBar, mSliderContainer, &TextAddonsWidgets::SlideContainer::slideOut);
     mSliderContainer->setContent(mFindBar);
 }
 

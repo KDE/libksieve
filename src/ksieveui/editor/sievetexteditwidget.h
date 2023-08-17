@@ -9,10 +9,13 @@
 #include "ksieveui_private_export.h"
 #include <QWidget>
 #include <memory>
-namespace KPIMTextEdit
+namespace TextCustomEditor
+{
+class PlainTextEditFindBar;
+}
+namespace TextAddonsWidgets
 {
 class SlideContainer;
-class PlainTextEditFindBar;
 }
 
 namespace KSieveUi
@@ -38,7 +41,7 @@ private:
     KSIEVEUI_NO_EXPORT void initialize(KSieveUi::SieveTextEdit *custom = nullptr);
     std::unique_ptr<SieveTextEditWidgetPrivate> const d;
     KSieveUi::SieveTextEdit *mTextEdit = nullptr;
-    KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
-    KPIMTextEdit::PlainTextEditFindBar *mFindBar = nullptr;
+    TextAddonsWidgets::SlideContainer *mSliderContainer = nullptr;
+    TextCustomEditor::PlainTextEditFindBar *mFindBar = nullptr;
 };
 }

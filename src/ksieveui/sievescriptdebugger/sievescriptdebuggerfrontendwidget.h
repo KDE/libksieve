@@ -9,7 +9,7 @@
 #include "ksieveui_private_export.h"
 #include <QWidget>
 
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 class PlainTextEditorWidget;
 }
@@ -52,7 +52,7 @@ private:
     void updateDebugButton();
     KSieveUi::SieveTextEditWidget *mSieveTextEditWidget = nullptr;
     KSieveUi::SieveScriptDebuggerWarning *mSieveScriptDebuggerWarning = nullptr;
-    KPIMTextEdit::PlainTextEditorWidget *mSieveTestResult = nullptr;
+    TextCustomEditor::PlainTextEditorWidget *mSieveTestResult = nullptr;
     KUrlRequester *mEmailPath = nullptr;
     QProcess *mProcess = nullptr;
     QLineEdit *mExtension = nullptr;

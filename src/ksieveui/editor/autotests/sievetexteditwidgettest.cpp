@@ -6,9 +6,9 @@
 
 #include "sievetexteditwidgettest.h"
 #include "../sievetexteditwidget.h"
-#include <KPIMTextEdit/PlainTextEditFindBar>
-#include <KPIMTextEdit/SlideContainer>
 #include <QTest>
+#include <TextAddonsWidgets/SlideContainer>
+#include <TextCustomEditor/PlainTextEditFindBar>
 #include <editor/sievetextedit.h>
 
 SieveTextEditWidgetTest::SieveTextEditWidgetTest(QObject *parent)
@@ -25,11 +25,11 @@ void SieveTextEditWidgetTest::shouldHaveDefaultValue()
     QVERIFY(textedit);
     QVERIFY(!textedit->isReadOnly());
 
-    auto slider = w.findChild<KPIMTextEdit::SlideContainer *>(QStringLiteral("slidercontainer"));
+    auto slider = w.findChild<TextAddonsWidgets::SlideContainer *>(QStringLiteral("slidercontainer"));
     QVERIFY(slider);
     QWidget *contentWidget = slider->content();
     QVERIFY(contentWidget);
-    QVERIFY(dynamic_cast<KPIMTextEdit::PlainTextEditFindBar *>(contentWidget));
+    QVERIFY(dynamic_cast<TextCustomEditor::PlainTextEditFindBar *>(contentWidget));
 
     QVERIFY(w.textEdit());
 }

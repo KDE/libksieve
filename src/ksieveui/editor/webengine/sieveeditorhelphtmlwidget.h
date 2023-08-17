@@ -9,7 +9,7 @@
 #include <QUrl>
 #include <QWidget>
 
-namespace KPIMTextEdit
+namespace TextAddonsWidgets
 {
 class SlideContainer;
 }
@@ -56,7 +56,7 @@ private:
     QString mTitle;
     SieveEditorWebEngineView *mWebView = nullptr;
     SieveEditorLoadProgressIndicator *mProgressIndicator = nullptr;
-    KPIMTextEdit::SlideContainer *mSliderContainer = nullptr;
+    TextAddonsWidgets::SlideContainer *mSliderContainer = nullptr;
     KSieveUi::FindBarWebEngineView *mFindBar = nullptr;
     qreal mZoomFactor = 100;
 };

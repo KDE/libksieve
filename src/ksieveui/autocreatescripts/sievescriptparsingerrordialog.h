@@ -7,7 +7,7 @@
 #pragma once
 #include "ksieveui_private_export.h"
 #include <QDialog>
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 class RichTextEditorWidget;
 }
@@ -28,6 +28,6 @@ private:
     void writeConfig();
 
 private:
-    KPIMTextEdit::RichTextEditorWidget *const mTextEdit;
+    TextCustomEditor::RichTextEditorWidget *const mTextEdit;
 };
 }

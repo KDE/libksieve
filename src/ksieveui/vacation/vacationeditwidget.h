@@ -22,7 +22,7 @@ class KDateComboBox;
 
 class QDate;
 
-namespace KPIMTextEdit
+namespace TextCustomEditor
 {
 class PlainTextEditorWidget;
 }
@@ -118,7 +118,7 @@ protected:
     QCheckBox *mActiveCheck = nullptr;
     QSpinBox *mIntervalSpin = nullptr;
     VacationMailLineEdit *mMailAliasesEdit = nullptr;
-    KPIMTextEdit::PlainTextEditorWidget *mTextEdit = nullptr;
+    TextCustomEditor::PlainTextEditorWidget *mTextEdit = nullptr;
     QCheckBox *mSpamCheck = nullptr;
     QCheckBox *mDomainCheck = nullptr;
     QLineEdit *mDomainEdit = nullptr;
