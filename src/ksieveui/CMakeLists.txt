@@ -366,7 +366,6 @@ target_link_libraries(KPim6KSieveUi
     KF6::KIOWidgets
     KF6::NewStuffCore
     Qt::WebEngineWidgets
-    KPim6::PimTextEdit
     KF6::I18n
     KF6::SonnetUi
     Qt::PrintSupport
