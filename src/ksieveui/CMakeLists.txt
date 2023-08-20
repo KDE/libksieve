@@ -361,7 +361,6 @@ target_link_libraries(KPim6KSieveUi
     KF6::IconThemes
     KF6::IconWidgets
     KPim6::IdentityManagementCore
-    KPim6::PimTextEdit
     KPim6::MailTransport
     KF6::KIOWidgets
     KF6::NewStuffCore
@@ -372,6 +371,7 @@ target_link_libraries(KPim6KSieveUi
     KF6::SyntaxHighlighting
     KF6::TextAddonsWidgets
     KF6::TextCustomEditor
+    KF6::TextUtils
 )
 
 if (TARGET KF6::TextEditTextToSpeech)

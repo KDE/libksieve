@@ -68,7 +68,6 @@ find_package(KF6Sonnet ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KPim6Mime ${KMIME_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6IdentityManagementCore ${IDENTITYMANAGEMENT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6MailTransport ${KMAILTRANSPORT_LIB_VERSION} CONFIG REQUIRED)
-find_package(KPim6TextEdit ${KPIMTEXTEDIT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6IMAP ${KIMAP_LIB_VERSION} CONFIG REQUIRED)
 
 find_package(KF6TextEditTextToSpeech ${KTEXTADDONS_MIN_VERSION} CONFIG)
@@ -77,6 +76,7 @@ if (TARGET KF6::TextEditTextToSpeech)
 endif()
 find_package(KF6TextCustomEditor ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6TextAddonsWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6TextUtils ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6DocTools ${KF_MIN_VERSION})
 set_package_properties(KF6DocTools PROPERTIES DESCRIPTION
     "Tools to generate documentation"

@@ -8,9 +8,9 @@
 #include "editor/sievelinenumberarea.h"
 #include "editor/sievetexteditorspellcheckdecorator.h"
 
-#include <KPIMTextEdit/EditorUtil>
-#include <KPIMTextEdit/TextEditorCompleter>
 #include <TextCustomEditor/PlainTextSyntaxSpellCheckingHighlighter>
+#include <TextCustomEditor/TextEditorCompleter>
+#include <TextUtils/ConvertText>
 
 #include <KLocalizedString>
 #include <KSyntaxHighlighting/Definition>
@@ -34,7 +34,7 @@ public:
     SieveTextEditPrivate() = default;
 
     SieveLineNumberArea *m_sieveLineNumberArea = nullptr;
-    KPIMTextEdit::TextEditorCompleter *mTextEditorCompleter = nullptr;
+    TextCustomEditor::TextEditorCompleter *mTextEditorCompleter = nullptr;
     KSyntaxHighlighting::Repository mSyntaxRepo;
     bool mShowHelpMenu = true;
 };
@@ -178,7 +178,7 @@ void SieveTextEdit::initCompleter()
 {
     const QStringList listWord = completerList();
 
-    d->mTextEditorCompleter = new KPIMTextEdit::TextEditorCompleter(this, this);
+    d->mTextEditorCompleter = new TextCustomEditor::TextEditorCompleter(this, this);
     d->mTextEditorCompleter->setCompleterStringList(listWord);
 }
 
@@ -357,30 +357,26 @@ void SieveTextEdit::comment()
 
 void SieveTextEdit::upperCase()
 {
-    KPIMTextEdit::EditorUtil editorUtil;
     QTextCursor cursorText = textCursor();
-    editorUtil.upperCase(cursorText);
+    TextUtils::ConvertText::upperCase(cursorText);
 }
 
 void SieveTextEdit::lowerCase()
 {
-    KPIMTextEdit::EditorUtil editorUtil;
     QTextCursor cursorText = textCursor();
-    editorUtil.lowerCase(cursorText);
+    TextUtils::ConvertText::lowerCase(cursorText);
 }
 
 void SieveTextEdit::sentenceCase()
 {
-    KPIMTextEdit::EditorUtil editorUtil;
     QTextCursor cursorText = textCursor();
-    editorUtil.sentenceCase(cursorText);
+    TextUtils::ConvertText::sentenceCase(cursorText);
 }
 
 void SieveTextEdit::reverseCase()
 {
-    KPIMTextEdit::EditorUtil editorUtil;
     QTextCursor cursorText = textCursor();
-    editorUtil.reverseCase(cursorText);
+    TextUtils::ConvertText::reverseCase(cursorText);
 }
 
 void SieveTextEdit::uncomment()
