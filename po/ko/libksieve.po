@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Shinjo Park <kde@peremen.name>, 2013, 2014, 2019, 2020, 2022.
+# Shinjo Park <kde@peremen.name>, 2013, 2014, 2019, 2020, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-08 01:17+0000\n"
-"PO-Revision-Date: 2022-05-07 02:58+0200\n"
+"PO-Revision-Date: 2023-08-25 23:39+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: kmanagesieve/session.cpp:90
 #, kde-format
@@ -1083,7 +1083,7 @@ msgid "Header"
 msgstr "헤더"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:45
-#, fuzzy, kde-format
+#, kde-format
 msgid "With value:"
 msgstr "값 사용:"
 
@@ -1591,7 +1591,7 @@ msgid ""
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:42
-#, fuzzy, kde-format
+#, kde-format
 msgid "personal"
 msgstr "개인"
 
