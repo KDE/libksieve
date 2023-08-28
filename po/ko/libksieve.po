@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-08 01:17+0000\n"
-"PO-Revision-Date: 2023-08-25 23:39+0200\n"
+"PO-Revision-Date: 2023-08-28 00:30+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -64,14 +64,11 @@ msgid "Sieve Authentication Details"
 msgstr "Sieve 인증 정보"
 
 #: kmanagesieve/session.cpp:260
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please enter your authentication details for your sieve account (usually "
-#| "the same as your email password):"
+#, kde-format
 msgid ""
 "Please enter your authentication details for your sieve account "
 "\"%1\" (usually the same as your email password):"
-msgstr "Sieve 계정의 인증 정보를 입력하십시오 (대부분 이메일 암호와 같음):"
+msgstr "\"%1\" Sieve 계정의 인증 정보를 입력하십시오(대개 이메일 암호와 같음):"
 
 #: kmanagesieve/session.cpp:321
 #, kde-format
@@ -79,6 +76,8 @@ msgid ""
 "The Sieve server on %1 has reported an error:\n"
 "%2"
 msgstr ""
+"%1의 Sieve 서버에서 오류를 반환했습니다:\n"
+"%2"
 
 #: kmanagesieve/session.cpp:321
 #, kde-format
@@ -95,7 +94,7 @@ msgid ""
 msgstr ""
 "인증이 실패했습니다.\n"
 "암호가 잘못된 것 같습니다.\n"
-"서버 응답은 다음과 같습니다:\n"
+"서버 응답:\n"
 "%1"
 
 #: kmanagesieve/sievejob.cpp:142 kmanagesieve/sievejob.cpp:149
@@ -106,7 +105,7 @@ msgid ""
 "The server responded:\n"
 "%1"
 msgstr ""
-"스크립트가 성공적으로 업로드 되지 않았습니다.\n"
+"스크립트가 성공적으로 업로드되지 않았습니다.\n"
 "스크립트에 오류가 있는 것 같습니다.\n"
 "서버 응답은 다음과 같습니다:\n"
 "%1"
@@ -117,7 +116,7 @@ msgid ""
 "The script did not upload successfully.\n"
 "The script may contain errors."
 msgstr ""
-"스크립트가 성공적으로 업로드 되지 않았습니다.\n"
+"스크립트가 성공적으로 업로드되지 않았습니다.\n"
 "스크립트에 오류가 있는 것 같습니다."
 
 #: ksieveui/autocreatescripts/autocreatescriptdialog.cpp:29
@@ -153,7 +152,7 @@ msgstr "SelectConvertParameterWidget, \"%1\"에 인자가 너무 많습니다"
 #: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:71
 #, kde-format
 msgid " px"
-msgstr " 픽셀"
+msgstr "픽셀"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:35
 #, kde-format
@@ -220,14 +219,13 @@ msgstr "BMP"
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing action \"%2\"."
 msgstr ""
-"동작 \"%2\"을(를) 처리하는 중 알 수 없는 태그 값 \"%1\"을(를) 발견했습니다."
+"\"%2\" 동작을 처리하는 중 알 수 없는 태그 값 \"%1\"을(를) 발견했습니다."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:114
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:49
 #, kde-format
 msgid "An unknown tag \"%1\" was found during parsing action \"%2\"."
-msgstr ""
-"동작 \"%2\"을(를) 처리하는 중 알 수 없는 태그 \"%1\"을(를) 발견했습니다."
+msgstr "\"%2\" 동작 처리하는 중 알 수 없는 태그 \"%1\"을(를) 발견했습니다."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:128
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:64
@@ -295,7 +293,7 @@ msgstr "addheader 동작은 존재하는 메시지 헤더에 헤더 필드를 �
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:21
 #, kde-format
 msgid "Break"
-msgstr "Break"
+msgstr "중단"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:32
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:45
@@ -760,12 +758,12 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
 #, kde-format
 msgid "Define Email Address..."
-msgstr ""
+msgstr "이메일 주소 정의..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
 #, kde-format
 msgid "Enter message..."
-msgstr ""
+msgstr "메시지 입력..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:23
 #, kde-format
@@ -811,7 +809,7 @@ msgstr "초안"
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
 #, kde-format
 msgid "Click on button for selecting flags..."
-msgstr ""
+msgstr "플래그를 선택하려면 단추를 클릭하십시오..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
@@ -876,7 +874,7 @@ msgstr "첫 글자를 대문자로"
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:29
 #, kde-format
 msgid "Quote wildcard"
-msgstr ""
+msgstr "와일드카드 인용"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:30
 #, kde-format
@@ -903,12 +901,12 @@ msgstr "스크립트에서 지원하지 않는 기능 \"%1\"을(를) 포함함"
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:422
 #, kde-format
 msgid "We detected a loop if in a loop if. It's not supported"
-msgstr ""
+msgstr "반복 if 내에서 반복 if를 발견했습니다. 지원하지 않습니다"
 
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:39
 #, kde-format
 msgid "Unknown tag \"%1\" during parsing condition \"%2\""
-msgstr "조건 \"%2\"을(를) 처리하는 중 알 수 없는 태그 \"%1\""
+msgstr "\"%2\" 조건을 처리하는 중 알 수 없는 태그 \"%1\""
 
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:52
 #, kde-format
@@ -922,8 +920,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:58
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing condition \"%2\"."
-msgstr ""
-"조건 \"%2\"을(를) 처리하는 중 알 수 없는 태그 \"%1\"을(를) 발견했습니다."
+msgstr "\"%2\" 조건을 처리하는 중 알 수 없는 태그 \"%1\"을(를) 발견했습니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:23
 #, kde-format
@@ -940,7 +937,7 @@ msgstr "주소:"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:62
 #, kde-format
 msgid "Use ; to separate emails"
-msgstr ""
+msgstr "이메일을 구분하려면 쌍반점(;)을 사용하십시오"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:95
 #, kde-format
@@ -950,6 +947,9 @@ msgid ""
 "specified part of the address, as modified by the comparator and the match "
 "keyword."
 msgstr ""
+"\"address\" 시험은 주소를 포함하는 구조적인 헤더의 인터넷 주소와 대조합니다. "
+"임의의 헤더가 일치 키워드와 비교자에서 지정한 대로 주소의 지정한 부분에 임의"
+"의 키를 포함하면 true를 반환합니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:20
 #, kde-format
@@ -963,11 +963,14 @@ msgid ""
 "anything following the first empty line after the header.  (The empty line "
 "itself, if present, is not considered to be part of the body.)"
 msgstr ""
+"body 시험은 이메일 메시지의 본문과 대조합니다. 본문으로 간주하는 것은 헤더 "
+"맨 끝 빈 줄 바로 다음부터 나오는 모든 내용입니다.(빈 줄 그 자체는 본문의 일부"
+"로 간주되지 않습니다)"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditioncurrentdate.cpp:21
 #, kde-format
 msgid "Currentdate"
-msgstr ""
+msgstr "현재 날짜"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditioncurrentdate.cpp:78
 #, kde-format
@@ -975,6 +978,8 @@ msgid ""
 "The currentdate test is similar to the date test, except that it operates on "
 "the current date/time rather than a value extracted from the message header."
 msgstr ""
+"currentdate 시험은 date 시험과 유사하지만, 메시지 헤더에서 추출한 값이 아닌 "
+"현재 날짜를 사용합니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:23
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:41
@@ -988,7 +993,7 @@ msgstr "날짜"
 msgid ""
 "The date test matches date/time information derived from headers containing "
 "date-time values."
-msgstr ""
+msgstr "date 시험은 날짜와 시간 값을 포함하는 헤더의 정보와 대조합니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:24
 #, kde-format
@@ -1001,6 +1006,8 @@ msgid ""
 "The \"envelope\" test is true if the specified part of the [SMTP] (or "
 "equivalent) envelope matches the specified key."
 msgstr ""
+"\"envelope\" 시험은 [SMTP](또는 동등한 것) 엔빌로프의 지정한 부분이 지정한 키"
+"와 일치하면 true를 반환합니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:23
 #, kde-format
@@ -1019,6 +1026,8 @@ msgid ""
 "by the name string and matches it to the values specified in the key-list "
 "argument."
 msgstr ""
+"environment 시험은 이름 문자열로 지정한 환경 정보 항목과 key-list 인자에 지정"
+"한 값이 일치하는지 대조합니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:22
 #, kde-format
@@ -1033,7 +1042,7 @@ msgstr "존재함"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:36
 #, kde-format
 msgid "not exists"
-msgstr ""
+msgstr "존재하지 않음"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:63
 #, kde-format
@@ -1042,6 +1051,8 @@ msgid ""
 "argument exist within the message.  All of the headers must exist or the "
 "test is false."
 msgstr ""
+"\"exists\" 시험은 header-names 인자에 지정한 헤더가 메시지에 존재하면 true를 "
+"반환합니다. 지정한 모든 헤더가 존재하지 않으면 false를 반환합니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:20
 #, kde-format
@@ -1056,12 +1067,12 @@ msgstr "거짓"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:43
 #, kde-format
 msgid "The \"false\" test always evaluates to false."
-msgstr ""
+msgstr "\"false\" 시험은 항상 false를 반환합니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:24
 #, kde-format
 msgid "Has Flag"
-msgstr ""
+msgstr "플래그 있음"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:46
 #, kde-format
@@ -1069,6 +1080,8 @@ msgid ""
 "Variable name\n"
 " (if empty it uses internal variable):"
 msgstr ""
+"변수 이름\n"
+"(내부 변수인 경우 비워 둠):"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:127
 #, kde-format
@@ -1076,6 +1089,8 @@ msgid ""
 "The hasflag test evaluates to true if any of the variables matches any flag "
 "name."
 msgstr ""
+"hasflag 시험은 임의의 변수가 지정한 플래그 이름과 일치하는 경우 true를 반환합"
+"니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:21
 #, kde-format
@@ -1093,16 +1108,18 @@ msgid ""
 "The \"header\" test evaluates to true if the value of any of the named "
 "headers, ignoring leading and trailing whitespace, matches any key."
 msgstr ""
+"\"header\" 시험은 이름이 있는 임의의 헤더의 앞쪽과 뒤쪽의 공백을 제외한 값이 "
+"임의의 키와 일치하면 true를 반환합니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:21
 #, kde-format
 msgid "IHave"
-msgstr ""
+msgstr "사용 가능"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:35
 #, kde-format
 msgid "Use \",\" to separate capabilities"
-msgstr ""
+msgstr "기능을 구분하려면 쉼표를 사용하십시오"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:68
 #, kde-format
@@ -1110,11 +1127,13 @@ msgid ""
 "The \"ihave\" test provides a means for Sieve scripts to test for the "
 "existence of a given extension prior to actually using it."
 msgstr ""
+"\"ihave\" 시험은 Sieve 스크립트에서 지정한 확장 기능을 사용하기 전에 존재 여"
+"부를 확인하는 방법입니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmailboxexists.cpp:20
 #, kde-format
 msgid "Mailbox exists"
-msgstr ""
+msgstr "편지함이 존재함"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmailboxexists.cpp:66
 #, kde-format
@@ -1123,11 +1142,14 @@ msgid ""
 "names\" argument exist in the mailstore, and each allows the user in whose "
 "context the Sieve script runs to \"deliver\" messages into it."
 msgstr ""
+"\"mailboxexists\" 시험은 \"mailbox-names\" 인자에 지정한 모든 편지함이 메일 "
+"저장소에 존재하면 true를 반환하며, Sieve 스크립트가 실행되는 사용자의 편지함"
+"으로 메시지를 \"배달\"할 수 있도록 합니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:24
 #, kde-format
 msgid "Meta Data"
-msgstr "메타 데이터"
+msgstr "메타데이터"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:44
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:33
@@ -1138,10 +1160,9 @@ msgstr "편지함:"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:54
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:52
-#, fuzzy, kde-format
-#| msgid "Options"
+#, kde-format
 msgid "Annotations:"
-msgstr "주석"
+msgstr "주석:"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:119
 #, kde-format
@@ -1151,17 +1172,20 @@ msgid ""
 "list\". The test returns true if the annotation exists and its value matches "
 "any of the keys."
 msgstr ""
+"이 시험은 \"mailbox\"로 지정한 편지함의 \"annotation-name\" 주석의 값을 가져"
+"옵니다. 가져온 값은 \"key-list\"와 대조합니다. 해당 주석이 존재하고 값이 키"
+"와 일치하면 true를 반환합니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:22
 #, kde-format
 msgid "Metadata exists"
-msgstr ""
+msgstr "메타데이터 존재함"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:31
 #, kde-format
 msgid "Annotation:"
-msgstr ""
+msgstr "주석:"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:81
 #, kde-format
@@ -1169,11 +1193,13 @@ msgid ""
 "The \"metadataexists\" test is true if all of the annotations listed in the "
 "\"annotation-names\" argument exist for the specified mailbox."
 msgstr ""
+"\"metadataexists\" 시험은 지정한 편지함에 \"annotation-names\" 인자에 지정한 "
+"모든 주석이 존재하면 true를 반환합니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:23
 #, kde-format
 msgid "Server Meta Data"
-msgstr ""
+msgstr "서버 메타데이터"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:117
 #, kde-format
@@ -1182,11 +1208,14 @@ msgid ""
 "The retrieved value is compared to the \"key-list\". The test returns true "
 "if the annotation exists and its value matches any of the keys."
 msgstr ""
+"이 시험은 서버의 \"annotation-name\" 주석의 값을 가져옵니다. 가져온 값은 "
+"\"key-list\"와 대조합니다. 해당 주석이 존재하고 값이 키와 일치하면 true를 반"
+"환합니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:20
 #, kde-format
 msgid "Server Meta Data Exists"
-msgstr ""
+msgstr "서버 메타데이터 존재함"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:67
 #, kde-format
@@ -1194,6 +1223,8 @@ msgid ""
 "The \"servermetadataexists\" test is true if all of the server annotations "
 "listed in the \"annotation-names\" argument exist."
 msgstr ""
+"\"servermetadataexists\" 시험은 서버 주석에 \"annotation-names\" 인자에 지정"
+"한 모든 주석이 존재하면 true를 반환합니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionsize.cpp:20
 #, kde-format
@@ -1217,6 +1248,8 @@ msgid ""
 "tagged argument of \":over\" or \":under\", followed by a number "
 "representing the size of the message."
 msgstr ""
+"\"size\" 시험은 메시지 크기와 대조합니다. \":over\" 또는 \":under\"로 태그된 "
+"인자를 받아들이며, 인자에 지정한 크기는 메시지 크기입니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:24
 #, kde-format
@@ -1235,6 +1268,8 @@ msgid ""
 "of either \"spamtest\" or \"spamtestplus\" for use with the capability "
 "mechanism."
 msgstr ""
+"\"spamtest\" 시험을 구현하는 Sieve 구현입니다. 사용 가능한 기능 식별자로 "
+"\"spamtest\"나 \"spamtestplus\"를 사용합니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:20
 #, kde-format
@@ -1249,12 +1284,12 @@ msgstr "참"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:43
 #, kde-format
 msgid "The \"true\" test always evaluates to true."
-msgstr ""
+msgstr "\"true\" 시험은 항상 true를 반환합니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionvirustest.cpp:22
 #, kde-format
 msgid "Virus Test"
-msgstr ""
+msgstr "바이러스 테스트"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionvirustest.cpp:90
 #, kde-format
@@ -1262,6 +1297,8 @@ msgid ""
 "Sieve implementations that implement the \"virustest\" test have an "
 "identifier of \"virustest\" for use with the capability mechanism."
 msgstr ""
+"\"virustest\" 시험을 구현하는 Sieve 구현입니다. 사용 가능한 기능 식별자로 "
+"\"virustest\"를 사용합니다."
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:26
 #, kde-format
@@ -1271,7 +1308,7 @@ msgstr "모두"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:27
 #, kde-format
 msgid "localpart"
-msgstr ""
+msgstr "로컬 부분"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:28
 #, kde-format
@@ -1326,7 +1363,7 @@ msgstr "율리우스력"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
 #, kde-format
 msgid "Hour"
-msgstr "시간"
+msgstr "시"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:44
 #, kde-format
@@ -1361,11 +1398,11 @@ msgstr "영역"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:50
 #, kde-format
 msgid "Weekday"
-msgstr ""
+msgstr "요일"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
 msgid "Select multiple headers..."
-msgstr ""
+msgstr "다중 헤더 선택..."
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
 #, kde-format
@@ -1446,7 +1483,7 @@ msgstr "하위형식"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
 #, kde-format
 msgid "Anychild"
-msgstr ""
+msgstr "임의의 자식"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
 #, kde-format
@@ -1466,32 +1503,32 @@ msgstr "개수"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:60
 #, kde-format
 msgid "Greater than"
-msgstr ""
+msgstr "초과"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:61
 #, kde-format
 msgid "Greater than or equal"
-msgstr ""
+msgstr "이상"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:62
 #, kde-format
 msgid "Less than"
-msgstr ""
+msgstr "미만"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:63
 #, kde-format
 msgid "Less than or equal"
-msgstr ""
+msgstr "이하"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:64
 #, kde-format
 msgid "Equal to"
-msgstr ""
+msgstr "같음"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:65
 #, kde-format
 msgid "Not equal to"
-msgstr ""
+msgstr "같지 않음"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:24
 #, kde-format
@@ -1516,25 +1553,24 @@ msgstr "GiB"
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:54
 #, kde-format
 msgid "Please select an condition."
-msgstr ""
+msgstr "조건을 선택하십시오."
 
 #: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "New Sieve Script"
+#, kde-format
 msgid "Sieve Script"
-msgstr "새 Sieve 스크립트"
+msgstr "Sieve 스크립트"
 
 #: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:138
-#, fuzzy, kde-format
-#| msgid "You will overwrite script. Do you want to continue?"
+#, kde-format
 msgid "Error during importing script. Do you want to switch to text mode?"
-msgstr "스크립트를 덮어씁니다. 계속 진행하시겠습니까?"
+msgstr ""
+"스크립트를 가져오는 중 오류가 발생했습니다. 텍스트 모드로 전환하시겠습니까?"
 
 #: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:140
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch to Text Mode"
-msgstr ""
+msgstr "텍스트 모드로 전환"
 
 #: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:141
 #, kde-format
@@ -1545,7 +1581,7 @@ msgstr "변경하지 않음"
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:30
 #, kde-format
 msgid "Add ForEveryPart loop"
-msgstr ""
+msgstr "ForEveryPart 반복 추가"
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:62
 #, kde-format
@@ -1554,32 +1590,33 @@ msgid ""
 "a message, including nested parts, depth first, and applies the commands in "
 "the specified block to each of them."
 msgstr ""
+"\"foreverypart\"는 메시지의 모든 MIME 부분을 순환하는 반복자이며, 중첩된 부분"
+"을 깊이 우선으로 순환하며, 각각 명령을 지정한 블록에 적용합니다."
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:96
 #, kde-format
 msgid "Unknown tagValue \"%1\" during loading loop \"for\""
-msgstr ""
+msgstr "\"for\" 반복을 불러오는 중 알 수 없는 태그 값 \"%1\""
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:108
 #, kde-format
 msgid "Unknown tag \"%1\" during loading loop \"for\""
-msgstr ""
+msgstr "\"for\" 반복을 불러오는 중 알 수 없는 태그 \"%1\""
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:57
-#, fuzzy, kde-format
-#| msgid "Script name:"
+#, kde-format
 msgid "Variable name:"
-msgstr "스크립트 이름:"
+msgstr "변수 이름:"
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:64
 #, kde-format
 msgid "Set value to:"
-msgstr ""
+msgstr "변수 값 설정:"
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:136
 #, kde-format
 msgid "Unknown tag \"%1\" during loading of variables."
-msgstr ""
+msgstr "변수를 불러오는 중 알 수 없는 태그 \"%1\"이(가) 있습니다."
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:179
 #, kde-format
@@ -1589,26 +1626,29 @@ msgid ""
 "it global, the name specifies a separate, non-global variable within that "
 "script."
 msgstr ""
+"\"global\" 명령으로 변수를 선언하면 모든 스크립트에서 전역 변수가 됩니다. 한 "
+"스크립트에서 전역으로 선언하지 않고 해당 변수를 사용하면 해당 이름은 그 스크"
+"립트에서만 사용되는 개별 변수로 취급됩니다."
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:42
 #, kde-format
 msgid "personal"
-msgstr "개인"
+msgstr "개별"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:43
-#, fuzzy, kde-format
+#, kde-format
 msgid "global"
 msgstr "전역"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:57
 #, kde-format
 msgid "Unknown location type \"%1\" during parsing includes"
-msgstr ""
+msgstr "인클루드를 해석하는 중 알 수 없는 위치 형식 \"%1\""
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:132
 #, kde-format
 msgid "Include:"
-msgstr ""
+msgstr "인클루드:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:138
 #: ksieveui/templates/sievetemplateeditdialog.cpp:59
@@ -1617,10 +1657,9 @@ msgid "Name:"
 msgstr "이름:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:147
-#, fuzzy, kde-format
-#| msgid "Options"
+#, kde-format
 msgid "Optional"
-msgstr "옵션"
+msgstr "선택 사항"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:151
 #, kde-format
@@ -1635,11 +1674,14 @@ msgid ""
 "single string argument representing the name of the script to include for "
 "processing at that point."
 msgstr ""
+"\"include\" 명령은 선택 사항인 \"location\" 인자, 선택 사항인 \":once\" 인"
+"자, 선택 사항인 \":optional\" 인자, 필수 사항인 해당 시점에서 처리에 포함시"
+"킬 스크립트의 이름 문자열 인자를 받습니다."
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:337
 #, kde-format
 msgid "We can not add more includes elements."
-msgstr ""
+msgstr "더 이상 인클루드 요소를 추가할 수 없습니다."
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:34
 #, kde-format
@@ -1669,17 +1711,17 @@ msgstr "동작"
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:71
 #, kde-format
 msgid "Add new block:"
-msgstr ""
+msgstr "새 블록 추가:"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:75
 #, kde-format
 msgid "\"elsif\" block"
-msgstr ""
+msgstr "\"elsif\" 블록"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:76
 #, kde-format
 msgid "\"else\" block"
-msgstr ""
+msgstr "\"else\" 블록"
 
 #: ksieveui/autocreatescripts/sievescriptdescriptiondialog.cpp:28
 #, kde-format
@@ -1688,28 +1730,28 @@ msgid "Description"
 msgstr "설명"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:128
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Move selected filter up."
 msgid "Up"
-msgstr "위"
+msgstr "위로 이동"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:129
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Move selected filter down."
 msgid "Down"
-msgstr "아래"
+msgstr "아래로 이동"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:130
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Move selected filter to the top."
 msgid "Top"
-msgstr "맨 위"
+msgstr "맨 위로 이동"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:131
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Move selected filter to the bottom."
 msgid "Bottom"
-msgstr "맨 아래"
+msgstr "맨 아래로 이동"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
 #: ksieveui/widgets/managesievewidget.cpp:228
@@ -1728,16 +1770,14 @@ msgstr "스크립트 삭제"
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
 #: ksieveui/widgets/managesievewidget.cpp:426
 #: ksieveui/widgets/managesievewidget.cpp:454
-#, fuzzy, kde-format
-#| msgid "New Sieve Script"
+#, kde-format
 msgid "Rename Script"
-msgstr "새 Sieve 스크립트"
+msgstr "스크립트 이름 바꾸기"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
-#, fuzzy, kde-format
-#| msgid "Edit Script..."
+#, kde-format
 msgid "Edit Script Description"
-msgstr "스크립트 편집..."
+msgstr "스크립트 설명 편집"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:188
 #, kde-format
@@ -1746,11 +1786,10 @@ msgid "New Script"
 msgstr "새 스크립트"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:193
-#, fuzzy, kde-format
-#| msgid "New Sieve Script"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Rename Script"
-msgstr "새 Sieve 스크립트"
+msgstr "스크립트 이름 바꾸기"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
 #, kde-format
@@ -1765,15 +1804,14 @@ msgid "New Script"
 msgstr "새 스크립트"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
-#, fuzzy, kde-format
-#| msgid "New Script"
+#, kde-format
 msgid "New script name:"
-msgstr "새 스크립트"
+msgstr "새 스크립트 이름:"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:264
 #, kde-format
 msgid "Do you want to delete \"%1\" script?"
-msgstr ""
+msgstr "\"%1\" 스크립트를 삭제하시겠습니까?"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:265
 #, kde-format
@@ -1782,72 +1820,69 @@ msgid "Delete Script"
 msgstr "스크립트 삭제"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
-#, fuzzy, kde-format
-#| msgid "New Sieve Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Rename Script"
-msgstr "새 Sieve 스크립트"
+msgstr "스크립트 이름 바꾸기"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
-#, fuzzy, kde-format
-#| msgid "Please enter a name for the new Sieve script:"
+#, kde-format
 msgid "New name for the script:"
-msgstr "Sieve 스크립트의 새 이름을 입력하십시오:"
+msgstr "스크립트의 새 이름:"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:478
-#, fuzzy, kde-format
-#| msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
+#, kde-format
 msgid "forEveryPart is not supported by your server"
-msgstr "서버에서 조건 \"%2\" 하에서 기능 \"%1\"을(를) 지원하지 않음"
+msgstr "서버에서 forEveryPart를 지원하지 않음"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:576
-#, fuzzy, kde-format
-#| msgid "Script name:"
+#, kde-format
 msgid "Script part %1"
-msgstr "스크립트 이름:"
+msgstr "스크립트 부분 %1"
 
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:36
 #, kde-format
 msgid "Includes"
-msgstr "포함"
+msgstr "포함함"
 
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:40
 #, kde-format
 msgid "Global Variable"
-msgstr ""
+msgstr "전역 변수"
 
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:46
 #, kde-format
 msgid "ForEveryPart"
-msgstr ""
+msgstr "ForEveryPart"
 
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:95
 #, kde-format
 msgid ""
 "Script should always have just one \"Else\" block. We cannot add another one."
 msgstr ""
+"스크립트에는 \"Else\" 블록이 하나만 있어야 합니다. 다른 블록을 추가할 수 없습"
+"니다."
 
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:111
 #, kde-format
 msgid "Main block"
-msgstr ""
+msgstr "주 블록"
 
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:113
 #, kde-format
 msgid "Block \"Elsif\""
-msgstr ""
+msgstr "\"Elsif\" 블록"
 
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:115
 #, kde-format
 msgid "Block \"Else\""
-msgstr ""
+msgstr "\"Else\" 블록"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:30
-#, fuzzy, kde-format
-#| msgid "New Sieve Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Parsing Error"
-msgstr "새 Sieve 스크립트"
+msgstr "Sieve 해석 오류"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
@@ -1856,15 +1891,14 @@ msgid "Save As..."
 msgstr "다른 이름으로 저장..."
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
-#, fuzzy, kde-format
-#| msgid "New Sieve Script"
+#, kde-format
 msgid "Sieve script:"
-msgstr "새 Sieve 스크립트"
+msgstr "Sieve 스크립트:"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:56
 #, kde-format
 msgid "Errors reported:"
-msgstr ""
+msgstr "보고된 오류:"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:79
 #, kde-format
@@ -1875,7 +1909,7 @@ msgstr "모든 파일 (*)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Log To File"
-msgstr ""
+msgstr "파일로 로그 저장"
 
 #: ksieveui/autocreatescripts/sievescripttabwidget.cpp:45
 #: ksieveui/editor/sieveeditortabwidget.cpp:45
@@ -1885,8 +1919,7 @@ msgid "Close Tab"
 msgstr "탭 닫기"
 
 #: ksieveui/debug/sievedebugdialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Sieve Diagnostics"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Diagnostics"
 msgstr "Sieve 진단"
@@ -1901,10 +1934,9 @@ msgstr ""
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:68
-#, fuzzy, kde-format
-#| msgid "No errors found."
+#, kde-format
 msgid "No IMAP resource found."
-msgstr "오류를 찾을 수 없습니다."
+msgstr "IMAP 자원을 찾을 수 없습니다."
 
 #: ksieveui/debug/sievedebugdialog.cpp:104
 #, kde-format
@@ -1912,11 +1944,13 @@ msgid ""
 "Unable to get the info\n"
 "\n"
 msgstr ""
+"정보를 가져올 수 없음\n"
+"\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
 #, kde-format
 msgid "Collecting data for account '%1'...\n"
-msgstr "계정 '%1'의 데이터를 모으는 중...\n"
+msgstr "'%1' 계정의 데이터를 모으는 중...\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:123
 #, kde-format
@@ -1935,35 +1969,28 @@ msgstr ""
 #: ksieveui/debug/sievedebugdialog.cpp:169
 #, kde-format
 msgid "Contents of script '%1':\n"
-msgstr "스크립트 '%1'의 내용:\n"
+msgstr "'%1' 스크립트의 내용:\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:199
 #: ksieveui/managescriptsjob/parseuserscriptjob.cpp:64
 #: ksieveui/managesievescriptsdialog.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sieve operation failed.\n"
-#| "The server responded:\n"
-#| "%1"
+#, kde-format
 msgid ""
 "Retrieving the script failed.\n"
 "The server responded:\n"
 "%1"
 msgstr ""
-"Sieve 작업이 실패했습니다.\n"
+"스크립트 읽기에 실패했습니다.\n"
 "서버 응답은 다음과 같습니다:\n"
 "%1"
 
 #: ksieveui/debug/sievedebugdialog.cpp:203
-#, fuzzy, kde-format
-#| msgid ""
-#| "(This script is empty.)\n"
-#| "\n"
+#, kde-format
 msgid ""
 "(This script is empty)\n"
 "\n"
 msgstr ""
-"(이 스크립트는 비어 있습니다.)\n"
+"(이 스크립트는 비어 있음)\n"
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:206
@@ -2000,24 +2027,20 @@ msgid ""
 "(No Sieve scripts available on this server)\n"
 "\n"
 msgstr ""
-"(이 서버에 Sieve 스크립트가 없습니다)\n"
+"(이 서버에 Sieve 스크립트가 없음)\n"
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:245
-#, fuzzy, kde-format
-#| msgid ""
-#| "Active script: %1\n"
-#| "\n"
+#, kde-format
 msgid ""
 "Active script: '%1'\n"
 "\n"
 msgstr ""
-"활성 스크립트: %1\n"
+"활성 스크립트: '%1'\n"
 "\n"
 
 #: ksieveui/editor/sieveeditor.cpp:39
-#, fuzzy, kde-format
-#| msgid "Edit Sieve Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr "Sieve 스크립트 편집"
@@ -2025,7 +2048,7 @@ msgstr "Sieve 스크립트 편집"
 #: ksieveui/editor/sieveeditor.cpp:182
 #, kde-format
 msgid "Script is modified. Do you want to close editor?"
-msgstr ""
+msgstr "스크립트가 수정되었습니다. 편집기를 닫으시겠습니까?"
 
 #: ksieveui/editor/sieveeditor.cpp:184
 #, kde-format
@@ -2061,21 +2084,15 @@ msgid "Import Script"
 msgstr "스크립트 가져오기"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:63
-#, fuzzy, kde-format
-#| msgid ""
-#| "*.siv|sieve files (*.siv)\n"
-#| "*|all files (*)"
+#, kde-format
 msgid "*.siv;;sieve files (*.siv);;all files (*)"
-msgstr ""
-"*.siv|sieve 파일 (*.siv)\n"
-"*|모든 파일 (*)"
+msgstr "*.siv;;sieve 파일 (*.siv);;모든 파일 (*)"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:64
-#, fuzzy, kde-format
-#| msgid "Import Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Script Sieve"
-msgstr "스크립트 가져오기"
+msgstr "Sieve 스크립트 가져오기"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:70
 #, kde-format
@@ -2097,10 +2114,9 @@ msgid "Go to Line"
 msgstr "줄로 이동"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:55
-#, fuzzy, kde-format
-#| msgid "Add comment"
+#, kde-format
 msgid "Comment"
-msgstr "설명 추가"
+msgstr "주석"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:59
 #, kde-format
@@ -2124,8 +2140,7 @@ msgid "File"
 msgstr "파일"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:101
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@title:menu"
 msgid "Edit"
 msgstr "편집"
@@ -2157,18 +2172,17 @@ msgstr "모든 탭 닫기"
 #: ksieveui/editor/sieveeditortabwidget.cpp:161
 #, kde-format
 msgid "Error during load page about %1"
-msgstr ""
+msgstr "%1 도움말 항목 페이지를 불러오는 중 오류 발생"
 
 #: ksieveui/editor/sieveeditortabwidget.cpp:178
 #, kde-format
 msgid "Help about: %1"
-msgstr ""
+msgstr "도움말 항목: %1"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Sieve capabilities:\n"
+#, kde-format
 msgid "Sieve Template:"
-msgstr "사용 가능한 Sieve 기능:\n"
+msgstr "Sieve 템플릿:"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:87
 #, kde-format
@@ -2178,17 +2192,17 @@ msgstr "편집기"
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:138
 #, kde-format
 msgid "Show result from \"check syntax\""
-msgstr ""
+msgstr "\"문법 검사\" 결과 표시"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:216
 #, kde-format
 msgid "Error during parsing"
-msgstr ""
+msgstr "해석 오류 발생"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:246
 #, kde-format
 msgid "Selected text is not a full sieve script"
-msgstr ""
+msgstr "선택한 텍스트가 완전한 Sieve 스크립트가 아님"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:246
 #, kde-format
@@ -2233,25 +2247,23 @@ msgstr "간단한 모드"
 #: ksieveui/editor/sieveeditorwidget.cpp:382
 #, kde-format
 msgid "Advanced Mode"
-msgstr ""
+msgstr "고급 모드"
 
 #: ksieveui/editor/sieveinfodialog.cpp:28
-#, fuzzy, kde-format
-#| msgid "New Sieve Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Support"
-msgstr "새 Sieve 스크립트"
+msgstr "Sieve 서버 지원"
 
 #: ksieveui/editor/sieveinfowidget.cpp:31
-#, fuzzy, kde-format
-#| msgid "New Sieve Script"
+#, kde-format
 msgid "Sieve server supports:"
-msgstr "새 Sieve 스크립트"
+msgstr "Sieve 서버 지원:"
 
 #: ksieveui/editor/sievetextedit.cpp:277
 #, kde-format
 msgid "Insert Rule"
-msgstr ""
+msgstr "규칙 삽입"
 
 #: ksieveui/editor/sievetextedit.cpp:291
 #, kde-format
@@ -2269,31 +2281,33 @@ msgid ""
 "Some errors were found during parsing. <a href=\"sieveerrordetails"
 "\">(Details...)</a>"
 msgstr ""
+"해석 중 일부 오류가 발생했습니다. <a href=\"sieveerrordetails\">(자세히...)</"
+"a>"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
 #, kde-format
 msgid "Switch to Graphical Mode"
-msgstr ""
+msgstr "그래픽 모드로 전환"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:29
 #, kde-format
 msgid "Stay in Text Mode"
-msgstr ""
+msgstr "텍스트 모드 유지"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:35
 #, kde-format
 msgid "Switch to Text Mode"
-msgstr ""
+msgstr "텍스트 모드로 전환"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:39
 #, kde-format
 msgid "Stay in Graphical Mode"
-msgstr ""
+msgstr "그래픽 모드 유지"
 
 #: ksieveui/editor/warningwidget/sieveeditorwarning.cpp:17
 #, kde-format
 msgid "We cannot parse script. We cannot switch to graphical mode"
-msgstr ""
+msgstr "스크립트를 해석할 수 없습니다. 그래픽 모드로 전환할 수 없습니다"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:38
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:41
@@ -2302,24 +2316,24 @@ msgid "Close"
 msgstr "닫기"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:47
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
-msgstr "찾기(&F):"
+msgstr "찾기(&I):"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:52
-#, fuzzy, kde-format
+#, kde-format
 msgid "Text to search for"
-msgstr "찾을 텍스트"
+msgstr "검색할 문자열"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "다음"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:58
-#, fuzzy, kde-format
+#, kde-format
 msgid "Jump to next match"
 msgstr "다음 일치로 이동"
 
@@ -2330,19 +2344,19 @@ msgid "Previous"
 msgstr "이전"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:64
-#, fuzzy, kde-format
+#, kde-format
 msgid "Jump to previous match"
 msgstr "이전 일치로 이동"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
-#, fuzzy, kde-format
+#, kde-format
 msgid "Options"
 msgstr "옵션"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:71
-#, fuzzy, kde-format
+#, kde-format
 msgid "Modify search behavior"
-msgstr "검색 행동 수정"
+msgstr "검색 방식 변경"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:73
 #, kde-format
@@ -2357,7 +2371,7 @@ msgstr "검색어를 찾을 수 없음"
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:54
 #, kde-format
 msgid "Save Web Page"
-msgstr ""
+msgstr "웹 페이지 저장"
 
 #: ksieveui/managescriptsjob/checkscriptjob.cpp:65
 #, kde-format
@@ -2376,58 +2390,59 @@ msgid "Path is not specified."
 msgstr "경로가 지정되지 않았습니다."
 
 #: ksieveui/managescriptsjob/generateglobalscriptjob.cpp:96
-#, fuzzy, kde-format
-#| msgid "Error when we wrote \"MASTER\" script on server."
+#, kde-format
 msgid ""
 "Error writing \"MASTER\" script on server.\n"
 "The server responded:\n"
 "%1"
-msgstr "서버에 \"MASTER\" 스크립트를 저장하는 중 오류가 발생했습니다."
+msgstr ""
+"서버에 \"MASTER\" 스크립트를 쓰는 중 오류가 발생했습니다.\n"
+"서버 응답:\n"
+"%1"
 
 #: ksieveui/managescriptsjob/generateglobalscriptjob.cpp:134
-#, fuzzy, kde-format
-#| msgid "Error when we wrote \"User\" script on server."
+#, kde-format
 msgid ""
 "Error writing \"User\" script on server.\n"
 "The server responded:\n"
 "%1"
-msgstr "서버에 \"User\" 스크립트를 저장하는 중 오류가 발생했습니다."
+msgstr ""
+"서버에 \"User\" 스크립트를 저장하는 중 오류가 발생했습니다.\n"
+"서버 응답:\n"
+"%1"
 
 #: ksieveui/managescriptsjob/parseuserscriptjob.cpp:70
-#, fuzzy, kde-format
-#| msgid "Script is empty."
+#, kde-format
 msgid "Script is empty. (%1)"
-msgstr "스크립트가 비어 있습니다."
+msgstr "스크립트가 비어 있습니다.(%1)"
 
 #: ksieveui/managescriptsjob/parseuserscriptjob.cpp:78
-#, fuzzy, kde-format
-#| msgid "Script parsing error"
+#, kde-format
 msgid "Script parsing error."
-msgstr "스크립트 처리 오류"
+msgstr "스크립트 처리 오류입니다."
 
 #: ksieveui/managescriptsjob/renamescriptjob.cpp:56
 #, kde-format
 msgid "Impossible to start job"
-msgstr ""
+msgstr "작업을 시작할 수 없음"
 
 #: ksieveui/managescriptsjob/renamescriptjob.cpp:66
 #, kde-format
 msgid "An error occurred during loading the sieve script."
-msgstr ""
+msgstr "Sieve 스크립트를 불러오는 중 오류가 발생했습니다."
 
 #: ksieveui/managescriptsjob/renamescriptjob.cpp:82
 #, kde-format
 msgid "An error occurred during saving the sieve script."
-msgstr ""
+msgstr "Sieve 스크립트를 저장하는 중 오류가 발생했습니다."
 
 #: ksieveui/managescriptsjob/renamescriptjob.cpp:93
 #, kde-format
 msgid "An error occurred during deleting the sieve script."
-msgstr ""
+msgstr "Sieve 스크립트를 삭제하는 중 오류가 발생했습니다."
 
 #: ksieveui/managesievescriptsdialog.cpp:63
-#, fuzzy, kde-format
-#| msgid "Manage Sieve Scripts"
+#, kde-format
 msgctxt "@title:window"
 msgid "Manage Sieve Scripts"
 msgstr "Sieve 스크립트 관리"
@@ -2463,7 +2478,8 @@ msgstr "Sieve 오류"
 #: ksieveui/managesievescriptsdialog.cpp:204
 #, kde-format
 msgid "Uploading script to server for checking it, please wait..."
-msgstr "스크립트를 확인하려고 서버에 업로드하고 있습니다. 기다려 주십시오..."
+msgstr ""
+"스크립트를 확인할 수 있도록 서버에 업로드하고 있습니다. 기다려 주십시오..."
 
 #: ksieveui/managesievescriptsdialog.cpp:250
 #, kde-format
@@ -2487,21 +2503,15 @@ msgstr ""
 "%1"
 
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:33
-#, fuzzy, kde-format
-#| msgid "Sieve Parsing"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Parsing"
-msgstr "Sieve 처리"
+msgstr "Sieve 해석"
 
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:83
-#, fuzzy, kde-format
-#| msgid ""
-#| "*.xml|xml files (*.xml)\n"
-#| "*|all files (*)"
+#, kde-format
 msgid "XML Files (*.xml);;All Files (*)"
-msgstr ""
-"*.xml|XML 파일 (*.xml)\n"
-"*|모든 파일 (*)"
+msgstr "XML 파일 (*.xml);;모든 파일 (*)"
 
 #. i18n: ectx: label, entry (AllowOutOfOfficeSettings), group (OutOfOffice)
 #: ksieveui/settings/sieve-vacation.kcfg:16
@@ -2540,11 +2550,10 @@ msgid ""
 msgstr "시작할 때 설정된 활성 부재 중 응답 명령이 있는지 확인합니다."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:30
-#, fuzzy, kde-format
-#| msgid "New Sieve Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Debug Sieve Script"
-msgstr "새 Sieve 스크립트"
+msgstr "Sieve 스크립트 디버그"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:42
 #, kde-format
@@ -2560,12 +2569,12 @@ msgstr "디버그"
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:43
 #, kde-format
 msgid "Email path:"
-msgstr ""
+msgstr "이메일 경로:"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:57
 #, kde-format
 msgid "Extension:"
-msgstr "확장자:"
+msgstr "확장 기능:"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:62
 #, kde-format
@@ -2573,37 +2582,38 @@ msgid ""
 "Activate extension with \"+<name of extension>\", deactivate it with \"-"
 "<name of extension>\""
 msgstr ""
+"\"+<확장 기능 이름>\"을 사용하여 확장 기능을 활성화하고, \"-<확장 기능 이름>"
+"\"을 사용하여 확장 기능을 비활성화"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
 #, kde-format
 msgid "Display check script result..."
-msgstr ""
+msgstr "스크립트 검사 결과 표시..."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
-#, fuzzy, kde-format
-#| msgid "Script is empty."
+#, kde-format
 msgid "Script text is empty."
-msgstr "스크립트가 비어 있습니다."
+msgstr "스크립트 텍스트가 비어 있습니다."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:147
 #, kde-format
 msgid "Email file must be installed locally."
-msgstr ""
+msgstr "이메일 파일이 로컬에 설치되어 있어야 합니다."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:153
 #, kde-format
 msgid "Failed to open temporary file."
-msgstr ""
+msgstr "임시 파일을 열 수 없습니다."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:223
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
-msgstr ""
+msgstr "스크립트에 디버그 메서드가 포함되어 있습니다. 삭제하십시오."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
 #, kde-format
 msgid "Clear"
-msgstr ""
+msgstr "지우기"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:38
 #, kde-format
@@ -2613,7 +2623,7 @@ msgstr "텍스트 파일 (*.txt);;모든 파일 (*)"
 #: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:30
 #, kde-format
 msgid "Add debug here"
-msgstr ""
+msgstr "여기에 디버그 추가"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerwidget.cpp:35
 #, kde-format
@@ -2621,6 +2631,8 @@ msgid ""
 "\"sieve-test\" was not found on system. Please install it. (See in Dovecot "
 "package)"
 msgstr ""
+"시스템에서 \"sieve-test\"를 찾을 수 없습니다. 설치하십시오.(Dovecot 패키지에 "
+"포함됨)"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:16
 #, kde-format
@@ -2680,11 +2692,10 @@ msgid "You can drag and drop element on editor to import template"
 msgstr "편집기에 구성 요소를 끌어다 놓아서 템플릿을 가져올 수 있습니다"
 
 #: ksieveui/vacation/multiimapvacationdialog.cpp:49
-#, fuzzy, kde-format
-#| msgid "Configure \"Out of Office\" Replies"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure \"Out of Office\" Replies"
-msgstr "부재 중 응답 설정"
+msgstr "\"부재 중\" 답장 설정"
 
 #: ksieveui/vacation/multiimapvacationdialog.cpp:78
 #, kde-format
@@ -2724,21 +2735,17 @@ msgstr ""
 #: ksieveui/vacation/vacationcheckjob.cpp:125
 #, kde-format
 msgid "ParseUserScriptJob failed: %1"
-msgstr ""
+msgstr "ParseUserScriptJob 실패: %1"
 
 #: ksieveui/vacation/vacationcheckjob.cpp:141
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sieve operation failed.\n"
-#| "The server responded:\n"
-#| "%1"
+#, kde-format
 msgid ""
 "Failed to get the list of Sieve scripts.\n"
 "The server responded:\n"
 "%1"
 msgstr ""
-"Sieve 작업이 실패했습니다.\n"
-"서버 응답은 다음과 같습니다:\n"
+"Sieve 스크립트 목록을 가져올 수 없습니다.\n"
+"서버 응답:\n"
 "%1"
 
 #: ksieveui/vacation/vacationcreatescriptjob.cpp:144
@@ -2747,7 +2754,7 @@ msgid ""
 "Sieve script installed successfully on the server '%1'.\n"
 "Out of Office reply is now active."
 msgstr ""
-"서버 '%1'에 Sieve 스크립트가 설치되었습니다.\n"
+"'%1' 서버에 Sieve 스크립트가 설치되었습니다.\n"
 "부재 중 응답이 활성화되었습니다."
 
 #: ksieveui/vacation/vacationcreatescriptjob.cpp:147
@@ -2756,13 +2763,13 @@ msgid ""
 "Sieve script installed successfully on the server '%1'.\n"
 "Out of Office reply has been deactivated."
 msgstr ""
-"서버 '%1'에 Sieve 스크립트가 설치되었습니다.\n"
+"'%1' 서버에 Sieve 스크립트가 설치되었습니다.\n"
 "부재 중 응답이 비활성화되었습니다."
 
 #: ksieveui/vacation/vacationcreatescriptjob.cpp:151
 #, kde-format
 msgid "Impossible to install script on server '%1'"
-msgstr ""
+msgstr "'%1' 서버에 스크립트를 설치할 수 없음"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:47
 #, kde-format
@@ -2777,17 +2784,17 @@ msgstr "부재 중 알림 활성화(&A)"
 #: ksieveui/vacation/vacationeditwidget.cpp:74
 #, kde-format
 msgid "&Subject of the vacation mail:"
-msgstr ""
+msgstr "부재 중 메일 제목(&S):"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:104
 #, kde-format
 msgid "Start date:"
-msgstr ""
+msgstr "시작 날짜:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:132
 #, kde-format
 msgid "End date:"
-msgstr ""
+msgstr "종료 날짜:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:155
 #: ksieveui/vacation/vacationeditwidget.cpp:303
@@ -2809,7 +2816,7 @@ msgstr "이 주소에 대하여 알림 보냄(&S):"
 #: ksieveui/vacation/vacationeditwidget.cpp:195
 #, kde-format
 msgid "&Action for incoming mails:"
-msgstr ""
+msgstr "들어오는 이메일에 대한 동작(&A):"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:203
 #, kde-format
@@ -2817,10 +2824,9 @@ msgid "Do not send vacation replies to spam messages"
 msgstr "스팸 메시지에 응답 보내지 않기"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:211
-#, fuzzy, kde-format
-#| msgid "Only react to mail coming from domain"
+#, kde-format
 msgid "Only react to mail coming from domain:"
-msgstr "도메민에서 수신 된 메시지에만 반응함"
+msgstr "다음 도메인에서 수신된 메시지에만 반응함:"
 
 #: ksieveui/vacation/vacationmanager.cpp:55
 #, kde-format
@@ -2857,21 +2863,19 @@ msgstr ""
 "KMail에서 부재 중 응답을 설정할 수 없습니다. 시스템 관리자에게 연락하십시오."
 
 #: ksieveui/vacation/vacationutils.cpp:39
-#, fuzzy, kde-format
-#| msgid "Out-of-office reply still active"
+#, kde-format
 msgid "Out of office till %1"
-msgstr "부재 중 응답이 활성화됨"
+msgstr "%1까지 부재 중"
 
 #: ksieveui/vacation/vacationutils.cpp:50
-#, fuzzy, kde-format
-#| msgid "Redirect"
+#, kde-format
 msgid "Redirect to"
-msgstr "방향 전환"
+msgstr "다음으로 전달"
 
 #: ksieveui/vacation/vacationutils.cpp:52
 #, kde-format
 msgid "Copy to"
-msgstr ""
+msgstr "다음으로 복사"
 
 #: ksieveui/vacation/vacationutils.cpp:66
 #, kde-format
@@ -2935,10 +2939,9 @@ msgid "Edit Script..."
 msgstr "스크립트 편집..."
 
 #: ksieveui/widgets/managesievewidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "New Sieve Script"
+#, kde-format
 msgid "Rename Script..."
-msgstr "새 Sieve 스크립트"
+msgstr "스크립트 이름 바꾸기..."
 
 #: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
@@ -2968,12 +2971,12 @@ msgstr "이름 없음"
 #: ksieveui/widgets/managesievewidget.cpp:228
 #, kde-format
 msgid "Empty name is not a valid name"
-msgstr ""
+msgstr "빈 이름은 올바른 이름이 아님"
 
 #: ksieveui/widgets/managesievewidget.cpp:234
 #, kde-format
 msgid "You cannot use protected name."
-msgstr ""
+msgstr "보호된 이름을 사용할 수 없습니다."
 
 #: ksieveui/widgets/managesievewidget.cpp:246
 #, kde-format
@@ -2981,15 +2984,14 @@ msgid "Script name already used \"%1\"."
 msgstr "이름이 \"%1\"인 스크립트가 이미 있습니다."
 
 #: ksieveui/widgets/managesievewidget.cpp:426
-#, fuzzy, kde-format
-#| msgid "Script name:"
+#, kde-format
 msgid "Script Name:"
 msgstr "스크립트 이름:"
 
 #: ksieveui/widgets/managesievewidget.cpp:490
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
-msgstr "서버에서 스크립트 \"%1\"을(를) 삭제하시겠습니까?"
+msgstr "서버에서 \"%1\" 스크립트를 삭제하시겠습니까?"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
 #, kde-format
@@ -2997,18 +2999,14 @@ msgid "Delete Sieve Script Confirmation"
 msgstr "Sieve 스크립트 삭제 확인"
 
 #: ksieveui/widgets/managesievewidget.cpp:509
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sieve operation failed.\n"
-#| "The server responded:\n"
-#| "%1"
+#, kde-format
 msgid ""
 "Deleting the script failed.\n"
 "The server responded:\n"
 "%1"
 msgstr ""
-"Sieve 작업이 실패했습니다.\n"
-"서버 응답은 다음과 같습니다:\n"
+"스크립트 삭제에 실패했습니다.\n"
+"서버 응답:\n"
 "%1"
 
 #: ksieveui/widgets/managesievewidget.cpp:561
@@ -3017,10 +3015,9 @@ msgid "Failed to fetch the list of scripts"
 msgstr "스크립트 목록을 가져올 수 없음"
 
 #: ksieveui/widgets/moveimapfolderwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Create folder"
+#, kde-format
 msgid "Define Folder"
-msgstr "폴더 만들기"
+msgstr "폴더 정의"
 
 #: shared/error.cpp:91
 #, kde-format
@@ -3048,153 +3045,148 @@ msgstr "해석 오류: 예상하지 못한 문자입니다. 공백이 빠졌는�
 #: shared/error.cpp:105
 #, kde-format
 msgid "Parse error: Tag Name has leading Digits"
-msgstr "해석 오류: 태그 이름이 숫자로 시작합니다."
+msgstr "해석 오류: 태그 이름이 숫자로 시작함"
 
 #: shared/error.cpp:109
 #, kde-format
 msgid ""
 "Parse error: Only whitespace and #comments may follow \"text:\" on the same "
 "line"
-msgstr "해석 오류: \"text:\" 뒤 같은 줄에는 공백과 #comment만 올 수 있음"
+msgstr "해석 오류: 한 줄 내에서 \"text:\" 뒤에는 공백과 #comment만 올 수 있음"
 
 #: shared/error.cpp:113
 #, kde-format
 msgid "Parse error: Number out of Range (must be smaller than %1)"
-msgstr "해석 오류: 숫자가 범위를 벗어납니다 (%1보다 작아야 함)"
+msgstr "해석 오류: 숫자가 범위를 벗어남(%1보다 작아야 함)"
 
 #: shared/error.cpp:116
 #, kde-format
 msgid "Parse error: Invalid UTF-8 sequence"
-msgstr "해석 오류: 잘못된 UTF-8 시퀀스입니다."
+msgstr "해석 오류: 잘못된 UTF-8 시퀀스"
 
 #: shared/error.cpp:119
 #, kde-format
 msgid ""
 "Parse error: Premature end of Multiline String (did you forget the '.'?)"
 msgstr ""
-"해석 오류: 여러 줄 문자열이 예상하지 못하게 끝났습니다 (마침표를 확인하십시"
-"오)"
+"해석 오류: 여러 줄 문자열이 예상하지 못하게 끝남(마침표를 확인하십시오)"
 
 #: shared/error.cpp:122
 #, kde-format
 msgid "Parse error: Premature end of Quoted String (missing closing '\"')"
 msgstr ""
-"해석 오류: 인용된 문자열이 예상하지 못하게 끝났습니다. (닫는 큰따옴표를 확인"
-"하십시오)"
+"해석 오류: 인용된 문자열이 예상하지 못하게 끝남(닫는 큰따옴표를 확인하십시오)"
 
 #: shared/error.cpp:125
 #, kde-format
 msgid "Parse error: Premature end of String List (missing closing ']')"
-msgstr ""
-"해석 오류: 문자열 항목이 예상하지 못하게 끝났습니다. (닫는 ']'를 확인하십시"
-"오)"
+msgstr "해석 오류: 문자열 항목이 예상하지 못하게 끝남(닫는 ']'를 확인하십시오)"
 
 #: shared/error.cpp:128
 #, kde-format
 msgid "Parse error: Premature end of Test List (missing closing ')')"
 msgstr ""
-"해석 오류: 테스트 목록이 예상하지 못하게 끝났습니다. (닫는  ')'를 확인하십시"
-"오)"
+"해석 오류: 테스트 목록이 예상하지 못하게 끝남(닫는  ')'를 확인하십시오)"
 
 #: shared/error.cpp:131
 #, kde-format
 msgid "Parse error: Premature end of Block (missing closing '}')"
-msgstr "해석 오류: 블록이 어색하게 끝났습니다. (닫는 '}'를 확인하십시오.)"
+msgstr "해석 오류: 블록이 예상하지 못하게 끝남(닫는 '}'를 확인하십시오.)"
 
 #: shared/error.cpp:134
 #, kde-format
 msgid "Parse error: Missing Whitespace"
-msgstr "해석 오류: 공백이 빠졌습니다."
+msgstr "해석 오류: 공백이 빠짐"
 
 #: shared/error.cpp:137
 #, kde-format
 msgid "Parse error: Missing ';' or Block"
-msgstr "해석 오류: ';' 이나 블록이 빠졌습니다."
+msgstr "해석 오류: ';' 이나 블록이 빠짐"
 
 #: shared/error.cpp:140
 #, kde-format
 msgid "Parse error: Expected ';' or '{', got something else"
-msgstr "해석 오류: ';' 또는 '{' 를 사용해야 할 곳에 다른 것이 있습니다."
+msgstr "해석 오류: ';' 또는 '{' 를 사용해야 할 곳에 다른 것이 있음"
 
 #: shared/error.cpp:143 shared/error.cpp:158
 #, kde-format
 msgid "Parse error: Expected Command, got something else"
-msgstr "해석 오류: 예상했던 명령이 오지 않았습니다."
+msgstr "해석 오류: 명령을 예상했지만 다른 것을 받음"
 
 #: shared/error.cpp:146
 #, kde-format
 msgid "Parse error: Trailing, Leading or Duplicate Commas in String List"
-msgstr "해석 오류: 문자열의 처음, 마지막, 혹은 중복된 쉼표가 존재합니다."
+msgstr "해석 오류: 문자열의 처음, 마지막, 혹은 중복된 쉼표가 존재함"
 
 #: shared/error.cpp:149
 #, kde-format
 msgid "Parse error: Trailing, Leading or Duplicate Commas in Test List"
-msgstr "해석 오류: 테스트 목록의 처음, 마지막, 혹은 중복된 쉼표가 존재합니다."
+msgstr "해석 오류: 테스트 목록의 처음, 마지막, 혹은 중복된 쉼표가 존재함"
 
 #: shared/error.cpp:152
 #, kde-format
 msgid "Parse error: Missing ',' between Strings in String List"
-msgstr "해석 오류: 문자열 목록에서 문자열 사이에 ','가 빠졌습니다."
+msgstr "해석 오류: 문자열 목록에서 문자열 사이에 ','가 빠짐"
 
 #: shared/error.cpp:155
 #, kde-format
 msgid "Parse error: Missing ',' between Tests in Test List"
-msgstr "해석 오류: 테스트 목록에서 테스트 사이에 ','가 빠졌습니다."
+msgstr "해석 오류: 테스트 목록에서 테스트 사이에 ','가 빠짐"
 
 #: shared/error.cpp:161
 #, kde-format
 msgid "Parse error: Only Strings allowed in String Lists"
-msgstr "해석 오류: 문자열은 문자열 목록에서만 허용됩니다."
+msgstr "해석 오류: 문자열 목록에는 문자열만 허용됨"
 
 #: shared/error.cpp:164
 #, kde-format
 msgid "Parse error: Only Tests allowed in Test Lists"
-msgstr "해석 오류: 테스트는 테스트 목록에서만 허용됩니다."
+msgstr "해석 오류: 테스트 목록는 테스트만 허용됨"
 
 #: shared/error.cpp:169
 #, kde-format
 msgid "\"require\" must be first command"
-msgstr "\"require\"가 첫 명령이어야만 합니다."
+msgstr "\"require\"는 첫 명령이어야만 함"
 
 #: shared/error.cpp:172
 #, kde-format
 msgid "\"require\" missing for command \"%1\""
-msgstr "명령 \"%1\"에서 \"require\"가 빠졌습니다."
+msgstr "\"%1\" 명령에서 \"require\"가 빠짐"
 
 #: shared/error.cpp:175
 #, kde-format
 msgid "\"require\" missing for test \"%1\""
-msgstr "테스트 \"%1\"에서 \"require\"가 빠졌습니다."
+msgstr "\"%1\" 테스트에서 \"require\"가 빠짐"
 
 #: shared/error.cpp:178
 #, kde-format
 msgid "\"require\" missing for comparator \"%1\""
-msgstr "비교기 \"%1\"에서 \"require\"가 빠졌습니다."
+msgstr "\"%1\" 비교기에서 \"require\"가 빠짐"
 
 #: shared/error.cpp:181
 #, kde-format
 msgid "Command \"%1\" not supported"
-msgstr "명령 \"%1\"이(가) 지원되지 않습니다."
+msgstr "\"%1\" 명령이 지원되지 않음"
 
 #: shared/error.cpp:184
 #, kde-format
 msgid "Test \"%1\" not supported"
-msgstr "테스트 \"%1\"이(가) 지원되지 않습니다."
+msgstr "\"%1\" 테스트가 지원되지 않음"
 
 #: shared/error.cpp:187
 #, kde-format
 msgid "Comparator \"%1\" not supported"
-msgstr "비교기 \"%1\"이(가) 지원되지 않습니다."
+msgstr "\"%1\" 비교기가 지원되지 않음"
 
 #: shared/error.cpp:190
 #, kde-format
 msgid "Site Policy Limit Violation: Test nesting too deep (max. %1)"
-msgstr "사이트 정책 제한 위반입니다: 테스트 깊이가 너무 깊음 (최대 %1)"
+msgstr "사이트 정책 제한 위반: 테스트 중첩 깊이가 너무 깊음(최대 %1)"
 
 #: shared/error.cpp:193
 #, kde-format
 msgid "Site Policy Limit Violation: Block nesting too deep (max. %1)"
-msgstr "사이트 정책 제한 위반입니다: 블록 깊이가 너무 깊음 (최대 %1)"
+msgstr "사이트 정책 제한 위반: 블록 중첩 깊이가 너무 깊음(최대 %1)"
 
 #: shared/error.cpp:196
 #, kde-format
@@ -3209,12 +3201,12 @@ msgstr "충돌하는 인자: \"%1\" 그리고 \"%2\""
 #: shared/error.cpp:202
 #, kde-format
 msgid "Argument \"%1\" Repeated"
-msgstr "인자 \"%1\"이(가) 반복됨"
+msgstr "\"%1\" 인자가 반복됨"
 
 #: shared/error.cpp:205
 #, kde-format
 msgid "Command \"%1\" violates command ordering constraints"
-msgstr "명령 \"%1\"이(가) 명령 순서 규칙을 위반함"
+msgstr "\"%1\" 명령이 명령 순서 규칙을 위반함"
 
 #: shared/error.cpp:210
 #, kde-format
@@ -3229,7 +3221,7 @@ msgstr "메일 루프가 감지됨"
 #: shared/error.cpp:216
 #, kde-format
 msgid "Site Policy Limit Violation: Too many Actions requested (max. %1)"
-msgstr "사이트 정책 제한 위반입니다: 너무 많은 동작이 요청됨 (최대 %1)"
+msgstr "사이트 정책 제한 위반: 너무 많은 동작이 요청됨(최대 %1)"
 
 #: shared/error.cpp:219
 #, kde-format
