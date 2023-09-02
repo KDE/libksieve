@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-08 01:17+0000\n"
-"PO-Revision-Date: 2023-06-22 14:58+0200\n"
+"PO-Revision-Date: 2023-08-07 11:46+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: kmanagesieve/session.cpp:90
 #, kde-format
@@ -71,6 +71,8 @@ msgid ""
 "Please enter your authentication details for your sieve account "
 "\"%1\" (usually the same as your email password):"
 msgstr ""
+"Zadejte prosím podrobnosti pro ověření u vašeho účtu sieve \"%1\" (obvykle "
+"stejné jako vaše e-mailové heslo):"
 
 #: kmanagesieve/session.cpp:321
 #, kde-format
