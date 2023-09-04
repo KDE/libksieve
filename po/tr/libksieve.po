@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-08 01:17+0000\n"
-"PO-Revision-Date: 2023-08-22 23:18+0300\n"
+"PO-Revision-Date: 2023-09-03 21:41+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -809,12 +809,12 @@ msgstr "Bayraklar"
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:89
 #, kde-format
 msgid "Deleted"
-msgstr "Silinmiş"
+msgstr "Silinen"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:92
 #, kde-format
 msgid "Answered"
-msgstr "Yanıtlanmış"
+msgstr "Yanıtlanan"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:95
 #, kde-format
@@ -824,7 +824,7 @@ msgstr "Bayraklı"
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:98
 #, kde-format
 msgid "Seen"
-msgstr "Okunmuş"
+msgstr "Görülen"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:103
 #, kde-format
