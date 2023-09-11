@@ -17,6 +17,7 @@
 
 #include "KSplitterCollapserButton"
 #include "webengine/sieveeditorhelphtmlwidget.h"
+#include <PimCommon/PurposeMenuMessageWidget>
 #include <TextAddonsWidgets/SlideContainer>
 #include <TextCustomEditor/PlainTextEditFindBar>
 #include <TextCustomEditor/PlainTextEditorWidget>
@@ -51,6 +52,7 @@ using namespace KSieveUi;
 
 SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     : SieveEditorAbstractWidget(parent)
+    , mPurposeMenuMessageWidget(new PimCommon::PurposeMenuMessageWidget(this))
 {
     auto lay = new QVBoxLayout(this);
     lay->setContentsMargins({});
@@ -82,6 +84,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
 #endif
 
     mTextEdit = new SieveTextEdit(this);
+    editorWidgetLayout->addWidget(mPurposeMenuMessageWidget);
     editorWidgetLayout->addWidget(mTextEdit);
     connect(mTextEdit, &SieveTextEdit::textChanged, this, &SieveEditorTextModeWidget::valueChanged);
     mTabWidget->addTab(mEditorWidget, i18n("Editor"));

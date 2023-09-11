@@ -19,6 +19,10 @@ class PlainTextEditFindBar;
 class PlainTextEditor;
 class PlainTextEditorWidget;
 }
+namespace PimCommon
+{
+class PurposeMenuMessageWidget;
+}
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 namespace TextEditTextToSpeech
 {
@@ -143,5 +147,6 @@ private:
     TextAddonsWidgets::SlideContainer *mSliderContainer = nullptr;
     SieveTemplateWidget *mSieveTemplateWidget = nullptr;
     QWidget *mEditorWidget = nullptr;
+    PimCommon::PurposeMenuMessageWidget *const mPurposeMenuMessageWidget;
 };
 }
