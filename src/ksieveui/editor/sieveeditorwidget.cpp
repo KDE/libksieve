@@ -123,6 +123,8 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     mStackedWidget = new QStackedWidget;
 
     mTextModeWidget = new SieveEditorTextModeWidget;
+    connect(purposeMenu, &SievePurposeMenuWidget::shareError, mTextModeWidget, &SieveEditorTextModeWidget::slotShareError);
+    connect(purposeMenu, &SievePurposeMenuWidget::shareSuccess, mTextModeWidget, &SieveEditorTextModeWidget::slotShareSuccess);
     connect(mTextModeWidget, &SieveEditorTextModeWidget::valueChanged, this, &SieveEditorWidget::slotModified);
     if (menuBar) {
         menuBar->setTextModeWidget(mTextModeWidget);

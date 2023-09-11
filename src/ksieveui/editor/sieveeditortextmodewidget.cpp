@@ -208,6 +208,16 @@ void SieveEditorTextModeWidget::slotShowGoToLine()
     mGoToLine->goToLine();
 }
 
+void SieveEditorTextModeWidget::slotShareError(const QString &message)
+{
+    mPurposeMenuMessageWidget->slotShareError(message);
+}
+
+void SieveEditorTextModeWidget::slotShareSuccess(const QString &url)
+{
+    mPurposeMenuMessageWidget->slotShareSuccess(url);
+}
+
 void SieveEditorTextModeWidget::generateXml()
 {
     const QByteArray script = mTextEdit->toPlainText().toUtf8();

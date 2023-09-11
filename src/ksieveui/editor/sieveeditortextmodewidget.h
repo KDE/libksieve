@@ -116,6 +116,8 @@ Q_SIGNALS:
 
 public Q_SLOTS:
     void slotShowGoToLine();
+    void slotShareError(const QString &message);
+    void slotShareSuccess(const QString &url);
 
 private:
     KSIEVEUI_NO_EXPORT void slotTextChanged();
