@@ -2403,7 +2403,7 @@ msgstr "Següent"
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:58
 #, kde-format
 msgid "Jump to next match"
-msgstr "Salta a la coincidència següent"
+msgstr "Salta fins a la coincidència següent"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:63
 #, kde-format
@@ -2414,7 +2414,7 @@ msgstr "Anterior"
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:64
 #, kde-format
 msgid "Jump to previous match"
-msgstr "Salta a la coincidència anterior"
+msgstr "Salta fins a la coincidència anterior"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
 #, kde-format
