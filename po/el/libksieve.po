@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-08 01:17+0000\n"
+"POT-Creation-Date: 2023-09-21 00:45+0000\n"
 "PO-Revision-Date: 2014-03-26 01:10+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -130,6 +130,460 @@ msgstr ""
 "Το σενάριο δεν φορτώθηκε με επιτυχία.\n"
 "Το σενάριο ίσως περιέχει σφάλματα."
 
+#: ksieve/error.cpp:91
+#, kde-format
+msgid "Parse error: Carriage Return (CR) without Line Feed (LF)"
+msgstr "Σφάλμα ανάλυσης: Επαναφορά κεφαλής (CR) χωρίς Αλλαγή γραμμής (LF)"
+
+#: ksieve/error.cpp:95
+#, kde-format
+msgid ""
+"Parse error: Unquoted Slash ('/') without Asterisk ('*'). Broken Comment?"
+msgstr ""
+"Σφάλμα ανάλυσης: Κάθετος ('/') χωρίς αστερίσκο ('*'). Κατεστραμμένο σχόλιο;"
+
+#: ksieve/error.cpp:99
+#, kde-format
+msgid "Parse error: Illegal Character"
+msgstr "Σφάλμα ανάλυσης: Μη έγκυρος χαρακτήρας"
+
+#: ksieve/error.cpp:102
+#, kde-format
+msgid "Parse error: Unexpected Character, probably a missing space?"
+msgstr ""
+"Σφάλμα ανάλυσης: Μη αναμενόμενος χαρακτήρας, πιθανότατα λείπει ένα κενό"
+
+#: ksieve/error.cpp:105
+#, kde-format
+msgid "Parse error: Tag Name has leading Digits"
+msgstr "Σφάλμα ανάλυσης: Η ετικέτα Name έχει αρχικά Ψηφία"
+
+#: ksieve/error.cpp:109
+#, kde-format
+msgid ""
+"Parse error: Only whitespace and #comments may follow \"text:\" on the same "
+"line"
+msgstr ""
+"Σφάλμα ανάλυσης: Μόνο κενά και #σχόλια μπορούν να ακολουθούν το \"text:\" "
+"στην ίδια γραμμή"
+
+#: ksieve/error.cpp:113
+#, kde-format
+msgid "Parse error: Number out of Range (must be smaller than %1)"
+msgstr ""
+"Σφάλμα ανάλυσης: Αριθμός εκτός ορίων (πρέπει να είναι μικρότερος του %1)"
+
+#: ksieve/error.cpp:116
+#, kde-format
+msgid "Parse error: Invalid UTF-8 sequence"
+msgstr "Σφάλμα ανάλυσης: Μη έγκυρη ακολουθία UTF-8"
+
+#: ksieve/error.cpp:119
+#, kde-format
+msgid ""
+"Parse error: Premature end of Multiline String (did you forget the '.'?)"
+msgstr ""
+"Σφάλμα ανάλυσης: Πρόωρο τέλος συμβολοσειράς πολλαπλών γραμμών (μήπως "
+"ξεχάσατε το '.';)"
+
+#: ksieve/error.cpp:122
+#, kde-format
+msgid "Parse error: Premature end of Quoted String (missing closing '\"')"
+msgstr ""
+"Σφάλμα ανάλυσης: Πρόωρος τερματισμός συμβολοσειράς σε εισαγωγικά (λείπει το "
+"κλείσιμο '\"')"
+
+#: ksieve/error.cpp:125
+#, kde-format
+msgid "Parse error: Premature end of String List (missing closing ']')"
+msgstr ""
+"Σφάλμα ανάλυσης: Πρόωρο τέλος Λίστας συμβολοσειρών (λείπει το τελικό ']')"
+
+#: ksieve/error.cpp:128
+#, kde-format
+msgid "Parse error: Premature end of Test List (missing closing ')')"
+msgstr "Σφάλμα ανάλυσης: Πρόωρο τέλος Λίστας δοκιμών (λείπει το τελικό ')')"
+
+#: ksieve/error.cpp:131
+#, kde-format
+msgid "Parse error: Premature end of Block (missing closing '}')"
+msgstr "Σφάλμα ανάλυσης: Πρόωρο τέλος Μπλοκ (λείπει το τελικό '}')"
+
+#: ksieve/error.cpp:134
+#, kde-format
+msgid "Parse error: Missing Whitespace"
+msgstr "Σφάλμα ανάλυσης: Λείπουν κενοί χαρακτήρες"
+
+#: ksieve/error.cpp:137
+#, kde-format
+msgid "Parse error: Missing ';' or Block"
+msgstr "Σφάλμα ανάλυσης: Λείπει ';' ή Block"
+
+#: ksieve/error.cpp:140
+#, kde-format
+msgid "Parse error: Expected ';' or '{', got something else"
+msgstr "Σφάλμα ανάλυσης: Αναμένονταν ';' ή '{', αλλά βρέθηκε κάτι άλλο"
+
+#: ksieve/error.cpp:143 ksieve/error.cpp:158
+#, kde-format
+msgid "Parse error: Expected Command, got something else"
+msgstr "Σφάλμα ανάλυσης: Αναμένονταν 'Εντολή, αλλά βρέθηκε κάτι άλλο"
+
+#: ksieve/error.cpp:146
+#, kde-format
+msgid "Parse error: Trailing, Leading or Duplicate Commas in String List"
+msgstr "Σφάλμα ανάλυσης: Αρχικό, τελικό ή διπλό Κόμμα στην Λίστα συμβολοσειρών"
+
+#: ksieve/error.cpp:149
+#, kde-format
+msgid "Parse error: Trailing, Leading or Duplicate Commas in Test List"
+msgstr "Σφάλμα ανάλυσης: Αρχικό, τελικό ή διπλό Κόμμα στην Λίστα δοκιμών"
+
+#: ksieve/error.cpp:152
+#, kde-format
+msgid "Parse error: Missing ',' between Strings in String List"
+msgstr "Σφάλμα ανάλυσης: Λείπει ',' μεταξύ συμβολοσειρών της Λίστας"
+
+#: ksieve/error.cpp:155
+#, kde-format
+msgid "Parse error: Missing ',' between Tests in Test List"
+msgstr "Σφάλμα ανάλυσης: Λείπει ',' μεταξύ δοκιμών της Λίστας"
+
+#: ksieve/error.cpp:161
+#, kde-format
+msgid "Parse error: Only Strings allowed in String Lists"
+msgstr "Σφάλμα ανάλυσης: Επιτρέπονται μόνο Συμβολοσειρές στη λίστα"
+
+#: ksieve/error.cpp:164
+#, kde-format
+msgid "Parse error: Only Tests allowed in Test Lists"
+msgstr "Σφάλμα ανάλυσης: Επιτρέπονται μόνο Δοκιμές στη λίστα"
+
+#: ksieve/error.cpp:169
+#, kde-format
+msgid "\"require\" must be first command"
+msgstr "Το \"require\" πρέπει να είναι η πρώτη εντολή"
+
+#: ksieve/error.cpp:172
+#, kde-format
+msgid "\"require\" missing for command \"%1\""
+msgstr "Το \"require\" λείπει από την εντολή \"%1\""
+
+#: ksieve/error.cpp:175
+#, kde-format
+msgid "\"require\" missing for test \"%1\""
+msgstr "Το \"require\" λείπει από τη δοκιμή \"%1\""
+
+#: ksieve/error.cpp:178
+#, kde-format
+msgid "\"require\" missing for comparator \"%1\""
+msgstr "Το \"require\" λείπει από τον συγκριτή \"%1\""
+
+#: ksieve/error.cpp:181
+#, kde-format
+msgid "Command \"%1\" not supported"
+msgstr "Η εντολή \"%1\" δεν υποστηρίζεται"
+
+#: ksieve/error.cpp:184
+#, kde-format
+msgid "Test \"%1\" not supported"
+msgstr "Η δοκιμή \"%1\" δεν υποστηρίζεται"
+
+#: ksieve/error.cpp:187
+#, kde-format
+msgid "Comparator \"%1\" not supported"
+msgstr "Ο συγκριτής \"%1\" δεν υποστηρίζεται"
+
+#: ksieve/error.cpp:190
+#, kde-format
+msgid "Site Policy Limit Violation: Test nesting too deep (max. %1)"
+msgstr ""
+"Παράβαση ορίου πολιτικής τοποθεσίας: Πολύ μεγάλος βάθος δοκιμής (μεγ. %1)"
+
+#: ksieve/error.cpp:193
+#, kde-format
+msgid "Site Policy Limit Violation: Block nesting too deep (max. %1)"
+msgstr ""
+"Παράβαση ορίου πολιτικής τοποθεσίας: Πολύ μεγάλος βάθος τμήματος (μεγ. %1)"
+
+#: ksieve/error.cpp:196
+#, kde-format
+msgid "Invalid Argument \"%1\" to \"%2\""
+msgstr "Μη έγκυρο όρισμα \"%1\" στο \"%2\""
+
+#: ksieve/error.cpp:199
+#, kde-format
+msgid "Conflicting Arguments: \"%1\" and \"%2\""
+msgstr "Συγκρουόμενα ορίσματα: \"%1\" και \"%2\""
+
+#: ksieve/error.cpp:202
+#, kde-format
+msgid "Argument \"%1\" Repeated"
+msgstr "Το όρισμα \"%1\" επαναλαμβάνεται"
+
+#: ksieve/error.cpp:205
+#, kde-format
+msgid "Command \"%1\" violates command ordering constraints"
+msgstr "Η εντολή \"%1\" παραβιάζει τους περιορισμούς σειράς εντολών"
+
+#: ksieve/error.cpp:210
+#, kde-format
+msgid "Incompatible Actions \"%1\" and \"%2\" requested"
+msgstr "Ζητήθηκαν οι μη συμβατές ενέργειες \"%1\" και \"%2\""
+
+#: ksieve/error.cpp:213
+#, kde-format
+msgid "Mail Loop detected"
+msgstr "Ανιχνεύθηκε βρόχος αλληλογραφίας"
+
+#: ksieve/error.cpp:216
+#, kde-format
+msgid "Site Policy Limit Violation: Too many Actions requested (max. %1)"
+msgstr ""
+"Παράβαση ορίου πολιτικής τοποθεσίας: Αιτήθηκαν πάρα πολλές ενέργειες (μεγ. "
+"%1)"
+
+#: ksieve/error.cpp:219
+#, kde-format
+msgid "Unknown error"
+msgstr "Άγνωστο σφάλμα "
+
+#: ksievecore/managescriptsjob/checkscriptjob.cpp:65
+#, kde-format
+msgid "No errors found."
+msgstr "Δε βρέθηκαν σφάλματα."
+
+#: ksievecore/managescriptsjob/checkscriptjob.cpp:68
+#, kde-format
+msgid "An unknown error was encountered."
+msgstr "Παρουσιάστηκε άγνωστο σφάλμα."
+
+#: ksievecore/managescriptsjob/generateglobalscriptjob.cpp:52
+#: ksievecore/managescriptsjob/parseuserscriptjob.cpp:42
+#, kde-format
+msgid "Path is not specified."
+msgstr "Δεν έχει καθοριστεί διαδρομή."
+
+#: ksievecore/managescriptsjob/generateglobalscriptjob.cpp:96
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sieve operation failed.\n"
+#| "The server responded:\n"
+#| "%1"
+msgid ""
+"Error writing \"MASTER\" script on server.\n"
+"The server responded:\n"
+"%1"
+msgstr ""
+"Η λειτουργία του Sieve απέτυχε.\n"
+"Η εξυπηρετητής απάντησε:\n"
+"%1"
+
+#: ksievecore/managescriptsjob/generateglobalscriptjob.cpp:134
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sieve operation failed.\n"
+#| "The server responded:\n"
+#| "%1"
+msgid ""
+"Error writing \"User\" script on server.\n"
+"The server responded:\n"
+"%1"
+msgstr ""
+"Η λειτουργία του Sieve απέτυχε.\n"
+"Η εξυπηρετητής απάντησε:\n"
+"%1"
+
+#: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
+#: ksieveui/debug/sievedebugdialog.cpp:199
+#: ksieveui/managesievescriptsdialog.cpp:168
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sieve operation failed.\n"
+#| "The server responded:\n"
+#| "%1"
+msgid ""
+"Retrieving the script failed.\n"
+"The server responded:\n"
+"%1"
+msgstr ""
+"Η λειτουργία του Sieve απέτυχε.\n"
+"Η εξυπηρετητής απάντησε:\n"
+"%1"
+
+#: ksievecore/managescriptsjob/parseuserscriptjob.cpp:70
+#, fuzzy, kde-format
+#| msgid "Script is empty."
+msgid "Script is empty. (%1)"
+msgstr "Το σενάριο είναι κενό."
+
+#: ksievecore/managescriptsjob/parseuserscriptjob.cpp:78
+#, fuzzy, kde-format
+#| msgid "Script parsing error"
+msgid "Script parsing error."
+msgstr "Σφάλμα ανάλυσης σεναρίου"
+
+#: ksievecore/managescriptsjob/renamescriptjob.cpp:56
+#, kde-format
+msgid "Impossible to start job"
+msgstr ""
+
+#: ksievecore/managescriptsjob/renamescriptjob.cpp:66
+#, kde-format
+msgid "An error occurred during loading the sieve script."
+msgstr ""
+
+#: ksievecore/managescriptsjob/renamescriptjob.cpp:82
+#, kde-format
+msgid "An error occurred during saving the sieve script."
+msgstr ""
+
+#: ksievecore/managescriptsjob/renamescriptjob.cpp:93
+#, kde-format
+msgid "An error occurred during deleting the sieve script."
+msgstr ""
+
+#. i18n: ectx: label, entry (AllowOutOfOfficeSettings), group (OutOfOffice)
+#: ksievecore/settings/sieve-vacation.kcfg:16
+#, kde-format
+msgid "Allow out-of-office settings to be changeable by the user."
+msgstr "Να επιτρέπεται η αλλαγή από τον χρήστη των εκτός-γραφείου ρυθμίσεων."
+
+#. i18n: ectx: label, entry (AllowOutOfOfficeUploadButNoSettings), group (OutOfOffice)
+#: ksievecore/settings/sieve-vacation.kcfg:20
+#, kde-format
+msgid ""
+"Allow users to upload out-of-office sieve scripts, but prevent them from "
+"changing any settings, such as the domain to react to or the spam reaction "
+"switch."
+msgstr ""
+"Να επιτρέπεται στους χρήστες να φορτώνουν σενάρια εκτός-γραφείου, αλλά να "
+"αποτρέπονται από την αλλαγή σε ρυθμίσεις, όπως στον τομέα ανταπόκρισης ή "
+"στον επιλογέα αντίδρασης σε ανεπιθύμητα."
+
+#. i18n: ectx: label, entry (OutOfOfficeDomain), group (OutOfOffice)
+#: ksievecore/settings/sieve-vacation.kcfg:24
+#, kde-format
+msgid "Send out-of-office replies to mails coming from this domain only."
+msgstr ""
+"Να στέλνονται εκτός-γραφείου απαντήσεις σε μηνύματα προερχόμενα από αυτόν "
+"τον τομέα μόνο."
+
+#. i18n: ectx: label, entry (OutOfOfficeReactToSpam), group (OutOfOffice)
+#: ksievecore/settings/sieve-vacation.kcfg:28
+#, kde-format
+msgid "Allow out-of-office replies to be sent to messages marked as SPAM."
+msgstr ""
+"Να επιτρέπεται εκτός-γραφείου απαντήσεις να στέλνονται σε μηνύματα που έχουν "
+"σημειωθεί ως ΑΝΕΠΙΘΥΜΗΤΑ (SPAM)."
+
+#. i18n: ectx: label, entry (CheckOutOfOfficeOnStartup), group (OutOfOffice)
+#: ksievecore/settings/sieve-vacation.kcfg:32
+#, kde-format
+msgid ""
+"Check if there is still an active out-of-office reply configured on startup."
+msgstr ""
+"Εξετάστε αν υπάρχει ακόμη ενεργή εκτός-γραφείου απάντηση διαμορφωμένη να "
+"στέλνεται στην έναρξη."
+
+#: ksievecore/vacation/vacationcheckjob.cpp:125
+#, kde-format
+msgid "ParseUserScriptJob failed: %1"
+msgstr ""
+
+#: ksievecore/vacation/vacationcheckjob.cpp:141
+#, fuzzy, kde-format
+#| msgid ""
+#| "Sieve operation failed.\n"
+#| "The server responded:\n"
+#| "%1"
+msgid ""
+"Failed to get the list of Sieve scripts.\n"
+"The server responded:\n"
+"%1"
+msgstr ""
+"Η λειτουργία του Sieve απέτυχε.\n"
+"Η εξυπηρετητής απάντησε:\n"
+"%1"
+
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:144
+#, kde-format
+msgid ""
+"Sieve script installed successfully on the server '%1'.\n"
+"Out of Office reply is now active."
+msgstr ""
+"Το σενάριο του Sieve εγκαταστάθηκε με επιτυχία στον εξυπηρετητή '%1'.\n"
+"Η εκτός-γραφείου απάντηση είναι τώρα ενεργή."
+
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:147
+#, kde-format
+msgid ""
+"Sieve script installed successfully on the server '%1'.\n"
+"Out of Office reply has been deactivated."
+msgstr ""
+"Το σενάριο του Sieve εγκαταστάθηκε με επιτυχία στον εξυπηρετητή '%1'.\n"
+"Η εκτός-γραφείου απάντηση έχει απενεργοποιηθεί."
+
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:151
+#, kde-format
+msgid "Impossible to install script on server '%1'"
+msgstr ""
+
+#: ksievecore/vacation/vacationutils.cpp:39
+#, fuzzy, kde-format
+#| msgid "Out-of-office reply still active"
+msgid "Out of office till %1"
+msgstr "Εκτός-γραφείου απάντηση ακόμη ενεργή"
+
+#: ksievecore/vacation/vacationutils.cpp:46
+#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:20
+#, kde-format
+msgid "Keep"
+msgstr "Διατήρηση"
+
+#: ksievecore/vacation/vacationutils.cpp:48
+#: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:12
+#, kde-format
+msgid "Discard"
+msgstr "Απόρριψη"
+
+#: ksievecore/vacation/vacationutils.cpp:50
+#, fuzzy, kde-format
+#| msgid "Redirect"
+msgid "Redirect to"
+msgstr "Ανακατεύθυνση"
+
+#: ksievecore/vacation/vacationutils.cpp:52
+#, kde-format
+msgid "Copy to"
+msgstr ""
+
+#: ksievecore/vacation/vacationutils.cpp:66
+#, kde-format
+msgid ""
+"I am out of office till %1.\n"
+"\n"
+"In urgent cases, please contact Mrs. \"vacation replacement\"\n"
+"\n"
+"email: \"email address of vacation replacement\"\n"
+"phone: +49 711 1111 11\n"
+"fax.:  +49 711 1111 12\n"
+"\n"
+"Yours sincerely,\n"
+"-- \"enter your name and email address here\"\n"
+msgstr ""
+"Είμαι εκτός γραφείου μέχρι %1.\n"
+"\n"
+"Σε επείγουσες περιπτώσεις, παρακαλώ επικοινωνήστε με την κυρία \"πρόσωπο "
+"αναπλήρωσης\"\n"
+"\n"
+"email: \"διεύθυνση αλληλογραφίας προσώπου αναπλήρωσης\"\n"
+"τηλέφωνο: +49 711 1111 11\n"
+"φαξ.:  +49 711 1111 12\n"
+"\n"
+"Με εκτίμηση,\n"
+"-- \"δώστε το όνομα και τη διεύθυνση ηλ. αλληλογραφίας σας εδώ\"\n"
+
 #: ksieveui/autocreatescripts/autocreatescriptdialog.cpp:29
 #, fuzzy, kde-format
 #| msgid "Create sieve filter"
@@ -137,12 +591,12 @@ msgctxt "@title:window"
 msgid "Create Sieve Filter"
 msgstr "Δημιουργία φίλτρου sieve"
 
-#: ksieveui/autocreatescripts/autocreatescriptutil.cpp:185
+#: ksieveui/autocreatescripts/autocreatescriptutil.cpp:177
 #, kde-format
 msgid "Cannot find item \"%1\" in widget \"%2\""
 msgstr "Αδυναμία εύρεσης του αντικειμένου \"%1\" στο γραφικό συστατικό \"%2\""
 
-#: ksieveui/autocreatescripts/autocreatescriptutil.cpp:193
+#: ksieveui/autocreatescripts/autocreatescriptutil.cpp:185
 #, kde-format
 msgid "More information"
 msgstr "Περισσότερες πληροφορίες"
@@ -228,22 +682,22 @@ msgid "BMP"
 msgstr "BMP"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:101
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:69
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:53
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing action \"%2\"."
 msgstr ""
 "Βρέθηκε μια άγνωστη τιμή ετικέτας \"%1\" κατά την ανάλυση της ενέργειας "
 "\"%2\"."
 
-#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:114
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:49
+#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:106
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:41
 #, kde-format
 msgid "An unknown tag \"%1\" was found during parsing action \"%2\"."
 msgstr ""
 "Βρέθηκε μια άγνωστη ετικέτα \"%1\" κατά την ανάλυση της ενέργειας \"%2\"."
 
-#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:128
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:64
+#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:112
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:48
 #, fuzzy, kde-format
 #| msgid ""
 #| "Too many argument found for \"%1\", max value is %2, number of value "
@@ -255,16 +709,16 @@ msgstr ""
 "Βρέθηκαν πάρα πολλά ορίσματα για το \"%1\", η μέγιστη τιμή είναι %2, ο "
 "αριθμός τιμής που βρέθηκε είναι%3 για %4"
 
-#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:133
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:74
-#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:63
+#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:117
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:58
+#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:52
 #, kde-format
 msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgstr ""
 "Το χαρακτηριστικό \"%1\" στη συνθήκη \"%2\" δεν υποστηρίζεται από τον "
 "εξυπηρετητή"
 
-#: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:20
+#: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
 #: ksieveui/editor/sieveeditortabwidget.cpp:150
 #, kde-format
 msgid "Help"
@@ -302,7 +756,7 @@ msgstr "κεφαλίδα:"
 msgid "value:"
 msgstr "τιμή:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:118
+#: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:114
 #, kde-format
 msgid ""
 "The addheader action adds a header field to the existing message header."
@@ -319,7 +773,7 @@ msgstr "Διακοπή"
 msgid "Name (optional):"
 msgstr "Όνομα (προαιρετικό):"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:93
+#: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:89
 #, kde-format
 msgid "The break command terminates the closest enclosing loop."
 msgstr "Η εντολή break τερματίζει τον κοντινότερο περικλείοντα βρόχο."
@@ -348,7 +802,7 @@ msgstr "Σε:"
 msgid "Parameters:"
 msgstr "Παράμετροι:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:133
+#: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:129
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:94
 #, kde-format
 msgid ""
@@ -362,18 +816,12 @@ msgstr ""
 msgid "Delete header"
 msgstr "Διαγραφή κεφαλίδας"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:128
+#: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:124
 #, kde-format
 msgid ""
 "By default, the deleteheader action deletes all occurrences of the named "
 "header field."
 msgstr ""
-
-#: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:12
-#: ksieveui/vacation/vacationutils.cpp:48
-#, kde-format
-msgid "Discard"
-msgstr "Απόρριψη"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:23
 #, kde-format
@@ -406,7 +854,7 @@ msgstr "κεφαλίδες:"
 msgid "text:"
 msgstr "κείμενο:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:147
+#: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:143
 #, kde-format
 msgid ""
 "Enclose action command is defined to allow an entire message to be enclosed "
@@ -419,7 +867,7 @@ msgstr ""
 msgid "E-Reject"
 msgstr "Απόρριψη"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:90
+#: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:86
 #, kde-format
 msgid ""
 " The \"ereject\" action cancels the implicit keep and refuses delivery of a "
@@ -441,7 +889,7 @@ msgstr "Αριθμός χαρακτήρων:"
 msgid "Stored in variable name:"
 msgstr ""
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:114
+#: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:110
 #, kde-format
 msgid ""
 "The \"extracttext\" action may be used within the context of a \"foreverypart"
@@ -453,31 +901,31 @@ msgstr ""
 msgid "File Into"
 msgstr ""
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:61
+#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:57
 #, kde-format
 msgid ""
 "Action \"fileinto\" has \"copy\" argument but current server does not "
 "support it"
 msgstr ""
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:100
+#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:96
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:35
 #, kde-format
 msgid "Keep a copy"
 msgstr "Διατήρηση αντιγράφου"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:106
+#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:102
 #, kde-format
 msgid "Create folder"
 msgstr "Δημιουργία φακέλου"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:151
+#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:147
 #, kde-format
 msgid ""
 "The \"fileinto\" action delivers the message into the specified mailbox."
 msgstr ""
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:154
+#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:150
 #, kde-format
 msgid ""
 "If the optional \":create\" argument is specified, it instructs the Sieve "
@@ -485,19 +933,13 @@ msgid ""
 "deliver the message into the specified mailbox."
 msgstr ""
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:159
+#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:155
 #, kde-format
 msgid ""
 "If the optional \":copy\" keyword is specified, the tagged command does not "
 "cancel the implicit \"keep\". Instead, it merely files or redirects a copy "
 "in addition to whatever else is happening to the message."
 msgstr ""
-
-#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:20
-#: ksieveui/vacation/vacationutils.cpp:46
-#, kde-format
-msgid "Keep"
-msgstr "Διατήρηση"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:44
 #, kde-format
@@ -527,7 +969,7 @@ msgstr "μήνυμα:"
 msgid "method:"
 msgstr "μέθοδος:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:136
+#: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:132
 #, kde-format
 msgid ""
 "The \"notify\" action specifies that a notification should be sent to a user."
@@ -543,7 +985,7 @@ msgstr "Ανακατεύθυνση"
 msgid "Use list"
 msgstr "Χρήση λίστας"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:143
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:139
 #, kde-format
 msgid ""
 "The \"redirect\" action is used to send the message to another user at a "
@@ -552,7 +994,7 @@ msgid ""
 "add new headers."
 msgstr ""
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:147
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:143
 #, kde-format
 msgid ""
 "If the optional \":copy\" keyword is specified, the tagged command does not "
@@ -565,7 +1007,7 @@ msgstr ""
 msgid "Reject"
 msgstr "Απόρριψη"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:90
+#: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:86
 #, kde-format
 msgid ""
 " The \"reject\" action cancels the implicit keep and refuses delivery of a "
@@ -595,7 +1037,7 @@ msgstr "Αντικατάσταση"
 msgid "from:"
 msgstr "από:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:146
+#: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:142
 #, kde-format
 msgid ""
 "The \"replace\" command is defined to allow a MIME part to be replaced with "
@@ -650,21 +1092,21 @@ msgstr "Τιμή:"
 msgid "In variable:"
 msgstr "Στη μεταβλητή:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:114
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:106
 #, kde-format
 msgid "Script needs regex support, but server does not have it."
 msgstr ""
 "Το σενάριο χρειάζεται υποστήριξη κανονικών εκφράσεων, αλλά ο εξυπηρετητής "
 "δεν την παρέχει."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:177
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:169
 #, kde-format
 msgid ""
 "The \"set\" action stores the specified value in the variable identified by "
 "name."
 msgstr ""
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:180
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:172
 #, kde-format
 msgid ""
 "This modifier adds the necessary quoting to ensure that the expanded text "
@@ -710,7 +1152,7 @@ msgstr "Επιπλέον ηλ. αλληλογραφία:"
 msgid "Vacation reason:"
 msgstr "Λόγος διακοπών:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:204
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:196
 #, kde-format
 msgid ""
 "The \"vacation\" action implements a vacation autoresponder similar to the "
@@ -719,7 +1161,7 @@ msgid ""
 "extended period of time and that they should not expect quick responses."
 msgstr ""
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:208
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:200
 #, kde-format
 msgid ""
 "Through the \":days\" parameter, it limits the number of auto-replies to the "
@@ -728,7 +1170,7 @@ msgid ""
 "\"vacation\" replies more frequently."
 msgstr ""
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:210
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:202
 #, kde-format
 msgid ""
 "This extension defines a \":seconds\" parameter to provide more granularity "
@@ -869,30 +1311,30 @@ msgstr "μήκος"
 msgid "Please select an action."
 msgstr "Παρακαλώ επιλέξτε ενέργεια."
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:144
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:139
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
 #, kde-format
 msgid "Add comment"
 msgstr "Προσθήκη σχολίου"
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:279
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:274
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:222
 #, fuzzy, kde-format
 #| msgid "Script name already used \"%1\"."
 msgid "Script contains unsupported feature \"%1\""
 msgstr "Το όνομα σεναρίου ήδη χρησιμοποίησε το \"%1\"."
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:422
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:409
 #, kde-format
 msgid "We detected a loop if in a loop if. It's not supported"
 msgstr ""
 
-#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:39
+#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:31
 #, kde-format
 msgid "Unknown tag \"%1\" during parsing condition \"%2\""
 msgstr "Άγνωστη ετικέτα \"%1\" κατά την ανάλυση της συνθήκης \"%2\""
 
-#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:52
+#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:41
 #, kde-format
 msgid ""
 "Too many argument found for \"%1\", max value is %2, number of value found "
@@ -901,7 +1343,7 @@ msgstr ""
 "Βρέθηκαν πάρα πολλά ορίσματα για το \"%1\", η μέγιστη τιμή είναι %2, ο "
 "αριθμός τιμής που βρέθηκε είναι%3 για %4"
 
-#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:58
+#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:47
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing condition \"%2\"."
 msgstr ""
@@ -1543,12 +1985,12 @@ msgid ""
 "the specified block to each of them."
 msgstr ""
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:96
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:92
 #, kde-format
 msgid "Unknown tagValue \"%1\" during loading loop \"for\""
 msgstr ""
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:108
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:104
 #, kde-format
 msgid "Unknown tag \"%1\" during loading loop \"for\""
 msgstr ""
@@ -1563,12 +2005,12 @@ msgstr "Όνομα μεταβλητής:"
 msgid "Set value to:"
 msgstr "Ορισμός τιμής σε:"
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:136
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:128
 #, kde-format
 msgid "Unknown tag \"%1\" during loading of variables."
 msgstr "Άγνωστη ετικέτα \"%1\" κατά τη φόρτωση των μεταβλητών."
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:179
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:171
 #, kde-format
 msgid ""
 "A variable has global scope in all scripts that have declared it with the "
@@ -1592,28 +2034,28 @@ msgstr "καθολική"
 msgid "Unknown location type \"%1\" during parsing includes"
 msgstr ""
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:132
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:128
 #, kde-format
 msgid "Include:"
 msgstr "Συμπερίληψη:"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:138
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:134
 #: ksieveui/templates/sievetemplateeditdialog.cpp:59
 #, kde-format
 msgid "Name:"
 msgstr "Όνομα:"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:147
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:143
 #, kde-format
 msgid "Optional"
 msgstr "Προαιρετικά"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:151
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:147
 #, kde-format
 msgid "Once"
 msgstr "Μια φορά"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:216
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:212
 #, kde-format
 msgid ""
 "The \"include\" command takes an optional \"location\" parameter, an "
@@ -1622,7 +2064,7 @@ msgid ""
 "processing at that point."
 msgstr ""
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:337
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:333
 #, kde-format
 msgid "We can not add more includes elements."
 msgstr ""
@@ -1674,31 +2116,31 @@ msgctxt "@title:window"
 msgid "Description"
 msgstr "Περιγραφή"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:128
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:123
 #, kde-format
 msgctxt "Move selected filter up."
 msgid "Up"
 msgstr "Πάνω"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:129
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:124
 #, kde-format
 msgctxt "Move selected filter down."
 msgid "Down"
 msgstr "Κάτω"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:130
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:125
 #, kde-format
 msgctxt "Move selected filter to the top."
 msgid "Top"
 msgstr "Κορυφή"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:131
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:126
 #, kde-format
 msgctxt "Move selected filter to the bottom."
 msgid "Bottom"
 msgstr "Τέλος"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:138
 #: ksieveui/widgets/managesievewidget.cpp:228
 #: ksieveui/widgets/managesievewidget.cpp:234
 #: ksieveui/widgets/managesievewidget.cpp:246
@@ -1706,13 +2148,13 @@ msgstr "Τέλος"
 msgid "New Script"
 msgstr "Νέο σενάριο"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:144
 #: ksieveui/widgets/managesievewidget.cpp:150
 #, kde-format
 msgid "Delete Script"
 msgstr "Διαγραφή σεναρίου"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:148
 #: ksieveui/widgets/managesievewidget.cpp:426
 #: ksieveui/widgets/managesievewidget.cpp:454
 #, fuzzy, kde-format
@@ -1720,72 +2162,72 @@ msgstr "Διαγραφή σεναρίου"
 msgid "Rename Script"
 msgstr "Σενάριο του Sieve"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:154
 #, fuzzy, kde-format
 #| msgid "Edit description..."
 msgid "Edit Script Description"
 msgstr "Επεξεργασία περιγραφής..."
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:188
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:183
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgctxt "@action:inmenu"
 msgid "New Script"
 msgstr "Νέο σενάριο"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:193
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:188
 #, fuzzy, kde-format
 #| msgid "Sieve Script"
 msgctxt "@action:inmenu"
 msgid "Rename Script"
 msgstr "Σενάριο του Sieve"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:193
 #, fuzzy, kde-format
 #| msgid "Delete Script"
 msgctxt "@action:inmenu"
 msgid "Delete Script"
 msgstr "Διαγραφή σεναρίου"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:247
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgctxt "@title:window"
 msgid "New Script"
 msgstr "Νέο σενάριο"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:247
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgid "New script name:"
 msgstr "Νέο σενάριο"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:264
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
 #, kde-format
 msgid "Do you want to delete \"%1\" script?"
 msgstr "Επιθυμείτε πραγματικά τη διαγραφή του σεναρίου \"%1\";"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:265
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:260
 #, fuzzy, kde-format
 #| msgid "Delete Script"
 msgctxt "@title:window"
 msgid "Delete Script"
 msgstr "Διαγραφή σεναρίου"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:280
 #, fuzzy, kde-format
 #| msgid "Sieve Script"
 msgctxt "@title:window"
 msgid "Rename Script"
 msgstr "Σενάριο του Sieve"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:280
 #, fuzzy, kde-format
 #| msgid "Please enter a name for the new Sieve script:"
 msgid "New name for the script:"
 msgstr "Δώστε ένα όνομα για το νέο σενάριο sieve:"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:478
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:469
 #, fuzzy, kde-format
 #| msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgid "forEveryPart is not supported by your server"
@@ -1793,7 +2235,7 @@ msgstr ""
 "Το χαρακτηριστικό \"%1\" στη συνθήκη \"%2\" δεν υποστηρίζεται από τον "
 "εξυπηρετητή"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:576
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:567
 #, kde-format
 msgid "Script part %1"
 msgstr "Τμήμα σεναρίου %1"
@@ -1928,23 +2370,6 @@ msgstr ""
 #, kde-format
 msgid "Contents of script '%1':\n"
 msgstr "Περιεχόμενα σεναρίου '%1':\n"
-
-#: ksieveui/debug/sievedebugdialog.cpp:199
-#: ksieveui/managescriptsjob/parseuserscriptjob.cpp:64
-#: ksieveui/managesievescriptsdialog.cpp:168
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sieve operation failed.\n"
-#| "The server responded:\n"
-#| "%1"
-msgid ""
-"Retrieving the script failed.\n"
-"The server responded:\n"
-"%1"
-msgstr ""
-"Η λειτουργία του Sieve απέτυχε.\n"
-"Η εξυπηρετητής απάντησε:\n"
-"%1"
 
 #: ksieveui/debug/sievedebugdialog.cpp:203
 #, fuzzy, kde-format
@@ -2169,32 +2594,32 @@ msgstr "Σφάλμα κατά τη φόρτωση σελίδας σχετικά 
 msgid "Help about: %1"
 msgstr "Βοήθεια σχετικά με το: %1"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:65
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:67
 #, kde-format
 msgid "Sieve Template:"
 msgstr "Πρότυπο του Sieve:"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:87
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:90
 #, kde-format
 msgid "Editor"
 msgstr "Επεξεργαστής"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:138
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:144
 #, kde-format
 msgid "Show result from \"check syntax\""
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:216
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:232
 #, kde-format
 msgid "Error during parsing"
 msgstr "Σφάλμα κατά την ανάλυση"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:246
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:262
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:246
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:262
 #, fuzzy, kde-format
 #| msgid "Sieve Parsing Error"
 msgid "Parsing error"
@@ -2230,13 +2655,13 @@ msgstr ""
 msgid "Script name:"
 msgstr "Όνομα σεναρίου:"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:382
+#: ksieveui/editor/sieveeditorwidget.cpp:384
 #, fuzzy, kde-format
 #| msgid "Switch Mode"
 msgid "Simple Mode"
 msgstr "Αλλαγή λειτουργίας"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:382
+#: ksieveui/editor/sieveeditorwidget.cpp:384
 #, kde-format
 msgid "Advanced Mode"
 msgstr ""
@@ -2306,146 +2731,68 @@ msgstr "Μετάβαση σε λειτουργία γραφικού περιβά
 msgid "We cannot parse script. We cannot switch to graphical mode"
 msgstr ""
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:38
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:41
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:37
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:40
 #, kde-format
 msgid "Close"
 msgstr "Κλείσιμο"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:47
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:46
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "Εύρ&εση"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:52
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:51
 #, kde-format
 msgid "Text to search for"
 msgstr "Κείμενο για αναζήτηση"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:56
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Επόμενο"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:58
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
 #, kde-format
 msgid "Jump to next match"
 msgstr "Μετάβαση σε επόμενο ταίριασμα"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:63
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:62
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "Προηγούμενο"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:64
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:63
 #, kde-format
 msgid "Jump to previous match"
 msgstr "Μετάβαση σε προηγούμενο ταίριασμα"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:69
 #, kde-format
 msgid "Options"
 msgstr "Επιλογές"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:71
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
 #, kde-format
 msgid "Modify search behavior"
 msgstr "Τροποποίηση συμπεριφοράς αναζήτησης"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:73
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:72
 #, kde-format
 msgid "Case sensitive"
 msgstr "Διάκριση πεζών-κεφαλαίων"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:89
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:88
 #, kde-format
 msgid "Phrase not found"
 msgstr ""
 
-#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:54
+#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:46
 #, kde-format
 msgid "Save Web Page"
-msgstr ""
-
-#: ksieveui/managescriptsjob/checkscriptjob.cpp:65
-#, kde-format
-msgid "No errors found."
-msgstr "Δε βρέθηκαν σφάλματα."
-
-#: ksieveui/managescriptsjob/checkscriptjob.cpp:68
-#, kde-format
-msgid "An unknown error was encountered."
-msgstr "Παρουσιάστηκε άγνωστο σφάλμα."
-
-#: ksieveui/managescriptsjob/generateglobalscriptjob.cpp:52
-#: ksieveui/managescriptsjob/parseuserscriptjob.cpp:42
-#, kde-format
-msgid "Path is not specified."
-msgstr "Δεν έχει καθοριστεί διαδρομή."
-
-#: ksieveui/managescriptsjob/generateglobalscriptjob.cpp:96
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sieve operation failed.\n"
-#| "The server responded:\n"
-#| "%1"
-msgid ""
-"Error writing \"MASTER\" script on server.\n"
-"The server responded:\n"
-"%1"
-msgstr ""
-"Η λειτουργία του Sieve απέτυχε.\n"
-"Η εξυπηρετητής απάντησε:\n"
-"%1"
-
-#: ksieveui/managescriptsjob/generateglobalscriptjob.cpp:134
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sieve operation failed.\n"
-#| "The server responded:\n"
-#| "%1"
-msgid ""
-"Error writing \"User\" script on server.\n"
-"The server responded:\n"
-"%1"
-msgstr ""
-"Η λειτουργία του Sieve απέτυχε.\n"
-"Η εξυπηρετητής απάντησε:\n"
-"%1"
-
-#: ksieveui/managescriptsjob/parseuserscriptjob.cpp:70
-#, fuzzy, kde-format
-#| msgid "Script is empty."
-msgid "Script is empty. (%1)"
-msgstr "Το σενάριο είναι κενό."
-
-#: ksieveui/managescriptsjob/parseuserscriptjob.cpp:78
-#, fuzzy, kde-format
-#| msgid "Script parsing error"
-msgid "Script parsing error."
-msgstr "Σφάλμα ανάλυσης σεναρίου"
-
-#: ksieveui/managescriptsjob/renamescriptjob.cpp:56
-#, kde-format
-msgid "Impossible to start job"
-msgstr ""
-
-#: ksieveui/managescriptsjob/renamescriptjob.cpp:66
-#, kde-format
-msgid "An error occurred during loading the sieve script."
-msgstr ""
-
-#: ksieveui/managescriptsjob/renamescriptjob.cpp:82
-#, kde-format
-msgid "An error occurred during saving the sieve script."
-msgstr ""
-
-#: ksieveui/managescriptsjob/renamescriptjob.cpp:93
-#, kde-format
-msgid "An error occurred during deleting the sieve script."
 msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:63
@@ -2529,49 +2876,6 @@ msgid "XML Files (*.xml);;All Files (*)"
 msgstr ""
 "*αρχεία .xml|xml  (*.xml)\n"
 "*|όλα τα αρχεία (*)"
-
-#. i18n: ectx: label, entry (AllowOutOfOfficeSettings), group (OutOfOffice)
-#: ksieveui/settings/sieve-vacation.kcfg:16
-#, kde-format
-msgid "Allow out-of-office settings to be changeable by the user."
-msgstr "Να επιτρέπεται η αλλαγή από τον χρήστη των εκτός-γραφείου ρυθμίσεων."
-
-#. i18n: ectx: label, entry (AllowOutOfOfficeUploadButNoSettings), group (OutOfOffice)
-#: ksieveui/settings/sieve-vacation.kcfg:20
-#, kde-format
-msgid ""
-"Allow users to upload out-of-office sieve scripts, but prevent them from "
-"changing any settings, such as the domain to react to or the spam reaction "
-"switch."
-msgstr ""
-"Να επιτρέπεται στους χρήστες να φορτώνουν σενάρια εκτός-γραφείου, αλλά να "
-"αποτρέπονται από την αλλαγή σε ρυθμίσεις, όπως στον τομέα ανταπόκρισης ή "
-"στον επιλογέα αντίδρασης σε ανεπιθύμητα."
-
-#. i18n: ectx: label, entry (OutOfOfficeDomain), group (OutOfOffice)
-#: ksieveui/settings/sieve-vacation.kcfg:24
-#, kde-format
-msgid "Send out-of-office replies to mails coming from this domain only."
-msgstr ""
-"Να στέλνονται εκτός-γραφείου απαντήσεις σε μηνύματα προερχόμενα από αυτόν "
-"τον τομέα μόνο."
-
-#. i18n: ectx: label, entry (OutOfOfficeReactToSpam), group (OutOfOffice)
-#: ksieveui/settings/sieve-vacation.kcfg:28
-#, kde-format
-msgid "Allow out-of-office replies to be sent to messages marked as SPAM."
-msgstr ""
-"Να επιτρέπεται εκτός-γραφείου απαντήσεις να στέλνονται σε μηνύματα που έχουν "
-"σημειωθεί ως ΑΝΕΠΙΘΥΜΗΤΑ (SPAM)."
-
-#. i18n: ectx: label, entry (CheckOutOfOfficeOnStartup), group (OutOfOffice)
-#: ksieveui/settings/sieve-vacation.kcfg:32
-#, kde-format
-msgid ""
-"Check if there is still an active out-of-office reply configured on startup."
-msgstr ""
-"Εξετάστε αν υπάρχει ακόμη ενεργή εκτός-γραφείου απάντηση διαμορφωμένη να "
-"στέλνεται στην έναρξη."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:30
 #, fuzzy, kde-format
@@ -2716,7 +3020,7 @@ msgctxt "@title:window"
 msgid "Template"
 msgstr "Πρότυπο"
 
-#: ksieveui/templates/sievetemplatewidget.cpp:99
+#: ksieveui/templates/sievetemplatewidget.cpp:95
 #, kde-format
 msgid "You can drag and drop element on editor to import template"
 msgstr ""
@@ -2766,49 +3070,6 @@ msgstr ""
 "στην πλευρά του διακομιστή. Δεν έχετε διαμορφώσει ακόμα ένα διακομιστή IMAP "
 "γι' αυτό. Μπορείτε να το κάνετε στην καρτέλα \"Φιλτράρισμα\" των ρυθμίσεων "
 "λογαριασμού IMAP."
-
-#: ksieveui/vacation/vacationcheckjob.cpp:125
-#, kde-format
-msgid "ParseUserScriptJob failed: %1"
-msgstr ""
-
-#: ksieveui/vacation/vacationcheckjob.cpp:141
-#, fuzzy, kde-format
-#| msgid ""
-#| "Sieve operation failed.\n"
-#| "The server responded:\n"
-#| "%1"
-msgid ""
-"Failed to get the list of Sieve scripts.\n"
-"The server responded:\n"
-"%1"
-msgstr ""
-"Η λειτουργία του Sieve απέτυχε.\n"
-"Η εξυπηρετητής απάντησε:\n"
-"%1"
-
-#: ksieveui/vacation/vacationcreatescriptjob.cpp:144
-#, kde-format
-msgid ""
-"Sieve script installed successfully on the server '%1'.\n"
-"Out of Office reply is now active."
-msgstr ""
-"Το σενάριο του Sieve εγκαταστάθηκε με επιτυχία στον εξυπηρετητή '%1'.\n"
-"Η εκτός-γραφείου απάντηση είναι τώρα ενεργή."
-
-#: ksieveui/vacation/vacationcreatescriptjob.cpp:147
-#, kde-format
-msgid ""
-"Sieve script installed successfully on the server '%1'.\n"
-"Out of Office reply has been deactivated."
-msgstr ""
-"Το σενάριο του Sieve εγκαταστάθηκε με επιτυχία στον εξυπηρετητή '%1'.\n"
-"Η εκτός-γραφείου απάντηση έχει απενεργοποιηθεί."
-
-#: ksieveui/vacation/vacationcreatescriptjob.cpp:151
-#, kde-format
-msgid "Impossible to install script on server '%1'"
-msgstr ""
 
 #: ksieveui/vacation/vacationeditwidget.cpp:47
 #, kde-format
@@ -2904,49 +3165,6 @@ msgstr ""
 "επεκτάσεων του Sieve· χωρίς αυτήν, το KMail δεν μπορεί να εγκαταστήσει τις "
 "εκτός-γραφείου απαντήσεις. Παρακαλώ επικοινωνήστε με τον διαχειριστή του "
 "συστήματος."
-
-#: ksieveui/vacation/vacationutils.cpp:39
-#, fuzzy, kde-format
-#| msgid "Out-of-office reply still active"
-msgid "Out of office till %1"
-msgstr "Εκτός-γραφείου απάντηση ακόμη ενεργή"
-
-#: ksieveui/vacation/vacationutils.cpp:50
-#, fuzzy, kde-format
-#| msgid "Redirect"
-msgid "Redirect to"
-msgstr "Ανακατεύθυνση"
-
-#: ksieveui/vacation/vacationutils.cpp:52
-#, kde-format
-msgid "Copy to"
-msgstr ""
-
-#: ksieveui/vacation/vacationutils.cpp:66
-#, kde-format
-msgid ""
-"I am out of office till %1.\n"
-"\n"
-"In urgent cases, please contact Mrs. \"vacation replacement\"\n"
-"\n"
-"email: \"email address of vacation replacement\"\n"
-"phone: +49 711 1111 11\n"
-"fax.:  +49 711 1111 12\n"
-"\n"
-"Yours sincerely,\n"
-"-- \"enter your name and email address here\"\n"
-msgstr ""
-"Είμαι εκτός γραφείου μέχρι %1.\n"
-"\n"
-"Σε επείγουσες περιπτώσεις, παρακαλώ επικοινωνήστε με την κυρία \"πρόσωπο "
-"αναπλήρωσης\"\n"
-"\n"
-"email: \"διεύθυνση αλληλογραφίας προσώπου αναπλήρωσης\"\n"
-"τηλέφωνο: +49 711 1111 11\n"
-"φαξ.:  +49 711 1111 12\n"
-"\n"
-"Με εκτίμηση,\n"
-"-- \"δώστε το όνομα και τη διεύθυνση ηλ. αλληλογραφίας σας εδώ\"\n"
 
 #: ksieveui/vacation/vacationwarningwidget.cpp:20
 #, kde-format
@@ -3073,224 +3291,6 @@ msgstr "Αποτυχία προσκόμισης της λίστας σεναρί
 #| msgid "Create folder"
 msgid "Define Folder"
 msgstr "Δημιουργία φακέλου"
-
-#: shared/error.cpp:91
-#, kde-format
-msgid "Parse error: Carriage Return (CR) without Line Feed (LF)"
-msgstr "Σφάλμα ανάλυσης: Επαναφορά κεφαλής (CR) χωρίς Αλλαγή γραμμής (LF)"
-
-#: shared/error.cpp:95
-#, kde-format
-msgid ""
-"Parse error: Unquoted Slash ('/') without Asterisk ('*'). Broken Comment?"
-msgstr ""
-"Σφάλμα ανάλυσης: Κάθετος ('/') χωρίς αστερίσκο ('*'). Κατεστραμμένο σχόλιο;"
-
-#: shared/error.cpp:99
-#, kde-format
-msgid "Parse error: Illegal Character"
-msgstr "Σφάλμα ανάλυσης: Μη έγκυρος χαρακτήρας"
-
-#: shared/error.cpp:102
-#, kde-format
-msgid "Parse error: Unexpected Character, probably a missing space?"
-msgstr ""
-"Σφάλμα ανάλυσης: Μη αναμενόμενος χαρακτήρας, πιθανότατα λείπει ένα κενό"
-
-#: shared/error.cpp:105
-#, kde-format
-msgid "Parse error: Tag Name has leading Digits"
-msgstr "Σφάλμα ανάλυσης: Η ετικέτα Name έχει αρχικά Ψηφία"
-
-#: shared/error.cpp:109
-#, kde-format
-msgid ""
-"Parse error: Only whitespace and #comments may follow \"text:\" on the same "
-"line"
-msgstr ""
-"Σφάλμα ανάλυσης: Μόνο κενά και #σχόλια μπορούν να ακολουθούν το \"text:\" "
-"στην ίδια γραμμή"
-
-#: shared/error.cpp:113
-#, kde-format
-msgid "Parse error: Number out of Range (must be smaller than %1)"
-msgstr ""
-"Σφάλμα ανάλυσης: Αριθμός εκτός ορίων (πρέπει να είναι μικρότερος του %1)"
-
-#: shared/error.cpp:116
-#, kde-format
-msgid "Parse error: Invalid UTF-8 sequence"
-msgstr "Σφάλμα ανάλυσης: Μη έγκυρη ακολουθία UTF-8"
-
-#: shared/error.cpp:119
-#, kde-format
-msgid ""
-"Parse error: Premature end of Multiline String (did you forget the '.'?)"
-msgstr ""
-"Σφάλμα ανάλυσης: Πρόωρο τέλος συμβολοσειράς πολλαπλών γραμμών (μήπως "
-"ξεχάσατε το '.';)"
-
-#: shared/error.cpp:122
-#, kde-format
-msgid "Parse error: Premature end of Quoted String (missing closing '\"')"
-msgstr ""
-"Σφάλμα ανάλυσης: Πρόωρος τερματισμός συμβολοσειράς σε εισαγωγικά (λείπει το "
-"κλείσιμο '\"')"
-
-#: shared/error.cpp:125
-#, kde-format
-msgid "Parse error: Premature end of String List (missing closing ']')"
-msgstr ""
-"Σφάλμα ανάλυσης: Πρόωρο τέλος Λίστας συμβολοσειρών (λείπει το τελικό ']')"
-
-#: shared/error.cpp:128
-#, kde-format
-msgid "Parse error: Premature end of Test List (missing closing ')')"
-msgstr "Σφάλμα ανάλυσης: Πρόωρο τέλος Λίστας δοκιμών (λείπει το τελικό ')')"
-
-#: shared/error.cpp:131
-#, kde-format
-msgid "Parse error: Premature end of Block (missing closing '}')"
-msgstr "Σφάλμα ανάλυσης: Πρόωρο τέλος Μπλοκ (λείπει το τελικό '}')"
-
-#: shared/error.cpp:134
-#, kde-format
-msgid "Parse error: Missing Whitespace"
-msgstr "Σφάλμα ανάλυσης: Λείπουν κενοί χαρακτήρες"
-
-#: shared/error.cpp:137
-#, kde-format
-msgid "Parse error: Missing ';' or Block"
-msgstr "Σφάλμα ανάλυσης: Λείπει ';' ή Block"
-
-#: shared/error.cpp:140
-#, kde-format
-msgid "Parse error: Expected ';' or '{', got something else"
-msgstr "Σφάλμα ανάλυσης: Αναμένονταν ';' ή '{', αλλά βρέθηκε κάτι άλλο"
-
-#: shared/error.cpp:143 shared/error.cpp:158
-#, kde-format
-msgid "Parse error: Expected Command, got something else"
-msgstr "Σφάλμα ανάλυσης: Αναμένονταν 'Εντολή, αλλά βρέθηκε κάτι άλλο"
-
-#: shared/error.cpp:146
-#, kde-format
-msgid "Parse error: Trailing, Leading or Duplicate Commas in String List"
-msgstr "Σφάλμα ανάλυσης: Αρχικό, τελικό ή διπλό Κόμμα στην Λίστα συμβολοσειρών"
-
-#: shared/error.cpp:149
-#, kde-format
-msgid "Parse error: Trailing, Leading or Duplicate Commas in Test List"
-msgstr "Σφάλμα ανάλυσης: Αρχικό, τελικό ή διπλό Κόμμα στην Λίστα δοκιμών"
-
-#: shared/error.cpp:152
-#, kde-format
-msgid "Parse error: Missing ',' between Strings in String List"
-msgstr "Σφάλμα ανάλυσης: Λείπει ',' μεταξύ συμβολοσειρών της Λίστας"
-
-#: shared/error.cpp:155
-#, kde-format
-msgid "Parse error: Missing ',' between Tests in Test List"
-msgstr "Σφάλμα ανάλυσης: Λείπει ',' μεταξύ δοκιμών της Λίστας"
-
-#: shared/error.cpp:161
-#, kde-format
-msgid "Parse error: Only Strings allowed in String Lists"
-msgstr "Σφάλμα ανάλυσης: Επιτρέπονται μόνο Συμβολοσειρές στη λίστα"
-
-#: shared/error.cpp:164
-#, kde-format
-msgid "Parse error: Only Tests allowed in Test Lists"
-msgstr "Σφάλμα ανάλυσης: Επιτρέπονται μόνο Δοκιμές στη λίστα"
-
-#: shared/error.cpp:169
-#, kde-format
-msgid "\"require\" must be first command"
-msgstr "Το \"require\" πρέπει να είναι η πρώτη εντολή"
-
-#: shared/error.cpp:172
-#, kde-format
-msgid "\"require\" missing for command \"%1\""
-msgstr "Το \"require\" λείπει από την εντολή \"%1\""
-
-#: shared/error.cpp:175
-#, kde-format
-msgid "\"require\" missing for test \"%1\""
-msgstr "Το \"require\" λείπει από τη δοκιμή \"%1\""
-
-#: shared/error.cpp:178
-#, kde-format
-msgid "\"require\" missing for comparator \"%1\""
-msgstr "Το \"require\" λείπει από τον συγκριτή \"%1\""
-
-#: shared/error.cpp:181
-#, kde-format
-msgid "Command \"%1\" not supported"
-msgstr "Η εντολή \"%1\" δεν υποστηρίζεται"
-
-#: shared/error.cpp:184
-#, kde-format
-msgid "Test \"%1\" not supported"
-msgstr "Η δοκιμή \"%1\" δεν υποστηρίζεται"
-
-#: shared/error.cpp:187
-#, kde-format
-msgid "Comparator \"%1\" not supported"
-msgstr "Ο συγκριτής \"%1\" δεν υποστηρίζεται"
-
-#: shared/error.cpp:190
-#, kde-format
-msgid "Site Policy Limit Violation: Test nesting too deep (max. %1)"
-msgstr ""
-"Παράβαση ορίου πολιτικής τοποθεσίας: Πολύ μεγάλος βάθος δοκιμής (μεγ. %1)"
-
-#: shared/error.cpp:193
-#, kde-format
-msgid "Site Policy Limit Violation: Block nesting too deep (max. %1)"
-msgstr ""
-"Παράβαση ορίου πολιτικής τοποθεσίας: Πολύ μεγάλος βάθος τμήματος (μεγ. %1)"
-
-#: shared/error.cpp:196
-#, kde-format
-msgid "Invalid Argument \"%1\" to \"%2\""
-msgstr "Μη έγκυρο όρισμα \"%1\" στο \"%2\""
-
-#: shared/error.cpp:199
-#, kde-format
-msgid "Conflicting Arguments: \"%1\" and \"%2\""
-msgstr "Συγκρουόμενα ορίσματα: \"%1\" και \"%2\""
-
-#: shared/error.cpp:202
-#, kde-format
-msgid "Argument \"%1\" Repeated"
-msgstr "Το όρισμα \"%1\" επαναλαμβάνεται"
-
-#: shared/error.cpp:205
-#, kde-format
-msgid "Command \"%1\" violates command ordering constraints"
-msgstr "Η εντολή \"%1\" παραβιάζει τους περιορισμούς σειράς εντολών"
-
-#: shared/error.cpp:210
-#, kde-format
-msgid "Incompatible Actions \"%1\" and \"%2\" requested"
-msgstr "Ζητήθηκαν οι μη συμβατές ενέργειες \"%1\" και \"%2\""
-
-#: shared/error.cpp:213
-#, kde-format
-msgid "Mail Loop detected"
-msgstr "Ανιχνεύθηκε βρόχος αλληλογραφίας"
-
-#: shared/error.cpp:216
-#, kde-format
-msgid "Site Policy Limit Violation: Too many Actions requested (max. %1)"
-msgstr ""
-"Παράβαση ορίου πολιτικής τοποθεσίας: Αιτήθηκαν πάρα πολλές ενέργειες (μεγ. "
-"%1)"
-
-#: shared/error.cpp:219
-#, kde-format
-msgid "Unknown error"
-msgstr "Άγνωστο σφάλμα "
 
 #, fuzzy
 #~| msgid "New Script..."
