@@ -225,13 +225,13 @@ void ManageSieveWidget::slotNewScript()
     name = name.trimmed();
     if (!ok || name.isEmpty()) {
         if (ok && name.isEmpty()) {
-            KMessageBox::error(this, i18n("Empty name is not a valid name"), i18n("New Script"));
+            KMessageBox::error(this, i18n("Empty name is not a valid name"), i18nc("@title:window", "New Script"));
         }
         return;
     }
 
     if (KSieveCore::Util::isKep14ProtectedName(name)) {
-        KMessageBox::error(this, i18n("You cannot use protected name."), i18n("New Script"));
+        KMessageBox::error(this, i18n("You cannot use protected name."), i18nc("@title:window", "New Script"));
         return;
     }
 
@@ -243,7 +243,7 @@ void ManageSieveWidget::slotNewScript()
         const int numberOfElement(parentItem->childCount());
         for (int i = 0; i < numberOfElement; ++i) {
             if (parentItem->child(i)->text(0) == name) {
-                KMessageBox::error(this, i18n("Script name already used \"%1\".", name), i18n("New Script"));
+                KMessageBox::error(this, i18n("Script name already used \"%1\".", name), i18nc("@title:window", "New Script"));
                 return;
             }
         }
@@ -488,7 +488,7 @@ void ManageSieveWidget::slotDeleteScript()
 
     if (KMessageBox::warningContinueCancel(this,
                                            i18n("Really delete script \"%1\" from the server?", currentItem->text(0)),
-                                           i18n("Delete Sieve Script Confirmation"),
+                                           i18nc("@title:window", "Delete Sieve Script Confirmation"),
                                            KStandardGuiItem::del())
         != KMessageBox::Continue) {
         return;
@@ -509,7 +509,7 @@ void ManageSieveWidget::slotDeleteResult(KManageSieve::SieveJob *job, bool succe
                            i18n("Deleting the script failed.\n"
                                 "The server responded:\n%1",
                                 job->errorString()),
-                           i18n("Sieve Error"));
+                           i18nc("@title:window", "Sieve Error"));
     }
     slotRefresh();
 }

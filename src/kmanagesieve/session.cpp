@@ -96,7 +96,7 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
                                nullptr,
                                i18n("TLS encryption was requested, but your Sieve server does not advertise TLS in its capabilities.\n"
                                     "You can choose to try to initiate TLS negotiations nonetheless, or cancel the operation."),
-                               i18n("Sieve Server Does Not Advertise TLS"),
+                               i18nc("@title:window", "Sieve Server Does Not Advertise TLS"),
                                KGuiItem(i18n("&Start TLS nonetheless")),
                                KStandardGuiItem::cancel(),
                                QStringLiteral("ask_starttls_%1").arg(m_url.host()))
@@ -318,7 +318,7 @@ void Session::setErrorMessage(int error, const QString &msg)
         // Don't bother the user about idle timeout
         if (error != QAbstractSocket::RemoteHostClosedError && error != QAbstractSocket::SocketTimeoutError) {
             qCWarning(KMANAGERSIEVE_LOG) << objectName() << "No job for reporting this error message!" << msg << "host" << m_url.host() << "error" << error;
-            KMessageBox::error(nullptr, i18n("The Sieve server on %1 has reported an error:\n%2", m_url.host(), msg), i18n("Sieve Manager"));
+            KMessageBox::error(nullptr, i18n("The Sieve server on %1 has reported an error:\n%2", m_url.host(), msg), i18nc("@title:window", "Sieve Manager"));
         }
     }
 }

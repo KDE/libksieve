@@ -259,7 +259,7 @@ void SieveEditorTextModeWidget::slotEditRule(const QString &selectedText)
         }
         delete dlg;
     } else {
-        KMessageBox::error(this, i18n("Selected text is not a full sieve script"), i18n("Parsing error"));
+        KMessageBox::error(this, i18n("Selected text is not a full sieve script"), i18nc("@title:window", "Parsing error"));
     }
 }
 

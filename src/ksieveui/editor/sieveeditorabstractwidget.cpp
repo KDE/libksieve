@@ -53,7 +53,7 @@ void SieveEditorAbstractWidget::slotImport()
     if (!currentscript().isEmpty()) {
         const int answer = KMessageBox::warningTwoActions(this,
                                                           i18n("You will overwrite script. Do you want to continue?"),
-                                                          i18n("Import Script"),
+                                                          i18nc("@title:window", "Import Script"),
                                                           KStandardGuiItem::cont(),
                                                           KStandardGuiItem::cancel());
         if (answer == KMessageBox::ButtonCode::SecondaryAction) {

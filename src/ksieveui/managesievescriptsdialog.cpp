@@ -168,7 +168,7 @@ void ManageSieveScriptsDialog::slotGetResult(KManageSieve::SieveJob *job, bool s
                            i18n("Retrieving the script failed.\n"
                                 "The server responded:\n%1",
                                 job->errorString()),
-                           i18n("Sieve Error"));
+                           i18nc("@title:window", "Sieve Error"));
         return;
     }
 
@@ -247,7 +247,7 @@ void ManageSieveScriptsDialog::slotCheckScriptFinished(const QString &errorMsg, 
 void ManageSieveScriptsDialog::slotPutResult(KManageSieve::SieveJob *job, bool success)
 {
     if (success) {
-        KMessageBox::information(this, i18n("The Sieve script was successfully uploaded."), i18n("Sieve Script Upload"));
+        KMessageBox::information(this, i18n("The Sieve script was successfully uploaded."), i18nc("@title:window", "Sieve Script Upload"));
         d->mSieveEditor->deleteLater();
         d->mSieveEditor = nullptr;
         d->mCurrentURL = QUrl();
@@ -257,7 +257,7 @@ void ManageSieveScriptsDialog::slotPutResult(KManageSieve::SieveJob *job, bool s
                            i18n("Uploading the Sieve script failed.\n"
                                 "The server responded:\n%1",
                                 job->errorString()),
-                           i18n("Sieve Error"));
+                           i18nc("@title:window", "Sieve Error"));
         if (d->mSieveEditor) {
             d->mSieveEditor->show();
         }
