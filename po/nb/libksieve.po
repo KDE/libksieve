@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2014-04-26 10:23+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -41,6 +41,7 @@ msgstr ""
 
 #: kmanagesieve/session.cpp:99
 #, kde-format
+msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr ""
 
@@ -84,6 +85,7 @@ msgstr ""
 
 #: kmanagesieve/session.cpp:321
 #, kde-format
+msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr ""
 
@@ -2174,9 +2176,6 @@ msgid "Bottom"
 msgstr "Nederst"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:138
-#: ksieveui/widgets/managesievewidget.cpp:228
-#: ksieveui/widgets/managesievewidget.cpp:234
-#: ksieveui/widgets/managesievewidget.cpp:246
 #, kde-format
 msgid "New Script"
 msgstr "Nytt skript"
@@ -2218,6 +2217,9 @@ msgid "Delete Script"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:247
+#: ksieveui/widgets/managesievewidget.cpp:228
+#: ksieveui/widgets/managesievewidget.cpp:234
+#: ksieveui/widgets/managesievewidget.cpp:246
 #, kde-format
 msgctxt "@title:window"
 msgid "New Script"
@@ -2479,7 +2481,9 @@ msgid "You will overwrite script. Do you want to continue?"
 msgstr "Du kommer til å skrive over skriptet. Vil du fortsette?"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Script"
+msgctxt "@title:window"
 msgid "Import Script"
 msgstr "Importer skript"
 
@@ -2606,6 +2610,7 @@ msgstr ""
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:262
 #, kde-format
+msgctxt "@title:window"
 msgid "Parsing error"
 msgstr ""
 
@@ -2803,7 +2808,9 @@ msgstr "Skru av"
 #: ksieveui/managesievescriptsdialog.cpp:171
 #: ksieveui/managesievescriptsdialog.cpp:260
 #: ksieveui/widgets/managesievewidget.cpp:512
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Error"
+msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Sieve-feil"
 
@@ -2818,7 +2825,9 @@ msgid "The Sieve script was successfully uploaded."
 msgstr "Sieve-skriptet ble lastet opp."
 
 #: ksieveui/managesievescriptsdialog.cpp:250
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Script Upload"
+msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "Last opp Sieve-skript"
 
@@ -3088,7 +3097,9 @@ msgstr ""
 "Vil du redigere det?"
 
 #: ksieveui/vacation/vacationmanager.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Out-of-office reply still active"
+msgctxt "@title:window"
 msgid "Out-of-office reply still active"
 msgstr "Fraværssvar fremdeles aktivt"
 
@@ -3206,7 +3217,9 @@ msgid "Really delete script \"%1\" from the server?"
 msgstr "Er det sikkert at du vil slette skriptet «%1» fra tjeneren?"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Sieve Script Confirmation"
+msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "Bekreft sletting av Sieve-skript"
 

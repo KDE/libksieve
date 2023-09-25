@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2011-09-20 14:13+0300\n"
 "Last-Translator: Remigijus Jarmalavičius\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -34,6 +34,7 @@ msgstr ""
 
 #: kmanagesieve/session.cpp:99
 #, kde-format
+msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr ""
 
@@ -76,6 +77,7 @@ msgstr ""
 #: kmanagesieve/session.cpp:321
 #, fuzzy, kde-format
 #| msgid "Delete Script"
+msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr "Pašalinti scenarijų"
 
@@ -2016,9 +2018,6 @@ msgid "Bottom"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:138
-#: ksieveui/widgets/managesievewidget.cpp:228
-#: ksieveui/widgets/managesievewidget.cpp:234
-#: ksieveui/widgets/managesievewidget.cpp:246
 #, kde-format
 msgid "New Script"
 msgstr ""
@@ -2064,6 +2063,9 @@ msgid "Delete Script"
 msgstr "Pašalinti scenarijų"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:247
+#: ksieveui/widgets/managesievewidget.cpp:228
+#: ksieveui/widgets/managesievewidget.cpp:234
+#: ksieveui/widgets/managesievewidget.cpp:246
 #, fuzzy, kde-format
 #| msgid "New Script..."
 msgctxt "@title:window"
@@ -2325,7 +2327,9 @@ msgid "You will overwrite script. Do you want to continue?"
 msgstr ""
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Script"
+msgctxt "@title:window"
 msgid "Import Script"
 msgstr "Importuoti scenarijų"
 
@@ -2455,6 +2459,7 @@ msgstr ""
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:262
 #, fuzzy, kde-format
 #| msgid "Delete Script"
+msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "Pašalinti scenarijų"
 
@@ -2655,9 +2660,11 @@ msgstr "Išjungti"
 #: ksieveui/managesievescriptsdialog.cpp:171
 #: ksieveui/managesievescriptsdialog.cpp:260
 #: ksieveui/widgets/managesievewidget.cpp:512
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Script"
+msgctxt "@title:window"
 msgid "Sieve Error"
-msgstr ""
+msgstr "Pašalinti scenarijų"
 
 #: ksieveui/managesievescriptsdialog.cpp:204
 #, kde-format
@@ -2670,9 +2677,11 @@ msgid "The Sieve script was successfully uploaded."
 msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:250
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Script"
+msgctxt "@title:window"
 msgid "Sieve Script Upload"
-msgstr ""
+msgstr "Pašalinti scenarijų"
 
 #: ksieveui/managesievescriptsdialog.cpp:257
 #, kde-format
@@ -2940,6 +2949,7 @@ msgstr ""
 
 #: ksieveui/vacation/vacationmanager.cpp:57
 #, kde-format
+msgctxt "@title:window"
 msgid "Out-of-office reply still active"
 msgstr ""
 
@@ -3052,9 +3062,11 @@ msgid "Really delete script \"%1\" from the server?"
 msgstr ""
 
 #: ksieveui/widgets/managesievewidget.cpp:491
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Script"
+msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
-msgstr ""
+msgstr "Pašalinti scenarijų"
 
 #: ksieveui/widgets/managesievewidget.cpp:509
 #, kde-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2023-01-15 20:49+0800\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -36,7 +36,9 @@ msgstr ""
 "您可以選擇還是啟動 TLS，或是取消操作。"
 
 #: kmanagesieve/session.cpp:99
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Server Does Not Advertise TLS"
+msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Sieve 伺服器未宣稱支援 TLS"
 
@@ -82,7 +84,9 @@ msgstr ""
 "%2"
 
 #: kmanagesieve/session.cpp:321
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Manager"
+msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr "Sieve 管理器"
 
@@ -2109,9 +2113,6 @@ msgid "Bottom"
 msgstr "底端"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:138
-#: ksieveui/widgets/managesievewidget.cpp:228
-#: ksieveui/widgets/managesievewidget.cpp:234
-#: ksieveui/widgets/managesievewidget.cpp:246
 #, kde-format
 msgid "New Script"
 msgstr "新增文稿"
@@ -2153,6 +2154,9 @@ msgid "Delete Script"
 msgstr "刪除文稿"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:247
+#: ksieveui/widgets/managesievewidget.cpp:228
+#: ksieveui/widgets/managesievewidget.cpp:234
+#: ksieveui/widgets/managesievewidget.cpp:246
 #, kde-format
 msgctxt "@title:window"
 msgid "New Script"
@@ -2417,7 +2421,9 @@ msgid "You will overwrite script. Do you want to continue?"
 msgstr "您將要覆寫文稿。您確定要繼續嗎？"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Script"
+msgctxt "@title:window"
 msgid "Import Script"
 msgstr "匯入文稿"
 
@@ -2543,7 +2549,9 @@ msgid "Selected text is not a full sieve script"
 msgstr ""
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:262
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Parsing error"
+msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "剖析錯誤"
 
@@ -2739,7 +2747,9 @@ msgstr "取消啟動"
 #: ksieveui/managesievescriptsdialog.cpp:171
 #: ksieveui/managesievescriptsdialog.cpp:260
 #: ksieveui/widgets/managesievewidget.cpp:512
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Error"
+msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Sieve 錯誤"
 
@@ -2754,7 +2764,9 @@ msgid "The Sieve script was successfully uploaded."
 msgstr "過濾文稿已經成功上傳。"
 
 #: ksieveui/managesievescriptsdialog.cpp:250
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Script Upload"
+msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "上傳過濾文稿"
 
@@ -3027,7 +3039,9 @@ msgstr ""
 "您要編輯它嗎？"
 
 #: ksieveui/vacation/vacationmanager.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Out-of-office reply still active"
+msgctxt "@title:window"
 msgid "Out-of-office reply still active"
 msgstr "已設定「不在辦公室」的自動回覆"
 
@@ -3142,7 +3156,9 @@ msgid "Really delete script \"%1\" from the server?"
 msgstr "確定要從伺服器上刪除文稿 %1 嗎？"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Sieve Script Confirmation"
+msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "確認刪除過濾文稿"
 

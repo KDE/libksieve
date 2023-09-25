@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2012-12-28 15:41+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -41,6 +41,7 @@ msgstr ""
 #: kmanagesieve/session.cpp:99
 #, fuzzy, kde-format
 #| msgid "Server Does Not Advertise TLS"
+msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "ម៉ាស៊ីន​បម្រើ​មិន​ប្រកាស​ TLS ឡើយ​"
 
@@ -89,6 +90,7 @@ msgstr ""
 #: kmanagesieve/session.cpp:321
 #, fuzzy, kde-format
 #| msgid "New Sieve Script"
+msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr "ស្គ្រីប​របស់​ Sieve ថ្មី​"
 
@@ -2098,9 +2100,6 @@ msgid "Bottom"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:138
-#: ksieveui/widgets/managesievewidget.cpp:228
-#: ksieveui/widgets/managesievewidget.cpp:234
-#: ksieveui/widgets/managesievewidget.cpp:246
 #, kde-format
 msgid "New Script"
 msgstr "ស្គ្រីប​ថ្មី"
@@ -2147,6 +2146,9 @@ msgid "Delete Script"
 msgstr "លុប​ស្គ្រីប​"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:247
+#: ksieveui/widgets/managesievewidget.cpp:228
+#: ksieveui/widgets/managesievewidget.cpp:234
+#: ksieveui/widgets/managesievewidget.cpp:246
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgctxt "@title:window"
@@ -2437,7 +2439,9 @@ msgid "You will overwrite script. Do you want to continue?"
 msgstr "អ្នក​នឹង​សរសេរ​ជាន់​លើ​ស្គ្រីប ។ តើ​អ្នក​ចង់​បន្ត​ដែរ​ឬទេ ?"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Script"
+msgctxt "@title:window"
 msgid "Import Script"
 msgstr "នាំចូល​ស្គ្រីប​"
 
@@ -2577,6 +2581,7 @@ msgstr ""
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:262
 #, fuzzy, kde-format
 #| msgid "New Sieve Script"
+msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "ស្គ្រីប​របស់​ Sieve ថ្មី​"
 
@@ -2776,7 +2781,9 @@ msgstr "ធ្វើ​ឲ្យ​​អសកម្ម​​"
 #: ksieveui/managesievescriptsdialog.cpp:171
 #: ksieveui/managesievescriptsdialog.cpp:260
 #: ksieveui/widgets/managesievewidget.cpp:512
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Error"
+msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "កំហុស​ Sieve"
 
@@ -2791,7 +2798,9 @@ msgid "The Sieve script was successfully uploaded."
 msgstr "ស្គ្រីប​របស់​ Sieve ត្រូវ​បាន​ផ្ទុក​ដោយ​ជោគជ័យ​ ។​"
 
 #: ksieveui/managesievescriptsdialog.cpp:250
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Script Upload"
+msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "ផ្ទុក​ស្គ្រីប​របស់​ Sieve"
 
@@ -3079,7 +3088,9 @@ msgstr ""
 "​តើ​អ្នក​ចង់​កែសម្រួល​វា​ដែល​ឬ​ទេ​ ?"
 
 #: ksieveui/vacation/vacationmanager.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Out-of-office reply still active"
+msgctxt "@title:window"
 msgid "Out-of-office reply still active"
 msgstr "ការ​ឆ្លើយ​តប​នៅ​ក្រៅ​ការិយាល័យ​នៅ​តែ​សកម្ម​ "
 
@@ -3209,7 +3220,9 @@ msgid "Really delete script \"%1\" from the server?"
 msgstr "តើ​ពិត​ជា​លុប​​ស្គ្រីប​ \"%1\" ពី​ម៉ាស៊ីន​បម្រើ​ដែរ​ឬ​ទេ​ ?​"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Sieve Script Confirmation"
+msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "លុប​ការ​អះអាង​ស្គ្រីប​របស់​ Sieve​"
 

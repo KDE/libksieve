@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-21 00:45+0000\n"
+"POT-Creation-Date: 2023-09-25 01:40+0000\n"
 "PO-Revision-Date: 2021-11-04 13:50+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -40,7 +40,9 @@ msgstr ""
 "kiszolgáló mégis tudja kezelni."
 
 #: kmanagesieve/session.cpp:99
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Server Does Not Advertise TLS"
+msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "A Sieve kiszolgáló nem jelezte, hogy támogatja a TLS-t"
 
@@ -90,6 +92,7 @@ msgstr ""
 #: kmanagesieve/session.cpp:321
 #, fuzzy, kde-format
 #| msgid "Sieve Parsing"
+msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr "Sieve feldolgozás"
 
@@ -2197,9 +2200,6 @@ msgid "Bottom"
 msgstr "Lent"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:138
-#: ksieveui/widgets/managesievewidget.cpp:228
-#: ksieveui/widgets/managesievewidget.cpp:234
-#: ksieveui/widgets/managesievewidget.cpp:246
 #, kde-format
 msgid "New Script"
 msgstr "Új parancsfájl"
@@ -2246,6 +2246,9 @@ msgid "Delete Script"
 msgstr "Parancsfájl törlése "
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:247
+#: ksieveui/widgets/managesievewidget.cpp:228
+#: ksieveui/widgets/managesievewidget.cpp:234
+#: ksieveui/widgets/managesievewidget.cpp:246
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgctxt "@title:window"
@@ -2536,7 +2539,9 @@ msgid "You will overwrite script. Do you want to continue?"
 msgstr "Felül fogja írni a parancsfájlt. Szeretné folytatni?"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Import Script"
+msgctxt "@title:window"
 msgid "Import Script"
 msgstr "Parancsfájl importálása"
 
@@ -2679,6 +2684,7 @@ msgstr ""
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:262
 #, fuzzy, kde-format
 #| msgid "Sieve Parsing Error"
+msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "Sieve feldolgozási hiba"
 
@@ -2887,7 +2893,9 @@ msgstr "Deaktiválás"
 #: ksieveui/managesievescriptsdialog.cpp:171
 #: ksieveui/managesievescriptsdialog.cpp:260
 #: ksieveui/widgets/managesievewidget.cpp:512
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Error"
+msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Sieve hiba"
 
@@ -2902,7 +2910,9 @@ msgid "The Sieve script was successfully uploaded."
 msgstr "A Sieve parancsfájl sikeresen feltöltve."
 
 #: ksieveui/managesievescriptsdialog.cpp:250
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Script Upload"
+msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "Sieve parancsfájl feltöltve"
 
@@ -3200,7 +3210,9 @@ msgstr ""
 "Szeretné szerkeszteni?"
 
 #: ksieveui/vacation/vacationmanager.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Out-of-office reply still active"
+msgctxt "@title:window"
 msgid "Out-of-office reply still active"
 msgstr "Az „Irodán kívül vagyok” válasz még aktív"
 
@@ -3320,7 +3332,9 @@ msgid "Really delete script \"%1\" from the server?"
 msgstr "Biztosan törli a(z) „%1” parancsfájlt a kiszolgálóról?"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Sieve Script Confirmation"
+msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "Sieve parancsfájl törlésének megerősítése"
 
