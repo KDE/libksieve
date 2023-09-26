@@ -7,20 +7,20 @@
 # Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
 # Javier Vinal <fjvinalgmail.com>, 2010, 2011, 2012, 2017.
 # Javier Viñal <fjvinal@gmail.com>, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2013, 2016, 2019, 2020, 2021, 2023.
+# SPDX-FileCopyrightText: 2013, 2016, 2019, 2020, 2021, 2023 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:40+0000\n"
-"PO-Revision-Date: 2023-07-09 12:32+0200\n"
+"PO-Revision-Date: 2023-09-26 01:14+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: kmanagesieve/session.cpp:90
@@ -37,14 +37,13 @@ msgid ""
 "You can choose to try to initiate TLS negotiations nonetheless, or cancel "
 "the operation."
 msgstr ""
-"Se solicitó cifrado TLS, pero el servidor Sieve no anuncia a TLS entre sus "
-"capacidades.\n"
-"Usted puede elegir intentar iniciar la negociación TLS en cualquier caso, o "
-"cancelar la operación."
+"Se ha solicitado cifrado TLS, pero el servidor Sieve no anuncia a TLS entre "
+"sus capacidades.\n"
+"No obstante, puede probar a iniciar la negociación TLS, o cancelar la "
+"operación."
 
 #: kmanagesieve/session.cpp:99
-#, fuzzy, kde-format
-#| msgid "Sieve Server Does Not Advertise TLS"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "El servidor Sieve no anuncia TLS"
@@ -65,7 +64,7 @@ msgid ""
 "The server does not seem to support TLS. Disable TLS if you want to connect "
 "without encryption."
 msgstr ""
-"El servidor parece que no admite TLS. Desactive TLS si usted quiere conectar "
+"Parece que el servidor que no admite TLS. Desactive TLS si quiere conectarse "
 "sin cifrado."
 
 #: kmanagesieve/session.cpp:258
@@ -92,11 +91,10 @@ msgstr ""
 "%2"
 
 #: kmanagesieve/session.cpp:321
-#, fuzzy, kde-format
-#| msgid "Sieve Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Manager"
-msgstr "Gestor Sieve"
+msgstr "Gestor de Sieve"
 
 #: kmanagesieve/sessionthread.cpp:298
 #, kde-format
@@ -119,9 +117,9 @@ msgid ""
 "The server responded:\n"
 "%1"
 msgstr ""
-"El guion no se cargó satisfactoriamente.\n"
-"Esto probablemente se debe a errores en el guion.\n"
-"El servidor respondió:\n"
+"El guion no se ha cargado satisfactoriamente.\n"
+"Es posible que esto se deba a errores en el guion.\n"
+"El servidor ha respondido:\n"
 "%1"
 
 #: kmanagesieve/sievejob.cpp:154
@@ -130,36 +128,36 @@ msgid ""
 "The script did not upload successfully.\n"
 "The script may contain errors."
 msgstr ""
-"El guion no se cargó satisfactoriamente.\n"
-"El guion puede contener errores."
+"El guion no se ha cargado correctamente.\n"
+"Es posible que el guion contenga errores."
 
 #: ksieve/error.cpp:91
 #, kde-format
 msgid "Parse error: Carriage Return (CR) without Line Feed (LF)"
-msgstr "Error al analizar: retorno de carro (CR) sin salto de línea (LF)"
+msgstr "Error de análisis: retorno de carro (CR) sin salto de línea (LF)"
 
 #: ksieve/error.cpp:95
 #, kde-format
 msgid ""
 "Parse error: Unquoted Slash ('/') without Asterisk ('*'). Broken Comment?"
 msgstr ""
-"Error al analizar: Barra no entrecomillada («/») sin asterisco («*»). "
+"Error de análisis: Barra no entrecomillada («/») sin asterisco («*»). "
 "¿Comentario incorrecto?"
 
 #: ksieve/error.cpp:99
 #, kde-format
 msgid "Parse error: Illegal Character"
-msgstr "Error al analizar: Carácter no válido"
+msgstr "Error de análisis: Carácter no válido"
 
 #: ksieve/error.cpp:102
 #, kde-format
 msgid "Parse error: Unexpected Character, probably a missing space?"
-msgstr "Error al analizar: Carácter inesperado, probablemente falte un espacio"
+msgstr "Error de análisis: Carácter inesperado, probablemente falte un espacio"
 
 #: ksieve/error.cpp:105
 #, kde-format
 msgid "Parse error: Tag Name has leading Digits"
-msgstr "Error al analizar: El nombre de la etiqueta comienza por un dígito"
+msgstr "Error de análisis: El nombre de la etiqueta comienza por un dígito"
 
 #: ksieve/error.cpp:109
 #, kde-format
@@ -167,108 +165,109 @@ msgid ""
 "Parse error: Only whitespace and #comments may follow \"text:\" on the same "
 "line"
 msgstr ""
-"Error al analizar: A continuación de «text:» y en la misma línea solo pueden "
+"Error de análisis: A continuación de «text:» y en la misma línea solo pueden "
 "aparecer espacios en blanco y #comentarios"
 
 #: ksieve/error.cpp:113
 #, kde-format
 msgid "Parse error: Number out of Range (must be smaller than %1)"
-msgstr "Error al analizar: Número fuera del intervalo (debe ser menor que %1)"
+msgstr "Error de análisis: Número fuera del intervalo (debe ser menor que %1)"
 
 #: ksieve/error.cpp:116
 #, kde-format
 msgid "Parse error: Invalid UTF-8 sequence"
-msgstr "Error al analizar: Secuencia UTF-8 no válida"
+msgstr "Error de análisis: Secuencia UTF-8 no válida"
 
 #: ksieve/error.cpp:119
 #, kde-format
 msgid ""
 "Parse error: Premature end of Multiline String (did you forget the '.'?)"
 msgstr ""
-"Error de análisis: Fin prematuro de cadena de varias líneas (¿olvidó el «.»?)"
+"Error de análisis: Fin prematuro de cadena de varias líneas (¿ha olvidado el "
+"«.»?)"
 
 #: ksieve/error.cpp:122
 #, kde-format
 msgid "Parse error: Premature end of Quoted String (missing closing '\"')"
 msgstr ""
-"Error al analizar: Fin prematuro de cadena entrecomillada (no se encuentra "
+"Error de análisis: Fin prematuro de cadena entrecomillada (no se encuentra "
 "la «\"» de cierre)"
 
 #: ksieve/error.cpp:125
 #, kde-format
 msgid "Parse error: Premature end of String List (missing closing ']')"
 msgstr ""
-"Error al analizar: Fin prematuro de la lista de cadenas (no se encuentra el "
+"Error de análisis: Fin prematuro de la lista de cadenas (no se encuentra el "
 "«]» de cierre)"
 
 #: ksieve/error.cpp:128
 #, kde-format
 msgid "Parse error: Premature end of Test List (missing closing ')')"
 msgstr ""
-"Error al analizar: Fin prematuro de lista de pruebas (no se encuentra el «)» "
+"Error de análisis: Fin prematuro de lista de pruebas (no se encuentra el «)» "
 "de cierre)"
 
 #: ksieve/error.cpp:131
 #, kde-format
 msgid "Parse error: Premature end of Block (missing closing '}')"
 msgstr ""
-"Error al analizar: Fin prematuro de bloque (no se encuentra el «}» de cierre)"
+"Error de análisis: Fin prematuro de bloque (no se encuentra el «}» de cierre)"
 
 #: ksieve/error.cpp:134
 #, kde-format
 msgid "Parse error: Missing Whitespace"
-msgstr "Error al analizar: Falta espacio en blanco"
+msgstr "Error al de análisis: Falta espacio en blanco"
 
 #: ksieve/error.cpp:137
 #, kde-format
 msgid "Parse error: Missing ';' or Block"
-msgstr "Error al analizar: Falta un «;» o un bloque"
+msgstr "Error de análisis: Falta un «;» o un bloque"
 
 #: ksieve/error.cpp:140
 #, kde-format
 msgid "Parse error: Expected ';' or '{', got something else"
-msgstr "Error al analizar: Se esperaba «;» o «{» y se encontró otra cosa"
+msgstr "Error de análisis: Se esperaba «;» o «{» y se ha encontrado otra cosa"
 
 #: ksieve/error.cpp:143 ksieve/error.cpp:158
 #, kde-format
 msgid "Parse error: Expected Command, got something else"
-msgstr "Error al analizar: Se esperaba una orden y se encontró otra cosa"
+msgstr "Error de análisis: Se esperaba una orden y se ha encontrado otra cosa"
 
 #: ksieve/error.cpp:146
 #, kde-format
 msgid "Parse error: Trailing, Leading or Duplicate Commas in String List"
 msgstr ""
-"Error al analizar: Comas al final, al principio o duplicadas en la lista de "
+"Error de análisis: Comas al final, al principio o duplicadas en la lista de "
 "cadenas"
 
 #: ksieve/error.cpp:149
 #, kde-format
 msgid "Parse error: Trailing, Leading or Duplicate Commas in Test List"
 msgstr ""
-"Error al analizar: Comas al final, al principio o duplicadas en la lista de "
+"Error de análisis: Comas al final, al principio o duplicadas en la lista de "
 "pruebas"
 
 #: ksieve/error.cpp:152
 #, kde-format
 msgid "Parse error: Missing ',' between Strings in String List"
 msgstr ""
-"Error al analizar: Falta una «,» entre las cadenas de la lista de cadenas"
+"Error de análisis: Falta una «,» entre las cadenas de la lista de cadenas"
 
 #: ksieve/error.cpp:155
 #, kde-format
 msgid "Parse error: Missing ',' between Tests in Test List"
 msgstr ""
-"Error al analizar: Falta una «,» entre las pruebas de la lista de pruebas"
+"Error de análisis: Falta una «,» entre las pruebas de la lista de pruebas"
 
 #: ksieve/error.cpp:161
 #, kde-format
 msgid "Parse error: Only Strings allowed in String Lists"
-msgstr "Error al analizar: En las listas de cadenas solo se admiten cadenas"
+msgstr "Error de análisis: En las listas de cadenas solo se admiten cadenas"
 
 #: ksieve/error.cpp:164
 #, kde-format
 msgid "Parse error: Only Tests allowed in Test Lists"
-msgstr "Error al analizar: En las listas de pruebas solo se admiten pruebas"
+msgstr "Error de análisis: En las listas de pruebas solo se admiten pruebas"
 
 #: ksieve/error.cpp:169
 #, kde-format
@@ -369,7 +368,7 @@ msgstr "No se encontraron errores."
 #: ksievecore/managescriptsjob/checkscriptjob.cpp:68
 #, kde-format
 msgid "An unknown error was encountered."
-msgstr "Ocurrió un error desconocido."
+msgstr "Ha ocurrido un error desconocido."
 
 #: ksievecore/managescriptsjob/generateglobalscriptjob.cpp:52
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:42
@@ -490,7 +489,7 @@ msgstr ""
 #: ksievecore/vacation/vacationcheckjob.cpp:125
 #, kde-format
 msgid "ParseUserScriptJob failed: %1"
-msgstr "Falló ParseUserScriptJob: %1"
+msgstr "ParseUserScriptJob ha fallado: %1"
 
 #: ksievecore/vacation/vacationcheckjob.cpp:141
 #, kde-format
@@ -679,7 +678,7 @@ msgstr "BMP"
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing action \"%2\"."
 msgstr ""
-"Un valor desconocido de etiqueta «%1» se encontró durante la acción de "
+"Un valor desconocido de etiqueta «%1» se ha encontrado durante la acción de "
 "análisis «%2»."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:106
@@ -687,7 +686,8 @@ msgstr ""
 #, kde-format
 msgid "An unknown tag \"%1\" was found during parsing action \"%2\"."
 msgstr ""
-"Una etiqueta desconocida «%1» se encontró durante la acción de análisis «%2»."
+"Una etiqueta desconocida «%1» se ha encontrado durante la acción de análisis "
+"«%2»."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:112
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:48
@@ -1207,11 +1207,11 @@ msgid ""
 "provide correspondents with notification that the user is away for an "
 "extended period of time and that they should not expect quick responses."
 msgstr ""
-"La acción «ausente» implementa una autorespuesta de ausencia similar a la "
-"orden ausente disponible en diversas versiones de Unix. Su propósito es "
-"proporcionar corresponsales con notificación de que el usuario no está "
-"disponible durante un periodo largo de tiempo y no se deberían esperar "
-"respuestas rápidas."
+"La acción «ausente» implementa una respuesta automática de ausencia similar "
+"a la orden de vacaciones disponible en diversas versiones de Unix. Su "
+"propósito es proporcionar a los corresponsales la notificación de que el "
+"usuario no está disponible durante un período largo de tiempo y no se "
+"deberían esperar respuestas rápidas."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:200
 #, kde-format
@@ -1221,8 +1221,8 @@ msgid ""
 "are cases when one needs more granularity, if one would like to generate "
 "\"vacation\" replies more frequently."
 msgstr ""
-"Mediante el parámetro «:días», se limita el número de autorespuestas al "
-"mismo remitente a una por [n] días, para un número especificado de días. "
+"Mediante el parámetro «:días», se limita el número de respuestas automáticas "
+"al mismo remitente a una por [n] días, para un número especificado de días. "
 "Pero existen casos donde uno necesita más granularidad, cuando uno quisiera "
 "generar respuestas «ausente» más frecuentemente."
 
@@ -1401,8 +1401,8 @@ msgstr ""
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing condition \"%2\"."
 msgstr ""
-"Un valor de etiqueta desconocido «%1» se encontró durante el análisis de la "
-"condición «%2»."
+"Un valor de etiqueta desconocido «%1» se ha encontrado durante el análisis "
+"de la condición «%2»."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:23
 #, kde-format
@@ -2059,7 +2059,7 @@ msgstr "Guion Sieve"
 #, kde-format
 msgid "Error during importing script. Do you want to switch to text mode?"
 msgstr ""
-"Error durante la importación del guion. ¿Quiere usted cambiar a modo texto?"
+"Ha ocurrido un error al importar el guion. ¿Desea cambiar al modo de texto?"
 
 #: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:140
 #, kde-format
@@ -2309,7 +2309,7 @@ msgstr "Nuevo nombre de guion:"
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
 #, kde-format
 msgid "Do you want to delete \"%1\" script?"
-msgstr "¿Quiere usted borrar el guion «%1»?"
+msgstr "¿Desea borrar el guion «%1»?"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:260
 #, kde-format
@@ -2434,7 +2434,7 @@ msgstr ""
 #: ksieveui/debug/sievedebugdialog.cpp:68
 #, kde-format
 msgid "No IMAP resource found."
-msgstr "No se encontró ningún recurso IMAP."
+msgstr "No se ha encontrado ningún recurso IMAP."
 
 #: ksieveui/debug/sievedebugdialog.cpp:104
 #, kde-format
@@ -2561,11 +2561,10 @@ msgstr "Guardar guion"
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:55
 #, kde-format
 msgid "You will overwrite script. Do you want to continue?"
-msgstr "Usted sobrescribirá el guion. ¿Quiere continuar?"
+msgstr "Se sobrescribirá el guion. ¿Desea continuar?"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:56
-#, fuzzy, kde-format
-#| msgid "Import Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Script"
 msgstr "Importar guion"
@@ -2692,8 +2691,7 @@ msgid "Selected text is not a full sieve script"
 msgstr "El texto seleccionado no es un guion completo de Sieve"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:262
-#, fuzzy, kde-format
-#| msgid "Parsing error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "Error de análisis"
@@ -2892,8 +2890,7 @@ msgstr "Desactivar"
 #: ksieveui/managesievescriptsdialog.cpp:171
 #: ksieveui/managesievescriptsdialog.cpp:260
 #: ksieveui/widgets/managesievewidget.cpp:512
-#, fuzzy, kde-format
-#| msgid "Sieve Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Error de Sieve"
@@ -2909,11 +2906,10 @@ msgid "The Sieve script was successfully uploaded."
 msgstr "El guion Sieve se ha cargado satisfactoriamente."
 
 #: ksieveui/managesievescriptsdialog.cpp:250
-#, fuzzy, kde-format
-#| msgid "Sieve Script Upload"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
-msgstr "Carga de guion Sieve"
+msgstr "Carga de guion de Sieve"
 
 #: ksieveui/managesievescriptsdialog.cpp:257
 #, kde-format
@@ -3078,8 +3074,7 @@ msgstr "Plantilla"
 #, kde-format
 msgid "You can drag and drop element on editor to import template"
 msgstr ""
-"Usted puede arrastrar y soltar el elemento en el editor para importar la "
-"plantilla"
+"Puede arrastrar y soltar el elemento en el editor para importar la plantilla"
 
 #: ksieveui/vacation/multiimapvacationdialog.cpp:49
 #, kde-format
@@ -3188,14 +3183,13 @@ msgid ""
 "Do you want to edit it?"
 msgstr ""
 "Todavía hay una respuesta de fuera de la oficina configurada.\n"
-"¿Quiere usted editarla?"
+"¿Desea modificarla?"
 
 #: ksieveui/vacation/vacationmanager.cpp:57
-#, fuzzy, kde-format
-#| msgid "Out-of-office reply still active"
+#, kde-format
 msgctxt "@title:window"
 msgid "Out-of-office reply still active"
-msgstr "Respuesta de fuera de la oficina todavía activa"
+msgstr "Respuesta de fuera de la oficina continúa activa"
 
 #: ksieveui/vacation/vacationmanager.cpp:58
 #, kde-format
@@ -3225,9 +3219,9 @@ msgid ""
 "no longer able to determine the parameters for the autoreplies. Default "
 "values will be used."
 msgstr ""
-"Alguien (probablemente usted) cambió el guion de vacaciones en el servidor. "
-"KMail ya no es capaz de determinar los parámetros para las autorespuestas. "
-"Se utilizarán los valores predeterminados."
+"Alguien (probablemente usted) ha cambiado el guion de vacaciones en el "
+"servidor. KMail ya no es capaz de determinar los parámetros para las "
+"respuestas automáticas. Se usarán los valores predeterminados."
 
 #: ksieveui/widgets/custommanagesievewidget.cpp:91
 #, kde-format
@@ -3293,7 +3287,7 @@ msgstr "Un nombre vacío no es un nombre válido"
 #: ksieveui/widgets/managesievewidget.cpp:234
 #, kde-format
 msgid "You cannot use protected name."
-msgstr "Usted no puede usar un nombre protegido."
+msgstr "No se puede usar un nombre protegido."
 
 #: ksieveui/widgets/managesievewidget.cpp:246
 #, kde-format
@@ -3311,11 +3305,10 @@ msgid "Really delete script \"%1\" from the server?"
 msgstr "¿Borrar realmente el guion «%1» del servidor?"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
-#, fuzzy, kde-format
-#| msgid "Delete Sieve Script Confirmation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
-msgstr "Confirmación de borrado de guion Sieve"
+msgstr "Confirmación de borrado de guion de Sieve"
 
 #: ksieveui/widgets/managesievewidget.cpp:509
 #, kde-format

@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:40+0000\n"
-"PO-Revision-Date: 2023-07-08 08:40+0300\n"
+"PO-Revision-Date: 2023-09-25 09:01+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -43,11 +43,10 @@ msgstr ""
 "або скасувати дію."
 
 #: kmanagesieve/session.cpp:99
-#, fuzzy, kde-format
-#| msgid "Sieve Server Does Not Advertise TLS"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
-msgstr "Сервер фільтрування не оголосив про початок TLS-з’єднання"
+msgstr "Сервер фільтрування не оголосив про початок TLS-з'єднання"
 
 #: kmanagesieve/session.cpp:100
 #, kde-format
@@ -67,7 +66,7 @@ msgid ""
 "The server does not seem to support TLS. Disable TLS if you want to connect "
 "without encryption."
 msgstr ""
-"Здається, сервер не підтримує TLS. Вимкніть TLS, якщо бажаєте з’єднатися без "
+"Здається, сервер не підтримує TLS. Вимкніть TLS, якщо бажаєте з'єднатися без "
 "шифрування."
 
 #: kmanagesieve/session.cpp:258
@@ -94,8 +93,7 @@ msgstr ""
 "%2"
 
 #: kmanagesieve/session.cpp:321
-#, fuzzy, kde-format
-#| msgid "Sieve Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr "Керування фільтруванням"
@@ -561,7 +559,7 @@ msgid ""
 msgstr ""
 "Мене зараз немає. Я повернуся %1.\n"
 "\n"
-"З термінових питань звертайтеся до пані \"ім’я заступниці\"\n"
+"З термінових питань звертайтеся до пані \"ім'я заступниці\"\n"
 "\n"
 "ел. пошта: \"адреса електронної пошти заступниці\"\n"
 "телефон: +38 123 456 78 90\n"
@@ -753,7 +751,7 @@ msgstr "Перервати"
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:45
 #, kde-format
 msgid "Name (optional):"
-msgstr "Назва (необов’язково):"
+msgstr "Назва (необов'язково):"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:89
 #, kde-format
@@ -938,7 +936,7 @@ msgid ""
 "cancel the implicit \"keep\". Instead, it merely files or redirects a copy "
 "in addition to whatever else is happening to the message."
 msgstr ""
-"Якщо вказано необов’язкове ключове слово «:copy», команда з міткою не "
+"Якщо вказано необов'язкове ключове слово «:copy», команда з міткою не "
 "скасовуватиме неявне «keep». Натомість, команда створюватиме і "
 "переспрямовуватиме копію разом з усіма іншими діями над повідомленням."
 
@@ -1010,7 +1008,7 @@ msgid ""
 "cancel the implicit \"keep\". Instead, it redirects a copy in addition to "
 "whatever else is happening to the message."
 msgstr ""
-"Якщо вказано необов’язкове ключове слово «:copy», команда з міткою не "
+"Якщо вказано необов'язкове ключове слово «:copy», команда з міткою не "
 "скасовуватиме неявне «keep». Натомість команда переспрямовуватиме копію "
 "разом з усіма іншими діями над повідомленням."
 
@@ -2141,7 +2139,7 @@ msgstr "Назва:"
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:143
 #, kde-format
 msgid "Optional"
-msgstr "Необов’язкове"
+msgstr "Необов'язкове"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:147
 #, kde-format
@@ -2156,8 +2154,8 @@ msgid ""
 "single string argument representing the name of the script to include for "
 "processing at that point."
 msgstr ""
-"Команді «include» передається необов’язковий параметр «location», "
-"необов’язковий параметр «:once», необов’язковий параметр «:optional» та один "
+"Команді «include» передається необов'язковий параметр «location», "
+"необов'язковий параметр «:once», необов'язковий параметр «:optional» та один "
 "рядковий аргумент, який визначає назву скрипту, обробку яким слід виконати "
 "на певному етапі."
 
@@ -2549,8 +2547,7 @@ msgid "You will overwrite script. Do you want to continue?"
 msgstr "Скрипт буде перезаписано. Бажаєте продовжити виконання дії?"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:56
-#, fuzzy, kde-format
-#| msgid "Import Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Script"
 msgstr "Імпортування скрипту"
@@ -2677,8 +2674,7 @@ msgid "Selected text is not a full sieve script"
 msgstr "Позначений текст не є повним скриптом фільтрування"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:262
-#, fuzzy, kde-format
-#| msgid "Parsing error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "Помилка обробки"
@@ -2877,8 +2873,7 @@ msgstr "Вимкнути"
 #: ksieveui/managesievescriptsdialog.cpp:171
 #: ksieveui/managesievescriptsdialog.cpp:260
 #: ksieveui/widgets/managesievewidget.cpp:512
-#, fuzzy, kde-format
-#| msgid "Sieve Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Помилка фільтрування"
@@ -2894,8 +2889,7 @@ msgid "The Sieve script was successfully uploaded."
 msgstr "Успішно вивантажено скрипт фільтрування."
 
 #: ksieveui/managesievescriptsdialog.cpp:250
-#, fuzzy, kde-format
-#| msgid "Sieve Script Upload"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "Вивантаження скрипту фільтрування"
@@ -3180,8 +3174,7 @@ msgstr ""
 "Чи бажаєте ви її змінити?"
 
 #: ksieveui/vacation/vacationmanager.cpp:57
-#, fuzzy, kde-format
-#| msgid "Out-of-office reply still active"
+#, kde-format
 msgctxt "@title:window"
 msgid "Out-of-office reply still active"
 msgstr "Активна відповідь за межі установи"
@@ -3238,7 +3231,7 @@ msgstr "Доступні скрипти"
 #: ksieveui/widgets/managesievetreeview.cpp:39
 #, kde-format
 msgid "Network down."
-msgstr "Немає з’єднання."
+msgstr "Немає з'єднання."
 
 #: ksieveui/widgets/managesievewidget.cpp:147
 #, kde-format
@@ -3301,8 +3294,7 @@ msgid "Really delete script \"%1\" from the server?"
 msgstr "Справді вилучити з сервера скрипт «%1»?"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
-#, fuzzy, kde-format
-#| msgid "Delete Sieve Script Confirmation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "Підтвердження вилучення скрипту фільтрування"

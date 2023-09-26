@@ -11,17 +11,17 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:40+0000\n"
-"PO-Revision-Date: 2023-07-08 07:12+0200\n"
+"PO-Revision-Date: 2023-09-25 11:27+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
-"%100==4 ? 3 : 0);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100>=3 && n"
+"%100<=4 ? 2 : 3);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: kmanagesieve/session.cpp:90
 #, kde-format
@@ -42,8 +42,7 @@ msgstr ""
 "opravilo."
 
 #: kmanagesieve/session.cpp:99
-#, fuzzy, kde-format
-#| msgid "Sieve Server Does Not Advertise TLS"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Strežnik Sieve ne oglašuje TLS-a"
@@ -91,8 +90,7 @@ msgstr ""
 "%2"
 
 #: kmanagesieve/session.cpp:321
-#, fuzzy, kde-format
-#| msgid "Sieve Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr "Upravljalnik Sieve"
@@ -2542,8 +2540,7 @@ msgid "You will overwrite script. Do you want to continue?"
 msgstr "Prepisali boste skript. Ali želite nadaljevati?"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:56
-#, fuzzy, kde-format
-#| msgid "Import Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Script"
 msgstr "Uvozi skript"
@@ -2670,8 +2667,7 @@ msgid "Selected text is not a full sieve script"
 msgstr "Izbrano besedilo ni celotni skript za sieve"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:262
-#, fuzzy, kde-format
-#| msgid "Parsing error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "Napaka med razčlenjevanjem"
@@ -2870,11 +2866,10 @@ msgstr "Onemogoči"
 #: ksieveui/managesievescriptsdialog.cpp:171
 #: ksieveui/managesievescriptsdialog.cpp:260
 #: ksieveui/widgets/managesievewidget.cpp:512
-#, fuzzy, kde-format
-#| msgid "Sieve Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
-msgstr "Napaka Sieve"
+msgstr "Napaka programa Sieve"
 
 #: ksieveui/managesievescriptsdialog.cpp:204
 #, kde-format
@@ -2887,8 +2882,7 @@ msgid "The Sieve script was successfully uploaded."
 msgstr "Skript Sieve je bil uspešno poslan."
 
 #: ksieveui/managesievescriptsdialog.cpp:250
-#, fuzzy, kde-format
-#| msgid "Sieve Script Upload"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "Pošiljanje skripta Sieve"
@@ -3168,8 +3162,7 @@ msgstr ""
 "Ali ga želite urediti?"
 
 #: ksieveui/vacation/vacationmanager.cpp:57
-#, fuzzy, kde-format
-#| msgid "Out-of-office reply still active"
+#, kde-format
 msgctxt "@title:window"
 msgid "Out-of-office reply still active"
 msgstr "Odgovor »Ni me v pisarni« je še vedno dejaven"
@@ -3288,8 +3281,7 @@ msgid "Really delete script \"%1\" from the server?"
 msgstr "Ali resnično želite izbrisati skript \"%1\" s strežnika?"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
-#, fuzzy, kde-format
-#| msgid "Delete Sieve Script Confirmation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "Potrditev izbrisa skripta Sieve"

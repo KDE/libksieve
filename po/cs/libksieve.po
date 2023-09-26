@@ -37,11 +37,10 @@ msgstr ""
 "Můžete si i přesto zvolit spustit TLS, nebo zrušit operaci."
 
 #: kmanagesieve/session.cpp:99
-#, fuzzy, kde-format
-#| msgid "Sieve Server Does Not Advertise TLS"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
-msgstr "Server Sieve neoznamuje TLS"
+msgstr ""
 
 #: kmanagesieve/session.cpp:100
 #, kde-format
@@ -86,11 +85,10 @@ msgstr ""
 "%2"
 
 #: kmanagesieve/session.cpp:321
-#, fuzzy, kde-format
-#| msgid "Sieve Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Manager"
-msgstr "Správce Sieve"
+msgstr ""
 
 #: kmanagesieve/sessionthread.cpp:298
 #, kde-format
@@ -2365,8 +2363,7 @@ msgid "You will overwrite script. Do you want to continue?"
 msgstr ""
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:56
-#, fuzzy, kde-format
-#| msgid "Import Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Script"
 msgstr "Importovat skript"
@@ -2491,11 +2488,10 @@ msgid "Selected text is not a full sieve script"
 msgstr ""
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:262
-#, fuzzy, kde-format
-#| msgid "Parsing error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
-msgstr "Chyba v analýze"
+msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:44
 #, kde-format
@@ -2689,11 +2685,10 @@ msgstr "Deaktivovat"
 #: ksieveui/managesievescriptsdialog.cpp:171
 #: ksieveui/managesievescriptsdialog.cpp:260
 #: ksieveui/widgets/managesievewidget.cpp:512
-#, fuzzy, kde-format
-#| msgid "Sieve Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
-msgstr "Chyba Sieve"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:204
 #, kde-format
@@ -2706,11 +2701,10 @@ msgid "The Sieve script was successfully uploaded."
 msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:250
-#, fuzzy, kde-format
-#| msgid "Sieve Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
-msgstr "Skript Sieve"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:257
 #, kde-format
@@ -3090,12 +3084,10 @@ msgid "Really delete script \"%1\" from the server?"
 msgstr ""
 
 #: ksieveui/widgets/managesievewidget.cpp:491
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Debug Sieve Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
-msgstr "Ladit skript Sieve"
+msgstr ""
 
 #: ksieveui/widgets/managesievewidget.cpp:509
 #, kde-format
