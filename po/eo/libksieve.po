@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:40+0000\n"
-"PO-Revision-Date: 2023-09-23 15:06+0100\n"
+"PO-Revision-Date: 2023-09-26 20:18+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -37,11 +37,10 @@ msgstr ""
 "operacion."
 
 #: kmanagesieve/session.cpp:99
-#, fuzzy, kde-format
-#| msgid "Sieve Server Does Not Advertise TLS"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
-msgstr "Kribrila Servilo Ne Reklamas TLS"
+msgstr "Sieve-Servilo Ne Reklamas TLS"
 
 #: kmanagesieve/session.cpp:100
 #, kde-format
@@ -86,11 +85,10 @@ msgstr ""
 "%2"
 
 #: kmanagesieve/session.cpp:321
-#, fuzzy, kde-format
-#| msgid "Sieve Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Manager"
-msgstr "Kribrilo-Manaĝero"
+msgstr "Sieve-Administranto"
 
 #: kmanagesieve/sessionthread.cpp:298
 #, kde-format
@@ -2511,8 +2509,7 @@ msgid "You will overwrite script. Do you want to continue?"
 msgstr "Vi anstataŭigos skripton. Ĉu vi volas daŭrigi?"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:56
-#, fuzzy, kde-format
-#| msgid "Import Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Script"
 msgstr "Importi Skripton"
@@ -2639,8 +2636,7 @@ msgid "Selected text is not a full sieve script"
 msgstr "Elektita teksto ne estas plena kribrilo"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:262
-#, fuzzy, kde-format
-#| msgid "Parsing error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "Analiza eraro"
@@ -2839,11 +2835,10 @@ msgstr "Malaktivigi"
 #: ksieveui/managesievescriptsdialog.cpp:171
 #: ksieveui/managesievescriptsdialog.cpp:260
 #: ksieveui/widgets/managesievewidget.cpp:512
-#, fuzzy, kde-format
-#| msgid "Sieve Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
-msgstr "Kribrilo Eraro"
+msgstr "Sieve-Eraro"
 
 #: ksieveui/managesievescriptsdialog.cpp:204
 #, kde-format
@@ -2856,11 +2851,10 @@ msgid "The Sieve script was successfully uploaded."
 msgstr "La Sieve-skripto estis sukcese alŝutita."
 
 #: ksieveui/managesievescriptsdialog.cpp:250
-#, fuzzy, kde-format
-#| msgid "Sieve Script Upload"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
-msgstr "Kribrilo Skripto Alŝuto"
+msgstr "Alŝuto de Sieve-Skripto"
 
 #: ksieveui/managesievescriptsdialog.cpp:257
 #, kde-format
@@ -3136,8 +3130,7 @@ msgstr ""
 "Ĉu vi volas redakti ĝin?"
 
 #: ksieveui/vacation/vacationmanager.cpp:57
-#, fuzzy, kde-format
-#| msgid "Out-of-office reply still active"
+#, kde-format
 msgctxt "@title:window"
 msgid "Out-of-office reply still active"
 msgstr "Ekster-oficeja respondo ankoraŭ aktiva"
@@ -3256,11 +3249,10 @@ msgid "Really delete script \"%1\" from the server?"
 msgstr "Ĉu vere forigi skripton \"%1\" de la servilo?"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
-#, fuzzy, kde-format
-#| msgid "Delete Sieve Script Confirmation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
-msgstr "Forigi Sieve Script-Konfirmon"
+msgstr "Forigi Sieve-Skriptan Konfirmon"
 
 #: ksieveui/widgets/managesievewidget.cpp:509
 #, kde-format
