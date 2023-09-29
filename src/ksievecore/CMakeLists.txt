@@ -190,10 +190,6 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveCore/ksievecore
     COMPONENT Devel
 )
-install(FILES
-    ${PRI_FILENAME}
-    DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
-)
 
 install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/libksievecore_version.h

@@ -438,12 +438,6 @@ ecm_generate_headers(ksieveui_Camelcasewidgets_HEADERS
 )
 
 
-ecm_generate_pri_file(BASE_NAME KSieveUi
-    LIB_NAME KPim6KSieveUi
-    DEPS "KManageSieve KSieve PimCommon" FILENAME_VAR PRI_FILENAME
-)
-
-
 install(TARGETS KPim6KSieveUi EXPORT KPim6KSieveUiTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
     ${ksieveui_Camelcasewidgets_HEADERS}
@@ -464,10 +458,6 @@ install(FILES
     ${ksieveui_editor_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi/ksieveui
     COMPONENT Devel
-)
-install(FILES
-    ${PRI_FILENAME}
-    DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
 )
 
 install(FILES

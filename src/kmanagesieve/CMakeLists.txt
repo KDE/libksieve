@@ -71,11 +71,6 @@ ecm_generate_headers(kmanagesieve_CamelCase_HEADERS
     PREFIX KManageSieve
 )
 
-ecm_generate_pri_file(BASE_NAME KManageSieve
-    LIB_NAME KPim6KManageSieve
-    DEPS "" FILENAME_VAR PRI_FILENAME
-)
-
 install(TARGETS KPim6KManageSieve EXPORT KPim6KManageSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES
     ${kmanagesieve_CamelCase_HEADERS}
@@ -88,10 +83,6 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/kmanagesieve_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KManageSieve/kmanagesieve
     COMPONENT Devel
-)
-install(FILES
-    ${PRI_FILENAME}
-    DESTINATION ${ECM_MKSPECS_INSTALL_DIR}
 )
 
 install(FILES
