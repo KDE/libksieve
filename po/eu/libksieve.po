@@ -1,7 +1,7 @@
 # Translation for libksieve.po to Euskara/Basque (eu).
 # Copyright (C) 2003-2023 This file is copyright:
 # This file is distributed under the same license as the libksieve file.
-# KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Marcos  <marcos@euskalgnu.org>, 2003.
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:40+0000\n"
-"PO-Revision-Date: 2023-09-26 00:18+0200\n"
+"PO-Revision-Date: 2023-09-29 00:00+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -586,54 +586,58 @@ msgstr ""
 #: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:39
 #, kde-format
 msgid "matches"
-msgstr ""
+msgstr "bat etortzeak"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:40
 #, kde-format
 msgid "not matches"
-msgstr ""
+msgstr "Ez dago bat datorrenik"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:42
 #, kde-format
 msgid "regex"
-msgstr ""
+msgstr "Adierazpen erregularra"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:43
 #, kde-format
 msgid "not regex"
-msgstr ""
+msgstr "ez da adierazpen erregularra"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:25
 #, kde-format
 msgid "JPEG"
-msgstr ""
+msgstr "JPEG"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:26
 #, kde-format
 msgid "TIFF"
-msgstr ""
+msgstr "TIFF"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:27
 #, kde-format
 msgid "PNG"
-msgstr ""
+msgstr "PNG"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:28
 #, kde-format
 msgid "BMP"
-msgstr ""
+msgstr "BMP"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:101
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:53
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing action \"%2\"."
 msgstr ""
+"Sintaxia azterketaren \"%2\" ekintza bitartean \"%1\" balioa duen etiketa "
+"ezezagun bat aurkitu da."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:106
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:41
 #, kde-format
 msgid "An unknown tag \"%1\" was found during parsing action \"%2\"."
 msgstr ""
+"Sintaxia azterketaren \"%2\" ekintza bitartean \"%1\" balioa duen etiketa "
+"ezezagun bat aurkitu da."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:112
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:48
@@ -654,12 +658,12 @@ msgstr ""
 #: ksieveui/editor/sieveeditortabwidget.cpp:150
 #, kde-format
 msgid "Help"
-msgstr ""
+msgstr "Laguntza"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddflags.cpp:13
 #, kde-format
 msgid "Add Flags"
-msgstr ""
+msgstr "Gehitu banderak"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddflags.cpp:25
 #, kde-format
@@ -672,21 +676,21 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:24
 #, kde-format
 msgid "Add header"
-msgstr ""
+msgstr "Gehitu goiburua"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:40
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:40
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:42
 #, kde-format
 msgid "header:"
-msgstr ""
+msgstr "goiburua:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:49
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:49
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:53
 #, kde-format
 msgid "value:"
-msgstr ""
+msgstr "balioa:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:114
 #, kde-format
@@ -703,7 +707,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:45
 #, kde-format
 msgid "Name (optional):"
-msgstr ""
+msgstr "Izena (hautazkoa):"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:89
 #, kde-format
@@ -714,25 +718,25 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:20
 #, kde-format
 msgid "Convert"
-msgstr ""
+msgstr "Bihurtu"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:31
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:31
 #, kde-format
 msgid "From:"
-msgstr ""
+msgstr "Honetatik:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:39
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:39
 #, kde-format
 msgid "To:"
-msgstr ""
+msgstr "Honetara:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:47
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:47
 #, kde-format
 msgid "Parameters:"
-msgstr ""
+msgstr "Parametroak:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:129
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:94
@@ -746,7 +750,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:24
 #, kde-format
 msgid "Delete header"
-msgstr ""
+msgstr "Ezabatu goiburua"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:124
 #, kde-format
@@ -769,13 +773,13 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:35
 #, kde-format
 msgid "Subject:"
-msgstr ""
+msgstr "Gaia:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:40
 #, kde-format
 msgid "headers:"
-msgstr ""
+msgstr "Goiburuak:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:51
 #: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:30
@@ -783,7 +787,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:52
 #, kde-format
 msgid "text:"
-msgstr ""
+msgstr "testua:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:143
 #, kde-format
@@ -807,17 +811,17 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:21
 #, kde-format
 msgid "Extract Text"
-msgstr ""
+msgstr "Erauzi testua"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:32
 #, kde-format
 msgid "Number of characters:"
-msgstr ""
+msgstr "Karaktere kopurua:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:42
 #, kde-format
 msgid "Stored in variable name:"
-msgstr ""
+msgstr "Aldagai izenean gordeta:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:110
 #, kde-format
@@ -842,12 +846,12 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:35
 #, kde-format
 msgid "Keep a copy"
-msgstr ""
+msgstr "Mantendu kopia bat"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:102
 #, kde-format
 msgid "Create folder"
-msgstr ""
+msgstr "Sortu karpeta"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:147
 #, kde-format
@@ -882,38 +886,40 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:55
 #, kde-format
 msgid "Add flags:"
-msgstr ""
+msgstr "Gehitu banderak:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:23
 #, kde-format
 msgid "Notify"
-msgstr ""
+msgstr "Jakinarazi"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:39
 #, kde-format
 msgid "message:"
-msgstr ""
+msgstr "mezua:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:48
 #, kde-format
 msgid "method:"
-msgstr ""
+msgstr "metodoa:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:132
 #, kde-format
 msgid ""
 "The \"notify\" action specifies that a notification should be sent to a user."
 msgstr ""
+"\"jakinarazi\" ekintzak, erabiltzaileari jakinarazpen bat bidali beharko "
+"litzaiokeela zehazten du."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:22
 #, kde-format
 msgid "Redirect"
-msgstr ""
+msgstr "Birbideratu"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:41
 #, kde-format
 msgid "Use list"
-msgstr ""
+msgstr "Erabili zerrenda"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:139
 #, kde-format
@@ -935,7 +941,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:20
 #, kde-format
 msgid "Reject"
-msgstr ""
+msgstr "Errefusatu"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:86
 #, kde-format
@@ -947,7 +953,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionremoveflags.cpp:13
 #, kde-format
 msgid "Remove Flags"
-msgstr ""
+msgstr "Kendu banderak"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionremoveflags.cpp:25
 #, kde-format
@@ -960,12 +966,12 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:24
 #, kde-format
 msgid "Replace"
-msgstr ""
+msgstr "Ordeztu"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:44
 #, kde-format
 msgid "from:"
-msgstr ""
+msgstr "honetatik:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:142
 #, kde-format
@@ -989,7 +995,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetflags.cpp:13
 #, kde-format
 msgid "Set Flags"
-msgstr ""
+msgstr "Ezarri banderak"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetflags.cpp:24
 #, kde-format
@@ -1001,12 +1007,12 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:24
 #, kde-format
 msgid "Variable"
-msgstr ""
+msgstr "Aldagaia"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:42
 #, kde-format
 msgid "Protect special character"
-msgstr ""
+msgstr "Babestu karaktere berezia"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:48
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:49
@@ -1015,17 +1021,19 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:61
 #, kde-format
 msgid "Value:"
-msgstr ""
+msgstr "Balioa:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:57
 #, kde-format
 msgid "In variable:"
-msgstr ""
+msgstr "Aldagaian:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:106
 #, kde-format
 msgid "Script needs regex support, but server does not have it."
 msgstr ""
+"Gidoiak adierazpen erregularren euskarria behar du, baino zerbitzariak ez du "
+"halakorik."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:169
 #, kde-format
@@ -1033,6 +1041,8 @@ msgid ""
 "The \"set\" action stores the specified value in the variable identified by "
 "name."
 msgstr ""
+"\"ezarri\" ekintzak zehaztutako balioa izenaren bidez identifikatutako "
+"aldagaian gordetzen du."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:172
 #, kde-format
@@ -1046,39 +1056,39 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionstop.cpp:14
 #, kde-format
 msgid "Stop"
-msgstr ""
+msgstr "Gelditu"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionstop.cpp:25
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "The \"stop\" action ends all processing.  If the implicit keep has not been "
 "cancelled, then it is taken."
-msgstr ""
+msgstr "\"gelditu\" ekintzak prozesatze guztiak bukatzen ditu. "
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:27
 #, kde-format
 msgid "Vacation"
-msgstr ""
+msgstr "Oporraldia"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:46
 #, kde-format
 msgid "day:"
-msgstr ""
+msgstr "eguna:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:57
 #, kde-format
 msgid "Message subject:"
-msgstr ""
+msgstr "Mezuaren gaia:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:66
 #, kde-format
 msgid "Additional email:"
-msgstr ""
+msgstr "E-posta osagarria:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:75
 #, kde-format
 msgid "Vacation reason:"
-msgstr ""
+msgstr "Oporraldiaren arrazoia:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:196
 #, kde-format
@@ -1108,118 +1118,118 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
 #, kde-format
 msgid "Define Email Address..."
-msgstr ""
+msgstr "Definitu e-posta helbidea..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
 #, kde-format
 msgid "Enter message..."
-msgstr ""
+msgstr "Sartu mezua..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:23
 #, kde-format
 msgid "Insert at the beginning"
-msgstr ""
+msgstr "Txertatu hasieran"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:24
 #, kde-format
 msgid "Append at the end"
-msgstr ""
+msgstr "Erantsi bukaeran"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Flags"
-msgstr ""
+msgstr "Banderak"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:89
 #, kde-format
 msgid "Deleted"
-msgstr ""
+msgstr "Ezabatuta"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:92
 #, kde-format
 msgid "Answered"
-msgstr ""
+msgstr "Erantzunda"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:95
 #, kde-format
 msgid "Flagged"
-msgstr ""
+msgstr "Bandera ipinita"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:98
 #, kde-format
 msgid "Seen"
-msgstr ""
+msgstr "Ikusita"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:103
 #, kde-format
 msgid "Draft"
-msgstr ""
+msgstr "Zirriborroa"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
 #, kde-format
 msgid "Click on button for selecting flags..."
-msgstr ""
+msgstr "Egin klik botoiari banderak hautatzeko..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, kde-format
 msgid "Select Flags"
-msgstr ""
+msgstr "Hautatu banderak"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectimportancecombobox.cpp:25
 #, kde-format
 msgid "high importance"
-msgstr ""
+msgstr "garrantzi handikoa"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectimportancecombobox.cpp:26
 #, kde-format
 msgid "normal importance"
-msgstr ""
+msgstr "garrantzia arrunta"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectimportancecombobox.cpp:27
 #, kde-format
 msgid "low importance"
-msgstr ""
+msgstr "garrantzia txikikoa"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvacationcombobox.cpp:24
 #, kde-format
 msgid "days"
-msgstr ""
+msgstr "egun"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvacationcombobox.cpp:25
 #, kde-format
 msgid "seconds"
-msgstr ""
+msgstr "segundo"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:24
 #, kde-format
 msgid "None"
-msgstr ""
+msgstr "Bat ere ez"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:25
 #, kde-format
 msgid "Lower"
-msgstr ""
+msgstr "Xeheak"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:26
 #, kde-format
 msgid "Upper"
-msgstr ""
+msgstr "Larriak"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:27
 #, kde-format
 msgid "Lower first letter"
-msgstr ""
+msgstr "Lehenengo letra xehea ipini"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:28
 #, kde-format
 msgid "Upper first letter"
-msgstr ""
+msgstr "Lehenengo letra larria ipini"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:29
 #, kde-format
@@ -1229,29 +1239,31 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:30
 #, kde-format
 msgid "Length"
-msgstr ""
+msgstr "Luzera"
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:62
 #, kde-format
 msgid "Please select an action."
-msgstr ""
+msgstr "Mesedez, hautatu ekintza bat."
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:139
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
 #, kde-format
 msgid "Add comment"
-msgstr ""
+msgstr "Gehitu iruzkina"
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:274
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:222
 #, kde-format
 msgid "Script contains unsupported feature \"%1\""
-msgstr ""
+msgstr "Gidoia euskarririk ez duen \"%1\" ezaugarria du"
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:409
 #, kde-format
 msgid "We detected a loop if in a loop if. It's not supported"
 msgstr ""
+"«if» begizta baten barruan «if» begizta hauteman dugu. Ez dago horretarako "
+"euskarririk"
 
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:31
 #, kde-format

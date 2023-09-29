@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:40+0000\n"
-"PO-Revision-Date: 2023-09-26 14:22+0200\n"
+"PO-Revision-Date: 2023-09-28 13:50+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -702,6 +702,9 @@ msgid ""
 "any previously set flags.  This means that multiple occurrences of addflag "
 "are treated additively."
 msgstr ""
+"Addflag [IMAP]-ის ალმების სიაში ალმების ჩასამატებლად გამოიყენება.  ის უკვე "
+"არსებულ ალმებს არ ჩაანაცვლებს.  ეს ნიშნავს, რომ Addflag-ის თითოეული გამოჩენა "
+"დამატებით მუშავდება."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:24
 #, kde-format
@@ -777,6 +780,9 @@ msgid ""
 "to \"media-type\" be converted to the media type in \"media-type\" using "
 "conversion parameters."
 msgstr ""
+"ქმედება 'convert\" ნიშნავს, რომ ყველა სხეულის ნაწილი, რომელიც შეიცავს "
+"მედიას, რომლის ტიპიცაა \"media-type\", გადაყვანილი იქნება მედის ტიპში "
+"\"media-type\", გადაყვანის პარამეტრების გამოყენებით."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:24
 #, kde-format
@@ -789,6 +795,8 @@ msgid ""
 "By default, the deleteheader action deletes all occurrences of the named "
 "header field."
 msgstr ""
+"ნაგულისხმევად, ქმედება deleteheader მითითებული სახელის შემცველ ყველა "
+"თავსართის ველს წაშლის."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:23
 #, kde-format
@@ -826,6 +834,8 @@ msgid ""
 "Enclose action command is defined to allow an entire message to be enclosed "
 "as an attachment to a new message."
 msgstr ""
+"ბრძანება 'enclose' არსებობს, რათა საშუალება მოგცეთ, მთელი შეტყობინება, "
+"მიმაგრების სახით, მიამაგროთ ახალ შეტყობინებას."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:20
 #, kde-format
@@ -838,6 +848,8 @@ msgid ""
 " The \"ereject\" action cancels the implicit keep and refuses delivery of a "
 "message."
 msgstr ""
+" ქმედება \"ereject\" გააუქმებს ბუნდოვან შენარჩუნების ოპერაციას და უარს "
+"განაცხადებს შეტყობინების მიღებაზე."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:21
 #, kde-format
@@ -860,6 +872,8 @@ msgid ""
 "The \"extracttext\" action may be used within the context of a \"foreverypart"
 "\" loop and is used to store text into a variable"
 msgstr ""
+"ქმედება \"extratext\" შეგიძლიათ გამოიყენოთ \"foreverypart\" ციკლის "
+"კონტექსტში და ტექსტის ცვლადში შესანახად გამოიყენება"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:20
 #, kde-format
@@ -921,6 +935,9 @@ msgid ""
 "actions, if no filtering happens at all; generally, this simply means to "
 "file the message into the user's main mailbox."
 msgstr ""
+"ქმედება \"keep\" არის, თუ რამე ქმედება ხდება სხვა ქმედებებთან ერთად, "
+"გაფლტვრა საერთოდ არ მოხდება. ზოგადად, ეს, უბრალოდ ნიშნავს, რომ შეტყობინება "
+"მომხმარებლის მთავარ საფოსტო ყუთში მოთავსდეს."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:55
 #, kde-format
@@ -967,6 +984,10 @@ msgid ""
 "action makes no changes to the message body or existing headers, but it may "
 "add new headers."
 msgstr ""
+"ქმედება \"redirect\" შეტყობინების სხვა მომხმარებლისთვის, მითითებულ "
+"მისამართზე გადაგზავნას ნიშნავს, როგორც ამას ელფოსტის გადაგზავნის ფუნქცია "
+"აკეთებს. ქმედება \"redirect\" შეტყობინების ტანში და თავსართებში ცვლილებებს "
+"არ შეიტანს, მაგრამ ახალი თავსართები, შეიძლება, დაემატოს."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:143
 #, kde-format
@@ -975,6 +996,9 @@ msgid ""
 "cancel the implicit \"keep\". Instead, it redirects a copy in addition to "
 "whatever else is happening to the message."
 msgstr ""
+"თუ მითითებულია არასავალდებულო საკვანძო სიტყვა \":copy\", მონიშნული ბრძანება "
+"არ გააუქმებს მითითებულ \"keep\"-ს. ამის მაგიერ ის გადაამისამართებს ასლს "
+"იმასთან ერთად, რაც შეტყობინებას დაემართება."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:20
 #, kde-format
@@ -987,6 +1011,8 @@ msgid ""
 " The \"reject\" action cancels the implicit keep and refuses delivery of a "
 "message."
 msgstr ""
+" ქმედება \"reject\" გააუქმებს ბუნდოვან შენარჩუნების ოპერაციას და უარს "
+"განაცხადებს შეტყობინების მიღებაზე."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionremoveflags.cpp:13
 #, kde-format
@@ -1000,6 +1026,10 @@ msgid ""
 "clears flags previously set by \"set\"/\"addflag\". Calling removeflag with "
 "a flag that wasn't set before is not an error and is ignored."
 msgstr ""
+"ქმედება Removeflag [IMAP]-ის ალმების სიიდან ალმის წასაშლელად გამოიყენება. "
+"Removeflag წაშლის ალმებს, რომელიც \"set\"/\"addflag\" ბრძანებებით დაემატა. "
+"Removeflag-ის გამოძახება ალმით, რომელიც დაყენებული არაა, შეცდომად ითვლება და "
+"გამოტოვებულია."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:24
 #, kde-format
@@ -1017,6 +1047,8 @@ msgid ""
 "The \"replace\" command is defined to allow a MIME part to be replaced with "
 "the text supplied in the command."
 msgstr ""
+"ბრძანება \"replace\" არსებობს, რათა საშუალება მოგცეთ, MIME ნაწილი "
+"ბრძანებისთვის მითითებული ტექსტით შეიცვალოს."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreturn.cpp:13
 #, kde-format
@@ -1029,6 +1061,8 @@ msgid ""
 "The \"return\" command stops processing of the immediately included script "
 "only and returns processing control to the script that includes it."
 msgstr ""
+"ბრძანება \"return\" მხოლოდ ჩასმული სკრიპტის შესრულებას წყვეტს და მართვას იმ "
+"დამუშავების მოდულს დაუბრუნებს, რომელმაც ის ჩასვა."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetflags.cpp:13
 #, kde-format
@@ -1041,6 +1075,8 @@ msgid ""
 "Setflag is used for setting [IMAP] system flags or keywords. Setflag "
 "replaces any previously set flags."
 msgstr ""
+"ბრძანება Setflag [IMAP]-ის სისტემური ალმების ან საკვანძო სიტყვების "
+"დასაყენებლად გამოიყენება. Setflag ჩაანაცვლებს უკვე დაყენებულ ალმებს."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:24
 #, kde-format
@@ -1090,6 +1126,9 @@ msgid ""
 "Every character with special meaning (. , *, ? , etc.) is prefixed with \\ "
 "in the expansion"
 msgstr ""
+"ეს მოდიფიკატორი ამატებს საჭირო ციტირებას, რათა დარწმუნდეს, რომ გაფართოებული "
+"ტექსტი მართლა იგივეა, თუ გამოიყენება :regex-ის პარამეტრად.  თითოეულ სიმბოლოს "
+"რომელსაც სპეციალური მნიშვნელობა გააჩნია (.,*,? და ა.შ.) წინ \\ მიეწერება"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionstop.cpp:14
 #, kde-format
@@ -1102,6 +1141,8 @@ msgid ""
 "The \"stop\" action ends all processing.  If the implicit keep has not been "
 "cancelled, then it is taken."
 msgstr ""
+"ქმედება \"stop\" დამუშავებას ასრულებს.  თუ keep არ გაუქმებულა, მაშინ ის "
+"შესრულდება."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:27
 #, kde-format
@@ -1136,6 +1177,10 @@ msgid ""
 "provide correspondents with notification that the user is away for an "
 "extended period of time and that they should not expect quick responses."
 msgstr ""
+"ქმედება \"vacation\" ააქტიურებს დასვენების ავტომოპასუხეს vacation ბრძანების "
+"მსგავსად, რომელიც ბევრ Unix სისტემაშია ხელმისაწვდომი. მისი დანიშნულებაა "
+"მიაწოდოს მომწერებს გაფრთხილება, რომ მომხმარებელი გასულია დიდი პერიოდით და "
+"სწრაფ პასუხს არ უნდა ელოდნენ."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:200
 #, kde-format
