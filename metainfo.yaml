@@ -11,14 +11,10 @@ portingAid: false
 deprecated: false
 release: false
 libraries:
-    - qmake: KSieveUi
-      cmake: KPim6::SieveUi
-    - qmake: KSieveCore
-      cmake: KPim6::SieveCore
-    - qmake: KManageSieve
-      cmake: KPim6::KManageSieve
-    - qmake: KSieve
-      cmake: KPim6::Sieve
+    - cmake: KPim6::SieveUi
+    - cmake: KPim6::SieveCore
+    - cmake: KPim6::KManageSieve
+    - cmake: KPim6::Sieve
 cmakename: KPim6LibKSieve
 
 public_lib: true
