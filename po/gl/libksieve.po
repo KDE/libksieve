@@ -1,17 +1,17 @@
 # translation of libksieve.po to galician
 #
+# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
 # Xabi G. Feal <xabigf@gmx.net>, 2006.
 # mvillarino <mvillarino@users.sourceforge.net>, 2008.
 # Xosé <xosecalvo@gmail.com>, 2010, 2012, 2013, 2014.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013, 2015, 2016, 2017.
 # Marce Villarino <mvillarino@kde-espana.es>, 2013, 2014.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2020, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-25 01:40+0000\n"
-"PO-Revision-Date: 2023-07-29 09:41+0200\n"
+"PO-Revision-Date: 2023-09-30 13:02+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -19,13 +19,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: kmanagesieve/session.cpp:90
 #, kde-format
 msgid "Cannot use TLS since the underlying Qt library does not support it."
 msgstr ""
-"Non se pode usar TLS porque a biblioteca de Qt subxacente non o admite."
+"Non é posíbel usar TLS porque a biblioteca de Qt subxacente non o admite."
 
 #: kmanagesieve/session.cpp:97
 #, kde-format
@@ -41,8 +41,7 @@ msgstr ""
 "operación."
 
 #: kmanagesieve/session.cpp:99
-#, fuzzy, kde-format
-#| msgid "Sieve Server Does Not Advertise TLS"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "O servidor de Sieve non anuncia TLS"
@@ -90,8 +89,7 @@ msgstr ""
 "%2"
 
 #: kmanagesieve/session.cpp:321
-#, fuzzy, kde-format
-#| msgid "Sieve Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr "Xestor de Sieve"
@@ -286,7 +284,7 @@ msgstr "Falta o «require» para a proba «%1»"
 #: ksieve/error.cpp:178
 #, kde-format
 msgid "\"require\" missing for comparator \"%1\""
-msgstr "Falta o «require» para elemento de comparanza «%1»"
+msgstr "Falta o «require» para o comparador «%1»."
 
 #: ksieve/error.cpp:181
 #, kde-format
@@ -301,7 +299,7 @@ msgstr "Proba «%1» non admitida"
 #: ksieve/error.cpp:187
 #, kde-format
 msgid "Comparator \"%1\" not supported"
-msgstr "Elemento de comparanza «%1» non admitido"
+msgstr "Non se permite o comparador «%1»."
 
 #: ksieve/error.cpp:190
 #, kde-format
@@ -405,7 +403,7 @@ msgid ""
 "The server responded:\n"
 "%1"
 msgstr ""
-"Obter o guión fallou.\n"
+"Produciuse un erro ao obter o guión.\n"
 "O servidor respondeu:\n"
 "%1"
 
@@ -473,7 +471,7 @@ msgstr ""
 msgid "Allow out-of-office replies to be sent to messages marked as SPAM."
 msgstr ""
 "Permitir que se envíen respostas desde fóra da oficina a mensaxes marcadas "
-"como LIXO."
+"como correo lixo."
 
 #. i18n: ectx: label, entry (CheckOutOfOfficeOnStartup), group (OutOfOffice)
 #: ksievecore/settings/sieve-vacation.kcfg:32
@@ -496,7 +494,7 @@ msgid ""
 "The server responded:\n"
 "%1"
 msgstr ""
-"Non se puido obter a lista de guións de Sieve.\n"
+"Non foi posíbel obter a lista de guións de Sieve.\n"
 "O servidor respondeu:\n"
 "%1"
 
@@ -521,7 +519,7 @@ msgstr ""
 #: ksievecore/vacation/vacationcreatescriptjob.cpp:151
 #, kde-format
 msgid "Impossible to install script on server '%1'"
-msgstr "Non se pode instalar o guión no servidor «%1»"
+msgstr "Non é posíbel instalar o guión no servidor «%1»"
 
 #: ksievecore/vacation/vacationutils.cpp:39
 #, kde-format
@@ -584,7 +582,7 @@ msgstr "Crear un filtro de Sieve"
 #: ksieveui/autocreatescripts/autocreatescriptutil.cpp:177
 #, kde-format
 msgid "Cannot find item \"%1\" in widget \"%2\""
-msgstr "Non se pode atopar o elemento «%1» no trebello «%2»"
+msgstr "Non é posíbel atopar o elemento «%1» no trebello «%2»"
 
 #: ksieveui/autocreatescripts/autocreatescriptutil.cpp:185
 #, kde-format
@@ -1041,6 +1039,7 @@ msgstr ""
 msgid "Remove Flags"
 msgstr "Retirar indicadores"
 
+# skip-rule: proposta-en-clear
 #: ksieveui/autocreatescripts/sieveactions/sieveactionremoveflags.cpp:25
 #, kde-format
 msgid ""
@@ -1560,7 +1559,7 @@ msgid ""
 " (if empty it uses internal variable):"
 msgstr ""
 "Nome de variábel\n"
-" (sen el úsase unha variábel interna):"
+" (se está baleiro úsase unha variábel interna):"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:127
 #, kde-format
@@ -1608,7 +1607,7 @@ msgid ""
 "existence of a given extension prior to actually using it."
 msgstr ""
 "A proba «teño» fornece aos guións do Sieve unha forma de probar se existe "
-"unha extensión dada antes de utilizala realmente."
+"unha extensión dada antes de usala realmente."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmailboxexists.cpp:20
 #, kde-format
@@ -1676,7 +1675,7 @@ msgid ""
 "\"annotation-names\" argument exist for the specified mailbox."
 msgstr ""
 "A proba «Existen metadatos» resulta verdadeira se todas as anotacións "
-"enumeradas no argumento «annotation-names» existen na caixa de correo que se "
+"listadas no argumento «annotation-names» existen na caixa de correo que se "
 "indique."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:23
@@ -1684,6 +1683,7 @@ msgstr ""
 msgid "Server Meta Data"
 msgstr "Metadatos do servidor"
 
+# skip-rule: trasno-list
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:117
 #, kde-format
 msgid ""
@@ -1706,8 +1706,8 @@ msgid ""
 "The \"servermetadataexists\" test is true if all of the server annotations "
 "listed in the \"annotation-names\" argument exist."
 msgstr ""
-"A proba «Existen datos do servidor» é verdadeira de existiren todas as "
-"anotacións do servidor enumeradas no argumento «annotation-names»."
+"A proba «servermetadataexists» é verdadeira de existiren todas as anotacións "
+"do servidor listadas no argumento «annotation-names»."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionsize.cpp:20
 #, kde-format
@@ -1737,7 +1737,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:24
 #, kde-format
 msgid "Spam Test"
-msgstr "Proba de lixo"
+msgstr "Proba de correo lixo"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:37
 #, kde-format
@@ -1926,12 +1926,12 @@ msgstr "Copia agochada"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
 #, kde-format
 msgid "Resent From"
-msgstr "Enviar o formulario de novo"
+msgstr "Reenviar o formulario"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
 #, kde-format
 msgid "Resent To"
-msgstr "Enviar de novo a"
+msgstr "Reenviar a"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
 #, kde-format
@@ -2168,7 +2168,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:333
 #, kde-format
 msgid "We can not add more includes elements."
-msgstr "Non se poden engadir máis elementos «include»."
+msgstr "Non é posíbel engadir máis elementos «include»."
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:34
 #, kde-format
@@ -2403,7 +2403,7 @@ msgstr "Gardar o rexistro nun ficheiro"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
-msgstr "Pechar o separador"
+msgstr "Pechar a lapela"
 
 #: ksieveui/debug/sievedebugdialog.cpp:40
 #, kde-format
@@ -2431,7 +2431,7 @@ msgid ""
 "Unable to get the info\n"
 "\n"
 msgstr ""
-"Non se pode obter a información.\n"
+"Non é posíbel obter a información.\n"
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
@@ -2553,8 +2553,7 @@ msgid "You will overwrite script. Do you want to continue?"
 msgstr "Vai sobrescribir o guión? Quere continuar?"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:56
-#, fuzzy, kde-format
-#| msgid "Import Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Script"
 msgstr "Importar un guión"
@@ -2576,7 +2575,7 @@ msgid ""
 "Could not load the file %1:\n"
 "\"%2\" is the detailed error description."
 msgstr ""
-"Non se puido cargar o ficheiro %1:\n"
+"Non foi posíbel cargar o ficheiro %1:\n"
 "«%2» é a descrición detallada do erro."
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
@@ -2637,13 +2636,13 @@ msgstr "Ferramentas"
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
-msgstr "Pechar os outros separadores"
+msgstr "Pechar as outras lapelas"
 
 #: ksieveui/editor/sieveeditortabwidget.cpp:57
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Tabs"
-msgstr "Pechar todos os separadores"
+msgstr "Pechar todas as lapelas"
 
 #: ksieveui/editor/sieveeditortabwidget.cpp:161
 #, kde-format
@@ -2681,8 +2680,7 @@ msgid "Selected text is not a full sieve script"
 msgstr "O texto seleccionado non é un guión completo de Sieve"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:262
-#, fuzzy, kde-format
-#| msgid "Parsing error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "Erro de análise"
@@ -2731,7 +2729,7 @@ msgstr "Modo avanzado"
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Support"
-msgstr "Funcionalidades do servidor de Sieve"
+msgstr "Compatibilidade con servidores de Sieve"
 
 #: ksieveui/editor/sieveinfowidget.cpp:31
 #, kde-format
@@ -2785,7 +2783,7 @@ msgstr "Manter o modo gráfico"
 #: ksieveui/editor/warningwidget/sieveeditorwarning.cpp:17
 #, kde-format
 msgid "We cannot parse script. We cannot switch to graphical mode"
-msgstr "Non se pode procesar o guión. Non se pode pasar ao modo gráfico"
+msgstr "Non é posíbel procesar o guión. Non se pode pasar ao modo gráfico"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:37
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:40
@@ -2881,8 +2879,7 @@ msgstr "Desactivar"
 #: ksieveui/managesievescriptsdialog.cpp:171
 #: ksieveui/managesievescriptsdialog.cpp:260
 #: ksieveui/widgets/managesievewidget.cpp:512
-#, fuzzy, kde-format
-#| msgid "Sieve Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Produciuse un erro de Sieve"
@@ -2898,8 +2895,7 @@ msgid "The Sieve script was successfully uploaded."
 msgstr "Enviouse o guión de Sieve."
 
 #: ksieveui/managesievescriptsdialog.cpp:250
-#, fuzzy, kde-format
-#| msgid "Sieve Script Upload"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "Envío do guión de Sieve"
@@ -2911,7 +2907,7 @@ msgid ""
 "The server responded:\n"
 "%1"
 msgstr ""
-"Enviar o guión de Sieve fallou.\n"
+"Produciuse un erro ao enviar o guión de Sieve.\n"
 "O servidor respondeu:\n"
 "%1"
 
@@ -2990,7 +2986,7 @@ msgstr "O guión aínda contén un método de depuración. Retíreo."
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
 #, kde-format
 msgid "Clear"
-msgstr "Borrar"
+msgstr "Baleirar"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:38
 #, kde-format
@@ -3041,11 +3037,11 @@ msgstr "Encamiñar a mensaxe"
 msgid "Forward Message and add copy"
 msgstr "Encamiñar a mensaxe e engadir unha copia"
 
-# skip-rule: en-post
+# skip-rule: proposta-en-post
 #: ksieveui/templates/sievedefaulttemplate.cpp:66
 #, kde-format
 msgid "Destroy mail posted by..."
-msgstr "Destruír o correo enviado por…"
+msgstr "Destruír o correo de…"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:79
 #, kde-format
@@ -3108,7 +3104,7 @@ msgid ""
 msgstr ""
 "A funcionalidade de KMail Resposta En Ausencia repousa no filtrado por parte "
 "do servidor. Vostede non configurou aínda o servidor de IMAP para isto. "
-"Pódeo facer no separador «Filtrado» da configuración de conta de IMAP."
+"Pódeo facer na lapela «Filtrado» da configuración de conta de IMAP."
 
 #: ksieveui/vacation/vacationeditwidget.cpp:47
 #, kde-format
@@ -3178,8 +3174,7 @@ msgstr ""
 "Quérea editar?"
 
 #: ksieveui/vacation/vacationmanager.cpp:57
-#, fuzzy, kde-format
-#| msgid "Out-of-office reply still active"
+#, kde-format
 msgctxt "@title:window"
 msgid "Out-of-office reply still active"
 msgstr "A resposta para fóra da oficina aínda está activa"
@@ -3298,8 +3293,7 @@ msgid "Really delete script \"%1\" from the server?"
 msgstr "Quere realmente eliminar o guión «%1» do servidor?"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
-#, fuzzy, kde-format
-#| msgid "Delete Sieve Script Confirmation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "Confirmación de eliminación do guión de Sieve"
@@ -3311,14 +3305,14 @@ msgid ""
 "The server responded:\n"
 "%1"
 msgstr ""
-"Eliminar o guión fallou.\n"
+"Produciuse un erro ao eliminar o guión.\n"
 "O servidor respondeu:\n"
 "%1"
 
 #: ksieveui/widgets/managesievewidget.cpp:561
 #, kde-format
 msgid "Failed to fetch the list of scripts"
-msgstr "Non se puido obter a lista de guións"
+msgstr "Non foi posíbel obter a lista de guións"
 
 #: ksieveui/widgets/moveimapfolderwidget.cpp:24
 #, kde-format
