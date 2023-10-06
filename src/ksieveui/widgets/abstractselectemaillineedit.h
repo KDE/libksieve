@@ -23,9 +23,9 @@ public:
     virtual void setText(const QString &str) = 0;
     virtual QString text() const = 0;
 
-    Q_REQUIRED_RESULT bool multiSelection() const;
+    [[nodiscard]] bool multiSelection() const;
     void setMultiSelection(bool multiSelection);
-    Q_REQUIRED_RESULT virtual bool isValid() const = 0;
+    [[nodiscard]] virtual bool isValid() const = 0;
 
 Q_SIGNALS:
     void valueChanged();

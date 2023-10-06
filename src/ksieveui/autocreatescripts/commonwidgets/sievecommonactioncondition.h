@@ -24,34 +24,34 @@ public:
                                         QObject *parent = nullptr);
     ~SieveCommonActionCondition() override;
 
-    Q_REQUIRED_RESULT QString name() const;
-    Q_REQUIRED_RESULT QString label() const;
+    [[nodiscard]] QString name() const;
+    [[nodiscard]] QString label() const;
 
-    Q_REQUIRED_RESULT virtual QString code(QWidget *parent) const;
+    [[nodiscard]] virtual QString code(QWidget *parent) const;
 
-    Q_REQUIRED_RESULT virtual QStringList needRequires(QWidget *parent) const;
+    [[nodiscard]] virtual QStringList needRequires(QWidget *parent) const;
 
-    Q_REQUIRED_RESULT virtual bool needCheckIfServerHasCapability() const;
+    [[nodiscard]] virtual bool needCheckIfServerHasCapability() const;
 
-    Q_REQUIRED_RESULT virtual QString serverNeedsCapability() const;
+    [[nodiscard]] virtual QString serverNeedsCapability() const;
 
-    Q_REQUIRED_RESULT virtual QString help() const;
-    Q_REQUIRED_RESULT virtual QUrl href() const;
+    [[nodiscard]] virtual QString help() const;
+    [[nodiscard]] virtual QUrl href() const;
 
     virtual void unknownTagValue(const QString &tagValue, QString &error);
     virtual void unknownTag(const QStringView &tag, QString &error);
     virtual void tooManyArguments(const QStringView &tagName, int index, int maxValue, QString &error);
     virtual void serverDoesNotSupportFeatures(const QString &feature, QString &error);
 
-    Q_REQUIRED_RESULT QString comment() const;
+    [[nodiscard]] QString comment() const;
 
     void setComment(const QString &comment);
 
     virtual QWidget *createParamWidget(QWidget *parent) const;
 
 protected:
-    Q_REQUIRED_RESULT KSieveCore::SieveImapAccountSettings sieveImapAccountSettings() const;
-    Q_REQUIRED_RESULT QStringList sieveCapabilities() const;
+    [[nodiscard]] KSieveCore::SieveImapAccountSettings sieveImapAccountSettings() const;
+    [[nodiscard]] QStringList sieveCapabilities() const;
     SieveEditorGraphicalModeWidget *const mSieveGraphicalModeWidget;
 
 Q_SIGNALS:

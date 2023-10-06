@@ -19,7 +19,7 @@ public:
     ~SelectFlagsListWidget() override;
 
     void setFlags(const QStringList &list);
-    Q_REQUIRED_RESULT QStringList flags() const;
+    [[nodiscard]] QStringList flags() const;
 
 private:
     enum Type { FlagsRealName = Qt::UserRole + 1 };
@@ -34,7 +34,7 @@ public:
     ~SelectFlagsListDialog() override;
 
     void setFlags(const QStringList &list);
-    Q_REQUIRED_RESULT QStringList flags() const;
+    [[nodiscard]] QStringList flags() const;
 
 private:
     void readConfig();
@@ -49,7 +49,7 @@ public:
     explicit SelectFlagsWidget(QWidget *parent = nullptr);
     ~SelectFlagsWidget() override;
 
-    Q_REQUIRED_RESULT QString code() const;
+    [[nodiscard]] QString code() const;
     void setFlags(const QStringList &flags);
 
 Q_SIGNALS:

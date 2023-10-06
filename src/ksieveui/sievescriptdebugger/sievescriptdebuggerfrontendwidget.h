@@ -28,11 +28,11 @@ public:
     explicit SieveScriptDebuggerFrontEndWidget(QWidget *parent = nullptr);
     ~SieveScriptDebuggerFrontEndWidget() override;
 
-    Q_REQUIRED_RESULT QString script() const;
+    [[nodiscard]] QString script() const;
     void setScript(const QString &script);
-    Q_REQUIRED_RESULT bool canAccept() const;
+    [[nodiscard]] bool canAccept() const;
 
-    Q_REQUIRED_RESULT QList<int> splitterSizes() const;
+    [[nodiscard]] QList<int> splitterSizes() const;
     void setSplitterSizes(const QList<int> &sizes);
 
 Q_SIGNALS:

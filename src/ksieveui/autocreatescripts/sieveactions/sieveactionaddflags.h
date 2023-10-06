@@ -14,8 +14,8 @@ class SieveActionAddFlags : public SieveActionAbstractFlags
     Q_OBJECT
 public:
     explicit SieveActionAddFlags(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
-    Q_REQUIRED_RESULT QString flagsCode() const override;
-    Q_REQUIRED_RESULT QString help() const override;
-    Q_REQUIRED_RESULT QUrl href() const override;
+    [[nodiscard]] QString flagsCode() const override;
+    [[nodiscard]] QString help() const override;
+    [[nodiscard]] QUrl href() const override;
 };
 }

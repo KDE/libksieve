@@ -30,27 +30,27 @@ public:
     enum AuthenticationMode { ClearText = 0, Login, Plain, CramMD5, DigestMD5, NTLM, GSSAPI, Anonymous, XOAuth2 };
     SieveImapAccountSettings();
 
-    Q_REQUIRED_RESULT QString identifier() const;
+    [[nodiscard]] QString identifier() const;
 
     void setServerName(const QString &serverName);
-    Q_REQUIRED_RESULT QString serverName() const;
+    [[nodiscard]] QString serverName() const;
 
     void setPort(int port);
-    Q_REQUIRED_RESULT int port() const;
+    [[nodiscard]] int port() const;
 
     void setUserName(const QString &userName);
-    Q_REQUIRED_RESULT QString userName() const;
+    [[nodiscard]] QString userName() const;
 
     void setPassword(const QString &password);
-    Q_REQUIRED_RESULT QString password() const;
+    [[nodiscard]] QString password() const;
 
     void setAuthenticationType(KSieveCore::SieveImapAccountSettings::AuthenticationMode type);
-    Q_REQUIRED_RESULT AuthenticationMode authenticationType() const;
-    Q_REQUIRED_RESULT bool operator==(const SieveImapAccountSettings &other) const;
+    [[nodiscard]] AuthenticationMode authenticationType() const;
+    [[nodiscard]] bool operator==(const SieveImapAccountSettings &other) const;
 
-    Q_REQUIRED_RESULT bool isValid() const;
+    [[nodiscard]] bool isValid() const;
 
-    Q_REQUIRED_RESULT SieveImapAccountSettings::EncryptionMode encryptionMode() const;
+    [[nodiscard]] SieveImapAccountSettings::EncryptionMode encryptionMode() const;
     void setEncryptionMode(EncryptionMode encryptionMode);
 
 private:

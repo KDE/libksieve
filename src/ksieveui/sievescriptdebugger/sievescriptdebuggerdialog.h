@@ -21,7 +21,7 @@ public:
     ~SieveScriptDebuggerDialog() override;
 
     void setScript(const QString &script);
-    Q_REQUIRED_RESULT QString script() const;
+    [[nodiscard]] QString script() const;
 
 private:
     void slotScriptTextChanged();

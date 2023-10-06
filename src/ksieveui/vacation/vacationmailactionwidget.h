@@ -28,7 +28,7 @@ public:
     void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account);
     void mailActionChanged(KSieveCore::VacationUtils::MailAction action);
 
-    Q_REQUIRED_RESULT QString mailActionRecipient(bool &valid) const;
+    [[nodiscard]] QString mailActionRecipient(bool &valid) const;
     void setMailAction(KSieveCore::VacationUtils::MailAction action, const QString &recipient);
 
 Q_SIGNALS:

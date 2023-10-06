@@ -30,7 +30,7 @@ public:
     explicit MultiImapVacationDialog(KSieveCore::MultiImapVacationManager *manager, QWidget *parent = nullptr);
     ~MultiImapVacationDialog() override;
 
-    Q_REQUIRED_RESULT QList<KSieveCore::VacationCreateScriptJob *> listCreateJob() const;
+    [[nodiscard]] QList<KSieveCore::VacationCreateScriptJob *> listCreateJob() const;
 
     void switchToServerNamePage(const QString &serverName);
     void reject() override;

@@ -14,8 +14,8 @@ class SieveActionStop : public SieveAction
     Q_OBJECT
 public:
     explicit SieveActionStop(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
-    Q_REQUIRED_RESULT QString code(QWidget *) const override;
-    Q_REQUIRED_RESULT QString help() const override;
-    Q_REQUIRED_RESULT QUrl href() const override;
+    [[nodiscard]] QString code(QWidget *) const override;
+    [[nodiscard]] QString help() const override;
+    [[nodiscard]] QUrl href() const override;
 };
 }

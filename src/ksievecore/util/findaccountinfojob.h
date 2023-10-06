@@ -23,16 +23,16 @@ public:
 
     void start();
 
-    Q_REQUIRED_RESULT QString identifier() const;
+    [[nodiscard]] QString identifier() const;
     void setIdentifier(const QString &newIdentifier);
 
-    Q_REQUIRED_RESULT bool withVacationFileName() const;
+    [[nodiscard]] bool withVacationFileName() const;
     void setWithVacationFileName(bool newWithVacationFileName);
 
     SieveImapPasswordProvider *provider() const;
     void setProvider(SieveImapPasswordProvider *newProvider);
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
     void setCustomImapSettingsInterface(KSieveCore::AbstractAkonadiImapSettingInterface *newCustomImapSettingsInterface);
 

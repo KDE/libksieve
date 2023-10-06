@@ -38,10 +38,10 @@ public:
 
     void generatedScript(QString &script);
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
-    Q_REQUIRED_RESULT bool isInitialized() const;
+    [[nodiscard]] bool isInitialized() const;
     void loadScript(QXmlStreamReader &element, QString &error);
     void setVariableValue(const QString &name);
-    Q_REQUIRED_RESULT QString variableName() const;
+    [[nodiscard]] QString variableName() const;
 
     void clear();
 private Q_SLOTS:

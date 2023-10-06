@@ -15,12 +15,12 @@ class SieveConditionHeader : public SieveCondition
 public:
     explicit SieveConditionHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
 
-    Q_REQUIRED_RESULT QWidget *createParamWidget(QWidget *parent) const override;
+    [[nodiscard]] QWidget *createParamWidget(QWidget *parent) const override;
 
-    Q_REQUIRED_RESULT QString code(QWidget *parent) const override;
+    [[nodiscard]] QString code(QWidget *parent) const override;
 
-    Q_REQUIRED_RESULT QString help() const override;
-    Q_REQUIRED_RESULT QStringList needRequires(QWidget *parent) const override;
+    [[nodiscard]] QString help() const override;
+    [[nodiscard]] QStringList needRequires(QWidget *parent) const override;
 
     void setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, bool notCondition, QString &error) override;
 };

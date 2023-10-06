@@ -60,51 +60,51 @@ public:
     void enableDomainAndSendForSpam(bool enable = true);
     void enableDates(bool enable = true);
 
-    Q_REQUIRED_RESULT bool activateVacation() const;
+    [[nodiscard]] bool activateVacation() const;
     void setActivateVacation(bool activate);
 
-    Q_REQUIRED_RESULT bool domainCheck() const;
+    [[nodiscard]] bool domainCheck() const;
     void setDomainCheck(bool check);
 
-    Q_REQUIRED_RESULT QString messageText() const;
+    [[nodiscard]] QString messageText() const;
     void setMessageText(const QString &text);
 
-    Q_REQUIRED_RESULT int notificationInterval() const;
+    [[nodiscard]] int notificationInterval() const;
     void setNotificationInterval(int days);
 
-    Q_REQUIRED_RESULT KMime::Types::AddrSpecList mailAliases(bool &ok) const;
+    [[nodiscard]] KMime::Types::AddrSpecList mailAliases(bool &ok) const;
     void setMailAliases(const KMime::Types::AddrSpecList &aliases);
     void setMailAliases(const QString &aliases);
 
-    Q_REQUIRED_RESULT QString domainName() const;
+    [[nodiscard]] QString domainName() const;
     void setDomainName(const QString &domain);
 
-    Q_REQUIRED_RESULT QString subject() const;
+    [[nodiscard]] QString subject() const;
     void setSubject(const QString &subject);
 
-    Q_REQUIRED_RESULT bool sendForSpam() const;
+    [[nodiscard]] bool sendForSpam() const;
     void setSendForSpam(bool enable);
 
-    Q_REQUIRED_RESULT QDate startDate() const;
+    [[nodiscard]] QDate startDate() const;
     void setStartDate(QDate startDate);
 
-    Q_REQUIRED_RESULT QTime startTime() const;
+    [[nodiscard]] QTime startTime() const;
     void setStartTime(QTime startTime);
 
-    Q_REQUIRED_RESULT QDate endDate() const;
+    [[nodiscard]] QDate endDate() const;
     void setEndDate(QDate endDate);
 
-    Q_REQUIRED_RESULT QTime endTime() const;
+    [[nodiscard]] QTime endTime() const;
     void setEndTime(QTime endTime);
 
-    Q_REQUIRED_RESULT KSieveCore::VacationUtils::MailAction mailAction() const;
-    Q_REQUIRED_RESULT QString mailActionRecipient(bool &valid) const;
+    [[nodiscard]] KSieveCore::VacationUtils::MailAction mailAction() const;
+    [[nodiscard]] QString mailActionRecipient(bool &valid) const;
     void setMailAction(KSieveCore::VacationUtils::MailAction action, const QString &recipient);
     void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account);
 
     void setDefault();
 
-    Q_REQUIRED_RESULT bool changed() const;
+    [[nodiscard]] bool changed() const;
     void setChanged(bool changed);
 
 private Q_SLOTS:

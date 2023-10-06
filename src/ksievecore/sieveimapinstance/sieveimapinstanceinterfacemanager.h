@@ -25,7 +25,7 @@ public:
     static SieveImapInstanceInterfaceManager *self();
     void setSieveImapInstanceInterface(SieveImapInstanceInterface *interface);
     SieveImapInstanceInterface *sieveImapInstanceInterface() const;
-    Q_REQUIRED_RESULT QList<KSieveCore::SieveImapInstance> sieveImapInstanceList() const;
+    [[nodiscard]] QList<KSieveCore::SieveImapInstance> sieveImapInstanceList() const;
 
 private:
     SieveImapInstanceInterface *mInterface = nullptr;

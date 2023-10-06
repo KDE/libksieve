@@ -16,7 +16,7 @@ public:
     explicit SelectConvertParameterWidget(QWidget *parent = nullptr);
     ~SelectConvertParameterWidget() override;
 
-    Q_REQUIRED_RESULT QString code() const;
+    [[nodiscard]] QString code() const;
     void setCode(const QStringList &code, QString &error);
 
 Q_SIGNALS:

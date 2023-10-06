@@ -27,10 +27,10 @@ public:
     void setKep14Support(bool kep14Support);
     void start();
     void kill();
-    Q_REQUIRED_RESULT bool noScriptFound() const;
-    Q_REQUIRED_RESULT QString script() const;
-    Q_REQUIRED_RESULT QStringList sieveCapabilities() const;
-    Q_REQUIRED_RESULT QString serverName() const;
+    [[nodiscard]] bool noScriptFound() const;
+    [[nodiscard]] QString script() const;
+    [[nodiscard]] QStringList sieveCapabilities() const;
+    [[nodiscard]] QString serverName() const;
 
 Q_SIGNALS:
     void vacationScriptActive(KSieveCore::VacationCheckJob *job, const QString &sscriptName, bool active);
@@ -45,7 +45,7 @@ private Q_SLOTS:
     void getNextScript();
 
 private:
-    Q_REQUIRED_RESULT bool isLastScript() const;
+    [[nodiscard]] bool isLastScript() const;
     Q_DISABLE_COPY(VacationCheckJob)
     QStringList mAvailableScripts;
     QStringList mActiveScripts;

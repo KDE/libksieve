@@ -15,7 +15,7 @@ public:
     explicit SelectAddHeaderPositionCombobox(QWidget *parent = nullptr);
     ~SelectAddHeaderPositionCombobox() override;
 
-    Q_REQUIRED_RESULT QString code() const;
+    [[nodiscard]] QString code() const;
     void setCode(const QString &code, const QString &name, QString &error);
 
 Q_SIGNALS:

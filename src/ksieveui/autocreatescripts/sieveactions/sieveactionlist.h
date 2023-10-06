@@ -13,6 +13,6 @@ class SieveAction;
 class SieveEditorGraphicalModeWidget;
 namespace SieveActionList
 {
-Q_REQUIRED_RESULT QList<KSieveUi::SieveAction *> actionList(KSieveUi::SieveEditorGraphicalModeWidget *graphicalModeWidget);
+[[nodiscard]] QList<KSieveUi::SieveAction *> actionList(KSieveUi::SieveEditorGraphicalModeWidget *graphicalModeWidget);
 }
 }

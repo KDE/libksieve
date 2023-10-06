@@ -24,18 +24,18 @@ public:
     explicit SieveEditorGraphicalModeWidget(QWidget *parent = nullptr);
     ~SieveEditorGraphicalModeWidget() override;
 
-    Q_REQUIRED_RESULT QString script(QStringList &required) const override;
+    [[nodiscard]] QString script(QStringList &required) const override;
 
     void setSieveCapabilities(const QStringList &capabilities) override;
-    Q_REQUIRED_RESULT QStringList sieveCapabilities() override;
+    [[nodiscard]] QStringList sieveCapabilities() override;
 
     void loadScript(const QString &doc, QString &error) override;
 
-    Q_REQUIRED_RESULT QString currentscript() override;
+    [[nodiscard]] QString currentscript() override;
     void setImportScript(const QString &) override;
 
     void setListOfIncludeFile(const QStringList &listOfIncludeFile) override;
-    Q_REQUIRED_RESULT QStringList listOfIncludeFile() const override;
+    [[nodiscard]] QStringList listOfIncludeFile() const override;
 
 Q_SIGNALS:
     void enableButtonOk(bool);

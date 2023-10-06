@@ -43,22 +43,21 @@ KSIEVECORE_EXPORT QDebug operator<<(QDebug d, const Util::AccountInfo &info);
 /**
  * Returns the list of configured IMAP agent instances.
  */
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT QList<KSieveCore::SieveImapInstance> sieveImapInstances();
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT QStringList sieveImapResourceNames();
+[[nodiscard]] KSIEVECORE_EXPORT QList<KSieveCore::SieveImapInstance> sieveImapInstances();
+[[nodiscard]] KSIEVECORE_EXPORT QStringList sieveImapResourceNames();
 
 /**
  * Checks if a server has KEP:14 support
  */
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT bool
-hasKep14Support(const QStringList &sieveCapabilities, const QStringList &availableScripts, const QString &activeScript);
+[[nodiscard]] KSIEVECORE_EXPORT bool hasKep14Support(const QStringList &sieveCapabilities, const QStringList &availableScripts, const QString &activeScript);
 
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT bool hasKep14CapabilitySupport(const QStringList &sieveCapabilities);
+[[nodiscard]] KSIEVECORE_EXPORT bool hasKep14CapabilitySupport(const QStringList &sieveCapabilities);
 
 /**
  * Is the given scriptName a protected KEP:14 name, that a normal user should not touch directly.
  * it tests against MASTER, USER and MANAGEMENT script
  */
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT bool isKep14ProtectedName(const QString &scriptName);
+[[nodiscard]] KSIEVECORE_EXPORT bool isKep14ProtectedName(const QString &scriptName);
 }
 }
 

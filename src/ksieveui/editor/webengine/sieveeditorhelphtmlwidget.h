@@ -27,16 +27,16 @@ public:
     ~SieveEditorHelpHtmlWidget() override;
 
     void openUrl(const QUrl &currentUrl);
-    Q_REQUIRED_RESULT QString title() const;
+    [[nodiscard]] QString title() const;
 
-    Q_REQUIRED_RESULT QUrl currentUrl() const;
+    [[nodiscard]] QUrl currentUrl() const;
 
     void resetZoom();
     void zoomOut();
     void zoomIn();
     void copy();
 
-    Q_REQUIRED_RESULT bool hasSelection() const;
+    [[nodiscard]] bool hasSelection() const;
     void selectAll();
 
     void find();

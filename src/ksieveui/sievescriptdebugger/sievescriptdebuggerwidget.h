@@ -25,14 +25,14 @@ public:
     ~SieveScriptDebuggerWidget() override;
 
     void setScript(const QString &script);
-    Q_REQUIRED_RESULT QString script() const;
+    [[nodiscard]] QString script() const;
 
-    Q_REQUIRED_RESULT bool canAccept() const;
+    [[nodiscard]] bool canAccept() const;
 
-    Q_REQUIRED_RESULT QList<int> splitterSizes() const;
+    [[nodiscard]] QList<int> splitterSizes() const;
     void setSplitterSizes(const QList<int> &sizes);
 
-    Q_REQUIRED_RESULT bool haveDebugApps() const;
+    [[nodiscard]] bool haveDebugApps() const;
 
 Q_SIGNALS:
     void scriptTextChanged();

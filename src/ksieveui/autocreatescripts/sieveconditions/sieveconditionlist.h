@@ -13,6 +13,6 @@ class SieveCondition;
 class SieveEditorGraphicalModeWidget;
 namespace SieveConditionList
 {
-Q_REQUIRED_RESULT QList<KSieveUi::SieveCondition *> conditionList(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget);
+[[nodiscard]] QList<KSieveUi::SieveCondition *> conditionList(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget);
 }
 }

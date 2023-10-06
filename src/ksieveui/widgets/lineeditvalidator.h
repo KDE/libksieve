@@ -18,7 +18,7 @@ public:
     explicit LineEditValidator(QWidget *parent = nullptr);
     ~LineEditValidator() override;
 
-    Q_REQUIRED_RESULT bool setRegularExpressionPattern(const QString &pattern);
+    [[nodiscard]] bool setRegularExpressionPattern(const QString &pattern);
 
 private:
     void initialize();

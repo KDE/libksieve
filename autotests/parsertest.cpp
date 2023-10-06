@@ -436,7 +436,7 @@ public:
 
     ~VerifyingScriptBuilder() override = default;
 
-    Q_REQUIRED_RESULT bool ok() const
+    [[nodiscard]] bool ok() const
     {
         return mOk;
     }
@@ -571,7 +571,7 @@ public:
 
 private:
     Q_DISABLE_COPY(VerifyingScriptBuilder)
-    Q_REQUIRED_RESULT const TestCase::Response &currentResponse() const
+    [[nodiscard]] const TestCase::Response &currentResponse() const
     {
         assert(mNextResponse <= MAX_RESPONSES);
         return mTestCase.responses[mNextResponse];

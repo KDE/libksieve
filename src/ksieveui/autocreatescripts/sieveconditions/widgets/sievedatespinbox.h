@@ -22,7 +22,7 @@ public:
     void setRange(int minValue, int maxValue);
 
     void setCode(const QString &value);
-    Q_REQUIRED_RESULT QString code() const;
+    [[nodiscard]] QString code() const;
 
 private:
     QString convertValue() const;

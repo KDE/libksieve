@@ -46,7 +46,7 @@ public:
     void killJob(SieveJob *job, KJob::KillVerbosity verbosity);
     void sendData(const QByteArray &data);
 
-    Q_REQUIRED_RESULT QStringList sieveExtensions() const;
+    [[nodiscard]] QStringList sieveExtensions() const;
 
     /**
      * @return true if we are not connected nor currently connecting, i.e. it's ok to call connectToHost()
@@ -54,15 +54,15 @@ public:
     bool disconnected() const;
 
 private:
-    Q_REQUIRED_RESULT bool requestCapabilitiesAfterStartTls() const;
+    [[nodiscard]] bool requestCapabilitiesAfterStartTls() const;
 
-    Q_REQUIRED_RESULT QStringList requestedSaslMethod() const;
-    Q_REQUIRED_RESULT bool allowUnencrypted() const;
+    [[nodiscard]] QStringList requestedSaslMethod() const;
+    [[nodiscard]] bool allowUnencrypted() const;
 
 private Q_SLOTS:
     void setErrorMessage(int error, const QString &msg);
     void processResponse(const KManageSieve::Response &response, const QByteArray &data);
-    Q_REQUIRED_RESULT KManageSieve::AuthDetails requestAuthDetails(const QUrl &url);
+    [[nodiscard]] KManageSieve::AuthDetails requestAuthDetails(const QUrl &url);
     void authenticationDone();
     void sslError(const KSslErrorUiData &data);
     void sslDone();

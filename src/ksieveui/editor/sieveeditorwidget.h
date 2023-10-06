@@ -33,8 +33,8 @@ public:
     enum EditorMode { Unknown = -1, TextMode = 0, GraphicMode = 1 };
 
     void setReadOnly(bool b);
-    Q_REQUIRED_RESULT QString script() const;
-    Q_REQUIRED_RESULT QString originalScript() const;
+    [[nodiscard]] QString script() const;
+    [[nodiscard]] QString originalScript() const;
     void setScript(const QString &script, bool clearUndoRedo = false);
     void setDebugScript(const QString &debug);
     void setScriptName(const QString &name);
@@ -50,13 +50,13 @@ public:
     void addNormalMessage(const QString &msg);
 
     void setModified(bool b);
-    Q_REQUIRED_RESULT bool isModified() const;
+    [[nodiscard]] bool isModified() const;
 
-    Q_REQUIRED_RESULT EditorMode mode() const;
+    [[nodiscard]] EditorMode mode() const;
 
-    Q_REQUIRED_RESULT bool isRedoAvailable() const;
-    Q_REQUIRED_RESULT bool isUndoAvailable() const;
-    Q_REQUIRED_RESULT bool hasSelection() const;
+    [[nodiscard]] bool isRedoAvailable() const;
+    [[nodiscard]] bool isUndoAvailable() const;
+    [[nodiscard]] bool hasSelection() const;
 
     void checkSpelling();
     void import();
@@ -66,8 +66,8 @@ public:
     void reverseCase();
     void zoomOut();
     void zoomIn();
-    Q_REQUIRED_RESULT QString currentHelpTitle() const;
-    Q_REQUIRED_RESULT QUrl currentHelpUrl() const;
+    [[nodiscard]] QString currentHelpTitle() const;
+    [[nodiscard]] QUrl currentHelpUrl() const;
     void openBookmarkUrl(const QUrl &url);
     void debugSieveScript();
     void zoomReset();

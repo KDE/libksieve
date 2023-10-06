@@ -17,7 +17,7 @@ public:
     explicit SelectRelationalMatchType(QWidget *parent = nullptr);
     ~SelectRelationalMatchType() override;
 
-    Q_REQUIRED_RESULT QString code() const;
+    [[nodiscard]] QString code() const;
     void setCode(const QString &type, const QString &comparatorStr, const QString &name, QString &error);
 
 Q_SIGNALS:

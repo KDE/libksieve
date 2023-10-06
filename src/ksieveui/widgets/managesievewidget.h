@@ -102,10 +102,10 @@ private:
     KSIEVEUI_NO_EXPORT bool serverHasError(QTreeWidgetItem *item) const;
     KSIEVEUI_NO_EXPORT void killAllJobs();
     KSIEVEUI_NO_EXPORT void clear();
-    Q_REQUIRED_RESULT KSIEVEUI_NO_EXPORT bool isFileNameItem(QTreeWidgetItem *item) const;
-    Q_REQUIRED_RESULT KSIEVEUI_NO_EXPORT bool itemIsActived(QTreeWidgetItem *item) const;
+    [[nodiscard]] KSIEVEUI_NO_EXPORT bool isFileNameItem(QTreeWidgetItem *item) const;
+    [[nodiscard]] KSIEVEUI_NO_EXPORT bool itemIsActived(QTreeWidgetItem *item) const;
     KSIEVEUI_NO_EXPORT void changeActiveScript(QTreeWidgetItem *item, bool activate, bool deleteScript = false);
-    Q_REQUIRED_RESULT KSIEVEUI_NO_EXPORT bool updateGlobalScript(QTreeWidgetItem *item, const QUrl &u);
+    [[nodiscard]] KSIEVEUI_NO_EXPORT bool updateGlobalScript(QTreeWidgetItem *item, const QUrl &u);
     KSIEVEUI_NO_EXPORT void slotGenerateGlobalScriptError(const QString &errorStr);
     std::unique_ptr<ManageSieveWidgetPrivate> const d;
 };

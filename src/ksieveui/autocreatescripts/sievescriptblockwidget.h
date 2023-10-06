@@ -35,7 +35,7 @@ public:
 
     void generatedScript(QString &script, QStringList &required, bool inForEveryPartLoop) override;
 
-    Q_REQUIRED_RESULT MatchCondition matchCondition() const;
+    [[nodiscard]] MatchCondition matchCondition() const;
 
     void loadScript(QXmlStreamReader &element, bool onlyActions, QString &error);
 

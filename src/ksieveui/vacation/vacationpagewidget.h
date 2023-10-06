@@ -32,7 +32,7 @@ public:
 
     void setServerUrl(const QUrl &url);
     void setServerName(const QString &serverName);
-    Q_REQUIRED_RESULT KSieveCore::VacationCreateScriptJob *writeScript(bool &errorFound);
+    [[nodiscard]] KSieveCore::VacationCreateScriptJob *writeScript(bool &errorFound);
     void setDefault();
     void setVacationManager(KSieveCore::MultiImapVacationManager *vacationManager);
     void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account);

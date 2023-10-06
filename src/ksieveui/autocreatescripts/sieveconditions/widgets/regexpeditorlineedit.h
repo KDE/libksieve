@@ -21,7 +21,7 @@ public:
 
     void switchToRegexpEditorLineEdit(bool regexpEditor) override;
     void setCode(const QString &str) override;
-    Q_REQUIRED_RESULT QString code() const override;
+    [[nodiscard]] QString code() const override;
     void setClearButtonEnabled(bool b) override;
     void setPlaceholderText(const QString &str) override;
 

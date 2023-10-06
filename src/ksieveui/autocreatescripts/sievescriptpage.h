@@ -27,11 +27,11 @@ public:
 
     void generatedScript(QString &script, QStringList &required);
 
-    Q_REQUIRED_RESULT SieveIncludeWidget *includeWidget() const;
-    Q_REQUIRED_RESULT SieveForEveryPartWidget *forEveryPartWidget() const;
-    Q_REQUIRED_RESULT SieveGlobalVariableWidget *globalVariableWidget() const;
-    Q_REQUIRED_RESULT SieveScriptBlockWidget *blockIfWidget() const;
-    Q_REQUIRED_RESULT SieveScriptBlockWidget *addScriptBlock(KSieveUi::SieveWidgetPageAbstract::PageType type);
+    [[nodiscard]] SieveIncludeWidget *includeWidget() const;
+    [[nodiscard]] SieveForEveryPartWidget *forEveryPartWidget() const;
+    [[nodiscard]] SieveGlobalVariableWidget *globalVariableWidget() const;
+    [[nodiscard]] SieveScriptBlockWidget *blockIfWidget() const;
+    [[nodiscard]] SieveScriptBlockWidget *addScriptBlock(KSieveUi::SieveWidgetPageAbstract::PageType type);
 
     void setListOfIncludeFile(const QStringList &lst);
 
@@ -43,9 +43,9 @@ private Q_SLOTS:
     void slotCloseTab(int);
 
 private:
-    Q_REQUIRED_RESULT SieveScriptBlockWidget *createScriptBlock(KSieveUi::SieveWidgetPageAbstract::PageType type);
-    Q_REQUIRED_RESULT bool hasAnElseBlock() const;
-    Q_REQUIRED_RESULT QString blockName(SieveWidgetPageAbstract::PageType type) const;
+    [[nodiscard]] SieveScriptBlockWidget *createScriptBlock(KSieveUi::SieveWidgetPageAbstract::PageType type);
+    [[nodiscard]] bool hasAnElseBlock() const;
+    [[nodiscard]] QString blockName(SieveWidgetPageAbstract::PageType type) const;
 
     SieveEditorGraphicalModeWidget *const mSieveGraphicalModeWidget;
     SieveScriptTabWidget *mTabWidget = nullptr;

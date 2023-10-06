@@ -33,7 +33,7 @@ public:
     void setIsActive(bool active);
     void setNewName(const QString &newName);
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
     void start();
 

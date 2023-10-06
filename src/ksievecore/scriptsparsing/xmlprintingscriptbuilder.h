@@ -39,9 +39,9 @@ public:
     void error(const KSieve::Error &error) override;
     void finished() override;
 
-    Q_REQUIRED_RESULT QString result() const;
-    Q_REQUIRED_RESULT QString error() const;
-    Q_REQUIRED_RESULT bool hasError() const;
+    [[nodiscard]] QString result() const;
+    [[nodiscard]] QString error() const;
+    [[nodiscard]] bool hasError() const;
 
     void clear();
 

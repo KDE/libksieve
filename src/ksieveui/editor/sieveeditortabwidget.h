@@ -22,8 +22,8 @@ public:
     explicit SieveEditorTabWidget(QWidget *parent = nullptr);
     ~SieveEditorTabWidget() override;
 
-    Q_REQUIRED_RESULT QUrl currentHelpUrl() const;
-    Q_REQUIRED_RESULT QString currentHelpTitle() const;
+    [[nodiscard]] QUrl currentHelpUrl() const;
+    [[nodiscard]] QString currentHelpTitle() const;
     bool currentPageIsHtmlPage() const;
 
 public Q_SLOTS:

@@ -22,7 +22,7 @@ public:
     ~SieveScriptDescriptionDialog() override;
 
     void setDescription(const QString &desc);
-    Q_REQUIRED_RESULT QString description() const;
+    [[nodiscard]] QString description() const;
 
 private:
     void readConfig();

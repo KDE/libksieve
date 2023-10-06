@@ -15,19 +15,19 @@ class KSIEVECORE_TESTS_EXPORT AbstractAkonadiImapSettingInterface
 public:
     AbstractAkonadiImapSettingInterface();
     virtual ~AbstractAkonadiImapSettingInterface();
-    Q_REQUIRED_RESULT virtual bool sieveSupport() const;
-    Q_REQUIRED_RESULT virtual bool sieveReuseConfig() const;
-    Q_REQUIRED_RESULT virtual QString imapServer() const;
-    Q_REQUIRED_RESULT virtual QString userName() const;
-    Q_REQUIRED_RESULT virtual int sievePort() const;
-    Q_REQUIRED_RESULT virtual QString sieveCustomUsername() const;
-    Q_REQUIRED_RESULT virtual QString sieveCustomAuthentification() const;
-    Q_REQUIRED_RESULT virtual QString sieveVacationFilename() const;
-    Q_REQUIRED_RESULT virtual QString safety() const;
-    Q_REQUIRED_RESULT virtual int alternateAuthentication() const;
-    Q_REQUIRED_RESULT virtual int authentication() const;
-    Q_REQUIRED_RESULT virtual QString sieveAlternateUrl() const;
-    Q_REQUIRED_RESULT virtual int imapPort() const;
+    [[nodiscard]] virtual bool sieveSupport() const;
+    [[nodiscard]] virtual bool sieveReuseConfig() const;
+    [[nodiscard]] virtual QString imapServer() const;
+    [[nodiscard]] virtual QString userName() const;
+    [[nodiscard]] virtual int sievePort() const;
+    [[nodiscard]] virtual QString sieveCustomUsername() const;
+    [[nodiscard]] virtual QString sieveCustomAuthentification() const;
+    [[nodiscard]] virtual QString sieveVacationFilename() const;
+    [[nodiscard]] virtual QString safety() const;
+    [[nodiscard]] virtual int alternateAuthentication() const;
+    [[nodiscard]] virtual int authentication() const;
+    [[nodiscard]] virtual QString sieveAlternateUrl() const;
+    [[nodiscard]] virtual int imapPort() const;
 
 private:
     Q_DISABLE_COPY(AbstractAkonadiImapSettingInterface)

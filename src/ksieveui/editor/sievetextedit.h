@@ -26,7 +26,7 @@ public:
     ~SieveTextEdit() override;
 
     void lineNumberAreaPaintEvent(QPaintEvent *event);
-    Q_REQUIRED_RESULT int lineNumberAreaWidth() const;
+    [[nodiscard]] int lineNumberAreaWidth() const;
 
     void setSieveCapabilities(const QStringList &capabilities);
 
@@ -39,7 +39,7 @@ public:
     void sentenceCase();
     void reverseCase();
     void setWordWrap(bool state);
-    Q_REQUIRED_RESULT bool isWordWrap() const;
+    [[nodiscard]] bool isWordWrap() const;
 
 protected:
     void initCompleter();
@@ -62,11 +62,11 @@ private:
     KSIEVEUI_NO_EXPORT void slotUpdateLineNumberArea(const QRect &, int);
     KSIEVEUI_NO_EXPORT void slotHelp();
     KSIEVEUI_NO_EXPORT void slotEditRule();
-    Q_REQUIRED_RESULT KSIEVEUI_NO_EXPORT bool openVariableHelp();
+    [[nodiscard]] KSIEVEUI_NO_EXPORT bool openVariableHelp();
     KSIEVEUI_NO_EXPORT bool overrideShortcut(QKeyEvent *event);
-    Q_REQUIRED_RESULT KSIEVEUI_NO_EXPORT QStringList completerList() const;
+    [[nodiscard]] KSIEVEUI_NO_EXPORT QStringList completerList() const;
     KSIEVEUI_NO_EXPORT void setCompleterList(const QStringList &list);
-    Q_REQUIRED_RESULT KSIEVEUI_NO_EXPORT QString selectedWord(QPoint pos = QPoint()) const;
+    [[nodiscard]] KSIEVEUI_NO_EXPORT QString selectedWord(QPoint pos = QPoint()) const;
 
     std::unique_ptr<SieveTextEditPrivate> const d;
 };

@@ -24,7 +24,7 @@ public:
     ~CustomManageSieveWidget() override;
 
 protected:
-    Q_REQUIRED_RESULT bool refreshList() override;
+    [[nodiscard]] bool refreshList() override;
     void updateSieveSettings() override;
 
 private:

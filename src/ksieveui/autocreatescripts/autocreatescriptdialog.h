@@ -27,7 +27,7 @@ public:
     explicit AutoCreateScriptDialog(QWidget *parent = nullptr);
     ~AutoCreateScriptDialog() override;
 
-    Q_REQUIRED_RESULT QString script(QStringList &required) const;
+    [[nodiscard]] QString script(QStringList &required) const;
     void setSieveCapabilities(const QStringList &capabilities);
     void setListOfIncludeFile(const QStringList &listOfIncludeFile);
 

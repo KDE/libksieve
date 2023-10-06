@@ -18,9 +18,9 @@ public:
                                   const QString &label,
                                   QObject *parent = nullptr);
 
-    Q_REQUIRED_RESULT QStringList needRequires(QWidget *parent) const override;
+    [[nodiscard]] QStringList needRequires(QWidget *parent) const override;
 
-    Q_REQUIRED_RESULT bool needCheckIfServerHasCapability() const override;
+    [[nodiscard]] bool needCheckIfServerHasCapability() const override;
 
     QString serverNeedsCapability() const override;
 };

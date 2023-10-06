@@ -29,22 +29,22 @@ public:
         NotConfigured ///< The agent is lacking required configuration
     };
 
-    Q_REQUIRED_RESULT QString name() const;
+    [[nodiscard]] QString name() const;
     void setName(const QString &name);
 
-    Q_REQUIRED_RESULT QString identifier() const;
+    [[nodiscard]] QString identifier() const;
     void setIdentifier(const QString &identifier);
 
-    Q_REQUIRED_RESULT Status status() const;
+    [[nodiscard]] Status status() const;
     void setStatus(Status status);
 
-    Q_REQUIRED_RESULT QStringList mimeTypes() const;
+    [[nodiscard]] QStringList mimeTypes() const;
     void setMimeTypes(const QStringList &mimeTypes);
 
-    Q_REQUIRED_RESULT QStringList capabilities() const;
+    [[nodiscard]] QStringList capabilities() const;
     void setCapabilities(const QStringList &capabilities);
 
-    Q_REQUIRED_RESULT bool operator==(const SieveImapInstance &other) const;
+    [[nodiscard]] bool operator==(const SieveImapInstance &other) const;
 
 private:
     QStringList mMimeTypes;

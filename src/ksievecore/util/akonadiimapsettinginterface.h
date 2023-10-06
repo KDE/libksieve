@@ -17,19 +17,19 @@ public:
     AkonadiImapSettingInterface(std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> &interface);
     ~AkonadiImapSettingInterface() override;
 
-    Q_REQUIRED_RESULT bool sieveSupport() const override;
-    Q_REQUIRED_RESULT bool sieveReuseConfig() const override;
-    Q_REQUIRED_RESULT QString imapServer() const override;
-    Q_REQUIRED_RESULT QString userName() const override;
-    Q_REQUIRED_RESULT int sievePort() const override;
-    Q_REQUIRED_RESULT QString sieveCustomUsername() const override;
-    Q_REQUIRED_RESULT QString sieveCustomAuthentification() const override;
-    Q_REQUIRED_RESULT QString sieveVacationFilename() const override;
-    Q_REQUIRED_RESULT QString safety() const override;
-    Q_REQUIRED_RESULT int alternateAuthentication() const override;
-    Q_REQUIRED_RESULT int authentication() const override;
-    Q_REQUIRED_RESULT QString sieveAlternateUrl() const override;
-    Q_REQUIRED_RESULT int imapPort() const override;
+    [[nodiscard]] bool sieveSupport() const override;
+    [[nodiscard]] bool sieveReuseConfig() const override;
+    [[nodiscard]] QString imapServer() const override;
+    [[nodiscard]] QString userName() const override;
+    [[nodiscard]] int sievePort() const override;
+    [[nodiscard]] QString sieveCustomUsername() const override;
+    [[nodiscard]] QString sieveCustomAuthentification() const override;
+    [[nodiscard]] QString sieveVacationFilename() const override;
+    [[nodiscard]] QString safety() const override;
+    [[nodiscard]] int alternateAuthentication() const override;
+    [[nodiscard]] int authentication() const override;
+    [[nodiscard]] QString sieveAlternateUrl() const override;
+    [[nodiscard]] int imapPort() const override;
 
 private:
     std::unique_ptr<OrgKdeAkonadiImapSettingsInterface> mInterface;

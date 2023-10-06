@@ -25,6 +25,6 @@ public:
     void serverDoesNotSupportFeatures(const QString &feature, QString &error) override;
 
 protected:
-    Q_REQUIRED_RESULT QStringList listOfIncludeFile() const;
+    [[nodiscard]] QStringList listOfIncludeFile() const;
 };
 }

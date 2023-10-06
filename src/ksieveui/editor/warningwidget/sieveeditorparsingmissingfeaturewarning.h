@@ -19,7 +19,7 @@ public:
     ~SieveEditorParsingMissingFeatureWarning() override;
 
     void setErrors(const QString &initialScript, const QString &errors);
-    Q_REQUIRED_RESULT QString initialScript() const;
+    [[nodiscard]] QString initialScript() const;
 
 Q_SIGNALS:
     void switchToGraphicalMode();

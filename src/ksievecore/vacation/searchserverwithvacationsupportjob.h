@@ -21,7 +21,7 @@ public:
     ~SearchServerWithVacationSupportJob() override;
     void start();
 
-    Q_REQUIRED_RESULT bool canStart() const;
+    [[nodiscard]] bool canStart() const;
 
     KSieveCore::SieveImapPasswordProvider *passwordProvider() const;
     void setPasswordProvider(KSieveCore::SieveImapPasswordProvider *newProvider);

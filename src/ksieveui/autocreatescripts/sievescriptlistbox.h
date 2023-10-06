@@ -25,12 +25,12 @@ public:
     ~SieveScriptListItem() override;
 
     void setDescription(const QString &desc);
-    Q_REQUIRED_RESULT QString description() const;
+    [[nodiscard]] QString description() const;
 
-    Q_REQUIRED_RESULT SieveScriptPage *scriptPage() const;
+    [[nodiscard]] SieveScriptPage *scriptPage() const;
     void setScriptPage(SieveScriptPage *page);
 
-    Q_REQUIRED_RESULT QString generatedScript(QStringList &required) const;
+    [[nodiscard]] QString generatedScript(QStringList &required) const;
 
 private:
     QString mDescription;
@@ -45,7 +45,7 @@ public:
     ~SieveScriptListBox() override;
 
     void setSieveEditorGraphicalModeWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget);
-    Q_REQUIRED_RESULT QString generatedScript(QStringList &required) const;
+    [[nodiscard]] QString generatedScript(QStringList &required) const;
     void loadScript(const QString &doc, QString &error);
 
 Q_SIGNALS:
@@ -81,8 +81,8 @@ private:
 
     void loadBlock(QXmlStreamReader &n, SieveScriptPage *currentPage, ParseSieveScriptTypeBlock typeBlock, QString &error);
     void clear();
-    Q_REQUIRED_RESULT SieveScriptPage *createNewScript(const QString &newName, const QString &description = QString());
-    Q_REQUIRED_RESULT QString createUniqName();
+    [[nodiscard]] SieveScriptPage *createNewScript(const QString &newName, const QString &description = QString());
+    [[nodiscard]] QString createUniqName();
     SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
     QListWidget *const mSieveListScript;
     QPushButton *mBtnNew = nullptr;

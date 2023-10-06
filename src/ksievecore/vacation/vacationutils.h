@@ -22,20 +22,20 @@ enum MailAction {
     CopyTo,
 };
 
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT QString defaultMessageText();
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT QString defaultSubject();
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT MailAction defaultMailAction();
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT int defaultNotificationInterval();
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT KMime::Types::AddrSpecList defaultMailAliases();
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT bool defaultSendForSpam();
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT QString defaultDomainName();
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT QDate defaultStartDate();
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT QDate defaultEndDate();
+[[nodiscard]] KSIEVECORE_EXPORT QString defaultMessageText();
+[[nodiscard]] KSIEVECORE_EXPORT QString defaultSubject();
+[[nodiscard]] KSIEVECORE_EXPORT MailAction defaultMailAction();
+[[nodiscard]] KSIEVECORE_EXPORT int defaultNotificationInterval();
+[[nodiscard]] KSIEVECORE_EXPORT KMime::Types::AddrSpecList defaultMailAliases();
+[[nodiscard]] KSIEVECORE_EXPORT bool defaultSendForSpam();
+[[nodiscard]] KSIEVECORE_EXPORT QString defaultDomainName();
+[[nodiscard]] KSIEVECORE_EXPORT QDate defaultStartDate();
+[[nodiscard]] KSIEVECORE_EXPORT QDate defaultEndDate();
 
 struct KSIEVECORE_EXPORT Vacation {
     Vacation() = default;
 
-    Q_REQUIRED_RESULT bool isValid() const
+    [[nodiscard]] bool isValid() const
     {
         return valid;
     }
@@ -56,14 +56,14 @@ struct KSIEVECORE_EXPORT Vacation {
     bool sendForSpam = true;
 };
 
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT QString composeScript(const Vacation &vacation);
+[[nodiscard]] KSIEVECORE_EXPORT QString composeScript(const Vacation &vacation);
 
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT KSieveCore::VacationUtils::Vacation parseScript(const QString &script);
+[[nodiscard]] KSIEVECORE_EXPORT KSieveCore::VacationUtils::Vacation parseScript(const QString &script);
 
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT QString mergeRequireLine(const QString &script, const QString &scriptUpdate);
+[[nodiscard]] KSIEVECORE_EXPORT QString mergeRequireLine(const QString &script, const QString &scriptUpdate);
 
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT QString updateVacationBlock(const QString &oldScript, const QString &newScript);
+[[nodiscard]] KSIEVECORE_EXPORT QString updateVacationBlock(const QString &oldScript, const QString &newScript);
 
-Q_REQUIRED_RESULT KSIEVECORE_EXPORT QString mailAction(MailAction action);
+[[nodiscard]] KSIEVECORE_EXPORT QString mailAction(MailAction action);
 }
 }

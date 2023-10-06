@@ -21,7 +21,7 @@ public:
     explicit SelectHeadersWidget(QWidget *parent = nullptr);
     ~SelectHeadersWidget() override;
 
-    Q_REQUIRED_RESULT QString headers() const;
+    [[nodiscard]] QString headers() const;
     void setListHeaders(const QMap<QString, QString> &lst, const QStringList &selectedHeaders);
     void addNewHeader(const QString &header);
 
@@ -38,7 +38,7 @@ public:
     explicit SelectHeadersDialog(QWidget *parent = nullptr);
     ~SelectHeadersDialog() override;
 
-    Q_REQUIRED_RESULT QString headers() const;
+    [[nodiscard]] QString headers() const;
     void setListHeaders(const QMap<QString, QString> &lst, const QStringList &selectedHeaders);
 
 private:
@@ -58,7 +58,7 @@ public:
     explicit SelectHeaderTypeComboBox(bool onlyEnvelopType = false, QWidget *parent = nullptr);
     ~SelectHeaderTypeComboBox() override;
 
-    Q_REQUIRED_RESULT QString code() const;
+    [[nodiscard]] QString code() const;
     void setCode(const QString &code);
 
 Q_SIGNALS:
@@ -68,7 +68,7 @@ private Q_SLOTS:
     void slotSelectItem(const QString &str);
 
 private:
-    Q_REQUIRED_RESULT const QString getSelectMultipleHeadersTranslated() const;
+    [[nodiscard]] const QString getSelectMultipleHeadersTranslated() const;
     void initialize(bool onlyEnvelopType);
     void changeReadOnlyStatus();
     void headerMap(bool onlyEnvelopType);

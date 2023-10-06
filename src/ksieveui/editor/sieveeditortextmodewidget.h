@@ -50,12 +50,12 @@ public:
     void setSieveCapabilities(const QStringList &capabilities);
     void setReadOnly(bool b);
 
-    Q_REQUIRED_RESULT QString script() const;
+    [[nodiscard]] QString script() const;
     void setScript(const QString &script, bool clearUndoRedo = false);
 
     void setDebugScript(const QString &debug);
 
-    Q_REQUIRED_RESULT QString currentscript() override;
+    [[nodiscard]] QString currentscript() override;
     void setImportScript(const QString &script) override;
 
     void createRulesGraphically();
@@ -89,21 +89,21 @@ public:
     void reverseCase();
     void zoomIn();
     void zoomOut();
-    Q_REQUIRED_RESULT QString currentHelpTitle() const;
-    Q_REQUIRED_RESULT QUrl currentHelpUrl() const;
+    [[nodiscard]] QString currentHelpTitle() const;
+    [[nodiscard]] QUrl currentHelpUrl() const;
     void openBookmarkUrl(const QUrl &url);
     void debugSieveScript();
     void zoomReset();
     void setWordWrap(bool state);
-    Q_REQUIRED_RESULT bool isWordWrap() const;
+    [[nodiscard]] bool isWordWrap() const;
     void print();
     void printPreview();
-    Q_REQUIRED_RESULT bool printSupportEnabled() const;
-    Q_REQUIRED_RESULT bool isTextEditor() const;
-    Q_REQUIRED_RESULT SieveEditorTabWidget *tabWidget() const;
+    [[nodiscard]] bool printSupportEnabled() const;
+    [[nodiscard]] bool isTextEditor() const;
+    [[nodiscard]] SieveEditorTabWidget *tabWidget() const;
 
     void setListOfIncludeFile(const QStringList &listOfIncludeFile);
-    Q_REQUIRED_RESULT QStringList sieveCapabilities() const;
+    [[nodiscard]] QStringList sieveCapabilities() const;
 
 Q_SIGNALS:
     void enableButtonOk(bool);
@@ -129,7 +129,7 @@ private:
     KSIEVEUI_NO_EXPORT void slotEditRule(const QString &selectedText);
     KSIEVEUI_NO_EXPORT void slotInsertRule();
     KSIEVEUI_NO_EXPORT void insertRequires(const QStringList &needToAddRequire);
-    Q_REQUIRED_RESULT KSIEVEUI_NO_EXPORT QStringList insertNecessaryRequires(const QStringList &requireModules);
+    [[nodiscard]] KSIEVEUI_NO_EXPORT QStringList insertNecessaryRequires(const QStringList &requireModules);
     QString mOriginalScript;
     QStringList mSieveCapabilities;
     QStringList mListOfIncludeFile;

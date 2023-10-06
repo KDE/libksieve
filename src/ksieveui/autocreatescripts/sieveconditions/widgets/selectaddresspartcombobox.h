@@ -17,10 +17,10 @@ public:
     explicit SelectAddressPartComboBox(KSieveUi::SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent = nullptr);
     ~SelectAddressPartComboBox() override;
 
-    Q_REQUIRED_RESULT QString code() const;
+    [[nodiscard]] QString code() const;
     void setCode(const QString &code, const QString &name, QString &error);
 
-    Q_REQUIRED_RESULT QStringList extraRequire() const;
+    [[nodiscard]] QStringList extraRequire() const;
 
 Q_SIGNALS:
     void valueChanged();

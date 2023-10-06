@@ -29,7 +29,7 @@ public:
     void updateAddRemoveButton(bool addButtonEnabled, bool removeButtonEnabled);
     void generatedScript(QString &script, QStringList &required, bool onlyActions, bool inForEveryPartLoop);
     void setAction(const QString &actionName, QXmlStreamReader &element, const QString &comment, QString &error);
-    Q_REQUIRED_RESULT bool isConfigurated() const;
+    [[nodiscard]] bool isConfigurated() const;
     void clear();
 
     void setLocaleVariable(const SieveGlobalVariableActionWidget::VariableElement &var);

@@ -13,10 +13,10 @@ class SieveActionAddHeader : public SieveActionAbstractEditHeader
     Q_OBJECT
 public:
     explicit SieveActionAddHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent = nullptr);
-    Q_REQUIRED_RESULT QString code(QWidget *w) const override;
-    Q_REQUIRED_RESULT QWidget *createParamWidget(QWidget *parent) const override;
+    [[nodiscard]] QString code(QWidget *w) const override;
+    [[nodiscard]] QWidget *createParamWidget(QWidget *parent) const override;
     void setParamWidgetValue(QXmlStreamReader &element, QWidget *parent, QString &error) override;
-    Q_REQUIRED_RESULT QString help() const override;
-    Q_REQUIRED_RESULT QUrl href() const override;
+    [[nodiscard]] QString help() const override;
+    [[nodiscard]] QUrl href() const override;
 };
 }

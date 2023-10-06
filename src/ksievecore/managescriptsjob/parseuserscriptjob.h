@@ -29,12 +29,12 @@ public:
     void start();
     void setAutoDelete(bool deleteMe);
 
-    Q_REQUIRED_RESULT QUrl scriptUrl() const;
+    [[nodiscard]] QUrl scriptUrl() const;
 
-    Q_REQUIRED_RESULT QStringList activeScriptList() const;
-    Q_REQUIRED_RESULT QString error() const;
+    [[nodiscard]] QStringList activeScriptList() const;
+    [[nodiscard]] QString error() const;
     void kill();
-    Q_REQUIRED_RESULT QStringList parsescript(const QString &script, bool &result);
+    [[nodiscard]] QStringList parsescript(const QString &script, bool &result);
 
 Q_SIGNALS:
     void finished(KSieveCore::ParseUserScriptJob *job);
@@ -44,8 +44,8 @@ private:
     void slotGetResult(KManageSieve::SieveJob *job, bool, const QString &, bool);
     void emitSuccess(const QStringList &activeScriptList);
     void emitError(const QString &msgError);
-    Q_REQUIRED_RESULT QString loadInclude();
-    Q_REQUIRED_RESULT QStringList extractActiveScript(const QString &doc);
+    [[nodiscard]] QString loadInclude();
+    [[nodiscard]] QStringList extractActiveScript(const QString &doc);
     const QUrl mCurrentUrl;
     KManageSieve::SieveJob *mSieveJob = nullptr;
     QXmlStreamReader *mStreamReader = nullptr;

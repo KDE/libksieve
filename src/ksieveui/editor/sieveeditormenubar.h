@@ -20,34 +20,34 @@ public:
     explicit SieveEditorMenuBar(QWidget *parent = nullptr);
     ~SieveEditorMenuBar() override;
 
-    Q_REQUIRED_RESULT QAction *goToLineAction() const;
-    Q_REQUIRED_RESULT QAction *findAction() const;
-    Q_REQUIRED_RESULT QAction *replaceAction() const;
-    Q_REQUIRED_RESULT QAction *undoAction() const;
-    Q_REQUIRED_RESULT QAction *redoAction() const;
-    Q_REQUIRED_RESULT QAction *copyAction() const;
-    Q_REQUIRED_RESULT QAction *pasteAction() const;
-    Q_REQUIRED_RESULT QAction *cutAction() const;
-    Q_REQUIRED_RESULT QAction *selectAllAction() const;
+    [[nodiscard]] QAction *goToLineAction() const;
+    [[nodiscard]] QAction *findAction() const;
+    [[nodiscard]] QAction *replaceAction() const;
+    [[nodiscard]] QAction *undoAction() const;
+    [[nodiscard]] QAction *redoAction() const;
+    [[nodiscard]] QAction *copyAction() const;
+    [[nodiscard]] QAction *pasteAction() const;
+    [[nodiscard]] QAction *cutAction() const;
+    [[nodiscard]] QAction *selectAllAction() const;
 
-    Q_REQUIRED_RESULT QMenu *editorMenu() const;
-    Q_REQUIRED_RESULT QMenu *toolsMenu() const;
-    Q_REQUIRED_RESULT QMenu *fileMenu() const;
-    Q_REQUIRED_RESULT QMenu *viewMenu() const;
+    [[nodiscard]] QMenu *editorMenu() const;
+    [[nodiscard]] QMenu *toolsMenu() const;
+    [[nodiscard]] QMenu *fileMenu() const;
+    [[nodiscard]] QMenu *viewMenu() const;
 
-    Q_REQUIRED_RESULT QAction *commentCodeAction() const;
+    [[nodiscard]] QAction *commentCodeAction() const;
 
-    Q_REQUIRED_RESULT QAction *uncommentCodeAction() const;
+    [[nodiscard]] QAction *uncommentCodeAction() const;
 
-    Q_REQUIRED_RESULT QAction *zoomInAction() const;
-    Q_REQUIRED_RESULT QAction *zoomOutAction() const;
-    Q_REQUIRED_RESULT QAction *debugSieveScriptAction() const;
+    [[nodiscard]] QAction *zoomInAction() const;
+    [[nodiscard]] QAction *zoomOutAction() const;
+    [[nodiscard]] QAction *debugSieveScriptAction() const;
 
-    Q_REQUIRED_RESULT QAction *zoomResetAction() const;
-    Q_REQUIRED_RESULT QAction *wordWrapAction() const;
-    Q_REQUIRED_RESULT QAction *printPreviewAction() const;
+    [[nodiscard]] QAction *zoomResetAction() const;
+    [[nodiscard]] QAction *wordWrapAction() const;
+    [[nodiscard]] QAction *printPreviewAction() const;
 
-    Q_REQUIRED_RESULT QAction *printAction() const;
+    [[nodiscard]] QAction *printAction() const;
 
     void setTextModeWidget(KSieveUi::SieveEditorTextModeWidget *textModeWidget);
 

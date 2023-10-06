@@ -32,7 +32,7 @@ public:
     void checkVacation();
     void checkVacation(const QString &serverName, const QUrl &url);
 
-    Q_REQUIRED_RESULT bool kep14Support(const QString &serverName) const;
+    [[nodiscard]] bool kep14Support(const QString &serverName) const;
     KSieveCore::SieveImapPasswordProvider *passwordProvider() const;
 
 Q_SIGNALS:
