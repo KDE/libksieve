@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-08 01:17+0000\n"
-"PO-Revision-Date: 2023-10-04 19:01+0200\n"
+"PO-Revision-Date: 2023-10-08 07:00+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2952,6 +2952,9 @@ msgid ""
 "no longer able to determine the parameters for the autoreplies. Default "
 "values will be used."
 msgstr ""
+"ვიღაცამ (ალბათ, თქვენ) სერვერზე vacation-ის სკრიპტ შეცვალა. KMail-ს აღარ "
+"შეუძლია განსაზღვროს პარამეტრები ავტოპასუხისთვის. გამოყენებული იქნება "
+"ნაგულისხმევი მნიშვნელობები."
 
 #: ksieveui/widgets/custommanagesievewidget.cpp:91
 #, kde-format
