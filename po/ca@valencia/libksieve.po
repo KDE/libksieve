@@ -2953,7 +2953,7 @@ msgstr "Anàlisi de «Sieve»"
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:83
 #, kde-format
 msgid "XML Files (*.xml);;All Files (*)"
-msgstr "Fitxers XML (*.xml);;Tots els fitxers (*)"
+msgstr "Fitxers en XML (*.xml);;Tots els fitxers (*)"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:30
 #, kde-format
