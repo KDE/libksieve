@@ -16,7 +16,7 @@ else()
 endif()
 
 
-configure_file(settings/sieve-editor.kcfg.cmake ${CMAKE_CURRENT_BINARY_DIR}/sieve-editor.kcfg)
+configure_file(settings/sieve-editor.kcfg.in ${CMAKE_CURRENT_BINARY_DIR}/sieve-editor.kcfg)
 
 if(BUILD_TESTING)
     add_subdirectory(editor/tests)
