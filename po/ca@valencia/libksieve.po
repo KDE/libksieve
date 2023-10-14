@@ -2176,7 +2176,7 @@ msgstr "S'ha produït un error de l'editor de «Sieve»"
 #: ksieveui/editor/sieveeditormenubar.cpp:50
 #, kde-format
 msgid "Go to Line"
-msgstr "Ves a la línia"
+msgstr "Ves fins a la línia"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:55
 #, kde-format
@@ -2947,7 +2947,7 @@ msgstr "Fora de l'oficina fins %1"
 #: ksieveui/vacation/vacationutils.cpp:50
 #, kde-format
 msgid "Redirect to"
-msgstr "Redirigix a"
+msgstr "Redirigix cap a"
 
 #: ksieveui/vacation/vacationutils.cpp:52
 #, kde-format
