@@ -92,7 +92,7 @@ add_definitions(-DDONT_HAVE_TEXT_TO_SPEACH_SUPPORT)
 
 
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
-ecm_set_disabled_deprecation_versions(QT 6.5  KF 5.240.0)
+ecm_set_disabled_deprecation_versions(QT 6.6  KF 5.240.0)
 
 
 ########### CMake Config Files ###########
