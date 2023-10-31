@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-08 01:17+0000\n"
-"PO-Revision-Date: 2023-09-09 14:28+0200\n"
+"PO-Revision-Date: 2023-10-29 21:40+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.2\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -1062,7 +1062,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:24
 #, kde-format
 msgid "Envelope"
-msgstr "Envelope"
+msgstr "Enveloppe"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:106
 #, kde-format
@@ -1070,7 +1070,7 @@ msgid ""
 "The \"envelope\" test is true if the specified part of the [SMTP] (or "
 "equivalent) envelope matches the specified key."
 msgstr ""
-"Le test d'encapsulation « envelope » renvoie « Vrai » si la partie spécifié "
+"Le test d'encapsulation « enveloppe » renvoie « Vrai » si la partie spécifié "
 "de l'encapsulation [SMTP](ou un équivalent) correspond à la clé spécifiée."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:23
