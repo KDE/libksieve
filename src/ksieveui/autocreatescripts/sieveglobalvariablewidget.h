@@ -106,7 +106,7 @@ private Q_SLOTS:
     void slotHelp();
 
 private:
-    SieveGlobalVariableLister *mIncludeLister = nullptr;
+    SieveGlobalVariableLister *mGlobalVariableLister = nullptr;
     SieveHelpButton *mHelpButton = nullptr;
 };
 }

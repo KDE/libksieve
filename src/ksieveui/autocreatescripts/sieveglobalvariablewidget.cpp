@@ -165,9 +165,9 @@ SieveGlobalVariableWidget::SieveGlobalVariableWidget(QWidget *parent)
     lay->addWidget(mHelpButton);
     connect(mHelpButton, &SieveHelpButton::clicked, this, &SieveGlobalVariableWidget::slotHelp);
 
-    mIncludeLister = new SieveGlobalVariableLister(this);
-    connect(mIncludeLister, &SieveGlobalVariableLister::valueChanged, this, &SieveGlobalVariableWidget::valueChanged);
-    lay->addWidget(mIncludeLister, 0, Qt::AlignTop);
+    mGlobalVariableLister = new SieveGlobalVariableLister(this);
+    connect(mGlobalVariableLister, &SieveGlobalVariableLister::valueChanged, this, &SieveGlobalVariableWidget::valueChanged);
+    lay->addWidget(mGlobalVariableLister, 0, Qt::AlignTop);
     setPageType(KSieveUi::SieveScriptBlockWidget::GlobalVariable);
 }
 
@@ -188,7 +188,7 @@ void SieveGlobalVariableWidget::generatedScript(QString &script, QStringList &re
     Q_UNUSED(inForEveryPartLoop)
     QString result;
     QStringList lst;
-    mIncludeLister->generatedScript(result, lst);
+    mGlobalVariableLister->generatedScript(result, lst);
     if (!result.isEmpty()) {
         script += result;
         requireModules << lst;
@@ -197,12 +197,12 @@ void SieveGlobalVariableWidget::generatedScript(QString &script, QStringList &re
 
 void SieveGlobalVariableWidget::loadScript(QXmlStreamReader &element, QString &error)
 {
-    mIncludeLister->loadScript(element, error);
+    mGlobalVariableLister->loadScript(element, error);
 }
 
 SieveGlobalVariableActionWidget::VariableElement SieveGlobalVariableWidget::loadSetVariable(QXmlStreamReader &element, QString &error)
 {
-    return mIncludeLister->loadSetVariable(element, error);
+    return mGlobalVariableLister->loadSetVariable(element, error);
 }
 
 SieveGlobalVariableLister::SieveGlobalVariableLister(QWidget *parent)
