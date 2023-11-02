@@ -15,6 +15,7 @@
 #include <KLocalizedString>
 #include <QIcon>
 #include <QPushButton>
+#include <QScrollArea>
 
 #include "libksieveui_debug.h"
 #include <QCheckBox>
@@ -195,7 +196,14 @@ SieveIncludeWidget::SieveIncludeWidget(QWidget *parent)
 
     mIncludeLister = new SieveIncludeWidgetLister(this);
     connect(mIncludeLister, &SieveIncludeWidgetLister::valueChanged, this, &SieveIncludeWidget::valueChanged);
-    lay->addWidget(mIncludeLister, 0, Qt::AlignTop);
+
+    auto scrollArea = new QScrollArea(this);
+    scrollArea->setAutoFillBackground(false);
+    scrollArea->setWidget(mIncludeLister);
+    scrollArea->setWidgetResizable(true);
+    scrollArea->setAlignment(Qt::AlignTop);
+    lay->addWidget(scrollArea);
+
     setPageType(KSieveUi::SieveScriptBlockWidget::Include);
 }
 

@@ -21,6 +21,7 @@
 #include <QCheckBox>
 #include <QGridLayout>
 #include <QLabel>
+#include <QScrollArea>
 #include <QWhatsThis>
 #include <QXmlStreamReader>
 
@@ -159,7 +160,14 @@ SieveGlobalVariableWidget::SieveGlobalVariableWidget(QWidget *parent)
 
     mGlobalVariableLister = new SieveGlobalVariableLister(this);
     connect(mGlobalVariableLister, &SieveGlobalVariableLister::valueChanged, this, &SieveGlobalVariableWidget::valueChanged);
-    lay->addWidget(mGlobalVariableLister, 0, Qt::AlignTop);
+
+    auto scrollArea = new QScrollArea(this);
+    scrollArea->setAutoFillBackground(false);
+    scrollArea->setWidget(mGlobalVariableLister);
+    scrollArea->setWidgetResizable(true);
+    scrollArea->setAlignment(Qt::AlignTop);
+    lay->addWidget(scrollArea);
+
     setPageType(KSieveUi::SieveScriptBlockWidget::GlobalVariable);
 }
 
