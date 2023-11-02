@@ -283,6 +283,7 @@ void SieveConditionWidgetLister::clearWidget(QWidget *aWidget)
     if (aWidget) {
         auto widget = static_cast<SieveConditionWidget *>(aWidget);
         widget->clear();
+        updateAddRemoveButton();
     }
     Q_EMIT valueChanged();
 }
