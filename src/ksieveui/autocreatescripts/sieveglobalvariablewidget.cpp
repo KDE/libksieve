@@ -274,6 +274,7 @@ void SieveGlobalVariableLister::clearWidget(QWidget *aWidget)
     if (aWidget) {
         auto widget = static_cast<SieveGlobalVariableActionWidget *>(aWidget);
         widget->clear();
+        updateAddRemoveButton();
     }
     Q_EMIT valueChanged();
 }

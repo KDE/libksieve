@@ -351,6 +351,7 @@ void SieveActionWidgetLister::clearWidget(QWidget *aWidget)
     if (aWidget) {
         auto widget = static_cast<SieveActionWidget *>(aWidget);
         widget->clear();
+        updateAddRemoveButton();
     }
     Q_EMIT valueChanged();
 }
