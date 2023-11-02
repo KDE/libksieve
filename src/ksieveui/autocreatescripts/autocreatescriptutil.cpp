@@ -221,15 +221,7 @@ KSieveUi::AbstractSelectEmailLineEdit *AutoCreateScriptUtil::createSelectEmailsW
 
 AbstractRegexpEditorLineEdit *AutoCreateScriptUtil::createRegexpEditorLineEdit(QWidget *parent)
 {
-    KSieveUi::AbstractRegexpEditorLineEdit *edit = nullptr;
-    const KPluginMetaData editWidgetPlugin(QStringLiteral("pim6/libksieve/regexpeditorlineeditplugin"));
-
-    const auto result = KPluginFactory::instantiatePlugin<KSieveUi::AbstractRegexpEditorLineEdit>(editWidgetPlugin, parent);
-    if (result) {
-        edit = result.plugin;
-    } else {
-        edit = new KSieveUi::RegexpEditorLineEdit(parent);
-    }
+    auto *edit = new KSieveUi::RegexpEditorLineEdit(parent);
     return edit;
 }
 
