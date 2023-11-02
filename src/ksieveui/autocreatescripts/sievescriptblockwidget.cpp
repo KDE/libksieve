@@ -19,6 +19,7 @@
 #include <QGroupBox>
 #include <QLabel>
 #include <QRadioButton>
+#include <QScrollArea>
 #include <QVBoxLayout>
 #include <QXmlStreamReader>
 
@@ -55,16 +56,27 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *g
 
     mScriptConditionLister = new SieveConditionWidgetLister(mSieveGraphicalModeWidget, this);
     connect(mScriptConditionLister, &SieveConditionWidgetLister::valueChanged, this, &SieveScriptBlockWidget::valueChanged);
-    vbox->addWidget(mScriptConditionLister);
+    auto scrollArea = new QScrollArea(this);
+    scrollArea->setAutoFillBackground(false);
+    scrollArea->setWidget(mScriptConditionLister);
+    scrollArea->setWidgetResizable(true);
+    scrollArea->setAlignment(Qt::AlignTop);
+    vbox->addWidget(scrollArea);
 
-    topLayout->addWidget(mConditions, 0, Qt::AlignTop);
+    topLayout->addWidget(mConditions);
 
     auto actions = new QGroupBox(i18n("Actions"), this);
     vbox = new QVBoxLayout;
     actions->setLayout(vbox);
     mScriptActionLister = new SieveActionWidgetLister(mSieveGraphicalModeWidget, this);
     connect(mScriptActionLister, &SieveActionWidgetLister::valueChanged, this, &SieveScriptBlockWidget::valueChanged);
-    vbox->addWidget(mScriptActionLister, 0, Qt::AlignTop);
+
+    auto scrollAreaCondition = new QScrollArea(this);
+    scrollAreaCondition->setAutoFillBackground(false);
+    scrollAreaCondition->setWidget(mScriptActionLister);
+    scrollAreaCondition->setWidgetResizable(true);
+    scrollAreaCondition->setAlignment(Qt::AlignTop);
+    vbox->addWidget(scrollAreaCondition);
     topLayout->addWidget(actions);
 
     auto newBlockLayout = new QHBoxLayout;
