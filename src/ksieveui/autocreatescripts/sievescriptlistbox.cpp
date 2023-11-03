@@ -190,6 +190,11 @@ void SieveScriptListBox::slotCustomMenuRequested(const QPoint &pos)
         connect(renameScriptAction, &QAction::triggered, this, &SieveScriptListBox::slotRename);
 
         menu.addSeparator();
+        QAction *editScriptDescriptionAction = menu.addAction(i18nc("@action:inmenu", "Edit Script Description"));
+        editScriptDescriptionAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-comment")));
+        connect(editScriptDescriptionAction, &QAction::triggered, this, &SieveScriptListBox::slotEditDescription);
+
+        menu.addSeparator();
         QAction *deleteScriptAction = menu.addAction(i18nc("@action:inmenu", "Delete Script"));
         deleteScriptAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
         connect(deleteScriptAction, &QAction::triggered, this, &SieveScriptListBox::slotDelete);
