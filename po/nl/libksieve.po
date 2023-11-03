@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-25 01:40+0000\n"
+"POT-Creation-Date: 2023-11-03 01:40+0000\n"
 "PO-Revision-Date: 2023-09-25 09:20+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1362,7 +1362,7 @@ msgstr "Commentaar toevoegen"
 msgid "Script contains unsupported feature \"%1\""
 msgstr "Script bevat niet ondersteunde functie \"%1\""
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:409
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:410
 #, kde-format
 msgid "We detected a loop if in a loop if. It's not supported"
 msgstr "We hebben een lus ontdekt. Dat wordt niet ondersteund"
@@ -2081,22 +2081,22 @@ msgstr "Onbekende waarde van tag \"%1\" bij het laden van loop \"for\""
 msgid "Unknown tag \"%1\" during loading loop \"for\""
 msgstr "Onbekende tag \"%1\" bij laden van loop \"for\""
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:57
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:58
 #, kde-format
 msgid "Variable name:"
 msgstr "Variabelenaam:"
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:64
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:65
 #, kde-format
 msgid "Set value to:"
 msgstr "Stel waarde in op:"
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:128
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:129
 #, kde-format
 msgid "Unknown tag \"%1\" during loading of variables."
 msgstr "Onbekende tag \"%1\" bij laden van variabelen."
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:171
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:179
 #, kde-format
 msgid ""
 "A variable has global scope in all scripts that have declared it with the "
@@ -2109,43 +2109,43 @@ msgstr ""
 "zonder declaratie van global gebruikt, specificeert de naam een aparte, niet-"
 "globale variabele binnen dat script."
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:42
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:43
 #, kde-format
 msgid "personal"
 msgstr "persoonlijk"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:43
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:44
 #, kde-format
 msgid "global"
 msgstr "globaal"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:57
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:58
 #, kde-format
 msgid "Unknown location type \"%1\" during parsing includes"
 msgstr "Onbekend type locatie \"%1\" bij het ontleden van invoegingen"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:128
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:129
 #, kde-format
 msgid "Include:"
 msgstr "Insluiten:"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:134
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:135
 #: ksieveui/templates/sievetemplateeditdialog.cpp:59
 #, kde-format
 msgid "Name:"
 msgstr "Naam:"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:143
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:144
 #, kde-format
 msgid "Optional"
 msgstr "Optioneel"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:147
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:148
 #, kde-format
 msgid "Once"
 msgstr "Eenmalig"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:212
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:220
 #, kde-format
 msgid ""
 "The \"include\" command takes an optional \"location\" parameter, an "
@@ -2158,47 +2158,47 @@ msgstr ""
 "enkele argument tekenreeks met de naam van het in te voegen script voor "
 "bewerken op dat punt."
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:333
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:342
 #, kde-format
 msgid "We can not add more includes elements."
 msgstr "Er kunnen niet meer in te voegen elementen worden toegevoegd."
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:34
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:35
 #, kde-format
 msgid "Conditions"
 msgstr "Voorwaarden"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:37
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
 #, kde-format
 msgid "Match all messages"
 msgstr "Komt overeen met alle berichten"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:39
 #, kde-format
 msgid "Match a&ll of the following"
 msgstr "Komt overeen met a&l het volgende"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:39
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:40
 #, kde-format
 msgid "Match an&y of the following"
 msgstr "Komt overeen met ee&n of meer van de volgende"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:62
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:68
 #, kde-format
 msgid "Actions"
 msgstr "Acties"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:71
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:83
 #, kde-format
 msgid "Add new block:"
 msgstr "Nieuwe blok toevoegen:"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:75
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:87
 #, kde-format
 msgid "\"elsif\" block"
 msgstr "\"elsif\"-blok"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:76
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:88
 #, kde-format
 msgid "\"else\" block"
 msgstr "\"else\"-blok"
