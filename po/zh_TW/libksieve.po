@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-08 01:17+0000\n"
+"POT-Creation-Date: 2023-11-03 02:28+0000\n"
 "PO-Revision-Date: 2023-01-15 20:49+0800\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -877,7 +877,7 @@ msgstr "新增註解"
 msgid "Script contains unsupported feature \"%1\""
 msgstr "文稿包含不支援的功能 \"%1\""
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:422
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:423
 #, kde-format
 msgid "We detected a loop if in a loop if. It's not supported"
 msgstr "我們在 loop if 中偵測到另一個 loop if。目前尚不支援這種做法"
@@ -1560,22 +1560,22 @@ msgstr "在載入 \"for\" 迴圈時看到未知的標籤值 \"%1\""
 msgid "Unknown tag \"%1\" during loading loop \"for\""
 msgstr "在載入 \"for\" 迴圈時看到未知的標籤 \"%1\""
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:57
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:58
 #, kde-format
 msgid "Variable name:"
 msgstr "變數名稱："
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:64
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:65
 #, kde-format
 msgid "Set value to:"
 msgstr "設定值給："
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:136
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:137
 #, kde-format
 msgid "Unknown tag \"%1\" during loading of variables."
 msgstr "載入變數時看到未知的標籤 \"%1\"。"
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:179
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:187
 #, kde-format
 msgid ""
 "A variable has global scope in all scripts that have declared it with the "
@@ -1586,43 +1586,43 @@ msgstr ""
 "一個變數只要用 \"global\" （全域）指令宣告，就表示該變數的範圍包含所有文稿。"
 "如果沒有宣告 global，則只適用於該文稿中。"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:42
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:43
 #, kde-format
 msgid "personal"
 msgstr "個人"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:43
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:44
 #, kde-format
 msgid "global"
 msgstr "全域"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:57
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:58
 #, kde-format
 msgid "Unknown location type \"%1\" during parsing includes"
 msgstr "剖析引入檔時發現未知的位置型態 \"%1\""
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:132
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:133
 #, kde-format
 msgid "Include:"
 msgstr "引入："
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:138
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:139
 #: ksieveui/templates/sievetemplateeditdialog.cpp:59
 #, kde-format
 msgid "Name:"
 msgstr "名稱："
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:147
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:148
 #, kde-format
 msgid "Optional"
 msgstr "選擇性的"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:151
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:152
 #, kde-format
 msgid "Once"
 msgstr "一次"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:216
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:224
 #, kde-format
 msgid ""
 "The \"include\" command takes an optional \"location\" parameter, an "
@@ -1633,47 +1633,47 @@ msgstr ""
 "引入指令可以用以下選擇性的參數：\"location\"（位置），\":once\"，\":optional"
 "\"，以及一個單一字串的參數，表示要引入文稿的名稱。"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:337
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:346
 #, kde-format
 msgid "We can not add more includes elements."
 msgstr "無法再新增更多的引入元素。"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:34
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:35
 #, kde-format
 msgid "Conditions"
 msgstr "條件"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:37
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
 #, kde-format
 msgid "Match all messages"
 msgstr "比對所有信件"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:39
 #, kde-format
 msgid "Match a&ll of the following"
 msgstr "符合下列全部規則(&L)"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:39
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:40
 #, kde-format
 msgid "Match an&y of the following"
 msgstr "符合下列任一規則(&Y)"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:62
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:68
 #, kde-format
 msgid "Actions"
 msgstr "動作"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:71
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:83
 #, kde-format
 msgid "Add new block:"
 msgstr "新增區塊："
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:75
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:87
 #, kde-format
 msgid "\"elsif\" block"
 msgstr "\"elsif\" 區塊"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:76
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:88
 #, kde-format
 msgid "\"else\" block"
 msgstr "\"else\" 區塊"

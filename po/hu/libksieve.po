@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-08 01:17+0000\n"
+"POT-Creation-Date: 2023-11-03 02:28+0000\n"
 "PO-Revision-Date: 2021-11-04 13:50+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -925,7 +925,7 @@ msgstr "Megjegyzés hozzáadása"
 msgid "Script contains unsupported feature \"%1\""
 msgstr "A(z) „%1” parancsfájlnév már használatban van."
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:422
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:423
 #, kde-format
 msgid "We detected a loop if in a loop if. It's not supported"
 msgstr ""
@@ -1612,22 +1612,22 @@ msgstr "Ismeretlen címkeérték („%1”) a „for” ciklus betöltésekor"
 msgid "Unknown tag \"%1\" during loading loop \"for\""
 msgstr "Ismeretlen címke („%1”) a „for” ciklus betöltésekor"
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:57
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:58
 #, kde-format
 msgid "Variable name:"
 msgstr "Változónév:"
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:64
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:65
 #, kde-format
 msgid "Set value to:"
 msgstr "Érték beállítása erre:"
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:136
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:137
 #, kde-format
 msgid "Unknown tag \"%1\" during loading of variables."
 msgstr "Ismeretlen „%1” címke a változók betöltése közben."
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:179
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:187
 #, kde-format
 msgid ""
 "A variable has global scope in all scripts that have declared it with the "
@@ -1640,43 +1640,43 @@ msgstr ""
 "változónevet, a név egy külön, nem globális változót határoz meg a szkripten "
 "belül."
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:42
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:43
 #, kde-format
 msgid "personal"
 msgstr "személyes"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:43
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:44
 #, kde-format
 msgid "global"
 msgstr "globális"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:57
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:58
 #, kde-format
 msgid "Unknown location type \"%1\" during parsing includes"
 msgstr "Ismeretlen helytípus („%1”) az include-ok feldolgozásakor"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:132
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:133
 #, kde-format
 msgid "Include:"
 msgstr "Belefoglalva:"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:138
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:139
 #: ksieveui/templates/sievetemplateeditdialog.cpp:59
 #, kde-format
 msgid "Name:"
 msgstr "Név:"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:147
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:148
 #, kde-format
 msgid "Optional"
 msgstr "Opcionális"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:151
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:152
 #, kde-format
 msgid "Once"
 msgstr "Egyszer"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:216
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:224
 #, kde-format
 msgid ""
 "The \"include\" command takes an optional \"location\" parameter, an "
@@ -1688,47 +1688,47 @@ msgstr ""
 "fogadja és sztringként egy szkript nevét, melyet bele kell foglalnia a "
 "feldolgozásba azon a ponton."
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:337
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:346
 #, kde-format
 msgid "We can not add more includes elements."
 msgstr "Nem lehet hozzáadni több elemet."
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:34
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:35
 #, kde-format
 msgid "Conditions"
 msgstr "Feltételek"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:37
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
 #, kde-format
 msgid "Match all messages"
 msgstr "Illeszkedés minden üzenethez"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:39
 #, kde-format
 msgid "Match a&ll of the following"
 msgstr "Illeszkedés a következők &mindegyikéhez"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:39
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:40
 #, kde-format
 msgid "Match an&y of the following"
 msgstr "Illeszkedés a következők legalább &egyikéhez"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:62
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:68
 #, kde-format
 msgid "Actions"
 msgstr "Műveletek"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:71
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:83
 #, kde-format
 msgid "Add new block:"
 msgstr "Új blokk hozzáadása:"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:75
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:87
 #, kde-format
 msgid "\"elsif\" block"
 msgstr "„elsif” blokk"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:76
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:88
 #, kde-format
 msgid "\"else\" block"
 msgstr "„else” blokk"
