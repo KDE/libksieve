@@ -170,7 +170,7 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     connect(mBtnBottom, &QPushButton::clicked, this, &SieveScriptListBox::slotBottom);
 
     connect(mSieveListScript, &QListWidget::itemSelectionChanged, this, &SieveScriptListBox::updateButtons);
-    connect(mSieveListScript, &QListWidget::itemActivated, this, &SieveScriptListBox::slotItemActived);
+    connect(mSieveListScript, &QListWidget::itemClicked, this, &SieveScriptListBox::slotItemClicked);
     connect(mSieveListScript, &QListWidget::itemDoubleClicked, this, &SieveScriptListBox::slotEditDescription);
     updateButtons();
 }
@@ -207,7 +207,7 @@ void SieveScriptListBox::setSieveEditorGraphicalModeWidget(SieveEditorGraphicalM
     mSieveGraphicalModeWidget = graphicalModeWidget;
 }
 
-void SieveScriptListBox::slotItemActived(QListWidgetItem *item)
+void SieveScriptListBox::slotItemClicked(QListWidgetItem *item)
 {
     if (item) {
         auto itemScript = static_cast<SieveScriptListItem *>(item);

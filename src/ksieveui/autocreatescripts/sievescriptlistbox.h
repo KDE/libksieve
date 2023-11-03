@@ -62,7 +62,7 @@ private:
     void slotRename();
     void updateButtons();
     void slotEditDescription();
-    void slotItemActived(QListWidgetItem *);
+    void slotItemClicked(QListWidgetItem *);
     void slotTop();
     void slotBottom();
     void slotDown();
