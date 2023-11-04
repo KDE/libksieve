@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-03 01:40+0000\n"
+"POT-Creation-Date: 2023-11-04 01:38+0000\n"
 "PO-Revision-Date: 2023-09-25 10:17+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -2090,12 +2090,19 @@ msgid "Rename Script"
 msgstr "Renomina script"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:193
+#, fuzzy, kde-format
+#| msgid "Edit Script Description"
+msgctxt "@action:inmenu"
+msgid "Edit Script Description"
+msgstr "Modifica description de script"
+
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Script"
 msgstr "Dele script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:247
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
 #: ksieveui/widgets/managesievewidget.cpp:228
 #: ksieveui/widgets/managesievewidget.cpp:234
 #: ksieveui/widgets/managesievewidget.cpp:246
@@ -2104,39 +2111,39 @@ msgctxt "@title:window"
 msgid "New Script"
 msgstr "Nove Script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:247
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
 #, kde-format
 msgid "New script name:"
 msgstr "Nove nomine de script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:264
 #, kde-format
 msgid "Do you want to delete \"%1\" script?"
 msgstr ""
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:260
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:265
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Script"
 msgstr "Dele script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:280
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Script"
 msgstr "Renomina script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:280
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
 #, kde-format
 msgid "New name for the script:"
 msgstr "Nove nomine pro le script:"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:469
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:474
 #, kde-format
 msgid "forEveryPart is not supported by your server"
 msgstr "forEveryPart non es supportate per tu servitor"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:567
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:572
 #, kde-format
 msgid "Script part %1"
 msgstr ""

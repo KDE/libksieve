@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-03 01:40+0000\n"
+"POT-Creation-Date: 2023-11-04 01:38+0000\n"
 "PO-Revision-Date: 2019-11-11 15:16+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -2244,12 +2244,19 @@ msgstr "Premenovať skript"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:193
 #, fuzzy, kde-format
+#| msgid "Edit Script Description"
+msgctxt "@action:inmenu"
+msgid "Edit Script Description"
+msgstr "Upraviť popis skriptu"
+
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
+#, fuzzy, kde-format
 #| msgid "Delete Script"
 msgctxt "@action:inmenu"
 msgid "Delete Script"
 msgstr "Vymazať skript"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:247
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
 #: ksieveui/widgets/managesievewidget.cpp:228
 #: ksieveui/widgets/managesievewidget.cpp:234
 #: ksieveui/widgets/managesievewidget.cpp:246
@@ -2259,43 +2266,43 @@ msgctxt "@title:window"
 msgid "New Script"
 msgstr "Nový skript"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:247
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
 #, fuzzy, kde-format
 #| msgid "New Script Name"
 msgid "New script name:"
 msgstr "Nový názov skriptu"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:264
 #, kde-format
 msgid "Do you want to delete \"%1\" script?"
 msgstr "Chcete vymazať skript \"%1\"?"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:260
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:265
 #, fuzzy, kde-format
 #| msgid "Delete Script"
 msgctxt "@title:window"
 msgid "Delete Script"
 msgstr "Vymazať skript"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:280
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
 #, fuzzy, kde-format
 #| msgid "Rename Script"
 msgctxt "@title:window"
 msgid "Rename Script"
 msgstr "Premenovať skript"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:280
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
 #, fuzzy, kde-format
 #| msgid "Please enter a name for the new Sieve script:"
 msgid "New name for the script:"
 msgstr "Prosím, zadajte meno pre nový Sieve skript: "
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:469
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:474
 #, kde-format
 msgid "forEveryPart is not supported by your server"
 msgstr "forEveryPart nie je podporovaná vašim serverom"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:567
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:572
 #, kde-format
 msgid "Script part %1"
 msgstr "Časť skriptu %1"

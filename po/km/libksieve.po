@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-03 01:40+0000\n"
+"POT-Creation-Date: 2023-11-04 01:38+0000\n"
 "PO-Revision-Date: 2012-12-28 15:41+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -2140,12 +2140,19 @@ msgstr "ស្គ្រីប​របស់​ Sieve ថ្មី​"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:193
 #, fuzzy, kde-format
+#| msgid "Edit Script..."
+msgctxt "@action:inmenu"
+msgid "Edit Script Description"
+msgstr "កែសម្រួល​ស្គ្រីប​​..."
+
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
+#, fuzzy, kde-format
 #| msgid "Delete Script"
 msgctxt "@action:inmenu"
 msgid "Delete Script"
 msgstr "លុប​ស្គ្រីប​"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:247
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
 #: ksieveui/widgets/managesievewidget.cpp:228
 #: ksieveui/widgets/managesievewidget.cpp:234
 #: ksieveui/widgets/managesievewidget.cpp:246
@@ -2155,44 +2162,44 @@ msgctxt "@title:window"
 msgid "New Script"
 msgstr "ស្គ្រីប​ថ្មី"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:247
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgid "New script name:"
 msgstr "ស្គ្រីប​ថ្មី"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:264
 #, kde-format
 msgid "Do you want to delete \"%1\" script?"
 msgstr ""
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:260
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:265
 #, fuzzy, kde-format
 #| msgid "Delete Script"
 msgctxt "@title:window"
 msgid "Delete Script"
 msgstr "លុប​ស្គ្រីប​"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:280
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
 #, fuzzy, kde-format
 #| msgid "New Sieve Script"
 msgctxt "@title:window"
 msgid "Rename Script"
 msgstr "ស្គ្រីប​របស់​ Sieve ថ្មី​"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:280
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
 #, fuzzy, kde-format
 #| msgid "Please enter a name for the new Sieve script:"
 msgid "New name for the script:"
 msgstr "សូម​បញ្ចូល​ឈ្មោះ​ សម្រាប់​ស្គ្រីប​របស់​ Sieve ៖​​"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:469
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:474
 #, fuzzy, kde-format
 #| msgid "TLS encryption requested, but not supported by server."
 msgid "forEveryPart is not supported by your server"
 msgstr "បាន​ទាមទារ​ការ​អ៊ិនគ្រីប TLS​ ប៉ុន្តែ​មិន​បាន​គាំ​ដោយ​ម៉ាស៊ីន​បម្រើ​ទេ ។"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:567
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:572
 #, fuzzy, kde-format
 #| msgid "Script name:"
 msgid "Script part %1"
