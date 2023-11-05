@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-04 01:38+0000\n"
-"PO-Revision-Date: 2023-09-29 09:54+0200\n"
+"PO-Revision-Date: 2023-11-05 06:02+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2252,11 +2252,10 @@ msgid "Rename Script"
 msgstr "სკრიპტის სახელის გადარქმევა"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:193
-#, fuzzy, kde-format
-#| msgid "Edit Script Description"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Script Description"
-msgstr "სკრიპტის აღწერის შეცვლა"
+msgstr "სკრიპტის აღწერის ჩასწორება"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
 #, kde-format
