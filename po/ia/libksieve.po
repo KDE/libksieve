@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-04 01:38+0000\n"
-"PO-Revision-Date: 2023-09-25 10:17+0200\n"
+"PO-Revision-Date: 2023-11-05 21:52+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: kmanagesieve/session.cpp:90
 #, kde-format
@@ -2090,8 +2090,7 @@ msgid "Rename Script"
 msgstr "Renomina script"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:193
-#, fuzzy, kde-format
-#| msgid "Edit Script Description"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Script Description"
 msgstr "Modifica description de script"
@@ -2732,7 +2731,7 @@ msgstr "Analysator de Sieve in action"
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:83
 #, kde-format
 msgid "XML Files (*.xml);;All Files (*)"
-msgstr ""
+msgstr "Files XML (*.xml);;Omne Files (*)"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:30
 #, kde-format
@@ -2754,7 +2753,7 @@ msgstr "Cribra (debug)"
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:43
 #, kde-format
 msgid "Email path:"
-msgstr ""
+msgstr "Percurso de e-posta:"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:57
 #, kde-format
@@ -3069,7 +3068,7 @@ msgstr "sin nomine"
 #: ksieveui/widgets/managesievewidget.cpp:228
 #, kde-format
 msgid "Empty name is not a valid name"
-msgstr ""
+msgstr "Nomine vacue non es un nomine valide"
 
 #: ksieveui/widgets/managesievewidget.cpp:234
 #, kde-format
@@ -3079,12 +3078,12 @@ msgstr ""
 #: ksieveui/widgets/managesievewidget.cpp:246
 #, kde-format
 msgid "Script name already used \"%1\"."
-msgstr ""
+msgstr "Nomine de script ja usate \"%1\"."
 
 #: ksieveui/widgets/managesievewidget.cpp:426
 #, kde-format
 msgid "Script Name:"
-msgstr ""
+msgstr "Nomine de Script:"
 
 #: ksieveui/widgets/managesievewidget.cpp:490
 #, kde-format
