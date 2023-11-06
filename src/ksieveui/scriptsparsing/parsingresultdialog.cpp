@@ -66,14 +66,14 @@ void ParsingResultDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(800, 600));
-    KConfigGroup group(KSharedConfig::openStateConfig(), myParsingResultDialogGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myParsingResultDialogGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void ParsingResultDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), myParsingResultDialogGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myParsingResultDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }

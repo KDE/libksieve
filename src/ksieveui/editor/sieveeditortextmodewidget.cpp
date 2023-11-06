@@ -164,7 +164,7 @@ SieveEditorTextModeWidget::~SieveEditorTextModeWidget()
 
 void SieveEditorTextModeWidget::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveEditor");
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String("SieveEditor"));
     group.writeEntry("mainSplitter", mMainSplitter->sizes());
     group.writeEntry("templateSplitter", mTemplateSplitter->sizes());
 }
@@ -181,7 +181,7 @@ SieveEditorTabWidget *SieveEditorTextModeWidget::tabWidget() const
 
 void SieveEditorTextModeWidget::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), "SieveEditor");
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String("SieveEditor"));
     const QList<int> size = {400, 100};
 
     mMainSplitter->setSizes(group.readEntry("mainSplitter", size));

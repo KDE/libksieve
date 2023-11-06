@@ -101,7 +101,7 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(KSieveCore::SieveImapPassword
     connect(close, &QPushButton::clicked, this, &ManageSieveScriptsDialog::accept);
     buttonLayout->addWidget(close);
 
-    KConfigGroup group(KSharedConfig::openStateConfig(), myManageSieveScriptsDialog);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myManageSieveScriptsDialog));
     const QSize size = group.readEntry("Size", QSize());
     if (size.isValid()) {
         resize(size);
@@ -113,7 +113,7 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(KSieveCore::SieveImapPassword
 ManageSieveScriptsDialog::~ManageSieveScriptsDialog()
 {
     disconnect(d->mTreeView, &CustomManageSieveWidget::updateButtons, this, &ManageSieveScriptsDialog::slotUpdateButtons);
-    KConfigGroup group(KSharedConfig::openStateConfig(), myManageSieveScriptsDialog);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myManageSieveScriptsDialog));
     group.writeEntry("Size", size());
     // prevent QTreeWidget signals triggered by it's destructor from calling our slots
     d->mTreeView->disconnect(this);

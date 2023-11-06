@@ -189,14 +189,14 @@ void MultiImapVacationDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(600, 400));
-    KConfigGroup group(KSharedConfig::openStateConfig(), myMultiImapVacationDialogGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myMultiImapVacationDialogGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void MultiImapVacationDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), myMultiImapVacationDialogGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myMultiImapVacationDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }

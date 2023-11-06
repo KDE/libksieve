@@ -84,14 +84,14 @@ void SieveDebugDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(640, 480));
-    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveDebugDialogGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySieveDebugDialogGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void SieveDebugDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveDebugDialogGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySieveDebugDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }

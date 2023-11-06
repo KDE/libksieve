@@ -62,14 +62,14 @@ void SieveScriptParsingErrorDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(800, 600));
-    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveScriptParsingErrorDialogGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySieveScriptParsingErrorDialogGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void SieveScriptParsingErrorDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), mySieveScriptParsingErrorDialogGroupName);
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySieveScriptParsingErrorDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }
