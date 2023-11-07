@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-03 02:28+0000\n"
-"PO-Revision-Date: 2023-06-07 16:39+0300\n"
+"PO-Revision-Date: 2023-10-12 18:27+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-POT-Import-Date: 2012-12-01 22:25:11+0000\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: kmanagesieve/session.cpp:90
 #, kde-format
@@ -70,16 +70,13 @@ msgid "Sieve Authentication Details"
 msgstr "Sieve-tunnistautumisen yksityiskohdat"
 
 #: kmanagesieve/session.cpp:260
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please enter your authentication details for your sieve account (usually "
-#| "the same as your email password):"
+#, kde-format
 msgid ""
 "Please enter your authentication details for your sieve account "
 "\"%1\" (usually the same as your email password):"
 msgstr ""
-"Anna tunnistautumistietosi Sieve-tilille (yleensä sama kuin sähköpostin "
-"salasanasi):"
+"Anna tunnistautumistiedot Sieve-tilille ”%1” (yleensä sama kuin sähköpostin "
+"salasana):"
 
 #: kmanagesieve/session.cpp:321
 #, kde-format
