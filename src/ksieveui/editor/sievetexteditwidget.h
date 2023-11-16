@@ -40,8 +40,5 @@ public Q_SLOTS:
 private:
     KSIEVEUI_NO_EXPORT void initialize(KSieveUi::SieveTextEdit *custom = nullptr);
     std::unique_ptr<SieveTextEditWidgetPrivate> const d;
-    KSieveUi::SieveTextEdit *mTextEdit = nullptr;
-    TextAddonsWidgets::SlideContainer *mSliderContainer = nullptr;
-    TextCustomEditor::PlainTextEditFindBar *mFindBar = nullptr;
 };
 }
