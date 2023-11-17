@@ -83,7 +83,6 @@ set_package_properties(KF6DocTools PROPERTIES DESCRIPTION
 )
 
 
-find_package(Qt6Core5Compat)
 add_definitions(-DDONT_HAVE_TEXT_TO_SPEACH_SUPPORT)
 
 
