@@ -42,7 +42,7 @@ Session::Session(QObject *parent)
     connect(m_thread, &SessionThread::authenticationDone, this, &Session::authenticationDone);
     connect(m_thread, &SessionThread::sslError, this, &Session::sslError);
     connect(m_thread, &SessionThread::sslDone, this, &Session::sslDone);
-    connect(m_thread, &SessionThread::socketDisconnected, [=]() {
+    connect(m_thread, &SessionThread::socketDisconnected, [this]() {
         m_connected = false;
         m_disconnected = true;
     });

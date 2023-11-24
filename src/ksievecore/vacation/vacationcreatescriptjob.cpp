@@ -173,7 +173,7 @@ void VacationCreateScriptJob::slotGotActiveScripts(KSieveCore::ParseUserScriptJo
     }
     mCreateJob = new KSieveCore::GenerateGlobalScriptJob(mUrl, this);
     mCreateJob->addUserActiveScripts(list);
-    connect(mCreateJob, &KSieveCore::GenerateGlobalScriptJob::success, this, [=]() {
+    connect(mCreateJob, &KSieveCore::GenerateGlobalScriptJob::success, this, [this]() {
         this->slotGenerateDone();
     });
     connect(mCreateJob, &KSieveCore::GenerateGlobalScriptJob::error, this, &VacationCreateScriptJob::slotGenerateDone);
