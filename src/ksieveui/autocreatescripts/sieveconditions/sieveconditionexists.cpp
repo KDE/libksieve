@@ -31,7 +31,7 @@ QWidget *SieveConditionExists::createParamWidget(QWidget *parent) const
     w->setLayout(lay);
 
     auto combo = new QComboBox;
-    combo->setObjectName(QStringLiteral("existscheck"));
+    combo->setObjectName(QLatin1StringView("existscheck"));
     combo->addItem(i18n("exists"), QStringLiteral("exists"));
     combo->addItem(i18n("not exists"), QStringLiteral("not exists"));
     lay->addWidget(combo);
@@ -42,7 +42,7 @@ QWidget *SieveConditionExists::createParamWidget(QWidget *parent) const
 
     auto value = new SelectHeaderTypeComboBox;
     connect(value, &SelectHeaderTypeComboBox::valueChanged, this, &SieveConditionExists::valueChanged);
-    value->setObjectName(QStringLiteral("headervalue"));
+    value->setObjectName(QLatin1StringView("headervalue"));
 
     lay->addWidget(value);
     return w;

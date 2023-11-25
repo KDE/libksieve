@@ -35,7 +35,7 @@ QWidget *SieveActionEnclose::createParamWidget(QWidget *parent) const
 
     auto subject = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(subject);
-    subject->setObjectName(QStringLiteral("subject"));
+    subject->setObjectName(QLatin1StringView("subject"));
     connect(subject, &QLineEdit::textChanged, this, &SieveActionEnclose::valueChanged);
     grid->addWidget(subject, 0, 1);
 
@@ -44,7 +44,7 @@ QWidget *SieveActionEnclose::createParamWidget(QWidget *parent) const
 
     auto headers = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(headers);
-    headers->setObjectName(QStringLiteral("headers"));
+    headers->setObjectName(QLatin1StringView("headers"));
     connect(headers, &QLineEdit::textChanged, this, &SieveActionEnclose::valueChanged);
     grid->addWidget(headers, 1, 1);
 
@@ -52,7 +52,7 @@ QWidget *SieveActionEnclose::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 2, 0);
 
     auto text = new MultiLineEdit;
-    text->setObjectName(QStringLiteral("text"));
+    text->setObjectName(QLatin1StringView("text"));
     connect(text, &MultiLineEdit::valueChanged, this, &SieveActionEnclose::valueChanged);
     grid->addWidget(text, 2, 1);
 

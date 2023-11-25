@@ -33,7 +33,7 @@ QWidget *SieveConditionHasFlag::createParamWidget(QWidget *parent) const
     lay->setContentsMargins({});
     w->setLayout(lay);
     auto selecttype = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
-    selecttype->setObjectName(QStringLiteral("matchtype"));
+    selecttype->setObjectName(QLatin1StringView("matchtype"));
     connect(selecttype, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionHasFlag::valueChanged);
     lay->addWidget(selecttype);
 
@@ -48,7 +48,7 @@ QWidget *SieveConditionHasFlag::createParamWidget(QWidget *parent) const
 
         auto variableName = new QLineEdit;
         KLineEditEventHandler::catchReturnKey(variableName);
-        variableName->setObjectName(QStringLiteral("variablename"));
+        variableName->setObjectName(QLatin1StringView("variablename"));
         connect(variableName, &QLineEdit::textChanged, this, &SieveConditionHasFlag::valueChanged);
         grid->addWidget(variableName, row, 1);
         ++row;
@@ -59,7 +59,7 @@ QWidget *SieveConditionHasFlag::createParamWidget(QWidget *parent) const
     AbstractRegexpEditorLineEdit *value = AutoCreateScriptUtil::createRegexpEditorLineEdit();
     connect(value, &AbstractRegexpEditorLineEdit::textChanged, this, &SieveConditionHasFlag::valueChanged);
     connect(selecttype, &SelectMatchTypeComboBox::switchToRegexp, value, &AbstractRegexpEditorLineEdit::switchToRegexpEditorLineEdit);
-    value->setObjectName(QStringLiteral("value"));
+    value->setObjectName(QLatin1StringView("value"));
     grid->addWidget(value, row, 1);
 
     return w;

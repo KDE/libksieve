@@ -33,7 +33,7 @@ QWidget *SieveConditionServerMetaDataExists::createParamWidget(QWidget *parent) 
 
     auto value = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(value);
-    value->setObjectName(QStringLiteral("value"));
+    value->setObjectName(QLatin1StringView("value"));
     connect(value, &QLineEdit::textChanged, this, &SieveConditionServerMetaDataExists::valueChanged);
     lay->addWidget(value);
 

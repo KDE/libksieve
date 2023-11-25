@@ -32,7 +32,7 @@ QWidget *SieveConditionDate::createParamWidget(QWidget *parent) const
     w->setLayout(lay);
 
     auto matchTypeCombo = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
-    matchTypeCombo->setObjectName(QStringLiteral("matchtype"));
+    matchTypeCombo->setObjectName(QLatin1StringView("matchtype"));
     connect(matchTypeCombo, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionDate::valueChanged);
     lay->addWidget(matchTypeCombo);
 
@@ -45,12 +45,12 @@ QWidget *SieveConditionDate::createParamWidget(QWidget *parent) const
     auto header = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(header);
     connect(header, &QLineEdit::textChanged, this, &SieveConditionDate::valueChanged);
-    header->setObjectName(QStringLiteral("header"));
+    header->setObjectName(QLatin1StringView("header"));
     grid->addWidget(header, 0, 1);
 
     auto dateWidget = new SelectDateWidget;
     connect(dateWidget, &SelectDateWidget::valueChanged, this, &SieveConditionDate::valueChanged);
-    dateWidget->setObjectName(QStringLiteral("datewidget"));
+    dateWidget->setObjectName(QLatin1StringView("datewidget"));
     grid->addWidget(dateWidget, 1, 0, 1, 2);
 
     return w;

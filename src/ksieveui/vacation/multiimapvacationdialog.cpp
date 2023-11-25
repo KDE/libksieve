@@ -125,7 +125,7 @@ void MultiImapVacationDialog::init()
     d->mStackedWidget->addWidget(w);
     d->mStackedWidget->setCurrentIndex(0);
     mButtonBox = new QDialogButtonBox(this);
-    mButtonBox->setObjectName(QStringLiteral("mButtonBox"));
+    mButtonBox->setObjectName(QLatin1StringView("mButtonBox"));
     mainLayout->addWidget(mButtonBox);
     initialize();
 }

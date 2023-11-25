@@ -35,7 +35,7 @@ Session::Session(QObject *parent)
     qRegisterMetaType<KSslErrorUiData>();
 
     static int counter = 0;
-    setObjectName(QStringLiteral("session") + QString::number(++counter));
+    setObjectName(QLatin1StringView("session") + QString::number(++counter));
 
     connect(m_thread, &SessionThread::responseReceived, this, &Session::processResponse);
     connect(m_thread, &SessionThread::error, this, &Session::setErrorMessage);

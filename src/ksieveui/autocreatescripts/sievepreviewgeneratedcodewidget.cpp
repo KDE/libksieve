@@ -13,10 +13,10 @@ SievePreviewGeneratedCodeWidget::SievePreviewGeneratedCodeWidget(QWidget *parent
     , mTextEdit(new QTextEdit(this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
     mainLayout->setContentsMargins({});
 
-    mTextEdit->setObjectName(QStringLiteral("mTextEdit"));
+    mTextEdit->setObjectName(QLatin1StringView("mTextEdit"));
     mTextEdit->setReadOnly(true);
     mainLayout->addWidget(mTextEdit);
 }

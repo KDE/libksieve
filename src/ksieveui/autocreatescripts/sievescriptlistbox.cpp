@@ -86,8 +86,8 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     , mSieveListScript(new QListWidget(this))
 {
     auto layout = new QVBoxLayout(this);
-    layout->setObjectName(QStringLiteral("layout"));
-    mSieveListScript->setObjectName(QStringLiteral("mSieveListScript"));
+    layout->setObjectName(QLatin1StringView("layout"));
+    mSieveListScript->setObjectName(QLatin1StringView("mSieveListScript"));
     mSieveListScript->setDragDropMode(QAbstractItemView::InternalMove);
     mSieveListScript->setContextMenuPolicy(Qt::CustomContextMenu);
     connect(mSieveListScript, &QListWidget::customContextMenuRequested, this, &SieveScriptListBox::slotCustomMenuRequested);

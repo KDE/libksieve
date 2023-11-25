@@ -37,7 +37,7 @@ QWidget *SieveActionReplace::createParamWidget(QWidget *parent) const
 
     auto subject = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(subject);
-    subject->setObjectName(QStringLiteral("subject"));
+    subject->setObjectName(QLatin1StringView("subject"));
     connect(subject, &QLineEdit::textChanged, this, &SieveActionReplace::valueChanged);
     grid->addWidget(subject, 0, 1);
 
@@ -45,7 +45,7 @@ QWidget *SieveActionReplace::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 1, 0);
 
     KSieveUi::AbstractSelectEmailLineEdit *headers = AutoCreateScriptUtil::createSelectEmailsWidget();
-    headers->setObjectName(QStringLiteral("from"));
+    headers->setObjectName(QLatin1StringView("from"));
     connect(headers, &AbstractSelectEmailLineEdit::valueChanged, this, &SieveActionReplace::valueChanged);
     grid->addWidget(headers, 1, 1);
 
@@ -53,7 +53,7 @@ QWidget *SieveActionReplace::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 2, 0);
 
     auto text = new MultiLineEdit;
-    text->setObjectName(QStringLiteral("text"));
+    text->setObjectName(QLatin1StringView("text"));
     connect(text, &MultiLineEdit::textChanged, this, &SieveActionReplace::valueChanged);
     grid->addWidget(text, 2, 1);
 

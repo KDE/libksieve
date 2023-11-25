@@ -32,7 +32,7 @@ QWidget *SieveConditionConvert::createParamWidget(QWidget *parent) const
     lay->addWidget(lab, 0, 0);
 
     auto fromMimeType = new SelectMimeTypeComboBox;
-    fromMimeType->setObjectName(QStringLiteral("from"));
+    fromMimeType->setObjectName(QLatin1StringView("from"));
     connect(fromMimeType, &SelectMimeTypeComboBox::valueChanged, this, &SieveConditionConvert::valueChanged);
     lay->addWidget(fromMimeType, 0, 1);
 
@@ -41,7 +41,7 @@ QWidget *SieveConditionConvert::createParamWidget(QWidget *parent) const
 
     auto toMimeType = new SelectMimeTypeComboBox;
     connect(toMimeType, &SelectMimeTypeComboBox::valueChanged, this, &SieveConditionConvert::valueChanged);
-    toMimeType->setObjectName(QStringLiteral("to"));
+    toMimeType->setObjectName(QLatin1StringView("to"));
     lay->addWidget(toMimeType, 0, 3);
 
     lab = new QLabel(i18n("Parameters:"));
@@ -49,7 +49,7 @@ QWidget *SieveConditionConvert::createParamWidget(QWidget *parent) const
 
     auto params = new SelectConvertParameterWidget;
     connect(params, &SelectConvertParameterWidget::valueChanged, this, &SieveConditionConvert::valueChanged);
-    params->setObjectName(QStringLiteral("params"));
+    params->setObjectName(QLatin1StringView("params"));
     lay->addWidget(params, 1, 1, 2, 3);
     return w;
 }

@@ -35,7 +35,7 @@ QWidget *SieveConditionIhave::createParamWidget(QWidget *parent) const
     edit->setPlaceholderText(i18n("Use \",\" to separate capabilities"));
     edit->setClearButtonEnabled(true);
     lay->addWidget(edit);
-    edit->setObjectName(QStringLiteral("edit"));
+    edit->setObjectName(QLatin1StringView("edit"));
 
     return w;
 }

@@ -33,7 +33,7 @@ QWidget *SieveConditionMetaData::createParamWidget(QWidget *parent) const
     w->setLayout(lay);
 
     auto selectType = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
-    selectType->setObjectName(QStringLiteral("selecttype"));
+    selectType->setObjectName(QLatin1StringView("selecttype"));
     connect(selectType, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionMetaData::valueChanged);
     lay->addWidget(selectType);
 
@@ -48,7 +48,7 @@ QWidget *SieveConditionMetaData::createParamWidget(QWidget *parent) const
     mailbox->setSieveImapAccountSettings(sieveImapAccountSettings());
 
     connect(mailbox, &KSieveUi::AbstractMoveImapFolderWidget::textChanged, this, &SieveConditionMetaData::valueChanged);
-    mailbox->setObjectName(QStringLiteral("mailbox"));
+    mailbox->setObjectName(QLatin1StringView("mailbox"));
     grid->addWidget(mailbox, 0, 1);
 
     lab = new QLabel(i18n("Annotations:"));
@@ -57,7 +57,7 @@ QWidget *SieveConditionMetaData::createParamWidget(QWidget *parent) const
     auto annotation = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(annotation);
     connect(annotation, &QLineEdit::textChanged, this, &SieveConditionMetaData::valueChanged);
-    annotation->setObjectName(QStringLiteral("annotation"));
+    annotation->setObjectName(QLatin1StringView("annotation"));
     grid->addWidget(annotation, 1, 1);
 
     lab = new QLabel(i18n("Value:"));
@@ -66,7 +66,7 @@ QWidget *SieveConditionMetaData::createParamWidget(QWidget *parent) const
     AbstractRegexpEditorLineEdit *value = AutoCreateScriptUtil::createRegexpEditorLineEdit();
     connect(value, &AbstractRegexpEditorLineEdit::textChanged, this, &SieveConditionMetaData::valueChanged);
     connect(selectType, &SelectMatchTypeComboBox::switchToRegexp, value, &AbstractRegexpEditorLineEdit::switchToRegexpEditorLineEdit);
-    value->setObjectName(QStringLiteral("value"));
+    value->setObjectName(QLatin1StringView("value"));
     grid->addWidget(value, 2, 1);
 
     return w;

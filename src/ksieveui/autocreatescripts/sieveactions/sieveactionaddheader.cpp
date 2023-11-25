@@ -33,7 +33,7 @@ QWidget *SieveActionAddHeader::createParamWidget(QWidget *parent) const
     w->setLayout(grid);
 
     auto combo = new SelectAddHeaderPositionCombobox;
-    combo->setObjectName(QStringLiteral("selectposition"));
+    combo->setObjectName(QLatin1StringView("selectposition"));
     connect(combo, &SelectAddHeaderPositionCombobox::valueChanged, this, &SieveActionAddHeader::valueChanged);
     grid->addWidget(combo, 0, 0);
 
@@ -43,7 +43,7 @@ QWidget *SieveActionAddHeader::createParamWidget(QWidget *parent) const
     auto headerEdit = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(headerEdit);
     connect(headerEdit, &QLineEdit::textChanged, this, &SieveActionAddHeader::valueChanged);
-    headerEdit->setObjectName(QStringLiteral("headeredit"));
+    headerEdit->setObjectName(QLatin1StringView("headeredit"));
     grid->addWidget(headerEdit, 0, 2);
 
     lab = new QLabel(i18n("value:"));
@@ -52,7 +52,7 @@ QWidget *SieveActionAddHeader::createParamWidget(QWidget *parent) const
     auto valueEdit = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(valueEdit);
     connect(valueEdit, &QLineEdit::textChanged, this, &SieveActionAddHeader::valueChanged);
-    valueEdit->setObjectName(QStringLiteral("valueedit"));
+    valueEdit->setObjectName(QLatin1StringView("valueedit"));
     grid->addWidget(valueEdit, 1, 2);
 
     return w;

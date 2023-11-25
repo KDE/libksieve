@@ -34,7 +34,7 @@ QWidget *SieveConditionEnvelope::createParamWidget(QWidget *parent) const
 
     auto selectAddressPart = new SelectAddressPartComboBox(mSieveGraphicalModeWidget);
     connect(selectAddressPart, &SelectAddressPartComboBox::valueChanged, this, &SieveConditionEnvelope::valueChanged);
-    selectAddressPart->setObjectName(QStringLiteral("addresspartcombobox"));
+    selectAddressPart->setObjectName(QLatin1StringView("addresspartcombobox"));
     lay->addWidget(selectAddressPart);
 
     auto grid = new QGridLayout;
@@ -42,12 +42,12 @@ QWidget *SieveConditionEnvelope::createParamWidget(QWidget *parent) const
     lay->addLayout(grid);
 
     auto selectMatchCombobox = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
-    selectMatchCombobox->setObjectName(QStringLiteral("matchtypecombobox"));
+    selectMatchCombobox->setObjectName(QLatin1StringView("matchtypecombobox"));
     connect(selectMatchCombobox, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionEnvelope::valueChanged);
     grid->addWidget(selectMatchCombobox, 0, 0);
 
     auto selectHeaderType = new SelectHeaderTypeComboBox(true);
-    selectHeaderType->setObjectName(QStringLiteral("headertypecombobox"));
+    selectHeaderType->setObjectName(QLatin1StringView("headertypecombobox"));
     connect(selectHeaderType, &SelectHeaderTypeComboBox::valueChanged, this, &SieveConditionEnvelope::valueChanged);
     grid->addWidget(selectHeaderType, 0, 1);
 
@@ -55,7 +55,7 @@ QWidget *SieveConditionEnvelope::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 1, 0);
 
     AbstractRegexpEditorLineEdit *edit = AutoCreateScriptUtil::createRegexpEditorLineEdit();
-    edit->setObjectName(QStringLiteral("editaddress"));
+    edit->setObjectName(QLatin1StringView("editaddress"));
     connect(edit, &AbstractRegexpEditorLineEdit::textChanged, this, &SieveConditionEnvelope::valueChanged);
     connect(selectMatchCombobox, &SelectMatchTypeComboBox::switchToRegexp, edit, &AbstractRegexpEditorLineEdit::switchToRegexpEditorLineEdit);
     edit->setClearButtonEnabled(true);

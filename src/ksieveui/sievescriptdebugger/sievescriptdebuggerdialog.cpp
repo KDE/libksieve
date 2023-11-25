@@ -30,15 +30,15 @@ SieveScriptDebuggerDialog::SieveScriptDebuggerDialog(QWidget *parent)
     setWindowTitle(i18nc("@title:window", "Debug Sieve Script"));
 
     mSieveScriptDebuggerWidget = new SieveScriptDebuggerWidget(this);
-    mSieveScriptDebuggerWidget->setObjectName(QStringLiteral("sievescriptdebuggerwidget"));
+    mSieveScriptDebuggerWidget->setObjectName(QLatin1StringView("sievescriptdebuggerwidget"));
     mainLayout->addWidget(mSieveScriptDebuggerWidget);
     connect(mSieveScriptDebuggerWidget, &SieveScriptDebuggerWidget::sieveTestNotFound, this, &SieveScriptDebuggerDialog::updateButtons);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     mainLayout->addWidget(buttonBox);
-    buttonBox->setObjectName(QStringLiteral("buttonbox"));
+    buttonBox->setObjectName(QLatin1StringView("buttonbox"));
     mOkButton = buttonBox->button(QDialogButtonBox::Ok);
-    mOkButton->setObjectName(QStringLiteral("okbutton"));
+    mOkButton->setObjectName(QLatin1StringView("okbutton"));
     mOkButton->setText(i18n("Apply Changes"));
     mOkButton->setDefault(true);
     mOkButton->setShortcut(Qt::CTRL | Qt::Key_Return);
@@ -52,7 +52,7 @@ SieveScriptDebuggerDialog::SieveScriptDebuggerDialog(QWidget *parent)
     const KGuiItem item(i18n("Debug"), QIcon::fromTheme(QStringLiteral("debug-run")));
     KGuiItem::assign(mDebugScriptButton, item);
 
-    mDebugScriptButton->setObjectName(QStringLiteral("debug_button"));
+    mDebugScriptButton->setObjectName(QLatin1StringView("debug_button"));
     mDebugScriptButton->setEnabled(false);
     connect(mDebugScriptButton, &QPushButton::clicked, mSieveScriptDebuggerWidget, &SieveScriptDebuggerWidget::debugScriptButtonClicked);
     buttonBox->addButton(mDebugScriptButton, QDialogButtonBox::ActionRole);

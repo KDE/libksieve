@@ -34,7 +34,7 @@ QWidget *SieveActionBreak::createParamWidget(QWidget *parent) const
 
     auto subject = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(subject);
-    subject->setObjectName(QStringLiteral("name"));
+    subject->setObjectName(QLatin1StringView("name"));
     connect(subject, &QLineEdit::textChanged, this, &SieveActionBreak::valueChanged);
     lay->addWidget(subject);
     return w;

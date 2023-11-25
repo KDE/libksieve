@@ -41,10 +41,10 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     mainLayout->addLayout(formLayout);
 
     auto emailLab = new QLabel(i18n("Email path:"), this);
-    emailLab->setObjectName(QStringLiteral("emaillab"));
+    emailLab->setObjectName(QLatin1StringView("emaillab"));
 
     mEmailPath = new KUrlRequester(this);
-    mEmailPath->setObjectName(QStringLiteral("emailpath"));
+    mEmailPath->setObjectName(QLatin1StringView("emailpath"));
     mEmailPath->lineEdit()->setTrapReturnKey(true);
     mEmailPath->lineEdit()->setClearButtonEnabled(true);
     connect(mEmailPath->lineEdit(), &KLineEdit::textChanged, this, &SieveScriptDebuggerFrontEndWidget::slotEmailChanged);
@@ -55,10 +55,10 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     mainLayout->addLayout(extensionLayout);
 
     auto extensionLab = new QLabel(i18n("Extension:"));
-    extensionLab->setObjectName(QStringLiteral("extensionlab"));
+    extensionLab->setObjectName(QLatin1StringView("extensionlab"));
 
     mExtension = new QLineEdit(this);
-    mExtension->setObjectName(QStringLiteral("extension"));
+    mExtension->setObjectName(QLatin1StringView("extension"));
     mExtension->setPlaceholderText(i18n("Activate extension with \"+<name of extension>\", deactivate it with \"-<name of extension>\""));
     mExtension->setClearButtonEnabled(true);
     KLineEditEventHandler::catchReturnKey(mExtension);
@@ -66,7 +66,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     formLayout->addRow(extensionLab, mExtension);
 
     mSplitter = new QSplitter(Qt::Vertical);
-    mSplitter->setObjectName(QStringLiteral("splitter"));
+    mSplitter->setObjectName(QLatin1StringView("splitter"));
     mainLayout->addWidget(mSplitter);
 
     auto sieveEditorWidget = new QWidget(this);
@@ -75,13 +75,13 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     vboxSieveEditorLayout->setContentsMargins({});
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     auto textToSpeechWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(this);
-    textToSpeechWidget->setObjectName(QStringLiteral("texttospeechwidget"));
+    textToSpeechWidget->setObjectName(QLatin1StringView("texttospeechwidget"));
     vboxSieveEditorLayout->addWidget(textToSpeechWidget);
 #endif
     auto textEdit = new KSieveUi::SieveScriptDebuggerTextEdit(this);
     connect(textEdit, &KSieveUi::SieveScriptDebuggerTextEdit::textChanged, this, &SieveScriptDebuggerFrontEndWidget::slotScriptTextChanged);
     mSieveTextEditWidget = new KSieveUi::SieveTextEditWidget(textEdit, this);
-    mSieveTextEditWidget->setObjectName(QStringLiteral("sievetexteditwidget"));
+    mSieveTextEditWidget->setObjectName(QLatin1StringView("sievetexteditwidget"));
     vboxSieveEditorLayout->addWidget(mSieveTextEditWidget);
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     connect(mSieveTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
@@ -90,13 +90,13 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     mSplitter->setChildrenCollapsible(false);
 
     mSieveTestResult = new TextCustomEditor::PlainTextEditorWidget(new KSieveUi::SieveScriptDebuggerResultEditor(this), this);
-    mSieveTestResult->setObjectName(QStringLiteral("sievetextresult"));
+    mSieveTestResult->setObjectName(QLatin1StringView("sievetextresult"));
     mSieveTestResult->editor()->setPlaceholderText(i18n("Display check script result..."));
     mSieveTestResult->setReadOnly(true);
     mSplitter->addWidget(mSieveTestResult);
 
     mSieveScriptDebuggerWarning = new KSieveUi::SieveScriptDebuggerWarning(this);
-    mSieveScriptDebuggerWarning->setObjectName(QStringLiteral("sievescriptdebuggerwarning"));
+    mSieveScriptDebuggerWarning->setObjectName(QLatin1StringView("sievescriptdebuggerwarning"));
     mainLayout->addWidget(mSieveScriptDebuggerWarning);
 
     connect(this, &SieveScriptDebuggerFrontEndWidget::debugScriptButtonClicked, this, &SieveScriptDebuggerFrontEndWidget::slotDebugScript);

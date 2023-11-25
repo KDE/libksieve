@@ -27,13 +27,13 @@ SieveInfoDialog::SieveInfoDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Sieve Server Support"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
 
-    mSieveInfoWidget->setObjectName(QStringLiteral("mSieveInfoWidget"));
+    mSieveInfoWidget->setObjectName(QLatin1StringView("mSieveInfoWidget"));
     mainLayout->addWidget(mSieveInfoWidget);
 
     auto button = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    button->setObjectName(QStringLiteral("button"));
+    button->setObjectName(QLatin1StringView("button"));
     mainLayout->addWidget(button);
     connect(button, &QDialogButtonBox::rejected, this, &SieveInfoDialog::reject);
     readConfig();

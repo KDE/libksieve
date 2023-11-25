@@ -39,7 +39,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
     QLabel *lab = nullptr;
     if (mHasVacationSecondsSupport) {
         auto vacation = new SelectVacationComboBox;
-        vacation->setObjectName(QStringLiteral("vacationcombobox"));
+        vacation->setObjectName(QLatin1StringView("vacationcombobox"));
         connect(vacation, &SelectVacationComboBox::valueChanged, this, &SieveActionVacation::valueChanged);
         grid->addWidget(vacation, 0, 0);
     } else {
@@ -50,7 +50,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
     auto day = new QSpinBox;
     day->setMinimum(1);
     day->setMaximum(999);
-    day->setObjectName(QStringLiteral("day"));
+    day->setObjectName(QLatin1StringView("day"));
     connect(day, &QSpinBox::valueChanged, this, &SieveActionVacation::valueChanged);
     grid->addWidget(day, 0, 1);
 
@@ -59,7 +59,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
 
     auto subject = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(subject);
-    subject->setObjectName(QStringLiteral("subject"));
+    subject->setObjectName(QLatin1StringView("subject"));
     connect(subject, &QLineEdit::textChanged, this, &SieveActionVacation::valueChanged);
     grid->addWidget(subject, 1, 1);
 
@@ -67,7 +67,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
     grid->addWidget(lab, 2, 0);
 
     AbstractSelectEmailLineEdit *addresses = AutoCreateScriptUtil::createSelectEmailsWidget();
-    addresses->setObjectName(QStringLiteral("addresses"));
+    addresses->setObjectName(QLatin1StringView("addresses"));
     addresses->setMultiSelection(true);
     connect(addresses, &AbstractSelectEmailLineEdit::valueChanged, this, &SieveActionVacation::valueChanged);
     grid->addWidget(addresses, 2, 1);
@@ -77,7 +77,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
 
     auto text = new MultiLineEdit;
     connect(text, &MultiLineEdit::valueChanged, this, &SieveActionVacation::valueChanged);
-    text->setObjectName(QStringLiteral("text"));
+    text->setObjectName(QLatin1StringView("text"));
     grid->addWidget(text, 3, 1);
 
     return w;

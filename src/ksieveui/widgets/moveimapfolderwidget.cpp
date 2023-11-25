@@ -16,10 +16,10 @@ MoveImapFolderWidget::MoveImapFolderWidget(QWidget *parent)
     , mLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainlayout"));
     mainLayout->setContentsMargins({});
     KLineEditEventHandler::catchReturnKey(mLineEdit);
-    mLineEdit->setObjectName(QStringLiteral("lineedit"));
+    mLineEdit->setObjectName(QLatin1StringView("lineedit"));
     mLineEdit->setClearButtonEnabled(true);
     mLineEdit->setPlaceholderText(i18n("Define Folder"));
     mainLayout->addWidget(mLineEdit);

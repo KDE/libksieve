@@ -29,13 +29,13 @@ QWidget *SieveConditionBody::createParamWidget(QWidget *parent) const
     w->setLayout(lay);
 
     auto bodyType = new SelectBodyTypeWidget;
-    bodyType->setObjectName(QStringLiteral("bodytype"));
+    bodyType->setObjectName(QLatin1StringView("bodytype"));
     connect(bodyType, &SelectBodyTypeWidget::valueChanged, this, &SieveConditionBody::valueChanged);
     lay->addWidget(bodyType);
 
     auto matchType = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
     lay->addWidget(matchType);
-    matchType->setObjectName(QStringLiteral("matchtype"));
+    matchType->setObjectName(QLatin1StringView("matchtype"));
     connect(matchType, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionBody::valueChanged);
 
     AbstractRegexpEditorLineEdit *edit = AutoCreateScriptUtil::createRegexpEditorLineEdit();
@@ -43,7 +43,7 @@ QWidget *SieveConditionBody::createParamWidget(QWidget *parent) const
     connect(matchType, &SelectMatchTypeComboBox::switchToRegexp, edit, &AbstractRegexpEditorLineEdit::switchToRegexpEditorLineEdit);
     edit->setClearButtonEnabled(true);
     lay->addWidget(edit);
-    edit->setObjectName(QStringLiteral("edit"));
+    edit->setObjectName(QLatin1StringView("edit"));
 
     return w;
 }

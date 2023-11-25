@@ -36,7 +36,7 @@ QWidget *SieveConditionMetaDataExists::createParamWidget(QWidget *parent) const
     KSieveUi::AbstractMoveImapFolderWidget *mailbox = AutoCreateScriptUtil::createImapFolderWidget();
     mailbox->setSieveImapAccountSettings(sieveImapAccountSettings());
     connect(mailbox, &KSieveUi::AbstractMoveImapFolderWidget::textChanged, this, &SieveConditionMetaDataExists::valueChanged);
-    mailbox->setObjectName(QStringLiteral("mailbox"));
+    mailbox->setObjectName(QLatin1StringView("mailbox"));
     grid->addWidget(mailbox, 0, 1);
 
     lab = new QLabel(i18n("Annotation:"));
@@ -45,7 +45,7 @@ QWidget *SieveConditionMetaDataExists::createParamWidget(QWidget *parent) const
     auto value = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(value);
     connect(value, &QLineEdit::textChanged, this, &SieveConditionMetaDataExists::valueChanged);
-    value->setObjectName(QStringLiteral("value"));
+    value->setObjectName(QLatin1StringView("value"));
     grid->addWidget(value, 1, 1);
 
     return w;

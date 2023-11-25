@@ -22,11 +22,11 @@ SieveScriptDebuggerWidget::SieveScriptDebuggerWidget(QWidget *parent)
     auto mainLayout = new QHBoxLayout(this);
     mainLayout->setContentsMargins({});
     mStackedWidget = new QStackedWidget(this);
-    mStackedWidget->setObjectName(QStringLiteral("stackedwidget"));
+    mStackedWidget->setObjectName(QLatin1StringView("stackedwidget"));
     mainLayout->addWidget(mStackedWidget);
 
     mSieveScriptFrontEnd = new SieveScriptDebuggerFrontEndWidget;
-    mSieveScriptFrontEnd->setObjectName(QStringLiteral("sievescriptfrontend"));
+    mSieveScriptFrontEnd->setObjectName(QLatin1StringView("sievescriptfrontend"));
     mStackedWidget->addWidget(mSieveScriptFrontEnd);
     connect(mSieveScriptFrontEnd, &SieveScriptDebuggerFrontEndWidget::scriptTextChanged, this, &SieveScriptDebuggerWidget::scriptTextChanged);
     connect(mSieveScriptFrontEnd, &SieveScriptDebuggerFrontEndWidget::debugButtonEnabled, this, &SieveScriptDebuggerWidget::debugButtonEnabled);
@@ -37,7 +37,7 @@ SieveScriptDebuggerWidget::SieveScriptDebuggerWidget(QWidget *parent)
     QFont f = mSieveNoExistingFrontEnd->font();
     f.setBold(true);
     mSieveNoExistingFrontEnd->setFont(f);
-    mSieveNoExistingFrontEnd->setObjectName(QStringLiteral("sievenoexistingfrontend"));
+    mSieveNoExistingFrontEnd->setObjectName(QLatin1StringView("sievenoexistingfrontend"));
     mStackedWidget->addWidget(mSieveNoExistingFrontEnd);
 
     QTimer::singleShot(0, this, &SieveScriptDebuggerWidget::checkSieveTestApplication);

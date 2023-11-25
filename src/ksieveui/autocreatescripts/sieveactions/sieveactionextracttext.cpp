@@ -35,7 +35,7 @@ QWidget *SieveActionExtractText::createParamWidget(QWidget *parent) const
     auto nbCharacters = new QSpinBox;
     nbCharacters->setMinimum(1);
     nbCharacters->setMaximum(99999);
-    nbCharacters->setObjectName(QStringLiteral("numberOfCharacters"));
+    nbCharacters->setObjectName(QLatin1StringView("numberOfCharacters"));
     grid->addWidget(nbCharacters, 0, 1);
     connect(nbCharacters, &QSpinBox::valueChanged, this, &SieveActionExtractText::valueChanged);
 
@@ -45,7 +45,7 @@ QWidget *SieveActionExtractText::createParamWidget(QWidget *parent) const
     auto variableName = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(variableName);
     connect(variableName, &QLineEdit::textChanged, this, &SieveActionExtractText::valueChanged);
-    variableName->setObjectName(QStringLiteral("variablename"));
+    variableName->setObjectName(QLatin1StringView("variablename"));
     grid->addWidget(variableName, 1, 1);
 
     return w;

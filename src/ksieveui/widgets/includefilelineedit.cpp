@@ -15,7 +15,7 @@ IncludeFileLineEdit::IncludeFileLineEdit(QWidget *parent)
     : LineEditValidator(parent)
     , mCompleter(new QCompleter(this))
 {
-    mCompleter->setObjectName(QStringLiteral("completer"));
+    mCompleter->setObjectName(QLatin1StringView("completer"));
     mCompleter->setCaseSensitivity(Qt::CaseInsensitive);
     mStringListModel = new QStringListModel(this);
     mCompleter->setModel(mStringListModel);

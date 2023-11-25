@@ -33,19 +33,19 @@ QWidget *SieveActionRedirect::createParamWidget(QWidget *parent) const
     w->setLayout(lay);
     if (mHasCopySupport) {
         auto copy = new QCheckBox(i18n("Keep a copy"));
-        copy->setObjectName(QStringLiteral("copy"));
+        copy->setObjectName(QLatin1StringView("copy"));
         connect(copy, &QCheckBox::clicked, this, &SieveActionRedirect::valueChanged);
         lay->addWidget(copy);
     }
     if (mHasListSupport) {
         auto list = new QCheckBox(i18n("Use list"));
-        list->setObjectName(QStringLiteral("list"));
+        list->setObjectName(QLatin1StringView("list"));
         connect(list, &QCheckBox::clicked, this, &SieveActionRedirect::valueChanged);
         lay->addWidget(list);
     }
 
     KSieveUi::AbstractSelectEmailLineEdit *edit = AutoCreateScriptUtil::createSelectEmailsWidget();
-    edit->setObjectName(QStringLiteral("RedirectEdit"));
+    edit->setObjectName(QLatin1StringView("RedirectEdit"));
     connect(edit, &AddressLineEdit::valueChanged, this, &SieveActionRedirect::valueChanged);
     lay->addWidget(edit);
     return w;

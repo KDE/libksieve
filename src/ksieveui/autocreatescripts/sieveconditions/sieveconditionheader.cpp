@@ -30,7 +30,7 @@ QWidget *SieveConditionHeader::createParamWidget(QWidget *parent) const
     w->setLayout(lay);
 
     auto matchTypeCombo = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
-    matchTypeCombo->setObjectName(QStringLiteral("matchtypecombobox"));
+    matchTypeCombo->setObjectName(QLatin1StringView("matchtypecombobox"));
     connect(matchTypeCombo, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionHeader::valueChanged);
     lay->addWidget(matchTypeCombo);
 
@@ -38,7 +38,7 @@ QWidget *SieveConditionHeader::createParamWidget(QWidget *parent) const
     lay->addLayout(grid);
 
     auto headerType = new SelectHeaderTypeComboBox;
-    headerType->setObjectName(QStringLiteral("headertype"));
+    headerType->setObjectName(QLatin1StringView("headertype"));
     connect(headerType, &SelectHeaderTypeComboBox::valueChanged, this, &SieveConditionHeader::valueChanged);
     grid->addWidget(headerType, 0, 0, 1, 2);
 
@@ -48,7 +48,7 @@ QWidget *SieveConditionHeader::createParamWidget(QWidget *parent) const
     AbstractRegexpEditorLineEdit *value = AutoCreateScriptUtil::createRegexpEditorLineEdit();
     connect(value, &AbstractRegexpEditorLineEdit::textChanged, this, &SieveConditionHeader::valueChanged);
     connect(matchTypeCombo, &SelectMatchTypeComboBox::switchToRegexp, value, &AbstractRegexpEditorLineEdit::switchToRegexpEditorLineEdit);
-    value->setObjectName(QStringLiteral("value"));
+    value->setObjectName(QLatin1StringView("value"));
     grid->addWidget(value, 1, 1);
     return w;
 }

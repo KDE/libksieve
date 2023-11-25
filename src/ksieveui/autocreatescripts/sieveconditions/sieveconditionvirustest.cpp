@@ -32,18 +32,18 @@ QWidget *SieveConditionVirusTest::createParamWidget(QWidget *parent) const
 
     auto relation = new SelectRelationalMatchType;
     connect(relation, &SelectRelationalMatchType::valueChanged, this, &SieveConditionVirusTest::valueChanged);
-    relation->setObjectName(QStringLiteral("relation"));
+    relation->setObjectName(QLatin1StringView("relation"));
     lay->addWidget(relation);
 
     auto comparator = new SelectComparatorComboBox(mSieveGraphicalModeWidget);
     connect(comparator, &SelectComparatorComboBox::valueChanged, this, &SieveConditionVirusTest::valueChanged);
-    comparator->setObjectName(QStringLiteral("comparator"));
+    comparator->setObjectName(QLatin1StringView("comparator"));
     lay->addWidget(comparator);
 
     auto spinbox = new QSpinBox;
     spinbox->setMaximum(5);
     spinbox->setMinimum(0);
-    spinbox->setObjectName(QStringLiteral("value"));
+    spinbox->setObjectName(QLatin1StringView("value"));
     connect(spinbox, &QSpinBox::valueChanged, this, &SieveConditionVirusTest::valueChanged);
     lay->addWidget(spinbox);
     return w;

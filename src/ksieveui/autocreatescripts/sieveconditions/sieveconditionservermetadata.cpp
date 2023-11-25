@@ -32,7 +32,7 @@ QWidget *SieveConditionServerMetaData::createParamWidget(QWidget *parent) const
     w->setLayout(lay);
 
     auto selectType = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
-    selectType->setObjectName(QStringLiteral("selecttype"));
+    selectType->setObjectName(QLatin1StringView("selecttype"));
     connect(selectType, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionServerMetaData::valueChanged);
     lay->addWidget(selectType);
 
@@ -45,7 +45,7 @@ QWidget *SieveConditionServerMetaData::createParamWidget(QWidget *parent) const
 
     auto mailbox = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(mailbox);
-    mailbox->setObjectName(QStringLiteral("mailbox"));
+    mailbox->setObjectName(QLatin1StringView("mailbox"));
     connect(mailbox, &QLineEdit::textChanged, this, &SieveConditionServerMetaData::valueChanged);
     grid->addWidget(mailbox, 0, 1);
 
@@ -55,7 +55,7 @@ QWidget *SieveConditionServerMetaData::createParamWidget(QWidget *parent) const
     auto annotation = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(annotation);
     connect(annotation, &QLineEdit::textChanged, this, &SieveConditionServerMetaData::valueChanged);
-    annotation->setObjectName(QStringLiteral("annotation"));
+    annotation->setObjectName(QLatin1StringView("annotation"));
     grid->addWidget(annotation, 1, 1);
 
     lab = new QLabel(i18n("Value:"));
@@ -64,7 +64,7 @@ QWidget *SieveConditionServerMetaData::createParamWidget(QWidget *parent) const
     AbstractRegexpEditorLineEdit *value = AutoCreateScriptUtil::createRegexpEditorLineEdit();
     connect(value, &AbstractRegexpEditorLineEdit::textChanged, this, &SieveConditionServerMetaData::valueChanged);
     connect(selectType, &SelectMatchTypeComboBox::switchToRegexp, value, &AbstractRegexpEditorLineEdit::switchToRegexpEditorLineEdit);
-    value->setObjectName(QStringLiteral("value"));
+    value->setObjectName(QLatin1StringView("value"));
     grid->addWidget(value, 2, 1);
 
     return w;

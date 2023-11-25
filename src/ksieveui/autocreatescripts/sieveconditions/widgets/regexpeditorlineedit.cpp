@@ -15,10 +15,10 @@ RegexpEditorLineEdit::RegexpEditorLineEdit(QWidget *parent)
     , mLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainlayout"));
     mainLayout->setContentsMargins({});
     KLineEditEventHandler::catchReturnKey(mLineEdit);
-    mLineEdit->setObjectName(QStringLiteral("lineedit"));
+    mLineEdit->setObjectName(QLatin1StringView("lineedit"));
     connect(mLineEdit, &QLineEdit::textChanged, this, &RegexpEditorLineEdit::textChanged);
     mainLayout->addWidget(mLineEdit);
 }

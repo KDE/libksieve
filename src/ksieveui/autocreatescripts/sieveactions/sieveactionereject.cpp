@@ -32,7 +32,7 @@ QWidget *SieveActionEReject::createParamWidget(QWidget *parent) const
 
     auto edit = new MultiLineEdit;
     connect(edit, &MultiLineEdit::textChanged, this, &SieveActionEReject::valueChanged);
-    edit->setObjectName(QStringLiteral("rejectmessage"));
+    edit->setObjectName(QLatin1StringView("rejectmessage"));
     lay->addWidget(edit);
     return w;
 }

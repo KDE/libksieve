@@ -47,13 +47,13 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     auto configureVacationLabel = new QLabel(i18n("Configure vacation "
                                                   "notifications to be sent:"),
                                              this);
-    configureVacationLabel->setObjectName(QStringLiteral("configureVacationLabel"));
+    configureVacationLabel->setObjectName(QLatin1StringView("configureVacationLabel"));
     glay->addWidget(configureVacationLabel, row, 0, 1, 2);
 
     // Activate checkbox:
     ++row;
     mActiveCheck = new QCheckBox(i18n("&Activate vacation notifications"), this);
-    mActiveCheck->setObjectName(QStringLiteral("mActiveCheck"));
+    mActiveCheck->setObjectName(QLatin1StringView("mActiveCheck"));
     glay->addWidget(mActiveCheck, row, 0, 1, 2);
     connect(mActiveCheck, &QCheckBox::clicked, this, &VacationEditWidget::setWasChanged);
 
@@ -61,18 +61,18 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     ++row;
     glay->setRowStretch(row, 1);
     mTextEdit = new TextCustomEditor::PlainTextEditorWidget(this);
-    mTextEdit->setObjectName(QStringLiteral("mTextEdit"));
+    mTextEdit->setObjectName(QLatin1StringView("mTextEdit"));
     glay->addWidget(mTextEdit, row, 0, 1, 2);
     connect(mTextEdit->editor(), &TextCustomEditor::PlainTextEditor::textChanged, this, &VacationEditWidget::setWasChanged);
 
     // Subject
     ++row;
     mSubject = new PimCommon::SpellCheckLineEdit(this, QString());
-    mSubject->setObjectName(QStringLiteral("mSubject"));
+    mSubject->setObjectName(QLatin1StringView("mSubject"));
     connect(mSubject, &PimCommon::SpellCheckLineEdit::textChanged, this, &VacationEditWidget::setWasChanged);
     // mSubject->setClearButtonEnabled(true);
     auto subjectOfVacationLabel = new QLabel(i18n("&Subject of the vacation mail:"), this);
-    subjectOfVacationLabel->setObjectName(QStringLiteral("subjectOfVacationLabel"));
+    subjectOfVacationLabel->setObjectName(QLatin1StringView("subjectOfVacationLabel"));
     subjectOfVacationLabel->setBuddy(mSubject);
     glay->addWidget(subjectOfVacationLabel, row, 0);
     glay->addWidget(mSubject, row, 1);
@@ -81,20 +81,20 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     auto timeLayout = new QHBoxLayout;
     // Start date
     mStartDate = new KDateComboBox(this);
-    mStartDate->setObjectName(QStringLiteral("mStartDate"));
+    mStartDate->setObjectName(QLatin1StringView("mStartDate"));
     mStartDate->setOptions(KDateComboBox::EditDate | KDateComboBox::SelectDate | KDateComboBox::DatePicker | KDateComboBox::DateKeywords);
     connect(mStartDate, &KDateComboBox::dateChanged, this, &VacationEditWidget::setWasChanged);
     connect(mStartDate, &KDateComboBox::dateEdited, this, &VacationEditWidget::setWasChanged);
 
     mStartTime = new KTimeComboBox(this);
-    mStartTime->setObjectName(QStringLiteral("mStartTime"));
+    mStartTime->setObjectName(QLatin1StringView("mStartTime"));
     mStartTime->setOptions(KTimeComboBox::EditTime | KTimeComboBox::SelectTime | KTimeComboBox::WarnOnInvalid);
     mStartTime->setEnabled(false); // Disable by default - we need an extension to support this
     connect(mStartTime, &KTimeComboBox::timeChanged, this, &VacationEditWidget::setWasChanged);
     connect(mStartTime, &KTimeComboBox::timeEdited, this, &VacationEditWidget::setWasChanged);
 
     mStartTimeActive = new QCheckBox(this);
-    mStartTimeActive->setObjectName(QStringLiteral("mStartTimeActive"));
+    mStartTimeActive->setObjectName(QLatin1StringView("mStartTimeActive"));
     connect(mStartTimeActive, &QCheckBox::toggled, mStartTime, &KTimeComboBox::setEnabled);
 
     timeLayout->addWidget(mStartDate);
@@ -102,7 +102,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     timeLayout->addWidget(mStartTime);
 
     mStartDateLabel = new QLabel(i18n("Start date:"), this);
-    mStartDateLabel->setObjectName(QStringLiteral("mStartDateLabel"));
+    mStartDateLabel->setObjectName(QLatin1StringView("mStartDateLabel"));
     mStartDateLabel->setBuddy(mStartDate);
     glay->addWidget(mStartDateLabel, row, 0);
     glay->addLayout(timeLayout, row, 1);
@@ -112,25 +112,25 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     timeLayout = new QHBoxLayout;
 
     mEndDate = new KDateComboBox(this);
-    mEndDate->setObjectName(QStringLiteral("mEndDate"));
+    mEndDate->setObjectName(QLatin1StringView("mEndDate"));
     mEndDate->setOptions(KDateComboBox::EditDate | KDateComboBox::SelectDate | KDateComboBox::DatePicker | KDateComboBox::DateKeywords);
     connect(mEndDate, &KDateComboBox::dateChanged, this, &VacationEditWidget::setWasChanged);
     connect(mEndDate, &KDateComboBox::dateEdited, this, &VacationEditWidget::setWasChanged);
 
     mEndTime = new KTimeComboBox(this);
-    mEndTime->setObjectName(QStringLiteral("mEndTime"));
+    mEndTime->setObjectName(QLatin1StringView("mEndTime"));
     mEndTime->setOptions(KTimeComboBox::EditTime | KTimeComboBox::SelectTime | KTimeComboBox::WarnOnInvalid);
     mEndTime->setEnabled(false); // Disable by default - we need an extension to support this
     connect(mEndTime, &KTimeComboBox::timeChanged, this, &VacationEditWidget::setWasChanged);
     connect(mEndTime, &KTimeComboBox::timeEdited, this, &VacationEditWidget::setWasChanged);
 
     mEndTimeActive = new QCheckBox(this);
-    mEndTimeActive->setObjectName(QStringLiteral("mEndTimeActive"));
+    mEndTimeActive->setObjectName(QLatin1StringView("mEndTimeActive"));
     connect(mEndTimeActive, &QCheckBox::toggled, mEndTime, &KTimeComboBox::setEnabled);
     connect(mEndTimeActive, &QCheckBox::toggled, this, &VacationEditWidget::setWasChanged);
 
     mEndDateLabel = new QLabel(i18n("End date:"), this);
-    mEndDateLabel->setObjectName(QStringLiteral("mEndDateLabel"));
+    mEndDateLabel->setObjectName(QLatin1StringView("mEndDateLabel"));
     mEndDateLabel->setBuddy(mEndDate);
     glay->addWidget(mEndDateLabel, row, 0);
 
@@ -151,11 +151,11 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mIntervalSpin->setMinimum(1);
     mIntervalSpin->setSingleStep(1);
     mIntervalSpin->setValue(defDayInterval);
-    mIntervalSpin->setObjectName(QStringLiteral("mIntervalSpin"));
+    mIntervalSpin->setObjectName(QLatin1StringView("mIntervalSpin"));
     mIntervalSpin->setSuffix(i18np(" day", " days", defDayInterval));
     connect(mIntervalSpin, &QSpinBox::valueChanged, this, &VacationEditWidget::slotIntervalSpinChanged);
     auto resendNotificationLabel = new QLabel(i18n("&Resend notification only after:"), this);
-    resendNotificationLabel->setObjectName(QStringLiteral("resendNotificationLabel"));
+    resendNotificationLabel->setObjectName(QLatin1StringView("resendNotificationLabel"));
     resendNotificationLabel->setBuddy(mIntervalSpin);
     glay->addWidget(resendNotificationLabel, row, 0);
     glay->addWidget(mIntervalSpin, row, 1);
@@ -163,11 +163,11 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     // "Send responses for these addresses" lineedit and label:
     ++row;
     mMailAliasesEdit = new KSieveUi::VacationMailLineEdit(this);
-    mMailAliasesEdit->setObjectName(QStringLiteral("mMailAliasesEdit"));
+    mMailAliasesEdit->setObjectName(QLatin1StringView("mMailAliasesEdit"));
     mMailAliasesEdit->setClearButtonEnabled(true);
     connect(mMailAliasesEdit, &KSieveUi::VacationMailLineEdit::textChanged, this, &VacationEditWidget::setWasChanged);
     auto sendResponseLabel = new QLabel(i18n("&Send responses for these addresses:"), this);
-    sendResponseLabel->setObjectName(QStringLiteral("sendResponseLabel"));
+    sendResponseLabel->setObjectName(QLatin1StringView("sendResponseLabel"));
     sendResponseLabel->setBuddy(mMailAliasesEdit);
     glay->addWidget(sendResponseLabel, row, 0);
     glay->addWidget(mMailAliasesEdit, row, 1);
@@ -177,12 +177,12 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     for (int i = 0; i < 4; ++i) {
         mMailAction->addItem(KSieveCore::VacationUtils::mailAction(static_cast<KSieveCore::VacationUtils::MailAction>(i)));
     }
-    mMailAction->setObjectName(QStringLiteral("mMailAction"));
+    mMailAction->setObjectName(QLatin1StringView("mMailAction"));
     connect(mMailAction, &QComboBox::currentIndexChanged, this, &VacationEditWidget::mailActionChanged);
 
     // Add imap select folder plugin here.
     mMailActionRecipient = new VacationMailActionWidget(this);
-    mMailActionRecipient->setObjectName(QStringLiteral("mMailActionRecipient"));
+    mMailActionRecipient->setObjectName(QLatin1StringView("mMailActionRecipient"));
     connect(mMailActionRecipient, &VacationMailActionWidget::wasChanged, this, &VacationEditWidget::setWasChanged);
     // Add setChanged here too
 
@@ -194,14 +194,14 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     ++row;
     auto actionIncomingMailsLabel = new QLabel(i18n("&Action for incoming mails:"), this);
     actionIncomingMailsLabel->setBuddy(mMailAction);
-    actionIncomingMailsLabel->setObjectName(QStringLiteral("actionIncomingMailsLabel"));
+    actionIncomingMailsLabel->setObjectName(QLatin1StringView("actionIncomingMailsLabel"));
     glay->addWidget(actionIncomingMailsLabel, row, 0);
     glay->addLayout(hLayout, row, 1);
 
     // "Send responses also to SPAM mail" checkbox:
     ++row;
     mSpamCheck = new QCheckBox(i18n("Do not send vacation replies to spam messages"), this);
-    mSpamCheck->setObjectName(QStringLiteral("mSpamCheck"));
+    mSpamCheck->setObjectName(QLatin1StringView("mSpamCheck"));
     mSpamCheck->setChecked(true);
     glay->addWidget(mSpamCheck, row, 0, 1, 2);
     connect(mSpamCheck, &QCheckBox::clicked, this, &VacationEditWidget::setWasChanged);
@@ -209,13 +209,13 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     //  domain checkbox and linedit:
     ++row;
     mDomainCheck = new QCheckBox(i18n("Only react to mail coming from domain:"), this);
-    mDomainCheck->setObjectName(QStringLiteral("mDomainCheck"));
+    mDomainCheck->setObjectName(QLatin1StringView("mDomainCheck"));
     mDomainCheck->setChecked(false);
     connect(mDomainCheck, &QCheckBox::clicked, this, &VacationEditWidget::setWasChanged);
 
     mDomainEdit = new QLineEdit(this);
     KLineEditEventHandler::catchReturnKey(mDomainEdit);
-    mDomainEdit->setObjectName(QStringLiteral("mDomainEdit"));
+    mDomainEdit->setObjectName(QLatin1StringView("mDomainEdit"));
     mDomainEdit->setClearButtonEnabled(true);
     mDomainEdit->setEnabled(false);
     mDomainEdit->setValidator(new QRegularExpressionValidator(QRegularExpression(QStringLiteral("[a-zA-Z0-9+-]+(?:\\.[a-zA-Z0-9+-]+)*")), mDomainEdit));

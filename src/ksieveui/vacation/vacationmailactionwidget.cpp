@@ -18,27 +18,27 @@ VacationMailActionWidget::VacationMailActionWidget(QWidget *parent)
     : QWidget(parent)
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainlayout"));
+    mainLayout->setObjectName(QLatin1StringView("mainlayout"));
     mainLayout->setContentsMargins({});
 
     mStackedWidget = new QStackedWidget(this);
-    mStackedWidget->setObjectName(QStringLiteral("stackedWidget"));
+    mStackedWidget->setObjectName(QLatin1StringView("stackedWidget"));
     mainLayout->addWidget(mStackedWidget);
 
     mMailActionRecipient = new QWidget(this);
-    mMailActionRecipient->setObjectName(QStringLiteral("mailActionRecipient"));
+    mMailActionRecipient->setObjectName(QLatin1StringView("mailActionRecipient"));
 
     mStackedWidget->addWidget(mMailActionRecipient);
 
     mMoveImapFolderWidget = AutoCreateScriptUtil::createImapFolderWidget();
     connect(mMoveImapFolderWidget, &AbstractMoveImapFolderWidget::textChanged, this, &VacationMailActionWidget::wasChanged);
 
-    mMoveImapFolderWidget->setObjectName(QStringLiteral("moveImapFolderWidget"));
+    mMoveImapFolderWidget->setObjectName(QLatin1StringView("moveImapFolderWidget"));
     mStackedWidget->addWidget(mMoveImapFolderWidget);
 
     mSelectEmailLineEdit = AutoCreateScriptUtil::createSelectEmailsWidget();
     connect(mSelectEmailLineEdit, &AbstractSelectEmailLineEdit::valueChanged, this, &VacationMailActionWidget::wasChanged);
-    mSelectEmailLineEdit->setObjectName(QStringLiteral("selectEmailLineEdit"));
+    mSelectEmailLineEdit->setObjectName(QLatin1StringView("selectEmailLineEdit"));
     mSelectEmailLineEdit->setMultiSelection(false);
     mStackedWidget->addWidget(mSelectEmailLineEdit);
 

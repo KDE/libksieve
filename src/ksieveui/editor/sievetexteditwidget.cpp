@@ -47,14 +47,14 @@ void SieveTextEditWidget::initialize(KSieveUi::SieveTextEdit *custom)
     } else {
         d->mTextEdit = new KSieveUi::SieveTextEdit;
     }
-    d->mTextEdit->setObjectName(QStringLiteral("textedit"));
+    d->mTextEdit->setObjectName(QLatin1StringView("textedit"));
     d->mTextEdit->setShowHelpMenu(false);
     mainLayout->addWidget(d->mTextEdit);
 
     d->mSliderContainer = new TextAddonsWidgets::SlideContainer(this);
-    d->mSliderContainer->setObjectName(QStringLiteral("slidercontainer"));
+    d->mSliderContainer->setObjectName(QLatin1StringView("slidercontainer"));
     d->mFindBar = new TextCustomEditor::PlainTextEditFindBar(d->mTextEdit, this);
-    d->mFindBar->setObjectName(QStringLiteral("findbar"));
+    d->mFindBar->setObjectName(QLatin1StringView("findbar"));
     d->mFindBar->setHideWhenClose(false);
     connect(d->mFindBar, &TextCustomEditor::TextEditFindBarBase::hideFindBar, d->mSliderContainer, &TextAddonsWidgets::SlideContainer::slideOut);
     d->mSliderContainer->setContent(d->mFindBar);

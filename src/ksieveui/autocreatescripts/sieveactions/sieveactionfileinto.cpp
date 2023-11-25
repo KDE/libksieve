@@ -94,13 +94,13 @@ QWidget *SieveActionFileInto::createParamWidget(QWidget *parent) const
 
     if (mHasCopySupport) {
         auto copy = new QCheckBox(i18n("Keep a copy"));
-        copy->setObjectName(QStringLiteral("copy"));
+        copy->setObjectName(QLatin1StringView("copy"));
         lay->addWidget(copy);
         connect(copy, &QCheckBox::clicked, this, &SieveActionFileInto::valueChanged);
     }
     if (mHasMailBoxSupport) {
         auto create = new QCheckBox(i18n("Create folder"));
-        create->setObjectName(QStringLiteral("create"));
+        create->setObjectName(QLatin1StringView("create"));
         connect(create, &QCheckBox::clicked, this, &SieveActionFileInto::valueChanged);
         lay->addWidget(create);
     }
@@ -109,7 +109,7 @@ QWidget *SieveActionFileInto::createParamWidget(QWidget *parent) const
     edit->setSieveImapAccountSettings(sieveImapAccountSettings());
     connect(edit, &KSieveUi::AbstractMoveImapFolderWidget::textChanged, this, &SieveActionFileInto::valueChanged);
     lay->addWidget(edit);
-    edit->setObjectName(QStringLiteral("fileintolineedit"));
+    edit->setObjectName(QLatin1StringView("fileintolineedit"));
     return w;
 }
 

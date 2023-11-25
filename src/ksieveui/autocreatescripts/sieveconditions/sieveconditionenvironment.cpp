@@ -43,7 +43,7 @@ QWidget *SieveConditionEnvironment::createParamWidget(QWidget *parent) const
     item->setCompleter(completer);
     connect(item, &QLineEdit::textChanged, this, &SieveConditionEnvironment::valueChanged);
 
-    item->setObjectName(QStringLiteral("item"));
+    item->setObjectName(QLatin1StringView("item"));
     grid->addWidget(item, 0, 1);
 
     lab = new QLabel(i18n("Value:"));
@@ -52,7 +52,7 @@ QWidget *SieveConditionEnvironment::createParamWidget(QWidget *parent) const
     auto value = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(value);
     connect(value, &QLineEdit::textChanged, this, &SieveConditionEnvironment::valueChanged);
-    value->setObjectName(QStringLiteral("value"));
+    value->setObjectName(QLatin1StringView("value"));
     grid->addWidget(value, 1, 1);
 
     return w;

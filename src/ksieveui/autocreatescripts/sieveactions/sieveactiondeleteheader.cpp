@@ -33,7 +33,7 @@ QWidget *SieveActionDeleteHeader::createParamWidget(QWidget *parent) const
     w->setLayout(grid);
 
     auto matchType = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
-    matchType->setObjectName(QStringLiteral("matchtype"));
+    matchType->setObjectName(QLatin1StringView("matchtype"));
     connect(matchType, &SelectMatchTypeComboBox::valueChanged, this, &SieveActionDeleteHeader::valueChanged);
     grid->addWidget(matchType, 0, 0);
 
@@ -42,7 +42,7 @@ QWidget *SieveActionDeleteHeader::createParamWidget(QWidget *parent) const
 
     auto headerEdit = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(headerEdit);
-    headerEdit->setObjectName(QStringLiteral("headeredit"));
+    headerEdit->setObjectName(QLatin1StringView("headeredit"));
     connect(headerEdit, &QLineEdit::textChanged, this, &SieveActionDeleteHeader::valueChanged);
     grid->addWidget(headerEdit, 0, 2);
 
@@ -51,7 +51,7 @@ QWidget *SieveActionDeleteHeader::createParamWidget(QWidget *parent) const
 
     auto valueEdit = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(valueEdit);
-    valueEdit->setObjectName(QStringLiteral("valueedit"));
+    valueEdit->setObjectName(QLatin1StringView("valueedit"));
     connect(valueEdit, &QLineEdit::textChanged, this, &SieveActionDeleteHeader::valueChanged);
     grid->addWidget(valueEdit, 1, 2);
     return w;

@@ -33,7 +33,7 @@ QWidget *SieveConditionAddress::createParamWidget(QWidget *parent) const
 
     auto selectAddressPart = new SelectAddressPartComboBox(mSieveGraphicalModeWidget);
     connect(selectAddressPart, &SelectAddressPartComboBox::valueChanged, this, &SieveConditionAddress::valueChanged);
-    selectAddressPart->setObjectName(QStringLiteral("addresspartcombobox"));
+    selectAddressPart->setObjectName(QLatin1StringView("addresspartcombobox"));
     lay->addWidget(selectAddressPart);
 
     auto grid = new QGridLayout;
@@ -41,12 +41,12 @@ QWidget *SieveConditionAddress::createParamWidget(QWidget *parent) const
     lay->addLayout(grid);
     auto selectMatchCombobox = new SelectMatchTypeComboBox(mSieveGraphicalModeWidget);
     connect(selectMatchCombobox, &SelectMatchTypeComboBox::valueChanged, this, &SieveConditionAddress::valueChanged);
-    selectMatchCombobox->setObjectName(QStringLiteral("matchtypecombobox"));
+    selectMatchCombobox->setObjectName(QLatin1StringView("matchtypecombobox"));
     grid->addWidget(selectMatchCombobox, 0, 0);
 
     auto selectHeaderType = new SelectHeaderTypeComboBox(true);
     connect(selectHeaderType, &SelectHeaderTypeComboBox::valueChanged, this, &SieveConditionAddress::valueChanged);
-    selectHeaderType->setObjectName(QStringLiteral("headertypecombobox"));
+    selectHeaderType->setObjectName(QLatin1StringView("headertypecombobox"));
     grid->addWidget(selectHeaderType, 0, 1);
 
     auto lab = new QLabel(i18n("address:"));
@@ -58,7 +58,7 @@ QWidget *SieveConditionAddress::createParamWidget(QWidget *parent) const
     edit->setClearButtonEnabled(true);
     edit->setPlaceholderText(i18n("Use ; to separate emails"));
     grid->addWidget(edit, 1, 1);
-    edit->setObjectName(QStringLiteral("editaddress"));
+    edit->setObjectName(QLatin1StringView("editaddress"));
     return w;
 }
 

@@ -36,7 +36,7 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     setWindowTitle(i18nc("@title:window", "Headers"));
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    buttonBox->setObjectName(QStringLiteral("buttonbox"));
+    buttonBox->setObjectName(QLatin1StringView("buttonbox"));
     auto mainLayout = new QVBoxLayout(this);
     QPushButton *okButton = buttonBox->button(QDialogButtonBox::Ok);
     okButton->setDefault(true);
@@ -46,26 +46,26 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     okButton->setFocus();
 
     auto lay = new QVBoxLayout;
-    lay->setObjectName(QStringLiteral("widgetlayout"));
+    lay->setObjectName(QLatin1StringView("widgetlayout"));
     lay->setContentsMargins({});
     mainLayout->addLayout(lay);
-    mListWidget->setObjectName(QStringLiteral("listwidget"));
+    mListWidget->setObjectName(QLatin1StringView("listwidget"));
     lay->addWidget(mListWidget);
 
     auto lab = new QLabel(i18n("Add new header:"), this);
-    lab->setObjectName(QStringLiteral("label"));
+    lab->setObjectName(QLatin1StringView("label"));
     lay->addWidget(lab);
 
     auto hbox = new QHBoxLayout;
 
     KLineEditEventHandler::catchReturnKey(mNewHeader);
-    mNewHeader->setObjectName(QStringLiteral("newheader"));
+    mNewHeader->setObjectName(QLatin1StringView("newheader"));
     mNewHeader->setClearButtonEnabled(true);
     // mNewHeader->setTrapReturnKey(true);
     connect(mNewHeader, &QLineEdit::returnPressed, this, &SelectHeadersDialog::slotAddNewHeader);
     mNewHeader->setClearButtonEnabled(true);
 
-    mAddNewHeader->setObjectName(QStringLiteral("addnewheader"));
+    mAddNewHeader->setObjectName(QLatin1StringView("addnewheader"));
     mAddNewHeader->setEnabled(false);
     mAddNewHeader->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
     mAddNewHeader->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
