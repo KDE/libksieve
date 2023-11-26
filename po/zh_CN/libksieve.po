@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-04 01:38+0000\n"
-"PO-Revision-Date: 2023-11-19 03:37\n"
+"PO-Revision-Date: 2023-11-25 02:26\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -2344,9 +2344,7 @@ msgstr ""
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:28
 #, kde-format
 msgid "Sieve Files (*.siv);;All Files (*)"
-msgstr ""
-"*.siv|筛选文件 (*.siv)\n"
-"*|所有文件 (*)"
+msgstr "过滤文件 (*.siv);;所有文件 (*)"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:29
 #, kde-format
@@ -2695,13 +2693,13 @@ msgstr "正在将脚本上传到服务器以检查，请稍候..."
 #: ksieveui/managesievescriptsdialog.cpp:250
 #, kde-format
 msgid "The Sieve script was successfully uploaded."
-msgstr "筛选脚本已成功上传。"
+msgstr "过滤脚本已成功上传。"
 
 #: ksieveui/managesievescriptsdialog.cpp:250
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
-msgstr "上传筛选脚本"
+msgstr "上传过滤脚本"
 
 #: ksieveui/managesievescriptsdialog.cpp:257
 #, kde-format
@@ -3000,7 +2998,7 @@ msgstr ""
 #: ksieveui/widgets/custommanagesievewidget.cpp:91
 #, kde-format
 msgid "No Sieve URL configured"
-msgstr "没有配置筛选 URL"
+msgstr "没有配置过滤 URL"
 
 #: ksieveui/widgets/managesievetreeview.cpp:16
 #: ksieveui/widgets/managesievetreeview.cpp:30
