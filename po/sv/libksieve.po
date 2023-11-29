@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-04 01:38+0000\n"
+"POT-Creation-Date: 2023-11-29 13:39+0000\n"
 "PO-Revision-Date: 2023-07-31 10:31+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -2652,27 +2652,27 @@ msgstr "Hjälp om: %1"
 msgid "Sieve Template:"
 msgstr "Sieve-mall:"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:90
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:92
 #, kde-format
 msgid "Editor"
 msgstr "Editor"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:144
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:146
 #, kde-format
 msgid "Show result from \"check syntax\""
 msgstr "Visa resultat från \"kontrollera syntax\""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:232
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:234
 #, kde-format
 msgid "Error during parsing"
 msgstr "Fel vid tolkning"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:262
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:264
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "Markerad text är inte ett fullständigt Sieve-skript"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:262
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:264
 #, fuzzy, kde-format
 #| msgid "Parsing error"
 msgctxt "@title:window"
