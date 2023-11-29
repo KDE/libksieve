@@ -73,6 +73,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     mEditorWidget = new QWidget(this);
     auto editorWidgetLayout = new QVBoxLayout;
     editorWidgetLayout->setContentsMargins({});
+    editorWidgetLayout->setSpacing(0);
     mEditorWidget->setLayout(editorWidgetLayout);
 
     mTabWidget = new SieveEditorTabWidget(this);
@@ -84,6 +85,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
 #endif
 
     mTextEdit = new SieveTextEdit(this);
+    mPurposeMenuMessageWidget->setPosition(KMessageWidget::Header);
     editorWidgetLayout->addWidget(mPurposeMenuMessageWidget);
     editorWidgetLayout->addWidget(mTextEdit);
     connect(mTextEdit, &SieveTextEdit::textChanged, this, &SieveEditorTextModeWidget::valueChanged);
