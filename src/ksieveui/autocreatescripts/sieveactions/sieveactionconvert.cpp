@@ -60,7 +60,7 @@ void SieveActionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidget 
     int index = 0;
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("str")) {
+        if (tagName == QLatin1StringView("str")) {
             if (index == 0) {
                 auto fromMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("from"));
                 fromMimeType->setCode(element.readElementText(), name(), error);
@@ -72,13 +72,13 @@ void SieveActionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidget 
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveActionConvert::setParamWidgetValue too many argument :" << index;
             }
             ++index;
-        } else if (tagName == QLatin1String("list")) {
+        } else if (tagName == QLatin1StringView("list")) {
             auto params = w->findChild<SelectConvertParameterWidget *>(QStringLiteral("params"));
             params->setCode(AutoCreateScriptUtil::listValue(element), error);
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             element.skipCurrentElement();
             // implement in the future ?
         } else {

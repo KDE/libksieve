@@ -124,10 +124,10 @@ QStringList ParseUserScriptJob::extractActiveScript(const QString &doc)
     if (mStreamReader->readNextStartElement()) {
         while (mStreamReader->readNextStartElement()) {
             const QStringView tagname = mStreamReader->name();
-            if (tagname == QLatin1String("action")) {
-                if (mStreamReader->attributes().hasAttribute(QLatin1String("name"))) {
-                    const QString actionName = mStreamReader->attributes().value(QLatin1String("name")).toString();
-                    if (actionName == QLatin1String("include")) {
+            if (tagname == QLatin1StringView("action")) {
+                if (mStreamReader->attributes().hasAttribute(QLatin1StringView("name"))) {
+                    const QString actionName = mStreamReader->attributes().value(QLatin1StringView("name")).toString();
+                    if (actionName == QLatin1StringView("include")) {
                         // Load includes
                         const QString str = loadInclude();
                         if (!str.isEmpty()) {
@@ -151,7 +151,7 @@ QString ParseUserScriptJob::loadInclude()
 {
     QString scriptName;
     while (mStreamReader->readNextStartElement()) {
-        if (mStreamReader->name() == QLatin1String("str")) {
+        if (mStreamReader->name() == QLatin1StringView("str")) {
             scriptName = mStreamReader->readElementText();
         } else {
             mStreamReader->skipCurrentElement();

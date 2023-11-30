@@ -82,15 +82,15 @@ void SieveConditionHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
 
-        if (tagName == QLatin1String("tag")) {
+        if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
-            if (tagValue == QLatin1String("comparator")) {
+            if (tagValue == QLatin1StringView("comparator")) {
                 qCWarning(LIBKSIEVEUI_LOG) << " comparator support not implemented yet!";
             } else {
                 auto selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtypecombobox"));
                 selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(tagValue, notCondition), name(), error);
             }
-        } else if (tagName == QLatin1String("str")) {
+        } else if (tagName == QLatin1StringView("str")) {
             if (index == 0) {
                 auto headerType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertype"));
                 headerType->setCode(element.readElementText());
@@ -103,7 +103,7 @@ void SieveConditionHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionHeader::setParamWidgetValue too many argument " << index;
             }
             ++index;
-        } else if (tagName == QLatin1String("list")) {
+        } else if (tagName == QLatin1StringView("list")) {
             // Header list
             if (index == 0) {
                 auto headerType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertype"));
@@ -116,10 +116,10 @@ void SieveConditionHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionHeader::setParamWidgetValue too many argument " << index;
             }
             ++index;
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);

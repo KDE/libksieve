@@ -63,25 +63,25 @@ void SieveConditionSize::setParamWidgetValue(QXmlStreamReader &element, QWidget 
     QString commentStr;
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("tag")) {
+        if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
             auto combo = w->findChild<QComboBox *>(QStringLiteral("combosize"));
             const int index = combo->findData(AutoCreateScriptUtil::tagValue(tagValue));
             if (index != -1) {
                 combo->setCurrentIndex(index);
             }
-        } else if (tagName == QLatin1String("num")) {
+        } else if (tagName == QLatin1StringView("num")) {
             QString numIdentifier;
-            if (element.attributes().hasAttribute(QLatin1String("quantifier"))) {
-                numIdentifier = element.attributes().value(QLatin1String("quantifier")).toString();
+            if (element.attributes().hasAttribute(QLatin1StringView("quantifier"))) {
+                numIdentifier = element.attributes().value(QLatin1StringView("quantifier")).toString();
             }
             const qlonglong tagValue = element.readElementText().toLongLong();
             auto sizeWidget = w->findChild<SelectSizeWidget *>(QStringLiteral("sizewidget"));
             sizeWidget->setCode(tagValue, numIdentifier, name(), error);
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);

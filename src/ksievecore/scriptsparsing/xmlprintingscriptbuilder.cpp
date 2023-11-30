@@ -67,8 +67,8 @@ void XMLPrintingScriptBuilder::numberArgument(unsigned long number, char quantif
 void XMLPrintingScriptBuilder::commandStart(const QString &identifier, int lineNumber)
 {
     Q_UNUSED(lineNumber)
-    if (identifier == QLatin1String("else") || identifier == QLatin1String("break") || identifier == QLatin1String("require")
-        || identifier == QLatin1String("foreverypart") || identifier == QLatin1String("if") || identifier == QLatin1String("elsif")) {
+    if (identifier == QLatin1StringView("else") || identifier == QLatin1StringView("break") || identifier == QLatin1StringView("require")
+        || identifier == QLatin1StringView("foreverypart") || identifier == QLatin1StringView("if") || identifier == QLatin1StringView("elsif")) {
         mStream->writeStartElement(QStringLiteral("control"));
         mStream->writeAttribute(QStringLiteral("name"), identifier);
     } else {

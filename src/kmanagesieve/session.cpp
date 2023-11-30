@@ -226,7 +226,7 @@ bool Session::requestCapabilitiesAfterStartTls() const
         const int minor = matchExpression.captured(2).toInt();
         const int patch = matchExpression.captured(3).toInt();
         const QString vendor = matchExpression.captured(4);
-        if (major < 2 || (major == 2 && (minor < 3 || (minor == 3 && patch < 11))) || (vendor == QLatin1String("-kolab-nocaps"))) {
+        if (major < 2 || (major == 2 && (minor < 3 || (minor == 3 && patch < 11))) || (vendor == QLatin1StringView("-kolab-nocaps"))) {
             qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Enabling compat mode for Cyrus < 2.3.11 or Cyrus marked as \"kolab-nocaps\"";
             return true;
         }
@@ -325,7 +325,7 @@ void Session::setErrorMessage(int error, const QString &msg)
 
 bool Session::allowUnencrypted() const
 {
-    return QUrlQuery(m_url).queryItemValue(QStringLiteral("x-allow-unencrypted")) == QLatin1String("true");
+    return QUrlQuery(m_url).queryItemValue(QStringLiteral("x-allow-unencrypted")) == QLatin1StringView("true");
 }
 
 #include "moc_session.cpp"

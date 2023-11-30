@@ -61,15 +61,15 @@ void SieveActionNotify::setParamWidgetValue(QXmlStreamReader &element, QWidget *
 {
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("tag")) {
+        if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
-            if (tagValue == QLatin1String("message")) {
+            if (tagValue == QLatin1StringView("message")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
                     auto message = w->findChild<QLineEdit *>(QStringLiteral("message"));
                     message->setText(AutoCreateScriptUtil::quoteStr(strValue));
                 }
-            } else if (tagValue == QLatin1String("importance")) {
+            } else if (tagValue == QLatin1StringView("importance")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
                     auto importance = w->findChild<SelectImportanceCombobox *>(QStringLiteral("importancecombo"));
@@ -79,13 +79,13 @@ void SieveActionNotify::setParamWidgetValue(QXmlStreamReader &element, QWidget *
                 unknownTagValue(tagValue, error);
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveActionNotify::setParamWidgetValue unknown tagValue" << tagValue;
             }
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             element.skipCurrentElement();
             // implement in the future ?
-        } else if (tagName == QLatin1String("str")) {
+        } else if (tagName == QLatin1StringView("str")) {
             auto method = w->findChild<QLineEdit *>(QStringLiteral("method"));
             method->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
         } else {

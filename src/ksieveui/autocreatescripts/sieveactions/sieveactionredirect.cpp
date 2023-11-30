@@ -55,20 +55,20 @@ void SieveActionRedirect::setParamWidgetValue(QXmlStreamReader &element, QWidget
 {
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("str")) {
+        if (tagName == QLatin1StringView("str")) {
             auto edit = w->findChild<AbstractSelectEmailLineEdit *>(QStringLiteral("RedirectEdit"));
             const QString tagValue = element.readElementText();
             edit->setText(AutoCreateScriptUtil::quoteStr(tagValue));
-        } else if (tagName == QLatin1String("tag")) {
+        } else if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
-            if (tagValue == QLatin1String("copy")) {
+            if (tagValue == QLatin1StringView("copy")) {
                 if (mHasCopySupport) {
                     auto copy = w->findChild<QCheckBox *>(QStringLiteral("copy"));
                     copy->setChecked(true);
                 } else {
                     serverDoesNotSupportFeatures(QStringLiteral("copy"), error);
                 }
-            } else if (tagValue == QLatin1String("list")) {
+            } else if (tagValue == QLatin1StringView("list")) {
                 if (mHasListSupport) {
                     auto list = w->findChild<QCheckBox *>(QStringLiteral("list"));
                     list->setChecked(true);
@@ -79,10 +79,10 @@ void SieveActionRedirect::setParamWidgetValue(QXmlStreamReader &element, QWidget
                 unknownTagValue(tagValue, error);
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveActionRedirect::setParamWidgetValue tagValue unknown" << tagValue;
             }
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             setComment(element.readElementText());
             // implement in the future ?
         } else {

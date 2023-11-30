@@ -73,16 +73,16 @@ void SieveConditionExists::setParamWidgetValue(QXmlStreamReader &element, QWidge
             auto combo = w->findChild<QComboBox *>(QStringLiteral("existscheck"));
             combo->setCurrentIndex(1);
         }
-        if (tagName == QLatin1String("str")) {
+        if (tagName == QLatin1StringView("str")) {
             auto value = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headervalue"));
             value->setCode(element.readElementText());
-        } else if (tagName == QLatin1String("list")) {
+        } else if (tagName == QLatin1StringView("list")) {
             auto selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headervalue"));
             selectHeaderType->setCode(AutoCreateScriptUtil::listValueToStr(element));
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);

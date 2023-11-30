@@ -44,22 +44,22 @@ void SieveActionBreak::setParamWidgetValue(QXmlStreamReader &element, QWidget *w
 {
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("tag")) {
+        if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
-            if (tagValue == QLatin1String("name")) {
+            if (tagValue == QLatin1StringView("name")) {
                 auto name = w->findChild<QLineEdit *>(QStringLiteral("name"));
                 name->setText(AutoCreateScriptUtil::strValue(element));
             } else {
                 unknownTagValue(tagValue, error);
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveActionBreak::setParamWidgetValue unknown tagValue " << tagValue;
             }
-        } else if (tagName == QLatin1String("str")) {
+        } else if (tagName == QLatin1StringView("str")) {
             element.skipCurrentElement();
             // Nothing
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             element.skipCurrentElement();
             // implement in the future ?
         } else {

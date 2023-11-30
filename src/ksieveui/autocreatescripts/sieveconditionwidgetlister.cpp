@@ -329,8 +329,8 @@ void SieveConditionWidgetLister::loadTest(QXmlStreamReader &element, bool notCon
     if (notCondition) {
         element.readNextStartElement();
     }
-    if (element.attributes().hasAttribute(QLatin1String("name"))) {
-        const QString conditionName = element.attributes().value(QLatin1String("name")).toString();
+    if (element.attributes().hasAttribute(QLatin1StringView("name"))) {
+        const QString conditionName = element.attributes().value(QLatin1StringView("name")).toString();
         auto w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
         w->setCondition(conditionName, element, notCondition, error);
     }
@@ -350,23 +350,23 @@ void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniq
         }
         while (element.readNextStartElement()) {
             const QStringView tagName = element.name();
-            if (tagName == QLatin1String("testlist")) {
+            if (tagName == QLatin1StringView("testlist")) {
                 while (element.readNextStartElement()) {
                     const QStringView testTagName = element.name();
-                    if (testTagName == QLatin1String("test")) {
-                        if (element.attributes().hasAttribute(QLatin1String("name"))) {
-                            QString conditionName = element.attributes().value(QLatin1String("name")).toString();
+                    if (testTagName == QLatin1StringView("test")) {
+                        if (element.attributes().hasAttribute(QLatin1StringView("name"))) {
+                            QString conditionName = element.attributes().value(QLatin1StringView("name")).toString();
                             if (firstCondition) {
                                 firstCondition = false;
                             } else {
                                 addWidgetAfterThisWidget(widgets().constLast());
                             }
                             auto w = qobject_cast<SieveConditionWidget *>(widgets().constLast());
-                            if (conditionName == QLatin1String("not")) {
+                            if (conditionName == QLatin1StringView("not")) {
                                 notCondition = true;
                                 element.readNextStartElement();
-                                if (element.attributes().hasAttribute(QLatin1String("name"))) {
-                                    conditionName = element.attributes().value(QLatin1String("name")).toString();
+                                if (element.attributes().hasAttribute(QLatin1StringView("name"))) {
+                                    conditionName = element.attributes().value(QLatin1StringView("name")).toString();
                                 }
                                 w->setCondition(conditionName, element, notCondition, error);
                                 element.skipCurrentElement();
@@ -375,10 +375,10 @@ void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniq
                                 w->setCondition(conditionName, element, notCondition, error);
                             }
                         }
-                    } else if (testTagName == QLatin1String("crlf")) {
+                    } else if (testTagName == QLatin1StringView("crlf")) {
                         element.skipCurrentElement();
                         // nothing
-                    } else if (testTagName == QLatin1String("comment")) {
+                    } else if (testTagName == QLatin1StringView("comment")) {
                         qDebug() << "Need to implement comment here ";
                         element.skipCurrentElement();
                         // nothing

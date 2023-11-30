@@ -378,9 +378,9 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
     QString comment;
     if (onlyActions) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("action")) {
-            if (element.attributes().hasAttribute(QLatin1String("name"))) {
-                const QString actionName = element.attributes().value(QLatin1String("name")).toString();
+        if (tagName == QLatin1StringView("action")) {
+            if (element.attributes().hasAttribute(QLatin1StringView("name"))) {
+                const QString actionName = element.attributes().value(QLatin1StringView("name")).toString();
                 auto w = qobject_cast<SieveActionWidget *>(widgets().constLast());
                 if (w->isConfigurated()) {
                     addWidgetAfterThisWidget(widgets().constLast());
@@ -388,7 +388,7 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                 }
                 w->setAction(actionName, element, comment, error);
                 // comment.clear();
-            } else if (tagName == QLatin1String("crlf")) {
+            } else if (tagName == QLatin1StringView("crlf")) {
                 element.skipCurrentElement();
                 // nothing
             } else {
@@ -402,10 +402,10 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
         bool previousActionWasAComment = false;
         while (element.readNextStartElement()) {
             const QStringView tagName = element.name();
-            if (tagName == QLatin1String("action") || tagName == QLatin1String("control") /*for break action*/) {
-                if (element.attributes().hasAttribute(QLatin1String("name"))) {
-                    const QString actionName = element.attributes().value(QLatin1String("name")).toString();
-                    if (tagName == QLatin1String("control") && actionName == QLatin1String("if")) {
+            if (tagName == QLatin1StringView("action") || tagName == QLatin1StringView("control") /*for break action*/) {
+                if (element.attributes().hasAttribute(QLatin1StringView("name"))) {
+                    const QString actionName = element.attributes().value(QLatin1StringView("name")).toString();
+                    if (tagName == QLatin1StringView("control") && actionName == QLatin1StringView("if")) {
                         qCDebug(LIBKSIEVEUI_LOG) << "We found an loop if in a loop if. Not supported";
                         error += i18n("We detected a loop if in a loop if. It's not supported") + QLatin1Char('\n');
                     }
@@ -421,13 +421,13 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                     qCDebug(LIBKSIEVEUI_LOG) << " SieveActionWidgetLister::loadScript don't have name attribute " << tagName;
                 }
                 previousActionWasAComment = false;
-            } else if (tagName == QLatin1String("comment")) {
+            } else if (tagName == QLatin1StringView("comment")) {
                 if (!comment.isEmpty()) {
                     comment += QLatin1Char('\n');
                 }
                 previousActionWasAComment = true;
                 comment += element.readElementText();
-            } else if (tagName == QLatin1String("crlf")) {
+            } else if (tagName == QLatin1StringView("crlf")) {
                 // Add new line if previous action was a comment
                 if (previousActionWasAComment) {
                     comment += QLatin1Char('\n');

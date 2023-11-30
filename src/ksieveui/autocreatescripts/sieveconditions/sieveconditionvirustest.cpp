@@ -96,18 +96,18 @@ void SieveConditionVirusTest::setParamWidgetValue(QXmlStreamReader &element, QWi
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
 
-        if (tagName == QLatin1String("tag")) {
+        if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
-            if (tagValue == QLatin1String("count") || tagValue == QLatin1String("value")) {
+            if (tagValue == QLatin1StringView("count") || tagValue == QLatin1StringView("value")) {
                 if (element.readNextStartElement()) {
-                    if (element.name() == QLatin1String("str")) {
+                    if (element.name() == QLatin1StringView("str")) {
                         auto relation = w->findChild<SelectRelationalMatchType *>(QStringLiteral("relation"));
                         relation->setCode(AutoCreateScriptUtil::tagValue(tagValue), element.readElementText(), name(), error);
                     }
                 }
-            } else if (tagValue == QLatin1String("comparator")) {
+            } else if (tagValue == QLatin1StringView("comparator")) {
                 if (element.readNextStartElement()) {
-                    if (element.name() == QLatin1String("str")) {
+                    if (element.name() == QLatin1StringView("str")) {
                         auto comparator = w->findChild<SelectComparatorComboBox *>(QStringLiteral("comparator"));
                         comparator->setCode(element.readElementText(), name(), error);
                     }
@@ -116,13 +116,13 @@ void SieveConditionVirusTest::setParamWidgetValue(QXmlStreamReader &element, QWi
                 unknownTagValue(tagValue, error);
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionVirusTest::setParamWidgetValue unknown tagValue " << tagValue;
             }
-        } else if (tagName == QLatin1String("str")) {
+        } else if (tagName == QLatin1StringView("str")) {
             auto spinbox = w->findChild<QSpinBox *>(QStringLiteral("value"));
             spinbox->setValue(element.readElementText().toInt());
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);

@@ -150,31 +150,31 @@ QString SelectDateWidget::dateValue(SelectDateWidget::DateType type) const
 
 SelectDateWidget::DateType SelectDateWidget::dateTypeFromString(const QString &str)
 {
-    if (str == QLatin1String("year")) {
+    if (str == QLatin1StringView("year")) {
         return Year;
-    } else if (str == QLatin1String("month")) {
+    } else if (str == QLatin1StringView("month")) {
         return Month;
-    } else if (str == QLatin1String("day")) {
+    } else if (str == QLatin1StringView("day")) {
         return Day;
-    } else if (str == QLatin1String("date")) {
+    } else if (str == QLatin1StringView("date")) {
         return Date;
-    } else if (str == QLatin1String("julian")) {
+    } else if (str == QLatin1StringView("julian")) {
         return Julian;
-    } else if (str == QLatin1String("hour")) {
+    } else if (str == QLatin1StringView("hour")) {
         return Hour;
-    } else if (str == QLatin1String("minute")) {
+    } else if (str == QLatin1StringView("minute")) {
         return Minute;
-    } else if (str == QLatin1String("second")) {
+    } else if (str == QLatin1StringView("second")) {
         return Second;
-    } else if (str == QLatin1String("time")) {
+    } else if (str == QLatin1StringView("time")) {
         return Time;
-    } else if (str == QLatin1String("iso8601")) {
+    } else if (str == QLatin1StringView("iso8601")) {
         return Iso8601;
-    } else if (str == QLatin1String("std11")) {
+    } else if (str == QLatin1StringView("std11")) {
         return Std11;
-    } else if (str == QLatin1String("zone")) {
+    } else if (str == QLatin1StringView("zone")) {
         return Zone;
-    } else if (str == QLatin1String("weekday")) {
+    } else if (str == QLatin1StringView("weekday")) {
         return Weekday;
     } else {
         qCDebug(LIBKSIEVEUI_LOG) << " date type unknown :" << str;

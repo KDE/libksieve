@@ -97,7 +97,7 @@ void SieveConditionEnvironment::setParamWidgetValue(QXmlStreamReader &element, Q
     QString commentStr;
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("str")) {
+        if (tagName == QLatin1StringView("str")) {
             if (index == 0) {
                 auto item = w->findChild<QLineEdit *>(QStringLiteral("item"));
                 item->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
@@ -109,10 +109,10 @@ void SieveConditionEnvironment::setParamWidgetValue(QXmlStreamReader &element, Q
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionEnvironment::setParamWidgetValue to many argument " << index;
             }
             ++index;
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);

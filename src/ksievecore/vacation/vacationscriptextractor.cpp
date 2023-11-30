@@ -20,16 +20,16 @@ VacationDataExtractor::~VacationDataExtractor() = default;
 void VacationDataExtractor::commandStart(const QString &identifier, int lineNumber)
 {
     qCDebug(LIBKSIEVECORE_LOG) << "(\"" << identifier << "\")";
-    if (identifier == QLatin1String("if") && mContext == None) {
+    if (identifier == QLatin1StringView("if") && mContext == None) {
         mContext = IfBlock;
         mLineStart = lineNumber;
         mInIfBlock = true;
     }
 
     if (commandFound() && (!mFoundInBlock || mBlockLevel > 0)) {
-        if (identifier == QLatin1String("discard")) {
+        if (identifier == QLatin1StringView("discard")) {
             mMailAction = VacationUtils::Discard;
-        } else if (identifier == QLatin1String("redirect")) {
+        } else if (identifier == QLatin1StringView("redirect")) {
             mMailAction = VacationUtils::Sendto;
             mMailActionContext = RedirectCommand;
         }
@@ -70,8 +70,8 @@ void VacationDataExtractor::finished()
 void VacationDataExtractor::testStart(const QString &test)
 {
     if (mContext == IfBlock) {
-        if (test == QLatin1String("true") || test == QLatin1String("false")) {
-            mActive = (test == QLatin1String("true"));
+        if (test == QLatin1StringView("true") || test == QLatin1StringView("false")) {
+            mActive = (test == QLatin1StringView("true"));
             mIfComment = QString();
         }
     }
@@ -106,18 +106,18 @@ void VacationDataExtractor::taggedArgument(const QString &tag)
 {
     qCDebug(LIBKSIEVECORE_LOG) << "(\"" << tag << "\")";
     if (mMailActionContext == RedirectCommand) {
-        if (tag == QLatin1String("copy")) {
+        if (tag == QLatin1StringView("copy")) {
             mMailAction = VacationUtils::CopyTo;
         }
     }
     if (mContext != VacationCommand) {
         return;
     }
-    if (tag == QLatin1String("days")) {
+    if (tag == QLatin1StringView("days")) {
         mContext = Days;
-    } else if (tag == QLatin1String("addresses")) {
+    } else if (tag == QLatin1StringView("addresses")) {
         mContext = Addresses;
-    } else if (tag == QLatin1String("subject")) {
+    } else if (tag == QLatin1StringView("subject")) {
         mContext = Subject;
     }
 }
@@ -199,7 +199,7 @@ RequireExtractor::~RequireExtractor() = default;
 
 void RequireExtractor::commandStart(const QString &identifier, int lineNumber)
 {
-    if (identifier == QLatin1String("require") && mContext == None) {
+    if (identifier == QLatin1StringView("require") && mContext == None) {
         mContext = RequireCommand;
         mLineStart = lineNumber;
     }

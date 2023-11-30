@@ -87,44 +87,44 @@ void SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
 {
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("tag")) {
+        if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
-            if (tagValue == QLatin1String("seconds")) {
+            if (tagValue == QLatin1StringView("seconds")) {
                 if (mHasVacationSecondsSupport) {
                     auto vacationcombobox = w->findChild<SelectVacationComboBox *>(QStringLiteral("vacationcombobox"));
                     vacationcombobox->setCode(AutoCreateScriptUtil::tagValue(tagValue), name(), error);
                 } else {
                     serverDoesNotSupportFeatures(QStringLiteral("seconds"), error);
                 }
-            } else if (tagValue == QLatin1String("days")) {
+            } else if (tagValue == QLatin1StringView("days")) {
                 // Nothing wait num tag for it.
-            } else if (tagValue == QLatin1String("addresses")) {
+            } else if (tagValue == QLatin1StringView("addresses")) {
                 auto addresses = w->findChild<AbstractSelectEmailLineEdit *>(QStringLiteral("addresses"));
                 if (element.readNextStartElement()) {
                     const QStringView textElementTagName = element.name();
-                    if (textElementTagName == QLatin1String("str")) {
+                    if (textElementTagName == QLatin1StringView("str")) {
                         addresses->setText(element.readElementText());
-                    } else if (textElementTagName == QLatin1String("list")) {
+                    } else if (textElementTagName == QLatin1StringView("list")) {
                         addresses->setText(AutoCreateScriptUtil::listValueToStr(element));
                     }
                 }
-            } else if (tagValue == QLatin1String("subject")) {
+            } else if (tagValue == QLatin1StringView("subject")) {
                 auto subject = w->findChild<QLineEdit *>(QStringLiteral("subject"));
                 subject->setText(AutoCreateScriptUtil::strValue(element));
             } else {
                 unknownTagValue(tagValue, error);
                 qCDebug(LIBKSIEVEUI_LOG) << "SieveActionVacation::setParamWidgetValue unknown tagValue :" << tagValue;
             }
-        } else if (tagName == QLatin1String("num")) {
+        } else if (tagName == QLatin1StringView("num")) {
             auto day = w->findChild<QSpinBox *>(QStringLiteral("day"));
             day->setValue(element.readElementText().toInt());
-        } else if (tagName == QLatin1String("str")) {
+        } else if (tagName == QLatin1StringView("str")) {
             auto text = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
             text->setPlainText(element.readElementText());
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             element.skipCurrentElement();
             // implement in the future ?
         } else {

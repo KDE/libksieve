@@ -84,9 +84,9 @@ void SieveForEveryPartWidget::loadScript(QXmlStreamReader &element, QString &err
 {
     if (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("tag")) {
+        if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
-            if (tagValue == QLatin1String("name")) {
+            if (tagValue == QLatin1StringView("name")) {
                 mName->setText(AutoCreateScriptUtil::strValue(element));
             } else {
                 error += i18n("Unknown tagValue \"%1\" during loading loop \"for\"", tagValue) + QLatin1Char('\n');
@@ -94,10 +94,10 @@ void SieveForEveryPartWidget::loadScript(QXmlStreamReader &element, QString &err
             }
             mForLoop->setChecked(true);
             mName->setEnabled(true);
-        } else if (tagName == QLatin1String("block")) {
+        } else if (tagName == QLatin1StringView("block")) {
             // Nothing
             // It's when name is empty
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             // Nothing
             element.skipCurrentElement();
         } else {

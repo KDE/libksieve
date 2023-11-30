@@ -122,7 +122,7 @@ void SieveGlobalVariableActionWidget::loadScript(QXmlStreamReader &element, QStr
 {
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("str")) {
+        if (tagName == QLatin1StringView("str")) {
             mVariableName->setText(element.readElementText());
         } else {
             const QString result = tagName.toString();
@@ -304,7 +304,7 @@ SieveGlobalVariableActionWidget::VariableElement SieveGlobalVariableLister::load
     int index = 0;
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("str")) {
+        if (tagName == QLatin1StringView("str")) {
             if (index == 0) {
                 variableName = element.readElementText();
             } else if (index == 1) {

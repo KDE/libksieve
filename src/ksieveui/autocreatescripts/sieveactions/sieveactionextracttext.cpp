@@ -56,19 +56,19 @@ void SieveActionExtractText::setParamWidgetValue(QXmlStreamReader &element, QWid
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
 
-        if (tagName == QLatin1String("tag")) {
+        if (tagName == QLatin1StringView("tag")) {
             element.skipCurrentElement();
             // TODO ?
-        } else if (tagName == QLatin1String("num")) {
+        } else if (tagName == QLatin1StringView("num")) {
             auto numberOfCharacters = w->findChild<QSpinBox *>(QStringLiteral("numberOfCharacters"));
             numberOfCharacters->setValue(element.readElementText().toInt());
-        } else if (tagName == QLatin1String("str")) {
+        } else if (tagName == QLatin1StringView("str")) {
             auto variableName = w->findChild<QLineEdit *>(QStringLiteral("variablename"));
             variableName->setText(element.readElementText());
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             element.skipCurrentElement();
             // implement in the future ?
         } else {

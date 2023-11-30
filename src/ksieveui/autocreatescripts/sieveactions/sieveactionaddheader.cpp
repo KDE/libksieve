@@ -63,10 +63,10 @@ void SieveActionAddHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
     int index = 0;
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("tag")) {
+        if (tagName == QLatin1StringView("tag")) {
             auto combo = w->findChild<SelectAddHeaderPositionCombobox *>(QStringLiteral("selectposition"));
             combo->setCode(AutoCreateScriptUtil::tagValue(element.readElementText()), name(), error);
-        } else if (tagName == QLatin1String("str")) {
+        } else if (tagName == QLatin1StringView("str")) {
             if (index == 0) {
                 auto edit = w->findChild<QLineEdit *>(QStringLiteral("headeredit"));
                 edit->setText(element.readElementText());
@@ -78,10 +78,10 @@ void SieveActionAddHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveActionAddHeader::setParamWidgetValue too many argument :" << index;
             }
             ++index;
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             element.skipCurrentElement();
             // implement in the future ?
         } else {

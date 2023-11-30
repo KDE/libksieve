@@ -83,22 +83,22 @@ void SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWid
 {
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("str")) {
+        if (tagName == QLatin1StringView("str")) {
             const QString tagValue = element.readElementText();
             auto value = w->findChild<QLineEdit *>(QStringLiteral("value"));
             value->setText(tagValue);
             if (element.readNextStartElement()) {
                 const QStringView variableTagName = element.name();
-                if (variableTagName == QLatin1String("str")) {
+                if (variableTagName == QLatin1StringView("str")) {
                     auto variable = w->findChild<QLineEdit *>(QStringLiteral("variable"));
                     variable->setText(AutoCreateScriptUtil::protectSlash(element.readElementText()));
                 }
             } else {
                 return;
             }
-        } else if (tagName == QLatin1String("tag")) {
+        } else if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
-            if (tagValue == QLatin1String("quoteregex")) {
+            if (tagValue == QLatin1StringView("quoteregex")) {
                 if (mHasRegexCapability) {
                     auto protectAgainstUseRegexp = w->findChild<QCheckBox *>(QStringLiteral("regexprotect"));
                     protectAgainstUseRegexp->setChecked(true);
@@ -109,10 +109,10 @@ void SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWid
                 auto modifier = w->findChild<SelectVariableModifierComboBox *>(QStringLiteral("modifier"));
                 modifier->setCode(AutoCreateScriptUtil::tagValue(tagValue), name(), error);
             }
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             element.skipCurrentElement();
             // implement in the future ?
         } else {

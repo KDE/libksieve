@@ -87,7 +87,7 @@ void SieveConditionCurrentDate::setParamWidgetValue(QXmlStreamReader &element, Q
     QString commentStr;
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("str")) {
+        if (tagName == QLatin1StringView("str")) {
             if (index == 0) {
                 type = element.readElementText();
             } else if (index == 1) {
@@ -97,13 +97,13 @@ void SieveConditionCurrentDate::setParamWidgetValue(QXmlStreamReader &element, Q
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionCurrentDate::setParamWidgetValue too many argument :" << index;
             }
             ++index;
-        } else if (tagName == QLatin1String("tag")) {
+        } else if (tagName == QLatin1StringView("tag")) {
             auto selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
             selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);

@@ -55,7 +55,7 @@ void SieveDateSpinBox::setType(KSieveUi::SelectDateWidget::DateType type)
 
 void SieveDateSpinBox::setCode(const QString &str)
 {
-    if (str == QLatin1String("*")) {
+    if (str == QLatin1StringView("*")) {
         // setSpecialValue
         setValue(minimum());
     } else {

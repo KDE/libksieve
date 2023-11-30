@@ -123,99 +123,99 @@ QUrl KSieveUi::SieveEditorUtil::helpUrl(KSieveUi::SieveEditorUtil::HelpVariableN
 
 KSieveUi::SieveEditorUtil::HelpVariableName KSieveUi::SieveEditorUtil::strToVariableName(const QString &str)
 {
-    if (str == QLatin1String("address")) {
+    if (str == QLatin1StringView("address")) {
         return AddressCondition;
-    } else if (str == QLatin1String("body")) {
+    } else if (str == QLatin1StringView("body")) {
         return BodyCondition;
-    } else if (str == QLatin1String("currentdate")) {
+    } else if (str == QLatin1StringView("currentdate")) {
         return CurrentdateCondition;
-    } else if (str == QLatin1String("date")) {
+    } else if (str == QLatin1StringView("date")) {
         return DateCondition;
-    } else if (str == QLatin1String("envelope")) {
+    } else if (str == QLatin1StringView("envelope")) {
         return EnvelopeCondition;
-    } else if (str == QLatin1String("environment")) {
+    } else if (str == QLatin1StringView("environment")) {
         return EnvironmentCondition;
-    } else if (str == QLatin1String("exists")) {
+    } else if (str == QLatin1StringView("exists")) {
         return ExistsCondition;
-    } else if (str == QLatin1String("false")) {
+    } else if (str == QLatin1StringView("false")) {
         return FalseCondition;
-    } else if (str == QLatin1String("hasflag")) {
+    } else if (str == QLatin1StringView("hasflag")) {
         return HasflagCondition;
-    } else if (str == QLatin1String("header")) {
+    } else if (str == QLatin1StringView("header")) {
         return HeaderCondition;
-    } else if (str == QLatin1String("ihave")) {
+    } else if (str == QLatin1StringView("ihave")) {
         return IhaveCondition;
-    } else if (str == QLatin1String("mailboxexists")) {
+    } else if (str == QLatin1StringView("mailboxexists")) {
         return MailboxexistsCondition;
-    } else if (str == QLatin1String("metadata")) {
+    } else if (str == QLatin1StringView("metadata")) {
         return MetadataCondition;
-    } else if (str == QLatin1String("metadataexists")) {
+    } else if (str == QLatin1StringView("metadataexists")) {
         return MetadataexistsCondition;
-    } else if (str == QLatin1String("servermetadata")) {
+    } else if (str == QLatin1StringView("servermetadata")) {
         return ServermetadataCondition;
-    } else if (str == QLatin1String("servermetadataexists")) {
+    } else if (str == QLatin1StringView("servermetadataexists")) {
         return ServermetadataexistsCondition;
-    } else if (str == QLatin1String("size")) {
+    } else if (str == QLatin1StringView("size")) {
         return SizeCondition;
-    } else if (str == QLatin1String("spamtest")) {
+    } else if (str == QLatin1StringView("spamtest")) {
         return SpamtestCondition;
-    } else if (str == QLatin1String("true")) {
+    } else if (str == QLatin1StringView("true")) {
         return TrueCondition;
-    } else if (str == QLatin1String("not")) {
+    } else if (str == QLatin1StringView("not")) {
         return NotCondition;
-    } else if (str == QLatin1String("anyof")) {
+    } else if (str == QLatin1StringView("anyof")) {
         return AnyOf;
-    } else if (str == QLatin1String("allof")) {
+    } else if (str == QLatin1StringView("allof")) {
         return Allof;
-    } else if (str == QLatin1String("virustest")) {
+    } else if (str == QLatin1StringView("virustest")) {
         return VirustestCondition;
-    } else if (str == QLatin1String("break")) {
+    } else if (str == QLatin1StringView("break")) {
         return BreakAction;
-    } else if (str == QLatin1String("convert")) {
+    } else if (str == QLatin1StringView("convert")) {
         return ConvertAction; // TODO
-    } else if (str == QLatin1String("discard")) {
+    } else if (str == QLatin1StringView("discard")) {
         return DiscardAction;
-    } else if (str == QLatin1String("enclose")) {
+    } else if (str == QLatin1StringView("enclose")) {
         return EncloseAction;
-    } else if (str == QLatin1String("extracttext")) {
+    } else if (str == QLatin1StringView("extracttext")) {
         return ExtracttextAction;
-    } else if (str == QLatin1String("fileinto")) {
+    } else if (str == QLatin1StringView("fileinto")) {
         return FileintoAction;
-    } else if (str == QLatin1String("keep")) {
+    } else if (str == QLatin1StringView("keep")) {
         return KeepAction;
-    } else if (str == QLatin1String("notify")) {
+    } else if (str == QLatin1StringView("notify")) {
         return NotifyAction;
-    } else if (str == QLatin1String("redirect")) {
+    } else if (str == QLatin1StringView("redirect")) {
         return RedirectAction;
-    } else if (str == QLatin1String("reject")) {
+    } else if (str == QLatin1StringView("reject")) {
         return RejectAction;
-    } else if (str == QLatin1String("ereject")) {
+    } else if (str == QLatin1StringView("ereject")) {
         return ERejectAction;
-    } else if (str == QLatin1String("replace")) {
+    } else if (str == QLatin1StringView("replace")) {
         return ReplaceAction;
-    } else if (str == QLatin1String("return")) {
+    } else if (str == QLatin1StringView("return")) {
         return ReturnAction;
-    } else if (str == QLatin1String("set")) {
+    } else if (str == QLatin1StringView("set")) {
         return SetvariableAction;
-    } else if (str == QLatin1String("stop")) {
+    } else if (str == QLatin1StringView("stop")) {
         return StopAction;
-    } else if (str == QLatin1String("vacation")) {
+    } else if (str == QLatin1StringView("vacation")) {
         return VacationAction;
-    } else if (str == QLatin1String("include")) {
+    } else if (str == QLatin1StringView("include")) {
         return Includes;
-    } else if (str == QLatin1String("globalvariable")) {
+    } else if (str == QLatin1StringView("globalvariable")) {
         return GlobalVariable;
-    } else if (str == QLatin1String("foreverypart")) {
+    } else if (str == QLatin1StringView("foreverypart")) {
         return ForEveryPart;
-    } else if (str == QLatin1String("copy")) {
+    } else if (str == QLatin1StringView("copy")) {
         return CopyExtension;
-    } else if (str == QLatin1String("mboxmetadata")) {
+    } else if (str == QLatin1StringView("mboxmetadata")) {
         return MBoxMetaDataExtension;
-    } else if (str == QLatin1String("subaddress")) {
+    } else if (str == QLatin1StringView("subaddress")) {
         return SubAddressExtension;
-    } else if (str == QLatin1String("imapflags")) {
+    } else if (str == QLatin1StringView("imapflags")) {
         return ImapFlagsExtension;
-    } else if (str == QLatin1String("editheader")) {
+    } else if (str == QLatin1StringView("editheader")) {
         return EditHeaderExtension;
     }
 

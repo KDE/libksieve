@@ -70,19 +70,19 @@ void SieveActionKeep::setParamWidgetValue(QXmlStreamReader &element, QWidget *w,
     if (mHasFlagSupport) {
         while (element.readNextStartElement()) {
             const QStringView tagName = element.name();
-            if (tagName == QLatin1String("list")) {
+            if (tagName == QLatin1StringView("list")) {
                 auto flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
                 flagsWidget->setFlags(AutoCreateScriptUtil::listValue(element));
-            } else if (tagName == QLatin1String("str")) {
+            } else if (tagName == QLatin1StringView("str")) {
                 auto flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
                 flagsWidget->setFlags(QStringList() << element.readElementText());
-            } else if (tagName == QLatin1String("tag") && element.readElementText() == QLatin1String("flags")) {
+            } else if (tagName == QLatin1StringView("tag") && element.readElementText() == QLatin1StringView("flags")) {
                 // nothing :)
                 // Don't skip here.
-            } else if (tagName == QLatin1String("crlf")) {
+            } else if (tagName == QLatin1StringView("crlf")) {
                 element.skipCurrentElement();
                 // nothing
-            } else if (tagName == QLatin1String("comment")) {
+            } else if (tagName == QLatin1StringView("comment")) {
                 element.skipCurrentElement();
                 // implement in the future ?
             } else {

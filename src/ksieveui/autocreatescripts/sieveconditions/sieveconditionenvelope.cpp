@@ -114,7 +114,7 @@ void SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWid
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
 
-        if (tagName == QLatin1String("tag")) {
+        if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
             if (indexTag == 0) {
                 QString err;
@@ -133,7 +133,7 @@ void SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWid
                 qCDebug(LIBKSIEVEUI_LOG) << "SieveConditionEnvelope::setParamWidgetValue too many argument :" << indexTag;
             }
             ++indexTag;
-        } else if (tagName == QLatin1String("str")) {
+        } else if (tagName == QLatin1StringView("str")) {
             if (indexStr == 0) {
                 auto selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
                 selectHeaderType->setCode(element.readElementText());
@@ -145,7 +145,7 @@ void SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWid
                 qCDebug(LIBKSIEVEUI_LOG) << "SieveConditionEnvelope::setParamWidgetValue too many argument indexStr " << indexStr;
             }
             ++indexStr;
-        } else if (tagName == QLatin1String("list")) {
+        } else if (tagName == QLatin1StringView("list")) {
             if (indexStr == 0) {
                 auto selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
                 selectHeaderType->setCode(AutoCreateScriptUtil::listValueToStr(element));
@@ -154,10 +154,10 @@ void SieveConditionEnvelope::setParamWidgetValue(QXmlStreamReader &element, QWid
                 edit->setCode(AutoCreateScriptUtil::listValueToStr(element));
             }
             ++indexStr;
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);

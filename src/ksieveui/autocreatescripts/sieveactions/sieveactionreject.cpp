@@ -41,14 +41,14 @@ void SieveActionReject::setParamWidgetValue(QXmlStreamReader &element, QWidget *
 {
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("str")) {
+        if (tagName == QLatin1StringView("str")) {
             const QString tagValue = element.readElementText();
             auto edit = w->findChild<MultiLineEdit *>(QStringLiteral("rejectmessage"));
             edit->setPlainText(tagValue);
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             element.skipCurrentElement();
             // implement in the future ?
         } else {

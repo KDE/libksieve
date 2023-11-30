@@ -62,19 +62,19 @@ void SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, 
     int index = 0;
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("test")) {
+        if (tagName == QLatin1StringView("test")) {
             QString nameValue;
-            if (element.attributes().hasAttribute(QLatin1String("name"))) {
-                nameValue = element.attributes().value(QLatin1String("name")).toString();
+            if (element.attributes().hasAttribute(QLatin1StringView("name"))) {
+                nameValue = element.attributes().value(QLatin1StringView("name")).toString();
             }
-            const bool isNot = (nameValue == QLatin1String("not"));
+            const bool isNot = (nameValue == QLatin1StringView("not"));
             parseValue(element, w, error, isNot);
             element.skipCurrentElement();
             return;
-        } else if (tagName == QLatin1String("tag")) {
+        } else if (tagName == QLatin1StringView("tag")) {
             auto combo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
             combo->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), isNegative), name(), error);
-        } else if (tagName == QLatin1String("str")) {
+        } else if (tagName == QLatin1StringView("str")) {
             if (index == 0) {
                 auto edit = w->findChild<QLineEdit *>(QStringLiteral("headeredit"));
                 edit->setText(element.readElementText());
@@ -86,10 +86,10 @@ void SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, 
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveActionAddHeader::setParamWidgetValue too many argument :" << index;
             }
             ++index;
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             element.skipCurrentElement();
             // implement in the future ?
         } else {

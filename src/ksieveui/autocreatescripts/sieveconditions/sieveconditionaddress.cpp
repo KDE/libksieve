@@ -104,10 +104,10 @@ void SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
     QString commentStr;
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("tag")) {
+        if (tagName == QLatin1StringView("tag")) {
             lstTagValue << element.readElementText();
             ++index;
-        } else if (tagName == QLatin1String("str")) {
+        } else if (tagName == QLatin1StringView("str")) {
             if (indexStr == 0) {
                 auto selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
                 selectHeaderType->setCode(element.readElementText());
@@ -119,7 +119,7 @@ void SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionAddress::setParamWidgetValue too many argument :" << index;
             }
             ++indexStr;
-        } else if (tagName == QLatin1String("list")) {
+        } else if (tagName == QLatin1StringView("list")) {
             if (indexStr == 0) {
                 auto selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headertypecombobox"));
                 selectHeaderType->setCode(AutoCreateScriptUtil::listValueToStr(element));
@@ -131,10 +131,10 @@ void SieveConditionAddress::setParamWidgetValue(QXmlStreamReader &element, QWidg
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionAddress::setParamWidgetValue too many argument :" << index;
             }
             ++indexStr;
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);

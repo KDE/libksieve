@@ -109,7 +109,7 @@ bool Parser::Impl::isStringToken() const
 
 bool Parser::Impl::isArgumentToken() const
 {
-    return isStringToken() || token() == Lexer::Number || token() == Lexer::Tag || (token() == Lexer::Special && mTokenValue == QLatin1String("["));
+    return isStringToken() || token() == Lexer::Number || token() == Lexer::Tag || (token() == Lexer::Special && mTokenValue == QLatin1StringView("["));
 }
 
 bool Parser::Impl::obtainToken()
@@ -280,7 +280,7 @@ bool Parser::Impl::parseCommand()
 
     if (tokenValue() == QLatin1Char(';')) {
         consumeToken();
-    } else if (tokenValue() == QLatin1String("{")) { // block
+    } else if (tokenValue() == QLatin1StringView("{")) { // block
         if (!parseBlock()) {
             return false; // it's an error since we saw '{'
         }
@@ -340,7 +340,7 @@ bool Parser::Impl::parseArgument()
         }
         consumeToken();
         return true;
-    } else if (token() == Lexer::Special && tokenValue() == QLatin1String("[")) {
+    } else if (token() == Lexer::Special && tokenValue() == QLatin1StringView("[")) {
         if (!parseStringList()) {
             assert(error());
             return false;

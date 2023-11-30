@@ -64,18 +64,18 @@ void SieveActionReplace::setParamWidgetValue(QXmlStreamReader &element, QWidget 
 {
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("str")) {
+        if (tagName == QLatin1StringView("str")) {
             auto edit = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
             edit->setPlainText(element.readElementText());
-        } else if (tagName == QLatin1String("tag")) {
+        } else if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
-            if (tagValue == QLatin1String("subject")) {
+            if (tagValue == QLatin1StringView("subject")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
                     auto subject = w->findChild<QLineEdit *>(QStringLiteral("subject"));
                     subject->setText(strValue);
                 }
-            } else if (tagValue == QLatin1String("from")) {
+            } else if (tagValue == QLatin1StringView("from")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
                     auto headers = w->findChild<KSieveUi::AbstractSelectEmailLineEdit *>(QStringLiteral("from"));
@@ -85,10 +85,10 @@ void SieveActionReplace::setParamWidgetValue(QXmlStreamReader &element, QWidget 
                 unknownTagValue(tagValue, error);
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveActionReplace::setParamWidgetValue unknown tagValue " << tagValue;
             }
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             element.skipCurrentElement();
             // implement in the future ?
         } else {

@@ -126,7 +126,7 @@ void SieveConditionMetaData::setParamWidgetValue(QXmlStreamReader &element, QWid
     QString commentStr;
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("str")) {
+        if (tagName == QLatin1StringView("str")) {
             const QString tagValue = element.readElementText();
             switch (index) {
             case 0: {
@@ -150,13 +150,13 @@ void SieveConditionMetaData::setParamWidgetValue(QXmlStreamReader &element, QWid
                 break;
             }
             ++index;
-        } else if (tagName == QLatin1String("tag")) {
+        } else if (tagName == QLatin1StringView("tag")) {
             auto selectType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("selecttype"));
             selectType->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);

@@ -97,7 +97,7 @@ void SieveConditionBody::setParamWidgetValue(QXmlStreamReader &element, QWidget 
     QString commentStr;
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("tag")) {
+        if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
             if (index == 0) {
                 tagValueList << AutoCreateScriptUtil::tagValue(tagValue);
@@ -108,15 +108,15 @@ void SieveConditionBody::setParamWidgetValue(QXmlStreamReader &element, QWidget 
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionBody::setParamWidgetValue too many argument " << index;
             }
             ++index;
-        } else if (tagName == QLatin1String("str")) {
+        } else if (tagName == QLatin1StringView("str")) {
             strValue << element.readElementText();
             ++indexStr;
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
-        } else if (tagName == QLatin1String("list")) {
+        } else if (tagName == QLatin1StringView("list")) {
             strValue << AutoCreateScriptUtil::listValueToStr(element);
             wasListElement = true;
             ++indexStr;

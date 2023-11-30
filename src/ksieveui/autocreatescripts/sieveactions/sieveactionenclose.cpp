@@ -63,15 +63,15 @@ void SieveActionEnclose::setParamWidgetValue(QXmlStreamReader &element, QWidget 
 {
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("tag")) {
+        if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
-            if (tagValue == QLatin1String("headers")) {
+            if (tagValue == QLatin1StringView("headers")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
                     auto subject = w->findChild<QLineEdit *>(QStringLiteral("headers"));
                     subject->setText(strValue);
                 }
-            } else if (tagValue == QLatin1String("subject")) {
+            } else if (tagValue == QLatin1StringView("subject")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
                     auto headers = w->findChild<QLineEdit *>(QStringLiteral("subject"));
@@ -81,13 +81,13 @@ void SieveActionEnclose::setParamWidgetValue(QXmlStreamReader &element, QWidget 
                 unknownTagValue(tagValue, error);
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveActionEnclose::setParamWidgetValue unknown tag value:" << tagValue;
             }
-        } else if (tagName == QLatin1String("str")) {
+        } else if (tagName == QLatin1StringView("str")) {
             auto edit = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
             edit->setPlainText(element.readElementText());
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             element.skipCurrentElement();
             // implement in the future ?
         } else {

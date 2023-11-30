@@ -87,7 +87,7 @@ void SieveConditionMetaDataExists::setParamWidgetValue(QXmlStreamReader &element
     QString commentStr;
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("str")) {
+        if (tagName == QLatin1StringView("str")) {
             const QString tagValue = element.readElementText();
             if (index == 0) {
                 auto mailbox = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("mailbox"));
@@ -100,10 +100,10 @@ void SieveConditionMetaDataExists::setParamWidgetValue(QXmlStreamReader &element
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionServerMetaDataExists::setParamWidgetValue to many attribute " << index;
             }
             ++index;
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             commentStr = AutoCreateScriptUtil::loadConditionComment(commentStr, element.readElementText());
         } else {
             unknownTag(tagName, error);

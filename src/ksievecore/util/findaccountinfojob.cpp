@@ -124,12 +124,12 @@ void FindAccountInfoJob::slotPasswordsRequested(const QString &sievePassword, co
         QUrlQuery query;
         query.addQueryItem(QStringLiteral("x-mech"), authStr);
         const QString resultSafety = mCustomImapSettingsInterface->safety();
-        if (resultSafety == QLatin1String("None")) {
+        if (resultSafety == QLatin1StringView("None")) {
             mAccountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
             query.addQueryItem(QStringLiteral("x-allow-unencrypted"), QStringLiteral("true"));
-        } else if (resultSafety == QLatin1String("SSL")) {
+        } else if (resultSafety == QLatin1StringView("SSL")) {
             mAccountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::SSLorTLS);
-        } else if (resultSafety == QLatin1String("STARTTLS")) {
+        } else if (resultSafety == QLatin1StringView("STARTTLS")) {
             mAccountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::STARTTLS);
         } else {
             mAccountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
@@ -175,12 +175,12 @@ void FindAccountInfoJob::slotPasswordsRequested(const QString &sievePassword, co
         QUrlQuery query;
         query.addQueryItem(QStringLiteral("x-mech"), authStr);
 
-        if (resultSafety == QLatin1String("None")) {
+        if (resultSafety == QLatin1StringView("None")) {
             mAccountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
             query.addQueryItem(QStringLiteral("x-allow-unencrypted"), QStringLiteral("true"));
-        } else if (resultSafety == QLatin1String("SSL")) {
+        } else if (resultSafety == QLatin1StringView("SSL")) {
             mAccountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::SSLorTLS);
-        } else if (resultSafety == QLatin1String("STARTTLS")) {
+        } else if (resultSafety == QLatin1StringView("STARTTLS")) {
             mAccountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::STARTTLS);
         } else {
             mAccountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
@@ -189,11 +189,11 @@ void FindAccountInfoJob::slotPasswordsRequested(const QString &sievePassword, co
         sieveUrl.setQuery(query);
 
         const QString resultCustomAuthentication = mCustomImapSettingsInterface->sieveCustomAuthentification();
-        if (resultCustomAuthentication == QLatin1String("ImapUserPassword")) {
+        if (resultCustomAuthentication == QLatin1StringView("ImapUserPassword")) {
             sieveUrl.setUserName(mCustomImapSettingsInterface->userName());
             const QString imapPwd = sievePassword;
             sieveUrl.setPassword(imapPwd);
-        } else if (resultCustomAuthentication == QLatin1String("CustomUserPassword")) {
+        } else if (resultCustomAuthentication == QLatin1StringView("CustomUserPassword")) {
             const QString customPwd = sieveCustomPassword;
             sieveUrl.setPassword(customPwd);
             sieveUrl.setUserName(mCustomImapSettingsInterface->sieveCustomUsername());

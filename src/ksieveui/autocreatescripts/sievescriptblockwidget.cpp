@@ -259,16 +259,16 @@ void SieveScriptBlockWidget::loadScript(QXmlStreamReader &element, bool onlyActi
         bool uniqueTest = false;
         while (element.readNextStartElement()) {
             const QStringView tagName = element.name();
-            if (tagName == QLatin1String("test")) {
+            if (tagName == QLatin1StringView("test")) {
                 bool notCondition = false;
-                if (element.attributes().hasAttribute(QLatin1String("name"))) {
-                    const QString typeCondition = element.attributes().value(QLatin1String("name")).toString();
-                    if (typeCondition == QLatin1String("anyof")) {
+                if (element.attributes().hasAttribute(QLatin1StringView("name"))) {
+                    const QString typeCondition = element.attributes().value(QLatin1StringView("name")).toString();
+                    if (typeCondition == QLatin1StringView("anyof")) {
                         mMatchCondition = OrCondition;
-                    } else if (typeCondition == QLatin1String("allof")) {
+                    } else if (typeCondition == QLatin1StringView("allof")) {
                         mMatchAll->setChecked(true);
                     } else {
-                        if (typeCondition == QLatin1String("not")) {
+                        if (typeCondition == QLatin1StringView("not")) {
                             notCondition = true;
                         }
                         uniqueTest = true;
@@ -277,7 +277,7 @@ void SieveScriptBlockWidget::loadScript(QXmlStreamReader &element, bool onlyActi
                     updateCondition();
                 }
                 mScriptConditionLister->loadScript(element, uniqueTest, notCondition, error);
-            } else if (tagName == QLatin1String("block")) {
+            } else if (tagName == QLatin1StringView("block")) {
                 mScriptActionLister->loadScript(element, false, error);
             } else {
                 if (tagName != QLatin1String("crlf")) {

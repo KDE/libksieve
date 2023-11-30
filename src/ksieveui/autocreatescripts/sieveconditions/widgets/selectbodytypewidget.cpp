@@ -45,7 +45,7 @@ void SelectBodyTypeWidget::initialize()
 QString SelectBodyTypeWidget::code() const
 {
     QString value = mBodyCombobox->itemData(mBodyCombobox->currentIndex()).toString();
-    if (value == QLatin1String(":content")) {
+    if (value == QLatin1StringView(":content")) {
         value += QStringLiteral(" \"%1\"").arg(mBodyLineEdit->text());
     }
     return value;
@@ -54,7 +54,7 @@ QString SelectBodyTypeWidget::code() const
 void SelectBodyTypeWidget::slotBodyTypeChanged(int index)
 {
     const QString value = mBodyCombobox->itemData(index).toString();
-    if (value == QLatin1String(":content")) {
+    if (value == QLatin1StringView(":content")) {
         mBodyLineEdit->show();
     } else {
         mBodyLineEdit->hide();

@@ -47,9 +47,9 @@ void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
 {
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
-        if (tagName == QLatin1String("tag")) {
+        if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
-            if (tagValue == QLatin1String("copy")) {
+            if (tagValue == QLatin1StringView("copy")) {
                 if (mHasCopySupport) {
                     auto copy = w->findChild<QCheckBox *>(QStringLiteral("copy"));
                     copy->setChecked(true);
@@ -57,7 +57,7 @@ void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
                     error += i18n("Action \"fileinto\" has \"copy\" argument but current server does not support it") + QLatin1Char('\n');
                     qCDebug(LIBKSIEVEUI_LOG) << "SieveActionFileInto::setParamWidgetValue has not copy support ";
                 }
-            } else if (tagValue == QLatin1String("create")) {
+            } else if (tagValue == QLatin1StringView("create")) {
                 if (mHasMailBoxSupport) {
                     auto create = w->findChild<QCheckBox *>(QStringLiteral("create"));
                     create->setChecked(true);
@@ -69,14 +69,14 @@ void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
                 serverDoesNotSupportFeatures(tagValue, error);
                 qCDebug(LIBKSIEVEUI_LOG) << "SieveActionFileInto::setParamWidgetValue server has not flags support ";
             }
-        } else if (tagName == QLatin1String("str")) {
+        } else if (tagName == QLatin1StringView("str")) {
             const QString tagValue = element.readElementText();
             auto edit = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("fileintolineedit"));
             edit->setText(AutoCreateScriptUtil::protectSlash(tagValue));
-        } else if (tagName == QLatin1String("crlf")) {
+        } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing
-        } else if (tagName == QLatin1String("comment")) {
+        } else if (tagName == QLatin1StringView("comment")) {
             element.skipCurrentElement();
             // implement in the future ?
         } else {
