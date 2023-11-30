@@ -2,7 +2,7 @@ require "spamtest";
 require "relational";
 require "comparator-i;ascii-numeric";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 #Script name: test virus
 
 if allof (virustest :count "ge" :comparator "i;ascii-numeric" "5"

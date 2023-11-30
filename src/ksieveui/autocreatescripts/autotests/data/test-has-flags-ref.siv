@@ -1,7 +1,7 @@
 require "imap4flags";
 require "variables";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 #Script name: has flags
 
 if allof (hasflag :is "test"

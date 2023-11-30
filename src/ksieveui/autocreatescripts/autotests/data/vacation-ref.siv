@@ -1,7 +1,7 @@
 require "vacation-seconds";
 require "vacation";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 #Script name: vacation
 
 if true

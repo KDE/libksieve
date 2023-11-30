@@ -3,7 +3,7 @@ require "subaddress";
 require "fileinto";
 require "imap4flags";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 if envelope :all :contains [ "from", "to" ] "pedophile@yourdomain.com"
 {
     fileinto "c:\\spyfolder";

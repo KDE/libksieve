@@ -1,12 +1,12 @@
 require "fileinto";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 if header :is [ "X-DSPAM-Result", "X-DSPAM-Reclassified" ] [ "Spam", "Virus" ]
 {
     fileinto "INBOX.spam";
     stop;
 } 
 
-#SCRIPTNAME: Script part 1
+# rule:[Script part 1]
 redirect "user@domain.com";
 

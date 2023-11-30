@@ -2,7 +2,7 @@ require "envelope";
 require "subaddress";
 require "foreverypart";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 #Script name: not condition
 
 if not envelope :localpart :is "Reply-To" "montel@kde.org"

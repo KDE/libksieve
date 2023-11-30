@@ -1,7 +1,7 @@
 require "ihave";
 require "copy";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 #Script name: redirect
 
 if ihave "redirect"

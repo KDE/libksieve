@@ -1,15 +1,14 @@
 require "vacation-seconds";
 require "vacation";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 if false
 {
 } 
 
-#SCRIPTNAME: Script part 1
+# rule:[Urlaub]
 # EDITOR Roundcube (Managesieve)
 # EDITOR_VERSION 8.2
-# rule:[Urlaub]
 vacation :days 1 :subject "XXX" text:
 dsfgsdfgsdfg
 .
@@ -17,7 +16,7 @@ dsfgsdfgsdfg
 
 
 
-#SCRIPTNAME: Script part 2
+# rule:[Urlaub]
 if false
 {
 } 

@@ -1,4 +1,4 @@
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 if header :is "X-Spam-Flag" "YES" #1
  #2
  #3

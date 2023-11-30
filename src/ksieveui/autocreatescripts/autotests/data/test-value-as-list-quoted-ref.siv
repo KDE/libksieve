@@ -1,6 +1,6 @@
 require "fileinto";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 if anyof (header :contains "Subject" "[kdepim-runtime]"
 , header :contains "Subject" "[akonadi"
 , header :contains "Subject" "[kmail2"

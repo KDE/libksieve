@@ -1,7 +1,7 @@
 require "ihave";
 require "foreverypart";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 #Script name: not condition
 
 if allof (not header :is "Content-Type" "sdfsdf"

@@ -2,7 +2,7 @@ require "subaddress";
 require "fileinto";
 require "imap4flags";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 if address :all :is "X-Delivered-To" "alias1@fastmail.fm"
 {
     fileinto "INBOX.alias1";
@@ -18,6 +18,6 @@ if address :all :is "X-Delivered-To" "alias1@fastmail.fm"
     stop;
 } 
 
-#SCRIPTNAME: Script part 1
+# rule:[Script part 1]
 redirect "another@account.net";
 

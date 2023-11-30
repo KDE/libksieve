@@ -1,7 +1,7 @@
 require "date";
 require "imap4flags";
 
-#SCRIPTNAME: test-date
+# rule:[test-date]
 #Script name: test-date
 
 if allof (date :is "header" "day" "20"

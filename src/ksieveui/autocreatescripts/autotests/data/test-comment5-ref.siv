@@ -8,7 +8,7 @@ require "variables";
 require "mboxmetadata";
 require "ihave";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 if allof (virustest :value "gt" :comparator "i;octet" "0" #condition1
 , environment "" "" #condition2
 , envelope :all :is  "" # condition3

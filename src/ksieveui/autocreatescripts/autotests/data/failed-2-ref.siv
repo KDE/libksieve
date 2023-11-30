@@ -2,7 +2,7 @@ require "body";
 require "fileinto";
 require "imap4flags";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 ## Flag: |UniqueId:2|Rulename: Mail delivery failed "bae.vo.pb+ma@gmail.com"
 if allof (header :contains "From" "mailer-daemon@foo.de"
 , header :matches "Subject" "Mail delivery failed: returning message to sender"

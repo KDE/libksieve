@@ -3,7 +3,7 @@ require "relational";
 require "comparator-i;ascii-numeric";
 require "spamtestplus";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 #Script name: test spam-plus
 
 if allof (spamtest :percent :value "ne" :comparator "i;ascii-numeric" "4"

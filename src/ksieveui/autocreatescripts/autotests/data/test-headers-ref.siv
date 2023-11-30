@@ -1,6 +1,6 @@
 require "imap4flags";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 #Script name: test-headers
 
 if allof (header :contains "Content-Type" "value"

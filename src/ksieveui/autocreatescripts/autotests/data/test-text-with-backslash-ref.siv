@@ -1,6 +1,6 @@
 require "reject";
 
-#SCRIPTNAME: test
+# rule:[test]
 reject text:
 test \"too\"
 .

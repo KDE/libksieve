@@ -1,7 +1,7 @@
 require "ihave";
 require "enclose";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 #Script name: enclose
 
 if ihave "enclosz"

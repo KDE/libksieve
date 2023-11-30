@@ -2,7 +2,6 @@ require "body";
 require "imap4flags";
 require "fileinto";
 
-#SCRIPTNAME: Script part 0
 # rule:[Gerrit CI Success]
 if allof (exists "X-Gerrit-Commit"
 , not body :text :contains [ "WARNINGS", "FAILURE" ]

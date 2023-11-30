@@ -4,7 +4,7 @@ require "imap4flags";
 require "subaddress";
 require "reject";
 
-#SCRIPTNAME: test
+# rule:[test]
 include :personal :optional :once "sdqd";
 include :global :optional "qsdqd";
 global "globalvar";
@@ -12,7 +12,7 @@ set "globalvar" "415";
 redirect :copy "folder";
 
 
-#SCRIPTNAME: test2
+# rule:[test2]
 if false
 {
     removeflag [ "\\Flagged", "\\Seen", "\\Draft" ];

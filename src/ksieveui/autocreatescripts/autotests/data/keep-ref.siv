@@ -1,7 +1,7 @@
 require "date";
 require "imap4flags";
 
-#SCRIPTNAME: xxx
+# rule:[xxx]
 if date :is "" "year" "0000"
 {
     keep :flags [ "\\Flagged", "\\Seen" ];

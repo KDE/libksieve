@@ -1,7 +1,7 @@
 require "envelope";
 require "subaddress";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 #Script name: test-envelop
 
 if allof (envelope :user :is "to" "foo@example.com"

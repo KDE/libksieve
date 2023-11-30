@@ -1,7 +1,7 @@
 require "foreverypart";
 require "ihave";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 #Script name: test-foreach
 
 foreverypart :name "foreach1" {

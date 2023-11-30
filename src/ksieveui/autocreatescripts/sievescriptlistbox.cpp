@@ -31,6 +31,11 @@ inline const QString defaultScriptName()
 {
     return QStringLiteral("SCRIPTNAME: ");
 }
+
+inline const QString roundcubeRuleName()
+{
+    return QStringLiteral(" rule:");
+}
 }
 
 using namespace KSieveUi;
@@ -374,7 +379,7 @@ QString SieveScriptListBox::generatedScript(QStringList &requireModules) const
         if (i != 0) {
             resultScript += QLatin1String("\n\n");
         }
-        resultScript += QLatin1Char('#') + defaultScriptName() + item->text() + QLatin1Char('\n');
+        resultScript += QLatin1Char('#') + QStringLiteral("%1[%2]").arg(roundcubeRuleName(), item->text()) + QLatin1Char('\n');
         resultScript += item->generatedScript(lstRequires);
     }
     if (!resultScript.isEmpty()) {
@@ -497,6 +502,12 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
             QString str(n.readElementText());
             if (str.contains(defaultScriptName())) {
                 scriptName = str.remove(defaultScriptName());
+            } else if (str.contains(roundcubeRuleName())) {
+                scriptName = str.remove(roundcubeRuleName());
+                if (scriptName.startsWith(QLatin1Char('[')) && scriptName.endsWith(QLatin1Char(']'))) {
+                    scriptName.removeAt(0);
+                    scriptName.removeAt(scriptName.length() - 1);
+                }
             } else {
                 if (!comment.isEmpty()) {
                     comment += QLatin1Char('\n');

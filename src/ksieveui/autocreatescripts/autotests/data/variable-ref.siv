@@ -1,6 +1,6 @@
 require "variables";
 
-#SCRIPTNAME: Script part 0
+# rule:[Script part 0]
 #Script name: variables
 
 if size :under 5

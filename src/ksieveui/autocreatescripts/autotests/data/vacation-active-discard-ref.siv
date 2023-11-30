@@ -1,10 +1,9 @@
 require "vacation-seconds";
 require "vacation";
 
-#SCRIPTNAME: Script part 0
+# rule:[Urlaub]
 # EDITOR Roundcube (Managesieve)
 # EDITOR_VERSION 8.2
-# rule:[Urlaub]
 if not header :contains "X-Spam-Flag" "YES"
 {
     vacation :days 7 :subject "XXX" :addresses "test@test.de" text:
