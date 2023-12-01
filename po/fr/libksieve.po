@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-29 13:39+0000\n"
+"POT-Creation-Date: 2023-12-01 01:38+0000\n"
 "PO-Revision-Date: 2023-11-07 09:32+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -2256,78 +2256,78 @@ msgctxt "@title:window"
 msgid "Description"
 msgstr "Description"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:123
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:128
 #, kde-format
 msgctxt "Move selected filter up."
 msgid "Up"
 msgstr "En haut"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:124
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:129
 #, kde-format
 msgctxt "Move selected filter down."
 msgid "Down"
 msgstr "En bas"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:125
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:130
 #, kde-format
 msgctxt "Move selected filter to the top."
 msgid "Top"
 msgstr "Tout en haut"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:126
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:131
 #, kde-format
 msgctxt "Move selected filter to the bottom."
 msgid "Bottom"
 msgstr "Tout en bas"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:138
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
 #, kde-format
 msgid "New Script"
 msgstr "Nouveau script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:144
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
 #: ksieveui/widgets/managesievewidget.cpp:150
 #, kde-format
 msgid "Delete Script"
 msgstr "Supprimer le script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:148
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
 #: ksieveui/widgets/managesievewidget.cpp:426
 #: ksieveui/widgets/managesievewidget.cpp:454
 #, kde-format
 msgid "Rename Script"
 msgstr "Renommer le script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:154
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
 #, kde-format
 msgid "Edit Script Description"
 msgstr "Modifier la description du script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:183
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:188
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Script"
 msgstr "Nouveau script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:188
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:193
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Rename Script"
 msgstr "Renommer le script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:193
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Script Description"
 msgstr "Modifier la description du script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:203
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Script"
 msgstr "Supprimer un script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:257
 #: ksieveui/widgets/managesievewidget.cpp:228
 #: ksieveui/widgets/managesievewidget.cpp:234
 #: ksieveui/widgets/managesievewidget.cpp:246
@@ -2336,39 +2336,39 @@ msgctxt "@title:window"
 msgid "New Script"
 msgstr "Nouveau script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:252
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:257
 #, kde-format
 msgid "New script name:"
 msgstr "Nouveau nom du script :"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:264
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:269
 #, kde-format
 msgid "Do you want to delete \"%1\" script?"
 msgstr "Voulez-vous supprimer le script « %1 » ?"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:265
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Script"
 msgstr "Supprimer un script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:290
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Script"
 msgstr "Renommer le script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:285
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:290
 #, kde-format
 msgid "New name for the script:"
 msgstr "Nouveau nom pour le script :"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:474
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:479
 #, kde-format
 msgid "forEveryPart is not supported by your server"
 msgstr "forEveryPart n'est pas gérée par le serveur"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:572
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:583
 #, kde-format
 msgid "Script part %1"
 msgstr "Partie du script %1"
