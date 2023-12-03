@@ -12,14 +12,14 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-03 02:28+0000\n"
-"PO-Revision-Date: 2023-11-04 12:24+0100\n"
+"PO-Revision-Date: 2023-12-02 13:12+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: kmanagesieve/session.cpp:90
@@ -274,6 +274,9 @@ msgid ""
 "any previously set flags.  This means that multiple occurrences of addflag "
 "are treated additively."
 msgstr ""
+"Gehitu-bandera, [IMAP] zerrenda batera banderak gehitzeko erabiltzen da. Ez "
+"du aurretik ezarritako banderarik ordezkatzen. Horrek esan nahi du, gehitu-"
+"banderaren gertaera anizkoitzak batu egiten direla."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:24
 #, kde-format
@@ -375,7 +378,7 @@ msgstr "Baztertu, mezua isilpean botatzeko erabiltzen da."
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:22
 #, kde-format
 msgid "Enclose"
-msgstr ""
+msgstr "Hesitu"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:33
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:35
@@ -409,7 +412,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:20
 #, kde-format
 msgid "E-Reject"
-msgstr ""
+msgstr "E-Errefusatu"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:90
 #, kde-format
@@ -417,6 +420,8 @@ msgid ""
 " The \"ereject\" action cancels the implicit keep and refuses delivery of a "
 "message."
 msgstr ""
+" \"eerrefusatu\" ekintzak mantentze inplizitua bertan behera utzi eta mezu "
+"bat banatzea errefusatzen du."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:21
 #, kde-format
@@ -578,6 +583,10 @@ msgid ""
 "clears flags previously set by \"set\"/\"addflag\". Calling removeflag with "
 "a flag that wasn't set before is not an error and is ignored."
 msgstr ""
+"Kendu-bandera, [IMAP] zerrenda batetik banderak kentzeko erabiltzen da. "
+"Kendu-banderak, \"ezarri\"/\"gehitu-bandera\" erabiliz aurrez ezarritako "
+"banderak garbitzen ditu. Kendu-bandera aurrez ezarria ez zegoen bandera "
+"batekin deitzea ez da errore bat eta ezikusi egingo zaio."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:24
 #, kde-format
@@ -619,6 +628,9 @@ msgid ""
 "Setflag is used for setting [IMAP] system flags or keywords. Setflag "
 "replaces any previously set flags."
 msgstr ""
+"Ezarri-bandera, [IMAP] sistemako banderak edo gako-hitzak gehitzeko "
+"erabiltzen da. Ezarri-banderak, aurrez ezarritako edozein bandera "
+"ordezkatzen du."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:24
 #, kde-format
@@ -675,11 +687,13 @@ msgid "Stop"
 msgstr "Gelditu"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionstop.cpp:25
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "The \"stop\" action ends all processing.  If the implicit keep has not been "
 "cancelled, then it is taken."
-msgstr "\"gelditu\" ekintzak prozesatze guztia bukatzen du. "
+msgstr ""
+"\"gelditu\" ekintzak prozesatze guztia bukatzen du. Mantentze inplizitua "
+"bertan behera utzi ez bada, orduan, hartzen da."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:27
 #, kde-format
@@ -714,6 +728,10 @@ msgid ""
 "provide correspondents with notification that the user is away for an "
 "extended period of time and that they should not expect quick responses."
 msgstr ""
+"\"oporraldia\" ekintzak, Unix bertsio askotan erabilgarri dagoen «vacation» "
+"komandoaren antzeko oporraldietarako erantzule automatiko bat inplementatzen "
+"du. Haren xedea da, posta-idazleei jakinaraztea, erabiltzailea epe luze "
+"baterako kanpoan dela, eta ez luketela erantzun azkar baten zain egon behar."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:208
 #, kde-format
@@ -723,6 +741,10 @@ msgid ""
 "are cases when one needs more granularity, if one would like to generate "
 "\"vacation\" replies more frequently."
 msgstr ""
+"\":days\" parametroaren bidez, hartzaile berarentzako erantzun automatikoen "
+"kopurua, [n] eguneko, bakarrera mugatzen du, zehaztutako egun kopuru "
+"baterako. Baina badira zehaztasun handiagoa behar duten kasuak, baten batek "
+"\"oporraldi\" erantzunak maizago sortu nahi baditu."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:210
 #, kde-format
@@ -730,6 +752,8 @@ msgid ""
 "This extension defines a \":seconds\" parameter to provide more granularity "
 "for such situations."
 msgstr ""
+"Hedapen horrek \":seconds\" parametro bat definitzen du, halako egoeratan "
+"zehaztasun handiagoa emateko."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
 #, kde-format
@@ -1051,6 +1075,8 @@ msgid ""
 "The hasflag test evaluates to true if any of the variables matches any flag "
 "name."
 msgstr ""
+"Bandera-du proba, egi ebaluatzen du, aldagaietako edozein bandera izen "
+"batekin bat badator."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:21
 #, kde-format
@@ -2580,7 +2606,7 @@ msgstr "«Spamassassin»en gaineko iragazkia"
 #: ksieveui/templates/sievedefaulttemplate.cpp:41
 #, kde-format
 msgid "Flag messages"
-msgstr ""
+msgstr "Bandera mezuei"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:49
 #, kde-format
@@ -2600,7 +2626,7 @@ msgstr "Suntsitu honek bidalitako posta..."
 #: ksieveui/templates/sievedefaulttemplate.cpp:79
 #, kde-format
 msgid "Vacations"
-msgstr ""
+msgstr "Oporraldiak"
 
 #: ksieveui/templates/sievetemplateeditdialog.cpp:39
 #, kde-format
@@ -2657,6 +2683,10 @@ msgid ""
 "You have not yet configured an IMAP server for this. You can do this on the "
 "\"Filtering\" tab of the IMAP account configuration."
 msgstr ""
+"«KMail»en bulegotik kanpo erantzunaren funtzionalitatea zerbitzari aldeko "
+"iragaztean oinarritzen da. Ez duzu, oraindik, horretarako IMAP zerbitzari "
+"bat konfiguratu. IMAP kontua konfiguratzeko \"Iragaztea\" fitxan egin "
+"dezakezu hori."
 
 #: ksieveui/vacation/vacationcheckjob.cpp:125
 #, kde-format
@@ -2733,7 +2763,7 @@ msgstr[1] " egun"
 #: ksieveui/vacation/vacationeditwidget.cpp:157
 #, kde-format
 msgid "&Resend notification only after:"
-msgstr ""
+msgstr "&Birbidali jakinarazpena bakarri honen ondoren:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:169
 #, kde-format
@@ -2786,6 +2816,10 @@ msgid ""
 "extensions;without it, KMail cannot install out-of-office replies for you."
 "Please contact your system administrator."
 msgstr ""
+"Zure zerbitzariak ez du \"oporraldia\" bere onartutako «Sieve» hedapenetan "
+"zerrendatzen; hori gabe, «KMail»ek ezin ditu zuretzako bulegotik-kanpo "
+"erantzunak instalatu. Mesedez, jar zaitez zure sistemaren "
+"administratzailearekin harremanean."
 
 #: ksieveui/vacation/vacationutils.cpp:39
 #, kde-format
