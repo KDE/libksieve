@@ -36,6 +36,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     : QWidget(parent)
 {
     auto lay = new QVBoxLayout(this);
+    lay->setContentsMargins({});
     mDebug = !qEnvironmentVariableIsEmpty("KDEPIM_DEBUGGING");
 
     auto toolbar = new QToolBar(this);
