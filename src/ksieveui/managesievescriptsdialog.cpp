@@ -65,11 +65,13 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(KSieveCore::SieveImapPassword
     setWindowModality(Qt::WindowModal);
     setAttribute(Qt::WA_DeleteOnClose);
     auto mainLayout = new QVBoxLayout(this);
+    mainLayout->setContentsMargins({});
+    mainLayout->setSpacing(0);
+
     auto frame = new QFrame;
     mainLayout->addWidget(frame);
     auto vlay = new QVBoxLayout(frame);
     vlay->setSpacing(0);
-    vlay->setContentsMargins({});
 
     d->mTreeView = new CustomManageSieveWidget(passwordProvider, frame);
     connect(d->mTreeView, &CustomManageSieveWidget::editScript, this, &ManageSieveScriptsDialog::slotEditScript);
