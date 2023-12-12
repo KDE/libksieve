@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-01 01:38+0000\n"
+"POT-Creation-Date: 2023-12-12 01:37+0000\n"
 "PO-Revision-Date: 2022-01-29 12:41+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -362,7 +362,7 @@ msgstr ""
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
 #: ksieveui/debug/sievedebugdialog.cpp:199
-#: ksieveui/managesievescriptsdialog.cpp:168
+#: ksieveui/managesievescriptsdialog.cpp:170
 #, kde-format
 msgid ""
 "Retrieving the script failed.\n"
@@ -2468,42 +2468,42 @@ msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "خطأ تحليل"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:44
+#: ksieveui/editor/sieveeditorwidget.cpp:45
 #, kde-format
 msgid "Check Syntax"
 msgstr "دقّق الصّياغة"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:49
+#: ksieveui/editor/sieveeditorwidget.cpp:50
 #, kde-format
 msgid "Import..."
 msgstr "استورد..."
 
-#: ksieveui/editor/sieveeditorwidget.cpp:51
+#: ksieveui/editor/sieveeditorwidget.cpp:52
 #, kde-format
 msgid "Create Rules Graphically..."
 msgstr "أنشئ القواعد رسوميًّا..."
 
-#: ksieveui/editor/sieveeditorwidget.cpp:65
+#: ksieveui/editor/sieveeditorwidget.cpp:66
 #, kde-format
 msgid "Share..."
 msgstr "شارِك..."
 
-#: ksieveui/editor/sieveeditorwidget.cpp:71
+#: ksieveui/editor/sieveeditorwidget.cpp:72
 #, kde-format
 msgid "Server Info"
 msgstr "معلومات الخادوم"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:115
+#: ksieveui/editor/sieveeditorwidget.cpp:116
 #, kde-format
 msgid "Script name:"
 msgstr "اسم النص البرمجي:"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:384
+#: ksieveui/editor/sieveeditorwidget.cpp:385
 #, kde-format
 msgid "Simple Mode"
 msgstr "النمط البسيط"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:384
+#: ksieveui/editor/sieveeditorwidget.cpp:385
 #, kde-format
 msgid "Advanced Mode"
 msgstr ""
@@ -2636,29 +2636,29 @@ msgctxt "@title:window"
 msgid "Manage Sieve Scripts"
 msgstr ""
 
-#: ksieveui/managesievescriptsdialog.cpp:83
+#: ksieveui/managesievescriptsdialog.cpp:85
 #, kde-format
 msgctxt "create a new sieve script"
 msgid "New..."
 msgstr "جديد..."
 
-#: ksieveui/managesievescriptsdialog.cpp:87
+#: ksieveui/managesievescriptsdialog.cpp:89
 #, kde-format
 msgid "Edit..."
 msgstr "حرّر..."
 
-#: ksieveui/managesievescriptsdialog.cpp:91
+#: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
 msgid "Delete"
 msgstr "احذف"
 
-#: ksieveui/managesievescriptsdialog.cpp:95
+#: ksieveui/managesievescriptsdialog.cpp:97
 #, kde-format
 msgid "Deactivate"
 msgstr ""
 
-#: ksieveui/managesievescriptsdialog.cpp:171
-#: ksieveui/managesievescriptsdialog.cpp:260
+#: ksieveui/managesievescriptsdialog.cpp:173
+#: ksieveui/managesievescriptsdialog.cpp:262
 #: ksieveui/widgets/managesievewidget.cpp:512
 #, fuzzy, kde-format
 #| msgid "Sieve Error"
@@ -2666,24 +2666,24 @@ msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "خطأ في «سِف»"
 
-#: ksieveui/managesievescriptsdialog.cpp:204
+#: ksieveui/managesievescriptsdialog.cpp:206
 #, kde-format
 msgid "Uploading script to server for checking it, please wait..."
 msgstr "يرفع سكربتًا إلى الخادوم لفحص، رجاءً انتظر..."
 
-#: ksieveui/managesievescriptsdialog.cpp:250
+#: ksieveui/managesievescriptsdialog.cpp:252
 #, kde-format
 msgid "The Sieve script was successfully uploaded."
 msgstr "رُفع سكربت «سِف» بنجاح."
 
-#: ksieveui/managesievescriptsdialog.cpp:250
+#: ksieveui/managesievescriptsdialog.cpp:252
 #, fuzzy, kde-format
 #| msgid "Sieve Script Upload"
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "رفع سكربت «سِف»"
 
-#: ksieveui/managesievescriptsdialog.cpp:257
+#: ksieveui/managesievescriptsdialog.cpp:259
 #, kde-format
 msgid ""
 "Uploading the Sieve script failed.\n"
