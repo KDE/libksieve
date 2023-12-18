@@ -68,6 +68,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     // Subject
     ++row;
     mSubject = new PimCommon::SpellCheckLineEdit(this, QString());
+    KLineEditEventHandler::catchReturnKey(mSubject);
     mSubject->setObjectName(QLatin1StringView("mSubject"));
     connect(mSubject, &PimCommon::SpellCheckLineEdit::textChanged, this, &VacationEditWidget::setWasChanged);
     // mSubject->setClearButtonEnabled(true);
@@ -81,12 +82,14 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     auto timeLayout = new QHBoxLayout;
     // Start date
     mStartDate = new KDateComboBox(this);
+    KLineEditEventHandler::catchReturnKey(mStartDate->lineEdit());
     mStartDate->setObjectName(QLatin1StringView("mStartDate"));
     mStartDate->setOptions(KDateComboBox::EditDate | KDateComboBox::SelectDate | KDateComboBox::DatePicker | KDateComboBox::DateKeywords);
     connect(mStartDate, &KDateComboBox::dateChanged, this, &VacationEditWidget::setWasChanged);
     connect(mStartDate, &KDateComboBox::dateEdited, this, &VacationEditWidget::setWasChanged);
 
     mStartTime = new KTimeComboBox(this);
+    KLineEditEventHandler::catchReturnKey(mStartTime->lineEdit());
     mStartTime->setObjectName(QLatin1StringView("mStartTime"));
     mStartTime->setOptions(KTimeComboBox::EditTime | KTimeComboBox::SelectTime | KTimeComboBox::WarnOnInvalid);
     mStartTime->setEnabled(false); // Disable by default - we need an extension to support this
@@ -112,6 +115,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     timeLayout = new QHBoxLayout;
 
     mEndDate = new KDateComboBox(this);
+    KLineEditEventHandler::catchReturnKey(mEndDate->lineEdit());
     mEndDate->setObjectName(QLatin1StringView("mEndDate"));
     mEndDate->setOptions(KDateComboBox::EditDate | KDateComboBox::SelectDate | KDateComboBox::DatePicker | KDateComboBox::DateKeywords);
     connect(mEndDate, &KDateComboBox::dateChanged, this, &VacationEditWidget::setWasChanged);
@@ -119,6 +123,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
 
     mEndTime = new KTimeComboBox(this);
     mEndTime->setObjectName(QLatin1StringView("mEndTime"));
+    KLineEditEventHandler::catchReturnKey(mEndTime->lineEdit());
     mEndTime->setOptions(KTimeComboBox::EditTime | KTimeComboBox::SelectTime | KTimeComboBox::WarnOnInvalid);
     mEndTime->setEnabled(false); // Disable by default - we need an extension to support this
     connect(mEndTime, &KTimeComboBox::timeChanged, this, &VacationEditWidget::setWasChanged);
@@ -165,6 +170,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mMailAliasesEdit = new KSieveUi::VacationMailLineEdit(this);
     mMailAliasesEdit->setObjectName(QLatin1StringView("mMailAliasesEdit"));
     mMailAliasesEdit->setClearButtonEnabled(true);
+    KLineEditEventHandler::catchReturnKey(mMailAliasesEdit);
     connect(mMailAliasesEdit, &KSieveUi::VacationMailLineEdit::textChanged, this, &VacationEditWidget::setWasChanged);
     auto sendResponseLabel = new QLabel(i18n("&Send responses for these addresses:"), this);
     sendResponseLabel->setObjectName(QLatin1StringView("sendResponseLabel"));
