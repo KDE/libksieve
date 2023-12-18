@@ -12,14 +12,14 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-03 02:28+0000\n"
-"PO-Revision-Date: 2023-12-02 13:12+0100\n"
+"PO-Revision-Date: 2023-12-17 10:06+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: kmanagesieve/session.cpp:90
@@ -302,6 +302,8 @@ msgstr "balioa:"
 msgid ""
 "The addheader action adds a header field to the existing message header."
 msgstr ""
+"Gehitu-goiburua, «addheader», ekintzak goiburu eremu bat gehitzen du "
+"aurretik dagoen mezuaren goiburuan."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:21
 #, kde-format
@@ -351,6 +353,9 @@ msgid ""
 "to \"media-type\" be converted to the media type in \"media-type\" using "
 "conversion parameters."
 msgstr ""
+"Bihurtu, \"convert\", ekintzak, hedabide-mota \"media-type\"ren  berdina "
+"duten gorputzeko atal guztiak, bihurketa parametroen bidez adierazitako "
+"hedabide-motako \"media-type\"ra aldatu behar direla adierazten du."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:24
 #, kde-format
@@ -363,6 +368,8 @@ msgid ""
 "By default, the deleteheader action deletes all occurrences of the named "
 "header field."
 msgstr ""
+"Era lehenetsian, ezabatu-goiburua, «deleteheader», ekintzak, izendatutako "
+"goiburu-eremuaren agerpen guztiak ezabatzen ditu."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:12
 #: ksieveui/vacation/vacationutils.cpp:48
@@ -444,11 +451,14 @@ msgid ""
 "The \"extracttext\" action may be used within the context of a \"foreverypart"
 "\" loop and is used to store text into a variable"
 msgstr ""
+"Erauzi-testua, \"extracttext\", ekintza, atal-denetarako, \"foreverypart\", "
+"begizta baten testuinguruan erabil liteke, eta aldagai batean testua "
+"gordetzeko erabiltzen da"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:20
 #, kde-format
 msgid "File Into"
-msgstr ""
+msgstr "Artxibatu hemen"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:61
 #, kde-format
@@ -456,6 +466,8 @@ msgid ""
 "Action \"fileinto\" has \"copy\" argument but current server does not "
 "support it"
 msgstr ""
+"Artxibatu-hemen, \"fileinto\", ekintzak kopiatu, \"copy\", argumentu bat du, "
+"baina uneko zerbitzariak ez du onartzen."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:100
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:35
@@ -472,7 +484,9 @@ msgstr "Sortu karpeta"
 #, kde-format
 msgid ""
 "The \"fileinto\" action delivers the message into the specified mailbox."
-msgstr "\"fileinto\" ekintzak mezua adierazitako postontzian ematen du."
+msgstr ""
+"Artxibatu-hemen, \"fileinto\", ekintzak mezua adierazitako postontzian "
+"ematen du."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:154
 #, kde-format
@@ -481,6 +495,9 @@ msgid ""
 "interpreter to create the specified mailbox, if needed, before attempting to "
 "deliver the message into the specified mailbox."
 msgstr ""
+"Hautazko \":create\" argumentua zehazten bada, zehaztutako postontzian mezua "
+"ematen saiatu aurretik, «Sieve» interpreteari, beharrezkoa bada, "
+"adierazitako postontzia sortzeko adierazten dio."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:159
 #, kde-format
@@ -489,6 +506,9 @@ msgid ""
 "cancel the implicit \"keep\". Instead, it merely files or redirects a copy "
 "in addition to whatever else is happening to the message."
 msgstr ""
+"Hautazko \":copy\" gako-hitza zehazten bada, etiketatutako komandoak ez du "
+"bertan behera uzten \"keep\" inplizitua. Horren ordez, mezuari gertatzen ari "
+"zaionaz gain, haren kopia bat artxibatu edo birbideratzeen du."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:20
 #: ksieveui/vacation/vacationutils.cpp:46
@@ -503,6 +523,9 @@ msgid ""
 "actions, if no filtering happens at all; generally, this simply means to "
 "file the message into the user's main mailbox."
 msgstr ""
+"Mantendu, \"keep\", ekintza, iragazketarik egiten ez bada, beste edozein "
+"ekintzaren ordez egiten den ekintza da; orokorrean, fitxategia "
+"erabiltzailearen postontzi nagusian artxibatzea besterik ez da izaten."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:55
 #, kde-format
@@ -558,6 +581,9 @@ msgid ""
 "cancel the implicit \"keep\". Instead, it redirects a copy in addition to "
 "whatever else is happening to the message."
 msgstr ""
+"Hautazko \":copy\" gako-hitza zehazten bada, etiketatutako komandoak ez du "
+"bertan behera uzten \"keep\" inplizitua. Horren ordez, mezuari gertatzen ari "
+"zaionaz gain, haren kopia bat birbideratzeen du."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:20
 #, kde-format
@@ -570,6 +596,8 @@ msgid ""
 " The \"reject\" action cancels the implicit keep and refuses delivery of a "
 "message."
 msgstr ""
+"\"Errefusatu\" ekintzak mantentze inplizitua bertan behera uzten du eta "
+"mezua ematea errefusatzen du."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionremoveflags.cpp:13
 #, kde-format
@@ -604,6 +632,8 @@ msgid ""
 "The \"replace\" command is defined to allow a MIME part to be replaced with "
 "the text supplied in the command."
 msgstr ""
+"Ordeztu, \"replace\", komandoa, MIME atalak, komandoarekin emandako "
+"testuarekin ordezkatzeko definitzen da."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreturn.cpp:13
 #, kde-format
@@ -874,7 +904,7 @@ msgstr "Lehenengo letra larria ipini"
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:29
 #, kde-format
 msgid "Quote wildcard"
-msgstr ""
+msgstr "Aipu zernahitarako karakterea"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:30
 #, kde-format
@@ -909,6 +939,7 @@ msgstr ""
 #, kde-format
 msgid "Unknown tag \"%1\" during parsing condition \"%2\""
 msgstr ""
+"\"%1\" etiketa ezezaguna, \"%2\" baldintzaren azterketa sintaktikoa egitean"
 
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:52
 #, kde-format
@@ -921,6 +952,8 @@ msgstr ""
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing condition \"%2\"."
 msgstr ""
+"Etiketa-balio ezezagun bat \"%1\" aurkitua da, \"%2\" baldintzaren sintaxia "
+"aztertzean."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:23
 #, kde-format
@@ -1020,17 +1053,17 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:22
 #, kde-format
 msgid "Exists"
-msgstr ""
+msgstr "Dago"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:35
 #, kde-format
 msgid "exists"
-msgstr ""
+msgstr "dago"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:36
 #, kde-format
 msgid "not exists"
-msgstr ""
+msgstr "ez dago"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:63
 #, kde-format
@@ -1098,7 +1131,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:21
 #, kde-format
 msgid "IHave"
-msgstr ""
+msgstr "Daukat"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:35
 #, kde-format
@@ -1106,11 +1139,11 @@ msgid "Use \",\" to separate capabilities"
 msgstr "Erabili \",\" gaitasunak bereizteko"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:68
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "The \"ihave\" test provides a means for Sieve scripts to test for the "
 "existence of a given extension prior to actually using it."
-msgstr ""
+msgstr "\"daukat\""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmailboxexists.cpp:20
 #, kde-format
@@ -1271,7 +1304,7 @@ msgstr "dena"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:27
 #, kde-format
 msgid "localpart"
-msgstr ""
+msgstr "atal-lokala"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:28
 #, kde-format
@@ -1356,7 +1389,7 @@ msgstr "std11"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:49
 #, kde-format
 msgid "Zone"
-msgstr ""
+msgstr "Eskualdea"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:50
 #, kde-format
@@ -1406,12 +1439,12 @@ msgstr "BCC"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
 #, kde-format
 msgid "Resent From"
-msgstr ""
+msgstr "Nondik birbidalia"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
 #, kde-format
 msgid "Resent To"
-msgstr ""
+msgstr "Nora birbidalia"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
 #, kde-format
@@ -1605,7 +1638,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:133
 #, kde-format
 msgid "Include:"
-msgstr ""
+msgstr "Barneratu:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:139
 #: ksieveui/templates/sievetemplateeditdialog.cpp:59
@@ -2122,7 +2155,7 @@ msgstr "Itxi fitxa guztiak"
 #: ksieveui/editor/sieveeditortabwidget.cpp:161
 #, kde-format
 msgid "Error during load page about %1"
-msgstr ""
+msgstr "Errorea, zamatu %1(e)ri buruzko orria, egitean"
 
 #: ksieveui/editor/sieveeditortabwidget.cpp:178
 #, kde-format
@@ -2231,6 +2264,8 @@ msgid ""
 "Some errors were found during parsing. <a href=\"sieveerrordetails"
 "\">(Details...)</a>"
 msgstr ""
+"Azterketa sintaktikoa egitean errore batzuk aurkitu dira. <a href="
+"\"sieveerrordetails\">(Xehetasunak...)</a>"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
 #, kde-format
@@ -2455,7 +2490,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Parsing"
-msgstr ""
+msgstr "«Sieve»ren azterketa sintaktikoa"
 
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:83
 #, kde-format
@@ -2542,7 +2577,7 @@ msgstr ""
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
 #, kde-format
 msgid "Display check script result..."
-msgstr ""
+msgstr "Azaldu gidoia egiaztatzearen emaitza..."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
 #, kde-format
@@ -2577,7 +2612,7 @@ msgstr "Testu fitxategiak (*.txt);;Fitxategi guztiak (*)"
 #: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:30
 #, kde-format
 msgid "Add debug here"
-msgstr ""
+msgstr "Gehitu arazketa hemen"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerwidget.cpp:35
 #, kde-format
