@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:37+0000\n"
+"POT-Creation-Date: 2023-12-19 01:34+0000\n"
 "PO-Revision-Date: 2014-09-18 22:34+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -3193,50 +3193,50 @@ msgstr "Oorlööf-Bescheed inrichten:"
 msgid "&Activate vacation notifications"
 msgstr "Oorlööf-Bescheden &anmaken"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:74
+#: ksieveui/vacation/vacationeditwidget.cpp:75
 #, kde-format
 msgid "&Subject of the vacation mail:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:104
+#: ksieveui/vacation/vacationeditwidget.cpp:107
 #, kde-format
 msgid "Start date:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:132
+#: ksieveui/vacation/vacationeditwidget.cpp:137
 #, kde-format
 msgid "End date:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:155
-#: ksieveui/vacation/vacationeditwidget.cpp:303
+#: ksieveui/vacation/vacationeditwidget.cpp:160
+#: ksieveui/vacation/vacationeditwidget.cpp:309
 #, kde-format
 msgid " day"
 msgid_plural " days"
 msgstr[0] " Dag"
 msgstr[1] " Daag"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:157
+#: ksieveui/vacation/vacationeditwidget.cpp:162
 #, kde-format
 msgid "&Resend notification only after:"
 msgstr "Bescheed eerst &nochmaal loosstüern na:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:169
+#: ksieveui/vacation/vacationeditwidget.cpp:175
 #, kde-format
 msgid "&Send responses for these addresses:"
 msgstr "Antwoorden för disse Adre&ssen loosstüern:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:195
+#: ksieveui/vacation/vacationeditwidget.cpp:201
 #, kde-format
 msgid "&Action for incoming mails:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:203
+#: ksieveui/vacation/vacationeditwidget.cpp:209
 #, kde-format
 msgid "Do not send vacation replies to spam messages"
 msgstr "Keen Oorlööf-Bescheden as Antwoort op Warven loosstüern"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:211
+#: ksieveui/vacation/vacationeditwidget.cpp:217
 #, fuzzy, kde-format
 #| msgid "Only react to mail coming from domain"
 msgid "Only react to mail coming from domain:"

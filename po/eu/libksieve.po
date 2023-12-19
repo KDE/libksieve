@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:37+0000\n"
-"PO-Revision-Date: 2023-12-17 10:06+0100\n"
+"POT-Creation-Date: 2023-12-19 01:34+0000\n"
+"PO-Revision-Date: 2023-12-18 22:50+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -796,9 +796,9 @@ msgid ""
 "to \"media-type\" be converted to the media type in \"media-type\" using "
 "conversion parameters."
 msgstr ""
-"Bihurtu, \"convert\", ekintzak, hedabide-mota \"media-type\"ren  berdina "
-"duten gorputzeko atal guztiak, bihurketa parametroen bidez adierazitako "
-"hedabide-motako \"media-type\"ra aldatu behar direla adierazten du."
+"\"bihurtu\" ekintzak, hedabide-mota \"hedabide-mota\"ren  berdina duten "
+"gorputzeko atal guztiak, bihurketa parametroen bidez adierazitako hedabide-"
+"motako \"hedabide-mota\"ra aldatu behar direla adierazten du."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:24
 #, kde-format
@@ -888,9 +888,9 @@ msgid ""
 "The \"extracttext\" action may be used within the context of a \"foreverypart"
 "\" loop and is used to store text into a variable"
 msgstr ""
-"Erauzi-testua, \"extracttext\", ekintza, atal-denetarako, \"foreverypart\", "
-"begizta baten testuinguruan erabil liteke, eta aldagai batean testua "
-"gordetzeko erabiltzen da"
+"\"erauzi-testua\" ekintza, atal-denetarako, \"atalguztietarako\", begizta "
+"baten testuinguruan erabil liteke, eta aldagai batean testua gordetzeko "
+"erabiltzen da"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:20
 #, kde-format
@@ -921,9 +921,7 @@ msgstr "Sortu karpeta"
 #, kde-format
 msgid ""
 "The \"fileinto\" action delivers the message into the specified mailbox."
-msgstr ""
-"Artxibatu-hemen, \"fileinto\", ekintzak mezua adierazitako postontzian "
-"ematen du."
+msgstr "\"artxibatu-hemen\" ekintzak mezua adierazitako postontzian ematen du."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:150
 #, kde-format
@@ -954,9 +952,9 @@ msgid ""
 "actions, if no filtering happens at all; generally, this simply means to "
 "file the message into the user's main mailbox."
 msgstr ""
-"Mantendu, \"keep\", ekintza, iragazketarik egiten ez bada, beste edozein "
-"ekintzaren ordez egiten den ekintza da; orokorrean, fitxategia "
-"erabiltzailearen postontzi nagusian artxibatzea besterik ez da izaten."
+"\"mantendu\" ekintza, iragazketarik egiten ez bada, beste edozein ekintzaren "
+"ordez egiten den ekintza da; orokorrean, fitxategia erabiltzailearen "
+"postontzi nagusian artxibatzea besterik ez da izaten."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:55
 #, kde-format
@@ -1004,6 +1002,10 @@ msgid ""
 "action makes no changes to the message body or existing headers, but it may "
 "add new headers."
 msgstr ""
+"\"birbideratu\" ekintza, mezua beste erabiltzaile bati, emandako helbide "
+"batera bidaltzeko erabiltzen da, posta birbidaltze batek egingo lukeen "
+"antzera. \"birbideratu\" ekintzak ez du mezuaren gorputzean edo dituen "
+"goiburuetan aldaketarik egiten, baina goiburu berriak gehitu ditzake."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:143
 #, kde-format
@@ -1027,7 +1029,7 @@ msgid ""
 " The \"reject\" action cancels the implicit keep and refuses delivery of a "
 "message."
 msgstr ""
-"\"Errefusatu\" ekintzak mantentze inplizitua bertan behera uzten du eta "
+"\"errefusatu\" ekintzak mantentze inplizitua bertan behera uzten du eta "
 "mezua ematea errefusatzen du."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionremoveflags.cpp:13
@@ -1077,6 +1079,8 @@ msgid ""
 "The \"return\" command stops processing of the immediately included script "
 "only and returns processing control to the script that includes it."
 msgstr ""
+"\"itzuli\" komandoak, segidan gehitutako gidoiaren prozesatzea geldiarazten "
+"du bakarrik, eta prozesatzeko kontrola hura gehitzen duen gidoiari itzuli."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetflags.cpp:13
 #, kde-format
@@ -1145,7 +1149,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionstop.cpp:14
 #, kde-format
 msgid "Stop"
-msgstr "Gelditu"
+msgstr "Geldiarazi"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionstop.cpp:25
 #, kde-format
@@ -1153,7 +1157,7 @@ msgid ""
 "The \"stop\" action ends all processing.  If the implicit keep has not been "
 "cancelled, then it is taken."
 msgstr ""
-"\"gelditu\" ekintzak prozesatze guztia bukatzen du. Mantentze inplizitua "
+"\"geldiarazi\" ekintzak prozesatze guztia bukatzen du. Mantentze inplizitua "
 "bertan behera utzi ez bada, orduan, hartzen da."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:27
@@ -1378,6 +1382,8 @@ msgid ""
 "Too many argument found for \"%1\", max value is %2, number of value found "
 "%3 for %4"
 msgstr ""
+"\"%1\"(e)rako argumentu gehiegi aurkitu dira, gehieneko balioa %2 da, "
+"aurkitutako balio kopurua %3 da %4(r)ako"
 
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:47
 #, kde-format
@@ -1462,6 +1468,8 @@ msgid ""
 "The \"envelope\" test is true if the specified part of the [SMTP] (or "
 "equivalent) envelope matches the specified key."
 msgstr ""
+"\"gutun-azal\" proba egia da, zehaztutako [SMTP] gutun-azalaren zatia (edo "
+"baliokidea) zehaztutako gakoarekin bat badator."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:23
 #, kde-format
@@ -1908,9 +1916,9 @@ msgid "Subtype"
 msgstr "Azpimota"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
+#, fuzzy, kde-format
 msgid "Anychild"
-msgstr ""
+msgstr "Edozein-haur"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
 #, kde-format
@@ -3052,50 +3060,50 @@ msgstr "Konfiguratu opor jakinarazpenak bidaltzea:"
 msgid "&Activate vacation notifications"
 msgstr "&Aktibatu opor jakinarazpenak"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:74
+#: ksieveui/vacation/vacationeditwidget.cpp:75
 #, kde-format
 msgid "&Subject of the vacation mail:"
 msgstr "Opor postaren &gaia:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:104
+#: ksieveui/vacation/vacationeditwidget.cpp:107
 #, kde-format
 msgid "Start date:"
 msgstr "Hasiera-data:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:132
+#: ksieveui/vacation/vacationeditwidget.cpp:137
 #, kde-format
 msgid "End date:"
 msgstr "Bukaera-data:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:155
-#: ksieveui/vacation/vacationeditwidget.cpp:303
+#: ksieveui/vacation/vacationeditwidget.cpp:160
+#: ksieveui/vacation/vacationeditwidget.cpp:309
 #, kde-format
 msgid " day"
 msgid_plural " days"
 msgstr[0] " egun"
 msgstr[1] " egun"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:157
+#: ksieveui/vacation/vacationeditwidget.cpp:162
 #, kde-format
 msgid "&Resend notification only after:"
 msgstr "&Birbidali jakinarazpena bakarri honen ondoren:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:169
+#: ksieveui/vacation/vacationeditwidget.cpp:175
 #, kde-format
 msgid "&Send responses for these addresses:"
 msgstr "&Bidali helbide horietarako erantzunak:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:195
+#: ksieveui/vacation/vacationeditwidget.cpp:201
 #, kde-format
 msgid "&Action for incoming mails:"
 msgstr "Sarrerako postetarako e&kintza:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:203
+#: ksieveui/vacation/vacationeditwidget.cpp:209
 #, kde-format
 msgid "Do not send vacation replies to spam messages"
 msgstr "Ez bidali opor erantzunak spam mezuei"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:211
+#: ksieveui/vacation/vacationeditwidget.cpp:217
 #, kde-format
 msgid "Only react to mail coming from domain:"
 msgstr "Erreakzionatu bakarrik domeinutik datorren postarekiko:"

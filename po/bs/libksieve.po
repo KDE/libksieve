@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:37+0000\n"
+"POT-Creation-Date: 2023-12-19 01:34+0000\n"
 "PO-Revision-Date: 2014-01-31 19:22+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -3188,23 +3188,23 @@ msgstr "Podesite obavještenja o odmoru koja treba slati:"
 msgid "&Activate vacation notifications"
 msgstr "&Aktiviraj automatska obavještenja"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:74
+#: ksieveui/vacation/vacationeditwidget.cpp:75
 #, kde-format
 msgid "&Subject of the vacation mail:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:104
+#: ksieveui/vacation/vacationeditwidget.cpp:107
 #, kde-format
 msgid "Start date:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:132
+#: ksieveui/vacation/vacationeditwidget.cpp:137
 #, kde-format
 msgid "End date:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:155
-#: ksieveui/vacation/vacationeditwidget.cpp:303
+#: ksieveui/vacation/vacationeditwidget.cpp:160
+#: ksieveui/vacation/vacationeditwidget.cpp:309
 #, kde-format
 msgid " day"
 msgid_plural " days"
@@ -3212,27 +3212,27 @@ msgstr[0] " dan"
 msgstr[1] " dana"
 msgstr[2] " dana"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:157
+#: ksieveui/vacation/vacationeditwidget.cpp:162
 #, kde-format
 msgid "&Resend notification only after:"
 msgstr "&Ponovo pošalji obavještenje samo nakon:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:169
+#: ksieveui/vacation/vacationeditwidget.cpp:175
 #, kde-format
 msgid "&Send responses for these addresses:"
 msgstr "&Šalji odgovore na ove adrese:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:195
+#: ksieveui/vacation/vacationeditwidget.cpp:201
 #, kde-format
 msgid "&Action for incoming mails:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:203
+#: ksieveui/vacation/vacationeditwidget.cpp:209
 #, kde-format
 msgid "Do not send vacation replies to spam messages"
 msgstr "Ne šalji odgovore o odmoru na spam"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:211
+#: ksieveui/vacation/vacationeditwidget.cpp:217
 #, fuzzy, kde-format
 #| msgid "Only react to mail coming from domain"
 msgid "Only react to mail coming from domain:"
