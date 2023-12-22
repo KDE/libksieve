@@ -8,7 +8,7 @@ if(BUILD_TESTING)
    add_definitions(-DBUILD_TESTING)
 endif(BUILD_TESTING)
 
-add_definitions(-DTRANSLATION_DOMAIN=\"libksieve\")
+add_definitions(-DTRANSLATION_DOMAIN=\"libksieve6\")
 
 
 ########### next target ###############
