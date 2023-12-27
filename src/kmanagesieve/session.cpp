@@ -12,7 +12,6 @@
 #include "kmanagersieve_debug.h"
 #include <KAuthorized>
 #include <KIO/AuthInfo>
-#include <KIO/Job>
 #include <KIO/SslUi>
 #include <KLocalizedString>
 #include <KMessageBox>
