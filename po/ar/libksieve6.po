@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-19 01:34+0000\n"
+"POT-Creation-Date: 2023-12-28 01:33+0000\n"
 "PO-Revision-Date: 2022-01-29 12:41+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -19,12 +19,12 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Lokalize 21.07.70\n"
 
-#: kmanagesieve/session.cpp:90
+#: kmanagesieve/session.cpp:89
 #, kde-format
 msgid "Cannot use TLS since the underlying Qt library does not support it."
 msgstr ""
 
-#: kmanagesieve/session.cpp:97
+#: kmanagesieve/session.cpp:96
 #, kde-format
 msgid ""
 "TLS encryption was requested, but your Sieve server does not advertise TLS "
@@ -35,35 +35,35 @@ msgstr ""
 "طُلبت تعمية TLS ولكنّ خادوم «سِف» لم يعلن TLS في إمكانيّاته.\n"
 "يمكنك تجربة تمهيد مفاوضات TLS رغم ذلك، أو إلغاء العمليّة."
 
-#: kmanagesieve/session.cpp:99
+#: kmanagesieve/session.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr ""
 
-#: kmanagesieve/session.cpp:100
+#: kmanagesieve/session.cpp:99
 #, kde-format
 msgid "&Start TLS nonetheless"
 msgstr "اب&دأ TLS رغم ذلك"
 
-#: kmanagesieve/session.cpp:104
+#: kmanagesieve/session.cpp:103
 #, kde-format
 msgid "TLS encryption requested, but not supported by server."
 msgstr "طُلبت تعمية TLS، ولكنّ الخادوم لا يدعمها."
 
-#: kmanagesieve/session.cpp:146
+#: kmanagesieve/session.cpp:145
 #, kde-format
 msgid ""
 "The server does not seem to support TLS. Disable TLS if you want to connect "
 "without encryption."
 msgstr "لا يبدو أنّ الخادوم يدعم SASL. عطّل TLS إن أردت الاتّصال دون تعمية."
 
-#: kmanagesieve/session.cpp:258
+#: kmanagesieve/session.cpp:257
 #, kde-format
 msgid "Sieve Authentication Details"
 msgstr "تفاصيل استيثاق «سِف»"
 
-#: kmanagesieve/session.cpp:260
+#: kmanagesieve/session.cpp:259
 #, fuzzy, kde-format
 #| msgid ""
 #| "Please enter your authentication details for your sieve account (usually "
@@ -74,14 +74,14 @@ msgid ""
 msgstr ""
 "رجاءً أدخِل تفاصيل الاستيثاق لحساب «سِف» (غالبًا ما تكون مثل البريد وكلمة السّرّ):"
 
-#: kmanagesieve/session.cpp:321
+#: kmanagesieve/session.cpp:320
 #, kde-format
 msgid ""
 "The Sieve server on %1 has reported an error:\n"
 "%2"
 msgstr ""
 
-#: kmanagesieve/session.cpp:321
+#: kmanagesieve/session.cpp:320
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Manager"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-19 01:34+0000\n"
+"POT-Creation-Date: 2023-12-28 01:33+0000\n"
 "PO-Revision-Date: 2021-11-04 13:50+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -19,14 +19,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 21.08.3\n"
 
-#: kmanagesieve/session.cpp:90
+#: kmanagesieve/session.cpp:89
 #, kde-format
 msgid "Cannot use TLS since the underlying Qt library does not support it."
 msgstr ""
 "A TLS nem használható, mert az alapjául szolgáló Qt programkönyvtár nem "
 "támogatja."
 
-#: kmanagesieve/session.cpp:97
+#: kmanagesieve/session.cpp:96
 #, kde-format
 msgid ""
 "TLS encryption was requested, but your Sieve server does not advertise TLS "
@@ -39,24 +39,24 @@ msgstr ""
 "Ha kívánja, ennek ellenére megpróbálhatja használni a TLS-t, hátha a "
 "kiszolgáló mégis tudja kezelni."
 
-#: kmanagesieve/session.cpp:99
+#: kmanagesieve/session.cpp:98
 #, fuzzy, kde-format
 #| msgid "Sieve Server Does Not Advertise TLS"
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "A Sieve kiszolgáló nem jelezte, hogy támogatja a TLS-t"
 
-#: kmanagesieve/session.cpp:100
+#: kmanagesieve/session.cpp:99
 #, kde-format
 msgid "&Start TLS nonetheless"
 msgstr "A &TLS aktiválása ennek ellenére"
 
-#: kmanagesieve/session.cpp:104
+#: kmanagesieve/session.cpp:103
 #, kde-format
 msgid "TLS encryption requested, but not supported by server."
 msgstr "TLS-titkosítást kért a kliens, de a kiszolgáló ezt nem támogatja."
 
-#: kmanagesieve/session.cpp:146
+#: kmanagesieve/session.cpp:145
 #, kde-format
 msgid ""
 "The server does not seem to support TLS. Disable TLS if you want to connect "
@@ -65,12 +65,12 @@ msgstr ""
 "A kiszolgáló valószínűleg nem támogatja a TLS-t. Tiltsa le, ha titkosítás "
 "nélkül szeretne csatlakozni."
 
-#: kmanagesieve/session.cpp:258
+#: kmanagesieve/session.cpp:257
 #, kde-format
 msgid "Sieve Authentication Details"
 msgstr "A Sieve felhasználóazonosítás részletei"
 
-#: kmanagesieve/session.cpp:260
+#: kmanagesieve/session.cpp:259
 #, fuzzy, kde-format
 #| msgid ""
 #| "Please enter your authentication details for your sieve account (usually "
@@ -82,14 +82,14 @@ msgstr ""
 "Kérem adja meg a Sieve azonosítóhoz tartozó adatokat (általában ugyanaz, "
 "mint a levelezési jelszó):"
 
-#: kmanagesieve/session.cpp:321
+#: kmanagesieve/session.cpp:320
 #, kde-format
 msgid ""
 "The Sieve server on %1 has reported an error:\n"
 "%2"
 msgstr ""
 
-#: kmanagesieve/session.cpp:321
+#: kmanagesieve/session.cpp:320
 #, fuzzy, kde-format
 #| msgid "Sieve Parsing"
 msgctxt "@title:window"

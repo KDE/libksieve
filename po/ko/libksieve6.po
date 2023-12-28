@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-19 01:34+0000\n"
+"POT-Creation-Date: 2023-12-28 01:33+0000\n"
 "PO-Revision-Date: 2023-10-08 23:39+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: kmanagesieve/session.cpp:90
+#: kmanagesieve/session.cpp:89
 #, kde-format
 msgid "Cannot use TLS since the underlying Qt library does not support it."
 msgstr "Qt 라이브러리가 지원하지 않으므로 TLS를 사용할 수 없습니다."
 
-#: kmanagesieve/session.cpp:97
+#: kmanagesieve/session.cpp:96
 #, kde-format
 msgid ""
 "TLS encryption was requested, but your Sieve server does not advertise TLS "
@@ -34,23 +34,23 @@ msgstr ""
 "다.\n"
 "그래도 TLS 협상을 시작하거나, 작업을 취소할 수 있습니다."
 
-#: kmanagesieve/session.cpp:99
+#: kmanagesieve/session.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Sieve 서버에서 TLS를 알려오지 않음"
 
-#: kmanagesieve/session.cpp:100
+#: kmanagesieve/session.cpp:99
 #, kde-format
 msgid "&Start TLS nonetheless"
 msgstr "그래도 TLS 시작하기(&S)"
 
-#: kmanagesieve/session.cpp:104
+#: kmanagesieve/session.cpp:103
 #, kde-format
 msgid "TLS encryption requested, but not supported by server."
 msgstr "TLS 암호화를 요청했지만 서버에서 지원하지 않습니다."
 
-#: kmanagesieve/session.cpp:146
+#: kmanagesieve/session.cpp:145
 #, kde-format
 msgid ""
 "The server does not seem to support TLS. Disable TLS if you want to connect "
@@ -59,19 +59,19 @@ msgstr ""
 "이 서버에서 TLS를 지원하지 않는 것 같습니다. 암호화 없이 연결하려면 TLS를 비"
 "활성화 시키십시오."
 
-#: kmanagesieve/session.cpp:258
+#: kmanagesieve/session.cpp:257
 #, kde-format
 msgid "Sieve Authentication Details"
 msgstr "Sieve 인증 정보"
 
-#: kmanagesieve/session.cpp:260
+#: kmanagesieve/session.cpp:259
 #, kde-format
 msgid ""
 "Please enter your authentication details for your sieve account "
 "\"%1\" (usually the same as your email password):"
 msgstr "\"%1\" Sieve 계정의 인증 정보를 입력하십시오(대개 이메일 암호와 같음):"
 
-#: kmanagesieve/session.cpp:321
+#: kmanagesieve/session.cpp:320
 #, kde-format
 msgid ""
 "The Sieve server on %1 has reported an error:\n"
@@ -80,7 +80,7 @@ msgstr ""
 "%1의 Sieve 서버에서 오류를 반환했습니다:\n"
 "%2"
 
-#: kmanagesieve/session.cpp:321
+#: kmanagesieve/session.cpp:320
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Manager"

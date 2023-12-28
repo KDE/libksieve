@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-19 01:34+0000\n"
-"PO-Revision-Date: 2023-11-04 13:06+0300\n"
+"POT-Creation-Date: 2023-12-28 01:33+0000\n"
+"PO-Revision-Date: 2023-12-27 13:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,15 +20,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 24.01.85\n"
 "X-POOTLE-MTIME: 1413117019.000000\n"
 
-#: kmanagesieve/session.cpp:90
+#: kmanagesieve/session.cpp:89
 #, kde-format
 msgid "Cannot use TLS since the underlying Qt library does not support it."
 msgstr "Temel Qt kitaplığı desteklemediğinden TLS kullanılamaz."
 
-#: kmanagesieve/session.cpp:97
+#: kmanagesieve/session.cpp:96
 #, kde-format
 msgid ""
 "TLS encryption was requested, but your Sieve server does not advertise TLS "
@@ -41,23 +41,23 @@ msgstr ""
 "TLS iletişimini buna rağmen başlatabilirsiniz ya da işlemi iptal "
 "edebilirsiniz."
 
-#: kmanagesieve/session.cpp:99
+#: kmanagesieve/session.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Sieve Sunucusu TLS Duyurusu Yapmıyor"
 
-#: kmanagesieve/session.cpp:100
+#: kmanagesieve/session.cpp:99
 #, kde-format
 msgid "&Start TLS nonetheless"
 msgstr "TLS'yi yine de &başlat"
 
-#: kmanagesieve/session.cpp:104
+#: kmanagesieve/session.cpp:103
 #, kde-format
 msgid "TLS encryption requested, but not supported by server."
 msgstr "TLS şifrelemesi istendi ama sunucu tarafından desteklenmiyor."
 
-#: kmanagesieve/session.cpp:146
+#: kmanagesieve/session.cpp:145
 #, kde-format
 msgid ""
 "The server does not seem to support TLS. Disable TLS if you want to connect "
@@ -66,12 +66,12 @@ msgstr ""
 "Sunucu TLS'yi desteklemiyor görünüyor. Şifreleme olmadan bağlanmak "
 "istiyorsanız TLS'yi kapatın."
 
-#: kmanagesieve/session.cpp:258
+#: kmanagesieve/session.cpp:257
 #, kde-format
 msgid "Sieve Authentication Details"
 msgstr "Sieve Kimlik Denetimi Ayrıntıları"
 
-#: kmanagesieve/session.cpp:260
+#: kmanagesieve/session.cpp:259
 #, kde-format
 msgid ""
 "Please enter your authentication details for your sieve account "
@@ -80,7 +80,7 @@ msgstr ""
 "Lütfen \"%1\" Sieve hesabınızın kimlik bilgilerinizi girin (genellikle e-"
 "posta parolanızla aynıdır):"
 
-#: kmanagesieve/session.cpp:321
+#: kmanagesieve/session.cpp:320
 #, kde-format
 msgid ""
 "The Sieve server on %1 has reported an error:\n"
@@ -89,7 +89,7 @@ msgstr ""
 "%1 üzerindeki Sieve sunucusu bir hata bildirdi:\n"
 "%2"
 
-#: kmanagesieve/session.cpp:321
+#: kmanagesieve/session.cpp:320
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Manager"
@@ -1125,9 +1125,9 @@ msgid ""
 "Every character with special meaning (. , *, ? , etc.) is prefixed with \\ "
 "in the expansion"
 msgstr ""
-"Değiştirici genişletilmiş metnin, eğer :regex komutuna bir parametre olarak "
+"Niteleyici, genişletilmiş metnin eğer :regex komutuna bir parametre olarak "
 "kullanılmışsa yalnızca değişmez olan haliyle eşleşmesi için gerekli "
-"alıntılamayı ekler.  Genişlemede özel anlamlı karakterler (. , *, ? , etc.) "
+"alıntılamayı ekler. Genişlemede özel anlamlı karakterler (. , *, ? , etc.) "
 "\\ öneki ile bulunurlar"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionstop.cpp:14

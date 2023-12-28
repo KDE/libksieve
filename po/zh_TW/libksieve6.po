@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-19 01:34+0000\n"
+"POT-Creation-Date: 2023-12-28 01:33+0000\n"
 "PO-Revision-Date: 2023-01-15 20:49+0800\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -19,12 +19,12 @@ msgstr ""
 "X-Generator: Lokalize 22.12.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: kmanagesieve/session.cpp:90
+#: kmanagesieve/session.cpp:89
 #, kde-format
 msgid "Cannot use TLS since the underlying Qt library does not support it."
 msgstr "無法使用 TLS，因為底層的 Qt 函式庫不支援。"
 
-#: kmanagesieve/session.cpp:97
+#: kmanagesieve/session.cpp:96
 #, kde-format
 msgid ""
 "TLS encryption was requested, but your Sieve server does not advertise TLS "
@@ -35,36 +35,36 @@ msgstr ""
 "要求 TLS 加密，但您的 Sieve 伺服器並未宣稱支援 TLS。\n"
 "您可以選擇還是啟動 TLS，或是取消操作。"
 
-#: kmanagesieve/session.cpp:99
+#: kmanagesieve/session.cpp:98
 #, fuzzy, kde-format
 #| msgid "Sieve Server Does Not Advertise TLS"
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Sieve 伺服器未宣稱支援 TLS"
 
-#: kmanagesieve/session.cpp:100
+#: kmanagesieve/session.cpp:99
 #, kde-format
 msgid "&Start TLS nonetheless"
 msgstr "還是啟動 TLS(&S)"
 
-#: kmanagesieve/session.cpp:104
+#: kmanagesieve/session.cpp:103
 #, kde-format
 msgid "TLS encryption requested, but not supported by server."
 msgstr "要求 TLS 加密，但是伺服器並未支援"
 
-#: kmanagesieve/session.cpp:146
+#: kmanagesieve/session.cpp:145
 #, kde-format
 msgid ""
 "The server does not seem to support TLS. Disable TLS if you want to connect "
 "without encryption."
 msgstr "此伺服器似乎不支援 TLS。若您不打算使用加密連線，請關閉 TLS。"
 
-#: kmanagesieve/session.cpp:258
+#: kmanagesieve/session.cpp:257
 #, kde-format
 msgid "Sieve Authentication Details"
 msgstr "Sieve 認證詳情"
 
-#: kmanagesieve/session.cpp:260
+#: kmanagesieve/session.cpp:259
 #, fuzzy, kde-format
 #| msgid ""
 #| "Please enter your authentication details for your sieve account (usually "
@@ -74,7 +74,7 @@ msgid ""
 "\"%1\" (usually the same as your email password):"
 msgstr "請輸入您的 Sieve 帳號的認證詳情（通常就是您的郵件密碼）："
 
-#: kmanagesieve/session.cpp:321
+#: kmanagesieve/session.cpp:320
 #, kde-format
 msgid ""
 "The Sieve server on %1 has reported an error:\n"
@@ -83,7 +83,7 @@ msgstr ""
 "%1 上的 Sieve 伺服器回報了一個錯誤：\n"
 "%2"
 
-#: kmanagesieve/session.cpp:321
+#: kmanagesieve/session.cpp:320
 #, fuzzy, kde-format
 #| msgid "Sieve Manager"
 msgctxt "@title:window"
