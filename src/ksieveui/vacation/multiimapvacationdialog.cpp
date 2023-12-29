@@ -118,7 +118,7 @@ void MultiImapVacationDialog::init()
     lab->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     QFont font = lab->font();
     font.setBold(true);
-    font.setPointSize(font.pointSize() + 2);
+    font.setPixelSize(font.pixelSize() + 2);
     lab->setFont(font);
     vbox->addWidget(lab);
     lab->setWordWrap(true);
