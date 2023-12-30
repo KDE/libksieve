@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.07.70\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: kmanagesieve/session.cpp:90
 #, kde-format
@@ -43,7 +43,7 @@ msgstr ""
 #: kmanagesieve/session.cpp:99
 #, kde-format
 msgid "Sieve Server Does Not Advertise TLS"
-msgstr "Der Server-Server unterstützt kein TLS"
+msgstr "Der Sieve-Server unterstützt kein TLS"
 
 #: kmanagesieve/session.cpp:100
 #, kde-format
