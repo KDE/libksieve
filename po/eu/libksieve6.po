@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-28 01:33+0000\n"
-"PO-Revision-Date: 2023-12-29 20:06+0100\n"
+"PO-Revision-Date: 2023-12-30 19:57+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1138,13 +1138,17 @@ msgstr ""
 "aldagaian gordetzen du."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:172
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "This modifier adds the necessary quoting to ensure that the expanded text "
 "will only match a literal occurrence if used as a parameter to :regex.  "
 "Every character with special meaning (. , *, ? , etc.) is prefixed with \\ "
 "in the expansion"
-msgstr "Aldarazle honek beharrezko aipuak gehitzen ditu testu hedatua"
+msgstr ""
+"Aldarazle honek, «:regex»en parametro gisa erabiliz gero, hedatutako testua "
+"agerraldi literal bakarrarekin bat datorrela ziurtatzeko beharrezko aipuak "
+"gehitzen ditu. Esanahi bereziko karaktere orori (. , *, ? , etab.), "
+"hedatzean, \\ aurrizkia ipintzen zaio"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionstop.cpp:14
 #, kde-format
@@ -1417,6 +1421,10 @@ msgid ""
 "specified part of the address, as modified by the comparator and the match "
 "keyword."
 msgstr ""
+"\"helbidea\" probak, Internet helbideak parekatzen ditu helbideak dituzten "
+"goiburu egituratuetan. Egia itzultzen du goibururen batek helbidean "
+"zehaztutako atalaren gakoetako edozein badu, konparatzaileak eta parekatze "
+"gako-hitzak aldatu bezala."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:20
 #, kde-format
@@ -1430,6 +1438,9 @@ msgid ""
 "anything following the first empty line after the header.  (The empty line "
 "itself, if present, is not considered to be part of the body.)"
 msgstr ""
+"\"gorputza\" probak, e-posta mezu baten gorputzeko edukia parekatzen du, hau "
+"da, goiburuaren ondoren lehenengo lerro hutsari jarraitzen dion edozer. "
+"(Lerro hutsa bera, baldin badago, ez da gorputzaren zatitzat hartzen)."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditioncurrentdate.cpp:21
 #, kde-format
@@ -1442,6 +1453,8 @@ msgid ""
 "The currentdate test is similar to the date test, except that it operates on "
 "the current date/time rather than a value extracted from the message header."
 msgstr ""
+"\"egungodata\" proba \"data\" probaren antzekoa da, egungo data/orduekin "
+"aritzen delarik mezuaren goiburutik ateratako balioekin egin ordez."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:23
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:41
@@ -1655,6 +1668,8 @@ msgid ""
 "The \"metadataexists\" test is true if all of the annotations listed in the "
 "\"annotation-names\" argument exist for the specified mailbox."
 msgstr ""
+"\"metadatuakdaude\" proba egia da, baldin eta adierazitako postontzian, "
+"\"annotation-names\" argumentuan zerrendatutako idatzohar guztiak badaude."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:23
 #, kde-format
@@ -1930,9 +1945,9 @@ msgid "Subtype"
 msgstr "Azpimota"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, fuzzy, kde-format
+#, kde-format
 msgid "Anychild"
-msgstr "Edozein-haur"
+msgstr "Haurretako edozein"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
 #, kde-format
