@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-03 02:28+0000\n"
-"PO-Revision-Date: 2023-12-18 22:50+0100\n"
+"PO-Revision-Date: 2023-12-30 20:14+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -714,6 +714,10 @@ msgid ""
 "Every character with special meaning (. , *, ? , etc.) is prefixed with \\ "
 "in the expansion"
 msgstr ""
+"Aldarazle honek, «:regex»en parametro gisa erabiliz gero, hedatutako testua "
+"agerraldi literal bakarrarekin bat datorrela ziurtatzeko beharrezko aipuak "
+"gehitzen ditu. Esanahi bereziko karaktere orori (. , *, ? , etab.), "
+"hedatzean, \\ aurrizkia ipintzen zaio"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionstop.cpp:14
 #, kde-format
@@ -986,6 +990,10 @@ msgid ""
 "specified part of the address, as modified by the comparator and the match "
 "keyword."
 msgstr ""
+"\"helbidea\" probak, Internet helbideak parekatzen ditu helbideak dituzten "
+"goiburu egituratuetan. Egia itzultzen du goibururen batek helbidean "
+"zehaztutako atalaren gakoetako edozein badu, konparatzaileak eta parekatze "
+"gako-hitzak aldatu bezala."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:20
 #, kde-format
@@ -999,6 +1007,9 @@ msgid ""
 "anything following the first empty line after the header.  (The empty line "
 "itself, if present, is not considered to be part of the body.)"
 msgstr ""
+"\"gorputza\" probak, e-posta mezu baten gorputzeko edukia parekatzen du, hau "
+"da, goiburuaren ondoren lehenengo lerro hutsari jarraitzen dion edozer. "
+"(Lerro hutsa bera, baldin badago, ez da gorputzaren zatitzat hartzen)."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditioncurrentdate.cpp:21
 #, kde-format
@@ -1011,6 +1022,8 @@ msgid ""
 "The currentdate test is similar to the date test, except that it operates on "
 "the current date/time rather than a value extracted from the message header."
 msgstr ""
+"\"egungodata\" proba \"data\" probaren antzekoa da, egungo data/orduekin "
+"aritzen delarik mezuaren goiburutik ateratako balioekin egin ordez."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:23
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:41
@@ -1025,6 +1038,8 @@ msgid ""
 "The date test matches date/time information derived from headers containing "
 "date-time values."
 msgstr ""
+"Data proba bat dator, data-ordu balioak dituzten goiburuetatik eratorritako "
+"data/ordu informazioarekin."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:24
 #, kde-format
@@ -1080,6 +1095,9 @@ msgid ""
 "argument exist within the message.  All of the headers must exist or the "
 "test is false."
 msgstr ""
+"\"badago\" proba egia da, goiburu-izenak argumentuan zerrendatutako "
+"goiburuak mezuaren barruan badaude. Goiburu guztiak egon behar dute edo "
+"proba faltsua da."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:20
 #, kde-format
@@ -1135,6 +1153,9 @@ msgid ""
 "The \"header\" test evaluates to true if the value of any of the named "
 "headers, ignoring leading and trailing whitespace, matches any key."
 msgstr ""
+"\"goiburu\" proba egia gisa ebaluatzen da, izendaturiko goiburuetako "
+"edozein, aurreko edo ondoko zuriuneei ezikusi eginez, edozein gakorekin bat "
+"badator."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:21
 #, kde-format
@@ -1147,11 +1168,13 @@ msgid "Use \",\" to separate capabilities"
 msgstr "Erabili \",\" gaitasunak bereizteko"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "The \"ihave\" test provides a means for Sieve scripts to test for the "
 "existence of a given extension prior to actually using it."
-msgstr "\"daukat\""
+msgstr ""
+"\"daukat\" probak, Sieve gidoiei, hedapen jakin bat bat erabili aurretik, "
+"hura benetan dagoen probatzeko bitarteko bat ematen die."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmailboxexists.cpp:20
 #, kde-format
@@ -1165,6 +1188,10 @@ msgid ""
 "names\" argument exist in the mailstore, and each allows the user in whose "
 "context the Sieve script runs to \"deliver\" messages into it."
 msgstr ""
+"\"postontziadago\" proba egia da \"mailbox-names\" argumentuan "
+"zerrendatutako postontzi guztiak posta-biltegian egonik, haietako bakoitzak, "
+"Sieve gidoia exekutatzen ari den erabiltzailearen testuinguruan hartara "
+"mezuak \"bidaltzen\" uzten badu."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:24
 #, kde-format
@@ -1210,6 +1237,8 @@ msgid ""
 "The \"metadataexists\" test is true if all of the annotations listed in the "
 "\"annotation-names\" argument exist for the specified mailbox."
 msgstr ""
+"\"metadatuakdaude\" proba egia da, baldin eta adierazitako postontzian, "
+"\"annotation-names\" argumentuan zerrendatutako idatzohar guztiak badaude."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:23
 #, kde-format
@@ -1485,9 +1514,9 @@ msgid "Subtype"
 msgstr "Azpimota"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, fuzzy, kde-format
+#, kde-format
 msgid "Anychild"
-msgstr "Edozein-haur"
+msgstr "Haurretako edozein"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
 #, kde-format
@@ -1593,11 +1622,14 @@ msgid ""
 "a message, including nested parts, depth first, and applies the commands in "
 "the specified block to each of them."
 msgstr ""
+"\"foreverypart\", mezu baten MIME atal guztietatik ibiltzen den iteratzaile "
+"bat da, habiaratutako atalak barne, lehenengo sakonera, eta zehaztutako "
+"blokeko komandoak aplikatzen dizkie haietako bakoitzari."
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:96
 #, kde-format
 msgid "Unknown tagValue \"%1\" during loading loop \"for\""
-msgstr ""
+msgstr "\"%1\" etiketaren balio ezezaguna \"for\" begizta zamatzerakoan"
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:108
 #, kde-format
@@ -1617,7 +1649,7 @@ msgstr "Ezarria balioa honetara:"
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:137
 #, kde-format
 msgid "Unknown tag \"%1\" during loading of variables."
-msgstr ""
+msgstr "\"%1\" etiketa ezezaguna aldagaiak zamatzerakoan."
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:187
 #, kde-format
@@ -1828,7 +1860,7 @@ msgstr "Gidoiarentzat izen berria:"
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:478
 #, kde-format
 msgid "forEveryPart is not supported by your server"
-msgstr ""
+msgstr "zure zerbitzariak ez du «forEveryPart» onartzen"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:576
 #, kde-format
@@ -1848,13 +1880,15 @@ msgstr "Aldagai globala"
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:46
 #, kde-format
 msgid "ForEveryPart"
-msgstr ""
+msgstr "Atal bakoitzerako"
 
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:95
 #, kde-format
 msgid ""
 "Script should always have just one \"Else\" block. We cannot add another one."
 msgstr ""
+"Gidoiak beti \"Else\" bloke bakar bat izan beharko luke. Ezin dugu beste bat "
+"gehitu."
 
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:111
 #, kde-format
@@ -1923,6 +1957,8 @@ msgid ""
 "Collecting diagnostic information about Sieve support...\n"
 "\n"
 msgstr ""
+"«Sieve» euskarriari buruzko diagnostiko informazioa biltzen...\n"
+"\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:68
 #, kde-format
