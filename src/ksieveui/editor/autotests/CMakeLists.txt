@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2011-2023 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2011-2024 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 
 set( libksieveui_sieveeditormenubartest_source sieveeditormenubartest.cpp sieveeditormenubartest.h ../sieveeditormenubar.cpp
