@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 01:33+0000\n"
+"POT-Creation-Date: 2024-01-01 01:36+0000\n"
 "PO-Revision-Date: 2023-11-07 09:32+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -2891,7 +2891,7 @@ msgstr "Sensible à la casse"
 msgid "Phrase not found"
 msgstr "Impossible de trouver la phrase"
 
-#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:46
+#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
 #, kde-format
 msgid "Save Web Page"
 msgstr "Enregistrer en tant que page web"

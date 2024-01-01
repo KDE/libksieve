@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 01:33+0000\n"
+"POT-Creation-Date: 2024-01-01 01:36+0000\n"
 "PO-Revision-Date: 2013-04-13 16:36+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -2674,7 +2674,7 @@ msgstr "अक्षर आकार संवेदनशील"
 msgid "Phrase not found"
 msgstr ""
 
-#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:46
+#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
 #, kde-format
 msgid "Save Web Page"
 msgstr ""

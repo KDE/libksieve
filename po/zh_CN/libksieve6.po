@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 01:33+0000\n"
+"POT-Creation-Date: 2024-01-01 01:36+0000\n"
 "PO-Revision-Date: 2023-12-30 13:38\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2645,7 +2645,7 @@ msgstr "区分大小写"
 msgid "Phrase not found"
 msgstr "词语未找到"
 
-#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:46
+#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
 #, kde-format
 msgid "Save Web Page"
 msgstr "保存网页"

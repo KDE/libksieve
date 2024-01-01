@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 01:33+0000\n"
+"POT-Creation-Date: 2024-01-01 01:36+0000\n"
 "PO-Revision-Date: 2014-01-31 19:22+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -2899,7 +2899,7 @@ msgstr ""
 msgid "Phrase not found"
 msgstr ""
 
-#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:46
+#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
 #, kde-format
 msgid "Save Web Page"
 msgstr ""
