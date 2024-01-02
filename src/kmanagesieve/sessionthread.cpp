@@ -15,6 +15,7 @@
 
 #include <KLocalizedString>
 
+#include <KIO/Global>
 #include <KIO/Job>
 
 #include "sasl-common.h"
