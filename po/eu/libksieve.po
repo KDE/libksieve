@@ -1,18 +1,18 @@
 # Translation for libksieve.po to Euskara/Basque (eu).
 # Copyright (C) 2003-2023 This file is copyright:
 # This file is distributed under the same license as the libksieve file.
-# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Marcos  <marcos@euskalgnu.org>, 2003.
 # Ion Gaztañaga <ion_g_m@hotmail.com>, 2005.
-# SPDX-FileCopyrightText: 2023 Iñigo Salvador Azurmendi <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024 Iñigo Salvador Azurmendi <xalba@ni.eus>
 msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-03 02:28+0000\n"
-"PO-Revision-Date: 2023-12-30 20:14+0100\n"
+"PO-Revision-Date: 2024-01-01 12:38+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1072,6 +1072,9 @@ msgid ""
 "by the name string and matches it to the values specified in the key-list "
 "argument."
 msgstr ""
+"«ingurune» probak, izen kateak zehaztutako ingurune informazioko elementua "
+"eskuratzen du eta gako-zerrenda argumentuan zehaztutako balioekin parekatzen "
+"du."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:22
 #, kde-format
@@ -1219,6 +1222,10 @@ msgid ""
 "list\". The test returns true if the annotation exists and its value matches "
 "any of the keys."
 msgstr ""
+"Proba horrek \"postontzia\" postontzirako \"idatzohoar-izena\" postontzi-"
+"idatzoharraren balioa eskuratzen du. Eskuratutako balioa \"gako-zerrenda"
+"\"rekin parekatzen da. Probak egia itzultzen du idatzoharra existitzen bada "
+"eta haren balioa gakoetako edozeinekin bat badator."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:22
 #, kde-format
@@ -1252,6 +1259,10 @@ msgid ""
 "The retrieved value is compared to the \"key-list\". The test returns true "
 "if the annotation exists and its value matches any of the keys."
 msgstr ""
+"Proba horrek zerbitzariaren \"idatzohar-izena\" idatzoharraren balioa "
+"eskuratzen du. Eskuratutako balioa \"gako-zerrenda\"rekin parekatzen da. "
+"Probak egia itzultzen du idatzoharra existitzen bada eta haren balioa "
+"gakoetako edozeinekin bat badator."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:20
 #, kde-format
@@ -1264,6 +1275,8 @@ msgid ""
 "The \"servermetadataexists\" test is true if all of the server annotations "
 "listed in the \"annotation-names\" argument exist."
 msgstr ""
+"\"Zerbitzari-metadatuak daude\" proba egia da \"idatzohar-izenak\" "
+"argumentuan zerrendatutako idatzohar guztiak existitzen badira."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionsize.cpp:20
 #, kde-format
@@ -1287,6 +1300,9 @@ msgid ""
 "tagged argument of \":over\" or \":under\", followed by a number "
 "representing the size of the message."
 msgstr ""
+"\"Neurria\" proba, mezuaren neurriari buruzkoa da. \":gainetik\" edo \":"
+"azpitik\" etiketatutako argumentu bat hartzen du, ondoren mezuaren neurria "
+"adierazten zenbaki bat duela."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:24
 #, kde-format
@@ -1305,6 +1321,9 @@ msgid ""
 "of either \"spamtest\" or \"spamtestplus\" for use with the capability "
 "mechanism."
 msgstr ""
+"\"Spamproba\" proba inplementatzen duten «Sieve»ren inplementazioek gaitasun "
+"mekanismoarekin erabiltzeko \"spamproba\"ren edo \"spamprobaplus\"ren "
+"identifikatzaile bat dute."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:20
 #, kde-format
@@ -1332,6 +1351,9 @@ msgid ""
 "Sieve implementations that implement the \"virustest\" test have an "
 "identifier of \"virustest\" for use with the capability mechanism."
 msgstr ""
+"\"Birusproba\" proba inplementatzen duten «Sieve»ren inplementazioek "
+"gaitasun mekanismoarekin erabiltzeko \"birusproba\"ren identifikatzaile bat "
+"dute."
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:26
 #, kde-format
@@ -1659,6 +1681,10 @@ msgid ""
 "it global, the name specifies a separate, non-global variable within that "
 "script."
 msgstr ""
+"Aldagai batek irismen globala du, \"globala\" komandoarekin deklaratu duten "
+"gidoi guztietan. Gidoi batek aldagai-izen hori globala deklaratu gabe "
+"erabiltzen badu, izenak gidoi horretan globala ez den aldagai bereizi bat "
+"zehazten du."
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:43
 #, kde-format
@@ -1674,6 +1700,7 @@ msgstr "globala"
 #, kde-format
 msgid "Unknown location type \"%1\" during parsing includes"
 msgstr ""
+"\"%1\" kokaleku mota ezezaguna barneratutakoen sintaxi azterketa egiterakoan"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:133
 #, kde-format
@@ -1704,11 +1731,15 @@ msgid ""
 "single string argument representing the name of the script to include for "
 "processing at that point."
 msgstr ""
+"\"Barneratu\" komandoak hautazko \"kokalekua\" parametro bat hartzen du, "
+"hautazko \":behin\"  parametro bat, hautazko \":hautazko\"  parametro bat, "
+"eta kate argumentu bakar bat, puntu horretan prozesatzeko barneratu "
+"beharreko gidoiaren izena adierazteko."
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:346
 #, kde-format
 msgid "We can not add more includes elements."
-msgstr ""
+msgstr "Ezin dugu elementu gehiago barneratu."
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:35
 #, kde-format
