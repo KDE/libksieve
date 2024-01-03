@@ -1,4 +1,4 @@
-# Translation of libksieve to Northern Sami
+# Translation of libksieve6 to Northern Sami
 #
 msgid ""
 msgstr ""

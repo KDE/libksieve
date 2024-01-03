@@ -1,4 +1,4 @@
-# Translation of libksieve to Norwegian Nynorsk
+# Translation of libksieve6 to Norwegian Nynorsk
 #
 # Håvard Korsvoll <korsvoll@skulelinux.no>, 2003.
 # Karl Ove Hufthammer <karl@huftis.org>, 2007, 2008, 2016.
