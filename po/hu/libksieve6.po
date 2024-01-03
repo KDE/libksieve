@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-01 01:36+0000\n"
+"POT-Creation-Date: 2024-01-03 01:36+0000\n"
 "PO-Revision-Date: 2021-11-04 13:50+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -96,7 +96,7 @@ msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr "Sieve feldolgozás"
 
-#: kmanagesieve/sessionthread.cpp:298
+#: kmanagesieve/sessionthread.cpp:299
 #, kde-format
 msgid ""
 "Authentication failed.\n"

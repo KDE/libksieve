@@ -1,4 +1,4 @@
-# Translation of libksieve to Norwegian Nynorsk
+# Translation of libksieve6 to Norwegian Nynorsk
 #
 # Håvard Korsvoll <korsvoll@skulelinux.no>, 2003.
 # Karl Ove Hufthammer <karl@huftis.org>, 2007, 2008, 2016.
@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-01 01:36+0000\n"
+"POT-Creation-Date: 2024-01-03 01:36+0000\n"
 "PO-Revision-Date: 2016-11-02 20:23+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -82,7 +82,7 @@ msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr ""
 
-#: kmanagesieve/sessionthread.cpp:298
+#: kmanagesieve/sessionthread.cpp:299
 #, kde-format
 msgid ""
 "Authentication failed.\n"

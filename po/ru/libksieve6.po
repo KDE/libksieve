@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-01 01:36+0000\n"
+"POT-Creation-Date: 2024-01-03 01:36+0000\n"
 "PO-Revision-Date: 2022-01-28 10:58+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -105,7 +105,7 @@ msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr "Управление фильтрами Sieve"
 
-#: kmanagesieve/sessionthread.cpp:298
+#: kmanagesieve/sessionthread.cpp:299
 #, kde-format
 msgid ""
 "Authentication failed.\n"
