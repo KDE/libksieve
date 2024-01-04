@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-03 01:36+0000\n"
-"PO-Revision-Date: 2023-11-04 19:37+0100\n"
+"PO-Revision-Date: 2024-01-03 15:00+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1942,7 +1942,7 @@ msgstr "Valoro"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:56
 #, kde-format
 msgid "Count"
-msgstr "grafo"
+msgstr "Nombro"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:60
 #, kde-format
