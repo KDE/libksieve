@@ -14,5 +14,5 @@ Dependencies:
     'libraries/ktextaddons': '@latest-kf6'
 
 Options:
-  require-passing-tests-on: [ 'Linux/Qt5', 'FreeBSD/Qt5' ]
+  require-passing-tests-on: [ 'Linux', 'FreeBSD' ]
 
