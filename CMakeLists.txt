@@ -90,7 +90,7 @@ add_definitions(-DDONT_HAVE_TEXT_TO_SPEACH_SUPPORT)
 ########### Targets ###########
 
 
-ecm_set_disabled_deprecation_versions(QT 6.6.0 KF 5.248.0)
+ecm_set_disabled_deprecation_versions(QT 6.6.0 KF 5.249.0)
 
 
 ########### CMake Config Files ###########
