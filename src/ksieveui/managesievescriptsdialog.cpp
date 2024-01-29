@@ -17,7 +17,7 @@
 #include <QHideEvent>
 #include <QPushButton>
 
-#include <kmanagesieve/sievejob.h>
+#include "kmanagesieve/sievejob.h"
 
 #include <QTreeWidget>
 #include <QVBoxLayout>

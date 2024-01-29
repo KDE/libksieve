@@ -6,9 +6,9 @@
 
 #pragma once
 
+#include "widgets/managesievewidget.h"
 #include <KSieveCore/SieveImapInstance>
 #include <KSieveCore/Util>
-#include <widgets/managesievewidget.h>
 namespace KSieveCore
 {
 class SieveImapPasswordProvider;

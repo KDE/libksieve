@@ -5,10 +5,10 @@
 */
 
 #include "vacationcreatescriptjob.h"
+#include "kmanagesieve/sievejob.h"
+#include "managescriptsjob/generateglobalscriptjob.h"
+#include "managescriptsjob/parseuserscriptjob.h"
 #include "vacationutils.h"
-#include <kmanagesieve/sievejob.h>
-#include <managescriptsjob/generateglobalscriptjob.h>
-#include <managescriptsjob/parseuserscriptjob.h>
 
 #include "libksievecore_debug.h"
 #include <KLocalizedString>

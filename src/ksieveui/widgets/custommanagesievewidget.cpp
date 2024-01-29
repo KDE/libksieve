@@ -8,11 +8,11 @@
 #include "util/findaccountinfojob.h"
 #include "widgets/managesievetreeview.h"
 
+#include "kmanagesieve/sievejob.h"
+#include "widgets/sievetreewidgetitem.h"
 #include <KLocalizedString>
 #include <QIcon>
 #include <QTreeWidgetItem>
-#include <kmanagesieve/sievejob.h>
-#include <widgets/sievetreewidgetitem.h>
 
 using namespace KSieveUi;
 

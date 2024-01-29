@@ -18,9 +18,9 @@
 #include <KSieveUi/AbstractMoveImapFolderWidget>
 #include <KSieveUi/AbstractSelectEmailLineEdit>
 
-#include <widgets/moveimapfolderwidget.h>
+#include "widgets/moveimapfolderwidget.h"
 
-#include <autocreatescripts/sieveactions/widgets/addresslineedit.h>
+#include "autocreatescripts/sieveactions/widgets/addresslineedit.h"
 using namespace KSieveUi;
 
 QString AutoCreateScriptUtil::createMultiLine(const QString &str)

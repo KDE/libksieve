@@ -7,6 +7,7 @@
 #include "vacationeditwidgettest.h"
 #include "../vacationeditwidget.h"
 #include "../vacationmaillineedit.h"
+#include "vacation/vacationmailactionwidget.h"
 #include <KDateComboBox>
 #include <KTimeComboBox>
 #include <PimCommon/SpellCheckLineEdit>
@@ -16,7 +17,6 @@
 #include <QSpinBox>
 #include <QTest>
 #include <TextCustomEditor/PlainTextEditorWidget>
-#include <vacation/vacationmailactionwidget.h>
 
 VacationEditWidgetTest::VacationEditWidgetTest(QObject *parent)
     : QObject(parent)

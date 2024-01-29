@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <editor/sievetextedit.h>
+#include "editor/sievetextedit.h"
 
 namespace KSieveUi
 {

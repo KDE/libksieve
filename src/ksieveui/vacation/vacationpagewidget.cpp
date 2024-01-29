@@ -5,15 +5,15 @@
 */
 
 #include "vacationpagewidget.h"
+#include "managescriptsjob/parseuserscriptjob.h"
 #include "vacationeditwidget.h"
 #include "vacationwarningwidget.h"
 #include <KSieveCore/MultiImapVacationManager>
 #include <KSieveCore/VacationCreateScriptJob>
 #include <KSieveCore/VacationUtils>
 #include <ksievecore/sieve-vacation.h>
-#include <managescriptsjob/parseuserscriptjob.h>
 
-#include <kmanagesieve/sievejob.h>
+#include "kmanagesieve/sievejob.h"
 
 #include "libksieveui_debug.h"
 #include <KLocalizedString>

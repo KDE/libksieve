@@ -10,7 +10,7 @@
 
 #include <KSieveCore/Util>
 
-#include <kmanagesieve/sievejob.h>
+#include "kmanagesieve/sievejob.h"
 
 #include <KLocalizedString>
 #include <QDate>

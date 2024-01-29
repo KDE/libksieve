@@ -5,11 +5,11 @@
 */
 
 #include "multiimapvacationmanager.h"
+#include "kmanagesieve/sievejob.h"
+#include "managescriptsjob/checkkolabkep14supportjob.h"
+#include "managescriptsjob/parseuserscriptjob.h"
 #include <KSieveCore/SearchServerWithVacationSupportJob>
 #include <KSieveCore/VacationCheckJob>
-#include <kmanagesieve/sievejob.h>
-#include <managescriptsjob/checkkolabkep14supportjob.h>
-#include <managescriptsjob/parseuserscriptjob.h>
 
 #include "libksievecore_debug.h"
 #include <QVariant>

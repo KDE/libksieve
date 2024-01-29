@@ -8,7 +8,7 @@
 #include "libksievecore_debug.h"
 #include <KLocalizedString>
 
-#include <sievejob.h>
+#include "sievejob.h"
 
 using namespace KSieveCore;
 

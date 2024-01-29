@@ -23,7 +23,7 @@
 #include <QVBoxLayout>
 #include <QWindow>
 
-#include <editor/sievetexteditwidget.h>
+#include "editor/sievetexteditwidget.h"
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif

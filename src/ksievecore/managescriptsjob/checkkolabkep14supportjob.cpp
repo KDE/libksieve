@@ -5,8 +5,8 @@
  */
 
 #include "checkkolabkep14supportjob.h"
+#include "kmanagesieve/sievejob.h"
 #include "util/util.h"
-#include <kmanagesieve/sievejob.h>
 
 #include "libksievecore_debug.h"
 

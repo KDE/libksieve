@@ -6,10 +6,10 @@
 
 #include "sievetexteditwidgettest.h"
 #include "../sievetexteditwidget.h"
+#include "editor/sievetextedit.h"
 #include <QTest>
 #include <TextAddonsWidgets/SlideContainer>
 #include <TextCustomEditor/PlainTextEditFindBar>
-#include <editor/sievetextedit.h>
 
 SieveTextEditWidgetTest::SieveTextEditWidgetTest(QObject *parent)
     : QObject(parent)

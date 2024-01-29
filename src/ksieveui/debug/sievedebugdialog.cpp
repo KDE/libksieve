@@ -12,12 +12,12 @@
 #include <TextCustomEditor/PlainTextEditor>
 #include <TextCustomEditor/PlainTextEditorWidget>
 
+#include "kmanagesieve/sievejob.h"
 #include "libksieveui_debug.h"
 #include <KLocalizedString>
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Theme>
-#include <kmanagesieve/sievejob.h>
 
 #include <KConfigGroup>
 #include <KSharedConfig>

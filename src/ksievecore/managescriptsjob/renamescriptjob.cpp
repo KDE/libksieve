@@ -5,7 +5,7 @@
 */
 
 #include "renamescriptjob.h"
-#include <kmanagesieve/sievejob.h>
+#include "kmanagesieve/sievejob.h"
 
 #include <KLocalizedString>
 using namespace KSieveCore;

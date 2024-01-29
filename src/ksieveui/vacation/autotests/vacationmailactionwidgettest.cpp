@@ -6,11 +6,11 @@
 
 #include "vacationmailactionwidgettest.h"
 #include "../vacationmailactionwidget.h"
+#include "ksieveui/abstractselectemaillineedit.h"
 #include <KSieveUi/AbstractMoveImapFolderWidget>
 #include <QHBoxLayout>
 #include <QStackedWidget>
 #include <QTest>
-#include <ksieveui/abstractselectemaillineedit.h>
 
 QTEST_MAIN(VacationMailActionWidgetTest)
 

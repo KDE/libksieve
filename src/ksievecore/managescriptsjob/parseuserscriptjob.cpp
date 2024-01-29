@@ -5,10 +5,10 @@
 */
 
 #include "parseuserscriptjob.h"
+#include "kmanagesieve/sievejob.h"
 #include "ksievecore/scriptsparsing/parsingutil.h"
 #include <KLocalizedString>
 #include <QXmlStreamReader>
-#include <kmanagesieve/sievejob.h>
 
 using namespace KSieveCore;
 ParseUserScriptJob::ParseUserScriptJob(const QUrl &url, QObject *parent)

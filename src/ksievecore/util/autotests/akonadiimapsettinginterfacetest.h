@@ -6,8 +6,8 @@
 
 #pragma once
 
+#include "util/abstractakonadiimapsettinginterface.h"
 #include <QObject>
-#include <util/abstractakonadiimapsettinginterface.h>
 struct AkonadiImapSettingInterfaceDataTest {
     bool sieveSupport = true;
     bool sieveReuseConfig = true;

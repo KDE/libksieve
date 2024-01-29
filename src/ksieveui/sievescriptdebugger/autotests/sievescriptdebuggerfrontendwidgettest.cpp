@@ -9,12 +9,12 @@
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
+#include "sievescriptdebugger/sievescriptdebuggerwarning.h"
 #include <KUrlRequester>
 #include <QLabel>
 #include <QLineEdit>
 #include <QSplitter>
 #include <QTest>
-#include <sievescriptdebugger/sievescriptdebuggerwarning.h>
 
 SieveScriptDebuggerFrontEndWidgetTest::SieveScriptDebuggerFrontEndWidgetTest(QObject *parent)
     : QObject(parent)

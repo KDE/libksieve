@@ -5,8 +5,8 @@
 */
 #pragma once
 
+#include "autocreatescripts/sieveglobalvariablewidget.h"
 #include "sieveaction.h"
-#include <autocreatescripts/sieveglobalvariablewidget.h>
 namespace KSieveUi
 {
 class SieveActionSetVariable : public SieveAction

@@ -10,10 +10,10 @@
 #include "managesievetreeview.h"
 #include "widgets/sievetreewidgetitem.h"
 
+#include "kmanagesieve/sievejob.h"
+#include "managescriptsjob/generateglobalscriptjob.h"
+#include "managescriptsjob/parseuserscriptjob.h"
 #include <PimCommon/NetworkManager>
-#include <kmanagesieve/sievejob.h>
-#include <managescriptsjob/generateglobalscriptjob.h>
-#include <managescriptsjob/parseuserscriptjob.h>
 
 #include <KSieveCore/Util>
 

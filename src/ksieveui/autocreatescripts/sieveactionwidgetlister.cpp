@@ -25,7 +25,7 @@
 #include <QToolButton>
 #include <QWhatsThis>
 
-#include <autocreatescripts/sieveactions/sieveactionsetvariable.h>
+#include "autocreatescripts/sieveactions/sieveactionsetvariable.h"
 
 using namespace KSieveUi;
 
