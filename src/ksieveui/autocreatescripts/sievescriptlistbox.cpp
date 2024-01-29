@@ -377,7 +377,7 @@ QString SieveScriptListBox::generatedScript(QStringList &requireModules) const
     for (int i = 0; i < numberOfScripts; ++i) {
         auto item = static_cast<SieveScriptListItem *>(mSieveListScript->item(i));
         if (i != 0) {
-            resultScript += QLatin1String("\n\n");
+            resultScript += QLatin1StringView("\n\n");
         }
         resultScript += QLatin1Char('#') + QStringLiteral("%1[%2]").arg(roundcubeRuleName(), item->text()) + QLatin1Char('\n');
         resultScript += item->generatedScript(lstRequires);

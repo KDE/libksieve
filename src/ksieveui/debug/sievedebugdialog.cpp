@@ -84,14 +84,14 @@ void SieveDebugDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(640, 480));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySieveDebugDialogGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveDebugDialogGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void SieveDebugDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySieveDebugDialogGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveDebugDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }
@@ -227,7 +227,7 @@ void SieveDebugDialog::slotGetScriptList(KManageSieve::SieveJob *job, bool succe
         mEdit->editor()->appendPlainText(i18n("(No special capabilities available)"));
     } else {
         for (const auto &str : caps) {
-            mEdit->editor()->appendPlainText(QLatin1String("* ") + str + QLatin1Char('\n'));
+            mEdit->editor()->appendPlainText(QLatin1StringView("* ") + str + QLatin1Char('\n'));
         }
         mEdit->editor()->appendPlainText(QStringLiteral("\n"));
     }
@@ -239,7 +239,7 @@ void SieveDebugDialog::slotGetScriptList(KManageSieve::SieveJob *job, bool succe
     } else {
         mScriptList = scriptList;
         for (const auto &str : scriptList) {
-            mEdit->editor()->appendPlainText(QLatin1String("* ") + str + QLatin1Char('\n'));
+            mEdit->editor()->appendPlainText(QLatin1StringView("* ") + str + QLatin1Char('\n'));
         }
         mEdit->editor()->appendPlainText(QStringLiteral("\n"));
         mEdit->editor()->appendPlainText(i18n("Active script: '%1'\n\n", activeScript));

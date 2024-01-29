@@ -14,7 +14,7 @@ using namespace KSieveUi;
 SelectAddressPartComboBox::SelectAddressPartComboBox(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent)
     : QComboBox(parent)
 {
-    mHasSubaddressCapability = sieveGraphicalModeWidget->sieveCapabilities().contains(QLatin1String("subaddress"));
+    mHasSubaddressCapability = sieveGraphicalModeWidget->sieveCapabilities().contains(QLatin1StringView("subaddress"));
     initialize();
     connect(this, &SelectAddressPartComboBox::activated, this, &SelectAddressPartComboBox::valueChanged);
 }

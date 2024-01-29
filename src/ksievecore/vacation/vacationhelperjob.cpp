@@ -46,7 +46,7 @@ void VacationHelperJob::slotGetScriptList(KManageSieve::SieveJob *job, bool succ
     mSieveJob = nullptr;
     if (success) {
         const QStringList caps = job->sieveCapabilities();
-        Q_EMIT scriptListResult(scriptList, activeScript, caps.contains(QLatin1String("include")));
+        Q_EMIT scriptListResult(scriptList, activeScript, caps.contains(QLatin1StringView("include")));
     } else {
         Q_EMIT canNotGetScriptList();
     }

@@ -35,7 +35,7 @@ void VacationDataExtractor::commandStart(const QString &identifier, int lineNumb
         }
     }
 
-    if (identifier != QLatin1String("vacation")) {
+    if (identifier != QLatin1StringView("vacation")) {
         return;
     }
 

@@ -53,7 +53,7 @@ void VacationCheckJob::start()
     if (mKep14Support) {
         QUrl url = mUrl;
         url = url.adjusted(QUrl::RemoveFilename);
-        url.setPath(url.path() + QLatin1Char('/') + QLatin1String("USER"));
+        url.setPath(url.path() + QLatin1Char('/') + QLatin1StringView("USER"));
         mParseJob = new KSieveCore::ParseUserScriptJob(url, this);
         connect(mParseJob, &KSieveCore::ParseUserScriptJob::finished, this, &VacationCheckJob::slotGotActiveScripts);
         mParseJob->start();

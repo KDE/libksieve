@@ -179,7 +179,7 @@ void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requi
         onlyActions = true;
         // Just actions type
     } else if (pageType() == BlockElse) {
-        script += QLatin1String("else {\n");
+        script += QLatin1StringView("else {\n");
     } else {
         QString conditionStr;
         int numberOfCondition = 0;
@@ -204,9 +204,9 @@ void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requi
         if (hasUniqCondition == 1) {
             filterStr += blockStr;
         } else if (mMatchCondition == AndCondition) {
-            filterStr += blockStr + QLatin1String("allof (");
+            filterStr += blockStr + QLatin1StringView("allof (");
         } else if (mMatchCondition == OrCondition) {
-            filterStr += blockStr + QLatin1String("anyof (");
+            filterStr += blockStr + QLatin1StringView("anyof (");
         }
 
         if (conditionStr.isEmpty()) {
@@ -215,14 +215,14 @@ void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requi
             script += filterStr + conditionStr;
         }
         if (hasUniqCondition) {
-            script += indentation + QLatin1String("{\n");
+            script += indentation + QLatin1StringView("{\n");
         } else {
             script += indentation + QStringLiteral(")\n%1{\n").arg(indentation);
         }
     }
     mScriptActionLister->generatedScript(script, required, onlyActions, inForEveryPartLoop);
     if (!onlyActions) {
-        script += indentation + QLatin1String("} ");
+        script += indentation + QLatin1StringView("} ");
     }
 }
 
@@ -280,7 +280,7 @@ void SieveScriptBlockWidget::loadScript(QXmlStreamReader &element, bool onlyActi
             } else if (tagName == QLatin1StringView("block")) {
                 mScriptActionLister->loadScript(element, false, error);
             } else {
-                if (tagName != QLatin1String("crlf")) {
+                if (tagName != QLatin1StringView("crlf")) {
                     qCDebug(LIBKSIEVEUI_LOG) << " e.tag" << tagName;
                 } else {
                     element.skipCurrentElement();

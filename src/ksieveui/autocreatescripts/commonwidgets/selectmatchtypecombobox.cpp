@@ -14,7 +14,7 @@ using namespace KSieveUi;
 SelectMatchTypeComboBox::SelectMatchTypeComboBox(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QWidget *parent)
     : QComboBox(parent)
 {
-    mHasRegexCapability = sieveGraphicalModeWidget->sieveCapabilities().contains(QLatin1String("regex"));
+    mHasRegexCapability = sieveGraphicalModeWidget->sieveCapabilities().contains(QLatin1StringView("regex"));
     initialize();
     connect(this, &SelectMatchTypeComboBox::activated, this, &SelectMatchTypeComboBox::slotValueChanged);
 }
@@ -25,7 +25,7 @@ void SelectMatchTypeComboBox::slotValueChanged(int val)
 {
     if (mHasRegexCapability) {
         const QString value = itemData(val).toString();
-        Q_EMIT switchToRegexp(value.contains(QLatin1String("regex")));
+        Q_EMIT switchToRegexp(value.contains(QLatin1StringView("regex")));
     }
     Q_EMIT valueChanged();
 }
@@ -47,7 +47,7 @@ void SelectMatchTypeComboBox::initialize()
 QString SelectMatchTypeComboBox::code(bool &negative) const
 {
     QString value = itemData(currentIndex()).toString();
-    negative = value.startsWith(QLatin1String("[NOT]"));
+    negative = value.startsWith(QLatin1StringView("[NOT]"));
     if (negative) {
         value.remove(QStringLiteral("[NOT]"));
     }
@@ -62,7 +62,7 @@ void SelectMatchTypeComboBox::setCode(const QString &code, const QString &name, 
         if (mHasRegexCapability) {
             // TODO optimize
             const QString value = itemData(index).toString();
-            Q_EMIT switchToRegexp(value.contains(QLatin1String("regex")));
+            Q_EMIT switchToRegexp(value.contains(QLatin1StringView("regex")));
         }
     } else {
         AutoCreateScriptUtil::comboboxItemNotFound(code, name, error);
@@ -75,7 +75,7 @@ QStringList SelectMatchTypeComboBox::needRequires() const
     QStringList requireModules;
     if (mHasRegexCapability) {
         const QString value = itemData(currentIndex()).toString();
-        if (value.contains(QLatin1String("regex"))) {
+        if (value.contains(QLatin1StringView("regex"))) {
             requireModules << QStringLiteral("regex");
         }
     }

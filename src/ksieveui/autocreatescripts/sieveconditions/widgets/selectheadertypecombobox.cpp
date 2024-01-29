@@ -90,14 +90,14 @@ void SelectHeadersDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(400, 300));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySelectFlagsListDialogGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySelectFlagsListDialogGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void SelectHeadersDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySelectFlagsListDialogGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySelectFlagsListDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }
@@ -182,14 +182,14 @@ QString SelectHeadersWidget::headers() const
         QListWidgetItem *it = item(i);
         if (it->checkState() == Qt::Checked) {
             if (selected) {
-                result += QLatin1String(", ");
+                result += QLatin1StringView(", ");
             }
             selected = true;
-            result += QLatin1String("\"") + it->data(HeaderId).toString() + QLatin1String("\"");
+            result += QLatin1StringView("\"") + it->data(HeaderId).toString() + QLatin1String("\"");
         }
     }
     if (!result.isEmpty()) {
-        result = QLatin1String("[ ") + result + QLatin1String(" ]");
+        result = QLatin1StringView("[ ") + result + QLatin1String(" ]");
     }
     return result;
 }
@@ -279,7 +279,7 @@ QString SelectHeaderTypeComboBox::code() const
         }
     }
     if (!str.isEmpty() && !str.startsWith(QLatin1Char('['))) {
-        str = QLatin1String("\"") + str + QLatin1String("\"");
+        str = QLatin1StringView("\"") + str + QLatin1String("\"");
     }
     return str;
 }

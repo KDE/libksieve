@@ -23,7 +23,7 @@ using namespace KSieveUi;
 SieveActionSetVariable::SieveActionSetVariable(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
     : SieveAction(sieveGraphicalModeWidget, QStringLiteral("set"), i18n("Variable"), parent)
 {
-    mHasRegexCapability = sieveCapabilities().contains(QLatin1String("regex"));
+    mHasRegexCapability = sieveCapabilities().contains(QLatin1StringView("regex"));
 }
 
 QWidget *SieveActionSetVariable::createParamWidget(QWidget *parent) const
@@ -134,7 +134,7 @@ QString SieveActionSetVariable::code(QWidget *w) const
     if (mHasRegexCapability) {
         const QCheckBox *protectAgainstUseRegexp = w->findChild<QCheckBox *>(QStringLiteral("regexprotect"));
         if (protectAgainstUseRegexp->isChecked()) {
-            result += QLatin1String(":quoteregex ");
+            result += QLatin1StringView(":quoteregex ");
         }
     }
 

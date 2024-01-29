@@ -296,7 +296,7 @@ void VacationEditWidget::setMailAliases(const AddrSpecList &aliases)
     for (const auto &str : aliases) {
         sl.push_back(str.asString());
     }
-    mMailAliasesEdit->setText(sl.join(QLatin1String(", ")));
+    mMailAliasesEdit->setText(sl.join(QLatin1StringView(", ")));
 }
 
 void VacationEditWidget::setMailAliases(const QString &aliases)

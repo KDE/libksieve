@@ -37,7 +37,7 @@ QString AutoCreateScriptUtil::createList(const QString &str, QChar separator, bo
     case 0:
         return {};
     case 1:
-        return QLatin1String("\"") + list.first() + QLatin1String("\"");
+        return QLatin1StringView("\"") + list.first() + QLatin1String("\"");
     default: {
         const QString result = createList(list, addEndSemiColon);
         return result;
@@ -51,7 +51,7 @@ QString AutoCreateScriptUtil::quoteStr(const QString &str, bool protectSlash)
     if (protectSlash) {
         st = AutoCreateScriptUtil::protectSlash(str);
     }
-    return st.replace(QLatin1String("\""), QStringLiteral("\\\""));
+    return st.replace(QLatin1StringView("\""), QStringLiteral("\\\""));
 }
 
 QString AutoCreateScriptUtil::protectSlash(QString str)
@@ -71,7 +71,7 @@ QString AutoCreateScriptUtil::createList(const QStringList &lst, bool addSemiCol
         result += (wasFirst ? QString() : QStringLiteral(",")) + QStringLiteral(" \"%1\"").arg(quoteStr(str, false));
         wasFirst = false;
     }
-    result += QLatin1String(" ]");
+    result += QLatin1StringView(" ]");
     if (addSemiColon) {
         result += QLatin1Char(';');
     }
@@ -82,10 +82,10 @@ QString AutoCreateScriptUtil::createList(const QStringList &lst, bool addSemiCol
 QStringList AutoCreateScriptUtil::createListFromString(QString str)
 {
     QStringList lst;
-    if (str.startsWith(QLatin1Char('[')) && str.endsWith(QLatin1String("];"))) {
+    if (str.startsWith(QLatin1Char('[')) && str.endsWith(QLatin1StringView("];"))) {
         str.remove(0, 1);
         str.remove(str.length() - 2, 2);
-    } else if (str.startsWith(QLatin1Char('[')) && str.endsWith(QLatin1String("]"))) {
+    } else if (str.startsWith(QLatin1Char('[')) && str.endsWith(QLatin1StringView("]"))) {
         str.remove(0, 1);
         str.remove(str.length() - 1, 1);
     } else {
@@ -182,7 +182,7 @@ QString AutoCreateScriptUtil::createFullWhatsThis(const QString &help, const QSt
     if (href.isEmpty()) {
         return help;
     }
-    const QString fullWhatsThis = QLatin1String("<qt>") + help + QStringLiteral("<br><a href=\'%1\'>%2</a></qt>").arg(href, i18n("More information"));
+    const QString fullWhatsThis = QLatin1StringView("<qt>") + help + QStringLiteral("<br><a href=\'%1\'>%2</a></qt>").arg(href, i18n("More information"));
     return fullWhatsThis;
 }
 
@@ -237,7 +237,7 @@ QString AutoCreateScriptUtil::generateConditionComment(const QString &comment)
                 if (!strComment.isEmpty()) {
                     strComment += QLatin1Char('\n');
                 }
-                strComment += QLatin1String(" #") + str;
+                strComment += QLatin1StringView(" #") + str;
             }
         }
     }

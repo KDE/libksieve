@@ -21,9 +21,9 @@ using namespace KSieveCore;
 static inline QString dotstuff(QString s) // krazy:exclude=passbyvalue
 {
     if (s.startsWith(QLatin1Char('.'))) {
-        return QLatin1Char('.') + s.replace(QLatin1String("\n."), QStringLiteral("\n.."));
+        return QLatin1Char('.') + s.replace(QLatin1StringView("\n."), QStringLiteral("\n.."));
     } else {
-        return s.replace(QLatin1String("\n."), QStringLiteral("\n.."));
+        return s.replace(QLatin1StringView("\n."), QStringLiteral("\n.."));
     }
 }
 
@@ -245,7 +245,7 @@ QString KSieveCore::VacationUtils::composeScript(const Vacation &vacation)
                          + QLatin1Char('"'));
             aliases.push_back((*it).asString());
         }
-        addressesArgument += sl.join(QLatin1String(", ")) + QStringLiteral(" ] ");
+        addressesArgument += sl.join(QLatin1StringView(", ")) + QStringLiteral(" ] ");
     }
 
     QString sVacation(QStringLiteral("vacation "));
@@ -269,11 +269,11 @@ QString KSieveCore::VacationUtils::composeScript(const Vacation &vacation)
         sVacation += QStringLiteral("\ndiscard;");
         break;
     case VacationUtils::Sendto:
-        sVacation += QLatin1String("\nredirect \"") + vacation.mailActionRecipient + QLatin1String("\";");
+        sVacation += QLatin1StringView("\nredirect \"") + vacation.mailActionRecipient + QLatin1String("\";");
         break;
     case VacationUtils::CopyTo:
         require << QStringLiteral("copy");
-        sVacation += QLatin1String("\nredirect :copy \"") + vacation.mailActionRecipient + QLatin1String("\";");
+        sVacation += QLatin1StringView("\nredirect :copy \"") + vacation.mailActionRecipient + QLatin1String("\";");
         break;
     }
 

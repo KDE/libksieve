@@ -120,9 +120,9 @@ void XMLPrintingScriptBuilderTest::shouldCreateXml()
     QFETCH(QString, input);
     QFETCH(bool, success);
 
-    const QString originalFile = QLatin1String(XMLPRINTINGSCRIPTBUILDER_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral(".siv");
-    const QString refFile = QLatin1String(XMLPRINTINGSCRIPTBUILDER_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral("-ref.siv");
-    const QString generatedFile = QLatin1String(XMLPRINTINGSCRIPTBUILDER_GENERATED_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral("-generated.siv");
+    const QString originalFile = QLatin1StringView(XMLPRINTINGSCRIPTBUILDER_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral(".siv");
+    const QString refFile = QLatin1StringView(XMLPRINTINGSCRIPTBUILDER_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral("-ref.siv");
+    const QString generatedFile = QLatin1StringView(XMLPRINTINGSCRIPTBUILDER_GENERATED_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral("-generated.siv");
     const QByteArray script = readSieveFile(originalFile);
     KSieve::Parser parser(script.begin(), script.begin() + script.length());
     KSieveCore::XMLPrintingScriptBuilder builder;

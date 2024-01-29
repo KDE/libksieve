@@ -463,7 +463,7 @@ void SieveEditorTextModeWidget::printPreview()
         bool restoreSpellCheck = mTextEdit->checkSpellingEnabled();
         mTextEdit->setCheckSpellingEnabled(false);
         QPointer<QPrintPreviewDialog> previewdlg = new QPrintPreviewDialog(this);
-        new KWindowStateSaver(previewdlg.data(), QLatin1String("SieveEditorPrintPreviewDialog"));
+        new KWindowStateSaver(previewdlg.data(), QLatin1StringView("SieveEditorPrintPreviewDialog"));
         connect(previewdlg.data(), &QPrintPreviewDialog::paintRequested, this, [this](QPrinter *printer) {
             mTextEdit->print(printer);
         });

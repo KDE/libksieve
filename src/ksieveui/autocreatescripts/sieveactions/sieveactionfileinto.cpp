@@ -19,8 +19,8 @@ using namespace KSieveUi;
 SieveActionFileInto::SieveActionFileInto(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
     : SieveAction(sieveGraphicalModeWidget, QStringLiteral("fileinto"), i18n("File Into"), parent)
 {
-    mHasCopySupport = sieveCapabilities().contains(QLatin1String("copy"));
-    mHasMailBoxSupport = sieveCapabilities().contains(QLatin1String("mailbox"));
+    mHasCopySupport = sieveCapabilities().contains(QLatin1StringView("copy"));
+    mHasMailBoxSupport = sieveCapabilities().contains(QLatin1StringView("mailbox"));
 }
 
 QString SieveActionFileInto::code(QWidget *w) const
@@ -31,13 +31,13 @@ QString SieveActionFileInto::code(QWidget *w) const
     if (mHasCopySupport) {
         const QCheckBox *copy = w->findChild<QCheckBox *>(QStringLiteral("copy"));
         if (copy->isChecked()) {
-            result += QLatin1String(":copy ");
+            result += QLatin1StringView(":copy ");
         }
     }
     if (mHasMailBoxSupport) {
         const QCheckBox *create = w->findChild<QCheckBox *>(QStringLiteral("create"));
         if (create->isChecked()) {
-            result += QLatin1String(":create ");
+            result += QLatin1StringView(":create ");
         }
     }
     return result + QStringLiteral("\"%1\";").arg(text);

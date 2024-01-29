@@ -24,7 +24,7 @@ void SelectComparatorComboBox::initialize(const QStringList &sieveCapabilities)
     addItem(QStringLiteral("i;ascii-casemap"), QStringLiteral("comparator-i;ascii-casemap"));
 
     for (const QString &capability : sieveCapabilities) {
-        if (capability.startsWith(QLatin1String("comparator-"))) {
+        if (capability.startsWith(QLatin1StringView("comparator-"))) {
             QString str(capability);
             str.remove(QStringLiteral("comparator-"));
             addItem(str, capability);
@@ -47,7 +47,7 @@ QString SelectComparatorComboBox::code() const
 
 void SelectComparatorComboBox::setCode(const QString &code, const QString &name, QString &error)
 {
-    const QString completCode = QLatin1String("comparator-") + code;
+    const QString completCode = QLatin1StringView("comparator-") + code;
     const int index = findData(completCode);
     if (index != -1) {
         setCurrentIndex(index);

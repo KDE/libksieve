@@ -108,7 +108,7 @@ void SieveActionWidget::initWidget()
     const QList<KSieveUi::SieveAction *> list = KSieveUi::SieveActionList::actionList(mSieveGraphicalModeWidget);
     QStringList listCapabilities = mSieveGraphicalModeWidget->sieveCapabilities();
     // imapflags was old name of imap4flags but still used.
-    if (listCapabilities.contains(QLatin1String("imap4flags"))) {
+    if (listCapabilities.contains(QLatin1StringView("imap4flags"))) {
         listCapabilities.append(QStringLiteral("imapflags"));
     }
     for (const auto &action : list) {
@@ -141,7 +141,7 @@ void SieveActionWidget::initWidget()
     mCommentButton->setIcon(QIcon::fromTheme(QStringLiteral("view-pim-notes")));
     connect(mCommentButton, &QToolButton::clicked, this, &SieveActionWidget::slotAddComment);
 
-    mComboBox->addItem(QLatin1String(""));
+    mComboBox->addItem(QLatin1StringView(""));
 
     mComboBox->setMaxCount(mComboBox->count());
     mComboBox->setSizePolicy(QSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed));
@@ -216,7 +216,7 @@ void SieveActionWidget::slotActionChanged(int index)
         mCommentButton->setEnabled(true);
         setFilterAction(action->createParamWidget(this));
         // All actions after stop will not execute => don't allow to add more actions.
-        const bool enableAddAction = (action->name() != QLatin1String("stop"));
+        const bool enableAddAction = (action->name() != QLatin1StringView("stop"));
         mAdd->setEnabled(enableAddAction);
     } else {
         mAdd->setEnabled(true);

@@ -294,7 +294,7 @@ public:
 
     void numberArgument(unsigned long number, char quantifier) override
     {
-        const QString txt = QLatin1String("number") + (quantifier ? QStringLiteral(" quantifier=\"%1\"").arg(quantifier) : QString());
+        const QString txt = QLatin1StringView("number") + (quantifier ? QStringLiteral(" quantifier=\"%1\"").arg(quantifier) : QString());
         write(txt.toLatin1(), QString::number(number));
     }
 

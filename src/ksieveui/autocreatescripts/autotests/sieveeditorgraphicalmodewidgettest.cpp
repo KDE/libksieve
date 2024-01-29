@@ -48,9 +48,9 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
     const QStringList capabilities = KSieveUi::Test::fullCapabilitiesList();
 
     w.setSieveCapabilities(capabilities);
-    const QString originalFile = QLatin1String(KSIEVEUI_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral(".siv");
-    const QString refFile = QLatin1String(KSIEVEUI_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral("-ref.siv");
-    const QString generatedFile = QLatin1String(KSIEVEUI_BINARY_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral("-generated.siv");
+    const QString originalFile = QLatin1StringView(KSIEVEUI_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral(".siv");
+    const QString refFile = QLatin1StringView(KSIEVEUI_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral("-ref.siv");
+    const QString generatedFile = QLatin1StringView(KSIEVEUI_BINARY_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral("-generated.siv");
     QDir().mkpath(QStringLiteral(KSIEVEUI_BINARY_DATA_DIR));
     QString script = readSieveFile(originalFile);
     // First parsing

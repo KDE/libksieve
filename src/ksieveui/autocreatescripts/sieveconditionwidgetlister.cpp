@@ -112,7 +112,7 @@ void SieveConditionWidget::initWidget()
     mCommentButton->setIcon(QIcon::fromTheme(QStringLiteral("view-pim-notes")));
     connect(mCommentButton, &QToolButton::clicked, this, &SieveConditionWidget::slotAddComment);
 
-    mComboBox->addItem(QLatin1String(""));
+    mComboBox->addItem(QLatin1StringView(""));
     mLayout->addWidget(mComboBox, 1, 2);
     connect(mComboBox, &QComboBox::activated, this, &SieveConditionWidget::slotConditionChanged);
 
@@ -310,7 +310,7 @@ void SieveConditionWidgetLister::generatedScript(QString &script, int &numberOfC
                 if (inForEveryPartLoop) {
                     script += AutoCreateScriptUtil::indentation();
                 }
-                script += QLatin1String(", ");
+                script += QLatin1StringView(", ");
             }
             script += condition;
             wasFirst = false;

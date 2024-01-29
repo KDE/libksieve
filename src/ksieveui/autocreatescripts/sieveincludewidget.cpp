@@ -110,13 +110,13 @@ void SieveIncludeActionWidget::generatedScript(QString &script)
     if (includeName.isEmpty()) {
         return;
     }
-    script += QLatin1String("include ");
+    script += QLatin1StringView("include ");
     script += mLocation->code() + QLatin1Char(' ');
     if (mOptional->isChecked()) {
-        script += QLatin1String(":optional ");
+        script += QLatin1StringView(":optional ");
     }
     if (mOnce->isChecked()) {
-        script += QLatin1String(":once ");
+        script += QLatin1StringView(":once ");
     }
     script += QStringLiteral("\"%1\";\n").arg(includeName);
 }

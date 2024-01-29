@@ -103,14 +103,14 @@ void SieveEditor::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(800, 600));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySieveEditorGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveEditorGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void SieveEditor::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySieveEditorGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveEditorGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }

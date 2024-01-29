@@ -38,7 +38,7 @@ void SieveScriptDebuggerTextEdit::slotAddDebug()
 {
     QTextCursor cursor(textCursor());
     cursor.insertText(QStringLiteral("debug_log \"DEBUG\";\n"));
-    if (!document()->toPlainText().contains(QLatin1String("vnd.dovecot.debug"))) {
+    if (!document()->toPlainText().contains(QLatin1StringView("vnd.dovecot.debug"))) {
         cursor.movePosition(QTextCursor::Start);
         cursor.insertText(QStringLiteral("require \"vnd.dovecot.debug\";\n"));
     }

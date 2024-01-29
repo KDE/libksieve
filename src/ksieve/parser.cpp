@@ -359,7 +359,7 @@ bool Parser::Impl::parseTestList()
         return false;
     }
 
-    if (token() != Lexer::Special || tokenValue() != QLatin1String("(")) {
+    if (token() != Lexer::Special || tokenValue() != QLatin1StringView("(")) {
         return false;
     }
     if (scriptBuilder()) {
@@ -508,7 +508,7 @@ bool Parser::Impl::parseBlock()
         return false;
     }
 
-    if (token() != Lexer::Special || tokenValue() != QLatin1String("{")) {
+    if (token() != Lexer::Special || tokenValue() != QLatin1StringView("{")) {
         return false;
     }
     if (scriptBuilder()) {
@@ -541,7 +541,7 @@ bool Parser::Impl::parseBlock()
         return false;
     }
 
-    if (token() != Lexer::Special || tokenValue() != QLatin1String("}")) {
+    if (token() != Lexer::Special || tokenValue() != QLatin1StringView("}")) {
         makeError(Error::NonCommandInCommandList);
         return false;
     }
@@ -565,7 +565,7 @@ bool Parser::Impl::parseStringList()
         return false;
     }
 
-    if (token() != Lexer::Special || tokenValue() != QLatin1String("[")) {
+    if (token() != Lexer::Special || tokenValue() != QLatin1StringView("[")) {
         return false;
     }
 

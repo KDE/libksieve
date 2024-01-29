@@ -17,7 +17,7 @@ SieveDateSpinBoxTest::SieveDateSpinBoxTest(QObject *parent)
 void SieveDateSpinBoxTest::shouldHaveDefaultValue()
 {
     KSieveUi::SieveDateSpinBox spinbox;
-    QCOMPARE(spinbox.specialValueText(), QLatin1String("*"));
+    QCOMPARE(spinbox.specialValueText(), QLatin1StringView("*"));
 }
 
 void SieveDateSpinBoxTest::shouldAssignValue_data()

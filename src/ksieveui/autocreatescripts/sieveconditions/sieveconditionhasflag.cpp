@@ -23,7 +23,7 @@ using namespace KSieveUi;
 SieveConditionHasFlag::SieveConditionHasFlag(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
     : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("hasflag"), i18n("Has Flag"), parent)
 {
-    hasVariableSupport = sieveCapabilities().contains(QLatin1String("variables"));
+    hasVariableSupport = sieveCapabilities().contains(QLatin1StringView("variables"));
 }
 
 QWidget *SieveConditionHasFlag::createParamWidget(QWidget *parent) const
@@ -77,12 +77,12 @@ QString SieveConditionHasFlag::code(QWidget *w) const
         const QLineEdit *variableName = w->findChild<QLineEdit *>(QStringLiteral("variablename"));
         const QString variableNameStr = variableName->text();
         if (!variableNameStr.isEmpty()) {
-            result += QLatin1String(" \"") + variableNameStr + QLatin1Char('"');
+            result += QLatin1StringView(" \"") + variableNameStr + QLatin1Char('"');
         }
 
         const AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
         const QString valueStr = value->code();
-        result += QLatin1String(" \"") + valueStr + QLatin1Char('"');
+        result += QLatin1StringView(" \"") + valueStr + QLatin1Char('"');
     }
     return result + AutoCreateScriptUtil::generateConditionComment(comment());
 }
@@ -90,7 +90,7 @@ QString SieveConditionHasFlag::code(QWidget *w) const
 QStringList SieveConditionHasFlag::needRequires(QWidget *w) const
 {
     QStringList lst;
-    if (sieveCapabilities().contains(QLatin1String("imap4flags"))) {
+    if (sieveCapabilities().contains(QLatin1StringView("imap4flags"))) {
         lst << QStringLiteral("imap4flags");
     } else {
         lst << QStringLiteral("imapflags");
@@ -112,9 +112,9 @@ QString SieveConditionHasFlag::serverNeedsCapability() const
 {
     return QStringLiteral("variables");
 #if 0
-    if (sieveCapabilities().contains(QLatin1String("variables"))) {
+    if (sieveCapabilities().contains(QLatin1StringView("variables"))) {
     }
-    if (sieveCapabilities().contains(QLatin1String("imap4flags"))) {
+    if (sieveCapabilities().contains(QLatin1StringView("imap4flags"))) {
         return QStringLiteral("imap4flags");
     } else {
         return QStringLiteral("imapflags");

@@ -105,7 +105,7 @@ void SieveScriptDebuggerDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(800, 600));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySieveScriptDebuggerDialog));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveScriptDebuggerDialog));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
     const QList<int> size{100, 400};
@@ -114,7 +114,7 @@ void SieveScriptDebuggerDialog::readConfig()
 
 void SieveScriptDebuggerDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySieveScriptDebuggerDialog));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveScriptDebuggerDialog));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.writeEntry("Splitter", mSieveScriptDebuggerWidget->splitterSizes());
     group.sync();

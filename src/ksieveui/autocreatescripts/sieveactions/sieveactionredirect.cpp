@@ -21,8 +21,8 @@ using namespace KSieveUi;
 SieveActionRedirect::SieveActionRedirect(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
     : SieveAction(sieveGraphicalModeWidget, QStringLiteral("redirect"), i18n("Redirect"), parent)
 {
-    mHasCopySupport = sieveCapabilities().contains(QLatin1String("copy"));
-    mHasListSupport = sieveCapabilities().contains(QLatin1String("extlists"));
+    mHasCopySupport = sieveCapabilities().contains(QLatin1StringView("copy"));
+    mHasListSupport = sieveCapabilities().contains(QLatin1StringView("extlists"));
 }
 
 QWidget *SieveActionRedirect::createParamWidget(QWidget *parent) const
@@ -101,14 +101,14 @@ QString SieveActionRedirect::code(QWidget *w) const
     if (mHasCopySupport) {
         const QCheckBox *copy = w->findChild<QCheckBox *>(QStringLiteral("copy"));
         if (copy->isChecked()) {
-            result += QLatin1String(":copy ");
+            result += QLatin1StringView(":copy ");
         }
     }
 
     if (mHasListSupport) {
         const QCheckBox *list = w->findChild<QCheckBox *>(QStringLiteral("list"));
         if (list->isChecked()) {
-            result += QLatin1String(":list ");
+            result += QLatin1StringView(":list ");
         }
     }
 

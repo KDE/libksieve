@@ -167,7 +167,7 @@ static inline bool is8Bit(signed char ch)
 
 static QString removeCRLF(const QString &s)
 {
-    const bool CRLF = s.endsWith(QLatin1String("\r\n"));
+    const bool CRLF = s.endsWith(QLatin1StringView("\r\n"));
     const bool LF = !CRLF && s.endsWith(QLatin1Char('\n'));
 
     const int e = CRLF ? 2 : LF ? 1 : 0; // what to chop off at the end
@@ -177,7 +177,7 @@ static QString removeCRLF(const QString &s)
 
 static QString removeDotStuff(const QString &s)
 {
-    return s.startsWith(QLatin1String("..")) ? s.mid(1) : s;
+    return s.startsWith(QLatin1StringView("..")) ? s.mid(1) : s;
 }
 
 namespace KSieve
@@ -639,7 +639,7 @@ MultiLineStart:
         }
     }
 
-    if (lines.back() != QLatin1String(".")) {
+    if (lines.back() != QLatin1StringView(".")) {
         makeError(Error::PrematureEndOfMultiLine, mlBeginLine, mlBeginCol);
         return false;
     }

@@ -84,7 +84,7 @@ void GenerateGlobalScriptJob::writeMasterScript()
 
     QUrl url(mCurrentUrl);
     url = url.adjusted(QUrl::RemoveFilename);
-    url.setPath(url.path() + QLatin1Char('/') + QLatin1String("MASTER"));
+    url.setPath(url.path() + QLatin1Char('/') + QLatin1StringView("MASTER"));
     mMasterJob = KManageSieve::SieveJob::put(url, masterScript, true, true);
     connect(mMasterJob, &KManageSieve::SieveJob::result, this, &GenerateGlobalScriptJob::slotPutMasterResult);
 }
@@ -121,7 +121,7 @@ void GenerateGlobalScriptJob::writeUserScript()
 
     QUrl url(mCurrentUrl);
     url = url.adjusted(QUrl::RemoveFilename);
-    url.setPath(url.path() + QLatin1Char('/') + QLatin1String("USER"));
+    url.setPath(url.path() + QLatin1Char('/') + QLatin1StringView("USER"));
     mUserJob = KManageSieve::SieveJob::put(url, userScript, mForceActivateUserScript, false);
     connect(mUserJob, &KManageSieve::SieveJob::result, this, &GenerateGlobalScriptJob::slotPutUserResult);
 }

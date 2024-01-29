@@ -68,14 +68,14 @@ void SieveEditorGraphicalModeWidget::loadScript(const QString &doc, QString &err
 
 void SieveEditorGraphicalModeWidget::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myAutoCreateScriptDialogGroupNameModeWidget));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myAutoCreateScriptDialogGroupNameModeWidget));
     const QList<int> size{100, 400};
     mSplitter->setSizes(group.readEntry("mainSplitter", size));
 }
 
 void SieveEditorGraphicalModeWidget::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(myAutoCreateScriptDialogGroupNameModeWidget));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myAutoCreateScriptDialogGroupNameModeWidget));
     group.writeEntry("mainSplitter", mSplitter->sizes());
 }
 

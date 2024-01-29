@@ -51,10 +51,10 @@ SieveScriptParsingErrorDialog::~SieveScriptParsingErrorDialog()
 void SieveScriptParsingErrorDialog::setError(QString script, QString error)
 {
     QString str;
-    str = QLatin1String("<b>") + i18n("Sieve script:") + QLatin1String("</b><br>");
-    str += script.replace(QLatin1Char('\n'), QStringLiteral("<br>")) + QLatin1String("<br><br>");
-    str += QLatin1String("<b>") + i18n("Errors reported:") + QLatin1String("</b><br>");
-    str += error.replace(QLatin1Char('\n'), QStringLiteral("<br>")) + QLatin1String("<br>");
+    str = QLatin1StringView("<b>") + i18n("Sieve script:") + QLatin1String("</b><br>");
+    str += script.replace(QLatin1Char('\n'), QStringLiteral("<br>")) + QLatin1StringView("<br><br>");
+    str += QLatin1StringView("<b>") + i18n("Errors reported:") + QLatin1String("</b><br>");
+    str += error.replace(QLatin1Char('\n'), QStringLiteral("<br>")) + QLatin1StringView("<br>");
     mTextEdit->setHtml(str);
 }
 
@@ -62,14 +62,14 @@ void SieveScriptParsingErrorDialog::readConfig()
 {
     create(); // ensure a window is created
     windowHandle()->resize(QSize(800, 600));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySieveScriptParsingErrorDialogGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveScriptParsingErrorDialogGroupName));
     KWindowConfig::restoreWindowSize(windowHandle(), group);
     resize(windowHandle()->size()); // workaround for QTBUG-40584
 }
 
 void SieveScriptParsingErrorDialog::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1String(mySieveScriptParsingErrorDialogGroupName));
+    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveScriptParsingErrorDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
 }
