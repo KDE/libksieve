@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-03 01:36+0000\n"
-"PO-Revision-Date: 2023-10-12 18:27+0300\n"
+"PO-Revision-Date: 2023-11-22 18:50+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -2282,11 +2282,10 @@ msgid "Rename Script"
 msgstr "Muuta skriptin nimeä"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
-#, fuzzy, kde-format
-#| msgid "Edit Script Description"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Script Description"
-msgstr "Muuta skriptin kuvausta"
+msgstr "Muokkaa skriptin kuvausta"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:203
 #, kde-format
