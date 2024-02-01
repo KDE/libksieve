@@ -269,11 +269,11 @@ QString KSieveCore::VacationUtils::composeScript(const Vacation &vacation)
         sVacation += QStringLiteral("\ndiscard;");
         break;
     case VacationUtils::Sendto:
-        sVacation += QLatin1StringView("\nredirect \"") + vacation.mailActionRecipient + QLatin1String("\";");
+        sVacation += QLatin1StringView("\nredirect \"") + vacation.mailActionRecipient + QLatin1StringView("\";");
         break;
     case VacationUtils::CopyTo:
         require << QStringLiteral("copy");
-        sVacation += QLatin1StringView("\nredirect :copy \"") + vacation.mailActionRecipient + QLatin1String("\";");
+        sVacation += QLatin1StringView("\nredirect :copy \"") + vacation.mailActionRecipient + QLatin1StringView("\";");
         break;
     }
 

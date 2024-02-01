@@ -219,7 +219,7 @@ void SieveScriptDebuggerFrontEndWidget::setScript(const QString &script)
 bool SieveScriptDebuggerFrontEndWidget::canAccept() const
 {
     const QString script = mSieveTextEditWidget->textEdit()->toPlainText();
-    if (script.contains(QLatin1StringView("debug_log")) || script.contains(QLatin1String("vnd.dovecot.debug"))) {
+    if (script.contains(QLatin1StringView("debug_log")) || script.contains(QLatin1StringView("vnd.dovecot.debug"))) {
         mSieveScriptDebuggerWarning->setErrorMessage(i18n("Script still contains debug method. Remove it please."));
         return false;
     }

@@ -185,11 +185,11 @@ QString SelectHeadersWidget::headers() const
                 result += QLatin1StringView(", ");
             }
             selected = true;
-            result += QLatin1StringView("\"") + it->data(HeaderId).toString() + QLatin1String("\"");
+            result += QLatin1StringView("\"") + it->data(HeaderId).toString() + QLatin1StringView("\"");
         }
     }
     if (!result.isEmpty()) {
-        result = QLatin1StringView("[ ") + result + QLatin1String(" ]");
+        result = QLatin1StringView("[ ") + result + QLatin1StringView(" ]");
     }
     return result;
 }
@@ -279,7 +279,7 @@ QString SelectHeaderTypeComboBox::code() const
         }
     }
     if (!str.isEmpty() && !str.startsWith(QLatin1Char('['))) {
-        str = QLatin1StringView("\"") + str + QLatin1String("\"");
+        str = QLatin1StringView("\"") + str + QLatin1StringView("\"");
     }
     return str;
 }

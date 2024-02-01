@@ -38,7 +38,7 @@ QMimeData *SieveTemplateListWidget::mimeData(const QList<QListWidgetItem *> &ite
     auto mimeData = new QMimeData();
     QListWidgetItem *item = items.first();
     QString templateStr = item->data(TemplateListWidget::Text).toString();
-    if (!mCapabilities.contains(QLatin1StringView("imap4flags")) && templateStr.contains(QLatin1String("imap4flags"))) {
+    if (!mCapabilities.contains(QLatin1StringView("imap4flags")) && templateStr.contains(QLatin1StringView("imap4flags"))) {
         templateStr.replace(QStringLiteral("imap4flags"), QStringLiteral("imapflags"));
     }
     mimeData->setText(templateStr);

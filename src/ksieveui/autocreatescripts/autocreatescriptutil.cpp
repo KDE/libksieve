@@ -37,7 +37,7 @@ QString AutoCreateScriptUtil::createList(const QString &str, QChar separator, bo
     case 0:
         return {};
     case 1:
-        return QLatin1StringView("\"") + list.first() + QLatin1String("\"");
+        return QLatin1StringView("\"") + list.first() + QLatin1StringView("\"");
     default: {
         const QString result = createList(list, addEndSemiColon);
         return result;
