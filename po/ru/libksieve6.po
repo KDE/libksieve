@@ -6,21 +6,21 @@
 # Alexander Potashev <aspotashev@gmail.com>, 2011, 2014, 2015, 2016, 2019.
 # Julia Dronova <juliette.tux@gmail.com>, 2012.
 # Alexander Lakhin <exclusion@gmail.com>, 2013.
-# Alexander Yavorsky <kekcuha@gmail.com>, 2018, 2019, 2020, 2021.
+# SPDX-FileCopyrightText: 2018, 2019, 2020, 2021, 2024 Alexander Yavorsky <kekcuha@gmail.com>
 # Olesya Gerasimenko <translation-team@basealt.ru>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-03 01:36+0000\n"
-"PO-Revision-Date: 2022-01-28 10:58+0300\n"
-"Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
-"Language-Team: Basealt Translation Team\n"
+"PO-Revision-Date: 2024-02-10 13:16+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.08.3\n"
+"X-Generator: Lokalize 24.01.95\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Environment: kde\n"
@@ -47,8 +47,7 @@ msgstr ""
 "операцию."
 
 #: kmanagesieve/session.cpp:98
-#, fuzzy, kde-format
-#| msgid "Sieve Server Does Not Advertise TLS"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Сервер Sieve не заявляет о поддержке TLS"
@@ -78,15 +77,12 @@ msgid "Sieve Authentication Details"
 msgstr "Параметры аутентификации Sieve"
 
 #: kmanagesieve/session.cpp:259
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please enter your authentication details for your sieve account (usually "
-#| "the same as your email password):"
+#, kde-format
 msgid ""
 "Please enter your authentication details for your sieve account "
 "\"%1\" (usually the same as your email password):"
 msgstr ""
-"Введите параметры аутентификации для учётной записи Sieve (обычно нужно "
+"Введите параметры аутентификации для учётной записи Sieve «%1» (обычно нужно "
 "указать тот же пароль, что и для электронной почты):"
 
 #: kmanagesieve/session.cpp:320
@@ -99,8 +95,7 @@ msgstr ""
 "%2"
 
 #: kmanagesieve/session.cpp:320
-#, fuzzy, kde-format
-#| msgid "Sieve Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr "Управление фильтрами Sieve"
@@ -2295,8 +2290,7 @@ msgstr "Переименовать сценарий"
 
 # BUGME: sentence capitalization is needed for tooltip --aspotashev
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
-#, fuzzy, kde-format
-#| msgid "Edit Script Description"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Script Description"
 msgstr "Редактировать описание сценария"
@@ -2583,8 +2577,7 @@ msgid "You will overwrite script. Do you want to continue?"
 msgstr "Сейчас сценарий будет перезаписан. Продолжить?"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:56
-#, fuzzy, kde-format
-#| msgid "Import Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Script"
 msgstr "Импорт сценария"
@@ -2714,8 +2707,7 @@ msgid "Selected text is not a full sieve script"
 msgstr "Выбранный текст не является законченным сценарием Sieve"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:264
-#, fuzzy, kde-format
-#| msgid "Parsing error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "Ошибка разбора сценария"
@@ -2916,8 +2908,7 @@ msgstr "Выключить"
 #: ksieveui/managesievescriptsdialog.cpp:173
 #: ksieveui/managesievescriptsdialog.cpp:262
 #: ksieveui/widgets/managesievewidget.cpp:512
-#, fuzzy, kde-format
-#| msgid "Sieve Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Ошибка Sieve"
@@ -2933,8 +2924,7 @@ msgid "The Sieve script was successfully uploaded."
 msgstr "Сценарий Sieve успешно сохранён на сервере."
 
 #: ksieveui/managesievescriptsdialog.cpp:252
-#, fuzzy, kde-format
-#| msgid "Sieve Script Upload"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "Сохранение сценария Sieve"
@@ -3204,10 +3194,9 @@ msgid "Do not send vacation replies to spam messages"
 msgstr "Не отправлять ответы на спам"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:217
-#, fuzzy, kde-format
-#| msgid "Only react to mail coming from domain"
+#, kde-format
 msgid "Only react to mail coming from domain:"
-msgstr "Отвечать только на письма из домена"
+msgstr "Отвечать только на письма из домена:"
 
 #: ksieveui/vacation/vacationmanager.cpp:55
 #, kde-format
@@ -3219,8 +3208,7 @@ msgstr ""
 "Изменить его?"
 
 #: ksieveui/vacation/vacationmanager.cpp:57
-#, fuzzy, kde-format
-#| msgid "Out-of-office reply still active"
+#, kde-format
 msgctxt "@title:window"
 msgid "Out-of-office reply still active"
 msgstr "Активен автоответ «Нет на месте»"
@@ -3339,11 +3327,10 @@ msgid "Really delete script \"%1\" from the server?"
 msgstr "Удалить сценарий «%1» с сервера?"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
-#, fuzzy, kde-format
-#| msgid "Delete Sieve Script Confirmation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
-msgstr "Подтверждение удаления сценария"
+msgstr "Подтверждение удаления сценария:"
 
 #: ksieveui/widgets/managesievewidget.cpp:509
 #, kde-format
