@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:36+0000\n"
+"POT-Creation-Date: 2024-02-13 00:38+0000\n"
 "PO-Revision-Date: 2024-01-04 17:19+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "X-Generator: pology\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: kmanagesieve/session.cpp:89
+#: kmanagesieve/session.cpp:90
 #, kde-format
 msgid "Cannot use TLS since the underlying Qt library does not support it."
 msgstr "Ne povas uzi TLS ĉar la subesta Qt-biblioteko ne subtenas ĝin."
 
-#: kmanagesieve/session.cpp:96
+#: kmanagesieve/session.cpp:97
 #, kde-format
 msgid ""
 "TLS encryption was requested, but your Sieve server does not advertise TLS "
@@ -36,23 +36,23 @@ msgstr ""
 "Vi povas tamen elekti provi komenci TLS-intertraktadojn aŭ nuligi la "
 "operacion."
 
-#: kmanagesieve/session.cpp:98
+#: kmanagesieve/session.cpp:99
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Sieve-Servilo Ne Reklamas TLS"
 
-#: kmanagesieve/session.cpp:99
+#: kmanagesieve/session.cpp:100
 #, kde-format
 msgid "&Start TLS nonetheless"
 msgstr "&Startigi TLS tamen"
 
-#: kmanagesieve/session.cpp:103
+#: kmanagesieve/session.cpp:104
 #, kde-format
 msgid "TLS encryption requested, but not supported by server."
 msgstr "TLS-ĉifrado petita, sed ne subtenata de servilo."
 
-#: kmanagesieve/session.cpp:145
+#: kmanagesieve/session.cpp:146
 #, kde-format
 msgid ""
 "The server does not seem to support TLS. Disable TLS if you want to connect "
@@ -61,12 +61,12 @@ msgstr ""
 "La servilo ŝajnas ne subtenas TLS. Malebligu TLS se vi volas konektiĝi sen "
 "ĉifrado."
 
-#: kmanagesieve/session.cpp:257
+#: kmanagesieve/session.cpp:258
 #, kde-format
 msgid "Sieve Authentication Details"
 msgstr "Kribrilaj Aŭtentigaj Detaloj"
 
-#: kmanagesieve/session.cpp:259
+#: kmanagesieve/session.cpp:260
 #, kde-format
 msgid ""
 "Please enter your authentication details for your sieve account "
@@ -75,7 +75,7 @@ msgstr ""
 "Bonvolu enigi viajn aŭtentigajn detalojn por via kribrilkonto \"%1\" (kutime "
 "sama kiel via retpoŝta pasvorto):"
 
-#: kmanagesieve/session.cpp:320
+#: kmanagesieve/session.cpp:326
 #, kde-format
 msgid ""
 "The Sieve server on %1 has reported an error:\n"
@@ -84,7 +84,7 @@ msgstr ""
 "La Sieve-servilo ĉe %1 raportis eraron:\n"
 "%2"
 
-#: kmanagesieve/session.cpp:320
+#: kmanagesieve/session.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Manager"

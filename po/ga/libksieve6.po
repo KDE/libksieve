@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/libksieve.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:36+0000\n"
+"POT-Creation-Date: 2024-02-13 00:38+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
 
-#: kmanagesieve/session.cpp:89
+#: kmanagesieve/session.cpp:90
 #, fuzzy, kde-format
 #| msgid "Can not use TLS since the underlying Qt library does not support it."
 msgid "Cannot use TLS since the underlying Qt library does not support it."
 msgstr "Ní féidir TLS a úsáid toisc nach dtacaíonn an leabharlann Qt leis."
 
-#: kmanagesieve/session.cpp:96
+#: kmanagesieve/session.cpp:97
 #, kde-format
 msgid ""
 "TLS encryption was requested, but your Sieve server does not advertise TLS "
@@ -35,24 +35,24 @@ msgstr ""
 "TLS.\n"
 "Is féidir caibidlí TLS a thosú mar sin féin, nó an oibríocht a chealú."
 
-#: kmanagesieve/session.cpp:98
+#: kmanagesieve/session.cpp:99
 #, fuzzy, kde-format
 #| msgid "Server Does Not Advertise TLS"
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Ní Mhaíonn an Freastalaí go dTacaíonn sé le TLS"
 
-#: kmanagesieve/session.cpp:99
+#: kmanagesieve/session.cpp:100
 #, kde-format
 msgid "&Start TLS nonetheless"
 msgstr "&Tosaigh TLS mar sin féin"
 
-#: kmanagesieve/session.cpp:103
+#: kmanagesieve/session.cpp:104
 #, kde-format
 msgid "TLS encryption requested, but not supported by server."
 msgstr "Iarradh criptiú TLS, ach ní thacaíonn an freastalaí leis."
 
-#: kmanagesieve/session.cpp:145
+#: kmanagesieve/session.cpp:146
 #, kde-format
 msgid ""
 "The server does not seem to support TLS. Disable TLS if you want to connect "
@@ -61,12 +61,12 @@ msgstr ""
 "Dealraíonn sé nach dtacaíonn an freastalaí le TLS.  Díchumasaigh TLS más "
 "mian leat ceangal a bhunú gan chriptiú."
 
-#: kmanagesieve/session.cpp:257
+#: kmanagesieve/session.cpp:258
 #, kde-format
 msgid "Sieve Authentication Details"
 msgstr "Mionsonraí fíordheimhnithe Sieve"
 
-#: kmanagesieve/session.cpp:259
+#: kmanagesieve/session.cpp:260
 #, fuzzy, kde-format
 #| msgid ""
 #| "Please enter your authentication details for your sieve account (usually "
@@ -78,14 +78,14 @@ msgstr ""
 "Iontráil mionsonraí fíordheimhnithe do chuntais sieve (ionann is d'fhocal "
 "faire ríomhphoist de ghnáth):"
 
-#: kmanagesieve/session.cpp:320
+#: kmanagesieve/session.cpp:326
 #, kde-format
 msgid ""
 "The Sieve server on %1 has reported an error:\n"
 "%2"
 msgstr ""
 
-#: kmanagesieve/session.cpp:320
+#: kmanagesieve/session.cpp:326
 #, fuzzy, kde-format
 #| msgid "New Sieve Script"
 msgctxt "@title:window"

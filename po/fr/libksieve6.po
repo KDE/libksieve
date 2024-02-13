@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:36+0000\n"
+"POT-Creation-Date: 2024-02-13 00:38+0000\n"
 "PO-Revision-Date: 2023-11-07 09:32+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -27,14 +27,14 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: kmanagesieve/session.cpp:89
+#: kmanagesieve/session.cpp:90
 #, kde-format
 msgid "Cannot use TLS since the underlying Qt library does not support it."
 msgstr ""
 "Impossible d'utiliser TLS parce que la bibliothèque Qt ne le prend pas en "
 "charge."
 
-#: kmanagesieve/session.cpp:96
+#: kmanagesieve/session.cpp:97
 #, kde-format
 msgid ""
 "TLS encryption was requested, but your Sieve server does not advertise TLS "
@@ -47,23 +47,23 @@ msgstr ""
 "Vous pouvez tenter d'initier des négociations TLS néanmoins ou annuler "
 "l'opération."
 
-#: kmanagesieve/session.cpp:98
+#: kmanagesieve/session.cpp:99
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Le serveur de Sieve n'annonce pas « TLS »"
 
-#: kmanagesieve/session.cpp:99
+#: kmanagesieve/session.cpp:100
 #, kde-format
 msgid "&Start TLS nonetheless"
 msgstr "Démarrer TLS néanmoin&s"
 
-#: kmanagesieve/session.cpp:103
+#: kmanagesieve/session.cpp:104
 #, kde-format
 msgid "TLS encryption requested, but not supported by server."
 msgstr "Chiffrement TLS demandé, mais non pris en charge par le serveur."
 
-#: kmanagesieve/session.cpp:145
+#: kmanagesieve/session.cpp:146
 #, kde-format
 msgid ""
 "The server does not seem to support TLS. Disable TLS if you want to connect "
@@ -72,12 +72,12 @@ msgstr ""
 "Il semble que le serveur ne prenne pas en charge TLS. Désactivez TLS si vous "
 "voulez vous connecter sans chiffrement."
 
-#: kmanagesieve/session.cpp:257
+#: kmanagesieve/session.cpp:258
 #, kde-format
 msgid "Sieve Authentication Details"
 msgstr "Détails d'authentification de Sieve"
 
-#: kmanagesieve/session.cpp:259
+#: kmanagesieve/session.cpp:260
 #, kde-format
 msgid ""
 "Please enter your authentication details for your sieve account "
@@ -87,7 +87,7 @@ msgstr ""
 "« %1 »(habituellement identiques au mot de passe de votre messagerie "
 "électronique) :"
 
-#: kmanagesieve/session.cpp:320
+#: kmanagesieve/session.cpp:326
 #, kde-format
 msgid ""
 "The Sieve server on %1 has reported an error:\n"
@@ -96,7 +96,7 @@ msgstr ""
 "Le serveur « Sieve » sur %1 a signalé une erreur : \n"
 "%2"
 
-#: kmanagesieve/session.cpp:320
+#: kmanagesieve/session.cpp:326
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Manager"

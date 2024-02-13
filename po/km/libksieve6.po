@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:36+0000\n"
+"POT-Creation-Date: 2024-02-13 00:38+0000\n"
 "PO-Revision-Date: 2012-12-28 15:41+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -20,13 +20,13 @@ msgstr ""
 "X-Generator: WordForge 0.8 RC1\n"
 "X-Language: km-KH\n"
 
-#: kmanagesieve/session.cpp:89
+#: kmanagesieve/session.cpp:90
 #, fuzzy, kde-format
 #| msgid "Can not use TLS since the underlying Qt library does not support it."
 msgid "Cannot use TLS since the underlying Qt library does not support it."
 msgstr "មិន​អាច​ប្រើ​ TLS តាំងពី​​បណ្ណាល័យ​ Qt មូលដ្ឋាន​មិនបាន​គាំទ្រ​វាម្លេះ ។"
 
-#: kmanagesieve/session.cpp:96
+#: kmanagesieve/session.cpp:97
 #, kde-format
 msgid ""
 "TLS encryption was requested, but your Sieve server does not advertise TLS "
@@ -38,24 +38,24 @@ msgstr ""
 "ទេ ។​\n"
 "ទោះ​យ៉ាងណា ​អ្នក​អាច​ជ្រើស​ដើម្បី​សាកល្បង​ចាប់ផ្ដើម TLS ជា​ថ្មី ឬ​បោះបង់​ប្រតិបត្តិការ​ក៏បាន ។ "
 
-#: kmanagesieve/session.cpp:98
+#: kmanagesieve/session.cpp:99
 #, fuzzy, kde-format
 #| msgid "Server Does Not Advertise TLS"
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "ម៉ាស៊ីន​បម្រើ​មិន​ប្រកាស​ TLS ឡើយ​"
 
-#: kmanagesieve/session.cpp:99
+#: kmanagesieve/session.cpp:100
 #, kde-format
 msgid "&Start TLS nonetheless"
 msgstr "យ៉ាងណាក៏ដោយ​ចាប់ផ្ដើម TLS"
 
-#: kmanagesieve/session.cpp:103
+#: kmanagesieve/session.cpp:104
 #, kde-format
 msgid "TLS encryption requested, but not supported by server."
 msgstr "បាន​ទាមទារ​ការ​អ៊ិនគ្រីប TLS​ ប៉ុន្តែ​មិន​បាន​គាំ​ដោយ​ម៉ាស៊ីន​បម្រើ​ទេ ។"
 
-#: kmanagesieve/session.cpp:145
+#: kmanagesieve/session.cpp:146
 #, kde-format
 msgid ""
 "The server does not seem to support TLS. Disable TLS if you want to connect "
@@ -63,12 +63,12 @@ msgid ""
 msgstr ""
 "ម៉ាស៊ីន​បម្រើ​ហាក់​​ដូច​ជា​មិន​គាំ​ទ្រ​ TLS ទេ ។​ បិទ​ TLS ប្រសិនបើ​អ្នក​ចង់​តភ្ជាប់​​ដោយ​គ្មាន​ការ​អ៊ិនគ្រីប​ ។"
 
-#: kmanagesieve/session.cpp:257
+#: kmanagesieve/session.cpp:258
 #, kde-format
 msgid "Sieve Authentication Details"
 msgstr "សេចក្ដី​លម្អិត​ការ​ផ្ទៀងផ្ទាត់​ភាព​ត្រឹមត្រូវ​របស់​ ​Sieve​"
 
-#: kmanagesieve/session.cpp:259
+#: kmanagesieve/session.cpp:260
 #, fuzzy, kde-format
 #| msgid ""
 #| "Please enter your authentication details for your sieve account (usually "
@@ -80,14 +80,14 @@ msgstr ""
 "សូម​បញ្ចូល​សេចក្ដី​លម្អិត​ការ​ផ្ទៀងផ្ទាត់​ភាព​ត្រឹមត្រូវ​របស់​អ្នក​សម្រាប់​គណនី​​ sieve (ជាទូទៅ​វា​ដូចគ្នា​ទៅ​នឹង​"
 "ពាក្យសម្ងាត់​អ៊ីមែល​​របស់​អ្នក​) ៖​"
 
-#: kmanagesieve/session.cpp:320
+#: kmanagesieve/session.cpp:326
 #, kde-format
 msgid ""
 "The Sieve server on %1 has reported an error:\n"
 "%2"
 msgstr ""
 
-#: kmanagesieve/session.cpp:320
+#: kmanagesieve/session.cpp:326
 #, fuzzy, kde-format
 #| msgid "New Sieve Script"
 msgctxt "@title:window"
