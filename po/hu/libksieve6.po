@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-03 01:36+0000\n"
-"PO-Revision-Date: 2024-02-12 21:23+0100\n"
+"PO-Revision-Date: 2024-02-13 21:12+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -2965,6 +2965,8 @@ msgid ""
 "\"sieve-test\" was not found on system. Please install it. (See in Dovecot "
 "package)"
 msgstr ""
+"A „sieve-test” nem található, kérjük, telepítse azt. (Lásd a Dovecot "
+"csomagban)"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:16
 #, kde-format
@@ -3079,7 +3081,7 @@ msgstr "Szabadság értesítések &aktiválása"
 #: ksieveui/vacation/vacationeditwidget.cpp:75
 #, kde-format
 msgid "&Subject of the vacation mail:"
-msgstr ""
+msgstr "A vakáció&s levél tárgya:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:107
 #, kde-format
@@ -3112,7 +3114,7 @@ msgstr "Vála&sz küldése a következő címekre:"
 #: ksieveui/vacation/vacationeditwidget.cpp:201
 #, kde-format
 msgid "&Action for incoming mails:"
-msgstr ""
+msgstr "Bejövő levelekre von&atkozó művelet:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:209
 #, kde-format
