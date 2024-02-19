@@ -1,12 +1,12 @@
 # Copyright (C) YEAR Free Software Foundation, Inc.
 #
-# SPDX-FileCopyrightText: 2023 Kishore G <kishore96@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-13 00:38+0000\n"
-"PO-Revision-Date: 2023-12-04 21:02+0530\n"
+"PO-Revision-Date: 2024-02-18 14:45+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: kmanagesieve/session.cpp:90
 #, kde-format
@@ -355,7 +355,7 @@ msgstr ""
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:70
 #, kde-format
 msgid "Script is empty. (%1)"
-msgstr ""
+msgstr "சிறுநிரல் காலியாக உள்ளது. (%1)"
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:78
 #, kde-format
@@ -451,29 +451,29 @@ msgstr ""
 #: ksievecore/vacation/vacationutils.cpp:39
 #, kde-format
 msgid "Out of office till %1"
-msgstr ""
+msgstr "%1 வரை அலுவலகத்தில் இருக்க மாட்டேன்"
 
 #: ksievecore/vacation/vacationutils.cpp:46
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:20
 #, kde-format
 msgid "Keep"
-msgstr ""
+msgstr "வைத்திரு"
 
 #: ksievecore/vacation/vacationutils.cpp:48
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:12
 #, kde-format
 msgid "Discard"
-msgstr ""
+msgstr "கைவிடு"
 
 #: ksievecore/vacation/vacationutils.cpp:50
 #, kde-format
 msgid "Redirect to"
-msgstr ""
+msgstr "இவருக்கு வழிமாற்று"
 
 #: ksievecore/vacation/vacationutils.cpp:52
 #, kde-format
 msgid "Copy to"
-msgstr ""
+msgstr "இவருக்கு நகலிடு"
 
 #: ksievecore/vacation/vacationutils.cpp:66
 #, kde-format
@@ -489,6 +489,16 @@ msgid ""
 "Yours sincerely,\n"
 "-- \"enter your name and email address here\"\n"
 msgstr ""
+"%1 வரை அலுவலகத்தில் இருக்க மாட்டேன்.\n"
+"\n"
+"அவசர தேவைகளுக்கு, திரு. \"மாற்று ஆளை\" தொடர்புகொள்ளவும்.\n"
+"\n"
+"மின்னஞ்சல்: \"மாற்று ஆளின் மின்னஞ்சல் முகவரி\"\n"
+"தொலைபேசி: +49 711 1111 11\n"
+"தொலைநகலி.:  +49 711 1111 12\n"
+"\n"
+"இப்படிக்கு,\n"
+"-- \"உங்கள் பெயரும் மின்னஞ்சல் முகவரியும்\"\n"
 
 #: ksieveui/autocreatescripts/autocreatescriptdialog.cpp:29
 #, kde-format
@@ -504,7 +514,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/autocreatescriptutil.cpp:185
 #, kde-format
 msgid "More information"
-msgstr ""
+msgstr "மேலும் விவரங்கள்"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:32
 #, kde-format
