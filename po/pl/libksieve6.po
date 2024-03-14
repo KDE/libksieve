@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:36+0000\n"
+"POT-Creation-Date: 2024-03-14 03:05+0000\n"
 "PO-Revision-Date: 2023-11-04 12:26+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -2729,7 +2729,7 @@ msgctxt "@title:window"
 msgid "Sieve Server Support"
 msgstr "Obsługa serwera Sieve"
 
-#: ksieveui/editor/sieveinfowidget.cpp:31
+#: ksieveui/editor/sieveinfowidget.cpp:30
 #, kde-format
 msgid "Sieve server supports:"
 msgstr "Serwer sieve obsługuje:"

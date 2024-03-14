@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-01-03 01:36+0000\n"
+"POT-Creation-Date: 2024-03-14 03:05+0000\n"
 "PO-Revision-Date: 2024-01-01 12:34+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2739,7 +2739,7 @@ msgctxt "@title:window"
 msgid "Sieve Server Support"
 msgstr "«Sieve» zerbitzariaren euskarria"
 
-#: ksieveui/editor/sieveinfowidget.cpp:31
+#: ksieveui/editor/sieveinfowidget.cpp:30
 #, kde-format
 msgid "Sieve server supports:"
 msgstr "«Sieve» zerbitzariak onartzen du:"
