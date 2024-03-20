@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-14 03:05+0000\n"
-"PO-Revision-Date: 2024-02-13 21:12+0100\n"
+"PO-Revision-Date: 2024-03-19 11:33+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: kmanagesieve/session.cpp:89
 #, kde-format
@@ -1455,6 +1455,8 @@ msgid ""
 "The date test matches date/time information derived from headers containing "
 "date-time values."
 msgstr ""
+"A dátumteszt a dátum/idő információkra illeszkedik, amelyek a dátum-idő "
+"értékeket tartalmazó fejlécekből származnak."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:24
 #, kde-format
@@ -1467,6 +1469,8 @@ msgid ""
 "The \"envelope\" test is true if the specified part of the [SMTP] (or "
 "equivalent) envelope matches the specified key."
 msgstr ""
+"A „boríték” teszt akkor igaz, ha az [SMTP] (vagy megfelelő) boríték része "
+"megegyezik a megadott kulccsal."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:23
 #, kde-format
@@ -1485,6 +1489,9 @@ msgid ""
 "by the name string and matches it to the values specified in the key-list "
 "argument."
 msgstr ""
+"A környezetteszt lekérdezi a név karakterlánccal megadott elemet a "
+"környezeti információkból, és összeveti a kulcs-lista argumentumban megadott "
+"értékekkel."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:22
 #, kde-format
@@ -1508,6 +1515,9 @@ msgid ""
 "argument exist within the message.  All of the headers must exist or the "
 "test is false."
 msgstr ""
+"A „létezik” teszt akkor igaz, ha a fejlécnevek argumentumban felsorolt "
+"fejlécek léteznek az üzenetben. Az összes fejlécnek léteznie kell, különben "
+"a teszt hamis."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:20
 #, kde-format
@@ -1527,7 +1537,7 @@ msgstr "A „hamis” teszt mindig hamisnak lesz kiértékelve."
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:24
 #, kde-format
 msgid "Has Flag"
-msgstr "Van zászlaja"
+msgstr "Van jelzője"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:46
 #, kde-format
@@ -1544,6 +1554,8 @@ msgid ""
 "The hasflag test evaluates to true if any of the variables matches any flag "
 "name."
 msgstr ""
+"A van jelzője teszt igaz, ha a változók bármelyike megfelel bármelyik jelző "
+"nevének."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:21
 #, kde-format
@@ -1561,6 +1573,8 @@ msgid ""
 "The \"header\" test evaluates to true if the value of any of the named "
 "headers, ignoring leading and trailing whitespace, matches any key."
 msgstr ""
+"A „fejléc” teszt igaz, ha a megnevezett fejlécek bármelyikének értéke, a "
+"kezdő és záró üreshely-karaktereket leszámítva illeszkedik bármelyik kulcsra."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:21
 #, kde-format
@@ -1578,6 +1592,9 @@ msgid ""
 "The \"ihave\" test provides a means for Sieve scripts to test for the "
 "existence of a given extension prior to actually using it."
 msgstr ""
+"Az „ihav”\" teszt lehetőséget biztosít a Sieve parancsfájloknak arra, hogy "
+"teszteljék egy adott kiterjesztés meglétét, mielőtt ténylegesen használnák "
+"azt."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmailboxexists.cpp:20
 #, kde-format
@@ -1591,6 +1608,10 @@ msgid ""
 "names\" argument exist in the mailstore, and each allows the user in whose "
 "context the Sieve script runs to \"deliver\" messages into it."
 msgstr ""
+"A „postaláda létezik” teszt igaz, ha a „mailbox-names” argumentumban "
+"felsorolt összes postafiók létezik a levéltárolóban, és mindegyik lehetővé "
+"teszi a felhasználónak, akinek a kontextusában fut a Sieve parancsfájl, "
+"üzenetek kézbesítését a fiókba."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:24
 #, kde-format
@@ -1618,6 +1639,9 @@ msgid ""
 "list\". The test returns true if the annotation exists and its value matches "
 "any of the keys."
 msgstr ""
+"Ez a teszt lekéri a „mailbox” postafiók „annotation-name” magyarázatának "
+"értékét. A kapott értéket összehasonlítja a kulcslistával. A teszt igaz, ha "
+"a magyarázat létezik, és az értéke illeszkedik a kulcsok bármelyikére."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:22
 #, kde-format
@@ -1886,12 +1910,12 @@ msgstr "Titkos másolat"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
 #, kde-format
 msgid "Resent From"
-msgstr ""
+msgstr "Újraküldve ide"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
 #, kde-format
 msgid "Resent To"
-msgstr ""
+msgstr "Újraküldve innen"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
 #, kde-format
@@ -2395,6 +2419,8 @@ msgid ""
 "Unable to get the info\n"
 "\n"
 msgstr ""
+"Nem lehet lekérni az információkat\n"
+"\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
 #, kde-format
@@ -2629,7 +2655,7 @@ msgstr "Szerkesztő"
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:146
 #, kde-format
 msgid "Show result from \"check syntax\""
-msgstr ""
+msgstr "Szintaxisellenőrzés eredményének megjelenítése"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:234
 #, kde-format
@@ -2639,7 +2665,7 @@ msgstr "Hiba a feldolgozás közben"
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:264
 #, kde-format
 msgid "Selected text is not a full sieve script"
-msgstr ""
+msgstr "A kijelölt szöveg nem egy teljes Sieve parancsfájl"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:264
 #, kde-format
@@ -2660,7 +2686,7 @@ msgstr "Importálás…"
 #: ksieveui/editor/sieveeditorwidget.cpp:52
 #, kde-format
 msgid "Create Rules Graphically..."
-msgstr ""
+msgstr "Szabályok készítése grafikusan…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:66
 #, kde-format
@@ -2670,7 +2696,7 @@ msgstr "Megosztás…"
 #: ksieveui/editor/sieveeditorwidget.cpp:72
 #, kde-format
 msgid "Server Info"
-msgstr ""
+msgstr "Kiszolgálóinformációk"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:116
 #, kde-format
@@ -2850,7 +2876,7 @@ msgstr "Sieve hiba"
 #: ksieveui/managesievescriptsdialog.cpp:206
 #, kde-format
 msgid "Uploading script to server for checking it, please wait..."
-msgstr ""
+msgstr "Parancsfájl feltöltése a kiszolgálóra az ellenőrzéshez, kérem várjon…"
 
 #: ksieveui/managesievescriptsdialog.cpp:252
 #, kde-format
@@ -2905,7 +2931,7 @@ msgstr "Hibakeresés"
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:43
 #, kde-format
 msgid "Email path:"
-msgstr ""
+msgstr "E-mail elérési útja:"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:57
 #, kde-format
@@ -2918,11 +2944,13 @@ msgid ""
 "Activate extension with \"+<name of extension>\", deactivate it with \"-"
 "<name of extension>\""
 msgstr ""
+"Kiterjesztés aktiválása: „+<kiterjesztés neve>”, deaktiválása: „-"
+"<kiterjesztés neve>”"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
 #, kde-format
 msgid "Display check script result..."
-msgstr ""
+msgstr "Parancsfájl-ellenőrzés eredményének megjelenítése…"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
 #, kde-format
@@ -2932,7 +2960,7 @@ msgstr "A parancsfájl szövege üres."
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:147
 #, kde-format
 msgid "Email file must be installed locally."
-msgstr ""
+msgstr "Az e-mail-fájlt helyben kell telepíteni."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:153
 #, kde-format
@@ -2943,6 +2971,8 @@ msgstr "Nem sikerült megnyitni az átmeneti fájlt."
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr ""
+"A parancsfájl még mindig tartalmaz hibakeresési metódust. Kérjük, távolítsa "
+"el."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
 #, kde-format
