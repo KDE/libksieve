@@ -62,7 +62,7 @@ SieveDebugDialog::SieveDebugDialog(KSieveCore::SieveImapPasswordProvider *passwo
     mainLayout->addWidget(buttonBox);
 
     if (!mResourceIdentifier.isEmpty()) {
-        mEdit->editor()->setPlainText(i18n("Collecting diagnostic information about Sieve support...\n\n"));
+        mEdit->editor()->setPlainText(i18n("Collecting diagnostic information about Sieve support…\n\n"));
         QTimer::singleShot(0, this, &SieveDebugDialog::slotDiagNextAccount);
     } else {
         mEdit->editor()->setPlainText(i18n("No IMAP resource found."));
@@ -119,7 +119,7 @@ void SieveDebugDialog::slotDiagNextAccount()
     mShutDownJob->start(30 * 1000); // 30 seconds
     const QString ident = mResourceIdentifier.constFirst();
 
-    mEdit->editor()->appendPlainText(i18n("Collecting data for account '%1'...\n", ident));
+    mEdit->editor()->appendPlainText(i18n("Collecting data for account '%1'…\n", ident));
     mEdit->editor()->appendPlainText(i18n("------------------------------------------------------------\n"));
 
     auto job = new KSieveCore::FindAccountInfoJob(this);

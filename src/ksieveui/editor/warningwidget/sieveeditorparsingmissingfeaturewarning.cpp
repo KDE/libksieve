@@ -17,7 +17,7 @@ SieveEditorParsingMissingFeatureWarning::SieveEditorParsingMissingFeatureWarning
     setVisible(false);
     setCloseButtonVisible(false);
     setMessageType(Error);
-    setText(i18n("Some errors were found during parsing. <a href=\"sieveerrordetails\">(Details...)</a>"));
+    setText(i18n("Some errors were found during parsing. <a href=\"sieveerrordetails\">(Details…)</a>"));
     connect(this, &SieveEditorParsingMissingFeatureWarning::linkActivated, this, &SieveEditorParsingMissingFeatureWarning::slotShowDetails);
 
     switch (type) {

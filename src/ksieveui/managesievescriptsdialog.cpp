@@ -82,11 +82,11 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(KSieveCore::SieveImapPassword
     auto buttonLayout = new QHBoxLayout;
     vlay->addLayout(buttonLayout);
 
-    d->mNewScript = new QPushButton(i18nc("create a new sieve script", "New..."));
+    d->mNewScript = new QPushButton(i18nc("create a new sieve script", "New…"));
     connect(d->mNewScript, &QPushButton::clicked, d->mTreeView, &CustomManageSieveWidget::slotNewScript);
     buttonLayout->addWidget(d->mNewScript);
 
-    d->mEditScript = new QPushButton(i18n("Edit..."));
+    d->mEditScript = new QPushButton(i18n("Edit…"));
     connect(d->mEditScript, &QPushButton::clicked, d->mTreeView, &CustomManageSieveWidget::slotEditScript);
     buttonLayout->addWidget(d->mEditScript);
 
@@ -203,7 +203,7 @@ void ManageSieveScriptsDialog::slotSieveEditorCheckSyntaxClicked()
     if (script.isEmpty()) {
         return;
     }
-    d->mSieveEditor->addNormalMessage(i18n("Uploading script to server for checking it, please wait..."));
+    d->mSieveEditor->addNormalMessage(i18n("Uploading script to server for checking it, please wait…"));
     auto checkScriptJob = new KSieveCore::CheckScriptJob(this);
     connect(checkScriptJob, &KSieveCore::CheckScriptJob::finished, this, &ManageSieveScriptsDialog::slotCheckScriptFinished);
     checkScriptJob->setIsActive(d->mWasActive);

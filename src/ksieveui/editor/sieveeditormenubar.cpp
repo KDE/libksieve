@@ -60,7 +60,7 @@ void SieveEditorMenuBar::initActions()
     mUncommentCodeAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_D));
     connect(mUncommentCodeAction, &QAction::triggered, this, &SieveEditorMenuBar::uncomment);
 
-    mDebugSieveAction = new QAction(i18n("Debug Sieve Script..."), this);
+    mDebugSieveAction = new QAction(i18n("Debug Sieve Script…"), this);
     mDebugSieveAction->setShortcut(QKeySequence(Qt::ALT | Qt::Key_D));
     connect(mDebugSieveAction, &QAction::triggered, this, &SieveEditorMenuBar::debugSieveScript);
 

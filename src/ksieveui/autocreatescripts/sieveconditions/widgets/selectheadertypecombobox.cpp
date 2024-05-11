@@ -26,7 +26,7 @@ namespace
 {
 static const char mySelectFlagsListDialogGroupName[] = "SelectHeadersDialog";
 }
-const KLazyLocalizedString selectMultipleHeaders = kli18n("Select multiple headers...");
+const KLazyLocalizedString selectMultipleHeaders = kli18n("Select multiple headers…");
 SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     : QDialog(parent)
     , mListWidget(new SelectHeadersWidget(this))

@@ -47,9 +47,9 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     toolbar->addAction(mCheckSyntax);
     mSaveAs = KStandardAction::saveAs(this, &SieveEditorWidget::slotSaveAs, this);
     toolbar->addAction(mSaveAs);
-    toolbar->addAction(i18n("Import..."), this, &SieveEditorWidget::slotImport);
+    toolbar->addAction(i18n("Import…"), this, &SieveEditorWidget::slotImport);
 
-    mCreateRulesGraphically = new QAction(i18n("Create Rules Graphically..."), this);
+    mCreateRulesGraphically = new QAction(i18n("Create Rules Graphically…"), this);
     connect(mCreateRulesGraphically, &QAction::triggered, this, &SieveEditorWidget::slotCreateRulesGraphically);
     toolbar->addAction(mCreateRulesGraphically);
     mSwitchMode = new QAction(this);
@@ -63,7 +63,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
         toolbar->addAction(mGenerateXml);
     }
     auto purposeMenu = new SievePurposeMenuWidget(this, this);
-    auto shareAction = new KActionMenu(i18n("Share..."), this);
+    auto shareAction = new KActionMenu(i18n("Share…"), this);
     shareAction->setPopupMode(QToolButton::InstantPopup);
     shareAction->setMenu(purposeMenu->menu());
     shareAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));

@@ -24,7 +24,7 @@ AddressLineEdit::AddressLineEdit(QWidget *parent)
     KLineEditEventHandler::catchReturnKey(mLineEdit);
     mainLayout->addWidget(mLineEdit);
     mLineEdit->setClearButtonEnabled(true);
-    mLineEdit->setPlaceholderText(i18n("Define Email Address..."));
+    mLineEdit->setPlaceholderText(i18n("Define Email Address…"));
     connect(mLineEdit, &QLineEdit::textChanged, this, &AddressLineEdit::slotTextChanged);
     verifyAddress();
 }

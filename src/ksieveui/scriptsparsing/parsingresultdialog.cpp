@@ -37,7 +37,7 @@ ParsingResultDialog::ParsingResultDialog(QWidget *parent)
     auto user1Button = new QPushButton(this);
     buttonBox->addButton(user1Button, QDialogButtonBox::ActionRole);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &ParsingResultDialog::reject);
-    user1Button->setText(i18n("Save As..."));
+    user1Button->setText(i18n("Save As…"));
 
     mTextEdit = new TextCustomEditor::PlainTextEditorWidget(this);
     auto highlighter = new KSyntaxHighlighting::SyntaxHighlighter(mTextEdit->editor()->document());

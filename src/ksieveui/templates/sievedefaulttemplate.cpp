@@ -63,7 +63,7 @@ QList<PimCommon::defaultTemplate> KSieveUi::SieveDefaultTemplate::defaultTemplat
         "}\n");
     lst << tmp;
 
-    tmp.name = i18n("Destroy mail posted by...");
+    tmp.name = i18n("Destroy mail posted by…");
     tmp.text = QStringLiteral(
         "if header :contains [\"from\",\"cc\"]\n"
         "[\n"
