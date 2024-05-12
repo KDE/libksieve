@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 00:38+0000\n"
+"POT-Creation-Date: 2024-05-12 00:39+0000\n"
 "PO-Revision-Date: 2023-01-22 19:34+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1092,12 +1092,12 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
 #, kde-format
-msgid "Define Email Address..."
+msgid "Define Email Address…"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
 #, kde-format
-msgid "Enter message..."
+msgid "Enter message…"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:23
@@ -1143,13 +1143,13 @@ msgstr "Чернова"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
 #, kde-format
-msgid "Click on button for selecting flags..."
+msgid "Click on button for selecting flags…"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
-msgid "..."
-msgstr "..."
+msgid "…"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, kde-format
@@ -1693,8 +1693,10 @@ msgid "Weekday"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
-msgid "Select multiple headers..."
-msgstr ""
+#, fuzzy
+#| msgid "Delete header"
+msgid "Select multiple headers…"
+msgstr "Изтриване на заглавка"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
 #, kde-format
@@ -2173,8 +2175,9 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
-#, kde-format
-msgid "Save As..."
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As…"
 msgstr "Запазване като..."
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
@@ -2214,7 +2217,7 @@ msgstr ""
 #: ksieveui/debug/sievedebugdialog.cpp:65
 #, kde-format
 msgid ""
-"Collecting diagnostic information about Sieve support...\n"
+"Collecting diagnostic information about Sieve support…\n"
 "\n"
 msgstr ""
 
@@ -2232,7 +2235,7 @@ msgstr ""
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
 #, kde-format
-msgid "Collecting data for account '%1'...\n"
+msgid "Collecting data for account '%1'…\n"
 msgstr ""
 
 #: ksieveui/debug/sievedebugdialog.cpp:123
@@ -2381,8 +2384,8 @@ msgid "Uncomment"
 msgstr "Премахване на коментар"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
-#, kde-format
-msgid "Debug Sieve Script..."
+#, fuzzy, kde-format
+msgid "Debug Sieve Script…"
 msgstr "Откриване на грешки в Sieve скрипт..."
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
@@ -2474,18 +2477,21 @@ msgid "Check Syntax"
 msgstr "Проверка на синтаксиса"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
-#, kde-format
-msgid "Import..."
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgid "Import…"
 msgstr "Внасяне..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
-#, kde-format
-msgid "Create Rules Graphically..."
+#, fuzzy, kde-format
+#| msgid "Create Rules Graphically..."
+msgid "Create Rules Graphically…"
 msgstr "Графично създаване на правила..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:66
-#, kde-format
-msgid "Share..."
+#, fuzzy, kde-format
+#| msgid "Share..."
+msgid "Share…"
 msgstr "Споделяне..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
@@ -2538,7 +2544,7 @@ msgstr "Редактиране на правило"
 #, kde-format
 msgid ""
 "Some errors were found during parsing. <a href=\"sieveerrordetails"
-"\">(Details...)</a>"
+"\">(Details…)</a>"
 msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
@@ -2639,13 +2645,14 @@ msgstr "Управление на &Sieve скриптовете..."
 #: ksieveui/managesievescriptsdialog.cpp:85
 #, kde-format
 msgctxt "create a new sieve script"
-msgid "New..."
-msgstr "Нов..."
+msgid "New…"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:89
-#, kde-format
-msgid "Edit..."
-msgstr "Редактиране..."
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgid "Edit…"
+msgstr "Редактиране"
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
@@ -2667,8 +2674,9 @@ msgid "Sieve Error"
 msgstr "Sieve Грешка"
 
 #: ksieveui/managesievescriptsdialog.cpp:206
-#, kde-format
-msgid "Uploading script to server for checking it, please wait..."
+#, fuzzy, kde-format
+#| msgid "Uploading script to server for checking it, please wait..."
+msgid "Uploading script to server for checking it, please wait…"
 msgstr "Качване на скрипт на сървъра за проверка, моля, изчакайте..."
 
 #: ksieveui/managesievescriptsdialog.cpp:252
@@ -2741,7 +2749,7 @@ msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
 #, kde-format
-msgid "Display check script result..."
+msgid "Display check script result…"
 msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
@@ -2818,7 +2826,7 @@ msgstr ""
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:66
 #, kde-format
-msgid "Destroy mail posted by..."
+msgid "Destroy mail posted by…"
 msgstr ""
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:79
@@ -2985,9 +2993,10 @@ msgstr "Не е конфигуриран адрес на Sieve"
 
 #: ksieveui/widgets/managesievetreeview.cpp:16
 #: ksieveui/widgets/managesievetreeview.cpp:30
-#, kde-format
-msgid "No IMAP server configured..."
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "No Sieve URL configured"
+msgid "No IMAP server configured…"
+msgstr "Не е конфигуриран адрес на Sieve"
 
 #: ksieveui/widgets/managesievetreeview.cpp:20
 #, kde-format
@@ -3000,13 +3009,15 @@ msgid "Network down."
 msgstr ""
 
 #: ksieveui/widgets/managesievewidget.cpp:147
-#, kde-format
-msgid "Edit Script..."
+#, fuzzy, kde-format
+#| msgid "Edit Script..."
+msgid "Edit Script…"
 msgstr "Редактиране на скрипт..."
 
 #: ksieveui/widgets/managesievewidget.cpp:148
 #, fuzzy, kde-format
-msgid "Rename Script..."
+#| msgid "Rename Script"
+msgid "Rename Script…"
 msgstr "Преименуване на скрипт"
 
 #: ksieveui/widgets/managesievewidget.cpp:153
@@ -3016,7 +3027,8 @@ msgstr "Деактивиране на скрипт"
 
 #: ksieveui/widgets/managesievewidget.cpp:159
 #, fuzzy, kde-format
-msgid "New Script..."
+#| msgid "New Script"
+msgid "New Script…"
 msgstr "Създаване на скрипт"
 
 #: ksieveui/widgets/managesievewidget.cpp:224
@@ -3082,3 +3094,24 @@ msgstr ""
 #, kde-format
 msgid "Define Folder"
 msgstr ""
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Debug Sieve Script..."
+#~ msgstr "Откриване на грешки в Sieve скрипт..."
+
+#~ msgctxt "create a new sieve script"
+#~ msgid "New..."
+#~ msgstr "Нов..."
+
+#~ msgid "Edit..."
+#~ msgstr "Редактиране..."
+
+#, fuzzy
+#~ msgid "Rename Script..."
+#~ msgstr "Преименуване на скрипт"
+
+#, fuzzy
+#~ msgid "New Script..."
+#~ msgstr "Създаване на скрипт"

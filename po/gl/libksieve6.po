@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 00:38+0000\n"
+"POT-Creation-Date: 2024-05-12 00:39+0000\n"
 "PO-Revision-Date: 2023-11-11 14:08+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -1226,13 +1226,15 @@ msgstr ""
 "nesas situacións."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
-#, kde-format
-msgid "Define Email Address..."
+#, fuzzy, kde-format
+#| msgid "Define Email Address..."
+msgid "Define Email Address…"
 msgstr "Definir un enderezo de correo electrónico…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
-#, kde-format
-msgid "Enter message..."
+#, fuzzy, kde-format
+#| msgid "Enter message..."
+msgid "Enter message…"
 msgstr "Escribir unha mensaxe…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:23
@@ -1277,14 +1279,15 @@ msgid "Draft"
 msgstr "Borrador"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
-#, kde-format
-msgid "Click on button for selecting flags..."
+#, fuzzy, kde-format
+#| msgid "Click on button for selecting flags..."
+msgid "Click on button for selecting flags…"
 msgstr "Prema o botón para seleccionar indicadores…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
-msgid "..."
-msgstr "…"
+msgid "…"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, kde-format
@@ -1884,7 +1887,9 @@ msgid "Weekday"
 msgstr "Dia da semana"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
-msgid "Select multiple headers..."
+#, fuzzy
+#| msgid "Select multiple headers..."
+msgid "Select multiple headers…"
 msgstr "Escoller varias cabeceiras…"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
@@ -2379,9 +2384,10 @@ msgstr "Erro de análise de Sieve"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
-#, kde-format
-msgid "Save As..."
-msgstr "Gardar como…"
+#, fuzzy, kde-format
+#| msgid "Save As"
+msgid "Save As…"
+msgstr "Gardar como"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
 #, kde-format
@@ -2418,9 +2424,12 @@ msgid "Sieve Diagnostics"
 msgstr "Diagnósticos de Sieve"
 
 #: ksieveui/debug/sievedebugdialog.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Collecting diagnostic information about Sieve support...\n"
+#| "\n"
 msgid ""
-"Collecting diagnostic information about Sieve support...\n"
+"Collecting diagnostic information about Sieve support…\n"
 "\n"
 msgstr ""
 "Recollendo a información de diagnóstico sobre a compatibilidade con Sieve…\n"
@@ -2441,8 +2450,9 @@ msgstr ""
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
-#, kde-format
-msgid "Collecting data for account '%1'...\n"
+#, fuzzy, kde-format
+#| msgid "Collecting data for account '%1'...\n"
+msgid "Collecting data for account '%1'…\n"
 msgstr "Estanse a recoller datos para a conta «%1» …\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:123
@@ -2605,9 +2615,11 @@ msgid "Uncomment"
 msgstr "Descomentar"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
-#, kde-format
-msgid "Debug Sieve Script..."
-msgstr "Depurar o guión de Sieve…"
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Debug Sieve Script"
+msgid "Debug Sieve Script…"
+msgstr "Depurar o guión de Sieve"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
 #, kde-format
@@ -2697,18 +2709,21 @@ msgid "Check Syntax"
 msgstr "Comprobar a sintaxe"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
-#, kde-format
-msgid "Import..."
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgid "Import…"
 msgstr "Importar…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
-#, kde-format
-msgid "Create Rules Graphically..."
+#, fuzzy, kde-format
+#| msgid "Create Rules Graphically..."
+msgid "Create Rules Graphically…"
 msgstr "Crear regras graficamente…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:66
-#, kde-format
-msgid "Share..."
+#, fuzzy, kde-format
+#| msgid "Share..."
+msgid "Share…"
 msgstr "Compartir…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
@@ -2758,10 +2773,13 @@ msgid "Edit Rule"
 msgstr "Editar a regra"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:20
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Some errors were found during parsing. <a href=\"sieveerrordetails"
+#| "\">(Details...)</a>"
 msgid ""
 "Some errors were found during parsing. <a href=\"sieveerrordetails"
-"\">(Details...)</a>"
+"\">(Details…)</a>"
 msgstr ""
 "Atopáronse algúns erros durante a análise sintáctica. <a href="
 "\"sieveerrordetails\">(Detalles…)</a>"
@@ -2864,13 +2882,14 @@ msgstr "Xestionar os guións de Sieve"
 #: ksieveui/managesievescriptsdialog.cpp:85
 #, kde-format
 msgctxt "create a new sieve script"
-msgid "New..."
-msgstr "Novo…"
+msgid "New…"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:89
-#, kde-format
-msgid "Edit..."
-msgstr "Editar…"
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgid "Edit…"
+msgstr "Editar"
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
@@ -2891,8 +2910,9 @@ msgid "Sieve Error"
 msgstr "Produciuse un erro de Sieve"
 
 #: ksieveui/managesievescriptsdialog.cpp:206
-#, kde-format
-msgid "Uploading script to server for checking it, please wait..."
+#, fuzzy, kde-format
+#| msgid "Uploading script to server for checking it, please wait..."
+msgid "Uploading script to server for checking it, please wait…"
 msgstr "Enviando o guión ao servidor para revisalo, agarde…"
 
 #: ksieveui/managesievescriptsdialog.cpp:252
@@ -2965,8 +2985,9 @@ msgstr ""
 "complemento>»."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
-#, kde-format
-msgid "Display check script result..."
+#, fuzzy, kde-format
+#| msgid "Display check script result..."
+msgid "Display check script result…"
 msgstr "Amosar o resultado da revisión do guión…"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
@@ -3045,8 +3066,9 @@ msgstr "Encamiñar a mensaxe e engadir unha copia"
 
 # skip-rule: proposta-en-post
 #: ksieveui/templates/sievedefaulttemplate.cpp:66
-#, kde-format
-msgid "Destroy mail posted by..."
+#, fuzzy, kde-format
+#| msgid "Destroy mail posted by..."
+msgid "Destroy mail posted by…"
 msgstr "Destruír o correo de…"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:79
@@ -3224,8 +3246,9 @@ msgstr "Non hai ningún URL de Sieve configurado"
 
 #: ksieveui/widgets/managesievetreeview.cpp:16
 #: ksieveui/widgets/managesievetreeview.cpp:30
-#, kde-format
-msgid "No IMAP server configured..."
+#, fuzzy, kde-format
+#| msgid "No IMAP server configured..."
+msgid "No IMAP server configured…"
 msgstr "Non hai ningún servidor de IMAP configurado…"
 
 #: ksieveui/widgets/managesievetreeview.cpp:20
@@ -3239,14 +3262,16 @@ msgid "Network down."
 msgstr "A rede está caída."
 
 #: ksieveui/widgets/managesievewidget.cpp:147
-#, kde-format
-msgid "Edit Script..."
+#, fuzzy, kde-format
+#| msgid "Edit Script..."
+msgid "Edit Script…"
 msgstr "Editar o guión…"
 
 #: ksieveui/widgets/managesievewidget.cpp:148
-#, kde-format
-msgid "Rename Script..."
-msgstr "Renomear o guión…"
+#, fuzzy, kde-format
+#| msgid "Rename Script"
+msgid "Rename Script…"
+msgstr "Renomear o guión"
 
 #: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
@@ -3254,9 +3279,10 @@ msgid "Deactivate Script"
 msgstr "Desactivar o guión"
 
 #: ksieveui/widgets/managesievewidget.cpp:159
-#, kde-format
-msgid "New Script..."
-msgstr "Novo guión…"
+#, fuzzy, kde-format
+#| msgid "New Script"
+msgid "New Script…"
+msgstr "Novo guión"
 
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format
@@ -3325,6 +3351,31 @@ msgstr "Non foi posíbel obter a lista de guións"
 msgid "Define Folder"
 msgstr "Definir un cartafol"
 
+#~ msgid "..."
+#~ msgstr "…"
+
+#~ msgid "Save As..."
+#~ msgstr "Gardar como…"
+
+#~ msgid "Debug Sieve Script..."
+#~ msgstr "Depurar o guión de Sieve…"
+
+#~ msgid "Share..."
+#~ msgstr "Compartir…"
+
+#~ msgctxt "create a new sieve script"
+#~ msgid "New..."
+#~ msgstr "Novo…"
+
+#~ msgid "Edit..."
+#~ msgstr "Editar…"
+
+#~ msgid "Rename Script..."
+#~ msgstr "Renomear o guión…"
+
+#~ msgid "New Script..."
+#~ msgstr "Novo guión…"
+
 #~ msgid "Share Script..."
 #~ msgstr "Compartir o script…"
 
@@ -3353,11 +3404,6 @@ msgstr "Definir un cartafol"
 #~ msgstr ""
 #~ "Servidor:%1\n"
 #~ "%2"
-
-#, fuzzy
-#~| msgid "Share..."
-#~ msgid "Share"
-#~ msgstr "Compartir…"
 
 #~ msgctxt "Reset the zoom"
 #~ msgid "Reset"
@@ -3422,10 +3468,6 @@ msgstr "Definir un cartafol"
 
 #~ msgid "SieveJob list failed."
 #~ msgstr "A lista de SieveJob fallou."
-
-#~| msgid "Save As..."
-#~ msgid "Save As"
-#~ msgstr "Gardar como"
 
 #~ msgid ""
 #~ "*.siv|sieve files (*.siv)\n"

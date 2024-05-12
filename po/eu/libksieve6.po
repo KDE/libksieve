@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 00:38+0000\n"
+"POT-Creation-Date: 2024-05-12 00:39+0000\n"
 "PO-Revision-Date: 2024-01-01 12:34+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1225,13 +1225,15 @@ msgstr ""
 "zehaztasun handiagoa emateko."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
-#, kde-format
-msgid "Define Email Address..."
+#, fuzzy, kde-format
+#| msgid "Define Email Address..."
+msgid "Define Email Address…"
 msgstr "Definitu e-posta helbidea..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
-#, kde-format
-msgid "Enter message..."
+#, fuzzy, kde-format
+#| msgid "Enter message..."
+msgid "Enter message…"
 msgstr "Sartu mezua..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:23
@@ -1276,14 +1278,15 @@ msgid "Draft"
 msgstr "Zirriborroa"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
-#, kde-format
-msgid "Click on button for selecting flags..."
+#, fuzzy, kde-format
+#| msgid "Click on button for selecting flags..."
+msgid "Click on button for selecting flags…"
 msgstr "Egin klik botoiari banderak hautatzeko..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
-msgid "..."
-msgstr "..."
+msgid "…"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, kde-format
@@ -1887,7 +1890,9 @@ msgid "Weekday"
 msgstr "Asteguna"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
-msgid "Select multiple headers..."
+#, fuzzy
+#| msgid "Select multiple headers..."
+msgid "Select multiple headers…"
 msgstr "Aukeratu goiburu anizkoitzak..."
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
@@ -2381,8 +2386,9 @@ msgstr "«Sieve»ren azterketa sintaktikoaren errorea"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
-#, kde-format
-msgid "Save As..."
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As…"
 msgstr "Gorde honela..."
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
@@ -2420,9 +2426,12 @@ msgid "Sieve Diagnostics"
 msgstr "«Sieve»ren diagnostikoa"
 
 #: ksieveui/debug/sievedebugdialog.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Collecting diagnostic information about Sieve support...\n"
+#| "\n"
 msgid ""
-"Collecting diagnostic information about Sieve support...\n"
+"Collecting diagnostic information about Sieve support…\n"
 "\n"
 msgstr ""
 "«Sieve» euskarriari buruzko diagnostiko informazioa biltzen...\n"
@@ -2443,8 +2452,9 @@ msgstr ""
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
-#, kde-format
-msgid "Collecting data for account '%1'...\n"
+#, fuzzy, kde-format
+#| msgid "Collecting data for account '%1'...\n"
+msgid "Collecting data for account '%1'…\n"
 msgstr "'%1' konturako datuak biltzen...\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:123
@@ -2607,9 +2617,11 @@ msgid "Uncomment"
 msgstr "Kendu iruzkina"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
-#, kde-format
-msgid "Debug Sieve Script..."
-msgstr "Araztu «Sieve» gidoia..."
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Debug Sieve Script"
+msgid "Debug Sieve Script…"
+msgstr "«Sieve» gidoia araztea"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
 #, kde-format
@@ -2699,18 +2711,21 @@ msgid "Check Syntax"
 msgstr "Aztertu sintaxia"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
-#, kde-format
-msgid "Import..."
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgid "Import…"
 msgstr "Inportatu..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
-#, kde-format
-msgid "Create Rules Graphically..."
+#, fuzzy, kde-format
+#| msgid "Create Rules Graphically..."
+msgid "Create Rules Graphically…"
 msgstr "Sortu arauak grafikoki..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:66
-#, kde-format
-msgid "Share..."
+#, fuzzy, kde-format
+#| msgid "Share..."
+msgid "Share…"
 msgstr "Partekatu..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
@@ -2760,10 +2775,13 @@ msgid "Edit Rule"
 msgstr "Editatu araua"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:20
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Some errors were found during parsing. <a href=\"sieveerrordetails"
+#| "\">(Details...)</a>"
 msgid ""
 "Some errors were found during parsing. <a href=\"sieveerrordetails"
-"\">(Details...)</a>"
+"\">(Details…)</a>"
 msgstr ""
 "Azterketa sintaktikoa egitean errore batzuk aurkitu dira. <a href="
 "\"sieveerrordetails\">(Xehetasunak...)</a>"
@@ -2868,13 +2886,14 @@ msgstr "Kudeatu «Sieve» gidoiak"
 #: ksieveui/managesievescriptsdialog.cpp:85
 #, kde-format
 msgctxt "create a new sieve script"
-msgid "New..."
-msgstr "Berria..."
+msgid "New…"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:89
-#, kde-format
-msgid "Edit..."
-msgstr "Editatu..."
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgid "Edit…"
+msgstr "Editatu"
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
@@ -2895,8 +2914,9 @@ msgid "Sieve Error"
 msgstr "«Sieve» errorea"
 
 #: ksieveui/managesievescriptsdialog.cpp:206
-#, kde-format
-msgid "Uploading script to server for checking it, please wait..."
+#, fuzzy, kde-format
+#| msgid "Uploading script to server for checking it, please wait..."
+msgid "Uploading script to server for checking it, please wait…"
 msgstr "Gidoia, aztertzeko, zerbitzarira zama-igotzen, itxoin mesedez..."
 
 #: ksieveui/managesievescriptsdialog.cpp:252
@@ -2969,8 +2989,9 @@ msgstr ""
 "extension>\" erabiliz"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
-#, kde-format
-msgid "Display check script result..."
+#, fuzzy, kde-format
+#| msgid "Display check script result..."
+msgid "Display check script result…"
 msgstr "Azaldu gidoia egiaztatzearen emaitza..."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
@@ -3048,8 +3069,9 @@ msgid "Forward Message and add copy"
 msgstr "Birbidali mezua eta gehitu kopia"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:66
-#, kde-format
-msgid "Destroy mail posted by..."
+#, fuzzy, kde-format
+#| msgid "Destroy mail posted by..."
+msgid "Destroy mail posted by…"
 msgstr "Suntsitu honek bidalitako posta..."
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:79
@@ -3230,8 +3252,9 @@ msgstr "Ez dago konfiguratutako «Sieve» URLrik"
 
 #: ksieveui/widgets/managesievetreeview.cpp:16
 #: ksieveui/widgets/managesievetreeview.cpp:30
-#, kde-format
-msgid "No IMAP server configured..."
+#, fuzzy, kde-format
+#| msgid "No IMAP server configured..."
+msgid "No IMAP server configured…"
 msgstr "Ez dago konfiguratutako IMAP zerbitzaririk..."
 
 #: ksieveui/widgets/managesievetreeview.cpp:20
@@ -3245,14 +3268,16 @@ msgid "Network down."
 msgstr "Sarea erorita."
 
 #: ksieveui/widgets/managesievewidget.cpp:147
-#, kde-format
-msgid "Edit Script..."
+#, fuzzy, kde-format
+#| msgid "Edit Script..."
+msgid "Edit Script…"
 msgstr "Editatu gidoia..."
 
 #: ksieveui/widgets/managesievewidget.cpp:148
-#, kde-format
-msgid "Rename Script..."
-msgstr "Berrizendatu gidoia..."
+#, fuzzy, kde-format
+#| msgid "Rename Script"
+msgid "Rename Script…"
+msgstr "Berrizendatu gidoia"
 
 #: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
@@ -3260,9 +3285,10 @@ msgid "Deactivate Script"
 msgstr "Desaktibatu gidoia"
 
 #: ksieveui/widgets/managesievewidget.cpp:159
-#, kde-format
-msgid "New Script..."
-msgstr "Gidoi berria..."
+#, fuzzy, kde-format
+#| msgid "New Script"
+msgid "New Script…"
+msgstr "Gidoi berria"
 
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format
@@ -3330,6 +3356,25 @@ msgstr "Gidoien zerrenda eskuratzea huts egin du"
 #, kde-format
 msgid "Define Folder"
 msgstr "Definitu karpeta"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Debug Sieve Script..."
+#~ msgstr "Araztu «Sieve» gidoia..."
+
+#~ msgctxt "create a new sieve script"
+#~ msgid "New..."
+#~ msgstr "Berria..."
+
+#~ msgid "Edit..."
+#~ msgstr "Editatu..."
+
+#~ msgid "Rename Script..."
+#~ msgstr "Berrizendatu gidoia..."
+
+#~ msgid "New Script..."
+#~ msgstr "Gidoi berria..."
 
 #, fuzzy
 #~| msgid "Unknown error"

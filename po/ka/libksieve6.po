@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 00:38+0000\n"
+"POT-Creation-Date: 2024-05-12 00:39+0000\n"
 "PO-Revision-Date: 2023-11-05 06:02+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1205,13 +1205,15 @@ msgstr ""
 "სიზუსტეს გაძლევთ."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
-#, kde-format
-msgid "Define Email Address..."
+#, fuzzy, kde-format
+#| msgid "Define Email Address..."
+msgid "Define Email Address…"
 msgstr "ელფოსტის მისამართის აღწერა..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
-#, kde-format
-msgid "Enter message..."
+#, fuzzy, kde-format
+#| msgid "Enter message..."
+msgid "Enter message…"
 msgstr "შეიყვანეთ შეტყობინება..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:23
@@ -1256,14 +1258,15 @@ msgid "Draft"
 msgstr "მონახაზი"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
-#, kde-format
-msgid "Click on button for selecting flags..."
+#, fuzzy, kde-format
+#| msgid "Click on button for selecting flags..."
+msgid "Click on button for selecting flags…"
 msgstr "ალმების ასარჩევად დააწკაპუნეთ ღილაკზე..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
-msgid "..."
-msgstr "..."
+msgid "…"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, kde-format
@@ -1863,7 +1866,9 @@ msgid "Weekday"
 msgstr "კვირის დღე"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
-msgid "Select multiple headers..."
+#, fuzzy
+#| msgid "Select multiple headers..."
+msgid "Select multiple headers…"
 msgstr "აირჩიეტ ბევრი თავსართი..."
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
@@ -2355,8 +2360,9 @@ msgstr "Sieve-ის დამუშავების შედომა"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
-#, kde-format
-msgid "Save As..."
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As…"
 msgstr "შენახვა, როგორც..."
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
@@ -2394,9 +2400,12 @@ msgid "Sieve Diagnostics"
 msgstr "Sieve-ის დიაგნოსტიკა"
 
 #: ksieveui/debug/sievedebugdialog.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Collecting diagnostic information about Sieve support...\n"
+#| "\n"
 msgid ""
-"Collecting diagnostic information about Sieve support...\n"
+"Collecting diagnostic information about Sieve support…\n"
 "\n"
 msgstr ""
 "დიაგნოსტიკური ინფორმაციის მოგროვება Sieve-ის მხარდაჭერის შესახებ...\n"
@@ -2417,8 +2426,9 @@ msgstr ""
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
-#, kde-format
-msgid "Collecting data for account '%1'...\n"
+#, fuzzy, kde-format
+#| msgid "Collecting data for account '%1'...\n"
+msgid "Collecting data for account '%1'…\n"
 msgstr "მიმდინარეობს მონაცემების მოგროვება ანგარიშისთვის '%1'...\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:123
@@ -2579,9 +2589,11 @@ msgid "Uncomment"
 msgstr "კომენტარის მოცილება"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
-#, kde-format
-msgid "Debug Sieve Script..."
-msgstr "Sieve-ის სკრიპტის გამართვა..."
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Debug Sieve Script"
+msgid "Debug Sieve Script…"
+msgstr "Sieve-ის სკრიპტის გამართვა"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
 #, kde-format
@@ -2671,18 +2683,21 @@ msgid "Check Syntax"
 msgstr "სინტაქსის შემოწმება"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
-#, kde-format
-msgid "Import..."
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgid "Import…"
 msgstr "შემოტანა..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
-#, kde-format
-msgid "Create Rules Graphically..."
+#, fuzzy, kde-format
+#| msgid "Create Rules Graphically..."
+msgid "Create Rules Graphically…"
 msgstr "წესების გრაფიკულად შექმნა..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:66
-#, kde-format
-msgid "Share..."
+#, fuzzy, kde-format
+#| msgid "Share..."
+msgid "Share…"
 msgstr "გაზიარება..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
@@ -2732,10 +2747,13 @@ msgid "Edit Rule"
 msgstr "წესის ჩასწორება"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:20
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Some errors were found during parsing. <a href=\"sieveerrordetails"
+#| "\">(Details...)</a>"
 msgid ""
 "Some errors were found during parsing. <a href=\"sieveerrordetails"
-"\">(Details...)</a>"
+"\">(Details…)</a>"
 msgstr ""
 "დამუშავებისას აღმოჩენილია შეცდომები. <a href=\"sieveerrordetails"
 "\">(დეტალები...)</a>"
@@ -2838,13 +2856,14 @@ msgstr "Sieve-ის სკრიპტების მართვა"
 #: ksieveui/managesievescriptsdialog.cpp:85
 #, kde-format
 msgctxt "create a new sieve script"
-msgid "New..."
-msgstr "ახალი..."
+msgid "New…"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:89
-#, kde-format
-msgid "Edit..."
-msgstr "ჩასწორება..."
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgid "Edit…"
+msgstr "ჩასწორება"
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
@@ -2865,8 +2884,9 @@ msgid "Sieve Error"
 msgstr "Sieve -ის შეცდომა"
 
 #: ksieveui/managesievescriptsdialog.cpp:206
-#, kde-format
-msgid "Uploading script to server for checking it, please wait..."
+#, fuzzy, kde-format
+#| msgid "Uploading script to server for checking it, please wait..."
+msgid "Uploading script to server for checking it, please wait…"
 msgstr "სკრიპტის სერვერზე შესამოწმებლად ატვირთვა. მოითმინეთ..."
 
 #: ksieveui/managesievescriptsdialog.cpp:252
@@ -2939,8 +2959,9 @@ msgstr ""
 "<name of extension>\""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
-#, kde-format
-msgid "Display check script result..."
+#, fuzzy, kde-format
+#| msgid "Display check script result..."
+msgid "Display check script result…"
 msgstr "სკრიპტის შემოწმების შედეგის ჩვენება..."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
@@ -3018,8 +3039,9 @@ msgid "Forward Message and add copy"
 msgstr "შეტყობინების გადაგზავნა და ასლის დამატება"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:66
-#, kde-format
-msgid "Destroy mail posted by..."
+#, fuzzy, kde-format
+#| msgid "Destroy mail posted by..."
+msgid "Destroy mail posted by…"
 msgstr "ელფოსტის განადგურება, რომელიც დაპოსტა..."
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:79
@@ -3197,8 +3219,9 @@ msgstr "Sieve-ის URL-ი მორგებული არაა"
 
 #: ksieveui/widgets/managesievetreeview.cpp:16
 #: ksieveui/widgets/managesievetreeview.cpp:30
-#, kde-format
-msgid "No IMAP server configured..."
+#, fuzzy, kde-format
+#| msgid "No IMAP server configured..."
+msgid "No IMAP server configured…"
 msgstr "IMAP სერვერი ჯერ მორგებული არაა..."
 
 #: ksieveui/widgets/managesievetreeview.cpp:20
@@ -3212,14 +3235,16 @@ msgid "Network down."
 msgstr "ქსელი გათიშულია."
 
 #: ksieveui/widgets/managesievewidget.cpp:147
-#, kde-format
-msgid "Edit Script..."
+#, fuzzy, kde-format
+#| msgid "Edit Script..."
+msgid "Edit Script…"
 msgstr "სკრიპტის ჩასწორება..."
 
 #: ksieveui/widgets/managesievewidget.cpp:148
-#, kde-format
-msgid "Rename Script..."
-msgstr "სკრიპტის სახელის გადარქმევა..."
+#, fuzzy, kde-format
+#| msgid "Rename Script"
+msgid "Rename Script…"
+msgstr "სკრიპტის სახელის გადარქმევა"
 
 #: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
@@ -3227,9 +3252,10 @@ msgid "Deactivate Script"
 msgstr "სკრიპტის დეაქტივაცია"
 
 #: ksieveui/widgets/managesievewidget.cpp:159
-#, kde-format
-msgid "New Script..."
-msgstr "ახალი სკრიპტი..."
+#, fuzzy, kde-format
+#| msgid "New Script"
+msgid "New Script…"
+msgstr "ახალი სკრიპტი"
 
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format
@@ -3297,3 +3323,22 @@ msgstr "სკრიპტების სიის გამოთხოვა 
 #, kde-format
 msgid "Define Folder"
 msgstr "საქაღალდის აღწერა"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Debug Sieve Script..."
+#~ msgstr "Sieve-ის სკრიპტის გამართვა..."
+
+#~ msgctxt "create a new sieve script"
+#~ msgid "New..."
+#~ msgstr "ახალი..."
+
+#~ msgid "Edit..."
+#~ msgstr "ჩასწორება..."
+
+#~ msgid "Rename Script..."
+#~ msgstr "სკრიპტის სახელის გადარქმევა..."
+
+#~ msgid "New Script..."
+#~ msgstr "ახალი სკრიპტი..."

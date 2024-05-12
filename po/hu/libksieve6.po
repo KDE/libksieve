@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 00:38+0000\n"
+"POT-Creation-Date: 2024-05-12 00:39+0000\n"
 "PO-Revision-Date: 2024-03-19 11:33+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1213,13 +1213,15 @@ msgstr ""
 "beállításért ilyen esetekre."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
-#, kde-format
-msgid "Define Email Address..."
+#, fuzzy, kde-format
+#| msgid "Define Email Address..."
+msgid "Define Email Address…"
 msgstr "E-mail cím megadása…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
-#, kde-format
-msgid "Enter message..."
+#, fuzzy, kde-format
+#| msgid "Enter message..."
+msgid "Enter message…"
 msgstr "Üzenet megadása…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:23
@@ -1264,14 +1266,15 @@ msgid "Draft"
 msgstr "Vázlat"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
-#, kde-format
-msgid "Click on button for selecting flags..."
+#, fuzzy, kde-format
+#| msgid "Click on button for selecting flags..."
+msgid "Click on button for selecting flags…"
 msgstr "Kattintson a gombra a jelzők kiválasztásához…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
-msgid "..."
-msgstr "…"
+msgid "…"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, kde-format
@@ -1868,7 +1871,9 @@ msgid "Weekday"
 msgstr "Hétköznap"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
-msgid "Select multiple headers..."
+#, fuzzy
+#| msgid "Select multiple headers..."
+msgid "Select multiple headers…"
 msgstr "Több fejléc kiválasztása…"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
@@ -2361,8 +2366,9 @@ msgstr "Sieve feldolgozási hiba"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
-#, kde-format
-msgid "Save As..."
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As…"
 msgstr "Mentés másként…"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
@@ -2400,9 +2406,12 @@ msgid "Sieve Diagnostics"
 msgstr "Sieve diagnosztika"
 
 #: ksieveui/debug/sievedebugdialog.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Collecting diagnostic information about Sieve support...\n"
+#| "\n"
 msgid ""
-"Collecting diagnostic information about Sieve support...\n"
+"Collecting diagnostic information about Sieve support…\n"
 "\n"
 msgstr ""
 "Diagnosztikai információk gyűjtése a Sieve támogatásról…\n"
@@ -2423,8 +2432,9 @@ msgstr ""
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
-#, kde-format
-msgid "Collecting data for account '%1'...\n"
+#, fuzzy, kde-format
+#| msgid "Collecting data for account '%1'...\n"
+msgid "Collecting data for account '%1'…\n"
 msgstr "Adatok gyűjtése a(z) „%1” azonosítóhoz…\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:123
@@ -2587,9 +2597,11 @@ msgid "Uncomment"
 msgstr "Kikommentez"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
-#, kde-format
-msgid "Debug Sieve Script..."
-msgstr "Sieve parancsfájl hibakeresése…"
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Debug Sieve Script"
+msgid "Debug Sieve Script…"
+msgstr "Sieve parancsfájl hibakeresése"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
 #, kde-format
@@ -2679,18 +2691,21 @@ msgid "Check Syntax"
 msgstr "Szintakszisellenőrzés"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
-#, kde-format
-msgid "Import..."
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgid "Import…"
 msgstr "Importálás…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
-#, kde-format
-msgid "Create Rules Graphically..."
+#, fuzzy, kde-format
+#| msgid "Create Rules Graphically..."
+msgid "Create Rules Graphically…"
 msgstr "Szabályok készítése grafikusan…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:66
-#, kde-format
-msgid "Share..."
+#, fuzzy, kde-format
+#| msgid "Share..."
+msgid "Share…"
 msgstr "Megosztás…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
@@ -2740,10 +2755,13 @@ msgid "Edit Rule"
 msgstr "Szabály szerkesztése"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:20
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Some errors were found during parsing. <a href=\"sieveerrordetails"
+#| "\">(Details...)</a>"
 msgid ""
 "Some errors were found during parsing. <a href=\"sieveerrordetails"
-"\">(Details...)</a>"
+"\">(Details…)</a>"
 msgstr ""
 "Hibák találhatók a feldolgozás során. <a href=\"sieveerrordetails"
 "\">(Részletek…)</a>"
@@ -2847,13 +2865,14 @@ msgstr "Sieve parancsfájlok kezelése"
 #: ksieveui/managesievescriptsdialog.cpp:85
 #, kde-format
 msgctxt "create a new sieve script"
-msgid "New..."
-msgstr "Új…"
+msgid "New…"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:89
-#, kde-format
-msgid "Edit..."
-msgstr "Szerkesztés…"
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgid "Edit…"
+msgstr "Szerkesztés"
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
@@ -2874,8 +2893,9 @@ msgid "Sieve Error"
 msgstr "Sieve hiba"
 
 #: ksieveui/managesievescriptsdialog.cpp:206
-#, kde-format
-msgid "Uploading script to server for checking it, please wait..."
+#, fuzzy, kde-format
+#| msgid "Uploading script to server for checking it, please wait..."
+msgid "Uploading script to server for checking it, please wait…"
 msgstr "Parancsfájl feltöltése a kiszolgálóra az ellenőrzéshez, kérem várjon…"
 
 #: ksieveui/managesievescriptsdialog.cpp:252
@@ -2948,8 +2968,9 @@ msgstr ""
 "<kiterjesztés neve>”"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
-#, kde-format
-msgid "Display check script result..."
+#, fuzzy, kde-format
+#| msgid "Display check script result..."
+msgid "Display check script result…"
 msgstr "Parancsfájl-ellenőrzés eredményének megjelenítése…"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
@@ -3029,8 +3050,9 @@ msgid "Forward Message and add copy"
 msgstr "Üzenet továbbítása és másolat hozzáadása"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:66
-#, kde-format
-msgid "Destroy mail posted by..."
+#, fuzzy, kde-format
+#| msgid "Destroy mail posted by..."
+msgid "Destroy mail posted by…"
 msgstr "Levelek megsemmisítése a következőtől…"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:79
@@ -3210,8 +3232,9 @@ msgstr "Nincs beállítva Sieve URL"
 
 #: ksieveui/widgets/managesievetreeview.cpp:16
 #: ksieveui/widgets/managesievetreeview.cpp:30
-#, kde-format
-msgid "No IMAP server configured..."
+#, fuzzy, kde-format
+#| msgid "No IMAP server configured..."
+msgid "No IMAP server configured…"
 msgstr "Nincs beállítva IMAP kiszolgáló…"
 
 #: ksieveui/widgets/managesievetreeview.cpp:20
@@ -3225,14 +3248,16 @@ msgid "Network down."
 msgstr "A hálózat leállt."
 
 #: ksieveui/widgets/managesievewidget.cpp:147
-#, kde-format
-msgid "Edit Script..."
+#, fuzzy, kde-format
+#| msgid "Edit Script..."
+msgid "Edit Script…"
 msgstr "Parancsfájl szerkesztése…"
 
 #: ksieveui/widgets/managesievewidget.cpp:148
-#, kde-format
-msgid "Rename Script..."
-msgstr "Parancsfájl átnevezése…"
+#, fuzzy, kde-format
+#| msgid "Rename Script"
+msgid "Rename Script…"
+msgstr "Parancsfájl átnevezése"
 
 #: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
@@ -3240,9 +3265,10 @@ msgid "Deactivate Script"
 msgstr "Parancsfájl deaktiválása"
 
 #: ksieveui/widgets/managesievewidget.cpp:159
-#, kde-format
-msgid "New Script..."
-msgstr "Új parancsfájl…"
+#, fuzzy, kde-format
+#| msgid "New Script"
+msgid "New Script…"
+msgstr "Új parancsfájl"
 
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format
@@ -3310,6 +3336,28 @@ msgstr "Nem sikerült letölteni a parancsfájlok listáját"
 #, kde-format
 msgid "Define Folder"
 msgstr "Mappa megadása"
+
+#~ msgid "..."
+#~ msgstr "…"
+
+#~ msgid "Save As..."
+#~ msgstr "Mentés másként…"
+
+#~ msgid "Debug Sieve Script..."
+#~ msgstr "Sieve parancsfájl hibakeresése…"
+
+#~ msgctxt "create a new sieve script"
+#~ msgid "New..."
+#~ msgstr "Új…"
+
+#~ msgid "Edit..."
+#~ msgstr "Szerkesztés…"
+
+#~ msgid "Rename Script..."
+#~ msgstr "Parancsfájl átnevezése…"
+
+#~ msgid "New Script..."
+#~ msgstr "Új parancsfájl…"
 
 #, fuzzy
 #~| msgid "New Script..."
@@ -3395,11 +3443,6 @@ msgstr "Mappa megadása"
 
 #~ msgid "Autogenerate Script..."
 #~ msgstr "Parancsfájl automatikus előállítása…"
-
-#, fuzzy
-#~| msgid "Save As..."
-#~ msgid "Save As"
-#~ msgstr "Mentés másként…"
 
 #~ msgid ""
 #~ "*.siv|sieve files (*.siv)\n"

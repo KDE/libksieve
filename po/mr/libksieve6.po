@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 00:38+0000\n"
+"POT-Creation-Date: 2024-05-12 00:39+0000\n"
 "PO-Revision-Date: 2013-04-13 16:36+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -1086,12 +1086,12 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
 #, kde-format
-msgid "Define Email Address..."
+msgid "Define Email Address…"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
 #, kde-format
-msgid "Enter message..."
+msgid "Enter message…"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:23
@@ -1140,13 +1140,13 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
 #, kde-format
-msgid "Click on button for selecting flags..."
+msgid "Click on button for selecting flags…"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
-msgid "..."
-msgstr "..."
+msgid "…"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, fuzzy, kde-format
@@ -1698,8 +1698,10 @@ msgid "Weekday"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
-msgid "Select multiple headers..."
-msgstr ""
+#, fuzzy
+#| msgid "Delete template"
+msgid "Select multiple headers…"
+msgstr "नमूना काढून टाका"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
 #, fuzzy, kde-format
@@ -2201,7 +2203,7 @@ msgstr "सीव्ह स्क्रिप्ट"
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
 #, kde-format
-msgid "Save As..."
+msgid "Save As…"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
@@ -2244,7 +2246,7 @@ msgstr "सीव्ह स्क्रिप्ट"
 #: ksieveui/debug/sievedebugdialog.cpp:65
 #, kde-format
 msgid ""
-"Collecting diagnostic information about Sieve support...\n"
+"Collecting diagnostic information about Sieve support…\n"
 "\n"
 msgstr ""
 
@@ -2262,7 +2264,7 @@ msgstr ""
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
 #, kde-format
-msgid "Collecting data for account '%1'...\n"
+msgid "Collecting data for account '%1'…\n"
 msgstr ""
 
 #: ksieveui/debug/sievedebugdialog.cpp:123
@@ -2424,7 +2426,7 @@ msgstr ""
 #: ksieveui/editor/sieveeditormenubar.cpp:63
 #, fuzzy, kde-format
 #| msgid "Sieve Script"
-msgid "Debug Sieve Script..."
+msgid "Debug Sieve Script…"
 msgstr "सीव्ह स्क्रिप्ट"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
@@ -2520,18 +2522,19 @@ msgid "Check Syntax"
 msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
-#, kde-format
-msgid "Import..."
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgid "Import…"
 msgstr "आयात..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
 #, kde-format
-msgid "Create Rules Graphically..."
+msgid "Create Rules Graphically…"
 msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:66
 #, kde-format
-msgid "Share..."
+msgid "Share…"
 msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
@@ -2587,7 +2590,7 @@ msgstr "संपादन"
 #, kde-format
 msgid ""
 "Some errors were found during parsing. <a href=\"sieveerrordetails"
-"\">(Details...)</a>"
+"\">(Details…)</a>"
 msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
@@ -2689,13 +2692,14 @@ msgstr "सीव्ह स्क्रिप्ट"
 #: ksieveui/managesievescriptsdialog.cpp:85
 #, kde-format
 msgctxt "create a new sieve script"
-msgid "New..."
-msgstr "नवीन..."
+msgid "New…"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:89
-#, kde-format
-msgid "Edit..."
-msgstr "संपादन...."
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgid "Edit…"
+msgstr "संपादन"
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
@@ -2718,7 +2722,7 @@ msgstr "सीव्ह त्रुटी"
 
 #: ksieveui/managesievescriptsdialog.cpp:206
 #, kde-format
-msgid "Uploading script to server for checking it, please wait..."
+msgid "Uploading script to server for checking it, please wait…"
 msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:252
@@ -2790,7 +2794,7 @@ msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
 #, kde-format
-msgid "Display check script result..."
+msgid "Display check script result…"
 msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
@@ -2869,7 +2873,7 @@ msgstr ""
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:66
 #, kde-format
-msgid "Destroy mail posted by..."
+msgid "Destroy mail posted by…"
 msgstr ""
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:79
@@ -3040,7 +3044,7 @@ msgstr ""
 #: ksieveui/widgets/managesievetreeview.cpp:16
 #: ksieveui/widgets/managesievetreeview.cpp:30
 #, kde-format
-msgid "No IMAP server configured..."
+msgid "No IMAP server configured…"
 msgstr ""
 
 #: ksieveui/widgets/managesievetreeview.cpp:20
@@ -3054,14 +3058,15 @@ msgid "Network down."
 msgstr ""
 
 #: ksieveui/widgets/managesievewidget.cpp:147
-#, kde-format
-msgid "Edit Script..."
+#, fuzzy, kde-format
+#| msgid "Edit Script..."
+msgid "Edit Script…"
 msgstr "स्क्रिप्ट संपादित करा..."
 
 #: ksieveui/widgets/managesievewidget.cpp:148
 #, fuzzy, kde-format
 #| msgid "Sieve Script"
-msgid "Rename Script..."
+msgid "Rename Script…"
 msgstr "सीव्ह स्क्रिप्ट"
 
 #: ksieveui/widgets/managesievewidget.cpp:153
@@ -3070,9 +3075,10 @@ msgid "Deactivate Script"
 msgstr ""
 
 #: ksieveui/widgets/managesievewidget.cpp:159
-#, kde-format
-msgid "New Script..."
-msgstr "नवीन स्क्रिप्ट..."
+#, fuzzy, kde-format
+#| msgid "New Script"
+msgid "New Script…"
+msgstr "नवीन स्क्रिप्ट"
 
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format
@@ -3140,6 +3146,29 @@ msgstr ""
 #| msgid "Create sieve filter"
 msgid "Define Folder"
 msgstr "सीव्ह गाळणी निर्माण करा"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#, fuzzy
+#~| msgid "Sieve Script"
+#~ msgid "Debug Sieve Script..."
+#~ msgstr "सीव्ह स्क्रिप्ट"
+
+#~ msgctxt "create a new sieve script"
+#~ msgid "New..."
+#~ msgstr "नवीन..."
+
+#~ msgid "Edit..."
+#~ msgstr "संपादन...."
+
+#, fuzzy
+#~| msgid "Sieve Script"
+#~ msgid "Rename Script..."
+#~ msgstr "सीव्ह स्क्रिप्ट"
+
+#~ msgid "New Script..."
+#~ msgstr "नवीन स्क्रिप्ट..."
 
 #, fuzzy
 #~| msgid "New Script..."

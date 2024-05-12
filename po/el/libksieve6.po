@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-14 00:38+0000\n"
+"POT-Creation-Date: 2024-05-12 00:39+0000\n"
 "PO-Revision-Date: 2014-03-26 01:10+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1181,12 +1181,12 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
 #, kde-format
-msgid "Define Email Address..."
+msgid "Define Email Address…"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
 #, kde-format
-msgid "Enter message..."
+msgid "Enter message…"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:23
@@ -1233,13 +1233,13 @@ msgstr "Προσχέδιο"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
 #, kde-format
-msgid "Click on button for selecting flags..."
+msgid "Click on button for selecting flags…"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
-msgid "..."
-msgstr "..."
+msgid "…"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, fuzzy, kde-format
@@ -1792,7 +1792,9 @@ msgid "Weekday"
 msgstr "Ημέρα εβδομάδας"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
-msgid "Select multiple headers..."
+#, fuzzy
+#| msgid "Select multiple headers..."
+msgid "Select multiple headers…"
 msgstr "Επιλογή πολλαπλών κεφαλίδων..."
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
@@ -2294,8 +2296,9 @@ msgstr "Σφάλμα ανάλυσης Sieve"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
-#, kde-format
-msgid "Save As..."
+#, fuzzy, kde-format
+#| msgid "Save As..."
+msgid "Save As…"
 msgstr "Αποθήκευση ως..."
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
@@ -2335,9 +2338,12 @@ msgid "Sieve Diagnostics"
 msgstr "Διαγνωστικά sieve"
 
 #: ksieveui/debug/sievedebugdialog.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Collecting diagnostic information about Sieve support...\n"
+#| "\n"
 msgid ""
-"Collecting diagnostic information about Sieve support...\n"
+"Collecting diagnostic information about Sieve support…\n"
 "\n"
 msgstr ""
 "Συλλογή διαγνωστικών πληροφοριών για την υποστήριξη του Sieve...\n"
@@ -2357,8 +2363,9 @@ msgid ""
 msgstr ""
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
-#, kde-format
-msgid "Collecting data for account '%1'...\n"
+#, fuzzy, kde-format
+#| msgid "Collecting data for account '%1'...\n"
+msgid "Collecting data for account '%1'…\n"
 msgstr "Συλλογή δεδομένων για τον λογαριασμό '%1'...\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:123
@@ -2546,7 +2553,7 @@ msgstr "Προσθήκη σχολίου"
 #: ksieveui/editor/sieveeditormenubar.cpp:63
 #, fuzzy, kde-format
 #| msgid "New Sieve Script"
-msgid "Debug Sieve Script..."
+msgid "Debug Sieve Script…"
 msgstr "Νέο σενάριο sieve"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
@@ -2643,18 +2650,19 @@ msgid "Check Syntax"
 msgstr "Έλεγχος σύνταξης"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
-#, kde-format
-msgid "Import..."
+#, fuzzy, kde-format
+#| msgid "Import..."
+msgid "Import…"
 msgstr "Εισαγωγή..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
 #, kde-format
-msgid "Create Rules Graphically..."
+msgid "Create Rules Graphically…"
 msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:66
 #, kde-format
-msgid "Share..."
+msgid "Share…"
 msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
@@ -2711,7 +2719,7 @@ msgstr "Επεξεργασία"
 #, kde-format
 msgid ""
 "Some errors were found during parsing. <a href=\"sieveerrordetails"
-"\">(Details...)</a>"
+"\">(Details…)</a>"
 msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
@@ -2817,13 +2825,14 @@ msgstr "Διαχείριση σεναρίων sieve"
 #: ksieveui/managesievescriptsdialog.cpp:85
 #, kde-format
 msgctxt "create a new sieve script"
-msgid "New..."
-msgstr "Νέο..."
+msgid "New…"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:89
-#, kde-format
-msgid "Edit..."
-msgstr "Επεξεργασία..."
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgid "Edit…"
+msgstr "Επεξεργασία"
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
@@ -2846,7 +2855,7 @@ msgstr "Σφάλμα του Sieve"
 
 #: ksieveui/managesievescriptsdialog.cpp:206
 #, kde-format
-msgid "Uploading script to server for checking it, please wait..."
+msgid "Uploading script to server for checking it, please wait…"
 msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:252
@@ -2930,7 +2939,7 @@ msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
 #, kde-format
-msgid "Display check script result..."
+msgid "Display check script result…"
 msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
@@ -3013,8 +3022,9 @@ msgid "Forward Message and add copy"
 msgstr "Προώθηση μηνύματος και προσθήκη αντίγραφου"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:66
-#, kde-format
-msgid "Destroy mail posted by..."
+#, fuzzy, kde-format
+#| msgid "Destroy mail posted by..."
+msgid "Destroy mail posted by…"
 msgstr "Καταστροφή αλληλογραφίας από..."
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:79
@@ -3204,7 +3214,7 @@ msgstr "Κανένα διαμορφωμένο sieve URL"
 #: ksieveui/widgets/managesievetreeview.cpp:30
 #, fuzzy, kde-format
 #| msgid "No imap server configured..."
-msgid "No IMAP server configured..."
+msgid "No IMAP server configured…"
 msgstr "Δεν έχει γίνει διαμόρφωση εξυπηρετητή imap..."
 
 #: ksieveui/widgets/managesievetreeview.cpp:20
@@ -3218,14 +3228,15 @@ msgid "Network down."
 msgstr "Το δίκτυο είναι κάτω."
 
 #: ksieveui/widgets/managesievewidget.cpp:147
-#, kde-format
-msgid "Edit Script..."
+#, fuzzy, kde-format
+#| msgid "Edit Script..."
+msgid "Edit Script…"
 msgstr "Επεξεργασία σεναρίου..."
 
 #: ksieveui/widgets/managesievewidget.cpp:148
 #, fuzzy, kde-format
 #| msgid "Sieve Script"
-msgid "Rename Script..."
+msgid "Rename Script…"
 msgstr "Σενάριο του Sieve"
 
 #: ksieveui/widgets/managesievewidget.cpp:153
@@ -3234,9 +3245,10 @@ msgid "Deactivate Script"
 msgstr "Απενεργοποίηση σεναρίου"
 
 #: ksieveui/widgets/managesievewidget.cpp:159
-#, kde-format
-msgid "New Script..."
-msgstr "Νέο σενάριο..."
+#, fuzzy, kde-format
+#| msgid "New Script"
+msgid "New Script…"
+msgstr "Νέο σενάριο"
 
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format
@@ -3311,6 +3323,32 @@ msgstr "Αποτυχία προσκόμισης της λίστας σεναρί
 #| msgid "Create folder"
 msgid "Define Folder"
 msgstr "Δημιουργία φακέλου"
+
+#~ msgid "..."
+#~ msgstr "..."
+
+#~ msgid "Save As..."
+#~ msgstr "Αποθήκευση ως..."
+
+#, fuzzy
+#~| msgid "New Sieve Script"
+#~ msgid "Debug Sieve Script..."
+#~ msgstr "Νέο σενάριο sieve"
+
+#~ msgctxt "create a new sieve script"
+#~ msgid "New..."
+#~ msgstr "Νέο..."
+
+#~ msgid "Edit..."
+#~ msgstr "Επεξεργασία..."
+
+#, fuzzy
+#~| msgid "Sieve Script"
+#~ msgid "Rename Script..."
+#~ msgstr "Σενάριο του Sieve"
+
+#~ msgid "New Script..."
+#~ msgstr "Νέο σενάριο..."
 
 #, fuzzy
 #~| msgid "New Script..."
@@ -3398,11 +3436,6 @@ msgstr "Δημιουργία φακέλου"
 
 #~ msgid "Autogenerate Script..."
 #~ msgstr "Αυτόματη δημιουργία σεναρίου..."
-
-#, fuzzy
-#~| msgid "Save As..."
-#~ msgid "Save As"
-#~ msgstr "Αποθήκευση ως..."
 
 #~ msgid ""
 #~ "*.siv|sieve files (*.siv)\n"
