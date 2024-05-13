@@ -7,27 +7,26 @@
 # Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>, 2007.
 # Javier Vinal <fjvinalgmail.com>, 2010, 2011, 2012, 2017.
 # Javier Viñal <fjvinal@gmail.com>, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019.
-# SPDX-FileCopyrightText: 2013, 2016, 2019, 2020, 2021, 2023 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2013, 2016, 2019, 2020, 2021, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-12 00:39+0000\n"
-"PO-Revision-Date: 2023-11-07 21:39+0100\n"
+"PO-Revision-Date: 2024-05-12 16:18+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: kmanagesieve/session.cpp:89
 #, kde-format
 msgid "Cannot use TLS since the underlying Qt library does not support it."
-msgstr ""
-"No se puede usar TLS dado que la biblioteca subyacente Qt no lo admite."
+msgstr "No se puede usar TLS porque la biblioteca subyacente Qt no lo admite."
 
 #: kmanagesieve/session.cpp:96
 #, kde-format
@@ -363,7 +362,7 @@ msgstr "Error desconocido"
 #: ksievecore/managescriptsjob/checkscriptjob.cpp:65
 #, kde-format
 msgid "No errors found."
-msgstr "No se encontraron errores."
+msgstr "No se han encontrado errores."
 
 #: ksievecore/managescriptsjob/checkscriptjob.cpp:68
 #, kde-format
@@ -1236,16 +1235,14 @@ msgstr ""
 "granularidad en esas situaciones."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
-#, fuzzy, kde-format
-#| msgid "Define Email Address..."
+#, kde-format
 msgid "Define Email Address…"
 msgstr "Define dirección de correo..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
-#, fuzzy, kde-format
-#| msgid "Enter message..."
+#, kde-format
 msgid "Enter message…"
-msgstr "Introduce mensaje..."
+msgstr "Introducir mensaje..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:23
 #, kde-format
@@ -1289,15 +1286,14 @@ msgid "Draft"
 msgstr "Borrador"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Click on button for selecting flags..."
+#, kde-format
 msgid "Click on button for selecting flags…"
-msgstr "Pulse sobre el botón para seleccionar indicadores..."
+msgstr "Pulse el botón para seleccionar indicadores..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, kde-format
@@ -1899,8 +1895,6 @@ msgid "Weekday"
 msgstr "Día de la semana"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
-#, fuzzy
-#| msgid "Select multiple headers..."
 msgid "Select multiple headers…"
 msgstr "Seleccionar varios encabezados..."
 
@@ -2395,8 +2389,7 @@ msgstr "Error de análisis de Sieve"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As…"
 msgstr "Guardar como..."
 
@@ -2435,10 +2428,7 @@ msgid "Sieve Diagnostics"
 msgstr "Diagnósticos Sieve"
 
 #: ksieveui/debug/sievedebugdialog.cpp:65
-#, fuzzy, kde-format
-#| msgid ""
-#| "Collecting diagnostic information about Sieve support...\n"
-#| "\n"
+#, kde-format
 msgid ""
 "Collecting diagnostic information about Sieve support…\n"
 "\n"
@@ -2461,8 +2451,7 @@ msgstr ""
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
-#, fuzzy, kde-format
-#| msgid "Collecting data for account '%1'...\n"
+#, kde-format
 msgid "Collecting data for account '%1'…\n"
 msgstr "Recopilando datos para la cuenta «%1»...\n"
 
@@ -2626,11 +2615,9 @@ msgid "Uncomment"
 msgstr "Comentario"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Debug Sieve Script"
+#, kde-format
 msgid "Debug Sieve Script…"
-msgstr "Depurar guion Sieve"
+msgstr "Depurar guion de Sieve..."
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
 #, kde-format
@@ -2720,20 +2707,17 @@ msgid "Check Syntax"
 msgstr "Compruebe la sintaxis"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import…"
 msgstr "Importar..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Create Rules Graphically..."
+#, kde-format
 msgid "Create Rules Graphically…"
 msgstr "Crear reglas gráficamente..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:66
-#, fuzzy, kde-format
-#| msgid "Share..."
+#, kde-format
 msgid "Share…"
 msgstr "Compartir..."
 
@@ -2784,10 +2768,7 @@ msgid "Edit Rule"
 msgstr "Editar regla"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:20
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some errors were found during parsing. <a href=\"sieveerrordetails"
-#| "\">(Details...)</a>"
+#, kde-format
 msgid ""
 "Some errors were found during parsing. <a href=\"sieveerrordetails"
 "\">(Details…)</a>"
@@ -2894,13 +2875,12 @@ msgstr "Gestionar guiones Sieve"
 #, kde-format
 msgctxt "create a new sieve script"
 msgid "New…"
-msgstr ""
+msgstr "Nuevo..."
 
 #: ksieveui/managesievescriptsdialog.cpp:89
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edit…"
-msgstr "Editar"
+msgstr "Editar..."
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
@@ -2921,8 +2901,7 @@ msgid "Sieve Error"
 msgstr "Error de Sieve"
 
 #: ksieveui/managesievescriptsdialog.cpp:206
-#, fuzzy, kde-format
-#| msgid "Uploading script to server for checking it, please wait..."
+#, kde-format
 msgid "Uploading script to server for checking it, please wait…"
 msgstr "Subiendo el guion al servidor para comprobarlo. Espere un momento..."
 
@@ -2996,10 +2975,9 @@ msgstr ""
 "<nombre de la extensión>»"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Display check script result..."
+#, kde-format
 msgid "Display check script result…"
-msgstr "Mostrar resultado del guion de comprobación..."
+msgstr "Mostrar resultado de la comprobación del guion..."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
 #, kde-format
@@ -3076,8 +3054,7 @@ msgid "Forward Message and add copy"
 msgstr "Reenviar mensaje y añadir copia"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:66
-#, fuzzy, kde-format
-#| msgid "Destroy mail posted by..."
+#, kde-format
 msgid "Destroy mail posted by…"
 msgstr "Destruir correo enviado por..."
 
@@ -3254,12 +3231,11 @@ msgstr ""
 #: ksieveui/widgets/custommanagesievewidget.cpp:91
 #, kde-format
 msgid "No Sieve URL configured"
-msgstr "No se ha configurado ningún URL de Sieve"
+msgstr "No se ha configurado ninguna URL de Sieve"
 
 #: ksieveui/widgets/managesievetreeview.cpp:16
 #: ksieveui/widgets/managesievetreeview.cpp:30
-#, fuzzy, kde-format
-#| msgid "No IMAP server configured..."
+#, kde-format
 msgid "No IMAP server configured…"
 msgstr "No se ha configurado ningún servidor IMAP..."
 
@@ -3274,16 +3250,14 @@ msgid "Network down."
 msgstr "Red caída."
 
 #: ksieveui/widgets/managesievewidget.cpp:147
-#, fuzzy, kde-format
-#| msgid "Edit Script..."
+#, kde-format
 msgid "Edit Script…"
 msgstr "Editar guion..."
 
 #: ksieveui/widgets/managesievewidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Rename Script"
+#, kde-format
 msgid "Rename Script…"
-msgstr "Cambiar el nombre del guion"
+msgstr "Cambiar nombre del guion..."
 
 #: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
@@ -3291,10 +3265,9 @@ msgid "Deactivate Script"
 msgstr "Desactivar guion"
 
 #: ksieveui/widgets/managesievewidget.cpp:159
-#, fuzzy, kde-format
-#| msgid "New Script"
+#, kde-format
 msgid "New Script…"
-msgstr "Nuevo guion"
+msgstr "Nuevo guion..."
 
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format

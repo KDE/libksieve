@@ -1710,10 +1710,8 @@ msgid "Weekday"
 msgstr "工作日"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
-#, fuzzy
-#| msgid "Delete header"
 msgid "Select multiple headers…"
-msgstr "删除头部"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
 #, kde-format
@@ -2192,10 +2190,9 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As…"
-msgstr "另存为..."
+msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
 #, kde-format
@@ -2405,11 +2402,9 @@ msgid "Uncomment"
 msgstr "取消注释"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Debug Sieve Script"
+#, kde-format
 msgid "Debug Sieve Script…"
-msgstr "调试 Sieve 脚本"
+msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
 #, kde-format
@@ -2499,22 +2494,19 @@ msgid "Check Syntax"
 msgstr "检查语法"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import…"
-msgstr "导入..."
+msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Create Rules Graphically..."
+#, kde-format
 msgid "Create Rules Graphically…"
-msgstr "以图形方式创建规则..."
+msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:66
-#, fuzzy, kde-format
-#| msgid "Share..."
+#, kde-format
 msgid "Share…"
-msgstr "分享..."
+msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
 #, kde-format
@@ -2671,10 +2663,9 @@ msgid "New…"
 msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:89
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edit…"
-msgstr "编辑"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
@@ -2695,10 +2686,9 @@ msgid "Sieve Error"
 msgstr "Sieve 错误"
 
 #: ksieveui/managesievescriptsdialog.cpp:206
-#, fuzzy, kde-format
-#| msgid "Uploading script to server for checking it, please wait..."
+#, kde-format
 msgid "Uploading script to server for checking it, please wait…"
-msgstr "正在将脚本上传到服务器以检查，请稍候..."
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:252
 #, kde-format
@@ -2768,10 +2758,9 @@ msgid ""
 msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Display check script result..."
+#, kde-format
 msgid "Display check script result…"
-msgstr "显示语法检查结果"
+msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
 #, kde-format
@@ -3013,10 +3002,9 @@ msgstr "没有配置过滤 URL"
 
 #: ksieveui/widgets/managesievetreeview.cpp:16
 #: ksieveui/widgets/managesievetreeview.cpp:30
-#, fuzzy, kde-format
-#| msgid "No Sieve URL configured"
+#, kde-format
 msgid "No IMAP server configured…"
-msgstr "没有配置过滤 URL"
+msgstr ""
 
 #: ksieveui/widgets/managesievetreeview.cpp:20
 #, kde-format
@@ -3029,16 +3017,14 @@ msgid "Network down."
 msgstr "网络中断。"
 
 #: ksieveui/widgets/managesievewidget.cpp:147
-#, fuzzy, kde-format
-#| msgid "Edit Script..."
+#, kde-format
 msgid "Edit Script…"
-msgstr "编辑脚本..."
+msgstr ""
 
 #: ksieveui/widgets/managesievewidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Rename Script"
+#, kde-format
 msgid "Rename Script…"
-msgstr "重命名脚本"
+msgstr ""
 
 #: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
@@ -3046,10 +3032,9 @@ msgid "Deactivate Script"
 msgstr "取消激活脚本"
 
 #: ksieveui/widgets/managesievewidget.cpp:159
-#, fuzzy, kde-format
-#| msgid "New Script"
+#, kde-format
 msgid "New Script…"
-msgstr "新建脚本"
+msgstr ""
 
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format
@@ -3114,22 +3099,3 @@ msgstr "未能获取脚本列表"
 #, kde-format
 msgid "Define Folder"
 msgstr ""
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgid "Debug Sieve Script..."
-#~ msgstr "调试 Sieve 脚本..."
-
-#~ msgctxt "create a new sieve script"
-#~ msgid "New..."
-#~ msgstr "新建..."
-
-#~ msgid "Edit..."
-#~ msgstr "编辑..."
-
-#~ msgid "Rename Script..."
-#~ msgstr "重命名脚本..."
-
-#~ msgid "New Script..."
-#~ msgstr "新建脚本..."

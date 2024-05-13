@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-12 00:39+0000\n"
-"PO-Revision-Date: 2024-01-04 17:19+0100\n"
+"PO-Revision-Date: 2024-05-12 10:35+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1190,16 +1190,14 @@ msgstr ""
 "granulareco por tiaj situacioj."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
-#, fuzzy, kde-format
-#| msgid "Define Email Address..."
+#, kde-format
 msgid "Define Email Address…"
-msgstr "Difini Retadreson..."
+msgstr "Difini Retadreson…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
-#, fuzzy, kde-format
-#| msgid "Enter message..."
+#, kde-format
 msgid "Enter message…"
-msgstr "Enigi mesaĝon..."
+msgstr "Enigi mesaĝon…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:23
 #, kde-format
@@ -1243,15 +1241,14 @@ msgid "Draft"
 msgstr "Malneto"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Click on button for selecting flags..."
+#, kde-format
 msgid "Click on button for selecting flags…"
-msgstr "Alklaku la butonon por elekti flagojn..."
+msgstr "Alklaku la butonon por elekti flagojn…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, kde-format
@@ -1848,10 +1845,8 @@ msgid "Weekday"
 msgstr "Semajntago"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
-#, fuzzy
-#| msgid "Select multiple headers..."
 msgid "Select multiple headers…"
-msgstr "Elekti plurajn titolojn..."
+msgstr "Elekti plurajn titolojn…"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
 #, kde-format
@@ -2340,10 +2335,9 @@ msgstr "Kribrila Analiza Eraro"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As…"
-msgstr "Konservi kiel..."
+msgstr "Konservi kiel…"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
 #, kde-format
@@ -2380,15 +2374,12 @@ msgid "Sieve Diagnostics"
 msgstr "Kribrila Diagnozo"
 
 #: ksieveui/debug/sievedebugdialog.cpp:65
-#, fuzzy, kde-format
-#| msgid ""
-#| "Collecting diagnostic information about Sieve support...\n"
-#| "\n"
+#, kde-format
 msgid ""
 "Collecting diagnostic information about Sieve support…\n"
 "\n"
 msgstr ""
-"Kolektante diagnozajn informojn pri Sieve-subteno...\n"
+"Kolektante diagnozajn informojn pri Sieve-subteno…\n"
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:68
@@ -2406,10 +2397,9 @@ msgstr ""
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
-#, fuzzy, kde-format
-#| msgid "Collecting data for account '%1'...\n"
+#, kde-format
 msgid "Collecting data for account '%1'…\n"
-msgstr "Kolektante datumojn por konto '%1'...\n"
+msgstr "Kolektante datumojn por konto '%1'…\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:123
 #, kde-format
@@ -2571,11 +2561,9 @@ msgid "Uncomment"
 msgstr "Malkomento"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Debug Sieve Script"
+#, kde-format
 msgid "Debug Sieve Script…"
-msgstr "Sencimigi Kribrilon Skripto"
+msgstr "Sencimigi Kribrilon Skripto…"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
 #, kde-format
@@ -2665,22 +2653,19 @@ msgid "Check Syntax"
 msgstr "Kontroli sintakson"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import…"
-msgstr "Importi..."
+msgstr "Importi…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Create Rules Graphically..."
+#, kde-format
 msgid "Create Rules Graphically…"
-msgstr "Krei Regulojn Grafike..."
+msgstr "Krei Regulojn Grafike…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:66
-#, fuzzy, kde-format
-#| msgid "Share..."
+#, kde-format
 msgid "Share…"
-msgstr "Kunhavigi..."
+msgstr "Kunhavigi…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
 #, kde-format
@@ -2729,16 +2714,13 @@ msgid "Edit Rule"
 msgstr "Redakti Regulon"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:20
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some errors were found during parsing. <a href=\"sieveerrordetails"
-#| "\">(Details...)</a>"
+#, kde-format
 msgid ""
 "Some errors were found during parsing. <a href=\"sieveerrordetails"
 "\">(Details…)</a>"
 msgstr ""
 "Kelkaj eraroj estis trovitaj dum analizado. <a href=\"sieveerrordetails"
-"\">(Detaloj...)</a>"
+"\">(Detaloj…)</a>"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
 #, kde-format
@@ -2839,13 +2821,12 @@ msgstr "Administri Sieve Skriptoj"
 #, kde-format
 msgctxt "create a new sieve script"
 msgid "New…"
-msgstr ""
+msgstr "Nova…"
 
 #: ksieveui/managesievescriptsdialog.cpp:89
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edit…"
-msgstr "Redakti"
+msgstr "Redakti…"
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
@@ -2866,10 +2847,9 @@ msgid "Sieve Error"
 msgstr "Sieve-Eraro"
 
 #: ksieveui/managesievescriptsdialog.cpp:206
-#, fuzzy, kde-format
-#| msgid "Uploading script to server for checking it, please wait..."
+#, kde-format
 msgid "Uploading script to server for checking it, please wait…"
-msgstr "Alŝutante skripton al servilo por kontroli ĝin, bonvolu atendi..."
+msgstr "Alŝutante skripton al servilo por kontroli ĝin, bonvolu atendi…"
 
 #: ksieveui/managesievescriptsdialog.cpp:252
 #, kde-format
@@ -2941,10 +2921,9 @@ msgstr ""
 "de etendaĵo>\""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Display check script result..."
+#, kde-format
 msgid "Display check script result…"
-msgstr "Montri rezulton de kontrolskripto..."
+msgstr "Montri rezulton de kontrolskripto…"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
 #, kde-format
@@ -3021,10 +3000,9 @@ msgid "Forward Message and add copy"
 msgstr "Plusendi Mesaĝon kaj aldoni kopion"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:66
-#, fuzzy, kde-format
-#| msgid "Destroy mail posted by..."
+#, kde-format
 msgid "Destroy mail posted by…"
-msgstr "Detrui poŝton afiŝitan de..."
+msgstr "Detrui poŝton afiŝitan de…"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:79
 #, kde-format
@@ -3202,10 +3180,9 @@ msgstr "Neniu Sieve URL agordita"
 
 #: ksieveui/widgets/managesievetreeview.cpp:16
 #: ksieveui/widgets/managesievetreeview.cpp:30
-#, fuzzy, kde-format
-#| msgid "No IMAP server configured..."
+#, kde-format
 msgid "No IMAP server configured…"
-msgstr "Neniu IMAP-servilo agordita..."
+msgstr "Neniu IMAP-servilo agordita…"
 
 #: ksieveui/widgets/managesievetreeview.cpp:20
 #, kde-format
@@ -3218,16 +3195,14 @@ msgid "Network down."
 msgstr "Reto malsupren."
 
 #: ksieveui/widgets/managesievewidget.cpp:147
-#, fuzzy, kde-format
-#| msgid "Edit Script..."
+#, kde-format
 msgid "Edit Script…"
-msgstr "Redakti skripton..."
+msgstr "Redakti skripton…"
 
 #: ksieveui/widgets/managesievewidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Rename Script"
+#, kde-format
 msgid "Rename Script…"
-msgstr "Alinomi Skripton"
+msgstr "Alinomi Skripton…"
 
 #: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
@@ -3235,10 +3210,9 @@ msgid "Deactivate Script"
 msgstr "Malaktivigi Skripton"
 
 #: ksieveui/widgets/managesievewidget.cpp:159
-#, fuzzy, kde-format
-#| msgid "New Script"
+#, kde-format
 msgid "New Script…"
-msgstr "Nova Skripto"
+msgstr "Nova Skripto…"
 
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format
@@ -3306,22 +3280,3 @@ msgstr "Malsukcesis alporti la liston de skriptoj"
 #, kde-format
 msgid "Define Folder"
 msgstr "Difini Dosierujon"
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgid "Debug Sieve Script..."
-#~ msgstr "Sencimigi Kribril-Skripton..."
-
-#~ msgctxt "create a new sieve script"
-#~ msgid "New..."
-#~ msgstr "Nova..."
-
-#~ msgid "Edit..."
-#~ msgstr "Redakti..."
-
-#~ msgid "Rename Script..."
-#~ msgstr "Alinomi skripton..."
-
-#~ msgid "New Script..."
-#~ msgstr "Nova Skripto..."
