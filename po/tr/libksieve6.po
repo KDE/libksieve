@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-14 00:38+0000\n"
-"PO-Revision-Date: 2024-03-21 23:00+0300\n"
+"PO-Revision-Date: 2024-05-12 14:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.07.70\n"
 "X-POOTLE-MTIME: 1413117019.000000\n"
 
 #: kmanagesieve/session.cpp:89
@@ -50,7 +50,7 @@ msgstr "Sieve Sunucusu TLS Duyurusu Yapmıyor"
 #: kmanagesieve/session.cpp:99
 #, kde-format
 msgid "&Start TLS nonetheless"
-msgstr "TLS'yi yine de &başlat"
+msgstr "TLS’yi Yine de &Başlat"
 
 #: kmanagesieve/session.cpp:103
 #, kde-format
@@ -63,8 +63,8 @@ msgid ""
 "The server does not seem to support TLS. Disable TLS if you want to connect "
 "without encryption."
 msgstr ""
-"Sunucu TLS'yi desteklemiyor görünüyor. Şifreleme olmadan bağlanmak "
-"istiyorsanız TLS'yi kapatın."
+"Sunucu TLS’yi desteklemiyor görünüyor. Şifreleme olmadan bağlanmak "
+"istiyorsanız TLS’yi kapatın."
 
 #: kmanagesieve/session.cpp:257
 #, kde-format
@@ -77,8 +77,8 @@ msgid ""
 "Please enter your authentication details for your sieve account "
 "\"%1\" (usually the same as your email password):"
 msgstr ""
-"Lütfen \"%1\" Sieve hesabınızın kimlik bilgilerinizi girin (genellikle e-"
-"posta parolanızla aynıdır):"
+"Lütfen “%1” Sieve hesabınızın kimlik bilgilerinizi girin (genellikle e-posta "
+"parolanızla aynıdır):"
 
 #: kmanagesieve/session.cpp:321
 #, kde-format
@@ -140,8 +140,8 @@ msgstr "Ayrıştırma hatası: Satır İlerletme (CR) olmadan Satır Başı (LF)
 msgid ""
 "Parse error: Unquoted Slash ('/') without Asterisk ('*'). Broken Comment?"
 msgstr ""
-"Ayrıştırma hatası: Çarpı İşareti ('*') olmadan Bölüm İşareti ('/'). Hatalı "
-"Yorum Satırı mı?"
+"Ayrıştırma hatası: Çarpım işareti (‘*’) olmadan bölme işareti (‘/’). Hatalı "
+"yorum satırı mı?"
 
 #: ksieve/error.cpp:99
 #, kde-format
@@ -165,12 +165,12 @@ msgid ""
 "line"
 msgstr ""
 "Ayrıştırma hatası: Yalnızca alfabe dışı karakterler ve #yorumlar aynı "
-"satırda \"text:\" takip edebilir"
+"satırda “text:” takip edebilir"
 
 #: ksieve/error.cpp:113
 #, kde-format
 msgid "Parse error: Number out of Range (must be smaller than %1)"
-msgstr "Ayrıştırma hatası: Kapsam dışı numara (%1 'den daha küçük olmalı)"
+msgstr "Ayrıştırma hatası: Sayı erimin dışında (%1 değerinden küçük olmalıdır)"
 
 #: ksieve/error.cpp:116
 #, kde-format
@@ -182,30 +182,32 @@ msgstr "Ayrıştırma hatası: Geçersiz UTF-8 sıralaması"
 msgid ""
 "Parse error: Premature end of Multiline String (did you forget the '.'?)"
 msgstr ""
-"Ayrıştırma hatası: Çok satırlı Dizinin erken sonu ('.' işaretini mi unuttun?)"
+"Ayrıştırma hatası: Çok satırlı dizinin erken sonu (‘.’ işaretini mi "
+"unuttunuz?)"
 
 #: ksieve/error.cpp:122
 #, kde-format
 msgid "Parse error: Premature end of Quoted String (missing closing '\"')"
 msgstr ""
-"Ayrıştırma hatası: Tırnak içine alınmış Dizinin zamansız sonu (kayıp kapama "
-"işareti '\"')"
+"Ayrıştırma hatası: Tırnak içine alınmış dizinin zamansız sonu (kayıp kapama "
+"işareti ‘\"’)"
 
 #: ksieve/error.cpp:125
 #, kde-format
 msgid "Parse error: Premature end of String List (missing closing ']')"
-msgstr "Ayrıştırma hatası: Dizi Listesinin erken sonu (kayıp kapama ']')"
+msgstr ""
+"Ayrıştırma hatası: Dizi listesinin erken sonu (kayıp kapama işareti ‘]’)"
 
 #: ksieve/error.cpp:128
 #, kde-format
 msgid "Parse error: Premature end of Test List (missing closing ')')"
 msgstr ""
-"Ayrıştırma hatası: Sınama Listesinin erken sonu (kayıp kapama işareti ')')"
+"Ayrıştırma hatası: Sınama listesinin erken sonu (kayıp kapama işareti ‘)’)"
 
 #: ksieve/error.cpp:131
 #, kde-format
 msgid "Parse error: Premature end of Block (missing closing '}')"
-msgstr "Ayrıştırma hatası: Öbeğin erken sonu (kayıp kapama işareti '}')"
+msgstr "Ayrıştırma hatası: Öbeğin erken sonu (kayıp kapama işareti ‘}’)"
 
 #: ksieve/error.cpp:134
 #, kde-format
@@ -215,12 +217,12 @@ msgstr "Ayrıştırma hatası: Kayıp Boşluk"
 #: ksieve/error.cpp:137
 #, kde-format
 msgid "Parse error: Missing ';' or Block"
-msgstr "Ayrıştırma hatası: Kayıp ';' ya da Öbek"
+msgstr "Ayrıştırma hatası: Kayıp ‘;’ veya öbek"
 
 #: ksieve/error.cpp:140
 #, kde-format
 msgid "Parse error: Expected ';' or '{', got something else"
-msgstr "Ayrıştırma hatası: ';' ya da '{', Bekleniyor, başka bir şey alındı"
+msgstr "Ayrıştırma hatası: ‘;’ veya ‘{’, bekleniyordu, başka bir şey alındı"
 
 #: ksieve/error.cpp:143 ksieve/error.cpp:158
 #, kde-format
@@ -244,12 +246,12 @@ msgstr ""
 #: ksieve/error.cpp:152
 #, kde-format
 msgid "Parse error: Missing ',' between Strings in String List"
-msgstr "Ayrıştırma hatası: Dizi Listesindeki Diziler arasında kayıp ','"
+msgstr "Ayrıştırma hatası: Dizi listesindeki diziler arasında kayıp ‘,’"
 
 #: ksieve/error.cpp:155
 #, kde-format
 msgid "Parse error: Missing ',' between Tests in Test List"
-msgstr "Ayrıştırma hatası: Sınama Listesindeki Sınamalar arasında kayıp ','"
+msgstr "Ayrıştırma hatası: Sınama listesindeki sınamalar arasında kayıp ‘,’"
 
 #: ksieve/error.cpp:161
 #, kde-format
@@ -265,37 +267,37 @@ msgstr ""
 #: ksieve/error.cpp:169
 #, kde-format
 msgid "\"require\" must be first command"
-msgstr "\"require\" ilk komut olmalıdır"
+msgstr "“require” ilk komut olmalıdır"
 
 #: ksieve/error.cpp:172
 #, kde-format
 msgid "\"require\" missing for command \"%1\""
-msgstr "\"%1\" komutu için \"require\" eksik"
+msgstr "“%1” komutu için “require” eksik"
 
 #: ksieve/error.cpp:175
 #, kde-format
 msgid "\"require\" missing for test \"%1\""
-msgstr "\"%1\" sınaması için \"require\" eksik"
+msgstr "“%1” sınaması için “require” eksik"
 
 #: ksieve/error.cpp:178
 #, kde-format
 msgid "\"require\" missing for comparator \"%1\""
-msgstr "\"%1\" karşılaştırıcısı için \"require\" eksik"
+msgstr "“%1” karşılaştırıcısı için “require” eksik"
 
 #: ksieve/error.cpp:181
 #, kde-format
 msgid "Command \"%1\" not supported"
-msgstr "\"%1\" komutu desteklenmiyor"
+msgstr "“%1” komutu desteklenmiyor"
 
 #: ksieve/error.cpp:184
 #, kde-format
 msgid "Test \"%1\" not supported"
-msgstr "\"%1\" sınaması desteklenmiyor"
+msgstr "“%1” sınaması desteklenmiyor"
 
 #: ksieve/error.cpp:187
 #, kde-format
 msgid "Comparator \"%1\" not supported"
-msgstr "\"%1\" karşılaştırıcısı desteklenmiyor"
+msgstr "“%1” karşılaştırıcısı desteklenmiyor"
 
 #: ksieve/error.cpp:190
 #, kde-format
@@ -310,27 +312,27 @@ msgstr "Site Politikası Sınırı İhlali: Öbek gömme çok derin (en fazla %1
 #: ksieve/error.cpp:196
 #, kde-format
 msgid "Invalid Argument \"%1\" to \"%2\""
-msgstr "\"%2\" için Geçersiz \"%1\" Argümanı"
+msgstr "“%2” için geçersiz “%1” argümanı"
 
 #: ksieve/error.cpp:199
 #, kde-format
 msgid "Conflicting Arguments: \"%1\" and \"%2\""
-msgstr "Çakışan argümanlar: \"%1\" ve \"%2\""
+msgstr "Çakışan argümanlar: “%1” ve “%2”"
 
 #: ksieve/error.cpp:202
 #, kde-format
 msgid "Argument \"%1\" Repeated"
-msgstr "\"%1\" Argümanı Yinelendi"
+msgstr "“%1” argümanı yinelendi"
 
 #: ksieve/error.cpp:205
 #, kde-format
 msgid "Command \"%1\" violates command ordering constraints"
-msgstr "\"%1\" komutu komut sıralaması sınırlamalarını ihlal ediyor"
+msgstr "“%1” komutu komut sıralaması sınırlamalarını ihlal ediyor"
 
 #: ksieve/error.cpp:210
 #, kde-format
 msgid "Incompatible Actions \"%1\" and \"%2\" requested"
-msgstr "Uygunsuz \"%1\" ve \"%2\" eylemleri talep edildi"
+msgstr "Uyumsuz “%1” ve “%2” eylemleri talep edildi"
 
 #: ksieve/error.cpp:213
 #, kde-format
@@ -371,8 +373,8 @@ msgid ""
 "The server responded:\n"
 "%1"
 msgstr ""
-"\"ANA\" betik sunucuya yazılırken hata oluştu.\n"
-"Sunucu yanıtı:\n"
+"“ANA” betik sunucuya yazılırken hata oluştu.\n"
+"Sunucunun yanıtı:\n"
 "%1"
 
 #: ksievecore/managescriptsjob/generateglobalscriptjob.cpp:134
@@ -382,7 +384,7 @@ msgid ""
 "The server responded:\n"
 "%1"
 msgstr ""
-"\"Kullanıcı\" betiği sunucuya yazılırken hata oluştu.\n"
+"“Kullanıcı” betiği sunucuya yazılırken hata oluştu.\n"
 "Sunucu yanıtı:\n"
 "%1"
 
@@ -494,8 +496,8 @@ msgid ""
 "Sieve script installed successfully on the server '%1'.\n"
 "Out of Office reply is now active."
 msgstr ""
-"'%1' sunucusu üzerine sieve betiği başarıyla kuruldu.\n"
-"Ofis dışında yanıtı artık etkin."
+"“%1” sunucususu üzerine Sieve betiği başarıyla kuruldu.\n"
+"Ofis dışında yanıtları artık etkin."
 
 #: ksievecore/vacation/vacationcreatescriptjob.cpp:147
 #, kde-format
@@ -503,13 +505,13 @@ msgid ""
 "Sieve script installed successfully on the server '%1'.\n"
 "Out of Office reply has been deactivated."
 msgstr ""
-"'%1' sunucu üzerine sieve betiği başarıyla kuruldu.\n"
-"Ofis dışında yanıtı kapatıldı."
+"“%1” sunucusu üzerine Sieve betiği başarıyla kuruldu.\n"
+"Ofis dışında yanıtları kapatıldı."
 
 #: ksievecore/vacation/vacationcreatescriptjob.cpp:151
 #, kde-format
 msgid "Impossible to install script on server '%1'"
-msgstr "'%1' sunucusuna betik kurulamıyor"
+msgstr "“%1” sunucusuna betik kurulamıyor"
 
 #: ksievecore/vacation/vacationutils.cpp:39
 #, kde-format
@@ -554,14 +556,14 @@ msgid ""
 msgstr ""
 "%1 tarihine kadar ofis dışında olacağım.\n"
 "\n"
-"Acil bir durumsa lütfen \"kişisine\" ulaşın\n"
+"Acil bir durumsa lütfen “bu kişiye” ulaşın\n"
 "\n"
-"e-posta: \"yerine bakan kişinin e-posta adresi\"\n"
-"telefon: +49 711 1111 11\n"
-"faks.:  +49 711 1111 12\n"
+"E-posta: “yerine bakan kişinin e-posta adresi”\n"
+"Telefon: +90 362 1111 111\n"
+"Faks: +90 362 1111 121\n"
 "\n"
 "Saygılarımla,\n"
-"-- \"buraya adınızı ve e-posta adresinizi girin\"\n"
+"“buraya adınızı ve e-posta adresinizi girin”\n"
 
 #: ksieveui/autocreatescripts/autocreatescriptdialog.cpp:29
 #, kde-format
@@ -572,7 +574,7 @@ msgstr "Sieve Süzgeci Oluştur"
 #: ksieveui/autocreatescripts/autocreatescriptutil.cpp:177
 #, kde-format
 msgid "Cannot find item \"%1\" in widget \"%2\""
-msgstr "\"%2\" araç takımında \"%1\" ögesi bulunamadı"
+msgstr "“%2” araç takımında “%1” ögesi bulunamadı"
 
 #: ksieveui/autocreatescripts/autocreatescriptutil.cpp:185
 #, kde-format
@@ -590,7 +592,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:37
 #, kde-format
 msgid "Too many arguments for SelectConvertParameterWidget, \"%1\""
-msgstr "SelectConvertParameterWidget için çok fazla parametre, \"%1\""
+msgstr "SelectConvertParameterWidget için çok fazla parametre, “%1”"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:60
 #: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:71
@@ -662,13 +664,13 @@ msgstr "BMP"
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:53
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing action \"%2\"."
-msgstr "\"%2\" eylemi ayrıştırılırken bilinmeyen \"%1\" etiket değeri bulundu."
+msgstr "“%2” eylemi ayrıştırılırken bilinmeyen “%1” etiket değeri bulundu."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:106
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:41
 #, kde-format
 msgid "An unknown tag \"%1\" was found during parsing action \"%2\"."
-msgstr "\"%2\" eylemi ayrıştırılırken bilinmeyen \"%1\" etiketi bulundu."
+msgstr "“%2” eylemi ayrıştırılırken bilinmeyen “%1” etiketi bulundu."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:112
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:48
@@ -677,7 +679,7 @@ msgid ""
 "Too many arguments found for \"%1\", max value is %2, number of value found "
 "%3 for %4"
 msgstr ""
-"\"%1\" için çok fazla argüman bulundu, %2 maksimum değer, %4 için %3 değeri "
+"“%1” için çok fazla argüman bulundu, en büyük değer %2, %4 için %3 değer "
 "bulundu"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:117
@@ -685,7 +687,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:52
 #, kde-format
 msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
-msgstr "\"%1\" özelliği \"%2\" durumunda sunucu tarafından desteklenmiyor"
+msgstr "“%1” özelliği “%2” durumunda sunucu tarafından desteklenmiyor"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
 #: ksieveui/editor/sieveeditortabwidget.cpp:150
@@ -782,8 +784,8 @@ msgid ""
 "to \"media-type\" be converted to the media type in \"media-type\" using "
 "conversion parameters."
 msgstr ""
-"\"convert\" eylemi medya türü \"media-type\"a eşit olan bütün gövde "
-"parçalarının dönüşüm parametreleri kullanılarak \"media-type\" medya türüne "
+"“convert” eylemi ortam türü “media-type”a eşit olan bütün gövde parçalarının "
+"dönüşüm parametreleri kullanılarak “media-type” ortam türüne "
 "dönüştürüleceğini belirtir."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:24
@@ -849,7 +851,7 @@ msgid ""
 " The \"ereject\" action cancels the implicit keep and refuses delivery of a "
 "message."
 msgstr ""
-" \"ereject\" eylemi iletiyi saklamayı iptal eder ve iletilmesini reddeder."
+" “ereject” eylemi iletiyi saklamayı iptal eder ve iletilmesini reddeder."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:21
 #, kde-format
@@ -872,7 +874,7 @@ msgid ""
 "The \"extracttext\" action may be used within the context of a \"foreverypart"
 "\" loop and is used to store text into a variable"
 msgstr ""
-"\"extracttext\" eylemi \"foreverypart\" döngüsü bağlamında kullanılabilir ve "
+"“extracttext” eylemi “foreverypart” döngüsü bağlamında kullanılabilir ve "
 "değişkende metin saklamak için kullanılır"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:20
@@ -886,8 +888,8 @@ msgid ""
 "Action \"fileinto\" has \"copy\" argument but current server does not "
 "support it"
 msgstr ""
-"\"fileinto\" eyleminin \"copy\" parametresi olmasına rağmen mevcut sunucu "
-"bunu desteklememektedir"
+"“fileinto” eyleminin “copy” parametresi olmasına rağmen geçerli sunucu bunu "
+"desteklememektedir"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:96
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:35
@@ -904,7 +906,7 @@ msgstr "Klasör oluştur"
 #, kde-format
 msgid ""
 "The \"fileinto\" action delivers the message into the specified mailbox."
-msgstr "\"fileinto\" eylemi iletiyi belirlenen posta kutusuna iletir."
+msgstr "“fileinto” eylemi iletiyi belirlenen posta kutusuna iletir."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:150
 #, kde-format
@@ -913,9 +915,9 @@ msgid ""
 "interpreter to create the specified mailbox, if needed, before attempting to "
 "deliver the message into the specified mailbox."
 msgstr ""
-"İsteğe bağlı \":create\" değişkeni kullanılmışsa Sieve yorumlayıcısına "
-"iletiyi belirtilen posta kutusuna iletmeden önce gerekmesi durumunda "
-"belirtilen posta kutusunun oluşturulması talimatını geçer."
+"İsteğe bağlı “:create” değişkeni kullanılmışsa Sieve yorumlayıcısına iletiyi "
+"belirtilen posta kutusuna iletmeden önce gerekmesi durumunda belirtilen "
+"posta kutusunun oluşturulması talimatını geçer."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:155
 #, kde-format
@@ -924,8 +926,8 @@ msgid ""
 "cancel the implicit \"keep\". Instead, it merely files or redirects a copy "
 "in addition to whatever else is happening to the message."
 msgstr ""
-"Eğer isteğe bağlı \":copy\" anahtar sözcüğü kullanılırsa işaretlenen komut "
-"kesin \"keep\" ifadesini iptal etmez. Bunun yerine iletiye başka ne "
+"Eğer isteğe bağlı “:copy” anahtar sözcüğü kullanılırsa işaretlenen komut "
+"kesin “keep” ifadesini iptal etmez. Bunun yerine iletiye başka ne "
 "yapılıyorsa ona ek olarak bir kopyasını iletir."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:44
@@ -935,8 +937,8 @@ msgid ""
 "actions, if no filtering happens at all; generally, this simply means to "
 "file the message into the user's main mailbox."
 msgstr ""
-"\"keep\" eylemi diğer bütün eylemlerden önce hangi eylemin alınacağını "
-"belirtir, eğer bir filtre yoksa genel olarak, bu basitçe kullanıcının ana "
+"“keep” eylemi diğer bütün eylemlerden önce hangi eylemin alınacağını "
+"belirtir, eğer bir süzgeç yoksa genel olarak, bu basitçe kullanıcının ana "
 "posta kutusuna iletiyi dosyalamak anlamına gelir."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:55
@@ -964,7 +966,7 @@ msgstr "yöntem:"
 msgid ""
 "The \"notify\" action specifies that a notification should be sent to a user."
 msgstr ""
-"\"notify\" eylemi kullanıcıya bir uyarı bildirimi gönderilmesi gerektiğini "
+"“notify” eylemi kullanıcıya bir uyarı bildirimi gönderilmesi gerektiğini "
 "belirtir."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:22
@@ -985,8 +987,8 @@ msgid ""
 "action makes no changes to the message body or existing headers, but it may "
 "add new headers."
 msgstr ""
-"\"redirect\" eylemi iletiyi başka bir kullanıcıya sağlanan adreste gönderir, "
-"bunu bir e-posta yönlendirme özelliği gibi yapar. \"redirect\" eylemi ileti "
+"“redirect” eylemi iletiyi başka bir kullanıcıya sağlanan adreste gönderir, "
+"bunu bir e-posta yönlendirme özelliği gibi yapar. “redirect” eylemi ileti "
 "gövdesinde veya var olan başlıklarda herhangi bir değişiklik yapmaz; ancak "
 "yeni başlıklar ekleyebilir."
 
@@ -997,8 +999,8 @@ msgid ""
 "cancel the implicit \"keep\". Instead, it redirects a copy in addition to "
 "whatever else is happening to the message."
 msgstr ""
-"Eğer isteğe bağlı \":copy\" anahtar sözcüğü kullanılırsa işaretlenen komut "
-"kesin \"keep\" ifadesini iptal etmez. Bunun yerine iletiye başka ne "
+"Eğer isteğe bağlı “:copy” anahtar sözcüğü kullanılırsa işaretlenen komut "
+"kesin “keep” ifadesini iptal etmez. Bunun yerine iletiye başka ne "
 "yapılıyorsa ona ek olarak bir kopyasını iletir."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:20
@@ -1012,7 +1014,7 @@ msgid ""
 " The \"reject\" action cancels the implicit keep and refuses delivery of a "
 "message."
 msgstr ""
-" \"reject\" eylemi iletiyi saklamayı iptal eder ve iletilmesini reddeder."
+" “reject” eylemi iletiyi saklamayı iptal eder ve iletilmesini reddeder."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionremoveflags.cpp:13
 #, kde-format
@@ -1027,9 +1029,9 @@ msgid ""
 "a flag that wasn't set before is not an error and is ignored."
 msgstr ""
 "Removeflag [IMAP] bayrakları listesinden bayrakları kaldırmak için "
-"kullanılır. Kendisinden önce \"set\"/\"addflag\" tarafından eklenmiş "
-"bayrakları temizler. Removeflag'ı daha önce atanmamış bir bayrakla birlikte "
-"çağırmak bir hataya neden olmaz, yalnızca yok sayılır."
+"kullanılır. Kendisinden önce “set”/“addflag” tarafından eklenmiş bayrakları "
+"temizler. “removeflag”i daha önce atanmamış bir bayrakla birlikte çağırmak "
+"bir hataya neden olmaz, yalnızca yok sayılır."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:24
 #, kde-format
@@ -1047,7 +1049,7 @@ msgid ""
 "The \"replace\" command is defined to allow a MIME part to be replaced with "
 "the text supplied in the command."
 msgstr ""
-"\"replace\" komutu kendisine gönderilen metinle bir MIME parçasını "
+"“replace” komutu kendisine gönderilen metinle bir MIME parçasını "
 "değiştirmeye izin vermesi için tanımlanmıştır."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreturn.cpp:13
@@ -1061,8 +1063,8 @@ msgid ""
 "The \"return\" command stops processing of the immediately included script "
 "only and returns processing control to the script that includes it."
 msgstr ""
-"\"return\" komutu yalnızca son eklenen betiğin işlenmesini durdurur ve "
-"işleme kontrolünü onu içeren betiğe döndürür."
+"“return” komutu yalnızca son eklenen betiğin işlenmesini durdurur ve işleme "
+"denetimini onu içeren betiğe döndürür."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetflags.cpp:13
 #, kde-format
@@ -1114,8 +1116,7 @@ msgstr ""
 msgid ""
 "The \"set\" action stores the specified value in the variable identified by "
 "name."
-msgstr ""
-"\"set\" eylemi adı ile tanımlanan değişkendeki belirtilen değeri saklar."
+msgstr "“set” eylemi adı ile tanımlanan değişkendeki belirtilen değeri saklar."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:172
 #, kde-format
@@ -1141,8 +1142,8 @@ msgid ""
 "The \"stop\" action ends all processing.  If the implicit keep has not been "
 "cancelled, then it is taken."
 msgstr ""
-"\"durdur\" eylemi tüm süreçleri sonlandırır.  Eğer kesin koruma iptal "
-"edilmediyse o alınır."
+"“stop” eylemi tüm süreçleri sonlandırır. Eğer kesin koruma iptal edilmediyse "
+"o alınır."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:27
 #, kde-format
@@ -1177,8 +1178,8 @@ msgid ""
 "provide correspondents with notification that the user is away for an "
 "extended period of time and that they should not expect quick responses."
 msgstr ""
-"\"vacation\" eylemi birçok Unix sürümünde de bulunan vacation komutuna "
-"benzer şekilde tatil otomatik yanıtlaması gerçekleştirir. Amacı ileti "
+"“vacation” eylemi birçok Unix sürümünde de bulunan vacation komutuna benzer "
+"şekilde tatil otomatik yanıtlamasını gerçekleştirir. Amacı ileti "
 "gönderenlere alıcının bir süre uzakta olacağı bilgisini vererek çabuk yanıt "
 "beklememelerini sağlamaktır."
 
@@ -1190,8 +1191,8 @@ msgid ""
 "are cases when one needs more granularity, if one would like to generate "
 "\"vacation\" replies more frequently."
 msgstr ""
-"\":days\" parametresiyle bir kullanıcıya [n] günde bir gönderilecek otomatik "
-"yanıt sayısı sınırlandırılır. Bunun yanında \"vacation\" komutunun daha sık "
+"“:days” parametresiyle bir kullanıcıya [n] günde bir gönderilecek otomatik "
+"yanıt sayısı sınırlandırılır. Bunun yanında “vacation” komutunun daha sık "
 "yanıt vermesi istenen daha özelleşmiş durumlar da vardır."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:202
@@ -1200,7 +1201,7 @@ msgid ""
 "This extension defines a \":seconds\" parameter to provide more granularity "
 "for such situations."
 msgstr ""
-"Bu eklenti \":seconds\" parametresini böyle daha özelleşmiş durumlar için "
+"Bu eklenti “:seconds” parametresini böyle daha özelleşmiş durumlar için "
 "tanımlar."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
@@ -1344,7 +1345,7 @@ msgstr "Açıklama ekle"
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:222
 #, kde-format
 msgid "Script contains unsupported feature \"%1\""
-msgstr "Betik, \"%1\" desteklenmeyen özelliğini içeriyor"
+msgstr "Betik, “%1” desteklenmeyen özelliğini içeriyor"
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:410
 #, kde-format
@@ -1354,7 +1355,7 @@ msgstr "Bir if dongüsünde bir if döngüsüne rastladık. Bu desteklenmemekted
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:31
 #, kde-format
 msgid "Unknown tag \"%1\" during parsing condition \"%2\""
-msgstr "\"%2\" durumu ayrıştırılırken \"%1\" bilinmeyen etiketi"
+msgstr "“%2” durumu ayrıştırılırken “%1” bilinmeyen etiketi"
 
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:41
 #, kde-format
@@ -1362,13 +1363,13 @@ msgid ""
 "Too many argument found for \"%1\", max value is %2, number of value found "
 "%3 for %4"
 msgstr ""
-"\"%1\" için çok fazla argüman bulundu, %2 maksimum değer, %4 için %3 değeri "
+"“%1” için çok fazla argüman bulundu, en büyük değer %2, %4 için %3 değer "
 "bulundu"
 
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:47
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing condition \"%2\"."
-msgstr "\"%2\" durumu ayrıştırılırken \"%1\" bilinmeyen etiket değeri bulundu."
+msgstr "“%2” durumu ayrıştırılırken “%1” bilinmeyen etiket değeri bulundu."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:23
 #, kde-format
@@ -1395,8 +1396,8 @@ msgid ""
 "specified part of the address, as modified by the comparator and the match "
 "keyword."
 msgstr ""
-"\"address\" testi adres içeren yapılandırılmış başlıklardaki internet "
-"adreslerini eşleştirir.  Eğer bir başlık adresin belirtilen bir parçasındaki "
+"“address” sınaması adres içeren yapılandırılmış başlıklardaki internet "
+"adreslerini eşleştirir. Eğer bir başlık adresin belirtilen bir parçasındaki "
 "anahtarla eşleşirse doğru döndürür."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:20
@@ -1456,7 +1457,7 @@ msgid ""
 "The \"envelope\" test is true if the specified part of the [SMTP] (or "
 "equivalent) envelope matches the specified key."
 msgstr ""
-"\"envelope\" testi [SMTP] (veya eşdeğeri) zarfının belirtilen parçası "
+"“envelope” sınaması [SMTP] (veya eşdeğeri) zarfının belirtilen parçası "
 "belirtilen anahtarla eşleştiğinde doğru olur."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:23
@@ -1501,8 +1502,8 @@ msgid ""
 "argument exist within the message.  All of the headers must exist or the "
 "test is false."
 msgstr ""
-"\"exists\" testi başlık adı değişkeninde listelenen başlıklar ileti içinde "
-"yer aldığında olduğunda doğru olur.  Tüm başlıkların bulunması gerekir aksi "
+"“exists” sınaması başlık adı değişkeninde listelenen başlıklar ileti içinde "
+"yer aldığında olduğunda doğru olur. Tüm başlıkların bulunması gerekir aksi "
 "halde test yanlış dündürecektir."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:20
@@ -1518,7 +1519,7 @@ msgstr "yanlış"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:43
 #, kde-format
 msgid "The \"false\" test always evaluates to false."
-msgstr "\"yanlış\" testi her zaman yanlış değerlendirir."
+msgstr "“false” sınaması her zaman yanlış değerlendirir."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:24
 #, kde-format
@@ -1559,7 +1560,7 @@ msgid ""
 "The \"header\" test evaluates to true if the value of any of the named "
 "headers, ignoring leading and trailing whitespace, matches any key."
 msgstr ""
-"\"header\" testi adı geçen başlıkların herhangi birinin değeri, beyaz "
+"“header” sınaması adı geçen başlıkların herhangi birinin değeri, beyaz "
 "boşluklar heba katılmadan, herhangi bir anahtarla eşleşirse doğru değerini "
 "döndürür."
 
@@ -1571,7 +1572,7 @@ msgstr "IHave"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:35
 #, kde-format
 msgid "Use \",\" to separate capabilities"
-msgstr "Yetenekleri ayırmak için \",\" kullanın"
+msgstr "Yetenekleri ayırmak için ‘,’ kullanın"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:68
 #, kde-format
@@ -1579,8 +1580,8 @@ msgid ""
 "The \"ihave\" test provides a means for Sieve scripts to test for the "
 "existence of a given extension prior to actually using it."
 msgstr ""
-"\"ihave\" testi verilen bir uzantının varlığını test etmek için olanak "
-"sağlar ve genellikle kullanılır."
+"“ihave” testi verilen bir uzantının varlığını sınamak için olanak sağlar ve "
+"genellikle kullanılır."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmailboxexists.cpp:20
 #, kde-format
@@ -1594,9 +1595,9 @@ msgid ""
 "names\" argument exist in the mailstore, and each allows the user in whose "
 "context the Sieve script runs to \"deliver\" messages into it."
 msgstr ""
-"\"mailboxexists\" testi \"mailbox-names\" listesindeki tüm posta kutuları "
-"posta deposunda mevcutsa ve her biri Sieve betiğindeki kullanıcının içine "
-"ileti \"almasına\" izin veriyorsa doğru değeri döndürür."
+"“mailboxexists” sınaması “mailbox-names” listesindeki tüm posta kutuları "
+"posta deposunda varsa ve her biri Sieve betiğindeki kullanıcının içine ileti "
+"“almasına” izin veriyorsa doğru değeri döndürür."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:24
 #, kde-format
@@ -1646,7 +1647,7 @@ msgid ""
 "\"annotation-names\" argument exist for the specified mailbox."
 msgstr ""
 "Eğer belirtilen posta kutusundaki adlar bilgisi ek bilgiler de listeli ise "
-"\"metadataexist\" testi olumlu değer döndürür."
+"“metadataexist” sınaması olumlu değer döndürür."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:23
 #, kde-format
@@ -1660,9 +1661,9 @@ msgid ""
 "The retrieved value is compared to the \"key-list\". The test returns true "
 "if the annotation exists and its value matches any of the keys."
 msgstr ""
-"Bu test sunucu bilgisindeki \"bilgi adı\" değerini getirir.  Alından değer "
-"anahtar listesi ile karşılaştırılır. Eğer herhangi bir anahtarın değeri ile "
-"uyumlu ise test, olumlu değer döndürür."
+"Bu sınama, sunucu bilgisindeki “annotation-name” değerini getirir. Alından "
+"değer anahtar listesi ile karşılaştırılır. Eğer herhangi bir anahtarın "
+"değeri ile uyumlu ise sınama olumlu değer döndürür."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:20
 #, kde-format
@@ -1676,7 +1677,7 @@ msgid ""
 "listed in the \"annotation-names\" argument exist."
 msgstr ""
 "Eğer belirtilen posta kutusundaki adlar bilgisi ek bilgiler de listeli ise "
-"\"servermetadataexist\" testi olumlu değer döndürür."
+"“servermetadataexist” sınaması olumlu değer döndürür."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionsize.cpp:20
 #, kde-format
@@ -1700,9 +1701,9 @@ msgid ""
 "tagged argument of \":over\" or \":under\", followed by a number "
 "representing the size of the message."
 msgstr ""
-"\"size\" testi iletinin boyutuyla ilgilidir.  Süreğinde, \":over\" veya \":"
-"under\" bayraklarından birini ve sonrasında da iletinin boyutunu temsil eden "
-"sayıyı alır."
+"“size” testi iletinin boyutuyla ilgilidir. Süreğinde, “:over” veya “:under” "
+"bayraklarından birini ve sonrasında da iletinin boyutunu temsil eden sayıyı "
+"alır."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:24
 #, kde-format
@@ -1721,9 +1722,9 @@ msgid ""
 "of either \"spamtest\" or \"spamtestplus\" for use with the capability "
 "mechanism."
 msgstr ""
-"\"spamtest\" testi yapan Sieve gerçeklemeleri yetenek mekanizmasıyla "
-"birlikte kullanabilmek için belirteç olarak \"spamtest\" veya \"spamtestplus"
-"\" kullanırlar."
+"“spamtest” testi yapan Sieve gerçeklemeleri yetenek mekanizmasıyla birlikte "
+"kullanabilmek için belirteç olarak “spamtest” veya “spamtestplus” "
+"kullanırlar."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:20
 #, kde-format
@@ -1738,7 +1739,7 @@ msgstr "doğru"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:43
 #, kde-format
 msgid "The \"true\" test always evaluates to true."
-msgstr "\"true\" testi her zaman doğruyu hesaplar."
+msgstr "“true” testi her zaman doğruyu hesaplar."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionvirustest.cpp:22
 #, kde-format
@@ -1751,8 +1752,8 @@ msgid ""
 "Sieve implementations that implement the \"virustest\" test have an "
 "identifier of \"virustest\" for use with the capability mechanism."
 msgstr ""
-"\"virustest\" testi yapan Sieve gerçeklenimleri yetenek mekanizmasıyla "
-"birlikte kullanmak için \"virustest\" tanımlayıcısına sahiptirler."
+"“virustest” testi yapan Sieve gerçeklenimleri yetenek mekanizmasıyla "
+"birlikte kullanmak için “virustest” tanımlayıcısına sahiptirler."
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:26
 #, kde-format
@@ -2043,18 +2044,18 @@ msgid ""
 "a message, including nested parts, depth first, and applies the commands in "
 "the specified block to each of them."
 msgstr ""
-"\"foreverpart\", iletideki MIME tipi bilgiyi gezer, birbirinin içine girer, "
+"“foreverpart”, iletideki MIME tipi bilgiyi gezer, birbirinin içine girer, "
 "derinlik öncelikli ve belirtilen bloktaki tüm ögeleri ekler."
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:92
 #, kde-format
 msgid "Unknown tagValue \"%1\" during loading loop \"for\""
-msgstr "\"for\" döngüsünü yüklerken bilinmeyen etiketDeğeri \"%1\""
+msgstr "“for” döngüsünü yüklerken bilinmeyen etiketDeğeri “%1”"
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:104
 #, kde-format
 msgid "Unknown tag \"%1\" during loading loop \"for\""
-msgstr "\"for\" döngüsünü yüklerken bilinmeyen etiket \"%1\""
+msgstr "“for” döngüsünü yüklerken bilinmeyen etiket “%1”"
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:58
 #, kde-format
@@ -2069,7 +2070,7 @@ msgstr "Ayarlanacak değer:"
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:129
 #, kde-format
 msgid "Unknown tag \"%1\" during loading of variables."
-msgstr "Değişkenlerin yüklenmesi sırasında bilinmeyen \"%1\" etiketi."
+msgstr "Değişkenlerin yüklenmesi sırasında bilinmeyen “%1” etiketi."
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:179
 #, kde-format
@@ -2079,9 +2080,9 @@ msgid ""
 "it global, the name specifies a separate, non-global variable within that "
 "script."
 msgstr ""
-"\"global\" komutu ile belirtilmiş bir değer tüm betiklerde genel bir "
-"değişken haline gelir.  Eğer betik bu değeri başına genel tanımı yapmadan "
-"tanımlarsa ad genel olmayan bir değişken olarak betikte kullanılır."
+"“global” komutu ile belirtilmiş bir değer tüm betiklerde genel bir değişken "
+"haline gelir. Eğer betik bu değeri başına genel tanımı yapmadan tanımlarsa "
+"ad genel olmayan bir değişken olarak betikte kullanılır."
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:43
 #, kde-format
@@ -2096,7 +2097,7 @@ msgstr "genel"
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:58
 #, kde-format
 msgid "Unknown location type \"%1\" during parsing includes"
-msgstr "İçeriğin ayrıştırılması sırasında bilinmeyen \"%1\" konum türü"
+msgstr "İçeriğin ayrıştırılması sırasında bilinmeyen “%1” konum türü"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:129
 #, kde-format
@@ -2127,9 +2128,9 @@ msgid ""
 "single string argument representing the name of the script to include for "
 "processing at that point."
 msgstr ""
-"\"include\" komutu isteğe bağlı \"location\", \":once\", \":optional\" "
-"parametreleri alır ve tek bir dizgi değişkeni ile bunu adı ile çalıştırılan "
-"işlemin bir noktasına ekler."
+"“include” komutu isteğe bağlı “location”, “:once”, “:optional” parametreleri "
+"alır ve tek bir dizi değişkeni ile bunu adı ile çalıştırılan işlemin bir "
+"noktasına ekler."
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:342
 #, kde-format
@@ -2169,12 +2170,12 @@ msgstr "Yeni blok ekle:"
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:87
 #, kde-format
 msgid "\"elsif\" block"
-msgstr "\"elsif\" bloğu"
+msgstr "“elsif” bloğu"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:88
 #, kde-format
 msgid "\"else\" block"
-msgstr "\"else\" bloğu"
+msgstr "“else” bloğu"
 
 #: ksieveui/autocreatescripts/sievescriptdescriptiondialog.cpp:28
 #, kde-format
@@ -2270,7 +2271,7 @@ msgstr "Yeni betik adı:"
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:269
 #, kde-format
 msgid "Do you want to delete \"%1\" script?"
-msgstr "\"%1\" betiğini silmek istiyor musunuz?"
+msgstr "“%1” betiğini silmek istiyor musunuz?"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:270
 #, kde-format
@@ -2319,7 +2320,7 @@ msgstr "ForEveryPart"
 msgid ""
 "Script should always have just one \"Else\" block. We cannot add another one."
 msgstr ""
-"Betik mutlaka yalnızca bir tane \"Else\" bloğu içermelidir. Bir tane daha "
+"Betik mutlaka yalnızca bir tane “Else” bloğu içermelidir. Bir tane daha "
 "ekleyemeyiz."
 
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:111
@@ -2330,12 +2331,12 @@ msgstr "Ana blok"
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:113
 #, kde-format
 msgid "Block \"Elsif\""
-msgstr "\"Elsif\" Bloğu"
+msgstr "“Elsif” Bloğu"
 
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:115
 #, kde-format
 msgid "Block \"Else\""
-msgstr "\"Else\" Bloğu"
+msgstr "“Else” Bloğu"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:30
 #, kde-format
@@ -2428,7 +2429,7 @@ msgstr ""
 #: ksieveui/debug/sievedebugdialog.cpp:169
 #, kde-format
 msgid "Contents of script '%1':\n"
-msgstr "'%1' betiğinin içeriği:\n"
+msgstr "“%1” betiğinin içeriği:\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:203
 #, kde-format
@@ -2482,7 +2483,7 @@ msgid ""
 "Active script: '%1'\n"
 "\n"
 msgstr ""
-"Etkin betik: '%1'\n"
+"Etkin betik: “%1”\n"
 "\n"
 
 #: ksieveui/editor/sieveeditor.cpp:39
@@ -2547,8 +2548,8 @@ msgid ""
 "Could not load the file %1:\n"
 "\"%2\" is the detailed error description."
 msgstr ""
-"\"%1\" dosyası yüklenemedi:\n"
-"\"%2\" detaylı hata tanımlamasıdır."
+"“%1” dosyası yüklenemedi:\n"
+"“%2” ayrıntılı hata tanımlamasıdır."
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
 #, kde-format
@@ -2639,7 +2640,7 @@ msgstr "Düzenleyici"
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:146
 #, kde-format
 msgid "Show result from \"check syntax\""
-msgstr "\"sözdizimini denetle\" üzerindeki sonuçları göster"
+msgstr "“check syntax” için sonuçları göster"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:234
 #, kde-format
@@ -2716,7 +2717,7 @@ msgstr "Kural Ekle"
 #: ksieveui/editor/sievetextedit.cpp:291
 #, kde-format
 msgid "Help about: '%1'"
-msgstr "'%1' hakkında yardım"
+msgstr "“%1” hakkında yardım"
 
 #: ksieveui/editor/sievetextedit.cpp:300
 #, kde-format
@@ -2927,8 +2928,8 @@ msgid ""
 "Activate extension with \"+<name of extension>\", deactivate it with \"-"
 "<name of extension>\""
 msgstr ""
-"Etkinleştirilecek uzantı \"+<name of extension>\", pasifleştirilecek uzantı "
-"\"-<name of extension>\""
+"Etkinleştirilecek uzantı “+<uzantı adı>”, pasifleştirilecek uzantı “-<uzantı "
+"adı>”"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
 #, kde-format
@@ -2976,8 +2977,8 @@ msgid ""
 "\"sieve-test\" was not found on system. Please install it. (See in Dovecot "
 "package)"
 msgstr ""
-"\"sieve-test\" sisteminizde bulunamadı. Lütfen kurun. (Dovecot paketinde "
-"bulabilirsiniz)"
+"“sieve-test” sisteminizde bulunamadı. Lütfen kurun (Dovecot paketinde "
+"bulabilirsiniz)."
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:16
 #, kde-format
@@ -3041,7 +3042,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure \"Out of Office\" Replies"
-msgstr "\"Ofis Dışında\" Yanıtlarını Yapılandır"
+msgstr "“Ofis Dışında” Yanıtlarını Yapılandır"
 
 #: ksieveui/vacation/multiimapvacationdialog.cpp:78
 #, kde-format
@@ -3074,9 +3075,9 @@ msgid ""
 "You have not yet configured an IMAP server for this. You can do this on the "
 "\"Filtering\" tab of the IMAP account configuration."
 msgstr ""
-"K Posta'nın Ofis Dışında yanıtlama özelliği sunucu bağımlıdır. Bunun için "
+"K Posta’nın Ofis Dışında yanıtlama özelliği sunucu bağımlıdır. Bunun için "
 "bir IMAP sunucu ayarı yapılandırmadınız. Bu işlemi IMAP hesap yapılandırması "
-"altındaki \"Süzme\" sekmesinden tamamlayabilirsiniz."
+"altındaki “Süzme” sekmesinden tamamlayabilirsiniz."
 
 #: ksieveui/vacation/vacationeditwidget.cpp:47
 #, kde-format
@@ -3168,8 +3169,8 @@ msgid ""
 "extensions;without it, KMail cannot install out-of-office replies for you."
 "Please contact your system administrator."
 msgstr ""
-"Sunucunuz desteklediği Sieve eklentileri arasında \"vacation\" yer almıyor, "
-"o olmadan K Posta sizin yerinize ofis dışındayım yanıtlarını kuramaz. Lütfen "
+"Sunucunuz desteklediği Sieve eklentileri arasında “vacation” yer almıyor, o "
+"olmadan K Posta sizin yerinize ofis dışındayım yanıtlarını kuramaz. Lütfen "
 "sistem yöneticinizle iletişime geçin."
 
 #: ksieveui/vacation/vacationwarningwidget.cpp:20
@@ -3186,7 +3187,7 @@ msgstr ""
 #: ksieveui/widgets/custommanagesievewidget.cpp:91
 #, kde-format
 msgid "No Sieve URL configured"
-msgstr "Yapılandırılmış Sieve URL'si yok"
+msgstr "Yapılandırılmış Sieve URL’si yok"
 
 #: ksieveui/widgets/managesievetreeview.cpp:16
 #: ksieveui/widgets/managesievetreeview.cpp:30
@@ -3252,17 +3253,17 @@ msgstr "Korunmuş ad kullanamazsın."
 #: ksieveui/widgets/managesievewidget.cpp:246
 #, kde-format
 msgid "Script name already used \"%1\"."
-msgstr "\"%1\" betik adı halen kullanılıyor."
+msgstr "“%1” betik adı halen kullanılıyor."
 
 #: ksieveui/widgets/managesievewidget.cpp:426
 #, kde-format
 msgid "Script Name:"
-msgstr "Betik Adı:"
+msgstr "Betik adı:"
 
 #: ksieveui/widgets/managesievewidget.cpp:490
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
-msgstr "\"%1\" betiği sunucudan gerçekten silinsin mi?"
+msgstr "“%1” betiği sunucudan gerçekten silinsin mi?"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
 #, kde-format
