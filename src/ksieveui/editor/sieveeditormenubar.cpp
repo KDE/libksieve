@@ -47,20 +47,20 @@ void SieveEditorMenuBar::setEditorMode(bool editorMode)
 
 void SieveEditorMenuBar::initActions()
 {
-    mGoToLine = new QAction(i18n("Go to Line"), this);
+    mGoToLine = new QAction(i18nc("@action", "Go to Line"), this);
     mGoToLine->setIcon(QIcon::fromTheme(QStringLiteral("go-jump")));
     mGoToLine->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_G));
     connect(mGoToLine, &QAction::triggered, this, &SieveEditorMenuBar::gotoLine);
 
-    mCommentCodeAction = new QAction(i18n("Comment"), this);
+    mCommentCodeAction = new QAction(i18nc("@action", "Comment"), this);
     mCommentCodeAction->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_D));
     connect(mCommentCodeAction, &QAction::triggered, this, &SieveEditorMenuBar::comment);
 
-    mUncommentCodeAction = new QAction(i18n("Uncomment"), this);
+    mUncommentCodeAction = new QAction(i18nc("@action", "Uncomment"), this);
     mUncommentCodeAction->setShortcut(QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_D));
     connect(mUncommentCodeAction, &QAction::triggered, this, &SieveEditorMenuBar::uncomment);
 
-    mDebugSieveAction = new QAction(i18n("Debug Sieve Script…"), this);
+    mDebugSieveAction = new QAction(i18nc("@action", "Debug Sieve Script…"), this);
     mDebugSieveAction->setShortcut(QKeySequence(Qt::ALT | Qt::Key_D));
     connect(mDebugSieveAction, &QAction::triggered, this, &SieveEditorMenuBar::debugSieveScript);
 
@@ -78,7 +78,7 @@ void SieveEditorMenuBar::initActions()
     mPrintPreviewAction = KStandardAction::printPreview(this, &SieveEditorMenuBar::printPreview, this);
 
     mZoomResetAction = KStandardAction::actualSize(this, &SieveEditorMenuBar::zoomReset, this);
-    mWordWrapAction = new QAction(i18n("Wordwrap"), this);
+    mWordWrapAction = new QAction(i18nc("@action", "Wordwrap"), this);
     mWordWrapAction->setCheckable(true);
     connect(mWordWrapAction, &QAction::triggered, this, &SieveEditorMenuBar::wordWrap);
 

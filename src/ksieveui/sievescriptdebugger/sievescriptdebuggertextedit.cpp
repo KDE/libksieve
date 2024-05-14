@@ -27,7 +27,7 @@ void SieveScriptDebuggerTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
     separator->setSeparator(true);
     menu->addAction(separator);
 
-    auto addDebugAction = new QAction(i18n("Add debug here"), menu);
+    auto addDebugAction = new QAction(i18nc("@action", "Add debug here"), menu);
     connect(addDebugAction, &QAction::triggered, this, &SieveScriptDebuggerTextEdit::slotAddDebug);
     menu->addAction(addDebugAction);
 

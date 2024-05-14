@@ -24,7 +24,7 @@ void SieveScriptDebuggerResultEditor::addExtraMenuEntry(QMenu *menu, QPoint pos)
 {
     TextCustomEditor::PlainTextEditor::addExtraMenuEntry(menu, pos);
     if (isReadOnly() && !document()->isEmpty()) {
-        auto clearAction = new QAction(i18n("Clear"), menu);
+        auto clearAction = new QAction(i18nc("@action", "Clear"), menu);
         connect(clearAction, &QAction::triggered, this, &SieveScriptDebuggerResultEditor::slotClear);
         menu->addAction(clearAction);
         menu->addSeparator();

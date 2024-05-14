@@ -42,14 +42,14 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     auto toolbar = new QToolBar(this);
     toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
-    mCheckSyntax = new QAction(i18n("Check Syntax"), this);
+    mCheckSyntax = new QAction(i18nc("@action", "Check Syntax"), this);
     connect(mCheckSyntax, &QAction::triggered, this, &SieveEditorWidget::slotCheckSyntax);
     toolbar->addAction(mCheckSyntax);
     mSaveAs = KStandardAction::saveAs(this, &SieveEditorWidget::slotSaveAs, this);
     toolbar->addAction(mSaveAs);
     toolbar->addAction(i18n("Import…"), this, &SieveEditorWidget::slotImport);
 
-    mCreateRulesGraphically = new QAction(i18n("Create Rules Graphically…"), this);
+    mCreateRulesGraphically = new QAction(i18nc("@action", "Create Rules Graphically…"), this);
     connect(mCreateRulesGraphically, &QAction::triggered, this, &SieveEditorWidget::slotCreateRulesGraphically);
     toolbar->addAction(mCreateRulesGraphically);
     mSwitchMode = new QAction(this);
@@ -69,7 +69,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     shareAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
     purposeMenu->setEditorWidget(this);
     toolbar->addAction(shareAction);
-    mServerInfo = new QAction(i18n("Server Info"), this);
+    mServerInfo = new QAction(i18nc("@action", "Server Info"), this);
     connect(mServerInfo, &QAction::triggered, this, &SieveEditorWidget::slotServerInfo);
     toolbar->addAction(mServerInfo);
 
