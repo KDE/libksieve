@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# g.sora <g.sora@tiscali.it>, 2011, 2012, 2013, 2020, 2021, 2023.
+# g.sora <g.sora@tiscali.it>, 2011, 2012, 2013, 2020, 2021, 2023, 2024.
 # Giovanni Sora <g.sora@tioscali.it>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-12 00:39+0000\n"
-"PO-Revision-Date: 2023-11-05 21:52+0100\n"
+"PO-Revision-Date: 2024-05-13 12:26+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: kmanagesieve/session.cpp:89
 #, kde-format
@@ -1109,14 +1109,12 @@ msgid ""
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
-#, fuzzy, kde-format
-#| msgid "Define Email Address..."
+#, kde-format
 msgid "Define Email Address…"
 msgstr "Define Adresse de E-Posta..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
-#, fuzzy, kde-format
-#| msgid "Enter message..."
+#, kde-format
 msgid "Enter message…"
 msgstr "Inserta  message..."
 
@@ -1162,8 +1160,7 @@ msgid "Draft"
 msgstr "Version provisori"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Click on button for selecting flags..."
+#, kde-format
 msgid "Click on button for selecting flags…"
 msgstr "Pulsa sur button per seliger flags..."
 
@@ -1714,10 +1711,8 @@ msgid "Weekday"
 msgstr "Die de septimana"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
-#, fuzzy
-#| msgid "Delete header"
 msgid "Select multiple headers…"
-msgstr "Dele capite"
+msgstr "Dele capite multiple..."
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
 #, kde-format
@@ -2196,10 +2191,9 @@ msgstr "Error de Analysator  syntactic de Sieve "
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As…"
-msgstr "Salveguarda como..."
+msgstr "Salveguarda como…"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
 #, kde-format
@@ -2236,10 +2230,7 @@ msgid "Sieve Diagnostics"
 msgstr "Diagnostiches de Sieve (Cribrar)"
 
 #: ksieveui/debug/sievedebugdialog.cpp:65
-#, fuzzy, kde-format
-#| msgid ""
-#| "Collecting diagnostic information about Sieve support...\n"
-#| "\n"
+#, kde-format
 msgid ""
 "Collecting diagnostic information about Sieve support…\n"
 "\n"
@@ -2260,8 +2251,7 @@ msgid ""
 msgstr ""
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
-#, fuzzy, kde-format
-#| msgid "Collecting data for account '%1'...\n"
+#, kde-format
 msgid "Collecting data for account '%1'…\n"
 msgstr "Colliger Datos per conto '%1'...\n"
 
@@ -2421,11 +2411,9 @@ msgid "Uncomment"
 msgstr "Leva commentos"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Debug Sieve Script"
+#, kde-format
 msgid "Debug Sieve Script…"
-msgstr "Cribrar script de Sieve"
+msgstr "Cribrar script de Sieve..."
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
 #, kde-format
@@ -2515,20 +2503,17 @@ msgid "Check Syntax"
 msgstr "Verifica Syntaxe"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import…"
 msgstr "Importa..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Create Rules Graphically..."
+#, kde-format
 msgid "Create Rules Graphically…"
-msgstr "Crea regulas graphicamente..."
+msgstr "Crea regulas graphicamente…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:66
-#, fuzzy, kde-format
-#| msgid "Share..."
+#, kde-format
 msgid "Share…"
 msgstr "Comparti..."
 
@@ -2540,7 +2525,7 @@ msgstr "Info de servitor"
 #: ksieveui/editor/sieveeditorwidget.cpp:116
 #, kde-format
 msgid "Script name:"
-msgstr ""
+msgstr "Nomine de Script:"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:385
 #, kde-format
@@ -2684,13 +2669,12 @@ msgstr "Gere scripts de Sieve"
 #, kde-format
 msgctxt "create a new sieve script"
 msgid "New…"
-msgstr ""
+msgstr "Nove... "
 
 #: ksieveui/managesievescriptsdialog.cpp:89
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edit…"
-msgstr "Modifica"
+msgstr "Modifica…"
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
@@ -2711,8 +2695,7 @@ msgid "Sieve Error"
 msgstr "Error de Sieve"
 
 #: ksieveui/managesievescriptsdialog.cpp:206
-#, fuzzy, kde-format
-#| msgid "Uploading script to server for checking it, please wait..."
+#, kde-format
 msgid "Uploading script to server for checking it, please wait…"
 msgstr ""
 "Incargante script al servitor per verificar lo, pro favor tu attende ..."
@@ -2990,12 +2973,14 @@ msgid ""
 "There is still an active out-of-office reply configured.\n"
 "Do you want to edit it?"
 msgstr ""
+"Il ha ancora un responsa foras de officio configurate.\n"
+"Tu vole modificar lo?"
 
 #: ksieveui/vacation/vacationmanager.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Out-of-office reply still active"
-msgstr ""
+msgstr "Responsa de Foras de Officio ancora active"
 
 #: ksieveui/vacation/vacationmanager.cpp:58
 #, kde-format
@@ -3025,6 +3010,9 @@ msgid ""
 "no longer able to determine the parameters for the autoreplies. Default "
 "values will be used."
 msgstr ""
+"Alicun (probabilemente tu) modificava le script de vacantias sur le "
+"servitor. KMail non esplus capace a deternminar le parametros per responsas "
+"automatic. Il usara valores predefinite."
 
 #: ksieveui/widgets/custommanagesievewidget.cpp:91
 #, kde-format
@@ -3033,10 +3021,9 @@ msgstr "Necun URL de Sieve configurate"
 
 #: ksieveui/widgets/managesievetreeview.cpp:16
 #: ksieveui/widgets/managesievetreeview.cpp:30
-#, fuzzy, kde-format
-#| msgid "No IMAP server configured..."
+#, kde-format
 msgid "No IMAP server configured…"
-msgstr "Necun servitor IPAM configurate..."
+msgstr "Necun servitor IMAP configurate..."
 
 #: ksieveui/widgets/managesievetreeview.cpp:20
 #, kde-format
@@ -3046,19 +3033,17 @@ msgstr "Scripts disponibile"
 #: ksieveui/widgets/managesievetreeview.cpp:39
 #, kde-format
 msgid "Network down."
-msgstr ""
+msgstr "Rete basse (non functionante)."
 
 #: ksieveui/widgets/managesievewidget.cpp:147
-#, fuzzy, kde-format
-#| msgid "Edit Script..."
+#, kde-format
 msgid "Edit Script…"
 msgstr "Modifica script..."
 
 #: ksieveui/widgets/managesievewidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Rename Script"
+#, kde-format
 msgid "Rename Script…"
-msgstr "Renomina script"
+msgstr "Renomina script…"
 
 #: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
@@ -3066,10 +3051,9 @@ msgid "Deactivate Script"
 msgstr "Deactiva Script"
 
 #: ksieveui/widgets/managesievewidget.cpp:159
-#, fuzzy, kde-format
-#| msgid "New Script"
+#, kde-format
 msgid "New Script…"
-msgstr "Nove Script"
+msgstr "Nove Script…"
 
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format
@@ -3094,7 +3078,7 @@ msgstr "Nomine vacue non es un nomine valide"
 #: ksieveui/widgets/managesievewidget.cpp:234
 #, kde-format
 msgid "You cannot use protected name."
-msgstr ""
+msgstr "Tu non pote usar nomine protegite."
 
 #: ksieveui/widgets/managesievewidget.cpp:246
 #, kde-format
@@ -3109,7 +3093,7 @@ msgstr "Nomine de Script:"
 #: ksieveui/widgets/managesievewidget.cpp:490
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
-msgstr ""
+msgstr "Vermente dele script \"%1\" ex le servitor?"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
 #, kde-format
@@ -3131,7 +3115,7 @@ msgstr ""
 #: ksieveui/widgets/managesievewidget.cpp:561
 #, kde-format
 msgid "Failed to fetch the list of scripts"
-msgstr ""
+msgstr "Il falleva a reportar le lista de scripts"
 
 #: ksieveui/widgets/moveimapfolderwidget.cpp:24
 #, kde-format
