@@ -96,7 +96,7 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
                                i18n("TLS encryption was requested, but your Sieve server does not advertise TLS in its capabilities.\n"
                                     "You can choose to try to initiate TLS negotiations nonetheless, or cancel the operation."),
                                i18nc("@title:window", "Sieve Server Does Not Advertise TLS"),
-                               KGuiItem(i18n("&Start TLS nonetheless")),
+                               KGuiItem(i18nc("@action:button", "&Start TLS nonetheless")),
                                KStandardGuiItem::cancel(),
                                QStringLiteral("ask_starttls_%1").arg(m_url.host()))
                             != KMessageBox::Continue) {

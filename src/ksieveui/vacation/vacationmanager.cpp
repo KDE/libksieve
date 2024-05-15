@@ -55,8 +55,8 @@ void VacationManager::slotUpdateVacationScriptStatus(bool active, const QString 
                                                 i18n("There is still an active out-of-office reply configured.\n"
                                                      "Do you want to edit it?"),
                                                 i18nc("@title:window", "Out-of-office reply still active"),
-                                                KGuiItem(i18n("Edit"), QStringLiteral("document-properties")),
-                                                KGuiItem(i18n("Ignore"), QStringLiteral("dialog-cancel")))
+                                                KGuiItem(i18nc("@action:button", "Edit"), QStringLiteral("document-properties")),
+                                                KGuiItem(i18nc("@action:button", "Ignore"), QStringLiteral("dialog-cancel")))
                 == KMessageBox::ButtonCode::PrimaryAction) {
                 slotEditVacation(serverName);
             }
