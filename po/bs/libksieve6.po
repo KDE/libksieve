@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:39+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2014-01-31 19:22+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -2626,29 +2626,34 @@ msgstr "Greška Sieve uređivača"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:50
 #, kde-format
+msgctxt "@action"
 msgid "Go to Line"
 msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:55
 #, fuzzy, kde-format
 #| msgid "Add comment"
+msgctxt "@action"
 msgid "Comment"
 msgstr "Dodajte komentar"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:59
 #, fuzzy, kde-format
 #| msgid "Add comment"
+msgctxt "@action"
 msgid "Uncomment"
 msgstr "Dodajte komentar"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
 #, fuzzy, kde-format
 #| msgid "New Sieve Script"
+msgctxt "@action"
 msgid "Debug Sieve Script…"
 msgstr "Nova Sieve skripta"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
 #, kde-format
+msgctxt "@action"
 msgid "Wordwrap"
 msgstr ""
 
@@ -2737,7 +2742,9 @@ msgid "Parsing error"
 msgstr "Greška u Sieve analizi"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Check Syntax"
+msgctxt "@action"
 msgid "Check Syntax"
 msgstr "Provjera sintakse"
 
@@ -2749,6 +2756,7 @@ msgstr "Uvezi..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
 #, kde-format
+msgctxt "@action"
 msgid "Create Rules Graphically…"
 msgstr ""
 
@@ -2759,6 +2767,7 @@ msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
 #, kde-format
+msgctxt "@action"
 msgid "Server Info"
 msgstr ""
 
@@ -2792,18 +2801,23 @@ msgid "Sieve server supports:"
 msgstr "Server sieve podržava:"
 
 #: ksieveui/editor/sievetextedit.cpp:277
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action"
 msgid "Insert Rule"
-msgstr ""
+msgstr "Izmjieni"
 
 #: ksieveui/editor/sievetextedit.cpp:291
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Help about: '%1'"
+msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "Pomoć o: '%1'"
 
 #: ksieveui/editor/sievetextedit.cpp:300
 #, fuzzy, kde-format
 #| msgid "Edit"
+msgctxt "@action"
 msgid "Edit Rule"
 msgstr "Izmjieni"
 
@@ -2822,24 +2836,28 @@ msgstr ""
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
 #, fuzzy, kde-format
 #| msgid "Switch in graphical mode"
+msgctxt "@action"
 msgid "Switch to Graphical Mode"
 msgstr "Prebaci u grafički način"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:29
 #, fuzzy, kde-format
 #| msgid "Switch in text mode"
+msgctxt "@action"
 msgid "Stay in Text Mode"
 msgstr "Prebaci u tekstualni način"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:35
 #, fuzzy, kde-format
 #| msgid "Switch in text mode"
+msgctxt "@action"
 msgid "Switch to Text Mode"
 msgstr "Prebaci u tekstualni način"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:39
 #, fuzzy, kde-format
 #| msgid "Switch in graphical mode"
+msgctxt "@action"
 msgid "Stay in Graphical Mode"
 msgstr "Prebaci u grafički način"
 
@@ -3065,6 +3083,7 @@ msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
 #, kde-format
+msgctxt "@action"
 msgid "Clear"
 msgstr ""
 
@@ -3081,6 +3100,7 @@ msgstr ""
 #: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:30
 #, fuzzy, kde-format
 #| msgid "Add new header:"
+msgctxt "@action"
 msgid "Add debug here"
 msgstr "Dodaj novo zaglavlje"
 

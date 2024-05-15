@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:39+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-05-13 12:26+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -2396,27 +2396,37 @@ msgid "Sieve Editor Error"
 msgstr "Error de editor de Sieve"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Go to Line"
+msgctxt "@action"
 msgid "Go to Line"
 msgstr "Vade al Linea"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Comment"
+msgctxt "@action"
 msgid "Comment"
 msgstr "Commento"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Uncomment"
+msgctxt "@action"
 msgid "Uncomment"
 msgstr "Leva commentos"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Debug Sieve Script…"
+msgctxt "@action"
 msgid "Debug Sieve Script…"
 msgstr "Cribrar script de Sieve..."
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Wordwrap"
+msgctxt "@action"
 msgid "Wordwrap"
 msgstr "Excision de Parola"
 
@@ -2498,7 +2508,9 @@ msgid "Parsing error"
 msgstr "Error de analysator syntactic"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Check Syntax"
+msgctxt "@action"
 msgid "Check Syntax"
 msgstr "Verifica Syntaxe"
 
@@ -2508,7 +2520,9 @@ msgid "Import…"
 msgstr "Importa..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Rules Graphically…"
+msgctxt "@action"
 msgid "Create Rules Graphically…"
 msgstr "Crea regulas graphicamente…"
 
@@ -2518,7 +2532,9 @@ msgid "Share…"
 msgstr "Comparti..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Server Info"
+msgctxt "@action"
 msgid "Server Info"
 msgstr "Info de servitor"
 
@@ -2549,17 +2565,22 @@ msgid "Sieve server supports:"
 msgstr "Script de Sieve supporta:"
 
 #: ksieveui/editor/sievetextedit.cpp:277
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Insert Rule"
+msgctxt "@action"
 msgid "Insert Rule"
 msgstr "Inserta regula"
 
 #: ksieveui/editor/sievetextedit.cpp:291
 #, kde-format
+msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr ""
 
 #: ksieveui/editor/sievetextedit.cpp:300
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Rule"
+msgctxt "@action"
 msgid "Edit Rule"
 msgstr "Modifica regula"
 
@@ -2572,21 +2593,25 @@ msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
 #, kde-format
+msgctxt "@action"
 msgid "Switch to Graphical Mode"
 msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:29
 #, kde-format
+msgctxt "@action"
 msgid "Stay in Text Mode"
 msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:35
 #, kde-format
+msgctxt "@action"
 msgid "Switch to Text Mode"
 msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:39
 #, kde-format
+msgctxt "@action"
 msgid "Stay in Graphical Mode"
 msgstr ""
 
@@ -2793,7 +2818,9 @@ msgid "Script still contains debug method. Remove it please."
 msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clear"
+msgctxt "@action"
 msgid "Clear"
 msgstr "Netta"
 
@@ -2804,6 +2831,7 @@ msgstr "Files de texto (*.txt);;Omne Files (*)"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:30
 #, kde-format
+msgctxt "@action"
 msgid "Add debug here"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:39+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2023-01-22 19:34+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -2369,27 +2369,36 @@ msgid "Sieve Editor Error"
 msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Go to Line"
+msgctxt "@action"
 msgid "Go to Line"
 msgstr "Отиване на ред"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Comment"
+msgctxt "@action"
 msgid "Comment"
 msgstr "Коментар"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Uncomment"
+msgctxt "@action"
 msgid "Uncomment"
 msgstr "Премахване на коментар"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
 #, fuzzy, kde-format
+msgctxt "@action"
 msgid "Debug Sieve Script…"
 msgstr "Откриване на грешки в Sieve скрипт..."
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Wordwrap"
+msgctxt "@action"
 msgid "Wordwrap"
 msgstr "Пренасяне на думи"
 
@@ -2472,7 +2481,9 @@ msgid "Parsing error"
 msgstr "Грешка при обработка"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Check Syntax"
+msgctxt "@action"
 msgid "Check Syntax"
 msgstr "Проверка на синтаксиса"
 
@@ -2485,6 +2496,7 @@ msgstr "Внасяне..."
 #: ksieveui/editor/sieveeditorwidget.cpp:52
 #, fuzzy, kde-format
 #| msgid "Create Rules Graphically..."
+msgctxt "@action"
 msgid "Create Rules Graphically…"
 msgstr "Графично създаване на правила..."
 
@@ -2495,7 +2507,9 @@ msgid "Share…"
 msgstr "Споделяне..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Server Info"
+msgctxt "@action"
 msgid "Server Info"
 msgstr "Информация за сървъра"
 
@@ -2526,17 +2540,22 @@ msgid "Sieve server supports:"
 msgstr ""
 
 #: ksieveui/editor/sievetextedit.cpp:277
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Rule"
+msgctxt "@action"
 msgid "Insert Rule"
-msgstr ""
+msgstr "Редактиране на правило"
 
 #: ksieveui/editor/sievetextedit.cpp:291
 #, kde-format
+msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr ""
 
 #: ksieveui/editor/sievetextedit.cpp:300
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Rule"
+msgctxt "@action"
 msgid "Edit Rule"
 msgstr "Редактиране на правило"
 
@@ -2549,21 +2568,25 @@ msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
 #, kde-format
+msgctxt "@action"
 msgid "Switch to Graphical Mode"
 msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:29
 #, kde-format
+msgctxt "@action"
 msgid "Stay in Text Mode"
 msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:35
 #, kde-format
+msgctxt "@action"
 msgid "Switch to Text Mode"
 msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:39
 #, kde-format
+msgctxt "@action"
 msgid "Stay in Graphical Mode"
 msgstr ""
 
@@ -2773,7 +2796,9 @@ msgid "Script still contains debug method. Remove it please."
 msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clear"
+msgctxt "@action"
 msgid "Clear"
 msgstr "Изчистване"
 
@@ -2784,6 +2809,7 @@ msgstr "Текстови файлове (* .txt) ;; Всички файлове 
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:30
 #, kde-format
+msgctxt "@action"
 msgid "Add debug here"
 msgstr ""
 

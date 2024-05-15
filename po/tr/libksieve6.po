@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:39+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-05-12 14:21+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2557,27 +2557,37 @@ msgid "Sieve Editor Error"
 msgstr "Sieve Düzenleyicisi Hatası"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Go to Line"
+msgctxt "@action"
 msgid "Go to Line"
 msgstr "Satıra Git"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Comment"
+msgctxt "@action"
 msgid "Comment"
 msgstr "Açıklama"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Uncomment"
+msgctxt "@action"
 msgid "Uncomment"
 msgstr "Yorumu Kaldır"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Debug Sieve Script…"
+msgctxt "@action"
 msgid "Debug Sieve Script…"
 msgstr "Sieve Betiği Hatalarını Ayıkla…"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Wordwrap"
+msgctxt "@action"
 msgid "Wordwrap"
 msgstr "Sözcük Kaydırma"
 
@@ -2659,7 +2669,9 @@ msgid "Parsing error"
 msgstr "Ayrıştırma Hatası"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Check Syntax"
+msgctxt "@action"
 msgid "Check Syntax"
 msgstr "Sözdizimini Denetle"
 
@@ -2669,7 +2681,9 @@ msgid "Import…"
 msgstr "İçe Aktar…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create Rules Graphically…"
+msgctxt "@action"
 msgid "Create Rules Graphically…"
 msgstr "Kuralları Grafiksel Oluştur…"
 
@@ -2679,7 +2693,9 @@ msgid "Share…"
 msgstr "Paylaş…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Server Info"
+msgctxt "@action"
 msgid "Server Info"
 msgstr "Sunucu Bilgisi"
 
@@ -2710,17 +2726,23 @@ msgid "Sieve server supports:"
 msgstr "Sieve sunucusu şunları destekler:"
 
 #: ksieveui/editor/sievetextedit.cpp:277
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Insert Rule"
+msgctxt "@action"
 msgid "Insert Rule"
 msgstr "Kural Ekle"
 
 #: ksieveui/editor/sievetextedit.cpp:291
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Help about: '%1'"
+msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "“%1” hakkında yardım"
 
 #: ksieveui/editor/sievetextedit.cpp:300
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Rule"
+msgctxt "@action"
 msgid "Edit Rule"
 msgstr "Kuralı Düzenle"
 
@@ -2734,22 +2756,30 @@ msgstr ""
 "\">(Ayrıntılar…)</a>"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Switch to Graphical Mode"
+msgctxt "@action"
 msgid "Switch to Graphical Mode"
 msgstr "Grafik Kipe Geç"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stay in Text Mode"
+msgctxt "@action"
 msgid "Stay in Text Mode"
 msgstr "Metin Kipinde Kal"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Switch to Text Mode"
+msgctxt "@action"
 msgid "Switch to Text Mode"
 msgstr "Metin Kipine Geç"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stay in Graphical Mode"
+msgctxt "@action"
 msgid "Stay in Graphical Mode"
 msgstr "Grafik Kipte Kal"
 
@@ -2957,7 +2987,9 @@ msgid "Script still contains debug method. Remove it please."
 msgstr "Betik hâlâ hata ayıklama yöntemi içeriyor. Lütfen onu silin."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clear"
+msgctxt "@action"
 msgid "Clear"
 msgstr "Temizle"
 
@@ -2967,7 +2999,9 @@ msgid "Text Files (*.txt);;All Files (*)"
 msgstr "Metin Dosyaları (*.txt);;Tüm Dosyalar (*)"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add debug here"
+msgctxt "@action"
 msgid "Add debug here"
 msgstr "Buraya hata ayıklama ekle"
 

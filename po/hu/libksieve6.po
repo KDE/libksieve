@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:39+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-03-19 11:33+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -2582,17 +2582,23 @@ msgid "Sieve Editor Error"
 msgstr "Sieve-szerkesztő hiba"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Go to Line"
+msgctxt "@action"
 msgid "Go to Line"
 msgstr "Ugrás sorra"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Comment"
+msgctxt "@action"
 msgid "Comment"
 msgstr "Megjegyzés"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Uncomment"
+msgctxt "@action"
 msgid "Uncomment"
 msgstr "Kikommentez"
 
@@ -2600,11 +2606,14 @@ msgstr "Kikommentez"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Debug Sieve Script"
+msgctxt "@action"
 msgid "Debug Sieve Script…"
 msgstr "Sieve parancsfájl hibakeresése"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Wordwrap"
+msgctxt "@action"
 msgid "Wordwrap"
 msgstr "Szótördelés"
 
@@ -2686,7 +2695,9 @@ msgid "Parsing error"
 msgstr "Feldolgozási hiba"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Check Syntax"
+msgctxt "@action"
 msgid "Check Syntax"
 msgstr "Szintakszisellenőrzés"
 
@@ -2699,6 +2710,7 @@ msgstr "Importálás…"
 #: ksieveui/editor/sieveeditorwidget.cpp:52
 #, fuzzy, kde-format
 #| msgid "Create Rules Graphically..."
+msgctxt "@action"
 msgid "Create Rules Graphically…"
 msgstr "Szabályok készítése grafikusan…"
 
@@ -2709,7 +2721,9 @@ msgid "Share…"
 msgstr "Megosztás…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Server Info"
+msgctxt "@action"
 msgid "Server Info"
 msgstr "Kiszolgálóinformációk"
 
@@ -2740,17 +2754,23 @@ msgid "Sieve server supports:"
 msgstr "A Sieve kiszolgáló támogatja:"
 
 #: ksieveui/editor/sievetextedit.cpp:277
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Insert Rule"
+msgctxt "@action"
 msgid "Insert Rule"
 msgstr "Szabály beszúrása"
 
 #: ksieveui/editor/sievetextedit.cpp:291
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Help about: '%1'"
+msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "Súgó: „%1”."
 
 #: ksieveui/editor/sievetextedit.cpp:300
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Rule"
+msgctxt "@action"
 msgid "Edit Rule"
 msgstr "Szabály szerkesztése"
 
@@ -2767,22 +2787,30 @@ msgstr ""
 "\">(Részletek…)</a>"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Switch to Graphical Mode"
+msgctxt "@action"
 msgid "Switch to Graphical Mode"
 msgstr "Átváltás grafikus módra"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stay in Text Mode"
+msgctxt "@action"
 msgid "Stay in Text Mode"
 msgstr "Maradjon szöveges módban"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Switch to Text Mode"
+msgctxt "@action"
 msgid "Switch to Text Mode"
 msgstr "Átváltás szöveges módba"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stay in Graphical Mode"
+msgctxt "@action"
 msgid "Stay in Graphical Mode"
 msgstr "Maradjon grafikus módban"
 
@@ -2996,7 +3024,9 @@ msgstr ""
 "el."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clear"
+msgctxt "@action"
 msgid "Clear"
 msgstr "Törlés"
 
@@ -3006,7 +3036,9 @@ msgid "Text Files (*.txt);;All Files (*)"
 msgstr "Szövegfájlok (*.txt);;Minden fájl (*)"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add debug here"
+msgctxt "@action"
 msgid "Add debug here"
 msgstr "Hibakeresés hozzáadása itt"
 

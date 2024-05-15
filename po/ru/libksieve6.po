@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:39+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2024-02-07 12:42+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -2619,17 +2619,23 @@ msgstr "Ошибка редактора Sieve"
 
 # BUGME: please add ellipsis --aspotashev
 #: ksieveui/editor/sieveeditormenubar.cpp:50
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Go to Line"
+msgctxt "@action"
 msgid "Go to Line"
 msgstr "Перейти на строку..."
 
 #: ksieveui/editor/sieveeditormenubar.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Comment"
+msgctxt "@action"
 msgid "Comment"
 msgstr "Закомментировать"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Uncomment"
+msgctxt "@action"
 msgid "Uncomment"
 msgstr "Раскомментировать"
 
@@ -2637,11 +2643,14 @@ msgstr "Раскомментировать"
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Debug Sieve Script"
+msgctxt "@action"
 msgid "Debug Sieve Script…"
 msgstr "Отладка сценария Sieve"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Wordwrap"
+msgctxt "@action"
 msgid "Wordwrap"
 msgstr "Динамический перенос строк"
 
@@ -2724,7 +2733,9 @@ msgid "Parsing error"
 msgstr "Ошибка разбора сценария"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Check Syntax"
+msgctxt "@action"
 msgid "Check Syntax"
 msgstr "Проверка синтаксиса"
 
@@ -2737,6 +2748,7 @@ msgstr "Импорт..."
 #: ksieveui/editor/sieveeditorwidget.cpp:52
 #, fuzzy, kde-format
 #| msgid "Create Rules Graphically..."
+msgctxt "@action"
 msgid "Create Rules Graphically…"
 msgstr "Создать правила в графическом виде..."
 
@@ -2746,7 +2758,9 @@ msgid "Share…"
 msgstr "Опубликовать..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Server Info"
+msgctxt "@action"
 msgid "Server Info"
 msgstr "Сведения о сервере"
 
@@ -2777,17 +2791,23 @@ msgid "Sieve server supports:"
 msgstr "Сервер Sieve поддерживает:"
 
 #: ksieveui/editor/sievetextedit.cpp:277
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Insert Rule"
+msgctxt "@action"
 msgid "Insert Rule"
 msgstr "Вставить правило"
 
 #: ksieveui/editor/sievetextedit.cpp:291
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Help about: '%1'"
+msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "Справка о «%1»"
 
 #: ksieveui/editor/sievetextedit.cpp:300
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Rule"
+msgctxt "@action"
 msgid "Edit Rule"
 msgstr "Изменить правило"
 
@@ -2804,22 +2824,30 @@ msgstr ""
 "\">Подробности...</a>"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Switch to Graphical Mode"
+msgctxt "@action"
 msgid "Switch to Graphical Mode"
 msgstr "Перейти в графический режим"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:29
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stay in Text Mode"
+msgctxt "@action"
 msgid "Stay in Text Mode"
 msgstr "Остаться в текстовом режиме"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Switch to Text Mode"
+msgctxt "@action"
 msgid "Switch to Text Mode"
 msgstr "Перейти в текстовый режим"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stay in Graphical Mode"
+msgctxt "@action"
 msgid "Stay in Graphical Mode"
 msgstr "Остаться в графическом режиме"
 
@@ -3035,7 +3063,9 @@ msgid "Script still contains debug method. Remove it please."
 msgstr "Сценарий по-прежнему содержит отладочный вызов. Удалите его."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Clear"
+msgctxt "@action"
 msgid "Clear"
 msgstr "Очистить"
 
@@ -3045,7 +3075,9 @@ msgid "Text Files (*.txt);;All Files (*)"
 msgstr "Текстовые файлы (*.txt);;Все файлы (*)"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add debug here"
+msgctxt "@action"
 msgid "Add debug here"
 msgstr "Вставить отладочный вызов"
 

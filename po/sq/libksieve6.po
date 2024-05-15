@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-12 00:39+0000\n"
+"POT-Creation-Date: 2024-05-15 00:39+0000\n"
 "PO-Revision-Date: 2009-06-16 23:27+0000\n"
 "Last-Translator: Vilson Gjeci <vilsongjeci@gmail.com>\n"
 "Language-Team: Albanian <sq@li.org>\n"
@@ -2342,26 +2342,31 @@ msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:50
 #, kde-format
+msgctxt "@action"
 msgid "Go to Line"
 msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:55
 #, kde-format
+msgctxt "@action"
 msgid "Comment"
 msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:59
 #, kde-format
+msgctxt "@action"
 msgid "Uncomment"
 msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
 #, kde-format
+msgctxt "@action"
 msgid "Debug Sieve Script…"
 msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
 #, kde-format
+msgctxt "@action"
 msgid "Wordwrap"
 msgstr ""
 
@@ -2444,6 +2449,7 @@ msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:45
 #, kde-format
+msgctxt "@action"
 msgid "Check Syntax"
 msgstr ""
 
@@ -2454,6 +2460,7 @@ msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
 #, kde-format
+msgctxt "@action"
 msgid "Create Rules Graphically…"
 msgstr ""
 
@@ -2464,6 +2471,7 @@ msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
 #, kde-format
+msgctxt "@action"
 msgid "Server Info"
 msgstr ""
 
@@ -2495,16 +2503,19 @@ msgstr ""
 
 #: ksieveui/editor/sievetextedit.cpp:277
 #, kde-format
+msgctxt "@action"
 msgid "Insert Rule"
 msgstr ""
 
 #: ksieveui/editor/sievetextedit.cpp:291
 #, kde-format
+msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr ""
 
 #: ksieveui/editor/sievetextedit.cpp:300
 #, kde-format
+msgctxt "@action"
 msgid "Edit Rule"
 msgstr ""
 
@@ -2517,21 +2528,25 @@ msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
 #, kde-format
+msgctxt "@action"
 msgid "Switch to Graphical Mode"
 msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:29
 #, kde-format
+msgctxt "@action"
 msgid "Stay in Text Mode"
 msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:35
 #, kde-format
+msgctxt "@action"
 msgid "Switch to Text Mode"
 msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:39
 #, kde-format
+msgctxt "@action"
 msgid "Stay in Graphical Mode"
 msgstr ""
 
@@ -2735,6 +2750,7 @@ msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
 #, kde-format
+msgctxt "@action"
 msgid "Clear"
 msgstr ""
 
@@ -2745,6 +2761,7 @@ msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:30
 #, kde-format
+msgctxt "@action"
 msgid "Add debug here"
 msgstr ""
 
