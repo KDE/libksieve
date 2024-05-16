@@ -2389,17 +2389,17 @@ msgstr ""
 #: ksieveui/editor/sieveeditormenubar.cpp:50
 #, kde-format
 msgid "Go to Line"
-msgstr "转到行"
+msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:55
 #, kde-format
 msgid "Comment"
-msgstr "评论"
+msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:59
 #, kde-format
 msgid "Uncomment"
-msgstr "取消注释"
+msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
 #, kde-format
@@ -2409,7 +2409,7 @@ msgstr "调试 Sieve 脚本..."
 #: ksieveui/editor/sieveeditormenubar.cpp:81
 #, kde-format
 msgid "Wordwrap"
-msgstr "自动换行"
+msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:98
 #, kde-format
@@ -2491,7 +2491,7 @@ msgstr ""
 #: ksieveui/editor/sieveeditorwidget.cpp:45
 #, kde-format
 msgid "Check Syntax"
-msgstr "检查语法"
+msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
 #, kde-format
@@ -2785,7 +2785,7 @@ msgstr ""
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
 #, kde-format
 msgid "Clear"
-msgstr "清除"
+msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:38
 #, kde-format
