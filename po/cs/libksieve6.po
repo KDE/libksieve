@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-16 00:39+0000\n"
 "PO-Revision-Date: 2023-11-08 14:26+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -43,7 +43,9 @@ msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Server Sieve neoznamuje TLS"
 
 #: kmanagesieve/session.cpp:99
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Start TLS nonetheless"
+msgctxt "@action:button"
 msgid "&Start TLS nonetheless"
 msgstr "Pře&sto spustit TLS"
 
@@ -1112,16 +1114,14 @@ msgid ""
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
-#, fuzzy, kde-format
-#| msgid "Define Email Address..."
+#, kde-format
 msgid "Define Email Address…"
-msgstr "Zadejte e-mailovou adresu..."
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
-#, fuzzy, kde-format
-#| msgid "Enter message..."
+#, kde-format
 msgid "Enter message…"
-msgstr "Zadejte zprávu..."
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:23
 #, kde-format
@@ -1172,7 +1172,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, kde-format
@@ -1717,10 +1717,8 @@ msgid "Weekday"
 msgstr "Den týdne"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
-#, fuzzy
-#| msgid "Delete header"
 msgid "Select multiple headers…"
-msgstr "Smazat hlavičku"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
 #, kde-format
@@ -2199,10 +2197,9 @@ msgstr "Chyba zpracování Sieve"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As…"
-msgstr "Uložit jako..."
+msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
 #, kde-format
@@ -2403,40 +2400,34 @@ msgid "Sieve Editor Error"
 msgstr "Chyba editoru Sieve"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:50
-#, fuzzy, kde-format
-#| msgid "Go to Line"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Line"
 msgstr "Přejít na řádek"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:55
-#, fuzzy, kde-format
-#| msgid "Comment"
+#, kde-format
 msgctxt "@action"
 msgid "Comment"
-msgstr "Zakomentovat"
+msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:59
-#, fuzzy, kde-format
-#| msgid "Uncomment"
+#, kde-format
 msgctxt "@action"
 msgid "Uncomment"
-msgstr "Odkomentovat"
+msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Debug Sieve Script"
+#, kde-format
 msgctxt "@action"
 msgid "Debug Sieve Script…"
-msgstr "Ladit skript Sieve"
+msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
-#, fuzzy, kde-format
-#| msgid "Wordwrap"
+#, kde-format
 msgctxt "@action"
 msgid "Wordwrap"
-msgstr "Zalamování slov"
+msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:98
 #, kde-format
@@ -2516,37 +2507,32 @@ msgid "Parsing error"
 msgstr "Chyba v analýze"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Check Syntax"
+#, kde-format
 msgctxt "@action"
 msgid "Check Syntax"
-msgstr "Zkontrolovat syntaxi"
+msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import…"
-msgstr "Importovat..."
+msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Create Rules Graphically..."
+#, kde-format
 msgctxt "@action"
 msgid "Create Rules Graphically…"
-msgstr "Vytvořit pravidla graficky..."
+msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:66
-#, fuzzy, kde-format
-#| msgid "Share..."
+#, kde-format
 msgid "Share…"
-msgstr "Sdílet..."
+msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Server Info"
+#, kde-format
 msgctxt "@action"
 msgid "Server Info"
-msgstr "Informace o serveru"
+msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:116
 #, kde-format
@@ -2575,25 +2561,22 @@ msgid "Sieve server supports:"
 msgstr "Server sieve podporuje:"
 
 #: ksieveui/editor/sievetextedit.cpp:277
-#, fuzzy, kde-format
-#| msgid "Insert Rule"
+#, kde-format
 msgctxt "@action"
 msgid "Insert Rule"
-msgstr "Vložit pravidlo"
+msgstr ""
 
 #: ksieveui/editor/sievetextedit.cpp:291
-#, fuzzy, kde-format
-#| msgid "Help about: '%1'"
+#, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
-msgstr "Nápověda k: '%1'"
+msgstr ""
 
 #: ksieveui/editor/sievetextedit.cpp:300
-#, fuzzy, kde-format
-#| msgid "Edit Rule"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Rule"
-msgstr "Upravit pravidlo"
+msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:20
 #, kde-format
@@ -2603,32 +2586,28 @@ msgid ""
 msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
-#, fuzzy, kde-format
-#| msgid "Switch to Graphical Mode"
+#, kde-format
 msgctxt "@action"
 msgid "Switch to Graphical Mode"
-msgstr "Přepnout do grafického režimu"
+msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:29
-#, fuzzy, kde-format
-#| msgid "Stay in Text Mode"
+#, kde-format
 msgctxt "@action"
 msgid "Stay in Text Mode"
-msgstr "Zůstat v textovém režimu"
+msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:35
-#, fuzzy, kde-format
-#| msgid "Switch to Text Mode"
+#, kde-format
 msgctxt "@action"
 msgid "Switch to Text Mode"
-msgstr "Přepnout do textového režimu"
+msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:39
-#, fuzzy, kde-format
-#| msgid "Stay in Graphical Mode"
+#, kde-format
 msgctxt "@action"
 msgid "Stay in Graphical Mode"
-msgstr "Zůstat v grafickém režimu"
+msgstr ""
 
 #: ksieveui/editor/warningwidget/sieveeditorwarning.cpp:17
 #, kde-format
@@ -2712,10 +2691,9 @@ msgid "New…"
 msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:89
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edit…"
-msgstr "Upravit"
+msgstr "Upravit…"
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
@@ -2736,10 +2714,9 @@ msgid "Sieve Error"
 msgstr "Chyba Sieve"
 
 #: ksieveui/managesievescriptsdialog.cpp:206
-#, fuzzy, kde-format
-#| msgid "Uploading script to server for checking it, please wait..."
+#, kde-format
 msgid "Uploading script to server for checking it, please wait…"
-msgstr "Odesílám soubor na server pro jeho kontrolu. Prosím, počkejte..."
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:252
 #, kde-format
@@ -2809,10 +2786,9 @@ msgid ""
 msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Display check script result..."
+#, kde-format
 msgid "Display check script result…"
-msgstr "Zobrazit výsledky zkoušky skriptu..."
+msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
 #, kde-format
@@ -2835,11 +2811,10 @@ msgid "Script still contains debug method. Remove it please."
 msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
-#, fuzzy, kde-format
-#| msgid "Clear"
+#, kde-format
 msgctxt "@action"
 msgid "Clear"
-msgstr "Vyprázdnit"
+msgstr "Vyčistit"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:38
 #, kde-format
@@ -2847,11 +2822,10 @@ msgid "Text Files (*.txt);;All Files (*)"
 msgstr "Textové soubory (*.txt);;Všechny soubory (*)"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:30
-#, fuzzy, kde-format
-#| msgid "Add debug here"
+#, kde-format
 msgctxt "@action"
 msgid "Add debug here"
-msgstr "Zde přidat ladění"
+msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerwidget.cpp:35
 #, kde-format
@@ -3028,12 +3002,16 @@ msgid "Out-of-office reply still active"
 msgstr "Odpovědi \"mimo kancelář\" je stále aktivní"
 
 #: ksieveui/vacation/vacationmanager.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button"
 msgid "Edit"
 msgstr "Upravit"
 
 #: ksieveui/vacation/vacationmanager.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ignore"
+msgctxt "@action:button"
 msgid "Ignore"
 msgstr "Ignorovat"
 
@@ -3075,16 +3053,14 @@ msgid "Network down."
 msgstr "Síť neběží."
 
 #: ksieveui/widgets/managesievewidget.cpp:147
-#, fuzzy, kde-format
-#| msgid "Edit Script..."
+#, kde-format
 msgid "Edit Script…"
-msgstr "Upravit skript..."
+msgstr ""
 
 #: ksieveui/widgets/managesievewidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Rename Script"
+#, kde-format
 msgid "Rename Script…"
-msgstr "Přejmenovat skript"
+msgstr ""
 
 #: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
@@ -3092,10 +3068,9 @@ msgid "Deactivate Script"
 msgstr "Deaktivovat skript"
 
 #: ksieveui/widgets/managesievewidget.cpp:159
-#, fuzzy, kde-format
-#| msgid "New Script"
+#, kde-format
 msgid "New Script…"
-msgstr "Nový skript"
+msgstr ""
 
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format
@@ -3163,22 +3138,3 @@ msgstr ""
 #, kde-format
 msgid "Define Folder"
 msgstr "Zadejte složku"
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgid "Debug Sieve Script..."
-#~ msgstr "Ladit skript Sieve..."
-
-#~ msgctxt "create a new sieve script"
-#~ msgid "New..."
-#~ msgstr "Nový..."
-
-#~ msgid "Edit..."
-#~ msgstr "Upravit..."
-
-#~ msgid "Rename Script..."
-#~ msgstr "Přejmenovat skript..."
-
-#~ msgid "New Script..."
-#~ msgstr "Nový skript..."

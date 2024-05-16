@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
-"PO-Revision-Date: 2024-05-12 08:02+0200\n"
+"POT-Creation-Date: 2024-05-16 00:39+0000\n"
+"PO-Revision-Date: 2024-05-15 10:35+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -48,7 +48,9 @@ msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Strežnik Sieve ne oglašuje TLS-a"
 
 #: kmanagesieve/session.cpp:99
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Start TLS nonetheless"
+msgctxt "@action:button"
 msgid "&Start TLS nonetheless"
 msgstr "V&seeno začni TLS"
 
@@ -2577,39 +2579,34 @@ msgid "Sieve Editor Error"
 msgstr "Napaka urejevalnika Sieve"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:50
-#, fuzzy, kde-format
-#| msgid "Go to Line"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Line"
 msgstr "Pojdi v vrstico"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:55
-#, fuzzy, kde-format
-#| msgid "Comment"
+#, kde-format
 msgctxt "@action"
 msgid "Comment"
-msgstr "V opombo"
+msgstr "Opomba"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:59
-#, fuzzy, kde-format
-#| msgid "Uncomment"
+#, kde-format
 msgctxt "@action"
 msgid "Uncomment"
 msgstr "Odstrani opombo"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
-#, fuzzy, kde-format
-#| msgid "Debug Sieve Script…"
+#, kde-format
 msgctxt "@action"
 msgid "Debug Sieve Script…"
 msgstr "Razhrošči skript Sieve…"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
-#, fuzzy, kde-format
-#| msgid "Wordwrap"
+#, kde-format
 msgctxt "@action"
 msgid "Wordwrap"
-msgstr "Prelom vrstic"
+msgstr "Previj besede"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:98
 #, kde-format
@@ -2689,8 +2686,7 @@ msgid "Parsing error"
 msgstr "Napaka med razčlenjevanjem"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Check Syntax"
+#, kde-format
 msgctxt "@action"
 msgid "Check Syntax"
 msgstr "Preveri skladnjo"
@@ -2701,8 +2697,7 @@ msgid "Import…"
 msgstr "Uvozi…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Create Rules Graphically…"
+#, kde-format
 msgctxt "@action"
 msgid "Create Rules Graphically…"
 msgstr "Ustvari pravila v grafičnem načinu…"
@@ -2713,8 +2708,7 @@ msgid "Share…"
 msgstr "Deli…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Server Info"
+#, kde-format
 msgctxt "@action"
 msgid "Server Info"
 msgstr "Informacija o strežniku"
@@ -2746,22 +2740,19 @@ msgid "Sieve server supports:"
 msgstr "Strežnik Sieve podpira:"
 
 #: ksieveui/editor/sievetextedit.cpp:277
-#, fuzzy, kde-format
-#| msgid "Insert Rule"
+#, kde-format
 msgctxt "@action"
 msgid "Insert Rule"
 msgstr "Vstavi pravilo"
 
 #: ksieveui/editor/sievetextedit.cpp:291
-#, fuzzy, kde-format
-#| msgid "Help about: '%1'"
+#, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "Pomoč o: '%1'"
 
 #: ksieveui/editor/sievetextedit.cpp:300
-#, fuzzy, kde-format
-#| msgid "Edit Rule"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Rule"
 msgstr "Uredi pravilo"
@@ -2776,29 +2767,25 @@ msgstr ""
 "\">(podrobnosti…)</a>"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
-#, fuzzy, kde-format
-#| msgid "Switch to Graphical Mode"
+#, kde-format
 msgctxt "@action"
 msgid "Switch to Graphical Mode"
 msgstr "Preklopi v grafični način"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:29
-#, fuzzy, kde-format
-#| msgid "Stay in Text Mode"
+#, kde-format
 msgctxt "@action"
 msgid "Stay in Text Mode"
 msgstr "Ostani v besedilnem načinu"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:35
-#, fuzzy, kde-format
-#| msgid "Switch to Text Mode"
+#, kde-format
 msgctxt "@action"
 msgid "Switch to Text Mode"
 msgstr "Preklopi v besedilni način"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:39
-#, fuzzy, kde-format
-#| msgid "Stay in Graphical Mode"
+#, kde-format
 msgctxt "@action"
 msgid "Stay in Graphical Mode"
 msgstr "Ostani v grafičnem načinu"
@@ -3007,8 +2994,7 @@ msgid "Script still contains debug method. Remove it please."
 msgstr "Skript še vedno vsebuje način za razhroščevanje. Odstranite ga."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
-#, fuzzy, kde-format
-#| msgid "Clear"
+#, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Počisti"
@@ -3019,11 +3005,10 @@ msgid "Text Files (*.txt);;All Files (*)"
 msgstr "Datoteke z besedilom (*.txt);;Vse datoteke (*)"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:30
-#, fuzzy, kde-format
-#| msgid "Add debug here"
+#, kde-format
 msgctxt "@action"
 msgid "Add debug here"
-msgstr "Razhrošči tukaj"
+msgstr "Dodaj razhroščevanje tukaj"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerwidget.cpp:35
 #, kde-format
@@ -3208,12 +3193,16 @@ msgid "Out-of-office reply still active"
 msgstr "Odgovor »Ni me v pisarni« je še vedno dejaven"
 
 #: ksieveui/vacation/vacationmanager.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button"
 msgid "Edit"
 msgstr "Uredi"
 
 #: ksieveui/vacation/vacationmanager.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ignore"
+msgctxt "@action:button"
 msgid "Ignore"
 msgstr "Prezri"
 

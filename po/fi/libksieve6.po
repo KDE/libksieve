@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-16 00:39+0000\n"
 "PO-Revision-Date: 2023-11-22 18:50+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -47,7 +47,9 @@ msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Sieve-palvelin ei mainitse TLS:ää"
 
 #: kmanagesieve/session.cpp:99
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Start TLS nonetheless"
+msgctxt "@action:button"
 msgid "&Start TLS nonetheless"
 msgstr "&Aloita TLS siitä huolimatta"
 
@@ -3249,12 +3251,16 @@ msgid "Out-of-office reply still active"
 msgstr "Poissaoloviesti on yhä aktiivinen"
 
 #: ksieveui/vacation/vacationmanager.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button"
 msgid "Edit"
 msgstr "Muokkaa"
 
 #: ksieveui/vacation/vacationmanager.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ignore"
+msgctxt "@action:button"
 msgid "Ignore"
 msgstr "Ohita"
 

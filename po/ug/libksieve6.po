@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-15 00:39+0000\n"
+"POT-Creation-Date: 2024-05-16 00:39+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -39,6 +39,7 @@ msgstr ""
 
 #: kmanagesieve/session.cpp:99
 #, kde-format
+msgctxt "@action:button"
 msgid "&Start TLS nonetheless"
 msgstr ""
 
@@ -3019,12 +3020,16 @@ msgid "Out-of-office reply still active"
 msgstr ""
 
 #: ksieveui/vacation/vacationmanager.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit"
+msgctxt "@action:button"
 msgid "Edit"
 msgstr "تەھرىرلەش"
 
 #: ksieveui/vacation/vacationmanager.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Ignore"
+msgctxt "@action:button"
 msgid "Ignore"
 msgstr "پەرۋا قىلما"
 
