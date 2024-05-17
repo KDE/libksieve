@@ -40,11 +40,10 @@ msgid "Sieve Server Does Not Advertise TLS"
 msgstr ""
 
 #: kmanagesieve/session.cpp:99
-#, fuzzy, kde-format
-#| msgid "&Start TLS nonetheless"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Start TLS nonetheless"
-msgstr "仍然开启 TLS 连接(&S)"
+msgstr ""
 
 #: kmanagesieve/session.cpp:103
 #, kde-format
@@ -2989,18 +2988,16 @@ msgid "Out-of-office reply still active"
 msgstr ""
 
 #: ksieveui/vacation/vacationmanager.cpp:58
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
-msgstr "编辑"
+msgstr ""
 
 #: ksieveui/vacation/vacationmanager.cpp:59
-#, fuzzy, kde-format
-#| msgid "Ignore"
+#, kde-format
 msgctxt "@action:button"
 msgid "Ignore"
-msgstr "忽略"
+msgstr ""
 
 #: ksieveui/vacation/vacationpagewidget.cpp:49
 #, kde-format

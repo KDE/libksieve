@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-16 00:39+0000\n"
-"PO-Revision-Date: 2024-05-15 05:59+0200\n"
+"PO-Revision-Date: 2024-05-16 08:05+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -44,8 +44,7 @@ msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Sieve-ის სერვერს TLS არ გამოუცხადებია"
 
 #: kmanagesieve/session.cpp:99
-#, fuzzy, kde-format
-#| msgid "&Start TLS nonetheless"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Start TLS nonetheless"
 msgstr "%TLS მაინც დაიწყება"
@@ -3178,18 +3177,16 @@ msgid "Out-of-office reply still active"
 msgstr "ოფისიდან-გასულობის პასუხი ჯერ კიდევ აქტიურია"
 
 #: ksieveui/vacation/vacationmanager.cpp:58
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "ჩასწორება"
 
 #: ksieveui/vacation/vacationmanager.cpp:59
-#, fuzzy, kde-format
-#| msgid "Ignore"
+#, kde-format
 msgctxt "@action:button"
 msgid "Ignore"
-msgstr "იგნორი"
+msgstr "გამოტოვება"
 
 #: ksieveui/vacation/vacationpagewidget.cpp:49
 #, kde-format
