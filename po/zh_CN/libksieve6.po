@@ -42,7 +42,7 @@ msgstr ""
 #: kmanagesieve/session.cpp:99
 #, kde-format
 msgid "&Start TLS nonetheless"
-msgstr "仍然开启 TLS 连接(&S)"
+msgstr ""
 
 #: kmanagesieve/session.cpp:103
 #, kde-format
@@ -2977,7 +2977,7 @@ msgstr "编辑"
 #: ksieveui/vacation/vacationmanager.cpp:59
 #, kde-format
 msgid "Ignore"
-msgstr "忽略"
+msgstr ""
 
 #: ksieveui/vacation/vacationpagewidget.cpp:49
 #, kde-format
