@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-16 00:39+0000\n"
-"PO-Revision-Date: 2024-05-15 09:56+0100\n"
+"PO-Revision-Date: 2024-05-17 06:24+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -43,8 +43,7 @@ msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Sieve-Servilo Ne Reklamas TLS"
 
 #: kmanagesieve/session.cpp:99
-#, fuzzy, kde-format
-#| msgid "&Start TLS nonetheless"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Start TLS nonetheless"
 msgstr "&Startigi TLS tamen"
@@ -1050,7 +1049,7 @@ msgid ""
 "only and returns processing control to the script that includes it."
 msgstr ""
 "La komando \"reveno\" ĉesigas prilaboradon de la tuj inkluzivita skripto nur "
-"kaj resendas prilaboran kontrolon al la skripto kiu inkluzivas ĝin."
+"kaj redonas prilaboran regon al la skripto kiu inkluzivas ĝin."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetflags.cpp:13
 #, kde-format
@@ -2042,12 +2041,12 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:92
 #, kde-format
 msgid "Unknown tagValue \"%1\" during loading loop \"for\""
-msgstr "Nekonata etikedovaloro \"%1\" dum ŝarĝo de buklo \"por\""
+msgstr "Nekonata etikedovaloro \"%1\" dum ŝargo de buklo \"for\""
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:104
 #, kde-format
 msgid "Unknown tag \"%1\" during loading loop \"for\""
-msgstr "Nekonata etikedo \"%1\" dum ŝarĝo de buklo \"por\""
+msgstr "Nekonata etikedo \"%1\" dum ŝargo de buklo \"for\""
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:58
 #, kde-format
@@ -2806,7 +2805,7 @@ msgstr "Salti al antaŭa kongruo"
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:69
 #, kde-format
 msgid "Options"
-msgstr "Opcioj"
+msgstr "Elektebloj"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
 #, kde-format
@@ -3161,15 +3160,13 @@ msgid "Out-of-office reply still active"
 msgstr "Ekster-oficeja respondo ankoraŭ aktiva"
 
 #: ksieveui/vacation/vacationmanager.cpp:58
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "Redakti"
 
 #: ksieveui/vacation/vacationmanager.cpp:59
-#, fuzzy, kde-format
-#| msgid "Ignore"
+#, kde-format
 msgctxt "@action:button"
 msgid "Ignore"
 msgstr "Ignori"
