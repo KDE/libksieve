@@ -16,7 +16,7 @@ using namespace KSieveUi;
 SieveHelpButton::SieveHelpButton(QWidget *parent)
     : QToolButton(parent)
 {
-    setToolTip(i18n("Help"));
+    setToolTip(i18nc("@info:tooltip", "Help"));
     setIcon(QIcon::fromTheme(QStringLiteral("help-hint")));
 }
 

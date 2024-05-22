@@ -140,23 +140,23 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
     mBtnNew = new QPushButton(hb);
     hbHBoxLayout->addWidget(mBtnNew);
     mBtnNew->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
-    mBtnNew->setToolTip(i18n("New Script"));
+    mBtnNew->setToolTip(i18nc("@info:tooltip", "New Script"));
     mBtnNew->setMinimumSize(mBtnNew->sizeHint() * 1.2);
 
     mBtnDelete = new QPushButton(hb);
     hbHBoxLayout->addWidget(mBtnDelete);
     mBtnDelete->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
-    mBtnDelete->setToolTip(i18n("Delete Script"));
+    mBtnDelete->setToolTip(i18nc("@info:tooltip", "Delete Script"));
     mBtnDelete->setMinimumSize(mBtnDelete->sizeHint() * 1.2);
 
     mBtnRename = new QPushButton(hb);
-    mBtnRename->setToolTip(i18n("Rename Script"));
+    mBtnRename->setToolTip(i18nc("@info:tooltip", "Rename Script"));
     mBtnRename->setIcon(QIcon::fromTheme(QStringLiteral("edit-rename")));
     mBtnRename->setMinimumSize(mBtnRename->sizeHint() * 1.2);
     hbHBoxLayout->addWidget(mBtnRename);
 
     mBtnDescription = new QPushButton(hb);
-    mBtnDescription->setToolTip(i18n("Edit Script Description"));
+    mBtnDescription->setToolTip(i18nc("@info:tooltip", "Edit Script Description"));
     mBtnDescription->setIcon(QIcon::fromTheme(QStringLiteral("edit-comment")));
     mBtnDescription->setMinimumSize(mBtnDescription->sizeHint() * 1.2);
 

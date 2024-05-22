@@ -136,7 +136,7 @@ void SieveActionWidget::initWidget()
     mLayout->addWidget(mHelpButton, 1, 0);
 
     mCommentButton = new QToolButton(this);
-    mCommentButton->setToolTip(i18n("Add comment"));
+    mCommentButton->setToolTip(i18nc("@info:tooltip", "Add comment"));
     mLayout->addWidget(mCommentButton, 1, 1);
     mCommentButton->setIcon(QIcon::fromTheme(QStringLiteral("view-pim-notes")));
     connect(mCommentButton, &QToolButton::clicked, this, &SieveActionWidget::slotAddComment);
