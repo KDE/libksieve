@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-16 00:39+0000\n"
+"POT-Creation-Date: 2024-05-23 00:39+0000\n"
 "PO-Revision-Date: 2024-05-16 08:05+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -686,8 +686,9 @@ msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgstr "ფუნქცია \"%1\" პირობაში \"%2\" სერვერის მიერ მხარდაჭერილი არაა"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
-#: ksieveui/editor/sieveeditortabwidget.cpp:150
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Help"
+msgctxt "@info:tooltip"
 msgid "Help"
 msgstr "დახმარება"
 
@@ -1267,7 +1268,9 @@ msgid "…"
 msgstr "…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Flags"
+msgctxt "@info:tooltip"
 msgid "Select Flags"
 msgstr "აირჩიეთ ალმები"
 
@@ -1338,7 +1341,9 @@ msgstr "აირჩიეთ ქმედება."
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:139
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add comment"
+msgctxt "@info:tooltip"
 msgid "Add comment"
 msgstr "კომენტარის დამატება"
 
@@ -2218,25 +2223,30 @@ msgid "Bottom"
 msgstr "ქვედა"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Script"
+msgctxt "@info:tooltip"
 msgid "New Script"
 msgstr "ახალი სკრიპტი"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
-#: ksieveui/widgets/managesievewidget.cpp:150
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Script"
+msgctxt "@info:tooltip"
 msgid "Delete Script"
 msgstr "სკრიპტის წაშლა"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
-#: ksieveui/widgets/managesievewidget.cpp:426
-#: ksieveui/widgets/managesievewidget.cpp:454
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Rename Script"
+msgctxt "@info:tooltip"
 msgid "Rename Script"
 msgstr "სკრიპტის სახელის გადარქმევა"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Script Description"
+msgctxt "@info:tooltip"
 msgid "Edit Script Description"
 msgstr "სკრიპტის აღწერის შეცვლა"
 
@@ -2630,6 +2640,11 @@ msgctxt "@action:inmenu"
 msgid "Close All Tabs"
 msgstr "ყველა ჩანართის დახურვა"
 
+#: ksieveui/editor/sieveeditortabwidget.cpp:150
+#, kde-format
+msgid "Help"
+msgstr "დახმარება"
+
 #: ksieveui/editor/sieveeditortabwidget.cpp:161
 #, kde-format
 msgid "Error during load page about %1"
@@ -2782,6 +2797,12 @@ msgid "We cannot parse script. We cannot switch to graphical mode"
 msgstr "სკრიპტის დამუშავება შეუძლებელია. გრაფიკულ რეჟიმში ვერ გადავერთე"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:37
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "დახურვა"
+
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:40
 #, kde-format
 msgid "Close"
@@ -2794,7 +2815,9 @@ msgid "F&ind:"
 msgstr "&ძებნა:"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text to search for"
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "მოსაძებნი ეტქსტი"
 
@@ -2805,7 +2828,9 @@ msgid "Next"
 msgstr "შემდეგი"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to next match"
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "შემდეგ დამთხვევაზე გადასვლა"
 
@@ -2816,7 +2841,9 @@ msgid "Previous"
 msgstr "წინა"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:63
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to previous match"
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "წინა დამთხვევაზე გადასვლა"
 
@@ -2826,7 +2853,9 @@ msgid "Options"
 msgstr "პარამეტრები"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Modify search behavior"
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "ძებნის ქცევის შეცვლა"
 
@@ -3241,6 +3270,11 @@ msgstr "სკრიპტის ჩასწორება…"
 msgid "Rename Script…"
 msgstr "სკრიპტის სახელის გადარქმევა…"
 
+#: ksieveui/widgets/managesievewidget.cpp:150
+#, kde-format
+msgid "Delete Script"
+msgstr "სკრიპტის წაშლა"
+
 #: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
 msgid "Deactivate Script"
@@ -3280,6 +3314,12 @@ msgstr "დაცულ სახელს ვერ გაოიყენებ
 #, kde-format
 msgid "Script name already used \"%1\"."
 msgstr "სკრიპტის სახელი უკვე გამოიყენება \"%1\"."
+
+#: ksieveui/widgets/managesievewidget.cpp:426
+#: ksieveui/widgets/managesievewidget.cpp:454
+#, kde-format
+msgid "Rename Script"
+msgstr "სკრიპტის სახელის გადარქმევა"
 
 #: ksieveui/widgets/managesievewidget.cpp:426
 #, kde-format

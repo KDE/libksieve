@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-16 00:39+0000\n"
+"POT-Creation-Date: 2024-05-23 00:39+0000\n"
 "PO-Revision-Date: 2011-09-20 14:13+0300\n"
 "Last-Translator: Remigijus Jarmalavičius\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -613,8 +613,8 @@ msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgstr ""
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
-#: ksieveui/editor/sieveeditortabwidget.cpp:150
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Help"
 msgstr ""
 
@@ -1132,6 +1132,7 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Select Flags"
 msgstr ""
 
@@ -1203,6 +1204,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:139
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Add comment"
 msgstr ""
 
@@ -2020,28 +2022,32 @@ msgid "Bottom"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Script..."
+msgctxt "@info:tooltip"
 msgid "New Script"
-msgstr ""
+msgstr "Naujas scenarijus..."
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
-#: ksieveui/widgets/managesievewidget.cpp:150
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Script"
+msgctxt "@info:tooltip"
 msgid "Delete Script"
 msgstr "Pašalinti scenarijų"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
-#: ksieveui/widgets/managesievewidget.cpp:426
-#: ksieveui/widgets/managesievewidget.cpp:454
 #, fuzzy, kde-format
 #| msgid "Delete Script"
+msgctxt "@info:tooltip"
 msgid "Rename Script"
 msgstr "Pašalinti scenarijų"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Script"
+msgctxt "@info:tooltip"
 msgid "Edit Script Description"
-msgstr ""
+msgstr "Pašalinti scenarijų"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:188
 #, fuzzy, kde-format
@@ -2434,6 +2440,11 @@ msgctxt "@action:inmenu"
 msgid "Close All Tabs"
 msgstr ""
 
+#: ksieveui/editor/sieveeditortabwidget.cpp:150
+#, kde-format
+msgid "Help"
+msgstr ""
+
 #: ksieveui/editor/sieveeditortabwidget.cpp:161
 #, kde-format
 msgid "Error during load page about %1"
@@ -2591,6 +2602,11 @@ msgid "We cannot parse script. We cannot switch to graphical mode"
 msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:37
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr ""
+
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:40
 #, kde-format
 msgid "Close"
@@ -2604,6 +2620,7 @@ msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:51
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr ""
 
@@ -2615,6 +2632,7 @@ msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr ""
 
@@ -2626,6 +2644,7 @@ msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:63
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr ""
 
@@ -2636,6 +2655,7 @@ msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr ""
 
@@ -3044,6 +3064,11 @@ msgstr "Pašalinti scenarijų"
 msgid "Rename Script…"
 msgstr "Pašalinti scenarijų"
 
+#: ksieveui/widgets/managesievewidget.cpp:150
+#, kde-format
+msgid "Delete Script"
+msgstr "Pašalinti scenarijų"
+
 #: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
 msgid "Deactivate Script"
@@ -3084,6 +3109,13 @@ msgstr ""
 #, kde-format
 msgid "Script name already used \"%1\"."
 msgstr ""
+
+#: ksieveui/widgets/managesievewidget.cpp:426
+#: ksieveui/widgets/managesievewidget.cpp:454
+#, fuzzy, kde-format
+#| msgid "Delete Script"
+msgid "Rename Script"
+msgstr "Pašalinti scenarijų"
 
 #: ksieveui/widgets/managesievewidget.cpp:426
 #, kde-format

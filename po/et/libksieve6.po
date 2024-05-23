@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-16 00:39+0000\n"
+"POT-Creation-Date: 2024-05-23 00:39+0000\n"
 "PO-Revision-Date: 2020-06-05 22:48+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -674,8 +674,9 @@ msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgstr "Server ei toeta omadust \"%1\" tingimuses \"%2\""
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
-#: ksieveui/editor/sieveeditortabwidget.cpp:150
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Help"
+msgctxt "@info:tooltip"
 msgid "Help"
 msgstr "Abi"
 
@@ -1249,7 +1250,9 @@ msgid "…"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Select Flags"
+msgctxt "@info:tooltip"
 msgid "Select Flags"
 msgstr "Lippude valimine"
 
@@ -1320,7 +1323,9 @@ msgstr "Palun vali toiming."
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:139
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add comment"
+msgctxt "@info:tooltip"
 msgid "Add comment"
 msgstr "Kommentaari lisamine"
 
@@ -2192,25 +2197,30 @@ msgid "Bottom"
 msgstr "Viimaseks"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Script"
+msgctxt "@info:tooltip"
 msgid "New Script"
 msgstr "Uus skript"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
-#: ksieveui/widgets/managesievewidget.cpp:150
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Script"
+msgctxt "@info:tooltip"
 msgid "Delete Script"
 msgstr "Kustuta skript"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
-#: ksieveui/widgets/managesievewidget.cpp:426
-#: ksieveui/widgets/managesievewidget.cpp:454
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Rename Script"
+msgctxt "@info:tooltip"
 msgid "Rename Script"
 msgstr "Muuda skripti nime"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Script Description"
+msgctxt "@info:tooltip"
 msgid "Edit Script Description"
 msgstr "Muuda skripti kirjeldust"
 
@@ -2619,6 +2629,11 @@ msgctxt "@action:inmenu"
 msgid "Close All Tabs"
 msgstr "Sulge kõik kaardid"
 
+#: ksieveui/editor/sieveeditortabwidget.cpp:150
+#, kde-format
+msgid "Help"
+msgstr "Abi"
+
 #: ksieveui/editor/sieveeditortabwidget.cpp:161
 #, kde-format
 msgid "Error during load page about %1"
@@ -2787,6 +2802,12 @@ msgid "We cannot parse script. We cannot switch to graphical mode"
 msgstr "Skripti parsimine nurjus. Graafilisse režiimi ei saa lülituda"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:37
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "Sulge"
+
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:40
 #, kde-format
 msgid "Close"
@@ -2799,7 +2820,9 @@ msgid "F&ind:"
 msgstr "Ots&ing:"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text to search for"
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Otsitav tekst"
 
@@ -2810,7 +2833,9 @@ msgid "Next"
 msgstr "Järgmine"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to next match"
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Hüppa järgmisele esinemisele"
 
@@ -2821,7 +2846,9 @@ msgid "Previous"
 msgstr "Eelmine"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:63
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to previous match"
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Hüppa eelmisele esinemisele"
 
@@ -2831,7 +2858,9 @@ msgid "Options"
 msgstr "Valikud"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Modify search behavior"
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Otsingu käitumise muutmine"
 
@@ -3261,6 +3290,11 @@ msgstr "Muuda skripti..."
 msgid "Rename Script…"
 msgstr "Muuda skripti nime"
 
+#: ksieveui/widgets/managesievewidget.cpp:150
+#, kde-format
+msgid "Delete Script"
+msgstr "Kustuta skript"
+
 #: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
 msgid "Deactivate Script"
@@ -3301,6 +3335,12 @@ msgstr "Kaitstud nime ei saa kasutada."
 #, kde-format
 msgid "Script name already used \"%1\"."
 msgstr "Skripti nimi \"%1\" on juba kasutusel."
+
+#: ksieveui/widgets/managesievewidget.cpp:426
+#: ksieveui/widgets/managesievewidget.cpp:454
+#, kde-format
+msgid "Rename Script"
+msgstr "Muuda skripti nime"
 
 #: ksieveui/widgets/managesievewidget.cpp:426
 #, kde-format

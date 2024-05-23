@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-16 00:39+0000\n"
+"POT-Creation-Date: 2024-05-23 00:39+0000\n"
 "PO-Revision-Date: 2013-04-13 16:36+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -616,8 +616,8 @@ msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgstr ""
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
-#: ksieveui/editor/sieveeditortabwidget.cpp:150
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Help"
 msgstr ""
 
@@ -1152,6 +1152,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, fuzzy, kde-format
 #| msgid "Set Flags"
+msgctxt "@info:tooltip"
 msgid "Select Flags"
 msgstr "निशाण निश्चित करा"
 
@@ -1223,6 +1224,7 @@ msgstr "कृपया क्रिया निवडा."
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:139
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
 #, kde-format
+msgctxt "@info:tooltip"
 msgid "Add comment"
 msgstr ""
 
@@ -2055,27 +2057,30 @@ msgid "Bottom"
 msgstr "खाली"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Script"
+msgctxt "@info:tooltip"
 msgid "New Script"
 msgstr "नवीन स्क्रिप्ट"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
-#: ksieveui/widgets/managesievewidget.cpp:150
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Description"
+msgctxt "@info:tooltip"
 msgid "Delete Script"
-msgstr ""
+msgstr "वर्णन"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
-#: ksieveui/widgets/managesievewidget.cpp:426
-#: ksieveui/widgets/managesievewidget.cpp:454
 #, fuzzy, kde-format
 #| msgid "Sieve Script"
+msgctxt "@info:tooltip"
 msgid "Rename Script"
 msgstr "सीव्ह स्क्रिप्ट"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
 #, fuzzy, kde-format
 #| msgid "Edit description..."
+msgctxt "@info:tooltip"
 msgid "Edit Script Description"
 msgstr "वर्णन संपादित करा..."
 
@@ -2479,6 +2484,11 @@ msgctxt "@action:inmenu"
 msgid "Close All Tabs"
 msgstr "बंद करा"
 
+#: ksieveui/editor/sieveeditortabwidget.cpp:150
+#, kde-format
+msgid "Help"
+msgstr ""
+
 #: ksieveui/editor/sieveeditortabwidget.cpp:161
 #, kde-format
 msgid "Error during load page about %1"
@@ -2636,6 +2646,12 @@ msgid "We cannot parse script. We cannot switch to graphical mode"
 msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:37
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "बंद करा"
+
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:40
 #, kde-format
 msgid "Close"
@@ -2648,7 +2664,9 @@ msgid "F&ind:"
 msgstr "शोधा (&I):"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text to search for"
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "शोधावयाचा मजकूर"
 
@@ -2659,7 +2677,9 @@ msgid "Next"
 msgstr "पुढील"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to next match"
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "पुढील जुळणीवर थेट जा"
 
@@ -2670,7 +2690,9 @@ msgid "Previous"
 msgstr "मागील"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:63
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to previous match"
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "आधीच्या जुळणीवर थेट जा"
 
@@ -2680,7 +2702,9 @@ msgid "Options"
 msgstr "पर्याय"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Modify search behavior"
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "शोध पध्दती सुधारा"
 
@@ -3092,6 +3116,11 @@ msgstr "स्क्रिप्ट संपादित करा..."
 msgid "Rename Script…"
 msgstr "सीव्ह स्क्रिप्ट"
 
+#: ksieveui/widgets/managesievewidget.cpp:150
+#, kde-format
+msgid "Delete Script"
+msgstr ""
+
 #: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
 msgid "Deactivate Script"
@@ -3132,6 +3161,13 @@ msgstr ""
 #, kde-format
 msgid "Script name already used \"%1\"."
 msgstr ""
+
+#: ksieveui/widgets/managesievewidget.cpp:426
+#: ksieveui/widgets/managesievewidget.cpp:454
+#, fuzzy, kde-format
+#| msgid "Sieve Script"
+msgid "Rename Script"
+msgstr "सीव्ह स्क्रिप्ट"
 
 #: ksieveui/widgets/managesievewidget.cpp:426
 #, fuzzy, kde-format

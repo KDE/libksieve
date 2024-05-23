@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-16 00:39+0000\n"
+"POT-Creation-Date: 2024-05-23 00:39+0000\n"
 "PO-Revision-Date: 2017-12-31 22:42+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -709,8 +709,9 @@ msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgstr "Server ne podržava mogućnost „%1“ u uslovu „%2“."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
-#: ksieveui/editor/sieveeditortabwidget.cpp:150
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Help"
+msgctxt "@info:tooltip"
 msgid "Help"
 msgstr "Pomoć"
 
@@ -1280,6 +1281,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, fuzzy, kde-format
 #| msgid "Set Flags"
+msgctxt "@info:tooltip"
 msgid "Select Flags"
 msgstr "Postavi zastavice"
 
@@ -1350,7 +1352,9 @@ msgstr "Izaberite radnju."
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:139
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add comment"
+msgctxt "@info:tooltip"
 msgid "Add comment"
 msgstr "Dodaj komentar"
 
@@ -2236,25 +2240,30 @@ msgid "Bottom"
 msgstr "Dno"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "New Script"
+msgctxt "@info:tooltip"
 msgid "New Script"
 msgstr "Nova skripta"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
-#: ksieveui/widgets/managesievewidget.cpp:150
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete Script"
+msgctxt "@info:tooltip"
 msgid "Delete Script"
 msgstr "Obriši skriptu"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
-#: ksieveui/widgets/managesievewidget.cpp:426
-#: ksieveui/widgets/managesievewidget.cpp:454
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Rename Script"
+msgctxt "@info:tooltip"
 msgid "Rename Script"
 msgstr "Preimenuj skriptu"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Edit Script Description"
+msgctxt "@info:tooltip"
 msgid "Edit Script Description"
 msgstr "Uredi opis skripte"
 
@@ -2682,6 +2691,11 @@ msgctxt "@action:inmenu"
 msgid "Close All Tabs"
 msgstr "Zatvori sve jezičke"
 
+#: ksieveui/editor/sieveeditortabwidget.cpp:150
+#, kde-format
+msgid "Help"
+msgstr "Pomoć"
+
 # >> %1 is the name of a variable
 #: ksieveui/editor/sieveeditortabwidget.cpp:161
 #, kde-format
@@ -2852,6 +2866,12 @@ msgid "We cannot parse script. We cannot switch to graphical mode"
 msgstr "Ne mogu da raščlanim skriptu. Ne mogu da prebacim na grafički režim."
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:37
+#, fuzzy, kde-format
+#| msgid "Close"
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "Zatvori"
+
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:40
 #, kde-format
 msgid "Close"
@@ -2864,7 +2884,9 @@ msgid "F&ind:"
 msgstr "&Nađi:"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:51
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Text to search for"
+msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Tekst za traženje"
 
@@ -2875,7 +2897,9 @@ msgid "Next"
 msgstr "Sledeće"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to next match"
+msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Skoči na sledeće poklapanje"
 
@@ -2886,7 +2910,9 @@ msgid "Previous"
 msgstr "Prethodno"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:63
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Jump to previous match"
+msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Skoči na prethodno poklapanje"
 
@@ -2897,7 +2923,9 @@ msgstr "Opcije"
 
 # >> @info:tooltip
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Modify search behavior"
+msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Izmenite ponašanje pretrage."
 
@@ -3353,6 +3381,11 @@ msgstr "Uredi skriptu..."
 msgid "Rename Script…"
 msgstr "Preimenuj skriptu"
 
+#: ksieveui/widgets/managesievewidget.cpp:150
+#, kde-format
+msgid "Delete Script"
+msgstr "Obriši skriptu"
+
 #: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
 msgid "Deactivate Script"
@@ -3394,6 +3427,12 @@ msgstr "Ne možete da koristite zaštićeno ime."
 #, kde-format
 msgid "Script name already used \"%1\"."
 msgstr "Ime skripte je već upotrebljeno „%1“."
+
+#: ksieveui/widgets/managesievewidget.cpp:426
+#: ksieveui/widgets/managesievewidget.cpp:454
+#, kde-format
+msgid "Rename Script"
+msgstr "Preimenuj skriptu"
 
 #: ksieveui/widgets/managesievewidget.cpp:426
 #, kde-format
