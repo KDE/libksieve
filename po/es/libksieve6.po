@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-14 00:38+0000\n"
-"PO-Revision-Date: 2024-05-12 16:18+0200\n"
+"PO-Revision-Date: 2024-05-23 17:27+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -2816,7 +2816,7 @@ msgstr "&Buscar:"
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:51
 #, kde-format
 msgid "Text to search for"
-msgstr "Texto a buscar"
+msgstr "Texto que se va a buscar"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:56
 #, kde-format
