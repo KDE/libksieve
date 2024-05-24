@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-23 00:39+0000\n"
-"PO-Revision-Date: 2024-05-17 21:27+0200\n"
+"PO-Revision-Date: 2024-05-23 08:42+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -703,11 +703,10 @@ msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgstr "O servidor non admite unha funcionalidade «%1» na condición «%2»"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
-#, fuzzy, kde-format
-#| msgid "Help"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Help"
-msgstr "Axuda"
+msgstr "Axuda."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddflags.cpp:13
 #, kde-format
@@ -1289,11 +1288,10 @@ msgid "…"
 msgstr "…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
-#, fuzzy, kde-format
-#| msgid "Select Flags"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Flags"
-msgstr "Seleccionar indicadores"
+msgstr "Seleccionar indicadores."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectimportancecombobox.cpp:25
 #, kde-format
@@ -1362,11 +1360,10 @@ msgstr "Escolla unha acción."
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:139
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
-#, fuzzy, kde-format
-#| msgid "Add comment"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add comment"
-msgstr "Engadir un comentario"
+msgstr "Engadir un comentario."
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:274
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:222
@@ -2247,32 +2244,28 @@ msgid "Bottom"
 msgstr "Fondo"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
-#, fuzzy, kde-format
-#| msgid "New Script"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "New Script"
-msgstr "Novo guión"
+msgstr "Novo guión."
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
-#, fuzzy, kde-format
-#| msgid "Delete Script"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete Script"
-msgstr "Eliminar o guión"
+msgstr "Eliminar o guión."
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
-#, fuzzy, kde-format
-#| msgid "Rename Script"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Rename Script"
-msgstr "Renomear o guión"
+msgstr "Renomear o guión."
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
-#, fuzzy, kde-format
-#| msgid "Edit Script Description"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit Script Description"
-msgstr "Editar a descrición do guión"
+msgstr "Editar a descrición do guión."
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:188
 #, kde-format
@@ -2823,11 +2816,10 @@ msgid "We cannot parse script. We cannot switch to graphical mode"
 msgstr "Non é posíbel procesar o guión. Non se pode pasar ao modo gráfico"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:37
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
-msgstr "Pechar"
+msgstr "Pechar."
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:40
 #, kde-format
@@ -2841,11 +2833,10 @@ msgid "F&ind:"
 msgstr "A&topar:"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:51
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
-msgstr "Texto que buscar"
+msgstr "Texto que buscar."
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:56
 #, kde-format
@@ -2854,11 +2845,10 @@ msgid "Next"
 msgstr "Seguinte"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
-msgstr "Ir á aparición seguinte"
+msgstr "Ir á aparición seguinte."
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:62
 #, kde-format
@@ -2867,11 +2857,10 @@ msgid "Previous"
 msgstr "Anterior"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:63
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
-msgstr "Ir á aparición anterior"
+msgstr "Ir á aparición anterior."
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:69
 #, kde-format
@@ -2879,11 +2868,10 @@ msgid "Options"
 msgstr "Opcións"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
-msgstr "Modificar o comportamento da busca"
+msgstr "Modificar o comportamento da busca."
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:72
 #, kde-format

@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-23 00:39+0000\n"
-"PO-Revision-Date: 2024-05-16 09:21+0200\n"
+"PO-Revision-Date: 2024-05-23 09:07+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: kmanagesieve/session.cpp:89
 #, kde-format
@@ -709,8 +709,7 @@ msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgstr "Strežnik ne podpira zmožnosti \"%1\" v pogoju \"%2\""
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
-#, fuzzy, kde-format
-#| msgid "Help"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Help"
 msgstr "Pomoč"
@@ -1285,11 +1284,10 @@ msgid "…"
 msgstr "…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
-#, fuzzy, kde-format
-#| msgid "Select Flags"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Flags"
-msgstr "Izberite zastavice"
+msgstr "Izberi zastavice"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectimportancecombobox.cpp:25
 #, kde-format
@@ -1358,8 +1356,7 @@ msgstr "Izberite dejanje."
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:139
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
-#, fuzzy, kde-format
-#| msgid "Add comment"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add comment"
 msgstr "Dodaj opombo"
@@ -2235,29 +2232,25 @@ msgid "Bottom"
 msgstr "Na dno"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
-#, fuzzy, kde-format
-#| msgid "New Script"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "New Script"
 msgstr "Nov skript"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
-#, fuzzy, kde-format
-#| msgid "Delete Script"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete Script"
 msgstr "Izbriši skript"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
-#, fuzzy, kde-format
-#| msgid "Rename Script"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Rename Script"
 msgstr "Preimenuj skript"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
-#, fuzzy, kde-format
-#| msgid "Edit Script Description"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit Script Description"
 msgstr "Uredi opis skripta"
@@ -2810,8 +2803,7 @@ msgid "We cannot parse script. We cannot switch to graphical mode"
 msgstr "Skripta ni mogoče razčleniti. Ni mogoče preklopiti v grafični način"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:37
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Zapri"
@@ -2828,11 +2820,10 @@ msgid "F&ind:"
 msgstr "Najd&i:"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:51
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
-msgstr "Besedilo, ki naj se išče"
+msgstr "Iskano besedilo"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:56
 #, kde-format
@@ -2841,11 +2832,10 @@ msgid "Next"
 msgstr "Naslednje"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
-msgstr "Pojdi na naslednje ujemanje"
+msgstr "Skoči na naslednje ujemanje"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:62
 #, kde-format
@@ -2854,11 +2844,10 @@ msgid "Previous"
 msgstr "Predhodno"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:63
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
-msgstr "Pojdi na predhodno ujemanje"
+msgstr "Skoči na predhodno ujemanje"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:69
 #, kde-format
@@ -2866,8 +2855,7 @@ msgid "Options"
 msgstr "Možnosti"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Spremeni obnašanje iskanja"

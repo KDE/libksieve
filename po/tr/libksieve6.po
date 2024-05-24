@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-23 00:39+0000\n"
-"PO-Revision-Date: 2024-05-18 21:34+0300\n"
+"PO-Revision-Date: 2024-05-23 14:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -691,8 +691,7 @@ msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgstr "“%1” özelliği “%2” durumunda sunucu tarafından desteklenmiyor"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
-#, fuzzy, kde-format
-#| msgid "Help"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Help"
 msgstr "Yardım"
@@ -1268,11 +1267,10 @@ msgid "…"
 msgstr "…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
-#, fuzzy, kde-format
-#| msgid "Select Flags"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Flags"
-msgstr "Bayrakları Seç"
+msgstr "Bayrakları seç"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectimportancecombobox.cpp:25
 #, kde-format
@@ -1341,8 +1339,7 @@ msgstr "Lütfen bir eylem seçin."
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:139
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
-#, fuzzy, kde-format
-#| msgid "Add comment"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add comment"
 msgstr "Açıklama ekle"
@@ -2214,32 +2211,28 @@ msgid "Bottom"
 msgstr "Alt"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
-#, fuzzy, kde-format
-#| msgid "New Script"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "New Script"
-msgstr "Yeni Betik"
+msgstr "Yeni betik"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
-#, fuzzy, kde-format
-#| msgid "Delete Script"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete Script"
-msgstr "Betiği Sil"
+msgstr "Betiği sil"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
-#, fuzzy, kde-format
-#| msgid "Rename Script"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Rename Script"
-msgstr "Betiği Yeniden Adlandır"
+msgstr "Betiği yeniden adlandır"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
-#, fuzzy, kde-format
-#| msgid "Edit Script Description"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit Script Description"
-msgstr "Betik Açıklamasını Düzenle"
+msgstr "Betik açıklamasını düzenle"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:188
 #, kde-format
@@ -2790,8 +2783,7 @@ msgid "We cannot parse script. We cannot switch to graphical mode"
 msgstr "Betiği ayrıştıramıyoruz. Grafik kipe geçemiyoruz"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:37
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Kapat"
@@ -2808,8 +2800,7 @@ msgid "F&ind:"
 msgstr "B&ul:"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:51
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Aranacak metin"
@@ -2821,8 +2812,7 @@ msgid "Next"
 msgstr "Sonraki"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Sonraki eşleşmeye git"
@@ -2834,8 +2824,7 @@ msgid "Previous"
 msgstr "Önceki"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:63
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Önceki eşleşmeye git"
@@ -2846,8 +2835,7 @@ msgid "Options"
 msgstr "Seçenekler"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Arama davranışını değiştir"
