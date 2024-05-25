@@ -3,13 +3,13 @@
 #
 # Malcolm Hunter <malcolm.hunter@gmx.co.uk>, 2003.
 # Andrew Coles <andrew_coles@yahoo.co.uk>, 2010.
-# Steve Allewell <steve.allewell@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-23 00:39+0000\n"
-"PO-Revision-Date: 2023-03-26 14:29+0100\n"
+"PO-Revision-Date: 2024-05-24 16:25+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: kmanagesieve/session.cpp:89
 #, kde-format
@@ -38,15 +38,13 @@ msgstr ""
 "the operation."
 
 #: kmanagesieve/session.cpp:98
-#, fuzzy, kde-format
-#| msgid "Sieve Server Does Not Advertise TLS"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Sieve Server Does Not Advertise TLS"
 
 #: kmanagesieve/session.cpp:99
-#, fuzzy, kde-format
-#| msgid "&Start TLS nonetheless"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Start TLS nonetheless"
 msgstr "&Start TLS nonetheless"
@@ -71,16 +69,13 @@ msgid "Sieve Authentication Details"
 msgstr "Sieve Authentication Details"
 
 #: kmanagesieve/session.cpp:259
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please enter your authentication details for your sieve account (usually "
-#| "the same as your email password):"
+#, kde-format
 msgid ""
 "Please enter your authentication details for your sieve account "
 "\"%1\" (usually the same as your email password):"
 msgstr ""
-"Please enter your authentication details for your sieve account (usually the "
-"same as your email password):"
+"Please enter your authentication details for your sieve account "
+"\"%1\" (usually the same as your email password):"
 
 #: kmanagesieve/session.cpp:321
 #, kde-format
@@ -92,8 +87,7 @@ msgstr ""
 "%2"
 
 #: kmanagesieve/session.cpp:321
-#, fuzzy, kde-format
-#| msgid "Sieve Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr "Sieve Manager"
@@ -675,8 +669,7 @@ msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgstr "A feature \"%1\" in condition \"%2\" is not supported by server"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
-#, fuzzy, kde-format
-#| msgid "Help"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Help"
 msgstr "Help"
@@ -1195,16 +1188,14 @@ msgstr ""
 "for such situations."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
-#, fuzzy, kde-format
-#| msgid "Define Email Address..."
+#, kde-format
 msgid "Define Email Address…"
-msgstr "Define Email Address..."
+msgstr "Define Email Address…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
-#, fuzzy, kde-format
-#| msgid "Enter message..."
+#, kde-format
 msgid "Enter message…"
-msgstr "Enter message..."
+msgstr "Enter message…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:23
 #, kde-format
@@ -1248,19 +1239,17 @@ msgid "Draft"
 msgstr "Draft"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Click on button for selecting flags..."
+#, kde-format
 msgid "Click on button for selecting flags…"
-msgstr "Click on button for selecting flags..."
+msgstr "Click on button for selecting flags…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
-#, fuzzy, kde-format
-#| msgid "Select Flags"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Flags"
 msgstr "Select Flags"
@@ -1332,8 +1321,7 @@ msgstr "Please select an action."
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:139
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
-#, fuzzy, kde-format
-#| msgid "Add comment"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add comment"
 msgstr "Add comment"
@@ -1855,10 +1843,8 @@ msgid "Weekday"
 msgstr "Weekday"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
-#, fuzzy
-#| msgid "Select multiple headers..."
 msgid "Select multiple headers…"
-msgstr "Select multiple headers..."
+msgstr "Select multiple headers…"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
 #, kde-format
@@ -2212,29 +2198,25 @@ msgid "Bottom"
 msgstr "Bottom"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
-#, fuzzy, kde-format
-#| msgid "New Script"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "New Script"
 msgstr "New Script"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
-#, fuzzy, kde-format
-#| msgid "Delete Script"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete Script"
 msgstr "Delete Script"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
-#, fuzzy, kde-format
-#| msgid "Rename Script"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Rename Script"
 msgstr "Rename Script"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
-#, fuzzy, kde-format
-#| msgid "Edit Script Description"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit Script Description"
 msgstr "Edit Script Description"
@@ -2252,8 +2234,7 @@ msgid "Rename Script"
 msgstr "Rename Script"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
-#, fuzzy, kde-format
-#| msgid "Edit Script Description"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Script Description"
 msgstr "Edit Script Description"
@@ -2355,10 +2336,9 @@ msgstr "Sieve Parsing Error"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
-#, fuzzy, kde-format
-#| msgid "Save As..."
+#, kde-format
 msgid "Save As…"
-msgstr "Save As..."
+msgstr "Save As…"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
 #, kde-format
@@ -2395,15 +2375,12 @@ msgid "Sieve Diagnostics"
 msgstr "Sieve Diagnostics"
 
 #: ksieveui/debug/sievedebugdialog.cpp:65
-#, fuzzy, kde-format
-#| msgid ""
-#| "Collecting diagnostic information about Sieve support...\n"
-#| "\n"
+#, kde-format
 msgid ""
 "Collecting diagnostic information about Sieve support…\n"
 "\n"
 msgstr ""
-"Collecting diagnostic information about Sieve support...\n"
+"Collecting diagnostic information about Sieve support…\n"
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:68
@@ -2421,10 +2398,9 @@ msgstr ""
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
-#, fuzzy, kde-format
-#| msgid "Collecting data for account '%1'...\n"
+#, kde-format
 msgid "Collecting data for account '%1'…\n"
-msgstr "Collecting data for account '%1'...\n"
+msgstr "Collecting data for account '%1'…\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:123
 #, kde-format
@@ -2540,8 +2516,7 @@ msgid "You will overwrite script. Do you want to continue?"
 msgstr "You will overwrite script. Do you want to continue?"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:56
-#, fuzzy, kde-format
-#| msgid "Import Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Script"
 msgstr "Import Script"
@@ -2572,37 +2547,31 @@ msgid "Sieve Editor Error"
 msgstr "Sieve Editor Error"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:50
-#, fuzzy, kde-format
-#| msgid "Go to Line"
+#, kde-format
 msgctxt "@action"
 msgid "Go to Line"
 msgstr "Go to Line"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:55
-#, fuzzy, kde-format
-#| msgid "Comment"
+#, kde-format
 msgctxt "@action"
 msgid "Comment"
 msgstr "Comment"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:59
-#, fuzzy, kde-format
-#| msgid "Uncomment"
+#, kde-format
 msgctxt "@action"
 msgid "Uncomment"
 msgstr "Uncomment"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Debug Sieve Script"
+#, kde-format
 msgctxt "@action"
 msgid "Debug Sieve Script…"
-msgstr "Debug Sieve Script"
+msgstr "Debug Sieve Script…"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
-#, fuzzy, kde-format
-#| msgid "Wordwrap"
+#, kde-format
 msgctxt "@action"
 msgid "Wordwrap"
 msgstr "Wordwrap"
@@ -2684,41 +2653,35 @@ msgid "Selected text is not a full sieve script"
 msgstr "Selected text is not a full sieve script"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:264
-#, fuzzy, kde-format
-#| msgid "Parsing error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "Parsing error"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Check Syntax"
+#, kde-format
 msgctxt "@action"
 msgid "Check Syntax"
 msgstr "Check Syntax"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import…"
-msgstr "Import..."
+msgstr "Import…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Create Rules Graphically..."
+#, kde-format
 msgctxt "@action"
 msgid "Create Rules Graphically…"
-msgstr "Create Rules Graphically..."
+msgstr "Create Rules Graphically…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:66
-#, fuzzy, kde-format
-#| msgid "Share..."
+#, kde-format
 msgid "Share…"
-msgstr "Share..."
+msgstr "Share…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Server Info"
+#, kde-format
 msgctxt "@action"
 msgid "Server Info"
 msgstr "Server Info"
@@ -2750,62 +2713,52 @@ msgid "Sieve server supports:"
 msgstr "Sieve server supports:"
 
 #: ksieveui/editor/sievetextedit.cpp:277
-#, fuzzy, kde-format
-#| msgid "Insert Rule"
+#, kde-format
 msgctxt "@action"
 msgid "Insert Rule"
 msgstr "Insert Rule"
 
 #: ksieveui/editor/sievetextedit.cpp:291
-#, fuzzy, kde-format
-#| msgid "Help about: '%1'"
+#, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "Help about: '%1'"
 
 #: ksieveui/editor/sievetextedit.cpp:300
-#, fuzzy, kde-format
-#| msgid "Edit Rule"
+#, kde-format
 msgctxt "@action"
 msgid "Edit Rule"
 msgstr "Edit Rule"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:20
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some errors were found during parsing. <a href=\"sieveerrordetails"
-#| "\">(Details...)</a>"
+#, kde-format
 msgid ""
 "Some errors were found during parsing. <a href=\"sieveerrordetails"
 "\">(Details…)</a>"
 msgstr ""
 "Some errors were found during parsing. <a href=\"sieveerrordetails"
-"\">(Details...)</a>"
+"\">(Details…)</a>"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
-#, fuzzy, kde-format
-#| msgid "Switch to Graphical Mode"
+#, kde-format
 msgctxt "@action"
 msgid "Switch to Graphical Mode"
 msgstr "Switch to Graphical Mode"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:29
-#, fuzzy, kde-format
-#| msgid "Stay in Text Mode"
+#, kde-format
 msgctxt "@action"
 msgid "Stay in Text Mode"
 msgstr "Stay in Text Mode"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:35
-#, fuzzy, kde-format
-#| msgid "Switch to Text Mode"
+#, kde-format
 msgctxt "@action"
 msgid "Switch to Text Mode"
 msgstr "Switch to Text Mode"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:39
-#, fuzzy, kde-format
-#| msgid "Stay in Graphical Mode"
+#, kde-format
 msgctxt "@action"
 msgid "Stay in Graphical Mode"
 msgstr "Stay in Graphical Mode"
@@ -2816,8 +2769,7 @@ msgid "We cannot parse script. We cannot switch to graphical mode"
 msgstr "We cannot parse script. We cannot switch to graphical mode"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:37
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Close"
@@ -2834,8 +2786,7 @@ msgid "F&ind:"
 msgstr "F&ind:"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:51
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Text to search for"
@@ -2847,8 +2798,7 @@ msgid "Next"
 msgstr "Next"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Jump to next match"
@@ -2860,8 +2810,7 @@ msgid "Previous"
 msgstr "Previous"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:63
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Jump to previous match"
@@ -2872,8 +2821,7 @@ msgid "Options"
 msgstr "Options"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Modify search behaviour"
@@ -2903,13 +2851,12 @@ msgstr "Manage Sieve Scripts"
 #, kde-format
 msgctxt "create a new sieve script"
 msgid "New…"
-msgstr ""
+msgstr "New…"
 
 #: ksieveui/managesievescriptsdialog.cpp:89
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgid "Edit…"
-msgstr "Edit"
+msgstr "Edit…"
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
@@ -2924,17 +2871,15 @@ msgstr "Deactivate"
 #: ksieveui/managesievescriptsdialog.cpp:173
 #: ksieveui/managesievescriptsdialog.cpp:262
 #: ksieveui/widgets/managesievewidget.cpp:512
-#, fuzzy, kde-format
-#| msgid "Sieve Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Sieve Error"
 
 #: ksieveui/managesievescriptsdialog.cpp:206
-#, fuzzy, kde-format
-#| msgid "Uploading script to server for checking it, please wait..."
+#, kde-format
 msgid "Uploading script to server for checking it, please wait…"
-msgstr "Uploading script to server for checking it, please wait..."
+msgstr "Uploading script to server for checking it, please wait…"
 
 #: ksieveui/managesievescriptsdialog.cpp:252
 #, kde-format
@@ -2942,8 +2887,7 @@ msgid "The Sieve script was successfully uploaded."
 msgstr "The Sieve script was successfully uploaded."
 
 #: ksieveui/managesievescriptsdialog.cpp:252
-#, fuzzy, kde-format
-#| msgid "Sieve Script Upload"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "Sieve Script Upload"
@@ -3007,10 +2951,9 @@ msgstr ""
 "<name of extension>\""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Display check script result..."
+#, kde-format
 msgid "Display check script result…"
-msgstr "Display check script result..."
+msgstr "Display check script result…"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
 #, kde-format
@@ -3033,8 +2976,7 @@ msgid "Script still contains debug method. Remove it please."
 msgstr "Script still contains debug method. Remove it please."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
-#, fuzzy, kde-format
-#| msgid "Clear"
+#, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "Clear"
@@ -3045,8 +2987,7 @@ msgid "Text Files (*.txt);;All Files (*)"
 msgstr "Text Files (*.txt);;All Files (*)"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:30
-#, fuzzy, kde-format
-#| msgid "Add debug here"
+#, kde-format
 msgctxt "@action"
 msgid "Add debug here"
 msgstr "Add debug here"
@@ -3091,10 +3032,9 @@ msgid "Forward Message and add copy"
 msgstr "Forward Message and add copy"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:66
-#, fuzzy, kde-format
-#| msgid "Destroy mail posted by..."
+#, kde-format
 msgid "Destroy mail posted by…"
-msgstr "Destroy mail posted by..."
+msgstr "Destroy mail posted by…"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:79
 #, kde-format
@@ -3227,22 +3167,19 @@ msgstr ""
 "Do you want to edit it?"
 
 #: ksieveui/vacation/vacationmanager.cpp:57
-#, fuzzy, kde-format
-#| msgid "Out-of-office reply still active"
+#, kde-format
 msgctxt "@title:window"
 msgid "Out-of-office reply still active"
 msgstr "Out-of-office reply still active"
 
 #: ksieveui/vacation/vacationmanager.cpp:58
-#, fuzzy, kde-format
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "Edit"
 
 #: ksieveui/vacation/vacationmanager.cpp:59
-#, fuzzy, kde-format
-#| msgid "Ignore"
+#, kde-format
 msgctxt "@action:button"
 msgid "Ignore"
 msgstr "Ignore"
@@ -3276,10 +3213,9 @@ msgstr "No Sieve URL configured"
 
 #: ksieveui/widgets/managesievetreeview.cpp:16
 #: ksieveui/widgets/managesievetreeview.cpp:30
-#, fuzzy, kde-format
-#| msgid "No IMAP server configured..."
+#, kde-format
 msgid "No IMAP server configured…"
-msgstr "No IMAP server configured..."
+msgstr "No IMAP server configured…"
 
 #: ksieveui/widgets/managesievetreeview.cpp:20
 #, kde-format
@@ -3292,16 +3228,14 @@ msgid "Network down."
 msgstr "Network down."
 
 #: ksieveui/widgets/managesievewidget.cpp:147
-#, fuzzy, kde-format
-#| msgid "Edit Script..."
+#, kde-format
 msgid "Edit Script…"
-msgstr "Edit Script..."
+msgstr "Edit Script…"
 
 #: ksieveui/widgets/managesievewidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Rename Script"
+#, kde-format
 msgid "Rename Script…"
-msgstr "Rename Script"
+msgstr "Rename Script…"
 
 #: ksieveui/widgets/managesievewidget.cpp:150
 #, kde-format
@@ -3314,10 +3248,9 @@ msgid "Deactivate Script"
 msgstr "Deactivate Script"
 
 #: ksieveui/widgets/managesievewidget.cpp:159
-#, fuzzy, kde-format
-#| msgid "New Script"
+#, kde-format
 msgid "New Script…"
-msgstr "New Script"
+msgstr "New Script…"
 
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format
@@ -3366,8 +3299,7 @@ msgid "Really delete script \"%1\" from the server?"
 msgstr "Really delete script \"%1\" from the server?"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
-#, fuzzy, kde-format
-#| msgid "Delete Sieve Script Confirmation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "Delete Sieve Script Confirmation"
