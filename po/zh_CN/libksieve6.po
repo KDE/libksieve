@@ -1235,7 +1235,7 @@ msgstr "请选择操作。"
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
 #, kde-format
 msgid "Add comment"
-msgstr "添加注释"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:274
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:222
@@ -2601,7 +2601,7 @@ msgstr "查找(&I)："
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:51
 #, kde-format
 msgid "Text to search for"
-msgstr "要搜索的文本"
+msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:56
 #, kde-format
@@ -2612,7 +2612,7 @@ msgstr "下一个"
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
 #, kde-format
 msgid "Jump to next match"
-msgstr "跳转到下一个匹配"
+msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:62
 #, kde-format
@@ -2623,7 +2623,7 @@ msgstr "上一个"
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:63
 #, kde-format
 msgid "Jump to previous match"
-msgstr "跳转到上一个匹配"
+msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:69
 #, kde-format
@@ -2633,7 +2633,7 @@ msgstr "选项"
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
 #, kde-format
 msgid "Modify search behavior"
-msgstr "修改搜索行为"
+msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:72
 #, kde-format
