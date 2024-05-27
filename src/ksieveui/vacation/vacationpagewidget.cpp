@@ -45,12 +45,12 @@ VacationPageWidget::VacationPageWidget(QWidget *parent)
 
     auto w = new QWidget;
     vbox = new QVBoxLayout;
-    auto lab =
-        new QLabel(i18n("Your server did not list \"vacation\" in "
-                        "its list of supported Sieve extensions;"
-                        "without it, KMail cannot install out-of-"
-                        "office replies for you."
-                        "Please contact your system administrator."));
+    auto lab = new QLabel(i18nc("@label:textbox",
+                                "Your server did not list \"vacation\" in "
+                                "its list of supported Sieve extensions;"
+                                "without it, KMail cannot install out-of-"
+                                "office replies for you."
+                                "Please contact your system administrator."));
     QFont font = lab->font();
     font.setBold(true);
     lab->setFont(font);

@@ -51,7 +51,7 @@ void SieveConditionWidget::setFilterCondition(QWidget *widget)
     if (widget) {
         mLayout->addWidget(widget, 1, 3);
     } else {
-        mLayout->addWidget(new QLabel(i18n("Please select an condition."), this), 1, 3);
+        mLayout->addWidget(new QLabel(i18nc("@label:textbox", "Please select an condition."), this), 1, 3);
     }
 }
 

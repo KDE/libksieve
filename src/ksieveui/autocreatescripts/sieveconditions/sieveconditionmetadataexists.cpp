@@ -30,7 +30,7 @@ QWidget *SieveConditionMetaDataExists::createParamWidget(QWidget *parent) const
     grid->setContentsMargins({});
     w->setLayout(grid);
 
-    auto lab = new QLabel(i18n("Mailbox:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "Mailbox:"));
     grid->addWidget(lab, 0, 0);
 
     KSieveUi::AbstractMoveImapFolderWidget *mailbox = AutoCreateScriptUtil::createImapFolderWidget();
@@ -39,7 +39,7 @@ QWidget *SieveConditionMetaDataExists::createParamWidget(QWidget *parent) const
     mailbox->setObjectName(QLatin1StringView("mailbox"));
     grid->addWidget(mailbox, 0, 1);
 
-    lab = new QLabel(i18n("Annotation:"));
+    lab = new QLabel(i18nc("@label:textbox", "Annotation:"));
     grid->addWidget(lab, 1, 0);
 
     auto value = new QLineEdit;

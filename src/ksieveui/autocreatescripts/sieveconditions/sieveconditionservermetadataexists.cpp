@@ -28,7 +28,7 @@ QWidget *SieveConditionServerMetaDataExists::createParamWidget(QWidget *parent) 
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    auto lab = new QLabel(i18n("Annotation:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "Annotation:"));
     lay->addWidget(lab);
 
     auto value = new QLineEdit;

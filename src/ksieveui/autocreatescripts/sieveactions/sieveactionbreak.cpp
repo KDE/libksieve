@@ -29,7 +29,7 @@ QWidget *SieveActionBreak::createParamWidget(QWidget *parent) const
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    auto lab = new QLabel(i18n("Name (optional):"));
+    auto lab = new QLabel(i18nc("@label:textbox", "Name (optional):"));
     lay->addWidget(lab);
 
     auto subject = new QLineEdit;

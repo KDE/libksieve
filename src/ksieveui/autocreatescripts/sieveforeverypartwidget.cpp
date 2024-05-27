@@ -42,7 +42,7 @@ SieveForEveryPartWidget::SieveForEveryPartWidget(QWidget *parent)
     connect(mForLoop, &QCheckBox::toggled, this, &SieveForEveryPartWidget::valueChanged);
     lay->addWidget(mForLoop);
 
-    auto lab = new QLabel(i18n("Name (optional):"), this);
+    auto lab = new QLabel(i18nc("@label:textbox", "Name (optional):"), this);
     lay->addWidget(lab);
 
     KLineEditEventHandler::catchReturnKey(mName);

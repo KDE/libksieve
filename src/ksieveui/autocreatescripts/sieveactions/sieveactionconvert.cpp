@@ -28,7 +28,7 @@ QWidget *SieveActionConvert::createParamWidget(QWidget *parent) const
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    auto lab = new QLabel(i18n("From:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "From:"));
     lay->addWidget(lab, 0, 0);
 
     auto fromMimeType = new SelectMimeTypeComboBox;
@@ -36,7 +36,7 @@ QWidget *SieveActionConvert::createParamWidget(QWidget *parent) const
     fromMimeType->setObjectName(QLatin1StringView("from"));
     lay->addWidget(fromMimeType, 0, 1);
 
-    lab = new QLabel(i18n("To:"));
+    lab = new QLabel(i18nc("@label:textbox", "To:"));
     lay->addWidget(lab, 0, 2);
 
     auto toMimeType = new SelectMimeTypeComboBox;
@@ -44,7 +44,7 @@ QWidget *SieveActionConvert::createParamWidget(QWidget *parent) const
     toMimeType->setObjectName(QLatin1StringView("to"));
     lay->addWidget(toMimeType, 0, 3);
 
-    lab = new QLabel(i18n("Parameters:"));
+    lab = new QLabel(i18nc("@label:textbox", "Parameters:"));
     lay->addWidget(lab, 1, 0);
 
     auto params = new SelectConvertParameterWidget;

@@ -39,7 +39,7 @@ QWidget *SieveConditionDate::createParamWidget(QWidget *parent) const
     auto grid = new QGridLayout;
     grid->setContentsMargins({});
     lay->addLayout(grid);
-    auto lab = new QLabel(i18n("header:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "header:"));
     grid->addWidget(lab, 0, 0);
 
     auto header = new QLineEdit;

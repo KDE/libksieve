@@ -52,7 +52,7 @@ QWidget *SieveActionKeep::createParamWidget(QWidget *parent) const
         auto lay = new QHBoxLayout;
         lay->setContentsMargins({});
         w->setLayout(lay);
-        auto addFlags = new QLabel(i18n("Add flags:"));
+        auto addFlags = new QLabel(i18nc("@label:textbox", "Add flags:"));
         lay->addWidget(addFlags);
 
         auto flagsWidget = new SelectFlagsWidget;

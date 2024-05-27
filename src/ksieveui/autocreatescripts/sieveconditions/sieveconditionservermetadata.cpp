@@ -40,7 +40,7 @@ QWidget *SieveConditionServerMetaData::createParamWidget(QWidget *parent) const
     grid->setContentsMargins({});
     lay->addLayout(grid);
 
-    auto lab = new QLabel(i18n("Mailbox:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "Mailbox:"));
     grid->addWidget(lab, 0, 0);
 
     auto mailbox = new QLineEdit;
@@ -49,7 +49,7 @@ QWidget *SieveConditionServerMetaData::createParamWidget(QWidget *parent) const
     connect(mailbox, &QLineEdit::textChanged, this, &SieveConditionServerMetaData::valueChanged);
     grid->addWidget(mailbox, 0, 1);
 
-    lab = new QLabel(i18n("Annotations:"));
+    lab = new QLabel(i18nc("@label:textbox", "Annotations:"));
     grid->addWidget(lab, 1, 0);
 
     auto annotation = new QLineEdit;
@@ -58,7 +58,7 @@ QWidget *SieveConditionServerMetaData::createParamWidget(QWidget *parent) const
     annotation->setObjectName(QLatin1StringView("annotation"));
     grid->addWidget(annotation, 1, 1);
 
-    lab = new QLabel(i18n("Value:"));
+    lab = new QLabel(i18nc("@label:textbox", "Value:"));
     grid->addWidget(lab, 2, 0);
 
     AbstractRegexpEditorLineEdit *value = AutoCreateScriptUtil::createRegexpEditorLineEdit();

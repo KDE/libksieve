@@ -27,7 +27,7 @@ QWidget *SieveActionReject::createParamWidget(QWidget *parent) const
     auto lay = new QHBoxLayout;
     lay->setContentsMargins({});
     w->setLayout(lay);
-    auto lab = new QLabel(i18n("text:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "text:"));
     lay->addWidget(lab);
 
     auto edit = new MultiLineEdit;

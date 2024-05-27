@@ -42,7 +42,7 @@ QWidget *SieveConditionHeader::createParamWidget(QWidget *parent) const
     connect(headerType, &SelectHeaderTypeComboBox::valueChanged, this, &SieveConditionHeader::valueChanged);
     grid->addWidget(headerType, 0, 0, 1, 2);
 
-    auto lab = new QLabel(i18n("With value:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "With value:"));
     grid->addWidget(lab, 1, 0);
 
     AbstractRegexpEditorLineEdit *value = AutoCreateScriptUtil::createRegexpEditorLineEdit();

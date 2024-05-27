@@ -37,7 +37,7 @@ QWidget *SieveActionDeleteHeader::createParamWidget(QWidget *parent) const
     connect(matchType, &SelectMatchTypeComboBox::valueChanged, this, &SieveActionDeleteHeader::valueChanged);
     grid->addWidget(matchType, 0, 0);
 
-    auto lab = new QLabel(i18n("header:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "header:"));
     grid->addWidget(lab, 0, 1);
 
     auto headerEdit = new QLineEdit;
@@ -46,7 +46,7 @@ QWidget *SieveActionDeleteHeader::createParamWidget(QWidget *parent) const
     connect(headerEdit, &QLineEdit::textChanged, this, &SieveActionDeleteHeader::valueChanged);
     grid->addWidget(headerEdit, 0, 2);
 
-    lab = new QLabel(i18n("value:"));
+    lab = new QLabel(i18nc("@label:textbox", "value:"));
     grid->addWidget(lab, 1, 1);
 
     auto valueEdit = new QLineEdit;

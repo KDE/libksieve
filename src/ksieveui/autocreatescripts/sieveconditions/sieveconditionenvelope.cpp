@@ -51,7 +51,7 @@ QWidget *SieveConditionEnvelope::createParamWidget(QWidget *parent) const
     connect(selectHeaderType, &SelectHeaderTypeComboBox::valueChanged, this, &SieveConditionEnvelope::valueChanged);
     grid->addWidget(selectHeaderType, 0, 1);
 
-    auto lab = new QLabel(i18n("address:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "address:"));
     grid->addWidget(lab, 1, 0);
 
     AbstractRegexpEditorLineEdit *edit = AutoCreateScriptUtil::createRegexpEditorLineEdit();

@@ -30,7 +30,7 @@ QWidget *SieveConditionEnvironment::createParamWidget(QWidget *parent) const
     auto grid = new QGridLayout;
     grid->setContentsMargins({});
     w->setLayout(grid);
-    auto lab = new QLabel(i18n("Item:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "Item:"));
     grid->addWidget(lab, 0, 0);
 
     auto item = new QLineEdit;
@@ -46,7 +46,7 @@ QWidget *SieveConditionEnvironment::createParamWidget(QWidget *parent) const
     item->setObjectName(QLatin1StringView("item"));
     grid->addWidget(item, 0, 1);
 
-    lab = new QLabel(i18n("Value:"));
+    lab = new QLabel(i18nc("@label:textbox", "Value:"));
     grid->addWidget(lab, 1, 0);
 
     auto value = new QLineEdit;

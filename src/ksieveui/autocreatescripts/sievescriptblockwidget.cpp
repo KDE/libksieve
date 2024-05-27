@@ -80,7 +80,7 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *g
     topLayout->addWidget(actions);
 
     auto newBlockLayout = new QHBoxLayout;
-    auto lab = new QLabel(i18n("Add new block:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "Add new block:"));
     newBlockLayout->addWidget(lab);
     mNewBlockType = new QComboBox(this);
     newBlockLayout->addWidget(mNewBlockType);

@@ -28,7 +28,7 @@ QWidget *SieveConditionTrue::createParamWidget(QWidget *parent) const
     lay->setContentsMargins({});
     w->setLayout(lay);
 
-    auto label = new QLabel(i18n("true"));
+    auto label = new QLabel(i18nc("@label:textbox", "true"));
     lay->addWidget(label);
     return w;
 }

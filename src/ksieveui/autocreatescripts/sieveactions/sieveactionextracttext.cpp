@@ -29,7 +29,7 @@ QWidget *SieveActionExtractText::createParamWidget(QWidget *parent) const
     grid->setContentsMargins({});
     w->setLayout(grid);
 
-    auto lab = new QLabel(i18n("Number of characters:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "Number of characters:"));
     grid->addWidget(lab, 0, 0);
 
     auto nbCharacters = new QSpinBox;
@@ -39,7 +39,7 @@ QWidget *SieveActionExtractText::createParamWidget(QWidget *parent) const
     grid->addWidget(nbCharacters, 0, 1);
     connect(nbCharacters, &QSpinBox::valueChanged, this, &SieveActionExtractText::valueChanged);
 
-    lab = new QLabel(i18n("Stored in variable name:"));
+    lab = new QLabel(i18nc("@label:textbox", "Stored in variable name:"));
     grid->addWidget(lab, 1, 0);
 
     auto variableName = new QLineEdit;

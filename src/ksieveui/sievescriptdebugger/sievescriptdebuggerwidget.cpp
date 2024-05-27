@@ -32,7 +32,7 @@ SieveScriptDebuggerWidget::SieveScriptDebuggerWidget(QWidget *parent)
     connect(mSieveScriptFrontEnd, &SieveScriptDebuggerFrontEndWidget::debugButtonEnabled, this, &SieveScriptDebuggerWidget::debugButtonEnabled);
     connect(this, &SieveScriptDebuggerWidget::debugScriptButtonClicked, mSieveScriptFrontEnd, &SieveScriptDebuggerFrontEndWidget::debugScriptButtonClicked);
 
-    mSieveNoExistingFrontEnd = new QLabel(i18n("\"sieve-test\" was not found on system. Please install it. (See in Dovecot package)"));
+    mSieveNoExistingFrontEnd = new QLabel(i18nc("@label:textbox", "\"sieve-test\" was not found on system. Please install it. (See in Dovecot package)"));
     mSieveNoExistingFrontEnd->setAlignment(Qt::AlignHCenter);
     QFont f = mSieveNoExistingFrontEnd->font();
     f.setBold(true);

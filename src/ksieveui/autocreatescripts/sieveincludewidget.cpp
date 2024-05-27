@@ -126,13 +126,13 @@ void SieveIncludeActionWidget::initWidget()
     mLayout = new QGridLayout(this);
     mLayout->setContentsMargins({});
 
-    auto lab = new QLabel(i18n("Include:"), this);
+    auto lab = new QLabel(i18nc("@label:textbox", "Include:"), this);
     mLayout->addWidget(lab, 1, 0);
     mLocation = new SieveIncludeLocation(this);
     connect(mLocation, &SieveIncludeLocation::valueChanged, this, &SieveIncludeActionWidget::valueChanged);
     mLayout->addWidget(mLocation, 1, 1);
 
-    lab = new QLabel(i18n("Name:"), this);
+    lab = new QLabel(i18nc("@label:textbox", "Name:"), this);
     mLayout->addWidget(lab, 1, 2);
 
     mIncludeFileName = new IncludeFileLineEdit(this);

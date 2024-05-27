@@ -40,7 +40,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     auto formLayout = new QFormLayout;
     mainLayout->addLayout(formLayout);
 
-    auto emailLab = new QLabel(i18n("Email path:"), this);
+    auto emailLab = new QLabel(i18nc("@label:textbox", "Email path:"), this);
     emailLab->setObjectName(QLatin1StringView("emaillab"));
 
     mEmailPath = new KUrlRequester(this);
@@ -54,7 +54,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     auto extensionLayout = new QHBoxLayout;
     mainLayout->addLayout(extensionLayout);
 
-    auto extensionLab = new QLabel(i18n("Extension:"));
+    auto extensionLab = new QLabel(i18nc("@label:textbox", "Extension:"));
     extensionLab->setObjectName(QLatin1StringView("extensionlab"));
 
     mExtension = new QLineEdit(this);

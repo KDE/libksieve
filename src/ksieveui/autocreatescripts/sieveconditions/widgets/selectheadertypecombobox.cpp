@@ -52,7 +52,7 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     mListWidget->setObjectName(QLatin1StringView("listwidget"));
     lay->addWidget(mListWidget);
 
-    auto lab = new QLabel(i18n("Add new header:"), this);
+    auto lab = new QLabel(i18nc("@label:textbox", "Add new header:"), this);
     lab->setObjectName(QLatin1StringView("label"));
     lay->addWidget(lab);
 

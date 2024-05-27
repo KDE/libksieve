@@ -36,7 +36,7 @@ QWidget *SieveActionNotify::createParamWidget(QWidget *parent) const
     connect(importanceCombobox, &SelectImportanceCombobox::valueChanged, this, &SieveActionNotify::valueChanged);
     lay->addWidget(importanceCombobox);
 
-    auto lab = new QLabel(i18n("message:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "message:"));
     lay->addWidget(lab);
 
     auto message = new QLineEdit;
@@ -45,7 +45,7 @@ QWidget *SieveActionNotify::createParamWidget(QWidget *parent) const
     connect(message, &QLineEdit::textChanged, this, &SieveActionNotify::valueChanged);
     lay->addWidget(message);
 
-    lab = new QLabel(i18n("method:"));
+    lab = new QLabel(i18nc("@label:textbox", "method:"));
     lay->addWidget(lab);
 
     auto method = new QLineEdit;

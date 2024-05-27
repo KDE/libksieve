@@ -30,7 +30,7 @@ QWidget *SieveActionEnclose::createParamWidget(QWidget *parent) const
     grid->setContentsMargins({});
     w->setLayout(grid);
 
-    auto lab = new QLabel(i18n("Subject:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "Subject:"));
     grid->addWidget(lab, 0, 0);
 
     auto subject = new QLineEdit;
@@ -39,7 +39,7 @@ QWidget *SieveActionEnclose::createParamWidget(QWidget *parent) const
     connect(subject, &QLineEdit::textChanged, this, &SieveActionEnclose::valueChanged);
     grid->addWidget(subject, 0, 1);
 
-    lab = new QLabel(i18n("headers:"));
+    lab = new QLabel(i18nc("@label:textbox", "headers:"));
     grid->addWidget(lab, 1, 0);
 
     auto headers = new QLineEdit;
@@ -48,7 +48,7 @@ QWidget *SieveActionEnclose::createParamWidget(QWidget *parent) const
     connect(headers, &QLineEdit::textChanged, this, &SieveActionEnclose::valueChanged);
     grid->addWidget(headers, 1, 1);
 
-    lab = new QLabel(i18n("text:"));
+    lab = new QLabel(i18nc("@label:textbox", "text:"));
     grid->addWidget(lab, 2, 0);
 
     auto text = new MultiLineEdit;

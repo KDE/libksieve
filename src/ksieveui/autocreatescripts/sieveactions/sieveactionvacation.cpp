@@ -43,7 +43,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
         connect(vacation, &SelectVacationComboBox::valueChanged, this, &SieveActionVacation::valueChanged);
         grid->addWidget(vacation, 0, 0);
     } else {
-        lab = new QLabel(i18n("day:"));
+        lab = new QLabel(i18nc("@label:textbox", "day:"));
         grid->addWidget(lab, 0, 0);
     }
 
@@ -54,7 +54,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
     connect(day, &QSpinBox::valueChanged, this, &SieveActionVacation::valueChanged);
     grid->addWidget(day, 0, 1);
 
-    lab = new QLabel(i18n("Message subject:"));
+    lab = new QLabel(i18nc("@label:textbox", "Message subject:"));
     grid->addWidget(lab, 1, 0);
 
     auto subject = new QLineEdit;
@@ -63,7 +63,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
     connect(subject, &QLineEdit::textChanged, this, &SieveActionVacation::valueChanged);
     grid->addWidget(subject, 1, 1);
 
-    lab = new QLabel(i18n("Additional email:"));
+    lab = new QLabel(i18nc("@label:textbox", "Additional email:"));
     grid->addWidget(lab, 2, 0);
 
     AbstractSelectEmailLineEdit *addresses = AutoCreateScriptUtil::createSelectEmailsWidget();
@@ -72,7 +72,7 @@ QWidget *SieveActionVacation::createParamWidget(QWidget *parent) const
     connect(addresses, &AbstractSelectEmailLineEdit::valueChanged, this, &SieveActionVacation::valueChanged);
     grid->addWidget(addresses, 2, 1);
 
-    lab = new QLabel(i18n("Vacation reason:"));
+    lab = new QLabel(i18nc("@label:textbox", "Vacation reason:"));
     grid->addWidget(lab, 3, 0);
 
     auto text = new MultiLineEdit;

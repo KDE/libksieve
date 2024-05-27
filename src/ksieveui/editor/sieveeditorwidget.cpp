@@ -113,7 +113,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     lay->addWidget(toolbar);
 
     auto nameLayout = new QHBoxLayout;
-    auto label = new QLabel(i18n("Script name:"), this);
+    auto label = new QLabel(i18nc("@label:textbox", "Script name:"), this);
     nameLayout->addWidget(label);
     mScriptName = new QLineEdit(this);
     mScriptName->setReadOnly(true);

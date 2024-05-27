@@ -45,7 +45,7 @@ QWidget *SieveActionSetVariable::createParamWidget(QWidget *parent) const
         grid->addWidget(protectAgainstUseRegexp, 0, 1);
     }
 
-    auto lab = new QLabel(i18n("Value:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "Value:"));
     grid->addWidget(lab, 1, 0);
 
     auto value = new QLineEdit;
@@ -54,7 +54,7 @@ QWidget *SieveActionSetVariable::createParamWidget(QWidget *parent) const
     connect(value, &QLineEdit::textChanged, this, &SieveActionSetVariable::valueChanged);
     grid->addWidget(value, 1, 1);
 
-    lab = new QLabel(i18n("In variable:"));
+    lab = new QLabel(i18nc("@label:textbox", "In variable:"));
     grid->addWidget(lab, 2, 0);
 
     auto variable = new QLineEdit;

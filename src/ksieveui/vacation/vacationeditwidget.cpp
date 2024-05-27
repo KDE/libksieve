@@ -44,8 +44,9 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
 
     // explanation label:
     ++row;
-    auto configureVacationLabel = new QLabel(i18n("Configure vacation "
-                                                  "notifications to be sent:"),
+    auto configureVacationLabel = new QLabel(i18nc("@label:textbox",
+                                                   "Configure vacation "
+                                                   "notifications to be sent:"),
                                              this);
     configureVacationLabel->setObjectName(QLatin1StringView("configureVacationLabel"));
     glay->addWidget(configureVacationLabel, row, 0, 1, 2);
@@ -72,7 +73,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mSubject->setObjectName(QLatin1StringView("mSubject"));
     connect(mSubject, &PimCommon::SpellCheckLineEdit::textChanged, this, &VacationEditWidget::setWasChanged);
     // mSubject->setClearButtonEnabled(true);
-    auto subjectOfVacationLabel = new QLabel(i18n("&Subject of the vacation mail:"), this);
+    auto subjectOfVacationLabel = new QLabel(i18nc("@label:textbox", "&Subject of the vacation mail:"), this);
     subjectOfVacationLabel->setObjectName(QLatin1StringView("subjectOfVacationLabel"));
     subjectOfVacationLabel->setBuddy(mSubject);
     glay->addWidget(subjectOfVacationLabel, row, 0);
@@ -104,7 +105,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     timeLayout->addWidget(mStartTimeActive);
     timeLayout->addWidget(mStartTime);
 
-    mStartDateLabel = new QLabel(i18n("Start date:"), this);
+    mStartDateLabel = new QLabel(i18nc("@label:textbox", "Start date:"), this);
     mStartDateLabel->setObjectName(QLatin1StringView("mStartDateLabel"));
     mStartDateLabel->setBuddy(mStartDate);
     glay->addWidget(mStartDateLabel, row, 0);
@@ -134,7 +135,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     connect(mEndTimeActive, &QCheckBox::toggled, mEndTime, &KTimeComboBox::setEnabled);
     connect(mEndTimeActive, &QCheckBox::toggled, this, &VacationEditWidget::setWasChanged);
 
-    mEndDateLabel = new QLabel(i18n("End date:"), this);
+    mEndDateLabel = new QLabel(i18nc("@label:textbox", "End date:"), this);
     mEndDateLabel->setObjectName(QLatin1StringView("mEndDateLabel"));
     mEndDateLabel->setBuddy(mEndDate);
     glay->addWidget(mEndDateLabel, row, 0);
@@ -159,7 +160,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mIntervalSpin->setObjectName(QLatin1StringView("mIntervalSpin"));
     mIntervalSpin->setSuffix(i18np(" day", " days", defDayInterval));
     connect(mIntervalSpin, &QSpinBox::valueChanged, this, &VacationEditWidget::slotIntervalSpinChanged);
-    auto resendNotificationLabel = new QLabel(i18n("&Resend notification only after:"), this);
+    auto resendNotificationLabel = new QLabel(i18nc("@label:textbox", "&Resend notification only after:"), this);
     resendNotificationLabel->setObjectName(QLatin1StringView("resendNotificationLabel"));
     resendNotificationLabel->setBuddy(mIntervalSpin);
     glay->addWidget(resendNotificationLabel, row, 0);
@@ -172,7 +173,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mMailAliasesEdit->setClearButtonEnabled(true);
     KLineEditEventHandler::catchReturnKey(mMailAliasesEdit);
     connect(mMailAliasesEdit, &KSieveUi::VacationMailLineEdit::textChanged, this, &VacationEditWidget::setWasChanged);
-    auto sendResponseLabel = new QLabel(i18n("&Send responses for these addresses:"), this);
+    auto sendResponseLabel = new QLabel(i18nc("@label:textbox", "&Send responses for these addresses:"), this);
     sendResponseLabel->setObjectName(QLatin1StringView("sendResponseLabel"));
     sendResponseLabel->setBuddy(mMailAliasesEdit);
     glay->addWidget(sendResponseLabel, row, 0);
@@ -198,7 +199,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     hLayout->addWidget(mMailActionRecipient);
 
     ++row;
-    auto actionIncomingMailsLabel = new QLabel(i18n("&Action for incoming mails:"), this);
+    auto actionIncomingMailsLabel = new QLabel(i18nc("@label:textbox", "&Action for incoming mails:"), this);
     actionIncomingMailsLabel->setBuddy(mMailAction);
     actionIncomingMailsLabel->setObjectName(QLatin1StringView("actionIncomingMailsLabel"));
     glay->addWidget(actionIncomingMailsLabel, row, 0);

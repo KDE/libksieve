@@ -56,7 +56,7 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     vbox->setContentsMargins({});
 
     auto hbox = new QHBoxLayout;
-    auto label = new QLabel(i18n("Name:"), this);
+    auto label = new QLabel(i18nc("@label:textbox", "Name:"), this);
     hbox->addWidget(label);
 
     mTemplateNameEdit = new QLineEdit(this);

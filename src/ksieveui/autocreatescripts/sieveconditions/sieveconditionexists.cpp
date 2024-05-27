@@ -37,7 +37,7 @@ QWidget *SieveConditionExists::createParamWidget(QWidget *parent) const
     lay->addWidget(combo);
     connect(combo, &QComboBox::activated, this, &SieveConditionExists::valueChanged);
 
-    auto lab = new QLabel(i18n("headers:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "headers:"));
     lay->addWidget(lab);
 
     auto value = new SelectHeaderTypeComboBox;

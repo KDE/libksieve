@@ -43,7 +43,7 @@ QWidget *SieveConditionHasFlag::createParamWidget(QWidget *parent) const
 
     int row = 0;
     if (hasVariableSupport) {
-        auto lab = new QLabel(i18n("Variable name\n (if empty it uses internal variable):"));
+        auto lab = new QLabel(i18nc("@label:textbox", "Variable name\n (if empty it uses internal variable):"));
         grid->addWidget(lab, row, 0);
 
         auto variableName = new QLineEdit;
@@ -53,7 +53,7 @@ QWidget *SieveConditionHasFlag::createParamWidget(QWidget *parent) const
         grid->addWidget(variableName, row, 1);
         ++row;
     }
-    auto lab = new QLabel(i18n("Value:"));
+    auto lab = new QLabel(i18nc("@label:textbox", "Value:"));
     grid->addWidget(lab, row, 0);
 
     AbstractRegexpEditorLineEdit *value = AutoCreateScriptUtil::createRegexpEditorLineEdit();
