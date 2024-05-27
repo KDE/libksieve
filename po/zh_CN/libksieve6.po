@@ -626,11 +626,10 @@ msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgstr "服务器不支持表达式“%2”中的“%1”功能"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
-#, fuzzy, kde-format
-#| msgid "Help"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Help"
-msgstr "帮助"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddflags.cpp:13
 #, kde-format
@@ -1164,11 +1163,10 @@ msgid "…"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
-#, fuzzy, kde-format
-#| msgid "Set Flags"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Flags"
-msgstr "设置标记"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectimportancecombobox.cpp:25
 #, kde-format
@@ -1237,11 +1235,10 @@ msgstr "请选择操作。"
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:139
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
-#, fuzzy, kde-format
-#| msgid "Add comment"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Add comment"
-msgstr "添加注释"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:274
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:222
@@ -2060,33 +2057,28 @@ msgid "Bottom"
 msgstr "置底"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
-#, fuzzy, kde-format
-#| msgid "New Script"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "New Script"
-msgstr "新建脚本"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
-#, fuzzy, kde-format
-#| msgid "Delete Script"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete Script"
-msgstr "删除脚本"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
-#, fuzzy, kde-format
-#| msgid "Rename Script"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Rename Script"
-msgstr "重命名脚本"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Description"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit Script Description"
-msgstr "说明"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:188
 #, kde-format
@@ -2619,11 +2611,10 @@ msgid "We cannot parse script. We cannot switch to graphical mode"
 msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:37
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
-msgstr "关闭"
+msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:40
 #, kde-format
@@ -2637,11 +2628,10 @@ msgid "F&ind:"
 msgstr "查找(&I)："
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:51
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
-msgstr "要搜索的文本"
+msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:56
 #, kde-format
@@ -2650,11 +2640,10 @@ msgid "Next"
 msgstr "下一个"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
-msgstr "跳转到下一个匹配"
+msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:62
 #, kde-format
@@ -2663,11 +2652,10 @@ msgid "Previous"
 msgstr "上一个"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:63
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
-msgstr "跳转到上一个匹配"
+msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:69
 #, kde-format
@@ -2675,11 +2663,10 @@ msgid "Options"
 msgstr "选项"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
-msgstr "修改搜索行为"
+msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:72
 #, kde-format
