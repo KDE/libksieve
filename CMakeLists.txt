@@ -34,13 +34,13 @@ option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, 
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
 set(LIBKSIEVE_LIB_VERSION ${PIM_VERSION})
-set(KMIME_LIB_VERSION "6.1.0")
-set(IDENTITYMANAGEMENT_LIB_VERSION "6.1.0")
-set(KMAILTRANSPORT_LIB_VERSION "6.1.0")
-set(KPIMTEXTEDIT_LIB_VERSION "6.1.0")
-set(LIBKDEPIM_LIB_VERSION "6.1.0")
-set(PIMCOMMON_LIB_VERSION "6.1.0")
-set(KIMAP_LIB_VERSION "6.1.0")
+set(KMIME_LIB_VERSION "6.1.1")
+set(IDENTITYMANAGEMENT_LIB_VERSION "6.1.1")
+set(KMAILTRANSPORT_LIB_VERSION "6.1.1")
+set(KPIMTEXTEDIT_LIB_VERSION "6.1.1")
+set(LIBKDEPIM_LIB_VERSION "6.1.1")
+set(PIMCOMMON_LIB_VERSION "6.1.1")
+set(KIMAP_LIB_VERSION "6.1.1")
 
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
