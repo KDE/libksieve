@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2024-03-19 11:33+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -724,14 +724,18 @@ msgstr "Fejléc hozzáadása"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:40
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:40
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "header:"
+msgctxt "@label:textbox"
 msgid "header:"
 msgstr "fejléc:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:49
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:49
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "value:"
+msgctxt "@label:textbox"
 msgid "value:"
 msgstr "érték:"
 
@@ -750,7 +754,9 @@ msgstr "Törés"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:32
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name (optional):"
+msgctxt "@label:textbox"
 msgid "Name (optional):"
 msgstr "Név (opcionális):"
 
@@ -767,19 +773,25 @@ msgstr "Átalakítás"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:31
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "From:"
+msgctxt "@label:textbox"
 msgid "From:"
 msgstr "Erről:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:39
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "To:"
+msgctxt "@label:textbox"
 msgid "To:"
 msgstr "Erre:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:47
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Parameters:"
+msgctxt "@label:textbox"
 msgid "Parameters:"
 msgstr "Paraméterek:"
 
@@ -821,13 +833,17 @@ msgstr "Csatolás"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:33
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Subject:"
+msgctxt "@label:textbox"
 msgid "Subject:"
 msgstr "Tárgy:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "headers:"
+msgctxt "@label:textbox"
 msgid "headers:"
 msgstr "fejlécek:"
 
@@ -835,7 +851,9 @@ msgstr "fejlécek:"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:30
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:30
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "text:"
+msgctxt "@label:textbox"
 msgid "text:"
 msgstr "szöveg:"
 
@@ -868,12 +886,16 @@ msgid "Extract Text"
 msgstr "Szöveg kibontása"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:32
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Number of characters:"
+msgctxt "@label:textbox"
 msgid "Number of characters:"
 msgstr "Karakterek száma:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stored in variable name:"
+msgctxt "@label:textbox"
 msgid "Stored in variable name:"
 msgstr "Tárolva egy változónévben:"
 
@@ -951,7 +973,9 @@ msgstr ""
 "postafiókjába."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add flags:"
+msgctxt "@label:textbox"
 msgid "Add flags:"
 msgstr "Zászlók hozzáadása:"
 
@@ -961,12 +985,16 @@ msgid "Notify"
 msgstr "Értesítés"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "message:"
+msgctxt "@label:textbox"
 msgid "message:"
 msgstr "üzenet:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "method:"
+msgctxt "@label:textbox"
 msgid "method:"
 msgstr "módszer:"
 
@@ -1048,7 +1076,9 @@ msgid "Replace"
 msgstr "Csere"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "from:"
+msgctxt "@label:textbox"
 msgid "from:"
 msgstr "erről:"
 
@@ -1104,12 +1134,16 @@ msgstr "Speciális karakterek védelme"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:56
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:63
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:61
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Value:"
+msgctxt "@label:textbox"
 msgid "Value:"
 msgstr "Érték:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "In variable:"
+msgctxt "@label:textbox"
 msgid "In variable:"
 msgstr "A változóban:"
 
@@ -1161,22 +1195,30 @@ msgid "Vacation"
 msgstr "Szabadság"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "day:"
+msgctxt "@label:textbox"
 msgid "day:"
 msgstr "nap:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Message subject:"
+msgctxt "@label:textbox"
 msgid "Message subject:"
 msgstr "Üzenet tárgy:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:66
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Additional email:"
+msgctxt "@label:textbox"
 msgid "Additional email:"
 msgstr "További e-mail:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Vacation reason:"
+msgctxt "@label:textbox"
 msgid "Vacation reason:"
 msgstr "Szabadság oka:"
 
@@ -1347,7 +1389,9 @@ msgid "Length"
 msgstr "Hossz"
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:62
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Please select an action."
+msgctxt "@label:textbox"
 msgid "Please select an action."
 msgstr "Válasszon egy műveletet."
 
@@ -1398,7 +1442,9 @@ msgstr "Cím"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:52
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "address:"
+msgctxt "@label:textbox"
 msgid "address:"
 msgstr "cím:"
 
@@ -1488,7 +1534,9 @@ msgid "Environment"
 msgstr "Környezet"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Item:"
+msgctxt "@label:textbox"
 msgid "Item:"
 msgstr "Elem:"
 
@@ -1535,7 +1583,9 @@ msgid "False"
 msgstr "Hamis"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "false"
+msgctxt "@label:textbox"
 msgid "false"
 msgstr "hamis"
 
@@ -1550,7 +1600,11 @@ msgid "Has Flag"
 msgstr "Van jelzője"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Variable name\n"
+#| " (if empty it uses internal variable):"
+msgctxt "@label:textbox"
 msgid ""
 "Variable name\n"
 " (if empty it uses internal variable):"
@@ -1573,7 +1627,9 @@ msgid "Header"
 msgstr "Fejléc"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "With value:"
+msgctxt "@label:textbox"
 msgid "With value:"
 msgstr "Ezzel az értékkel:"
 
@@ -1631,13 +1687,17 @@ msgstr "Metaadatok"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:44
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:33
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Mailbox:"
+msgctxt "@label:textbox"
 msgid "Mailbox:"
 msgstr "Postaláda:"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:54
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Annotations:"
+msgctxt "@label:textbox"
 msgid "Annotations:"
 msgstr "Magyarázatok:"
 
@@ -1660,7 +1720,9 @@ msgstr "A metaadat létezik"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Annotation:"
+msgctxt "@label:textbox"
 msgid "Annotation:"
 msgstr "Magyarázat:"
 
@@ -1754,7 +1816,9 @@ msgid "True"
 msgstr "Igaz"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "true"
+msgctxt "@label:textbox"
 msgid "true"
 msgstr "igaz"
 
@@ -1890,7 +1954,9 @@ msgid "Headers"
 msgstr "Fejlécek"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add new header:"
+msgctxt "@label:textbox"
 msgid "Add new header:"
 msgstr "Új fejléc hozzáadása:"
 
@@ -2030,7 +2096,9 @@ msgid "GiB"
 msgstr "GiB"
 
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Please select an condition."
+msgctxt "@label:textbox"
 msgid "Please select an condition."
 msgstr "Válasszon egy feltételt."
 
@@ -2084,7 +2152,9 @@ msgid "Unknown tag \"%1\" during loading loop \"for\""
 msgstr "Ismeretlen címke („%1”) a „for” ciklus betöltésekor"
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Variable name:"
+msgctxt "@label:textbox"
 msgid "Variable name:"
 msgstr "Változónév:"
 
@@ -2127,13 +2197,17 @@ msgid "Unknown location type \"%1\" during parsing includes"
 msgstr "Ismeretlen helytípus („%1”) az include-ok feldolgozásakor"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:129
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Include:"
+msgctxt "@label:textbox"
 msgid "Include:"
 msgstr "Belefoglalva:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:135
 #: ksieveui/templates/sievetemplateeditdialog.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name:"
+msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Név:"
 
@@ -2190,7 +2264,9 @@ msgid "Actions"
 msgstr "Műveletek"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add new block:"
+msgctxt "@label:textbox"
 msgid "Add new block:"
 msgstr "Új blokk hozzáadása:"
 
@@ -2745,7 +2821,9 @@ msgid "Server Info"
 msgstr "Kiszolgálóinformációk"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:116
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Script name:"
+msgctxt "@label:textbox"
 msgid "Script name:"
 msgstr "Parancsfájl neve:"
 
@@ -3008,12 +3086,16 @@ msgid "Debug"
 msgstr "Hibakeresés"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Email path:"
+msgctxt "@label:textbox"
 msgid "Email path:"
 msgstr "E-mail elérési útja:"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Extension:"
+msgctxt "@label:textbox"
 msgid "Extension:"
 msgstr "Kiterjesztés:"
 
@@ -3074,7 +3156,11 @@ msgid "Add debug here"
 msgstr "Hibakeresés hozzáadása itt"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerwidget.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "\"sieve-test\" was not found on system. Please install it. (See in "
+#| "Dovecot package)"
+msgctxt "@label:textbox"
 msgid ""
 "\"sieve-test\" was not found on system. Please install it. (See in Dovecot "
 "package)"
@@ -3173,7 +3259,12 @@ msgid "Do Not Cancel"
 msgstr "Ne szakítsa meg"
 
 #: ksieveui/vacation/multiimapvacationdialog.cpp:112
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "KMail's Out of Office Reply functionality relies on server-side "
+#| "filtering. You have not yet configured an IMAP server for this. You can "
+#| "do this on the \"Filtering\" tab of the IMAP account configuration."
+msgctxt "@label:textbox"
 msgid ""
 "KMail's Out of Office Reply functionality relies on server-side filtering. "
 "You have not yet configured an IMAP server for this. You can do this on the "
@@ -3183,60 +3274,74 @@ msgstr ""
 "kiszolgálón ez még nincs beállítva. Ez megtehető a „Szűrés” lapon, az IMAP-"
 "azonosító beállításainál."
 
-#: ksieveui/vacation/vacationeditwidget.cpp:47
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:48
+#, fuzzy, kde-format
+#| msgid "Configure vacation notifications to be sent:"
+msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "Az elküldendő szabadság értesítések beállítása:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:55
+#: ksieveui/vacation/vacationeditwidget.cpp:56
 #, kde-format
 msgid "&Activate vacation notifications"
 msgstr "Szabadság értesítések &aktiválása"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:75
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:76
+#, fuzzy, kde-format
+#| msgid "&Subject of the vacation mail:"
+msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
 msgstr "A vakáció&s levél tárgya:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:107
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:108
+#, fuzzy, kde-format
+#| msgid "Start date:"
+msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr "Kezdődátum:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:137
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:138
+#, fuzzy, kde-format
+#| msgid "End date:"
+msgctxt "@label:textbox"
 msgid "End date:"
 msgstr "Záró dátum:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:160
-#: ksieveui/vacation/vacationeditwidget.cpp:309
+#: ksieveui/vacation/vacationeditwidget.cpp:161
+#: ksieveui/vacation/vacationeditwidget.cpp:310
 #, kde-format
 msgid " day"
 msgid_plural " days"
 msgstr[0] " nap"
 msgstr[1] " nap"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:162
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:163
+#, fuzzy, kde-format
+#| msgid "&Resend notification only after:"
+msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "É&rtesítés újraküldése ennyi idő után:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:175
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:176
+#, fuzzy, kde-format
+#| msgid "&Send responses for these addresses:"
+msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "Vála&sz küldése a következő címekre:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:201
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:202
+#, fuzzy, kde-format
+#| msgid "&Action for incoming mails:"
+msgctxt "@label:textbox"
 msgid "&Action for incoming mails:"
 msgstr "Bejövő levelekre von&atkozó művelet:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:209
+#: ksieveui/vacation/vacationeditwidget.cpp:210
 #, kde-format
 msgid "Do not send vacation replies to spam messages"
 msgstr "Ne küldjön szabadság választ spam üzenetekre"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:217
+#: ksieveui/vacation/vacationeditwidget.cpp:218
 #, kde-format
 msgid "Only react to mail coming from domain:"
 msgstr "Csak tartományból érkező levelekre reagáljon:"
@@ -3271,7 +3376,12 @@ msgid "Ignore"
 msgstr "Figyelmen kívül hagyás"
 
 #: ksieveui/vacation/vacationpagewidget.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Your server did not list \"vacation\" in its list of supported Sieve "
+#| "extensions;without it, KMail cannot install out-of-office replies for you."
+#| "Please contact your system administrator."
+msgctxt "@label:textbox"
 msgid ""
 "Your server did not list \"vacation\" in its list of supported Sieve "
 "extensions;without it, KMail cannot install out-of-office replies for you."

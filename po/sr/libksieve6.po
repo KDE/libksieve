@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2017-12-31 22:42+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -730,14 +730,18 @@ msgstr "Додај заглавље"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:40
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:40
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "header:"
+msgctxt "@label:textbox"
 msgid "header:"
 msgstr "заглавље:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:49
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:49
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "value:"
+msgctxt "@label:textbox"
 msgid "value:"
 msgstr "вредност:"
 
@@ -754,7 +758,9 @@ msgstr "Испад"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:32
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name (optional):"
+msgctxt "@label:textbox"
 msgid "Name (optional):"
 msgstr "Име (опционо):"
 
@@ -771,19 +777,25 @@ msgstr "Претвори"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:31
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "From:"
+msgctxt "@label:textbox"
 msgid "From:"
 msgstr "из:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:39
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "To:"
+msgctxt "@label:textbox"
 msgid "To:"
 msgstr "у:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:47
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Parameters:"
+msgctxt "@label:textbox"
 msgid "Parameters:"
 msgstr "Параметри:"
 
@@ -823,13 +835,17 @@ msgstr "Приложи"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:33
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Subject:"
+msgctxt "@label:textbox"
 msgid "Subject:"
 msgstr "Тема:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "headers:"
+msgctxt "@label:textbox"
 msgid "headers:"
 msgstr "заглавља:"
 
@@ -837,7 +853,9 @@ msgstr "заглавља:"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:30
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:30
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "text:"
+msgctxt "@label:textbox"
 msgid "text:"
 msgstr "текст:"
 
@@ -869,12 +887,16 @@ msgid "Extract Text"
 msgstr "Извуци текст"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:32
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Number of characters:"
+msgctxt "@label:textbox"
 msgid "Number of characters:"
 msgstr "Број знакова:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stored in variable name:"
+msgctxt "@label:textbox"
 msgid "Stored in variable name:"
 msgstr "Складишти у променљиву:"
 
@@ -950,7 +972,9 @@ msgstr ""
 "корисниково главно сандуче."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add flags:"
+msgctxt "@label:textbox"
 msgid "Add flags:"
 msgstr "Додај заставице:"
 
@@ -960,12 +984,16 @@ msgid "Notify"
 msgstr "Обавести"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "message:"
+msgctxt "@label:textbox"
 msgid "message:"
 msgstr "порука:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "method:"
+msgctxt "@label:textbox"
 msgid "method:"
 msgstr "метод:"
 
@@ -1043,7 +1071,9 @@ msgid "Replace"
 msgstr "Замени"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "from:"
+msgctxt "@label:textbox"
 msgid "from:"
 msgstr "од:"
 
@@ -1099,12 +1129,16 @@ msgstr "Заштити посебан знак"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:56
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:63
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:61
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Value:"
+msgctxt "@label:textbox"
 msgid "Value:"
 msgstr "Вредност:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "In variable:"
+msgctxt "@label:textbox"
 msgid "In variable:"
 msgstr "У променљивој:"
 
@@ -1153,23 +1187,31 @@ msgid "Vacation"
 msgstr "Одмор"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "day:"
+msgctxt "@label:textbox"
 msgid "day:"
 msgstr "дан:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Message subject:"
+msgctxt "@label:textbox"
 msgid "Message subject:"
 msgstr "Тема поруке:"
 
 # rewrite-msgid: /email/addresses/
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:66
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Additional email:"
+msgctxt "@label:textbox"
 msgid "Additional email:"
 msgstr "Додатне адресе:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Vacation reason:"
+msgctxt "@label:textbox"
 msgid "Vacation reason:"
 msgstr "Разлог за одмор:"
 
@@ -1336,7 +1378,9 @@ msgid "Length"
 msgstr "дужина"
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:62
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Please select an action."
+msgctxt "@label:textbox"
 msgid "Please select an action."
 msgstr "Изаберите радњу."
 
@@ -1385,7 +1429,9 @@ msgstr "Адреса"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:52
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "address:"
+msgctxt "@label:textbox"
 msgid "address:"
 msgstr "адреса:"
 
@@ -1476,7 +1522,9 @@ msgid "Environment"
 msgstr "Окружење"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Item:"
+msgctxt "@label:textbox"
 msgid "Item:"
 msgstr "Ставка:"
 
@@ -1521,7 +1569,9 @@ msgid "False"
 msgstr "Нетачно"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "false"
+msgctxt "@label:textbox"
 msgid "false"
 msgstr "нетачно"
 
@@ -1536,7 +1586,11 @@ msgid "Has Flag"
 msgstr "Има заставицу"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Variable name\n"
+#| " (if empty it uses internal variable):"
+msgctxt "@label:textbox"
 msgid ""
 "Variable name\n"
 " (if empty it uses internal variable):"
@@ -1559,7 +1613,9 @@ msgid "Header"
 msgstr "Заглавље"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "With value:"
+msgctxt "@label:textbox"
 msgid "With value:"
 msgstr "С вредношћу:"
 
@@ -1615,13 +1671,17 @@ msgstr "Метаподаци"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:44
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:33
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Mailbox:"
+msgctxt "@label:textbox"
 msgid "Mailbox:"
 msgstr "Сандуче:"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:54
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Annotations:"
+msgctxt "@label:textbox"
 msgid "Annotations:"
 msgstr "Тумачења:"
 
@@ -1644,7 +1704,9 @@ msgstr "Метаподаци постоје"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Annotation:"
+msgctxt "@label:textbox"
 msgid "Annotation:"
 msgstr "Тумачење:"
 
@@ -1739,7 +1801,9 @@ msgid "True"
 msgstr "Тачно"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "true"
+msgctxt "@label:textbox"
 msgid "true"
 msgstr "тачно"
 
@@ -1877,7 +1941,9 @@ msgid "Headers"
 msgstr "Заглавља"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add new header:"
+msgctxt "@label:textbox"
 msgid "Add new header:"
 msgstr "Додај ново заглавље:"
 
@@ -2020,7 +2086,9 @@ msgid "GiB"
 msgstr "GiB"
 
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Please select an condition."
+msgctxt "@label:textbox"
 msgid "Please select an condition."
 msgstr "Изаберите услов."
 
@@ -2075,7 +2143,9 @@ msgid "Unknown tag \"%1\" during loading loop \"for\""
 msgstr "Непозната ознака „%1“ у петљи учитавања for."
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Variable name:"
+msgctxt "@label:textbox"
 msgid "Variable name:"
 msgstr "Променљива:"
 
@@ -2117,13 +2187,17 @@ msgid "Unknown location type \"%1\" during parsing includes"
 msgstr "Непознат тип локације „%1“ при рашчлањивању укључивања."
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:129
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Include:"
+msgctxt "@label:textbox"
 msgid "Include:"
 msgstr "Укључи:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:135
 #: ksieveui/templates/sievetemplateeditdialog.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name:"
+msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Име:"
 
@@ -2182,7 +2256,9 @@ msgid "Actions"
 msgstr "Радње"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add new block:"
+msgctxt "@label:textbox"
 msgid "Add new block:"
 msgstr "Додај нови блок:"
 
@@ -2762,7 +2838,9 @@ msgid "Server Info"
 msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:116
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Script name:"
+msgctxt "@label:textbox"
 msgid "Script name:"
 msgstr "Име скрипте:"
 
@@ -3033,12 +3111,16 @@ msgid "Debug"
 msgstr "Исправљај"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Email path:"
+msgctxt "@label:textbox"
 msgid "Email path:"
 msgstr "Путања е‑поште:"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Extension:"
+msgctxt "@label:textbox"
 msgid "Extension:"
 msgstr "Наставак:"
 
@@ -3098,7 +3180,11 @@ msgid "Add debug here"
 msgstr "Додај овде исправљање"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerwidget.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "\"sieve-test\" was not found on system. Please install it. (See in "
+#| "Dovecot package)"
+msgctxt "@label:textbox"
 msgid ""
 "\"sieve-test\" was not found on system. Please install it. (See in Dovecot "
 "package)"
@@ -3210,7 +3296,12 @@ msgid "Do Not Cancel"
 msgstr ""
 
 #: ksieveui/vacation/multiimapvacationdialog.cpp:112
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "KMail's Out of Office Reply functionality relies on server-side "
+#| "filtering. You have not yet configured an IMAP server for this. You can "
+#| "do this on the \"Filtering\" tab of the IMAP account configuration."
+msgctxt "@label:textbox"
 msgid ""
 "KMail's Out of Office Reply functionality relies on server-side filtering. "
 "You have not yet configured an IMAP server for this. You can do this on the "
@@ -3220,34 +3311,42 @@ msgstr ""
 "страни сервера. Још нисте подесили неки ИМАП сервер за ово. То можете "
 "учинити под језичком „Филтрирање“ у постави ИМАП налога."
 
-#: ksieveui/vacation/vacationeditwidget.cpp:47
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:48
+#, fuzzy, kde-format
+#| msgid "Configure vacation notifications to be sent:"
+msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "Подесите обавештења о одмору која се шаљу:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:55
+#: ksieveui/vacation/vacationeditwidget.cpp:56
 #, kde-format
 msgid "&Activate vacation notifications"
 msgstr "&Укључи обавештења о одмору"
 
 # rewrite-msgid: /mail/message/
-#: ksieveui/vacation/vacationeditwidget.cpp:75
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:76
+#, fuzzy, kde-format
+#| msgid "&Subject of the vacation mail:"
+msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
 msgstr "&Тема поруке о одмору:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:107
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:108
+#, fuzzy, kde-format
+#| msgid "Start date:"
+msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr "Датум почетка:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:137
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:138
+#, fuzzy, kde-format
+#| msgid "End date:"
+msgctxt "@label:textbox"
 msgid "End date:"
 msgstr "Датум краја:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:160
-#: ksieveui/vacation/vacationeditwidget.cpp:309
+#: ksieveui/vacation/vacationeditwidget.cpp:161
+#: ksieveui/vacation/vacationeditwidget.cpp:310
 #, kde-format
 msgid " day"
 msgid_plural " days"
@@ -3256,28 +3355,34 @@ msgstr[1] " дана"
 msgstr[2] " дана"
 msgstr[3] " дан"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:162
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:163
+#, fuzzy, kde-format
+#| msgid "&Resend notification only after:"
+msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "&Поново пошаљи обавештење тек после:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:175
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:176
+#, fuzzy, kde-format
+#| msgid "&Send responses for these addresses:"
+msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "Пош&аљи одговоре на ове адресе:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:201
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:202
+#, fuzzy, kde-format
+#| msgid "&Action for incoming mails:"
+msgctxt "@label:textbox"
 msgid "&Action for incoming mails:"
 msgstr "&Радња над долазним порукама:"
 
 # rewrite-msgid: /vacation replies/vacation notifications/
-#: ksieveui/vacation/vacationeditwidget.cpp:209
+#: ksieveui/vacation/vacationeditwidget.cpp:210
 #, kde-format
 msgid "Do not send vacation replies to spam messages"
 msgstr "Не шаљи обавештења о одмору на спам поруке"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:217
+#: ksieveui/vacation/vacationeditwidget.cpp:218
 #, fuzzy, kde-format
 #| msgid "Only react to mail coming from domain"
 msgid "Only react to mail coming from domain:"
@@ -3315,7 +3420,12 @@ msgid "Ignore"
 msgstr "Игнориши"
 
 #: ksieveui/vacation/vacationpagewidget.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Your server did not list \"vacation\" in its list of supported Sieve "
+#| "extensions;without it, KMail cannot install out-of-office replies for you."
+#| "Please contact your system administrator."
+msgctxt "@label:textbox"
 msgid ""
 "Your server did not list \"vacation\" in its list of supported Sieve "
 "extensions;without it, KMail cannot install out-of-office replies for you."

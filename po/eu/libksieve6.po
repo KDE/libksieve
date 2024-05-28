@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-23 00:39+0000\n"
+"POT-Creation-Date: 2024-05-28 00:39+0000\n"
 "PO-Revision-Date: 2024-01-01 12:34+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -732,14 +732,18 @@ msgstr "Gehitu goiburua"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:40
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:40
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "header:"
+msgctxt "@label:textbox"
 msgid "header:"
 msgstr "goiburua:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:49
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:49
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:53
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "value:"
+msgctxt "@label:textbox"
 msgid "value:"
 msgstr "balioa:"
 
@@ -758,7 +762,9 @@ msgstr "Eten"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:32
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name (optional):"
+msgctxt "@label:textbox"
 msgid "Name (optional):"
 msgstr "Izena (hautazkoa):"
 
@@ -775,19 +781,25 @@ msgstr "Bihurtu"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:31
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "From:"
+msgctxt "@label:textbox"
 msgid "From:"
 msgstr "Honetatik:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:39
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "To:"
+msgctxt "@label:textbox"
 msgid "To:"
 msgstr "Honetara:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:47
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Parameters:"
+msgctxt "@label:textbox"
 msgid "Parameters:"
 msgstr "Parametroak:"
 
@@ -829,13 +841,17 @@ msgstr "Hesitu"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:33
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Subject:"
+msgctxt "@label:textbox"
 msgid "Subject:"
 msgstr "Gaia:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "headers:"
+msgctxt "@label:textbox"
 msgid "headers:"
 msgstr "Goiburuak:"
 
@@ -843,7 +859,9 @@ msgstr "Goiburuak:"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:30
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:30
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "text:"
+msgctxt "@label:textbox"
 msgid "text:"
 msgstr "testua:"
 
@@ -876,12 +894,16 @@ msgid "Extract Text"
 msgstr "Erauzi testua"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:32
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Number of characters:"
+msgctxt "@label:textbox"
 msgid "Number of characters:"
 msgstr "Karaktere kopurua:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Stored in variable name:"
+msgctxt "@label:textbox"
 msgid "Stored in variable name:"
 msgstr "Aldagai izenean gordeta:"
 
@@ -960,7 +982,9 @@ msgstr ""
 "postontzi nagusian artxibatzea besterik ez da izaten."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add flags:"
+msgctxt "@label:textbox"
 msgid "Add flags:"
 msgstr "Gehitu banderak:"
 
@@ -970,12 +994,16 @@ msgid "Notify"
 msgstr "Jakinarazi"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "message:"
+msgctxt "@label:textbox"
 msgid "message:"
 msgstr "mezua:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:48
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "method:"
+msgctxt "@label:textbox"
 msgid "method:"
 msgstr "metodoa:"
 
@@ -1058,7 +1086,9 @@ msgid "Replace"
 msgstr "Ordeztu"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:44
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "from:"
+msgctxt "@label:textbox"
 msgid "from:"
 msgstr "honetatik:"
 
@@ -1115,12 +1145,16 @@ msgstr "Babestu karaktere berezia"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:56
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:63
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:61
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Value:"
+msgctxt "@label:textbox"
 msgid "Value:"
 msgstr "Balioa:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "In variable:"
+msgctxt "@label:textbox"
 msgid "In variable:"
 msgstr "Aldagaian:"
 
@@ -1173,22 +1207,30 @@ msgid "Vacation"
 msgstr "Oporraldia"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "day:"
+msgctxt "@label:textbox"
 msgid "day:"
 msgstr "eguna:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Message subject:"
+msgctxt "@label:textbox"
 msgid "Message subject:"
 msgstr "Mezuaren gaia:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:66
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Additional email:"
+msgctxt "@label:textbox"
 msgid "Additional email:"
 msgstr "E-posta osagarria:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:75
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Vacation reason:"
+msgctxt "@label:textbox"
 msgid "Vacation reason:"
 msgstr "Oporraldiaren arrazoia:"
 
@@ -1359,7 +1401,9 @@ msgid "Length"
 msgstr "Luzera"
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:62
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Please select an action."
+msgctxt "@label:textbox"
 msgid "Please select an action."
 msgstr "Mesedez, hautatu ekintza bat."
 
@@ -1413,7 +1457,9 @@ msgstr "Helbidea"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:52
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "address:"
+msgctxt "@label:textbox"
 msgid "address:"
 msgstr "helbidea:"
 
@@ -1502,7 +1548,9 @@ msgid "Environment"
 msgstr "Ingurunea"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:33
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Item:"
+msgctxt "@label:textbox"
 msgid "Item:"
 msgstr "Elementua:"
 
@@ -1549,7 +1597,9 @@ msgid "False"
 msgstr "Gezurrezkoa"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "false"
+msgctxt "@label:textbox"
 msgid "false"
 msgstr "gezurrezkoa"
 
@@ -1564,7 +1614,11 @@ msgid "Has Flag"
 msgstr "Bandera du"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:46
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Variable name\n"
+#| " (if empty it uses internal variable):"
+msgctxt "@label:textbox"
 msgid ""
 "Variable name\n"
 " (if empty it uses internal variable):"
@@ -1587,7 +1641,9 @@ msgid "Header"
 msgstr "Goiburua"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:45
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "With value:"
+msgctxt "@label:textbox"
 msgid "With value:"
 msgstr "Balioarekin:"
 
@@ -1645,13 +1701,17 @@ msgstr "Metadatuak"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:44
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:33
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Mailbox:"
+msgctxt "@label:textbox"
 msgid "Mailbox:"
 msgstr "Postontzia:"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:54
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:52
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Annotations:"
+msgctxt "@label:textbox"
 msgid "Annotations:"
 msgstr "Idatzoharrak:"
 
@@ -1675,7 +1735,9 @@ msgstr "Metadatuak daude"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Annotation:"
+msgctxt "@label:textbox"
 msgid "Annotation:"
 msgstr "Idatzoharra:"
 
@@ -1772,7 +1834,9 @@ msgid "True"
 msgstr "Egiazko"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:31
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "true"
+msgctxt "@label:textbox"
 msgid "true"
 msgstr "egiazko"
 
@@ -1909,7 +1973,9 @@ msgid "Headers"
 msgstr "Goiburuak"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add new header:"
+msgctxt "@label:textbox"
 msgid "Add new header:"
 msgstr "Gehitu goiburu berria:"
 
@@ -2049,7 +2115,9 @@ msgid "GiB"
 msgstr "GiB"
 
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Please select an condition."
+msgctxt "@label:textbox"
 msgid "Please select an condition."
 msgstr "Mesedez, aukeratu baldintza bat."
 
@@ -2102,7 +2170,9 @@ msgid "Unknown tag \"%1\" during loading loop \"for\""
 msgstr "Etiketa ezezaguna, \"%1\", \"for\" begizta zamatzerakoan"
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:58
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Variable name:"
+msgctxt "@label:textbox"
 msgid "Variable name:"
 msgstr "Aldagaiaren izena:"
 
@@ -2146,13 +2216,17 @@ msgstr ""
 "\"%1\" kokaleku mota ezezaguna barneratutakoen sintaxi azterketa egiterakoan"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:129
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Include:"
+msgctxt "@label:textbox"
 msgid "Include:"
 msgstr "Barneratu:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:135
 #: ksieveui/templates/sievetemplateeditdialog.cpp:59
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Name:"
+msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Izena:"
 
@@ -2210,7 +2284,9 @@ msgid "Actions"
 msgstr "Ekintzak"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:83
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add new block:"
+msgctxt "@label:textbox"
 msgid "Add new block:"
 msgstr "Gehitu bloke berria:"
 
@@ -2765,7 +2841,9 @@ msgid "Server Info"
 msgstr "Zerbitzariaren informazioa"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:116
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Script name:"
+msgctxt "@label:textbox"
 msgid "Script name:"
 msgstr "Gidoiaren izena:"
 
@@ -3029,12 +3107,16 @@ msgid "Debug"
 msgstr "Araztea"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:43
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Email path:"
+msgctxt "@label:textbox"
 msgid "Email path:"
 msgstr "E-posta bide-izena:"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:57
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Extension:"
+msgctxt "@label:textbox"
 msgid "Extension:"
 msgstr "Hedapena:"
 
@@ -3093,7 +3175,11 @@ msgid "Add debug here"
 msgstr "Gehitu arazketa hemen"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerwidget.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "\"sieve-test\" was not found on system. Please install it. (See in "
+#| "Dovecot package)"
+msgctxt "@label:textbox"
 msgid ""
 "\"sieve-test\" was not found on system. Please install it. (See in Dovecot "
 "package)"
@@ -3191,7 +3277,12 @@ msgid "Do Not Cancel"
 msgstr "Ez utzi bertan behera"
 
 #: ksieveui/vacation/multiimapvacationdialog.cpp:112
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "KMail's Out of Office Reply functionality relies on server-side "
+#| "filtering. You have not yet configured an IMAP server for this. You can "
+#| "do this on the \"Filtering\" tab of the IMAP account configuration."
+msgctxt "@label:textbox"
 msgid ""
 "KMail's Out of Office Reply functionality relies on server-side filtering. "
 "You have not yet configured an IMAP server for this. You can do this on the "
@@ -3202,60 +3293,74 @@ msgstr ""
 "bat konfiguratu. IMAP kontua konfiguratzeko \"Iragaztea\" fitxan egin "
 "dezakezu hori."
 
-#: ksieveui/vacation/vacationeditwidget.cpp:47
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:48
+#, fuzzy, kde-format
+#| msgid "Configure vacation notifications to be sent:"
+msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "Konfiguratu opor jakinarazpenak bidaltzea:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:55
+#: ksieveui/vacation/vacationeditwidget.cpp:56
 #, kde-format
 msgid "&Activate vacation notifications"
 msgstr "&Aktibatu opor jakinarazpenak"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:75
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:76
+#, fuzzy, kde-format
+#| msgid "&Subject of the vacation mail:"
+msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
 msgstr "Opor postaren &gaia:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:107
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:108
+#, fuzzy, kde-format
+#| msgid "Start date:"
+msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr "Hasiera-data:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:137
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:138
+#, fuzzy, kde-format
+#| msgid "End date:"
+msgctxt "@label:textbox"
 msgid "End date:"
 msgstr "Bukaera-data:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:160
-#: ksieveui/vacation/vacationeditwidget.cpp:309
+#: ksieveui/vacation/vacationeditwidget.cpp:161
+#: ksieveui/vacation/vacationeditwidget.cpp:310
 #, kde-format
 msgid " day"
 msgid_plural " days"
 msgstr[0] " egun"
 msgstr[1] " egun"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:162
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:163
+#, fuzzy, kde-format
+#| msgid "&Resend notification only after:"
+msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "&Birbidali jakinarazpena bakarri honen ondoren:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:175
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:176
+#, fuzzy, kde-format
+#| msgid "&Send responses for these addresses:"
+msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "&Bidali helbide horietarako erantzunak:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:201
-#, kde-format
+#: ksieveui/vacation/vacationeditwidget.cpp:202
+#, fuzzy, kde-format
+#| msgid "&Action for incoming mails:"
+msgctxt "@label:textbox"
 msgid "&Action for incoming mails:"
 msgstr "Sarrerako postetarako e&kintza:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:209
+#: ksieveui/vacation/vacationeditwidget.cpp:210
 #, kde-format
 msgid "Do not send vacation replies to spam messages"
 msgstr "Ez bidali opor erantzunak spam mezuei"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:217
+#: ksieveui/vacation/vacationeditwidget.cpp:218
 #, kde-format
 msgid "Only react to mail coming from domain:"
 msgstr "Erreakzionatu bakarrik domeinutik datorren postarekiko:"
@@ -3290,7 +3395,12 @@ msgid "Ignore"
 msgstr "Ezikusi"
 
 #: ksieveui/vacation/vacationpagewidget.cpp:49
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Your server did not list \"vacation\" in its list of supported Sieve "
+#| "extensions;without it, KMail cannot install out-of-office replies for you."
+#| "Please contact your system administrator."
+msgctxt "@label:textbox"
 msgid ""
 "Your server did not list \"vacation\" in its list of supported Sieve "
 "extensions;without it, KMail cannot install out-of-office replies for you."
