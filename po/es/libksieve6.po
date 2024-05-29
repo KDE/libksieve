@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-28 00:39+0000\n"
-"PO-Revision-Date: 2024-05-23 17:27+0200\n"
+"PO-Revision-Date: 2024-05-28 16:22+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -733,22 +733,20 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:24
 #, kde-format
 msgid "Add header"
-msgstr "Añadir encabezado"
+msgstr "Añadir cabecera"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:40
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:40
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:42
-#, fuzzy, kde-format
-#| msgid "header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "header:"
-msgstr "encabezado:"
+msgstr "cabecera:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:49
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:49
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:53
-#, fuzzy, kde-format
-#| msgid "value:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "value:"
 msgstr "valor:"
@@ -758,8 +756,8 @@ msgstr "valor:"
 msgid ""
 "The addheader action adds a header field to the existing message header."
 msgstr ""
-"La acción añadir-encabezado añade una campo de encabezado al encabezado de "
-"mensaje existente."
+"La acción «añadir cabecera» añade un campo de cabecera a la cabecera del "
+"mensaje."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:21
 #, kde-format
@@ -768,8 +766,7 @@ msgstr "Interrumpir"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:32
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:45
-#, fuzzy, kde-format
-#| msgid "Name (optional):"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name (optional):"
 msgstr "Nombre (opcional):"
@@ -787,24 +784,21 @@ msgstr "Convertir"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:31
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:31
-#, fuzzy, kde-format
-#| msgid "From:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "From:"
 msgstr "De:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:39
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:39
-#, fuzzy, kde-format
-#| msgid "To:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "To:"
 msgstr "Para:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:47
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:47
-#, fuzzy, kde-format
-#| msgid "Parameters:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Parameters:"
 msgstr "Parámetros:"
@@ -824,7 +818,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:24
 #, kde-format
 msgid "Delete header"
-msgstr "Borrar encabezado"
+msgstr "Borrar cabecera"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:124
 #, kde-format
@@ -832,8 +826,8 @@ msgid ""
 "By default, the deleteheader action deletes all occurrences of the named "
 "header field."
 msgstr ""
-"Por omisión, la acción borrar-encabezado, borra todas las apariciones del "
-"campo de encabezado nombrado."
+"Por omisión, la acción «borrar cabecera» borra todas las apariciones del "
+"campo de cabecera indicado."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:23
 #, kde-format
@@ -847,26 +841,23 @@ msgstr "Incluir"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:33
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:35
-#, fuzzy, kde-format
-#| msgid "Subject:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Subject:"
 msgstr "Asunto:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:40
-#, fuzzy, kde-format
-#| msgid "headers:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "headers:"
-msgstr "encabezados:"
+msgstr "cabeceras:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:51
 #: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:30
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:30
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:52
-#, fuzzy, kde-format
-#| msgid "text:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "text:"
 msgstr "texto:"
@@ -900,15 +891,13 @@ msgid "Extract Text"
 msgstr "Extraer texto"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:32
-#, fuzzy, kde-format
-#| msgid "Number of characters:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Number of characters:"
 msgstr "Número de caracteres:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:42
-#, fuzzy, kde-format
-#| msgid "Stored in variable name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Stored in variable name:"
 msgstr "Almacenado en variable denominada:"
@@ -988,8 +977,7 @@ msgstr ""
 "significa archivar el mensaje en el buzón principal del usuario."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:55
-#, fuzzy, kde-format
-#| msgid "Add flags:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Add flags:"
 msgstr "Añadir indicadores:"
@@ -1000,15 +988,13 @@ msgid "Notify"
 msgstr "Notificar"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:39
-#, fuzzy, kde-format
-#| msgid "message:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "message:"
 msgstr "mensaje:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:48
-#, fuzzy, kde-format
-#| msgid "method:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "method:"
 msgstr "método:"
@@ -1041,8 +1027,8 @@ msgid ""
 msgstr ""
 "La acción «redirigir» se una para enviar el mensaje a otro usuario a la "
 "dirección proporcionada, como hace la característica de reenvío de correo. "
-"La acción «redirigir» no cambia el cuerpo del mensaje o los encabezados "
-"existentes, pero puede añadir nuevos encabezados."
+"La acción «redirigir» no cambia el cuerpo del mensaje ni las cabeceras "
+"existentes, pero puede añadir nuevas cabeceras."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:143
 #, kde-format
@@ -1093,8 +1079,7 @@ msgid "Replace"
 msgstr "Sustituir"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:44
-#, fuzzy, kde-format
-#| msgid "from:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "from:"
 msgstr "de:"
@@ -1152,15 +1137,13 @@ msgstr "Proteger carácter especial"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:56
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:63
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:61
-#, fuzzy, kde-format
-#| msgid "Value:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Value:"
 msgstr "Valor:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:57
-#, fuzzy, kde-format
-#| msgid "In variable:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "In variable:"
 msgstr "En variable:"
@@ -1214,29 +1197,25 @@ msgid "Vacation"
 msgstr "Día libre"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:46
-#, fuzzy, kde-format
-#| msgid "day:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "day:"
 msgstr "día:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:57
-#, fuzzy, kde-format
-#| msgid "Message subject:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Message subject:"
 msgstr "Asunto del mensaje:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:66
-#, fuzzy, kde-format
-#| msgid "Additional email:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Additional email:"
 msgstr "Correo adicional:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:75
-#, fuzzy, kde-format
-#| msgid "Vacation reason:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Vacation reason:"
 msgstr "Motivo del día libre:"
@@ -1405,8 +1384,7 @@ msgid "Length"
 msgstr "Longitud"
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:62
-#, fuzzy, kde-format
-#| msgid "Please select an action."
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Please select an action."
 msgstr "Seleccione una acción."
@@ -1457,8 +1435,7 @@ msgstr "Dirección"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:52
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:54
-#, fuzzy, kde-format
-#| msgid "address:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "address:"
 msgstr "dirección:"
@@ -1477,10 +1454,10 @@ msgid ""
 "specified part of the address, as modified by the comparator and the match "
 "keyword."
 msgstr ""
-"La prueba «dirección» empareja direcciones de Internet en encabezados "
-"estructurados que contienen direcciones. Devuelve cierto si cualquier "
-"encabezado contiene una clave en el componente especificado de la dirección, "
-"modificada por el comparador y la palabra clave coincidente."
+"La prueba «dirección» empareja direcciones de Internet en cabeceras "
+"estructuradas que contienen direcciones. Devuelve cierto si alguna cabecera "
+"contiene una clave en el componente de la dirección indicado, modificada por "
+"el comparador y la palabra clave coincidente."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:20
 #, kde-format
@@ -1495,8 +1472,9 @@ msgid ""
 "itself, if present, is not considered to be part of the body.)"
 msgstr ""
 "La prueba de cuerpo empareja contenido en el cuerpo de un mensaje de correo, "
-"esto es, cualquier cosa que siga a la primera línea vacía después del "
-"encabezado. (La propia línea vacía, no se considera parte del cuerpo.)."
+"esto es, cualquier cosa que siga a la primera línea vacía después de la "
+"cabecera. (La propia línea vacía, si está presente, no se considera parte "
+"del cuerpo)."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditioncurrentdate.cpp:21
 #, kde-format
@@ -1510,8 +1488,8 @@ msgid ""
 "the current date/time rather than a value extracted from the message header."
 msgstr ""
 "La prueba de fecha actual es similar a la prueba de fecha, excepto que "
-"funciona sobre la fecha/hora actual en lugar de un valor extraído del "
-"encabezado del mensaje."
+"funciona sobre la fecha/hora actual en lugar de un valor extraído de la "
+"cabecera del mensaje."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:23
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:41
@@ -1526,8 +1504,8 @@ msgid ""
 "The date test matches date/time information derived from headers containing "
 "date-time values."
 msgstr ""
-"La prueba de fecha empareja información de fecha/hora derivada de los "
-"encabezados que contienen valores de fecha/hora."
+"La prueba de fecha empareja información de fecha/hora derivada de las "
+"cabeceras que contienen valores de fecha/hora."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:24
 #, kde-format
@@ -1549,8 +1527,7 @@ msgid "Environment"
 msgstr "Entorno"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:33
-#, fuzzy, kde-format
-#| msgid "Item:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Item:"
 msgstr "Elemento:"
@@ -1588,9 +1565,9 @@ msgid ""
 "argument exist within the message.  All of the headers must exist or the "
 "test is false."
 msgstr ""
-"La prueba «existe» es cierta si los encabezados listados en el argumento "
-"nombres-de encabezados existen dentro del mensaje. Todos los encabezados "
-"deben existir o la prueba será falsa."
+"La prueba «existe» es cierta si las cabeceras listadas en el argumento "
+"«nombres de cabeceras» existen dentro del mensaje. Todos las cabeceras deben "
+"existir o la prueba será falsa."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:20
 #, kde-format
@@ -1598,8 +1575,7 @@ msgid "False"
 msgstr "Falso"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:31
-#, fuzzy, kde-format
-#| msgid "false"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "false"
 msgstr "falso"
@@ -1615,10 +1591,7 @@ msgid "Has Flag"
 msgstr "Tiene indicador"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:46
-#, fuzzy, kde-format
-#| msgid ""
-#| "Variable name\n"
-#| " (if empty it uses internal variable):"
+#, kde-format
 msgctxt "@label:textbox"
 msgid ""
 "Variable name\n"
@@ -1639,11 +1612,10 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:21
 #, kde-format
 msgid "Header"
-msgstr "Encabezado"
+msgstr "Cabecera"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:45
-#, fuzzy, kde-format
-#| msgid "With value:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "With value:"
 msgstr "Con valor:"
@@ -1654,8 +1626,8 @@ msgid ""
 "The \"header\" test evaluates to true if the value of any of the named "
 "headers, ignoring leading and trailing whitespace, matches any key."
 msgstr ""
-"La prueba «encabezado» se evalúa a cierto si el valor de cualquiera de los "
-"encabezados nombrados, ignorando los espacios en blanco iniciales y finales, "
+"La prueba «cabecera» se evalúa como cierto si el valor de cualquiera de las "
+"cabeceras indicadas, ignorando los espacios en blanco iniciales y finales, "
 "coincide con alguna clave."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:21
@@ -1702,16 +1674,14 @@ msgstr "Metadatos"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:44
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:33
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:43
-#, fuzzy, kde-format
-#| msgid "Mailbox:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Mailbox:"
 msgstr "Buzón:"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:54
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:52
-#, fuzzy, kde-format
-#| msgid "Annotations:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Annotations:"
 msgstr "Anotaciones:"
@@ -1736,8 +1706,7 @@ msgstr "Existen metadatos"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:31
-#, fuzzy, kde-format
-#| msgid "Annotation:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Annotation:"
 msgstr "Anotación:"
@@ -1836,8 +1805,7 @@ msgid "True"
 msgstr "Cierto"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:31
-#, fuzzy, kde-format
-#| msgid "true"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "true"
 msgstr "cierto"
@@ -1963,20 +1931,19 @@ msgstr "Día de la semana"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
 msgid "Select multiple headers…"
-msgstr "Seleccionar varios encabezados..."
+msgstr "Seleccionar varias cabeceras..."
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Headers"
-msgstr "Encabezados"
+msgstr "Cabeceras"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:55
-#, fuzzy, kde-format
-#| msgid "Add new header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Add new header:"
-msgstr "Añadir nuevo encabezado:"
+msgstr "Añadir nueva cabecera:"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:245
 #, kde-format
@@ -2114,8 +2081,7 @@ msgid "GiB"
 msgstr "GiB"
 
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:54
-#, fuzzy, kde-format
-#| msgid "Please select an condition."
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Please select an condition."
 msgstr "Seleccione una condición."
@@ -2170,8 +2136,7 @@ msgid "Unknown tag \"%1\" during loading loop \"for\""
 msgstr "Etiqueta desconocida «%1» durante la carga del bucle «for»"
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:58
-#, fuzzy, kde-format
-#| msgid "Variable name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Variable name:"
 msgstr "Nombre de variable:"
@@ -2215,16 +2180,14 @@ msgid "Unknown location type \"%1\" during parsing includes"
 msgstr "Tipo de ubicación desconocido «%1» durante el análisis incluye"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:129
-#, fuzzy, kde-format
-#| msgid "Include:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Include:"
 msgstr "Incluir:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:135
 #: ksieveui/templates/sievetemplateeditdialog.cpp:59
-#, fuzzy, kde-format
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Nombre:"
@@ -2283,8 +2246,7 @@ msgid "Actions"
 msgstr "Acciones"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:83
-#, fuzzy, kde-format
-#| msgid "Add new block:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Add new block:"
 msgstr "Añadir nuevo bloque:"
@@ -2820,8 +2782,7 @@ msgid "Server Info"
 msgstr "Información del servidor"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:116
-#, fuzzy, kde-format
-#| msgid "Script name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Script name:"
 msgstr "Nombre de guion:"
@@ -3067,15 +3028,13 @@ msgid "Debug"
 msgstr "Depurar"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:43
-#, fuzzy, kde-format
-#| msgid "Email path:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Email path:"
 msgstr "Ruta del correo:"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:57
-#, fuzzy, kde-format
-#| msgid "Extension:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Extension:"
 msgstr "Extensión:"
@@ -3132,10 +3091,7 @@ msgid "Add debug here"
 msgstr "Añadir depuración aquí"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerwidget.cpp:35
-#, fuzzy, kde-format
-#| msgid ""
-#| "\"sieve-test\" was not found on system. Please install it. (See in "
-#| "Dovecot package)"
+#, kde-format
 msgctxt "@label:textbox"
 msgid ""
 "\"sieve-test\" was not found on system. Please install it. (See in Dovecot "
@@ -3233,11 +3189,7 @@ msgid "Do Not Cancel"
 msgstr "No cancelar"
 
 #: ksieveui/vacation/multiimapvacationdialog.cpp:112
-#, fuzzy, kde-format
-#| msgid ""
-#| "KMail's Out of Office Reply functionality relies on server-side "
-#| "filtering. You have not yet configured an IMAP server for this. You can "
-#| "do this on the \"Filtering\" tab of the IMAP account configuration."
+#, kde-format
 msgctxt "@label:textbox"
 msgid ""
 "KMail's Out of Office Reply functionality relies on server-side filtering. "
@@ -3250,8 +3202,7 @@ msgstr ""
 "cuenta de IMAP."
 
 #: ksieveui/vacation/vacationeditwidget.cpp:48
-#, fuzzy, kde-format
-#| msgid "Configure vacation notifications to be sent:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "Configurar notificaciones de vacaciones a enviar:"
@@ -3262,22 +3213,19 @@ msgid "&Activate vacation notifications"
 msgstr "&activar notificaciones de vacaciones"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "&Subject of the vacation mail:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
 msgstr "A&sunto del correo de vacaciones:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:108
-#, fuzzy, kde-format
-#| msgid "Start date:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr "Fecha de inicio:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:138
-#, fuzzy, kde-format
-#| msgid "End date:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "End date:"
 msgstr "Fecha de fin:"
@@ -3291,22 +3239,19 @@ msgstr[0] " día"
 msgstr[1] " días"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:163
-#, fuzzy, kde-format
-#| msgid "&Resend notification only after:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "&Reenviar notificación solo tras"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:176
-#, fuzzy, kde-format
-#| msgid "&Send responses for these addresses:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "Enviar re&spuestas para estas direcciones:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:202
-#, fuzzy, kde-format
-#| msgid "&Action for incoming mails:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "&Action for incoming mails:"
 msgstr "&Acción para correos entrantes:"
@@ -3349,11 +3294,7 @@ msgid "Ignore"
 msgstr "Ignorar"
 
 #: ksieveui/vacation/vacationpagewidget.cpp:49
-#, fuzzy, kde-format
-#| msgid ""
-#| "Your server did not list \"vacation\" in its list of supported Sieve "
-#| "extensions;without it, KMail cannot install out-of-office replies for you."
-#| "Please contact your system administrator."
+#, kde-format
 msgctxt "@label:textbox"
 msgid ""
 "Your server did not list \"vacation\" in its list of supported Sieve "
