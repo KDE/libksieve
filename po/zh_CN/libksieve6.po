@@ -655,14 +655,14 @@ msgstr "添加信头"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:42
 #, kde-format
 msgid "header:"
-msgstr "信头："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:49
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:49
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:53
 #, kde-format
 msgid "value:"
-msgstr "值："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:114
 #, kde-format
@@ -679,7 +679,7 @@ msgstr "断开"
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:45
 #, kde-format
 msgid "Name (optional):"
-msgstr "名称(可选)："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:89
 #, kde-format
@@ -696,19 +696,19 @@ msgstr "转换"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:31
 #, kde-format
 msgid "From:"
-msgstr "发件人："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:39
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:39
 #, kde-format
 msgid "To:"
-msgstr "收件人："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:47
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:47
 #, kde-format
 msgid "Parameters:"
-msgstr "参数："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:129
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:94
@@ -747,13 +747,13 @@ msgstr "关闭"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:35
 #, kde-format
 msgid "Subject:"
-msgstr "主题："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:40
 #, kde-format
 msgid "headers:"
-msgstr "信头："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:51
 #: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:30
@@ -761,7 +761,7 @@ msgstr "信头："
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:52
 #, kde-format
 msgid "text:"
-msgstr "文本："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:143
 #, kde-format
@@ -790,12 +790,12 @@ msgstr "提取文本"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:32
 #, kde-format
 msgid "Number of characters:"
-msgstr "字符数："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:42
 #, kde-format
 msgid "Stored in variable name:"
-msgstr "已存储在变量名中："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:110
 #, kde-format
@@ -864,7 +864,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:55
 #, kde-format
 msgid "Add flags:"
-msgstr "添加标记："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:23
 #, kde-format
@@ -874,12 +874,12 @@ msgstr "通知"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:39
 #, kde-format
 msgid "message:"
-msgstr "信件："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:48
 #, kde-format
 msgid "method:"
-msgstr "方法："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:132
 #, kde-format
@@ -953,7 +953,7 @@ msgstr "替换"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:44
 #, kde-format
 msgid "from:"
-msgstr "发件人："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:142
 #, kde-format
@@ -1004,12 +1004,12 @@ msgstr "保护特殊字符"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:61
 #, kde-format
 msgid "Value:"
-msgstr "值："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:57
 #, kde-format
 msgid "In variable:"
-msgstr "在变量中："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:106
 #, kde-format
@@ -1054,22 +1054,22 @@ msgstr "假期"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:46
 #, kde-format
 msgid "day:"
-msgstr "日："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:57
 #, kde-format
 msgid "Message subject:"
-msgstr "信件主题："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:66
 #, kde-format
 msgid "Additional email:"
-msgstr "额外电子邮件："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:75
 #, kde-format
 msgid "Vacation reason:"
-msgstr "Vacation 理由："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:196
 #, kde-format
@@ -1229,7 +1229,7 @@ msgstr "长度"
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:62
 #, kde-format
 msgid "Please select an action."
-msgstr "请选择操作。"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:139
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
@@ -1274,7 +1274,7 @@ msgstr "地址"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:54
 #, kde-format
 msgid "address:"
-msgstr "地址："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:59
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:62
@@ -1356,7 +1356,7 @@ msgstr "环境"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:33
 #, kde-format
 msgid "Item:"
-msgstr "项目："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:90
 #, kde-format
@@ -1398,7 +1398,7 @@ msgstr "假"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:31
 #, kde-format
 msgid "false"
-msgstr "假"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:43
 #, kde-format
@@ -1432,7 +1432,7 @@ msgstr "报头"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:45
 #, kde-format
 msgid "With value:"
-msgstr "赋值："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:75
 #, kde-format
@@ -1481,13 +1481,13 @@ msgstr "元数据"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:43
 #, kde-format
 msgid "Mailbox:"
-msgstr "邮箱："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:54
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:52
 #, kde-format
 msgid "Annotations:"
-msgstr "注释："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:119
 #, kde-format
@@ -1507,7 +1507,7 @@ msgstr "元数据存在"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:31
 #, kde-format
 msgid "Annotation:"
-msgstr "注释："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:81
 #, kde-format
@@ -1590,7 +1590,7 @@ msgstr "真"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:31
 #, kde-format
 msgid "true"
-msgstr "真"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:43
 #, kde-format
@@ -1912,7 +1912,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:58
 #, kde-format
 msgid "Variable name:"
-msgstr "变量名称："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:65
 #, kde-format
@@ -1951,13 +1951,13 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:129
 #, kde-format
 msgid "Include:"
-msgstr "包含："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:135
 #: ksieveui/templates/sievetemplateeditdialog.cpp:59
 #, kde-format
 msgid "Name:"
-msgstr "用户名："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:144
 #, kde-format
@@ -2011,7 +2011,7 @@ msgstr "操作"
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:83
 #, kde-format
 msgid "Add new block:"
-msgstr "添加新块："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:87
 #, kde-format
@@ -2516,7 +2516,7 @@ msgstr ""
 #: ksieveui/editor/sieveeditorwidget.cpp:116
 #, kde-format
 msgid "Script name:"
-msgstr "脚本名称："
+msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:385
 #, kde-format
@@ -2743,12 +2743,12 @@ msgstr "调试"
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:43
 #, kde-format
 msgid "Email path:"
-msgstr "电子邮件路径："
+msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:57
 #, kde-format
 msgid "Extension:"
-msgstr "扩展名："
+msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:62
 #, kde-format
@@ -2917,12 +2917,12 @@ msgstr ""
 #: ksieveui/vacation/vacationeditwidget.cpp:107
 #, kde-format
 msgid "Start date:"
-msgstr "开始日期："
+msgstr ""
 
 #: ksieveui/vacation/vacationeditwidget.cpp:137
 #, kde-format
 msgid "End date:"
-msgstr "结束日期："
+msgstr ""
 
 #: ksieveui/vacation/vacationeditwidget.cpp:160
 #: ksieveui/vacation/vacationeditwidget.cpp:309
