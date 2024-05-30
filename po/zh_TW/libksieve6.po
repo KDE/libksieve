@@ -3,20 +3,20 @@
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2006.
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2010, 2011, 2012, 2013, 2014, 2015.
 # pan93412 <pan93412@gmail.com>, 2019.
-# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-14 00:38+0000\n"
-"PO-Revision-Date: 2023-01-15 20:49+0800\n"
+"PO-Revision-Date: 2024-05-30 04:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 24.04.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: kmanagesieve/session.cpp:89
@@ -36,8 +36,7 @@ msgstr ""
 "您可以選擇還是啟動 TLS，或是取消操作。"
 
 #: kmanagesieve/session.cpp:98
-#, fuzzy, kde-format
-#| msgid "Sieve Server Does Not Advertise TLS"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Sieve 伺服器未宣稱支援 TLS"
@@ -65,14 +64,11 @@ msgid "Sieve Authentication Details"
 msgstr "Sieve 認證詳情"
 
 #: kmanagesieve/session.cpp:259
-#, fuzzy, kde-format
-#| msgid ""
-#| "Please enter your authentication details for your sieve account (usually "
-#| "the same as your email password):"
+#, kde-format
 msgid ""
 "Please enter your authentication details for your sieve account "
 "\"%1\" (usually the same as your email password):"
-msgstr "請輸入您的 Sieve 帳號的認證詳情（通常就是您的郵件密碼）："
+msgstr "請輸入您的 Sieve 帳號 \"%1\" 的認證詳情（通常就是您的郵件密碼）："
 
 #: kmanagesieve/session.cpp:321
 #, kde-format
@@ -84,8 +80,7 @@ msgstr ""
 "%2"
 
 #: kmanagesieve/session.cpp:321
-#, fuzzy, kde-format
-#| msgid "Sieve Manager"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr "Sieve 管理器"
@@ -393,22 +388,22 @@ msgstr "文稿剖析錯誤。"
 #: ksievecore/managescriptsjob/renamescriptjob.cpp:56
 #, kde-format
 msgid "Impossible to start job"
-msgstr ""
+msgstr "無法啟動工作"
 
 #: ksievecore/managescriptsjob/renamescriptjob.cpp:66
 #, kde-format
 msgid "An error occurred during loading the sieve script."
-msgstr ""
+msgstr "載入 Sieve 文稿時發生錯誤。"
 
 #: ksievecore/managescriptsjob/renamescriptjob.cpp:82
 #, kde-format
 msgid "An error occurred during saving the sieve script."
-msgstr ""
+msgstr "儲存 Sieve 文稿時發生錯誤。"
 
 #: ksievecore/managescriptsjob/renamescriptjob.cpp:93
 #, kde-format
 msgid "An error occurred during deleting the sieve script."
-msgstr ""
+msgstr "刪除 Sieve 文稿時發生錯誤。"
 
 #. i18n: ectx: label, entry (AllowOutOfOfficeSettings), group (OutOfOffice)
 #: ksievecore/settings/sieve-vacation.kcfg:16
@@ -449,7 +444,7 @@ msgstr "啟動時檢查是否有設定「不在辦公室」的自動回覆。"
 #: ksievecore/vacation/vacationcheckjob.cpp:125
 #, kde-format
 msgid "ParseUserScriptJob failed: %1"
-msgstr ""
+msgstr "剖析使用者文稿的工作失敗了：%1"
 
 #: ksievecore/vacation/vacationcheckjob.cpp:141
 #, kde-format
@@ -483,7 +478,7 @@ msgstr ""
 #: ksievecore/vacation/vacationcreatescriptjob.cpp:151
 #, kde-format
 msgid "Impossible to install script on server '%1'"
-msgstr ""
+msgstr "無法安裝文稿於伺服器 '%1'"
 
 #: ksievecore/vacation/vacationutils.cpp:39
 #, kde-format
@@ -1805,12 +1800,12 @@ msgstr "密件副本"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
 #, kde-format
 msgid "Resent From"
-msgstr ""
+msgstr "重新送出從"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
 #, kde-format
 msgid "Resent To"
-msgstr ""
+msgstr "重新送出到"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
 #, kde-format
@@ -2148,8 +2143,7 @@ msgid "Rename Script"
 msgstr "重新命名文稿"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
-#, fuzzy, kde-format
-#| msgid "Edit Script Description"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Script Description"
 msgstr "編輯文稿描述"
@@ -2308,6 +2302,8 @@ msgid ""
 "Unable to get the info\n"
 "\n"
 msgstr ""
+"無法取得資訊\n"
+"\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
 #, kde-format
@@ -2397,7 +2393,7 @@ msgstr "編輯 Sieve 文稿"
 #: ksieveui/editor/sieveeditor.cpp:182
 #, kde-format
 msgid "Script is modified. Do you want to close editor?"
-msgstr ""
+msgstr "文稿已變更。您要關閉編輯器嗎？"
 
 #: ksieveui/editor/sieveeditor.cpp:184
 #, kde-format
@@ -2428,8 +2424,7 @@ msgid "You will overwrite script. Do you want to continue?"
 msgstr "您將要覆寫文稿。您確定要繼續嗎？"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:56
-#, fuzzy, kde-format
-#| msgid "Import Script"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Script"
 msgstr "匯入文稿"
@@ -2482,7 +2477,7 @@ msgstr "除錯 Sieve 文稿..."
 #: ksieveui/editor/sieveeditormenubar.cpp:81
 #, kde-format
 msgid "Wordwrap"
-msgstr ""
+msgstr "自動換行"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:98
 #, kde-format
@@ -2543,7 +2538,7 @@ msgstr "編輯器"
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:146
 #, kde-format
 msgid "Show result from \"check syntax\""
-msgstr ""
+msgstr "顯示「語法檢查」的結果"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:234
 #, kde-format
@@ -2553,11 +2548,10 @@ msgstr "剖析時發生錯誤"
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:264
 #, kde-format
 msgid "Selected text is not a full sieve script"
-msgstr ""
+msgstr "選取的文字不是完整的 Sieve 文稿"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:264
-#, fuzzy, kde-format
-#| msgid "Parsing error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "剖析錯誤"
@@ -2717,12 +2711,12 @@ msgstr "區分大小寫"
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:88
 #, kde-format
 msgid "Phrase not found"
-msgstr ""
+msgstr "找不到該片語"
 
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
 #, kde-format
 msgid "Save Web Page"
-msgstr ""
+msgstr "儲存網頁"
 
 #: ksieveui/managesievescriptsdialog.cpp:63
 #, kde-format
@@ -2754,8 +2748,7 @@ msgstr "取消啟動"
 #: ksieveui/managesievescriptsdialog.cpp:173
 #: ksieveui/managesievescriptsdialog.cpp:262
 #: ksieveui/widgets/managesievewidget.cpp:512
-#, fuzzy, kde-format
-#| msgid "Sieve Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Sieve 錯誤"
@@ -2771,8 +2764,7 @@ msgid "The Sieve script was successfully uploaded."
 msgstr "過濾文稿已經成功上傳。"
 
 #: ksieveui/managesievescriptsdialog.cpp:252
-#, fuzzy, kde-format
-#| msgid "Sieve Script Upload"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "上傳過濾文稿"
@@ -2846,17 +2838,17 @@ msgstr "文稿內容是空的。"
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:147
 #, kde-format
 msgid "Email file must be installed locally."
-msgstr ""
+msgstr "郵件檔案必須有在本地安裝。"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:153
 #, kde-format
 msgid "Failed to open temporary file."
-msgstr ""
+msgstr "開啟暫存檔失敗。"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:223
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
-msgstr ""
+msgstr "文稿仍然包含除錯方法。請移除它。"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
 #, kde-format
@@ -2869,17 +2861,16 @@ msgid "Text Files (*.txt);;All Files (*)"
 msgstr "文字檔 (*.txt);;所有檔案 (*)"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:30
-#, fuzzy, kde-format
-#| msgid "Add new header:"
+#, kde-format
 msgid "Add debug here"
-msgstr "新增標頭："
+msgstr "在此新增除錯"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerwidget.cpp:35
 #, kde-format
 msgid ""
 "\"sieve-test\" was not found on system. Please install it. (See in Dovecot "
 "package)"
-msgstr ""
+msgstr "系統上沒有找到 \"sieve-test\"。請安裝它。（請見 Dovecot 套件中）"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:16
 #, kde-format
@@ -3023,7 +3014,7 @@ msgstr "傳送回覆到這些位址："
 #: ksieveui/vacation/vacationeditwidget.cpp:201
 #, kde-format
 msgid "&Action for incoming mails:"
-msgstr ""
+msgstr "傳入信件的動作(&A)："
 
 #: ksieveui/vacation/vacationeditwidget.cpp:209
 #, kde-format
@@ -3031,10 +3022,9 @@ msgid "Do not send vacation replies to spam messages"
 msgstr "不要對垃圾信件送出假期自動回覆"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:217
-#, fuzzy, kde-format
-#| msgid "Only react to mail coming from domain"
+#, kde-format
 msgid "Only react to mail coming from domain:"
-msgstr "只對此網域來的信件反應"
+msgstr "只對此網域來的信件反應："
 
 #: ksieveui/vacation/vacationmanager.cpp:55
 #, kde-format
@@ -3046,11 +3036,10 @@ msgstr ""
 "您要編輯它嗎？"
 
 #: ksieveui/vacation/vacationmanager.cpp:57
-#, fuzzy, kde-format
-#| msgid "Out-of-office reply still active"
+#, kde-format
 msgctxt "@title:window"
 msgid "Out-of-office reply still active"
-msgstr "已設定「不在辦公室」的自動回覆"
+msgstr "「不在辦公室」的自動回覆仍為作用中"
 
 #: ksieveui/vacation/vacationmanager.cpp:58
 #, kde-format
@@ -3163,8 +3152,7 @@ msgid "Really delete script \"%1\" from the server?"
 msgstr "確定要從伺服器上刪除文稿 %1 嗎？"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
-#, fuzzy, kde-format
-#| msgid "Delete Sieve Script Confirmation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "確認刪除過濾文稿"
