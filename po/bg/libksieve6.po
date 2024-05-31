@@ -3233,24 +3233,3 @@ msgstr ""
 #, kde-format
 msgid "Define Folder"
 msgstr ""
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgid "Debug Sieve Script..."
-#~ msgstr "Откриване на грешки в Sieve скрипт..."
-
-#~ msgctxt "create a new sieve script"
-#~ msgid "New..."
-#~ msgstr "Нов..."
-
-#~ msgid "Edit..."
-#~ msgstr "Редактиране..."
-
-#, fuzzy
-#~ msgid "Rename Script..."
-#~ msgstr "Преименуване на скрипт"
-
-#, fuzzy
-#~ msgid "New Script..."
-#~ msgstr "Създаване на скрипт"
