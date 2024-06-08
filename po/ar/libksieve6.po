@@ -2,13 +2,13 @@
 # Language AR translations for PACKAGE package.
 # Automatically generated, 2007.
 # Youssef Chahibi <chahibi@gmail.com>, 2007.
-# SPDX-FileCopyrightText: 2022, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-14 00:38+0000\n"
-"PO-Revision-Date: 2024-06-06 09:53+0400\n"
+"PO-Revision-Date: 2022-01-29 12:41+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -17,7 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
 
 #: kmanagesieve/session.cpp:89
 #, kde-format
@@ -64,7 +63,10 @@ msgid "Sieve Authentication Details"
 msgstr "تفاصيل استيثاق «سِف»"
 
 #: kmanagesieve/session.cpp:259
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Please enter your authentication details for your sieve account "
+#| "\"%1\" (usually the same as your email password):"
 msgid ""
 "Please enter your authentication details for your sieve account "
 "\"%1\" (usually the same as your email password):"
@@ -580,12 +582,14 @@ msgid "not regex"
 msgstr "ليست تعبير نمطي"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:25
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "JPEG"
 msgid "JPEG"
 msgstr "JPEG"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:26
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "TIFF"
 msgid "TIFF"
 msgstr "TIFF"
 
@@ -595,7 +599,8 @@ msgid "PNG"
 msgstr "PNG"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:28
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "BMP"
 msgid "BMP"
 msgstr "BMP"
 
@@ -1352,7 +1357,8 @@ msgid "exists"
 msgstr "موجود"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:36
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "not exists"
 msgid "not exists"
 msgstr "لا يوجد"
 
@@ -1446,7 +1452,8 @@ msgid ""
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:24
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Meta Data"
 msgid "Meta Data"
 msgstr "البيانات الوصفيّة"
 
@@ -1694,7 +1701,8 @@ msgid "Headers"
 msgstr "التّرويسات"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:55
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add new header:"
 msgid "Add new header:"
 msgstr "أضف ترويسة جديدة:"
 
@@ -2334,7 +2342,9 @@ msgid "You will overwrite script. Do you want to continue?"
 msgstr ""
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Import Script"
 msgctxt "@title:window"
 msgid "Import Script"
 msgstr "استيراد سكربت"
@@ -2459,7 +2469,9 @@ msgid "Selected text is not a full sieve script"
 msgstr ""
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:264
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Parsing error"
 msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "خطأ تحليل"
@@ -2516,7 +2528,8 @@ msgid "Sieve server supports:"
 msgstr ""
 
 #: ksieveui/editor/sievetextedit.cpp:277
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Insert Rule"
 msgid "Insert Rule"
 msgstr "أدرج قاعدة"
 
@@ -2649,14 +2662,17 @@ msgid "Delete"
 msgstr "احذف"
 
 #: ksieveui/managesievescriptsdialog.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Deactivate"
 msgid "Deactivate"
 msgstr "تعطيل"
 
 #: ksieveui/managesievescriptsdialog.cpp:173
 #: ksieveui/managesievescriptsdialog.cpp:262
 #: ksieveui/widgets/managesievewidget.cpp:512
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Sieve Error"
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "خطأ في «سِف»"
@@ -2672,7 +2688,9 @@ msgid "The Sieve script was successfully uploaded."
 msgstr "رُفع سكربت «سِف» بنجاح."
 
 #: ksieveui/managesievescriptsdialog.cpp:252
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "Sieve Script Upload"
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "رفع سكربت «سِف»"
