@@ -13,7 +13,7 @@
 #include <PimCommon/PimUtil>
 #include <pimcommon/imapresourcesettings.h>
 
-#include <KMime/KMimeMessage>
+#include <KMime/Message>
 #include <MailTransport/Transport>
 
 using namespace KSieveCore;
