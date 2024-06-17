@@ -86,15 +86,15 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(KSieveCore::SieveImapPassword
     connect(d->mNewScript, &QPushButton::clicked, d->mTreeView, &CustomManageSieveWidget::slotNewScript);
     buttonLayout->addWidget(d->mNewScript);
 
-    d->mEditScript = new QPushButton(i18n("Edit…"));
+    d->mEditScript = new QPushButton(i18nc("@action:button", "Edit…"));
     connect(d->mEditScript, &QPushButton::clicked, d->mTreeView, &CustomManageSieveWidget::slotEditScript);
     buttonLayout->addWidget(d->mEditScript);
 
-    d->mDeleteScript = new QPushButton(i18n("Delete"));
+    d->mDeleteScript = new QPushButton(i18nc("@action:button", "Delete"));
     connect(d->mDeleteScript, &QPushButton::clicked, d->mTreeView, &CustomManageSieveWidget::slotDeleteScript);
     buttonLayout->addWidget(d->mDeleteScript);
 
-    d->mDeactivateScript = new QPushButton(i18n("Deactivate"));
+    d->mDeactivateScript = new QPushButton(i18nc("@action:button", "Deactivate"));
     connect(d->mDeactivateScript, &QPushButton::clicked, d->mTreeView, &CustomManageSieveWidget::slotDeactivateScript);
     buttonLayout->addWidget(d->mDeactivateScript);
 

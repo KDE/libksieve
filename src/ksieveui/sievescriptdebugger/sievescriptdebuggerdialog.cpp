@@ -48,7 +48,7 @@ SieveScriptDebuggerDialog::SieveScriptDebuggerDialog(QWidget *parent)
     connect(mSieveScriptDebuggerWidget, &SieveScriptDebuggerWidget::scriptTextChanged, this, &SieveScriptDebuggerDialog::slotScriptTextChanged);
     connect(mSieveScriptDebuggerWidget, &SieveScriptDebuggerWidget::debugButtonEnabled, this, &SieveScriptDebuggerDialog::debugButtonEnableStateChanged);
 
-    mDebugScriptButton = new QPushButton(i18n("Debug"), this);
+    mDebugScriptButton = new QPushButton(i18nc("@action:button", "Debug"), this);
     const KGuiItem item(i18n("Debug"), QIcon::fromTheme(QStringLiteral("debug-run")));
     KGuiItem::assign(mDebugScriptButton, item);
 
