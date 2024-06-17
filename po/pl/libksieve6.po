@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-14 00:38+0000\n"
-"PO-Revision-Date: 2023-11-04 12:26+0100\n"
+"PO-Revision-Date: 2024-06-16 10:09+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -18,6 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: kmanagesieve/session.cpp:89
 #, kde-format
@@ -1218,12 +1219,12 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
 #, kde-format
 msgid "Define Email Address..."
-msgstr "Określ adres e-mail..."
+msgstr "Określ adres e-mail…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
 #, kde-format
 msgid "Enter message..."
-msgstr "Podaj wiadomość..."
+msgstr "Podaj wiadomość…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:23
 #, kde-format
@@ -1269,12 +1270,12 @@ msgstr "Szkic"
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
 #, kde-format
 msgid "Click on button for selecting flags..."
-msgstr "Kliknij na przycisku do wybrania flag..."
+msgstr "Kliknij na przycisku do wybrania flag…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
 msgid "..."
-msgstr "..."
+msgstr "…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, kde-format
@@ -1876,7 +1877,7 @@ msgstr "Dzień tygodnia"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
 msgid "Select multiple headers..."
-msgstr "Wybierz wiele nagłówków..."
+msgstr "Wybierz wiele nagłówków…"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
 #, kde-format
@@ -2372,7 +2373,7 @@ msgstr "Błąd przetwarzania Sieve"
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
 #, kde-format
 msgid "Save As..."
-msgstr "Zapisz jako..."
+msgstr "Zapisz jako…"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
 #, kde-format
@@ -2414,7 +2415,7 @@ msgid ""
 "Collecting diagnostic information about Sieve support...\n"
 "\n"
 msgstr ""
-"Zbieranie informacji diagnostycznych o obsłudze Sieve...\n"
+"Zbieranie informacji diagnostycznych o obsłudze Sieve…\n"
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:68
@@ -2434,7 +2435,7 @@ msgstr ""
 #: ksieveui/debug/sievedebugdialog.cpp:122
 #, kde-format
 msgid "Collecting data for account '%1'...\n"
-msgstr "Zbieranie danych dla konta '%1'...\n"
+msgstr "Zbieranie danych dla konta '%1'…\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:123
 #, kde-format
@@ -2598,7 +2599,7 @@ msgstr "Odkomentuj"
 #: ksieveui/editor/sieveeditormenubar.cpp:63
 #, kde-format
 msgid "Debug Sieve Script..."
-msgstr "Diagnozuj skrypt Sieve..."
+msgstr "Diagnozuj skrypt Sieve…"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:81
 #, kde-format
@@ -2690,17 +2691,17 @@ msgstr "Sprawdź składnię"
 #: ksieveui/editor/sieveeditorwidget.cpp:50
 #, kde-format
 msgid "Import..."
-msgstr "Zaimportuj..."
+msgstr "Zaimportuj…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
 #, kde-format
 msgid "Create Rules Graphically..."
-msgstr "Twórz zasady graficznie..."
+msgstr "Twórz zasady graficznie…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:66
 #, kde-format
 msgid "Share..."
-msgstr "Udostępnij..."
+msgstr "Udostępnij…"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:72
 #, kde-format
@@ -2755,7 +2756,7 @@ msgid ""
 "\">(Details...)</a>"
 msgstr ""
 "Napotkano na pewne błędy przy przetwarzaniu. <a href=\"sieveerrordetails"
-"\">(Szczegóły...)</a>"
+"\">(Szczegóły…)</a>"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
 #, kde-format
@@ -2857,12 +2858,12 @@ msgstr "Zarządzanie skryptami Sieve"
 #, kde-format
 msgctxt "create a new sieve script"
 msgid "New..."
-msgstr "Nowy..."
+msgstr "Nowy…"
 
 #: ksieveui/managesievescriptsdialog.cpp:89
 #, kde-format
 msgid "Edit..."
-msgstr "Edytuj..."
+msgstr "Edytuj…"
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
@@ -2885,7 +2886,7 @@ msgstr "Błąd Sieve"
 #: ksieveui/managesievescriptsdialog.cpp:206
 #, kde-format
 msgid "Uploading script to server for checking it, please wait..."
-msgstr "Wysyłanie skryptu na serwer celem jego sprawdzenia, oczekiwanie..."
+msgstr "Wysyłanie skryptu na serwer celem jego sprawdzenia, oczekiwanie…"
 
 #: ksieveui/managesievescriptsdialog.cpp:252
 #, kde-format
@@ -2959,7 +2960,7 @@ msgstr ""
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
 #, kde-format
 msgid "Display check script result..."
-msgstr "Wyświetl wyniki sprawdzania skryptu..."
+msgstr "Wyświetl wyniki sprawdzania skryptu…"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
 #, kde-format
@@ -3038,7 +3039,7 @@ msgstr "Przekaż wiadomość i dodaj kopię"
 #: ksieveui/templates/sievedefaulttemplate.cpp:66
 #, kde-format
 msgid "Destroy mail posted by..."
-msgstr "Zniszcz pocztę wysłaną przez..."
+msgstr "Zniszcz pocztę wysłaną przez…"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:79
 #, kde-format
@@ -3218,7 +3219,7 @@ msgstr "Nie ustawiono adresu URL Sieve"
 #: ksieveui/widgets/managesievetreeview.cpp:30
 #, kde-format
 msgid "No IMAP server configured..."
-msgstr "Nie ustawiono serwera IMAP..."
+msgstr "Nie ustawiono serwera IMAP…"
 
 #: ksieveui/widgets/managesievetreeview.cpp:20
 #, kde-format
@@ -3233,12 +3234,12 @@ msgstr "Sieć jest nieaktywna."
 #: ksieveui/widgets/managesievewidget.cpp:147
 #, kde-format
 msgid "Edit Script..."
-msgstr "Edytuj skrypt..."
+msgstr "Edytuj skrypt…"
 
 #: ksieveui/widgets/managesievewidget.cpp:148
 #, kde-format
 msgid "Rename Script..."
-msgstr "Przemianuj skrypt..."
+msgstr "Przemianuj skrypt…"
 
 #: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
@@ -3248,7 +3249,7 @@ msgstr "Wyłącz skrypt"
 #: ksieveui/widgets/managesievewidget.cpp:159
 #, kde-format
 msgid "New Script..."
-msgstr "Nowy skrypt..."
+msgstr "Nowy skrypt…"
 
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format

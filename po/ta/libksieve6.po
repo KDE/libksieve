@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-14 00:38+0000\n"
-"PO-Revision-Date: 2024-02-18 14:45+0530\n"
+"PO-Revision-Date: 2024-06-16 15:59+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: kmanagesieve/session.cpp:89
 #, kde-format
@@ -673,7 +673,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:45
 #, kde-format
 msgid "Name (optional):"
-msgstr ""
+msgstr "பெயர் (கட்டாயமில்லை):"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:89
 #, kde-format
@@ -739,7 +739,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:35
 #, kde-format
 msgid "Subject:"
-msgstr ""
+msgstr "தலைப்பு:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:40
@@ -753,7 +753,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:52
 #, kde-format
 msgid "text:"
-msgstr ""
+msgstr "உரை:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:143
 #, kde-format
