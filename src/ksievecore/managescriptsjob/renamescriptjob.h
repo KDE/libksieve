@@ -46,7 +46,6 @@ private Q_SLOTS:
     KSIEVECORE_NO_EXPORT void slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool isActive);
 
 private:
-    Q_DISABLE_COPY(RenameScriptJob)
     std::unique_ptr<RenameScriptJobPrivate> const d;
 };
 }

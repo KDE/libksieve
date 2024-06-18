@@ -46,7 +46,6 @@ private Q_SLOTS:
 
 private:
     [[nodiscard]] bool isLastScript() const;
-    Q_DISABLE_COPY(VacationCheckJob)
     QStringList mAvailableScripts;
     QStringList mActiveScripts;
     QStringList mSieveCapabilities;

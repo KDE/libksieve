@@ -31,7 +31,6 @@ Q_SIGNALS:
     void scriptListResult(const QStringList &scriptList, const QString &activeScript, bool hasIncludeSupport);
 
 private:
-    Q_DISABLE_COPY(VacationHelperJob)
     void slotGetScriptList(KManageSieve::SieveJob *job, bool success, const QStringList &scriptList, const QString &activeScript);
     void killJob();
     const QUrl mUrl;

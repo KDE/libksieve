@@ -66,9 +66,6 @@ Q_SIGNALS:
 
 private:
     std::unique_ptr<CheckKolabKep14SupportJobPrivate> const d;
-
-private:
-    Q_DISABLE_COPY(CheckKolabKep14SupportJob)
     KSIEVECORE_NO_EXPORT void
     slotCheckKep14Support(KManageSieve::SieveJob *job, bool success, const QStringList &availableScripts, const QString &activeScript);
 };

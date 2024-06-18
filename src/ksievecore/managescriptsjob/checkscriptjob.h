@@ -40,7 +40,6 @@ Q_SIGNALS:
     void finished(const QString &msg, bool success);
 
 private:
-    Q_DISABLE_COPY(CheckScriptJob)
     KSIEVECORE_NO_EXPORT void slotPutCheckSyntaxResult(KManageSieve::SieveJob *job, bool success);
     KSIEVECORE_NO_EXPORT void slotRestoreFile(KManageSieve::SieveJob *job, bool success);
     std::unique_ptr<CheckScriptJobPrivate> const d;
