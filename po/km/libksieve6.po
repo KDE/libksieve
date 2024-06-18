@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-28 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2012-12-28 15:41+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -2865,16 +2865,21 @@ msgstr ""
 #: ksieveui/managesievescriptsdialog.cpp:89
 #, fuzzy, kde-format
 #| msgid "Edit"
+msgctxt "@action:button"
 msgid "Edit…"
 msgstr "កែសម្រួល​"
 
 #: ksieveui/managesievescriptsdialog.cpp:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button"
 msgid "Delete"
 msgstr "លុប"
 
 #: ksieveui/managesievescriptsdialog.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Deactivate"
+msgctxt "@action:button"
 msgid "Deactivate"
 msgstr "ធ្វើ​ឲ្យ​​អសកម្ម​​"
 
@@ -2943,6 +2948,11 @@ msgid "Apply Changes"
 msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:51
+#, kde-format
+msgctxt "@action:button"
+msgid "Debug"
+msgstr ""
+
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:52
 #, kde-format
 msgid "Debug"

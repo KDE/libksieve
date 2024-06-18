@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/libksieve.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-28 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2004-09-20 15:44+0200\n"
 "Last-Translator: Thierry Vignaud <tvignaud@mandriva.com>\n"
 "Language-Team: Breton <LL@li.org>\n"
@@ -2686,16 +2686,19 @@ msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:89
 #, kde-format
+msgctxt "@action:button"
 msgid "Edit…"
 msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
+msgctxt "@action:button"
 msgid "Delete"
 msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:97
 #, kde-format
+msgctxt "@action:button"
 msgid "Deactivate"
 msgstr ""
 
@@ -2754,6 +2757,11 @@ msgid "Apply Changes"
 msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:51
+#, kde-format
+msgctxt "@action:button"
+msgid "Debug"
+msgstr ""
+
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:52
 #, kde-format
 msgid "Debug"

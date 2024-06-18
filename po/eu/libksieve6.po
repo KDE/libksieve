@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-28 00:39+0000\n"
+"POT-Creation-Date: 2024-06-18 00:40+0000\n"
 "PO-Revision-Date: 2024-01-01 12:34+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3029,16 +3029,21 @@ msgstr ""
 #: ksieveui/managesievescriptsdialog.cpp:89
 #, fuzzy, kde-format
 #| msgid "Edit"
+msgctxt "@action:button"
 msgid "Edit…"
 msgstr "Editatu"
 
 #: ksieveui/managesievescriptsdialog.cpp:93
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete"
+msgctxt "@action:button"
 msgid "Delete"
 msgstr "Ezabatu"
 
 #: ksieveui/managesievescriptsdialog.cpp:97
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Deactivate"
+msgctxt "@action:button"
 msgid "Deactivate"
 msgstr "Desaktibatu"
 
@@ -3101,6 +3106,12 @@ msgid "Apply Changes"
 msgstr "Ezarri aldaketak"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:51
+#, fuzzy, kde-format
+#| msgid "Debug"
+msgctxt "@action:button"
+msgid "Debug"
+msgstr "Araztea"
+
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:52
 #, kde-format
 msgid "Debug"
