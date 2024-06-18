@@ -94,6 +94,9 @@ add_definitions(-DDONT_HAVE_TEXT_TO_SPEACH_SUPPORT)
 ecm_set_disabled_deprecation_versions(QT 6.7.0 KF 6.4.0)
 
 
+if(BUILD_TESTING)
+   add_definitions(-DBUILD_TESTING)
+endif(BUILD_TESTING)
 ########### CMake Config Files ###########
 if(BUILD_TESTING)
     find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)

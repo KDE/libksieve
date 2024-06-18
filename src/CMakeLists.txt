@@ -4,10 +4,6 @@ include(CheckTypeSize)
 check_type_size("unsigned long" SIZEOF_UNSIGNED_LONG)
 configure_file(config-libksieve.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-libksieve.h)
 
-if(BUILD_TESTING)
-   add_definitions(-DBUILD_TESTING)
-endif(BUILD_TESTING)
-
 add_definitions(-DTRANSLATION_DOMAIN=\"libksieve6\")
 
 
