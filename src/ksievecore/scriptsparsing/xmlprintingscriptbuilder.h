@@ -46,9 +46,9 @@ public:
     void clear();
 
 private:
-    void initialize(int indent = 0);
-    void write(const QString &key, const QString &value);
-    void write(const QString &key, const QString &qualifiedName, const QString &attribute, const QString &value);
+    KSIEVECORE_NO_EXPORT void initialize(int indent = 0);
+    KSIEVECORE_NO_EXPORT void write(const QString &key, const QString &value);
+    KSIEVECORE_NO_EXPORT void write(const QString &key, const QString &qualifiedName, const QString &attribute, const QString &value);
 
     QXmlStreamWriter *mStream = nullptr;
     QString mResult;

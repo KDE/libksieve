@@ -28,13 +28,18 @@ public:
     [[nodiscard]] QByteArray value() const;
     [[nodiscard]] QByteArray extra() const;
 
-    enum Result { Ok, No, Bye, Other };
+    enum Result {
+        Ok,
+        No,
+        Bye,
+        Other,
+    };
 
     [[nodiscard]] Result operationResult() const;
     [[nodiscard]] bool operationSuccessful() const;
 
     void clear();
-    bool parseResponse(const QByteArray &line);
+    [[nodiscard]] bool parseResponse(const QByteArray &line);
 
 private:
     Type m_type = None;

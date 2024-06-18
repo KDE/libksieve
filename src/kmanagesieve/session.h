@@ -51,7 +51,7 @@ public:
     /**
      * @return true if we are not connected nor currently connecting, i.e. it's ok to call connectToHost()
      */
-    bool disconnected() const;
+    [[nodiscard]] bool disconnected() const;
 
 private:
     [[nodiscard]] bool requestCapabilitiesAfterStartTls() const;

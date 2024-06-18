@@ -32,7 +32,7 @@ public:
     void setServerUrl(const QUrl &url);
     void setScript(const QString &script);
     void setServerName(const QString &servername);
-    const QString &serverName() const;
+    [[nodiscard]] const QString &serverName() const;
     void setStatus(bool activate, bool wasActive);
     void setKep14Support(bool kep14Support);
 

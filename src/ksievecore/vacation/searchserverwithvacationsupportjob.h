@@ -23,7 +23,7 @@ public:
 
     [[nodiscard]] bool canStart() const;
 
-    KSieveCore::SieveImapPasswordProvider *passwordProvider() const;
+    [[nodiscard]] KSieveCore::SieveImapPasswordProvider *passwordProvider() const;
     void setPasswordProvider(KSieveCore::SieveImapPasswordProvider *newProvider);
 
 Q_SIGNALS:

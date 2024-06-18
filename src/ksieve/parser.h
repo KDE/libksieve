@@ -29,7 +29,7 @@ public:
     void setScriptBuilder(ScriptBuilder *builder);
     ScriptBuilder *scriptBuilder() const;
 
-    bool parse();
+    [[nodiscard]] bool parse();
 
     const Error &error() const;
 

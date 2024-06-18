@@ -24,12 +24,12 @@ class Lexer::Impl
 public:
     Impl(const char *scursor, const char *send, int options);
 
-    bool ignoreComments() const
+    [[nodiscard]] bool ignoreComments() const
     {
         return mIgnoreComments;
     }
 
-    bool ignoreLineFeeds() const
+    [[nodiscard]] bool ignoreLineFeeds() const
     {
         return mIgnoreLF;
     }
@@ -39,7 +39,7 @@ public:
         return mState.error;
     }
 
-    bool atEnd() const
+    [[nodiscard]] bool atEnd() const
     {
         return mState.cursor >= mEnd;
     }
@@ -49,7 +49,7 @@ public:
         return mState.cursor - mState.beginOfLine;
     }
 
-    int line() const
+    [[nodiscard]] int line() const
     {
         return mState.line;
     }

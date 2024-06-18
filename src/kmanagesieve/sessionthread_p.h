@@ -66,8 +66,8 @@ private Q_SLOTS:
     void slotEncryptedDone();
 
 private:
-    bool saslInteract(void *in);
-    bool saslClientStep(const QByteArray &challenge);
+    [[nodiscard]] bool saslInteract(void *in);
+    [[nodiscard]] bool saslClientStep(const QByteArray &challenge);
     void sslResult(bool encrypted);
     void handleSaslAuthError();
 

@@ -26,14 +26,28 @@ public:
     {
     }
 
-    enum Command { Get, Put, Activate, Deactivate, SearchActive, List, Delete, Rename, Check };
+    enum Command {
+        Get,
+        Put,
+        Activate,
+        Deactivate,
+        SearchActive,
+        List,
+        Delete,
+        Rename,
+        Check,
+    };
 
-    enum Existence { DontKnow, Yes, No };
+    enum Existence {
+        DontKnow,
+        Yes,
+        No,
+    };
 
     static Session *sessionForUrl(const QUrl &url);
 
     void run(Session *session);
-    bool handleResponse(const Response &response, const QByteArray &data);
+    [[nodiscard]] bool handleResponse(const Response &response, const QByteArray &data);
     void killed();
 
     SieveJob *const q;

@@ -33,18 +33,15 @@ public:
     void checkVacation(const QString &serverName, const QUrl &url);
 
     [[nodiscard]] bool kep14Support(const QString &serverName) const;
-    KSieveCore::SieveImapPasswordProvider *passwordProvider() const;
+    [[nodiscard]] KSieveCore::SieveImapPasswordProvider *passwordProvider() const;
 
 Q_SIGNALS:
     void scriptActive(bool active, const QString &serverName);
     void scriptAvailable(const QString &serverName, const QStringList &sieveCapabilities, const QString &scriptName, const QString &script, bool active);
 
-private Q_SLOTS:
+private:
     KSIEVECORE_NO_EXPORT void slotScriptActive(KSieveCore::VacationCheckJob *job, const QString &scriptName, bool active);
     KSIEVECORE_NO_EXPORT void slotCheckKep14Ended(KSieveCore::CheckKolabKep14SupportJob *job, bool success);
-
-private:
-    Q_DISABLE_COPY(MultiImapVacationManager)
     KSIEVECORE_NO_EXPORT void slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveCore::Util::AccountInfo> &list);
     KSieveCore::SieveImapPasswordProvider *const mPasswordProvider;
     int mNumberOfJobs = 0;
