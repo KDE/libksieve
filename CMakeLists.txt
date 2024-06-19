@@ -45,7 +45,7 @@ set(KIMAP_LIB_VERSION "6.1.40")
 option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
 set(COMPILE_WITH_UNITY_CMAKE_SUPPORT OFF)
-if (USE_UNITY_CMAKE_SUPPORT)
+if(USE_UNITY_CMAKE_SUPPORT)
     set(COMPILE_WITH_UNITY_CMAKE_SUPPORT ON)
 endif()
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
@@ -71,7 +71,7 @@ find_package(KPim6MailTransport ${KMAILTRANSPORT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6IMAP ${KIMAP_LIB_VERSION} CONFIG REQUIRED)
 
 find_package(KF6TextEditTextToSpeech ${KTEXTADDONS_MIN_VERSION} CONFIG)
-if (TARGET KF6::TextEditTextToSpeech)
+if(TARGET KF6::TextEditTextToSpeech)
     add_definitions(-DHAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
 endif()
 find_package(KF6TextCustomEditor ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
@@ -95,8 +95,8 @@ ecm_set_disabled_deprecation_versions(QT 6.7.0 KF 6.4.0)
 
 
 if(BUILD_TESTING)
-   add_definitions(-DBUILD_TESTING)
-endif(BUILD_TESTING)
+    add_definitions(-DBUILD_TESTING)
+endif()
 ########### CMake Config Files ###########
 if(BUILD_TESTING)
     find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)

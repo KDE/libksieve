@@ -32,12 +32,12 @@ ecm_qt_declare_logging_category(KPim6KManageSieve HEADER kmanagersieve_debug.h I
 
 
 generate_export_header(KPim6KManageSieve BASE_NAME kmanagesieve)
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6KManageSieve PROPERTIES UNITY_BUILD ON)
 endif()
 
 
-if (WIN32)
+if(WIN32)
     set(extra_LIBS ws2_32)
 endif()
 
@@ -92,7 +92,7 @@ install(FILES
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6KManageSieve")
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KPim6KManageSieve_QCH
         NAME KPim6KManageSieve
@@ -113,7 +113,7 @@ if (BUILD_QCH)
     )
 endif()
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_install_qch_export(
         TARGETS KPim6KManageSieve_QCH
         FILE KPim6KManageSieveQchTargets.cmake

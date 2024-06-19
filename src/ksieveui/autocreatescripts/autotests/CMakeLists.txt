@@ -18,7 +18,7 @@ macro(add_sieveeditor_autocreatescripts _source _extrasource)
         NAME_PREFIX "sieveeditor-autocreatescripts-"
         LINK_LIBRARIES Qt::Test Qt::Widgets KF6::I18n KF6::Completion KF6::ConfigCore KPim6KSieveUi KPim6::MailTransport KPim6::Libkdepim
         )
-    if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+    if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
         set_target_properties(${_name} PROPERTIES UNITY_BUILD ON)
     endif()
 endmacro()

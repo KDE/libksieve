@@ -342,7 +342,7 @@ ecm_qt_declare_logging_category(KPim6KSieveUi HEADER libksieveui_debug.h IDENTIF
 kconfig_add_kcfg_files(KPim6KSieveUi settings/sieve-editor.kcfgc)
 
 generate_export_header(KPim6KSieveUi BASE_NAME ksieveui)
-if (COMPILE_WITH_UNITY_CMAKE_SUPPORT)
+if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(KPim6KSieveUi PROPERTIES UNITY_BUILD ON)
 endif()
 
@@ -374,7 +374,7 @@ target_link_libraries(KPim6KSieveUi
     KF6::TextUtils
 )
 
-if (TARGET KF6::TextEditTextToSpeech)
+if(TARGET KF6::TextEditTextToSpeech)
     target_link_libraries(KPim6KSieveUi
         PRIVATE
         KF6::TextEditTextToSpeech
@@ -465,10 +465,10 @@ install(FILES
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi COMPONENT Devel
     )
 
-install(FILES data/ksieve_script.knsrc DESTINATION ${KDE_INSTALL_KNSRCDIR} )
-install(DIRECTORY data/scripts/ DESTINATION ${KDE_INSTALL_DATADIR}/sieve/scripts/ )
+install(FILES data/ksieve_script.knsrc DESTINATION ${KDE_INSTALL_KNSRCDIR})
+install(DIRECTORY data/scripts/ DESTINATION ${KDE_INSTALL_DATADIR}/sieve/scripts/)
 
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_add_qch(
         KPim6KSieveUi_QCH
         NAME KPim6KSieveUi
@@ -498,7 +498,7 @@ if (BUILD_QCH)
 endif()
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6KSieveUi")
-if (BUILD_QCH)
+if(BUILD_QCH)
     ecm_install_qch_export(
         TARGETS KPim6KSieveUi_QCH
         FILE KPim6KSieveUiQchTargets.cmake

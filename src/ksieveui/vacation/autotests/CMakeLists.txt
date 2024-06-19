@@ -16,7 +16,6 @@ macro( add_vacation_test _source )
         KPim6::MailTransport
         KPim6::Libkdepim
         KPim6::PimCommon
-        
     )
 endmacro()
 
