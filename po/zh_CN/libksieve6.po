@@ -2734,26 +2734,22 @@ msgid "New…"
 msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "Edit"
+#, kde-format
 msgctxt "@action:button"
 msgid "Edit…"
-msgstr "编辑"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Delete"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete"
-msgstr "删除"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:97
-#, fuzzy, kde-format
-#| msgid "Deactivate"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deactivate"
-msgstr "取消激活"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:173
 #: ksieveui/managesievescriptsdialog.cpp:262
@@ -2813,11 +2809,10 @@ msgid "Apply Changes"
 msgstr "应用更改"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Debug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Debug"
-msgstr "调试"
+msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:52
 #, kde-format
