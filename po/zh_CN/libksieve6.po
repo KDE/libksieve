@@ -2670,12 +2670,12 @@ msgstr "编辑..."
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
 msgid "Delete"
-msgstr "删除"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:97
 #, kde-format
 msgid "Deactivate"
-msgstr "取消激活"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:173
 #: ksieveui/managesievescriptsdialog.cpp:262
