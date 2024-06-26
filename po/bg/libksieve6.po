@@ -3,13 +3,13 @@
 #
 # Radostin Radnev <radnev@yahoo.com>, 2004.
 # Yasen Pramatarov <yasen@lindeas.com>, 2017.
-# Mincho Kondarev <mkondarev@yahoo.de>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-18 00:40+0000\n"
-"PO-Revision-Date: 2023-01-22 19:34+0100\n"
+"PO-Revision-Date: 2024-06-16 11:50+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #: kmanagesieve/session.cpp:89
 #, kde-format
@@ -1303,10 +1303,10 @@ msgstr "Адрес"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:52
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:54
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:textbox"
 msgid "address:"
-msgstr "Адрес:"
+msgstr "адрес:"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:59
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:62
@@ -1337,9 +1337,9 @@ msgid ""
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditioncurrentdate.cpp:21
-#, fuzzy, kde-format
+#, kde-format
 msgid "Currentdate"
-msgstr "CURRENTDATE()"
+msgstr "Currentdate"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditioncurrentdate.cpp:78
 #, kde-format
@@ -1517,10 +1517,10 @@ msgstr "MailBox"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:54
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:52
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Annotations:"
-msgstr "Бележки"
+msgstr "Анотации:"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:119
 #, kde-format
@@ -1538,10 +1538,10 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:31
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Annotation:"
-msgstr "Бележка"
+msgstr "Анотация:"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:81
 #, kde-format
@@ -1789,9 +1789,9 @@ msgid "Bcc"
 msgstr "Скр. копие до"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
-#, fuzzy, kde-format
+#, kde-format
 msgid "Resent From"
-msgstr "(повторно изпращане от %1)"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
 #, fuzzy, kde-format
@@ -1879,7 +1879,7 @@ msgid "Not equal to"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:24
-#, fuzzy, kde-format
+#, kde-format
 msgid "Bytes"
 msgstr "Байтове"
 
@@ -1906,7 +1906,7 @@ msgid "Please select an condition."
 msgstr "Моля, изберете действие."
 
 #: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:30
-#, fuzzy, kde-format
+#, kde-format
 msgid "Sieve Script"
 msgstr "Sieve скрипт"
 
@@ -1982,9 +1982,9 @@ msgid "personal"
 msgstr "Лични"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:44
-#, fuzzy, kde-format
+#, kde-format
 msgid "global"
-msgstr "Глобален"
+msgstr "глобално"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:58
 #, kde-format
@@ -1992,10 +1992,10 @@ msgid "Unknown location type \"%1\" during parsing includes"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:129
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Include:"
-msgstr "Включване"
+msgstr "Включва:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:135
 #: ksieveui/templates/sievetemplateeditdialog.cpp:59
@@ -2247,9 +2247,9 @@ msgid "Save As…"
 msgstr "Запазване като..."
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
-#, fuzzy, kde-format
+#, kde-format
 msgid "Sieve script:"
-msgstr "Sieve скрипт"
+msgstr "Sieve скрипт:"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:56
 #, kde-format
@@ -2336,6 +2336,10 @@ msgid ""
 "------------------------------------------------------------\n"
 "\n"
 msgstr ""
+"------------------------------------------------------------\n"
+"%1\n"
+"------------------------------------------------------------\n"
+"\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:224
 #, kde-format
@@ -2545,8 +2549,7 @@ msgid "Selected text is not a full sieve script"
 msgstr ""
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:264
-#, fuzzy, kde-format
-#| msgid "Parsing error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "Грешка при обработка"
@@ -2559,14 +2562,12 @@ msgid "Check Syntax"
 msgstr "Проверка на синтаксиса"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgid "Import…"
-msgstr "Внасяне..."
+msgstr "Импортиране..."
 
 #: ksieveui/editor/sieveeditorwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Create Rules Graphically..."
+#, kde-format
 msgctxt "@action"
 msgid "Create Rules Graphically…"
 msgstr "Графично създаване на правила..."
@@ -2778,8 +2779,7 @@ msgstr "Деактивиране"
 #: ksieveui/managesievescriptsdialog.cpp:173
 #: ksieveui/managesievescriptsdialog.cpp:262
 #: ksieveui/widgets/managesievewidget.cpp:512
-#, fuzzy, kde-format
-#| msgid "Sieve Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Sieve Грешка"
