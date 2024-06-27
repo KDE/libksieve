@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# g.sora <g.sora@tiscali.it>, 2011, 2012, 2013, 2020, 2021, 2023.
+# SPDX-FileCopyrightText: 2011, 2012, 2013, 2020, 2021, 2023, 2024 g.sora <g.sora@tiscali.it>
 # Giovanni Sora <g.sora@tioscali.it>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-14 00:38+0000\n"
-"PO-Revision-Date: 2023-11-05 21:52+0100\n"
+"PO-Revision-Date: 2024-06-26 11:22+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: kmanagesieve/session.cpp:89
 #, kde-format
@@ -820,7 +820,7 @@ msgstr "Numero de characteres:"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:42
 #, kde-format
 msgid "Stored in variable name:"
-msgstr ""
+msgstr "Immagazinate in nomine de variabile:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:110
 #, kde-format
@@ -1071,7 +1071,7 @@ msgstr "die:"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:57
 #, kde-format
 msgid "Message subject:"
-msgstr ""
+msgstr "Subjecto de message:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:66
 #, kde-format
@@ -1712,7 +1712,7 @@ msgstr "Die de septimana"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
 msgid "Select multiple headers..."
-msgstr ""
+msgstr "Selige capites multiple..."
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
 #, kde-format
@@ -1723,7 +1723,7 @@ msgstr "Capites"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:55
 #, kde-format
 msgid "Add new header:"
-msgstr ""
+msgstr "Adde nove capite:"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:245
 #, kde-format
@@ -1863,7 +1863,7 @@ msgstr "GiB"
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:54
 #, kde-format
 msgid "Please select an condition."
-msgstr ""
+msgstr "Pro favor tu selige un condition."
 
 #: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:30
 #, kde-format
@@ -2525,7 +2525,7 @@ msgstr "Info de servitor"
 #: ksieveui/editor/sieveeditorwidget.cpp:116
 #, kde-format
 msgid "Script name:"
-msgstr ""
+msgstr "Nomine de Script:"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:385
 #, kde-format
@@ -2973,12 +2973,14 @@ msgid ""
 "There is still an active out-of-office reply configured.\n"
 "Do you want to edit it?"
 msgstr ""
+"Il ha ancora un responsa foras de officio configurate.\n"
+"Tu vole modificar lo?"
 
 #: ksieveui/vacation/vacationmanager.cpp:57
 #, kde-format
 msgctxt "@title:window"
 msgid "Out-of-office reply still active"
-msgstr ""
+msgstr "Responsa de Foras de Officio ancora active"
 
 #: ksieveui/vacation/vacationmanager.cpp:58
 #, kde-format
@@ -3008,6 +3010,9 @@ msgid ""
 "no longer able to determine the parameters for the autoreplies. Default "
 "values will be used."
 msgstr ""
+"Alicun (probabilemente tu) modificava le script de vacantias sur le "
+"servitor. KMail non esplus capace a deternminar le parametros per responsas "
+"automatic. Il usara valores predefinite."
 
 #: ksieveui/widgets/custommanagesievewidget.cpp:91
 #, kde-format
@@ -3028,7 +3033,7 @@ msgstr "Scripts disponibile"
 #: ksieveui/widgets/managesievetreeview.cpp:39
 #, kde-format
 msgid "Network down."
-msgstr ""
+msgstr "Rete basse (non functionante)."
 
 #: ksieveui/widgets/managesievewidget.cpp:147
 #, kde-format
@@ -3073,7 +3078,7 @@ msgstr "Nomine vacue non es un nomine valide"
 #: ksieveui/widgets/managesievewidget.cpp:234
 #, kde-format
 msgid "You cannot use protected name."
-msgstr ""
+msgstr "Tu non pote usar nomine protegite."
 
 #: ksieveui/widgets/managesievewidget.cpp:246
 #, kde-format
@@ -3088,7 +3093,7 @@ msgstr "Nomine de Script:"
 #: ksieveui/widgets/managesievewidget.cpp:490
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
-msgstr ""
+msgstr "Vermente dele script \"%1\" ex le servitor?"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
 #, kde-format
@@ -3110,7 +3115,7 @@ msgstr ""
 #: ksieveui/widgets/managesievewidget.cpp:561
 #, kde-format
 msgid "Failed to fetch the list of scripts"
-msgstr ""
+msgstr "Il falleva a reportar le lista de scripts"
 
 #: ksieveui/widgets/moveimapfolderwidget.cpp:24
 #, kde-format
