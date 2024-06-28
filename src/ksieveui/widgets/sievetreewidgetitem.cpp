@@ -16,7 +16,6 @@ SieveTreeWidgetProgress::SieveTreeWidgetProgress(SieveTreeWidgetItem *item, QObj
     : QObject(parent)
     , mItem(item)
 {
-    KIconLoader loader;
     mProgressPix = KPixmapSequenceLoader::load(QStringLiteral("process-working"), KIconLoader::SizeSmallMedium);
     mProgressTimer = new QTimer(this);
     connect(mProgressTimer, &QTimer::timeout, this, &SieveTreeWidgetProgress::slotTimerDone);
