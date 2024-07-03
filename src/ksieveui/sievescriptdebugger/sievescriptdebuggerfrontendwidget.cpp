@@ -59,7 +59,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
 
     mExtension = new QLineEdit(this);
     mExtension->setObjectName(QLatin1StringView("extension"));
-    mExtension->setPlaceholderText(i18n("Activate extension with \"+<name of extension>\", deactivate it with \"-<name of extension>\""));
+    mExtension->setPlaceholderText(i18nc("@info:placeholder", "Activate extension with \"+<name of extension>\", deactivate it with \"-<name of extension>\""));
     mExtension->setClearButtonEnabled(true);
     KLineEditEventHandler::catchReturnKey(mExtension);
 
@@ -91,7 +91,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
 
     mSieveTestResult = new TextCustomEditor::PlainTextEditorWidget(new KSieveUi::SieveScriptDebuggerResultEditor(this), this);
     mSieveTestResult->setObjectName(QLatin1StringView("sievetextresult"));
-    mSieveTestResult->editor()->setPlaceholderText(i18n("Display check script result…"));
+    mSieveTestResult->editor()->setPlaceholderText(i18nc("@info:placeholder", "Display check script result…"));
     mSieveTestResult->setReadOnly(true);
     mSplitter->addWidget(mSieveTestResult);
 

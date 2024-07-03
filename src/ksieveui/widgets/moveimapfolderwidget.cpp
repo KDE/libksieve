@@ -21,7 +21,7 @@ MoveImapFolderWidget::MoveImapFolderWidget(QWidget *parent)
     KLineEditEventHandler::catchReturnKey(mLineEdit);
     mLineEdit->setObjectName(QLatin1StringView("lineedit"));
     mLineEdit->setClearButtonEnabled(true);
-    mLineEdit->setPlaceholderText(i18n("Define Folder"));
+    mLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Define Folder"));
     mainLayout->addWidget(mLineEdit);
     connect(mLineEdit, &QLineEdit::textChanged, this, &MoveImapFolderWidget::textChanged);
 }

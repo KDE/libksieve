@@ -143,7 +143,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     mDebugTextEdit = new TextCustomEditor::PlainTextEditorWidget(this);
     mDebugTextEdit->editor()->setSearchSupport(false);
     mDebugTextEdit->editor()->setReadOnly(true);
-    mDebugTextEdit->editor()->setPlaceholderText(i18n("Show result from \"check syntax\""));
+    mDebugTextEdit->editor()->setPlaceholderText(i18nc("@info:placeholder", "Show result from \"check syntax\""));
     mMainSplitter->addWidget(mTemplateSplitter);
     mMainSplitter->addWidget(mDebugTextEdit);
     mMainSplitter->setChildrenCollapsible(false);

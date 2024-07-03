@@ -12,7 +12,7 @@ using namespace KSieveUi;
 MultiLineEdit::MultiLineEdit(QWidget *parent)
     : TextCustomEditor::PlainTextEditor(parent)
 {
-    setPlaceholderText(i18n("Enter message…"));
+    setPlaceholderText(i18nc("@info:placeholder", "Enter message…"));
     setSearchSupport(false);
     setSizePolicy(QSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::Fixed));
     connect(this, &MultiLineEdit::textChanged, this, &MultiLineEdit::valueChanged);

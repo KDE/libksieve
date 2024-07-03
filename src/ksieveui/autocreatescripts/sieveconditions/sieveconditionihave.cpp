@@ -32,7 +32,7 @@ QWidget *SieveConditionIhave::createParamWidget(QWidget *parent) const
     auto edit = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(edit);
     connect(edit, &QLineEdit::textChanged, this, &SieveConditionIhave::valueChanged);
-    edit->setPlaceholderText(i18n("Use \",\" to separate capabilities"));
+    edit->setPlaceholderText(i18nc("@info:placeholder", "Use \",\" to separate capabilities"));
     edit->setClearButtonEnabled(true);
     lay->addWidget(edit);
     edit->setObjectName(QLatin1StringView("edit"));
