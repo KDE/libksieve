@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2024-06-30 16:55+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1248,12 +1248,16 @@ msgstr ""
 "детайлност за такива ситуации."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Define Email Address…"
+msgctxt "@info:placeholder"
 msgid "Define Email Address…"
 msgstr "Дефиниране на имейл адрес…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Enter message…"
+msgctxt "@info:placeholder"
 msgid "Enter message…"
 msgstr "Въведете съобщение…"
 
@@ -1299,7 +1303,9 @@ msgid "Draft"
 msgstr "Чернова"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Click on button for selecting flags…"
+msgctxt "@info:placeholder"
 msgid "Click on button for selecting flags…"
 msgstr "Щракнете върху бутона за избор на флагове"
 
@@ -1433,7 +1439,9 @@ msgstr "адрес:"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:59
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:62
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use ; to separate emails"
+msgctxt "@info:placeholder"
 msgid "Use ; to separate emails"
 msgstr "Използвайте ; за разделяне на имейли"
 
@@ -1626,7 +1634,9 @@ msgid "IHave"
 msgstr "IHave"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use \",\" to separate capabilities"
+msgctxt "@info:placeholder"
 msgid "Use \",\" to separate capabilities"
 msgstr "Използвайте \",\" за разделяне на варианти"
 
@@ -2722,7 +2732,9 @@ msgid "Editor"
 msgstr "Редактор"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:146
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Show result from \"check syntax\""
+msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "Показване на резултат от \"проверка на синтаксиса\""
 
@@ -3038,7 +3050,11 @@ msgid "Extension:"
 msgstr "Разширение:"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:62
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Activate extension with \"+<name of extension>\", deactivate it with \"-"
+#| "<name of extension>\""
+msgctxt "@info:placeholder"
 msgid ""
 "Activate extension with \"+<name of extension>\", deactivate it with \"-"
 "<name of extension>\""
@@ -3047,7 +3063,9 @@ msgstr ""
 "<name of extension>\""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Display check script result…"
+msgctxt "@info:placeholder"
 msgid "Display check script result…"
 msgstr "Показване на резултат от скрипта за проверка…"
 
@@ -3429,6 +3447,8 @@ msgid "Failed to fetch the list of scripts"
 msgstr "Неуспешно извличане на списъка със скриптове"
 
 #: ksieveui/widgets/moveimapfolderwidget.cpp:24
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Define Folder"
+msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Задаване на папка"

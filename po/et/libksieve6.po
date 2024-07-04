@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2020-06-05 22:48+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1230,12 +1230,14 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
 #, fuzzy, kde-format
 #| msgid "Define Email Address..."
+msgctxt "@info:placeholder"
 msgid "Define Email Address…"
 msgstr "E-posti aadressei määramine ..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
 #, fuzzy, kde-format
 #| msgid "Enter message..."
+msgctxt "@info:placeholder"
 msgid "Enter message…"
 msgstr "Sõnumi kirjutamine ..."
 
@@ -1283,6 +1285,7 @@ msgstr "Mustand"
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
 #, fuzzy, kde-format
 #| msgid "Click on button for selecting flags..."
+msgctxt "@info:placeholder"
 msgid "Click on button for selecting flags…"
 msgstr "Lippude valimiseks klõpsa nupule ..."
 
@@ -1418,7 +1421,9 @@ msgstr "aadress:"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:59
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:62
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use ; to separate emails"
+msgctxt "@info:placeholder"
 msgid "Use ; to separate emails"
 msgstr "Kasuta kirjade eraldamiseks semikoolonit :"
 
@@ -1614,7 +1619,9 @@ msgid "IHave"
 msgstr "MulOn"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use \",\" to separate capabilities"
+msgctxt "@info:placeholder"
 msgid "Use \",\" to separate capabilities"
 msgstr "Kasuta omaduste eraldamiseks semikoolonit :"
 
@@ -2731,7 +2738,9 @@ msgid "Editor"
 msgstr "Redaktor"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:146
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Show result from \"check syntax\""
+msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "Süntaksikontrolli tulemuse näitamine"
 
@@ -3077,7 +3086,11 @@ msgid "Extension:"
 msgstr "Laiend:"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:62
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Activate extension with \"+<name of extension>\", deactivate it with \"-"
+#| "<name of extension>\""
+msgctxt "@info:placeholder"
 msgid ""
 "Activate extension with \"+<name of extension>\", deactivate it with \"-"
 "<name of extension>\""
@@ -3088,6 +3101,7 @@ msgstr ""
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
 #, fuzzy, kde-format
 #| msgid "Display check script result..."
+msgctxt "@info:placeholder"
 msgid "Display check script result…"
 msgstr "Skripti kontrollimise tulemuse näitamine ..."
 
@@ -3497,7 +3511,9 @@ msgid "Failed to fetch the list of scripts"
 msgstr "Skriptide nimekirja tõmbamine nurjus"
 
 #: ksieveui/widgets/moveimapfolderwidget.cpp:24
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Define Folder"
+msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Kataloogi määramine"
 

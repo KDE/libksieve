@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-18 00:40+0000\n"
+"POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2024-06-18 16:05+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1134,12 +1134,16 @@ msgid ""
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Define Email Address…"
+msgctxt "@info:placeholder"
 msgid "Define Email Address…"
 msgstr "Zadejte e-mailovou adresu…"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Enter message…"
+msgctxt "@info:placeholder"
 msgid "Enter message…"
 msgstr "Zadejte zprávu…"
 
@@ -1185,7 +1189,9 @@ msgid "Draft"
 msgstr "Koncept"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Click on button for selecting flags…"
+msgctxt "@info:placeholder"
 msgid "Click on button for selecting flags…"
 msgstr "Kliknutím na toto tlačítko vyberete příznaky…"
 
@@ -1317,6 +1323,7 @@ msgstr "adresa:"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:59
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:62
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Use ; to separate emails"
 msgstr ""
 
@@ -1483,6 +1490,7 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:35
 #, kde-format
+msgctxt "@info:placeholder"
 msgid "Use \",\" to separate capabilities"
 msgstr ""
 
@@ -2530,7 +2538,9 @@ msgid "Editor"
 msgstr "Editor"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:146
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Show result from \"check syntax\""
+msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "Zobrazuji výsledky z \"Zkontrolovat syntaxi\""
 
@@ -2844,13 +2854,16 @@ msgstr "Přípona:"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:62
 #, kde-format
+msgctxt "@info:placeholder"
 msgid ""
 "Activate extension with \"+<name of extension>\", deactivate it with \"-"
 "<name of extension>\""
 msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Display check script result…"
+msgctxt "@info:placeholder"
 msgid "Display check script result…"
 msgstr "Zobrazit výsledky zkoušky skriptu…"
 
@@ -3218,6 +3231,8 @@ msgid "Failed to fetch the list of scripts"
 msgstr ""
 
 #: ksieveui/widgets/moveimapfolderwidget.cpp:24
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Define Folder"
+msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Zadejte složku"
