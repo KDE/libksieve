@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-14 00:38+0000\n"
-"PO-Revision-Date: 2024-05-12 14:21+0300\n"
+"PO-Revision-Date: 2024-07-04 13:55+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -140,7 +140,7 @@ msgstr "Ayrıştırma hatası: Satır İlerletme (CR) olmadan Satır Başı (LF)
 msgid ""
 "Parse error: Unquoted Slash ('/') without Asterisk ('*'). Broken Comment?"
 msgstr ""
-"Ayrıştırma hatası: Çarpım işareti (‘*’) olmadan bölme işareti (‘/’). Hatalı "
+"Ayrıştırma hatası: Çarpım işareti (“*”) olmadan bölme işareti (“/”). Hatalı "
 "yorum satırı mı?"
 
 #: ksieve/error.cpp:99
@@ -182,7 +182,7 @@ msgstr "Ayrıştırma hatası: Geçersiz UTF-8 sıralaması"
 msgid ""
 "Parse error: Premature end of Multiline String (did you forget the '.'?)"
 msgstr ""
-"Ayrıştırma hatası: Çok satırlı dizinin erken sonu (‘.’ işaretini mi "
+"Ayrıştırma hatası: Çok satırlı dizinin erken sonu (“.” işaretini mi "
 "unuttunuz?)"
 
 #: ksieve/error.cpp:122
@@ -190,24 +190,24 @@ msgstr ""
 msgid "Parse error: Premature end of Quoted String (missing closing '\"')"
 msgstr ""
 "Ayrıştırma hatası: Tırnak içine alınmış dizinin zamansız sonu (kayıp kapama "
-"işareti ‘\"’)"
+"işareti “\"”)"
 
 #: ksieve/error.cpp:125
 #, kde-format
 msgid "Parse error: Premature end of String List (missing closing ']')"
 msgstr ""
-"Ayrıştırma hatası: Dizi listesinin erken sonu (kayıp kapama işareti ‘]’)"
+"Ayrıştırma hatası: Dizi listesinin erken sonu (kayıp kapama işareti “]”)"
 
 #: ksieve/error.cpp:128
 #, kde-format
 msgid "Parse error: Premature end of Test List (missing closing ')')"
 msgstr ""
-"Ayrıştırma hatası: Sınama listesinin erken sonu (kayıp kapama işareti ‘)’)"
+"Ayrıştırma hatası: Sınama listesinin erken sonu (kayıp kapama işareti “)”)"
 
 #: ksieve/error.cpp:131
 #, kde-format
 msgid "Parse error: Premature end of Block (missing closing '}')"
-msgstr "Ayrıştırma hatası: Öbeğin erken sonu (kayıp kapama işareti ‘}’)"
+msgstr "Ayrıştırma hatası: Öbeğin erken sonu (kayıp kapama işareti “}”)"
 
 #: ksieve/error.cpp:134
 #, kde-format
@@ -217,12 +217,12 @@ msgstr "Ayrıştırma hatası: Kayıp Boşluk"
 #: ksieve/error.cpp:137
 #, kde-format
 msgid "Parse error: Missing ';' or Block"
-msgstr "Ayrıştırma hatası: Kayıp ‘;’ veya öbek"
+msgstr "Ayrıştırma hatası: Kayıp “;” veya öbek"
 
 #: ksieve/error.cpp:140
 #, kde-format
 msgid "Parse error: Expected ';' or '{', got something else"
-msgstr "Ayrıştırma hatası: ‘;’ veya ‘{’, bekleniyordu, başka bir şey alındı"
+msgstr "Ayrıştırma hatası: “;” veya “{”, bekleniyordu, başka bir şey alındı"
 
 #: ksieve/error.cpp:143 ksieve/error.cpp:158
 #, kde-format
@@ -246,12 +246,12 @@ msgstr ""
 #: ksieve/error.cpp:152
 #, kde-format
 msgid "Parse error: Missing ',' between Strings in String List"
-msgstr "Ayrıştırma hatası: Dizi listesindeki diziler arasında kayıp ‘,’"
+msgstr "Ayrıştırma hatası: Dizi listesindeki diziler arasında kayıp “,”"
 
 #: ksieve/error.cpp:155
 #, kde-format
 msgid "Parse error: Missing ',' between Tests in Test List"
-msgstr "Ayrıştırma hatası: Sınama listesindeki sınamalar arasında kayıp ‘,’"
+msgstr "Ayrıştırma hatası: Sınama listesindeki sınamalar arasında kayıp “,”"
 
 #: ksieve/error.cpp:161
 #, kde-format

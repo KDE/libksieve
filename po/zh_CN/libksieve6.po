@@ -1280,7 +1280,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:62
 #, kde-format
 msgid "Use ; to separate emails"
-msgstr "使用“;”来分隔电子邮件地址"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:95
 #, kde-format
@@ -2470,7 +2470,7 @@ msgstr "编辑"
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:146
 #, kde-format
 msgid "Show result from \"check syntax\""
-msgstr "显示来自“检查语法”的结果"
+msgstr ""
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:234
 #, kde-format
