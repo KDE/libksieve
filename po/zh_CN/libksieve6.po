@@ -1307,11 +1307,10 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:59
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:62
-#, fuzzy, kde-format
-#| msgid "Use ; to separate emails"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Use ; to separate emails"
-msgstr "使用“;”来分隔电子邮件地址"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:95
 #, kde-format
@@ -1482,11 +1481,10 @@ msgid "IHave"
 msgstr "我有"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:35
-#, fuzzy, kde-format
-#| msgid "Use ; to separate emails"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Use \",\" to separate capabilities"
-msgstr "使用“;”来分隔电子邮件地址"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:68
 #, kde-format
@@ -2526,11 +2524,10 @@ msgid "Editor"
 msgstr "编辑"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:146
-#, fuzzy, kde-format
-#| msgid "Show result from \"check syntax\""
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
-msgstr "显示来自“检查语法”的结果"
+msgstr ""
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:234
 #, kde-format
@@ -3213,8 +3210,7 @@ msgid "Failed to fetch the list of scripts"
 msgstr "未能获取脚本列表"
 
 #: ksieveui/widgets/moveimapfolderwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Create folder"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Define Folder"
-msgstr "创建文件夹"
+msgstr ""

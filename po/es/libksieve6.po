@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-06-18 23:07+0200\n"
+"PO-Revision-Date: 2024-07-05 02:17+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1257,15 +1257,13 @@ msgstr ""
 "granularidad en esas situaciones."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
-#, fuzzy, kde-format
-#| msgid "Define Email Address…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Define Email Address…"
-msgstr "Define dirección de correo..."
+msgstr "Definir dirección de correo..."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/multilineedit.cpp:15
-#, fuzzy, kde-format
-#| msgid "Enter message…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Enter message…"
 msgstr "Introducir mensaje..."
@@ -1312,8 +1310,7 @@ msgid "Draft"
 msgstr "Borrador"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
-#, fuzzy, kde-format
-#| msgid "Click on button for selecting flags…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Click on button for selecting flags…"
 msgstr "Pulse el botón para seleccionar indicadores..."
@@ -1448,11 +1445,10 @@ msgstr "dirección:"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:59
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:62
-#, fuzzy, kde-format
-#| msgid "Use ; to separate emails"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Use ; to separate emails"
-msgstr "Uso: para separar correos"
+msgstr "Usar «;» para separar correos"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:95
 #, kde-format
@@ -1644,8 +1640,7 @@ msgid "IHave"
 msgstr "Tengo"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:35
-#, fuzzy, kde-format
-#| msgid "Use \",\" to separate capabilities"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Use \",\" to separate capabilities"
 msgstr "Usar «,» para separar capacidades"
@@ -2743,11 +2738,10 @@ msgid "Editor"
 msgstr "Editor"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:146
-#, fuzzy, kde-format
-#| msgid "Show result from \"check syntax\""
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
-msgstr "Mostrar resultados desde «comprobar sintáxis»"
+msgstr "Mostrar resultados de «comprobar sintáxis»"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:234
 #, kde-format
@@ -3060,21 +3054,17 @@ msgid "Extension:"
 msgstr "Extensión:"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid ""
-#| "Activate extension with \"+<name of extension>\", deactivate it with \"-"
-#| "<name of extension>\""
+#, kde-format
 msgctxt "@info:placeholder"
 msgid ""
 "Activate extension with \"+<name of extension>\", deactivate it with \"-"
 "<name of extension>\""
 msgstr ""
-"Activar extensión con «+<nombre de la extensión>», desactivarla con «-"
+"Active la extensión con «+<nombre de la extensión>»; desactívela con «-"
 "<nombre de la extensión>»"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
-#, fuzzy, kde-format
-#| msgid "Display check script result…"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Display check script result…"
 msgstr "Mostrar resultado de la comprobación del guion..."
@@ -3457,8 +3447,7 @@ msgid "Failed to fetch the list of scripts"
 msgstr "Ha fallado al obtener la lista de guiones"
 
 #: ksieveui/widgets/moveimapfolderwidget.cpp:24
-#, fuzzy, kde-format
-#| msgid "Define Folder"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Definir carpeta"
