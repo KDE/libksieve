@@ -162,7 +162,6 @@ void MultiImapVacationDialog::slotSearchServerWithVacationSupportFinished(const 
     } else { // Empty
         d->mStackedWidget->setCurrentIndex(1);
         mButtonBox->setStandardButtons(QDialogButtonBox::Close);
-        connect(mButtonBox, &QDialogButtonBox::accepted, this, &MultiImapVacationDialog::slotOkClicked);
         connect(mButtonBox, &QDialogButtonBox::rejected, this, &MultiImapVacationDialog::slotCanceled);
     }
     if (d->mTabWidget->count() <= 1) {
