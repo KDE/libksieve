@@ -35,9 +35,9 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *g
     mConditions = new QGroupBox(i18n("Conditions"), this);
     auto vbox = new QVBoxLayout;
 
-    mAllMessageRBtn = new QRadioButton(i18n("Match all messages"), this);
-    mMatchAll = new QRadioButton(i18n("Match a&ll of the following"), this);
-    mMatchAny = new QRadioButton(i18n("Match an&y of the following"), this);
+    mAllMessageRBtn = new QRadioButton(i18nc("@option:radio", "Match all messages"), this);
+    mMatchAll = new QRadioButton(i18nc("@option:radio", "Match a&ll of the following"), this);
+    mMatchAny = new QRadioButton(i18nc("@option:radio", "Match an&y of the following"), this);
 
     vbox->addWidget(mMatchAll);
     vbox->addWidget(mMatchAny);
