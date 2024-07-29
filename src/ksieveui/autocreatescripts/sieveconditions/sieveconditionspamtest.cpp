@@ -34,7 +34,7 @@ QWidget *SieveConditionSpamTest::createParamWidget(QWidget *parent) const
     w->setLayout(lay);
 
     if (mHasSpamTestPlusSupport) {
-        auto percent = new QCheckBox(i18n("Percent"));
+        auto percent = new QCheckBox(i18nc("@option:check", "Percent"));
         percent->setObjectName(QLatin1StringView("percent"));
         connect(percent, &QCheckBox::toggled, this, &SieveConditionSpamTest::valueChanged);
         lay->addWidget(percent);

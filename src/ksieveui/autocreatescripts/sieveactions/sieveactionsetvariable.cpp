@@ -39,7 +39,7 @@ QWidget *SieveActionSetVariable::createParamWidget(QWidget *parent) const
     grid->addWidget(modifier, 0, 0);
 
     if (mHasRegexCapability) {
-        auto protectAgainstUseRegexp = new QCheckBox(i18n("Protect special character"));
+        auto protectAgainstUseRegexp = new QCheckBox(i18nc("@option:check", "Protect special character"));
         connect(protectAgainstUseRegexp, &QCheckBox::clicked, this, &SieveActionSetVariable::valueChanged);
         protectAgainstUseRegexp->setObjectName(QLatin1StringView("regexprotect"));
         grid->addWidget(protectAgainstUseRegexp, 0, 1);

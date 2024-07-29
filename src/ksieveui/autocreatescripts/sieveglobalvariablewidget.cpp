@@ -62,7 +62,7 @@ void SieveGlobalVariableActionWidget::initWidget()
     connect(mVariableName, &QLineEdit::textChanged, this, &SieveGlobalVariableActionWidget::valueChanged);
     mLayout->addWidget(mVariableName, 1, 1);
 
-    mSetValueTo = new QCheckBox(i18n("Set value to:"), this);
+    mSetValueTo = new QCheckBox(i18nc("@option:check", "Set value to:"), this);
     connect(mSetValueTo, &QCheckBox::toggled, this, &SieveGlobalVariableActionWidget::valueChanged);
     mLayout->addWidget(mSetValueTo, 1, 2);
     mSetValueTo->setChecked(false);

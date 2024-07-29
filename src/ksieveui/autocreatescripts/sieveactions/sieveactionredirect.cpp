@@ -32,13 +32,13 @@ QWidget *SieveActionRedirect::createParamWidget(QWidget *parent) const
     lay->setContentsMargins({});
     w->setLayout(lay);
     if (mHasCopySupport) {
-        auto copy = new QCheckBox(i18n("Keep a copy"));
+        auto copy = new QCheckBox(i18nc("@option:check", "Keep a copy"));
         copy->setObjectName(QLatin1StringView("copy"));
         connect(copy, &QCheckBox::clicked, this, &SieveActionRedirect::valueChanged);
         lay->addWidget(copy);
     }
     if (mHasListSupport) {
-        auto list = new QCheckBox(i18n("Use list"));
+        auto list = new QCheckBox(i18nc("@option:check", "Use list"));
         list->setObjectName(QLatin1StringView("list"));
         connect(list, &QCheckBox::clicked, this, &SieveActionRedirect::valueChanged);
         lay->addWidget(list);

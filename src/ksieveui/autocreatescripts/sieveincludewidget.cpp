@@ -141,11 +141,11 @@ void SieveIncludeActionWidget::initWidget()
     connect(mIncludeFileName, &QLineEdit::textChanged, this, &SieveIncludeActionWidget::valueChanged);
     mLayout->addWidget(mIncludeFileName, 1, 3);
 
-    mOptional = new QCheckBox(i18n("Optional"), this);
+    mOptional = new QCheckBox(i18nc("@option:check", "Optional"), this);
     connect(mOptional, &QCheckBox::toggled, this, &SieveIncludeActionWidget::valueChanged);
     mLayout->addWidget(mOptional, 1, 4);
 
-    mOnce = new QCheckBox(i18n("Once"), this);
+    mOnce = new QCheckBox(i18nc("@option:check", "Once"), this);
     connect(mOnce, &QCheckBox::toggled, this, &SieveIncludeActionWidget::valueChanged);
     mLayout->addWidget(mOnce, 1, 5);
 

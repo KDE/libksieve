@@ -53,7 +53,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
 
     // Activate checkbox:
     ++row;
-    mActiveCheck = new QCheckBox(i18n("&Activate vacation notifications"), this);
+    mActiveCheck = new QCheckBox(i18nc("@option:check", "&Activate vacation notifications"), this);
     mActiveCheck->setObjectName(QLatin1StringView("mActiveCheck"));
     glay->addWidget(mActiveCheck, row, 0, 1, 2);
     connect(mActiveCheck, &QCheckBox::clicked, this, &VacationEditWidget::setWasChanged);
@@ -207,7 +207,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
 
     // "Send responses also to SPAM mail" checkbox:
     ++row;
-    mSpamCheck = new QCheckBox(i18n("Do not send vacation replies to spam messages"), this);
+    mSpamCheck = new QCheckBox(i18nc("@option:check", "Do not send vacation replies to spam messages"), this);
     mSpamCheck->setObjectName(QLatin1StringView("mSpamCheck"));
     mSpamCheck->setChecked(true);
     glay->addWidget(mSpamCheck, row, 0, 1, 2);
@@ -215,7 +215,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
 
     //  domain checkbox and linedit:
     ++row;
-    mDomainCheck = new QCheckBox(i18n("Only react to mail coming from domain:"), this);
+    mDomainCheck = new QCheckBox(i18nc("@option:check", "Only react to mail coming from domain:"), this);
     mDomainCheck->setObjectName(QLatin1StringView("mDomainCheck"));
     mDomainCheck->setChecked(false);
     connect(mDomainCheck, &QCheckBox::clicked, this, &VacationEditWidget::setWasChanged);

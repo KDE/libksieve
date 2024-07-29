@@ -93,13 +93,13 @@ QWidget *SieveActionFileInto::createParamWidget(QWidget *parent) const
     lay->setContentsMargins({});
 
     if (mHasCopySupport) {
-        auto copy = new QCheckBox(i18n("Keep a copy"));
+        auto copy = new QCheckBox(i18nc("@option:check", "Keep a copy"));
         copy->setObjectName(QLatin1StringView("copy"));
         lay->addWidget(copy);
         connect(copy, &QCheckBox::clicked, this, &SieveActionFileInto::valueChanged);
     }
     if (mHasMailBoxSupport) {
-        auto create = new QCheckBox(i18n("Create folder"));
+        auto create = new QCheckBox(i18nc("@option:check", "Create folder"));
         create->setObjectName(QLatin1StringView("create"));
         connect(create, &QCheckBox::clicked, this, &SieveActionFileInto::valueChanged);
         lay->addWidget(create);

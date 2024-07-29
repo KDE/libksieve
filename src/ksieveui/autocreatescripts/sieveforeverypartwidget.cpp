@@ -27,7 +27,7 @@ using namespace KSieveUi;
 
 SieveForEveryPartWidget::SieveForEveryPartWidget(QWidget *parent)
     : SieveWidgetPageAbstract(parent)
-    , mForLoop(new QCheckBox(i18n("Add ForEveryPart loop"), this))
+    , mForLoop(new QCheckBox(i18nc("@option:check", "Add ForEveryPart loop"), this))
     , mName(new LineEditValidator(this))
     , mHelpButton(new SieveHelpButton(this))
 {
