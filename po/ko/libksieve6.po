@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-02-10 00:17+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -889,12 +889,16 @@ msgstr "\"fileinto\" 동작은 \"copy\" 인자가 있지만 서버에서 지원�
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:96
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep a copy"
+msgctxt "@option:check"
 msgid "Keep a copy"
 msgstr "복사본 유지"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create folder"
+msgctxt "@option:check"
 msgid "Create folder"
 msgstr "폴더 만들기"
 
@@ -973,7 +977,9 @@ msgid "Redirect"
 msgstr "방향 전환"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:41
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use list"
+msgctxt "@option:check"
 msgid "Use list"
 msgstr "목록 사용"
 
@@ -1081,7 +1087,9 @@ msgid "Variable"
 msgstr "변수"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Protect special character"
+msgctxt "@option:check"
 msgid "Protect special character"
 msgstr "특수 문자 보호"
 
@@ -1743,7 +1751,9 @@ msgid "Spam Test"
 msgstr "스팸 테스트"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Percent"
+msgctxt "@option:check"
 msgid "Percent"
 msgstr "비율"
 
@@ -2073,7 +2083,9 @@ msgid "Do Not Switch"
 msgstr "변경하지 않음"
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add ForEveryPart loop"
+msgctxt "@option:check"
 msgid "Add ForEveryPart loop"
 msgstr "ForEveryPart 반복 추가"
 
@@ -2105,7 +2117,9 @@ msgid "Variable name:"
 msgstr "변수 이름:"
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Set value to:"
+msgctxt "@option:check"
 msgid "Set value to:"
 msgstr "변수 값 설정:"
 
@@ -2157,12 +2171,16 @@ msgid "Name:"
 msgstr "이름:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:144
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Optional"
+msgctxt "@option:check"
 msgid "Optional"
 msgstr "선택 사항"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:148
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Once"
+msgctxt "@option:check"
 msgid "Once"
 msgstr "한 번"
 
@@ -2189,17 +2207,23 @@ msgid "Conditions"
 msgstr "조건"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Match all messages"
+msgctxt "@option:radio"
 msgid "Match all messages"
 msgstr "모든 메시지 일치"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Match a&ll of the following"
+msgctxt "@option:radio"
 msgid "Match a&ll of the following"
 msgstr "다음 항목 모두에 일치(&L)"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Match an&y of the following"
+msgctxt "@option:radio"
 msgid "Match an&y of the following"
 msgstr "다음 항목 중 하나 이상에 일치(&Y)"
 
@@ -3241,7 +3265,9 @@ msgid "Configure vacation notifications to be sent:"
 msgstr "보낼 부재 중 알림 설정:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Activate vacation notifications"
+msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr "부재 중 알림 활성화(&A)"
 
@@ -3295,12 +3321,16 @@ msgid "&Action for incoming mails:"
 msgstr "들어오는 이메일에 대한 동작(&A):"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:210
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do not send vacation replies to spam messages"
+msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "스팸 메시지에 응답 보내지 않기"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:218
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Only react to mail coming from domain:"
+msgctxt "@option:check"
 msgid "Only react to mail coming from domain:"
 msgstr "다음 도메인에서 수신된 메시지에만 반응함:"
 

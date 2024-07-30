@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2023-11-22 18:50+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -932,12 +932,16 @@ msgstr "Fileinto-toiminnolla on copy-parametri, jota nykyinen palvelin ei tue "
 # Tämä näyttäisi olevan sieve-komennon parametrin selitys, jonka voi vapaasti suomentaa.
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:96
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:35
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Keep a copy"
+msgctxt "@option:check"
 msgid "Keep a copy"
 msgstr "Säilytä kopio"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:102
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Create folder"
+msgctxt "@option:check"
 msgid "Create folder"
 msgstr "Luo kansio"
 
@@ -1024,7 +1028,9 @@ msgstr "Edennä (redirect)"
 
 # Tämä näyttäisi olevan sieve-komennon parametrin selitys, jonka voi vapaasti suomentaa.
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:41
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use list"
+msgctxt "@option:check"
 msgid "Use list"
 msgstr "Käytä luetteloa"
 
@@ -1150,7 +1156,9 @@ msgid "Variable"
 msgstr "Muuttuja"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:42
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Protect special character"
+msgctxt "@option:check"
 msgid "Protect special character"
 msgstr "Suojaa erikoismerkki"
 
@@ -1828,7 +1836,9 @@ msgid "Spam Test"
 msgstr "Roskapostitesti"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:37
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Percent"
+msgctxt "@option:check"
 msgid "Percent"
 msgstr "Prosentti"
 
@@ -2158,7 +2168,9 @@ msgid "Do Not Switch"
 msgstr "Älä vaihda"
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:30
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add ForEveryPart loop"
+msgctxt "@option:check"
 msgid "Add ForEveryPart loop"
 msgstr "Lisää ForEveryPart-silmukka"
 
@@ -2191,7 +2203,9 @@ msgid "Variable name:"
 msgstr "Muuttujan nimi:"
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:65
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Set value to:"
+msgctxt "@option:check"
 msgid "Set value to:"
 msgstr "Aseta arvoksi:"
 
@@ -2243,12 +2257,16 @@ msgid "Name:"
 msgstr "Nimi:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:144
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Optional"
+msgctxt "@option:check"
 msgid "Optional"
 msgstr "Valinnainen"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:148
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Once"
+msgctxt "@option:check"
 msgid "Once"
 msgstr "Kerran"
 
@@ -2275,17 +2293,23 @@ msgid "Conditions"
 msgstr "Ehdot"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Match all messages"
+msgctxt "@option:radio"
 msgid "Match all messages"
 msgstr "Täsmää kaikkiin viesteihin"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:39
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Match a&ll of the following"
+msgctxt "@option:radio"
 msgid "Match a&ll of the following"
 msgstr "Täsmää k&aikkiin alla oleviin"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:40
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Match an&y of the following"
+msgctxt "@option:radio"
 msgid "Match an&y of the following"
 msgstr "Täsmää &mihin tahansa alla olevaan"
 
@@ -3330,7 +3354,9 @@ msgid "Configure vacation notifications to be sent:"
 msgstr "Määritä poissaoloilmoitukset lähetettäväksi:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:56
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Activate vacation notifications"
+msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr "&Aktivoi poissaoloilmoitukset"
 
@@ -3385,12 +3411,16 @@ msgid "&Action for incoming mails:"
 msgstr "Toiminto &saapuvalle postille:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:210
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Do not send vacation replies to spam messages"
+msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "Älä vastaa poissaoloviestillä roskapostiin"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:218
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Only react to mail coming from domain:"
+msgctxt "@option:check"
 msgid "Only react to mail coming from domain:"
 msgstr "Reagoi viesteihin vain toimialueelta:"
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-04 00:39+0000\n"
+"POT-Creation-Date: 2024-07-30 00:42+0000\n"
 "PO-Revision-Date: 2024-03-27 21:54+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -811,11 +811,13 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:96
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:35
 #, kde-format
+msgctxt "@option:check"
 msgid "Keep a copy"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:102
 #, kde-format
+msgctxt "@option:check"
 msgid "Create folder"
 msgstr ""
 
@@ -885,6 +887,7 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:41
 #, kde-format
+msgctxt "@option:check"
 msgid "Use list"
 msgstr ""
 
@@ -979,6 +982,7 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:42
 #, kde-format
+msgctxt "@option:check"
 msgid "Protect special character"
 msgstr ""
 
@@ -1565,6 +1569,7 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:37
 #, kde-format
+msgctxt "@option:check"
 msgid "Percent"
 msgstr ""
 
@@ -1885,6 +1890,7 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:30
 #, kde-format
+msgctxt "@option:check"
 msgid "Add ForEveryPart loop"
 msgstr ""
 
@@ -1914,6 +1920,7 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:65
 #, kde-format
+msgctxt "@option:check"
 msgid "Set value to:"
 msgstr ""
 
@@ -1961,11 +1968,13 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:144
 #, kde-format
+msgctxt "@option:check"
 msgid "Optional"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:148
 #, kde-format
+msgctxt "@option:check"
 msgid "Once"
 msgstr ""
 
@@ -1990,16 +1999,19 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
 #, kde-format
+msgctxt "@option:radio"
 msgid "Match all messages"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:39
 #, kde-format
+msgctxt "@option:radio"
 msgid "Match a&ll of the following"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:40
 #, kde-format
+msgctxt "@option:radio"
 msgid "Match an&y of the following"
 msgstr ""
 
@@ -2949,6 +2961,7 @@ msgstr ""
 
 #: ksieveui/vacation/vacationeditwidget.cpp:56
 #, kde-format
+msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr ""
 
@@ -2998,11 +3011,13 @@ msgstr ""
 
 #: ksieveui/vacation/vacationeditwidget.cpp:210
 #, kde-format
+msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr ""
 
 #: ksieveui/vacation/vacationeditwidget.cpp:218
 #, kde-format
+msgctxt "@option:check"
 msgid "Only react to mail coming from domain:"
 msgstr ""
 
