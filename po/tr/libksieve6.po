@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-30 00:42+0000\n"
-"PO-Revision-Date: 2024-07-04 13:55+0300\n"
+"PO-Revision-Date: 2024-07-30 19:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -905,15 +905,13 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:96
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:35
-#, fuzzy, kde-format
-#| msgid "Keep a copy"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep a copy"
-msgstr "Bir kopyasını sakla"
+msgstr "Bir kopyasını tut"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:102
-#, fuzzy, kde-format
-#| msgid "Create folder"
+#, kde-format
 msgctxt "@option:check"
 msgid "Create folder"
 msgstr "Klasör oluştur"
@@ -994,11 +992,10 @@ msgid "Redirect"
 msgstr "Yeniden yönlendir"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:41
-#, fuzzy, kde-format
-#| msgid "Use list"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use list"
-msgstr "Listeyi kullan"
+msgstr "Liste kullan"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:139
 #, kde-format
@@ -1108,8 +1105,7 @@ msgid "Variable"
 msgstr "Değişken"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:42
-#, fuzzy, kde-format
-#| msgid "Protect special character"
+#, kde-format
 msgctxt "@option:check"
 msgid "Protect special character"
 msgstr "Özel karakteri koru"
@@ -1757,8 +1753,7 @@ msgid "Spam Test"
 msgstr "İstenmeyen Posta Sınaması"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:37
-#, fuzzy, kde-format
-#| msgid "Percent"
+#, kde-format
 msgctxt "@option:check"
 msgid "Percent"
 msgstr "Yüzde"
@@ -2084,8 +2079,7 @@ msgid "Do Not Switch"
 msgstr "Geçme"
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "Add ForEveryPart loop"
+#, kde-format
 msgctxt "@option:check"
 msgid "Add ForEveryPart loop"
 msgstr "HerParçaİçin döngüsü ekle"
@@ -2117,8 +2111,7 @@ msgid "Variable name:"
 msgstr "Değişken adı:"
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Set value to:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Set value to:"
 msgstr "Ayarlanacak değer:"
@@ -2169,18 +2162,16 @@ msgid "Name:"
 msgstr "Ad:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:144
-#, fuzzy, kde-format
-#| msgid "Optional"
+#, kde-format
 msgctxt "@option:check"
 msgid "Optional"
-msgstr "İsteğe bağlı"
+msgstr "İsteğe bağlı"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Once"
+#, kde-format
 msgctxt "@option:check"
 msgid "Once"
-msgstr "Bir defa"
+msgstr "Bir kez"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:220
 #, kde-format
@@ -2205,22 +2196,19 @@ msgid "Conditions"
 msgstr "Durumlar"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
-#, fuzzy, kde-format
-#| msgid "Match all messages"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Match all messages"
 msgstr "Tüm iletileri eşleştir"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Match a&ll of the following"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Match a&ll of the following"
 msgstr "Aşağıdaki&lerin tümüyle eşleştir"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Match an&y of the following"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Match an&y of the following"
 msgstr "Aşağıdakilerin herh&angi biriyle eşleştir"
@@ -3203,11 +3191,10 @@ msgid "Configure vacation notifications to be sent:"
 msgstr "Gönderilecek tatil bildirimlerini yapılandır:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:56
-#, fuzzy, kde-format
-#| msgid "&Activate vacation notifications"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Activate vacation notifications"
-msgstr "Tatil uyarılarını &etkinleştir"
+msgstr "Tatil bildirimlerini &etkinleştir"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:76
 #, kde-format
@@ -3254,18 +3241,16 @@ msgid "&Action for incoming mails:"
 msgstr "Gelen postalar için &eylem:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:210
-#, fuzzy, kde-format
-#| msgid "Do not send vacation replies to spam messages"
+#, kde-format
 msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "İstenmeyen iletilere tatil yanıtları gönderme"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:218
-#, fuzzy, kde-format
-#| msgid "Only react to mail coming from domain:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Only react to mail coming from domain:"
-msgstr "Yalnızca bu alandan gelen iletilere tepki ver:"
+msgstr "Yalnızca bu etki alanından gelen iletilere tepki ver:"
 
 #: ksieveui/vacation/vacationmanager.cpp:55
 #, kde-format
