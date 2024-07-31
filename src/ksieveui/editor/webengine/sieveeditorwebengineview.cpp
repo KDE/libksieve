@@ -44,7 +44,7 @@ SieveEditorWebEngineView::~SieveEditorWebEngineView() = default;
 
 void SieveEditorWebEngineView::downloadRequested(QWebEngineDownloadRequest *download)
 {
-    const QString filename = QFileDialog::getSaveFileName(this, i18n("Save Web Page"));
+    const QString filename = QFileDialog::getSaveFileName(this, i18nc("@title:window", "Save Web Page"));
     if (!filename.isEmpty()) {
         download->setSavePageFormat(QWebEngineDownloadRequest::SingleHtmlSaveFormat);
         download->setDownloadDirectory(QFileInfo(filename).path());

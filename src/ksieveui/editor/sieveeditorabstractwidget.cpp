@@ -71,7 +71,7 @@ void SieveEditorAbstractWidget::slotImport()
                                     "\"%2\" is the detailed error description.",
                                     fileNames.at(0),
                                     QString::fromLocal8Bit(strerror(errno))),
-                               i18n("Sieve Editor Error"));
+                               i18nc("@title:window", "Sieve Editor Error"));
         }
     }
     delete fdlg;
