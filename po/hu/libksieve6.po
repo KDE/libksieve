@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-03-19 11:33+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -2696,7 +2696,9 @@ msgstr ""
 "Részletes hibaleírás: „%2”"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Editor Error"
+msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "Sieve-szerkesztő hiba"
 
@@ -3022,7 +3024,9 @@ msgid "Phrase not found"
 msgstr "A kifejezés nem található"
 
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Web Page"
+msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr "Weboldal mentése"
 

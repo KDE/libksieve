@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2014-01-31 19:22+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -2736,7 +2736,9 @@ msgstr ""
 "\"%2\" je detaljan opis greške."
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Editor Error"
+msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "Greška Sieve uređivača"
 
@@ -3065,6 +3067,7 @@ msgstr ""
 
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
 #, kde-format
+msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr ""
 

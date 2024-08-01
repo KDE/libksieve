@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2013-04-13 16:36+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -2476,9 +2476,11 @@ msgid ""
 msgstr ""
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Error"
+msgctxt "@title:window"
 msgid "Sieve Editor Error"
-msgstr ""
+msgstr "सीव्ह त्रुटी"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:50
 #, kde-format
@@ -2789,6 +2791,7 @@ msgstr ""
 
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
 #, kde-format
+msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr ""
 

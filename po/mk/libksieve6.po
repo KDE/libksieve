@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2006-04-30 01:27+0200\n"
 "Last-Translator: Viktor Stojanovski <viktor@lugola.net>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -2423,6 +2423,7 @@ msgstr ""
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
 #, kde-format
+msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr ""
 
@@ -2718,6 +2719,7 @@ msgstr ""
 
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
 #, kde-format
+msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-05-30 04:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2526,7 +2526,9 @@ msgstr ""
 "%2 為詳細的錯誤描述。"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Editor Error"
+msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "過濾編輯器發生錯誤"
 
@@ -2822,7 +2824,9 @@ msgid "Phrase not found"
 msgstr "找不到該片語"
 
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Web Page"
+msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr "儲存網頁"
 

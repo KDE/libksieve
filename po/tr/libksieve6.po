@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-07-30 19:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -2610,7 +2610,9 @@ msgstr ""
 "“%2” ayrıntılı hata tanımlamasıdır."
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Editor Error"
+msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "Sieve Düzenleyicisi Hatası"
 
@@ -2907,7 +2909,9 @@ msgid "Phrase not found"
 msgstr "Deyiş bulunamadı"
 
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Web Page"
+msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr "Web Sayfasını Kaydet"
 

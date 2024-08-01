@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-30 00:42+0000\n"
+"POT-Creation-Date: 2024-08-01 00:41+0000\n"
 "PO-Revision-Date: 2024-02-10 00:17+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2634,7 +2634,9 @@ msgstr ""
 "자세한 오류 설명은 \"%2\"입니다."
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Sieve Editor Error"
+msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "Sieve 편집기 오류"
 
@@ -2959,7 +2961,9 @@ msgid "Phrase not found"
 msgstr "검색어를 찾을 수 없음"
 
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Save Web Page"
+msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr "웹 페이지 저장"
 
