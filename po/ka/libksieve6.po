@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 06:47+0200\n"
+"PO-Revision-Date: 2024-08-01 05:59+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2420,7 +2420,7 @@ msgstr "შენახვა, როგორც…"
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
 #, kde-format
 msgid "Sieve script:"
-msgstr "Sieve -ის სკრიპტი:"
+msgstr "Sieve-ის სკრიპტი:"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:56
 #, kde-format
@@ -2555,7 +2555,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Sieve Script"
-msgstr "Sieve -ის სკრიპტის ჩასწორება"
+msgstr "Sieve-ის სკრიპტის ჩასწორება"
 
 #: ksieveui/editor/sieveeditor.cpp:182
 #, kde-format
@@ -2577,7 +2577,7 @@ msgstr "არ დახურო"
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:28
 #, kde-format
 msgid "Sieve Files (*.siv);;All Files (*)"
-msgstr "Sieve -ის ფაილები (*.siv);;ყველა ფაილი (*)"
+msgstr "Sieve-ის ფაილები (*.siv);;ყველა ფაილი (*)"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:29
 #, kde-format
@@ -2605,7 +2605,7 @@ msgstr "*.siv;;sieve-ის ფაილები (*.siv);;ყველა ფ�
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Script Sieve"
-msgstr "Sieve -ის სკრიპტის შემოტანა"
+msgstr "Sieve-ის სკრიპტის შემოტანა"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:70
 #, kde-format
@@ -2617,11 +2617,10 @@ msgstr ""
 "\"%2\" დეტალური შეცდომის აღწერაა."
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Sieve Editor Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Editor Error"
-msgstr "Sieve -ის რედაქტორის შეცდომა"
+msgstr "Sieve-ის რედაქტორის შეცდომა"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:50
 #, kde-format
@@ -2916,8 +2915,7 @@ msgid "Phrase not found"
 msgstr "ფრაზა ვერ ვიპოვე"
 
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
-#, fuzzy, kde-format
-#| msgid "Save Web Page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr "ვებგვერდის შენახვა"
@@ -2958,7 +2956,7 @@ msgstr "დეაქტივაცია"
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
-msgstr "Sieve -ის შეცდომა"
+msgstr "Sieve-ის შეცდომა"
 
 #: ksieveui/managesievescriptsdialog.cpp:206
 #, kde-format
@@ -2974,7 +2972,7 @@ msgstr "Sieve-ის სკრიპტი წარმატებით აი
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
-msgstr "Sieve -ის სკრიპტის ატვირთვა"
+msgstr "Sieve-ის სკრიპტის ატვირთვა"
 
 #: ksieveui/managesievescriptsdialog.cpp:259
 #, kde-format
@@ -3361,7 +3359,7 @@ msgstr "ახალი სკრიპტი…"
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format
 msgid "New Sieve Script"
-msgstr "ახალი Sieve -ის სკრიპტი"
+msgstr "ახალი Sieve-ის სკრიპტი"
 
 #: ksieveui/widgets/managesievewidget.cpp:224
 #, kde-format

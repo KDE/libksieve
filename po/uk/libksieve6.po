@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 15:50+0300\n"
+"PO-Revision-Date: 2024-08-01 20:29+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -2637,8 +2637,7 @@ msgstr ""
 "Докладний опис помилки: «%2»."
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Sieve Editor Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "Помилка редактора"
@@ -2936,11 +2935,10 @@ msgid "Phrase not found"
 msgstr "Фразу не знайдено"
 
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
-#, fuzzy, kde-format
-#| msgid "Save Web Page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Web Page"
-msgstr "Зберегти вебсторінку"
+msgstr "Збереження вебсторінки"
 
 #: ksieveui/managesievescriptsdialog.cpp:63
 #, kde-format
