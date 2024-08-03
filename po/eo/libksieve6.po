@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 21:06+0200\n"
+"PO-Revision-Date: 2024-08-02 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -2599,8 +2599,7 @@ msgstr ""
 "\"%2\" estas la detala erara priskribo."
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Sieve Editor Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "Kribrilo Redaktilo Eraro"
@@ -2898,8 +2897,7 @@ msgid "Phrase not found"
 msgstr "Frazo ne trovita"
 
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
-#, fuzzy, kde-format
-#| msgid "Save Web Page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr "Konservi Retpaĝon"

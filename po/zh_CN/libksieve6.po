@@ -830,18 +830,16 @@ msgstr "“fileinto”操作含有“copy”参数，但当前服务器不支持
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:96
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:35
-#, fuzzy, kde-format
-#| msgid "Keep a copy"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep a copy"
-msgstr "保留一份副本"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:102
-#, fuzzy, kde-format
-#| msgid "Create folder"
+#, kde-format
 msgctxt "@option:check"
 msgid "Create folder"
-msgstr "创建文件夹"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:147
 #, kde-format
@@ -912,11 +910,10 @@ msgid "Redirect"
 msgstr "重定向"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:41
-#, fuzzy, kde-format
-#| msgid "Use list"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use list"
-msgstr "使用列表"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:139
 #, kde-format
@@ -1015,11 +1012,10 @@ msgid "Variable"
 msgstr "变量"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:42
-#, fuzzy, kde-format
-#| msgid "Protect special character"
+#, kde-format
 msgctxt "@option:check"
 msgid "Protect special character"
-msgstr "保护特殊字符"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:48
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:49
@@ -1616,11 +1612,10 @@ msgid "Spam Test"
 msgstr "垃圾邮件测试"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:37
-#, fuzzy, kde-format
-#| msgid "Percent"
+#, kde-format
 msgctxt "@option:check"
 msgid "Percent"
-msgstr "百分比"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:111
 #, kde-format
@@ -1938,11 +1933,10 @@ msgid "Do Not Switch"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "ForEveryPart"
+#, kde-format
 msgctxt "@option:check"
 msgid "Add ForEveryPart loop"
-msgstr "ForEveryPart"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:62
 #, kde-format
@@ -1969,11 +1963,10 @@ msgid "Variable name:"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Set value to:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Set value to:"
-msgstr "设置值为："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:129
 #, kde-format
@@ -2018,18 +2011,16 @@ msgid "Name:"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:144
-#, fuzzy, kde-format
-#| msgid "Optional"
+#, kde-format
 msgctxt "@option:check"
 msgid "Optional"
-msgstr "可选"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Once"
+#, kde-format
 msgctxt "@option:check"
 msgid "Once"
-msgstr "一次"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:220
 #, kde-format
@@ -2051,25 +2042,22 @@ msgid "Conditions"
 msgstr "条件"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
-#, fuzzy, kde-format
-#| msgid "Match all messages"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Match all messages"
-msgstr "匹配所有信件"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Match a&ll of the following"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Match a&ll of the following"
-msgstr "匹配以下全部条件(&L)"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Match an&y of the following"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Match an&y of the following"
-msgstr "匹配以下任何条件(&Y)"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:68
 #, kde-format
@@ -2452,12 +2440,10 @@ msgid ""
 msgstr ""
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Sieve Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Editor Error"
-msgstr "Sieve 错误"
+msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:50
 #, kde-format
@@ -2750,11 +2736,10 @@ msgid "Phrase not found"
 msgstr "词语未找到"
 
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
-#, fuzzy, kde-format
-#| msgid "Save Web Page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Web Page"
-msgstr "保存网页"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:63
 #, kde-format
