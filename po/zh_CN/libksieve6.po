@@ -832,12 +832,12 @@ msgstr "“fileinto”操作含有“copy”参数，但当前服务器不支持
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:35
 #, kde-format
 msgid "Keep a copy"
-msgstr "保留一份副本"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:102
 #, kde-format
 msgid "Create folder"
-msgstr "创建文件夹"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:147
 #, kde-format
@@ -910,7 +910,7 @@ msgstr "重定向"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:41
 #, kde-format
 msgid "Use list"
-msgstr "使用列表"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:139
 #, kde-format
@@ -1011,7 +1011,7 @@ msgstr "变量"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:42
 #, kde-format
 msgid "Protect special character"
-msgstr "保护特殊字符"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:48
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:49
@@ -1610,7 +1610,7 @@ msgstr "垃圾邮件测试"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:37
 #, kde-format
 msgid "Percent"
-msgstr "百分比"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:111
 #, kde-format
@@ -1959,7 +1959,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:65
 #, kde-format
 msgid "Set value to:"
-msgstr "设置值为："
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:129
 #, kde-format
@@ -2006,12 +2006,12 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:144
 #, kde-format
 msgid "Optional"
-msgstr "可选"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:148
 #, kde-format
 msgid "Once"
-msgstr "一次"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:220
 #, kde-format
@@ -2035,17 +2035,17 @@ msgstr "条件"
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
 #, kde-format
 msgid "Match all messages"
-msgstr "匹配所有信件"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:39
 #, kde-format
 msgid "Match a&ll of the following"
-msgstr "匹配以下全部条件(&L)"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:40
 #, kde-format
 msgid "Match an&y of the following"
-msgstr "匹配以下任何条件(&Y)"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:68
 #, kde-format
@@ -2725,7 +2725,7 @@ msgstr "词语未找到"
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
 #, kde-format
 msgid "Save Web Page"
-msgstr "保存网页"
+msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:63
 #, kde-format
