@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-30 17:36+0200\n"
+"PO-Revision-Date: 2024-08-03 12:20+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -2643,8 +2643,7 @@ msgstr ""
 "«%2» é a descrición detallada do erro."
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Sieve Editor Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "Produciuse un erro do Editor de Sieve"
@@ -2942,8 +2941,7 @@ msgid "Phrase not found"
 msgstr "Non se atopou a frase"
 
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
-#, fuzzy, kde-format
-#| msgid "Save Web Page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr "Gardar a páxina web"
