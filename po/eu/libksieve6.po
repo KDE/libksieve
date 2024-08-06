@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-07-19 18:26+0200\n"
+"PO-Revision-Date: 2024-08-06 00:49+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -920,15 +920,13 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:96
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:35
-#, fuzzy, kde-format
-#| msgid "Keep a copy"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep a copy"
 msgstr "Mantendu kopia bat"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:102
-#, fuzzy, kde-format
-#| msgid "Create folder"
+#, kde-format
 msgctxt "@option:check"
 msgid "Create folder"
 msgstr "Sortu karpeta"
@@ -1009,8 +1007,7 @@ msgid "Redirect"
 msgstr "Birbideratu"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:41
-#, fuzzy, kde-format
-#| msgid "Use list"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use list"
 msgstr "Erabili zerrenda"
@@ -1125,8 +1122,7 @@ msgid "Variable"
 msgstr "Aldagaia"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:42
-#, fuzzy, kde-format
-#| msgid "Protect special character"
+#, kde-format
 msgctxt "@option:check"
 msgid "Protect special character"
 msgstr "Babestu karaktere berezia"
@@ -1787,8 +1783,7 @@ msgid "Spam Test"
 msgstr "Spam proba"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:37
-#, fuzzy, kde-format
-#| msgid "Percent"
+#, kde-format
 msgctxt "@option:check"
 msgid "Percent"
 msgstr "Ehunekoa"
@@ -2115,8 +2110,7 @@ msgid "Do Not Switch"
 msgstr "Ez aldatu"
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "Add ForEveryPart loop"
+#, kde-format
 msgctxt "@option:check"
 msgid "Add ForEveryPart loop"
 msgstr "Gehitu «AtalBakoitzerako» begizta"
@@ -2149,8 +2143,7 @@ msgid "Variable name:"
 msgstr "Aldagaiaren izena:"
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Set value to:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Set value to:"
 msgstr "Ezarria balioa honetara:"
@@ -2203,15 +2196,13 @@ msgid "Name:"
 msgstr "Izena:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:144
-#, fuzzy, kde-format
-#| msgid "Optional"
+#, kde-format
 msgctxt "@option:check"
 msgid "Optional"
 msgstr "Aukerakoa"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Once"
+#, kde-format
 msgctxt "@option:check"
 msgid "Once"
 msgstr "Behin"
@@ -2240,22 +2231,19 @@ msgid "Conditions"
 msgstr "Baldintzak"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
-#, fuzzy, kde-format
-#| msgid "Match all messages"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Match all messages"
 msgstr "Bat etorri mezu guztiekin"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Match a&ll of the following"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Match a&ll of the following"
 msgstr "Bat-etorri ondoko &guztiekin"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Match an&y of the following"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Match an&y of the following"
 msgstr "Bat-etorri ondoko e&dozeinekin"
@@ -2657,8 +2645,7 @@ msgstr ""
 "\"%2\" da errorearen deskribapen zehatza."
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Sieve Editor Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "«Sieve» editorearen errorea"
@@ -2958,8 +2945,7 @@ msgid "Phrase not found"
 msgstr "Esaldia ez da aurkitu"
 
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
-#, fuzzy, kde-format
-#| msgid "Save Web Page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr "Gorde web-orria"
@@ -3245,8 +3231,7 @@ msgid "Configure vacation notifications to be sent:"
 msgstr "Konfiguratu opor jakinarazpenak bidaltzea:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:56
-#, fuzzy, kde-format
-#| msgid "&Activate vacation notifications"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr "&Aktibatu opor jakinarazpenak"
@@ -3296,18 +3281,16 @@ msgid "&Action for incoming mails:"
 msgstr "Sarrerako postetarako ekintz&a:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:210
-#, fuzzy, kde-format
-#| msgid "Do not send vacation replies to spam messages"
+#, kde-format
 msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "Ez bidali opor erantzunak spam mezuei"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:218
-#, fuzzy, kde-format
-#| msgid "Only react to mail coming from domain:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Only react to mail coming from domain:"
-msgstr "Erreakzionatu bakarrik domeinutik datorren postarekiko:"
+msgstr "Domeinutik datorren postarekiko bakarrik erreakzionatu:"
 
 #: ksieveui/vacation/vacationmanager.cpp:55
 #, kde-format
