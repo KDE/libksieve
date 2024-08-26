@@ -47,7 +47,6 @@ msgstr ""
 
 #: kmanagesieve/session.cpp:99
 #, fuzzy, kde-format
-#| msgid "&Start TLS nonetheless"
 msgctxt "@action:button"
 msgid "&Start TLS nonetheless"
 msgstr "&Start TLS likevel"
@@ -659,7 +658,6 @@ msgstr "Tjeneren støtter ikke en egenskap «%1» i betingelsen  «%2»"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
 #, fuzzy, kde-format
-#| msgid "Help"
 msgctxt "@info:tooltip"
 msgid "Help"
 msgstr "Hjelp"
@@ -689,7 +687,6 @@ msgstr "Legg til meldingshode"
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:40
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:42
 #, fuzzy, kde-format
-#| msgid "header:"
 msgctxt "@label:textbox"
 msgid "header:"
 msgstr "meldingshode:"
@@ -698,7 +695,6 @@ msgstr "meldingshode:"
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:49
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:53
 #, fuzzy, kde-format
-#| msgid "value:"
 msgctxt "@label:textbox"
 msgid "value:"
 msgstr "verdi:"
@@ -719,7 +715,6 @@ msgstr "Break"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:32
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:45
 #, fuzzy, kde-format
-#| msgid "Name (optional):"
 msgctxt "@label:textbox"
 msgid "Name (optional):"
 msgstr "Navn (valgfritt):"
@@ -738,7 +733,6 @@ msgstr "Konverter"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:31
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:31
 #, fuzzy, kde-format
-#| msgid "From:"
 msgctxt "@label:textbox"
 msgid "From:"
 msgstr "Fra:"
@@ -746,7 +740,6 @@ msgstr "Fra:"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:39
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:39
 #, fuzzy, kde-format
-#| msgid "To:"
 msgctxt "@label:textbox"
 msgid "To:"
 msgstr "Til:"
@@ -754,7 +747,6 @@ msgstr "Til:"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:47
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:47
 #, fuzzy, kde-format
-#| msgid "Parameters:"
 msgctxt "@label:textbox"
 msgid "Parameters:"
 msgstr "Parametre:"
@@ -798,7 +790,6 @@ msgstr "Lukk inn"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:33
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:35
 #, fuzzy, kde-format
-#| msgid "Subject:"
 msgctxt "@label:textbox"
 msgid "Subject:"
 msgstr "Emne:"
@@ -806,7 +797,6 @@ msgstr "Emne:"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:40
 #, fuzzy, kde-format
-#| msgid "headers:"
 msgctxt "@label:textbox"
 msgid "headers:"
 msgstr "meldingshoder:"
@@ -816,7 +806,6 @@ msgstr "meldingshoder:"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:30
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:52
 #, fuzzy, kde-format
-#| msgid "text:"
 msgctxt "@label:textbox"
 msgid "text:"
 msgstr "tekst:"
@@ -849,14 +838,12 @@ msgstr "Trekk ut tekst"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:32
 #, fuzzy, kde-format
-#| msgid "Number of characters:"
 msgctxt "@label:textbox"
 msgid "Number of characters:"
 msgstr "Antall tegn:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:42
 #, fuzzy, kde-format
-#| msgid "Stored in variable name:"
 msgctxt "@label:textbox"
 msgid "Stored in variable name:"
 msgstr "Lagret i variabelnavn:"
@@ -887,14 +874,12 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:96
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:35
 #, fuzzy, kde-format
-#| msgid "Keep a copy"
 msgctxt "@option:check"
 msgid "Keep a copy"
 msgstr "Behold en kopi"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:102
 #, fuzzy, kde-format
-#| msgid "Create folder"
 msgctxt "@option:check"
 msgid "Create folder"
 msgstr "Opprett mappe"
@@ -942,7 +927,6 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:55
 #, fuzzy, kde-format
-#| msgid "Add flags:"
 msgctxt "@label:textbox"
 msgid "Add flags:"
 msgstr "Legg til flagg:"
@@ -954,14 +938,12 @@ msgstr "Varsle"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:39
 #, fuzzy, kde-format
-#| msgid "message:"
 msgctxt "@label:textbox"
 msgid "message:"
 msgstr "melding:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:48
 #, fuzzy, kde-format
-#| msgid "method:"
 msgctxt "@label:textbox"
 msgid "method:"
 msgstr "metode:"
@@ -980,7 +962,6 @@ msgstr "Omdiriger"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:41
 #, fuzzy, kde-format
-#| msgid "Use list"
 msgctxt "@option:check"
 msgid "Use list"
 msgstr "Bruk liste"
@@ -1047,7 +1028,6 @@ msgstr "Erstatt"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:44
 #, fuzzy, kde-format
-#| msgid "from:"
 msgctxt "@label:textbox"
 msgid "from:"
 msgstr "fra:"
@@ -1096,7 +1076,6 @@ msgstr "Variabel"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:42
 #, fuzzy, kde-format
-#| msgid "Protect special character"
 msgctxt "@option:check"
 msgid "Protect special character"
 msgstr "Beskytt spesialtegn"
@@ -1107,14 +1086,12 @@ msgstr "Beskytt spesialtegn"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:63
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:61
 #, fuzzy, kde-format
-#| msgid "Value:"
 msgctxt "@label:textbox"
 msgid "Value:"
 msgstr "Verdi:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:57
 #, fuzzy, kde-format
-#| msgid "In variable:"
 msgctxt "@label:textbox"
 msgid "In variable:"
 msgstr "I variabel:"
@@ -1165,28 +1142,24 @@ msgstr "Ferie"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:46
 #, fuzzy, kde-format
-#| msgid "day:"
 msgctxt "@label:textbox"
 msgid "day:"
 msgstr "dag:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:57
 #, fuzzy, kde-format
-#| msgid "Message subject:"
 msgctxt "@label:textbox"
 msgid "Message subject:"
 msgstr "Meldingsemne:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:66
 #, fuzzy, kde-format
-#| msgid "Additional email:"
 msgctxt "@label:textbox"
 msgid "Additional email:"
 msgstr "Ytterligere e-post:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:75
 #, fuzzy, kde-format
-#| msgid "Vacation reason:"
 msgctxt "@label:textbox"
 msgid "Vacation reason:"
 msgstr "Feriegrunn:"
@@ -1291,7 +1264,6 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, fuzzy, kde-format
-#| msgid "Set Flags"
 msgctxt "@info:tooltip"
 msgid "Select Flags"
 msgstr "Sett flagg"
@@ -1358,7 +1330,6 @@ msgstr "Lengde"
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:62
 #, fuzzy, kde-format
-#| msgid "Please select an action."
 msgctxt "@label:textbox"
 msgid "Please select an action."
 msgstr "Velg en handling."
@@ -1366,7 +1337,6 @@ msgstr "Velg en handling."
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:139
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
 #, fuzzy, kde-format
-#| msgid "Add comment"
 msgctxt "@info:tooltip"
 msgid "Add comment"
 msgstr "Legg til kommentar"
@@ -1409,7 +1379,6 @@ msgstr "Adresse"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:52
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:54
 #, fuzzy, kde-format
-#| msgid "address:"
 msgctxt "@label:textbox"
 msgid "address:"
 msgstr "adresse:"
@@ -1417,7 +1386,6 @@ msgstr "adresse:"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:59
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:62
 #, fuzzy, kde-format
-#| msgid "Use ; to separate emails"
 msgctxt "@info:placeholder"
 msgid "Use ; to separate emails"
 msgstr "Bruk ; som skilletegn mellom e-poster"
@@ -1502,7 +1470,6 @@ msgstr "Miljø"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:33
 #, fuzzy, kde-format
-#| msgid "Item:"
 msgctxt "@label:textbox"
 msgid "Item:"
 msgstr "Element:"
@@ -1550,7 +1517,6 @@ msgstr "Usann"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:31
 #, fuzzy, kde-format
-#| msgid "false"
 msgctxt "@label:textbox"
 msgid "false"
 msgstr "usann"
@@ -1567,9 +1533,6 @@ msgstr "Har flagg"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:46
 #, fuzzy, kde-format
-#| msgid ""
-#| "Variable name\n"
-#| " (if empty it uses internal variable):"
 msgctxt "@label:textbox"
 msgid ""
 "Variable name\n"
@@ -1594,7 +1557,6 @@ msgstr "Meldingshode"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:45
 #, fuzzy, kde-format
-#| msgid "With value:"
 msgctxt "@label:textbox"
 msgid "With value:"
 msgstr "Med verdi:"
@@ -1615,7 +1577,6 @@ msgstr "Jeghar"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:35
 #, fuzzy, kde-format
-#| msgid "Use \",\" to separate capabilities"
 msgctxt "@info:placeholder"
 msgid "Use \",\" to separate capabilities"
 msgstr "Bruk «,» som skilletegn mellom muligheter"
@@ -1654,7 +1615,6 @@ msgstr "Metadata"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:33
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:43
 #, fuzzy, kde-format
-#| msgid "Mailbox:"
 msgctxt "@label:textbox"
 msgid "Mailbox:"
 msgstr "Postboks:"
@@ -1662,7 +1622,6 @@ msgstr "Postboks:"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:54
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:52
 #, fuzzy, kde-format
-#| msgid "Annotations:"
 msgctxt "@label:textbox"
 msgid "Annotations:"
 msgstr "Merknader:"
@@ -1687,7 +1646,6 @@ msgstr "Metadata finnes"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:31
 #, fuzzy, kde-format
-#| msgid "Annotation:"
 msgctxt "@label:textbox"
 msgid "Annotation:"
 msgstr "Merknad:"
@@ -1764,7 +1722,6 @@ msgstr "Spam-test"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:37
 #, fuzzy, kde-format
-#| msgid "Percent"
 msgctxt "@option:check"
 msgid "Percent"
 msgstr "Prosent"
@@ -1786,7 +1743,6 @@ msgstr "Sann"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:31
 #, fuzzy, kde-format
-#| msgid "true"
 msgctxt "@label:textbox"
 msgid "true"
 msgstr "sann"
@@ -1912,7 +1868,6 @@ msgstr "Ukedag"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
 #, fuzzy
-#| msgid "Select multiple headers..."
 msgid "Select multiple headers…"
 msgstr "Velg flere meldingshoder …"
 
@@ -1924,7 +1879,6 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:55
 #, fuzzy, kde-format
-#| msgid "Add new header:"
 msgctxt "@label:textbox"
 msgid "Add new header:"
 msgstr "Legg til nytt meldingshode:"
@@ -2066,7 +2020,6 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:54
 #, fuzzy, kde-format
-#| msgid "Please select an condition."
 msgctxt "@label:textbox"
 msgid "Please select an condition."
 msgstr "Velg en betingelse."
@@ -2095,7 +2048,6 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:30
 #, fuzzy, kde-format
-#| msgid "Add ForEveryPart loop"
 msgctxt "@option:check"
 msgid "Add ForEveryPart loop"
 msgstr "Legg til ForEveryPart-sløyfe"
@@ -2122,14 +2074,12 @@ msgstr "Ukjent tagg «%1» mens «for»-sløyfe ble lastet"
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:58
 #, fuzzy, kde-format
-#| msgid "Variable name:"
 msgctxt "@label:textbox"
 msgid "Variable name:"
 msgstr "Variabelnavn:"
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:65
 #, fuzzy, kde-format
-#| msgid "Set value to:"
 msgctxt "@option:check"
 msgid "Set value to:"
 msgstr "Sett verdien til:"
@@ -2169,7 +2119,6 @@ msgstr "Ukjent stedstype «%1» mens inkluderinger ble tolket"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:129
 #, fuzzy, kde-format
-#| msgid "Include:"
 msgctxt "@label:textbox"
 msgid "Include:"
 msgstr "Inkluder:"
@@ -2177,21 +2126,18 @@ msgstr "Inkluder:"
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:135
 #: ksieveui/templates/sievetemplateeditdialog.cpp:59
 #, fuzzy, kde-format
-#| msgid "Name:"
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Navn:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:144
 #, fuzzy, kde-format
-#| msgid "Optional"
 msgctxt "@option:check"
 msgid "Optional"
 msgstr "Valgfri"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:148
 #, fuzzy, kde-format
-#| msgid "Once"
 msgctxt "@option:check"
 msgid "Once"
 msgstr "En gang"
@@ -2220,21 +2166,18 @@ msgstr "Betingelser"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
 #, fuzzy, kde-format
-#| msgid "Match all messages"
 msgctxt "@option:radio"
 msgid "Match all messages"
 msgstr "Samsvar med alle meldinger"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:39
 #, fuzzy, kde-format
-#| msgid "Match a&ll of the following"
 msgctxt "@option:radio"
 msgid "Match a&ll of the following"
 msgstr "Samsvar med a&lle de følgende"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:40
 #, fuzzy, kde-format
-#| msgid "Match an&y of the following"
 msgctxt "@option:radio"
 msgid "Match an&y of the following"
 msgstr "Samsvar med &en eller flere av de følgende"
@@ -2246,7 +2189,6 @@ msgstr "Handlinger"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:83
 #, fuzzy, kde-format
-#| msgid "Add new block:"
 msgctxt "@label:textbox"
 msgid "Add new block:"
 msgstr "Legg til ny blokk:"
@@ -2293,21 +2235,18 @@ msgstr "Nederst"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
 #, fuzzy, kde-format
-#| msgid "New Script"
 msgctxt "@info:tooltip"
 msgid "New Script"
 msgstr "Nytt skript"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
 #, fuzzy, kde-format
-#| msgid "Delete Script"
 msgctxt "@info:tooltip"
 msgid "Delete Script"
 msgstr "Slett skript"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
 #, fuzzy, kde-format
-#| msgid "Sieve Script"
 msgctxt "@info:tooltip"
 msgid "Rename Script"
 msgstr "Sieve-skript"
@@ -2434,7 +2373,6 @@ msgstr ""
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
 #, fuzzy, kde-format
-#| msgid "Save As..."
 msgid "Save As…"
 msgstr "Lagre som …"
 
@@ -2474,9 +2412,6 @@ msgstr ""
 
 #: ksieveui/debug/sievedebugdialog.cpp:65
 #, fuzzy, kde-format
-#| msgid ""
-#| "Collecting diagnostic information about Sieve support...\n"
-#| "\n"
 msgid ""
 "Collecting diagnostic information about Sieve support…\n"
 "\n"
@@ -2498,7 +2433,6 @@ msgstr ""
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
 #, fuzzy, kde-format
-#| msgid "Collecting data for account '%1'...\n"
 msgid "Collecting data for account '%1'…\n"
 msgstr "Henter data for konto «%1» …\n"
 
@@ -2613,7 +2547,6 @@ msgstr "Du kommer til å skrive over skriptet. Vil du fortsette?"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:56
 #, fuzzy, kde-format
-#| msgid "Import Script"
 msgctxt "@title:window"
 msgid "Import Script"
 msgstr "Importer skript"
@@ -2640,35 +2573,30 @@ msgstr ""
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
 #, fuzzy, kde-format
-#| msgid "Sieve Editor Error"
 msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "Feil i Sieve-redigering"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:50
 #, fuzzy, kde-format
-#| msgid "Go to Line"
 msgctxt "@action"
 msgid "Go to Line"
 msgstr "Gå til linje"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:55
 #, fuzzy, kde-format
-#| msgid "Comment"
 msgctxt "@action"
 msgid "Comment"
 msgstr "Kommentar"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:59
 #, fuzzy, kde-format
-#| msgid "Comment"
 msgctxt "@action"
 msgid "Uncomment"
 msgstr "Kommentar"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:63
 #, fuzzy, kde-format
-#| msgid "New Sieve Script"
 msgctxt "@action"
 msgid "Debug Sieve Script…"
 msgstr "Nytt Sieve-skript"
@@ -2764,14 +2692,12 @@ msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:45
 #, fuzzy, kde-format
-#| msgid "Check Syntax"
 msgctxt "@action"
 msgid "Check Syntax"
 msgstr "Kontroller syntaks"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
 #, fuzzy, kde-format
-#| msgid "Import..."
 msgid "Import…"
 msgstr "Importer …"
 
@@ -2794,7 +2720,6 @@ msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:116
 #, fuzzy, kde-format
-#| msgid "Script name:"
 msgctxt "@label:textbox"
 msgid "Script name:"
 msgstr "Skriptnavn:"
@@ -2828,23 +2753,18 @@ msgstr ""
 
 #: ksieveui/editor/sievetextedit.cpp:291
 #, fuzzy, kde-format
-#| msgid "Help about: '%1'"
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "Hjelp om: «%1»"
 
 #: ksieveui/editor/sievetextedit.cpp:300
 #, fuzzy, kde-format
-#| msgid "Edit"
 msgctxt "@action"
 msgid "Edit Rule"
 msgstr "Rediger"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:20
 #, fuzzy, kde-format
-#| msgid ""
-#| "Some errors were found during parsing. <a href=\"sieveerrordetails"
-#| "\">(Details...)</a>"
 msgid ""
 "Some errors were found during parsing. <a href=\"sieveerrordetails"
 "\">(Details…)</a>"
@@ -2883,7 +2803,6 @@ msgstr "Skriptet kan ikke tolkes. Det går ikke å bytte til grafisk modus."
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:37
 #, fuzzy, kde-format
-#| msgid "Close"
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Lukk"
@@ -2936,7 +2855,6 @@ msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
 #, fuzzy, kde-format
-#| msgid "Modify search behavior"
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Endre søkeoppførsel"
@@ -2971,21 +2889,18 @@ msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:89
 #, fuzzy, kde-format
-#| msgid "Edit"
 msgctxt "@action:button"
 msgid "Edit…"
 msgstr "Rediger"
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, fuzzy, kde-format
-#| msgid "Delete"
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Slett"
 
 #: ksieveui/managesievescriptsdialog.cpp:97
 #, fuzzy, kde-format
-#| msgid "Deactivate"
 msgctxt "@action:button"
 msgid "Deactivate"
 msgstr "Skru av"
@@ -2994,7 +2909,6 @@ msgstr "Skru av"
 #: ksieveui/managesievescriptsdialog.cpp:262
 #: ksieveui/widgets/managesievewidget.cpp:512
 #, fuzzy, kde-format
-#| msgid "Sieve Error"
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Sieve-feil"
@@ -3011,7 +2925,6 @@ msgstr "Sieve-skriptet ble lastet opp."
 
 #: ksieveui/managesievescriptsdialog.cpp:252
 #, fuzzy, kde-format
-#| msgid "Sieve Script Upload"
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "Last opp Sieve-skript"
@@ -3116,7 +3029,6 @@ msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:30
 #, fuzzy, kde-format
-#| msgid "Add new header:"
 msgctxt "@action"
 msgid "Add debug here"
 msgstr "Legg til nytt meldingshode:"
@@ -3161,7 +3073,6 @@ msgstr "Videresend melding og legg til kopi"
 
 #: ksieveui/templates/sievedefaulttemplate.cpp:66
 #, fuzzy, kde-format
-#| msgid "Destroy mail posted by..."
 msgid "Destroy mail posted by…"
 msgstr "Makuler post sendt av …"
 
@@ -3219,10 +3130,6 @@ msgstr ""
 
 #: ksieveui/vacation/multiimapvacationdialog.cpp:112
 #, fuzzy, kde-format
-#| msgid ""
-#| "KMail's Out of Office Reply functionality relies on server-side "
-#| "filtering. You have not yet configured an IMAP server for this. You can "
-#| "do this on the \"Filtering\" tab of the IMAP account configuration."
 msgctxt "@label:textbox"
 msgid ""
 "KMail's Out of Office Reply functionality relies on server-side filtering. "
@@ -3235,14 +3142,12 @@ msgstr ""
 
 #: ksieveui/vacation/vacationeditwidget.cpp:48
 #, fuzzy, kde-format
-#| msgid "Configure vacation notifications to be sent:"
 msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "Oppsett av ferievarsel som skal sendes:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:56
 #, fuzzy, kde-format
-#| msgid "&Activate vacation notifications"
 msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr "Slå &på ferievarsler"
@@ -3255,14 +3160,12 @@ msgstr ""
 
 #: ksieveui/vacation/vacationeditwidget.cpp:108
 #, fuzzy, kde-format
-#| msgid "Start date:"
 msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr "Startdato:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:138
 #, fuzzy, kde-format
-#| msgid "End date:"
 msgctxt "@label:textbox"
 msgid "End date:"
 msgstr "Sluttdato:"
@@ -3277,14 +3180,12 @@ msgstr[1] " dager"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:163
 #, fuzzy, kde-format
-#| msgid "&Resend notification only after:"
 msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "&Send varsel på ny bare etter:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:176
 #, fuzzy, kde-format
-#| msgid "&Send responses for these addresses:"
 msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "&Send varsler til disse adressene:"
@@ -3297,14 +3198,12 @@ msgstr ""
 
 #: ksieveui/vacation/vacationeditwidget.cpp:210
 #, fuzzy, kde-format
-#| msgid "Do not send vacation replies to spam messages"
 msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "Ikke send meldingskvitteringerer som svar på søppelpost"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:218
 #, fuzzy, kde-format
-#| msgid "Send out-of-office replies to mails coming from this domain only."
 msgctxt "@option:check"
 msgid "Only react to mail coming from domain:"
 msgstr "Send fraværssvar bare til e-post som kommer fra dette domenet."
@@ -3320,31 +3219,24 @@ msgstr ""
 
 #: ksieveui/vacation/vacationmanager.cpp:57
 #, fuzzy, kde-format
-#| msgid "Out-of-office reply still active"
 msgctxt "@title:window"
 msgid "Out-of-office reply still active"
 msgstr "Fraværssvar fremdeles aktivt"
 
 #: ksieveui/vacation/vacationmanager.cpp:58
 #, fuzzy, kde-format
-#| msgid "Edit"
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "Rediger"
 
 #: ksieveui/vacation/vacationmanager.cpp:59
 #, fuzzy, kde-format
-#| msgid "Ignore"
 msgctxt "@action:button"
 msgid "Ignore"
 msgstr "Ignorer"
 
 #: ksieveui/vacation/vacationpagewidget.cpp:49
 #, fuzzy, kde-format
-#| msgid ""
-#| "Your server did not list \"vacation\" in its list of supported Sieve "
-#| "extensions;without it, KMail cannot install out-of-office replies for you."
-#| "Please contact your system administrator."
 msgctxt "@label:textbox"
 msgid ""
 "Your server did not list \"vacation\" in its list of supported Sieve "
@@ -3374,7 +3266,6 @@ msgstr "Ingen Sieve-URL satt opp"
 #: ksieveui/widgets/managesievetreeview.cpp:16
 #: ksieveui/widgets/managesievetreeview.cpp:30
 #, fuzzy, kde-format
-#| msgid "No IMAP server configured..."
 msgid "No IMAP server configured…"
 msgstr "Ingen IMAP-tjener er satt opp  …"
 
@@ -3390,13 +3281,11 @@ msgstr "Nettverket er nede."
 
 #: ksieveui/widgets/managesievewidget.cpp:147
 #, fuzzy, kde-format
-#| msgid "Edit Script..."
 msgid "Edit Script…"
 msgstr "Rediger skript …"
 
 #: ksieveui/widgets/managesievewidget.cpp:148
 #, fuzzy, kde-format
-#| msgid "Sieve Script"
 msgid "Rename Script…"
 msgstr "Sieve-skript"
 
@@ -3412,7 +3301,6 @@ msgstr "Skru av skript"
 
 #: ksieveui/widgets/managesievewidget.cpp:159
 #, fuzzy, kde-format
-#| msgid "New Script"
 msgid "New Script…"
 msgstr "Nytt skript"
 
@@ -3464,7 +3352,6 @@ msgstr "Er det sikkert at du vil slette skriptet «%1» fra tjeneren?"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
 #, fuzzy, kde-format
-#| msgid "Delete Sieve Script Confirmation"
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "Bekreft sletting av Sieve-skript"
@@ -3484,7 +3371,6 @@ msgstr "Klarte ikke å hente lista over skripter"
 
 #: ksieveui/widgets/moveimapfolderwidget.cpp:24
 #, fuzzy, kde-format
-#| msgid "Create folder"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Opprett mappe"
