@@ -613,7 +613,6 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
 #, fuzzy, kde-format
-#| msgid "Help"
 msgctxt "@info:tooltip"
 msgid "Help"
 msgstr "Veahkki"
@@ -640,7 +639,6 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:40
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:42
 #, fuzzy, kde-format
-#| msgid "Header"
 msgctxt "@label:textbox"
 msgid "header:"
 msgstr "Oaiveteaksta"
@@ -649,7 +647,6 @@ msgstr "Oaiveteaksta"
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:49
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:53
 #, fuzzy, kde-format
-#| msgid "Value:"
 msgctxt "@label:textbox"
 msgid "value:"
 msgstr "Árvu:"
@@ -686,7 +683,6 @@ msgstr "Konvertere"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:31
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:31
 #, fuzzy, kde-format
-#| msgid "From:"
 msgctxt "@label:textbox"
 msgid "From:"
 msgstr "Sáddejeaddji:"
@@ -694,7 +690,6 @@ msgstr "Sáddejeaddji:"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:39
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:39
 #, fuzzy, kde-format
-#| msgid "To:"
 msgctxt "@label:textbox"
 msgid "To:"
 msgstr "Vuostáiváldi:"
@@ -702,7 +697,6 @@ msgstr "Vuostáiváldi:"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:47
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:47
 #, fuzzy, kde-format
-#| msgid "Parameters"
 msgctxt "@label:textbox"
 msgid "Parameters:"
 msgstr "Paramehterat"
@@ -741,7 +735,6 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:33
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:35
 #, fuzzy, kde-format
-#| msgid "Subject:"
 msgctxt "@label:textbox"
 msgid "Subject:"
 msgstr "Fáddá:"
@@ -749,7 +742,6 @@ msgstr "Fáddá:"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:40
 #, fuzzy, kde-format
-#| msgid "Header"
 msgctxt "@label:textbox"
 msgid "headers:"
 msgstr "Oaiveteaksta"
@@ -759,7 +751,6 @@ msgstr "Oaiveteaksta"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:30
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:52
 #, fuzzy, kde-format
-#| msgid "text"
 msgctxt "@label:textbox"
 msgid "text:"
 msgstr "teaksta"
@@ -948,7 +939,6 @@ msgstr "Buhtte"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:44
 #, fuzzy, kde-format
-#| msgid "From:"
 msgctxt "@label:textbox"
 msgid "from:"
 msgstr "Sáddejeaddji:"
@@ -1000,14 +990,12 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:63
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:61
 #, fuzzy, kde-format
-#| msgid "Value:"
 msgctxt "@label:textbox"
 msgid "Value:"
 msgstr "Árvu:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:57
 #, fuzzy, kde-format
-#| msgid "Variable"
 msgctxt "@label:textbox"
 msgid "In variable:"
 msgstr "Variábel"
@@ -1231,7 +1219,6 @@ msgstr "Guhkkodat"
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:62
 #, fuzzy, kde-format
-#| msgid "Please select an action."
 msgctxt "@label:textbox"
 msgid "Please select an action."
 msgstr "Vállje doaimma."
@@ -1279,7 +1266,6 @@ msgstr "Čujuhus"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:52
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:54
 #, fuzzy, kde-format
-#| msgid "Address"
 msgctxt "@label:textbox"
 msgid "address:"
 msgstr "Čujuhus"
@@ -1436,7 +1422,6 @@ msgstr "Oaiveteaksta"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:45
 #, fuzzy, kde-format
-#| msgid "With value:"
 msgctxt "@label:textbox"
 msgid "With value:"
 msgstr "Árvvuin:"
@@ -1495,7 +1480,6 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:54
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:52
 #, fuzzy, kde-format
-#| msgid "Actions"
 msgctxt "@label:textbox"
 msgid "Annotations:"
 msgstr "Doaimmat"
@@ -1875,7 +1859,6 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:54
 #, fuzzy, kde-format
-#| msgid "Please select an action."
 msgctxt "@label:textbox"
 msgid "Please select an condition."
 msgstr "Vállje doaimma."
@@ -1927,7 +1910,6 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:58
 #, fuzzy, kde-format
-#| msgid "Variable"
 msgctxt "@label:textbox"
 msgid "Variable name:"
 msgstr "Variábel"
@@ -1975,7 +1957,6 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:135
 #: ksieveui/templates/sievetemplateeditdialog.cpp:59
 #, fuzzy, kde-format
-#| msgid "Name:"
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Namma:"
@@ -2083,7 +2064,6 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
 #, fuzzy, kde-format
-#| msgid "Delete"
 msgctxt "@info:tooltip"
 msgid "Delete Script"
 msgstr "Sihko"
@@ -2215,7 +2195,6 @@ msgstr ""
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
 #, fuzzy, kde-format
-#| msgid "Save As..."
 msgid "Save As…"
 msgstr "Vurke nugo …"
 
@@ -2409,7 +2388,6 @@ msgstr ""
 
 #: ksieveui/editor/sieveeditormenubar.cpp:50
 #, fuzzy, kde-format
-#| msgid "Go to Line"
 msgctxt "@action"
 msgid "Go to Line"
 msgstr "Mana linnjái"
@@ -2529,7 +2507,6 @@ msgstr ""
 
 #: ksieveui/editor/sieveeditorwidget.cpp:50
 #, fuzzy, kde-format
-#| msgid "Import..."
 msgid "Import…"
 msgstr "Sisafievrrit …"
 
@@ -2633,7 +2610,6 @@ msgstr ""
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:37
 #, fuzzy, kde-format
-#| msgid "Close"
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Gidde"
@@ -2651,7 +2627,6 @@ msgstr "O&za:"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:51
 #, fuzzy, kde-format
-#| msgid "Text to search for"
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Teaksta maid ohcat"
@@ -2664,7 +2639,6 @@ msgstr "Boahtte"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
 #, fuzzy, kde-format
-#| msgid "Jump to next match"
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Njuikes boahtte deaivamii"
@@ -2677,7 +2651,6 @@ msgstr "Ovddit"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:63
 #, fuzzy, kde-format
-#| msgid "Jump to previous match"
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Mana ovddit deaivamii"
@@ -2689,7 +2662,6 @@ msgstr "Molssaeavttut"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
 #, fuzzy, kde-format
-#| msgid "Modify search behavior"
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Rievdat ohcanláhttema"
@@ -2723,14 +2695,12 @@ msgstr ""
 
 #: ksieveui/managesievescriptsdialog.cpp:89
 #, fuzzy, kde-format
-#| msgid "Editor"
 msgctxt "@action:button"
 msgid "Edit…"
 msgstr "Čállinprográmma"
 
 #: ksieveui/managesievescriptsdialog.cpp:93
 #, fuzzy, kde-format
-#| msgid "Delete"
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Sihko"
@@ -2797,7 +2767,6 @@ msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:51
 #, fuzzy, kde-format
-#| msgid "Debug"
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Dihkeohcan"
@@ -2815,7 +2784,6 @@ msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:57
 #, fuzzy, kde-format
-#| msgid "Extension:"
 msgctxt "@label:textbox"
 msgid "Extension:"
 msgstr "Dovddaldat:"
@@ -2856,7 +2824,6 @@ msgstr ""
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
 #, fuzzy, kde-format
-#| msgid "Clear"
 msgctxt "@action"
 msgid "Clear"
 msgstr "Sálke"
@@ -3056,7 +3023,6 @@ msgstr ""
 
 #: ksieveui/vacation/vacationmanager.cpp:58
 #, fuzzy, kde-format
-#| msgid "Editor"
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "Čállinprográmma"
