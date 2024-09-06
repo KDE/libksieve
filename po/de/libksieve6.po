@@ -7,7 +7,7 @@
 # Intevation GmbH, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: libksieve\n"
+"Project-Id-Version: libksieve6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
 "PO-Revision-Date: 2023-07-09 01:05+0200\n"
