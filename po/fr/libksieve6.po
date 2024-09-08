@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-07-05 10:37+0200\n"
+"PO-Revision-Date: 2024-09-06 21:42+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1090,9 +1090,9 @@ msgid ""
 "clears flags previously set by \"set\"/\"addflag\". Calling removeflag with "
 "a flag that wasn't set before is not an error and is ignored."
 msgstr ""
-"Enlever les marqueurs « RemoveFlag » est utilisé pour enlever les marqueurs "
+"Enlever les marqueurs « removeFlag » est utilisé pour enlever les marqueurs "
 "d'une liste de marqueurs [IMAP]. Il efface tous les marqueurs placés par "
-"« set » / « addflag ». Appeler « RemoveFlag » avec un marqueur qui n'a pas "
+"« set » / « addflag ». Appeler « removeFlag » avec un marqueur qui n'a pas "
 "d'abord été placé ne renvoi pas une erreur et est ignoré."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:24
@@ -1127,7 +1127,7 @@ msgid ""
 "only and returns processing control to the script that includes it."
 msgstr ""
 "La commande de retour « return » arrête le traitement du script "
-"immédiatement inclu seulement et renvoi le contrôle du traitement au script "
+"immédiatement inclus seulement et renvoi le contrôle du traitement au script "
 "parent qui l'incluait."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetflags.cpp:13
@@ -1611,7 +1611,7 @@ msgstr "Faux"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:43
 #, kde-format
 msgid "The \"false\" test always evaluates to false."
-msgstr "Le test de vérité « false » renvoi toujours faux."
+msgstr "Le test de vérité « False » renvoi toujours Faux."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:24
 #, kde-format
@@ -1780,7 +1780,7 @@ msgid ""
 "listed in the \"annotation-names\" argument exist."
 msgstr ""
 "Le test d'existence des métadonnées du serveur « servermetadataexists » "
-"renvoi vrai si toutes les annotations du serveur listées dans l'argument "
+"renvoie Vrai si toutes les annotations du serveur listées dans l'argument "
 "« annotation-names » existent."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionsize.cpp:20
@@ -1844,7 +1844,7 @@ msgstr "Vrai"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:43
 #, kde-format
 msgid "The \"true\" test always evaluates to true."
-msgstr "Le test de vérité « true » renvoi toujours vrai."
+msgstr "Le test de vérité « True » renvoie toujours Vrai."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionvirustest.cpp:22
 #, kde-format
@@ -2153,9 +2153,9 @@ msgid ""
 "a message, including nested parts, depth first, and applies the commands in "
 "the specified block to each of them."
 msgstr ""
-"« foreverypart », qui est une boucle qui parcours toutes les parties MIME "
-"d'un message, incluant les parties nichées, de première profondeur, et "
-"applique les commandes dans le bloc spécifié à chacun d'eux."
+"« foreverypart », qui est une boucle parcourant toutes les parties MIME d'un "
+"message, incluant les parties nichées, de première profondeur, et applique "
+"les commandes dans le bloc spécifié à chacun d'eux."
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:92
 #, kde-format
@@ -2288,7 +2288,7 @@ msgstr "Ajouter un nouveau bloc :"
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:87
 #, kde-format
 msgid "\"elsif\" block"
-msgstr "bloc « elsif »"
+msgstr "Bloc « Elsif »"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:88
 #, kde-format
