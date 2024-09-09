@@ -30,7 +30,6 @@
 using KMime::HeaderParsing::parseAddressList;
 using KMime::Types::AddressList;
 using KMime::Types::AddrSpecList;
-using KMime::Types::MailboxList;
 
 using namespace KSieveUi;
 VacationEditWidget::VacationEditWidget(QWidget *parent)
@@ -269,16 +268,13 @@ void VacationEditWidget::setNotificationInterval(int days)
 AddrSpecList VacationEditWidget::mailAliases(bool &ok) const
 {
     QByteArray text = mMailAliasesEdit->text().toLatin1(); // ### IMAA: !ok
-    AddressList al;
+    AddressList addressList;
     const char *s = text.cbegin();
-    AddrSpecList asl;
-    if (parseAddressList(s, text.cend(), al)) {
-        AddressList::const_iterator end(al.constEnd());
-        for (AddressList::const_iterator it = al.constBegin(); it != end; ++it) {
-            const MailboxList &mbl = (*it).mailboxList;
-            MailboxList::const_iterator endJt = mbl.constEnd();
-            for (MailboxList::const_iterator jt = mbl.constBegin(); jt != endJt; ++jt) {
-                asl.push_back((*jt).addrSpec());
+    AddrSpecList addrSpecList;
+    if (parseAddressList(s, text.cend(), addressList)) {
+        for (const auto &address : std::as_const(addressList)) {
+            for (const auto &mail : address.mailboxList) {
+                addrSpecList.push_back(mail.addrSpec());
             }
         }
         ok = true;
@@ -287,7 +283,7 @@ AddrSpecList VacationEditWidget::mailAliases(bool &ok) const
         ok = false;
     }
     mMailAliasesEdit->setInvalidEmail(!ok);
-    return asl;
+    return addrSpecList;
 }
 
 void VacationEditWidget::setMailAliases(const AddrSpecList &aliases)
