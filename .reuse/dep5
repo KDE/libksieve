@@ -1,8 +1,0 @@
-Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: libksieve
-Upstream-Contact: Montel Laurent <montel@kde.org>
-Source: https://invent.kde.org/pim/libksieve
-
-Files: src/ksievecore/vacation/autotests/data/* src/ksievecore/scriptsparsing/autotests/data/* src/ksieveui/autocreatescripts/tests/scripts/* src/ksieveui/autocreatescripts/autotests/data/* src/ksieveui/scriptsparsing/tests/failed/* TODO src/ksieveui/TODO src/ksieveui/data/ksieve_script.knsrc src/ksieveui/data/scripts/copy/template.desktop src/ksieveui/data/scripts/copy/template.txt  kioslave/src/sieve/RFCs kioslave/src/sieve/sieve.json kioslave/doc/sieve/index.docbook
-Copyright: none
-License: CC0-1.0

@@ -1,0 +1,10 @@
+version = 1
+SPDX-PackageName = "libksieve"
+SPDX-PackageSupplier = "Montel Laurent <montel@kde.org>"
+SPDX-PackageDownloadLocation = "https://invent.kde.org/pim/libksieve"
+
+[[annotations]]
+path = ["src/ksievecore/vacation/autotests/data/**", "src/ksievecore/scriptsparsing/autotests/data/**", "src/ksieveui/autocreatescripts/tests/scripts/**", "src/ksieveui/autocreatescripts/autotests/data/**", "src/ksieveui/scriptsparsing/tests/failed/**", "TODO", "src/ksieveui/TODO", "src/ksieveui/data/ksieve_script.knsrc", "src/ksieveui/data/scripts/copy/template.desktop", "src/ksieveui/data/scripts/copy/template.txt", "kioslave/src/sieve/RFCs", "kioslave/src/sieve/sieve.json", "kioslave/doc/sieve/index.docbook"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "none"
+SPDX-License-Identifier = "CC0-1.0"
