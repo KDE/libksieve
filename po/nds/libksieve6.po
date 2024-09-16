@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-16 00:40+0000\n"
 "PO-Revision-Date: 2014-09-18 22:34+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -3374,74 +3374,74 @@ msgstr ""
 "dor noch keen IMAP-Server för inricht. Du kannst dat ünner \"Filtern\" "
 "binnen de IMAP-Kontoinstellen doon."
 
-#: ksieveui/vacation/vacationeditwidget.cpp:48
+#: ksieveui/vacation/vacationeditwidget.cpp:47
 #, fuzzy, kde-format
 #| msgid "Configure vacation notifications to be sent:"
 msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "Oorlööf-Bescheed inrichten:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:56
+#: ksieveui/vacation/vacationeditwidget.cpp:55
 #, fuzzy, kde-format
 #| msgid "&Activate vacation notifications"
 msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr "Oorlööf-Bescheden &anmaken"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:76
+#: ksieveui/vacation/vacationeditwidget.cpp:75
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:108
+#: ksieveui/vacation/vacationeditwidget.cpp:107
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:138
+#: ksieveui/vacation/vacationeditwidget.cpp:137
 #, kde-format
 msgctxt "@label:textbox"
 msgid "End date:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:161
-#: ksieveui/vacation/vacationeditwidget.cpp:310
+#: ksieveui/vacation/vacationeditwidget.cpp:160
+#: ksieveui/vacation/vacationeditwidget.cpp:306
 #, kde-format
 msgid " day"
 msgid_plural " days"
 msgstr[0] " Dag"
 msgstr[1] " Daag"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:163
+#: ksieveui/vacation/vacationeditwidget.cpp:162
 #, fuzzy, kde-format
 #| msgid "&Resend notification only after:"
 msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "Bescheed eerst &nochmaal loosstüern na:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:176
+#: ksieveui/vacation/vacationeditwidget.cpp:175
 #, fuzzy, kde-format
 #| msgid "&Send responses for these addresses:"
 msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "Antwoorden för disse Adre&ssen loosstüern:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:202
+#: ksieveui/vacation/vacationeditwidget.cpp:201
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Action for incoming mails:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:210
+#: ksieveui/vacation/vacationeditwidget.cpp:209
 #, fuzzy, kde-format
 #| msgid "Do not send vacation replies to spam messages"
 msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "Keen Oorlööf-Bescheden as Antwoort op Warven loosstüern"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:218
+#: ksieveui/vacation/vacationeditwidget.cpp:217
 #, fuzzy, kde-format
 #| msgid "Only react to mail coming from domain"
 msgctxt "@option:check"

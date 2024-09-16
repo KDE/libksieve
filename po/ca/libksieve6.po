@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-16 00:40+0000\n"
 "PO-Revision-Date: 2024-08-01 10:50+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -3232,69 +3232,69 @@ msgstr ""
 "IMAP per a això. Podeu fer-ho a la pestanya «Filtratge» de la configuració "
 "per al compte IMAP."
 
-#: ksieveui/vacation/vacationeditwidget.cpp:48
+#: ksieveui/vacation/vacationeditwidget.cpp:47
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "Configura les notificacions d'absències a enviar:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:56
+#: ksieveui/vacation/vacationeditwidget.cpp:55
 #, kde-format
 msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr "&Activa les notificacions d'absències"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:76
+#: ksieveui/vacation/vacationeditwidget.cpp:75
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
 msgstr "A&ssumpte del correu de vacances:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:108
+#: ksieveui/vacation/vacationeditwidget.cpp:107
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr "Data d'inici:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:138
+#: ksieveui/vacation/vacationeditwidget.cpp:137
 #, kde-format
 msgctxt "@label:textbox"
 msgid "End date:"
 msgstr "Data final:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:161
-#: ksieveui/vacation/vacationeditwidget.cpp:310
+#: ksieveui/vacation/vacationeditwidget.cpp:160
+#: ksieveui/vacation/vacationeditwidget.cpp:306
 #, kde-format
 msgid " day"
 msgid_plural " days"
 msgstr[0] " dia"
 msgstr[1] " dies"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:163
+#: ksieveui/vacation/vacationeditwidget.cpp:162
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "Només to&rna a enviar la notificació després de:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:176
+#: ksieveui/vacation/vacationeditwidget.cpp:175
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "Envia les re&spostes per a aquestes adreces:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:202
+#: ksieveui/vacation/vacationeditwidget.cpp:201
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Action for incoming mails:"
 msgstr "&Acció per als correus entrants:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:210
+#: ksieveui/vacation/vacationeditwidget.cpp:209
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "No enviïs les respostes d'absències als missatges brossa"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:218
+#: ksieveui/vacation/vacationeditwidget.cpp:217
 #, kde-format
 msgctxt "@option:check"
 msgid "Only react to mail coming from domain:"

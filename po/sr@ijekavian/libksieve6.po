@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-16 00:40+0000\n"
 "PO-Revision-Date: 2017-12-31 22:42+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -3364,14 +3364,14 @@ msgstr ""
 "страни сервера. Још нисте подесили неки ИМАП сервер за ово. То можете "
 "учинити под језичком „Филтрирање“ у постави ИМАП налога."
 
-#: ksieveui/vacation/vacationeditwidget.cpp:48
+#: ksieveui/vacation/vacationeditwidget.cpp:47
 #, fuzzy, kde-format
 #| msgid "Configure vacation notifications to be sent:"
 msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "Подесите обавештења о одмору која се шаљу:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:56
+#: ksieveui/vacation/vacationeditwidget.cpp:55
 #, fuzzy, kde-format
 #| msgid "&Activate vacation notifications"
 msgctxt "@option:check"
@@ -3379,29 +3379,29 @@ msgid "&Activate vacation notifications"
 msgstr "&Укључи обавештења о одмору"
 
 # rewrite-msgid: /mail/message/
-#: ksieveui/vacation/vacationeditwidget.cpp:76
+#: ksieveui/vacation/vacationeditwidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "&Subject of the vacation mail:"
 msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
 msgstr "&Тема поруке о одмору:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:108
+#: ksieveui/vacation/vacationeditwidget.cpp:107
 #, fuzzy, kde-format
 #| msgid "Start date:"
 msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr "Датум почетка:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:138
+#: ksieveui/vacation/vacationeditwidget.cpp:137
 #, fuzzy, kde-format
 #| msgid "End date:"
 msgctxt "@label:textbox"
 msgid "End date:"
 msgstr "Датум краја:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:161
-#: ksieveui/vacation/vacationeditwidget.cpp:310
+#: ksieveui/vacation/vacationeditwidget.cpp:160
+#: ksieveui/vacation/vacationeditwidget.cpp:306
 #, kde-format
 msgid " day"
 msgid_plural " days"
@@ -3410,21 +3410,21 @@ msgstr[1] " дана"
 msgstr[2] " дана"
 msgstr[3] " дан"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:163
+#: ksieveui/vacation/vacationeditwidget.cpp:162
 #, fuzzy, kde-format
 #| msgid "&Resend notification only after:"
 msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "&Поново пошаљи обавештење тек после:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:176
+#: ksieveui/vacation/vacationeditwidget.cpp:175
 #, fuzzy, kde-format
 #| msgid "&Send responses for these addresses:"
 msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "Пош&аљи одговоре на ове адресе:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:202
+#: ksieveui/vacation/vacationeditwidget.cpp:201
 #, fuzzy, kde-format
 #| msgid "&Action for incoming mails:"
 msgctxt "@label:textbox"
@@ -3432,14 +3432,14 @@ msgid "&Action for incoming mails:"
 msgstr "&Радња над долазним порукама:"
 
 # rewrite-msgid: /vacation replies/vacation notifications/
-#: ksieveui/vacation/vacationeditwidget.cpp:210
+#: ksieveui/vacation/vacationeditwidget.cpp:209
 #, fuzzy, kde-format
 #| msgid "Do not send vacation replies to spam messages"
 msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "Не шаљи обавештења о одмору на спам поруке"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:218
+#: ksieveui/vacation/vacationeditwidget.cpp:217
 #, fuzzy, kde-format
 #| msgid "Only react to mail coming from domain"
 msgctxt "@option:check"

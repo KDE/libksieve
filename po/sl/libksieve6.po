@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-16 00:40+0000\n"
 "PO-Revision-Date: 2024-08-01 06:33+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3205,38 +3205,38 @@ msgstr ""
 "na strani strežnika. Strežnika IMAP še niste konfigurirali za to. To lahko "
 "storite v zavihku \"Filtriranje\" nastavitve računa IMAP."
 
-#: ksieveui/vacation/vacationeditwidget.cpp:48
+#: ksieveui/vacation/vacationeditwidget.cpp:47
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "Konfigurirajte obvestila o dopustu, ki se naj pošljejo:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:56
+#: ksieveui/vacation/vacationeditwidget.cpp:55
 #, kde-format
 msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr "Aktiviraj obvestil&a o dopustu"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:76
+#: ksieveui/vacation/vacationeditwidget.cpp:75
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
 msgstr "Zadeva e-pošte glede dopusta:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:108
+#: ksieveui/vacation/vacationeditwidget.cpp:107
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr "Datum začetka:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:138
+#: ksieveui/vacation/vacationeditwidget.cpp:137
 #, kde-format
 msgctxt "@label:textbox"
 msgid "End date:"
 msgstr "Datum konca:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:161
-#: ksieveui/vacation/vacationeditwidget.cpp:310
+#: ksieveui/vacation/vacationeditwidget.cpp:160
+#: ksieveui/vacation/vacationeditwidget.cpp:306
 #, kde-format
 msgid " day"
 msgid_plural " days"
@@ -3245,31 +3245,31 @@ msgstr[1] " dneh"
 msgstr[2] " dneh"
 msgstr[3] " dneh"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:163
+#: ksieveui/vacation/vacationeditwidget.cpp:162
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "Ponovno pošlji obvestilo samo po:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:176
+#: ksieveui/vacation/vacationeditwidget.cpp:175
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "Pošlji odgovore za te na&slove:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:202
+#: ksieveui/vacation/vacationeditwidget.cpp:201
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Action for incoming mails:"
 msgstr "Dej&anje za dohodna sporočila:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:210
+#: ksieveui/vacation/vacationeditwidget.cpp:209
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "Ne pošiljaj odgovorov o dopustu na neželena sporočila"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:218
+#: ksieveui/vacation/vacationeditwidget.cpp:217
 #, kde-format
 msgctxt "@option:check"
 msgid "Only react to mail coming from domain:"

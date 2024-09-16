@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2024-09-16 00:40+0000\n"
 "PO-Revision-Date: 2012-12-28 15:41+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -3159,73 +3159,73 @@ msgid ""
 "\"Filtering\" tab of the IMAP account configuration."
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:48
+#: ksieveui/vacation/vacationeditwidget.cpp:47
 #, fuzzy, kde-format
 #| msgid "Configure vacation notifications to be sent:"
 msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "កំណត់​រចនាសម្ព័ន្ធ​ការ​ជូន​ដំណឹង​វិស្សមកាល​ដែល​ត្រូវ​ផ្ញើ ៖​​"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:56
+#: ksieveui/vacation/vacationeditwidget.cpp:55
 #, fuzzy, kde-format
 #| msgid "&Activate vacation notifications"
 msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr "ធ្វើ​ឲ្យ​ការ​ជូនដំណឹង​វិស្សមកាល​សកម្ម​​"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:76
+#: ksieveui/vacation/vacationeditwidget.cpp:75
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:108
+#: ksieveui/vacation/vacationeditwidget.cpp:107
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:138
+#: ksieveui/vacation/vacationeditwidget.cpp:137
 #, kde-format
 msgctxt "@label:textbox"
 msgid "End date:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:161
-#: ksieveui/vacation/vacationeditwidget.cpp:310
+#: ksieveui/vacation/vacationeditwidget.cpp:160
+#: ksieveui/vacation/vacationeditwidget.cpp:306
 #, kde-format
 msgid " day"
 msgid_plural " days"
 msgstr[0] "ថ្ងៃ​"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:163
+#: ksieveui/vacation/vacationeditwidget.cpp:162
 #, fuzzy, kde-format
 #| msgid "&Resend notification only after:"
 msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "ផ្ញើ​ឡើង​វិញ​ក្រោយ​ពេល​ជូនដំណឹង​ប៉ុណ្ណោះ​​ ៖​​"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:176
+#: ksieveui/vacation/vacationeditwidget.cpp:175
 #, fuzzy, kde-format
 #| msgid "&Send responses for these addresses:"
 msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "ផ្ញើ​​ឆ្លើយ​តប​​សម្រាប់​អាសយដ្ឋាន​ទាំងនេះ​ ៖​"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:202
+#: ksieveui/vacation/vacationeditwidget.cpp:201
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Action for incoming mails:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:210
+#: ksieveui/vacation/vacationeditwidget.cpp:209
 #, fuzzy, kde-format
 #| msgid "Do not send vacation replies to spam messages"
 msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "កុំ​ផ្ញើ​ការ​​ឆ្លើយ​តប​វិស្សមកាល​ទៅកាន់​សារ​ឥតបានការ​​"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:218
+#: ksieveui/vacation/vacationeditwidget.cpp:217
 #, fuzzy, kde-format
 #| msgid "Only react to mail coming from domain"
 msgctxt "@option:check"
