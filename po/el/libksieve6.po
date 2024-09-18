@@ -2357,10 +2357,9 @@ msgid "Errors reported:"
 msgstr "Σφάλματα που αναφέρθηκαν:"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:79
-#, fuzzy, kde-format
-#| msgid "all files (*)"
+#, kde-format
 msgid "All Files (*)"
-msgstr "όλα τα αρχεία (*)"
+msgstr "Όλα τα αρχεία (*)"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:80
 #, kde-format
@@ -2382,15 +2381,12 @@ msgid "Sieve Diagnostics"
 msgstr "Διαγνωστικά sieve"
 
 #: ksieveui/debug/sievedebugdialog.cpp:65
-#, fuzzy, kde-format
-#| msgid ""
-#| "Collecting diagnostic information about Sieve support...\n"
-#| "\n"
+#, kde-format
 msgid ""
 "Collecting diagnostic information about Sieve support…\n"
 "\n"
 msgstr ""
-"Συλλογή διαγνωστικών πληροφοριών για την υποστήριξη του Sieve...\n"
+"Συλλογή διαγνωστικών πληροφοριών για την υποστήριξη του Sieve…\n"
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:68
@@ -2407,10 +2403,9 @@ msgid ""
 msgstr ""
 
 #: ksieveui/debug/sievedebugdialog.cpp:122
-#, fuzzy, kde-format
-#| msgid "Collecting data for account '%1'...\n"
+#, kde-format
 msgid "Collecting data for account '%1'…\n"
-msgstr "Συλλογή δεδομένων για τον λογαριασμό '%1'...\n"
+msgstr "Συλλογή δεδομένων για τον λογαριασμό '%1'…\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:123
 #, kde-format
@@ -2432,15 +2427,12 @@ msgid "Contents of script '%1':\n"
 msgstr "Περιεχόμενα σεναρίου '%1':\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:203
-#, fuzzy, kde-format
-#| msgid ""
-#| "(This script is empty.)\n"
-#| "\n"
+#, kde-format
 msgid ""
 "(This script is empty)\n"
 "\n"
 msgstr ""
-"(Το σενάριο αυτό είναι κενό.)\n"
+"(Το σενάριο αυτό είναι κενό)\n"
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:206
@@ -2481,15 +2473,12 @@ msgstr ""
 "\n"
 
 #: ksieveui/debug/sievedebugdialog.cpp:245
-#, fuzzy, kde-format
-#| msgid ""
-#| "Active script: %1\n"
-#| "\n"
+#, kde-format
 msgid ""
 "Active script: '%1'\n"
 "\n"
 msgstr ""
-"Ενεργό σενάριο: %1\n"
+"Ενεργό σενάριο: '%1'\n"
 "\n"
 
 #: ksieveui/editor/sieveeditor.cpp:39
