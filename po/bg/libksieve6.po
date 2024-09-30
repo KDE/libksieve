@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-07-05 16:00+0200\n"
+"PO-Revision-Date: 2024-09-29 14:37+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.07.70\n"
 
 #: kmanagesieve/session.cpp:89
 #, kde-format
@@ -1166,8 +1166,8 @@ msgid ""
 msgstr ""
 "Този модификатор добавя необходимите кавички, за да гарантира, че "
 "разширеният текст ще съответства само на буквално срещане, ако се използва "
-"като параметър за :regex. Всеки знак със специално значение (. , *, ? и т."
-"н.) има префикс \\ в разширението"
+"като параметър за :regex. Всеки знак със специално значение (., *, ? и т.н.) "
+"има префикс \\ в разширението"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionstop.cpp:14
 #, kde-format
