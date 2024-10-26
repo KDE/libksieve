@@ -20,7 +20,21 @@ class KSIEVEUI_TESTS_EXPORT SelectDateWidget : public QWidget
 {
     Q_OBJECT
 public:
-    enum DateType { Year = 0, Month, Day, Date, Julian, Hour, Minute, Second, Time, Iso8601, Std11, Zone, Weekday };
+    enum DateType {
+        Year = 0,
+        Month,
+        Day,
+        Date,
+        Julian,
+        Hour,
+        Minute,
+        Second,
+        Time,
+        Iso8601,
+        Std11,
+        Zone,
+        Weekday
+    };
     explicit SelectDateWidget(QWidget *parent = nullptr);
     ~SelectDateWidget() override;
 

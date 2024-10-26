@@ -26,7 +26,9 @@ public:
     void addNewHeader(const QString &header);
 
 private:
-    enum HeaderEnum { HeaderId = Qt::UserRole + 1 };
+    enum HeaderEnum {
+        HeaderId = Qt::UserRole + 1
+    };
 
     void init();
 };

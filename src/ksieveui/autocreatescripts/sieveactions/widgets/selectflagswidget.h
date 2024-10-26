@@ -22,7 +22,9 @@ public:
     [[nodiscard]] QStringList flags() const;
 
 private:
-    enum Type { FlagsRealName = Qt::UserRole + 1 };
+    enum Type {
+        FlagsRealName = Qt::UserRole + 1
+    };
     void init();
 };
 

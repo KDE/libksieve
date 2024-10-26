@@ -13,7 +13,10 @@ class KSIEVEUI_TESTS_EXPORT SieveEditorParsingMissingFeatureWarning : public KMe
 {
     Q_OBJECT
 public:
-    enum TextEditorType { TextEditor, GraphicEditor };
+    enum TextEditorType {
+        TextEditor,
+        GraphicEditor
+    };
 
     explicit SieveEditorParsingMissingFeatureWarning(SieveEditorParsingMissingFeatureWarning::TextEditorType type, QWidget *parent = nullptr);
     ~SieveEditorParsingMissingFeatureWarning() override;

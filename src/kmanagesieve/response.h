@@ -17,7 +17,12 @@ namespace KManageSieve
 class Response
 {
 public:
-    enum Type { None, KeyValuePair, Action, Quantity };
+    enum Type {
+        None,
+        KeyValuePair,
+        Action,
+        Quantity
+    };
 
     Response() = default;
 

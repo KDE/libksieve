@@ -14,7 +14,14 @@ class SieveWidgetPageAbstract : public QWidget
 {
     Q_OBJECT
 public:
-    enum PageType { BlockIf = 0, BlockElsIf = 1, BlockElse = 2, Include = 3, ForEveryPart = 4, GlobalVariable = 5 };
+    enum PageType {
+        BlockIf = 0,
+        BlockElsIf = 1,
+        BlockElse = 2,
+        Include = 3,
+        ForEveryPart = 4,
+        GlobalVariable = 5
+    };
 
     explicit SieveWidgetPageAbstract(QWidget *parent = nullptr);
     ~SieveWidgetPageAbstract() override;

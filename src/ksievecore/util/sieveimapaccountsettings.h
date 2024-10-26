@@ -27,7 +27,17 @@ public:
                       the best supported encryption protocol. */
     };
 
-    enum AuthenticationMode { ClearText = 0, Login, Plain, CramMD5, DigestMD5, NTLM, GSSAPI, Anonymous, XOAuth2 };
+    enum AuthenticationMode {
+        ClearText = 0,
+        Login,
+        Plain,
+        CramMD5,
+        DigestMD5,
+        NTLM,
+        GSSAPI,
+        Anonymous,
+        XOAuth2
+    };
     SieveImapAccountSettings();
 
     [[nodiscard]] QString identifier() const;

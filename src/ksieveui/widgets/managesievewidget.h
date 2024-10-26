@@ -34,7 +34,10 @@ class KSIEVEUI_EXPORT ManageSieveWidget : public QWidget
 {
     Q_OBJECT
 public:
-    enum SieveEditorMode { NormalEditorMode = 0, Kep14EditorMode };
+    enum SieveEditorMode {
+        NormalEditorMode = 0,
+        Kep14EditorMode
+    };
 
     struct ScriptInfo {
         QUrl currentUrl;

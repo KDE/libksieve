@@ -26,7 +26,11 @@ class SieveScriptBlockWidget : public SieveWidgetPageAbstract
 {
     Q_OBJECT
 public:
-    enum MatchCondition { OrCondition, AndCondition, AllCondition };
+    enum MatchCondition {
+        OrCondition,
+        AndCondition,
+        AllCondition
+    };
 
     explicit SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent = nullptr);
     ~SieveScriptBlockWidget() override;

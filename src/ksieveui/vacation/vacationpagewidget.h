@@ -42,7 +42,10 @@ private Q_SLOTS:
     void slotGetResult(const QString &serverName, const QStringList &sieveCapabilities, const QString &scriptName, const QString &script, bool active);
 
 private:
-    enum PageType { Script = 0, ScriptNotSupported = 1 };
+    enum PageType {
+        Script = 0,
+        ScriptNotSupported = 1
+    };
 
     QString mServerName;
     QUrl mUrl;

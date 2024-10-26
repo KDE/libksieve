@@ -30,7 +30,11 @@ class KSIEVEUI_EXPORT SieveEditorWidget : public QWidget
 public:
     explicit SieveEditorWidget(bool useMenuBar, QWidget *parent = nullptr);
     ~SieveEditorWidget() override;
-    enum EditorMode { Unknown = -1, TextMode = 0, GraphicMode = 1 };
+    enum EditorMode {
+        Unknown = -1,
+        TextMode = 0,
+        GraphicMode = 1
+    };
 
     void setReadOnly(bool b);
     [[nodiscard]] QString script() const;
