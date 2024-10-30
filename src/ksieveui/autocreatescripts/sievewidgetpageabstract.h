@@ -14,7 +14,7 @@ class SieveWidgetPageAbstract : public QWidget
 {
     Q_OBJECT
 public:
-    enum PageType {
+    enum PageType : uint8_t {
         BlockIf = 0,
         BlockElsIf = 1,
         BlockElse = 2,

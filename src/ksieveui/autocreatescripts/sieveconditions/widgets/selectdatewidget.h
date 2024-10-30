@@ -20,7 +20,7 @@ class KSIEVEUI_TESTS_EXPORT SelectDateWidget : public QWidget
 {
     Q_OBJECT
 public:
-    enum DateType {
+    enum DateType : uint8_t {
         Year = 0,
         Month,
         Day,

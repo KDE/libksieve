@@ -42,7 +42,7 @@ private Q_SLOTS:
     void slotGetResult(const QString &serverName, const QStringList &sieveCapabilities, const QString &scriptName, const QString &script, bool active);
 
 private:
-    enum PageType {
+    enum PageType : uint8_t {
         Script = 0,
         ScriptNotSupported = 1
     };
@@ -53,7 +53,7 @@ private:
     VacationEditWidget *mVacationEditWidget = nullptr;
     VacationWarningWidget *mVacationWarningWidget = nullptr;
     KSieveCore::MultiImapVacationManager *mVacationManager = nullptr;
-    PageType mPageScript = Script;
+    PageType mPageScript = PageType::Script;
     bool mWasActive = false;
     bool mHasDateSupport = false;
 };

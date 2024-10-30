@@ -34,7 +34,7 @@ class KSIEVEUI_EXPORT ManageSieveWidget : public QWidget
 {
     Q_OBJECT
 public:
-    enum SieveEditorMode {
+    enum SieveEditorMode : uint8_t {
         NormalEditorMode = 0,
         Kep14EditorMode
     };

@@ -15,7 +15,7 @@ namespace KSieveCore
 {
 namespace VacationUtils
 {
-enum MailAction {
+enum MailAction : uint8_t {
     Keep,
     Discard,
     Sendto,
