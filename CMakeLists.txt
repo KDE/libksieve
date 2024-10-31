@@ -70,6 +70,7 @@ set_package_properties(Sasl2 PROPERTIES TYPE REQUIRED)
 
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets PrintSupport WebEngineWidgets)
 find_package(KF6I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
+find_package(KF6ColorScheme ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6KIO ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6CoreAddons ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6IconThemes ${KF_MIN_VERSION} CONFIG REQUIRED)

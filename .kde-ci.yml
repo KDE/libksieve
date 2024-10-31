@@ -5,6 +5,7 @@ Dependencies:
 - 'on': ['Linux', 'FreeBSD', 'Windows']
   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
+    'frameworks/kcolorscheme': '@latest-kf6'
     'pim/kidentitymanagement' : '@same'
     'pim/kimap' : '@same'
     'pim/kmailtransport' : '@same'

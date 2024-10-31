@@ -369,6 +369,7 @@ target_link_libraries(KPim6KSieveUi
     KF6::SonnetUi
     Qt::PrintSupport
     KF6::SyntaxHighlighting
+    KF6::ColorScheme
     KF6::TextAddonsWidgets
     KF6::TextCustomEditor
     KF6::TextUtils
