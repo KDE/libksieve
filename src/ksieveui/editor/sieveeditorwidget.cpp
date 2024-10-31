@@ -18,7 +18,7 @@
 #include "libksieveui_debug.h"
 #include <KActionMenu>
 #include <KLocalizedString>
-#include <KStandardAction>
+#include <KStandardActions>
 #include <PimCommon/PurposeMenuWidget>
 #include <QAction>
 #include <QLabel>
@@ -45,7 +45,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     mCheckSyntax = new QAction(i18nc("@action", "Check Syntax"), this);
     connect(mCheckSyntax, &QAction::triggered, this, &SieveEditorWidget::slotCheckSyntax);
     toolbar->addAction(mCheckSyntax);
-    mSaveAs = KStandardAction::saveAs(this, &SieveEditorWidget::slotSaveAs, this);
+    mSaveAs = KStandardActions::saveAs(this, &SieveEditorWidget::slotSaveAs, this);
     toolbar->addAction(mSaveAs);
     toolbar->addAction(i18n("Import…"), this, &SieveEditorWidget::slotImport);
 
