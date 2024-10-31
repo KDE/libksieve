@@ -6,7 +6,7 @@
 
 #include "sievescriptdebuggerresulteditor.h"
 #include <KLocalizedString>
-#include <KStandardAction>
+#include <KStandardActions>
 #include <PimCommon/PimUtil>
 #include <QAction>
 #include <QMenu>
@@ -28,7 +28,7 @@ void SieveScriptDebuggerResultEditor::addExtraMenuEntry(QMenu *menu, QPoint pos)
         connect(clearAction, &QAction::triggered, this, &SieveScriptDebuggerResultEditor::slotClear);
         menu->addAction(clearAction);
         menu->addSeparator();
-        QAction *saveAsAction = KStandardAction::saveAs(this, &SieveScriptDebuggerResultEditor::slotSaveAs, this);
+        QAction *saveAsAction = KStandardActions::saveAs(this, &SieveScriptDebuggerResultEditor::slotSaveAs, this);
         menu->addAction(saveAsAction);
     }
 }

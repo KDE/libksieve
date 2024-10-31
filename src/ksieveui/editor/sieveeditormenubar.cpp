@@ -9,7 +9,7 @@
 #include "sieveeditortextmodewidget.h"
 
 #include <KLocalizedString>
-#include <KStandardAction>
+#include <KStandardActions>
 #include <QAction>
 #include <QIcon>
 using namespace KSieveUi;
@@ -64,20 +64,20 @@ void SieveEditorMenuBar::initActions()
     mDebugSieveAction->setShortcut(QKeySequence(Qt::ALT | Qt::Key_D));
     connect(mDebugSieveAction, &QAction::triggered, this, &SieveEditorMenuBar::debugSieveScript);
 
-    mFindAction = KStandardAction::find(this, &SieveEditorMenuBar::find, this);
-    mReplaceAction = KStandardAction::replace(this, &SieveEditorMenuBar::replace, this);
-    mUndoAction = KStandardAction::undo(this, &SieveEditorMenuBar::undo, this);
-    mRedoAction = KStandardAction::redo(this, &SieveEditorMenuBar::redo, this);
-    mCopyAction = KStandardAction::copy(this, &SieveEditorMenuBar::copy, this);
-    mPasteAction = KStandardAction::paste(this, &SieveEditorMenuBar::paste, this);
-    mCutAction = KStandardAction::cut(this, &SieveEditorMenuBar::cut, this);
-    mSelectAllAction = KStandardAction::selectAll(this, &SieveEditorMenuBar::selectAll, this);
-    mZoomInAction = KStandardAction::zoomIn(this, &SieveEditorMenuBar::zoomIn, this);
-    mZoomOutAction = KStandardAction::zoomOut(this, &SieveEditorMenuBar::zoomOut, this);
-    mPrintAction = KStandardAction::print(this, &SieveEditorMenuBar::print, this);
-    mPrintPreviewAction = KStandardAction::printPreview(this, &SieveEditorMenuBar::printPreview, this);
+    mFindAction = KStandardActions::find(this, &SieveEditorMenuBar::find, this);
+    mReplaceAction = KStandardActions::replace(this, &SieveEditorMenuBar::replace, this);
+    mUndoAction = KStandardActions::undo(this, &SieveEditorMenuBar::undo, this);
+    mRedoAction = KStandardActions::redo(this, &SieveEditorMenuBar::redo, this);
+    mCopyAction = KStandardActions::copy(this, &SieveEditorMenuBar::copy, this);
+    mPasteAction = KStandardActions::paste(this, &SieveEditorMenuBar::paste, this);
+    mCutAction = KStandardActions::cut(this, &SieveEditorMenuBar::cut, this);
+    mSelectAllAction = KStandardActions::selectAll(this, &SieveEditorMenuBar::selectAll, this);
+    mZoomInAction = KStandardActions::zoomIn(this, &SieveEditorMenuBar::zoomIn, this);
+    mZoomOutAction = KStandardActions::zoomOut(this, &SieveEditorMenuBar::zoomOut, this);
+    mPrintAction = KStandardActions::print(this, &SieveEditorMenuBar::print, this);
+    mPrintPreviewAction = KStandardActions::printPreview(this, &SieveEditorMenuBar::printPreview, this);
 
-    mZoomResetAction = KStandardAction::actualSize(this, &SieveEditorMenuBar::zoomReset, this);
+    mZoomResetAction = KStandardActions::actualSize(this, &SieveEditorMenuBar::zoomReset, this);
     mWordWrapAction = new QAction(i18nc("@action", "Wordwrap"), this);
     mWordWrapAction->setCheckable(true);
     connect(mWordWrapAction, &QAction::triggered, this, &SieveEditorMenuBar::wordWrap);
