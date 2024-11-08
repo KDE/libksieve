@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-04 00:39+0000\n"
-"PO-Revision-Date: 2024-11-06 23:19+0100\n"
+"PO-Revision-Date: 2024-11-07 19:08+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -1729,7 +1729,7 @@ msgid ""
 msgstr ""
 "Този тест извлича стойността на анотацията на сървъра \"анотация-име\". "
 "Извлечената стойност се сравнява с \"списъка с ключове\". Тестът връща true, "
-"ако анотацията съществува и нейната стойност съвпада с някой от ключовете. "
+"ако анотацията съществува и нейната стойност съвпада с някой от ключовете."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:20
 #, kde-format
