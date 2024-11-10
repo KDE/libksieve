@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-16 00:40+0000\n"
-"PO-Revision-Date: 2024-09-29 14:39+0200\n"
+"PO-Revision-Date: 2024-11-09 20:09+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: kmanagesieve/session.cpp:89
 #, kde-format
@@ -76,7 +76,7 @@ msgid ""
 "\"%1\" (usually the same as your email password):"
 msgstr ""
 "Моля, въведете вашите данни за удостоверяване за вашия sieve акаунт "
-"\"%1\" (обикновено същото като паролата ви за имейл):"
+"„%1“ (обикновено същото като паролата ви за имейл):"
 
 #: kmanagesieve/session.cpp:321
 #, kde-format
@@ -277,32 +277,32 @@ msgstr "Първата команда трябва да бъде \"require\"."
 #: ksieve/error.cpp:172
 #, kde-format
 msgid "\"require\" missing for command \"%1\""
-msgstr "Липсва \"require\" за командата \"%1\"."
+msgstr "Липсва \"require\" за командата „%1“."
 
 #: ksieve/error.cpp:175
 #, kde-format
 msgid "\"require\" missing for test \"%1\""
-msgstr "Липсва \"require\" за теста \"%1\"."
+msgstr "Липсва \"require\" за теста „%1“."
 
 #: ksieve/error.cpp:178
 #, kde-format
 msgid "\"require\" missing for comparator \"%1\""
-msgstr "Липсва \"require\" за сравнителната функция \"%1\"."
+msgstr "Липсва \"require\" за сравнителната функция „%1“."
 
 #: ksieve/error.cpp:181
 #, kde-format
 msgid "Command \"%1\" not supported"
-msgstr "Командата \"%1\" не се поддържа."
+msgstr "Командата „%1“ не се поддържа."
 
 #: ksieve/error.cpp:184
 #, kde-format
 msgid "Test \"%1\" not supported"
-msgstr "Тестът \"%1\" не се поддържа."
+msgstr "Тестът „%1“ не се поддържа."
 
 #: ksieve/error.cpp:187
 #, kde-format
 msgid "Comparator \"%1\" not supported"
-msgstr "Сравнителната функция \"%1\" не се поддържа."
+msgstr "Сравнителната функция „%1“ не се поддържа."
 
 #: ksieve/error.cpp:190
 #, kde-format
@@ -319,27 +319,27 @@ msgstr ""
 #: ksieve/error.cpp:196
 #, kde-format
 msgid "Invalid Argument \"%1\" to \"%2\""
-msgstr "Невалиден аргумент \"%1\" за \"%2\"."
+msgstr "Невалиден аргумент „%1“ за „%2“."
 
 #: ksieve/error.cpp:199
 #, kde-format
 msgid "Conflicting Arguments: \"%1\" and \"%2\""
-msgstr "Несъвместими аргументи \"%1\" и \"%2\"."
+msgstr "Несъвместими аргументи „%1“ и „%2“."
 
 #: ksieve/error.cpp:202
 #, kde-format
 msgid "Argument \"%1\" Repeated"
-msgstr "Аргументът \"%1\" се повтаря."
+msgstr "Аргументът „%1“ се повтаря."
 
 #: ksieve/error.cpp:205
 #, kde-format
 msgid "Command \"%1\" violates command ordering constraints"
-msgstr "Командата \"%1\" нарушава реда на изпълнение на командите."
+msgstr "Командата „%1“ нарушава реда на изпълнение на командите."
 
 #: ksieve/error.cpp:210
 #, kde-format
 msgid "Incompatible Actions \"%1\" and \"%2\" requested"
-msgstr "Заявени са несъвместими команди \"%1\" и \"%2\"."
+msgstr "Заявени са несъвместими команди „%1“ и „%2“."
 
 #: ksieve/error.cpp:213
 #, kde-format
@@ -582,7 +582,7 @@ msgstr "Създаване на филтър за Sieve"
 #: ksieveui/autocreatescripts/autocreatescriptutil.cpp:177
 #, kde-format
 msgid "Cannot find item \"%1\" in widget \"%2\""
-msgstr "Не може да се намери елемент \"%1\" в изпълним модул \"%2\""
+msgstr "Не може да се намери елемент „%1“ в изпълним модул „%2“"
 
 #: ksieveui/autocreatescripts/autocreatescriptutil.cpp:185
 #, kde-format
@@ -600,7 +600,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:37
 #, kde-format
 msgid "Too many arguments for SelectConvertParameterWidget, \"%1\""
-msgstr "Твърде много аргументи за SelectConvertParameterWidget, \"%1\""
+msgstr "Твърде много аргументи за SelectConvertParameterWidget, „%1“"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:60
 #: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:71
@@ -673,16 +673,16 @@ msgstr "BMP"
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing action \"%2\"."
 msgstr ""
-"Беше открита неизвестна стойност на етикета \"%1\" по време на действие за "
-"анализ \"%2\"."
+"Беше открита неизвестна стойност на етикета „%1“ по време на действие за "
+"анализ „%2“."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:106
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:41
 #, kde-format
 msgid "An unknown tag \"%1\" was found during parsing action \"%2\"."
 msgstr ""
-"Беше открит неизвестен етикет \"%1\" по време на действието за синтактичен "
-"анализ \"%2\"."
+"Беше открит неизвестен етикет „%1“ по време на действието за синтактичен "
+"анализ „%2“."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:112
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:48
@@ -691,7 +691,7 @@ msgid ""
 "Too many arguments found for \"%1\", max value is %2, number of value found "
 "%3 for %4"
 msgstr ""
-"Намерени са твърде много аргументи за \"%1\", максималната стойност е %2, "
+"Намерени са твърде много аргументи за „%1“, максималната стойност е %2, "
 "броят намерени стойности %3 за %4"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:117
@@ -699,7 +699,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:52
 #, kde-format
 msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
-msgstr "Функция \"%1\" в състояние \"%2\" не се поддържа от сървъра"
+msgstr "Функция „%1“ в състояние „%2“ не се поддържа от сървъра"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
 #, kde-format
@@ -1398,7 +1398,7 @@ msgstr "Добавяне на коментар"
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:222
 #, kde-format
 msgid "Script contains unsupported feature \"%1\""
-msgstr "Скриптът съдържа неподдържана функция \"%1\""
+msgstr "Скриптът съдържа неподдържана функция „%1“"
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:410
 #, kde-format
@@ -1408,7 +1408,7 @@ msgstr "Открихме цикъл if в цикъл if. Не се поддър�
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:31
 #, kde-format
 msgid "Unknown tag \"%1\" during parsing condition \"%2\""
-msgstr "Неизвестен етикет \"%1\" по време на условие за анализ \"%2\""
+msgstr "Неизвестен етикет „%1“ по време на условие за анализ „%2“"
 
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:41
 #, kde-format
@@ -1416,15 +1416,15 @@ msgid ""
 "Too many argument found for \"%1\", max value is %2, number of value found "
 "%3 for %4"
 msgstr ""
-"Намерени са твърде много аргументи за \"%1\", максималната стойност е %2, "
+"Намерени са твърде много аргументи за „%1“, максималната стойност е %2, "
 "броят намерени стойности %3 за %4"
 
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:47
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing condition \"%2\"."
 msgstr ""
-"Неизвестна стойност на етикет \"%1\" беше открита по време на условието за "
-"синтактичен анализ \"%2\"."
+"Неизвестна стойност на етикет „%1“ беше открита по време на условието за "
+"синтактичен анализ „%2“."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:23
 #, kde-format
@@ -2128,12 +2128,12 @@ msgstr ""
 #, kde-format
 msgid "Unknown tagValue \"%1\" during loading loop \"for\""
 msgstr ""
-"Неизвестна стойност на етикет \"%1\" по време на цикъл на зареждане \"за\""
+"Неизвестна стойност на етикет „%1“ по време на цикъл на зареждане \"за\""
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:104
 #, kde-format
 msgid "Unknown tag \"%1\" during loading loop \"for\""
-msgstr "Неизвестен етикет \"%1\" по време на цикъл на зареждане \"for\""
+msgstr "Неизвестен етикет „%1“ по време на цикъл на зареждане \"for\""
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:58
 #, kde-format
@@ -2150,7 +2150,7 @@ msgstr "Задайте стойност на:"
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:129
 #, kde-format
 msgid "Unknown tag \"%1\" during loading of variables."
-msgstr "Неизвестен етикет \"%1\" по време на зареждане на променливи."
+msgstr "Неизвестен етикет „%1“ по време на зареждане на променливи."
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:179
 #, kde-format
@@ -2178,7 +2178,7 @@ msgstr "глобално"
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:58
 #, kde-format
 msgid "Unknown location type \"%1\" during parsing includes"
-msgstr "Неизвестен тип местоположение \"%1\" по време на анализиране включва"
+msgstr "Неизвестен тип местоположение „%1“ по време на анализиране включва"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:129
 #, kde-format
@@ -2362,7 +2362,7 @@ msgstr "Ново име на скрипт:"
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:269
 #, kde-format
 msgid "Do you want to delete \"%1\" script?"
-msgstr "Искате ли да изтриете \"%1\" скрипт?"
+msgstr "Искате ли да изтриете „%1“ скрипт?"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:270
 #, kde-format
@@ -2640,7 +2640,7 @@ msgid ""
 "\"%2\" is the detailed error description."
 msgstr ""
 "Не може да се зареди файлът %1:\n"
-"\"%2\" е подробното описание на грешката."
+"„%2“ е подробното описание на грешката."
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
 #, kde-format
@@ -3413,7 +3413,7 @@ msgstr "Не можете да използвате защитено име."
 #: ksieveui/widgets/managesievewidget.cpp:246
 #, kde-format
 msgid "Script name already used \"%1\"."
-msgstr "Името на скрипта вече е използвано \"%1\"."
+msgstr "Името на скрипта вече е използвано „%1“."
 
 #: ksieveui/widgets/managesievewidget.cpp:426
 #: ksieveui/widgets/managesievewidget.cpp:454
@@ -3429,7 +3429,7 @@ msgstr "Име на скрипта:"
 #: ksieveui/widgets/managesievewidget.cpp:490
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
-msgstr "Наистина ли изтривам скрипт \"%1\" от сървъра?"
+msgstr "Наистина ли изтривам скрипт „%1“ от сървъра?"
 
 #: ksieveui/widgets/managesievewidget.cpp:491
 #, kde-format
