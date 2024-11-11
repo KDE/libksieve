@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-16 00:40+0000\n"
-"PO-Revision-Date: 2024-09-29 14:39+0200\n"
+"PO-Revision-Date: 2024-11-10 15:23+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #: kmanagesieve/session.cpp:89
 #, kde-format
@@ -541,7 +541,7 @@ msgstr "Отхвърляне"
 #: ksievecore/vacation/vacationutils.cpp:50
 #, kde-format
 msgid "Redirect to"
-msgstr "Пренсочване към"
+msgstr "Пренасочване към"
 
 #: ksievecore/vacation/vacationutils.cpp:52
 #, kde-format
@@ -1066,7 +1066,7 @@ msgid ""
 "a flag that wasn't set before is not an error and is ignored."
 msgstr ""
 "Removeflag се използва за премахване на флагове от списък с [IMAP] флагове. "
-"Removeflag изчиства флаговете, зададени преди това от \"set\"/\"addflag\". "
+"Removeflag изчиства флаговете, зададени преди това от „set“/„addflag“. "
 "Извикването на removeflag с флаг, който не е бил зададен преди, не е грешка "
 "и се игнорира."
 
@@ -1811,7 +1811,7 @@ msgstr "вярно"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:43
 #, kde-format
 msgid "The \"true\" test always evaluates to true."
-msgstr "Тестът \"true\" винаги дава резултат вяерно."
+msgstr "Тестът \"true\" винаги дава резултат вярно."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionvirustest.cpp:22
 #, kde-format
