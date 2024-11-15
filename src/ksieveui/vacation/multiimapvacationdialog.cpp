@@ -106,22 +106,21 @@ void MultiImapVacationDialog::init()
     d->mStackedWidget->addWidget(d->mTabWidget);
 
     auto w = new QWidget;
-    auto vbox = new QVBoxLayout;
-    w->setLayout(vbox);
+    auto vbox = new QVBoxLayout(w);
     auto lab = new QLabel(i18nc("@label:textbox",
                                 "KMail's Out of Office Reply functionality relies on "
                                 "server-side filtering. You have not yet configured an "
                                 "IMAP server for this. "
                                 "You can do this on the \"Filtering\" tab of the IMAP "
-                                "account configuration."));
+                                "account configuration."),
+                          w);
     lab->setWordWrap(true);
     lab->setAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
     QFont font = lab->font();
     font.setBold(true);
-    font.setPixelSize(font.pixelSize() + 2);
+    font.setPointSize(font.pointSize() + 2);
     lab->setFont(font);
     vbox->addWidget(lab);
-    lab->setWordWrap(true);
     d->mStackedWidget->addWidget(w);
     d->mStackedWidget->setCurrentIndex(0);
     mButtonBox = new QDialogButtonBox(this);
