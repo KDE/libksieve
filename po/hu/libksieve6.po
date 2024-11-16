@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-16 00:40+0000\n"
-"PO-Revision-Date: 2024-08-06 14:33+0200\n"
+"POT-Creation-Date: 2024-11-16 00:41+0000\n"
+"PO-Revision-Date: 2024-11-15 20:24+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #: kmanagesieve/session.cpp:89
 #, kde-format
@@ -911,15 +911,13 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:96
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:35
-#, fuzzy, kde-format
-#| msgid "Keep a copy"
+#, kde-format
 msgctxt "@option:check"
 msgid "Keep a copy"
 msgstr "Másolat megtartása"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:102
-#, fuzzy, kde-format
-#| msgid "Create folder"
+#, kde-format
 msgctxt "@option:check"
 msgid "Create folder"
 msgstr "Mappa létrehozása"
@@ -1000,8 +998,7 @@ msgid "Redirect"
 msgstr "Átirányítás"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:41
-#, fuzzy, kde-format
-#| msgid "Use list"
+#, kde-format
 msgctxt "@option:check"
 msgid "Use list"
 msgstr "Lista használata"
@@ -1114,8 +1111,7 @@ msgid "Variable"
 msgstr "Változó"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:42
-#, fuzzy, kde-format
-#| msgid "Protect special character"
+#, kde-format
 msgctxt "@option:check"
 msgid "Protect special character"
 msgstr "Speciális karakterek védelme"
@@ -1770,8 +1766,7 @@ msgid "Spam Test"
 msgstr "Levélszemét teszt"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:37
-#, fuzzy, kde-format
-#| msgid "Percent"
+#, kde-format
 msgctxt "@option:check"
 msgid "Percent"
 msgstr "Százalék"
@@ -2097,8 +2092,7 @@ msgid "Do Not Switch"
 msgstr "Ne váltson át"
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:30
-#, fuzzy, kde-format
-#| msgid "Add ForEveryPart loop"
+#, kde-format
 msgctxt "@option:check"
 msgid "Add ForEveryPart loop"
 msgstr "ForEveryPart ciklus hozzáadása"
@@ -2131,8 +2125,7 @@ msgid "Variable name:"
 msgstr "Változónév:"
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Set value to:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Set value to:"
 msgstr "Érték beállítása erre:"
@@ -2184,15 +2177,13 @@ msgid "Name:"
 msgstr "Név:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:144
-#, fuzzy, kde-format
-#| msgid "Optional"
+#, kde-format
 msgctxt "@option:check"
 msgid "Optional"
 msgstr "Opcionális"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:148
-#, fuzzy, kde-format
-#| msgid "Once"
+#, kde-format
 msgctxt "@option:check"
 msgid "Once"
 msgstr "Egyszer"
@@ -2220,22 +2211,19 @@ msgid "Conditions"
 msgstr "Feltételek"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
-#, fuzzy, kde-format
-#| msgid "Match all messages"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Match all messages"
 msgstr "Illeszkedés minden üzenethez"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:39
-#, fuzzy, kde-format
-#| msgid "Match a&ll of the following"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Match a&ll of the following"
 msgstr "Illeszkedés a következők &mindegyikéhez"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:40
-#, fuzzy, kde-format
-#| msgid "Match an&y of the following"
+#, kde-format
 msgctxt "@option:radio"
 msgid "Match an&y of the following"
 msgstr "Illeszkedés a következők legalább &egyikéhez"
@@ -2637,8 +2625,7 @@ msgstr ""
 "Részletes hibaleírás: „%2”"
 
 #: ksieveui/editor/sieveeditorabstractwidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Sieve Editor Error"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "Sieve-szerkesztő hiba"
@@ -2937,8 +2924,7 @@ msgid "Phrase not found"
 msgstr "A kifejezés nem található"
 
 #: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
-#, fuzzy, kde-format
-#| msgid "Save Web Page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr "Weboldal mentése"
@@ -3207,7 +3193,7 @@ msgctxt "@action:button"
 msgid "Do Not Cancel"
 msgstr "Ne szakítsa meg"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:112
+#: ksieveui/vacation/multiimapvacationdialog.cpp:111
 #, kde-format
 msgctxt "@label:textbox"
 msgid ""
@@ -3226,8 +3212,7 @@ msgid "Configure vacation notifications to be sent:"
 msgstr "Az elküldendő szabadság értesítések beállítása:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:55
-#, fuzzy, kde-format
-#| msgid "&Activate vacation notifications"
+#, kde-format
 msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr "Szabadság értesítések &aktiválása"
@@ -3277,15 +3262,13 @@ msgid "&Action for incoming mails:"
 msgstr "Bejövő levelekre von&atkozó művelet:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:209
-#, fuzzy, kde-format
-#| msgid "Do not send vacation replies to spam messages"
+#, kde-format
 msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "Ne küldjön szabadság választ spam üzenetekre"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:217
-#, fuzzy, kde-format
-#| msgid "Only react to mail coming from domain:"
+#, kde-format
 msgctxt "@option:check"
 msgid "Only react to mail coming from domain:"
 msgstr "Csak tartományból érkező levelekre reagáljon:"
