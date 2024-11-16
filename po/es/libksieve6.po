@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-16 00:40+0000\n"
+"POT-Creation-Date: 2024-11-16 02:37+0000\n"
 "PO-Revision-Date: 2024-08-01 04:59+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -3218,7 +3218,7 @@ msgctxt "@action:button"
 msgid "Do Not Cancel"
 msgstr "No cancelar"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:112
+#: ksieveui/vacation/multiimapvacationdialog.cpp:111
 #, kde-format
 msgctxt "@label:textbox"
 msgid ""
