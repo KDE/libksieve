@@ -63,6 +63,12 @@ if(USE_UNITY_CMAKE_SUPPORT)
     set(COMPILE_WITH_UNITY_CMAKE_SUPPORT ON)
 endif()
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
+# -fhardened increase compilation time and produce a lot of warning
+option(OPTION_DISABLE_HARDENED_OPTIMIZATION "Disable -fhardened" OFF)
+if(OPTION_DISABLE_HARDENED_OPTIMIZATION)
+   string(REPLACE "-fhardened" "" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+   string(REPLACE "-fhardened" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+endif()
 option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
 # Look for Sasl2 before anything else
 find_package(Sasl2)
