@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-16 00:41+0000\n"
-"PO-Revision-Date: 2024-12-13 20:20+0530\n"
+"PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -390,7 +390,7 @@ msgstr ""
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:70
 #, kde-format
 msgid "Script is empty. (%1)"
-msgstr "स्क्रिप्ट् रिक्तम् अस्ति। (%1) ९."
+msgstr "स्क्रिप्ट् रिक्तम् अस्ति। (%1)"
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:78
 #, kde-format
@@ -698,7 +698,7 @@ msgstr "शीर्षकं योजयन्तु"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "header:"
-msgstr "शीर्षकम् : १."
+msgstr "शीर्षकम् :"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:49
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:49
@@ -724,7 +724,7 @@ msgstr "भङ्गः"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name (optional):"
-msgstr "नाम (वैकल्पिक): १."
+msgstr "नाम (वैकल्पिक):"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:89
 #, kde-format
@@ -756,7 +756,7 @@ msgstr "इत्यस्मै:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Parameters:"
-msgstr "मापदण्डः : १."
+msgstr "मापदण्डः :"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:129
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:94
@@ -806,7 +806,7 @@ msgstr "विषयः:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "headers:"
-msgstr "शीर्षकम् : १."
+msgstr "शीर्षकम् :"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:51
 #: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:30
@@ -848,13 +848,13 @@ msgstr "पाठं निष्कासयतु"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Number of characters:"
-msgstr "वर्णानाम् संख्या : १."
+msgstr "वर्णानाम् संख्या :"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:42
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Stored in variable name:"
-msgstr "चरनाम्नि संगृहीतम् : १."
+msgstr "चरनाम्नि संगृहीतम् :"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:110
 #, kde-format
@@ -934,7 +934,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Add flags:"
-msgstr "ध्वजान् योजयन्तु : १."
+msgstr "ध्वजान् योजयन्तु :"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:23
 #, kde-format
@@ -1093,7 +1093,7 @@ msgstr "मूल्यम्‌:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "In variable:"
-msgstr "चरमध्ये : १."
+msgstr "चरमध्ये :"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:106
 #, kde-format
@@ -1148,19 +1148,19 @@ msgstr "दिनं:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Message subject:"
-msgstr "सन्देशविषयः : १."
+msgstr "सन्देशविषयः :"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:66
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Additional email:"
-msgstr "अतिरिक्त ईमेल : १."
+msgstr "अतिरिक्त ईमेल :"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:75
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Vacation reason:"
-msgstr "अवकाशस्य कारणम् : १."
+msgstr "अवकाशस्य कारणम् :"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:196
 #, kde-format
@@ -1550,7 +1550,7 @@ msgstr "शीर्षकम्"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "With value:"
-msgstr "मूल्येन सह : १."
+msgstr "मूल्येन सह :"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:75
 #, kde-format
@@ -1608,14 +1608,14 @@ msgstr "मेटा डाटा"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Mailbox:"
-msgstr "मेलबॉक्सः १."
+msgstr "मेलबॉक्सः"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:54
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:52
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Annotations:"
-msgstr "टिप्पणी : १."
+msgstr "टिप्पणी :"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:119
 #, kde-format
@@ -1639,7 +1639,7 @@ msgstr "मेटाडाटा अस्ति"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Annotation:"
-msgstr "टिप्पणी : १."
+msgstr "टिप्पणी :"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:81
 #, kde-format
@@ -1870,7 +1870,7 @@ msgstr "शीर्षकम्"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Add new header:"
-msgstr "नूतनं शीर्षकं योजयन्तु : १."
+msgstr "नूतनं शीर्षकं योजयन्तु :"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:245
 #, kde-format
@@ -2065,7 +2065,7 @@ msgstr "\"for\" इति लूप् लोड् करणस्य समय
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Variable name:"
-msgstr "चरनाम : १."
+msgstr "चरनाम :"
 
 #: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:65
 #, kde-format
@@ -2179,7 +2179,7 @@ msgstr "कर्माणि"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Add new block:"
-msgstr "नूतनं खण्डं योजयन्तु : १."
+msgstr "नूतनं खण्डं योजयन्तु :"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:87
 #, kde-format
@@ -2281,7 +2281,7 @@ msgstr "नवीन लिपि"
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:257
 #, kde-format
 msgid "New script name:"
-msgstr "नवीन लिपिनाम : १."
+msgstr "नवीन लिपिनाम :"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:269
 #, kde-format
@@ -2303,7 +2303,7 @@ msgstr "स्क्रिप्ट् इत्यस्य नाम परि
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:290
 #, kde-format
 msgid "New name for the script:"
-msgstr "लिप्याः नूतनं नाम : १."
+msgstr "लिप्याः नूतनं नाम :"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:479
 #, kde-format
@@ -2367,12 +2367,12 @@ msgstr "Save As..."
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
 #, kde-format
 msgid "Sieve script:"
-msgstr "चलनी लिपि : १."
+msgstr "चलनी लिपि :"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:56
 #, kde-format
 msgid "Errors reported:"
-msgstr "त्रुटयः निवेदिताः : १."
+msgstr "त्रुटयः निवेदिताः :"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:79
 #, kde-format
@@ -2720,7 +2720,7 @@ msgstr "सर्वर इन्फो"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Script name:"
-msgstr "स्क्रिप्ट् नाम : १."
+msgstr "स्क्रिप्ट् नाम :"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:385
 #, kde-format
@@ -2741,7 +2741,7 @@ msgstr "चलनी सर्वर समर्थन"
 #: ksieveui/editor/sieveinfowidget.cpp:30
 #, kde-format
 msgid "Sieve server supports:"
-msgstr "चलनी सर्वर समर्थयति : १."
+msgstr "चलनी सर्वर समर्थयति :"
 
 #: ksieveui/editor/sievetextedit.cpp:277
 #, kde-format
@@ -2974,7 +2974,7 @@ msgstr "त्रुटिनिवारणम्"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Email path:"
-msgstr "ईमेलमार्गः : १."
+msgstr "ईमेलमार्गः :"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:57
 #, kde-format
@@ -3160,19 +3160,19 @@ msgstr "&अवकाशसूचनाः सक्रियं कुर्व
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
-msgstr "&अवकाशमेलस्य विषयः : १."
+msgstr "&अवकाशमेलस्य विषयः :"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:107
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Start date:"
-msgstr "आरम्भतिथिः : १."
+msgstr "आरम्भतिथिः :"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:137
 #, kde-format
 msgctxt "@label:textbox"
 msgid "End date:"
-msgstr "समाप्तितिथिः : १."
+msgstr "समाप्तितिथिः :"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:160
 #: ksieveui/vacation/vacationeditwidget.cpp:306
@@ -3198,7 +3198,7 @@ msgstr "&एतेषां पत्तनानां प्रतिक्र
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Action for incoming mails:"
-msgstr "&आगतानां मेलानाम् कृते क्रिया: १."
+msgstr "&आगतानां मेलानाम् कृते क्रिया:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:209
 #, kde-format
@@ -3346,7 +3346,7 @@ msgstr "स्क्रिप्ट् इत्यस्य नाम परि
 #: ksieveui/widgets/managesievewidget.cpp:426
 #, kde-format
 msgid "Script Name:"
-msgstr "स्क्रिप्ट् नाम : १."
+msgstr "स्क्रिप्ट् नाम :"
 
 #: ksieveui/widgets/managesievewidget.cpp:490
 #, kde-format
