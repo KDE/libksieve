@@ -63,7 +63,6 @@ public:
     [[nodiscard]] bool hasSelection() const;
 
     void checkSpelling();
-    void import();
     void lowerCase();
     void upperCase();
     void sentenceCase();

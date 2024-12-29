@@ -29,8 +29,6 @@ private:
     enum HeaderEnum {
         HeaderId = Qt::UserRole + 1
     };
-
-    void init();
 };
 
 class SelectHeadersDialog : public QDialog
