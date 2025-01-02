@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2011-2024 Laurent Montel <montel@kde.org>
+# SPDX-FileCopyrightText: 2011-2025 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 # Create the directory that will contain the generated xml files
 file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/data")
