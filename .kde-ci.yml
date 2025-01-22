@@ -2,18 +2,17 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['Linux', 'FreeBSD', 'Windows']
-  'require':
+ - 'on': ['Linux', 'FreeBSD', 'Windows']
+   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
     'frameworks/kcolorscheme': '@latest-kf6'
-    'pim/kidentitymanagement' : '@same'
-    'pim/kimap' : '@same'
-    'pim/kmailtransport' : '@same'
-    'pim/kmime' : '@same'
-    'pim/libkdepim' : '@same'
-    'pim/pimcommon' : '@same'
+    'pim/kidentitymanagement': '@same'
+    'pim/kimap': '@same'
+    'pim/kmailtransport': '@same'
+    'pim/kmime': '@same'
+    'pim/libkdepim': '@same'
+    'pim/pimcommon': '@same'
     'libraries/ktextaddons': '@latest-kf6'
 
 Options:
-  require-passing-tests-on: [ 'Linux', 'FreeBSD' ]
-
+ require-passing-tests-on: ['Linux', 'FreeBSD']

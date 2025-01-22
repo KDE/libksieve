@@ -1,5 +1,5 @@
 maintainer: mlaurent
-description: Sieve Script Library 
+description: Sieve Script Library
 tier: 3
 type: functional
 platforms:
@@ -19,4 +19,3 @@ cmakename: KPim6LibKSieve
 
 public_lib: true
 group: kdepim
-
