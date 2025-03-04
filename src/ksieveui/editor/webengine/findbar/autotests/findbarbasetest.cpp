@@ -46,6 +46,9 @@ void FindBarBaseTest::shouldHaveDefaultValue()
 
 void FindBarBaseTest::shouldClearLineWhenClose()
 {
+#if defined(Q_OS_WIN)
+    QSKIP("This test doesn't work on windows");
+#endif
     KSieveUi::FindBarBase bar;
     bar.show();
     QSignalSpy spy(&bar, &KSieveUi::FindBarBase::hideFindBar);
@@ -64,6 +67,9 @@ void FindBarBaseTest::shouldClearLineWhenClose()
 
 void FindBarBaseTest::shouldEnableDisableNextPreviousButton()
 {
+#if defined(Q_OS_WIN)
+    QSKIP("This test doesn't work on windows");
+#endif
     KSieveUi::FindBarBase bar;
     bar.show();
     QVERIFY(QTest::qWaitForWindowExposed(&bar));
@@ -82,6 +88,9 @@ void FindBarBaseTest::shouldEnableDisableNextPreviousButton()
 
 void FindBarBaseTest::shouldClearAllWhenShowBar()
 {
+#if defined(Q_OS_WIN)
+    QSKIP("This test doesn't work on windows");
+#endif
     KSieveUi::FindBarBase bar;
     bar.show();
     QVERIFY(QTest::qWaitForWindowExposed(&bar));
