@@ -38,6 +38,56 @@ QString readSieveFile(const QString &sieveFile)
     return data;
 }
 
+void diffFile(const QString &refFile, const QString &generatedFile)
+{
+    QProcess proc;
+#ifdef _WIN32
+    QStringList args = QStringList() << QStringLiteral("Compare-Object") << QString(QStringLiteral("(Get-Content %1)")).arg(refFile)
+                                     << QString(QStringLiteral("(Get-Content %1)")).arg(generatedFile);
+
+    proc.start(QStringLiteral("powershell"), args);
+    QVERIFY(proc.waitForFinished());
+
+    QEXPECT_FAIL("regexp", "Expected failure on regexp file. Problem with header + comparator", Continue);
+    QEXPECT_FAIL("test-current-date", "Expected failure on current-date file. We depend against current date", Continue);
+    QEXPECT_FAIL("delete-headers-with-index", "Expected failure on delete-headers-with-index file. We depend against \"index\" feature", Continue);
+    QEXPECT_FAIL("foreverypart", "Expected failure on foreverypart file. A lot of parsing errors.", Continue);
+
+    QEXPECT_FAIL("failed-1", "Expected failure on failed-1 file. anyof + allof.", Continue);
+    QEXPECT_FAIL("failed-if-in-if", "Expected failure on failed-if-in-if file. Problem with if in another if.", Continue);
+    QEXPECT_FAIL("test-comment2", "Expected failure on test-comment2 file. Problem with # and /* .", Continue);
+    QEXPECT_FAIL("test-comment7", "Expected failure on test-comment7 file. Problem comment after an action .", Continue);
+    QEXPECT_FAIL("test-date1", "Expected failure on test-date1 file. Problem with * in date.", Continue);
+    QEXPECT_FAIL("wierd-script", "Missing ';' at the end of requires => invalid script", Continue);
+
+    auto pStdOut = proc.readAllStandardOutput();
+    if (pStdOut.size()) {
+        qDebug() << "Files are different, diff output message:\n" << pStdOut.toStdString().c_str();
+    }
+
+    QCOMPARE(pStdOut.size(), 0);
+#else
+    // compare to reference file
+    const QStringList args = QStringList() << QStringLiteral("-u") << refFile << generatedFile;
+
+    proc.setProcessChannelMode(QProcess::ForwardedChannels);
+    proc.start(QStringLiteral("diff"), args);
+    QVERIFY(proc.waitForFinished());
+    QEXPECT_FAIL("regexp", "Expected failure on regexp file. Problem with header + comparator", Continue);
+    QEXPECT_FAIL("test-current-date", "Expected failure on current-date file. We depend against current date", Continue);
+    QEXPECT_FAIL("delete-headers-with-index", "Expected failure on delete-headers-with-index file. We depend against \"index\" feature", Continue);
+    QEXPECT_FAIL("foreverypart", "Expected failure on foreverypart file. A lot of parsing errors.", Continue);
+
+    QEXPECT_FAIL("failed-1", "Expected failure on failed-1 file. anyof + allof.", Continue);
+    QEXPECT_FAIL("failed-if-in-if", "Expected failure on failed-if-in-if file. Problem with if in another if.", Continue);
+    QEXPECT_FAIL("test-comment2", "Expected failure on test-comment2 file. Problem with # and /* .", Continue);
+    QEXPECT_FAIL("test-comment7", "Expected failure on test-comment7 file. Problem comment after an action .", Continue);
+    QEXPECT_FAIL("test-date1", "Expected failure on test-date1 file. Problem with * in date.", Continue);
+    QEXPECT_FAIL("wierd-script", "Missing ';' at the end of requires => invalid script", Continue);
+
+    QCOMPARE(proc.exitCode(), 0);
+#endif
+}
 void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
 {
     QFETCH(QString, input);
@@ -81,24 +131,7 @@ void SieveEditorGraphicalModeWidgetTest::shouldLoadScripts()
         // qDebug() << " generatedScript" << generatedScript;
 
         // compare to reference file
-        QStringList args = QStringList() << QStringLiteral("-u") << refFile << generatedFile;
-        QProcess proc;
-        proc.setProcessChannelMode(QProcess::ForwardedChannels);
-        proc.start(QStringLiteral("diff"), args);
-        QVERIFY(proc.waitForFinished());
-
-        QEXPECT_FAIL("regexp", "Expected failure on regexp file. Problem with header + comparator", Continue);
-        QEXPECT_FAIL("test-current-date", "Expected failure on current-date file. We depend against current date", Continue);
-        QEXPECT_FAIL("delete-headers-with-index", "Expected failure on delete-headers-with-index file. We depend against \"index\" feature", Continue);
-        QEXPECT_FAIL("foreverypart", "Expected failure on foreverypart file. A lot of parsing errors.", Continue);
-
-        QEXPECT_FAIL("failed-1", "Expected failure on failed-1 file. anyof + allof.", Continue);
-        QEXPECT_FAIL("failed-if-in-if", "Expected failure on failed-if-in-if file. Problem with if in another if.", Continue);
-        QEXPECT_FAIL("test-comment2", "Expected failure on test-comment2 file. Problem with # and /* .", Continue);
-        QEXPECT_FAIL("test-comment7", "Expected failure on test-comment7 file. Problem comment after an action .", Continue);
-        QEXPECT_FAIL("test-date1", "Expected failure on test-date1 file. Problem with * in date.", Continue);
-        QEXPECT_FAIL("wierd-script", "Missing ';' at the end of requires => invalid script", Continue);
-        QCOMPARE(proc.exitCode(), 0);
+        diffFile(refFile, generatedFile);
     }
 }
 
