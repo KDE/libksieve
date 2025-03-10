@@ -3469,22 +3469,3 @@ msgstr "Ha fallat en recuperar la llista de scripts"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Defineix la carpeta"
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgid "Debug Sieve Script..."
-#~ msgstr "Depura l'script de «Sieve»..."
-
-#~ msgctxt "create a new sieve script"
-#~ msgid "New..."
-#~ msgstr "Nou..."
-
-#~ msgid "Edit..."
-#~ msgstr "Edita..."
-
-#~ msgid "Rename Script..."
-#~ msgstr "Reanomena l'script..."
-
-#~ msgid "New Script..."
-#~ msgstr "Script nou..."
