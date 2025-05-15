@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-16 00:41+0000\n"
-"PO-Revision-Date: 2025-01-22 14:34+0100\n"
+"PO-Revision-Date: 2025-05-13 12:41+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 25.04.1\n"
 "X-Text-Markup: kde4\n"
 
 #: kmanagesieve/session.cpp:89
@@ -668,7 +668,7 @@ msgstr "regex"
 #: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:43
 #, kde-format
 msgid "not regex"
-msgstr "not regex"
+msgstr "n'est pas une regex"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:25
 #, kde-format
@@ -900,7 +900,7 @@ msgid ""
 " The \"ereject\" action cancels the implicit keep and refuses delivery of a "
 "message."
 msgstr ""
-"L'action de rejet « ereject » annule le « keep » implicite et refuse de "
+"L'action « ereject » annule l'option implicite « keep » et refuse de "
 "délivrer un message."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:21
@@ -942,7 +942,7 @@ msgid ""
 "support it"
 msgstr ""
 "L'action « fileinto » possède un argument « copy » mais le serveur actuel ne "
-"le prend pas en charge"
+"le prend pas en charge."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:96
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:35
@@ -972,9 +972,9 @@ msgid ""
 "interpreter to create the specified mailbox, if needed, before attempting to "
 "deliver the message into the specified mailbox."
 msgstr ""
-"Si l'argument optionnel « :create » est fournit, il demandera à "
-"l'interpréteur Sieve de créer la boîte à lettre spécifié, si nécessaire, "
-"avant de tenter de délivrer le message dedans."
+"Si l'argument optionnel « :create » est fourni, il demandera à "
+"l'interpréteur Sieve de créer la boîte à lettre spécifiée, si nécessaire, "
+"avant de tenter d'y délivrer le message."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:155
 #, kde-format
@@ -995,9 +995,9 @@ msgid ""
 "actions, if no filtering happens at all; generally, this simply means to "
 "file the message into the user's main mailbox."
 msgstr ""
-"L'action conserver « keep » représente n'importe quelle action qui est prise "
-"au lieu de toute autre action si aucun filtrage n'interviens. Généralement, "
-"cela veux seulement dire que le message sera enregistré dans la boîte à "
+"L'action « keep » représente n'importe quelle action qui est prise à la "
+"place de toute autre action si aucun filtrage n'intervient. Généralement, "
+"cela signifie seulement que le message sera enregistré dans la boîte à "
 "lettre principale de l'utilisateur."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:55
@@ -1028,8 +1028,8 @@ msgstr "Méthode :"
 msgid ""
 "The \"notify\" action specifies that a notification should be sent to a user."
 msgstr ""
-"L'action notifier « notify » indique qu'une notification devrait être "
-"envoyée à un utilisateur."
+"L'action « notify » indique qu'une notification devrait être envoyée à un "
+"utilisateur."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:22
 #, kde-format
@@ -1064,8 +1064,8 @@ msgid ""
 "whatever else is happening to the message."
 msgstr ""
 "Si le mot clé optionnel « :copy » est spécifié, la commande marquée n'annule "
-"pas le « keep » implicite. Au lieu de ça, il redirigera une copie du message "
-"en plus de tous ce qui pourrait arriver d'autre au message."
+"pas l'option implicite « keep ». A la place, il redirigera une copie du "
+"message en plus de tout ce qui pourrait arriver d'autre au message."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:20
 #, kde-format
@@ -1078,8 +1078,8 @@ msgid ""
 " The \"reject\" action cancels the implicit keep and refuses delivery of a "
 "message."
 msgstr ""
-" L'action de rejet « reject » annule le « keep » implicite et refuse de "
-"délivrer un message."
+" L'action de rejet « reject » annule l'option implicite « keep » et refuse "
+"de délivrer un message."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionremoveflags.cpp:13
 #, kde-format
@@ -1214,8 +1214,8 @@ msgid ""
 "The \"stop\" action ends all processing.  If the implicit keep has not been "
 "cancelled, then it is taken."
 msgstr ""
-"L'action « stop » termine tous traitements. Si le « keep » implicite n'a pas "
-"été annulé, il est alors conservé."
+"L'action « stop » termine tous les traitements. Si l'option implicite "
+"« keep » n'a pas été annulée, elle est alors maintenue."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:27
 #, kde-format
@@ -1597,9 +1597,9 @@ msgid ""
 "argument exist within the message.  All of the headers must exist or the "
 "test is false."
 msgstr ""
-"Le test d'existence « exist » renvoi vrai si les en-têtes listés dans "
+"Le test d'existence « exist » renvoi « True » si les en-têtes listés dans "
 "l'argument « header-names » existe au sein du message. Chacun des en-têtes "
-"doit exister ou le test renvoi faux."
+"doit exister ou le test renvoie « False »."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:20
 #, kde-format
@@ -1694,7 +1694,7 @@ msgid ""
 "names\" argument exist in the mailstore, and each allows the user in whose "
 "context the Sieve script runs to \"deliver\" messages into it."
 msgstr ""
-"Le test d'existence de boîte à lettre « mailboxexists » renvoie « Vrai » si "
+"Le test d'existence de boîte à lettre « mailboxexists » renvoie « True » si "
 "toutes les boîtes à lettre listées dans l'argument « mailbox-names » "
 "existent dans le dépôt des messageries et que chaque test permet à "
 "l'utilisateur dans le contexte du script Sieve démarré de délivrer des "
@@ -1751,7 +1751,7 @@ msgid ""
 "The \"metadataexists\" test is true if all of the annotations listed in the "
 "\"annotation-names\" argument exist for the specified mailbox."
 msgstr ""
-"Le test d'existence des métadonnées « metadataexists » renvoie « Vrai » si "
+"Le test d'existence des métadonnées « metadataexists » renvoie « True » si "
 "toutes les annotations listées dans l'argument « annotation-names » existent "
 "pour la boîte à lettre spécifiée."
 
@@ -2305,7 +2305,7 @@ msgstr "Bloc « Elsif »"
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:88
 #, kde-format
 msgid "\"else\" block"
-msgstr "bloc « else »"
+msgstr "Bloc « else »"
 
 #: ksieveui/autocreatescripts/sievescriptdescriptiondialog.cpp:28
 #, kde-format
