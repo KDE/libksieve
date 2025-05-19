@@ -8,6 +8,11 @@
 #include "editor/sievelinenumberarea.h"
 #include "editor/sievetexteditorspellcheckdecorator.h"
 
+#include "config-libksieve.h"
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+#include <TextAutoGenerateText/TextAutoGenerateMenuWidget>
+#endif
+
 #include <TextCustomEditor/PlainTextSyntaxSpellCheckingHighlighter>
 #include <TextCustomEditor/TextEditorCompleter>
 #include <TextUtils/ConvertText>
@@ -35,6 +40,9 @@ public:
 
     SieveLineNumberArea *m_sieveLineNumberArea = nullptr;
     TextCustomEditor::TextEditorCompleter *mTextEditorCompleter = nullptr;
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+    TextAutoGenerateText::TextAutoGenerateMenuWidget *mTextAutoGenerateMenuWidget = nullptr;
+#endif
     KSyntaxHighlighting::Repository mSyntaxRepo;
     bool mShowHelpMenu = true;
 };
@@ -47,6 +55,9 @@ SieveTextEdit::SieveTextEdit(QWidget *parent)
     setWordWrapMode(QTextOption::NoWrap);
     setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
     d->m_sieveLineNumberArea = new SieveLineNumberArea(this);
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+    d->mTextAutoGenerateMenuWidget = new TextAutoGenerateText::TextAutoGenerateMenuWidget(this);
+#endif
 
     connect(this, &SieveTextEdit::blockCountChanged, this, &SieveTextEdit::slotUpdateLineNumberAreaWidth);
     connect(this, &SieveTextEdit::updateRequest, this, &SieveTextEdit::slotUpdateLineNumberArea);
@@ -268,11 +279,20 @@ void SieveTextEdit::setShowHelpMenu(bool b)
 
 void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
 {
+    const bool hasSelection = textCursor().hasSelection();
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+    if (hasSelection) {
+        QTextCursor textcursor = textCursor();
+        d->mTextAutoGenerateMenuWidget->setSelectedText(textcursor.selection().toPlainText());
+        menu->addSeparator();
+        menu->addMenu(d->mTextAutoGenerateMenuWidget->menu());
+    }
+#endif
     if (!d->mShowHelpMenu) {
         return;
     }
 
-    if (!textCursor().hasSelection()) {
+    if (!hasSelection) {
         if (!isReadOnly()) {
             auto insertRules = new QAction(i18nc("@action", "Insert Rule"), menu);
             // editRules->setIcon(QIcon::fromTheme(QStringLiteral("help-hint")));

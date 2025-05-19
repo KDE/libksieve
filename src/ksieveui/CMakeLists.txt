@@ -382,6 +382,13 @@ if(TARGET KF6::TextEditTextToSpeech)
     )
 endif()
 
+if(TARGET KF6::TextAutoGenerateText)
+    target_link_libraries(KPim6KSieveUi
+        PRIVATE
+        KF6::TextAutoGenerateText
+    )
+endif()
+
 set_target_properties(KPim6KSieveUi PROPERTIES
     VERSION ${LIBKSIEVEUI_VERSION}
     SOVERSION ${LIBKSIEVEUI_SOVERSION}
