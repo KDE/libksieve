@@ -98,14 +98,7 @@ set_package_properties(KF6DocTools PROPERTIES DESCRIPTION
     TYPE OPTIONAL
 )
 
-
-add_definitions(-DDONT_HAVE_TEXT_TO_SPEACH_SUPPORT)
-
-
-
 ########### Targets ###########
-
-
 ecm_set_disabled_deprecation_versions(QT 6.9.0 KF 6.13.0)
 
 
