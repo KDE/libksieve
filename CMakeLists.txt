@@ -43,6 +43,8 @@ autotests/*.h
 ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
 set(KTEXTADDONS_MIN_VERSION "1.5.4")
+# Remove it when next 1.6.0 KTEXTADDONS_MIN_VERSION
+set(KTEXTADDONS_WITH_TEXTAUTOGENERATETEXT_VERSION "1.5.72")
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
@@ -97,6 +99,19 @@ set_package_properties(KF6DocTools PROPERTIES DESCRIPTION
     "Tools to generate documentation"
     TYPE OPTIONAL
 )
+option(OPTION_ADD_AUTOGENERATETEXT "Add support for autogenerate text plugin" ON)
+if(OPTION_ADD_AUTOGENERATETEXT)
+    find_package(KF6TextAutoGenerateText ${KTEXTADDONS_WITH_TEXTAUTOGENERATETEXT_VERSION} CONFIG)
+    set_package_properties(KF6TextAutoGenerateText PROPERTIES
+        TYPE OPTIONAL
+        PURPOSE "Required for building AI plugins support"
+        DESCRIPTION "Use AI plugin"
+    )
+endif()
+
+if(TARGET KF6::TextAutoGenerateText)
+    set(HAVE_TEXT_AUTOGENERATE_TEXT TRUE)
+endif()
 
 ########### Targets ###########
 ecm_set_disabled_deprecation_versions(QT 6.9.0 KF 6.13.0)
