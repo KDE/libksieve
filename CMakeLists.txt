@@ -114,7 +114,7 @@ if(TARGET KF6::TextAutoGenerateText)
 endif()
 
 ########### Targets ###########
-ecm_set_disabled_deprecation_versions(QT 6.9.0 KF 6.13.0)
+ecm_set_disabled_deprecation_versions(QT 6.9.0 KF 6.14.0)
 
 
 if(BUILD_TESTING)
