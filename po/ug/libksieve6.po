@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-16 00:41+0000\n"
+"POT-Creation-Date: 2025-05-20 00:43+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -2667,20 +2667,20 @@ msgstr "مۇلازىمېتىر  sieve نى قوللايدىغان قوللىما
 msgid "Sieve server supports:"
 msgstr "مۇلازىمېتىر  sieve نى قوللايدىغان قوللىمايدىغانلىقىنى بەلگىلەيدۇ"
 
-#: ksieveui/editor/sievetextedit.cpp:277
+#: ksieveui/editor/sievetextedit.cpp:297
 #, fuzzy, kde-format
 #| msgid "Edit"
 msgctxt "@action"
 msgid "Insert Rule"
 msgstr "تەھرىرلەش"
 
-#: ksieveui/editor/sievetextedit.cpp:291
+#: ksieveui/editor/sievetextedit.cpp:311
 #, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr ""
 
-#: ksieveui/editor/sievetextedit.cpp:300
+#: ksieveui/editor/sievetextedit.cpp:320
 #, fuzzy, kde-format
 #| msgid "Edit"
 msgctxt "@action"
