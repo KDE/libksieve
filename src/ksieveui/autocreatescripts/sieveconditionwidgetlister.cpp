@@ -263,10 +263,10 @@ void SieveConditionWidgetLister::updateAddRemoveButton()
         addButtonEnabled = true;
         removeButtonEnabled = true;
     }
-    QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
+    QList<QWidget *>::ConstIterator with = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
-    for (; wIt != wEnd; ++wIt) {
-        auto w = qobject_cast<SieveConditionWidget *>(*wIt);
+    for (; with != wEnd; ++with) {
+        auto w = qobject_cast<SieveConditionWidget *>(*with);
         w->updateAddRemoveButton(addButtonEnabled, removeButtonEnabled);
     }
 }
@@ -298,12 +298,12 @@ QWidget *SieveConditionWidgetLister::createWidget(QWidget *parent)
 void SieveConditionWidgetLister::generatedScript(QString &script, int &numberOfCondition, QStringList &requireModules, bool inForEveryPartLoop)
 {
     const QList<QWidget *> widgetList = widgets();
-    QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
+    QList<QWidget *>::ConstIterator with = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
     bool wasFirst = true;
-    for (; wIt != wEnd; ++wIt) {
+    for (; with != wEnd; ++with) {
         QString condition;
-        auto w = qobject_cast<SieveConditionWidget *>(*wIt);
+        auto w = qobject_cast<SieveConditionWidget *>(*with);
         w->generatedScript(condition, requireModules, inForEveryPartLoop);
         if (!condition.isEmpty()) {
             if (!wasFirst) {

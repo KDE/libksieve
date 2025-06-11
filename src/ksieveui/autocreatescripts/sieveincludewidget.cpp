@@ -278,10 +278,10 @@ void SieveIncludeWidgetLister::updateAddRemoveButton()
         addButtonEnabled = true;
         removeButtonEnabled = true;
     }
-    QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
+    QList<QWidget *>::ConstIterator with = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
-    for (; wIt != wEnd; ++wIt) {
-        auto w = qobject_cast<SieveIncludeActionWidget *>(*wIt);
+    for (; with != wEnd; ++with) {
+        auto w = qobject_cast<SieveIncludeActionWidget *>(*with);
         w->updateAddRemoveButton(addButtonEnabled, removeButtonEnabled);
     }
 }
@@ -291,10 +291,10 @@ void SieveIncludeWidgetLister::setListOfIncludeFile(const QStringList &listOfInc
     mListOfIncludeFile = listOfIncludeFile;
     // Update all lineedit
     const QList<QWidget *> widgetList = widgets();
-    QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
+    QList<QWidget *>::ConstIterator with = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
-    for (; wIt != wEnd; ++wIt) {
-        auto w = qobject_cast<SieveIncludeActionWidget *>(*wIt);
+    for (; with != wEnd; ++with) {
+        auto w = qobject_cast<SieveIncludeActionWidget *>(*with);
         w->setListOfIncludeFile(mListOfIncludeFile);
     }
 }
@@ -303,10 +303,10 @@ void SieveIncludeWidgetLister::generatedScript(QString &script, QStringList &req
 {
     requireModules << QStringLiteral("include");
     const QList<QWidget *> widgetList = widgets();
-    QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
+    QList<QWidget *>::ConstIterator with = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
-    for (; wIt != wEnd; ++wIt) {
-        auto w = qobject_cast<SieveIncludeActionWidget *>(*wIt);
+    for (; with != wEnd; ++with) {
+        auto w = qobject_cast<SieveIncludeActionWidget *>(*with);
         w->generatedScript(script);
     }
 }

@@ -242,10 +242,10 @@ void SieveGlobalVariableLister::updateAddRemoveButton()
         addButtonEnabled = true;
         removeButtonEnabled = true;
     }
-    QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
+    QList<QWidget *>::ConstIterator with = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
-    for (; wIt != wEnd; ++wIt) {
-        auto w = qobject_cast<SieveGlobalVariableActionWidget *>(*wIt);
+    for (; with != wEnd; ++with) {
+        auto w = qobject_cast<SieveGlobalVariableActionWidget *>(*with);
         w->updateAddRemoveButton(addButtonEnabled, removeButtonEnabled);
     }
 }
@@ -254,10 +254,10 @@ void SieveGlobalVariableLister::generatedScript(QString &script, QStringList &re
 {
     requireModules << QStringLiteral("include");
     const QList<QWidget *> widgetList = widgets();
-    QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
+    QList<QWidget *>::ConstIterator with = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
-    for (; wIt != wEnd; ++wIt) {
-        auto w = qobject_cast<SieveGlobalVariableActionWidget *>(*wIt);
+    for (; with != wEnd; ++with) {
+        auto w = qobject_cast<SieveGlobalVariableActionWidget *>(*with);
         w->generatedScript(script);
     }
 }

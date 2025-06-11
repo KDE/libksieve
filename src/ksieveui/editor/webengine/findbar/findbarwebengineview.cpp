@@ -53,7 +53,7 @@ void FindBarWebEngineView::updateSensitivity(bool sensitivity)
     QWebEnginePage::FindFlags searchOptions;
     if (sensitivity) {
         searchOptions |= QWebEnginePage::FindCaseSensitively;
-        d->mView->findText(QString()); // Clear an existing highligh
+        d->mView->findText(QString()); // Clear an existing highlight
     }
     d->mView->findText(QString(), searchOptions, [this](const QWebEngineFindTextResult &result) {
         setFoundMatch(result.numberOfMatches() > 0);

@@ -33,7 +33,7 @@ private:
     void slotSwitchInTextMode();
     void slotInActualMode();
     void slotShowDetails(const QString &content);
-    QString mErrors;
+    QString mirrors;
     QString mScript;
 };
 }

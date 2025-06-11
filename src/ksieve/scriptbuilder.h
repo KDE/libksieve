@@ -42,7 +42,7 @@ public:
 
     /** A hash comment always includes an implicit lineFeed() at it's end. */
     virtual void hashComment(const QString &comment) = 0;
-    /** Bracket comments inclde explicit lineFeed()s in their content */
+    /** Bracket comments include explicit lineFeed()s in their content */
     virtual void bracketComment(const QString &comment) = 0;
 
     virtual void lineFeed() = 0;

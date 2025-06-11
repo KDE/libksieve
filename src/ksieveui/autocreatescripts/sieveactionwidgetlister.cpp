@@ -315,10 +315,10 @@ void SieveActionWidgetLister::updateAddRemoveButton()
         addButtonEnabled = true;
         removeButtonEnabled = true;
     }
-    QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
+    QList<QWidget *>::ConstIterator with = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
-    for (; wIt != wEnd; ++wIt) {
-        auto w = qobject_cast<SieveActionWidget *>(*wIt);
+    for (; with != wEnd; ++with) {
+        auto w = qobject_cast<SieveActionWidget *>(*with);
         w->updateAddRemoveButton(addButtonEnabled, removeButtonEnabled);
     }
 }
@@ -326,10 +326,10 @@ void SieveActionWidgetLister::updateAddRemoveButton()
 void SieveActionWidgetLister::generatedScript(QString &script, QStringList &requireModules, bool onlyActions, bool inForEveryPartLoop)
 {
     const QList<QWidget *> widgetList = widgets();
-    QList<QWidget *>::ConstIterator wIt = widgetList.constBegin();
+    QList<QWidget *>::ConstIterator with = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
-    for (; wIt != wEnd; ++wIt) {
-        auto w = qobject_cast<SieveActionWidget *>(*wIt);
+    for (; with != wEnd; ++with) {
+        auto w = qobject_cast<SieveActionWidget *>(*with);
         w->generatedScript(script, requireModules, onlyActions, inForEveryPartLoop);
     }
 }
