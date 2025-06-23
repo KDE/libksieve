@@ -5,6 +5,8 @@
 */
 
 #include "vacationeditwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "vacationmailactionwidget.h"
 #include "vacationmaillineedit.h"
 
@@ -224,7 +226,7 @@ VacationEditWidget::VacationEditWidget(QWidget *parent)
     mDomainEdit->setObjectName(QLatin1StringView("mDomainEdit"));
     mDomainEdit->setClearButtonEnabled(true);
     mDomainEdit->setEnabled(false);
-    mDomainEdit->setValidator(new QRegularExpressionValidator(QRegularExpression(QStringLiteral("[a-zA-Z0-9+-]+(?:\\.[a-zA-Z0-9+-]+)*")), mDomainEdit));
+    mDomainEdit->setValidator(new QRegularExpressionValidator(QRegularExpression(u"[a-zA-Z0-9+-]+(?:\\.[a-zA-Z0-9+-]+)*"_s), mDomainEdit));
     glay->addWidget(mDomainCheck, row, 0);
     glay->addWidget(mDomainEdit, row, 1);
     connect(mDomainCheck, &QCheckBox::toggled, mDomainEdit, &QLineEdit::setEnabled);

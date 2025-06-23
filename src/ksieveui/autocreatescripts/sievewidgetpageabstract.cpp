@@ -5,6 +5,8 @@
 */
 
 #include "sievewidgetpageabstract.h"
+using namespace Qt::Literals::StringLiterals;
+
 
 using namespace KSieveUi;
 

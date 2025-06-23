@@ -7,6 +7,8 @@
 */
 
 #include "sievejob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "session.h"
 #include "sievejob_p.h"
 

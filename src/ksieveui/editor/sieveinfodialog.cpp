@@ -6,6 +6,8 @@
 */
 
 #include "sieveinfodialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sieveinfowidget.h"
 #include <KConfigGroup>
 #include <KLocalizedString>

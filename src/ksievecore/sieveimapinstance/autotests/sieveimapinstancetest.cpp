@@ -5,6 +5,8 @@
 */
 
 #include "sieveimapinstancetest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KSieveCore/SieveImapInstance>
 
 #include <QTest>
@@ -27,10 +29,10 @@ void SieveImapInstanceTest::shouldHaveDefaultValue()
 void SieveImapInstanceTest::shouldAssignValues()
 {
     KSieveCore::SieveImapInstance instance;
-    const QStringList mMimeTypes = {QStringLiteral("ff"), QStringLiteral("ff2")};
-    const QStringList mCapabilities = {QStringLiteral("bb"), QStringLiteral("bb2")};
-    const QString mName = {QStringLiteral("cc")};
-    const QString mIdentifier = {QStringLiteral("ee")};
+    const QStringList mMimeTypes = {u"ff"_s, u"ff2"_s};
+    const QStringList mCapabilities = {u"bb"_s, u"bb2"_s};
+    const QString mName = {u"cc"_s};
+    const QString mIdentifier = {u"ee"_s};
     const KSieveCore::SieveImapInstance::Status mStatus = KSieveCore::SieveImapInstance::Broken;
     instance.setName(mName);
     instance.setIdentifier(mIdentifier);
@@ -48,10 +50,10 @@ void SieveImapInstanceTest::shouldAssignValues()
 void SieveImapInstanceTest::shouldEqualSieveImapInstance()
 {
     KSieveCore::SieveImapInstance instance;
-    const QStringList mMimeTypes = {QStringLiteral("ff"), QStringLiteral("ff2")};
-    const QStringList mCapabilities = {QStringLiteral("bb"), QStringLiteral("bb2")};
-    const QString mName = {QStringLiteral("cc")};
-    const QString mIdentifier = {QStringLiteral("ee")};
+    const QStringList mMimeTypes = {u"ff"_s, u"ff2"_s};
+    const QStringList mCapabilities = {u"bb"_s, u"bb2"_s};
+    const QString mName = {u"cc"_s};
+    const QString mIdentifier = {u"ee"_s};
     const KSieveCore::SieveImapInstance::Status mStatus = KSieveCore::SieveImapInstance::Broken;
     instance.setName(mName);
     instance.setIdentifier(mIdentifier);

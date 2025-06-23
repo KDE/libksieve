@@ -5,6 +5,8 @@
 */
 
 #include "multiimapvacationdialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "vacationpagewidget.h"
 #include <KSieveCore/MultiImapVacationManager>
 #include <KSieveCore/SearchServerWithVacationSupportJob>
@@ -77,8 +79,8 @@ void MultiImapVacationDialog::reject()
                 const int answer = KMessageBox::questionTwoActions(this,
                                                                    i18nc("@info", "Do you really want to cancel?"),
                                                                    i18nc("@title:window", "Confirmation"),
-                                                                   KGuiItem(i18nc("@action:button", "Cancel Editing"), QStringLiteral("dialog-ok")),
-                                                                   KGuiItem(i18nc("@action:button", "Do Not Cancel"), QStringLiteral("dialog-cancel")));
+                                                                   KGuiItem(i18nc("@action:button", "Cancel Editing"), u"dialog-ok"_s),
+                                                                   KGuiItem(i18nc("@action:button", "Do Not Cancel"), u"dialog-cancel"_s));
                 if (answer == KMessageBox::ButtonCode::PrimaryAction) {
                     QDialog::reject(); // Discard current changes
                 }
@@ -180,7 +182,7 @@ void MultiImapVacationDialog::createPage(const QString &serverName, const KSieve
     page->setServerName(serverName);
     page->setVacationManager(d->mVacationManager);
     page->setSieveImapAccountSettings(info.sieveImapAccountSettings);
-    d->mTabWidget->addTab(page, serverName + QStringLiteral(" (%1)").arg(info.sieveUrl.userName()));
+    d->mTabWidget->addTab(page, serverName + u" (%1)"_s.arg(info.sieveUrl.userName()));
 }
 
 void MultiImapVacationDialog::readConfig()

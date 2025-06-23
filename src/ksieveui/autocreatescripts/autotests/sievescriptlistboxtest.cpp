@@ -4,6 +4,8 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "sievescriptlistboxtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/sievescriptlistbox.h"
 #include <QTest>
 #include <QVBoxLayout>
@@ -16,11 +18,11 @@ SieveScriptListBoxTest::SieveScriptListBoxTest(QObject *parent)
 
 void SieveScriptListBoxTest::shouldHaveDefaultValues()
 {
-    KSieveUi::SieveScriptListBox lst(QStringLiteral("foo"));
-    auto layout = lst.findChild<QVBoxLayout *>(QStringLiteral("layout"));
+    KSieveUi::SieveScriptListBox lst(u"foo"_s);
+    auto layout = lst.findChild<QVBoxLayout *>(u"layout"_s);
     QVERIFY(layout);
 
-    auto mSieveListScript = lst.findChild<QListWidget *>(QStringLiteral("mSieveListScript"));
+    auto mSieveListScript = lst.findChild<QListWidget *>(u"mSieveListScript"_s);
     QVERIFY(mSieveListScript);
     QCOMPARE(mSieveListScript->dragDropMode(), QAbstractItemView::InternalMove);
 }

@@ -5,6 +5,8 @@
 */
 
 #include "sieveeditorwebengineview.h"
+using namespace Qt::Literals::StringLiterals;
+
 
 #include <KLocalizedString>
 #include <QContextMenuEvent>
@@ -75,7 +77,7 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
 
     act = pageAction(QWebEnginePage::Copy);
     if (act->isEnabled() && hasSelection()) {
-        act->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")));
+        act->setIcon(QIcon::fromTheme(u"edit-copy"_s));
         menu.addAction(act);
     }
 
@@ -91,7 +93,7 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
 
     act = pageAction(QWebEnginePage::SelectAll);
     if (act->isEnabled()) {
-        act->setIcon(QIcon::fromTheme(QStringLiteral("edit-select-all")));
+        act->setIcon(QIcon::fromTheme(u"edit-select-all"_s));
         menu.addAction(act);
     }
     act = pageAction(QWebEnginePage::CopyLinkToClipboard);
@@ -103,7 +105,7 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
         auto separator = new QAction(&menu);
         separator->setSeparator(true);
         menu.addAction(separator);
-        act->setIcon(QIcon::fromTheme(QStringLiteral("document-save")));
+        act->setIcon(QIcon::fromTheme(u"document-save"_s));
         menu.addAction(act);
     }
     menu.exec(ev->globalPos());

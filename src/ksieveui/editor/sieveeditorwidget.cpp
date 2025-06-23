@@ -6,6 +6,8 @@
 */
 
 #include "sieveeditorwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sievepurposemenuwidget.h"
 
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
@@ -58,7 +60,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
 
     if (mDebug) {
         // Not necessary to translate it.
-        mGenerateXml = new QAction(QStringLiteral("Generate xml"), this);
+        mGenerateXml = new QAction(u"Generate xml"_s, this);
         connect(mGenerateXml, &QAction::triggered, this, &SieveEditorWidget::slotGenerateXml);
         toolbar->addAction(mGenerateXml);
     }
@@ -66,7 +68,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     auto shareAction = new KActionMenu(i18n("Share…"), this);
     shareAction->setPopupMode(QToolButton::InstantPopup);
     shareAction->setMenu(purposeMenu->menu());
-    shareAction->setIcon(QIcon::fromTheme(QStringLiteral("document-share")));
+    shareAction->setIcon(QIcon::fromTheme(u"document-share"_s));
     purposeMenu->setEditorWidget(this);
     toolbar->addAction(shareAction);
     mServerInfo = new QAction(i18nc("@action", "Server Info"), this);
@@ -443,8 +445,8 @@ void SieveEditorWidget::addNormalMessage(const QString &msg)
 void SieveEditorWidget::addMessageEntry(const QString &errorMsg, const QColor &color)
 {
     QString msg = errorMsg;
-    msg.replace(QLatin1Char('\n'), QStringLiteral("<br>"));
-    const QString logText = QStringLiteral("<font color=%1>%2</font>").arg(color.name(), msg);
+    msg.replace(u'\n', u"<br>"_s);
+    const QString logText = u"<font color=%1>%2</font>"_s.arg(color.name(), msg);
 
     setDebugScript(logText);
 }

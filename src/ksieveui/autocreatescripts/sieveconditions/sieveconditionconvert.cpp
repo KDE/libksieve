@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionconvert.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/commonwidgets/selectconvertparameterwidget.h"
 #include "autocreatescripts/commonwidgets/selectmimetypecombobox.h"
@@ -17,7 +19,7 @@
 
 using namespace KSieveUi;
 SieveConditionConvert::SieveConditionConvert(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("convert"), i18n("Convert"), parent)
+    : SieveCondition(sieveGraphicalModeWidget, u"convert"_s, i18n("Convert"), parent)
 {
 }
 
@@ -56,16 +58,16 @@ QWidget *SieveConditionConvert::createParamWidget(QWidget *parent) const
 
 QString SieveConditionConvert::code(QWidget *w) const
 {
-    QString result = QStringLiteral("convert ");
-    const SelectMimeTypeComboBox *fromMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("from"));
+    QString result = u"convert "_s;
+    const SelectMimeTypeComboBox *fromMimeType = w->findChild<SelectMimeTypeComboBox *>(u"from"_s);
     const QString fromMimeTypeStr = fromMimeType->code();
-    result += QStringLiteral("%1 ").arg(fromMimeTypeStr);
+    result += u"%1 "_s.arg(fromMimeTypeStr);
 
-    const SelectMimeTypeComboBox *toMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("to"));
+    const SelectMimeTypeComboBox *toMimeType = w->findChild<SelectMimeTypeComboBox *>(u"to"_s);
     const QString toMimeTypeStr = toMimeType->code();
-    result += QStringLiteral("%1 ").arg(toMimeTypeStr);
+    result += u"%1 "_s.arg(toMimeTypeStr);
 
-    const SelectConvertParameterWidget *params = w->findChild<SelectConvertParameterWidget *>(QStringLiteral("params"));
+    const SelectConvertParameterWidget *params = w->findChild<SelectConvertParameterWidget *>(u"params"_s);
     const QString paramsStr = params->code();
     if (!paramsStr.isEmpty()) {
         result += paramsStr;
@@ -75,7 +77,7 @@ QString SieveConditionConvert::code(QWidget *w) const
 
 QStringList SieveConditionConvert::needRequires(QWidget *) const
 {
-    return QStringList() << QStringLiteral("convert");
+    return QStringList() << u"convert"_s;
 }
 
 bool SieveConditionConvert::needCheckIfServerHasCapability() const
@@ -85,7 +87,7 @@ bool SieveConditionConvert::needCheckIfServerHasCapability() const
 
 QString SieveConditionConvert::serverNeedsCapability() const
 {
-    return QStringLiteral("convert");
+    return u"convert"_s;
 }
 
 QString SieveConditionConvert::help() const
@@ -103,10 +105,10 @@ void SieveConditionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidg
         const QStringView tagName = element.name();
         if (tagName == QLatin1StringView("str")) {
             if (index == 0) {
-                auto fromMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("from"));
+                auto fromMimeType = w->findChild<SelectMimeTypeComboBox *>(u"from"_s);
                 fromMimeType->setCode(element.readElementText(), name(), error);
             } else if (index == 1) {
-                auto toMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("to"));
+                auto toMimeType = w->findChild<SelectMimeTypeComboBox *>(u"to"_s);
                 toMimeType->setCode(element.readElementText(), name(), error);
             } else {
                 tooManyArguments(tagName, index, 2, error);
@@ -114,7 +116,7 @@ void SieveConditionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidg
             }
             ++index;
         } else if (tagName == QLatin1StringView("list")) {
-            auto params = w->findChild<SelectConvertParameterWidget *>(QStringLiteral("params"));
+            auto params = w->findChild<SelectConvertParameterWidget *>(u"params"_s);
             params->setCode(AutoCreateScriptUtil::listValue(element), error);
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();

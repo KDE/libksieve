@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionenclose.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 #include "widgets/multilineedit.h"
@@ -19,7 +21,7 @@
 
 using namespace KSieveUi;
 SieveActionEnclose::SieveActionEnclose(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("enclose"), i18n("Enclose"), parent)
+    : SieveAction(sieveGraphicalModeWidget, u"enclose"_s, i18n("Enclose"), parent)
 {
 }
 
@@ -68,13 +70,13 @@ void SieveActionEnclose::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             if (tagValue == QLatin1StringView("headers")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
-                    auto subject = w->findChild<QLineEdit *>(QStringLiteral("headers"));
+                    auto subject = w->findChild<QLineEdit *>(u"headers"_s);
                     subject->setText(strValue);
                 }
             } else if (tagValue == QLatin1StringView("subject")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
-                    auto headers = w->findChild<QLineEdit *>(QStringLiteral("subject"));
+                    auto headers = w->findChild<QLineEdit *>(u"subject"_s);
                     headers->setText(strValue);
                 }
             } else {
@@ -82,7 +84,7 @@ void SieveActionEnclose::setParamWidgetValue(QXmlStreamReader &element, QWidget 
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveActionEnclose::setParamWidgetValue unknown tag value:" << tagValue;
             }
         } else if (tagName == QLatin1StringView("str")) {
-            auto edit = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
+            auto edit = w->findChild<MultiLineEdit *>(u"text"_s);
             edit->setPlainText(element.readElementText());
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
@@ -99,25 +101,25 @@ void SieveActionEnclose::setParamWidgetValue(QXmlStreamReader &element, QWidget 
 
 QString SieveActionEnclose::code(QWidget *w) const
 {
-    QString result = QStringLiteral("enclose ");
-    const QLineEdit *subject = w->findChild<QLineEdit *>(QStringLiteral("subject"));
+    QString result = u"enclose "_s;
+    const QLineEdit *subject = w->findChild<QLineEdit *>(u"subject"_s);
     const QString subjectStr = subject->text();
     if (!subjectStr.isEmpty()) {
-        result += QStringLiteral(":subject \"%1\" ").arg(subjectStr);
+        result += u":subject \"%1\" "_s.arg(subjectStr);
     }
 
-    const QLineEdit *headers = w->findChild<QLineEdit *>(QStringLiteral("headers"));
+    const QLineEdit *headers = w->findChild<QLineEdit *>(u"headers"_s);
     const QString headersStr = headers->text();
     if (!headersStr.isEmpty()) {
-        result += QStringLiteral(":headers \"%1\" ").arg(headersStr);
+        result += u":headers \"%1\" "_s.arg(headersStr);
     }
 
-    const MultiLineEdit *edit = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
+    const MultiLineEdit *edit = w->findChild<MultiLineEdit *>(u"text"_s);
     const QString text = edit->toPlainText();
     if (!text.isEmpty()) {
-        result += QStringLiteral("text:%1").arg(AutoCreateScriptUtil::createMultiLine(text));
+        result += u"text:%1"_s.arg(AutoCreateScriptUtil::createMultiLine(text));
     } else {
-        result += QLatin1Char(';');
+        result += u';';
     }
 
     return result;
@@ -125,7 +127,7 @@ QString SieveActionEnclose::code(QWidget *w) const
 
 QStringList SieveActionEnclose::needRequires(QWidget * /*parent*/) const
 {
-    return QStringList() << QStringLiteral("enclose");
+    return QStringList() << u"enclose"_s;
 }
 
 bool SieveActionEnclose::needCheckIfServerHasCapability() const
@@ -135,7 +137,7 @@ bool SieveActionEnclose::needCheckIfServerHasCapability() const
 
 QString SieveActionEnclose::serverNeedsCapability() const
 {
-    return QStringLiteral("enclose");
+    return u"enclose"_s;
 }
 
 QString SieveActionEnclose::help() const

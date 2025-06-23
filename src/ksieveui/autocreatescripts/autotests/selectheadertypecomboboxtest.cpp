@@ -5,6 +5,8 @@
 */
 
 #include "selectheadertypecomboboxtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../sieveconditions/widgets/selectheadertypecombobox.h"
 
 #include <QLineEdit>
@@ -67,7 +69,7 @@ void SelectHeaderTypeComboBoxTest::shouldSetCode_data()
     QTest::addColumn<bool>("readOnly");
     QTest::newRow("empty") << QString() << 0 << QString() << false << false;
     QTest::newRow("empty only header") << QString() << 0 << QString() << false << false;
-    QTest::newRow("from") << QStringLiteral("from") << 9 << QStringLiteral("From") << false << true;
+    QTest::newRow("from") << u"from"_s << 9 << u"From"_s << false << true;
 }
 
 void SelectHeaderTypeComboBoxTest::shouldSetCode()

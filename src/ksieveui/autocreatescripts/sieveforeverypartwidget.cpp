@@ -5,6 +5,8 @@
 */
 
 #include "sieveforeverypartwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
@@ -70,12 +72,12 @@ void SieveForEveryPartWidget::generatedScript(QString &script, QStringList &requ
 {
     Q_UNUSED(inForEveryPartLoop)
     if (mForLoop->isChecked()) {
-        required << QStringLiteral("foreverypart");
+        required << u"foreverypart"_s;
         const QString loopName = mName->text();
         if (loopName.isEmpty()) {
-            script += QStringLiteral("foreverypart {");
+            script += u"foreverypart {"_s;
         } else {
-            script += QStringLiteral("foreverypart :name \"%1\" {").arg(loopName);
+            script += u"foreverypart :name \"%1\" {"_s.arg(loopName);
         }
     }
 }
@@ -89,7 +91,7 @@ void SieveForEveryPartWidget::loadScript(QXmlStreamReader &element, QString &err
             if (tagValue == QLatin1StringView("name")) {
                 mName->setText(AutoCreateScriptUtil::strValue(element));
             } else {
-                error += i18n("Unknown tagValue \"%1\" during loading loop \"for\"", tagValue) + QLatin1Char('\n');
+                error += i18n("Unknown tagValue \"%1\" during loading loop \"for\"", tagValue) + u'\n';
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveForEveryPartWidget::loadScript unknown tagValue " << tagValue;
             }
             mForLoop->setChecked(true);
@@ -101,7 +103,7 @@ void SieveForEveryPartWidget::loadScript(QXmlStreamReader &element, QString &err
             // Nothing
             element.skipCurrentElement();
         } else {
-            error += i18n("Unknown tag \"%1\" during loading loop \"for\"", tagName.toString()) + QLatin1Char('\n');
+            error += i18n("Unknown tag \"%1\" during loading loop \"for\"", tagName.toString()) + u'\n';
             qCDebug(LIBKSIEVEUI_LOG) << " SieveForEveryPartWidget::loadScript unknown tagName " << tagName;
         }
     } else {

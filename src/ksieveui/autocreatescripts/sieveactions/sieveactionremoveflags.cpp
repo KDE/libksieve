@@ -4,19 +4,21 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionremoveflags.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "editor/sieveeditorutil.h"
 
 #include <KLocalizedString>
 
 using namespace KSieveUi;
 SieveActionRemoveFlags::SieveActionRemoveFlags(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveActionAbstractFlags(sieveGraphicalModeWidget, QStringLiteral("removeflag"), i18n("Remove Flags"), parent)
+    : SieveActionAbstractFlags(sieveGraphicalModeWidget, u"removeflag"_s, i18n("Remove Flags"), parent)
 {
 }
 
 QString SieveActionRemoveFlags::flagsCode() const
 {
-    return QStringLiteral("removeflag");
+    return u"removeflag"_s;
 }
 
 QString SieveActionRemoveFlags::help() const

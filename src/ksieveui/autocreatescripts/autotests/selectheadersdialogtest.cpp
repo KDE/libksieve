@@ -5,6 +5,8 @@
 */
 
 #include "selectheadersdialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../sieveconditions/widgets/selectheadertypecombobox.h"
 #include <QDialogButtonBox>
 #include <QLabel>
@@ -27,25 +29,25 @@ void SelectHeadersDialogTest::shouldHaveDefaultValue()
     KSieveUi::SelectHeadersDialog dlg;
     QVERIFY(!dlg.windowTitle().isEmpty());
 
-    auto buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
+    auto buttonBox = dlg.findChild<QDialogButtonBox *>(u"buttonbox"_s);
     QVERIFY(buttonBox);
 
-    auto lay = dlg.findChild<QVBoxLayout *>(QStringLiteral("widgetlayout"));
+    auto lay = dlg.findChild<QVBoxLayout *>(u"widgetlayout"_s);
     QVERIFY(lay);
     QCOMPARE(lay->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    auto mListWidget = dlg.findChild<KSieveUi::SelectHeadersWidget *>(QStringLiteral("listwidget"));
+    auto mListWidget = dlg.findChild<KSieveUi::SelectHeadersWidget *>(u"listwidget"_s);
     QVERIFY(mListWidget);
 
-    auto lab = dlg.findChild<QLabel *>(QStringLiteral("label"));
+    auto lab = dlg.findChild<QLabel *>(u"label"_s);
     QVERIFY(lab);
     QVERIFY(!lab->text().isEmpty());
 
-    auto mNewHeader = dlg.findChild<QLineEdit *>(QStringLiteral("newheader"));
+    auto mNewHeader = dlg.findChild<QLineEdit *>(u"newheader"_s);
     QVERIFY(mNewHeader);
     QVERIFY(mNewHeader->isClearButtonEnabled());
 
-    auto mAddNewHeader = dlg.findChild<QPushButton *>(QStringLiteral("addnewheader"));
+    auto mAddNewHeader = dlg.findChild<QPushButton *>(u"addnewheader"_s);
     QVERIFY(mAddNewHeader);
     QVERIFY(!mAddNewHeader->isEnabled());
 }

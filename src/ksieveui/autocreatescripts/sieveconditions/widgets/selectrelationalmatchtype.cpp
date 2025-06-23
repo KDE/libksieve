@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectrelationalmatchtype.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <QComboBox>
@@ -44,7 +46,7 @@ void SelectRelationalMatchType::setCode(const QString &type, const QString &comp
 
 QString SelectRelationalMatchType::code() const
 {
-    return QStringLiteral("%1 \"%2\"").arg(mType->itemData(mType->currentIndex()).toString(), mMatch->itemData(mMatch->currentIndex()).toString());
+    return u"%1 \"%2\""_s.arg(mType->itemData(mType->currentIndex()).toString(), mMatch->itemData(mMatch->currentIndex()).toString());
 }
 
 void SelectRelationalMatchType::initialize()
@@ -52,17 +54,17 @@ void SelectRelationalMatchType::initialize()
     auto lay = new QHBoxLayout(this);
     lay->setContentsMargins({});
 
-    mType->addItem(i18n("Value"), QStringLiteral(":value"));
-    mType->addItem(i18n("Count"), QStringLiteral(":count"));
+    mType->addItem(i18n("Value"), u":value"_s);
+    mType->addItem(i18n("Count"), u":count"_s);
     lay->addWidget(mType);
     connect(mType, &QComboBox::activated, this, &SelectRelationalMatchType::valueChanged);
 
-    mMatch->addItem(i18n("Greater than"), QStringLiteral("gt"));
-    mMatch->addItem(i18n("Greater than or equal"), QStringLiteral("ge"));
-    mMatch->addItem(i18n("Less than"), QStringLiteral("lt"));
-    mMatch->addItem(i18n("Less than or equal"), QStringLiteral("le"));
-    mMatch->addItem(i18n("Equal to"), QStringLiteral("eq"));
-    mMatch->addItem(i18n("Not equal to"), QStringLiteral("ne"));
+    mMatch->addItem(i18n("Greater than"), u"gt"_s);
+    mMatch->addItem(i18n("Greater than or equal"), u"ge"_s);
+    mMatch->addItem(i18n("Less than"), u"lt"_s);
+    mMatch->addItem(i18n("Less than or equal"), u"le"_s);
+    mMatch->addItem(i18n("Equal to"), u"eq"_s);
+    mMatch->addItem(i18n("Not equal to"), u"ne"_s);
     connect(mMatch, &QComboBox::activated, this, &SelectRelationalMatchType::valueChanged);
     lay->addWidget(mMatch);
 }

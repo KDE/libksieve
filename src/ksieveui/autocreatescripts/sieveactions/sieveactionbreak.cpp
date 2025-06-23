@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionbreak.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 
@@ -18,7 +20,7 @@
 
 using namespace KSieveUi;
 SieveActionBreak::SieveActionBreak(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("break"), i18n("Break"), parent)
+    : SieveAction(sieveGraphicalModeWidget, u"break"_s, i18n("Break"), parent)
 {
 }
 
@@ -47,7 +49,7 @@ void SieveActionBreak::setParamWidgetValue(QXmlStreamReader &element, QWidget *w
         if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1StringView("name")) {
-                auto name = w->findChild<QLineEdit *>(QStringLiteral("name"));
+                auto name = w->findChild<QLineEdit *>(u"name"_s);
                 name->setText(AutoCreateScriptUtil::strValue(element));
             } else {
                 unknownTagValue(tagValue, error);
@@ -76,12 +78,12 @@ QUrl SieveActionBreak::href() const
 
 QString SieveActionBreak::code(QWidget *w) const
 {
-    const QLineEdit *name = w->findChild<QLineEdit *>(QStringLiteral("name"));
+    const QLineEdit *name = w->findChild<QLineEdit *>(u"name"_s);
     const QString nameStr = name->text();
     if (!nameStr.isEmpty()) {
-        return QStringLiteral("break :name \"%1\";").arg(nameStr);
+        return u"break :name \"%1\";"_s.arg(nameStr);
     }
-    return QStringLiteral("break;");
+    return u"break;"_s;
 }
 
 QString SieveActionBreak::help() const
@@ -91,7 +93,7 @@ QString SieveActionBreak::help() const
 
 QStringList SieveActionBreak::needRequires(QWidget * /*parent*/) const
 {
-    return QStringList() << QStringLiteral("foreverypart");
+    return QStringList() << u"foreverypart"_s;
 }
 
 bool SieveActionBreak::needCheckIfServerHasCapability() const
@@ -101,7 +103,7 @@ bool SieveActionBreak::needCheckIfServerHasCapability() const
 
 QString SieveActionBreak::serverNeedsCapability() const
 {
-    return QStringLiteral("foreverypart");
+    return u"foreverypart"_s;
 }
 
 #include "moc_sieveactionbreak.cpp"

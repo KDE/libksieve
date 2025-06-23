@@ -5,6 +5,8 @@
 */
 
 #include "sieveimapaccountsettings.h"
+using namespace Qt::Literals::StringLiterals;
+
 
 using namespace KSieveCore;
 
@@ -12,7 +14,7 @@ SieveImapAccountSettings::SieveImapAccountSettings() = default;
 
 QString SieveImapAccountSettings::identifier() const
 {
-    return mUserName + QLatin1Char('_') + mServerName;
+    return mUserName + u'_' + mServerName;
 }
 
 void SieveImapAccountSettings::setServerName(const QString &server)

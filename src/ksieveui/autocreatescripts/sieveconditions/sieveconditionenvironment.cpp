@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionenvironment.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 
@@ -20,7 +22,7 @@
 
 using namespace KSieveUi;
 SieveConditionEnvironment::SieveConditionEnvironment(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("environment"), i18n("Environment"), parent)
+    : SieveCondition(sieveGraphicalModeWidget, u"environment"_s, i18n("Environment"), parent)
 {
 }
 
@@ -36,8 +38,8 @@ QWidget *SieveConditionEnvironment::createParamWidget(QWidget *parent) const
     auto item = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(item);
     QStringList itemList;
-    itemList << QStringLiteral("domain") << QStringLiteral("host") << QStringLiteral("location") << QStringLiteral("name") << QStringLiteral("phase")
-             << QStringLiteral("remote-host") << QStringLiteral("remote-ip") << QStringLiteral("version");
+    itemList << u"domain"_s << u"host"_s << QStringLiteral("location") << QStringLiteral("name") << QStringLiteral("phase")
+             << u"remote-host"_s << u"remote-ip"_s << QStringLiteral("version");
     auto completer = new QCompleter(itemList, w);
     completer->setCaseSensitivity(Qt::CaseInsensitive);
     item->setCompleter(completer);
@@ -60,18 +62,18 @@ QWidget *SieveConditionEnvironment::createParamWidget(QWidget *parent) const
 
 QString SieveConditionEnvironment::code(QWidget *w) const
 {
-    const QLineEdit *item = w->findChild<QLineEdit *>(QStringLiteral("item"));
+    const QLineEdit *item = w->findChild<QLineEdit *>(u"item"_s);
     const QString itemStr = item->text();
 
-    const QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+    const QLineEdit *value = w->findChild<QLineEdit *>(u"value"_s);
     const QString valueStr = value->text();
 
-    return QStringLiteral("environment \"%1\" \"%2\"").arg(itemStr, valueStr) + AutoCreateScriptUtil::generateConditionComment(comment());
+    return u"environment \"%1\" \"%2\""_s.arg(itemStr, valueStr) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionEnvironment::needRequires(QWidget *) const
 {
-    return QStringList() << QStringLiteral("environment");
+    return QStringList() << u"environment"_s;
 }
 
 bool SieveConditionEnvironment::needCheckIfServerHasCapability() const
@@ -81,7 +83,7 @@ bool SieveConditionEnvironment::needCheckIfServerHasCapability() const
 
 QString SieveConditionEnvironment::serverNeedsCapability() const
 {
-    return QStringLiteral("environment");
+    return u"environment"_s;
 }
 
 QString SieveConditionEnvironment::help() const
@@ -99,10 +101,10 @@ void SieveConditionEnvironment::setParamWidgetValue(QXmlStreamReader &element, Q
         const QStringView tagName = element.name();
         if (tagName == QLatin1StringView("str")) {
             if (index == 0) {
-                auto item = w->findChild<QLineEdit *>(QStringLiteral("item"));
+                auto item = w->findChild<QLineEdit *>(u"item"_s);
                 item->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
             } else if (index == 1) {
-                auto value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+                auto value = w->findChild<QLineEdit *>(u"value"_s);
                 value->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
             } else {
                 tooManyArguments(tagName, index, 2, error);

@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectmimecombobox.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
@@ -21,20 +23,20 @@ SelectMimeComboBox::~SelectMimeComboBox() = default;
 
 void SelectMimeComboBox::initialize()
 {
-    addItem(i18n("Type"), QStringLiteral(":type"));
-    addItem(i18n("Subtype"), QStringLiteral(":subtype"));
-    addItem(i18n("Anychild"), QStringLiteral(":anychild"));
-    addItem(i18n("Parameters"), QStringLiteral(":param"));
+    addItem(i18n("Type"), u":type"_s);
+    addItem(i18n("Subtype"), u":subtype"_s);
+    addItem(i18n("Anychild"), u":anychild"_s);
+    addItem(i18n("Parameters"), u":param"_s);
 }
 
 QString SelectMimeComboBox::code() const
 {
-    return QStringLiteral(":mime \"%1\"").arg(itemData(currentIndex()).toString());
+    return u":mime \"%1\""_s.arg(itemData(currentIndex()).toString());
 }
 
 QString SelectMimeComboBox::require() const
 {
-    return QStringLiteral("mime");
+    return u"mime"_s;
 }
 
 void SelectMimeComboBox::setCode(const QString &code, const QString &name, QString &error)

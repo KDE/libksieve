@@ -9,6 +9,8 @@
 */
 
 #include "lexer_p.h"
+using namespace Qt::Literals::StringLiterals;
+
 
 #include "error.h"
 #include "utf8validator.h"
@@ -168,7 +170,7 @@ static inline bool is8Bit(signed char ch)
 static QString removeCRLF(const QString &s)
 {
     const bool CRLF = s.endsWith(QLatin1StringView("\r\n"));
-    const bool LF = !CRLF && s.endsWith(QLatin1Char('\n'));
+    const bool LF = !CRLF && s.endsWith(u'\n');
 
     const int e = CRLF ? 2 : LF ? 1 : 0; // what to chop off at the end
 
@@ -382,8 +384,8 @@ bool Lexer::Impl::parseHashComment(QString &result, bool reallySave)
                 result += QString::fromUtf8(commentStart, commentLength);
                 // In comment < or > breaks parsing => convert them to double quote
                 // See src/ksieveui/scriptsparsing/tests/failed/script1.siv
-                result.replace(QLatin1Char('<'), QLatin1Char('"'));
-                result.replace(QLatin1Char('>'), QLatin1Char('"'));
+                result.replace(u'<', u'"');
+                result.replace(u'>', u'"');
             }
         }
         return true;
@@ -429,7 +431,7 @@ bool Lexer::Impl::parseBracketComment(QString &result, bool reallySave)
         }
         if (reallySave) {
             QString tmp = QString::fromUtf8(commentStart, commentLength);
-            result += tmp.remove(QLatin1Char('\r')); // get rid of CR in CRLF pairs
+            result += tmp.remove(u'\r'); // get rid of CR in CRLF pairs
         }
     }
 
@@ -631,7 +633,7 @@ MultiLineStart:
             }
             const QString line = removeCRLF(QString::fromUtf8(oldBeginOfLine, lineLength));
             lines.push_back(removeDotStuff(line));
-            if (line == QLatin1Char('.')) {
+            if (line == u'.') {
                 break;
             }
         } else {
@@ -646,7 +648,7 @@ MultiLineStart:
 
     assert(!lines.empty());
     lines.erase(--lines.end()); // don't include the lone dot.
-    result = lines.join(QLatin1Char('\n'));
+    result = lines.join(u'\n');
     return true;
 }
 
@@ -671,7 +673,7 @@ bool Lexer::Impl::parseQuotedString(QString &result)
             if (!eatCRLF()) {
                 return false;
             }
-            result += QLatin1Char('\n');
+            result += u'\n';
             break;
         case '\\':
             ++mState.cursor;

@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionihave.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 
@@ -18,7 +20,7 @@
 
 using namespace KSieveUi;
 SieveConditionIhave::SieveConditionIhave(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("ihave"), i18n("IHave"), parent)
+    : SieveCondition(sieveGraphicalModeWidget, u"ihave"_s, i18n("IHave"), parent)
 {
 }
 
@@ -42,15 +44,15 @@ QWidget *SieveConditionIhave::createParamWidget(QWidget *parent) const
 
 QString SieveConditionIhave::code(QWidget *w) const
 {
-    const QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
+    const QLineEdit *edit = w->findChild<QLineEdit *>(u"edit"_s);
     const QString editValue = edit->text();
-    return QStringLiteral("ihave %1").arg(AutoCreateScriptUtil::createList(editValue, QLatin1Char(',')))
+    return u"ihave %1"_s.arg(AutoCreateScriptUtil::createList(editValue, u','))
         + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionIhave::needRequires(QWidget *) const
 {
-    return QStringList() << QStringLiteral("ihave");
+    return QStringList() << u"ihave"_s;
 }
 
 bool SieveConditionIhave::needCheckIfServerHasCapability() const
@@ -60,7 +62,7 @@ bool SieveConditionIhave::needCheckIfServerHasCapability() const
 
 QString SieveConditionIhave::serverNeedsCapability() const
 {
-    return QStringLiteral("ihave");
+    return u"ihave"_s;
 }
 
 QString SieveConditionIhave::help() const
@@ -75,7 +77,7 @@ void SieveConditionIhave::setParamWidgetValue(QXmlStreamReader &element, QWidget
         const QStringView tagName = element.name();
         if (tagName == QLatin1StringView("str")) {
             const QString tagValue = element.readElementText();
-            auto edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
+            auto edit = w->findChild<QLineEdit *>(u"edit"_s);
             edit->setText(tagValue);
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();

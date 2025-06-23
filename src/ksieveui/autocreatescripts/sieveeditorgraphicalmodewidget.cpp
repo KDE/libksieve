@@ -5,6 +5,8 @@
 */
 
 #include "sieveeditorgraphicalmodewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.h"
 #include "scriptsparsing/parsingutil.h"
 #include "sievescriptlistbox.h"
@@ -116,7 +118,7 @@ QString SieveEditorGraphicalModeWidget::currentscript()
     QStringList requireModules;
     QString script = mSieveScript->generatedScript(requireModules);
     if (!requireModules.isEmpty()) {
-        script.prepend(requireModules.join(QLatin1Char('\n')) + QStringLiteral("\n\n"));
+        script.prepend(requireModules.join(u'\n') + u"\n\n"_s);
     }
     return script;
 }
@@ -138,7 +140,7 @@ void SieveEditorGraphicalModeWidget::setImportScript(const QString &script)
                                                            i18n("Error during importing script. Do you want to switch to text mode?"),
                                                            QString(),
                                                            KGuiItem(i18nc("@action:button", "Switch to Text Mode")),
-                                                           KGuiItem(i18nc("@action:button", "Do Not Switch"), QStringLiteral("dialog-cancel")));
+                                                           KGuiItem(i18nc("@action:button", "Do Not Switch"), u"dialog-cancel"_s));
         if (answer == KMessageBox::ButtonCode::PrimaryAction) {
             Q_EMIT switchTextMode(script);
         }

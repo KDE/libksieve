@@ -5,6 +5,8 @@
 */
 
 #include "selectvacationcombobox.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
@@ -21,8 +23,8 @@ SelectVacationComboBox::~SelectVacationComboBox() = default;
 
 void SelectVacationComboBox::initialize()
 {
-    addItem(i18n("days"), QStringLiteral(":days"));
-    addItem(i18n("seconds"), QStringLiteral(":seconds"));
+    addItem(i18n("days"), u":days"_s);
+    addItem(i18n("seconds"), u":seconds"_s);
 }
 
 QString SelectVacationComboBox::code() const

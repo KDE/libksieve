@@ -5,6 +5,8 @@
 */
 
 #include "sieveaccounttest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../sieveimapaccountsettings.h"
 
 #include <QTest>
@@ -30,9 +32,9 @@ void SieveAccountTest::shouldHaveDefaultValue()
 void SieveAccountTest::shouldAssignValue()
 {
     KSieveCore::SieveImapAccountSettings account;
-    QString pwd = QStringLiteral("foo");
-    QString server = QStringLiteral("kde");
-    QString user = QStringLiteral("bla");
+    QString pwd = u"foo"_s;
+    QString server = u"kde"_s;
+    QString user = u"bla"_s;
     int port = 42;
     KSieveCore::SieveImapAccountSettings::AuthenticationMode type = KSieveCore::SieveImapAccountSettings::DigestMD5;
     KSieveCore::SieveImapAccountSettings::EncryptionMode mode = KSieveCore::SieveImapAccountSettings::SSLorTLS;
@@ -53,9 +55,9 @@ void SieveAccountTest::shouldAssignValue()
 void SieveAccountTest::shouldBeEqual()
 {
     KSieveCore::SieveImapAccountSettings account;
-    QString pwd = QStringLiteral("foo");
-    QString server = QStringLiteral("kde");
-    QString user = QStringLiteral("bla");
+    QString pwd = u"foo"_s;
+    QString server = u"kde"_s;
+    QString user = u"bla"_s;
     int port = 42;
     KSieveCore::SieveImapAccountSettings::AuthenticationMode type = KSieveCore::SieveImapAccountSettings::DigestMD5;
     KSieveCore::SieveImapAccountSettings::EncryptionMode mode = KSieveCore::SieveImapAccountSettings::SSLorTLS;
@@ -77,8 +79,8 @@ void SieveAccountTest::shouldCreateIdentifier_data()
     QTest::addColumn<QString>("servername");
     QTest::addColumn<QString>("output");
 
-    QTest::newRow("empty") << QString() << QString() << QStringLiteral("_");
-    QTest::newRow("test1") << QStringLiteral("foo") << QStringLiteral("bla") << QStringLiteral("foo_bla");
+    QTest::newRow("empty") << QString() << QString() << u"_"_s;
+    QTest::newRow("test1") << u"foo"_s << u"bla"_s << QStringLiteral("foo_bla");
 }
 
 void SieveAccountTest::shouldCreateIdentifier()

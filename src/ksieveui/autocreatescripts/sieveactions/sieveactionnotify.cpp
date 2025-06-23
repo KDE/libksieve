@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionnotify.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 #include "widgets/selectimportancecombobox.h"
@@ -20,7 +22,7 @@
 using namespace KSieveUi;
 
 SieveActionNotify::SieveActionNotify(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("notify"), i18n("Notify"), parent)
+    : SieveAction(sieveGraphicalModeWidget, u"notify"_s, i18n("Notify"), parent)
 {
 }
 
@@ -66,13 +68,13 @@ void SieveActionNotify::setParamWidgetValue(QXmlStreamReader &element, QWidget *
             if (tagValue == QLatin1StringView("message")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
-                    auto message = w->findChild<QLineEdit *>(QStringLiteral("message"));
+                    auto message = w->findChild<QLineEdit *>(u"message"_s);
                     message->setText(AutoCreateScriptUtil::quoteStr(strValue));
                 }
             } else if (tagValue == QLatin1StringView("importance")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
-                    auto importance = w->findChild<SelectImportanceCombobox *>(QStringLiteral("importancecombo"));
+                    auto importance = w->findChild<SelectImportanceCombobox *>(u"importancecombo"_s);
                     importance->setCode(strValue, name(), error);
                 }
             } else {
@@ -86,7 +88,7 @@ void SieveActionNotify::setParamWidgetValue(QXmlStreamReader &element, QWidget *
             element.skipCurrentElement();
             // implement in the future ?
         } else if (tagName == QLatin1StringView("str")) {
-            auto method = w->findChild<QLineEdit *>(QStringLiteral("method"));
+            auto method = w->findChild<QLineEdit *>(u"method"_s);
             method->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
         } else {
             unknownTag(tagName, error);
@@ -97,29 +99,29 @@ void SieveActionNotify::setParamWidgetValue(QXmlStreamReader &element, QWidget *
 
 QString SieveActionNotify::code(QWidget *w) const
 {
-    QString result = QStringLiteral("notify");
-    const SelectImportanceCombobox *importance = w->findChild<SelectImportanceCombobox *>(QStringLiteral("importancecombo"));
+    QString result = u"notify"_s;
+    const SelectImportanceCombobox *importance = w->findChild<SelectImportanceCombobox *>(u"importancecombo"_s);
     const QString importanceStr = importance->code();
     if (!importanceStr.isEmpty()) {
-        result += QStringLiteral(" :importance \"%1\"").arg(importanceStr);
+        result += u" :importance \"%1\""_s.arg(importanceStr);
     }
 
-    const QLineEdit *message = w->findChild<QLineEdit *>(QStringLiteral("message"));
+    const QLineEdit *message = w->findChild<QLineEdit *>(u"message"_s);
     const QString messageStr = message->text();
     if (!messageStr.isEmpty()) {
-        result += QStringLiteral(" :message \"%1\"").arg(messageStr);
+        result += u" :message \"%1\""_s.arg(messageStr);
     }
 
-    const QLineEdit *method = w->findChild<QLineEdit *>(QStringLiteral("method"));
+    const QLineEdit *method = w->findChild<QLineEdit *>(u"method"_s);
     const QString methodStr = method->text();
-    result += QStringLiteral(" \"%1\";").arg(methodStr);
+    result += u" \"%1\";"_s.arg(methodStr);
 
     return result;
 }
 
 QString SieveActionNotify::serverNeedsCapability() const
 {
-    return QStringLiteral("enotify");
+    return u"enotify"_s;
 }
 
 bool SieveActionNotify::needCheckIfServerHasCapability() const
@@ -135,7 +137,7 @@ QString SieveActionNotify::help() const
 QStringList SieveActionNotify::needRequires(QWidget *) const
 {
     QStringList lst;
-    lst << QStringLiteral("enotify");
+    lst << u"enotify"_s;
     return lst;
 }
 

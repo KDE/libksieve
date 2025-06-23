@@ -5,6 +5,8 @@
 */
 
 #include "findbarbasetest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../findbarbase.h"
 
 #include <PimCommon/LineEditWithCompleterNg>
@@ -24,22 +26,22 @@ FindBarBaseTest::~FindBarBaseTest() = default;
 void FindBarBaseTest::shouldHaveDefaultValue()
 {
     KSieveUi::FindBarBase bar;
-    auto status = bar.findChild<QLabel *>(QStringLiteral("status"));
+    auto status = bar.findChild<QLabel *>(u"status"_s);
     QVERIFY(status);
     QVERIFY(status->text().isEmpty());
 
-    auto previous = bar.findChild<QPushButton *>(QStringLiteral("findprevious"));
+    auto previous = bar.findChild<QPushButton *>(u"findprevious"_s);
     QVERIFY(previous);
     QVERIFY(!previous->isEnabled());
 
-    auto next = bar.findChild<QPushButton *>(QStringLiteral("findnext"));
+    auto next = bar.findChild<QPushButton *>(u"findnext"_s);
     QVERIFY(next);
     QVERIFY(!next->isEnabled());
 
-    auto close = bar.findChild<QToolButton *>(QStringLiteral("close"));
+    auto close = bar.findChild<QToolButton *>(u"close"_s);
     QVERIFY(close);
 
-    auto lineedit = bar.findChild<PimCommon::LineEditWithCompleterNg *>(QStringLiteral("searchline"));
+    auto lineedit = bar.findChild<PimCommon::LineEditWithCompleterNg *>(u"searchline"_s);
     QVERIFY(lineedit);
     QVERIFY(lineedit->text().isEmpty());
 }
@@ -55,8 +57,8 @@ void FindBarBaseTest::shouldClearLineWhenClose()
     QVERIFY(QTest::qWaitForWindowExposed(&bar));
     QVERIFY(bar.isVisible());
     bar.focusAndSetCursor();
-    auto lineedit = bar.findChild<PimCommon::LineEditWithCompleterNg *>(QStringLiteral("searchline"));
-    lineedit->setText(QStringLiteral("FOO"));
+    auto lineedit = bar.findChild<PimCommon::LineEditWithCompleterNg *>(u"searchline"_s);
+    lineedit->setText(u"FOO"_s);
     QVERIFY(!lineedit->text().isEmpty());
     QVERIFY(lineedit->hasFocus());
     bar.closeBar();
@@ -73,11 +75,11 @@ void FindBarBaseTest::shouldEnableDisableNextPreviousButton()
     KSieveUi::FindBarBase bar;
     bar.show();
     QVERIFY(QTest::qWaitForWindowExposed(&bar));
-    auto previous = bar.findChild<QPushButton *>(QStringLiteral("findprevious"));
+    auto previous = bar.findChild<QPushButton *>(u"findprevious"_s);
 
-    auto next = bar.findChild<QPushButton *>(QStringLiteral("findnext"));
+    auto next = bar.findChild<QPushButton *>(u"findnext"_s);
 
-    bar.autoSearch(QStringLiteral("FOO"));
+    bar.autoSearch(u"FOO"_s);
     QVERIFY(next->isEnabled());
     QVERIFY(previous->isEnabled());
 
@@ -94,13 +96,13 @@ void FindBarBaseTest::shouldClearAllWhenShowBar()
     KSieveUi::FindBarBase bar;
     bar.show();
     QVERIFY(QTest::qWaitForWindowExposed(&bar));
-    auto status = bar.findChild<QLabel *>(QStringLiteral("status"));
-    status->setText(QStringLiteral("FOO"));
+    auto status = bar.findChild<QLabel *>(u"status"_s);
+    status->setText(u"FOO"_s);
     bar.closeBar();
 
     bar.show();
     bar.focusAndSetCursor();
-    auto lineedit = bar.findChild<PimCommon::LineEditWithCompleterNg *>(QStringLiteral("searchline"));
+    auto lineedit = bar.findChild<PimCommon::LineEditWithCompleterNg *>(u"searchline"_s);
     QVERIFY(lineedit->hasFocus());
     QVERIFY(status->text().isEmpty());
 }

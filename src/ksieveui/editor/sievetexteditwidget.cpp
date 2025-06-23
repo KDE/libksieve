@@ -5,6 +5,8 @@
 */
 
 #include "sievetexteditwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "editor/sievetextedit.h"
 #include <QVBoxLayout>
 

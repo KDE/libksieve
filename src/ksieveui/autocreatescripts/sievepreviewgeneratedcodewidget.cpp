@@ -5,6 +5,8 @@
 */
 
 #include "sievepreviewgeneratedcodewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QHBoxLayout>
 #include <QTextEdit>
 using namespace KSieveUi;

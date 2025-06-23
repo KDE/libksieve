@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionkeep.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "editor/sieveeditorutil.h"
@@ -17,7 +19,7 @@
 
 using namespace KSieveUi;
 SieveActionKeep::SieveActionKeep(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("keep"), i18n("Keep"), parent)
+    : SieveAction(sieveGraphicalModeWidget, u"keep"_s, i18n("Keep"), parent)
 {
     mHasImapFlag4Support = sieveCapabilities().contains(QLatin1StringView("imap4flags"));
     mHasFlagSupport = sieveCapabilities().contains(QLatin1StringView("imapflags")) || mHasImapFlag4Support;
@@ -26,15 +28,15 @@ SieveActionKeep::SieveActionKeep(SieveEditorGraphicalModeWidget *sieveGraphicalM
 QString SieveActionKeep::code(QWidget *w) const
 {
     if (mHasFlagSupport) {
-        const SelectFlagsWidget *flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
+        const SelectFlagsWidget *flagsWidget = w->findChild<SelectFlagsWidget *>(u"flagswidget"_s);
         const QString flagCode = flagsWidget->code();
         if (flagCode.isEmpty()) {
-            return QStringLiteral("keep;");
+            return u"keep;"_s;
         } else {
-            return QStringLiteral("keep :flags") + QLatin1Char(' ') + flagCode;
+            return u"keep :flags"_s + u' ' + flagCode;
         }
     } else {
-        return QStringLiteral("keep;");
+        return u"keep;"_s;
     }
 }
 
@@ -71,10 +73,10 @@ void SieveActionKeep::setParamWidgetValue(QXmlStreamReader &element, QWidget *w,
         while (element.readNextStartElement()) {
             const QStringView tagName = element.name();
             if (tagName == QLatin1StringView("list")) {
-                auto flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
+                auto flagsWidget = w->findChild<SelectFlagsWidget *>(u"flagswidget"_s);
                 flagsWidget->setFlags(AutoCreateScriptUtil::listValue(element));
             } else if (tagName == QLatin1StringView("str")) {
-                auto flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
+                auto flagsWidget = w->findChild<SelectFlagsWidget *>(u"flagswidget"_s);
                 flagsWidget->setFlags(QStringList() << element.readElementText());
             } else if (tagName == QLatin1StringView("tag") && element.readElementText() == QLatin1StringView("flags")) {
                 // nothing :)
@@ -99,9 +101,9 @@ QStringList SieveActionKeep::needRequires(QWidget *) const
 {
     QStringList requiresLst;
     if (mHasImapFlag4Support) {
-        requiresLst << QStringLiteral("imap4flags");
+        requiresLst << u"imap4flags"_s;
     } else if (mHasFlagSupport) {
-        requiresLst << QStringLiteral("imapflags");
+        requiresLst << u"imapflags"_s;
     }
     return requiresLst;
 }

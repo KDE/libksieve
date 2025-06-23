@@ -5,6 +5,8 @@
 */
 
 #include "sieveeditormenubartest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../sieveeditormenubar.h"
 #include <QSignalSpy>
 #include <QTest>

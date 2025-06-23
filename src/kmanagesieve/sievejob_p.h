@@ -9,6 +9,8 @@
 #pragma once
 
 #include "session.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sievejob.h"
 
 #include <QPointer>

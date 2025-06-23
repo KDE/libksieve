@@ -4,6 +4,8 @@
  */
 
 #include "sieveeditortextmodewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptdialog.h"
 #include "editor/sieveeditortabwidget.h"
 #include "editor/sievetextedit.h"
@@ -166,7 +168,7 @@ SieveEditorTextModeWidget::~SieveEditorTextModeWidget()
 
 void SieveEditorTextModeWidget::writeConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QStringLiteral("SieveEditor"));
+    KConfigGroup group(KSharedConfig::openStateConfig(), u"SieveEditor"_s);
     group.writeEntry("mainSplitter", mMainSplitter->sizes());
     group.writeEntry("templateSplitter", mTemplateSplitter->sizes());
 }
@@ -183,7 +185,7 @@ SieveEditorTabWidget *SieveEditorTextModeWidget::tabWidget() const
 
 void SieveEditorTextModeWidget::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QStringLiteral("SieveEditor"));
+    KConfigGroup group(KSharedConfig::openStateConfig(), u"SieveEditor"_s);
     const QList<int> size = {400, 100};
 
     mMainSplitter->setSizes(group.readEntry("mainSplitter", size));
@@ -270,7 +272,7 @@ void SieveEditorTextModeWidget::insertRequires(const QStringList &needToAddRequi
     if (!needToAddRequire.isEmpty()) {
         QTextCursor textCursor = mTextEdit->textCursor();
         textCursor.movePosition(QTextCursor::MoveOperation::Start);
-        textCursor.insertText(needToAddRequire.join(QLatin1Char('\n')) + QLatin1Char('\n'));
+        textCursor.insertText(needToAddRequire.join(u'\n') + u'\n');
     }
 }
 
@@ -314,7 +316,7 @@ void SieveEditorTextModeWidget::createRulesGraphically()
         const QStringList needToAddRequire = insertNecessaryRequires(requireModules);
         QString newPlainText = mTextEdit->toPlainText() + script;
         if (!needToAddRequire.isEmpty()) {
-            newPlainText.prepend(requireModules.join(QLatin1Char('\n')) + QLatin1Char('\n'));
+            newPlainText.prepend(requireModules.join(u'\n')) + u'\n';
         }
         mTextEdit->selectAll();
 

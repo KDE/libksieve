@@ -4,19 +4,21 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionreturn.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "editor/sieveeditorutil.h"
 
 #include <KLocalizedString>
 
 using namespace KSieveUi;
 SieveActionReturn::SieveActionReturn(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("return"), i18n("Return"), parent)
+    : SieveAction(sieveGraphicalModeWidget, u"return"_s, i18n("Return"), parent)
 {
 }
 
 QString SieveActionReturn::code(QWidget *) const
 {
-    return QStringLiteral("return;");
+    return u"return;"_s;
 }
 
 QUrl SieveActionReturn::href() const
@@ -32,7 +34,7 @@ QString SieveActionReturn::help() const
 
 QStringList SieveActionReturn::needRequires(QWidget * /*parent*/) const
 {
-    return QStringList() << QStringLiteral("include");
+    return QStringList() << u"include"_s;
 }
 
 bool SieveActionReturn::needCheckIfServerHasCapability() const
@@ -42,7 +44,7 @@ bool SieveActionReturn::needCheckIfServerHasCapability() const
 
 QString SieveActionReturn::serverNeedsCapability() const
 {
-    return QStringLiteral("include");
+    return u"include"_s;
 }
 
 #include "moc_sieveactionreturn.cpp"

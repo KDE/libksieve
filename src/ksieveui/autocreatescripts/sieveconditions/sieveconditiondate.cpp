@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditiondate.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "editor/sieveeditorutil.h"
@@ -20,7 +22,7 @@
 using namespace KSieveUi;
 
 SieveConditionDate::SieveConditionDate(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("date"), i18n("Date"), parent)
+    : SieveCondition(sieveGraphicalModeWidget, u"date"_s, i18n("Date"), parent)
 {
 }
 
@@ -58,17 +60,17 @@ QWidget *SieveConditionDate::createParamWidget(QWidget *parent) const
 
 QString SieveConditionDate::code(QWidget *w) const
 {
-    const SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+    const SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(u"matchtype"_s);
     bool isNegative = false;
     const QString matchTypeStr = selectMatchCombobox->code(isNegative);
 
-    const QLineEdit *header = w->findChild<QLineEdit *>(QStringLiteral("header"));
+    const QLineEdit *header = w->findChild<QLineEdit *>(u"header"_s);
     const QString headerStr = header->text();
 
-    const SelectDateWidget *dateWidget = w->findChild<SelectDateWidget *>(QStringLiteral("datewidget"));
+    const SelectDateWidget *dateWidget = w->findChild<SelectDateWidget *>(u"datewidget"_s);
     const QString dateWidgetStr = dateWidget->code();
 
-    return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("date %1 \"%2\" %3").arg(matchTypeStr, headerStr, dateWidgetStr)
+    return AutoCreateScriptUtil::negativeString(isNegative) + u"date %1 \"%2\" %3"_s.arg(matchTypeStr, headerStr, dateWidgetStr)
         + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
@@ -79,13 +81,13 @@ bool SieveConditionDate::needCheckIfServerHasCapability() const
 
 QString SieveConditionDate::serverNeedsCapability() const
 {
-    return QStringLiteral("date");
+    return u"date"_s;
 }
 
 QStringList SieveConditionDate::needRequires(QWidget *w) const
 {
-    const SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
-    return QStringList() << QStringLiteral("date") << selectMatchCombobox->needRequires();
+    const SelectMatchTypeComboBox *selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(u"matchtype"_s);
+    return QStringList() << u"date"_s << selectMatchCombobox->needRequires();
 }
 
 QString SieveConditionDate::help() const
@@ -115,7 +117,7 @@ void SieveConditionDate::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             }
             ++index;
         } else if (tagName == QLatin1StringView("tag")) {
-            auto selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+            auto selectMatchCombobox = w->findChild<SelectMatchTypeComboBox *>(u"matchtype"_s);
             selectMatchCombobox->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
@@ -131,9 +133,9 @@ void SieveConditionDate::setParamWidgetValue(QXmlStreamReader &element, QWidget 
         setComment(commentStr);
     }
 
-    auto dateWidget = w->findChild<SelectDateWidget *>(QStringLiteral("datewidget"));
+    auto dateWidget = w->findChild<SelectDateWidget *>(u"datewidget"_s);
     dateWidget->setCode(type, value);
-    auto header = w->findChild<QLineEdit *>(QStringLiteral("header"));
+    auto header = w->findChild<QLineEdit *>(u"header"_s);
     header->setText(headerStr);
 }
 

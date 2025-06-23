@@ -5,6 +5,8 @@
 */
 
 #include "sievescriptdebuggerwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sievescriptdebuggerfrontendwidget.h"
 
 #include <KLocalizedString>
@@ -78,7 +80,7 @@ QString SieveScriptDebuggerWidget::script() const
 
 void SieveScriptDebuggerWidget::checkSieveTestApplication()
 {
-    if (QStandardPaths::findExecutable(QStringLiteral("sieve-test")).isEmpty()) {
+    if (QStandardPaths::findExecutable(u"sieve-test"_s).isEmpty()) {
         mHaveDebugApps = false;
         mStackedWidget->setCurrentWidget(mSieveNoExistingFrontEnd);
         Q_EMIT sieveTestNotFound();

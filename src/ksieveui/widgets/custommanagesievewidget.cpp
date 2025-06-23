@@ -5,6 +5,8 @@
 */
 
 #include "custommanagesievewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "util/findaccountinfojob.h"
 #include "widgets/managesievetreeview.h"
 
@@ -72,7 +74,7 @@ void CustomManageSieveWidget::searchNextServerSieve()
 void CustomManageSieveWidget::slotSearchSieveScript(const QString &name, const QString &identifier)
 {
     mLastSieveTreeWidgetItem = new SieveTreeWidgetItem(treeView(), mLastSieveTreeWidgetItem);
-    mLastSieveTreeWidgetItem->setIcon(0, QIcon::fromTheme(QStringLiteral("network-server")));
+    mLastSieveTreeWidgetItem->setIcon(0, QIcon::fromTheme(u"network-server"_s));
 
     auto job = new KSieveCore::FindAccountInfoJob(this);
     connect(job, &KSieveCore::FindAccountInfoJob::findAccountInfoFinished, this, &CustomManageSieveWidget::slotFindAccountInfoFinished);
@@ -92,7 +94,7 @@ void CustomManageSieveWidget::slotFindAccountInfoFinished(const KSieveCore::Util
         item->setFlags(item->flags() & ~Qt::ItemIsEnabled);
         treeView()->expandItem(mLastSieveTreeWidgetItem);
     } else {
-        serverName += QStringLiteral(" (%1)").arg(u.userName());
+        serverName += u" (%1)"_s.arg(u.userName());
         KManageSieve::SieveJob *job = KManageSieve::SieveJob::list(u);
         // qDebug() << " SETTINGS " << info;
         job->setProperty("sieveimapaccountsettings", QVariant::fromValue(info.sieveImapAccountSettings));

@@ -5,6 +5,8 @@
 */
 
 #include "sievetemplatewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sievedefaulttemplate.h"
 #include "sievetemplateeditdialog.h"
 #include <PimCommon/TemplateManager>
@@ -20,9 +22,9 @@ using namespace KSieveUi;
 SieveTemplateListWidget::SieveTemplateListWidget(const QString &configName, QWidget *parent)
     : PimCommon::TemplateListWidget(configName, parent)
 {
-    setKNewStuffConfigFile(QStringLiteral("ksieve_script.knsrc"));
+    setKNewStuffConfigFile(u"ksieve_script.knsrc"_s);
     loadTemplates();
-    mTemplateManager = new PimCommon::TemplateManager(QStringLiteral("sieve/scripts"), this);
+    mTemplateManager = new PimCommon::TemplateManager(u"sieve/scripts"_s, this);
 }
 
 void SieveTemplateListWidget::setSieveCapabilities(const QStringList &capabilities)
@@ -39,7 +41,7 @@ QMimeData *SieveTemplateListWidget::mimeData(const QList<QListWidgetItem *> &ite
     QListWidgetItem *item = items.first();
     QString templateStr = item->data(TemplateListWidget::Text).toString();
     if (!mCapabilities.contains(QLatin1StringView("imap4flags")) && templateStr.contains(QLatin1StringView("imap4flags"))) {
-        templateStr.replace(QStringLiteral("imap4flags"), QStringLiteral("imapflags"));
+        templateStr.replace(u"imap4flags"_s, u"imapflags"_s);
     }
     mimeData->setText(templateStr);
     return mimeData;
@@ -91,7 +93,7 @@ SieveTemplateWidget::SieveTemplateWidget(const QString &title, QWidget *parent)
     lay->setContentsMargins({});
     auto lab = new QLabel(title, this);
     lay->addWidget(lab);
-    mListTemplate = new SieveTemplateListWidget(QStringLiteral("sievetemplaterc"), this);
+    mListTemplate = new SieveTemplateListWidget(u"sievetemplaterc"_s, this);
     mListTemplate->setWhatsThis(i18n("You can drag and drop element on editor to import template"));
     connect(mListTemplate, &SieveTemplateListWidget::insertTemplate, this, &SieveTemplateWidget::insertTemplate);
     lay->addWidget(mListTemplate);

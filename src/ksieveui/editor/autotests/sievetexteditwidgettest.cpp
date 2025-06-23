@@ -5,6 +5,8 @@
 */
 
 #include "sievetexteditwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../sievetexteditwidget.h"
 #include "editor/sievetextedit.h"
 #include <QTest>
@@ -21,11 +23,11 @@ SieveTextEditWidgetTest::~SieveTextEditWidgetTest() = default;
 void SieveTextEditWidgetTest::shouldHaveDefaultValue()
 {
     KSieveUi::SieveTextEditWidget w;
-    auto textedit = w.findChild<KSieveUi::SieveTextEdit *>(QStringLiteral("textedit"));
+    auto textedit = w.findChild<KSieveUi::SieveTextEdit *>(u"textedit"_s);
     QVERIFY(textedit);
     QVERIFY(!textedit->isReadOnly());
 
-    auto slider = w.findChild<TextAddonsWidgets::SlideContainer *>(QStringLiteral("slidercontainer"));
+    auto slider = w.findChild<TextAddonsWidgets::SlideContainer *>(u"slidercontainer"_s);
     QVERIFY(slider);
     QWidget *contentWidget = slider->content();
     QVERIFY(contentWidget);

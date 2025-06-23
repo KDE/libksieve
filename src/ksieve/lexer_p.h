@@ -13,6 +13,8 @@
 #pragma once
 
 #include "error.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "lexer.h"
 
 #include <QStack>

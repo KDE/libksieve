@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectbodytypewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KLineEditEventHandler>
@@ -30,9 +32,9 @@ void SelectBodyTypeWidget::initialize()
 
     mBodyCombobox = new QComboBox(this);
     lay->addWidget(mBodyCombobox);
-    mBodyCombobox->addItem(i18n("raw"), QStringLiteral(":raw"));
-    mBodyCombobox->addItem(i18n("content"), QStringLiteral(":content"));
-    mBodyCombobox->addItem(i18n("text"), QStringLiteral(":text"));
+    mBodyCombobox->addItem(i18n("raw"), u":raw"_s);
+    mBodyCombobox->addItem(i18n("content"), u":content"_s);
+    mBodyCombobox->addItem(i18n("text"), u":text"_s);
     connect(mBodyCombobox, &QComboBox::activated, this, &SelectBodyTypeWidget::slotBodyTypeChanged);
 
     mBodyLineEdit = new QLineEdit(this);
@@ -46,7 +48,7 @@ QString SelectBodyTypeWidget::code() const
 {
     QString value = mBodyCombobox->itemData(mBodyCombobox->currentIndex()).toString();
     if (value == QLatin1StringView(":content")) {
-        value += QStringLiteral(" \"%1\"").arg(mBodyLineEdit->text());
+        value += u" \"%1\""_s.arg(mBodyLineEdit->text());
     }
     return value;
 }

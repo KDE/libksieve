@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactiondeleteheader.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "editor/sieveeditorutil.h"
@@ -21,7 +23,7 @@
 using namespace KSieveUi;
 
 SieveActionDeleteHeader::SieveActionDeleteHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveActionAbstractEditHeader(sieveGraphicalModeWidget, QStringLiteral("deleteheader"), i18n("Delete header"), parent)
+    : SieveActionAbstractEditHeader(sieveGraphicalModeWidget, u"deleteheader"_s, i18n("Delete header"), parent)
 {
 }
 
@@ -72,14 +74,14 @@ void SieveActionDeleteHeader::parseValue(QXmlStreamReader &element, QWidget *w, 
             element.skipCurrentElement();
             return;
         } else if (tagName == QLatin1StringView("tag")) {
-            auto combo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+            auto combo = w->findChild<SelectMatchTypeComboBox *>(u"matchtype"_s);
             combo->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), isNegative), name(), error);
         } else if (tagName == QLatin1StringView("str")) {
             if (index == 0) {
-                auto edit = w->findChild<QLineEdit *>(QStringLiteral("headeredit"));
+                auto edit = w->findChild<QLineEdit *>(u"headeredit"_s);
                 edit->setText(element.readElementText());
             } else if (index == 1) {
-                auto value = w->findChild<QLineEdit *>(QStringLiteral("valueedit"));
+                auto value = w->findChild<QLineEdit *>(u"valueedit"_s);
                 value->setText(element.readElementText());
             } else {
                 tooManyArguments(tagName, index, 2, error);
@@ -106,17 +108,17 @@ void SieveActionDeleteHeader::setParamWidgetValue(QXmlStreamReader &element, QWi
 
 QString SieveActionDeleteHeader::code(QWidget *w) const
 {
-    const SelectMatchTypeComboBox *combo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+    const SelectMatchTypeComboBox *combo = w->findChild<SelectMatchTypeComboBox *>(u"matchtype"_s);
     bool isNegative = false;
     const QString matchTypeStr = combo->code(isNegative);
 
-    const QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("headeredit"));
+    const QLineEdit *edit = w->findChild<QLineEdit *>(u"headeredit"_s);
     const QString headerStr = edit->text();
 
-    const QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("valueedit"));
+    const QLineEdit *value = w->findChild<QLineEdit *>(u"valueedit"_s);
     const QString valueStr = value->text();
 
-    return QStringLiteral("deleteheader %1 \"%2\" \"%3\";").arg((isNegative ? QLatin1StringView("not ") + matchTypeStr : matchTypeStr), headerStr, valueStr);
+    return u"deleteheader %1 \"%2\" \"%3\";"_s.arg((isNegative ? QLatin1StringView("not ") + matchTypeStr : matchTypeStr), headerStr, valueStr);
 }
 
 QString SieveActionDeleteHeader::help() const
@@ -131,7 +133,7 @@ QUrl SieveActionDeleteHeader::href() const
 
 QStringList SieveActionDeleteHeader::needRequires(QWidget *w) const
 {
-    const SelectMatchTypeComboBox *combo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+    const SelectMatchTypeComboBox *combo = w->findChild<SelectMatchTypeComboBox *>(u"matchtype"_s);
     return SieveActionAbstractEditHeader::needRequires(w) + combo->needRequires();
 }
 

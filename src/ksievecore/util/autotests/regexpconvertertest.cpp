@@ -5,6 +5,8 @@
 */
 
 #include "regexpconvertertest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QRegularExpression>
 #include <QTest>
 
@@ -15,9 +17,9 @@ RegExpConverterTest::RegExpConverterTest(QObject *parent)
 
 static inline QString stringReplaceRegularExpression(QString s)
 {
-    static QRegularExpression reg(QStringLiteral("[\n\t]+"));
-    s.replace(reg, QStringLiteral(" "));
-    return s.replace(QLatin1Char('\"'), QStringLiteral("\\\""));
+    static QRegularExpression reg(u"[\n\t]+"_s);
+    s.replace(reg, u" "_s);
+    return s.replace(u'\"', u"\\\""_s);
 }
 
 void RegExpConverterTest::convertRegExp_data()
@@ -25,12 +27,12 @@ void RegExpConverterTest::convertRegExp_data()
     QTest::addColumn<QString>("input");
     QTest::addColumn<QString>("output");
     QTest::newRow("empty") << QString() << QString();
-    QTest::newRow("space") << QStringLiteral("foo foo foo") << QStringLiteral("foo foo foo");
-    QTest::newRow("space2") << QStringLiteral("   foo foo foo  ") << QStringLiteral("   foo foo foo  ");
-    QTest::newRow("newline") << QStringLiteral("\n   foo foo foo  ") << QStringLiteral("    foo foo foo  ");
-    QTest::newRow("newline2") << QStringLiteral("\nfoo\n foo") << QStringLiteral(" foo  foo");
-    QTest::newRow("newline3") << QStringLiteral("\n\t\tfoo\n") << QStringLiteral(" foo ");
-    QTest::newRow("quote") << QStringLiteral("\n\t\tfoo\"\n") << QStringLiteral(" foo\\\" ");
+    QTest::newRow("space") << u"foo foo foo"_s << u"foo foo foo"_s;
+    QTest::newRow("space2") << u"   foo foo foo  "_s << u"   foo foo foo  "_s;
+    QTest::newRow("newline") << u"\n   foo foo foo  "_s << u"    foo foo foo  "_s;
+    QTest::newRow("newline2") << u"\nfoo\n foo"_s << u" foo  foo"_s;
+    QTest::newRow("newline3") << u"\n\t\tfoo\n"_s << u" foo "_s;
+    QTest::newRow("quote") << u"\n\t\tfoo\"\n"_s << u" foo\\\" "_s;
 }
 
 void RegExpConverterTest::convertRegExp()

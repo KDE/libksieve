@@ -5,6 +5,8 @@
 */
 
 #include "managesievewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "libksieveui_debug.h"
 #include "managescriptsjob/renamescriptjob.h"
 #include "managesievetreeview.h"
@@ -145,9 +147,9 @@ void ManageSieveWidget::slotContextMenuRequested(const QPoint &p)
     if (isFileNameItem(item)) {
         // script items:
         menu.addAction(i18n("Edit Script…"), this, &ManageSieveWidget::slotEditScript);
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18n("Rename Script…"), this, &ManageSieveWidget::slotRenameScript);
+        menu.addAction(QIcon::fromTheme(u"edit-rename"_s), i18n("Rename Script…"), this, &ManageSieveWidget::slotRenameScript);
         menu.addSeparator();
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Delete Script"), this, &ManageSieveWidget::slotDeleteScript);
+        menu.addAction(QIcon::fromTheme(u"edit-delete"_s), i18n("Delete Script"), this, &ManageSieveWidget::slotDeleteScript);
         if (itemIsActived(item)) {
             menu.addSeparator();
             menu.addAction(i18n("Deactivate Script"), this, &ManageSieveWidget::slotDeactivateScript);
@@ -156,7 +158,7 @@ void ManageSieveWidget::slotContextMenuRequested(const QPoint &p)
         // top-levels:
         const bool jobsListIsEmpty = mJobs.keys(item).isEmpty();
         if (canAddNewScript(item, jobsListIsEmpty)) {
-            menu.addAction(QIcon::fromTheme(QStringLiteral("document-new")), i18n("New Script…"), this, &ManageSieveWidget::slotNewScript);
+            menu.addAction(QIcon::fromTheme(u"document-new"_s), i18n("New Script…"), this, &ManageSieveWidget::slotNewScript);
         } else if (!jobsListIsEmpty) { // In Progress
             menu.addAction(KStandardGuiItem::cancel().icon(), KStandardGuiItem::cancel().text(), this, &ManageSieveWidget::slotCancelFetch);
         }
@@ -236,7 +238,7 @@ void ManageSieveWidget::slotNewScript()
     }
 
     u = u.adjusted(QUrl::RemoveFilename);
-    u.setPath(u.path() + QLatin1Char('/') + name);
+    u.setPath(u.path() + u'/' + name);
 
     QTreeWidgetItem *parentItem = currentItem;
     if (parentItem) {
@@ -284,7 +286,7 @@ void ManageSieveWidget::slotEditScript()
         return;
     }
     url = url.adjusted(QUrl::RemoveFilename);
-    url.setPath(url.path() + QLatin1Char('/') + currentItem->text(0));
+    url.setPath(url.path() + u'/' + currentItem->text(0));
     const auto sieveimapaccountsettings = parent->data(0, SIEVE_SERVER_IMAP_SETTINGS).value<KSieveCore::SieveImapAccountSettings>();
     const QStringList currentCapabilities = parent->data(0, SIEVE_SERVER_CAPABILITIES).toStringList();
     const QStringList listscript = parent->data(0, SIEVE_SERVER_LIST_SCRIPT).toStringList();
@@ -356,7 +358,7 @@ void ManageSieveWidget::changeActiveScript(QTreeWidgetItem *item, bool activate,
         return;
     }
     u = u.adjusted(QUrl::RemoveFilename);
-    u.setPath(u.path() + QLatin1Char('/') + selected->text(0));
+    u.setPath(u.path() + u'/' + selected->text(0));
 
     KManageSieve::SieveJob *job = nullptr;
     if (activate) {
@@ -433,7 +435,7 @@ void ManageSieveWidget::slotRenameScript()
     }
 
     u = u.adjusted(QUrl::RemoveFilename);
-    u.setPath(u.path() + QLatin1Char('/') + currentItem->text(0));
+    u.setPath(u.path() + u'/' + currentItem->text(0));
 #ifdef USE_RENAME_SIEVE_METHOD
     KManageSieve::SieveJob *job = KManageSieve::SieveJob::rename(u, newName);
     connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveWidget::slotRenameResult);
@@ -495,7 +497,7 @@ void ManageSieveWidget::slotDeleteScript()
     }
 
     u = u.adjusted(QUrl::RemoveFilename);
-    u.setPath(u.path() + QLatin1Char('/') + currentItem->text(0));
+    u.setPath(u.path() + u'/' + currentItem->text(0));
 
     KManageSieve::SieveJob *job = KManageSieve::SieveJob::del(u);
     connect(job, &KManageSieve::SieveJob::result, this, &ManageSieveWidget::slotDeleteResult);
@@ -588,7 +590,7 @@ void ManageSieveWidget::slotGotList(KManageSieve::SieveJob *job, bool success, c
     if (hasKep14EditorMode) {
         QUrl u = mUrls[parent];
         u = u.adjusted(QUrl::RemoveFilename);
-        u.setPath(u.path() + QLatin1Char('/') + QStringLiteral("USER"));
+        u.setPath(u.path() + u'/' + u"USER"_s);
         auto parseJob = new KSieveCore::ParseUserScriptJob(u, this);
         parseJob->setAutoDelete(true);
         parseJob->setProperty("parentItem", QVariant::fromValue<QTreeWidgetItem *>(parent));

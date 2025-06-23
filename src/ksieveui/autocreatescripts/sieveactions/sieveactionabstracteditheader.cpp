@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionabstracteditheader.h"
+using namespace Qt::Literals::StringLiterals;
+
 
 using namespace KSieveUi;
 
@@ -17,7 +19,7 @@ SieveActionAbstractEditHeader::SieveActionAbstractEditHeader(SieveEditorGraphica
 
 QStringList SieveActionAbstractEditHeader::needRequires(QWidget *) const
 {
-    return QStringList() << QStringLiteral("editheader");
+    return QStringList() << u"editheader"_s;
 }
 
 bool SieveActionAbstractEditHeader::needCheckIfServerHasCapability() const
@@ -27,7 +29,7 @@ bool SieveActionAbstractEditHeader::needCheckIfServerHasCapability() const
 
 QString SieveActionAbstractEditHeader::serverNeedsCapability() const
 {
-    return QStringLiteral("editheader");
+    return u"editheader"_s;
 }
 
 #include "moc_sieveactionabstracteditheader.cpp"

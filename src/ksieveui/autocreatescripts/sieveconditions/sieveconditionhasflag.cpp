@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionhasflag.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
@@ -21,7 +23,7 @@
 
 using namespace KSieveUi;
 SieveConditionHasFlag::SieveConditionHasFlag(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("hasflag"), i18n("Has Flag"), parent)
+    : SieveCondition(sieveGraphicalModeWidget, u"hasflag"_s, i18n("Has Flag"), parent)
 {
     hasVariableSupport = sieveCapabilities().contains(QLatin1StringView("variables"));
 }
@@ -67,22 +69,22 @@ QWidget *SieveConditionHasFlag::createParamWidget(QWidget *parent) const
 
 QString SieveConditionHasFlag::code(QWidget *w) const
 {
-    const SelectMatchTypeComboBox *matchTypeCombo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+    const SelectMatchTypeComboBox *matchTypeCombo = w->findChild<SelectMatchTypeComboBox *>(u"matchtype"_s);
     bool isNegative = false;
     const QString matchString = matchTypeCombo->code(isNegative);
 
-    QString result = AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("hasflag %1").arg(matchString);
+    QString result = AutoCreateScriptUtil::negativeString(isNegative) + u"hasflag %1"_s.arg(matchString);
 
     if (hasVariableSupport) {
-        const QLineEdit *variableName = w->findChild<QLineEdit *>(QStringLiteral("variablename"));
+        const QLineEdit *variableName = w->findChild<QLineEdit *>(u"variablename"_s);
         const QString variableNameStr = variableName->text();
         if (!variableNameStr.isEmpty()) {
-            result += QLatin1StringView(" \"") + variableNameStr + QLatin1Char('"');
+            result += QLatin1StringView(" \"") + variableNameStr + u'"';
         }
 
-        const AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+        const AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(u"value"_s);
         const QString valueStr = value->code();
-        result += QLatin1StringView(" \"") + valueStr + QLatin1Char('"');
+        result += QLatin1StringView(" \"") + valueStr + u'"';
     }
     return result + AutoCreateScriptUtil::generateConditionComment(comment());
 }
@@ -91,14 +93,14 @@ QStringList SieveConditionHasFlag::needRequires(QWidget *w) const
 {
     QStringList lst;
     if (sieveCapabilities().contains(QLatin1StringView("imap4flags"))) {
-        lst << QStringLiteral("imap4flags");
+        lst << u"imap4flags"_s;
     } else {
-        lst << QStringLiteral("imapflags");
+        lst << u"imapflags"_s;
     }
     if (hasVariableSupport) {
-        lst << QStringLiteral("variables");
+        lst << u"variables"_s;
     }
-    const SelectMatchTypeComboBox *matchTypeCombo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+    const SelectMatchTypeComboBox *matchTypeCombo = w->findChild<SelectMatchTypeComboBox *>(u"matchtype"_s);
     lst << matchTypeCombo->needRequires();
     return lst;
 }
@@ -110,14 +112,14 @@ bool SieveConditionHasFlag::needCheckIfServerHasCapability() const
 
 QString SieveConditionHasFlag::serverNeedsCapability() const
 {
-    return QStringLiteral("variables");
+    return u"variables"_s;
 #if 0
     if (sieveCapabilities().contains(QLatin1StringView("variables"))) {
     }
     if (sieveCapabilities().contains(QLatin1StringView("imap4flags"))) {
-        return QStringLiteral("imap4flags");
+        return u"imap4flags"_s;
     } else {
-        return QStringLiteral("imapflags");
+        return u"imapflags"_s;
     }
 #endif
 }
@@ -134,7 +136,7 @@ void SieveConditionHasFlag::setParamWidgetValue(QXmlStreamReader &element, QWidg
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
         if (tagName == QLatin1StringView("tag")) {
-            auto matchTypeCombo = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+            auto matchTypeCombo = w->findChild<SelectMatchTypeComboBox *>(u"matchtype"_s);
             matchTypeCombo->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
         } else if (tagName == QLatin1StringView("str")) {
             strList << element.readElementText();
@@ -154,15 +156,15 @@ void SieveConditionHasFlag::setParamWidgetValue(QXmlStreamReader &element, QWidg
 
     switch (strList.count()) {
     case 1: {
-        auto value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+        auto value = w->findChild<AbstractRegexpEditorLineEdit *>(u"value"_s);
         value->setCode(strList.at(0));
         break;
     }
     case 2:
         if (hasVariableSupport) {
-            auto variableName = w->findChild<QLineEdit *>(QStringLiteral("variablename"));
+            auto variableName = w->findChild<QLineEdit *>(u"variablename"_s);
             variableName->setText(strList.at(0));
-            auto value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+            auto value = w->findChild<AbstractRegexpEditorLineEdit *>(u"value"_s);
             value->setCode(strList.at(1));
         } else {
             qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionHasFlag has not variable support";

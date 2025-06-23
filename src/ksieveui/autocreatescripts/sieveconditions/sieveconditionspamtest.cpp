@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionspamtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "editor/sieveeditorutil.h"
@@ -21,7 +23,7 @@
 using namespace KSieveUi;
 
 SieveConditionSpamTest::SieveConditionSpamTest(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("spamtest"), i18n("Spam Test"), parent)
+    : SieveCondition(sieveGraphicalModeWidget, u"spamtest"_s, i18n("Spam Test"), parent)
 {
     mHasSpamTestPlusSupport = sieveCapabilities().contains(QLatin1StringView("spamtestplus"));
 }
@@ -63,20 +65,20 @@ QString SieveConditionSpamTest::code(QWidget *w) const
 {
     QString percentStr;
     if (mHasSpamTestPlusSupport) {
-        const QCheckBox *checkbox = w->findChild<QCheckBox *>(QStringLiteral("percent"));
-        percentStr = checkbox->isChecked() ? QStringLiteral(":percent") : QString();
+        const QCheckBox *checkbox = w->findChild<QCheckBox *>(u"percent"_s);
+        percentStr = checkbox->isChecked() ? u":percent"_s : QString();
     }
 
-    const SelectRelationalMatchType *relation = w->findChild<SelectRelationalMatchType *>(QStringLiteral("relation"));
+    const SelectRelationalMatchType *relation = w->findChild<SelectRelationalMatchType *>(u"relation"_s);
     const QString relationStr = relation->code();
 
-    const SelectComparatorComboBox *comparator = w->findChild<SelectComparatorComboBox *>(QStringLiteral("comparator"));
+    const SelectComparatorComboBox *comparator = w->findChild<SelectComparatorComboBox *>(u"comparator"_s);
     const QString comparatorStr = comparator->code();
 
-    const QSpinBox *spinbox = w->findChild<QSpinBox *>(QStringLiteral("value"));
+    const QSpinBox *spinbox = w->findChild<QSpinBox *>(u"value"_s);
     const QString value = QString::number(spinbox->value());
 
-    return QStringLiteral("spamtest %1 %2 %3 \"%4\"").arg(percentStr, relationStr, comparatorStr, value)
+    return u"spamtest %1 %2 %3 \"%4\""_s.arg(percentStr, relationStr, comparatorStr, value)
         + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
@@ -87,20 +89,20 @@ bool SieveConditionSpamTest::needCheckIfServerHasCapability() const
 
 QString SieveConditionSpamTest::serverNeedsCapability() const
 {
-    return QStringLiteral("spamtest");
+    return u"spamtest"_s;
 }
 
 QStringList SieveConditionSpamTest::needRequires(QWidget *w) const
 {
-    const SelectComparatorComboBox *comparator = w->findChild<SelectComparatorComboBox *>(QStringLiteral("comparator"));
+    const SelectComparatorComboBox *comparator = w->findChild<SelectComparatorComboBox *>(u"comparator"_s);
     QStringList lst;
-    lst << QStringLiteral("spamtest") << QStringLiteral("relational");
+    lst << u"spamtest"_s << u"relational"_s;
     const QString comparatorRequires = comparator->require();
     if (!comparatorRequires.isEmpty()) {
         lst << comparatorRequires;
     }
     if (mHasSpamTestPlusSupport) {
-        lst << QStringLiteral("spamtestplus");
+        lst << u"spamtestplus"_s;
     }
     return lst;
 }
@@ -122,23 +124,23 @@ void SieveConditionSpamTest::setParamWidgetValue(QXmlStreamReader &element, QWid
             if (tagValue == QLatin1StringView("count") || tagValue == QLatin1StringView("value")) {
                 if (element.readNextStartElement()) {
                     if (element.name() == QLatin1StringView("str")) {
-                        auto relation = w->findChild<SelectRelationalMatchType *>(QStringLiteral("relation"));
+                        auto relation = w->findChild<SelectRelationalMatchType *>(u"relation"_s);
                         relation->setCode(AutoCreateScriptUtil::tagValue(tagValue), element.readElementText(), name(), error);
                     }
                 }
             } else if (tagValue == QLatin1StringView("comparator")) {
                 if (element.readNextStartElement()) {
                     if (element.name() == QLatin1StringView("str")) {
-                        auto comparator = w->findChild<SelectComparatorComboBox *>(QStringLiteral("comparator"));
+                        auto comparator = w->findChild<SelectComparatorComboBox *>(u"comparator"_s);
                         comparator->setCode(element.readElementText(), name(), error);
                     }
                 }
             } else if (tagValue == QLatin1StringView("percent")) {
                 if (mHasSpamTestPlusSupport) {
-                    auto checkbox = w->findChild<QCheckBox *>(QStringLiteral("percent"));
+                    auto checkbox = w->findChild<QCheckBox *>(u"percent"_s);
                     checkbox->setChecked(true);
                 } else {
-                    serverDoesNotSupportFeatures(QStringLiteral("percent"), error);
+                    serverDoesNotSupportFeatures(u"percent"_s, error);
                     qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionSpamTest::setParamWidgetValue server has not percent support";
                 }
             } else {
@@ -146,7 +148,7 @@ void SieveConditionSpamTest::setParamWidgetValue(QXmlStreamReader &element, QWid
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionSpamTest::setParamWidgetValue unknown tagvalue " << tagValue;
             }
         } else if (tagName == QLatin1StringView("str")) {
-            auto spinbox = w->findChild<QSpinBox *>(QStringLiteral("value"));
+            auto spinbox = w->findChild<QSpinBox *>(u"value"_s);
             spinbox->setValue(element.readElementText().toInt());
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();

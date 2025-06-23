@@ -5,6 +5,8 @@
 */
 
 #include "sievescriptdebuggerwarningtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../sievescriptdebuggerwarning.h"
 #include <QTest>
 

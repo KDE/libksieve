@@ -5,6 +5,8 @@
 */
 
 #include "moveimapfolderwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../moveimapfolderwidget.h"
 #include <QHBoxLayout>
 #include <QLineEdit>
@@ -21,10 +23,10 @@ void MoveImapFolderWidgetTest::shouldHaveDefaultValue()
 {
     KSieveUi::MoveImapFolderWidget w;
 
-    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainlayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
-    auto mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
+    auto mLineEdit = w.findChild<QLineEdit *>(u"lineedit"_s);
     QVERIFY(mLineEdit);
     QVERIFY(mLineEdit->text().isEmpty());
     QVERIFY(w.text().isEmpty());
@@ -34,8 +36,8 @@ void MoveImapFolderWidgetTest::shouldHaveDefaultValue()
 void MoveImapFolderWidgetTest::shouldAssignValue()
 {
     KSieveUi::MoveImapFolderWidget w;
-    auto mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
-    QString str = QStringLiteral("foo");
+    auto mLineEdit = w.findChild<QLineEdit *>(u"lineedit"_s);
+    QString str = u"foo"_s;
     w.setText(str);
     QCOMPARE(mLineEdit->text(), str);
     QCOMPARE(w.text(), str);

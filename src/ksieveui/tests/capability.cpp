@@ -5,17 +5,19 @@
 */
 
 #include "capability.h"
+using namespace Qt::Literals::StringLiterals;
+
 
 QStringList KSieveUi::Test::fullCapabilitiesList()
 {
-    return QStringList() << QStringLiteral("mboxmetadata") << QStringLiteral("body") << QStringLiteral("extlists") << QStringLiteral("envelope")
-                         << QStringLiteral("redirect") << QStringLiteral("fileinto") << QStringLiteral("editheader") << QStringLiteral("reject")
-                         << QStringLiteral("ereject") << QStringLiteral("imapflags") << QStringLiteral("imap4flags") << QStringLiteral("enotify")
-                         << QStringLiteral("date") << QStringLiteral("copy") << QStringLiteral("mailbox") << QStringLiteral("spamtest")
-                         << QStringLiteral("spamtestplus") << QStringLiteral("virustest") << QStringLiteral("vacation") << QStringLiteral("vacation-seconds")
-                         << QStringLiteral("ihave") << QStringLiteral("subaddress") << QStringLiteral("environment") << QStringLiteral("enclose")
-                         << QStringLiteral("replace") << QStringLiteral("include") << QStringLiteral("extracttext") << QStringLiteral("metadata")
-                         << QStringLiteral("convert") << QStringLiteral("foreverypart") << QStringLiteral("variables") << QStringLiteral("servermetadata")
-                         << QStringLiteral("regex") << QStringLiteral("relational") << QStringLiteral("comparator-i;ascii-numeric")
-                         << QStringLiteral("comparator-i;unicode-casemap") << QStringLiteral("encoded-character");
+    return QStringList() << u"mboxmetadata"_s << u"body"_s << QStringLiteral("extlists") << QStringLiteral("envelope")
+                         << u"redirect"_s << u"fileinto"_s << QStringLiteral("editheader") << QStringLiteral("reject")
+                         << u"ereject"_s << u"imapflags"_s << QStringLiteral("imap4flags") << QStringLiteral("enotify")
+                         << u"date"_s << u"copy"_s << QStringLiteral("mailbox") << QStringLiteral("spamtest")
+                         << u"spamtestplus"_s << u"virustest"_s << QStringLiteral("vacation") << QStringLiteral("vacation-seconds")
+                         << u"ihave"_s << u"subaddress"_s << QStringLiteral("environment") << QStringLiteral("enclose")
+                         << u"replace"_s << u"include"_s << QStringLiteral("extracttext") << QStringLiteral("metadata")
+                         << u"convert"_s << u"foreverypart"_s << QStringLiteral("variables") << QStringLiteral("servermetadata")
+                         << u"regex"_s << u"relational"_s << QStringLiteral("comparator-i;ascii-numeric")
+                         << u"comparator-i;unicode-casemap"_s << u"encoded-character"_s;
 }

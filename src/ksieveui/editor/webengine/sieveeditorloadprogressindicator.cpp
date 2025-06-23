@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveeditorloadprogressindicator.h"
+using namespace Qt::Literals::StringLiterals;
+
 
 #include <KIconLoader>
 #include <KPixmapSequenceLoader>
@@ -15,7 +17,7 @@ SieveEditorLoadProgressIndicator::SieveEditorLoadProgressIndicator(QObject *pare
     : QObject(parent)
     , mProgressTimer(new QTimer(this))
 {
-    mProgressPix = KPixmapSequenceLoader::load(QStringLiteral("process-working"), KIconLoader::SizeSmallMedium);
+    mProgressPix = KPixmapSequenceLoader::load(u"process-working"_s, KIconLoader::SizeSmallMedium);
     connect(mProgressTimer, &QTimer::timeout, this, &SieveEditorLoadProgressIndicator::slotTimerDone);
 }
 

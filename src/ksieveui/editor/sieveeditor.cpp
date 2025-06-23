@@ -4,6 +4,8 @@
  */
 
 #include "sieveeditor.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sieve-editor.h"
 #include "sieveeditorwidget.h"
 
@@ -181,8 +183,8 @@ void SieveEditor::closeEvent(QCloseEvent *e)
         const int answer = KMessageBox::warningTwoActions(this,
                                                           i18n("Script is modified. Do you want to close editor?"),
                                                           QString(),
-                                                          KGuiItem(i18nc("@action:button", "Close Editor"), QStringLiteral("dialog-close")),
-                                                          KGuiItem(i18nc("@action:button", "Do Not Close"), QStringLiteral("dialog-cancel")));
+                                                          KGuiItem(i18nc("@action:button", "Close Editor"), u"dialog-close"_s),
+                                                          KGuiItem(i18nc("@action:button", "Do Not Close"), u"dialog-cancel"_s));
         if (answer == KMessageBox::ButtonCode::SecondaryAction) {
             e->ignore();
             return;

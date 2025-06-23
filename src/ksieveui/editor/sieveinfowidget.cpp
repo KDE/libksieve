@@ -5,6 +5,8 @@
 */
 
 #include "sieveinfowidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 
 #include <KLocalizedString>
 

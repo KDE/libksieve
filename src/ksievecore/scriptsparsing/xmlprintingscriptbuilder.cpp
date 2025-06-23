@@ -5,6 +5,8 @@
 */
 
 #include "xmlprintingscriptbuilder.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "parser.h"
 
 #include "error.h"
@@ -33,7 +35,7 @@ void XMLPrintingScriptBuilder::initialize(int indent)
         mStream->setAutoFormattingIndent(indent);
     }
     mStream->writeStartDocument();
-    mStream->writeStartElement(QStringLiteral("script"));
+    mStream->writeStartElement(u"script"_s);
 }
 
 XMLPrintingScriptBuilder::~XMLPrintingScriptBuilder()
@@ -43,24 +45,24 @@ XMLPrintingScriptBuilder::~XMLPrintingScriptBuilder()
 
 void XMLPrintingScriptBuilder::taggedArgument(const QString &tag)
 {
-    write(QStringLiteral("tag"), tag);
+    write(u"tag"_s, tag);
 }
 
 void XMLPrintingScriptBuilder::stringArgument(const QString &string, bool multiLine, const QString & /*fixme*/)
 {
     if (multiLine) {
-        write(QStringLiteral("str"), QStringLiteral("type"), QStringLiteral("multiline"), string);
+        write(u"str"_s, u"type"_s, QStringLiteral("multiline"), string);
     } else {
-        write(QStringLiteral("str"), QStringLiteral("type"), QStringLiteral("quoted"), string);
+        write(u"str"_s, u"type"_s, QStringLiteral("quoted"), string);
     }
 }
 
 void XMLPrintingScriptBuilder::numberArgument(unsigned long number, char quantifier)
 {
     if (quantifier) {
-        write(QStringLiteral("num"), QStringLiteral("quantifier"), QStringLiteral("%1").arg(quantifier), QString::number(number));
+        write(u"num"_s, u"quantifier"_s, QStringLiteral("%1").arg(quantifier), QString::number(number));
     } else {
-        write(QStringLiteral("num"), QString(), QString(), QString::number(number));
+        write(u"num"_s, QString(), QString(), QString::number(number));
     }
 }
 
@@ -69,11 +71,11 @@ void XMLPrintingScriptBuilder::commandStart(const QString &identifier, int lineN
     Q_UNUSED(lineNumber)
     if (identifier == QLatin1StringView("else") || identifier == QLatin1StringView("break") || identifier == QLatin1StringView("require")
         || identifier == QLatin1StringView("foreverypart") || identifier == QLatin1StringView("if") || identifier == QLatin1StringView("elsif")) {
-        mStream->writeStartElement(QStringLiteral("control"));
-        mStream->writeAttribute(QStringLiteral("name"), identifier);
+        mStream->writeStartElement(u"control"_s);
+        mStream->writeAttribute(u"name"_s, identifier);
     } else {
-        mStream->writeStartElement(QStringLiteral("action"));
-        mStream->writeAttribute(QStringLiteral("name"), identifier);
+        mStream->writeStartElement(u"action"_s);
+        mStream->writeAttribute(u"name"_s, identifier);
     }
 }
 
@@ -85,8 +87,8 @@ void XMLPrintingScriptBuilder::commandEnd(int lineNumber)
 
 void XMLPrintingScriptBuilder::testStart(const QString &identifier)
 {
-    mStream->writeStartElement(QStringLiteral("test"));
-    mStream->writeAttribute(QStringLiteral("name"), identifier);
+    mStream->writeStartElement(u"test"_s);
+    mStream->writeAttribute(u"name"_s, identifier);
 }
 
 void XMLPrintingScriptBuilder::testEnd()
@@ -96,7 +98,7 @@ void XMLPrintingScriptBuilder::testEnd()
 
 void XMLPrintingScriptBuilder::testListStart()
 {
-    mStream->writeStartElement(QStringLiteral("testlist"));
+    mStream->writeStartElement(u"testlist"_s);
 }
 
 void XMLPrintingScriptBuilder::testListEnd()
@@ -107,7 +109,7 @@ void XMLPrintingScriptBuilder::testListEnd()
 void XMLPrintingScriptBuilder::blockStart(int lineNumber)
 {
     Q_UNUSED(lineNumber)
-    mStream->writeStartElement(QStringLiteral("block"));
+    mStream->writeStartElement(u"block"_s);
 }
 
 void XMLPrintingScriptBuilder::blockEnd(int lineNumber)
@@ -118,7 +120,7 @@ void XMLPrintingScriptBuilder::blockEnd(int lineNumber)
 
 void XMLPrintingScriptBuilder::stringListArgumentStart()
 {
-    mStream->writeStartElement(QStringLiteral("list"));
+    mStream->writeStartElement(u"list"_s);
 }
 
 void XMLPrintingScriptBuilder::stringListArgumentEnd()
@@ -133,17 +135,17 @@ void XMLPrintingScriptBuilder::stringListEntry(const QString &string, bool multi
 
 void XMLPrintingScriptBuilder::hashComment(const QString &comment)
 {
-    write(QStringLiteral("comment"), QStringLiteral("type"), QStringLiteral("hash"), comment);
+    write(u"comment"_s, u"type"_s, QStringLiteral("hash"), comment);
 }
 
 void XMLPrintingScriptBuilder::bracketComment(const QString &comment)
 {
-    write(QStringLiteral("comment"), QStringLiteral("type"), QStringLiteral("bracket"), comment);
+    write(u"comment"_s, u"type"_s, QStringLiteral("bracket"), comment);
 }
 
 void XMLPrintingScriptBuilder::lineFeed()
 {
-    mStream->writeEmptyElement(QStringLiteral("crlf"));
+    mStream->writeEmptyElement(u"crlf"_s);
 }
 
 void XMLPrintingScriptBuilder::error(const KSieve::Error &error)

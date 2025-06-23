@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveeditortabwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "webengine/sieveeditorhelphtmlwidget.h"
 
 #include <KLocalizedString>
@@ -43,20 +45,20 @@ void SieveEditorTabWidget::slotTabContextMenuRequest(const QPoint &pos)
     QAction *closeTab = nullptr;
     if ((indexBar != 0) && hasMoreThanTwoTab) {
         closeTab = menu.addAction(i18nc("@action:inmenu", "Close Tab"));
-        closeTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
+        closeTab->setIcon(QIcon::fromTheme(u"tab-close"_s));
     }
 
     QAction *allOther = nullptr;
     if ((indexBar == 0) || (count() > 2)) {
         allOther = menu.addAction(i18nc("@action:inmenu", "Close All Other Tabs"));
-        allOther->setIcon(QIcon::fromTheme(QStringLiteral("tab-close-other")));
+        allOther->setIcon(QIcon::fromTheme(u"tab-close-other"_s));
     }
 
     QAction *allTab = nullptr;
     if (hasMoreThanTwoTab) {
         allTab = menu.addAction(i18nc("@action:inmenu", "Close All Tabs"));
         allTab->setEnabled(hasMoreThanTwoTab);
-        allTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
+        allTab->setIcon(QIcon::fromTheme(u"tab-close"_s));
     }
 
     QAction *action = menu.exec(mapToGlobal(pos));

@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionfileinto.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "editor/sieveeditorutil.h"
@@ -17,7 +19,7 @@
 // Add support for adding flags
 using namespace KSieveUi;
 SieveActionFileInto::SieveActionFileInto(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("fileinto"), i18n("File Into"), parent)
+    : SieveAction(sieveGraphicalModeWidget, u"fileinto"_s, i18n("File Into"), parent)
 {
     mHasCopySupport = sieveCapabilities().contains(QLatin1StringView("copy"));
     mHasMailBoxSupport = sieveCapabilities().contains(QLatin1StringView("mailbox"));
@@ -25,22 +27,22 @@ SieveActionFileInto::SieveActionFileInto(SieveEditorGraphicalModeWidget *sieveGr
 
 QString SieveActionFileInto::code(QWidget *w) const
 {
-    QString result = QStringLiteral("fileinto ");
-    const KSieveUi::AbstractMoveImapFolderWidget *edit = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("fileintolineedit"));
+    QString result = u"fileinto "_s;
+    const KSieveUi::AbstractMoveImapFolderWidget *edit = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(u"fileintolineedit"_s);
     const QString text = edit->text();
     if (mHasCopySupport) {
-        const QCheckBox *copy = w->findChild<QCheckBox *>(QStringLiteral("copy"));
+        const QCheckBox *copy = w->findChild<QCheckBox *>(u"copy"_s);
         if (copy->isChecked()) {
             result += QLatin1StringView(":copy ");
         }
     }
     if (mHasMailBoxSupport) {
-        const QCheckBox *create = w->findChild<QCheckBox *>(QStringLiteral("create"));
+        const QCheckBox *create = w->findChild<QCheckBox *>(u"create"_s);
         if (create->isChecked()) {
             result += QLatin1StringView(":create ");
         }
     }
-    return result + QStringLiteral("\"%1\";").arg(text);
+    return result + u"\"%1\";"_s.arg(text);
 }
 
 void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget *w, QString &error)
@@ -51,18 +53,18 @@ void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1StringView("copy")) {
                 if (mHasCopySupport) {
-                    auto copy = w->findChild<QCheckBox *>(QStringLiteral("copy"));
+                    auto copy = w->findChild<QCheckBox *>(u"copy"_s);
                     copy->setChecked(true);
                 } else {
-                    error += i18n("Action \"fileinto\" has \"copy\" argument but current server does not support it") + QLatin1Char('\n');
+                    error += i18n("Action \"fileinto\" has \"copy\" argument but current server does not support it") + u'\n';
                     qCDebug(LIBKSIEVEUI_LOG) << "SieveActionFileInto::setParamWidgetValue has not copy support ";
                 }
             } else if (tagValue == QLatin1StringView("create")) {
                 if (mHasMailBoxSupport) {
-                    auto create = w->findChild<QCheckBox *>(QStringLiteral("create"));
+                    auto create = w->findChild<QCheckBox *>(u"create"_s);
                     create->setChecked(true);
                 } else {
-                    serverDoesNotSupportFeatures(QStringLiteral("create"), error);
+                    serverDoesNotSupportFeatures(u"create"_s, error);
                     qCDebug(LIBKSIEVEUI_LOG) << "SieveActionFileInto::setParamWidgetValue server has not create support ";
                 }
             } else {
@@ -71,7 +73,7 @@ void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
             }
         } else if (tagName == QLatin1StringView("str")) {
             const QString tagValue = element.readElementText();
-            auto edit = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("fileintolineedit"));
+            auto edit = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(u"fileintolineedit"_s);
             edit->setText(AutoCreateScriptUtil::protectSlash(tagValue));
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
@@ -116,17 +118,17 @@ QWidget *SieveActionFileInto::createParamWidget(QWidget *parent) const
 QStringList SieveActionFileInto::needRequires(QWidget *parent) const
 {
     QStringList lst;
-    lst << QStringLiteral("fileinto");
+    lst << u"fileinto"_s;
     if (mHasCopySupport) {
-        const QCheckBox *copy = parent->findChild<QCheckBox *>(QStringLiteral("copy"));
+        const QCheckBox *copy = parent->findChild<QCheckBox *>(u"copy"_s);
         if (copy->isChecked()) {
-            lst << QStringLiteral("copy");
+            lst << u"copy"_s;
         }
     }
     if (mHasMailBoxSupport) {
-        const QCheckBox *create = parent->findChild<QCheckBox *>(QStringLiteral("create"));
+        const QCheckBox *create = parent->findChild<QCheckBox *>(u"create"_s);
         if (create->isChecked()) {
-            lst << QStringLiteral("mailbox");
+            lst << u"mailbox"_s;
         }
     }
     return lst;
@@ -139,19 +141,19 @@ bool SieveActionFileInto::needCheckIfServerHasCapability() const
 
 QString SieveActionFileInto::serverNeedsCapability() const
 {
-    return QStringLiteral("fileinto");
+    return u"fileinto"_s;
 }
 
 QString SieveActionFileInto::help() const
 {
     QString helpStr = i18n("The \"fileinto\" action delivers the message into the specified mailbox.");
     if (mHasMailBoxSupport) {
-        helpStr += QLatin1Char('\n')
+        helpStr += u'\n'
             + i18n("If the optional \":create\" argument is specified, it instructs the Sieve interpreter to create the specified mailbox, if needed, before "
                    "attempting to deliver the message into the specified mailbox.");
     }
     if (mHasCopySupport) {
-        helpStr += QLatin1Char('\n')
+        helpStr += u'\n'
             + i18n("If the optional \":copy\" keyword is specified, the tagged command does not cancel the implicit \"keep\". Instead, it merely files or "
                    "redirects a copy in addition to whatever else is happening to the message.");
     }

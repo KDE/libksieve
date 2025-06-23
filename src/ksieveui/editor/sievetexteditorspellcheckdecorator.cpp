@@ -5,6 +5,8 @@
 */
 
 #include "sievetexteditorspellcheckdecorator.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sievetextedit.h"
 using namespace KSieveUi;
 
@@ -17,7 +19,7 @@ SieveTextEditorSpellCheckDecorator::SieveTextEditorSpellCheckDecorator(SieveText
 bool SieveTextEditorSpellCheckDecorator::isSpellCheckingEnabledForBlock(const QString &textBlock) const
 {
     // allow to spell check comment
-    return mPlainTextEdit->checkSpellingEnabled() && textBlock.startsWith(QLatin1Char('#'));
+    return mPlainTextEdit->checkSpellingEnabled() && textBlock.startsWith(u'#');
 }
 
 #include "moc_sievetexteditorspellcheckdecorator.cpp"

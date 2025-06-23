@@ -5,6 +5,8 @@
 */
 
 #include "sievescriptdebuggerwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../sievescriptdebuggerwidget.h"
 #include <QStackedWidget>
 #include <QTest>
@@ -19,7 +21,7 @@ SieveScriptDebuggerWidgetTest::~SieveScriptDebuggerWidgetTest() = default;
 void SieveScriptDebuggerWidgetTest::shouldHaveDefaultValue()
 {
     KSieveUi::SieveScriptDebuggerWidget w;
-    auto stackedwidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedwidget"));
+    auto stackedwidget = w.findChild<QStackedWidget *>(u"stackedwidget"_s);
     QVERIFY(stackedwidget);
 
     const int numberOfStackWidget(2);

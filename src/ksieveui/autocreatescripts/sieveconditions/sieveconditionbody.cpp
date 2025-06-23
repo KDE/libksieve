@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionbody.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "editor/sieveeditorutil.h"
@@ -17,7 +19,7 @@
 
 using namespace KSieveUi;
 SieveConditionBody::SieveConditionBody(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("body"), i18n("Body"), parent)
+    : SieveCondition(sieveGraphicalModeWidget, u"body"_s, i18n("Body"), parent)
 {
 }
 
@@ -50,23 +52,23 @@ QWidget *SieveConditionBody::createParamWidget(QWidget *parent) const
 
 QString SieveConditionBody::code(QWidget *w) const
 {
-    const SelectBodyTypeWidget *bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
+    const SelectBodyTypeWidget *bodyType = w->findChild<SelectBodyTypeWidget *>(u"bodytype"_s);
     const QString bodyValue = bodyType->code();
-    const SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+    const SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(u"matchtype"_s);
     bool isNegative = false;
     const QString matchValue = matchType->code(isNegative);
 
-    const AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
+    const AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(u"edit"_s);
     const QString editValue = AutoCreateScriptUtil::createAddressList(edit->code().trimmed(), false);
-    return AutoCreateScriptUtil::negativeString(isNegative) + QStringLiteral("body %1 %2 %3").arg(bodyValue, matchValue, editValue)
+    return AutoCreateScriptUtil::negativeString(isNegative) + u"body %1 %2 %3"_s.arg(bodyValue, matchValue, editValue)
         + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionBody::needRequires(QWidget *w) const
 {
-    const SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+    const SelectMatchTypeComboBox *matchType = w->findChild<SelectMatchTypeComboBox *>(u"matchtype"_s);
 
-    return QStringList() << QStringLiteral("body") << matchType->needRequires();
+    return QStringList() << u"body"_s << matchType->needRequires();
 }
 
 bool SieveConditionBody::needCheckIfServerHasCapability() const
@@ -76,7 +78,7 @@ bool SieveConditionBody::needCheckIfServerHasCapability() const
 
 QString SieveConditionBody::serverNeedsCapability() const
 {
-    return QStringLiteral("body");
+    return u"body"_s;
 }
 
 QString SieveConditionBody::help() const
@@ -130,13 +132,13 @@ void SieveConditionBody::setParamWidgetValue(QXmlStreamReader &element, QWidget 
     }
     QString errorStr;
     if (strValue.count() == 1) {
-        auto bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
+        auto bodyType = w->findChild<SelectBodyTypeWidget *>(u"bodytype"_s);
         bodyType->setCode(tagValueList.at(0), QString(), name(), errorStr);
         if (errorStr.isEmpty()) {
-            auto matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+            auto matchType = w->findChild<SelectMatchTypeComboBox *>(u"matchtype"_s);
             matchType->setCode(tagValueList.at(1), name(), error);
         } else {
-            auto matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+            auto matchType = w->findChild<SelectMatchTypeComboBox *>(u"matchtype"_s);
             if (tagValueList.count() == 1) {
                 matchType->setCode(tagValueList.at(0), name(), error);
             } else if (tagValueList.count() == 2) {
@@ -144,19 +146,19 @@ void SieveConditionBody::setParamWidgetValue(QXmlStreamReader &element, QWidget 
                 bodyType->setCode(tagValueList.at(1), QString(), name(), errorStr);
             }
         }
-        auto edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
+        auto edit = w->findChild<AbstractRegexpEditorLineEdit *>(u"edit"_s);
         edit->setCode(wasListElement ? strValue.at(0) : AutoCreateScriptUtil::quoteStr(strValue.at(0)));
     } else if (strValue.count() == 2) {
-        auto bodyType = w->findChild<SelectBodyTypeWidget *>(QStringLiteral("bodytype"));
+        auto bodyType = w->findChild<SelectBodyTypeWidget *>(u"bodytype"_s);
         bodyType->setCode(tagValueList.at(0), indexStr == 2 ? strValue.at(0) : QString(), name(), errorStr);
-        auto matchType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("matchtype"));
+        auto matchType = w->findChild<SelectMatchTypeComboBox *>(u"matchtype"_s);
         if (!errorStr.isEmpty()) {
             matchType->setCode(tagValueList.at(0), name(), error);
             bodyType->setCode(tagValueList.at(1), indexStr == 2 ? strValue.at(0) : QString(), name(), error);
         } else {
             matchType->setCode(tagValueList.at(1), name(), error);
         }
-        auto edit = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("edit"));
+        auto edit = w->findChild<AbstractRegexpEditorLineEdit *>(u"edit"_s);
         edit->setCode(indexStr == 1 ? AutoCreateScriptUtil::quoteStr(strValue.at(0)) : AutoCreateScriptUtil::quoteStr(strValue.at(1)));
     }
 }

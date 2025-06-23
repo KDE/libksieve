@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectaddheaderpositioncombobox.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
@@ -21,7 +23,7 @@ SelectAddHeaderPositionCombobox::~SelectAddHeaderPositionCombobox() = default;
 void SelectAddHeaderPositionCombobox::initialize()
 {
     addItem(i18n("Insert at the beginning"), QString());
-    addItem(i18n("Append at the end"), QStringLiteral(":last"));
+    addItem(i18n("Append at the end"), u":last"_s);
 }
 
 QString SelectAddHeaderPositionCombobox::code() const

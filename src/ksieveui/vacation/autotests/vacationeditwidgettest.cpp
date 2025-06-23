@@ -5,6 +5,8 @@
 */
 
 #include "vacationeditwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../vacationeditwidget.h"
 #include "../vacationmaillineedit.h"
 #include "vacation/vacationmailactionwidget.h"
@@ -28,96 +30,96 @@ VacationEditWidgetTest::~VacationEditWidgetTest() = default;
 void VacationEditWidgetTest::shouldHaveDefaultValue()
 {
     KSieveUi::VacationEditWidget w;
-    auto configureVacationLabel = w.findChild<QLabel *>(QStringLiteral("configureVacationLabel"));
+    auto configureVacationLabel = w.findChild<QLabel *>(u"configureVacationLabel"_s);
     QVERIFY(configureVacationLabel);
     QVERIFY(!configureVacationLabel->text().isEmpty());
-    auto mActiveCheck = w.findChild<QCheckBox *>(QStringLiteral("mActiveCheck"));
+    auto mActiveCheck = w.findChild<QCheckBox *>(u"mActiveCheck"_s);
     QVERIFY(mActiveCheck);
     QVERIFY(!mActiveCheck->text().isEmpty());
     QVERIFY(!mActiveCheck->isChecked());
 
-    auto mTextEdit = w.findChild<TextCustomEditor::PlainTextEditorWidget *>(QStringLiteral("mTextEdit"));
+    auto mTextEdit = w.findChild<TextCustomEditor::PlainTextEditorWidget *>(u"mTextEdit"_s);
     QVERIFY(mTextEdit);
     QVERIFY(mTextEdit->toPlainText().isEmpty());
-    auto mSubject = w.findChild<PimCommon::SpellCheckLineEdit *>(QStringLiteral("mSubject"));
+    auto mSubject = w.findChild<PimCommon::SpellCheckLineEdit *>(u"mSubject"_s);
     QVERIFY(mSubject);
     QVERIFY(mSubject->toPlainText().isEmpty());
 
-    auto subjectOfVacationLabel = w.findChild<QLabel *>(QStringLiteral("subjectOfVacationLabel"));
+    auto subjectOfVacationLabel = w.findChild<QLabel *>(u"subjectOfVacationLabel"_s);
     QVERIFY(subjectOfVacationLabel);
     QVERIFY(!subjectOfVacationLabel->text().isEmpty());
 
-    auto mStartDate = w.findChild<KDateComboBox *>(QStringLiteral("mStartDate"));
+    auto mStartDate = w.findChild<KDateComboBox *>(u"mStartDate"_s);
     QVERIFY(mStartDate);
     QVERIFY(mStartDate->isEnabled());
 
-    auto mStartTime = w.findChild<KTimeComboBox *>(QStringLiteral("mStartTime"));
+    auto mStartTime = w.findChild<KTimeComboBox *>(u"mStartTime"_s);
     QVERIFY(mStartTime);
 
-    auto mStartTimeActive = w.findChild<QCheckBox *>(QStringLiteral("mStartTimeActive"));
+    auto mStartTimeActive = w.findChild<QCheckBox *>(u"mStartTimeActive"_s);
     QVERIFY(mStartTimeActive);
     QVERIFY(!mStartTimeActive->isChecked());
 
-    auto mStartDateLabel = w.findChild<QLabel *>(QStringLiteral("mStartDateLabel"));
+    auto mStartDateLabel = w.findChild<QLabel *>(u"mStartDateLabel"_s);
     QVERIFY(mStartDateLabel);
     QVERIFY(!mStartDateLabel->text().isEmpty());
 
-    auto mEndDate = w.findChild<KDateComboBox *>(QStringLiteral("mEndDate"));
+    auto mEndDate = w.findChild<KDateComboBox *>(u"mEndDate"_s);
     QVERIFY(mEndDate);
 
-    auto mEndTime = w.findChild<KTimeComboBox *>(QStringLiteral("mEndTime"));
+    auto mEndTime = w.findChild<KTimeComboBox *>(u"mEndTime"_s);
     QVERIFY(mEndTime);
     QVERIFY(!mEndTime->isEnabled());
 
-    auto mEndTimeActive = w.findChild<QCheckBox *>(QStringLiteral("mEndTimeActive"));
+    auto mEndTimeActive = w.findChild<QCheckBox *>(u"mEndTimeActive"_s);
     QVERIFY(mEndTimeActive);
     QVERIFY(!mEndTimeActive->isChecked());
 
-    auto mEndDateLabel = w.findChild<QLabel *>(QStringLiteral("mEndDateLabel"));
+    auto mEndDateLabel = w.findChild<QLabel *>(u"mEndDateLabel"_s);
     QVERIFY(mEndDateLabel);
     QVERIFY(!mEndDateLabel->text().isEmpty());
 
-    auto mIntervalSpin = w.findChild<QSpinBox *>(QStringLiteral("mIntervalSpin"));
+    auto mIntervalSpin = w.findChild<QSpinBox *>(u"mIntervalSpin"_s);
     QVERIFY(mIntervalSpin);
 
-    auto resendNotificationLabel = w.findChild<QLabel *>(QStringLiteral("resendNotificationLabel"));
+    auto resendNotificationLabel = w.findChild<QLabel *>(u"resendNotificationLabel"_s);
     QVERIFY(resendNotificationLabel);
     QVERIFY(!resendNotificationLabel->text().isEmpty());
 
-    auto mMailAliasesEdit = w.findChild<KSieveUi::VacationMailLineEdit *>(QStringLiteral("mMailAliasesEdit"));
+    auto mMailAliasesEdit = w.findChild<KSieveUi::VacationMailLineEdit *>(u"mMailAliasesEdit"_s);
     QVERIFY(mMailAliasesEdit);
     QVERIFY(mMailAliasesEdit->text().isEmpty());
     QVERIFY(mMailAliasesEdit->isClearButtonEnabled());
 
-    auto sendResponseLabel = w.findChild<QLabel *>(QStringLiteral("sendResponseLabel"));
+    auto sendResponseLabel = w.findChild<QLabel *>(u"sendResponseLabel"_s);
     QVERIFY(sendResponseLabel);
     QVERIFY(!sendResponseLabel->text().isEmpty());
 
     // Action for incoming mails
-    auto mMailAction = w.findChild<QComboBox *>(QStringLiteral("mMailAction"));
+    auto mMailAction = w.findChild<QComboBox *>(u"mMailAction"_s);
     QVERIFY(mMailAction);
     QCOMPARE(mMailAction->count(), 4);
 
-    auto mMailActionRecipient = w.findChild<KSieveUi::VacationMailActionWidget *>(QStringLiteral("mMailActionRecipient"));
+    auto mMailActionRecipient = w.findChild<KSieveUi::VacationMailActionWidget *>(u"mMailActionRecipient"_s);
     QVERIFY(mMailActionRecipient);
     bool ok;
     QVERIFY(mMailActionRecipient->mailActionRecipient(ok).isEmpty());
 
-    auto actionIncomingMailsLabel = w.findChild<QLabel *>(QStringLiteral("actionIncomingMailsLabel"));
+    auto actionIncomingMailsLabel = w.findChild<QLabel *>(u"actionIncomingMailsLabel"_s);
     QVERIFY(actionIncomingMailsLabel);
     QVERIFY(!actionIncomingMailsLabel->text().isEmpty());
 
-    auto mSpamCheck = w.findChild<QCheckBox *>(QStringLiteral("mSpamCheck"));
+    auto mSpamCheck = w.findChild<QCheckBox *>(u"mSpamCheck"_s);
     QVERIFY(mSpamCheck);
     QVERIFY(!mSpamCheck->text().isEmpty());
     QVERIFY(mSpamCheck->isChecked());
 
-    auto mDomainCheck = w.findChild<QCheckBox *>(QStringLiteral("mDomainCheck"));
+    auto mDomainCheck = w.findChild<QCheckBox *>(u"mDomainCheck"_s);
     QVERIFY(mDomainCheck);
     QVERIFY(!mDomainCheck->text().isEmpty());
     QVERIFY(!mDomainCheck->isChecked());
 
-    auto mDomainEdit = w.findChild<QLineEdit *>(QStringLiteral("mDomainEdit"));
+    auto mDomainEdit = w.findChild<QLineEdit *>(u"mDomainEdit"_s);
     QVERIFY(mDomainEdit);
     QVERIFY(mDomainEdit->text().isEmpty());
     QVERIFY(!mDomainEdit->isEnabled());
@@ -128,33 +130,33 @@ void VacationEditWidgetTest::shouldHaveDefaultValue()
 void VacationEditWidgetTest::shouldGetValues()
 {
     KSieveUi::VacationEditWidget w;
-    // QCheckBox *mActiveCheck = w.findChild<QCheckBox *>(QStringLiteral("mActiveCheck"));
+    // QCheckBox *mActiveCheck = w.findChild<QCheckBox *>(u"mActiveCheck"_s);
 
-    // KPIMTextEdit::PlainTextEditorWidget *mTextEdit = w.findChild<KPIMTextEdit::PlainTextEditorWidget *>(QStringLiteral("mTextEdit"));
-    // QLineEdit *mSubject = w.findChild<QLineEdit *>(QStringLiteral("mSubject"));
+    // KPIMTextEdit::PlainTextEditorWidget *mTextEdit = w.findChild<KPIMTextEdit::PlainTextEditorWidget *>(u"mTextEdit"_s);
+    // QLineEdit *mSubject = w.findChild<QLineEdit *>(u"mSubject"_s);
 #if 0
-    KDateComboBox *mStartDate = w.findChild<KDateComboBox *>(QStringLiteral("mStartDate"));
+    KDateComboBox *mStartDate = w.findChild<KDateComboBox *>(u"mStartDate"_s);
 
-    QCheckBox *mStartTimeActive = w.findChild<QCheckBox *>(QStringLiteral("mStartTimeActive"));
+    QCheckBox *mStartTimeActive = w.findChild<QCheckBox *>(u"mStartTimeActive"_s);
 
-    KDateComboBox *mEndDate = w.findChild<KDateComboBox *>(QStringLiteral("mEndDate"));
+    KDateComboBox *mEndDate = w.findChild<KDateComboBox *>(u"mEndDate"_s);
 
-    KTimeComboBox *mEndTime = w.findChild<KTimeComboBox *>(QStringLiteral("mEndTime"));
+    KTimeComboBox *mEndTime = w.findChild<KTimeComboBox *>(u"mEndTime"_s);
 
-    QCheckBox *mEndTimeActive = w.findChild<QCheckBox *>(QStringLiteral("mEndTimeActive"));
+    QCheckBox *mEndTimeActive = w.findChild<QCheckBox *>(u"mEndTimeActive"_s);
 
-    QSpinBox *mIntervalSpin = w.findChild<QSpinBox *>(QStringLiteral("mIntervalSpin"));
+    QSpinBox *mIntervalSpin = w.findChild<QSpinBox *>(u"mIntervalSpin"_s);
 
-    QLineEdit *mMailAliasesEdit = w.findChild<QLineEdit *>(QStringLiteral("mMailAliasesEdit"));
+    QLineEdit *mMailAliasesEdit = w.findChild<QLineEdit *>(u"mMailAliasesEdit"_s);
 #endif
 
-    // QComboBox *mMailAction = w.findChild<QComboBox *>(QStringLiteral("mMailAction"));
-    // QLineEdit *mMailActionRecipient = w.findChild<QLineEdit *>(QStringLiteral("mMailActionRecipient"));
+    // QComboBox *mMailAction = w.findChild<QComboBox *>(u"mMailAction"_s);
+    // QLineEdit *mMailActionRecipient = w.findChild<QLineEdit *>(u"mMailActionRecipient"_s);
 
-    // QCheckBox *mSpamCheck = w.findChild<QCheckBox *>(QStringLiteral("mSpamCheck"));
-    // QCheckBox *mDomainCheck = w.findChild<QCheckBox *>(QStringLiteral("mDomainCheck"));
+    // QCheckBox *mSpamCheck = w.findChild<QCheckBox *>(u"mSpamCheck"_s);
+    // QCheckBox *mDomainCheck = w.findChild<QCheckBox *>(u"mDomainCheck"_s);
 
-    // QLineEdit *mDomainEdit = w.findChild<QLineEdit *>(QStringLiteral("mDomainEdit"));
+    // QLineEdit *mDomainEdit = w.findChild<QLineEdit *>(u"mDomainEdit"_s);
 
     bool activateVacation = true;
     w.setActivateVacation(activateVacation);
@@ -164,15 +166,15 @@ void VacationEditWidgetTest::shouldGetValues()
     w.setDomainCheck(domainChecked);
     QCOMPARE(w.domainCheck(), domainChecked);
 
-    const QString message = QStringLiteral("foo bla");
+    const QString message = u"foo bla"_s;
     w.setMessageText(message);
     QCOMPARE(w.messageText(), message);
 
-    const QString subject = QStringLiteral("dd");
+    const QString subject = u"dd"_s;
     w.setSubject(subject);
     QCOMPARE(w.subject(), subject);
 
-    const QString domain = QStringLiteral("ss");
+    const QString domain = u"ss"_s;
     w.setDomainName(domain);
     QCOMPARE(w.domainName(), domain);
 
@@ -210,12 +212,12 @@ void VacationEditWidgetTest::shouldHideDateTime()
 {
     KSieveUi::VacationEditWidget w;
     w.show();
-    auto mStartDate = w.findChild<KDateComboBox *>(QStringLiteral("mStartDate"));
-    auto mStartTimeActive = w.findChild<QCheckBox *>(QStringLiteral("mStartTimeActive"));
-    auto mEndDate = w.findChild<KDateComboBox *>(QStringLiteral("mEndDate"));
-    auto mEndTime = w.findChild<KTimeComboBox *>(QStringLiteral("mEndTime"));
-    auto mEndTimeActive = w.findChild<QCheckBox *>(QStringLiteral("mEndTimeActive"));
-    auto mStartTime = w.findChild<KTimeComboBox *>(QStringLiteral("mStartTime"));
+    auto mStartDate = w.findChild<KDateComboBox *>(u"mStartDate"_s);
+    auto mStartTimeActive = w.findChild<QCheckBox *>(u"mStartTimeActive"_s);
+    auto mEndDate = w.findChild<KDateComboBox *>(u"mEndDate"_s);
+    auto mEndTime = w.findChild<KTimeComboBox *>(u"mEndTime"_s);
+    auto mEndTimeActive = w.findChild<QCheckBox *>(u"mEndTimeActive"_s);
+    auto mStartTime = w.findChild<KTimeComboBox *>(u"mStartTime"_s);
     w.enableDates(true);
     QVERIFY(mStartDate->isVisible());
     QVERIFY(mStartTimeActive->isVisible());

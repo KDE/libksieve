@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionmetadataexists.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 #include "util/sieveimapaccountsettings.h"
@@ -19,7 +21,7 @@
 
 using namespace KSieveUi;
 SieveConditionMetaDataExists::SieveConditionMetaDataExists(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("metadataexists"), i18n("Metadata exists"), parent)
+    : SieveCondition(sieveGraphicalModeWidget, u"metadataexists"_s, i18n("Metadata exists"), parent)
 {
 }
 
@@ -53,17 +55,17 @@ QWidget *SieveConditionMetaDataExists::createParamWidget(QWidget *parent) const
 
 QString SieveConditionMetaDataExists::code(QWidget *w) const
 {
-    const KSieveUi::AbstractMoveImapFolderWidget *mailbox = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("mailbox"));
+    const KSieveUi::AbstractMoveImapFolderWidget *mailbox = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(u"mailbox"_s);
     const QString mailboxStr = mailbox->text();
 
-    const QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+    const QLineEdit *value = w->findChild<QLineEdit *>(u"value"_s);
     const QString valueStr = value->text();
-    return QStringLiteral("metadataexists \"%1\" \"%2\"").arg(mailboxStr, valueStr) + AutoCreateScriptUtil::generateConditionComment(comment());
+    return u"metadataexists \"%1\" \"%2\""_s.arg(mailboxStr, valueStr) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionMetaDataExists::needRequires(QWidget *) const
 {
-    return QStringList() << QStringLiteral("mboxmetadata");
+    return QStringList() << u"mboxmetadata"_s;
 }
 
 bool SieveConditionMetaDataExists::needCheckIfServerHasCapability() const
@@ -73,7 +75,7 @@ bool SieveConditionMetaDataExists::needCheckIfServerHasCapability() const
 
 QString SieveConditionMetaDataExists::serverNeedsCapability() const
 {
-    return QStringLiteral("mboxmetadata");
+    return u"mboxmetadata"_s;
 }
 
 QString SieveConditionMetaDataExists::help() const
@@ -90,10 +92,10 @@ void SieveConditionMetaDataExists::setParamWidgetValue(QXmlStreamReader &element
         if (tagName == QLatin1StringView("str")) {
             const QString tagValue = element.readElementText();
             if (index == 0) {
-                auto mailbox = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(QStringLiteral("mailbox"));
+                auto mailbox = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(u"mailbox"_s);
                 mailbox->setText(tagValue);
             } else if (index == 1) {
-                auto value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+                auto value = w->findChild<QLineEdit *>(u"value"_s);
                 value->setText(AutoCreateScriptUtil::quoteStr(tagValue));
             } else {
                 tooManyArguments(tagName, index, 2, error);

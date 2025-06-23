@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionereject.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 #include "widgets/multilineedit.h"
@@ -17,7 +19,7 @@
 
 using namespace KSieveUi;
 SieveActionEReject::SieveActionEReject(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("ereject"), i18n("E-Reject"), parent)
+    : SieveAction(sieveGraphicalModeWidget, u"ereject"_s, i18n("E-Reject"), parent)
 {
 }
 
@@ -43,7 +45,7 @@ void SieveActionEReject::setParamWidgetValue(QXmlStreamReader &element, QWidget 
         const QStringView tagName = element.name();
         if (tagName == QLatin1StringView("str")) {
             const QString tagValue = element.readElementText();
-            auto edit = w->findChild<MultiLineEdit *>(QStringLiteral("rejectmessage"));
+            auto edit = w->findChild<MultiLineEdit *>(u"rejectmessage"_s);
             edit->setPlainText(tagValue);
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
@@ -60,20 +62,20 @@ void SieveActionEReject::setParamWidgetValue(QXmlStreamReader &element, QWidget 
 
 QString SieveActionEReject::code(QWidget *w) const
 {
-    const MultiLineEdit *edit = w->findChild<MultiLineEdit *>(QStringLiteral("rejectmessage"));
+    const MultiLineEdit *edit = w->findChild<MultiLineEdit *>(u"rejectmessage"_s);
     const QString text = edit->toPlainText();
 
-    return QStringLiteral("ereject text:%1").arg(AutoCreateScriptUtil::createMultiLine(text));
+    return u"ereject text:%1"_s.arg(AutoCreateScriptUtil::createMultiLine(text));
 }
 
 QStringList SieveActionEReject::needRequires(QWidget *) const
 {
-    return QStringList() << QStringLiteral("ereject");
+    return QStringList() << u"ereject"_s;
 }
 
 QString SieveActionEReject::serverNeedsCapability() const
 {
-    return QStringLiteral("ereject");
+    return u"ereject"_s;
 }
 
 bool SieveActionEReject::needCheckIfServerHasCapability() const

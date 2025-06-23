@@ -5,6 +5,8 @@
 */
 
 #include "sievescriptdescriptiondialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <TextCustomEditor/PlainTextEditorWidget>
 
 #include <KConfigGroup>

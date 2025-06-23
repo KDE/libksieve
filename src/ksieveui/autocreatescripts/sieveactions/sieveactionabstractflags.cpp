@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionabstractflags.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "widgets/selectflagswidget.h"
@@ -39,10 +41,10 @@ void SieveActionAbstractFlags::setParamWidgetValue(QXmlStreamReader &element, QW
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
         if (tagName == QLatin1StringView("list")) {
-            auto flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
+            auto flagsWidget = w->findChild<SelectFlagsWidget *>(u"flagswidget"_s);
             flagsWidget->setFlags(AutoCreateScriptUtil::listValue(element));
         } else if (tagName == QLatin1StringView("str")) {
-            auto flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
+            auto flagsWidget = w->findChild<SelectFlagsWidget *>(u"flagswidget"_s);
             flagsWidget->setFlags(QStringList() << element.readElementText());
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
@@ -59,18 +61,18 @@ void SieveActionAbstractFlags::setParamWidgetValue(QXmlStreamReader &element, QW
 
 QString SieveActionAbstractFlags::code(QWidget *w) const
 {
-    const SelectFlagsWidget *flagsWidget = w->findChild<SelectFlagsWidget *>(QStringLiteral("flagswidget"));
+    const SelectFlagsWidget *flagsWidget = w->findChild<SelectFlagsWidget *>(u"flagswidget"_s);
     const QString flagCode = flagsWidget->code();
     const QString str = flagsCode();
-    return str + QLatin1Char(' ') + (flagCode.isEmpty() ? QStringLiteral(";") : flagCode);
+    return str + u' ' + (flagCode.isEmpty() ? u";"_s : flagCode);
 }
 
 QStringList SieveActionAbstractFlags::needRequires(QWidget *) const
 {
     if (sieveCapabilities().contains(QLatin1StringView("imap4flags"))) {
-        return QStringList() << QStringLiteral("imap4flags");
+        return QStringList() << u"imap4flags"_s;
     } else {
-        return QStringList() << QStringLiteral("imapflags");
+        return QStringList() << u"imapflags"_s;
     }
 }
 
@@ -82,9 +84,9 @@ bool SieveActionAbstractFlags::needCheckIfServerHasCapability() const
 QString SieveActionAbstractFlags::serverNeedsCapability() const
 {
     if (sieveCapabilities().contains(QLatin1StringView("imap4flags"))) {
-        return QStringLiteral("imap4flags");
+        return u"imap4flags"_s;
     } else {
-        return QStringLiteral("imapflags");
+        return u"imapflags"_s;
     }
 }
 

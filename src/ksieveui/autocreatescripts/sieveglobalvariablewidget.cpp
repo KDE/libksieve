@@ -5,6 +5,8 @@
 */
 
 #include "sieveglobalvariablewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
 #include "editor/sieveeditorutil.h"
@@ -44,9 +46,9 @@ void SieveGlobalVariableActionWidget::generatedScript(QString &script)
         return;
     }
     script += QLatin1StringView("global ");
-    script += QStringLiteral("\"%1\";\n").arg(variableName);
+    script += u"\"%1\";\n"_s.arg(variableName);
     if (mSetValueTo->isChecked() && !mVariableValue->text().isEmpty()) {
-        script += QStringLiteral("set \"%1\" \"%2\";\n").arg(variableName, mVariableValue->text());
+        script += u"set \"%1\" \"%2\";\n"_s.arg(variableName, mVariableValue->text());
     }
 }
 
@@ -76,11 +78,11 @@ void SieveGlobalVariableActionWidget::initWidget()
     connect(mSetValueTo, &QCheckBox::clicked, mVariableValue, &QLineEdit::setEnabled);
 
     mAdd = new QPushButton(this);
-    mAdd->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+    mAdd->setIcon(QIcon::fromTheme(u"list-add"_s));
     mAdd->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
 
     mRemove = new QPushButton(this);
-    mRemove->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
+    mRemove->setIcon(QIcon::fromTheme(u"list-remove"_s));
     mRemove->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
     mLayout->addWidget(mAdd, 1, 4);
     mLayout->addWidget(mRemove, 1, 5);
@@ -126,7 +128,7 @@ void SieveGlobalVariableActionWidget::loadScript(QXmlStreamReader &element, QStr
             mVariableName->setText(element.readElementText());
         } else {
             const QString result = tagName.toString();
-            error += i18n("Unknown tag \"%1\" during loading of variables.", result) + QLatin1Char('\n');
+            error += i18n("Unknown tag \"%1\" during loading of variables.", result) + u'\n';
             qCDebug(LIBKSIEVEUI_LOG) << " SieveGlobalVariableActionWidget::loadScript unknown tagName " << tagName;
         }
     }
@@ -252,7 +254,7 @@ void SieveGlobalVariableLister::updateAddRemoveButton()
 
 void SieveGlobalVariableLister::generatedScript(QString &script, QStringList &requireModules)
 {
-    requireModules << QStringLiteral("include");
+    requireModules << u"include"_s;
     const QList<QWidget *> widgetList = widgets();
     QList<QWidget *>::ConstIterator with = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();

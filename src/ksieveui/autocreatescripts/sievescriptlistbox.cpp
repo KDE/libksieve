@@ -5,6 +5,8 @@
 */
 
 #include "sievescriptlistbox.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sieveeditorgraphicalmodewidget.h"
 #include "sieveforeverypartwidget.h"
 #include "sieveglobalvariablewidget.h"
@@ -29,12 +31,12 @@ namespace
 {
 inline const QString defaultScriptName()
 {
-    return QStringLiteral("SCRIPTNAME: ");
+    return u"SCRIPTNAME: "_s;
 }
 
 inline const QString roundcubeRuleName()
 {
-    return QStringLiteral(" rule:");
+    return u" rule:"_s;
 }
 }
 
@@ -71,12 +73,12 @@ QString SieveScriptListItem::generatedScript(QStringList &required) const
 {
     QString script;
     if (!mDescription.trimmed().isEmpty()) {
-        const QList<QStringView> commentList = QStringView(mDescription).split(QLatin1Char('\n'));
+        const QList<QStringView> commentList = QStringView(mDescription).split(u'\n');
         for (const QStringView str : commentList) {
             if (str.isEmpty()) {
-                script += QLatin1Char('\n');
+                script += u'\n';
             } else {
-                script += QLatin1Char('#') + str + QLatin1Char('\n');
+                script += u'#' + str + u'\n';
             }
         }
     }
@@ -106,23 +108,23 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
 
     mBtnTop = new QPushButton(hb);
     hbHBoxLayout->addWidget(mBtnTop);
-    mBtnTop->setIcon(QIcon::fromTheme(QStringLiteral("go-top")));
+    mBtnTop->setIcon(QIcon::fromTheme(u"go-top"_s));
     mBtnTop->setMinimumSize(mBtnTop->sizeHint() * 1.2);
 
     mBtnUp = new QPushButton(hb);
     hbHBoxLayout->addWidget(mBtnUp);
     mBtnUp->setAutoRepeat(true);
-    mBtnUp->setIcon(QIcon::fromTheme(QStringLiteral("go-up")));
+    mBtnUp->setIcon(QIcon::fromTheme(u"go-up"_s));
     mBtnUp->setMinimumSize(mBtnUp->sizeHint() * 1.2);
     mBtnDown = new QPushButton(hb);
     hbHBoxLayout->addWidget(mBtnDown);
     mBtnDown->setAutoRepeat(true);
-    mBtnDown->setIcon(QIcon::fromTheme(QStringLiteral("go-down")));
+    mBtnDown->setIcon(QIcon::fromTheme(u"go-down"_s));
     mBtnDown->setMinimumSize(mBtnDown->sizeHint() * 1.2);
 
     mBtnBottom = new QPushButton(hb);
     hbHBoxLayout->addWidget(mBtnBottom);
-    mBtnBottom->setIcon(QIcon::fromTheme(QStringLiteral("go-bottom")));
+    mBtnBottom->setIcon(QIcon::fromTheme(u"go-bottom"_s));
     mBtnBottom->setMinimumSize(mBtnBottom->sizeHint() * 1.2);
 
     mBtnUp->setToolTip(i18nc("Move selected filter up.", "Up"));
@@ -139,25 +141,25 @@ SieveScriptListBox::SieveScriptListBox(const QString &title, QWidget *parent)
 
     mBtnNew = new QPushButton(hb);
     hbHBoxLayout->addWidget(mBtnNew);
-    mBtnNew->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
+    mBtnNew->setIcon(QIcon::fromTheme(u"document-new"_s));
     mBtnNew->setToolTip(i18nc("@info:tooltip", "New Script"));
     mBtnNew->setMinimumSize(mBtnNew->sizeHint() * 1.2);
 
     mBtnDelete = new QPushButton(hb);
     hbHBoxLayout->addWidget(mBtnDelete);
-    mBtnDelete->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
+    mBtnDelete->setIcon(QIcon::fromTheme(u"edit-delete"_s));
     mBtnDelete->setToolTip(i18nc("@info:tooltip", "Delete Script"));
     mBtnDelete->setMinimumSize(mBtnDelete->sizeHint() * 1.2);
 
     mBtnRename = new QPushButton(hb);
     mBtnRename->setToolTip(i18nc("@info:tooltip", "Rename Script"));
-    mBtnRename->setIcon(QIcon::fromTheme(QStringLiteral("edit-rename")));
+    mBtnRename->setIcon(QIcon::fromTheme(u"edit-rename"_s));
     mBtnRename->setMinimumSize(mBtnRename->sizeHint() * 1.2);
     hbHBoxLayout->addWidget(mBtnRename);
 
     mBtnDescription = new QPushButton(hb);
     mBtnDescription->setToolTip(i18nc("@info:tooltip", "Edit Script Description"));
-    mBtnDescription->setIcon(QIcon::fromTheme(QStringLiteral("edit-comment")));
+    mBtnDescription->setIcon(QIcon::fromTheme(u"edit-comment"_s));
     mBtnDescription->setMinimumSize(mBtnDescription->sizeHint() * 1.2);
 
     hbHBoxLayout->addWidget(mBtnDescription);
@@ -186,22 +188,22 @@ void SieveScriptListBox::slotCustomMenuRequested(const QPoint &pos)
 {
     QMenu menu(this);
     QAction *newScriptAction = menu.addAction(i18nc("@action:inmenu", "New Script"));
-    newScriptAction->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
+    newScriptAction->setIcon(QIcon::fromTheme(u"document-new"_s));
     connect(newScriptAction, &QAction::triggered, this, &SieveScriptListBox::slotNew);
 
     if (mSieveListScript->itemAt(pos)) {
         QAction *renameScriptAction = menu.addAction(i18nc("@action:inmenu", "Rename Script"));
-        renameScriptAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-rename")));
+        renameScriptAction->setIcon(QIcon::fromTheme(u"edit-rename"_s));
         connect(renameScriptAction, &QAction::triggered, this, &SieveScriptListBox::slotRename);
 
         menu.addSeparator();
         QAction *editScriptDescriptionAction = menu.addAction(i18nc("@action:inmenu", "Edit Script Description"));
-        editScriptDescriptionAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-comment")));
+        editScriptDescriptionAction->setIcon(QIcon::fromTheme(u"edit-comment"_s));
         connect(editScriptDescriptionAction, &QAction::triggered, this, &SieveScriptListBox::slotEditDescription);
 
         menu.addSeparator();
         QAction *deleteScriptAction = menu.addAction(i18nc("@action:inmenu", "Delete Script"));
-        deleteScriptAction->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
+        deleteScriptAction->setIcon(QIcon::fromTheme(u"edit-delete"_s));
         connect(deleteScriptAction, &QAction::triggered, this, &SieveScriptListBox::slotDelete);
     }
     menu.exec(QCursor::pos());
@@ -379,18 +381,18 @@ QString SieveScriptListBox::generatedScript(QStringList &requireModules) const
         if (i != 0) {
             resultScript += QLatin1StringView("\n\n");
         }
-        resultScript += QLatin1Char('#') + QStringLiteral("%1[%2]").arg(roundcubeRuleName(), item->text()) + QLatin1Char('\n');
+        resultScript += u'#' + u"%1[%2]"_s.arg(roundcubeRuleName(), item->text()) + u'\n';
         resultScript += item->generatedScript(lstRequires);
     }
     if (!resultScript.isEmpty()) {
-        resultScript += QLatin1Char('\n');
+        resultScript += u'\n';
     }
 
     QStringList endRequires;
     for (const QString &r : std::as_const(lstRequires)) {
         if (!endRequires.contains(r)) {
             endRequires.append(r);
-            requireModules += QStringLiteral("require \"%1\";").arg(r);
+            requireModules += u"require \"%1\";"_s.arg(r);
         }
     }
 
@@ -476,11 +478,11 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
                     if (currentPage->forEveryPartWidget()) {
                         currentPage->forEveryPartWidget()->loadScript(n, error);
                     } else {
-                        error += i18n("forEveryPart is not supported by your server") + QLatin1Char('\n');
+                        error += i18n("forEveryPart is not supported by your server") + u'\n';
                     }
                     // TODO verify it.
 #ifdef QDOMELEMENT_FIXME
-                    QDomNode block = e.firstChildElement(QStringLiteral("block")).firstChild();
+                    QDomNode block = e.firstChildElement(u"block"_s).firstChild();
                     loadBlock(block, currentPage, typeBlock, error);
 #endif
                 } else if (controlType == QLatin1StringView("require")) {
@@ -493,9 +495,9 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
         } else if (tagName == QLatin1StringView("comment")) {
             previousElementWasAComment = true;
 #ifdef FIXME_COMMENT
-            if (e.hasAttribute(QStringLiteral("hash"))) {
+            if (e.hasAttribute(u"hash"_s)) {
                 // TODO
-            } else if (e.hasAttribute(QStringLiteral("bracket"))) {
+            } else if (e.hasAttribute(u"bracket"_s)) {
                 // TODO
             }
 #endif
@@ -504,13 +506,13 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
                 scriptName = str.remove(defaultScriptName());
             } else if (str.contains(roundcubeRuleName())) {
                 scriptName = str.remove(roundcubeRuleName());
-                if (scriptName.startsWith(QLatin1Char('[')) && scriptName.endsWith(QLatin1Char(']'))) {
+                if (scriptName.startsWith(u'[') && scriptName.endsWith(u']')) {
                     scriptName.removeAt(0);
                     scriptName.removeAt(scriptName.length() - 1);
                 }
             } else {
                 if (!comment.isEmpty()) {
-                    comment += QLatin1Char('\n');
+                    comment += u'\n';
                 }
                 comment += str;
             }
@@ -569,7 +571,7 @@ void SieveScriptListBox::loadBlock(QXmlStreamReader &n, SieveScriptPage *current
         } else if (tagName == QLatin1StringView("crlf")) {
             // If it was a comment previously you will create a \n
             if (previousElementWasAComment) {
-                comment += QLatin1Char('\n');
+                comment += u'\n';
             }
             n.skipCurrentElement();
         } else {

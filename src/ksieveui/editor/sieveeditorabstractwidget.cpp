@@ -4,6 +4,8 @@
  */
 
 #include "sieveeditorabstractwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <PimCommon/PimUtil>
 
 #include <KLocalizedString>
@@ -91,7 +93,7 @@ bool SieveEditorAbstractWidget::loadFromFile(const QString &filename)
         if (scriptText.isEmpty()) {
             scriptText = line;
         } else {
-            scriptText += QLatin1Char('\n') + line;
+            scriptText += u'\n' + line;
         }
         line = in.readLine();
     }

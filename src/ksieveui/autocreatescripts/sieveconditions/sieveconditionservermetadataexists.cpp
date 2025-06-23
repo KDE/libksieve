@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionservermetadataexists.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 #include <KLineEditEventHandler>
@@ -17,7 +19,7 @@
 
 using namespace KSieveUi;
 SieveConditionServerMetaDataExists::SieveConditionServerMetaDataExists(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("servermetadataexists"), i18n("Server Meta Data Exists"), parent)
+    : SieveCondition(sieveGraphicalModeWidget, u"servermetadataexists"_s, i18n("Server Meta Data Exists"), parent)
 {
 }
 
@@ -42,14 +44,14 @@ QWidget *SieveConditionServerMetaDataExists::createParamWidget(QWidget *parent) 
 
 QString SieveConditionServerMetaDataExists::code(QWidget *w) const
 {
-    const QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+    const QLineEdit *value = w->findChild<QLineEdit *>(u"value"_s);
     const QString valueStr = value->text();
-    return QStringLiteral("servermetadataexists \"%1\"").arg(valueStr) + AutoCreateScriptUtil::generateConditionComment(comment());
+    return u"servermetadataexists \"%1\""_s.arg(valueStr) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionServerMetaDataExists::needRequires(QWidget *) const
 {
-    return QStringList() << QStringLiteral("servermetadata");
+    return QStringList() << u"servermetadata"_s;
 }
 
 bool SieveConditionServerMetaDataExists::needCheckIfServerHasCapability() const
@@ -59,7 +61,7 @@ bool SieveConditionServerMetaDataExists::needCheckIfServerHasCapability() const
 
 QString SieveConditionServerMetaDataExists::serverNeedsCapability() const
 {
-    return QStringLiteral("servermetadata");
+    return u"servermetadata"_s;
 }
 
 QString SieveConditionServerMetaDataExists::help() const
@@ -74,7 +76,7 @@ void SieveConditionServerMetaDataExists::setParamWidgetValue(QXmlStreamReader &e
         const QStringView tagName = element.name();
         if (tagName == QLatin1StringView("str")) {
             const QString tagValue = element.readElementText();
-            auto value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+            auto value = w->findChild<QLineEdit *>(u"value"_s);
             value->setText(tagValue);
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();

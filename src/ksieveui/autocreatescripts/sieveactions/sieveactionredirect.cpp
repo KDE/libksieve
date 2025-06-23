@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionredirect.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "editor/sieveeditorutil.h"
@@ -19,7 +21,7 @@
 using namespace KSieveUi;
 
 SieveActionRedirect::SieveActionRedirect(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("redirect"), i18n("Redirect"), parent)
+    : SieveAction(sieveGraphicalModeWidget, u"redirect"_s, i18n("Redirect"), parent)
 {
     mHasCopySupport = sieveCapabilities().contains(QLatin1StringView("copy"));
     mHasListSupport = sieveCapabilities().contains(QLatin1StringView("extlists"));
@@ -56,24 +58,24 @@ void SieveActionRedirect::setParamWidgetValue(QXmlStreamReader &element, QWidget
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
         if (tagName == QLatin1StringView("str")) {
-            auto edit = w->findChild<AbstractSelectEmailLineEdit *>(QStringLiteral("RedirectEdit"));
+            auto edit = w->findChild<AbstractSelectEmailLineEdit *>(u"RedirectEdit"_s);
             const QString tagValue = element.readElementText();
             edit->setText(AutoCreateScriptUtil::quoteStr(tagValue));
         } else if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1StringView("copy")) {
                 if (mHasCopySupport) {
-                    auto copy = w->findChild<QCheckBox *>(QStringLiteral("copy"));
+                    auto copy = w->findChild<QCheckBox *>(u"copy"_s);
                     copy->setChecked(true);
                 } else {
-                    serverDoesNotSupportFeatures(QStringLiteral("copy"), error);
+                    serverDoesNotSupportFeatures(u"copy"_s, error);
                 }
             } else if (tagValue == QLatin1StringView("list")) {
                 if (mHasListSupport) {
-                    auto list = w->findChild<QCheckBox *>(QStringLiteral("list"));
+                    auto list = w->findChild<QCheckBox *>(u"list"_s);
                     list->setChecked(true);
                 } else {
-                    serverDoesNotSupportFeatures(QStringLiteral("list"), error);
+                    serverDoesNotSupportFeatures(u"list"_s, error);
                 }
             } else {
                 unknownTagValue(tagValue, error);
@@ -94,40 +96,40 @@ void SieveActionRedirect::setParamWidgetValue(QXmlStreamReader &element, QWidget
 
 QString SieveActionRedirect::code(QWidget *w) const
 {
-    QString result = QStringLiteral("redirect ");
-    const AbstractSelectEmailLineEdit *edit = w->findChild<AbstractSelectEmailLineEdit *>(QStringLiteral("RedirectEdit"));
+    QString result = u"redirect "_s;
+    const AbstractSelectEmailLineEdit *edit = w->findChild<AbstractSelectEmailLineEdit *>(u"RedirectEdit"_s);
     const QString text = edit->text();
 
     if (mHasCopySupport) {
-        const QCheckBox *copy = w->findChild<QCheckBox *>(QStringLiteral("copy"));
+        const QCheckBox *copy = w->findChild<QCheckBox *>(u"copy"_s);
         if (copy->isChecked()) {
             result += QLatin1StringView(":copy ");
         }
     }
 
     if (mHasListSupport) {
-        const QCheckBox *list = w->findChild<QCheckBox *>(QStringLiteral("list"));
+        const QCheckBox *list = w->findChild<QCheckBox *>(u"list"_s);
         if (list->isChecked()) {
             result += QLatin1StringView(":list ");
         }
     }
 
-    return result + QStringLiteral("\"%1\";").arg(text);
+    return result + u"\"%1\";"_s.arg(text);
 }
 
 QStringList SieveActionRedirect::needRequires(QWidget *parent) const
 {
     QStringList lst;
     if (mHasCopySupport) {
-        const QCheckBox *copy = parent->findChild<QCheckBox *>(QStringLiteral("copy"));
+        const QCheckBox *copy = parent->findChild<QCheckBox *>(u"copy"_s);
         if (copy->isChecked()) {
-            lst << QStringLiteral("copy");
+            lst << u"copy"_s;
         }
     }
     if (mHasListSupport) {
-        const QCheckBox *list = parent->findChild<QCheckBox *>(QStringLiteral("list"));
+        const QCheckBox *list = parent->findChild<QCheckBox *>(u"list"_s);
         if (list->isChecked()) {
-            lst << QStringLiteral("extlists");
+            lst << u"extlists"_s;
         }
     }
     return lst;
@@ -139,7 +141,7 @@ QString SieveActionRedirect::help() const
         "The \"redirect\" action is used to send the message to another user at a supplied address, as a mail forwarding feature does.  The \"redirect\" "
         "action makes no changes to the message body or existing headers, but it may add new headers.");
     if (mHasCopySupport) {
-        helpStr += QLatin1Char('\n')
+        helpStr += u'\n'
             + i18n("If the optional \":copy\" keyword is specified, the tagged command does not cancel the implicit \"keep\". Instead, it redirects a copy in "
                    "addition to whatever else is happening to the message.");
     }

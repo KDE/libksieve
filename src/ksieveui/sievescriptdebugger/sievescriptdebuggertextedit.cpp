@@ -5,6 +5,8 @@
 */
 
 #include "sievescriptdebuggertextedit.h"
+using namespace Qt::Literals::StringLiterals;
+
 
 #include <KLocalizedString>
 
@@ -37,10 +39,10 @@ void SieveScriptDebuggerTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
 void SieveScriptDebuggerTextEdit::slotAddDebug()
 {
     QTextCursor cursor(textCursor());
-    cursor.insertText(QStringLiteral("debug_log \"DEBUG\";\n"));
+    cursor.insertText(u"debug_log \"DEBUG\";\n"_s);
     if (!document()->toPlainText().contains(QLatin1StringView("vnd.dovecot.debug"))) {
         cursor.movePosition(QTextCursor::Start);
-        cursor.insertText(QStringLiteral("require \"vnd.dovecot.debug\";\n"));
+        cursor.insertText(u"require \"vnd.dovecot.debug\";\n"_s);
     }
 }
 

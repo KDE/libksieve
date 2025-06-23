@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectsizetypecombobox.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
@@ -22,9 +24,9 @@ SelectSizeTypeComboBox::~SelectSizeTypeComboBox() = default;
 void SelectSizeTypeComboBox::initialize()
 {
     addItem(i18n("Bytes"), QString());
-    addItem(i18n("KiB"), QStringLiteral("K"));
-    addItem(i18n("MiB"), QStringLiteral("M"));
-    addItem(i18n("GiB"), QStringLiteral("G"));
+    addItem(i18n("KiB"), u"K"_s);
+    addItem(i18n("MiB"), u"M"_s);
+    addItem(i18n("GiB"), u"G"_s);
 }
 
 QString SelectSizeTypeComboBox::code() const

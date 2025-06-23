@@ -5,13 +5,15 @@
 */
 
 #include "sievedatespinbox.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "libksieveui_debug.h"
 using namespace KSieveUi;
 
 SieveDateSpinBox::SieveDateSpinBox(QWidget *parent)
     : QSpinBox(parent)
 {
-    setSpecialValueText(QStringLiteral("*"));
+    setSpecialValueText(u"*"_s);
 }
 
 SieveDateSpinBox::~SieveDateSpinBox() = default;
@@ -66,7 +68,7 @@ void SieveDateSpinBox::setCode(const QString &str)
 QString SieveDateSpinBox::code() const
 {
     if (value() == minimum()) {
-        return QStringLiteral("*");
+        return u"*"_s;
     }
     return convertValue();
 }
@@ -76,22 +78,22 @@ QString SieveDateSpinBox::convertValue() const
     QString str;
     switch (mType) {
     case SelectDateWidget::Year:
-        str = QStringLiteral("%1").arg(value(), 4, 10, QLatin1Char('0'));
+        str = u"%1"_s.arg(value(), 4, 10, u'0');
         break;
     case SelectDateWidget::Month:
-        str = QStringLiteral("%1").arg(value(), 2, 10, QLatin1Char('0'));
+        str = u"%1"_s.arg(value(), 2, 10, u'0');
         break;
     case SelectDateWidget::Day:
-        str = QStringLiteral("%1").arg(value(), 2, 10, QLatin1Char('0'));
+        str = u"%1"_s.arg(value(), 2, 10, u'0');
         break;
     case SelectDateWidget::Hour:
-        str = QStringLiteral("%1").arg(value(), 2, 10, QLatin1Char('0'));
+        str = u"%1"_s.arg(value(), 2, 10, u'0');
         break;
     case SelectDateWidget::Minute:
-        str = QStringLiteral("%1").arg(value(), 2, 10, QLatin1Char('0'));
+        str = u"%1"_s.arg(value(), 2, 10, u'0');
         break;
     case SelectDateWidget::Second:
-        str = QStringLiteral("%1").arg(value(), 2, 10, QLatin1Char('0'));
+        str = u"%1"_s.arg(value(), 2, 10, u'0');
         break;
     case SelectDateWidget::Weekday:
         str = QString::number(value());

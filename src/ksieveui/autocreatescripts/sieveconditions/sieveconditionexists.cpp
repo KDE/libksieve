@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionexists.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 #include "widgets/selectheadertypecombobox.h"
@@ -19,7 +21,7 @@
 using namespace KSieveUi;
 
 SieveConditionExists::SieveConditionExists(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("exists"), i18n("Exists"), parent)
+    : SieveCondition(sieveGraphicalModeWidget, u"exists"_s, i18n("Exists"), parent)
 {
 }
 
@@ -32,8 +34,8 @@ QWidget *SieveConditionExists::createParamWidget(QWidget *parent) const
 
     auto combo = new QComboBox;
     combo->setObjectName(QLatin1StringView("existscheck"));
-    combo->addItem(i18n("exists"), QStringLiteral("exists"));
-    combo->addItem(i18n("not exists"), QStringLiteral("not exists"));
+    combo->addItem(i18n("exists"), u"exists"_s);
+    combo->addItem(i18n("not exists"), u"not exists"_s);
     lay->addWidget(combo);
     connect(combo, &QComboBox::activated, this, &SieveConditionExists::valueChanged);
 
@@ -50,11 +52,11 @@ QWidget *SieveConditionExists::createParamWidget(QWidget *parent) const
 
 QString SieveConditionExists::code(QWidget *w) const
 {
-    const QComboBox *combo = w->findChild<QComboBox *>(QStringLiteral("existscheck"));
+    const QComboBox *combo = w->findChild<QComboBox *>(u"existscheck"_s);
     const QString comparison = combo->itemData(combo->currentIndex()).toString();
 
-    const SelectHeaderTypeComboBox *value = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headervalue"));
-    return QStringLiteral("%1 %2").arg(comparison, value->code()) + AutoCreateScriptUtil::generateConditionComment(comment());
+    const SelectHeaderTypeComboBox *value = w->findChild<SelectHeaderTypeComboBox *>(u"headervalue"_s);
+    return u"%1 %2"_s.arg(comparison, value->code()) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QString SieveConditionExists::help() const
@@ -70,14 +72,14 @@ void SieveConditionExists::setParamWidgetValue(QXmlStreamReader &element, QWidge
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
         if (notCondition) {
-            auto combo = w->findChild<QComboBox *>(QStringLiteral("existscheck"));
+            auto combo = w->findChild<QComboBox *>(u"existscheck"_s);
             combo->setCurrentIndex(1);
         }
         if (tagName == QLatin1StringView("str")) {
-            auto value = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headervalue"));
+            auto value = w->findChild<SelectHeaderTypeComboBox *>(u"headervalue"_s);
             value->setCode(element.readElementText());
         } else if (tagName == QLatin1StringView("list")) {
-            auto selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(QStringLiteral("headervalue"));
+            auto selectHeaderType = w->findChild<SelectHeaderTypeComboBox *>(u"headervalue"_s);
             selectHeaderType->setCode(AutoCreateScriptUtil::listValueToStr(element));
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();

@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionvacation.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "editor/sieveeditorutil.h"
@@ -24,7 +26,7 @@
 using namespace KSieveUi;
 
 SieveActionVacation::SieveActionVacation(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("vacation"), i18n("Vacation"), parent)
+    : SieveAction(sieveGraphicalModeWidget, u"vacation"_s, i18n("Vacation"), parent)
 {
     mHasVacationSecondsSupport = sieveCapabilities().contains(QLatin1StringView("vacation-seconds"));
 }
@@ -91,15 +93,15 @@ void SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1StringView("seconds")) {
                 if (mHasVacationSecondsSupport) {
-                    auto vacationcombobox = w->findChild<SelectVacationComboBox *>(QStringLiteral("vacationcombobox"));
+                    auto vacationcombobox = w->findChild<SelectVacationComboBox *>(u"vacationcombobox"_s);
                     vacationcombobox->setCode(AutoCreateScriptUtil::tagValue(tagValue), name(), error);
                 } else {
-                    serverDoesNotSupportFeatures(QStringLiteral("seconds"), error);
+                    serverDoesNotSupportFeatures(u"seconds"_s, error);
                 }
             } else if (tagValue == QLatin1StringView("days")) {
                 // Nothing wait num tag for it.
             } else if (tagValue == QLatin1StringView("addresses")) {
-                auto addresses = w->findChild<AbstractSelectEmailLineEdit *>(QStringLiteral("addresses"));
+                auto addresses = w->findChild<AbstractSelectEmailLineEdit *>(u"addresses"_s);
                 if (element.readNextStartElement()) {
                     const QStringView textElementTagName = element.name();
                     if (textElementTagName == QLatin1StringView("str")) {
@@ -109,17 +111,17 @@ void SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
                     }
                 }
             } else if (tagValue == QLatin1StringView("subject")) {
-                auto subject = w->findChild<QLineEdit *>(QStringLiteral("subject"));
+                auto subject = w->findChild<QLineEdit *>(u"subject"_s);
                 subject->setText(AutoCreateScriptUtil::strValue(element));
             } else {
                 unknownTagValue(tagValue, error);
                 qCDebug(LIBKSIEVEUI_LOG) << "SieveActionVacation::setParamWidgetValue unknown tagValue :" << tagValue;
             }
         } else if (tagName == QLatin1StringView("num")) {
-            auto day = w->findChild<QSpinBox *>(QStringLiteral("day"));
+            auto day = w->findChild<QSpinBox *>(u"day"_s);
             day->setValue(element.readElementText().toInt());
         } else if (tagName == QLatin1StringView("str")) {
-            auto text = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
+            auto text = w->findChild<MultiLineEdit *>(u"text"_s);
             text->setPlainText(element.readElementText());
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
@@ -136,43 +138,43 @@ void SieveActionVacation::setParamWidgetValue(QXmlStreamReader &element, QWidget
 
 QString SieveActionVacation::code(QWidget *w) const
 {
-    QString vacationTypeStr = QStringLiteral(":days");
+    QString vacationTypeStr = u":days"_s;
     if (mHasVacationSecondsSupport) {
-        const SelectVacationComboBox *vacationcombobox = w->findChild<SelectVacationComboBox *>(QStringLiteral("vacationcombobox"));
+        const SelectVacationComboBox *vacationcombobox = w->findChild<SelectVacationComboBox *>(u"vacationcombobox"_s);
         vacationTypeStr = vacationcombobox->code();
     }
-    const QSpinBox *day = w->findChild<QSpinBox *>(QStringLiteral("day"));
+    const QSpinBox *day = w->findChild<QSpinBox *>(u"day"_s);
     const QString dayStr = QString::number(day->value());
 
-    const MultiLineEdit *text = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
+    const MultiLineEdit *text = w->findChild<MultiLineEdit *>(u"text"_s);
     const QString textStr = text->toPlainText();
 
-    const QLineEdit *subject = w->findChild<QLineEdit *>(QStringLiteral("subject"));
+    const QLineEdit *subject = w->findChild<QLineEdit *>(u"subject"_s);
     const QString subjectStr = subject->text();
 
-    const AbstractSelectEmailLineEdit *addresses = w->findChild<AbstractSelectEmailLineEdit *>(QStringLiteral("addresses"));
+    const AbstractSelectEmailLineEdit *addresses = w->findChild<AbstractSelectEmailLineEdit *>(u"addresses"_s);
     const QString addressesStr = addresses->text();
-    QString result = QStringLiteral("vacation");
+    QString result = u"vacation"_s;
     if (!dayStr.isEmpty()) {
-        result += QStringLiteral(" %1 %2").arg(vacationTypeStr, dayStr);
+        result += u" %1 %2"_s.arg(vacationTypeStr, dayStr);
     }
     if (!subjectStr.isEmpty()) {
-        result += QStringLiteral(" :subject \"%1\"").arg(subjectStr);
+        result += u" :subject \"%1\""_s.arg(subjectStr);
     }
     if (!addressesStr.isEmpty()) {
-        result += QStringLiteral(" :addresses %1").arg(AutoCreateScriptUtil::createAddressList(addressesStr, false));
+        result += u" :addresses %1"_s.arg(AutoCreateScriptUtil::createAddressList(addressesStr, false));
     }
     if (!textStr.isEmpty()) {
-        result += QStringLiteral(" text:%1").arg(AutoCreateScriptUtil::createMultiLine(textStr));
+        result += u" text:%1"_s.arg(AutoCreateScriptUtil::createMultiLine(textStr));
     } else {
-        result += QLatin1Char(';'); // Be sure to have ";"
+        result += u';'; // Be sure to have ";"
     }
     return result;
 }
 
 QString SieveActionVacation::serverNeedsCapability() const
 {
-    return QStringLiteral("vacation");
+    return u"vacation"_s;
 }
 
 bool SieveActionVacation::needCheckIfServerHasCapability() const
@@ -184,9 +186,9 @@ QStringList SieveActionVacation::needRequires(QWidget *) const
 {
     QStringList lst;
     if (mHasVacationSecondsSupport) {
-        lst << QStringLiteral("vacation-seconds");
+        lst << u"vacation-seconds"_s;
     }
-    lst << QStringLiteral("vacation");
+    lst << u"vacation"_s;
     return lst;
 }
 
@@ -196,10 +198,10 @@ QString SieveActionVacation::help() const
         "The \"vacation\" action implements a vacation autoresponder similar to the vacation command available under many versions of Unix. Its purpose is to "
         "provide correspondents with notification that the user is away for an extended period of time and that they should not expect quick responses.");
     if (mHasVacationSecondsSupport) {
-        helpStr = QLatin1Char('\n')
+        helpStr = u'\n'
             + i18n("Through the \":days\" parameter, it limits the number of auto-replies to the same sender to one per [n] days, for a specified number of "
                    "days. But there are cases when one needs more granularity, if one would like to generate \"vacation\" replies more frequently.");
-        helpStr += QLatin1Char('\n') + i18n("This extension defines a \":seconds\" parameter to provide more granularity for such situations.");
+        helpStr += u'\n' + i18n("This extension defines a \":seconds\" parameter to provide more granularity for such situations.");
     }
     return helpStr;
 }

@@ -7,6 +7,8 @@
 #pragma once
 
 #include <QObject>
+using namespace Qt::Literals::StringLiterals;
+
 #include <QUrl>
 #include <memory>
 

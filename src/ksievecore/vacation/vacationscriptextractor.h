@@ -7,6 +7,8 @@
 #pragma once
 
 #include "sieve-vacation.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "vacationutils.h"
 
 #include "error.h"
@@ -443,7 +445,7 @@ public:
 
     bool found() const
     {
-        return mResults.count(QStringLiteral("x-spam-flag")) && mResults.count(QStringLiteral("spam-flag-yes")) && mResults.count(QStringLiteral("vacation"));
+        return mResults.count(u"x-spam-flag"_s) && mResults.count(u"spam-flag-yes"_s) && mResults.count(QStringLiteral("vacation"));
     }
 };
 
@@ -499,7 +501,7 @@ public:
 
     QString domainName() /*not const, since map::op[] isn't const*/
     {
-        return mResults.count(QStringLiteral("vacation")) && mResults.count(QStringLiteral("from")) ? mResults[QStringLiteral("domainName")] : QString();
+        return mResults.count(u"vacation"_s) && mResults.count(u"from"_s) ? mResults[QStringLiteral("domainName")] : QString();
     }
 };
 
@@ -567,30 +569,30 @@ public:
 
     QDate endDate() const
     {
-        if (results().count(QStringLiteral("endDateTime")) == 1) {
-            return datetime(QStringLiteral("endDateTime")).date();
+        if (results().count(u"endDateTime"_s) == 1) {
+            return datetime(u"endDateTime"_s).date();
         } else {
-            return date(QStringLiteral("endDate"));
+            return date(u"endDate"_s);
         }
     }
 
     QDate startDate() const
     {
-        if (results().count(QStringLiteral("startDateTime")) == 1) {
-            return datetime(QStringLiteral("startDateTime")).date();
+        if (results().count(u"startDateTime"_s) == 1) {
+            return datetime(u"startDateTime"_s).date();
         } else {
-            return date(QStringLiteral("startDate"));
+            return date(u"startDate"_s);
         }
     }
 
     QTime endTime() const
     {
-        return datetime(QStringLiteral("endDateTime")).time();
+        return datetime(u"endDateTime"_s).time();
     }
 
     QTime startTime() const
     {
-        return datetime(QStringLiteral("startDateTime")).time();
+        return datetime(u"startDateTime"_s).time();
     }
 
 private:

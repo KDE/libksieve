@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionfalse.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 #include "libksieveui_debug.h"
@@ -17,7 +19,7 @@
 using namespace KSieveUi;
 
 SieveConditionFalse::SieveConditionFalse(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("false"), i18n("False"), parent)
+    : SieveCondition(sieveGraphicalModeWidget, u"false"_s, i18n("False"), parent)
 {
 }
 
@@ -35,7 +37,7 @@ QWidget *SieveConditionFalse::createParamWidget(QWidget *parent) const
 
 QString SieveConditionFalse::code(QWidget *) const
 {
-    return QStringLiteral("false") + AutoCreateScriptUtil::generateConditionComment(comment());
+    return u"false"_s + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QString SieveConditionFalse::help() const

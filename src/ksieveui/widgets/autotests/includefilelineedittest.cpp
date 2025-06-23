@@ -5,6 +5,8 @@
 */
 
 #include "includefilelineedittest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../includefilelineedit.h"
 #include <QCompleter>
 #include <QTest>
@@ -17,7 +19,7 @@ IncludeFileLineEditTest::IncludeFileLineEditTest(QObject *parent)
 void IncludeFileLineEditTest::shouldHaveDefaultValue()
 {
     KSieveUi::IncludeFileLineEdit w;
-    auto completer = w.findChild<QCompleter *>(QStringLiteral("completer"));
+    auto completer = w.findChild<QCompleter *>(u"completer"_s);
     QVERIFY(completer);
     QVERIFY(w.completer());
     QCOMPARE(completer->caseSensitivity(), Qt::CaseInsensitive);

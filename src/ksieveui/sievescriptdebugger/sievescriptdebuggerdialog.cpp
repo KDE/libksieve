@@ -5,6 +5,8 @@
 */
 
 #include "sievescriptdebuggerdialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sievescriptdebuggerwidget.h"
 
 #include <KConfigGroup>
@@ -49,7 +51,7 @@ SieveScriptDebuggerDialog::SieveScriptDebuggerDialog(QWidget *parent)
     connect(mSieveScriptDebuggerWidget, &SieveScriptDebuggerWidget::debugButtonEnabled, this, &SieveScriptDebuggerDialog::debugButtonEnableStateChanged);
 
     mDebugScriptButton = new QPushButton(i18nc("@action:button", "Debug"), this);
-    const KGuiItem item(i18n("Debug"), QIcon::fromTheme(QStringLiteral("debug-run")));
+    const KGuiItem item(i18n("Debug"), QIcon::fromTheme(u"debug-run"_s));
     KGuiItem::assign(mDebugScriptButton, item);
 
     mDebugScriptButton->setObjectName(QLatin1StringView("debug_button"));

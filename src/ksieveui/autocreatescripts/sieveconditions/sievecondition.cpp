@@ -5,6 +5,8 @@
 */
 
 #include "sievecondition.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 
 #include <KLocalizedString>
@@ -28,7 +30,7 @@ void SieveCondition::unknownTag(const QStringView &tag, QString &error)
 {
     const QString result = tag.toString();
 
-    error += i18n("Unknown tag \"%1\" during parsing condition \"%2\"", result, name()) + QLatin1Char('\n');
+    error += i18n("Unknown tag \"%1\" during parsing condition \"%2\"", result, name()) + u'\n';
 }
 
 void SieveCondition::tooManyArguments(const QStringView &tagName, int index, int maxValue, QString &error)
@@ -39,17 +41,17 @@ void SieveCondition::tooManyArguments(const QStringView &tagName, int index, int
 void SieveCondition::tooManyArguments(const QString &tagName, int index, int maxValue, QString &error)
 {
     error += i18n("Too many argument found for \"%1\", max value is %2, number of value found %3 for %4", name(), maxValue, (index + 1), tagName)
-        + QLatin1Char('\n');
+        + u'\n';
 }
 
 void SieveCondition::unknownTagValue(const QString &tagValue, QString &error)
 {
-    error += i18n("An unknown tag value \"%1\" was found during parsing condition \"%2\".", tagValue, name()) + QLatin1Char('\n');
+    error += i18n("An unknown tag value \"%1\" was found during parsing condition \"%2\".", tagValue, name()) + u'\n';
 }
 
 void SieveCondition::serverDoesNotSupportFeatures(const QString &feature, QString &error)
 {
-    error += i18n("A feature \"%1\" in condition \"%2\" is not supported by server", feature, name()) + QLatin1Char('\n');
+    error += i18n("A feature \"%1\" in condition \"%2\" is not supported by server", feature, name()) + u'\n';
 }
 
 #include "moc_sievecondition.cpp"

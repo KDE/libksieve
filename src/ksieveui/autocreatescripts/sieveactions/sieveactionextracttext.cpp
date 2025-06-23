@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionextracttext.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "editor/sieveeditorutil.h"
 
 #include <KLineEditEventHandler>
@@ -18,7 +20,7 @@
 
 using namespace KSieveUi;
 SieveActionExtractText::SieveActionExtractText(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("extracttext"), i18n("Extract Text"), parent)
+    : SieveAction(sieveGraphicalModeWidget, u"extracttext"_s, i18n("Extract Text"), parent)
 {
 }
 
@@ -60,10 +62,10 @@ void SieveActionExtractText::setParamWidgetValue(QXmlStreamReader &element, QWid
             element.skipCurrentElement();
             // TODO ?
         } else if (tagName == QLatin1StringView("num")) {
-            auto numberOfCharacters = w->findChild<QSpinBox *>(QStringLiteral("numberOfCharacters"));
+            auto numberOfCharacters = w->findChild<QSpinBox *>(u"numberOfCharacters"_s);
             numberOfCharacters->setValue(element.readElementText().toInt());
         } else if (tagName == QLatin1StringView("str")) {
-            auto variableName = w->findChild<QLineEdit *>(QStringLiteral("variablename"));
+            auto variableName = w->findChild<QLineEdit *>(u"variablename"_s);
             variableName->setText(element.readElementText());
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
@@ -80,19 +82,19 @@ void SieveActionExtractText::setParamWidgetValue(QXmlStreamReader &element, QWid
 
 QString SieveActionExtractText::code(QWidget *w) const
 {
-    const QSpinBox *numberOfCharacters = w->findChild<QSpinBox *>(QStringLiteral("numberOfCharacters"));
+    const QSpinBox *numberOfCharacters = w->findChild<QSpinBox *>(u"numberOfCharacters"_s);
     const QString numberOfCharactersStr = QString::number(numberOfCharacters->value());
 
-    const QLineEdit *variableName = w->findChild<QLineEdit *>(QStringLiteral("variablename"));
+    const QLineEdit *variableName = w->findChild<QLineEdit *>(u"variablename"_s);
     const QString variableNameStr = variableName->text();
 
-    const QString result = QStringLiteral("extracttext :first %1 \"%2\";").arg(numberOfCharactersStr, variableNameStr);
+    const QString result = u"extracttext :first %1 \"%2\";"_s.arg(numberOfCharactersStr, variableNameStr);
     return result;
 }
 
 QStringList SieveActionExtractText::needRequires(QWidget * /*parent*/) const
 {
-    return QStringList() << QStringLiteral("extracttext");
+    return QStringList() << u"extracttext"_s;
 }
 
 bool SieveActionExtractText::needCheckIfServerHasCapability() const
@@ -102,7 +104,7 @@ bool SieveActionExtractText::needCheckIfServerHasCapability() const
 
 QString SieveActionExtractText::serverNeedsCapability() const
 {
-    return QStringLiteral("extracttext");
+    return u"extracttext"_s;
 }
 
 QString SieveActionExtractText::help() const

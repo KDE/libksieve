@@ -5,6 +5,8 @@
 */
 
 #include "sieveeditorhelphtmlwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../sieveeditorhelphtmlwidget.h"
 
 #include "../findbar/findbarwebengineview.h"
@@ -34,15 +36,15 @@ void SieveEditorHelpHtmlWidgetTest::shouldHaveDefaultValue()
     QVERIFY(QTest::qWaitForWindowExposed(&w));
 
     // KSieveUi::SieveEditorLoadProgressIndicator *mProgressIndicator = w.findChild<KSieveUi::SieveEditorLoadProgressIndicator
-    // *>(QStringLiteral("progressindicator")); QVERIFY(mProgressIndicator);
+    // *>(u"progressindicator"_s); QVERIFY(mProgressIndicator);
 
-    // KSieveUi::SieveEditorWebEngineView *mWebView = w.findChild<KSieveUi::SieveEditorWebEngineView *>(QStringLiteral("webview"));
+    // KSieveUi::SieveEditorWebEngineView *mWebView = w.findChild<KSieveUi::SieveEditorWebEngineView *>(u"webview"_s);
     // QVERIFY(mWebView);
 
-    auto mSliderContainer = w.findChild<TextAddonsWidgets::SlideContainer *>(QStringLiteral("slidercontainer"));
+    auto mSliderContainer = w.findChild<TextAddonsWidgets::SlideContainer *>(u"slidercontainer"_s);
     QVERIFY(mSliderContainer);
 
-    auto mFindBar = w.findChild<KSieveUi::FindBarWebEngineView *>(QStringLiteral("findbar"));
+    auto mFindBar = w.findChild<KSieveUi::FindBarWebEngineView *>(u"findbar"_s);
     QVERIFY(mFindBar);
 }
 

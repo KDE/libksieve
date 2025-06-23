@@ -5,6 +5,8 @@
 */
 
 #include "regexpeditorlineedittest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/sieveconditions/widgets/regexpeditorlineedit.h"
 #include <QHBoxLayout>
 #include <QLineEdit>
@@ -18,10 +20,10 @@ RegexpEditorLineEditTest::RegexpEditorLineEditTest(QObject *parent)
 void RegexpEditorLineEditTest::shouldHaveDefaultValue()
 {
     KSieveUi::RegexpEditorLineEdit w;
-    auto mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
+    auto mLineEdit = w.findChild<QLineEdit *>(u"lineedit"_s);
     QVERIFY(mLineEdit);
 
-    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainlayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 }
@@ -30,7 +32,7 @@ void RegexpEditorLineEditTest::shouldChangeValue_data()
 {
     QTest::addColumn<QString>("input");
     QTest::newRow("empty") << QString();
-    QTest::newRow("test1") << QStringLiteral("foo");
+    QTest::newRow("test1") << u"foo"_s;
 }
 
 void RegexpEditorLineEditTest::shouldChangeValue()

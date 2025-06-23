@@ -5,6 +5,8 @@
 */
 
 #include "sievescriptpage.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sieveeditorgraphicalmodewidget.h"
 #include "sieveforeverypartwidget.h"
 #include "sieveglobalvariablewidget.h"
@@ -129,7 +131,7 @@ void SieveScriptPage::generatedScript(QString &script, QStringList &required)
         inForEveryPartLoop = !foreverypartStr.isEmpty();
         if (inForEveryPartLoop) {
             required << foreverypartRequires;
-            script += foreverypartStr + QLatin1Char('\n');
+            script += foreverypartStr + u'\n';
         }
     }
     const int numberOfTab(mTabWidget->count());
@@ -140,7 +142,7 @@ void SieveScriptPage::generatedScript(QString &script, QStringList &required)
         }
     }
     if (inForEveryPartLoop) {
-        script += QStringLiteral("\n}\n");
+        script += u"\n}\n"_s;
     }
 }
 

@@ -5,6 +5,8 @@
 */
 
 #include "vacationcreatescriptjob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "kmanagesieve/sievejob.h"
 #include "managescriptsjob/generateglobalscriptjob.h"
 #include "managescriptsjob/parseuserscriptjob.h"
@@ -89,7 +91,7 @@ void VacationCreateScriptJob::start()
         mUserJobRunning = true;
         QUrl url = mUrl;
         url = url.adjusted(QUrl::RemoveFilename);
-        url.setPath(url.path() + QLatin1Char('/') + QLatin1StringView("USER"));
+        url.setPath(url.path() + u'/' + QLatin1StringView("USER"));
         mParseUserJob = new KSieveCore::ParseUserScriptJob(url, this);
         connect(mParseUserJob, &KSieveCore::ParseUserScriptJob::finished, this, &VacationCreateScriptJob::slotGotActiveScripts);
         mParseUserJob->start();

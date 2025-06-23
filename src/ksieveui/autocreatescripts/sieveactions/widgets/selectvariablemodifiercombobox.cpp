@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectvariablemodifiercombobox.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
@@ -22,12 +24,12 @@ SelectVariableModifierComboBox::~SelectVariableModifierComboBox() = default;
 void SelectVariableModifierComboBox::initialize()
 {
     addItem(i18n("None"), QString());
-    addItem(i18n("Lower"), QStringLiteral(":lower"));
-    addItem(i18n("Upper"), QStringLiteral(":upper"));
-    addItem(i18n("Lower first letter"), QStringLiteral(":lowerfirst"));
-    addItem(i18n("Upper first letter"), QStringLiteral(":upperfirst"));
-    addItem(i18n("Quote wildcard"), QStringLiteral(":quotewildcard"));
-    addItem(i18n("Length"), QStringLiteral(":length"));
+    addItem(i18n("Lower"), u":lower"_s);
+    addItem(i18n("Upper"), u":upper"_s);
+    addItem(i18n("Lower first letter"), u":lowerfirst"_s);
+    addItem(i18n("Upper first letter"), u":upperfirst"_s);
+    addItem(i18n("Quote wildcard"), u":quotewildcard"_s);
+    addItem(i18n("Length"), u":length"_s);
 }
 
 QString SelectVariableModifierComboBox::code() const

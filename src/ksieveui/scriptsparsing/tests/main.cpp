@@ -5,6 +5,8 @@
 */
 
 #include "../parsingresultdialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KSieveCore/XMLPrintingScriptBuilder>
 
 #include "parser.h"
@@ -26,7 +28,7 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"), QStringLiteral("URL of a sieve script to be opened")));
+    parser.addOption(QCommandLineOption(QStringList() << u"+[url]"_s, u"URL of a sieve script to be opened"_s));
 
     parser.process(app);
 
@@ -36,7 +38,7 @@ int main(int argc, char **argv)
     if (!parser.positionalArguments().isEmpty()) {
         fileName = parser.positionalArguments().at(0);
     } else {
-        fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), QStringLiteral("Sieve File (*.siv)"));
+        fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), u"Sieve File (*.siv)"_s);
     }
     if (!fileName.isEmpty()) {
         QFile file(fileName);

@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectflagswidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KConfigGroup>
@@ -87,21 +89,21 @@ SelectFlagsListWidget::~SelectFlagsListWidget() = default;
 void SelectFlagsListWidget::init()
 {
     auto item = new QListWidgetItem(i18n("Deleted"), this);
-    item->setData(FlagsRealName, QStringLiteral("\\\\Deleted"));
+    item->setData(FlagsRealName, u"\\\\Deleted"_s);
     item->setCheckState(Qt::Unchecked);
     item = new QListWidgetItem(i18n("Answered"), this);
-    item->setData(FlagsRealName, QStringLiteral("\\\\Answered"));
+    item->setData(FlagsRealName, u"\\\\Answered"_s);
     item->setCheckState(Qt::Unchecked);
     item = new QListWidgetItem(i18n("Flagged"), this);
-    item->setData(FlagsRealName, QStringLiteral("\\\\Flagged"));
+    item->setData(FlagsRealName, u"\\\\Flagged"_s);
     item->setCheckState(Qt::Unchecked);
     item = new QListWidgetItem(i18n("Seen"), this);
-    item->setData(FlagsRealName, QStringLiteral("\\\\Seen"));
+    item->setData(FlagsRealName, u"\\\\Seen"_s);
     item->setCheckState(Qt::Unchecked);
-    // item = new QListWidgetItem(QStringLiteral("\\\\Recent"), this);
+    // item = new QListWidgetItem(u"\\\\Recent"_s, this);
     // item->setCheckState(Qt::Unchecked);
     item = new QListWidgetItem(i18n("Draft"), this);
-    item->setData(FlagsRealName, QStringLiteral("\\\\Draft"));
+    item->setData(FlagsRealName, u"\\\\Draft"_s);
     item->setCheckState(Qt::Unchecked);
 }
 

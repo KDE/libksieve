@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionreplace.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 #include "widgets/multilineedit.h"
@@ -21,7 +23,7 @@
 
 using namespace KSieveUi;
 SieveActionReplace::SieveActionReplace(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("replace"), i18n("Replace"), parent)
+    : SieveAction(sieveGraphicalModeWidget, u"replace"_s, i18n("Replace"), parent)
 {
 }
 
@@ -65,20 +67,20 @@ void SieveActionReplace::setParamWidgetValue(QXmlStreamReader &element, QWidget 
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
         if (tagName == QLatin1StringView("str")) {
-            auto edit = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
+            auto edit = w->findChild<MultiLineEdit *>(u"text"_s);
             edit->setPlainText(element.readElementText());
         } else if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1StringView("subject")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
-                    auto subject = w->findChild<QLineEdit *>(QStringLiteral("subject"));
+                    auto subject = w->findChild<QLineEdit *>(u"subject"_s);
                     subject->setText(strValue);
                 }
             } else if (tagValue == QLatin1StringView("from")) {
                 const QString strValue = AutoCreateScriptUtil::strValue(element);
                 if (!strValue.isEmpty()) {
-                    auto headers = w->findChild<KSieveUi::AbstractSelectEmailLineEdit *>(QStringLiteral("from"));
+                    auto headers = w->findChild<KSieveUi::AbstractSelectEmailLineEdit *>(u"from"_s);
                     headers->setText(strValue);
                 }
             } else {
@@ -100,23 +102,23 @@ void SieveActionReplace::setParamWidgetValue(QXmlStreamReader &element, QWidget 
 
 QString SieveActionReplace::code(QWidget *w) const
 {
-    QString result = QStringLiteral("replace ");
-    const QLineEdit *subject = w->findChild<QLineEdit *>(QStringLiteral("subject"));
+    QString result = u"replace "_s;
+    const QLineEdit *subject = w->findChild<QLineEdit *>(u"subject"_s);
     const QString subjectStr = subject->text();
     if (!subjectStr.isEmpty()) {
-        result += QStringLiteral(":subject \"%1\" ").arg(subjectStr);
+        result += u":subject \"%1\" "_s.arg(subjectStr);
     }
 
-    const KSieveUi::AbstractSelectEmailLineEdit *headers = w->findChild<KSieveUi::AbstractSelectEmailLineEdit *>(QStringLiteral("from"));
+    const KSieveUi::AbstractSelectEmailLineEdit *headers = w->findChild<KSieveUi::AbstractSelectEmailLineEdit *>(u"from"_s);
     const QString headersStr = headers->text();
     if (!headersStr.isEmpty()) {
-        result += QStringLiteral(":from \"%1\" ").arg(headersStr);
+        result += u":from \"%1\" "_s.arg(headersStr);
     }
 
-    const MultiLineEdit *edit = w->findChild<MultiLineEdit *>(QStringLiteral("text"));
+    const MultiLineEdit *edit = w->findChild<MultiLineEdit *>(u"text"_s);
     const QString text = edit->toPlainText();
     if (!text.isEmpty()) {
-        result += QStringLiteral("text:%1").arg(AutoCreateScriptUtil::createMultiLine(text));
+        result += u"text:%1"_s.arg(AutoCreateScriptUtil::createMultiLine(text));
     }
 
     return result;
@@ -124,7 +126,7 @@ QString SieveActionReplace::code(QWidget *w) const
 
 QStringList SieveActionReplace::needRequires(QWidget *) const
 {
-    return QStringList() << QStringLiteral("replace");
+    return QStringList() << u"replace"_s;
 }
 
 bool SieveActionReplace::needCheckIfServerHasCapability() const
@@ -134,7 +136,7 @@ bool SieveActionReplace::needCheckIfServerHasCapability() const
 
 QString SieveActionReplace::serverNeedsCapability() const
 {
-    return QStringLiteral("replace");
+    return u"replace"_s;
 }
 
 QString SieveActionReplace::help() const

@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectconvertparameterwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 
 #include <KLocalizedString>
 
@@ -29,27 +31,27 @@ void SelectConvertParameterWidget::setCode(const QStringList &code, QString &err
 
     const auto codeCount{code.count()};
     if (codeCount < 2) {
-        error += i18n("Not enough arguments for SelectConvertParameterWidget. Expected 2 arguments.") + QLatin1Char('\n');
+        error += i18n("Not enough arguments for SelectConvertParameterWidget. Expected 2 arguments.") + u'\n';
         qCDebug(LIBKSIEVEUI_LOG) << " SelectConvertParameterWidget::setCode parsing error ?";
         return;
     }
     if (codeCount > 2) {
-        error += i18n("Too many arguments for SelectConvertParameterWidget, \"%1\"", code.count()) + QLatin1Char('\n');
+        error += i18n("Too many arguments for SelectConvertParameterWidget, \"%1\"", code.count()) + u'\n';
         qCDebug(LIBKSIEVEUI_LOG) << " too many argument " << code.count();
     }
 
     QString widthStr = code.at(0);
-    widthStr.remove(QStringLiteral("pix-x="));
+    widthStr.remove(u"pix-x="_s);
 
     QString heightStr = code.at(1);
-    heightStr.remove(QStringLiteral("pix-y="));
+    heightStr.remove(u"pix-y="_s);
     mWidth->setValue(widthStr.toInt());
     mHeight->setValue(heightStr.toInt());
 }
 
 QString SelectConvertParameterWidget::code() const
 {
-    return QStringLiteral("[\"pix-x=%1\",\"pix-y=%2\"]").arg(mWidth->value()).arg(mHeight->value());
+    return u"[\"pix-x=%1\",\"pix-y=%2\"]"_s.arg(mWidth->value()).arg(mHeight->value());
 }
 
 void SelectConvertParameterWidget::initialize()
@@ -64,7 +66,7 @@ void SelectConvertParameterWidget::initialize()
     hbox->addWidget(mWidth);
     connect(mWidth, &QSpinBox::valueChanged, this, &SelectConvertParameterWidget::valueChanged);
 
-    auto lab = new QLabel(QStringLiteral("x"), this);
+    auto lab = new QLabel(u"x"_s, this);
     hbox->addWidget(lab);
 
     mHeight = new QSpinBox(this);

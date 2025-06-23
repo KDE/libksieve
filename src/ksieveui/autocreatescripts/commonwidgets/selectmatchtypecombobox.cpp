@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectmatchtypecombobox.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 
@@ -32,15 +34,15 @@ void SelectMatchTypeComboBox::slotValueChanged(int val)
 
 void SelectMatchTypeComboBox::initialize()
 {
-    addItem(i18n("is"), QStringLiteral(":is"));
-    addItem(i18n("not is"), QStringLiteral("[NOT]:is"));
-    addItem(i18n("contains"), QStringLiteral(":contains"));
-    addItem(i18n("not contains"), QStringLiteral("[NOT]:contains"));
-    addItem(i18n("matches"), QStringLiteral(":matches"));
-    addItem(i18n("not matches"), QStringLiteral("[NOT]:matches"));
+    addItem(i18n("is"), u":is"_s);
+    addItem(i18n("not is"), u"[NOT]:is"_s);
+    addItem(i18n("contains"), u":contains"_s);
+    addItem(i18n("not contains"), u"[NOT]:contains"_s);
+    addItem(i18n("matches"), u":matches"_s);
+    addItem(i18n("not matches"), u"[NOT]:matches"_s);
     if (mHasRegexCapability) {
-        addItem(i18n("regex"), QStringLiteral(":regex"));
-        addItem(i18n("not regex"), QStringLiteral("[NOT]:regex"));
+        addItem(i18n("regex"), u":regex"_s);
+        addItem(i18n("not regex"), u"[NOT]:regex"_s);
     }
 }
 
@@ -49,7 +51,7 @@ QString SelectMatchTypeComboBox::code(bool &negative) const
     QString value = itemData(currentIndex()).toString();
     negative = value.startsWith(QLatin1StringView("[NOT]"));
     if (negative) {
-        value.remove(QStringLiteral("[NOT]"));
+        value.remove(u"[NOT]"_s);
     }
     return value;
 }
@@ -76,7 +78,7 @@ QStringList SelectMatchTypeComboBox::needRequires() const
     if (mHasRegexCapability) {
         const QString value = itemData(currentIndex()).toString();
         if (value.contains(QLatin1StringView("regex"))) {
-            requireModules << QStringLiteral("regex");
+            requireModules << u"regex"_s;
         }
     }
     return requireModules;

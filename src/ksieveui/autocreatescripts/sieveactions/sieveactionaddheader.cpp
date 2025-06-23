@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionaddheader.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "widgets/selectaddheaderpositioncombobox.h"
 #include <KLineEditEventHandler>
@@ -21,7 +23,7 @@
 using namespace KSieveUi;
 
 SieveActionAddHeader::SieveActionAddHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveActionAbstractEditHeader(sieveGraphicalModeWidget, QStringLiteral("addheader"), i18n("Add header"), parent)
+    : SieveActionAbstractEditHeader(sieveGraphicalModeWidget, u"addheader"_s, i18n("Add header"), parent)
 {
 }
 
@@ -64,14 +66,14 @@ void SieveActionAddHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
     while (element.readNextStartElement()) {
         const QStringView tagName = element.name();
         if (tagName == QLatin1StringView("tag")) {
-            auto combo = w->findChild<SelectAddHeaderPositionCombobox *>(QStringLiteral("selectposition"));
+            auto combo = w->findChild<SelectAddHeaderPositionCombobox *>(u"selectposition"_s);
             combo->setCode(AutoCreateScriptUtil::tagValue(element.readElementText()), name(), error);
         } else if (tagName == QLatin1StringView("str")) {
             if (index == 0) {
-                auto edit = w->findChild<QLineEdit *>(QStringLiteral("headeredit"));
+                auto edit = w->findChild<QLineEdit *>(u"headeredit"_s);
                 edit->setText(element.readElementText());
             } else if (index == 1) {
-                auto value = w->findChild<QLineEdit *>(QStringLiteral("valueedit"));
+                auto value = w->findChild<QLineEdit *>(u"valueedit"_s);
                 value->setText(AutoCreateScriptUtil::quoteStr(element.readElementText()));
             } else {
                 tooManyArguments(tagName, index, 2, error);
@@ -93,19 +95,19 @@ void SieveActionAddHeader::setParamWidgetValue(QXmlStreamReader &element, QWidge
 
 QString SieveActionAddHeader::code(QWidget *w) const
 {
-    const SelectAddHeaderPositionCombobox *combo = w->findChild<SelectAddHeaderPositionCombobox *>(QStringLiteral("selectposition"));
+    const SelectAddHeaderPositionCombobox *combo = w->findChild<SelectAddHeaderPositionCombobox *>(u"selectposition"_s);
     const QString position = combo->code();
 
-    const QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("headeredit"));
+    const QLineEdit *edit = w->findChild<QLineEdit *>(u"headeredit"_s);
     const QString headerStr = edit->text();
 
-    const QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("valueedit"));
+    const QLineEdit *value = w->findChild<QLineEdit *>(u"valueedit"_s);
     const QString valueStr = value->text();
 
     if (position.isEmpty()) {
-        return QStringLiteral("addheader \"%1\" \"%2\";").arg(headerStr, valueStr);
+        return u"addheader \"%1\" \"%2\";"_s.arg(headerStr, valueStr);
     } else {
-        return QStringLiteral("addheader %1 \"%2\" \"%3\";").arg(position, headerStr, valueStr);
+        return u"addheader %1 \"%2\" \"%3\";"_s.arg(position, headerStr, valueStr);
     }
 }
 
@@ -116,7 +118,7 @@ QString SieveActionAddHeader::help() const
 
 QUrl SieveActionAddHeader::href() const
 {
-    return QUrl(QStringLiteral("https://tools.ietf.org/html/rfc5293"));
+    return QUrl(u"https://tools.ietf.org/html/rfc5293"_s);
 }
 
 #include "moc_sieveactionaddheader.cpp"

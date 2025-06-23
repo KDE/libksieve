@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectheadertypecombobox.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
@@ -67,7 +69,7 @@ SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
 
     mAddNewHeader->setObjectName(QLatin1StringView("addnewheader"));
     mAddNewHeader->setEnabled(false);
-    mAddNewHeader->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+    mAddNewHeader->setIcon(QIcon::fromTheme(u"list-add"_s));
     mAddNewHeader->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
     connect(mAddNewHeader, &QPushButton::clicked, this, &SelectHeadersDialog::slotAddNewHeader);
     connect(mNewHeader, &QLineEdit::textChanged, this, &SelectHeadersDialog::slotNewHeaderTextChanged);
@@ -242,19 +244,19 @@ void SelectHeaderTypeComboBox::slotSelectItem(const QString &str)
 void SelectHeaderTypeComboBox::headerMap(bool onlyEnvelopType)
 {
     mHeaderMap.insert(QString(), QString());
-    mHeaderMap.insert(QStringLiteral("from"), i18n("From"));
-    mHeaderMap.insert(QStringLiteral("to"), i18n("To"));
-    mHeaderMap.insert(QStringLiteral("Reply-To"), i18n("Reply To"));
-    mHeaderMap.insert(QStringLiteral("cc"), i18n("Cc"));
-    mHeaderMap.insert(QStringLiteral("bcc"), i18n("Bcc"));
-    mHeaderMap.insert(QStringLiteral("Resent-From"), i18n("Resent From"));
-    mHeaderMap.insert(QStringLiteral("Resent-To"), i18n("Resent To"));
-    mHeaderMap.insert(QStringLiteral("sender"), i18n("Sender"));
+    mHeaderMap.insert(u"from"_s, i18n("From"));
+    mHeaderMap.insert(u"to"_s, i18n("To"));
+    mHeaderMap.insert(u"Reply-To"_s, i18n("Reply To"));
+    mHeaderMap.insert(u"cc"_s, i18n("Cc"));
+    mHeaderMap.insert(u"bcc"_s, i18n("Bcc"));
+    mHeaderMap.insert(u"Resent-From"_s, i18n("Resent From"));
+    mHeaderMap.insert(u"Resent-To"_s, i18n("Resent To"));
+    mHeaderMap.insert(u"sender"_s, i18n("Sender"));
     if (!onlyEnvelopType) {
-        mHeaderMap.insert(QStringLiteral("subject"), i18n("Subject"));
-        mHeaderMap.insert(QStringLiteral("Date"), i18n("Date"));
-        mHeaderMap.insert(QStringLiteral("Message-ID"), i18n("Message Id"));
-        mHeaderMap.insert(QStringLiteral("Content-Type"), i18n("Content type"));
+        mHeaderMap.insert(u"subject"_s, i18n("Subject"));
+        mHeaderMap.insert(u"Date"_s, i18n("Date"));
+        mHeaderMap.insert(u"Message-ID"_s, i18n("Message Id"));
+        mHeaderMap.insert(u"Content-Type"_s, i18n("Content type"));
     }
 }
 
@@ -278,7 +280,7 @@ QString SelectHeaderTypeComboBox::code() const
             str = QString(); // return QString();
         }
     }
-    if (!str.isEmpty() && !str.startsWith(QLatin1Char('['))) {
+    if (!str.isEmpty() && !str.startsWith(u'[')) {
         str = QLatin1StringView("\"") + str + QLatin1StringView("\"");
     }
     return str;
@@ -300,7 +302,7 @@ void SelectHeaderTypeComboBox::setCode(const QString &code)
     }
     // If not found select last combobox item
     if (!foundHeaders) {
-        if (code.startsWith(QLatin1Char('['))) {
+        if (code.startsWith(u'[')) {
             setCurrentIndex(count() - 1);
         } else {
             setCurrentIndex(0);

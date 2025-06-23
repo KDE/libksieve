@@ -5,6 +5,8 @@
 */
 
 #include "lineeditvalidator.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QRegularExpression>
 #include <QRegularExpressionValidator>
 
@@ -20,7 +22,7 @@ LineEditValidator::~LineEditValidator() = default;
 
 void LineEditValidator::initialize()
 {
-    QRegularExpression rx(QStringLiteral("^[^\"]*$"));
+    QRegularExpression rx(u"^[^\"]*$"_s);
     mValidator = new QRegularExpressionValidator(rx, this);
     setValidator(mValidator);
 }

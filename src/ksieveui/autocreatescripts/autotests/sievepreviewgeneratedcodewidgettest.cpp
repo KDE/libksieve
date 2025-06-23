@@ -5,6 +5,8 @@
 */
 
 #include "sievepreviewgeneratedcodewidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/sievepreviewgeneratedcodewidget.h"
 #include <QHBoxLayout>
 #include <QTest>
@@ -19,11 +21,11 @@ void SievePreviewGeneratedCodeWidgetTest::shouldHaveDefaultValues()
 {
     KSieveUi::SievePreviewGeneratedCodeWidget w;
 
-    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    auto mTextEdit = w.findChild<QTextEdit *>(QStringLiteral("mTextEdit"));
+    auto mTextEdit = w.findChild<QTextEdit *>(u"mTextEdit"_s);
     QVERIFY(mTextEdit);
     QVERIFY(mTextEdit->isReadOnly());
 }

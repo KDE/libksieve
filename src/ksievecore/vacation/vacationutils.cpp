@@ -20,18 +20,18 @@ using namespace KSieveCore;
 
 static inline QString dotstuff(QString s) // krazy:exclude=passbyvalue
 {
-    if (s.startsWith(QLatin1Char('.'))) {
-        return QLatin1Char('.') + s.replace(QLatin1StringView("\n."), QStringLiteral("\n.."));
+    if (s.startsWith(u'.')) {
+        return u'.' + s.replace(QLatin1StringView("\n."), u"\n.."_s);
     } else {
-        return s.replace(QLatin1StringView("\n."), QStringLiteral("\n.."));
+        return s.replace(QLatin1StringView("\n."), u"\n.."_s);
     }
 }
 
 static inline QString stringReplace(QString s)
 {
-    static QRegularExpression reg(QStringLiteral("[\n\t]+"));
-    s.replace(reg, QStringLiteral(" "));
-    return s.replace(QLatin1Char('\"'), QStringLiteral("\\\""));
+    static QRegularExpression reg(u"[\n\t]+"_s);
+    s.replace(reg, u" "_s);
+    return s.replace(u'\"', u"\\\""_s);
 }
 
 QString VacationUtils::defaultSubject()
@@ -199,105 +199,105 @@ QString KSieveCore::VacationUtils::composeScript(const Vacation &vacation)
     QStringList condition;
     QStringList require;
 
-    require << QStringLiteral("vacation");
+    require << u"vacation"_s;
 
     if (vacation.startDate.isValid() || vacation.endDate.isValid()) {
-        require << QStringLiteral("date");
-        require << QStringLiteral("relational");
+        require << u"date"_s;
+        require << u"relational"_s;
     }
 
     if (vacation.startDate.isValid()) {
         if (vacation.startTime.isValid()) {
             const QDateTime start(vacation.startDate, vacation.startTime);
-            condition.append(QStringLiteral("currentdate :value \"ge\" \"iso8601\" \"%1\"").arg(start.toString(Qt::ISODate)));
+            condition.append(u"currentdate :value \"ge\" \"iso8601\" \"%1\""_s.arg(start.toString(Qt::ISODate)));
         } else {
-            condition.append(QStringLiteral("currentdate :value \"ge\" \"date\" \"%1\"").arg(vacation.startDate.toString(Qt::ISODate)));
+            condition.append(u"currentdate :value \"ge\" \"date\" \"%1\""_s.arg(vacation.startDate.toString(Qt::ISODate)));
         }
     }
 
     if (vacation.endDate.isValid()) {
         if (vacation.endTime.isValid()) {
             const QDateTime end(vacation.endDate, vacation.endTime);
-            condition.append(QStringLiteral("currentdate :value \"le\" \"iso8601\" \"%1\"").arg(end.toString(Qt::ISODate)));
+            condition.append(u"currentdate :value \"le\" \"iso8601\" \"%1\""_s.arg(end.toString(Qt::ISODate)));
         } else {
-            condition.append(QStringLiteral("currentdate :value \"le\" \"date\" \"%1\"").arg(vacation.endDate.toString(Qt::ISODate)));
+            condition.append(u"currentdate :value \"le\" \"date\" \"%1\""_s.arg(vacation.endDate.toString(Qt::ISODate)));
         }
     }
 
     if (!vacation.sendForSpam) {
-        condition.append(QStringLiteral("not header :contains \"X-Spam-Flag\" \"YES\""));
+        condition.append(u"not header :contains \"X-Spam-Flag\" \"YES\""_s);
     }
 
     if (!vacation.reactOndomainName.isEmpty()) {
-        condition.append(QStringLiteral("address :domain :contains \"from\" \"%1\"").arg(vacation.reactOndomainName));
+        condition.append(u"address :domain :contains \"from\" \"%1\""_s.arg(vacation.reactOndomainName));
     }
 
     QString addressesArgument;
     QStringList aliases;
     if (!vacation.aliases.empty()) {
-        addressesArgument += QStringLiteral(":addresses [ ");
+        addressesArgument += u":addresses [ "_s;
         QStringList sl;
         sl.reserve(vacation.aliases.count());
         AddrSpecList::const_iterator end = vacation.aliases.constEnd();
         for (AddrSpecList::const_iterator it = vacation.aliases.begin(); it != end; ++it) {
-            sl.push_back(QLatin1Char('"')
-                         + (*it).asString().replace(QLatin1Char('\\'), QStringLiteral("\\\\")).replace(QLatin1Char('"'), QStringLiteral("\\\""))
-                         + QLatin1Char('"'));
+            sl.push_back(u'"'
+                         + (*it).asString().replace(u'\\', u"\\\\"_s).replace(u'"', u"\\\""_s)
+                         + u'"');
             aliases.push_back((*it).asString());
         }
-        addressesArgument += sl.join(QLatin1StringView(", ")) + QStringLiteral(" ] ");
+        addressesArgument += sl.join(QLatin1StringView(", ")) + u" ] "_s;
     }
 
-    QString sVacation(QStringLiteral("vacation "));
+    QString sVacation(u"vacation "_s);
     sVacation += addressesArgument;
     if (vacation.notificationInterval > 0) {
-        sVacation += QStringLiteral(":days %1 ").arg(vacation.notificationInterval);
+        sVacation += u":days %1 "_s.arg(vacation.notificationInterval);
     }
 
     if (!vacation.subject.trimmed().isEmpty()) {
-        sVacation += QStringLiteral(":subject \"%1\" ").arg(stringReplace(vacation.subject).trimmed());
+        sVacation += u":subject \"%1\" "_s.arg(stringReplace(vacation.subject).trimmed());
     }
 
-    sVacation += QStringLiteral("text:\n");
+    sVacation += u"text:\n"_s;
     sVacation += dotstuff(vacation.messageText.isEmpty() ? VacationUtils::defaultMessageText() : vacation.messageText);
-    sVacation += QStringLiteral("\n.\n;");
+    sVacation += u"\n.\n;"_s;
 
     switch (vacation.mailAction) {
     case VacationUtils::Keep:
         break;
     case VacationUtils::Discard:
-        sVacation += QStringLiteral("\ndiscard;");
+        sVacation += u"\ndiscard;"_s;
         break;
     case VacationUtils::Sendto:
         sVacation += QLatin1StringView("\nredirect \"") + vacation.mailActionRecipient + QLatin1StringView("\";");
         break;
     case VacationUtils::CopyTo:
-        require << QStringLiteral("copy");
+        require << u"copy"_s;
         sVacation += QLatin1StringView("\nredirect :copy \"") + vacation.mailActionRecipient + QLatin1StringView("\";");
         break;
     }
 
-    QString script = QStringLiteral("require [\"%1\"];\n\n").arg(require.join(QStringLiteral("\", \"")));
+    QString script = u"require [\"%1\"];\n\n"_s.arg(require.join(u"\", \""_s));
 
     if (condition.isEmpty()) {
         if (vacation.active) {
             script += sVacation;
         } else {
-            script += QStringLiteral("if false\n{\n\t");
+            script += u"if false\n{\n\t"_s;
             script += sVacation;
-            script += QStringLiteral("\n}");
+            script += u"\n}"_s;
         }
     } else {
         if (vacation.active) {
-            script += QStringLiteral("if allof(%1)\n{\n\t").arg(condition.join(QStringLiteral(", ")));
+            script += u"if allof(%1)\n{\n\t"_s.arg(condition.join(u", "_s));
         } else {
-            script += QStringLiteral("if false # allof(%1)\n{\n\t").arg(condition.join(QStringLiteral(", ")));
+            script += u"if false # allof(%1)\n{\n\t"_s.arg(condition.join(u", "_s));
         }
         script += sVacation;
-        script += QStringLiteral("\n}");
+        script += u"\n}"_s;
     }
 
-    script += QStringLiteral("\n");
+    script += u"\n"_s;
 
     return script;
 }
@@ -322,7 +322,7 @@ QString KSieveCore::VacationUtils::mergeRequireLine(const QString &script, const
     parserUpdate.setScriptBuilder(&rxUpdate);
 
     int insert(0);
-    QStringList lines = script.split(QLatin1Char('\n'));
+    QStringList lines = script.split(u'\n');
     QSet<QString> requirements;
 
     if (parser.parse() && rx.commandFound()) {
@@ -344,12 +344,12 @@ QString KSieveCore::VacationUtils::mergeRequireLine(const QString &script, const
     if (requirementscount > 1) {
         QStringList req = requirements.values();
         req.sort();
-        lines.insert(insert, QStringLiteral("require [\"%1\"];").arg(req.join(QStringLiteral("\", \""))));
+        lines.insert(insert, u"require [\"%1\"];"_s.arg(req.join(u"\", \""_s)));
     } else if (requirementscount == 1) {
-        lines.insert(insert, QStringLiteral("require \"%1\";").arg(requirements.values().constFirst()));
+        lines.insert(insert, u"require \"%1\";"_s.arg(requirements.values().constFirst()));
     }
 
-    return lines.join(QLatin1Char('\n'));
+    return lines.join(u'\n');
 }
 
 QString KSieveCore::VacationUtils::updateVacationBlock(const QString &oldScript, const QString &newScript)
@@ -375,7 +375,7 @@ QString KSieveCore::VacationUtils::updateVacationBlock(const QString &oldScript,
 
     int startOld(0);
 
-    QStringList lines = oldScript.split(QLatin1Char('\n'));
+    QStringList lines = oldScript.split(u'\n');
 
     if (parserOld.parse() && vdxOld.commandFound()) {
         startOld = vdxOld.lineStart();
@@ -394,11 +394,11 @@ QString KSieveCore::VacationUtils::updateVacationBlock(const QString &oldScript,
     if (parserNew.parse() && vdxNew.commandFound()) {
         const int startNew(vdxNew.lineStart());
         const int endNew(vdxNew.lineEnd());
-        QStringList linesNew = newScript.split(QLatin1Char('\n'));
+        QStringList linesNew = newScript.split(u'\n');
         for (int i = endNew; i >= startNew; --i) {
             lines.insert(startOld, linesNew.at(i));
         }
     }
 
-    return lines.join(QLatin1Char('\n'));
+    return lines.join(u'\n');
 }

@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionconvert.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/commonwidgets/selectconvertparameterwidget.h"
 #include "autocreatescripts/commonwidgets/selectmimetypecombobox.h"
@@ -17,7 +19,7 @@
 
 using namespace KSieveUi;
 SieveActionConvert::SieveActionConvert(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("convert"), i18n("Convert"), parent)
+    : SieveAction(sieveGraphicalModeWidget, u"convert"_s, i18n("Convert"), parent)
 {
 }
 
@@ -62,10 +64,10 @@ void SieveActionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidget 
         const QStringView tagName = element.name();
         if (tagName == QLatin1StringView("str")) {
             if (index == 0) {
-                auto fromMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("from"));
+                auto fromMimeType = w->findChild<SelectMimeTypeComboBox *>(u"from"_s);
                 fromMimeType->setCode(element.readElementText(), name(), error);
             } else if (index == 1) {
-                auto toMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("to"));
+                auto toMimeType = w->findChild<SelectMimeTypeComboBox *>(u"to"_s);
                 toMimeType->setCode(element.readElementText(), name(), error);
             } else {
                 tooManyArguments(tagName, index, 2, error);
@@ -73,7 +75,7 @@ void SieveActionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidget 
             }
             ++index;
         } else if (tagName == QLatin1StringView("list")) {
-            auto params = w->findChild<SelectConvertParameterWidget *>(QStringLiteral("params"));
+            auto params = w->findChild<SelectConvertParameterWidget *>(u"params"_s);
             params->setCode(AutoCreateScriptUtil::listValue(element), error);
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
@@ -90,27 +92,27 @@ void SieveActionConvert::setParamWidgetValue(QXmlStreamReader &element, QWidget 
 
 QString SieveActionConvert::code(QWidget *w) const
 {
-    QString result = QStringLiteral("convert ");
-    const SelectMimeTypeComboBox *fromMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("from"));
+    QString result = u"convert "_s;
+    const SelectMimeTypeComboBox *fromMimeType = w->findChild<SelectMimeTypeComboBox *>(u"from"_s);
     const QString fromMimeTypeStr = fromMimeType->code();
-    result += QStringLiteral("%1 ").arg(fromMimeTypeStr);
+    result += u"%1 "_s.arg(fromMimeTypeStr);
 
-    const SelectMimeTypeComboBox *toMimeType = w->findChild<SelectMimeTypeComboBox *>(QStringLiteral("to"));
+    const SelectMimeTypeComboBox *toMimeType = w->findChild<SelectMimeTypeComboBox *>(u"to"_s);
     const QString toMimeTypeStr = toMimeType->code();
-    result += QStringLiteral("%1 ").arg(toMimeTypeStr);
+    result += u"%1 "_s.arg(toMimeTypeStr);
 
-    const SelectConvertParameterWidget *params = w->findChild<SelectConvertParameterWidget *>(QStringLiteral("params"));
+    const SelectConvertParameterWidget *params = w->findChild<SelectConvertParameterWidget *>(u"params"_s);
     const QString paramsStr = params->code();
     if (!paramsStr.isEmpty()) {
         result += paramsStr;
     }
-    result += QLatin1Char(';');
+    result += u';';
     return result;
 }
 
 QStringList SieveActionConvert::needRequires(QWidget *) const
 {
-    return QStringList() << QStringLiteral("convert");
+    return QStringList() << u"convert"_s;
 }
 
 bool SieveActionConvert::needCheckIfServerHasCapability() const
@@ -120,7 +122,7 @@ bool SieveActionConvert::needCheckIfServerHasCapability() const
 
 QString SieveActionConvert::serverNeedsCapability() const
 {
-    return QStringLiteral("convert");
+    return u"convert"_s;
 }
 
 QString SieveActionConvert::help() const
@@ -132,7 +134,7 @@ QString SieveActionConvert::help() const
 
 QUrl SieveActionConvert::href() const
 {
-    return QUrl(QStringLiteral("https://tools.ietf.org/html/draft-ietf-sieve-convert-06"));
+    return QUrl(u"https://tools.ietf.org/html/draft-ietf-sieve-convert-06"_s);
 }
 
 #include "moc_sieveactionconvert.cpp"

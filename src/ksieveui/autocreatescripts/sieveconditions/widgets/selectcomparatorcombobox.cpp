@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectcomparatorcombobox.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 
@@ -20,13 +22,13 @@ SelectComparatorComboBox::~SelectComparatorComboBox() = default;
 void SelectComparatorComboBox::initialize(const QStringList &sieveCapabilities)
 {
     // Default in spec
-    addItem(QStringLiteral("i;octet"), QStringLiteral("comparator-i;octet"));
-    addItem(QStringLiteral("i;ascii-casemap"), QStringLiteral("comparator-i;ascii-casemap"));
+    addItem(u"i;octet"_s, u"comparator-i;octet"_s);
+    addItem(u"i;ascii-casemap"_s, u"comparator-i;ascii-casemap"_s);
 
     for (const QString &capability : sieveCapabilities) {
         if (capability.startsWith(QLatin1StringView("comparator-"))) {
             QString str(capability);
-            str.remove(QStringLiteral("comparator-"));
+            str.remove(u"comparator-"_s);
             addItem(str, capability);
         }
     }
@@ -42,7 +44,7 @@ QString SelectComparatorComboBox::require() const
 
 QString SelectComparatorComboBox::code() const
 {
-    return QStringLiteral(":comparator \"%1\"").arg(itemText(currentIndex()));
+    return u":comparator \"%1\""_s.arg(itemText(currentIndex()));
 }
 
 void SelectComparatorComboBox::setCode(const QString &code, const QString &name, QString &error)

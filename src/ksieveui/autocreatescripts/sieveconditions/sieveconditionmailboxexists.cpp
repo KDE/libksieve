@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionmailboxexists.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 #include <KLineEditEventHandler>
@@ -17,7 +19,7 @@
 
 using namespace KSieveUi;
 SieveConditionMailboxExists::SieveConditionMailboxExists(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("mailboxexists"), i18n("Mailbox exists"), parent)
+    : SieveCondition(sieveGraphicalModeWidget, u"mailboxexists"_s, i18n("Mailbox exists"), parent)
 {
 }
 
@@ -40,14 +42,14 @@ QWidget *SieveConditionMailboxExists::createParamWidget(QWidget *parent) const
 
 QString SieveConditionMailboxExists::code(QWidget *w) const
 {
-    const QLineEdit *edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
+    const QLineEdit *edit = w->findChild<QLineEdit *>(u"edit"_s);
     const QString editValue = edit->text();
-    return QStringLiteral("mailboxexists \"%1\"").arg(editValue) + AutoCreateScriptUtil::generateConditionComment(comment());
+    return u"mailboxexists \"%1\""_s.arg(editValue) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionMailboxExists::needRequires(QWidget *) const
 {
-    return QStringList() << QStringLiteral("mailbox");
+    return QStringList() << u"mailbox"_s;
 }
 
 bool SieveConditionMailboxExists::needCheckIfServerHasCapability() const
@@ -57,7 +59,7 @@ bool SieveConditionMailboxExists::needCheckIfServerHasCapability() const
 
 QString SieveConditionMailboxExists::serverNeedsCapability() const
 {
-    return QStringLiteral("mailbox");
+    return u"mailbox"_s;
 }
 
 QString SieveConditionMailboxExists::help() const
@@ -74,7 +76,7 @@ void SieveConditionMailboxExists::setParamWidgetValue(QXmlStreamReader &element,
         const QStringView tagName = element.name();
         if (tagName == QLatin1StringView("str")) {
             const QString tagValue = element.readElementText();
-            auto edit = w->findChild<QLineEdit *>(QStringLiteral("edit"));
+            auto edit = w->findChild<QLineEdit *>(u"edit"_s);
             edit->setText(AutoCreateScriptUtil::quoteStr(tagValue));
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();

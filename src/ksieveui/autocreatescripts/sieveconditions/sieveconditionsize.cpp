@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionsize.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 #include "widgets/selectsizewidget.h"
@@ -17,7 +19,7 @@
 using namespace KSieveUi;
 
 SieveConditionSize::SieveConditionSize(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("size"), i18n("Size"), parent)
+    : SieveCondition(sieveGraphicalModeWidget, u"size"_s, i18n("Size"), parent)
 {
 }
 
@@ -30,8 +32,8 @@ QWidget *SieveConditionSize::createParamWidget(QWidget *parent) const
 
     auto combo = new QComboBox;
     combo->setObjectName(QLatin1StringView("combosize"));
-    combo->addItem(i18n("under"), QStringLiteral(":under"));
-    combo->addItem(i18n("over"), QStringLiteral(":over"));
+    combo->addItem(i18n("under"), u":under"_s);
+    combo->addItem(i18n("over"), u":over"_s);
     lay->addWidget(combo);
     connect(combo, &QComboBox::activated, this, &SieveConditionSize::valueChanged);
 
@@ -45,10 +47,10 @@ QWidget *SieveConditionSize::createParamWidget(QWidget *parent) const
 
 QString SieveConditionSize::code(QWidget *w) const
 {
-    const QComboBox *combo = w->findChild<QComboBox *>(QStringLiteral("combosize"));
+    const QComboBox *combo = w->findChild<QComboBox *>(u"combosize"_s);
     const QString comparison = combo->itemData(combo->currentIndex()).toString();
-    const SelectSizeWidget *sizeWidget = w->findChild<SelectSizeWidget *>(QStringLiteral("sizewidget"));
-    return QStringLiteral("size %1 %2").arg(comparison, sizeWidget->code()) + AutoCreateScriptUtil::generateConditionComment(comment());
+    const SelectSizeWidget *sizeWidget = w->findChild<SelectSizeWidget *>(u"sizewidget"_s);
+    return u"size %1 %2"_s.arg(comparison, sizeWidget->code()) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QString SieveConditionSize::help() const
@@ -65,7 +67,7 @@ void SieveConditionSize::setParamWidgetValue(QXmlStreamReader &element, QWidget 
         const QStringView tagName = element.name();
         if (tagName == QLatin1StringView("tag")) {
             const QString tagValue = element.readElementText();
-            auto combo = w->findChild<QComboBox *>(QStringLiteral("combosize"));
+            auto combo = w->findChild<QComboBox *>(u"combosize"_s);
             const int index = combo->findData(AutoCreateScriptUtil::tagValue(tagValue));
             if (index != -1) {
                 combo->setCurrentIndex(index);
@@ -76,7 +78,7 @@ void SieveConditionSize::setParamWidgetValue(QXmlStreamReader &element, QWidget 
                 numIdentifier = element.attributes().value(QLatin1StringView("quantifier")).toString();
             }
             const qlonglong tagValue = element.readElementText().toLongLong();
-            auto sizeWidget = w->findChild<SelectSizeWidget *>(QStringLiteral("sizewidget"));
+            auto sizeWidget = w->findChild<SelectSizeWidget *>(u"sizewidget"_s);
             sizeWidget->setCode(tagValue, numIdentifier, name(), error);
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();

@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveeditorparsingmissingfeaturewarning.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/sievescriptparsingerrordialog.h"
 
 #include <KLocalizedString>

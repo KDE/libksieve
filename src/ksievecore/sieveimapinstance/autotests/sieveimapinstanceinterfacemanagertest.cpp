@@ -5,6 +5,8 @@
 */
 
 #include "sieveimapinstanceinterfacemanagertest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KSieveCore/SieveImapInstance>
 #include <KSieveCore/SieveImapInstanceInterface>
 #include <KSieveCore/SieveImapInstanceInterfaceManager>

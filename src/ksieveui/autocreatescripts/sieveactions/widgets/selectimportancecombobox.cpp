@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectimportancecombobox.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
@@ -22,9 +24,9 @@ SelectImportanceCombobox::~SelectImportanceCombobox() = default;
 void SelectImportanceCombobox::initialize()
 {
     addItem(QString(), QString());
-    addItem(i18n("high importance"), QStringLiteral("1"));
-    addItem(i18n("normal importance"), QStringLiteral("2"));
-    addItem(i18n("low importance"), QStringLiteral("3"));
+    addItem(i18n("high importance"), u"1"_s);
+    addItem(i18n("normal importance"), u"2"_s);
+    addItem(i18n("low importance"), u"3"_s);
 }
 
 QString SelectImportanceCombobox::code() const

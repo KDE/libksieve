@@ -4,6 +4,8 @@
  */
 
 #include "sievetextedit.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "editor/sieveeditorutil.h"
 #include "editor/sievelinenumberarea.h"
 #include "editor/sievetexteditorspellcheckdecorator.h"
@@ -51,7 +53,7 @@ SieveTextEdit::SieveTextEdit(QWidget *parent)
     : TextCustomEditor::PlainTextEditor(parent)
     , d(new KSieveUi::SieveTextEditPrivate)
 {
-    setSpellCheckingConfigFileName(QStringLiteral("sieveeditorrc"));
+    setSpellCheckingConfigFileName(u"sieveeditorrc"_s);
     setWordWrapMode(QTextOption::NoWrap);
     setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
     d->m_sieveLineNumberArea = new SieveLineNumberArea(this);
@@ -93,7 +95,7 @@ void SieveTextEdit::createHighlighter()
     auto highlighter = new TextCustomEditor::PlainTextSyntaxSpellCheckingHighlighter(this);
     highlighter->toggleSpellHighlighting(checkSpellingEnabled());
     highlighter->setCurrentLanguage(spellCheckingLanguage());
-    highlighter->setDefinition(d->mSyntaxRepo.definitionForName(QStringLiteral("Sieve")));
+    highlighter->setDefinition(d->mSyntaxRepo.definitionForName(u"Sieve"_s));
     highlighter->setTheme((palette().color(QPalette::Base).lightness() < 128) ? d->mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
                                                                               : d->mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     setHighlighter(highlighter);
@@ -116,7 +118,7 @@ int SieveTextEdit::lineNumberAreaWidth() const
         ++digits;
     }
 
-    const int space = 2 + fontMetrics().boundingRect(QLatin1Char('X')).width() * digits;
+    const int space = 2 + fontMetrics().boundingRect(u'X').width() * digits;
     return space;
 }
 
@@ -165,17 +167,17 @@ QStringList SieveTextEdit::completerList() const
 {
     QStringList listWord;
 
-    listWord << QStringLiteral("require") << QStringLiteral("stop");
-    listWord << QStringLiteral(":contains") << QStringLiteral(":matches") << QStringLiteral(":is") << QStringLiteral(":over") << QStringLiteral(":under")
-             << QStringLiteral(":all") << QStringLiteral(":domain") << QStringLiteral(":localpart");
-    listWord << QStringLiteral("if") << QStringLiteral("elsif") << QStringLiteral("else");
-    listWord << QStringLiteral("keep") << QStringLiteral("reject") << QStringLiteral("discard") << QStringLiteral("redirect") << QStringLiteral("addflag")
-             << QStringLiteral("setflag");
-    listWord << QStringLiteral("address") << QStringLiteral("allof") << QStringLiteral("anyof") << QStringLiteral("exists") << QStringLiteral("false")
-             << QStringLiteral("header") << QStringLiteral("not") << QStringLiteral("size") << QStringLiteral("true");
-    listWord << QStringLiteral(":days") << QStringLiteral(":seconds") << QStringLiteral(":subject") << QStringLiteral(":addresses") << QStringLiteral(":text");
-    listWord << QStringLiteral(":name") << QStringLiteral(":headers") << QStringLiteral(":first") << QStringLiteral(":importance");
-    listWord << QStringLiteral(":message") << QStringLiteral(":from");
+    listWord << u"require"_s << u"stop"_s;
+    listWord << u":contains"_s << u":matches"_s << QStringLiteral(":is") << QStringLiteral(":over") << QStringLiteral(":under")
+             << u":all"_s << u":domain"_s << QStringLiteral(":localpart");
+    listWord << u"if"_s << u"elsif"_s << QStringLiteral("else");
+    listWord << u"keep"_s << u"reject"_s << QStringLiteral("discard") << QStringLiteral("redirect") << QStringLiteral("addflag")
+             << u"setflag"_s;
+    listWord << u"address"_s << u"allof"_s << QStringLiteral("anyof") << QStringLiteral("exists") << QStringLiteral("false")
+             << u"header"_s << u"not"_s << QStringLiteral("size") << QStringLiteral("true");
+    listWord << u":days"_s << u":seconds"_s << QStringLiteral(":subject") << QStringLiteral(":addresses") << QStringLiteral(":text");
+    listWord << u":name"_s << u":headers"_s << QStringLiteral(":first") << QStringLiteral(":importance");
+    listWord << u":message"_s << u":from"_s;
 
     return listWord;
 }
@@ -295,7 +297,7 @@ void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
     if (!hasSelection) {
         if (!isReadOnly()) {
             auto insertRules = new QAction(i18nc("@action", "Insert Rule"), menu);
-            // editRules->setIcon(QIcon::fromTheme(QStringLiteral("help-hint")));
+            // editRules->setIcon(QIcon::fromTheme(u"help-hint"_s));
             connect(insertRules, &QAction::triggered, this, &SieveTextEdit::insertRule);
             QAction *act = menu->addSeparator();
             menu->insertActions(menu->actions().at(0), {insertRules, act});
@@ -310,7 +312,7 @@ void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
 
             auto searchAction = new QAction(i18nc("@action", "Help about: \'%1\'", word), menu);
             searchAction->setShortcut(Qt::Key_F1);
-            searchAction->setIcon(QIcon::fromTheme(QStringLiteral("help-hint")));
+            searchAction->setIcon(QIcon::fromTheme(u"help-hint"_s));
             searchAction->setData(word);
             connect(searchAction, &QAction::triggered, this, &SieveTextEdit::slotHelp);
             menu->insertAction(menu->actions().at(0), searchAction);
@@ -318,7 +320,7 @@ void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
     } else {
         if (!isReadOnly()) {
             auto editRules = new QAction(i18nc("@action", "Edit Rule"), menu);
-            // editRules->setIcon(QIcon::fromTheme(QStringLiteral("help-hint")));
+            // editRules->setIcon(QIcon::fromTheme(u"help-hint"_s));
             connect(editRules, &QAction::triggered, this, &SieveTextEdit::slotEditRule);
             QAction *act = menu->addSeparator();
             menu->insertActions(menu->actions().at(0), {editRules, act});
@@ -361,15 +363,15 @@ void SieveTextEdit::comment()
         // Move start block
         textcursor.movePosition(QTextCursor::StartOfBlock, QTextCursor::KeepAnchor);
         QString text = textcursor.selectedText();
-        text = QLatin1Char('#') + text;
-        text.replace(QChar::ParagraphSeparator, QStringLiteral("\n#"));
+        text = u'#' + text;
+        text.replace(QChar::ParagraphSeparator, u"\n#"_s);
         textcursor.insertText(text);
         setTextCursor(textcursor);
     } else {
         textcursor.movePosition(QTextCursor::StartOfBlock);
         textcursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
         const QString s = textcursor.selectedText();
-        const QString str = QLatin1Char('#') + s;
+        const QString str = u'#' + s;
         textcursor.insertText(str);
         setTextCursor(textcursor);
     }
@@ -405,7 +407,7 @@ void SieveTextEdit::uncomment()
     if (textcursor.hasSelection()) {
         textcursor.movePosition(QTextCursor::StartOfBlock, QTextCursor::KeepAnchor);
         QString text = textcursor.selectedText();
-        if (text.startsWith(QLatin1Char('#'))) {
+        if (text.startsWith(u'#')) {
             text.remove(0, 1);
         }
         QString newText = text;
@@ -413,7 +415,7 @@ void SieveTextEdit::uncomment()
             if (newText.at(i) == QChar::ParagraphSeparator || newText.at(i) == QChar::LineSeparator) {
                 ++i;
                 if (i < newText.length()) {
-                    if (newText.at(i) == QLatin1Char('#')) {
+                    if (newText.at(i) == u'#') {
                         newText.remove(i, 1);
                     } else {
                         ++i;
@@ -430,7 +432,7 @@ void SieveTextEdit::uncomment()
         textcursor.movePosition(QTextCursor::StartOfBlock);
         textcursor.movePosition(QTextCursor::EndOfBlock, QTextCursor::KeepAnchor);
         QString text = textcursor.selectedText();
-        if (text.startsWith(QLatin1Char('#'))) {
+        if (text.startsWith(u'#')) {
             text.remove(0, 1);
         }
         textcursor.insertText(text);

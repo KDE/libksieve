@@ -5,6 +5,8 @@
 */
 
 #include "sievescripttabwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sievewidgetpageabstract.h"
 
 #include <KLocalizedString>
@@ -43,7 +45,7 @@ void SieveScriptTabWidget::slotTabContextMenuRequest(const QPoint &pos)
     if ((page->pageType() == SieveWidgetPageAbstract::BlockElsIf) || page->pageType() == SieveWidgetPageAbstract::BlockElse) {
         QMenu menu(this);
         QAction *closeTab = menu.addAction(i18nc("@action:inmenu", "Close Tab"));
-        closeTab->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
+        closeTab->setIcon(QIcon::fromTheme(u"tab-close"_s));
 
         QAction *action = menu.exec(mapToGlobal(pos));
 

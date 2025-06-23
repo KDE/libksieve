@@ -5,6 +5,8 @@
 */
 
 #include "sievescriptdebuggerfrontendwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sievescriptdebuggerresulteditor.h"
 #include "sievescriptdebuggertextedit.h"
 #include "sievescriptdebuggerwarning.h"
@@ -163,7 +165,7 @@ void SieveScriptDebuggerFrontEndWidget::slotDebugScript()
 
     QString extensionList;
     if (!mExtension->text().trimmed().isEmpty()) {
-        extensionList = QStringLiteral("-x \"%1\"").arg(mExtension->text());
+        extensionList = u"-x \"%1\""_s.arg(mExtension->text());
     }
 
     QStringList arguments;
@@ -172,13 +174,13 @@ void SieveScriptDebuggerFrontEndWidget::slotDebugScript()
     }
 
     arguments << temporaryFile->fileName() << mEmailPath->url().toLocalFile();
-    mProcess->start(QStringLiteral("sieve-test"), QStringList() << arguments);
+    mProcess->start(u"sieve-test"_s, QStringList() << arguments);
     connect(mProcess, &QProcess::readyReadStandardOutput, this, &SieveScriptDebuggerFrontEndWidget::slotReadStandardOutput);
     connect(mProcess, &QProcess::readyReadStandardError, this, &SieveScriptDebuggerFrontEndWidget::slotReadErrorOutput);
     connect(mProcess, &QProcess::finished, this, &SieveScriptDebuggerFrontEndWidget::slotDebugFinished);
-    mSieveTestResult->editor()->appendPlainText(QStringLiteral("--------------------------------------"));
+    mSieveTestResult->editor()->appendPlainText(u"--------------------------------------"_s);
     mSieveTestResult->editor()->appendPlainText(QLocale().toString(QDateTime::currentDateTime()));
-    mSieveTestResult->editor()->appendPlainText(QStringLiteral("\n"));
+    mSieveTestResult->editor()->appendPlainText(u"\n"_s);
     if (!mProcess->waitForStarted()) {
         delete mProcess;
         mProcess = nullptr;

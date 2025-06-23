@@ -5,6 +5,8 @@
 */
 
 #include "renamescriptjobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "managescriptsjob/renamescriptjob.h"
 #include <QTest>
 
@@ -27,11 +29,11 @@ void RenameScriptJobTest::shouldBeStart_data()
     QTest::addColumn<QUrl>("url");
     QTest::addColumn<bool>("canStart");
     QTest::newRow("empty") << QString() << QUrl() << false;
-    QTest::newRow("hasNewName") << QStringLiteral("foo") << QUrl() << false;
-    QTest::newRow("hasUrl") << QString() << QUrl(QStringLiteral("http://www.kde.org")) << false;
-    QTest::newRow("canStart") << QStringLiteral("foo") << QUrl(QStringLiteral("http://www.kde.org")) << true;
-    QTest::newRow("cannotStartHasEmptyName") << QStringLiteral(" ") << QUrl(QStringLiteral("http://www.kde.org")) << false;
-    // QTest::newRow("cannotStartHasInvalidUrl") <<  QStringLiteral("foo") << QUrl(QStringLiteral(" ")) << false;
+    QTest::newRow("hasNewName") << u"foo"_s << QUrl() << false;
+    QTest::newRow("hasUrl") << QString() << QUrl(u"http://www.kde.org"_s) << false;
+    QTest::newRow("canStart") << u"foo"_s << QUrl(u"http://www.kde.org"_s) << true;
+    QTest::newRow("cannotStartHasEmptyName") << u" "_s << QUrl(u"http://www.kde.org"_s) << false;
+    // QTest::newRow("cannotStartHasInvalidUrl") <<  u"foo"_s << QUrl(u" "_s) << false;
 }
 
 void RenameScriptJobTest::shouldBeStart()

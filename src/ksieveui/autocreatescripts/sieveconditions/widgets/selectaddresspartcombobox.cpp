@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectaddresspartcombobox.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 
@@ -23,12 +25,12 @@ SelectAddressPartComboBox::~SelectAddressPartComboBox() = default;
 
 void SelectAddressPartComboBox::initialize()
 {
-    addItem(i18n("all"), QStringLiteral(":all"));
-    addItem(i18n("localpart"), QStringLiteral(":localpart"));
-    addItem(i18n("domain"), QStringLiteral(":domain"));
+    addItem(i18n("all"), u":all"_s);
+    addItem(i18n("localpart"), u":localpart"_s);
+    addItem(i18n("domain"), u":domain"_s);
     if (mHasSubaddressCapability) {
-        addItem(i18n("user"), QStringLiteral(":user"));
-        addItem(i18n("detail"), QStringLiteral(":detail"));
+        addItem(i18n("user"), u":user"_s);
+        addItem(i18n("detail"), u":detail"_s);
     }
 }
 
@@ -41,7 +43,7 @@ QStringList SelectAddressPartComboBox::extraRequire() const
 {
     QStringList lst;
     if (mHasSubaddressCapability) {
-        lst << QStringLiteral("subaddress");
+        lst << u"subaddress"_s;
     }
     return lst;
 }

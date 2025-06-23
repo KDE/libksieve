@@ -5,6 +5,8 @@
 */
 
 #include "vacationmailactionwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../vacationmailactionwidget.h"
 #include "ksieveui/abstractselectemaillineedit.h"
 #include <KSieveUi/AbstractMoveImapFolderWidget>
@@ -23,17 +25,17 @@ void VacationMailActionWidgetTest::shouldHaveDefaultValue()
 {
     KSieveUi::VacationMailActionWidget w;
 
-    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainlayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    auto mStackedWidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedWidget"));
+    auto mStackedWidget = w.findChild<QStackedWidget *>(u"stackedWidget"_s);
     QVERIFY(mStackedWidget);
 
     QCOMPARE(mStackedWidget->count(), 3);
     QWidget *mMailActionRecipient = mStackedWidget->widget(0);
     QVERIFY(mMailActionRecipient);
-    QCOMPARE(mMailActionRecipient->objectName(), QStringLiteral("mailActionRecipient"));
+    QCOMPARE(mMailActionRecipient->objectName(), u"mailActionRecipient"_s);
     QVERIFY(!mMailActionRecipient->isEnabled());
 
     QCOMPARE(mStackedWidget->currentIndex(), 0);
@@ -42,14 +44,14 @@ void VacationMailActionWidgetTest::shouldHaveDefaultValue()
     QVERIFY(mMoveImapFolderWidget);
     auto *abstractMoveImapFolderWidget = dynamic_cast<KSieveUi::AbstractMoveImapFolderWidget *>(mMoveImapFolderWidget);
     QVERIFY(abstractMoveImapFolderWidget);
-    QCOMPARE(abstractMoveImapFolderWidget->objectName(), QStringLiteral("moveImapFolderWidget"));
+    QCOMPARE(abstractMoveImapFolderWidget->objectName(), u"moveImapFolderWidget"_s);
 
     QWidget *mSelectEmailLineEdit = mStackedWidget->widget(2);
     QVERIFY(mSelectEmailLineEdit);
 
     auto *abstractSelectEmailWidget = dynamic_cast<KSieveUi::AbstractSelectEmailLineEdit *>(mSelectEmailLineEdit);
     QVERIFY(abstractSelectEmailWidget);
-    QCOMPARE(abstractSelectEmailWidget->objectName(), QStringLiteral("selectEmailLineEdit"));
+    QCOMPARE(abstractSelectEmailWidget->objectName(), u"selectEmailLineEdit"_s);
 
     bool ok;
     QVERIFY(w.mailActionRecipient(ok).isEmpty());
@@ -58,7 +60,7 @@ void VacationMailActionWidgetTest::shouldHaveDefaultValue()
 void VacationMailActionWidgetTest::shouldSwitchComponents()
 {
     KSieveUi::VacationMailActionWidget w;
-    auto mStackedWidget = w.findChild<QStackedWidget *>(QStringLiteral("stackedWidget"));
+    auto mStackedWidget = w.findChild<QStackedWidget *>(u"stackedWidget"_s);
 
     w.mailActionChanged(KSieveCore::VacationUtils::Keep);
     QCOMPARE(mStackedWidget->currentIndex(), 0);

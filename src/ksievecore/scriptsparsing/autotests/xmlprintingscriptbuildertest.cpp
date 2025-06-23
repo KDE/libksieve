@@ -5,6 +5,8 @@
 */
 
 #include "xmlprintingscriptbuildertest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "parser.h"
 #include <KSieveCore/XMLPrintingScriptBuilder>
 #include <QProcess>
@@ -36,93 +38,93 @@ void XMLPrintingScriptBuilderTest::shouldCreateXml_data()
 {
     QTest::addColumn<QString>("input");
     QTest::addColumn<bool>("success");
-    QTest::newRow("emptyscript") << QStringLiteral("empty") << true;
-    QTest::newRow("simplescript") << QStringLiteral("simple") << true;
-    QTest::newRow("bodywithlist") << QStringLiteral("body") << true;
-    QTest::newRow("add-flags") << QStringLiteral("add-flags") << true;
-    QTest::newRow("test-virus") << QStringLiteral("test-virus") << true;
-    QTest::newRow("replace") << QStringLiteral("replace") << true;
-    QTest::newRow("test-envelop") << QStringLiteral("test-envelop") << true;
-    QTest::newRow("test-servermetadataexists") << QStringLiteral("test-servermetadataexists") << true;
-    QTest::newRow("test-foreach") << QStringLiteral("test-foreach") << true;
-    QTest::newRow("test-vacation") << QStringLiteral("test-vacation") << true;
-    QTest::newRow("test-forwarding") << QStringLiteral("test-forwarding") << true;
-    QTest::newRow("test-elseif") << QStringLiteral("test-elseif") << true;
-    QTest::newRow("test-address-order") << QStringLiteral("test-address-order") << true;
-    QTest::newRow("test-regexp") << QStringLiteral("test-regexp") << true;
-    QTest::newRow("test-envelop-without-part") << QStringLiteral("test-envelop-without-part") << true;
-    QTest::newRow("test-anti-slash") << QStringLiteral("test-anti-slash") << true;
-    QTest::newRow("test-current-date") << QStringLiteral("test-current-date") << true;
-    QTest::newRow("not-condition") << QStringLiteral("not-condition") << true;
-    QTest::newRow("delete-headers") << QStringLiteral("delete-headers") << true;
-    QTest::newRow("mailboxexist") << QStringLiteral("mailboxexist") << true;
-    QTest::newRow("extract-text") << QStringLiteral("extract-text") << true;
-    QTest::newRow("enclose") << QStringLiteral("enclose") << true;
-    QTest::newRow("add-single-flag") << QStringLiteral("add-single-flag") << true;
-    QTest::newRow("fileinfo") << QStringLiteral("fileinfo") << true;
-    QTest::newRow("include") << QStringLiteral("include") << true;
-    QTest::newRow("variable-lower") << QStringLiteral("variable-lower") << true;
-    QTest::newRow("test-environnement") << QStringLiteral("test-environnement") << true;
-    QTest::newRow("test-has-flags") << QStringLiteral("test-has-flags") << true;
-    QTest::newRow("test-spam-plus") << QStringLiteral("test-spam-plus") << true;
-    QTest::newRow("remove-flags") << QStringLiteral("remove-flags") << true;
-    QTest::newRow("variable") << QStringLiteral("variable") << true;
-    QTest::newRow("break") << QStringLiteral("break") << true;
-    QTest::newRow("notify") << QStringLiteral("notify") << true;
-    QTest::newRow("test-exists") << QStringLiteral("test-exists") << true;
-    QTest::newRow("vacation") << QStringLiteral("vacation") << true;
-    QTest::newRow("test-metadataexists") << QStringLiteral("test-metadataexists") << true;
-    QTest::newRow("test-date") << QStringLiteral("test-date") << true;
-    QTest::newRow("redirect") << QStringLiteral("redirect") << true;
-    QTest::newRow("convert-action") << QStringLiteral("convert-action") << true;
-    QTest::newRow("address-with-default-all-parameter") << QStringLiteral("address-with-default-all-parameter") << true;
-    QTest::newRow("not-condition2") << QStringLiteral("not-condition2") << true;
-    QTest::newRow("address-with-default-is-parameter") << QStringLiteral("address-with-default-is-parameter") << true;
-    QTest::newRow("test-spam") << QStringLiteral("test-spam") << true;
-    QTest::newRow("reject") << QStringLiteral("reject") << true;
-    QTest::newRow("keep") << QStringLiteral("keep") << true;
-    QTest::newRow("test-headers") << QStringLiteral("test-headers") << true;
-    QTest::newRow("vacation-active-discard") << QStringLiteral("vacation-active-discard") << true;
-    QTest::newRow("vacation-multiple") << QStringLiteral("vacation-multiple") << true;
-    QTest::newRow("vacation-multiple-with-undefined-command") << QStringLiteral("vacation-multiple-with-undefined-command") << true;
-    QTest::newRow("full-example1") << QStringLiteral("full-example1") << true;
-    QTest::newRow("regexp") << QStringLiteral("regexp") << true;
-    QTest::newRow("comparator") << QStringLiteral("comparator") << true;
-    QTest::newRow("test-comment") << QStringLiteral("test-comment") << true;
-    QTest::newRow("hasflag") << QStringLiteral("hasflag") << true;
-    QTest::newRow("setflag") << QStringLiteral("setflag") << true;
-    QTest::newRow("add-header") << QStringLiteral("add-header") << true;
-    QTest::newRow("problem-with-inferior-char") << QStringLiteral("problem-with-inferior-char") << true;
-    QTest::newRow("delete-headers-with-index") << QStringLiteral("delete-headers-with-index") << true;
-    QTest::newRow("notify-2") << QStringLiteral("notify-2") << true;
-    QTest::newRow("foreverypart") << QStringLiteral("foreverypart") << true;
-    QTest::newRow("test-foreverypart-complex") << QStringLiteral("test-foreverypart-complex") << true;
-    QTest::newRow("test-envelop-subadress") << QStringLiteral("test-envelop-subadress") << true;
-    QTest::newRow("test-current-date-custom") << QStringLiteral("test-current-date-custom") << true;
-    QTest::newRow("failed-1") << QStringLiteral("failed-1") << true;
-    QTest::newRow("failed-2") << QStringLiteral("failed-2") << true;
-    QTest::newRow("failed-if-in-if") << QStringLiteral("failed-if-in-if") << true;
-    QTest::newRow("test-comment2") << QStringLiteral("test-comment2") << true;
-    QTest::newRow("test-comment3") << QStringLiteral("test-comment3") << true;
-    QTest::newRow("test-comment4") << QStringLiteral("test-comment4") << true;
-    QTest::newRow("test-value-as-list-quoted") << QStringLiteral("test-value-as-list-quoted") << true;
-    QTest::newRow("test-header-value") << QStringLiteral("test-header-value") << true;
-    QTest::newRow("test-comment5") << QStringLiteral("test-comment5") << true;
-    QTest::newRow("test-comment6") << QStringLiteral("test-comment6") << true;
-    QTest::newRow("test-comment7") << QStringLiteral("test-comment7") << true;
-    QTest::newRow("test-comment8") << QStringLiteral("test-comment8") << true;
-    QTest::newRow("test-comment9") << QStringLiteral("test-comment9") << true;
-    QTest::newRow("test-date1") << QStringLiteral("test-date1") << true;
+    QTest::newRow("emptyscript") << u"empty"_s << true;
+    QTest::newRow("simplescript") << u"simple"_s << true;
+    QTest::newRow("bodywithlist") << u"body"_s << true;
+    QTest::newRow("add-flags") << u"add-flags"_s << true;
+    QTest::newRow("test-virus") << u"test-virus"_s << true;
+    QTest::newRow("replace") << u"replace"_s << true;
+    QTest::newRow("test-envelop") << u"test-envelop"_s << true;
+    QTest::newRow("test-servermetadataexists") << u"test-servermetadataexists"_s << true;
+    QTest::newRow("test-foreach") << u"test-foreach"_s << true;
+    QTest::newRow("test-vacation") << u"test-vacation"_s << true;
+    QTest::newRow("test-forwarding") << u"test-forwarding"_s << true;
+    QTest::newRow("test-elseif") << u"test-elseif"_s << true;
+    QTest::newRow("test-address-order") << u"test-address-order"_s << true;
+    QTest::newRow("test-regexp") << u"test-regexp"_s << true;
+    QTest::newRow("test-envelop-without-part") << u"test-envelop-without-part"_s << true;
+    QTest::newRow("test-anti-slash") << u"test-anti-slash"_s << true;
+    QTest::newRow("test-current-date") << u"test-current-date"_s << true;
+    QTest::newRow("not-condition") << u"not-condition"_s << true;
+    QTest::newRow("delete-headers") << u"delete-headers"_s << true;
+    QTest::newRow("mailboxexist") << u"mailboxexist"_s << true;
+    QTest::newRow("extract-text") << u"extract-text"_s << true;
+    QTest::newRow("enclose") << u"enclose"_s << true;
+    QTest::newRow("add-single-flag") << u"add-single-flag"_s << true;
+    QTest::newRow("fileinfo") << u"fileinfo"_s << true;
+    QTest::newRow("include") << u"include"_s << true;
+    QTest::newRow("variable-lower") << u"variable-lower"_s << true;
+    QTest::newRow("test-environnement") << u"test-environnement"_s << true;
+    QTest::newRow("test-has-flags") << u"test-has-flags"_s << true;
+    QTest::newRow("test-spam-plus") << u"test-spam-plus"_s << true;
+    QTest::newRow("remove-flags") << u"remove-flags"_s << true;
+    QTest::newRow("variable") << u"variable"_s << true;
+    QTest::newRow("break") << u"break"_s << true;
+    QTest::newRow("notify") << u"notify"_s << true;
+    QTest::newRow("test-exists") << u"test-exists"_s << true;
+    QTest::newRow("vacation") << u"vacation"_s << true;
+    QTest::newRow("test-metadataexists") << u"test-metadataexists"_s << true;
+    QTest::newRow("test-date") << u"test-date"_s << true;
+    QTest::newRow("redirect") << u"redirect"_s << true;
+    QTest::newRow("convert-action") << u"convert-action"_s << true;
+    QTest::newRow("address-with-default-all-parameter") << u"address-with-default-all-parameter"_s << true;
+    QTest::newRow("not-condition2") << u"not-condition2"_s << true;
+    QTest::newRow("address-with-default-is-parameter") << u"address-with-default-is-parameter"_s << true;
+    QTest::newRow("test-spam") << u"test-spam"_s << true;
+    QTest::newRow("reject") << u"reject"_s << true;
+    QTest::newRow("keep") << u"keep"_s << true;
+    QTest::newRow("test-headers") << u"test-headers"_s << true;
+    QTest::newRow("vacation-active-discard") << u"vacation-active-discard"_s << true;
+    QTest::newRow("vacation-multiple") << u"vacation-multiple"_s << true;
+    QTest::newRow("vacation-multiple-with-undefined-command") << u"vacation-multiple-with-undefined-command"_s << true;
+    QTest::newRow("full-example1") << u"full-example1"_s << true;
+    QTest::newRow("regexp") << u"regexp"_s << true;
+    QTest::newRow("comparator") << u"comparator"_s << true;
+    QTest::newRow("test-comment") << u"test-comment"_s << true;
+    QTest::newRow("hasflag") << u"hasflag"_s << true;
+    QTest::newRow("setflag") << u"setflag"_s << true;
+    QTest::newRow("add-header") << u"add-header"_s << true;
+    QTest::newRow("problem-with-inferior-char") << u"problem-with-inferior-char"_s << true;
+    QTest::newRow("delete-headers-with-index") << u"delete-headers-with-index"_s << true;
+    QTest::newRow("notify-2") << u"notify-2"_s << true;
+    QTest::newRow("foreverypart") << u"foreverypart"_s << true;
+    QTest::newRow("test-foreverypart-complex") << u"test-foreverypart-complex"_s << true;
+    QTest::newRow("test-envelop-subadress") << u"test-envelop-subadress"_s << true;
+    QTest::newRow("test-current-date-custom") << u"test-current-date-custom"_s << true;
+    QTest::newRow("failed-1") << u"failed-1"_s << true;
+    QTest::newRow("failed-2") << u"failed-2"_s << true;
+    QTest::newRow("failed-if-in-if") << u"failed-if-in-if"_s << true;
+    QTest::newRow("test-comment2") << u"test-comment2"_s << true;
+    QTest::newRow("test-comment3") << u"test-comment3"_s << true;
+    QTest::newRow("test-comment4") << u"test-comment4"_s << true;
+    QTest::newRow("test-value-as-list-quoted") << u"test-value-as-list-quoted"_s << true;
+    QTest::newRow("test-header-value") << u"test-header-value"_s << true;
+    QTest::newRow("test-comment5") << u"test-comment5"_s << true;
+    QTest::newRow("test-comment6") << u"test-comment6"_s << true;
+    QTest::newRow("test-comment7") << u"test-comment7"_s << true;
+    QTest::newRow("test-comment8") << u"test-comment8"_s << true;
+    QTest::newRow("test-comment9") << u"test-comment9"_s << true;
+    QTest::newRow("test-date1") << u"test-date1"_s << true;
 }
 
 void diffFile(const QString &refFile, const QString &generatedFile)
 {
     QProcess proc;
 #ifdef _WIN32
-    QStringList args = QStringList() << QStringLiteral("Compare-Object") << QString(QStringLiteral("(Get-Content %1)")).arg(refFile)
-                                     << QString(QStringLiteral("(Get-Content %1)")).arg(generatedFile);
+    QStringList args = QStringList() << u"Compare-Object"_s << QString(u"(Get-Content %1)"_s).arg(refFile)
+                                     << QString(u"(Get-Content %1)"_s).arg(generatedFile);
 
-    proc.start(QStringLiteral("powershell"), args);
+    proc.start(u"powershell"_s, args);
     QVERIFY(proc.waitForFinished());
 
     auto pStdOut = proc.readAllStandardOutput();
@@ -133,10 +135,10 @@ void diffFile(const QString &refFile, const QString &generatedFile)
     QCOMPARE(pStdOut.size(), 0);
 #else
     // compare to reference file
-    const QStringList args = QStringList() << QStringLiteral("-u") << refFile << generatedFile;
+    const QStringList args = QStringList() << u"-u"_s << refFile << generatedFile;
 
     proc.setProcessChannelMode(QProcess::ForwardedChannels);
-    proc.start(QStringLiteral("diff"), args);
+    proc.start(u"diff"_s, args);
     QVERIFY(proc.waitForFinished());
     QCOMPARE(proc.exitCode(), 0);
 #endif
@@ -147,9 +149,9 @@ void XMLPrintingScriptBuilderTest::shouldCreateXml()
     QFETCH(QString, input);
     QFETCH(bool, success);
 
-    const QString originalFile = QLatin1StringView(XMLPRINTINGSCRIPTBUILDER_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral(".siv");
-    const QString refFile = QLatin1StringView(XMLPRINTINGSCRIPTBUILDER_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral("-ref.siv");
-    const QString generatedFile = QLatin1StringView(XMLPRINTINGSCRIPTBUILDER_GENERATED_DATA_DIR) + QLatin1Char('/') + input + QStringLiteral("-generated.siv");
+    const QString originalFile = QLatin1StringView(XMLPRINTINGSCRIPTBUILDER_DATA_DIR) + u'/' + input + u".siv"_s;
+    const QString refFile = QLatin1StringView(XMLPRINTINGSCRIPTBUILDER_DATA_DIR) + u'/' + input + u"-ref.siv"_s;
+    const QString generatedFile = QLatin1StringView(XMLPRINTINGSCRIPTBUILDER_GENERATED_DATA_DIR) + u'/' + input + u"-generated.siv"_s;
     const QByteArray script = readSieveFile(originalFile);
     KSieve::Parser parser(script.begin(), script.begin() + script.length());
     KSieveCore::XMLPrintingScriptBuilder builder;

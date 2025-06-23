@@ -5,6 +5,8 @@
 */
 
 #include "generateglobalscriptjob.h"
+using namespace Qt::Literals::StringLiterals;
+
 
 #include "kmanagesieve/sievejob.h"
 
@@ -84,7 +86,7 @@ void GenerateGlobalScriptJob::writeMasterScript()
 
     QUrl url(mCurrentUrl);
     url = url.adjusted(QUrl::RemoveFilename);
-    url.setPath(url.path() + QLatin1Char('/') + QLatin1StringView("MASTER"));
+    url.setPath(url.path() + u'/' + QLatin1StringView("MASTER"));
     mMasterJob = KManageSieve::SieveJob::put(url, masterScript, true, true);
     connect(mMasterJob, &KManageSieve::SieveJob::result, this, &GenerateGlobalScriptJob::slotPutMasterResult);
 }
@@ -116,12 +118,12 @@ void GenerateGlobalScriptJob::writeUserScript()
         "require [\"include\"];\n");
 
     for (const QString &activeScript : std::as_const(mListUserActiveScripts)) {
-        userScript += QStringLiteral("\ninclude :personal \"%1\";").arg(activeScript);
+        userScript += u"\ninclude :personal \"%1\";"_s.arg(activeScript);
     }
 
     QUrl url(mCurrentUrl);
     url = url.adjusted(QUrl::RemoveFilename);
-    url.setPath(url.path() + QLatin1Char('/') + QLatin1StringView("USER"));
+    url.setPath(url.path() + u'/' + QLatin1StringView("USER"));
     mUserJob = KManageSieve::SieveJob::put(url, userScript, mForceActivateUserScript, false);
     connect(mUserJob, &KManageSieve::SieveJob::result, this, &GenerateGlobalScriptJob::slotPutUserResult);
 }

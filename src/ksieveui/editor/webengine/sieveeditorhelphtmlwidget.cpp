@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveeditorhelphtmlwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sieveeditorloadprogressindicator.h"
 
 #include "sieveeditorwebengineview.h"

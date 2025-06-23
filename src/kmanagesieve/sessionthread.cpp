@@ -5,6 +5,8 @@
 */
 
 #include "kmanagersieve_debug.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "response.h"
 #include "session.h"
 #include "sessionthread_p.h"
@@ -240,7 +242,7 @@ void SessionThread::doStartAuthentication()
 
     do {
         result = sasl_client_start(m_sasl_conn,
-                                   m_session->requestedSaslMethod().join(QLatin1Char(' ')).toLatin1().constData(),
+                                   m_session->requestedSaslMethod().join(u' ').toLatin1().constData(),
                                    &m_sasl_client_interact,
                                    &out,
                                    &outlen,

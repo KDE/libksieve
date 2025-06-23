@@ -7,6 +7,8 @@
 */
 
 #include "sievedebugdialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "util/findaccountinfojob.h"
 #include "util/util.h"
 #include <TextCustomEditor/PlainTextEditor>
@@ -45,7 +47,7 @@ SieveDebugDialog::SieveDebugDialog(KSieveCore::SieveImapPasswordProvider *passwo
 
     mEdit = new TextCustomEditor::PlainTextEditorWidget(this);
     mEdit->setReadOnly(true);
-    const KSyntaxHighlighting::Definition def = mRepo.definitionForName(QStringLiteral("Sieve"));
+    const KSyntaxHighlighting::Definition def = mRepo.definitionForName(u"Sieve"_s);
     if (!def.isValid()) {
         qCWarning(LIBKSIEVEUI_LOG) << "Invalid definition name";
     }
@@ -182,7 +184,7 @@ void SieveDebugDialog::slotFindAccountInfoForScriptFinished(const KSieveCore::Ut
 
     mUrl = mUrl.adjusted(QUrl::RemoveFilename);
     const QString scriptFile = sender()->property("scriptfile").toString();
-    mUrl.setPath(mUrl.path() + QLatin1Char('/') + scriptFile);
+    mUrl.setPath(mUrl.path() + u'/' + scriptFile);
 
     mSieveJob = KManageSieve::SieveJob::get(mUrl);
 
@@ -218,7 +220,7 @@ void SieveDebugDialog::slotGetScriptList(KManageSieve::SieveJob *job, bool succe
     if (mShutDownJob->isActive()) {
         mShutDownJob->stop();
     }
-    qCDebug(LIBKSIEVEUI_LOG) << "Success:" << success << ", List:" << scriptList.join(QLatin1Char(',')) << ", active:" << activeScript;
+    qCDebug(LIBKSIEVEUI_LOG) << "Success:" << success << ", List:" << scriptList.join(u',') << ", active:" << activeScript;
     mSieveJob = nullptr; // job deletes itself after returning from this slot!
 
     mEdit->editor()->appendPlainText(i18n("Sieve capabilities:\n"));
@@ -227,9 +229,9 @@ void SieveDebugDialog::slotGetScriptList(KManageSieve::SieveJob *job, bool succe
         mEdit->editor()->appendPlainText(i18n("(No special capabilities available)"));
     } else {
         for (const auto &str : caps) {
-            mEdit->editor()->appendPlainText(QLatin1StringView("* ") + str + QLatin1Char('\n'));
+            mEdit->editor()->appendPlainText(QLatin1StringView("* ") + str + u'\n');
         }
-        mEdit->editor()->appendPlainText(QStringLiteral("\n"));
+        mEdit->editor()->appendPlainText(u"\n"_s);
     }
 
     mEdit->editor()->appendPlainText(i18n("Available Sieve scripts:\n"));
@@ -239,9 +241,9 @@ void SieveDebugDialog::slotGetScriptList(KManageSieve::SieveJob *job, bool succe
     } else {
         mScriptList = scriptList;
         for (const auto &str : scriptList) {
-            mEdit->editor()->appendPlainText(QLatin1StringView("* ") + str + QLatin1Char('\n'));
+            mEdit->editor()->appendPlainText(QLatin1StringView("* ") + str + u'\n');
         }
-        mEdit->editor()->appendPlainText(QStringLiteral("\n"));
+        mEdit->editor()->appendPlainText(u"\n"_s);
         mEdit->editor()->appendPlainText(i18n("Active script: '%1'\n\n", activeScript));
     }
 

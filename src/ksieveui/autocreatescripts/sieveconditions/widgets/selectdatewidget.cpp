@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectdatewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sievedatespinbox.h"
 
 #include <KDateComboBox>
@@ -187,43 +189,43 @@ QString SelectDateWidget::dateType(SelectDateWidget::DateType type) const
     QString str;
     switch (type) {
     case Year:
-        str = QStringLiteral("year");
+        str = u"year"_s;
         break;
     case Month:
-        str = QStringLiteral("month");
+        str = u"month"_s;
         break;
     case Day:
-        str = QStringLiteral("day");
+        str = u"day"_s;
         break;
     case Date:
-        str = QStringLiteral("date");
+        str = u"date"_s;
         break;
     case Julian:
-        str = QStringLiteral("julian");
+        str = u"julian"_s;
         break;
     case Hour:
-        str = QStringLiteral("hour");
+        str = u"hour"_s;
         break;
     case Minute:
-        str = QStringLiteral("minute");
+        str = u"minute"_s;
         break;
     case Second:
-        str = QStringLiteral("second");
+        str = u"second"_s;
         break;
     case Time:
-        str = QStringLiteral("time");
+        str = u"time"_s;
         break;
     case Iso8601:
-        str = QStringLiteral("iso8601");
+        str = u"iso8601"_s;
         break;
     case Std11:
-        str = QStringLiteral("std11");
+        str = u"std11"_s;
         break;
     case Zone:
-        str = QStringLiteral("zone");
+        str = u"zone"_s;
         break;
     case Weekday:
-        str = QStringLiteral("weekday");
+        str = u"weekday"_s;
         break;
     }
     return str;
@@ -232,7 +234,7 @@ QString SelectDateWidget::dateType(SelectDateWidget::DateType type) const
 QString SelectDateWidget::code() const
 {
     const auto type = mDateType->itemData(mDateType->currentIndex()).value<KSieveUi::SelectDateWidget::DateType>();
-    return QStringLiteral("\"%1\" \"%2\"").arg(dateType(type), dateValue(type));
+    return u"\"%1\" \"%2\""_s.arg(dateType(type), dateValue(type));
 }
 
 void SelectDateWidget::setCode(const QString &type, const QString &value)

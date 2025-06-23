@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditiontrue.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 #include "libksieveui_debug.h"
@@ -17,7 +19,7 @@
 using namespace KSieveUi;
 
 SieveConditionTrue::SieveConditionTrue(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("true"), i18n("True"), parent)
+    : SieveCondition(sieveGraphicalModeWidget, u"true"_s, i18n("True"), parent)
 {
 }
 
@@ -35,7 +37,7 @@ QWidget *SieveConditionTrue::createParamWidget(QWidget *parent) const
 
 QString SieveConditionTrue::code(QWidget *) const
 {
-    return QStringLiteral("true") + AutoCreateScriptUtil::generateConditionComment(comment());
+    return u"true"_s + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QString SieveConditionTrue::help() const

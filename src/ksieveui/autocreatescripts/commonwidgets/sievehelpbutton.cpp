@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sievehelpbutton.h"
+using namespace Qt::Literals::StringLiterals;
+
 
 #include <KIO/JobUiDelegateFactory>
 #include <KIO/OpenUrlJob>
@@ -17,7 +19,7 @@ SieveHelpButton::SieveHelpButton(QWidget *parent)
     : QToolButton(parent)
 {
     setToolTip(i18nc("@info:tooltip", "Help"));
-    setIcon(QIcon::fromTheme(QStringLiteral("help-hint")));
+    setIcon(QIcon::fromTheme(u"help-hint"_s));
 }
 
 SieveHelpButton::~SieveHelpButton() = default;

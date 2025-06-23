@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionsetvariable.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "editor/sieveeditorutil.h"
@@ -21,7 +23,7 @@
 
 using namespace KSieveUi;
 SieveActionSetVariable::SieveActionSetVariable(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveAction(sieveGraphicalModeWidget, QStringLiteral("set"), i18n("Variable"), parent)
+    : SieveAction(sieveGraphicalModeWidget, u"set"_s, i18n("Variable"), parent)
 {
     mHasRegexCapability = sieveCapabilities().contains(QLatin1StringView("regex"));
 }
@@ -73,9 +75,9 @@ QUrl SieveActionSetVariable::href() const
 
 void SieveActionSetVariable::setLocalVariable(QWidget *w, const SieveGlobalVariableActionWidget::VariableElement &var)
 {
-    auto value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+    auto value = w->findChild<QLineEdit *>(u"value"_s);
     value->setText(var.variableValue);
-    auto variable = w->findChild<QLineEdit *>(QStringLiteral("variable"));
+    auto variable = w->findChild<QLineEdit *>(u"variable"_s);
     variable->setText(AutoCreateScriptUtil::protectSlash(var.variableName));
 }
 
@@ -85,12 +87,12 @@ void SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWid
         const QStringView tagName = element.name();
         if (tagName == QLatin1StringView("str")) {
             const QString tagValue = element.readElementText();
-            auto value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+            auto value = w->findChild<QLineEdit *>(u"value"_s);
             value->setText(tagValue);
             if (element.readNextStartElement()) {
                 const QStringView variableTagName = element.name();
                 if (variableTagName == QLatin1StringView("str")) {
-                    auto variable = w->findChild<QLineEdit *>(QStringLiteral("variable"));
+                    auto variable = w->findChild<QLineEdit *>(u"variable"_s);
                     variable->setText(AutoCreateScriptUtil::protectSlash(element.readElementText()));
                 }
             } else {
@@ -100,13 +102,13 @@ void SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWid
             const QString tagValue = element.readElementText();
             if (tagValue == QLatin1StringView("quoteregex")) {
                 if (mHasRegexCapability) {
-                    auto protectAgainstUseRegexp = w->findChild<QCheckBox *>(QStringLiteral("regexprotect"));
+                    auto protectAgainstUseRegexp = w->findChild<QCheckBox *>(u"regexprotect"_s);
                     protectAgainstUseRegexp->setChecked(true);
                 } else {
-                    error += i18n("Script needs regex support, but server does not have it.") + QLatin1Char('\n');
+                    error += i18n("Script needs regex support, but server does not have it.") + u'\n';
                 }
             } else {
-                auto modifier = w->findChild<SelectVariableModifierComboBox *>(QStringLiteral("modifier"));
+                auto modifier = w->findChild<SelectVariableModifierComboBox *>(u"modifier"_s);
                 modifier->setCode(AutoCreateScriptUtil::tagValue(tagValue), name(), error);
             }
         } else if (tagName == QLatin1StringView("crlf")) {
@@ -124,34 +126,34 @@ void SieveActionSetVariable::setParamWidgetValue(QXmlStreamReader &element, QWid
 
 QString SieveActionSetVariable::code(QWidget *w) const
 {
-    QString result = QStringLiteral("set ");
-    const SelectVariableModifierComboBox *modifier = w->findChild<SelectVariableModifierComboBox *>(QStringLiteral("modifier"));
+    QString result = u"set "_s;
+    const SelectVariableModifierComboBox *modifier = w->findChild<SelectVariableModifierComboBox *>(u"modifier"_s);
     const QString modifierStr = modifier->code();
     if (!modifierStr.isEmpty()) {
-        result += modifierStr + QLatin1Char(' ');
+        result += modifierStr + u' ';
     }
 
     if (mHasRegexCapability) {
-        const QCheckBox *protectAgainstUseRegexp = w->findChild<QCheckBox *>(QStringLiteral("regexprotect"));
+        const QCheckBox *protectAgainstUseRegexp = w->findChild<QCheckBox *>(u"regexprotect"_s);
         if (protectAgainstUseRegexp->isChecked()) {
             result += QLatin1StringView(":quoteregex ");
         }
     }
 
-    const QLineEdit *value = w->findChild<QLineEdit *>(QStringLiteral("value"));
+    const QLineEdit *value = w->findChild<QLineEdit *>(u"value"_s);
     const QString valueStr = value->text();
-    result += QStringLiteral("\"%1\" ").arg(valueStr);
+    result += u"\"%1\" "_s.arg(valueStr);
 
-    const QLineEdit *variable = w->findChild<QLineEdit *>(QStringLiteral("variable"));
+    const QLineEdit *variable = w->findChild<QLineEdit *>(u"variable"_s);
     const QString variableStr = variable->text();
-    result += QStringLiteral("\"%1\";").arg(variableStr);
+    result += u"\"%1\";"_s.arg(variableStr);
 
     return result;
 }
 
 QStringList SieveActionSetVariable::needRequires(QWidget *) const
 {
-    return QStringList() << QStringLiteral("variables");
+    return QStringList() << u"variables"_s;
 }
 
 bool SieveActionSetVariable::needCheckIfServerHasCapability() const
@@ -161,14 +163,14 @@ bool SieveActionSetVariable::needCheckIfServerHasCapability() const
 
 QString SieveActionSetVariable::serverNeedsCapability() const
 {
-    return QStringLiteral("variables");
+    return u"variables"_s;
 }
 
 QString SieveActionSetVariable::help() const
 {
     QString helpStr = i18n("The \"set\" action stores the specified value in the variable identified by name.");
     if (mHasRegexCapability) {
-        helpStr += QLatin1Char('\n')
+        helpStr += u'\n'
             + i18n("This modifier adds the necessary quoting to ensure that the expanded text will only match a literal occurrence if used as a parameter "
                    "to :regex.  Every character with special meaning (. , *, ? , etc.) is prefixed with \\ in the expansion");
     }

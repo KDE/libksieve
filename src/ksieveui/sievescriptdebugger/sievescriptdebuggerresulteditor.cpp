@@ -5,6 +5,8 @@
 */
 
 #include "sievescriptdebuggerresulteditor.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KLocalizedString>
 #include <KStandardActions>
 #include <PimCommon/PimUtil>

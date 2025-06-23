@@ -5,6 +5,8 @@
 */
 
 #include "vacationpagewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "managescriptsjob/parseuserscriptjob.h"
 #include "vacationeditwidget.h"
 #include "vacationwarningwidget.h"
@@ -111,7 +113,7 @@ void VacationPageWidget::slotGetResult(const QString &serverName,
     }
 
     mUrl = mUrl.adjusted(QUrl::RemoveFilename);
-    mUrl.setPath(mUrl.path() + QLatin1Char('/') + scriptName);
+    mUrl.setPath(mUrl.path() + u'/' + scriptName);
 
     // Whether the server supports the "date" extension
     mHasDateSupport = mUrl.scheme() == QLatin1StringView("sieve") && sieveCapabilities.contains(QLatin1StringView("date"));

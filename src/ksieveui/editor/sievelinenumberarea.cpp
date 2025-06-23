@@ -4,6 +4,8 @@
  */
 
 #include "sievelinenumberarea.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sievetextedit.h"
 
 using namespace KSieveUi;

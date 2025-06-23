@@ -9,6 +9,8 @@
 */
 
 #include "parser_p.h"
+using namespace Qt::Literals::StringLiterals;
+
 
 #include "error.h"
 
@@ -248,7 +250,7 @@ bool Parser::Impl::parseCommand()
         return false;
     }
 
-    if (token() == Lexer::Special && tokenValue() == QLatin1Char('(')) { // test-list
+    if (token() == Lexer::Special && tokenValue() == u'(') { // test-list
         if (!parseTestList()) {
             assert(error());
             return false;
@@ -278,7 +280,7 @@ bool Parser::Impl::parseCommand()
         return false;
     }
 
-    if (tokenValue() == QLatin1Char(';')) {
+    if (tokenValue() == u';') {
         consumeToken();
     } else if (tokenValue() == QLatin1StringView("{")) { // block
         if (!parseBlock()) {
@@ -480,7 +482,7 @@ bool Parser::Impl::parseTest()
         goto TestEnd;
     }
 
-    if (token() == Lexer::Special && tokenValue() == QLatin1Char('(')) { // test-list
+    if (token() == Lexer::Special && tokenValue() == u'(') { // test-list
         if (!parseTestList()) {
             assert(error());
             return false;

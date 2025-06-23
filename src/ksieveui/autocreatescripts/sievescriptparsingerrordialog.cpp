@@ -5,6 +5,8 @@
 */
 
 #include "sievescriptparsingerrordialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <PimCommon/PimUtil>
 #include <TextCustomEditor/RichTextEditorWidget>
 
@@ -52,9 +54,9 @@ void SieveScriptParsingErrorDialog::setError(QString script, QString error)
 {
     QString str;
     str = QLatin1StringView("<b>") + i18n("Sieve script:") + QLatin1StringView("</b><br>");
-    str += script.replace(QLatin1Char('\n'), QStringLiteral("<br>")) + QLatin1StringView("<br><br>");
+    str += script.replace(u'\n', u"<br>"_s) + QLatin1StringView("<br><br>");
     str += QLatin1StringView("<b>") + i18n("Errors reported:") + QLatin1StringView("</b><br>");
-    str += error.replace(QLatin1Char('\n'), QStringLiteral("<br>")) + QLatin1StringView("<br>");
+    str += error.replace(u'\n', u"<br>"_s) + QLatin1StringView("<br>");
     mTextEdit->setHtml(str);
 }
 

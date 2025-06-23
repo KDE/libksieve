@@ -5,6 +5,8 @@
 */
 
 #include "parsingresultdialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <PimCommon/PimUtil>
 #include <TextCustomEditor/PlainTextEditor>
 #include <TextCustomEditor/PlainTextEditorWidget>
@@ -41,7 +43,7 @@ ParsingResultDialog::ParsingResultDialog(QWidget *parent)
 
     mTextEdit = new TextCustomEditor::PlainTextEditorWidget(this);
     auto highlighter = new KSyntaxHighlighting::SyntaxHighlighter(mTextEdit->editor()->document());
-    highlighter->setDefinition(mSyntaxRepo.definitionForName(QStringLiteral("XML")));
+    highlighter->setDefinition(mSyntaxRepo.definitionForName(u"XML"_s));
     highlighter->setTheme((palette().color(QPalette::Base).lightness() < 128) ? mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
                                                                               : mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     mTextEdit->setReadOnly(true);

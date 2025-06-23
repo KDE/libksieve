@@ -4,6 +4,8 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "findaccountinfojob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "abstractakonadiimapsettinginterface.h"
 #include "akonadiimapsettinginterface.h"
 #include "libksievecore_debug.h"
@@ -65,7 +67,7 @@ void FindAccountInfoJob::start()
     const QString reply = mCustomImapSettingsInterface->imapServer();
     if (!reply.isEmpty()) {
         server = reply;
-        server = server.section(QLatin1Char(':'), 0, 0);
+        server = server.section(u':', 0, 0);
     } else {
         sendAccountInfo();
         return;
@@ -79,7 +81,7 @@ void FindAccountInfoJob::slotPasswordsRequested(const QString &sievePassword, co
 {
     const QString server = sender()->property("server").toString();
     QUrl sieveUrl;
-    sieveUrl.setScheme(QStringLiteral("sieve"));
+    sieveUrl.setScheme(u"sieve"_s);
 
     if (mCustomImapSettingsInterface->sieveReuseConfig()) {
         // assemble Sieve url from the settings of the account:
@@ -100,33 +102,33 @@ void FindAccountInfoJob::slotPasswordsRequested(const QString &sievePassword, co
         switch (mCustomImapSettingsInterface->authentication()) {
         case MailTransport::Transport::EnumAuthenticationType::CLEAR:
         case MailTransport::Transport::EnumAuthenticationType::PLAIN:
-            authStr = QStringLiteral("PLAIN");
+            authStr = u"PLAIN"_s;
             break;
         case MailTransport::Transport::EnumAuthenticationType::LOGIN:
-            authStr = QStringLiteral("LOGIN");
+            authStr = u"LOGIN"_s;
             break;
         case MailTransport::Transport::EnumAuthenticationType::CRAM_MD5:
-            authStr = QStringLiteral("CRAM-MD5");
+            authStr = u"CRAM-MD5"_s;
             break;
         case MailTransport::Transport::EnumAuthenticationType::DIGEST_MD5:
-            authStr = QStringLiteral("DIGEST-MD5");
+            authStr = u"DIGEST-MD5"_s;
             break;
         case MailTransport::Transport::EnumAuthenticationType::GSSAPI:
-            authStr = QStringLiteral("GSSAPI");
+            authStr = u"GSSAPI"_s;
             break;
         case MailTransport::Transport::EnumAuthenticationType::ANONYMOUS:
-            authStr = QStringLiteral("ANONYMOUS");
+            authStr = u"ANONYMOUS"_s;
             break;
         default:
-            authStr = QStringLiteral("PLAIN");
+            authStr = u"PLAIN"_s;
             break;
         }
         QUrlQuery query;
-        query.addQueryItem(QStringLiteral("x-mech"), authStr);
+        query.addQueryItem(u"x-mech"_s, authStr);
         const QString resultSafety = mCustomImapSettingsInterface->safety();
         if (resultSafety == QLatin1StringView("None")) {
             mAccountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
-            query.addQueryItem(QStringLiteral("x-allow-unencrypted"), QStringLiteral("true"));
+            query.addQueryItem(u"x-allow-unencrypted"_s, u"true"_s);
         } else if (resultSafety == QLatin1StringView("SSL")) {
             mAccountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::SSLorTLS);
         } else if (resultSafety == QLatin1StringView("STARTTLS")) {
@@ -151,33 +153,33 @@ void FindAccountInfoJob::slotPasswordsRequested(const QString &sievePassword, co
         switch (mCustomImapSettingsInterface->alternateAuthentication()) {
         case MailTransport::Transport::EnumAuthenticationType::CLEAR:
         case MailTransport::Transport::EnumAuthenticationType::PLAIN:
-            authStr = QStringLiteral("PLAIN");
+            authStr = u"PLAIN"_s;
             break;
         case MailTransport::Transport::EnumAuthenticationType::LOGIN:
-            authStr = QStringLiteral("LOGIN");
+            authStr = u"LOGIN"_s;
             break;
         case MailTransport::Transport::EnumAuthenticationType::CRAM_MD5:
-            authStr = QStringLiteral("CRAM-MD5");
+            authStr = u"CRAM-MD5"_s;
             break;
         case MailTransport::Transport::EnumAuthenticationType::DIGEST_MD5:
-            authStr = QStringLiteral("DIGEST-MD5");
+            authStr = u"DIGEST-MD5"_s;
             break;
         case MailTransport::Transport::EnumAuthenticationType::GSSAPI:
-            authStr = QStringLiteral("GSSAPI");
+            authStr = u"GSSAPI"_s;
             break;
         case MailTransport::Transport::EnumAuthenticationType::ANONYMOUS:
-            authStr = QStringLiteral("ANONYMOUS");
+            authStr = u"ANONYMOUS"_s;
             break;
         default:
-            authStr = QStringLiteral("PLAIN");
+            authStr = u"PLAIN"_s;
             break;
         }
         QUrlQuery query;
-        query.addQueryItem(QStringLiteral("x-mech"), authStr);
+        query.addQueryItem(u"x-mech"_s, authStr);
 
         if (resultSafety == QLatin1StringView("None")) {
             mAccountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::Unencrypted);
-            query.addQueryItem(QStringLiteral("x-allow-unencrypted"), QStringLiteral("true"));
+            query.addQueryItem(u"x-allow-unencrypted"_s, u"true"_s);
         } else if (resultSafety == QLatin1StringView("SSL")) {
             mAccountInfo.sieveImapAccountSettings.setEncryptionMode(SieveImapAccountSettings::SSLorTLS);
         } else if (resultSafety == QLatin1StringView("STARTTLS")) {
@@ -203,7 +205,7 @@ void FindAccountInfoJob::slotPasswordsRequested(const QString &sievePassword, co
     }
     sieveUrl = sieveUrl.adjusted(QUrl::RemoveFilename);
     if (mWithVacationFileName) {
-        sieveUrl.setPath(sieveUrl.path() + QLatin1Char('/') + mCustomImapSettingsInterface->sieveVacationFilename());
+        sieveUrl.setPath(sieveUrl.path() + u'/' + mCustomImapSettingsInterface->sieveVacationFilename());
     }
     mAccountInfo.sieveUrl = sieveUrl;
     sendAccountInfo();

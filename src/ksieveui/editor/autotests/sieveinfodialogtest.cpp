@@ -6,6 +6,8 @@
 */
 
 #include "sieveinfodialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "editor/sieveinfodialog.h"
 #include "editor/sieveinfowidget.h"
 #include <QDialogButtonBox>
@@ -20,13 +22,13 @@ SieveInfoDialogTest::SieveInfoDialogTest(QObject *parent)
 void SieveInfoDialogTest::shouldHaveDefaultValues()
 {
     KSieveUi::SieveInfoDialog dlg;
-    auto mainLayout = dlg.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = dlg.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
-    auto mSieveInfoWidget = dlg.findChild<KSieveUi::SieveInfoWidget *>(QStringLiteral("mSieveInfoWidget"));
+    auto mSieveInfoWidget = dlg.findChild<KSieveUi::SieveInfoWidget *>(u"mSieveInfoWidget"_s);
     QVERIFY(mSieveInfoWidget);
 
-    auto button = dlg.findChild<QDialogButtonBox *>(QStringLiteral("button"));
+    auto button = dlg.findChild<QDialogButtonBox *>(u"button"_s);
     QVERIFY(button);
 }
 

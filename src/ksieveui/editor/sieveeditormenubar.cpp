@@ -5,6 +5,8 @@
 */
 
 #include "sieveeditormenubar.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sieveeditortabwidget.h"
 #include "sieveeditortextmodewidget.h"
 
@@ -48,7 +50,7 @@ void SieveEditorMenuBar::setEditorMode(bool editorMode)
 void SieveEditorMenuBar::initActions()
 {
     mGoToLine = new QAction(i18nc("@action", "Go to Line"), this);
-    mGoToLine->setIcon(QIcon::fromTheme(QStringLiteral("go-jump")));
+    mGoToLine->setIcon(QIcon::fromTheme(u"go-jump"_s));
     mGoToLine->setShortcut(QKeySequence(Qt::CTRL | Qt::Key_G));
     connect(mGoToLine, &QAction::triggered, this, &SieveEditorMenuBar::gotoLine);
 

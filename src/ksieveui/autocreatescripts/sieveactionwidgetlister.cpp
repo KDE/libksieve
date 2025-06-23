@@ -5,6 +5,8 @@
 */
 
 #include "sieveactionwidgetlister.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
 #include "sieveactions/sieveaction.h"
@@ -84,16 +86,16 @@ void SieveActionWidget::generatedScript(QString &script, QStringList &required, 
             indent += AutoCreateScriptUtil::indentation();
         }
         if (!comment.trimmed().isEmpty()) {
-            const QList<QStringView> commentList = QStringView(comment).split(QLatin1Char('\n'));
+            const QList<QStringView> commentList = QStringView(comment).split(u'\n');
             for (const QStringView str : commentList) {
                 if (str.isEmpty()) {
-                    script += QLatin1Char('\n');
+                    script += u'\n';
                 } else {
-                    script += indent + QLatin1Char('#') + str + QLatin1Char('\n');
+                    script += indent + u'#' + str + u'\n';
                 }
             }
         }
-        script += indent + widgetAction->code(currentWidget) + QLatin1Char('\n');
+        script += indent + widgetAction->code(currentWidget) + u'\n';
     }
 }
 
@@ -109,7 +111,7 @@ void SieveActionWidget::initWidget()
     QStringList listCapabilities = mSieveGraphicalModeWidget->sieveCapabilities();
     // imapflags was old name of imap4flags but still used.
     if (listCapabilities.contains(QLatin1StringView("imap4flags"))) {
-        listCapabilities.append(QStringLiteral("imapflags"));
+        listCapabilities.append(u"imapflags"_s);
     }
     for (const auto &action : list) {
         if (action->needCheckIfServerHasCapability()) {
@@ -138,7 +140,7 @@ void SieveActionWidget::initWidget()
     mCommentButton = new QToolButton(this);
     mCommentButton->setToolTip(i18nc("@info:tooltip", "Add comment"));
     mLayout->addWidget(mCommentButton, 1, 1);
-    mCommentButton->setIcon(QIcon::fromTheme(QStringLiteral("view-pim-notes")));
+    mCommentButton->setIcon(QIcon::fromTheme(u"view-pim-notes"_s));
     connect(mCommentButton, &QToolButton::clicked, this, &SieveActionWidget::slotAddComment);
 
     mComboBox->addItem(QLatin1StringView(""));
@@ -154,11 +156,11 @@ void SieveActionWidget::initWidget()
     connect(mComboBox, &QComboBox::activated, this, &SieveActionWidget::slotActionChanged);
 
     mAdd = new QPushButton(this);
-    mAdd->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+    mAdd->setIcon(QIcon::fromTheme(u"list-add"_s));
     mAdd->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
 
     mRemove = new QPushButton(this);
-    mRemove->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
+    mRemove->setIcon(QIcon::fromTheme(u"list-remove"_s));
     mRemove->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
     mLayout->addWidget(mAdd, 1, 4);
     mLayout->addWidget(mRemove, 1, 5);
@@ -247,7 +249,7 @@ void SieveActionWidget::updateAddRemoveButton(bool addButtonEnabled, bool remove
 
 void SieveActionWidget::setLocaleVariable(const SieveGlobalVariableActionWidget::VariableElement &var)
 {
-    const int index = mComboBox->findData(QStringLiteral("set"));
+    const int index = mComboBox->findData(u"set"_s);
     if (index != -1) {
         mComboBox->setCurrentIndex(index);
         slotActionChanged(index);
@@ -256,7 +258,7 @@ void SieveActionWidget::setLocaleVariable(const SieveGlobalVariableActionWidget:
             localVar->setLocalVariable(this, var);
         }
     } else {
-        // error += i18n("Script contains unsupported feature \"%1\"", actionName) + QLatin1Char('\n');
+        // error += i18n("Script contains unsupported feature \"%1\"", actionName) + u'\n';
         // qCDebug(LIBKSIEVEUI_LOG) << "Action " << actionName << " not supported";
     }
 }
@@ -271,7 +273,7 @@ void SieveActionWidget::setAction(const QString &actionName, QXmlStreamReader &e
         action->setParamWidgetValue(element, this, error);
         action->setComment(comment);
     } else {
-        error += i18n("Script contains unsupported feature \"%1\"", actionName) + QLatin1Char('\n');
+        error += i18n("Script contains unsupported feature \"%1\"", actionName) + u'\n';
         qCDebug(LIBKSIEVEUI_LOG) << "Action " << actionName << " not supported";
         element.skipCurrentElement();
     }
@@ -407,7 +409,7 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                     const QString actionName = element.attributes().value(QLatin1StringView("name")).toString();
                     if (tagName == QLatin1StringView("control") && actionName == QLatin1StringView("if")) {
                         qCDebug(LIBKSIEVEUI_LOG) << "We found an loop if in a loop if. Not supported";
-                        error += i18n("We detected a loop if in a loop if. It's not supported") + QLatin1Char('\n');
+                        error += i18n("We detected a loop if in a loop if. It's not supported") + u'\n';
                     }
                     if (firstAction) {
                         firstAction = false;
@@ -423,14 +425,14 @@ void SieveActionWidgetLister::loadScript(QXmlStreamReader &element, bool onlyAct
                 previousActionWasAComment = false;
             } else if (tagName == QLatin1StringView("comment")) {
                 if (!comment.isEmpty()) {
-                    comment += QLatin1Char('\n');
+                    comment += u'\n';
                 }
                 previousActionWasAComment = true;
                 comment += element.readElementText();
             } else if (tagName == QLatin1StringView("crlf")) {
                 // Add new line if previous action was a comment
                 if (previousActionWasAComment) {
-                    comment += QLatin1Char('\n');
+                    comment += u'\n';
                 }
                 element.skipCurrentElement();
             } else {

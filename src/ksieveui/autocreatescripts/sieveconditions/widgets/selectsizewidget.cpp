@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectsizewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "selectsizetypecombobox.h"
 
 #include <QSpinBox>
@@ -34,16 +36,16 @@ SelectSizeWidget::~SelectSizeWidget() = default;
 QString SelectSizeWidget::code() const
 {
     const QString type = mSelectSizeType->code();
-    return QStringLiteral("%1%2").arg(mSpinBoxSize->value()).arg(type);
+    return u"%1%2"_s.arg(mSpinBoxSize->value()).arg(type);
 }
 
 void SelectSizeWidget::setCode(qlonglong value, const QString &identifier, const QString &name, QString &error)
 {
-    if (identifier == QLatin1Char('K')) {
+    if (identifier == u'K') {
         value /= 1024;
-    } else if (identifier == QLatin1Char('M')) {
+    } else if (identifier == u'M') {
         value /= (1024 * 1024);
-    } else if (identifier == QLatin1Char('G')) {
+    } else if (identifier == u'G') {
         value /= (1024 * 1024 * 1024);
     }
     mSelectSizeType->setCode(identifier, name, error);

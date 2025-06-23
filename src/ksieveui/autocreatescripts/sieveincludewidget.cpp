@@ -5,6 +5,8 @@
 */
 
 #include "sieveincludewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
@@ -40,8 +42,8 @@ SieveIncludeLocation::~SieveIncludeLocation() = default;
 
 void SieveIncludeLocation::initialize()
 {
-    addItem(i18n("personal"), QStringLiteral(":personal"));
-    addItem(i18n("global"), QStringLiteral(":global"));
+    addItem(i18n("personal"), u":personal"_s);
+    addItem(i18n("global"), u":global"_s);
 }
 
 QString SieveIncludeLocation::code() const
@@ -55,7 +57,7 @@ void SieveIncludeLocation::setCode(const QString &code, QString &error)
     if (index != -1) {
         setCurrentIndex(index);
     } else {
-        error += i18n("Unknown location type \"%1\" during parsing includes", code) + QLatin1Char('\n');
+        error += i18n("Unknown location type \"%1\" during parsing includes", code) + u'\n';
         setCurrentIndex(0);
     }
 }
@@ -111,14 +113,14 @@ void SieveIncludeActionWidget::generatedScript(QString &script)
         return;
     }
     script += QLatin1StringView("include ");
-    script += mLocation->code() + QLatin1Char(' ');
+    script += mLocation->code() + u' ';
     if (mOptional->isChecked()) {
         script += QLatin1StringView(":optional ");
     }
     if (mOnce->isChecked()) {
         script += QLatin1StringView(":once ");
     }
-    script += QStringLiteral("\"%1\";\n").arg(includeName);
+    script += u"\"%1\";\n"_s.arg(includeName);
 }
 
 void SieveIncludeActionWidget::initWidget()
@@ -150,11 +152,11 @@ void SieveIncludeActionWidget::initWidget()
     mLayout->addWidget(mOnce, 1, 5);
 
     mAdd = new QPushButton(this);
-    mAdd->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+    mAdd->setIcon(QIcon::fromTheme(u"list-add"_s));
     mAdd->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
 
     mRemove = new QPushButton(this);
-    mRemove->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
+    mRemove->setIcon(QIcon::fromTheme(u"list-remove"_s));
     mRemove->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
     mLayout->addWidget(mAdd, 1, 6);
     mLayout->addWidget(mRemove, 1, 7);
@@ -219,7 +221,7 @@ void SieveIncludeWidget::slotHelp()
     const QString help = i18n(
         "The \"include\" command takes an optional \"location\" parameter, an optional \":once\" parameter, an optional \":optional\" parameter, and a single "
         "string argument representing the name of the script to include for processing at that point.");
-    const QString href = QStringLiteral("https://tools.ietf.org/html/rfc6609#page-4");
+    const QString href = u"https://tools.ietf.org/html/rfc6609#page-4"_s;
     const QString fullWhatsThis = AutoCreateScriptUtil::createFullWhatsThis(help, href);
     QWhatsThis::showText(QCursor::pos(), fullWhatsThis, mHelpButton);
 }
@@ -301,7 +303,7 @@ void SieveIncludeWidgetLister::setListOfIncludeFile(const QStringList &listOfInc
 
 void SieveIncludeWidgetLister::generatedScript(QString &script, QStringList &requireModules)
 {
-    requireModules << QStringLiteral("include");
+    requireModules << u"include"_s;
     const QList<QWidget *> widgetList = widgets();
     QList<QWidget *>::ConstIterator with = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();
@@ -339,7 +341,7 @@ QWidget *SieveIncludeWidgetLister::createWidget(QWidget *parent)
 void SieveIncludeWidgetLister::loadScript(QXmlStreamReader &element, QString &error)
 {
     if (widgets().count() == MAXIMUMINCLUDEACTION) {
-        error += QLatin1Char('\n') + i18n("We can not add more includes elements.") + QLatin1Char('\n');
+        error += u'\n' + i18n("We can not add more includes elements.") + u'\n';
         return;
     }
     SieveIncludeActionWidget *w = static_cast<SieveIncludeActionWidget *>(widgets().constLast());

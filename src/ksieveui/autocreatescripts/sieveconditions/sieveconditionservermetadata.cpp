@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionservermetadata.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "editor/sieveeditorutil.h"
@@ -20,7 +22,7 @@
 
 using namespace KSieveUi;
 SieveConditionServerMetaData::SieveConditionServerMetaData(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("servermetadata"), i18n("Server Meta Data"), parent)
+    : SieveCondition(sieveGraphicalModeWidget, u"servermetadata"_s, i18n("Server Meta Data"), parent)
 {
 }
 
@@ -72,33 +74,33 @@ QWidget *SieveConditionServerMetaData::createParamWidget(QWidget *parent) const
 
 QString SieveConditionServerMetaData::code(QWidget *w) const
 {
-    const SelectMatchTypeComboBox *selectType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("selecttype"));
+    const SelectMatchTypeComboBox *selectType = w->findChild<SelectMatchTypeComboBox *>(u"selecttype"_s);
     bool isNegative = false;
     const QString matchString = selectType->code(isNegative);
 
-    QString result = (isNegative ? QStringLiteral("not ") : QString()) + QStringLiteral("servermetadata %1 ").arg(matchString);
+    QString result = (isNegative ? u"not "_s : QString()) + u"servermetadata %1 "_s.arg(matchString);
 
-    const QLineEdit *mailbox = w->findChild<QLineEdit *>(QStringLiteral("mailbox"));
+    const QLineEdit *mailbox = w->findChild<QLineEdit *>(u"mailbox"_s);
     const QString mailboxStr = mailbox->text();
 
-    result += QStringLiteral("\"%1\" ").arg(mailboxStr);
+    result += u"\"%1\" "_s.arg(mailboxStr);
 
-    const QLineEdit *annotation = w->findChild<QLineEdit *>(QStringLiteral("annotation"));
+    const QLineEdit *annotation = w->findChild<QLineEdit *>(u"annotation"_s);
     const QString annotationStr = annotation->text();
 
-    result += QStringLiteral("\"%1\" ").arg(annotationStr);
+    result += u"\"%1\" "_s.arg(annotationStr);
 
-    const AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+    const AbstractRegexpEditorLineEdit *value = w->findChild<AbstractRegexpEditorLineEdit *>(u"value"_s);
     const QString valueStr = value->code();
 
-    result += QStringLiteral("\"%1\"").arg(valueStr);
+    result += u"\"%1\""_s.arg(valueStr);
     return result + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionServerMetaData::needRequires(QWidget *w) const
 {
-    const SelectMatchTypeComboBox *selectType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("selecttype"));
-    return QStringList() << QStringLiteral("servermetadata") << selectType->needRequires();
+    const SelectMatchTypeComboBox *selectType = w->findChild<SelectMatchTypeComboBox *>(u"selecttype"_s);
+    return QStringList() << u"servermetadata"_s << selectType->needRequires();
 }
 
 bool SieveConditionServerMetaData::needCheckIfServerHasCapability() const
@@ -108,7 +110,7 @@ bool SieveConditionServerMetaData::needCheckIfServerHasCapability() const
 
 QString SieveConditionServerMetaData::serverNeedsCapability() const
 {
-    return QStringLiteral("servermetadata");
+    return u"servermetadata"_s;
 }
 
 QString SieveConditionServerMetaData::help() const
@@ -128,17 +130,17 @@ void SieveConditionServerMetaData::setParamWidgetValue(QXmlStreamReader &element
             const QString tagValue = element.readElementText();
             switch (index) {
             case 0: {
-                auto mailbox = w->findChild<QLineEdit *>(QStringLiteral("mailbox"));
+                auto mailbox = w->findChild<QLineEdit *>(u"mailbox"_s);
                 mailbox->setText(tagValue);
                 break;
             }
             case 1: {
-                auto annotation = w->findChild<QLineEdit *>(QStringLiteral("annotation"));
+                auto annotation = w->findChild<QLineEdit *>(u"annotation"_s);
                 annotation->setText(tagValue);
                 break;
             }
             case 2: {
-                auto value = w->findChild<AbstractRegexpEditorLineEdit *>(QStringLiteral("value"));
+                auto value = w->findChild<AbstractRegexpEditorLineEdit *>(u"value"_s);
                 value->setCode(tagValue);
                 break;
             }
@@ -149,7 +151,7 @@ void SieveConditionServerMetaData::setParamWidgetValue(QXmlStreamReader &element
             }
             ++index;
         } else if (tagName == QLatin1StringView("tag")) {
-            auto selectType = w->findChild<SelectMatchTypeComboBox *>(QStringLiteral("selecttype"));
+            auto selectType = w->findChild<SelectMatchTypeComboBox *>(u"selecttype"_s);
             selectType->setCode(AutoCreateScriptUtil::tagValueWithCondition(element.readElementText(), notCondition), name(), error);
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();

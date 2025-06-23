@@ -5,6 +5,8 @@
 */
 
 #include "searchserverwithvacationsupportjob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "util/findaccountinfojob.h"
 #include <QVariant>
 

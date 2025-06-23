@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectmimetypecombobox.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
@@ -22,15 +24,15 @@ SelectMimeTypeComboBox::~SelectMimeTypeComboBox() = default;
 void SelectMimeTypeComboBox::initialize()
 {
     // TODO verify
-    addItem(i18n("JPEG"), QStringLiteral("image/jpeg"));
-    addItem(i18n("TIFF"), QStringLiteral("image/tiff"));
-    addItem(i18n("PNG"), QStringLiteral("image/png"));
-    addItem(i18n("BMP"), QStringLiteral("image/bmp"));
+    addItem(i18n("JPEG"), u"image/jpeg"_s);
+    addItem(i18n("TIFF"), u"image/tiff"_s);
+    addItem(i18n("PNG"), u"image/png"_s);
+    addItem(i18n("BMP"), u"image/bmp"_s);
 }
 
 QString SelectMimeTypeComboBox::code() const
 {
-    return QStringLiteral("\"%1\"").arg(itemData(currentIndex()).toString());
+    return u"\"%1\""_s.arg(itemData(currentIndex()).toString());
 }
 
 void SelectMimeTypeComboBox::setCode(const QString &code, const QString &name, QString &error)

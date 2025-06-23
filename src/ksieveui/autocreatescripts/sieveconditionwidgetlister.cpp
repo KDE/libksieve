@@ -5,6 +5,8 @@
 */
 
 #include "sieveconditionwidgetlister.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
 #include "libksieveui_debug.h"
@@ -68,7 +70,7 @@ void SieveConditionWidget::generatedScript(QString &script, QStringList &require
                 required.append(r);
             }
         }
-        script += mConditionList.at(mComboBox->currentIndex())->code(currentWidget) + QLatin1Char('\n');
+        script += mConditionList.at(mComboBox->currentIndex())->code(currentWidget) + u'\n';
     }
 }
 
@@ -109,7 +111,7 @@ void SieveConditionWidget::initWidget()
     mCommentButton = new QToolButton(this);
     mCommentButton->setToolTip(i18nc("@info:tooltip", "Add comment"));
     mLayout->addWidget(mCommentButton, 1, 1);
-    mCommentButton->setIcon(QIcon::fromTheme(QStringLiteral("view-pim-notes")));
+    mCommentButton->setIcon(QIcon::fromTheme(u"view-pim-notes"_s));
     connect(mCommentButton, &QToolButton::clicked, this, &SieveConditionWidget::slotAddComment);
 
     mComboBox->addItem(QLatin1StringView(""));
@@ -122,11 +124,11 @@ void SieveConditionWidget::initWidget()
     mComboBox->adjustSize();
 
     mAdd = new QPushButton(this);
-    mAdd->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+    mAdd->setIcon(QIcon::fromTheme(u"list-add"_s));
     mAdd->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
 
     mRemove = new QPushButton(this);
-    mRemove->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
+    mRemove->setIcon(QIcon::fromTheme(u"list-remove"_s));
     mRemove->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
 
     mLayout->addWidget(mAdd, 1, 4);
@@ -219,7 +221,7 @@ void SieveConditionWidget::setCondition(const QString &conditionName, QXmlStream
         KSieveUi::SieveCondition *condition = mConditionList.at(index);
         condition->setParamWidgetValue(element, this, notCondition, error);
     } else {
-        error += i18n("Script contains unsupported feature \"%1\"", conditionName) + QLatin1Char('\n');
+        error += i18n("Script contains unsupported feature \"%1\"", conditionName) + u'\n';
         qCDebug(LIBKSIEVEUI_LOG) << "Condition " << conditionName << " not supported";
         element.skipCurrentElement();
     }

@@ -5,6 +5,8 @@
 */
 
 #include "sievescriptblockwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescriptutil_p.h"
 #include "sieveactionwidgetlister.h"
 #include "sieveconditionwidgetlister.h"
@@ -88,7 +90,7 @@ SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *g
     mNewBlockType->addItem(i18n("\"else\" block"));
 
     mAddBlockType = new QPushButton(this);
-    mAddBlockType->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+    mAddBlockType->setIcon(QIcon::fromTheme(u"list-add"_s));
     mAddBlockType->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed));
     newBlockLayout->addWidget(mAddBlockType);
     connect(mAddBlockType, &QPushButton::clicked, this, &SieveScriptBlockWidget::slotAddBlock);
@@ -189,10 +191,10 @@ void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requi
         QString blockStr;
         switch (pageType()) {
         case BlockIf:
-            blockStr = indentation + QStringLiteral("if ");
+            blockStr = indentation + u"if "_s;
             break;
         case BlockElsIf:
-            blockStr = QStringLiteral("elsif ");
+            blockStr = u"elsif "_s;
             break;
         case BlockElse:
             break;
@@ -217,7 +219,7 @@ void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requi
         if (hasUniqCondition) {
             script += indentation + QLatin1StringView("{\n");
         } else {
-            script += indentation + QStringLiteral(")\n%1{\n").arg(indentation);
+            script += indentation + u")\n%1{\n"_s.arg(indentation);
         }
     }
     mScriptActionLister->generatedScript(script, required, onlyActions, inForEveryPartLoop);

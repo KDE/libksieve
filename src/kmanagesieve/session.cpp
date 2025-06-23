@@ -6,6 +6,8 @@
 */
 
 #include "session.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sessionthread_p.h"
 #include "sievejob_p.h"
 
@@ -98,7 +100,7 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
                                i18nc("@title:window", "Sieve Server Does Not Advertise TLS"),
                                KGuiItem(i18nc("@action:button", "&Start TLS nonetheless")),
                                KStandardGuiItem::cancel(),
-                               QStringLiteral("ask_starttls_%1").arg(m_url.host()))
+                               u"ask_starttls_%1"_s.arg(m_url.host()))
                             != KMessageBox::Continue) {
                         setErrorMessage(QAbstractSocket::UnknownSocketError, i18n("TLS encryption requested, but not supported by server."));
                         disconnectFromHost();
@@ -123,11 +125,11 @@ void Session::processResponse(const KManageSieve::Response &response, const QByt
             m_implementation = QString::fromLatin1(response.value());
             qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Connected to Sieve server: " << response.value();
         } else if (response.key() == "SASL") {
-            m_saslMethods = QString::fromLatin1(response.value()).split(QLatin1Char(' '), Qt::SkipEmptyParts);
+            m_saslMethods = QString::fromLatin1(response.value()).split(u' ', Qt::SkipEmptyParts);
             qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Server SASL authentication methods: " << m_saslMethods;
         } else if (response.key() == "SIEVE") {
             // Save script capabilities
-            m_sieveExtensions = QString::fromLatin1(response.value()).split(QLatin1Char(' '), Qt::SkipEmptyParts);
+            m_sieveExtensions = QString::fromLatin1(response.value()).split(u' ', Qt::SkipEmptyParts);
             qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Server script capabilities: " << m_sieveExtensions;
         } else if (response.key() == "STARTTLS") {
             qCDebug(KMANAGERSIEVE_LOG) << objectName() << "Server supports TLS";
@@ -218,7 +220,7 @@ bool Session::requestCapabilitiesAfterStartTls() const
     // Cyrus didn't send CAPABILITIES after STARTTLS until 2.3.11, which is
     // not standard conform, but we need to support that anyway.
     // m_implementation looks like this 'Cyrus timsieved v2.2.12' for Cyrus btw.
-    QRegularExpression regExp(QStringLiteral("Cyrus\\stimsieved\\sv(\\d+)\\.(\\d+)\\.(\\d+)([-\\w]*)"), QRegularExpression::CaseInsensitiveOption);
+    QRegularExpression regExp(u"Cyrus\\stimsieved\\sv(\\d+)\\.(\\d+)\\.(\\d+)([-\\w]*)"_s, QRegularExpression::CaseInsensitiveOption);
     QRegularExpressionMatch matchExpression = regExp.match(m_implementation);
     if (matchExpression.hasMatch()) {
         const int major = matchExpression.captured(1).toInt();
@@ -240,7 +242,7 @@ void Session::sendData(const QByteArray &data)
 
 QStringList Session::requestedSaslMethod() const
 {
-    const QString m = QUrlQuery(m_url).queryItemValue(QStringLiteral("x-mech"));
+    const QString m = QUrlQuery(m_url).queryItemValue(u"x-mech"_s);
     if (!m.isEmpty()) {
         return QStringList(m);
     }
@@ -261,7 +263,7 @@ KManageSieve::AuthDetails Session::requestAuthDetails(const QUrl &url)
         url.host());
 
     QPointer<KPasswordDialog> dlg = new KPasswordDialog(nullptr, KPasswordDialog::ShowUsernameLine | KPasswordDialog::ShowKeepPassword);
-    dlg->setRevealPasswordMode(KAuthorized::authorize(QStringLiteral("lineedit_reveal_password")) ? KPassword::RevealMode::OnlyNew
+    dlg->setRevealPasswordMode(KAuthorized::authorize(u"lineedit_reveal_password"_s) ? KPassword::RevealMode::OnlyNew
                                                                                                   : KPassword::RevealMode::Never);
     dlg->setUsername(ai.username);
     dlg->setPassword(ai.password);
@@ -325,7 +327,7 @@ void Session::setErrorMessage(int error, const QString &msg)
 
 bool Session::allowUnencrypted() const
 {
-    return QUrlQuery(m_url).queryItemValue(QStringLiteral("x-allow-unencrypted")) == QLatin1StringView("true");
+    return QUrlQuery(m_url).queryItemValue(u"x-allow-unencrypted"_s) == QLatin1StringView("true");
 }
 
 #include "moc_session.cpp"

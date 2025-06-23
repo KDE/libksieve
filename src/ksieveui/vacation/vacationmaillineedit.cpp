@@ -5,6 +5,8 @@
 */
 
 #include "vacationmaillineedit.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KStatefulBrush>
 
 #include <KColorScheme>
@@ -19,7 +21,7 @@ void VacationMailLineEdit::setInvalidEmail(bool state)
 {
     if (state) {
         const KStatefulBrush bgBrush(KColorScheme::View, KColorScheme::NegativeBackground);
-        setStyleSheet(QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(palette()).color().name()));
+        setStyleSheet(u"QLineEdit{ background-color:%1 }"_s.arg(bgBrush.brush(palette()).color().name()));
     } else {
         setStyleSheet(QString());
     }

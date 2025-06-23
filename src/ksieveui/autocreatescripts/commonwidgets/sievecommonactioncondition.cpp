@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sievecommonactioncondition.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "libksieveui_debug.h"
 
 #include <KLocalizedString>
@@ -98,23 +100,23 @@ void SieveCommonActionCondition::setComment(const QString &comment)
 
 void SieveCommonActionCondition::unknownTagValue(const QString &tagValue, QString &error)
 {
-    error += i18n("An unknown tag value \"%1\" was found during parsing action \"%2\".", tagValue, name()) + QLatin1Char('\n');
+    error += i18n("An unknown tag value \"%1\" was found during parsing action \"%2\".", tagValue, name()) + u'\n';
 }
 void SieveCommonActionCondition::unknownTag(const QStringView &tag, QString &error)
 {
     const QString result = tag.toString();
-    error += i18n("An unknown tag \"%1\" was found during parsing action \"%2\".", result, name()) + QLatin1Char('\n');
+    error += i18n("An unknown tag \"%1\" was found during parsing action \"%2\".", result, name()) + u'\n';
 }
 
 void SieveCommonActionCondition::tooManyArguments(const QStringView &tagName, int index, int maxValue, QString &error)
 {
     const QString result = tagName.toString();
-    error += i18n("Too many arguments found for \"%1\", max value is %2, number of value found %3 for %4", name(), maxValue, index, result) + QLatin1Char('\n');
+    error += i18n("Too many arguments found for \"%1\", max value is %2, number of value found %3 for %4", name(), maxValue, index, result) + u'\n';
 }
 
 void SieveCommonActionCondition::serverDoesNotSupportFeatures(const QString &feature, QString &error)
 {
-    error += i18n("A feature \"%1\" in condition \"%2\" is not supported by server", feature, name()) + QLatin1Char('\n');
+    error += i18n("A feature \"%1\" in condition \"%2\" is not supported by server", feature, name()) + u'\n';
 }
 
 QUrl SieveCommonActionCondition::href() const

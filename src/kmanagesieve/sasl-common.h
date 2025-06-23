@@ -9,6 +9,8 @@
 #pragma once
 
 #include <QDir>
+using namespace Qt::Literals::StringLiterals;
+
 #include <QFile>
 #include <cstdio>
 
@@ -25,8 +27,8 @@ inline bool initSASL()
 #ifdef Q_OS_WIN // krazy:exclude=cpp
     for (const auto &path : QCoreApplication::libraryPaths()) {
         QDir dir(path);
-        if (dir.exists(QStringLiteral("sasl2"))) {
-            auto libInstallPath = QFile::encodeName(dir.absoluteFilePath(QStringLiteral("sasl2")));
+        if (dir.exists(u"sasl2"_s)) {
+            auto libInstallPath = QFile::encodeName(dir.absoluteFilePath(u"sasl2"_s));
             if (sasl_set_path(SASL_PATH_TYPE_PLUGIN, libInstallPath.data()) != SASL_OK) {
                 fprintf(stderr, "SASL path initialization failed!\n");
                 return false;

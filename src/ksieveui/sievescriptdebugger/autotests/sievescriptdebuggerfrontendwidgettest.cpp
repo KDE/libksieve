@@ -5,6 +5,8 @@
 */
 
 #include "sievescriptdebuggerfrontendwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../sievescriptdebuggerfrontendwidget.h"
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
@@ -28,28 +30,28 @@ void SieveScriptDebuggerFrontEndWidgetTest::shouldHaveDefaultValue()
     KSieveUi::SieveScriptDebuggerFrontEndWidget w;
     QVERIFY(w.script().isEmpty());
 
-    auto splitter = w.findChild<QSplitter *>(QStringLiteral("splitter"));
+    auto splitter = w.findChild<QSplitter *>(u"splitter"_s);
     QVERIFY(splitter);
     QCOMPARE(splitter->count(), 2);
 
-    auto warning = w.findChild<KSieveUi::SieveScriptDebuggerWarning *>(QStringLiteral("sievescriptdebuggerwarning"));
+    auto warning = w.findChild<KSieveUi::SieveScriptDebuggerWarning *>(u"sievescriptdebuggerwarning"_s);
     QVERIFY(warning);
 
-    auto emailLab = w.findChild<QLabel *>(QStringLiteral("emaillab"));
+    auto emailLab = w.findChild<QLabel *>(u"emaillab"_s);
     QVERIFY(emailLab);
 
-    auto emailPath = w.findChild<KUrlRequester *>(QStringLiteral("emailpath"));
+    auto emailPath = w.findChild<KUrlRequester *>(u"emailpath"_s);
     QVERIFY(emailPath);
 
-    auto extensionLab = w.findChild<QLabel *>(QStringLiteral("extensionlab"));
+    auto extensionLab = w.findChild<QLabel *>(u"extensionlab"_s);
     QVERIFY(extensionLab);
 
-    auto extension = w.findChild<QLineEdit *>(QStringLiteral("extension"));
+    auto extension = w.findChild<QLineEdit *>(u"extension"_s);
     QVERIFY(extension);
     QVERIFY(extension->text().isEmpty());
     QVERIFY(extension->isClearButtonEnabled());
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-    auto textToSpeechWidget = w.findChild<TextEditTextToSpeech::TextToSpeechContainerWidget *>(QStringLiteral("texttospeechwidget"));
+    auto textToSpeechWidget = w.findChild<TextEditTextToSpeech::TextToSpeechContainerWidget *>(u"texttospeechwidget"_s);
     QVERIFY(textToSpeechWidget);
 #endif
 }
@@ -59,23 +61,23 @@ void SieveScriptDebuggerFrontEndWidgetTest::shouldChangeButtonEnabledState()
     KSieveUi::SieveScriptDebuggerFrontEndWidget w;
     QVERIFY(w.script().isEmpty());
 
-    auto emailPath = w.findChild<KUrlRequester *>(QStringLiteral("emailpath"));
-    emailPath->setUrl(QUrl::fromLocalFile(QStringLiteral("/")));
-    //    QPushButton *debugScriptButton = w.findChild<QPushButton *>(QStringLiteral("debugbutton"));
+    auto emailPath = w.findChild<KUrlRequester *>(u"emailpath"_s);
+    emailPath->setUrl(QUrl::fromLocalFile(u"/"_s));
+    //    QPushButton *debugScriptButton = w.findChild<QPushButton *>(u"debugbutton"_s);
 
     //    QVERIFY(!debugScriptButton->isEnabled());
 
-    //    w.setScript(QStringLiteral("foo"));
+    //    w.setScript(u"foo"_s);
     //    QVERIFY(debugScriptButton->isEnabled());
 
-    //    emailPath->setUrl(QUrl::fromLocalFile(QStringLiteral("    ")));
+    //    emailPath->setUrl(QUrl::fromLocalFile(u"    "_s));
     //    QVERIFY(!debugScriptButton->isEnabled());
 }
 
 void SieveScriptDebuggerFrontEndWidgetTest::shouldAddScript()
 {
     KSieveUi::SieveScriptDebuggerFrontEndWidget w;
-    const QString script = QStringLiteral("foo foo \n bla bla");
+    const QString script = u"foo foo \n bla bla"_s;
     w.setScript(script);
     QCOMPARE(w.script(), script);
 }
@@ -84,16 +86,16 @@ void SieveScriptDebuggerFrontEndWidgetTest::shouldNotAccept()
 {
     KSieveUi::SieveScriptDebuggerFrontEndWidget w;
     w.show();
-    w.setScript(QStringLiteral("debug_log"));
-    auto warning = w.findChild<KSieveUi::SieveScriptDebuggerWarning *>(QStringLiteral("sievescriptdebuggerwarning"));
+    w.setScript(u"debug_log"_s);
+    auto warning = w.findChild<KSieveUi::SieveScriptDebuggerWarning *>(u"sievescriptdebuggerwarning"_s);
 
     QVERIFY(!w.canAccept());
     QVERIFY(warning->isVisible());
-    w.setScript(QStringLiteral("foo foo \n bla bla"));
+    w.setScript(u"foo foo \n bla bla"_s);
     QVERIFY(w.canAccept());
     QVERIFY(!warning->isVisible());
 
-    w.setScript(QStringLiteral("require \"vnd.dovecot.debug\""));
+    w.setScript(u"require \"vnd.dovecot.debug\""_s);
     QVERIFY(!w.canAccept());
     QVERIFY(warning->isVisible());
 }

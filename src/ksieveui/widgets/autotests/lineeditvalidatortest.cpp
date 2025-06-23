@@ -5,6 +5,8 @@
 */
 
 #include "lineeditvalidatortest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../lineeditvalidator.h"
 #include <QTest>
 
@@ -28,7 +30,7 @@ void LineEditValidatorTest::shouldAssignRegularExpression_data()
     QTest::addColumn<QString>("regularExpression");
     QTest::addColumn<bool>("success");
     QTest::newRow("Empty") << QString() << true;
-    QTest::newRow("error") << QStringLiteral("\\u2029") << false;
+    QTest::newRow("error") << u"\\u2029"_s << false;
 }
 
 void LineEditValidatorTest::shouldAssignRegularExpression()
@@ -45,10 +47,10 @@ void LineEditValidatorTest::shouldValidateText_data()
     QTest::addColumn<QString>("input");
     QTest::addColumn<QString>("output");
     QTest::newRow("Empty") << QString() << QString();
-    QTest::newRow("normal") << QStringLiteral("foo") << QStringLiteral("foo");
-    QTest::newRow("exclu-quote") << QStringLiteral("foo\"") << QStringLiteral("foo");
-    QTest::newRow("exclu-quote2") << QStringLiteral(" \"foo\"") << QStringLiteral(" foo");
-    QTest::newRow("exclu-quote3") << QStringLiteral("loo@kde.org \"foo\" foo \"toto\" s") << QStringLiteral("loo@kde.org foo foo toto s");
+    QTest::newRow("normal") << u"foo"_s << u"foo"_s;
+    QTest::newRow("exclu-quote") << u"foo\""_s << u"foo"_s;
+    QTest::newRow("exclu-quote2") << u" \"foo\""_s << u" foo"_s;
+    QTest::newRow("exclu-quote3") << u"loo@kde.org \"foo\" foo \"toto\" s"_s << u"loo@kde.org foo foo toto s"_s;
 }
 
 void LineEditValidatorTest::shouldValidateText()

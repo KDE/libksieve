@@ -22,10 +22,10 @@
 
 #include "autocreatescripts/sieveactions/widgets/addresslineedit.h"
 using namespace KSieveUi;
-
+using namespace Qt::Literals::StringLiterals;
 QString AutoCreateScriptUtil::createMultiLine(const QString &str)
 {
-    const QString result = QStringLiteral("\n%1\n.\n;\n").arg(str);
+    const QString result = u"\n%1\n.\n;\n"_s.arg(str);
     return result;
 }
 
@@ -51,29 +51,29 @@ QString AutoCreateScriptUtil::quoteStr(const QString &str, bool protectSlash)
     if (protectSlash) {
         st = AutoCreateScriptUtil::protectSlash(str);
     }
-    return st.replace(QLatin1StringView("\""), QStringLiteral("\\\""));
+    return st.replace(QLatin1StringView("\""), u"\\\""_s);
 }
 
 QString AutoCreateScriptUtil::protectSlash(QString str)
 {
-    return str.replace(QLatin1Char('\\'), QStringLiteral("\\\\"));
+    return str.replace(u'\\', u"\\\\"_s);
 }
 
 QString AutoCreateScriptUtil::createList(const QStringList &lst, bool addSemiColon, bool protectSlash)
 {
     QString result;
-    result = QLatin1Char('[');
+    result = u'[';
     bool wasFirst = true;
     for (QString str : lst) {
         if (protectSlash) {
             str = AutoCreateScriptUtil::protectSlash(str);
         }
-        result += (wasFirst ? QString() : QStringLiteral(",")) + QStringLiteral(" \"%1\"").arg(quoteStr(str, false));
+        result += (wasFirst ? QString() : u","_s) + u" \"%1\""_s.arg(quoteStr(str, false));
         wasFirst = false;
     }
     result += QLatin1StringView(" ]");
     if (addSemiColon) {
-        result += QLatin1Char(';');
+        result += u';';
     }
 
     return result;
@@ -82,20 +82,20 @@ QString AutoCreateScriptUtil::createList(const QStringList &lst, bool addSemiCol
 QStringList AutoCreateScriptUtil::createListFromString(QString str)
 {
     QStringList lst;
-    if (str.startsWith(QLatin1Char('[')) && str.endsWith(QLatin1StringView("];"))) {
+    if (str.startsWith(u'[') && str.endsWith(QLatin1StringView("];"))) {
         str.remove(0, 1);
         str.remove(str.length() - 2, 2);
-    } else if (str.startsWith(QLatin1Char('[')) && str.endsWith(QLatin1StringView("]"))) {
+    } else if (str.startsWith(u'[') && str.endsWith(QLatin1StringView("]"))) {
         str.remove(0, 1);
         str.remove(str.length() - 1, 1);
     } else {
         return lst;
     }
-    lst = str.split(QStringLiteral(", "));
+    lst = str.split(u", "_s);
     QStringList resultLst;
     resultLst.reserve(lst.count());
     for (QString s : std::as_const(lst)) {
-        s.remove(QLatin1Char('"'));
+        s.remove(u'"');
         resultLst << s.trimmed();
     }
     lst = resultLst;
@@ -104,25 +104,25 @@ QStringList AutoCreateScriptUtil::createListFromString(QString str)
 
 QString AutoCreateScriptUtil::createAddressList(const QString &str, bool addSemiColon)
 {
-    if (str.trimmed().startsWith(QLatin1Char('[')) && str.trimmed().endsWith(QLatin1Char(']'))) {
+    if (str.trimmed().startsWith(u'[') && str.trimmed().endsWith(u']')) {
         return str;
     }
-    return createList(str, QLatin1Char(';'), addSemiColon);
+    return createList(str, u';', addSemiColon);
 }
 
 QString AutoCreateScriptUtil::negativeString(bool isNegative)
 {
-    return isNegative ? QStringLiteral("not ") : QString();
+    return isNegative ? u"not "_s : QString();
 }
 
 QString AutoCreateScriptUtil::tagValueWithCondition(const QString &tag, bool notCondition)
 {
-    return (notCondition ? QStringLiteral("[NOT]") : QString()) + QLatin1Char(':') + tag;
+    return (notCondition ? u"[NOT]"_s : QString()) + u':' + tag;
 }
 
 QString AutoCreateScriptUtil::tagValue(const QString &tag)
 {
-    return QLatin1Char(':') + tag;
+    return u':' + tag;
 }
 
 QString AutoCreateScriptUtil::strValue(QXmlStreamReader &element)
@@ -161,12 +161,12 @@ QStringList AutoCreateScriptUtil::listValue(QXmlStreamReader &element)
 
 QString AutoCreateScriptUtil::fixListValue(QString valueStr)
 {
-    static QRegularExpression reg(QStringLiteral("^\\[\\s*\".*\"\\s*]$"));
-    if (!(valueStr.startsWith(QLatin1Char('[')) && valueStr.endsWith(QLatin1Char(']')))) {
-        valueStr = QStringLiteral("\"%1\"").arg(valueStr);
+    static QRegularExpression reg(u"^\\[\\s*\".*\"\\s*]$"_s);
+    if (!(valueStr.startsWith(u'[')) && valueStr.endsWith(u']')) {
+        valueStr = u"\"%1\""_s.arg(valueStr);
     } else if (valueStr.contains(reg)) {
     } else {
-        valueStr = QStringLiteral("\"%1\"").arg(valueStr);
+        valueStr = u"\"%1\""_s.arg(valueStr);
     }
 
     return valueStr;
@@ -174,7 +174,7 @@ QString AutoCreateScriptUtil::fixListValue(QString valueStr)
 
 void AutoCreateScriptUtil::comboboxItemNotFound(const QString &searchItem, const QString &name, QString &error)
 {
-    error += i18n("Cannot find item \"%1\" in widget \"%2\"", searchItem, name) + QLatin1Char('\n');
+    error += i18n("Cannot find item \"%1\" in widget \"%2\"", searchItem, name) + u'\n';
 }
 
 QString AutoCreateScriptUtil::createFullWhatsThis(const QString &help, const QString &href)
@@ -182,19 +182,19 @@ QString AutoCreateScriptUtil::createFullWhatsThis(const QString &help, const QSt
     if (href.isEmpty()) {
         return help;
     }
-    const QString fullWhatsThis = QLatin1StringView("<qt>") + help + QStringLiteral("<br><a href=\'%1\'>%2</a></qt>").arg(href, i18n("More information"));
+    const QString fullWhatsThis = QLatin1StringView("<qt>") + help + u"<br><a href=\'%1\'>%2</a></qt>"_s.arg(href, i18n("More information"));
     return fullWhatsThis;
 }
 
 QString AutoCreateScriptUtil::indentation()
 {
-    return QStringLiteral("    ");
+    return u"    "_s;
 }
 
 KSieveUi::AbstractMoveImapFolderWidget *AutoCreateScriptUtil::createImapFolderWidget()
 {
     KSieveUi::AbstractMoveImapFolderWidget *edit = nullptr;
-    const KPluginMetaData editWidgetPlugin(QStringLiteral("pim6/libksieve/imapfoldercompletionplugin"));
+    const KPluginMetaData editWidgetPlugin(u"pim6/libksieve/imapfoldercompletionplugin"_s);
 
     const auto result = KPluginFactory::instantiatePlugin<KSieveUi::AbstractMoveImapFolderWidget>(editWidgetPlugin);
     if (result) {
@@ -208,7 +208,7 @@ KSieveUi::AbstractMoveImapFolderWidget *AutoCreateScriptUtil::createImapFolderWi
 KSieveUi::AbstractSelectEmailLineEdit *AutoCreateScriptUtil::createSelectEmailsWidget()
 {
     KSieveUi::AbstractSelectEmailLineEdit *edit = nullptr;
-    const KPluginMetaData editWidgetPlugin(QStringLiteral("pim6/libksieve/emaillineeditplugin"));
+    const KPluginMetaData editWidgetPlugin(u"pim6/libksieve/emaillineeditplugin"_s);
 
     const auto result = KPluginFactory::instantiatePlugin<KSieveUi::AbstractSelectEmailLineEdit>(editWidgetPlugin);
     if (result) {
@@ -229,13 +229,13 @@ QString AutoCreateScriptUtil::generateConditionComment(const QString &comment)
 {
     QString strComment;
     if (!comment.trimmed().isEmpty()) {
-        const QList<QStringView> commentList = QStringView(comment).split(QLatin1Char('\n'));
+        const QList<QStringView> commentList = QStringView(comment).split(u'\n');
         for (const QStringView str : commentList) {
             if (str.isEmpty()) {
-                strComment += QLatin1Char('\n');
+                strComment += u'\n';
             } else {
                 if (!strComment.isEmpty()) {
-                    strComment += QLatin1Char('\n');
+                    strComment += u'\n';
                 }
                 strComment += QLatin1StringView(" #") + str;
             }
@@ -249,7 +249,7 @@ QString AutoCreateScriptUtil::loadConditionComment(QString originalComment, cons
     if (originalComment.isEmpty()) {
         originalComment = comment;
     } else {
-        originalComment += QLatin1Char('\n') + comment;
+        originalComment += u'\n' + comment;
     }
     return originalComment;
 }

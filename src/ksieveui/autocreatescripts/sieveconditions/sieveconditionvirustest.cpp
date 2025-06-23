@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionvirustest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "editor/sieveeditorutil.h"
 #include "widgets/selectcomparatorcombobox.h"
@@ -19,7 +21,7 @@
 using namespace KSieveUi;
 
 SieveConditionVirusTest::SieveConditionVirusTest(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
-    : SieveCondition(sieveGraphicalModeWidget, QStringLiteral("virustest"), i18n("Virus Test"), parent)
+    : SieveCondition(sieveGraphicalModeWidget, u"virustest"_s, i18n("Virus Test"), parent)
 {
 }
 
@@ -51,16 +53,16 @@ QWidget *SieveConditionVirusTest::createParamWidget(QWidget *parent) const
 
 QString SieveConditionVirusTest::code(QWidget *w) const
 {
-    const SelectRelationalMatchType *relation = w->findChild<SelectRelationalMatchType *>(QStringLiteral("relation"));
+    const SelectRelationalMatchType *relation = w->findChild<SelectRelationalMatchType *>(u"relation"_s);
     const QString relationStr = relation->code();
 
-    const SelectComparatorComboBox *comparator = w->findChild<SelectComparatorComboBox *>(QStringLiteral("comparator"));
+    const SelectComparatorComboBox *comparator = w->findChild<SelectComparatorComboBox *>(u"comparator"_s);
     const QString comparatorStr = comparator->code();
 
-    const QSpinBox *spinbox = w->findChild<QSpinBox *>(QStringLiteral("value"));
+    const QSpinBox *spinbox = w->findChild<QSpinBox *>(u"value"_s);
     const QString value = QString::number(spinbox->value());
 
-    return QStringLiteral("virustest %1 %2 \"%3\"").arg(relationStr, comparatorStr, value) + AutoCreateScriptUtil::generateConditionComment(comment());
+    return u"virustest %1 %2 \"%3\""_s.arg(relationStr, comparatorStr, value) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 bool SieveConditionVirusTest::needCheckIfServerHasCapability() const
@@ -70,15 +72,15 @@ bool SieveConditionVirusTest::needCheckIfServerHasCapability() const
 
 QString SieveConditionVirusTest::serverNeedsCapability() const
 {
-    return QStringLiteral("virustest");
+    return u"virustest"_s;
 }
 
 QStringList SieveConditionVirusTest::needRequires(QWidget *w) const
 {
-    const SelectComparatorComboBox *comparator = w->findChild<SelectComparatorComboBox *>(QStringLiteral("comparator"));
+    const SelectComparatorComboBox *comparator = w->findChild<SelectComparatorComboBox *>(u"comparator"_s);
     const QString comparatorRequires = comparator->require();
     QStringList lst;
-    lst << QStringLiteral("spamtest") << QStringLiteral("relational");
+    lst << u"spamtest"_s << u"relational"_s;
     if (!comparatorRequires.isEmpty()) {
         lst << comparatorRequires;
     }
@@ -101,14 +103,14 @@ void SieveConditionVirusTest::setParamWidgetValue(QXmlStreamReader &element, QWi
             if (tagValue == QLatin1StringView("count") || tagValue == QLatin1StringView("value")) {
                 if (element.readNextStartElement()) {
                     if (element.name() == QLatin1StringView("str")) {
-                        auto relation = w->findChild<SelectRelationalMatchType *>(QStringLiteral("relation"));
+                        auto relation = w->findChild<SelectRelationalMatchType *>(u"relation"_s);
                         relation->setCode(AutoCreateScriptUtil::tagValue(tagValue), element.readElementText(), name(), error);
                     }
                 }
             } else if (tagValue == QLatin1StringView("comparator")) {
                 if (element.readNextStartElement()) {
                     if (element.name() == QLatin1StringView("str")) {
-                        auto comparator = w->findChild<SelectComparatorComboBox *>(QStringLiteral("comparator"));
+                        auto comparator = w->findChild<SelectComparatorComboBox *>(u"comparator"_s);
                         comparator->setCode(element.readElementText(), name(), error);
                     }
                 }
@@ -117,7 +119,7 @@ void SieveConditionVirusTest::setParamWidgetValue(QXmlStreamReader &element, QWi
                 qCDebug(LIBKSIEVEUI_LOG) << " SieveConditionVirusTest::setParamWidgetValue unknown tagValue " << tagValue;
             }
         } else if (tagName == QLatin1StringView("str")) {
-            auto spinbox = w->findChild<QSpinBox *>(QStringLiteral("value"));
+            auto spinbox = w->findChild<QSpinBox *>(u"value"_s);
             spinbox->setValue(element.readElementText().toInt());
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
