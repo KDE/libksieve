@@ -8,7 +8,6 @@
 #include <QWidget>
 using namespace Qt::Literals::StringLiterals;
 
-
 namespace KSieveUi
 {
 class SieveTextEdit;

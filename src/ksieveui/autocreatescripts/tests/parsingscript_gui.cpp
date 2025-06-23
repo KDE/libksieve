@@ -6,7 +6,6 @@
 #include <QDebug>
 using namespace Qt::Literals::StringLiterals;
 
-
 #include "../src/ksieveui/scriptsparsing/parsingresultdialog.h"
 #include <KSieveCore/XMLPrintingScriptBuilder>
 

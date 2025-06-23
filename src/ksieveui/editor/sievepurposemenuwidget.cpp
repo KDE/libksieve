@@ -6,7 +6,6 @@
 #include "sievepurposemenuwidget.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 #include <KSieveUi/SieveEditorWidget>
 
 using namespace KSieveUi;

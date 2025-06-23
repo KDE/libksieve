@@ -7,7 +7,6 @@
 #include "sievescriptdebuggertextedit.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 #include <KLocalizedString>
 
 #include <QAction>

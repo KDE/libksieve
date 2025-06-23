@@ -7,7 +7,6 @@
 #include "sievescriptdebuggerwarning.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 using namespace KSieveUi;
 
 SieveScriptDebuggerWarning::SieveScriptDebuggerWarning(QWidget *parent)

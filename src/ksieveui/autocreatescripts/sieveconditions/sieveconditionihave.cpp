@@ -46,8 +46,7 @@ QString SieveConditionIhave::code(QWidget *w) const
 {
     const QLineEdit *edit = w->findChild<QLineEdit *>(u"edit"_s);
     const QString editValue = edit->text();
-    return u"ihave %1"_s.arg(AutoCreateScriptUtil::createList(editValue, u','))
-        + AutoCreateScriptUtil::generateConditionComment(comment());
+    return u"ihave %1"_s.arg(AutoCreateScriptUtil::createList(editValue, u',')) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 QStringList SieveConditionIhave::needRequires(QWidget *) const

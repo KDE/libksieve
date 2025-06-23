@@ -11,7 +11,6 @@
 #include "lexer_p.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 #include "error.h"
 #include "utf8validator.h"
 

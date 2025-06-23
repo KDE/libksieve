@@ -7,7 +7,6 @@
 #include "sievetreewidgetitem.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 #include <KIconLoader>
 #include <KPixmapSequenceLoader>
 

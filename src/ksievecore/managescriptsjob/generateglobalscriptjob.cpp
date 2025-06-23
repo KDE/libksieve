@@ -7,7 +7,6 @@
 #include "generateglobalscriptjob.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 #include "kmanagesieve/sievejob.h"
 
 #include <KLocalizedString>

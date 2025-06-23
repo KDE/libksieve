@@ -40,8 +40,7 @@ void SieveCondition::tooManyArguments(const QStringView &tagName, int index, int
 
 void SieveCondition::tooManyArguments(const QString &tagName, int index, int maxValue, QString &error)
 {
-    error += i18n("Too many argument found for \"%1\", max value is %2, number of value found %3 for %4", name(), maxValue, (index + 1), tagName)
-        + u'\n';
+    error += i18n("Too many argument found for \"%1\", max value is %2, number of value found %3 for %4", name(), maxValue, (index + 1), tagName) + u'\n';
 }
 
 void SieveCondition::unknownTagValue(const QString &tagValue, QString &error)

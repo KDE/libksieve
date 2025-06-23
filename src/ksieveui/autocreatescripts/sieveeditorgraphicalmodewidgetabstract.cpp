@@ -7,7 +7,6 @@
 #include "sieveeditorgraphicalmodewidgetabstract.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 using namespace KSieveUi;
 SieveEditorGraphicalModeWidgetAbstract::SieveEditorGraphicalModeWidgetAbstract(QWidget *parent)
     : KSieveUi::SieveEditorAbstractWidget(parent)

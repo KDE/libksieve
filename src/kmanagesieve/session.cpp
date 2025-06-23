@@ -263,8 +263,7 @@ KManageSieve::AuthDetails Session::requestAuthDetails(const QUrl &url)
         url.host());
 
     QPointer<KPasswordDialog> dlg = new KPasswordDialog(nullptr, KPasswordDialog::ShowUsernameLine | KPasswordDialog::ShowKeepPassword);
-    dlg->setRevealPasswordMode(KAuthorized::authorize(u"lineedit_reveal_password"_s) ? KPassword::RevealMode::OnlyNew
-                                                                                                  : KPassword::RevealMode::Never);
+    dlg->setRevealPasswordMode(KAuthorized::authorize(u"lineedit_reveal_password"_s) ? KPassword::RevealMode::OnlyNew : KPassword::RevealMode::Never);
     dlg->setUsername(ai.username);
     dlg->setPassword(ai.password);
     dlg->setKeepPassword(ai.keepPassword);

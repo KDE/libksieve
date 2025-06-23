@@ -6,7 +6,6 @@
 #include "selectconvertparameterwidget.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 #include <KLocalizedString>
 
 #include "libksieveui_debug.h"

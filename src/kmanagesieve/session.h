@@ -10,7 +10,6 @@
 #include "response.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 #include <KJob>
 #include <QObject>
 #include <QQueue>

@@ -6,7 +6,6 @@
 #include "sievehelpbutton.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 #include <KIO/JobUiDelegateFactory>
 #include <KIO/OpenUrlJob>
 #include <KLocalizedString>

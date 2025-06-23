@@ -6,7 +6,6 @@
 #include "sieveactionabstracteditheader.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 using namespace KSieveUi;
 
 SieveActionAbstractEditHeader::SieveActionAbstractEditHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget,

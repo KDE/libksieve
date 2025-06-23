@@ -6,7 +6,6 @@
 #include "sieveeditorwarning.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 #include <KLocalizedString>
 using namespace KSieveUi;
 

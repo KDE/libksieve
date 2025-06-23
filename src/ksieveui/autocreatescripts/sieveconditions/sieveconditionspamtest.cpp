@@ -78,8 +78,7 @@ QString SieveConditionSpamTest::code(QWidget *w) const
     const QSpinBox *spinbox = w->findChild<QSpinBox *>(u"value"_s);
     const QString value = QString::number(spinbox->value());
 
-    return u"spamtest %1 %2 %3 \"%4\""_s.arg(percentStr, relationStr, comparatorStr, value)
-        + AutoCreateScriptUtil::generateConditionComment(comment());
+    return u"spamtest %1 %2 %3 \"%4\""_s.arg(percentStr, relationStr, comparatorStr, value) + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 
 bool SieveConditionSpamTest::needCheckIfServerHasCapability() const

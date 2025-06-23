@@ -38,8 +38,8 @@ QWidget *SieveConditionEnvironment::createParamWidget(QWidget *parent) const
     auto item = new QLineEdit;
     KLineEditEventHandler::catchReturnKey(item);
     QStringList itemList;
-    itemList << u"domain"_s << u"host"_s << QStringLiteral("location") << QStringLiteral("name") << QStringLiteral("phase")
-             << u"remote-host"_s << u"remote-ip"_s << QStringLiteral("version");
+    itemList << u"domain"_s << u"host"_s << QStringLiteral("location") << QStringLiteral("name") << QStringLiteral("phase") << u"remote-host"_s
+             << u"remote-ip"_s << QStringLiteral("version");
     auto completer = new QCompleter(itemList, w);
     completer->setCaseSensitivity(Qt::CaseInsensitive);
     item->setCompleter(completer);

@@ -7,7 +7,6 @@
 #include "sieveeditorwebengineview.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 #include <KLocalizedString>
 #include <QContextMenuEvent>
 #include <QFileDialog>

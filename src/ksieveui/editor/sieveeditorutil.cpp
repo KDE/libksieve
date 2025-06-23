@@ -7,7 +7,6 @@
 #include "sieveeditorutil.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 QUrl KSieveUi::SieveEditorUtil::helpUrl(KSieveUi::SieveEditorUtil::HelpVariableName type)
 {
     switch (type) {

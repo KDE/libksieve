@@ -81,8 +81,7 @@ QString SieveConditionEnvelope::code(QWidget *w) const
 
     const AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(u"editaddress"_s);
     const QString addressStr = AutoCreateScriptUtil::createAddressList(edit->code().trimmed(), false);
-    return AutoCreateScriptUtil::negativeString(isNegative)
-        + u"envelope %1 %2 %3 %4"_s.arg(selectAddressPartStr, matchTypeStr, selectHeaderTypeStr, addressStr)
+    return AutoCreateScriptUtil::negativeString(isNegative) + u"envelope %1 %2 %3 %4"_s.arg(selectAddressPartStr, matchTypeStr, selectHeaderTypeStr, addressStr)
         + AutoCreateScriptUtil::generateConditionComment(comment());
 }
 

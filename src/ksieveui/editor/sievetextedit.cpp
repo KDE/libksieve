@@ -168,13 +168,12 @@ QStringList SieveTextEdit::completerList() const
     QStringList listWord;
 
     listWord << u"require"_s << u"stop"_s;
-    listWord << u":contains"_s << u":matches"_s << QStringLiteral(":is") << QStringLiteral(":over") << QStringLiteral(":under")
-             << u":all"_s << u":domain"_s << QStringLiteral(":localpart");
+    listWord << u":contains"_s << u":matches"_s << QStringLiteral(":is") << QStringLiteral(":over") << QStringLiteral(":under") << u":all"_s << u":domain"_s
+             << QStringLiteral(":localpart");
     listWord << u"if"_s << u"elsif"_s << QStringLiteral("else");
-    listWord << u"keep"_s << u"reject"_s << QStringLiteral("discard") << QStringLiteral("redirect") << QStringLiteral("addflag")
-             << u"setflag"_s;
-    listWord << u"address"_s << u"allof"_s << QStringLiteral("anyof") << QStringLiteral("exists") << QStringLiteral("false")
-             << u"header"_s << u"not"_s << QStringLiteral("size") << QStringLiteral("true");
+    listWord << u"keep"_s << u"reject"_s << QStringLiteral("discard") << QStringLiteral("redirect") << QStringLiteral("addflag") << u"setflag"_s;
+    listWord << u"address"_s << u"allof"_s << QStringLiteral("anyof") << QStringLiteral("exists") << QStringLiteral("false") << u"header"_s << u"not"_s
+             << QStringLiteral("size") << QStringLiteral("true");
     listWord << u":days"_s << u":seconds"_s << QStringLiteral(":subject") << QStringLiteral(":addresses") << QStringLiteral(":text");
     listWord << u":name"_s << u":headers"_s << QStringLiteral(":first") << QStringLiteral(":importance");
     listWord << u":message"_s << u":from"_s;

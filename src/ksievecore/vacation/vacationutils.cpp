@@ -240,9 +240,7 @@ QString KSieveCore::VacationUtils::composeScript(const Vacation &vacation)
         sl.reserve(vacation.aliases.count());
         AddrSpecList::const_iterator end = vacation.aliases.constEnd();
         for (AddrSpecList::const_iterator it = vacation.aliases.begin(); it != end; ++it) {
-            sl.push_back(u'"'
-                         + (*it).asString().replace(u'\\', u"\\\\"_s).replace(u'"', u"\\\""_s)
-                         + u'"');
+            sl.push_back(u'"' + (*it).asString().replace(u'\\', u"\\\\"_s).replace(u'"', u"\\\""_s) + u'"');
             aliases.push_back((*it).asString());
         }
         addressesArgument += sl.join(QLatin1StringView(", ")) + u" ] "_s;

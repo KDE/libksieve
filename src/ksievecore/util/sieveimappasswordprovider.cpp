@@ -7,7 +7,6 @@
 #include "sieveimappasswordprovider.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 using namespace KSieveCore;
 SieveImapPasswordProvider::SieveImapPasswordProvider(QObject *parent)
     : QObject(parent)

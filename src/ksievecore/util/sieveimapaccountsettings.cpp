@@ -7,7 +7,6 @@
 #include "sieveimapaccountsettings.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 using namespace KSieveCore;
 
 SieveImapAccountSettings::SieveImapAccountSettings() = default;

@@ -11,7 +11,6 @@
 #include "parser_p.h"
 using namespace Qt::Literals::StringLiterals;
 
-
 #include "error.h"
 
 #include <QByteArray>

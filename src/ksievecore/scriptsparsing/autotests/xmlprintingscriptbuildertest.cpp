@@ -121,8 +121,7 @@ void diffFile(const QString &refFile, const QString &generatedFile)
 {
     QProcess proc;
 #ifdef _WIN32
-    QStringList args = QStringList() << u"Compare-Object"_s << QString(u"(Get-Content %1)"_s).arg(refFile)
-                                     << QString(u"(Get-Content %1)"_s).arg(generatedFile);
+    QStringList args = QStringList() << u"Compare-Object"_s << QString(u"(Get-Content %1)"_s).arg(refFile) << QString(u"(Get-Content %1)"_s).arg(generatedFile);
 
     proc.start(u"powershell"_s, args);
     QVERIFY(proc.waitForFinished());
