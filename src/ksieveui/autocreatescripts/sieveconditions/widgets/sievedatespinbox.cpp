@@ -78,22 +78,22 @@ QString SieveDateSpinBox::convertValue() const
     QString str;
     switch (mType) {
     case SelectDateWidget::Year:
-        str = u"%1"_s.arg(value(), 4, 10, u'0');
+        str = QStringLiteral("%1").arg(value(), 4, 10, QLatin1Char('0'));
         break;
     case SelectDateWidget::Month:
-        str = u"%1"_s.arg(value(), 2, 10, u'0');
+        str = QStringLiteral("%1").arg(value(), 2, 10, QLatin1Char('0'));
         break;
     case SelectDateWidget::Day:
-        str = u"%1"_s.arg(value(), 2, 10, u'0');
+        str = QStringLiteral("%1").arg(value(), 2, 10, QLatin1Char('0'));
         break;
     case SelectDateWidget::Hour:
-        str = u"%1"_s.arg(value(), 2, 10, u'0');
+        str = QStringLiteral("%1").arg(value(), 2, 10, QLatin1Char('0'));
         break;
     case SelectDateWidget::Minute:
-        str = u"%1"_s.arg(value(), 2, 10, u'0');
+        str = QStringLiteral("%1").arg(value(), 2, 10, QLatin1Char('0'));
         break;
     case SelectDateWidget::Second:
-        str = u"%1"_s.arg(value(), 2, 10, u'0');
+        str = QStringLiteral("%1").arg(value(), 2, 10, QLatin1Char('0'));
         break;
     case SelectDateWidget::Weekday:
         str = QString::number(value());
