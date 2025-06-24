@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-20 00:43+0000\n"
+"POT-Creation-Date: 2025-06-24 00:43+0000\n"
 "PO-Revision-Date: 2024-05-30 04:29+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -19,12 +19,12 @@ msgstr ""
 "X-Generator: Lokalize 24.04.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: kmanagesieve/session.cpp:89
+#: kmanagesieve/session.cpp:91
 #, kde-format
 msgid "Cannot use TLS since the underlying Qt library does not support it."
 msgstr "無法使用 TLS，因為底層的 Qt 函式庫不支援。"
 
-#: kmanagesieve/session.cpp:96
+#: kmanagesieve/session.cpp:98
 #, kde-format
 msgid ""
 "TLS encryption was requested, but your Sieve server does not advertise TLS "
@@ -35,43 +35,43 @@ msgstr ""
 "要求 TLS 加密，但您的 Sieve 伺服器並未宣稱支援 TLS。\n"
 "您可以選擇還是啟動 TLS，或是取消操作。"
 
-#: kmanagesieve/session.cpp:98
+#: kmanagesieve/session.cpp:100
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Does Not Advertise TLS"
 msgstr "Sieve 伺服器未宣稱支援 TLS"
 
-#: kmanagesieve/session.cpp:99
+#: kmanagesieve/session.cpp:101
 #, kde-format
 msgctxt "@action:button"
 msgid "&Start TLS nonetheless"
 msgstr "還是啟動 TLS(&S)"
 
-#: kmanagesieve/session.cpp:103
+#: kmanagesieve/session.cpp:105
 #, kde-format
 msgid "TLS encryption requested, but not supported by server."
 msgstr "要求 TLS 加密，但是伺服器並未支援"
 
-#: kmanagesieve/session.cpp:145
+#: kmanagesieve/session.cpp:147
 #, kde-format
 msgid ""
 "The server does not seem to support TLS. Disable TLS if you want to connect "
 "without encryption."
 msgstr "此伺服器似乎不支援 TLS。若您不打算使用加密連線，請關閉 TLS。"
 
-#: kmanagesieve/session.cpp:257
+#: kmanagesieve/session.cpp:259
 #, kde-format
 msgid "Sieve Authentication Details"
 msgstr "Sieve 認證詳情"
 
-#: kmanagesieve/session.cpp:259
+#: kmanagesieve/session.cpp:261
 #, kde-format
 msgid ""
 "Please enter your authentication details for your sieve account "
 "\"%1\" (usually the same as your email password):"
 msgstr "請輸入您的 Sieve 帳號 \"%1\" 的認證詳情（通常就是您的郵件密碼）："
 
-#: kmanagesieve/session.cpp:321
+#: kmanagesieve/session.cpp:322
 #, kde-format
 msgid ""
 "The Sieve server on %1 has reported an error:\n"
@@ -80,13 +80,13 @@ msgstr ""
 "%1 上的 Sieve 伺服器回報了一個錯誤：\n"
 "%2"
 
-#: kmanagesieve/session.cpp:321
+#: kmanagesieve/session.cpp:322
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr "Sieve 管理器"
 
-#: kmanagesieve/sessionthread.cpp:299
+#: kmanagesieve/sessionthread.cpp:301
 #, kde-format
 msgid ""
 "Authentication failed.\n"
@@ -99,7 +99,7 @@ msgstr ""
 "伺服器回應：\n"
 "%1"
 
-#: kmanagesieve/sievejob.cpp:142 kmanagesieve/sievejob.cpp:149
+#: kmanagesieve/sievejob.cpp:144 kmanagesieve/sievejob.cpp:151
 #, kde-format
 msgid ""
 "The script did not upload successfully.\n"
@@ -112,7 +112,7 @@ msgstr ""
 "伺服器回應：\n"
 "%1"
 
-#: kmanagesieve/sievejob.cpp:154
+#: kmanagesieve/sievejob.cpp:156
 #, kde-format
 msgid ""
 "The script did not upload successfully.\n"
@@ -335,13 +335,13 @@ msgstr "沒發現錯誤。"
 msgid "An unknown error was encountered."
 msgstr "發生了未知的錯誤。"
 
-#: ksievecore/managescriptsjob/generateglobalscriptjob.cpp:52
+#: ksievecore/managescriptsjob/generateglobalscriptjob.cpp:53
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:42
 #, kde-format
 msgid "Path is not specified."
 msgstr "未指定路徑。"
 
-#: ksievecore/managescriptsjob/generateglobalscriptjob.cpp:96
+#: ksievecore/managescriptsjob/generateglobalscriptjob.cpp:97
 #, kde-format
 msgid ""
 "Error writing \"MASTER\" script on server.\n"
@@ -352,7 +352,7 @@ msgstr ""
 "伺服器回應：\n"
 "%1"
 
-#: ksievecore/managescriptsjob/generateglobalscriptjob.cpp:134
+#: ksievecore/managescriptsjob/generateglobalscriptjob.cpp:135
 #, kde-format
 msgid ""
 "Error writing \"User\" script on server.\n"
@@ -364,7 +364,7 @@ msgstr ""
 "%1"
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
-#: ksieveui/debug/sievedebugdialog.cpp:199
+#: ksieveui/debug/sievedebugdialog.cpp:201
 #: ksieveui/managesievescriptsdialog.cpp:170
 #, kde-format
 msgid ""
@@ -442,12 +442,12 @@ msgid ""
 "Check if there is still an active out-of-office reply configured on startup."
 msgstr "啟動時檢查是否有設定「不在辦公室」的自動回覆。"
 
-#: ksievecore/vacation/vacationcheckjob.cpp:125
+#: ksievecore/vacation/vacationcheckjob.cpp:127
 #, kde-format
 msgid "ParseUserScriptJob failed: %1"
 msgstr "剖析使用者文稿的工作失敗了：%1"
 
-#: ksievecore/vacation/vacationcheckjob.cpp:141
+#: ksievecore/vacation/vacationcheckjob.cpp:143
 #, kde-format
 msgid ""
 "Failed to get the list of Sieve scripts.\n"
@@ -458,7 +458,7 @@ msgstr ""
 "伺服器回應：\n"
 "%1"
 
-#: ksievecore/vacation/vacationcreatescriptjob.cpp:144
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:146
 #, kde-format
 msgid ""
 "Sieve script installed successfully on the server '%1'.\n"
@@ -467,7 +467,7 @@ msgstr ""
 "成功在伺服器 '%1' 上安裝過濾器。\n"
 "自動回覆功能已開啟。"
 
-#: ksievecore/vacation/vacationcreatescriptjob.cpp:147
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:149
 #, kde-format
 msgid ""
 "Sieve script installed successfully on the server '%1'.\n"
@@ -476,7 +476,7 @@ msgstr ""
 "成功在伺服器 '%1' 上安裝過濾器。\n"
 "自動回覆功能已關閉。"
 
-#: ksievecore/vacation/vacationcreatescriptjob.cpp:151
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:153
 #, kde-format
 msgid "Impossible to install script on server '%1'"
 msgstr "無法安裝文稿於伺服器 '%1'"
@@ -487,13 +487,13 @@ msgid "Out of office till %1"
 msgstr "不在辦公室，%1 才回來"
 
 #: ksievecore/vacation/vacationutils.cpp:46
-#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:20
+#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:22
 #, kde-format
 msgid "Keep"
 msgstr "保留"
 
 #: ksievecore/vacation/vacationutils.cpp:48
-#: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:12
+#: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:14
 #, kde-format
 msgid "Discard"
 msgstr "丟棄"
@@ -549,122 +549,122 @@ msgstr "在元件 \"%2\" 中找不到項目 \"%1\""
 msgid "More information"
 msgstr "更多資訊"
 
-#: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:32
+#: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:33
 #, kde-format
 msgid ""
 "Not enough arguments for SelectConvertParameterWidget. Expected 2 arguments."
 msgstr "SelectConvertParameterWidget 參數不夠。應該要有 2 個參數。"
 
-#: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:37
+#: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:38
 #, kde-format
 msgid "Too many arguments for SelectConvertParameterWidget, \"%1\""
 msgstr "SelectConvertParameterWidget 參數太多，\"%1\""
 
-#: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:60
-#: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:71
+#: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:61
+#: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:72
 #, kde-format
 msgid " px"
 msgstr " 像素"
 
-#: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:35
+#: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:37
 #, kde-format
 msgid "is"
 msgstr "是"
 
-#: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:36
+#: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:38
 #, kde-format
 msgid "not is"
 msgstr "不是"
 
-#: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:37
+#: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:39
 #, kde-format
 msgid "contains"
 msgstr "包含"
 
-#: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:38
+#: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:40
 #, kde-format
 msgid "not contains"
 msgstr "不包含"
 
-#: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:39
+#: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:41
 #, kde-format
 msgid "matches"
 msgstr "符合"
 
-#: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:40
+#: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:42
 #, kde-format
 msgid "not matches"
 msgstr "不符合"
 
-#: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:42
+#: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:44
 #, kde-format
 msgid "regex"
 msgstr "正規表示式"
 
-#: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:43
+#: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:45
 #, kde-format
 msgid "not regex"
 msgstr "非正規表示式"
 
-#: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:25
+#: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:27
 #, kde-format
 msgid "JPEG"
 msgstr "JPEG"
 
-#: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:26
+#: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:28
 #, kde-format
 msgid "TIFF"
 msgstr "TIFF"
 
-#: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:27
+#: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:29
 #, kde-format
 msgid "PNG"
 msgstr "PNG"
 
-#: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:28
+#: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:30
 #, kde-format
 msgid "BMP"
 msgstr "BMP"
 
-#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:101
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:53
+#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:103
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:55
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing action \"%2\"."
 msgstr "在剖析 \"%2\" 時找到未知的標籤值 \"%1\"。"
 
-#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:106
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:41
+#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:108
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:43
 #, kde-format
 msgid "An unknown tag \"%1\" was found during parsing action \"%2\"."
 msgstr "在剖析 \"%2\" 時找到未知的標籤 \"%1\"。"
 
-#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:112
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:48
+#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:114
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:50
 #, kde-format
 msgid ""
 "Too many arguments found for \"%1\", max value is %2, number of value found "
 "%3 for %4"
 msgstr "\"%1\" 找到太多參數，最大值應為 %2，%4 的值找到 %3 個"
 
-#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:117
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:58
-#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:52
+#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:119
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:60
+#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:53
 #, kde-format
 msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgstr "要求條件 \"%2\" 下的功能 \"%1\"，但是伺服器並未支援"
 
-#: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
+#: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:20
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Help"
 msgstr "說明"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionaddflags.cpp:13
+#: ksieveui/autocreatescripts/sieveactions/sieveactionaddflags.cpp:15
 #, kde-format
 msgid "Add Flags"
 msgstr "新增旗標"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionaddflags.cpp:25
+#: ksieveui/autocreatescripts/sieveactions/sieveactionaddflags.cpp:27
 #, kde-format
 msgid ""
 "Addflag is used to add flags to a list of [IMAP] flags.  It doesn't replace "
@@ -674,79 +674,79 @@ msgstr ""
 "新增旗標指令用於在 [IMAP] 旗標中新增旗標。它不會取代任何先前設定的旗標。這表"
 "示多重 addflag 會額外處理。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:24
+#: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:26
 #, kde-format
 msgid "Add header"
 msgstr "新增標頭"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:40
-#: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:40
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:42
+#: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:42
+#: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:42
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:44
 #, kde-format
 msgctxt "@label:textbox"
 msgid "header:"
 msgstr "標頭："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:49
-#: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:49
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:53
+#: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:51
+#: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:51
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:55
 #, kde-format
 msgctxt "@label:textbox"
 msgid "value:"
 msgstr "數值："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:114
+#: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:116
 #, kde-format
 msgid ""
 "The addheader action adds a header field to the existing message header."
 msgstr "新增標頭動作會在現有的信件標頭中加入新的標頭欄位。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:21
+#: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:23
 #, kde-format
 msgid "Break"
 msgstr "中斷"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:32
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:45
+#: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:34
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:47
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name (optional):"
 msgstr "名稱 (選擇性):"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:89
+#: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:91
 #, kde-format
 msgid "The break command terminates the closest enclosing loop."
 msgstr "中斷指令會中止最近的封閉迴圈。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:20
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:20
+#: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:22
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:22
 #, kde-format
 msgid "Convert"
 msgstr "轉換"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:31
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:31
+#: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:33
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:33
 #, kde-format
 msgctxt "@label:textbox"
 msgid "From:"
 msgstr "從："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:39
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:39
+#: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:41
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:41
 #, kde-format
 msgctxt "@label:textbox"
 msgid "To:"
 msgstr "到："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:47
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:47
+#: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:49
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Parameters:"
 msgstr "參數："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:129
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:94
+#: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:131
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:96
 #, kde-format
 msgid ""
 "The \"convert\" action specifies that all body parts with a media type equal "
@@ -756,65 +756,65 @@ msgstr ""
 "轉換指令將媒體型態跟 \"media-type\" 相同的信件，整個信件本體會轉換成該媒體型"
 "態。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:24
+#: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:26
 #, kde-format
 msgid "Delete header"
 msgstr "刪除標頭"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:124
+#: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:126
 #, kde-format
 msgid ""
 "By default, the deleteheader action deletes all occurrences of the named "
 "header field."
 msgstr "刪除標頭動作會刪除所有指定的標題欄位。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:23
+#: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:25
 #, kde-format
 msgid "Discard is used to silently throw away the message."
 msgstr "安靜地丟掉信件。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:22
+#: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:24
 #, kde-format
 msgid "Enclose"
 msgstr "封裝"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:33
-#: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:35
+#: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:35
+#: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:37
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Subject:"
 msgstr "主旨："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:42
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:40
+#: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:44
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:42
 #, kde-format
 msgctxt "@label:textbox"
 msgid "headers:"
 msgstr "標頭："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:51
-#: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:30
-#: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:30
-#: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:52
+#: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:53
+#: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:32
+#: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:32
+#: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:54
 #, kde-format
 msgctxt "@label:textbox"
 msgid "text:"
 msgstr "文字："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:143
+#: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:145
 #, kde-format
 msgid ""
 "Enclose action command is defined to allow an entire message to be enclosed "
 "as an attachment to a new message."
 msgstr "封裝指令允許將整封信件封裝成新信件的附加檔。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:20
+#: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:22
 #, fuzzy, kde-format
 #| msgid "Reject"
 msgid "E-Reject"
 msgstr "拒絕"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:86
+#: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:88
 #, fuzzy, kde-format
 #| msgid ""
 #| " The \"reject\" action cancels the implicit keep and refuses delivery of "
@@ -824,64 +824,64 @@ msgid ""
 "message."
 msgstr "拒絕動作會取消保留動作，並拒絕傳遞信件。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:21
+#: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:23
 #, kde-format
 msgid "Extract Text"
 msgstr "展開文字"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:32
+#: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:34
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Number of characters:"
 msgstr "字元數："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:42
+#: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:44
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Stored in variable name:"
 msgstr "存於變數名稱："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:110
+#: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:112
 #, kde-format
 msgid ""
 "The \"extracttext\" action may be used within the context of a \"foreverypart"
 "\" loop and is used to store text into a variable"
 msgstr "展開文字動作可以用在 \"foreverypart\" 迴圈中，用於將文字儲存到變數中"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:20
+#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:22
 #, kde-format
 msgid "File Into"
 msgstr "傳遞檔案"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:57
+#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:59
 #, kde-format
 msgid ""
 "Action \"fileinto\" has \"copy\" argument but current server does not "
 "support it"
 msgstr "動作 \"fileinto\" 有 \"copy\" 參數，但目前伺服器未支援"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:96
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:35
+#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:98
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:37
 #, fuzzy, kde-format
 #| msgid "Keep a copy"
 msgctxt "@option:check"
 msgid "Keep a copy"
 msgstr "保留複本"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:102
+#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:104
 #, fuzzy, kde-format
 #| msgid "Create folder"
 msgctxt "@option:check"
 msgid "Create folder"
 msgstr "建立資料夾"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:147
+#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:149
 #, kde-format
 msgid ""
 "The \"fileinto\" action delivers the message into the specified mailbox."
 msgstr "「傳遞檔案」動作會將信件傳遞到指定的信箱。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:150
+#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:152
 #, kde-format
 msgid ""
 "If the optional \":create\" argument is specified, it instructs the Sieve "
@@ -891,7 +891,7 @@ msgstr ""
 "如果指定了選擇性的參數 \":create\"，則會告訴 Sieve 直譯器，如果需要的話，必須"
 "在傳遞信件前建立指定的信箱檔。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:155
+#: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:157
 #, kde-format
 msgid ""
 "If the optional \":copy\" keyword is specified, the tagged command does not "
@@ -901,7 +901,7 @@ msgstr ""
 "如果指定選擇性的參數 \":copy\"，則不會用「保留」的方式做，而是在對信件做任何"
 "動作前，都會複製一份，並對複本做動作。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:44
+#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:46
 #, kde-format
 msgid ""
 "The \"keep\" action is whatever action is taken in lieu of all other "
@@ -911,48 +911,48 @@ msgstr ""
 "保留動作會取代所有其他動作，就好像從來都沒有過濾。通常這表示只簡單將信件傳遞"
 "到使用者的主要信箱中。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:55
+#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:57
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Add flags:"
 msgstr "新增旗標："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:23
+#: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:25
 #, kde-format
 msgid "Notify"
 msgstr "通知"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:39
+#: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:41
 #, kde-format
 msgctxt "@label:textbox"
 msgid "message:"
 msgstr "訊息："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:48
+#: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "method:"
 msgstr "方法："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:132
+#: ksieveui/autocreatescripts/sieveactions/sieveactionnotify.cpp:134
 #, kde-format
 msgid ""
 "The \"notify\" action specifies that a notification should be sent to a user."
 msgstr "通知動作表示要送給使用者一個通知。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:22
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:24
 #, kde-format
 msgid "Redirect"
 msgstr "導向"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:41
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:43
 #, fuzzy, kde-format
 #| msgid "Use list"
 msgctxt "@option:check"
 msgid "Use list"
 msgstr "使用清單"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:139
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:141
 #, kde-format
 msgid ""
 "The \"redirect\" action is used to send the message to another user at a "
@@ -963,7 +963,7 @@ msgstr ""
 "導向動作用於將信件送給另一個使用者，類似信件轉寄。這個動作不會改變信件本體或"
 "現有的標頭，但可能會加上新標頭。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:143
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:145
 #, kde-format
 msgid ""
 "If the optional \":copy\" keyword is specified, the tagged command does not "
@@ -973,24 +973,24 @@ msgstr ""
 "如果指定選擇性的參數 \":copy\"，則不會用「保留」的方式做，而是在對信件做任何"
 "動作前，都會複製一份，並對複本做動作。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:20
+#: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:22
 #, kde-format
 msgid "Reject"
 msgstr "拒絕"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:86
+#: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:88
 #, kde-format
 msgid ""
 " The \"reject\" action cancels the implicit keep and refuses delivery of a "
 "message."
 msgstr "拒絕動作會取消保留動作，並拒絕傳遞信件。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionremoveflags.cpp:13
+#: ksieveui/autocreatescripts/sieveactions/sieveactionremoveflags.cpp:15
 #, kde-format
 msgid "Remove Flags"
 msgstr "移除旗標"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionremoveflags.cpp:25
+#: ksieveui/autocreatescripts/sieveactions/sieveactionremoveflags.cpp:27
 #, kde-format
 msgid ""
 "Removeflag is used to remove flags from a list of [IMAP] flags. Removeflag "
@@ -1000,89 +1000,89 @@ msgstr ""
 "移除旗標用於從 [IMAP] 旗標清單中移除旗標。它會將先前用設定/新增旗標動作所設定"
 "的旗標刪除。如果呼叫此動作但要刪除的旗標不存在，則會被忽略，不會傳回錯誤。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:24
+#: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:26
 #, kde-format
 msgid "Replace"
 msgstr "取代"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:44
+#: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "from:"
 msgstr "從："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:142
+#: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:144
 #, kde-format
 msgid ""
 "The \"replace\" command is defined to allow a MIME part to be replaced with "
 "the text supplied in the command."
 msgstr "取代指令可以讓一個 MIME 部件被指令中指定的文字取代。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionreturn.cpp:13
+#: ksieveui/autocreatescripts/sieveactions/sieveactionreturn.cpp:15
 #, kde-format
 msgid "Return"
 msgstr "返回"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionreturn.cpp:30
+#: ksieveui/autocreatescripts/sieveactions/sieveactionreturn.cpp:32
 #, kde-format
 msgid ""
 "The \"return\" command stops processing of the immediately included script "
 "only and returns processing control to the script that includes it."
 msgstr "返回指令只對引入的文稿立即停止動作，並將行程控制傳回引入該文稿的文稿。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetflags.cpp:13
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetflags.cpp:15
 #, kde-format
 msgid "Set Flags"
 msgstr "設定旗標"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetflags.cpp:24
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetflags.cpp:26
 #, kde-format
 msgid ""
 "Setflag is used for setting [IMAP] system flags or keywords. Setflag "
 "replaces any previously set flags."
 msgstr "設定旗標用於設定 [IMAP] 系統旗標或關鍵字。它會取代先前設定的旗標。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:24
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:26
 #, kde-format
 msgid "Variable"
 msgstr "變數"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:42
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:44
 #, fuzzy, kde-format
 #| msgid "Protect special character"
 msgctxt "@option:check"
 msgid "Protect special character"
 msgstr "保護特殊字元"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:48
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:49
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:56
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:63
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:61
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:50
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:51
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:58
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:65
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:63
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Value:"
 msgstr "值："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:57
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:59
 #, kde-format
 msgctxt "@label:textbox"
 msgid "In variable:"
 msgstr "變數中："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:106
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:108
 #, kde-format
 msgid "Script needs regex support, but server does not have it."
 msgstr "文稿需要支援正規表示式，但伺服器未支援。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:169
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:171
 #, kde-format
 msgid ""
 "The \"set\" action stores the specified value in the variable identified by "
 "name."
 msgstr "設定動作將指定的值存於變數中。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:172
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:174
 #, kde-format
 msgid ""
 "This modifier adds the necessary quoting to ensure that the expanded text "
@@ -1093,48 +1093,48 @@ msgstr ""
 "這會自動加入需要的引言來確保展開的文字只符合字面上的事件，以便傳給正規表示式"
 "做參數。每個特殊意義的字元（.  *  ? 等）都會在前面加上 \\"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionstop.cpp:14
+#: ksieveui/autocreatescripts/sieveactions/sieveactionstop.cpp:16
 #, kde-format
 msgid "Stop"
 msgstr "停止"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionstop.cpp:25
+#: ksieveui/autocreatescripts/sieveactions/sieveactionstop.cpp:27
 #, kde-format
 msgid ""
 "The \"stop\" action ends all processing.  If the implicit keep has not been "
 "cancelled, then it is taken."
 msgstr "停止動作會停止所有進行中的動作。但如果保留未被取消，則會被執行。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:27
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:29
 #, kde-format
 msgid "Vacation"
 msgstr "休假"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:46
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:48
 #, kde-format
 msgctxt "@label:textbox"
 msgid "day:"
 msgstr "日："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:57
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:59
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Message subject:"
 msgstr "信件主旨："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:66
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:68
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Additional email:"
 msgstr "額外電子郵件地址："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:75
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:77
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Vacation reason:"
 msgstr "休假理由："
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:196
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:198
 #, kde-format
 msgid ""
 "The \"vacation\" action implements a vacation autoresponder similar to the "
@@ -1145,7 +1145,7 @@ msgstr ""
 "休假動作會自動回覆信件，就如同許多版本的 Unix 下的休假指令一樣。它的目的是提"
 "供發信人，通知對方收件人會離開一段時間，可能無法立即回應。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:200
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:202
 #, kde-format
 msgid ""
 "Through the \":days\" parameter, it limits the number of auto-replies to the "
@@ -1156,14 +1156,14 @@ msgstr ""
 "\":days\" 參數會限制自動回覆在每 n 天內只回覆同一個寄件者一次。不過有時您可能"
 "會希望做更精細的控制，例如想要回覆頻率再高一點。"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:202
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:204
 #, kde-format
 msgid ""
 "This extension defines a \":seconds\" parameter to provide more granularity "
 "for such situations."
 msgstr "此延伸套件定義 \":seconds\" 參數，提供這種狀況下更精細的控制。"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:27
+#: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:29
 #, fuzzy, kde-format
 #| msgid "Define Email Address…"
 msgctxt "@info:placeholder"
@@ -1177,187 +1177,187 @@ msgctxt "@info:placeholder"
 msgid "Enter message…"
 msgstr "輸入信件…"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:23
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:25
 #, kde-format
 msgid "Insert at the beginning"
 msgstr "插在開頭處"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:24
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectaddheaderpositioncombobox.cpp:26
 #, kde-format
 msgid "Append at the end"
 msgstr "附在結尾處"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:33
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Flags"
 msgstr "旗標"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:89
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:91
 #, kde-format
 msgid "Deleted"
 msgstr "已刪除"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:92
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:94
 #, kde-format
 msgid "Answered"
 msgstr "已回答"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:95
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:97
 #, kde-format
 msgid "Flagged"
 msgstr "已設旗標"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:98
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:100
 #, kde-format
 msgid "Seen"
 msgstr "已看到"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:103
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:105
 #, kde-format
 msgid "Draft"
 msgstr "草稿"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:142
 #, fuzzy, kde-format
 #| msgid "Click on button for selecting flags…"
 msgctxt "@info:placeholder"
 msgid "Click on button for selecting flags…"
 msgstr "點一下選取旗標的按鈕…"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:146
 #, kde-format
 msgid "…"
 msgstr "…"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:147
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Flags"
 msgstr "選取旗標"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectimportancecombobox.cpp:25
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectimportancecombobox.cpp:27
 #, kde-format
 msgid "high importance"
 msgstr "高度重要"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectimportancecombobox.cpp:26
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectimportancecombobox.cpp:28
 #, kde-format
 msgid "normal importance"
 msgstr "普通重要"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectimportancecombobox.cpp:27
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectimportancecombobox.cpp:29
 #, kde-format
 msgid "low importance"
 msgstr "低度重要"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectvacationcombobox.cpp:24
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectvacationcombobox.cpp:26
 #, kde-format
 msgid "days"
 msgstr "天"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectvacationcombobox.cpp:25
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectvacationcombobox.cpp:27
 #, kde-format
 msgid "seconds"
 msgstr "秒"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:24
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:26
 #, kde-format
 msgid "None"
 msgstr "無"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:25
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:27
 #, kde-format
 msgid "Lower"
 msgstr "小寫"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:26
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:28
 #, kde-format
 msgid "Upper"
 msgstr "大寫"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:27
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:29
 #, kde-format
 msgid "Lower first letter"
 msgstr "首字母小寫"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:28
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:30
 #, kde-format
 msgid "Upper first letter"
 msgstr "首字母大寫"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:29
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:31
 #, kde-format
 msgid "Quote wildcard"
 msgstr "引號萬用字元"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:30
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:32
 #, kde-format
 msgid "Length"
 msgstr "長度"
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:62
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:64
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Please select an action."
 msgstr "請選擇一個動作。"
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:139
-#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:110
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:141
+#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:112
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add comment"
 msgstr "新增註解"
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:274
-#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:222
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:276
+#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:224
 #, kde-format
 msgid "Script contains unsupported feature \"%1\""
 msgstr "文稿包含不支援的功能 \"%1\""
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:410
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:412
 #, kde-format
 msgid "We detected a loop if in a loop if. It's not supported"
 msgstr "我們在 loop if 中偵測到另一個 loop if。目前尚不支援這種做法"
 
-#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:31
+#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:33
 #, kde-format
 msgid "Unknown tag \"%1\" during parsing condition \"%2\""
 msgstr "剖析條件 \"%2\" 時看到未知的標籤 \"%1\""
 
-#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:41
+#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:43
 #, kde-format
 msgid ""
 "Too many argument found for \"%1\", max value is %2, number of value found "
 "%3 for %4"
 msgstr "\"%1\" 找到太多參數，最大值應為 %2，%4 的值找到 %3 個"
 
-#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:47
+#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:48
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing condition \"%2\"."
 msgstr "在剖析條件 \"%2\" 時找到未知的標籤值 \"%1\"。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:23
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:25
 #, kde-format
 msgid "Address"
 msgstr "地址"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:52
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:54
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:54
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "address:"
 msgstr "地址："
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:59
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:62
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:61
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:64
 #, fuzzy, kde-format
 #| msgid "Use ; to separate emails"
 msgctxt "@info:placeholder"
 msgid "Use ; to separate emails"
 msgstr "用 ; 來區隔電子郵件"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:95
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:96
 #, kde-format
 msgid ""
 "The \"address\" test matches Internet addresses in structured headers that "
@@ -1368,12 +1368,12 @@ msgstr ""
 "「地址」測試比對結構化標頭中是否含有網際網路的地址。如果有任何標頭中有指定的"
 "位址，則傳回真。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:20
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:22
 #, kde-format
 msgid "Body"
 msgstr "本體"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:85
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:87
 #, kde-format
 msgid ""
 "The body test matches content in the body of an email message, that is, "
@@ -1381,12 +1381,12 @@ msgid ""
 "itself, if present, is not considered to be part of the body.)"
 msgstr "本體測試比對信件本體的內容。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditioncurrentdate.cpp:21
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditioncurrentdate.cpp:23
 #, kde-format
 msgid "Currentdate"
 msgstr "目前日期"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditioncurrentdate.cpp:78
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditioncurrentdate.cpp:80
 #, kde-format
 msgid ""
 "The currentdate test is similar to the date test, except that it operates on "
@@ -1395,44 +1395,44 @@ msgstr ""
 "目前日期測試跟日期測試很類似，只是它是針對目前的日期與時間，而不是從信件標頭"
 "中出的日期與時間。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:23
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:41
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:255
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:25
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:257
 #, kde-format
 msgid "Date"
 msgstr "日期"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:93
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:95
 #, kde-format
 msgid ""
 "The date test matches date/time information derived from headers containing "
 "date-time values."
 msgstr "日期測試比對標頭中的日期與時間資訊。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:24
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:26
 #, kde-format
 msgid "Envelope"
 msgstr "信封"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:106
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:107
 #, kde-format
 msgid ""
 "The \"envelope\" test is true if the specified part of the [SMTP] (or "
 "equivalent) envelope matches the specified key."
 msgstr "信封測試比對 [SMTP] 所指定的部件信封是否符合特定的值。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:23
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:25
 #, kde-format
 msgid "Environment"
 msgstr "環境"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:33
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:35
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Item:"
 msgstr "項目："
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:90
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:92
 #, kde-format
 msgid ""
 "The environment test retrieves the item of environment information specified "
@@ -1440,22 +1440,22 @@ msgid ""
 "argument."
 msgstr "環境測試依指定名稱從環境資訊中取出該項目，並與參數清單中的值做比對。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:22
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:24
 #, kde-format
 msgid "Exists"
 msgstr "存在"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:35
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:37
 #, kde-format
 msgid "exists"
 msgstr "存在"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:36
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:38
 #, kde-format
 msgid "not exists"
 msgstr "不存在"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:63
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:65
 #, kde-format
 msgid ""
 "The \"exists\" test is true if the headers listed in the header-names "
@@ -1465,28 +1465,28 @@ msgstr ""
 "存在測試在「標頭名稱」參數清單中的標頭存在於信件中的時候傳回真。所有清單中的"
 "標頭都必須存在，否則傳回假。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:20
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:22
 #, kde-format
 msgid "False"
 msgstr "假"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:31
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:33
 #, kde-format
 msgctxt "@label:textbox"
 msgid "false"
 msgstr "假"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:43
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:45
 #, kde-format
 msgid "The \"false\" test always evaluates to false."
 msgstr "「假」測試總是傳回假。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:24
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:26
 #, kde-format
 msgid "Has Flag"
 msgstr "有旗標"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:46
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:48
 #, kde-format
 msgctxt "@label:textbox"
 msgid ""
@@ -1496,44 +1496,44 @@ msgstr ""
 "變數名稱\n"
 " （如果是空的，則使用內部變數）："
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:127
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:129
 #, kde-format
 msgid ""
 "The hasflag test evaluates to true if any of the variables matches any flag "
 "name."
 msgstr "有旗標測試會比對旗標名稱，如果與變數相符則傳回真。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:21
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:23
 #, kde-format
 msgid "Header"
 msgstr "標頭"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:45
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:47
 #, kde-format
 msgctxt "@label:textbox"
 msgid "With value:"
 msgstr "值："
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:75
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:77
 #, kde-format
 msgid ""
 "The \"header\" test evaluates to true if the value of any of the named "
 "headers, ignoring leading and trailing whitespace, matches any key."
 msgstr "標頭測試比對有名稱的標頭（頭尾的空白不算），符合的話傳回真。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:21
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:23
 #, kde-format
 msgid "IHave"
 msgstr "我有"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:35
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:37
 #, fuzzy, kde-format
 #| msgid "Use \",\" to separate capabilities"
 msgctxt "@info:placeholder"
 msgid "Use \",\" to separate capabilities"
 msgstr "用 , 來區隔"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:68
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:69
 #, kde-format
 msgid ""
 "The \"ihave\" test provides a means for Sieve scripts to test for the "
@@ -1541,12 +1541,12 @@ msgid ""
 msgstr ""
 "「我有」測試讓 Sieve 文稿可以測試特定的延伸是否存在，然後才決定是否使用。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmailboxexists.cpp:20
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmailboxexists.cpp:22
 #, kde-format
 msgid "Mailbox exists"
 msgstr "信箱存在"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmailboxexists.cpp:66
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmailboxexists.cpp:68
 #, kde-format
 msgid ""
 "The \"mailboxexists\" test is true if all mailboxes listed in the \"mailbox-"
@@ -1556,28 +1556,28 @@ msgstr ""
 "信箱存在測試在所有列在「信箱名稱」參數中的信箱都存在，並且都可以讓使用者放入"
 "信件的話傳回真。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:24
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:26
 #, kde-format
 msgid "Meta Data"
 msgstr "中繼資料"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:44
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:33
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:43
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:46
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:35
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:45
 #, fuzzy, kde-format
 #| msgid "Mailbox:"
 msgctxt "@label:textbox"
 msgid "Mailbox:"
 msgstr "信箱："
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:54
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:52
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:56
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:54
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Annotations:"
 msgstr "註記："
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:119
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:121
 #, kde-format
 msgid ""
 "This test retrieves the value of the mailbox annotation \"annotation-name\" "
@@ -1588,19 +1588,19 @@ msgstr ""
 "這個測試取出指定的信箱 \"mailbox\" 中的註記名稱 \"annotation-name\" 的值來比"
 "對。如果該註記存在並且值符合，則傳回真。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:22
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:24
 #, kde-format
 msgid "Metadata exists"
 msgstr "中繼資料存在"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:42
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:31
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:44
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:33
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Annotation:"
 msgstr "註記："
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:81
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:83
 #, kde-format
 msgid ""
 "The \"metadataexists\" test is true if all of the annotations listed in the "
@@ -1609,12 +1609,12 @@ msgstr ""
 "中繼資料存在測試在註記名稱 \"annotation-names\" 參數中列出的註記都存在於特定"
 "的信箱中的話傳回真。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:23
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:25
 #, kde-format
 msgid "Server Meta Data"
 msgstr "伺服器中繼資料"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:117
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:119
 #, kde-format
 msgid ""
 "This test retrieves the value of the server annotation \"annotation-name\".  "
@@ -1624,12 +1624,12 @@ msgstr ""
 "這個測試取出指定的伺服器 \"server\" 中的註記名稱 \"annotation-name\" 的值來比"
 "對。如果該註記存在並且值符合，則傳回真。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:20
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:22
 #, kde-format
 msgid "Server Meta Data Exists"
 msgstr "伺服器中繼資料存在"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:67
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:69
 #, kde-format
 msgid ""
 "The \"servermetadataexists\" test is true if all of the server annotations "
@@ -1638,22 +1638,22 @@ msgstr ""
 "伺服器中繼資料存在測試在註記名稱 \"annotation-names\" 參數中列出的註記都存在"
 "於特定的伺服器中的話傳回真。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionsize.cpp:20
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionsize.cpp:22
 #, kde-format
 msgid "Size"
 msgstr "大小"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionsize.cpp:33
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionsize.cpp:35
 #, kde-format
 msgid "under"
 msgstr "低於"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionsize.cpp:34
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionsize.cpp:36
 #, kde-format
 msgid "over"
 msgstr "高於"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionsize.cpp:57
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionsize.cpp:59
 #, kde-format
 msgid ""
 "The \"size\" test deals with the size of a message.  It takes either a "
@@ -1663,19 +1663,19 @@ msgstr ""
 "「大小」測試會測試信件的大小。它有一個參數為「高於」或「低於」，後面跟著信件"
 "大小。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:24
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:26
 #, kde-format
 msgid "Spam Test"
 msgstr "垃圾信測試"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:37
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:39
 #, fuzzy, kde-format
 #| msgid "Percent"
 msgctxt "@option:check"
 msgid "Percent"
 msgstr "百分比"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:111
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:112
 #, kde-format
 msgid ""
 "Sieve implementations that implement the \"spamtest\" test use an identifier "
@@ -1684,321 +1684,321 @@ msgid ""
 msgstr ""
 "Sieve 針對垃圾信測試的實作使用 \"spamtest\" 或 \"spamtestplus\" 的功能機制。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:20
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:22
 #, kde-format
 msgid "True"
 msgstr "真"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:31
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:33
 #, kde-format
 msgctxt "@label:textbox"
 msgid "true"
 msgstr "真"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:43
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:45
 #, kde-format
 msgid "The \"true\" test always evaluates to true."
 msgstr "「真」測試總是傳回真。"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionvirustest.cpp:22
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionvirustest.cpp:24
 #, kde-format
 msgid "Virus Test"
 msgstr "病毒測試"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionvirustest.cpp:90
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionvirustest.cpp:92
 #, kde-format
 msgid ""
 "Sieve implementations that implement the \"virustest\" test have an "
 "identifier of \"virustest\" for use with the capability mechanism."
 msgstr "Sieve 針對病毒測試的實作使用 \"virustest\" 的功能機制。"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:26
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:28
 #, kde-format
 msgid "all"
 msgstr "全部"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:27
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:29
 #, kde-format
 msgid "localpart"
 msgstr "本地部件"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:28
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:30
 #, kde-format
 msgid "domain"
 msgstr "網域"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:30
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:32
 #, kde-format
 msgid "user"
 msgstr "使用者"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:31
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectaddresspartcombobox.cpp:33
 #, kde-format
 msgid "detail"
 msgstr "細節"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectbodytypewidget.cpp:33
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectbodytypewidget.cpp:35
 #, kde-format
 msgid "raw"
 msgstr "原始"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectbodytypewidget.cpp:34
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectbodytypewidget.cpp:36
 #, kde-format
 msgid "content"
 msgstr "內容"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectbodytypewidget.cpp:35
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectbodytypewidget.cpp:37
 #, kde-format
 msgid "text"
 msgstr "文字"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:38
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:40
 #, kde-format
 msgid "Year"
 msgstr "年"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:39
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:41
 #, kde-format
 msgid "Month"
 msgstr "月"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:40
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:42
 #, kde-format
 msgid "Day"
 msgstr "日"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:42
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:44
 #, kde-format
 msgid "Julian"
 msgstr "儒略曆"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:45
 #, kde-format
 msgid "Hour"
 msgstr "小時"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:44
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:46
 #, kde-format
 msgid "Minute"
 msgstr "分"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:45
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:47
 #, kde-format
 msgid "Second"
 msgstr "秒"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:46
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:48
 #, kde-format
 msgid "Time"
 msgstr "時間"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:47
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:49
 #, kde-format
 msgid "iso8601"
 msgstr "iso8601"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:48
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:50
 #, kde-format
 msgid "std11"
 msgstr "std11"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:49
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:51
 #, kde-format
 msgid "Zone"
 msgstr "時區"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:50
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:52
 #, kde-format
 msgid "Weekday"
 msgstr "工作日"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:29
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:31
 msgid "Select multiple headers…"
 msgstr "選擇多重標頭…"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:36
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Headers"
 msgstr "標頭"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:55
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:57
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Add new header:"
 msgstr "新增標頭："
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:245
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:247
 #, kde-format
 msgid "From"
 msgstr "寄件者"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:246
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
 #, kde-format
 msgid "To"
 msgstr "收件者"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:247
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
 #, kde-format
 msgid "Reply To"
 msgstr "回覆地址"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
 #, kde-format
 msgid "Cc"
 msgstr "副本"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
 #, kde-format
 msgid "Bcc"
 msgstr "密件副本"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
 #, kde-format
 msgid "Resent From"
 msgstr "重新送出從"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:253
 #, kde-format
 msgid "Resent To"
 msgstr "重新送出到"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:254
 #, kde-format
 msgid "Sender"
 msgstr "寄件者"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:254
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:256
 #, kde-format
 msgid "Subject"
 msgstr "主旨"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:256
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:258
 #, kde-format
 msgid "Message Id"
 msgstr "信件代碼"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:257
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:259
 #, kde-format
 msgid "Content type"
 msgstr "內容型態"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:24
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
 #, kde-format
 msgid "Type"
 msgstr "型態"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:25
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
 #, kde-format
 msgid "Subtype"
 msgstr "子型態"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
 #, kde-format
 msgid "Anychild"
 msgstr "任何子參數"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
 #, kde-format
 msgid "Parameters"
 msgstr "參數"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:55
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
 msgstr "數值"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:56
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:58
 #, kde-format
 msgid "Count"
 msgstr "計數"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:60
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:62
 #, kde-format
 msgid "Greater than"
 msgstr "大於"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:61
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:63
 #, kde-format
 msgid "Greater than or equal"
 msgstr "大於等於"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:62
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:64
 #, kde-format
 msgid "Less than"
 msgstr "小於"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:63
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:65
 #, kde-format
 msgid "Less than or equal"
 msgstr "小於等於"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:64
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:66
 #, kde-format
 msgid "Equal to"
 msgstr "等於"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:65
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:67
 #, kde-format
 msgid "Not equal to"
 msgstr "不等於"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:24
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:26
 #, kde-format
 msgid "Bytes"
 msgstr "位元組"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:25
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:27
 #, kde-format
 msgid "KiB"
 msgstr "KiB"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:26
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:28
 #, kde-format
 msgid "MiB"
 msgstr "MiB"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:27
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:29
 #, kde-format
 msgid "GiB"
 msgstr "GiB"
 
-#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:54
+#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Please select an condition."
 msgstr "請選擇條件。"
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:30
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:32
 #, kde-format
 msgid "Sieve Script"
 msgstr "Sieve 文稿"
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:138
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:140
 #, kde-format
 msgid "Error during importing script. Do you want to switch to text mode?"
 msgstr "匯入文稿時發生錯誤。您要切換到文字模式嗎？"
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:140
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:142
 #, kde-format
 msgctxt "@action:button"
 msgid "Switch to Text Mode"
 msgstr "切換至文字模式"
 
-#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:141
+#: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:143
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Switch"
 msgstr "不要切換"
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:30
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:32
 #, fuzzy, kde-format
 #| msgid "Add ForEveryPart loop"
 msgctxt "@option:check"
 msgid "Add ForEveryPart loop"
 msgstr "新增 ForEveryPart 迴圈"
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:62
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:64
 #, kde-format
 msgid ""
 "\"foreverypart\", which is an iterator that walks though every MIME part of "
@@ -2008,35 +2008,35 @@ msgstr ""
 "\"foreverypart\" 會走過信件中每個 MIME 部件，包括巢狀的部件，以深度優先，並將"
 "指定的指令套用在每個部件中。"
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:92
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:94
 #, kde-format
 msgid "Unknown tagValue \"%1\" during loading loop \"for\""
 msgstr "在載入 \"for\" 迴圈時看到未知的標籤值 \"%1\""
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:104
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:106
 #, kde-format
 msgid "Unknown tag \"%1\" during loading loop \"for\""
 msgstr "在載入 \"for\" 迴圈時看到未知的標籤 \"%1\""
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:58
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:60
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Variable name:"
 msgstr "變數名稱："
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:65
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:67
 #, fuzzy, kde-format
 #| msgid "Set value to:"
 msgctxt "@option:check"
 msgid "Set value to:"
 msgstr "設定值給："
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:129
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:131
 #, kde-format
 msgid "Unknown tag \"%1\" during loading of variables."
 msgstr "載入變數時看到未知的標籤 \"%1\"。"
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:179
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:181
 #, kde-format
 msgid ""
 "A variable has global scope in all scripts that have declared it with the "
@@ -2047,49 +2047,49 @@ msgstr ""
 "一個變數只要用 \"global\" （全域）指令宣告，就表示該變數的範圍包含所有文稿。"
 "如果沒有宣告 global，則只適用於該文稿中。"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:43
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:45
 #, kde-format
 msgid "personal"
 msgstr "個人"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:44
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:46
 #, kde-format
 msgid "global"
 msgstr "全域"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:58
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:60
 #, kde-format
 msgid "Unknown location type \"%1\" during parsing includes"
 msgstr "剖析引入檔時發現未知的位置型態 \"%1\""
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:129
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:131
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Include:"
 msgstr "引入："
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:135
-#: ksieveui/templates/sievetemplateeditdialog.cpp:59
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:137
+#: ksieveui/templates/sievetemplateeditdialog.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "名稱："
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:144
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:146
 #, fuzzy, kde-format
 #| msgid "Optional"
 msgctxt "@option:check"
 msgid "Optional"
 msgstr "選擇性的"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:148
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:150
 #, fuzzy, kde-format
 #| msgid "Once"
 msgctxt "@option:check"
 msgid "Once"
 msgstr "一次"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:220
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:222
 #, kde-format
 msgid ""
 "The \"include\" command takes an optional \"location\" parameter, an "
@@ -2100,265 +2100,265 @@ msgstr ""
 "引入指令可以用以下選擇性的參數：\"location\"（位置），\":once\"，\":optional"
 "\"，以及一個單一字串的參數，表示要引入文稿的名稱。"
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:342
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:344
 #, kde-format
 msgid "We can not add more includes elements."
 msgstr "無法再新增更多的引入元素。"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:35
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:37
 #, kde-format
 msgid "Conditions"
 msgstr "條件"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:38
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:40
 #, fuzzy, kde-format
 #| msgid "Match all messages"
 msgctxt "@option:radio"
 msgid "Match all messages"
 msgstr "比對所有信件"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:39
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:41
 #, fuzzy, kde-format
 #| msgid "Match a&ll of the following"
 msgctxt "@option:radio"
 msgid "Match a&ll of the following"
 msgstr "符合下列全部規則(&L)"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:40
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:42
 #, fuzzy, kde-format
 #| msgid "Match an&y of the following"
 msgctxt "@option:radio"
 msgid "Match an&y of the following"
 msgstr "符合下列任一規則(&Y)"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:68
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:70
 #, kde-format
 msgid "Actions"
 msgstr "動作"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:83
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:85
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Add new block:"
 msgstr "新增區塊："
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:87
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:89
 #, kde-format
 msgid "\"elsif\" block"
 msgstr "\"elsif\" 區塊"
 
-#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:88
+#: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:90
 #, kde-format
 msgid "\"else\" block"
 msgstr "\"else\" 區塊"
 
-#: ksieveui/autocreatescripts/sievescriptdescriptiondialog.cpp:28
+#: ksieveui/autocreatescripts/sievescriptdescriptiondialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Description"
 msgstr "描述"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:128
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:130
 #, kde-format
 msgctxt "Move selected filter up."
 msgid "Up"
 msgstr "向上"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:129
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:131
 #, kde-format
 msgctxt "Move selected filter down."
 msgid "Down"
 msgstr "向下"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:130
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:132
 #, kde-format
 msgctxt "Move selected filter to the top."
 msgid "Top"
 msgstr "頂端"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:131
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:133
 #, kde-format
 msgctxt "Move selected filter to the bottom."
 msgid "Bottom"
 msgstr "底端"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:143
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Script"
 msgstr "新增文稿"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:149
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:151
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete Script"
 msgstr "刪除文稿"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:153
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:155
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rename Script"
 msgstr "重新命名文稿"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:159
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:161
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit Script Description"
 msgstr "編輯文稿描述"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:188
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:190
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Script"
 msgstr "新增文稿"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:193
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:195
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Rename Script"
 msgstr "重新命名文稿"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:200
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Script Description"
 msgstr "編輯文稿描述"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:203
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:205
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Script"
 msgstr "刪除文稿"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:257
-#: ksieveui/widgets/managesievewidget.cpp:228
-#: ksieveui/widgets/managesievewidget.cpp:234
-#: ksieveui/widgets/managesievewidget.cpp:246
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
+#: ksieveui/widgets/managesievewidget.cpp:230
+#: ksieveui/widgets/managesievewidget.cpp:236
+#: ksieveui/widgets/managesievewidget.cpp:248
 #, kde-format
 msgctxt "@title:window"
 msgid "New Script"
 msgstr "新增文稿"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:257
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
 #, kde-format
 msgid "New script name:"
 msgstr "新文稿名稱："
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:269
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:271
 #, kde-format
 msgid "Do you want to delete \"%1\" script?"
 msgstr "您要刪除 \"%1\" 文稿嗎？"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:270
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:272
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Script"
 msgstr "刪除文稿"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:290
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:292
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Script"
 msgstr "重新命名文稿"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:290
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:292
 #, kde-format
 msgid "New name for the script:"
 msgstr "新文稿名稱："
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:479
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:481
 #, kde-format
 msgid "forEveryPart is not supported by your server"
 msgstr "您的伺服器並未支援 forEveryPart"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:583
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:585
 #, kde-format
 msgid "Script part %1"
 msgstr "文稿部件 %1"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:36
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:38
 #, kde-format
 msgid "Includes"
 msgstr "引入檔"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:40
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:42
 #, kde-format
 msgid "Global Variable"
 msgstr "全域變數"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:46
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:48
 #, kde-format
 msgid "ForEveryPart"
 msgstr "ForEveryPart"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:95
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:97
 #, kde-format
 msgid ""
 "Script should always have just one \"Else\" block. We cannot add another one."
 msgstr "文稿應該只有一個 \"Else\" 區塊。我們不能再新增第二個。"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:111
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:113
 #, kde-format
 msgid "Main block"
 msgstr "主區塊"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:113
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:115
 #, kde-format
 msgid "Block \"Elsif\""
 msgstr "區塊 \"Elsif\""
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:115
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:117
 #, kde-format
 msgid "Block \"Else\""
 msgstr "區塊 \"Else\""
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:30
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Parsing Error"
 msgstr "Sieve 剖析錯誤"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:39
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:41
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:42
 #, kde-format
 msgid "Save As…"
 msgstr "另存為…"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:54
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:56
 #, kde-format
 msgid "Sieve script:"
 msgstr "Sieve 文稿："
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:56
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:58
 #, kde-format
 msgid "Errors reported:"
 msgstr "回報的錯誤："
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:79
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:81
 #, kde-format
 msgid "All Files (*)"
 msgstr "所有檔案 (*)"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:80
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Log To File"
 msgstr "儲存紀錄到檔案"
 
-#: ksieveui/autocreatescripts/sievescripttabwidget.cpp:45
-#: ksieveui/editor/sieveeditortabwidget.cpp:45
+#: ksieveui/autocreatescripts/sievescripttabwidget.cpp:47
+#: ksieveui/editor/sieveeditortabwidget.cpp:47
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "關閉分頁"
 
-#: ksieveui/debug/sievedebugdialog.cpp:40
+#: ksieveui/debug/sievedebugdialog.cpp:42
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Diagnostics"
 msgstr "Sieve 診斷"
 
-#: ksieveui/debug/sievedebugdialog.cpp:65
+#: ksieveui/debug/sievedebugdialog.cpp:67
 #, kde-format
 msgid ""
 "Collecting diagnostic information about Sieve support…\n"
@@ -2367,12 +2367,12 @@ msgstr ""
 "收集過濾支援的診斷資訊中…\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:68
+#: ksieveui/debug/sievedebugdialog.cpp:70
 #, kde-format
 msgid "No IMAP resource found."
 msgstr "找不到 IMAP 資源。"
 
-#: ksieveui/debug/sievedebugdialog.cpp:104
+#: ksieveui/debug/sievedebugdialog.cpp:106
 #, kde-format
 msgid ""
 "Unable to get the info\n"
@@ -2381,17 +2381,17 @@ msgstr ""
 "無法取得資訊\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:122
+#: ksieveui/debug/sievedebugdialog.cpp:124
 #, kde-format
 msgid "Collecting data for account '%1'…\n"
 msgstr "收集帳號 %1 的資料中…\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:123
+#: ksieveui/debug/sievedebugdialog.cpp:125
 #, kde-format
 msgid "------------------------------------------------------------\n"
 msgstr "------------------------------------------------------------\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:137
+#: ksieveui/debug/sievedebugdialog.cpp:139
 #, kde-format
 msgid ""
 "(Account does not support Sieve)\n"
@@ -2400,12 +2400,12 @@ msgstr ""
 "（帳號不支援過濾）\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:169
+#: ksieveui/debug/sievedebugdialog.cpp:171
 #, kde-format
 msgid "Contents of script '%1':\n"
 msgstr "過濾器 %1 的內容：\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:203
+#: ksieveui/debug/sievedebugdialog.cpp:205
 #, kde-format
 msgid ""
 "(This script is empty)\n"
@@ -2414,7 +2414,7 @@ msgstr ""
 "（過濾器是空的）\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:206
+#: ksieveui/debug/sievedebugdialog.cpp:208
 #, kde-format
 msgid ""
 "------------------------------------------------------------\n"
@@ -2427,22 +2427,22 @@ msgstr ""
 "------------------------------------------------------------\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:224
+#: ksieveui/debug/sievedebugdialog.cpp:226
 #, kde-format
 msgid "Sieve capabilities:\n"
 msgstr "過濾器容量：\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:227
+#: ksieveui/debug/sievedebugdialog.cpp:229
 #, kde-format
 msgid "(No special capabilities available)"
 msgstr "（沒有特定的容量）"
 
-#: ksieveui/debug/sievedebugdialog.cpp:235
+#: ksieveui/debug/sievedebugdialog.cpp:237
 #, kde-format
 msgid "Available Sieve scripts:\n"
 msgstr "可用的過濾器：\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:238
+#: ksieveui/debug/sievedebugdialog.cpp:240
 #, kde-format
 msgid ""
 "(No Sieve scripts available on this server)\n"
@@ -2451,7 +2451,7 @@ msgstr ""
 "（伺服器上沒有過濾器）\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:245
+#: ksieveui/debug/sievedebugdialog.cpp:247
 #, kde-format
 msgid ""
 "Active script: '%1'\n"
@@ -2460,63 +2460,63 @@ msgstr ""
 "可使用的過濾器：'%1'\n"
 "\n"
 
-#: ksieveui/editor/sieveeditor.cpp:39
+#: ksieveui/editor/sieveeditor.cpp:41
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr "編輯 Sieve 文稿"
 
-#: ksieveui/editor/sieveeditor.cpp:182
+#: ksieveui/editor/sieveeditor.cpp:184
 #, kde-format
 msgid "Script is modified. Do you want to close editor?"
 msgstr "文稿已變更。您要關閉編輯器嗎？"
 
-#: ksieveui/editor/sieveeditor.cpp:184
+#: ksieveui/editor/sieveeditor.cpp:186
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Editor"
 msgstr "關閉編輯器"
 
-#: ksieveui/editor/sieveeditor.cpp:185
+#: ksieveui/editor/sieveeditor.cpp:187
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Close"
 msgstr "不要關閉"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:28
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:30
 #, kde-format
 msgid "Sieve Files (*.siv);;All Files (*)"
 msgstr "Sieve 檔 (*.siv);;所有檔案 (*)"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:29
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Script"
 msgstr "儲存文稿"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:55
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:57
 #, kde-format
 msgid "You will overwrite script. Do you want to continue?"
 msgstr "您將要覆寫文稿。您確定要繼續嗎？"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:56
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:58
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Script"
 msgstr "匯入文稿"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:63
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:65
 #, kde-format
 msgid "*.siv;;sieve files (*.siv);;all files (*)"
 msgstr "*.siv;;sieve 檔 (*.siv);;所有檔案 (*)"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:64
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:66
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Script Sieve"
 msgstr "匯入文稿 Sieve"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:70
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:72
 #, kde-format
 msgid ""
 "Could not load the file %1:\n"
@@ -2525,305 +2525,305 @@ msgstr ""
 "無法載入檔案 %1：\n"
 "%2 為詳細的錯誤描述。"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:74
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:76
 #, fuzzy, kde-format
 #| msgid "Sieve Editor Error"
 msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "過濾編輯器發生錯誤"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:50
+#: ksieveui/editor/sieveeditormenubar.cpp:52
 #, kde-format
 msgctxt "@action"
 msgid "Go to Line"
 msgstr "跳至行數"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:55
+#: ksieveui/editor/sieveeditormenubar.cpp:57
 #, kde-format
 msgctxt "@action"
 msgid "Comment"
 msgstr "註解"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:59
+#: ksieveui/editor/sieveeditormenubar.cpp:61
 #, kde-format
 msgctxt "@action"
 msgid "Uncomment"
 msgstr "取消註解"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:63
+#: ksieveui/editor/sieveeditormenubar.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "Debug Sieve Script…"
 msgstr "除錯 Sieve 文稿…"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:81
+#: ksieveui/editor/sieveeditormenubar.cpp:83
 #, kde-format
 msgctxt "@action"
 msgid "Wordwrap"
 msgstr "自動換行"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:98
+#: ksieveui/editor/sieveeditormenubar.cpp:100
 #, kde-format
 msgctxt "@title:menu"
 msgid "File"
 msgstr "檔案"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:101
+#: ksieveui/editor/sieveeditormenubar.cpp:103
 #, kde-format
 msgctxt "@title:menu"
 msgid "Edit"
 msgstr "編輯"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:121
+#: ksieveui/editor/sieveeditormenubar.cpp:123
 #, kde-format
 msgctxt "@title:menu"
 msgid "View"
 msgstr "檢視"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:127
+#: ksieveui/editor/sieveeditormenubar.cpp:129
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tools"
 msgstr "工具"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:51
+#: ksieveui/editor/sieveeditortabwidget.cpp:53
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "關閉其他所有分頁"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:57
+#: ksieveui/editor/sieveeditortabwidget.cpp:59
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Tabs"
 msgstr "關閉所有分頁"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:150
+#: ksieveui/editor/sieveeditortabwidget.cpp:152
 #, kde-format
 msgid "Help"
 msgstr "說明"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:161
+#: ksieveui/editor/sieveeditortabwidget.cpp:163
 #, kde-format
 msgid "Error during load page about %1"
 msgstr "載入關於 %1 的頁面時發生錯誤"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:178
+#: ksieveui/editor/sieveeditortabwidget.cpp:180
 #, kde-format
 msgid "Help about: %1"
 msgstr "說明項目：%1"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:67
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:69
 #, kde-format
 msgid "Sieve Template:"
 msgstr "過濾器樣本："
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:92
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:94
 #, kde-format
 msgid "Editor"
 msgstr "編輯器"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:146
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:148
 #, fuzzy, kde-format
 #| msgid "Show result from \"check syntax\""
 msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "顯示「語法檢查」的結果"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:234
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:236
 #, kde-format
 msgid "Error during parsing"
 msgstr "剖析時發生錯誤"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:264
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "選取的文字不是完整的 Sieve 文稿"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:264
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "剖析錯誤"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:45
+#: ksieveui/editor/sieveeditorwidget.cpp:47
 #, kde-format
 msgctxt "@action"
 msgid "Check Syntax"
 msgstr "檢查語法"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:50
+#: ksieveui/editor/sieveeditorwidget.cpp:52
 #, kde-format
 msgid "Import…"
 msgstr "匯入…"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:52
+#: ksieveui/editor/sieveeditorwidget.cpp:54
 #, kde-format
 msgctxt "@action"
 msgid "Create Rules Graphically…"
 msgstr "以圖形介面建立規則…"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:66
+#: ksieveui/editor/sieveeditorwidget.cpp:68
 #, kde-format
 msgid "Share…"
 msgstr "分享…"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:72
+#: ksieveui/editor/sieveeditorwidget.cpp:74
 #, kde-format
 msgctxt "@action"
 msgid "Server Info"
 msgstr "伺服器資訊"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:116
+#: ksieveui/editor/sieveeditorwidget.cpp:118
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Script name:"
 msgstr "文稿名稱："
 
-#: ksieveui/editor/sieveeditorwidget.cpp:385
+#: ksieveui/editor/sieveeditorwidget.cpp:387
 #, kde-format
 msgid "Simple Mode"
 msgstr "簡單模式"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:385
+#: ksieveui/editor/sieveeditorwidget.cpp:387
 #, kde-format
 msgid "Advanced Mode"
 msgstr "進階模式"
 
-#: ksieveui/editor/sieveinfodialog.cpp:28
+#: ksieveui/editor/sieveinfodialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Support"
 msgstr "Sieve 伺服器支援"
 
-#: ksieveui/editor/sieveinfowidget.cpp:30
+#: ksieveui/editor/sieveinfowidget.cpp:31
 #, kde-format
 msgid "Sieve server supports:"
 msgstr "伺服器過濾支援："
 
-#: ksieveui/editor/sievetextedit.cpp:297
+#: ksieveui/editor/sievetextedit.cpp:298
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule"
 msgstr "插入規則"
 
-#: ksieveui/editor/sievetextedit.cpp:311
+#: ksieveui/editor/sievetextedit.cpp:312
 #, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "說明項目：'%1'"
 
-#: ksieveui/editor/sievetextedit.cpp:320
+#: ksieveui/editor/sievetextedit.cpp:321
 #, kde-format
 msgctxt "@action"
 msgid "Edit Rule"
 msgstr "編輯規則"
 
-#: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:20
+#: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:22
 #, kde-format
 msgid ""
 "Some errors were found during parsing. <a href=\"sieveerrordetails"
 "\">(Details…)</a>"
 msgstr "剖析時發現一些錯誤。<a href=\"sieveerrordetails\">（詳情…）</a>"
 
-#: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:25
+#: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:27
 #, kde-format
 msgctxt "@action"
 msgid "Switch to Graphical Mode"
 msgstr "切換至圖形模式"
 
-#: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:29
+#: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:31
 #, kde-format
 msgctxt "@action"
 msgid "Stay in Text Mode"
 msgstr "留在文字模式裡"
 
-#: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:35
+#: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:37
 #, kde-format
 msgctxt "@action"
 msgid "Switch to Text Mode"
 msgstr "切換至文字模式"
 
-#: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:39
+#: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Stay in Graphical Mode"
 msgstr "留在圖形模式裡"
 
-#: ksieveui/editor/warningwidget/sieveeditorwarning.cpp:17
+#: ksieveui/editor/warningwidget/sieveeditorwarning.cpp:18
 #, kde-format
 msgid "We cannot parse script. We cannot switch to graphical mode"
 msgstr "無法剖析文稿。我們無法切換到圖形模式"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:37
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:39
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "關閉"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:40
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:42
 #, kde-format
 msgid "Close"
 msgstr "關閉"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:46
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:48
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "尋找(&I)："
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:51
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "要搜尋的文字"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:56
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:58
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "下一個"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:57
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "跳至下一個符合"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:62
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:64
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "前一個"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:63
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "跳至上一個符合"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:69
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:71
 #, kde-format
 msgid "Options"
 msgstr "選項"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:70
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:72
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "變更搜尋行為"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:72
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:74
 #, kde-format
 msgid "Case sensitive"
 msgstr "區分大小寫"
 
-#: ksieveui/editor/webengine/findbar/findbarbase.cpp:88
+#: ksieveui/editor/webengine/findbar/findbarbase.cpp:90
 #, kde-format
 msgid "Phrase not found"
 msgstr "找不到該片語"
 
-#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:47
+#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:48
 #, fuzzy, kde-format
 #| msgid "Save Web Page"
 msgctxt "@title:window"
@@ -2865,7 +2865,7 @@ msgstr "取消啟動"
 
 #: ksieveui/managesievescriptsdialog.cpp:173
 #: ksieveui/managesievescriptsdialog.cpp:262
-#: ksieveui/widgets/managesievewidget.cpp:512
+#: ksieveui/widgets/managesievewidget.cpp:514
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
@@ -2898,53 +2898,53 @@ msgstr ""
 "伺服器回應：\n"
 "%1"
 
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:33
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Parsing"
 msgstr "Sieve 剖析"
 
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:83
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:85
 #, kde-format
 msgid "XML Files (*.xml);;All Files (*)"
 msgstr "XML 檔 (*.xml);;所有檔案 (*)"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:30
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug Sieve Script"
 msgstr "除錯 Sieve 文稿"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:42
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:44
 #, kde-format
 msgid "Apply Changes"
 msgstr "套用變更"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:51
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:53
 #, fuzzy, kde-format
 #| msgid "Debug"
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "除錯"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:52
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:54
 #, kde-format
 msgid "Debug"
 msgstr "除錯"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:43
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:45
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Email path:"
 msgstr "電子郵件路徑："
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:57
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:59
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Extension:"
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:62
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:64
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -2952,51 +2952,51 @@ msgid ""
 "<name of extension>\""
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:94
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:96
 #, fuzzy, kde-format
 #| msgid "Display check script result…"
 msgctxt "@info:placeholder"
 msgid "Display check script result…"
 msgstr "顯示文稿檢查結果…"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:143
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:145
 #, kde-format
 msgid "Script text is empty."
 msgstr "文稿內容是空的。"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:147
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:149
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "郵件檔案必須有在本地安裝。"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:153
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:155
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "開啟暫存檔失敗。"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:223
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:225
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr "文稿仍然包含除錯方法。請移除它。"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:27
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:29
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
 msgstr "清除"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:38
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:40
 #, kde-format
 msgid "Text Files (*.txt);;All Files (*)"
 msgstr "文字檔 (*.txt);;所有檔案 (*)"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:30
+#: ksieveui/sievescriptdebugger/sievescriptdebuggertextedit.cpp:31
 #, kde-format
 msgctxt "@action"
 msgid "Add debug here"
 msgstr "在此新增除錯"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerwidget.cpp:35
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerwidget.cpp:37
 #, kde-format
 msgctxt "@label:textbox"
 msgid ""
@@ -3044,54 +3044,54 @@ msgstr "刪除某來源的信件…"
 msgid "Vacations"
 msgstr "休假"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:39
+#: ksieveui/templates/sievetemplateeditdialog.cpp:41
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "預設樣本"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:39
+#: ksieveui/templates/sievetemplateeditdialog.cpp:41
 #, kde-format
 msgctxt "@title:window"
 msgid "Template"
 msgstr "樣本"
 
-#: ksieveui/templates/sievetemplatewidget.cpp:95
+#: ksieveui/templates/sievetemplatewidget.cpp:97
 #, kde-format
 msgid "You can drag and drop element on editor to import template"
 msgstr "您可以拖放元素到編輯器來匯入樣本"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:49
+#: ksieveui/vacation/multiimapvacationdialog.cpp:51
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure \"Out of Office\" Replies"
 msgstr "設定「不在辦公室」自動回覆"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:78
+#: ksieveui/vacation/multiimapvacationdialog.cpp:80
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr "您確定要取消嗎？"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:79
+#: ksieveui/vacation/multiimapvacationdialog.cpp:81
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "確認"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:80
+#: ksieveui/vacation/multiimapvacationdialog.cpp:82
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel Editing"
 msgstr "取消編輯"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:81
+#: ksieveui/vacation/multiimapvacationdialog.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Cancel"
 msgstr "不要取消"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:111
+#: ksieveui/vacation/multiimapvacationdialog.cpp:113
 #, kde-format
 msgctxt "@label:textbox"
 msgid ""
@@ -3102,77 +3102,77 @@ msgstr ""
 "KMail 的自動回覆功能跟伺服器端的過濾設定有關。您目前還沒設定 IMAP 伺服器的相"
 "關功能。您可以在 IMAP 帳號設定中的「過濾」頁設定。"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:47
+#: ksieveui/vacation/vacationeditwidget.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "設定要送出的假期通知："
 
-#: ksieveui/vacation/vacationeditwidget.cpp:55
+#: ksieveui/vacation/vacationeditwidget.cpp:57
 #, fuzzy, kde-format
 #| msgid "&Activate vacation notifications"
 msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr "啟動假期通知(&A)"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:75
+#: ksieveui/vacation/vacationeditwidget.cpp:77
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
 msgstr "休假郵件的主旨(&S)："
 
-#: ksieveui/vacation/vacationeditwidget.cpp:107
+#: ksieveui/vacation/vacationeditwidget.cpp:109
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr "開始日期："
 
-#: ksieveui/vacation/vacationeditwidget.cpp:137
+#: ksieveui/vacation/vacationeditwidget.cpp:139
 #, kde-format
 msgctxt "@label:textbox"
 msgid "End date:"
 msgstr "結束日期："
 
-#: ksieveui/vacation/vacationeditwidget.cpp:160
-#: ksieveui/vacation/vacationeditwidget.cpp:306
+#: ksieveui/vacation/vacationeditwidget.cpp:162
+#: ksieveui/vacation/vacationeditwidget.cpp:308
 #, kde-format
 msgid " day"
 msgid_plural " days"
 msgstr[0] " 天"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:162
+#: ksieveui/vacation/vacationeditwidget.cpp:164
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "多久之後重送通知(&R)："
 
-#: ksieveui/vacation/vacationeditwidget.cpp:175
+#: ksieveui/vacation/vacationeditwidget.cpp:177
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "傳送回覆到這些位址(&S)："
 
-#: ksieveui/vacation/vacationeditwidget.cpp:201
+#: ksieveui/vacation/vacationeditwidget.cpp:203
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Action for incoming mails:"
 msgstr "傳入信件的動作(&A)："
 
-#: ksieveui/vacation/vacationeditwidget.cpp:209
+#: ksieveui/vacation/vacationeditwidget.cpp:211
 #, fuzzy, kde-format
 #| msgid "Do not send vacation replies to spam messages"
 msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "不要對垃圾信件送出假期自動回覆"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:217
+#: ksieveui/vacation/vacationeditwidget.cpp:219
 #, fuzzy, kde-format
 #| msgid "Only react to mail coming from domain:"
 msgctxt "@option:check"
 msgid "Only react to mail coming from domain:"
 msgstr "只對此網域來的信件反應："
 
-#: ksieveui/vacation/vacationmanager.cpp:55
+#: ksieveui/vacation/vacationmanager.cpp:57
 #, kde-format
 msgid ""
 "There is still an active out-of-office reply configured.\n"
@@ -3181,25 +3181,25 @@ msgstr ""
 "目前已設定「不在辦公室」的回覆。\n"
 "您要編輯它嗎？"
 
-#: ksieveui/vacation/vacationmanager.cpp:57
+#: ksieveui/vacation/vacationmanager.cpp:59
 #, kde-format
 msgctxt "@title:window"
 msgid "Out-of-office reply still active"
 msgstr "「不在辦公室」的自動回覆仍為作用中"
 
-#: ksieveui/vacation/vacationmanager.cpp:58
+#: ksieveui/vacation/vacationmanager.cpp:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit"
 msgstr "編輯"
 
-#: ksieveui/vacation/vacationmanager.cpp:59
+#: ksieveui/vacation/vacationmanager.cpp:61
 #, kde-format
 msgctxt "@action:button"
 msgid "Ignore"
 msgstr "忽略"
 
-#: ksieveui/vacation/vacationpagewidget.cpp:49
+#: ksieveui/vacation/vacationpagewidget.cpp:51
 #, kde-format
 msgctxt "@label:textbox"
 msgid ""
@@ -3219,7 +3219,7 @@ msgid ""
 msgstr ""
 "某些人修改了伺服器上的假期設定。KMail 無法決定自動回覆的參數。將使用預設值。"
 
-#: ksieveui/widgets/custommanagesievewidget.cpp:91
+#: ksieveui/widgets/custommanagesievewidget.cpp:93
 #, kde-format
 msgid "No Sieve URL configured"
 msgstr "沒有設定過濾的 URL"
@@ -3240,84 +3240,84 @@ msgstr "可用的過濾器"
 msgid "Network down."
 msgstr "網路未連線。"
 
-#: ksieveui/widgets/managesievewidget.cpp:147
+#: ksieveui/widgets/managesievewidget.cpp:149
 #, kde-format
 msgid "Edit Script…"
 msgstr "編輯文稿…"
 
-#: ksieveui/widgets/managesievewidget.cpp:148
+#: ksieveui/widgets/managesievewidget.cpp:150
 #, kde-format
 msgid "Rename Script…"
 msgstr "重新命名文稿…"
 
-#: ksieveui/widgets/managesievewidget.cpp:150
+#: ksieveui/widgets/managesievewidget.cpp:152
 #, kde-format
 msgid "Delete Script"
 msgstr "刪除文稿"
 
-#: ksieveui/widgets/managesievewidget.cpp:153
+#: ksieveui/widgets/managesievewidget.cpp:155
 #, kde-format
 msgid "Deactivate Script"
 msgstr "關閉文稿"
 
-#: ksieveui/widgets/managesievewidget.cpp:159
+#: ksieveui/widgets/managesievewidget.cpp:161
 #, kde-format
 msgid "New Script…"
 msgstr "新增文稿…"
 
-#: ksieveui/widgets/managesievewidget.cpp:224
+#: ksieveui/widgets/managesievewidget.cpp:226
 #, kde-format
 msgid "New Sieve Script"
 msgstr "新增 Sieve 文稿"
 
-#: ksieveui/widgets/managesievewidget.cpp:224
+#: ksieveui/widgets/managesievewidget.cpp:226
 #, kde-format
 msgid "Please enter a name for the new Sieve script:"
 msgstr "請輸入新過濾文稿名稱"
 
-#: ksieveui/widgets/managesievewidget.cpp:224
+#: ksieveui/widgets/managesievewidget.cpp:226
 #, kde-format
 msgid "unnamed"
 msgstr "未命名"
 
-#: ksieveui/widgets/managesievewidget.cpp:228
+#: ksieveui/widgets/managesievewidget.cpp:230
 #, kde-format
 msgid "Empty name is not a valid name"
 msgstr "空白名稱不是有效的名稱"
 
-#: ksieveui/widgets/managesievewidget.cpp:234
+#: ksieveui/widgets/managesievewidget.cpp:236
 #, kde-format
 msgid "You cannot use protected name."
 msgstr "您不能使用受保護的名稱。"
 
-#: ksieveui/widgets/managesievewidget.cpp:246
+#: ksieveui/widgets/managesievewidget.cpp:248
 #, kde-format
 msgid "Script name already used \"%1\"."
 msgstr "文稿名稱已被使用：%1。"
 
-#: ksieveui/widgets/managesievewidget.cpp:426
-#: ksieveui/widgets/managesievewidget.cpp:454
+#: ksieveui/widgets/managesievewidget.cpp:428
+#: ksieveui/widgets/managesievewidget.cpp:456
 #, kde-format
 msgid "Rename Script"
 msgstr "重新命名文稿"
 
-#: ksieveui/widgets/managesievewidget.cpp:426
+#: ksieveui/widgets/managesievewidget.cpp:428
 #, kde-format
 msgid "Script Name:"
 msgstr "文稿名稱："
 
-#: ksieveui/widgets/managesievewidget.cpp:490
+#: ksieveui/widgets/managesievewidget.cpp:492
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
 msgstr "確定要從伺服器上刪除文稿 %1 嗎？"
 
-#: ksieveui/widgets/managesievewidget.cpp:491
+#: ksieveui/widgets/managesievewidget.cpp:493
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "確認刪除過濾文稿"
 
-#: ksieveui/widgets/managesievewidget.cpp:509
+#: ksieveui/widgets/managesievewidget.cpp:511
 #, kde-format
 msgid ""
 "Deleting the script failed.\n"
@@ -3328,7 +3328,7 @@ msgstr ""
 "伺服器回應：\n"
 "%1"
 
-#: ksieveui/widgets/managesievewidget.cpp:561
+#: ksieveui/widgets/managesievewidget.cpp:563
 #, kde-format
 msgid "Failed to fetch the list of scripts"
 msgstr "無法找到過濾器列表"
