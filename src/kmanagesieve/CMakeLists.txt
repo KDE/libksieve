@@ -32,7 +32,12 @@ ecm_qt_declare_logging_category(KPim6KManageSieve HEADER kmanagersieve_debug.h I
 
 generate_export_header(KPim6KManageSieve BASE_NAME kmanagesieve)
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim6KManageSieve PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KPim6KManageSieve
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 
 if(WIN32)
@@ -41,15 +46,23 @@ endif()
 
 target_link_libraries(
     KPim6KManageSieve
-    PRIVATE KF6::I18n KF6::KIOCore KF6::KIOWidgets Sasl2::Sasl2 ${extra_LIBS}
+    PRIVATE
+        KF6::I18n
+        KF6::KIOCore
+        KF6::KIOWidgets
+        Sasl2::Sasl2
+        ${extra_LIBS}
 )
 
 set_target_properties(
     KPim6KManageSieve
     PROPERTIES
-        VERSION ${KMANAGESIEVE_VERSION}
-        SOVERSION ${KMANAGESIEVE_SOVERSION}
-        EXPORT_NAME KManageSieve
+        VERSION
+            ${KMANAGESIEVE_VERSION}
+        SOVERSION
+            ${KMANAGESIEVE_SOVERSION}
+        EXPORT_NAME
+            KManageSieve
 )
 
 target_include_directories(
@@ -70,13 +83,10 @@ ecm_generate_headers(kmanagesieve_CamelCase_HEADERS
     PREFIX KManageSieve
 )
 
+install(TARGETS KPim6KManageSieve EXPORT KPim6KManageSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(
-    TARGETS KPim6KManageSieve
-    EXPORT KPim6KManageSieveTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
-install(
-    FILES ${kmanagesieve_CamelCase_HEADERS}
+    FILES
+        ${kmanagesieve_CamelCase_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KManageSieve/KManageSieve
     COMPONENT Devel
 )
@@ -90,7 +100,8 @@ install(
 )
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/libkmanagesieve_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/libkmanagesieve_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KManageSieve
     COMPONENT Devel
 )
@@ -125,9 +136,7 @@ if(BUILD_QCH)
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS
-        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KManageSieveQchTargets.cmake\")"
-    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KManageSieveQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(

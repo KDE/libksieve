@@ -15,10 +15,7 @@ else()
     set(USE_GRAPHICAL_SIEVE_EDITOR false)
 endif()
 
-configure_file(
-    settings/sieve-editor.kcfg.in
-    ${CMAKE_CURRENT_BINARY_DIR}/sieve-editor.kcfg
-)
+configure_file(settings/sieve-editor.kcfg.in ${CMAKE_CURRENT_BINARY_DIR}/sieve-editor.kcfg)
 
 if(BUILD_TESTING)
     add_subdirectory(editor/tests)
@@ -356,12 +353,21 @@ kconfig_add_kcfg_files(KPim6KSieveUi settings/sieve-editor.kcfgc)
 
 generate_export_header(KPim6KSieveUi BASE_NAME ksieveui)
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim6KSieveUi PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KPim6KSieveUi
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 
 target_link_libraries(
     KPim6KSieveUi
-    PUBLIC KPim6::KSieveCore KPim6::KManageSieve KPim6::KSieve KPim6::PimCommon
+    PUBLIC
+        KPim6::KSieveCore
+        KPim6::KManageSieve
+        KPim6::KSieve
+        KPim6::PimCommon
     PRIVATE
         KPim6::Libkdepim
         KF6::Archive
@@ -394,9 +400,12 @@ endif()
 set_target_properties(
     KPim6KSieveUi
     PROPERTIES
-        VERSION ${LIBKSIEVEUI_VERSION}
-        SOVERSION ${LIBKSIEVEUI_SOVERSION}
-        EXPORT_NAME KSieveUi
+        VERSION
+            ${LIBKSIEVEUI_VERSION}
+        SOVERSION
+            ${LIBKSIEVEUI_SOVERSION}
+        EXPORT_NAME
+            KSieveUi
 )
 
 target_include_directories(
@@ -456,11 +465,7 @@ ecm_generate_headers(ksieveui_Camelcasewidgets_HEADERS
     RELATIVE widgets
 )
 
-install(
-    TARGETS KPim6KSieveUi
-    EXPORT KPim6KSieveUiTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+install(TARGETS KPim6KSieveUi EXPORT KPim6KSieveUiTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(
     FILES
         ${ksieveui_Camelcasewidgets_HEADERS}
@@ -485,16 +490,14 @@ install(
 )
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/libksieveui_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/libksieveui_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi
     COMPONENT Devel
 )
 
 install(FILES data/ksieve_script.knsrc DESTINATION ${KDE_INSTALL_KNSRCDIR})
-install(
-    DIRECTORY data/scripts/
-    DESTINATION ${KDE_INSTALL_DATADIR}/sieve/scripts/
-)
+install(DIRECTORY data/scripts/ DESTINATION ${KDE_INSTALL_DATADIR}/sieve/scripts/)
 
 if(BUILD_QCH)
     ecm_add_qch(
@@ -533,9 +536,7 @@ if(BUILD_QCH)
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS
-        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KSieveUiQchTargets.cmake\")"
-    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KSieveUiQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(

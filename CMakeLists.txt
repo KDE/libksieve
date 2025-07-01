@@ -60,11 +60,7 @@ set(KTEXTADDONS_MIN_VERSION "1.6.0")
 # Remove it when next 1.6.0 KTEXTADDONS_MIN_VERSION
 set(KTEXTADDONS_WITH_TEXTAUTOGENERATETEXT_VERSION "1.6.0")
 
-option(
-    BUILD_QCH
-    "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)"
-    OFF
-)
+option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(
     QCH
     ${BUILD_QCH}
@@ -80,11 +76,7 @@ set(LIBKDEPIM_LIB_VERSION "6.4.40")
 set(PIMCOMMON_LIB_VERSION "6.4.40")
 set(KIMAP_LIB_VERSION "6.4.40")
 
-option(
-    USE_UNITY_CMAKE_SUPPORT
-    "Use UNITY cmake support (speedup compile time)"
-    OFF
-)
+option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
 set(COMPILE_WITH_UNITY_CMAKE_SUPPORT OFF)
 if(USE_UNITY_CMAKE_SUPPORT)
@@ -98,13 +90,21 @@ option(
 )
 # Look for Sasl2 before anything else
 find_package(Sasl2)
-set_package_properties(Sasl2 PROPERTIES TYPE REQUIRED)
+set_package_properties(
+    Sasl2
+    PROPERTIES
+        TYPE
+            REQUIRED
+)
 
 find_package(
     Qt6
     ${QT_REQUIRED_VERSION}
     CONFIG
-    REQUIRED Widgets PrintSupport WebEngineWidgets
+    REQUIRED
+        Widgets
+        PrintSupport
+        WebEngineWidgets
 )
 find_package(KF6I18n ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6ColorScheme ${KF_MIN_VERSION} CONFIG REQUIRED)
@@ -118,12 +118,7 @@ find_package(KF6Archive ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6SyntaxHighlighting ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6Sonnet ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KPim6Mime ${KMIME_LIB_VERSION} CONFIG REQUIRED)
-find_package(
-    KPim6IdentityManagementCore
-    ${IDENTITYMANAGEMENT_LIB_VERSION}
-    CONFIG
-    REQUIRED
-)
+find_package(KPim6IdentityManagementCore ${IDENTITYMANAGEMENT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6MailTransport ${KMAILTRANSPORT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6IMAP ${KIMAP_LIB_VERSION} CONFIG REQUIRED)
 
@@ -137,25 +132,24 @@ find_package(KF6TextUtils ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6DocTools ${KF_MIN_VERSION})
 set_package_properties(
     KF6DocTools
-    PROPERTIES DESCRIPTION "Tools to generate documentation" TYPE OPTIONAL
+    PROPERTIES
+        DESCRIPTION
+            "Tools to generate documentation"
+        TYPE
+            OPTIONAL
 )
-option(
-    OPTION_ADD_AUTOGENERATETEXT
-    "Add support for autogenerate text plugin"
-    ON
-)
+option(OPTION_ADD_AUTOGENERATETEXT "Add support for autogenerate text plugin" ON)
 if(OPTION_ADD_AUTOGENERATETEXT)
-    find_package(
-        KF6TextAutoGenerateText
-        ${KTEXTADDONS_WITH_TEXTAUTOGENERATETEXT_VERSION}
-        CONFIG
-    )
+    find_package(KF6TextAutoGenerateText ${KTEXTADDONS_WITH_TEXTAUTOGENERATETEXT_VERSION} CONFIG)
     set_package_properties(
         KF6TextAutoGenerateText
         PROPERTIES
-            TYPE OPTIONAL
-            PURPOSE "Required for building AI plugins support"
-            DESCRIPTION "Use AI plugin"
+            TYPE
+                OPTIONAL
+            PURPOSE
+                "Required for building AI plugins support"
+            DESCRIPTION
+                "Use AI plugin"
     )
 endif()
 

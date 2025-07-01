@@ -6,7 +6,11 @@ macro(add_ksievecore_vacation_test _source)
     set(_test ${_source})
     add_definitions(-DVACATIONTESTDATADIR="${CMAKE_CURRENT_SOURCE_DIR}/data/")
     get_filename_component(_name ${_source} NAME_WE)
-    add_executable(${_name} ${_test} ${_name}.h)
+    add_executable(
+        ${_name}
+        ${_test}
+        ${_name}.h
+    )
     add_test(NAME ${_name} COMMAND ${_name})
     ecm_mark_as_test(vacation-${_name})
     target_link_libraries(

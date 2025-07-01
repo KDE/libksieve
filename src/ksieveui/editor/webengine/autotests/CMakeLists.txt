@@ -10,10 +10,7 @@ target_sources(
         ../sieveeditorwebengineview.cpp
         ../sieveeditorloadprogressindicator.cpp
 )
-add_test(
-    NAME sieveeditorhelphtmlwidgettest
-    COMMAND sieveeditorhelphtmlwidgettest
-)
+add_test(NAME sieveeditorhelphtmlwidgettest COMMAND sieveeditorhelphtmlwidgettest)
 ecm_mark_as_test(sieveeditorhelphtmlwidgettest)
 target_link_libraries(
     sieveeditorhelphtmlwidgettest
@@ -30,7 +27,8 @@ target_link_libraries(
     KPim6KSieveUi
 )
 set_property(
-    TARGET sieveeditorhelphtmlwidgettest
+    TARGET
+        sieveeditorhelphtmlwidgettest
     PROPERTY
         INCLUDE_DIRECTORIES
             ${CMAKE_SOURCE_DIR}/src/ksieveui/editor/webengine/
@@ -41,5 +39,7 @@ set_property(
 # the CI runs as root, and webengine insists on disabling sandboxing in that case
 set_tests_properties(
     sieveeditorhelphtmlwidgettest
-    PROPERTIES ENVIRONMENT "QTWEBENGINE_DISABLE_SANDBOX=1"
+    PROPERTIES
+        ENVIRONMENT
+            "QTWEBENGINE_DISABLE_SANDBOX=1"
 )

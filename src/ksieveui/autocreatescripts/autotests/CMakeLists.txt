@@ -14,14 +14,23 @@ ecm_qt_declare_logging_category(ksieveui_sieveeditor_autocreatescripts_LIB_SRCS 
 
 macro(add_sieveeditor_autocreatescripts _source _extrasource)
     get_filename_component(_name ${_source} NAME_WE)
-    set(_test ${_source} ${_extrasource} ${_name}.h)
+    set(_test
+        ${_source}
+        ${_extrasource}
+        ${_name}.h
+    )
     ecm_add_test(${_test}
         TEST_NAME ${_name}
         NAME_PREFIX "sieveeditor-autocreatescripts-"
         LINK_LIBRARIES Qt::Test Qt::Widgets KF6::I18n KF6::Completion KF6::ConfigCore KPim6KSieveUi KPim6::MailTransport KPim6::Libkdepim
     )
     if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-        set_target_properties(${_name} PROPERTIES UNITY_BUILD ON)
+        set_target_properties(
+            ${_name}
+            PROPERTIES
+                UNITY_BUILD
+                    ON
+        )
     endif()
 endmacro()
 

@@ -5,7 +5,11 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
 macro(add_sievescriptdebugger_test _source)
     set(_test ${_source})
     get_filename_component(_name ${_source} NAME_WE)
-    add_executable(${_name} ${_test} ${_name}.h)
+    add_executable(
+        ${_name}
+        ${_test}
+        ${_name}.h
+    )
     add_test(NAME ${_name} COMMAND ${_name})
     ecm_mark_as_test(sievescriptdebugger-${_name})
     target_link_libraries(

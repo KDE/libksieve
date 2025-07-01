@@ -25,18 +25,31 @@ target_sources(
         error.h
 )
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim6KSieve PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KPim6KSieve
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 generate_export_header(KPim6KSieve BASE_NAME ksieve)
 
-target_link_libraries(KPim6KSieve PRIVATE Qt::Core KF6::I18n)
+target_link_libraries(
+    KPim6KSieve
+    PRIVATE
+        Qt::Core
+        KF6::I18n
+)
 
 set_target_properties(
     KPim6KSieve
     PROPERTIES
-        VERSION ${LIBKSIEVE_VERSION}
-        SOVERSION ${LIBKSIEVE_SOVERSION}
-        EXPORT_NAME KSieve
+        VERSION
+            ${LIBKSIEVE_VERSION}
+        SOVERSION
+            ${LIBKSIEVE_SOVERSION}
+        EXPORT_NAME
+            KSieve
 )
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6KSieve")
@@ -63,7 +76,8 @@ install(
 )
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieve
     COMPONENT Devel
 )
@@ -73,8 +87,4 @@ target_include_directories(
     PUBLIC
         "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src;${libksieve_BINARY_DIR}/src>"
 )
-install(
-    TARGETS KPim6KSieve
-    EXPORT KPim6KSieveTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+install(TARGETS KPim6KSieve EXPORT KPim6KSieveTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

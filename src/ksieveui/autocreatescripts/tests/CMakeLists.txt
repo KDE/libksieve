@@ -6,10 +6,7 @@ add_executable(
     autocreatescripts_gui.cpp
     ../../tests/capability.cpp
 )
-target_include_directories(
-    autocreatescripts_gui
-    PRIVATE ${libksieve_SOURCE_DIR}/src/ksieveui/scriptsparsing
-)
+target_include_directories(autocreatescripts_gui PRIVATE ${libksieve_SOURCE_DIR}/src/ksieveui/scriptsparsing)
 target_link_libraries(
     autocreatescripts_gui
     KPim6KSieveUi
@@ -24,10 +21,7 @@ add_executable(
     parsingscript_gui.cpp
     ../../tests/capability.cpp
 )
-target_include_directories(
-    parsingscript_gui
-    PRIVATE ${libksieve_SOURCE_DIR}/src/ksieveui/scriptsparsing
-)
+target_include_directories(parsingscript_gui PRIVATE ${libksieve_SOURCE_DIR}/src/ksieveui/scriptsparsing)
 target_link_libraries(
     parsingscript_gui
     KPim6KSieveUi

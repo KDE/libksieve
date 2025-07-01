@@ -6,10 +6,7 @@ set(libksieveui_sieveeditormenubartest_source
     sieveeditormenubartest.h
     ../sieveeditormenubar.cpp
 )
-add_executable(
-    sieveeditormenubartest
-    ${libksieveui_sieveeditormenubartest_source}
-)
+add_executable(sieveeditormenubartest ${libksieveui_sieveeditormenubartest_source})
 add_test(NAME sieveeditormenubartest COMMAND sieveeditormenubartest)
 ecm_mark_as_test(sieveeditormenubartest)
 target_link_libraries(
@@ -22,7 +19,8 @@ target_link_libraries(
     KF6::I18n
 )
 set_property(
-    TARGET sieveeditormenubartest
+    TARGET
+        sieveeditormenubartest
     PROPERTY
         INCLUDE_DIRECTORIES
             ${CMAKE_SOURCE_DIR}/src/ksieveui/
@@ -51,10 +49,7 @@ set(libksieveui_sievetexteditwidgettest_source
     sievetexteditwidgettest.cpp
     sievetexteditwidgettest.h
 )
-add_executable(
-    sievetexteditwidgettest
-    ${libksieveui_sievetexteditwidgettest_source}
-)
+add_executable(sievetexteditwidgettest ${libksieveui_sievetexteditwidgettest_source})
 add_test(NAME sievetexteditwidgettest COMMAND sievetexteditwidgettest)
 ecm_mark_as_test(sievetexteditwidgettest)
 target_link_libraries(
@@ -74,4 +69,8 @@ set(libksieveui_sieveinfodialogtest_source
 add_executable(sieveinfodialogtest ${libksieveui_sieveinfodialogtest_source})
 add_test(NAME sieveinfodialogtest COMMAND sieveinfodialogtest)
 ecm_mark_as_test(sieveinfodialogtest)
-target_link_libraries(sieveinfodialogtest Qt::Test KPim6KSieveUi)
+target_link_libraries(
+    sieveinfodialogtest
+    Qt::Test
+    KPim6KSieveUi
+)

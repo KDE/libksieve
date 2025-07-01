@@ -6,7 +6,8 @@ ecm_add_test(findbarbasetest.cpp findbarbasetest.h
     LINK_LIBRARIES Qt::Test Qt::Widgets Qt::Gui KF6::Completion KF6::I18n KPim6::PimCommon KPim6KSieveUi
 )
 set_property(
-    TARGET findbarbasetest
+    TARGET
+        findbarbasetest
     PROPERTY
         INCLUDE_DIRECTORIES
             ${CMAKE_SOURCE_DIR}/src/ksieveui/editor/webengine/findbar

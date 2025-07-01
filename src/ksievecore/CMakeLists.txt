@@ -89,7 +89,10 @@ kconfig_add_kcfg_files(KPim6KSieveCore settings/sieve-vacation.kcfgc)
 
 target_link_libraries(
     KPim6KSieveCore
-    PUBLIC Qt::Core KPim6::KManageSieve KPim6::KSieve
+    PUBLIC
+        Qt::Core
+        KPim6::KManageSieve
+        KPim6::KSieve
     PRIVATE
         KPim6::PimCommon
         KF6::I18n
@@ -101,15 +104,23 @@ target_link_libraries(
 
 generate_export_header(KPim6KSieveCore BASE_NAME ksievecore)
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim6KSieveCore PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KPim6KSieveCore
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 
 set_target_properties(
     KPim6KSieveCore
     PROPERTIES
-        VERSION ${LIBKSIEVECORE_VERSION}
-        SOVERSION ${LIBKSIEVECORE_SOVERSION}
-        EXPORT_NAME KSieveCore
+        VERSION
+            ${LIBKSIEVECORE_VERSION}
+        SOVERSION
+            ${LIBKSIEVECORE_SOVERSION}
+        EXPORT_NAME
+            KSieveCore
 )
 
 target_include_directories(
@@ -181,11 +192,7 @@ ecm_generate_headers(ksievecore_Camelcasevacation_HEADERS
     RELATIVE vacation
 )
 
-install(
-    TARGETS KPim6KSieveCore
-    EXPORT KPim6KSieveCoreTargets
-    ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+install(TARGETS KPim6KSieveCore EXPORT KPim6KSieveCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 install(
     FILES
         ${ksievecore_Camelcaseimapinstance_HEADERS}
@@ -211,7 +218,8 @@ install(
 )
 
 install(
-    FILES ${CMAKE_CURRENT_BINARY_DIR}/libksievecore_version.h
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/libksievecore_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveCore
     COMPONENT Devel
 )
@@ -249,9 +257,7 @@ if(BUILD_QCH)
         DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
         COMPONENT Devel
     )
-    set(PACKAGE_INCLUDE_QCHTARGETS
-        "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KSieveCoreQchTargets.cmake\")"
-    )
+    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KSieveCoreQchTargets.cmake\")")
 endif()
 
 configure_package_config_file(
