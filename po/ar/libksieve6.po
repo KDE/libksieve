@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:43+0000\n"
-"PO-Revision-Date: 2025-01-16 08:58+0400\n"
+"PO-Revision-Date: 2025-08-04 14:43+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -2264,7 +2264,7 @@ msgstr "كلّ الملفّات (*)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Log To File"
-msgstr "احفظ السّجلّ في ملفّ"
+msgstr "احفظ السجل في ملفّ"
 
 #: ksieveui/autocreatescripts/sievescripttabwidget.cpp:47
 #: ksieveui/editor/sieveeditortabwidget.cpp:47
@@ -2886,7 +2886,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Clear"
-msgstr "امسح"
+msgstr "امحُ"
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerresulteditor.cpp:40
 #, kde-format
