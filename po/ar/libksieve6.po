@@ -71,7 +71,7 @@ msgid ""
 "\"%1\" (usually the same as your email password):"
 msgstr ""
 "رجاءً أدخِل تفاصيل الاستيثاق لحساب الغربال \"%1\"  (غالبًا ما تكون مثل البريد "
-"وكلمة السّرّ):"
+"وكلمة السر):"
 
 #: kmanagesieve/session.cpp:322
 #, kde-format
