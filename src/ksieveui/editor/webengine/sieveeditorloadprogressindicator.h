@@ -28,7 +28,7 @@ private:
     Q_DISABLE_COPY(SieveEditorLoadProgressIndicator)
     void slotTimerDone();
     int mProgressCount = 0;
-    KPixmapSequence mProgressPix;
+    const KPixmapSequence mProgressPix;
     QTimer *const mProgressTimer;
 };
 }

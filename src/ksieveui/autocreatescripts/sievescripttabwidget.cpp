@@ -47,7 +47,7 @@ void SieveScriptTabWidget::slotTabContextMenuRequest(const QPoint &pos)
         QAction *closeTab = menu.addAction(i18nc("@action:inmenu", "Close Tab"));
         closeTab->setIcon(QIcon::fromTheme(u"tab-close"_s));
 
-        QAction *action = menu.exec(mapToGlobal(pos));
+        const QAction *action = menu.exec(mapToGlobal(pos));
 
         if (action == closeTab) {
             Q_EMIT tabCloseRequested(indexBar);

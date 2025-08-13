@@ -21,7 +21,7 @@ using namespace KSieveUi;
 class KSieveUi::VacationManagerPrivate
 {
 public:
-    VacationManagerPrivate(QWidget *parent)
+    explicit VacationManagerPrivate(QWidget *parent)
         : mWidget(parent)
     {
     }

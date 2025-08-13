@@ -14,9 +14,9 @@ using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SieveEditorLoadProgressIndicator::SieveEditorLoadProgressIndicator(QObject *parent)
     : QObject(parent)
+    , mProgressPix(KPixmapSequenceLoader::load(u"process-working"_s, KIconLoader::SizeSmallMedium))
     , mProgressTimer(new QTimer(this))
 {
-    mProgressPix = KPixmapSequenceLoader::load(u"process-working"_s, KIconLoader::SizeSmallMedium);
     connect(mProgressTimer, &QTimer::timeout, this, &SieveEditorLoadProgressIndicator::slotTimerDone);
 }
 

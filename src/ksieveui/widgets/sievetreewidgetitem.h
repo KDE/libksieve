@@ -51,8 +51,8 @@ private:
     Q_DISABLE_COPY(SieveTreeWidgetProgress)
     void slotTimerDone();
     int mProgressCount = 0;
-    KPixmapSequence mProgressPix;
-    QTimer *mProgressTimer = nullptr;
+    const KPixmapSequence mProgressPix;
+    QTimer *const mProgressTimer;
     SieveTreeWidgetItem *const mItem;
 };
 }

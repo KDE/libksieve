@@ -15,10 +15,10 @@ using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SieveTreeWidgetProgress::SieveTreeWidgetProgress(SieveTreeWidgetItem *item, QObject *parent)
     : QObject(parent)
+    , mProgressPix(KPixmapSequenceLoader::load(u"process-working"_s, KIconLoader::SizeSmallMedium))
+    , mProgressTimer(new QTimer(this))
     , mItem(item)
 {
-    mProgressPix = KPixmapSequenceLoader::load(u"process-working"_s, KIconLoader::SizeSmallMedium);
-    mProgressTimer = new QTimer(this);
     connect(mProgressTimer, &QTimer::timeout, this, &SieveTreeWidgetProgress::slotTimerDone);
 }
 

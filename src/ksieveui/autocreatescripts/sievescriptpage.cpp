@@ -123,10 +123,10 @@ QString SieveScriptPage::blockName(KSieveUi::SieveWidgetPageAbstract::PageType t
 
 void SieveScriptPage::generatedScript(QString &script, QStringList &required)
 {
-    QString foreverypartStr;
-    QStringList foreverypartRequires;
     bool inForEveryPartLoop = false;
     if (mForEveryPartWidget) {
+        QString foreverypartStr;
+        QStringList foreverypartRequires;
         mForEveryPartWidget->generatedScript(foreverypartStr, foreverypartRequires, false);
         inForEveryPartLoop = !foreverypartStr.isEmpty();
         if (inForEveryPartLoop) {

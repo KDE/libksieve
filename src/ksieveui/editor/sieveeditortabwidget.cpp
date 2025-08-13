@@ -61,7 +61,7 @@ void SieveEditorTabWidget::slotTabContextMenuRequest(const QPoint &pos)
         allTab->setIcon(QIcon::fromTheme(u"tab-close"_s));
     }
 
-    QAction *action = menu.exec(mapToGlobal(pos));
+    const QAction *action = menu.exec(mapToGlobal(pos));
 
     if (action) {
         if (action == allOther) { // Close all other tabs
