@@ -128,11 +128,7 @@ target_include_directories(
     INTERFACE
         "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveCore/;${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveCore>"
 )
-target_include_directories(
-    KPim6KSieveCore
-    PUBLIC
-        "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/ksievecore;${libksieve_BINARY_DIR}/src/ksievecore>"
-)
+target_include_directories(KPim6KSieveCore PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/ksievecore>")
 
 if(BUILD_TESTING)
     add_subdirectory(sieveimapinstance/autotests)

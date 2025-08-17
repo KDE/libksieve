@@ -70,11 +70,7 @@ target_include_directories(
     INTERFACE
         "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/KManageSieve/>"
 )
-target_include_directories(
-    KPim6KManageSieve
-    PUBLIC
-        "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/kmanagesieve;${libksieve_BINARY_DIR}/src/kmanagesieve>"
-)
+target_include_directories(KPim6KManageSieve PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/kmanagesieve>")
 
 ecm_generate_headers(kmanagesieve_CamelCase_HEADERS
     HEADER_NAMES
