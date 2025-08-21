@@ -32,7 +32,7 @@ msgid ""
 "You can choose to try to initiate TLS negotiations nonetheless, or cancel "
 "the operation."
 msgstr ""
-"طُلبت تعمية TLS ولكنّ خادوم الغربال لم يعلن TLS في إمكانيّاته.\n"
+"طُلبت تعمية TLS ولكنّ خادم الغربال لم يعلن TLS في إمكانيّاته.\n"
 "يمكنك تجربة تمهيد مفاوضات TLS رغم ذلك، أو إلغاء العمليّة."
 
 #: kmanagesieve/session.cpp:100
@@ -50,14 +50,14 @@ msgstr "اب&دأ TLS رغم ذلك"
 #: kmanagesieve/session.cpp:105
 #, kde-format
 msgid "TLS encryption requested, but not supported by server."
-msgstr "طُلبت تعمية TLS، ولكنّ الخادوم لا يدعمها."
+msgstr "طُلبت تعمية TLS، ولكنّ الخادم لا يدعمها."
 
 #: kmanagesieve/session.cpp:147
 #, kde-format
 msgid ""
 "The server does not seem to support TLS. Disable TLS if you want to connect "
 "without encryption."
-msgstr "لا يبدو أنّ الخادوم يدعم SASL. عطّل TLS إن أردت الاتّصال دون تعمية."
+msgstr "لا يبدو أنّ الخادم يدعم SASL. عطّل TLS إن أردت الاتّصال دون تعمية."
 
 #: kmanagesieve/session.cpp:259
 #, kde-format
@@ -98,7 +98,7 @@ msgid ""
 msgstr ""
 "فشل الاستيثاق.\n"
 "غالبًا ما تكون كلمة السر خاطئة.\n"
-"ردّ الخادوم بِ‍:\n"
+"ردّ الخادم بِ‍:\n"
 "%1"
 
 #: kmanagesieve/sievejob.cpp:144 kmanagesieve/sievejob.cpp:151
@@ -111,7 +111,7 @@ msgid ""
 msgstr ""
 "لم يُرفع السّكربت بنجاح.\n"
 "غالبًا ما يكون هذا بسبب أخطاء في السّكربت ذاته.\n"
-"ردّ الخادوم بِ‍:\n"
+"ردّ الخادم بِ‍:\n"
 "%1"
 
 #: kmanagesieve/sievejob.cpp:156
@@ -2579,7 +2579,7 @@ msgstr "شارِك…"
 #, kde-format
 msgctxt "@action"
 msgid "Server Info"
-msgstr "معلومات الخادوم"
+msgstr "معلومات الخادم"
 
 #: ksieveui/editor/sieveeditorwidget.cpp:118
 #, kde-format
@@ -2777,7 +2777,7 @@ msgstr "خطأ في الغربال"
 #: ksieveui/managesievescriptsdialog.cpp:206
 #, kde-format
 msgid "Uploading script to server for checking it, please wait…"
-msgstr "يرفع سكربتًا إلى الخادوم لفحص، رجاءً انتظر…"
+msgstr "يرفع سكربتًا إلى الخادم لفحص، رجاءً انتظر…"
 
 #: ksieveui/managesievescriptsdialog.cpp:252
 #, kde-format
@@ -2798,7 +2798,7 @@ msgid ""
 "%1"
 msgstr ""
 "فشل رفع سكربت الغربال.\n"
-"ردّ الخادوم بِ‍:\n"
+"ردّ الخادم بِ‍:\n"
 "%1"
 
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:35
@@ -3126,7 +3126,7 @@ msgstr "لم يُضبط مسار الغربال"
 #: ksieveui/widgets/managesievetreeview.cpp:30
 #, kde-format
 msgid "No IMAP server configured…"
-msgstr "لم يُضبط خادوم IMAP…"
+msgstr "لم يُضبط خادم IMAP…"
 
 #: ksieveui/widgets/managesievetreeview.cpp:20
 #, kde-format
