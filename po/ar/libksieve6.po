@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:43+0000\n"
-"PO-Revision-Date: 2025-08-04 14:43+0400\n"
+"PO-Revision-Date: 2025-08-30 22:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -265,17 +265,17 @@ msgstr ""
 #: ksieve/error.cpp:181
 #, kde-format
 msgid "Command \"%1\" not supported"
-msgstr "الأمر \"%1\" ليس مدعوم"
+msgstr "الأمر \"%1\" ليس متاح"
 
 #: ksieve/error.cpp:184
 #, kde-format
 msgid "Test \"%1\" not supported"
-msgstr "اختبار \"%1\" ليس مدعوم"
+msgstr "اختبار \"%1\" ليس متاح"
 
 #: ksieve/error.cpp:187
 #, kde-format
 msgid "Comparator \"%1\" not supported"
-msgstr "المقارن \"%1\" ليس مدعوم"
+msgstr "المقارن \"%1\" ليس متاح"
 
 #: ksieve/error.cpp:190
 #, kde-format
