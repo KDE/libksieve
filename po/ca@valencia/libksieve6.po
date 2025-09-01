@@ -1347,7 +1347,7 @@ msgstr "…"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Flags"
-msgstr "Selecciona els indicadors"
+msgstr "Tria els indicadors"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectimportancecombobox.cpp:27
 #, kde-format
@@ -1413,7 +1413,7 @@ msgstr "Llargària"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Please select an action."
-msgstr "Seleccioneu una acció."
+msgstr "Trieu una acció."
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:141
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:112
@@ -1962,7 +1962,7 @@ msgstr "Dia de la setmana"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:31
 msgid "Select multiple headers…"
-msgstr "Selecciona múltiples capçaleres…"
+msgstr "Tria múltiples capçaleres…"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:38
 #, kde-format
@@ -2115,7 +2115,7 @@ msgstr "GiB"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Please select an condition."
-msgstr "Seleccioneu una condició."
+msgstr "Trieu una condició."
 
 #: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:32
 #, kde-format
