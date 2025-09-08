@@ -6,10 +6,11 @@
 
 #pragma once
 #include "ksievecore_export.h"
-#include <KMime/HeaderParsing>
-#include <QString>
 
-class QDate;
+#include <QString>
+#include <QTime>
+
+#include <KMime/Types>
 
 namespace KSieveCore
 {
