@@ -473,14 +473,18 @@ install(
     COMPONENT Devel
 )
 
+set(KSIEVEUI_INCLUDE_FILES
+    ${ksieveui_widgets_HEADERS}
+    ${ksieveui_debug_HEADERS}
+    ${ksieveui_vacation_HEADERS}
+    ${ksieveui_HEADERS}
+    ${ksieveui_editor_HEADERS}
+)
+
 install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/ksieveui_export.h
-        ${ksieveui_widgets_HEADERS}
-        ${ksieveui_debug_HEADERS}
-        ${ksieveui_vacation_HEADERS}
-        ${ksieveui_HEADERS}
-        ${ksieveui_editor_HEADERS}
+        ${KSIEVEUI_INCLUDE_FILES}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi/ksieveui
     COMPONENT Devel
 )
@@ -503,13 +507,7 @@ if(BUILD_QCH)
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-        ${ksieveui_widgets_HEADERS}
-        ${ksieveui_debug_HEADERS}
-        ${ksieveui_vacation_HEADERS}
-        ${ksieveui_HEADERS}
-        ${ksieveui_editor_HEADERS}
-        ${ksieveui_util_HEADERS}
-        ${ksieveui_managescriptsjob_HEADERS}
+        ${KSIEVEUI_INCLUDE_FILES}
         LINK_QCHS
         Qt6Core_QCH
         Qt6Gui_QCH

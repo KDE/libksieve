@@ -200,14 +200,18 @@ install(
     COMPONENT Devel
 )
 
+set(KSIEVECORE_INCLUDE_FILES
+    ${ksievecore_imapinstance_HEADERS}
+    ${ksievecore_managescriptsjob_HEADERS}
+    ${ksievecore_util_HEADERS}
+    ${ksievecore_scriptsparsing_HEADERS}
+    ${ksievecore_vacation_HEADERS}
+)
+
 install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/ksievecore_export.h
-        ${ksievecore_imapinstance_HEADERS}
-        ${ksievecore_managescriptsjob_HEADERS}
-        ${ksievecore_util_HEADERS}
-        ${ksievecore_scriptsparsing_HEADERS}
-        ${ksievecore_vacation_HEADERS}
+        ${KSIEVECORE_INCLUDE_FILES}
         ${CMAKE_CURRENT_BINARY_DIR}/sieve-vacation.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveCore/ksievecore
     COMPONENT Devel
@@ -229,11 +233,7 @@ if(BUILD_QCH)
         VERSION ${PIM_VERSION}
         ORG_DOMAIN org.kde
         SOURCES # using only public headers, to cover only public API
-        ${ksievecore_imapinstance_HEADERS}
-        ${ksievecore_managescriptsjob_HEADERS}
-        ${ksievecore_util_HEADERS}
-        ${ksievecore_scriptsparsing_HEADERS}
-        ${ksievecore_vacation_HEADERS}
+        ${KSIEVECORE_INCLUDE_FILES}
         LINK_QCHS
         Qt6Core_QCH
         INCLUDE_DIRS
