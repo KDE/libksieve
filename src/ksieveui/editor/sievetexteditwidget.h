@@ -9,15 +9,6 @@
 #include "ksieveui_private_export.h"
 #include <QWidget>
 #include <memory>
-namespace TextCustomEditor
-{
-class PlainTextEditFindBar;
-}
-namespace TextAddonsWidgets
-{
-class SlideContainer;
-}
-
 namespace KSieveUi
 {
 class SieveTextEdit;
