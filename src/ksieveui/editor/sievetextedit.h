@@ -67,6 +67,7 @@ private:
     [[nodiscard]] KSIEVEUI_NO_EXPORT QStringList completerList() const;
     KSIEVEUI_NO_EXPORT void setCompleterList(const QStringList &list);
     [[nodiscard]] KSIEVEUI_NO_EXPORT QString selectedWord(QPoint pos = QPoint()) const;
+    KSIEVEUI_NO_EXPORT void slotQuickAsk();
 
     std::unique_ptr<SieveTextEditPrivate> const d;
 };

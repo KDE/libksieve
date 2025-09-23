@@ -12,7 +12,10 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "config-libksieve.h"
 #if HAVE_TEXT_AUTOGENERATE_TEXT
+#include <QPointer>
+#include <TextAutoGenerateText/TextAutoGenerateManager>
 #include <TextAutoGenerateText/TextAutoGenerateMenuWidget>
+#include <TextAutoGenerateText/TextAutoGenerateQuickAskDialog>
 #endif
 
 #include <TextCustomEditor/PlainTextSyntaxSpellCheckingHighlighter>
@@ -44,6 +47,8 @@ public:
     TextCustomEditor::TextEditorCompleter *mTextEditorCompleter = nullptr;
 #if HAVE_TEXT_AUTOGENERATE_TEXT
     TextAutoGenerateText::TextAutoGenerateMenuWidget *mTextAutoGenerateMenuWidget = nullptr;
+    TextAutoGenerateText::TextAutoGenerateManager *mTextAutoGenerateManager = nullptr;
+    QPointer<TextAutoGenerateText::TextAutoGenerateQuickAskDialog> mQuickDialog;
 #endif
     KSyntaxHighlighting::Repository mSyntaxRepo;
     bool mShowHelpMenu = true;
@@ -59,6 +64,7 @@ SieveTextEdit::SieveTextEdit(QWidget *parent)
     d->m_sieveLineNumberArea = new SieveLineNumberArea(this);
 #if HAVE_TEXT_AUTOGENERATE_TEXT
     d->mTextAutoGenerateMenuWidget = new TextAutoGenerateText::TextAutoGenerateMenuWidget(this);
+    d->mTextAutoGenerateManager = new TextAutoGenerateText::TextAutoGenerateManager(this);
 #endif
 
     connect(this, &SieveTextEdit::blockCountChanged, this, &SieveTextEdit::slotUpdateLineNumberAreaWidth);
@@ -278,6 +284,15 @@ void SieveTextEdit::setShowHelpMenu(bool b)
     d->mShowHelpMenu = b;
 }
 
+void SieveTextEdit::slotQuickAsk()
+{
+    if (!d->mQuickDialog) {
+        d->mQuickDialog = new TextAutoGenerateText::TextAutoGenerateQuickAskDialog(d->mTextAutoGenerateManager, this);
+        d->mQuickDialog->setAttribute(Qt::WA_DeleteOnClose);
+    }
+    d->mQuickDialog->show();
+}
+
 void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
 {
     const bool hasSelection = textCursor().hasSelection();
@@ -288,6 +303,10 @@ void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
         menu->addSeparator();
         menu->addMenu(d->mTextAutoGenerateMenuWidget->menu());
     }
+    menu->addSeparator();
+    auto quickAskAction = new QAction(i18nc("@action", "Quick Ask"), menu);
+    connect(quickAskAction, &QAction::triggered, this, &SieveTextEdit::slotQuickAsk);
+    menu->addAction(quickAskAction);
 #endif
     if (!d->mShowHelpMenu) {
         return;
