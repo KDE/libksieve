@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:43+0000\n"
+"POT-Creation-Date: 2025-09-24 00:44+0000\n"
 "PO-Revision-Date: 2024-11-10 15:23+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -2816,19 +2816,25 @@ msgstr "Поддръжка на Sieve сървър"
 msgid "Sieve server supports:"
 msgstr "Sieve сървърът поддържа:"
 
-#: ksieveui/editor/sievetextedit.cpp:298
+#: ksieveui/editor/sievetextedit.cpp:307
+#, kde-format
+msgctxt "@action"
+msgid "Quick Ask"
+msgstr ""
+
+#: ksieveui/editor/sievetextedit.cpp:317
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule"
 msgstr "Вмъкване на правило"
 
-#: ksieveui/editor/sievetextedit.cpp:312
+#: ksieveui/editor/sievetextedit.cpp:331
 #, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "Помощ за: „%1“"
 
-#: ksieveui/editor/sievetextedit.cpp:321
+#: ksieveui/editor/sievetextedit.cpp:340
 #, kde-format
 msgctxt "@action"
 msgid "Edit Rule"

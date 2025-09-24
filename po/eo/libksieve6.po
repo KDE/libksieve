@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:43+0000\n"
+"POT-Creation-Date: 2025-09-24 00:44+0000\n"
 "PO-Revision-Date: 2024-08-02 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -2772,19 +2772,25 @@ msgstr "Kribrila Servilo Subteno"
 msgid "Sieve server supports:"
 msgstr "Sieve-servilo subtenas:"
 
-#: ksieveui/editor/sievetextedit.cpp:298
+#: ksieveui/editor/sievetextedit.cpp:307
+#, kde-format
+msgctxt "@action"
+msgid "Quick Ask"
+msgstr ""
+
+#: ksieveui/editor/sievetextedit.cpp:317
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule"
 msgstr "Enmeti Regulon"
 
-#: ksieveui/editor/sievetextedit.cpp:312
+#: ksieveui/editor/sievetextedit.cpp:331
 #, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "Helpo pri: '%1'"
 
-#: ksieveui/editor/sievetextedit.cpp:321
+#: ksieveui/editor/sievetextedit.cpp:340
 #, kde-format
 msgctxt "@action"
 msgid "Edit Rule"
