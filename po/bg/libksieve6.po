@@ -3,13 +3,13 @@
 #
 # Radostin Radnev <radnev@yahoo.com>, 2004.
 # Yasen Pramatarov <yasen@lindeas.com>, 2017.
-# SPDX-FileCopyrightText: 2023, 2024 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-24 00:44+0000\n"
-"PO-Revision-Date: 2024-11-10 15:23+0100\n"
+"PO-Revision-Date: 2025-09-26 15:16+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #: kmanagesieve/session.cpp:91
 #, kde-format
@@ -2820,7 +2820,7 @@ msgstr "Sieve сървърът поддържа:"
 #, kde-format
 msgctxt "@action"
 msgid "Quick Ask"
-msgstr ""
+msgstr "Бърз въпрос"
 
 #: ksieveui/editor/sievetextedit.cpp:317
 #, kde-format
