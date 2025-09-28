@@ -24,9 +24,8 @@ public:
     {
     }
 
-    void passwords(const QString &identifier) override
+    void passwords([[maybe_unused]] const QString &identifier) override
     {
-        Q_UNUSED(identifier)
         Q_EMIT passwordsRequested(mData->password, mData->sieveCustomPassword);
     }
 
