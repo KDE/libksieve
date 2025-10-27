@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-24 00:44+0000\n"
-"PO-Revision-Date: 2025-10-24 09:42+0300\n"
+"PO-Revision-Date: 2025-10-26 10:41+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -883,6 +883,9 @@ msgid ""
 "interpreter to create the specified mailbox, if needed, before attempting to "
 "deliver the message into the specified mailbox."
 msgstr ""
+"אם צוין הארגומנט כרשות „‎:create”, הוא מנחה את מפענח ה־Sieve ליצור את תיבת "
+"הדוא״ל שצוינה, במקרה הצורך, בטרם הניסיון להעביר את ההודעה לתיבת הדוא״ל "
+"שצוינה."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:157
 #, kde-format
@@ -902,6 +905,9 @@ msgid ""
 "actions, if no filtering happens at all; generally, this simply means to "
 "file the message into the user's main mailbox."
 msgstr ""
+"פעולת „keep” (להשאיר) היא הפעולה שננקטת במקום הפעולות האחרות, אם לא מתרחש "
+"שום סינון. באופן כללי, זה פשוט מבקש לתייק את ההודעה לתיבת ההודעות הראשית של "
+"המשתמש."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:57
 #, kde-format
@@ -1617,6 +1623,8 @@ msgid ""
 "The \"servermetadataexists\" test is true if all of the server annotations "
 "listed in the \"annotation-names\" argument exist."
 msgstr ""
+"בדיקת „servermetadataexists” (קיימים נתוני על בשרת) היא חיובית אם כל פירושי "
+"השרת שמופיעים תחת הארגומנט „annotation-names” (שמות פירושים) קיימים."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionsize.cpp:22
 #, kde-format
@@ -1640,6 +1648,8 @@ msgid ""
 "tagged argument of \":over\" or \":under\", followed by a number "
 "representing the size of the message."
 msgstr ""
+"בדיקת „size” (גודל) מתמודדת עם גודל ההודעה. היא מקבלת ארגומנט מתויג כגון „‎:"
+"over” ו־„‎:under” שלאחריו מספר שמייצג את גודל ההודעה."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:26
 #, kde-format
