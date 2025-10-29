@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-24 00:44+0000\n"
-"PO-Revision-Date: 2025-10-26 10:41+0200\n"
+"PO-Revision-Date: 2025-10-28 15:03+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: kmanagesieve/session.cpp:91
 #, kde-format
@@ -454,6 +454,9 @@ msgid ""
 "The server responded:\n"
 "%1"
 msgstr ""
+"משיכת רשימת הסקריפטים של Sieve נכשלה.\n"
+"השרת הגיב:\n"
+"%1"
 
 #: ksievecore/vacation/vacationcreatescriptjob.cpp:146
 #, kde-format
@@ -670,6 +673,9 @@ msgid ""
 "any previously set flags.  This means that multiple occurrences of addflag "
 "are treated additively."
 msgstr ""
+"Addflag (הוספת דגלון) משמש להוספת דגלונים לרשימת דגלוני [IMAP]. הוא לא מחליף "
+"דגלונים אחרים שהוגדרו קודם לכן. משמעות הדבר היא שכמה מופעים של הוספת דגלון "
+"מקבלים יחס של הוספה."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:26
 #, kde-format
@@ -764,6 +770,8 @@ msgid ""
 "By default, the deleteheader action deletes all occurrences of the named "
 "header field."
 msgstr ""
+"כברירת מחדל, פעולת „deleteheader” (מחיקת כותרת) מוחקת את כל המופעים של שדה "
+"הכותרת בשם מסוים."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:25
 #, kde-format
@@ -816,6 +824,8 @@ msgid ""
 " The \"ereject\" action cancels the implicit keep and refuses delivery of a "
 "message."
 msgstr ""
+" פעולת ה־„ereject” (דחייה מורחבת) מבטלת את ההשארה המרומזת ומסרבת לשליחת "
+"ההודעה."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:23
 #, kde-format
@@ -1141,6 +1151,9 @@ msgid ""
 "provide correspondents with notification that the user is away for an "
 "extended period of time and that they should not expect quick responses."
 msgstr ""
+"פעולת „vacation” (חופשה) מטמיעה משיב אוטומטי בזמן חופשה בדומה לפקודת "
+"vacation שקיימת במגוון גרסאות יוניקס. המטרה שלה היא לספק תכתובת עם התראה "
+"שהמשתמש או המשתמשת לא זמינים למשך זמן ממושך ושאין מה לצפות למענה מהיר מהם."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:202
 #, kde-format
@@ -1324,6 +1337,8 @@ msgid ""
 "Too many argument found for \"%1\", max value is %2, number of value found "
 "%3 for %4"
 msgstr ""
+"נמצאו יותר מדי ארגומנטים עבור „%1”, הערך המרבי הוא %2, מספר הערך שנמצא %3 "
+"עבור %4"
 
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:48
 #, kde-format
@@ -1370,6 +1385,9 @@ msgid ""
 "anything following the first empty line after the header.  (The empty line "
 "itself, if present, is not considered to be part of the body.)"
 msgstr ""
+"בדיקת תוכן גוף ההודעה מנסה לבדוק את תוכן הודעת דוא״ל, כלומר, כל מה שאחרי "
+"השורה הריקה של הכותרת. (השורה הריקה עצמה, אם קיימת, לא נחשבת חלק מגוף תוכן "
+"ההודעה)."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditioncurrentdate.cpp:23
 #, kde-format
@@ -1497,6 +1515,8 @@ msgid ""
 "The hasflag test evaluates to true if any of the variables matches any flag "
 "name."
 msgstr ""
+"בדיקת „hasflag” (יש דגל) מפוענחת לחיובי (true) אם משתנה כלשהו מבין המשתנים "
+"תואם לשם של דגלון."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:23
 #, kde-format
@@ -2044,7 +2064,7 @@ msgstr "מקיף"
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:60
 #, kde-format
 msgid "Unknown location type \"%1\" during parsing includes"
-msgstr ""
+msgstr "סוג מקום שגוי „%1” במהלך פענוח ההכללות (include)"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:131
 #, kde-format
