@@ -61,10 +61,8 @@ void MultiImapVacationManager::checkVacation()
 
 void MultiImapVacationManager::slotSearchServerWithVacationSupportFinished(const QMap<QString, KSieveCore::Util::AccountInfo> &list)
 {
-    QMapIterator<QString, KSieveCore::Util::AccountInfo> i(list);
-    while (i.hasNext()) {
-        i.next();
-        checkVacation(i.key(), i.value().sieveUrl);
+    for (const auto &[key, value] : list.asKeyValueRange()) {
+        checkVacation(key, value.sieveUrl);
     }
 }
 

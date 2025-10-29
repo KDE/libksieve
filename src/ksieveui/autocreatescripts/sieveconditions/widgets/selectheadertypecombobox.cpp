@@ -153,13 +153,11 @@ void SelectHeadersWidget::addNewHeader(const QString &header)
 
 void SelectHeadersWidget::setListHeaders(const QMap<QString, QString> &lst, const QStringList &selectedHeaders)
 {
-    QMapIterator<QString, QString> i(lst);
-    while (i.hasNext()) {
-        i.next();
-        if (!i.value().isEmpty()) {
-            auto item = new QListWidgetItem(i.value(), this);
-            item->setData(HeaderId, i.key());
-            if (selectedHeaders.contains(i.key())) {
+    for (const auto &[key, value] : lst.asKeyValueRange()) {
+        if (!value.isEmpty()) {
+            auto item = new QListWidgetItem(value, this);
+            item->setData(HeaderId, key);
+            if (selectedHeaders.contains(key)) {
                 item->setCheckState(Qt::Checked);
             } else {
                 item->setCheckState(Qt::Unchecked);
@@ -263,10 +261,8 @@ void SelectHeaderTypeComboBox::headerMap(bool onlyEnvelopType)
 void SelectHeaderTypeComboBox::initialize(bool onlyEnvelopType)
 {
     headerMap(onlyEnvelopType);
-    QMapIterator<QString, QString> i(mHeaderMap);
-    while (i.hasNext()) {
-        i.next();
-        addItem(i.value(), i.key());
+    for (const auto &[key, value] : mHeaderMap.asKeyValueRange()) {
+        addItem(value, key);
     }
     addItem(getSelectMultipleHeadersTranslated());
 }
@@ -288,14 +284,12 @@ QString SelectHeaderTypeComboBox::code() const
 
 void SelectHeaderTypeComboBox::setCode(const QString &code)
 {
-    QMapIterator<QString, QString> i(mHeaderMap);
     bool foundHeaders = false;
-    while (i.hasNext()) {
-        i.next();
-        if (i.key() == code) {
-            const int index = findData(i.key());
+    for (const auto &[key, value] : mHeaderMap.asKeyValueRange()) {
+        if (key == code) {
+            const int index = findData(key);
             setCurrentIndex(index);
-            lineEdit()->setText(i.value());
+            lineEdit()->setText(value);
             foundHeaders = true;
             break;
         }

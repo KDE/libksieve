@@ -146,10 +146,8 @@ void MultiImapVacationDialog::slotSearchServerWithVacationSupportFinished(const 
 {
     bool foundOneImap = false;
 
-    QMapIterator<QString, KSieveCore::Util::AccountInfo> i(list);
-    while (i.hasNext()) {
-        i.next();
-        createPage(i.key(), i.value());
+    for (const auto &[key, value] : list.asKeyValueRange()) {
+        createPage(key, value);
         foundOneImap = true;
     }
     if (foundOneImap) {
