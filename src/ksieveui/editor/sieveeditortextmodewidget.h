@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include "config-libksieve.h"
 #include "ksieveui_export.h"
 #include "sieveeditorabstractwidget.h"
 class QSplitter;
@@ -23,7 +24,7 @@ namespace PimCommon
 {
 class PurposeMenuMessageWidget;
 }
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 namespace TextEditTextToSpeech
 {
 class TextToSpeechContainerWidget;
@@ -136,7 +137,7 @@ private:
     SieveTextEdit *mTextEdit = nullptr;
     TextCustomEditor::PlainTextEditorWidget *mDebugTextEdit = nullptr;
     TextCustomEditor::PlainTextEditFindBar *mFindBar = nullptr;
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechWidget = nullptr;
 #endif
     QSplitter *mMainSplitter = nullptr;

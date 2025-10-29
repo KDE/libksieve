@@ -5,7 +5,7 @@
 */
 
 #include "sievescriptdebuggerfrontendwidget.h"
-using namespace Qt::Literals::StringLiterals;
+#include "config-libksieve.h"
 
 #include "sievescriptdebuggerresulteditor.h"
 #include "sievescriptdebuggertextedit.h"
@@ -16,7 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KLineEdit>
 #include <KLocalizedString>
 #include <TextCustomEditor/PlainTextEditorWidget>
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
 #include <KLineEditEventHandler>
@@ -33,6 +33,7 @@ using namespace Qt::Literals::StringLiterals;
 
 using namespace KSieveUi;
 
+using namespace Qt::Literals::StringLiterals;
 SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *parent)
     : QWidget(parent)
 {
@@ -75,7 +76,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     auto vboxSieveEditorLayout = new QVBoxLayout;
     sieveEditorWidget->setLayout(vboxSieveEditorLayout);
     vboxSieveEditorLayout->setContentsMargins({});
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     auto textToSpeechWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(this);
     textToSpeechWidget->setObjectName(QLatin1StringView("texttospeechwidget"));
     vboxSieveEditorLayout->addWidget(textToSpeechWidget);
@@ -85,8 +86,12 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     mSieveTextEditWidget = new KSieveUi::SieveTextEditWidget(textEdit, this);
     mSieveTextEditWidget->setObjectName(QLatin1StringView("sievetexteditwidget"));
     vboxSieveEditorLayout->addWidget(mSieveTextEditWidget);
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_TEXTTOSPEECH_ENQQUEUE_SUPPORT
+    connect(mSieveTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::enqueue);
+#else
     connect(mSieveTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
+#endif
 #endif
     mSplitter->addWidget(sieveEditorWidget);
     mSplitter->setChildrenCollapsible(false);

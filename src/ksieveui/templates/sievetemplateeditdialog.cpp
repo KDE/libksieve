@@ -5,7 +5,7 @@
 */
 
 #include "sievetemplateeditdialog.h"
-using namespace Qt::Literals::StringLiterals;
+#include "config-libksieve.h"
 
 #include "editor/sievetextedit.h"
 
@@ -26,10 +26,11 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWindow>
 
 #include "editor/sievetexteditwidget.h"
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 namespace
 {
@@ -68,7 +69,7 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     hbox->addWidget(mTemplateNameEdit);
 
     vbox->addLayout(hbox);
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     auto textToSpeechWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(this);
     vbox->addWidget(textToSpeechWidget);
 #endif
@@ -77,8 +78,12 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     mTextEditWidget->textEdit()->setShowHelpMenu(false);
     mTextEditWidget->setReadOnly(defaultTemplate);
     vbox->addWidget(mTextEditWidget);
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_TEXTTOSPEECH_ENQQUEUE_SUPPORT
+    connect(mTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::enqueue);
+#else
     connect(mTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
+#endif
 #endif
 
     auto shortcut = new QShortcut(this);

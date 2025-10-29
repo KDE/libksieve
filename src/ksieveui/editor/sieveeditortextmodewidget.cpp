@@ -24,7 +24,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <TextCustomEditor/PlainTextEditFindBar>
 #include <TextCustomEditor/PlainTextEditorWidget>
 #include <TextCustomEditor/TextGotoLineWidget>
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
 
@@ -81,7 +81,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     mTabWidget = new SieveEditorTabWidget(this);
     connect(mTabWidget, &SieveEditorTabWidget::currentChanged, this, &SieveEditorTextModeWidget::sieveEditorTabCurrentChanged);
     connect(mTabWidget, &SieveEditorTabWidget::copyAvailable, this, &SieveEditorTextModeWidget::copyAvailable);
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     mTextToSpeechWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(this);
     editorWidgetLayout->addWidget(mTextToSpeechWidget);
 #endif
@@ -95,8 +95,12 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     mTabWidget->tabBar()->hide();
     textEditLayout->addWidget(mTabWidget);
     connect(mTextEdit, &SieveTextEdit::openHelp, mTabWidget, &SieveEditorTabWidget::slotAddHelpPage);
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_TEXTTOSPEECH_ENQQUEUE_SUPPORT
+    connect(mTextEdit, &SieveTextEdit::say, mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::enqueue);
+#else
     connect(mTextEdit, &SieveTextEdit::say, mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
+#endif
 #endif
     connect(mTextEdit, &SieveTextEdit::editRule, this, &SieveEditorTextModeWidget::slotEditRule);
     connect(mTextEdit, &SieveTextEdit::insertRule, this, &SieveEditorTextModeWidget::slotInsertRule);

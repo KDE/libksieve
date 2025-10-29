@@ -5,10 +5,10 @@
 */
 
 #include "sievescriptdebuggerfrontendwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
+#include "config-libksieve.h"
 
 #include "../sievescriptdebuggerfrontendwidget.h"
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
 #include "sievescriptdebugger/sievescriptdebuggerwarning.h"
@@ -18,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QSplitter>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 SieveScriptDebuggerFrontEndWidgetTest::SieveScriptDebuggerFrontEndWidgetTest(QObject *parent)
     : QObject(parent)
 {
@@ -50,7 +51,7 @@ void SieveScriptDebuggerFrontEndWidgetTest::shouldHaveDefaultValue()
     QVERIFY(extension);
     QVERIFY(extension->text().isEmpty());
     QVERIFY(extension->isClearButtonEnabled());
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     auto textToSpeechWidget = w.findChild<TextEditTextToSpeech::TextToSpeechContainerWidget *>(u"texttospeechwidget"_s);
     QVERIFY(textToSpeechWidget);
 #endif
