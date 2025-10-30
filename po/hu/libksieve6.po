@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-24 00:44+0000\n"
+"POT-Creation-Date: 2025-10-30 00:43+0000\n"
 "PO-Revision-Date: 2024-11-15 20:24+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1478,7 +1478,7 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:25
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:257
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:255
 #, kde-format
 msgid "Date"
 msgstr "Dátum"
@@ -1927,57 +1927,57 @@ msgctxt "@label:textbox"
 msgid "Add new header:"
 msgstr "Új fejléc hozzáadása:"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:247
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:245
 #, kde-format
 msgid "From"
 msgstr "Feladó"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:246
 #, kde-format
 msgid "To"
 msgstr "Címzett"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:247
 #, kde-format
 msgid "Reply To"
 msgstr "Válasz"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
 #, kde-format
 msgid "Cc"
 msgstr "Másolat"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
 #, kde-format
 msgid "Bcc"
 msgstr "Titkos másolat"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
 #, kde-format
 msgid "Resent From"
 msgstr "Újraküldve ide"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:253
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
 #, kde-format
 msgid "Resent To"
 msgstr "Újraküldve innen"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:254
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
 #, kde-format
 msgid "Sender"
 msgstr "Küldő"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:256
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:254
 #, kde-format
 msgid "Subject"
 msgstr "Tárgy"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:258
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:256
 #, kde-format
 msgid "Message Id"
 msgstr "Üzenetazonosító"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:259
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:257
 #, kde-format
 msgid "Content type"
 msgstr "Tartalomtípus"
@@ -2170,7 +2170,7 @@ msgid "Include:"
 msgstr "Belefoglalva:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:137
-#: ksieveui/templates/sievetemplateeditdialog.cpp:61
+#: ksieveui/templates/sievetemplateeditdialog.cpp:62
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -2721,23 +2721,23 @@ msgstr "Sieve sablon:"
 msgid "Editor"
 msgstr "Szerkesztő"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:148
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:152
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "Szintaxisellenőrzés eredményének megjelenítése"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:236
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:240
 #, kde-format
 msgid "Error during parsing"
 msgstr "Hiba a feldolgozás közben"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:270
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "A kijelölt szöveg nem egy teljes Sieve parancsfájl"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
@@ -3033,19 +3033,19 @@ msgstr "Hibakeresés"
 msgid "Debug"
 msgstr "Hibakeresés"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:45
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Email path:"
 msgstr "E-mail elérési útja:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:59
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:60
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Extension:"
 msgstr "Kiterjesztés:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:64
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:65
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -3055,28 +3055,28 @@ msgstr ""
 "Kiterjesztés aktiválása: „+<kiterjesztés neve>”, deaktiválása: „-"
 "<kiterjesztés neve>”"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:96
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:101
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Display check script result…"
 msgstr "Parancsfájl-ellenőrzés eredményének megjelenítése…"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:145
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
 #, kde-format
 msgid "Script text is empty."
 msgstr "A parancsfájl szövege üres."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:149
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:154
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "Az e-mail-fájlt helyben kell telepíteni."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:155
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:160
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "Nem sikerült megnyitni az átmeneti fájlt."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:225
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:230
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr ""
@@ -3150,13 +3150,13 @@ msgstr "Levelek megsemmisítése a következőtől…"
 msgid "Vacations"
 msgstr "Szabadságok"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:41
+#: ksieveui/templates/sievetemplateeditdialog.cpp:42
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "Alapértelmezett sablon"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:41
+#: ksieveui/templates/sievetemplateeditdialog.cpp:42
 #, kde-format
 msgctxt "@title:window"
 msgid "Template"

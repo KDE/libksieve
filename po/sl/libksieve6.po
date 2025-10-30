@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-24 00:44+0000\n"
+"POT-Creation-Date: 2025-10-30 00:43+0000\n"
 "PO-Revision-Date: 2025-09-24 07:06+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1487,7 +1487,7 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:25
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:257
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:255
 #, kde-format
 msgid "Date"
 msgstr "Datum"
@@ -1934,57 +1934,57 @@ msgctxt "@label:textbox"
 msgid "Add new header:"
 msgstr "Dodaj novo glavo:"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:247
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:245
 #, kde-format
 msgid "From"
 msgstr "Od"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:246
 #, kde-format
 msgid "To"
 msgstr "Za"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:247
 #, kde-format
 msgid "Reply To"
 msgstr "Odgovori na"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
 #, kde-format
 msgid "Cc"
 msgstr "Kp"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
 #, kde-format
 msgid "Bcc"
 msgstr "Skp"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
 #, kde-format
 msgid "Resent From"
 msgstr "Znova poslano iz"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:253
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
 #, kde-format
 msgid "Resent To"
 msgstr "Znova poslano na"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:254
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
 #, kde-format
 msgid "Sender"
 msgstr "Pošiljatelj"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:256
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:254
 #, kde-format
 msgid "Subject"
 msgstr "Zadeva"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:258
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:256
 #, kde-format
 msgid "Message Id"
 msgstr "ID sporočila"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:259
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:257
 #, kde-format
 msgid "Content type"
 msgstr "Vrsta vsebine"
@@ -2176,7 +2176,7 @@ msgid "Include:"
 msgstr "Vključi:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:137
-#: ksieveui/templates/sievetemplateeditdialog.cpp:61
+#: ksieveui/templates/sievetemplateeditdialog.cpp:62
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -2726,23 +2726,23 @@ msgstr "Predloga Sieve:"
 msgid "Editor"
 msgstr "Urejevalnik"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:148
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:152
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "Pokaži rezultat preverjanja skladnje"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:236
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:240
 #, kde-format
 msgid "Error during parsing"
 msgstr "Napaka med razčlenjevanjem"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:270
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "Izbrano besedilo ni celotni skript za sieve"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
@@ -3037,19 +3037,19 @@ msgstr "Razhrošči"
 msgid "Debug"
 msgstr "Razhrošči"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:45
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Email path:"
 msgstr "Pot e-pošte:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:59
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:60
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Extension:"
 msgstr "Razširitev:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:64
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:65
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -3059,28 +3059,28 @@ msgstr ""
 "Aktivirajte razširitev s \"+<ime razširitve>\", deaktivirajte z \"-<ime "
 "razširitve>\""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:96
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:101
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Display check script result…"
 msgstr "Pokaži rezultat preverjalnega skripta…"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:145
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
 #, kde-format
 msgid "Script text is empty."
 msgstr "Besedilo skripta je prazno."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:149
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:154
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "Datoteka e-pošte mora biti krajevno nameščena."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:155
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:160
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "Ni bilo mogoče odpreti začasne datoteke."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:225
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:230
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr "Skript še vedno vsebuje način za razhroščevanje. Odstranite ga."
@@ -3152,13 +3152,13 @@ msgstr "Uniči e-pošto, ki jo je poslal…"
 msgid "Vacations"
 msgstr "Dopusti"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:41
+#: ksieveui/templates/sievetemplateeditdialog.cpp:42
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "Privzeta predloga"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:41
+#: ksieveui/templates/sievetemplateeditdialog.cpp:42
 #, kde-format
 msgctxt "@title:window"
 msgid "Template"

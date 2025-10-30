@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-24 00:44+0000\n"
+"POT-Creation-Date: 2025-10-30 00:43+0000\n"
 "PO-Revision-Date: 2024-12-02 14:23+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1502,7 +1502,7 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:25
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:257
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:255
 #, kde-format
 msgid "Date"
 msgstr "Дата"
@@ -1953,58 +1953,58 @@ msgctxt "@label:textbox"
 msgid "Add new header:"
 msgstr "Добавить новое поле:"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:247
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:245
 #, kde-format
 msgid "From"
 msgstr "Отправитель"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:246
 #, kde-format
 msgid "To"
 msgstr "Кому"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:247
 #, kde-format
 msgid "Reply To"
 msgstr "Адрес для ответа"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
 #, kde-format
 msgid "Cc"
 msgstr "Копия"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
 #, kde-format
 msgid "Bcc"
 msgstr "Скрытая копия"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
 #, kde-format
 msgid "Resent From"
 msgstr "Переслано от"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:253
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
 #, kde-format
 msgid "Resent To"
 msgstr "Получатель"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:254
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
 #, kde-format
 msgid "Sender"
 msgstr "Отправитель"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:256
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:254
 #, kde-format
 msgid "Subject"
 msgstr "Тема"
 
 # BUGME: please add "Message Id" to glossary and change translations accordingly. --aspotashev
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:258
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:256
 #, kde-format
 msgid "Message Id"
 msgstr "Идентификатор письма"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:259
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:257
 #, kde-format
 msgid "Content type"
 msgstr "Тип содержимого"
@@ -2196,7 +2196,7 @@ msgid "Include:"
 msgstr "Включает:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:137
-#: ksieveui/templates/sievetemplateeditdialog.cpp:61
+#: ksieveui/templates/sievetemplateeditdialog.cpp:62
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -2758,23 +2758,23 @@ msgstr "Шаблон Sieve:"
 msgid "Editor"
 msgstr "Редактор"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:148
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:152
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "Показать результаты проверки синтаксиса"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:236
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:240
 #, kde-format
 msgid "Error during parsing"
 msgstr "При обработке произошла ошибка."
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:270
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "Выбранный текст не является законченным сценарием Sieve"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
@@ -3072,21 +3072,21 @@ msgid "Debug"
 msgstr "Отладка"
 
 # BUGME: please verify Ukrainian translation --aspotashev
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:45
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Email path:"
 msgstr "Путь к файлу электронного письма:"
 
 # BUGME: "Extension_s_"? --aspotashev
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:59
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:60
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Extension:"
 msgstr "Расширения:"
 
 # BUGME: This string may be too long for a placeholder text. --aspotashev
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:64
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:65
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -3096,28 +3096,28 @@ msgstr ""
 "Чтобы задействовать расширение, напишите «+<название расширения>», чтобы "
 "отключить расширение — «-<название расширения>»."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:96
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:101
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Display check script result…"
 msgstr "Показать результаты проверки сценария…"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:145
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
 #, kde-format
 msgid "Script text is empty."
 msgstr "Сценарий пустой."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:149
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:154
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "Файл электронного письма должен находиться на этом компьютере."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:155
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:160
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "Не удалось открыть временный файл."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:225
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:230
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr "Сценарий по-прежнему содержит отладочный вызов. Удалите его."
@@ -3189,13 +3189,13 @@ msgstr "Уничтожить сообщение, отправленное…"
 msgid "Vacations"
 msgstr "Отсутствие"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:41
+#: ksieveui/templates/sievetemplateeditdialog.cpp:42
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "Стандартный шаблон"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:41
+#: ksieveui/templates/sievetemplateeditdialog.cpp:42
 #, kde-format
 msgctxt "@title:window"
 msgid "Template"

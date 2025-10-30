@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-24 00:44+0000\n"
+"POT-Creation-Date: 2025-10-30 00:43+0000\n"
 "PO-Revision-Date: 2025-09-24 19:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1499,7 +1499,7 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:25
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:257
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:255
 #, kde-format
 msgid "Date"
 msgstr "Data"
@@ -1954,57 +1954,57 @@ msgctxt "@label:textbox"
 msgid "Add new header:"
 msgstr "Afegeix una capçalera nova:"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:247
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:245
 #, kde-format
 msgid "From"
 msgstr "Des de"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:246
 #, kde-format
 msgid "To"
 msgstr "A"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:247
 #, kde-format
 msgid "Reply To"
 msgstr "Respon a"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
 #, kde-format
 msgid "Cc"
 msgstr "Cc"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
 #, kde-format
 msgid "Bcc"
 msgstr "Bcc"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
 #, kde-format
 msgid "Resent From"
 msgstr "Reenviat des de"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:253
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
 #, kde-format
 msgid "Resent To"
 msgstr "Reenviat a"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:254
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
 #, kde-format
 msgid "Sender"
 msgstr "Remitent"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:256
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:254
 #, kde-format
 msgid "Subject"
 msgstr "Assumpte"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:258
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:256
 #, kde-format
 msgid "Message Id"
 msgstr "ID del missatge"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:259
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:257
 #, kde-format
 msgid "Content type"
 msgstr "Tipus de contingut"
@@ -2196,7 +2196,7 @@ msgid "Include:"
 msgstr "Inclusió:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:137
-#: ksieveui/templates/sievetemplateeditdialog.cpp:61
+#: ksieveui/templates/sievetemplateeditdialog.cpp:62
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -2749,23 +2749,23 @@ msgstr "Plantilla de «Sieve»:"
 msgid "Editor"
 msgstr "Editor"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:148
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:152
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "Mostra el resultat des de «Comprova la sintaxi»"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:236
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:240
 #, kde-format
 msgid "Error during parsing"
 msgstr "Error durant l'anàlisi"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:270
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "El text seleccionat no és cap script «sieve» complet"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
@@ -3061,19 +3061,19 @@ msgstr "Depuració"
 msgid "Debug"
 msgstr "Depuració"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:45
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Email path:"
 msgstr "Camí de correu electrònic:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:59
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:60
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Extension:"
 msgstr "Extensió:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:64
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:65
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -3083,28 +3083,28 @@ msgstr ""
 "Activeu l'extensió amb «+<nom de l'extensió>», desactiveu-la amb «-<nom de "
 "l'extensió>»"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:96
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:101
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Display check script result…"
 msgstr "Mostra el resultat de la verificació de l'script…"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:145
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
 #, kde-format
 msgid "Script text is empty."
 msgstr "El text de l'script està buit."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:149
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:154
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "El fitxer de correu cal que s'instal·li en local."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:155
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:160
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "Ha fallat en obrir el fitxer temporal."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:225
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:230
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr "L'script encara conté el mètode de depuració. Si us plau, elimineu-lo."
@@ -3176,13 +3176,13 @@ msgstr "Destrueix el correu enviat per…"
 msgid "Vacations"
 msgstr "Vacances"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:41
+#: ksieveui/templates/sievetemplateeditdialog.cpp:42
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "Plantilla predeterminada"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:41
+#: ksieveui/templates/sievetemplateeditdialog.cpp:42
 #, kde-format
 msgctxt "@title:window"
 msgid "Template"
