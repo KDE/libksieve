@@ -96,7 +96,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     textEditLayout->addWidget(mTabWidget);
     connect(mTextEdit, &SieveTextEdit::openHelp, mTabWidget, &SieveEditorTabWidget::slotAddHelpPage);
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-#if HAVE_TEXTTOSPEECH_ENQQUEUE_SUPPORT
+#if HAVE_TEXTTOSPEECH_ENQUEUE_SUPPORT
     connect(mTextEdit, &SieveTextEdit::say, mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::enqueue);
 #else
     connect(mTextEdit, &SieveTextEdit::say, mTextToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);

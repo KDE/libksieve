@@ -87,7 +87,7 @@ SieveScriptDebuggerFrontEndWidget::SieveScriptDebuggerFrontEndWidget(QWidget *pa
     mSieveTextEditWidget->setObjectName(QLatin1StringView("sievetexteditwidget"));
     vboxSieveEditorLayout->addWidget(mSieveTextEditWidget);
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-#if HAVE_TEXTTOSPEECH_ENQQUEUE_SUPPORT
+#if HAVE_TEXTTOSPEECH_ENQUEUE_SUPPORT
     connect(mSieveTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::enqueue);
 #else
     connect(mSieveTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
