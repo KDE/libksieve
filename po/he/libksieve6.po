@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:43+0000\n"
-"PO-Revision-Date: 2025-10-29 11:25+0200\n"
+"PO-Revision-Date: 2025-11-01 18:42+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1006,6 +1006,9 @@ msgid ""
 "clears flags previously set by \"set\"/\"addflag\". Calling removeflag with "
 "a flag that wasn't set before is not an error and is ignored."
 msgstr ""
+"Removeflag (הסרת דגלון) משמשת להסרת דגלונים מרשימת דגלוני [IMAP]. Removeflag "
+"מסלקת דגלונים שהוגדרו בעבר על ידי ‎„set”/„addflag”‎ (הגדרה/הוספת דגל בהתאמה). "
+"הקריאה ל־removeflag עם דגלון שלא הוגדר בעבר אינה שגיאה והיא תזכה להתעלמות."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:26
 #, kde-format
@@ -1052,6 +1055,8 @@ msgid ""
 "Setflag is used for setting [IMAP] system flags or keywords. Setflag "
 "replaces any previously set flags."
 msgstr ""
+"Setflag (הגדרת דגלונים) משמשת להגדרת דגלוני מערכת או מילות מפתח של [IMAP]. "
+"Setflag מחליפה כל דגלון שהוא שהוגדר קודם לכן."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:26
 #, kde-format
@@ -1163,6 +1168,9 @@ msgid ""
 "are cases when one needs more granularity, if one would like to generate "
 "\"vacation\" replies more frequently."
 msgstr ""
+"דרך המשתנה „‎:days”, מספר התגובות האוטומטיות לאותו השולחן מוגבלות לאחת כל [n] "
+"ימים, למספר ימים מוגדר. אבל יש מקרים שצריך לדייק מעבר לזה, כדי לייצר תגובות "
+"„חופשה” (vacation) באופן יותר תדיר."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:204
 #, kde-format
@@ -1343,7 +1351,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:48
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing condition \"%2\"."
-msgstr ""
+msgstr "נמצא ערך תגית לא ידוע „%1” במהלך פענוח התנאי „%2”."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:25
 #, kde-format
@@ -1372,6 +1380,9 @@ msgid ""
 "specified part of the address, as modified by the comparator and the match "
 "keyword."
 msgstr ""
+"בדיקת „address” (כתובת) בודקת כתובות אינטרנט בכותרות שבתבניות מוסכמות "
+"ומכילות כתובות. היא מחזירה חיובי (true) אם כותרת כלשהי מכילה מפתח כלשהו בחלק "
+"של הכתובת שצוין, כפי שהשתנה על ידי סימן ההשוואה ומילת המפתח להתאמה."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:22
 #, kde-format
@@ -1385,9 +1396,9 @@ msgid ""
 "anything following the first empty line after the header.  (The empty line "
 "itself, if present, is not considered to be part of the body.)"
 msgstr ""
-"בדיקת תוכן גוף ההודעה מנסה לבדוק את תוכן הודעת דוא״ל, כלומר, כל מה שאחרי "
-"השורה הריקה של הכותרת. (השורה הריקה עצמה, אם קיימת, לא נחשבת חלק מגוף תוכן "
-"ההודעה)."
+"בדיקת ה־„body” (תוכן גוף ההודעה) מנסה לבדוק את תוכן הודעת דוא״ל, כלומר, כל "
+"מה שאחרי השורה הריקה של הכותרת. (השורה הריקה עצמה, אם קיימת, לא נחשבת חלק "
+"מגוף תוכן ההודעה)."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditioncurrentdate.cpp:23
 #, kde-format
@@ -1400,6 +1411,8 @@ msgid ""
 "The currentdate test is similar to the date test, except that it operates on "
 "the current date/time rather than a value extracted from the message header."
 msgstr ""
+"בדיקת „currentdate” (תאריך נוכחי) דומה לבדיקת התאריך (date), למעט העובדה "
+"שהיא פועלת על התאריך/זמן הנוכחיים במקום הערך שחולץ מכותרת ההודעה."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:25
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
