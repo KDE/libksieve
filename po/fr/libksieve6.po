@@ -193,21 +193,21 @@ msgstr "Erreur d'analyse : séquence UTF-8 non valable"
 msgid ""
 "Parse error: Premature end of Multiline String (did you forget the '.'?)"
 msgstr ""
-"Erreur d'analyse : fin de chaîne multi-ligne prématurée (avez-vous oublié le "
+"Erreur d'analyse : fin de chaine multi-ligne prématurée (avez-vous oublié le "
 "« . » ?)"
 
 #: ksieve/error.cpp:122
 #, kde-format
 msgid "Parse error: Premature end of Quoted String (missing closing '\"')"
 msgstr ""
-"Erreur d'analyse : fin de chaîne citée prématurée (guillemet fermant « \" » "
+"Erreur d'analyse : fin de chaine citée prématurée (guillemet fermant « \" » "
 "manquant)"
 
 #: ksieve/error.cpp:125
 #, kde-format
 msgid "Parse error: Premature end of String List (missing closing ']')"
 msgstr ""
-"Erreur d'analyse : fin de liste de chaînes prématurée (crochet fermant « ] » "
+"Erreur d'analyse : fin de liste de chaines prématurée (crochet fermant « ] » "
 "manquant)"
 
 #: ksieve/error.cpp:128
@@ -249,7 +249,7 @@ msgstr "Erreur d'analyse : commande attendue. Obtenu un autre caractère"
 msgid "Parse error: Trailing, Leading or Duplicate Commas in String List"
 msgstr ""
 "Erreur d'analyse : virgules de fin, de début ou en double dans la liste de "
-"chaînes"
+"chaines"
 
 #: ksieve/error.cpp:149
 #, kde-format
@@ -262,8 +262,8 @@ msgstr ""
 #, kde-format
 msgid "Parse error: Missing ',' between Strings in String List"
 msgstr ""
-"Erreur d'analyse : caractère « ; » manquant entre les chaînes dans la liste "
-"de chaînes"
+"Erreur d'analyse : caractère « ; » manquant entre les chaines dans la liste "
+"de chaines"
 
 #: ksieve/error.cpp:155
 #, kde-format
@@ -276,8 +276,8 @@ msgstr ""
 #, kde-format
 msgid "Parse error: Only Strings allowed in String Lists"
 msgstr ""
-"Erreur d'analyse : seules les chaînes sont autorisées dans les listes de "
-"chaînes"
+"Erreur d'analyse : seules les chaines sont autorisées dans les listes de "
+"chaines"
 
 #: ksieve/error.cpp:164
 #, kde-format
@@ -962,7 +962,7 @@ msgstr "Créer un dossier"
 msgid ""
 "The \"fileinto\" action delivers the message into the specified mailbox."
 msgstr ""
-"L'action enregistrer dans « fileinto » place le message dans la boîte à "
+"L'action enregistrer dans « fileinto » place le message dans la boite à "
 "lettre spécifiée."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:152
@@ -973,7 +973,7 @@ msgid ""
 "deliver the message into the specified mailbox."
 msgstr ""
 "Si l'argument optionnel « :create » est fourni, il demandera à "
-"l'interpréteur Sieve de créer la boîte à lettre spécifiée, si nécessaire, "
+"l'interpréteur Sieve de créer la boite à lettre spécifiée, si nécessaire, "
 "avant de tenter d'y délivrer le message."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:157
@@ -997,7 +997,7 @@ msgid ""
 msgstr ""
 "L'action « keep » représente n'importe quelle action qui est prise à la "
 "place de toute autre action si aucun filtrage n'intervient. Généralement, "
-"cela signifie seulement que le message sera enregistré dans la boîte à "
+"cela signifie seulement que le message sera enregistré dans la boite à "
 "lettre principale de l'utilisateur."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:57
@@ -1572,7 +1572,7 @@ msgid ""
 "argument."
 msgstr ""
 "Le test « environnement » accède aux éléments d'informations d'environnement "
-"spécifiés par le nom de la chaîne et la fait correspondre aux valeurs "
+"spécifiés par le nom de la chaine et la fait correspondre aux valeurs "
 "spécifiées dans l'argument « key-list »."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:24
@@ -1659,7 +1659,7 @@ msgid ""
 "headers, ignoring leading and trailing whitespace, matches any key."
 msgstr ""
 "Le test d'en-tête « header » renvoi vrai si la valeur d'un des noms d'en-"
-"tête, en ignorant les espaces de début et de fion de chaîne, correspond à "
+"tête, en ignorant les espaces de début et de fion de chaine, correspond à "
 "une des clés."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionihave.cpp:23
@@ -1685,7 +1685,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmailboxexists.cpp:22
 #, kde-format
 msgid "Mailbox exists"
-msgstr "Les boîtes à lettre existent"
+msgstr "Les boites à lettre existent"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmailboxexists.cpp:68
 #, kde-format
@@ -1694,8 +1694,8 @@ msgid ""
 "names\" argument exist in the mailstore, and each allows the user in whose "
 "context the Sieve script runs to \"deliver\" messages into it."
 msgstr ""
-"Le test d'existence de boîte à lettre « mailboxexists » renvoie « True » si "
-"toutes les boîtes à lettre listées dans l'argument « mailbox-names » "
+"Le test d'existence de boite à lettre « mailboxexists » renvoie « True » si "
+"toutes les boites à lettre listées dans l'argument « mailbox-names » "
 "existent dans le dépôt des messageries et que chaque test permet à "
 "l'utilisateur dans le contexte du script Sieve démarré de délivrer des "
 "messages en son sein."
@@ -1728,8 +1728,8 @@ msgid ""
 "list\". The test returns true if the annotation exists and its value matches "
 "any of the keys."
 msgstr ""
-"Ce test accède à la valeur de l'annotation de la boîte à lettre « annotation-"
-"name » pour la boîte à lettre « mailbox ». La valeur retournée est comparé à "
+"Ce test accède à la valeur de l'annotation de la boite à lettre « annotation-"
+"name » pour la boite à lettre « mailbox ». La valeur retournée est comparé à "
 "la liste de clé « key-list ». Si le test renvoi vrai, l'annotation existe et "
 "que sa valeur correspond à l'une des clés."
 
@@ -1753,7 +1753,7 @@ msgid ""
 msgstr ""
 "Le test d'existence des métadonnées « metadataexists » renvoie « True » si "
 "toutes les annotations listées dans l'argument « annotation-names » existent "
-"pour la boîte à lettre spécifiée."
+"pour la boite à lettre spécifiée."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:25
 #, kde-format
@@ -2255,7 +2255,7 @@ msgstr ""
 "La commande d'inclusion « include » accepte des paramètres supplémentaire : "
 "optionnel de localisation « location », optionnel d'unicité « once », "
 "optionnel de non nécessité « : optionnal » puis un argument unique de type "
-"chaîne de caractère représentant le nom du script à inclure pour le "
+"chaine de caractère représentant le nom du script à inclure pour le "
 "traitement à cet endroit."
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:344
