@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-30 00:43+0000\n"
-"PO-Revision-Date: 2025-11-01 18:42+0200\n"
+"PO-Revision-Date: 2025-11-04 15:02+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1702,6 +1702,8 @@ msgid ""
 "of either \"spamtest\" or \"spamtestplus\" for use with the capability "
 "mechanism."
 msgstr ""
+"מימושים של Sieve שמממשים את בדיקת „spamtest” (בדיקת וירוסים) משתמשים במזהה "
+"של „spamtest” או של „spamtestplus” לשימוש עם מנגנון היכולות."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiontrue.cpp:22
 #, kde-format
