@@ -3,13 +3,13 @@
 # Tamas Szanto <tszanto@mol.hu>, 2003.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2011, 2014.
 # Balázs Úr <urbalazs@gmail.com>, 2012, 2013, 2014.
-# SPDX-FileCopyrightText: 2021, 2024 Kristof Kiszel <kiszel.kristof@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2024, 2025 Kristof Kiszel <kiszel.kristof@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-30 00:43+0000\n"
-"PO-Revision-Date: 2024-11-15 20:24+0100\n"
+"PO-Revision-Date: 2025-11-07 21:26+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: kmanagesieve/session.cpp:91
 #, kde-format
@@ -2802,7 +2802,7 @@ msgstr "A Sieve kiszolgáló támogatja:"
 #, kde-format
 msgctxt "@action"
 msgid "Quick Ask"
-msgstr ""
+msgstr "Gyors kérdés"
 
 #: ksieveui/editor/sievetextedit.cpp:317
 #, kde-format
