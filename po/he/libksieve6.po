@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-30 00:43+0000\n"
-"PO-Revision-Date: 2025-11-04 15:02+0200\n"
+"PO-Revision-Date: 2025-11-09 14:38+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1583,6 +1583,10 @@ msgid ""
 "names\" argument exist in the mailstore, and each allows the user in whose "
 "context the Sieve script runs to \"deliver\" messages into it."
 msgstr ""
+"בדיקת „mailboxexists” (האם קיימת תיבת דוא״ל) מפוענחת לחיובי (true) אם כל "
+"התיבות שרשומות תחת הארגומנט „mailbox-names” (שמות תיבות דוא״ל) קיימות באחסון "
+"הדוא״ל וכל אחת מהן מאפשרת למשתמש שבהקשר שלו סקריפט ה־Sieve רץ כדי להעביר "
+"(„deliver”) הודעה לתוכו."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:26
 #, kde-format
@@ -2065,6 +2069,9 @@ msgid ""
 "it global, the name specifies a separate, non-global variable within that "
 "script."
 msgstr ""
+"למשתנה יש טווח מקיף בכל הסקריפטים שהכריזו עליו עם הפקודה „global”. אם סקריפט "
+"משתמש בשם משתנה מבלי להכריז עליו כמקיף (global), השם מציין משתנה נפרד, שאינו "
+"מקיף בתוך הסקריפט הזה."
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:45
 #, kde-format
@@ -2114,6 +2121,9 @@ msgid ""
 "single string argument representing the name of the script to include for "
 "processing at that point."
 msgstr ""
+"פקודת „include” (הכללה) מקבלת את המשתנה „location” (מקום) כרשות, משתמש „‎:"
+"once” (חד־פעמי) כרשות, משתנה „‎:optional” כרשות וארגומנט מחרוזת בודדת שמייצגת "
+"את שם הסקריפט לכלול לעיבוד בנקודה הזאת."
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:344
 #, kde-format
