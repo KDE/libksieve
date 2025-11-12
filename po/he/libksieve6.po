@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-30 00:43+0000\n"
-"PO-Revision-Date: 2025-11-09 14:38+0200\n"
+"PO-Revision-Date: 2025-11-11 09:10+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: kmanagesieve/session.cpp:91
 #, kde-format
@@ -422,6 +422,8 @@ msgid ""
 "changing any settings, such as the domain to react to or the spam reaction "
 "switch."
 msgstr ""
+"לאפשר למשתמשים להעלות סקריפטים של sieve למצב „מחוץ למשרד”, אבל למנוע מהם "
+"לשנות הגדרות כלשהן, כגון שם התחום להגיב אליו או להחליף את תגובת הספאם."
 
 #. i18n: ectx: label, entry (OutOfOfficeDomain), group (OutOfOffice)
 #: ksievecore/settings/sieve-vacation.kcfg:24
@@ -1616,6 +1618,9 @@ msgid ""
 "list\". The test returns true if the annotation exists and its value matches "
 "any of the keys."
 msgstr ""
+"הבדיקה הזאת מושכת את הערך של פרשות תיבת הדוא״ל „annotation-name” (שם פרשנות) "
+"של תיבת הדוא״ל „mailbox”. הערך שמתקבל נבדק מול „key-list” (רשימת מפתחות. "
+"הבדיקה חיובית (true) אם הפרשנות קיימת והערך שלה מתאים למפתח כלשהו."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:24
 #, kde-format
@@ -1635,6 +1640,9 @@ msgid ""
 "The \"metadataexists\" test is true if all of the annotations listed in the "
 "\"annotation-names\" argument exist for the specified mailbox."
 msgstr ""
+"בדיקת „metadataexists” (נתוני על קיימים) מפוענחת לחיוב (true) אם כל "
+"הפרשנויות שרשומות תחת הארגומנט „annotation-names” (שמות פרשנויות) קיימות "
+"לתיבת הדוא״ל שצוינה."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:25
 #, kde-format
@@ -1648,6 +1656,9 @@ msgid ""
 "The retrieved value is compared to the \"key-list\". The test returns true "
 "if the annotation exists and its value matches any of the keys."
 msgstr ""
+"הבדיקה הזאת מושכת את הערך של פרשנות השרת „annotation-name” (שם פרשנות) הערך "
+"שמתקבל נבדק מול „key-list” (רשימת מפתחות. הבדיקה חיובית (true) אם הפרשנות "
+"קיימת והערך שלה מתאים למפתח כלשהו."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadataexists.cpp:22
 #, kde-format
