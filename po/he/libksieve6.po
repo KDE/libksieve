@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-30 00:43+0000\n"
-"PO-Revision-Date: 2025-11-11 09:10+0200\n"
+"PO-Revision-Date: 2025-11-12 13:50+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1107,6 +1107,9 @@ msgid ""
 "Every character with special meaning (. , *, ? , etc.) is prefixed with \\ "
 "in the expansion"
 msgstr ""
+"פונקציית ההחלפה הזאת מוסיפה את המירכאות הנחוצות כדי לוודא שהטקסט שמורחב יענה "
+"רק על מופע מילולי אם ייעשה בו שימוש כמשתנה ל־‎:regex. לפני כל תו עם משמעות "
+"מיוחדת (. , *, ? , ועוד) מתווסף \\ בזמן ההרחבה."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionstop.cpp:16
 #, kde-format
@@ -1285,12 +1288,12 @@ msgstr "ללא"
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:27
 #, kde-format
 msgid "Lower"
-msgstr ""
+msgstr "אות קטנה"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:28
 #, kde-format
 msgid "Upper"
-msgstr ""
+msgstr "אות גדולה"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:29
 #, kde-format
@@ -1305,7 +1308,7 @@ msgstr "להגדיל את האות הראשונה"
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:31
 #, kde-format
 msgid "Quote wildcard"
-msgstr ""
+msgstr "תו הכללה של ציטוט"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:32
 #, kde-format
@@ -1808,7 +1811,7 @@ msgstr "יום"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:44
 #, kde-format
 msgid "Julian"
-msgstr ""
+msgstr "יוליאני"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:45
 #, kde-format
@@ -1989,17 +1992,17 @@ msgstr "בתים"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:27
 #, kde-format
 msgid "KiB"
-msgstr ""
+msgstr "KiB"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:28
 #, kde-format
 msgid "MiB"
-msgstr ""
+msgstr "MiB"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:29
 #, kde-format
 msgid "GiB"
-msgstr ""
+msgstr "GiB"
 
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:56
 #, kde-format
@@ -3133,6 +3136,8 @@ msgid ""
 "You have not yet configured an IMAP server for this. You can do this on the "
 "\"Filtering\" tab of the IMAP account configuration."
 msgstr ""
+"יכולת תגובת „מחוץ למשרד” של KMail מסתמכת על סינון מצד השרת. לא הגדרת עדיין "
+"שרת IMAP לשם כך. אפשר לעשות זאת בלשונית „סינון” של הגדרות חשבון ה־IMAP."
 
 #: ksieveui/vacation/vacationeditwidget.cpp:49
 #, kde-format
