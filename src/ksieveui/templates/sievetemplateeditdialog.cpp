@@ -79,11 +79,7 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     mTextEditWidget->setReadOnly(defaultTemplate);
     vbox->addWidget(mTextEditWidget);
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-#if HAVE_TEXTTOSPEECH_ENQUEUE_SUPPORT
     connect(mTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::enqueue);
-#else
-    connect(mTextEditWidget->textEdit(), &SieveTextEdit::say, textToSpeechWidget, &TextEditTextToSpeech::TextToSpeechContainerWidget::say);
-#endif
 #endif
 
     auto shortcut = new QShortcut(this);
