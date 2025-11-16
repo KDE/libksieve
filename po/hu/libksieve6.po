@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:43+0000\n"
+"POT-Creation-Date: 2025-11-16 00:42+0000\n"
 "PO-Revision-Date: 2025-11-07 21:26+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -2721,23 +2721,23 @@ msgstr "Sieve sablon:"
 msgid "Editor"
 msgstr "Szerkesztő"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:152
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:148
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "Szintaxisellenőrzés eredményének megjelenítése"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:240
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:236
 #, kde-format
 msgid "Error during parsing"
 msgstr "Hiba a feldolgozás közben"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:270
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "A kijelölt szöveg nem egy teljes Sieve parancsfájl"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:270
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
@@ -3055,28 +3055,28 @@ msgstr ""
 "Kiterjesztés aktiválása: „+<kiterjesztés neve>”, deaktiválása: „-"
 "<kiterjesztés neve>”"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:101
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:97
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Display check script result…"
 msgstr "Parancsfájl-ellenőrzés eredményének megjelenítése…"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:146
 #, kde-format
 msgid "Script text is empty."
 msgstr "A parancsfájl szövege üres."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:154
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "Az e-mail-fájlt helyben kell telepíteni."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:160
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "Nem sikerült megnyitni az átmeneti fájlt."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:230
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:226
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr ""

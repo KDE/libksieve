@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:43+0000\n"
+"POT-Creation-Date: 2025-11-16 00:42+0000\n"
 "PO-Revision-Date: 2024-09-13 16:06+0200\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2748,23 +2748,23 @@ msgstr "Sieve-Vorlage:"
 msgid "Editor"
 msgstr "Editor"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:152
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:148
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "Ergebnis der Syntax-Prüfung anzeigen"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:240
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:236
 #, kde-format
 msgid "Error during parsing"
 msgstr "Fehler beim Einlesen"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:270
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "Der ausgewählte Text ist kein vollständiges Sieve-Script"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:270
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
@@ -3083,28 +3083,28 @@ msgstr ""
 "Aktivieren Sie Erweiterungen mit \"+<name der erweiterung>\" und "
 "deaktivieren Sie sie mit \"-<name der erweiterung>\""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:101
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:97
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Display check script result…"
 msgstr "Ergebnis der Skript-Prüfung anzeigen …"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:146
 #, kde-format
 msgid "Script text is empty."
 msgstr "Der Skripttext ist leer."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:154
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "Die E-Mail-Datei muss lokal installiert werden."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:160
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "Öffnen der temporären Datei fehlgeschlagen."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:230
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:226
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr "Das Skript enthält immer noch Debug-Methoden. Bitte entfernen Sie sie."

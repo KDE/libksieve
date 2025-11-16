@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:43+0000\n"
+"POT-Creation-Date: 2025-11-16 00:42+0000\n"
 "PO-Revision-Date: 2025-11-12 13:50+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -2660,23 +2660,23 @@ msgstr "תבנית Sieve:"
 msgid "Editor"
 msgstr "עורך"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:152
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:148
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "הצגת התוצאות של „בדיקת התחביר”"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:240
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:236
 #, kde-format
 msgid "Error during parsing"
 msgstr "שגיאה במהלך הפענוח"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:270
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "הטקסט הנבחר אינו סקריפט Sieve מלא"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:270
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
@@ -2990,28 +2990,28 @@ msgid ""
 "<name of extension>\""
 msgstr "אפשר להפעיל הרחבה בעזרת „+<שם ההרחבה>”, או לכבות עם „-<שם ההרחבה>”"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:101
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:97
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Display check script result…"
 msgstr "הצגת תוצאת בדיקת הסקריפט…"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:146
 #, kde-format
 msgid "Script text is empty."
 msgstr "טקסט הסקריפט ריק."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:154
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "קובץ הדוא״ל חייב להיות מותקן מקומית."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:160
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "פתיחת הקובץ הזמני נכשלה."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:230
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:226
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr "הסקריפט עדיין מכיל מתודת ניפוי שגיאות. נא להסיר אותה."
