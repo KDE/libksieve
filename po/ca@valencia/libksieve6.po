@@ -400,7 +400,7 @@ msgid ""
 "The server responded:\n"
 "%1"
 msgstr ""
-"S'ha produït un error en escriure l'script «MASTER» al servidor.\n"
+"S'ha produït un error mentre s'escrivia l'script «MASTER» al servidor.\n"
 "El servidor ha respost:\n"
 "%1"
 
@@ -411,7 +411,7 @@ msgid ""
 "The server responded:\n"
 "%1"
 msgstr ""
-"S'ha produït un error en escriure l'script «User» al servidor.\n"
+"S'ha produït un error mentre s'escrivia l'script «User» al servidor.\n"
 "El servidor ha respost:\n"
 "%1"
 
@@ -446,17 +446,17 @@ msgstr "Impossible iniciar la tasca"
 #: ksievecore/managescriptsjob/renamescriptjob.cpp:66
 #, kde-format
 msgid "An error occurred during loading the sieve script."
-msgstr "S'ha produït un error en carregar l'script de «sieve»."
+msgstr "S'ha produït un error mentre es carregava l'script de «sieve»."
 
 #: ksievecore/managescriptsjob/renamescriptjob.cpp:82
 #, kde-format
 msgid "An error occurred during saving the sieve script."
-msgstr "S'ha produït un error en guardar l'script de «sieve»."
+msgstr "S'ha produït un error mentre es guardava l'script de «sieve»."
 
 #: ksievecore/managescriptsjob/renamescriptjob.cpp:93
 #, kde-format
 msgid "An error occurred during deleting the sieve script."
-msgstr "S'ha produït un error en eliminar l'script de «sieve»."
+msgstr "S'ha produït un error mentre s'eliminava l'script de «sieve»."
 
 #. i18n: ectx: label, entry (AllowOutOfOfficeSettings), group (OutOfOffice)
 #: ksievecore/settings/sieve-vacation.kcfg:16
@@ -513,7 +513,7 @@ msgid ""
 "The server responded:\n"
 "%1"
 msgstr ""
-"No s'ha pogut obtindre la llista de scripts de «Sieve».\n"
+"Ha fallat mentre s'obtenia la llista de scripts de «Sieve».\n"
 "El servidor ha contestat:\n"
 "%1"
 
@@ -2125,7 +2125,9 @@ msgstr "Script de «Sieve»"
 #: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:140
 #, kde-format
 msgid "Error during importing script. Do you want to switch to text mode?"
-msgstr "Error durant la importació de l'script. Voleu canviar a mode text?"
+msgstr ""
+"S'ha produït un error durant la importació de l'script. Voleu canviar a mode "
+"text?"
 
 #: ksieveui/autocreatescripts/sieveeditorgraphicalmodewidget.cpp:142
 #, kde-format
@@ -2465,7 +2467,7 @@ msgstr "Bloc «else»"
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Parsing Error"
-msgstr "S'ha produït un error en l'anàlisi de «Sieve»"
+msgstr "S'ha produït un error durant l'anàlisi de «Sieve»"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:41
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:42
@@ -2755,7 +2757,7 @@ msgstr "Ajuda"
 #: ksieveui/editor/sieveeditortabwidget.cpp:163
 #, kde-format
 msgid "Error during load page about %1"
-msgstr "S'ha produït un error en carregar la pàgina sobre %1"
+msgstr "S'ha produït un error mentre es carregava la pàgina sobre %1"
 
 #: ksieveui/editor/sieveeditortabwidget.cpp:180
 #, kde-format
@@ -2781,7 +2783,7 @@ msgstr "Mostra el resultat des de «Comprova la sintaxi»"
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:240
 #, kde-format
 msgid "Error during parsing"
-msgstr "Error durant l'anàlisi"
+msgstr "S'ha produït un error durant l'anàlisi"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:270
 #, kde-format
@@ -3125,7 +3127,7 @@ msgstr "El fitxer de correu cal que s'instal·le en local."
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:160
 #, kde-format
 msgid "Failed to open temporary file."
-msgstr "No s'ha pogut obrir el fitxer temporal."
+msgstr "Ha fallat mentre s'obria el fitxer temporal."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:230
 #, kde-format
@@ -3484,14 +3486,14 @@ msgid ""
 "The server responded:\n"
 "%1"
 msgstr ""
-"No s'ha pogut suprimir de l'script.\n"
+"Ha fallat mentre se suprimia de l'script.\n"
 "El servidor ha contestat:\n"
 "%1"
 
 #: ksieveui/widgets/managesievewidget.cpp:563
 #, kde-format
 msgid "Failed to fetch the list of scripts"
-msgstr "No s'ha pogut recuperar la llista de scripts"
+msgstr "Ha fallat mentre es recuperava la llista de scripts"
 
 #: ksieveui/widgets/moveimapfolderwidget.cpp:24
 #, kde-format
