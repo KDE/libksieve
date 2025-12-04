@@ -5,6 +5,7 @@
 */
 
 #include "sieveimapaccountsettings.h"
+#include <QDebug>
 using namespace Qt::Literals::StringLiterals;
 
 using namespace KSieveCore;

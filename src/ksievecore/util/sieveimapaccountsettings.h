@@ -7,7 +7,9 @@
 #pragma once
 
 #include "ksievecore_export.h"
-#include <QDebug>
+#include <QMetaType>
+#include <QString>
+class QDebug;
 namespace KSieveCore
 {
 /**
