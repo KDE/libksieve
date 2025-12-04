@@ -286,11 +286,13 @@ void SieveTextEdit::setShowHelpMenu(bool b)
 
 void SieveTextEdit::slotQuickAsk()
 {
+#if HAVE_TEXT_AUTOGENERATE_TEXT
     if (!d->mQuickDialog) {
         d->mQuickDialog = new TextAutoGenerateText::TextAutoGenerateQuickAskDialog(d->mTextAutoGenerateManager, this);
         d->mQuickDialog->setAttribute(Qt::WA_DeleteOnClose);
     }
     d->mQuickDialog->show();
+#endif
 }
 
 void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
