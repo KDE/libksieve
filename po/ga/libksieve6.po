@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/libksieve.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-05 00:43+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -2710,26 +2710,26 @@ msgstr "Script Nua Sieve"
 msgid "Sieve server supports:"
 msgstr "Script Nua Sieve"
 
-#: ksieveui/editor/sievetextedit.cpp:307
+#: ksieveui/editor/sievetextedit.cpp:309
 #, kde-format
 msgctxt "@action"
 msgid "Quick Ask"
 msgstr ""
 
-#: ksieveui/editor/sievetextedit.cpp:317
+#: ksieveui/editor/sievetextedit.cpp:319
 #, fuzzy, kde-format
 #| msgid "Edit"
 msgctxt "@action"
 msgid "Insert Rule"
 msgstr "Eagar"
 
-#: ksieveui/editor/sievetextedit.cpp:331
+#: ksieveui/editor/sievetextedit.cpp:333
 #, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr ""
 
-#: ksieveui/editor/sievetextedit.cpp:340
+#: ksieveui/editor/sievetextedit.cpp:342
 #, fuzzy, kde-format
 #| msgid "Edit"
 msgctxt "@action"
