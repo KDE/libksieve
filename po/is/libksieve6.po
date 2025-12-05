@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:41+0000\n"
+"POT-Creation-Date: 2025-12-05 02:33+0000\n"
 "PO-Revision-Date: 2004-03-27 13:36+0000\n"
 "Last-Translator: Stígur Snæsson <stigur@vortex.is>\n"
 "Language-Team: Icelandic <kde-isl@molar.is>\n"
@@ -2574,25 +2574,25 @@ msgstr ""
 msgid "Sieve server supports:"
 msgstr ""
 
-#: ksieveui/editor/sievetextedit.cpp:307
+#: ksieveui/editor/sievetextedit.cpp:309
 #, kde-format
 msgctxt "@action"
 msgid "Quick Ask"
 msgstr ""
 
-#: ksieveui/editor/sievetextedit.cpp:317
+#: ksieveui/editor/sievetextedit.cpp:319
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule"
 msgstr ""
 
-#: ksieveui/editor/sievetextedit.cpp:331
+#: ksieveui/editor/sievetextedit.cpp:333
 #, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr ""
 
-#: ksieveui/editor/sievetextedit.cpp:340
+#: ksieveui/editor/sievetextedit.cpp:342
 #, kde-format
 msgctxt "@action"
 msgid "Edit Rule"
