@@ -30,7 +30,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QLabel>
 
 using KMime::HeaderParsing::parseAddressList;
-using KMime::Types::AddressList;
+using AddressList = QList<KMime::Types::Address>;
 using KMime::Types::AddrSpecList;
 
 using namespace KSieveUi;
