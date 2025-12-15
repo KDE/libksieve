@@ -24,7 +24,9 @@ Q_CONSTRUCTOR_FUNCTION(initLocale)
 QByteArray readSieveFile(const QString &sieveFile)
 {
     QFile file(sieveFile);
-    file.open(QIODevice::ReadOnly);
+    if (!file.open(QIODevice::ReadOnly)) {
+        Q_ASSERT(false);
+    }
     Q_ASSERT(file.isOpen());
     return file.readAll();
 }
