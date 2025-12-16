@@ -4,14 +4,13 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-#include "util.h"
 using namespace Qt::Literals::StringLiterals;
 
+#include "util.h"
 #include "libksievecore_debug.h"
 #include "sieve-vacation.h"
 #include "sieveimapinstance/sieveimapinstance.h"
 #include "sieveimapinstance/sieveimapinstanceinterfacemanager.h"
-#include "util.h"
 #include <PimCommon/PimUtil>
 #include <pimcommon/imapresourcesettings.h>
 
