@@ -4,8 +4,6 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 
-using namespace Qt::Literals::StringLiterals;
-
 #include "util.h"
 #include "libksievecore_debug.h"
 #include "sieve-vacation.h"
@@ -18,7 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <MailTransport/Transport>
 
 using namespace KSieveCore;
-
+using namespace Qt::Literals::StringLiterals;
 QStringList KSieveCore::Util::sieveImapResourceNames()
 {
     const QList<KSieveCore::SieveImapInstance> lst = KSieveCore::Util::sieveImapInstances();
