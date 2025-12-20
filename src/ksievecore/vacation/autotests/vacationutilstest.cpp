@@ -18,7 +18,7 @@ using namespace KSieveCore;
 // and will assert on the condition when in build in debug mode
 QTEST_MAIN(VacationUtilsTest)
 
-void testAliases(const KMime::Types::AddrSpecList &l1, const KMime::Types::AddrSpecList &l2)
+void testAliases(const QList<KMime::Types::AddrSpec> &l1, const QList<KMime::Types::AddrSpec> &l2)
 {
     const int l1count = l1.count();
     QCOMPARE(l1count, l2.count());
@@ -27,7 +27,7 @@ void testAliases(const KMime::Types::AddrSpecList &l1, const KMime::Types::AddrS
     }
 }
 
-void testAliases(const KMime::Types::AddrSpecList &l1, const QStringList &l2)
+void testAliases(const QList<KMime::Types::AddrSpec> &l1, const QStringList &l2)
 {
     const int l1count = l1.count();
     QCOMPARE(l1count, l2.count());

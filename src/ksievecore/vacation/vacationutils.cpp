@@ -15,7 +15,6 @@
 #include <QLocale>
 #include <QRegularExpression>
 
-using KMime::Types::AddrSpecList;
 using namespace KSieveCore;
 
 static inline QString dotstuff(QString s) // krazy:exclude=passbyvalue
@@ -81,9 +80,9 @@ int VacationUtils::defaultNotificationInterval()
     return 7; // days
 }
 
-KMime::Types::AddrSpecList VacationUtils::defaultMailAliases()
+QList<KMime::Types::AddrSpec> VacationUtils::defaultMailAliases()
 {
-    KMime::Types::AddrSpecList sl;
+    QList<KMime::Types::AddrSpec> sl;
     KIdentityManagementCore::IdentityManager *manager = KIdentityManagementCore::IdentityManager::self();
     KIdentityManagementCore::IdentityManager::ConstIterator end(manager->end());
     for (KIdentityManagementCore::IdentityManager::ConstIterator it = manager->begin(); it != end; ++it) {
@@ -165,7 +164,7 @@ VacationUtils::Vacation VacationUtils::parseScript(const QString &script)
         vacation.subject = vdx.subject().trimmed();
     }
     vacation.notificationInterval = vdx.notificationInterval();
-    vacation.aliases = KMime::Types::AddrSpecList();
+    vacation.aliases = {};
     const QStringList lstAliases = vdx.aliases();
     for (const QString &alias : lstAliases) {
         KMime::Types::Mailbox a;
@@ -238,10 +237,9 @@ QString KSieveCore::VacationUtils::composeScript(const Vacation &vacation)
         addressesArgument += u":addresses [ "_s;
         QStringList sl;
         sl.reserve(vacation.aliases.count());
-        AddrSpecList::const_iterator end = vacation.aliases.constEnd();
-        for (AddrSpecList::const_iterator it = vacation.aliases.begin(); it != end; ++it) {
-            sl.push_back(u'"' + (*it).asString().replace(u'\\', u"\\\\"_s).replace(u'"', u"\\\""_s) + u'"');
-            aliases.push_back((*it).asString());
+        for (const auto &a : vacation.aliases) {
+            sl.push_back(u'"' + a.asString().replace(u'\\', u"\\\\"_s).replace(u'"', u"\\\""_s) + u'"');
+            aliases.push_back(a.asString());
         }
         addressesArgument += sl.join(QLatin1StringView(", ")) + u" ] "_s;
     }

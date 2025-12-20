@@ -27,7 +27,7 @@ enum MailAction : uint8_t {
 [[nodiscard]] KSIEVECORE_EXPORT QString defaultSubject();
 [[nodiscard]] KSIEVECORE_EXPORT MailAction defaultMailAction();
 [[nodiscard]] KSIEVECORE_EXPORT int defaultNotificationInterval();
-[[nodiscard]] KSIEVECORE_EXPORT KMime::Types::AddrSpecList defaultMailAliases();
+[[nodiscard]] KSIEVECORE_EXPORT QList<KMime::Types::AddrSpec> defaultMailAliases();
 [[nodiscard]] KSIEVECORE_EXPORT bool defaultSendForSpam();
 [[nodiscard]] KSIEVECORE_EXPORT QString defaultDomainName();
 [[nodiscard]] KSIEVECORE_EXPORT QDate defaultStartDate();
@@ -44,7 +44,7 @@ struct KSIEVECORE_EXPORT Vacation {
     QString mailActionRecipient;
     QString messageText;
     QString subject;
-    KMime::Types::AddrSpecList aliases;
+    QList<KMime::Types::AddrSpec> aliases;
     QString reactOndomainName;
     QDate startDate;
     QTime startTime;
