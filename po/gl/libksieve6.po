@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:43+0000\n"
+"POT-Creation-Date: 2025-12-22 00:43+0000\n"
 "PO-Revision-Date: 2024-08-03 12:20+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -522,34 +522,34 @@ msgstr ""
 msgid "Impossible to install script on server '%1'"
 msgstr "Non é posíbel instalar o guión no servidor «%1»"
 
-#: ksievecore/vacation/vacationutils.cpp:39
+#: ksievecore/vacation/vacationutils.cpp:38
 #, kde-format
 msgid "Out of office till %1"
 msgstr "Estou fóra da oficina ata o %1"
 
-#: ksievecore/vacation/vacationutils.cpp:46
+#: ksievecore/vacation/vacationutils.cpp:45
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:22
 #, kde-format
 msgid "Keep"
 msgstr "Manter"
 
-#: ksievecore/vacation/vacationutils.cpp:48
+#: ksievecore/vacation/vacationutils.cpp:47
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:14
 #, kde-format
 msgid "Discard"
 msgstr "Descartar"
 
-#: ksievecore/vacation/vacationutils.cpp:50
+#: ksievecore/vacation/vacationutils.cpp:49
 #, kde-format
 msgid "Redirect to"
 msgstr "Encamiñar a"
 
-#: ksievecore/vacation/vacationutils.cpp:52
+#: ksievecore/vacation/vacationutils.cpp:51
 #, kde-format
 msgid "Copy to"
 msgstr "Copiar en"
 
-#: ksievecore/vacation/vacationutils.cpp:66
+#: ksievecore/vacation/vacationutils.cpp:65
 #, kde-format
 msgid ""
 "I am out of office till %1.\n"

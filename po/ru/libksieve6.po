@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:43+0000\n"
+"POT-Creation-Date: 2025-12-22 00:43+0000\n"
 "PO-Revision-Date: 2025-11-27 19:35+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -518,35 +518,35 @@ msgstr ""
 msgid "Impossible to install script on server '%1'"
 msgstr "Не удалось установить сценарий на сервер «%1»"
 
-#: ksievecore/vacation/vacationutils.cpp:39
+#: ksievecore/vacation/vacationutils.cpp:38
 #, kde-format
 msgid "Out of office till %1"
 msgstr "Отсутствую до %1"
 
-#: ksievecore/vacation/vacationutils.cpp:46
+#: ksievecore/vacation/vacationutils.cpp:45
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:22
 #, kde-format
 msgid "Keep"
 msgstr "Оставить"
 
-#: ksievecore/vacation/vacationutils.cpp:48
+#: ksievecore/vacation/vacationutils.cpp:47
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:14
 #, kde-format
 msgid "Discard"
 msgstr "Отбросить"
 
 # Перенаправить на адрес эл. почты. --aspotashev
-#: ksievecore/vacation/vacationutils.cpp:50
+#: ksievecore/vacation/vacationutils.cpp:49
 #, kde-format
 msgid "Redirect to"
 msgstr "Перенаправить на"
 
-#: ksievecore/vacation/vacationutils.cpp:52
+#: ksievecore/vacation/vacationutils.cpp:51
 #, kde-format
 msgid "Copy to"
 msgstr "Копия на"
 
-#: ksievecore/vacation/vacationutils.cpp:66
+#: ksievecore/vacation/vacationutils.cpp:65
 #, kde-format
 msgid ""
 "I am out of office till %1.\n"

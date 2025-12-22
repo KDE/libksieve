@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-05 00:43+0000\n"
+"POT-Creation-Date: 2025-12-22 00:43+0000\n"
 "PO-Revision-Date: 2025-10-31 20:06+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -505,37 +505,37 @@ msgstr ""
 msgid "Impossible to install script on server '%1'"
 msgstr "Skriptiä on mahdotonta asentaa palvelimeen ”%1”"
 
-#: ksievecore/vacation/vacationutils.cpp:39
+#: ksievecore/vacation/vacationutils.cpp:38
 #, kde-format
 msgid "Out of office till %1"
 msgstr "Poissa töistä %1 asti"
 
 # Tämä on sieve-komennon selittävä nimi, ”label”.
-#: ksievecore/vacation/vacationutils.cpp:46
+#: ksievecore/vacation/vacationutils.cpp:45
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:22
 #, kde-format
 msgid "Keep"
 msgstr "Säilytä (keep)"
 
 # Tämä on sieve-komennon selittävä nimi, ”label”.
-#: ksievecore/vacation/vacationutils.cpp:48
+#: ksievecore/vacation/vacationutils.cpp:47
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:14
 #, kde-format
 msgid "Discard"
 msgstr "Hylkää (discard)"
 
 # Tämä on sieve-komennon selittävä nimi, ”label”.
-#: ksievecore/vacation/vacationutils.cpp:50
+#: ksievecore/vacation/vacationutils.cpp:49
 #, kde-format
 msgid "Redirect to"
 msgstr "Edennä…"
 
-#: ksievecore/vacation/vacationutils.cpp:52
+#: ksievecore/vacation/vacationutils.cpp:51
 #, kde-format
 msgid "Copy to"
 msgstr "Kopioi…"
 
-#: ksievecore/vacation/vacationutils.cpp:66
+#: ksievecore/vacation/vacationutils.cpp:65
 #, kde-format
 msgid ""
 "I am out of office till %1.\n"
