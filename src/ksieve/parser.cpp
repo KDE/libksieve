@@ -136,7 +136,7 @@ bool Parser::Impl::obtainToken()
             consumeToken();
             break;
         case Lexer::LineFeeds:
-            for (unsigned int i = 0, end = tokenValue().toUInt(); i < end; ++i) {
+            for (unsigned int idx = 0, end = tokenValue().toUInt(); idx < end; ++idx) {
                 if (scriptBuilder()) { // better check every iteration, b/c
                     // we call out to ScriptBuilder,
                     // where nasty things might happen!
@@ -652,10 +652,10 @@ bool Parser::Impl::parseNumber()
 
     // number:
     unsigned long result = 0;
-    int i = 0;
+    int index = 0;
     const QByteArray s = tokenValue().toLatin1();
-    for (const int len = s.length(); i < len && isdigit(s[i]); ++i) {
-        const unsigned long digitValue = s[i] - '0';
+    for (const int len = s.length(); index < len && isdigit(s[index]); ++index) {
+        const unsigned long digitValue = s[index] - '0';
         if (willOverflowULong(result, digitValue)) {
             makeError(Error::NumberOutOfRange);
             return false;
@@ -667,9 +667,9 @@ bool Parser::Impl::parseNumber()
 
     // optional quantifier:
     char quantifier = '\0';
-    if (i < s.length()) {
-        assert(i + 1 == s.length());
-        quantifier = s[i];
+    if (index < s.length()) {
+        assert(index + 1 == s.length());
+        quantifier = s[index];
         const unsigned long factor = factorForQuantifier(quantifier);
         if (result > double(ULONG_MAX) / double(factor)) {
             makeError(Error::NumberOutOfRange);
