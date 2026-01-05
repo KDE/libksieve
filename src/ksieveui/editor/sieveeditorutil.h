@@ -69,8 +69,8 @@ enum HelpVariableName {
     ImapFlagsExtension,
     EditHeaderExtension
 };
-KSieveUi::SieveEditorUtil::HelpVariableName strToVariableName(const QString &str);
+[[nodiscard]] KSieveUi::SieveEditorUtil::HelpVariableName strToVariableName(const QString &str);
 
-QUrl helpUrl(KSieveUi::SieveEditorUtil::HelpVariableName type);
+[[nodiscard]] QUrl helpUrl(KSieveUi::SieveEditorUtil::HelpVariableName type);
 }
 }

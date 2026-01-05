@@ -16,11 +16,17 @@ class SieveLineNumberArea : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SieveLineNumberArea(SieveTextEdit *editor);
 
+    /*!
+     */
     QSize sizeHint() const override;
 
 protected:
+    /*!
+     */
     void paintEvent(QPaintEvent *event) override;
 
 private:

@@ -23,26 +23,46 @@ class KSIEVECORE_EXPORT ParseUserScriptJob : public QObject
     friend class ParseUserTest;
 
 public:
+    /*!
+     */
     explicit ParseUserScriptJob(const QUrl &url, QObject *parent = nullptr);
+    /*!
+     */
     ~ParseUserScriptJob() override;
 
+    /*!
+     */
     void start();
+    /*!
+     */
     void setAutoDelete(bool deleteMe);
 
+    /*!
+     */
     [[nodiscard]] QUrl scriptUrl() const;
 
+    /*!
+     */
     [[nodiscard]] QStringList activeScriptList() const;
+    /*!
+     */
     [[nodiscard]] QString error() const;
+    /*!
+     */
     void kill();
+    /*!
+     */
     [[nodiscard]] QStringList parsescript(const QString &script, bool &result);
 
 Q_SIGNALS:
+    /*!
+     */
     void finished(KSieveCore::ParseUserScriptJob *job);
 
 private:
-    void slotGetResult(KManageSieve::SieveJob *job, bool, const QString &, bool);
-    void emitSuccess(const QStringList &activeScriptList);
-    void emitError(const QString &msgError);
+    KSIEVECORE_NO_EXPORT void slotGetResult(KManageSieve::SieveJob *job, bool, const QString &, bool);
+    KSIEVECORE_NO_EXPORT void emitSuccess(const QStringList &activeScriptList);
+    KSIEVECORE_NO_EXPORT void emitError(const QString &msgError);
     [[nodiscard]] QString loadInclude();
     [[nodiscard]] QStringList extractActiveScript(const QString &doc);
     const QUrl mCurrentUrl;

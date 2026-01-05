@@ -13,31 +13,55 @@ class QLabel;
 namespace KSieveUi
 {
 class SieveScriptDebuggerFrontEndWidget;
-/**
- * @brief The SieveScriptDebuggerWidget class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The SieveScriptDebuggerWidget class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVEUI_EXPORT SieveScriptDebuggerWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SieveScriptDebuggerWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~SieveScriptDebuggerWidget() override;
 
+    /*!
+     */
     void setScript(const QString &script);
+    /*!
+     */
     [[nodiscard]] QString script() const;
 
+    /*!
+     */
     [[nodiscard]] bool canAccept() const;
 
+    /*!
+     */
     [[nodiscard]] QList<int> splitterSizes() const;
+    /*!
+     */
     void setSplitterSizes(const QList<int> &sizes);
 
+    /*!
+     */
     [[nodiscard]] bool haveDebugApps() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void scriptTextChanged();
+    /*!
+     */
     void debugScriptButtonClicked();
+    /*!
+     */
     void debugButtonEnabled(bool state);
+    /*!
+     */
     void sieveTestNotFound();
 
 private:

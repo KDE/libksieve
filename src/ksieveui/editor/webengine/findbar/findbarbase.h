@@ -22,35 +22,75 @@ class KSIEVEUI_EXPORT FindBarBase : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit FindBarBase(QWidget *parent = nullptr);
+    /*!
+     */
     ~FindBarBase() override;
 
+    /*!
+     */
     [[nodiscard]] QString text() const;
+    /*!
+     */
     void setText(const QString &text);
+    /*!
+     */
     void focusAndSetCursor();
 
 protected:
+    /*!
+     */
     bool event(QEvent *e) override;
+    /*!
+     */
     virtual void clearSelections();
+    /*!
+     */
     virtual void updateHighLight(bool);
+    /*!
+     */
     virtual void searchText(bool backward, bool isAutoSearch);
+    /*!
+     */
     virtual void updateSensitivity(bool);
 
+    /*!
+     */
     void setFoundMatch(bool match);
+    /*!
+     */
     QMenu *optionsMenu();
 
 public Q_SLOTS:
+    /*!
+     */
     void findNext();
+    /*!
+     */
     void findPrev();
+    /*!
+     */
     void autoSearch(const QString &str);
+    /*!
+     */
     void slotSearchText(bool backward = false, bool isAutoSearch = true);
+    /*!
+     */
     void closeBar();
 
 Q_SIGNALS:
+    /*!
+     */
     void hideFindBar();
 
 protected Q_SLOTS:
+    /*!
+     */
     void caseSensitivityChanged(bool);
+    /*!
+     */
     void slotHighlightAllChanged(bool);
 
 protected:

@@ -25,22 +25,30 @@ namespace KSieveUi
 {
 class SieveEditor;
 class ManageSieveScriptsDialogPrivate;
-/**
- * @brief The ManageSieveScriptsDialog class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The ManageSieveScriptsDialog class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVEUI_EXPORT ManageSieveScriptsDialog : public QDialog
 {
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit ManageSieveScriptsDialog(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent = nullptr);
+    /*!
+     */
     ~ManageSieveScriptsDialog() override;
 
 Q_SIGNALS:
+    /*!
+     */
     void finished();
 
 protected:
+    /*!
+     */
     void hideEvent(QHideEvent *) override;
 
 private:

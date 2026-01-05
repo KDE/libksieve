@@ -69,7 +69,7 @@ include(ECMQtDeclareLoggingCategory)
 include(ECMDeprecationSettings)
 include(ECMFeatureSummary)
 include(ECMAddTests)
-include(ECMAddQch)
+include(ECMGenerateQDoc)
 include(ECMCheckOutboundLicense)
 file(
     GLOB_RECURSE ALL_SOURCE_FILES
@@ -82,13 +82,6 @@ ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
 set(KTEXTADDONS_MIN_VERSION "1.9.0")
 set(KTEXTADDONS_WITH_TEXTAUTOGENERATETEXT_VERSION "${KTEXTADDONS_MIN_VERSION}")
-
-option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
-add_feature_info(
-    QCH
-    ${BUILD_QCH}
-    "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)"
-)
 
 set(LIBKSIEVE_LIB_VERSION ${PIM_VERSION})
 set(KMIME_LIB_VERSION "6.6.40")

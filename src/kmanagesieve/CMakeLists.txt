@@ -104,37 +104,6 @@ install(
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6KManageSieve")
 
-if(BUILD_QCH)
-    ecm_add_qch(
-        KPim6KManageSieve_QCH
-        NAME KPim6KManageSieve
-        BASE_NAME KPim6KManageSieve
-        VERSION ${PIM_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-        ${kmanagesieve_HEADERS}
-        LINK_QCHS
-        Qt6Core_QCH
-        INCLUDE_DIRS
-        ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-        KMANAGESIEVE_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
-endif()
-
-if(BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KPim6KManageSieve_QCH
-        FILE KPim6KManageSieveQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KManageSieveQchTargets.cmake\")")
-endif()
-
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimKManageSieveConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6KManageSieveConfig.cmake"

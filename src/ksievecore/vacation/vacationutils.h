@@ -23,14 +23,32 @@ enum MailAction : uint8_t {
     CopyTo,
 };
 
+/*!
+ */
 [[nodiscard]] KSIEVECORE_EXPORT QString defaultMessageText();
+/*!
+ */
 [[nodiscard]] KSIEVECORE_EXPORT QString defaultSubject();
+/*!
+ */
 [[nodiscard]] KSIEVECORE_EXPORT MailAction defaultMailAction();
+/*!
+ */
 [[nodiscard]] KSIEVECORE_EXPORT int defaultNotificationInterval();
+/*!
+ */
 [[nodiscard]] KSIEVECORE_EXPORT QList<KMime::Types::AddrSpec> defaultMailAliases();
+/*!
+ */
 [[nodiscard]] KSIEVECORE_EXPORT bool defaultSendForSpam();
+/*!
+ */
 [[nodiscard]] KSIEVECORE_EXPORT QString defaultDomainName();
+/*!
+ */
 [[nodiscard]] KSIEVECORE_EXPORT QDate defaultStartDate();
+/*!
+ */
 [[nodiscard]] KSIEVECORE_EXPORT QDate defaultEndDate();
 
 struct KSIEVECORE_EXPORT Vacation {
@@ -57,14 +75,24 @@ struct KSIEVECORE_EXPORT Vacation {
     bool sendForSpam = true;
 };
 
+/*!
+ */
 [[nodiscard]] KSIEVECORE_EXPORT QString composeScript(const Vacation &vacation);
 
+/*!
+ */
 [[nodiscard]] KSIEVECORE_EXPORT KSieveCore::VacationUtils::Vacation parseScript(const QString &script);
 
+/*!
+ */
 [[nodiscard]] KSIEVECORE_EXPORT QString mergeRequireLine(const QString &script, const QString &scriptUpdate);
 
+/*!
+ */
 [[nodiscard]] KSIEVECORE_EXPORT QString updateVacationBlock(const QString &oldScript, const QString &newScript);
 
+/*!
+ */
 [[nodiscard]] KSIEVECORE_EXPORT QString mailAction(MailAction action);
 }
 }

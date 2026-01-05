@@ -12,9 +12,9 @@
 class QDebug;
 namespace KSieveCore
 {
-/**
- * @brief The SieveImapAccountSettings class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The SieveImapAccountSettings class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVECORE_EXPORT SieveImapAccountSettings
 {
@@ -40,29 +40,61 @@ public:
         Anonymous,
         XOAuth2
     };
+    /*!
+     */
     SieveImapAccountSettings();
 
+    /*!
+     */
     [[nodiscard]] QString identifier() const;
 
+    /*!
+     */
     void setServerName(const QString &serverName);
+    /*!
+     */
     [[nodiscard]] QString serverName() const;
 
+    /*!
+     */
     void setPort(int port);
+    /*!
+     */
     [[nodiscard]] int port() const;
 
+    /*!
+     */
     void setUserName(const QString &userName);
+    /*!
+     */
     [[nodiscard]] QString userName() const;
 
+    /*!
+     */
     void setPassword(const QString &password);
+    /*!
+     */
     [[nodiscard]] QString password() const;
 
+    /*!
+     */
     void setAuthenticationType(KSieveCore::SieveImapAccountSettings::AuthenticationMode type);
+    /*!
+     */
     [[nodiscard]] AuthenticationMode authenticationType() const;
+    /*!
+     */
     [[nodiscard]] bool operator==(const SieveImapAccountSettings &other) const;
 
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     */
     [[nodiscard]] SieveImapAccountSettings::EncryptionMode encryptionMode() const;
+    /*!
+     */
     void setEncryptionMode(EncryptionMode encryptionMode);
 
 private:

@@ -19,23 +19,37 @@ class MultiImapVacationManager;
 namespace KSieveUi
 {
 class MultiImapVacationDialogPrivate;
-/**
- * @brief The MultiImapVacationDialog class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The MultiImapVacationDialog class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVEUI_EXPORT MultiImapVacationDialog : public QDialog
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit MultiImapVacationDialog(KSieveCore::MultiImapVacationManager *manager, QWidget *parent = nullptr);
+    /*!
+     */
     ~MultiImapVacationDialog() override;
 
+    /*!
+     */
     [[nodiscard]] QList<KSieveCore::VacationCreateScriptJob *> listCreateJob() const;
 
+    /*!
+     */
     void switchToServerNamePage(const QString &serverName);
+    /*!
+     */
     void reject() override;
 Q_SIGNALS:
+    /*!
+     */
     void okClicked();
+    /*!
+     */
     void cancelClicked();
 
 private:

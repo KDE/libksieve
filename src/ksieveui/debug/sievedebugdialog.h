@@ -31,7 +31,7 @@ class SieveImapPasswordProvider;
 }
 namespace KSieveUi
 {
-/**
+/*!
  * Diagnostic info for Sieve. Only compiled when debug is enabled, it is
  * not useful enough for non-developers to have this in releases.
  */
@@ -39,7 +39,11 @@ class KSIEVEUI_EXPORT SieveDebugDialog : public QDialog
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SieveDebugDialog(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent = nullptr);
+    /*!
+     */
     ~SieveDebugDialog() override;
 
 private Q_SLOTS:

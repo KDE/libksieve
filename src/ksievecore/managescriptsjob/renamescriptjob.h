@@ -18,26 +18,42 @@ class SieveJob;
 namespace KSieveCore
 {
 class RenameScriptJobPrivate;
-/**
- * @brief The RenameScriptJob class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The RenameScriptJob class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVECORE_EXPORT RenameScriptJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit RenameScriptJob(QObject *parent = nullptr);
+    /*!
+     */
     ~RenameScriptJob() override;
 
+    /*!
+     */
     void setOldUrl(const QUrl &url);
+    /*!
+     */
     void setIsActive(bool active);
+    /*!
+     */
     void setNewName(const QString &newName);
 
+    /*!
+     */
     [[nodiscard]] bool canStart() const;
 
+    /*!
+     */
     void start();
 
 Q_SIGNALS:
+    /*!
+     */
     void finished(const QUrl &oldUrl, const QUrl &newUrl, const QString &error, bool success);
 
 private Q_SLOTS:

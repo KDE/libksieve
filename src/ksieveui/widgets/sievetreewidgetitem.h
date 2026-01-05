@@ -18,19 +18,31 @@ namespace KSieveUi
 {
 class SieveTreeWidgetProgress;
 class SieveTreeWidgetItemPrivate;
-/**
- * @brief The SieveTreeWidgetItem class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The SieveTreeWidgetItem class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVEUI_EXPORT SieveTreeWidgetItem : public QTreeWidgetItem
 {
 public:
+    /*!
+     */
     SieveTreeWidgetItem(QTreeWidget *treeWidget, QTreeWidgetItem *item);
+    /*!
+     */
     ~SieveTreeWidgetItem() override;
 
+    /*!
+     */
     void startAnimation();
+    /*!
+     */
     void stopAnimation();
+    /*!
+     */
     void setDefaultIcon();
+    /*!
+     */
     void setProgressAnimation(const QPixmap &pix);
 
 private:

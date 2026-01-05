@@ -20,26 +20,42 @@ class KSIEVECORE_EXPORT GenerateGlobalScriptJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit GenerateGlobalScriptJob(const QUrl &url, QObject *parent = nullptr);
+    /*!
+     */
     ~GenerateGlobalScriptJob() override;
 
+    /*!
+     */
     void start();
+    /*!
+     */
     void kill();
 
+    /*!
+     */
     void addUserActiveScripts(const QStringList &lstScript);
 
+    /*!
+     */
     void setForceActivateUserScript(bool f);
 
 Q_SIGNALS:
+    /*!
+     */
     void success();
+    /*!
+     */
     void error(const QString &msgError);
 
 private:
-    void slotPutMasterResult(KManageSieve::SieveJob *job, bool success);
-    void slotPutUserResult(KManageSieve::SieveJob *, bool success);
-    void disableAllOtherScripts();
-    void writeMasterScript();
-    void writeUserScript();
+    KSIEVECORE_NO_EXPORT void slotPutMasterResult(KManageSieve::SieveJob *job, bool success);
+    KSIEVECORE_NO_EXPORT void slotPutUserResult(KManageSieve::SieveJob *, bool success);
+    KSIEVECORE_NO_EXPORT void disableAllOtherScripts();
+    KSIEVECORE_NO_EXPORT void writeMasterScript();
+    KSIEVECORE_NO_EXPORT void writeUserScript();
     QStringList mListUserActiveScripts;
     const QUrl mCurrentUrl;
     bool mForceActivateUserScript = false;

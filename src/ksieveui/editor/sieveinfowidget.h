@@ -16,9 +16,15 @@ class KSIEVEUI_EXPORT SieveInfoWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SieveInfoWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~SieveInfoWidget() override;
 
+    /*!
+     */
     void setServerInfo(const QStringList &serverInfos);
 
 private:

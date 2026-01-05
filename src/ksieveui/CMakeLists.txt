@@ -499,39 +499,7 @@ install(
 install(FILES data/ksieve_script.knsrc DESTINATION ${KDE_INSTALL_KNSRCDIR})
 install(DIRECTORY data/scripts/ DESTINATION ${KDE_INSTALL_DATADIR}/sieve/scripts/)
 
-if(BUILD_QCH)
-    ecm_add_qch(
-        KPim6KSieveUi_QCH
-        NAME KPim6KSieveUi
-        BASE_NAME KPim6KSieveUi
-        VERSION ${PIM_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-        ${KSIEVEUI_INCLUDE_FILES}
-        LINK_QCHS
-        Qt6Core_QCH
-        Qt6Gui_QCH
-        Qt6Widgets_QCH
-        INCLUDE_DIRS
-        ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-        KSIEVEUI_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-    )
-endif()
-
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6KSieveUi")
-if(BUILD_QCH)
-    ecm_install_qch_export(
-        TARGETS KPim6KSieveUi_QCH
-        FILE KPim6KSieveUiQchTargets.cmake
-        DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-        COMPONENT Devel
-    )
-    set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6KSieveUiQchTargets.cmake\")")
-endif()
 
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimKSieveUiConfig.cmake.in"

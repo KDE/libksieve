@@ -11,29 +11,47 @@
 namespace KSieveUi
 {
 class SieveEditorHelpHtmlWidget;
-/**
- * @brief The SieveEditorTabWidget class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The SieveEditorTabWidget class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVEUI_EXPORT SieveEditorTabWidget : public QTabWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SieveEditorTabWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~SieveEditorTabWidget() override;
 
+    /*!
+     */
     [[nodiscard]] QUrl currentHelpUrl() const;
+    /*!
+     */
     [[nodiscard]] QString currentHelpTitle() const;
+    /*!
+     */
     bool currentPageIsHtmlPage() const;
 
 public Q_SLOTS:
+    /*!
+     */
     void slotAddHelpPage(const QUrl &url);
 
 protected:
+    /*!
+     */
     void tabRemoved(int index) override;
+    /*!
+     */
     void tabInserted(int index) override;
 
 Q_SIGNALS:
+    /*!
+     */
     void copyAvailable(bool);
 
 private:

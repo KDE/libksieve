@@ -11,14 +11,18 @@
 
 namespace KSieveCore
 {
-/**
- * @brief The SieveImapInstance class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The SieveImapInstance class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVECORE_EXPORT SieveImapInstance
 {
 public:
+    /*!
+     */
     SieveImapInstance();
+    /*!
+     */
     ~SieveImapInstance() = default;
 
     // Same enum
@@ -29,21 +33,43 @@ public:
         NotConfigured ///< The agent is lacking required configuration
     };
 
+    /*!
+     */
     [[nodiscard]] QString name() const;
+    /*!
+     */
     void setName(const QString &name);
 
+    /*!
+     */
     [[nodiscard]] QString identifier() const;
+    /*!
+     */
     void setIdentifier(const QString &identifier);
 
+    /*!
+     */
     [[nodiscard]] Status status() const;
+    /*!
+     */
     void setStatus(Status status);
 
+    /*!
+     */
     [[nodiscard]] QStringList mimeTypes() const;
+    /*!
+     */
     void setMimeTypes(const QStringList &mimeTypes);
 
+    /*!
+     */
     [[nodiscard]] QStringList capabilities() const;
+    /*!
+     */
     void setCapabilities(const QStringList &capabilities);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const SieveImapInstance &other) const;
 
 private:

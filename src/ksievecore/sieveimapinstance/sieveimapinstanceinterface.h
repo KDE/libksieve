@@ -12,15 +12,21 @@
 namespace KSieveCore
 {
 class SieveImapInstance;
-/**
- * @brief The SieveImapInstanceInterface class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The SieveImapInstanceInterface class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVECORE_EXPORT SieveImapInstanceInterface
 {
 public:
+    /*!
+     */
     SieveImapInstanceInterface();
+    /*!
+     */
     virtual ~SieveImapInstanceInterface();
+    /*!
+     */
     virtual QList<KSieveCore::SieveImapInstance> sieveImapInstances();
 };
 }

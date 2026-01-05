@@ -12,19 +12,31 @@ namespace KSieveCore
 {
 class SieveImapInstanceInterface;
 class SieveImapInstance;
-/**
- * @brief The SieveImapInstanceInterfaceManager class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The SieveImapInstanceInterfaceManager class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVECORE_EXPORT SieveImapInstanceInterfaceManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SieveImapInstanceInterfaceManager(QObject *parent = nullptr);
+    /*!
+     */
     ~SieveImapInstanceInterfaceManager() override;
+    /*!
+     */
     static SieveImapInstanceInterfaceManager *self();
+    /*!
+     */
     void setSieveImapInstanceInterface(SieveImapInstanceInterface *interface);
+    /*!
+     */
     SieveImapInstanceInterface *sieveImapInstanceInterface() const;
+    /*!
+     */
     [[nodiscard]] QList<KSieveCore::SieveImapInstance> sieveImapInstanceList() const;
 
 private:

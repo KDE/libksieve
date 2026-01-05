@@ -18,7 +18,7 @@ class ScriptBuilder;
 class Error;
 
 /** @short Parser for the Sieve grammar.
-    @author Marc Mutz <mutz@kde.org>
+    \author Marc Mutz <mutz@kde.org>
 **/
 class KSIEVE_EXPORT Parser
 {

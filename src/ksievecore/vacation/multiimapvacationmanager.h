@@ -18,25 +18,41 @@ namespace KSieveCore
 class SieveImapPasswordProvider;
 class CheckKolabKep14SupportJob;
 class VacationCheckJob;
-/**
- * @brief The MultiImapVacationManager class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The MultiImapVacationManager class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVECORE_EXPORT MultiImapVacationManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit MultiImapVacationManager(KSieveCore::SieveImapPasswordProvider *passwordProvider, QObject *parent = nullptr);
+    /*!
+     */
     ~MultiImapVacationManager() override;
 
+    /*!
+     */
     void checkVacation();
+    /*!
+     */
     void checkVacation(const QString &serverName, const QUrl &url);
 
+    /*!
+     */
     [[nodiscard]] bool kep14Support(const QString &serverName) const;
+    /*!
+     */
     [[nodiscard]] KSieveCore::SieveImapPasswordProvider *passwordProvider() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void scriptActive(bool active, const QString &serverName);
+    /*!
+     */
     void scriptAvailable(const QString &serverName, const QStringList &sieveCapabilities, const QString &scriptName, const QString &script, bool active);
 
 private:

@@ -18,25 +18,49 @@ class KSIEVECORE_EXPORT FindAccountInfoJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit FindAccountInfoJob(QObject *parent = nullptr);
+    /*!
+     */
     ~FindAccountInfoJob() override;
 
+    /*!
+     */
     void start();
 
+    /*!
+     */
     [[nodiscard]] QString identifier() const;
+    /*!
+     */
     void setIdentifier(const QString &newIdentifier);
 
+    /*!
+     */
     [[nodiscard]] bool withVacationFileName() const;
+    /*!
+     */
     void setWithVacationFileName(bool newWithVacationFileName);
 
-    SieveImapPasswordProvider *provider() const;
+    /*!
+     */
+    [[nodiscard]] SieveImapPasswordProvider *provider() const;
+    /*!
+     */
     void setProvider(SieveImapPasswordProvider *newProvider);
 
+    /*!
+     */
     [[nodiscard]] bool canStart() const;
 
+    /*!
+     */
     void setCustomImapSettingsInterface(KSieveCore::AbstractAkonadiImapSettingInterface *newCustomImapSettingsInterface);
 
 Q_SIGNALS:
+    /*!
+     */
     void findAccountInfoFinished(const KSieveCore::Util::AccountInfo &info);
 
 private:

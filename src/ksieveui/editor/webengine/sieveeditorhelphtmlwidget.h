@@ -23,27 +23,59 @@ class KSIEVEUI_EXPORT SieveEditorHelpHtmlWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SieveEditorHelpHtmlWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~SieveEditorHelpHtmlWidget() override;
 
+    /*!
+     */
     void openUrl(const QUrl &currentUrl);
+    /*!
+     */
     [[nodiscard]] QString title() const;
 
+    /*!
+     */
     [[nodiscard]] QUrl currentUrl() const;
 
+    /*!
+     */
     void resetZoom();
+    /*!
+     */
     void zoomOut();
+    /*!
+     */
     void zoomIn();
+    /*!
+     */
     void copy();
 
+    /*!
+     */
     [[nodiscard]] bool hasSelection() const;
+    /*!
+     */
     void selectAll();
 
+    /*!
+     */
     void find();
 Q_SIGNALS:
+    /*!
+     */
     void titleChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QString &title);
+    /*!
+     */
     void progressIndicatorPixmapChanged(KSieveUi::SieveEditorHelpHtmlWidget *widget, const QPixmap &);
+    /*!
+     */
     void loadFinished(KSieveUi::SieveEditorHelpHtmlWidget *widget, bool success);
+    /*!
+     */
     void copyAvailable(bool);
 
 private:

@@ -14,21 +14,33 @@ class SieveImapAccountSettings;
 }
 namespace KSieveUi
 {
-/**
- * @brief The AbstractMoveImapFolderWidget class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The AbstractMoveImapFolderWidget class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVEUI_EXPORT AbstractMoveImapFolderWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit AbstractMoveImapFolderWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~AbstractMoveImapFolderWidget() override;
 
+    /*!
+     */
     virtual void setText(const QString &str) = 0;
+    /*!
+     */
     virtual QString text() const = 0;
+    /*!
+     */
     virtual void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account) = 0;
 Q_SIGNALS:
+    /*!
+     */
     void textChanged(const QString &);
 };
 }

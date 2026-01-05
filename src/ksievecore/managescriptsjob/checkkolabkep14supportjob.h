@@ -22,7 +22,7 @@ namespace KSieveCore
 {
 class CheckKolabKep14SupportJobPrivate;
 
-/**
+/*!
 \brief Checks for support of Non-conflicting edits of Sieve scripts by multiple editors (KEP:14)
 
 \par Introduction

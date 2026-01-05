@@ -13,48 +13,100 @@ class QMenu;
 namespace KSieveUi
 {
 class SieveTextEditPrivate;
-/**
- * @brief The SieveTextEdit class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The SieveTextEdit class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVEUI_EXPORT SieveTextEdit : public TextCustomEditor::PlainTextEditor
 {
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit SieveTextEdit(QWidget *parent = nullptr);
+    /*!
+     */
     ~SieveTextEdit() override;
 
+    /*!
+     */
     void lineNumberAreaPaintEvent(QPaintEvent *event);
+    /*!
+     */
     [[nodiscard]] int lineNumberAreaWidth() const;
 
+    /*!
+     */
     void setSieveCapabilities(const QStringList &capabilities);
+    /*!
+     */
 
     void setShowHelpMenu(bool b);
 
+    /*!
+     */
     void uncomment();
+    /*!
+     */
     void comment();
+    /*!
+     */
     void upperCase();
+    /*!
+     */
     void lowerCase();
+    /*!
+     */
     void sentenceCase();
+    /*!
+     */
     void reverseCase();
+    /*!
+     */
     void setWordWrap(bool state);
+    /*!
+     */
     [[nodiscard]] bool isWordWrap() const;
 
 protected:
+    /*!
+     */
     void initCompleter();
+    /*!
+     */
     void keyPressEvent(QKeyEvent *e) override;
+    /*!
+     */
     void resizeEvent(QResizeEvent *event) override;
+    /*!
+     */
     void addExtraMenuEntry(QMenu *menu, QPoint pos) override;
+    /*!
+     */
     bool event(QEvent *ev) override;
+    /*!
+     */
     Sonnet::SpellCheckDecorator *createSpellCheckDecorator() override;
 
+    /*!
+     */
     void updateHighLighter() override;
+    /*!
+     */
     void clearDecorator() override;
+    /*!
+     */
     void createHighlighter() override;
 Q_SIGNALS:
+    /*!
+     */
     void openHelp(const QUrl &url);
+    /*!
+     */
     void editRule(const QString &selectedText);
+    /*!
+     */
     void insertRule();
 
 private:

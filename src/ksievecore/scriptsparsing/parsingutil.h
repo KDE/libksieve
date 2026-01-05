@@ -12,6 +12,8 @@ namespace KSieveCore
 {
 namespace ParsingUtil
 {
+/*!
+ */
 KSIEVECORE_EXPORT QString parseScript(const QString &script, bool &result);
 }
 }

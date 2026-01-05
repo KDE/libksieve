@@ -15,19 +15,19 @@ class QString;
 #include <QStringList>
 namespace KSieveCore
 {
-/**
+/*!
  * The Util namespace contains a collection of helper functions use in
  * various places.
  */
 namespace Util
 {
-/**
+/*!
  * Returns whether the availability of a vacation sieve script shall
  * be checked at the start up of an application.
  */
 KSIEVECORE_EXPORT bool checkOutOfOfficeOnStartup();
 
-/**
+/*!
  * Returns whether the functionality of vacation sieve script editing shall
  * be available at all.
  */
@@ -40,20 +40,20 @@ struct KSIEVECORE_EXPORT AccountInfo {
 };
 KSIEVECORE_EXPORT QDebug operator<<(QDebug d, const Util::AccountInfo &info);
 
-/**
+/*!
  * Returns the list of configured IMAP agent instances.
  */
 [[nodiscard]] KSIEVECORE_EXPORT QList<KSieveCore::SieveImapInstance> sieveImapInstances();
 [[nodiscard]] KSIEVECORE_EXPORT QStringList sieveImapResourceNames();
 
-/**
+/*!
  * Checks if a server has KEP:14 support
  */
 [[nodiscard]] KSIEVECORE_EXPORT bool hasKep14Support(const QStringList &sieveCapabilities, const QStringList &availableScripts, const QString &activeScript);
 
 [[nodiscard]] KSIEVECORE_EXPORT bool hasKep14CapabilitySupport(const QStringList &sieveCapabilities);
 
-/**
+/*!
  * Is the given scriptName a protected KEP:14 name, that a normal user should not touch directly.
  * it tests against MASTER, USER and MANAGEMENT script
  */

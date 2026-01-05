@@ -18,7 +18,11 @@ class KSIEVEUI_EXPORT FindBarWebEngineView : public FindBarBase
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit FindBarWebEngineView(QWebEngineView *view, QWidget *parent = nullptr);
+    /*!
+     */
     ~FindBarWebEngineView() override;
 
 private:

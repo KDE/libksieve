@@ -22,30 +22,52 @@ class KSIEVECORE_EXPORT VacationCheckJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit VacationCheckJob(const QUrl &url, const QString &serverName, QObject *parent = nullptr);
+    /*!
+     */
     ~VacationCheckJob() override;
+    /*!
+     */
     void setKep14Support(bool kep14Support);
+    /*!
+     */
     void start();
+    /*!
+     */
     void kill();
+    /*!
+     */
     [[nodiscard]] bool noScriptFound() const;
+    /*!
+     */
     [[nodiscard]] QString script() const;
+    /*!
+     */
     [[nodiscard]] QStringList sieveCapabilities() const;
+    /*!
+     */
     [[nodiscard]] QString serverName() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void vacationScriptActive(KSieveCore::VacationCheckJob *job, const QString &sscriptName, bool active);
+    /*!
+     */
     void error(const QString &errorStr);
 
 private Q_SLOTS:
-    void slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool active);
-    void slotGotActiveScripts(KSieveCore::ParseUserScriptJob *job);
-    void slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &availableScripts, const QString &activeScript);
-    void emitError(const QString &errorMessage);
-    void searchVacationScript();
-    void getNextScript();
+    KSIEVECORE_NO_EXPORT void slotGetResult(KManageSieve::SieveJob *job, bool success, const QString &script, bool active);
+    KSIEVECORE_NO_EXPORT void slotGotActiveScripts(KSieveCore::ParseUserScriptJob *job);
+    KSIEVECORE_NO_EXPORT void slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &availableScripts, const QString &activeScript);
+    KSIEVECORE_NO_EXPORT void emitError(const QString &errorMessage);
+    KSIEVECORE_NO_EXPORT void searchVacationScript();
+    KSIEVECORE_NO_EXPORT void getNextScript();
 
 private:
-    [[nodiscard]] bool isLastScript() const;
+    [[nodiscard]] KSIEVECORE_NO_EXPORT bool isLastScript() const;
     QStringList mAvailableScripts;
     QStringList mActiveScripts;
     QStringList mSieveCapabilities;

@@ -37,87 +37,205 @@ class SieveEditorWarning;
 class SieveEditorParsingMissingFeatureWarning;
 class SieveEditorTabWidget;
 class SieveTemplateWidget;
-/**
- * @brief The SieveEditorTextModeWidget class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The SieveEditorTextModeWidget class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVEUI_EXPORT SieveEditorTextModeWidget : public SieveEditorAbstractWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SieveEditorTextModeWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~SieveEditorTextModeWidget() override;
 
+    /*!
+     */
     void setSieveCapabilities(const QStringList &capabilities);
+    /*!
+     */
     void setReadOnly(bool b);
 
+    /*!
+     */
     [[nodiscard]] QString script() const;
+    /*!
+     */
     void setScript(const QString &script, bool clearUndoRedo = false);
 
+    /*!
+     */
     void setDebugScript(const QString &debug);
 
+    /*!
+     */
     [[nodiscard]] QString currentscript() override;
+    /*!
+     */
     void setImportScript(const QString &script) override;
 
+    /*!
+     */
     void createRulesGraphically();
+    /*!
+     */
     void generateXml();
 
+    /*!
+     */
     void showEditorWarning();
+    /*!
+     */
     void hideEditorWarning();
 
+    /*!
+     */
     void showParsingEditorWarning();
 
+    /*!
+     */
     void setParsingEditorWarningError(const QString &script, const QString &error);
+    /*!
+     */
     void replace();
+    /*!
+     */
     void find();
+    /*!
+     */
     void undo();
+    /*!
+     */
     void redo();
+    /*!
+     */
     void paste();
+    /*!
+     */
     void cut();
+    /*!
+     */
     void copy();
+    /*!
+     */
     void checkSpelling();
+    /*!
+     */
     void comment();
+    /*!
+     */
     void uncomment();
 
-    bool isUndoAvailable() const;
-    bool isRedoAvailable() const;
-    bool hasSelection() const;
+    /*!
+     */
+    [[nodiscard]] bool isUndoAvailable() const;
+    /*!
+     */
+    [[nodiscard]] bool isRedoAvailable() const;
+    /*!
+     */
+    [[nodiscard]] bool hasSelection() const;
 
+    /*!
+     */
     void selectAll();
+    /*!
+     */
     void upperCase();
+    /*!
+     */
     void lowerCase();
+    /*!
+     */
     void sentenceCase();
+    /*!
+     */
     void reverseCase();
+    /*!
+     */
     void zoomIn();
+    /*!
+     */
     void zoomOut();
+    /*!
+     */
     [[nodiscard]] QString currentHelpTitle() const;
+    /*!
+     */
     [[nodiscard]] QUrl currentHelpUrl() const;
+    /*!
+     */
     void openBookmarkUrl(const QUrl &url);
+    /*!
+     */
     void debugSieveScript();
+    /*!
+     */
     void zoomReset();
+    /*!
+     */
     void setWordWrap(bool state);
+    /*!
+     */
     [[nodiscard]] bool isWordWrap() const;
+    /*!
+     */
     void print();
+    /*!
+     */
     void printPreview();
+    /*!
+     */
     [[nodiscard]] bool printSupportEnabled() const;
+    /*!
+     */
     [[nodiscard]] bool isTextEditor() const;
+    /*!
+     */
     [[nodiscard]] SieveEditorTabWidget *tabWidget() const;
 
+    /*!
+     */
     void setListOfIncludeFile(const QStringList &listOfIncludeFile);
+    /*!
+     */
     [[nodiscard]] QStringList sieveCapabilities() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void enableButtonOk(bool);
+    /*!
+     */
     void switchToGraphicalMode();
+    /*!
+     */
     void valueChanged();
+    /*!
+     */
     void undoAvailable(bool);
+    /*!
+     */
     void redoAvailable(bool);
+    /*!
+     */
     void copyAvailable(bool);
+    /*!
+     */
     void sieveEditorTabCurrentChanged();
 
 public Q_SLOTS:
+    /*!
+     */
     void slotShowGoToLine();
+    /*!
+     */
     void slotShareError(const QString &message);
+    /*!
+     */
     void slotShareSuccess(const QString &url);
 
 private:

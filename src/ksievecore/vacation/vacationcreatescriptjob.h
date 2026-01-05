@@ -23,21 +23,45 @@ class KSIEVECORE_EXPORT VacationCreateScriptJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit VacationCreateScriptJob(QObject *parent = nullptr);
+    /*!
+     */
     ~VacationCreateScriptJob() override;
 
+    /*!
+     */
     void start();
+    /*!
+     */
     void kill();
 
+    /*!
+     */
     void setServerUrl(const QUrl &url);
+    /*!
+     */
     void setScript(const QString &script);
+    /*!
+     */
     void setServerName(const QString &servername);
+    /*!
+     */
     [[nodiscard]] const QString &serverName() const;
+    /*!
+     */
     void setStatus(bool activate, bool wasActive);
+    /*!
+     */
     void setKep14Support(bool kep14Support);
 
 Q_SIGNALS:
+    /*!
+     */
     void result(bool);
+    /*!
+     */
     void scriptActive(bool activated, const QString &serverName);
 
 private Q_SLOTS:
@@ -47,8 +71,8 @@ private Q_SLOTS:
     void slotGenerateDone(const QString &error = QString());
 
 private:
-    void handleResult();
-    void createScript();
+    KSIEVECORE_NO_EXPORT void handleResult();
+    KSIEVECORE_NO_EXPORT void createScript();
     QUrl mUrl;
     QString mScript;
     QString mServerName;

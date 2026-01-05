@@ -12,19 +12,27 @@ class QString;
 
 namespace KSieveCore
 {
-/**
- * @brief The SieveImapPasswordProvider class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The SieveImapPasswordProvider class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVECORE_EXPORT SieveImapPasswordProvider : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SieveImapPasswordProvider(QObject *parent = nullptr);
 
+    /*!
+     */
     ~SieveImapPasswordProvider() override = default;
+    /*!
+     */
     virtual void passwords(const QString &identifier) = 0;
 Q_SIGNALS:
+    /*!
+     */
     void passwordsRequested(const QString &sievePassword, const QString &sieveCustomPassword);
 };
 }

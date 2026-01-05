@@ -11,18 +11,26 @@
 
 namespace KSieveUi
 {
-/**
- * @brief The ManageSieveTreeView class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The ManageSieveTreeView class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVEUI_EXPORT ManageSieveTreeView : public PimCommon::CustomTreeView
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit ManageSieveTreeView(QWidget *parent = nullptr);
+    /*!
+     */
     ~ManageSieveTreeView() override;
 
+    /*!
+     */
     void setNoImapFound(bool found);
+    /*!
+     */
     void setNetworkDown(bool state);
 };
 }

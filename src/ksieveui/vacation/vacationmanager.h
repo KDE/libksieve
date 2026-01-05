@@ -17,23 +17,33 @@ class SieveImapPasswordProvider;
 namespace KSieveUi
 {
 class VacationManagerPrivate;
-/**
- * @brief The VacationManager class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The VacationManager class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVEUI_EXPORT VacationManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit VacationManager(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent);
+    /*!
+     */
     ~VacationManager() override;
 
+    /*!
+     */
     void checkVacation();
 
 public Q_SLOTS:
+    /*!
+     */
     void slotEditVacation(const QString &serverName);
 
 Q_SIGNALS:
+    /*!
+     */
     void updateVacationScriptStatus(bool active, const QString &serverName);
 
 private:

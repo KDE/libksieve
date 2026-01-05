@@ -26,9 +26,9 @@ namespace KSieveUi
 {
 class ManageSieveTreeView;
 class ManageSieveWidgetPrivate;
-/**
- * @brief The ManageSieveWidget class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The ManageSieveWidget class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVEUI_EXPORT ManageSieveWidget : public QWidget
 {
@@ -46,23 +46,49 @@ public:
         QStringList scriptList;
     };
 
+    /*!
+     */
     explicit ManageSieveWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~ManageSieveWidget() override;
 
+    /*!
+     */
     ManageSieveTreeView *treeView() const;
+    /*!
+     */
     void enableDisableActions(bool &newScriptAction, bool &editScriptAction, bool &deleteScriptAction, bool &desactivateScriptAction);
 
 Q_SIGNALS:
+    /*!
+     */
     void updateButtons(QTreeWidgetItem *item);
+    /*!
+     */
     void newScript(const KSieveUi::ManageSieveWidget::ScriptInfo &info);
+    /*!
+     */
     void editScript(const KSieveUi::ManageSieveWidget::ScriptInfo &info);
+    /*!
+     */
     void scriptDeleted(const QUrl &u);
+    /*!
+     */
     void serverSieveFound(bool imapFound);
+    /*!
+     */
     void scriptRenamed(const QUrl &oldUrl, const QUrl &newUrl);
+    /*!
+     */
     void updateSieveSettingsDone();
 
 protected:
+    /*!
+     */
     virtual bool refreshList() = 0;
+    /*!
+     */
     virtual void updateSieveSettings() = 0;
 
 private Q_SLOTS:

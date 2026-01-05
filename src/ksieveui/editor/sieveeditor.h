@@ -15,38 +15,76 @@ class SieveImapAccountSettings;
 namespace KSieveUi
 {
 class SieveEditorPrivate;
-/**
- * @brief The SieveEditor class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \brief The SieveEditor class
+ * \author Laurent Montel <montel@kde.org>
  */
 class KSIEVEUI_EXPORT SieveEditor : public QDialog
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SieveEditor(QWidget *parent = nullptr);
+    /*!
+     */
     ~SieveEditor() override;
 
+    /*!
+     */
     [[nodiscard]] QString script() const;
+    /*!
+     */
     [[nodiscard]] QString originalScript() const;
+    /*!
+     */
     void setScript(const QString &script, bool clearUndoRedo = false);
+    /*!
+     */
     void setDebugScript(const QString &debug);
+    /*!
+     */
     void addFailedMessage(const QString &err);
+    /*!
+     */
     void addOkMessage(const QString &msg);
+    /*!
+     */
     void addNormalMessage(const QString &msg);
+    /*!
+     */
     void setScriptName(const QString &name);
 
+    /*!
+     */
     void resultDone();
 
+    /*!
+     */
     void setSieveCapabilities(const QStringList &capabilities);
+    /*!
+     */
     void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account);
 
+    /*!
+     */
     void setListOfIncludeFile(const QStringList &listOfIncludeFile);
+    /*!
+     */
     void setModified(bool b);
 
 Q_SIGNALS:
+    /*!
+     */
     void checkSyntax();
+    /*!
+     */
     void valueChanged(bool);
+    /*!
+     */
     void okClicked();
+    /*!
+     */
     void cancelClicked();
 
 protected:
