@@ -7,7 +7,6 @@
 #pragma once
 
 #include "sieve-vacation.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "vacationutils.h"
 
@@ -22,6 +21,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <set>
 #include <vector>
 
+using namespace Qt::Literals::StringLiterals;
 namespace KSieveExt
 {
 class MultiScriptBuilder : public KSieve::ScriptBuilder

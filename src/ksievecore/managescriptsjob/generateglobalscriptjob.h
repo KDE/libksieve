@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "ksievecore_export.h"
+#include "ksievecore_private_export.h"
 #include <QObject>
 #include <QStringList>
 #include <QUrl>
@@ -16,7 +16,7 @@ class SieveJob;
 }
 namespace KSieveCore
 {
-class KSIEVECORE_EXPORT GenerateGlobalScriptJob : public QObject
+class KSIEVECORE_TESTS_EXPORT GenerateGlobalScriptJob : public QObject
 {
     Q_OBJECT
 public:

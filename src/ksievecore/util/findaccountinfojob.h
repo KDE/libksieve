@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "ksievecore_export.h" //TODO use specific export for testing ?
+#include "ksievecore_private_export.h"
 #include "util.h"
 #include <QObject>
 class OrgKdeAkonadiImapSettingsInterface;
@@ -14,7 +14,7 @@ namespace KSieveCore
 {
 class SieveImapPasswordProvider;
 class AbstractAkonadiImapSettingInterface;
-class KSIEVECORE_EXPORT FindAccountInfoJob : public QObject
+class KSIEVECORE_TESTS_EXPORT FindAccountInfoJob : public QObject
 {
     Q_OBJECT
 public:

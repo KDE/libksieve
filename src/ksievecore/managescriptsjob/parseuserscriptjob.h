@@ -5,7 +5,7 @@
 */
 
 #pragma once
-#include "ksievecore_export.h"
+#include "ksievecore_private_export.h"
 #include <QObject>
 #include <QStringList>
 #include <QUrl>
@@ -16,7 +16,7 @@ class SieveJob;
 class QXmlStreamReader;
 namespace KSieveCore
 {
-class KSIEVECORE_EXPORT ParseUserScriptJob : public QObject
+class KSIEVECORE_TESTS_EXPORT ParseUserScriptJob : public QObject
 {
     Q_OBJECT
 
