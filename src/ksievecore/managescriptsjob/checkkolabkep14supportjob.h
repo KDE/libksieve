@@ -9,7 +9,7 @@
 #include <QObject>
 #include <QStringList>
 
-#include "ksievecore_export.h"
+#include "ksievecore_private_export.h"
 #include <QUrl>
 #include <memory>
 
@@ -22,7 +22,7 @@ namespace KSieveCore
 {
 class CheckKolabKep14SupportJobPrivate;
 
-/*!
+/**
 \brief Checks for support of Non-conflicting edits of Sieve scripts by multiple editors (KEP:14)
 
 \par Introduction
@@ -44,7 +44,7 @@ For more information on Kolab KEP:14 see:
 
 */
 
-class KSIEVECORE_EXPORT CheckKolabKep14SupportJob : public QObject
+class KSIEVECORE_TESTS_EXPORT CheckKolabKep14SupportJob : public QObject
 {
     Q_OBJECT
 public:
