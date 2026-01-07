@@ -26,7 +26,7 @@ public:
     ~SieveImapInstance() = default;
 
     // Same enum
-    enum Status {
+    enum class Status : int8_t {
         Idle = 0, ///< The agent instance does currently nothing.
         Running, ///< The agent instance is working on something.
         Broken, ///< The agent instance encountered an error state.
@@ -77,7 +77,7 @@ private:
     QStringList mCapabilities;
     QString mName;
     QString mIdentifier;
-    Status mStatus = Idle;
+    Status mStatus = Status::Idle;
 };
 }
 Q_DECLARE_TYPEINFO(KSieveCore::SieveImapInstance, Q_RELOCATABLE_TYPE);

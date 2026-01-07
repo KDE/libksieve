@@ -42,7 +42,7 @@ bool CustomManageSieveWidget::refreshList()
     mLastSieveTreeWidgetItem = nullptr;
     mServerSieveInfos.clear();
     for (const KSieveCore::SieveImapInstance &type : std::as_const(mSieveImapInstances)) {
-        if (type.status() == KSieveCore::SieveImapInstance::Broken) {
+        if (type.status() == KSieveCore::SieveImapInstance::Status::Broken) {
             continue;
         }
         mServerSieveInfos.insert(type.name(), type.identifier());

@@ -33,7 +33,7 @@ void SearchServerWithVacationSupportJob::start()
     }
     const QList<KSieveCore::SieveImapInstance> instances = KSieveCore::Util::sieveImapInstances();
     for (const KSieveCore::SieveImapInstance &instance : instances) {
-        if (instance.status() == KSieveCore::SieveImapInstance::Broken) {
+        if (instance.status() == KSieveCore::SieveImapInstance::Status::Broken) {
             continue;
         }
         mServerSieveInfos.insert(instance.name(), instance.identifier());
