@@ -174,7 +174,7 @@ if(TARGET KF6::TextAutoGenerateText)
 endif()
 
 ########### Targets ###########
-ecm_set_disabled_deprecation_versions(QT 6.11.0 KF 6.21.0 KMIME 6.7.0)
+ecm_set_disabled_deprecation_versions(QT 6.11.0 KF 6.22.0 KMIME 6.7.0)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     # Not setting for GNU due to too many warnings related to private members of base classes or around lambdas
