@@ -185,6 +185,19 @@ endif()
 if(BUILD_TESTING)
     add_definitions(-DBUILD_TESTING)
 endif()
+
+option(WARNINGS_AS_ERRORS "Warnings are errors -Werror" OFF)
+if(WARNINGS_AS_ERRORS)
+    if(MSVC)
+        # FIXME Disabled because of inconsistent dll linkage warnings
+        # add_compile_options(/WX)
+        # add_compile_options(/wd4996)
+    else()
+        add_compile_options(-Werror)
+        add_compile_options(-Wno-error=deprecated-declarations)
+    endif()
+endif()
+
 ########### CMake Config Files ###########
 if(BUILD_TESTING)
     find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED COMPONENTS Test)
