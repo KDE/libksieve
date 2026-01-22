@@ -14,6 +14,14 @@ namespace KSieveCore
 {
 class SieveImapPasswordProvider;
 class AbstractAkonadiImapSettingInterface;
+/*!
+ * \class KSieveCore::FindAccountInfoJob
+ * \inmodule KSieve
+ * \inheaderfile KSieveCore/FindAccountInfoJob
+ *
+ * \brief The FindAccountInfoJob class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class KSIEVECORE_EXPORT FindAccountInfoJob : public QObject
 {
     Q_OBJECT

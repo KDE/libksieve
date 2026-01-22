@@ -19,6 +19,10 @@ namespace KSieveCore
 {
 class RenameScriptJobPrivate;
 /*!
+ * \class KSieveCore::RenameScriptJob
+ * \inmodule KSieve
+ * \inheaderfile KSieveCore/RenameScriptJob
+ *
  * \brief The RenameScriptJob class
  * \author Laurent Montel <montel@kde.org>
  */

@@ -18,6 +18,10 @@ class LineEditWithCompleterNg;
 }
 namespace KSieveUi
 {
+/*!
+ * \brief The FindBarBase class*
+ * \author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT FindBarBase : public QWidget
 {
     Q_OBJECT

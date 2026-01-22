@@ -16,6 +16,14 @@ class SieveJob;
 }
 namespace KSieveCore
 {
+/*!
+ * \class KSieveCore::GenerateGlobalScriptJob
+ * \inmodule KSieve
+ * \inheaderfile KSieveCore/GenerateGlobalScriptJob
+ *
+ * \brief The GenerateGlobalScriptJob class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class KSIEVECORE_EXPORT GenerateGlobalScriptJob : public QObject
 {
     Q_OBJECT

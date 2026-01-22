@@ -12,6 +12,10 @@ class QTextEdit;
 
 namespace KSieveUi
 {
+/*!
+ * \brief The SieveInfoWidget class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT SieveInfoWidget : public QWidget
 {
     Q_OBJECT

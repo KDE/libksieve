@@ -19,6 +19,14 @@ namespace KSieveCore
 {
 class ParseUserScriptJob;
 class GenerateGlobalScriptJob;
+/*!
+ * \class KSieveCore::VacationCreateScriptJob
+ * \inmodule KSieve
+ * \inheaderfile KSieveCore/VacationCreateScriptJob
+ *
+ * \brief The VacationCreateScriptJob class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class KSIEVECORE_EXPORT VacationCreateScriptJob : public QObject
 {
     Q_OBJECT

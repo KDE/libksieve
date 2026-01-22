@@ -11,6 +11,14 @@
 class QXmlStreamWriter;
 namespace KSieveCore
 {
+/*!
+ * \class KSieveCore::XMLPrintingScriptBuilder
+ * \inmodule KSieve
+ * \inheaderfile KSieveCore/XMLPrintingScriptBuilder
+ *
+ * \brief The XMLPrintingScriptBuilder class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class KSIEVECORE_EXPORT XMLPrintingScriptBuilder : public KSieve::ScriptBuilder
 {
 public:

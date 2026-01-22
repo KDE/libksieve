@@ -13,6 +13,10 @@ class QDebug;
 namespace KSieveCore
 {
 /*!
+ * \class KSieveCore::SieveImapAccountSettings
+ * \inmodule KSieve
+ * \inheaderfile KSieveCore/SieveImapAccountSettings
+ *
  * \brief The SieveImapAccountSettings class
  * \author Laurent Montel <montel@kde.org>
  */

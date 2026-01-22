@@ -12,6 +12,10 @@
 namespace KSieveUi
 {
 class SieveInfoWidget;
+/*!
+ * \brief The SieveInfoDialog class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT SieveInfoDialog : public QDialog
 {
     Q_OBJECT

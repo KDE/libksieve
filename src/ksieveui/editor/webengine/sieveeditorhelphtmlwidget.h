@@ -19,6 +19,10 @@ namespace KSieveUi
 class SieveEditorWebEngineView;
 class SieveEditorLoadProgressIndicator;
 class FindBarWebEngineView;
+/*!
+ * \brief The SieveEditorHelpHtmlWidget class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT SieveEditorHelpHtmlWidget : public QWidget
 {
     Q_OBJECT

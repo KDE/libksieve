@@ -13,6 +13,14 @@
 namespace KSieveCore
 {
 class SieveImapPasswordProvider;
+/*!
+ * \class KSieveCore::SearchServerWithVacationSupportJob
+ * \inmodule KSieve
+ * \inheaderfile KSieveCore/SearchServerWithVacationSupportJob
+ *
+ * \brief The SearchServerWithVacationSupportJob class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class KSIEVECORE_EXPORT SearchServerWithVacationSupportJob : public QObject
 {
     Q_OBJECT

@@ -19,6 +19,10 @@ class SieveImapPasswordProvider;
 class CheckKolabKep14SupportJob;
 class VacationCheckJob;
 /*!
+ * \class KSieveCore::MultiImapVacationManager
+ * \inmodule KSieve
+ * \inheaderfile KSieveCore/MultiImapVacationManager
+ *
  * \brief The MultiImapVacationManager class
  * \author Laurent Montel <montel@kde.org>
  */

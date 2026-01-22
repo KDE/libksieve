@@ -14,6 +14,10 @@ class QWebEngineView;
 namespace KSieveUi
 {
 class FindBarWebEngineViewPrivate;
+/*!
+ * \brief The FindBarWebEngineView class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class KSIEVEUI_EXPORT FindBarWebEngineView : public FindBarBase
 {
     Q_OBJECT

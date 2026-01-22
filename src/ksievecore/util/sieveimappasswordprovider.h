@@ -13,6 +13,10 @@ class QString;
 namespace KSieveCore
 {
 /*!
+ * \class KSieveCore::SieveImapPasswordProvider
+ * \inmodule KSieve
+ * \inheaderfile KSieveCore/SieveImapPasswordProvider
+ *
  * \brief The SieveImapPasswordProvider class
  * \author Laurent Montel <montel@kde.org>
  */

@@ -24,15 +24,31 @@ class KSIEVEUI_EXPORT AutoCreateScriptDialog : public QDialog
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief AutoCreateScriptDialog
+     * \param parent
+     */
     explicit AutoCreateScriptDialog(QWidget *parent = nullptr);
+    /*!
+     */
     ~AutoCreateScriptDialog() override;
 
+    /*!
+     */
     [[nodiscard]] QString script(QStringList &required) const;
+    /*!
+     */
     void setSieveCapabilities(const QStringList &capabilities);
+    /*!
+     */
     void setListOfIncludeFile(const QStringList &listOfIncludeFile);
 
+    /*!
+     */
     void loadScript(const QString &doc, QString &error);
 
+    /*!
+     */
     void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &sieveImapAccountSettings);
 
 protected:

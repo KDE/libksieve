@@ -13,6 +13,10 @@ namespace KSieveCore
 {
 class SieveImapInstance;
 /*!
+ * \class KSieveCore::SieveImapInstanceInterface
+ * \inmodule KSieve
+ * \inheaderfile KSieveCore/SieveImapInstanceInterface
+ *
  * \brief The SieveImapInstanceInterface class
  * \author Laurent Montel <montel@kde.org>
  */

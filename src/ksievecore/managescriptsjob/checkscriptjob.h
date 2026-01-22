@@ -18,6 +18,10 @@ namespace KSieveCore
 {
 class CheckScriptJobPrivate;
 /*!
+ * \class KSieveCore::VacationCreateScriptJob
+ * \inmodule KSieve
+ * \inheaderfile KSieveCore/CheckScriptJob
+ *
  * \brief The CheckScriptJob class
  * \author Laurent Montel <montel@kde.org>
  */

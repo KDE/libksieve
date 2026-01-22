@@ -16,6 +16,14 @@ class SieveJob;
 class QXmlStreamReader;
 namespace KSieveCore
 {
+/*!
+ * \class KSieveCore::ParseUserScriptJob
+ * \inmodule KSieve
+ * \inheaderfile KSieveCore/ParseUserScriptJob
+ *
+ * \brief The ParseUserScriptJob class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class KSIEVECORE_EXPORT ParseUserScriptJob : public QObject
 {
     Q_OBJECT

@@ -18,6 +18,14 @@ class SieveJob;
 namespace KSieveCore
 {
 class ParseUserScriptJob;
+/*!
+ * \class KSieveCore::VacationCheckJob
+ * \inmodule KSieve
+ * \inheaderfile KSieveCore/VacationCheckJob
+ *
+ * \brief The VacationCheckJob class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class KSIEVECORE_EXPORT VacationCheckJob : public QObject
 {
     Q_OBJECT
