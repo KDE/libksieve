@@ -9,13 +9,6 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVEUI
 
 add_library(KPim6KSieveUi)
 add_library(KPim6::KSieveUi ALIAS KPim6KSieveUi)
-if(KDEPIM_ENTERPRISE_BUILD)
-    set(USE_GRAPHICAL_SIEVE_EDITOR true)
-else()
-    set(USE_GRAPHICAL_SIEVE_EDITOR false)
-endif()
-
-configure_file(settings/sieve-editor.kcfg.in ${CMAKE_CURRENT_BINARY_DIR}/sieve-editor.kcfg)
 
 if(BUILD_TESTING)
     add_subdirectory(editor/tests)
