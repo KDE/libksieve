@@ -99,11 +99,6 @@ if(USE_UNITY_CMAKE_SUPPORT)
     set(COMPILE_WITH_UNITY_CMAKE_SUPPORT ON)
 endif()
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
-option(
-    KDEPIM_ENTERPRISE_BUILD
-    "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client."
-    FALSE
-)
 # Look for Sasl2 before anything else
 find_package(Sasl2)
 set_package_properties(
