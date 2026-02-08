@@ -16,5 +16,6 @@
 
     \list
         \li \l{KSieve Core C++ Classes}
+        \li \l{KSieve Ui C++ Classes}
     \endlist
 */

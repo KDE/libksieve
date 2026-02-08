@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = KSieveUi
+description = Sieve Ui Script Library
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "KSieveUi"
+
+qhp.projects            = sieveui
+
+qhp.sieveui.file                = sieveui.qhp
+qhp.sieveui.namespace           = org.kde.sieveui.$QT_VERSION_TAG
+qhp.sieveui.virtualFolder       = sieveui
+qhp.sieveui.indexTitle          = sieveui
+qhp.sieveui.indexRoot           =
+
+qhp.sieveui.subprojects         = classes
+qhp.sieveui.subprojects.classes.title = C++ Classes
+qhp.sieveui.subprojects.classes.indexTitle = KSieve Ui C++ Classes
+qhp.sieveui.subprojects.classes.selectors = class fake:headerfile
+qhp.sieveui.subprojects.classes.sortPages = true
+
+tagfile = sieveui.tags

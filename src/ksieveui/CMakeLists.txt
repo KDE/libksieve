@@ -521,3 +521,4 @@ install(
     FILE KPim6KSieveUiTargets.cmake
     NAMESPACE KPim6::
 )
+ecm_generate_qdoc(KPim6KSieveUi ksieveui.qdocconf)
