@@ -20,7 +20,7 @@ class CheckKolabKep14SupportJob;
 class VacationCheckJob;
 /*!
  * \class KSieveCore::MultiImapVacationManager
- * \inmodule KSieve
+ * \inmodule KSieveCore
  * \inheaderfile KSieveCore/MultiImapVacationManager
  *
  * \brief The MultiImapVacationManager class

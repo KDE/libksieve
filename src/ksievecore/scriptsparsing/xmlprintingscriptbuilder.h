@@ -13,7 +13,7 @@ namespace KSieveCore
 {
 /*!
  * \class KSieveCore::XMLPrintingScriptBuilder
- * \inmodule KSieve
+ * \inmodule KSieveCore
  * \inheaderfile KSieveCore/XMLPrintingScriptBuilder
  *
  * \brief The XMLPrintingScriptBuilder class

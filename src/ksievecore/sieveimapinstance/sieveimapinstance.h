@@ -13,7 +13,7 @@ namespace KSieveCore
 {
 /*!
  * \class KSieveCore::SieveImapInstance
- * \inmodule KSieve
+ * \inmodule KSieveCore
  * \inheaderfile KSieveCore/SieveImapInstance
  *
  * \brief The SieveImapInstance class

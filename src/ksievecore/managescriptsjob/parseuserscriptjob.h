@@ -18,7 +18,7 @@ namespace KSieveCore
 {
 /*!
  * \class KSieveCore::ParseUserScriptJob
- * \inmodule KSieve
+ * \inmodule KSieveCore
  * \inheaderfile KSieveCore/ParseUserScriptJob
  *
  * \brief The ParseUserScriptJob class

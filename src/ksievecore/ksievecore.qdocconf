@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = KSieveCore
+description = Sieve Core Script Library
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "KSieveCore"
+
+qhp.projects            = sievecore
+
+qhp.sievecore.file                = sievecore.qhp
+qhp.sievecore.namespace           = org.kde.sievecore.$QT_VERSION_TAG
+qhp.sievecore.virtualFolder       = sievecore
+qhp.sievecore.indexTitle          = sievecore
+qhp.sievecore.indexRoot           =
+
+qhp.sievecore.subprojects         = classes
+qhp.sievecore.subprojects.classes.title = C++ Classes
+qhp.sievecore.subprojects.classes.indexTitle = KSieve Core C++ Classes
+qhp.sievecore.subprojects.classes.selectors = class fake:headerfile
+qhp.sievecore.subprojects.classes.sortPages = true
+
+tagfile = sievecore.tags

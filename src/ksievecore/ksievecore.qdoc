@@ -1,0 +1,9 @@
+/*!
+    \module KSieveCore
+    \title KSieve Core C++ Classes
+    \ingroup modules
+    \cmakepackage KPim6
+    \cmakecomponent KSieveCore
+
+    \brief Sieve Core Script Library
+*/

@@ -16,7 +16,7 @@ class SieveImapPasswordProvider;
 class AbstractAkonadiImapSettingInterface;
 /*!
  * \class KSieveCore::FindAccountInfoJob
- * \inmodule KSieve
+ * \inmodule KSieveCore
  * \inheaderfile KSieveCore/FindAccountInfoJob
  *
  * \brief The FindAccountInfoJob class

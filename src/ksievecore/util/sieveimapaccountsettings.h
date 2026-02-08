@@ -14,7 +14,7 @@ namespace KSieveCore
 {
 /*!
  * \class KSieveCore::SieveImapAccountSettings
- * \inmodule KSieve
+ * \inmodule KSieveCore
  * \inheaderfile KSieveCore/SieveImapAccountSettings
  *
  * \brief The SieveImapAccountSettings class

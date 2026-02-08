@@ -14,7 +14,7 @@ class SieveImapInstanceInterface;
 class SieveImapInstance;
 /*!
  * \class KSieveCore::SieveImapInstanceInterfaceManager
- * \inmodule KSieve
+ * \inmodule KSieveCore
  * \inheaderfile KSieveCore/SieveImapInstanceInterfaceManager
  *
  * \brief The SieveImapInstanceInterfaceManager class

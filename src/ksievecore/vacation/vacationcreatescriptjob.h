@@ -21,7 +21,7 @@ class ParseUserScriptJob;
 class GenerateGlobalScriptJob;
 /*!
  * \class KSieveCore::VacationCreateScriptJob
- * \inmodule KSieve
+ * \inmodule KSieveCore
  * \inheaderfile KSieveCore/VacationCreateScriptJob
  *
  * \brief The VacationCreateScriptJob class

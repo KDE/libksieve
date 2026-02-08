@@ -20,7 +20,7 @@ namespace KSieveCore
 class RenameScriptJobPrivate;
 /*!
  * \class KSieveCore::RenameScriptJob
- * \inmodule KSieve
+ * \inmodule KSieveCore
  * \inheaderfile KSieveCore/RenameScriptJob
  *
  * \brief The RenameScriptJob class

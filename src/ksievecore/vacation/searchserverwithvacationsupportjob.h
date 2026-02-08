@@ -15,7 +15,7 @@ namespace KSieveCore
 class SieveImapPasswordProvider;
 /*!
  * \class KSieveCore::SearchServerWithVacationSupportJob
- * \inmodule KSieve
+ * \inmodule KSieveCore
  * \inheaderfile KSieveCore/SearchServerWithVacationSupportJob
  *
  * \brief The SearchServerWithVacationSupportJob class

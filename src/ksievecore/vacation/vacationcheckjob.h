@@ -20,7 +20,7 @@ namespace KSieveCore
 class ParseUserScriptJob;
 /*!
  * \class KSieveCore::VacationCheckJob
- * \inmodule KSieve
+ * \inmodule KSieveCore
  * \inheaderfile KSieveCore/VacationCheckJob
  *
  * \brief The VacationCheckJob class

@@ -246,3 +246,4 @@ install(
     FILE KPim6KSieveCoreTargets.cmake
     NAMESPACE KPim6::
 )
+ecm_generate_qdoc(KPim6KSieveCore ksievecore.qdocconf)

@@ -14,7 +14,7 @@ namespace KSieveCore
 {
 /*!
  * \class KSieveCore::SieveImapPasswordProvider
- * \inmodule KSieve
+ * \inmodule KSieveCore
  * \inheaderfile KSieveCore/SieveImapPasswordProvider
  *
  * \brief The SieveImapPasswordProvider class

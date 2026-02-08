@@ -18,7 +18,7 @@ namespace KSieveCore
 {
 /*!
  * \class KSieveCore::GenerateGlobalScriptJob
- * \inmodule KSieve
+ * \inmodule KSieveCore
  * \inheaderfile KSieveCore/GenerateGlobalScriptJob
  *
  * \brief The GenerateGlobalScriptJob class

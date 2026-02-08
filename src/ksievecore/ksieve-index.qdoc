@@ -1,0 +1,20 @@
+/*!
+    \page ksieve-index.html
+    \title KSieveCore
+
+    Sieve Core Script Library
+
+    \section1 Using the Module
+
+    \include {module-use.qdocinc} {using the c++ api}
+
+    \section2 Building with CMake
+
+    \include {module-use.qdocinc} {building with cmake} {KPim6} {KSieveCore} {KPim6::KSieveCore}
+
+    \section1 API Reference
+
+    \list
+        \li \l{KSieve Core C++ Classes}
+    \endlist
+*/
