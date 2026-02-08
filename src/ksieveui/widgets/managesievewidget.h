@@ -27,8 +27,11 @@ namespace KSieveUi
 class ManageSieveTreeView;
 class ManageSieveWidgetPrivate;
 /*!
+ * \class KSieveUi::ManageSieveWidget
  * \brief The ManageSieveWidget class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule KSieveUi
+ * \inheaderfile KSieveUi/ManageSieveWidget
  */
 class KSIEVEUI_EXPORT ManageSieveWidget : public QWidget
 {

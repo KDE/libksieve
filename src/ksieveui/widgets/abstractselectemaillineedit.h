@@ -11,8 +11,11 @@
 namespace KSieveUi
 {
 /*!
+ * \class KSieveUi::AbstractSelectEmailLineEdit
  * \brief The AbstractSelectEmailLineEdit class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule KSieveUi
+ * \inheaderfile KSieveUi/AbstractSelectEmailLineEdit
  */
 class KSIEVEUI_EXPORT AbstractSelectEmailLineEdit : public QWidget
 {

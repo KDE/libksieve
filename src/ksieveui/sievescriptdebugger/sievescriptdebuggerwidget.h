@@ -14,8 +14,11 @@ namespace KSieveUi
 {
 class SieveScriptDebuggerFrontEndWidget;
 /*!
+ * \class KSieveUi::SieveScriptDebuggerWidget
  * \brief The SieveScriptDebuggerWidget class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule KSieveUi
+ * \inheaderfile KSieveUi/SieveScriptDebuggerWidget
  */
 class KSIEVEUI_EXPORT SieveScriptDebuggerWidget : public QWidget
 {

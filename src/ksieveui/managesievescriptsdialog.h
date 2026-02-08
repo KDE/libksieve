@@ -26,8 +26,11 @@ namespace KSieveUi
 class SieveEditor;
 class ManageSieveScriptsDialogPrivate;
 /*!
+ * \class KSieveUi::ManageSieveScriptsDialog
  * \brief The ManageSieveScriptsDialog class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule KSieveUi
+ * \inheaderfile KSieveUi/ManageSieveScriptsDialog
  */
 class KSIEVEUI_EXPORT ManageSieveScriptsDialog : public QDialog
 {

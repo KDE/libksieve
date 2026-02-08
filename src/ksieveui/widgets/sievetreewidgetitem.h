@@ -19,8 +19,11 @@ namespace KSieveUi
 class SieveTreeWidgetProgress;
 class SieveTreeWidgetItemPrivate;
 /*!
+ * \class KSieveUi::SieveTreeWidgetItem
  * \brief The SieveTreeWidgetItem class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule KSieveUi
+ * \inheaderfile KSieveUi/SieveTreeWidgetItem
  */
 class KSIEVEUI_EXPORT SieveTreeWidgetItem : public QTreeWidgetItem
 {

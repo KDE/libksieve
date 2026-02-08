@@ -17,8 +17,11 @@ namespace KSieveUi
 {
 class SieveEditorGraphicalModeWidget;
 /*!
+ * \class KSieveUi::AutoCreateScriptDialog
  * \brief The AutoCreateScriptDialog class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule KSieveUi
+ * \inheaderfile KSieveUi/AutoCreateScriptDialog
  */
 class KSIEVEUI_EXPORT AutoCreateScriptDialog : public QDialog
 {

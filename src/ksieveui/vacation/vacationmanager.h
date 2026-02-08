@@ -18,8 +18,11 @@ namespace KSieveUi
 {
 class VacationManagerPrivate;
 /*!
+ * \class KSieveUi::VacationManager
  * \brief The VacationManager class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule KSieveUi
+ * \inheaderfile KSieveUi/VacationManager
  */
 class KSIEVEUI_EXPORT VacationManager : public QObject
 {

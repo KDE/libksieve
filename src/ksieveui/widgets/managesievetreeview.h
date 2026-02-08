@@ -12,8 +12,11 @@
 namespace KSieveUi
 {
 /*!
+ * \class KSieveUi::ManageSieveTreeView
  * \brief The ManageSieveTreeView class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule KSieveUi
+ * \inheaderfile KSieveUi/ManageSieveTreeView
  */
 class KSIEVEUI_EXPORT ManageSieveTreeView : public PimCommon::CustomTreeView
 {

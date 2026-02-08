@@ -15,8 +15,11 @@ class SieveImapAccountSettings;
 namespace KSieveUi
 {
 /*!
+ * \class KSieveUi::AbstractMoveImapFolderWidget
  * \brief The AbstractMoveImapFolderWidget class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule KSieveUi
+ * \inheaderfile KSieveUi/AbstractMoveImapFolderWidget
  */
 class KSIEVEUI_EXPORT AbstractMoveImapFolderWidget : public QWidget
 {

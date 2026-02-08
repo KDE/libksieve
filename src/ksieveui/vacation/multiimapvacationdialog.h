@@ -20,8 +20,11 @@ namespace KSieveUi
 {
 class MultiImapVacationDialogPrivate;
 /*!
+ * \class KSieveUi::MultiImapVacationDialog
  * \brief The MultiImapVacationDialog class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule KSieveUi
+ * \inheaderfile KSieveUi/MultiImapVacationDialog
  */
 class KSIEVEUI_EXPORT MultiImapVacationDialog : public QDialog
 {

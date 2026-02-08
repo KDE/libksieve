@@ -12,8 +12,11 @@
 namespace KSieveUi
 {
 /*!
+ * \class KSieveUi::AbstractRegexpEditorLineEdit
  * \brief The AbstractRegexpEditorLineEdit class
  * \author Laurent Montel <montel@kde.org>
+ * \inmodule KSieveUi
+ * \inheaderfile KSieveUi/AbstractRegexpEditorLineEdit
  */
 class KSIEVEUI_EXPORT AbstractRegexpEditorLineEdit : public QWidget
 {
