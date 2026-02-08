@@ -6,7 +6,7 @@ SPDX-PackageSupplier = "Montel Laurent <montel@kde.org>"
 SPDX-PackageDownloadLocation = "https://invent.kde.org/pim/libksieve"
 
 [[annotations]]
-path = ["src/ksievecore/vacation/autotests/data/**", "src/ksievecore/scriptsparsing/autotests/data/**", "src/ksieveui/autocreatescripts/tests/scripts/**", "src/ksieveui/autocreatescripts/autotests/data/**", "src/ksieveui/scriptsparsing/tests/failed/**", "TODO", "src/ksieveui/TODO", "src/ksieveui/data/ksieve_script.knsrc", "src/ksieveui/data/scripts/copy/template.desktop", "src/ksieveui/data/scripts/copy/template.txt", "kioslave/src/sieve/RFCs", "kioslave/src/sieve/sieve.json", "kioslave/doc/sieve/index.docbook", "REUSE.toml", ".gersemirc"]
+path = ["src/ksievecore/vacation/autotests/data/**", "src/ksievecore/scriptsparsing/autotests/data/**", "src/ksieveui/autocreatescripts/tests/scripts/**", "src/ksieveui/autocreatescripts/autotests/data/**", "src/ksieveui/scriptsparsing/tests/failed/**", "TODO", "src/ksieveui/TODO", "src/ksieveui/data/ksieve_script.knsrc", "src/ksieveui/data/scripts/copy/template.desktop", "src/ksieveui/data/scripts/copy/template.txt", "kioslave/src/sieve/RFCs", "kioslave/src/sieve/sieve.json", "kioslave/doc/sieve/index.docbook", "REUSE.toml", ".gersemirc", "src/ksievecore/ksieve-index.qdoc", "src/ksievecore/ksievecore.qdoc", "src/ksievecore/ksievecore.qdocconf", "src/ksieveui/ksieveui.qdoc", "src/ksieveui/ksieveui.qdocconf"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "none"
 SPDX-License-Identifier = "CC0-1.0"
