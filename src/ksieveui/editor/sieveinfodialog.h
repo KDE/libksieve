@@ -21,12 +21,17 @@ class KSIEVEUI_EXPORT SieveInfoDialog : public QDialog
     Q_OBJECT
 public:
     /*!
+     * Constructs a SieveInfoDialog with the given parent widget.
+     * \param parent The parent widget.
      */
     explicit SieveInfoDialog(QWidget *parent = nullptr);
     /*!
+     * Destroys the SieveInfoDialog.
      */
     ~SieveInfoDialog() override;
     /*!
+     * Sets the server information to display.
+     * \param serverInfos A list of server information strings.
      */
     void setServerInfo(const QStringList &serverInfos);
 

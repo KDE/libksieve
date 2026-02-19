@@ -29,32 +29,45 @@ class KSIEVECORE_EXPORT GenerateGlobalScriptJob : public QObject
     Q_OBJECT
 public:
     /*!
+     * Constructs a GenerateGlobalScriptJob with the given server URL and parent object.
+     * \param url The Sieve server URL.
+     * \param parent The parent object.
      */
     explicit GenerateGlobalScriptJob(const QUrl &url, QObject *parent = nullptr);
     /*!
+     * Destroys the GenerateGlobalScriptJob.
      */
     ~GenerateGlobalScriptJob() override;
 
     /*!
+     * Starts the job to generate and upload the global script.
      */
     void start();
     /*!
+     * Cancels the running job.
      */
     void kill();
 
     /*!
+     * Adds the list of user active scripts to include in the global script.
+     * \param lstScript A list of active script names.
      */
     void addUserActiveScripts(const QStringList &lstScript);
 
     /*!
+     * Forces the activation of the user script in the global script.
+     * \param f true to force activation.
      */
     void setForceActivateUserScript(bool f);
 
 Q_SIGNALS:
     /*!
+     * Emitted when the global script is successfully generated and uploaded.
      */
     void success();
     /*!
+     * Emitted when an error occurs during global script generation.
+     * \param msgError The error message.
      */
     void error(const QString &msgError);
 

@@ -23,9 +23,12 @@ class KSIEVEUI_EXPORT ManageSieveTreeView : public PimCommon::CustomTreeView
     Q_OBJECT
 public:
     /*!
+     * Constructs a ManageSieveTreeView with the given parent widget.
+     * \param parent The parent widget.
      */
     explicit ManageSieveTreeView(QWidget *parent = nullptr);
     /*!
+     * Destroys the ManageSieveTreeView.
      */
     ~ManageSieveTreeView() override;
 
@@ -33,6 +36,8 @@ public:
      */
     void setNoImapFound(bool found);
     /*!
+     * Sets the network state.
+     * \param state true if the network is down.
      */
     void setNetworkDown(bool state);
 };

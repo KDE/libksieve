@@ -29,23 +29,31 @@ class KSIEVEUI_EXPORT VacationManager : public QObject
     Q_OBJECT
 public:
     /*!
+     * Constructs a VacationManager with the given password provider and parent widget.
      */
     explicit VacationManager(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent);
     /*!
+     * Destroys the VacationManager.
      */
     ~VacationManager() override;
 
     /*!
+     * Checks the vacation status.
      */
     void checkVacation();
 
 public Q_SLOTS:
     /*!
+     * Edits the vacation message for the given server.
+     * \param serverName The name of the server.
      */
     void slotEditVacation(const QString &serverName);
 
 Q_SIGNALS:
     /*!
+     * Emitted when the vacation script status is updated.
+     * \param active true if vacation is active, false otherwise.
+     * \param serverName The name of the server.
      */
     void updateVacationScriptStatus(bool active, const QString &serverName);
 

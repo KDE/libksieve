@@ -25,21 +25,32 @@ class KSIEVECORE_EXPORT SieveImapInstanceInterfaceManager : public QObject
     Q_OBJECT
 public:
     /*!
+     * Constructs a SieveImapInstanceInterfaceManager with the given parent object.
+     * \param parent The parent object.
      */
     explicit SieveImapInstanceInterfaceManager(QObject *parent = nullptr);
     /*!
+     * Destroys the SieveImapInstanceInterfaceManager.
      */
     ~SieveImapInstanceInterfaceManager() override;
     /*!
+     * Returns the singleton instance of the manager.
+     * \return The global SieveImapInstanceInterfaceManager instance.
      */
     static SieveImapInstanceInterfaceManager *self();
     /*!
+     * Sets the Sieve IMAP instance interface to use.
+     * \param interface The interface instance.
      */
     void setSieveImapInstanceInterface(SieveImapInstanceInterface *interface);
     /*!
+     * Returns the current Sieve IMAP instance interface.
+     * \return The SieveImapInstanceInterface instance.
      */
     SieveImapInstanceInterface *sieveImapInstanceInterface() const;
     /*!
+     * Returns a list of all Sieve IMAP instances.
+     * \return A list of SieveImapInstance objects.
      */
     [[nodiscard]] QList<KSieveCore::SieveImapInstance> sieveImapInstanceList() const;
 

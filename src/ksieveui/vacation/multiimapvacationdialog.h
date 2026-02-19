@@ -31,27 +31,38 @@ class KSIEVEUI_EXPORT MultiImapVacationDialog : public QDialog
     Q_OBJECT
 public:
     /*!
+     * Constructs a MultiImapVacationDialog with the given manager and parent widget.
+     * \param manager The MultiImapVacationManager instance.
+     * \param parent The parent widget.
      */
     explicit MultiImapVacationDialog(KSieveCore::MultiImapVacationManager *manager, QWidget *parent = nullptr);
     /*!
+     * Destroys the MultiImapVacationDialog.
      */
     ~MultiImapVacationDialog() override;
 
     /*!
+     * Returns the list of vacation creation jobs.
+     * \return A list of VacationCreateScriptJob pointers.
      */
     [[nodiscard]] QList<KSieveCore::VacationCreateScriptJob *> listCreateJob() const;
 
     /*!
+     * Switches to the vacation page for the given server.
+     * \param serverName The name of the server.
      */
     void switchToServerNamePage(const QString &serverName);
     /*!
+     * Rejects the dialog.
      */
     void reject() override;
 Q_SIGNALS:
     /*!
+     * Emitted when the OK button is clicked.
      */
     void okClicked();
     /*!
+     * Emitted when the Cancel button is clicked.
      */
     void cancelClicked();
 

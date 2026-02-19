@@ -50,47 +50,73 @@ public:
     };
 
     /*!
+     * Constructs a ManageSieveWidget with the given parent widget.
      */
     explicit ManageSieveWidget(QWidget *parent = nullptr);
     /*!
+     * Destroys the ManageSieveWidget.
      */
     ~ManageSieveWidget() override;
 
     /*!
+     * Returns the tree view widget.
+     * \return The ManageSieveTreeView instance.
      */
     ManageSieveTreeView *treeView() const;
     /*!
+     * Enables or disables script management actions.
+     * \param newScriptAction true to enable new script action.
+     * \param editScriptAction true to enable edit script action.
+     * \param deleteScriptAction true to enable delete script action.
+     * \param desactivateScriptAction true to enable deactivate script action.
      */
     void enableDisableActions(bool &newScriptAction, bool &editScriptAction, bool &deleteScriptAction, bool &desactivateScriptAction);
 
 Q_SIGNALS:
     /*!
+     * Emitted when a tree widget item is updated.
+     * \param item The updated tree widget item.
      */
     void updateButtons(QTreeWidgetItem *item);
     /*!
+     * Emitted when a new script is created.
+     * \param info The script information.
      */
     void newScript(const KSieveUi::ManageSieveWidget::ScriptInfo &info);
     /*!
+     * Emitted when a script is being edited.
+     * \param info The script information.
      */
     void editScript(const KSieveUi::ManageSieveWidget::ScriptInfo &info);
     /*!
+     * Emitted when a script is deleted.
+     * \param u The URL of the deleted script.
      */
     void scriptDeleted(const QUrl &u);
     /*!
+     * Emitted when a Sieve server is found.
+     * \param imapFound true if IMAP was found.
      */
     void serverSieveFound(bool imapFound);
     /*!
+     * Emitted when a script is renamed.
+     * \param oldUrl The old URL of the script.
+     * \param newUrl The new URL of the script.
      */
     void scriptRenamed(const QUrl &oldUrl, const QUrl &newUrl);
     /*!
+     * Emitted when Sieve settings are updated.
      */
     void updateSieveSettingsDone();
 
 protected:
     /*!
+     * Refreshes the list of scripts.
+     * \return true if the refresh was successful.
      */
     virtual bool refreshList() = 0;
     /*!
+     * Updates the Sieve settings.
      */
     virtual void updateSieveSettings() = 0;
 
@@ -108,13 +134,43 @@ private Q_SLOTS:
     KSIEVEUI_NO_EXPORT void slotRenameFinished(const QUrl &oldUrl, const QUrl &newUrl, const QString &errorStr, bool success);
 
 public Q_SLOTS:
+    /*!
+     * Renames the selected script.
+     */
     void slotRenameScript();
+    /*!
+     * Handles the result when the script list is retrieved.
+     * \param job The Sieve job.
+     * \param success true if the operation was successful.
+     * \param listScript The list of scripts.
+     * \param activeScript The currently active script.
+     */
     void slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &listScript, const QString &activeScript);
+    /*!
+     * Creates a new script.
+     */
     void slotNewScript();
+    /*!
+     * Edits the selected script.
+     */
     void slotEditScript();
+    /*!
+     * Deletes the selected script.
+     */
     void slotDeleteScript();
+    /*!
+     * Deactivates the selected script.
+     */
     void slotDeactivateScript();
+    /*!
+     * Handles the result when a script is deleted.
+     * \param job The Sieve job.
+     * \param success true if the deletion was successful.
+     */
     void slotDeleteResult(KManageSieve::SieveJob *job, bool success);
+    /*!
+     * Refreshes the script list.
+     */
     void slotRefresh();
 
 protected:

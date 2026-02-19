@@ -26,23 +26,34 @@ class KSIEVEUI_EXPORT AbstractMoveImapFolderWidget : public QWidget
     Q_OBJECT
 public:
     /*!
+     * Constructs an AbstractMoveImapFolderWidget with the given parent widget.
+     * \param parent The parent widget.
      */
     explicit AbstractMoveImapFolderWidget(QWidget *parent = nullptr);
     /*!
+     * Destroys the AbstractMoveImapFolderWidget.
      */
     ~AbstractMoveImapFolderWidget() override;
 
     /*!
+     * Sets the folder path text.
+     * \param str The folder path to set.
      */
     virtual void setText(const QString &str) = 0;
     /*!
+     * Returns the folder path text.
+     * \return The current folder path.
      */
     virtual QString text() const = 0;
     /*!
+     * Sets the IMAP account settings.
+     * \param account The account settings.
      */
     virtual void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account) = 0;
 Q_SIGNALS:
     /*!
+     * Emitted when the folder text has changed.
+     * \param The new folder text.
      */
     void textChanged(const QString &);
 };

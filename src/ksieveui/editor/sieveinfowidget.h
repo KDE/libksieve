@@ -21,13 +21,18 @@ class KSIEVEUI_EXPORT SieveInfoWidget : public QWidget
     Q_OBJECT
 public:
     /*!
+     * Constructs a SieveInfoWidget with the given parent widget.
+     * \param parent The parent widget.
      */
     explicit SieveInfoWidget(QWidget *parent = nullptr);
     /*!
+     * Destroys the SieveInfoWidget.
      */
     ~SieveInfoWidget() override;
 
     /*!
+     * Sets the server information to display.
+     * \param serverInfos A list of server information strings.
      */
     void setServerInfo(const QStringList &serverInfos);
 

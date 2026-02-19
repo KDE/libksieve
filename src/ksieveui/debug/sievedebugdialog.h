@@ -40,9 +40,13 @@ class KSIEVEUI_EXPORT SieveDebugDialog : public QDialog
     Q_OBJECT
 public:
     /*!
+     * Constructs a SieveDebugDialog with the given password provider and parent widget.
+     * \param passwordProvider The Sieve IMAP password provider.
+     * \param parent The parent widget.
      */
     explicit SieveDebugDialog(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent = nullptr);
     /*!
+     * Destroys the SieveDebugDialog.
      */
     ~SieveDebugDialog() override;
 

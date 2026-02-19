@@ -23,9 +23,13 @@ class KSIEVEUI_EXPORT FindBarWebEngineView : public FindBarBase
     Q_OBJECT
 public:
     /*!
+     * Constructs a FindBarWebEngineView with the given web engine view and parent widget.
+     * \param view The QWebEngineView to search in.
+     * \param parent The parent widget.
      */
     explicit FindBarWebEngineView(QWebEngineView *view, QWidget *parent = nullptr);
     /*!
+     * Destroys the FindBarWebEngineView.
      */
     ~FindBarWebEngineView() override;
 

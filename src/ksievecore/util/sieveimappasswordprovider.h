@@ -25,17 +25,25 @@ class KSIEVECORE_EXPORT SieveImapPasswordProvider : public QObject
     Q_OBJECT
 public:
     /*!
+     * Constructs a SieveImapPasswordProvider with the given parent object.
+     * \param parent The parent object.
      */
     explicit SieveImapPasswordProvider(QObject *parent = nullptr);
 
     /*!
+     * Destroys the SieveImapPasswordProvider.
      */
     ~SieveImapPasswordProvider() override = default;
     /*!
+     * Requests the Sieve and custom passwords for the given identifier.
+     * \param identifier The account identifier.
      */
     virtual void passwords(const QString &identifier) = 0;
 Q_SIGNALS:
     /*!
+     * Emitted when passwords are requested in response to a passwords() call.
+     * \param sievePassword The Sieve password.
+     * \param sieveCustomPassword The custom Sieve password.
      */
     void passwordsRequested(const QString &sievePassword, const QString &sieveCustomPassword);
 };

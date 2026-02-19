@@ -38,19 +38,23 @@ class KSIEVEUI_EXPORT ManageSieveScriptsDialog : public QDialog
 
 public:
     /*!
+     * Constructs a ManageSieveScriptsDialog with the given password provider and parent widget.
      */
     explicit ManageSieveScriptsDialog(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent = nullptr);
     /*!
+     * Destroys the ManageSieveScriptsDialog.
      */
     ~ManageSieveScriptsDialog() override;
 
 Q_SIGNALS:
     /*!
+     * Emitted when the dialog finishes.
      */
     void finished();
 
 protected:
     /*!
+     * Handles the hide event.
      */
     void hideEvent(QHideEvent *) override;
 

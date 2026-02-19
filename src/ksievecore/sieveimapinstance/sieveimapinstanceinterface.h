@@ -24,12 +24,16 @@ class KSIEVECORE_EXPORT SieveImapInstanceInterface
 {
 public:
     /*!
+     * Constructs a SieveImapInstanceInterface.
      */
     SieveImapInstanceInterface();
     /*!
+     * Destroys the SieveImapInstanceInterface.
      */
     virtual ~SieveImapInstanceInterface();
     /*!
+     * Returns a list of Sieve IMAP instances.
+     * \return A list of SieveImapInstance objects.
      */
     virtual QList<KSieveCore::SieveImapInstance> sieveImapInstances();
 };
