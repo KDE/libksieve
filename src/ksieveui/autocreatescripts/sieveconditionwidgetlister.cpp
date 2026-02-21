@@ -57,9 +57,8 @@ void SieveConditionWidget::setFilterCondition(QWidget *widget)
     }
 }
 
-void SieveConditionWidget::generatedScript(QString &script, QStringList &required, bool inForEveryPartLoop)
+void SieveConditionWidget::generatedScript(QString &script, QStringList &required, [[maybe_unused]] bool inForEveryPartLoop)
 {
-    Q_UNUSED(inForEveryPartLoop)
     const int index = mComboBox->currentIndex();
     if (index != mComboBox->count() - 1) {
         KSieveUi::SieveCondition *widgetCondition = mConditionList.at(mComboBox->currentIndex());

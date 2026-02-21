@@ -298,17 +298,15 @@ public:
         write(txt.toLatin1(), QString::number(number));
     }
 
-    void commandStart(const QString &identifier, int lineNumber) override
+    void commandStart(const QString &identifier, [[maybe_unused]] int lineNumber) override
     {
-        Q_UNUSED(lineNumber)
         write("<command>");
         ++indent;
         write("identifier", identifier);
     }
 
-    void commandEnd(int lineNumber) override
+    void commandEnd([[maybe_unused]] int lineNumber) override
     {
-        Q_UNUSED(lineNumber)
         --indent;
         write("</command>");
     }
@@ -338,16 +336,14 @@ public:
         write("</testlist>");
     }
 
-    void blockStart(int lineNumber) override
+    void blockStart([[maybe_unused]] int lineNumber) override
     {
-        Q_UNUSED(lineNumber)
         write("<block>");
         ++indent;
     }
 
-    void blockEnd(int lineNumber) override
+    void blockEnd([[maybe_unused]] int lineNumber) override
     {
-        Q_UNUSED(lineNumber)
         --indent;
         write("</block>");
     }
@@ -463,17 +459,15 @@ public:
         ++mNextResponse;
     }
 
-    void commandStart(const QString &identifier, int lineNumber) override
+    void commandStart(const QString &identifier, [[maybe_unused]] int lineNumber) override
     {
-        Q_UNUSED(lineNumber)
         checkIs(CommandStart);
         checkEquals(identifier);
         ++mNextResponse;
     }
 
-    void commandEnd(int lineNumber) override
+    void commandEnd([[maybe_unused]] int lineNumber) override
     {
-        Q_UNUSED(lineNumber)
         checkIs(CommandEnd);
         ++mNextResponse;
     }
@@ -503,16 +497,14 @@ public:
         ++mNextResponse;
     }
 
-    void blockStart(int lineNumber) override
+    void blockStart([[maybe_unused]] int lineNumber) override
     {
-        Q_UNUSED(lineNumber)
         checkIs(BlockStart);
         ++mNextResponse;
     }
 
-    void blockEnd(int lineNumber) override
+    void blockEnd([[maybe_unused]] int lineNumber) override
     {
-        Q_UNUSED(lineNumber)
         checkIs(BlockEnd);
         ++mNextResponse;
     }

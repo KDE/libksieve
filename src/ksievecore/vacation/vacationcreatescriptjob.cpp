@@ -107,9 +107,8 @@ void VacationCreateScriptJob::createScript()
     connect(mSieveJob, &KManageSieve::SieveJob::gotScript, this, &VacationCreateScriptJob::slotGetScript);
 }
 
-void VacationCreateScriptJob::slotGetScript(KManageSieve::SieveJob *job, bool success, const QString &oldScript, bool active)
+void VacationCreateScriptJob::slotGetScript(KManageSieve::SieveJob *job, bool success, const QString &oldScript, [[maybe_unused]] bool active)
 {
-    Q_UNUSED(active)
     Q_ASSERT(job == mSieveJob);
     mSieveJob = nullptr;
     if (success || !oldScript.trimmed().isEmpty()) {

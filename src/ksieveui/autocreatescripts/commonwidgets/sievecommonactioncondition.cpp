@@ -67,9 +67,8 @@ QString SieveCommonActionCondition::code(QWidget *) const
     return {};
 }
 
-QStringList SieveCommonActionCondition::needRequires(QWidget *parent) const
+QStringList SieveCommonActionCondition::needRequires([[maybe_unused]] QWidget *parent) const
 {
-    Q_UNUSED(parent)
     return {};
 }
 

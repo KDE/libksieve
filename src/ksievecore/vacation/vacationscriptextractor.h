@@ -279,16 +279,14 @@ private:
         }
     }
 
-    void commandStart(const QString &identifier, int lineNumber) override
+    void commandStart(const QString &identifier, [[maybe_unused]] int lineNumber) override
     {
-        Q_UNUSED(lineNumber)
         qCDebug(LIBKSIEVECORE_LOG);
         process(CommandStart, identifier);
     }
 
-    void commandEnd(int lineNumber) override
+    void commandEnd([[maybe_unused]] int lineNumber) override
     {
-        Q_UNUSED(lineNumber)
         qCDebug(LIBKSIEVECORE_LOG);
         process(CommandEnd);
     }
@@ -317,17 +315,15 @@ private:
         process(TestListEnd);
     }
 
-    void blockStart(int lineNumber) override
+    void blockStart([[maybe_unused]] int lineNumber) override
     {
-        Q_UNUSED(lineNumber)
         qCDebug(LIBKSIEVECORE_LOG);
         process(BlockStart);
         ++mNestingDepth;
     }
 
-    void blockEnd(int lineNumber) override
+    void blockEnd([[maybe_unused]] int lineNumber) override
     {
-        Q_UNUSED(lineNumber)
         qCDebug(LIBKSIEVECORE_LOG);
         --mNestingDepth;
         process(BlockEnd);
@@ -806,14 +802,12 @@ private:
     {
     }
 
-    void blockStart(int lineNumber) override
+    void blockStart([[maybe_unused]] int lineNumber) override
     {
-        Q_UNUSED(lineNumber)
     }
 
-    void blockEnd(int lineNumber) override
+    void blockEnd([[maybe_unused]] int lineNumber) override
     {
-        Q_UNUSED(lineNumber)
     }
 
     void hashComment(const QString &) override
@@ -831,14 +825,12 @@ private:
     void error(const KSieve::Error &e) override;
     void finished() override;
 
-    void taggedArgument(const QString &tag) override
+    void taggedArgument([[maybe_unused]] const QString &tag) override
     {
-        Q_UNUSED(tag)
     }
 
-    void numberArgument(unsigned long number, char) override
+    void numberArgument([[maybe_unused]] unsigned long number, char) override
     {
-        Q_UNUSED(number)
     }
 
     void stringArgument(const QString &string, bool, const QString &) override;

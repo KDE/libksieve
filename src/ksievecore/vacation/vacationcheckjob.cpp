@@ -133,9 +133,8 @@ void VacationCheckJob::slotGotActiveScripts(KSieveCore::ParseUserScriptJob *job)
     connect(mSieveJob, &KManageSieve::SieveJob::gotList, this, &VacationCheckJob::slotGotList);
 }
 
-void VacationCheckJob::slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &availableScripts, const QString &activeScript)
+void VacationCheckJob::slotGotList(KManageSieve::SieveJob *job, bool success, const QStringList &availableScripts, [[maybe_unused]] const QString &activeScript)
 {
-    Q_UNUSED(activeScript)
     Q_ASSERT(job == mSieveJob);
     mSieveJob = nullptr;
     if (!success) {

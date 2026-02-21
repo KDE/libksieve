@@ -25,9 +25,8 @@ RegexpEditorLineEdit::RegexpEditorLineEdit(QWidget *parent)
 
 RegexpEditorLineEdit::~RegexpEditorLineEdit() = default;
 
-void RegexpEditorLineEdit::switchToRegexpEditorLineEdit(bool regexpEditor)
+void RegexpEditorLineEdit::switchToRegexpEditorLineEdit([[maybe_unused]] bool regexpEditor)
 {
-    Q_UNUSED(regexpEditor)
     // Nothing here
 }
 

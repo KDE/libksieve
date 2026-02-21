@@ -66,9 +66,8 @@ void XMLPrintingScriptBuilder::numberArgument(unsigned long number, char quantif
     }
 }
 
-void XMLPrintingScriptBuilder::commandStart(const QString &identifier, int lineNumber)
+void XMLPrintingScriptBuilder::commandStart(const QString &identifier, [[maybe_unused]] int lineNumber)
 {
-    Q_UNUSED(lineNumber)
     if (identifier == QLatin1StringView("else") || identifier == QLatin1StringView("break") || identifier == QLatin1StringView("require")
         || identifier == QLatin1StringView("foreverypart") || identifier == QLatin1StringView("if") || identifier == QLatin1StringView("elsif")) {
         mStream->writeStartElement(u"control"_s);
@@ -79,9 +78,8 @@ void XMLPrintingScriptBuilder::commandStart(const QString &identifier, int lineN
     }
 }
 
-void XMLPrintingScriptBuilder::commandEnd(int lineNumber)
+void XMLPrintingScriptBuilder::commandEnd([[maybe_unused]] int lineNumber)
 {
-    Q_UNUSED(lineNumber)
     mStream->writeEndElement();
 }
 
@@ -106,15 +104,13 @@ void XMLPrintingScriptBuilder::testListEnd()
     mStream->writeEndElement();
 }
 
-void XMLPrintingScriptBuilder::blockStart(int lineNumber)
+void XMLPrintingScriptBuilder::blockStart([[maybe_unused]] int lineNumber)
 {
-    Q_UNUSED(lineNumber)
     mStream->writeStartElement(u"block"_s);
 }
 
-void XMLPrintingScriptBuilder::blockEnd(int lineNumber)
+void XMLPrintingScriptBuilder::blockEnd([[maybe_unused]] int lineNumber)
 {
-    Q_UNUSED(lineNumber)
     mStream->writeEndElement();
 }
 

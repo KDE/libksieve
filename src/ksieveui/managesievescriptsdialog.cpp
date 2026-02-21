@@ -128,9 +128,8 @@ void ManageSieveScriptsDialog::hideEvent(QHideEvent *event)
     }
 }
 
-void ManageSieveScriptsDialog::slotUpdateButtons(QTreeWidgetItem *item)
+void ManageSieveScriptsDialog::slotUpdateButtons([[maybe_unused]] QTreeWidgetItem *item)
 {
-    Q_UNUSED(item)
     bool newScriptAction;
     bool editScriptAction;
     bool deleteScriptAction;

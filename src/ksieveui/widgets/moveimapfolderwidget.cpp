@@ -38,9 +38,8 @@ QString MoveImapFolderWidget::text() const
     return mLineEdit->text();
 }
 
-void MoveImapFolderWidget::setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account)
+void MoveImapFolderWidget::setSieveImapAccountSettings([[maybe_unused]] const KSieveCore::SieveImapAccountSettings &account)
 {
-    Q_UNUSED(account)
 }
 
 #include "moc_moveimapfolderwidget.cpp"

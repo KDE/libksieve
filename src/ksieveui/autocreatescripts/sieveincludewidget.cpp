@@ -226,9 +226,8 @@ void SieveIncludeWidget::slotHelp()
     QWhatsThis::showText(QCursor::pos(), fullWhatsThis, mHelpButton);
 }
 
-void SieveIncludeWidget::generatedScript(QString &script, QStringList &requireModules, bool inForEveryPartLoop)
+void SieveIncludeWidget::generatedScript(QString &script, QStringList &requireModules, [[maybe_unused]] bool inForEveryPartLoop)
 {
-    Q_UNUSED(inForEveryPartLoop)
     QString result;
     QStringList lst;
     mIncludeLister->generatedScript(result, lst);

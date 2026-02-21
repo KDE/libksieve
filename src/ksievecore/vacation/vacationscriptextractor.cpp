@@ -84,9 +84,8 @@ void VacationDataExtractor::hashComment(const QString &comment)
     }
 }
 
-void VacationDataExtractor::blockStart(int lineNumber)
+void VacationDataExtractor::blockStart([[maybe_unused]] int lineNumber)
 {
-    Q_UNUSED(lineNumber)
     mBlockLevel++;
 }
 

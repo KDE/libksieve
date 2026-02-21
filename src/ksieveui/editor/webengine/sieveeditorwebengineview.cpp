@@ -110,9 +110,8 @@ void SieveEditorWebEngineView::contextMenuEvent(QContextMenuEvent *ev)
     menu.exec(ev->globalPos());
 }
 
-QWebEngineView *SieveEditorWebEngineView::createWindow(QWebEnginePage::WebWindowType type)
+QWebEngineView *SieveEditorWebEngineView::createWindow([[maybe_unused]] QWebEnginePage::WebWindowType type)
 {
-    Q_UNUSED(type)
     return this;
 }
 

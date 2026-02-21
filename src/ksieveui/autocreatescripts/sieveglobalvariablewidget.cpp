@@ -185,9 +185,8 @@ void SieveGlobalVariableWidget::slotHelp()
     QWhatsThis::showText(QCursor::pos(), fullWhatsThis, mHelpButton);
 }
 
-void SieveGlobalVariableWidget::generatedScript(QString &script, QStringList &requireModules, bool inForEveryPartLoop)
+void SieveGlobalVariableWidget::generatedScript(QString &script, QStringList &requireModules, [[maybe_unused]] bool inForEveryPartLoop)
 {
-    Q_UNUSED(inForEveryPartLoop)
     QString result;
     QStringList lst;
     mGlobalVariableLister->generatedScript(result, lst);

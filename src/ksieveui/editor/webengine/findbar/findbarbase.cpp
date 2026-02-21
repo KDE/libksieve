@@ -164,10 +164,8 @@ void FindBarBase::setFoundMatch(bool match)
 #endif
 }
 
-void FindBarBase::searchText(bool backward, bool isAutoSearch)
+void FindBarBase::searchText([[maybe_unused]] bool backward, [[maybe_unused]] bool isAutoSearch)
 {
-    Q_UNUSED(backward)
-    Q_UNUSED(isAutoSearch)
 }
 
 void FindBarBase::addToCompletion(const QString &text)
