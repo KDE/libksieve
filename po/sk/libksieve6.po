@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-02-22 00:47+0000\n"
 "PO-Revision-Date: 2019-11-11 15:16+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -382,7 +382,7 @@ msgstr ""
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
 #: ksieveui/debug/sievedebugdialog.cpp:201
-#: ksieveui/managesievescriptsdialog.cpp:170
+#: ksieveui/managesievescriptsdialog.cpp:169
 #, kde-format
 msgid ""
 "Retrieving the script failed.\n"
@@ -409,17 +409,17 @@ msgstr "Chyba spracovania skriptu"
 msgid "Impossible to start job"
 msgstr "Nie je možné spustiť úlohu"
 
-#: ksievecore/managescriptsjob/renamescriptjob.cpp:66
+#: ksievecore/managescriptsjob/renamescriptjob.cpp:64
 #, kde-format
 msgid "An error occurred during loading the sieve script."
 msgstr "Nastala chyba počas načítavania sieve skriptu."
 
-#: ksievecore/managescriptsjob/renamescriptjob.cpp:82
+#: ksievecore/managescriptsjob/renamescriptjob.cpp:79
 #, kde-format
 msgid "An error occurred during saving the sieve script."
 msgstr "Nastala chyba počas ukladania sieve skriptu."
 
-#: ksievecore/managescriptsjob/renamescriptjob.cpp:93
+#: ksievecore/managescriptsjob/renamescriptjob.cpp:89
 #, kde-format
 msgid "An error occurred during deleting the sieve script."
 msgstr "Nastala chyba počas mazania sieve skriptu."
@@ -470,7 +470,7 @@ msgstr ""
 msgid "ParseUserScriptJob failed: %1"
 msgstr "ParseUserScriptJob zlyhal: %1"
 
-#: ksievecore/vacation/vacationcheckjob.cpp:143
+#: ksievecore/vacation/vacationcheckjob.cpp:142
 #, kde-format
 msgid ""
 "Failed to get the list of Sieve scripts.\n"
@@ -481,7 +481,7 @@ msgstr ""
 "Server odpovedal:\n"
 "%1"
 
-#: ksievecore/vacation/vacationcreatescriptjob.cpp:146
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:145
 #, kde-format
 msgid ""
 "Sieve script installed successfully on the server '%1'.\n"
@@ -490,7 +490,7 @@ msgstr ""
 "Sieve skript bol úspešne nainštalovaný na serveri '%1'.\n"
 "Odpoveď Mimo kanceláriu je teraz aktívna."
 
-#: ksievecore/vacation/vacationcreatescriptjob.cpp:149
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:148
 #, kde-format
 msgid ""
 "Sieve script installed successfully on the server '%1'.\n"
@@ -499,7 +499,7 @@ msgstr ""
 "Sieve skript bol úspešne nainštalovaný na serveri '%1'.\n"
 "Odpoveď Mimo kanceláriu bola deaktivovaná."
 
-#: ksievecore/vacation/vacationcreatescriptjob.cpp:153
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:152
 #, kde-format
 msgid "Impossible to install script on server '%1'"
 msgstr "Nemožno nainštalovať skript na server '%1'"
@@ -653,19 +653,19 @@ msgstr "PNG"
 msgid "BMP"
 msgstr "BMP"
 
-#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:103
+#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:102
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:55
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing action \"%2\"."
 msgstr "Neznáma hodnota značky \"%1\" sa našla počas spracovania akcie \"%2\"."
 
-#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:108
+#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:107
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:43
 #, kde-format
 msgid "An unknown tag \"%1\" was found during parsing action \"%2\"."
 msgstr "Neznáma značka \"%1\" sa našla počas spracovania akcie \"%2\"."
 
-#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:114
+#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:113
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:50
 #, fuzzy, kde-format
 #| msgid ""
@@ -678,7 +678,7 @@ msgstr ""
 "Našlo sa priveľa parametrov pre \"%1\", max. hodnota je %2, počet hodnôt "
 "nájdených %3 pre %4"
 
-#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:119
+#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:118
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:60
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:53
 #, kde-format
@@ -1388,7 +1388,7 @@ msgid "Please select an action."
 msgstr "Vyberte prosím akciu."
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:141
-#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:112
+#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:111
 #, fuzzy, kde-format
 #| msgid "Add comment"
 msgctxt "@info:tooltip"
@@ -1396,7 +1396,7 @@ msgid "Add comment"
 msgstr "Pridať komentár"
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:276
-#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:224
+#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:223
 #, kde-format
 msgid "Script contains unsupported feature \"%1\""
 msgstr "Skript obsahuje nepodporovanú funkciu \"%1\"."
@@ -2142,12 +2142,12 @@ msgstr ""
 "správy, vrátane včlenených častí, najprv hlbšie, a použije príkazy v určenom "
 "bloku na každú z nich."
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:94
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:93
 #, kde-format
 msgid "Unknown tagValue \"%1\" during loading loop \"for\""
 msgstr "Neznáma hodnota značky \"%1\" počas načítavania cyklu \"for\""
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:106
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:105
 #, kde-format
 msgid "Unknown tag \"%1\" during loading loop \"for\""
 msgstr "Neznáma značka \"%1\" počas načítavania cyklu \"for\""
@@ -2240,7 +2240,7 @@ msgstr ""
 "reťazcový argument reprezentujúci názov skriptu na zahrnutie na spracovanie "
 "v danom bode."
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:344
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:343
 #, kde-format
 msgid "We can not add more includes elements."
 msgstr "Nemôžeme pridať viac prvkov na zahrnutie."
@@ -3067,34 +3067,34 @@ msgctxt "@action:button"
 msgid "Deactivate"
 msgstr "Deaktivovať"
 
-#: ksieveui/managesievescriptsdialog.cpp:173
-#: ksieveui/managesievescriptsdialog.cpp:262
-#: ksieveui/widgets/managesievewidget.cpp:514
+#: ksieveui/managesievescriptsdialog.cpp:172
+#: ksieveui/managesievescriptsdialog.cpp:261
+#: ksieveui/widgets/managesievewidget.cpp:513
 #, fuzzy, kde-format
 #| msgid "Sieve Error"
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Chyba Sieve"
 
-#: ksieveui/managesievescriptsdialog.cpp:206
+#: ksieveui/managesievescriptsdialog.cpp:205
 #, fuzzy, kde-format
 #| msgid "Uploading script to server for checking it, please wait..."
 msgid "Uploading script to server for checking it, please wait…"
 msgstr "Nahrávanie skriptu na server na kontrolu, prosím čakajte..."
 
-#: ksieveui/managesievescriptsdialog.cpp:252
+#: ksieveui/managesievescriptsdialog.cpp:251
 #, kde-format
 msgid "The Sieve script was successfully uploaded."
 msgstr "Sieve skript bol úspešne nahraný."
 
-#: ksieveui/managesievescriptsdialog.cpp:252
+#: ksieveui/managesievescriptsdialog.cpp:251
 #, fuzzy, kde-format
 #| msgid "Sieve Script Upload"
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "Nahranie Sieve skriptu"
 
-#: ksieveui/managesievescriptsdialog.cpp:259
+#: ksieveui/managesievescriptsdialog.cpp:258
 #, kde-format
 msgid ""
 "Uploading the Sieve script failed.\n"
@@ -3175,23 +3175,23 @@ msgctxt "@info:placeholder"
 msgid "Display check script result…"
 msgstr "Zobraziť výsledok kontroly skriptu..."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:146
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:145
 #, kde-format
 msgid "Script text is empty."
 msgstr "Text skriptu je prázdny."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:149
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "Súbor e-mailu musí byť nainštalovaný lokálne."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:155
 #, fuzzy, kde-format
 #| msgid "Impossible to open temporary file."
 msgid "Failed to open temporary file."
 msgstr "Nie je možné otvoriť dočasný súbor."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:226
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:225
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr "Skript stále obsahuje ladiacu metódu. Odstráňte ju, prosím."
@@ -3562,19 +3562,19 @@ msgstr "Premenovať skript"
 msgid "Script Name:"
 msgstr "Meno skriptu:"
 
-#: ksieveui/widgets/managesievewidget.cpp:492
+#: ksieveui/widgets/managesievewidget.cpp:491
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
 msgstr "Skutočne vymazať skript \"%1\" zo servera?"
 
-#: ksieveui/widgets/managesievewidget.cpp:493
+#: ksieveui/widgets/managesievewidget.cpp:492
 #, fuzzy, kde-format
 #| msgid "Delete Sieve Script Confirmation"
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "Vymazať potvrdenie Sieve skriptu"
 
-#: ksieveui/widgets/managesievewidget.cpp:511
+#: ksieveui/widgets/managesievewidget.cpp:510
 #, kde-format
 msgid ""
 "Deleting the script failed.\n"
@@ -3585,7 +3585,7 @@ msgstr ""
 "Server odpovedal:\n"
 "%1"
 
-#: ksieveui/widgets/managesievewidget.cpp:563
+#: ksieveui/widgets/managesievewidget.cpp:562
 #, kde-format
 msgid "Failed to fetch the list of scripts"
 msgstr "Nepodarilo sa získať zoznam skriptov"

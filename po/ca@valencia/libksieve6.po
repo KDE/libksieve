@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-02-22 00:47+0000\n"
 "PO-Revision-Date: 2025-09-24 19:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -417,7 +417,7 @@ msgstr ""
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
 #: ksieveui/debug/sievedebugdialog.cpp:201
-#: ksieveui/managesievescriptsdialog.cpp:170
+#: ksieveui/managesievescriptsdialog.cpp:169
 #, kde-format
 msgid ""
 "Retrieving the script failed.\n"
@@ -443,17 +443,17 @@ msgstr "S'ha produït un error d'anàlisi de l'script."
 msgid "Impossible to start job"
 msgstr "Impossible iniciar la tasca"
 
-#: ksievecore/managescriptsjob/renamescriptjob.cpp:66
+#: ksievecore/managescriptsjob/renamescriptjob.cpp:64
 #, kde-format
 msgid "An error occurred during loading the sieve script."
 msgstr "S'ha produït un error mentre es carregava l'script de «sieve»."
 
-#: ksievecore/managescriptsjob/renamescriptjob.cpp:82
+#: ksievecore/managescriptsjob/renamescriptjob.cpp:79
 #, kde-format
 msgid "An error occurred during saving the sieve script."
 msgstr "S'ha produït un error mentre es guardava l'script de «sieve»."
 
-#: ksievecore/managescriptsjob/renamescriptjob.cpp:93
+#: ksievecore/managescriptsjob/renamescriptjob.cpp:89
 #, kde-format
 msgid "An error occurred during deleting the sieve script."
 msgstr "S'ha produït un error mentre s'eliminava l'script de «sieve»."
@@ -506,7 +506,7 @@ msgstr ""
 msgid "ParseUserScriptJob failed: %1"
 msgstr "No s'ha pogut executar «ParseUserScriptJob»: %1"
 
-#: ksievecore/vacation/vacationcheckjob.cpp:143
+#: ksievecore/vacation/vacationcheckjob.cpp:142
 #, kde-format
 msgid ""
 "Failed to get the list of Sieve scripts.\n"
@@ -517,7 +517,7 @@ msgstr ""
 "El servidor ha contestat:\n"
 "%1"
 
-#: ksievecore/vacation/vacationcreatescriptjob.cpp:146
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:145
 #, kde-format
 msgid ""
 "Sieve script installed successfully on the server '%1'.\n"
@@ -526,7 +526,7 @@ msgstr ""
 "L'script de «Sieve» s'ha instal·lat correctament en el servidor «%1».\n"
 "La resposta «fora de l'oficina» ara està activa."
 
-#: ksievecore/vacation/vacationcreatescriptjob.cpp:149
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:148
 #, kde-format
 msgid ""
 "Sieve script installed successfully on the server '%1'.\n"
@@ -535,7 +535,7 @@ msgstr ""
 "L'script de «Sieve» s'ha instal·lat correctament en el servidor «%1».\n"
 "La resposta «fora de l'oficina» s'ha desactivat."
 
-#: ksievecore/vacation/vacationcreatescriptjob.cpp:153
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:152
 #, kde-format
 msgid "Impossible to install script on server '%1'"
 msgstr "Impossible instal·lar script en el servidor «%1»"
@@ -689,7 +689,7 @@ msgstr "PNG"
 msgid "BMP"
 msgstr "BMP"
 
-#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:103
+#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:102
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:55
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing action \"%2\"."
@@ -697,14 +697,14 @@ msgstr ""
 "S'ha trobat un valor d'etiqueta desconegut «%1» durant l'acció d'anàlisi "
 "«%2»."
 
-#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:108
+#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:107
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:43
 #, kde-format
 msgid "An unknown tag \"%1\" was found during parsing action \"%2\"."
 msgstr ""
 "S'ha trobat una etiqueta desconeguda «%1» durant l'anàlisi de l'acció «%2»."
 
-#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:114
+#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:113
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:50
 #, kde-format
 msgid ""
@@ -714,7 +714,7 @@ msgstr ""
 "S'han trobat massa arguments per a «%1», el valor màxim és %2, el nombre de "
 "valors trobats %3 de %4"
 
-#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:119
+#: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:118
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:60
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:53
 #, kde-format
@@ -1416,14 +1416,14 @@ msgid "Please select an action."
 msgstr "Trieu una acció."
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:141
-#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:112
+#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add comment"
 msgstr "Afig un comentari"
 
 #: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:276
-#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:224
+#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:223
 #, kde-format
 msgid "Script contains unsupported feature \"%1\""
 msgstr "L'script conté una característica no implementada «%1»"
@@ -2158,12 +2158,12 @@ msgstr ""
 "missatge, incloent-hi parts imbricades, profunditat primer, i aplicarà les "
 "ordres en el bloc especificat per a cadascun."
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:94
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:93
 #, kde-format
 msgid "Unknown tagValue \"%1\" during loading loop \"for\""
 msgstr "Valor d'etiqueta desconegut «%1» durant la càrrega del bucle «for»"
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:106
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:105
 #, kde-format
 msgid "Unknown tag \"%1\" during loading loop \"for\""
 msgstr "Etiqueta desconeguda «%1» durant la càrrega del bucle «for»"
@@ -2252,7 +2252,7 @@ msgstr ""
 "argument de cadena que representarà el nom de l'script per a incloure en el "
 "processament en este punt."
 
-#: ksieveui/autocreatescripts/sieveincludewidget.cpp:344
+#: ksieveui/autocreatescripts/sieveincludewidget.cpp:343
 #, kde-format
 msgid "We can not add more includes elements."
 msgstr "No s'han pogut afegir més elements d'inclusions."
@@ -3017,32 +3017,32 @@ msgctxt "@action:button"
 msgid "Deactivate"
 msgstr "Desactiva"
 
-#: ksieveui/managesievescriptsdialog.cpp:173
-#: ksieveui/managesievescriptsdialog.cpp:262
-#: ksieveui/widgets/managesievewidget.cpp:514
+#: ksieveui/managesievescriptsdialog.cpp:172
+#: ksieveui/managesievescriptsdialog.cpp:261
+#: ksieveui/widgets/managesievewidget.cpp:513
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "S'ha produït un error de «Sieve»"
 
-#: ksieveui/managesievescriptsdialog.cpp:206
+#: ksieveui/managesievescriptsdialog.cpp:205
 #, kde-format
 msgid "Uploading script to server for checking it, please wait…"
 msgstr ""
 "S'està pujant l'script al servidor per a comprovar-lo, espereu un moment…"
 
-#: ksieveui/managesievescriptsdialog.cpp:252
+#: ksieveui/managesievescriptsdialog.cpp:251
 #, kde-format
 msgid "The Sieve script was successfully uploaded."
 msgstr "L'script de «Sieve» ha pujat correctament."
 
-#: ksieveui/managesievescriptsdialog.cpp:252
+#: ksieveui/managesievescriptsdialog.cpp:251
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "Actualització de l'script de «Sieve»"
 
-#: ksieveui/managesievescriptsdialog.cpp:259
+#: ksieveui/managesievescriptsdialog.cpp:258
 #, kde-format
 msgid ""
 "Uploading the Sieve script failed.\n"
@@ -3114,22 +3114,22 @@ msgctxt "@info:placeholder"
 msgid "Display check script result…"
 msgstr "Mostra el resultat de la verificació de l'script…"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:146
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:145
 #, kde-format
 msgid "Script text is empty."
 msgstr "El text de l'script està buit."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:149
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "El fitxer de correu cal que s'instal·le en local."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:155
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "Ha fallat mentre s'obria el fitxer temporal."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:226
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:225
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr "L'script encara conté el mètode de depuració. Per favor, elimineu-lo."
@@ -3468,18 +3468,18 @@ msgstr "Canvia el nom de l'script"
 msgid "Script Name:"
 msgstr "Nom de l'script:"
 
-#: ksieveui/widgets/managesievewidget.cpp:492
+#: ksieveui/widgets/managesievewidget.cpp:491
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
 msgstr "De veres voleu eliminar l'script «%1» del servidor?"
 
-#: ksieveui/widgets/managesievewidget.cpp:493
+#: ksieveui/widgets/managesievewidget.cpp:492
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "Confirmeu la supressió de l'script de «Sieve»"
 
-#: ksieveui/widgets/managesievewidget.cpp:511
+#: ksieveui/widgets/managesievewidget.cpp:510
 #, kde-format
 msgid ""
 "Deleting the script failed.\n"
@@ -3490,7 +3490,7 @@ msgstr ""
 "El servidor ha contestat:\n"
 "%1"
 
-#: ksieveui/widgets/managesievewidget.cpp:563
+#: ksieveui/widgets/managesievewidget.cpp:562
 #, kde-format
 msgid "Failed to fetch the list of scripts"
 msgstr "Ha fallat mentre es recuperava la llista de scripts"
