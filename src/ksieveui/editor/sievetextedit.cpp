@@ -65,6 +65,7 @@ SieveTextEdit::SieveTextEdit(QWidget *parent)
 #if HAVE_TEXT_AUTOGENERATE_TEXT
     d->mTextAutoGenerateMenuWidget = new TextAutoGenerateText::TextAutoGenerateMenuWidget(this);
     d->mTextAutoGenerateManager = new TextAutoGenerateText::TextAutoGenerateManager(this);
+    d->mTextAutoGenerateMenuWidget->setManager(d->mTextAutoGenerateManager);
 #endif
 
     connect(this, &SieveTextEdit::blockCountChanged, this, &SieveTextEdit::slotUpdateLineNumberAreaWidth);
