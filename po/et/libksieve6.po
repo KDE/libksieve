@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-22 00:47+0000\n"
+"POT-Creation-Date: 2026-02-28 00:45+0000\n"
 "PO-Revision-Date: 2020-06-05 22:48+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -2848,27 +2848,27 @@ msgstr "Sieve serveri toetus"
 msgid "Sieve server supports:"
 msgstr "Sieve serveri toetus:"
 
-#: ksieveui/editor/sievetextedit.cpp:309
+#: ksieveui/editor/sievetextedit.cpp:310
 #, kde-format
 msgctxt "@action"
 msgid "Quick Ask"
 msgstr ""
 
-#: ksieveui/editor/sievetextedit.cpp:319
+#: ksieveui/editor/sievetextedit.cpp:320
 #, fuzzy, kde-format
 #| msgid "Insert Rule"
 msgctxt "@action"
 msgid "Insert Rule"
 msgstr "Lisa reegel"
 
-#: ksieveui/editor/sievetextedit.cpp:333
+#: ksieveui/editor/sievetextedit.cpp:334
 #, fuzzy, kde-format
 #| msgid "Help about: '%1'"
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "Abi \"%1\" kohta"
 
-#: ksieveui/editor/sievetextedit.cpp:342
+#: ksieveui/editor/sievetextedit.cpp:343
 #, fuzzy, kde-format
 #| msgid "Edit Rule"
 msgctxt "@action"
