@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2011-2026 Laurent Montel <montel@kde.org>
 # SPDX-License-Identifier: BSD-3-Clause
 cmake_minimum_required(VERSION 3.27)
-set(PIM_VERSION "6.6.40")
+set(PIM_VERSION "6.6.80")
 
 project(libksieve VERSION ${PIM_VERSION})
 
