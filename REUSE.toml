@@ -6,7 +6,26 @@ SPDX-PackageSupplier = "Montel Laurent <montel@kde.org>"
 SPDX-PackageDownloadLocation = "https://invent.kde.org/pim/libksieve"
 
 [[annotations]]
-path = ["src/ksievecore/vacation/autotests/data/**", "src/ksievecore/scriptsparsing/autotests/data/**", "src/ksieveui/autocreatescripts/tests/scripts/**", "src/ksieveui/autocreatescripts/autotests/data/**", "src/ksieveui/scriptsparsing/tests/failed/**", "TODO", "src/ksieveui/TODO", "src/ksieveui/data/ksieve_script.knsrc", "src/ksieveui/data/scripts/copy/template.desktop", "src/ksieveui/data/scripts/copy/template.txt", "kioslave/src/sieve/RFCs", "kioslave/src/sieve/sieve.json", "kioslave/doc/sieve/index.docbook", "REUSE.toml", ".gersemirc", "src/ksievecore/ksieve-index.qdoc", "src/ksievecore/ksievecore.qdoc", "src/ksievecore/ksievecore.qdocconf", "src/ksieveui/ksieveui.qdoc", "src/ksieveui/ksieveui.qdocconf"]
+path = ["src/ksievecore/vacation/autotests/data/**", "src/ksievecore/scriptsparsing/autotests/data/**", "src/ksieveui/autocreatescripts/tests/scripts/**", "src/ksieveui/autocreatescripts/autotests/data/**", "src/ksieveui/scriptsparsing/tests/failed/**", "TODO", "src/ksieveui/TODO", "src/ksieveui/data/ksieve_script.knsrc", "src/ksieveui/data/scripts/copy/template.desktop", "src/ksieveui/data/scripts/copy/template.txt", "kioslave/src/sieve/RFCs", "kioslave/src/sieve/sieve.json", "kioslave/doc/sieve/index.docbook", "REUSE.toml", ".gersemirc", "src/ksievecore/ksieve-index.qdoc", "src/ksievecore/ksievecore.qdoc", "src/ksievecore/ksievecore.qdocconf", "src/ksieveui/ksieveui.qdoc", "src/ksieveui/ksieveui.qdocconf", "metainfo.yaml", "readme-build-ftime.txt"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "none"
 SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = ["README-pre-commit.md"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2023-2026 Laurent Montel <montel@kde.org>"
+SPDX-License-Identifier = "BSD-3-Clause"
+
+[[annotations]]
+path = ["CMakePresets.json"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2021-2026 Laurent Montel <montel@kde.org>"
+SPDX-License-Identifier = "BSD-3-Clause"
+
+[[annotations]]
+path = ["README-qdoc.md"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2023-2026 Laurent Montel <montel@kde.org>"
+SPDX-License-Identifier = "BSD-3-Clause"
+
