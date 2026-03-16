@@ -40,6 +40,7 @@ if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     )
 endif()
 
+set(extra_LIBS)
 if(WIN32)
     set(extra_LIBS ws2_32)
 endif()
