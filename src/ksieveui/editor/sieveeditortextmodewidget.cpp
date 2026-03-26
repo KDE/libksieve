@@ -185,7 +185,7 @@ SieveEditorTabWidget *SieveEditorTextModeWidget::tabWidget() const
 
 void SieveEditorTextModeWidget::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), u"SieveEditor"_s);
+    const KConfigGroup group(KSharedConfig::openStateConfig(), u"SieveEditor"_s);
     const QList<int> size = {400, 100};
 
     mMainSplitter->setSizes(group.readEntry("mainSplitter", size));
