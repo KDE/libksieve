@@ -55,7 +55,7 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     }
     auto w = new QWidget;
 
-    auto vbox = new QVBoxLayout;
+    auto vbox = new QVBoxLayout(w);
     vbox->setContentsMargins({});
 
     auto hbox = new QHBoxLayout;
@@ -90,7 +90,6 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
     shortcut->setKey(Qt::Key_R | Qt::CTRL);
     connect(shortcut, &QShortcut::activated, mTextEditWidget, &SieveTextEditWidget::slotReplace);
 
-    w->setLayout(vbox);
     mainLayout->addWidget(w);
     if (!defaultTemplate) {
         if (mOkButton) {
