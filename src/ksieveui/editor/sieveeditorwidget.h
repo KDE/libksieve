@@ -38,15 +38,6 @@ public:
      * \param parent The parent widget.
      */
     explicit SieveEditorWidget(bool useMenuBar, QWidget *parent = nullptr);
-#if HAVE_TEXT_AUTOGENERATE_TEXT
-    /*!
-     * Constructs a SieveEditorWidget with the given parent widget.
-     * \param parent The parent widget.
-     * \param useMenuBar true to display a menu bar.
-     * \param manager The text autogenerate manager.
-     */
-    explicit SieveEditorWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, bool useMenuBar, QWidget *parent = nullptr);
-#endif
 
     /*!
      * Destroys the SieveEditorWidget.
@@ -240,6 +231,15 @@ public:
      * \return true if in text mode.
      */
     [[nodiscard]] bool isTextEditor() const;
+
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+    /*!
+     * \brief setTextAutoGenerateManager
+     * \param manager
+     */
+    void setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager);
+#endif
+
 public Q_SLOTS:
     /*!
      * Opens the find dialog.

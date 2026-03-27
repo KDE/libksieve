@@ -173,6 +173,13 @@ void SieveEditorTextModeWidget::writeConfig()
     group.writeEntry("templateSplitter", mTemplateSplitter->sizes());
 }
 
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+void SieveEditorTextModeWidget::setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager)
+{
+    mTextEdit->setTextAutoGenerateManager(manager);
+}
+#endif
+
 QStringList SieveEditorTextModeWidget::sieveCapabilities() const
 {
     return mSieveCapabilities;

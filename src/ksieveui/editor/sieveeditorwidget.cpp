@@ -125,7 +125,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     lay->setContentsMargins({});
     mStackedWidget = new QStackedWidget;
 
-    mTextModeWidget = new SieveEditorTextModeWidget;
+    mTextModeWidget = new SieveEditorTextModeWidget(this);
     connect(purposeMenu, &SievePurposeMenuWidget::shareError, mTextModeWidget, &SieveEditorTextModeWidget::slotShareError);
     connect(purposeMenu, &SievePurposeMenuWidget::shareSuccess, mTextModeWidget, &SieveEditorTextModeWidget::slotShareSuccess);
     connect(mTextModeWidget, &SieveEditorTextModeWidget::valueChanged, this, &SieveEditorWidget::slotModified);
@@ -674,6 +674,13 @@ bool SieveEditorWidget::isTextEditor() const
     }
     return false;
 }
+
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+void SieveEditorWidget::setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager)
+{
+    mTextModeWidget->setTextAutoGenerateManager(manager);
+}
+#endif
 
 bool SieveEditorWidget::printSupportEnabled() const
 {

@@ -30,6 +30,12 @@ namespace TextEditTextToSpeech
 class TextToSpeechContainerWidget;
 }
 #endif
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+namespace TextAutoGenerateText
+{
+class TextAutoGenerateManager;
+}
+#endif
 namespace KSieveUi
 {
 class SieveTextEdit;
@@ -277,6 +283,13 @@ public:
      */
     [[nodiscard]] QStringList sieveCapabilities() const;
 
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+    /*!
+     * \brief setTextAutoGenerateManager
+     * \param manager
+     */
+    void setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager);
+#endif
 Q_SIGNALS:
     /*!
      */
