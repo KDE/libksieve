@@ -109,7 +109,7 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(KSieveCore::SieveImapPassword
     connect(close, &QPushButton::clicked, this, &ManageSieveScriptsDialog::accept);
     buttonLayout->addWidget(close);
 
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myManageSieveScriptsDialog));
+    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myManageSieveScriptsDialog));
     const QSize size = group.readEntry("Size", QSize());
     if (size.isValid()) {
         resize(size);
