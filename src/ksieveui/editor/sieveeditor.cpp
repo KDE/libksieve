@@ -47,7 +47,7 @@ SieveEditor::SieveEditor(QWidget *parent)
     d->mOkButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &SieveEditor::slotAccepted);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &SieveEditor::slotCanceled);
-    d->mSieveEditorWidget = new SieveEditorWidget(true);
+    d->mSieveEditorWidget = new SieveEditorWidget(true, this);
     connect(d->mSieveEditorWidget, &SieveEditorWidget::valueChanged, this, &SieveEditor::valueChanged);
     mainLayout->addWidget(d->mSieveEditorWidget);
     mainLayout->addWidget(buttonBox);
