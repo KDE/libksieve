@@ -63,9 +63,11 @@ SieveTextEdit::SieveTextEdit(QWidget *parent)
 #if HAVE_TEXT_AUTOGENERATE_TEXT
 void SieveTextEdit::setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager)
 {
-    d->mTextAutoGenerateMenuWidget = new TextAutoGenerateText::TextAutoGenerateMenuWidget(this);
-    d->mTextAutoGenerateManager = manager;
-    d->mTextAutoGenerateMenuWidget->setManager(d->mTextAutoGenerateManager);
+    if (manager) {
+        d->mTextAutoGenerateMenuWidget = new TextAutoGenerateText::TextAutoGenerateMenuWidget(this);
+        d->mTextAutoGenerateManager = manager;
+        d->mTextAutoGenerateMenuWidget->setManager(d->mTextAutoGenerateManager);
+    }
 }
 #endif
 
