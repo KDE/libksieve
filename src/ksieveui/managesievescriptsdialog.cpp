@@ -5,6 +5,7 @@
 */
 
 #include "managesievescriptsdialog.h"
+#include "config-libksieveui.h"
 #include "editor/sieveeditor.h"
 #include "managescriptsjob/checkscriptjob.h"
 #include "widgets/custommanagesievewidget.h"
@@ -26,7 +27,9 @@
 #include <KSharedConfig>
 #include <KStandardGuiItem>
 #include <cerrno>
-
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+#include <TextAutoGenerateText/TextAutoGenerateManager>
+#endif
 using namespace KSieveUi;
 
 class KSieveUi::ManageSieveScriptsDialogPrivate
@@ -49,6 +52,9 @@ public:
 
     bool mIsNewScript = false;
     bool mWasActive = false;
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+    TextAutoGenerateText::TextAutoGenerateManager *mManager = nullptr;
+#endif
 };
 
 namespace
@@ -111,6 +117,13 @@ ManageSieveScriptsDialog::ManageSieveScriptsDialog(KSieveCore::SieveImapPassword
         resize(sizeHint().width(), sizeHint().height());
     }
 }
+
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+void ManageSieveScriptsDialog::setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager)
+{
+    d->mManager = manager;
+}
+#endif
 
 ManageSieveScriptsDialog::~ManageSieveScriptsDialog()
 {
@@ -179,6 +192,9 @@ void ManageSieveScriptsDialog::slotGetResult(KManageSieve::SieveJob *job, bool s
 
     disableManagerScriptsDialog(true);
     d->mSieveEditor = new SieveEditor;
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+    d->mSieveEditor->setTextAutoGenerateManager(d->mManager);
+#endif
     d->mSieveEditor->show();
     d->mSieveEditor->setScriptName(d->mCurrentURL.fileName());
     d->mSieveEditor->setSieveCapabilities(d->mCurrentCapabilities);

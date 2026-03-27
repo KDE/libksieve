@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include "config-libksieveui.h"
 #include "ksieveui/managesievewidget.h"
 #include "ksieveui_export.h"
 #include <QDialog>
@@ -21,6 +22,12 @@ namespace KSieveCore
 {
 class SieveImapPasswordProvider;
 }
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+namespace TextAutoGenerateText
+{
+class TextAutoGenerateManager;
+}
+#endif
 namespace KSieveUi
 {
 class SieveEditor;
@@ -45,7 +52,9 @@ public:
      * Destroys the ManageSieveScriptsDialog.
      */
     ~ManageSieveScriptsDialog() override;
-
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+    void setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager);
+#endif
 Q_SIGNALS:
     /*!
      * Emitted when the dialog finishes.

@@ -5,12 +5,17 @@
 
 #pragma once
 
+#include "config-libksieveui.h"
 #include "ksieveui_export.h"
 #include <QDialog>
 #include <memory>
 namespace KSieveCore
 {
 class SieveImapAccountSettings;
+}
+namespace TextAutoGenerateText
+{
+class TextAutoGenerateManager;
 }
 namespace KSieveUi
 {
@@ -73,6 +78,13 @@ public:
      */
     void setModified(bool b);
 
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+    /*!
+     * \brief setTextAutoGenerateManager
+     * \param manager
+     */
+    void setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager);
+#endif
 Q_SIGNALS:
     /*!
      */

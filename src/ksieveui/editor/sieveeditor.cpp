@@ -95,7 +95,12 @@ void SieveEditor::setModified(bool b)
 {
     d->mSieveEditorWidget->setModified(b);
 }
-
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+void SieveEditor::setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager)
+{
+    d->mSieveEditorWidget->setTextAutoGenerateManager(manager);
+}
+#endif
 void SieveEditor::slotEnableButtonOk(bool b)
 {
     d->mOkButton->setEnabled(b);
