@@ -17,6 +17,8 @@ endif()
 
 configure_file(settings/sieve-editor.kcfg.in ${CMAKE_CURRENT_BINARY_DIR}/sieve-editor.kcfg)
 
+configure_file(config-libksieveui.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-libksieveui.h)
+
 if(BUILD_TESTING)
     add_subdirectory(editor/tests)
     add_subdirectory(editor/autotests)

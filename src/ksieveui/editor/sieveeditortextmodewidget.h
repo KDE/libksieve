@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "config-libksieve.h"
+#include "config-libksieveui.h"
 #include "ksieveui_export.h"
 #include "sieveeditorabstractwidget.h"
 class QSplitter;

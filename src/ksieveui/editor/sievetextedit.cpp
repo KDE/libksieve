@@ -4,13 +4,12 @@
  */
 
 #include "sievetextedit.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "editor/sieveeditorutil.h"
 #include "editor/sievelinenumberarea.h"
 #include "editor/sievetexteditorspellcheckdecorator.h"
 
-#include "config-libksieve.h"
+#include "config-libksieveui.h"
 #if HAVE_TEXT_AUTOGENERATE_TEXT
 #include <QPointer>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
@@ -38,6 +37,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTextDocumentFragment>
 using namespace KSieveUi;
 
+using namespace Qt::Literals::StringLiterals;
 class KSieveUi::SieveTextEditPrivate
 {
 public:

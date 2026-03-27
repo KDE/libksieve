@@ -1,0 +1,8 @@
+/*
+    SPDX-FileCopyrightText: none
+
+    SPDX-License-Identifier: GPL-2.0-only
+*/
+#cmakedefine01 HAVE_TEXT_AUTOGENERATE_TEXT
+#cmakedefine01 HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#cmakedefine01 HAVE_TEXTAUTOGENERATE_INTERNAL_TOOLS

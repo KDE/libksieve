@@ -5,7 +5,7 @@
 */
 
 #include "sievescriptdebuggerfrontendwidget.h"
-#include "config-libksieve.h"
+#include "config-libksieveui.h"
 
 #include "sievescriptdebuggerresulteditor.h"
 #include "sievescriptdebuggertextedit.h"

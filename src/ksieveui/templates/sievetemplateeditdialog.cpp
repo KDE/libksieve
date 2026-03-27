@@ -5,7 +5,7 @@
 */
 
 #include "sievetemplateeditdialog.h"
-#include "config-libksieve.h"
+#include "config-libksieveui.h"
 
 #include "editor/sievetextedit.h"
 

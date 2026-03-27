@@ -5,7 +5,7 @@
 */
 
 #include "sievescriptdebuggerfrontendwidgettest.h"
-#include "config-libksieve.h"
+#include "config-libksieveui.h"
 
 #include "../sievescriptdebuggerfrontendwidget.h"
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
