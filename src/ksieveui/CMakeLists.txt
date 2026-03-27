@@ -485,6 +485,7 @@ set(KSIEVEUI_INCLUDE_FILES
 
 install(
     FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/config-libksieveui.h
         ${CMAKE_CURRENT_BINARY_DIR}/ksieveui_export.h
         ${KSIEVEUI_INCLUDE_FILES}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieveUi/ksieveui
