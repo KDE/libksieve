@@ -31,15 +31,6 @@ public:
      * \param parent The parent widget.
      */
     explicit SieveTextEdit(QWidget *parent = nullptr);
-#if HAVE_TEXT_AUTOGENERATE_TEXT
-    /*!
-     * Constructs a SieveTextEdit with the given parent widget.
-     * \param parent The parent widget.
-     * \param manager The text autogenerate manager.
-     */
-    explicit SieveTextEdit(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
-#endif
-
     /*!
      * Destroys the SieveTextEdit.
      */
@@ -102,6 +93,13 @@ public:
      */
     [[nodiscard]] bool isWordWrap() const;
 
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+    /*!
+     * \brief setTextAutoGenerateManager
+     * \param manager
+     */
+    void setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager);
+#endif
 protected:
     /*!
      * Initializes the auto-completer.

@@ -53,31 +53,21 @@ public:
     bool mShowHelpMenu = true;
 };
 
-#if HAVE_TEXT_AUTOGENERATE_TEXT
-SieveTextEdit::SieveTextEdit(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
-    : TextCustomEditor::PlainTextEditor(parent)
-    , d(new KSieveUi::SieveTextEditPrivate)
-{
-    initialize();
-#if HAVE_TEXT_AUTOGENERATE_TEXT
-    d->mTextAutoGenerateMenuWidget = new TextAutoGenerateText::TextAutoGenerateMenuWidget(this);
-    d->mTextAutoGenerateManager = manager;
-    d->mTextAutoGenerateMenuWidget->setManager(d->mTextAutoGenerateManager);
-#endif
-}
-#endif
-
 SieveTextEdit::SieveTextEdit(QWidget *parent)
     : TextCustomEditor::PlainTextEditor(parent)
     , d(new KSieveUi::SieveTextEditPrivate)
 {
     initialize();
-#if HAVE_TEXT_AUTOGENERATE_TEXT
-    d->mTextAutoGenerateMenuWidget = new TextAutoGenerateText::TextAutoGenerateMenuWidget(this);
-    d->mTextAutoGenerateManager = new TextAutoGenerateText::TextAutoGenerateManager(this);
-    d->mTextAutoGenerateMenuWidget->setManager(d->mTextAutoGenerateManager);
-#endif
 }
+
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+void SieveTextEdit::setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager)
+{
+    d->mTextAutoGenerateMenuWidget = new TextAutoGenerateText::TextAutoGenerateMenuWidget(this);
+    d->mTextAutoGenerateManager = manager;
+    d->mTextAutoGenerateMenuWidget->setManager(d->mTextAutoGenerateManager);
+}
+#endif
 
 void SieveTextEdit::initialize()
 {
@@ -319,6 +309,11 @@ void SieveTextEdit::addExtraMenuEntry(QMenu *menu, QPoint pos)
 #if HAVE_TEXT_AUTOGENERATE_TEXT
     if (hasSelection) {
         QTextCursor textcursor = textCursor();
+        if (!d->mTextAutoGenerateManager) {
+            d->mTextAutoGenerateMenuWidget = new TextAutoGenerateText::TextAutoGenerateMenuWidget(this);
+            d->mTextAutoGenerateManager = new TextAutoGenerateText::TextAutoGenerateManager(this);
+            d->mTextAutoGenerateMenuWidget->setManager(d->mTextAutoGenerateManager);
+        }
         d->mTextAutoGenerateMenuWidget->setSelectedText(textcursor.selection().toPlainText());
         menu->addSeparator();
         menu->addMenu(d->mTextAutoGenerateMenuWidget->menu());

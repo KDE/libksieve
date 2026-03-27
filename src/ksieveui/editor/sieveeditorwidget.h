@@ -6,8 +6,8 @@
 */
 
 #pragma once
+#include "config-libksieveui.h"
 #include "ksieveui_export.h"
-
 #include <QWidget>
 class QStackedWidget;
 class QLineEdit;
@@ -15,6 +15,10 @@ class QAction;
 namespace KSieveCore
 {
 class SieveImapAccountSettings;
+}
+namespace TextAutoGenerateText
+{
+class TextAutoGenerateManager;
 }
 namespace KSieveUi
 {
@@ -34,6 +38,16 @@ public:
      * \param parent The parent widget.
      */
     explicit SieveEditorWidget(bool useMenuBar, QWidget *parent = nullptr);
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+    /*!
+     * Constructs a SieveEditorWidget with the given parent widget.
+     * \param parent The parent widget.
+     * \param useMenuBar true to display a menu bar.
+     * \param manager The text autogenerate manager.
+     */
+    explicit SieveEditorWidget(TextAutoGenerateText::TextAutoGenerateManager *manager, bool useMenuBar, QWidget *parent = nullptr);
+#endif
+
     /*!
      * Destroys the SieveEditorWidget.
      */
