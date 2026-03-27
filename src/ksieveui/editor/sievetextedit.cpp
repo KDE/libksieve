@@ -9,7 +9,6 @@
 #include "editor/sievelinenumberarea.h"
 #include "editor/sievetexteditorspellcheckdecorator.h"
 
-#include "config-libksieveui.h"
 #if HAVE_TEXT_AUTOGENERATE_TEXT
 #include <QPointer>
 #include <TextAutoGenerateText/TextAutoGenerateManager>
@@ -54,20 +53,38 @@ public:
     bool mShowHelpMenu = true;
 };
 
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+SieveTextEdit::SieveTextEdit(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent)
+    : TextCustomEditor::PlainTextEditor(parent)
+    , d(new KSieveUi::SieveTextEditPrivate)
+{
+    initialize();
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+    d->mTextAutoGenerateMenuWidget = new TextAutoGenerateText::TextAutoGenerateMenuWidget(this);
+    d->mTextAutoGenerateManager = manager;
+    d->mTextAutoGenerateMenuWidget->setManager(d->mTextAutoGenerateManager);
+#endif
+}
+#endif
+
 SieveTextEdit::SieveTextEdit(QWidget *parent)
     : TextCustomEditor::PlainTextEditor(parent)
     , d(new KSieveUi::SieveTextEditPrivate)
 {
-    setSpellCheckingConfigFileName(u"sieveeditorrc"_s);
-    setWordWrapMode(QTextOption::NoWrap);
-    setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
-    d->m_sieveLineNumberArea = new SieveLineNumberArea(this);
+    initialize();
 #if HAVE_TEXT_AUTOGENERATE_TEXT
     d->mTextAutoGenerateMenuWidget = new TextAutoGenerateText::TextAutoGenerateMenuWidget(this);
     d->mTextAutoGenerateManager = new TextAutoGenerateText::TextAutoGenerateManager(this);
     d->mTextAutoGenerateMenuWidget->setManager(d->mTextAutoGenerateManager);
 #endif
+}
 
+void SieveTextEdit::initialize()
+{
+    setSpellCheckingConfigFileName(u"sieveeditorrc"_s);
+    setWordWrapMode(QTextOption::NoWrap);
+    setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
+    d->m_sieveLineNumberArea = new SieveLineNumberArea(this);
     connect(this, &SieveTextEdit::blockCountChanged, this, &SieveTextEdit::slotUpdateLineNumberAreaWidth);
     connect(this, &SieveTextEdit::updateRequest, this, &SieveTextEdit::slotUpdateLineNumberArea);
 

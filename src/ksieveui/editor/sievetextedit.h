@@ -4,12 +4,16 @@
  */
 
 #pragma once
-
+#include "config-libksieveui.h"
 #include "ksieveui_export.h"
 #include <TextCustomEditor/PlainTextEditor>
 #include <memory>
 
 class QMenu;
+namespace TextAutoGenerateText
+{
+class TextAutoGenerateManager;
+}
 namespace KSieveUi
 {
 class SieveTextEditPrivate;
@@ -27,6 +31,15 @@ public:
      * \param parent The parent widget.
      */
     explicit SieveTextEdit(QWidget *parent = nullptr);
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+    /*!
+     * Constructs a SieveTextEdit with the given parent widget.
+     * \param parent The parent widget.
+     * \param manager The text autogenerate manager.
+     */
+    explicit SieveTextEdit(TextAutoGenerateText::TextAutoGenerateManager *manager, QWidget *parent = nullptr);
+#endif
+
     /*!
      * Destroys the SieveTextEdit.
      */
@@ -160,6 +173,7 @@ private:
     KSIEVEUI_NO_EXPORT void setCompleterList(const QStringList &list);
     [[nodiscard]] KSIEVEUI_NO_EXPORT QString selectedWord(QPoint pos = QPoint()) const;
     KSIEVEUI_NO_EXPORT void slotQuickAsk();
+    KSIEVEUI_NO_EXPORT void initialize();
 
     std::unique_ptr<SieveTextEditPrivate> const d;
 };
