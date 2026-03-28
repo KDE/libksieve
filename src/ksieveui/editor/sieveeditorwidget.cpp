@@ -200,6 +200,13 @@ void SieveEditorWidget::cut()
     }
 }
 
+void SieveEditorWidget::insertText(const QString &str)
+{
+    if (mMode == TextMode) {
+        mTextModeWidget->insertText(str);
+    }
+}
+
 void SieveEditorWidget::paste()
 {
     if (mMode == TextMode) {

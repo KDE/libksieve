@@ -178,7 +178,13 @@ void SieveEditorTextModeWidget::setTextAutoGenerateManager(TextAutoGenerateText:
 {
     mTextEdit->setTextAutoGenerateManager(manager);
 }
+
 #endif
+
+void SieveEditorTextModeWidget::insertText(const QString &str)
+{
+    mTextEdit->insertPlainText(str);
+}
 
 QStringList SieveEditorTextModeWidget::sieveCapabilities() const
 {

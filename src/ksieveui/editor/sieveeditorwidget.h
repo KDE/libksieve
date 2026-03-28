@@ -240,6 +240,11 @@ public:
     void setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager);
 #endif
 
+    /*!
+     * \brief insertText
+     * \param str text to insert in current position
+     */
+    void insertText(const QString &str);
 public Q_SLOTS:
     /*!
      * Opens the find dialog.

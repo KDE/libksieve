@@ -290,6 +290,13 @@ public:
      */
     void setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager);
 #endif
+
+    /*!
+     * \brief insertText
+     * \param str
+     */
+    void insertText(const QString &str);
+
 Q_SIGNALS:
     /*!
      */
