@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:45+0000\n"
+"POT-Creation-Date: 2026-03-28 00:45+0000\n"
 "PO-Revision-Date: 2025-10-09 01:07+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -371,7 +371,7 @@ msgstr ""
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
 #: ksieveui/debug/sievedebugdialog.cpp:201
-#: ksieveui/managesievescriptsdialog.cpp:169
+#: ksieveui/managesievescriptsdialog.cpp:182
 #, kde-format
 msgid ""
 "Retrieving the script failed.\n"
@@ -2503,18 +2503,18 @@ msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr "Sieve 스크립트 편집"
 
-#: ksieveui/editor/sieveeditor.cpp:184
+#: ksieveui/editor/sieveeditor.cpp:189
 #, kde-format
 msgid "Script is modified. Do you want to close editor?"
 msgstr "스크립트가 수정되었습니다. 편집기를 닫으시겠습니까?"
 
-#: ksieveui/editor/sieveeditor.cpp:186
+#: ksieveui/editor/sieveeditor.cpp:191
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Editor"
 msgstr "편집기 닫기"
 
-#: ksieveui/editor/sieveeditor.cpp:187
+#: ksieveui/editor/sieveeditor.cpp:192
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Close"
@@ -2665,17 +2665,17 @@ msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "\"문법 검사\" 결과 표시"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:236
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:243
 #, kde-format
 msgid "Error during parsing"
 msgstr "해석 오류 발생"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "선택한 텍스트가 완전한 Sieve 스크립트가 아님"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
@@ -2736,25 +2736,25 @@ msgstr "Sieve 서버 지원"
 msgid "Sieve server supports:"
 msgstr "Sieve 서버 지원:"
 
-#: ksieveui/editor/sievetextedit.cpp:310
+#: ksieveui/editor/sievetextedit.cpp:324
 #, kde-format
 msgctxt "@action"
 msgid "Quick Ask"
 msgstr "빠르게 묻기"
 
-#: ksieveui/editor/sievetextedit.cpp:320
+#: ksieveui/editor/sievetextedit.cpp:334
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule"
 msgstr "규칙 삽입"
 
-#: ksieveui/editor/sievetextedit.cpp:334
+#: ksieveui/editor/sievetextedit.cpp:348
 #, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "도움말 항목: '%1'"
 
-#: ksieveui/editor/sievetextedit.cpp:343
+#: ksieveui/editor/sievetextedit.cpp:357
 #, kde-format
 msgctxt "@action"
 msgid "Edit Rule"
@@ -2871,62 +2871,62 @@ msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr "웹 페이지 저장"
 
-#: ksieveui/managesievescriptsdialog.cpp:63
+#: ksieveui/managesievescriptsdialog.cpp:69
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Sieve Scripts"
 msgstr "Sieve 스크립트 관리"
 
-#: ksieveui/managesievescriptsdialog.cpp:85
+#: ksieveui/managesievescriptsdialog.cpp:91
 #, kde-format
 msgctxt "create a new sieve script"
 msgid "New…"
 msgstr "새로 만들기…"
 
-#: ksieveui/managesievescriptsdialog.cpp:89
+#: ksieveui/managesievescriptsdialog.cpp:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit…"
 msgstr "편집…"
 
-#: ksieveui/managesievescriptsdialog.cpp:93
+#: ksieveui/managesievescriptsdialog.cpp:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "삭제"
 
-#: ksieveui/managesievescriptsdialog.cpp:97
+#: ksieveui/managesievescriptsdialog.cpp:103
 #, kde-format
 msgctxt "@action:button"
 msgid "Deactivate"
 msgstr "비활성화"
 
-#: ksieveui/managesievescriptsdialog.cpp:172
-#: ksieveui/managesievescriptsdialog.cpp:261
+#: ksieveui/managesievescriptsdialog.cpp:185
+#: ksieveui/managesievescriptsdialog.cpp:277
 #: ksieveui/widgets/managesievewidget.cpp:513
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Sieve 오류"
 
-#: ksieveui/managesievescriptsdialog.cpp:205
+#: ksieveui/managesievescriptsdialog.cpp:221
 #, kde-format
 msgid "Uploading script to server for checking it, please wait…"
 msgstr ""
 "스크립트를 확인할 수 있도록 서버에 업로드하고 있습니다. 기다려 주십시오…"
 
-#: ksieveui/managesievescriptsdialog.cpp:251
+#: ksieveui/managesievescriptsdialog.cpp:267
 #, kde-format
 msgid "The Sieve script was successfully uploaded."
 msgstr "Sieve 스크립트를 업로드했습니다."
 
-#: ksieveui/managesievescriptsdialog.cpp:251
+#: ksieveui/managesievescriptsdialog.cpp:267
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "Sieve 스크립트 업로드"
 
-#: ksieveui/managesievescriptsdialog.cpp:258
+#: ksieveui/managesievescriptsdialog.cpp:274
 #, kde-format
 msgid ""
 "Uploading the Sieve script failed.\n"

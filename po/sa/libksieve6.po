@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:45+0000\n"
+"POT-Creation-Date: 2026-03-28 00:45+0000\n"
 "PO-Revision-Date: 2024-12-25 19:37+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -376,7 +376,7 @@ msgstr ""
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
 #: ksieveui/debug/sievedebugdialog.cpp:201
-#: ksieveui/managesievescriptsdialog.cpp:169
+#: ksieveui/managesievescriptsdialog.cpp:182
 #, kde-format
 msgid ""
 "Retrieving the script failed.\n"
@@ -2510,18 +2510,18 @@ msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr "चलनी स्क्रिप्ट सम्पादयतु"
 
-#: ksieveui/editor/sieveeditor.cpp:184
+#: ksieveui/editor/sieveeditor.cpp:189
 #, kde-format
 msgid "Script is modified. Do you want to close editor?"
 msgstr "स्क्रिप्ट् परिवर्तिता अस्ति। सम्पादकं बन्दं कर्तुम् इच्छति वा ?"
 
-#: ksieveui/editor/sieveeditor.cpp:186
+#: ksieveui/editor/sieveeditor.cpp:191
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Editor"
 msgstr "सम्पादकं बन्दं कुर्वन्तु"
 
-#: ksieveui/editor/sieveeditor.cpp:187
+#: ksieveui/editor/sieveeditor.cpp:192
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Close"
@@ -2672,17 +2672,17 @@ msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "\"check syntax\" इत्यस्मात् परिणामं दर्शयतु।"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:236
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:243
 #, kde-format
 msgid "Error during parsing"
 msgstr "पार्सिंग्-काले त्रुटिः"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "चयनितः पाठः पूर्णचलनलिपिः नास्ति"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
@@ -2743,25 +2743,25 @@ msgstr "चलनी सर्वर समर्थन"
 msgid "Sieve server supports:"
 msgstr "चलनी सर्वर समर्थयति :"
 
-#: ksieveui/editor/sievetextedit.cpp:310
+#: ksieveui/editor/sievetextedit.cpp:324
 #, kde-format
 msgctxt "@action"
 msgid "Quick Ask"
 msgstr ""
 
-#: ksieveui/editor/sievetextedit.cpp:320
+#: ksieveui/editor/sievetextedit.cpp:334
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule"
 msgstr "नियमं सम्मिलितं कुर्वन्तु"
 
-#: ksieveui/editor/sievetextedit.cpp:334
+#: ksieveui/editor/sievetextedit.cpp:348
 #, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "विषये सहायतां कुर्वन्तु: '%1'."
 
-#: ksieveui/editor/sievetextedit.cpp:343
+#: ksieveui/editor/sievetextedit.cpp:357
 #, kde-format
 msgctxt "@action"
 msgid "Edit Rule"
@@ -2878,61 +2878,61 @@ msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr "जालपुटं रक्षतु"
 
-#: ksieveui/managesievescriptsdialog.cpp:63
+#: ksieveui/managesievescriptsdialog.cpp:69
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Sieve Scripts"
 msgstr "चलनी स्क्रिप्ट् प्रबन्धयन्तु"
 
-#: ksieveui/managesievescriptsdialog.cpp:85
+#: ksieveui/managesievescriptsdialog.cpp:91
 #, kde-format
 msgctxt "create a new sieve script"
 msgid "New…"
 msgstr "नूतनम्‌…"
 
-#: ksieveui/managesievescriptsdialog.cpp:89
+#: ksieveui/managesievescriptsdialog.cpp:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit…"
 msgstr "सम्पादन…"
 
-#: ksieveui/managesievescriptsdialog.cpp:93
+#: ksieveui/managesievescriptsdialog.cpp:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "लुप्"
 
-#: ksieveui/managesievescriptsdialog.cpp:97
+#: ksieveui/managesievescriptsdialog.cpp:103
 #, kde-format
 msgctxt "@action:button"
 msgid "Deactivate"
 msgstr "निष्क्रियं कुर्वन्तु"
 
-#: ksieveui/managesievescriptsdialog.cpp:172
-#: ksieveui/managesievescriptsdialog.cpp:261
+#: ksieveui/managesievescriptsdialog.cpp:185
+#: ksieveui/managesievescriptsdialog.cpp:277
 #: ksieveui/widgets/managesievewidget.cpp:513
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "चलनी त्रुटि"
 
-#: ksieveui/managesievescriptsdialog.cpp:205
+#: ksieveui/managesievescriptsdialog.cpp:221
 #, kde-format
 msgid "Uploading script to server for checking it, please wait…"
 msgstr "तस्य जाँचार्थं सर्वरे स्क्रिप्ट् अपलोड् करणं, कृपया प्रतीक्ष्यताम्..."
 
-#: ksieveui/managesievescriptsdialog.cpp:251
+#: ksieveui/managesievescriptsdialog.cpp:267
 #, kde-format
 msgid "The Sieve script was successfully uploaded."
 msgstr "Sieve स्क्रिप्ट् सफलतया अपलोड् अभवत् ।"
 
-#: ksieveui/managesievescriptsdialog.cpp:251
+#: ksieveui/managesievescriptsdialog.cpp:267
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "चलनी स्क्रिप्ट अपलोड"
 
-#: ksieveui/managesievescriptsdialog.cpp:258
+#: ksieveui/managesievescriptsdialog.cpp:274
 #, kde-format
 msgid ""
 "Uploading the Sieve script failed.\n"

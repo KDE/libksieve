@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:45+0000\n"
+"POT-Creation-Date: 2026-03-28 00:45+0000\n"
 "PO-Revision-Date: 2024-09-13 16:06+0200\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -404,7 +404,7 @@ msgstr ""
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
 #: ksieveui/debug/sievedebugdialog.cpp:201
-#: ksieveui/managesievescriptsdialog.cpp:169
+#: ksieveui/managesievescriptsdialog.cpp:182
 #, kde-format
 msgid ""
 "Retrieving the script failed.\n"
@@ -2592,18 +2592,18 @@ msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr "Sieve-Skript bearbeiten"
 
-#: ksieveui/editor/sieveeditor.cpp:184
+#: ksieveui/editor/sieveeditor.cpp:189
 #, kde-format
 msgid "Script is modified. Do you want to close editor?"
 msgstr "Das Skript wurde geändert. Möchten Sie den Editor schließen?"
 
-#: ksieveui/editor/sieveeditor.cpp:186
+#: ksieveui/editor/sieveeditor.cpp:191
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Editor"
 msgstr "Editor schließen"
 
-#: ksieveui/editor/sieveeditor.cpp:187
+#: ksieveui/editor/sieveeditor.cpp:192
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Close"
@@ -2754,17 +2754,17 @@ msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "Ergebnis der Syntax-Prüfung anzeigen"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:236
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:243
 #, kde-format
 msgid "Error during parsing"
 msgstr "Fehler beim Einlesen"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "Der ausgewählte Text ist kein vollständiges Sieve-Script"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
@@ -2825,25 +2825,25 @@ msgstr "Unterstützung für Sieve-Server"
 msgid "Sieve server supports:"
 msgstr "Sieve-Server unterstützt:"
 
-#: ksieveui/editor/sievetextedit.cpp:310
+#: ksieveui/editor/sievetextedit.cpp:324
 #, kde-format
 msgctxt "@action"
 msgid "Quick Ask"
 msgstr ""
 
-#: ksieveui/editor/sievetextedit.cpp:320
+#: ksieveui/editor/sievetextedit.cpp:334
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule"
 msgstr "Regel einfügen"
 
-#: ksieveui/editor/sievetextedit.cpp:334
+#: ksieveui/editor/sievetextedit.cpp:348
 #, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "Hilfe über: „%1“"
 
-#: ksieveui/editor/sievetextedit.cpp:343
+#: ksieveui/editor/sievetextedit.cpp:357
 #, kde-format
 msgctxt "@action"
 msgid "Edit Rule"
@@ -2963,61 +2963,61 @@ msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr "Webseite speichern"
 
-#: ksieveui/managesievescriptsdialog.cpp:63
+#: ksieveui/managesievescriptsdialog.cpp:69
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Sieve Scripts"
 msgstr "„Sieve“-Skripte verwalten"
 
-#: ksieveui/managesievescriptsdialog.cpp:85
+#: ksieveui/managesievescriptsdialog.cpp:91
 #, kde-format
 msgctxt "create a new sieve script"
 msgid "New…"
 msgstr "Neu …"
 
-#: ksieveui/managesievescriptsdialog.cpp:89
+#: ksieveui/managesievescriptsdialog.cpp:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit…"
 msgstr "Bearbeiten …"
 
-#: ksieveui/managesievescriptsdialog.cpp:93
+#: ksieveui/managesievescriptsdialog.cpp:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Löschen"
 
-#: ksieveui/managesievescriptsdialog.cpp:97
+#: ksieveui/managesievescriptsdialog.cpp:103
 #, kde-format
 msgctxt "@action:button"
 msgid "Deactivate"
 msgstr "Deaktivieren"
 
-#: ksieveui/managesievescriptsdialog.cpp:172
-#: ksieveui/managesievescriptsdialog.cpp:261
+#: ksieveui/managesievescriptsdialog.cpp:185
+#: ksieveui/managesievescriptsdialog.cpp:277
 #: ksieveui/widgets/managesievewidget.cpp:513
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Sieve-Fehler"
 
-#: ksieveui/managesievescriptsdialog.cpp:205
+#: ksieveui/managesievescriptsdialog.cpp:221
 #, kde-format
 msgid "Uploading script to server for checking it, please wait…"
 msgstr "Das Skript wird zur Prüfung auf den Server hochgeladen. Bitte warten …"
 
-#: ksieveui/managesievescriptsdialog.cpp:251
+#: ksieveui/managesievescriptsdialog.cpp:267
 #, kde-format
 msgid "The Sieve script was successfully uploaded."
 msgstr "Das Sieve-Skript wurde erfolgreich hochgeladen."
 
-#: ksieveui/managesievescriptsdialog.cpp:251
+#: ksieveui/managesievescriptsdialog.cpp:267
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "Hochladen des Sieve-Skripts"
 
-#: ksieveui/managesievescriptsdialog.cpp:258
+#: ksieveui/managesievescriptsdialog.cpp:274
 #, kde-format
 msgid ""
 "Uploading the Sieve script failed.\n"

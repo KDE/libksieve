@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:45+0000\n"
+"POT-Creation-Date: 2026-03-28 00:45+0000\n"
 "PO-Revision-Date: 2025-11-07 21:26+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -395,7 +395,7 @@ msgstr ""
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
 #: ksieveui/debug/sievedebugdialog.cpp:201
-#: ksieveui/managesievescriptsdialog.cpp:169
+#: ksieveui/managesievescriptsdialog.cpp:182
 #, kde-format
 msgid ""
 "Retrieving the script failed.\n"
@@ -2565,18 +2565,18 @@ msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr "Sieve parancsfájl szerkesztése"
 
-#: ksieveui/editor/sieveeditor.cpp:184
+#: ksieveui/editor/sieveeditor.cpp:189
 #, kde-format
 msgid "Script is modified. Do you want to close editor?"
 msgstr "A parancsfájl módosult. Szeretné bezárni a szerkesztőt?"
 
-#: ksieveui/editor/sieveeditor.cpp:186
+#: ksieveui/editor/sieveeditor.cpp:191
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Editor"
 msgstr "Szerkesztő bezárása"
 
-#: ksieveui/editor/sieveeditor.cpp:187
+#: ksieveui/editor/sieveeditor.cpp:192
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Close"
@@ -2727,17 +2727,17 @@ msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "Szintaxisellenőrzés eredményének megjelenítése"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:236
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:243
 #, kde-format
 msgid "Error during parsing"
 msgstr "Hiba a feldolgozás közben"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "A kijelölt szöveg nem egy teljes Sieve parancsfájl"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
@@ -2798,25 +2798,25 @@ msgstr "A sieve kiszolgáló támogatja"
 msgid "Sieve server supports:"
 msgstr "A Sieve kiszolgáló támogatja:"
 
-#: ksieveui/editor/sievetextedit.cpp:310
+#: ksieveui/editor/sievetextedit.cpp:324
 #, kde-format
 msgctxt "@action"
 msgid "Quick Ask"
 msgstr "Gyors kérdés"
 
-#: ksieveui/editor/sievetextedit.cpp:320
+#: ksieveui/editor/sievetextedit.cpp:334
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule"
 msgstr "Szabály beszúrása"
 
-#: ksieveui/editor/sievetextedit.cpp:334
+#: ksieveui/editor/sievetextedit.cpp:348
 #, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "Súgó: „%1”"
 
-#: ksieveui/editor/sievetextedit.cpp:343
+#: ksieveui/editor/sievetextedit.cpp:357
 #, kde-format
 msgctxt "@action"
 msgid "Edit Rule"
@@ -2935,61 +2935,61 @@ msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr "Weboldal mentése"
 
-#: ksieveui/managesievescriptsdialog.cpp:63
+#: ksieveui/managesievescriptsdialog.cpp:69
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Sieve Scripts"
 msgstr "Sieve parancsfájlok kezelése"
 
-#: ksieveui/managesievescriptsdialog.cpp:85
+#: ksieveui/managesievescriptsdialog.cpp:91
 #, kde-format
 msgctxt "create a new sieve script"
 msgid "New…"
 msgstr "Új…"
 
-#: ksieveui/managesievescriptsdialog.cpp:89
+#: ksieveui/managesievescriptsdialog.cpp:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit…"
 msgstr "Szerkesztés…"
 
-#: ksieveui/managesievescriptsdialog.cpp:93
+#: ksieveui/managesievescriptsdialog.cpp:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Törlés"
 
-#: ksieveui/managesievescriptsdialog.cpp:97
+#: ksieveui/managesievescriptsdialog.cpp:103
 #, kde-format
 msgctxt "@action:button"
 msgid "Deactivate"
 msgstr "Deaktiválás"
 
-#: ksieveui/managesievescriptsdialog.cpp:172
-#: ksieveui/managesievescriptsdialog.cpp:261
+#: ksieveui/managesievescriptsdialog.cpp:185
+#: ksieveui/managesievescriptsdialog.cpp:277
 #: ksieveui/widgets/managesievewidget.cpp:513
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Sieve hiba"
 
-#: ksieveui/managesievescriptsdialog.cpp:205
+#: ksieveui/managesievescriptsdialog.cpp:221
 #, kde-format
 msgid "Uploading script to server for checking it, please wait…"
 msgstr "Parancsfájl feltöltése a kiszolgálóra az ellenőrzéshez, kérem várjon…"
 
-#: ksieveui/managesievescriptsdialog.cpp:251
+#: ksieveui/managesievescriptsdialog.cpp:267
 #, kde-format
 msgid "The Sieve script was successfully uploaded."
 msgstr "A Sieve parancsfájl sikeresen feltöltve."
 
-#: ksieveui/managesievescriptsdialog.cpp:251
+#: ksieveui/managesievescriptsdialog.cpp:267
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "Sieve parancsfájl feltöltve"
 
-#: ksieveui/managesievescriptsdialog.cpp:258
+#: ksieveui/managesievescriptsdialog.cpp:274
 #, kde-format
 msgid ""
 "Uploading the Sieve script failed.\n"

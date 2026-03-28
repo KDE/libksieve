@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:45+0000\n"
+"POT-Creation-Date: 2026-03-28 00:45+0000\n"
 "PO-Revision-Date: 2025-10-31 20:06+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -387,7 +387,7 @@ msgstr ""
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
 #: ksieveui/debug/sievedebugdialog.cpp:201
-#: ksieveui/managesievescriptsdialog.cpp:169
+#: ksieveui/managesievescriptsdialog.cpp:182
 #, kde-format
 msgid ""
 "Retrieving the script failed.\n"
@@ -2587,18 +2587,18 @@ msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr "Muokkaa Sieve-skriptia"
 
-#: ksieveui/editor/sieveeditor.cpp:184
+#: ksieveui/editor/sieveeditor.cpp:189
 #, kde-format
 msgid "Script is modified. Do you want to close editor?"
 msgstr "Skriptiä on muutettu. Haluatko sulkea muokkaimen?"
 
-#: ksieveui/editor/sieveeditor.cpp:186
+#: ksieveui/editor/sieveeditor.cpp:191
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Editor"
 msgstr "Sulje muokkain"
 
-#: ksieveui/editor/sieveeditor.cpp:187
+#: ksieveui/editor/sieveeditor.cpp:192
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Close"
@@ -2751,17 +2751,17 @@ msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "Näytä syntaksintarkistuksen tulokset"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:236
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:243
 #, kde-format
 msgid "Error during parsing"
 msgstr "Virhe jäsennettäessä"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "Valittu teksti ei ole täysi Sieve-skripti"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:266
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
@@ -2822,13 +2822,13 @@ msgstr "Sieve-palvelintuki"
 msgid "Sieve server supports:"
 msgstr "Sieve-palvelin tukee:"
 
-#: ksieveui/editor/sievetextedit.cpp:310
+#: ksieveui/editor/sievetextedit.cpp:324
 #, kde-format
 msgctxt "@action"
 msgid "Quick Ask"
 msgstr "Pikakysy"
 
-#: ksieveui/editor/sievetextedit.cpp:320
+#: ksieveui/editor/sievetextedit.cpp:334
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule"
@@ -2836,13 +2836,13 @@ msgstr "Lisää sääntö"
 
 # *** TARKISTA: Mitä %1 on?
 # – %1 näyttäisi olevan tekstivalinta.
-#: ksieveui/editor/sievetextedit.cpp:334
+#: ksieveui/editor/sievetextedit.cpp:348
 #, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "Ohje kohteelle: ”%1”"
 
-#: ksieveui/editor/sievetextedit.cpp:343
+#: ksieveui/editor/sievetextedit.cpp:357
 #, kde-format
 msgctxt "@action"
 msgid "Edit Rule"
@@ -2959,61 +2959,61 @@ msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr "Tallenna verkkosivu"
 
-#: ksieveui/managesievescriptsdialog.cpp:63
+#: ksieveui/managesievescriptsdialog.cpp:69
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Sieve Scripts"
 msgstr "Sieve-skriptien hallinta"
 
-#: ksieveui/managesievescriptsdialog.cpp:85
+#: ksieveui/managesievescriptsdialog.cpp:91
 #, kde-format
 msgctxt "create a new sieve script"
 msgid "New…"
 msgstr "Uusi…"
 
-#: ksieveui/managesievescriptsdialog.cpp:89
+#: ksieveui/managesievescriptsdialog.cpp:95
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit…"
 msgstr "Muokkaa…"
 
-#: ksieveui/managesievescriptsdialog.cpp:93
+#: ksieveui/managesievescriptsdialog.cpp:99
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Poista"
 
-#: ksieveui/managesievescriptsdialog.cpp:97
+#: ksieveui/managesievescriptsdialog.cpp:103
 #, kde-format
 msgctxt "@action:button"
 msgid "Deactivate"
 msgstr "Passivoi"
 
-#: ksieveui/managesievescriptsdialog.cpp:172
-#: ksieveui/managesievescriptsdialog.cpp:261
+#: ksieveui/managesievescriptsdialog.cpp:185
+#: ksieveui/managesievescriptsdialog.cpp:277
 #: ksieveui/widgets/managesievewidget.cpp:513
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Sieve-virhe"
 
-#: ksieveui/managesievescriptsdialog.cpp:205
+#: ksieveui/managesievescriptsdialog.cpp:221
 #, kde-format
 msgid "Uploading script to server for checking it, please wait…"
 msgstr "Lähetetään skriptiä palvelimelle tarkistettavaksi, odota…"
 
-#: ksieveui/managesievescriptsdialog.cpp:251
+#: ksieveui/managesievescriptsdialog.cpp:267
 #, kde-format
 msgid "The Sieve script was successfully uploaded."
 msgstr "Sieve-skripti onnistuttiin lähettämään."
 
-#: ksieveui/managesievescriptsdialog.cpp:251
+#: ksieveui/managesievescriptsdialog.cpp:267
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "Sieve-skriptin lähetys"
 
-#: ksieveui/managesievescriptsdialog.cpp:258
+#: ksieveui/managesievescriptsdialog.cpp:274
 #, kde-format
 msgid ""
 "Uploading the Sieve script failed.\n"
