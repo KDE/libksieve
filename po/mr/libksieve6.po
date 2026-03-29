@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-28 00:45+0000\n"
+"POT-Creation-Date: 2026-03-29 00:44+0000\n"
 "PO-Revision-Date: 2013-04-13 16:36+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -2584,17 +2584,17 @@ msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:243
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:249
 #, kde-format
 msgid "Error during parsing"
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:279
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:279
 #, fuzzy, kde-format
 #| msgid "Sieve Script"
 msgctxt "@title:window"
@@ -2637,12 +2637,12 @@ msgctxt "@label:textbox"
 msgid "Script name:"
 msgstr "स्क्रिप्ट नाव :"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:387
+#: ksieveui/editor/sieveeditorwidget.cpp:394
 #, kde-format
 msgid "Simple Mode"
 msgstr ""
 
-#: ksieveui/editor/sieveeditorwidget.cpp:387
+#: ksieveui/editor/sieveeditorwidget.cpp:394
 #, kde-format
 msgid "Advanced Mode"
 msgstr ""

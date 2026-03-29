@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-28 00:45+0000\n"
+"POT-Creation-Date: 2026-03-29 00:44+0000\n"
 "PO-Revision-Date: 2025-09-24 07:15+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2719,17 +2719,17 @@ msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "\"check syntax\"-დან შედეგის ჩვენება"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:243
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:249
 #, kde-format
 msgid "Error during parsing"
 msgstr "შეცდომა დამუშავებისას"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:279
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "მონიშნული ტექსტი სრული Sieve-ის სკრიპტი არაა"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
@@ -2769,12 +2769,12 @@ msgctxt "@label:textbox"
 msgid "Script name:"
 msgstr "სკრიპტის სახელი:"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:387
+#: ksieveui/editor/sieveeditorwidget.cpp:394
 #, kde-format
 msgid "Simple Mode"
 msgstr "მარტივი რეჟიმი"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:387
+#: ksieveui/editor/sieveeditorwidget.cpp:394
 #, kde-format
 msgid "Advanced Mode"
 msgstr "დამატებითი პარამეტრები"

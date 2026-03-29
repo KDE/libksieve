@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-28 00:45+0000\n"
+"POT-Creation-Date: 2026-03-29 00:44+0000\n"
 "PO-Revision-Date: 2025-09-26 15:16+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -2745,17 +2745,17 @@ msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "Показване на резултат от \"проверка на синтаксиса\""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:243
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:249
 #, kde-format
 msgid "Error during parsing"
 msgstr "Грешка при анализиране"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:279
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "Избраният текст не е пълен скрипт на Sieve"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
@@ -2795,12 +2795,12 @@ msgctxt "@label:textbox"
 msgid "Script name:"
 msgstr "Име на скрипт:"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:387
+#: ksieveui/editor/sieveeditorwidget.cpp:394
 #, kde-format
 msgid "Simple Mode"
 msgstr "Прост режим"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:387
+#: ksieveui/editor/sieveeditorwidget.cpp:394
 #, kde-format
 msgid "Advanced Mode"
 msgstr "Разширен режим"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-28 00:45+0000\n"
+"POT-Creation-Date: 2026-03-29 00:44+0000\n"
 "PO-Revision-Date: 2005-10-12 09:33+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -2509,17 +2509,17 @@ msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:243
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:249
 #, kde-format
 msgid "Error during parsing"
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:279
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:273
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
@@ -2559,12 +2559,12 @@ msgctxt "@label:textbox"
 msgid "Script name:"
 msgstr ""
 
-#: ksieveui/editor/sieveeditorwidget.cpp:387
+#: ksieveui/editor/sieveeditorwidget.cpp:394
 #, kde-format
 msgid "Simple Mode"
 msgstr ""
 
-#: ksieveui/editor/sieveeditorwidget.cpp:387
+#: ksieveui/editor/sieveeditorwidget.cpp:394
 #, kde-format
 msgid "Advanced Mode"
 msgstr ""
