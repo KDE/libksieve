@@ -289,11 +289,12 @@ void ManageSieveWidget::slotEditScript()
     const QStringList currentCapabilities = parent->data(0, SIEVE_SERVER_CAPABILITIES).toStringList();
     const QStringList listscript = parent->data(0, SIEVE_SERVER_LIST_SCRIPT).toStringList();
 
-    ScriptInfo info;
-    info.currentCapabilities = currentCapabilities;
-    info.currentUrl = url;
-    info.sieveImapAccountSettings = sieveimapaccountsettings;
-    info.scriptList = listscript;
+    const ScriptInfo info{
+        .currentUrl = url,
+        .currentCapabilities = currentCapabilities,
+        .sieveImapAccountSettings = sieveimapaccountsettings,
+        .scriptList = listscript,
+    };
 
     Q_EMIT editScript(info);
 }
