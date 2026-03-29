@@ -241,13 +241,11 @@ void ManageSieveWidget::slotNewScript()
     u.setPath(u.path() + u'/' + name);
 
     QTreeWidgetItem *parentItem = currentItem;
-    if (parentItem) {
-        const int numberOfElement(parentItem->childCount());
-        for (int i = 0; i < numberOfElement; ++i) {
-            if (parentItem->child(i)->text(0) == name) {
-                KMessageBox::error(this, i18n("Script name already used \"%1\".", name), i18nc("@title:window", "New Script"));
-                return;
-            }
+    const int numberOfElement(parentItem->childCount());
+    for (int i = 0; i < numberOfElement; ++i) {
+        if (parentItem->child(i)->text(0) == name) {
+            KMessageBox::error(this, i18n("Script name already used \"%1\".", name), i18nc("@title:window", "New Script"));
+            return;
         }
     }
 
