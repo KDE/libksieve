@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-29 00:44+0000\n"
+"POT-Creation-Date: 2026-03-30 00:44+0000\n"
 "PO-Revision-Date: 2025-09-24 07:15+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2324,7 +2324,7 @@ msgstr "სკრიპტის წაშლა"
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
 #: ksieveui/widgets/managesievewidget.cpp:230
 #: ksieveui/widgets/managesievewidget.cpp:236
-#: ksieveui/widgets/managesievewidget.cpp:248
+#: ksieveui/widgets/managesievewidget.cpp:247
 #, kde-format
 msgctxt "@title:window"
 msgid "New Script"
@@ -2958,7 +2958,7 @@ msgstr "დეაქტივაცია"
 
 #: ksieveui/managesievescriptsdialog.cpp:185
 #: ksieveui/managesievescriptsdialog.cpp:277
-#: ksieveui/widgets/managesievewidget.cpp:513
+#: ksieveui/widgets/managesievewidget.cpp:512
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
@@ -3387,34 +3387,34 @@ msgstr "ცარიელი სახელი სწორი სახელ
 msgid "You cannot use protected name."
 msgstr "დაცულ სახელს ვერ გაოიყენებთ."
 
-#: ksieveui/widgets/managesievewidget.cpp:248
+#: ksieveui/widgets/managesievewidget.cpp:247
 #, kde-format
 msgid "Script name already used \"%1\"."
 msgstr "სკრიპტის სახელი უკვე გამოიყენება \"%1\"."
 
-#: ksieveui/widgets/managesievewidget.cpp:428
-#: ksieveui/widgets/managesievewidget.cpp:456
+#: ksieveui/widgets/managesievewidget.cpp:427
+#: ksieveui/widgets/managesievewidget.cpp:455
 #, kde-format
 msgid "Rename Script"
 msgstr "სკრიპტის სახელის გადარქმევა"
 
-#: ksieveui/widgets/managesievewidget.cpp:428
+#: ksieveui/widgets/managesievewidget.cpp:427
 #, kde-format
 msgid "Script Name:"
 msgstr "სკრიპტის სახელი:"
 
-#: ksieveui/widgets/managesievewidget.cpp:491
+#: ksieveui/widgets/managesievewidget.cpp:490
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
 msgstr "მართლა წავშალო სკრიპტი \"%1\" სერვერიდან?"
 
-#: ksieveui/widgets/managesievewidget.cpp:492
+#: ksieveui/widgets/managesievewidget.cpp:491
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "Sieve-ის სკრიპტის წაშლის დადასტურება"
 
-#: ksieveui/widgets/managesievewidget.cpp:510
+#: ksieveui/widgets/managesievewidget.cpp:509
 #, kde-format
 msgid ""
 "Deleting the script failed.\n"
@@ -3425,7 +3425,7 @@ msgstr ""
 "სერვერის პასუხია:\n"
 "%1"
 
-#: ksieveui/widgets/managesievewidget.cpp:562
+#: ksieveui/widgets/managesievewidget.cpp:561
 #, kde-format
 msgid "Failed to fetch the list of scripts"
 msgstr "სკრიპტების სიის გამოთხოვა ჩავარდა"

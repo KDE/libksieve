@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-29 00:44+0000\n"
+"POT-Creation-Date: 2026-03-30 00:44+0000\n"
 "PO-Revision-Date: 2024-09-13 16:06+0200\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2357,7 +2357,7 @@ msgstr "Skript löschen"
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
 #: ksieveui/widgets/managesievewidget.cpp:230
 #: ksieveui/widgets/managesievewidget.cpp:236
-#: ksieveui/widgets/managesievewidget.cpp:248
+#: ksieveui/widgets/managesievewidget.cpp:247
 #, kde-format
 msgctxt "@title:window"
 msgid "New Script"
@@ -2995,7 +2995,7 @@ msgstr "Deaktivieren"
 
 #: ksieveui/managesievescriptsdialog.cpp:185
 #: ksieveui/managesievescriptsdialog.cpp:277
-#: ksieveui/widgets/managesievewidget.cpp:513
+#: ksieveui/widgets/managesievewidget.cpp:512
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
@@ -3428,34 +3428,34 @@ msgstr "Der Name darf nicht leer sein"
 msgid "You cannot use protected name."
 msgstr "Der geschützte Name kann nicht verwendet werden."
 
-#: ksieveui/widgets/managesievewidget.cpp:248
+#: ksieveui/widgets/managesievewidget.cpp:247
 #, kde-format
 msgid "Script name already used \"%1\"."
 msgstr "Name des Skripts wird bereits verwendet: „%1“"
 
-#: ksieveui/widgets/managesievewidget.cpp:428
-#: ksieveui/widgets/managesievewidget.cpp:456
+#: ksieveui/widgets/managesievewidget.cpp:427
+#: ksieveui/widgets/managesievewidget.cpp:455
 #, kde-format
 msgid "Rename Script"
 msgstr "Skript umbenennen"
 
-#: ksieveui/widgets/managesievewidget.cpp:428
+#: ksieveui/widgets/managesievewidget.cpp:427
 #, kde-format
 msgid "Script Name:"
 msgstr "Skriptname:"
 
-#: ksieveui/widgets/managesievewidget.cpp:491
+#: ksieveui/widgets/managesievewidget.cpp:490
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
 msgstr "Soll das Skript „%1“ wirklich vom Server gelöscht werden?"
 
-#: ksieveui/widgets/managesievewidget.cpp:492
+#: ksieveui/widgets/managesievewidget.cpp:491
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "Bestätigung für das Löschen des Sieve-Skripts"
 
-#: ksieveui/widgets/managesievewidget.cpp:510
+#: ksieveui/widgets/managesievewidget.cpp:509
 #, kde-format
 msgid ""
 "Deleting the script failed.\n"
@@ -3466,7 +3466,7 @@ msgstr ""
 "Die Antwort des Servers lautet:\n"
 "%1"
 
-#: ksieveui/widgets/managesievewidget.cpp:562
+#: ksieveui/widgets/managesievewidget.cpp:561
 #, kde-format
 msgid "Failed to fetch the list of scripts"
 msgstr "Die Liste der Skripte kann nicht abgeholt werden"
