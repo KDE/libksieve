@@ -199,7 +199,12 @@ void ManageSieveWidget::slotCancelFetch()
     }
 }
 
-void ManageSieveWidget::slotNewScript()
+void ManageSieveWidget::addNewScript(const QString &title)
+{
+    generateNewScript(title);
+}
+
+void ManageSieveWidget::generateNewScript(const QString &title)
 {
     QTreeWidgetItem *currentItem = d->mTreeView->currentItem();
     if (!currentItem) {
@@ -222,14 +227,21 @@ void ManageSieveWidget::slotNewScript()
     }
 
     bool ok = false;
-    QString name =
-        QInputDialog::getText(this, i18n("New Sieve Script"), i18n("Please enter a name for the new Sieve script:"), QLineEdit::Normal, i18n("unnamed"), &ok);
-    name = name.trimmed();
-    if (!ok || name.isEmpty()) {
-        if (ok && name.isEmpty()) {
-            KMessageBox::error(this, i18n("Empty name is not a valid name"), i18nc("@title:window", "New Script"));
+    QString name = title;
+    if (name.isEmpty()) {
+        name = QInputDialog::getText(this,
+                                     i18n("New Sieve Script"),
+                                     i18n("Please enter a name for the new Sieve script:"),
+                                     QLineEdit::Normal,
+                                     i18n("unnamed"),
+                                     &ok);
+        name = name.trimmed();
+        if (!ok || name.isEmpty()) {
+            if (ok && name.isEmpty()) {
+                KMessageBox::error(this, i18n("Empty name is not a valid name"), i18nc("@title:window", "New Script"));
+            }
+            return;
         }
-        return;
     }
 
     if (KSieveCore::Util::isKep14ProtectedName(name)) {
@@ -267,6 +279,11 @@ void ManageSieveWidget::slotNewScript()
     info.scriptList = listscript;
 
     Q_EMIT newScript(info);
+}
+
+void ManageSieveWidget::slotNewScript()
+{
+    generateNewScript({});
 }
 
 void ManageSieveWidget::slotEditScript()

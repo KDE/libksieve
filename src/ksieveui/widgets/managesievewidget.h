@@ -72,6 +72,11 @@ public:
      */
     void enableDisableActions(bool &newScriptAction, bool &editScriptAction, bool &deleteScriptAction, bool &desactivateScriptAction);
 
+    /*!
+     * \brief addNewScript
+     * \param title
+     */
+    void addNewScript(const QString &title);
 Q_SIGNALS:
     /*!
      * Emitted when a tree widget item is updated.
@@ -195,6 +200,7 @@ private:
     KSIEVEUI_NO_EXPORT void changeActiveScript(QTreeWidgetItem *item, bool activate, bool deleteScript = false);
     [[nodiscard]] KSIEVEUI_NO_EXPORT bool updateGlobalScript(QTreeWidgetItem *item, const QUrl &u);
     KSIEVEUI_NO_EXPORT void slotGenerateGlobalScriptError(const QString &errorStr);
+    KSIEVEUI_NO_EXPORT void generateNewScript(const QString &title);
     std::unique_ptr<ManageSieveWidgetPrivate> const d;
 };
 }
