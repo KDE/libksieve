@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-30 00:44+0000\n"
+"POT-Creation-Date: 2026-04-01 00:46+0000\n"
 "PO-Revision-Date: 2014-01-31 19:22+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -2407,9 +2407,9 @@ msgid "Delete Script"
 msgstr "Obriši skriptu"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
-#: ksieveui/widgets/managesievewidget.cpp:230
-#: ksieveui/widgets/managesievewidget.cpp:236
-#: ksieveui/widgets/managesievewidget.cpp:247
+#: ksieveui/widgets/managesievewidget.cpp:241
+#: ksieveui/widgets/managesievewidget.cpp:248
+#: ksieveui/widgets/managesievewidget.cpp:259
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgctxt "@title:window"
@@ -3113,7 +3113,7 @@ msgstr "Deaktiviraj"
 
 #: ksieveui/managesievescriptsdialog.cpp:185
 #: ksieveui/managesievescriptsdialog.cpp:277
-#: ksieveui/widgets/managesievewidget.cpp:512
+#: ksieveui/widgets/managesievewidget.cpp:529
 #, fuzzy, kde-format
 #| msgid "Sieve Error"
 msgctxt "@title:window"
@@ -3553,62 +3553,62 @@ msgstr "Deaktiviraj skriptu"
 msgid "New Script…"
 msgstr "Nova skripta"
 
-#: ksieveui/widgets/managesievewidget.cpp:226
+#: ksieveui/widgets/managesievewidget.cpp:233
 #, kde-format
 msgid "New Sieve Script"
 msgstr "Nova Sieve skripta"
 
-#: ksieveui/widgets/managesievewidget.cpp:226
+#: ksieveui/widgets/managesievewidget.cpp:234
 #, kde-format
 msgid "Please enter a name for the new Sieve script:"
 msgstr "Unesite ime za novu Sieve skriptu:"
 
-#: ksieveui/widgets/managesievewidget.cpp:226
+#: ksieveui/widgets/managesievewidget.cpp:236
 #, kde-format
 msgid "unnamed"
 msgstr "Bez naziva"
 
-#: ksieveui/widgets/managesievewidget.cpp:230
+#: ksieveui/widgets/managesievewidget.cpp:241
 #, kde-format
 msgid "Empty name is not a valid name"
 msgstr ""
 
-#: ksieveui/widgets/managesievewidget.cpp:236
+#: ksieveui/widgets/managesievewidget.cpp:248
 #, kde-format
 msgid "You cannot use protected name."
 msgstr "Ne možete koristiti zaštićeno ime"
 
-#: ksieveui/widgets/managesievewidget.cpp:247
+#: ksieveui/widgets/managesievewidget.cpp:259
 #, kde-format
 msgid "Script name already used \"%1\"."
 msgstr "Ime skripte već korišteno \"%1\"."
 
-#: ksieveui/widgets/managesievewidget.cpp:427
-#: ksieveui/widgets/managesievewidget.cpp:455
+#: ksieveui/widgets/managesievewidget.cpp:444
+#: ksieveui/widgets/managesievewidget.cpp:472
 #, fuzzy, kde-format
 #| msgid "Sieve Script"
 msgid "Rename Script"
 msgstr "Sieve skripta"
 
-#: ksieveui/widgets/managesievewidget.cpp:427
+#: ksieveui/widgets/managesievewidget.cpp:444
 #, fuzzy, kde-format
 #| msgid "Script name:"
 msgid "Script Name:"
 msgstr "Ime skripte:"
 
-#: ksieveui/widgets/managesievewidget.cpp:490
+#: ksieveui/widgets/managesievewidget.cpp:507
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
 msgstr "Zaista brišete skriptu „%1“ sa servera?"
 
-#: ksieveui/widgets/managesievewidget.cpp:491
+#: ksieveui/widgets/managesievewidget.cpp:508
 #, fuzzy, kde-format
 #| msgid "Delete Sieve Script Confirmation"
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "Potvrda o brisanju Sieve skripte"
 
-#: ksieveui/widgets/managesievewidget.cpp:509
+#: ksieveui/widgets/managesievewidget.cpp:526
 #, fuzzy, kde-format
 #| msgid ""
 #| "Sieve operation failed.\n"
@@ -3623,7 +3623,7 @@ msgstr ""
 "Server odgovorio:\n"
 "%1"
 
-#: ksieveui/widgets/managesievewidget.cpp:561
+#: ksieveui/widgets/managesievewidget.cpp:578
 #, kde-format
 msgid "Failed to fetch the list of scripts"
 msgstr "Nisam uspio da preuzmem listu skripti"
