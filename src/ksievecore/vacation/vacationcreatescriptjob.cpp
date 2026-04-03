@@ -112,8 +112,8 @@ void VacationCreateScriptJob::slotGetScript(KManageSieve::SieveJob *job, bool su
     Q_ASSERT(job == mSieveJob);
     mSieveJob = nullptr;
     if (success || !oldScript.trimmed().isEmpty()) {
-        QString script = KSieveCore::VacationUtils::mergeRequireLine(oldScript, mScript);
-        script = KSieveCore::VacationUtils::updateVacationBlock(oldScript, script);
+        mScript = KSieveCore::VacationUtils::mergeRequireLine(oldScript, mScript);
+        mScript = KSieveCore::VacationUtils::updateVacationBlock(oldScript, mScript);
     }
     if (mKep14Support) {
         mSieveJob = KManageSieve::SieveJob::put(mUrl, mScript, false, false);
