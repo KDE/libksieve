@@ -186,6 +186,7 @@ void VacationCheckJob::getNextScript()
     mScriptPos += 1;
     if (KSieveCore::Util::isKep14ProtectedName(url.fileName())) {
         getNextScript();
+        return;
     }
     mSieveJob = KManageSieve::SieveJob::get(url);
     connect(mSieveJob, &KManageSieve::SieveJob::gotScript, this, &VacationCheckJob::slotGetResult);
