@@ -62,7 +62,7 @@ SieveEditorGraphicalModeWidget::~SieveEditorGraphicalModeWidget()
 
 void SieveEditorGraphicalModeWidget::loadScript(const QString &doc, QString &error)
 {
-    for (int i = mStackWidget->count(); i >= 0; --i) {
+    for (int i = mStackWidget->count() - 1; i >= 0; --i) {
         mStackWidget->removeWidget(mStackWidget->widget(i));
     }
     mSieveScript->loadScript(doc, error);
