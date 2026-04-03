@@ -119,6 +119,7 @@ QString ParseUserScriptJob::error() const
 
 QStringList ParseUserScriptJob::extractActiveScript(const QString &doc)
 {
+    delete mStreamReader;
     mStreamReader = new QXmlStreamReader(doc);
     QStringList lstScript;
     if (mStreamReader->readNextStartElement()) {
