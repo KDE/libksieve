@@ -43,7 +43,7 @@ void VacationCreateScriptJob::kill()
     if (mCreateJob) {
         mCreateJob->kill();
     }
-    mParseUserJob = nullptr;
+    mCreateJob = nullptr;
 }
 
 void VacationCreateScriptJob::setStatus(bool activate, bool wasActive)
