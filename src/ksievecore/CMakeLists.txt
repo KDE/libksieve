@@ -98,7 +98,7 @@ target_link_libraries(
         KF6::I18n
         KF6::CoreAddons
         KPim6::MailTransport
-        KPim6::Mime
+        KF6::Mime
         KPim6::IdentityManagementCore
 )
 

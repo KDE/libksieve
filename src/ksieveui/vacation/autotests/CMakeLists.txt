@@ -16,7 +16,7 @@ macro(add_vacation_test _source)
         KPim6KSieveUi
         Qt::Test
         KPim6::IdentityManagementCore
-        KPim6::Mime
+        KF6::Mime
         KF6::I18n
         KPim6::MailTransport
         KPim6::Libkdepim

@@ -373,7 +373,7 @@ target_link_libraries(
     PRIVATE
         KPim6::Libkdepim
         KF6::Archive
-        KPim6::Mime
+        KF6::Mime
         KF6::IconThemes
         KF6::IconWidgets
         KPim6::IdentityManagementCore

@@ -18,7 +18,7 @@ macro(add_ksievecore_vacation_test _source)
         KPim6KSieveCore
         Qt::Test
         KF6::I18n
-        KPim6::Mime
+        KF6::Mime
     )
 endmacro()
 
