@@ -8,7 +8,7 @@
 
 #include "ksieveui_private_export.h"
 #include <KSieveUi/AbstractRegexpEditorLineEdit>
-#include <QString>
+
 #include <QStringList>
 #include <QXmlStreamReader>
 namespace KSieveUi
