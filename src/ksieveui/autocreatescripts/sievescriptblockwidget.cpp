@@ -5,7 +5,6 @@
 */
 
 #include "sievescriptblockwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescriptutil_p.h"
 #include "sieveactionwidgetlister.h"
@@ -25,6 +24,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 #include <QXmlStreamReader>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 SieveScriptBlockWidget::SieveScriptBlockWidget(SieveEditorGraphicalModeWidget *graphicalModeWidget, QWidget *parent)

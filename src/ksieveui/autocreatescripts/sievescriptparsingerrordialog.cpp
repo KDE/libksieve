@@ -5,7 +5,6 @@
 */
 
 #include "sievescriptparsingerrordialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <PimCommon/PimUtil>
 #include <TextCustomEditor/RichTextEditorWidget>
@@ -20,6 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 #include <QWindow>
 #include <cerrno>
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 namespace
 {

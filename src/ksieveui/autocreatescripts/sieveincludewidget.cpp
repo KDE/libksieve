@@ -5,7 +5,6 @@
 */
 
 #include "sieveincludewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescriptutil_p.h"
@@ -27,6 +26,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QXmlStreamReader>
 
 using namespace KSieveUi;
+using namespace Qt::Literals::StringLiterals;
 
 static const int MINIMUMINCLUDEACTION = 1;
 static const int MAXIMUMINCLUDEACTION = 20;

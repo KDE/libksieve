@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveeditorhelphtmlwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sieveeditorloadprogressindicator.h"
 
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "findbar/findbarwebengineview.h"
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 namespace
 {

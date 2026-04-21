@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditioncurrentdate.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QHBoxLayout>
 #include <QXmlStreamReader>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 SieveConditionCurrentDate::SieveConditionCurrentDate(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)

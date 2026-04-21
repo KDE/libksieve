@@ -5,7 +5,6 @@
 */
 
 #include "sieveconditionwidgetlister.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
@@ -26,6 +25,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QLabel>
 #include <QWhatsThis>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 static const int MINIMUMCONDITION = 1;

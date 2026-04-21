@@ -5,7 +5,6 @@
 */
 
 #include "sievescriptlistbox.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sieveeditorgraphicalmodewidget.h"
 #include "sieveforeverypartwidget.h"
@@ -27,6 +26,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPointer>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 namespace
 {
 inline const QString defaultScriptName()

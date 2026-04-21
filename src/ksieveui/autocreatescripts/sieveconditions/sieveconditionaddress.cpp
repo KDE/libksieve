@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionaddress.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QLabel>
 #include <QXmlStreamReader>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 SieveConditionAddress::SieveConditionAddress(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)

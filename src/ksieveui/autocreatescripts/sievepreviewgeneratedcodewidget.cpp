@@ -5,10 +5,10 @@
 */
 
 #include "sievepreviewgeneratedcodewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QHBoxLayout>
 #include <QTextEdit>
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SievePreviewGeneratedCodeWidget::SievePreviewGeneratedCodeWidget(QWidget *parent)
     : QWidget(parent)

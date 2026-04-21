@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveconditionbody.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QHBoxLayout>
 #include <QWidget>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SieveConditionBody::SieveConditionBody(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
     : SieveCondition(sieveGraphicalModeWidget, u"body"_s, i18n("Body"), parent)

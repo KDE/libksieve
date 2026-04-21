@@ -5,7 +5,6 @@
 */
 
 #include "sieveeditorgraphicalmodewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.h"
 #include "scriptsparsing/parsingutil.h"
@@ -22,6 +21,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStackedWidget>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 namespace
 {

@@ -5,7 +5,6 @@
 */
 
 #include "sieveglobalvariablewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
@@ -27,6 +26,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWhatsThis>
 #include <QXmlStreamReader>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 static const int MINIMUMGLOBALVARIABLEACTION = 1;
 static const int MAXIMUMGLOBALVARIABLEACTION = 15;

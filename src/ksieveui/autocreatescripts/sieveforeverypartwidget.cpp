@@ -5,7 +5,6 @@
 */
 
 #include "sieveforeverypartwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescriptutil_p.h"
@@ -25,6 +24,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWhatsThis>
 #include <QXmlStreamReader>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 SieveForEveryPartWidget::SieveForEveryPartWidget(QWidget *parent)

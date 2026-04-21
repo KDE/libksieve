@@ -5,7 +5,6 @@
 */
 
 #include "sievescriptpage.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sieveeditorgraphicalmodewidget.h"
 #include "sieveforeverypartwidget.h"
@@ -20,6 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 SieveScriptPage::SieveScriptPage(SieveEditorGraphicalModeWidget *sieveEditorGraphicalWidget, QWidget *parent)

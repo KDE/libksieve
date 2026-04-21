@@ -5,7 +5,6 @@
 */
 
 #include "sieveactionwidgetlister.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
@@ -29,6 +28,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/sieveactions/sieveactionsetvariable.h"
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 static int MINIMUMACTION = 1;

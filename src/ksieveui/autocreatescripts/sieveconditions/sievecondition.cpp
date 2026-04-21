@@ -5,7 +5,6 @@
 */
 
 #include "sievecondition.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QWidget>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 SieveCondition::SieveCondition(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent)

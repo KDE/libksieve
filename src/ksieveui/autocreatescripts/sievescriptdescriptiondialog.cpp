@@ -5,7 +5,6 @@
 */
 
 #include "sievescriptdescriptiondialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <TextCustomEditor/PlainTextEditorWidget>
 
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 #include <QWindow>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 namespace
 {
