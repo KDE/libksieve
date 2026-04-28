@@ -2858,7 +2858,7 @@ msgstr "Nasledujúci"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
-msgstr "Prejsť na ďaľšiu zhodu"
+msgstr "Prejsť na ďalšiu zhodu"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:64
 #, kde-format
