@@ -72,8 +72,8 @@ msgid ""
 "Please enter your authentication details for your sieve account "
 "\"%1\" (usually the same as your email password):"
 msgstr ""
-"Please enter your authentication details for your sieve account "
-"\"%1\" (usually rovnaký as your email password):"
+"Zadajte svoje overovacie údaje pre účet sieve \"%1\" (zvyčajne rovnaké ako "
+"heslo e-mailu):"
 
 #: kmanagesieve/session.cpp:322
 #, kde-format
@@ -934,9 +934,9 @@ msgid ""
 "actions, if no filtering happens at all; generally, this simply means to "
 "file the message into the user's main mailbox."
 msgstr ""
-"Akcia \"ponechať\" bez ohľadu na to, aká akcia sa vykoná namiesto všetkých "
-"ostatných akcií, ak nie je žiadne filtrovanie; vo všeobecnosti to znamená, "
-"že súbor správy už nie je v schránke používateľa."
+"Akcia \"ponechať\" je akákoľvek akcia vykonaná namiesto všetkých ostatných "
+"akcií, ak vôbec nedôjde k filtrovaniu; vo všeobecnosti to jednoducho znamená "
+"uloženie správy do hlavnej schránky používateľa."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:57
 #, kde-format
@@ -3167,9 +3167,9 @@ msgid ""
 "You have not yet configured an IMAP server for this. You can do this on the "
 "\"Filtering\" tab of the IMAP account configuration."
 msgstr ""
-"Funkcionalita KMailu na odpoveď mimo kancelárie závisí na filtrovaní na "
-"strane servera. Ešte na to nemáte nastavený IMAP server. Môžete to urobiť v "
-"karte \"Filtrovanie\" v nastavení IMAP účtu."
+"Funkcia automatickej odpovede v neprítomnosti v KMail závisí od filtrovania "
+"na strane servera. Ešte ste na to nenastavili IMAP server. Môžete to urobiť "
+"na karte \"Filtrovanie\" v nastavení IMAP účtu."
 
 #: ksieveui/vacation/vacationeditwidget.cpp:49
 #, kde-format
