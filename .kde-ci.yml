@@ -9,7 +9,7 @@ Dependencies:
     'pim/kidentitymanagement': '@same'
     'pim/kimap': '@same'
     'pim/kmailtransport': '@same'
-    'pim/kmime': '@same'
+    'frameworks/kmime': '@latest-kf6'
     'pim/libkdepim': '@same'
     'pim/pimcommon': '@same'
     'libraries/ktextaddons': '@latest-kf6'
