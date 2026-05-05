@@ -27,7 +27,7 @@ void SieveScriptDebuggerResultEditor::addExtraMenuEntry(QMenu *menu, QPoint pos)
     TextCustomEditor::PlainTextEditor::addExtraMenuEntry(menu, pos);
     if (isReadOnly() && !document()->isEmpty()) {
         auto clearAction = new QAction(i18nc("@action", "Clear"), menu);
-        connect(clearAction, &QAction::triggered, this, &SieveScriptDebuggerResultEditor::slotClear);
+        connect(clearAction, &QAction::triggered, this, &SieveScriptDebuggerResultEditor::clear);
         menu->addAction(clearAction);
         menu->addSeparator();
         QAction *saveAsAction = KStandardActions::saveAs(this, &SieveScriptDebuggerResultEditor::slotSaveAs, this);
@@ -39,11 +39,6 @@ void SieveScriptDebuggerResultEditor::slotSaveAs()
 {
     const QString filter = i18n("Text Files (*.txt);;All Files (*)");
     PimCommon::Util::saveTextAs(toPlainText(), filter, this);
-}
-
-void SieveScriptDebuggerResultEditor::slotClear()
-{
-    clear();
 }
 
 #include "moc_sievescriptdebuggerresulteditor.cpp"

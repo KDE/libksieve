@@ -21,7 +21,6 @@ protected:
     void addExtraMenuEntry(QMenu *menu, QPoint pos) override;
 
 private:
-    void slotClear();
     void slotSaveAs();
 };
 }
