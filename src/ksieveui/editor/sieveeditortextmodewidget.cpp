@@ -66,7 +66,7 @@ SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)
     mTemplateSplitter = new QSplitter;
     mTemplateSplitter->setOrientation(Qt::Horizontal);
     //
-    mSieveTemplateWidget = new SieveTemplateWidget(i18n("Sieve Template:"));
+    mSieveTemplateWidget = new SieveTemplateWidget(i18n("Sieve Template:"), this);
 
     auto textEditWidget = new QWidget(this);
     auto textEditLayout = new QVBoxLayout;
