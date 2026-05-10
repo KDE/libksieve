@@ -5,7 +5,6 @@
 */
 
 #include "sievetemplatewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sievedefaulttemplate.h"
 #include "sievetemplateeditdialog.h"
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPointer>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SieveTemplateListWidget::SieveTemplateListWidget(const QString &configName, QWidget *parent)
     : PimCommon::TemplateListWidget(configName, parent)
