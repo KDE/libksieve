@@ -5,12 +5,17 @@
 */
 
 #pragma once
-
+#include "config-libksieveui.h"
 #include <QDialog>
 
 class QLineEdit;
 class QPushButton;
-
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+namespace TextAutoGenerateText
+{
+class TextAutoGenerateManager;
+}
+#endif
 namespace KSieveUi
 {
 class SieveTextEditWidget;
@@ -27,6 +32,10 @@ public:
     void setScript(const QString &);
     [[nodiscard]] QString script() const;
     void setSieveCapabilities(const QStringList &capabilities);
+
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+    void setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager);
+#endif
 
 private:
     void slotTemplateChanged();

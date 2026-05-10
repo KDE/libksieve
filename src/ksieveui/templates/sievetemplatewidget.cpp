@@ -54,10 +54,20 @@ QList<PimCommon::defaultTemplate> SieveTemplateListWidget::defaultTemplates()
     return KSieveUi::SieveDefaultTemplate::defaultTemplates();
 }
 
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+void SieveTemplateListWidget::setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager)
+{
+    mManager = manager;
+}
+#endif
+
 bool SieveTemplateListWidget::addNewTemplate(QString &templateName, QString &templateScript)
 {
     QPointer<SieveTemplateEditDialog> dlg = new SieveTemplateEditDialog(this);
     dlg->setSieveCapabilities(mCapabilities);
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+    dlg->setTextAutoGenerateManager(mManager);
+#endif
     bool result = false;
     if (dlg->exec()) {
         templateName = dlg->templateName();
@@ -73,6 +83,9 @@ bool SieveTemplateListWidget::modifyTemplate(QString &templateName, QString &tem
     QPointer<SieveTemplateEditDialog> dlg = new SieveTemplateEditDialog(this, defaultTemplate);
     dlg->setTemplateName(templateName);
     dlg->setScript(templateScript);
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+    dlg->setTextAutoGenerateManager(mManager);
+#endif
     dlg->setSieveCapabilities(mCapabilities);
     bool result = false;
     if (dlg->exec()) {
@@ -105,5 +118,12 @@ void SieveTemplateWidget::setSieveCapabilities(const QStringList &capabilities)
 {
     mListTemplate->setSieveCapabilities(capabilities);
 }
+
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+void SieveTemplateWidget::setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager)
+{
+    mListTemplate->setTextAutoGenerateManager(manager);
+}
+#endif
 
 #include "moc_sievetemplatewidget.cpp"

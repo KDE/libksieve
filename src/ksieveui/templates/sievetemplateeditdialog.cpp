@@ -142,6 +142,13 @@ QString SieveTemplateEditDialog::script() const
     return mTextEditWidget->textEdit()->toPlainText();
 }
 
+#if HAVE_TEXT_AUTOGENERATE_TEXT
+void SieveTemplateEditDialog::setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager)
+{
+    mTextEditWidget->textEdit()->setTextAutoGenerateManager(manager);
+}
+#endif
+
 void SieveTemplateEditDialog::setSieveCapabilities(const QStringList &capabilities)
 {
     mTextEditWidget->textEdit()->setSieveCapabilities(capabilities);

@@ -177,8 +177,8 @@ void SieveEditorTextModeWidget::writeConfig()
 void SieveEditorTextModeWidget::setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager)
 {
     mTextEdit->setTextAutoGenerateManager(manager);
+    mSieveTemplateWidget->setTextAutoGenerateManager(manager);
 }
-
 #endif
 
 void SieveEditorTextModeWidget::insertText(const QString &str)
