@@ -6,7 +6,6 @@
 */
 
 #include "sieveinfodialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sieveinfowidget.h"
 #include <KConfigGroup>
@@ -22,6 +21,7 @@ namespace
 static const char myConfigGroupName[] = "SieveInfoDialog";
 }
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SieveInfoDialog::SieveInfoDialog(QWidget *parent)
     : QDialog(parent)

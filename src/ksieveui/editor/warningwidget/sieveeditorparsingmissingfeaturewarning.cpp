@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveeditorparsingmissingfeaturewarning.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/sievescriptparsingerrordialog.h"
 
@@ -12,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QAction>
 
 using namespace KSieveUi;
+using namespace Qt::Literals::StringLiterals;
 
 SieveEditorParsingMissingFeatureWarning::SieveEditorParsingMissingFeatureWarning(TextEditorType type, QWidget *parent)
     : KMessageWidget(parent)

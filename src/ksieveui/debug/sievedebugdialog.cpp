@@ -7,7 +7,6 @@
 */
 
 #include "sievedebugdialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "util/findaccountinfojob.h"
 #include "util/util.h"
@@ -31,6 +30,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWindow>
 
 using namespace KSieveUi;
+using namespace Qt::Literals::StringLiterals;
 namespace
 {
 static const char mySieveDebugDialogGroupName[] = "SieveDebugDialog";

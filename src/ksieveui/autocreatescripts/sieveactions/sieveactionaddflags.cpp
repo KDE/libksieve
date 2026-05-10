@@ -4,12 +4,12 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionaddflags.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "editor/sieveeditorutil.h"
 
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SieveActionAddFlags::SieveActionAddFlags(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
     : SieveActionAbstractFlags(sieveGraphicalModeWidget, u"addflag"_s, i18n("Add Flags"), parent)

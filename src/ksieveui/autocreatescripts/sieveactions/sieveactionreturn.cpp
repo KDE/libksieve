@@ -4,12 +4,12 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionreturn.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "editor/sieveeditorutil.h"
 
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SieveActionReturn::SieveActionReturn(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
     : SieveAction(sieveGraphicalModeWidget, u"return"_s, i18n("Return"), parent)

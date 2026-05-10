@@ -5,7 +5,6 @@
 */
 
 #include "sievetexteditwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "editor/sievetextedit.h"
 #include <QVBoxLayout>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <TextAddonsWidgets/SlideContainer>
 #include <TextCustomEditor/PlainTextEditFindBar>
 using namespace KSieveUi;
+using namespace Qt::Literals::StringLiterals;
 
 class KSieveUi::SieveTextEditWidgetPrivate
 {

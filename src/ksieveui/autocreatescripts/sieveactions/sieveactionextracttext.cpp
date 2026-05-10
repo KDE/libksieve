@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionextracttext.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "editor/sieveeditorutil.h"
 
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QSpinBox>
 #include <QXmlStreamReader>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SieveActionExtractText::SieveActionExtractText(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
     : SieveAction(sieveGraphicalModeWidget, u"extracttext"_s, i18n("Extract Text"), parent)

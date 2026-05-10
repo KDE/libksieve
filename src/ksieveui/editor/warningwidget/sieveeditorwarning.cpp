@@ -4,10 +4,10 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveeditorwarning.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 using namespace KSieveUi;
+using namespace Qt::Literals::StringLiterals;
 
 SieveEditorWarning::SieveEditorWarning(QWidget *parent)
     : KMessageWidget(parent)

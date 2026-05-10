@@ -5,7 +5,6 @@
 */
 
 #include "sieveaction.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "libksieveui_debug.h"
 
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QXmlStreamReader>
 
 using namespace KSieveUi;
+using namespace Qt::Literals::StringLiterals;
 
 SieveAction::SieveAction(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, const QString &name, const QString &label, QObject *parent)
     : SieveCommonActionCondition(sieveGraphicalModeWidget, name, label, parent)

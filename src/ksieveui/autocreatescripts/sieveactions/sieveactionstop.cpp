@@ -4,13 +4,13 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactionstop.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "editor/sieveeditorutil.h"
 
 #include <KLocalizedString>
 
 using namespace KSieveUi;
+using namespace Qt::Literals::StringLiterals;
 
 SieveActionStop::SieveActionStop(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
     : SieveAction(sieveGraphicalModeWidget, u"stop"_s, i18n("Stop"), parent)

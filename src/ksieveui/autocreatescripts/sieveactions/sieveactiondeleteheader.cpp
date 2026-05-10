@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveactiondeleteheader.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
@@ -21,6 +20,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QXmlStreamReader>
 
 using namespace KSieveUi;
+using namespace Qt::Literals::StringLiterals;
 
 SieveActionDeleteHeader::SieveActionDeleteHeader(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget, QObject *parent)
     : SieveActionAbstractEditHeader(sieveGraphicalModeWidget, u"deleteheader"_s, i18n("Delete header"), parent)

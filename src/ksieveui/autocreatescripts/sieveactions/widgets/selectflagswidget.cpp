@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectflagswidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
@@ -24,6 +23,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWindow>
 
 using namespace KSieveUi;
+using namespace Qt::Literals::StringLiterals;
 namespace
 {
 static const char mySelectFlagsListDialogGroupName[] = "SelectFlagsListDialog";

@@ -4,12 +4,12 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectaddheaderpositioncombobox.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SelectAddHeaderPositionCombobox::SelectAddHeaderPositionCombobox(QWidget *parent)
     : QComboBox(parent)

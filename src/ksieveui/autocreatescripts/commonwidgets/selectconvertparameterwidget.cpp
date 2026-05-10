@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectconvertparameterwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QLabel>
 #include <QSpinBox>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SelectConvertParameterWidget::SelectConvertParameterWidget(QWidget *parent)
     : QWidget(parent)

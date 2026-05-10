@@ -5,10 +5,10 @@
 */
 
 #include "sievetexteditorspellcheckdecorator.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sievetextedit.h"
 using namespace KSieveUi;
+using namespace Qt::Literals::StringLiterals;
 
 SieveTextEditorSpellCheckDecorator::SieveTextEditorSpellCheckDecorator(SieveTextEdit *plainTextEdit)
     : Sonnet::SpellCheckDecorator(plainTextEdit)

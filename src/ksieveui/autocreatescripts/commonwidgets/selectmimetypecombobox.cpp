@@ -4,13 +4,13 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectmimetypecombobox.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
 #include <KLocalizedString>
 
 using namespace KSieveUi;
+using namespace Qt::Literals::StringLiterals;
 
 SelectMimeTypeComboBox::SelectMimeTypeComboBox(QWidget *parent)
     : QComboBox(parent)

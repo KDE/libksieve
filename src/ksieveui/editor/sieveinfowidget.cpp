@@ -5,13 +5,13 @@
 */
 
 #include "sieveinfowidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 
 #include <QHBoxLayout>
 #include <QTextEdit>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SieveInfoWidget::SieveInfoWidget(QWidget *parent)
     : QWidget(parent)

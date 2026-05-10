@@ -4,12 +4,12 @@
  */
 
 #include "sievelinenumberarea.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sievetextedit.h"
 
 using namespace KSieveUi;
 
+using namespace Qt::Literals::StringLiterals;
 SieveLineNumberArea::SieveLineNumberArea(SieveTextEdit *editor)
     : QWidget(editor)
     , m_sieveTextEdit(editor)

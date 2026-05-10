@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sievehelpbutton.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KIO/JobUiDelegateFactory>
 #include <KIO/OpenUrlJob>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWhatsThis>
 #include <QWhatsThisClickedEvent>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SieveHelpButton::SieveHelpButton(QWidget *parent)
     : QToolButton(parent)

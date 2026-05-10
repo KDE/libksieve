@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sievecommonactioncondition.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "libksieveui_debug.h"
 
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QUrl>
 #include <QWidget>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 SieveCommonActionCondition::SieveCommonActionCondition(SieveEditorGraphicalModeWidget *sieveGraphicalModeWidget,

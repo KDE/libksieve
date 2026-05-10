@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "addresslineedit.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KStatefulBrush>
 
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QHBoxLayout>
 #include <QLineEdit>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 AddressLineEdit::AddressLineEdit(QWidget *parent)
