@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-01 00:46+0000\n"
+"POT-Creation-Date: 2026-05-11 00:45+0000\n"
 "PO-Revision-Date: 2025-10-31 20:06+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3184,7 +3184,7 @@ msgctxt "@title:window"
 msgid "Template"
 msgstr "Mallipohja"
 
-#: ksieveui/templates/sievetemplatewidget.cpp:97
+#: ksieveui/templates/sievetemplatewidget.cpp:110
 #, kde-format
 msgid "You can drag and drop element on editor to import template"
 msgstr "Voit vetää ja pudottaa alkioita muokkaimeen tuodaksesi mallipohjan"

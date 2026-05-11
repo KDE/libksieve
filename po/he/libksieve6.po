@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-01 00:46+0000\n"
+"POT-Creation-Date: 2026-05-11 00:45+0000\n"
 "PO-Revision-Date: 2026-04-21 14:10+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -3095,7 +3095,7 @@ msgctxt "@title:window"
 msgid "Template"
 msgstr "תבנית"
 
-#: ksieveui/templates/sievetemplatewidget.cpp:97
+#: ksieveui/templates/sievetemplatewidget.cpp:110
 #, kde-format
 msgid "You can drag and drop element on editor to import template"
 msgstr "אפשר לגרור רכיב לעורך כדי לייבא תבנית"

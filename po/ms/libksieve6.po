@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-01 00:46+0000\n"
+"POT-Creation-Date: 2026-05-11 00:45+0000\n"
 "PO-Revision-Date: 2005-10-12 09:33+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -2932,7 +2932,7 @@ msgctxt "@title:window"
 msgid "Template"
 msgstr ""
 
-#: ksieveui/templates/sievetemplatewidget.cpp:97
+#: ksieveui/templates/sievetemplatewidget.cpp:110
 #, kde-format
 msgid "You can drag and drop element on editor to import template"
 msgstr ""
