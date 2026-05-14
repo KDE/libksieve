@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2011, 2012, 2013, 2020, 2021, 2023, 2024 g.sora <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2011, 2012, 2013, 2020, 2021, 2023, 2024, 2026 g.sora <g.sora@tiscali.it>
 # Giovanni Sora <g.sora@tioscali.it>, 2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-11 00:45+0000\n"
-"PO-Revision-Date: 2024-08-01 15:38+0200\n"
+"PO-Revision-Date: 2026-05-13 15:12+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: kmanagesieve/session.cpp:91
 #, kde-format
@@ -2626,7 +2626,7 @@ msgstr "Script de Sieve supporta:"
 #, kde-format
 msgctxt "@action"
 msgid "Quick Ask"
-msgstr ""
+msgstr "Demanda rapide"
 
 #: ksieveui/editor/sievetextedit.cpp:334
 #, kde-format
