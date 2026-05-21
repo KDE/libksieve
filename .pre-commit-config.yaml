@@ -20,6 +20,10 @@ repos:
     - id: check-symlinks
     - id: destroyed-symlinks
     - id: check-executables-have-shebangs
+ - repo: https://github.com/fsfe/reuse-tool
+   rev: v6.2.0
+   hooks:
+    - id: reuse-lint-file
  - repo: https://github.com/pre-commit/mirrors-clang-format
    rev: v22.1.5
    hooks:
