@@ -13,4 +13,9 @@ find_dependency(
     "@PIM_VERSION@"
 )
 
+find_dependency(
+    KF6Mime
+    "@KF_MIN_VERSION@"
+)
+
 include("${CMAKE_CURRENT_LIST_DIR}/KPim6KSieveCoreTargets.cmake")

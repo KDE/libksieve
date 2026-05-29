@@ -93,12 +93,12 @@ target_link_libraries(
         Qt::Core
         KPim6::KManageSieve
         KPim6::KSieve
+        KF6::Mime
     PRIVATE
         KPim6::PimCommon
         KF6::I18n
         KF6::CoreAddons
         KPim6::MailTransport
-        KF6::Mime
         KPim6::IdentityManagementCore
 )
 

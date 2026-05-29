@@ -370,6 +370,7 @@ target_link_libraries(
         KPim6::KManageSieve
         KPim6::KSieve
         KPim6::PimCommon
+        KF6::SyntaxHighlighting
     PRIVATE
         KPim6::Libkdepim
         KF6::Archive
@@ -384,7 +385,6 @@ target_link_libraries(
         KF6::I18n
         KF6::SonnetUi
         Qt::PrintSupport
-        KF6::SyntaxHighlighting
         KF6::ColorScheme
         KF6::TextAddonsWidgets
         KF6::TextCustomEditor
