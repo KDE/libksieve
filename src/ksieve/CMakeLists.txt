@@ -23,6 +23,7 @@ target_sources(
         parser_p.h
         error.cpp
         error.h
+        scriptbuilder.h
 )
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
     set_target_properties(
@@ -51,7 +52,6 @@ set_target_properties(
         EXPORT_NAME
             KSieve
 )
-
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6KSieve")
 
 configure_package_config_file(
@@ -75,12 +75,29 @@ install(
     NAMESPACE KPim6::
 )
 
+ecm_generate_headers(ksieve_Camelcase_HEADERS
+    HEADER_NAMES
+    ScriptBuilder
+    REQUIRED_HEADERS ksieve_HEADERS
+    PREFIX KSieve
+)
+
 install(
     FILES
         ${CMAKE_CURRENT_BINARY_DIR}/libksieve_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieve
+        ${ksieve_Camelcase_HEADERS}
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieve/KSieve
     COMPONENT Devel
 )
+
+install(FILES ${ksieve_HEADERS} DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieve/ksieve COMPONENT Devel)
+
+target_include_directories(
+    KPim6KSieve
+    INTERFACE
+        "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieve/;${KDE_INSTALL_INCLUDEDIR}/KPim6/KSieve>"
+)
+target_include_directories(KPim6KSieve PUBLIC "$<BUILD_INTERFACE:${libksieve_SOURCE_DIR}/src/ksieve>")
 
 target_include_directories(
     KPim6KSieve
