@@ -6,7 +6,7 @@
 
 #pragma once
 #include "ksievecore_export.h"
-#include "scriptbuilder.h"
+#include <KSieve/ScriptBuilder>
 #include <QString>
 class QXmlStreamWriter;
 namespace KSieveCore
