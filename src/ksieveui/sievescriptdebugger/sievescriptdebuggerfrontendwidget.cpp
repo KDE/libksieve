@@ -163,14 +163,9 @@ void SieveScriptDebuggerFrontEndWidget::slotDebugScript()
     mProcess = new QProcess(this);
     temporaryFile->setParent(mProcess);
 
-    QString extensionList;
-    if (!mExtension->text().trimmed().isEmpty()) {
-        extensionList = u"-x \"%1\""_s.arg(mExtension->text());
-    }
-
     QStringList arguments;
-    if (!extensionList.isEmpty()) {
-        arguments << extensionList;
+    if (!mExtension->text().trimmed().isEmpty()) {
+        arguments << u"-x"_s << mExtension->text().trimmed();
     }
 
     arguments << temporaryFile->fileName() << mEmailPath->url().toLocalFile();
