@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-11 00:45+0000\n"
+"POT-Creation-Date: 2026-06-27 00:45+0000\n"
 "PO-Revision-Date: 2007-01-01 11:45+0330\n"
 "Last-Translator: Nasim Daniarzadeh <daniarzadeh@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -2839,7 +2839,7 @@ msgstr ""
 msgid "Failed to open temporary file."
 msgstr ""
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:225
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:220
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr ""

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-11 00:45+0000\n"
+"POT-Creation-Date: 2026-06-27 00:45+0000\n"
 "PO-Revision-Date: 2025-11-08 21:10-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -3091,7 +3091,7 @@ msgstr "O arquivo de e-mail deve ser instalado localmente."
 msgid "Failed to open temporary file."
 msgstr "Falha ao abrir o arquivo temporário."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:225
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:220
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr "O script ainda contém o método de depuração, que deve ser removido."

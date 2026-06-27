@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-11 00:45+0000\n"
+"POT-Creation-Date: 2026-06-27 00:45+0000\n"
 "PO-Revision-Date: 2025-11-07 21:26+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -3076,7 +3076,7 @@ msgstr "Az e-mail-fájlt helyben kell telepíteni."
 msgid "Failed to open temporary file."
 msgstr "Nem sikerült megnyitni az átmeneti fájlt."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:225
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:220
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr ""
