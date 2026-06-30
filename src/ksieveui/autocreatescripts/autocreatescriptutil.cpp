@@ -221,7 +221,7 @@ KSieveUi::AbstractSelectEmailLineEdit *AutoCreateScriptUtil::createSelectEmailsW
 
 AbstractRegexpEditorLineEdit *AutoCreateScriptUtil::createRegexpEditorLineEdit(QWidget *parent)
 {
-    auto *edit = new KSieveUi::RegexpEditorLineEdit(parent);
+    auto edit = new KSieveUi::RegexpEditorLineEdit(parent);
     return edit;
 }
 
