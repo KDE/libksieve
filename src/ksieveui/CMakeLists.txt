@@ -525,3 +525,24 @@ install(
     NAMESPACE KPim6::
 )
 ecm_generate_qdoc(KPim6KSieveUi ksieveui.qdocconf)
+
+ecm_add_installed_library_check(KPim6KSieveUi
+    PACKAGE_NAME "KPim6KSieveUi"
+    PACKAGE_VERSION ${LIBKSIEVECORE_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KPim6::"
+)
+
+ecm_installed_library_check_include_strings(KPim6KSieveUi
+    HEADERS         ${KSIEVEUI_INCLUDE_FILES}
+    PREFIX ksieveui
+)
+
+ecm_installed_library_check_include_strings(KPim6KSieveUi
+   HEADERS
+   ${ksieveui_Camelcasewidgets_HEADERS}
+   ${ksieveui_Camelcasedebug_HEADERS}
+   ${ksieveui_Camelcasevacation_HEADERS}
+   ${ksieveui_CamelCase_HEADERS}
+   ${ksieveui_Camelcaseeditor_HEADERS}
+    PREFIX KSieveUi
+)

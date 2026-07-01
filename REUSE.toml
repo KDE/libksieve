@@ -34,3 +34,9 @@ path = ["po/**"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "none"
 SPDX-License-Identifier = "LGPL-2.0-or-later"
+
+[[annotations]]
+path = ["README-ECMInstalledLibraryCheck.md"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Laurent Montel <montel@kde.org>"
+SPDX-License-Identifier = "BSD-3-Clause"

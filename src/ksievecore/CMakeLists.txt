@@ -247,3 +247,24 @@ install(
     NAMESPACE KPim6::
 )
 ecm_generate_qdoc(KPim6KSieveCore ksievecore.qdocconf)
+
+ecm_add_installed_library_check(KPim6KSieveCore
+	PACKAGE_NAME "KPim6KSieveCore"
+    PACKAGE_VERSION ${LIBKSIEVECORE_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KPim6::"
+)
+
+ecm_installed_library_check_include_strings(KPim6KSieveCore
+    HEADERS         ${KSIEVECORE_INCLUDE_FILES}
+    PREFIX ksievecore
+)
+
+ecm_installed_library_check_include_strings(KPim6KSieveCore
+   HEADERS
+   ${ksievecore_Camelcaseimapinstance_HEADERS}
+   ${ksievecore_Camelmanagescriptsjob_HEADERS}
+   ${ksievecore_Camelcaseutil_HEADERS}
+   ${ksievecore_Camelcasescriptsparsing_HEADERS}
+   ${ksievecore_Camelcasevacation_HEADERS}
+    PREFIX KSieveCore
+)
