@@ -528,7 +528,7 @@ ecm_generate_qdoc(KPim6KSieveUi ksieveui.qdocconf)
 
 ecm_add_installed_library_check(KPim6KSieveUi
     PACKAGE_NAME "KPim6KSieveUi"
-    PACKAGE_VERSION ${LIBKSIEVECORE_VERSION}
+    PACKAGE_VERSION ${LIBKSIEVEUI_VERSION}
     PACKAGE_TARGET_NAMESPACE "KPim6::"
 )
 
