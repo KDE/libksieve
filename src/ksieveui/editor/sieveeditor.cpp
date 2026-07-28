@@ -6,7 +6,6 @@
 #include "sieveeditor.h"
 using namespace Qt::Literals::StringLiterals;
 
-#include "sieve-editor.h"
 #include "sieveeditorwidget.h"
 
 #include <KLocalizedString>

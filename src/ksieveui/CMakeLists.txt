@@ -9,13 +9,6 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVEUI
 
 add_library(KPim6KSieveUi)
 add_library(KPim6::KSieveUi ALIAS KPim6KSieveUi)
-if(KDEPIM_ENTERPRISE_BUILD)
-    set(USE_GRAPHICAL_SIEVE_EDITOR true)
-else()
-    set(USE_GRAPHICAL_SIEVE_EDITOR false)
-endif()
-
-configure_file(settings/sieve-editor.kcfg.in ${CMAKE_CURRENT_BINARY_DIR}/sieve-editor.kcfg)
 
 configure_file(config-libksieveui.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-libksieveui.h)
 
@@ -350,8 +343,6 @@ ecm_qt_declare_logging_category(KPim6KSieveUi HEADER libksieveui_debug.h IDENTIF
     OLD_CATEGORY_NAMES log_libksieve LIBKSIEVE_LOG
     EXPORT LIBKSIEVE
 )
-
-kconfig_add_kcfg_files(KPim6KSieveUi settings/sieve-editor.kcfgc)
 
 generate_export_header(KPim6KSieveUi BASE_NAME ksieveui)
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)

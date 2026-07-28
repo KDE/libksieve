@@ -13,7 +13,6 @@ using namespace Qt::Literals::StringLiterals;
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "editor/sieveinfodialog.h"
 #include "scriptsparsing/parsingutil.h"
-#include "sieve-editor.h"
 #include "sieveeditormenubar.h"
 #include "sieveeditortextmodewidget.h"
 
@@ -146,11 +145,7 @@ SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)
     connect(mTextModeWidget, &SieveEditorTextModeWidget::redoAvailable, this, &SieveEditorWidget::redoAvailable);
     connect(mTextModeWidget, &SieveEditorTextModeWidget::copyAvailable, this, &SieveEditorWidget::copyAvailable);
     connect(mTextModeWidget, &SieveEditorTextModeWidget::sieveEditorTabCurrentChanged, this, &SieveEditorWidget::sieveEditorTabCurrentChanged);
-    if (KSieveUi::EditorSettings::useGraphicEditorByDefault()) {
-        changeMode(GraphicMode);
-    } else {
-        changeSwitchButtonText();
-    }
+    changeSwitchButtonText();
 }
 
 SieveEditorWidget::~SieveEditorWidget() = default;
