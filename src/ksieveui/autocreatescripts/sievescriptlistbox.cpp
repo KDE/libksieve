@@ -258,7 +258,7 @@ void SieveScriptListBox::slotNew()
     bool ok;
     const QString newName = QInputDialog::getText(this, i18nc("@title:window", "New Script"), i18n("New script name:"), {}, {}, &ok);
     if (!newName.trimmed().isEmpty() && ok) {
-        createNewScript(newName);
+        std::ignore = createNewScript(newName);
         Q_EMIT valueChanged();
     }
 }
