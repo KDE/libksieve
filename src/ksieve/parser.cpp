@@ -82,11 +82,15 @@ static inline unsigned long factorForQuantifier(char ch)
     }
 }
 
+QT_WARNING_PUSH
+QT_WARNING_DISABLE_GCC("-Wimplicit-const-int-float-conversion")
+QT_WARNING_DISABLE_CLANG("-Wimplicit-const-int-float-conversion")
 static inline bool willOverflowULong(unsigned long result, unsigned long add)
 {
     static const auto maxULongByTen = (unsigned long)(ULONG_MAX / 10.0);
     return result > maxULongByTen || ULONG_MAX - 10 * result < add;
 }
+QT_WARNING_POP
 
 namespace KSieve
 {
