@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-27 00:45+0000\n"
+"POT-Creation-Date: 2026-07-29 00:47+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -2376,24 +2376,24 @@ msgstr ""
 "活动脚本：“%1”\n"
 "\n"
 
-#: ksieveui/editor/sieveeditor.cpp:41
+#: ksieveui/editor/sieveeditor.cpp:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr ""
 
-#: ksieveui/editor/sieveeditor.cpp:189
+#: ksieveui/editor/sieveeditor.cpp:188
 #, kde-format
 msgid "Script is modified. Do you want to close editor?"
 msgstr ""
 
-#: ksieveui/editor/sieveeditor.cpp:191
+#: ksieveui/editor/sieveeditor.cpp:190
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Editor"
 msgstr ""
 
-#: ksieveui/editor/sieveeditor.cpp:192
+#: ksieveui/editor/sieveeditor.cpp:191
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Close"
@@ -2558,46 +2558,46 @@ msgctxt "@title:window"
 msgid "Parsing error"
 msgstr ""
 
-#: ksieveui/editor/sieveeditorwidget.cpp:47
+#: ksieveui/editor/sieveeditorwidget.cpp:46
 #, kde-format
 msgctxt "@action"
 msgid "Check Syntax"
 msgstr ""
 
-#: ksieveui/editor/sieveeditorwidget.cpp:52
+#: ksieveui/editor/sieveeditorwidget.cpp:51
 #, kde-format
 msgid "Import…"
 msgstr ""
 
-#: ksieveui/editor/sieveeditorwidget.cpp:54
+#: ksieveui/editor/sieveeditorwidget.cpp:53
 #, kde-format
 msgctxt "@action"
 msgid "Create Rules Graphically…"
 msgstr ""
 
-#: ksieveui/editor/sieveeditorwidget.cpp:68
+#: ksieveui/editor/sieveeditorwidget.cpp:67
 #, kde-format
 msgid "Share…"
 msgstr ""
 
-#: ksieveui/editor/sieveeditorwidget.cpp:74
+#: ksieveui/editor/sieveeditorwidget.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Server Info"
 msgstr ""
 
-#: ksieveui/editor/sieveeditorwidget.cpp:118
+#: ksieveui/editor/sieveeditorwidget.cpp:117
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Script name:"
 msgstr ""
 
-#: ksieveui/editor/sieveeditorwidget.cpp:394
+#: ksieveui/editor/sieveeditorwidget.cpp:389
 #, kde-format
 msgid "Simple Mode"
 msgstr "简单模式"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:394
+#: ksieveui/editor/sieveeditorwidget.cpp:389
 #, kde-format
 msgid "Advanced Mode"
 msgstr "高级模式"

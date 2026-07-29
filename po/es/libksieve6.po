@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-27 00:45+0000\n"
+"POT-Creation-Date: 2026-07-29 00:47+0000\n"
 "PO-Revision-Date: 2025-09-25 00:14+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2589,24 +2589,24 @@ msgstr ""
 "Gion activo: «%1»\n"
 "\n"
 
-#: ksieveui/editor/sieveeditor.cpp:41
+#: ksieveui/editor/sieveeditor.cpp:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr "Editar guion Sieve"
 
-#: ksieveui/editor/sieveeditor.cpp:189
+#: ksieveui/editor/sieveeditor.cpp:188
 #, kde-format
 msgid "Script is modified. Do you want to close editor?"
 msgstr "El guion se ha modificado. ¿Quiere cerrar el editor?"
 
-#: ksieveui/editor/sieveeditor.cpp:191
+#: ksieveui/editor/sieveeditor.cpp:190
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Editor"
 msgstr "Cerrar el editor"
 
-#: ksieveui/editor/sieveeditor.cpp:192
+#: ksieveui/editor/sieveeditor.cpp:191
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Close"
@@ -2773,46 +2773,46 @@ msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "Error de análisis"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:47
+#: ksieveui/editor/sieveeditorwidget.cpp:46
 #, kde-format
 msgctxt "@action"
 msgid "Check Syntax"
 msgstr "Compruebe la sintaxis"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:52
+#: ksieveui/editor/sieveeditorwidget.cpp:51
 #, kde-format
 msgid "Import…"
 msgstr "Importar…"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:54
+#: ksieveui/editor/sieveeditorwidget.cpp:53
 #, kde-format
 msgctxt "@action"
 msgid "Create Rules Graphically…"
 msgstr "Crear reglas gráficamente…"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:68
+#: ksieveui/editor/sieveeditorwidget.cpp:67
 #, kde-format
 msgid "Share…"
 msgstr "Compartir…"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:74
+#: ksieveui/editor/sieveeditorwidget.cpp:73
 #, kde-format
 msgctxt "@action"
 msgid "Server Info"
 msgstr "Información del servidor"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:118
+#: ksieveui/editor/sieveeditorwidget.cpp:117
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Script name:"
 msgstr "Nombre de guion:"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:394
+#: ksieveui/editor/sieveeditorwidget.cpp:389
 #, kde-format
 msgid "Simple Mode"
 msgstr "Modo sencillo"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:394
+#: ksieveui/editor/sieveeditorwidget.cpp:389
 #, kde-format
 msgid "Advanced Mode"
 msgstr "Modo avanzado"
