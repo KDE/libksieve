@@ -1654,7 +1654,8 @@ msgid ""
 "existence of a given extension prior to actually using it."
 msgstr ""
 "Der Test „ihave“ ermöglicht in Sieve-Skripten die Überprüfung, ob angegebene "
-"Erweiterungen vorhanden sind, bevor sie tatsächlich im Skript benutzt werden."
+"Erweiterungen vorhanden sind, bevor sie tatsächlich im Skript verwendet "
+"werden."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmailboxexists.cpp:22
 #, kde-format
