@@ -11,6 +11,7 @@
 
 #include <KLocalizedString>
 #include <KSharedConfig>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 #include <KConfigGroup>
 #include <KWindowConfig>
@@ -63,10 +64,7 @@ void SieveScriptParsingErrorDialog::setError(QString script, QString error)
 void SieveScriptParsingErrorDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(800, 600));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveScriptParsingErrorDialogGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(mySieveScriptParsingErrorDialogGroupName), 800, 600);
 }
 
 void SieveScriptParsingErrorDialog::writeConfig()

@@ -15,10 +15,11 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 namespace
 {
-static const char myConfigGroupName[] = "SieveInfoDialog";
+const char myConfigGroupName[] = "SieveInfoDialog";
 }
 
 using namespace Qt::Literals::StringLiterals;
@@ -54,10 +55,7 @@ void SieveInfoDialog::setServerInfo(const QStringList &serverInfos)
 void SieveInfoDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(400, 300));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myConfigGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myConfigGroupName), 400, 300);
 }
 
 void SieveInfoDialog::writeConfig()

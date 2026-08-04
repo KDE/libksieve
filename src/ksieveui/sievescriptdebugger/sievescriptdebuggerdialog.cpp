@@ -5,7 +5,6 @@
 */
 
 #include "sievescriptdebuggerdialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sievescriptdebuggerwidget.h"
 
@@ -19,11 +18,13 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 namespace
 {
-static const char mySieveScriptDebuggerDialog[] = "SieveScriptDebuggerDialog";
+const char mySieveScriptDebuggerDialog[] = "SieveScriptDebuggerDialog";
 }
 SieveScriptDebuggerDialog::SieveScriptDebuggerDialog(QWidget *parent)
     : QDialog(parent)
@@ -106,10 +107,8 @@ QString SieveScriptDebuggerDialog::script() const
 void SieveScriptDebuggerDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(800, 600));
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(mySieveScriptDebuggerDialog), 800, 600);
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveScriptDebuggerDialog));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
     const QList<int> size{100, 400};
     mSieveScriptDebuggerWidget->setSplitterSizes(group.readEntry("Splitter", size));
 }

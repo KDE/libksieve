@@ -29,12 +29,12 @@
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
-
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 namespace
 {
-static const char mySieveTemplateEditDialogGroupName[] = "SieveTemplateEditDialog";
+const char mySieveTemplateEditDialogGroupName[] = "SieveTemplateEditDialog";
 }
 SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTemplate)
     : QDialog(parent)
@@ -114,10 +114,7 @@ SieveTemplateEditDialog::~SieveTemplateEditDialog()
 void SieveTemplateEditDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(600, 400));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveTemplateEditDialogGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(mySieveTemplateEditDialogGroupName), 600, 400);
 }
 
 void SieveTemplateEditDialog::writeConfig()

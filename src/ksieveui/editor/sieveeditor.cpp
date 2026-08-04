@@ -4,7 +4,6 @@
  */
 
 #include "sieveeditor.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sieveeditorwidget.h"
 
@@ -19,8 +18,10 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 using namespace KSieveUi;
+using namespace Qt::Literals::StringLiterals;
 class KSieveUi::SieveEditorPrivate
 {
 public:
@@ -31,7 +32,7 @@ public:
 };
 namespace
 {
-static const char mySieveEditorGroupName[] = "SieveEditor";
+const char mySieveEditorGroupName[] = "SieveEditor";
 }
 SieveEditor::SieveEditor(QWidget *parent)
     : QDialog(parent)
@@ -108,10 +109,7 @@ void SieveEditor::slotEnableButtonOk(bool b)
 void SieveEditor::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(800, 600));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveEditorGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(mySieveEditorGroupName), 800, 600);
 }
 
 void SieveEditor::writeConfig()

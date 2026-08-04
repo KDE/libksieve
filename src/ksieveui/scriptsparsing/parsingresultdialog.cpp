@@ -5,7 +5,6 @@
 */
 
 #include "parsingresultdialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <PimCommon/PimUtil>
 #include <TextCustomEditor/PlainTextEditor>
@@ -23,11 +22,13 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 namespace
 {
-static const char myParsingResultDialogGroupName[] = "ParsingResultDialog";
+const char myParsingResultDialogGroupName[] = "ParsingResultDialog";
 }
 ParsingResultDialog::ParsingResultDialog(QWidget *parent)
     : QDialog(parent)
@@ -67,10 +68,7 @@ void ParsingResultDialog::setResultParsing(const QString &result)
 void ParsingResultDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(800, 600));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myParsingResultDialogGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myParsingResultDialogGroupName), 800, 600);
 }
 
 void ParsingResultDialog::writeConfig()

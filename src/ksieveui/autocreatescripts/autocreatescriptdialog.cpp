@@ -16,6 +16,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 using namespace KSieveUi;
 namespace
@@ -73,10 +74,7 @@ QString AutoCreateScriptDialog::script(QStringList &required) const
 void AutoCreateScriptDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(800, 600));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myAutoCreateScriptDialogGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myAutoCreateScriptDialogGroupName), 800, 600);
 }
 
 void AutoCreateScriptDialog::writeConfig()

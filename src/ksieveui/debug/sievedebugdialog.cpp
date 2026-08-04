@@ -28,6 +28,7 @@
 #include <QTimer>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 using namespace KSieveUi;
 using namespace Qt::Literals::StringLiterals;
@@ -85,10 +86,7 @@ SieveDebugDialog::~SieveDebugDialog()
 void SieveDebugDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(640, 480));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveDebugDialogGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(mySieveDebugDialogGroupName), 640, 480);
 }
 
 void SieveDebugDialog::writeConfig()

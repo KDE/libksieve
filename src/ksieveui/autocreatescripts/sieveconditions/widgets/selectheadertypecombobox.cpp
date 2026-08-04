@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectheadertypecombobox.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include <KLineEditEventHandler>
@@ -23,11 +22,13 @@ using namespace Qt::Literals::StringLiterals;
 #include <QLabel>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 using namespace KSieveUi;
 namespace
 {
 static const char mySelectFlagsListDialogGroupName[] = "SelectHeadersDialog";
 }
+using namespace Qt::Literals::StringLiterals;
 const KLazyLocalizedString selectMultipleHeaders = kli18n("Select multiple headers…");
 SelectHeadersDialog::SelectHeadersDialog(QWidget *parent)
     : QDialog(parent)
@@ -91,10 +92,7 @@ SelectHeadersDialog::~SelectHeadersDialog()
 void SelectHeadersDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(400, 300));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySelectFlagsListDialogGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(mySelectFlagsListDialogGroupName), 400, 300);
 }
 
 void SelectHeadersDialog::writeConfig()

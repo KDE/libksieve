@@ -5,7 +5,6 @@
 */
 
 #include "multiimapvacationdialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "vacationpagewidget.h"
 #include <KSieveCore/MultiImapVacationManager>
@@ -25,11 +24,13 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTabBar>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 namespace
 {
-static const char myMultiImapVacationDialogGroupName[] = "MultiImapVacationDialog";
+char myMultiImapVacationDialogGroupName[] = "MultiImapVacationDialog";
 }
 class KSieveUi::MultiImapVacationDialogPrivate
 {
@@ -186,10 +187,7 @@ void MultiImapVacationDialog::createPage(const QString &serverName, const KSieve
 void MultiImapVacationDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(600, 400));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myMultiImapVacationDialogGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myMultiImapVacationDialogGroupName), 600, 400);
 }
 
 void MultiImapVacationDialog::writeConfig()
