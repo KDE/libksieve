@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-29 00:47+0000\n"
+"POT-Creation-Date: 2026-08-05 00:47+0000\n"
 "PO-Revision-Date: 2017-12-31 22:42+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -388,7 +388,7 @@ msgstr ""
 "%1"
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
-#: ksieveui/debug/sievedebugdialog.cpp:201
+#: ksieveui/debug/sievedebugdialog.cpp:199
 #: ksieveui/managesievescriptsdialog.cpp:182
 #, kde-format
 msgid ""
@@ -573,7 +573,7 @@ msgstr ""
 "-- [упишите своје име и адресу е‑поште]\n"
 
 # >> @title:window
-#: ksieveui/autocreatescripts/autocreatescriptdialog.cpp:29
+#: ksieveui/autocreatescripts/autocreatescriptdialog.cpp:30
 #, fuzzy, kde-format
 #| msgid "Create sieve filter"
 msgctxt "@title:window"
@@ -1278,50 +1278,50 @@ msgstr "Уметни на почетак"
 msgid "Append at the end"
 msgstr "Прикачи на крај"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:35
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:36
 #, fuzzy, kde-format
 #| msgid "Flags"
 msgctxt "@title:window"
 msgid "Flags"
 msgstr "Заставице"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:91
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:89
 #, kde-format
 msgid "Deleted"
 msgstr "обрисано"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:94
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:92
 #, kde-format
 msgid "Answered"
 msgstr "одговорено"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:97
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:95
 #, kde-format
 msgid "Flagged"
 msgstr "означено"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:100
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:98
 #, kde-format
 msgid "Seen"
 msgstr "погледано"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:105
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:103
 #, kde-format
 msgid "Draft"
 msgstr "нацрт"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:142
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Click on button for selecting flags…"
 msgstr ""
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:146
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
 msgid "…"
 msgstr ""
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:147
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, fuzzy, kde-format
 #| msgid "Set Flags"
 msgctxt "@info:tooltip"
@@ -1500,7 +1500,7 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:25
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:255
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:253
 #, kde-format
 msgid "Date"
 msgstr "Датум"
@@ -1944,77 +1944,77 @@ msgstr "Зона"
 msgid "Weekday"
 msgstr "Дан у седмици"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:31
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:32
 #, fuzzy
 #| msgid "Select multiple headers..."
 msgid "Select multiple headers…"
 msgstr "Изабери више заглавља..."
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:38
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:39
 #, fuzzy, kde-format
 #| msgid "Headers"
 msgctxt "@title:window"
 msgid "Headers"
 msgstr "Заглавља"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:57
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:58
 #, fuzzy, kde-format
 #| msgid "Add new header:"
 msgctxt "@label:textbox"
 msgid "Add new header:"
 msgstr "Додај ново заглавље:"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:245
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:243
 #, kde-format
 msgid "From"
 msgstr "од"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:246
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:244
 #, kde-format
 msgid "To"
 msgstr "за"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:247
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:245
 #, kde-format
 msgid "Reply To"
 msgstr "одговори на"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:246
 #, kde-format
 msgid "Cc"
 msgstr "ЦЦ"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:247
 #, kde-format
 msgid "Bcc"
 msgstr "БЦЦ"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
 #, kde-format
 msgid "Resent From"
 msgstr "Послато поново од"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
 #, kde-format
 msgid "Resent To"
 msgstr "Послато поново за"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
 #, kde-format
 msgid "Sender"
 msgstr "пошиљалац"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:254
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
 #, kde-format
 msgid "Subject"
 msgstr "тема"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:256
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:254
 #, kde-format
 msgid "Message Id"
 msgstr "ИД поруке"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:257
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:255
 #, kde-format
 msgid "Content type"
 msgstr "тип садржаја"
@@ -2304,7 +2304,7 @@ msgid "\"else\" block"
 msgstr "блок else"
 
 # >> @title:window
-#: ksieveui/autocreatescripts/sievescriptdescriptiondialog.cpp:30
+#: ksieveui/autocreatescripts/sievescriptdescriptiondialog.cpp:31
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title:window"
@@ -2479,37 +2479,37 @@ msgstr "Блок elsif"
 msgid "Block \"Else\""
 msgstr "Блок else"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:32
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:33
 #, fuzzy, kde-format
 #| msgid "Sieve Parsing Error"
 msgctxt "@title:window"
 msgid "Sieve Parsing Error"
 msgstr "Грешка рашчлањивања сита"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:41
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:42
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:42
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:43
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As…"
 msgstr "Сачувај као..."
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:56
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:57
 #, kde-format
 msgid "Sieve script:"
 msgstr "Сито скрипта:"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:58
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:59
 #, kde-format
 msgid "Errors reported:"
 msgstr "Пријављене грешке:"
 
 #
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:81
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:79
 #, kde-format
 msgid "All Files (*)"
 msgstr "сви фајлови (*)"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:82
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:80
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Log To File"
@@ -2522,14 +2522,14 @@ msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Затвори језичак"
 
-#: ksieveui/debug/sievedebugdialog.cpp:42
+#: ksieveui/debug/sievedebugdialog.cpp:43
 #, fuzzy, kde-format
 #| msgid "Sieve Diagnostics"
 msgctxt "@title:window"
 msgid "Sieve Diagnostics"
 msgstr "Сито дијагностика"
 
-#: ksieveui/debug/sievedebugdialog.cpp:67
+#: ksieveui/debug/sievedebugdialog.cpp:68
 #, fuzzy, kde-format
 #| msgid ""
 #| "Collecting diagnostic information about Sieve support...\n"
@@ -2541,12 +2541,12 @@ msgstr ""
 "Прикупљам дијагностичке податке о подршци за сито...\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:70
+#: ksieveui/debug/sievedebugdialog.cpp:71
 #, kde-format
 msgid "No IMAP resource found."
 msgstr "Нема ниједног ИМАП ресурса."
 
-#: ksieveui/debug/sievedebugdialog.cpp:106
+#: ksieveui/debug/sievedebugdialog.cpp:104
 #, kde-format
 msgid ""
 "Unable to get the info\n"
@@ -2555,18 +2555,18 @@ msgstr ""
 "Не могу да добавим податке.\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:124
+#: ksieveui/debug/sievedebugdialog.cpp:122
 #, fuzzy, kde-format
 #| msgid "Collecting data for account '%1'...\n"
 msgid "Collecting data for account '%1'…\n"
 msgstr "Прикупљам податке за налог „%1“...\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:125
+#: ksieveui/debug/sievedebugdialog.cpp:123
 #, kde-format
 msgid "------------------------------------------------------------\n"
 msgstr "------------------------------------------------------------\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:139
+#: ksieveui/debug/sievedebugdialog.cpp:137
 #, kde-format
 msgid ""
 "(Account does not support Sieve)\n"
@@ -2575,12 +2575,12 @@ msgstr ""
 "(Налог не подржава сито)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:171
+#: ksieveui/debug/sievedebugdialog.cpp:169
 #, kde-format
 msgid "Contents of script '%1':\n"
 msgstr "Садржај скрипте „%1“:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:205
+#: ksieveui/debug/sievedebugdialog.cpp:203
 #, kde-format
 msgid ""
 "(This script is empty)\n"
@@ -2589,7 +2589,7 @@ msgstr ""
 "(Ова скрипта је празна.)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:208
+#: ksieveui/debug/sievedebugdialog.cpp:206
 #, kde-format
 msgid ""
 "------------------------------------------------------------\n"
@@ -2602,22 +2602,22 @@ msgstr ""
 "------------------------------------------------------------\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:226
+#: ksieveui/debug/sievedebugdialog.cpp:224
 #, kde-format
 msgid "Sieve capabilities:\n"
 msgstr "Сито могућности:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:229
+#: ksieveui/debug/sievedebugdialog.cpp:227
 #, kde-format
 msgid "(No special capabilities available)"
 msgstr "(Нису доступне посебне могућности.)"
 
-#: ksieveui/debug/sievedebugdialog.cpp:237
+#: ksieveui/debug/sievedebugdialog.cpp:235
 #, kde-format
 msgid "Available Sieve scripts:\n"
 msgstr "Доступне сито скрипте:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:240
+#: ksieveui/debug/sievedebugdialog.cpp:238
 #, kde-format
 msgid ""
 "(No Sieve scripts available on this server)\n"
@@ -2626,7 +2626,7 @@ msgstr ""
 "(Нема доступних сито скрипти на овом серверу)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:247
+#: ksieveui/debug/sievedebugdialog.cpp:245
 #, kde-format
 msgid ""
 "Active script: '%1'\n"
@@ -2636,28 +2636,28 @@ msgstr ""
 "\n"
 
 # >> @title:window
-#: ksieveui/editor/sieveeditor.cpp:40
+#: ksieveui/editor/sieveeditor.cpp:41
 #, fuzzy, kde-format
 #| msgid "Edit Sieve Script"
 msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr "Уређивање сито скрипте"
 
-#: ksieveui/editor/sieveeditor.cpp:188
+#: ksieveui/editor/sieveeditor.cpp:186
 #, fuzzy, kde-format
 #| msgid "Script is modified. Do you want to close editor ?"
 msgid "Script is modified. Do you want to close editor?"
 msgstr "Скрипта је измењена. Желите ли да затворите уређивач?"
 
 # >> @title:tab
-#: ksieveui/editor/sieveeditor.cpp:190
+#: ksieveui/editor/sieveeditor.cpp:188
 #, fuzzy, kde-format
 #| msgid "Editor"
 msgctxt "@action:button"
 msgid "Close Editor"
 msgstr "Уређивач"
 
-#: ksieveui/editor/sieveeditor.cpp:191
+#: ksieveui/editor/sieveeditor.cpp:189
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Close"
@@ -2889,7 +2889,7 @@ msgstr "Једноставни режим"
 msgid "Advanced Mode"
 msgstr "Напредни режим"
 
-#: ksieveui/editor/sieveinfodialog.cpp:30
+#: ksieveui/editor/sieveinfodialog.cpp:31
 #, fuzzy, kde-format
 #| msgid "Sieve server supports:"
 msgctxt "@title:window"
@@ -3127,39 +3127,39 @@ msgstr ""
 "Сервер јавља:\n"
 "%1"
 
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:35
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:36
 #, fuzzy, kde-format
 #| msgid "Sieve Parsing"
 msgctxt "@title:window"
 msgid "Sieve Parsing"
 msgstr "Рашчлањивање сита"
 
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:85
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:83
 #, kde-format
 msgid "XML Files (*.xml);;All Files (*)"
 msgstr "ИксМЛ фајлови (*.xml);;сви фајлови (*)"
 
 # >> @title:window
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:32
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:33
 #, fuzzy, kde-format
 #| msgid "Debug Sieve Script"
 msgctxt "@title:window"
 msgid "Debug Sieve Script"
 msgstr "Исправљање сито скрипте"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:44
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:45
 #, kde-format
 msgid "Apply Changes"
 msgstr "Примени измене"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:53
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:54
 #, fuzzy, kde-format
 #| msgid "Debug"
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Исправљај"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:54
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:55
 #, kde-format
 msgid "Debug"
 msgstr "Исправљај"
@@ -3321,40 +3321,40 @@ msgstr "Шаблон"
 msgid "You can drag and drop element on editor to import template"
 msgstr "Шаблоне можете увозити превлачењем на уређивач."
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:51
+#: ksieveui/vacation/multiimapvacationdialog.cpp:52
 #, fuzzy, kde-format
 #| msgid "Configure \"Out of Office\" Replies"
 msgctxt "@title:window"
 msgid "Configure \"Out of Office\" Replies"
 msgstr "Подешавање одговора ван‑канцеларије"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:80
+#: ksieveui/vacation/multiimapvacationdialog.cpp:81
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr ""
 
 # >> @title:group
-#: ksieveui/vacation/multiimapvacationdialog.cpp:81
+#: ksieveui/vacation/multiimapvacationdialog.cpp:82
 #, fuzzy, kde-format
 #| msgid "Conditions"
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Услови"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:82
+#: ksieveui/vacation/multiimapvacationdialog.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel Editing"
 msgstr ""
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:83
+#: ksieveui/vacation/multiimapvacationdialog.cpp:84
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Cancel"
 msgstr ""
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:113
+#: ksieveui/vacation/multiimapvacationdialog.cpp:114
 #, fuzzy, kde-format
 #| msgid ""
 #| "KMail's Out of Office Reply functionality relies on server-side "

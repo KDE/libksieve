@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-29 00:47+0000\n"
+"POT-Creation-Date: 2026-08-05 00:47+0000\n"
 "PO-Revision-Date: 2024-12-25 19:37+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -375,7 +375,7 @@ msgstr ""
 "%1"
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
-#: ksieveui/debug/sievedebugdialog.cpp:201
+#: ksieveui/debug/sievedebugdialog.cpp:199
 #: ksieveui/managesievescriptsdialog.cpp:182
 #, kde-format
 msgid ""
@@ -544,7 +544,7 @@ msgstr ""
 "भवतः निश्छलतया, २.\n"
 "-- \"अत्र स्वनाम ईमेल-सङ्केतं च प्रविशतु\" ।\n"
 
-#: ksieveui/autocreatescripts/autocreatescriptdialog.cpp:29
+#: ksieveui/autocreatescripts/autocreatescriptdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Sieve Filter"
@@ -1217,49 +1217,49 @@ msgstr "आरम्भे निवेशयन्तु"
 msgid "Append at the end"
 msgstr "अन्ते योजयतु"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:35
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Flags"
 msgstr "ध्वजाः"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:91
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:89
 #, kde-format
 msgid "Deleted"
 msgstr "विलोपितम्"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:94
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:92
 #, kde-format
 msgid "Answered"
 msgstr "उत्तरम् अयच्छत्"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:97
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:95
 #, kde-format
 msgid "Flagged"
 msgstr "ध्वजितम्"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:100
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:98
 #, kde-format
 msgid "Seen"
 msgstr "दृष्ट"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:105
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:103
 #, kde-format
 msgid "Draft"
 msgstr "प्रारूप"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:142
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:140
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Click on button for selecting flags…"
 msgstr "ध्वजानां चयनार्थं बटनं क्लिक् कुर्वन्तु..."
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:146
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:144
 #, kde-format
 msgid "…"
 msgstr "..."
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:147
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:145
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Flags"
@@ -1429,7 +1429,7 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:25
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:255
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:253
 #, kde-format
 msgid "Date"
 msgstr "दिनाङ्कः"
@@ -1856,73 +1856,73 @@ msgstr "क्षेत्रम्"
 msgid "Weekday"
 msgstr "सप्ताहदिवसः"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:31
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:32
 msgid "Select multiple headers…"
 msgstr "बहुशीर्षकाणि चयनं कुर्वन्तु..."
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:38
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Headers"
 msgstr "शीर्षकम्"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:57
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Add new header:"
 msgstr "नूतनं शीर्षकं योजयन्तु :"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:245
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:243
 #, kde-format
 msgid "From"
 msgstr "इत्यस्मात्‌"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:246
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:244
 #, kde-format
 msgid "To"
 msgstr "इत्यस्मै"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:247
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:245
 #, kde-format
 msgid "Reply To"
 msgstr "Reply To"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:246
 #, kde-format
 msgid "Cc"
 msgstr "Cc"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:247
 #, kde-format
 msgid "Bcc"
 msgstr "Bcc"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:248
 #, kde-format
 msgid "Resent From"
 msgstr "Resent From"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
 #, kde-format
 msgid "Resent To"
 msgstr "Resent To इति"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
 #, kde-format
 msgid "Sender"
 msgstr "प्रेषकः"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:254
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
 #, kde-format
 msgid "Subject"
 msgstr "विषयः"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:256
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:254
 #, kde-format
 msgid "Message Id"
 msgstr "सन्देश Id"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:257
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:255
 #, kde-format
 msgid "Content type"
 msgstr "सामग्रीप्रकारः"
@@ -2191,7 +2191,7 @@ msgstr "\"elsif\" ब्लॉक"
 msgid "\"else\" block"
 msgstr "\"अन्यथा\" अवरोधः"
 
-#: ksieveui/autocreatescripts/sievescriptdescriptiondialog.cpp:30
+#: ksieveui/autocreatescripts/sievescriptdescriptiondialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Description"
@@ -2352,34 +2352,34 @@ msgstr "खण्ड \"एलसिफ\" ."
 msgid "Block \"Else\""
 msgstr "\"अन्यथा\" अवरोधः ।"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:32
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Parsing Error"
 msgstr "चलनी पार्सिंग त्रुटि"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:41
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:42
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:42
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:43
 #, kde-format
 msgid "Save As…"
 msgstr "Save As..."
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:56
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:57
 #, kde-format
 msgid "Sieve script:"
 msgstr "चलनी लिपि :"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:58
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:59
 #, kde-format
 msgid "Errors reported:"
 msgstr "त्रुटयः निवेदिताः :"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:81
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:79
 #, kde-format
 msgid "All Files (*)"
 msgstr "सर्वाणि सञ्चिकाः (*) ."
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:82
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:80
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Log To File"
@@ -2392,13 +2392,13 @@ msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "ट्याब् बन्दं कुर्वन्तु"
 
-#: ksieveui/debug/sievedebugdialog.cpp:42
+#: ksieveui/debug/sievedebugdialog.cpp:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Diagnostics"
 msgstr "चलनी निदान"
 
-#: ksieveui/debug/sievedebugdialog.cpp:67
+#: ksieveui/debug/sievedebugdialog.cpp:68
 #, kde-format
 msgid ""
 "Collecting diagnostic information about Sieve support…\n"
@@ -2407,12 +2407,12 @@ msgstr ""
 "Sieve समर्थनस्य विषये निदानसूचनाः संग्रहयन्...\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:70
+#: ksieveui/debug/sievedebugdialog.cpp:71
 #, kde-format
 msgid "No IMAP resource found."
 msgstr "IMAP संसाधनं न लब्धम्।"
 
-#: ksieveui/debug/sievedebugdialog.cpp:106
+#: ksieveui/debug/sievedebugdialog.cpp:104
 #, kde-format
 msgid ""
 "Unable to get the info\n"
@@ -2421,19 +2421,19 @@ msgstr ""
 "सूचनां प्राप्तुं असमर्थः\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:124
+#: ksieveui/debug/sievedebugdialog.cpp:122
 #, kde-format
 msgid "Collecting data for account '%1'…\n"
 msgstr "'%1' खातेः कृते आँकडानां संग्रहणं...\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:125
+#: ksieveui/debug/sievedebugdialog.cpp:123
 #, kde-format
 msgid "------------------------------------------------------------\n"
 msgstr ""
 "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- "
 "----------- ९.\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:139
+#: ksieveui/debug/sievedebugdialog.cpp:137
 #, kde-format
 msgid ""
 "(Account does not support Sieve)\n"
@@ -2442,12 +2442,12 @@ msgstr ""
 "(लेखा चलनी समर्थयति न)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:171
+#: ksieveui/debug/sievedebugdialog.cpp:169
 #, kde-format
 msgid "Contents of script '%1':\n"
 msgstr "'%1' स्क्रिप्ट् इत्यस्य विषयवस्तु:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:205
+#: ksieveui/debug/sievedebugdialog.cpp:203
 #, kde-format
 msgid ""
 "(This script is empty)\n"
@@ -2456,7 +2456,7 @@ msgstr ""
 "(इयं लिपिः शून्या अस्ति)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:208
+#: ksieveui/debug/sievedebugdialog.cpp:206
 #, kde-format
 msgid ""
 "------------------------------------------------------------\n"
@@ -2471,22 +2471,22 @@ msgstr ""
 "----------- ९.\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:226
+#: ksieveui/debug/sievedebugdialog.cpp:224
 #, kde-format
 msgid "Sieve capabilities:\n"
 msgstr "चलनी क्षमता : १.\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:229
+#: ksieveui/debug/sievedebugdialog.cpp:227
 #, kde-format
 msgid "(No special capabilities available)"
 msgstr "(विशेषक्षमता उपलब्धा नास्ति)"
 
-#: ksieveui/debug/sievedebugdialog.cpp:237
+#: ksieveui/debug/sievedebugdialog.cpp:235
 #, kde-format
 msgid "Available Sieve scripts:\n"
 msgstr "उपलब्धाः चलनीलिप्याः : १.\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:240
+#: ksieveui/debug/sievedebugdialog.cpp:238
 #, kde-format
 msgid ""
 "(No Sieve scripts available on this server)\n"
@@ -2495,7 +2495,7 @@ msgstr ""
 "(अस्मिन् सर्वरे कोऽपि Sieve स्क्रिप्ट् उपलब्धः नास्ति)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:247
+#: ksieveui/debug/sievedebugdialog.cpp:245
 #, kde-format
 msgid ""
 "Active script: '%1'\n"
@@ -2504,24 +2504,24 @@ msgstr ""
 "सक्रियस्क्रिप्ट्: '%1'.\n"
 "\n"
 
-#: ksieveui/editor/sieveeditor.cpp:40
+#: ksieveui/editor/sieveeditor.cpp:41
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr "चलनी स्क्रिप्ट सम्पादयतु"
 
-#: ksieveui/editor/sieveeditor.cpp:188
+#: ksieveui/editor/sieveeditor.cpp:186
 #, kde-format
 msgid "Script is modified. Do you want to close editor?"
 msgstr "स्क्रिप्ट् परिवर्तिता अस्ति। सम्पादकं बन्दं कर्तुम् इच्छति वा ?"
 
-#: ksieveui/editor/sieveeditor.cpp:190
+#: ksieveui/editor/sieveeditor.cpp:188
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Editor"
 msgstr "सम्पादकं बन्दं कुर्वन्तु"
 
-#: ksieveui/editor/sieveeditor.cpp:191
+#: ksieveui/editor/sieveeditor.cpp:189
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Close"
@@ -2732,7 +2732,7 @@ msgstr "सरल मोड"
 msgid "Advanced Mode"
 msgstr "उन्नत मोड"
 
-#: ksieveui/editor/sieveinfodialog.cpp:30
+#: ksieveui/editor/sieveinfodialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Support"
@@ -2943,35 +2943,35 @@ msgstr ""
 "सर्वरः प्रतिवदति स्म यत् -\n"
 "%1"
 
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:35
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:36
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Parsing"
 msgstr "चलनी पार्सिंग"
 
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:85
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:83
 #, kde-format
 msgid "XML Files (*.xml);;All Files (*)"
 msgstr "XML सञ्चिकाः (*.xml);;सर्व सञ्चिकाः (*)"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:32
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug Sieve Script"
 msgstr "चलनी स्क्रिप्ट् त्रुटिनिवारणं कुर्वन्तु"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:44
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:45
 #, kde-format
 msgid "Apply Changes"
 msgstr "परिवर्तनं प्रयोजयन्तु"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:53
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "त्रुटिनिवारणम्"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:54
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:55
 #, kde-format
 msgid "Debug"
 msgstr "त्रुटिनिवारणम्"
@@ -3108,37 +3108,37 @@ msgstr "टेम्पलेट"
 msgid "You can drag and drop element on editor to import template"
 msgstr "टेम्पलेट् आयातयितुं एडिटर् इत्यत्र एलिमेण्ट् कर्षितुं पातयितुं च शक्नुवन्ति"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:51
+#: ksieveui/vacation/multiimapvacationdialog.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure \"Out of Office\" Replies"
 msgstr "\"कार्यालयात् बहिः\" उत्तराणि विन्यस्यताम्"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:80
+#: ksieveui/vacation/multiimapvacationdialog.cpp:81
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr "किं भवन्तः वास्तवमेव रद्दं कर्तुम् इच्छन्ति ?"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:81
+#: ksieveui/vacation/multiimapvacationdialog.cpp:82
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "पुष्टिः"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:82
+#: ksieveui/vacation/multiimapvacationdialog.cpp:83
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel Editing"
 msgstr "सम्पादनं रद्दं कुर्वन्तु"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:83
+#: ksieveui/vacation/multiimapvacationdialog.cpp:84
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Cancel"
 msgstr "रद्दं न कुर्वन्तु"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:113
+#: ksieveui/vacation/multiimapvacationdialog.cpp:114
 #, kde-format
 msgctxt "@label:textbox"
 msgid ""
