@@ -283,12 +283,12 @@ msgstr "المقارن \"%1\" ليس متاح"
 #: ksieve/error.cpp:190
 #, kde-format
 msgid "Site Policy Limit Violation: Test nesting too deep (max. %1)"
-msgstr "انتهاك سياسة الموقع: تعشيش الاختبار عميق جداً (الحد الأقصى %1)"
+msgstr "انتهاك سياسة الموقع: تعشيش الاختبار عميق جدًا (الحد الأقصى %1)"
 
 #: ksieve/error.cpp:193
 #, kde-format
 msgid "Site Policy Limit Violation: Block nesting too deep (max. %1)"
-msgstr "انتهاك سياسة الموقع: تعشيش الكتلة عميق جداً (الحد الأقصى %1)"
+msgstr "انتهاك سياسة الموقع: تعشيش الكتلة عميق جدًا (الحد الأقصى %1)"
 
 #: ksieve/error.cpp:196
 #, kde-format
@@ -323,7 +323,7 @@ msgstr "اكتشاف حلقة بريد"
 #: ksieve/error.cpp:216
 #, kde-format
 msgid "Site Policy Limit Violation: Too many Actions requested (max. %1)"
-msgstr "انتهاك سياسة الموقع: طلب عدد كبير جداً من الإجراءات (الحد الأقصى %1)"
+msgstr "انتهاك سياسة الموقع: طلب عدد كبير جدًا من الإجراءات (الحد الأقصى %1)"
 
 #: ksieve/error.cpp:219
 #, kde-format
@@ -565,7 +565,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:38
 #, kde-format
 msgid "Too many arguments for SelectConvertParameterWidget, \"%1\""
-msgstr "عدد كبير جداً من المعاملات لـ SelectConvertParameterWidget، \"%1\""
+msgstr "عدد كبير جدًا من المعاملات لـ SelectConvertParameterWidget، \"%1\""
 
 #: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:61
 #: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:72
@@ -652,7 +652,7 @@ msgid ""
 "Too many arguments found for \"%1\", max value is %2, number of value found "
 "%3 for %4"
 msgstr ""
-"وجدَت معاملات كثيرة جداً لـ \"%1\"، القيمة القصوى هي %2، وعدد القيم التي وجدت "
+"وجدَت معاملات كثيرة جدًا لـ \"%1\"، القيمة القصوى هي %2، وعدد القيم التي وجدت "
 "%3 لـ %4"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:118
@@ -708,7 +708,7 @@ msgstr "القيمة:"
 #, kde-format
 msgid ""
 "The addheader action adds a header field to the existing message header."
-msgstr "يضيف إجراء addheader حقلاً رأسياً إلى رأس الرسالة الموجود."
+msgstr "يضيف إجراء addheader حقلًا رأسيًا إلى رأس الرسالة الموجود."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:23
 #, kde-format
@@ -905,7 +905,7 @@ msgid ""
 "in addition to whatever else is happening to the message."
 msgstr ""
 "إذا حدد الكلمة المفتاحية الاختيارية \":copy\"، فإن الأمر الموسوم لا يلغي "
-"\"الإبقاء\" الضمني. بدلاً من ذلك، فإنه يقوم فقط بتخزين أو إعادة توجيه نسخة "
+"\"الإبقاء\" الضمني. بدلًا من ذلك، فإنه يقوم فقط بتخزين أو إعادة توجيه نسخة "
 "بالإضافة إلى أي شيء آخر يحدث للرسالة."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:46
@@ -915,7 +915,7 @@ msgid ""
 "actions, if no filtering happens at all; generally, this simply means to "
 "file the message into the user's main mailbox."
 msgstr ""
-"إجراء \"keep\" هو أي إجراء يؤخذ بدلاً من جميع الإجراءات الأخرى، إذا لم يحدث "
+"إجراء \"keep\" هو أي إجراء يؤخذ بدلًا من جميع الإجراءات الأخرى، إذا لم يحدث "
 "أي تصفية على الإطلاق؛ بشكل عام، هذا يعني ببساطة إرسال الرسالة إلى صندوق "
 "البريد الرئيس للمستخدم."
 
@@ -979,7 +979,7 @@ msgid ""
 "whatever else is happening to the message."
 msgstr ""
 "إذا حددت الكلمة المفتاحية الاختيارية \":copy\"، فإن الأمر الموسوم لا يلغي "
-"\"الإبقاء\" الضمني. بدلاً من ذلك، فإنه يعيد توجيه نسخة بالإضافة إلى أي شيء "
+"\"الإبقاء\" الضمني. بدلًا من ذلك، فإنه يعيد توجيه نسخة بالإضافة إلى أي شيء "
 "آخر يحدث للرسالة."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:22
@@ -1039,7 +1039,7 @@ msgid ""
 "The \"return\" command stops processing of the immediately included script "
 "only and returns processing control to the script that includes it."
 msgstr ""
-"يوقف الأمر \"return\" معالجة السكربت المضمن فوراً فقط ويعيد التحكم في "
+"يوقف الأمر \"return\" معالجة السكربت المضمن فورًا فقط ويعيد التحكم في "
 "المعالجة إلى السكربت الذي يضمنه."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetflags.cpp:15
@@ -1054,7 +1054,7 @@ msgid ""
 "replaces any previously set flags."
 msgstr ""
 "يُستخدم Setflag لتعيين إشارات أو كلمات أساسية لنظام [IMAP]. يستبدل Setflag أي "
-"إشارات معينة سابقاً."
+"إشارات معينة سابقًا."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:26
 #, kde-format
@@ -1172,7 +1172,7 @@ msgid ""
 msgstr ""
 "من خلال المعامل \":days\"، فإنه يحد عدد الردود التلقائية إلى نفس المرسل "
 "بواحد لكل [n] يومًا، لعدد محدد من الأيام. ولكن هناك حالات يحتاج فيها المرء "
-"إلى المزيد من الدقة، إذا كان يرغب في توليد ردود \"إجازة\" بشكل أكثر تكراراً."
+"إلى المزيد من الدقة، إذا كان يرغب في توليد ردود \"إجازة\" بشكل أكثر تكرارًا."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:204
 #, kde-format
@@ -1346,7 +1346,7 @@ msgid ""
 "Too many argument found for \"%1\", max value is %2, number of value found "
 "%3 for %4"
 msgstr ""
-"وجدَت معاملات كثيرة جداً لـ \"%1\"، القيمة القصوى هي %2، وعدد القيم التي وجدت "
+"وجدَت معاملات كثيرة جدًا لـ \"%1\"، القيمة القصوى هي %2، وعدد القيم التي وجدت "
 "%3 لـ %4"
 
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:48
@@ -1413,7 +1413,7 @@ msgid ""
 "the current date/time rather than a value extracted from the message header."
 msgstr ""
 "اختبار currentdate يشبه اختبار date، باستثناء أنه يعمل على التاريخ/الوقت "
-"الحالي بدلاً من قيمة مستخرجة من رأس الرسالة."
+"الحالي بدلًا من قيمة مستخرجة من رأس الرسالة."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:25
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
@@ -1520,7 +1520,7 @@ msgid ""
 " (if empty it uses internal variable):"
 msgstr ""
 "اسم المتغير\n"
-" (إذا كان فارغاً فإنه يستخدم متغير داخلي):"
+" (إذا كان فارغًا فإنه يستخدم متغير داخلي):"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:129
 #, kde-format
@@ -1568,7 +1568,7 @@ msgid ""
 "existence of a given extension prior to actually using it."
 msgstr ""
 "يوفر اختبار \"ihave\" وسيلة لسكربتات الغربال لاختبار وجود امتداد معين قبل "
-"استخدامه فعلياً."
+"استخدامه فعليًا."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmailboxexists.cpp:22
 #, kde-format
@@ -1616,7 +1616,7 @@ msgid ""
 msgstr ""
 "يسترد هذا الاختبار قيمة تعليق صندوق البريد \"annotation-name\" لصندوق البريد "
 "\"mailbox\". وتقارن القيمة المستردة بـ \"قائمة المفاتيح\". ويعيد الاختبار "
-"صحيحاً إذا كان التعليق موجوداً وقيمته تطابق أيًا من المفاتيح."
+"صحيحًا إذا كان التعليق موجودًا وقيمته تطابق أيًا من المفاتيح."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:24
 #, kde-format
@@ -1691,7 +1691,7 @@ msgid ""
 "tagged argument of \":over\" or \":under\", followed by a number "
 "representing the size of the message."
 msgstr ""
-"يتعامل اختبار \"size\" مع حجم الرسالة. يأخذ إما معاملاً موسومًا بـ \":over\" "
+"يتعامل اختبار \"size\" مع حجم الرسالة. يأخذ إما معاملًا موسومًا بـ \":over\" "
 "أو \":under\"، يتبعه رقم يمثل حجم الرسالة."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:26
@@ -2077,7 +2077,7 @@ msgid ""
 msgstr ""
 "المتغير له نطاق عالمي في جميع السكربتات التي أعلنت عنه بالأمر \"global\". "
 "إذا استخدم سكربت اسم هذا المتغير دون إعلانه كعالمي، فإن الاسم يحدد متغيرًا "
-"منفصلاً وغير عالمي داخل ذلك السكربت."
+"منفصلًا وغير عالمي داخل ذلك السكربت."
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:45
 #, kde-format
@@ -2666,7 +2666,7 @@ msgstr "خطأ أثناء التحليل"
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:279
 #, kde-format
 msgid "Selected text is not a full sieve script"
-msgstr "النص المحدد ليس سكربت غربال كاملاً"
+msgstr "النص المحدد ليس سكربت غربال كاملًا"
 
 #: ksieveui/editor/sieveeditortextmodewidget.cpp:279
 #, kde-format
@@ -2998,7 +2998,7 @@ msgstr "نص السكربت فارغ."
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:149
 #, kde-format
 msgid "Email file must be installed locally."
-msgstr "يجب تثبيت ملف البريد الإلكتروني محلياً."
+msgstr "يجب تثبيت ملف البريد الإلكتروني محليًا."
 
 #: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:155
 #, kde-format
@@ -3220,7 +3220,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Out-of-office reply still active"
-msgstr "الرد خارج المكتب لا يزال نشطاً"
+msgstr "الرد خارج المكتب لا يزال نشطًا"
 
 #: ksieveui/vacation/vacationmanager.cpp:60
 #, kde-format
@@ -3309,7 +3309,7 @@ msgstr "سكربت غربال جديد"
 #: ksieveui/widgets/managesievewidget.cpp:234
 #, kde-format
 msgid "Please enter a name for the new Sieve script:"
-msgstr "رجاءً أدخِل اسماً للسكربت الجديد للغربال:"
+msgstr "رجاءً أدخِل اسمًا للسكربت الجديد للغربال:"
 
 #: ksieveui/widgets/managesievewidget.cpp:236
 #, kde-format
@@ -3319,7 +3319,7 @@ msgstr "غير مسمّى"
 #: ksieveui/widgets/managesievewidget.cpp:241
 #, kde-format
 msgid "Empty name is not a valid name"
-msgstr "الاسم الفارغ ليس اسماً صالحاً"
+msgstr "الاسم الفارغ ليس اسمًا صالحًا"
 
 #: ksieveui/widgets/managesievewidget.cpp:248
 #, kde-format
@@ -3345,7 +3345,7 @@ msgstr "اسم السّكربت:"
 #: ksieveui/widgets/managesievewidget.cpp:507
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
-msgstr "هل تريد حقاً حذف السكربت \"%1\" من الخادم؟"
+msgstr "هل تريد حقًا حذف السكربت \"%1\" من الخادم؟"
 
 #: ksieveui/widgets/managesievewidget.cpp:508
 #, kde-format
