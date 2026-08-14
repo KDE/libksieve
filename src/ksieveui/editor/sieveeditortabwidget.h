@@ -82,5 +82,6 @@ private:
     KSIEVEUI_NO_EXPORT void slotCloseAllTab();
     KSIEVEUI_NO_EXPORT void slotCloseRequest(int index);
     KSIEVEUI_NO_EXPORT void closeAllTabExcept(int index = -1);
+    KSIEVEUI_NO_EXPORT void deleteWidget(int index);
 };
 }

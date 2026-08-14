@@ -80,6 +80,8 @@ private:
     void initActions();
     void initMenus();
     void slotUpdateActions();
+    void updateEditActionsState(bool editorMode);
+    [[nodiscard]] bool currentPageIsHtmlPage() const;
     QAction *mGoToLine = nullptr;
     QAction *mFindAction = nullptr;
     QAction *mReplaceAction = nullptr;

@@ -30,11 +30,7 @@ void SieveEditorMenuBar::setEditorMode(bool editorMode)
     mGoToLine->setEnabled(editorMode);
     mFindAction->setEnabled(editorMode);
     mReplaceAction->setEnabled(editorMode);
-    mUndoAction->setEnabled(editorMode);
-    mRedoAction->setEnabled(editorMode);
-    mCopyAction->setEnabled(editorMode);
     mPasteAction->setEnabled(editorMode);
-    mCutAction->setEnabled(editorMode);
     mSelectAllAction->setEnabled(editorMode);
     mCommentCodeAction->setEnabled(editorMode);
     mUncommentCodeAction->setEnabled(editorMode);
@@ -45,6 +41,23 @@ void SieveEditorMenuBar::setEditorMode(bool editorMode)
     mWordWrapAction->setEnabled(editorMode);
     mPrintAction->setEnabled(editorMode);
     mPrintPreviewAction->setEnabled(editorMode);
+    updateEditActionsState(editorMode);
+}
+
+bool SieveEditorMenuBar::currentPageIsHtmlPage() const
+{
+    return mTextModeWidget && mTextModeWidget->tabWidget()->currentPageIsHtmlPage();
+}
+
+void SieveEditorMenuBar::updateEditActionsState(bool editorMode)
+{
+    // Undo/redo/cut/copy don't depend on the current page only, but on what the page actually contains.
+    const bool enabled = editorMode && mTextModeWidget;
+    const bool hasSelection = enabled && mTextModeWidget->hasSelection();
+    mUndoAction->setEnabled(enabled && mTextModeWidget->isUndoAvailable());
+    mRedoAction->setEnabled(enabled && mTextModeWidget->isRedoAvailable());
+    mCopyAction->setEnabled(hasSelection);
+    mCutAction->setEnabled(hasSelection && !currentPageIsHtmlPage());
 }
 
 void SieveEditorMenuBar::initActions()
@@ -137,26 +150,23 @@ QAction *SieveEditorMenuBar::printAction() const
 
 void SieveEditorMenuBar::slotUpdateActions()
 {
-    const bool hasActionInHtmlModeToo = mTextModeWidget->tabWidget()->currentPageIsHtmlPage();
+    const bool isHtmlPage = currentPageIsHtmlPage();
 
-    mGoToLine->setEnabled(!hasActionInHtmlModeToo);
+    mGoToLine->setEnabled(!isHtmlPage);
     mFindAction->setEnabled(true);
-    mReplaceAction->setEnabled(!hasActionInHtmlModeToo);
-    mUndoAction->setEnabled(!hasActionInHtmlModeToo);
-    mRedoAction->setEnabled(!hasActionInHtmlModeToo);
-    mCopyAction->setEnabled(true);
-    mPasteAction->setEnabled(!hasActionInHtmlModeToo);
-    mCutAction->setEnabled(!hasActionInHtmlModeToo);
+    mReplaceAction->setEnabled(!isHtmlPage);
+    mPasteAction->setEnabled(!isHtmlPage);
     mSelectAllAction->setEnabled(true);
-    mCommentCodeAction->setEnabled(!hasActionInHtmlModeToo);
-    mUncommentCodeAction->setEnabled(!hasActionInHtmlModeToo);
+    mCommentCodeAction->setEnabled(!isHtmlPage);
+    mUncommentCodeAction->setEnabled(!isHtmlPage);
     mZoomInAction->setEnabled(true);
     mZoomOutAction->setEnabled(true);
     mZoomResetAction->setEnabled(true);
-    mDebugSieveAction->setEnabled(!hasActionInHtmlModeToo);
-    mWordWrapAction->setEnabled(!hasActionInHtmlModeToo);
-    mPrintAction->setEnabled(!hasActionInHtmlModeToo);
-    mPrintPreviewAction->setEnabled(!hasActionInHtmlModeToo);
+    mDebugSieveAction->setEnabled(!isHtmlPage);
+    mWordWrapAction->setEnabled(!isHtmlPage);
+    mPrintAction->setEnabled(!isHtmlPage);
+    mPrintPreviewAction->setEnabled(!isHtmlPage);
+    updateEditActionsState(true);
 }
 
 QMenu *SieveEditorMenuBar::viewMenu() const
@@ -279,7 +289,8 @@ void SieveEditorMenuBar::slotRedoAvailable(bool b)
 
 void SieveEditorMenuBar::slotCopyAvailable(bool b)
 {
-    mCutAction->setEnabled(b);
+    // The help page reports a selection too, but it can't be cut from.
+    mCutAction->setEnabled(b && !currentPageIsHtmlPage());
     mCopyAction->setEnabled(b);
 }
 

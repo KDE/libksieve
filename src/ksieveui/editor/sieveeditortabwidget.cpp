@@ -160,9 +160,9 @@ void SieveEditorTabWidget::slotLoadFinished(KSieveUi::SieveEditorHelpHtmlWidget 
     const int index = indexOf(widget);
     if (index != -1) {
         setTabIcon(index, QIcon());
-    }
-    if (!success) {
-        setTabText(index, i18n("Error during load page about %1", widget->title()));
+        if (!success) {
+            setTabText(index, i18n("Error during load page about %1", widget->title()));
+        }
     }
 }
 
@@ -198,7 +198,9 @@ void SieveEditorTabWidget::tabInserted(int index)
         tabBar()->show();
     }
     QTabWidget::tabInserted(index);
-    tabBar()->tabButton(0, QTabBar::RightSide)->setEnabled(false);
+    if (auto *btn = tabBar()->tabButton(0, QTabBar::RightSide)) {
+        btn->setEnabled(false);
+    }
 }
 
 #include "moc_sieveeditortabwidget.cpp"
