@@ -5,22 +5,24 @@
 */
 
 #include "sieveeditorwebengineview.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 #include <QContextMenuEvent>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QMenu>
 #include <QWebEngineDownloadRequest>
 #include <QWebEngineProfile>
 #include <QWebEngineSettings>
 using namespace KSieveUi;
 
+using namespace Qt::Literals::StringLiterals;
 SieveEditorWebEngineView::SieveEditorWebEngineView(QWidget *parent)
     : QWebEngineView(parent)
 {
-    auto profile = new QWebEngineProfile(this);
+    auto profile = new QWebEngineProfile;
     auto page = new QWebEnginePage(profile, this);
+    profile->setParent(page); // profile must outlive the page
     page->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     page->settings()->setAttribute(QWebEngineSettings::PluginsEnabled, false);
     page->settings()->setAttribute(QWebEngineSettings::AutoLoadImages, true);
