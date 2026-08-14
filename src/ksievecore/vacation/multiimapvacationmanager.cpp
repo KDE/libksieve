@@ -26,9 +26,9 @@ MultiImapVacationManager::~MultiImapVacationManager() = default;
 void MultiImapVacationManager::checkVacation(const QString &serverName, const QUrl &url)
 {
     ++mNumberOfJobs;
-    if (!mKep14Support.contains(serverName)) {
+    const auto kep14It = mKep14Support.constFind(serverName);
+    if (kep14It == mKep14Support.cend()) {
         auto checkKep14Job = new KSieveCore::CheckKolabKep14SupportJob(this);
-        checkKep14Job->setProperty("triggerScript", QVariant(true));
         checkKep14Job->setServerName(serverName);
         checkKep14Job->setServerUrl(url);
         connect(checkKep14Job, &KSieveCore::CheckKolabKep14SupportJob::result, this, &MultiImapVacationManager::slotCheckKep14Ended);
@@ -37,7 +37,7 @@ void MultiImapVacationManager::checkVacation(const QString &serverName, const QU
     }
 
     auto job = new KSieveCore::VacationCheckJob(url, serverName, this);
-    job->setKep14Support(mKep14Support[serverName]);
+    job->setKep14Support(kep14It.value());
     connect(job, &KSieveCore::VacationCheckJob::vacationScriptActive, this, &MultiImapVacationManager::slotScriptActive);
     job->start();
 }
@@ -101,11 +101,10 @@ void MultiImapVacationManager::slotCheckKep14Ended(KSieveCore::CheckKolabKep14Su
 
 bool MultiImapVacationManager::kep14Support(const QString &serverName) const
 {
-    if (mKep14Support.contains(serverName)) {
-        return mKep14Support[serverName];
-    } else {
-        qCWarning(LIBKSIEVECORE_LOG) << "We don't know the KEP:14 support for this server." << serverName;
+    if (const auto it = mKep14Support.constFind(serverName); it != mKep14Support.cend()) {
+        return it.value();
     }
+    qCWarning(LIBKSIEVECORE_LOG) << "We don't know the KEP:14 support for this server." << serverName;
     return false;
 }
 
