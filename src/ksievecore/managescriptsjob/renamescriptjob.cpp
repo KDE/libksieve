@@ -44,7 +44,7 @@ void RenameScriptJob::setNewName(const QString &newName)
 
 bool RenameScriptJob::canStart() const
 {
-    return !d->mNewName.trimmed().isEmpty() && d->mOldUrl.isValid();
+    return !d->mNewName.trimmed().isEmpty() && d->mOldUrl.isValid() && (d->mNewName.trimmed() != d->mOldUrl.fileName());
 }
 
 void RenameScriptJob::start()
@@ -67,7 +67,7 @@ void RenameScriptJob::slotGetResult([[maybe_unused]] KManageSieve::SieveJob *job
     }
     QUrl u = d->mOldUrl;
     u = u.adjusted(QUrl::RemoveFilename);
-    u.setPath(u.path() + d->mNewName);
+    u.setPath(u.path() + d->mNewName.trimmed());
     d->mNewUrl = u;
     KManageSieve::SieveJob *putJob = KManageSieve::SieveJob::put(d->mNewUrl, script, d->mIsActive, d->mIsActive);
     connect(putJob, &KManageSieve::SieveJob::result, this, &RenameScriptJob::slotPutScript);

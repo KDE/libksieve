@@ -19,7 +19,7 @@ RenameScriptJobTest::~RenameScriptJobTest() = default;
 
 void RenameScriptJobTest::canNotStartByDefault()
 {
-    KSieveCore::RenameScriptJob job;
+    const KSieveCore::RenameScriptJob job;
     QVERIFY(!job.canStart());
 }
 
@@ -32,6 +32,9 @@ void RenameScriptJobTest::shouldBeStart_data()
     QTest::newRow("hasNewName") << u"foo"_s << QUrl() << false;
     QTest::newRow("hasUrl") << QString() << QUrl(u"http://www.kde.org"_s) << false;
     QTest::newRow("canStart") << u"foo"_s << QUrl(u"http://www.kde.org"_s) << true;
+
+    QTest::newRow("samefilename") << u"foo1"_s << QUrl(u"http://www.kde.org/foo1"_s) << false;
+
     QTest::newRow("cannotStartHasEmptyName") << u" "_s << QUrl(u"http://www.kde.org"_s) << false;
     // QTest::newRow("cannotStartHasInvalidUrl") <<  u"foo"_s << QUrl(u" "_s) << false;
 }
