@@ -329,7 +329,7 @@ void SieveEditorTextModeWidget::createRulesGraphically()
         const QStringList needToAddRequire = insertNecessaryRequires(requireModules);
         QString newPlainText = mTextEdit->toPlainText() + script;
         if (!needToAddRequire.isEmpty()) {
-            newPlainText.prepend(requireModules.join(u'\n')) + u'\n';
+            newPlainText.prepend(needToAddRequire.join(u'\n') + u'\n');
         }
         mTextEdit->selectAll();
 
