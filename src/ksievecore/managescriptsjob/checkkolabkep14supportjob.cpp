@@ -36,6 +36,7 @@ void CheckKolabKep14SupportJob::start()
 {
     if (d->mUrl.isEmpty()) {
         qCWarning(LIBKSIEVECORE_LOG) << " server url is empty";
+        Q_EMIT result(this, false);
         deleteLater();
         return;
     }
