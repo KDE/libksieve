@@ -380,7 +380,7 @@ void SieveConditionWidgetLister::loadScript(QXmlStreamReader &element, bool uniq
                         element.skipCurrentElement();
                         // nothing
                     } else if (testTagName == QLatin1StringView("comment")) {
-                        qDebug() << "Need to implement comment here ";
+                        qCDebug(LIBKSIEVEUI_LOG) << "Need to implement comment here ";
                         element.skipCurrentElement();
                         // nothing
                         // implement in the future ?
