@@ -85,11 +85,11 @@ void SieveEditorMenuBarTest::shouldDisableActions()
     QVERIFY(bar.commentCodeAction()->isEnabled());
     QVERIFY(bar.uncommentCodeAction()->isEnabled());
     QVERIFY(bar.debugSieveScriptAction()->isEnabled());
-    QVERIFY(bar.undoAction()->isEnabled());
-    QVERIFY(bar.redoAction()->isEnabled());
-    QVERIFY(bar.copyAction()->isEnabled());
+    QVERIFY(!bar.undoAction()->isEnabled());
+    QVERIFY(!bar.redoAction()->isEnabled());
+    QVERIFY(!bar.copyAction()->isEnabled());
     QVERIFY(bar.pasteAction()->isEnabled());
-    QVERIFY(bar.cutAction()->isEnabled());
+    QVERIFY(!bar.cutAction()->isEnabled());
     QVERIFY(bar.selectAllAction()->isEnabled());
     QVERIFY(bar.wordWrapAction()->isEnabled());
     QVERIFY(bar.printAction()->isEnabled());
@@ -98,7 +98,7 @@ void SieveEditorMenuBarTest::shouldDisableActions()
 
 void SieveEditorMenuBarTest::shouldHaveDefaultValue()
 {
-    KSieveUi::SieveEditorMenuBar bar;
+    const KSieveUi::SieveEditorMenuBar bar;
     QVERIFY(bar.goToLineAction());
     QVERIFY(bar.findAction());
     QVERIFY(bar.replaceAction());
@@ -141,58 +141,58 @@ void SieveEditorMenuBarTest::shouldEmitSignals()
 {
     KSieveUi::SieveEditorMenuBar bar;
     bar.setEditorMode(true);
-    QSignalSpy spyComment(&bar, &KSieveUi::SieveEditorMenuBar::comment);
+    const QSignalSpy spyComment(&bar, &KSieveUi::SieveEditorMenuBar::comment);
     bar.commentCodeAction()->trigger();
 
-    QSignalSpy spyUnComment(&bar, &KSieveUi::SieveEditorMenuBar::uncomment);
+    const QSignalSpy spyUnComment(&bar, &KSieveUi::SieveEditorMenuBar::uncomment);
     bar.uncommentCodeAction()->trigger();
 
-    QSignalSpy spyCut(&bar, &KSieveUi::SieveEditorMenuBar::cut);
+    const QSignalSpy spyCut(&bar, &KSieveUi::SieveEditorMenuBar::cut);
     bar.cutAction()->trigger();
 
-    QSignalSpy spyGotoLine(&bar, &KSieveUi::SieveEditorMenuBar::gotoLine);
+    const QSignalSpy spyGotoLine(&bar, &KSieveUi::SieveEditorMenuBar::gotoLine);
     bar.goToLineAction()->trigger();
 
-    QSignalSpy spyCopy(&bar, &KSieveUi::SieveEditorMenuBar::copy);
+    const QSignalSpy spyCopy(&bar, &KSieveUi::SieveEditorMenuBar::copy);
     bar.copyAction()->trigger();
 
-    QSignalSpy spyPaste(&bar, &KSieveUi::SieveEditorMenuBar::paste);
+    const QSignalSpy spyPaste(&bar, &KSieveUi::SieveEditorMenuBar::paste);
     bar.pasteAction()->trigger();
 
-    QSignalSpy spyUndo(&bar, &KSieveUi::SieveEditorMenuBar::undo);
+    const QSignalSpy spyUndo(&bar, &KSieveUi::SieveEditorMenuBar::undo);
     bar.undoAction()->trigger();
 
-    QSignalSpy spyRedo(&bar, &KSieveUi::SieveEditorMenuBar::redo);
+    const QSignalSpy spyRedo(&bar, &KSieveUi::SieveEditorMenuBar::redo);
     bar.redoAction()->trigger();
 
-    QSignalSpy spySelectAll(&bar, &KSieveUi::SieveEditorMenuBar::selectAll);
+    const QSignalSpy spySelectAll(&bar, &KSieveUi::SieveEditorMenuBar::selectAll);
     bar.selectAllAction()->trigger();
 
-    QSignalSpy spyFind(&bar, &KSieveUi::SieveEditorMenuBar::find);
+    const QSignalSpy spyFind(&bar, &KSieveUi::SieveEditorMenuBar::find);
     bar.findAction()->trigger();
 
-    QSignalSpy spyReplace(&bar, &KSieveUi::SieveEditorMenuBar::replace);
+    const QSignalSpy spyReplace(&bar, &KSieveUi::SieveEditorMenuBar::replace);
     bar.replaceAction()->trigger();
 
-    QSignalSpy spyZoomIn(&bar, &KSieveUi::SieveEditorMenuBar::zoomIn);
+    const QSignalSpy spyZoomIn(&bar, &KSieveUi::SieveEditorMenuBar::zoomIn);
     bar.zoomInAction()->trigger();
 
-    QSignalSpy spyZoomOut(&bar, &KSieveUi::SieveEditorMenuBar::zoomOut);
+    const QSignalSpy spyZoomOut(&bar, &KSieveUi::SieveEditorMenuBar::zoomOut);
     bar.zoomOutAction()->trigger();
 
-    QSignalSpy spyZoomReset(&bar, &KSieveUi::SieveEditorMenuBar::zoomReset);
+    const QSignalSpy spyZoomReset(&bar, &KSieveUi::SieveEditorMenuBar::zoomReset);
     bar.zoomResetAction()->trigger();
 
-    QSignalSpy spyDebugScript(&bar, &KSieveUi::SieveEditorMenuBar::debugSieveScript);
+    const QSignalSpy spyDebugScript(&bar, &KSieveUi::SieveEditorMenuBar::debugSieveScript);
     bar.debugSieveScriptAction()->trigger();
 
-    QSignalSpy spyWordWrapScript(&bar, &KSieveUi::SieveEditorMenuBar::wordWrap);
+    const QSignalSpy spyWordWrapScript(&bar, &KSieveUi::SieveEditorMenuBar::wordWrap);
     bar.wordWrapAction()->trigger();
 
-    QSignalSpy spyPrint(&bar, &KSieveUi::SieveEditorMenuBar::print);
+    const QSignalSpy spyPrint(&bar, &KSieveUi::SieveEditorMenuBar::print);
     bar.printAction()->trigger();
 
-    QSignalSpy spyPrintPreview(&bar, &KSieveUi::SieveEditorMenuBar::printPreview);
+    const QSignalSpy spyPrintPreview(&bar, &KSieveUi::SieveEditorMenuBar::printPreview);
     bar.printPreviewAction()->trigger();
 
     QCOMPARE(spyZoomOut.count(), 1);
@@ -200,11 +200,11 @@ void SieveEditorMenuBarTest::shouldEmitSignals()
     QCOMPARE(spyUnComment.count(), 1);
     QCOMPARE(spyComment.count(), 1);
     QCOMPARE(spyGotoLine.count(), 1);
-    QCOMPARE(spyCut.count(), 1);
-    QCOMPARE(spyCopy.count(), 1);
+    QCOMPARE(spyCut.count(), 0);
+    QCOMPARE(spyCopy.count(), 0);
     QCOMPARE(spyPaste.count(), 1);
-    QCOMPARE(spyRedo.count(), 1);
-    QCOMPARE(spyUndo.count(), 1);
+    QCOMPARE(spyRedo.count(), 0);
+    QCOMPARE(spyUndo.count(), 0);
     QCOMPARE(spySelectAll.count(), 1);
     QCOMPARE(spyFind.count(), 1);
     QCOMPARE(spyReplace.count(), 1);
