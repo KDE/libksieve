@@ -69,10 +69,17 @@ void SieveEditorTabWidget::slotTabContextMenuRequest(const QPoint &pos)
     }
 }
 
+void SieveEditorTabWidget::deleteWidget(int index)
+{
+    QWidget *w = widget(index);
+    removeTab(index);
+    delete w;
+}
+
 void SieveEditorTabWidget::slotCloseRequest(int index)
 {
     if (index != 0) {
-        removeTab(index);
+        deleteWidget(index);
     }
 }
 
@@ -83,7 +90,7 @@ void SieveEditorTabWidget::closeAllTabExcept(int index)
         if (i == index) {
             continue;
         }
-        removeTab(i);
+        deleteWidget(i);
     }
 }
 
@@ -101,7 +108,7 @@ void SieveEditorTabWidget::slotTabCloseRequested(int index)
 {
     // Don't remove first tab.
     if (index > 0) {
-        removeTab(index);
+        deleteWidget(index);
     }
 }
 
