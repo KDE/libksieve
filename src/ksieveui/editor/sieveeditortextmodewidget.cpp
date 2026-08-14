@@ -464,7 +464,7 @@ void SieveEditorTextModeWidget::print()
 
         bool restoreSpellCheck = mTextEdit->checkSpellingEnabled();
         mTextEdit->setCheckSpellingEnabled(false);
-        if (dlg && dlg->exec() == QDialog::Accepted) {
+        if (dlg->exec() == QDialog::Accepted) {
             mTextEdit->print(&printer);
         }
         mTextEdit->setCheckSpellingEnabled(restoreSpellCheck);
