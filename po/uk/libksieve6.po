@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-05 00:47+0000\n"
+"POT-Creation-Date: 2026-08-15 00:47+0000\n"
 "PO-Revision-Date: 2025-09-24 20:29+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -2457,7 +2457,7 @@ msgid "Save Log To File"
 msgstr "Зберегти журнал до файла"
 
 #: ksieveui/autocreatescripts/sievescripttabwidget.cpp:47
-#: ksieveui/editor/sieveeditortabwidget.cpp:47
+#: ksieveui/editor/sieveeditortabwidget.cpp:45
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
@@ -2642,83 +2642,83 @@ msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "Помилка редактора"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:52
+#: ksieveui/editor/sieveeditormenubar.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "Go to Line"
 msgstr "Перейти до рядка"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:57
+#: ksieveui/editor/sieveeditormenubar.cpp:70
 #, kde-format
 msgctxt "@action"
 msgid "Comment"
 msgstr "Закоментувати"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:61
+#: ksieveui/editor/sieveeditormenubar.cpp:74
 #, kde-format
 msgctxt "@action"
 msgid "Uncomment"
 msgstr "Розкоментувати"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:65
+#: ksieveui/editor/sieveeditormenubar.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "Debug Sieve Script…"
 msgstr "Діагностика скрипту фільтрування…"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:83
+#: ksieveui/editor/sieveeditormenubar.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Wordwrap"
 msgstr "Перенесення рядків"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:100
+#: ksieveui/editor/sieveeditormenubar.cpp:113
 #, kde-format
 msgctxt "@title:menu"
 msgid "File"
 msgstr "Файл"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:103
+#: ksieveui/editor/sieveeditormenubar.cpp:116
 #, kde-format
 msgctxt "@title:menu"
 msgid "Edit"
 msgstr "Зміни"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:123
+#: ksieveui/editor/sieveeditormenubar.cpp:136
 #, kde-format
 msgctxt "@title:menu"
 msgid "View"
 msgstr "Перегляд"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:129
+#: ksieveui/editor/sieveeditormenubar.cpp:142
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tools"
 msgstr "Інструменти"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:53
+#: ksieveui/editor/sieveeditortabwidget.cpp:51
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Закрити усі інші вкладки"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:59
+#: ksieveui/editor/sieveeditortabwidget.cpp:56
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Tabs"
 msgstr "Закрити усі вкладки"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:152
+#: ksieveui/editor/sieveeditortabwidget.cpp:153
 #, kde-format
 msgid "Help"
 msgstr "Довідка"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:163
+#: ksieveui/editor/sieveeditortabwidget.cpp:164
 #, kde-format
 msgid "Error during load page about %1"
 msgstr "Помилка під час завантаження сторінки щодо %1"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:180
+#: ksieveui/editor/sieveeditortabwidget.cpp:182
 #, kde-format
 msgid "Help about: %1"
 msgstr "Довідка щодо %1"
@@ -2940,7 +2940,7 @@ msgstr "З врахуванням регістру"
 msgid "Phrase not found"
 msgstr "Фразу не знайдено"
 
-#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:48
+#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:50
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Web Page"

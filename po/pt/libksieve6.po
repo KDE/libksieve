@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-05 00:47+0000\n"
+"POT-Creation-Date: 2026-08-15 00:47+0000\n"
 "PO-Revision-Date: 2023-07-08 19:25+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -2540,7 +2540,7 @@ msgid "Save Log To File"
 msgstr "Gravar o Registo num Ficheiro"
 
 #: ksieveui/autocreatescripts/sievescripttabwidget.cpp:47
-#: ksieveui/editor/sieveeditortabwidget.cpp:47
+#: ksieveui/editor/sieveeditortabwidget.cpp:45
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
@@ -2731,28 +2731,28 @@ msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "Erro do Editor do Sieve"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:52
+#: ksieveui/editor/sieveeditormenubar.cpp:65
 #, fuzzy, kde-format
 #| msgid "Go to Line"
 msgctxt "@action"
 msgid "Go to Line"
 msgstr "Ir para a Linha"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:57
+#: ksieveui/editor/sieveeditormenubar.cpp:70
 #, fuzzy, kde-format
 #| msgid "Comment"
 msgctxt "@action"
 msgid "Comment"
 msgstr "Comentário"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:61
+#: ksieveui/editor/sieveeditormenubar.cpp:74
 #, fuzzy, kde-format
 #| msgid "Uncomment"
 msgctxt "@action"
 msgid "Uncomment"
 msgstr "Descomentar"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:65
+#: ksieveui/editor/sieveeditormenubar.cpp:78
 #, fuzzy, kde-format
 #| msgctxt "@title:window"
 #| msgid "Debug Sieve Script"
@@ -2760,60 +2760,60 @@ msgctxt "@action"
 msgid "Debug Sieve Script…"
 msgstr "Depurar o Programa do Sieve"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:83
+#: ksieveui/editor/sieveeditormenubar.cpp:96
 #, fuzzy, kde-format
 #| msgid "Wordwrap"
 msgctxt "@action"
 msgid "Wordwrap"
 msgstr "Mudança de Linha"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:100
+#: ksieveui/editor/sieveeditormenubar.cpp:113
 #, kde-format
 msgctxt "@title:menu"
 msgid "File"
 msgstr "Ficheiro"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:103
+#: ksieveui/editor/sieveeditormenubar.cpp:116
 #, kde-format
 msgctxt "@title:menu"
 msgid "Edit"
 msgstr "Editar"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:123
+#: ksieveui/editor/sieveeditormenubar.cpp:136
 #, kde-format
 msgctxt "@title:menu"
 msgid "View"
 msgstr "Ver"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:129
+#: ksieveui/editor/sieveeditormenubar.cpp:142
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tools"
 msgstr "Ferramentas"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:53
+#: ksieveui/editor/sieveeditortabwidget.cpp:51
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Fechar Todas as Outras Páginas"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:59
+#: ksieveui/editor/sieveeditortabwidget.cpp:56
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Tabs"
 msgstr "Fechar Todas as Páginas"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:152
+#: ksieveui/editor/sieveeditortabwidget.cpp:153
 #, kde-format
 msgid "Help"
 msgstr "Ajuda"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:163
+#: ksieveui/editor/sieveeditortabwidget.cpp:164
 #, kde-format
 msgid "Error during load page about %1"
 msgstr "Erro no carregamento da página sobre o %1"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:180
+#: ksieveui/editor/sieveeditortabwidget.cpp:182
 #, kde-format
 msgid "Help about: %1"
 msgstr "Ajuda sobre: %1"
@@ -3059,7 +3059,7 @@ msgstr "Distinguir capitalização"
 msgid "Phrase not found"
 msgstr "Frase não encontrada"
 
-#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:48
+#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:50
 #, fuzzy, kde-format
 #| msgid "Save Web Page"
 msgctxt "@title:window"

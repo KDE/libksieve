@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-05 00:47+0000\n"
+"POT-Creation-Date: 2026-08-15 00:47+0000\n"
 "PO-Revision-Date: 2026-01-28 20:21+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -2324,7 +2324,7 @@ msgid "Save Log To File"
 msgstr "儲存紀錄到檔案"
 
 #: ksieveui/autocreatescripts/sievescripttabwidget.cpp:47
-#: ksieveui/editor/sieveeditortabwidget.cpp:47
+#: ksieveui/editor/sieveeditortabwidget.cpp:45
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
@@ -2509,83 +2509,83 @@ msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "過濾編輯器發生錯誤"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:52
+#: ksieveui/editor/sieveeditormenubar.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "Go to Line"
 msgstr "跳至行數"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:57
+#: ksieveui/editor/sieveeditormenubar.cpp:70
 #, kde-format
 msgctxt "@action"
 msgid "Comment"
 msgstr "註解"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:61
+#: ksieveui/editor/sieveeditormenubar.cpp:74
 #, kde-format
 msgctxt "@action"
 msgid "Uncomment"
 msgstr "取消註解"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:65
+#: ksieveui/editor/sieveeditormenubar.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "Debug Sieve Script…"
 msgstr "除錯 Sieve 文稿…"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:83
+#: ksieveui/editor/sieveeditormenubar.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Wordwrap"
 msgstr "自動換行"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:100
+#: ksieveui/editor/sieveeditormenubar.cpp:113
 #, kde-format
 msgctxt "@title:menu"
 msgid "File"
 msgstr "檔案"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:103
+#: ksieveui/editor/sieveeditormenubar.cpp:116
 #, kde-format
 msgctxt "@title:menu"
 msgid "Edit"
 msgstr "編輯"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:123
+#: ksieveui/editor/sieveeditormenubar.cpp:136
 #, kde-format
 msgctxt "@title:menu"
 msgid "View"
 msgstr "檢視"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:129
+#: ksieveui/editor/sieveeditormenubar.cpp:142
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tools"
 msgstr "工具"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:53
+#: ksieveui/editor/sieveeditortabwidget.cpp:51
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "關閉其他所有分頁"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:59
+#: ksieveui/editor/sieveeditortabwidget.cpp:56
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Tabs"
 msgstr "關閉所有分頁"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:152
+#: ksieveui/editor/sieveeditortabwidget.cpp:153
 #, kde-format
 msgid "Help"
 msgstr "說明"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:163
+#: ksieveui/editor/sieveeditortabwidget.cpp:164
 #, kde-format
 msgid "Error during load page about %1"
 msgstr "載入關於 %1 的頁面時發生錯誤"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:180
+#: ksieveui/editor/sieveeditortabwidget.cpp:182
 #, kde-format
 msgid "Help about: %1"
 msgstr "說明項目：%1"
@@ -2805,7 +2805,7 @@ msgstr "區分大小寫"
 msgid "Phrase not found"
 msgstr "找不到該片語"
 
-#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:48
+#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:50
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Web Page"

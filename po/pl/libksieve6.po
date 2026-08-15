@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-05 00:47+0000\n"
+"POT-Creation-Date: 2026-08-15 00:47+0000\n"
 "PO-Revision-Date: 2025-11-08 08:54+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -2455,7 +2455,7 @@ msgid "Save Log To File"
 msgstr "Zapisz dziennik do pliku"
 
 #: ksieveui/autocreatescripts/sievescripttabwidget.cpp:47
-#: ksieveui/editor/sieveeditortabwidget.cpp:47
+#: ksieveui/editor/sieveeditortabwidget.cpp:45
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
@@ -2640,83 +2640,83 @@ msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "Błąd edytora Sieve"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:52
+#: ksieveui/editor/sieveeditormenubar.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "Go to Line"
 msgstr "Przejdź do wiersza"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:57
+#: ksieveui/editor/sieveeditormenubar.cpp:70
 #, kde-format
 msgctxt "@action"
 msgid "Comment"
 msgstr "Komentarz"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:61
+#: ksieveui/editor/sieveeditormenubar.cpp:74
 #, kde-format
 msgctxt "@action"
 msgid "Uncomment"
 msgstr "Odkomentuj"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:65
+#: ksieveui/editor/sieveeditormenubar.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "Debug Sieve Script…"
 msgstr "Diagnozuj skrypt Sieve…"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:83
+#: ksieveui/editor/sieveeditormenubar.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Wordwrap"
 msgstr "Zawijanie wierszy"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:100
+#: ksieveui/editor/sieveeditormenubar.cpp:113
 #, kde-format
 msgctxt "@title:menu"
 msgid "File"
 msgstr "Plik"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:103
+#: ksieveui/editor/sieveeditormenubar.cpp:116
 #, kde-format
 msgctxt "@title:menu"
 msgid "Edit"
 msgstr "Edycja"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:123
+#: ksieveui/editor/sieveeditormenubar.cpp:136
 #, kde-format
 msgctxt "@title:menu"
 msgid "View"
 msgstr "Widok"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:129
+#: ksieveui/editor/sieveeditormenubar.cpp:142
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tools"
 msgstr "Narzędzia"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:53
+#: ksieveui/editor/sieveeditortabwidget.cpp:51
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Zamknij wszystkie inne karty"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:59
+#: ksieveui/editor/sieveeditortabwidget.cpp:56
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Tabs"
 msgstr "Zamknij wszystkie karty"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:152
+#: ksieveui/editor/sieveeditortabwidget.cpp:153
 #, kde-format
 msgid "Help"
 msgstr "Pomoc"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:163
+#: ksieveui/editor/sieveeditortabwidget.cpp:164
 #, kde-format
 msgid "Error during load page about %1"
 msgstr "Błąd przy wczytywaniu strony informacyjnej %1"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:180
+#: ksieveui/editor/sieveeditortabwidget.cpp:182
 #, kde-format
 msgid "Help about: %1"
 msgstr "Pomoc na temat: %1"
@@ -2939,7 +2939,7 @@ msgstr "Rozróżniaj wielkość liter"
 msgid "Phrase not found"
 msgstr "Nie znaleziono wyrażenia"
 
-#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:48
+#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:50
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Web Page"

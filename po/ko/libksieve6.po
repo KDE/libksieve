@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-05 00:47+0000\n"
+"POT-Creation-Date: 2026-08-15 00:47+0000\n"
 "PO-Revision-Date: 2026-05-26 21:41+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -2383,7 +2383,7 @@ msgid "Save Log To File"
 msgstr "파일로 로그 저장"
 
 #: ksieveui/autocreatescripts/sievescripttabwidget.cpp:47
-#: ksieveui/editor/sieveeditortabwidget.cpp:47
+#: ksieveui/editor/sieveeditortabwidget.cpp:45
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
@@ -2568,83 +2568,83 @@ msgctxt "@title:window"
 msgid "Sieve Editor Error"
 msgstr "Sieve 편집기 오류"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:52
+#: ksieveui/editor/sieveeditormenubar.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "Go to Line"
 msgstr "줄로 이동"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:57
+#: ksieveui/editor/sieveeditormenubar.cpp:70
 #, kde-format
 msgctxt "@action"
 msgid "Comment"
 msgstr "설명"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:61
+#: ksieveui/editor/sieveeditormenubar.cpp:74
 #, kde-format
 msgctxt "@action"
 msgid "Uncomment"
 msgstr "주석 해제"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:65
+#: ksieveui/editor/sieveeditormenubar.cpp:78
 #, kde-format
 msgctxt "@action"
 msgid "Debug Sieve Script…"
 msgstr "Sieve 스크립트 디버그…"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:83
+#: ksieveui/editor/sieveeditormenubar.cpp:96
 #, kde-format
 msgctxt "@action"
 msgid "Wordwrap"
 msgstr "자동 줄 바꿈"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:100
+#: ksieveui/editor/sieveeditormenubar.cpp:113
 #, kde-format
 msgctxt "@title:menu"
 msgid "File"
 msgstr "파일"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:103
+#: ksieveui/editor/sieveeditormenubar.cpp:116
 #, kde-format
 msgctxt "@title:menu"
 msgid "Edit"
 msgstr "편집"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:123
+#: ksieveui/editor/sieveeditormenubar.cpp:136
 #, kde-format
 msgctxt "@title:menu"
 msgid "View"
 msgstr "보기"
 
-#: ksieveui/editor/sieveeditormenubar.cpp:129
+#: ksieveui/editor/sieveeditormenubar.cpp:142
 #, kde-format
 msgctxt "@title:menu"
 msgid "Tools"
 msgstr "도구"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:53
+#: ksieveui/editor/sieveeditortabwidget.cpp:51
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "모든 다른 탭 닫기"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:59
+#: ksieveui/editor/sieveeditortabwidget.cpp:56
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Tabs"
 msgstr "모든 탭 닫기"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:152
+#: ksieveui/editor/sieveeditortabwidget.cpp:153
 #, kde-format
 msgid "Help"
 msgstr "도움말"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:163
+#: ksieveui/editor/sieveeditortabwidget.cpp:164
 #, kde-format
 msgid "Error during load page about %1"
 msgstr "%1 도움말 항목 페이지를 불러오는 중 오류 발생"
 
-#: ksieveui/editor/sieveeditortabwidget.cpp:180
+#: ksieveui/editor/sieveeditortabwidget.cpp:182
 #, kde-format
 msgid "Help about: %1"
 msgstr "도움말 항목: %1"
@@ -2865,7 +2865,7 @@ msgstr "대소문자 구분"
 msgid "Phrase not found"
 msgstr "검색어를 찾을 수 없음"
 
-#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:48
+#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:50
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Web Page"
