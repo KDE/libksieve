@@ -3,21 +3,22 @@
 # SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2023, 2024, 2025 Vít Pelčák <vit@pelcak.org>
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012, 2013.
 # SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-15 00:47+0000\n"
-"PO-Revision-Date: 2025-12-01 10:08+0100\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-08-17 23:57+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Poedit 3.9\n"
 
 #: kmanagesieve/session.cpp:91
 #, kde-format
@@ -353,13 +354,13 @@ msgstr "Nenalezena žádná chyba."
 #: ksievecore/managescriptsjob/checkscriptjob.cpp:68
 #, kde-format
 msgid "An unknown error was encountered."
-msgstr ""
+msgstr "Došlo k neznámé chybě."
 
 #: ksievecore/managescriptsjob/generateglobalscriptjob.cpp:53
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:42
 #, kde-format
 msgid "Path is not specified."
-msgstr ""
+msgstr "Cesta není zadána."
 
 #: ksievecore/managescriptsjob/generateglobalscriptjob.cpp:97
 #, kde-format
@@ -430,7 +431,7 @@ msgstr "Nastala chyba při mazání skriptu sieve."
 #: ksievecore/settings/sieve-vacation.kcfg:16
 #, kde-format
 msgid "Allow out-of-office settings to be changeable by the user."
-msgstr ""
+msgstr "Povolit uživateli měnit nastavení nepřítomnosti."
 
 #. i18n: ectx: label, entry (AllowOutOfOfficeUploadButNoSettings), group (OutOfOffice)
 #: ksievecore/settings/sieve-vacation.kcfg:20
@@ -440,18 +441,25 @@ msgid ""
 "changing any settings, such as the domain to react to or the spam reaction "
 "switch."
 msgstr ""
+"Povolit uživatelům nahrávat skripty Sieve pro nepřítomnost, ale zabránit jim "
+"v úpravách jakýchkoli nastavení, jako je doména, na kterou má systém "
+"reagovat, nebo přepínač reakce na spam."
 
 #. i18n: ectx: label, entry (OutOfOfficeDomain), group (OutOfOffice)
 #: ksievecore/settings/sieve-vacation.kcfg:24
 #, kde-format
 msgid "Send out-of-office replies to mails coming from this domain only."
 msgstr ""
+"Odesílat automatické odpovědi o nepřítomnosti pouze na e-maily přicházející "
+"z této domény."
 
 #. i18n: ectx: label, entry (OutOfOfficeReactToSpam), group (OutOfOffice)
 #: ksievecore/settings/sieve-vacation.kcfg:28
 #, kde-format
 msgid "Allow out-of-office replies to be sent to messages marked as SPAM."
 msgstr ""
+"Povolit odesílání automatických odpovědí o nepřítomnosti na zprávy označené "
+"jako spam."
 
 #. i18n: ectx: label, entry (CheckOutOfOfficeOnStartup), group (OutOfOffice)
 #: ksievecore/settings/sieve-vacation.kcfg:32
@@ -459,11 +467,13 @@ msgstr ""
 msgid ""
 "Check if there is still an active out-of-office reply configured on startup."
 msgstr ""
+"Při spuštění zkontrolovat, zda je stále nastavena aktivní automatická "
+"odpověď o nepřítomnosti."
 
 #: ksievecore/vacation/vacationcheckjob.cpp:127
 #, kde-format
 msgid "ParseUserScriptJob failed: %1"
-msgstr ""
+msgstr "Došlo k selhání ParseUserScriptJob: %1"
 
 #: ksievecore/vacation/vacationcheckjob.cpp:142
 #, kde-format
@@ -482,6 +492,8 @@ msgid ""
 "Sieve script installed successfully on the server '%1'.\n"
 "Out of Office reply is now active."
 msgstr ""
+"Skript Sieve byl úspěšně nainstalován na serveru '%1'.\n"
+"Automatická odpověď při nepřítomnosti je nyní aktivní."
 
 #: ksievecore/vacation/vacationcreatescriptjob.cpp:148
 #, kde-format
@@ -489,16 +501,18 @@ msgid ""
 "Sieve script installed successfully on the server '%1'.\n"
 "Out of Office reply has been deactivated."
 msgstr ""
+"Skript Sieve byl úspěšně nainstalován na serveru '%1'.\n"
+"Automatická odpověď při nepřítomnosti byla deaktivována."
 
 #: ksievecore/vacation/vacationcreatescriptjob.cpp:152
 #, kde-format
 msgid "Impossible to install script on server '%1'"
-msgstr ""
+msgstr "Nelze nainstalovat skript na serveru '%1'"
 
 #: ksievecore/vacation/vacationutils.cpp:38
 #, kde-format
 msgid "Out of office till %1"
-msgstr ""
+msgstr "Nepřítomnost do %1"
 
 #: ksievecore/vacation/vacationutils.cpp:45
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:22
@@ -536,6 +550,17 @@ msgid ""
 "Yours sincerely,\n"
 "-- \"enter your name and email address here\"\n"
 msgstr ""
+"Do %1 budu nepřítomný.\n"
+"\n"
+"V naléhavých případech se prosím obraťte na paní \"zástupkyni během dovolené"
+"\"\n"
+"\n"
+"e-mail: \"e-mailová adresa zástupkyně během dovolené\"\n"
+"tel.: +49 711 1111 11\n"
+"fax:  +49 711 1111 12\n"
+"\n"
+"S pozdravem,\n"
+"-- \"zde zadejte své jméno a e-mailovou adresu\"\n"
 
 #: ksieveui/autocreatescripts/autocreatescriptdialog.cpp:30
 #, kde-format
@@ -546,7 +571,7 @@ msgstr "Vytvořit filtr Sieve"
 #: ksieveui/autocreatescripts/autocreatescriptutil.cpp:177
 #, kde-format
 msgid "Cannot find item \"%1\" in widget \"%2\""
-msgstr ""
+msgstr "Nelze najít položku \"%1\" ve widgetu \"%2\""
 
 #: ksieveui/autocreatescripts/autocreatescriptutil.cpp:185
 #, kde-format
@@ -558,11 +583,13 @@ msgstr "Více informací"
 msgid ""
 "Not enough arguments for SelectConvertParameterWidget. Expected 2 arguments."
 msgstr ""
+"Nedostatek argumentů pro SelectConvertParameterWidget. Očekávaly se 2 "
+"argumenty."
 
 #: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:38
 #, kde-format
 msgid "Too many arguments for SelectConvertParameterWidget, \"%1\""
-msgstr ""
+msgstr "Příliš mnoho argumentů pro SelectConvertParameterWidget, \"%1\""
 
 #: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:61
 #: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:72
@@ -578,7 +605,7 @@ msgstr "je"
 #: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:38
 #, kde-format
 msgid "not is"
-msgstr ""
+msgstr "není"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:39
 #, kde-format
@@ -593,22 +620,22 @@ msgstr "neobsahuje"
 #: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:41
 #, kde-format
 msgid "matches"
-msgstr "shody"
+msgstr "shoduje se"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:42
 #, kde-format
 msgid "not matches"
-msgstr ""
+msgstr "neshoduje se"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:44
 #, kde-format
 msgid "regex"
-msgstr "RegVýr"
+msgstr "regulární výraz"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:45
 #, kde-format
 msgid "not regex"
-msgstr ""
+msgstr "není regulární výraz"
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:27
 #, kde-format
@@ -634,13 +661,13 @@ msgstr "BMP"
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:55
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing action \"%2\"."
-msgstr ""
+msgstr "Při analýze akce \"%2\" byla nalezena neznámá hodnota značky \"%1\"."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:107
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:43
 #, kde-format
 msgid "An unknown tag \"%1\" was found during parsing action \"%2\"."
-msgstr ""
+msgstr "Při analýze akce \"%2\" byla nalezena neznámá značka \"%1\"."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:113
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:50
@@ -649,13 +676,15 @@ msgid ""
 "Too many arguments found for \"%1\", max value is %2, number of value found "
 "%3 for %4"
 msgstr ""
+"Bylo nalezeno příliš mnoho výsledků pro \"%1\", maximální hodnota je %2, "
+"počet nalezených výsledků je %3 pro %4"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:118
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:60
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:53
 #, kde-format
 msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
-msgstr ""
+msgstr "Funkce \"%1\" v podmínce \"%2\" není serverem podporována"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:20
 #, kde-format
@@ -675,6 +704,9 @@ msgid ""
 "any previously set flags.  This means that multiple occurrences of addflag "
 "are treated additively."
 msgstr ""
+"Příkaz addflag slouží k přidání příznaků do seznamu příznaků [IMAP].  "
+"Nenahrazuje žádné dříve nastavené příznaky.  To znamená, že více výskytů "
+"příkazu addflag se zpracovává kumulativně."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:26
 #, kde-format
@@ -687,7 +719,7 @@ msgstr "Přidat hlavičku"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "header:"
-msgstr ""
+msgstr "hlavička:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:51
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:51
@@ -701,7 +733,7 @@ msgstr "hodnota:"
 #, kde-format
 msgid ""
 "The addheader action adds a header field to the existing message header."
-msgstr ""
+msgstr "Akce addheader přidá pole hlavičky do stávající hlavičky zprávy."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:23
 #, kde-format
@@ -718,7 +750,7 @@ msgstr "Jméno (volitelné):"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:91
 #, kde-format
 msgid "The break command terminates the closest enclosing loop."
-msgstr ""
+msgstr "Příkaz break ukončí nejbližší uzavřenou smyčku."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionconvert.cpp:22
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionconvert.cpp:22
@@ -755,6 +787,9 @@ msgid ""
 "to \"media-type\" be converted to the media type in \"media-type\" using "
 "conversion parameters."
 msgstr ""
+"Akce \"convert\" určuje, že všechny části těla, jejichž typ média se rovná "
+"hodnotě \"media-type\", budou převedeny na typ média uvedený v \"media-type"
+"\" s využitím parametrů převodu."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:26
 #, kde-format
@@ -767,16 +802,18 @@ msgid ""
 "By default, the deleteheader action deletes all occurrences of the named "
 "header field."
 msgstr ""
+"Ve výchozím nastavení akce deleteheader odstraní všechny výskyty zadané "
+"hlavičky."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:25
 #, kde-format
 msgid "Discard is used to silently throw away the message."
-msgstr ""
+msgstr "Funkce Discard slouží k tichému odstranění zprávy."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:24
 #, kde-format
 msgid "Enclose"
-msgstr ""
+msgstr "Přiložit"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:35
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:37
@@ -807,11 +844,13 @@ msgid ""
 "Enclose action command is defined to allow an entire message to be enclosed "
 "as an attachment to a new message."
 msgstr ""
+"Akce přiložit je definována tak, aby umožňovala připojit celou zprávu jako "
+"přílohu k nové zprávě."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:22
 #, kde-format
 msgid "E-Reject"
-msgstr ""
+msgstr "E-Reject"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:88
 #, kde-format
@@ -819,11 +858,12 @@ msgid ""
 " The \"ereject\" action cancels the implicit keep and refuses delivery of a "
 "message."
 msgstr ""
+" Akce \"ereject\" zruší implicitní zachování zprávy a odmítne její doručení."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:23
 #, kde-format
 msgid "Extract Text"
-msgstr "Extrahovat Text"
+msgstr "Extrahovat text"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionextracttext.cpp:34
 #, kde-format
@@ -843,6 +883,8 @@ msgid ""
 "The \"extracttext\" action may be used within the context of a \"foreverypart"
 "\" loop and is used to store text into a variable"
 msgstr ""
+"Akci \"extracttext\" lze použít v rámci smyčky \"foreverypart\" a slouží k "
+"uložení textu do proměnné"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:22
 #, kde-format
@@ -855,6 +897,7 @@ msgid ""
 "Action \"fileinto\" has \"copy\" argument but current server does not "
 "support it"
 msgstr ""
+"Akce \"fileinto\" má argument \"copy\", ale aktuální server jej nepodporuje"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:98
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:37
@@ -873,7 +916,7 @@ msgstr "Vytvořit složku"
 #, kde-format
 msgid ""
 "The \"fileinto\" action delivers the message into the specified mailbox."
-msgstr ""
+msgstr "Akce \"fileinto\" doručí zprávu do zadané poštovní schránky."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:152
 #, kde-format
@@ -882,6 +925,9 @@ msgid ""
 "interpreter to create the specified mailbox, if needed, before attempting to "
 "deliver the message into the specified mailbox."
 msgstr ""
+"Je-li zadán volitelný argument \":create\", dá to interpretu Sieve pokyn, "
+"aby v případě potřeby vytvořil zadanou poštovní schránku předtím, než se "
+"pokusí doručit zprávu do této schránky."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:157
 #, kde-format
@@ -890,6 +936,9 @@ msgid ""
 "cancel the implicit \"keep\". Instead, it merely files or redirects a copy "
 "in addition to whatever else is happening to the message."
 msgstr ""
+"Je-li zadáno volitelné klíčové slovo \":copy\", označený příkaz nezruší "
+"implicitní příkaz \"keep\". Místo toho pouze uloží nebo přesměruje kopii, a "
+"to navíc k tomu, co se s danou zprávou děje."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:46
 #, kde-format
@@ -898,6 +947,9 @@ msgid ""
 "actions, if no filtering happens at all; generally, this simply means to "
 "file the message into the user's main mailbox."
 msgstr ""
+"Akce \"keep\" představuje jakoukoli akci, která se provede namísto všech "
+"ostatních akcí, pokud nedojde k žádnému filtrování; obecně to jednoduše "
+"znamená zařazení zprávy do hlavní poštovní schránky uživatele."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:57
 #, kde-format
@@ -926,7 +978,7 @@ msgstr "metoda:"
 #, kde-format
 msgid ""
 "The \"notify\" action specifies that a notification should be sent to a user."
-msgstr ""
+msgstr "Akce \"notify\" určuje, že má být uživateli odesláno oznámení."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:24
 #, kde-format
@@ -947,6 +999,10 @@ msgid ""
 "action makes no changes to the message body or existing headers, but it may "
 "add new headers."
 msgstr ""
+"Akce \"redirect\" slouží k odeslání zprávy jinému uživateli na zadanou "
+"adresu, podobně jako funkce přesměrování pošty. Akce \"redirect\" neprovádí "
+"žádné změny v těle zprávy ani ve stávajících hlavičkách, může však přidat "
+"nové hlavičky."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:145
 #, kde-format
@@ -955,6 +1011,9 @@ msgid ""
 "cancel the implicit \"keep\". Instead, it redirects a copy in addition to "
 "whatever else is happening to the message."
 msgstr ""
+"Je-li zadáno volitelné klíčové slovo \":copy\", označený příkaz nezruší "
+"implicitní příkaz \"keep\". Místo toho přesměruje kopii zprávy, a to navíc k "
+"jakýmkoli dalším operacím, které se se zprávou provádějí."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreject.cpp:22
 #, kde-format
@@ -966,7 +1025,7 @@ msgstr "Odmítnout"
 msgid ""
 " The \"reject\" action cancels the implicit keep and refuses delivery of a "
 "message."
-msgstr ""
+msgstr " Akce \"reject\" ruší implicitní zachování a odmítá doručení zprávy."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionremoveflags.cpp:15
 #, kde-format
@@ -980,6 +1039,10 @@ msgid ""
 "clears flags previously set by \"set\"/\"addflag\". Calling removeflag with "
 "a flag that wasn't set before is not an error and is ignored."
 msgstr ""
+"Funkce removeflag se používá k odstranění příznaků ze seznamu [IMAP] "
+"příznaků. Funkce removeflag vymaže příznaky, které byly dříve nastaveny "
+"příkazy \"set\" nebo \"addflag\". Volání funkce removeflag s příznakem, "
+"který nebyl dříve nastaven, není chybou a je ignorováno."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreplace.cpp:26
 #, kde-format
@@ -998,11 +1061,13 @@ msgid ""
 "The \"replace\" command is defined to allow a MIME part to be replaced with "
 "the text supplied in the command."
 msgstr ""
+"Příkaz \"replace\" je definován tak, aby umožňoval nahradit část MIME textem "
+"zadaným v příkazu."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreturn.cpp:15
 #, kde-format
 msgid "Return"
-msgstr "Enter"
+msgstr "Return"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreturn.cpp:32
 #, kde-format
@@ -1010,6 +1075,8 @@ msgid ""
 "The \"return\" command stops processing of the immediately included script "
 "only and returns processing control to the script that includes it."
 msgstr ""
+"Příkaz \"return\" zastaví zpracování pouze skriptu, který je bezprostředně "
+"zahrnut, a předá řízení zpracování zpět skriptu, který jej zahrnuje."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetflags.cpp:15
 #, kde-format
@@ -1022,6 +1089,8 @@ msgid ""
 "Setflag is used for setting [IMAP] system flags or keywords. Setflag "
 "replaces any previously set flags."
 msgstr ""
+"Příkaz Setflag slouží k nastavení systémových příznaků nebo klíčových slov "
+"[IMAP]. Příkaz Setflag nahradí všechny dříve nastavené příznaky."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:26
 #, kde-format
@@ -1032,7 +1101,7 @@ msgstr "Proměnná"
 #, kde-format
 msgctxt "@option:check"
 msgid "Protect special character"
-msgstr ""
+msgstr "Ochrana speciálních znaků"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:50
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:51
@@ -1042,7 +1111,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Value:"
-msgstr "hodnota:"
+msgstr "Hodnota:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:59
 #, kde-format
@@ -1053,14 +1122,14 @@ msgstr "V proměnné:"
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:108
 #, kde-format
 msgid "Script needs regex support, but server does not have it."
-msgstr ""
+msgstr "Skript vyžaduje podporu regulárních výrazů, ale server ji nemá."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:171
 #, kde-format
 msgid ""
 "The \"set\" action stores the specified value in the variable identified by "
 "name."
-msgstr ""
+msgstr "Akce \"set\" uloží zadanou hodnotu do proměnné označené názvem."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:174
 #, kde-format
@@ -1070,6 +1139,10 @@ msgid ""
 "Every character with special meaning (. , *, ? , etc.) is prefixed with \\ "
 "in the expansion"
 msgstr ""
+"Tento modifikátor přidává potřebné uvozovky, aby bylo zajištěno, že "
+"rozšířený text bude odpovídat doslovnému výskytu pouze v případě, že bude "
+"použit jako parametr funkce :regex. Každému znaku se zvláštním významem (., "
+"*, ? atd.) je při rozšíření předřazeno \\"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionstop.cpp:16
 #, kde-format
@@ -1082,6 +1155,8 @@ msgid ""
 "The \"stop\" action ends all processing.  If the implicit keep has not been "
 "cancelled, then it is taken."
 msgstr ""
+"Akce \"stop\" ukončí veškeré zpracování. Pokud nebylo implicitní zachování "
+"zrušeno, dojde k jeho provedení."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:29
 #, kde-format
@@ -1104,7 +1179,7 @@ msgstr "Předmět zprávy:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Additional email:"
-msgstr ""
+msgstr "Další e-mail:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:77
 #, kde-format
@@ -1120,6 +1195,10 @@ msgid ""
 "provide correspondents with notification that the user is away for an "
 "extended period of time and that they should not expect quick responses."
 msgstr ""
+"Akce \"vacation\" implementuje automatickou odpověď o dovolené podobnou "
+"příkazu \"vacation\", který je k dispozici v mnoha verzích systému Unix. "
+"Jejím účelem je informovat korespondenty o tom, že uživatel je delší dobu "
+"mimo a že by neměli očekávat rychlé odpovědi."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:202
 #, kde-format
@@ -1129,6 +1208,10 @@ msgid ""
 "are cases when one needs more granularity, if one would like to generate "
 "\"vacation\" replies more frequently."
 msgstr ""
+"Pomocí parametru \":days\" se omezí počet automatických odpovědí stejnému "
+"odesílateli na jednu za [n] dní, a to po stanovený počet dní. Existují však "
+"případy, kdy je zapotřebí větší flexibilita, například pokud chcete "
+"generovat \"dovolenkové\" odpovědi častěji."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:204
 #, kde-format
@@ -1136,6 +1219,8 @@ msgid ""
 "This extension defines a \":seconds\" parameter to provide more granularity "
 "for such situations."
 msgstr ""
+"Toto rozšíření definuje parametr \":seconds\", který v takových situacích "
+"umožňuje větší přesnost."
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:29
 #, kde-format
@@ -1183,7 +1268,7 @@ msgstr "Přidán příznak"
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:98
 #, kde-format
 msgid "Seen"
-msgstr ""
+msgstr "Zobrazeno"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:103
 #, kde-format
@@ -1251,17 +1336,17 @@ msgstr "Velká"
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:29
 #, kde-format
 msgid "Lower first letter"
-msgstr ""
+msgstr "Malé počáteční písmeno"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:30
 #, kde-format
 msgid "Upper first letter"
-msgstr ""
+msgstr "Velké počáteční písmeno"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:31
 #, kde-format
 msgid "Quote wildcard"
-msgstr ""
+msgstr "Zástupný znak pro citaci"
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectvariablemodifiercombobox.cpp:32
 #, kde-format
@@ -1291,11 +1376,13 @@ msgstr "Skript obsahuje nepodporovanou vlastnost \"%1\"."
 #, kde-format
 msgid "We detected a loop if in a loop if. It's not supported"
 msgstr ""
+"Zjistili jsme, že se vyskytuje smyčka \"if in a loop if\". To není "
+"podporováno"
 
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:33
 #, kde-format
 msgid "Unknown tag \"%1\" during parsing condition \"%2\""
-msgstr ""
+msgstr "Neznámá značka \"%1\" při analýze podmínky \"%2\""
 
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:43
 #, kde-format
@@ -1303,11 +1390,14 @@ msgid ""
 "Too many argument found for \"%1\", max value is %2, number of value found "
 "%3 for %4"
 msgstr ""
+"Příliš mnoho argumentů pro \"%1\"; maximální hodnota je %2; počet nalezených "
+"hodnot %3 pro %4"
 
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:48
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing condition \"%2\"."
 msgstr ""
+"Při analýze podmínky \"%2\" byla nalezena neznámá hodnota značky \"%1\"."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:25
 #, kde-format
@@ -1336,6 +1426,10 @@ msgid ""
 "specified part of the address, as modified by the comparator and the match "
 "keyword."
 msgstr ""
+"Test \"address\" porovnává internetové adresy ve strukturovaných hlavičkách, "
+"které obsahují adresy. Vrátí hodnotu true, pokud některá z hlaviček obsahuje "
+"jakýkoli klíč v zadané části adresy, upravené podle komparátoru a "
+"odpovídajícího klíčového slova."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:22
 #, kde-format
@@ -1349,6 +1443,9 @@ msgid ""
 "anything following the first empty line after the header.  (The empty line "
 "itself, if present, is not considered to be part of the body.)"
 msgstr ""
+"Test těla zprávy porovnává obsah v těle e-mailové zprávy, tedy vše, co "
+"následuje za prvním prázdným řádkem za hlavičkou. (Samotný prázdný řádek, "
+"pokud je přítomen, se nepovažuje za součást těla zprávy.)"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditioncurrentdate.cpp:23
 #, kde-format
@@ -1361,6 +1458,8 @@ msgid ""
 "The currentdate test is similar to the date test, except that it operates on "
 "the current date/time rather than a value extracted from the message header."
 msgstr ""
+"Test \"currentdate\" je podobný testu \"date\", s tím rozdílem, že pracuje s "
+"aktuálním datem a časem, nikoli s hodnotou získanou z hlavičky zprávy."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:25
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
@@ -1375,6 +1474,8 @@ msgid ""
 "The date test matches date/time information derived from headers containing "
 "date-time values."
 msgstr ""
+"Test data porovnává informace o datu a čase získané z hlaviček obsahujících "
+"hodnoty data a času."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:26
 #, kde-format
@@ -1387,6 +1488,8 @@ msgid ""
 "The \"envelope\" test is true if the specified part of the [SMTP] (or "
 "equivalent) envelope matches the specified key."
 msgstr ""
+"Test \"envelop\" je úspěšný, pokud se zadaná část obálky [SMTP] (nebo "
+"ekvivalentní) shoduje se zadaným klíčem."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:25
 #, kde-format
@@ -1406,6 +1509,8 @@ msgid ""
 "by the name string and matches it to the values specified in the key-list "
 "argument."
 msgstr ""
+"Test prostředí načte položku informací o prostředí určenou řetězcem názvu a "
+"porovná ji s hodnotami uvedenými v argumentu key-list."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionexists.cpp:24
 #, kde-format
@@ -1429,6 +1534,9 @@ msgid ""
 "argument exist within the message.  All of the headers must exist or the "
 "test is false."
 msgstr ""
+"Test \"exists\" je pravdivý, pokud se v zprávě vyskytují hlavičky uvedené v "
+"argumentu header-names.  Všechny hlavičky se musí vyskytovat, jinak je test "
+"nepravdivý."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:22
 #, kde-format
@@ -1444,7 +1552,7 @@ msgstr "nepravda"
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionfalse.cpp:45
 #, kde-format
 msgid "The \"false\" test always evaluates to false."
-msgstr ""
+msgstr "Test \"false\" má vždy hodnotu false."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:26
 #, kde-format
@@ -1458,6 +1566,8 @@ msgid ""
 "Variable name\n"
 " (if empty it uses internal variable):"
 msgstr ""
+"Název proměnné\n"
+" (pokud je pole prázdné, použije se interní proměnná):"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:129
 #, kde-format
@@ -1465,6 +1575,8 @@ msgid ""
 "The hasflag test evaluates to true if any of the variables matches any flag "
 "name."
 msgstr ""
+"Test hasflag vrátí hodnotu true, pokud se některá z proměnných shoduje s "
+"jakýmkoli názvem příznaku."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:23
 #, kde-format
@@ -1772,7 +1884,7 @@ msgstr "Hlavičky"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Add new header:"
-msgstr "Přidat novou hlavičku"
+msgstr "Přidat novou hlavičku:"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:243
 #, kde-format
@@ -2050,7 +2162,7 @@ msgstr "Podmínky"
 #, kde-format
 msgctxt "@option:radio"
 msgid "Match all messages"
-msgstr ""
+msgstr "Odpovídá všem zprávám"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:41
 #, kde-format
@@ -2768,7 +2880,7 @@ msgstr "Spravovat skripty Sieve"
 #, kde-format
 msgctxt "create a new sieve script"
 msgid "New…"
-msgstr ""
+msgstr "Nový…"
 
 #: ksieveui/managesievescriptsdialog.cpp:95
 #, kde-format
@@ -2804,7 +2916,7 @@ msgstr "Odesílám soubor na server pro jeho kontrolu. Prosím, počkejte…"
 #: ksieveui/managesievescriptsdialog.cpp:267
 #, kde-format
 msgid "The Sieve script was successfully uploaded."
-msgstr ""
+msgstr "Skript Sieve byl úspěšně nahrán."
 
 #: ksieveui/managesievescriptsdialog.cpp:267
 #, kde-format
@@ -2982,13 +3094,13 @@ msgstr "Šablona"
 #: ksieveui/templates/sievetemplatewidget.cpp:110
 #, kde-format
 msgid "You can drag and drop element on editor to import template"
-msgstr ""
+msgstr "Chcete-li importovat šablonu, můžete prvek přetáhnout do editoru"
 
 #: ksieveui/vacation/multiimapvacationdialog.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure \"Out of Office\" Replies"
-msgstr "Nastavit odpovědi \"mimo kancelář\""
+msgstr "Nastavit odpovědi \"nepřítomnosti\""
 
 #: ksieveui/vacation/multiimapvacationdialog.cpp:81
 #, kde-format
@@ -3137,7 +3249,7 @@ msgstr ""
 #: ksieveui/widgets/custommanagesievewidget.cpp:93
 #, kde-format
 msgid "No Sieve URL configured"
-msgstr ""
+msgstr "Není nastavena žádná URL adresa Sieve"
 
 #: ksieveui/widgets/managesievetreeview.cpp:16
 #: ksieveui/widgets/managesievetreeview.cpp:30
