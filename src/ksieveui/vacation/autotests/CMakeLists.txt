@@ -10,7 +10,7 @@ macro(add_vacation_test _source)
         ${_name}.h
     )
     add_test(NAME vacation-${_name} COMMAND ${_name})
-    ecm_mark_as_test(vacation-${_name})
+    ecm_mark_as_test(${_name})
     target_link_libraries(
         ${_name}
         KPim6KSieveUi
