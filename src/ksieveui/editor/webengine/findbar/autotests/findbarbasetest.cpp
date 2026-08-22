@@ -60,10 +60,12 @@ void FindBarBaseTest::shouldClearLineWhenClose()
     auto lineedit = bar.findChild<PimCommon::LineEditWithCompleterNg *>(u"searchline"_s);
     lineedit->setText(u"FOO"_s);
     QVERIFY(!lineedit->text().isEmpty());
-    QVERIFY(lineedit->hasFocus());
+    // Don't use QWidget::hasFocus() here: it also requires the window to be active,
+    // which is not guaranteed on wayland where activation is up to the compositor.
+    QCOMPARE(bar.focusWidget(), lineedit);
     bar.closeBar();
     QVERIFY(lineedit->text().isEmpty());
-    QVERIFY(!lineedit->hasFocus());
+    QVERIFY(bar.focusWidget() != lineedit);
     QCOMPARE(spy.count(), 1);
 }
 
@@ -103,7 +105,7 @@ void FindBarBaseTest::shouldClearAllWhenShowBar()
     bar.show();
     bar.focusAndSetCursor();
     auto lineedit = bar.findChild<PimCommon::LineEditWithCompleterNg *>(u"searchline"_s);
-    QVERIFY(lineedit->hasFocus());
+    QCOMPARE(bar.focusWidget(), lineedit);
     QVERIFY(status->text().isEmpty());
 }
 
