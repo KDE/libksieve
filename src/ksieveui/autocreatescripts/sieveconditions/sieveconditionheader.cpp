@@ -67,7 +67,7 @@ QString SieveConditionHeader::code(QWidget *w) const
     const AbstractRegexpEditorLineEdit *edit = w->findChild<AbstractRegexpEditorLineEdit *>(u"value"_s);
     QString valueStr = edit->code();
 
-    valueStr = AutoCreateScriptUtil::fixListValue(valueStr);
+    valueStr = AutoCreateScriptUtil::fixListValue(std::move(valueStr));
     return AutoCreateScriptUtil::negativeString(isNegative) + u"header %1 %2 %3"_s.arg(matchString, headerStr, valueStr)
         + AutoCreateScriptUtil::generateConditionComment(comment());
 }

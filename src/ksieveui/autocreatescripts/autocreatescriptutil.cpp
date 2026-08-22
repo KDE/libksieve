@@ -66,7 +66,7 @@ QString AutoCreateScriptUtil::createList(const QStringList &lst, bool addSemiCol
     bool wasFirst = true;
     for (QString str : lst) {
         if (protectSlash) {
-            str = AutoCreateScriptUtil::protectSlash(str);
+            str = AutoCreateScriptUtil::protectSlash(std::move(str));
         }
         result += (wasFirst ? QString() : u","_s) + u" \"%1\""_s.arg(quoteStr(str, false));
         wasFirst = false;
@@ -98,7 +98,7 @@ QStringList AutoCreateScriptUtil::createListFromString(QString str)
         s.remove(u'"');
         resultLst << s.trimmed();
     }
-    lst = resultLst;
+    lst = std::move(resultLst);
     return lst;
 }
 

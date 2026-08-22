@@ -64,9 +64,9 @@ void FindAccountInfoJob::start()
     }
 
     QString server;
-    const QString reply = mCustomImapSettingsInterface->imapServer();
+    QString reply = mCustomImapSettingsInterface->imapServer();
     if (!reply.isEmpty()) {
-        server = reply;
+        server = std::move(reply);
         server = server.section(u':', 0, 0);
     } else {
         sendAccountInfo();
@@ -207,7 +207,7 @@ void FindAccountInfoJob::slotPasswordsRequested(const QString &sievePassword, co
     if (mWithVacationFileName) {
         sieveUrl.setPath(sieveUrl.path() + u'/' + mCustomImapSettingsInterface->sieveVacationFilename());
     }
-    mAccountInfo.sieveUrl = sieveUrl;
+    mAccountInfo.sieveUrl = std::move(sieveUrl);
     sendAccountInfo();
 }
 

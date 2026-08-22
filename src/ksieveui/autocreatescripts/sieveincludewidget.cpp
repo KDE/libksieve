@@ -233,7 +233,7 @@ void SieveIncludeWidget::generatedScript(QString &script, QStringList &requireMo
     mIncludeLister->generatedScript(result, lst);
     if (!result.isEmpty()) {
         script += result;
-        requireModules << lst;
+        requireModules << std::move(lst);
     }
 }
 

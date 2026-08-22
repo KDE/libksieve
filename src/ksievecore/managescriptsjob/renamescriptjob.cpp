@@ -68,7 +68,7 @@ void RenameScriptJob::slotGetResult([[maybe_unused]] KManageSieve::SieveJob *job
     QUrl u = d->mOldUrl;
     u = u.adjusted(QUrl::RemoveFilename);
     u.setPath(u.path() + d->mNewName.trimmed());
-    d->mNewUrl = u;
+    d->mNewUrl = std::move(u);
     KManageSieve::SieveJob *putJob = KManageSieve::SieveJob::put(d->mNewUrl, script, d->mIsActive, d->mIsActive);
     connect(putJob, &KManageSieve::SieveJob::result, this, &RenameScriptJob::slotPutScript);
 }

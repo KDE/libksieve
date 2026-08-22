@@ -132,11 +132,11 @@ void SieveDebugDialog::slotDiagNextAccount()
 void SieveDebugDialog::slotFindAccountInfoFinished(const KSieveCore::Util::AccountInfo &info)
 {
     // Detect URL for this IMAP account
-    const QUrl url = info.sieveUrl;
+    QUrl url = info.sieveUrl;
     if (!url.isValid()) {
         mEdit->editor()->appendPlainText(i18n("(Account does not support Sieve)\n\n"));
     } else {
-        mUrl = url;
+        mUrl = std::move(url);
 
         mSieveJob = KManageSieve::SieveJob::list(mUrl);
 

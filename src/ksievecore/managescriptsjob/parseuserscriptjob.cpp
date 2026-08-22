@@ -130,10 +130,10 @@ QStringList ParseUserScriptJob::extractActiveScript(const QString &doc)
                     const QString actionName = mStreamReader->attributes().value(QLatin1StringView("name")).toString();
                     if (actionName == QLatin1StringView("include")) {
                         // Load includes
-                        const QString str = loadInclude();
+                        QString str = loadInclude();
                         if (!str.isEmpty()) {
                             if (!lstScript.contains(str)) {
-                                lstScript.append(str);
+                                lstScript.append(std::move(str));
                             }
                         }
                     } else {

@@ -72,9 +72,9 @@ void SieveActionFileInto::setParamWidgetValue(QXmlStreamReader &element, QWidget
                 qCDebug(LIBKSIEVEUI_LOG) << "SieveActionFileInto::setParamWidgetValue server has not flags support ";
             }
         } else if (tagName == QLatin1StringView("str")) {
-            const QString tagValue = element.readElementText();
+            QString tagValue = element.readElementText();
             auto edit = w->findChild<KSieveUi::AbstractMoveImapFolderWidget *>(u"fileintolineedit"_s);
-            edit->setText(AutoCreateScriptUtil::protectSlash(tagValue));
+            edit->setText(AutoCreateScriptUtil::protectSlash(std::move(tagValue)));
         } else if (tagName == QLatin1StringView("crlf")) {
             element.skipCurrentElement();
             // nothing

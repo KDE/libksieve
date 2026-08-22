@@ -70,7 +70,7 @@ int main(int argc, char **argv)
     dialog->loadScript(psb.result(), error);
     if (!error.isEmpty()) {
         KSieveUi::SieveScriptParsingErrorDialog dlgError;
-        dlgError.setError(QString::fromLatin1(script), error);
+        dlgError.setError(QString::fromLatin1(script), std::move(error));
         dlgError.exec();
     }
 

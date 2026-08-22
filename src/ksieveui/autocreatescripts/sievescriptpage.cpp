@@ -130,7 +130,7 @@ void SieveScriptPage::generatedScript(QString &script, QStringList &required)
         mForEveryPartWidget->generatedScript(foreverypartStr, foreverypartRequires, false);
         inForEveryPartLoop = !foreverypartStr.isEmpty();
         if (inForEveryPartLoop) {
-            required << foreverypartRequires;
+            required << std::move(foreverypartRequires);
             script += foreverypartStr + u'\n';
         }
     }

@@ -166,7 +166,7 @@ void VacationCheckJob::searchVacationScript()
         }
     }
 
-    mAvailableScripts = scriptList;
+    mAvailableScripts = std::move(scriptList);
     mScriptPos = 0;
     getNextScript();
 }

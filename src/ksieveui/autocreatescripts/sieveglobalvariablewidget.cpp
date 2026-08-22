@@ -192,7 +192,7 @@ void SieveGlobalVariableWidget::generatedScript(QString &script, QStringList &re
     mGlobalVariableLister->generatedScript(result, lst);
     if (!result.isEmpty()) {
         script += result;
-        requireModules << lst;
+        requireModules << std::move(lst);
     }
 }
 
@@ -329,8 +329,8 @@ SieveGlobalVariableActionWidget::VariableElement SieveGlobalVariableLister::load
         }
     }
     if (!globalVariableFound) {
-        var.variableName = variableName;
-        var.variableValue = variableValue;
+        var.variableName = std::move(variableName);
+        var.variableValue = std::move(variableValue);
     }
     return var;
 }
