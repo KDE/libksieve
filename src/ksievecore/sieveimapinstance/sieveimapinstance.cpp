@@ -38,7 +38,7 @@ void SieveImapInstance::setStatus(Status status)
     mStatus = status;
 }
 
-QStringList SieveImapInstance::mimeTypes() const
+const QStringList &SieveImapInstance::mimeTypes() const
 {
     return mMimeTypes;
 }
@@ -48,7 +48,7 @@ void SieveImapInstance::setMimeTypes(const QStringList &mimeTypes)
     mMimeTypes = mimeTypes;
 }
 
-QStringList SieveImapInstance::capabilities() const
+const QStringList &SieveImapInstance::capabilities() const
 {
     return mCapabilities;
 }

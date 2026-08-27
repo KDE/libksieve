@@ -76,7 +76,7 @@ public:
      * Returns the MIME types supported by this instance.
      * \return A list of MIME type strings.
      */
-    [[nodiscard]] QStringList mimeTypes() const;
+    [[nodiscard]] const QStringList &mimeTypes() const;
     /*!
      * Sets the MIME types supported by this instance.
      * \param mimeTypes A list of MIME type strings.
@@ -87,7 +87,7 @@ public:
      * Returns the capabilities of this instance.
      * \return A list of capability strings.
      */
-    [[nodiscard]] QStringList capabilities() const;
+    [[nodiscard]] const QStringList &capabilities() const;
     /*!
      * Sets the capabilities of this instance.
      * \param capabilities A list of capability strings.
