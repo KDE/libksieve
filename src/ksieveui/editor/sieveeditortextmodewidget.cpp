@@ -542,7 +542,7 @@ void SieveEditorTextModeWidget::setImportScript(const QString &script)
 
 void SieveEditorTextModeWidget::slotTextChanged()
 {
-    const bool enabled = !script().isEmpty();
+    const bool enabled = !mTextEdit->document()->isEmpty();
     Q_EMIT enableButtonOk(enabled);
 }
 

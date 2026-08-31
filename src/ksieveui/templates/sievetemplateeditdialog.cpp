@@ -126,7 +126,7 @@ void SieveTemplateEditDialog::writeConfig()
 
 void SieveTemplateEditDialog::slotTemplateChanged()
 {
-    mOkButton->setEnabled(!mTemplateNameEdit->text().trimmed().isEmpty() && !mTextEditWidget->textEdit()->toPlainText().trimmed().isEmpty());
+    mOkButton->setEnabled(!mTemplateNameEdit->text().trimmed().isEmpty() && !mTextEditWidget->textEdit()->document()->isEmpty());
 }
 
 void SieveTemplateEditDialog::setScript(const QString &text)
