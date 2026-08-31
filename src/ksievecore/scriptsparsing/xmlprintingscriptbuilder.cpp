@@ -27,7 +27,7 @@ XMLPrintingScriptBuilder::XMLPrintingScriptBuilder()
 
 void XMLPrintingScriptBuilder::initialize(int indent)
 {
-    mStream = new QXmlStreamWriter(&mResult);
+    mStream = std::make_unique<QXmlStreamWriter>(&mResult);
     if (indent == 0) {
         mStream->setAutoFormatting(false);
     } else {
@@ -38,10 +38,7 @@ void XMLPrintingScriptBuilder::initialize(int indent)
     mStream->writeStartElement(u"script"_s);
 }
 
-XMLPrintingScriptBuilder::~XMLPrintingScriptBuilder()
-{
-    delete mStream;
-}
+XMLPrintingScriptBuilder::~XMLPrintingScriptBuilder() = default;
 
 void XMLPrintingScriptBuilder::taggedArgument(const QString &tag)
 {

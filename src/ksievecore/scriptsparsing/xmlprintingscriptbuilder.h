@@ -8,6 +8,7 @@
 #include "ksievecore_export.h"
 #include <KSieve/ScriptBuilder>
 #include <QString>
+#include <memory>
 class QXmlStreamWriter;
 namespace KSieveCore
 {
@@ -155,7 +156,7 @@ private:
     KSIEVECORE_NO_EXPORT void write(const QString &key, const QString &value);
     KSIEVECORE_NO_EXPORT void write(const QString &key, const QString &qualifiedName, const QString &attribute, const QString &value);
 
-    QXmlStreamWriter *mStream = nullptr;
+    std::unique_ptr<QXmlStreamWriter> mStream;
     QString mResult;
     QString mError;
 };
