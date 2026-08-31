@@ -7,6 +7,7 @@
 */
 
 #include "sievedebugdialog.h"
+#include "syntaxhighlightingrepomanager.h"
 
 #include "util/findaccountinfojob.h"
 #include "util/util.h"
@@ -48,14 +49,15 @@ SieveDebugDialog::SieveDebugDialog(KSieveCore::SieveImapPasswordProvider *passwo
 
     mEdit = new TextCustomEditor::PlainTextEditorWidget(this);
     mEdit->setReadOnly(true);
-    const KSyntaxHighlighting::Definition def = mRepo.definitionForName(u"Sieve"_s);
+    const KSyntaxHighlighting::Definition def = SyntaxHighlightingRepoManager::self()->syntaxRepo().definitionForName(u"Sieve"_s);
     if (!def.isValid()) {
         qCWarning(LIBKSIEVEUI_LOG) << "Invalid definition name";
     }
 
     auto hl = new KSyntaxHighlighting::SyntaxHighlighter(mEdit->editor()->document());
-    hl->setTheme((palette().color(QPalette::Base).lightness() < 128) ? mRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
-                                                                     : mRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
+    hl->setTheme((palette().color(QPalette::Base).lightness() < 128)
+                     ? SyntaxHighlightingRepoManager::self()->syntaxRepo().defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+                     : SyntaxHighlightingRepoManager::self()->syntaxRepo().defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     hl->setDefinition(def);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);

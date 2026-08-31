@@ -5,7 +5,6 @@
 */
 #pragma once
 #include "ksieveui_private_export.h"
-#include <KSyntaxHighlighting/Repository>
 #include <QDialog>
 
 namespace TextCustomEditor
@@ -30,6 +29,5 @@ private:
     void readConfig();
     void writeConfig();
     TextCustomEditor::PlainTextEditorWidget *mTextEdit = nullptr;
-    KSyntaxHighlighting::Repository mSyntaxRepo;
 };
 }

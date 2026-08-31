@@ -336,6 +336,8 @@ target_sources(
         sievescriptdebugger/sievescriptdebuggerfrontendwidget.h
         debug/sievedebugdialog.h
         managesievescriptsdialog.h
+        syntaxhighlightingrepomanager.h
+        syntaxhighlightingrepomanager.cpp
 )
 
 ecm_qt_declare_logging_category(KPim6KSieveUi HEADER libksieveui_debug.h IDENTIFIER LIBKSIEVEUI_LOG CATEGORY_NAME org.kde.pim.libksieve

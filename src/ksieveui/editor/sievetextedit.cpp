@@ -8,6 +8,7 @@
 #include "editor/sieveeditorutil.h"
 #include "editor/sievelinenumberarea.h"
 #include "editor/sievetexteditorspellcheckdecorator.h"
+#include "syntaxhighlightingrepomanager.h"
 
 #if HAVE_TEXT_AUTOGENERATE_TEXT
 #include <QPointer>
@@ -49,7 +50,6 @@ public:
     TextAutoGenerateText::TextAutoGenerateManager *mTextAutoGenerateManager = nullptr;
     QPointer<TextAutoGenerateText::TextAutoGenerateQuickAskDialog> mQuickDialog;
 #endif
-    KSyntaxHighlighting::Repository mSyntaxRepo;
     bool mShowHelpMenu = true;
 };
 
@@ -111,9 +111,10 @@ void SieveTextEdit::createHighlighter()
     auto highlighter = new TextCustomEditor::PlainTextSyntaxSpellCheckingHighlighter(this);
     highlighter->toggleSpellHighlighting(checkSpellingEnabled());
     highlighter->setCurrentLanguage(spellCheckingLanguage());
-    highlighter->setDefinition(d->mSyntaxRepo.definitionForName(u"Sieve"_s));
-    highlighter->setTheme((palette().color(QPalette::Base).lightness() < 128) ? d->mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
-                                                                              : d->mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
+    highlighter->setDefinition(SyntaxHighlightingRepoManager::self()->syntaxRepo().definitionForName(u"Sieve"_s));
+    highlighter->setTheme((palette().color(QPalette::Base).lightness() < 128)
+                              ? SyntaxHighlightingRepoManager::self()->syntaxRepo().defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
+                              : SyntaxHighlightingRepoManager::self()->syntaxRepo().defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     setHighlighter(highlighter);
 }
 

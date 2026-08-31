@@ -11,7 +11,6 @@
 #include "ksieveui_export.h"
 #include <KSieveCore/Util>
 
-#include <KSyntaxHighlighting/Repository>
 #include <QDialog>
 #include <QUrl>
 
@@ -66,7 +65,6 @@ private:
     KSIEVEUI_NO_EXPORT void readConfig();
     KManageSieve::SieveJob *mSieveJob = nullptr;
     QUrl mUrl;
-    KSyntaxHighlighting::Repository mRepo;
 
     KSieveCore::SieveImapPasswordProvider *const mPasswordProvider;
     TextCustomEditor::PlainTextEditorWidget *mEdit = nullptr;
