@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-15 00:47+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2025-09-24 10:02+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -386,7 +386,7 @@ msgstr ""
 "%1"
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
-#: ksieveui/debug/sievedebugdialog.cpp:199
+#: ksieveui/debug/sievedebugdialog.cpp:201
 #: ksieveui/managesievescriptsdialog.cpp:182
 #, kde-format
 msgid ""
@@ -2429,7 +2429,7 @@ msgid "Sieve Parsing Error"
 msgstr "Fout bij het ontleden van Sieve"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:42
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:43
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:44
 #, kde-format
 msgid "Save As…"
 msgstr "Opslaan als…"
@@ -2462,13 +2462,13 @@ msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Tabblad sluiten"
 
-#: ksieveui/debug/sievedebugdialog.cpp:43
+#: ksieveui/debug/sievedebugdialog.cpp:44
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Diagnostics"
 msgstr "Sieve-diagnostiek"
 
-#: ksieveui/debug/sievedebugdialog.cpp:68
+#: ksieveui/debug/sievedebugdialog.cpp:70
 #, kde-format
 msgid ""
 "Collecting diagnostic information about Sieve support…\n"
@@ -2478,12 +2478,12 @@ msgstr ""
 "ondersteuning…\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:71
+#: ksieveui/debug/sievedebugdialog.cpp:73
 #, kde-format
 msgid "No IMAP resource found."
 msgstr "Geen IMAP-hulpbron gevonden."
 
-#: ksieveui/debug/sievedebugdialog.cpp:104
+#: ksieveui/debug/sievedebugdialog.cpp:106
 #, kde-format
 msgid ""
 "Unable to get the info\n"
@@ -2492,17 +2492,17 @@ msgstr ""
 "Kan de informatie niet verkrijgen\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:122
+#: ksieveui/debug/sievedebugdialog.cpp:124
 #, kde-format
 msgid "Collecting data for account '%1'…\n"
 msgstr "Bezig met het verzamelen van gegevens voor account '%1'…\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:123
+#: ksieveui/debug/sievedebugdialog.cpp:125
 #, kde-format
 msgid "------------------------------------------------------------\n"
 msgstr "------------------------------------------------------------\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:137
+#: ksieveui/debug/sievedebugdialog.cpp:139
 #, kde-format
 msgid ""
 "(Account does not support Sieve)\n"
@@ -2511,12 +2511,12 @@ msgstr ""
 "(Account ondersteunt Sieve niet)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:169
+#: ksieveui/debug/sievedebugdialog.cpp:171
 #, kde-format
 msgid "Contents of script '%1':\n"
 msgstr "Inhoud van script  '%1':\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:203
+#: ksieveui/debug/sievedebugdialog.cpp:205
 #, kde-format
 msgid ""
 "(This script is empty)\n"
@@ -2525,7 +2525,7 @@ msgstr ""
 "(Dit script is leeg)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:206
+#: ksieveui/debug/sievedebugdialog.cpp:208
 #, kde-format
 msgid ""
 "------------------------------------------------------------\n"
@@ -2538,22 +2538,22 @@ msgstr ""
 "------------------------------------------------------------\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:224
+#: ksieveui/debug/sievedebugdialog.cpp:226
 #, kde-format
 msgid "Sieve capabilities:\n"
 msgstr "Sieve mogelijkheden:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:227
+#: ksieveui/debug/sievedebugdialog.cpp:229
 #, kde-format
 msgid "(No special capabilities available)"
 msgstr "(Er zijn geen speciale mogelijkheden beschikbaar)"
 
-#: ksieveui/debug/sievedebugdialog.cpp:235
+#: ksieveui/debug/sievedebugdialog.cpp:237
 #, kde-format
 msgid "Available Sieve scripts:\n"
 msgstr "Beschikbare Sieve-scripts:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:238
+#: ksieveui/debug/sievedebugdialog.cpp:240
 #, kde-format
 msgid ""
 "(No Sieve scripts available on this server)\n"
@@ -2562,7 +2562,7 @@ msgstr ""
 "(Er zijn geen Sieve-scripts beschikbaar op deze server)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:245
+#: ksieveui/debug/sievedebugdialog.cpp:247
 #, kde-format
 msgid ""
 "Active script: '%1'\n"
@@ -2810,25 +2810,25 @@ msgstr "Ondersteuning voor Sieve-server"
 msgid "Sieve server supports:"
 msgstr "Sieve-server ondersteunt:"
 
-#: ksieveui/editor/sievetextedit.cpp:324
+#: ksieveui/editor/sievetextedit.cpp:320
 #, kde-format
 msgctxt "@action"
 msgid "Quick Ask"
 msgstr "Snel vragen"
 
-#: ksieveui/editor/sievetextedit.cpp:334
+#: ksieveui/editor/sievetextedit.cpp:330
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule"
 msgstr "Regel invoegen"
 
-#: ksieveui/editor/sievetextedit.cpp:348
+#: ksieveui/editor/sievetextedit.cpp:344
 #, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "Hulp over: '%1'"
 
-#: ksieveui/editor/sievetextedit.cpp:357
+#: ksieveui/editor/sievetextedit.cpp:353
 #, kde-format
 msgctxt "@action"
 msgid "Edit Rule"
@@ -3013,13 +3013,13 @@ msgstr ""
 "De server antwoordde:\n"
 "%1"
 
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:36
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Parsing"
 msgstr "Ontleden van sieve"
 
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:83
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:85
 #, kde-format
 msgid "XML Files (*.xml);;All Files (*)"
 msgstr "XML-bestanden (*.xml);;Alle bestanden (*)"

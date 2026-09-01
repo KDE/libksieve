@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-15 00:47+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2024-08-02 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -374,7 +374,7 @@ msgstr ""
 "%1"
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
-#: ksieveui/debug/sievedebugdialog.cpp:199
+#: ksieveui/debug/sievedebugdialog.cpp:201
 #: ksieveui/managesievescriptsdialog.cpp:182
 #, kde-format
 msgid ""
@@ -2392,7 +2392,7 @@ msgid "Sieve Parsing Error"
 msgstr "Kribrila Analiza Eraro"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:42
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:43
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:44
 #, kde-format
 msgid "Save As…"
 msgstr "Konservi kiel…"
@@ -2425,13 +2425,13 @@ msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Fermi Tab"
 
-#: ksieveui/debug/sievedebugdialog.cpp:43
+#: ksieveui/debug/sievedebugdialog.cpp:44
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Diagnostics"
 msgstr "Kribrila Diagnozo"
 
-#: ksieveui/debug/sievedebugdialog.cpp:68
+#: ksieveui/debug/sievedebugdialog.cpp:70
 #, kde-format
 msgid ""
 "Collecting diagnostic information about Sieve support…\n"
@@ -2440,12 +2440,12 @@ msgstr ""
 "Kolektante diagnozajn informojn pri Sieve-subteno…\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:71
+#: ksieveui/debug/sievedebugdialog.cpp:73
 #, kde-format
 msgid "No IMAP resource found."
 msgstr "Neniu IMAP-rimedo trovita."
 
-#: ksieveui/debug/sievedebugdialog.cpp:104
+#: ksieveui/debug/sievedebugdialog.cpp:106
 #, kde-format
 msgid ""
 "Unable to get the info\n"
@@ -2454,17 +2454,17 @@ msgstr ""
 "Ne eblas ricevi la informojn\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:122
+#: ksieveui/debug/sievedebugdialog.cpp:124
 #, kde-format
 msgid "Collecting data for account '%1'…\n"
 msgstr "Kolektante datumojn por konto '%1'…\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:123
+#: ksieveui/debug/sievedebugdialog.cpp:125
 #, kde-format
 msgid "------------------------------------------------------------\n"
 msgstr "------------------------------------------------- ----------\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:137
+#: ksieveui/debug/sievedebugdialog.cpp:139
 #, kde-format
 msgid ""
 "(Account does not support Sieve)\n"
@@ -2473,12 +2473,12 @@ msgstr ""
 "(Konto ne subtenas Kribrilon)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:169
+#: ksieveui/debug/sievedebugdialog.cpp:171
 #, kde-format
 msgid "Contents of script '%1':\n"
 msgstr "Enhavo de skripto '%1':\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:203
+#: ksieveui/debug/sievedebugdialog.cpp:205
 #, kde-format
 msgid ""
 "(This script is empty)\n"
@@ -2487,7 +2487,7 @@ msgstr ""
 "(Ĉi tiu skripto estas malplena)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:206
+#: ksieveui/debug/sievedebugdialog.cpp:208
 #, kde-format
 msgid ""
 "------------------------------------------------------------\n"
@@ -2500,22 +2500,22 @@ msgstr ""
 "---------------------------------- --------------------------\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:224
+#: ksieveui/debug/sievedebugdialog.cpp:226
 #, kde-format
 msgid "Sieve capabilities:\n"
 msgstr "Kribrilkapabloj:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:227
+#: ksieveui/debug/sievedebugdialog.cpp:229
 #, kde-format
 msgid "(No special capabilities available)"
 msgstr "(Ne ekzistas specialaj kapabloj)"
 
-#: ksieveui/debug/sievedebugdialog.cpp:235
+#: ksieveui/debug/sievedebugdialog.cpp:237
 #, kde-format
 msgid "Available Sieve scripts:\n"
 msgstr "Disponeblaj Kribrilaj skriptoj:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:238
+#: ksieveui/debug/sievedebugdialog.cpp:240
 #, kde-format
 msgid ""
 "(No Sieve scripts available on this server)\n"
@@ -2524,7 +2524,7 @@ msgstr ""
 "(Neniu Sieve-skriptoj haveblaj sur ĉi tiu servilo)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:245
+#: ksieveui/debug/sievedebugdialog.cpp:247
 #, kde-format
 msgid ""
 "Active script: '%1'\n"
@@ -2772,25 +2772,25 @@ msgstr "Kribrila Servilo Subteno"
 msgid "Sieve server supports:"
 msgstr "Sieve-servilo subtenas:"
 
-#: ksieveui/editor/sievetextedit.cpp:324
+#: ksieveui/editor/sievetextedit.cpp:320
 #, kde-format
 msgctxt "@action"
 msgid "Quick Ask"
 msgstr ""
 
-#: ksieveui/editor/sievetextedit.cpp:334
+#: ksieveui/editor/sievetextedit.cpp:330
 #, kde-format
 msgctxt "@action"
 msgid "Insert Rule"
 msgstr "Enmeti Regulon"
 
-#: ksieveui/editor/sievetextedit.cpp:348
+#: ksieveui/editor/sievetextedit.cpp:344
 #, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr "Helpo pri: '%1'"
 
-#: ksieveui/editor/sievetextedit.cpp:357
+#: ksieveui/editor/sievetextedit.cpp:353
 #, kde-format
 msgctxt "@action"
 msgid "Edit Rule"
@@ -2973,13 +2973,13 @@ msgstr ""
 "La servilo respondis:\n"
 "%1"
 
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:36
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Parsing"
 msgstr "Kribrilo Analizo"
 
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:83
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:85
 #, kde-format
 msgid "XML Files (*.xml);;All Files (*)"
 msgstr "XML-Dosieroj (*.xml);;Ĉiuj Dosieroj (*)"

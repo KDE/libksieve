@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-15 00:47+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2013-10-16 04:43+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -383,7 +383,7 @@ msgid ""
 msgstr "Серверге \"User\"\" скриптін жазу кездегі қате."
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
-#: ksieveui/debug/sievedebugdialog.cpp:199
+#: ksieveui/debug/sievedebugdialog.cpp:201
 #: ksieveui/managesievescriptsdialog.cpp:182
 #, fuzzy, kde-format
 #| msgid ""
@@ -2485,7 +2485,7 @@ msgid "Sieve Parsing Error"
 msgstr "Sieve талдау қатесі"
 
 #: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:42
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:43
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:44
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As…"
@@ -2520,14 +2520,14 @@ msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Қойндыны жабу"
 
-#: ksieveui/debug/sievedebugdialog.cpp:43
+#: ksieveui/debug/sievedebugdialog.cpp:44
 #, fuzzy, kde-format
 #| msgid "Sieve Diagnostics"
 msgctxt "@title:window"
 msgid "Sieve Diagnostics"
 msgstr "Sieve диагностикасы"
 
-#: ksieveui/debug/sievedebugdialog.cpp:68
+#: ksieveui/debug/sievedebugdialog.cpp:70
 #, fuzzy, kde-format
 #| msgid ""
 #| "Collecting diagnostic information about Sieve support...\n"
@@ -2539,31 +2539,31 @@ msgstr ""
 "Sieve қолдауы туралы диагностика мәліметін жинау...\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:71
+#: ksieveui/debug/sievedebugdialog.cpp:73
 #, fuzzy, kde-format
 #| msgid "No errors found."
 msgid "No IMAP resource found."
 msgstr "Қателер табылған жоқ."
 
-#: ksieveui/debug/sievedebugdialog.cpp:104
+#: ksieveui/debug/sievedebugdialog.cpp:106
 #, kde-format
 msgid ""
 "Unable to get the info\n"
 "\n"
 msgstr ""
 
-#: ksieveui/debug/sievedebugdialog.cpp:122
+#: ksieveui/debug/sievedebugdialog.cpp:124
 #, fuzzy, kde-format
 #| msgid "Collecting data for account '%1'...\n"
 msgid "Collecting data for account '%1'…\n"
 msgstr "'%1' тіркелгісі үшін деректі жинау...\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:123
+#: ksieveui/debug/sievedebugdialog.cpp:125
 #, kde-format
 msgid "------------------------------------------------------------\n"
 msgstr "------------------------------------------------------------\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:137
+#: ksieveui/debug/sievedebugdialog.cpp:139
 #, kde-format
 msgid ""
 "(Account does not support Sieve)\n"
@@ -2572,12 +2572,12 @@ msgstr ""
 "(Тіркелгі Sieve-ті танымайды)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:169
+#: ksieveui/debug/sievedebugdialog.cpp:171
 #, kde-format
 msgid "Contents of script '%1':\n"
 msgstr "'%1' скрипттің мазмұны:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:203
+#: ksieveui/debug/sievedebugdialog.cpp:205
 #, fuzzy, kde-format
 #| msgid ""
 #| "(This script is empty.)\n"
@@ -2589,7 +2589,7 @@ msgstr ""
 "(Бұл скрипт бос.)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:206
+#: ksieveui/debug/sievedebugdialog.cpp:208
 #, kde-format
 msgid ""
 "------------------------------------------------------------\n"
@@ -2602,22 +2602,22 @@ msgstr ""
 "------------------------------------------------------------\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:224
+#: ksieveui/debug/sievedebugdialog.cpp:226
 #, kde-format
 msgid "Sieve capabilities:\n"
 msgstr "Sieve мүмкіндіктері:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:227
+#: ksieveui/debug/sievedebugdialog.cpp:229
 #, kde-format
 msgid "(No special capabilities available)"
 msgstr "(Ерекше мүмкіндіктері жоқ)"
 
-#: ksieveui/debug/sievedebugdialog.cpp:235
+#: ksieveui/debug/sievedebugdialog.cpp:237
 #, kde-format
 msgid "Available Sieve scripts:\n"
 msgstr "Бар Sieve скрипттері:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:238
+#: ksieveui/debug/sievedebugdialog.cpp:240
 #, kde-format
 msgid ""
 "(No Sieve scripts available on this server)\n"
@@ -2626,7 +2626,7 @@ msgstr ""
 "(Бұл серверде Sieve скрипттері жоқ)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:245
+#: ksieveui/debug/sievedebugdialog.cpp:247
 #, fuzzy, kde-format
 #| msgid ""
 #| "Active script: %1\n"
@@ -2911,26 +2911,26 @@ msgstr "Сервер Sieve қолдйтыны:"
 msgid "Sieve server supports:"
 msgstr "Сервер Sieve қолдйтыны:"
 
-#: ksieveui/editor/sievetextedit.cpp:324
+#: ksieveui/editor/sievetextedit.cpp:320
 #, kde-format
 msgctxt "@action"
 msgid "Quick Ask"
 msgstr ""
 
-#: ksieveui/editor/sievetextedit.cpp:334
+#: ksieveui/editor/sievetextedit.cpp:330
 #, fuzzy, kde-format
 #| msgid "Edit"
 msgctxt "@action"
 msgid "Insert Rule"
 msgstr "Өзгерту"
 
-#: ksieveui/editor/sievetextedit.cpp:348
+#: ksieveui/editor/sievetextedit.cpp:344
 #, kde-format
 msgctxt "@action"
 msgid "Help about: '%1'"
 msgstr ""
 
-#: ksieveui/editor/sievetextedit.cpp:357
+#: ksieveui/editor/sievetextedit.cpp:353
 #, fuzzy, kde-format
 #| msgid "Edit"
 msgctxt "@action"
@@ -3136,14 +3136,14 @@ msgstr ""
 "Серверінің жауабы:\n"
 "%1"
 
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:36
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:37
 #, fuzzy, kde-format
 #| msgid "Sieve Parsing"
 msgctxt "@title:window"
 msgid "Sieve Parsing"
 msgstr "Sieve талдауы"
 
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:83
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:85
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.siv|sieve files (*.siv)\n"
