@@ -17,6 +17,7 @@ target_link_libraries(
     KF6::Completion
     KPim6::PimCommon
     KF6::I18n
+    KF6::ConfigGui
 )
 set_property(
     TARGET
