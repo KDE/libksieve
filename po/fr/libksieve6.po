@@ -1711,7 +1711,7 @@ msgstr "Métadonnée"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Mailbox:"
-msgstr "Boîte à lettres :"
+msgstr "Boite à lettres :"
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:56
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:54
