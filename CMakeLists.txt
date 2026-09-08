@@ -125,6 +125,9 @@ set(COMPILE_WITH_UNITY_CMAKE_SUPPORT OFF)
 if(USE_UNITY_CMAKE_SUPPORT)
     set(COMPILE_WITH_UNITY_CMAKE_SUPPORT ON)
 endif()
+
+option(ENABLE_PCH "Enable Precompiled Headers support" ON)
+
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 # Look for Sasl2 before anything else
 find_package(Sasl2)

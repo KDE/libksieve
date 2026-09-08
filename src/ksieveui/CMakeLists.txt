@@ -10,6 +10,42 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX LIBKSIEVEUI
 add_library(KPim6KSieveUi)
 add_library(KPim6::KSieveUi ALIAS KPim6KSieveUi)
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KPim6KSieveUi
+        PRIVATE
+            <QObject>
+            <QString>
+            <QStringList>
+            <QList>
+            <QUrl>
+            <QPointer>
+            <QXmlStreamReader>
+            <QWidget>
+            <QDialog>
+            <QDialogButtonBox>
+            <QVBoxLayout>
+            <QHBoxLayout>
+            <QGridLayout>
+            <QLabel>
+            <QLineEdit>
+            <QPushButton>
+            <QComboBox>
+            <QCheckBox>
+            <QSpinBox>
+            <QStackedWidget>
+            <QMenu>
+            <QIcon>
+            <KLocalizedString>
+            <KConfigGroup>
+            <KSharedConfig>
+            <KMessageBox>
+            <KLineEditEventHandler>
+            <memory>
+    )
+endif()
+
 configure_file(config-libksieveui.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-libksieveui.h)
 
 if(BUILD_TESTING)
