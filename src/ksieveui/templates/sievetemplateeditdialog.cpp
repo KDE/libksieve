@@ -113,15 +113,21 @@ SieveTemplateEditDialog::~SieveTemplateEditDialog()
 
 void SieveTemplateEditDialog::readConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(mySieveTemplateEditDialogGroupName), QSize(600, 400));
+#else
     create(); // ensure a window is created
     TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(mySieveTemplateEditDialogGroupName), 600, 400);
+#endif
 }
 
 void SieveTemplateEditDialog::writeConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveTemplateEditDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
+#endif
 }
 
 void SieveTemplateEditDialog::slotTemplateChanged()

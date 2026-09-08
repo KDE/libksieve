@@ -91,15 +91,21 @@ SelectHeadersDialog::~SelectHeadersDialog()
 
 void SelectHeadersDialog::readConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(mySelectFlagsListDialogGroupName), QSize(400, 300));
+#else
     create(); // ensure a window is created
     TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(mySelectFlagsListDialogGroupName), 400, 300);
+#endif
 }
 
 void SelectHeadersDialog::writeConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySelectFlagsListDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
+#endif
 }
 
 void SelectHeadersDialog::slotNewHeaderTextChanged(const QString &text)

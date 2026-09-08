@@ -186,15 +186,21 @@ void MultiImapVacationDialog::createPage(const QString &serverName, const KSieve
 
 void MultiImapVacationDialog::readConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myMultiImapVacationDialogGroupName), QSize(600, 400));
+#else
     create(); // ensure a window is created
     TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myMultiImapVacationDialogGroupName), 600, 400);
+#endif
 }
 
 void MultiImapVacationDialog::writeConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myMultiImapVacationDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
+#endif
 }
 
 void MultiImapVacationDialog::slotOkClicked()

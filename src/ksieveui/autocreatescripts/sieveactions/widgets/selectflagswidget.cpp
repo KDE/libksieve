@@ -55,15 +55,21 @@ SelectFlagsListDialog::~SelectFlagsListDialog()
 
 void SelectFlagsListDialog::readConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(mySelectFlagsListDialogGroupName), QSize(300, 200));
+#else
     create(); // ensure a window is created
     TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(mySelectFlagsListDialogGroupName), 300, 200);
+#endif
 }
 
 void SelectFlagsListDialog::writeConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySelectFlagsListDialogGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
+#endif
 }
 
 void SelectFlagsListDialog::setFlags(const QStringList &list)

@@ -108,15 +108,21 @@ void SieveEditor::slotEnableButtonOk(bool b)
 
 void SieveEditor::readConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(mySieveEditorGroupName), QSize(800, 600));
+#else
     create(); // ensure a window is created
     TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(mySieveEditorGroupName), 800, 600);
+#endif
 }
 
 void SieveEditor::writeConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveEditorGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
     group.sync();
+#endif
 }
 
 QString SieveEditor::script() const
