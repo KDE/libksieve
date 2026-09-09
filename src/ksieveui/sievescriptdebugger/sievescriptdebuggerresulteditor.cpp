@@ -30,7 +30,7 @@ void SieveScriptDebuggerResultEditor::addExtraMenuEntry(QMenu *menu, QPoint pos)
         connect(clearAction, &QAction::triggered, this, &SieveScriptDebuggerResultEditor::clear);
         menu->addAction(clearAction);
         menu->addSeparator();
-        QAction *saveAsAction = KStandardActions::saveAs(this, &SieveScriptDebuggerResultEditor::slotSaveAs, this);
+        QAction *saveAsAction = KStandardActions::saveAs(this, &SieveScriptDebuggerResultEditor::slotSaveAs, menu);
         menu->addAction(saveAsAction);
     }
 }
