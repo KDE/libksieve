@@ -78,7 +78,7 @@ void VacationCheckJob::slotGetResult(KManageSieve::SieveJob *job, bool success, 
             if (mAvailableScripts.isEmpty()) {
                 Q_EMIT vacationScriptActive(this, QString(), false);
             } else {
-                const QString &scriptName = mAvailableScripts[mScriptPos - 1];
+                const QString &scriptName = mAvailableScripts.at(mScriptPos - 1);
                 bool hasVacationActive = mActiveScripts.contains(scriptName) && vacation.active;
                 if (hasVacationActive && vacation.startDate.isValid() && vacation.endDate.isValid()) {
                     hasVacationActive = (vacation.startDate <= QDate::currentDate() && vacation.endDate >= QDate::currentDate());
@@ -182,7 +182,7 @@ void VacationCheckJob::getNextScript()
     }
     QUrl url = mUrl;
     url = url.adjusted(QUrl::RemoveFilename);
-    url.setPath(url.path() + u'/' + mAvailableScripts[mScriptPos]);
+    url.setPath(url.path() + u'/' + mAvailableScripts.at(mScriptPos));
     mScriptPos += 1;
     if (KSieveCore::Util::isKep14ProtectedName(url.fileName())) {
         getNextScript();

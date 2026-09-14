@@ -265,7 +265,7 @@ void SelectHeaderTypeComboBox::headerMap(bool onlyEnvelopType)
 void SelectHeaderTypeComboBox::initialize(bool onlyEnvelopType)
 {
     headerMap(onlyEnvelopType);
-    for (const auto &[key, value] : mHeaderMap.asKeyValueRange()) {
+    for (const auto &[key, value] : std::as_const(mHeaderMap).asKeyValueRange()) {
         addItem(value, key);
     }
     addItem(getSelectMultipleHeadersTranslated());
@@ -289,7 +289,7 @@ QString SelectHeaderTypeComboBox::code() const
 void SelectHeaderTypeComboBox::setCode(const QString &code)
 {
     bool foundHeaders = false;
-    for (const auto &[key, value] : mHeaderMap.asKeyValueRange()) {
+    for (const auto &[key, value] : std::as_const(mHeaderMap).asKeyValueRange()) {
         if (key == code) {
             const int index = findData(key);
             setCurrentIndex(index);
