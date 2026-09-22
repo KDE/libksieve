@@ -8,9 +8,9 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-09 00:51+0000\n"
-"PO-Revision-Date: 2026-05-31 20:18-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
-"Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
+"Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,8 +55,6 @@ msgid ""
 "The server does not seem to support TLS. Disable TLS if you want to connect "
 "without encryption."
 msgstr ""
-"مۇلازىمېتىر TLS نى قوللىمايدىغاندەك قىلىدۇ. شىفىرسىز باغلانماقچى بولسىڭىز "
-"TLS نى ئىناۋەتسىز قىلىڭ."
 
 #: kmanagesieve/session.cpp:259
 #, kde-format
@@ -91,9 +89,9 @@ msgid ""
 "The server responded:\n"
 "%1"
 msgstr ""
-"كىملىك دەلىللەش مەغلۇپ بولدى.\n"
-"ئاساسلىقى ئىم خاتادەك قىلىدۇ.\n"
-"مۇلازىمېتىرنىڭ جاۋابى:\n"
+"دەلىللىيەلمىدى.\n"
+"Most likely the password is wrong.\n"
+"The server responded:\n"
 "%1"
 
 #: kmanagesieve/sievejob.cpp:144 kmanagesieve/sievejob.cpp:151
@@ -527,7 +525,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/commonwidgets/selectconvertparameterwidget.cpp:72
 #, kde-format
 msgid " px"
-msgstr " px"
+msgstr ""
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmatchtypecombobox.cpp:37
 #, kde-format
@@ -572,17 +570,17 @@ msgstr ""
 #: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:27
 #, kde-format
 msgid "JPEG"
-msgstr "JPEG"
+msgstr ""
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:28
 #, kde-format
 msgid "TIFF"
-msgstr "TIFF"
+msgstr ""
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:29
 #, kde-format
 msgid "PNG"
-msgstr "PNG"
+msgstr ""
 
 #: ksieveui/autocreatescripts/commonwidgets/selectmimetypecombobox.cpp:30
 #, kde-format
@@ -961,7 +959,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreturn.cpp:15
 #, kde-format
 msgid "Return"
-msgstr "Return"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionreturn.cpp:32
 #, kde-format
@@ -1158,7 +1156,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:150
 #, kde-format
 msgid "…"
-msgstr "…"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:151
 #, kde-format
@@ -1855,17 +1853,17 @@ msgstr "بايت"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:27
 #, kde-format
 msgid "KiB"
-msgstr "KiB"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:28
 #, kde-format
 msgid "MiB"
-msgstr "MiB"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:29
 #, kde-format
 msgid "GiB"
-msgstr "GiB"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:56
 #, kde-format
@@ -2594,7 +2592,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Edit Rule"
-msgstr ""
+msgstr "قائىدە تەھرىر"
 
 #: ksieveui/editor/warningwidget/sieveeditorparsingmissingfeaturewarning.cpp:22
 #, kde-format
