@@ -80,7 +80,7 @@ QStringList SieveConditionVirusTest::needRequires(QWidget *w) const
     const SelectComparatorComboBox *comparator = w->findChild<SelectComparatorComboBox *>(u"comparator"_s);
     QString comparatorRequires = comparator->require();
     QStringList lst;
-    lst << u"spamtest"_s << u"relational"_s;
+    lst << u"virustest"_s << u"relational"_s;
     if (!comparatorRequires.isEmpty()) {
         lst << std::move(comparatorRequires);
     }
