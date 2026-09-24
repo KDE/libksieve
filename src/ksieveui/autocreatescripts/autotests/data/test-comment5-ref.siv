@@ -1,4 +1,4 @@
-require "spamtest";
+require "virustest";
 require "relational";
 require "environment";
 require "envelope";

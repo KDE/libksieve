@@ -1,6 +1,6 @@
 require "include";
 require "variables";
-require "spamtest";
+require "virustest";
 require "relational";
 require "comparator-i;ascii-numeric";
 require "enclose";
