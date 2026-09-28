@@ -27,7 +27,6 @@ private Q_SLOTS:
 
 private:
     void readConfig();
-    void writeConfig();
     TextCustomEditor::PlainTextEditorWidget *mTextEdit = nullptr;
 };
 }

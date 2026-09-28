@@ -12,18 +12,14 @@
 
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KSharedConfig>
 #include <QTabWidget>
 
-#include <KConfigGroup>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QLabel>
 #include <QPushButton>
 #include <QStackedWidget>
 #include <QTabBar>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 using namespace Qt::Literals::StringLiterals;
@@ -54,10 +50,7 @@ MultiImapVacationDialog::MultiImapVacationDialog(KSieveCore::MultiImapVacationMa
     readConfig();
 }
 
-MultiImapVacationDialog::~MultiImapVacationDialog()
-{
-    writeConfig();
-}
+MultiImapVacationDialog::~MultiImapVacationDialog() = default;
 
 void MultiImapVacationDialog::switchToServerNamePage(const QString &serverName)
 {
@@ -186,21 +179,7 @@ void MultiImapVacationDialog::createPage(const QString &serverName, const KSieve
 
 void MultiImapVacationDialog::readConfig()
 {
-#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myMultiImapVacationDialogGroupName), QSize(600, 400));
-#else
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myMultiImapVacationDialogGroupName), 600, 400);
-#endif
-}
-
-void MultiImapVacationDialog::writeConfig()
-{
-#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myMultiImapVacationDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
-    group.sync();
-#endif
 }
 
 void MultiImapVacationDialog::slotOkClicked()

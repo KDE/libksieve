@@ -21,14 +21,10 @@
 #include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Theme>
 
-#include <KConfigGroup>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QTimer>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 using namespace KSieveUi;
@@ -82,26 +78,11 @@ SieveDebugDialog::~SieveDebugDialog()
         mSieveJob = nullptr;
     }
     qCDebug(LIBKSIEVEUI_LOG);
-    writeConfig();
 }
 
 void SieveDebugDialog::readConfig()
 {
-#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(mySieveDebugDialogGroupName), QSize(640, 480));
-#else
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(mySieveDebugDialogGroupName), 640, 480);
-#endif
-}
-
-void SieveDebugDialog::writeConfig()
-{
-#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveDebugDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
-    group.sync();
-#endif
 }
 
 void SieveDebugDialog::slotShutDownJob()

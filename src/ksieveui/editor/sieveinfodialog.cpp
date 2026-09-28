@@ -8,13 +8,9 @@
 #include "sieveinfodialog.h"
 
 #include "sieveinfowidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 namespace
@@ -42,10 +38,7 @@ SieveInfoDialog::SieveInfoDialog(QWidget *parent)
     readConfig();
 }
 
-SieveInfoDialog::~SieveInfoDialog()
-{
-    writeConfig();
-}
+SieveInfoDialog::~SieveInfoDialog() = default;
 
 void SieveInfoDialog::setServerInfo(const QStringList &serverInfos)
 {
@@ -54,21 +47,7 @@ void SieveInfoDialog::setServerInfo(const QStringList &serverInfos)
 
 void SieveInfoDialog::readConfig()
 {
-#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myConfigGroupName), QSize(400, 300));
-#else
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myConfigGroupName), 400, 300);
-#endif
-}
-
-void SieveInfoDialog::writeConfig()
-{
-#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myConfigGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
-    group.sync();
-#endif
 }
 
 #include "moc_sieveinfodialog.cpp"

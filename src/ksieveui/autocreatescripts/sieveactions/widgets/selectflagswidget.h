@@ -40,7 +40,6 @@ public:
 
 private:
     void readConfig();
-    void writeConfig();
     SelectFlagsListWidget *const mListWidget;
 };
 

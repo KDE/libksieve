@@ -74,7 +74,6 @@ private:
     KSIEVEUI_NO_EXPORT void createPage(const QString &serverName, const KSieveCore::Util::AccountInfo &info);
     KSIEVEUI_NO_EXPORT void init();
     KSIEVEUI_NO_EXPORT void readConfig();
-    KSIEVEUI_NO_EXPORT void writeConfig();
     KSIEVEUI_NO_EXPORT void initialize();
     QDialogButtonBox *mButtonBox = nullptr;
     std::unique_ptr<MultiImapVacationDialogPrivate> const d;

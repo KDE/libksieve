@@ -40,7 +40,6 @@ public:
 private:
     void slotTemplateChanged();
     void readConfig();
-    void writeConfig();
     SieveTextEditWidget *mTextEditWidget = nullptr;
     QLineEdit *mTemplateNameEdit = nullptr;
     QPushButton *mOkButton = nullptr;

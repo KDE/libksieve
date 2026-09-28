@@ -37,7 +37,6 @@ public:
 
 private:
     KSIEVEUI_NO_EXPORT void readConfig();
-    KSIEVEUI_NO_EXPORT void writeConfig();
     SieveInfoWidget *const mSieveInfoWidget;
 };
 }

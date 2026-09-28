@@ -10,15 +10,11 @@
 #include <TextCustomEditor/RichTextEditorWidget>
 
 #include <KLocalizedString>
-#include <KSharedConfig>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 
-#include <KConfigGroup>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <cerrno>
 using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
@@ -46,10 +42,7 @@ SieveScriptParsingErrorDialog::SieveScriptParsingErrorDialog(QWidget *parent)
     mainLayout->addWidget(buttonBox);
 }
 
-SieveScriptParsingErrorDialog::~SieveScriptParsingErrorDialog()
-{
-    writeConfig();
-}
+SieveScriptParsingErrorDialog::~SieveScriptParsingErrorDialog() = default;
 
 void SieveScriptParsingErrorDialog::setError(QString script, QString error)
 {
@@ -63,21 +56,7 @@ void SieveScriptParsingErrorDialog::setError(QString script, QString error)
 
 void SieveScriptParsingErrorDialog::readConfig()
 {
-#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(mySieveScriptParsingErrorDialogGroupName), QSize(800, 600));
-#else
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(mySieveScriptParsingErrorDialogGroupName), 800, 600);
-#endif
-}
-
-void SieveScriptParsingErrorDialog::writeConfig()
-{
-#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveScriptParsingErrorDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
-    group.sync();
-#endif
 }
 
 void SieveScriptParsingErrorDialog::slotSaveAs()

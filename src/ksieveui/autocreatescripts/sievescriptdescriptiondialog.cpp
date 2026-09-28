@@ -8,14 +8,10 @@
 
 #include <TextCustomEditor/PlainTextEditorWidget>
 
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 using namespace Qt::Literals::StringLiterals;
@@ -44,10 +40,7 @@ SieveScriptDescriptionDialog::SieveScriptDescriptionDialog(QWidget *parent)
     mEdit->setFocus();
 }
 
-SieveScriptDescriptionDialog::~SieveScriptDescriptionDialog()
-{
-    writeConfig();
-}
+SieveScriptDescriptionDialog::~SieveScriptDescriptionDialog() = default;
 
 void SieveScriptDescriptionDialog::setDescription(const QString &desc)
 {
@@ -61,22 +54,7 @@ QString SieveScriptDescriptionDialog::description() const
 
 void SieveScriptDescriptionDialog::readConfig()
 {
-#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(mySieveScriptDescriptionDialogGroupName), QSize(800, 600));
-#else
-    create(); // ensure a window is created
-    windowHandle()->resize(QSize(800, 600));
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(mySieveScriptDescriptionDialogGroupName), 800, 600);
-#endif
-}
-
-void SieveScriptDescriptionDialog::writeConfig()
-{
-#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveScriptDescriptionDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
-    group.sync();
-#endif
 }
 
 #include "moc_sievescriptdescriptiondialog.cpp"

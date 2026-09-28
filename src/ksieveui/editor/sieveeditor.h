@@ -107,7 +107,6 @@ private:
     KSIEVEUI_NO_EXPORT void slotEnableButtonOk(bool b);
     KSIEVEUI_NO_EXPORT void slotAccepted();
     KSIEVEUI_NO_EXPORT void slotCanceled();
-    KSIEVEUI_NO_EXPORT void writeConfig();
     KSIEVEUI_NO_EXPORT void readConfig();
     std::unique_ptr<SieveEditorPrivate> const d;
 };

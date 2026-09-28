@@ -61,7 +61,6 @@ private Q_SLOTS:
 private:
     KSIEVEUI_NO_EXPORT void slotFindAccountInfoFinished(const KSieveCore::Util::AccountInfo &info);
     KSIEVEUI_NO_EXPORT void slotFindAccountInfoForScriptFinished(const KSieveCore::Util::AccountInfo &info);
-    KSIEVEUI_NO_EXPORT void writeConfig();
     KSIEVEUI_NO_EXPORT void readConfig();
     KManageSieve::SieveJob *mSieveJob = nullptr;
     QUrl mUrl;

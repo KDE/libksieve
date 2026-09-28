@@ -26,7 +26,6 @@ public:
 
 private:
     void readConfig();
-    void writeConfig();
 
 private:
     TextCustomEditor::PlainTextEditorWidget *mEdit = nullptr;

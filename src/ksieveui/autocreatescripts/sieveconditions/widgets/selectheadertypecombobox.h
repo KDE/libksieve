@@ -45,7 +45,6 @@ private:
     void slotNewHeaderTextChanged(const QString &text);
     void slotAddNewHeader();
     void readConfig();
-    void writeConfig();
     SelectHeadersWidget *const mListWidget;
     QLineEdit *const mNewHeader;
     QPushButton *const mAddNewHeader;

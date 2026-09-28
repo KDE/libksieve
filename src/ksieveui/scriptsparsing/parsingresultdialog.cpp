@@ -11,18 +11,14 @@
 #include <TextCustomEditor/PlainTextEditor>
 #include <TextCustomEditor/PlainTextEditorWidget>
 
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/SyntaxHighlighter>
 #include <KSyntaxHighlighting/Theme>
 
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 using namespace Qt::Literals::StringLiterals;
@@ -57,10 +53,7 @@ ParsingResultDialog::ParsingResultDialog(QWidget *parent)
     readConfig();
 }
 
-ParsingResultDialog::~ParsingResultDialog()
-{
-    writeConfig();
-}
+ParsingResultDialog::~ParsingResultDialog() = default;
 
 void ParsingResultDialog::setResultParsing(const QString &result)
 {
@@ -69,21 +62,7 @@ void ParsingResultDialog::setResultParsing(const QString &result)
 
 void ParsingResultDialog::readConfig()
 {
-#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myParsingResultDialogGroupName), QSize(800, 600));
-#else
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myParsingResultDialogGroupName), 800, 600);
-#endif
-}
-
-void ParsingResultDialog::writeConfig()
-{
-#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myParsingResultDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
-    group.sync();
-#endif
 }
 
 void ParsingResultDialog::slotSaveAs()

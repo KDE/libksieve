@@ -13,11 +13,9 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 using namespace Qt::Literals::StringLiterals;
@@ -106,12 +104,7 @@ QString SieveScriptDebuggerDialog::script() const
 
 void SieveScriptDebuggerDialog::readConfig()
 {
-#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(mySieveScriptDebuggerDialog), QSize(800, 600));
-#else
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(mySieveScriptDebuggerDialog), 800, 600);
-#endif
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveScriptDebuggerDialog));
     const QList<int> size{100, 400};
     mSieveScriptDebuggerWidget->setSplitterSizes(group.readEntry("Splitter", size));
@@ -120,9 +113,6 @@ void SieveScriptDebuggerDialog::readConfig()
 void SieveScriptDebuggerDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveScriptDebuggerDialog));
-#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
-    KWindowConfig::saveWindowSize(windowHandle(), group);
-#endif
     group.writeEntry("Splitter", mSieveScriptDebuggerWidget->splitterSizes());
     group.sync();
 }

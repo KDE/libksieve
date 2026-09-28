@@ -14,16 +14,12 @@
 #include <KLocalizedString>
 #include <QLineEdit>
 
-#include <KConfigGroup>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QPushButton>
 #include <QShortcut>
 #include <QVBoxLayout>
-#include <QWindow>
 
 #include "editor/sievetexteditwidget.h"
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
@@ -106,28 +102,13 @@ SieveTemplateEditDialog::SieveTemplateEditDialog(QWidget *parent, bool defaultTe
 
 SieveTemplateEditDialog::~SieveTemplateEditDialog()
 {
-    writeConfig();
     disconnect(mTemplateNameEdit, &QLineEdit::textChanged, this, &SieveTemplateEditDialog::slotTemplateChanged);
     disconnect(mTextEditWidget->textEdit(), &SieveTextEdit::textChanged, this, &SieveTemplateEditDialog::slotTemplateChanged);
 }
 
 void SieveTemplateEditDialog::readConfig()
 {
-#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(mySieveTemplateEditDialogGroupName), QSize(600, 400));
-#else
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(mySieveTemplateEditDialogGroupName), 600, 400);
-#endif
-}
-
-void SieveTemplateEditDialog::writeConfig()
-{
-#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(mySieveTemplateEditDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
-    group.sync();
-#endif
 }
 
 void SieveTemplateEditDialog::slotTemplateChanged()

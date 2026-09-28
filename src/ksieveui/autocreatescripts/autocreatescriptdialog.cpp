@@ -7,15 +7,11 @@
 #include "autocreatescriptdialog.h"
 #include "sieveeditorgraphicalmodewidget.h"
 
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QKeyEvent>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 using namespace KSieveUi;
@@ -41,10 +37,7 @@ AutoCreateScriptDialog::AutoCreateScriptDialog(QWidget *parent)
     readConfig();
 }
 
-AutoCreateScriptDialog::~AutoCreateScriptDialog()
-{
-    writeConfig();
-}
+AutoCreateScriptDialog::~AutoCreateScriptDialog() = default;
 
 void AutoCreateScriptDialog::loadScript(const QString &doc, QString &error)
 {
@@ -73,21 +66,7 @@ QString AutoCreateScriptDialog::script(QStringList &required) const
 
 void AutoCreateScriptDialog::readConfig()
 {
-#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myAutoCreateScriptDialogGroupName), QSize(800, 600));
-#else
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myAutoCreateScriptDialogGroupName), 800, 600);
-#endif
-}
-
-void AutoCreateScriptDialog::writeConfig()
-{
-#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myAutoCreateScriptDialogGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
-    group.sync();
-#endif
 }
 
 bool AutoCreateScriptDialog::event(QEvent *e)

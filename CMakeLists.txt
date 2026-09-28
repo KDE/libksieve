@@ -109,8 +109,7 @@ file(
 )
 ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
-set(KTEXTADDONS_MIN_VERSION "2.1.2")
-set(KTEXTADDONS_WITH_TEXTAUTOGENERATETEXT_VERSION "${KTEXTADDONS_MIN_VERSION}")
+set(KTEXTADDONS_MIN_VERSION "2.2.0")
 
 set(IDENTITYMANAGEMENT_LIB_VERSION "6.8.40")
 set(KMAILTRANSPORT_LIB_VERSION "6.8.40")
@@ -181,7 +180,7 @@ set_package_properties(
 )
 option(OPTION_ADD_AUTOGENERATETEXT "Add support for autogenerate text plugin" ON)
 if(OPTION_ADD_AUTOGENERATETEXT)
-    find_package(KF6TextAutoGenerateText ${KTEXTADDONS_WITH_TEXTAUTOGENERATETEXT_VERSION} CONFIG)
+    find_package(KF6TextAutoGenerateText ${KTEXTADDONS_MIN_VERSION} CONFIG)
     set_package_properties(
         KF6TextAutoGenerateText
         PROPERTIES
@@ -197,10 +196,8 @@ endif()
 
 if(TARGET KF6::TextAutoGenerateText)
     set(HAVE_TEXT_AUTOGENERATE_TEXT TRUE)
-    if(${KF6TextAutoGenerateText_VERSION} VERSION_GREATER_EQUAL 2.0.49)
-        if(OPTION_ADD_INTERNAL_PLUGIN)
-            set(HAVE_TEXTAUTOGENERATE_INTERNAL_TOOLS TRUE)
-        endif()
+    if(OPTION_ADD_INTERNAL_PLUGIN)
+        set(HAVE_TEXTAUTOGENERATE_INTERNAL_TOOLS TRUE)
     endif()
 endif()
 
