@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-09 00:51+0000\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
 "PO-Revision-Date: 2025-09-24 20:29+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -396,7 +396,7 @@ msgstr ""
 "%1"
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
-#: ksieveui/debug/sievedebugdialog.cpp:207
+#: ksieveui/debug/sievedebugdialog.cpp:188
 #: ksieveui/managesievescriptsdialog.cpp:182
 #, kde-format
 msgid ""
@@ -569,7 +569,7 @@ msgstr ""
 "Всього найкращого,\n"
 "— \"ваші ім'я та адреса електронної пошти\"\n"
 
-#: ksieveui/autocreatescripts/autocreatescriptdialog.cpp:30
+#: ksieveui/autocreatescripts/autocreatescriptdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Sieve Filter"
@@ -1267,49 +1267,49 @@ msgstr "Вставити на початку"
 msgid "Append at the end"
 msgstr "Дописати у кінець"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:36
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Flags"
 msgstr "Прапорці"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:95
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:74
 #, kde-format
 msgid "Deleted"
 msgstr "Вилучено"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:98
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:77
 #, kde-format
 msgid "Answered"
 msgstr "Надано відповідь"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:101
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:80
 #, kde-format
 msgid "Flagged"
 msgstr "З прапорцем"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:104
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:83
 #, kde-format
 msgid "Seen"
 msgstr "Переглянуто"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:109
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:88
 #, kde-format
 msgid "Draft"
 msgstr "Чернетка"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:146
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:125
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Click on button for selecting flags…"
 msgstr "Натисніть кнопку для вибору прапорців…"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:150
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:129
 #, kde-format
 msgid "…"
 msgstr "…"
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:151
+#: ksieveui/autocreatescripts/sieveactions/widgets/selectflagswidget.cpp:130
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select Flags"
@@ -1485,7 +1485,7 @@ msgstr ""
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:25
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:259
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:238
 #, kde-format
 msgid "Date"
 msgstr "Дата"
@@ -1922,73 +1922,73 @@ msgstr "Зона"
 msgid "Weekday"
 msgstr "День тижня"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:32
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:28
 msgid "Select multiple headers…"
 msgstr "Вибрати декілька заголовків…"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:39
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Headers"
 msgstr "Заголовки"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:58
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:54
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Add new header:"
 msgstr "Додати заголовок:"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:249
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:228
 #, kde-format
 msgid "From"
 msgstr "Від"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:250
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:229
 #, kde-format
 msgid "To"
 msgstr "Кому"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:230
 #, kde-format
 msgid "Reply To"
 msgstr "Відповісти"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:231
 #, kde-format
 msgid "Cc"
 msgstr "Копія"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:253
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:232
 #, kde-format
 msgid "Bcc"
 msgstr "Пр. копія"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:254
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:233
 #, kde-format
 msgid "Resent From"
 msgstr "Відправник пересилання"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:255
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:234
 #, kde-format
 msgid "Resent To"
 msgstr "Адресат пересилання"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:256
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:235
 #, kde-format
 msgid "Sender"
 msgstr "Відправник"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:258
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:237
 #, kde-format
 msgid "Subject"
 msgstr "Тема"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:260
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:239
 #, kde-format
 msgid "Message Id"
 msgstr "Ід. повідомлення"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:261
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:240
 #, kde-format
 msgid "Content type"
 msgstr "Тип вмісту"
@@ -2181,7 +2181,7 @@ msgid "Include:"
 msgstr "Включити:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:137
-#: ksieveui/templates/sievetemplateeditdialog.cpp:62
+#: ksieveui/templates/sievetemplateeditdialog.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -2261,7 +2261,7 @@ msgstr "блок «інакше, якщо»"
 msgid "\"else\" block"
 msgstr "блок «інакше»"
 
-#: ksieveui/autocreatescripts/sievescriptdescriptiondialog.cpp:31
+#: ksieveui/autocreatescripts/sievescriptdescriptiondialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Description"
@@ -2423,34 +2423,34 @@ msgstr "Блок «інакше, якщо»"
 msgid "Block \"Else\""
 msgstr "Блок «інакше»"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:33
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Parsing Error"
 msgstr "Помилка під час обробки фільтрування"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:42
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:44
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:38
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
 #, kde-format
 msgid "Save As…"
 msgstr "Зберегти як…"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:57
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:50
 #, kde-format
 msgid "Sieve script:"
 msgstr "Скрипт фільтрування:"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:59
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:52
 #, kde-format
 msgid "Errors reported:"
 msgstr "Повідомлення про помилки:"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:85
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:64
 #, kde-format
 msgid "All Files (*)"
 msgstr "усі файли (*)"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:86
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:65
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Log To File"
@@ -2463,13 +2463,13 @@ msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Закрити вкладку"
 
-#: ksieveui/debug/sievedebugdialog.cpp:44
+#: ksieveui/debug/sievedebugdialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Diagnostics"
 msgstr "Діагностика фільтрування"
 
-#: ksieveui/debug/sievedebugdialog.cpp:70
+#: ksieveui/debug/sievedebugdialog.cpp:66
 #, kde-format
 msgid ""
 "Collecting diagnostic information about Sieve support…\n"
@@ -2478,12 +2478,12 @@ msgstr ""
 "Збирання діагностичної інформації щодо підтримки фільтрування…\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:73
+#: ksieveui/debug/sievedebugdialog.cpp:69
 #, kde-format
 msgid "No IMAP resource found."
 msgstr "Не знайдено ресурсів IMAP."
 
-#: ksieveui/debug/sievedebugdialog.cpp:112
+#: ksieveui/debug/sievedebugdialog.cpp:93
 #, kde-format
 msgid ""
 "Unable to get the info\n"
@@ -2492,17 +2492,17 @@ msgstr ""
 "Не вдалося отримати інформацію\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:130
+#: ksieveui/debug/sievedebugdialog.cpp:111
 #, kde-format
 msgid "Collecting data for account '%1'…\n"
 msgstr "Збирання даних для облікового запису «%1»…\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:131
+#: ksieveui/debug/sievedebugdialog.cpp:112
 #, kde-format
 msgid "------------------------------------------------------------\n"
 msgstr "------------------------------------------------------------\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:145
+#: ksieveui/debug/sievedebugdialog.cpp:126
 #, kde-format
 msgid ""
 "(Account does not support Sieve)\n"
@@ -2511,12 +2511,12 @@ msgstr ""
 "(Обліковий запис не підтримує фільтрування)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:177
+#: ksieveui/debug/sievedebugdialog.cpp:158
 #, kde-format
 msgid "Contents of script '%1':\n"
 msgstr "Вміст скрипту «%1»:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:211
+#: ksieveui/debug/sievedebugdialog.cpp:192
 #, kde-format
 msgid ""
 "(This script is empty)\n"
@@ -2525,7 +2525,7 @@ msgstr ""
 "(Це порожній скрипт)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:214
+#: ksieveui/debug/sievedebugdialog.cpp:195
 #, kde-format
 msgid ""
 "------------------------------------------------------------\n"
@@ -2538,22 +2538,22 @@ msgstr ""
 "------------------------------------------------------------\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:232
+#: ksieveui/debug/sievedebugdialog.cpp:213
 #, kde-format
 msgid "Sieve capabilities:\n"
 msgstr "Можливості з фільтрування:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:235
+#: ksieveui/debug/sievedebugdialog.cpp:216
 #, kde-format
 msgid "(No special capabilities available)"
 msgstr "(Немає особливої функціональності)"
 
-#: ksieveui/debug/sievedebugdialog.cpp:243
+#: ksieveui/debug/sievedebugdialog.cpp:224
 #, kde-format
 msgid "Available Sieve scripts:\n"
 msgstr "Доступні скрипти фільтрування:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:246
+#: ksieveui/debug/sievedebugdialog.cpp:227
 #, kde-format
 msgid ""
 "(No Sieve scripts available on this server)\n"
@@ -2562,7 +2562,7 @@ msgstr ""
 "(На цьому сервері немає скриптів фільтрування)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:253
+#: ksieveui/debug/sievedebugdialog.cpp:234
 #, kde-format
 msgid ""
 "Active script: '%1'\n"
@@ -2571,24 +2571,24 @@ msgstr ""
 "Активний скрипт: «%1»\n"
 "\n"
 
-#: ksieveui/editor/sieveeditor.cpp:41
+#: ksieveui/editor/sieveeditor.cpp:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr "Редагування скрипту фільтрування"
 
-#: ksieveui/editor/sieveeditor.cpp:192
+#: ksieveui/editor/sieveeditor.cpp:171
 #, kde-format
 msgid "Script is modified. Do you want to close editor?"
 msgstr "Скрипт змінено. Хочете завершити роботу редактора?"
 
-#: ksieveui/editor/sieveeditor.cpp:194
+#: ksieveui/editor/sieveeditor.cpp:173
 #, kde-format
 msgctxt "@action:button"
 msgid "Close Editor"
 msgstr "Закрити вікно редактора"
 
-#: ksieveui/editor/sieveeditor.cpp:195
+#: ksieveui/editor/sieveeditor.cpp:174
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Close"
@@ -2799,7 +2799,7 @@ msgstr "Простий режим"
 msgid "Advanced Mode"
 msgstr "Розширений режим"
 
-#: ksieveui/editor/sieveinfodialog.cpp:31
+#: ksieveui/editor/sieveinfodialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Server Support"
@@ -3011,35 +3011,35 @@ msgstr ""
 "Відповідь сервера:\n"
 "%1"
 
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:37
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Parsing"
 msgstr "Обробка фільтрування"
 
-#: ksieveui/scriptsparsing/parsingresultdialog.cpp:91
+#: ksieveui/scriptsparsing/parsingresultdialog.cpp:70
 #, kde-format
 msgid "XML Files (*.xml);;All Files (*)"
 msgstr "файли XML (*.xml);;усі файли (*)"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:33
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Debug Sieve Script"
 msgstr "Діагностика скрипту фільтрування"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:45
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:43
 #, kde-format
 msgid "Apply Changes"
 msgstr "Застосувати зміни"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:54
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Debug"
 msgstr "Діагностика"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:55
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerdialog.cpp:53
 #, kde-format
 msgid "Debug"
 msgstr "Діагностика"
@@ -3160,13 +3160,13 @@ msgstr "Знищити повідомлення, створені…"
 msgid "Vacations"
 msgstr "Відпустки"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:42
+#: ksieveui/templates/sievetemplateeditdialog.cpp:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "Типовий шаблон"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:42
+#: ksieveui/templates/sievetemplateeditdialog.cpp:38
 #, kde-format
 msgctxt "@title:window"
 msgid "Template"
@@ -3179,37 +3179,37 @@ msgstr ""
 "Ви можете перетягнути і скинути елемент на панель редактора, щоб імпортувати "
 "шаблон"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:52
+#: ksieveui/vacation/multiimapvacationdialog.cpp:48
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure \"Out of Office\" Replies"
 msgstr "Налаштовування відповідей «Мене немає»"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:81
+#: ksieveui/vacation/multiimapvacationdialog.cpp:74
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr "Ви дійсно хочете скасувати дію?"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:82
+#: ksieveui/vacation/multiimapvacationdialog.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Підтвердження"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:83
+#: ksieveui/vacation/multiimapvacationdialog.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel Editing"
 msgstr "Скасувати редагування"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:84
+#: ksieveui/vacation/multiimapvacationdialog.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Cancel"
 msgstr "Не скасовувати"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:114
+#: ksieveui/vacation/multiimapvacationdialog.cpp:107
 #, kde-format
 msgctxt "@label:textbox"
 msgid ""
