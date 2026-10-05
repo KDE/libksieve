@@ -157,7 +157,7 @@ msgstr "Ошибка обработки: неверный символ"
 #: ksieve/error.cpp:102
 #, kde-format
 msgid "Parse error: Unexpected Character, probably a missing space?"
-msgstr "Ошибка обработки: неверный символ, возможно отсутствует пробел?"
+msgstr "Ошибка обработки: неверный символ, возможно, отсутствует пробел?"
 
 #: ksieve/error.cpp:105
 #, kde-format
@@ -266,7 +266,7 @@ msgstr "Ошибка обработки: в списке тестов не хв�
 #: ksieve/error.cpp:161
 #, kde-format
 msgid "Parse error: Only Strings allowed in String Lists"
-msgstr "Ошибка обработки: в списке строк могут находится только строки"
+msgstr "Ошибка обработки: в списке строк могут находиться только строки"
 
 #: ksieve/error.cpp:164
 #, kde-format
@@ -346,7 +346,7 @@ msgstr "Запрошены несовместимые действия «%1» и
 #: ksieve/error.cpp:213
 #, kde-format
 msgid "Mail Loop detected"
-msgstr "В адресах электронной почты обнаружен бесконечный цикл"
+msgstr "Обнаружено зацикливание почты"
 
 #: ksieve/error.cpp:216
 #, kde-format
@@ -443,7 +443,7 @@ msgstr "Ошибка при удалении сценария Sieve."
 #: ksievecore/settings/sieve-vacation.kcfg:16
 #, kde-format
 msgid "Allow out-of-office settings to be changeable by the user."
-msgstr "Разрешить пользователям изменять настройки автоответчика."
+msgstr "Разрешить пользователям изменять параметры автоответчика."
 
 #. i18n: ectx: label, entry (AllowOutOfOfficeUploadButNoSettings), group (OutOfOffice)
 #: ksievecore/settings/sieve-vacation.kcfg:20
@@ -718,7 +718,7 @@ msgid ""
 "any previously set flags.  This means that multiple occurrences of addflag "
 "are treated additively."
 msgstr ""
-"Команда «addflag» позволяет добавлять флаги в список файлов [IMAP]. При этом "
+"Команда «addflag» позволяет добавлять флаги в список флагов [IMAP]. При этом "
 "несколько операций addflag обрабатываются суммарно, то есть флаги, "
 "установленные ранее, не заменяются."
 
@@ -804,7 +804,7 @@ msgid ""
 "to \"media-type\" be converted to the media type in \"media-type\" using "
 "conversion parameters."
 msgstr ""
-"Команда «convert» выполняет преобразование всех тел сообщения с заданным "
+"Команда «convert» выполняет преобразование всех частей сообщения с заданным "
 "исходным типом MIME в целевой тип, используя указанные параметры "
 "преобразования."
 
@@ -908,7 +908,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:22
 #, kde-format
 msgid "File Into"
-msgstr "Доставить в..."
+msgstr "Доставить в"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:59
 #, kde-format
@@ -924,13 +924,13 @@ msgstr ""
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep a copy"
-msgstr "Сохранить копию"
+msgstr "Сохранять копию"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:104
 #, kde-format
 msgctxt "@option:check"
 msgid "Create folder"
-msgstr "Создать папку"
+msgstr "Создавать папку"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:149
 #, kde-format
@@ -1986,7 +1986,7 @@ msgstr "Переслано от"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:251
 #, kde-format
 msgid "Resent To"
-msgstr "Получатель"
+msgstr "Переслано кому"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:252
 #, kde-format
@@ -2072,7 +2072,7 @@ msgstr "Не равно"
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:26
 #, kde-format
 msgid "Bytes"
-msgstr "Б"
+msgstr "байт"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp:27
 #, kde-format
@@ -2131,8 +2131,8 @@ msgid ""
 "the specified block to each of them."
 msgstr ""
 "Команда «foreverypart» представляет собой итератор, обрабатывающий все MIME-"
-"части сообщения на текущем уровне. При этом она применяет к каждой части "
-"команды в заданном блоке."
+"части сообщения, включая вложенные, в порядке обхода в глубину. При этом она "
+"применяет к каждой части команды в заданном блоке."
 
 #: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:93
 #, kde-format
@@ -2242,7 +2242,7 @@ msgstr "Условия"
 #, kde-format
 msgctxt "@option:radio"
 msgid "Match all messages"
-msgstr "Удовлетворяют все письма"
+msgstr "Соответствуют все письма"
 
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:41
 #, kde-format
@@ -2271,7 +2271,7 @@ msgstr "Добавить новый блок:"
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:89
 #, kde-format
 msgid "\"elsif\" block"
-msgstr "блок «иначесли»"
+msgstr "блок «иначе если»"
 
 # BUGME: are keywords translatable? --aspotashev
 #: ksieveui/autocreatescripts/sievescriptblockwidget.cpp:90
@@ -2436,7 +2436,7 @@ msgstr "Основной блок"
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:115
 #, kde-format
 msgid "Block \"Elsif\""
-msgstr "Блок «ИначЕсли»"
+msgstr "Блок «Иначе если»"
 
 # BUGME: are keywords translatable? --aspotashev
 #: ksieveui/autocreatescripts/sievescriptpage.cpp:117
@@ -2670,7 +2670,7 @@ msgstr "Ошибка редактора Sieve"
 #, kde-format
 msgctxt "@action"
 msgid "Go to Line"
-msgstr "Перейти на строку…"
+msgstr "Перейти на строку"
 
 #: ksieveui/editor/sieveeditormenubar.cpp:57
 #, kde-format
@@ -2914,7 +2914,7 @@ msgstr "Закрыть"
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
-msgstr "&Найти"
+msgstr "&Найти:"
 
 #: ksieveui/editor/webengine/findbar/findbarbase.cpp:53
 #, kde-format
@@ -2977,7 +2977,7 @@ msgstr "Сохранение веб-страницы"
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Sieve Scripts"
-msgstr "Сценарии Sieve"
+msgstr "Управление сценариями Sieve"
 
 #: ksieveui/managesievescriptsdialog.cpp:91
 #, kde-format
@@ -3204,7 +3204,7 @@ msgstr "Шаблон"
 #: ksieveui/templates/sievetemplatewidget.cpp:110
 #, kde-format
 msgid "You can drag and drop element on editor to import template"
-msgstr "Шаблон можно вставить, просто перетянув его в редактор"
+msgstr "Шаблон можно вставить, просто перетащив его в редактор"
 
 #: ksieveui/vacation/multiimapvacationdialog.cpp:51
 #, kde-format
@@ -3299,7 +3299,7 @@ msgstr "&Повторно отправлять уведомление тольк
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
-msgstr "&Отправить ответы по адресам:"
+msgstr "&Отвечать на письма, пришедшие на адреса:"
 
 #: ksieveui/vacation/vacationeditwidget.cpp:203
 #, kde-format
@@ -3371,7 +3371,7 @@ msgstr ""
 #: ksieveui/widgets/custommanagesievewidget.cpp:93
 #, kde-format
 msgid "No Sieve URL configured"
-msgstr "Не настроена ссылка Sieve"
+msgstr "Не настроен URL Sieve"
 
 # BUGME: please remove ellipsis, it means nothing here. --aspotashev
 #: ksieveui/widgets/managesievetreeview.cpp:16
