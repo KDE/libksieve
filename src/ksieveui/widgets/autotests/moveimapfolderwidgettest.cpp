@@ -5,12 +5,13 @@
 */
 
 #include "moveimapfolderwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../moveimapfolderwidget.h"
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 MoveImapFolderWidgetTest::MoveImapFolderWidgetTest(QObject *parent)
     : QObject(parent)

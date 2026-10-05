@@ -5,11 +5,12 @@
 */
 
 #include "sievescriptdebuggerwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../sievescriptdebuggerwidget.h"
 #include <QStackedWidget>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 SieveScriptDebuggerWidgetTest::SieveScriptDebuggerWidgetTest(QObject *parent)
     : QObject(parent)

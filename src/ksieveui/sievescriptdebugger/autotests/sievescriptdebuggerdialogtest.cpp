@@ -5,7 +5,6 @@
 */
 
 #include "sievescriptdebuggerdialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../sievescriptdebuggerdialog.h"
 #include "../sievescriptdebuggerfrontendwidget.h"
@@ -15,6 +14,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPushButton>
 #include <QStandardPaths>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 SieveScriptDebuggerDialogTest::SieveScriptDebuggerDialogTest(QObject *parent)
     : QObject(parent)

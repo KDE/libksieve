@@ -9,13 +9,14 @@
 #pragma once
 
 #include "session.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sievejob.h"
 
 #include <QPointer>
 #include <QStack>
 #include <QUrl>
+
+using namespace Qt::Literals::StringLiterals;
 
 namespace KManageSieve
 {

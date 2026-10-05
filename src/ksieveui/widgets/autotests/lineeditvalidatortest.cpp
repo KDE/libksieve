@@ -5,10 +5,11 @@
 */
 
 #include "lineeditvalidatortest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../lineeditvalidator.h"
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(LineEditValidatorTest)
 

@@ -9,7 +9,6 @@
 */
 
 #include "parser_p.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "error.h"
 
@@ -19,6 +18,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <cassert>
 #include <cctype> // isdigit
 #include <climits> // ULONG_MAX
+
+using namespace Qt::Literals::StringLiterals;
 
 namespace KSieve
 {

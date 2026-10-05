@@ -5,11 +5,12 @@
 */
 
 #include "sievedatespinboxtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/sieveconditions/widgets/sievedatespinbox.h"
 
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 SieveDateSpinBoxTest::SieveDateSpinBoxTest(QObject *parent)
     : QObject(parent)

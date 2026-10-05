@@ -5,7 +5,6 @@
 */
 
 #include "vacationeditwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../vacationeditwidget.h"
 #include "../vacationmaillineedit.h"
@@ -19,6 +18,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QSpinBox>
 #include <QTest>
 #include <TextCustomEditor/PlainTextEditorWidget>
+
+using namespace Qt::Literals::StringLiterals;
 
 VacationEditWidgetTest::VacationEditWidgetTest(QObject *parent)
     : QObject(parent)

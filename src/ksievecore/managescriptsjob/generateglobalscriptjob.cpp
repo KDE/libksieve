@@ -5,12 +5,12 @@
 */
 
 #include "generateglobalscriptjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "kmanagesieve/sievejob.h"
 
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveCore;
 GenerateGlobalScriptJob::GenerateGlobalScriptJob(const QUrl &url, QObject *parent)
     : QObject(parent)

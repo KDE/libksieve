@@ -5,7 +5,6 @@
 */
 
 #include "vacationpagewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "managescriptsjob/parseuserscriptjob.h"
 #include "vacationeditwidget.h"
@@ -24,6 +23,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStackedWidget>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 VacationPageWidget::VacationPageWidget(QWidget *parent)
     : QWidget(parent)

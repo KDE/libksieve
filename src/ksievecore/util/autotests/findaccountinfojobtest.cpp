@@ -5,7 +5,6 @@
 */
 
 #include "findaccountinfojobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../abstractakonadiimapsettinginterface.h"
 #include "../sieveimappasswordprovider.h"
@@ -14,6 +13,9 @@ using namespace Qt::Literals::StringLiterals;
 #include "util/findaccountinfojob.h"
 #include <QSignalSpy>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_MAIN(FindAccountInfoJobTest)
 
 class DataImapPasswordProvider : public KSieveCore::SieveImapPasswordProvider

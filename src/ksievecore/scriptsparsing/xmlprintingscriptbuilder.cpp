@@ -5,13 +5,13 @@
 */
 
 #include "xmlprintingscriptbuilder.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "parser.h"
 
 #include "error.h"
 #include <QXmlStreamWriter>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveCore;
 XMLPrintingScriptBuilder::XMLPrintingScriptBuilder(int indent)
     : KSieve::ScriptBuilder()

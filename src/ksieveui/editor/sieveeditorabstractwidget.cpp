@@ -4,7 +4,6 @@
  */
 
 #include "sieveeditorabstractwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <PimCommon/PimUtil>
 
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <cerrno>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SieveEditorAbstractWidget::SieveEditorAbstractWidget(QWidget *parent)
     : QWidget(parent)

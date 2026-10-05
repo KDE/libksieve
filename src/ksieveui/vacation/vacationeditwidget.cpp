@@ -5,7 +5,6 @@
 */
 
 #include "vacationeditwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "vacationmailactionwidget.h"
 #include "vacationmaillineedit.h"
@@ -28,6 +27,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QCheckBox>
 #include <QGridLayout>
 #include <QLabel>
+
+using namespace Qt::Literals::StringLiterals;
 
 using KMime::HeaderParsing::parseAddressList;
 using AddressList = QList<KMime::Types::Address>;

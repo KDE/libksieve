@@ -5,7 +5,6 @@
 */
 
 #include "sieveeditorhelphtmlwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../sieveeditorhelphtmlwidget.h"
 
@@ -15,6 +14,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 
 #include <TextAddonsWidgets/SlideContainer>
+
+using namespace Qt::Literals::StringLiterals;
 
 SieveEditorHelpHtmlWidgetTest::SieveEditorHelpHtmlWidgetTest(QObject *parent)
     : QObject(parent)

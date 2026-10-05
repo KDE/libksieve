@@ -5,10 +5,11 @@
 */
 
 #include "renamescriptjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "managescriptsjob/renamescriptjob.h"
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 RenameScriptJobTest::RenameScriptJobTest(QObject *parent)
     : QObject(parent)

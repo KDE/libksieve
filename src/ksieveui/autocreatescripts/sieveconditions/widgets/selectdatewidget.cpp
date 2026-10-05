@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectdatewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sievedatespinbox.h"
 
@@ -21,6 +20,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStackedWidget>
 #include <QTime>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SelectDateWidget::SelectDateWidget(QWidget *parent)
     : QWidget(parent)

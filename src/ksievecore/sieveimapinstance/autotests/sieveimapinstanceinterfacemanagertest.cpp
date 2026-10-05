@@ -5,12 +5,13 @@
 */
 
 #include "sieveimapinstanceinterfacemanagertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KSieveCore/SieveImapInstance>
 #include <KSieveCore/SieveImapInstanceInterface>
 #include <KSieveCore/SieveImapInstanceInterfaceManager>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 SieveImapInstanceInterfaceManagerTest::SieveImapInstanceInterfaceManagerTest(QObject *parent)
     : QObject(parent)

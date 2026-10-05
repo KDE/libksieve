@@ -5,7 +5,6 @@
 */
 
 #include "sievescripttabwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sievewidgetpageabstract.h"
 
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QTabBar>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 SieveScriptTabWidget::SieveScriptTabWidget(QWidget *parent)

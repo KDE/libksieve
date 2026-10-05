@@ -5,10 +5,11 @@
 */
 
 #include "sievescriptdebuggerwarningtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../sievescriptdebuggerwarning.h"
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 SieveScriptDebuggerWarningTest::SieveScriptDebuggerWarningTest(QObject *parent)
     : QObject(parent)

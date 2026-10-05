@@ -6,13 +6,15 @@
 */
 
 #include "sieveinfodialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "editor/sieveinfodialog.h"
 #include "editor/sieveinfowidget.h"
 #include <QDialogButtonBox>
 #include <QTest>
 #include <QVBoxLayout>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_MAIN(SieveInfoDialogTest)
 SieveInfoDialogTest::SieveInfoDialogTest(QObject *parent)
     : QObject(parent)

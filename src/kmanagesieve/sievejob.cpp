@@ -7,7 +7,6 @@
 */
 
 #include "sievejob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "session.h"
 #include "sievejob_p.h"
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KLocalizedString>
 #include <QPointer>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KManageSieve;
 
 QHash<QUrl, QPointer<Session>> SieveJob::Private::m_sessionPool;

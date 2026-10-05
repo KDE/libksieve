@@ -5,12 +5,13 @@
 */
 
 #include "selectheadertypecomboboxtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../sieveconditions/widgets/selectheadertypecombobox.h"
 
 #include <QLineEdit>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 #ifndef Q_OS_WIN
 void initLocale()

@@ -4,11 +4,13 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "sievescriptlistboxtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/sievescriptlistbox.h"
 #include <QTest>
 #include <QVBoxLayout>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_MAIN(SieveScriptListBoxTest)
 
 SieveScriptListBoxTest::SieveScriptListBoxTest(QObject *parent)

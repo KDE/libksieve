@@ -5,12 +5,13 @@
 */
 
 #include "regexpeditorlineedittest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/sieveconditions/widgets/regexpeditorlineedit.h"
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 RegexpEditorLineEditTest::RegexpEditorLineEditTest(QObject *parent)
     : QObject(parent)

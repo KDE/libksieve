@@ -5,7 +5,6 @@
 */
 
 #include "selectheadersdialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../sieveconditions/widgets/selectheadertypecombobox.h"
 #include <QDialogButtonBox>
@@ -15,6 +14,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
+
+using namespace Qt::Literals::StringLiterals;
 
 SelectHeadersDialogTest::SelectHeadersDialogTest(QObject *parent)
     : QObject(parent)

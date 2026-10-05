@@ -5,7 +5,6 @@
 */
 
 #include "vacationmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "ksieveui/vacation/multiimapvacationdialog.h"
 #include <KSieveCore/MultiImapVacationManager>
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPointer>
 #include <QWidget>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 class KSieveUi::VacationManagerPrivate

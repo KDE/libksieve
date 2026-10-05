@@ -5,7 +5,6 @@
 */
 
 #include "custommanagesievewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "util/findaccountinfojob.h"
 #include "widgets/managesievetreeview.h"
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QIcon>
 #include <QTreeWidgetItem>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 CustomManageSieveWidget::CustomManageSieveWidget(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent)

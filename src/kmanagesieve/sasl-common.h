@@ -9,7 +9,6 @@
 #pragma once
 
 #include <QDir>
-using namespace Qt::Literals::StringLiterals;
 
 #include <QFile>
 #include <cstdio>
@@ -17,6 +16,8 @@ using namespace Qt::Literals::StringLiterals;
 #ifdef Q_OS_WIN
 #include <QCoreApplication>
 #endif
+
+using namespace Qt::Literals::StringLiterals;
 
 extern "C" {
 #include <sasl/sasl.h>

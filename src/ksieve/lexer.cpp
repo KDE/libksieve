@@ -9,7 +9,6 @@
 */
 
 #include "lexer_p.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "error.h"
 #include "utf8validator.h"
@@ -22,6 +21,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStringDecoder>
 #include <cassert>
 #include <cctype> // isdigit
+
+using namespace Qt::Literals::StringLiterals;
 
 #ifdef STR_DIM
 #undef STR_DIM

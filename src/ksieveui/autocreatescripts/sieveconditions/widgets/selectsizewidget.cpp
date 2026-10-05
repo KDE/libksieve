@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectsizewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "selectsizetypecombobox.h"
 
@@ -12,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QHBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 SelectSizeWidget::SelectSizeWidget(QWidget *parent)

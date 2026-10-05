@@ -5,7 +5,6 @@
 */
 
 #include "../parsingresultdialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KSieveCore/XMLPrintingScriptBuilder>
 
@@ -20,6 +19,8 @@ using KSieve::Parser;
 #include <QDebug>
 #include <QFileDialog>
 #include <QStandardPaths>
+
+using namespace Qt::Literals::StringLiterals;
 
 int main(int argc, char **argv)
 {

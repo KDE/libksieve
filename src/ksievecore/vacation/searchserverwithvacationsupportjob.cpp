@@ -5,11 +5,11 @@
 */
 
 #include "searchserverwithvacationsupportjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "util/findaccountinfojob.h"
 #include <QVariant>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveCore;
 
 SearchServerWithVacationSupportJob::SearchServerWithVacationSupportJob(QObject *parent)

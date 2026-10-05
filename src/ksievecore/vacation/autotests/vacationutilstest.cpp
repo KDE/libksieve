@@ -5,13 +5,13 @@
  */
 
 #include "vacationutilstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "vacation/vacationutils.h"
 
 #include <QFile>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveCore;
 
 // using KI18n calls which require a Q*Application instance to exist

@@ -4,13 +4,13 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveeditorloadprogressindicator.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KIconLoader>
 #include <KPixmapSequenceLoader>
 
 #include <QPixmap>
 #include <QTimer>
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SieveEditorLoadProgressIndicator::SieveEditorLoadProgressIndicator(QObject *parent)
     : QObject(parent)

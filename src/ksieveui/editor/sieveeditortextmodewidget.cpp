@@ -4,7 +4,6 @@
  */
 
 #include "sieveeditortextmodewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/autocreatescriptdialog.h"
 #include "editor/sieveeditortabwidget.h"
@@ -50,6 +49,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <cerrno>
 #include <memory>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 SieveEditorTextModeWidget::SieveEditorTextModeWidget(QWidget *parent)

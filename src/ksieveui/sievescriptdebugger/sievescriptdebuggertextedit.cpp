@@ -5,13 +5,13 @@
 */
 
 #include "sievescriptdebuggertextedit.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 
 #include <QAction>
 #include <QMenu>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 SieveScriptDebuggerTextEdit::SieveScriptDebuggerTextEdit(QWidget *parent)

@@ -5,7 +5,6 @@
 */
 
 #include "sieveeditormenubar.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sieveeditortabwidget.h"
 #include "sieveeditortextmodewidget.h"
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KStandardActions>
 #include <QAction>
 #include <QIcon>
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 SieveEditorMenuBar::SieveEditorMenuBar(QWidget *parent)

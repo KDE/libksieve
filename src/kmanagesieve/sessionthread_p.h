@@ -7,7 +7,6 @@
 #pragma once
 
 #include <QObject>
-using namespace Qt::Literals::StringLiterals;
 
 #include <QUrl>
 #include <memory>
@@ -17,6 +16,8 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "response.h"
 #include "sasl-common.h"
+
+using namespace Qt::Literals::StringLiterals;
 
 class QTimer;
 

@@ -5,11 +5,11 @@
 */
 
 #include "lineeditvalidator.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QRegularExpression>
 #include <QRegularExpressionValidator>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 LineEditValidator::LineEditValidator(QWidget *parent)

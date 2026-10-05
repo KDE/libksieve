@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "sieveeditortabwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "webengine/sieveeditorhelphtmlwidget.h"
 
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTabBar>
 #include <QUrl>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SieveEditorTabWidget::SieveEditorTabWidget(QWidget *parent)
     : QTabWidget(parent)

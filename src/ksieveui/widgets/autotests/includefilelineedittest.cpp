@@ -5,11 +5,12 @@
 */
 
 #include "includefilelineedittest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../includefilelineedit.h"
 #include <QCompleter>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 IncludeFileLineEditTest::IncludeFileLineEditTest(QObject *parent)
     : QObject(parent)

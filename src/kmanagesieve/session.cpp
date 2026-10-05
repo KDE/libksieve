@@ -6,7 +6,6 @@
 */
 
 #include "session.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sessionthread_p.h"
 #include "sievejob_p.h"
@@ -21,6 +20,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QRegularExpression>
 #include <QUrlQuery>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KManageSieve;
 
 Q_DECLARE_METATYPE(KManageSieve::AuthDetails)

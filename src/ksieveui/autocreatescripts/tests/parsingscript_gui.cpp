@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include <QDebug>
-using namespace Qt::Literals::StringLiterals;
 
 #include "../src/ksieveui/scriptsparsing/parsingresultdialog.h"
 #include <KSieveCore/XMLPrintingScriptBuilder>
@@ -21,6 +20,8 @@ using KSieve::Parser;
 #include "../autocreatescriptdialog.h"
 #include "../sievescriptparsingerrordialog.h"
 #include "ksieveui/tests/capability.h"
+
+using namespace Qt::Literals::StringLiterals;
 
 int main(int argc, char **argv)
 {

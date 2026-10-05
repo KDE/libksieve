@@ -5,7 +5,6 @@
 */
 
 #include "vacationmailactionwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../vacationmailactionwidget.h"
 #include "ksieveui/abstractselectemaillineedit.h"
@@ -13,6 +12,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QHBoxLayout>
 #include <QStackedWidget>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(VacationMailActionWidgetTest)
 

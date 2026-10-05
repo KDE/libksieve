@@ -5,7 +5,6 @@
 */
 
 #include "findbarbasetest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../findbarbase.h"
 
@@ -15,6 +14,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QSignalSpy>
 #include <QTest>
 #include <QToolButton>
+
+using namespace Qt::Literals::StringLiterals;
 
 FindBarBaseTest::FindBarBaseTest(QObject *parent)
     : QObject(parent)

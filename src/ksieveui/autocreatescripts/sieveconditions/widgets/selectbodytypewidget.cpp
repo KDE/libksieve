@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "selectbodytypewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/autocreatescriptutil_p.h"
 
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QHBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 SelectBodyTypeWidget::SelectBodyTypeWidget(QWidget *parent)

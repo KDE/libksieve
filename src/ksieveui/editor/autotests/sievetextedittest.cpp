@@ -5,10 +5,11 @@
 */
 
 #include "sievetextedittest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../sievetextedit.h"
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 SieveTextEditTest::SieveTextEditTest(QObject *parent)
     : QObject(parent)

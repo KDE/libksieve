@@ -5,13 +5,14 @@
 */
 
 #include "sievetexteditwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../sievetexteditwidget.h"
 #include "editor/sievetextedit.h"
 #include <QTest>
 #include <TextAddonsWidgets/SlideContainer>
 #include <TextCustomEditor/PlainTextEditFindBar>
+
+using namespace Qt::Literals::StringLiterals;
 
 SieveTextEditWidgetTest::SieveTextEditWidgetTest(QObject *parent)
     : QObject(parent)

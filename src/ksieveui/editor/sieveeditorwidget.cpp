@@ -6,7 +6,6 @@
 */
 
 #include "sieveeditorwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sievepurposemenuwidget.h"
 
@@ -31,6 +30,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 #include <kzip.h>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 SieveEditorWidget::SieveEditorWidget(bool useMenuBar, QWidget *parent)

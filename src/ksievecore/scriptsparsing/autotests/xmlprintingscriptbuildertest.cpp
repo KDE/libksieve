@@ -5,12 +5,13 @@
 */
 
 #include "xmlprintingscriptbuildertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "parser.h"
 #include <KSieveCore/XMLPrintingScriptBuilder>
 #include <QProcess>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 #ifndef Q_OS_WIN
 void initLocale()

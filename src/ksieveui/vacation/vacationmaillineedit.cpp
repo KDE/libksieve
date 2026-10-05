@@ -5,12 +5,12 @@
 */
 
 #include "vacationmaillineedit.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KStatefulBrush>
 
 #include <KColorScheme>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 VacationMailLineEdit::VacationMailLineEdit(QWidget *parent)
     : QLineEdit(parent)

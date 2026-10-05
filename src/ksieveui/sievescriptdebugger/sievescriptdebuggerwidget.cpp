@@ -5,7 +5,6 @@
 */
 
 #include "sievescriptdebuggerwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sievescriptdebuggerfrontendwidget.h"
 
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTimer>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SieveScriptDebuggerWidget::SieveScriptDebuggerWidget(QWidget *parent)
     : QWidget(parent)

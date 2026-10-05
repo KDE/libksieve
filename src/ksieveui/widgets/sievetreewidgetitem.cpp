@@ -5,13 +5,13 @@
 */
 
 #include "sievetreewidgetitem.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KIconLoader>
 #include <KPixmapSequenceLoader>
 
 #include <QTimer>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 SieveTreeWidgetProgress::SieveTreeWidgetProgress(SieveTreeWidgetItem *item, QObject *parent)
     : QObject(parent)

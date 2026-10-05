@@ -5,9 +5,9 @@
 */
 
 #include "sievedatespinbox.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "libksieveui_debug.h"
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 SieveDateSpinBox::SieveDateSpinBox(QWidget *parent)

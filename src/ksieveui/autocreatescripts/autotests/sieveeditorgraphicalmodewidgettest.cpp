@@ -5,7 +5,6 @@
 */
 
 #include "sieveeditorgraphicalmodewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../sieveeditorgraphicalmodewidget.h"
 #include "scriptsparsing/parsingutil.h"
@@ -14,6 +13,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QProcess>
 #include <QStandardPaths>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 #ifndef Q_OS_WIN
 void initLocale()

@@ -5,7 +5,6 @@
 */
 
 #include "managesievewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "libksieveui_debug.h"
 #include "managescriptsjob/renamescriptjob.h"
@@ -28,6 +27,9 @@ using namespace Qt::Literals::StringLiterals;
 #include <QMenu>
 #include <QMetaType>
 #include <QTimer>
+
+using namespace Qt::Literals::StringLiterals;
+
 // #define USE_RENAME_SIEVE_METHOD 1
 using namespace KSieveUi;
 Q_DECLARE_METATYPE(QTreeWidgetItem *)

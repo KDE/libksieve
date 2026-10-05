@@ -5,10 +5,11 @@
 */
 
 #include "regexpconvertertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QRegularExpression>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 RegExpConverterTest::RegExpConverterTest(QObject *parent)
     : QObject(parent)

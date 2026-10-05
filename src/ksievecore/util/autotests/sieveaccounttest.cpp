@@ -5,11 +5,12 @@
 */
 
 #include "sieveaccounttest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../sieveimapaccountsettings.h"
 
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 SieveAccountTest::SieveAccountTest(QObject *parent)
     : QObject(parent)

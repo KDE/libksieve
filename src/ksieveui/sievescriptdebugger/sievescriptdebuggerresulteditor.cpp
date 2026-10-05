@@ -5,7 +5,6 @@
 */
 
 #include "sievescriptdebuggerresulteditor.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 #include <KStandardActions>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QAction>
 #include <QMenu>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 
 SieveScriptDebuggerResultEditor::SieveScriptDebuggerResultEditor(QWidget *parent)

@@ -5,7 +5,6 @@
 */
 
 #include "kmanagersieve_debug.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "response.h"
 #include "session.h"
@@ -23,6 +22,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "sasl-common.h"
 #include <cstring> // strlen()
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KManageSieve;
 
 static const sasl_callback_t callbacks[] = {{SASL_CB_ECHOPROMPT, nullptr, nullptr},

@@ -5,11 +5,12 @@
 */
 
 #include "sieveimapinstancetest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KSieveCore/SieveImapInstance>
 
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 SieveImapInstanceTest::SieveImapInstanceTest(QObject *parent)
     : QObject(parent)

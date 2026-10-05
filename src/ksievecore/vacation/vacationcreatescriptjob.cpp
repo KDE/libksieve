@@ -5,7 +5,6 @@
 */
 
 #include "vacationcreatescriptjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "kmanagesieve/sievejob.h"
 #include "managescriptsjob/generateglobalscriptjob.h"
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KLocalizedString>
 #include <KMessageBox>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveCore;
 
 VacationCreateScriptJob::VacationCreateScriptJob(QObject *parent)

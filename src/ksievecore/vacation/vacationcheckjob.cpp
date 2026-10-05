@@ -5,7 +5,6 @@
 */
 
 #include "vacationcheckjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "managescriptsjob/parseuserscriptjob.h"
 #include "vacationutils.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "libksievecore_debug.h"
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveCore;
 VacationCheckJob::VacationCheckJob(const QUrl &url, const QString &serverName, QObject *parent)
     : QObject(parent)

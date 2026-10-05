@@ -4,7 +4,6 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "findaccountinfojob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "abstractakonadiimapsettinginterface.h"
 #include "akonadiimapsettinginterface.h"
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <memory>
 #include <pimcommon/imapresourcesettings.h>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveCore;
 FindAccountInfoJob::FindAccountInfoJob(QObject *parent)
     : QObject(parent)

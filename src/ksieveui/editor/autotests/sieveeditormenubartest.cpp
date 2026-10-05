@@ -5,12 +5,13 @@
 */
 
 #include "sieveeditormenubartest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../sieveeditormenubar.h"
 #include <QSignalSpy>
 #include <QTest>
 #include <qtestmouse.h>
+
+using namespace Qt::Literals::StringLiterals;
 
 SieveEditorMenuBarTest::SieveEditorMenuBarTest(QObject *parent)
     : QObject(parent)

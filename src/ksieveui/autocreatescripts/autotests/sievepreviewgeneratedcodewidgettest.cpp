@@ -5,12 +5,14 @@
 */
 
 #include "sievepreviewgeneratedcodewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocreatescripts/sievepreviewgeneratedcodewidget.h"
 #include <QHBoxLayout>
 #include <QTest>
 #include <QTextEdit>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_MAIN(SievePreviewGeneratedCodeWidgetTest)
 SievePreviewGeneratedCodeWidgetTest::SievePreviewGeneratedCodeWidgetTest(QObject *parent)
     : QObject(parent)

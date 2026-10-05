@@ -8,13 +8,14 @@
 #pragma once
 
 #include "response.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KJob>
 #include <QObject>
 #include <QQueue>
 #include <QStringList>
 #include <QUrl>
+
+using namespace Qt::Literals::StringLiterals;
 
 class KSslErrorUiData;
 
