@@ -12,7 +12,6 @@
 #include <KSieveCore/VacationCheckJob>
 
 #include "libksievecore_debug.h"
-#include <QVariant>
 
 using namespace KSieveCore;
 MultiImapVacationManager::MultiImapVacationManager(KSieveCore::SieveImapPasswordProvider *passwordProvider, QObject *parent)

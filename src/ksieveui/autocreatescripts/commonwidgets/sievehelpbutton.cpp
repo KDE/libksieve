@@ -9,7 +9,6 @@
 #include <KIO/OpenUrlJob>
 #include <KLocalizedString>
 #include <QIcon>
-#include <QWhatsThis>
 #include <QWhatsThisClickedEvent>
 
 using namespace Qt::Literals::StringLiterals;

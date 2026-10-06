@@ -18,7 +18,6 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QStackedWidget>
-#include <QTime>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;

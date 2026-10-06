@@ -8,7 +8,6 @@
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "widgets/abstractselectemaillineedit.h"
 #include "widgets/moveimapfolderwidget.h"
-#include <KPluginFactory>
 #include <QHBoxLayout>
 #include <QStackedWidget>
 

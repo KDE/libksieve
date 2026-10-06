@@ -19,13 +19,10 @@
 #include <KActionMenu>
 #include <KLocalizedString>
 #include <KStandardActions>
-#include <PimCommon/PurposeMenuWidget>
 #include <QAction>
 #include <QLabel>
 #include <QLineEdit>
-#include <QPushButton>
 #include <QStackedWidget>
-#include <QStandardPaths>
 #include <QToolBar>
 #include <QVBoxLayout>
 #include <kzip.h>

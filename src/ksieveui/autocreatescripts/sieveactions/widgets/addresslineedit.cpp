@@ -10,7 +10,6 @@
 #include <KColorScheme>
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
-#include <PimCommon/LineEditWithCompleterNg>
 #include <QHBoxLayout>
 #include <QLineEdit>
 

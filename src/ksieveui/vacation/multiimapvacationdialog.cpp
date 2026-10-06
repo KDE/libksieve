@@ -18,7 +18,6 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QStackedWidget>
-#include <QTabBar>
 #include <QVBoxLayout>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 

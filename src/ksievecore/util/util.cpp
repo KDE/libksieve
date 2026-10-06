@@ -13,7 +13,6 @@
 #include <pimcommon/imapresourcesettings.h>
 
 #include <KMime/Message>
-#include <MailTransport/Transport>
 
 using namespace KSieveCore;
 using namespace Qt::Literals::StringLiterals;
