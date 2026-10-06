@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:46+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2014-01-31 19:22+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -2407,9 +2407,9 @@ msgid "Delete Script"
 msgstr "Obriši skriptu"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
-#: ksieveui/widgets/managesievewidget.cpp:241
-#: ksieveui/widgets/managesievewidget.cpp:248
-#: ksieveui/widgets/managesievewidget.cpp:259
+#: ksieveui/widgets/managesievewidget.cpp:243
+#: ksieveui/widgets/managesievewidget.cpp:250
+#: ksieveui/widgets/managesievewidget.cpp:261
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgctxt "@title:window"
@@ -3113,7 +3113,7 @@ msgstr "Deaktiviraj"
 
 #: ksieveui/managesievescriptsdialog.cpp:185
 #: ksieveui/managesievescriptsdialog.cpp:277
-#: ksieveui/widgets/managesievewidget.cpp:529
+#: ksieveui/widgets/managesievewidget.cpp:531
 #, fuzzy, kde-format
 #| msgid "Sieve Error"
 msgctxt "@title:window"
@@ -3371,40 +3371,40 @@ msgid ""
 "\"Filtering\" tab of the IMAP account configuration."
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:49
+#: ksieveui/vacation/vacationeditwidget.cpp:50
 #, fuzzy, kde-format
 #| msgid "Configure vacation notifications to be sent:"
 msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "Podesite obavještenja o odmoru koja treba slati:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:57
+#: ksieveui/vacation/vacationeditwidget.cpp:58
 #, fuzzy, kde-format
 #| msgid "&Activate vacation notifications"
 msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr "&Aktiviraj automatska obavještenja"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:77
+#: ksieveui/vacation/vacationeditwidget.cpp:78
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:109
+#: ksieveui/vacation/vacationeditwidget.cpp:110
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:139
+#: ksieveui/vacation/vacationeditwidget.cpp:140
 #, kde-format
 msgctxt "@label:textbox"
 msgid "End date:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:162
-#: ksieveui/vacation/vacationeditwidget.cpp:308
+#: ksieveui/vacation/vacationeditwidget.cpp:163
+#: ksieveui/vacation/vacationeditwidget.cpp:309
 #, kde-format
 msgid " day"
 msgid_plural " days"
@@ -3412,34 +3412,34 @@ msgstr[0] " dan"
 msgstr[1] " dana"
 msgstr[2] " dana"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:164
+#: ksieveui/vacation/vacationeditwidget.cpp:165
 #, fuzzy, kde-format
 #| msgid "&Resend notification only after:"
 msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "&Ponovo pošalji obavještenje samo nakon:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:177
+#: ksieveui/vacation/vacationeditwidget.cpp:178
 #, fuzzy, kde-format
 #| msgid "&Send responses for these addresses:"
 msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "&Šalji odgovore na ove adrese:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:203
+#: ksieveui/vacation/vacationeditwidget.cpp:204
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Action for incoming mails:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:211
+#: ksieveui/vacation/vacationeditwidget.cpp:212
 #, fuzzy, kde-format
 #| msgid "Do not send vacation replies to spam messages"
 msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "Ne šalji odgovore o odmoru na spam"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:219
+#: ksieveui/vacation/vacationeditwidget.cpp:220
 #, fuzzy, kde-format
 #| msgid "Only react to mail coming from domain"
 msgctxt "@option:check"
@@ -3525,90 +3525,90 @@ msgstr "Dostupne skripte"
 msgid "Network down."
 msgstr "Mreža nije aktivna"
 
-#: ksieveui/widgets/managesievewidget.cpp:149
+#: ksieveui/widgets/managesievewidget.cpp:151
 #, fuzzy, kde-format
 #| msgid "Edit Script..."
 msgid "Edit Script…"
 msgstr "Uredi skriptu..."
 
-#: ksieveui/widgets/managesievewidget.cpp:150
+#: ksieveui/widgets/managesievewidget.cpp:152
 #, fuzzy, kde-format
 #| msgid "Sieve Script"
 msgid "Rename Script…"
 msgstr "Sieve skripta"
 
-#: ksieveui/widgets/managesievewidget.cpp:152
+#: ksieveui/widgets/managesievewidget.cpp:154
 #, kde-format
 msgid "Delete Script"
 msgstr "Obriši skriptu"
 
-#: ksieveui/widgets/managesievewidget.cpp:155
+#: ksieveui/widgets/managesievewidget.cpp:157
 #, kde-format
 msgid "Deactivate Script"
 msgstr "Deaktiviraj skriptu"
 
-#: ksieveui/widgets/managesievewidget.cpp:161
+#: ksieveui/widgets/managesievewidget.cpp:163
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgid "New Script…"
 msgstr "Nova skripta"
 
-#: ksieveui/widgets/managesievewidget.cpp:233
+#: ksieveui/widgets/managesievewidget.cpp:235
 #, kde-format
 msgid "New Sieve Script"
 msgstr "Nova Sieve skripta"
 
-#: ksieveui/widgets/managesievewidget.cpp:234
+#: ksieveui/widgets/managesievewidget.cpp:236
 #, kde-format
 msgid "Please enter a name for the new Sieve script:"
 msgstr "Unesite ime za novu Sieve skriptu:"
 
-#: ksieveui/widgets/managesievewidget.cpp:236
+#: ksieveui/widgets/managesievewidget.cpp:238
 #, kde-format
 msgid "unnamed"
 msgstr "Bez naziva"
 
-#: ksieveui/widgets/managesievewidget.cpp:241
+#: ksieveui/widgets/managesievewidget.cpp:243
 #, kde-format
 msgid "Empty name is not a valid name"
 msgstr ""
 
-#: ksieveui/widgets/managesievewidget.cpp:248
+#: ksieveui/widgets/managesievewidget.cpp:250
 #, kde-format
 msgid "You cannot use protected name."
 msgstr "Ne možete koristiti zaštićeno ime"
 
-#: ksieveui/widgets/managesievewidget.cpp:259
+#: ksieveui/widgets/managesievewidget.cpp:261
 #, kde-format
 msgid "Script name already used \"%1\"."
 msgstr "Ime skripte već korišteno \"%1\"."
 
-#: ksieveui/widgets/managesievewidget.cpp:444
-#: ksieveui/widgets/managesievewidget.cpp:472
+#: ksieveui/widgets/managesievewidget.cpp:446
+#: ksieveui/widgets/managesievewidget.cpp:474
 #, fuzzy, kde-format
 #| msgid "Sieve Script"
 msgid "Rename Script"
 msgstr "Sieve skripta"
 
-#: ksieveui/widgets/managesievewidget.cpp:444
+#: ksieveui/widgets/managesievewidget.cpp:446
 #, fuzzy, kde-format
 #| msgid "Script name:"
 msgid "Script Name:"
 msgstr "Ime skripte:"
 
-#: ksieveui/widgets/managesievewidget.cpp:507
+#: ksieveui/widgets/managesievewidget.cpp:509
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
 msgstr "Zaista brišete skriptu „%1“ sa servera?"
 
-#: ksieveui/widgets/managesievewidget.cpp:508
+#: ksieveui/widgets/managesievewidget.cpp:510
 #, fuzzy, kde-format
 #| msgid "Delete Sieve Script Confirmation"
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "Potvrda o brisanju Sieve skripte"
 
-#: ksieveui/widgets/managesievewidget.cpp:526
+#: ksieveui/widgets/managesievewidget.cpp:528
 #, fuzzy, kde-format
 #| msgid ""
 #| "Sieve operation failed.\n"
@@ -3623,7 +3623,7 @@ msgstr ""
 "Server odgovorio:\n"
 "%1"
 
-#: ksieveui/widgets/managesievewidget.cpp:578
+#: ksieveui/widgets/managesievewidget.cpp:580
 #, kde-format
 msgid "Failed to fetch the list of scripts"
 msgstr "Nisam uspio da preuzmem listu skripti"

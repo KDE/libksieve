@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:46+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2024-12-25 19:37+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -2270,9 +2270,9 @@ msgid "Delete Script"
 msgstr "स्क्रिप्ट् विलोपयन्तु"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
-#: ksieveui/widgets/managesievewidget.cpp:241
-#: ksieveui/widgets/managesievewidget.cpp:248
-#: ksieveui/widgets/managesievewidget.cpp:259
+#: ksieveui/widgets/managesievewidget.cpp:243
+#: ksieveui/widgets/managesievewidget.cpp:250
+#: ksieveui/widgets/managesievewidget.cpp:261
 #, kde-format
 msgctxt "@title:window"
 msgid "New Script"
@@ -2910,7 +2910,7 @@ msgstr "निष्क्रियं कुर्वन्तु"
 
 #: ksieveui/managesievescriptsdialog.cpp:185
 #: ksieveui/managesievescriptsdialog.cpp:277
-#: ksieveui/widgets/managesievewidget.cpp:529
+#: ksieveui/widgets/managesievewidget.cpp:531
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
@@ -3150,69 +3150,69 @@ msgstr ""
 "निर्भरं भवति । अस्य कृते भवता अद्यापि IMAP सर्वरः न विन्यस्तः । IMAP खाताविन्यासस्य "
 "\"Filtering\" ट्याब् इत्यत्र एतत् कर्तुं शक्नुवन्ति ।"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:49
+#: ksieveui/vacation/vacationeditwidget.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "प्रेषणीयाः अवकाशसूचनाः विन्यस्यताम्:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:57
+#: ksieveui/vacation/vacationeditwidget.cpp:58
 #, kde-format
 msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr "&अवकाशसूचनाः सक्रियं कुर्वन्तु"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:77
+#: ksieveui/vacation/vacationeditwidget.cpp:78
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
 msgstr "&अवकाशमेलस्य विषयः :"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:109
+#: ksieveui/vacation/vacationeditwidget.cpp:110
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr "आरम्भतिथिः :"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:139
+#: ksieveui/vacation/vacationeditwidget.cpp:140
 #, kde-format
 msgctxt "@label:textbox"
 msgid "End date:"
 msgstr "समाप्तितिथिः :"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:162
-#: ksieveui/vacation/vacationeditwidget.cpp:308
+#: ksieveui/vacation/vacationeditwidget.cpp:163
+#: ksieveui/vacation/vacationeditwidget.cpp:309
 #, kde-format
 msgid " day"
 msgid_plural " days"
 msgstr[0] " दिनं"
 msgstr[1] " दिवसाः"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:164
+#: ksieveui/vacation/vacationeditwidget.cpp:165
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "&अनन्तरमेव सूचनां पुनः प्रेषयन्तु:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:177
+#: ksieveui/vacation/vacationeditwidget.cpp:178
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "&एतेषां पत्तनानां प्रतिक्रियाः प्रेषयन्तु:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:203
+#: ksieveui/vacation/vacationeditwidget.cpp:204
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Action for incoming mails:"
 msgstr "&आगतानां मेलानाम् कृते क्रिया:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:211
+#: ksieveui/vacation/vacationeditwidget.cpp:212
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "स्पैमसन्देशेषु अवकाशस्य उत्तराणि न प्रेषयन्तु"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:219
+#: ksieveui/vacation/vacationeditwidget.cpp:220
 #, kde-format
 msgctxt "@option:check"
 msgid "Only react to mail coming from domain:"
@@ -3288,84 +3288,84 @@ msgstr "उपलब्धाः स्क्रिप्ट्"
 msgid "Network down."
 msgstr "नेटवर्क् डाउन।"
 
-#: ksieveui/widgets/managesievewidget.cpp:149
+#: ksieveui/widgets/managesievewidget.cpp:151
 #, kde-format
 msgid "Edit Script…"
 msgstr "लिपि सम्पादयतु..."
 
-#: ksieveui/widgets/managesievewidget.cpp:150
+#: ksieveui/widgets/managesievewidget.cpp:152
 #, kde-format
 msgid "Rename Script…"
 msgstr "स्क्रिप्ट् इत्यस्य नाम परिवर्तनं कुर्वन्तु..."
 
-#: ksieveui/widgets/managesievewidget.cpp:152
+#: ksieveui/widgets/managesievewidget.cpp:154
 #, kde-format
 msgid "Delete Script"
 msgstr "स्क्रिप्ट् विलोपयन्तु"
 
-#: ksieveui/widgets/managesievewidget.cpp:155
+#: ksieveui/widgets/managesievewidget.cpp:157
 #, kde-format
 msgid "Deactivate Script"
 msgstr "स्क्रिप्ट् निष्क्रियं कुर्वन्तु"
 
-#: ksieveui/widgets/managesievewidget.cpp:161
+#: ksieveui/widgets/managesievewidget.cpp:163
 #, kde-format
 msgid "New Script…"
 msgstr "नवीन लिपि..."
 
-#: ksieveui/widgets/managesievewidget.cpp:233
+#: ksieveui/widgets/managesievewidget.cpp:235
 #, kde-format
 msgid "New Sieve Script"
 msgstr "नवीन चलनी लिपि"
 
-#: ksieveui/widgets/managesievewidget.cpp:234
+#: ksieveui/widgets/managesievewidget.cpp:236
 #, kde-format
 msgid "Please enter a name for the new Sieve script:"
 msgstr "कृपया नूतनस्य Sieve लिप्याः नाम प्रविशतु:"
 
-#: ksieveui/widgets/managesievewidget.cpp:236
+#: ksieveui/widgets/managesievewidget.cpp:238
 #, kde-format
 msgid "unnamed"
 msgstr "अनामिका"
 
-#: ksieveui/widgets/managesievewidget.cpp:241
+#: ksieveui/widgets/managesievewidget.cpp:243
 #, kde-format
 msgid "Empty name is not a valid name"
 msgstr "रिक्तं नाम वैधं नाम नास्ति"
 
-#: ksieveui/widgets/managesievewidget.cpp:248
+#: ksieveui/widgets/managesievewidget.cpp:250
 #, kde-format
 msgid "You cannot use protected name."
 msgstr "भवन्तः संरक्षितनामस्य उपयोगं कर्तुं न शक्नुवन्ति।"
 
-#: ksieveui/widgets/managesievewidget.cpp:259
+#: ksieveui/widgets/managesievewidget.cpp:261
 #, kde-format
 msgid "Script name already used \"%1\"."
 msgstr "स्क्रिप्ट् नाम पूर्वमेव \"%1\" प्रयुक्तम् ।"
 
-#: ksieveui/widgets/managesievewidget.cpp:444
-#: ksieveui/widgets/managesievewidget.cpp:472
+#: ksieveui/widgets/managesievewidget.cpp:446
+#: ksieveui/widgets/managesievewidget.cpp:474
 #, kde-format
 msgid "Rename Script"
 msgstr "स्क्रिप्ट् इत्यस्य नाम परिवर्तनं कुर्वन्तु"
 
-#: ksieveui/widgets/managesievewidget.cpp:444
+#: ksieveui/widgets/managesievewidget.cpp:446
 #, kde-format
 msgid "Script Name:"
 msgstr "स्क्रिप्ट् नाम :"
 
-#: ksieveui/widgets/managesievewidget.cpp:507
+#: ksieveui/widgets/managesievewidget.cpp:509
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
 msgstr "वास्तवमेव सर्वरात् \"%1\" स्क्रिप्ट् विलोपयतु?"
 
-#: ksieveui/widgets/managesievewidget.cpp:508
+#: ksieveui/widgets/managesievewidget.cpp:510
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "चलनी स्क्रिप्ट पुष्टिकरणं विलोपयन्तु"
 
-#: ksieveui/widgets/managesievewidget.cpp:526
+#: ksieveui/widgets/managesievewidget.cpp:528
 #, kde-format
 msgid ""
 "Deleting the script failed.\n"
@@ -3376,7 +3376,7 @@ msgstr ""
 "सर्वरः प्रतिवदति स्म यत् -\n"
 "%1"
 
-#: ksieveui/widgets/managesievewidget.cpp:578
+#: ksieveui/widgets/managesievewidget.cpp:580
 #, kde-format
 msgid "Failed to fetch the list of scripts"
 msgstr "स्क्रिप्ट्-सूचीं आनेतुं असफलम्"

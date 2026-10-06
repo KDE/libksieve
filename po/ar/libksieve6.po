@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:46+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2025-10-05 10:20+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -2259,9 +2259,9 @@ msgid "Delete Script"
 msgstr "احذف السّكربت"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
-#: ksieveui/widgets/managesievewidget.cpp:241
-#: ksieveui/widgets/managesievewidget.cpp:248
-#: ksieveui/widgets/managesievewidget.cpp:259
+#: ksieveui/widgets/managesievewidget.cpp:243
+#: ksieveui/widgets/managesievewidget.cpp:250
+#: ksieveui/widgets/managesievewidget.cpp:261
 #, kde-format
 msgctxt "@title:window"
 msgid "New Script"
@@ -2896,7 +2896,7 @@ msgstr "تعطيل"
 
 #: ksieveui/managesievescriptsdialog.cpp:185
 #: ksieveui/managesievescriptsdialog.cpp:277
-#: ksieveui/widgets/managesievewidget.cpp:529
+#: ksieveui/widgets/managesievewidget.cpp:531
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
@@ -3135,38 +3135,38 @@ msgstr ""
 "بعد خادم IMAP لهذا الغرض. يمكنك القيام بذلك في تبويب \"التصفية\" في إعدادات "
 "حساب IMAP."
 
-#: ksieveui/vacation/vacationeditwidget.cpp:49
+#: ksieveui/vacation/vacationeditwidget.cpp:50
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "أعد إعداد إشعارات الإجازة ليتم إرسالها:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:57
+#: ksieveui/vacation/vacationeditwidget.cpp:58
 #, kde-format
 msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr "&نشط إشعارات الإجازة"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:77
+#: ksieveui/vacation/vacationeditwidget.cpp:78
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
 msgstr "&موضوع بريد الإجازة:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:109
+#: ksieveui/vacation/vacationeditwidget.cpp:110
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr "تاريخ البدء:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:139
+#: ksieveui/vacation/vacationeditwidget.cpp:140
 #, kde-format
 msgctxt "@label:textbox"
 msgid "End date:"
 msgstr "تاريخ النهاية:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:162
-#: ksieveui/vacation/vacationeditwidget.cpp:308
+#: ksieveui/vacation/vacationeditwidget.cpp:163
+#: ksieveui/vacation/vacationeditwidget.cpp:309
 #, kde-format
 msgid " day"
 msgid_plural " days"
@@ -3177,31 +3177,31 @@ msgstr[3] " أيّام"
 msgstr[4] " يومًا"
 msgstr[5] " يوم"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:164
+#: ksieveui/vacation/vacationeditwidget.cpp:165
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "أ&عد إرسال الإشعار فقط بعد:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:177
+#: ksieveui/vacation/vacationeditwidget.cpp:178
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "أ&رسل الردود لهذه العناوين:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:203
+#: ksieveui/vacation/vacationeditwidget.cpp:204
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Action for incoming mails:"
 msgstr "إ&جراء للبريد الوارد:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:211
+#: ksieveui/vacation/vacationeditwidget.cpp:212
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "لا ترسل ردود الإجازة لرسائل البريد المزعج"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:219
+#: ksieveui/vacation/vacationeditwidget.cpp:220
 #, kde-format
 msgctxt "@option:check"
 msgid "Only react to mail coming from domain:"
@@ -3276,84 +3276,84 @@ msgstr "السكربتات المتاحة"
 msgid "Network down."
 msgstr "الشبكة معطلة."
 
-#: ksieveui/widgets/managesievewidget.cpp:149
+#: ksieveui/widgets/managesievewidget.cpp:151
 #, kde-format
 msgid "Edit Script…"
 msgstr "حرّر السّكربت…"
 
-#: ksieveui/widgets/managesievewidget.cpp:150
+#: ksieveui/widgets/managesievewidget.cpp:152
 #, kde-format
 msgid "Rename Script…"
 msgstr "غيّر الاسم…"
 
-#: ksieveui/widgets/managesievewidget.cpp:152
+#: ksieveui/widgets/managesievewidget.cpp:154
 #, kde-format
 msgid "Delete Script"
 msgstr "احذف السّكربت"
 
-#: ksieveui/widgets/managesievewidget.cpp:155
+#: ksieveui/widgets/managesievewidget.cpp:157
 #, kde-format
 msgid "Deactivate Script"
 msgstr "ألغِ تفعيل السّكربت"
 
-#: ksieveui/widgets/managesievewidget.cpp:161
+#: ksieveui/widgets/managesievewidget.cpp:163
 #, kde-format
 msgid "New Script…"
 msgstr "سكرِبت جديد…"
 
-#: ksieveui/widgets/managesievewidget.cpp:233
+#: ksieveui/widgets/managesievewidget.cpp:235
 #, kde-format
 msgid "New Sieve Script"
 msgstr "سكربت غربال جديد"
 
-#: ksieveui/widgets/managesievewidget.cpp:234
+#: ksieveui/widgets/managesievewidget.cpp:236
 #, kde-format
 msgid "Please enter a name for the new Sieve script:"
 msgstr "رجاءً أدخِل اسمًا للسكربت الجديد للغربال:"
 
-#: ksieveui/widgets/managesievewidget.cpp:236
+#: ksieveui/widgets/managesievewidget.cpp:238
 #, kde-format
 msgid "unnamed"
 msgstr "غير مسمّى"
 
-#: ksieveui/widgets/managesievewidget.cpp:241
+#: ksieveui/widgets/managesievewidget.cpp:243
 #, kde-format
 msgid "Empty name is not a valid name"
 msgstr "الاسم الفارغ ليس اسمًا صالحًا"
 
-#: ksieveui/widgets/managesievewidget.cpp:248
+#: ksieveui/widgets/managesievewidget.cpp:250
 #, kde-format
 msgid "You cannot use protected name."
 msgstr "لا يمكنك استخدام اسم محمي."
 
-#: ksieveui/widgets/managesievewidget.cpp:259
+#: ksieveui/widgets/managesievewidget.cpp:261
 #, kde-format
 msgid "Script name already used \"%1\"."
 msgstr "اسم السكربت \"%1\" مستخدم بالفعل."
 
-#: ksieveui/widgets/managesievewidget.cpp:444
-#: ksieveui/widgets/managesievewidget.cpp:472
+#: ksieveui/widgets/managesievewidget.cpp:446
+#: ksieveui/widgets/managesievewidget.cpp:474
 #, kde-format
 msgid "Rename Script"
 msgstr "أعد تسمية السكربت"
 
-#: ksieveui/widgets/managesievewidget.cpp:444
+#: ksieveui/widgets/managesievewidget.cpp:446
 #, kde-format
 msgid "Script Name:"
 msgstr "اسم السّكربت:"
 
-#: ksieveui/widgets/managesievewidget.cpp:507
+#: ksieveui/widgets/managesievewidget.cpp:509
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
 msgstr "هل تريد حقًا حذف السكربت \"%1\" من الخادم؟"
 
-#: ksieveui/widgets/managesievewidget.cpp:508
+#: ksieveui/widgets/managesievewidget.cpp:510
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "تأكيد حذف سكربت الغربال"
 
-#: ksieveui/widgets/managesievewidget.cpp:526
+#: ksieveui/widgets/managesievewidget.cpp:528
 #, kde-format
 msgid ""
 "Deleting the script failed.\n"
@@ -3364,7 +3364,7 @@ msgstr ""
 "استجاب الخادم:\n"
 "%1"
 
-#: ksieveui/widgets/managesievewidget.cpp:578
+#: ksieveui/widgets/managesievewidget.cpp:580
 #, kde-format
 msgid "Failed to fetch the list of scripts"
 msgstr "فشل جلب قائمة السكربتات"

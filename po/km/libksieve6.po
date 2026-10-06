@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:46+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2012-12-28 15:41+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -2219,9 +2219,9 @@ msgid "Delete Script"
 msgstr "លុប​ស្គ្រីប​"
 
 #: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
-#: ksieveui/widgets/managesievewidget.cpp:241
-#: ksieveui/widgets/managesievewidget.cpp:248
-#: ksieveui/widgets/managesievewidget.cpp:259
+#: ksieveui/widgets/managesievewidget.cpp:243
+#: ksieveui/widgets/managesievewidget.cpp:250
+#: ksieveui/widgets/managesievewidget.cpp:261
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgctxt "@title:window"
@@ -2912,7 +2912,7 @@ msgstr "ធ្វើ​ឲ្យ​​អសកម្ម​​"
 
 #: ksieveui/managesievescriptsdialog.cpp:185
 #: ksieveui/managesievescriptsdialog.cpp:277
-#: ksieveui/widgets/managesievewidget.cpp:529
+#: ksieveui/widgets/managesievewidget.cpp:531
 #, fuzzy, kde-format
 #| msgid "Sieve Error"
 msgctxt "@title:window"
@@ -3165,73 +3165,73 @@ msgid ""
 "\"Filtering\" tab of the IMAP account configuration."
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:49
+#: ksieveui/vacation/vacationeditwidget.cpp:50
 #, fuzzy, kde-format
 #| msgid "Configure vacation notifications to be sent:"
 msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "កំណត់​រចនាសម្ព័ន្ធ​ការ​ជូន​ដំណឹង​វិស្សមកាល​ដែល​ត្រូវ​ផ្ញើ ៖​​"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:57
+#: ksieveui/vacation/vacationeditwidget.cpp:58
 #, fuzzy, kde-format
 #| msgid "&Activate vacation notifications"
 msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr "ធ្វើ​ឲ្យ​ការ​ជូនដំណឹង​វិស្សមកាល​សកម្ម​​"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:77
+#: ksieveui/vacation/vacationeditwidget.cpp:78
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:109
+#: ksieveui/vacation/vacationeditwidget.cpp:110
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:139
+#: ksieveui/vacation/vacationeditwidget.cpp:140
 #, kde-format
 msgctxt "@label:textbox"
 msgid "End date:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:162
-#: ksieveui/vacation/vacationeditwidget.cpp:308
+#: ksieveui/vacation/vacationeditwidget.cpp:163
+#: ksieveui/vacation/vacationeditwidget.cpp:309
 #, kde-format
 msgid " day"
 msgid_plural " days"
 msgstr[0] "ថ្ងៃ​"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:164
+#: ksieveui/vacation/vacationeditwidget.cpp:165
 #, fuzzy, kde-format
 #| msgid "&Resend notification only after:"
 msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "ផ្ញើ​ឡើង​វិញ​ក្រោយ​ពេល​ជូនដំណឹង​ប៉ុណ្ណោះ​​ ៖​​"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:177
+#: ksieveui/vacation/vacationeditwidget.cpp:178
 #, fuzzy, kde-format
 #| msgid "&Send responses for these addresses:"
 msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "ផ្ញើ​​ឆ្លើយ​តប​​សម្រាប់​អាសយដ្ឋាន​ទាំងនេះ​ ៖​"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:203
+#: ksieveui/vacation/vacationeditwidget.cpp:204
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Action for incoming mails:"
 msgstr ""
 
-#: ksieveui/vacation/vacationeditwidget.cpp:211
+#: ksieveui/vacation/vacationeditwidget.cpp:212
 #, fuzzy, kde-format
 #| msgid "Do not send vacation replies to spam messages"
 msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "កុំ​ផ្ញើ​ការ​​ឆ្លើយ​តប​វិស្សមកាល​ទៅកាន់​សារ​ឥតបានការ​​"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:219
+#: ksieveui/vacation/vacationeditwidget.cpp:220
 #, fuzzy, kde-format
 #| msgid "Only react to mail coming from domain"
 msgctxt "@option:check"
@@ -3322,90 +3322,90 @@ msgstr "មាន​ស្គ្រីប​"
 msgid "Network down."
 msgstr ""
 
-#: ksieveui/widgets/managesievewidget.cpp:149
+#: ksieveui/widgets/managesievewidget.cpp:151
 #, fuzzy, kde-format
 #| msgid "Edit Script..."
 msgid "Edit Script…"
 msgstr "កែសម្រួល​ស្គ្រីប​​..."
 
-#: ksieveui/widgets/managesievewidget.cpp:150
+#: ksieveui/widgets/managesievewidget.cpp:152
 #, fuzzy, kde-format
 #| msgid "New Sieve Script"
 msgid "Rename Script…"
 msgstr "ស្គ្រីប​របស់​ Sieve ថ្មី​"
 
-#: ksieveui/widgets/managesievewidget.cpp:152
+#: ksieveui/widgets/managesievewidget.cpp:154
 #, kde-format
 msgid "Delete Script"
 msgstr "លុប​ស្គ្រីប​"
 
-#: ksieveui/widgets/managesievewidget.cpp:155
+#: ksieveui/widgets/managesievewidget.cpp:157
 #, kde-format
 msgid "Deactivate Script"
 msgstr "ធ្វើ​ឲ្យ​​ស្គ្រីប​សកម្ម​​"
 
-#: ksieveui/widgets/managesievewidget.cpp:161
+#: ksieveui/widgets/managesievewidget.cpp:163
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgid "New Script…"
 msgstr "ស្គ្រីប​ថ្មី"
 
-#: ksieveui/widgets/managesievewidget.cpp:233
+#: ksieveui/widgets/managesievewidget.cpp:235
 #, kde-format
 msgid "New Sieve Script"
 msgstr "ស្គ្រីប​របស់​ Sieve ថ្មី​"
 
-#: ksieveui/widgets/managesievewidget.cpp:234
+#: ksieveui/widgets/managesievewidget.cpp:236
 #, kde-format
 msgid "Please enter a name for the new Sieve script:"
 msgstr "សូម​បញ្ចូល​ឈ្មោះ​ សម្រាប់​ស្គ្រីប​របស់​ Sieve ៖​​"
 
-#: ksieveui/widgets/managesievewidget.cpp:236
+#: ksieveui/widgets/managesievewidget.cpp:238
 #, kde-format
 msgid "unnamed"
 msgstr "ដែល​គ្មាន​ឈ្មោះ​"
 
-#: ksieveui/widgets/managesievewidget.cpp:241
+#: ksieveui/widgets/managesievewidget.cpp:243
 #, kde-format
 msgid "Empty name is not a valid name"
 msgstr ""
 
-#: ksieveui/widgets/managesievewidget.cpp:248
+#: ksieveui/widgets/managesievewidget.cpp:250
 #, kde-format
 msgid "You cannot use protected name."
 msgstr ""
 
-#: ksieveui/widgets/managesievewidget.cpp:259
+#: ksieveui/widgets/managesievewidget.cpp:261
 #, kde-format
 msgid "Script name already used \"%1\"."
 msgstr "ឈ្មោះ​របស់​ស្គ្រីប​ត្រូវ​បាន​ប្រើ​រួចហើយ \"%1\" ។"
 
-#: ksieveui/widgets/managesievewidget.cpp:444
-#: ksieveui/widgets/managesievewidget.cpp:472
+#: ksieveui/widgets/managesievewidget.cpp:446
+#: ksieveui/widgets/managesievewidget.cpp:474
 #, fuzzy, kde-format
 #| msgid "New Sieve Script"
 msgid "Rename Script"
 msgstr "ស្គ្រីប​របស់​ Sieve ថ្មី​"
 
-#: ksieveui/widgets/managesievewidget.cpp:444
+#: ksieveui/widgets/managesievewidget.cpp:446
 #, fuzzy, kde-format
 #| msgid "Script name:"
 msgid "Script Name:"
 msgstr "ឈ្មោះ​ស្គ្រីប ៖"
 
-#: ksieveui/widgets/managesievewidget.cpp:507
+#: ksieveui/widgets/managesievewidget.cpp:509
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
 msgstr "តើ​ពិត​ជា​លុប​​ស្គ្រីប​ \"%1\" ពី​ម៉ាស៊ីន​បម្រើ​ដែរ​ឬ​ទេ​ ?​"
 
-#: ksieveui/widgets/managesievewidget.cpp:508
+#: ksieveui/widgets/managesievewidget.cpp:510
 #, fuzzy, kde-format
 #| msgid "Delete Sieve Script Confirmation"
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "លុប​ការ​អះអាង​ស្គ្រីប​របស់​ Sieve​"
 
-#: ksieveui/widgets/managesievewidget.cpp:526
+#: ksieveui/widgets/managesievewidget.cpp:528
 #, fuzzy, kde-format
 #| msgid "Sieve operation failed."
 msgid ""
@@ -3414,7 +3414,7 @@ msgid ""
 "%1"
 msgstr "បាន​បរាជ័យ​ប្រតិបត្តិការ​របស់​ Sieve ។"
 
-#: ksieveui/widgets/managesievewidget.cpp:578
+#: ksieveui/widgets/managesievewidget.cpp:580
 #, kde-format
 msgid "Failed to fetch the list of scripts"
 msgstr "បាន​បរាជ័យ​ ដើម្បី​ប្រមូល​យក​បញ្ជី​របស់​ស្គ្រីប​​"
