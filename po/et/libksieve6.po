@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-07 00:50+0000\n"
 "PO-Revision-Date: 2020-06-05 22:48+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -673,7 +673,7 @@ msgstr ""
 msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgstr "Server ei toeta omadust \"%1\" tingimuses \"%2\""
 
-#: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:20
+#: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
 #, fuzzy, kde-format
 #| msgid "Help"
 msgctxt "@info:tooltip"
@@ -712,7 +712,7 @@ msgstr "päis:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:51
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:51
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:55
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:54
 #, fuzzy, kde-format
 #| msgid "value:"
 msgctxt "@label:textbox"
@@ -1235,7 +1235,7 @@ msgstr ""
 "See laiend määratleb parameetri \"sekundid\" niisugustes olukordades parema "
 "täpsuse tagamiseks."
 
-#: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:29
+#: ksieveui/autocreatescripts/sieveactions/widgets/addresslineedit.cpp:28
 #, fuzzy, kde-format
 #| msgid "Define Email Address..."
 msgctxt "@info:placeholder"
@@ -1478,7 +1478,7 @@ msgstr ""
 "oleva kuupäeva ja kellaajaga, mitte kirjapäisest ekstraktitud väärtusega."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:25
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:42
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:238
 #, kde-format
 msgid "Date"
@@ -1862,62 +1862,62 @@ msgstr "sisu"
 msgid "text"
 msgstr "tekst"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:40
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:39
 #, kde-format
 msgid "Year"
 msgstr "Aasta"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:41
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:40
 #, kde-format
 msgid "Month"
 msgstr "Kuu"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:42
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:41
 #, kde-format
 msgid "Day"
 msgstr "Päev"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:44
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
 #, kde-format
 msgid "Julian"
 msgstr "Juliuse"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:45
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:44
 #, kde-format
 msgid "Hour"
 msgstr "Tund"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:46
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:45
 #, kde-format
 msgid "Minute"
 msgstr "Minut"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:47
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:46
 #, kde-format
 msgid "Second"
 msgstr "Sekund"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:48
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:47
 #, kde-format
 msgid "Time"
 msgstr "Kellaaeg"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:49
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:48
 #, kde-format
 msgid "iso8601"
 msgstr "iso8601"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:50
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:49
 #, kde-format
 msgid "std11"
 msgstr "std11"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:51
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:50
 #, kde-format
 msgid "Zone"
 msgstr "Vöönd"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:52
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:51
 #, kde-format
 msgid "Weekday"
 msgstr "Nädalapäev"
@@ -2187,7 +2187,7 @@ msgid "Include:"
 msgstr "Päis:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:137
-#: ksieveui/templates/sievetemplateeditdialog.cpp:58
+#: ksieveui/templates/sievetemplateeditdialog.cpp:57
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@label:textbox"
@@ -2787,52 +2787,52 @@ msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "Parsimise tõrge"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:46
+#: ksieveui/editor/sieveeditorwidget.cpp:43
 #, fuzzy, kde-format
 #| msgid "Check Syntax"
 msgctxt "@action"
 msgid "Check Syntax"
 msgstr "Kontrolli süntaksit"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:51
+#: ksieveui/editor/sieveeditorwidget.cpp:48
 #, fuzzy, kde-format
 #| msgid "Import..."
 msgid "Import…"
 msgstr "Impordi..."
 
-#: ksieveui/editor/sieveeditorwidget.cpp:53
+#: ksieveui/editor/sieveeditorwidget.cpp:50
 #, fuzzy, kde-format
 #| msgid "Create Rules Graphically..."
 msgctxt "@action"
 msgid "Create Rules Graphically…"
 msgstr "Reeglite graafiline loomine..."
 
-#: ksieveui/editor/sieveeditorwidget.cpp:67
+#: ksieveui/editor/sieveeditorwidget.cpp:64
 #, fuzzy, kde-format
 #| msgid "Share..."
 msgid "Share…"
 msgstr "Jaga..."
 
-#: ksieveui/editor/sieveeditorwidget.cpp:73
+#: ksieveui/editor/sieveeditorwidget.cpp:70
 #, fuzzy, kde-format
 #| msgid "Server Info"
 msgctxt "@action"
 msgid "Server Info"
 msgstr "Serveri teave"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:117
+#: ksieveui/editor/sieveeditorwidget.cpp:114
 #, fuzzy, kde-format
 #| msgid "Script name:"
 msgctxt "@label:textbox"
 msgid "Script name:"
 msgstr "Skripti nimi:"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:389
+#: ksieveui/editor/sieveeditorwidget.cpp:386
 #, kde-format
 msgid "Simple Mode"
 msgstr "Lihtne režiim"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:389
+#: ksieveui/editor/sieveeditorwidget.cpp:386
 #, kde-format
 msgid "Advanced Mode"
 msgstr "Täiustatud režiim"
@@ -3231,14 +3231,14 @@ msgstr "Kirja hävitamine, mille on saatnud ..."
 msgid "Vacations"
 msgstr "Puhkused"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:38
+#: ksieveui/templates/sievetemplateeditdialog.cpp:37
 #, fuzzy, kde-format
 #| msgid "Default template"
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "Vaikimisi mall"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:38
+#: ksieveui/templates/sievetemplateeditdialog.cpp:37
 #, fuzzy, kde-format
 #| msgid "Template"
 msgctxt "@title:window"
@@ -3250,37 +3250,37 @@ msgstr "Mall"
 msgid "You can drag and drop element on editor to import template"
 msgstr "Malli importimiseks võib elemendi redaktorisse lohistada"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:48
+#: ksieveui/vacation/multiimapvacationdialog.cpp:47
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure \"Out of Office\" Replies"
 msgstr "Puhkuseteadete seadistamine"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:74
+#: ksieveui/vacation/multiimapvacationdialog.cpp:73
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr "Kas tõesti loobuda?"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:75
+#: ksieveui/vacation/multiimapvacationdialog.cpp:74
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Kinnitus"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:76
+#: ksieveui/vacation/multiimapvacationdialog.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel Editing"
 msgstr ""
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:77
+#: ksieveui/vacation/multiimapvacationdialog.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Cancel"
 msgstr ""
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:107
+#: ksieveui/vacation/multiimapvacationdialog.cpp:106
 #, fuzzy, kde-format
 #| msgid ""
 #| "KMail's Out of Office Reply functionality relies on server-side "
