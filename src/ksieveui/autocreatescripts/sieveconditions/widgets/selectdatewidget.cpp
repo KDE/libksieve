@@ -15,6 +15,7 @@
 #include <QLineEdit>
 
 #include "libksieveui_debug.h"
+#include <QDate>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QStackedWidget>

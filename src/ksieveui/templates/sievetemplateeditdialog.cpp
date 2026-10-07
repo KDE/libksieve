@@ -17,6 +17,7 @@
 #include <QDialogButtonBox>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QPushButton>
 #include <QShortcut>
 #include <QVBoxLayout>
 
