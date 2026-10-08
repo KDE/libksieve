@@ -9,10 +9,10 @@ Dependencies:
     'pim/kidentitymanagement': '@same'
     'pim/kimap': '@same'
     'pim/kmailtransport': '@same'
-    'pim/kmime': '@same'
+    'frameworks/kmime': '@same'
     'pim/libkdepim': '@same'
     'pim/pimcommon': '@same'
-    'libraries/ktextaddons': '@latest-kf6'
+    'libraries/ktextaddons': 'Plasma/6.6'
 
 Options:
  require-passing-tests-on: ['Linux', 'FreeBSD']
