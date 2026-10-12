@@ -67,12 +67,6 @@ KSieveCore::SieveImapAccountSettings::AuthenticationMode SieveImapAccountSetting
     return mAuthenticationType;
 }
 
-bool SieveImapAccountSettings::operator==(const SieveImapAccountSettings &other) const
-{
-    return (mServerName == other.mServerName) && (mPassword == other.mPassword) && (mPort == other.mPort) && (mUserName == other.mUserName)
-        && (mAuthenticationType == other.mAuthenticationType) && (mEncryptionMode == other.mEncryptionMode);
-}
-
 bool SieveImapAccountSettings::isValid() const
 {
     return !mServerName.isEmpty() && !mPassword.isEmpty() && (mPort != -1) && (!mUserName.isEmpty());

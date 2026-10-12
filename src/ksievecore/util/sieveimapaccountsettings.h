@@ -114,7 +114,7 @@ public:
      * \param other The other SieveImapAccountSettings.
      * \return true if the settings are identical.
      */
-    [[nodiscard]] bool operator==(const SieveImapAccountSettings &other) const;
+    [[nodiscard]] bool operator==(const SieveImapAccountSettings &other) const = default;
 
     /*!
      * Checks if the settings are valid for a connection.
