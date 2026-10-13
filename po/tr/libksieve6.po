@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-08 00:47+0000\n"
-"PO-Revision-Date: 2026-09-27 19:10+0300\n"
+"PO-Revision-Date: 2026-10-12 11:46+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -715,7 +715,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:26
 #, kde-format
 msgid "Add header"
-msgstr "Üstbilgi ekle"
+msgstr "Üst Bilgi Ekle"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:42
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:42
@@ -723,7 +723,7 @@ msgstr "Üstbilgi ekle"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "header:"
-msgstr "Üstbilgi:"
+msgstr "Üst bilgi:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:51
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:51
@@ -798,7 +798,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:26
 #, kde-format
 msgid "Delete header"
-msgstr "Üstbilgiyi sil"
+msgstr "Üst Bilgiyi Sil"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:126
 #, kde-format
@@ -806,7 +806,7 @@ msgid ""
 "By default, the deleteheader action deletes all occurrences of the named "
 "header field."
 msgstr ""
-"Öntanımlı olarak üstbilgi sil eylemi adlı üstbilgideki her görünümü siler."
+"Öntanımlı olarak üst bilgi sil eylemi adlı üst bilgideki her görünümü siler."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:25
 #, kde-format
@@ -830,7 +830,7 @@ msgstr "Konu:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "headers:"
-msgstr "Üstbilgiler:"
+msgstr "Üst bilgiler:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:53
 #: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:32
@@ -1901,19 +1901,19 @@ msgstr "Hafta günü"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:28
 msgid "Select multiple headers…"
-msgstr "Birden fazla üstbilgi seç…"
+msgstr "Birden fazla üst bilgi seç…"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Headers"
-msgstr "Üstbilgiler"
+msgstr "Üst Bilgiler"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:54
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Add new header:"
-msgstr "Yeni üstbilgi ekle:"
+msgstr "Yeni üst bilgi ekle:"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:228
 #, kde-format
@@ -3188,8 +3188,8 @@ msgid ""
 "You have not yet configured an IMAP server for this. You can do this on the "
 "\"Filtering\" tab of the IMAP account configuration."
 msgstr ""
-"K Posta’nın Ofis Dışında yanıtlama özelliği sunucu bağımlıdır. Bunun için "
-"bir IMAP sunucu ayarı yapılandırmadınız. Bu işlemi IMAP hesap yapılandırması "
+"KMail’in Ofis Dışında yanıtlama özelliği sunucu bağımlıdır. Bunun için bir "
+"IMAP sunucu ayarı yapılandırmadınız. Bu işlemi IMAP hesap yapılandırması "
 "altındaki “Süzme” sekmesinden tamamlayabilirsiniz."
 
 #: ksieveui/vacation/vacationeditwidget.cpp:50
@@ -3296,7 +3296,7 @@ msgid ""
 "Please contact your system administrator."
 msgstr ""
 "Sunucunuz desteklediği Sieve eklentileri arasında “vacation” yer almıyor, o "
-"olmadan K Posta sizin yerinize ofis dışındayım yanıtlarını kuramaz. Lütfen "
+"olmadan KMail sizin yerinize ofis dışındayım yanıtlarını kuramaz. Lütfen "
 "sistem yöneticinizle iletişime geçin."
 
 #: ksieveui/vacation/vacationwarningwidget.cpp:20
@@ -3306,7 +3306,7 @@ msgid ""
 "no longer able to determine the parameters for the autoreplies. Default "
 "values will be used."
 msgstr ""
-"Birisi (muhtemelen siz) sunucudaki tatil betiğini değiştirdi. K Posta artık "
+"Birisi (muhtemelen siz) sunucudaki tatil betiğini değiştirdi. KMail artık "
 "otomatik yanıtlama için parametreleri okuyamıyor. Öntanımlı değerler "
 "kullanılacak."
 
