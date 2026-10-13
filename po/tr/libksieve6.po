@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-27 00:45+0000\n"
-"PO-Revision-Date: 2026-09-27 19:10+0300\n"
+"PO-Revision-Date: 2026-10-12 11:46+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -715,7 +715,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:26
 #, kde-format
 msgid "Add header"
-msgstr "Üstbilgi ekle"
+msgstr "Üst Bilgi Ekle"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:42
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:42
@@ -723,7 +723,7 @@ msgstr "Üstbilgi ekle"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "header:"
-msgstr "Üstbilgi:"
+msgstr "Üst bilgi:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:51
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:51
@@ -798,7 +798,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:26
 #, kde-format
 msgid "Delete header"
-msgstr "Üstbilgiyi sil"
+msgstr "Üst Bilgiyi Sil"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:126
 #, kde-format
@@ -830,7 +830,7 @@ msgstr "Konu:"
 #, kde-format
 msgctxt "@label:textbox"
 msgid "headers:"
-msgstr "Üstbilgiler:"
+msgstr "Üst bilgiler:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionenclose.cpp:53
 #: ksieveui/autocreatescripts/sieveactions/sieveactionereject.cpp:32
@@ -1907,7 +1907,7 @@ msgstr "Birden fazla üstbilgi seç…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Headers"
-msgstr "Üstbilgiler"
+msgstr "Üst Bilgiler"
 
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:57
 #, kde-format
