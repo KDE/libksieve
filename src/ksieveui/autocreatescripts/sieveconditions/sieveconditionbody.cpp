@@ -8,6 +8,7 @@
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "editor/sieveeditorutil.h"
+#include "widgets/abstractregexpeditorlineedit.h"
 #include "widgets/selectbodytypewidget.h"
 
 #include <KLocalizedString>

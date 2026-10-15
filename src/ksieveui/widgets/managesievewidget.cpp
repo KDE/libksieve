@@ -24,6 +24,7 @@
 #include <QInputDialog>
 
 #include <QHBoxLayout>
+#include <QIcon>
 #include <QMenu>
 #include <QMetaType>
 #include <QTimer>

@@ -7,12 +7,13 @@
 #pragma once
 
 #include "ksieveui_private_export.h"
-#include <KSieveUi/AbstractRegexpEditorLineEdit>
 
 #include <QStringList>
-#include <QXmlStreamReader>
+class QWidget;
+class QXmlStreamReader;
 namespace KSieveUi
 {
+class AbstractRegexpEditorLineEdit;
 class AbstractMoveImapFolderWidget;
 class AbstractSelectEmailLineEdit;
 namespace AutoCreateScriptUtil

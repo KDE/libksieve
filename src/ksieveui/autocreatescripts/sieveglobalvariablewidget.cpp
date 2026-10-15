@@ -9,7 +9,6 @@
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
 #include "editor/sieveeditorutil.h"
-#include "sievescriptblockwidget.h"
 #include "widgets/lineeditvalidator.h"
 
 #include <KLineEditEventHandler>
@@ -20,9 +19,11 @@
 
 #include "libksieveui_debug.h"
 #include <QCheckBox>
+#include <QCursor>
 #include <QGridLayout>
 #include <QLabel>
 #include <QScrollArea>
+#include <QVBoxLayout>
 #include <QWhatsThis>
 #include <QXmlStreamReader>
 
@@ -170,7 +171,7 @@ SieveGlobalVariableWidget::SieveGlobalVariableWidget(QWidget *parent)
     scrollArea->setAlignment(Qt::AlignTop);
     lay->addWidget(scrollArea);
 
-    setPageType(KSieveUi::SieveScriptBlockWidget::GlobalVariable);
+    setPageType(KSieveUi::SieveWidgetPageAbstract::GlobalVariable);
 }
 
 SieveGlobalVariableWidget::~SieveGlobalVariableWidget() = default;

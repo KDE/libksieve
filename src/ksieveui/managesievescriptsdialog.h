@@ -30,7 +30,6 @@ class TextAutoGenerateManager;
 #endif
 namespace KSieveUi
 {
-class SieveEditor;
 class ManageSieveScriptsDialogPrivate;
 /*!
  * \class KSieveUi::ManageSieveScriptsDialog

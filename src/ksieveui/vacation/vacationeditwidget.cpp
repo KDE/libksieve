@@ -8,6 +8,7 @@
 
 #include "vacationmailactionwidget.h"
 #include "vacationmaillineedit.h"
+#include <KSieveCore/VacationUtils>
 
 #include <KDateComboBox>
 #include <KLocalizedString>
@@ -25,7 +26,9 @@
 
 #include <PimCommon/SpellCheckLineEdit>
 #include <QCheckBox>
+#include <QComboBox>
 #include <QGridLayout>
+#include <QHBoxLayout>
 #include <QLabel>
 
 using namespace Qt::Literals::StringLiterals;

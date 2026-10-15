@@ -6,8 +6,9 @@
 
 #include "vacationmailactionwidget.h"
 #include "autocreatescripts/autocreatescriptutil_p.h"
+#include "vacation/vacationutils.h"
+#include "widgets/abstractmoveimapfolderwidget.h"
 #include "widgets/abstractselectemaillineedit.h"
-#include "widgets/moveimapfolderwidget.h"
 #include <QHBoxLayout>
 #include <QStackedWidget>
 

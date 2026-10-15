@@ -18,8 +18,6 @@
 
 #include <QStack>
 
-using namespace Qt::Literals::StringLiterals;
-
 namespace KSieve
 {
 class Lexer::Impl

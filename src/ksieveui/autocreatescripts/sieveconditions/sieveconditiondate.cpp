@@ -15,6 +15,7 @@
 #include <QLineEdit>
 
 #include "libksieveui_debug.h"
+#include <QGridLayout>
 #include <QHBoxLayout>
 #include <QLabel>
 

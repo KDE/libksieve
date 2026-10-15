@@ -5,14 +5,12 @@
 */
 #include "findaccountinfojob.h"
 
-#include "abstractakonadiimapsettinginterface.h"
 #include "akonadiimapsettinginterface.h"
 #include "libksievecore_debug.h"
 #include "sieveimappasswordprovider.h"
 #include <MailTransport/Transport>
 #include <PimCommon/PimUtil>
 #include <QUrlQuery>
-#include <memory>
 #include <pimcommon/imapresourcesettings.h>
 
 using namespace Qt::Literals::StringLiterals;

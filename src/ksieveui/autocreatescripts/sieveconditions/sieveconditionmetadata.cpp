@@ -9,12 +9,14 @@
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "editor/sieveeditorutil.h"
 #include "util/sieveimapaccountsettings.h"
+#include "widgets/abstractregexpeditorlineedit.h"
 #include <KLocalizedString>
 #include <QLineEdit>
 
 #include "libksieveui_debug.h"
 #include <KLineEditEventHandler>
 #include <KSieveUi/AbstractMoveImapFolderWidget>
+#include <QGridLayout>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QWidget>

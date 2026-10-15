@@ -9,12 +9,14 @@
 
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QFile>
 #include <QFileDialog>
 
 #include <QPointer>
 #include <QTextStream>
 
 #include <cerrno>
+#include <cstring>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;

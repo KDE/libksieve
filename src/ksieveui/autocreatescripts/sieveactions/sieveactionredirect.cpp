@@ -6,9 +6,8 @@
 #include "sieveactionredirect.h"
 
 #include "autocreatescripts/autocreatescriptutil_p.h"
-#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "editor/sieveeditorutil.h"
-#include "widgets/addresslineedit.h"
+#include "widgets/abstractselectemaillineedit.h"
 
 #include <KLocalizedString>
 
@@ -48,7 +47,7 @@ QWidget *SieveActionRedirect::createParamWidget(QWidget *parent) const
 
     KSieveUi::AbstractSelectEmailLineEdit *edit = AutoCreateScriptUtil::createSelectEmailsWidget();
     edit->setObjectName(QLatin1StringView("RedirectEdit"));
-    connect(edit, &AddressLineEdit::valueChanged, this, &SieveActionRedirect::valueChanged);
+    connect(edit, &AbstractSelectEmailLineEdit::valueChanged, this, &SieveActionRedirect::valueChanged);
     lay->addWidget(edit);
     return w;
 }

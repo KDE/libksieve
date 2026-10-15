@@ -22,7 +22,6 @@
 #include <KSyntaxHighlighting/Theme>
 
 #include <QDialogButtonBox>
-#include <QPushButton>
 #include <QTimer>
 #include <QVBoxLayout>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>

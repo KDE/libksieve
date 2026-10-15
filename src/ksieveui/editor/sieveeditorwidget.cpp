@@ -25,7 +25,6 @@
 #include <QStackedWidget>
 #include <QToolBar>
 #include <QVBoxLayout>
-#include <kzip.h>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;

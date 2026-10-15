@@ -9,12 +9,13 @@
 #pragma once
 
 #include "ksieveui_export.h"
-#include <KSieveCore/Util>
 
 #include <QDialog>
 #include <QUrl>
 
 #include <QStringList>
+
+class QTimer;
 
 namespace KManageSieve
 {
@@ -27,6 +28,10 @@ class PlainTextEditorWidget;
 namespace KSieveCore
 {
 class SieveImapPasswordProvider;
+namespace Util
+{
+struct AccountInfo;
+}
 }
 namespace KSieveUi
 {

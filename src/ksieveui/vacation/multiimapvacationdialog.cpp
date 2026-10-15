@@ -9,6 +9,7 @@
 #include "vacationpagewidget.h"
 #include <KSieveCore/MultiImapVacationManager>
 #include <KSieveCore/SearchServerWithVacationSupportJob>
+#include <KSieveCore/Util>
 
 #include <KLocalizedString>
 #include <KMessageBox>

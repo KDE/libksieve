@@ -6,7 +6,6 @@
 #include "sieveactionvacation.h"
 
 #include "autocreatescripts/autocreatescriptutil_p.h"
-#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "editor/sieveeditorutil.h"
 #include "widgets/multilineedit.h"
 #include "widgets/selectvacationcombobox.h"

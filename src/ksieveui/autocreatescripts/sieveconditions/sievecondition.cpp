@@ -6,11 +6,7 @@
 
 #include "sievecondition.h"
 
-#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
-
 #include <KLocalizedString>
-
-#include <QWidget>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;

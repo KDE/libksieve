@@ -8,10 +8,14 @@
 
 #include "widgets/managesievewidget.h"
 #include <KSieveCore/SieveImapInstance>
-#include <KSieveCore/Util>
+#include <QMap>
 namespace KSieveCore
 {
 class SieveImapPasswordProvider;
+namespace Util
+{
+struct AccountInfo;
+}
 }
 namespace KSieveUi
 {

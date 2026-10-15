@@ -6,8 +6,6 @@
 
 #include "xmlprintingscriptbuilder.h"
 
-#include "parser.h"
-
 #include "error.h"
 #include <QXmlStreamWriter>
 

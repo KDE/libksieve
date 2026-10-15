@@ -7,14 +7,18 @@
 #pragma once
 
 #include "ksieveui_export.h"
-#include <KSieveCore/Util>
 #include <QDialog>
+#include <QMap>
 #include <memory>
 class QDialogButtonBox;
 namespace KSieveCore
 {
 class VacationCreateScriptJob;
 class MultiImapVacationManager;
+namespace Util
+{
+struct AccountInfo;
+}
 }
 namespace KSieveUi
 {

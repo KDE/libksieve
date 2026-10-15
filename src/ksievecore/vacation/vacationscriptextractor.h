@@ -6,8 +6,6 @@
 
 #pragma once
 
-#include "sieve-vacation.h"
-
 #include "vacationutils.h"
 
 #include "error.h"
@@ -21,7 +19,6 @@
 #include <set>
 #include <vector>
 
-using namespace Qt::Literals::StringLiterals;
 namespace KSieveExt
 {
 class MultiScriptBuilder : public KSieve::ScriptBuilder
@@ -188,6 +185,7 @@ private:
 
 namespace KSieveCore
 {
+using namespace Qt::Literals::StringLiterals;
 class GenericInformationExtractor : public KSieve::ScriptBuilder
 {
 public:

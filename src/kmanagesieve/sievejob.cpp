@@ -15,7 +15,6 @@
 #include <KLocalizedString>
 #include <QPointer>
 
-using namespace Qt::Literals::StringLiterals;
 using namespace KManageSieve;
 
 QHash<QUrl, QPointer<Session>> SieveJob::Private::m_sessionPool;

@@ -10,6 +10,7 @@
 #include "ksieveui_export.h"
 #include <QWidget>
 class QStackedWidget;
+class QUrl;
 class QLineEdit;
 class QAction;
 namespace KSieveCore

@@ -8,6 +8,7 @@
 
 #include "../vacationmailactionwidget.h"
 #include "ksieveui/abstractselectemaillineedit.h"
+#include <KSieveCore/VacationUtils>
 #include <KSieveUi/AbstractMoveImapFolderWidget>
 #include <QHBoxLayout>
 #include <QStackedWidget>

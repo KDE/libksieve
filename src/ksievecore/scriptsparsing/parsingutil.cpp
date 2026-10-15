@@ -7,9 +7,6 @@
 #include "parsingutil.h"
 #include "parser.h"
 #include "xmlprintingscriptbuilder.h"
-using KSieve::Parser;
-
-#include "scriptbuilder.h"
 
 #include "libksievecore_debug.h"
 

@@ -15,7 +15,6 @@
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
-#include <cerrno>
 using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 namespace

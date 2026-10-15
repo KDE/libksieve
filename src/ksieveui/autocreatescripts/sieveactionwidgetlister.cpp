@@ -20,6 +20,7 @@
 
 #include "libksieveui_debug.h"
 #include <QComboBox>
+#include <QCursor>
 #include <QGridLayout>
 #include <QLabel>
 #include <QPointer>

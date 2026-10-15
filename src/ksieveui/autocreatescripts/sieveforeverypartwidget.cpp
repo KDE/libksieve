@@ -6,11 +6,9 @@
 
 #include "sieveforeverypartwidget.h"
 
-#include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
 #include "editor/sieveeditorutil.h"
-#include "sievescriptblockwidget.h"
 
 #include "widgets/lineeditvalidator.h"
 #include <KLineEditEventHandler>
@@ -19,6 +17,7 @@
 
 #include "libksieveui_debug.h"
 #include <QCheckBox>
+#include <QCursor>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QWhatsThis>
@@ -53,7 +52,7 @@ SieveForEveryPartWidget::SieveForEveryPartWidget(QWidget *parent)
     lay->addWidget(mName);
 
     connect(mForLoop, &QCheckBox::clicked, mName, &QLineEdit::setEnabled);
-    setPageType(KSieveUi::SieveScriptBlockWidget::ForEveryPart);
+    setPageType(KSieveUi::SieveWidgetPageAbstract::ForEveryPart);
 }
 
 SieveForEveryPartWidget::~SieveForEveryPartWidget() = default;

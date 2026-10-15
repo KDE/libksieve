@@ -6,10 +6,8 @@
 
 #include "sieveincludewidget.h"
 
-#include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescriptutil_p.h"
 #include "commonwidgets/sievehelpbutton.h"
-#include "sievescriptblockwidget.h"
 #include "widgets/includefilelineedit.h"
 #include <KLineEditEventHandler>
 
@@ -20,8 +18,10 @@
 
 #include "libksieveui_debug.h"
 #include <QCheckBox>
+#include <QCursor>
 #include <QGridLayout>
 #include <QLabel>
+#include <QVBoxLayout>
 #include <QWhatsThis>
 #include <QXmlStreamReader>
 
@@ -206,7 +206,7 @@ SieveIncludeWidget::SieveIncludeWidget(QWidget *parent)
     scrollArea->setAlignment(Qt::AlignTop);
     lay->addWidget(scrollArea);
 
-    setPageType(KSieveUi::SieveScriptBlockWidget::Include);
+    setPageType(KSieveUi::SieveWidgetPageAbstract::Include);
 }
 
 SieveIncludeWidget::~SieveIncludeWidget() = default;

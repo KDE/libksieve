@@ -16,13 +16,9 @@
 #include <QString>
 #include <QStringList>
 
-#include <memory> // std::unique_ptr
-
 #include <QStringDecoder>
 #include <cassert>
 #include <cctype> // isdigit
-
-using namespace Qt::Literals::StringLiterals;
 
 #ifdef STR_DIM
 #undef STR_DIM

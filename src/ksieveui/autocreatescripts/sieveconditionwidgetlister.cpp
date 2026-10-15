@@ -15,6 +15,7 @@
 
 #include <KLocalizedString>
 #include <QComboBox>
+#include <QCursor>
 #include <QIcon>
 #include <QPointer>
 #include <QPushButton>

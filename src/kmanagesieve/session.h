@@ -15,8 +15,6 @@
 #include <QStringList>
 #include <QUrl>
 
-using namespace Qt::Literals::StringLiterals;
-
 class KSslErrorUiData;
 
 namespace KManageSieve

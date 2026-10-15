@@ -15,7 +15,6 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 
-using namespace Qt::Literals::StringLiterals;
 using namespace KSieveCore;
 
 VacationCreateScriptJob::VacationCreateScriptJob(QObject *parent)

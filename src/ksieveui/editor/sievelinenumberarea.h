@@ -6,7 +6,6 @@
 #pragma once
 
 #include <QWidget>
-using namespace Qt::Literals::StringLiterals;
 
 namespace KSieveUi
 {

@@ -8,12 +8,14 @@
 #include "autocreatescripts/autocreatescriptutil_p.h"
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "editor/sieveeditorutil.h"
+#include "widgets/abstractregexpeditorlineedit.h"
 
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
 #include <QLineEdit>
 
 #include "libksieveui_debug.h"
+#include <QGridLayout>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QWidget>

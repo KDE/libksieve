@@ -27,9 +27,7 @@
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
 
-#include "error.h"
 #include "parser.h"
-#include "scriptbuilder.h"
 
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -41,12 +39,9 @@
 #include <QPrintDialog>
 #include <QPrintPreviewDialog>
 #include <QPrinter>
-#include <QPushButton>
-#include <QShortcut>
 #include <QSplitter>
 #include <QVBoxLayout>
 
-#include <cerrno>
 #include <memory>
 
 using namespace Qt::Literals::StringLiterals;

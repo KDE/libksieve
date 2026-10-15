@@ -7,6 +7,8 @@
 #pragma once
 
 #include <QObject>
+class QUrl;
+class QWidget;
 namespace KSieveCore
 {
 class SieveImapAccountSettings;

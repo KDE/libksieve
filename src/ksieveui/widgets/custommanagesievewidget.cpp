@@ -7,6 +7,7 @@
 #include "custommanagesievewidget.h"
 
 #include "util/findaccountinfojob.h"
+#include "util/util.h"
 #include "widgets/managesievetreeview.h"
 
 #include "kmanagesieve/sievejob.h"

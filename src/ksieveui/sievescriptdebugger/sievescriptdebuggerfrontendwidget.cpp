@@ -21,9 +21,10 @@
 #endif
 #include <KLineEditEventHandler>
 #include <KUrlRequester>
-#include <QDate>
+#include <QDateTime>
 #include <QFormLayout>
 #include <QLabel>
+#include <QLocale>
 #include <QProcess>
 #include <QScrollBar>
 #include <QSplitter>

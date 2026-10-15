@@ -7,12 +7,16 @@
 #pragma once
 
 #include "ksieveui_private_export.h"
-#include "vacation/vacationutils.h"
 #include <QWidget>
+#include <cstdint>
 class QStackedWidget;
 namespace KSieveCore
 {
 class SieveImapAccountSettings;
+namespace VacationUtils
+{
+enum MailAction : uint8_t;
+}
 }
 namespace KSieveUi
 {

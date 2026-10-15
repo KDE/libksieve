@@ -12,6 +12,7 @@
 #include <KPluginMetaData>
 #include <QRegularExpression>
 #include <QStringList>
+#include <QXmlStreamReader>
 
 #include "autocreatescripts/sieveconditions/widgets/regexpeditorlineedit.h"
 

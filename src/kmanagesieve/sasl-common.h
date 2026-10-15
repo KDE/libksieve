@@ -8,16 +8,13 @@
 
 #pragma once
 
-#include <QDir>
-
-#include <QFile>
 #include <cstdio>
 
 #ifdef Q_OS_WIN
 #include <QCoreApplication>
+#include <QDir>
+#include <QFile>
 #endif
-
-using namespace Qt::Literals::StringLiterals;
 
 extern "C" {
 #include <sasl/sasl.h>
@@ -26,6 +23,7 @@ extern "C" {
 inline bool initSASL()
 {
 #ifdef Q_OS_WIN // krazy:exclude=cpp
+    using namespace Qt::Literals::StringLiterals;
     for (const auto &path : QCoreApplication::libraryPaths()) {
         QDir dir(path);
         if (dir.exists(u"sasl2"_s)) {

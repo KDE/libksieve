@@ -9,6 +9,7 @@
 
 #include "sieveeditorwebengineview.h"
 
+#include <QUrl>
 #include <QVBoxLayout>
 
 #include <TextAddonsWidgets/SlideContainer>

@@ -6,8 +6,8 @@
 #pragma once
 
 #include "ksieveui_export.h"
-#include <QUrl>
 #include <QWidget>
+class QUrl;
 
 namespace TextAddonsWidgets
 {

@@ -10,6 +10,7 @@
 #include <QContextMenuEvent>
 #include <QFileDialog>
 #include <QFileInfo>
+#include <QIcon>
 #include <QMenu>
 #include <QWebEngineDownloadRequest>
 #include <QWebEngineProfile>

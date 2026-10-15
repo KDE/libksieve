@@ -9,10 +9,9 @@
 #include "ksievecore_export.h"
 #include <KSieveCore/SieveImapAccountSettings>
 #include <KSieveCore/SieveImapInstance>
-#include <QUrl>
-#include <memory>
-class QString;
 #include <QStringList>
+#include <QUrl>
+class QDebug;
 namespace KSieveCore
 {
 /*!

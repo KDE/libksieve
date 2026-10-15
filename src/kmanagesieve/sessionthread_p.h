@@ -17,8 +17,6 @@
 #include "response.h"
 #include "sasl-common.h"
 
-using namespace Qt::Literals::StringLiterals;
-
 class QTimer;
 
 namespace KManageSieve

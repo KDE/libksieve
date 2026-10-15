@@ -7,7 +7,7 @@
 #pragma once
 
 #include "ksieveui_private_export.h"
-#include "sievescriptblockwidget.h"
+#include "sievewidgetpageabstract.h"
 #include <QWidget>
 
 namespace KSieveUi

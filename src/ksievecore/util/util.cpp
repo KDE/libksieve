@@ -7,15 +7,12 @@
 #include "util.h"
 #include "libksievecore_debug.h"
 #include "sieve-vacation.h"
-#include "sieveimapinstance/sieveimapinstance.h"
 #include "sieveimapinstance/sieveimapinstanceinterfacemanager.h"
 #include <PimCommon/PimUtil>
-#include <pimcommon/imapresourcesettings.h>
 
 #include <KMime/Message>
 
 using namespace KSieveCore;
-using namespace Qt::Literals::StringLiterals;
 QStringList KSieveCore::Util::sieveImapResourceNames()
 {
     const QList<KSieveCore::SieveImapInstance> lst = KSieveCore::Util::sieveImapInstances();

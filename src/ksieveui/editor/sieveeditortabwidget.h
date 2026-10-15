@@ -7,6 +7,7 @@
 
 #include "ksieveui_export.h"
 #include <QTabWidget>
+class QUrl;
 
 namespace KSieveUi
 {

@@ -6,6 +6,7 @@
 #include "sieveconditionenvelope.h"
 
 #include "autocreatescripts/autocreatescriptutil_p.h"
+#include "widgets/abstractregexpeditorlineedit.h"
 
 #include "autocreatescripts/commonwidgets/selectmatchtypecombobox.h"
 #include "editor/sieveeditorutil.h"
@@ -15,6 +16,7 @@
 #include <KLocalizedString>
 
 #include "libksieveui_debug.h"
+#include <QGridLayout>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QXmlStreamReader>

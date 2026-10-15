@@ -19,8 +19,6 @@
 #include <cctype> // isdigit
 #include <climits> // ULONG_MAX
 
-using namespace Qt::Literals::StringLiterals;
-
 namespace KSieve
 {
 //

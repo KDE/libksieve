@@ -5,6 +5,8 @@
 */
 
 #include "vacationutils.h"
+#include "libksievecore_debug.h"
+#include "parser.h"
 #include "vacationscriptextractor.h"
 #include <KIdentityManagementCore/Identity>
 #include <KIdentityManagementCore/IdentityManager>
@@ -14,7 +16,9 @@
 #include <QDate>
 #include <QLocale>
 #include <QRegularExpression>
+#include <QSet>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace KSieveCore;
 
 static inline QString dotstuff(QString s) // krazy:exclude=passbyvalue

@@ -11,7 +11,6 @@
 #include <KLocalizedString>
 
 #include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
-#include <QWidget>
 #include <QXmlStreamReader>
 
 using namespace KSieveUi;

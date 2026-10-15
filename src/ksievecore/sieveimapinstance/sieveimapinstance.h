@@ -7,7 +7,7 @@
 #pragma once
 
 #include "ksievecore_export.h"
-#include <QObject>
+#include <QStringList>
 
 namespace KSieveCore
 {

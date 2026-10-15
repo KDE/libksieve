@@ -6,8 +6,8 @@
 
 #pragma once
 #include "ksieveui_private_export.h"
-#include <KSieveCore/VacationUtils>
 #include <QWidget>
+#include <cstdint>
 class KDateComboBox;
 class KTimeComboBox;
 
@@ -18,9 +18,6 @@ class QTime;
 class QLabel;
 class QSpinBox;
 class QLineEdit;
-class KDateComboBox;
-
-class QDate;
 
 namespace TextCustomEditor
 {
@@ -45,6 +42,10 @@ class SpellCheckLineEdit;
 namespace KSieveCore
 {
 class SieveImapAccountSettings;
+namespace VacationUtils
+{
+enum MailAction : uint8_t;
+}
 }
 namespace KSieveUi
 {

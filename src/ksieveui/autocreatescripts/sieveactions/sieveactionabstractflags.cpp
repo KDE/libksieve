@@ -6,7 +6,6 @@
 #include "sieveactionabstractflags.h"
 
 #include "autocreatescripts/autocreatescriptutil_p.h"
-#include "autocreatescripts/sieveeditorgraphicalmodewidget.h"
 #include "widgets/selectflagswidget.h"
 
 #include "libksieveui_debug.h"

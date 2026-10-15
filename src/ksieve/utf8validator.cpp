@@ -10,8 +10,6 @@
 
 #include "utf8validator.h"
 
-#include <qglobal.h>
-
 static inline bool isChar8Bit(signed char ch)
 {
     return ch < 0;

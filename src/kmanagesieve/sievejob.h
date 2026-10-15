@@ -10,12 +10,11 @@
 
 #include "kmanagesieve_export.h"
 
-#include <QObject>
 #include <QStringList>
 
 #include <KJob>
 
-#include <QUrl>
+class QUrl;
 
 namespace KManageSieve
 {

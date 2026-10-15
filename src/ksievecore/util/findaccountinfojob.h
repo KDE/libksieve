@@ -9,6 +9,7 @@
 #include "ksievecore_export.h"
 #include "util.h"
 #include <QObject>
+#include <memory>
 class OrgKdeAkonadiImapSettingsInterface;
 namespace KSieveCore
 {

@@ -5,7 +5,6 @@
 */
 
 #include "managesievescriptsdialog.h"
-#include "config-libksieveui.h"
 #include "editor/sieveeditor.h"
 #include "managescriptsjob/checkscriptjob.h"
 #include "widgets/custommanagesievewidget.h"
@@ -15,18 +14,17 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QFrame>
 #include <QHideEvent>
 #include <QPushButton>
 
 #include "kmanagesieve/sievejob.h"
 
-#include <QTreeWidget>
 #include <QVBoxLayout>
 
 #include <KGuiItem>
 #include <KSharedConfig>
 #include <KStandardGuiItem>
-#include <cerrno>
 #if HAVE_TEXT_AUTOGENERATE_TEXT
 #include <TextAutoGenerateText/TextAutoGenerateManager>
 #endif

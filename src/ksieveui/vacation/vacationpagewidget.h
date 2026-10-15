@@ -9,9 +9,6 @@
 #include <QUrl>
 #include <QWidget>
 class QStackedWidget;
-namespace KManageSieve
-{
-}
 
 namespace KSieveCore
 {
@@ -37,7 +34,7 @@ public:
     void setVacationManager(KSieveCore::MultiImapVacationManager *vacationManager);
     void setSieveImapAccountSettings(const KSieveCore::SieveImapAccountSettings &account);
 
-    bool wasChanged() const;
+    [[nodiscard]] bool wasChanged() const;
 private Q_SLOTS:
     void slotGetResult(const QString &serverName, const QStringList &sieveCapabilities, const QString &scriptName, const QString &script, bool active);
 

@@ -16,14 +16,12 @@
 #include <QStack>
 #include <QUrl>
 
-using namespace Qt::Literals::StringLiterals;
-
 namespace KManageSieve
 {
 class Q_DECL_HIDDEN SieveJob::Private
 {
 public:
-    Private(SieveJob *qq)
+    explicit Private(SieveJob *qq)
         : q(qq)
         , mFileExists(DontKnow)
     {

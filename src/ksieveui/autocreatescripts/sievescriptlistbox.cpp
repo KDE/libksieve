@@ -10,6 +10,7 @@
 #include "sieveforeverypartwidget.h"
 #include "sieveglobalvariablewidget.h"
 #include "sieveincludewidget.h"
+#include "sievescriptblockwidget.h"
 #include "sievescriptdescriptiondialog.h"
 #include "sievescriptpage.h"
 #include <KLocalizedString>
