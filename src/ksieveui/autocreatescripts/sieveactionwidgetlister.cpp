@@ -17,6 +17,7 @@
 #include <QIcon>
 #include <QPushButton>
 #include <QUrl>
+#include <QXmlStreamReader>
 
 #include "libksieveui_debug.h"
 #include <QComboBox>

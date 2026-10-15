@@ -18,6 +18,7 @@
 #include <QGridLayout>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QXmlStreamReader>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;

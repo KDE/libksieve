@@ -16,6 +16,7 @@
 #include "libksieveui_debug.h"
 #include <QHBoxLayout>
 #include <QWidget>
+#include <QXmlStreamReader>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
