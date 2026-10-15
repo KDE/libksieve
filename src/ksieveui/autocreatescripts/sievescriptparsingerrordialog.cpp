@@ -19,7 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 namespace
 {
-static const char mySieveScriptParsingErrorDialogGroupName[] = "SieveScriptParsingErrorDialog";
+const char mySieveScriptParsingErrorDialogGroupName[] = "SieveScriptParsingErrorDialog";
 }
 SieveScriptParsingErrorDialog::SieveScriptParsingErrorDialog(QWidget *parent)
     : QDialog(parent)

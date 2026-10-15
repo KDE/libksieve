@@ -25,7 +25,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 namespace
 {
-static const char myAutoCreateScriptDialogGroupNameModeWidget[] = "AutoCreateScriptDialog";
+const char myAutoCreateScriptDialogGroupNameModeWidget[] = "AutoCreateScriptDialog";
 }
 SieveEditorGraphicalModeWidget::SieveEditorGraphicalModeWidget(QWidget *parent)
     : SieveEditorGraphicalModeWidgetAbstract::SieveEditorGraphicalModeWidgetAbstract(parent)

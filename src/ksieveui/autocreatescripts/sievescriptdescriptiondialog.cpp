@@ -18,7 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 namespace
 {
-static const char mySieveScriptDescriptionDialogGroupName[] = "SieveScriptDescriptionDialog";
+const char mySieveScriptDescriptionDialogGroupName[] = "SieveScriptDescriptionDialog";
 }
 SieveScriptDescriptionDialog::SieveScriptDescriptionDialog(QWidget *parent)
     : QDialog(parent)

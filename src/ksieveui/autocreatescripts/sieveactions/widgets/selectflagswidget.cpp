@@ -23,7 +23,7 @@ using namespace KSieveUi;
 using namespace Qt::Literals::StringLiterals;
 namespace
 {
-static const char mySelectFlagsListDialogGroupName[] = "SelectFlagsListDialog";
+const char mySelectFlagsListDialogGroupName[] = "SelectFlagsListDialog";
 }
 SelectFlagsListDialog::SelectFlagsListDialog(QWidget *parent)
     : QDialog(parent)

@@ -17,7 +17,7 @@
 using namespace KSieveUi;
 namespace
 {
-static const char myAutoCreateScriptDialogGroupName[] = "AutoCreateScriptDialog";
+const char myAutoCreateScriptDialogGroupName[] = "AutoCreateScriptDialog";
 }
 AutoCreateScriptDialog::AutoCreateScriptDialog(QWidget *parent)
     : QDialog(parent)

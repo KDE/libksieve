@@ -22,7 +22,7 @@
 using namespace KSieveUi;
 namespace
 {
-static const char mySelectFlagsListDialogGroupName[] = "SelectHeadersDialog";
+const char mySelectFlagsListDialogGroupName[] = "SelectHeadersDialog";
 }
 using namespace Qt::Literals::StringLiterals;
 const KLazyLocalizedString selectMultipleHeaders = kli18n("Select multiple headers…");

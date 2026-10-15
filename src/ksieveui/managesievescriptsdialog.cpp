@@ -57,7 +57,7 @@ public:
 
 namespace
 {
-static const char myManageSieveScriptsDialog[] = "ManageSieveScriptsDialog";
+const char myManageSieveScriptsDialog[] = "ManageSieveScriptsDialog";
 }
 
 ManageSieveScriptsDialog::ManageSieveScriptsDialog(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent)

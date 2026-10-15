@@ -30,7 +30,7 @@ using namespace KSieveUi;
 using namespace Qt::Literals::StringLiterals;
 namespace
 {
-static const char mySieveDebugDialogGroupName[] = "SieveDebugDialog";
+const char mySieveDebugDialogGroupName[] = "SieveDebugDialog";
 }
 SieveDebugDialog::SieveDebugDialog(KSieveCore::SieveImapPasswordProvider *passwordProvider, QWidget *parent)
     : QDialog(parent)
