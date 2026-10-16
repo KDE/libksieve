@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-08 00:47+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2025-11-07 21:26+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -94,7 +94,7 @@ msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr "Sieve kezelő"
 
-#: kmanagesieve/sessionthread.cpp:301
+#: kmanagesieve/sessionthread.cpp:300
 #, kde-format
 msgid ""
 "Authentication failed.\n"
@@ -107,7 +107,7 @@ msgstr ""
 "A kiszolgáló válasza:\n"
 "%1"
 
-#: kmanagesieve/sievejob.cpp:144 kmanagesieve/sievejob.cpp:151
+#: kmanagesieve/sievejob.cpp:143 kmanagesieve/sievejob.cpp:150
 #, kde-format
 msgid ""
 "The script did not upload successfully.\n"
@@ -120,7 +120,7 @@ msgstr ""
 "A kiszolgáló válasza:\n"
 "%1"
 
-#: kmanagesieve/sievejob.cpp:156
+#: kmanagesieve/sievejob.cpp:155
 #, kde-format
 msgid ""
 "The script did not upload successfully.\n"
@@ -394,8 +394,8 @@ msgstr ""
 "%1"
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
-#: ksieveui/debug/sievedebugdialog.cpp:188
-#: ksieveui/managesievescriptsdialog.cpp:182
+#: ksieveui/debug/sievedebugdialog.cpp:187
+#: ksieveui/managesievescriptsdialog.cpp:180
 #, kde-format
 msgid ""
 "Retrieving the script failed.\n"
@@ -474,12 +474,12 @@ msgid ""
 "Check if there is still an active out-of-office reply configured on startup."
 msgstr "Aktív „Irodán kívül vagyok” válaszok keresése induláskor."
 
-#: ksievecore/vacation/vacationcheckjob.cpp:127
+#: ksievecore/vacation/vacationcheckjob.cpp:126
 #, kde-format
 msgid "ParseUserScriptJob failed: %1"
 msgstr "A ParseUserScriptJob nem sikerült: %1"
 
-#: ksievecore/vacation/vacationcheckjob.cpp:142
+#: ksievecore/vacation/vacationcheckjob.cpp:141
 #, kde-format
 msgid ""
 "Failed to get the list of Sieve scripts.\n"
@@ -490,7 +490,7 @@ msgstr ""
 "A kiszolgáló válasza:\n"
 "%1"
 
-#: ksievecore/vacation/vacationcreatescriptjob.cpp:145
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:144
 #, kde-format
 msgid ""
 "Sieve script installed successfully on the server '%1'.\n"
@@ -499,7 +499,7 @@ msgstr ""
 "A Sieve parancsfájl sikeresen telepítve a kiszolgálón: „%1”.\n"
 "A Házon kívül válasz mostantól aktív."
 
-#: ksievecore/vacation/vacationcreatescriptjob.cpp:148
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:147
 #, kde-format
 msgid ""
 "Sieve script installed successfully on the server '%1'.\n"
@@ -508,39 +508,39 @@ msgstr ""
 "A Sieve parancsfájl sikeresen telepítve a kiszolgálón: „%1”.\n"
 "A Házon kívül válasz deaktiválva."
 
-#: ksievecore/vacation/vacationcreatescriptjob.cpp:152
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:151
 #, kde-format
 msgid "Impossible to install script on server '%1'"
 msgstr "Nem lehet parancsfájlt telepíteni a(z) „%1” kiszolgálón"
 
-#: ksievecore/vacation/vacationutils.cpp:38
+#: ksievecore/vacation/vacationutils.cpp:42
 #, kde-format
 msgid "Out of office till %1"
 msgstr "Házon kívül eddig: %1"
 
-#: ksievecore/vacation/vacationutils.cpp:45
-#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:22
+#: ksievecore/vacation/vacationutils.cpp:49
+#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:21
 #, kde-format
 msgid "Keep"
 msgstr "Megtartás"
 
-#: ksievecore/vacation/vacationutils.cpp:47
+#: ksievecore/vacation/vacationutils.cpp:51
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:14
 #, kde-format
 msgid "Discard"
 msgstr "Eldobás"
 
-#: ksievecore/vacation/vacationutils.cpp:49
+#: ksievecore/vacation/vacationutils.cpp:53
 #, kde-format
 msgid "Redirect to"
 msgstr "Átirányítás ide:"
 
-#: ksievecore/vacation/vacationutils.cpp:51
+#: ksievecore/vacation/vacationutils.cpp:55
 #, kde-format
 msgid "Copy to"
 msgstr "Másolás ide:"
 
-#: ksievecore/vacation/vacationutils.cpp:65
+#: ksievecore/vacation/vacationutils.cpp:69
 #, kde-format
 msgid ""
 "I am out of office till %1.\n"
@@ -571,12 +571,12 @@ msgctxt "@title:window"
 msgid "Create Sieve Filter"
 msgstr "Sieve szűrő létrehozása"
 
-#: ksieveui/autocreatescripts/autocreatescriptutil.cpp:177
+#: ksieveui/autocreatescripts/autocreatescriptutil.cpp:178
 #, kde-format
 msgid "Cannot find item \"%1\" in widget \"%2\""
 msgstr "Nem található a(z) „%1” elem a(z) „%2” felületi elemben"
 
-#: ksieveui/autocreatescripts/autocreatescriptutil.cpp:185
+#: ksieveui/autocreatescripts/autocreatescriptutil.cpp:186
 #, kde-format
 msgid "More information"
 msgstr "Több információ"
@@ -661,21 +661,21 @@ msgid "BMP"
 msgstr "BMP"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:102
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:55
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:54
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing action \"%2\"."
 msgstr ""
 "Egy ismeretlen „%1” érték található a(z) „%2” művelet feldolgozása közben."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:107
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:43
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:42
 #, kde-format
 msgid "An unknown tag \"%1\" was found during parsing action \"%2\"."
 msgstr ""
 "Egy ismeretlen „%1” címke található a(z) „%2” művelet feldolgozása közben."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:113
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:50
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:49
 #, kde-format
 msgid ""
 "Too many arguments found for \"%1\", max value is %2, number of value found "
@@ -685,8 +685,8 @@ msgstr ""
 "értékek száma %3 ehhez: %4"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:118
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:60
-#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:53
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:59
+#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:49
 #, kde-format
 msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgstr ""
@@ -721,7 +721,7 @@ msgstr "Fejléc hozzáadása"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:42
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:42
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:44
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "header:"
@@ -749,7 +749,7 @@ msgid "Break"
 msgstr "Törés"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:34
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:47
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name (optional):"
@@ -910,7 +910,7 @@ msgstr ""
 "azonban nem támogatja azt"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:98
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:37
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:36
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep a copy"
@@ -950,7 +950,7 @@ msgstr ""
 "törli az implicit „keep”-et, helyette kézbesíti vagy átirányítja az üzenet "
 "egy másolatát amellett, ami azon felül történik az üzenettel."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:46
+#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:45
 #, kde-format
 msgid ""
 "The \"keep\" action is whatever action is taken in lieu of all other "
@@ -961,7 +961,7 @@ msgstr ""
 "szűrés nem történik; általában ez az üzenet kézbesítése a felhasználó fő "
 "postafiókjába."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:57
+#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Add flags:"
@@ -992,18 +992,18 @@ msgstr ""
 "Az „értesítés” művelet megadja, hogy egy értesítés legyen küldve a "
 "felhasználónak."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:24
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:23
 #, kde-format
 msgid "Redirect"
 msgstr "Átirányítás"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:43
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:42
 #, kde-format
 msgctxt "@option:check"
 msgid "Use list"
 msgstr "Lista használata"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:141
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:140
 #, kde-format
 msgid ""
 "The \"redirect\" action is used to send the message to another user at a "
@@ -1016,7 +1016,7 @@ msgstr ""
 "változtatja meg az üzenetet törzsét vagy meglévő fejléceit, de újakat adhat "
 "hozzá."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:145
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:144
 #, kde-format
 msgid ""
 "If the optional \":copy\" keyword is specified, the tagged command does not "
@@ -1105,41 +1105,41 @@ msgstr ""
 "A Setflag [IMAP] rendszerjelzők vagy kulcsszavak beállítására szolgál, és "
 "lecserél bármely korábban beállított jelzőt."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:26
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:25
 #, kde-format
 msgid "Variable"
 msgstr "Változó"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:44
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:43
 #, kde-format
 msgctxt "@option:check"
 msgid "Protect special character"
 msgstr "Speciális karakterek védelme"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:50
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:49
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:51
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:58
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:65
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:63
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:59
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:67
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:65
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Value:"
 msgstr "Érték:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:59
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "In variable:"
 msgstr "A változóban:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:108
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:107
 #, kde-format
 msgid "Script needs regex support, but server does not have it."
 msgstr ""
 "A szkriptnek regex támogatásra van szüksége, de a kiszolgáló nem rendelkezik "
 "azzal."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:171
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:170
 #, kde-format
 msgid ""
 "The \"set\" action stores the specified value in the variable identified by "
@@ -1147,7 +1147,7 @@ msgid ""
 msgstr ""
 "A „set” művelet eltárolja a megadott értéket a névvel azonosított változóban."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:174
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:173
 #, kde-format
 msgid ""
 "This modifier adds the necessary quoting to ensure that the expanded text "
@@ -1174,36 +1174,36 @@ msgstr ""
 "A „stop” művelet befejez minden feldolgozást. Ha az implicit megőrzést nem "
 "szakították meg, akkor az megtörténik."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:29
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:28
 #, kde-format
 msgid "Vacation"
 msgstr "Szabadság"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:48
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:47
 #, kde-format
 msgctxt "@label:textbox"
 msgid "day:"
 msgstr "nap:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:59
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Message subject:"
 msgstr "Üzenet tárgya:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:68
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:67
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Additional email:"
 msgstr "További e-mail:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:77
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:76
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Vacation reason:"
 msgstr "Szabadság oka:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:198
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:197
 #, kde-format
 msgid ""
 "The \"vacation\" action implements a vacation autoresponder similar to the "
@@ -1216,7 +1216,7 @@ msgstr ""
 "levelezőpartnerek értesítése arról, hogy a felhasználó hosszabb ideig távol "
 "van, és ne várjanak gyors válaszokat."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:202
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:201
 #, kde-format
 msgid ""
 "Through the \":days\" parameter, it limits the number of auto-replies to the "
@@ -1229,7 +1229,7 @@ msgstr ""
 "vannak esetek, amikor sokkal gyakrabban szeretne „vakációs” válaszokat "
 "előállítani."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:204
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:203
 #, kde-format
 msgid ""
 "This extension defines a \":seconds\" parameter to provide more granularity "
@@ -1368,36 +1368,36 @@ msgstr "Helyettesítő karakterek idézőjelezése"
 msgid "Length"
 msgstr "Hossz"
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:64
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:66
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Please select an action."
 msgstr "Válasszon egy műveletet."
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:141
-#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:111
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:143
+#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add comment"
 msgstr "Megjegyzés hozzáadása"
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:276
-#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:223
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:278
+#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:225
 #, kde-format
 msgid "Script contains unsupported feature \"%1\""
 msgstr "A parancsfájl nem támogatott funkciót tartalmaz: „%1”"
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:412
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:414
 #, kde-format
 msgid "We detected a loop if in a loop if. It's not supported"
 msgstr "Egy loop if-et észleltünk egy loop if-en belül. Ez nem támogatott"
 
-#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:33
+#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:29
 #, kde-format
 msgid "Unknown tag \"%1\" during parsing condition \"%2\""
 msgstr "Ismeretlen „%1” címke a(z) „%2” feltétel feldolgozása közben"
 
-#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:43
+#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:39
 #, kde-format
 msgid ""
 "Too many argument found for \"%1\", max value is %2, number of value found "
@@ -1406,33 +1406,33 @@ msgstr ""
 "Túl sok argumentum található ehhez: „%1”, a maximális érték %2, a található "
 "értékek száma %3 ehhez: %4"
 
-#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:48
+#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:44
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing condition \"%2\"."
 msgstr ""
 "Egy ismeretlen „%1” címke érték található a(z) „%2” feltétel feldolgozása "
 "közben."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:25
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:27
 #, kde-format
 msgid "Address"
 msgstr "Cím"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:54
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:56
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:56
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "address:"
 msgstr "cím:"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:61
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:64
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:63
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:66
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Use ; to separate emails"
 msgstr "A ; használatával elválaszthatók az e-mailek"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:96
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:98
 #, kde-format
 msgid ""
 "The \"address\" test matches Internet addresses in structured headers that "
@@ -1446,12 +1446,12 @@ msgstr ""
 "az összehasonlító és az egyezéssel módosított kulcsszó által meghatározottak "
 "szerint."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:22
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:24
 #, kde-format
 msgid "Body"
 msgstr "Törzs"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:87
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:89
 #, kde-format
 msgid ""
 "The body test matches content in the body of an email message, that is, "
@@ -1476,14 +1476,14 @@ msgstr ""
 "A jelenlegi dátum teszt hasonló a dátum teszthez, kivéve hogy a jelenlegi "
 "dátum/idővel dolgozik az üzenet fejlécéből kinyert érték helyett."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:25
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:27
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:238
 #, kde-format
 msgid "Date"
 msgstr "Dátum"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:95
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:97
 #, kde-format
 msgid ""
 "The date test matches date/time information derived from headers containing "
@@ -1492,12 +1492,12 @@ msgstr ""
 "A dátumteszt a dátum/idő információkra illeszkedik, amelyek a dátum-idő "
 "értékeket tartalmazó fejlécekből származnak."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:26
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:28
 #, kde-format
 msgid "Envelope"
 msgstr "Boríték"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:107
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:109
 #, kde-format
 msgid ""
 "The \"envelope\" test is true if the specified part of the [SMTP] (or "
@@ -1570,12 +1570,12 @@ msgstr "hamis"
 msgid "The \"false\" test always evaluates to false."
 msgstr "A „hamis” teszt mindig hamisnak lesz kiértékelve."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:26
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:27
 #, kde-format
 msgid "Has Flag"
 msgstr "Van jelzője"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:48
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid ""
@@ -1585,7 +1585,7 @@ msgstr ""
 "Változónév\n"
 " (ha üres, belső változót használ):"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:129
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:130
 #, kde-format
 msgid ""
 "The hasflag test evaluates to true if any of the variables matches any flag "
@@ -1594,18 +1594,18 @@ msgstr ""
 "A van jelzője teszt igaz, ha a változók bármelyike megfelel bármelyik jelző "
 "nevének."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:23
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:25
 #, kde-format
 msgid "Header"
 msgstr "Fejléc"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:47
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid "With value:"
 msgstr "Ezzel az értékkel:"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:77
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:79
 #, kde-format
 msgid ""
 "The \"header\" test evaluates to true if the value of any of the named "
@@ -1652,27 +1652,27 @@ msgstr ""
 "teszi a felhasználónak, akinek a kontextusában fut a Sieve parancsfájl, "
 "üzenetek kézbesítését a fiókba."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:26
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:28
 #, kde-format
 msgid "Meta Data"
 msgstr "Metaadatok"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:46
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:48
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:35
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:45
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:47
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Mailbox:"
 msgstr "Postafiók:"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:56
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:54
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:58
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Annotations:"
 msgstr "Magyarázatok:"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:121
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:123
 #, kde-format
 msgid ""
 "This test retrieves the value of the mailbox annotation \"annotation-name\" "
@@ -1705,12 +1705,12 @@ msgstr ""
 "A „metadataexists” teszt igaz, ha az „annotation-names”-ben listázott összes "
 "annotáció létezik a megadott postafiókban."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:25
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:27
 #, kde-format
 msgid "Server Meta Data"
 msgstr "Kiszolgáló metaadat"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:119
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:121
 #, kde-format
 msgid ""
 "This test retrieves the value of the server annotation \"annotation-name\".  "
@@ -1760,18 +1760,18 @@ msgstr ""
 "A „size” teszt az üzenet méretével dolgozik. Az „:over” vagy „:under” "
 "argumentumok egyikét várja, az üzenet méretét reprezentáló számmal együtt."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:26
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:25
 #, kde-format
 msgid "Spam Test"
 msgstr "Levélszemét teszt"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:39
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:38
 #, kde-format
 msgctxt "@option:check"
 msgid "Percent"
 msgstr "Százalék"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:112
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:111
 #, kde-format
 msgid ""
 "Sieve implementations that implement the \"spamtest\" test use an identifier "
@@ -2062,7 +2062,7 @@ msgstr "MiB"
 msgid "GiB"
 msgstr "GiB"
 
-#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:56
+#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Please select an condition."
@@ -2091,13 +2091,13 @@ msgctxt "@action:button"
 msgid "Do Not Switch"
 msgstr "Ne váltson át"
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:32
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:31
 #, kde-format
 msgctxt "@option:check"
 msgid "Add ForEveryPart loop"
 msgstr "ForEveryPart ciklus hozzáadása"
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:64
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:63
 #, kde-format
 msgid ""
 "\"foreverypart\", which is an iterator that walks though every MIME part of "
@@ -2108,34 +2108,34 @@ msgstr ""
 "a beágyazott részeket is, és alkalmazza  a megadott blokk parancsait minden "
 "egyes részre."
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:93
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:92
 #, kde-format
 msgid "Unknown tagValue \"%1\" during loading loop \"for\""
 msgstr "Ismeretlen címkeérték („%1”) a „for” ciklus betöltésekor"
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:105
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:104
 #, kde-format
 msgid "Unknown tag \"%1\" during loading loop \"for\""
 msgstr "Ismeretlen címke („%1”) a „for” ciklus betöltésekor"
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:60
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Variable name:"
 msgstr "Változónév:"
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:67
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:68
 #, kde-format
 msgctxt "@option:check"
 msgid "Set value to:"
 msgstr "Érték beállítása erre:"
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:131
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:132
 #, kde-format
 msgid "Unknown tag \"%1\" during loading of variables."
 msgstr "Ismeretlen „%1” címke a változók betöltése közben."
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:181
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:182
 #, kde-format
 msgid ""
 "A variable has global scope in all scripts that have declared it with the "
@@ -2170,7 +2170,7 @@ msgid "Include:"
 msgstr "Belefoglalva:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:137
-#: ksieveui/templates/sievetemplateeditdialog.cpp:58
+#: ksieveui/templates/sievetemplateeditdialog.cpp:57
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -2255,140 +2255,140 @@ msgctxt "@title:window"
 msgid "Description"
 msgstr "Leírás"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:130
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:131
 #, kde-format
 msgctxt "Move selected filter up."
 msgid "Up"
 msgstr "Fel"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:131
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:132
 #, kde-format
 msgctxt "Move selected filter down."
 msgid "Down"
 msgstr "Le"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:132
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:133
 #, kde-format
 msgctxt "Move selected filter to the top."
 msgid "Top"
 msgstr "Fent"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:133
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:134
 #, kde-format
 msgctxt "Move selected filter to the bottom."
 msgid "Bottom"
 msgstr "Lent"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:145
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:146
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Script"
 msgstr "Új parancsfájl"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:151
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:152
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete Script"
 msgstr "Parancsfájl törlése "
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:155
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rename Script"
 msgstr "Parancsfájl átnevezése"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:161
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:162
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit Script Description"
 msgstr "Parancsfájl-leírás szerkesztése"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:190
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:191
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Script"
 msgstr "Új parancsfájl"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:195
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:196
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Rename Script"
 msgstr "Parancsfájl átnevezése"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:200
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:201
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Script Description"
 msgstr "Parancsfájl-leírás szerkesztése"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:205
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:206
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Script"
 msgstr "Parancsfájl törlése "
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
-#: ksieveui/widgets/managesievewidget.cpp:243
-#: ksieveui/widgets/managesievewidget.cpp:250
-#: ksieveui/widgets/managesievewidget.cpp:261
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:260
+#: ksieveui/widgets/managesievewidget.cpp:244
+#: ksieveui/widgets/managesievewidget.cpp:251
+#: ksieveui/widgets/managesievewidget.cpp:262
 #, kde-format
 msgctxt "@title:window"
 msgid "New Script"
 msgstr "Új parancsfájl"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:260
 #, kde-format
 msgid "New script name:"
 msgstr "Új parancsfájl neve:"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:271
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:272
 #, kde-format
 msgid "Do you want to delete \"%1\" script?"
 msgstr "Szeretné törölni a(z) „%1” parancsfájlt?"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:272
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:273
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Script"
 msgstr "Parancsfájl törlése "
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:292
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:293
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Script"
 msgstr "Parancsfájl átnevezése"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:292
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:293
 #, kde-format
 msgid "New name for the script:"
 msgstr "Adja meg a parancsfájl új nevét:"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:481
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:482
 #, kde-format
 msgid "forEveryPart is not supported by your server"
 msgstr "A forEveryPart nincs támogatva a kiszolgálóján"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:585
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:586
 #, kde-format
 msgid "Script part %1"
 msgstr "Parancsfájl %1. része"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:38
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:39
 #, kde-format
 msgid "Includes"
 msgstr "Beágyazások"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:42
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:43
 #, kde-format
 msgid "Global Variable"
 msgstr "Globális változó"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:48
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:49
 #, kde-format
 msgid "ForEveryPart"
 msgstr "ForEveryPart"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:97
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:98
 #, kde-format
 msgid ""
 "Script should always have just one \"Else\" block. We cannot add another one."
@@ -2396,49 +2396,49 @@ msgstr ""
 "A parancsfájlnak mindig rendelkeznie kell pontosan egy „Else” blokk-kal. Nem "
 "adhatunk hozzá még egyet."
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:113
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:114
 #, kde-format
 msgid "Main block"
 msgstr "Fő blokk"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:115
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:116
 #, kde-format
 msgid "Block \"Elsif\""
 msgstr "„Elsif” blokk"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:117
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:118
 #, kde-format
 msgid "Block \"Else\""
 msgstr "„Else” blokk"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:29
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Parsing Error"
 msgstr "Sieve feldolgozási hiba"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:38
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:37
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
 #, kde-format
 msgid "Save As…"
 msgstr "Mentés másként…"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:50
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:49
 #, kde-format
 msgid "Sieve script:"
 msgstr "Sieve parancsfájl:"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:52
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:51
 #, kde-format
 msgid "Errors reported:"
 msgstr "Jelentett hibák:"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:64
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:63
 #, kde-format
 msgid "All Files (*)"
 msgstr "Minden fájl (*)"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:65
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Log To File"
@@ -2451,13 +2451,13 @@ msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Lap bezárása"
 
-#: ksieveui/debug/sievedebugdialog.cpp:40
+#: ksieveui/debug/sievedebugdialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Diagnostics"
 msgstr "Sieve diagnosztika"
 
-#: ksieveui/debug/sievedebugdialog.cpp:66
+#: ksieveui/debug/sievedebugdialog.cpp:65
 #, kde-format
 msgid ""
 "Collecting diagnostic information about Sieve support…\n"
@@ -2466,12 +2466,12 @@ msgstr ""
 "Diagnosztikai információk gyűjtése a Sieve támogatásról…\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:69
+#: ksieveui/debug/sievedebugdialog.cpp:68
 #, kde-format
 msgid "No IMAP resource found."
 msgstr "Nem található IMAP erőforrás."
 
-#: ksieveui/debug/sievedebugdialog.cpp:93
+#: ksieveui/debug/sievedebugdialog.cpp:92
 #, kde-format
 msgid ""
 "Unable to get the info\n"
@@ -2480,17 +2480,17 @@ msgstr ""
 "Nem lehet lekérni az információkat\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:111
+#: ksieveui/debug/sievedebugdialog.cpp:110
 #, kde-format
 msgid "Collecting data for account '%1'…\n"
 msgstr "Adatok gyűjtése a(z) „%1” azonosítóhoz…\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:112
+#: ksieveui/debug/sievedebugdialog.cpp:111
 #, kde-format
 msgid "------------------------------------------------------------\n"
 msgstr "------------------------------------------------------------\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:126
+#: ksieveui/debug/sievedebugdialog.cpp:125
 #, kde-format
 msgid ""
 "(Account does not support Sieve)\n"
@@ -2499,12 +2499,12 @@ msgstr ""
 "(Az azonosító nem támogatja a Sieve-et)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:158
+#: ksieveui/debug/sievedebugdialog.cpp:157
 #, kde-format
 msgid "Contents of script '%1':\n"
 msgstr "A(z) „%1” parancsfájl tartalma:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:192
+#: ksieveui/debug/sievedebugdialog.cpp:191
 #, kde-format
 msgid ""
 "(This script is empty)\n"
@@ -2513,7 +2513,7 @@ msgstr ""
 "(A parancsfájl üres)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:195
+#: ksieveui/debug/sievedebugdialog.cpp:194
 #, kde-format
 msgid ""
 "------------------------------------------------------------\n"
@@ -2526,22 +2526,22 @@ msgstr ""
 "------------------------------------------------------------\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:213
+#: ksieveui/debug/sievedebugdialog.cpp:212
 #, kde-format
 msgid "Sieve capabilities:\n"
 msgstr "Sieve képességek:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:216
+#: ksieveui/debug/sievedebugdialog.cpp:215
 #, kde-format
 msgid "(No special capabilities available)"
 msgstr "(Nem érhetők el különleges képességek)"
 
-#: ksieveui/debug/sievedebugdialog.cpp:224
+#: ksieveui/debug/sievedebugdialog.cpp:223
 #, kde-format
 msgid "Available Sieve scripts:\n"
 msgstr "Elérhető Sieve parancsfájlok:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:227
+#: ksieveui/debug/sievedebugdialog.cpp:226
 #, kde-format
 msgid ""
 "(No Sieve scripts available on this server)\n"
@@ -2550,7 +2550,7 @@ msgstr ""
 "(Nem érhetők el Sieve parancsfájlok ezen a kiszolgálón)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:234
+#: ksieveui/debug/sievedebugdialog.cpp:233
 #, kde-format
 msgid ""
 "Active script: '%1'\n"
@@ -2582,40 +2582,40 @@ msgctxt "@action:button"
 msgid "Do Not Close"
 msgstr "Ne zárja be"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:30
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:32
 #, kde-format
 msgid "Sieve Files (*.siv);;All Files (*)"
 msgstr "Sieve fájlok (*.siv);;Minden fájl (*)"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:31
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Script"
 msgstr "Parancsfájl mentése"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:57
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:59
 #, kde-format
 msgid "You will overwrite script. Do you want to continue?"
 msgstr "Felül fogja írni a parancsfájlt. Szeretné folytatni?"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:58
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:60
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Script"
 msgstr "Parancsfájl importálása"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:65
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:67
 #, kde-format
 msgid "*.siv;;sieve files (*.siv);;all files (*)"
 msgstr "*.siv;;sieve fájlok (*.siv);;minden fájl (*)"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:66
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:68
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Script Sieve"
 msgstr "Sieve parancsfájl importálása"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:72
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:74
 #, kde-format
 msgid ""
 "Could not load the file %1:\n"
@@ -2624,7 +2624,7 @@ msgstr ""
 "Nem sikerült betölteni a(z) %1 fájlt:\n"
 "Részletes hibaleírás: „%2”"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:76
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Editor Error"
@@ -2711,78 +2711,78 @@ msgstr "Hiba a(z) %1 oldalának betöltésekor"
 msgid "Help about: %1"
 msgstr "Súgó: %1"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:69
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:64
 #, kde-format
 msgid "Sieve Template:"
 msgstr "Sieve sablon:"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:94
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:89
 #, kde-format
 msgid "Editor"
 msgstr "Szerkesztő"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:148
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:143
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "Szintaxisellenőrzés eredményének megjelenítése"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:249
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:244
 #, kde-format
 msgid "Error during parsing"
 msgstr "Hiba a feldolgozás közben"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:279
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:274
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "A kijelölt szöveg nem egy teljes Sieve parancsfájl"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:279
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:274
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "Feldolgozási hiba"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:43
+#: ksieveui/editor/sieveeditorwidget.cpp:42
 #, kde-format
 msgctxt "@action"
 msgid "Check Syntax"
 msgstr "Szintaxisellenőrzés"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:48
+#: ksieveui/editor/sieveeditorwidget.cpp:47
 #, kde-format
 msgid "Import…"
 msgstr "Importálás…"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:50
+#: ksieveui/editor/sieveeditorwidget.cpp:49
 #, kde-format
 msgctxt "@action"
 msgid "Create Rules Graphically…"
 msgstr "Szabályok készítése grafikusan…"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:64
+#: ksieveui/editor/sieveeditorwidget.cpp:63
 #, kde-format
 msgid "Share…"
 msgstr "Megosztás…"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:70
+#: ksieveui/editor/sieveeditorwidget.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Server Info"
 msgstr "Kiszolgálóinformációk"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:114
+#: ksieveui/editor/sieveeditorwidget.cpp:113
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Script name:"
 msgstr "Parancsfájl neve:"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:386
+#: ksieveui/editor/sieveeditorwidget.cpp:385
 #, kde-format
 msgid "Simple Mode"
 msgstr "Egyszerű mód"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:386
+#: ksieveui/editor/sieveeditorwidget.cpp:385
 #, kde-format
 msgid "Advanced Mode"
 msgstr "Speciális mód"
@@ -2929,67 +2929,67 @@ msgstr "Kis- és nagybetű érzékeny"
 msgid "Phrase not found"
 msgstr "A kifejezés nem található"
 
-#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:50
+#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:51
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr "Weboldal mentése"
 
-#: ksieveui/managesievescriptsdialog.cpp:69
+#: ksieveui/managesievescriptsdialog.cpp:67
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Sieve Scripts"
 msgstr "Sieve parancsfájlok kezelése"
 
-#: ksieveui/managesievescriptsdialog.cpp:91
+#: ksieveui/managesievescriptsdialog.cpp:89
 #, kde-format
 msgctxt "create a new sieve script"
 msgid "New…"
 msgstr "Új…"
 
-#: ksieveui/managesievescriptsdialog.cpp:95
+#: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit…"
 msgstr "Szerkesztés…"
 
-#: ksieveui/managesievescriptsdialog.cpp:99
+#: ksieveui/managesievescriptsdialog.cpp:97
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Törlés"
 
-#: ksieveui/managesievescriptsdialog.cpp:103
+#: ksieveui/managesievescriptsdialog.cpp:101
 #, kde-format
 msgctxt "@action:button"
 msgid "Deactivate"
 msgstr "Deaktiválás"
 
-#: ksieveui/managesievescriptsdialog.cpp:185
-#: ksieveui/managesievescriptsdialog.cpp:277
-#: ksieveui/widgets/managesievewidget.cpp:531
+#: ksieveui/managesievescriptsdialog.cpp:183
+#: ksieveui/managesievescriptsdialog.cpp:275
+#: ksieveui/widgets/managesievewidget.cpp:532
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Sieve hiba"
 
-#: ksieveui/managesievescriptsdialog.cpp:221
+#: ksieveui/managesievescriptsdialog.cpp:219
 #, kde-format
 msgid "Uploading script to server for checking it, please wait…"
 msgstr "Parancsfájl feltöltése a kiszolgálóra az ellenőrzéshez, kérem várjon…"
 
-#: ksieveui/managesievescriptsdialog.cpp:267
+#: ksieveui/managesievescriptsdialog.cpp:265
 #, kde-format
 msgid "The Sieve script was successfully uploaded."
 msgstr "A Sieve parancsfájl sikeresen feltöltve."
 
-#: ksieveui/managesievescriptsdialog.cpp:267
+#: ksieveui/managesievescriptsdialog.cpp:265
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "Sieve parancsfájl feltöltve"
 
-#: ksieveui/managesievescriptsdialog.cpp:274
+#: ksieveui/managesievescriptsdialog.cpp:272
 #, kde-format
 msgid ""
 "Uploading the Sieve script failed.\n"
@@ -3033,19 +3033,19 @@ msgstr "Hibakeresés"
 msgid "Debug"
 msgstr "Hibakeresés"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:46
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:47
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Email path:"
 msgstr "E-mail elérési útja:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:60
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Extension:"
 msgstr "Kiterjesztés:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:65
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:66
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -3055,28 +3055,28 @@ msgstr ""
 "Kiterjesztés aktiválása: „+<kiterjesztés neve>”, deaktiválása: „-"
 "<kiterjesztés neve>”"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:97
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:98
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Display check script result…"
 msgstr "Parancsfájl-ellenőrzés eredményének megjelenítése…"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:145
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:146
 #, kde-format
 msgid "Script text is empty."
 msgstr "A parancsfájl szövege üres."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:149
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "Az e-mail-fájlt helyben kell telepíteni."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:155
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "Nem sikerült megnyitni az átmeneti fájlt."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:220
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:221
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr ""
@@ -3150,13 +3150,13 @@ msgstr "Levelek megsemmisítése a következőtől…"
 msgid "Vacations"
 msgstr "Szabadságok"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:38
+#: ksieveui/templates/sievetemplateeditdialog.cpp:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "Alapértelmezett sablon"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:38
+#: ksieveui/templates/sievetemplateeditdialog.cpp:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Template"
@@ -3169,37 +3169,37 @@ msgstr ""
 "Sablon importálásához a szerkesztőben használhatja az elemeken a fogd és "
 "vidd módszert"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:48
+#: ksieveui/vacation/multiimapvacationdialog.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure \"Out of Office\" Replies"
 msgstr "A „Házon kívül” üzenetek beállítása"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:74
+#: ksieveui/vacation/multiimapvacationdialog.cpp:75
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr "Biztosan megszakítja?"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:75
+#: ksieveui/vacation/multiimapvacationdialog.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Megerősítés"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:76
+#: ksieveui/vacation/multiimapvacationdialog.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel Editing"
 msgstr "Szerkesztés megszakítása"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:77
+#: ksieveui/vacation/multiimapvacationdialog.cpp:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Cancel"
 msgstr "Ne szakítsa meg"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:107
+#: ksieveui/vacation/multiimapvacationdialog.cpp:108
 #, kde-format
 msgctxt "@label:textbox"
 msgid ""
@@ -3211,69 +3211,69 @@ msgstr ""
 "kiszolgálón ez még nincs beállítva. Ez megtehető a „Szűrés” lapon, az IMAP-"
 "azonosító beállításainál."
 
-#: ksieveui/vacation/vacationeditwidget.cpp:50
+#: ksieveui/vacation/vacationeditwidget.cpp:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "Az elküldendő szabadság értesítések beállítása:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:58
+#: ksieveui/vacation/vacationeditwidget.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr "Szabadság értesítések &aktiválása"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:78
+#: ksieveui/vacation/vacationeditwidget.cpp:81
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
 msgstr "A vakáció&s levél tárgya:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:110
+#: ksieveui/vacation/vacationeditwidget.cpp:113
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr "Kezdődátum:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:140
+#: ksieveui/vacation/vacationeditwidget.cpp:143
 #, kde-format
 msgctxt "@label:textbox"
 msgid "End date:"
 msgstr "Záró dátum:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:163
-#: ksieveui/vacation/vacationeditwidget.cpp:309
+#: ksieveui/vacation/vacationeditwidget.cpp:166
+#: ksieveui/vacation/vacationeditwidget.cpp:312
 #, kde-format
 msgid " day"
 msgid_plural " days"
 msgstr[0] " nap"
 msgstr[1] " nap"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:165
+#: ksieveui/vacation/vacationeditwidget.cpp:168
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "É&rtesítés újraküldése ennyi idő után:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:178
+#: ksieveui/vacation/vacationeditwidget.cpp:181
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "Vála&sz küldése a következő címekre:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:204
+#: ksieveui/vacation/vacationeditwidget.cpp:207
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Action for incoming mails:"
 msgstr "Bejövő levelekre von&atkozó művelet:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:212
+#: ksieveui/vacation/vacationeditwidget.cpp:215
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "Ne küldjön szabadság választ spam üzenetekre"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:220
+#: ksieveui/vacation/vacationeditwidget.cpp:223
 #, kde-format
 msgctxt "@option:check"
 msgid "Only react to mail coming from domain:"
@@ -3306,7 +3306,7 @@ msgctxt "@action:button"
 msgid "Ignore"
 msgstr "Mellőzés"
 
-#: ksieveui/vacation/vacationpagewidget.cpp:51
+#: ksieveui/vacation/vacationpagewidget.cpp:48
 #, kde-format
 msgctxt "@label:textbox"
 msgid ""
@@ -3329,7 +3329,7 @@ msgstr ""
 "KMail többé nem tudja meghatározni az automatikus válaszok paramétereit. Az "
 "alapértelmezett értékek lesznek használva."
 
-#: ksieveui/widgets/custommanagesievewidget.cpp:93
+#: ksieveui/widgets/custommanagesievewidget.cpp:94
 #, kde-format
 msgid "No Sieve URL configured"
 msgstr "Nincs beállítva Sieve URL"
@@ -3350,84 +3350,84 @@ msgstr "Elérhető parancsfájlok"
 msgid "Network down."
 msgstr "A hálózat leállt."
 
-#: ksieveui/widgets/managesievewidget.cpp:151
+#: ksieveui/widgets/managesievewidget.cpp:152
 #, kde-format
 msgid "Edit Script…"
 msgstr "Parancsfájl szerkesztése…"
 
-#: ksieveui/widgets/managesievewidget.cpp:152
+#: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
 msgid "Rename Script…"
 msgstr "Parancsfájl átnevezése…"
 
-#: ksieveui/widgets/managesievewidget.cpp:154
+#: ksieveui/widgets/managesievewidget.cpp:155
 #, kde-format
 msgid "Delete Script"
 msgstr "Parancsfájl törlése "
 
-#: ksieveui/widgets/managesievewidget.cpp:157
+#: ksieveui/widgets/managesievewidget.cpp:158
 #, kde-format
 msgid "Deactivate Script"
 msgstr "Parancsfájl deaktiválása"
 
-#: ksieveui/widgets/managesievewidget.cpp:163
+#: ksieveui/widgets/managesievewidget.cpp:164
 #, kde-format
 msgid "New Script…"
 msgstr "Új parancsfájl…"
 
-#: ksieveui/widgets/managesievewidget.cpp:235
+#: ksieveui/widgets/managesievewidget.cpp:236
 #, kde-format
 msgid "New Sieve Script"
 msgstr "Új Sieve parancsfájl"
 
-#: ksieveui/widgets/managesievewidget.cpp:236
+#: ksieveui/widgets/managesievewidget.cpp:237
 #, kde-format
 msgid "Please enter a name for the new Sieve script:"
 msgstr "Adja meg az új Sieve parancsfájl nevét:"
 
-#: ksieveui/widgets/managesievewidget.cpp:238
+#: ksieveui/widgets/managesievewidget.cpp:239
 #, kde-format
 msgid "unnamed"
 msgstr "névtelen"
 
-#: ksieveui/widgets/managesievewidget.cpp:243
+#: ksieveui/widgets/managesievewidget.cpp:244
 #, kde-format
 msgid "Empty name is not a valid name"
 msgstr "A név nem lehet üres"
 
-#: ksieveui/widgets/managesievewidget.cpp:250
+#: ksieveui/widgets/managesievewidget.cpp:251
 #, kde-format
 msgid "You cannot use protected name."
 msgstr "Nem használhat védett nevet."
 
-#: ksieveui/widgets/managesievewidget.cpp:261
+#: ksieveui/widgets/managesievewidget.cpp:262
 #, kde-format
 msgid "Script name already used \"%1\"."
 msgstr "A(z) „%1” parancsfájlnév már használatban van."
 
-#: ksieveui/widgets/managesievewidget.cpp:446
-#: ksieveui/widgets/managesievewidget.cpp:474
+#: ksieveui/widgets/managesievewidget.cpp:447
+#: ksieveui/widgets/managesievewidget.cpp:475
 #, kde-format
 msgid "Rename Script"
 msgstr "Parancsfájl átnevezése"
 
-#: ksieveui/widgets/managesievewidget.cpp:446
+#: ksieveui/widgets/managesievewidget.cpp:447
 #, kde-format
 msgid "Script Name:"
 msgstr "Parancsfájl neve:"
 
-#: ksieveui/widgets/managesievewidget.cpp:509
+#: ksieveui/widgets/managesievewidget.cpp:510
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
 msgstr "Biztosan törli a(z) „%1” parancsfájlt a kiszolgálóról?"
 
-#: ksieveui/widgets/managesievewidget.cpp:510
+#: ksieveui/widgets/managesievewidget.cpp:511
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "Sieve parancsfájl törlésének megerősítése"
 
-#: ksieveui/widgets/managesievewidget.cpp:528
+#: ksieveui/widgets/managesievewidget.cpp:529
 #, kde-format
 msgid ""
 "Deleting the script failed.\n"
@@ -3438,7 +3438,7 @@ msgstr ""
 "A kiszolgáló válasza:\n"
 "%1"
 
-#: ksieveui/widgets/managesievewidget.cpp:580
+#: ksieveui/widgets/managesievewidget.cpp:581
 #, kde-format
 msgid "Failed to fetch the list of scripts"
 msgstr "Nem sikerült letölteni a parancsfájlok listáját"

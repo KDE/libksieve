@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-08 00:47+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2025-09-25 00:39+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -93,7 +93,7 @@ msgctxt "@title:window"
 msgid "Sieve Manager"
 msgstr "Gestore di Sieve"
 
-#: kmanagesieve/sessionthread.cpp:301
+#: kmanagesieve/sessionthread.cpp:300
 #, kde-format
 msgid ""
 "Authentication failed.\n"
@@ -106,7 +106,7 @@ msgstr ""
 "Il server ha risposto:\n"
 "%1"
 
-#: kmanagesieve/sievejob.cpp:144 kmanagesieve/sievejob.cpp:151
+#: kmanagesieve/sievejob.cpp:143 kmanagesieve/sievejob.cpp:150
 #, kde-format
 msgid ""
 "The script did not upload successfully.\n"
@@ -119,7 +119,7 @@ msgstr ""
 "Il server ha risposto:\n"
 "%1"
 
-#: kmanagesieve/sievejob.cpp:156
+#: kmanagesieve/sievejob.cpp:155
 #, kde-format
 msgid ""
 "The script did not upload successfully.\n"
@@ -399,8 +399,8 @@ msgstr ""
 "%1"
 
 #: ksievecore/managescriptsjob/parseuserscriptjob.cpp:64
-#: ksieveui/debug/sievedebugdialog.cpp:188
-#: ksieveui/managesievescriptsdialog.cpp:182
+#: ksieveui/debug/sievedebugdialog.cpp:187
+#: ksieveui/managesievescriptsdialog.cpp:180
 #, kde-format
 msgid ""
 "Retrieving the script failed.\n"
@@ -483,12 +483,12 @@ msgstr ""
 "Controlla all'avvio se è ancora attiva una risposta fuori-ufficio "
 "configurata."
 
-#: ksievecore/vacation/vacationcheckjob.cpp:127
+#: ksievecore/vacation/vacationcheckjob.cpp:126
 #, kde-format
 msgid "ParseUserScriptJob failed: %1"
 msgstr "ParseUserScriptJob non riuscito: %1"
 
-#: ksievecore/vacation/vacationcheckjob.cpp:142
+#: ksievecore/vacation/vacationcheckjob.cpp:141
 #, kde-format
 msgid ""
 "Failed to get the list of Sieve scripts.\n"
@@ -499,7 +499,7 @@ msgstr ""
 "Il server ha risposto:\n"
 "%1"
 
-#: ksievecore/vacation/vacationcreatescriptjob.cpp:145
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:144
 #, kde-format
 msgid ""
 "Sieve script installed successfully on the server '%1'.\n"
@@ -508,7 +508,7 @@ msgstr ""
 "Lo script Sieve è stato installato con successo sul server «%1».\n"
 "Le risposte fuori-ufficio sono state attivate."
 
-#: ksievecore/vacation/vacationcreatescriptjob.cpp:148
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:147
 #, kde-format
 msgid ""
 "Sieve script installed successfully on the server '%1'.\n"
@@ -517,39 +517,39 @@ msgstr ""
 "Lo script Sieve è stato installato con successo sul server «%1».\n"
 "Le risposte fuori-ufficio sono state disattivate."
 
-#: ksievecore/vacation/vacationcreatescriptjob.cpp:152
+#: ksievecore/vacation/vacationcreatescriptjob.cpp:151
 #, kde-format
 msgid "Impossible to install script on server '%1'"
 msgstr "Impossibile installare la script sul server «%1»"
 
-#: ksievecore/vacation/vacationutils.cpp:38
+#: ksievecore/vacation/vacationutils.cpp:42
 #, kde-format
 msgid "Out of office till %1"
 msgstr "Fuori ufficio fino al %1"
 
-#: ksievecore/vacation/vacationutils.cpp:45
-#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:22
+#: ksievecore/vacation/vacationutils.cpp:49
+#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:21
 #, kde-format
 msgid "Keep"
 msgstr "Tieni"
 
-#: ksievecore/vacation/vacationutils.cpp:47
+#: ksievecore/vacation/vacationutils.cpp:51
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:14
 #, kde-format
 msgid "Discard"
 msgstr "Scarta"
 
-#: ksievecore/vacation/vacationutils.cpp:49
+#: ksievecore/vacation/vacationutils.cpp:53
 #, kde-format
 msgid "Redirect to"
 msgstr "Redirigi a"
 
-#: ksievecore/vacation/vacationutils.cpp:51
+#: ksievecore/vacation/vacationutils.cpp:55
 #, kde-format
 msgid "Copy to"
 msgstr "Copia in"
 
-#: ksievecore/vacation/vacationutils.cpp:65
+#: ksievecore/vacation/vacationutils.cpp:69
 #, kde-format
 msgid ""
 "I am out of office till %1.\n"
@@ -580,12 +580,12 @@ msgctxt "@title:window"
 msgid "Create Sieve Filter"
 msgstr "Crea filtro di Sieve"
 
-#: ksieveui/autocreatescripts/autocreatescriptutil.cpp:177
+#: ksieveui/autocreatescripts/autocreatescriptutil.cpp:178
 #, kde-format
 msgid "Cannot find item \"%1\" in widget \"%2\""
 msgstr "Impossibile trovare l'elemento «%1» nell'oggetto «%2»"
 
-#: ksieveui/autocreatescripts/autocreatescriptutil.cpp:185
+#: ksieveui/autocreatescripts/autocreatescriptutil.cpp:186
 #, kde-format
 msgid "More information"
 msgstr "Altre informazioni"
@@ -670,7 +670,7 @@ msgid "BMP"
 msgstr "BMP"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:102
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:55
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:54
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing action \"%2\"."
 msgstr ""
@@ -678,7 +678,7 @@ msgstr ""
 "dell'azione «%2»."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:107
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:43
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:42
 #, kde-format
 msgid "An unknown tag \"%1\" was found during parsing action \"%2\"."
 msgstr ""
@@ -686,7 +686,7 @@ msgstr ""
 "«%2»."
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:113
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:50
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:49
 #, kde-format
 msgid ""
 "Too many arguments found for \"%1\", max value is %2, number of value found "
@@ -696,8 +696,8 @@ msgstr ""
 "%3 per %4"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:118
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:60
-#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:53
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:59
+#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:49
 #, kde-format
 msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgstr "Una funzione «%1» con la condizione «%2» non è supportata dal server"
@@ -732,7 +732,7 @@ msgstr "Aggiungi intestazione"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:42
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:42
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:44
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "header:"
@@ -760,7 +760,7 @@ msgid "Break"
 msgstr "Interrompi"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionbreak.cpp:34
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:47
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:46
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name (optional):"
@@ -925,7 +925,7 @@ msgstr ""
 "supporta"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionfileinto.cpp:98
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:37
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:36
 #, kde-format
 msgctxt "@option:check"
 msgid "Keep a copy"
@@ -967,7 +967,7 @@ msgstr ""
 "non annulla l'operazione implicita «tieni». Al contrario provvede a inviare "
 "o inoltrare una copia, in aggiunta a quello che succede al messaggio."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:46
+#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:45
 #, kde-format
 msgid ""
 "The \"keep\" action is whatever action is taken in lieu of all other "
@@ -979,7 +979,7 @@ msgstr ""
 "dire semplicemente il recapito del messaggio nella casella di posta "
 "principale dell'utente."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:57
+#: ksieveui/autocreatescripts/sieveactions/sieveactionkeep.cpp:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Add flags:"
@@ -1010,18 +1010,18 @@ msgstr ""
 "L'azione «notifica» specifica che una notifica deve essere inviata "
 "all'utente."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:24
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:23
 #, kde-format
 msgid "Redirect"
 msgstr "Redirigi"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:43
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:42
 #, kde-format
 msgctxt "@option:check"
 msgid "Use list"
 msgstr "Usa elenco"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:141
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:140
 #, kde-format
 msgid ""
 "The \"redirect\" action is used to send the message to another user at a "
@@ -1034,7 +1034,7 @@ msgstr ""
 "della posta. Questa azione non modifica il corpo del messaggio e le "
 "intestazioni esistenti, ma potrebbe aggiungere nuove intestazioni."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:145
+#: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:144
 #, kde-format
 msgid ""
 "If the optional \":copy\" keyword is specified, the tagged command does not "
@@ -1126,41 +1126,41 @@ msgstr ""
 "o parole chiave di sistema [IMAP]. Questa azione sostituisce tutti i "
 "contrassegni precedentemente impostati."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:26
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:25
 #, kde-format
 msgid "Variable"
 msgstr "Variabile"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:44
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:43
 #, kde-format
 msgctxt "@option:check"
 msgid "Protect special character"
 msgstr "Proteggi caratteri speciali"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:50
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:49
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvironment.cpp:51
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:58
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:65
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:63
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:59
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:67
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:65
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Value:"
 msgstr "Valore:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:59
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "In variable:"
 msgstr "Nella variabile:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:108
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:107
 #, kde-format
 msgid "Script needs regex support, but server does not have it."
 msgstr ""
 "Lo script ha bisogno del supporto per le espressioni regolari, ma il server "
 "non lo fornisce."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:171
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:170
 #, kde-format
 msgid ""
 "The \"set\" action stores the specified value in the variable identified by "
@@ -1169,7 +1169,7 @@ msgstr ""
 "L'azione «imposta» (<em>set</em>) memorizza il valore specificato in una "
 "variabile identificata da un certo nome."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:174
+#: ksieveui/autocreatescripts/sieveactions/sieveactionsetvariable.cpp:173
 #, kde-format
 msgid ""
 "This modifier adds the necessary quoting to ensure that the expanded text "
@@ -1196,36 +1196,36 @@ msgstr ""
 "L'azione «ferma» (<em>stop</em>) interrompe ogni elaborazione. Se l'azione "
 "implicita «tieni» non è stata annullata, allora viene eseguita."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:29
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:28
 #, kde-format
 msgid "Vacation"
 msgstr "Vacanza"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:48
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:47
 #, kde-format
 msgctxt "@label:textbox"
 msgid "day:"
 msgstr "giorno:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:59
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Message subject:"
 msgstr "Oggetto del messaggio:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:68
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:67
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Additional email:"
 msgstr "Messaggio di posta supplementare:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:77
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:76
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Vacation reason:"
 msgstr "Motivo delle ferie:"
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:198
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:197
 #, kde-format
 msgid ""
 "The \"vacation\" action implements a vacation autoresponder similar to the "
@@ -1239,7 +1239,7 @@ msgstr ""
 "che l'utente è assente per un periodo prolungato di tempo e che non deve  "
 "aspettarsi delle risposte a breve."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:202
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:201
 #, kde-format
 msgid ""
 "Through the \":days\" parameter, it limits the number of auto-replies to the "
@@ -1252,7 +1252,7 @@ msgstr ""
 "casi dove è necessaria maggiore granularità se si vogliono generare risposte "
 "ti tipo «vacanza» più frequentemente."
 
-#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:204
+#: ksieveui/autocreatescripts/sieveactions/sieveactionvacation.cpp:203
 #, kde-format
 msgid ""
 "This extension defines a \":seconds\" parameter to provide more granularity "
@@ -1391,36 +1391,36 @@ msgstr "Quota caratteri jolly"
 msgid "Length"
 msgstr "Lunghezza"
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:64
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:66
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Please select an action."
 msgstr "Seleziona un'azione."
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:141
-#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:111
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:143
+#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:113
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add comment"
 msgstr "Aggiungi commento"
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:276
-#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:223
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:278
+#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:225
 #, kde-format
 msgid "Script contains unsupported feature \"%1\""
 msgstr "Lo script contiene la funzione non supportata «%1»"
 
-#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:412
+#: ksieveui/autocreatescripts/sieveactionwidgetlister.cpp:414
 #, kde-format
 msgid "We detected a loop if in a loop if. It's not supported"
 msgstr "È stato rilevato un ciclo if in un ciclo if. Non è supportato"
 
-#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:33
+#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:29
 #, kde-format
 msgid "Unknown tag \"%1\" during parsing condition \"%2\""
 msgstr "Marcatore sconosciuto «%1» durante l'analisi della condizione «%2»"
 
-#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:43
+#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:39
 #, kde-format
 msgid ""
 "Too many argument found for \"%1\", max value is %2, number of value found "
@@ -1429,33 +1429,33 @@ msgstr ""
 "Trovati troppi argomenti per «%1», il massimo è %2 e ne sono stati trovati "
 "%3 per %4"
 
-#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:48
+#: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:44
 #, kde-format
 msgid "An unknown tag value \"%1\" was found during parsing condition \"%2\"."
 msgstr ""
 "È stato trovato un valore di marcatore sconosciuto «%1» durante l'analisi "
 "della condizione «%2»."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:25
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:27
 #, kde-format
 msgid "Address"
 msgstr "Indirizzo"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:54
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:56
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:56
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "address:"
 msgstr "indirizzo:"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:61
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:64
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:63
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:66
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Use ; to separate emails"
 msgstr "Usa «;» per separare gli indirizzi di posta"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:96
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionaddress.cpp:98
 #, kde-format
 msgid ""
 "The \"address\" test matches Internet addresses in structured headers that "
@@ -1469,12 +1469,12 @@ msgstr ""
 "chiave nella parte specificata dell'indirizzo, per come modificata dal "
 "comparatore e dalla parola chiave di corrispondenza."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:22
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:24
 #, kde-format
 msgid "Body"
 msgstr "Corpo"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:87
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionbody.cpp:89
 #, kde-format
 msgid ""
 "The body test matches content in the body of an email message, that is, "
@@ -1501,14 +1501,14 @@ msgstr ""
 "opera sulla data/ora attuale invece che su di un valore estratto dalle "
 "intestazioni del messaggio."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:25
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:27
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:238
 #, kde-format
 msgid "Date"
 msgstr "Data"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:95
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:97
 #, kde-format
 msgid ""
 "The date test matches date/time information derived from headers containing "
@@ -1518,12 +1518,12 @@ msgstr ""
 "su data/ora estratte dalle intestazioni che contengono valori di tipo data-"
 "ora."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:26
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:28
 #, kde-format
 msgid "Envelope"
 msgstr "Busta"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:107
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionenvelope.cpp:109
 #, kde-format
 msgid ""
 "The \"envelope\" test is true if the specified part of the [SMTP] (or "
@@ -1598,12 +1598,12 @@ msgstr "falso"
 msgid "The \"false\" test always evaluates to false."
 msgstr "Il test «falso» (<em>false</em>) viene sempre valutato come «falso»."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:26
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:27
 #, kde-format
 msgid "Has Flag"
 msgstr "Ha il contrassegno"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:48
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid ""
@@ -1613,7 +1613,7 @@ msgstr ""
 "Nome della variabile\n"
 " (se vuoto usa una variabile interna):"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:129
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionhasflag.cpp:130
 #, kde-format
 msgid ""
 "The hasflag test evaluates to true if any of the variables matches any flag "
@@ -1622,18 +1622,18 @@ msgstr ""
 "Il test «ha il contrassegno» (<em>has flag</em>) è valutato come «vero» se "
 "una delle variabili corrisponde ad uno dei contrassegni."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:23
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:25
 #, kde-format
 msgid "Header"
 msgstr "Intestazione"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:47
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:49
 #, kde-format
 msgctxt "@label:textbox"
 msgid "With value:"
 msgstr "Con valore:"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:77
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionheader.cpp:79
 #, kde-format
 msgid ""
 "The \"header\" test evaluates to true if the value of any of the named "
@@ -1680,27 +1680,27 @@ msgstr ""
 "nel sistema di archiviazione della posta, e se ciascuna consente di "
 "recapitare messaggi all'utente di cui lo script Sieve usa i privilegi."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:26
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:28
 #, kde-format
 msgid "Meta Data"
 msgstr "Metadati"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:46
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:48
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadataexists.cpp:35
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:45
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:47
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Mailbox:"
 msgstr "Casella di posta:"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:56
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:54
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:58
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:56
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Annotations:"
 msgstr "Annotazioni:"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:121
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionmetadata.cpp:123
 #, kde-format
 msgid ""
 "This test retrieves the value of the mailbox annotation \"annotation-name\" "
@@ -1734,12 +1734,12 @@ msgstr ""
 "Il test «metadati presenti» (<em>metadataexists</em>) è vero se tutte le "
 "annotazioni elencate esistono per la casella di posta specificata."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:25
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:27
 #, kde-format
 msgid "Server Meta Data"
 msgstr "Metadati del server"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:119
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionservermetadata.cpp:121
 #, kde-format
 msgid ""
 "This test retrieves the value of the server annotation \"annotation-name\".  "
@@ -1791,18 +1791,18 @@ msgstr ""
 "Prende un argomento contrassegnato da «:over» o «:under», seguito da un "
 "numero che rappresenta la dimensione del messaggio."
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:26
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:25
 #, kde-format
 msgid "Spam Test"
 msgstr "Test dello spam"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:39
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:38
 #, kde-format
 msgctxt "@option:check"
 msgid "Percent"
 msgstr "Percentuale"
 
-#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:112
+#: ksieveui/autocreatescripts/sieveconditions/sieveconditionspamtest.cpp:111
 #, kde-format
 msgid ""
 "Sieve implementations that implement the \"spamtest\" test use an identifier "
@@ -2095,7 +2095,7 @@ msgstr "MiB"
 msgid "GiB"
 msgstr "GiB"
 
-#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:56
+#: ksieveui/autocreatescripts/sieveconditionwidgetlister.cpp:58
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Please select an condition."
@@ -2124,13 +2124,13 @@ msgctxt "@action:button"
 msgid "Do Not Switch"
 msgstr "Non cambiare"
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:32
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:31
 #, kde-format
 msgctxt "@option:check"
 msgid "Add ForEveryPart loop"
 msgstr "Aggiungi un ciclo «PerOgniParte» (<em>ForEveryPart</em>)"
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:64
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:63
 #, kde-format
 msgid ""
 "\"foreverypart\", which is an iterator that walks though every MIME part of "
@@ -2141,35 +2141,35 @@ msgstr ""
 "profondità (depth-first) ogni parte MIME del messaggio, incluse quelle "
 "annidate, ed applica a ciascuna di esse i comandi nel blocco specificato."
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:93
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:92
 #, kde-format
 msgid "Unknown tagValue \"%1\" during loading loop \"for\""
 msgstr ""
 "Valore di marcatore «%1» sconosciuto durante il caricamento del ciclo «for»"
 
-#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:105
+#: ksieveui/autocreatescripts/sieveforeverypartwidget.cpp:104
 #, kde-format
 msgid "Unknown tag \"%1\" during loading loop \"for\""
 msgstr "Marcatore «%1» sconosciuto durante il caricamento del ciclo «for»"
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:60
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Variable name:"
 msgstr "Nome della variabile:"
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:67
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:68
 #, kde-format
 msgctxt "@option:check"
 msgid "Set value to:"
 msgstr "Imposta valore a:"
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:131
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:132
 #, kde-format
 msgid "Unknown tag \"%1\" during loading of variables."
 msgstr "Marcatore «%1» sconosciuto durante il caricamento delle variabili."
 
-#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:181
+#: ksieveui/autocreatescripts/sieveglobalvariablewidget.cpp:182
 #, kde-format
 msgid ""
 "A variable has global scope in all scripts that have declared it with the "
@@ -2204,7 +2204,7 @@ msgid "Include:"
 msgstr "Includi:"
 
 #: ksieveui/autocreatescripts/sieveincludewidget.cpp:137
-#: ksieveui/templates/sievetemplateeditdialog.cpp:58
+#: ksieveui/templates/sievetemplateeditdialog.cpp:57
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -2290,140 +2290,140 @@ msgctxt "@title:window"
 msgid "Description"
 msgstr "Descrizione"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:130
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:131
 #, kde-format
 msgctxt "Move selected filter up."
 msgid "Up"
 msgstr "Su"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:131
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:132
 #, kde-format
 msgctxt "Move selected filter down."
 msgid "Down"
 msgstr "Giù"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:132
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:133
 #, kde-format
 msgctxt "Move selected filter to the top."
 msgid "Top"
 msgstr "In alto"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:133
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:134
 #, kde-format
 msgctxt "Move selected filter to the bottom."
 msgid "Bottom"
 msgstr "In basso"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:145
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:146
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "New Script"
 msgstr "Nuovo script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:151
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:152
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Delete Script"
 msgstr "Elimina script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:155
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:156
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Rename Script"
 msgstr "Rinomina script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:161
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:162
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Edit Script Description"
 msgstr "Modifica descrizione dello script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:190
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:191
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "New Script"
 msgstr "Nuovo script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:195
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:196
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Rename Script"
 msgstr "Rinomina script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:200
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:201
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Edit Script Description"
 msgstr "Modifica descrizione dello script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:205
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:206
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Delete Script"
 msgstr "Elimina script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
-#: ksieveui/widgets/managesievewidget.cpp:243
-#: ksieveui/widgets/managesievewidget.cpp:250
-#: ksieveui/widgets/managesievewidget.cpp:261
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:260
+#: ksieveui/widgets/managesievewidget.cpp:244
+#: ksieveui/widgets/managesievewidget.cpp:251
+#: ksieveui/widgets/managesievewidget.cpp:262
 #, kde-format
 msgctxt "@title:window"
 msgid "New Script"
 msgstr "Nuovo script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:259
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:260
 #, kde-format
 msgid "New script name:"
 msgstr "Nuovo nome dello script:"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:271
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:272
 #, kde-format
 msgid "Do you want to delete \"%1\" script?"
 msgstr "Vuoi eliminare lo script «%1»?"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:272
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:273
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Script"
 msgstr "Elimina script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:292
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:293
 #, kde-format
 msgctxt "@title:window"
 msgid "Rename Script"
 msgstr "Rinomina script"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:292
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:293
 #, kde-format
 msgid "New name for the script:"
 msgstr "Nuovo nome per lo script:"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:481
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:482
 #, kde-format
 msgid "forEveryPart is not supported by your server"
 msgstr "forEveryPart non è supportata dal tuo server"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:585
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:586
 #, kde-format
 msgid "Script part %1"
 msgstr "Parte %1 dello script"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:38
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:39
 #, kde-format
 msgid "Includes"
 msgstr "Includi"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:42
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:43
 #, kde-format
 msgid "Global Variable"
 msgstr "Variabile globale"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:48
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:49
 #, kde-format
 msgid "ForEveryPart"
 msgstr "PerOgniParte"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:97
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:98
 #, kde-format
 msgid ""
 "Script should always have just one \"Else\" block. We cannot add another one."
@@ -2431,49 +2431,49 @@ msgstr ""
 "Lo script deve sempre avere al più un solo blocco \"else\". Impossibile "
 "aggiungerne un altro."
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:113
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:114
 #, kde-format
 msgid "Main block"
 msgstr "Blocco principale"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:115
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:116
 #, kde-format
 msgid "Block \"Elsif\""
 msgstr "Blocco \"Elsif\""
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:117
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:118
 #, kde-format
 msgid "Block \"Else\""
 msgstr "Blocco \"Else\""
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:29
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Parsing Error"
 msgstr "Errore di analisi di Sieve"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:38
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:37
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
 #, kde-format
 msgid "Save As…"
 msgstr "Salva come…"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:50
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:49
 #, kde-format
 msgid "Sieve script:"
 msgstr "Script sieve:"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:52
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:51
 #, kde-format
 msgid "Errors reported:"
 msgstr "Errori restituiti:"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:64
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:63
 #, kde-format
 msgid "All Files (*)"
 msgstr "Tutti i file (*)"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:65
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:64
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Log To File"
@@ -2486,13 +2486,13 @@ msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Chiudi scheda"
 
-#: ksieveui/debug/sievedebugdialog.cpp:40
+#: ksieveui/debug/sievedebugdialog.cpp:39
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Diagnostics"
 msgstr "Diagnostica per Sieve"
 
-#: ksieveui/debug/sievedebugdialog.cpp:66
+#: ksieveui/debug/sievedebugdialog.cpp:65
 #, kde-format
 msgid ""
 "Collecting diagnostic information about Sieve support…\n"
@@ -2501,12 +2501,12 @@ msgstr ""
 "Raccolta di informazioni diagnostiche su Sieve in corso…\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:69
+#: ksieveui/debug/sievedebugdialog.cpp:68
 #, kde-format
 msgid "No IMAP resource found."
 msgstr "Nessuna risorsa IMAP trovata."
 
-#: ksieveui/debug/sievedebugdialog.cpp:93
+#: ksieveui/debug/sievedebugdialog.cpp:92
 #, kde-format
 msgid ""
 "Unable to get the info\n"
@@ -2515,17 +2515,17 @@ msgstr ""
 "Impossibile ottenere le informazioni\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:111
+#: ksieveui/debug/sievedebugdialog.cpp:110
 #, kde-format
 msgid "Collecting data for account '%1'…\n"
 msgstr "Raccolta dei dati sull'account «%1»…\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:112
+#: ksieveui/debug/sievedebugdialog.cpp:111
 #, kde-format
 msgid "------------------------------------------------------------\n"
 msgstr "------------------------------------------------------------\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:126
+#: ksieveui/debug/sievedebugdialog.cpp:125
 #, kde-format
 msgid ""
 "(Account does not support Sieve)\n"
@@ -2534,12 +2534,12 @@ msgstr ""
 "(L'account non supporta Sieve)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:158
+#: ksieveui/debug/sievedebugdialog.cpp:157
 #, kde-format
 msgid "Contents of script '%1':\n"
 msgstr "Contenuto dello script «%1»:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:192
+#: ksieveui/debug/sievedebugdialog.cpp:191
 #, kde-format
 msgid ""
 "(This script is empty)\n"
@@ -2548,7 +2548,7 @@ msgstr ""
 "(Questo script è vuoto)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:195
+#: ksieveui/debug/sievedebugdialog.cpp:194
 #, kde-format
 msgid ""
 "------------------------------------------------------------\n"
@@ -2561,22 +2561,22 @@ msgstr ""
 "------------------------------------------------------------\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:213
+#: ksieveui/debug/sievedebugdialog.cpp:212
 #, kde-format
 msgid "Sieve capabilities:\n"
 msgstr "Funzionalità di Sieve:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:216
+#: ksieveui/debug/sievedebugdialog.cpp:215
 #, kde-format
 msgid "(No special capabilities available)"
 msgstr "(Nessuna funzionalità specifica disponibile)"
 
-#: ksieveui/debug/sievedebugdialog.cpp:224
+#: ksieveui/debug/sievedebugdialog.cpp:223
 #, kde-format
 msgid "Available Sieve scripts:\n"
 msgstr "Script di Sieve disponibili:\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:227
+#: ksieveui/debug/sievedebugdialog.cpp:226
 #, kde-format
 msgid ""
 "(No Sieve scripts available on this server)\n"
@@ -2585,7 +2585,7 @@ msgstr ""
 "(Nessuno script Sieve disponibile su questo server)\n"
 "\n"
 
-#: ksieveui/debug/sievedebugdialog.cpp:234
+#: ksieveui/debug/sievedebugdialog.cpp:233
 #, kde-format
 msgid ""
 "Active script: '%1'\n"
@@ -2617,40 +2617,40 @@ msgctxt "@action:button"
 msgid "Do Not Close"
 msgstr "Non chiudere"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:30
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:32
 #, kde-format
 msgid "Sieve Files (*.siv);;All Files (*)"
 msgstr "File Sieve (*.siv);;Tutti i file (*)"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:31
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Script"
 msgstr "Salva script"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:57
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:59
 #, kde-format
 msgid "You will overwrite script. Do you want to continue?"
 msgstr "Lo script verrà sovrascritto. Vuoi continuare?"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:58
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:60
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Script"
 msgstr "Importa script"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:65
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:67
 #, kde-format
 msgid "*.siv;;sieve files (*.siv);;all files (*)"
 msgstr "*.siv;;file sieve (*.siv);;tutti i file (*)"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:66
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:68
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Script Sieve"
 msgstr "Importa script Sieve"
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:72
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:74
 #, kde-format
 msgid ""
 "Could not load the file %1:\n"
@@ -2659,7 +2659,7 @@ msgstr ""
 "Non è stato possibile caricare il file %1:\n"
 "«%2» è la descrizione dettagliata dell'errore."
 
-#: ksieveui/editor/sieveeditorabstractwidget.cpp:76
+#: ksieveui/editor/sieveeditorabstractwidget.cpp:78
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Editor Error"
@@ -2746,78 +2746,78 @@ msgstr "Errore durante il caricamento della pagina su %1"
 msgid "Help about: %1"
 msgstr "Aiuto su: %1"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:69
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:64
 #, kde-format
 msgid "Sieve Template:"
 msgstr "Modello di Sieve:"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:94
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:89
 #, kde-format
 msgid "Editor"
 msgstr "Editor"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:148
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:143
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr "Mostra i risultati del controllo di sintassi"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:249
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:244
 #, kde-format
 msgid "Error during parsing"
 msgstr "Errore durante l'analisi"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:279
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:274
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr "Il testo selezionato non è uno script sieve completo"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:279
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:274
 #, kde-format
 msgctxt "@title:window"
 msgid "Parsing error"
 msgstr "Errore di analisi"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:43
+#: ksieveui/editor/sieveeditorwidget.cpp:42
 #, kde-format
 msgctxt "@action"
 msgid "Check Syntax"
 msgstr "Controlla sintassi"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:48
+#: ksieveui/editor/sieveeditorwidget.cpp:47
 #, kde-format
 msgid "Import…"
 msgstr "Importa…"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:50
+#: ksieveui/editor/sieveeditorwidget.cpp:49
 #, kde-format
 msgctxt "@action"
 msgid "Create Rules Graphically…"
 msgstr "Crea regole graficamente…"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:64
+#: ksieveui/editor/sieveeditorwidget.cpp:63
 #, kde-format
 msgid "Share…"
 msgstr "Condividi…"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:70
+#: ksieveui/editor/sieveeditorwidget.cpp:69
 #, kde-format
 msgctxt "@action"
 msgid "Server Info"
 msgstr "Informazioni sul server"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:114
+#: ksieveui/editor/sieveeditorwidget.cpp:113
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Script name:"
 msgstr "Nome dello script:"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:386
+#: ksieveui/editor/sieveeditorwidget.cpp:385
 #, kde-format
 msgid "Simple Mode"
 msgstr "Modalità semplice"
 
-#: ksieveui/editor/sieveeditorwidget.cpp:386
+#: ksieveui/editor/sieveeditorwidget.cpp:385
 #, kde-format
 msgid "Advanced Mode"
 msgstr "Modalità avanzata"
@@ -2964,67 +2964,67 @@ msgstr "Distingui le maiuscole"
 msgid "Phrase not found"
 msgstr "Frase non trovata"
 
-#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:50
+#: ksieveui/editor/webengine/sieveeditorwebengineview.cpp:51
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Web Page"
 msgstr "Salva pagina web"
 
-#: ksieveui/managesievescriptsdialog.cpp:69
+#: ksieveui/managesievescriptsdialog.cpp:67
 #, kde-format
 msgctxt "@title:window"
 msgid "Manage Sieve Scripts"
 msgstr "Gestisci gli script di Sieve"
 
-#: ksieveui/managesievescriptsdialog.cpp:91
+#: ksieveui/managesievescriptsdialog.cpp:89
 #, kde-format
 msgctxt "create a new sieve script"
 msgid "New…"
 msgstr "Nuovo…"
 
-#: ksieveui/managesievescriptsdialog.cpp:95
+#: ksieveui/managesievescriptsdialog.cpp:93
 #, kde-format
 msgctxt "@action:button"
 msgid "Edit…"
 msgstr "Modifica…"
 
-#: ksieveui/managesievescriptsdialog.cpp:99
+#: ksieveui/managesievescriptsdialog.cpp:97
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete"
 msgstr "Elimina"
 
-#: ksieveui/managesievescriptsdialog.cpp:103
+#: ksieveui/managesievescriptsdialog.cpp:101
 #, kde-format
 msgctxt "@action:button"
 msgid "Deactivate"
 msgstr "Disattiva"
 
-#: ksieveui/managesievescriptsdialog.cpp:185
-#: ksieveui/managesievescriptsdialog.cpp:277
-#: ksieveui/widgets/managesievewidget.cpp:531
+#: ksieveui/managesievescriptsdialog.cpp:183
+#: ksieveui/managesievescriptsdialog.cpp:275
+#: ksieveui/widgets/managesievewidget.cpp:532
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Error"
 msgstr "Errore di Sieve"
 
-#: ksieveui/managesievescriptsdialog.cpp:221
+#: ksieveui/managesievescriptsdialog.cpp:219
 #, kde-format
 msgid "Uploading script to server for checking it, please wait…"
 msgstr "Invio dello script al server per la verifica, attendere…"
 
-#: ksieveui/managesievescriptsdialog.cpp:267
+#: ksieveui/managesievescriptsdialog.cpp:265
 #, kde-format
 msgid "The Sieve script was successfully uploaded."
 msgstr "Lo script di sieve è stato inviato correttamente."
 
-#: ksieveui/managesievescriptsdialog.cpp:267
+#: ksieveui/managesievescriptsdialog.cpp:265
 #, kde-format
 msgctxt "@title:window"
 msgid "Sieve Script Upload"
 msgstr "Invio script Sieve"
 
-#: ksieveui/managesievescriptsdialog.cpp:274
+#: ksieveui/managesievescriptsdialog.cpp:272
 #, kde-format
 msgid ""
 "Uploading the Sieve script failed.\n"
@@ -3068,19 +3068,19 @@ msgstr "Debug"
 msgid "Debug"
 msgstr "Debug"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:46
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:47
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Email path:"
 msgstr "Percorso messaggio di posta:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:60
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:61
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Extension:"
 msgstr "Estensione:"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:65
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:66
 #, kde-format
 msgctxt "@info:placeholder"
 msgid ""
@@ -3090,28 +3090,28 @@ msgstr ""
 "Attiva l'estensione con «+<nome estensione>\", disattivala con «-<nome "
 "estensione>»"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:97
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:98
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Display check script result…"
 msgstr "Mostra i risultati dello script di verifica…"
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:145
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:146
 #, kde-format
 msgid "Script text is empty."
 msgstr "Il testo dello script è vuoto."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:149
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:150
 #, kde-format
 msgid "Email file must be installed locally."
 msgstr "Il file del messaggio di posta deve essere installato localmente."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:155
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:156
 #, kde-format
 msgid "Failed to open temporary file."
 msgstr "Impossibile aprire un file temporaneo."
 
-#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:220
+#: ksieveui/sievescriptdebugger/sievescriptdebuggerfrontendwidget.cpp:221
 #, kde-format
 msgid "Script still contains debug method. Remove it please."
 msgstr "Lo script contiene ancora un metodo di debug, che va rimosso."
@@ -3183,13 +3183,13 @@ msgstr "Distruggi la posta inviata da…"
 msgid "Vacations"
 msgstr "Vacanze"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:38
+#: ksieveui/templates/sievetemplateeditdialog.cpp:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
 msgstr "Modello predefinito"
 
-#: ksieveui/templates/sievetemplateeditdialog.cpp:38
+#: ksieveui/templates/sievetemplateeditdialog.cpp:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Template"
@@ -3200,37 +3200,37 @@ msgstr "Modello"
 msgid "You can drag and drop element on editor to import template"
 msgstr "Puoi trascinare degli elementi sull'editor per importare un modello"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:48
+#: ksieveui/vacation/multiimapvacationdialog.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure \"Out of Office\" Replies"
 msgstr "Configura le risposte «Fuori ufficio»"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:74
+#: ksieveui/vacation/multiimapvacationdialog.cpp:75
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to cancel?"
 msgstr "Vuoi davvero annullare l'operazione?"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:75
+#: ksieveui/vacation/multiimapvacationdialog.cpp:76
 #, kde-format
 msgctxt "@title:window"
 msgid "Confirmation"
 msgstr "Conferma"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:76
+#: ksieveui/vacation/multiimapvacationdialog.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel Editing"
 msgstr "Annulla modifica"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:77
+#: ksieveui/vacation/multiimapvacationdialog.cpp:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Cancel"
 msgstr "Non annullare"
 
-#: ksieveui/vacation/multiimapvacationdialog.cpp:107
+#: ksieveui/vacation/multiimapvacationdialog.cpp:108
 #, kde-format
 msgctxt "@label:textbox"
 msgid ""
@@ -3243,69 +3243,69 @@ msgstr ""
 "ciò utilizza la scheda «Filtraggio» nel pannello di configurazione di un "
 "account IMAP."
 
-#: ksieveui/vacation/vacationeditwidget.cpp:50
+#: ksieveui/vacation/vacationeditwidget.cpp:53
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Configure vacation notifications to be sent:"
 msgstr "Configura le notifiche di assenza da inviare:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:58
+#: ksieveui/vacation/vacationeditwidget.cpp:61
 #, kde-format
 msgctxt "@option:check"
 msgid "&Activate vacation notifications"
 msgstr "&Attiva le notifiche di assenza"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:78
+#: ksieveui/vacation/vacationeditwidget.cpp:81
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Subject of the vacation mail:"
 msgstr "Oggetto del me&ssaggio di assenza:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:110
+#: ksieveui/vacation/vacationeditwidget.cpp:113
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Start date:"
 msgstr "Data di inizio:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:140
+#: ksieveui/vacation/vacationeditwidget.cpp:143
 #, kde-format
 msgctxt "@label:textbox"
 msgid "End date:"
 msgstr "Data di fine:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:163
-#: ksieveui/vacation/vacationeditwidget.cpp:309
+#: ksieveui/vacation/vacationeditwidget.cpp:166
+#: ksieveui/vacation/vacationeditwidget.cpp:312
 #, kde-format
 msgid " day"
 msgid_plural " days"
 msgstr[0] " giorno"
 msgstr[1] " giorni"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:165
+#: ksieveui/vacation/vacationeditwidget.cpp:168
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Resend notification only after:"
 msgstr "&Reinvia le notifiche solo dopo:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:178
+#: ksieveui/vacation/vacationeditwidget.cpp:181
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Send responses for these addresses:"
 msgstr "Invia le ri&sposte per questi indirizzi:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:204
+#: ksieveui/vacation/vacationeditwidget.cpp:207
 #, kde-format
 msgctxt "@label:textbox"
 msgid "&Action for incoming mails:"
 msgstr "&Azione per i messaggi di posta in arrivo:"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:212
+#: ksieveui/vacation/vacationeditwidget.cpp:215
 #, kde-format
 msgctxt "@option:check"
 msgid "Do not send vacation replies to spam messages"
 msgstr "Non mandare risposte per le assenze ai messaggi di spam"
 
-#: ksieveui/vacation/vacationeditwidget.cpp:220
+#: ksieveui/vacation/vacationeditwidget.cpp:223
 #, kde-format
 msgctxt "@option:check"
 msgid "Only react to mail coming from domain:"
@@ -3338,7 +3338,7 @@ msgctxt "@action:button"
 msgid "Ignore"
 msgstr "Ignora"
 
-#: ksieveui/vacation/vacationpagewidget.cpp:51
+#: ksieveui/vacation/vacationpagewidget.cpp:48
 #, kde-format
 msgctxt "@label:textbox"
 msgid ""
@@ -3361,7 +3361,7 @@ msgstr ""
 "KMail non è più in grado di determinare i parametri per le risposte "
 "automatiche. Verranno usati i valori predefiniti."
 
-#: ksieveui/widgets/custommanagesievewidget.cpp:93
+#: ksieveui/widgets/custommanagesievewidget.cpp:94
 #, kde-format
 msgid "No Sieve URL configured"
 msgstr "Nessun URL Sieve configurato"
@@ -3382,84 +3382,84 @@ msgstr "Script disponibili"
 msgid "Network down."
 msgstr "Rete non in funzione."
 
-#: ksieveui/widgets/managesievewidget.cpp:151
+#: ksieveui/widgets/managesievewidget.cpp:152
 #, kde-format
 msgid "Edit Script…"
 msgstr "Modifica script…"
 
-#: ksieveui/widgets/managesievewidget.cpp:152
+#: ksieveui/widgets/managesievewidget.cpp:153
 #, kde-format
 msgid "Rename Script…"
 msgstr "Rinomina script…"
 
-#: ksieveui/widgets/managesievewidget.cpp:154
+#: ksieveui/widgets/managesievewidget.cpp:155
 #, kde-format
 msgid "Delete Script"
 msgstr "Elimina script"
 
-#: ksieveui/widgets/managesievewidget.cpp:157
+#: ksieveui/widgets/managesievewidget.cpp:158
 #, kde-format
 msgid "Deactivate Script"
 msgstr "Disattiva script"
 
-#: ksieveui/widgets/managesievewidget.cpp:163
+#: ksieveui/widgets/managesievewidget.cpp:164
 #, kde-format
 msgid "New Script…"
 msgstr "Nuovo script…"
 
-#: ksieveui/widgets/managesievewidget.cpp:235
+#: ksieveui/widgets/managesievewidget.cpp:236
 #, kde-format
 msgid "New Sieve Script"
 msgstr "Nuovo script di Sieve"
 
-#: ksieveui/widgets/managesievewidget.cpp:236
+#: ksieveui/widgets/managesievewidget.cpp:237
 #, kde-format
 msgid "Please enter a name for the new Sieve script:"
 msgstr "Inserisci un nome per il nuovo script Sieve:"
 
-#: ksieveui/widgets/managesievewidget.cpp:238
+#: ksieveui/widgets/managesievewidget.cpp:239
 #, kde-format
 msgid "unnamed"
 msgstr "senzanome"
 
-#: ksieveui/widgets/managesievewidget.cpp:243
+#: ksieveui/widgets/managesievewidget.cpp:244
 #, kde-format
 msgid "Empty name is not a valid name"
 msgstr "Un nome vuoto non è un nome valido"
 
-#: ksieveui/widgets/managesievewidget.cpp:250
+#: ksieveui/widgets/managesievewidget.cpp:251
 #, kde-format
 msgid "You cannot use protected name."
 msgstr "Impossibile usare un nome protetto."
 
-#: ksieveui/widgets/managesievewidget.cpp:261
+#: ksieveui/widgets/managesievewidget.cpp:262
 #, kde-format
 msgid "Script name already used \"%1\"."
 msgstr "Nome dello script già in uso: «%1»"
 
-#: ksieveui/widgets/managesievewidget.cpp:446
-#: ksieveui/widgets/managesievewidget.cpp:474
+#: ksieveui/widgets/managesievewidget.cpp:447
+#: ksieveui/widgets/managesievewidget.cpp:475
 #, kde-format
 msgid "Rename Script"
 msgstr "Rinomina script"
 
-#: ksieveui/widgets/managesievewidget.cpp:446
+#: ksieveui/widgets/managesievewidget.cpp:447
 #, kde-format
 msgid "Script Name:"
 msgstr "Nome dello script:"
 
-#: ksieveui/widgets/managesievewidget.cpp:509
+#: ksieveui/widgets/managesievewidget.cpp:510
 #, kde-format
 msgid "Really delete script \"%1\" from the server?"
 msgstr "Vuoi davvero eliminare lo script «%1» dal server?"
 
-#: ksieveui/widgets/managesievewidget.cpp:510
+#: ksieveui/widgets/managesievewidget.cpp:511
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Sieve Script Confirmation"
 msgstr "Conferma eliminazione di script"
 
-#: ksieveui/widgets/managesievewidget.cpp:528
+#: ksieveui/widgets/managesievewidget.cpp:529
 #, kde-format
 msgid ""
 "Deleting the script failed.\n"
@@ -3470,7 +3470,7 @@ msgstr ""
 "Il server ha risposto:\n"
 "%1"
 
-#: ksieveui/widgets/managesievewidget.cpp:580
+#: ksieveui/widgets/managesievewidget.cpp:581
 #, kde-format
 msgid "Failed to fetch the list of scripts"
 msgstr "Scaricamento dell'elenco di script non riuscito"
