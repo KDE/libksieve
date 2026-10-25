@@ -191,7 +191,6 @@ target_sources(
         autocreatescripts/sieveconditions/widgets/selectbodytypewidget.cpp
         autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp
         autocreatescripts/sieveconditions/widgets/selectcomparatorcombobox.cpp
-        autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp
         autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.cpp
         autocreatescripts/sieveconditions/widgets/selectsizewidget.cpp
         autocreatescripts/sieveconditions/widgets/sievedatespinbox.cpp
@@ -295,7 +294,6 @@ target_sources(
         autocreatescripts/sieveconditions/sieveconditionexists.h
         autocreatescripts/sieveconditions/sieveconditionmailboxexists.h
         autocreatescripts/sieveconditions/sieveconditionfalse.h
-        autocreatescripts/sieveconditions/widgets/selectmimecombobox.h
         autocreatescripts/sieveconditions/widgets/selectbodytypewidget.h
         autocreatescripts/sieveconditions/widgets/selectsizetypecombobox.h
         autocreatescripts/sieveconditions/widgets/selectcomparatorcombobox.h

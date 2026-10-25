@@ -65,8 +65,6 @@ target_sources(
 target_sources(
     KPim6KSieveCore
     PRIVATE
-        vacation/vacationhelperjob.cpp
-        vacation/vacationhelperjob.h
         vacation/vacationscriptextractor.cpp
         vacation/vacationscriptextractor.h
         vacation/vacationutils.cpp
