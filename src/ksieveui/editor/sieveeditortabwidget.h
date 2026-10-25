@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 #include <QTabWidget>
 class QUrl;
 
@@ -16,7 +16,7 @@ class SieveEditorHelpHtmlWidget;
  * \brief The SieveEditorTabWidget class
  * \author Laurent Montel <montel@kde.org>
  */
-class KSIEVEUI_EXPORT SieveEditorTabWidget : public QTabWidget
+class KSIEVEUI_TESTS_EXPORT SieveEditorTabWidget : public QTabWidget
 {
     Q_OBJECT
 public:

@@ -6,7 +6,7 @@
 #pragma once
 
 #include "config-libksieveui.h"
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 #include "sieveeditorabstractwidget.h"
 class QSplitter;
 namespace TextAddonsWidgets
@@ -47,7 +47,7 @@ class SieveTemplateWidget;
  * \brief The SieveEditorTextModeWidget class
  * \author Laurent Montel <montel@kde.org>
  */
-class KSIEVEUI_EXPORT SieveEditorTextModeWidget : public SieveEditorAbstractWidget
+class KSIEVEUI_TESTS_EXPORT SieveEditorTextModeWidget : public SieveEditorAbstractWidget
 {
     Q_OBJECT
 public:
