@@ -25,8 +25,8 @@ protected:
     void focusOutEvent(QFocusEvent *ev) override;
 
 private:
-    void slotTextChanged();
-    void verifyAddress();
+    KSIEVEUI_NO_EXPORT void slotTextChanged();
+    KSIEVEUI_NO_EXPORT void verifyAddress();
     QLineEdit *mLineEdit = nullptr;
     QString mNegativeBackground;
     bool mEmailIsInvalid = true;

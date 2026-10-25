@@ -32,6 +32,6 @@ protected:
     KSieveCore::SieveImapAccountSettings mSieveImapAccountSettings;
 
 private:
-    bool loadFromFile(const QString &filename);
+    KSIEVEUI_NO_EXPORT bool loadFromFile(const QString &filename);
 };
 }

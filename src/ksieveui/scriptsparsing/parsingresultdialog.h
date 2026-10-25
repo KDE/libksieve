@@ -23,10 +23,10 @@ public:
     void setResultParsing(const QString &result);
 
 private Q_SLOTS:
-    void slotSaveAs();
+    KSIEVEUI_NO_EXPORT void slotSaveAs();
 
 private:
-    void readConfig();
+    KSIEVEUI_NO_EXPORT void readConfig();
     TextCustomEditor::PlainTextEditorWidget *mTextEdit = nullptr;
 };
 }

@@ -183,7 +183,7 @@ protected:
     QMap<QTreeWidgetItem *, QUrl> mUrls;
 
 private:
-    void updateSieveSettingsFinished();
+    KSIEVEUI_NO_EXPORT void updateSieveSettingsFinished();
     enum sieveServerStatus {
         SIEVE_SERVER_ERROR = Qt::UserRole + 1,
         SIEVE_SERVER_CAPABILITIES = Qt::UserRole + 2,

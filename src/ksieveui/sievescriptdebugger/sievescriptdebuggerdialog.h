@@ -24,12 +24,12 @@ public:
     [[nodiscard]] QString script() const;
 
 private:
-    void slotScriptTextChanged();
-    void slotAccepted();
-    void writeConfig();
-    void readConfig();
-    void debugButtonEnableStateChanged(bool state);
-    void updateButtons();
+    KSIEVEUI_NO_EXPORT void slotScriptTextChanged();
+    KSIEVEUI_NO_EXPORT void slotAccepted();
+    KSIEVEUI_NO_EXPORT void writeConfig();
+    KSIEVEUI_NO_EXPORT void readConfig();
+    KSIEVEUI_NO_EXPORT void debugButtonEnableStateChanged(bool state);
+    KSIEVEUI_NO_EXPORT void updateButtons();
     QString mOriginScript;
     SieveScriptDebuggerWidget *mSieveScriptDebuggerWidget = nullptr;
     QPushButton *mOkButton = nullptr;

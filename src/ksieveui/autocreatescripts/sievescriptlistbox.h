@@ -56,17 +56,17 @@ Q_SIGNALS:
     void valueChanged();
 
 private:
-    void slotCustomMenuRequested(const QPoint &pos);
-    void slotNew();
-    void slotDelete();
-    void slotRename();
-    void updateButtons();
-    void slotEditDescription();
-    void slotItemClicked(QListWidgetItem *);
-    void slotTop();
-    void slotBottom();
-    void slotDown();
-    void slotUp();
+    KSIEVEUI_NO_EXPORT void slotCustomMenuRequested(const QPoint &pos);
+    KSIEVEUI_NO_EXPORT void slotNew();
+    KSIEVEUI_NO_EXPORT void slotDelete();
+    KSIEVEUI_NO_EXPORT void slotRename();
+    KSIEVEUI_NO_EXPORT void updateButtons();
+    KSIEVEUI_NO_EXPORT void slotEditDescription();
+    KSIEVEUI_NO_EXPORT void slotItemClicked(QListWidgetItem *);
+    KSIEVEUI_NO_EXPORT void slotTop();
+    KSIEVEUI_NO_EXPORT void slotBottom();
+    KSIEVEUI_NO_EXPORT void slotDown();
+    KSIEVEUI_NO_EXPORT void slotUp();
 
     enum ParseSieveScriptTypeBlock {
         TypeUnknown = 0,
@@ -79,8 +79,8 @@ private:
         TypeBlockForeachBlock
     };
 
-    void loadBlock(QXmlStreamReader &n, SieveScriptPage *currentPage, ParseSieveScriptTypeBlock typeBlock, QString &error);
-    void clear();
+    KSIEVEUI_NO_EXPORT void loadBlock(QXmlStreamReader &n, SieveScriptPage *currentPage, ParseSieveScriptTypeBlock typeBlock, QString &error);
+    KSIEVEUI_NO_EXPORT void clear();
     [[nodiscard]] SieveScriptPage *createNewScript(const QString &newName, const QString &description = QString());
     [[nodiscard]] QString createUniqName();
     SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;

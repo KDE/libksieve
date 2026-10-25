@@ -29,10 +29,10 @@ Q_SIGNALS:
     void switchToTextMode();
 
 private:
-    void slotSwitchInGraphicalMode();
-    void slotSwitchInTextMode();
-    void slotInActualMode();
-    void slotShowDetails(const QString &content);
+    KSIEVEUI_NO_EXPORT void slotSwitchInGraphicalMode();
+    KSIEVEUI_NO_EXPORT void slotSwitchInTextMode();
+    KSIEVEUI_NO_EXPORT void slotInActualMode();
+    KSIEVEUI_NO_EXPORT void slotShowDetails(const QString &content);
     QString mirrors;
     QString mScript;
 };

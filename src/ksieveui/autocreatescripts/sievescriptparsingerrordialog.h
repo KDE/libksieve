@@ -23,8 +23,8 @@ public:
     void setError(QString script, QString);
 
 private:
-    void slotSaveAs();
-    void readConfig();
+    KSIEVEUI_NO_EXPORT void slotSaveAs();
+    KSIEVEUI_NO_EXPORT void readConfig();
 
 private:
     TextCustomEditor::RichTextEditorWidget *const mTextEdit;

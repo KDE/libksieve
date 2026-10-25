@@ -96,10 +96,10 @@ Q_SIGNALS:
     void scriptActive(bool activated, const QString &serverName);
 
 private Q_SLOTS:
-    void slotPutResult(KManageSieve::SieveJob *job, bool success);
-    void slotGetScript(KManageSieve::SieveJob *job, bool success, const QString &oldScript, bool active);
-    void slotGotActiveScripts(KSieveCore::ParseUserScriptJob *job);
-    void slotGenerateDone(const QString &error = QString());
+    KSIEVECORE_NO_EXPORT void slotPutResult(KManageSieve::SieveJob *job, bool success);
+    KSIEVECORE_NO_EXPORT void slotGetScript(KManageSieve::SieveJob *job, bool success, const QString &oldScript, bool active);
+    KSIEVECORE_NO_EXPORT void slotGotActiveScripts(KSieveCore::ParseUserScriptJob *job);
+    KSIEVECORE_NO_EXPORT void slotGenerateDone(const QString &error = QString());
 
 private:
     KSIEVECORE_NO_EXPORT void handleResult();

@@ -25,7 +25,7 @@ public:
     [[nodiscard]] QString code() const;
 
 private:
-    QString convertValue() const;
+    KSIEVEUI_NO_EXPORT QString convertValue() const;
     SelectDateWidget::DateType mType = SelectDateWidget::Year;
 };
 }

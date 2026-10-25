@@ -39,8 +39,8 @@ Q_SIGNALS:
     void valueChanged();
 
 private Q_SLOTS:
-    void slotAddNewBlock(QWidget *widget, KSieveUi::SieveWidgetPageAbstract::PageType type);
-    void slotCloseTab(int);
+    KSIEVEUI_NO_EXPORT void slotAddNewBlock(QWidget *widget, KSieveUi::SieveWidgetPageAbstract::PageType type);
+    KSIEVEUI_NO_EXPORT void slotCloseTab(int);
 
 private:
     [[nodiscard]] SieveScriptBlockWidget *createScriptBlock(KSieveUi::SieveWidgetPageAbstract::PageType type);

@@ -21,7 +21,7 @@ public:
     [[nodiscard]] bool setRegularExpressionPattern(const QString &pattern);
 
 private:
-    void initialize();
+    KSIEVEUI_NO_EXPORT void initialize();
     QRegularExpressionValidator *mValidator = nullptr;
 };
 }

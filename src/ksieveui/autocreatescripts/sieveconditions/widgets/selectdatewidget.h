@@ -45,11 +45,11 @@ Q_SIGNALS:
     void valueChanged();
 
 private:
-    void slotDateTypeActivated(int);
-    SelectDateWidget::DateType dateTypeFromString(const QString &str);
-    void initialize();
-    QString dateType(DateType type) const;
-    QString dateValue(DateType type) const;
+    KSIEVEUI_NO_EXPORT void slotDateTypeActivated(int);
+    KSIEVEUI_NO_EXPORT SelectDateWidget::DateType dateTypeFromString(const QString &str);
+    KSIEVEUI_NO_EXPORT void initialize();
+    KSIEVEUI_NO_EXPORT QString dateType(DateType type) const;
+    KSIEVEUI_NO_EXPORT QString dateValue(DateType type) const;
     QComboBox *mDateType = nullptr;
     QLineEdit *mDateLineEdit = nullptr;
     SieveDateSpinBox *mDateValue = nullptr;

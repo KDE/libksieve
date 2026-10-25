@@ -39,8 +39,8 @@ Q_SIGNALS:
     void wasChanged();
 
 private:
-    void selectMailActionWidget(KSieveCore::VacationUtils::MailAction action);
-    void setText(const QString &recipient);
+    KSIEVEUI_NO_EXPORT void selectMailActionWidget(KSieveCore::VacationUtils::MailAction action);
+    KSIEVEUI_NO_EXPORT void setText(const QString &recipient);
 
     QStackedWidget *mStackedWidget = nullptr;
     AbstractMoveImapFolderWidget *mMoveImapFolderWidget = nullptr;

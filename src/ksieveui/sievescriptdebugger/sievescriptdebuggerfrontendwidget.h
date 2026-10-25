@@ -41,15 +41,15 @@ Q_SIGNALS:
     void debugButtonEnabled(bool state);
 
 private Q_SLOTS:
-    void slotDebugScript();
-    void slotEmailChanged(const QString &text);
-    void slotReadStandardOutput();
-    void slotReadErrorOutput();
-    void slotDebugFinished();
-    void slotScriptTextChanged();
+    KSIEVEUI_NO_EXPORT void slotDebugScript();
+    KSIEVEUI_NO_EXPORT void slotEmailChanged(const QString &text);
+    KSIEVEUI_NO_EXPORT void slotReadStandardOutput();
+    KSIEVEUI_NO_EXPORT void slotReadErrorOutput();
+    KSIEVEUI_NO_EXPORT void slotDebugFinished();
+    KSIEVEUI_NO_EXPORT void slotScriptTextChanged();
 
 private:
-    void updateDebugButton();
+    KSIEVEUI_NO_EXPORT void updateDebugButton();
     KSieveUi::SieveTextEditWidget *mSieveTextEditWidget = nullptr;
     KSieveUi::SieveScriptDebuggerWarning *mSieveScriptDebuggerWarning = nullptr;
     TextCustomEditor::PlainTextEditorWidget *mSieveTestResult = nullptr;

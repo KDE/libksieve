@@ -109,11 +109,11 @@ public:
     void setChanged(bool changed);
 
 private Q_SLOTS:
-    void slotIntervalSpinChanged(int value);
-    void mailActionChanged(int index);
+    KSIEVEUI_NO_EXPORT void slotIntervalSpinChanged(int value);
+    KSIEVEUI_NO_EXPORT void mailActionChanged(int index);
 
 private:
-    void setWasChanged();
+    KSIEVEUI_NO_EXPORT void setWasChanged();
 
 protected:
     QCheckBox *mActiveCheck = nullptr;

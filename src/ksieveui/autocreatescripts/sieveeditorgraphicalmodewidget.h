@@ -42,14 +42,14 @@ Q_SIGNALS:
     void valueChanged();
 
 private:
-    void readConfig();
-    void writeConfig();
+    KSIEVEUI_NO_EXPORT void readConfig();
+    KSIEVEUI_NO_EXPORT void writeConfig();
 
 private Q_SLOTS:
-    void slotSwitchToTextMode();
-    void slotAddScriptPage(KSieveUi::SieveScriptPage *page);
-    void slotRemoveScriptPage(QWidget *page);
-    void slotActivateScriptPage(QWidget *page);
+    KSIEVEUI_NO_EXPORT void slotSwitchToTextMode();
+    KSIEVEUI_NO_EXPORT void slotAddScriptPage(KSieveUi::SieveScriptPage *page);
+    KSIEVEUI_NO_EXPORT void slotRemoveScriptPage(QWidget *page);
+    KSIEVEUI_NO_EXPORT void slotActivateScriptPage(QWidget *page);
 
 private:
     QStringList mCapabilities;
