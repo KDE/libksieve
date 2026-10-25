@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 
 #include <QDialog>
 namespace KSieveCore
@@ -23,7 +23,7 @@ class SieveEditorGraphicalModeWidget;
  * \inmodule KSieveUi
  * \inheaderfile KSieveUi/AutoCreateScriptDialog
  */
-class KSIEVEUI_EXPORT AutoCreateScriptDialog : public QDialog
+class KSIEVEUI_TESTS_EXPORT AutoCreateScriptDialog : public QDialog
 {
     Q_OBJECT
 public:

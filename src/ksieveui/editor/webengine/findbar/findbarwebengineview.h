@@ -6,7 +6,7 @@
 #pragma once
 
 #include "findbarbase.h"
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 #include <memory>
 
 class QWebEngineView;
@@ -18,7 +18,7 @@ class FindBarWebEngineViewPrivate;
  * \brief The FindBarWebEngineView class
  * \author Laurent Montel <montel@kde.org>
  */
-class KSIEVEUI_EXPORT FindBarWebEngineView : public FindBarBase
+class KSIEVEUI_TESTS_EXPORT FindBarWebEngineView : public FindBarBase
 {
     Q_OBJECT
 public:

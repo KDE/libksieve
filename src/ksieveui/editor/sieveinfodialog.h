@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 #include <QDialog>
 namespace KSieveUi
 {
@@ -16,7 +16,7 @@ class SieveInfoWidget;
  * \brief The SieveInfoDialog class
  * \author Laurent Montel <montel@kde.org>
  */
-class KSIEVEUI_EXPORT SieveInfoDialog : public QDialog
+class KSIEVEUI_TESTS_EXPORT SieveInfoDialog : public QDialog
 {
     Q_OBJECT
 public:

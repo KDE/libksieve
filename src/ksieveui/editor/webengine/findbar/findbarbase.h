@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 #include <QWidget>
 class QAction;
 class QPushButton;
@@ -22,7 +22,7 @@ namespace KSieveUi
  * \brief The FindBarBase class*
  * \author Laurent Montel <montel@kde.org>
  */
-class KSIEVEUI_EXPORT FindBarBase : public QWidget
+class KSIEVEUI_TESTS_EXPORT FindBarBase : public QWidget
 {
     Q_OBJECT
 public:

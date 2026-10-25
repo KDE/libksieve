@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 #include <QWidget>
 class QStackedWidget;
 class QLabel;
@@ -20,7 +20,7 @@ class SieveScriptDebuggerFrontEndWidget;
  * \inmodule KSieveUi
  * \inheaderfile KSieveUi/SieveScriptDebuggerWidget
  */
-class KSIEVEUI_EXPORT SieveScriptDebuggerWidget : public QWidget
+class KSIEVEUI_TESTS_EXPORT SieveScriptDebuggerWidget : public QWidget
 {
     Q_OBJECT
 public:

@@ -5,7 +5,7 @@
 
 #pragma once
 #include "config-libksieveui.h"
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 #include <TextCustomEditor/PlainTextEditor>
 #include <memory>
 
@@ -21,7 +21,7 @@ class SieveTextEditPrivate;
  * \brief The SieveTextEdit class
  * \author Laurent Montel <montel@kde.org>
  */
-class KSIEVEUI_EXPORT SieveTextEdit : public TextCustomEditor::PlainTextEditor
+class KSIEVEUI_TESTS_EXPORT SieveTextEdit : public TextCustomEditor::PlainTextEditor
 {
     Q_OBJECT
 

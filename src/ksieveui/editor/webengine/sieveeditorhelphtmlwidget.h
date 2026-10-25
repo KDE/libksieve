@@ -5,7 +5,7 @@
 */
 #pragma once
 
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 #include <QWidget>
 class QUrl;
 
@@ -23,7 +23,7 @@ class FindBarWebEngineView;
  * \brief The SieveEditorHelpHtmlWidget class
  * \author Laurent Montel <montel@kde.org>
  */
-class KSIEVEUI_EXPORT SieveEditorHelpHtmlWidget : public QWidget
+class KSIEVEUI_TESTS_EXPORT SieveEditorHelpHtmlWidget : public QWidget
 {
     Q_OBJECT
 public:

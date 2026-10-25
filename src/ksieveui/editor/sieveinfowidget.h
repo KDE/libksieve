@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "ksieveui_export.h"
+#include "ksieveui_private_export.h"
 #include <QWidget>
 class QTextEdit;
 
@@ -16,7 +16,7 @@ namespace KSieveUi
  * \brief The SieveInfoWidget class
  * \author Laurent Montel <montel@kde.org>
  */
-class KSIEVEUI_EXPORT SieveInfoWidget : public QWidget
+class KSIEVEUI_TESTS_EXPORT SieveInfoWidget : public QWidget
 {
     Q_OBJECT
 public:
