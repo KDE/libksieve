@@ -81,8 +81,8 @@ private:
 
     KSIEVEUI_NO_EXPORT void loadBlock(QXmlStreamReader &n, SieveScriptPage *currentPage, ParseSieveScriptTypeBlock typeBlock, QString &error);
     KSIEVEUI_NO_EXPORT void clear();
-    [[nodiscard]] SieveScriptPage *createNewScript(const QString &newName, const QString &description = QString());
-    [[nodiscard]] QString createUniqName();
+    [[nodiscard]] KSIEVEUI_NO_EXPORT SieveScriptPage *createNewScript(const QString &newName, const QString &description = QString());
+    [[nodiscard]] KSIEVEUI_NO_EXPORT QString createUniqName();
     SieveEditorGraphicalModeWidget *mSieveGraphicalModeWidget = nullptr;
     QListWidget *const mSieveListScript;
     QPushButton *mBtnNew = nullptr;

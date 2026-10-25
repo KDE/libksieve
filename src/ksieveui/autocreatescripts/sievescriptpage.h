@@ -43,9 +43,9 @@ private Q_SLOTS:
     KSIEVEUI_NO_EXPORT void slotCloseTab(int);
 
 private:
-    [[nodiscard]] SieveScriptBlockWidget *createScriptBlock(KSieveUi::SieveWidgetPageAbstract::PageType type);
-    [[nodiscard]] bool hasAnElseBlock() const;
-    [[nodiscard]] QString blockName(SieveWidgetPageAbstract::PageType type) const;
+    [[nodiscard]] KSIEVEUI_NO_EXPORT SieveScriptBlockWidget *createScriptBlock(KSieveUi::SieveWidgetPageAbstract::PageType type);
+    [[nodiscard]] KSIEVEUI_NO_EXPORT bool hasAnElseBlock() const;
+    [[nodiscard]] KSIEVEUI_NO_EXPORT QString blockName(SieveWidgetPageAbstract::PageType type) const;
 
     SieveEditorGraphicalModeWidget *const mSieveGraphicalModeWidget;
     SieveScriptTabWidget *mTabWidget = nullptr;

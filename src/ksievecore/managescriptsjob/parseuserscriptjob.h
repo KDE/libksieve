@@ -91,8 +91,8 @@ private:
     KSIEVECORE_NO_EXPORT void slotGetResult(KManageSieve::SieveJob *job, bool, const QString &, bool);
     KSIEVECORE_NO_EXPORT void emitSuccess(const QStringList &activeScriptList);
     KSIEVECORE_NO_EXPORT void emitError(const QString &msgError);
-    [[nodiscard]] QString loadInclude();
-    [[nodiscard]] QStringList extractActiveScript(const QString &doc);
+    [[nodiscard]] KSIEVECORE_NO_EXPORT QString loadInclude();
+    [[nodiscard]] KSIEVECORE_NO_EXPORT QStringList extractActiveScript(const QString &doc);
     const QUrl mCurrentUrl;
     KManageSieve::SieveJob *mSieveJob = nullptr;
     QXmlStreamReader *mStreamReader = nullptr;
