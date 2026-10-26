@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2025-09-26 14:00+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1983,26 +1983,6 @@ msgstr "Brevidentifikation"
 msgid "Content type"
 msgstr "Innehållstyp"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "Typ"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "Undertyp"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "Godtyckligt underliggande objekt"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "Parametrar"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3443,6 +3423,18 @@ msgstr "Misslyckades hämta listan över skript"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Definiera korg"
+
+#~ msgid "Type"
+#~ msgstr "Typ"
+
+#~ msgid "Subtype"
+#~ msgstr "Undertyp"
+
+#~ msgid "Anychild"
+#~ msgstr "Godtyckligt underliggande objekt"
+
+#~ msgid "Parameters"
+#~ msgstr "Parametrar"
 
 #~ msgid "..."
 #~ msgstr "..."

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2013-10-16 04:43+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -2021,26 +2021,6 @@ msgstr "Хат идентификаторы"
 msgid "Content type"
 msgstr "Мазмұны түрі"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "Түрі"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "Бағыныңқы түрі"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "Кез-келген еншілес"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "Параметрлері"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3621,6 +3601,18 @@ msgstr "Скрипттер тізімін алу жаңылысы"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Қапшықты құру"
+
+#~ msgid "Type"
+#~ msgstr "Түрі"
+
+#~ msgid "Subtype"
+#~ msgstr "Бағыныңқы түрі"
+
+#~ msgid "Anychild"
+#~ msgstr "Кез-келген еншілес"
+
+#~ msgid "Parameters"
+#~ msgstr "Параметрлері"
 
 #~ msgid "..."
 #~ msgstr "..."

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2017-12-31 22:42+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -2030,26 +2030,6 @@ msgstr "ID poruke"
 msgid "Content type"
 msgstr "tip sadržaja"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "tip"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "podtip"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "neko dete"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "parametri"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3647,6 +3627,18 @@ msgstr "Ne mogu da preuzmem spisak skripti"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Napravi fasciklu"
+
+#~ msgid "Type"
+#~ msgstr "tip"
+
+#~ msgid "Subtype"
+#~ msgstr "podtip"
+
+#~ msgid "Anychild"
+#~ msgstr "neko dete"
+
+#~ msgid "Parameters"
+#~ msgstr "parametri"
 
 #~ msgid "..."
 #~ msgstr "..."

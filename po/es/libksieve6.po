@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2025-09-25 00:14+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -2011,26 +2011,6 @@ msgstr "Id. de mensaje"
 msgid "Content type"
 msgstr "Tipo de contenido"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "Tipo"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "Subtipo"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "Cualquier hijo"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "Parámetros"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3475,3 +3455,15 @@ msgstr "Ha fallado al obtener la lista de guiones"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Definir carpeta"
+
+#~ msgid "Type"
+#~ msgstr "Tipo"
+
+#~ msgid "Subtype"
+#~ msgstr "Subtipo"
+
+#~ msgid "Anychild"
+#~ msgstr "Cualquier hijo"
+
+#~ msgid "Parameters"
+#~ msgstr "Parámetros"

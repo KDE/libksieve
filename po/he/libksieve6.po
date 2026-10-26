@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2026-04-21 14:10+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1925,26 +1925,6 @@ msgstr "מזהה הודעה"
 msgid "Content type"
 msgstr "סוג תוכן"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "סוג"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "תת־סוג"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "לכל צאצא"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "משתנים"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3379,3 +3359,15 @@ msgstr "משיכת רשימת הסקריפטים נכשלה"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "הגדרת תיקייה"
+
+#~ msgid "Type"
+#~ msgstr "סוג"
+
+#~ msgid "Subtype"
+#~ msgstr "תת־סוג"
+
+#~ msgid "Anychild"
+#~ msgstr "לכל צאצא"
+
+#~ msgid "Parameters"
+#~ msgstr "משתנים"

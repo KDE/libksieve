@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2024-08-03 12:46+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -1954,26 +1954,6 @@ msgstr "Message ID"
 msgid "Content type"
 msgstr "Content type"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "Type"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "Subtype"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "Anychild"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "Parameters"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3414,6 +3394,18 @@ msgstr "Failed to fetch the list of scripts"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Define Folder"
+
+#~ msgid "Type"
+#~ msgstr "Type"
+
+#~ msgid "Subtype"
+#~ msgstr "Subtype"
+
+#~ msgid "Anychild"
+#~ msgstr "Anychild"
+
+#~ msgid "Parameters"
+#~ msgstr "Parameters"
 
 #~ msgid "..."
 #~ msgstr "..."

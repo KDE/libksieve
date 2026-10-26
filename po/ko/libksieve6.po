@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2026-05-26 21:41+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1922,26 +1922,6 @@ msgstr "메시지 ID"
 msgid "Content type"
 msgstr "콘텐츠 형식"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "종류"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "하위형식"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "임의의 자식"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "인자"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3378,6 +3358,18 @@ msgstr "스크립트 목록을 가져올 수 없음"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "폴더 정의"
+
+#~ msgid "Type"
+#~ msgstr "종류"
+
+#~ msgid "Subtype"
+#~ msgstr "하위형식"
+
+#~ msgid "Anychild"
+#~ msgstr "임의의 자식"
+
+#~ msgid "Parameters"
+#~ msgstr "인자"
 
 #~ msgid "..."
 #~ msgstr "..."

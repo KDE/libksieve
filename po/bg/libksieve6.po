@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2025-09-26 15:16+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1998,26 +1998,6 @@ msgstr "Идентификатор на съобщението"
 msgid "Content type"
 msgstr "Вид съдържание"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "Вид"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "Подтип"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "Anychild"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "Параметри"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3464,3 +3444,15 @@ msgstr "Неуспешно извличане на списъка със скр�
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Задаване на папка"
+
+#~ msgid "Type"
+#~ msgstr "Вид"
+
+#~ msgid "Subtype"
+#~ msgstr "Подтип"
+
+#~ msgid "Anychild"
+#~ msgstr "Anychild"
+
+#~ msgid "Parameters"
+#~ msgstr "Параметри"

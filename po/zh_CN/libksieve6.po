@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1824,26 +1824,6 @@ msgstr "信件编号"
 msgid "Content type"
 msgstr "内容类型"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "文件系统"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "子类型"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "任意子选项"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "参数"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3237,3 +3217,15 @@ msgstr "未能获取脚本列表"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr ""
+
+#~ msgid "Type"
+#~ msgstr "文件系统"
+
+#~ msgid "Subtype"
+#~ msgstr "子类型"
+
+#~ msgid "Anychild"
+#~ msgstr "任意子选项"
+
+#~ msgid "Parameters"
+#~ msgstr "参数"

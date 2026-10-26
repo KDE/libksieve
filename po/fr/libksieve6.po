@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2025-09-25 11:27+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -2037,26 +2037,6 @@ msgstr "ID du message"
 msgid "Content type"
 msgstr "Type de contenu"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "Type"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "Sous-type"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "Tous les enfants"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "Paramètres"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3508,6 +3488,18 @@ msgstr "Impossible d'extraire la liste des scripts"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Définir le dossier"
+
+#~ msgid "Type"
+#~ msgstr "Type"
+
+#~ msgid "Subtype"
+#~ msgstr "Sous-type"
+
+#~ msgid "Anychild"
+#~ msgstr "Tous les enfants"
+
+#~ msgid "Parameters"
+#~ msgstr "Paramètres"
 
 #~ msgid "..."
 #~ msgstr "..."

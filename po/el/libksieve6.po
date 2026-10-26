@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2014-03-26 01:10+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1903,26 +1903,6 @@ msgstr "Αναγνωριστικό μηνύματος"
 msgid "Content type"
 msgstr "Τύπος περιεχομένου"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "Τύπος"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "Υπό-τύπος"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "Anychild"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "Παράμετροι"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3418,6 +3398,18 @@ msgstr "Αποτυχία προσκόμισης της λίστας σεναρί
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Δημιουργία φακέλου"
+
+#~ msgid "Type"
+#~ msgstr "Τύπος"
+
+#~ msgid "Subtype"
+#~ msgstr "Υπό-τύπος"
+
+#~ msgid "Anychild"
+#~ msgstr "Anychild"
+
+#~ msgid "Parameters"
+#~ msgstr "Παράμετροι"
 
 #~ msgid "..."
 #~ msgstr "..."

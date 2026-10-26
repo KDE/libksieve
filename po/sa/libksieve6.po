@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2024-12-25 19:37+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1927,26 +1927,6 @@ msgstr "सन्देश Id"
 msgid "Content type"
 msgstr "सामग्रीप्रकारः"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "प्रकारः"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "उपप्रकारः"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "कोऽपि बालकः"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "पैरामीटर्"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3386,3 +3366,15 @@ msgstr "स्क्रिप्ट्-सूचीं आनेतुं अस
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "पुटं परिभाषयन्तु"
+
+#~ msgid "Type"
+#~ msgstr "प्रकारः"
+
+#~ msgid "Subtype"
+#~ msgstr "उपप्रकारः"
+
+#~ msgid "Anychild"
+#~ msgstr "कोऽपि बालकः"
+
+#~ msgid "Parameters"
+#~ msgstr "पैरामीटर्"

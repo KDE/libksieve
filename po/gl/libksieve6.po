@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2024-08-03 12:20+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1998,26 +1998,6 @@ msgstr "Identificador da mensaxe"
 msgid "Content type"
 msgstr "Tipo de contido"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "Tipo"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "Subtipo"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "Calquera_fillo"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "Parámetros"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3462,6 +3442,18 @@ msgstr "Non foi posíbel obter a lista de guións"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Definir un cartafol"
+
+#~ msgid "Type"
+#~ msgstr "Tipo"
+
+#~ msgid "Subtype"
+#~ msgstr "Subtipo"
+
+#~ msgid "Anychild"
+#~ msgstr "Calquera_fillo"
+
+#~ msgid "Parameters"
+#~ msgstr "Parámetros"
 
 #~ msgid "..."
 #~ msgstr "…"

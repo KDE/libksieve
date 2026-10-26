@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2025-09-24 19:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -2030,26 +2030,6 @@ msgstr "ID del missatge"
 msgid "Content type"
 msgstr "Tipus de contingut"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "Tipus"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "Subtipus"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "Qualsevol fill"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "Paràmetres"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3499,3 +3479,15 @@ msgstr "Ha fallat mentre es recuperava la llista de scripts"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Definix la carpeta"
+
+#~ msgid "Type"
+#~ msgstr "Tipus"
+
+#~ msgid "Subtype"
+#~ msgstr "Subtipus"
+
+#~ msgid "Anychild"
+#~ msgstr "Qualsevol fill"
+
+#~ msgid "Parameters"
+#~ msgstr "Paràmetres"

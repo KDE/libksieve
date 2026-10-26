@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2026-05-13 15:12+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1825,26 +1825,6 @@ msgstr "Id de message"
 msgid "Content type"
 msgstr "Typo de Contento"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "Typo"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "Subtypo"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr ""
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "Parametros"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3259,6 +3239,15 @@ msgstr "Il falleva a reportar le lista de scripts"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Define dossier"
+
+#~ msgid "Type"
+#~ msgstr "Typo"
+
+#~ msgid "Subtype"
+#~ msgstr "Subtypo"
+
+#~ msgid "Parameters"
+#~ msgstr "Parametros"
 
 #~ msgid "..."
 #~ msgstr "... "

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 3.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2025-11-07 21:26+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1982,26 +1982,6 @@ msgstr "Üzenetazonosító"
 msgid "Content type"
 msgstr "Tartalomtípus"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "Típus"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "Altípus"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "Bármely gyermek"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "Paraméterek"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3448,6 +3428,18 @@ msgstr "Nem sikerült letölteni a parancsfájlok listáját"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Mappa megadása"
+
+#~ msgid "Type"
+#~ msgstr "Típus"
+
+#~ msgid "Subtype"
+#~ msgstr "Altípus"
+
+#~ msgid "Anychild"
+#~ msgstr "Bármely gyermek"
+
+#~ msgid "Parameters"
+#~ msgstr "Paraméterek"
 
 #~ msgid "..."
 #~ msgstr "…"

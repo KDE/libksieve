@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2017-12-31 22:42+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -2019,26 +2019,6 @@ msgstr "ИД поруке"
 msgid "Content type"
 msgstr "тип садржаја"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "тип"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "подтип"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "неко дете"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "параметри"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3636,6 +3616,18 @@ msgstr "Не могу да преузмем списак скрипти"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Направи фасциклу"
+
+#~ msgid "Type"
+#~ msgstr "тип"
+
+#~ msgid "Subtype"
+#~ msgstr "подтип"
+
+#~ msgid "Anychild"
+#~ msgstr "неко дете"
+
+#~ msgid "Parameters"
+#~ msgstr "параметри"
 
 #~ msgid "..."
 #~ msgstr "..."

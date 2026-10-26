@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2024-09-13 16:06+0200\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -2007,26 +2007,6 @@ msgstr "Nachrichtenkennung"
 msgid "Content type"
 msgstr "Inhaltstyp"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "Typ"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "Untertyp"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "Anychild"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "Parameter"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3477,6 +3457,18 @@ msgstr "Die Liste der Skripte kann nicht abgeholt werden"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Ordner festlegen"
+
+#~ msgid "Type"
+#~ msgstr "Typ"
+
+#~ msgid "Subtype"
+#~ msgstr "Untertyp"
+
+#~ msgid "Anychild"
+#~ msgstr "Anychild"
+
+#~ msgid "Parameters"
+#~ msgstr "Parameter"
 
 #~ msgid "..."
 #~ msgstr "..."

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2025-09-27 11:40+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2001,26 +2001,6 @@ msgstr "Mezuaren ID"
 msgid "Content type"
 msgstr "Eduki mota"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "Mota"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "Azpimota"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "Haurretako edozein"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "Parametroak"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3468,6 +3448,18 @@ msgstr "Gidoien zerrenda eskuratzea huts egin du"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Definitu karpeta"
+
+#~ msgid "Type"
+#~ msgstr "Mota"
+
+#~ msgid "Subtype"
+#~ msgstr "Azpimota"
+
+#~ msgid "Anychild"
+#~ msgstr "Haurretako edozein"
+
+#~ msgid "Parameters"
+#~ msgstr "Parametroak"
 
 #~ msgid "..."
 #~ msgstr "..."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2025-09-24 07:15+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1977,26 +1977,6 @@ msgstr "შეტყობინების ID"
 msgid "Content type"
 msgstr "შემცველობის ტიპი"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "ტიპი"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "ქვეტიპი"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "ნებისმიერი შვიი"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "პარამეტრები"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3435,6 +3415,18 @@ msgstr "სკრიპტების სიის გამოთხოვა 
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "საქაღალდის აღწერა"
+
+#~ msgid "Type"
+#~ msgstr "ტიპი"
+
+#~ msgid "Subtype"
+#~ msgstr "ქვეტიპი"
+
+#~ msgid "Anychild"
+#~ msgstr "ნებისმიერი შვიი"
+
+#~ msgid "Parameters"
+#~ msgstr "პარამეტრები"
 
 #~ msgid "..."
 #~ msgstr "..."

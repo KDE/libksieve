@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2026-09-23 06:56+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -1785,26 +1785,6 @@ msgstr "ئۇچۇر كىملىكى(Id)"
 msgid "Content type"
 msgstr "مەزمۇن تىپى"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "تۈرى"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "تارماق تىپ"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr ""
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "پارامېتىر"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3191,6 +3171,15 @@ msgstr ""
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr ""
+
+#~ msgid "Type"
+#~ msgstr "تۈرى"
+
+#~ msgid "Subtype"
+#~ msgstr "تارماق تىپ"
+
+#~ msgid "Parameters"
+#~ msgstr "پارامېتىر"
 
 #~ msgid "..."
 #~ msgstr "…"

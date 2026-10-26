@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2025-11-08 08:54+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -1990,26 +1990,6 @@ msgstr "Id wiadomości"
 msgid "Content type"
 msgstr "Rodzaj zawartości"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "Typ"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "Podtyp"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "Jakikolwiek podrzędny"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "Parametry"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3455,6 +3435,18 @@ msgstr "Nieudane pobranie listy skryptów"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Określ katalog"
+
+#~ msgid "Type"
+#~ msgstr "Typ"
+
+#~ msgid "Subtype"
+#~ msgstr "Podtyp"
+
+#~ msgid "Anychild"
+#~ msgstr "Jakikolwiek podrzędny"
+
+#~ msgid "Parameters"
+#~ msgstr "Parametry"
 
 #~ msgid "..."
 #~ msgstr "..."

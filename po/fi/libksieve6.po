@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-26 00:50+0000\n"
 "PO-Revision-Date: 2025-10-31 20:06+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -2007,26 +2007,6 @@ msgstr "Viestin tunniste"
 msgid "Content type"
 msgstr "Sisällön tyyppi"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:26
-#, kde-format
-msgid "Type"
-msgstr "Tyyppi"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:27
-#, kde-format
-msgid "Subtype"
-msgstr "Alityyppi"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:28
-#, kde-format
-msgid "Anychild"
-msgstr "JokinPerillinen"
-
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectmimecombobox.cpp:29
-#, kde-format
-msgid "Parameters"
-msgstr "Parametrit"
-
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectrelationalmatchtype.cpp:57
 #, kde-format
 msgid "Value"
@@ -3467,6 +3447,18 @@ msgstr "Skriptiluettelon nouto epäonnistui"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Määritä kansio"
+
+#~ msgid "Type"
+#~ msgstr "Tyyppi"
+
+#~ msgid "Subtype"
+#~ msgstr "Alityyppi"
+
+#~ msgid "Anychild"
+#~ msgstr "JokinPerillinen"
+
+#~ msgid "Parameters"
+#~ msgstr "Parametrit"
 
 #~ msgid "..."
 #~ msgstr "…"
