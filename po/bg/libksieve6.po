@@ -3444,15 +3444,3 @@ msgstr "Неуспешно извличане на списъка със скр�
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Задаване на папка"
-
-#~ msgid "Type"
-#~ msgstr "Вид"
-
-#~ msgid "Subtype"
-#~ msgstr "Подтип"
-
-#~ msgid "Anychild"
-#~ msgstr "Anychild"
-
-#~ msgid "Parameters"
-#~ msgstr "Параметри"

@@ -3360,15 +3360,3 @@ msgstr "Klarte ikke å hente lista over skripter"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Opprett mappe"
-
-#~ msgid "Type"
-#~ msgstr "Type"
-
-#~ msgid "Subtype"
-#~ msgstr "Undertype"
-
-#~ msgid "Anychild"
-#~ msgstr "EtBarn"
-
-#~ msgid "Parameters"
-#~ msgstr "Parametre"

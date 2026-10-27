@@ -3169,12 +3169,3 @@ msgstr ""
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr ""
-
-#~ msgid "Type"
-#~ msgstr "Šládja"
-
-#~ msgid "Subtype"
-#~ msgstr "Vuollešládja"
-
-#~ msgid "Parameters"
-#~ msgstr "Paramehterat"

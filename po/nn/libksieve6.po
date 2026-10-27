@@ -3176,9 +3176,3 @@ msgstr ""
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr ""
-
-#~ msgid "Type"
-#~ msgstr "Type"
-
-#~ msgid "Subtype"
-#~ msgstr "Undertype"
