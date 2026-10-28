@@ -18,10 +18,10 @@ navigation.landingpage = "KSieveCore"
 
 qhp.projects            = sievecore
 
-qhp.sievecore.file                = sievecore.qhp
-qhp.sievecore.namespace           = org.kde.sievecore.$QT_VERSION_TAG
-qhp.sievecore.virtualFolder       = sievecore
-qhp.sievecore.indexTitle          = sievecore
+qhp.sievecore.file                = ksievecore.qhp
+qhp.sievecore.namespace           = org.kde.ksievecore.$QT_VERSION_TAG
+qhp.sievecore.virtualFolder       = ksievecore
+qhp.sievecore.indexTitle          = KSieveCore
 qhp.sievecore.indexRoot           =
 
 qhp.sievecore.subprojects         = classes
@@ -30,4 +30,4 @@ qhp.sievecore.subprojects.classes.indexTitle = KSieve Core C++ Classes
 qhp.sievecore.subprojects.classes.selectors = class fake:headerfile
 qhp.sievecore.subprojects.classes.sortPages = true
 
-tagfile = sievecore.tags
+tagfile = ksievecore.tags

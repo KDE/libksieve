@@ -18,10 +18,10 @@ navigation.landingpage = "KSieveUi"
 
 qhp.projects            = sieveui
 
-qhp.sieveui.file                = sieveui.qhp
-qhp.sieveui.namespace           = org.kde.sieveui.$QT_VERSION_TAG
-qhp.sieveui.virtualFolder       = sieveui
-qhp.sieveui.indexTitle          = sieveui
+qhp.sieveui.file                = ksieveui.qhp
+qhp.sieveui.namespace           = org.kde.ksieveui.$QT_VERSION_TAG
+qhp.sieveui.virtualFolder       = ksieveui
+qhp.sieveui.indexTitle          = KSieveUi
 qhp.sieveui.indexRoot           =
 
 qhp.sieveui.subprojects         = classes
@@ -30,4 +30,4 @@ qhp.sieveui.subprojects.classes.indexTitle = KSieve Ui C++ Classes
 qhp.sieveui.subprojects.classes.selectors = class fake:headerfile
 qhp.sieveui.subprojects.classes.sortPages = true
 
-tagfile = sieveui.tags
+tagfile = ksieveui.tags
