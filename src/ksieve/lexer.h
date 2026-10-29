@@ -40,14 +40,6 @@ public:
     **/
     bool ignoreComments() const;
 
-    /** Return whether line feeds are returned by @ref
-        nextToken. Default is to not ignore line feeds. Ignoring them
-        can speed up script parsing a bit, and can be used when the
-        internal representation of the script won't be serialized into
-        string form again.
-    **/
-    bool ignoreLineFeeds() const;
-
     const Error &error() const;
 
     bool atEnd() const;

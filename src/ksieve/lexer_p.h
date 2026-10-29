@@ -199,7 +199,5 @@ private:
             ++mState.cursor;
         }
     }
-
-    void skipToDelim();
 };
 }

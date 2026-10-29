@@ -78,7 +78,6 @@ private:
     KSIEVEUI_NO_EXPORT void slotNewScript(const ManageSieveWidget::ScriptInfo &info);
     KSIEVEUI_NO_EXPORT void slotCheckScriptFinished(const QString &errorMsg, bool success);
 
-    KSIEVEUI_NO_EXPORT void updateButtons(QTreeWidgetItem *item);
     KSIEVEUI_NO_EXPORT void disableManagerScriptsDialog(bool disable);
 
 private:
