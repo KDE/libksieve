@@ -56,7 +56,7 @@ static uint parseQuantity(const QByteArray &line, int start, bool *ok = nullptr)
         end = line.indexOf('}', start + 1);
     }
 
-    return line.mid(start + 1, end - start - 1).toUInt(ok);
+    return QByteArrayView(line).mid(start + 1, end - start - 1).toUInt(ok);
 }
 
 bool KManageSieve::Response::parseResponse(const QByteArray &line)

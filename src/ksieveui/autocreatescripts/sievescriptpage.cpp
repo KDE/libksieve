@@ -143,7 +143,7 @@ void SieveScriptPage::generatedScript(QString &script, QStringList &required)
         }
     }
     if (inForEveryPartLoop) {
-        script += u"\n}\n"_s;
+        script += u"\n}\n";
     }
 }
 

@@ -238,7 +238,7 @@ QString KSieveCore::VacationUtils::composeScript(const Vacation &vacation)
     QString addressesArgument;
     QStringList aliases;
     if (!vacation.aliases.empty()) {
-        addressesArgument += u":addresses [ "_s;
+        addressesArgument += u":addresses [ ";
         QStringList sl;
         sl.reserve(vacation.aliases.count());
         for (const auto &a : vacation.aliases) {
@@ -258,15 +258,15 @@ QString KSieveCore::VacationUtils::composeScript(const Vacation &vacation)
         sVacation += u":subject \"%1\" "_s.arg(stringReplace(vacation.subject).trimmed());
     }
 
-    sVacation += u"text:\n"_s;
+    sVacation += u"text:\n";
     sVacation += dotstuff(vacation.messageText.isEmpty() ? VacationUtils::defaultMessageText() : vacation.messageText);
-    sVacation += u"\n.\n;"_s;
+    sVacation += u"\n.\n;";
 
     switch (vacation.mailAction) {
     case VacationUtils::Keep:
         break;
     case VacationUtils::Discard:
-        sVacation += u"\ndiscard;"_s;
+        sVacation += u"\ndiscard;";
         break;
     case VacationUtils::Sendto:
         sVacation += QLatin1StringView("\nredirect \"") + vacation.mailActionRecipient + QLatin1StringView("\";");
@@ -283,9 +283,9 @@ QString KSieveCore::VacationUtils::composeScript(const Vacation &vacation)
         if (vacation.active) {
             script += sVacation;
         } else {
-            script += u"if false\n{\n\t"_s;
+            script += u"if false\n{\n\t";
             script += sVacation;
-            script += u"\n}"_s;
+            script += u"\n}";
         }
     } else {
         if (vacation.active) {
@@ -294,10 +294,10 @@ QString KSieveCore::VacationUtils::composeScript(const Vacation &vacation)
             script += u"if false # allof(%1)\n{\n\t"_s.arg(condition.join(u", "_s));
         }
         script += sVacation;
-        script += u"\n}"_s;
+        script += u"\n}";
     }
 
-    script += u"\n"_s;
+    script += u"\n";
 
     return script;
 }

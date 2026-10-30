@@ -73,7 +73,7 @@ void SieveForEveryPartWidget::generatedScript(QString &script, QStringList &requ
         required << u"foreverypart"_s;
         const QString loopName = mName->text();
         if (loopName.isEmpty()) {
-            script += u"foreverypart {"_s;
+            script += u"foreverypart {";
         } else {
             script += u"foreverypart :name \"%1\" {"_s.arg(loopName);
         }
