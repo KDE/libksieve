@@ -4,7 +4,7 @@
 ecm_setup_version(PROJECT VARIABLE_PREFIX KMANAGESIEVE
                         VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/libkmanagesieve_version.h"
                         PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6KManageSieveConfigVersion.cmake"
-                        SOVERSION 6
+                        SOVERSION ${PROJECT_SOVERSION}
 )
 
 add_library(KPim6KManageSieve)
