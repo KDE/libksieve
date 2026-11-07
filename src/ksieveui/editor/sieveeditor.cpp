@@ -48,7 +48,6 @@ SieveEditor::SieveEditor(QWidget *parent)
     mainLayout->addWidget(d->mSieveEditorWidget);
     mainLayout->addWidget(buttonBox);
     connect(d->mSieveEditorWidget, &SieveEditorWidget::enableButtonOk, this, &SieveEditor::slotEnableButtonOk);
-    connect(this, &SieveEditor::finished, this, &SieveEditor::cancelClicked);
     connect(d->mSieveEditorWidget, &SieveEditorWidget::checkSyntax, this, &SieveEditor::checkSyntax);
     readConfig();
 }
