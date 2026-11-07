@@ -56,7 +56,7 @@ void SieveAction::unknownTagValue(const QString &tagValue, QString &error)
 
 void SieveAction::serverDoesNotSupportFeatures(const QString &feature, QString &error)
 {
-    error += i18n("A feature \"%1\" in condition \"%2\" is not supported by server", feature, name()) + u'\n';
+    error += i18n("A feature \"%1\" in action \"%2\" is not supported by server", feature, name()) + u'\n';
 }
 
 #include "moc_sieveaction.cpp"
