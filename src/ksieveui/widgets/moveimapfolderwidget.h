@@ -9,10 +9,6 @@
 #include "ksieveui_private_export.h"
 #include <KSieveUi/AbstractMoveImapFolderWidget>
 class QLineEdit;
-namespace KSieveCore
-{
-class SieveImapAccountSettings;
-}
 namespace KSieveUi
 {
 class KSIEVEUI_TESTS_EXPORT MoveImapFolderWidget : public KSieveUi::AbstractMoveImapFolderWidget

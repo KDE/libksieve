@@ -12,6 +12,8 @@
 
 #include <KMime/Types>
 
+#include <cstdint>
+
 namespace KSieveCore
 {
 namespace VacationUtils

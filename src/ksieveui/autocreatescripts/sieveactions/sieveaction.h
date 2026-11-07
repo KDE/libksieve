@@ -9,7 +9,6 @@
 class QXmlStreamReader;
 namespace KSieveUi
 {
-class SieveEditorGraphicalModeWidget;
 class SieveAction : public SieveCommonActionCondition
 {
     Q_OBJECT

@@ -7,12 +7,35 @@
 #include "sievetreewidgetitem.h"
 
 #include <KIconLoader>
+#include <KPixmapSequence>
 #include <KPixmapSequenceLoader>
 
 #include <QTimer>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
+namespace KSieveUi
+{
+class SieveTreeWidgetProgress : public QObject
+{
+    Q_OBJECT
+public:
+    explicit SieveTreeWidgetProgress(SieveTreeWidgetItem *item, QObject *parent = nullptr);
+    ~SieveTreeWidgetProgress() override;
+
+    void startAnimation();
+    void stopAnimation();
+
+private:
+    Q_DISABLE_COPY(SieveTreeWidgetProgress)
+    void slotTimerDone();
+    int mProgressCount = 0;
+    const KPixmapSequence mProgressPix;
+    QTimer *const mProgressTimer;
+    SieveTreeWidgetItem *const mItem;
+};
+}
+
 SieveTreeWidgetProgress::SieveTreeWidgetProgress(SieveTreeWidgetItem *item, QObject *parent)
     : QObject(parent)
     , mProgressPix(KPixmapSequenceLoader::load(u"process-working"_s, KIconLoader::SizeSmallMedium))
@@ -91,4 +114,4 @@ void SieveTreeWidgetItem::setDefaultIcon()
     setIcon(0, QIcon::fromTheme(u"network-server"_s));
 }
 
-#include "moc_sievetreewidgetitem.cpp"
+#include "sievetreewidgetitem.moc"

@@ -40,6 +40,7 @@
 #include <QPrintPreviewDialog>
 #include <QPrinter>
 #include <QSplitter>
+#include <QTabBar>
 #include <QVBoxLayout>
 
 #include <memory>

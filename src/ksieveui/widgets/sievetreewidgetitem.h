@@ -7,16 +7,11 @@
 #pragma once
 
 #include "ksieveui_export.h"
-#include <KPixmapSequence>
 #include <QTreeWidgetItem>
 #include <memory>
 
-class QTimer;
-class QTreeWidget;
-
 namespace KSieveUi
 {
-class SieveTreeWidgetProgress;
 class SieveTreeWidgetItemPrivate;
 /*!
  * \class KSieveUi::SieveTreeWidgetItem
@@ -59,24 +54,5 @@ public:
 
 private:
     std::unique_ptr<SieveTreeWidgetItemPrivate> const d;
-};
-
-class SieveTreeWidgetProgress : public QObject
-{
-    Q_OBJECT
-public:
-    explicit SieveTreeWidgetProgress(SieveTreeWidgetItem *item, QObject *parent = nullptr);
-    ~SieveTreeWidgetProgress() override;
-
-    void startAnimation();
-    void stopAnimation();
-
-private:
-    Q_DISABLE_COPY(SieveTreeWidgetProgress)
-    void slotTimerDone();
-    int mProgressCount = 0;
-    const KPixmapSequence mProgressPix;
-    QTimer *const mProgressTimer;
-    SieveTreeWidgetItem *const mItem;
 };
 }

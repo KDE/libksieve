@@ -18,6 +18,7 @@
 #include <QDate>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QLocale>
 #include <QStackedWidget>
 
 using namespace Qt::Literals::StringLiterals;

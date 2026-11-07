@@ -13,8 +13,6 @@
 #include "sievescriptblockwidget.h"
 #include "sievescripttabwidget.h"
 
-#include "sievewidgetpageabstract.h"
-
 #include <KLocalizedString>
 #include <KMessageBox>
 

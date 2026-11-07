@@ -5,7 +5,7 @@
 */
 #include "sievepurposemenuwidget.h"
 
-#include <KSieveUi/SieveEditorWidget>
+#include "sieveeditorwidget.h"
 
 using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;

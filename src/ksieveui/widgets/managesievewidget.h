@@ -8,6 +8,7 @@
 #include "ksieveui_export.h"
 #include <KSieveCore/SieveImapAccountSettings>
 #include <QMap>
+#include <QStringList>
 #include <QUrl>
 #include <QWidget>
 #include <memory>

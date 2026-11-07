@@ -17,7 +17,6 @@ namespace TextCustomEditor
 {
 class TextGoToLineWidget;
 class PlainTextEditFindBar;
-class PlainTextEditor;
 class PlainTextEditorWidget;
 }
 namespace PimCommon

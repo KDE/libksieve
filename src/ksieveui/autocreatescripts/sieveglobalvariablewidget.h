@@ -18,7 +18,6 @@ class QXmlStreamReader;
 namespace KSieveUi
 {
 class SieveHelpButton;
-class SieveGlobalVariableWidget;
 
 class SieveGlobalVariableActionWidget : public QWidget
 {

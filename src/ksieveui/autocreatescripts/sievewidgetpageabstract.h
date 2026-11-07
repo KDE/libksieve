@@ -8,6 +8,8 @@
 
 #include <QWidget>
 
+#include <cstdint>
+
 namespace KSieveUi
 {
 class SieveWidgetPageAbstract : public QWidget

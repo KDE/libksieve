@@ -15,9 +15,11 @@
 #include "sievescriptpage.h"
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QCursor>
 #include <QHBoxLayout>
 #include <QIcon>
 #include <QInputDialog>
+#include <QLineEdit>
 #include <QPushButton>
 #include <QXmlStreamReader>
 

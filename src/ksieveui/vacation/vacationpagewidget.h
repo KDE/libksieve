@@ -8,6 +8,8 @@
 
 #include <QUrl>
 #include <QWidget>
+
+#include <cstdint>
 class QStackedWidget;
 
 namespace KSieveCore

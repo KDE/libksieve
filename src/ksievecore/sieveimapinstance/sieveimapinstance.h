@@ -9,6 +9,8 @@
 #include "ksievecore_export.h"
 #include <QStringList>
 
+#include <cstdint>
+
 namespace KSieveCore
 {
 /*!
