@@ -255,6 +255,7 @@ void SieveGlobalVariableLister::updateAddRemoveButton()
 void SieveGlobalVariableLister::generatedScript(QString &script, QStringList &requireModules)
 {
     requireModules << u"include"_s;
+    requireModules << u"variables"_s;
     const QList<QWidget *> widgetList = widgets();
     QList<QWidget *>::ConstIterator with = widgetList.constBegin();
     QList<QWidget *>::ConstIterator wEnd = widgetList.constEnd();

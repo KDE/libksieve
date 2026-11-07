@@ -1,4 +1,5 @@
 require "include";
+require "variables";
 require "copy";
 require "imap4flags";
 require "subaddress";
