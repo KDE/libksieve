@@ -203,7 +203,7 @@ void SieveScriptBlockWidget::generatedScript(QString &script, QStringList &requi
             break;
         }
 
-        if (hasUniqCondition == 1) {
+        if (hasUniqCondition) {
             filterStr += blockStr;
         } else if (mMatchCondition == AndCondition) {
             filterStr += blockStr + QLatin1StringView("allof (");
