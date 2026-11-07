@@ -14,7 +14,6 @@
 #include <QVBoxLayout>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 
-using namespace Qt::Literals::StringLiterals;
 using namespace KSieveUi;
 namespace
 {
