@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-26 00:50+0000\n"
+"POT-Creation-Date: 2026-11-08 02:59+0000\n"
 "PO-Revision-Date: 2014-09-18 22:34+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -686,7 +686,6 @@ msgstr ""
 "Weerten is %3 för %4"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievecommonactioncondition.cpp:118
-#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:59
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:49
 #, kde-format
 msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
@@ -698,6 +697,12 @@ msgstr "Dat Markmaal \"%1\" binnen Bedingen \"%2\"  ünnerstütt de Server nich.
 msgctxt "@info:tooltip"
 msgid "Help"
 msgstr "Hülp"
+
+#: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:59
+#, fuzzy, kde-format
+#| msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
+msgid "A feature \"%1\" in action \"%2\" is not supported by server"
+msgstr "Dat Markmaal \"%1\" binnen Bedingen \"%2\"  ünnerstütt de Server nich."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddflags.cpp:15
 #, kde-format
@@ -731,7 +736,7 @@ msgstr "Koppreeg:"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddheader.cpp:51
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondeleteheader.cpp:51
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:55
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:56
 #, fuzzy, kde-format
 #| msgid "value:"
 msgctxt "@label:textbox"
@@ -1513,7 +1518,7 @@ msgstr ""
 "bruukt de aktuelle Tiet un nich een ut den Kopp ruttrocken Weert."
 
 #: ksieveui/autocreatescripts/sieveconditions/sieveconditiondate.cpp:27
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:44
 #: ksieveui/autocreatescripts/sieveconditions/widgets/selectheadertypecombobox.cpp:238
 #, kde-format
 msgid "Date"
@@ -1900,62 +1905,62 @@ msgstr "Inholt"
 msgid "text"
 msgstr "Text"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:40
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:41
 #, kde-format
 msgid "Year"
 msgstr "Johr"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:41
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:42
 #, kde-format
 msgid "Month"
 msgstr "Maand"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:42
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:43
 #, kde-format
 msgid "Day"
 msgstr "Dag"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:44
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:45
 #, kde-format
 msgid "Julian"
 msgstr "Juliaansch"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:45
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:46
 #, kde-format
 msgid "Hour"
 msgstr "Stünn"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:46
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:47
 #, kde-format
 msgid "Minute"
 msgstr "Minuut"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:47
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:48
 #, kde-format
 msgid "Second"
 msgstr "Sekunn"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:48
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:49
 #, kde-format
 msgid "Time"
 msgstr "Tiet"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:49
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:50
 #, kde-format
 msgid "iso8601"
 msgstr "ISO-8601"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:50
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:51
 #, kde-format
 msgid "std11"
 msgstr "std11"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:51
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:52
 #, kde-format
 msgid "Zone"
 msgstr "Tietrebeet"
 
-#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:52
+#: ksieveui/autocreatescripts/sieveconditions/widgets/selectdatewidget.cpp:53
 #, kde-format
 msgid "Weekday"
 msgstr "Wekendag"
@@ -2298,94 +2303,94 @@ msgstr "\"elsif\"-Block"
 msgid "\"else\" block"
 msgstr "\"else\"-Block"
 
-#: ksieveui/autocreatescripts/sievescriptdescriptiondialog.cpp:27
+#: ksieveui/autocreatescripts/sievescriptdescriptiondialog.cpp:26
 #, fuzzy, kde-format
 #| msgid "Description"
 msgctxt "@title:window"
 msgid "Description"
 msgstr "Beschrieven"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:131
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:133
 #, kde-format
 msgctxt "Move selected filter up."
 msgid "Up"
 msgstr "Rop"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:132
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:134
 #, kde-format
 msgctxt "Move selected filter down."
 msgid "Down"
 msgstr "Daal"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:133
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:135
 #, kde-format
 msgctxt "Move selected filter to the top."
 msgid "Top"
 msgstr "Baven"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:134
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:136
 #, kde-format
 msgctxt "Move selected filter to the bottom."
 msgid "Bottom"
 msgstr "Nerrn"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:146
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:148
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgctxt "@info:tooltip"
 msgid "New Script"
 msgstr "Nieg Skript"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:152
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:154
 #, fuzzy, kde-format
 #| msgid "Delete Script"
 msgctxt "@info:tooltip"
 msgid "Delete Script"
 msgstr "Skript wegdoon"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:156
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:158
 #, fuzzy, kde-format
 #| msgid "Save Script"
 msgctxt "@info:tooltip"
 msgid "Rename Script"
 msgstr "Skript sekern"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:162
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:164
 #, fuzzy, kde-format
 #| msgid "Edit description..."
 msgctxt "@info:tooltip"
 msgid "Edit Script Description"
 msgstr "Beschrieven bewerken..."
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:191
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:193
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgctxt "@action:inmenu"
 msgid "New Script"
 msgstr "Nieg Skript"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:196
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:198
 #, fuzzy, kde-format
 #| msgid "Save Script"
 msgctxt "@action:inmenu"
 msgid "Rename Script"
 msgstr "Skript sekern"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:201
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:203
 #, fuzzy, kde-format
 #| msgid "Edit description..."
 msgctxt "@action:inmenu"
 msgid "Edit Script Description"
 msgstr "Beschrieven bewerken..."
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:206
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:208
 #, fuzzy, kde-format
 #| msgid "Delete Script"
 msgctxt "@action:inmenu"
 msgid "Delete Script"
 msgstr "Skript wegdoon"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:260
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:262
 #: ksieveui/widgets/managesievewidget.cpp:244
 #: ksieveui/widgets/managesievewidget.cpp:251
 #: ksieveui/widgets/managesievewidget.cpp:262
@@ -2395,63 +2400,63 @@ msgctxt "@title:window"
 msgid "New Script"
 msgstr "Nieg Skript"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:260
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:262
 #, fuzzy, kde-format
 #| msgid "New Script"
 msgid "New script name:"
 msgstr "Nieg Skript"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:272
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:274
 #, kde-format
 msgid "Do you want to delete \"%1\" script?"
 msgstr "Wullt Du dat Skript \"%1\" wegdoon?"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:273
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:275
 #, fuzzy, kde-format
 #| msgid "Delete Script"
 msgctxt "@title:window"
 msgid "Delete Script"
 msgstr "Skript wegdoon"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:293
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:295
 #, fuzzy, kde-format
 #| msgid "Save Script"
 msgctxt "@title:window"
 msgid "Rename Script"
 msgstr "Skript sekern"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:293
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:295
 #, fuzzy, kde-format
 #| msgid "Please enter a name for the new Sieve script:"
 msgid "New name for the script:"
 msgstr "Giff bitte en Naam för dat Sieve-Skript in:"
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:482
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:484
 #, kde-format
 msgid "forEveryPart is not supported by your server"
 msgstr "\"foreverypart\" ünnerstütt Dien Server nich."
 
-#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:586
+#: ksieveui/autocreatescripts/sievescriptlistbox.cpp:588
 #, kde-format
 msgid "Script part %1"
 msgstr "Skriptdeel %1"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:39
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:37
 #, kde-format
 msgid "Includes"
 msgstr "Insluten"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:43
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:41
 #, kde-format
 msgid "Global Variable"
 msgstr "Globaal Variabel"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:49
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:47
 #, kde-format
 msgid "ForEveryPart"
 msgstr "FörElkPart"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:98
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:96
 #, kde-format
 msgid ""
 "Script should always have just one \"Else\" block. We cannot add another one."
@@ -2459,52 +2464,52 @@ msgstr ""
 "Skripten köönt bloots een \"else\"-Block hebben. Dor lett sik keen mehr "
 "tofögen."
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:114
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:112
 #, kde-format
 msgid "Main block"
 msgstr "Hööftblock"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:116
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:114
 #, kde-format
 msgid "Block \"Elsif\""
 msgstr "\"Elsif\"-Block"
 
-#: ksieveui/autocreatescripts/sievescriptpage.cpp:118
+#: ksieveui/autocreatescripts/sievescriptpage.cpp:116
 #, kde-format
 msgid "Block \"Else\""
 msgstr "\"Else\"-Block"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:28
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:29
 #, fuzzy, kde-format
 #| msgid "Sieve Parsing Error"
 msgctxt "@title:window"
 msgid "Sieve Parsing Error"
 msgstr "Sieve-Inleesfehler"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:37
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:38
 #: ksieveui/scriptsparsing/parsingresultdialog.cpp:40
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save As…"
 msgstr "Sekern as..."
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:49
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:50
 #, kde-format
 msgid "Sieve script:"
 msgstr "Sieve-Skript:"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:51
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:52
 #, kde-format
 msgid "Errors reported:"
 msgstr "Torüchgeven Fehlers:"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:63
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:64
 #, fuzzy, kde-format
 #| msgid "all files (*)"
 msgid "All Files (*)"
 msgstr "All Dateien (*)"
 
-#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:64
+#: ksieveui/autocreatescripts/sievescriptparsingerrordialog.cpp:65
 #, fuzzy, kde-format
 #| msgid "Save Log To File"
 msgctxt "@title:window"
@@ -2643,19 +2648,19 @@ msgctxt "@title:window"
 msgid "Edit Sieve Script"
 msgstr "Sieve-Skript bewerken"
 
-#: ksieveui/editor/sieveeditor.cpp:171
+#: ksieveui/editor/sieveeditor.cpp:170
 #, kde-format
 msgid "Script is modified. Do you want to close editor?"
 msgstr ""
 
-#: ksieveui/editor/sieveeditor.cpp:173
+#: ksieveui/editor/sieveeditor.cpp:172
 #, fuzzy, kde-format
 #| msgid "Editor"
 msgctxt "@action:button"
 msgid "Close Editor"
 msgstr "Editor"
 
-#: ksieveui/editor/sieveeditor.cpp:174
+#: ksieveui/editor/sieveeditor.cpp:173
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Close"
@@ -2813,33 +2818,33 @@ msgstr "Fehler bi't Laden vun de Siet över %1"
 msgid "Help about: %1"
 msgstr "Hülp to: %1"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:64
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:65
 #, kde-format
 msgid "Sieve Template:"
 msgstr "Sieve-Vörlaag:"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:89
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:90
 #, kde-format
 msgid "Editor"
 msgstr "Editor"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:143
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:144
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Show result from \"check syntax\""
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:244
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:245
 #, kde-format
 msgid "Error during parsing"
 msgstr "Fehler bi't Inlesen"
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:274
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:275
 #, kde-format
 msgid "Selected text is not a full sieve script"
 msgstr ""
 
-#: ksieveui/editor/sieveeditortextmodewidget.cpp:274
+#: ksieveui/editor/sieveeditortextmodewidget.cpp:275
 #, fuzzy, kde-format
 #| msgid "Sieve Parsing Error"
 msgctxt "@title:window"
