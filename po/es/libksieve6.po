@@ -1,27 +1,25 @@
 # Spanish translations for libksieve6.po package.
-# translation of libksieve.po to Spanish
 # This file is distributed under the same license as the libksieve package.
-# Copyright (C) 2003-2025 This file is copyright:
+# Copyright (C) 2003-2026 This file is copyright:
 #
 # SPDX-FileCopyrightText: 2003 Miguel Revilla Rodríguez <yo@miguelrevilla.com>
 # SPDX-FileCopyrightText: 2003 Juan Manuel Garcia Molina <juanma@superiodico.net>
 # SPDX-FileCopyrightText: 2007 Enrique Matias Sanchez (aka Quique) <cronopios@gmail.com>
-# Javier Vinal <fjvinalgmail.com>, 2010, 2011, 2012, 2017.
-# SPDX-FileCopyrightText: 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019 Javier Viñal <fjvinal@gmail.com>
-# SPDX-FileCopyrightText: 2013, 2016, 2019, 2020, 2021, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2010-2019 Javier Viñal <fjvinal@gmail.com>
+# SPDX-FileCopyrightText: 2013, 2016, 2019-2021, 2023-2026 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: libksieve6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:59+0000\n"
-"PO-Revision-Date: 2025-09-25 00:14+0100\n"
+"PO-Revision-Date: 2026-11-09 01:10+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: kmanagesieve/session.cpp:91
@@ -705,7 +703,7 @@ msgstr ""
 #, kde-format
 msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
 msgstr ""
-"Una característica «%1» en la condición «%2» no se admite por el servidor"
+"Una funcionalidad «%1» de la condición «%2» no se admite por el servidor"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
 #, kde-format
@@ -714,11 +712,9 @@ msgid "Help"
 msgstr "Ayuda"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:59
-#, fuzzy, kde-format
-#| msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
+#, kde-format
 msgid "A feature \"%1\" in action \"%2\" is not supported by server"
-msgstr ""
-"Una característica «%1» en la condición «%2» no se admite por el servidor"
+msgstr "Una funcionalidad «%1» de la acción «%2» no se admite por el servidor"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddflags.cpp:15
 #, kde-format
@@ -1036,8 +1032,8 @@ msgid ""
 "add new headers."
 msgstr ""
 "La acción «redirigir» se una para enviar el mensaje a otro usuario a la "
-"dirección proporcionada, como hace la característica de reenvío de correo. "
-"La acción «redirigir» no cambia el cuerpo del mensaje ni las cabeceras "
+"dirección proporcionada, como hace la funcionalidad de reenvío de correo. La "
+"acción «redirigir» no cambia el cuerpo del mensaje ni las cabeceras "
 "existentes, pero puede añadir nuevas cabeceras."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionredirect.cpp:144
@@ -3461,15 +3457,3 @@ msgstr "Ha fallado al obtener la lista de guiones"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr "Definir carpeta"
-
-#~ msgid "Type"
-#~ msgstr "Tipo"
-
-#~ msgid "Subtype"
-#~ msgstr "Subtipo"
-
-#~ msgid "Anychild"
-#~ msgstr "Cualquier hijo"
-
-#~ msgid "Parameters"
-#~ msgstr "Parámetros"

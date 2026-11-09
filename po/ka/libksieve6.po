@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:59+0000\n"
-"PO-Revision-Date: 2025-09-24 07:15+0200\n"
+"PO-Revision-Date: 2026-11-08 07:54+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.7\n"
+"X-Generator: Poedit 3.10\n"
 
 #: kmanagesieve/session.cpp:91
 #, kde-format
@@ -682,7 +682,7 @@ msgstr ""
 #: ksieveui/autocreatescripts/sieveconditions/sievecondition.cpp:49
 #, kde-format
 msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
-msgstr "ფუნქცია \"%1\" პირობაში \"%2\" სერვერის მიერ მხარდაჭერილი არაა"
+msgstr "თვისება \"%1\" პირობაში \"%2\" სერვერის მიერ მხარდაჭერილი არაა"
 
 #: ksieveui/autocreatescripts/commonwidgets/sievehelpbutton.cpp:19
 #, kde-format
@@ -691,10 +691,9 @@ msgid "Help"
 msgstr "დახმარება"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:59
-#, fuzzy, kde-format
-#| msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
+#, kde-format
 msgid "A feature \"%1\" in action \"%2\" is not supported by server"
-msgstr "ფუნქცია \"%1\" პირობაში \"%2\" სერვერის მიერ მხარდაჭერილი არაა"
+msgstr "თვისება \"%1\" ქმედებაში \"%2\" სერვერის მიერ მხარდაჭერილი არაა"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddflags.cpp:15
 #, kde-format

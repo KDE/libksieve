@@ -4,20 +4,20 @@
 # Rinse de Vries <rinse@kde.nl>, 2003.
 # Bram Schoenmakers <bramschoenmakers@kde.nl>, 2004, 2005, 2010.
 # Hannie Lafeber-Dumoleyn <hannie@kde.nl>, 2010.
-# SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2023, 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2011-2021, 2023-2026 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:59+0000\n"
-"PO-Revision-Date: 2025-09-24 10:02+0200\n"
-"Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
+"PO-Revision-Date: 2026-11-08 16:25+0100\n"
+"Last-Translator: freek <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 26.04.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: kmanagesieve/session.cpp:91
@@ -695,11 +695,10 @@ msgid "Help"
 msgstr "Help"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:59
-#, fuzzy, kde-format
-#| msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
+#, kde-format
 msgid "A feature \"%1\" in action \"%2\" is not supported by server"
 msgstr ""
-"Een functie \"%1\" in voorwaarde \"%2\" wordt niet ondersteund door de server"
+"Een functie \"%1\" in actie \"%2\" wordt niet ondersteund door de server"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddflags.cpp:15
 #, kde-format

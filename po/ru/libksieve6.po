@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:59+0000\n"
-"PO-Revision-Date: 2025-11-27 19:35+0300\n"
+"PO-Revision-Date: 2026-11-08 07:47+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -706,10 +706,9 @@ msgid "Help"
 msgstr "Справка"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:59
-#, fuzzy, kde-format
-#| msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
+#, kde-format
 msgid "A feature \"%1\" in action \"%2\" is not supported by server"
-msgstr "Возможность «%1» в условии «%2» не поддерживается сервером."
+msgstr "Возможность «%1» в действии «%2» не поддерживается сервером."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddflags.cpp:15
 #, kde-format
