@@ -9,6 +9,20 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
+excludedirs += \
+    autocreatescripts/autotests \
+    autocreatescripts/tests \
+    editor/autotests \
+    editor/tests \
+    editor/webengine/autotests \
+    editor/webengine/findbar/autotests \
+    scriptsparsing/tests \
+    sievescriptdebugger/autotests \
+    sievescriptdebugger/tests \
+    tests \
+    vacation/autotests \
+    widgets/autotests
+
 outputformats = HTML
 
 depends += \

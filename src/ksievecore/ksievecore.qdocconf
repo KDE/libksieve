@@ -9,10 +9,18 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
+excludedirs += \
+    managescriptsjob/autotests \
+    scriptsparsing/autotests \
+    sieveimapinstance/autotests \
+    util/autotests \
+    vacation/autotests
+
 outputformats = HTML
 
 depends += \
-    qtcore
+    qtcore \
+    ksieveui
 
 navigation.landingpage = "KSieveCore"
 
