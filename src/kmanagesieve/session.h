@@ -70,7 +70,6 @@ private Q_SLOTS:
     void executeNextJob();
 
 private:
-    Q_DISABLE_COPY(Session)
     SessionThread *const m_thread;
     QUrl m_url;
     QQueue<SieveJob *> m_jobs;

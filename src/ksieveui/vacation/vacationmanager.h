@@ -63,7 +63,6 @@ private:
     KSIEVEUI_NO_EXPORT void slotUpdateVacationScriptStatus(bool active, const QString &serverName);
 
 private:
-    Q_DISABLE_COPY(VacationManager)
     std::unique_ptr<VacationManagerPrivate> const d;
 };
 }

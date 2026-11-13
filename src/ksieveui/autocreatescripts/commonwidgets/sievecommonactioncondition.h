@@ -60,7 +60,6 @@ Q_SIGNALS:
     void valueChanged();
 
 private:
-    Q_DISABLE_COPY(SieveCommonActionCondition)
     const QString mName;
     const QString mLabel;
     QString mComment;

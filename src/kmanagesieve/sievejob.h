@@ -144,7 +144,6 @@ Q_SIGNALS:
     void item(KManageSieve::SieveJob *job, const QString &filename, bool active);
 
 private:
-    Q_DISABLE_COPY(SieveJob)
     KMANAGESIEVE_NO_EXPORT void setErrorMessage(const QString &str);
 
     explicit SieveJob(QObject *parent = nullptr);

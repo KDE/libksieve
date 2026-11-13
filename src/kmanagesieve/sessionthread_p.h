@@ -73,7 +73,6 @@ private:
     void handleSaslAuthError();
 
 private:
-    Q_DISABLE_COPY(SessionThread)
     Session *m_session = nullptr;
     std::unique_ptr<QSslSocket> m_socket;
 
