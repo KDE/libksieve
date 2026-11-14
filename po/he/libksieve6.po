@@ -1,22 +1,22 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the libksieve package.
 #
-# SPDX-FileCopyrightText: 2025, 2026 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:59+0000\n"
-"PO-Revision-Date: 2026-04-21 14:10+0300\n"
+"PO-Revision-Date: 2026-11-13 11:43+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: kmanagesieve/session.cpp:91
 #, kde-format
@@ -664,10 +664,9 @@ msgid "Help"
 msgstr "עזרה"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:59
-#, fuzzy, kde-format
-#| msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
+#, kde-format
 msgid "A feature \"%1\" in action \"%2\" is not supported by server"
-msgstr "יכולת „%1” בתנאי „%2” לא נתמכת על ידי השרת"
+msgstr "יכולת „%1” בפעולה „%2” לא נתמכת על ידי השרת"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddflags.cpp:15
 #, kde-format
