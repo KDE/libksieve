@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = KSieveCore
+moduleheader = ksievecore_qdocmoduleheader.h
 description = Sieve Core Script Library
 
 
