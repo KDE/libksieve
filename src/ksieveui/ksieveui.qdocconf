@@ -7,7 +7,20 @@ description = Sieve Ui Script Library
 
 documentationinheaders = true
 
-headerdirs += .
+headers += \
+    debug/sievedebugdialog.h \
+    editor/sieveeditor.h \
+    editor/sieveeditorwidget.h \
+    ksieveui_qdocmoduleheader.h \
+    managesievescriptsdialog.h \
+    vacation/multiimapvacationdialog.h \
+    vacation/vacationmanager.h \
+    widgets/abstractmoveimapfolderwidget.h \
+    widgets/abstractregexpeditorlineedit.h \
+    widgets/abstractselectemaillineedit.h \
+    widgets/managesievetreeview.h \
+    widgets/managesievewidget.h \
+    widgets/sievetreewidgetitem.h
 sourcedirs += .
 
 excludedirs += \
