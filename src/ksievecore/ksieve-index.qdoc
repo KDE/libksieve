@@ -10,7 +10,7 @@
 
     \section2 Building with CMake
 
-    \include {module-use.qdocinc} {building with cmake} {KPim6} {KSieveCore} {KPim6::KSieveCore}
+    \include {module-use.qdocinc} {building with cmake nomodule} {KPim6KSieveCore} {KPim6::KSieveCore}
 
     \section1 API Reference
 

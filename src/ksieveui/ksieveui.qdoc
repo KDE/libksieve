@@ -2,8 +2,8 @@
     \module KSieveUi
     \title KSieve Ui C++ Classes
     \ingroup modules
-    \cmakepackage KPim6
-    \cmakecomponent KSieveUi
+    \cmakepackage KPim6KSieveUi
+    \cmaketargetitem KPim6::KSieveUi
 
     \brief Sieve Ui Script Library
 */
