@@ -680,10 +680,9 @@ msgid "Help"
 msgstr "Pomocník"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:59
-#, fuzzy, kde-format
-#| msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
+#, kde-format
 msgid "A feature \"%1\" in action \"%2\" is not supported by server"
-msgstr "Funkcia \"%1\" v podmienke \"%2\" nie je podporovaná serverom"
+msgstr "Funkcia \"%1\" v akcii \"%2\" nie je podporovaná serverom"
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddflags.cpp:15
 #, kde-format
