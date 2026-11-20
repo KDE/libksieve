@@ -9,6 +9,7 @@
 #include <QDialog>
 
 #include <QListWidget>
+#include <QMap>
 
 class QLineEdit;
 class QPushButton;
