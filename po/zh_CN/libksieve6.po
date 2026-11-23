@@ -631,10 +631,9 @@ msgid "Help"
 msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveaction.cpp:59
-#, fuzzy, kde-format
-#| msgid "A feature \"%1\" in condition \"%2\" is not supported by server"
+#, kde-format
 msgid "A feature \"%1\" in action \"%2\" is not supported by server"
-msgstr "服务器不支持表达式“%2”中的“%1”功能"
+msgstr ""
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactionaddflags.cpp:15
 #, kde-format
@@ -3222,15 +3221,3 @@ msgstr "未能获取脚本列表"
 msgctxt "@info:placeholder"
 msgid "Define Folder"
 msgstr ""
-
-#~ msgid "Type"
-#~ msgstr "文件系统"
-
-#~ msgid "Subtype"
-#~ msgstr "子类型"
-
-#~ msgid "Anychild"
-#~ msgstr "任意子选项"
-
-#~ msgid "Parameters"
-#~ msgstr "参数"
