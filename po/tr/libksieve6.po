@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libksieve\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 02:59+0000\n"
-"PO-Revision-Date: 2026-11-08 19:22+0300\n"
+"PO-Revision-Date: 2026-11-23 17:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -810,7 +810,7 @@ msgid ""
 "By default, the deleteheader action deletes all occurrences of the named "
 "header field."
 msgstr ""
-"Öntanımlı olarak üst bilgi sil eylemi adlı üst bilgideki her görünümü siler."
+"Varsayılan olarak üst bilgi sil eylemi adlı üst bilgideki her görünümü siler."
 
 #: ksieveui/autocreatescripts/sieveactions/sieveactiondiscard.cpp:25
 #, kde-format
@@ -3120,7 +3120,7 @@ msgstr "Tatiller"
 #, kde-format
 msgctxt "@title:window"
 msgid "Default template"
-msgstr "Öntanımlı şablon"
+msgstr "Varsayılan şablon"
 
 #: ksieveui/templates/sievetemplateeditdialog.cpp:37
 #, kde-format
@@ -3291,7 +3291,7 @@ msgid ""
 "values will be used."
 msgstr ""
 "Birisi (muhtemelen siz) sunucudaki tatil betiğini değiştirdi. KMail artık "
-"otomatik yanıtlama için parametreleri okuyamıyor. Öntanımlı değerler "
+"otomatik yanıtlama için parametreleri okuyamıyor. Varsayılan değerler "
 "kullanılacak."
 
 #: ksieveui/widgets/custommanagesievewidget.cpp:94
