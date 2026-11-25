@@ -7,3 +7,9 @@
 
     \brief Sieve Ui Script Library
 */
+
+/*!
+    \namespace KSieveUi
+    \inmodule KSieveUi
+    \brief The KSieveUi namespace contains the classes of the KSieveUi module.
+*/

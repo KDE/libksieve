@@ -52,6 +52,8 @@ public:
      */
     ~ManageSieveScriptsDialog() override;
 #if HAVE_TEXT_AUTOGENERATE_TEXT
+    /*!
+     */
     void setTextAutoGenerateManager(TextAutoGenerateText::TextAutoGenerateManager *manager);
 #endif
 Q_SIGNALS:

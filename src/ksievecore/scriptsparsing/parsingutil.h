@@ -10,6 +10,11 @@
 #include <QString>
 namespace KSieveCore
 {
+/*!
+ * \namespace KSieveCore::ParsingUtil
+ * \inmodule KSieveCore
+ * \inheaderfile KSieveCore/ParsingUtil
+ */
 namespace ParsingUtil
 {
 /*!

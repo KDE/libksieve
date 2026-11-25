@@ -21,6 +21,9 @@ namespace KSieveUi
 {
 class SieveEditorPrivate;
 /*!
+ * \class KSieveUi::SieveEditor
+ * \inmodule KSieveUi
+ * \inheaderfile KSieveUi/SieveEditor
  * \brief The SieveEditor class
  * \author Laurent Montel <montel@kde.org>
  */
@@ -100,7 +103,11 @@ Q_SIGNALS:
     void cancelClicked();
 
 protected:
+    /*!
+     */
     bool event(QEvent *e) override;
+    /*!
+     */
     void closeEvent(QCloseEvent *e) override;
 
 private:

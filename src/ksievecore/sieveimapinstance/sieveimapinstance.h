@@ -34,6 +34,8 @@ public:
     ~SieveImapInstance() = default;
 
     // Same enum
+    /*!
+     */
     enum class Status : int8_t {
         Idle = 0, ///< The agent instance does currently nothing.
         Running, ///< The agent instance is working on something.

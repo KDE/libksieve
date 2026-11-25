@@ -38,15 +38,30 @@ class KSIEVEUI_EXPORT ManageSieveWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum SieveEditorMode : uint8_t {
         NormalEditorMode = 0,
         Kep14EditorMode
     };
 
+    /*!
+     * \class KSieveUi::ManageSieveWidget::ScriptInfo
+     * \inmodule KSieveUi
+     * \inheaderfile KSieveUi/ManageSieveWidget
+     */
     struct ScriptInfo {
+        /*!
+         */
         QUrl currentUrl;
+        /*!
+         */
         QStringList currentCapabilities;
+        /*!
+         */
         KSieveCore::SieveImapAccountSettings sieveImapAccountSettings;
+        /*!
+         */
         QStringList scriptList;
     };
 
@@ -180,7 +195,11 @@ public Q_SLOTS:
     void slotRefresh();
 
 protected:
+    /*!
+     */
     QMap<KManageSieve::SieveJob *, QTreeWidgetItem *> mJobs;
+    /*!
+     */
     QMap<QTreeWidgetItem *, QUrl> mUrls;
 
 private:

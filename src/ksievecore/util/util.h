@@ -15,6 +15,9 @@ class QDebug;
 namespace KSieveCore
 {
 /*!
+ * \namespace KSieveCore::Util
+ * \inmodule KSieveCore
+ * \inheaderfile KSieveCore/Util
  * The Util namespace contains a collection of helper functions use in
  * various places.
  */
@@ -32,9 +35,20 @@ KSIEVECORE_EXPORT bool checkOutOfOfficeOnStartup();
  */
 KSIEVECORE_EXPORT bool allowOutOfOfficeSettings();
 
+/*!
+ * \class KSieveCore::Util::AccountInfo
+ * \inmodule KSieveCore
+ * \inheaderfile KSieveCore/Util
+ */
 struct KSIEVECORE_EXPORT AccountInfo {
+    /*!
+     */
     KSieveCore::SieveImapAccountSettings sieveImapAccountSettings;
+    /*!
+     */
     QUrl sieveUrl;
+    /*!
+     */
     bool operator==(const AccountInfo &other) const;
 };
 KSIEVECORE_EXPORT QDebug operator<<(QDebug d, const Util::AccountInfo &info);
@@ -43,6 +57,8 @@ KSIEVECORE_EXPORT QDebug operator<<(QDebug d, const Util::AccountInfo &info);
  * Returns the list of configured IMAP agent instances.
  */
 [[nodiscard]] KSIEVECORE_EXPORT QList<KSieveCore::SieveImapInstance> sieveImapInstances();
+/*!
+ */
 [[nodiscard]] KSIEVECORE_EXPORT QStringList sieveImapResourceNames();
 
 /*!
@@ -50,6 +66,8 @@ KSIEVECORE_EXPORT QDebug operator<<(QDebug d, const Util::AccountInfo &info);
  */
 [[nodiscard]] KSIEVECORE_EXPORT bool hasKep14Support(const QStringList &sieveCapabilities, const QStringList &availableScripts, const QString &activeScript);
 
+/*!
+ */
 [[nodiscard]] KSIEVECORE_EXPORT bool hasKep14CapabilitySupport(const QStringList &sieveCapabilities);
 
 /*!

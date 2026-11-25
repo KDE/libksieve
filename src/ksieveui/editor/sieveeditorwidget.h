@@ -26,6 +26,9 @@ namespace KSieveUi
 class SieveEditorTextModeWidget;
 class SieveEditorGraphicalModeWidget;
 /*!
+ * \class KSieveUi::SieveEditorWidget
+ * \inmodule KSieveUi
+ * \inheaderfile KSieveUi/SieveEditorWidget
  * \brief The SieveEditorWidget class
  * \author Laurent Montel <montel@kde.org>
  */
@@ -44,6 +47,8 @@ public:
      * Destroys the SieveEditorWidget.
      */
     ~SieveEditorWidget() override;
+    /*!
+     */
     enum EditorMode {
         Unknown = -1,
         TextMode = 0,

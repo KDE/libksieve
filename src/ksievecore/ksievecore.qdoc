@@ -7,3 +7,9 @@
 
     \brief Sieve Core Script Library
 */
+
+/*!
+    \namespace KSieveCore
+    \inmodule KSieveCore
+    \brief The KSieveCore namespace contains the classes of the KSieveCore module.
+*/

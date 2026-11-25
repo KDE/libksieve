@@ -16,6 +16,11 @@
 
 namespace KSieveCore
 {
+/*!
+ * \namespace KSieveCore::VacationUtils
+ * \inmodule KSieveCore
+ * \inheaderfile KSieveCore/VacationUtils
+ */
 namespace VacationUtils
 {
 enum MailAction : uint8_t {
@@ -53,27 +58,64 @@ enum MailAction : uint8_t {
  */
 [[nodiscard]] KSIEVECORE_EXPORT QDate defaultEndDate();
 
+/*!
+ * \class KSieveCore::VacationUtils::Vacation
+ * \inmodule KSieveCore
+ * \inheaderfile KSieveCore/VacationUtils
+ */
 struct KSIEVECORE_EXPORT Vacation {
+    /*!
+     */
     Vacation() = default;
 
+    /*!
+     */
     [[nodiscard]] bool isValid() const
     {
         return valid;
     }
 
+    /*!
+     */
     QString mailActionRecipient;
+    /*!
+     */
     QString messageText;
+    /*!
+     */
     QString subject;
+    /*!
+     */
     QList<KMime::Types::AddrSpec> aliases;
+    /*!
+     */
     QString reactOndomainName;
+    /*!
+     */
     QDate startDate;
+    /*!
+     */
     QTime startTime;
+    /*!
+     */
     QDate endDate;
+    /*!
+     */
     QTime endTime;
+    /*!
+     */
     int notificationInterval = 1;
+    /*!
+     */
     MailAction mailAction = Keep;
+    /*!
+     */
     bool valid = false;
+    /*!
+     */
     bool active = false;
+    /*!
+     */
     bool sendForSpam = true;
 };
 

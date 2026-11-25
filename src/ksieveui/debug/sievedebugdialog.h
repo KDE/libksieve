@@ -36,6 +36,9 @@ struct AccountInfo;
 namespace KSieveUi
 {
 /*!
+ * \class KSieveUi::SieveDebugDialog
+ * \inmodule KSieveUi
+ * \inheaderfile KSieveUi/SieveDebugDialog
  * Diagnostic info for Sieve. Only compiled when debug is enabled, it is
  * not useful enough for non-developers to have this in releases.
  */

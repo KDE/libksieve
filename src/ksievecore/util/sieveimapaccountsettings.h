@@ -24,6 +24,8 @@ class KSIEVECORE_EXPORT SieveImapAccountSettings
 {
 public:
     // Keep sync with KIMAP settings.
+    /*!
+     */
     enum EncryptionMode {
         Unencrypted = 0,
         SSLorTLS, /*!< Use SSL/TLS encryption, KIMAP will automatically negotiate
@@ -33,6 +35,8 @@ public:
                       the best supported encryption protocol. */
     };
 
+    /*!
+     */
     enum AuthenticationMode {
         ClearText = 0,
         Login,
